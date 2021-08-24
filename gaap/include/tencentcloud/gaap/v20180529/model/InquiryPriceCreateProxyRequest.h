@@ -204,6 +204,24 @@ namespace TencentCloud
                      */
                     bool NetworkTypeHasBeenSet() const;
 
+                    /**
+                     * 获取通道组类型。Thunder表示标准通道组，Accelerator表示游戏加速器通道。
+                     * @return PackageType 通道组类型。Thunder表示标准通道组，Accelerator表示游戏加速器通道。
+                     */
+                    std::string GetPackageType() const;
+
+                    /**
+                     * 设置通道组类型。Thunder表示标准通道组，Accelerator表示游戏加速器通道。
+                     * @param PackageType 通道组类型。Thunder表示标准通道组，Accelerator表示游戏加速器通道。
+                     */
+                    void SetPackageType(const std::string& _packageType);
+
+                    /**
+                     * 判断参数 PackageType 是否已赋值
+                     * @return PackageType 是否已赋值
+                     */
+                    bool PackageTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +277,12 @@ namespace TencentCloud
                      */
                     std::string m_networkType;
                     bool m_networkTypeHasBeenSet;
+
+                    /**
+                     * 通道组类型。Thunder表示标准通道组，Accelerator表示游戏加速器通道。
+                     */
+                    std::string m_packageType;
+                    bool m_packageTypeHasBeenSet;
 
                 };
             }

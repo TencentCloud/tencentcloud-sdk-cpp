@@ -3437,6 +3437,49 @@ CdbClient::ModifyAccountDescriptionOutcomeCallable CdbClient::ModifyAccountDescr
     return task->get_future();
 }
 
+CdbClient::ModifyAccountHostOutcome CdbClient::ModifyAccountHost(const ModifyAccountHostRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAccountHost");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAccountHostResponse rsp = ModifyAccountHostResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAccountHostOutcome(rsp);
+        else
+            return ModifyAccountHostOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAccountHostOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::ModifyAccountHostAsync(const ModifyAccountHostRequest& request, const ModifyAccountHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAccountHost(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::ModifyAccountHostOutcomeCallable CdbClient::ModifyAccountHostCallable(const ModifyAccountHostRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAccountHostOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAccountHost(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::ModifyAccountMaxUserConnectionsOutcome CdbClient::ModifyAccountMaxUserConnections(const ModifyAccountMaxUserConnectionsRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAccountMaxUserConnections");

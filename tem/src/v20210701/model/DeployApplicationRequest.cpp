@@ -56,7 +56,8 @@ DeployApplicationRequest::DeployApplicationRequest() :
     m_readinessHasBeenSet(false),
     m_deployStrategyConfHasBeenSet(false),
     m_horizontalAutoscalerHasBeenSet(false),
-    m_cronHorizontalAutoscalerHasBeenSet(false)
+    m_cronHorizontalAutoscalerHasBeenSet(false),
+    m_logEnableHasBeenSet(false)
 {
 }
 
@@ -400,6 +401,14 @@ string DeployApplicationRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_logEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_logEnable, allocator);
     }
 
 
@@ -952,6 +961,22 @@ void DeployApplicationRequest::SetCronHorizontalAutoscaler(const vector<CronHori
 bool DeployApplicationRequest::CronHorizontalAutoscalerHasBeenSet() const
 {
     return m_cronHorizontalAutoscalerHasBeenSet;
+}
+
+int64_t DeployApplicationRequest::GetLogEnable() const
+{
+    return m_logEnable;
+}
+
+void DeployApplicationRequest::SetLogEnable(const int64_t& _logEnable)
+{
+    m_logEnable = _logEnable;
+    m_logEnableHasBeenSet = true;
+}
+
+bool DeployApplicationRequest::LogEnableHasBeenSet() const
+{
+    return m_logEnableHasBeenSet;
 }
 
 

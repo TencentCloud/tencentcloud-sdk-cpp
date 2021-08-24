@@ -29,7 +29,8 @@ SearchLogRequest::SearchLogRequest() :
     m_queryHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_contextHasBeenSet(false),
-    m_sortHasBeenSet(false)
+    m_sortHasBeenSet(false),
+    m_useNewAnalysisHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string SearchLogRequest::ToJsonString() const
         string key = "Sort";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sort.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_useNewAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseNewAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_useNewAnalysis, allocator);
     }
 
 
@@ -214,6 +223,22 @@ void SearchLogRequest::SetSort(const string& _sort)
 bool SearchLogRequest::SortHasBeenSet() const
 {
     return m_sortHasBeenSet;
+}
+
+bool SearchLogRequest::GetUseNewAnalysis() const
+{
+    return m_useNewAnalysis;
+}
+
+void SearchLogRequest::SetUseNewAnalysis(const bool& _useNewAnalysis)
+{
+    m_useNewAnalysis = _useNewAnalysis;
+    m_useNewAnalysisHasBeenSet = true;
+}
+
+bool SearchLogRequest::UseNewAnalysisHasBeenSet() const
+{
+    return m_useNewAnalysisHasBeenSet;
 }
 
 

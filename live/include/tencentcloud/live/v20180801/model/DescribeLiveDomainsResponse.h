@@ -68,6 +68,20 @@ namespace TencentCloud
                      */
                     bool DomainListHasBeenSet() const;
 
+                    /**
+                     * 获取可继续添加域名数量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateLimitCount 可继续添加域名数量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetCreateLimitCount() const;
+
+                    /**
+                     * 判断参数 CreateLimitCount 是否已赋值
+                     * @return CreateLimitCount 是否已赋值
+                     */
+                    bool CreateLimitCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -81,6 +95,13 @@ namespace TencentCloud
                      */
                     std::vector<DomainInfo> m_domainList;
                     bool m_domainListHasBeenSet;
+
+                    /**
+                     * 可继续添加域名数量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_createLimitCount;
+                    bool m_createLimitCountHasBeenSet;
 
                 };
             }

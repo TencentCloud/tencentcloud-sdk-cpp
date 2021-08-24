@@ -73,6 +73,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeDBInstanceGTIDResponse.h
   include/tencentcloud/cdb/v20170320/model/OpenDBInstanceGTIDResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBZoneConfigRequest.h
+  include/tencentcloud/cdb/v20170320/model/VerifyRootAccountResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBInstanceRebootTimeResponse.h
   include/tencentcloud/cdb/v20170320/model/SwitchDrInstanceToMasterRequest.h
   include/tencentcloud/cdb/v20170320/model/DeleteParamTemplateRequest.h
@@ -211,7 +212,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DeviceCpuRateInfo.h
   include/tencentcloud/cdb/v20170320/model/BackupConfig.h
   include/tencentcloud/cdb/v20170320/model/ModifyAuditRuleRequest.h
-  include/tencentcloud/cdb/v20170320/model/VerifyRootAccountResponse.h
+  include/tencentcloud/cdb/v20170320/model/ModifyAccountHostResponse.h
   include/tencentcloud/cdb/v20170320/model/DeviceCpuInfo.h
   include/tencentcloud/cdb/v20170320/model/AuditPolicy.h
   include/tencentcloud/cdb/v20170320/model/DescribeDeployGroupListResponse.h
@@ -242,6 +243,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/InitDBInstancesRequest.h
   include/tencentcloud/cdb/v20170320/model/RoInstanceInfo.h
   include/tencentcloud/cdb/v20170320/model/RollbackDBName.h
+  include/tencentcloud/cdb/v20170320/model/ModifyAccountHostRequest.h
   include/tencentcloud/cdb/v20170320/model/CreateParamTemplateRequest.h
   include/tencentcloud/cdb/v20170320/model/DeleteAuditRuleResponse.h
   include/tencentcloud/cdb/v20170320/model/IsolateDBInstanceRequest.h
@@ -378,6 +380,7 @@ set(cdb_src
   src/v20170320/model/DescribeDBInstanceGTIDResponse.cpp
   src/v20170320/model/OpenDBInstanceGTIDResponse.cpp
   src/v20170320/model/DescribeDBZoneConfigRequest.cpp
+  src/v20170320/model/VerifyRootAccountResponse.cpp
   src/v20170320/model/DescribeDBInstanceRebootTimeResponse.cpp
   src/v20170320/model/SwitchDrInstanceToMasterRequest.cpp
   src/v20170320/model/DeleteParamTemplateRequest.cpp
@@ -516,7 +519,7 @@ set(cdb_src
   src/v20170320/model/DeviceCpuRateInfo.cpp
   src/v20170320/model/BackupConfig.cpp
   src/v20170320/model/ModifyAuditRuleRequest.cpp
-  src/v20170320/model/VerifyRootAccountResponse.cpp
+  src/v20170320/model/ModifyAccountHostResponse.cpp
   src/v20170320/model/DeviceCpuInfo.cpp
   src/v20170320/model/AuditPolicy.cpp
   src/v20170320/model/DescribeDeployGroupListResponse.cpp
@@ -547,6 +550,7 @@ set(cdb_src
   src/v20170320/model/InitDBInstancesRequest.cpp
   src/v20170320/model/RoInstanceInfo.cpp
   src/v20170320/model/RollbackDBName.cpp
+  src/v20170320/model/ModifyAccountHostRequest.cpp
   src/v20170320/model/CreateParamTemplateRequest.cpp
   src/v20170320/model/DeleteAuditRuleResponse.cpp
   src/v20170320/model/IsolateDBInstanceRequest.cpp

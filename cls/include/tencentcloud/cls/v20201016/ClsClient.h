@@ -353,7 +353,7 @@ namespace TencentCloud
                 CreateAlarmNoticeOutcomeCallable CreateAlarmNoticeCallable(const Model::CreateAlarmNoticeRequest& request);
 
                 /**
-                 *本接口用于创建异步上下文任务
+                 *本接口用于创建离线上下文任务
                  * @param req CreateAsyncContextTaskRequest
                  * @return CreateAsyncContextTaskOutcome
                  */
@@ -362,7 +362,7 @@ namespace TencentCloud
                 CreateAsyncContextTaskOutcomeCallable CreateAsyncContextTaskCallable(const Model::CreateAsyncContextTaskRequest& request);
 
                 /**
-                 *本接口用于创建异步检索任务
+                 *本接口用于创建离线检索任务
                  * @param req CreateAsyncSearchTaskRequest
                  * @return CreateAsyncSearchTaskOutcome
                  */
@@ -380,7 +380,7 @@ namespace TencentCloud
                 CreateConfigOutcomeCallable CreateConfigCallable(const Model::CreateConfigRequest& request);
 
                 /**
-                 *本接口用于创建日志导出
+                 *本接口用于创建日志下载任务
                  * @param req CreateExportRequest
                  * @return CreateExportOutcome
                  */
@@ -452,7 +452,7 @@ namespace TencentCloud
                 DeleteAlarmNoticeOutcomeCallable DeleteAlarmNoticeCallable(const Model::DeleteAlarmNoticeRequest& request);
 
                 /**
-                 *本接口用于删除异步上下文任务
+                 *本接口用于删除离线上下文任务
                  * @param req DeleteAsyncContextTaskRequest
                  * @return DeleteAsyncContextTaskOutcome
                  */
@@ -461,7 +461,7 @@ namespace TencentCloud
                 DeleteAsyncContextTaskOutcomeCallable DeleteAsyncContextTaskCallable(const Model::DeleteAsyncContextTaskRequest& request);
 
                 /**
-                 *本接口用于删除异步检索任务
+                 *本接口用于删除离线检索任务
                  * @param req DeleteAsyncSearchTaskRequest
                  * @return DeleteAsyncSearchTaskOutcome
                  */
@@ -488,7 +488,7 @@ namespace TencentCloud
                 DeleteConfigFromMachineGroupOutcomeCallable DeleteConfigFromMachineGroupCallable(const Model::DeleteConfigFromMachineGroupRequest& request);
 
                 /**
-                 *本接口用于删除日志导出
+                 *本接口用于删除日志下载任务
                  * @param req DeleteExportRequest
                  * @return DeleteExportOutcome
                  */
@@ -560,7 +560,7 @@ namespace TencentCloud
                 DescribeAlarmsOutcomeCallable DescribeAlarmsCallable(const Model::DescribeAlarmsRequest& request);
 
                 /**
-                 *本接口用户获取异步上下文任务的结果
+                 *本接口用户获取离线上下文任务的结果
                  * @param req DescribeAsyncContextResultRequest
                  * @return DescribeAsyncContextResultOutcome
                  */
@@ -569,7 +569,7 @@ namespace TencentCloud
                 DescribeAsyncContextResultOutcomeCallable DescribeAsyncContextResultCallable(const Model::DescribeAsyncContextResultRequest& request);
 
                 /**
-                 *本接口用于获取异步上下文任务列表
+                 *本接口用于获取离线上下文任务列表
                  * @param req DescribeAsyncContextTasksRequest
                  * @return DescribeAsyncContextTasksOutcome
                  */
@@ -578,7 +578,7 @@ namespace TencentCloud
                 DescribeAsyncContextTasksOutcomeCallable DescribeAsyncContextTasksCallable(const Model::DescribeAsyncContextTasksRequest& request);
 
                 /**
-                 *本接口用户获取异步检索任务的结果
+                 *本接口用户获取离线检索任务的结果
                  * @param req DescribeAsyncSearchResultRequest
                  * @return DescribeAsyncSearchResultOutcome
                  */
@@ -587,7 +587,7 @@ namespace TencentCloud
                 DescribeAsyncSearchResultOutcomeCallable DescribeAsyncSearchResultCallable(const Model::DescribeAsyncSearchResultRequest& request);
 
                 /**
-                 *本接口用户获取异步检索任务列表
+                 *本接口用户获取离线检索任务列表
                  * @param req DescribeAsyncSearchTasksRequest
                  * @return DescribeAsyncSearchTasksOutcome
                  */
@@ -614,7 +614,7 @@ namespace TencentCloud
                 DescribeConfigsOutcomeCallable DescribeConfigsCallable(const Model::DescribeConfigsRequest& request);
 
                 /**
-                 *本接口用于获取日志导出列表
+                 *本接口用于获取日志下载任务列表
                  * @param req DescribeExportsRequest
                  * @return DescribeExportsOutcome
                  */

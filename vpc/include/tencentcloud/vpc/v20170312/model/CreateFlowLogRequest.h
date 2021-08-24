@@ -44,24 +44,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取私用网络ID或者统一ID，建议使用统一ID
-                     * @return VpcId 私用网络ID或者统一ID，建议使用统一ID
-                     */
-                    std::string GetVpcId() const;
-
-                    /**
-                     * 设置私用网络ID或者统一ID，建议使用统一ID
-                     * @param VpcId 私用网络ID或者统一ID，建议使用统一ID
-                     */
-                    void SetVpcId(const std::string& _vpcId);
-
-                    /**
-                     * 判断参数 VpcId 是否已赋值
-                     * @return VpcId 是否已赋值
-                     */
-                    bool VpcIdHasBeenSet() const;
-
-                    /**
                      * 获取流日志实例名字
                      * @return FlowLogName 流日志实例名字
                      */
@@ -80,14 +62,14 @@ namespace TencentCloud
                     bool FlowLogNameHasBeenSet() const;
 
                     /**
-                     * 获取流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE
-                     * @return ResourceType 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE
+                     * 获取流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN
+                     * @return ResourceType 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE
-                     * @param ResourceType 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE
+                     * 设置流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN
+                     * @param ResourceType 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN
                      */
                     void SetResourceType(const std::string& _resourceType);
 
@@ -152,6 +134,24 @@ namespace TencentCloud
                     bool CloudLogIdHasBeenSet() const;
 
                     /**
+                     * 获取私用网络ID或者统一ID，建议使用统一ID，当ResourceType为CCN时不填，其他类型必填。
+                     * @return VpcId 私用网络ID或者统一ID，建议使用统一ID，当ResourceType为CCN时不填，其他类型必填。
+                     */
+                    std::string GetVpcId() const;
+
+                    /**
+                     * 设置私用网络ID或者统一ID，建议使用统一ID，当ResourceType为CCN时不填，其他类型必填。
+                     * @param VpcId 私用网络ID或者统一ID，建议使用统一ID，当ResourceType为CCN时不填，其他类型必填。
+                     */
+                    void SetVpcId(const std::string& _vpcId);
+
+                    /**
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
+                     */
+                    bool VpcIdHasBeenSet() const;
+
+                    /**
                      * 获取流日志实例描述
                      * @return FlowLogDescription 流日志实例描述
                      */
@@ -190,19 +190,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 私用网络ID或者统一ID，建议使用统一ID
-                     */
-                    std::string m_vpcId;
-                    bool m_vpcIdHasBeenSet;
-
-                    /**
                      * 流日志实例名字
                      */
                     std::string m_flowLogName;
                     bool m_flowLogNameHasBeenSet;
 
                     /**
-                     * 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE
+                     * 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
@@ -224,6 +218,12 @@ namespace TencentCloud
                      */
                     std::string m_cloudLogId;
                     bool m_cloudLogIdHasBeenSet;
+
+                    /**
+                     * 私用网络ID或者统一ID，建议使用统一ID，当ResourceType为CCN时不填，其他类型必填。
+                     */
+                    std::string m_vpcId;
+                    bool m_vpcIdHasBeenSet;
 
                     /**
                      * 流日志实例描述

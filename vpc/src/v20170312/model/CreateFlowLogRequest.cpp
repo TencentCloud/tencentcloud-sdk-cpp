@@ -23,12 +23,12 @@ using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
 CreateFlowLogRequest::CreateFlowLogRequest() :
-    m_vpcIdHasBeenSet(false),
     m_flowLogNameHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_trafficTypeHasBeenSet(false),
     m_cloudLogIdHasBeenSet(false),
+    m_vpcIdHasBeenSet(false),
     m_flowLogDescriptionHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -40,14 +40,6 @@ string CreateFlowLogRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_vpcIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "VpcId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_flowLogNameHasBeenSet)
     {
@@ -89,6 +81,14 @@ string CreateFlowLogRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_cloudLogId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_vpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_flowLogDescriptionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -119,22 +119,6 @@ string CreateFlowLogRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string CreateFlowLogRequest::GetVpcId() const
-{
-    return m_vpcId;
-}
-
-void CreateFlowLogRequest::SetVpcId(const string& _vpcId)
-{
-    m_vpcId = _vpcId;
-    m_vpcIdHasBeenSet = true;
-}
-
-bool CreateFlowLogRequest::VpcIdHasBeenSet() const
-{
-    return m_vpcIdHasBeenSet;
-}
 
 string CreateFlowLogRequest::GetFlowLogName() const
 {
@@ -214,6 +198,22 @@ void CreateFlowLogRequest::SetCloudLogId(const string& _cloudLogId)
 bool CreateFlowLogRequest::CloudLogIdHasBeenSet() const
 {
     return m_cloudLogIdHasBeenSet;
+}
+
+string CreateFlowLogRequest::GetVpcId() const
+{
+    return m_vpcId;
+}
+
+void CreateFlowLogRequest::SetVpcId(const string& _vpcId)
+{
+    m_vpcId = _vpcId;
+    m_vpcIdHasBeenSet = true;
+}
+
+bool CreateFlowLogRequest::VpcIdHasBeenSet() const
+{
+    return m_vpcIdHasBeenSet;
 }
 
 string CreateFlowLogRequest::GetFlowLogDescription() const

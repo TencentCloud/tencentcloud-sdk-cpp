@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool PolicyTypeHasBeenSet() const;
 
+                    /**
+                     * 获取搜索关键字
+                     * @return Keyword 搜索关键字
+                     */
+                    std::string GetKeyword() const;
+
+                    /**
+                     * 设置搜索关键字
+                     * @param Keyword 搜索关键字
+                     */
+                    void SetKeyword(const std::string& _keyword);
+
+                    /**
+                     * 判断参数 Keyword 是否已赋值
+                     * @return Keyword 是否已赋值
+                     */
+                    bool KeywordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     std::string m_policyType;
                     bool m_policyTypeHasBeenSet;
+
+                    /**
+                     * 搜索关键字
+                     */
+                    std::string m_keyword;
+                    bool m_keywordHasBeenSet;
 
                 };
             }

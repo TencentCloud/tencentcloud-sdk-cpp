@@ -37,7 +37,8 @@ ProxyGroupDetail::ProxyGroupDetail() :
     m_policyIdHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_clientIPMethodHasBeenSet(false),
-    m_iPAddressVersionHasBeenSet(false)
+    m_iPAddressVersionHasBeenSet(false),
+    m_packageTypeHasBeenSet(false)
 {
 }
 
@@ -236,6 +237,16 @@ CoreInternalOutcome ProxyGroupDetail::Deserialize(const rapidjson::Value &value)
         m_iPAddressVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("PackageType") && !value["PackageType"].IsNull())
+    {
+        if (!value["PackageType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyGroupDetail.PackageType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_packageType = string(value["PackageType"].GetString());
+        m_packageTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -390,6 +401,14 @@ void ProxyGroupDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "IPAddressVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_iPAddressVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_packageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PackageType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_packageType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -665,5 +684,21 @@ void ProxyGroupDetail::SetIPAddressVersion(const string& _iPAddressVersion)
 bool ProxyGroupDetail::IPAddressVersionHasBeenSet() const
 {
     return m_iPAddressVersionHasBeenSet;
+}
+
+string ProxyGroupDetail::GetPackageType() const
+{
+    return m_packageType;
+}
+
+void ProxyGroupDetail::SetPackageType(const string& _packageType)
+{
+    m_packageType = _packageType;
+    m_packageTypeHasBeenSet = true;
+}
+
+bool ProxyGroupDetail::PackageTypeHasBeenSet() const
+{
+    return m_packageTypeHasBeenSet;
 }
 

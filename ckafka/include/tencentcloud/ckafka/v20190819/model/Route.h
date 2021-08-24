@@ -100,14 +100,14 @@ namespace TencentCloud
                     bool RouteIdHasBeenSet() const;
 
                     /**
-                     * 获取vip网络类型（1:外网TGW  2:基础网络 3:VPC网络 4:腾讯云支持环境(一般用于内部实例) 5:SSL外网访问方式访问 6:黑石环境vpc）
-                     * @return VipType vip网络类型（1:外网TGW  2:基础网络 3:VPC网络 4:腾讯云支持环境(一般用于内部实例) 5:SSL外网访问方式访问 6:黑石环境vpc）
+                     * 获取vip网络类型（1:外网TGW  2:基础网络 3:VPC网络 4:支撑网络(标准版) 5:SSL外网访问方式访问 6:黑石环境vpc 7:支撑网络(专业版)）
+                     * @return VipType vip网络类型（1:外网TGW  2:基础网络 3:VPC网络 4:支撑网络(标准版) 5:SSL外网访问方式访问 6:黑石环境vpc 7:支撑网络(专业版)）
                      */
                     int64_t GetVipType() const;
 
                     /**
-                     * 设置vip网络类型（1:外网TGW  2:基础网络 3:VPC网络 4:腾讯云支持环境(一般用于内部实例) 5:SSL外网访问方式访问 6:黑石环境vpc）
-                     * @param VipType vip网络类型（1:外网TGW  2:基础网络 3:VPC网络 4:腾讯云支持环境(一般用于内部实例) 5:SSL外网访问方式访问 6:黑石环境vpc）
+                     * 设置vip网络类型（1:外网TGW  2:基础网络 3:VPC网络 4:支撑网络(标准版) 5:SSL外网访问方式访问 6:黑石环境vpc 7:支撑网络(专业版)）
+                     * @param VipType vip网络类型（1:外网TGW  2:基础网络 3:VPC网络 4:支撑网络(标准版) 5:SSL外网访问方式访问 6:黑石环境vpc 7:支撑网络(专业版)）
                      */
                     void SetVipType(const int64_t& _vipType);
 
@@ -179,6 +179,28 @@ namespace TencentCloud
                      */
                     bool DomainPortHasBeenSet() const;
 
+                    /**
+                     * 获取时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeleteTimestamp 时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDeleteTimestamp() const;
+
+                    /**
+                     * 设置时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeleteTimestamp 时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeleteTimestamp(const std::string& _deleteTimestamp);
+
+                    /**
+                     * 判断参数 DeleteTimestamp 是否已赋值
+                     * @return DeleteTimestamp 是否已赋值
+                     */
+                    bool DeleteTimestampHasBeenSet() const;
+
                 private:
 
                     /**
@@ -198,7 +220,7 @@ namespace TencentCloud
                     bool m_routeIdHasBeenSet;
 
                     /**
-                     * vip网络类型（1:外网TGW  2:基础网络 3:VPC网络 4:腾讯云支持环境(一般用于内部实例) 5:SSL外网访问方式访问 6:黑石环境vpc）
+                     * vip网络类型（1:外网TGW  2:基础网络 3:VPC网络 4:支撑网络(标准版) 5:SSL外网访问方式访问 6:黑石环境vpc 7:支撑网络(专业版)）
                      */
                     int64_t m_vipType;
                     bool m_vipTypeHasBeenSet;
@@ -222,6 +244,13 @@ namespace TencentCloud
                      */
                     int64_t m_domainPort;
                     bool m_domainPortHasBeenSet;
+
+                    /**
+                     * 时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deleteTimestamp;
+                    bool m_deleteTimestampHasBeenSet;
 
                 };
             }

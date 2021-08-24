@@ -21,8 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/gaap/v20180529/model/TagPair.h>
 #include <tencentcloud/gaap/v20180529/model/Filter.h>
+#include <tencentcloud/gaap/v20180529/model/TagPair.h>
 
 
 namespace TencentCloud
@@ -111,6 +111,36 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
+                     * 获取过滤条件。   
+每次请求的Filter.Values的上限为5。
+RealServerRegion - String - 是否必填：否 -（过滤条件）按照源站地域过滤，可参考DescribeDestRegions接口返回结果中的RegionId。
+PackageType - String - 是否必填：否 - （过滤条件）通道组类型，Thunder表示标准通道组，Accelerator表示游戏加速器通道。
+                     * @return Filters 过滤条件。   
+每次请求的Filter.Values的上限为5。
+RealServerRegion - String - 是否必填：否 -（过滤条件）按照源站地域过滤，可参考DescribeDestRegions接口返回结果中的RegionId。
+PackageType - String - 是否必填：否 - （过滤条件）通道组类型，Thunder表示标准通道组，Accelerator表示游戏加速器通道。
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置过滤条件。   
+每次请求的Filter.Values的上限为5。
+RealServerRegion - String - 是否必填：否 -（过滤条件）按照源站地域过滤，可参考DescribeDestRegions接口返回结果中的RegionId。
+PackageType - String - 是否必填：否 - （过滤条件）通道组类型，Thunder表示标准通道组，Accelerator表示游戏加速器通道。
+                     * @param Filters 过滤条件。   
+每次请求的Filter.Values的上限为5。
+RealServerRegion - String - 是否必填：否 -（过滤条件）按照源站地域过滤，可参考DescribeDestRegions接口返回结果中的RegionId。
+PackageType - String - 是否必填：否 - （过滤条件）通道组类型，Thunder表示标准通道组，Accelerator表示游戏加速器通道。
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     */
+                    bool FiltersHasBeenSet() const;
+
+                    /**
                      * 获取标签列表，当存在该字段时，拉取对应标签下的资源列表。
 最多支持5个标签，当存在两个或两个以上的标签时，满足其中任意一个标签时，该通道组会被拉取出来。
                      * @return TagSet 标签列表，当存在该字段时，拉取对应标签下的资源列表。
@@ -131,32 +161,6 @@ namespace TencentCloud
                      * @return TagSet 是否已赋值
                      */
                     bool TagSetHasBeenSet() const;
-
-                    /**
-                     * 获取过滤条件。   
-每次请求的Filter.Values的上限为5。
-RealServerRegion - String - 是否必填：否 -（过滤条件）按照源站地域过滤，可参考DescribeDestRegions接口返回结果中的RegionId。
-                     * @return Filters 过滤条件。   
-每次请求的Filter.Values的上限为5。
-RealServerRegion - String - 是否必填：否 -（过滤条件）按照源站地域过滤，可参考DescribeDestRegions接口返回结果中的RegionId。
-                     */
-                    std::vector<Filter> GetFilters() const;
-
-                    /**
-                     * 设置过滤条件。   
-每次请求的Filter.Values的上限为5。
-RealServerRegion - String - 是否必填：否 -（过滤条件）按照源站地域过滤，可参考DescribeDestRegions接口返回结果中的RegionId。
-                     * @param Filters 过滤条件。   
-每次请求的Filter.Values的上限为5。
-RealServerRegion - String - 是否必填：否 -（过滤条件）按照源站地域过滤，可参考DescribeDestRegions接口返回结果中的RegionId。
-                     */
-                    void SetFilters(const std::vector<Filter>& _filters);
-
-                    /**
-                     * 判断参数 Filters 是否已赋值
-                     * @return Filters 是否已赋值
-                     */
-                    bool FiltersHasBeenSet() const;
 
                 private:
 
@@ -182,19 +186,20 @@ RealServerRegion - String - 是否必填：否 -（过滤条件）按照源站�
                     bool m_projectIdHasBeenSet;
 
                     /**
+                     * 过滤条件。   
+每次请求的Filter.Values的上限为5。
+RealServerRegion - String - 是否必填：否 -（过滤条件）按照源站地域过滤，可参考DescribeDestRegions接口返回结果中的RegionId。
+PackageType - String - 是否必填：否 - （过滤条件）通道组类型，Thunder表示标准通道组，Accelerator表示游戏加速器通道。
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
+
+                    /**
                      * 标签列表，当存在该字段时，拉取对应标签下的资源列表。
 最多支持5个标签，当存在两个或两个以上的标签时，满足其中任意一个标签时，该通道组会被拉取出来。
                      */
                     std::vector<TagPair> m_tagSet;
                     bool m_tagSetHasBeenSet;
-
-                    /**
-                     * 过滤条件。   
-每次请求的Filter.Values的上限为5。
-RealServerRegion - String - 是否必填：否 -（过滤条件）按照源站地域过滤，可参考DescribeDestRegions接口返回结果中的RegionId。
-                     */
-                    std::vector<Filter> m_filters;
-                    bool m_filtersHasBeenSet;
 
                 };
             }

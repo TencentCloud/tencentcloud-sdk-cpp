@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeLiveDomainsResponse::DescribeLiveDomainsResponse() :
     m_allCountHasBeenSet(false),
-    m_domainListHasBeenSet(false)
+    m_domainListHasBeenSet(false),
+    m_createLimitCountHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,16 @@ CoreInternalOutcome DescribeLiveDomainsResponse::Deserialize(const string &paylo
         m_domainListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CreateLimitCount") && !rsp["CreateLimitCount"].IsNull())
+    {
+        if (!rsp["CreateLimitCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateLimitCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createLimitCount = rsp["CreateLimitCount"].GetInt64();
+        m_createLimitCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string DescribeLiveDomainsResponse::ToJsonString() const
         }
     }
 
+    if (m_createLimitCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateLimitCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createLimitCount, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +175,16 @@ vector<DomainInfo> DescribeLiveDomainsResponse::GetDomainList() const
 bool DescribeLiveDomainsResponse::DomainListHasBeenSet() const
 {
     return m_domainListHasBeenSet;
+}
+
+int64_t DescribeLiveDomainsResponse::GetCreateLimitCount() const
+{
+    return m_createLimitCount;
+}
+
+bool DescribeLiveDomainsResponse::CreateLimitCountHasBeenSet() const
+{
+    return m_createLimitCountHasBeenSet;
 }
 
 

@@ -79,8 +79,16 @@
 #include <tencentcloud/tbaas/v20180416/model/InvokeResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/InvokeBcosTransRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/InvokeBcosTransResponse.h>
+#include <tencentcloud/tbaas/v20180416/model/InvokeChainMakerContractRequest.h>
+#include <tencentcloud/tbaas/v20180416/model/InvokeChainMakerContractResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/QueryRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/QueryResponse.h>
+#include <tencentcloud/tbaas/v20180416/model/QueryChainMakerBlockTransactionRequest.h>
+#include <tencentcloud/tbaas/v20180416/model/QueryChainMakerBlockTransactionResponse.h>
+#include <tencentcloud/tbaas/v20180416/model/QueryChainMakerContractRequest.h>
+#include <tencentcloud/tbaas/v20180416/model/QueryChainMakerContractResponse.h>
+#include <tencentcloud/tbaas/v20180416/model/QueryChainMakerTransactionRequest.h>
+#include <tencentcloud/tbaas/v20180416/model/QueryChainMakerTransactionResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/SendTransactionHandlerRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/SendTransactionHandlerResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/SrvInvokeRequest.h>
@@ -185,9 +193,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InvokeBcosTransResponse> InvokeBcosTransOutcome;
                 typedef std::future<InvokeBcosTransOutcome> InvokeBcosTransOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::InvokeBcosTransRequest&, InvokeBcosTransOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InvokeBcosTransAsyncHandler;
+                typedef Outcome<Core::Error, Model::InvokeChainMakerContractResponse> InvokeChainMakerContractOutcome;
+                typedef std::future<InvokeChainMakerContractOutcome> InvokeChainMakerContractOutcomeCallable;
+                typedef std::function<void(const TbaasClient*, const Model::InvokeChainMakerContractRequest&, InvokeChainMakerContractOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InvokeChainMakerContractAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryResponse> QueryOutcome;
                 typedef std::future<QueryOutcome> QueryOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::QueryRequest&, QueryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryChainMakerBlockTransactionResponse> QueryChainMakerBlockTransactionOutcome;
+                typedef std::future<QueryChainMakerBlockTransactionOutcome> QueryChainMakerBlockTransactionOutcomeCallable;
+                typedef std::function<void(const TbaasClient*, const Model::QueryChainMakerBlockTransactionRequest&, QueryChainMakerBlockTransactionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryChainMakerBlockTransactionAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryChainMakerContractResponse> QueryChainMakerContractOutcome;
+                typedef std::future<QueryChainMakerContractOutcome> QueryChainMakerContractOutcomeCallable;
+                typedef std::function<void(const TbaasClient*, const Model::QueryChainMakerContractRequest&, QueryChainMakerContractOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryChainMakerContractAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryChainMakerTransactionResponse> QueryChainMakerTransactionOutcome;
+                typedef std::future<QueryChainMakerTransactionOutcome> QueryChainMakerTransactionOutcomeCallable;
+                typedef std::function<void(const TbaasClient*, const Model::QueryChainMakerTransactionRequest&, QueryChainMakerTransactionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryChainMakerTransactionAsyncHandler;
                 typedef Outcome<Core::Error, Model::SendTransactionHandlerResponse> SendTransactionHandlerOutcome;
                 typedef std::future<SendTransactionHandlerOutcome> SendTransactionHandlerOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::SendTransactionHandlerRequest&, SendTransactionHandlerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendTransactionHandlerAsyncHandler;
@@ -463,6 +483,15 @@ Bcos分页查询当前群组的交易信息列表
                 InvokeBcosTransOutcomeCallable InvokeBcosTransCallable(const Model::InvokeBcosTransRequest& request);
 
                 /**
+                 *调用长安链合约执行交易
+                 * @param req InvokeChainMakerContractRequest
+                 * @return InvokeChainMakerContractOutcome
+                 */
+                InvokeChainMakerContractOutcome InvokeChainMakerContract(const Model::InvokeChainMakerContractRequest &request);
+                void InvokeChainMakerContractAsync(const Model::InvokeChainMakerContractRequest& request, const InvokeChainMakerContractAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InvokeChainMakerContractOutcomeCallable InvokeChainMakerContractCallable(const Model::InvokeChainMakerContractRequest& request);
+
+                /**
                  *查询交易
                  * @param req QueryRequest
                  * @return QueryOutcome
@@ -470,6 +499,33 @@ Bcos分页查询当前群组的交易信息列表
                 QueryOutcome Query(const Model::QueryRequest &request);
                 void QueryAsync(const Model::QueryRequest& request, const QueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryOutcomeCallable QueryCallable(const Model::QueryRequest& request);
+
+                /**
+                 *查询长安链指定高度区块的交易
+                 * @param req QueryChainMakerBlockTransactionRequest
+                 * @return QueryChainMakerBlockTransactionOutcome
+                 */
+                QueryChainMakerBlockTransactionOutcome QueryChainMakerBlockTransaction(const Model::QueryChainMakerBlockTransactionRequest &request);
+                void QueryChainMakerBlockTransactionAsync(const Model::QueryChainMakerBlockTransactionRequest& request, const QueryChainMakerBlockTransactionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryChainMakerBlockTransactionOutcomeCallable QueryChainMakerBlockTransactionCallable(const Model::QueryChainMakerBlockTransactionRequest& request);
+
+                /**
+                 *调用长安链合约查询
+                 * @param req QueryChainMakerContractRequest
+                 * @return QueryChainMakerContractOutcome
+                 */
+                QueryChainMakerContractOutcome QueryChainMakerContract(const Model::QueryChainMakerContractRequest &request);
+                void QueryChainMakerContractAsync(const Model::QueryChainMakerContractRequest& request, const QueryChainMakerContractAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryChainMakerContractOutcomeCallable QueryChainMakerContractCallable(const Model::QueryChainMakerContractRequest& request);
+
+                /**
+                 *通过交易ID查询长安链交易
+                 * @param req QueryChainMakerTransactionRequest
+                 * @return QueryChainMakerTransactionOutcome
+                 */
+                QueryChainMakerTransactionOutcome QueryChainMakerTransaction(const Model::QueryChainMakerTransactionRequest &request);
+                void QueryChainMakerTransactionAsync(const Model::QueryChainMakerTransactionRequest& request, const QueryChainMakerTransactionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryChainMakerTransactionOutcomeCallable QueryChainMakerTransactionCallable(const Model::QueryChainMakerTransactionRequest& request);
 
                 /**
                  *版本升级

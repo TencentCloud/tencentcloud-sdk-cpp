@@ -23,8 +23,8 @@ using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
 ModifyFlowLogAttributeRequest::ModifyFlowLogAttributeRequest() :
-    m_vpcIdHasBeenSet(false),
     m_flowLogIdHasBeenSet(false),
+    m_vpcIdHasBeenSet(false),
     m_flowLogNameHasBeenSet(false),
     m_flowLogDescriptionHasBeenSet(false)
 {
@@ -37,20 +37,20 @@ string ModifyFlowLogAttributeRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_vpcIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "VpcId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_flowLogIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FlowLogId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_flowLogId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_flowLogNameHasBeenSet)
@@ -77,22 +77,6 @@ string ModifyFlowLogAttributeRequest::ToJsonString() const
 }
 
 
-string ModifyFlowLogAttributeRequest::GetVpcId() const
-{
-    return m_vpcId;
-}
-
-void ModifyFlowLogAttributeRequest::SetVpcId(const string& _vpcId)
-{
-    m_vpcId = _vpcId;
-    m_vpcIdHasBeenSet = true;
-}
-
-bool ModifyFlowLogAttributeRequest::VpcIdHasBeenSet() const
-{
-    return m_vpcIdHasBeenSet;
-}
-
 string ModifyFlowLogAttributeRequest::GetFlowLogId() const
 {
     return m_flowLogId;
@@ -107,6 +91,22 @@ void ModifyFlowLogAttributeRequest::SetFlowLogId(const string& _flowLogId)
 bool ModifyFlowLogAttributeRequest::FlowLogIdHasBeenSet() const
 {
     return m_flowLogIdHasBeenSet;
+}
+
+string ModifyFlowLogAttributeRequest::GetVpcId() const
+{
+    return m_vpcId;
+}
+
+void ModifyFlowLogAttributeRequest::SetVpcId(const string& _vpcId)
+{
+    m_vpcId = _vpcId;
+    m_vpcIdHasBeenSet = true;
+}
+
+bool ModifyFlowLogAttributeRequest::VpcIdHasBeenSet() const
+{
+    return m_vpcIdHasBeenSet;
 }
 
 string ModifyFlowLogAttributeRequest::GetFlowLogName() const

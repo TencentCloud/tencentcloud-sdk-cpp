@@ -23,7 +23,8 @@ using namespace TencentCloud::Gaap::V20180529::Model;
 using namespace std;
 
 DescribeRegionAndPriceRequest::DescribeRegionAndPriceRequest() :
-    m_iPAddressVersionHasBeenSet(false)
+    m_iPAddressVersionHasBeenSet(false),
+    m_packageTypeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeRegionAndPriceRequest::ToJsonString() const
         string key = "IPAddressVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_iPAddressVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_packageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PackageType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_packageType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeRegionAndPriceRequest::SetIPAddressVersion(const string& _iPAddress
 bool DescribeRegionAndPriceRequest::IPAddressVersionHasBeenSet() const
 {
     return m_iPAddressVersionHasBeenSet;
+}
+
+string DescribeRegionAndPriceRequest::GetPackageType() const
+{
+    return m_packageType;
+}
+
+void DescribeRegionAndPriceRequest::SetPackageType(const string& _packageType)
+{
+    m_packageType = _packageType;
+    m_packageTypeHasBeenSet = true;
+}
+
+bool DescribeRegionAndPriceRequest::PackageTypeHasBeenSet() const
+{
+    return m_packageTypeHasBeenSet;
 }
 
 

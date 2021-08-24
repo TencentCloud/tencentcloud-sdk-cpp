@@ -26,7 +26,10 @@ ModifyDBInstanceSpecRequest::ModifyDBInstanceSpecRequest() :
     m_instanceIdHasBeenSet(false),
     m_memoryHasBeenSet(false),
     m_volumeHasBeenSet(false),
-    m_oplogSizeHasBeenSet(false)
+    m_oplogSizeHasBeenSet(false),
+    m_nodeNumHasBeenSet(false),
+    m_replicateSetNumHasBeenSet(false),
+    m_inMaintenanceHasBeenSet(false)
 {
 }
 
@@ -67,6 +70,30 @@ string ModifyDBInstanceSpecRequest::ToJsonString() const
         string key = "OplogSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_oplogSize, allocator);
+    }
+
+    if (m_nodeNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_nodeNum, allocator);
+    }
+
+    if (m_replicateSetNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReplicateSetNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_replicateSetNum, allocator);
+    }
+
+    if (m_inMaintenanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InMaintenance";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_inMaintenance, allocator);
     }
 
 
@@ -139,6 +166,54 @@ void ModifyDBInstanceSpecRequest::SetOplogSize(const uint64_t& _oplogSize)
 bool ModifyDBInstanceSpecRequest::OplogSizeHasBeenSet() const
 {
     return m_oplogSizeHasBeenSet;
+}
+
+uint64_t ModifyDBInstanceSpecRequest::GetNodeNum() const
+{
+    return m_nodeNum;
+}
+
+void ModifyDBInstanceSpecRequest::SetNodeNum(const uint64_t& _nodeNum)
+{
+    m_nodeNum = _nodeNum;
+    m_nodeNumHasBeenSet = true;
+}
+
+bool ModifyDBInstanceSpecRequest::NodeNumHasBeenSet() const
+{
+    return m_nodeNumHasBeenSet;
+}
+
+uint64_t ModifyDBInstanceSpecRequest::GetReplicateSetNum() const
+{
+    return m_replicateSetNum;
+}
+
+void ModifyDBInstanceSpecRequest::SetReplicateSetNum(const uint64_t& _replicateSetNum)
+{
+    m_replicateSetNum = _replicateSetNum;
+    m_replicateSetNumHasBeenSet = true;
+}
+
+bool ModifyDBInstanceSpecRequest::ReplicateSetNumHasBeenSet() const
+{
+    return m_replicateSetNumHasBeenSet;
+}
+
+uint64_t ModifyDBInstanceSpecRequest::GetInMaintenance() const
+{
+    return m_inMaintenance;
+}
+
+void ModifyDBInstanceSpecRequest::SetInMaintenance(const uint64_t& _inMaintenance)
+{
+    m_inMaintenance = _inMaintenance;
+    m_inMaintenanceHasBeenSet = true;
+}
+
+bool ModifyDBInstanceSpecRequest::InMaintenanceHasBeenSet() const
+{
+    return m_inMaintenanceHasBeenSet;
 }
 
 

@@ -29,7 +29,9 @@ SearchLogResponse::SearchLogResponse() :
     m_analysisHasBeenSet(false),
     m_colNamesHasBeenSet(false),
     m_resultsHasBeenSet(false),
-    m_analysisResultsHasBeenSet(false)
+    m_analysisResultsHasBeenSet(false),
+    m_analysisRecordsHasBeenSet(false),
+    m_columnsHasBeenSet(false)
 {
 }
 
@@ -150,6 +152,39 @@ CoreInternalOutcome SearchLogResponse::Deserialize(const string &payload)
         m_analysisResultsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AnalysisRecords") && !rsp["AnalysisRecords"].IsNull())
+    {
+        if (!rsp["AnalysisRecords"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AnalysisRecords` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["AnalysisRecords"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_analysisRecords.push_back((*itr).GetString());
+        }
+        m_analysisRecordsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Columns") && !rsp["Columns"].IsNull())
+    {
+        if (!rsp["Columns"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Columns` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Columns"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Column item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_columns.push_back(item);
+        }
+        m_columnsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -227,6 +262,34 @@ string SearchLogResponse::ToJsonString() const
         }
     }
 
+    if (m_analysisRecordsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AnalysisRecords";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_analysisRecords.begin(); itr != m_analysisRecords.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_columnsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Columns";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_columns.begin(); itr != m_columns.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -297,6 +360,26 @@ vector<LogItems> SearchLogResponse::GetAnalysisResults() const
 bool SearchLogResponse::AnalysisResultsHasBeenSet() const
 {
     return m_analysisResultsHasBeenSet;
+}
+
+vector<string> SearchLogResponse::GetAnalysisRecords() const
+{
+    return m_analysisRecords;
+}
+
+bool SearchLogResponse::AnalysisRecordsHasBeenSet() const
+{
+    return m_analysisRecordsHasBeenSet;
+}
+
+vector<Column> SearchLogResponse::GetColumns() const
+{
+    return m_columns;
+}
+
+bool SearchLogResponse::ColumnsHasBeenSet() const
+{
+    return m_columnsHasBeenSet;
 }
 
 

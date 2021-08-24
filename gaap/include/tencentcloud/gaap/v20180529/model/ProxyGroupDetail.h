@@ -394,6 +394,28 @@ namespace TencentCloud
                      */
                     bool IPAddressVersionHasBeenSet() const;
 
+                    /**
+                     * 获取通道组类型，可取值：Thunder、Accelerator，默认值Thunder
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PackageType 通道组类型，可取值：Thunder、Accelerator，默认值Thunder
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPackageType() const;
+
+                    /**
+                     * 设置通道组类型，可取值：Thunder、Accelerator，默认值Thunder
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PackageType 通道组类型，可取值：Thunder、Accelerator，默认值Thunder
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPackageType(const std::string& _packageType);
+
+                    /**
+                     * 判断参数 PackageType 是否已赋值
+                     * @return PackageType 是否已赋值
+                     */
+                    bool PackageTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -507,6 +529,13 @@ namespace TencentCloud
                      */
                     std::string m_iPAddressVersion;
                     bool m_iPAddressVersionHasBeenSet;
+
+                    /**
+                     * 通道组类型，可取值：Thunder、Accelerator，默认值Thunder
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_packageType;
+                    bool m_packageTypeHasBeenSet;
 
                 };
             }

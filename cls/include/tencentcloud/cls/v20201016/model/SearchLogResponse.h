@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cls/v20201016/model/LogInfo.h>
 #include <tencentcloud/cls/v20201016/model/LogItems.h>
+#include <tencentcloud/cls/v20201016/model/Column.h>
 
 
 namespace TencentCloud
@@ -123,6 +124,34 @@ namespace TencentCloud
                      */
                     bool AnalysisResultsHasBeenSet() const;
 
+                    /**
+                     * 获取新的日志分析结果; UseNewAnalysis为true有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AnalysisRecords 新的日志分析结果; UseNewAnalysis为true有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetAnalysisRecords() const;
+
+                    /**
+                     * 判断参数 AnalysisRecords 是否已赋值
+                     * @return AnalysisRecords 是否已赋值
+                     */
+                    bool AnalysisRecordsHasBeenSet() const;
+
+                    /**
+                     * 获取日志分析的列属性; UseNewAnalysis为true有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Columns 日志分析的列属性; UseNewAnalysis为true有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Column> GetColumns() const;
+
+                    /**
+                     * 判断参数 Columns 是否已赋值
+                     * @return Columns 是否已赋值
+                     */
+                    bool ColumnsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +192,20 @@ namespace TencentCloud
                      */
                     std::vector<LogItems> m_analysisResults;
                     bool m_analysisResultsHasBeenSet;
+
+                    /**
+                     * 新的日志分析结果; UseNewAnalysis为true有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_analysisRecords;
+                    bool m_analysisRecordsHasBeenSet;
+
+                    /**
+                     * 日志分析的列属性; UseNewAnalysis为true有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Column> m_columns;
+                    bool m_columnsHasBeenSet;
 
                 };
             }

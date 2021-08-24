@@ -26,8 +26,8 @@ DescribeProxyGroupListRequest::DescribeProxyGroupListRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_tagSetHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_tagSetHasBeenSet(false)
 {
 }
 
@@ -62,21 +62,6 @@ string DescribeProxyGroupListRequest::ToJsonString() const
         d.AddMember(iKey, m_projectId, allocator);
     }
 
-    if (m_tagSetHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TagSet";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_tagSet.begin(); itr != m_tagSet.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
-    }
-
     if (m_filtersHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -86,6 +71,21 @@ string DescribeProxyGroupListRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_tagSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagSet.begin(); itr != m_tagSet.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -148,22 +148,6 @@ bool DescribeProxyGroupListRequest::ProjectIdHasBeenSet() const
     return m_projectIdHasBeenSet;
 }
 
-vector<TagPair> DescribeProxyGroupListRequest::GetTagSet() const
-{
-    return m_tagSet;
-}
-
-void DescribeProxyGroupListRequest::SetTagSet(const vector<TagPair>& _tagSet)
-{
-    m_tagSet = _tagSet;
-    m_tagSetHasBeenSet = true;
-}
-
-bool DescribeProxyGroupListRequest::TagSetHasBeenSet() const
-{
-    return m_tagSetHasBeenSet;
-}
-
 vector<Filter> DescribeProxyGroupListRequest::GetFilters() const
 {
     return m_filters;
@@ -178,6 +162,22 @@ void DescribeProxyGroupListRequest::SetFilters(const vector<Filter>& _filters)
 bool DescribeProxyGroupListRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+vector<TagPair> DescribeProxyGroupListRequest::GetTagSet() const
+{
+    return m_tagSet;
+}
+
+void DescribeProxyGroupListRequest::SetTagSet(const vector<TagPair>& _tagSet)
+{
+    m_tagSet = _tagSet;
+    m_tagSetHasBeenSet = true;
+}
+
+bool DescribeProxyGroupListRequest::TagSetHasBeenSet() const
+{
+    return m_tagSetHasBeenSet;
 }
 
 

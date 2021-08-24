@@ -689,6 +689,24 @@ namespace TencentCloud
                      */
                     bool CronHorizontalAutoscalerHasBeenSet() const;
 
+                    /**
+                     * 获取是否启用log，1为启用，0为不启用
+                     * @return LogEnable 是否启用log，1为启用，0为不启用
+                     */
+                    int64_t GetLogEnable() const;
+
+                    /**
+                     * 设置是否启用log，1为启用，0为不启用
+                     * @param LogEnable 是否启用log，1为启用，0为不启用
+                     */
+                    void SetLogEnable(const int64_t& _logEnable);
+
+                    /**
+                     * 判断参数 LogEnable 是否已赋值
+                     * @return LogEnable 是否已赋值
+                     */
+                    bool LogEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -900,6 +918,12 @@ namespace TencentCloud
                      */
                     std::vector<CronHorizontalAutoscaler> m_cronHorizontalAutoscaler;
                     bool m_cronHorizontalAutoscalerHasBeenSet;
+
+                    /**
+                     * 是否启用log，1为启用，0为不启用
+                     */
+                    int64_t m_logEnable;
+                    bool m_logEnableHasBeenSet;
 
                 };
             }

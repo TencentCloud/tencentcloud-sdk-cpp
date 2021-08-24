@@ -23,8 +23,12 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/gme/v20180711/model/CreateAgeDetectTaskRequest.h>
+#include <tencentcloud/gme/v20180711/model/CreateAgeDetectTaskResponse.h>
 #include <tencentcloud/gme/v20180711/model/CreateAppRequest.h>
 #include <tencentcloud/gme/v20180711/model/CreateAppResponse.h>
+#include <tencentcloud/gme/v20180711/model/DescribeAgeDetectTaskRequest.h>
+#include <tencentcloud/gme/v20180711/model/DescribeAgeDetectTaskResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeAppStatisticsRequest.h>
 #include <tencentcloud/gme/v20180711/model/DescribeAppStatisticsResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeApplicationDataRequest.h>
@@ -61,9 +65,15 @@ namespace TencentCloud
                 GmeClient(const Credential &credential, const std::string &region);
                 GmeClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CreateAgeDetectTaskResponse> CreateAgeDetectTaskOutcome;
+                typedef std::future<CreateAgeDetectTaskOutcome> CreateAgeDetectTaskOutcomeCallable;
+                typedef std::function<void(const GmeClient*, const Model::CreateAgeDetectTaskRequest&, CreateAgeDetectTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAgeDetectTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAppResponse> CreateAppOutcome;
                 typedef std::future<CreateAppOutcome> CreateAppOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::CreateAppRequest&, CreateAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAppAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAgeDetectTaskResponse> DescribeAgeDetectTaskOutcome;
+                typedef std::future<DescribeAgeDetectTaskOutcome> DescribeAgeDetectTaskOutcomeCallable;
+                typedef std::function<void(const GmeClient*, const Model::DescribeAgeDetectTaskRequest&, DescribeAgeDetectTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgeDetectTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAppStatisticsResponse> DescribeAppStatisticsOutcome;
                 typedef std::future<DescribeAppStatisticsOutcome> DescribeAppStatisticsOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::DescribeAppStatisticsRequest&, DescribeAppStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppStatisticsAsyncHandler;
@@ -101,6 +111,15 @@ namespace TencentCloud
 
 
                 /**
+                 *用于创建年龄语音识别任务的接口，请求频率10次/秒。该接口目前通过白名单开放试用，如有需求，请提交工单申请。
+                 * @param req CreateAgeDetectTaskRequest
+                 * @return CreateAgeDetectTaskOutcome
+                 */
+                CreateAgeDetectTaskOutcome CreateAgeDetectTask(const Model::CreateAgeDetectTaskRequest &request);
+                void CreateAgeDetectTaskAsync(const Model::CreateAgeDetectTaskRequest& request, const CreateAgeDetectTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAgeDetectTaskOutcomeCallable CreateAgeDetectTaskCallable(const Model::CreateAgeDetectTaskRequest& request);
+
+                /**
                  *本接口(CreateApp)用于创建一个GME应用。
                  * @param req CreateAppRequest
                  * @return CreateAppOutcome
@@ -108,6 +127,15 @@ namespace TencentCloud
                 CreateAppOutcome CreateApp(const Model::CreateAppRequest &request);
                 void CreateAppAsync(const Model::CreateAppRequest& request, const CreateAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAppOutcomeCallable CreateAppCallable(const Model::CreateAppRequest& request);
+
+                /**
+                 *查询年龄语音识别任务结果，请求频率10次/秒。该接口目前通过白名单开放试用，如有需求，请提交工单申请。
+                 * @param req DescribeAgeDetectTaskRequest
+                 * @return DescribeAgeDetectTaskOutcome
+                 */
+                DescribeAgeDetectTaskOutcome DescribeAgeDetectTask(const Model::DescribeAgeDetectTaskRequest &request);
+                void DescribeAgeDetectTaskAsync(const Model::DescribeAgeDetectTaskRequest& request, const DescribeAgeDetectTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAgeDetectTaskOutcomeCallable DescribeAgeDetectTaskCallable(const Model::DescribeAgeDetectTaskRequest& request);
 
                 /**
                  *本接口(DescribeAppStatistics)用于获取某个GME应用的用量数据。包括实时语音，语音消息及转文本，语音分析等。最长查询周期为最近30天。

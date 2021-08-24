@@ -145,6 +145,48 @@ namespace TencentCloud
                      */
                     bool ExtraHasBeenSet() const;
 
+                    /**
+                     * 获取设备风险标签，仅错误码返回1007（设备疑似被劫持）时返回风险标签。标签说明：
+202、5001：设备疑似被Root
+203、5004：设备疑似被注入
+205：设备疑似被Hook
+206：设备疑似虚拟运行环境
+5007、1005：设备疑似摄像头被劫持
+8000：设备疑似存在异常篡改行为
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeviceInfoTag 设备风险标签，仅错误码返回1007（设备疑似被劫持）时返回风险标签。标签说明：
+202、5001：设备疑似被Root
+203、5004：设备疑似被注入
+205：设备疑似被Hook
+206：设备疑似虚拟运行环境
+5007、1005：设备疑似摄像头被劫持
+8000：设备疑似存在异常篡改行为
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDeviceInfoTag() const;
+
+                    /**
+                     * 判断参数 DeviceInfoTag 是否已赋值
+                     * @return DeviceInfoTag 是否已赋值
+                     */
+                    bool DeviceInfoTagHasBeenSet() const;
+
+                    /**
+                     * 获取行为风险标签，仅错误码返回1007（设备疑似被劫持）时返回风险标签。标签说明：
+02：攻击风险
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RiskInfoTag 行为风险标签，仅错误码返回1007（设备疑似被劫持）时返回风险标签。标签说明：
+02：攻击风险
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRiskInfoTag() const;
+
+                    /**
+                     * 判断参数 RiskInfoTag 是否已赋值
+                     * @return RiskInfoTag 是否已赋值
+                     */
+                    bool RiskInfoTagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -197,6 +239,27 @@ namespace TencentCloud
                      */
                     std::string m_extra;
                     bool m_extraHasBeenSet;
+
+                    /**
+                     * 设备风险标签，仅错误码返回1007（设备疑似被劫持）时返回风险标签。标签说明：
+202、5001：设备疑似被Root
+203、5004：设备疑似被注入
+205：设备疑似被Hook
+206：设备疑似虚拟运行环境
+5007、1005：设备疑似摄像头被劫持
+8000：设备疑似存在异常篡改行为
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deviceInfoTag;
+                    bool m_deviceInfoTagHasBeenSet;
+
+                    /**
+                     * 行为风险标签，仅错误码返回1007（设备疑似被劫持）时返回风险标签。标签说明：
+02：攻击风险
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_riskInfoTag;
+                    bool m_riskInfoTagHasBeenSet;
 
                 };
             }

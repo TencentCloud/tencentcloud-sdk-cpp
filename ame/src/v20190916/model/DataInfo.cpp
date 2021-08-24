@@ -25,7 +25,8 @@ DataInfo::DataInfo() :
     m_versionHasBeenSet(false),
     m_durationHasBeenSet(false),
     m_auditionBeginHasBeenSet(false),
-    m_auditionEndHasBeenSet(false)
+    m_auditionEndHasBeenSet(false),
+    m_tagNamesHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,19 @@ CoreInternalOutcome DataInfo::Deserialize(const rapidjson::Value &value)
         m_auditionEndHasBeenSet = true;
     }
 
+    if (value.HasMember("TagNames") && !value["TagNames"].IsNull())
+    {
+        if (!value["TagNames"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DataInfo.TagNames` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TagNames"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_tagNames.push_back((*itr).GetString());
+        }
+        m_tagNamesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +143,19 @@ void DataInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "AuditionEnd";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_auditionEnd, allocator);
+    }
+
+    if (m_tagNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagNames";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_tagNames.begin(); itr != m_tagNames.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -212,5 +239,21 @@ void DataInfo::SetAuditionEnd(const uint64_t& _auditionEnd)
 bool DataInfo::AuditionEndHasBeenSet() const
 {
     return m_auditionEndHasBeenSet;
+}
+
+vector<string> DataInfo::GetTagNames() const
+{
+    return m_tagNames;
+}
+
+void DataInfo::SetTagNames(const vector<string>& _tagNames)
+{
+    m_tagNames = _tagNames;
+    m_tagNamesHasBeenSet = true;
+}
+
+bool DataInfo::TagNamesHasBeenSet() const
+{
+    return m_tagNamesHasBeenSet;
 }
 

@@ -28,7 +28,8 @@ CreateProxyGroupRequest::CreateProxyGroupRequest() :
     m_realServerRegionHasBeenSet(false),
     m_tagSetHasBeenSet(false),
     m_accessRegionSetHasBeenSet(false),
-    m_iPAddressVersionHasBeenSet(false)
+    m_iPAddressVersionHasBeenSet(false),
+    m_packageTypeHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,14 @@ string CreateProxyGroupRequest::ToJsonString() const
         string key = "IPAddressVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_iPAddressVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_packageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PackageType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_packageType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -203,6 +212,22 @@ void CreateProxyGroupRequest::SetIPAddressVersion(const string& _iPAddressVersio
 bool CreateProxyGroupRequest::IPAddressVersionHasBeenSet() const
 {
     return m_iPAddressVersionHasBeenSet;
+}
+
+string CreateProxyGroupRequest::GetPackageType() const
+{
+    return m_packageType;
+}
+
+void CreateProxyGroupRequest::SetPackageType(const string& _packageType)
+{
+    m_packageType = _packageType;
+    m_packageTypeHasBeenSet = true;
+}
+
+bool CreateProxyGroupRequest::PackageTypeHasBeenSet() const
+{
+    return m_packageTypeHasBeenSet;
 }
 
 

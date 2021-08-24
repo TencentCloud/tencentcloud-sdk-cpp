@@ -27,7 +27,8 @@ ListAttachedRolePoliciesRequest::ListAttachedRolePoliciesRequest() :
     m_rpHasBeenSet(false),
     m_roleIdHasBeenSet(false),
     m_roleNameHasBeenSet(false),
-    m_policyTypeHasBeenSet(false)
+    m_policyTypeHasBeenSet(false),
+    m_keywordHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string ListAttachedRolePoliciesRequest::ToJsonString() const
         string key = "PolicyType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_policyType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keywordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Keyword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_keyword.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void ListAttachedRolePoliciesRequest::SetPolicyType(const string& _policyType)
 bool ListAttachedRolePoliciesRequest::PolicyTypeHasBeenSet() const
 {
     return m_policyTypeHasBeenSet;
+}
+
+string ListAttachedRolePoliciesRequest::GetKeyword() const
+{
+    return m_keyword;
+}
+
+void ListAttachedRolePoliciesRequest::SetKeyword(const string& _keyword)
+{
+    m_keyword = _keyword;
+    m_keywordHasBeenSet = true;
+}
+
+bool ListAttachedRolePoliciesRequest::KeywordHasBeenSet() const
+{
+    return m_keywordHasBeenSet;
 }
 
 

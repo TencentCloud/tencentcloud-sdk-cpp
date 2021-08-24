@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool DisplayNameHasBeenSet() const;
 
                     /**
-                     * 获取应用状态
-                     * @return AppStatus 应用状态
+                     * 获取应用状态，true表示启用，false表示禁用。
+                     * @return AppStatus 应用状态，true表示启用，false表示禁用。
                      */
                     bool GetAppStatus() const;
 
                     /**
-                     * 设置应用状态
-                     * @param AppStatus 应用状态
+                     * 设置应用状态，true表示启用，false表示禁用。
+                     * @param AppStatus 应用状态，true表示启用，false表示禁用。
                      */
                     void SetAppStatus(const bool& _appStatus);
 
@@ -171,7 +171,7 @@ namespace TencentCloud
                     bool m_displayNameHasBeenSet;
 
                     /**
-                     * 应用状态
+                     * 应用状态，true表示启用，false表示禁用。
                      */
                     bool m_appStatus;
                     bool m_appStatusHasBeenSet;

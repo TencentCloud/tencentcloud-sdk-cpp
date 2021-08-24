@@ -40,6 +40,49 @@ GmeClient::GmeClient(const Credential &credential, const string &region, const C
 }
 
 
+GmeClient::CreateAgeDetectTaskOutcome GmeClient::CreateAgeDetectTask(const CreateAgeDetectTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAgeDetectTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAgeDetectTaskResponse rsp = CreateAgeDetectTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAgeDetectTaskOutcome(rsp);
+        else
+            return CreateAgeDetectTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAgeDetectTaskOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::CreateAgeDetectTaskAsync(const CreateAgeDetectTaskRequest& request, const CreateAgeDetectTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAgeDetectTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::CreateAgeDetectTaskOutcomeCallable GmeClient::CreateAgeDetectTaskCallable(const CreateAgeDetectTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAgeDetectTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAgeDetectTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GmeClient::CreateAppOutcome GmeClient::CreateApp(const CreateAppRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateApp");
@@ -76,6 +119,49 @@ GmeClient::CreateAppOutcomeCallable GmeClient::CreateAppCallable(const CreateApp
         [this, request]()
         {
             return this->CreateApp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GmeClient::DescribeAgeDetectTaskOutcome GmeClient::DescribeAgeDetectTask(const DescribeAgeDetectTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAgeDetectTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAgeDetectTaskResponse rsp = DescribeAgeDetectTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAgeDetectTaskOutcome(rsp);
+        else
+            return DescribeAgeDetectTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAgeDetectTaskOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::DescribeAgeDetectTaskAsync(const DescribeAgeDetectTaskRequest& request, const DescribeAgeDetectTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAgeDetectTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::DescribeAgeDetectTaskOutcomeCallable GmeClient::DescribeAgeDetectTaskCallable(const DescribeAgeDetectTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAgeDetectTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAgeDetectTask(request);
         }
     );
 

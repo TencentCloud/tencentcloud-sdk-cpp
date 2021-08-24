@@ -26,7 +26,8 @@ Route::Route() :
     m_vipTypeHasBeenSet(false),
     m_vipListHasBeenSet(false),
     m_domainHasBeenSet(false),
-    m_domainPortHasBeenSet(false)
+    m_domainPortHasBeenSet(false),
+    m_deleteTimestampHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome Route::Deserialize(const rapidjson::Value &value)
         m_domainPortHasBeenSet = true;
     }
 
+    if (value.HasMember("DeleteTimestamp") && !value["DeleteTimestamp"].IsNull())
+    {
+        if (!value["DeleteTimestamp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Route.DeleteTimestamp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deleteTimestamp = string(value["DeleteTimestamp"].GetString());
+        m_deleteTimestampHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -165,6 +176,14 @@ void Route::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "DomainPort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_domainPort, allocator);
+    }
+
+    if (m_deleteTimestampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deleteTimestamp.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -264,5 +283,21 @@ void Route::SetDomainPort(const int64_t& _domainPort)
 bool Route::DomainPortHasBeenSet() const
 {
     return m_domainPortHasBeenSet;
+}
+
+string Route::GetDeleteTimestamp() const
+{
+    return m_deleteTimestamp;
+}
+
+void Route::SetDeleteTimestamp(const string& _deleteTimestamp)
+{
+    m_deleteTimestamp = _deleteTimestamp;
+    m_deleteTimestampHasBeenSet = true;
+}
+
+bool Route::DeleteTimestampHasBeenSet() const
+{
+    return m_deleteTimestampHasBeenSet;
 }
 

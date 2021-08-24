@@ -43,24 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取私用网络ID或者统一ID，建议使用统一ID
-                     * @return VpcId 私用网络ID或者统一ID，建议使用统一ID
-                     */
-                    std::string GetVpcId() const;
-
-                    /**
-                     * 设置私用网络ID或者统一ID，建议使用统一ID
-                     * @param VpcId 私用网络ID或者统一ID，建议使用统一ID
-                     */
-                    void SetVpcId(const std::string& _vpcId);
-
-                    /**
-                     * 判断参数 VpcId 是否已赋值
-                     * @return VpcId 是否已赋值
-                     */
-                    bool VpcIdHasBeenSet() const;
-
-                    /**
                      * 获取流日志唯一ID
                      * @return FlowLogId 流日志唯一ID
                      */
@@ -77,6 +59,24 @@ namespace TencentCloud
                      * @return FlowLogId 是否已赋值
                      */
                     bool FlowLogIdHasBeenSet() const;
+
+                    /**
+                     * 获取私用网络ID或者统一ID，建议使用统一ID，修改云联网流日志属性时可不填，其他流日志类型必填。
+                     * @return VpcId 私用网络ID或者统一ID，建议使用统一ID，修改云联网流日志属性时可不填，其他流日志类型必填。
+                     */
+                    std::string GetVpcId() const;
+
+                    /**
+                     * 设置私用网络ID或者统一ID，建议使用统一ID，修改云联网流日志属性时可不填，其他流日志类型必填。
+                     * @param VpcId 私用网络ID或者统一ID，建议使用统一ID，修改云联网流日志属性时可不填，其他流日志类型必填。
+                     */
+                    void SetVpcId(const std::string& _vpcId);
+
+                    /**
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
+                     */
+                    bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取流日志实例名字
@@ -117,16 +117,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 私用网络ID或者统一ID，建议使用统一ID
-                     */
-                    std::string m_vpcId;
-                    bool m_vpcIdHasBeenSet;
-
-                    /**
                      * 流日志唯一ID
                      */
                     std::string m_flowLogId;
                     bool m_flowLogIdHasBeenSet;
+
+                    /**
+                     * 私用网络ID或者统一ID，建议使用统一ID，修改云联网流日志属性时可不填，其他流日志类型必填。
+                     */
+                    std::string m_vpcId;
+                    bool m_vpcIdHasBeenSet;
 
                     /**
                      * 流日志实例名字

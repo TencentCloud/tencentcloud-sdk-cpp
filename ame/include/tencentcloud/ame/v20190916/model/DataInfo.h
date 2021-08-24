@@ -136,6 +136,24 @@ namespace TencentCloud
                      */
                     bool AuditionEndHasBeenSet() const;
 
+                    /**
+                     * 获取标签名称
+                     * @return TagNames 标签名称
+                     */
+                    std::vector<std::string> GetTagNames() const;
+
+                    /**
+                     * 设置标签名称
+                     * @param TagNames 标签名称
+                     */
+                    void SetTagNames(const std::vector<std::string>& _tagNames);
+
+                    /**
+                     * 判断参数 TagNames 是否已赋值
+                     * @return TagNames 是否已赋值
+                     */
+                    bool TagNamesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +185,12 @@ namespace TencentCloud
                      */
                     uint64_t m_auditionEnd;
                     bool m_auditionEndHasBeenSet;
+
+                    /**
+                     * 标签名称
+                     */
+                    std::vector<std::string> m_tagNames;
+                    bool m_tagNamesHasBeenSet;
 
                 };
             }

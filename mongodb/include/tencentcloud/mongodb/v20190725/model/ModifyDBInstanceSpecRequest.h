@@ -114,6 +114,60 @@ namespace TencentCloud
                      */
                     bool OplogSizeHasBeenSet() const;
 
+                    /**
+                     * 获取实例变更后的节点数，取值范围具体参照查询云数据库的售卖规格返回参数。默认为不变更节点数
+                     * @return NodeNum 实例变更后的节点数，取值范围具体参照查询云数据库的售卖规格返回参数。默认为不变更节点数
+                     */
+                    uint64_t GetNodeNum() const;
+
+                    /**
+                     * 设置实例变更后的节点数，取值范围具体参照查询云数据库的售卖规格返回参数。默认为不变更节点数
+                     * @param NodeNum 实例变更后的节点数，取值范围具体参照查询云数据库的售卖规格返回参数。默认为不变更节点数
+                     */
+                    void SetNodeNum(const uint64_t& _nodeNum);
+
+                    /**
+                     * 判断参数 NodeNum 是否已赋值
+                     * @return NodeNum 是否已赋值
+                     */
+                    bool NodeNumHasBeenSet() const;
+
+                    /**
+                     * 获取实例变更后的分片数，取值范围具体参照查询云数据库的售卖规格返回参数。只能增加不能减少，默认为不变更分片数
+                     * @return ReplicateSetNum 实例变更后的分片数，取值范围具体参照查询云数据库的售卖规格返回参数。只能增加不能减少，默认为不变更分片数
+                     */
+                    uint64_t GetReplicateSetNum() const;
+
+                    /**
+                     * 设置实例变更后的分片数，取值范围具体参照查询云数据库的售卖规格返回参数。只能增加不能减少，默认为不变更分片数
+                     * @param ReplicateSetNum 实例变更后的分片数，取值范围具体参照查询云数据库的售卖规格返回参数。只能增加不能减少，默认为不变更分片数
+                     */
+                    void SetReplicateSetNum(const uint64_t& _replicateSetNum);
+
+                    /**
+                     * 判断参数 ReplicateSetNum 是否已赋值
+                     * @return ReplicateSetNum 是否已赋值
+                     */
+                    bool ReplicateSetNumHasBeenSet() const;
+
+                    /**
+                     * 获取实例配置变更的切换时间，参数为：0(默认)、1。0-调整完成时，1-维护时间内。注：调整节点数和分片数不支持在【维护时间内】变更。
+                     * @return InMaintenance 实例配置变更的切换时间，参数为：0(默认)、1。0-调整完成时，1-维护时间内。注：调整节点数和分片数不支持在【维护时间内】变更。
+                     */
+                    uint64_t GetInMaintenance() const;
+
+                    /**
+                     * 设置实例配置变更的切换时间，参数为：0(默认)、1。0-调整完成时，1-维护时间内。注：调整节点数和分片数不支持在【维护时间内】变更。
+                     * @param InMaintenance 实例配置变更的切换时间，参数为：0(默认)、1。0-调整完成时，1-维护时间内。注：调整节点数和分片数不支持在【维护时间内】变更。
+                     */
+                    void SetInMaintenance(const uint64_t& _inMaintenance);
+
+                    /**
+                     * 判断参数 InMaintenance 是否已赋值
+                     * @return InMaintenance 是否已赋值
+                     */
+                    bool InMaintenanceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +193,24 @@ namespace TencentCloud
                      */
                     uint64_t m_oplogSize;
                     bool m_oplogSizeHasBeenSet;
+
+                    /**
+                     * 实例变更后的节点数，取值范围具体参照查询云数据库的售卖规格返回参数。默认为不变更节点数
+                     */
+                    uint64_t m_nodeNum;
+                    bool m_nodeNumHasBeenSet;
+
+                    /**
+                     * 实例变更后的分片数，取值范围具体参照查询云数据库的售卖规格返回参数。只能增加不能减少，默认为不变更分片数
+                     */
+                    uint64_t m_replicateSetNum;
+                    bool m_replicateSetNumHasBeenSet;
+
+                    /**
+                     * 实例配置变更的切换时间，参数为：0(默认)、1。0-调整完成时，1-维护时间内。注：调整节点数和分片数不支持在【维护时间内】变更。
+                     */
+                    uint64_t m_inMaintenance;
+                    bool m_inMaintenanceHasBeenSet;
 
                 };
             }

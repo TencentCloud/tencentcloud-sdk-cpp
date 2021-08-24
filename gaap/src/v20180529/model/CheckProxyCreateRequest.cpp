@@ -29,7 +29,8 @@ CheckProxyCreateRequest::CheckProxyCreateRequest() :
     m_concurrentHasBeenSet(false),
     m_groupIdHasBeenSet(false),
     m_iPAddressVersionHasBeenSet(false),
-    m_networkTypeHasBeenSet(false)
+    m_networkTypeHasBeenSet(false),
+    m_packageTypeHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string CheckProxyCreateRequest::ToJsonString() const
         string key = "NetworkType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_networkType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_packageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PackageType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_packageType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +223,22 @@ void CheckProxyCreateRequest::SetNetworkType(const string& _networkType)
 bool CheckProxyCreateRequest::NetworkTypeHasBeenSet() const
 {
     return m_networkTypeHasBeenSet;
+}
+
+string CheckProxyCreateRequest::GetPackageType() const
+{
+    return m_packageType;
+}
+
+void CheckProxyCreateRequest::SetPackageType(const string& _packageType)
+{
+    m_packageType = _packageType;
+    m_packageTypeHasBeenSet = true;
+}
+
+bool CheckProxyCreateRequest::PackageTypeHasBeenSet() const
+{
+    return m_packageTypeHasBeenSet;
 }
 
 

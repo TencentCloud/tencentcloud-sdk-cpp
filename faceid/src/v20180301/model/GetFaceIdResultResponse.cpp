@@ -31,7 +31,9 @@ GetFaceIdResultResponse::GetFaceIdResultResponse() :
     m_similarityHasBeenSet(false),
     m_videoBase64HasBeenSet(false),
     m_bestFrameBase64HasBeenSet(false),
-    m_extraHasBeenSet(false)
+    m_extraHasBeenSet(false),
+    m_deviceInfoTagHasBeenSet(false),
+    m_riskInfoTagHasBeenSet(false)
 {
 }
 
@@ -149,6 +151,26 @@ CoreInternalOutcome GetFaceIdResultResponse::Deserialize(const string &payload)
         m_extraHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DeviceInfoTag") && !rsp["DeviceInfoTag"].IsNull())
+    {
+        if (!rsp["DeviceInfoTag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceInfoTag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceInfoTag = string(rsp["DeviceInfoTag"].GetString());
+        m_deviceInfoTagHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RiskInfoTag") && !rsp["RiskInfoTag"].IsNull())
+    {
+        if (!rsp["RiskInfoTag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RiskInfoTag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_riskInfoTag = string(rsp["RiskInfoTag"].GetString());
+        m_riskInfoTagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -221,6 +243,22 @@ string GetFaceIdResultResponse::ToJsonString() const
         string key = "Extra";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_extra.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceInfoTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceInfoTag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceInfoTag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_riskInfoTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskInfoTag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_riskInfoTag.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -313,6 +351,26 @@ string GetFaceIdResultResponse::GetExtra() const
 bool GetFaceIdResultResponse::ExtraHasBeenSet() const
 {
     return m_extraHasBeenSet;
+}
+
+string GetFaceIdResultResponse::GetDeviceInfoTag() const
+{
+    return m_deviceInfoTag;
+}
+
+bool GetFaceIdResultResponse::DeviceInfoTagHasBeenSet() const
+{
+    return m_deviceInfoTagHasBeenSet;
+}
+
+string GetFaceIdResultResponse::GetRiskInfoTag() const
+{
+    return m_riskInfoTag;
+}
+
+bool GetFaceIdResultResponse::RiskInfoTagHasBeenSet() const
+{
+    return m_riskInfoTagHasBeenSet;
 }
 
 

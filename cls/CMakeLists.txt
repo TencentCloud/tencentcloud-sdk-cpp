@@ -119,6 +119,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DeleteIndexResponse.h
   include/tencentcloud/cls/v20201016/model/DeleteAsyncContextTaskRequest.h
   include/tencentcloud/cls/v20201016/model/ModifyIndexRequest.h
+  include/tencentcloud/cls/v20201016/model/Column.h
   include/tencentcloud/cls/v20201016/model/CompressInfo.h
   include/tencentcloud/cls/v20201016/model/ValueInfo.h
   include/tencentcloud/cls/v20201016/model/GetAlarmLogRequest.h
@@ -278,6 +279,7 @@ set(cls_src
   src/v20201016/model/DeleteIndexResponse.cpp
   src/v20201016/model/DeleteAsyncContextTaskRequest.cpp
   src/v20201016/model/ModifyIndexRequest.cpp
+  src/v20201016/model/Column.cpp
   src/v20201016/model/CompressInfo.cpp
   src/v20201016/model/ValueInfo.cpp
   src/v20201016/model/GetAlarmLogRequest.cpp

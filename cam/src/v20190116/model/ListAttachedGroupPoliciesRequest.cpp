@@ -25,7 +25,8 @@ using namespace std;
 ListAttachedGroupPoliciesRequest::ListAttachedGroupPoliciesRequest() :
     m_targetGroupIdHasBeenSet(false),
     m_pageHasBeenSet(false),
-    m_rpHasBeenSet(false)
+    m_rpHasBeenSet(false),
+    m_keywordHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string ListAttachedGroupPoliciesRequest::ToJsonString() const
         string key = "Rp";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_rp, allocator);
+    }
+
+    if (m_keywordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Keyword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_keyword.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void ListAttachedGroupPoliciesRequest::SetRp(const uint64_t& _rp)
 bool ListAttachedGroupPoliciesRequest::RpHasBeenSet() const
 {
     return m_rpHasBeenSet;
+}
+
+string ListAttachedGroupPoliciesRequest::GetKeyword() const
+{
+    return m_keyword;
+}
+
+void ListAttachedGroupPoliciesRequest::SetKeyword(const string& _keyword)
+{
+    m_keyword = _keyword;
+    m_keywordHasBeenSet = true;
+}
+
+bool ListAttachedGroupPoliciesRequest::KeywordHasBeenSet() const
+{
+    return m_keywordHasBeenSet;
 }
 
 

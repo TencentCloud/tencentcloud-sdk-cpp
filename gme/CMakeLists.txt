@@ -26,13 +26,18 @@ set(gme_public_header_model
   include/tencentcloud/gme/v20180711/model/DescribeScanResultListResponse.h
   include/tencentcloud/gme/v20180711/model/DescribeApplicationDataRequest.h
   include/tencentcloud/gme/v20180711/model/VoiceFilterRequest.h
+  include/tencentcloud/gme/v20180711/model/CreateAgeDetectTaskResponse.h
   include/tencentcloud/gme/v20180711/model/VoiceMessageStatisticsItem.h
   include/tencentcloud/gme/v20180711/model/RoomUser.h
   include/tencentcloud/gme/v20180711/model/DescribeRoomInfoRequest.h
+  include/tencentcloud/gme/v20180711/model/AgeDetectTaskResult.h
   include/tencentcloud/gme/v20180711/model/DescribeScanResultListRequest.h
+  include/tencentcloud/gme/v20180711/model/CreateAgeDetectTaskRequest.h
   include/tencentcloud/gme/v20180711/model/RealTimeSpeechStatisticsItem.h
   include/tencentcloud/gme/v20180711/model/VoiceFilterResponse.h
   include/tencentcloud/gme/v20180711/model/Tag.h
+  include/tencentcloud/gme/v20180711/model/AgeDetectTask.h
+  include/tencentcloud/gme/v20180711/model/DescribeAgeDetectTaskResponse.h
   include/tencentcloud/gme/v20180711/model/VoiceMessageConf.h
   include/tencentcloud/gme/v20180711/model/ApplicationDataStatistics.h
   include/tencentcloud/gme/v20180711/model/DescribeFilterResultListResponse.h
@@ -42,6 +47,7 @@ set(gme_public_header_model
   include/tencentcloud/gme/v20180711/model/VoiceFilterStatisticsItem.h
   include/tencentcloud/gme/v20180711/model/StatisticsItem.h
   include/tencentcloud/gme/v20180711/model/DescribeRoomInfoResponse.h
+  include/tencentcloud/gme/v20180711/model/DescribeAgeDetectTaskRequest.h
   include/tencentcloud/gme/v20180711/model/DescribeUserInAndOutTimeResponse.h
   include/tencentcloud/gme/v20180711/model/VoiceFilterInfo.h
   include/tencentcloud/gme/v20180711/model/DescribeFilterResultResponse.h
@@ -73,13 +79,18 @@ set(gme_src
   src/v20180711/model/DescribeScanResultListResponse.cpp
   src/v20180711/model/DescribeApplicationDataRequest.cpp
   src/v20180711/model/VoiceFilterRequest.cpp
+  src/v20180711/model/CreateAgeDetectTaskResponse.cpp
   src/v20180711/model/VoiceMessageStatisticsItem.cpp
   src/v20180711/model/RoomUser.cpp
   src/v20180711/model/DescribeRoomInfoRequest.cpp
+  src/v20180711/model/AgeDetectTaskResult.cpp
   src/v20180711/model/DescribeScanResultListRequest.cpp
+  src/v20180711/model/CreateAgeDetectTaskRequest.cpp
   src/v20180711/model/RealTimeSpeechStatisticsItem.cpp
   src/v20180711/model/VoiceFilterResponse.cpp
   src/v20180711/model/Tag.cpp
+  src/v20180711/model/AgeDetectTask.cpp
+  src/v20180711/model/DescribeAgeDetectTaskResponse.cpp
   src/v20180711/model/VoiceMessageConf.cpp
   src/v20180711/model/ApplicationDataStatistics.cpp
   src/v20180711/model/DescribeFilterResultListResponse.cpp
@@ -89,6 +100,7 @@ set(gme_src
   src/v20180711/model/VoiceFilterStatisticsItem.cpp
   src/v20180711/model/StatisticsItem.cpp
   src/v20180711/model/DescribeRoomInfoResponse.cpp
+  src/v20180711/model/DescribeAgeDetectTaskRequest.cpp
   src/v20180711/model/DescribeUserInAndOutTimeResponse.cpp
   src/v20180711/model/VoiceFilterInfo.cpp
   src/v20180711/model/DescribeFilterResultResponse.cpp

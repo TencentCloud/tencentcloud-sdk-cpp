@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeAccessRegionsByDestRegionRequest::DescribeAccessRegionsByDestRegionRequest() :
     m_destRegionHasBeenSet(false),
-    m_iPAddressVersionHasBeenSet(false)
+    m_iPAddressVersionHasBeenSet(false),
+    m_packageTypeHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeAccessRegionsByDestRegionRequest::ToJsonString() const
         string key = "IPAddressVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_iPAddressVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_packageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PackageType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_packageType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeAccessRegionsByDestRegionRequest::SetIPAddressVersion(const string&
 bool DescribeAccessRegionsByDestRegionRequest::IPAddressVersionHasBeenSet() const
 {
     return m_iPAddressVersionHasBeenSet;
+}
+
+string DescribeAccessRegionsByDestRegionRequest::GetPackageType() const
+{
+    return m_packageType;
+}
+
+void DescribeAccessRegionsByDestRegionRequest::SetPackageType(const string& _packageType)
+{
+    m_packageType = _packageType;
+    m_packageTypeHasBeenSet = true;
+}
+
+bool DescribeAccessRegionsByDestRegionRequest::PackageTypeHasBeenSet() const
+{
+    return m_packageTypeHasBeenSet;
 }
 
 
