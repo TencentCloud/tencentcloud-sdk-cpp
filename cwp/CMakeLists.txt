@@ -141,6 +141,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeScanTaskDetailsRequest.h
   include/tencentcloud/cwp/v20180228/model/RenewProVersionResponse.h
   include/tencentcloud/cwp/v20180228/model/DeletePrivilegeRulesResponse.h
+  include/tencentcloud/cwp/v20180228/model/ExportScanTaskDetailsResponse.h
   include/tencentcloud/cwp/v20180228/model/CreateProtectServerRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeAssetRecentMachineInfoRequest.h
   include/tencentcloud/cwp/v20180228/model/ExportVulDetectionExcelResponse.h
@@ -231,6 +232,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeMachineListRequest.h
   include/tencentcloud/cwp/v20180228/model/AccountStatistics.h
   include/tencentcloud/cwp/v20180228/model/DescribeMachinesResponse.h
+  include/tencentcloud/cwp/v20180228/model/ExportScanTaskDetailsRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribePrivilegeRulesResponse.h
   include/tencentcloud/cwp/v20180228/model/ExportNonlocalLoginPlacesRequest.h
   include/tencentcloud/cwp/v20180228/model/Machine.h
@@ -405,6 +407,7 @@ set(cwp_src
   src/v20180228/model/DescribeScanTaskDetailsRequest.cpp
   src/v20180228/model/RenewProVersionResponse.cpp
   src/v20180228/model/DeletePrivilegeRulesResponse.cpp
+  src/v20180228/model/ExportScanTaskDetailsResponse.cpp
   src/v20180228/model/CreateProtectServerRequest.cpp
   src/v20180228/model/DescribeAssetRecentMachineInfoRequest.cpp
   src/v20180228/model/ExportVulDetectionExcelResponse.cpp
@@ -495,6 +498,7 @@ set(cwp_src
   src/v20180228/model/DescribeMachineListRequest.cpp
   src/v20180228/model/AccountStatistics.cpp
   src/v20180228/model/DescribeMachinesResponse.cpp
+  src/v20180228/model/ExportScanTaskDetailsRequest.cpp
   src/v20180228/model/DescribePrivilegeRulesResponse.cpp
   src/v20180228/model/ExportNonlocalLoginPlacesRequest.cpp
   src/v20180228/model/Machine.cpp

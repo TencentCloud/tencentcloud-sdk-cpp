@@ -117,8 +117,16 @@
 #include <tencentcloud/cdn/v20180606/model/ListScdnDomainsResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ListScdnLogTasksRequest.h>
 #include <tencentcloud/cdn/v20180606/model/ListScdnLogTasksResponse.h>
+#include <tencentcloud/cdn/v20180606/model/ListTopBotDataRequest.h>
+#include <tencentcloud/cdn/v20180606/model/ListTopBotDataResponse.h>
+#include <tencentcloud/cdn/v20180606/model/ListTopCcDataRequest.h>
+#include <tencentcloud/cdn/v20180606/model/ListTopCcDataResponse.h>
+#include <tencentcloud/cdn/v20180606/model/ListTopDDoSDataRequest.h>
+#include <tencentcloud/cdn/v20180606/model/ListTopDDoSDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ListTopDataRequest.h>
 #include <tencentcloud/cdn/v20180606/model/ListTopDataResponse.h>
+#include <tencentcloud/cdn/v20180606/model/ListTopWafDataRequest.h>
+#include <tencentcloud/cdn/v20180606/model/ListTopWafDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ManageClsTopicDomainsRequest.h>
 #include <tencentcloud/cdn/v20180606/model/ManageClsTopicDomainsResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ModifyPurgeFetchTaskStatusRequest.h>
@@ -304,9 +312,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListScdnLogTasksResponse> ListScdnLogTasksOutcome;
                 typedef std::future<ListScdnLogTasksOutcome> ListScdnLogTasksOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::ListScdnLogTasksRequest&, ListScdnLogTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListScdnLogTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListTopBotDataResponse> ListTopBotDataOutcome;
+                typedef std::future<ListTopBotDataOutcome> ListTopBotDataOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::ListTopBotDataRequest&, ListTopBotDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTopBotDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListTopCcDataResponse> ListTopCcDataOutcome;
+                typedef std::future<ListTopCcDataOutcome> ListTopCcDataOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::ListTopCcDataRequest&, ListTopCcDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTopCcDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListTopDDoSDataResponse> ListTopDDoSDataOutcome;
+                typedef std::future<ListTopDDoSDataOutcome> ListTopDDoSDataOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::ListTopDDoSDataRequest&, ListTopDDoSDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTopDDoSDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListTopDataResponse> ListTopDataOutcome;
                 typedef std::future<ListTopDataOutcome> ListTopDataOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::ListTopDataRequest&, ListTopDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTopDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListTopWafDataResponse> ListTopWafDataOutcome;
+                typedef std::future<ListTopWafDataOutcome> ListTopWafDataOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::ListTopWafDataRequest&, ListTopWafDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTopWafDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::ManageClsTopicDomainsResponse> ManageClsTopicDomainsOutcome;
                 typedef std::future<ManageClsTopicDomainsOutcome> ManageClsTopicDomainsOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::ManageClsTopicDomainsRequest&, ManageClsTopicDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ManageClsTopicDomainsAsyncHandler;
@@ -809,6 +829,33 @@ namespace TencentCloud
                 ListScdnLogTasksOutcomeCallable ListScdnLogTasksCallable(const Model::ListScdnLogTasksRequest& request);
 
                 /**
+                 *获取Bot攻击的Top信息
+                 * @param req ListTopBotDataRequest
+                 * @return ListTopBotDataOutcome
+                 */
+                ListTopBotDataOutcome ListTopBotData(const Model::ListTopBotDataRequest &request);
+                void ListTopBotDataAsync(const Model::ListTopBotDataRequest& request, const ListTopBotDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListTopBotDataOutcomeCallable ListTopBotDataCallable(const Model::ListTopBotDataRequest& request);
+
+                /**
+                 *获取CC攻击Top数据
+                 * @param req ListTopCcDataRequest
+                 * @return ListTopCcDataOutcome
+                 */
+                ListTopCcDataOutcome ListTopCcData(const Model::ListTopCcDataRequest &request);
+                void ListTopCcDataAsync(const Model::ListTopCcDataRequest& request, const ListTopCcDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListTopCcDataOutcomeCallable ListTopCcDataCallable(const Model::ListTopCcDataRequest& request);
+
+                /**
+                 *获取DDoS攻击Top数据
+                 * @param req ListTopDDoSDataRequest
+                 * @return ListTopDDoSDataOutcome
+                 */
+                ListTopDDoSDataOutcome ListTopDDoSData(const Model::ListTopDDoSDataRequest &request);
+                void ListTopDDoSDataAsync(const Model::ListTopDDoSDataRequest& request, const ListTopDDoSDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListTopDDoSDataOutcomeCallable ListTopDDoSDataCallable(const Model::ListTopDDoSDataRequest& request);
+
+                /**
                  *ListTopData 通过入参 Metric 和 Filter 组合不同，可以查询以下排序数据：
 
 + 依据总流量、总请求数对访问 URL 排序，从大至小返回 TOP 1000 URL
@@ -824,6 +871,15 @@ namespace TencentCloud
                 ListTopDataOutcome ListTopData(const Model::ListTopDataRequest &request);
                 void ListTopDataAsync(const Model::ListTopDataRequest& request, const ListTopDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListTopDataOutcomeCallable ListTopDataCallable(const Model::ListTopDataRequest& request);
+
+                /**
+                 *获取Waf攻击Top数据
+                 * @param req ListTopWafDataRequest
+                 * @return ListTopWafDataOutcome
+                 */
+                ListTopWafDataOutcome ListTopWafData(const Model::ListTopWafDataRequest &request);
+                void ListTopWafDataAsync(const Model::ListTopWafDataRequest& request, const ListTopWafDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListTopWafDataOutcomeCallable ListTopWafDataCallable(const Model::ListTopWafDataRequest& request);
 
                 /**
                  *ManageClsTopicDomains 用于管理某日志主题下绑定的域名列表。

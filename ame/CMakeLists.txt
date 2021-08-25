@@ -27,6 +27,7 @@ set(ame_public_header_model
   include/tencentcloud/ame/v20190916/model/DescribeKTVPlaylistDetailRequest.h
   include/tencentcloud/ame/v20190916/model/Station.h
   include/tencentcloud/ame/v20190916/model/Music.h
+  include/tencentcloud/ame/v20190916/model/MusicDetailInfo.h
   include/tencentcloud/ame/v20190916/model/DescribeKTVMusicDetailRequest.h
   include/tencentcloud/ame/v20190916/model/DescribeStationsResponse.h
   include/tencentcloud/ame/v20190916/model/DescribePackageItemsResponse.h
@@ -57,12 +58,14 @@ set(ame_public_header_model
   include/tencentcloud/ame/v20190916/model/DescribeCloudMusicResponse.h
   include/tencentcloud/ame/v20190916/model/KTVMusicBaseInfo.h
   include/tencentcloud/ame/v20190916/model/DescribePackagesRequest.h
-  include/tencentcloud/ame/v20190916/model/MusicDetailInfo.h
+  include/tencentcloud/ame/v20190916/model/DescribeMusicSaleStatusRequest.h
   include/tencentcloud/ame/v20190916/model/SearchKTVMusicsRequest.h
   include/tencentcloud/ame/v20190916/model/ImagePath.h
   include/tencentcloud/ame/v20190916/model/DescribeItemsResponse.h
   include/tencentcloud/ame/v20190916/model/KTVPlaylistBaseInfo.h
   include/tencentcloud/ame/v20190916/model/DescribeItemByIdResponse.h
+  include/tencentcloud/ame/v20190916/model/MusicStatus.h
+  include/tencentcloud/ame/v20190916/model/DescribeMusicSaleStatusResponse.h
   include/tencentcloud/ame/v20190916/model/PutMusicOnTheShelvesRequest.h
   include/tencentcloud/ame/v20190916/model/DescribePackagesResponse.h
   include/tencentcloud/ame/v20190916/model/DescribeCloudMusicRequest.h
@@ -84,6 +87,7 @@ set(ame_src
   src/v20190916/model/DescribeKTVPlaylistDetailRequest.cpp
   src/v20190916/model/Station.cpp
   src/v20190916/model/Music.cpp
+  src/v20190916/model/MusicDetailInfo.cpp
   src/v20190916/model/DescribeKTVMusicDetailRequest.cpp
   src/v20190916/model/DescribeStationsResponse.cpp
   src/v20190916/model/DescribePackageItemsResponse.cpp
@@ -114,12 +118,14 @@ set(ame_src
   src/v20190916/model/DescribeCloudMusicResponse.cpp
   src/v20190916/model/KTVMusicBaseInfo.cpp
   src/v20190916/model/DescribePackagesRequest.cpp
-  src/v20190916/model/MusicDetailInfo.cpp
+  src/v20190916/model/DescribeMusicSaleStatusRequest.cpp
   src/v20190916/model/SearchKTVMusicsRequest.cpp
   src/v20190916/model/ImagePath.cpp
   src/v20190916/model/DescribeItemsResponse.cpp
   src/v20190916/model/KTVPlaylistBaseInfo.cpp
   src/v20190916/model/DescribeItemByIdResponse.cpp
+  src/v20190916/model/MusicStatus.cpp
+  src/v20190916/model/DescribeMusicSaleStatusResponse.cpp
   src/v20190916/model/PutMusicOnTheShelvesRequest.cpp
   src/v20190916/model/DescribePackagesResponse.cpp
   src/v20190916/model/DescribeCloudMusicRequest.cpp

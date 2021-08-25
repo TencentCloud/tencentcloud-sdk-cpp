@@ -43,6 +43,8 @@
 #include <tencentcloud/ame/v20190916/model/DescribeLyricResponse.h>
 #include <tencentcloud/ame/v20190916/model/DescribeMusicRequest.h>
 #include <tencentcloud/ame/v20190916/model/DescribeMusicResponse.h>
+#include <tencentcloud/ame/v20190916/model/DescribeMusicSaleStatusRequest.h>
+#include <tencentcloud/ame/v20190916/model/DescribeMusicSaleStatusResponse.h>
 #include <tencentcloud/ame/v20190916/model/DescribePackageItemsRequest.h>
 #include <tencentcloud/ame/v20190916/model/DescribePackageItemsResponse.h>
 #include <tencentcloud/ame/v20190916/model/DescribePackagesRequest.h>
@@ -103,6 +105,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMusicResponse> DescribeMusicOutcome;
                 typedef std::future<DescribeMusicOutcome> DescribeMusicOutcomeCallable;
                 typedef std::function<void(const AmeClient*, const Model::DescribeMusicRequest&, DescribeMusicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMusicAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMusicSaleStatusResponse> DescribeMusicSaleStatusOutcome;
+                typedef std::future<DescribeMusicSaleStatusOutcome> DescribeMusicSaleStatusOutcomeCallable;
+                typedef std::function<void(const AmeClient*, const Model::DescribeMusicSaleStatusRequest&, DescribeMusicSaleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMusicSaleStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePackageItemsResponse> DescribePackageItemsOutcome;
                 typedef std::future<DescribePackageItemsOutcome> DescribePackageItemsOutcomeCallable;
                 typedef std::function<void(const AmeClient*, const Model::DescribePackageItemsRequest&, DescribePackageItemsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePackageItemsAsyncHandler;
@@ -219,6 +224,15 @@ namespace TencentCloud
                 DescribeMusicOutcome DescribeMusic(const Model::DescribeMusicRequest &request);
                 void DescribeMusicAsync(const Model::DescribeMusicRequest& request, const DescribeMusicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMusicOutcomeCallable DescribeMusicCallable(const Model::DescribeMusicRequest& request);
+
+                /**
+                 *根据音乐信息查询音乐是否在售
+                 * @param req DescribeMusicSaleStatusRequest
+                 * @return DescribeMusicSaleStatusOutcome
+                 */
+                DescribeMusicSaleStatusOutcome DescribeMusicSaleStatus(const Model::DescribeMusicSaleStatusRequest &request);
+                void DescribeMusicSaleStatusAsync(const Model::DescribeMusicSaleStatusRequest& request, const DescribeMusicSaleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMusicSaleStatusOutcomeCallable DescribeMusicSaleStatusCallable(const Model::DescribeMusicSaleStatusRequest& request);
 
                 /**
                  *获取曲库包下已核销歌曲列表接口

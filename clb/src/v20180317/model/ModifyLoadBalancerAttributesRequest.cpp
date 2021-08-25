@@ -28,7 +28,8 @@ ModifyLoadBalancerAttributesRequest::ModifyLoadBalancerAttributesRequest() :
     m_targetRegionInfoHasBeenSet(false),
     m_internetChargeInfoHasBeenSet(false),
     m_loadBalancerPassToTargetHasBeenSet(false),
-    m_snatProHasBeenSet(false)
+    m_snatProHasBeenSet(false),
+    m_deleteProtectHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,14 @@ string ModifyLoadBalancerAttributesRequest::ToJsonString() const
         string key = "SnatPro";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_snatPro, allocator);
+    }
+
+    if (m_deleteProtectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteProtect";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deleteProtect, allocator);
     }
 
 
@@ -191,6 +200,22 @@ void ModifyLoadBalancerAttributesRequest::SetSnatPro(const bool& _snatPro)
 bool ModifyLoadBalancerAttributesRequest::SnatProHasBeenSet() const
 {
     return m_snatProHasBeenSet;
+}
+
+bool ModifyLoadBalancerAttributesRequest::GetDeleteProtect() const
+{
+    return m_deleteProtect;
+}
+
+void ModifyLoadBalancerAttributesRequest::SetDeleteProtect(const bool& _deleteProtect)
+{
+    m_deleteProtect = _deleteProtect;
+    m_deleteProtectHasBeenSet = true;
+}
+
+bool ModifyLoadBalancerAttributesRequest::DeleteProtectHasBeenSet() const
+{
+    return m_deleteProtectHasBeenSet;
 }
 
 

@@ -95,6 +95,8 @@
 #include <tencentcloud/cpdp/v20190820/model/DescribeOrderStatusResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/DownloadBillRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/DownloadBillResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/DownloadReconciliationUrlRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/DownloadReconciliationUrlResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ExecuteMemberTransactionRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/ExecuteMemberTransactionResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/MigrateOrderRefundRequest.h>
@@ -353,6 +355,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DownloadBillResponse> DownloadBillOutcome;
                 typedef std::future<DownloadBillOutcome> DownloadBillOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::DownloadBillRequest&, DownloadBillOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadBillAsyncHandler;
+                typedef Outcome<Core::Error, Model::DownloadReconciliationUrlResponse> DownloadReconciliationUrlOutcome;
+                typedef std::future<DownloadReconciliationUrlOutcome> DownloadReconciliationUrlOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::DownloadReconciliationUrlRequest&, DownloadReconciliationUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadReconciliationUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExecuteMemberTransactionResponse> ExecuteMemberTransactionOutcome;
                 typedef std::future<ExecuteMemberTransactionOutcome> ExecuteMemberTransactionOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::ExecuteMemberTransactionRequest&, ExecuteMemberTransactionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteMemberTransactionAsyncHandler;
@@ -891,6 +896,15 @@ namespace TencentCloud
                 DownloadBillOutcome DownloadBill(const Model::DownloadBillRequest &request);
                 void DownloadBillAsync(const Model::DownloadBillRequest& request, const DownloadBillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DownloadBillOutcomeCallable DownloadBillCallable(const Model::DownloadBillRequest& request);
+
+                /**
+                 *获取对账中心账单下载地址的接口
+                 * @param req DownloadReconciliationUrlRequest
+                 * @return DownloadReconciliationUrlOutcome
+                 */
+                DownloadReconciliationUrlOutcome DownloadReconciliationUrl(const Model::DownloadReconciliationUrlRequest &request);
+                void DownloadReconciliationUrlAsync(const Model::DownloadReconciliationUrlRequest& request, const DownloadReconciliationUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DownloadReconciliationUrlOutcomeCallable DownloadReconciliationUrlCallable(const Model::DownloadReconciliationUrlRequest& request);
 
                 /**
                  *会员间交易接口

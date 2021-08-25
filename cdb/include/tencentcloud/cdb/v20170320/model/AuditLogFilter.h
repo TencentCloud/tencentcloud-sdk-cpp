@@ -208,6 +208,42 @@ namespace TencentCloud
                      */
                     bool AffectRowsHasBeenSet() const;
 
+                    /**
+                     * 获取SQL 类型。支持多个类型同时查询。目前支持："SELECT", "INSERT", "UPDATE", "DELETE", "CREATE", "DROP", "ALTER", "SET", "REPLACE", "EXECUTE"。
+                     * @return SqlTypes SQL 类型。支持多个类型同时查询。目前支持："SELECT", "INSERT", "UPDATE", "DELETE", "CREATE", "DROP", "ALTER", "SET", "REPLACE", "EXECUTE"。
+                     */
+                    std::vector<std::string> GetSqlTypes() const;
+
+                    /**
+                     * 设置SQL 类型。支持多个类型同时查询。目前支持："SELECT", "INSERT", "UPDATE", "DELETE", "CREATE", "DROP", "ALTER", "SET", "REPLACE", "EXECUTE"。
+                     * @param SqlTypes SQL 类型。支持多个类型同时查询。目前支持："SELECT", "INSERT", "UPDATE", "DELETE", "CREATE", "DROP", "ALTER", "SET", "REPLACE", "EXECUTE"。
+                     */
+                    void SetSqlTypes(const std::vector<std::string>& _sqlTypes);
+
+                    /**
+                     * 判断参数 SqlTypes 是否已赋值
+                     * @return SqlTypes 是否已赋值
+                     */
+                    bool SqlTypesHasBeenSet() const;
+
+                    /**
+                     * 获取SQL 语句。支持传递多个sql语句。
+                     * @return Sqls SQL 语句。支持传递多个sql语句。
+                     */
+                    std::vector<std::string> GetSqls() const;
+
+                    /**
+                     * 设置SQL 语句。支持传递多个sql语句。
+                     * @param Sqls SQL 语句。支持传递多个sql语句。
+                     */
+                    void SetSqls(const std::vector<std::string>& _sqls);
+
+                    /**
+                     * 判断参数 Sqls 是否已赋值
+                     * @return Sqls 是否已赋值
+                     */
+                    bool SqlsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +299,18 @@ namespace TencentCloud
                      */
                     int64_t m_affectRows;
                     bool m_affectRowsHasBeenSet;
+
+                    /**
+                     * SQL 类型。支持多个类型同时查询。目前支持："SELECT", "INSERT", "UPDATE", "DELETE", "CREATE", "DROP", "ALTER", "SET", "REPLACE", "EXECUTE"。
+                     */
+                    std::vector<std::string> m_sqlTypes;
+                    bool m_sqlTypesHasBeenSet;
+
+                    /**
+                     * SQL 语句。支持传递多个sql语句。
+                     */
+                    std::vector<std::string> m_sqls;
+                    bool m_sqlsHasBeenSet;
 
                 };
             }

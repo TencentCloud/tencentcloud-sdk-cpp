@@ -28,7 +28,8 @@ InstanceAdvancedSettings::InstanceAdvancedSettings() :
     m_labelsHasBeenSet(false),
     m_dataDisksHasBeenSet(false),
     m_extraArgsHasBeenSet(false),
-    m_desiredPodNumberHasBeenSet(false)
+    m_desiredPodNumberHasBeenSet(false),
+    m_preStartUserScriptHasBeenSet(false)
 {
 }
 
@@ -144,6 +145,16 @@ CoreInternalOutcome InstanceAdvancedSettings::Deserialize(const rapidjson::Value
         m_desiredPodNumberHasBeenSet = true;
     }
 
+    if (value.HasMember("PreStartUserScript") && !value["PreStartUserScript"].IsNull())
+    {
+        if (!value["PreStartUserScript"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAdvancedSettings.PreStartUserScript` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_preStartUserScript = string(value["PreStartUserScript"].GetString());
+        m_preStartUserScriptHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -228,6 +239,14 @@ void InstanceAdvancedSettings::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "DesiredPodNumber";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_desiredPodNumber, allocator);
+    }
+
+    if (m_preStartUserScriptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreStartUserScript";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_preStartUserScript.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -359,5 +378,21 @@ void InstanceAdvancedSettings::SetDesiredPodNumber(const int64_t& _desiredPodNum
 bool InstanceAdvancedSettings::DesiredPodNumberHasBeenSet() const
 {
     return m_desiredPodNumberHasBeenSet;
+}
+
+string InstanceAdvancedSettings::GetPreStartUserScript() const
+{
+    return m_preStartUserScript;
+}
+
+void InstanceAdvancedSettings::SetPreStartUserScript(const string& _preStartUserScript)
+{
+    m_preStartUserScript = _preStartUserScript;
+    m_preStartUserScriptHasBeenSet = true;
+}
+
+bool InstanceAdvancedSettings::PreStartUserScriptHasBeenSet() const
+{
+    return m_preStartUserScriptHasBeenSet;
 }
 

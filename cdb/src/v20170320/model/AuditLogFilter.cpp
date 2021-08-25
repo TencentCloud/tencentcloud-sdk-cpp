@@ -29,7 +29,9 @@ AuditLogFilter::AuditLogFilter() :
     m_sqlHasBeenSet(false),
     m_sqlTypeHasBeenSet(false),
     m_execTimeHasBeenSet(false),
-    m_affectRowsHasBeenSet(false)
+    m_affectRowsHasBeenSet(false),
+    m_sqlTypesHasBeenSet(false),
+    m_sqlsHasBeenSet(false)
 {
 }
 
@@ -143,6 +145,32 @@ CoreInternalOutcome AuditLogFilter::Deserialize(const rapidjson::Value &value)
         m_affectRowsHasBeenSet = true;
     }
 
+    if (value.HasMember("SqlTypes") && !value["SqlTypes"].IsNull())
+    {
+        if (!value["SqlTypes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AuditLogFilter.SqlTypes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SqlTypes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_sqlTypes.push_back((*itr).GetString());
+        }
+        m_sqlTypesHasBeenSet = true;
+    }
+
+    if (value.HasMember("Sqls") && !value["Sqls"].IsNull())
+    {
+        if (!value["Sqls"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AuditLogFilter.Sqls` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Sqls"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_sqls.push_back((*itr).GetString());
+        }
+        m_sqlsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -245,6 +273,32 @@ void AuditLogFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "AffectRows";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_affectRows, allocator);
+    }
+
+    if (m_sqlTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SqlTypes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_sqlTypes.begin(); itr != m_sqlTypes.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_sqlsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Sqls";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_sqls.begin(); itr != m_sqls.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -392,5 +446,37 @@ void AuditLogFilter::SetAffectRows(const int64_t& _affectRows)
 bool AuditLogFilter::AffectRowsHasBeenSet() const
 {
     return m_affectRowsHasBeenSet;
+}
+
+vector<string> AuditLogFilter::GetSqlTypes() const
+{
+    return m_sqlTypes;
+}
+
+void AuditLogFilter::SetSqlTypes(const vector<string>& _sqlTypes)
+{
+    m_sqlTypes = _sqlTypes;
+    m_sqlTypesHasBeenSet = true;
+}
+
+bool AuditLogFilter::SqlTypesHasBeenSet() const
+{
+    return m_sqlTypesHasBeenSet;
+}
+
+vector<string> AuditLogFilter::GetSqls() const
+{
+    return m_sqls;
+}
+
+void AuditLogFilter::SetSqls(const vector<string>& _sqls)
+{
+    m_sqls = _sqls;
+    m_sqlsHasBeenSet = true;
+}
+
+bool AuditLogFilter::SqlsHasBeenSet() const
+{
+    return m_sqlsHasBeenSet;
 }
 

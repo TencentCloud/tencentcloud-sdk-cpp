@@ -1588,6 +1588,49 @@ CpdpClient::DownloadBillOutcomeCallable CpdpClient::DownloadBillCallable(const D
     return task->get_future();
 }
 
+CpdpClient::DownloadReconciliationUrlOutcome CpdpClient::DownloadReconciliationUrl(const DownloadReconciliationUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "DownloadReconciliationUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DownloadReconciliationUrlResponse rsp = DownloadReconciliationUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DownloadReconciliationUrlOutcome(rsp);
+        else
+            return DownloadReconciliationUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return DownloadReconciliationUrlOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::DownloadReconciliationUrlAsync(const DownloadReconciliationUrlRequest& request, const DownloadReconciliationUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DownloadReconciliationUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::DownloadReconciliationUrlOutcomeCallable CpdpClient::DownloadReconciliationUrlCallable(const DownloadReconciliationUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DownloadReconciliationUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->DownloadReconciliationUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::ExecuteMemberTransactionOutcome CpdpClient::ExecuteMemberTransaction(const ExecuteMemberTransactionRequest &request)
 {
     auto outcome = MakeRequest(request, "ExecuteMemberTransaction");

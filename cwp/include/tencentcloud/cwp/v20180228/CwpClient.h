@@ -191,6 +191,8 @@
 #include <tencentcloud/cwp/v20180228/model/ExportPrivilegeEventsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ExportReverseShellEventsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ExportReverseShellEventsResponse.h>
+#include <tencentcloud/cwp/v20180228/model/ExportScanTaskDetailsRequest.h>
+#include <tencentcloud/cwp/v20180228/model/ExportScanTaskDetailsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ExportTasksRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ExportTasksResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ExportVulDetectionExcelRequest.h>
@@ -509,6 +511,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ExportReverseShellEventsResponse> ExportReverseShellEventsOutcome;
                 typedef std::future<ExportReverseShellEventsOutcome> ExportReverseShellEventsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ExportReverseShellEventsRequest&, ExportReverseShellEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportReverseShellEventsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExportScanTaskDetailsResponse> ExportScanTaskDetailsOutcome;
+                typedef std::future<ExportScanTaskDetailsOutcome> ExportScanTaskDetailsOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::ExportScanTaskDetailsRequest&, ExportScanTaskDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportScanTaskDetailsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExportTasksResponse> ExportTasksOutcome;
                 typedef std::future<ExportTasksOutcome> ExportTasksOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ExportTasksRequest&, ExportTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportTasksAsyncHandler;
@@ -1347,6 +1352,15 @@ namespace TencentCloud
                 ExportReverseShellEventsOutcome ExportReverseShellEvents(const Model::ExportReverseShellEventsRequest &request);
                 void ExportReverseShellEventsAsync(const Model::ExportReverseShellEventsRequest& request, const ExportReverseShellEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ExportReverseShellEventsOutcomeCallable ExportReverseShellEventsCallable(const Model::ExportReverseShellEventsRequest& request);
+
+                /**
+                 *根据任务id导出指定扫描任务详情 
+                 * @param req ExportScanTaskDetailsRequest
+                 * @return ExportScanTaskDetailsOutcome
+                 */
+                ExportScanTaskDetailsOutcome ExportScanTaskDetails(const Model::ExportScanTaskDetailsRequest &request);
+                void ExportScanTaskDetailsAsync(const Model::ExportScanTaskDetailsRequest& request, const ExportScanTaskDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportScanTaskDetailsOutcomeCallable ExportScanTaskDetailsCallable(const Model::ExportScanTaskDetailsRequest& request);
 
                 /**
                  *用于异步导出数据量大的日志文件

@@ -36,7 +36,8 @@ TaskResponseInfo::TaskResponseInfo() :
     m_errorHasBeenSet(false),
     m_percentageHasBeenSet(false),
     m_outputMessageHasBeenSet(false),
-    m_taskTypeHasBeenSet(false)
+    m_taskTypeHasBeenSet(false),
+    m_progressDetailHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,16 @@ CoreInternalOutcome TaskResponseInfo::Deserialize(const rapidjson::Value &value)
         m_taskTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ProgressDetail") && !value["ProgressDetail"].IsNull())
+    {
+        if (!value["ProgressDetail"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskResponseInfo.ProgressDetail` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_progressDetail = string(value["ProgressDetail"].GetString());
+        m_progressDetailHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +349,14 @@ void TaskResponseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "TaskType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taskType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_progressDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProgressDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_progressDetail.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -597,5 +616,21 @@ void TaskResponseInfo::SetTaskType(const string& _taskType)
 bool TaskResponseInfo::TaskTypeHasBeenSet() const
 {
     return m_taskTypeHasBeenSet;
+}
+
+string TaskResponseInfo::GetProgressDetail() const
+{
+    return m_progressDetail;
+}
+
+void TaskResponseInfo::SetProgressDetail(const string& _progressDetail)
+{
+    m_progressDetail = _progressDetail;
+    m_progressDetailHasBeenSet = true;
+}
+
+bool TaskResponseInfo::ProgressDetailHasBeenSet() const
+{
+    return m_progressDetailHasBeenSet;
 }
 

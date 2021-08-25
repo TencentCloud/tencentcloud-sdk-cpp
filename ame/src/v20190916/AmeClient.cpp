@@ -470,6 +470,49 @@ AmeClient::DescribeMusicOutcomeCallable AmeClient::DescribeMusicCallable(const D
     return task->get_future();
 }
 
+AmeClient::DescribeMusicSaleStatusOutcome AmeClient::DescribeMusicSaleStatus(const DescribeMusicSaleStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMusicSaleStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMusicSaleStatusResponse rsp = DescribeMusicSaleStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMusicSaleStatusOutcome(rsp);
+        else
+            return DescribeMusicSaleStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMusicSaleStatusOutcome(outcome.GetError());
+    }
+}
+
+void AmeClient::DescribeMusicSaleStatusAsync(const DescribeMusicSaleStatusRequest& request, const DescribeMusicSaleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMusicSaleStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AmeClient::DescribeMusicSaleStatusOutcomeCallable AmeClient::DescribeMusicSaleStatusCallable(const DescribeMusicSaleStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMusicSaleStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMusicSaleStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AmeClient::DescribePackageItemsOutcome AmeClient::DescribePackageItems(const DescribePackageItemsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePackageItems");

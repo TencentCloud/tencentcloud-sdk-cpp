@@ -84,14 +84,14 @@ namespace TencentCloud
                     bool SourceIdHasBeenSet() const;
 
                     /**
-                     * 获取访问源类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 100:资源组
-                     * @return SourceType 访问源类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 100:资源组
+                     * 获取访问源类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 7: 参数模板, 100: 资源组
+                     * @return SourceType 访问源类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 7: 参数模板, 100: 资源组
                      */
                     uint64_t GetSourceType() const;
 
                     /**
-                     * 设置访问源类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 100:资源组
-                     * @param SourceType 访问源类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 100:资源组
+                     * 设置访问源类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 7: 参数模板, 100: 资源组
+                     * @param SourceType 访问源类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 7: 参数模板, 100: 资源组
                      */
                     void SetSourceType(const uint64_t& _sourceType);
 
@@ -120,14 +120,14 @@ namespace TencentCloud
                     bool TargetIdHasBeenSet() const;
 
                     /**
-                     * 获取访问目的类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 100:资源组
-                     * @return TargetType 访问目的类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 100:资源组
+                     * 获取访问目的类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 7: 参数模板, 100:资源组
+                     * @return TargetType 访问目的类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 7: 参数模板, 100:资源组
                      */
                     uint64_t GetTargetType() const;
 
                     /**
-                     * 设置访问目的类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 100:资源组
-                     * @param TargetType 访问目的类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 100:资源组
+                     * 设置访问目的类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 7: 参数模板, 100:资源组
+                     * @param TargetType 访问目的类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 7: 参数模板, 100:资源组
                      */
                     void SetTargetType(const uint64_t& _targetType);
 
@@ -436,17 +436,17 @@ namespace TencentCloud
                     bool ServiceTemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取当BothWay为0的时候，填空，当BothWay为1的时候，为JSON字符串，数据来源于DescribeBothWayInstanceListByIp个接口，如果该接口返回数据为空，则不支持双向下发
+                     * 获取生成双向下发规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BothWayInfo 当BothWay为0的时候，填空，当BothWay为1的时候，为JSON字符串，数据来源于DescribeBothWayInstanceListByIp个接口，如果该接口返回数据为空，则不支持双向下发
+                     * @return BothWayInfo 生成双向下发规则
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SecurityGroupBothWayInfo> GetBothWayInfo() const;
 
                     /**
-                     * 设置当BothWay为0的时候，填空，当BothWay为1的时候，为JSON字符串，数据来源于DescribeBothWayInstanceListByIp个接口，如果该接口返回数据为空，则不支持双向下发
+                     * 设置生成双向下发规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BothWayInfo 当BothWay为0的时候，填空，当BothWay为1的时候，为JSON字符串，数据来源于DescribeBothWayInstanceListByIp个接口，如果该接口返回数据为空，则不支持双向下发
+                     * @param BothWayInfo 生成双向下发规则
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBothWayInfo(const std::vector<SecurityGroupBothWayInfo>& _bothWayInfo);
@@ -508,7 +508,7 @@ namespace TencentCloud
                     bool m_sourceIdHasBeenSet;
 
                     /**
-                     * 访问源类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 100:资源组
+                     * 访问源类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 7: 参数模板, 100: 资源组
                      */
                     uint64_t m_sourceType;
                     bool m_sourceTypeHasBeenSet;
@@ -520,7 +520,7 @@ namespace TencentCloud
                     bool m_targetIdHasBeenSet;
 
                     /**
-                     * 访问目的类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 100:资源组
+                     * 访问目的类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 7: 参数模板, 100:资源组
                      */
                     uint64_t m_targetType;
                     bool m_targetTypeHasBeenSet;
@@ -623,7 +623,7 @@ namespace TencentCloud
                     bool m_serviceTemplateIdHasBeenSet;
 
                     /**
-                     * 当BothWay为0的时候，填空，当BothWay为1的时候，为JSON字符串，数据来源于DescribeBothWayInstanceListByIp个接口，如果该接口返回数据为空，则不支持双向下发
+                     * 生成双向下发规则
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SecurityGroupBothWayInfo> m_bothWayInfo;

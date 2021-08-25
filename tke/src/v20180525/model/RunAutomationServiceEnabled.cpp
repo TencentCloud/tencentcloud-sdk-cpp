@@ -20,7 +20,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
-RunAutomationServiceEnabled::RunAutomationServiceEnabled()
+RunAutomationServiceEnabled::RunAutomationServiceEnabled() :
+    m_enabledHasBeenSet(false)
 {
 }
 
@@ -29,6 +30,16 @@ CoreInternalOutcome RunAutomationServiceEnabled::Deserialize(const rapidjson::Va
     string requestId = "";
 
 
+    if (value.HasMember("Enabled") && !value["Enabled"].IsNull())
+    {
+        if (!value["Enabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunAutomationServiceEnabled.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enabled = value["Enabled"].GetBool();
+        m_enabledHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -36,6 +47,30 @@ CoreInternalOutcome RunAutomationServiceEnabled::Deserialize(const rapidjson::Va
 void RunAutomationServiceEnabled::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_enabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Enabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enabled, allocator);
+    }
+
 }
 
+
+bool RunAutomationServiceEnabled::GetEnabled() const
+{
+    return m_enabled;
+}
+
+void RunAutomationServiceEnabled::SetEnabled(const bool& _enabled)
+{
+    m_enabled = _enabled;
+    m_enabledHasBeenSet = true;
+}
+
+bool RunAutomationServiceEnabled::EnabledHasBeenSet() const
+{
+    return m_enabledHasBeenSet;
+}
 

@@ -3652,6 +3652,49 @@ CwpClient::ExportReverseShellEventsOutcomeCallable CwpClient::ExportReverseShell
     return task->get_future();
 }
 
+CwpClient::ExportScanTaskDetailsOutcome CwpClient::ExportScanTaskDetails(const ExportScanTaskDetailsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportScanTaskDetails");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportScanTaskDetailsResponse rsp = ExportScanTaskDetailsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportScanTaskDetailsOutcome(rsp);
+        else
+            return ExportScanTaskDetailsOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportScanTaskDetailsOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::ExportScanTaskDetailsAsync(const ExportScanTaskDetailsRequest& request, const ExportScanTaskDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportScanTaskDetails(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::ExportScanTaskDetailsOutcomeCallable CwpClient::ExportScanTaskDetailsCallable(const ExportScanTaskDetailsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportScanTaskDetailsOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportScanTaskDetails(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::ExportTasksOutcome CwpClient::ExportTasks(const ExportTasksRequest &request)
 {
     auto outcome = MakeRequest(request, "ExportTasks");

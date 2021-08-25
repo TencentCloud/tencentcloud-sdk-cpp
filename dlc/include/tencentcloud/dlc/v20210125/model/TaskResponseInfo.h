@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 任务实例。
+                * 任务实例
                 */
                 class TaskResponseInfo : public AbstractModel
                 {
@@ -338,6 +338,28 @@ namespace TencentCloud
                      */
                     bool TaskTypeHasBeenSet() const;
 
+                    /**
+                     * 获取任务进度明细
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProgressDetail 任务进度明细
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProgressDetail() const;
+
+                    /**
+                     * 设置任务进度明细
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProgressDetail 任务进度明细
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProgressDetail(const std::string& _progressDetail);
+
+                    /**
+                     * 判断参数 ProgressDetail 是否已赋值
+                     * @return ProgressDetail 是否已赋值
+                     */
+                    bool ProgressDetailHasBeenSet() const;
+
                 private:
 
                     /**
@@ -436,6 +458,13 @@ namespace TencentCloud
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
+
+                    /**
+                     * 任务进度明细
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_progressDetail;
+                    bool m_progressDetailHasBeenSet;
 
                 };
             }

@@ -2061,6 +2061,135 @@ CdnClient::ListScdnLogTasksOutcomeCallable CdnClient::ListScdnLogTasksCallable(c
     return task->get_future();
 }
 
+CdnClient::ListTopBotDataOutcome CdnClient::ListTopBotData(const ListTopBotDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListTopBotData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListTopBotDataResponse rsp = ListTopBotDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListTopBotDataOutcome(rsp);
+        else
+            return ListTopBotDataOutcome(o.GetError());
+    }
+    else
+    {
+        return ListTopBotDataOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::ListTopBotDataAsync(const ListTopBotDataRequest& request, const ListTopBotDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListTopBotData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::ListTopBotDataOutcomeCallable CdnClient::ListTopBotDataCallable(const ListTopBotDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListTopBotDataOutcome()>>(
+        [this, request]()
+        {
+            return this->ListTopBotData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdnClient::ListTopCcDataOutcome CdnClient::ListTopCcData(const ListTopCcDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListTopCcData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListTopCcDataResponse rsp = ListTopCcDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListTopCcDataOutcome(rsp);
+        else
+            return ListTopCcDataOutcome(o.GetError());
+    }
+    else
+    {
+        return ListTopCcDataOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::ListTopCcDataAsync(const ListTopCcDataRequest& request, const ListTopCcDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListTopCcData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::ListTopCcDataOutcomeCallable CdnClient::ListTopCcDataCallable(const ListTopCcDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListTopCcDataOutcome()>>(
+        [this, request]()
+        {
+            return this->ListTopCcData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdnClient::ListTopDDoSDataOutcome CdnClient::ListTopDDoSData(const ListTopDDoSDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListTopDDoSData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListTopDDoSDataResponse rsp = ListTopDDoSDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListTopDDoSDataOutcome(rsp);
+        else
+            return ListTopDDoSDataOutcome(o.GetError());
+    }
+    else
+    {
+        return ListTopDDoSDataOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::ListTopDDoSDataAsync(const ListTopDDoSDataRequest& request, const ListTopDDoSDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListTopDDoSData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::ListTopDDoSDataOutcomeCallable CdnClient::ListTopDDoSDataCallable(const ListTopDDoSDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListTopDDoSDataOutcome()>>(
+        [this, request]()
+        {
+            return this->ListTopDDoSData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::ListTopDataOutcome CdnClient::ListTopData(const ListTopDataRequest &request)
 {
     auto outcome = MakeRequest(request, "ListTopData");
@@ -2097,6 +2226,49 @@ CdnClient::ListTopDataOutcomeCallable CdnClient::ListTopDataCallable(const ListT
         [this, request]()
         {
             return this->ListTopData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdnClient::ListTopWafDataOutcome CdnClient::ListTopWafData(const ListTopWafDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListTopWafData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListTopWafDataResponse rsp = ListTopWafDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListTopWafDataOutcome(rsp);
+        else
+            return ListTopWafDataOutcome(o.GetError());
+    }
+    else
+    {
+        return ListTopWafDataOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::ListTopWafDataAsync(const ListTopWafDataRequest& request, const ListTopWafDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListTopWafData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::ListTopWafDataOutcomeCallable CdnClient::ListTopWafDataCallable(const ListTopWafDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListTopWafDataOutcome()>>(
+        [this, request]()
+        {
+            return this->ListTopWafData(request);
         }
     );
 
