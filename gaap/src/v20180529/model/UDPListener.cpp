@@ -31,7 +31,8 @@ UDPListener::UDPListener() :
     m_schedulerHasBeenSet(false),
     m_bindStatusHasBeenSet(false),
     m_realServerSetHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_sessionPersistHasBeenSet(false)
 {
 }
 
@@ -160,6 +161,16 @@ CoreInternalOutcome UDPListener::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("SessionPersist") && !value["SessionPersist"].IsNull())
+    {
+        if (!value["SessionPersist"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UDPListener.SessionPersist` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionPersist = value["SessionPersist"].GetUint64();
+        m_sessionPersistHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -260,6 +271,14 @@ void UDPListener::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
+    }
+
+    if (m_sessionPersistHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionPersist";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sessionPersist, allocator);
     }
 
 }
@@ -439,5 +458,21 @@ void UDPListener::SetCreateTime(const uint64_t& _createTime)
 bool UDPListener::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+uint64_t UDPListener::GetSessionPersist() const
+{
+    return m_sessionPersist;
+}
+
+void UDPListener::SetSessionPersist(const uint64_t& _sessionPersist)
+{
+    m_sessionPersist = _sessionPersist;
+    m_sessionPersistHasBeenSet = true;
+}
+
+bool UDPListener::SessionPersistHasBeenSet() const
+{
+    return m_sessionPersistHasBeenSet;
 }
 

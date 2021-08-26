@@ -371,6 +371,24 @@ namespace TencentCloud
                      */
                     bool BandwidthLimitHasBeenSet() const;
 
+                    /**
+                     * 获取文件系统总容量
+                     * @return Capacity 文件系统总容量
+                     */
+                    uint64_t GetCapacity() const;
+
+                    /**
+                     * 设置文件系统总容量
+                     * @param Capacity 文件系统总容量
+                     */
+                    void SetCapacity(const uint64_t& _capacity);
+
+                    /**
+                     * 判断参数 Capacity 是否已赋值
+                     * @return Capacity 是否已赋值
+                     */
+                    bool CapacityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -480,6 +498,12 @@ namespace TencentCloud
                      */
                     double m_bandwidthLimit;
                     bool m_bandwidthLimitHasBeenSet;
+
+                    /**
+                     * 文件系统总容量
+                     */
+                    uint64_t m_capacity;
+                    bool m_capacityHasBeenSet;
 
                 };
             }

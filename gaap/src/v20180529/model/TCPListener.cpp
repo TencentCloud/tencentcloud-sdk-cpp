@@ -37,7 +37,9 @@ TCPListener::TCPListener() :
     m_createTimeHasBeenSet(false),
     m_clientIPMethodHasBeenSet(false),
     m_healthyThresholdHasBeenSet(false),
-    m_unhealthyThresholdHasBeenSet(false)
+    m_unhealthyThresholdHasBeenSet(false),
+    m_failoverSwitchHasBeenSet(false),
+    m_sessionPersistHasBeenSet(false)
 {
 }
 
@@ -226,6 +228,26 @@ CoreInternalOutcome TCPListener::Deserialize(const rapidjson::Value &value)
         m_unhealthyThresholdHasBeenSet = true;
     }
 
+    if (value.HasMember("FailoverSwitch") && !value["FailoverSwitch"].IsNull())
+    {
+        if (!value["FailoverSwitch"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TCPListener.FailoverSwitch` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_failoverSwitch = value["FailoverSwitch"].GetUint64();
+        m_failoverSwitchHasBeenSet = true;
+    }
+
+    if (value.HasMember("SessionPersist") && !value["SessionPersist"].IsNull())
+    {
+        if (!value["SessionPersist"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TCPListener.SessionPersist` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionPersist = value["SessionPersist"].GetUint64();
+        m_sessionPersistHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -374,6 +396,22 @@ void TCPListener::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "UnhealthyThreshold";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_unhealthyThreshold, allocator);
+    }
+
+    if (m_failoverSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailoverSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_failoverSwitch, allocator);
+    }
+
+    if (m_sessionPersistHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionPersist";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sessionPersist, allocator);
     }
 
 }
@@ -649,5 +687,37 @@ void TCPListener::SetUnhealthyThreshold(const uint64_t& _unhealthyThreshold)
 bool TCPListener::UnhealthyThresholdHasBeenSet() const
 {
     return m_unhealthyThresholdHasBeenSet;
+}
+
+uint64_t TCPListener::GetFailoverSwitch() const
+{
+    return m_failoverSwitch;
+}
+
+void TCPListener::SetFailoverSwitch(const uint64_t& _failoverSwitch)
+{
+    m_failoverSwitch = _failoverSwitch;
+    m_failoverSwitchHasBeenSet = true;
+}
+
+bool TCPListener::FailoverSwitchHasBeenSet() const
+{
+    return m_failoverSwitchHasBeenSet;
+}
+
+uint64_t TCPListener::GetSessionPersist() const
+{
+    return m_sessionPersist;
+}
+
+void TCPListener::SetSessionPersist(const uint64_t& _sessionPersist)
+{
+    m_sessionPersist = _sessionPersist;
+    m_sessionPersistHasBeenSet = true;
+}
+
+bool TCPListener::SessionPersistHasBeenSet() const
+{
+    return m_sessionPersistHasBeenSet;
 }
 

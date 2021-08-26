@@ -27,7 +27,8 @@ CreateExternalAnchorRequest::CreateExternalAnchorRequest() :
     m_nameHasBeenSet(false),
     m_idNoHasBeenSet(false),
     m_idCardFrontHasBeenSet(false),
-    m_idCardReverseHasBeenSet(false)
+    m_idCardReverseHasBeenSet(false),
+    m_agentIdHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string CreateExternalAnchorRequest::ToJsonString() const
         string key = "IdCardReverse";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_idCardReverse.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_agentId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void CreateExternalAnchorRequest::SetIdCardReverse(const string& _idCardReverse)
 bool CreateExternalAnchorRequest::IdCardReverseHasBeenSet() const
 {
     return m_idCardReverseHasBeenSet;
+}
+
+string CreateExternalAnchorRequest::GetAgentId() const
+{
+    return m_agentId;
+}
+
+void CreateExternalAnchorRequest::SetAgentId(const string& _agentId)
+{
+    m_agentId = _agentId;
+    m_agentIdHasBeenSet = true;
+}
+
+bool CreateExternalAnchorRequest::AgentIdHasBeenSet() const
+{
+    return m_agentIdHasBeenSet;
 }
 
 

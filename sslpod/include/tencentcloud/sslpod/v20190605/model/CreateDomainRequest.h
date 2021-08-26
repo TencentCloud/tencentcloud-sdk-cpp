@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool IPHasBeenSet() const;
 
                     /**
-                     * 获取是否开启通知告警
-                     * @return Notice 是否开启通知告警
+                     * 获取是否开启通知告警；true：开启通知告警，false：关闭通知告警
+                     * @return Notice 是否开启通知告警；true：开启通知告警，false：关闭通知告警
                      */
                     bool GetNotice() const;
 
                     /**
-                     * 设置是否开启通知告警
-                     * @param Notice 是否开启通知告警
+                     * 设置是否开启通知告警；true：开启通知告警，false：关闭通知告警
+                     * @param Notice 是否开启通知告警；true：开启通知告警，false：关闭通知告警
                      */
                     void SetNotice(const bool& _notice);
 
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_iPHasBeenSet;
 
                     /**
-                     * 是否开启通知告警
+                     * 是否开启通知告警；true：开启通知告警，false：关闭通知告警
                      */
                     bool m_notice;
                     bool m_noticeHasBeenSet;

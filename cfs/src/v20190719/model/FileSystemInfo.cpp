@@ -38,7 +38,8 @@ FileSystemInfo::FileSystemInfo() :
     m_encryptedHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_appIdHasBeenSet(false),
-    m_bandwidthLimitHasBeenSet(false)
+    m_bandwidthLimitHasBeenSet(false),
+    m_capacityHasBeenSet(false)
 {
 }
 
@@ -234,6 +235,16 @@ CoreInternalOutcome FileSystemInfo::Deserialize(const rapidjson::Value &value)
         m_bandwidthLimitHasBeenSet = true;
     }
 
+    if (value.HasMember("Capacity") && !value["Capacity"].IsNull())
+    {
+        if (!value["Capacity"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileSystemInfo.Capacity` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_capacity = value["Capacity"].GetUint64();
+        m_capacityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -384,6 +395,14 @@ void FileSystemInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "BandwidthLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bandwidthLimit, allocator);
+    }
+
+    if (m_capacityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Capacity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_capacity, allocator);
     }
 
 }
@@ -675,5 +694,21 @@ void FileSystemInfo::SetBandwidthLimit(const double& _bandwidthLimit)
 bool FileSystemInfo::BandwidthLimitHasBeenSet() const
 {
     return m_bandwidthLimitHasBeenSet;
+}
+
+uint64_t FileSystemInfo::GetCapacity() const
+{
+    return m_capacity;
+}
+
+void FileSystemInfo::SetCapacity(const uint64_t& _capacity)
+{
+    m_capacity = _capacity;
+    m_capacityHasBeenSet = true;
+}
+
+bool FileSystemInfo::CapacityHasBeenSet() const
+{
+    return m_capacityHasBeenSet;
 }
 

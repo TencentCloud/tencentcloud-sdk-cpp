@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取网络类型，值为 VPC，BASIC；其中 VPC 为私有网络，BASIC 为基础网络
-                     * @return NetInterface 网络类型，值为 VPC，BASIC；其中 VPC 为私有网络，BASIC 为基础网络
+                     * 获取网络类型，可选值为 VPC，BASIC，CCN；其中 VPC 为私有网络，BASIC 为基础网络, CCN 为云联网，Turbo系列当前必须选择云联网。目前基础网络已逐渐淘汰，不推荐使用。
+                     * @return NetInterface 网络类型，可选值为 VPC，BASIC，CCN；其中 VPC 为私有网络，BASIC 为基础网络, CCN 为云联网，Turbo系列当前必须选择云联网。目前基础网络已逐渐淘汰，不推荐使用。
                      */
                     std::string GetNetInterface() const;
 
                     /**
-                     * 设置网络类型，值为 VPC，BASIC；其中 VPC 为私有网络，BASIC 为基础网络
-                     * @param NetInterface 网络类型，值为 VPC，BASIC；其中 VPC 为私有网络，BASIC 为基础网络
+                     * 设置网络类型，可选值为 VPC，BASIC，CCN；其中 VPC 为私有网络，BASIC 为基础网络, CCN 为云联网，Turbo系列当前必须选择云联网。目前基础网络已逐渐淘汰，不推荐使用。
+                     * @param NetInterface 网络类型，可选值为 VPC，BASIC，CCN；其中 VPC 为私有网络，BASIC 为基础网络, CCN 为云联网，Turbo系列当前必须选择云联网。目前基础网络已逐渐淘汰，不推荐使用。
                      */
                     void SetNetInterface(const std::string& _netInterface);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool NetInterfaceHasBeenSet() const;
 
                     /**
-                     * 获取权限组 ID
-                     * @return PGroupId 权限组 ID
+                     * 获取权限组 ID，通用标准型和性能型必填，turbo系列请填写pgroupbasic
+                     * @return PGroupId 权限组 ID，通用标准型和性能型必填，turbo系列请填写pgroupbasic
                      */
                     std::string GetPGroupId() const;
 
                     /**
-                     * 设置权限组 ID
-                     * @param PGroupId 权限组 ID
+                     * 设置权限组 ID，通用标准型和性能型必填，turbo系列请填写pgroupbasic
+                     * @param PGroupId 权限组 ID，通用标准型和性能型必填，turbo系列请填写pgroupbasic
                      */
                     void SetPGroupId(const std::string& _pGroupId);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool PGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取文件系统协议类型， 值为 NFS、CIFS; 若留空则默认为 NFS协议
-                     * @return Protocol 文件系统协议类型， 值为 NFS、CIFS; 若留空则默认为 NFS协议
+                     * 获取文件系统协议类型， 值为 NFS、CIFS、TURBO ; 若留空则默认为 NFS协议，turbo系列必须选择turbo，不支持NFS、CIFS
+                     * @return Protocol 文件系统协议类型， 值为 NFS、CIFS、TURBO ; 若留空则默认为 NFS协议，turbo系列必须选择turbo，不支持NFS、CIFS
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置文件系统协议类型， 值为 NFS、CIFS; 若留空则默认为 NFS协议
-                     * @param Protocol 文件系统协议类型， 值为 NFS、CIFS; 若留空则默认为 NFS协议
+                     * 设置文件系统协议类型， 值为 NFS、CIFS、TURBO ; 若留空则默认为 NFS协议，turbo系列必须选择turbo，不支持NFS、CIFS
+                     * @param Protocol 文件系统协议类型， 值为 NFS、CIFS、TURBO ; 若留空则默认为 NFS协议，turbo系列必须选择turbo，不支持NFS、CIFS
                      */
                     void SetProtocol(const std::string& _protocol);
 
@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取文件系统存储类型，值为 SD ；其中 SD 为标准型存储， HP为性能存储。
-                     * @return StorageType 文件系统存储类型，值为 SD ；其中 SD 为标准型存储， HP为性能存储。
+                     * 获取文件系统存储类型，默认值为 SD ；其中 SD 为通用标准型标准型存储， HP为通用性能型存储， TB为turbo标准型， TP 为turbo性能型。
+                     * @return StorageType 文件系统存储类型，默认值为 SD ；其中 SD 为通用标准型标准型存储， HP为通用性能型存储， TB为turbo标准型， TP 为turbo性能型。
                      */
                     std::string GetStorageType() const;
 
                     /**
-                     * 设置文件系统存储类型，值为 SD ；其中 SD 为标准型存储， HP为性能存储。
-                     * @param StorageType 文件系统存储类型，值为 SD ；其中 SD 为标准型存储， HP为性能存储。
+                     * 设置文件系统存储类型，默认值为 SD ；其中 SD 为通用标准型标准型存储， HP为通用性能型存储， TB为turbo标准型， TP 为turbo性能型。
+                     * @param StorageType 文件系统存储类型，默认值为 SD ；其中 SD 为通用标准型标准型存储， HP为通用性能型存储， TB为turbo标准型， TP 为turbo性能型。
                      */
                     void SetStorageType(const std::string& _storageType);
 
@@ -170,14 +170,14 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取指定IP地址，仅VPC网络支持；若不填写、将在该子网下随机分配 IP
-                     * @return MountIP 指定IP地址，仅VPC网络支持；若不填写、将在该子网下随机分配 IP
+                     * 获取指定IP地址，仅VPC网络支持；若不填写、将在该子网下随机分配 IP，Turbo系列当前不支持指定
+                     * @return MountIP 指定IP地址，仅VPC网络支持；若不填写、将在该子网下随机分配 IP，Turbo系列当前不支持指定
                      */
                     std::string GetMountIP() const;
 
                     /**
-                     * 设置指定IP地址，仅VPC网络支持；若不填写、将在该子网下随机分配 IP
-                     * @param MountIP 指定IP地址，仅VPC网络支持；若不填写、将在该子网下随机分配 IP
+                     * 设置指定IP地址，仅VPC网络支持；若不填写、将在该子网下随机分配 IP，Turbo系列当前不支持指定
+                     * @param MountIP 指定IP地址，仅VPC网络支持；若不填写、将在该子网下随机分配 IP，Turbo系列当前不支持指定
                      */
                     void SetMountIP(const std::string& _mountIP);
 
@@ -241,6 +241,60 @@ namespace TencentCloud
                      */
                     bool ClientTokenHasBeenSet() const;
 
+                    /**
+                     * 获取云联网ID， 若网络类型选择的是CCN，该字段为必填
+                     * @return CcnId 云联网ID， 若网络类型选择的是CCN，该字段为必填
+                     */
+                    std::string GetCcnId() const;
+
+                    /**
+                     * 设置云联网ID， 若网络类型选择的是CCN，该字段为必填
+                     * @param CcnId 云联网ID， 若网络类型选择的是CCN，该字段为必填
+                     */
+                    void SetCcnId(const std::string& _ccnId);
+
+                    /**
+                     * 判断参数 CcnId 是否已赋值
+                     * @return CcnId 是否已赋值
+                     */
+                    bool CcnIdHasBeenSet() const;
+
+                    /**
+                     * 获取云联网中CFS使用的网段， 若网络类型选择的是Ccn，该字段为必填，且不能和Ccn中已经绑定的网段冲突
+                     * @return CidrBlock 云联网中CFS使用的网段， 若网络类型选择的是Ccn，该字段为必填，且不能和Ccn中已经绑定的网段冲突
+                     */
+                    std::string GetCidrBlock() const;
+
+                    /**
+                     * 设置云联网中CFS使用的网段， 若网络类型选择的是Ccn，该字段为必填，且不能和Ccn中已经绑定的网段冲突
+                     * @param CidrBlock 云联网中CFS使用的网段， 若网络类型选择的是Ccn，该字段为必填，且不能和Ccn中已经绑定的网段冲突
+                     */
+                    void SetCidrBlock(const std::string& _cidrBlock);
+
+                    /**
+                     * 判断参数 CidrBlock 是否已赋值
+                     * @return CidrBlock 是否已赋值
+                     */
+                    bool CidrBlockHasBeenSet() const;
+
+                    /**
+                     * 获取文件系统容量，turbo系列必填，单位为GiB。 turbo标准型单位GB，起售40TiB，即40960 GiB；扩容步长20TiB，即20480 GiB。turbo性能型起售20TiB，即20480 GiB；扩容步长10TiB，10240 GiB。
+                     * @return Capacity 文件系统容量，turbo系列必填，单位为GiB。 turbo标准型单位GB，起售40TiB，即40960 GiB；扩容步长20TiB，即20480 GiB。turbo性能型起售20TiB，即20480 GiB；扩容步长10TiB，10240 GiB。
+                     */
+                    uint64_t GetCapacity() const;
+
+                    /**
+                     * 设置文件系统容量，turbo系列必填，单位为GiB。 turbo标准型单位GB，起售40TiB，即40960 GiB；扩容步长20TiB，即20480 GiB。turbo性能型起售20TiB，即20480 GiB；扩容步长10TiB，10240 GiB。
+                     * @param Capacity 文件系统容量，turbo系列必填，单位为GiB。 turbo标准型单位GB，起售40TiB，即40960 GiB；扩容步长20TiB，即20480 GiB。turbo性能型起售20TiB，即20480 GiB；扩容步长10TiB，10240 GiB。
+                     */
+                    void SetCapacity(const uint64_t& _capacity);
+
+                    /**
+                     * 判断参数 Capacity 是否已赋值
+                     * @return Capacity 是否已赋值
+                     */
+                    bool CapacityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -250,25 +304,25 @@ namespace TencentCloud
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 网络类型，值为 VPC，BASIC；其中 VPC 为私有网络，BASIC 为基础网络
+                     * 网络类型，可选值为 VPC，BASIC，CCN；其中 VPC 为私有网络，BASIC 为基础网络, CCN 为云联网，Turbo系列当前必须选择云联网。目前基础网络已逐渐淘汰，不推荐使用。
                      */
                     std::string m_netInterface;
                     bool m_netInterfaceHasBeenSet;
 
                     /**
-                     * 权限组 ID
+                     * 权限组 ID，通用标准型和性能型必填，turbo系列请填写pgroupbasic
                      */
                     std::string m_pGroupId;
                     bool m_pGroupIdHasBeenSet;
 
                     /**
-                     * 文件系统协议类型， 值为 NFS、CIFS; 若留空则默认为 NFS协议
+                     * 文件系统协议类型， 值为 NFS、CIFS、TURBO ; 若留空则默认为 NFS协议，turbo系列必须选择turbo，不支持NFS、CIFS
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 文件系统存储类型，值为 SD ；其中 SD 为标准型存储， HP为性能存储。
+                     * 文件系统存储类型，默认值为 SD ；其中 SD 为通用标准型标准型存储， HP为通用性能型存储， TB为turbo标准型， TP 为turbo性能型。
                      */
                     std::string m_storageType;
                     bool m_storageTypeHasBeenSet;
@@ -286,7 +340,7 @@ namespace TencentCloud
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 指定IP地址，仅VPC网络支持；若不填写、将在该子网下随机分配 IP
+                     * 指定IP地址，仅VPC网络支持；若不填写、将在该子网下随机分配 IP，Turbo系列当前不支持指定
                      */
                     std::string m_mountIP;
                     bool m_mountIPHasBeenSet;
@@ -308,6 +362,24 @@ namespace TencentCloud
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;
+
+                    /**
+                     * 云联网ID， 若网络类型选择的是CCN，该字段为必填
+                     */
+                    std::string m_ccnId;
+                    bool m_ccnIdHasBeenSet;
+
+                    /**
+                     * 云联网中CFS使用的网段， 若网络类型选择的是Ccn，该字段为必填，且不能和Ccn中已经绑定的网段冲突
+                     */
+                    std::string m_cidrBlock;
+                    bool m_cidrBlockHasBeenSet;
+
+                    /**
+                     * 文件系统容量，turbo系列必填，单位为GiB。 turbo标准型单位GB，起售40TiB，即40960 GiB；扩容步长20TiB，即20480 GiB。turbo性能型起售20TiB，即20480 GiB；扩容步长10TiB，10240 GiB。
+                     */
+                    uint64_t m_capacity;
+                    bool m_capacityHasBeenSet;
 
                 };
             }

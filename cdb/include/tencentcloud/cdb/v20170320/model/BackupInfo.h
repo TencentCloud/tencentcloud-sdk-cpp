@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool DateHasBeenSet() const;
 
                     /**
-                     * 获取内网下载地址
-                     * @return IntranetUrl 内网下载地址
+                     * 获取下载地址
+                     * @return IntranetUrl 下载地址
                      */
                     std::string GetIntranetUrl() const;
 
                     /**
-                     * 设置内网下载地址
-                     * @param IntranetUrl 内网下载地址
+                     * 设置下载地址
+                     * @param IntranetUrl 下载地址
                      */
                     void SetIntranetUrl(const std::string& _intranetUrl);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool IntranetUrlHasBeenSet() const;
 
                     /**
-                     * 获取外网下载地址
-                     * @return InternetUrl 外网下载地址
+                     * 获取下载地址
+                     * @return InternetUrl 下载地址
                      */
                     std::string GetInternetUrl() const;
 
                     /**
-                     * 设置外网下载地址
-                     * @param InternetUrl 外网下载地址
+                     * 设置下载地址
+                     * @param InternetUrl 下载地址
                      */
                     void SetInternetUrl(const std::string& _internetUrl);
 
@@ -301,13 +301,13 @@ namespace TencentCloud
                     bool m_dateHasBeenSet;
 
                     /**
-                     * 内网下载地址
+                     * 下载地址
                      */
                     std::string m_intranetUrl;
                     bool m_intranetUrlHasBeenSet;
 
                     /**
-                     * 外网下载地址
+                     * 下载地址
                      */
                     std::string m_internetUrl;
                     bool m_internetUrlHasBeenSet;

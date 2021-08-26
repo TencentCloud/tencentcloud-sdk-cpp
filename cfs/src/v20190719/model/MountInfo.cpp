@@ -30,7 +30,9 @@ MountInfo::MountInfo() :
     m_vpcIdHasBeenSet(false),
     m_vpcNameHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_subnetNameHasBeenSet(false)
+    m_subnetNameHasBeenSet(false),
+    m_ccnIDHasBeenSet(false),
+    m_cidrBlockHasBeenSet(false)
 {
 }
 
@@ -139,6 +141,26 @@ CoreInternalOutcome MountInfo::Deserialize(const rapidjson::Value &value)
         m_subnetNameHasBeenSet = true;
     }
 
+    if (value.HasMember("CcnID") && !value["CcnID"].IsNull())
+    {
+        if (!value["CcnID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MountInfo.CcnID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ccnID = string(value["CcnID"].GetString());
+        m_ccnIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("CidrBlock") && !value["CidrBlock"].IsNull())
+    {
+        if (!value["CidrBlock"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MountInfo.CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cidrBlock = string(value["CidrBlock"].GetString());
+        m_cidrBlockHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +246,22 @@ void MountInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "SubnetName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subnetName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ccnIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CcnID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ccnID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cidrBlockHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CidrBlock";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cidrBlock.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +425,37 @@ void MountInfo::SetSubnetName(const string& _subnetName)
 bool MountInfo::SubnetNameHasBeenSet() const
 {
     return m_subnetNameHasBeenSet;
+}
+
+string MountInfo::GetCcnID() const
+{
+    return m_ccnID;
+}
+
+void MountInfo::SetCcnID(const string& _ccnID)
+{
+    m_ccnID = _ccnID;
+    m_ccnIDHasBeenSet = true;
+}
+
+bool MountInfo::CcnIDHasBeenSet() const
+{
+    return m_ccnIDHasBeenSet;
+}
+
+string MountInfo::GetCidrBlock() const
+{
+    return m_cidrBlock;
+}
+
+void MountInfo::SetCidrBlock(const string& _cidrBlock)
+{
+    m_cidrBlock = _cidrBlock;
+    m_cidrBlockHasBeenSet = true;
+}
+
+bool MountInfo::CidrBlockHasBeenSet() const
+{
+    return m_cidrBlockHasBeenSet;
 }
 

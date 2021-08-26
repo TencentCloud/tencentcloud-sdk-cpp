@@ -226,6 +226,42 @@ namespace TencentCloud
                      */
                     bool SubnetNameHasBeenSet() const;
 
+                    /**
+                     * 获取CFS Turbo使用的云联网ID
+                     * @return CcnID CFS Turbo使用的云联网ID
+                     */
+                    std::string GetCcnID() const;
+
+                    /**
+                     * 设置CFS Turbo使用的云联网ID
+                     * @param CcnID CFS Turbo使用的云联网ID
+                     */
+                    void SetCcnID(const std::string& _ccnID);
+
+                    /**
+                     * 判断参数 CcnID 是否已赋值
+                     * @return CcnID 是否已赋值
+                     */
+                    bool CcnIDHasBeenSet() const;
+
+                    /**
+                     * 获取云联网中CFS Turbo使用的网段
+                     * @return CidrBlock 云联网中CFS Turbo使用的网段
+                     */
+                    std::string GetCidrBlock() const;
+
+                    /**
+                     * 设置云联网中CFS Turbo使用的网段
+                     * @param CidrBlock 云联网中CFS Turbo使用的网段
+                     */
+                    void SetCidrBlock(const std::string& _cidrBlock);
+
+                    /**
+                     * 判断参数 CidrBlock 是否已赋值
+                     * @return CidrBlock 是否已赋值
+                     */
+                    bool CidrBlockHasBeenSet() const;
+
                 private:
 
                     /**
@@ -287,6 +323,18 @@ namespace TencentCloud
                      */
                     std::string m_subnetName;
                     bool m_subnetNameHasBeenSet;
+
+                    /**
+                     * CFS Turbo使用的云联网ID
+                     */
+                    std::string m_ccnID;
+                    bool m_ccnIDHasBeenSet;
+
+                    /**
+                     * 云联网中CFS Turbo使用的网段
+                     */
+                    std::string m_cidrBlock;
+                    bool m_cidrBlockHasBeenSet;
 
                 };
             }

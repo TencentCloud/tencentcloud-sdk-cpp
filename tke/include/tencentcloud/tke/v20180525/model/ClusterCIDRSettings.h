@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool MaxNodePodNumHasBeenSet() const;
 
                     /**
-                     * 获取集群最大的service数量。取值范围32～32768，不为2的幂值时会向上取最接近的2的幂值。
-                     * @return MaxClusterServiceNum 集群最大的service数量。取值范围32～32768，不为2的幂值时会向上取最接近的2的幂值。
+                     * 获取集群最大的service数量。取值范围32～32768，不为2的幂值时会向上取最接近的2的幂值。默认值256
+                     * @return MaxClusterServiceNum 集群最大的service数量。取值范围32～32768，不为2的幂值时会向上取最接近的2的幂值。默认值256
                      */
                     uint64_t GetMaxClusterServiceNum() const;
 
                     /**
-                     * 设置集群最大的service数量。取值范围32～32768，不为2的幂值时会向上取最接近的2的幂值。
-                     * @param MaxClusterServiceNum 集群最大的service数量。取值范围32～32768，不为2的幂值时会向上取最接近的2的幂值。
+                     * 设置集群最大的service数量。取值范围32～32768，不为2的幂值时会向上取最接近的2的幂值。默认值256
+                     * @param MaxClusterServiceNum 集群最大的service数量。取值范围32～32768，不为2的幂值时会向上取最接近的2的幂值。默认值256
                      */
                     void SetMaxClusterServiceNum(const uint64_t& _maxClusterServiceNum);
 
@@ -193,7 +193,7 @@ namespace TencentCloud
                     bool m_maxNodePodNumHasBeenSet;
 
                     /**
-                     * 集群最大的service数量。取值范围32～32768，不为2的幂值时会向上取最接近的2的幂值。
+                     * 集群最大的service数量。取值范围32～32768，不为2的幂值时会向上取最接近的2的幂值。默认值256
                      */
                     uint64_t m_maxClusterServiceNum;
                     bool m_maxClusterServiceNumHasBeenSet;

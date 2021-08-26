@@ -269,6 +269,28 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启会话保持选项：0关闭， 非0开启，非0值为会话保持时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SessionPersist 是否开启会话保持选项：0关闭， 非0开启，非0值为会话保持时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetSessionPersist() const;
+
+                    /**
+                     * 设置是否开启会话保持选项：0关闭， 非0开启，非0值为会话保持时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SessionPersist 是否开启会话保持选项：0关闭， 非0开启，非0值为会话保持时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSessionPersist(const uint64_t& _sessionPersist);
+
+                    /**
+                     * 判断参数 SessionPersist 是否已赋值
+                     * @return SessionPersist 是否已赋值
+                     */
+                    bool SessionPersistHasBeenSet() const;
+
                 private:
 
                     /**
@@ -342,6 +364,13 @@ namespace TencentCloud
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 是否开启会话保持选项：0关闭， 非0开启，非0值为会话保持时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_sessionPersist;
+                    bool m_sessionPersistHasBeenSet;
 
                 };
             }

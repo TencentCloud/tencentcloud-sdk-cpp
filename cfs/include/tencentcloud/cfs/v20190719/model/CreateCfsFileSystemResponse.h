@@ -80,8 +80,8 @@ namespace TencentCloud
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
-                     * 获取文件系统状态
-                     * @return LifeCycleState 文件系统状态
+                     * 获取文件系统状态，可能出现状态包括：“creating”  创建中, “create_failed” 创建失败, “available” 可用, “unserviced” 不可用, “upgrading” 升级中， “deleting” 删除中。
+                     * @return LifeCycleState 文件系统状态，可能出现状态包括：“creating”  创建中, “create_failed” 创建失败, “available” 可用, “unserviced” 不可用, “upgrading” 升级中， “deleting” 删除中。
                      */
                     std::string GetLifeCycleState() const;
 
@@ -92,8 +92,8 @@ namespace TencentCloud
                     bool LifeCycleStateHasBeenSet() const;
 
                     /**
-                     * 获取文件系统已使用容量大小
-                     * @return SizeByte 文件系统已使用容量大小
+                     * 获取文件系统已使用容量大小，单位为 Byte
+                     * @return SizeByte 文件系统已使用容量大小，单位为 Byte
                      */
                     uint64_t GetSizeByte() const;
 
@@ -160,13 +160,13 @@ namespace TencentCloud
                     bool m_fileSystemIdHasBeenSet;
 
                     /**
-                     * 文件系统状态
+                     * 文件系统状态，可能出现状态包括：“creating”  创建中, “create_failed” 创建失败, “available” 可用, “unserviced” 不可用, “upgrading” 升级中， “deleting” 删除中。
                      */
                     std::string m_lifeCycleState;
                     bool m_lifeCycleStateHasBeenSet;
 
                     /**
-                     * 文件系统已使用容量大小
+                     * 文件系统已使用容量大小，单位为 Byte
                      */
                     uint64_t m_sizeByte;
                     bool m_sizeByteHasBeenSet;

@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取转发地址。
-                     * @return ForwardAddr 转发地址。
+                     * 获取转发地址。如果有鉴权Token，则需要自行传入，例如 [{\"forward\":{\"api\":\"http://123.207.117.108:1080/sub.php\",\"token\":\"testtoken\"}}]
+                     * @return ForwardAddr 转发地址。如果有鉴权Token，则需要自行传入，例如 [{\"forward\":{\"api\":\"http://123.207.117.108:1080/sub.php\",\"token\":\"testtoken\"}}]
                      */
                     std::string GetForwardAddr() const;
 
                     /**
-                     * 设置转发地址。
-                     * @param ForwardAddr 转发地址。
+                     * 设置转发地址。如果有鉴权Token，则需要自行传入，例如 [{\"forward\":{\"api\":\"http://123.207.117.108:1080/sub.php\",\"token\":\"testtoken\"}}]
+                     * @param ForwardAddr 转发地址。如果有鉴权Token，则需要自行传入，例如 [{\"forward\":{\"api\":\"http://123.207.117.108:1080/sub.php\",\"token\":\"testtoken\"}}]
                      */
                     void SetForwardAddr(const std::string& _forwardAddr);
 
@@ -105,7 +105,7 @@ namespace TencentCloud
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 转发地址。
+                     * 转发地址。如果有鉴权Token，则需要自行传入，例如 [{\"forward\":{\"api\":\"http://123.207.117.108:1080/sub.php\",\"token\":\"testtoken\"}}]
                      */
                     std::string m_forwardAddr;
                     bool m_forwardAddrHasBeenSet;

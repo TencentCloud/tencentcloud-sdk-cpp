@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool FeaturesHasBeenSet() const;
 
                     /**
-                     * 获取设备操作系统 Linux
-                     * @return ChipOs 设备操作系统 Linux
+                     * 获取设备操作系统，通用设备填default
+                     * @return ChipOs 设备操作系统，通用设备填default
                      */
                     std::string GetChipOs() const;
 
                     /**
-                     * 设置设备操作系统 Linux
-                     * @param ChipOs 设备操作系统 Linux
+                     * 设置设备操作系统，通用设备填default
+                     * @param ChipOs 设备操作系统，通用设备填default
                      */
                     void SetChipOs(const std::string& _chipOs);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool ChipOsHasBeenSet() const;
 
                     /**
-                     * 获取芯片厂商id
-                     * @return ChipManufactureId 芯片厂商id
+                     * 获取芯片厂商id，通用设备填default
+                     * @return ChipManufactureId 芯片厂商id，通用设备填default
                      */
                     std::string GetChipManufactureId() const;
 
                     /**
-                     * 设置芯片厂商id
-                     * @param ChipManufactureId 芯片厂商id
+                     * 设置芯片厂商id，通用设备填default
+                     * @param ChipManufactureId 芯片厂商id，通用设备填default
                      */
                     void SetChipManufactureId(const std::string& _chipManufactureId);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool ChipManufactureIdHasBeenSet() const;
 
                     /**
-                     * 获取芯片id
-                     * @return ChipId 芯片id
+                     * 获取芯片id，通用设备填default
+                     * @return ChipId 芯片id，通用设备填default
                      */
                     std::string GetChipId() const;
 
                     /**
-                     * 设置芯片id
-                     * @param ChipId 芯片id
+                     * 设置芯片id，通用设备填default
+                     * @param ChipId 芯片id，通用设备填default
                      */
                     void SetChipId(const std::string& _chipId);
 
@@ -231,19 +231,19 @@ namespace TencentCloud
                     bool m_featuresHasBeenSet;
 
                     /**
-                     * 设备操作系统 Linux
+                     * 设备操作系统，通用设备填default
                      */
                     std::string m_chipOs;
                     bool m_chipOsHasBeenSet;
 
                     /**
-                     * 芯片厂商id
+                     * 芯片厂商id，通用设备填default
                      */
                     std::string m_chipManufactureId;
                     bool m_chipManufactureIdHasBeenSet;
 
                     /**
-                     * 芯片id
+                     * 芯片id，通用设备填default
                      */
                     std::string m_chipId;
                     bool m_chipIdHasBeenSet;

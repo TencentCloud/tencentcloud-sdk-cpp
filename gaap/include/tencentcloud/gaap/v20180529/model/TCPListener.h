@@ -421,6 +421,50 @@ lc表示最小连接数。
                      */
                     bool UnhealthyThresholdHasBeenSet() const;
 
+                    /**
+                     * 获取源站是否开启主备模式：1开启，0关闭，DOMAIN类型源站不支持开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FailoverSwitch 源站是否开启主备模式：1开启，0关闭，DOMAIN类型源站不支持开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetFailoverSwitch() const;
+
+                    /**
+                     * 设置源站是否开启主备模式：1开启，0关闭，DOMAIN类型源站不支持开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FailoverSwitch 源站是否开启主备模式：1开启，0关闭，DOMAIN类型源站不支持开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFailoverSwitch(const uint64_t& _failoverSwitch);
+
+                    /**
+                     * 判断参数 FailoverSwitch 是否已赋值
+                     * @return FailoverSwitch 是否已赋值
+                     */
+                    bool FailoverSwitchHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启会话保持选项：0关闭， 非0开启，非0值为会话保持时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SessionPersist 是否开启会话保持选项：0关闭， 非0开启，非0值为会话保持时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetSessionPersist() const;
+
+                    /**
+                     * 设置是否开启会话保持选项：0关闭， 非0开启，非0值为会话保持时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SessionPersist 是否开启会话保持选项：0关闭， 非0开启，非0值为会话保持时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSessionPersist(const uint64_t& _sessionPersist);
+
+                    /**
+                     * 判断参数 SessionPersist 是否已赋值
+                     * @return SessionPersist 是否已赋值
+                     */
+                    bool SessionPersistHasBeenSet() const;
+
                 private:
 
                     /**
@@ -541,6 +585,20 @@ lc表示最小连接数。
                      */
                     uint64_t m_unhealthyThreshold;
                     bool m_unhealthyThresholdHasBeenSet;
+
+                    /**
+                     * 源站是否开启主备模式：1开启，0关闭，DOMAIN类型源站不支持开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_failoverSwitch;
+                    bool m_failoverSwitchHasBeenSet;
+
+                    /**
+                     * 是否开启会话保持选项：0关闭， 非0开启，非0值为会话保持时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_sessionPersist;
+                    bool m_sessionPersistHasBeenSet;
 
                 };
             }

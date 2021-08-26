@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool IdCardReverseHasBeenSet() const;
 
+                    /**
+                     * 获取指定分配的代理商ID
+                     * @return AgentId 指定分配的代理商ID
+                     */
+                    std::string GetAgentId() const;
+
+                    /**
+                     * 设置指定分配的代理商ID
+                     * @param AgentId 指定分配的代理商ID
+                     */
+                    void SetAgentId(const std::string& _agentId);
+
+                    /**
+                     * 判断参数 AgentId 是否已赋值
+                     * @return AgentId 是否已赋值
+                     */
+                    bool AgentIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     std::string m_idCardReverse;
                     bool m_idCardReverseHasBeenSet;
+
+                    /**
+                     * 指定分配的代理商ID
+                     */
+                    std::string m_agentId;
+                    bool m_agentIdHasBeenSet;
 
                 };
             }

@@ -16,6 +16,7 @@
 
 set(organization_public_header
   include/tencentcloud/organization/v20181225/OrganizationClient.h
+  include/tencentcloud/organization/v20210331/OrganizationClient.h
   )
 
 set(organization_public_header_model
@@ -62,10 +63,13 @@ set(organization_public_header_model
   include/tencentcloud/organization/v20181225/model/ListOrganizationNodesResponse.h
   include/tencentcloud/organization/v20181225/model/MoveOrganizationMembersToNodeResponse.h
   include/tencentcloud/organization/v20181225/model/OrgNode.h
+  include/tencentcloud/organization/v20210331/model/BindOrganizationMemberAuthAccountRequest.h
+  include/tencentcloud/organization/v20210331/model/BindOrganizationMemberAuthAccountResponse.h
   )
 
 set(organization_src
   src/v20181225/OrganizationClient.cpp
+  src/v20210331/OrganizationClient.cpp
   src/v20181225/model/MoveOrganizationMembersToNodeRequest.cpp
   src/v20181225/model/GetOrganizationRequest.cpp
   src/v20181225/model/ListOrganizationMembersRequest.cpp
@@ -109,6 +113,8 @@ set(organization_src
   src/v20181225/model/ListOrganizationNodesResponse.cpp
   src/v20181225/model/MoveOrganizationMembersToNodeResponse.cpp
   src/v20181225/model/OrgNode.cpp
+  src/v20210331/model/BindOrganizationMemberAuthAccountRequest.cpp
+  src/v20210331/model/BindOrganizationMemberAuthAccountResponse.cpp
   )
 
 set(organization_include
@@ -137,9 +143,9 @@ target_link_libraries(organization
   core)
 
 #install(FILES ${organization_public_header}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/organization/v20181225)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/organization/v20210331)
 #install(FILES ${organization_public_header_model}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/organization/v20181225/model)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/organization/v20210331/model)
 install(DIRECTORY ${organization_include}
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
 

@@ -33,7 +33,10 @@ CreateCfsFileSystemRequest::CreateCfsFileSystemRequest() :
     m_mountIPHasBeenSet(false),
     m_fsNameHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_clientTokenHasBeenSet(false),
+    m_ccnIdHasBeenSet(false),
+    m_cidrBlockHasBeenSet(false),
+    m_capacityHasBeenSet(false)
 {
 }
 
@@ -137,6 +140,30 @@ string CreateCfsFileSystemRequest::ToJsonString() const
         string key = "ClientToken";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ccnIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CcnId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ccnId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cidrBlockHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CidrBlock";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cidrBlock.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_capacityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Capacity";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_capacity, allocator);
     }
 
 
@@ -321,6 +348,54 @@ void CreateCfsFileSystemRequest::SetClientToken(const string& _clientToken)
 bool CreateCfsFileSystemRequest::ClientTokenHasBeenSet() const
 {
     return m_clientTokenHasBeenSet;
+}
+
+string CreateCfsFileSystemRequest::GetCcnId() const
+{
+    return m_ccnId;
+}
+
+void CreateCfsFileSystemRequest::SetCcnId(const string& _ccnId)
+{
+    m_ccnId = _ccnId;
+    m_ccnIdHasBeenSet = true;
+}
+
+bool CreateCfsFileSystemRequest::CcnIdHasBeenSet() const
+{
+    return m_ccnIdHasBeenSet;
+}
+
+string CreateCfsFileSystemRequest::GetCidrBlock() const
+{
+    return m_cidrBlock;
+}
+
+void CreateCfsFileSystemRequest::SetCidrBlock(const string& _cidrBlock)
+{
+    m_cidrBlock = _cidrBlock;
+    m_cidrBlockHasBeenSet = true;
+}
+
+bool CreateCfsFileSystemRequest::CidrBlockHasBeenSet() const
+{
+    return m_cidrBlockHasBeenSet;
+}
+
+uint64_t CreateCfsFileSystemRequest::GetCapacity() const
+{
+    return m_capacity;
+}
+
+void CreateCfsFileSystemRequest::SetCapacity(const uint64_t& _capacity)
+{
+    m_capacity = _capacity;
+    m_capacityHasBeenSet = true;
+}
+
+bool CreateCfsFileSystemRequest::CapacityHasBeenSet() const
+{
+    return m_capacityHasBeenSet;
 }
 
 
