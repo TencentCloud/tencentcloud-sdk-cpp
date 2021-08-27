@@ -27,7 +27,8 @@ GetDeviceListRequest::GetDeviceListRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_firmwareVersionHasBeenSet(false),
-    m_deviceNameHasBeenSet(false)
+    m_deviceNameHasBeenSet(false),
+    m_projectIdHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string GetDeviceListRequest::ToJsonString() const
         string key = "DeviceName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_deviceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void GetDeviceListRequest::SetDeviceName(const string& _deviceName)
 bool GetDeviceListRequest::DeviceNameHasBeenSet() const
 {
     return m_deviceNameHasBeenSet;
+}
+
+string GetDeviceListRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void GetDeviceListRequest::SetProjectId(const string& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool GetDeviceListRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
 }
 
 

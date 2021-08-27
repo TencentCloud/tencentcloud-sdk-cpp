@@ -43,6 +43,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTopicRuleResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteDeviceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteDeviceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeleteDevicesRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeleteDevicesResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteLoRaFrequencyRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteLoRaFrequencyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteLoRaGatewayRequest.h>
@@ -111,6 +113,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/SearchStudioProductResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchTopicRuleRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchTopicRuleResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/UpdateDevicesEnableStateRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/UpdateDevicesEnableStateResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UpdateFirmwareRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UpdateFirmwareResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UploadFirmwareRequest.h>
@@ -159,6 +163,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDeviceResponse> DeleteDeviceOutcome;
                 typedef std::future<DeleteDeviceOutcome> DeleteDeviceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeleteDeviceRequest&, DeleteDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDevicesResponse> DeleteDevicesOutcome;
+                typedef std::future<DeleteDevicesOutcome> DeleteDevicesOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DeleteDevicesRequest&, DeleteDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDevicesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteLoRaFrequencyResponse> DeleteLoRaFrequencyOutcome;
                 typedef std::future<DeleteLoRaFrequencyOutcome> DeleteLoRaFrequencyOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeleteLoRaFrequencyRequest&, DeleteLoRaFrequencyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLoRaFrequencyAsyncHandler;
@@ -261,6 +268,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SearchTopicRuleResponse> SearchTopicRuleOutcome;
                 typedef std::future<SearchTopicRuleOutcome> SearchTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::SearchTopicRuleRequest&, SearchTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchTopicRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateDevicesEnableStateResponse> UpdateDevicesEnableStateOutcome;
+                typedef std::future<UpdateDevicesEnableStateOutcome> UpdateDevicesEnableStateOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::UpdateDevicesEnableStateRequest&, UpdateDevicesEnableStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDevicesEnableStateAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateFirmwareResponse> UpdateFirmwareOutcome;
                 typedef std::future<UpdateFirmwareOutcome> UpdateFirmwareOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::UpdateFirmwareRequest&, UpdateFirmwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFirmwareAsyncHandler;
@@ -359,6 +369,15 @@ namespace TencentCloud
                 DeleteDeviceOutcome DeleteDevice(const Model::DeleteDeviceRequest &request);
                 void DeleteDeviceAsync(const Model::DeleteDeviceRequest& request, const DeleteDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDeviceOutcomeCallable DeleteDeviceCallable(const Model::DeleteDeviceRequest& request);
+
+                /**
+                 *批量删除设备
+                 * @param req DeleteDevicesRequest
+                 * @return DeleteDevicesOutcome
+                 */
+                DeleteDevicesOutcome DeleteDevices(const Model::DeleteDevicesRequest &request);
+                void DeleteDevicesAsync(const Model::DeleteDevicesRequest& request, const DeleteDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDevicesOutcomeCallable DeleteDevicesCallable(const Model::DeleteDevicesRequest& request);
 
                 /**
                  *提供删除LoRa自定义频点的能力
@@ -665,6 +684,15 @@ namespace TencentCloud
                 SearchTopicRuleOutcome SearchTopicRule(const Model::SearchTopicRuleRequest &request);
                 void SearchTopicRuleAsync(const Model::SearchTopicRuleRequest& request, const SearchTopicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SearchTopicRuleOutcomeCallable SearchTopicRuleCallable(const Model::SearchTopicRuleRequest& request);
+
+                /**
+                 *批量禁用启用设备
+                 * @param req UpdateDevicesEnableStateRequest
+                 * @return UpdateDevicesEnableStateOutcome
+                 */
+                UpdateDevicesEnableStateOutcome UpdateDevicesEnableState(const Model::UpdateDevicesEnableStateRequest &request);
+                void UpdateDevicesEnableStateAsync(const Model::UpdateDevicesEnableStateRequest& request, const UpdateDevicesEnableStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateDevicesEnableStateOutcomeCallable UpdateDevicesEnableStateCallable(const Model::UpdateDevicesEnableStateRequest& request);
 
                 /**
                  *本接口（UpdateFirmware）用于对指定设备发起固件升级请求 

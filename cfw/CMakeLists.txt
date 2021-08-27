@@ -106,6 +106,8 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/ModifyAllVPCSwitchStatusRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifySequenceRulesResponse.h
   include/tencentcloud/cfw/v20190904/model/DeleteSecurityGroupAllRuleResponse.h
+  include/tencentcloud/cfw/v20190904/model/DescribeResourceGroupNewResponse.h
+  include/tencentcloud/cfw/v20190904/model/DescribeResourceGroupNewRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyBlockTopRequest.h
   include/tencentcloud/cfw/v20190904/model/DeleteAcRuleResponse.h
   include/tencentcloud/cfw/v20190904/model/IocListData.h
@@ -260,6 +262,8 @@ set(cfw_src
   src/v20190904/model/ModifyAllVPCSwitchStatusRequest.cpp
   src/v20190904/model/ModifySequenceRulesResponse.cpp
   src/v20190904/model/DeleteSecurityGroupAllRuleResponse.cpp
+  src/v20190904/model/DescribeResourceGroupNewResponse.cpp
+  src/v20190904/model/DescribeResourceGroupNewRequest.cpp
   src/v20190904/model/ModifyBlockTopRequest.cpp
   src/v20190904/model/DeleteAcRuleResponse.cpp
   src/v20190904/model/IocListData.cpp

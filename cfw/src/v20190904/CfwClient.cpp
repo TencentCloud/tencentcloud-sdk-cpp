@@ -1115,6 +1115,49 @@ CfwClient::DescribeResourceGroupOutcomeCallable CfwClient::DescribeResourceGroup
     return task->get_future();
 }
 
+CfwClient::DescribeResourceGroupNewOutcome CfwClient::DescribeResourceGroupNew(const DescribeResourceGroupNewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceGroupNew");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceGroupNewResponse rsp = DescribeResourceGroupNewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceGroupNewOutcome(rsp);
+        else
+            return DescribeResourceGroupNewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceGroupNewOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeResourceGroupNewAsync(const DescribeResourceGroupNewRequest& request, const DescribeResourceGroupNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeResourceGroupNew(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DescribeResourceGroupNewOutcomeCallable CfwClient::DescribeResourceGroupNewCallable(const DescribeResourceGroupNewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeResourceGroupNewOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeResourceGroupNew(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::DescribeRuleOverviewOutcome CfwClient::DescribeRuleOverview(const DescribeRuleOverviewRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRuleOverview");

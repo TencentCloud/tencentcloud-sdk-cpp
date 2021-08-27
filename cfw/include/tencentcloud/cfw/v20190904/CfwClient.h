@@ -73,6 +73,8 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeNatRuleOverviewResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeResourceGroupRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeResourceGroupResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeResourceGroupNewRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeResourceGroupNewResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeRuleOverviewRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeRuleOverviewResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeSecurityGroupListRequest.h>
@@ -234,6 +236,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeResourceGroupResponse> DescribeResourceGroupOutcome;
                 typedef std::future<DescribeResourceGroupOutcome> DescribeResourceGroupOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeResourceGroupRequest&, DescribeResourceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourceGroupNewResponse> DescribeResourceGroupNewOutcome;
+                typedef std::future<DescribeResourceGroupNewOutcome> DescribeResourceGroupNewOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeResourceGroupNewRequest&, DescribeResourceGroupNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceGroupNewAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRuleOverviewResponse> DescribeRuleOverviewOutcome;
                 typedef std::future<DescribeRuleOverviewOutcome> DescribeRuleOverviewOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeRuleOverviewRequest&, DescribeRuleOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleOverviewAsyncHandler;
@@ -571,6 +576,15 @@ namespace TencentCloud
                 DescribeResourceGroupOutcome DescribeResourceGroup(const Model::DescribeResourceGroupRequest &request);
                 void DescribeResourceGroupAsync(const Model::DescribeResourceGroupRequest& request, const DescribeResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeResourceGroupOutcomeCallable DescribeResourceGroupCallable(const Model::DescribeResourceGroupRequest& request);
+
+                /**
+                 *DescribeResourceGroupNew资产中心资产树信息
+                 * @param req DescribeResourceGroupNewRequest
+                 * @return DescribeResourceGroupNewOutcome
+                 */
+                DescribeResourceGroupNewOutcome DescribeResourceGroupNew(const Model::DescribeResourceGroupNewRequest &request);
+                void DescribeResourceGroupNewAsync(const Model::DescribeResourceGroupNewRequest& request, const DescribeResourceGroupNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourceGroupNewOutcomeCallable DescribeResourceGroupNewCallable(const Model::DescribeResourceGroupNewRequest& request);
 
                 /**
                  *查询规则列表概况

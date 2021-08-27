@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool DeviceNameHasBeenSet() const;
 
+                    /**
+                     * 获取项目ID。产品 ID 为 -1 时，该参数必填
+                     * @return ProjectId 项目ID。产品 ID 为 -1 时，该参数必填
+                     */
+                    std::string GetProjectId() const;
+
+                    /**
+                     * 设置项目ID。产品 ID 为 -1 时，该参数必填
+                     * @param ProjectId 项目ID。产品 ID 为 -1 时，该参数必填
+                     */
+                    void SetProjectId(const std::string& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     */
+                    bool ProjectIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
+
+                    /**
+                     * 项目ID。产品 ID 为 -1 时，该参数必填
+                     */
+                    std::string m_projectId;
+                    bool m_projectIdHasBeenSet;
 
                 };
             }

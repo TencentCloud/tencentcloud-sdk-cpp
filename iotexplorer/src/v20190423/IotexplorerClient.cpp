@@ -470,6 +470,49 @@ IotexplorerClient::DeleteDeviceOutcomeCallable IotexplorerClient::DeleteDeviceCa
     return task->get_future();
 }
 
+IotexplorerClient::DeleteDevicesOutcome IotexplorerClient::DeleteDevices(const DeleteDevicesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDevices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDevicesResponse rsp = DeleteDevicesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDevicesOutcome(rsp);
+        else
+            return DeleteDevicesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDevicesOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DeleteDevicesAsync(const DeleteDevicesRequest& request, const DeleteDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteDevices(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DeleteDevicesOutcomeCallable IotexplorerClient::DeleteDevicesCallable(const DeleteDevicesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteDevicesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteDevices(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::DeleteLoRaFrequencyOutcome IotexplorerClient::DeleteLoRaFrequency(const DeleteLoRaFrequencyRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteLoRaFrequency");
@@ -1925,6 +1968,49 @@ IotexplorerClient::SearchTopicRuleOutcomeCallable IotexplorerClient::SearchTopic
         [this, request]()
         {
             return this->SearchTopicRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::UpdateDevicesEnableStateOutcome IotexplorerClient::UpdateDevicesEnableState(const UpdateDevicesEnableStateRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateDevicesEnableState");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateDevicesEnableStateResponse rsp = UpdateDevicesEnableStateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateDevicesEnableStateOutcome(rsp);
+        else
+            return UpdateDevicesEnableStateOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateDevicesEnableStateOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::UpdateDevicesEnableStateAsync(const UpdateDevicesEnableStateRequest& request, const UpdateDevicesEnableStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateDevicesEnableState(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::UpdateDevicesEnableStateOutcomeCallable IotexplorerClient::UpdateDevicesEnableStateCallable(const UpdateDevicesEnableStateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateDevicesEnableStateOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateDevicesEnableState(request);
         }
     );
 
