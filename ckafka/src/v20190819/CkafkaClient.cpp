@@ -1201,6 +1201,49 @@ CkafkaClient::DescribeTopicSubscribeGroupOutcomeCallable CkafkaClient::DescribeT
     return task->get_future();
 }
 
+CkafkaClient::DescribeTopicSyncReplicaOutcome CkafkaClient::DescribeTopicSyncReplica(const DescribeTopicSyncReplicaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTopicSyncReplica");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTopicSyncReplicaResponse rsp = DescribeTopicSyncReplicaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTopicSyncReplicaOutcome(rsp);
+        else
+            return DescribeTopicSyncReplicaOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTopicSyncReplicaOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::DescribeTopicSyncReplicaAsync(const DescribeTopicSyncReplicaRequest& request, const DescribeTopicSyncReplicaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTopicSyncReplica(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::DescribeTopicSyncReplicaOutcomeCallable CkafkaClient::DescribeTopicSyncReplicaCallable(const DescribeTopicSyncReplicaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTopicSyncReplicaOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTopicSyncReplica(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::DescribeUserOutcome CkafkaClient::DescribeUser(const DescribeUserRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUser");

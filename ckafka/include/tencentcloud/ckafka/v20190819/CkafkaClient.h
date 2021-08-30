@@ -77,6 +77,8 @@
 #include <tencentcloud/ckafka/v20190819/model/DescribeTopicDetailResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeTopicSubscribeGroupRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeTopicSubscribeGroupResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeTopicSyncReplicaRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeTopicSyncReplicaResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeUserRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeUserResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/FetchMessageByOffsetRequest.h>
@@ -184,6 +186,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTopicSubscribeGroupResponse> DescribeTopicSubscribeGroupOutcome;
                 typedef std::future<DescribeTopicSubscribeGroupOutcome> DescribeTopicSubscribeGroupOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeTopicSubscribeGroupRequest&, DescribeTopicSubscribeGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicSubscribeGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTopicSyncReplicaResponse> DescribeTopicSyncReplicaOutcome;
+                typedef std::future<DescribeTopicSyncReplicaOutcome> DescribeTopicSyncReplicaOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::DescribeTopicSyncReplicaRequest&, DescribeTopicSyncReplicaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicSyncReplicaAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserResponse> DescribeUserOutcome;
                 typedef std::future<DescribeUserOutcome> DescribeUserOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeUserRequest&, DescribeUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserAsyncHandler;
@@ -449,6 +454,15 @@ namespace TencentCloud
                 DescribeTopicSubscribeGroupOutcome DescribeTopicSubscribeGroup(const Model::DescribeTopicSubscribeGroupRequest &request);
                 void DescribeTopicSubscribeGroupAsync(const Model::DescribeTopicSubscribeGroupRequest& request, const DescribeTopicSubscribeGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTopicSubscribeGroupOutcomeCallable DescribeTopicSubscribeGroupCallable(const Model::DescribeTopicSubscribeGroupRequest& request);
+
+                /**
+                 *获取Topic 副本详情信息
+                 * @param req DescribeTopicSyncReplicaRequest
+                 * @return DescribeTopicSyncReplicaOutcome
+                 */
+                DescribeTopicSyncReplicaOutcome DescribeTopicSyncReplica(const Model::DescribeTopicSyncReplicaRequest &request);
+                void DescribeTopicSyncReplicaAsync(const Model::DescribeTopicSyncReplicaRequest& request, const DescribeTopicSyncReplicaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTopicSyncReplicaOutcomeCallable DescribeTopicSyncReplicaCallable(const Model::DescribeTopicSyncReplicaRequest& request);
 
                 /**
                  *查询用户信息
