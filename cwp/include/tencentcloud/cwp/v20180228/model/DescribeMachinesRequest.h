@@ -44,22 +44,34 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云主机类型。
-<li>CVM：表示虚拟主机</li>
-<li>BM:  表示黑石物理机</li>
-                     * @return MachineType 云主机类型。
-<li>CVM：表示虚拟主机</li>
-<li>BM:  表示黑石物理机</li>
+                     * 获取机器所属专区类型 
+CVM 云服务器
+BM 黑石
+ECM 边缘计算
+LH 轻量应用服务器
+Other 混合云专区
+                     * @return MachineType 机器所属专区类型 
+CVM 云服务器
+BM 黑石
+ECM 边缘计算
+LH 轻量应用服务器
+Other 混合云专区
                      */
                     std::string GetMachineType() const;
 
                     /**
-                     * 设置云主机类型。
-<li>CVM：表示虚拟主机</li>
-<li>BM:  表示黑石物理机</li>
-                     * @param MachineType 云主机类型。
-<li>CVM：表示虚拟主机</li>
-<li>BM:  表示黑石物理机</li>
+                     * 设置机器所属专区类型 
+CVM 云服务器
+BM 黑石
+ECM 边缘计算
+LH 轻量应用服务器
+Other 混合云专区
+                     * @param MachineType 机器所属专区类型 
+CVM 云服务器
+BM 黑石
+ECM 边缘计算
+LH 轻量应用服务器
+Other 混合云专区
                      */
                     void SetMachineType(const std::string& _machineType);
 
@@ -186,9 +198,12 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 云主机类型。
-<li>CVM：表示虚拟主机</li>
-<li>BM:  表示黑石物理机</li>
+                     * 机器所属专区类型 
+CVM 云服务器
+BM 黑石
+ECM 边缘计算
+LH 轻量应用服务器
+Other 混合云专区
                      */
                     std::string m_machineType;
                     bool m_machineTypeHasBeenSet;

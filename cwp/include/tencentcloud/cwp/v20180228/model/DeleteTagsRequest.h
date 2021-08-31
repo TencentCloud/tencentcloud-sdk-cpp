@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取标签ID
-                     * @return Ids 标签ID
+                     * 获取标签ID (最大100 条)
+                     * @return Ids 标签ID (最大100 条)
                      */
                     std::vector<uint64_t> GetIds() const;
 
                     /**
-                     * 设置标签ID
-                     * @param Ids 标签ID
+                     * 设置标签ID (最大100 条)
+                     * @param Ids 标签ID (最大100 条)
                      */
                     void SetIds(const std::vector<uint64_t>& _ids);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 标签ID
+                     * 标签ID (最大100 条)
                      */
                     std::vector<uint64_t> m_ids;
                     bool m_idsHasBeenSet;

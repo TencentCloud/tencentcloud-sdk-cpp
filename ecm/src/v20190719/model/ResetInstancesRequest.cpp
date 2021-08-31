@@ -27,7 +27,8 @@ ResetInstancesRequest::ResetInstancesRequest() :
     m_imageIdHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_enhancedServiceHasBeenSet(false),
-    m_keepDataHasBeenSet(false)
+    m_keepDataHasBeenSet(false),
+    m_keepImageLoginHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,14 @@ string ResetInstancesRequest::ToJsonString() const
         string key = "KeepData";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_keepData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keepImageLoginHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeepImageLogin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_keepImageLogin.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -170,6 +179,22 @@ void ResetInstancesRequest::SetKeepData(const string& _keepData)
 bool ResetInstancesRequest::KeepDataHasBeenSet() const
 {
     return m_keepDataHasBeenSet;
+}
+
+string ResetInstancesRequest::GetKeepImageLogin() const
+{
+    return m_keepImageLogin;
+}
+
+void ResetInstancesRequest::SetKeepImageLogin(const string& _keepImageLogin)
+{
+    m_keepImageLogin = _keepImageLogin;
+    m_keepImageLoginHasBeenSet = true;
+}
+
+bool ResetInstancesRequest::KeepImageLoginHasBeenSet() const
+{
+    return m_keepImageLoginHasBeenSet;
 }
 
 

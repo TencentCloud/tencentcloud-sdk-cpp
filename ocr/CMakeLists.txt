@@ -64,6 +64,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/MainlandPermitOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/EnterpriseLicenseOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/BankCardOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/StructuralItem.h
   include/tencentcloud/ocr/v20181119/model/PropOwnerCertOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/FinanBillInfo.h
   include/tencentcloud/ocr/v20181119/model/TrainTicketOCRResponse.h
@@ -72,6 +73,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/ArithmeticOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/FormulaOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/BusInvoiceInfo.h
+  include/tencentcloud/ocr/v20181119/model/SmartStructuralOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/TextVatInvoice.h
   include/tencentcloud/ocr/v20181119/model/GeneralHandwritingOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/BizLicenseOCRRequest.h
@@ -124,6 +126,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/Detail.h
   include/tencentcloud/ocr/v20181119/model/EnglishOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/VatInvoiceVerifyResponse.h
+  include/tencentcloud/ocr/v20181119/model/SmartStructuralOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/DetectedWords.h
   include/tencentcloud/ocr/v20181119/model/VerifyEnterpriseFourFactorsRequest.h
   include/tencentcloud/ocr/v20181119/model/GeneralAccurateOCRRequest.h
@@ -259,6 +262,7 @@ set(ocr_src
   src/v20181119/model/MainlandPermitOCRRequest.cpp
   src/v20181119/model/EnterpriseLicenseOCRRequest.cpp
   src/v20181119/model/BankCardOCRRequest.cpp
+  src/v20181119/model/StructuralItem.cpp
   src/v20181119/model/PropOwnerCertOCRResponse.cpp
   src/v20181119/model/FinanBillInfo.cpp
   src/v20181119/model/TrainTicketOCRResponse.cpp
@@ -267,6 +271,7 @@ set(ocr_src
   src/v20181119/model/ArithmeticOCRResponse.cpp
   src/v20181119/model/FormulaOCRResponse.cpp
   src/v20181119/model/BusInvoiceInfo.cpp
+  src/v20181119/model/SmartStructuralOCRRequest.cpp
   src/v20181119/model/TextVatInvoice.cpp
   src/v20181119/model/GeneralHandwritingOCRRequest.cpp
   src/v20181119/model/BizLicenseOCRRequest.cpp
@@ -319,6 +324,7 @@ set(ocr_src
   src/v20181119/model/Detail.cpp
   src/v20181119/model/EnglishOCRRequest.cpp
   src/v20181119/model/VatInvoiceVerifyResponse.cpp
+  src/v20181119/model/SmartStructuralOCRResponse.cpp
   src/v20181119/model/DetectedWords.cpp
   src/v20181119/model/VerifyEnterpriseFourFactorsRequest.cpp
   src/v20181119/model/GeneralAccurateOCRRequest.cpp

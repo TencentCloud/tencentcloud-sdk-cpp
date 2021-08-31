@@ -152,6 +152,24 @@ namespace TencentCloud
                      */
                     bool RebalanceTimeHasBeenSet() const;
 
+                    /**
+                     * 获取时间戳
+                     * @return PublicNetwork 时间戳
+                     */
+                    int64_t GetPublicNetwork() const;
+
+                    /**
+                     * 设置时间戳
+                     * @param PublicNetwork 时间戳
+                     */
+                    void SetPublicNetwork(const int64_t& _publicNetwork);
+
+                    /**
+                     * 判断参数 PublicNetwork 是否已赋值
+                     * @return PublicNetwork 是否已赋值
+                     */
+                    bool PublicNetworkHasBeenSet() const;
+
                 private:
 
                     /**
@@ -189,6 +207,12 @@ namespace TencentCloud
                      */
                     int64_t m_rebalanceTime;
                     bool m_rebalanceTimeHasBeenSet;
+
+                    /**
+                     * 时间戳
+                     */
+                    int64_t m_publicNetwork;
+                    bool m_publicNetworkHasBeenSet;
 
                 };
             }

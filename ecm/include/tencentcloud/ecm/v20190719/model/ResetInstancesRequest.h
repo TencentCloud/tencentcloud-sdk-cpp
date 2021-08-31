@@ -133,6 +133,44 @@ namespace TencentCloud
                      */
                     bool KeepDataHasBeenSet() const;
 
+                    /**
+                     * 获取保持镜像的原始设置。该参数与Password或KeyIds.N不能同时指定。只有使用自定义镜像、共享镜像或外部导入镜像创建实例时才能指定该参数为TRUE。取值范围：
+TRUE：表示保持镜像的登录设置
+FALSE：表示不保持镜像的登录设置
+
+默认取值：FALSE。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KeepImageLogin 保持镜像的原始设置。该参数与Password或KeyIds.N不能同时指定。只有使用自定义镜像、共享镜像或外部导入镜像创建实例时才能指定该参数为TRUE。取值范围：
+TRUE：表示保持镜像的登录设置
+FALSE：表示不保持镜像的登录设置
+
+默认取值：FALSE。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetKeepImageLogin() const;
+
+                    /**
+                     * 设置保持镜像的原始设置。该参数与Password或KeyIds.N不能同时指定。只有使用自定义镜像、共享镜像或外部导入镜像创建实例时才能指定该参数为TRUE。取值范围：
+TRUE：表示保持镜像的登录设置
+FALSE：表示不保持镜像的登录设置
+
+默认取值：FALSE。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param KeepImageLogin 保持镜像的原始设置。该参数与Password或KeyIds.N不能同时指定。只有使用自定义镜像、共享镜像或外部导入镜像创建实例时才能指定该参数为TRUE。取值范围：
+TRUE：表示保持镜像的登录设置
+FALSE：表示不保持镜像的登录设置
+
+默认取值：FALSE。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetKeepImageLogin(const std::string& _keepImageLogin);
+
+                    /**
+                     * 判断参数 KeepImageLogin 是否已赋值
+                     * @return KeepImageLogin 是否已赋值
+                     */
+                    bool KeepImageLoginHasBeenSet() const;
+
                 private:
 
                     /**
@@ -164,6 +202,17 @@ namespace TencentCloud
                      */
                     std::string m_keepData;
                     bool m_keepDataHasBeenSet;
+
+                    /**
+                     * 保持镜像的原始设置。该参数与Password或KeyIds.N不能同时指定。只有使用自定义镜像、共享镜像或外部导入镜像创建实例时才能指定该参数为TRUE。取值范围：
+TRUE：表示保持镜像的登录设置
+FALSE：表示不保持镜像的登录设置
+
+默认取值：FALSE。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_keepImageLogin;
+                    bool m_keepImageLoginHasBeenSet;
 
                 };
             }

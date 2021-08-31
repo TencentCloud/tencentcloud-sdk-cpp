@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取恶意请求记录ID数组，最大100条。
-                     * @return Ids 恶意请求记录ID数组，最大100条。
+                     * 获取恶意请求记录ID数组，(最大100条)
+                     * @return Ids 恶意请求记录ID数组，(最大100条)
                      */
                     std::vector<uint64_t> GetIds() const;
 
                     /**
-                     * 设置恶意请求记录ID数组，最大100条。
-                     * @param Ids 恶意请求记录ID数组，最大100条。
+                     * 设置恶意请求记录ID数组，(最大100条)
+                     * @param Ids 恶意请求记录ID数组，(最大100条)
                      */
                     void SetIds(const std::vector<uint64_t>& _ids);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 恶意请求记录ID数组，最大100条。
+                     * 恶意请求记录ID数组，(最大100条)
                      */
                     std::vector<uint64_t> m_ids;
                     bool m_idsHasBeenSet;

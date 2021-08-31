@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回数量，默认为10，最大值为100。
-                     * @return Limit 返回数量，默认为10，最大值为100。
+                     * 获取返回数量，最大值为100。
+                     * @return Limit 返回数量，最大值为100。
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为10，最大值为100。
-                     * @param Limit 返回数量，默认为10，最大值为100。
+                     * 设置返回数量，最大值为100。
+                     * @param Limit 返回数量，最大值为100。
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -81,17 +81,29 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤条件。
-<li>Keywords - String - 是否必填：否 - 查询关键字 </li>
+<li>IpOrAlias - String - 是否必填：否 - 查询关键字 </li>
+<li>UserName - String - 是否必填：否 - 用户名筛选 </li>
+<li>ModifyBeginTime - String - 是否必填：否 - 按照修改时间段筛选，开始时间 </li>
+<li>ModifyEndTime - String - 是否必填：否 - 按照修改时间段筛选，结束时间 </li>
                      * @return Filters 过滤条件。
-<li>Keywords - String - 是否必填：否 - 查询关键字 </li>
+<li>IpOrAlias - String - 是否必填：否 - 查询关键字 </li>
+<li>UserName - String - 是否必填：否 - 用户名筛选 </li>
+<li>ModifyBeginTime - String - 是否必填：否 - 按照修改时间段筛选，开始时间 </li>
+<li>ModifyEndTime - String - 是否必填：否 - 按照修改时间段筛选，结束时间 </li>
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件。
-<li>Keywords - String - 是否必填：否 - 查询关键字 </li>
+<li>IpOrAlias - String - 是否必填：否 - 查询关键字 </li>
+<li>UserName - String - 是否必填：否 - 用户名筛选 </li>
+<li>ModifyBeginTime - String - 是否必填：否 - 按照修改时间段筛选，开始时间 </li>
+<li>ModifyEndTime - String - 是否必填：否 - 按照修改时间段筛选，结束时间 </li>
                      * @param Filters 过滤条件。
-<li>Keywords - String - 是否必填：否 - 查询关键字 </li>
+<li>IpOrAlias - String - 是否必填：否 - 查询关键字 </li>
+<li>UserName - String - 是否必填：否 - 用户名筛选 </li>
+<li>ModifyBeginTime - String - 是否必填：否 - 按照修改时间段筛选，开始时间 </li>
+<li>ModifyEndTime - String - 是否必填：否 - 按照修改时间段筛选，结束时间 </li>
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -104,7 +116,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回数量，默认为10，最大值为100。
+                     * 返回数量，最大值为100。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -117,7 +129,10 @@ namespace TencentCloud
 
                     /**
                      * 过滤条件。
-<li>Keywords - String - 是否必填：否 - 查询关键字 </li>
+<li>IpOrAlias - String - 是否必填：否 - 查询关键字 </li>
+<li>UserName - String - 是否必填：否 - 用户名筛选 </li>
+<li>ModifyBeginTime - String - 是否必填：否 - 按照修改时间段筛选，开始时间 </li>
+<li>ModifyEndTime - String - 是否必填：否 - 按照修改时间段筛选，结束时间 </li>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

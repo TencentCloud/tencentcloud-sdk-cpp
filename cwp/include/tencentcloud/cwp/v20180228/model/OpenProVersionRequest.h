@@ -43,22 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云主机类型。
-<li>CVM：表示虚拟主机</li>
-<li>BM:  表示黑石物理机</li>
-                     * @return MachineType 云主机类型。
-<li>CVM：表示虚拟主机</li>
-<li>BM:  表示黑石物理机</li>
+                     * 获取云主机类型。(当前参数已作废,可以留空值 )
+                     * @return MachineType 云主机类型。(当前参数已作废,可以留空值 )
                      */
                     std::string GetMachineType() const;
 
                     /**
-                     * 设置云主机类型。
-<li>CVM：表示虚拟主机</li>
-<li>BM:  表示黑石物理机</li>
-                     * @param MachineType 云主机类型。
-<li>CVM：表示虚拟主机</li>
-<li>BM:  表示黑石物理机</li>
+                     * 设置云主机类型。(当前参数已作废,可以留空值 )
+                     * @param MachineType 云主机类型。(当前参数已作废,可以留空值 )
                      */
                     void SetMachineType(const std::string& _machineType);
 
@@ -69,18 +61,14 @@ namespace TencentCloud
                     bool MachineTypeHasBeenSet() const;
 
                     /**
-                     * 获取机器所属地域。
-如：ap-guangzhou，ap-shanghai
-                     * @return MachineRegion 机器所属地域。
-如：ap-guangzhou，ap-shanghai
+                     * 获取机器所属地域。(当前参数已作废,可以留空值 )
+                     * @return MachineRegion 机器所属地域。(当前参数已作废,可以留空值 )
                      */
                     std::string GetMachineRegion() const;
 
                     /**
-                     * 设置机器所属地域。
-如：ap-guangzhou，ap-shanghai
-                     * @param MachineRegion 机器所属地域。
-如：ap-guangzhou，ap-shanghai
+                     * 设置机器所属地域。(当前参数已作废,可以留空值 )
+                     * @param MachineRegion 机器所属地域。(当前参数已作废,可以留空值 )
                      */
                     void SetMachineRegion(const std::string& _machineRegion);
 
@@ -92,17 +80,17 @@ namespace TencentCloud
 
                     /**
                      * 获取主机唯一标识Uuid数组。
-黑石的InstanceId，CVM的Uuid
+黑石的InstanceId，CVM的Uuid ,边缘计算的Uuid , 轻量应用服务器的Uuid ,混合云机器的Quuid 。 当前参数最大长度限制20
                      * @return Quuids 主机唯一标识Uuid数组。
-黑石的InstanceId，CVM的Uuid
+黑石的InstanceId，CVM的Uuid ,边缘计算的Uuid , 轻量应用服务器的Uuid ,混合云机器的Quuid 。 当前参数最大长度限制20
                      */
                     std::vector<std::string> GetQuuids() const;
 
                     /**
                      * 设置主机唯一标识Uuid数组。
-黑石的InstanceId，CVM的Uuid
+黑石的InstanceId，CVM的Uuid ,边缘计算的Uuid , 轻量应用服务器的Uuid ,混合云机器的Quuid 。 当前参数最大长度限制20
                      * @param Quuids 主机唯一标识Uuid数组。
-黑石的InstanceId，CVM的Uuid
+黑石的InstanceId，CVM的Uuid ,边缘计算的Uuid , 轻量应用服务器的Uuid ,混合云机器的Quuid 。 当前参数最大长度限制20
                      */
                     void SetQuuids(const std::vector<std::string>& _quuids);
 
@@ -133,23 +121,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 云主机类型。
-<li>CVM：表示虚拟主机</li>
-<li>BM:  表示黑石物理机</li>
+                     * 云主机类型。(当前参数已作废,可以留空值 )
                      */
                     std::string m_machineType;
                     bool m_machineTypeHasBeenSet;
 
                     /**
-                     * 机器所属地域。
-如：ap-guangzhou，ap-shanghai
+                     * 机器所属地域。(当前参数已作废,可以留空值 )
                      */
                     std::string m_machineRegion;
                     bool m_machineRegionHasBeenSet;
 
                     /**
                      * 主机唯一标识Uuid数组。
-黑石的InstanceId，CVM的Uuid
+黑石的InstanceId，CVM的Uuid ,边缘计算的Uuid , 轻量应用服务器的Uuid ,混合云机器的Quuid 。 当前参数最大长度限制20
                      */
                     std::vector<std::string> m_quuids;
                     bool m_quuidsHasBeenSet;

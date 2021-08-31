@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否同步
-                     * @return Sync 是否同步
+                     * 获取是否同步：true-是 false-否；默认false
+                     * @return Sync 是否同步：true-是 false-否；默认false
                      */
                     bool GetSync() const;
 
                     /**
-                     * 设置是否同步
-                     * @param Sync 是否同步
+                     * 设置是否同步：true-是 false-否；默认false
+                     * @param Sync 是否同步：true-是 false-否；默认false
                      */
                     void SetSync(const bool& _sync);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否同步
+                     * 是否同步：true-是 false-否；默认false
                      */
                     bool m_sync;
                     bool m_syncHasBeenSet;

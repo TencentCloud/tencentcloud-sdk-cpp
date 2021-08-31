@@ -28,7 +28,8 @@ ModifyInstanceAttributesRequest::ModifyInstanceAttributesRequest() :
     m_instanceNameHasBeenSet(false),
     m_configHasBeenSet(false),
     m_dynamicRetentionConfigHasBeenSet(false),
-    m_rebalanceTimeHasBeenSet(false)
+    m_rebalanceTimeHasBeenSet(false),
+    m_publicNetworkHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,14 @@ string ModifyInstanceAttributesRequest::ToJsonString() const
         string key = "RebalanceTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_rebalanceTime, allocator);
+    }
+
+    if (m_publicNetworkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicNetwork";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_publicNetwork, allocator);
     }
 
 
@@ -191,6 +200,22 @@ void ModifyInstanceAttributesRequest::SetRebalanceTime(const int64_t& _rebalance
 bool ModifyInstanceAttributesRequest::RebalanceTimeHasBeenSet() const
 {
     return m_rebalanceTimeHasBeenSet;
+}
+
+int64_t ModifyInstanceAttributesRequest::GetPublicNetwork() const
+{
+    return m_publicNetwork;
+}
+
+void ModifyInstanceAttributesRequest::SetPublicNetwork(const int64_t& _publicNetwork)
+{
+    m_publicNetwork = _publicNetwork;
+    m_publicNetworkHasBeenSet = true;
+}
+
+bool ModifyInstanceAttributesRequest::PublicNetworkHasBeenSet() const
+{
+    return m_publicNetworkHasBeenSet;
 }
 
 

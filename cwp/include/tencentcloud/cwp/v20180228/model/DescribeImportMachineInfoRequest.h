@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务器内网IP（默认）/ 服务器名称 / 服务器ID 数组
-                     * @return MachineList 服务器内网IP（默认）/ 服务器名称 / 服务器ID 数组
+                     * 获取服务器内网IP（默认）/ 服务器名称 / 服务器ID 数组 (最大 1000条)
+                     * @return MachineList 服务器内网IP（默认）/ 服务器名称 / 服务器ID 数组 (最大 1000条)
                      */
                     std::vector<std::string> GetMachineList() const;
 
                     /**
-                     * 设置服务器内网IP（默认）/ 服务器名称 / 服务器ID 数组
-                     * @param MachineList 服务器内网IP（默认）/ 服务器名称 / 服务器ID 数组
+                     * 设置服务器内网IP（默认）/ 服务器名称 / 服务器ID 数组 (最大 1000条)
+                     * @param MachineList 服务器内网IP（默认）/ 服务器名称 / 服务器ID 数组 (最大 1000条)
                      */
                     void SetMachineList(const std::vector<std::string>& _machineList);
 
@@ -99,7 +99,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 服务器内网IP（默认）/ 服务器名称 / 服务器ID 数组
+                     * 服务器内网IP（默认）/ 服务器名称 / 服务器ID 数组 (最大 1000条)
                      */
                     std::vector<std::string> m_machineList;
                     bool m_machineListHasBeenSet;

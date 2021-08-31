@@ -32,7 +32,9 @@ DescribeGeneralStatResponse::DescribeGeneralStatResponse() :
     m_agentsProHasBeenSet(false),
     m_agentsBasicHasBeenSet(false),
     m_agentsProExpireWithInSevenDaysHasBeenSet(false),
-    m_riskMachineHasBeenSet(false)
+    m_riskMachineHasBeenSet(false),
+    m_shutdownHasBeenSet(false),
+    m_offlineHasBeenSet(false)
 {
 }
 
@@ -160,6 +162,26 @@ CoreInternalOutcome DescribeGeneralStatResponse::Deserialize(const string &paylo
         m_riskMachineHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Shutdown") && !rsp["Shutdown"].IsNull())
+    {
+        if (!rsp["Shutdown"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Shutdown` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_shutdown = rsp["Shutdown"].GetUint64();
+        m_shutdownHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Offline") && !rsp["Offline"].IsNull())
+    {
+        if (!rsp["Offline"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Offline` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_offline = rsp["Offline"].GetUint64();
+        m_offlineHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -240,6 +262,22 @@ string DescribeGeneralStatResponse::ToJsonString() const
         string key = "RiskMachine";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_riskMachine, allocator);
+    }
+
+    if (m_shutdownHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Shutdown";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_shutdown, allocator);
+    }
+
+    if (m_offlineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offline";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_offline, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -342,6 +380,26 @@ uint64_t DescribeGeneralStatResponse::GetRiskMachine() const
 bool DescribeGeneralStatResponse::RiskMachineHasBeenSet() const
 {
     return m_riskMachineHasBeenSet;
+}
+
+uint64_t DescribeGeneralStatResponse::GetShutdown() const
+{
+    return m_shutdown;
+}
+
+bool DescribeGeneralStatResponse::ShutdownHasBeenSet() const
+{
+    return m_shutdownHasBeenSet;
+}
+
+uint64_t DescribeGeneralStatResponse::GetOffline() const
+{
+    return m_offline;
+}
+
+bool DescribeGeneralStatResponse::OfflineHasBeenSet() const
+{
+    return m_offlineHasBeenSet;
 }
 
 

@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool VulEmergencyHasBeenSet() const;
 
                     /**
-                     * 获取超时时长 单位秒
-                     * @return TimeoutPeriod 超时时长 单位秒
+                     * 获取超时时长 单位秒 默认 3600 秒
+                     * @return TimeoutPeriod 超时时长 单位秒 默认 3600 秒
                      */
                     uint64_t GetTimeoutPeriod() const;
 
                     /**
-                     * 设置超时时长 单位秒
-                     * @param TimeoutPeriod 超时时长 单位秒
+                     * 设置超时时长 单位秒 默认 3600 秒
+                     * @param TimeoutPeriod 超时时长 单位秒 默认 3600 秒
                      */
                     void SetTimeoutPeriod(const uint64_t& _timeoutPeriod);
 
@@ -201,7 +201,7 @@ namespace TencentCloud
                     bool m_vulEmergencyHasBeenSet;
 
                     /**
-                     * 超时时长 单位秒
+                     * 超时时长 单位秒 默认 3600 秒
                      */
                     uint64_t m_timeoutPeriod;
                     bool m_timeoutPeriodHasBeenSet;

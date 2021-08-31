@@ -40,7 +40,8 @@ RunInstancesRequest::RunInstancesRequest() :
     m_systemDiskSizeHasBeenSet(false),
     m_internetMaxBandwidthInHasBeenSet(false),
     m_instanceChargeTypeHasBeenSet(false),
-    m_keyIdsHasBeenSet(false)
+    m_keyIdsHasBeenSet(false),
+    m_keepImageLoginHasBeenSet(false)
 {
 }
 
@@ -218,6 +219,14 @@ string RunInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_keepImageLoginHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeepImageLogin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_keepImageLogin.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -514,6 +523,22 @@ void RunInstancesRequest::SetKeyIds(const vector<string>& _keyIds)
 bool RunInstancesRequest::KeyIdsHasBeenSet() const
 {
     return m_keyIdsHasBeenSet;
+}
+
+string RunInstancesRequest::GetKeepImageLogin() const
+{
+    return m_keepImageLogin;
+}
+
+void RunInstancesRequest::SetKeepImageLogin(const string& _keepImageLogin)
+{
+    m_keepImageLogin = _keepImageLogin;
+    m_keepImageLoginHasBeenSet = true;
+}
+
+bool RunInstancesRequest::KeepImageLoginHasBeenSet() const
+{
+    return m_keepImageLoginHasBeenSet;
 }
 
 

@@ -45,21 +45,33 @@ namespace TencentCloud
 
                     /**
                      * 获取云主机类型。
-<li>CVM：表示虚拟主机</li>
+<li>CVM：表示云服务器</li>
 <li>BM:  表示黑石物理机</li>
+<li>ECM:  表示边缘计算服务器</li>
+<li>LH:  表示轻量应用服务器</li>
+<li>Other:  表示混合云服务器</li>
                      * @return MachineType 云主机类型。
-<li>CVM：表示虚拟主机</li>
+<li>CVM：表示云服务器</li>
 <li>BM:  表示黑石物理机</li>
+<li>ECM:  表示边缘计算服务器</li>
+<li>LH:  表示轻量应用服务器</li>
+<li>Other:  表示混合云服务器</li>
                      */
                     std::string GetMachineType() const;
 
                     /**
                      * 设置云主机类型。
-<li>CVM：表示虚拟主机</li>
+<li>CVM：表示云服务器</li>
 <li>BM:  表示黑石物理机</li>
+<li>ECM:  表示边缘计算服务器</li>
+<li>LH:  表示轻量应用服务器</li>
+<li>Other:  表示混合云服务器</li>
                      * @param MachineType 云主机类型。
-<li>CVM：表示虚拟主机</li>
+<li>CVM：表示云服务器</li>
 <li>BM:  表示黑石物理机</li>
+<li>ECM:  表示边缘计算服务器</li>
+<li>LH:  表示轻量应用服务器</li>
+<li>Other:  表示混合云服务器</li>
                      */
                     void SetMachineType(const std::string& _machineType);
 
@@ -70,14 +82,14 @@ namespace TencentCloud
                     bool MachineTypeHasBeenSet() const;
 
                     /**
-                     * 获取机器所属地域。如：ap-guangzhou，ap-shanghai
-                     * @return MachineRegion 机器所属地域。如：ap-guangzhou，ap-shanghai
+                     * 获取机器所属地域。如：ap-guangzhou
+                     * @return MachineRegion 机器所属地域。如：ap-guangzhou
                      */
                     std::string GetMachineRegion() const;
 
                     /**
-                     * 设置机器所属地域。如：ap-guangzhou，ap-shanghai
-                     * @param MachineRegion 机器所属地域。如：ap-guangzhou，ap-shanghai
+                     * 设置机器所属地域。如：ap-guangzhou
+                     * @param MachineRegion 机器所属地域。如：ap-guangzhou
                      */
                     void SetMachineRegion(const std::string& _machineRegion);
 
@@ -133,14 +145,17 @@ namespace TencentCloud
 
                     /**
                      * 云主机类型。
-<li>CVM：表示虚拟主机</li>
+<li>CVM：表示云服务器</li>
 <li>BM:  表示黑石物理机</li>
+<li>ECM:  表示边缘计算服务器</li>
+<li>LH:  表示轻量应用服务器</li>
+<li>Other:  表示混合云服务器</li>
                      */
                     std::string m_machineType;
                     bool m_machineTypeHasBeenSet;
 
                     /**
-                     * 机器所属地域。如：ap-guangzhou，ap-shanghai
+                     * 机器所属地域。如：ap-guangzhou
                      */
                     std::string m_machineRegion;
                     bool m_machineRegionHasBeenSet;

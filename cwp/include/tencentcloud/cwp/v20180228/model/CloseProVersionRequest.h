@@ -43,18 +43,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主机唯一标识Uuid。
-黑石的InstanceId，CVM的Uuid
-                     * @return Quuid 主机唯一标识Uuid。
-黑石的InstanceId，CVM的Uuid
+                     * 获取主机唯一标识Uuid数组。
+黑石的InstanceId，CVM的Uuid ,边缘计算的Uuid , 轻量应用服务器的Uuid ,混合云机器的Quuid 。 当前参数最大长度限制20
+                     * @return Quuid 主机唯一标识Uuid数组。
+黑石的InstanceId，CVM的Uuid ,边缘计算的Uuid , 轻量应用服务器的Uuid ,混合云机器的Quuid 。 当前参数最大长度限制20
                      */
                     std::string GetQuuid() const;
 
                     /**
-                     * 设置主机唯一标识Uuid。
-黑石的InstanceId，CVM的Uuid
-                     * @param Quuid 主机唯一标识Uuid。
-黑石的InstanceId，CVM的Uuid
+                     * 设置主机唯一标识Uuid数组。
+黑石的InstanceId，CVM的Uuid ,边缘计算的Uuid , 轻量应用服务器的Uuid ,混合云机器的Quuid 。 当前参数最大长度限制20
+                     * @param Quuid 主机唯一标识Uuid数组。
+黑石的InstanceId，CVM的Uuid ,边缘计算的Uuid , 轻量应用服务器的Uuid ,混合云机器的Quuid 。 当前参数最大长度限制20
                      */
                     void SetQuuid(const std::string& _quuid);
 
@@ -67,8 +67,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 主机唯一标识Uuid。
-黑石的InstanceId，CVM的Uuid
+                     * 主机唯一标识Uuid数组。
+黑石的InstanceId，CVM的Uuid ,边缘计算的Uuid , 轻量应用服务器的Uuid ,混合云机器的Quuid 。 当前参数最大长度限制20
                      */
                     std::string m_quuid;
                     bool m_quuidHasBeenSet;

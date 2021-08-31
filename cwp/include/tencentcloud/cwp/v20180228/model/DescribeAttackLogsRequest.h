@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回数量，默认为10，最大值为100。
-                     * @return Limit 返回数量，默认为10，最大值为100。
+                     * 获取返回数量，最大值为100。
+                     * @return Limit 返回数量，最大值为100。
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为10，最大值为100。
-                     * @param Limit 返回数量，默认为10，最大值为100。
+                     * 设置返回数量，最大值为100。
+                     * @param Limit 返回数量，最大值为100。
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -164,7 +164,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回数量，默认为10，最大值为100。
+                     * 返回数量，最大值为100。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

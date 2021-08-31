@@ -49,7 +49,10 @@ InstanceAttributesResponse::InstanceAttributesResponse() :
     m_cvmHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_featuresHasBeenSet(false),
-    m_retentionTimeConfigHasBeenSet(false)
+    m_retentionTimeConfigHasBeenSet(false),
+    m_maxConnectionHasBeenSet(false),
+    m_publicNetworkHasBeenSet(false),
+    m_deleteRouteTimestampHasBeenSet(false)
 {
 }
 
@@ -388,6 +391,36 @@ CoreInternalOutcome InstanceAttributesResponse::Deserialize(const rapidjson::Val
         m_retentionTimeConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxConnection") && !value["MaxConnection"].IsNull())
+    {
+        if (!value["MaxConnection"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAttributesResponse.MaxConnection` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxConnection = value["MaxConnection"].GetUint64();
+        m_maxConnectionHasBeenSet = true;
+    }
+
+    if (value.HasMember("PublicNetwork") && !value["PublicNetwork"].IsNull())
+    {
+        if (!value["PublicNetwork"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAttributesResponse.PublicNetwork` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicNetwork = value["PublicNetwork"].GetInt64();
+        m_publicNetworkHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeleteRouteTimestamp") && !value["DeleteRouteTimestamp"].IsNull())
+    {
+        if (!value["DeleteRouteTimestamp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAttributesResponse.DeleteRouteTimestamp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deleteRouteTimestamp = string(value["DeleteRouteTimestamp"].GetString());
+        m_deleteRouteTimestampHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -651,6 +684,30 @@ void InstanceAttributesResponse::ToJsonObject(rapidjson::Value &value, rapidjson
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_retentionTimeConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_maxConnectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxConnection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxConnection, allocator);
+    }
+
+    if (m_publicNetworkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicNetwork";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_publicNetwork, allocator);
+    }
+
+    if (m_deleteRouteTimestampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteRouteTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deleteRouteTimestamp.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1118,5 +1175,53 @@ void InstanceAttributesResponse::SetRetentionTimeConfig(const DynamicRetentionTi
 bool InstanceAttributesResponse::RetentionTimeConfigHasBeenSet() const
 {
     return m_retentionTimeConfigHasBeenSet;
+}
+
+uint64_t InstanceAttributesResponse::GetMaxConnection() const
+{
+    return m_maxConnection;
+}
+
+void InstanceAttributesResponse::SetMaxConnection(const uint64_t& _maxConnection)
+{
+    m_maxConnection = _maxConnection;
+    m_maxConnectionHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::MaxConnectionHasBeenSet() const
+{
+    return m_maxConnectionHasBeenSet;
+}
+
+int64_t InstanceAttributesResponse::GetPublicNetwork() const
+{
+    return m_publicNetwork;
+}
+
+void InstanceAttributesResponse::SetPublicNetwork(const int64_t& _publicNetwork)
+{
+    m_publicNetwork = _publicNetwork;
+    m_publicNetworkHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::PublicNetworkHasBeenSet() const
+{
+    return m_publicNetworkHasBeenSet;
+}
+
+string InstanceAttributesResponse::GetDeleteRouteTimestamp() const
+{
+    return m_deleteRouteTimestamp;
+}
+
+void InstanceAttributesResponse::SetDeleteRouteTimestamp(const string& _deleteRouteTimestamp)
+{
+    m_deleteRouteTimestamp = _deleteRouteTimestamp;
+    m_deleteRouteTimestampHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::DeleteRouteTimestampHasBeenSet() const
+{
+    return m_deleteRouteTimestampHasBeenSet;
 }
 

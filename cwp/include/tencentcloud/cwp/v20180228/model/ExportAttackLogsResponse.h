@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取导出文件下载链接地址。
-                     * @return DownloadUrl 导出文件下载链接地址。
+                     * 获取已废弃
+                     * @return DownloadUrl 已废弃
                      */
                     std::string GetDownloadUrl() const;
 
@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool DownloadUrlHasBeenSet() const;
 
                     /**
-                     * 获取导出任务ID
-                     * @return TaskId 导出任务ID
+                     * 获取导出任务ID 可通过ExportTasks接口下载
+                     * @return TaskId 导出任务ID 可通过ExportTasks接口下载
                      */
                     std::string GetTaskId() const;
 
@@ -70,13 +70,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 导出文件下载链接地址。
+                     * 已废弃
                      */
                     std::string m_downloadUrl;
                     bool m_downloadUrlHasBeenSet;
 
                     /**
-                     * 导出任务ID
+                     * 导出任务ID 可通过ExportTasks接口下载
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

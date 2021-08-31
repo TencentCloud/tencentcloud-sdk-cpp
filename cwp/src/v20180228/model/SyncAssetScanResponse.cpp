@@ -23,7 +23,11 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
-SyncAssetScanResponse::SyncAssetScanResponse()
+SyncAssetScanResponse::SyncAssetScanResponse() :
+    m_stateHasBeenSet(false),
+    m_latestStartTimeHasBeenSet(false),
+    m_latestEndTimeHasBeenSet(false),
+    m_taskIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +65,46 @@ CoreInternalOutcome SyncAssetScanResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("State") && !rsp["State"].IsNull())
+    {
+        if (!rsp["State"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `State` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_state = string(rsp["State"].GetString());
+        m_stateHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("LatestStartTime") && !rsp["LatestStartTime"].IsNull())
+    {
+        if (!rsp["LatestStartTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LatestStartTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_latestStartTime = string(rsp["LatestStartTime"].GetString());
+        m_latestStartTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("LatestEndTime") && !rsp["LatestEndTime"].IsNull())
+    {
+        if (!rsp["LatestEndTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LatestEndTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_latestEndTime = string(rsp["LatestEndTime"].GetString());
+        m_latestEndTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
+    {
+        if (!rsp["TaskId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskId = rsp["TaskId"].GetUint64();
+        m_taskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +114,38 @@ string SyncAssetScanResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_stateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "State";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_state.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_latestStartTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatestStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_latestStartTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_latestEndTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatestEndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_latestEndTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskId, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +158,45 @@ string SyncAssetScanResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string SyncAssetScanResponse::GetState() const
+{
+    return m_state;
+}
+
+bool SyncAssetScanResponse::StateHasBeenSet() const
+{
+    return m_stateHasBeenSet;
+}
+
+string SyncAssetScanResponse::GetLatestStartTime() const
+{
+    return m_latestStartTime;
+}
+
+bool SyncAssetScanResponse::LatestStartTimeHasBeenSet() const
+{
+    return m_latestStartTimeHasBeenSet;
+}
+
+string SyncAssetScanResponse::GetLatestEndTime() const
+{
+    return m_latestEndTime;
+}
+
+bool SyncAssetScanResponse::LatestEndTimeHasBeenSet() const
+{
+    return m_latestEndTimeHasBeenSet;
+}
+
+uint64_t SyncAssetScanResponse::GetTaskId() const
+{
+    return m_taskId;
+}
+
+bool SyncAssetScanResponse::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
+}
 
 

@@ -608,6 +608,72 @@ namespace TencentCloud
                      */
                     bool RetentionTimeConfigHasBeenSet() const;
 
+                    /**
+                     * 获取最大连接数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxConnection 最大连接数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetMaxConnection() const;
+
+                    /**
+                     * 设置最大连接数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxConnection 最大连接数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxConnection(const uint64_t& _maxConnection);
+
+                    /**
+                     * 判断参数 MaxConnection 是否已赋值
+                     * @return MaxConnection 是否已赋值
+                     */
+                    bool MaxConnectionHasBeenSet() const;
+
+                    /**
+                     * 获取公网带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PublicNetwork 公网带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetPublicNetwork() const;
+
+                    /**
+                     * 设置公网带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PublicNetwork 公网带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPublicNetwork(const int64_t& _publicNetwork);
+
+                    /**
+                     * 判断参数 PublicNetwork 是否已赋值
+                     * @return PublicNetwork 是否已赋值
+                     */
+                    bool PublicNetworkHasBeenSet() const;
+
+                    /**
+                     * 获取时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeleteRouteTimestamp 时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDeleteRouteTimestamp() const;
+
+                    /**
+                     * 设置时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeleteRouteTimestamp 时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeleteRouteTimestamp(const std::string& _deleteRouteTimestamp);
+
+                    /**
+                     * 判断参数 DeleteRouteTimestamp 是否已赋值
+                     * @return DeleteRouteTimestamp 是否已赋值
+                     */
+                    bool DeleteRouteTimestampHasBeenSet() const;
+
                 private:
 
                     /**
@@ -792,6 +858,27 @@ namespace TencentCloud
                      */
                     DynamicRetentionTime m_retentionTimeConfig;
                     bool m_retentionTimeConfigHasBeenSet;
+
+                    /**
+                     * 最大连接数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_maxConnection;
+                    bool m_maxConnectionHasBeenSet;
+
+                    /**
+                     * 公网带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_publicNetwork;
+                    bool m_publicNetworkHasBeenSet;
+
+                    /**
+                     * 时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deleteRouteTimestamp;
+                    bool m_deleteRouteTimestampHasBeenSet;
 
                 };
             }

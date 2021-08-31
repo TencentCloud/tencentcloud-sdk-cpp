@@ -133,14 +133,34 @@ namespace TencentCloud
                     bool IsGlobalHasBeenSet() const;
 
                     /**
-                     * 获取云主机类型：“CVM”：虚拟主机，"BMS"：裸金属，"ECM"：边缘计算主机
-                     * @return MachineType 云主机类型：“CVM”：虚拟主机，"BMS"：裸金属，"ECM"：边缘计算主机
+                     * 获取云主机类型：
+CVM：虚拟主机
+BM：裸金属
+ECM：边缘计算主机
+LH：轻量应用服务器
+Other：混合云机器
+                     * @return MachineType 云主机类型：
+CVM：虚拟主机
+BM：裸金属
+ECM：边缘计算主机
+LH：轻量应用服务器
+Other：混合云机器
                      */
                     std::string GetMachineType() const;
 
                     /**
-                     * 设置云主机类型：“CVM”：虚拟主机，"BMS"：裸金属，"ECM"：边缘计算主机
-                     * @param MachineType 云主机类型：“CVM”：虚拟主机，"BMS"：裸金属，"ECM"：边缘计算主机
+                     * 设置云主机类型：
+CVM：虚拟主机
+BM：裸金属
+ECM：边缘计算主机
+LH：轻量应用服务器
+Other：混合云机器
+                     * @param MachineType 云主机类型：
+CVM：虚拟主机
+BM：裸金属
+ECM：边缘计算主机
+LH：轻量应用服务器
+Other：混合云机器
                      */
                     void SetMachineType(const std::string& _machineType);
 
@@ -151,14 +171,14 @@ namespace TencentCloud
                     bool MachineTypeHasBeenSet() const;
 
                     /**
-                     * 获取主机地域. 示例: "ap-bj"
-                     * @return RegionCode 主机地域. 示例: "ap-bj"
+                     * 获取主机地域. 示例: "ap-guangzhou"
+                     * @return RegionCode 主机地域. 示例: "ap-guangzhou"
                      */
                     std::string GetRegionCode() const;
 
                     /**
-                     * 设置主机地域. 示例: "ap-bj"
-                     * @param RegionCode 主机地域. 示例: "ap-bj"
+                     * 设置主机地域. 示例: "ap-guangzhou"
+                     * @param RegionCode 主机地域. 示例: "ap-guangzhou"
                      */
                     void SetRegionCode(const std::string& _regionCode);
 
@@ -219,13 +239,18 @@ namespace TencentCloud
                     bool m_isGlobalHasBeenSet;
 
                     /**
-                     * 云主机类型：“CVM”：虚拟主机，"BMS"：裸金属，"ECM"：边缘计算主机
+                     * 云主机类型：
+CVM：虚拟主机
+BM：裸金属
+ECM：边缘计算主机
+LH：轻量应用服务器
+Other：混合云机器
                      */
                     std::string m_machineType;
                     bool m_machineTypeHasBeenSet;
 
                     /**
-                     * 主机地域. 示例: "ap-bj"
+                     * 主机地域. 示例: "ap-guangzhou"
                      */
                     std::string m_regionCode;
                     bool m_regionCodeHasBeenSet;

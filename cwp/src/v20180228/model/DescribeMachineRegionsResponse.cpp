@@ -28,7 +28,8 @@ DescribeMachineRegionsResponse::DescribeMachineRegionsResponse() :
     m_bMHasBeenSet(false),
     m_lHHasBeenSet(false),
     m_eCMHasBeenSet(false),
-    m_otherHasBeenSet(false)
+    m_otherHasBeenSet(false),
+    m_aLLHasBeenSet(false)
 {
 }
 
@@ -166,6 +167,26 @@ CoreInternalOutcome DescribeMachineRegionsResponse::Deserialize(const string &pa
         m_otherHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ALL") && !rsp["ALL"].IsNull())
+    {
+        if (!rsp["ALL"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ALL` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ALL"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RegionInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_aLL.push_back(item);
+        }
+        m_aLLHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +272,21 @@ string DescribeMachineRegionsResponse::ToJsonString() const
         }
     }
 
+    if (m_aLLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ALL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_aLL.begin(); itr != m_aLL.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -311,6 +347,16 @@ vector<RegionInfo> DescribeMachineRegionsResponse::GetOther() const
 bool DescribeMachineRegionsResponse::OtherHasBeenSet() const
 {
     return m_otherHasBeenSet;
+}
+
+vector<RegionInfo> DescribeMachineRegionsResponse::GetALL() const
+{
+    return m_aLL;
+}
+
+bool DescribeMachineRegionsResponse::ALLHasBeenSet() const
+{
+    return m_aLLHasBeenSet;
 }
 
 

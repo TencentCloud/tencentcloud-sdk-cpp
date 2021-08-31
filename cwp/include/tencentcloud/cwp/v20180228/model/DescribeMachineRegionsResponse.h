@@ -104,6 +104,18 @@ namespace TencentCloud
                      */
                     bool OtherHasBeenSet() const;
 
+                    /**
+                     * 获取所有地域列表(包含以上所有地域)
+                     * @return ALL 所有地域列表(包含以上所有地域)
+                     */
+                    std::vector<RegionInfo> GetALL() const;
+
+                    /**
+                     * 判断参数 ALL 是否已赋值
+                     * @return ALL 是否已赋值
+                     */
+                    bool ALLHasBeenSet() const;
+
                 private:
 
                     /**
@@ -135,6 +147,12 @@ namespace TencentCloud
                      */
                     std::vector<RegionInfo> m_other;
                     bool m_otherHasBeenSet;
+
+                    /**
+                     * 所有地域列表(包含以上所有地域)
+                     */
+                    std::vector<RegionInfo> m_aLL;
+                    bool m_aLLHasBeenSet;
 
                 };
             }

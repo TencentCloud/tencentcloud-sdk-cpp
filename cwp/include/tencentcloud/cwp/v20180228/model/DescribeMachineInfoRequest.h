@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool UuidHasBeenSet() const;
 
                     /**
-                     * 获取cvm id， quuid、uuid必填一个
-                     * @return Quuid cvm id， quuid、uuid必填一个
+                     * 获取Quuid , Uuid 必填一项
+                     * @return Quuid Quuid , Uuid 必填一项
                      */
                     std::string GetQuuid() const;
 
                     /**
-                     * 设置cvm id， quuid、uuid必填一个
-                     * @param Quuid cvm id， quuid、uuid必填一个
+                     * 设置Quuid , Uuid 必填一项
+                     * @param Quuid Quuid , Uuid 必填一项
                      */
                     void SetQuuid(const std::string& _quuid);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_uuidHasBeenSet;
 
                     /**
-                     * cvm id， quuid、uuid必填一个
+                     * Quuid , Uuid 必填一项
                      */
                     std::string m_quuid;
                     bool m_quuidHasBeenSet;

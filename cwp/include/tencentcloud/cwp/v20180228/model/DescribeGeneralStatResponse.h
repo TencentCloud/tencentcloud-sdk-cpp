@@ -92,8 +92,8 @@ namespace TencentCloud
                     bool AgentsOnlineHasBeenSet() const;
 
                     /**
-                     * 获取主机安全客户端离线的总数
-                     * @return AgentsOffline 主机安全客户端离线的总数
+                     * 获取主机安全客户端 离线+关机 的总数
+                     * @return AgentsOffline 主机安全客户端 离线+关机 的总数
                      */
                     uint64_t GetAgentsOffline() const;
 
@@ -151,6 +151,30 @@ namespace TencentCloud
                      */
                     bool RiskMachineHasBeenSet() const;
 
+                    /**
+                     * 获取已关机总数
+                     * @return Shutdown 已关机总数
+                     */
+                    uint64_t GetShutdown() const;
+
+                    /**
+                     * 判断参数 Shutdown 是否已赋值
+                     * @return Shutdown 是否已赋值
+                     */
+                    bool ShutdownHasBeenSet() const;
+
+                    /**
+                     * 获取已离线总数
+                     * @return Offline 已离线总数
+                     */
+                    uint64_t GetOffline() const;
+
+                    /**
+                     * 判断参数 Offline 是否已赋值
+                     * @return Offline 是否已赋值
+                     */
+                    bool OfflineHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,7 +202,7 @@ namespace TencentCloud
                     bool m_agentsOnlineHasBeenSet;
 
                     /**
-                     * 主机安全客户端离线的总数
+                     * 主机安全客户端 离线+关机 的总数
                      */
                     uint64_t m_agentsOffline;
                     bool m_agentsOfflineHasBeenSet;
@@ -206,6 +230,18 @@ namespace TencentCloud
                      */
                     uint64_t m_riskMachine;
                     bool m_riskMachineHasBeenSet;
+
+                    /**
+                     * 已关机总数
+                     */
+                    uint64_t m_shutdown;
+                    bool m_shutdownHasBeenSet;
+
+                    /**
+                     * 已离线总数
+                     */
+                    uint64_t m_offline;
+                    bool m_offlineHasBeenSet;
 
                 };
             }

@@ -39,6 +39,8 @@
 #include <tencentcloud/ckafka/v20190819/model/DeleteAclResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteAclRuleRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteAclRuleResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/DeleteRouteTriggerTimeRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/DeleteRouteTriggerTimeResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteTopicRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteTopicResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteTopicIpWhiteListRequest.h>
@@ -129,6 +131,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAclRuleResponse> DeleteAclRuleOutcome;
                 typedef std::future<DeleteAclRuleOutcome> DeleteAclRuleOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DeleteAclRuleRequest&, DeleteAclRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAclRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRouteTriggerTimeResponse> DeleteRouteTriggerTimeOutcome;
+                typedef std::future<DeleteRouteTriggerTimeOutcome> DeleteRouteTriggerTimeOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::DeleteRouteTriggerTimeRequest&, DeleteRouteTriggerTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRouteTriggerTimeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteTopicResponse> DeleteTopicOutcome;
                 typedef std::future<DeleteTopicOutcome> DeleteTopicOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DeleteTopicRequest&, DeleteTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTopicAsyncHandler;
@@ -281,6 +286,15 @@ namespace TencentCloud
                 DeleteAclRuleOutcome DeleteAclRule(const Model::DeleteAclRuleRequest &request);
                 void DeleteAclRuleAsync(const Model::DeleteAclRuleRequest& request, const DeleteAclRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAclRuleOutcomeCallable DeleteAclRuleCallable(const Model::DeleteAclRuleRequest& request);
+
+                /**
+                 *修改删除路由延迟触发时间
+                 * @param req DeleteRouteTriggerTimeRequest
+                 * @return DeleteRouteTriggerTimeOutcome
+                 */
+                DeleteRouteTriggerTimeOutcome DeleteRouteTriggerTime(const Model::DeleteRouteTriggerTimeRequest &request);
+                void DeleteRouteTriggerTimeAsync(const Model::DeleteRouteTriggerTimeRequest& request, const DeleteRouteTriggerTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRouteTriggerTimeOutcomeCallable DeleteRouteTriggerTimeCallable(const Model::DeleteRouteTriggerTimeRequest& request);
 
                 /**
                  *删除ckafka主题

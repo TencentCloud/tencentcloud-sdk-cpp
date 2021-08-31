@@ -33,7 +33,8 @@ QueryInvoiceResultData::QueryInvoiceResultData() :
     m_amountWithoutTaxHasBeenSet(false),
     m_taxAmountHasBeenSet(false),
     m_isRedWashedHasBeenSet(false),
-    m_pdfUrlHasBeenSet(false)
+    m_pdfUrlHasBeenSet(false),
+    m_imageUrlHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,16 @@ CoreInternalOutcome QueryInvoiceResultData::Deserialize(const rapidjson::Value &
         m_pdfUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("ImageUrl") && !value["ImageUrl"].IsNull())
+    {
+        if (!value["ImageUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QueryInvoiceResultData.ImageUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageUrl = string(value["ImageUrl"].GetString());
+        m_imageUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +292,14 @@ void QueryInvoiceResultData::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "PdfUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_pdfUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -492,5 +511,21 @@ void QueryInvoiceResultData::SetPdfUrl(const string& _pdfUrl)
 bool QueryInvoiceResultData::PdfUrlHasBeenSet() const
 {
     return m_pdfUrlHasBeenSet;
+}
+
+string QueryInvoiceResultData::GetImageUrl() const
+{
+    return m_imageUrl;
+}
+
+void QueryInvoiceResultData::SetImageUrl(const string& _imageUrl)
+{
+    m_imageUrl = _imageUrl;
+    m_imageUrlHasBeenSet = true;
+}
+
+bool QueryInvoiceResultData::ImageUrlHasBeenSet() const
+{
+    return m_imageUrlHasBeenSet;
 }
 

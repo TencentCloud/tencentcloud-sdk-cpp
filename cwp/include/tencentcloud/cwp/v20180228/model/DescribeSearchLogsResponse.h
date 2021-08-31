@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取历史搜索记录
-                     * @return Data 历史搜索记录
+                     * 获取历史搜索记录 保留最新的10条
+                     * @return Data 历史搜索记录 保留最新的10条
                      */
                     std::vector<std::string> GetData() const;
 
@@ -58,7 +58,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 历史搜索记录
+                     * 历史搜索记录 保留最新的10条
                      */
                     std::vector<std::string> m_data;
                     bool m_dataHasBeenSet;

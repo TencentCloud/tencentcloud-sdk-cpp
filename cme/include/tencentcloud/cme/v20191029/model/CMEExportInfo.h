@@ -103,14 +103,14 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取导出的媒体分类路径，长度不能超过15字符。
-                     * @return ClassPath 导出的媒体分类路径，长度不能超过15字符。
+                     * 获取导出的媒体分类路径，长度不能超过15字符。不存在默认创建。
+                     * @return ClassPath 导出的媒体分类路径，长度不能超过15字符。不存在默认创建。
                      */
                     std::string GetClassPath() const;
 
                     /**
-                     * 设置导出的媒体分类路径，长度不能超过15字符。
-                     * @param ClassPath 导出的媒体分类路径，长度不能超过15字符。
+                     * 设置导出的媒体分类路径，长度不能超过15字符。不存在默认创建。
+                     * @param ClassPath 导出的媒体分类路径，长度不能超过15字符。不存在默认创建。
                      */
                     void SetClassPath(const std::string& _classPath);
 
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 导出的媒体分类路径，长度不能超过15字符。
+                     * 导出的媒体分类路径，长度不能超过15字符。不存在默认创建。
                      */
                     std::string m_classPath;
                     bool m_classPathHasBeenSet;

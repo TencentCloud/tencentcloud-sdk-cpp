@@ -1,0 +1,202 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_CWP_V20180228_MODEL_IGNOREBASELINERULE_H_
+#define TENCENTCLOUD_CWP_V20180228_MODEL_IGNOREBASELINERULE_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Cwp
+    {
+        namespace V20180228
+        {
+            namespace Model
+            {
+                /**
+                * 忽略的基线检测项信息
+                */
+                class IgnoreBaselineRule : public AbstractModel
+                {
+                public:
+                    IgnoreBaselineRule();
+                    ~IgnoreBaselineRule() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取基线检测项名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleName 基线检测项名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRuleName() const;
+
+                    /**
+                     * 设置基线检测项名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RuleName 基线检测项名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRuleName(const std::string& _ruleName);
+
+                    /**
+                     * 判断参数 RuleName 是否已赋值
+                     * @return RuleName 是否已赋值
+                     */
+                    bool RuleNameHasBeenSet() const;
+
+                    /**
+                     * 获取基线检测项id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleId 基线检测项id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetRuleId() const;
+
+                    /**
+                     * 设置基线检测项id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RuleId 基线检测项id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRuleId(const uint64_t& _ruleId);
+
+                    /**
+                     * 判断参数 RuleId 是否已赋值
+                     * @return RuleId 是否已赋值
+                     */
+                    bool RuleIdHasBeenSet() const;
+
+                    /**
+                     * 获取更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ModifyTime 更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetModifyTime() const;
+
+                    /**
+                     * 设置更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ModifyTime 更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetModifyTime(const std::string& _modifyTime);
+
+                    /**
+                     * 判断参数 ModifyTime 是否已赋值
+                     * @return ModifyTime 是否已赋值
+                     */
+                    bool ModifyTimeHasBeenSet() const;
+
+                    /**
+                     * 获取修复建议
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Fix 修复建议
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFix() const;
+
+                    /**
+                     * 设置修复建议
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Fix 修复建议
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFix(const std::string& _fix);
+
+                    /**
+                     * 判断参数 Fix 是否已赋值
+                     * @return Fix 是否已赋值
+                     */
+                    bool FixHasBeenSet() const;
+
+                    /**
+                     * 获取影响主机数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EffectHostCount 影响主机数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetEffectHostCount() const;
+
+                    /**
+                     * 设置影响主机数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EffectHostCount 影响主机数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEffectHostCount(const uint64_t& _effectHostCount);
+
+                    /**
+                     * 判断参数 EffectHostCount 是否已赋值
+                     * @return EffectHostCount 是否已赋值
+                     */
+                    bool EffectHostCountHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 基线检测项名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ruleName;
+                    bool m_ruleNameHasBeenSet;
+
+                    /**
+                     * 基线检测项id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_ruleId;
+                    bool m_ruleIdHasBeenSet;
+
+                    /**
+                     * 更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_modifyTime;
+                    bool m_modifyTimeHasBeenSet;
+
+                    /**
+                     * 修复建议
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_fix;
+                    bool m_fixHasBeenSet;
+
+                    /**
+                     * 影响主机数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_effectHostCount;
+                    bool m_effectHostCountHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_CWP_V20180228_MODEL_IGNOREBASELINERULE_H_

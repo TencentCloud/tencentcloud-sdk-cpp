@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ID数组，最大100条。
-                     * @return Ids ID数组，最大100条。
+                     * 获取ID数组. (最大100条)
+                     * @return Ids ID数组. (最大100条)
                      */
                     std::vector<uint64_t> GetIds() const;
 
                     /**
-                     * 设置ID数组，最大100条。
-                     * @param Ids ID数组，最大100条。
+                     * 设置ID数组. (最大100条)
+                     * @param Ids ID数组. (最大100条)
                      */
                     void SetIds(const std::vector<uint64_t>& _ids);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ID数组，最大100条。
+                     * ID数组. (最大100条)
                      */
                     std::vector<uint64_t> m_ids;
                     bool m_idsHasBeenSet;

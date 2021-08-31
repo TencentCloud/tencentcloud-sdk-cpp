@@ -280,6 +280,28 @@ namespace TencentCloud
                      */
                     bool PdfUrlHasBeenSet() const;
 
+                    /**
+                     * 获取png地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImageUrl png地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetImageUrl() const;
+
+                    /**
+                     * 设置png地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ImageUrl png地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetImageUrl(const std::string& _imageUrl);
+
+                    /**
+                     * 判断参数 ImageUrl 是否已赋值
+                     * @return ImageUrl 是否已赋值
+                     */
+                    bool ImageUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -359,6 +381,13 @@ namespace TencentCloud
                      */
                     std::string m_pdfUrl;
                     bool m_pdfUrlHasBeenSet;
+
+                    /**
+                     * png地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_imageUrl;
+                    bool m_imageUrlHasBeenSet;
 
                 };
             }

@@ -123,6 +123,8 @@
 #include <tencentcloud/ocr/v20181119/model/SealOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/ShipInvoiceOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/ShipInvoiceOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/SmartStructuralOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/SmartStructuralOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/TableOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/TableOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/TaxiInvoiceOCRRequest.h>
@@ -319,6 +321,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ShipInvoiceOCRResponse> ShipInvoiceOCROutcome;
                 typedef std::future<ShipInvoiceOCROutcome> ShipInvoiceOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::ShipInvoiceOCRRequest&, ShipInvoiceOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> ShipInvoiceOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::SmartStructuralOCRResponse> SmartStructuralOCROutcome;
+                typedef std::future<SmartStructuralOCROutcome> SmartStructuralOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::SmartStructuralOCRRequest&, SmartStructuralOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> SmartStructuralOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::TableOCRResponse> TableOCROutcome;
                 typedef std::future<TableOCROutcome> TableOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::TableOCRRequest&, TableOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> TableOCRAsyncHandler;
@@ -1082,6 +1087,15 @@ namespace TencentCloud
                 ShipInvoiceOCROutcome ShipInvoiceOCR(const Model::ShipInvoiceOCRRequest &request);
                 void ShipInvoiceOCRAsync(const Model::ShipInvoiceOCRRequest& request, const ShipInvoiceOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ShipInvoiceOCROutcomeCallable ShipInvoiceOCRCallable(const Model::ShipInvoiceOCRRequest& request);
+
+                /**
+                 *本接口支持识别并提取各类证照、票据、表单、合同等结构化场景的字段信息。无需任何配置，灵活高效。适用于各类结构化信息录入场景。
+                 * @param req SmartStructuralOCRRequest
+                 * @return SmartStructuralOCROutcome
+                 */
+                SmartStructuralOCROutcome SmartStructuralOCR(const Model::SmartStructuralOCRRequest &request);
+                void SmartStructuralOCRAsync(const Model::SmartStructuralOCRRequest& request, const SmartStructuralOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SmartStructuralOCROutcomeCallable SmartStructuralOCRCallable(const Model::SmartStructuralOCRRequest& request);
 
                 /**
                  *<b>此接口为表格识别的旧版本服务，不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href="https://cloud.tencent.com/document/product/866/49525">新版表格识别</a>。</b>

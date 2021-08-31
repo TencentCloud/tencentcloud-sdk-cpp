@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取CVM主机ID
-                     * @return Quuids CVM主机ID
+                     * 获取Quuid
+                     * @return Quuids Quuid
                      */
                     std::vector<std::string> GetQuuids() const;
 
                     /**
-                     * 设置CVM主机ID
-                     * @param Quuids CVM主机ID
+                     * 设置Quuid
+                     * @param Quuids Quuid
                      */
                     void SetQuuids(const std::vector<std::string>& _quuids);
 
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_idHasBeenSet;
 
                     /**
-                     * CVM主机ID
+                     * Quuid
                      */
                     std::vector<std::string> m_quuids;
                     bool m_quuidsHasBeenSet;

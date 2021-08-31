@@ -22,7 +22,8 @@ using namespace std;
 
 L4RuleSource::L4RuleSource() :
     m_sourceHasBeenSet(false),
-    m_weightHasBeenSet(false)
+    m_weightHasBeenSet(false),
+    m_portHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome L4RuleSource::Deserialize(const rapidjson::Value &value)
         m_weightHasBeenSet = true;
     }
 
+    if (value.HasMember("Port") && !value["Port"].IsNull())
+    {
+        if (!value["Port"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `L4RuleSource.Port` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_port = value["Port"].GetUint64();
+        m_portHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void L4RuleSource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Weight";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_weight, allocator);
+    }
+
+    if (m_portHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Port";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_port, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void L4RuleSource::SetWeight(const uint64_t& _weight)
 bool L4RuleSource::WeightHasBeenSet() const
 {
     return m_weightHasBeenSet;
+}
+
+uint64_t L4RuleSource::GetPort() const
+{
+    return m_port;
+}
+
+void L4RuleSource::SetPort(const uint64_t& _port)
+{
+    m_port = _port;
+    m_portHasBeenSet = true;
+}
+
+bool L4RuleSource::PortHasBeenSet() const
+{
+    return m_portHasBeenSet;
 }
 
