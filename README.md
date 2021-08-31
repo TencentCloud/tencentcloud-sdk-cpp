@@ -250,6 +250,13 @@ target_link_libraries(DescribeInstancesAsync tencentcloud-sdk-cpp-cvm tencentclo
 
 更多例子请参考 example 目录。
 
+## Common Client调用方式
+从`3.0.297`开始，腾讯云 C++ SDK 支持使用`泛用型的API调用方式(Common Client)`进行请求。您只需安装 tencentcloud-sdk-cpp-core 基础依赖库, 即可向任何产品发起调用。
+
+**注意，您必须明确知道您调用的接口所需参数，否则可能会调用失败。**
+
+Common Client参考[example](https://github.com/TencentCloud/tencentcloud-sdk-cpp/blob/master/example/common_client/DescribeInstances.cpp)
+
 # 单元测试
 ## 依赖库 gtest
 
