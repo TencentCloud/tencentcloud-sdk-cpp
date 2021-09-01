@@ -24,7 +24,7 @@ using namespace TencentCloud::Gme::V20180711::Model;
 using namespace std;
 
 DescribeAppStatisticsResponse::DescribeAppStatisticsResponse() :
-    m_appStatisticsHasBeenSet(false)
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -62,24 +62,21 @@ CoreInternalOutcome DescribeAppStatisticsResponse::Deserialize(const string &pay
     }
 
 
-    if (rsp.HasMember("AppStatistics") && !rsp["AppStatistics"].IsNull())
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["AppStatistics"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `AppStatistics` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["AppStatistics"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["Data"].IsObject())
         {
-            AppStatisticsItem item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_appStatistics.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
         }
-        m_appStatisticsHasBeenSet = true;
+
+        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dataHasBeenSet = true;
     }
 
 
@@ -92,19 +89,13 @@ string DescribeAppStatisticsResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_appStatisticsHasBeenSet)
+    if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AppStatistics";
+        string key = "Data";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_appStatistics.begin(); itr != m_appStatistics.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_data.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -119,14 +110,14 @@ string DescribeAppStatisticsResponse::ToJsonString() const
 }
 
 
-vector<AppStatisticsItem> DescribeAppStatisticsResponse::GetAppStatistics() const
+DescribeAppStatisticsResp DescribeAppStatisticsResponse::GetData() const
 {
-    return m_appStatistics;
+    return m_data;
 }
 
-bool DescribeAppStatisticsResponse::AppStatisticsHasBeenSet() const
+bool DescribeAppStatisticsResponse::DataHasBeenSet() const
 {
-    return m_appStatisticsHasBeenSet;
+    return m_dataHasBeenSet;
 }
 
 

@@ -14,55 +14,36 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_GME_V20180711_MODEL_CREATEAPPRESPONSE_H_
-#define TENCENTCLOUD_GME_V20180711_MODEL_CREATEAPPRESPONSE_H_
+#ifndef TENCENTCLOUD_TCR_V20190924_MODEL_MODIFYINSTANCERESPONSE_H_
+#define TENCENTCLOUD_TCR_V20190924_MODEL_MODIFYINSTANCERESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/gme/v20180711/model/CreateAppResp.h>
 
 
 namespace TencentCloud
 {
-    namespace Gme
+    namespace Tcr
     {
-        namespace V20180711
+        namespace V20190924
         {
             namespace Model
             {
                 /**
-                * CreateApp返回参数结构体
+                * ModifyInstance返回参数结构体
                 */
-                class CreateAppResponse : public AbstractModel
+                class ModifyInstanceResponse : public AbstractModel
                 {
                 public:
-                    CreateAppResponse();
-                    ~CreateAppResponse() = default;
+                    ModifyInstanceResponse();
+                    ~ModifyInstanceResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
-                    /**
-                     * 获取创建应用返回数据
-                     * @return Data 创建应用返回数据
-                     */
-                    CreateAppResp GetData() const;
-
-                    /**
-                     * 判断参数 Data 是否已赋值
-                     * @return Data 是否已赋值
-                     */
-                    bool DataHasBeenSet() const;
-
                 private:
-
-                    /**
-                     * 创建应用返回数据
-                     */
-                    CreateAppResp m_data;
-                    bool m_dataHasBeenSet;
 
                 };
             }
@@ -70,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_GME_V20180711_MODEL_CREATEAPPRESPONSE_H_
+#endif // !TENCENTCLOUD_TCR_V20190924_MODEL_MODIFYINSTANCERESPONSE_H_

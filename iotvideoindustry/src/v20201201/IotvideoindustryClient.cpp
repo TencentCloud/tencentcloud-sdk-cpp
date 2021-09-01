@@ -857,6 +857,49 @@ IotvideoindustryClient::DescribeGroupsOutcomeCallable IotvideoindustryClient::De
     return task->get_future();
 }
 
+IotvideoindustryClient::DescribeIPCChannelsOutcome IotvideoindustryClient::DescribeIPCChannels(const DescribeIPCChannelsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIPCChannels");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIPCChannelsResponse rsp = DescribeIPCChannelsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIPCChannelsOutcome(rsp);
+        else
+            return DescribeIPCChannelsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIPCChannelsOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoindustryClient::DescribeIPCChannelsAsync(const DescribeIPCChannelsRequest& request, const DescribeIPCChannelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeIPCChannels(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoindustryClient::DescribeIPCChannelsOutcomeCallable IotvideoindustryClient::DescribeIPCChannelsCallable(const DescribeIPCChannelsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeIPCChannelsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeIPCChannels(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoindustryClient::DescribeRecordStreamOutcome IotvideoindustryClient::DescribeRecordStream(const DescribeRecordStreamRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRecordStream");

@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/gme/v20180711/model/CreateAppResponse.h>
+#include <tencentcloud/tcr/v20190924/model/ModifyInstanceResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Gme::V20180711::Model;
+using namespace TencentCloud::Tcr::V20190924::Model;
 using namespace std;
 
-CreateAppResponse::CreateAppResponse() :
-    m_dataHasBeenSet(false)
+ModifyInstanceResponse::ModifyInstanceResponse()
 {
 }
 
-CoreInternalOutcome CreateAppResponse::Deserialize(const string &payload)
+CoreInternalOutcome ModifyInstanceResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,41 +61,15 @@ CoreInternalOutcome CreateAppResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
-    {
-        if (!rsp["Data"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_dataHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string CreateAppResponse::ToJsonString() const
+string ModifyInstanceResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_dataHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Data";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_data.ToJsonObject(value[key.c_str()], allocator);
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -109,15 +82,5 @@ string CreateAppResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-CreateAppResp CreateAppResponse::GetData() const
-{
-    return m_data;
-}
-
-bool CreateAppResponse::DataHasBeenSet() const
-{
-    return m_dataHasBeenSet;
-}
 
 

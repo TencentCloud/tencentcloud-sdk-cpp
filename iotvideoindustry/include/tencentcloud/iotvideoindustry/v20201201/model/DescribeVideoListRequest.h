@@ -43,42 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开始时间戳，秒级
-                     * @return StartTime 开始时间戳，秒级
-                     */
-                    int64_t GetStartTime() const;
-
-                    /**
-                     * 设置开始时间戳，秒级
-                     * @param StartTime 开始时间戳，秒级
-                     */
-                    void SetStartTime(const int64_t& _startTime);
-
-                    /**
-                     * 判断参数 StartTime 是否已赋值
-                     * @return StartTime 是否已赋值
-                     */
-                    bool StartTimeHasBeenSet() const;
-
-                    /**
-                     * 获取结束时间戳，秒级
-                     * @return EndTime 结束时间戳，秒级
-                     */
-                    int64_t GetEndTime() const;
-
-                    /**
-                     * 设置结束时间戳，秒级
-                     * @param EndTime 结束时间戳，秒级
-                     */
-                    void SetEndTime(const int64_t& _endTime);
-
-                    /**
-                     * 判断参数 EndTime 是否已赋值
-                     * @return EndTime 是否已赋值
-                     */
-                    bool EndTimeHasBeenSet() const;
-
-                    /**
                      * 获取偏移
                      * @return Offset 偏移
                      */
@@ -115,6 +79,42 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
+                     * 获取开始时间戳，秒级
+                     * @return StartTime 开始时间戳，秒级
+                     */
+                    int64_t GetStartTime() const;
+
+                    /**
+                     * 设置开始时间戳，秒级
+                     * @param StartTime 开始时间戳，秒级
+                     */
+                    void SetStartTime(const int64_t& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取结束时间戳，秒级
+                     * @return EndTime 结束时间戳，秒级
+                     */
+                    int64_t GetEndTime() const;
+
+                    /**
+                     * 设置结束时间戳，秒级
+                     * @param EndTime 结束时间戳，秒级
+                     */
+                    void SetEndTime(const int64_t& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     */
+                    bool EndTimeHasBeenSet() const;
+
+                    /**
                      * 获取设备Id
                      * @return DeviceId 设备Id
                      */
@@ -132,19 +132,151 @@ namespace TencentCloud
                      */
                     bool DeviceIdHasBeenSet() const;
 
+                    /**
+                     * 获取开始录制范围 开始
+                     * @return StartRecordTime 开始录制范围 开始
+                     */
+                    int64_t GetStartRecordTime() const;
+
+                    /**
+                     * 设置开始录制范围 开始
+                     * @param StartRecordTime 开始录制范围 开始
+                     */
+                    void SetStartRecordTime(const int64_t& _startRecordTime);
+
+                    /**
+                     * 判断参数 StartRecordTime 是否已赋值
+                     * @return StartRecordTime 是否已赋值
+                     */
+                    bool StartRecordTimeHasBeenSet() const;
+
+                    /**
+                     * 获取开始录制范围 结束
+                     * @return EndRecordTime 开始录制范围 结束
+                     */
+                    int64_t GetEndRecordTime() const;
+
+                    /**
+                     * 设置开始录制范围 结束
+                     * @param EndRecordTime 开始录制范围 结束
+                     */
+                    void SetEndRecordTime(const int64_t& _endRecordTime);
+
+                    /**
+                     * 判断参数 EndRecordTime 是否已赋值
+                     * @return EndRecordTime 是否已赋值
+                     */
+                    bool EndRecordTimeHasBeenSet() const;
+
+                    /**
+                     * 获取过期时间范围 开始
+                     * @return StartExpireTime 过期时间范围 开始
+                     */
+                    int64_t GetStartExpireTime() const;
+
+                    /**
+                     * 设置过期时间范围 开始
+                     * @param StartExpireTime 过期时间范围 开始
+                     */
+                    void SetStartExpireTime(const int64_t& _startExpireTime);
+
+                    /**
+                     * 判断参数 StartExpireTime 是否已赋值
+                     * @return StartExpireTime 是否已赋值
+                     */
+                    bool StartExpireTimeHasBeenSet() const;
+
+                    /**
+                     * 获取过期时间范围 结束
+                     * @return EndExpireTime 过期时间范围 结束
+                     */
+                    int64_t GetEndExpireTime() const;
+
+                    /**
+                     * 设置过期时间范围 结束
+                     * @param EndExpireTime 过期时间范围 结束
+                     */
+                    void SetEndExpireTime(const int64_t& _endExpireTime);
+
+                    /**
+                     * 判断参数 EndExpireTime 是否已赋值
+                     * @return EndExpireTime 是否已赋值
+                     */
+                    bool EndExpireTimeHasBeenSet() const;
+
+                    /**
+                     * 获取文件大小范围 开始 单位byte
+                     * @return StartFileSize 文件大小范围 开始 单位byte
+                     */
+                    int64_t GetStartFileSize() const;
+
+                    /**
+                     * 设置文件大小范围 开始 单位byte
+                     * @param StartFileSize 文件大小范围 开始 单位byte
+                     */
+                    void SetStartFileSize(const int64_t& _startFileSize);
+
+                    /**
+                     * 判断参数 StartFileSize 是否已赋值
+                     * @return StartFileSize 是否已赋值
+                     */
+                    bool StartFileSizeHasBeenSet() const;
+
+                    /**
+                     * 获取文件大小范围 结束 单位byte
+                     * @return EndFileSize 文件大小范围 结束 单位byte
+                     */
+                    int64_t GetEndFileSize() const;
+
+                    /**
+                     * 设置文件大小范围 结束 单位byte
+                     * @param EndFileSize 文件大小范围 结束 单位byte
+                     */
+                    void SetEndFileSize(const int64_t& _endFileSize);
+
+                    /**
+                     * 判断参数 EndFileSize 是否已赋值
+                     * @return EndFileSize 是否已赋值
+                     */
+                    bool EndFileSizeHasBeenSet() const;
+
+                    /**
+                     * 获取录制状态 99: 录制方已经回写状态 1: 开始录制了，等待回写 2: 已经到了时间模板的停止时间，在等待录制方回写
+                     * @return IsRecording 录制状态 99: 录制方已经回写状态 1: 开始录制了，等待回写 2: 已经到了时间模板的停止时间，在等待录制方回写
+                     */
+                    int64_t GetIsRecording() const;
+
+                    /**
+                     * 设置录制状态 99: 录制方已经回写状态 1: 开始录制了，等待回写 2: 已经到了时间模板的停止时间，在等待录制方回写
+                     * @param IsRecording 录制状态 99: 录制方已经回写状态 1: 开始录制了，等待回写 2: 已经到了时间模板的停止时间，在等待录制方回写
+                     */
+                    void SetIsRecording(const int64_t& _isRecording);
+
+                    /**
+                     * 判断参数 IsRecording 是否已赋值
+                     * @return IsRecording 是否已赋值
+                     */
+                    bool IsRecordingHasBeenSet() const;
+
+                    /**
+                     * 获取通道ID默认必传
+                     * @return ChannelId 通道ID默认必传
+                     */
+                    std::string GetChannelId() const;
+
+                    /**
+                     * 设置通道ID默认必传
+                     * @param ChannelId 通道ID默认必传
+                     */
+                    void SetChannelId(const std::string& _channelId);
+
+                    /**
+                     * 判断参数 ChannelId 是否已赋值
+                     * @return ChannelId 是否已赋值
+                     */
+                    bool ChannelIdHasBeenSet() const;
+
                 private:
-
-                    /**
-                     * 开始时间戳，秒级
-                     */
-                    int64_t m_startTime;
-                    bool m_startTimeHasBeenSet;
-
-                    /**
-                     * 结束时间戳，秒级
-                     */
-                    int64_t m_endTime;
-                    bool m_endTimeHasBeenSet;
 
                     /**
                      * 偏移
@@ -159,10 +291,70 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
+                     * 开始时间戳，秒级
+                     */
+                    int64_t m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 结束时间戳，秒级
+                     */
+                    int64_t m_endTime;
+                    bool m_endTimeHasBeenSet;
+
+                    /**
                      * 设备Id
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;
+
+                    /**
+                     * 开始录制范围 开始
+                     */
+                    int64_t m_startRecordTime;
+                    bool m_startRecordTimeHasBeenSet;
+
+                    /**
+                     * 开始录制范围 结束
+                     */
+                    int64_t m_endRecordTime;
+                    bool m_endRecordTimeHasBeenSet;
+
+                    /**
+                     * 过期时间范围 开始
+                     */
+                    int64_t m_startExpireTime;
+                    bool m_startExpireTimeHasBeenSet;
+
+                    /**
+                     * 过期时间范围 结束
+                     */
+                    int64_t m_endExpireTime;
+                    bool m_endExpireTimeHasBeenSet;
+
+                    /**
+                     * 文件大小范围 开始 单位byte
+                     */
+                    int64_t m_startFileSize;
+                    bool m_startFileSizeHasBeenSet;
+
+                    /**
+                     * 文件大小范围 结束 单位byte
+                     */
+                    int64_t m_endFileSize;
+                    bool m_endFileSizeHasBeenSet;
+
+                    /**
+                     * 录制状态 99: 录制方已经回写状态 1: 开始录制了，等待回写 2: 已经到了时间模板的停止时间，在等待录制方回写
+                     */
+                    int64_t m_isRecording;
+                    bool m_isRecordingHasBeenSet;
+
+                    /**
+                     * 通道ID默认必传
+                     */
+                    std::string m_channelId;
+                    bool m_channelIdHasBeenSet;
 
                 };
             }

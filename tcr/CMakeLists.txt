@@ -45,7 +45,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/AutoDelStrategyInfo.h
   include/tencentcloud/tcr/v20190924/model/DeleteInternalEndpointDnsRequest.h
   include/tencentcloud/tcr/v20190924/model/ValidateNamespaceExistPersonalRequest.h
-  include/tencentcloud/tcr/v20190924/model/RegistryChargePrepaid.h
+  include/tencentcloud/tcr/v20190924/model/ModifyInstanceRequest.h
   include/tencentcloud/tcr/v20190924/model/RenewInstanceResponse.h
   include/tencentcloud/tcr/v20190924/model/CreateImmutableTagRulesRequest.h
   include/tencentcloud/tcr/v20190924/model/DescribeRepositoriesResponse.h
@@ -151,6 +151,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/CreateUserPersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeWebhookTriggerResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeImageManifestsRequest.h
+  include/tencentcloud/tcr/v20190924/model/RegistryChargePrepaid.h
   include/tencentcloud/tcr/v20190924/model/ModifyNamespaceRequest.h
   include/tencentcloud/tcr/v20190924/model/ModifyRepositoryAccessPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/TagSpecification.h
@@ -219,6 +220,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/ModifyUserPasswordPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/PeerReplicationOption.h
   include/tencentcloud/tcr/v20190924/model/DescribeSecurityPoliciesRequest.h
+  include/tencentcloud/tcr/v20190924/model/ModifyInstanceResponse.h
   include/tencentcloud/tcr/v20190924/model/ReplicationRegistry.h
   include/tencentcloud/tcr/v20190924/model/DescribeInternalEndpointsRequest.h
   include/tencentcloud/tcr/v20190924/model/ValidateNamespaceExistPersonalResponse.h
@@ -285,7 +287,7 @@ set(tcr_src
   src/v20190924/model/AutoDelStrategyInfo.cpp
   src/v20190924/model/DeleteInternalEndpointDnsRequest.cpp
   src/v20190924/model/ValidateNamespaceExistPersonalRequest.cpp
-  src/v20190924/model/RegistryChargePrepaid.cpp
+  src/v20190924/model/ModifyInstanceRequest.cpp
   src/v20190924/model/RenewInstanceResponse.cpp
   src/v20190924/model/CreateImmutableTagRulesRequest.cpp
   src/v20190924/model/DescribeRepositoriesResponse.cpp
@@ -391,6 +393,7 @@ set(tcr_src
   src/v20190924/model/CreateUserPersonalResponse.cpp
   src/v20190924/model/DescribeWebhookTriggerResponse.cpp
   src/v20190924/model/DescribeImageManifestsRequest.cpp
+  src/v20190924/model/RegistryChargePrepaid.cpp
   src/v20190924/model/ModifyNamespaceRequest.cpp
   src/v20190924/model/ModifyRepositoryAccessPersonalRequest.cpp
   src/v20190924/model/TagSpecification.cpp
@@ -459,6 +462,7 @@ set(tcr_src
   src/v20190924/model/ModifyUserPasswordPersonalRequest.cpp
   src/v20190924/model/PeerReplicationOption.cpp
   src/v20190924/model/DescribeSecurityPoliciesRequest.cpp
+  src/v20190924/model/ModifyInstanceResponse.cpp
   src/v20190924/model/ReplicationRegistry.cpp
   src/v20190924/model/DescribeInternalEndpointsRequest.cpp
   src/v20190924/model/ValidateNamespaceExistPersonalResponse.cpp

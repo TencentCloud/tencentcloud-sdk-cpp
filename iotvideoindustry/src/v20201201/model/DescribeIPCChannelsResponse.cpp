@@ -14,21 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/gme/v20180711/model/CreateAppResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeIPCChannelsResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Gme::V20180711::Model;
+using namespace TencentCloud::Iotvideoindustry::V20201201::Model;
 using namespace std;
 
-CreateAppResponse::CreateAppResponse() :
-    m_dataHasBeenSet(false)
+DescribeIPCChannelsResponse::DescribeIPCChannelsResponse() :
+    m_totalCountHasBeenSet(false),
+    m_deviceListHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome CreateAppResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeIPCChannelsResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,40 +63,67 @@ CoreInternalOutcome CreateAppResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
-        if (!rsp["Data"].IsObject())
+        if (!rsp["TotalCount"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
 
-        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
-        if (!outcome.IsSuccess())
+    if (rsp.HasMember("DeviceList") && !rsp["DeviceList"].IsNull())
+    {
+        if (!rsp["DeviceList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DeviceList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["DeviceList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
+            GroupDeviceItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_deviceList.push_back(item);
         }
-
-        m_dataHasBeenSet = true;
+        m_deviceListHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string CreateAppResponse::ToJsonString() const
+string DescribeIPCChannelsResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_dataHasBeenSet)
+    if (m_totalCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Data";
+        string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_data.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_deviceListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_deviceList.begin(); itr != m_deviceList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,14 +138,24 @@ string CreateAppResponse::ToJsonString() const
 }
 
 
-CreateAppResp CreateAppResponse::GetData() const
+uint64_t DescribeIPCChannelsResponse::GetTotalCount() const
 {
-    return m_data;
+    return m_totalCount;
 }
 
-bool CreateAppResponse::DataHasBeenSet() const
+bool DescribeIPCChannelsResponse::TotalCountHasBeenSet() const
 {
-    return m_dataHasBeenSet;
+    return m_totalCountHasBeenSet;
+}
+
+vector<GroupDeviceItem> DescribeIPCChannelsResponse::GetDeviceList() const
+{
+    return m_deviceList;
+}
+
+bool DescribeIPCChannelsResponse::DeviceListHasBeenSet() const
+{
+    return m_deviceListHasBeenSet;
 }
 
 

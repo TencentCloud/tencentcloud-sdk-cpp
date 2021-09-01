@@ -3437,6 +3437,49 @@ TcrClient::ModifyImmutableTagRulesOutcomeCallable TcrClient::ModifyImmutableTagR
     return task->get_future();
 }
 
+TcrClient::ModifyInstanceOutcome TcrClient::ModifyInstance(const ModifyInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceResponse rsp = ModifyInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceOutcome(rsp);
+        else
+            return ModifyInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::ModifyInstanceAsync(const ModifyInstanceRequest& request, const ModifyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::ModifyInstanceOutcomeCallable TcrClient::ModifyInstanceCallable(const ModifyInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::ModifyInstanceTokenOutcome TcrClient::ModifyInstanceToken(const ModifyInstanceTokenRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyInstanceToken");

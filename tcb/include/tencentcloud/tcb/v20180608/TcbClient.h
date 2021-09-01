@@ -91,6 +91,8 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeEndUserStatisticResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEndUsersRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEndUsersResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeEnvDealRegionRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeEnvDealRegionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvFreeQuotaRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvFreeQuotaResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvLimitRequest.h>
@@ -267,6 +269,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEndUsersResponse> DescribeEndUsersOutcome;
                 typedef std::future<DescribeEndUsersOutcome> DescribeEndUsersOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeEndUsersRequest&, DescribeEndUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEndUsersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEnvDealRegionResponse> DescribeEnvDealRegionOutcome;
+                typedef std::future<DescribeEnvDealRegionOutcome> DescribeEnvDealRegionOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeEnvDealRegionRequest&, DescribeEnvDealRegionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvDealRegionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEnvFreeQuotaResponse> DescribeEnvFreeQuotaOutcome;
                 typedef std::future<DescribeEnvFreeQuotaOutcome> DescribeEnvFreeQuotaOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeEnvFreeQuotaRequest&, DescribeEnvFreeQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvFreeQuotaAsyncHandler;
@@ -665,6 +670,15 @@ namespace TencentCloud
                 DescribeEndUsersOutcome DescribeEndUsers(const Model::DescribeEndUsersRequest &request);
                 void DescribeEndUsersAsync(const Model::DescribeEndUsersRequest& request, const DescribeEndUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEndUsersOutcomeCallable DescribeEndUsersCallable(const Model::DescribeEndUsersRequest& request);
+
+                /**
+                 *获取环境下单地域
+                 * @param req DescribeEnvDealRegionRequest
+                 * @return DescribeEnvDealRegionOutcome
+                 */
+                DescribeEnvDealRegionOutcome DescribeEnvDealRegion(const Model::DescribeEnvDealRegionRequest &request);
+                void DescribeEnvDealRegionAsync(const Model::DescribeEnvDealRegionRequest& request, const DescribeEnvDealRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEnvDealRegionOutcomeCallable DescribeEnvDealRegionCallable(const Model::DescribeEnvDealRegionRequest& request);
 
                 /**
                  *查询后付费免费配额信息

@@ -1502,6 +1502,49 @@ TcbClient::DescribeEndUsersOutcomeCallable TcbClient::DescribeEndUsersCallable(c
     return task->get_future();
 }
 
+TcbClient::DescribeEnvDealRegionOutcome TcbClient::DescribeEnvDealRegion(const DescribeEnvDealRegionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEnvDealRegion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEnvDealRegionResponse rsp = DescribeEnvDealRegionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEnvDealRegionOutcome(rsp);
+        else
+            return DescribeEnvDealRegionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEnvDealRegionOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeEnvDealRegionAsync(const DescribeEnvDealRegionRequest& request, const DescribeEnvDealRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEnvDealRegion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeEnvDealRegionOutcomeCallable TcbClient::DescribeEnvDealRegionCallable(const DescribeEnvDealRegionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEnvDealRegionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEnvDealRegion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DescribeEnvFreeQuotaOutcome TcbClient::DescribeEnvFreeQuota(const DescribeEnvFreeQuotaRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEnvFreeQuota");

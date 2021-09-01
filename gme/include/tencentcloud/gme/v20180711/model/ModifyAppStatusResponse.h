@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/gme/v20180711/model/ModifyAppStatusResp.h>
 
 
 namespace TencentCloud
@@ -32,7 +33,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * ModifyAppStatus接口输出参数
+                * ModifyAppStatus返回参数结构体
                 */
                 class ModifyAppStatusResponse : public AbstractModel
                 {
@@ -44,42 +45,24 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取GME应用ID
-                     * @return BizId GME应用ID
+                     * 获取修改应用开关状态返回数据
+                     * @return Data 修改应用开关状态返回数据
                      */
-                    uint64_t GetBizId() const;
+                    ModifyAppStatusResp GetData() const;
 
                     /**
-                     * 判断参数 BizId 是否已赋值
-                     * @return BizId 是否已赋值
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      */
-                    bool BizIdHasBeenSet() const;
-
-                    /**
-                     * 获取应用状态，取值：open/close
-                     * @return Status 应用状态，取值：open/close
-                     */
-                    std::string GetStatus() const;
-
-                    /**
-                     * 判断参数 Status 是否已赋值
-                     * @return Status 是否已赋值
-                     */
-                    bool StatusHasBeenSet() const;
+                    bool DataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * GME应用ID
+                     * 修改应用开关状态返回数据
                      */
-                    uint64_t m_bizId;
-                    bool m_bizIdHasBeenSet;
-
-                    /**
-                     * 应用状态，取值：open/close
-                     */
-                    std::string m_status;
-                    bool m_statusHasBeenSet;
+                    ModifyAppStatusResp m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }

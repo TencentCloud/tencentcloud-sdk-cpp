@@ -61,6 +61,8 @@
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeGroupDevicesResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeGroupsRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeGroupsResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeIPCChannelsRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeIPCChannelsResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordStreamRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordStreamResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeSIPServerRequest.h>
@@ -168,6 +170,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeGroupsResponse> DescribeGroupsOutcome;
                 typedef std::future<DescribeGroupsOutcome> DescribeGroupsOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeGroupsRequest&, DescribeGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIPCChannelsResponse> DescribeIPCChannelsOutcome;
+                typedef std::future<DescribeIPCChannelsOutcome> DescribeIPCChannelsOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeIPCChannelsRequest&, DescribeIPCChannelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIPCChannelsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRecordStreamResponse> DescribeRecordStreamOutcome;
                 typedef std::future<DescribeRecordStreamOutcome> DescribeRecordStreamOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeRecordStreamRequest&, DescribeRecordStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordStreamAsyncHandler;
@@ -396,6 +401,15 @@ namespace TencentCloud
                 DescribeGroupsOutcome DescribeGroups(const Model::DescribeGroupsRequest &request);
                 void DescribeGroupsAsync(const Model::DescribeGroupsRequest& request, const DescribeGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeGroupsOutcomeCallable DescribeGroupsCallable(const Model::DescribeGroupsRequest& request);
+
+                /**
+                 *获取设备下属通道
+                 * @param req DescribeIPCChannelsRequest
+                 * @return DescribeIPCChannelsOutcome
+                 */
+                DescribeIPCChannelsOutcome DescribeIPCChannels(const Model::DescribeIPCChannelsRequest &request);
+                void DescribeIPCChannelsAsync(const Model::DescribeIPCChannelsRequest& request, const DescribeIPCChannelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIPCChannelsOutcomeCallable DescribeIPCChannelsCallable(const Model::DescribeIPCChannelsRequest& request);
 
                 /**
                  *获取回放视频流(NVR录制用)

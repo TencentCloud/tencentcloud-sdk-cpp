@@ -372,6 +372,28 @@ namespace TencentCloud
                      */
                     bool NamespaceNumHasBeenSet() const;
 
+                    /**
+                     * 获取已使用存储限制，MB为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UsedStorageBudget 已使用存储限制，MB为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetUsedStorageBudget() const;
+
+                    /**
+                     * 设置已使用存储限制，MB为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UsedStorageBudget 已使用存储限制，MB为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUsedStorageBudget(const int64_t& _usedStorageBudget);
+
+                    /**
+                     * 判断参数 UsedStorageBudget 是否已赋值
+                     * @return UsedStorageBudget 是否已赋值
+                     */
+                    bool UsedStorageBudgetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -480,6 +502,13 @@ namespace TencentCloud
                      */
                     int64_t m_namespaceNum;
                     bool m_namespaceNumHasBeenSet;
+
+                    /**
+                     * 已使用存储限制，MB为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_usedStorageBudget;
+                    bool m_usedStorageBudgetHasBeenSet;
 
                 };
             }

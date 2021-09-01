@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/gme/v20180711/model/AppStatisticsItem.h>
+#include <tencentcloud/gme/v20180711/model/DescribeAppStatisticsResp.h>
 
 
 namespace TencentCloud
@@ -33,7 +33,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 获取应用用量统计数据输出参数
+                * DescribeAppStatistics返回参数结构体
                 */
                 class DescribeAppStatisticsResponse : public AbstractModel
                 {
@@ -46,23 +46,23 @@ namespace TencentCloud
 
                     /**
                      * 获取应用用量统计数据
-                     * @return AppStatistics 应用用量统计数据
+                     * @return Data 应用用量统计数据
                      */
-                    std::vector<AppStatisticsItem> GetAppStatistics() const;
+                    DescribeAppStatisticsResp GetData() const;
 
                     /**
-                     * 判断参数 AppStatistics 是否已赋值
-                     * @return AppStatistics 是否已赋值
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      */
-                    bool AppStatisticsHasBeenSet() const;
+                    bool DataHasBeenSet() const;
 
                 private:
 
                     /**
                      * 应用用量统计数据
                      */
-                    std::vector<AppStatisticsItem> m_appStatistics;
-                    bool m_appStatisticsHasBeenSet;
+                    DescribeAppStatisticsResp m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }

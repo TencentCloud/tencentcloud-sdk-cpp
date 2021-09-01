@@ -34,7 +34,11 @@ Invocation::Invocation() :
     m_defaultParametersHasBeenSet(false),
     m_instanceKindHasBeenSet(false),
     m_usernameHasBeenSet(false),
-    m_invocationSourceHasBeenSet(false)
+    m_invocationSourceHasBeenSet(false),
+    m_commandContentHasBeenSet(false),
+    m_commandTypeHasBeenSet(false),
+    m_timeoutHasBeenSet(false),
+    m_workingDirectoryHasBeenSet(false)
 {
 }
 
@@ -193,6 +197,46 @@ CoreInternalOutcome Invocation::Deserialize(const rapidjson::Value &value)
         m_invocationSourceHasBeenSet = true;
     }
 
+    if (value.HasMember("CommandContent") && !value["CommandContent"].IsNull())
+    {
+        if (!value["CommandContent"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Invocation.CommandContent` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_commandContent = string(value["CommandContent"].GetString());
+        m_commandContentHasBeenSet = true;
+    }
+
+    if (value.HasMember("CommandType") && !value["CommandType"].IsNull())
+    {
+        if (!value["CommandType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Invocation.CommandType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_commandType = string(value["CommandType"].GetString());
+        m_commandTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Timeout") && !value["Timeout"].IsNull())
+    {
+        if (!value["Timeout"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Invocation.Timeout` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_timeout = value["Timeout"].GetUint64();
+        m_timeoutHasBeenSet = true;
+    }
+
+    if (value.HasMember("WorkingDirectory") && !value["WorkingDirectory"].IsNull())
+    {
+        if (!value["WorkingDirectory"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Invocation.WorkingDirectory` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_workingDirectory = string(value["WorkingDirectory"].GetString());
+        m_workingDirectoryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -317,6 +361,38 @@ void Invocation::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "InvocationSource";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_invocationSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_commandContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CommandContent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_commandContent.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_commandTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CommandType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_commandType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Timeout";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_timeout, allocator);
+    }
+
+    if (m_workingDirectoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkingDirectory";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_workingDirectory.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -544,5 +620,69 @@ void Invocation::SetInvocationSource(const string& _invocationSource)
 bool Invocation::InvocationSourceHasBeenSet() const
 {
     return m_invocationSourceHasBeenSet;
+}
+
+string Invocation::GetCommandContent() const
+{
+    return m_commandContent;
+}
+
+void Invocation::SetCommandContent(const string& _commandContent)
+{
+    m_commandContent = _commandContent;
+    m_commandContentHasBeenSet = true;
+}
+
+bool Invocation::CommandContentHasBeenSet() const
+{
+    return m_commandContentHasBeenSet;
+}
+
+string Invocation::GetCommandType() const
+{
+    return m_commandType;
+}
+
+void Invocation::SetCommandType(const string& _commandType)
+{
+    m_commandType = _commandType;
+    m_commandTypeHasBeenSet = true;
+}
+
+bool Invocation::CommandTypeHasBeenSet() const
+{
+    return m_commandTypeHasBeenSet;
+}
+
+uint64_t Invocation::GetTimeout() const
+{
+    return m_timeout;
+}
+
+void Invocation::SetTimeout(const uint64_t& _timeout)
+{
+    m_timeout = _timeout;
+    m_timeoutHasBeenSet = true;
+}
+
+bool Invocation::TimeoutHasBeenSet() const
+{
+    return m_timeoutHasBeenSet;
+}
+
+string Invocation::GetWorkingDirectory() const
+{
+    return m_workingDirectory;
+}
+
+void Invocation::SetWorkingDirectory(const string& _workingDirectory)
+{
+    m_workingDirectory = _workingDirectory;
+    m_workingDirectoryHasBeenSet = true;
+}
+
+bool Invocation::WorkingDirectoryHasBeenSet() const
+{
+    return m_workingDirectoryHasBeenSet;
 }
 

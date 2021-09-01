@@ -26,7 +26,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerVersionRequest.h
   include/tencentcloud/tcb/v20180608/model/TurnOnStandaloneGatewayResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvLimitRequest.h
-  include/tencentcloud/tcb/v20180608/model/DescribeExtensionUploadInfoRequest.h
+  include/tencentcloud/tcb/v20180608/model/DescribeEnvDealRegionResponse.h
   include/tencentcloud/tcb/v20180608/model/DeleteCloudBaseRunServerVersionResponse.h
   include/tencentcloud/tcb/v20180608/model/StandaloneGatewayInfo.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseRunSideSpec.h
@@ -58,6 +58,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CloudBaseRunVolumeMount.h
   include/tencentcloud/tcb/v20180608/model/BackendServiceInfo.h
   include/tencentcloud/tcb/v20180608/model/DescribePostpayFreeQuotasRequest.h
+  include/tencentcloud/tcb/v20180608/model/DescribeExtensionUploadInfoRequest.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseRunImageInfo.h
   include/tencentcloud/tcb/v20180608/model/DestroyStandaloneGatewayResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerVersionResponse.h
@@ -186,6 +187,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/ExtensionFileInfo.h
   include/tencentcloud/tcb/v20180608/model/ObjectKV.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseRunVpcSubnet.h
+  include/tencentcloud/tcb/v20180608/model/DescribeEnvDealRegionRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeDatabaseACLResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeExtensionUploadInfoResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyEnvRequest.h
@@ -206,7 +208,7 @@ set(tcb_src
   src/v20180608/model/DescribeCloudBaseRunServerVersionRequest.cpp
   src/v20180608/model/TurnOnStandaloneGatewayResponse.cpp
   src/v20180608/model/DescribeEnvLimitRequest.cpp
-  src/v20180608/model/DescribeExtensionUploadInfoRequest.cpp
+  src/v20180608/model/DescribeEnvDealRegionResponse.cpp
   src/v20180608/model/DeleteCloudBaseRunServerVersionResponse.cpp
   src/v20180608/model/StandaloneGatewayInfo.cpp
   src/v20180608/model/CloudBaseRunSideSpec.cpp
@@ -238,6 +240,7 @@ set(tcb_src
   src/v20180608/model/CloudBaseRunVolumeMount.cpp
   src/v20180608/model/BackendServiceInfo.cpp
   src/v20180608/model/DescribePostpayFreeQuotasRequest.cpp
+  src/v20180608/model/DescribeExtensionUploadInfoRequest.cpp
   src/v20180608/model/CloudBaseRunImageInfo.cpp
   src/v20180608/model/DestroyStandaloneGatewayResponse.cpp
   src/v20180608/model/DescribeCloudBaseRunServerVersionResponse.cpp
@@ -366,6 +369,7 @@ set(tcb_src
   src/v20180608/model/ExtensionFileInfo.cpp
   src/v20180608/model/ObjectKV.cpp
   src/v20180608/model/CloudBaseRunVpcSubnet.cpp
+  src/v20180608/model/DescribeEnvDealRegionRequest.cpp
   src/v20180608/model/DescribeDatabaseACLResponse.cpp
   src/v20180608/model/DescribeExtensionUploadInfoResponse.cpp
   src/v20180608/model/ModifyEnvRequest.cpp

@@ -37,7 +37,8 @@ Cluster::Cluster() :
     m_versionHasBeenSet(false),
     m_publicEndPointHasBeenSet(false),
     m_vpcEndPointHasBeenSet(false),
-    m_namespaceNumHasBeenSet(false)
+    m_namespaceNumHasBeenSet(false),
+    m_usedStorageBudgetHasBeenSet(false)
 {
 }
 
@@ -216,6 +217,16 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_namespaceNumHasBeenSet = true;
     }
 
+    if (value.HasMember("UsedStorageBudget") && !value["UsedStorageBudget"].IsNull())
+    {
+        if (!value["UsedStorageBudget"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.UsedStorageBudget` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_usedStorageBudget = value["UsedStorageBudget"].GetInt64();
+        m_usedStorageBudgetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -357,6 +368,14 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "NamespaceNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_namespaceNum, allocator);
+    }
+
+    if (m_usedStorageBudgetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UsedStorageBudget";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_usedStorageBudget, allocator);
     }
 
 }
@@ -632,5 +651,21 @@ void Cluster::SetNamespaceNum(const int64_t& _namespaceNum)
 bool Cluster::NamespaceNumHasBeenSet() const
 {
     return m_namespaceNumHasBeenSet;
+}
+
+int64_t Cluster::GetUsedStorageBudget() const
+{
+    return m_usedStorageBudget;
+}
+
+void Cluster::SetUsedStorageBudget(const int64_t& _usedStorageBudget)
+{
+    m_usedStorageBudget = _usedStorageBudget;
+    m_usedStorageBudgetHasBeenSet = true;
+}
+
+bool Cluster::UsedStorageBudgetHasBeenSet() const
+{
+    return m_usedStorageBudgetHasBeenSet;
 }
 

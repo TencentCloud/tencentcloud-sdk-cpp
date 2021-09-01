@@ -35,10 +35,12 @@ set(iotvideoindustry_public_header_model
   include/tencentcloud/iotvideoindustry/v20201201/model/UpdateDeviceGroupResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/GetVideoListByConRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DevGroupInfo.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeIPCChannelsRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeSubGroupsRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteRecordPlanRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/CreateDeviceGroupResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/GetVideoListByConResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/UpdateTimeTemplateResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeStatisticDetailsResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/GroupDeviceItem.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeStatisticSummaryRequest.h
@@ -79,7 +81,7 @@ set(iotvideoindustry_public_header_model
   include/tencentcloud/iotvideoindustry/v20201201/model/GetRecordDatesByDevRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/GetTimeTemplatesResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeDevicePassWordResponse.h
-  include/tencentcloud/iotvideoindustry/v20201201/model/UpdateTimeTemplateResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeIPCChannelsResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeAllDeviceListResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeSubGroupsResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeGroupsResponse.h
@@ -127,10 +129,12 @@ set(iotvideoindustry_src
   src/v20201201/model/UpdateDeviceGroupResponse.cpp
   src/v20201201/model/GetVideoListByConRequest.cpp
   src/v20201201/model/DevGroupInfo.cpp
+  src/v20201201/model/DescribeIPCChannelsRequest.cpp
   src/v20201201/model/DescribeSubGroupsRequest.cpp
   src/v20201201/model/DeleteRecordPlanRequest.cpp
   src/v20201201/model/CreateDeviceGroupResponse.cpp
   src/v20201201/model/GetVideoListByConResponse.cpp
+  src/v20201201/model/UpdateTimeTemplateResponse.cpp
   src/v20201201/model/DescribeStatisticDetailsResponse.cpp
   src/v20201201/model/GroupDeviceItem.cpp
   src/v20201201/model/DescribeStatisticSummaryRequest.cpp
@@ -171,7 +175,7 @@ set(iotvideoindustry_src
   src/v20201201/model/GetRecordDatesByDevRequest.cpp
   src/v20201201/model/GetTimeTemplatesResponse.cpp
   src/v20201201/model/DescribeDevicePassWordResponse.cpp
-  src/v20201201/model/UpdateTimeTemplateResponse.cpp
+  src/v20201201/model/DescribeIPCChannelsResponse.cpp
   src/v20201201/model/DescribeAllDeviceListResponse.cpp
   src/v20201201/model/DescribeSubGroupsResponse.cpp
   src/v20201201/model/DescribeGroupsResponse.cpp

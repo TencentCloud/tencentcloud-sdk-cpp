@@ -323,6 +323,78 @@ namespace TencentCloud
                      */
                     bool InvocationSourceHasBeenSet() const;
 
+                    /**
+                     * 获取base64编码的命令内容
+                     * @return CommandContent base64编码的命令内容
+                     */
+                    std::string GetCommandContent() const;
+
+                    /**
+                     * 设置base64编码的命令内容
+                     * @param CommandContent base64编码的命令内容
+                     */
+                    void SetCommandContent(const std::string& _commandContent);
+
+                    /**
+                     * 判断参数 CommandContent 是否已赋值
+                     * @return CommandContent 是否已赋值
+                     */
+                    bool CommandContentHasBeenSet() const;
+
+                    /**
+                     * 获取命令类型
+                     * @return CommandType 命令类型
+                     */
+                    std::string GetCommandType() const;
+
+                    /**
+                     * 设置命令类型
+                     * @param CommandType 命令类型
+                     */
+                    void SetCommandType(const std::string& _commandType);
+
+                    /**
+                     * 判断参数 CommandType 是否已赋值
+                     * @return CommandType 是否已赋值
+                     */
+                    bool CommandTypeHasBeenSet() const;
+
+                    /**
+                     * 获取执行命令过期时间， 单位秒
+                     * @return Timeout 执行命令过期时间， 单位秒
+                     */
+                    uint64_t GetTimeout() const;
+
+                    /**
+                     * 设置执行命令过期时间， 单位秒
+                     * @param Timeout 执行命令过期时间， 单位秒
+                     */
+                    void SetTimeout(const uint64_t& _timeout);
+
+                    /**
+                     * 判断参数 Timeout 是否已赋值
+                     * @return Timeout 是否已赋值
+                     */
+                    bool TimeoutHasBeenSet() const;
+
+                    /**
+                     * 获取执行命令的工作路径
+                     * @return WorkingDirectory 执行命令的工作路径
+                     */
+                    std::string GetWorkingDirectory() const;
+
+                    /**
+                     * 设置执行命令的工作路径
+                     * @param WorkingDirectory 执行命令的工作路径
+                     */
+                    void SetWorkingDirectory(const std::string& _workingDirectory);
+
+                    /**
+                     * 判断参数 WorkingDirectory 是否已赋值
+                     * @return WorkingDirectory 是否已赋值
+                     */
+                    bool WorkingDirectoryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -414,6 +486,30 @@ namespace TencentCloud
                      */
                     std::string m_invocationSource;
                     bool m_invocationSourceHasBeenSet;
+
+                    /**
+                     * base64编码的命令内容
+                     */
+                    std::string m_commandContent;
+                    bool m_commandContentHasBeenSet;
+
+                    /**
+                     * 命令类型
+                     */
+                    std::string m_commandType;
+                    bool m_commandTypeHasBeenSet;
+
+                    /**
+                     * 执行命令过期时间， 单位秒
+                     */
+                    uint64_t m_timeout;
+                    bool m_timeoutHasBeenSet;
+
+                    /**
+                     * 执行命令的工作路径
+                     */
+                    std::string m_workingDirectory;
+                    bool m_workingDirectoryHasBeenSet;
 
                 };
             }

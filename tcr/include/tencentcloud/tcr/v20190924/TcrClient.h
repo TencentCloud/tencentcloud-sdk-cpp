@@ -181,6 +181,8 @@
 #include <tencentcloud/tcr/v20190924/model/ModifyApplicationTriggerPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyImmutableTagRulesRequest.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyImmutableTagRulesResponse.h>
+#include <tencentcloud/tcr/v20190924/model/ModifyInstanceRequest.h>
+#include <tencentcloud/tcr/v20190924/model/ModifyInstanceResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyInstanceTokenRequest.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyInstanceTokenResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyNamespaceRequest.h>
@@ -456,6 +458,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyImmutableTagRulesResponse> ModifyImmutableTagRulesOutcome;
                 typedef std::future<ModifyImmutableTagRulesOutcome> ModifyImmutableTagRulesOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::ModifyImmutableTagRulesRequest&, ModifyImmutableTagRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyImmutableTagRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceResponse> ModifyInstanceOutcome;
+                typedef std::future<ModifyInstanceOutcome> ModifyInstanceOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::ModifyInstanceRequest&, ModifyInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyInstanceTokenResponse> ModifyInstanceTokenOutcome;
                 typedef std::future<ModifyInstanceTokenOutcome> ModifyInstanceTokenOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::ModifyInstanceTokenRequest&, ModifyInstanceTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceTokenAsyncHandler;
@@ -1205,6 +1210,15 @@ namespace TencentCloud
                 ModifyImmutableTagRulesOutcome ModifyImmutableTagRules(const Model::ModifyImmutableTagRulesRequest &request);
                 void ModifyImmutableTagRulesAsync(const Model::ModifyImmutableTagRulesRequest& request, const ModifyImmutableTagRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyImmutableTagRulesOutcomeCallable ModifyImmutableTagRulesCallable(const Model::ModifyImmutableTagRulesRequest& request);
+
+                /**
+                 *更新实例信息
+                 * @param req ModifyInstanceRequest
+                 * @return ModifyInstanceOutcome
+                 */
+                ModifyInstanceOutcome ModifyInstance(const Model::ModifyInstanceRequest &request);
+                void ModifyInstanceAsync(const Model::ModifyInstanceRequest& request, const ModifyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceOutcomeCallable ModifyInstanceCallable(const Model::ModifyInstanceRequest& request);
 
                 /**
                  *更新实例内指定长期访问凭证的启用状态
