@@ -1115,6 +1115,49 @@ IotexplorerClient::DescribeTopicRuleOutcomeCallable IotexplorerClient::DescribeT
     return task->get_future();
 }
 
+IotexplorerClient::DirectBindDeviceInFamilyOutcome IotexplorerClient::DirectBindDeviceInFamily(const DirectBindDeviceInFamilyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DirectBindDeviceInFamily");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DirectBindDeviceInFamilyResponse rsp = DirectBindDeviceInFamilyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DirectBindDeviceInFamilyOutcome(rsp);
+        else
+            return DirectBindDeviceInFamilyOutcome(o.GetError());
+    }
+    else
+    {
+        return DirectBindDeviceInFamilyOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DirectBindDeviceInFamilyAsync(const DirectBindDeviceInFamilyRequest& request, const DirectBindDeviceInFamilyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DirectBindDeviceInFamily(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DirectBindDeviceInFamilyOutcomeCallable IotexplorerClient::DirectBindDeviceInFamilyCallable(const DirectBindDeviceInFamilyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DirectBindDeviceInFamilyOutcome()>>(
+        [this, request]()
+        {
+            return this->DirectBindDeviceInFamily(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::DisableTopicRuleOutcome IotexplorerClient::DisableTopicRule(const DisableTopicRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "DisableTopicRule");

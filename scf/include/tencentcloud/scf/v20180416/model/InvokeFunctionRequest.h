@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool QualifierHasBeenSet() const;
 
                     /**
-                     * 获取运行函数时的参数，以json格式传入，最大支持的参数长度是 6MB
-                     * @return Event 运行函数时的参数，以json格式传入，最大支持的参数长度是 6MB
+                     * 获取运行函数时的参数，以json格式传入，最大支持的参数长度是 6MB。该字段信息对应函数 [event 入参](https://cloud.tencent.com/document/product/583/9210#.E5.87.BD.E6.95.B0.E5.85.A5.E5.8F.82.3Ca-id.3D.22input.22.3E.3C.2Fa.3E)。
+                     * @return Event 运行函数时的参数，以json格式传入，最大支持的参数长度是 6MB。该字段信息对应函数 [event 入参](https://cloud.tencent.com/document/product/583/9210#.E5.87.BD.E6.95.B0.E5.85.A5.E5.8F.82.3Ca-id.3D.22input.22.3E.3C.2Fa.3E)。
                      */
                     std::string GetEvent() const;
 
                     /**
-                     * 设置运行函数时的参数，以json格式传入，最大支持的参数长度是 6MB
-                     * @param Event 运行函数时的参数，以json格式传入，最大支持的参数长度是 6MB
+                     * 设置运行函数时的参数，以json格式传入，最大支持的参数长度是 6MB。该字段信息对应函数 [event 入参](https://cloud.tencent.com/document/product/583/9210#.E5.87.BD.E6.95.B0.E5.85.A5.E5.8F.82.3Ca-id.3D.22input.22.3E.3C.2Fa.3E)。
+                     * @param Event 运行函数时的参数，以json格式传入，最大支持的参数长度是 6MB。该字段信息对应函数 [event 入参](https://cloud.tencent.com/document/product/583/9210#.E5.87.BD.E6.95.B0.E5.85.A5.E5.8F.82.3Ca-id.3D.22input.22.3E.3C.2Fa.3E)。
                      */
                     void SetEvent(const std::string& _event);
 
@@ -165,7 +165,7 @@ namespace TencentCloud
                     bool m_qualifierHasBeenSet;
 
                     /**
-                     * 运行函数时的参数，以json格式传入，最大支持的参数长度是 6MB
+                     * 运行函数时的参数，以json格式传入，最大支持的参数长度是 6MB。该字段信息对应函数 [event 入参](https://cloud.tencent.com/document/product/583/9210#.E5.87.BD.E6.95.B0.E5.85.A5.E5.8F.82.3Ca-id.3D.22input.22.3E.3C.2Fa.3E)。
                      */
                     std::string m_event;
                     bool m_eventHasBeenSet;

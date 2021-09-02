@@ -227,6 +227,42 @@ namespace TencentCloud
                      */
                     bool ServiceInfoHasBeenSet() const;
 
+                    /**
+                     * 获取公网CLBIP
+                     * @return PublicClbIp 公网CLBIP
+                     */
+                    std::string GetPublicClbIp() const;
+
+                    /**
+                     * 设置公网CLBIP
+                     * @param PublicClbIp 公网CLBIP
+                     */
+                    void SetPublicClbIp(const std::string& _publicClbIp);
+
+                    /**
+                     * 判断参数 PublicClbIp 是否已赋值
+                     * @return PublicClbIp 是否已赋值
+                     */
+                    bool PublicClbIpHasBeenSet() const;
+
+                    /**
+                     * 获取内网CLBIP
+                     * @return InternalClbIp 内网CLBIP
+                     */
+                    std::string GetInternalClbIp() const;
+
+                    /**
+                     * 设置内网CLBIP
+                     * @param InternalClbIp 内网CLBIP
+                     */
+                    void SetInternalClbIp(const std::string& _internalClbIp);
+
+                    /**
+                     * 判断参数 InternalClbIp 是否已赋值
+                     * @return InternalClbIp 是否已赋值
+                     */
+                    bool InternalClbIpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -288,6 +324,18 @@ namespace TencentCloud
                      */
                     BackendServiceInfo m_serviceInfo;
                     bool m_serviceInfoHasBeenSet;
+
+                    /**
+                     * 公网CLBIP
+                     */
+                    std::string m_publicClbIp;
+                    bool m_publicClbIpHasBeenSet;
+
+                    /**
+                     * 内网CLBIP
+                     */
+                    std::string m_internalClbIp;
+                    bool m_internalClbIpHasBeenSet;
 
                 };
             }

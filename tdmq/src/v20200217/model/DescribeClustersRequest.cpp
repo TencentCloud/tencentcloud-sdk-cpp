@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeClustersRequest::DescribeClustersRequest() :
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_clusterIdListHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,19 @@ string DescribeClustersRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_clusterIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_clusterIdList.begin(); itr != m_clusterIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -89,6 +103,22 @@ void DescribeClustersRequest::SetLimit(const uint64_t& _limit)
 bool DescribeClustersRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+vector<string> DescribeClustersRequest::GetClusterIdList() const
+{
+    return m_clusterIdList;
+}
+
+void DescribeClustersRequest::SetClusterIdList(const vector<string>& _clusterIdList)
+{
+    m_clusterIdList = _clusterIdList;
+    m_clusterIdListHasBeenSet = true;
+}
+
+bool DescribeClustersRequest::ClusterIdListHasBeenSet() const
+{
+    return m_clusterIdListHasBeenSet;
 }
 
 

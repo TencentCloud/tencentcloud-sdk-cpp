@@ -85,8 +85,8 @@ namespace TencentCloud
                     bool TxCountHasBeenSet() const;
 
                     /**
-                     * 获取区块时间戳
-                     * @return BlockTimestamp 区块时间戳
+                     * 获取区块时间戳，单位是秒
+                     * @return BlockTimestamp 区块时间戳，单位是秒
                      */
                     int64_t GetBlockTimestamp() const;
 
@@ -119,7 +119,7 @@ namespace TencentCloud
                     bool m_txCountHasBeenSet;
 
                     /**
-                     * 区块时间戳
+                     * 区块时间戳，单位是秒
                      */
                     int64_t m_blockTimestamp;
                     bool m_blockTimestampHasBeenSet;

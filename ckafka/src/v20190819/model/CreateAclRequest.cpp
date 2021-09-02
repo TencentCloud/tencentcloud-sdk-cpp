@@ -29,7 +29,8 @@ CreateAclRequest::CreateAclRequest() :
     m_permissionTypeHasBeenSet(false),
     m_resourceNameHasBeenSet(false),
     m_hostHasBeenSet(false),
-    m_principalHasBeenSet(false)
+    m_principalHasBeenSet(false),
+    m_resourceNameListHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string CreateAclRequest::ToJsonString() const
         string key = "Principal";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_principal.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceNameListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceNameList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceNameList.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +223,22 @@ void CreateAclRequest::SetPrincipal(const string& _principal)
 bool CreateAclRequest::PrincipalHasBeenSet() const
 {
     return m_principalHasBeenSet;
+}
+
+string CreateAclRequest::GetResourceNameList() const
+{
+    return m_resourceNameList;
+}
+
+void CreateAclRequest::SetResourceNameList(const string& _resourceNameList)
+{
+    m_resourceNameList = _resourceNameList;
+    m_resourceNameListHasBeenSet = true;
+}
+
+bool CreateAclRequest::ResourceNameListHasBeenSet() const
+{
+    return m_resourceNameListHasBeenSet;
 }
 
 

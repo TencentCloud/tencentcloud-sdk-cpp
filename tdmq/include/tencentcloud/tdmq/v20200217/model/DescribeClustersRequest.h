@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取集群ID列表过滤
+                     * @return ClusterIdList 集群ID列表过滤
+                     */
+                    std::vector<std::string> GetClusterIdList() const;
+
+                    /**
+                     * 设置集群ID列表过滤
+                     * @param ClusterIdList 集群ID列表过滤
+                     */
+                    void SetClusterIdList(const std::vector<std::string>& _clusterIdList);
+
+                    /**
+                     * 判断参数 ClusterIdList 是否已赋值
+                     * @return ClusterIdList 是否已赋值
+                     */
+                    bool ClusterIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 集群ID列表过滤
+                     */
+                    std::vector<std::string> m_clusterIdList;
+                    bool m_clusterIdListHasBeenSet;
 
                 };
             }

@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool FunctionNameHasBeenSet() const;
 
                     /**
-                     * 获取RequestResponse(同步) 和 Event(异步)，默认为同步
-                     * @return InvocationType RequestResponse(同步) 和 Event(异步)，默认为同步
+                     * 获取同步调用请使用[同步 Invoke 调用接口](https://cloud.tencent.com/document/product/583/58400) 或填写同步调用参数 RequestResponse ，建议使用同步调用接口以获取最佳性能；异步调用填写 Event；默认为同步。接口超时时间为 300s，更长超时时间请使用异步调用。
+                     * @return InvocationType 同步调用请使用[同步 Invoke 调用接口](https://cloud.tencent.com/document/product/583/58400) 或填写同步调用参数 RequestResponse ，建议使用同步调用接口以获取最佳性能；异步调用填写 Event；默认为同步。接口超时时间为 300s，更长超时时间请使用异步调用。
                      */
                     std::string GetInvocationType() const;
 
                     /**
-                     * 设置RequestResponse(同步) 和 Event(异步)，默认为同步
-                     * @param InvocationType RequestResponse(同步) 和 Event(异步)，默认为同步
+                     * 设置同步调用请使用[同步 Invoke 调用接口](https://cloud.tencent.com/document/product/583/58400) 或填写同步调用参数 RequestResponse ，建议使用同步调用接口以获取最佳性能；异步调用填写 Event；默认为同步。接口超时时间为 300s，更长超时时间请使用异步调用。
+                     * @param InvocationType 同步调用请使用[同步 Invoke 调用接口](https://cloud.tencent.com/document/product/583/58400) 或填写同步调用参数 RequestResponse ，建议使用同步调用接口以获取最佳性能；异步调用填写 Event；默认为同步。接口超时时间为 300s，更长超时时间请使用异步调用。
                      */
                     void SetInvocationType(const std::string& _invocationType);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool QualifierHasBeenSet() const;
 
                     /**
-                     * 获取运行函数时的参数，以json格式传入，最大支持的参数长度是 1M
-                     * @return ClientContext 运行函数时的参数，以json格式传入，最大支持的参数长度是 1M
+                     * 获取运行函数时的参数，以json格式传入，同步调用最大支持 6MB，异步调用最大支持 128 KB。该字段信息对应函数 [event 入参](https://cloud.tencent.com/document/product/583/9210#.E5.87.BD.E6.95.B0.E5.85.A5.E5.8F.82.3Ca-id.3D.22input.22.3E.3C.2Fa.3E)。
+                     * @return ClientContext 运行函数时的参数，以json格式传入，同步调用最大支持 6MB，异步调用最大支持 128 KB。该字段信息对应函数 [event 入参](https://cloud.tencent.com/document/product/583/9210#.E5.87.BD.E6.95.B0.E5.85.A5.E5.8F.82.3Ca-id.3D.22input.22.3E.3C.2Fa.3E)。
                      */
                     std::string GetClientContext() const;
 
                     /**
-                     * 设置运行函数时的参数，以json格式传入，最大支持的参数长度是 1M
-                     * @param ClientContext 运行函数时的参数，以json格式传入，最大支持的参数长度是 1M
+                     * 设置运行函数时的参数，以json格式传入，同步调用最大支持 6MB，异步调用最大支持 128 KB。该字段信息对应函数 [event 入参](https://cloud.tencent.com/document/product/583/9210#.E5.87.BD.E6.95.B0.E5.85.A5.E5.8F.82.3Ca-id.3D.22input.22.3E.3C.2Fa.3E)。
+                     * @param ClientContext 运行函数时的参数，以json格式传入，同步调用最大支持 6MB，异步调用最大支持 128 KB。该字段信息对应函数 [event 入参](https://cloud.tencent.com/document/product/583/9210#.E5.87.BD.E6.95.B0.E5.85.A5.E5.8F.82.3Ca-id.3D.22input.22.3E.3C.2Fa.3E)。
                      */
                     void SetClientContext(const std::string& _clientContext);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool ClientContextHasBeenSet() const;
 
                     /**
-                     * 获取同步调用时指定该字段，返回值会包含4K的日志，可选值为None和Tail，默认值为None。当该值为Tail时，返回参数中的Log字段会包含对应的函数执行日志
-                     * @return LogType 同步调用时指定该字段，返回值会包含4K的日志，可选值为None和Tail，默认值为None。当该值为Tail时，返回参数中的Log字段会包含对应的函数执行日志
+                     * 获取异步调用该字段返回为空。
+                     * @return LogType 异步调用该字段返回为空。
                      */
                     std::string GetLogType() const;
 
                     /**
-                     * 设置同步调用时指定该字段，返回值会包含4K的日志，可选值为None和Tail，默认值为None。当该值为Tail时，返回参数中的Log字段会包含对应的函数执行日志
-                     * @param LogType 同步调用时指定该字段，返回值会包含4K的日志，可选值为None和Tail，默认值为None。当该值为Tail时，返回参数中的Log字段会包含对应的函数执行日志
+                     * 设置异步调用该字段返回为空。
+                     * @param LogType 异步调用该字段返回为空。
                      */
                     void SetLogType(const std::string& _logType);
 
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_functionNameHasBeenSet;
 
                     /**
-                     * RequestResponse(同步) 和 Event(异步)，默认为同步
+                     * 同步调用请使用[同步 Invoke 调用接口](https://cloud.tencent.com/document/product/583/58400) 或填写同步调用参数 RequestResponse ，建议使用同步调用接口以获取最佳性能；异步调用填写 Event；默认为同步。接口超时时间为 300s，更长超时时间请使用异步调用。
                      */
                     std::string m_invocationType;
                     bool m_invocationTypeHasBeenSet;
@@ -189,13 +189,13 @@ namespace TencentCloud
                     bool m_qualifierHasBeenSet;
 
                     /**
-                     * 运行函数时的参数，以json格式传入，最大支持的参数长度是 1M
+                     * 运行函数时的参数，以json格式传入，同步调用最大支持 6MB，异步调用最大支持 128 KB。该字段信息对应函数 [event 入参](https://cloud.tencent.com/document/product/583/9210#.E5.87.BD.E6.95.B0.E5.85.A5.E5.8F.82.3Ca-id.3D.22input.22.3E.3C.2Fa.3E)。
                      */
                     std::string m_clientContext;
                     bool m_clientContextHasBeenSet;
 
                     /**
-                     * 同步调用时指定该字段，返回值会包含4K的日志，可选值为None和Tail，默认值为None。当该值为Tail时，返回参数中的Log字段会包含对应的函数执行日志
+                     * 异步调用该字段返回为空。
                      */
                     std::string m_logType;
                     bool m_logTypeHasBeenSet;

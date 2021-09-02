@@ -21,8 +21,8 @@ using namespace TencentCloud::Dts::V20180330::Model;
 using namespace std;
 
 DstInfo::DstInfo() :
-    m_instanceIdHasBeenSet(false),
     m_regionHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
     m_ipHasBeenSet(false),
     m_portHasBeenSet(false),
     m_readOnlyHasBeenSet(false),
@@ -36,16 +36,6 @@ CoreInternalOutcome DstInfo::Deserialize(const rapidjson::Value &value)
     string requestId = "";
 
 
-    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
-    {
-        if (!value["InstanceId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `DstInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_instanceId = string(value["InstanceId"].GetString());
-        m_instanceIdHasBeenSet = true;
-    }
-
     if (value.HasMember("Region") && !value["Region"].IsNull())
     {
         if (!value["Region"].IsString())
@@ -54,6 +44,16 @@ CoreInternalOutcome DstInfo::Deserialize(const rapidjson::Value &value)
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DstInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
     }
 
     if (value.HasMember("Ip") && !value["Ip"].IsNull())
@@ -113,20 +113,20 @@ CoreInternalOutcome DstInfo::Deserialize(const rapidjson::Value &value)
 void DstInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_instanceIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_regionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ipHasBeenSet)
@@ -172,22 +172,6 @@ void DstInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
 }
 
 
-string DstInfo::GetInstanceId() const
-{
-    return m_instanceId;
-}
-
-void DstInfo::SetInstanceId(const string& _instanceId)
-{
-    m_instanceId = _instanceId;
-    m_instanceIdHasBeenSet = true;
-}
-
-bool DstInfo::InstanceIdHasBeenSet() const
-{
-    return m_instanceIdHasBeenSet;
-}
-
 string DstInfo::GetRegion() const
 {
     return m_region;
@@ -202,6 +186,22 @@ void DstInfo::SetRegion(const string& _region)
 bool DstInfo::RegionHasBeenSet() const
 {
     return m_regionHasBeenSet;
+}
+
+string DstInfo::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void DstInfo::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool DstInfo::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 
 string DstInfo::GetIp() const

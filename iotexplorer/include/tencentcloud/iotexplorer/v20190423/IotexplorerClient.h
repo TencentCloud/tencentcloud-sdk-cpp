@@ -73,6 +73,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeStudioProductResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTopicRuleRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTopicRuleResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DirectBindDeviceInFamilyRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DirectBindDeviceInFamilyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DisableTopicRuleRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DisableTopicRuleResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/EnableTopicRuleRequest.h>
@@ -208,6 +210,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTopicRuleResponse> DescribeTopicRuleOutcome;
                 typedef std::future<DescribeTopicRuleOutcome> DescribeTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeTopicRuleRequest&, DescribeTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DirectBindDeviceInFamilyResponse> DirectBindDeviceInFamilyOutcome;
+                typedef std::future<DirectBindDeviceInFamilyOutcome> DirectBindDeviceInFamilyOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DirectBindDeviceInFamilyRequest&, DirectBindDeviceInFamilyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DirectBindDeviceInFamilyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisableTopicRuleResponse> DisableTopicRuleOutcome;
                 typedef std::future<DisableTopicRuleOutcome> DisableTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DisableTopicRuleRequest&, DisableTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableTopicRuleAsyncHandler;
@@ -504,6 +509,15 @@ namespace TencentCloud
                 DescribeTopicRuleOutcome DescribeTopicRule(const Model::DescribeTopicRuleRequest &request);
                 void DescribeTopicRuleAsync(const Model::DescribeTopicRuleRequest& request, const DescribeTopicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTopicRuleOutcomeCallable DescribeTopicRuleCallable(const Model::DescribeTopicRuleRequest& request);
+
+                /**
+                 *直接绑定设备和家庭
+                 * @param req DirectBindDeviceInFamilyRequest
+                 * @return DirectBindDeviceInFamilyOutcome
+                 */
+                DirectBindDeviceInFamilyOutcome DirectBindDeviceInFamily(const Model::DirectBindDeviceInFamilyRequest &request);
+                void DirectBindDeviceInFamilyAsync(const Model::DirectBindDeviceInFamilyRequest& request, const DirectBindDeviceInFamilyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DirectBindDeviceInFamilyOutcomeCallable DirectBindDeviceInFamilyCallable(const Model::DirectBindDeviceInFamilyRequest& request);
 
                 /**
                  *禁用规则

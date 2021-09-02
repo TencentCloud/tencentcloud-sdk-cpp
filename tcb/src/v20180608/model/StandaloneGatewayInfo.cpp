@@ -30,7 +30,9 @@ StandaloneGatewayInfo::StandaloneGatewayInfo() :
     m_subnetIdsHasBeenSet(false),
     m_gatewayDescHasBeenSet(false),
     m_gateWayStatusHasBeenSet(false),
-    m_serviceInfoHasBeenSet(false)
+    m_serviceInfoHasBeenSet(false),
+    m_publicClbIpHasBeenSet(false),
+    m_internalClbIpHasBeenSet(false)
 {
 }
 
@@ -149,6 +151,26 @@ CoreInternalOutcome StandaloneGatewayInfo::Deserialize(const rapidjson::Value &v
         m_serviceInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("PublicClbIp") && !value["PublicClbIp"].IsNull())
+    {
+        if (!value["PublicClbIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StandaloneGatewayInfo.PublicClbIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicClbIp = string(value["PublicClbIp"].GetString());
+        m_publicClbIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("InternalClbIp") && !value["InternalClbIp"].IsNull())
+    {
+        if (!value["InternalClbIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StandaloneGatewayInfo.InternalClbIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_internalClbIp = string(value["InternalClbIp"].GetString());
+        m_internalClbIpHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -240,6 +262,22 @@ void StandaloneGatewayInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_serviceInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_publicClbIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicClbIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicClbIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_internalClbIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InternalClbIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_internalClbIp.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -403,5 +441,37 @@ void StandaloneGatewayInfo::SetServiceInfo(const BackendServiceInfo& _serviceInf
 bool StandaloneGatewayInfo::ServiceInfoHasBeenSet() const
 {
     return m_serviceInfoHasBeenSet;
+}
+
+string StandaloneGatewayInfo::GetPublicClbIp() const
+{
+    return m_publicClbIp;
+}
+
+void StandaloneGatewayInfo::SetPublicClbIp(const string& _publicClbIp)
+{
+    m_publicClbIp = _publicClbIp;
+    m_publicClbIpHasBeenSet = true;
+}
+
+bool StandaloneGatewayInfo::PublicClbIpHasBeenSet() const
+{
+    return m_publicClbIpHasBeenSet;
+}
+
+string StandaloneGatewayInfo::GetInternalClbIp() const
+{
+    return m_internalClbIp;
+}
+
+void StandaloneGatewayInfo::SetInternalClbIp(const string& _internalClbIp)
+{
+    m_internalClbIp = _internalClbIp;
+    m_internalClbIpHasBeenSet = true;
+}
+
+bool StandaloneGatewayInfo::InternalClbIpHasBeenSet() const
+{
+    return m_internalClbIpHasBeenSet;
 }
 

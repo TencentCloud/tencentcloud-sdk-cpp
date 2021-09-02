@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool VoucherIdsHasBeenSet() const;
 
+                    /**
+                     * 获取续费标记 0:正常续费 1:自动续费：只用于按量计费转包年包月时有效。
+                     * @return AutoRenewFlag 续费标记 0:正常续费 1:自动续费：只用于按量计费转包年包月时有效。
+                     */
+                    int64_t GetAutoRenewFlag() const;
+
+                    /**
+                     * 设置续费标记 0:正常续费 1:自动续费：只用于按量计费转包年包月时有效。
+                     * @param AutoRenewFlag 续费标记 0:正常续费 1:自动续费：只用于按量计费转包年包月时有效。
+                     */
+                    void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
+
+                    /**
+                     * 判断参数 AutoRenewFlag 是否已赋值
+                     * @return AutoRenewFlag 是否已赋值
+                     */
+                    bool AutoRenewFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_voucherIds;
                     bool m_voucherIdsHasBeenSet;
+
+                    /**
+                     * 续费标记 0:正常续费 1:自动续费：只用于按量计费转包年包月时有效。
+                     */
+                    int64_t m_autoRenewFlag;
+                    bool m_autoRenewFlagHasBeenSet;
 
                 };
             }

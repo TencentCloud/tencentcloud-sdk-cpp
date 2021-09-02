@@ -29,6 +29,7 @@
 #include <tencentcloud/dts/v20180330/model/DstInfo.h>
 #include <tencentcloud/dts/v20180330/model/MigrateDetailInfo.h>
 #include <tencentcloud/dts/v20180330/model/ErrorInfo.h>
+#include <tencentcloud/dts/v20180330/model/TagItem.h>
 
 
 namespace TencentCloud
@@ -339,6 +340,28 @@ namespace TencentCloud
                      */
                     bool ErrorInfoHasBeenSet() const;
 
+                    /**
+                     * 获取标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TagItem> GetTags() const;
+
+                    /**
+                     * 设置标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Tags 标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTags(const std::vector<TagItem>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -436,6 +459,13 @@ namespace TencentCloud
                      */
                     std::vector<ErrorInfo> m_errorInfo;
                     bool m_errorInfoHasBeenSet;
+
+                    /**
+                     * 标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TagItem> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

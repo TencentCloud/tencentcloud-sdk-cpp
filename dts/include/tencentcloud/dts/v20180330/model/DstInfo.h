@@ -47,24 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目标实例ID，如cdb-jd92ijd8
-                     * @return InstanceId 目标实例ID，如cdb-jd92ijd8
-                     */
-                    std::string GetInstanceId() const;
-
-                    /**
-                     * 设置目标实例ID，如cdb-jd92ijd8
-                     * @param InstanceId 目标实例ID，如cdb-jd92ijd8
-                     */
-                    void SetInstanceId(const std::string& _instanceId);
-
-                    /**
-                     * 判断参数 InstanceId 是否已赋值
-                     * @return InstanceId 是否已赋值
-                     */
-                    bool InstanceIdHasBeenSet() const;
-
-                    /**
                      * 获取目标实例地域，如ap-guangzhou
                      * @return Region 目标实例地域，如ap-guangzhou
                      */
@@ -81,6 +63,24 @@ namespace TencentCloud
                      * @return Region 是否已赋值
                      */
                     bool RegionHasBeenSet() const;
+
+                    /**
+                     * 获取目标实例ID，如cdb-jd92ijd8
+                     * @return InstanceId 目标实例ID，如cdb-jd92ijd8
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置目标实例ID，如cdb-jd92ijd8
+                     * @param InstanceId 目标实例ID，如cdb-jd92ijd8
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     */
+                    bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取目标实例vip。已废弃，无需填写
@@ -175,16 +175,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 目标实例ID，如cdb-jd92ijd8
-                     */
-                    std::string m_instanceId;
-                    bool m_instanceIdHasBeenSet;
-
-                    /**
                      * 目标实例地域，如ap-guangzhou
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
+
+                    /**
+                     * 目标实例ID，如cdb-jd92ijd8
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                     /**
                      * 目标实例vip。已废弃，无需填写

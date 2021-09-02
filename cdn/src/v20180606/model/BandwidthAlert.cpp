@@ -24,7 +24,10 @@ BandwidthAlert::BandwidthAlert() :
     m_switchHasBeenSet(false),
     m_bpsThresholdHasBeenSet(false),
     m_counterMeasureHasBeenSet(false),
-    m_lastTriggerTimeHasBeenSet(false)
+    m_lastTriggerTimeHasBeenSet(false),
+    m_alertSwitchHasBeenSet(false),
+    m_alertPercentageHasBeenSet(false),
+    m_lastTriggerTimeOverseasHasBeenSet(false)
 {
 }
 
@@ -73,6 +76,36 @@ CoreInternalOutcome BandwidthAlert::Deserialize(const rapidjson::Value &value)
         m_lastTriggerTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("AlertSwitch") && !value["AlertSwitch"].IsNull())
+    {
+        if (!value["AlertSwitch"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BandwidthAlert.AlertSwitch` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_alertSwitch = string(value["AlertSwitch"].GetString());
+        m_alertSwitchHasBeenSet = true;
+    }
+
+    if (value.HasMember("AlertPercentage") && !value["AlertPercentage"].IsNull())
+    {
+        if (!value["AlertPercentage"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BandwidthAlert.AlertPercentage` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_alertPercentage = value["AlertPercentage"].GetInt64();
+        m_alertPercentageHasBeenSet = true;
+    }
+
+    if (value.HasMember("LastTriggerTimeOverseas") && !value["LastTriggerTimeOverseas"].IsNull())
+    {
+        if (!value["LastTriggerTimeOverseas"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BandwidthAlert.LastTriggerTimeOverseas` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastTriggerTimeOverseas = string(value["LastTriggerTimeOverseas"].GetString());
+        m_lastTriggerTimeOverseasHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +143,30 @@ void BandwidthAlert::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "LastTriggerTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_lastTriggerTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_alertSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlertSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_alertSwitch.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_alertPercentageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlertPercentage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_alertPercentage, allocator);
+    }
+
+    if (m_lastTriggerTimeOverseasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastTriggerTimeOverseas";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastTriggerTimeOverseas.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +234,53 @@ void BandwidthAlert::SetLastTriggerTime(const string& _lastTriggerTime)
 bool BandwidthAlert::LastTriggerTimeHasBeenSet() const
 {
     return m_lastTriggerTimeHasBeenSet;
+}
+
+string BandwidthAlert::GetAlertSwitch() const
+{
+    return m_alertSwitch;
+}
+
+void BandwidthAlert::SetAlertSwitch(const string& _alertSwitch)
+{
+    m_alertSwitch = _alertSwitch;
+    m_alertSwitchHasBeenSet = true;
+}
+
+bool BandwidthAlert::AlertSwitchHasBeenSet() const
+{
+    return m_alertSwitchHasBeenSet;
+}
+
+int64_t BandwidthAlert::GetAlertPercentage() const
+{
+    return m_alertPercentage;
+}
+
+void BandwidthAlert::SetAlertPercentage(const int64_t& _alertPercentage)
+{
+    m_alertPercentage = _alertPercentage;
+    m_alertPercentageHasBeenSet = true;
+}
+
+bool BandwidthAlert::AlertPercentageHasBeenSet() const
+{
+    return m_alertPercentageHasBeenSet;
+}
+
+string BandwidthAlert::GetLastTriggerTimeOverseas() const
+{
+    return m_lastTriggerTimeOverseas;
+}
+
+void BandwidthAlert::SetLastTriggerTimeOverseas(const string& _lastTriggerTimeOverseas)
+{
+    m_lastTriggerTimeOverseas = _lastTriggerTimeOverseas;
+    m_lastTriggerTimeOverseasHasBeenSet = true;
+}
+
+bool BandwidthAlert::LastTriggerTimeOverseasHasBeenSet() const
+{
+    return m_lastTriggerTimeOverseasHasBeenSet;
 }
 

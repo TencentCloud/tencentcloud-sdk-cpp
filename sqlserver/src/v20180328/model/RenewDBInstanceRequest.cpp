@@ -26,7 +26,8 @@ RenewDBInstanceRequest::RenewDBInstanceRequest() :
     m_instanceIdHasBeenSet(false),
     m_periodHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
-    m_voucherIdsHasBeenSet(false)
+    m_voucherIdsHasBeenSet(false),
+    m_autoRenewFlagHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,14 @@ string RenewDBInstanceRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_autoRenewFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoRenewFlag, allocator);
     }
 
 
@@ -144,6 +153,22 @@ void RenewDBInstanceRequest::SetVoucherIds(const vector<string>& _voucherIds)
 bool RenewDBInstanceRequest::VoucherIdsHasBeenSet() const
 {
     return m_voucherIdsHasBeenSet;
+}
+
+int64_t RenewDBInstanceRequest::GetAutoRenewFlag() const
+{
+    return m_autoRenewFlag;
+}
+
+void RenewDBInstanceRequest::SetAutoRenewFlag(const int64_t& _autoRenewFlag)
+{
+    m_autoRenewFlag = _autoRenewFlag;
+    m_autoRenewFlagHasBeenSet = true;
+}
+
+bool RenewDBInstanceRequest::AutoRenewFlagHasBeenSet() const
+{
+    return m_autoRenewFlagHasBeenSet;
 }
 
 

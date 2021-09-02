@@ -197,17 +197,17 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取交易时间
+                     * 获取交易时间，单位是秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Timestamp 交易时间
+                     * @return Timestamp 交易时间，单位是秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetTimestamp() const;
 
                     /**
-                     * 设置交易时间
+                     * 设置交易时间，单位是秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Timestamp 交易时间
+                     * @param Timestamp 交易时间，单位是秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTimestamp(const int64_t& _timestamp);
@@ -269,7 +269,7 @@ namespace TencentCloud
                     bool m_messageHasBeenSet;
 
                     /**
-                     * 交易时间
+                     * 交易时间，单位是秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_timestamp;

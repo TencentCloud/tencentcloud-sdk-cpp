@@ -168,6 +168,24 @@ namespace TencentCloud
                      */
                     bool PrincipalHasBeenSet() const;
 
+                    /**
+                     * 获取资源名称列表,Json字符串格式。ResourceName和resourceNameList只能指定其中一个。
+                     * @return ResourceNameList 资源名称列表,Json字符串格式。ResourceName和resourceNameList只能指定其中一个。
+                     */
+                    std::string GetResourceNameList() const;
+
+                    /**
+                     * 设置资源名称列表,Json字符串格式。ResourceName和resourceNameList只能指定其中一个。
+                     * @param ResourceNameList 资源名称列表,Json字符串格式。ResourceName和resourceNameList只能指定其中一个。
+                     */
+                    void SetResourceNameList(const std::string& _resourceNameList);
+
+                    /**
+                     * 判断参数 ResourceNameList 是否已赋值
+                     * @return ResourceNameList 是否已赋值
+                     */
+                    bool ResourceNameListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +229,12 @@ namespace TencentCloud
                      */
                     std::string m_principal;
                     bool m_principalHasBeenSet;
+
+                    /**
+                     * 资源名称列表,Json字符串格式。ResourceName和resourceNameList只能指定其中一个。
+                     */
+                    std::string m_resourceNameList;
+                    bool m_resourceNameListHasBeenSet;
 
                 };
             }
