@@ -28,7 +28,8 @@ CreateConfigRequest::CreateConfigRequest() :
     m_pathHasBeenSet(false),
     m_logTypeHasBeenSet(false),
     m_extractRuleHasBeenSet(false),
-    m_excludePathsHasBeenSet(false)
+    m_excludePathsHasBeenSet(false),
+    m_userDefineRuleHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,14 @@ string CreateConfigRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_userDefineRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserDefineRule";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userDefineRule.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -197,6 +206,22 @@ void CreateConfigRequest::SetExcludePaths(const vector<ExcludePathInfo>& _exclud
 bool CreateConfigRequest::ExcludePathsHasBeenSet() const
 {
     return m_excludePathsHasBeenSet;
+}
+
+string CreateConfigRequest::GetUserDefineRule() const
+{
+    return m_userDefineRule;
+}
+
+void CreateConfigRequest::SetUserDefineRule(const string& _userDefineRule)
+{
+    m_userDefineRule = _userDefineRule;
+    m_userDefineRuleHasBeenSet = true;
+}
+
+bool CreateConfigRequest::UserDefineRuleHasBeenSet() const
+{
+    return m_userDefineRuleHasBeenSet;
 }
 
 

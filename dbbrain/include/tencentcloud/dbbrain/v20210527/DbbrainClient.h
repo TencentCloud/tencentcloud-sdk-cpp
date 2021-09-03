@@ -77,6 +77,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceTablesResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeUserSqlAdviceRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeUserSqlAdviceResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/KillMySqlThreadsRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/KillMySqlThreadsResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/ModifyDiagDBInstanceConfRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/ModifyDiagDBInstanceConfResponse.h>
 
@@ -174,6 +176,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserSqlAdviceResponse> DescribeUserSqlAdviceOutcome;
                 typedef std::future<DescribeUserSqlAdviceOutcome> DescribeUserSqlAdviceOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeUserSqlAdviceRequest&, DescribeUserSqlAdviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserSqlAdviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::KillMySqlThreadsResponse> KillMySqlThreadsOutcome;
+                typedef std::future<KillMySqlThreadsOutcome> KillMySqlThreadsOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::KillMySqlThreadsRequest&, KillMySqlThreadsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> KillMySqlThreadsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDiagDBInstanceConfResponse> ModifyDiagDBInstanceConfOutcome;
                 typedef std::future<ModifyDiagDBInstanceConfOutcome> ModifyDiagDBInstanceConfOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::ModifyDiagDBInstanceConfRequest&, ModifyDiagDBInstanceConfOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDiagDBInstanceConfAsyncHandler;
@@ -422,6 +427,15 @@ namespace TencentCloud
                 DescribeUserSqlAdviceOutcome DescribeUserSqlAdvice(const Model::DescribeUserSqlAdviceRequest &request);
                 void DescribeUserSqlAdviceAsync(const Model::DescribeUserSqlAdviceRequest& request, const DescribeUserSqlAdviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserSqlAdviceOutcomeCallable DescribeUserSqlAdviceCallable(const Model::DescribeUserSqlAdviceRequest& request);
+
+                /**
+                 *根据会话ID中断当前会话，该接口分为两次提交：第一次为预提交阶段，Stage为"Prepare"，得到的返回值包含SqlExecId；第二次为确认提交， Stage为"Commit"， 将SqlExecId的值作为参数传入，最终终止会话进程。
+                 * @param req KillMySqlThreadsRequest
+                 * @return KillMySqlThreadsOutcome
+                 */
+                KillMySqlThreadsOutcome KillMySqlThreads(const Model::KillMySqlThreadsRequest &request);
+                void KillMySqlThreadsAsync(const Model::KillMySqlThreadsRequest& request, const KillMySqlThreadsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                KillMySqlThreadsOutcomeCallable KillMySqlThreadsCallable(const Model::KillMySqlThreadsRequest& request);
 
                 /**
                  *修改实例巡检开关。

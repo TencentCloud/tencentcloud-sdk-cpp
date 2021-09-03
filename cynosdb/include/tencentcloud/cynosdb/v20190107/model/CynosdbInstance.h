@@ -775,28 +775,6 @@ pause
                     bool ServerlessStatusHasBeenSet() const;
 
                     /**
-                     * 获取存储付费类型
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StoragePayMode 存储付费类型
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t GetStoragePayMode() const;
-
-                    /**
-                     * 设置存储付费类型
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StoragePayMode 存储付费类型
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetStoragePayMode(const int64_t& _storagePayMode);
-
-                    /**
-                     * 判断参数 StoragePayMode 是否已赋值
-                     * @return StoragePayMode 是否已赋值
-                     */
-                    bool StoragePayModeHasBeenSet() const;
-
-                    /**
                      * 获取预付费存储Id
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StorageId 预付费存储Id
@@ -817,6 +795,24 @@ pause
                      * @return StorageId 是否已赋值
                      */
                     bool StorageIdHasBeenSet() const;
+
+                    /**
+                     * 获取存储付费类型
+                     * @return StoragePayMode 存储付费类型
+                     */
+                    int64_t GetStoragePayMode() const;
+
+                    /**
+                     * 设置存储付费类型
+                     * @param StoragePayMode 存储付费类型
+                     */
+                    void SetStoragePayMode(const int64_t& _storagePayMode);
+
+                    /**
+                     * 判断参数 StoragePayMode 是否已赋值
+                     * @return StoragePayMode 是否已赋值
+                     */
+                    bool StoragePayModeHasBeenSet() const;
 
                 private:
 
@@ -1063,18 +1059,17 @@ pause
                     bool m_serverlessStatusHasBeenSet;
 
                     /**
-                     * 存储付费类型
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_storagePayMode;
-                    bool m_storagePayModeHasBeenSet;
-
-                    /**
                      * 预付费存储Id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_storageId;
                     bool m_storageIdHasBeenSet;
+
+                    /**
+                     * 存储付费类型
+                     */
+                    int64_t m_storagePayMode;
+                    bool m_storagePayModeHasBeenSet;
 
                 };
             }

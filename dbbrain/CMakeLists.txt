@@ -120,6 +120,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/DescribeMySqlProcessListResponse.h
   include/tencentcloud/dbbrain/v20210527/model/HealthStatus.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceTablesResponse.h
+  include/tencentcloud/dbbrain/v20210527/model/KillMySqlThreadsResponse.h
   include/tencentcloud/dbbrain/v20210527/model/CreateSchedulerMailProfileRequest.h
   include/tencentcloud/dbbrain/v20210527/model/ContactItem.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBSpaceStatusRequest.h
@@ -142,6 +143,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/EventInfo.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeMailProfileRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DeleteSecurityAuditLogExportTasksResponse.h
+  include/tencentcloud/dbbrain/v20210527/model/KillMySqlThreadsRequest.h
   include/tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportUrlRequest.h
   include/tencentcloud/dbbrain/v20210527/model/ScoreDetail.h
   include/tencentcloud/dbbrain/v20210527/model/HealthScoreInfo.h
@@ -294,6 +296,7 @@ set(dbbrain_src
   src/v20210527/model/DescribeMySqlProcessListResponse.cpp
   src/v20210527/model/HealthStatus.cpp
   src/v20210527/model/DescribeTopSpaceTablesResponse.cpp
+  src/v20210527/model/KillMySqlThreadsResponse.cpp
   src/v20210527/model/CreateSchedulerMailProfileRequest.cpp
   src/v20210527/model/ContactItem.cpp
   src/v20210527/model/DescribeDBSpaceStatusRequest.cpp
@@ -316,6 +319,7 @@ set(dbbrain_src
   src/v20210527/model/EventInfo.cpp
   src/v20210527/model/DescribeMailProfileRequest.cpp
   src/v20210527/model/DeleteSecurityAuditLogExportTasksResponse.cpp
+  src/v20210527/model/KillMySqlThreadsRequest.cpp
   src/v20210527/model/CreateDBDiagReportUrlRequest.cpp
   src/v20210527/model/ScoreDetail.cpp
   src/v20210527/model/HealthScoreInfo.cpp

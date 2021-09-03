@@ -27,6 +27,7 @@ set(bda_public_header_model
   include/tencentcloud/bda/v20200324/model/ModifyGroupResponse.h
   include/tencentcloud/bda/v20200324/model/TerminateSegmentationTaskResponse.h
   include/tencentcloud/bda/v20200324/model/BodyAttributeInfo.h
+  include/tencentcloud/bda/v20200324/model/GetSummaryInfoRequest.h
   include/tencentcloud/bda/v20200324/model/GetGroupListResponse.h
   include/tencentcloud/bda/v20200324/model/GroupInfo.h
   include/tencentcloud/bda/v20200324/model/DescribeSegmentationTaskRequest.h
@@ -38,6 +39,7 @@ set(bda_public_header_model
   include/tencentcloud/bda/v20200324/model/ModifyPersonInfoResponse.h
   include/tencentcloud/bda/v20200324/model/CreateSegmentationTaskResponse.h
   include/tencentcloud/bda/v20200324/model/DeleteGroupRequest.h
+  include/tencentcloud/bda/v20200324/model/GetSummaryInfoResponse.h
   include/tencentcloud/bda/v20200324/model/ModifyPersonInfoRequest.h
   include/tencentcloud/bda/v20200324/model/Gender.h
   include/tencentcloud/bda/v20200324/model/SegmentCustomizedPortraitPicRequest.h
@@ -92,6 +94,7 @@ set(bda_src
   src/v20200324/model/ModifyGroupResponse.cpp
   src/v20200324/model/TerminateSegmentationTaskResponse.cpp
   src/v20200324/model/BodyAttributeInfo.cpp
+  src/v20200324/model/GetSummaryInfoRequest.cpp
   src/v20200324/model/GetGroupListResponse.cpp
   src/v20200324/model/GroupInfo.cpp
   src/v20200324/model/DescribeSegmentationTaskRequest.cpp
@@ -103,6 +106,7 @@ set(bda_src
   src/v20200324/model/ModifyPersonInfoResponse.cpp
   src/v20200324/model/CreateSegmentationTaskResponse.cpp
   src/v20200324/model/DeleteGroupRequest.cpp
+  src/v20200324/model/GetSummaryInfoResponse.cpp
   src/v20200324/model/ModifyPersonInfoRequest.cpp
   src/v20200324/model/Gender.cpp
   src/v20200324/model/SegmentCustomizedPortraitPicRequest.cpp

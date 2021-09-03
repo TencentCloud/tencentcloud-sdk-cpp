@@ -29,7 +29,8 @@ ConfigInfo::ConfigInfo() :
     m_excludePathsHasBeenSet(false),
     m_outputHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_userDefineRuleHasBeenSet(false)
 {
 }
 
@@ -145,6 +146,16 @@ CoreInternalOutcome ConfigInfo::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("UserDefineRule") && !value["UserDefineRule"].IsNull())
+    {
+        if (!value["UserDefineRule"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConfigInfo.UserDefineRule` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userDefineRule = string(value["UserDefineRule"].GetString());
+        m_userDefineRuleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -230,6 +241,14 @@ void ConfigInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userDefineRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserDefineRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userDefineRule.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -377,5 +396,21 @@ void ConfigInfo::SetCreateTime(const string& _createTime)
 bool ConfigInfo::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string ConfigInfo::GetUserDefineRule() const
+{
+    return m_userDefineRule;
+}
+
+void ConfigInfo::SetUserDefineRule(const string& _userDefineRule)
+{
+    m_userDefineRule = _userDefineRule;
+    m_userDefineRuleHasBeenSet = true;
+}
+
+bool ConfigInfo::UserDefineRuleHasBeenSet() const
+{
+    return m_userDefineRuleHasBeenSet;
 }
 

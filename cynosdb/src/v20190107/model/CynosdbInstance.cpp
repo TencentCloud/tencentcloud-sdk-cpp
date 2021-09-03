@@ -61,8 +61,8 @@ CynosdbInstance::CynosdbInstance() :
     m_minCpuHasBeenSet(false),
     m_maxCpuHasBeenSet(false),
     m_serverlessStatusHasBeenSet(false),
-    m_storagePayModeHasBeenSet(false),
-    m_storageIdHasBeenSet(false)
+    m_storageIdHasBeenSet(false),
+    m_storagePayModeHasBeenSet(false)
 {
 }
 
@@ -471,16 +471,6 @@ CoreInternalOutcome CynosdbInstance::Deserialize(const rapidjson::Value &value)
         m_serverlessStatusHasBeenSet = true;
     }
 
-    if (value.HasMember("StoragePayMode") && !value["StoragePayMode"].IsNull())
-    {
-        if (!value["StoragePayMode"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `CynosdbInstance.StoragePayMode` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_storagePayMode = value["StoragePayMode"].GetInt64();
-        m_storagePayModeHasBeenSet = true;
-    }
-
     if (value.HasMember("StorageId") && !value["StorageId"].IsNull())
     {
         if (!value["StorageId"].IsString())
@@ -489,6 +479,16 @@ CoreInternalOutcome CynosdbInstance::Deserialize(const rapidjson::Value &value)
         }
         m_storageId = string(value["StorageId"].GetString());
         m_storageIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("StoragePayMode") && !value["StoragePayMode"].IsNull())
+    {
+        if (!value["StoragePayMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstance.StoragePayMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_storagePayMode = value["StoragePayMode"].GetInt64();
+        m_storagePayModeHasBeenSet = true;
     }
 
 
@@ -818,20 +818,20 @@ void CynosdbInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         value.AddMember(iKey, rapidjson::Value(m_serverlessStatus.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_storagePayModeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "StoragePayMode";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_storagePayMode, allocator);
-    }
-
     if (m_storageIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StorageId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_storageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storagePayModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StoragePayMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_storagePayMode, allocator);
     }
 
 }
@@ -1477,22 +1477,6 @@ bool CynosdbInstance::ServerlessStatusHasBeenSet() const
     return m_serverlessStatusHasBeenSet;
 }
 
-int64_t CynosdbInstance::GetStoragePayMode() const
-{
-    return m_storagePayMode;
-}
-
-void CynosdbInstance::SetStoragePayMode(const int64_t& _storagePayMode)
-{
-    m_storagePayMode = _storagePayMode;
-    m_storagePayModeHasBeenSet = true;
-}
-
-bool CynosdbInstance::StoragePayModeHasBeenSet() const
-{
-    return m_storagePayModeHasBeenSet;
-}
-
 string CynosdbInstance::GetStorageId() const
 {
     return m_storageId;
@@ -1507,5 +1491,21 @@ void CynosdbInstance::SetStorageId(const string& _storageId)
 bool CynosdbInstance::StorageIdHasBeenSet() const
 {
     return m_storageIdHasBeenSet;
+}
+
+int64_t CynosdbInstance::GetStoragePayMode() const
+{
+    return m_storagePayMode;
+}
+
+void CynosdbInstance::SetStoragePayMode(const int64_t& _storagePayMode)
+{
+    m_storagePayMode = _storagePayMode;
+    m_storagePayModeHasBeenSet = true;
+}
+
+bool CynosdbInstance::StoragePayModeHasBeenSet() const
+{
+    return m_storagePayModeHasBeenSet;
 }
 

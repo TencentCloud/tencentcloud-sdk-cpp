@@ -152,6 +152,24 @@ namespace TencentCloud
                      */
                     bool ExcludePathsHasBeenSet() const;
 
+                    /**
+                     * 获取用户自定义采集规则，Json格式序列化的字符串
+                     * @return UserDefineRule 用户自定义采集规则，Json格式序列化的字符串
+                     */
+                    std::string GetUserDefineRule() const;
+
+                    /**
+                     * 设置用户自定义采集规则，Json格式序列化的字符串
+                     * @param UserDefineRule 用户自定义采集规则，Json格式序列化的字符串
+                     */
+                    void SetUserDefineRule(const std::string& _userDefineRule);
+
+                    /**
+                     * 判断参数 UserDefineRule 是否已赋值
+                     * @return UserDefineRule 是否已赋值
+                     */
+                    bool UserDefineRuleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -189,6 +207,12 @@ namespace TencentCloud
                      */
                     std::vector<ExcludePathInfo> m_excludePaths;
                     bool m_excludePathsHasBeenSet;
+
+                    /**
+                     * 用户自定义采集规则，Json格式序列化的字符串
+                     */
+                    std::string m_userDefineRule;
+                    bool m_userDefineRuleHasBeenSet;
 
                 };
             }

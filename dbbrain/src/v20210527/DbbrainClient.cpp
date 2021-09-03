@@ -1201,6 +1201,49 @@ DbbrainClient::DescribeUserSqlAdviceOutcomeCallable DbbrainClient::DescribeUserS
     return task->get_future();
 }
 
+DbbrainClient::KillMySqlThreadsOutcome DbbrainClient::KillMySqlThreads(const KillMySqlThreadsRequest &request)
+{
+    auto outcome = MakeRequest(request, "KillMySqlThreads");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        KillMySqlThreadsResponse rsp = KillMySqlThreadsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return KillMySqlThreadsOutcome(rsp);
+        else
+            return KillMySqlThreadsOutcome(o.GetError());
+    }
+    else
+    {
+        return KillMySqlThreadsOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::KillMySqlThreadsAsync(const KillMySqlThreadsRequest& request, const KillMySqlThreadsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->KillMySqlThreads(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::KillMySqlThreadsOutcomeCallable DbbrainClient::KillMySqlThreadsCallable(const KillMySqlThreadsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<KillMySqlThreadsOutcome()>>(
+        [this, request]()
+        {
+            return this->KillMySqlThreads(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::ModifyDiagDBInstanceConfOutcome DbbrainClient::ModifyDiagDBInstanceConf(const ModifyDiagDBInstanceConfRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDiagDBInstanceConf");

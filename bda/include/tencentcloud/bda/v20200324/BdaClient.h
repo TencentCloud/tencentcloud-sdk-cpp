@@ -45,6 +45,8 @@
 #include <tencentcloud/bda/v20200324/model/GetGroupListResponse.h>
 #include <tencentcloud/bda/v20200324/model/GetPersonListRequest.h>
 #include <tencentcloud/bda/v20200324/model/GetPersonListResponse.h>
+#include <tencentcloud/bda/v20200324/model/GetSummaryInfoRequest.h>
+#include <tencentcloud/bda/v20200324/model/GetSummaryInfoResponse.h>
 #include <tencentcloud/bda/v20200324/model/ModifyGroupRequest.h>
 #include <tencentcloud/bda/v20200324/model/ModifyGroupResponse.h>
 #include <tencentcloud/bda/v20200324/model/ModifyPersonInfoRequest.h>
@@ -104,6 +106,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetPersonListResponse> GetPersonListOutcome;
                 typedef std::future<GetPersonListOutcome> GetPersonListOutcomeCallable;
                 typedef std::function<void(const BdaClient*, const Model::GetPersonListRequest&, GetPersonListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetPersonListAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetSummaryInfoResponse> GetSummaryInfoOutcome;
+                typedef std::future<GetSummaryInfoOutcome> GetSummaryInfoOutcomeCallable;
+                typedef std::function<void(const BdaClient*, const Model::GetSummaryInfoRequest&, GetSummaryInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetSummaryInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyGroupResponse> ModifyGroupOutcome;
                 typedef std::future<ModifyGroupOutcome> ModifyGroupOutcomeCallable;
                 typedef std::function<void(const BdaClient*, const Model::ModifyGroupRequest&, ModifyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGroupAsyncHandler;
@@ -245,6 +250,15 @@ namespace TencentCloud
                 GetPersonListOutcome GetPersonList(const Model::GetPersonListRequest &request);
                 void GetPersonListAsync(const Model::GetPersonListRequest& request, const GetPersonListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetPersonListOutcomeCallable GetPersonListCallable(const Model::GetPersonListRequest& request);
+
+                /**
+                 *获取人体库汇总信息。
+                 * @param req GetSummaryInfoRequest
+                 * @return GetSummaryInfoOutcome
+                 */
+                GetSummaryInfoOutcome GetSummaryInfo(const Model::GetSummaryInfoRequest &request);
+                void GetSummaryInfoAsync(const Model::GetSummaryInfoRequest& request, const GetSummaryInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetSummaryInfoOutcomeCallable GetSummaryInfoCallable(const Model::GetSummaryInfoRequest& request);
 
                 /**
                  *修改人体库名称、备注。

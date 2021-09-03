@@ -513,6 +513,49 @@ BdaClient::GetPersonListOutcomeCallable BdaClient::GetPersonListCallable(const G
     return task->get_future();
 }
 
+BdaClient::GetSummaryInfoOutcome BdaClient::GetSummaryInfo(const GetSummaryInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetSummaryInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetSummaryInfoResponse rsp = GetSummaryInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetSummaryInfoOutcome(rsp);
+        else
+            return GetSummaryInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return GetSummaryInfoOutcome(outcome.GetError());
+    }
+}
+
+void BdaClient::GetSummaryInfoAsync(const GetSummaryInfoRequest& request, const GetSummaryInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetSummaryInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BdaClient::GetSummaryInfoOutcomeCallable BdaClient::GetSummaryInfoCallable(const GetSummaryInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetSummaryInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->GetSummaryInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BdaClient::ModifyGroupOutcome BdaClient::ModifyGroup(const ModifyGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyGroup");
