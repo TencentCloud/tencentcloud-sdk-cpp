@@ -24,7 +24,9 @@ ActivityRecordItem::ActivityRecordItem() :
     m_uinHasBeenSet(false),
     m_activityIdHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_subStatusHasBeenSet(false)
+    m_subStatusHasBeenSet(false),
+    m_subStatusIntHasBeenSet(false),
+    m_isDeletedHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome ActivityRecordItem::Deserialize(const rapidjson::Value &valu
         m_subStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("SubStatusInt") && !value["SubStatusInt"].IsNull())
+    {
+        if (!value["SubStatusInt"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ActivityRecordItem.SubStatusInt` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_subStatusInt = value["SubStatusInt"].GetInt64();
+        m_subStatusIntHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsDeleted") && !value["IsDeleted"].IsNull())
+    {
+        if (!value["IsDeleted"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ActivityRecordItem.IsDeleted` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDeleted = value["IsDeleted"].GetBool();
+        m_isDeletedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void ActivityRecordItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "SubStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subStatusIntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubStatusInt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_subStatusInt, allocator);
+    }
+
+    if (m_isDeletedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDeleted";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDeleted, allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void ActivityRecordItem::SetSubStatus(const string& _subStatus)
 bool ActivityRecordItem::SubStatusHasBeenSet() const
 {
     return m_subStatusHasBeenSet;
+}
+
+int64_t ActivityRecordItem::GetSubStatusInt() const
+{
+    return m_subStatusInt;
+}
+
+void ActivityRecordItem::SetSubStatusInt(const int64_t& _subStatusInt)
+{
+    m_subStatusInt = _subStatusInt;
+    m_subStatusIntHasBeenSet = true;
+}
+
+bool ActivityRecordItem::SubStatusIntHasBeenSet() const
+{
+    return m_subStatusIntHasBeenSet;
+}
+
+bool ActivityRecordItem::GetIsDeleted() const
+{
+    return m_isDeleted;
+}
+
+void ActivityRecordItem::SetIsDeleted(const bool& _isDeleted)
+{
+    m_isDeleted = _isDeleted;
+    m_isDeletedHasBeenSet = true;
+}
+
+bool ActivityRecordItem::IsDeletedHasBeenSet() const
+{
+    return m_isDeletedHasBeenSet;
 }
 

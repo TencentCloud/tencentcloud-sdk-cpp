@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/privatedns/v20201028/model/VpcInfo.h>
 #include <tencentcloud/privatedns/v20201028/model/TagInfo.h>
+#include <tencentcloud/privatedns/v20201028/model/AccountVpcInfoOutput.h>
 
 
 namespace TencentCloud
@@ -250,6 +251,28 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取绑定的关联账号的vpc列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AccountVpcSet 绑定的关联账号的vpc列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AccountVpcInfoOutput> GetAccountVpcSet() const;
+
+                    /**
+                     * 设置绑定的关联账号的vpc列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AccountVpcSet 绑定的关联账号的vpc列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAccountVpcSet(const std::vector<AccountVpcInfoOutput>& _accountVpcSet);
+
+                    /**
+                     * 判断参数 AccountVpcSet 是否已赋值
+                     * @return AccountVpcSet 是否已赋值
+                     */
+                    bool AccountVpcSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -318,6 +341,13 @@ namespace TencentCloud
                      */
                     std::vector<TagInfo> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 绑定的关联账号的vpc列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AccountVpcInfoOutput> m_accountVpcSet;
+                    bool m_accountVpcSetHasBeenSet;
 
                 };
             }

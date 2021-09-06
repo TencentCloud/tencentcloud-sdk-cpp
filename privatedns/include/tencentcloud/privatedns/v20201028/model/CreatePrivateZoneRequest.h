@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/privatedns/v20201028/model/TagInfo.h>
 #include <tencentcloud/privatedns/v20201028/model/VpcInfo.h>
+#include <tencentcloud/privatedns/v20201028/model/AccountVpcInfo.h>
 
 
 namespace TencentCloud
@@ -152,6 +153,24 @@ namespace TencentCloud
                      */
                     bool VpcsHasBeenSet() const;
 
+                    /**
+                     * 获取创建私有域同时绑定关联账号的VPC
+                     * @return AccountVpcSet 创建私有域同时绑定关联账号的VPC
+                     */
+                    std::vector<AccountVpcInfo> GetAccountVpcSet() const;
+
+                    /**
+                     * 设置创建私有域同时绑定关联账号的VPC
+                     * @param AccountVpcSet 创建私有域同时绑定关联账号的VPC
+                     */
+                    void SetAccountVpcSet(const std::vector<AccountVpcInfo>& _accountVpcSet);
+
+                    /**
+                     * 判断参数 AccountVpcSet 是否已赋值
+                     * @return AccountVpcSet 是否已赋值
+                     */
+                    bool AccountVpcSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -189,6 +208,12 @@ namespace TencentCloud
                      */
                     std::vector<VpcInfo> m_vpcs;
                     bool m_vpcsHasBeenSet;
+
+                    /**
+                     * 创建私有域同时绑定关联账号的VPC
+                     */
+                    std::vector<AccountVpcInfo> m_accountVpcSet;
+                    bool m_accountVpcSetHasBeenSet;
 
                 };
             }

@@ -28,7 +28,8 @@ CreatePrivateZoneRequest::CreatePrivateZoneRequest() :
     m_vpcSetHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_dnsForwardStatusHasBeenSet(false),
-    m_vpcsHasBeenSet(false)
+    m_vpcsHasBeenSet(false),
+    m_accountVpcSetHasBeenSet(false)
 {
 }
 
@@ -102,6 +103,21 @@ string CreatePrivateZoneRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_vpcs.begin(); itr != m_vpcs.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_accountVpcSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountVpcSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_accountVpcSet.begin(); itr != m_accountVpcSet.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -210,6 +226,22 @@ void CreatePrivateZoneRequest::SetVpcs(const vector<VpcInfo>& _vpcs)
 bool CreatePrivateZoneRequest::VpcsHasBeenSet() const
 {
     return m_vpcsHasBeenSet;
+}
+
+vector<AccountVpcInfo> CreatePrivateZoneRequest::GetAccountVpcSet() const
+{
+    return m_accountVpcSet;
+}
+
+void CreatePrivateZoneRequest::SetAccountVpcSet(const vector<AccountVpcInfo>& _accountVpcSet)
+{
+    m_accountVpcSet = _accountVpcSet;
+    m_accountVpcSetHasBeenSet = true;
+}
+
+bool CreatePrivateZoneRequest::AccountVpcSetHasBeenSet() const
+{
+    return m_accountVpcSetHasBeenSet;
 }
 
 

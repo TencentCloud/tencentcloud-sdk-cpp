@@ -599,6 +599,49 @@ AmeClient::DescribePackagesOutcomeCallable AmeClient::DescribePackagesCallable(c
     return task->get_future();
 }
 
+AmeClient::DescribePkgOfflineMusicOutcome AmeClient::DescribePkgOfflineMusic(const DescribePkgOfflineMusicRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePkgOfflineMusic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePkgOfflineMusicResponse rsp = DescribePkgOfflineMusicResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePkgOfflineMusicOutcome(rsp);
+        else
+            return DescribePkgOfflineMusicOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePkgOfflineMusicOutcome(outcome.GetError());
+    }
+}
+
+void AmeClient::DescribePkgOfflineMusicAsync(const DescribePkgOfflineMusicRequest& request, const DescribePkgOfflineMusicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePkgOfflineMusic(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AmeClient::DescribePkgOfflineMusicOutcomeCallable AmeClient::DescribePkgOfflineMusicCallable(const DescribePkgOfflineMusicRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePkgOfflineMusicOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePkgOfflineMusic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AmeClient::DescribeStationsOutcome AmeClient::DescribeStations(const DescribeStationsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeStations");

@@ -134,6 +134,50 @@ namespace TencentCloud
                      */
                     bool SubStatusHasBeenSet() const;
 
+                    /**
+                     * 获取整型子状态码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubStatusInt 整型子状态码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetSubStatusInt() const;
+
+                    /**
+                     * 设置整型子状态码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SubStatusInt 整型子状态码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSubStatusInt(const int64_t& _subStatusInt);
+
+                    /**
+                     * 判断参数 SubStatusInt 是否已赋值
+                     * @return SubStatusInt 是否已赋值
+                     */
+                    bool SubStatusIntHasBeenSet() const;
+
+                    /**
+                     * 获取是否软删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsDeleted 是否软删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsDeleted() const;
+
+                    /**
+                     * 设置是否软删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsDeleted 是否软删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsDeleted(const bool& _isDeleted);
+
+                    /**
+                     * 判断参数 IsDeleted 是否已赋值
+                     * @return IsDeleted 是否已赋值
+                     */
+                    bool IsDeletedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +207,20 @@ namespace TencentCloud
                      */
                     std::string m_subStatus;
                     bool m_subStatusHasBeenSet;
+
+                    /**
+                     * 整型子状态码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_subStatusInt;
+                    bool m_subStatusIntHasBeenSet;
+
+                    /**
+                     * 是否软删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isDeleted;
+                    bool m_isDeletedHasBeenSet;
 
                 };
             }

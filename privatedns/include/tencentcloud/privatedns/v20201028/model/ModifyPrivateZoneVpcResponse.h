@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/privatedns/v20201028/model/VpcInfo.h>
+#include <tencentcloud/privatedns/v20201028/model/AccountVpcInfoOutput.h>
 
 
 namespace TencentCloud
@@ -68,6 +69,18 @@ namespace TencentCloud
                      */
                     bool VpcSetHasBeenSet() const;
 
+                    /**
+                     * 获取私有域账号关联的全部VPC列表
+                     * @return AccountVpcSet 私有域账号关联的全部VPC列表
+                     */
+                    std::vector<AccountVpcInfoOutput> GetAccountVpcSet() const;
+
+                    /**
+                     * 判断参数 AccountVpcSet 是否已赋值
+                     * @return AccountVpcSet 是否已赋值
+                     */
+                    bool AccountVpcSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -81,6 +94,12 @@ namespace TencentCloud
                      */
                     std::vector<VpcInfo> m_vpcSet;
                     bool m_vpcSetHasBeenSet;
+
+                    /**
+                     * 私有域账号关联的全部VPC列表
+                     */
+                    std::vector<AccountVpcInfoOutput> m_accountVpcSet;
+                    bool m_accountVpcSetHasBeenSet;
 
                 };
             }

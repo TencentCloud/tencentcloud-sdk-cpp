@@ -49,6 +49,8 @@
 #include <tencentcloud/ame/v20190916/model/DescribePackageItemsResponse.h>
 #include <tencentcloud/ame/v20190916/model/DescribePackagesRequest.h>
 #include <tencentcloud/ame/v20190916/model/DescribePackagesResponse.h>
+#include <tencentcloud/ame/v20190916/model/DescribePkgOfflineMusicRequest.h>
+#include <tencentcloud/ame/v20190916/model/DescribePkgOfflineMusicResponse.h>
 #include <tencentcloud/ame/v20190916/model/DescribeStationsRequest.h>
 #include <tencentcloud/ame/v20190916/model/DescribeStationsResponse.h>
 #include <tencentcloud/ame/v20190916/model/ModifyMusicOnShelvesRequest.h>
@@ -114,6 +116,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePackagesResponse> DescribePackagesOutcome;
                 typedef std::future<DescribePackagesOutcome> DescribePackagesOutcomeCallable;
                 typedef std::function<void(const AmeClient*, const Model::DescribePackagesRequest&, DescribePackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePackagesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePkgOfflineMusicResponse> DescribePkgOfflineMusicOutcome;
+                typedef std::future<DescribePkgOfflineMusicOutcome> DescribePkgOfflineMusicOutcomeCallable;
+                typedef std::function<void(const AmeClient*, const Model::DescribePkgOfflineMusicRequest&, DescribePkgOfflineMusicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePkgOfflineMusicAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeStationsResponse> DescribeStationsOutcome;
                 typedef std::future<DescribeStationsOutcome> DescribeStationsOutcomeCallable;
                 typedef std::function<void(const AmeClient*, const Model::DescribeStationsRequest&, DescribeStationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStationsAsyncHandler;
@@ -199,7 +204,7 @@ namespace TencentCloud
                 DescribeKTVPlaylistDetailOutcomeCallable DescribeKTVPlaylistDetailCallable(const Model::DescribeKTVPlaylistDetailRequest& request);
 
                 /**
-                 *获取即时广播曲库推荐歌单列表。
+                 *获取直播互动曲库推荐歌单列表。
                  * @param req DescribeKTVPlaylistsRequest
                  * @return DescribeKTVPlaylistsOutcome
                  */
@@ -251,6 +256,15 @@ namespace TencentCloud
                 DescribePackagesOutcome DescribePackages(const Model::DescribePackagesRequest &request);
                 void DescribePackagesAsync(const Model::DescribePackagesRequest& request, const DescribePackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePackagesOutcomeCallable DescribePackagesCallable(const Model::DescribePackagesRequest& request);
+
+                /**
+                 *根据购买曲库包用户可查询已回退的歌曲信息
+                 * @param req DescribePkgOfflineMusicRequest
+                 * @return DescribePkgOfflineMusicOutcome
+                 */
+                DescribePkgOfflineMusicOutcome DescribePkgOfflineMusic(const Model::DescribePkgOfflineMusicRequest &request);
+                void DescribePkgOfflineMusicAsync(const Model::DescribePkgOfflineMusicRequest& request, const DescribePkgOfflineMusicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePkgOfflineMusicOutcomeCallable DescribePkgOfflineMusicCallable(const Model::DescribePkgOfflineMusicRequest& request);
 
                 /**
                  *该服务后续会停用，不再建议使用

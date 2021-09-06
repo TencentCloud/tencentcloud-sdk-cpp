@@ -40,6 +40,7 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/StopAutoScalingInstancesResponse.h
   include/tencentcloud/as/v20180419/model/DescribeScalingPoliciesRequest.h
   include/tencentcloud/as/v20180419/model/InstanceNameSettings.h
+  include/tencentcloud/as/v20180419/model/DetailedStatusMessage.h
   include/tencentcloud/as/v20180419/model/ModifyScheduledActionResponse.h
   include/tencentcloud/as/v20180419/model/CreateAutoScalingGroupFromInstanceRequest.h
   include/tencentcloud/as/v20180419/model/ExecuteScalingPolicyResponse.h
@@ -174,6 +175,7 @@ set(as_src
   src/v20180419/model/StopAutoScalingInstancesResponse.cpp
   src/v20180419/model/DescribeScalingPoliciesRequest.cpp
   src/v20180419/model/InstanceNameSettings.cpp
+  src/v20180419/model/DetailedStatusMessage.cpp
   src/v20180419/model/ModifyScheduledActionResponse.cpp
   src/v20180419/model/CreateAutoScalingGroupFromInstanceRequest.cpp
   src/v20180419/model/ExecuteScalingPolicyResponse.cpp

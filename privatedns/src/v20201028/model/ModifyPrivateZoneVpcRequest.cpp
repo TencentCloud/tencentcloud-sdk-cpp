@@ -24,7 +24,8 @@ using namespace std;
 
 ModifyPrivateZoneVpcRequest::ModifyPrivateZoneVpcRequest() :
     m_zoneIdHasBeenSet(false),
-    m_vpcSetHasBeenSet(false)
+    m_vpcSetHasBeenSet(false),
+    m_accountVpcSetHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,21 @@ string ModifyPrivateZoneVpcRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_vpcSet.begin(); itr != m_vpcSet.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_accountVpcSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountVpcSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_accountVpcSet.begin(); itr != m_accountVpcSet.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -96,6 +112,22 @@ void ModifyPrivateZoneVpcRequest::SetVpcSet(const vector<VpcInfo>& _vpcSet)
 bool ModifyPrivateZoneVpcRequest::VpcSetHasBeenSet() const
 {
     return m_vpcSetHasBeenSet;
+}
+
+vector<AccountVpcInfo> ModifyPrivateZoneVpcRequest::GetAccountVpcSet() const
+{
+    return m_accountVpcSet;
+}
+
+void ModifyPrivateZoneVpcRequest::SetAccountVpcSet(const vector<AccountVpcInfo>& _accountVpcSet)
+{
+    m_accountVpcSet = _accountVpcSet;
+    m_accountVpcSetHasBeenSet = true;
+}
+
+bool ModifyPrivateZoneVpcRequest::AccountVpcSetHasBeenSet() const
+{
+    return m_accountVpcSetHasBeenSet;
 }
 
 

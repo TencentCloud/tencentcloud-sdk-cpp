@@ -662,6 +662,28 @@ namespace TencentCloud
                      */
                     bool RunningCuHasBeenSet() const;
 
+                    /**
+                     * 获取作业运行的 Flink 版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FlinkVersion 作业运行的 Flink 版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFlinkVersion() const;
+
+                    /**
+                     * 设置作业运行的 Flink 版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FlinkVersion 作业运行的 Flink 版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFlinkVersion(const std::string& _flinkVersion);
+
+                    /**
+                     * 判断参数 FlinkVersion 是否已赋值
+                     * @return FlinkVersion 是否已赋值
+                     */
+                    bool FlinkVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -859,6 +881,13 @@ namespace TencentCloud
                      */
                     double m_runningCu;
                     bool m_runningCuHasBeenSet;
+
+                    /**
+                     * 作业运行的 Flink 版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_flinkVersion;
+                    bool m_flinkVersionHasBeenSet;
 
                 };
             }

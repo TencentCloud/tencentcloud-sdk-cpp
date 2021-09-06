@@ -27,7 +27,8 @@ DescribeActivityRecordRequest::DescribeActivityRecordRequest() :
     m_channelHasBeenSet(false),
     m_activityIdListHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_statusesHasBeenSet(false)
+    m_statusesHasBeenSet(false),
+    m_isDeletedListHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,19 @@ string DescribeActivityRecordRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_statuses.begin(); itr != m_statuses.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_isDeletedListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDeletedList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_isDeletedList.begin(); itr != m_isDeletedList.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
@@ -174,6 +188,22 @@ void DescribeActivityRecordRequest::SetStatuses(const vector<int64_t>& _statuses
 bool DescribeActivityRecordRequest::StatusesHasBeenSet() const
 {
     return m_statusesHasBeenSet;
+}
+
+vector<int64_t> DescribeActivityRecordRequest::GetIsDeletedList() const
+{
+    return m_isDeletedList;
+}
+
+void DescribeActivityRecordRequest::SetIsDeletedList(const vector<int64_t>& _isDeletedList)
+{
+    m_isDeletedList = _isDeletedList;
+    m_isDeletedListHasBeenSet = true;
+}
+
+bool DescribeActivityRecordRequest::IsDeletedListHasBeenSet() const
+{
+    return m_isDeletedListHasBeenSet;
 }
 
 

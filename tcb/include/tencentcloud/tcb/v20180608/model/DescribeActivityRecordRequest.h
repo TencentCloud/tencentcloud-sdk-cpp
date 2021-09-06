@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool StatusesHasBeenSet() const;
 
+                    /**
+                     * 获取根据是否软删除进行过滤，[0]未删除, [1] 删除，不传不过滤
+                     * @return IsDeletedList 根据是否软删除进行过滤，[0]未删除, [1] 删除，不传不过滤
+                     */
+                    std::vector<int64_t> GetIsDeletedList() const;
+
+                    /**
+                     * 设置根据是否软删除进行过滤，[0]未删除, [1] 删除，不传不过滤
+                     * @param IsDeletedList 根据是否软删除进行过滤，[0]未删除, [1] 删除，不传不过滤
+                     */
+                    void SetIsDeletedList(const std::vector<int64_t>& _isDeletedList);
+
+                    /**
+                     * 判断参数 IsDeletedList 是否已赋值
+                     * @return IsDeletedList 是否已赋值
+                     */
+                    bool IsDeletedListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_statuses;
                     bool m_statusesHasBeenSet;
+
+                    /**
+                     * 根据是否软删除进行过滤，[0]未删除, [1] 删除，不传不过滤
+                     */
+                    std::vector<int64_t> m_isDeletedList;
+                    bool m_isDeletedListHasBeenSet;
 
                 };
             }

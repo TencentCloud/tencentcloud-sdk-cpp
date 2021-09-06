@@ -57,6 +57,8 @@
 #include <tencentcloud/tcb/v20180608/model/DeleteEndUserResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteWxGatewayRouteRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteWxGatewayRouteResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeActivityInfoRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeActivityInfoResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeActivityRecordRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeActivityRecordResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeAuthDomainsRequest.h>
@@ -121,6 +123,8 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeStandaloneGatewayResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeStandaloneGatewayPackageRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeStandaloneGatewayPackageResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeUserActivityInfoRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeUserActivityInfoResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeWxCloudBaseRunEnvsRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeWxCloudBaseRunEnvsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeWxCloudBaseRunSubNetsRequest.h>
@@ -218,6 +222,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteWxGatewayRouteResponse> DeleteWxGatewayRouteOutcome;
                 typedef std::future<DeleteWxGatewayRouteOutcome> DeleteWxGatewayRouteOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DeleteWxGatewayRouteRequest&, DeleteWxGatewayRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWxGatewayRouteAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeActivityInfoResponse> DescribeActivityInfoOutcome;
+                typedef std::future<DescribeActivityInfoOutcome> DescribeActivityInfoOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeActivityInfoRequest&, DescribeActivityInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActivityInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeActivityRecordResponse> DescribeActivityRecordOutcome;
                 typedef std::future<DescribeActivityRecordOutcome> DescribeActivityRecordOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeActivityRecordRequest&, DescribeActivityRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActivityRecordAsyncHandler;
@@ -314,6 +321,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeStandaloneGatewayPackageResponse> DescribeStandaloneGatewayPackageOutcome;
                 typedef std::future<DescribeStandaloneGatewayPackageOutcome> DescribeStandaloneGatewayPackageOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeStandaloneGatewayPackageRequest&, DescribeStandaloneGatewayPackageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStandaloneGatewayPackageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserActivityInfoResponse> DescribeUserActivityInfoOutcome;
+                typedef std::future<DescribeUserActivityInfoOutcome> DescribeUserActivityInfoOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeUserActivityInfoRequest&, DescribeUserActivityInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserActivityInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeWxCloudBaseRunEnvsResponse> DescribeWxCloudBaseRunEnvsOutcome;
                 typedef std::future<DescribeWxCloudBaseRunEnvsOutcome> DescribeWxCloudBaseRunEnvsOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeWxCloudBaseRunEnvsRequest&, DescribeWxCloudBaseRunEnvsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWxCloudBaseRunEnvsAsyncHandler;
@@ -517,6 +527,15 @@ namespace TencentCloud
                 DeleteWxGatewayRouteOutcome DeleteWxGatewayRoute(const Model::DeleteWxGatewayRouteRequest &request);
                 void DeleteWxGatewayRouteAsync(const Model::DeleteWxGatewayRouteRequest& request, const DeleteWxGatewayRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteWxGatewayRouteOutcomeCallable DeleteWxGatewayRouteCallable(const Model::DeleteWxGatewayRouteRequest& request);
+
+                /**
+                 *查询活动信息
+                 * @param req DescribeActivityInfoRequest
+                 * @return DescribeActivityInfoOutcome
+                 */
+                DescribeActivityInfoOutcome DescribeActivityInfo(const Model::DescribeActivityInfoRequest &request);
+                void DescribeActivityInfoAsync(const Model::DescribeActivityInfoRequest& request, const DescribeActivityInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeActivityInfoOutcomeCallable DescribeActivityInfoCallable(const Model::DescribeActivityInfoRequest& request);
 
                 /**
                  *查询活动记录信息
@@ -808,6 +827,15 @@ namespace TencentCloud
                 DescribeStandaloneGatewayPackageOutcome DescribeStandaloneGatewayPackage(const Model::DescribeStandaloneGatewayPackageRequest &request);
                 void DescribeStandaloneGatewayPackageAsync(const Model::DescribeStandaloneGatewayPackageRequest& request, const DescribeStandaloneGatewayPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeStandaloneGatewayPackageOutcomeCallable DescribeStandaloneGatewayPackageCallable(const Model::DescribeStandaloneGatewayPackageRequest& request);
+
+                /**
+                 *查询用户活动信息
+                 * @param req DescribeUserActivityInfoRequest
+                 * @return DescribeUserActivityInfoOutcome
+                 */
+                DescribeUserActivityInfoOutcome DescribeUserActivityInfo(const Model::DescribeUserActivityInfoRequest &request);
+                void DescribeUserActivityInfoAsync(const Model::DescribeUserActivityInfoRequest& request, const DescribeUserActivityInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserActivityInfoOutcomeCallable DescribeUserActivityInfoCallable(const Model::DescribeUserActivityInfoRequest& request);
 
                 /**
                  *查询微信云托管环境信息

@@ -33,7 +33,8 @@ Activity::Activity() :
     m_createdTimeHasBeenSet(false),
     m_activityRelatedInstanceSetHasBeenSet(false),
     m_statusMessageSimplifiedHasBeenSet(false),
-    m_lifecycleActionResultSetHasBeenSet(false)
+    m_lifecycleActionResultSetHasBeenSet(false),
+    m_detailedStatusMessageSetHasBeenSet(false)
 {
 }
 
@@ -192,6 +193,26 @@ CoreInternalOutcome Activity::Deserialize(const rapidjson::Value &value)
         m_lifecycleActionResultSetHasBeenSet = true;
     }
 
+    if (value.HasMember("DetailedStatusMessageSet") && !value["DetailedStatusMessageSet"].IsNull())
+    {
+        if (!value["DetailedStatusMessageSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Activity.DetailedStatusMessageSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DetailedStatusMessageSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DetailedStatusMessage item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_detailedStatusMessageSet.push_back(item);
+        }
+        m_detailedStatusMessageSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -311,6 +332,21 @@ void Activity::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
 
         int i=0;
         for (auto itr = m_lifecycleActionResultSet.begin(); itr != m_lifecycleActionResultSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_detailedStatusMessageSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DetailedStatusMessageSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_detailedStatusMessageSet.begin(); itr != m_detailedStatusMessageSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -526,5 +562,21 @@ void Activity::SetLifecycleActionResultSet(const vector<LifecycleActionResultInf
 bool Activity::LifecycleActionResultSetHasBeenSet() const
 {
     return m_lifecycleActionResultSetHasBeenSet;
+}
+
+vector<DetailedStatusMessage> Activity::GetDetailedStatusMessageSet() const
+{
+    return m_detailedStatusMessageSet;
+}
+
+void Activity::SetDetailedStatusMessageSet(const vector<DetailedStatusMessage>& _detailedStatusMessageSet)
+{
+    m_detailedStatusMessageSet = _detailedStatusMessageSet;
+    m_detailedStatusMessageSetHasBeenSet = true;
+}
+
+bool Activity::DetailedStatusMessageSetHasBeenSet() const
+{
+    return m_detailedStatusMessageSetHasBeenSet;
 }
 

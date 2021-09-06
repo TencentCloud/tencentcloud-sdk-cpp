@@ -48,7 +48,8 @@ JobV1::JobV1() :
     m_webUIUrlHasBeenSet(false),
     m_schedulerTypeHasBeenSet(false),
     m_clusterStatusHasBeenSet(false),
-    m_runningCuHasBeenSet(false)
+    m_runningCuHasBeenSet(false),
+    m_flinkVersionHasBeenSet(false)
 {
 }
 
@@ -337,6 +338,16 @@ CoreInternalOutcome JobV1::Deserialize(const rapidjson::Value &value)
         m_runningCuHasBeenSet = true;
     }
 
+    if (value.HasMember("FlinkVersion") && !value["FlinkVersion"].IsNull())
+    {
+        if (!value["FlinkVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobV1.FlinkVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_flinkVersion = string(value["FlinkVersion"].GetString());
+        m_flinkVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -566,6 +577,14 @@ void JobV1::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "RunningCu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_runningCu, allocator);
+    }
+
+    if (m_flinkVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlinkVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_flinkVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1017,5 +1036,21 @@ void JobV1::SetRunningCu(const double& _runningCu)
 bool JobV1::RunningCuHasBeenSet() const
 {
     return m_runningCuHasBeenSet;
+}
+
+string JobV1::GetFlinkVersion() const
+{
+    return m_flinkVersion;
+}
+
+void JobV1::SetFlinkVersion(const string& _flinkVersion)
+{
+    m_flinkVersion = _flinkVersion;
+    m_flinkVersionHasBeenSet = true;
+}
+
+bool JobV1::FlinkVersionHasBeenSet() const
+{
+    return m_flinkVersionHasBeenSet;
 }
 

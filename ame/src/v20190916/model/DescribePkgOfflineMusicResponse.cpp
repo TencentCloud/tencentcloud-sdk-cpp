@@ -14,23 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/privatedns/v20201028/model/ModifyPrivateZoneVpcResponse.h>
+#include <tencentcloud/ame/v20190916/model/DescribePkgOfflineMusicResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Privatedns::V20201028::Model;
+using namespace TencentCloud::Ame::V20190916::Model;
 using namespace std;
 
-ModifyPrivateZoneVpcResponse::ModifyPrivateZoneVpcResponse() :
-    m_zoneIdHasBeenSet(false),
-    m_vpcSetHasBeenSet(false),
-    m_accountVpcSetHasBeenSet(false)
+DescribePkgOfflineMusicResponse::DescribePkgOfflineMusicResponse() :
+    m_offlineMusicSetHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome ModifyPrivateZoneVpcResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribePkgOfflineMusicResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -64,102 +63,67 @@ CoreInternalOutcome ModifyPrivateZoneVpcResponse::Deserialize(const string &payl
     }
 
 
-    if (rsp.HasMember("ZoneId") && !rsp["ZoneId"].IsNull())
+    if (rsp.HasMember("OfflineMusicSet") && !rsp["OfflineMusicSet"].IsNull())
     {
-        if (!rsp["ZoneId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ZoneId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_zoneId = string(rsp["ZoneId"].GetString());
-        m_zoneIdHasBeenSet = true;
-    }
+        if (!rsp["OfflineMusicSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `OfflineMusicSet` is not array type"));
 
-    if (rsp.HasMember("VpcSet") && !rsp["VpcSet"].IsNull())
-    {
-        if (!rsp["VpcSet"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `VpcSet` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["VpcSet"];
+        const rapidjson::Value &tmpValue = rsp["OfflineMusicSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            VpcInfo item;
+            OfflineMusicDetail item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_vpcSet.push_back(item);
+            m_offlineMusicSet.push_back(item);
         }
-        m_vpcSetHasBeenSet = true;
+        m_offlineMusicSetHasBeenSet = true;
     }
 
-    if (rsp.HasMember("AccountVpcSet") && !rsp["AccountVpcSet"].IsNull())
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
-        if (!rsp["AccountVpcSet"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `AccountVpcSet` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["AccountVpcSet"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["TotalCount"].IsInt64())
         {
-            AccountVpcInfoOutput item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_accountVpcSet.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_accountVpcSetHasBeenSet = true;
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string ModifyPrivateZoneVpcResponse::ToJsonString() const
+string DescribePkgOfflineMusicResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_zoneIdHasBeenSet)
+    if (m_offlineMusicSetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ZoneId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_vpcSetHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "VpcSet";
+        string key = "OfflineMusicSet";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_vpcSet.begin(); itr != m_vpcSet.end(); ++itr, ++i)
+        for (auto itr = m_offlineMusicSet.begin(); itr != m_offlineMusicSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
-    if (m_accountVpcSetHasBeenSet)
+    if (m_totalCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AccountVpcSet";
+        string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_accountVpcSet.begin(); itr != m_accountVpcSet.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, m_totalCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -174,34 +138,24 @@ string ModifyPrivateZoneVpcResponse::ToJsonString() const
 }
 
 
-string ModifyPrivateZoneVpcResponse::GetZoneId() const
+vector<OfflineMusicDetail> DescribePkgOfflineMusicResponse::GetOfflineMusicSet() const
 {
-    return m_zoneId;
+    return m_offlineMusicSet;
 }
 
-bool ModifyPrivateZoneVpcResponse::ZoneIdHasBeenSet() const
+bool DescribePkgOfflineMusicResponse::OfflineMusicSetHasBeenSet() const
 {
-    return m_zoneIdHasBeenSet;
+    return m_offlineMusicSetHasBeenSet;
 }
 
-vector<VpcInfo> ModifyPrivateZoneVpcResponse::GetVpcSet() const
+int64_t DescribePkgOfflineMusicResponse::GetTotalCount() const
 {
-    return m_vpcSet;
+    return m_totalCount;
 }
 
-bool ModifyPrivateZoneVpcResponse::VpcSetHasBeenSet() const
+bool DescribePkgOfflineMusicResponse::TotalCountHasBeenSet() const
 {
-    return m_vpcSetHasBeenSet;
-}
-
-vector<AccountVpcInfoOutput> ModifyPrivateZoneVpcResponse::GetAccountVpcSet() const
-{
-    return m_accountVpcSet;
-}
-
-bool ModifyPrivateZoneVpcResponse::AccountVpcSetHasBeenSet() const
-{
-    return m_accountVpcSetHasBeenSet;
+    return m_totalCountHasBeenSet;
 }
 
 

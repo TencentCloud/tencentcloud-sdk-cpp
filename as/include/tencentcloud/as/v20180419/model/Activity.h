@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/as/v20180419/model/ActivtyRelatedInstance.h>
 #include <tencentcloud/as/v20180419/model/LifecycleActionResultInfo.h>
+#include <tencentcloud/as/v20180419/model/DetailedStatusMessage.h>
 
 
 namespace TencentCloud
@@ -318,6 +319,24 @@ namespace TencentCloud
                      */
                     bool LifecycleActionResultSetHasBeenSet() const;
 
+                    /**
+                     * 获取伸缩活动状态详细描述。
+                     * @return DetailedStatusMessageSet 伸缩活动状态详细描述。
+                     */
+                    std::vector<DetailedStatusMessage> GetDetailedStatusMessageSet() const;
+
+                    /**
+                     * 设置伸缩活动状态详细描述。
+                     * @param DetailedStatusMessageSet 伸缩活动状态详细描述。
+                     */
+                    void SetDetailedStatusMessageSet(const std::vector<DetailedStatusMessage>& _detailedStatusMessageSet);
+
+                    /**
+                     * 判断参数 DetailedStatusMessageSet 是否已赋值
+                     * @return DetailedStatusMessageSet 是否已赋值
+                     */
+                    bool DetailedStatusMessageSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -406,6 +425,12 @@ namespace TencentCloud
                      */
                     std::vector<LifecycleActionResultInfo> m_lifecycleActionResultSet;
                     bool m_lifecycleActionResultSetHasBeenSet;
+
+                    /**
+                     * 伸缩活动状态详细描述。
+                     */
+                    std::vector<DetailedStatusMessage> m_detailedStatusMessageSet;
+                    bool m_detailedStatusMessageSetHasBeenSet;
 
                 };
             }

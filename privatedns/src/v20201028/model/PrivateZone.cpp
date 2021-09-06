@@ -31,7 +31,8 @@ PrivateZone::PrivateZone() :
     m_vpcSetHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_dnsForwardStatusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_accountVpcSetHasBeenSet(false)
 {
 }
 
@@ -170,6 +171,26 @@ CoreInternalOutcome PrivateZone::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("AccountVpcSet") && !value["AccountVpcSet"].IsNull())
+    {
+        if (!value["AccountVpcSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PrivateZone.AccountVpcSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AccountVpcSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AccountVpcInfoOutput item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_accountVpcSet.push_back(item);
+        }
+        m_accountVpcSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -273,6 +294,21 @@ void PrivateZone::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
 
         int i=0;
         for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_accountVpcSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountVpcSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_accountVpcSet.begin(); itr != m_accountVpcSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -456,5 +492,21 @@ void PrivateZone::SetTags(const vector<TagInfo>& _tags)
 bool PrivateZone::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+vector<AccountVpcInfoOutput> PrivateZone::GetAccountVpcSet() const
+{
+    return m_accountVpcSet;
+}
+
+void PrivateZone::SetAccountVpcSet(const vector<AccountVpcInfoOutput>& _accountVpcSet)
+{
+    m_accountVpcSet = _accountVpcSet;
+    m_accountVpcSetHasBeenSet = true;
+}
+
+bool PrivateZone::AccountVpcSetHasBeenSet() const
+{
+    return m_accountVpcSetHasBeenSet;
 }
 
