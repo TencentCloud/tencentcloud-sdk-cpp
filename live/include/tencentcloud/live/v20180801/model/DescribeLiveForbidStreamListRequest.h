@@ -87,14 +87,14 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取搜索的推流 id 名称。
-                     * @return StreamName 搜索的推流 id 名称。
+                     * 获取按流名称查询。
+                     * @return StreamName 按流名称查询。
                      */
                     std::string GetStreamName() const;
 
                     /**
-                     * 设置搜索的推流 id 名称。
-                     * @param StreamName 搜索的推流 id 名称。
+                     * 设置按流名称查询。
+                     * @param StreamName 按流名称查询。
                      */
                     void SetStreamName(const std::string& _streamName);
 
@@ -121,7 +121,7 @@ namespace TencentCloud
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 搜索的推流 id 名称。
+                     * 按流名称查询。
                      */
                     std::string m_streamName;
                     bool m_streamNameHasBeenSet;

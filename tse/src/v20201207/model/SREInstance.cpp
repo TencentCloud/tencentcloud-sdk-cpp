@@ -39,7 +39,8 @@ SREInstance::SREInstance() :
     m_envInfosHasBeenSet(false),
     m_engineRegionHasBeenSet(false),
     m_enableInternetHasBeenSet(false),
-    m_vpcInfosHasBeenSet(false)
+    m_vpcInfosHasBeenSet(false),
+    m_serviceGovernanceInfosHasBeenSet(false)
 {
 }
 
@@ -261,6 +262,26 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
         m_vpcInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("ServiceGovernanceInfos") && !value["ServiceGovernanceInfos"].IsNull())
+    {
+        if (!value["ServiceGovernanceInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SREInstance.ServiceGovernanceInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ServiceGovernanceInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ServiceGovernanceInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_serviceGovernanceInfos.push_back(item);
+        }
+        m_serviceGovernanceInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -433,6 +454,21 @@ void SREInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
 
         int i=0;
         for (auto itr = m_vpcInfos.begin(); itr != m_vpcInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_serviceGovernanceInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceGovernanceInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_serviceGovernanceInfos.begin(); itr != m_serviceGovernanceInfos.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -744,5 +780,21 @@ void SREInstance::SetVpcInfos(const vector<VpcInfo>& _vpcInfos)
 bool SREInstance::VpcInfosHasBeenSet() const
 {
     return m_vpcInfosHasBeenSet;
+}
+
+vector<ServiceGovernanceInfo> SREInstance::GetServiceGovernanceInfos() const
+{
+    return m_serviceGovernanceInfos;
+}
+
+void SREInstance::SetServiceGovernanceInfos(const vector<ServiceGovernanceInfo>& _serviceGovernanceInfos)
+{
+    m_serviceGovernanceInfos = _serviceGovernanceInfos;
+    m_serviceGovernanceInfosHasBeenSet = true;
+}
+
+bool SREInstance::ServiceGovernanceInfosHasBeenSet() const
+{
+    return m_serviceGovernanceInfosHasBeenSet;
 }
 

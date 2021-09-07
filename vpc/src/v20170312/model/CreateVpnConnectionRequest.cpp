@@ -23,18 +23,19 @@ using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
 CreateVpnConnectionRequest::CreateVpnConnectionRequest() :
-    m_vpcIdHasBeenSet(false),
     m_vpnGatewayIdHasBeenSet(false),
     m_customerGatewayIdHasBeenSet(false),
     m_vpnConnectionNameHasBeenSet(false),
     m_preShareKeyHasBeenSet(false),
+    m_vpcIdHasBeenSet(false),
     m_securityPolicyDatabasesHasBeenSet(false),
     m_iKEOptionsSpecificationHasBeenSet(false),
     m_iPSECOptionsSpecificationHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_enableHealthCheckHasBeenSet(false),
     m_healthCheckLocalIpHasBeenSet(false),
-    m_healthCheckRemoteIpHasBeenSet(false)
+    m_healthCheckRemoteIpHasBeenSet(false),
+    m_routeTypeHasBeenSet(false)
 {
 }
 
@@ -44,14 +45,6 @@ string CreateVpnConnectionRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_vpcIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "VpcId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_vpnGatewayIdHasBeenSet)
     {
@@ -83,6 +76,14 @@ string CreateVpnConnectionRequest::ToJsonString() const
         string key = "PreShareKey";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_preShareKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_securityPolicyDatabasesHasBeenSet)
@@ -157,6 +158,14 @@ string CreateVpnConnectionRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_healthCheckRemoteIp.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_routeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RouteType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_routeType.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -164,22 +173,6 @@ string CreateVpnConnectionRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string CreateVpnConnectionRequest::GetVpcId() const
-{
-    return m_vpcId;
-}
-
-void CreateVpnConnectionRequest::SetVpcId(const string& _vpcId)
-{
-    m_vpcId = _vpcId;
-    m_vpcIdHasBeenSet = true;
-}
-
-bool CreateVpnConnectionRequest::VpcIdHasBeenSet() const
-{
-    return m_vpcIdHasBeenSet;
-}
 
 string CreateVpnConnectionRequest::GetVpnGatewayId() const
 {
@@ -243,6 +236,22 @@ void CreateVpnConnectionRequest::SetPreShareKey(const string& _preShareKey)
 bool CreateVpnConnectionRequest::PreShareKeyHasBeenSet() const
 {
     return m_preShareKeyHasBeenSet;
+}
+
+string CreateVpnConnectionRequest::GetVpcId() const
+{
+    return m_vpcId;
+}
+
+void CreateVpnConnectionRequest::SetVpcId(const string& _vpcId)
+{
+    m_vpcId = _vpcId;
+    m_vpcIdHasBeenSet = true;
+}
+
+bool CreateVpnConnectionRequest::VpcIdHasBeenSet() const
+{
+    return m_vpcIdHasBeenSet;
 }
 
 vector<SecurityPolicyDatabase> CreateVpnConnectionRequest::GetSecurityPolicyDatabases() const
@@ -355,6 +364,22 @@ void CreateVpnConnectionRequest::SetHealthCheckRemoteIp(const string& _healthChe
 bool CreateVpnConnectionRequest::HealthCheckRemoteIpHasBeenSet() const
 {
     return m_healthCheckRemoteIpHasBeenSet;
+}
+
+string CreateVpnConnectionRequest::GetRouteType() const
+{
+    return m_routeType;
+}
+
+void CreateVpnConnectionRequest::SetRouteType(const string& _routeType)
+{
+    m_routeType = _routeType;
+    m_routeTypeHasBeenSet = true;
+}
+
+bool CreateVpnConnectionRequest::RouteTypeHasBeenSet() const
+{
+    return m_routeTypeHasBeenSet;
 }
 
 

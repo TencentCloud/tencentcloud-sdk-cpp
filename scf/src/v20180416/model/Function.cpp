@@ -34,7 +34,9 @@ Function::Function() :
     m_typeHasBeenSet(false),
     m_statusReasonsHasBeenSet(false),
     m_totalProvisionedConcurrencyMemHasBeenSet(false),
-    m_reservedConcurrencyMemHasBeenSet(false)
+    m_reservedConcurrencyMemHasBeenSet(false),
+    m_asyncRunEnableHasBeenSet(false),
+    m_traceEnableHasBeenSet(false)
 {
 }
 
@@ -203,6 +205,26 @@ CoreInternalOutcome Function::Deserialize(const rapidjson::Value &value)
         m_reservedConcurrencyMemHasBeenSet = true;
     }
 
+    if (value.HasMember("AsyncRunEnable") && !value["AsyncRunEnable"].IsNull())
+    {
+        if (!value["AsyncRunEnable"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Function.AsyncRunEnable` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_asyncRunEnable = string(value["AsyncRunEnable"].GetString());
+        m_asyncRunEnableHasBeenSet = true;
+    }
+
+    if (value.HasMember("TraceEnable") && !value["TraceEnable"].IsNull())
+    {
+        if (!value["TraceEnable"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Function.TraceEnable` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_traceEnable = string(value["TraceEnable"].GetString());
+        m_traceEnableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -334,6 +356,22 @@ void Function::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "ReservedConcurrencyMem";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_reservedConcurrencyMem, allocator);
+    }
+
+    if (m_asyncRunEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AsyncRunEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_asyncRunEnable.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_traceEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TraceEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_traceEnable.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -561,5 +599,37 @@ void Function::SetReservedConcurrencyMem(const uint64_t& _reservedConcurrencyMem
 bool Function::ReservedConcurrencyMemHasBeenSet() const
 {
     return m_reservedConcurrencyMemHasBeenSet;
+}
+
+string Function::GetAsyncRunEnable() const
+{
+    return m_asyncRunEnable;
+}
+
+void Function::SetAsyncRunEnable(const string& _asyncRunEnable)
+{
+    m_asyncRunEnable = _asyncRunEnable;
+    m_asyncRunEnableHasBeenSet = true;
+}
+
+bool Function::AsyncRunEnableHasBeenSet() const
+{
+    return m_asyncRunEnableHasBeenSet;
+}
+
+string Function::GetTraceEnable() const
+{
+    return m_traceEnable;
+}
+
+void Function::SetTraceEnable(const string& _traceEnable)
+{
+    m_traceEnable = _traceEnable;
+    m_traceEnableHasBeenSet = true;
+}
+
+bool Function::TraceEnableHasBeenSet() const
+{
+    return m_traceEnableHasBeenSet;
 }
 

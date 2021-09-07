@@ -308,6 +308,42 @@ namespace TencentCloud
                      */
                     bool ReservedConcurrencyMemHasBeenSet() const;
 
+                    /**
+                     * 获取函数异步属性，取值 TRUE 或者 FALSE
+                     * @return AsyncRunEnable 函数异步属性，取值 TRUE 或者 FALSE
+                     */
+                    std::string GetAsyncRunEnable() const;
+
+                    /**
+                     * 设置函数异步属性，取值 TRUE 或者 FALSE
+                     * @param AsyncRunEnable 函数异步属性，取值 TRUE 或者 FALSE
+                     */
+                    void SetAsyncRunEnable(const std::string& _asyncRunEnable);
+
+                    /**
+                     * 判断参数 AsyncRunEnable 是否已赋值
+                     * @return AsyncRunEnable 是否已赋值
+                     */
+                    bool AsyncRunEnableHasBeenSet() const;
+
+                    /**
+                     * 获取异步函数是否开启调用追踪，取值 TRUE 或者 FALSE
+                     * @return TraceEnable 异步函数是否开启调用追踪，取值 TRUE 或者 FALSE
+                     */
+                    std::string GetTraceEnable() const;
+
+                    /**
+                     * 设置异步函数是否开启调用追踪，取值 TRUE 或者 FALSE
+                     * @param TraceEnable 异步函数是否开启调用追踪，取值 TRUE 或者 FALSE
+                     */
+                    void SetTraceEnable(const std::string& _traceEnable);
+
+                    /**
+                     * 判断参数 TraceEnable 是否已赋值
+                     * @return TraceEnable 是否已赋值
+                     */
+                    bool TraceEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -395,6 +431,18 @@ namespace TencentCloud
                      */
                     uint64_t m_reservedConcurrencyMem;
                     bool m_reservedConcurrencyMemHasBeenSet;
+
+                    /**
+                     * 函数异步属性，取值 TRUE 或者 FALSE
+                     */
+                    std::string m_asyncRunEnable;
+                    bool m_asyncRunEnableHasBeenSet;
+
+                    /**
+                     * 异步函数是否开启调用追踪，取值 TRUE 或者 FALSE
+                     */
+                    std::string m_traceEnable;
+                    bool m_traceEnableHasBeenSet;
 
                 };
             }

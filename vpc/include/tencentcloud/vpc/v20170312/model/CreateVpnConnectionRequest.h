@@ -47,24 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。
-                     * @return VpcId VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。
-                     */
-                    std::string GetVpcId() const;
-
-                    /**
-                     * 设置VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。
-                     * @param VpcId VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。
-                     */
-                    void SetVpcId(const std::string& _vpcId);
-
-                    /**
-                     * 判断参数 VpcId 是否已赋值
-                     * @return VpcId 是否已赋值
-                     */
-                    bool VpcIdHasBeenSet() const;
-
-                    /**
                      * 获取VPN网关实例ID。
                      * @return VpnGatewayId VPN网关实例ID。
                      */
@@ -135,6 +117,28 @@ namespace TencentCloud
                      * @return PreShareKey 是否已赋值
                      */
                     bool PreShareKeyHasBeenSet() const;
+
+                    /**
+                     * 获取VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。
+CCN VPN 形的通道 可以不传VPCID
+                     * @return VpcId VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。
+CCN VPN 形的通道 可以不传VPCID
+                     */
+                    std::string GetVpcId() const;
+
+                    /**
+                     * 设置VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。
+CCN VPN 形的通道 可以不传VPCID
+                     * @param VpcId VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。
+CCN VPN 形的通道 可以不传VPCID
+                     */
+                    void SetVpcId(const std::string& _vpcId);
+
+                    /**
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
+                     */
+                    bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取SPD策略组，例如：{"10.0.0.5/24":["172.123.10.5/16"]}，10.0.0.5/24是vpc内网段172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。
@@ -262,13 +266,25 @@ namespace TencentCloud
                      */
                     bool HealthCheckRemoteIpHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取通道类型, 例如:["STATIC", "StaticRoute", "Policy"]
+                     * @return RouteType 通道类型, 例如:["STATIC", "StaticRoute", "Policy"]
+                     */
+                    std::string GetRouteType() const;
 
                     /**
-                     * VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。
+                     * 设置通道类型, 例如:["STATIC", "StaticRoute", "Policy"]
+                     * @param RouteType 通道类型, 例如:["STATIC", "StaticRoute", "Policy"]
                      */
-                    std::string m_vpcId;
-                    bool m_vpcIdHasBeenSet;
+                    void SetRouteType(const std::string& _routeType);
+
+                    /**
+                     * 判断参数 RouteType 是否已赋值
+                     * @return RouteType 是否已赋值
+                     */
+                    bool RouteTypeHasBeenSet() const;
+
+                private:
 
                     /**
                      * VPN网关实例ID。
@@ -293,6 +309,13 @@ namespace TencentCloud
                      */
                     std::string m_preShareKey;
                     bool m_preShareKeyHasBeenSet;
+
+                    /**
+                     * VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。
+CCN VPN 形的通道 可以不传VPCID
+                     */
+                    std::string m_vpcId;
+                    bool m_vpcIdHasBeenSet;
 
                     /**
                      * SPD策略组，例如：{"10.0.0.5/24":["172.123.10.5/16"]}，10.0.0.5/24是vpc内网段172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。
@@ -335,6 +358,12 @@ namespace TencentCloud
                      */
                     std::string m_healthCheckRemoteIp;
                     bool m_healthCheckRemoteIpHasBeenSet;
+
+                    /**
+                     * 通道类型, 例如:["STATIC", "StaticRoute", "Policy"]
+                     */
+                    std::string m_routeType;
+                    bool m_routeTypeHasBeenSet;
 
                 };
             }

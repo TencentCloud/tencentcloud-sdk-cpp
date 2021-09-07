@@ -1411,6 +1411,8 @@ namespace TencentCloud
 * 一个弹性网卡支持绑定的IP地址是有限制的，更多资源限制信息详见<a href="/document/product/576/18527">弹性网卡使用限制</a>。
 * 可以指定内网IP地址申请，内网IP地址类型不能为主IP，主IP已存在，不能修改，内网IP必须要弹性网卡所在子网内，而且不能被占用。
 * 在弹性网卡上申请一个到多个辅助内网IP，接口会在弹性网卡所在子网网段内返回指定数量的辅助内网IP。
+>?本接口为异步接口，可调用 [DescribeVpcTaskResult](https://cloud.tencent.com/document/api/215/59037) 接口查询任务执行结果，待任务执行成功后再进行其他操作。
+>
                  * @param req AssignPrivateIpAddressesRequest
                  * @return AssignPrivateIpAddressesOutcome
                  */
@@ -1435,6 +1437,8 @@ namespace TencentCloud
 
                 /**
                  *本接口（AssociateDhcpIpWithAddressIp）用于DhcpIp绑定弹性公网IP（EIP）。<br />
+>?本接口为异步接口，可调用 [DescribeVpcTaskResult](https://cloud.tencent.com/document/api/215/59037) 接口查询任务执行结果，待任务执行成功后再进行其他操作。
+>
                  * @param req AssociateDhcpIpWithAddressIpRequest
                  * @return AssociateDhcpIpWithAddressIpOutcome
                  */
@@ -1492,6 +1496,8 @@ namespace TencentCloud
                  *本接口(AttachClassicLinkVpc)用于创建私有网络和基础网络设备互通。
 * 私有网络和基础网络设备必须在同一个地域。
 * 私有网络和基础网络的区别详见vpc产品文档-<a href="https://cloud.tencent.com/document/product/215/30720">私有网络与基础网络</a>。
+>?本接口为异步接口，可调用 [DescribeVpcTaskResult](https://cloud.tencent.com/document/api/215/59037) 接口查询任务执行结果，待任务执行成功后再进行其他操作。
+>
                  * @param req AttachClassicLinkVpcRequest
                  * @return AttachClassicLinkVpcOutcome
                  */
@@ -1589,6 +1595,8 @@ namespace TencentCloud
 * 一个弹性网卡支持绑定的IP地址是有限制的，更多资源限制信息详见<a href="/document/product/576/18527">弹性网卡使用限制</a>。
 * 创建弹性网卡同时可以绑定已有安全组。
 * 创建弹性网卡同时可以绑定标签, 应答里的标签列表代表添加成功的标签。
+>?本接口为异步接口，可调用 [DescribeVpcTaskResult](https://cloud.tencent.com/document/api/215/59037) 接口查询任务执行结果，待任务执行成功后再进行其他操作。
+>
                  * @param req CreateAndAttachNetworkInterfaceRequest
                  * @return CreateAndAttachNetworkInterfaceOutcome
                  */
@@ -1781,6 +1789,8 @@ namespace TencentCloud
 * 一个弹性网卡支持绑定的IP地址是有限制的，更多资源限制信息详见<a href="/document/product/576/18527">弹性网卡使用限制</a>。
 * 创建弹性网卡同时可以绑定已有安全组。
 * 创建弹性网卡同时可以绑定标签, 应答里的标签列表代表添加成功的标签。
+>?本接口为异步接口，可调用 [DescribeVpcTaskResult](https://cloud.tencent.com/document/api/215/59037) 接口查询任务执行结果，待任务执行成功后再进行其他操作。
+>
                  * @param req CreateNetworkInterfaceRequest
                  * @return CreateNetworkInterfaceOutcome
                  */
@@ -1955,6 +1965,8 @@ namespace TencentCloud
 
                 /**
                  *本接口（CreateVpnConnection）用于创建VPN通道。
+>?本接口为异步接口，可调用 [DescribeVpcTaskResult](https://cloud.tencent.com/document/api/215/59037) 接口查询任务执行结果，待任务执行成功后再进行其他操作。
+>
                  * @param req CreateVpnConnectionRequest
                  * @return CreateVpnConnectionOutcome
                  */
@@ -2038,7 +2050,9 @@ namespace TencentCloud
                 DeleteCustomerGatewayOutcomeCallable DeleteCustomerGatewayCallable(const Model::DeleteCustomerGatewayRequest& request);
 
                 /**
-                 *本接口（DeleteDhcpIp）用于删除DhcpIp
+                 *本接口（DeleteDhcpIp）用于删除DhcpIp。
+>?本接口为异步接口，可调用 [DescribeVpcTaskResult](https://cloud.tencent.com/document/api/215/59037) 接口查询任务执行结果，待任务执行成功后再进行其他操作。
+>
                  * @param req DeleteDhcpIpRequest
                  * @return DeleteDhcpIpOutcome
                  */
@@ -2951,6 +2965,8 @@ LimitTypes取值范围：
 
                 /**
                  *本接口(DetachClassicLinkVpc)用于删除私有网络和基础网络设备互通。
+>?本接口为异步接口，可调用 [DescribeVpcTaskResult](https://cloud.tencent.com/document/api/215/59037) 接口查询任务执行结果，待任务执行成功后再进行其他操作。
+>
                  * @param req DetachClassicLinkVpcRequest
                  * @return DetachClassicLinkVpcOutcome
                  */
@@ -3010,6 +3026,8 @@ LimitTypes取值范围：
 
                 /**
                  *本接口（DisassociateDhcpIpWithAddressIp）用于将DhcpIp已绑定的弹性公网IP（EIP）解除绑定。<br />
+>?本接口为异步接口，可调用 [DescribeVpcTaskResult](https://cloud.tencent.com/document/api/215/59037) 接口查询任务执行结果，待任务执行成功后再进行其他操作。
+>
                  * @param req DisassociateDhcpIpWithAddressIpRequest
                  * @return DisassociateDhcpIpWithAddressIpOutcome
                  */

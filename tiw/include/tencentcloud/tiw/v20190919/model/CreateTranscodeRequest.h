@@ -101,20 +101,28 @@ namespace TencentCloud
                     bool IsStaticPPTHasBeenSet() const;
 
                     /**
-                     * 获取转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率
+                     * 获取注意: 该参数已废弃, 请使用 MinScaleResolution
+
+转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率
 
 注意分辨率宽高中间为英文字母"xyz"的"x"
-                     * @return MinResolution 转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率
+                     * @return MinResolution 注意: 该参数已废弃, 请使用 MinScaleResolution
+
+转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率
 
 注意分辨率宽高中间为英文字母"xyz"的"x"
                      */
                     std::string GetMinResolution() const;
 
                     /**
-                     * 设置转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率
+                     * 设置注意: 该参数已废弃, 请使用 MinScaleResolution
+
+转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率
 
 注意分辨率宽高中间为英文字母"xyz"的"x"
-                     * @param MinResolution 转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率
+                     * @param MinResolution 注意: 该参数已废弃, 请使用 MinScaleResolution
+
+转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率
 
 注意分辨率宽高中间为英文字母"xyz"的"x"
                      */
@@ -226,6 +234,32 @@ tar.gz： 生成`.tar.gz`压缩包
                      */
                     bool PriorityHasBeenSet() const;
 
+                    /**
+                     * 获取转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率
+
+注意分辨率宽高中间为英文字母"xyz"的"x"
+                     * @return MinScaleResolution 转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率
+
+注意分辨率宽高中间为英文字母"xyz"的"x"
+                     */
+                    std::string GetMinScaleResolution() const;
+
+                    /**
+                     * 设置转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率
+
+注意分辨率宽高中间为英文字母"xyz"的"x"
+                     * @param MinScaleResolution 转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率
+
+注意分辨率宽高中间为英文字母"xyz"的"x"
+                     */
+                    void SetMinScaleResolution(const std::string& _minScaleResolution);
+
+                    /**
+                     * 判断参数 MinScaleResolution 是否已赋值
+                     * @return MinScaleResolution 是否已赋值
+                     */
+                    bool MinScaleResolutionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -248,7 +282,9 @@ tar.gz： 生成`.tar.gz`压缩包
                     bool m_isStaticPPTHasBeenSet;
 
                     /**
-                     * 转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率
+                     * 注意: 该参数已废弃, 请使用 MinScaleResolution
+
+转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率
 
 注意分辨率宽高中间为英文字母"xyz"的"x"
                      */
@@ -285,6 +321,14 @@ tar.gz： 生成`.tar.gz`压缩包
                      */
                     std::string m_priority;
                     bool m_priorityHasBeenSet;
+
+                    /**
+                     * 转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率
+
+注意分辨率宽高中间为英文字母"xyz"的"x"
+                     */
+                    std::string m_minScaleResolution;
+                    bool m_minScaleResolutionHasBeenSet;
 
                 };
             }

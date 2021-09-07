@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tse/v20201207/model/EnvInfo.h>
 #include <tencentcloud/tse/v20201207/model/VpcInfo.h>
+#include <tencentcloud/tse/v20201207/model/ServiceGovernanceInfo.h>
 
 
 namespace TencentCloud
@@ -434,6 +435,28 @@ namespace TencentCloud
                      */
                     bool VpcInfosHasBeenSet() const;
 
+                    /**
+                     * 获取服务治理相关信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServiceGovernanceInfos 服务治理相关信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ServiceGovernanceInfo> GetServiceGovernanceInfos() const;
+
+                    /**
+                     * 设置服务治理相关信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ServiceGovernanceInfos 服务治理相关信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetServiceGovernanceInfos(const std::vector<ServiceGovernanceInfo>& _serviceGovernanceInfos);
+
+                    /**
+                     * 判断参数 ServiceGovernanceInfos 是否已赋值
+                     * @return ServiceGovernanceInfos 是否已赋值
+                     */
+                    bool ServiceGovernanceInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -560,6 +583,13 @@ namespace TencentCloud
                      */
                     std::vector<VpcInfo> m_vpcInfos;
                     bool m_vpcInfosHasBeenSet;
+
+                    /**
+                     * 服务治理相关信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ServiceGovernanceInfo> m_serviceGovernanceInfos;
+                    bool m_serviceGovernanceInfosHasBeenSet;
 
                 };
             }
