@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要删除预置并发的函数的名称
-                     * @return FunctionName 需要删除预置并发的函数的名称
+                     * 获取需要删除最大独占配额的函数的名称
+                     * @return FunctionName 需要删除最大独占配额的函数的名称
                      */
                     std::string GetFunctionName() const;
 
                     /**
-                     * 设置需要删除预置并发的函数的名称
-                     * @param FunctionName 需要删除预置并发的函数的名称
+                     * 设置需要删除最大独占配额的函数的名称
+                     * @param FunctionName 需要删除最大独占配额的函数的名称
                      */
                     void SetFunctionName(const std::string& _functionName);
 
@@ -81,7 +81,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需要删除预置并发的函数的名称
+                     * 需要删除最大独占配额的函数的名称
                      */
                     std::string m_functionName;
                     bool m_functionNameHasBeenSet;

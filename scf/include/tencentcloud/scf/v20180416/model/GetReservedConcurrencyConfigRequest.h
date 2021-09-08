@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要获取预置并发详情的函数名称。
-                     * @return FunctionName 需要获取预置并发详情的函数名称。
+                     * 获取需要获取最大独占配额详情的函数名称。
+                     * @return FunctionName 需要获取最大独占配额详情的函数名称。
                      */
                     std::string GetFunctionName() const;
 
                     /**
-                     * 设置需要获取预置并发详情的函数名称。
-                     * @param FunctionName 需要获取预置并发详情的函数名称。
+                     * 设置需要获取最大独占配额详情的函数名称。
+                     * @param FunctionName 需要获取最大独占配额详情的函数名称。
                      */
                     void SetFunctionName(const std::string& _functionName);
 
@@ -81,7 +81,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需要获取预置并发详情的函数名称。
+                     * 需要获取最大独占配额详情的函数名称。
                      */
                     std::string m_functionName;
                     bool m_functionNameHasBeenSet;

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cvm/v20170312/model/InstanceRefund.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,25 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取退款详情。
+                     * @return InstanceRefundsSet 退款详情。
+                     */
+                    std::vector<InstanceRefund> GetInstanceRefundsSet() const;
+
+                    /**
+                     * 判断参数 InstanceRefundsSet 是否已赋值
+                     * @return InstanceRefundsSet 是否已赋值
+                     */
+                    bool InstanceRefundsSetHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 退款详情。
+                     */
+                    std::vector<InstanceRefund> m_instanceRefundsSet;
+                    bool m_instanceRefundsSetHasBeenSet;
 
                 };
             }

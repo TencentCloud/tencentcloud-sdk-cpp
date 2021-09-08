@@ -117,14 +117,18 @@ global：预热全球节点
                     bool AreaHasBeenSet() const;
 
                     /**
-                     * 获取填写"middle"或不填充时预热至中间层节点
-                     * @return Layer 填写"middle"或不填充时预热至中间层节点
+                     * 获取填写"middle"或不填充时预热至中间层节点。
+注意：中国境外区域预热，资源默认加载至中国境外边缘节点，所产生的边缘层流量会计入计费流量。
+                     * @return Layer 填写"middle"或不填充时预热至中间层节点。
+注意：中国境外区域预热，资源默认加载至中国境外边缘节点，所产生的边缘层流量会计入计费流量。
                      */
                     std::string GetLayer() const;
 
                     /**
-                     * 设置填写"middle"或不填充时预热至中间层节点
-                     * @param Layer 填写"middle"或不填充时预热至中间层节点
+                     * 设置填写"middle"或不填充时预热至中间层节点。
+注意：中国境外区域预热，资源默认加载至中国境外边缘节点，所产生的边缘层流量会计入计费流量。
+                     * @param Layer 填写"middle"或不填充时预热至中间层节点。
+注意：中国境外区域预热，资源默认加载至中国境外边缘节点，所产生的边缘层流量会计入计费流量。
                      */
                     void SetLayer(const std::string& _layer);
 
@@ -194,7 +198,8 @@ global：预热全球节点
                     bool m_areaHasBeenSet;
 
                     /**
-                     * 填写"middle"或不填充时预热至中间层节点
+                     * 填写"middle"或不填充时预热至中间层节点。
+注意：中国境外区域预热，资源默认加载至中国境外边缘节点，所产生的边缘层流量会计入计费流量。
                      */
                     std::string m_layer;
                     bool m_layerHasBeenSet;

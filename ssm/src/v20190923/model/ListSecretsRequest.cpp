@@ -29,7 +29,8 @@ ListSecretsRequest::ListSecretsRequest() :
     m_stateHasBeenSet(false),
     m_searchSecretNameHasBeenSet(false),
     m_tagFiltersHasBeenSet(false),
-    m_secretTypeHasBeenSet(false)
+    m_secretTypeHasBeenSet(false),
+    m_productNameHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,14 @@ string ListSecretsRequest::ToJsonString() const
         string key = "SecretType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_secretType, allocator);
+    }
+
+    if (m_productNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_productName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -221,6 +230,22 @@ void ListSecretsRequest::SetSecretType(const uint64_t& _secretType)
 bool ListSecretsRequest::SecretTypeHasBeenSet() const
 {
     return m_secretTypeHasBeenSet;
+}
+
+string ListSecretsRequest::GetProductName() const
+{
+    return m_productName;
+}
+
+void ListSecretsRequest::SetProductName(const string& _productName)
+{
+    m_productName = _productName;
+    m_productNameHasBeenSet = true;
+}
+
+bool ListSecretsRequest::ProductNameHasBeenSet() const
+{
+    return m_productNameHasBeenSet;
 }
 
 

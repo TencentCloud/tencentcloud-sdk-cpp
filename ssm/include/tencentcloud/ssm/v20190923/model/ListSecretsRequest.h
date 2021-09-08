@@ -205,6 +205,40 @@ namespace TencentCloud
                      */
                     bool SecretTypeHasBeenSet() const;
 
+                    /**
+                     * 获取此参数仅在SecretType参数值为1时生效，
+当SecretType值为1时：
+如果ProductName值为空，则表示查询所有类型的云产品凭据
+如果ProductName值为Mysql，则表示查询Mysql数据库凭据
+如果ProductName值为Tdsql-mysql，则表示查询Tdsql（Mysql版本）的凭据
+                     * @return ProductName 此参数仅在SecretType参数值为1时生效，
+当SecretType值为1时：
+如果ProductName值为空，则表示查询所有类型的云产品凭据
+如果ProductName值为Mysql，则表示查询Mysql数据库凭据
+如果ProductName值为Tdsql-mysql，则表示查询Tdsql（Mysql版本）的凭据
+                     */
+                    std::string GetProductName() const;
+
+                    /**
+                     * 设置此参数仅在SecretType参数值为1时生效，
+当SecretType值为1时：
+如果ProductName值为空，则表示查询所有类型的云产品凭据
+如果ProductName值为Mysql，则表示查询Mysql数据库凭据
+如果ProductName值为Tdsql-mysql，则表示查询Tdsql（Mysql版本）的凭据
+                     * @param ProductName 此参数仅在SecretType参数值为1时生效，
+当SecretType值为1时：
+如果ProductName值为空，则表示查询所有类型的云产品凭据
+如果ProductName值为Mysql，则表示查询Mysql数据库凭据
+如果ProductName值为Tdsql-mysql，则表示查询Tdsql（Mysql版本）的凭据
+                     */
+                    void SetProductName(const std::string& _productName);
+
+                    /**
+                     * 判断参数 ProductName 是否已赋值
+                     * @return ProductName 是否已赋值
+                     */
+                    bool ProductNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -257,6 +291,16 @@ namespace TencentCloud
                      */
                     uint64_t m_secretType;
                     bool m_secretTypeHasBeenSet;
+
+                    /**
+                     * 此参数仅在SecretType参数值为1时生效，
+当SecretType值为1时：
+如果ProductName值为空，则表示查询所有类型的云产品凭据
+如果ProductName值为Mysql，则表示查询Mysql数据库凭据
+如果ProductName值为Tdsql-mysql，则表示查询Tdsql（Mysql版本）的凭据
+                     */
+                    std::string m_productName;
+                    bool m_productNameHasBeenSet;
 
                 };
             }

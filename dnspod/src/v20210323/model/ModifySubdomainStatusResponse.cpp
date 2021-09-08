@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cvm/v20170312/model/InquiryPriceTerminateInstancesResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifySubdomainStatusResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cvm::V20170312::Model;
+using namespace TencentCloud::Dnspod::V20210323::Model;
 using namespace std;
 
-InquiryPriceTerminateInstancesResponse::InquiryPriceTerminateInstancesResponse() :
-    m_instanceRefundsSetHasBeenSet(false)
+ModifySubdomainStatusResponse::ModifySubdomainStatusResponse()
 {
 }
 
-CoreInternalOutcome InquiryPriceTerminateInstancesResponse::Deserialize(const string &payload)
+CoreInternalOutcome ModifySubdomainStatusResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,50 +61,15 @@ CoreInternalOutcome InquiryPriceTerminateInstancesResponse::Deserialize(const st
     }
 
 
-    if (rsp.HasMember("InstanceRefundsSet") && !rsp["InstanceRefundsSet"].IsNull())
-    {
-        if (!rsp["InstanceRefundsSet"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `InstanceRefundsSet` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["InstanceRefundsSet"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            InstanceRefund item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_instanceRefundsSet.push_back(item);
-        }
-        m_instanceRefundsSetHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string InquiryPriceTerminateInstancesResponse::ToJsonString() const
+string ModifySubdomainStatusResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_instanceRefundsSetHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceRefundsSet";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_instanceRefundsSet.begin(); itr != m_instanceRefundsSet.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -118,15 +82,5 @@ string InquiryPriceTerminateInstancesResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-vector<InstanceRefund> InquiryPriceTerminateInstancesResponse::GetInstanceRefundsSet() const
-{
-    return m_instanceRefundsSet;
-}
-
-bool InquiryPriceTerminateInstancesResponse::InstanceRefundsSetHasBeenSet() const
-{
-    return m_instanceRefundsSetHasBeenSet;
-}
 
 

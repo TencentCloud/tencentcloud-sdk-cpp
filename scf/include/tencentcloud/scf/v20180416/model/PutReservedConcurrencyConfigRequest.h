@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要设置预置并发的函数的名称
-                     * @return FunctionName 需要设置预置并发的函数的名称
+                     * 获取需要设置最大独占配额的函数的名称
+                     * @return FunctionName 需要设置最大独占配额的函数的名称
                      */
                     std::string GetFunctionName() const;
 
                     /**
-                     * 设置需要设置预置并发的函数的名称
-                     * @param FunctionName 需要设置预置并发的函数的名称
+                     * 设置需要设置最大独占配额的函数的名称
+                     * @param FunctionName 需要设置最大独占配额的函数的名称
                      */
                     void SetFunctionName(const std::string& _functionName);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool FunctionNameHasBeenSet() const;
 
                     /**
-                     * 获取函数保留并发内存，注：函数的保留并发内存总和上限：用户总并发内存配额 - 12800
-                     * @return ReservedConcurrencyMem 函数保留并发内存，注：函数的保留并发内存总和上限：用户总并发内存配额 - 12800
+                     * 获取函数最大独占配额，注：函数的最大独占配额内存总和上限：用户总并发内存配额 - 12800
+                     * @return ReservedConcurrencyMem 函数最大独占配额，注：函数的最大独占配额内存总和上限：用户总并发内存配额 - 12800
                      */
                     uint64_t GetReservedConcurrencyMem() const;
 
                     /**
-                     * 设置函数保留并发内存，注：函数的保留并发内存总和上限：用户总并发内存配额 - 12800
-                     * @param ReservedConcurrencyMem 函数保留并发内存，注：函数的保留并发内存总和上限：用户总并发内存配额 - 12800
+                     * 设置函数最大独占配额，注：函数的最大独占配额内存总和上限：用户总并发内存配额 - 12800
+                     * @param ReservedConcurrencyMem 函数最大独占配额，注：函数的最大独占配额内存总和上限：用户总并发内存配额 - 12800
                      */
                     void SetReservedConcurrencyMem(const uint64_t& _reservedConcurrencyMem);
 
@@ -99,13 +99,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需要设置预置并发的函数的名称
+                     * 需要设置最大独占配额的函数的名称
                      */
                     std::string m_functionName;
                     bool m_functionNameHasBeenSet;
 
                     /**
-                     * 函数保留并发内存，注：函数的保留并发内存总和上限：用户总并发内存配额 - 12800
+                     * 函数最大独占配额，注：函数的最大独占配额内存总和上限：用户总并发内存配额 - 12800
                      */
                     uint64_t m_reservedConcurrencyMem;
                     bool m_reservedConcurrencyMemHasBeenSet;

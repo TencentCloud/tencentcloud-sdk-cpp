@@ -23,7 +23,8 @@ using namespace TencentCloud::Ssm::V20190923::Model;
 using namespace std;
 
 GetSSHKeyPairValueRequest::GetSSHKeyPairValueRequest() :
-    m_secretNameHasBeenSet(false)
+    m_secretNameHasBeenSet(false),
+    m_sSHKeyIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string GetSSHKeyPairValueRequest::ToJsonString() const
         string key = "SecretName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_secretName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sSHKeyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SSHKeyId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sSHKeyId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void GetSSHKeyPairValueRequest::SetSecretName(const string& _secretName)
 bool GetSSHKeyPairValueRequest::SecretNameHasBeenSet() const
 {
     return m_secretNameHasBeenSet;
+}
+
+string GetSSHKeyPairValueRequest::GetSSHKeyId() const
+{
+    return m_sSHKeyId;
+}
+
+void GetSSHKeyPairValueRequest::SetSSHKeyId(const string& _sSHKeyId)
+{
+    m_sSHKeyId = _sSHKeyId;
+    m_sSHKeyIdHasBeenSet = true;
+}
+
+bool GetSSHKeyPairValueRequest::SSHKeyIdHasBeenSet() const
+{
+    return m_sSHKeyIdHasBeenSet;
 }
 
 

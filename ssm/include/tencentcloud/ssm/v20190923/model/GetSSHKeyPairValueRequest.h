@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool SecretNameHasBeenSet() const;
 
+                    /**
+                     * 获取密钥对ID，是云服务器中密钥对的唯一标识。
+                     * @return SSHKeyId 密钥对ID，是云服务器中密钥对的唯一标识。
+                     */
+                    std::string GetSSHKeyId() const;
+
+                    /**
+                     * 设置密钥对ID，是云服务器中密钥对的唯一标识。
+                     * @param SSHKeyId 密钥对ID，是云服务器中密钥对的唯一标识。
+                     */
+                    void SetSSHKeyId(const std::string& _sSHKeyId);
+
+                    /**
+                     * 判断参数 SSHKeyId 是否已赋值
+                     * @return SSHKeyId 是否已赋值
+                     */
+                    bool SSHKeyIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::string m_secretName;
                     bool m_secretNameHasBeenSet;
+
+                    /**
+                     * 密钥对ID，是云服务器中密钥对的唯一标识。
+                     */
+                    std::string m_sSHKeyId;
+                    bool m_sSHKeyIdHasBeenSet;
 
                 };
             }

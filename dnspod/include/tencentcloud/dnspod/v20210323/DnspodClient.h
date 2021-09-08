@@ -85,6 +85,8 @@
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordRemarkResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordStatusRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordStatusResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifySubdomainStatusRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifySubdomainStatusResponse.h>
 
 
 namespace TencentCloud
@@ -192,6 +194,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyRecordStatusResponse> ModifyRecordStatusOutcome;
                 typedef std::future<ModifyRecordStatusOutcome> ModifyRecordStatusOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::ModifyRecordStatusRequest&, ModifyRecordStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRecordStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySubdomainStatusResponse> ModifySubdomainStatusOutcome;
+                typedef std::future<ModifySubdomainStatusOutcome> ModifySubdomainStatusOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::ModifySubdomainStatusRequest&, ModifySubdomainStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySubdomainStatusAsyncHandler;
 
 
 
@@ -477,6 +482,15 @@ namespace TencentCloud
                 ModifyRecordStatusOutcome ModifyRecordStatus(const Model::ModifyRecordStatusRequest &request);
                 void ModifyRecordStatusAsync(const Model::ModifyRecordStatusRequest& request, const ModifyRecordStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyRecordStatusOutcomeCallable ModifyRecordStatusCallable(const Model::ModifyRecordStatusRequest& request);
+
+                /**
+                 *暂停子域名的解析记录
+                 * @param req ModifySubdomainStatusRequest
+                 * @return ModifySubdomainStatusOutcome
+                 */
+                ModifySubdomainStatusOutcome ModifySubdomainStatus(const Model::ModifySubdomainStatusRequest &request);
+                void ModifySubdomainStatusAsync(const Model::ModifySubdomainStatusRequest& request, const ModifySubdomainStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySubdomainStatusOutcomeCallable ModifySubdomainStatusCallable(const Model::ModifySubdomainStatusRequest& request);
 
             };
         }

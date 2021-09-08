@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CDN_V20180606_MODEL_CACHE_H_
-#define TENCENTCLOUD_CDN_V20180606_MODEL_CACHE_H_
+#ifndef TENCENTCLOUD_CVM_V20170312_MODEL_INSTANCEREFUND_H_
+#define TENCENTCLOUD_CVM_V20170312_MODEL_INSTANCEREFUND_H_
 
 #include <string>
 #include <vector>
@@ -24,121 +24,116 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/cdn/v20180606/model/SimpleCache.h>
-#include <tencentcloud/cdn/v20180606/model/AdvancedCache.h>
-#include <tencentcloud/cdn/v20180606/model/RuleCache.h>
 
 
 namespace TencentCloud
 {
-    namespace Cdn
+    namespace Cvm
     {
-        namespace V20180606
+        namespace V20170312
         {
             namespace Model
             {
                 /**
-                * 节点缓存过期时间配置，分为以下两种：
-+ 基础版缓存过期规则配置
-+ 高级版缓存过期规则配置
+                * 描述退款详情。
                 */
-                class Cache : public AbstractModel
+                class InstanceRefund : public AbstractModel
                 {
                 public:
-                    Cache();
-                    ~Cache() = default;
+                    InstanceRefund();
+                    ~InstanceRefund() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取基础缓存过期时间配置
+                     * 获取实例Id。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SimpleCache 基础缓存过期时间配置
+                     * @return InstanceId 实例Id。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    SimpleCache GetSimpleCache() const;
+                    std::string GetInstanceId() const;
 
                     /**
-                     * 设置基础缓存过期时间配置
+                     * 设置实例Id。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SimpleCache 基础缓存过期时间配置
+                     * @param InstanceId 实例Id。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetSimpleCache(const SimpleCache& _simpleCache);
+                    void SetInstanceId(const std::string& _instanceId);
 
                     /**
-                     * 判断参数 SimpleCache 是否已赋值
-                     * @return SimpleCache 是否已赋值
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
                      */
-                    bool SimpleCacheHasBeenSet() const;
+                    bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取高级缓存过期时间配置（已弃用）
+                     * 获取退款数额。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AdvancedCache 高级缓存过期时间配置（已弃用）
+                     * @return Refunds 退款数额。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    AdvancedCache GetAdvancedCache() const;
+                    double GetRefunds() const;
 
                     /**
-                     * 设置高级缓存过期时间配置（已弃用）
+                     * 设置退款数额。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AdvancedCache 高级缓存过期时间配置（已弃用）
+                     * @param Refunds 退款数额。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetAdvancedCache(const AdvancedCache& _advancedCache);
+                    void SetRefunds(const double& _refunds);
 
                     /**
-                     * 判断参数 AdvancedCache 是否已赋值
-                     * @return AdvancedCache 是否已赋值
+                     * 判断参数 Refunds 是否已赋值
+                     * @return Refunds 是否已赋值
                      */
-                    bool AdvancedCacheHasBeenSet() const;
+                    bool RefundsHasBeenSet() const;
 
                     /**
-                     * 获取高级路径缓存配置
+                     * 获取退款详情。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuleCache 高级路径缓存配置
+                     * @return PriceDetail 退款详情。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<RuleCache> GetRuleCache() const;
+                    std::string GetPriceDetail() const;
 
                     /**
-                     * 设置高级路径缓存配置
+                     * 设置退款详情。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleCache 高级路径缓存配置
+                     * @param PriceDetail 退款详情。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetRuleCache(const std::vector<RuleCache>& _ruleCache);
+                    void SetPriceDetail(const std::string& _priceDetail);
 
                     /**
-                     * 判断参数 RuleCache 是否已赋值
-                     * @return RuleCache 是否已赋值
+                     * 判断参数 PriceDetail 是否已赋值
+                     * @return PriceDetail 是否已赋值
                      */
-                    bool RuleCacheHasBeenSet() const;
+                    bool PriceDetailHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 基础缓存过期时间配置
+                     * 实例Id。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    SimpleCache m_simpleCache;
-                    bool m_simpleCacheHasBeenSet;
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 高级缓存过期时间配置（已弃用）
+                     * 退款数额。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    AdvancedCache m_advancedCache;
-                    bool m_advancedCacheHasBeenSet;
+                    double m_refunds;
+                    bool m_refundsHasBeenSet;
 
                     /**
-                     * 高级路径缓存配置
+                     * 退款详情。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<RuleCache> m_ruleCache;
-                    bool m_ruleCacheHasBeenSet;
+                    std::string m_priceDetail;
+                    bool m_priceDetailHasBeenSet;
 
                 };
             }
@@ -146,4 +141,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CDN_V20180606_MODEL_CACHE_H_
+#endif // !TENCENTCLOUD_CVM_V20170312_MODEL_INSTANCEREFUND_H_

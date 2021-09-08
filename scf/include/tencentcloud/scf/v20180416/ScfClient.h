@@ -348,7 +348,7 @@ namespace TencentCloud
                 DeleteProvisionedConcurrencyConfigOutcomeCallable DeleteProvisionedConcurrencyConfigCallable(const Model::DeleteProvisionedConcurrencyConfigRequest& request);
 
                 /**
-                 *删除函数的保留并发配置。
+                 *删除函数的最大独占配额配置。
                  * @param req DeleteReservedConcurrencyConfigRequest
                  * @return DeleteReservedConcurrencyConfigOutcome
                  */
@@ -438,7 +438,7 @@ namespace TencentCloud
                 GetProvisionedConcurrencyConfigOutcomeCallable GetProvisionedConcurrencyConfigCallable(const Model::GetProvisionedConcurrencyConfigRequest& request);
 
                 /**
-                 *获取函数的保留并发详情。
+                 *获取函数的最大独占配额详情。
                  * @param req GetReservedConcurrencyConfigRequest
                  * @return GetReservedConcurrencyConfigOutcome
                  */
@@ -564,7 +564,7 @@ namespace TencentCloud
                 PutProvisionedConcurrencyConfigOutcomeCallable PutProvisionedConcurrencyConfigCallable(const Model::PutProvisionedConcurrencyConfigRequest& request);
 
                 /**
-                 *设置函数保留并发
+                 *设置函数最大独占配额
                  * @param req PutReservedConcurrencyConfigRequest
                  * @return PutReservedConcurrencyConfigOutcome
                  */

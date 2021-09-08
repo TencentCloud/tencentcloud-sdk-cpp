@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取该函数的保留并发内存。
+                     * 获取该函数的最大独占配额。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReservedMem 该函数的保留并发内存。
+                     * @return ReservedMem 该函数的最大独占配额。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetReservedMem() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 该函数的保留并发内存。
+                     * 该函数的最大独占配额。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_reservedMem;
