@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取截止时间，如“2019-09-10 12:13:14”，截止时间与开始时间的间隔最大可为7天。
-                     * @return EndTime 截止时间，如“2019-09-10 12:13:14”，截止时间与开始时间的间隔最大可为7天。
+                     * 获取截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。
+                     * @return EndTime 截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置截止时间，如“2019-09-10 12:13:14”，截止时间与开始时间的间隔最大可为7天。
-                     * @param EndTime 截止时间，如“2019-09-10 12:13:14”，截止时间与开始时间的间隔最大可为7天。
+                     * 设置截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。
+                     * @param EndTime 截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -220,7 +220,7 @@ namespace TencentCloud
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 截止时间，如“2019-09-10 12:13:14”，截止时间与开始时间的间隔最大可为7天。
+                     * 截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

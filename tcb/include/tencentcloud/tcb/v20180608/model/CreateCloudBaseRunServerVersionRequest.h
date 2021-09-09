@@ -70,14 +70,14 @@ namespace TencentCloud
                     bool EnvIdHasBeenSet() const;
 
                     /**
-                     * 获取枚举（package/repository/image)
-                     * @return UploadType 枚举（package/repository/image)
+                     * 获取枚举（package/repository/image/jar/war)
+                     * @return UploadType 枚举（package/repository/image/jar/war)
                      */
                     std::string GetUploadType() const;
 
                     /**
-                     * 设置枚举（package/repository/image)
-                     * @param UploadType 枚举（package/repository/image)
+                     * 设置枚举（package/repository/image/jar/war)
+                     * @param UploadType 枚举（package/repository/image/jar/war)
                      */
                     void SetUploadType(const std::string& _uploadType);
 
@@ -735,6 +735,96 @@ namespace TencentCloud
                      */
                     bool ServiceVolumeMountsHasBeenSet() const;
 
+                    /**
+                     * 获取是否有Dockerfile：0-default has, 1-has, 2-has not
+                     * @return HasDockerfile 是否有Dockerfile：0-default has, 1-has, 2-has not
+                     */
+                    int64_t GetHasDockerfile() const;
+
+                    /**
+                     * 设置是否有Dockerfile：0-default has, 1-has, 2-has not
+                     * @param HasDockerfile 是否有Dockerfile：0-default has, 1-has, 2-has not
+                     */
+                    void SetHasDockerfile(const int64_t& _hasDockerfile);
+
+                    /**
+                     * 判断参数 HasDockerfile 是否已赋值
+                     * @return HasDockerfile 是否已赋值
+                     */
+                    bool HasDockerfileHasBeenSet() const;
+
+                    /**
+                     * 获取基础镜像
+                     * @return BaseImage 基础镜像
+                     */
+                    std::string GetBaseImage() const;
+
+                    /**
+                     * 设置基础镜像
+                     * @param BaseImage 基础镜像
+                     */
+                    void SetBaseImage(const std::string& _baseImage);
+
+                    /**
+                     * 判断参数 BaseImage 是否已赋值
+                     * @return BaseImage 是否已赋值
+                     */
+                    bool BaseImageHasBeenSet() const;
+
+                    /**
+                     * 获取容器启动入口命令
+                     * @return EntryPoint 容器启动入口命令
+                     */
+                    std::string GetEntryPoint() const;
+
+                    /**
+                     * 设置容器启动入口命令
+                     * @param EntryPoint 容器启动入口命令
+                     */
+                    void SetEntryPoint(const std::string& _entryPoint);
+
+                    /**
+                     * 判断参数 EntryPoint 是否已赋值
+                     * @return EntryPoint 是否已赋值
+                     */
+                    bool EntryPointHasBeenSet() const;
+
+                    /**
+                     * 获取仓库语言
+                     * @return RepoLanguage 仓库语言
+                     */
+                    std::string GetRepoLanguage() const;
+
+                    /**
+                     * 设置仓库语言
+                     * @param RepoLanguage 仓库语言
+                     */
+                    void SetRepoLanguage(const std::string& _repoLanguage);
+
+                    /**
+                     * 判断参数 RepoLanguage 是否已赋值
+                     * @return RepoLanguage 是否已赋值
+                     */
+                    bool RepoLanguageHasBeenSet() const;
+
+                    /**
+                     * 获取用户实际上传文件名（仅UploadType为jar/war时必填）
+                     * @return UploadFilename 用户实际上传文件名（仅UploadType为jar/war时必填）
+                     */
+                    std::string GetUploadFilename() const;
+
+                    /**
+                     * 设置用户实际上传文件名（仅UploadType为jar/war时必填）
+                     * @param UploadFilename 用户实际上传文件名（仅UploadType为jar/war时必填）
+                     */
+                    void SetUploadFilename(const std::string& _uploadFilename);
+
+                    /**
+                     * 判断参数 UploadFilename 是否已赋值
+                     * @return UploadFilename 是否已赋值
+                     */
+                    bool UploadFilenameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -744,7 +834,7 @@ namespace TencentCloud
                     bool m_envIdHasBeenSet;
 
                     /**
-                     * 枚举（package/repository/image)
+                     * 枚举（package/repository/image/jar/war)
                      */
                     std::string m_uploadType;
                     bool m_uploadTypeHasBeenSet;
@@ -964,6 +1054,36 @@ namespace TencentCloud
                      */
                     std::vector<CloudBaseRunServiceVolumeMount> m_serviceVolumeMounts;
                     bool m_serviceVolumeMountsHasBeenSet;
+
+                    /**
+                     * 是否有Dockerfile：0-default has, 1-has, 2-has not
+                     */
+                    int64_t m_hasDockerfile;
+                    bool m_hasDockerfileHasBeenSet;
+
+                    /**
+                     * 基础镜像
+                     */
+                    std::string m_baseImage;
+                    bool m_baseImageHasBeenSet;
+
+                    /**
+                     * 容器启动入口命令
+                     */
+                    std::string m_entryPoint;
+                    bool m_entryPointHasBeenSet;
+
+                    /**
+                     * 仓库语言
+                     */
+                    std::string m_repoLanguage;
+                    bool m_repoLanguageHasBeenSet;
+
+                    /**
+                     * 用户实际上传文件名（仅UploadType为jar/war时必填）
+                     */
+                    std::string m_uploadFilename;
+                    bool m_uploadFilenameHasBeenSet;
 
                 };
             }

@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ckafka/v20190819/model/BatchCreateAclRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/BatchCreateAclResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateAclRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateAclResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateInstancePreRequest.h>
@@ -107,6 +109,9 @@ namespace TencentCloud
                 CkafkaClient(const Credential &credential, const std::string &region);
                 CkafkaClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::BatchCreateAclResponse> BatchCreateAclOutcome;
+                typedef std::future<BatchCreateAclOutcome> BatchCreateAclOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::BatchCreateAclRequest&, BatchCreateAclOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchCreateAclAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAclResponse> CreateAclOutcome;
                 typedef std::future<CreateAclOutcome> CreateAclOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreateAclRequest&, CreateAclOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAclAsyncHandler;
@@ -214,6 +219,15 @@ namespace TencentCloud
                 typedef std::function<void(const CkafkaClient*, const Model::ModifyTopicAttributesRequest&, ModifyTopicAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTopicAttributesAsyncHandler;
 
 
+
+                /**
+                 *批量添加ACL策略
+                 * @param req BatchCreateAclRequest
+                 * @return BatchCreateAclOutcome
+                 */
+                BatchCreateAclOutcome BatchCreateAcl(const Model::BatchCreateAclRequest &request);
+                void BatchCreateAclAsync(const Model::BatchCreateAclRequest& request, const BatchCreateAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchCreateAclOutcomeCallable BatchCreateAclCallable(const Model::BatchCreateAclRequest& request);
 
                 /**
                  *添加 ACL 策略

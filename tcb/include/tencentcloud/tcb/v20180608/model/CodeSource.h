@@ -244,6 +244,28 @@ namespace TencentCloud
                      */
                     bool ProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取coding项目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProjectName coding项目
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProjectName() const;
+
+                    /**
+                     * 设置coding项目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProjectName coding项目
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProjectName(const std::string& _projectName);
+
+                    /**
+                     * 判断参数 ProjectName 是否已赋值
+                     * @return ProjectName 是否已赋值
+                     */
+                    bool ProjectNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -308,6 +330,13 @@ namespace TencentCloud
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * coding项目
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_projectName;
+                    bool m_projectNameHasBeenSet;
 
                 };
             }

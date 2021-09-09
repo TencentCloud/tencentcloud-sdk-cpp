@@ -60,7 +60,12 @@ CreateCloudBaseRunServerVersionRequest::CreateCloudBaseRunServerVersionRequest()
     m_securityHasBeenSet(false),
     m_serviceVolumesHasBeenSet(false),
     m_isCreateJnsGwHasBeenSet(false),
-    m_serviceVolumeMountsHasBeenSet(false)
+    m_serviceVolumeMountsHasBeenSet(false),
+    m_hasDockerfileHasBeenSet(false),
+    m_baseImageHasBeenSet(false),
+    m_entryPointHasBeenSet(false),
+    m_repoLanguageHasBeenSet(false),
+    m_uploadFilenameHasBeenSet(false)
 {
 }
 
@@ -406,6 +411,46 @@ string CreateCloudBaseRunServerVersionRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_hasDockerfileHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HasDockerfile";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_hasDockerfile, allocator);
+    }
+
+    if (m_baseImageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BaseImage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_baseImage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_entryPointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EntryPoint";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_entryPoint.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_repoLanguageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RepoLanguage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_repoLanguage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uploadFilenameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UploadFilename";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_uploadFilename.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -1022,6 +1067,86 @@ void CreateCloudBaseRunServerVersionRequest::SetServiceVolumeMounts(const vector
 bool CreateCloudBaseRunServerVersionRequest::ServiceVolumeMountsHasBeenSet() const
 {
     return m_serviceVolumeMountsHasBeenSet;
+}
+
+int64_t CreateCloudBaseRunServerVersionRequest::GetHasDockerfile() const
+{
+    return m_hasDockerfile;
+}
+
+void CreateCloudBaseRunServerVersionRequest::SetHasDockerfile(const int64_t& _hasDockerfile)
+{
+    m_hasDockerfile = _hasDockerfile;
+    m_hasDockerfileHasBeenSet = true;
+}
+
+bool CreateCloudBaseRunServerVersionRequest::HasDockerfileHasBeenSet() const
+{
+    return m_hasDockerfileHasBeenSet;
+}
+
+string CreateCloudBaseRunServerVersionRequest::GetBaseImage() const
+{
+    return m_baseImage;
+}
+
+void CreateCloudBaseRunServerVersionRequest::SetBaseImage(const string& _baseImage)
+{
+    m_baseImage = _baseImage;
+    m_baseImageHasBeenSet = true;
+}
+
+bool CreateCloudBaseRunServerVersionRequest::BaseImageHasBeenSet() const
+{
+    return m_baseImageHasBeenSet;
+}
+
+string CreateCloudBaseRunServerVersionRequest::GetEntryPoint() const
+{
+    return m_entryPoint;
+}
+
+void CreateCloudBaseRunServerVersionRequest::SetEntryPoint(const string& _entryPoint)
+{
+    m_entryPoint = _entryPoint;
+    m_entryPointHasBeenSet = true;
+}
+
+bool CreateCloudBaseRunServerVersionRequest::EntryPointHasBeenSet() const
+{
+    return m_entryPointHasBeenSet;
+}
+
+string CreateCloudBaseRunServerVersionRequest::GetRepoLanguage() const
+{
+    return m_repoLanguage;
+}
+
+void CreateCloudBaseRunServerVersionRequest::SetRepoLanguage(const string& _repoLanguage)
+{
+    m_repoLanguage = _repoLanguage;
+    m_repoLanguageHasBeenSet = true;
+}
+
+bool CreateCloudBaseRunServerVersionRequest::RepoLanguageHasBeenSet() const
+{
+    return m_repoLanguageHasBeenSet;
+}
+
+string CreateCloudBaseRunServerVersionRequest::GetUploadFilename() const
+{
+    return m_uploadFilename;
+}
+
+void CreateCloudBaseRunServerVersionRequest::SetUploadFilename(const string& _uploadFilename)
+{
+    m_uploadFilename = _uploadFilename;
+    m_uploadFilenameHasBeenSet = true;
+}
+
+bool CreateCloudBaseRunServerVersionRequest::UploadFilenameHasBeenSet() const
+{
+    return m_uploadFilenameHasBeenSet;
 }
 
 

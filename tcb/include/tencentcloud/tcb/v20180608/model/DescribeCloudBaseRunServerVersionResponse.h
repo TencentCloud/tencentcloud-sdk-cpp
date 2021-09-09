@@ -473,6 +473,62 @@ namespace TencentCloud
                      */
                     bool MemSizeHasBeenSet() const;
 
+                    /**
+                     * 获取是否有Dockerfile：0-default has, 1-has, 2-has not
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HasDockerfile 是否有Dockerfile：0-default has, 1-has, 2-has not
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetHasDockerfile() const;
+
+                    /**
+                     * 判断参数 HasDockerfile 是否已赋值
+                     * @return HasDockerfile 是否已赋值
+                     */
+                    bool HasDockerfileHasBeenSet() const;
+
+                    /**
+                     * 获取基础镜像
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BaseImage 基础镜像
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBaseImage() const;
+
+                    /**
+                     * 判断参数 BaseImage 是否已赋值
+                     * @return BaseImage 是否已赋值
+                     */
+                    bool BaseImageHasBeenSet() const;
+
+                    /**
+                     * 获取容器启动入口命令
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EntryPoint 容器启动入口命令
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEntryPoint() const;
+
+                    /**
+                     * 判断参数 EntryPoint 是否已赋值
+                     * @return EntryPoint 是否已赋值
+                     */
+                    bool EntryPointHasBeenSet() const;
+
+                    /**
+                     * 获取仓库语言
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RepoLanguage 仓库语言
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRepoLanguage() const;
+
+                    /**
+                     * 判断参数 RepoLanguage 是否已赋值
+                     * @return RepoLanguage 是否已赋值
+                     */
+                    bool RepoLanguageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -689,6 +745,34 @@ namespace TencentCloud
                      */
                     double m_memSize;
                     bool m_memSizeHasBeenSet;
+
+                    /**
+                     * 是否有Dockerfile：0-default has, 1-has, 2-has not
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_hasDockerfile;
+                    bool m_hasDockerfileHasBeenSet;
+
+                    /**
+                     * 基础镜像
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_baseImage;
+                    bool m_baseImageHasBeenSet;
+
+                    /**
+                     * 容器启动入口命令
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_entryPoint;
+                    bool m_entryPointHasBeenSet;
+
+                    /**
+                     * 仓库语言
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_repoLanguage;
+                    bool m_repoLanguageHasBeenSet;
 
                 };
             }

@@ -150,6 +150,36 @@ namespace TencentCloud
                      */
                     bool DomainPrefixHasBeenSet() const;
 
+                    /**
+                     * 获取播放区域，只在 DomainType=1 时该参数有意义。
+1: 国内。
+2: 全球。
+3: 海外。
+                     * @return PlayType 播放区域，只在 DomainType=1 时该参数有意义。
+1: 国内。
+2: 全球。
+3: 海外。
+                     */
+                    uint64_t GetPlayType() const;
+
+                    /**
+                     * 设置播放区域，只在 DomainType=1 时该参数有意义。
+1: 国内。
+2: 全球。
+3: 海外。
+                     * @param PlayType 播放区域，只在 DomainType=1 时该参数有意义。
+1: 国内。
+2: 全球。
+3: 海外。
+                     */
+                    void SetPlayType(const uint64_t& _playType);
+
+                    /**
+                     * 判断参数 PlayType 是否已赋值
+                     * @return PlayType 是否已赋值
+                     */
+                    bool PlayTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +217,15 @@ namespace TencentCloud
                      */
                     std::string m_domainPrefix;
                     bool m_domainPrefixHasBeenSet;
+
+                    /**
+                     * 播放区域，只在 DomainType=1 时该参数有意义。
+1: 国内。
+2: 全球。
+3: 海外。
+                     */
+                    uint64_t m_playType;
+                    bool m_playTypeHasBeenSet;
 
                 };
             }

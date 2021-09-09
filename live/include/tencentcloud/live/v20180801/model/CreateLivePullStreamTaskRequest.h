@@ -327,12 +327,26 @@ TaskExit：任务停止回调，
 VodSourceFileStart：从点播源文件开始拉流回调，
 VodSourceFileFinish：从点播源文件拉流结束回调，
 ResetTaskConfig：任务更新回调。
+
+TaskAlarm: 用于告警事件通知，AlarmType 示例:
+PullFileUnstable - 文件拉取不稳定，
+PushStreamUnstable - 推流不稳定，
+PullFileFailed - 文件拉取出错，
+PushStreamFailed - 推流出现失败，
+FileEndEarly - 文件提前结束。
                      * @return CallbackEvents 选择需要回调的事件（不填则回调全部）：
 TaskStart：任务启动回调，
 TaskExit：任务停止回调，
 VodSourceFileStart：从点播源文件开始拉流回调，
 VodSourceFileFinish：从点播源文件拉流结束回调，
 ResetTaskConfig：任务更新回调。
+
+TaskAlarm: 用于告警事件通知，AlarmType 示例:
+PullFileUnstable - 文件拉取不稳定，
+PushStreamUnstable - 推流不稳定，
+PullFileFailed - 文件拉取出错，
+PushStreamFailed - 推流出现失败，
+FileEndEarly - 文件提前结束。
                      */
                     std::vector<std::string> GetCallbackEvents() const;
 
@@ -343,12 +357,26 @@ TaskExit：任务停止回调，
 VodSourceFileStart：从点播源文件开始拉流回调，
 VodSourceFileFinish：从点播源文件拉流结束回调，
 ResetTaskConfig：任务更新回调。
+
+TaskAlarm: 用于告警事件通知，AlarmType 示例:
+PullFileUnstable - 文件拉取不稳定，
+PushStreamUnstable - 推流不稳定，
+PullFileFailed - 文件拉取出错，
+PushStreamFailed - 推流出现失败，
+FileEndEarly - 文件提前结束。
                      * @param CallbackEvents 选择需要回调的事件（不填则回调全部）：
 TaskStart：任务启动回调，
 TaskExit：任务停止回调，
 VodSourceFileStart：从点播源文件开始拉流回调，
 VodSourceFileFinish：从点播源文件拉流结束回调，
 ResetTaskConfig：任务更新回调。
+
+TaskAlarm: 用于告警事件通知，AlarmType 示例:
+PullFileUnstable - 文件拉取不稳定，
+PushStreamUnstable - 推流不稳定，
+PullFileFailed - 文件拉取出错，
+PushStreamFailed - 推流出现失败，
+FileEndEarly - 文件提前结束。
                      */
                     void SetCallbackEvents(const std::vector<std::string>& _callbackEvents);
 
@@ -580,6 +608,13 @@ TaskExit：任务停止回调，
 VodSourceFileStart：从点播源文件开始拉流回调，
 VodSourceFileFinish：从点播源文件拉流结束回调，
 ResetTaskConfig：任务更新回调。
+
+TaskAlarm: 用于告警事件通知，AlarmType 示例:
+PullFileUnstable - 文件拉取不稳定，
+PushStreamUnstable - 推流不稳定，
+PullFileFailed - 文件拉取出错，
+PushStreamFailed - 推流出现失败，
+FileEndEarly - 文件提前结束。
                      */
                     std::vector<std::string> m_callbackEvents;
                     bool m_callbackEventsHasBeenSet;

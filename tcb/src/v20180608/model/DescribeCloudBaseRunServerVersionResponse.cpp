@@ -55,7 +55,11 @@ DescribeCloudBaseRunServerVersionResponse::DescribeCloudBaseRunServerVersionResp
     m_initialDelaySecondsHasBeenSet(false),
     m_imageUrlHasBeenSet(false),
     m_cpuSizeHasBeenSet(false),
-    m_memSizeHasBeenSet(false)
+    m_memSizeHasBeenSet(false),
+    m_hasDockerfileHasBeenSet(false),
+    m_baseImageHasBeenSet(false),
+    m_entryPointHasBeenSet(false),
+    m_repoLanguageHasBeenSet(false)
 {
 }
 
@@ -416,6 +420,46 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
         m_memSizeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("HasDockerfile") && !rsp["HasDockerfile"].IsNull())
+    {
+        if (!rsp["HasDockerfile"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HasDockerfile` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hasDockerfile = rsp["HasDockerfile"].GetInt64();
+        m_hasDockerfileHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("BaseImage") && !rsp["BaseImage"].IsNull())
+    {
+        if (!rsp["BaseImage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BaseImage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_baseImage = string(rsp["BaseImage"].GetString());
+        m_baseImageHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("EntryPoint") && !rsp["EntryPoint"].IsNull())
+    {
+        if (!rsp["EntryPoint"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EntryPoint` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_entryPoint = string(rsp["EntryPoint"].GetString());
+        m_entryPointHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RepoLanguage") && !rsp["RepoLanguage"].IsNull())
+    {
+        if (!rsp["RepoLanguage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RepoLanguage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_repoLanguage = string(rsp["RepoLanguage"].GetString());
+        m_repoLanguageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -685,6 +729,38 @@ string DescribeCloudBaseRunServerVersionResponse::ToJsonString() const
         string key = "MemSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_memSize, allocator);
+    }
+
+    if (m_hasDockerfileHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HasDockerfile";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hasDockerfile, allocator);
+    }
+
+    if (m_baseImageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BaseImage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_baseImage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_entryPointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EntryPoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_entryPoint.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_repoLanguageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RepoLanguage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_repoLanguage.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1017,6 +1093,46 @@ double DescribeCloudBaseRunServerVersionResponse::GetMemSize() const
 bool DescribeCloudBaseRunServerVersionResponse::MemSizeHasBeenSet() const
 {
     return m_memSizeHasBeenSet;
+}
+
+int64_t DescribeCloudBaseRunServerVersionResponse::GetHasDockerfile() const
+{
+    return m_hasDockerfile;
+}
+
+bool DescribeCloudBaseRunServerVersionResponse::HasDockerfileHasBeenSet() const
+{
+    return m_hasDockerfileHasBeenSet;
+}
+
+string DescribeCloudBaseRunServerVersionResponse::GetBaseImage() const
+{
+    return m_baseImage;
+}
+
+bool DescribeCloudBaseRunServerVersionResponse::BaseImageHasBeenSet() const
+{
+    return m_baseImageHasBeenSet;
+}
+
+string DescribeCloudBaseRunServerVersionResponse::GetEntryPoint() const
+{
+    return m_entryPoint;
+}
+
+bool DescribeCloudBaseRunServerVersionResponse::EntryPointHasBeenSet() const
+{
+    return m_entryPointHasBeenSet;
+}
+
+string DescribeCloudBaseRunServerVersionResponse::GetRepoLanguage() const
+{
+    return m_repoLanguage;
+}
+
+bool DescribeCloudBaseRunServerVersionResponse::RepoLanguageHasBeenSet() const
+{
+    return m_repoLanguageHasBeenSet;
 }
 
 

@@ -28,7 +28,8 @@ DescribeLiveDomainsRequest::DescribeLiveDomainsRequest() :
     m_pageSizeHasBeenSet(false),
     m_pageNumHasBeenSet(false),
     m_isDelayLiveHasBeenSet(false),
-    m_domainPrefixHasBeenSet(false)
+    m_domainPrefixHasBeenSet(false),
+    m_playTypeHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string DescribeLiveDomainsRequest::ToJsonString() const
         string key = "DomainPrefix";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_domainPrefix.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_playTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PlayType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_playType, allocator);
     }
 
 
@@ -189,6 +198,22 @@ void DescribeLiveDomainsRequest::SetDomainPrefix(const string& _domainPrefix)
 bool DescribeLiveDomainsRequest::DomainPrefixHasBeenSet() const
 {
     return m_domainPrefixHasBeenSet;
+}
+
+uint64_t DescribeLiveDomainsRequest::GetPlayType() const
+{
+    return m_playType;
+}
+
+void DescribeLiveDomainsRequest::SetPlayType(const uint64_t& _playType)
+{
+    m_playType = _playType;
+    m_playTypeHasBeenSet = true;
+}
+
+bool DescribeLiveDomainsRequest::PlayTypeHasBeenSet() const
+{
+    return m_playTypeHasBeenSet;
 }
 
 

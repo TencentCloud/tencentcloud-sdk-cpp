@@ -40,6 +40,49 @@ CkafkaClient::CkafkaClient(const Credential &credential, const string &region, c
 }
 
 
+CkafkaClient::BatchCreateAclOutcome CkafkaClient::BatchCreateAcl(const BatchCreateAclRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchCreateAcl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchCreateAclResponse rsp = BatchCreateAclResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchCreateAclOutcome(rsp);
+        else
+            return BatchCreateAclOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchCreateAclOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::BatchCreateAclAsync(const BatchCreateAclRequest& request, const BatchCreateAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchCreateAcl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::BatchCreateAclOutcomeCallable CkafkaClient::BatchCreateAclCallable(const BatchCreateAclRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchCreateAclOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchCreateAcl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::CreateAclOutcome CkafkaClient::CreateAcl(const CreateAclRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAcl");
