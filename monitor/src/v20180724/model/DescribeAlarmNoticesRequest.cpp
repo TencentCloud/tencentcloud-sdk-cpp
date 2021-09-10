@@ -31,7 +31,8 @@ DescribeAlarmNoticesRequest::DescribeAlarmNoticesRequest() :
     m_nameHasBeenSet(false),
     m_receiverTypeHasBeenSet(false),
     m_userIdsHasBeenSet(false),
-    m_groupIdsHasBeenSet(false)
+    m_groupIdsHasBeenSet(false),
+    m_noticeIdsHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,19 @@ string DescribeAlarmNoticesRequest::ToJsonString() const
         for (auto itr = m_groupIds.begin(); itr != m_groupIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_noticeIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NoticeIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_noticeIds.begin(); itr != m_noticeIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -274,6 +288,22 @@ void DescribeAlarmNoticesRequest::SetGroupIds(const vector<int64_t>& _groupIds)
 bool DescribeAlarmNoticesRequest::GroupIdsHasBeenSet() const
 {
     return m_groupIdsHasBeenSet;
+}
+
+vector<string> DescribeAlarmNoticesRequest::GetNoticeIds() const
+{
+    return m_noticeIds;
+}
+
+void DescribeAlarmNoticesRequest::SetNoticeIds(const vector<string>& _noticeIds)
+{
+    m_noticeIds = _noticeIds;
+    m_noticeIdsHasBeenSet = true;
+}
+
+bool DescribeAlarmNoticesRequest::NoticeIdsHasBeenSet() const
+{
+    return m_noticeIdsHasBeenSet;
 }
 
 

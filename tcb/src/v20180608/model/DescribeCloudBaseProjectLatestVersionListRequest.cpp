@@ -28,7 +28,8 @@ DescribeCloudBaseProjectLatestVersionListRequest::DescribeCloudBaseProjectLatest
     m_envIdHasBeenSet(false),
     m_projectNameHasBeenSet(false),
     m_projectTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_ciIdHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,14 @@ string DescribeCloudBaseProjectLatestVersionListRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_ciIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CiId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ciId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -194,6 +203,22 @@ void DescribeCloudBaseProjectLatestVersionListRequest::SetTags(const vector<stri
 bool DescribeCloudBaseProjectLatestVersionListRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string DescribeCloudBaseProjectLatestVersionListRequest::GetCiId() const
+{
+    return m_ciId;
+}
+
+void DescribeCloudBaseProjectLatestVersionListRequest::SetCiId(const string& _ciId)
+{
+    m_ciId = _ciId;
+    m_ciIdHasBeenSet = true;
+}
+
+bool DescribeCloudBaseProjectLatestVersionListRequest::CiIdHasBeenSet() const
+{
+    return m_ciIdHasBeenSet;
 }
 
 

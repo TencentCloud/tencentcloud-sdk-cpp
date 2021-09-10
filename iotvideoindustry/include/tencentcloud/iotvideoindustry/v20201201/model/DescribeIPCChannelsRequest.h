@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool DeviceIdHasBeenSet() const;
 
                     /**
-                     * 获取通道类型 	4: 国标NVR通道 5:  国标VMS通道 6: 国标IPC通道
-                     * @return ChannelTypes 通道类型 	4: 国标NVR通道 5:  国标VMS通道 6: 国标IPC通道
+                     * 获取通道类型  0: 未知类型 1: 视频通道 2:  音频通道 3: 告警通道
+                     * @return ChannelTypes 通道类型  0: 未知类型 1: 视频通道 2:  音频通道 3: 告警通道
                      */
                     std::vector<uint64_t> GetChannelTypes() const;
 
                     /**
-                     * 设置通道类型 	4: 国标NVR通道 5:  国标VMS通道 6: 国标IPC通道
-                     * @param ChannelTypes 通道类型 	4: 国标NVR通道 5:  国标VMS通道 6: 国标IPC通道
+                     * 设置通道类型  0: 未知类型 1: 视频通道 2:  音频通道 3: 告警通道
+                     * @param ChannelTypes 通道类型  0: 未知类型 1: 视频通道 2:  音频通道 3: 告警通道
                      */
                     void SetChannelTypes(const std::vector<uint64_t>& _channelTypes);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_deviceIdHasBeenSet;
 
                     /**
-                     * 通道类型 	4: 国标NVR通道 5:  国标VMS通道 6: 国标IPC通道
+                     * 通道类型  0: 未知类型 1: 视频通道 2:  音频通道 3: 告警通道
                      */
                     std::vector<uint64_t> m_channelTypes;
                     bool m_channelTypesHasBeenSet;

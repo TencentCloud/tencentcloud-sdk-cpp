@@ -41,7 +41,8 @@ CloudBaseProjectVersion::CloudBaseProjectVersion() :
     m_extensionIdHasBeenSet(false),
     m_failTypeHasBeenSet(false),
     m_repoUrlHasBeenSet(false),
-    m_autoDeployOnCodeChangeHasBeenSet(false)
+    m_autoDeployOnCodeChangeHasBeenSet(false),
+    m_buildPercentHasBeenSet(false)
 {
 }
 
@@ -280,6 +281,16 @@ CoreInternalOutcome CloudBaseProjectVersion::Deserialize(const rapidjson::Value 
         m_autoDeployOnCodeChangeHasBeenSet = true;
     }
 
+    if (value.HasMember("BuildPercent") && !value["BuildPercent"].IsNull())
+    {
+        if (!value["BuildPercent"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudBaseProjectVersion.BuildPercent` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_buildPercent = value["BuildPercent"].GetInt64();
+        m_buildPercentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -466,6 +477,14 @@ void CloudBaseProjectVersion::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "AutoDeployOnCodeChange";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoDeployOnCodeChange, allocator);
+    }
+
+    if (m_buildPercentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BuildPercent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_buildPercent, allocator);
     }
 
 }
@@ -805,5 +824,21 @@ void CloudBaseProjectVersion::SetAutoDeployOnCodeChange(const bool& _autoDeployO
 bool CloudBaseProjectVersion::AutoDeployOnCodeChangeHasBeenSet() const
 {
     return m_autoDeployOnCodeChangeHasBeenSet;
+}
+
+int64_t CloudBaseProjectVersion::GetBuildPercent() const
+{
+    return m_buildPercent;
+}
+
+void CloudBaseProjectVersion::SetBuildPercent(const int64_t& _buildPercent)
+{
+    m_buildPercent = _buildPercent;
+    m_buildPercentHasBeenSet = true;
+}
+
+bool CloudBaseProjectVersion::BuildPercentHasBeenSet() const
+{
+    return m_buildPercentHasBeenSet;
 }
 

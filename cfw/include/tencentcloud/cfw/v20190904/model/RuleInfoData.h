@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取策略
-                     * @return Strategy 策略
+                     * 获取策略, 0：观察，1：阻断，2：放行
+                     * @return Strategy 策略, 0：观察，1：阻断，2：放行
                      */
                     std::string GetStrategy() const;
 
                     /**
-                     * 设置策略
-                     * @param Strategy 策略
+                     * 设置策略, 0：观察，1：阻断，2：放行
+                     * @param Strategy 策略, 0：观察，1：阻断，2：放行
                      */
                     void SetStrategy(const std::string& _strategy);
 
@@ -397,7 +397,7 @@ namespace TencentCloud
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 策略
+                     * 策略, 0：观察，1：阻断，2：放行
                      */
                     std::string m_strategy;
                     bool m_strategyHasBeenSet;

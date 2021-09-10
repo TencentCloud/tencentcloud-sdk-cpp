@@ -546,6 +546,28 @@ namespace TencentCloud
                      */
                     bool AutoDeployOnCodeChangeHasBeenSet() const;
 
+                    /**
+                     * 获取ci部署进度（%）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BuildPercent ci部署进度（%）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetBuildPercent() const;
+
+                    /**
+                     * 设置ci部署进度（%）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BuildPercent ci部署进度（%）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBuildPercent(const int64_t& _buildPercent);
+
+                    /**
+                     * 判断参数 BuildPercent 是否已赋值
+                     * @return BuildPercent 是否已赋值
+                     */
+                    bool BuildPercentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -703,6 +725,13 @@ namespace TencentCloud
                      */
                     bool m_autoDeployOnCodeChange;
                     bool m_autoDeployOnCodeChangeHasBeenSet;
+
+                    /**
+                     * ci部署进度（%）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_buildPercent;
+                    bool m_buildPercentHasBeenSet;
 
                 };
             }

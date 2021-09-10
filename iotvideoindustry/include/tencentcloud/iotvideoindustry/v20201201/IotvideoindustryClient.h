@@ -403,7 +403,7 @@ namespace TencentCloud
                 DescribeGroupsOutcomeCallable DescribeGroupsCallable(const Model::DescribeGroupsRequest& request);
 
                 /**
-                 *获取设备下属通道
+                 *获取IPC设备下属通道
                  * @param req DescribeIPCChannelsRequest
                  * @return DescribeIPCChannelsOutcome
                  */

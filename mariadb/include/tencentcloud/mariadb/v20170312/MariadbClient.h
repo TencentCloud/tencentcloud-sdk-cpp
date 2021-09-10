@@ -37,6 +37,8 @@
 #include <tencentcloud/mariadb/v20170312/model/CreateAccountResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/CreateDBInstanceRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/CreateDBInstanceResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/CreateDedicatedClusterDBInstanceRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/CreateDedicatedClusterDBInstanceResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/CreateTmpInstancesRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/CreateTmpInstancesResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DeleteAccountRequest.h>
@@ -166,6 +168,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDBInstanceResponse> CreateDBInstanceOutcome;
                 typedef std::future<CreateDBInstanceOutcome> CreateDBInstanceOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::CreateDBInstanceRequest&, CreateDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDedicatedClusterDBInstanceResponse> CreateDedicatedClusterDBInstanceOutcome;
+                typedef std::future<CreateDedicatedClusterDBInstanceOutcome> CreateDedicatedClusterDBInstanceOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::CreateDedicatedClusterDBInstanceRequest&, CreateDedicatedClusterDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDedicatedClusterDBInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTmpInstancesResponse> CreateTmpInstancesOutcome;
                 typedef std::future<CreateTmpInstancesOutcome> CreateTmpInstancesOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::CreateTmpInstancesRequest&, CreateTmpInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTmpInstancesAsyncHandler;
@@ -373,6 +378,15 @@ namespace TencentCloud
                 CreateDBInstanceOutcome CreateDBInstance(const Model::CreateDBInstanceRequest &request);
                 void CreateDBInstanceAsync(const Model::CreateDBInstanceRequest& request, const CreateDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDBInstanceOutcomeCallable CreateDBInstanceCallable(const Model::CreateDBInstanceRequest& request);
+
+                /**
+                 *创建独享集群Mariadb实例
+                 * @param req CreateDedicatedClusterDBInstanceRequest
+                 * @return CreateDedicatedClusterDBInstanceOutcome
+                 */
+                CreateDedicatedClusterDBInstanceOutcome CreateDedicatedClusterDBInstance(const Model::CreateDedicatedClusterDBInstanceRequest &request);
+                void CreateDedicatedClusterDBInstanceAsync(const Model::CreateDedicatedClusterDBInstanceRequest& request, const CreateDedicatedClusterDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDedicatedClusterDBInstanceOutcomeCallable CreateDedicatedClusterDBInstanceCallable(const Model::CreateDedicatedClusterDBInstanceRequest& request);
 
                 /**
                  *本接口（CreateTmpInstances）用于创建临时实例。

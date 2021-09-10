@@ -150,6 +150,24 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取ci的id
+                     * @return CiId ci的id
+                     */
+                    std::string GetCiId() const;
+
+                    /**
+                     * 设置ci的id
+                     * @param CiId ci的id
+                     */
+                    void SetCiId(const std::string& _ciId);
+
+                    /**
+                     * 判断参数 CiId 是否已赋值
+                     * @return CiId 是否已赋值
+                     */
+                    bool CiIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +205,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * ci的id
+                     */
+                    std::string m_ciId;
+                    bool m_ciIdHasBeenSet;
 
                 };
             }

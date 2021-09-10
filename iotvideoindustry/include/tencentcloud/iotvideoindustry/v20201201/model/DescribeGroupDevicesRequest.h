@@ -134,13 +134,17 @@ namespace TencentCloud
 
                     /**
                      * 获取当Group是普通组的时候，支持根据deviceTypes筛选类型
+ 0: 普通摄像头1:  国标VMS设备 2: 国标IPC设备 3: 国标NVR设备  4: 国标NVR通道 5: 国标VMS通道 6: 国标IPC通道 9: 智能告警设备 10: 带有RTSP固定地址的设备
                      * @return DeviceTypes 当Group是普通组的时候，支持根据deviceTypes筛选类型
+ 0: 普通摄像头1:  国标VMS设备 2: 国标IPC设备 3: 国标NVR设备  4: 国标NVR通道 5: 国标VMS通道 6: 国标IPC通道 9: 智能告警设备 10: 带有RTSP固定地址的设备
                      */
                     std::vector<int64_t> GetDeviceTypes() const;
 
                     /**
                      * 设置当Group是普通组的时候，支持根据deviceTypes筛选类型
+ 0: 普通摄像头1:  国标VMS设备 2: 国标IPC设备 3: 国标NVR设备  4: 国标NVR通道 5: 国标VMS通道 6: 国标IPC通道 9: 智能告警设备 10: 带有RTSP固定地址的设备
                      * @param DeviceTypes 当Group是普通组的时候，支持根据deviceTypes筛选类型
+ 0: 普通摄像头1:  国标VMS设备 2: 国标IPC设备 3: 国标NVR设备  4: 国标NVR通道 5: 国标VMS通道 6: 国标IPC通道 9: 智能告警设备 10: 带有RTSP固定地址的设备
                      */
                     void SetDeviceTypes(const std::vector<int64_t>& _deviceTypes);
 
@@ -184,6 +188,7 @@ namespace TencentCloud
 
                     /**
                      * 当Group是普通组的时候，支持根据deviceTypes筛选类型
+ 0: 普通摄像头1:  国标VMS设备 2: 国标IPC设备 3: 国标NVR设备  4: 国标NVR通道 5: 国标VMS通道 6: 国标IPC通道 9: 智能告警设备 10: 带有RTSP固定地址的设备
                      */
                     std::vector<int64_t> m_deviceTypes;
                     bool m_deviceTypesHasBeenSet;

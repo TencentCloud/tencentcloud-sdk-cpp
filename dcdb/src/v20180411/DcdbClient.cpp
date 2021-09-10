@@ -341,6 +341,49 @@ DcdbClient::CreateDCDBInstanceOutcomeCallable DcdbClient::CreateDCDBInstanceCall
     return task->get_future();
 }
 
+DcdbClient::CreateDedicatedClusterDCDBInstanceOutcome DcdbClient::CreateDedicatedClusterDCDBInstance(const CreateDedicatedClusterDCDBInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDedicatedClusterDCDBInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDedicatedClusterDCDBInstanceResponse rsp = CreateDedicatedClusterDCDBInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDedicatedClusterDCDBInstanceOutcome(rsp);
+        else
+            return CreateDedicatedClusterDCDBInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDedicatedClusterDCDBInstanceOutcome(outcome.GetError());
+    }
+}
+
+void DcdbClient::CreateDedicatedClusterDCDBInstanceAsync(const CreateDedicatedClusterDCDBInstanceRequest& request, const CreateDedicatedClusterDCDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDedicatedClusterDCDBInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcdbClient::CreateDedicatedClusterDCDBInstanceOutcomeCallable DcdbClient::CreateDedicatedClusterDCDBInstanceCallable(const CreateDedicatedClusterDCDBInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDedicatedClusterDCDBInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDedicatedClusterDCDBInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DcdbClient::DeleteAccountOutcome DcdbClient::DeleteAccount(const DeleteAccountRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAccount");

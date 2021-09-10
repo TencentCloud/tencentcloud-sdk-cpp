@@ -204,6 +204,24 @@ namespace TencentCloud
                      */
                     bool GroupIdsHasBeenSet() const;
 
+                    /**
+                     * 获取根据通知模板 id 过滤，空数组/不传则不过滤
+                     * @return NoticeIds 根据通知模板 id 过滤，空数组/不传则不过滤
+                     */
+                    std::vector<std::string> GetNoticeIds() const;
+
+                    /**
+                     * 设置根据通知模板 id 过滤，空数组/不传则不过滤
+                     * @param NoticeIds 根据通知模板 id 过滤，空数组/不传则不过滤
+                     */
+                    void SetNoticeIds(const std::vector<std::string>& _noticeIds);
+
+                    /**
+                     * 判断参数 NoticeIds 是否已赋值
+                     * @return NoticeIds 是否已赋值
+                     */
+                    bool NoticeIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +277,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_groupIds;
                     bool m_groupIdsHasBeenSet;
+
+                    /**
+                     * 根据通知模板 id 过滤，空数组/不传则不过滤
+                     */
+                    std::vector<std::string> m_noticeIds;
+                    bool m_noticeIdsHasBeenSet;
 
                 };
             }

@@ -341,6 +341,49 @@ MariadbClient::CreateDBInstanceOutcomeCallable MariadbClient::CreateDBInstanceCa
     return task->get_future();
 }
 
+MariadbClient::CreateDedicatedClusterDBInstanceOutcome MariadbClient::CreateDedicatedClusterDBInstance(const CreateDedicatedClusterDBInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDedicatedClusterDBInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDedicatedClusterDBInstanceResponse rsp = CreateDedicatedClusterDBInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDedicatedClusterDBInstanceOutcome(rsp);
+        else
+            return CreateDedicatedClusterDBInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDedicatedClusterDBInstanceOutcome(outcome.GetError());
+    }
+}
+
+void MariadbClient::CreateDedicatedClusterDBInstanceAsync(const CreateDedicatedClusterDBInstanceRequest& request, const CreateDedicatedClusterDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDedicatedClusterDBInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MariadbClient::CreateDedicatedClusterDBInstanceOutcomeCallable MariadbClient::CreateDedicatedClusterDBInstanceCallable(const CreateDedicatedClusterDBInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDedicatedClusterDBInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDedicatedClusterDBInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MariadbClient::CreateTmpInstancesOutcome MariadbClient::CreateTmpInstances(const CreateTmpInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTmpInstances");

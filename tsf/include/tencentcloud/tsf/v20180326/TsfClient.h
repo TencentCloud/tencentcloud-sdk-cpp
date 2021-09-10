@@ -1463,7 +1463,7 @@ namespace TencentCloud
                 DescribeContainerEventsOutcomeCallable DescribeContainerEventsCallable(const Model::DescribeContainerEventsRequest& request);
 
                 /**
-                 * 容器部署组详情
+                 * 容器部署组详情（已废弃，请使用  DescribeContainerGroupDeployInfo）
                  * @param req DescribeContainerGroupDetailRequest
                  * @return DescribeContainerGroupDetailOutcome
                  */
