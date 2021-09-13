@@ -119,6 +119,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeEKSClusterCredentialResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeEKSClustersRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeEKSClustersResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeEKSContainerInstanceRegionsRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeEKSContainerInstanceRegionsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeEnableVpcCniProgressRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeEnableVpcCniProgressResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeExistedInstancesRequest.h>
@@ -345,6 +347,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEKSClustersResponse> DescribeEKSClustersOutcome;
                 typedef std::future<DescribeEKSClustersOutcome> DescribeEKSClustersOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeEKSClustersRequest&, DescribeEKSClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEKSClustersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEKSContainerInstanceRegionsResponse> DescribeEKSContainerInstanceRegionsOutcome;
+                typedef std::future<DescribeEKSContainerInstanceRegionsOutcome> DescribeEKSContainerInstanceRegionsOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeEKSContainerInstanceRegionsRequest&, DescribeEKSContainerInstanceRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEKSContainerInstanceRegionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEnableVpcCniProgressResponse> DescribeEnableVpcCniProgressOutcome;
                 typedef std::future<DescribeEnableVpcCniProgressOutcome> DescribeEnableVpcCniProgressOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeEnableVpcCniProgressRequest&, DescribeEnableVpcCniProgressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnableVpcCniProgressAsyncHandler;
@@ -881,6 +886,15 @@ namespace TencentCloud
                 DescribeEKSClustersOutcome DescribeEKSClusters(const Model::DescribeEKSClustersRequest &request);
                 void DescribeEKSClustersAsync(const Model::DescribeEKSClustersRequest& request, const DescribeEKSClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEKSClustersOutcomeCallable DescribeEKSClustersCallable(const Model::DescribeEKSClustersRequest& request);
+
+                /**
+                 *查询容器实例支持的地域
+                 * @param req DescribeEKSContainerInstanceRegionsRequest
+                 * @return DescribeEKSContainerInstanceRegionsOutcome
+                 */
+                DescribeEKSContainerInstanceRegionsOutcome DescribeEKSContainerInstanceRegions(const Model::DescribeEKSContainerInstanceRegionsRequest &request);
+                void DescribeEKSContainerInstanceRegionsAsync(const Model::DescribeEKSContainerInstanceRegionsRequest& request, const DescribeEKSContainerInstanceRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEKSContainerInstanceRegionsOutcomeCallable DescribeEKSContainerInstanceRegionsCallable(const Model::DescribeEKSContainerInstanceRegionsRequest& request);
 
                 /**
                  *本接口用于查询开启vpc-cni模式的任务进度

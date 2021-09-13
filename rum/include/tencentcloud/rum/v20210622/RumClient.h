@@ -31,6 +31,8 @@
 #include <tencentcloud/rum/v20210622/model/DescribeDataPerformancePageResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeErrorRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeErrorResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeLogListRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeLogListResponse.h>
 
 
 namespace TencentCloud
@@ -57,6 +59,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeErrorResponse> DescribeErrorOutcome;
                 typedef std::future<DescribeErrorOutcome> DescribeErrorOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeErrorRequest&, DescribeErrorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeErrorAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLogListResponse> DescribeLogListOutcome;
+                typedef std::future<DescribeLogListOutcome> DescribeLogListOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeLogListRequest&, DescribeLogListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogListAsyncHandler;
 
 
 
@@ -95,6 +100,15 @@ namespace TencentCloud
                 DescribeErrorOutcome DescribeError(const Model::DescribeErrorRequest &request);
                 void DescribeErrorAsync(const Model::DescribeErrorRequest& request, const DescribeErrorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeErrorOutcomeCallable DescribeErrorCallable(const Model::DescribeErrorRequest& request);
+
+                /**
+                 *获取项目下的日志列表（实例创建的项目下的日志列表）
+                 * @param req DescribeLogListRequest
+                 * @return DescribeLogListOutcome
+                 */
+                DescribeLogListOutcome DescribeLogList(const Model::DescribeLogListRequest &request);
+                void DescribeLogListAsync(const Model::DescribeLogListRequest& request, const DescribeLogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLogListOutcomeCallable DescribeLogListCallable(const Model::DescribeLogListRequest& request);
 
             };
         }

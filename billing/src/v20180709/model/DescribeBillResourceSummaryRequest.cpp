@@ -25,8 +25,8 @@ using namespace std;
 DescribeBillResourceSummaryRequest::DescribeBillResourceSummaryRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_periodTypeHasBeenSet(false),
     m_monthHasBeenSet(false),
+    m_periodTypeHasBeenSet(false),
     m_needRecordNumHasBeenSet(false),
     m_actionTypeHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
@@ -57,20 +57,20 @@ string DescribeBillResourceSummaryRequest::ToJsonString() const
         d.AddMember(iKey, m_limit, allocator);
     }
 
-    if (m_periodTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PeriodType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_periodType.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_monthHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Month";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_month.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_periodTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PeriodType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_periodType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_needRecordNumHasBeenSet)
@@ -145,22 +145,6 @@ bool DescribeBillResourceSummaryRequest::LimitHasBeenSet() const
     return m_limitHasBeenSet;
 }
 
-string DescribeBillResourceSummaryRequest::GetPeriodType() const
-{
-    return m_periodType;
-}
-
-void DescribeBillResourceSummaryRequest::SetPeriodType(const string& _periodType)
-{
-    m_periodType = _periodType;
-    m_periodTypeHasBeenSet = true;
-}
-
-bool DescribeBillResourceSummaryRequest::PeriodTypeHasBeenSet() const
-{
-    return m_periodTypeHasBeenSet;
-}
-
 string DescribeBillResourceSummaryRequest::GetMonth() const
 {
     return m_month;
@@ -175,6 +159,22 @@ void DescribeBillResourceSummaryRequest::SetMonth(const string& _month)
 bool DescribeBillResourceSummaryRequest::MonthHasBeenSet() const
 {
     return m_monthHasBeenSet;
+}
+
+string DescribeBillResourceSummaryRequest::GetPeriodType() const
+{
+    return m_periodType;
+}
+
+void DescribeBillResourceSummaryRequest::SetPeriodType(const string& _periodType)
+{
+    m_periodType = _periodType;
+    m_periodTypeHasBeenSet = true;
+}
+
+bool DescribeBillResourceSummaryRequest::PeriodTypeHasBeenSet() const
+{
+    return m_periodTypeHasBeenSet;
 }
 
 int64_t DescribeBillResourceSummaryRequest::GetNeedRecordNum() const

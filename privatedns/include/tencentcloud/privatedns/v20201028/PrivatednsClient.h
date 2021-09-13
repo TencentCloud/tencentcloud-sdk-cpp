@@ -35,6 +35,8 @@
 #include <tencentcloud/privatedns/v20201028/model/DescribeAuditLogResponse.h>
 #include <tencentcloud/privatedns/v20201028/model/DescribeDashboardRequest.h>
 #include <tencentcloud/privatedns/v20201028/model/DescribeDashboardResponse.h>
+#include <tencentcloud/privatedns/v20201028/model/DescribePrivateDNSAccountListRequest.h>
+#include <tencentcloud/privatedns/v20201028/model/DescribePrivateDNSAccountListResponse.h>
 #include <tencentcloud/privatedns/v20201028/model/DescribePrivateZoneRequest.h>
 #include <tencentcloud/privatedns/v20201028/model/DescribePrivateZoneResponse.h>
 #include <tencentcloud/privatedns/v20201028/model/DescribePrivateZoneListRequest.h>
@@ -85,6 +87,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDashboardResponse> DescribeDashboardOutcome;
                 typedef std::future<DescribeDashboardOutcome> DescribeDashboardOutcomeCallable;
                 typedef std::function<void(const PrivatednsClient*, const Model::DescribeDashboardRequest&, DescribeDashboardOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDashboardAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePrivateDNSAccountListResponse> DescribePrivateDNSAccountListOutcome;
+                typedef std::future<DescribePrivateDNSAccountListOutcome> DescribePrivateDNSAccountListOutcomeCallable;
+                typedef std::function<void(const PrivatednsClient*, const Model::DescribePrivateDNSAccountListRequest&, DescribePrivateDNSAccountListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrivateDNSAccountListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePrivateZoneResponse> DescribePrivateZoneOutcome;
                 typedef std::future<DescribePrivateZoneOutcome> DescribePrivateZoneOutcomeCallable;
                 typedef std::function<void(const PrivatednsClient*, const Model::DescribePrivateZoneRequest&, DescribePrivateZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrivateZoneAsyncHandler;
@@ -168,6 +173,15 @@ namespace TencentCloud
                 DescribeDashboardOutcome DescribeDashboard(const Model::DescribeDashboardRequest &request);
                 void DescribeDashboardAsync(const Model::DescribeDashboardRequest& request, const DescribeDashboardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDashboardOutcomeCallable DescribeDashboardCallable(const Model::DescribeDashboardRequest& request);
+
+                /**
+                 *获取私有域解析账号列表
+                 * @param req DescribePrivateDNSAccountListRequest
+                 * @return DescribePrivateDNSAccountListOutcome
+                 */
+                DescribePrivateDNSAccountListOutcome DescribePrivateDNSAccountList(const Model::DescribePrivateDNSAccountListRequest &request);
+                void DescribePrivateDNSAccountListAsync(const Model::DescribePrivateDNSAccountListRequest& request, const DescribePrivateDNSAccountListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrivateDNSAccountListOutcomeCallable DescribePrivateDNSAccountListCallable(const Model::DescribePrivateDNSAccountListRequest& request);
 
                 /**
                  *获取私有域信息

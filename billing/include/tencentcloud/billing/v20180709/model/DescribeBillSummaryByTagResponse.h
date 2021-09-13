@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/billing/v20180709/model/TagSummaryOverviewItem.h>
+#include <tencentcloud/billing/v20180709/model/SummaryTotal.h>
 
 
 namespace TencentCloud
@@ -70,6 +71,20 @@ namespace TencentCloud
                      */
                     bool SummaryOverviewHasBeenSet() const;
 
+                    /**
+                     * 获取总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SummaryTotal 总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SummaryTotal GetSummaryTotal() const;
+
+                    /**
+                     * 判断参数 SummaryTotal 是否已赋值
+                     * @return SummaryTotal 是否已赋值
+                     */
+                    bool SummaryTotalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -84,6 +99,13 @@ namespace TencentCloud
                      */
                     std::vector<TagSummaryOverviewItem> m_summaryOverview;
                     bool m_summaryOverviewHasBeenSet;
+
+                    /**
+                     * 总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SummaryTotal m_summaryTotal;
+                    bool m_summaryTotalHasBeenSet;
 
                 };
             }

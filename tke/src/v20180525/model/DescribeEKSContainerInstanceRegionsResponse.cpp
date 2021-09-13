@@ -14,23 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/billing/v20180709/model/DescribeBillSummaryByTagResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeEKSContainerInstanceRegionsResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Billing::V20180709::Model;
+using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
-DescribeBillSummaryByTagResponse::DescribeBillSummaryByTagResponse() :
-    m_readyHasBeenSet(false),
-    m_summaryOverviewHasBeenSet(false),
-    m_summaryTotalHasBeenSet(false)
+DescribeEKSContainerInstanceRegionsResponse::DescribeEKSContainerInstanceRegionsResponse() :
+    m_regionsHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeBillSummaryByTagResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeEKSContainerInstanceRegionsResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -64,93 +63,67 @@ CoreInternalOutcome DescribeBillSummaryByTagResponse::Deserialize(const string &
     }
 
 
-    if (rsp.HasMember("Ready") && !rsp["Ready"].IsNull())
+    if (rsp.HasMember("Regions") && !rsp["Regions"].IsNull())
     {
-        if (!rsp["Ready"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `Ready` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_ready = rsp["Ready"].GetUint64();
-        m_readyHasBeenSet = true;
-    }
+        if (!rsp["Regions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Regions` is not array type"));
 
-    if (rsp.HasMember("SummaryOverview") && !rsp["SummaryOverview"].IsNull())
-    {
-        if (!rsp["SummaryOverview"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `SummaryOverview` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["SummaryOverview"];
+        const rapidjson::Value &tmpValue = rsp["Regions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            TagSummaryOverviewItem item;
+            EksCiRegionInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_summaryOverview.push_back(item);
+            m_regions.push_back(item);
         }
-        m_summaryOverviewHasBeenSet = true;
+        m_regionsHasBeenSet = true;
     }
 
-    if (rsp.HasMember("SummaryTotal") && !rsp["SummaryTotal"].IsNull())
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
-        if (!rsp["SummaryTotal"].IsObject())
+        if (!rsp["TotalCount"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `SummaryTotal` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-
-        CoreInternalOutcome outcome = m_summaryTotal.Deserialize(rsp["SummaryTotal"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_summaryTotalHasBeenSet = true;
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeBillSummaryByTagResponse::ToJsonString() const
+string DescribeEKSContainerInstanceRegionsResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_readyHasBeenSet)
+    if (m_regionsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Ready";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_ready, allocator);
-    }
-
-    if (m_summaryOverviewHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SummaryOverview";
+        string key = "Regions";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_summaryOverview.begin(); itr != m_summaryOverview.end(); ++itr, ++i)
+        for (auto itr = m_regions.begin(); itr != m_regions.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
-    if (m_summaryTotalHasBeenSet)
+    if (m_totalCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SummaryTotal";
+        string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_summaryTotal.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -165,34 +138,24 @@ string DescribeBillSummaryByTagResponse::ToJsonString() const
 }
 
 
-uint64_t DescribeBillSummaryByTagResponse::GetReady() const
+vector<EksCiRegionInfo> DescribeEKSContainerInstanceRegionsResponse::GetRegions() const
 {
-    return m_ready;
+    return m_regions;
 }
 
-bool DescribeBillSummaryByTagResponse::ReadyHasBeenSet() const
+bool DescribeEKSContainerInstanceRegionsResponse::RegionsHasBeenSet() const
 {
-    return m_readyHasBeenSet;
+    return m_regionsHasBeenSet;
 }
 
-vector<TagSummaryOverviewItem> DescribeBillSummaryByTagResponse::GetSummaryOverview() const
+uint64_t DescribeEKSContainerInstanceRegionsResponse::GetTotalCount() const
 {
-    return m_summaryOverview;
+    return m_totalCount;
 }
 
-bool DescribeBillSummaryByTagResponse::SummaryOverviewHasBeenSet() const
+bool DescribeEKSContainerInstanceRegionsResponse::TotalCountHasBeenSet() const
 {
-    return m_summaryOverviewHasBeenSet;
-}
-
-SummaryTotal DescribeBillSummaryByTagResponse::GetSummaryTotal() const
-{
-    return m_summaryTotal;
-}
-
-bool DescribeBillSummaryByTagResponse::SummaryTotalHasBeenSet() const
-{
-    return m_summaryTotalHasBeenSet;
+    return m_totalCountHasBeenSet;
 }
 
 

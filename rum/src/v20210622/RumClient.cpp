@@ -212,3 +212,46 @@ RumClient::DescribeErrorOutcomeCallable RumClient::DescribeErrorCallable(const D
     return task->get_future();
 }
 
+RumClient::DescribeLogListOutcome RumClient::DescribeLogList(const DescribeLogListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLogList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLogListResponse rsp = DescribeLogListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLogListOutcome(rsp);
+        else
+            return DescribeLogListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLogListOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeLogListAsync(const DescribeLogListRequest& request, const DescribeLogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLogList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RumClient::DescribeLogListOutcomeCallable RumClient::DescribeLogListCallable(const DescribeLogListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLogListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLogList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

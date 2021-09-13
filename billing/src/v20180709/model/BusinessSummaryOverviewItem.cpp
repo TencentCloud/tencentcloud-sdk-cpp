@@ -28,7 +28,8 @@ BusinessSummaryOverviewItem::BusinessSummaryOverviewItem() :
     m_cashPayAmountHasBeenSet(false),
     m_incentivePayAmountHasBeenSet(false),
     m_voucherPayAmountHasBeenSet(false),
-    m_billMonthHasBeenSet(false)
+    m_billMonthHasBeenSet(false),
+    m_totalCostHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome BusinessSummaryOverviewItem::Deserialize(const rapidjson::Va
         m_billMonthHasBeenSet = true;
     }
 
+    if (value.HasMember("TotalCost") && !value["TotalCost"].IsNull())
+    {
+        if (!value["TotalCost"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BusinessSummaryOverviewItem.TotalCost` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCost = string(value["TotalCost"].GetString());
+        m_totalCostHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void BusinessSummaryOverviewItem::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "BillMonth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_billMonth.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_totalCostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_totalCost.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void BusinessSummaryOverviewItem::SetBillMonth(const string& _billMonth)
 bool BusinessSummaryOverviewItem::BillMonthHasBeenSet() const
 {
     return m_billMonthHasBeenSet;
+}
+
+string BusinessSummaryOverviewItem::GetTotalCost() const
+{
+    return m_totalCost;
+}
+
+void BusinessSummaryOverviewItem::SetTotalCost(const string& _totalCost)
+{
+    m_totalCost = _totalCost;
+    m_totalCostHasBeenSet = true;
+}
+
+bool BusinessSummaryOverviewItem::TotalCostHasBeenSet() const
+{
+    return m_totalCostHasBeenSet;
 }
 

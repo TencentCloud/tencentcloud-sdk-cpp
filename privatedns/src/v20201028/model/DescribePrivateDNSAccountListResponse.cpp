@@ -14,23 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/billing/v20180709/model/DescribeBillSummaryByTagResponse.h>
+#include <tencentcloud/privatedns/v20201028/model/DescribePrivateDNSAccountListResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Billing::V20180709::Model;
+using namespace TencentCloud::Privatedns::V20201028::Model;
 using namespace std;
 
-DescribeBillSummaryByTagResponse::DescribeBillSummaryByTagResponse() :
-    m_readyHasBeenSet(false),
-    m_summaryOverviewHasBeenSet(false),
-    m_summaryTotalHasBeenSet(false)
+DescribePrivateDNSAccountListResponse::DescribePrivateDNSAccountListResponse() :
+    m_totalCountHasBeenSet(false),
+    m_accountSetHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeBillSummaryByTagResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribePrivateDNSAccountListResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -64,93 +63,67 @@ CoreInternalOutcome DescribeBillSummaryByTagResponse::Deserialize(const string &
     }
 
 
-    if (rsp.HasMember("Ready") && !rsp["Ready"].IsNull())
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
-        if (!rsp["Ready"].IsUint64())
+        if (!rsp["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `Ready` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_ready = rsp["Ready"].GetUint64();
-        m_readyHasBeenSet = true;
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
     }
 
-    if (rsp.HasMember("SummaryOverview") && !rsp["SummaryOverview"].IsNull())
+    if (rsp.HasMember("AccountSet") && !rsp["AccountSet"].IsNull())
     {
-        if (!rsp["SummaryOverview"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `SummaryOverview` is not array type"));
+        if (!rsp["AccountSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AccountSet` is not array type"));
 
-        const rapidjson::Value &tmpValue = rsp["SummaryOverview"];
+        const rapidjson::Value &tmpValue = rsp["AccountSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            TagSummaryOverviewItem item;
+            PrivateDNSAccount item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_summaryOverview.push_back(item);
+            m_accountSet.push_back(item);
         }
-        m_summaryOverviewHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("SummaryTotal") && !rsp["SummaryTotal"].IsNull())
-    {
-        if (!rsp["SummaryTotal"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `SummaryTotal` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_summaryTotal.Deserialize(rsp["SummaryTotal"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_summaryTotalHasBeenSet = true;
+        m_accountSetHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeBillSummaryByTagResponse::ToJsonString() const
+string DescribePrivateDNSAccountListResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_readyHasBeenSet)
+    if (m_totalCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Ready";
+        string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_ready, allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
     }
 
-    if (m_summaryOverviewHasBeenSet)
+    if (m_accountSetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SummaryOverview";
+        string key = "AccountSet";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_summaryOverview.begin(); itr != m_summaryOverview.end(); ++itr, ++i)
+        for (auto itr = m_accountSet.begin(); itr != m_accountSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
-    }
-
-    if (m_summaryTotalHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SummaryTotal";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_summaryTotal.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -165,34 +138,24 @@ string DescribeBillSummaryByTagResponse::ToJsonString() const
 }
 
 
-uint64_t DescribeBillSummaryByTagResponse::GetReady() const
+int64_t DescribePrivateDNSAccountListResponse::GetTotalCount() const
 {
-    return m_ready;
+    return m_totalCount;
 }
 
-bool DescribeBillSummaryByTagResponse::ReadyHasBeenSet() const
+bool DescribePrivateDNSAccountListResponse::TotalCountHasBeenSet() const
 {
-    return m_readyHasBeenSet;
+    return m_totalCountHasBeenSet;
 }
 
-vector<TagSummaryOverviewItem> DescribeBillSummaryByTagResponse::GetSummaryOverview() const
+vector<PrivateDNSAccount> DescribePrivateDNSAccountListResponse::GetAccountSet() const
 {
-    return m_summaryOverview;
+    return m_accountSet;
 }
 
-bool DescribeBillSummaryByTagResponse::SummaryOverviewHasBeenSet() const
+bool DescribePrivateDNSAccountListResponse::AccountSetHasBeenSet() const
 {
-    return m_summaryOverviewHasBeenSet;
-}
-
-SummaryTotal DescribeBillSummaryByTagResponse::GetSummaryTotal() const
-{
-    return m_summaryTotal;
-}
-
-bool DescribeBillSummaryByTagResponse::SummaryTotalHasBeenSet() const
-{
-    return m_summaryTotalHasBeenSet;
+    return m_accountSetHasBeenSet;
 }
 
 

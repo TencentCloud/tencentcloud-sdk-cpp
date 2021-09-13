@@ -79,24 +79,6 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。您可前往[账单概览](https://console.cloud.tencent.com/expense/bill/overview)页面顶部查看确认您的账单统计周期类型。
-                     * @return PeriodType 周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。您可前往[账单概览](https://console.cloud.tencent.com/expense/bill/overview)页面顶部查看确认您的账单统计周期类型。
-                     */
-                    std::string GetPeriodType() const;
-
-                    /**
-                     * 设置周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。您可前往[账单概览](https://console.cloud.tencent.com/expense/bill/overview)页面顶部查看确认您的账单统计周期类型。
-                     * @param PeriodType 周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。您可前往[账单概览](https://console.cloud.tencent.com/expense/bill/overview)页面顶部查看确认您的账单统计周期类型。
-                     */
-                    void SetPeriodType(const std::string& _periodType);
-
-                    /**
-                     * 判断参数 PeriodType 是否已赋值
-                     * @return PeriodType 是否已赋值
-                     */
-                    bool PeriodTypeHasBeenSet() const;
-
-                    /**
                      * 获取月份，格式为yyyy-mm。不能早于开通账单2.0的月份，最多可拉取24个月内的数据。
                      * @return Month 月份，格式为yyyy-mm。不能早于开通账单2.0的月份，最多可拉取24个月内的数据。
                      */
@@ -113,6 +95,24 @@ namespace TencentCloud
                      * @return Month 是否已赋值
                      */
                     bool MonthHasBeenSet() const;
+
+                    /**
+                     * 获取周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。您可前往[账单概览](https://console.cloud.tencent.com/expense/bill/overview)页面顶部查看确认您的账单统计周期类型。
+                     * @return PeriodType 周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。您可前往[账单概览](https://console.cloud.tencent.com/expense/bill/overview)页面顶部查看确认您的账单统计周期类型。
+                     */
+                    std::string GetPeriodType() const;
+
+                    /**
+                     * 设置周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。您可前往[账单概览](https://console.cloud.tencent.com/expense/bill/overview)页面顶部查看确认您的账单统计周期类型。
+                     * @param PeriodType 周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。您可前往[账单概览](https://console.cloud.tencent.com/expense/bill/overview)页面顶部查看确认您的账单统计周期类型。
+                     */
+                    void SetPeriodType(const std::string& _periodType);
+
+                    /**
+                     * 判断参数 PeriodType 是否已赋值
+                     * @return PeriodType 是否已赋值
+                     */
+                    bool PeriodTypeHasBeenSet() const;
 
                     /**
                      * 获取是否需要访问列表的总记录数，用于前端分页
@@ -205,16 +205,16 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。您可前往[账单概览](https://console.cloud.tencent.com/expense/bill/overview)页面顶部查看确认您的账单统计周期类型。
-                     */
-                    std::string m_periodType;
-                    bool m_periodTypeHasBeenSet;
-
-                    /**
                      * 月份，格式为yyyy-mm。不能早于开通账单2.0的月份，最多可拉取24个月内的数据。
                      */
                     std::string m_month;
                     bool m_monthHasBeenSet;
+
+                    /**
+                     * 周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。您可前往[账单概览](https://console.cloud.tencent.com/expense/bill/overview)页面顶部查看确认您的账单统计周期类型。
+                     */
+                    std::string m_periodType;
+                    bool m_periodTypeHasBeenSet;
 
                     /**
                      * 是否需要访问列表的总记录数，用于前端分页

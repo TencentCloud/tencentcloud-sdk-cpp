@@ -80,8 +80,8 @@ namespace TencentCloud
                     bool ServersCountHasBeenSet() const;
 
                     /**
-                     * 获取是否试用
-                     * @return IsFirstCheck 是否试用
+                     * 获取是否试用：true-是，false-否
+                     * @return IsFirstCheck 是否试用：true-是，false-否
                      */
                     bool GetIsFirstCheck() const;
 
@@ -124,7 +124,7 @@ namespace TencentCloud
                     bool m_serversCountHasBeenSet;
 
                     /**
-                     * 是否试用
+                     * 是否试用：true-是，false-否
                      */
                     bool m_isFirstCheck;
                     bool m_isFirstCheckHasBeenSet;

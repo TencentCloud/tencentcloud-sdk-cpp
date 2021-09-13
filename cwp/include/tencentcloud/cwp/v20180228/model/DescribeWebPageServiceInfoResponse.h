@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否已购服务
-                     * @return Status 是否已购服务
+                     * 获取是否已购服务：true-是，false-否
+                     * @return Status 是否已购服务：true-是，false-否
                      */
                     bool GetStatus() const;
 
@@ -156,7 +156,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否已购服务
+                     * 是否已购服务：true-是，false-否
                      */
                     bool m_status;
                     bool m_statusHasBeenSet;

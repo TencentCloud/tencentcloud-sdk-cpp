@@ -2104,6 +2104,49 @@ TkeClient::DescribeEKSClustersOutcomeCallable TkeClient::DescribeEKSClustersCall
     return task->get_future();
 }
 
+TkeClient::DescribeEKSContainerInstanceRegionsOutcome TkeClient::DescribeEKSContainerInstanceRegions(const DescribeEKSContainerInstanceRegionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEKSContainerInstanceRegions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEKSContainerInstanceRegionsResponse rsp = DescribeEKSContainerInstanceRegionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEKSContainerInstanceRegionsOutcome(rsp);
+        else
+            return DescribeEKSContainerInstanceRegionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEKSContainerInstanceRegionsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeEKSContainerInstanceRegionsAsync(const DescribeEKSContainerInstanceRegionsRequest& request, const DescribeEKSContainerInstanceRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEKSContainerInstanceRegions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeEKSContainerInstanceRegionsOutcomeCallable TkeClient::DescribeEKSContainerInstanceRegionsCallable(const DescribeEKSContainerInstanceRegionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEKSContainerInstanceRegionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEKSContainerInstanceRegions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribeEnableVpcCniProgressOutcome TkeClient::DescribeEnableVpcCniProgress(const DescribeEnableVpcCniProgressRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEnableVpcCniProgress");

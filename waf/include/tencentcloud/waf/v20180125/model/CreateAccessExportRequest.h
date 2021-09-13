@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                     /**
-                     * 获取日志导出数量
-                     * @return Count 日志导出数量
+                     * 获取日志导出数量，最大值100w
+                     * @return Count 日志导出数量，最大值100w
                      */
                     int64_t GetCount() const;
 
                     /**
-                     * 设置日志导出数量
-                     * @param Count 日志导出数量
+                     * 设置日志导出数量，最大值100w
+                     * @param Count 日志导出数量，最大值100w
                      */
                     void SetCount(const int64_t& _count);
 
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_queryHasBeenSet;
 
                     /**
-                     * 日志导出数量
+                     * 日志导出数量，最大值100w
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;

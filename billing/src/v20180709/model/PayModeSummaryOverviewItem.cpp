@@ -28,7 +28,8 @@ PayModeSummaryOverviewItem::PayModeSummaryOverviewItem() :
     m_detailHasBeenSet(false),
     m_cashPayAmountHasBeenSet(false),
     m_incentivePayAmountHasBeenSet(false),
-    m_voucherPayAmountHasBeenSet(false)
+    m_voucherPayAmountHasBeenSet(false),
+    m_totalCostHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome PayModeSummaryOverviewItem::Deserialize(const rapidjson::Val
         m_voucherPayAmountHasBeenSet = true;
     }
 
+    if (value.HasMember("TotalCost") && !value["TotalCost"].IsNull())
+    {
+        if (!value["TotalCost"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PayModeSummaryOverviewItem.TotalCost` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCost = string(value["TotalCost"].GetString());
+        m_totalCostHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +214,14 @@ void PayModeSummaryOverviewItem::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "VoucherPayAmount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_voucherPayAmount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_totalCostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_totalCost.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -334,5 +353,21 @@ void PayModeSummaryOverviewItem::SetVoucherPayAmount(const string& _voucherPayAm
 bool PayModeSummaryOverviewItem::VoucherPayAmountHasBeenSet() const
 {
     return m_voucherPayAmountHasBeenSet;
+}
+
+string PayModeSummaryOverviewItem::GetTotalCost() const
+{
+    return m_totalCost;
+}
+
+void PayModeSummaryOverviewItem::SetTotalCost(const string& _totalCost)
+{
+    m_totalCost = _totalCost;
+    m_totalCostHasBeenSet = true;
+}
+
+bool PayModeSummaryOverviewItem::TotalCostHasBeenSet() const
+{
+    return m_totalCostHasBeenSet;
 }
 

@@ -112,6 +112,28 @@ namespace TencentCloud
                      */
                     bool RealTotalCostRatioHasBeenSet() const;
 
+                    /**
+                     * 获取原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回"-"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TotalCost 原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回"-"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTotalCost() const;
+
+                    /**
+                     * 设置原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回"-"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TotalCost 原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回"-"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTotalCost(const std::string& _totalCost);
+
+                    /**
+                     * 判断参数 TotalCost 是否已赋值
+                     * @return TotalCost 是否已赋值
+                     */
+                    bool TotalCostHasBeenSet() const;
+
                 private:
 
                     /**
@@ -134,6 +156,13 @@ namespace TencentCloud
                      */
                     std::string m_realTotalCostRatio;
                     bool m_realTotalCostRatioHasBeenSet;
+
+                    /**
+                     * 原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回"-"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_totalCost;
+                    bool m_totalCostHasBeenSet;
 
                 };
             }

@@ -298,6 +298,49 @@ PrivatednsClient::DescribeDashboardOutcomeCallable PrivatednsClient::DescribeDas
     return task->get_future();
 }
 
+PrivatednsClient::DescribePrivateDNSAccountListOutcome PrivatednsClient::DescribePrivateDNSAccountList(const DescribePrivateDNSAccountListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrivateDNSAccountList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrivateDNSAccountListResponse rsp = DescribePrivateDNSAccountListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrivateDNSAccountListOutcome(rsp);
+        else
+            return DescribePrivateDNSAccountListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrivateDNSAccountListOutcome(outcome.GetError());
+    }
+}
+
+void PrivatednsClient::DescribePrivateDNSAccountListAsync(const DescribePrivateDNSAccountListRequest& request, const DescribePrivateDNSAccountListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrivateDNSAccountList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PrivatednsClient::DescribePrivateDNSAccountListOutcomeCallable PrivatednsClient::DescribePrivateDNSAccountListCallable(const DescribePrivateDNSAccountListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePrivateDNSAccountListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrivateDNSAccountList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PrivatednsClient::DescribePrivateZoneOutcome PrivatednsClient::DescribePrivateZone(const DescribePrivateZoneRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePrivateZone");

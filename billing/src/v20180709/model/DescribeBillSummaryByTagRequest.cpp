@@ -26,7 +26,8 @@ DescribeBillSummaryByTagRequest::DescribeBillSummaryByTagRequest() :
     m_beginTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_tagKeyHasBeenSet(false),
-    m_payerUinHasBeenSet(false)
+    m_payerUinHasBeenSet(false),
+    m_tagValueHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DescribeBillSummaryByTagRequest::ToJsonString() const
         string key = "PayerUin";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_payerUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagValue";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tagValue.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DescribeBillSummaryByTagRequest::SetPayerUin(const string& _payerUin)
 bool DescribeBillSummaryByTagRequest::PayerUinHasBeenSet() const
 {
     return m_payerUinHasBeenSet;
+}
+
+string DescribeBillSummaryByTagRequest::GetTagValue() const
+{
+    return m_tagValue;
+}
+
+void DescribeBillSummaryByTagRequest::SetTagValue(const string& _tagValue)
+{
+    m_tagValue = _tagValue;
+    m_tagValueHasBeenSet = true;
+}
+
+bool DescribeBillSummaryByTagRequest::TagValueHasBeenSet() const
+{
+    return m_tagValueHasBeenSet;
 }
 
 

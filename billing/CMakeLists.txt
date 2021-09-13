@@ -83,6 +83,7 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/DescribeCostSummaryByResourceRequest.h
   include/tencentcloud/billing/v20180709/model/DescribeCostDetailResponse.h
   include/tencentcloud/billing/v20180709/model/DescribeDosageCosDetailByDateRequest.h
+  include/tencentcloud/billing/v20180709/model/SummaryTotal.h
   include/tencentcloud/billing/v20180709/model/PayModeSummaryOverviewItem.h
   include/tencentcloud/billing/v20180709/model/BusinessSummaryTotal.h
   include/tencentcloud/billing/v20180709/model/DescribeCostSummaryByRegionResponse.h
@@ -154,6 +155,7 @@ set(billing_src
   src/v20180709/model/DescribeCostSummaryByResourceRequest.cpp
   src/v20180709/model/DescribeCostDetailResponse.cpp
   src/v20180709/model/DescribeDosageCosDetailByDateRequest.cpp
+  src/v20180709/model/SummaryTotal.cpp
   src/v20180709/model/PayModeSummaryOverviewItem.cpp
   src/v20180709/model/BusinessSummaryTotal.cpp
   src/v20180709/model/DescribeCostSummaryByRegionResponse.cpp

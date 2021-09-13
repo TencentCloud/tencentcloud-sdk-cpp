@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_BILLING_V20180709_MODEL_BUSINESSSUMMARYTOTAL_H_
-#define TENCENTCLOUD_BILLING_V20180709_MODEL_BUSINESSSUMMARYTOTAL_H_
+#ifndef TENCENTCLOUD_BILLING_V20180709_MODEL_SUMMARYTOTAL_H_
+#define TENCENTCLOUD_BILLING_V20180709_MODEL_SUMMARYTOTAL_H_
 
 #include <string>
 #include <vector>
@@ -35,26 +35,30 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 按产品汇总总费用
+                * 总数
                 */
-                class BusinessSummaryTotal : public AbstractModel
+                class SummaryTotal : public AbstractModel
                 {
                 public:
-                    BusinessSummaryTotal();
-                    ~BusinessSummaryTotal() = default;
+                    SummaryTotal();
+                    ~SummaryTotal() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取总花费
-                     * @return RealTotalCost 总花费
+                     * 获取总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RealTotalCost 总数
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetRealTotalCost() const;
 
                     /**
-                     * 设置总花费
-                     * @param RealTotalCost 总花费
+                     * 设置总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RealTotalCost 总数
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRealTotalCost(const std::string& _realTotalCost);
 
@@ -65,68 +69,18 @@ namespace TencentCloud
                     bool RealTotalCostHasBeenSet() const;
 
                     /**
-                     * 获取代金券金额
-                     * @return VoucherPayAmount 代金券金额
-                     */
-                    std::string GetVoucherPayAmount() const;
-
-                    /**
-                     * 设置代金券金额
-                     * @param VoucherPayAmount 代金券金额
-                     */
-                    void SetVoucherPayAmount(const std::string& _voucherPayAmount);
-
-                    /**
-                     * 判断参数 VoucherPayAmount 是否已赋值
-                     * @return VoucherPayAmount 是否已赋值
-                     */
-                    bool VoucherPayAmountHasBeenSet() const;
-
-                    /**
-                     * 获取赠送金金额
-                     * @return IncentivePayAmount 赠送金金额
-                     */
-                    std::string GetIncentivePayAmount() const;
-
-                    /**
-                     * 设置赠送金金额
-                     * @param IncentivePayAmount 赠送金金额
-                     */
-                    void SetIncentivePayAmount(const std::string& _incentivePayAmount);
-
-                    /**
-                     * 判断参数 IncentivePayAmount 是否已赋值
-                     * @return IncentivePayAmount 是否已赋值
-                     */
-                    bool IncentivePayAmountHasBeenSet() const;
-
-                    /**
-                     * 获取现金金额
-                     * @return CashPayAmount 现金金额
-                     */
-                    std::string GetCashPayAmount() const;
-
-                    /**
-                     * 设置现金金额
-                     * @param CashPayAmount 现金金额
-                     */
-                    void SetCashPayAmount(const std::string& _cashPayAmount);
-
-                    /**
-                     * 判断参数 CashPayAmount 是否已赋值
-                     * @return CashPayAmount 是否已赋值
-                     */
-                    bool CashPayAmountHasBeenSet() const;
-
-                    /**
                      * 获取原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回"-"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCost 原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回"-"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTotalCost() const;
 
                     /**
                      * 设置原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回"-"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param TotalCost 原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回"-"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTotalCost(const std::string& _totalCost);
 
@@ -139,31 +93,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总花费
+                     * 总数
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_realTotalCost;
                     bool m_realTotalCostHasBeenSet;
 
                     /**
-                     * 代金券金额
-                     */
-                    std::string m_voucherPayAmount;
-                    bool m_voucherPayAmountHasBeenSet;
-
-                    /**
-                     * 赠送金金额
-                     */
-                    std::string m_incentivePayAmount;
-                    bool m_incentivePayAmountHasBeenSet;
-
-                    /**
-                     * 现金金额
-                     */
-                    std::string m_cashPayAmount;
-                    bool m_cashPayAmountHasBeenSet;
-
-                    /**
                      * 原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回"-"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_totalCost;
                     bool m_totalCostHasBeenSet;
@@ -174,4 +112,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_BILLING_V20180709_MODEL_BUSINESSSUMMARYTOTAL_H_
+#endif // !TENCENTCLOUD_BILLING_V20180709_MODEL_SUMMARYTOTAL_H_

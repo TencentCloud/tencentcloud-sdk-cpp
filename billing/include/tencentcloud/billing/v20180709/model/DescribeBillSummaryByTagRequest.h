@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool PayerUinHasBeenSet() const;
 
+                    /**
+                     * 获取分账标签值
+                     * @return TagValue 分账标签值
+                     */
+                    std::string GetTagValue() const;
+
+                    /**
+                     * 设置分账标签值
+                     * @param TagValue 分账标签值
+                     */
+                    void SetTagValue(const std::string& _tagValue);
+
+                    /**
+                     * 判断参数 TagValue 是否已赋值
+                     * @return TagValue 是否已赋值
+                     */
+                    bool TagValueHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     std::string m_payerUin;
                     bool m_payerUinHasBeenSet;
+
+                    /**
+                     * 分账标签值
+                     */
+                    std::string m_tagValue;
+                    bool m_tagValueHasBeenSet;
 
                 };
             }

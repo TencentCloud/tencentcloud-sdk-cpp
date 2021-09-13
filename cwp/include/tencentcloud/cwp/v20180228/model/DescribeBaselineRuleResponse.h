@@ -71,9 +71,9 @@ namespace TencentCloud
                     bool BaselineRuleListHasBeenSet() const;
 
                     /**
-                     * 获取是否显示说明列
+                     * 获取是否显示说明列：true-是，false-否
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ShowRuleRemark 是否显示说明列
+                     * @return ShowRuleRemark 是否显示说明列：true-是，false-否
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool GetShowRuleRemark() const;
@@ -100,7 +100,7 @@ namespace TencentCloud
                     bool m_baselineRuleListHasBeenSet;
 
                     /**
-                     * 是否显示说明列
+                     * 是否显示说明列：true-是，false-否
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_showRuleRemark;
