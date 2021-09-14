@@ -21,13 +21,11 @@ set(ims_public_header
 
 set(ims_public_header_model
   include/tencentcloud/ims/v20201229/model/ImageModerationRequest.h
-  include/tencentcloud/ims/v20201229/model/ImageRecognitionResponse.h
   include/tencentcloud/ims/v20201229/model/ObjectResult.h
   include/tencentcloud/ims/v20201229/model/OcrTextDetail.h
   include/tencentcloud/ims/v20201229/model/ObjectDetail.h
   include/tencentcloud/ims/v20201229/model/OcrResult.h
   include/tencentcloud/ims/v20201229/model/LibDetail.h
-  include/tencentcloud/ims/v20201229/model/ImageRecognitionRequest.h
   include/tencentcloud/ims/v20201229/model/Location.h
   include/tencentcloud/ims/v20201229/model/LabelResult.h
   include/tencentcloud/ims/v20201229/model/LabelDetailItem.h
@@ -64,13 +62,11 @@ set(ims_src
   src/v20201229/ImsClient.cpp
   src/v20200713/ImsClient.cpp
   src/v20201229/model/ImageModerationRequest.cpp
-  src/v20201229/model/ImageRecognitionResponse.cpp
   src/v20201229/model/ObjectResult.cpp
   src/v20201229/model/OcrTextDetail.cpp
   src/v20201229/model/ObjectDetail.cpp
   src/v20201229/model/OcrResult.cpp
   src/v20201229/model/LibDetail.cpp
-  src/v20201229/model/ImageRecognitionRequest.cpp
   src/v20201229/model/Location.cpp
   src/v20201229/model/LabelResult.cpp
   src/v20201229/model/LabelDetailItem.cpp

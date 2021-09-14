@@ -65,7 +65,8 @@ CreateCloudBaseRunServerVersionRequest::CreateCloudBaseRunServerVersionRequest()
     m_baseImageHasBeenSet(false),
     m_entryPointHasBeenSet(false),
     m_repoLanguageHasBeenSet(false),
-    m_uploadFilenameHasBeenSet(false)
+    m_uploadFilenameHasBeenSet(false),
+    m_policyDetailHasBeenSet(false)
 {
 }
 
@@ -451,6 +452,21 @@ string CreateCloudBaseRunServerVersionRequest::ToJsonString() const
         string key = "UploadFilename";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_uploadFilename.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_policyDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolicyDetail";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_policyDetail.begin(); itr != m_policyDetail.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -1147,6 +1163,22 @@ void CreateCloudBaseRunServerVersionRequest::SetUploadFilename(const string& _up
 bool CreateCloudBaseRunServerVersionRequest::UploadFilenameHasBeenSet() const
 {
     return m_uploadFilenameHasBeenSet;
+}
+
+vector<HpaPolicy> CreateCloudBaseRunServerVersionRequest::GetPolicyDetail() const
+{
+    return m_policyDetail;
+}
+
+void CreateCloudBaseRunServerVersionRequest::SetPolicyDetail(const vector<HpaPolicy>& _policyDetail)
+{
+    m_policyDetail = _policyDetail;
+    m_policyDetailHasBeenSet = true;
+}
+
+bool CreateCloudBaseRunServerVersionRequest::PolicyDetailHasBeenSet() const
+{
+    return m_policyDetailHasBeenSet;
 }
 
 

@@ -359,6 +359,24 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool ExclusiveClusterHasBeenSet() const;
 
                     /**
+                     * 获取创建性能独享型CLB，传SLA。
+                     * @return SlaType 创建性能独享型CLB，传SLA。
+                     */
+                    std::string GetSlaType() const;
+
+                    /**
+                     * 设置创建性能独享型CLB，传SLA。
+                     * @param SlaType 创建性能独享型CLB，传SLA。
+                     */
+                    void SetSlaType(const std::string& _slaType);
+
+                    /**
+                     * 判断参数 SlaType 是否已赋值
+                     * @return SlaType 是否已赋值
+                     */
+                    bool SlaTypeHasBeenSet() const;
+
+                    /**
                      * 获取用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
                      * @return ClientToken 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
                      */
@@ -573,6 +591,12 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     ExclusiveCluster m_exclusiveCluster;
                     bool m_exclusiveClusterHasBeenSet;
+
+                    /**
+                     * 创建性能独享型CLB，传SLA。
+                     */
+                    std::string m_slaType;
+                    bool m_slaTypeHasBeenSet;
 
                     /**
                      * 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。

@@ -55,7 +55,8 @@ RollUpdateCloudBaseRunServerVersionRequest::RollUpdateCloudBaseRunServerVersionR
     m_enableUnionHasBeenSet(false),
     m_operatorRemarkHasBeenSet(false),
     m_serverPathHasBeenSet(false),
-    m_isUpdateClsHasBeenSet(false)
+    m_isUpdateClsHasBeenSet(false),
+    m_policyDetailHasBeenSet(false)
 {
 }
 
@@ -337,6 +338,21 @@ string RollUpdateCloudBaseRunServerVersionRequest::ToJsonString() const
         string key = "IsUpdateCls";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isUpdateCls, allocator);
+    }
+
+    if (m_policyDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolicyDetail";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_policyDetail.begin(); itr != m_policyDetail.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -873,6 +889,22 @@ void RollUpdateCloudBaseRunServerVersionRequest::SetIsUpdateCls(const bool& _isU
 bool RollUpdateCloudBaseRunServerVersionRequest::IsUpdateClsHasBeenSet() const
 {
     return m_isUpdateClsHasBeenSet;
+}
+
+vector<HpaPolicy> RollUpdateCloudBaseRunServerVersionRequest::GetPolicyDetail() const
+{
+    return m_policyDetail;
+}
+
+void RollUpdateCloudBaseRunServerVersionRequest::SetPolicyDetail(const vector<HpaPolicy>& _policyDetail)
+{
+    m_policyDetail = _policyDetail;
+    m_policyDetailHasBeenSet = true;
+}
+
+bool RollUpdateCloudBaseRunServerVersionRequest::PolicyDetailHasBeenSet() const
+{
+    return m_policyDetailHasBeenSet;
 }
 
 

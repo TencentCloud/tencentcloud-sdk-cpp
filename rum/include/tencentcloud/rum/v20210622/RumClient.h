@@ -33,6 +33,8 @@
 #include <tencentcloud/rum/v20210622/model/DescribeErrorResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeLogListRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeLogListResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeProjectsRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeProjectsResponse.h>
 
 
 namespace TencentCloud
@@ -62,6 +64,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLogListResponse> DescribeLogListOutcome;
                 typedef std::future<DescribeLogListOutcome> DescribeLogListOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeLogListRequest&, DescribeLogListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProjectsResponse> DescribeProjectsOutcome;
+                typedef std::future<DescribeProjectsOutcome> DescribeProjectsOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeProjectsRequest&, DescribeProjectsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectsAsyncHandler;
 
 
 
@@ -109,6 +114,15 @@ namespace TencentCloud
                 DescribeLogListOutcome DescribeLogList(const Model::DescribeLogListRequest &request);
                 void DescribeLogListAsync(const Model::DescribeLogListRequest& request, const DescribeLogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLogListOutcomeCallable DescribeLogListCallable(const Model::DescribeLogListRequest& request);
+
+                /**
+                 *获取项目列表（实例创建的团队下的项目列表）
+                 * @param req DescribeProjectsRequest
+                 * @return DescribeProjectsOutcome
+                 */
+                DescribeProjectsOutcome DescribeProjects(const Model::DescribeProjectsRequest &request);
+                void DescribeProjectsAsync(const Model::DescribeProjectsRequest& request, const DescribeProjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProjectsOutcomeCallable DescribeProjectsCallable(const Model::DescribeProjectsRequest& request);
 
             };
         }

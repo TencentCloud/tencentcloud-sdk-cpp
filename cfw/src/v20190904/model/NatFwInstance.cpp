@@ -25,7 +25,8 @@ NatFwInstance::NatFwInstance() :
     m_natinsNameHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_fwModeHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_natIpHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome NatFwInstance::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("NatIp") && !value["NatIp"].IsNull())
+    {
+        if (!value["NatIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NatFwInstance.NatIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_natIp = string(value["NatIp"].GetString());
+        m_natIpHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void NatFwInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_natIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NatIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_natIp.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void NatFwInstance::SetStatus(const int64_t& _status)
 bool NatFwInstance::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string NatFwInstance::GetNatIp() const
+{
+    return m_natIp;
+}
+
+void NatFwInstance::SetNatIp(const string& _natIp)
+{
+    m_natIp = _natIp;
+    m_natIpHasBeenSet = true;
+}
+
+bool NatFwInstance::NatIpHasBeenSet() const
+{
+    return m_natIpHasBeenSet;
 }
 

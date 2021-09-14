@@ -126,6 +126,49 @@ CfwClient::CreateChooseVpcsOutcomeCallable CfwClient::CreateChooseVpcsCallable(c
     return task->get_future();
 }
 
+CfwClient::CreateDatabaseWhiteListRulesOutcome CfwClient::CreateDatabaseWhiteListRules(const CreateDatabaseWhiteListRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDatabaseWhiteListRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDatabaseWhiteListRulesResponse rsp = CreateDatabaseWhiteListRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDatabaseWhiteListRulesOutcome(rsp);
+        else
+            return CreateDatabaseWhiteListRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDatabaseWhiteListRulesOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::CreateDatabaseWhiteListRulesAsync(const CreateDatabaseWhiteListRulesRequest& request, const CreateDatabaseWhiteListRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDatabaseWhiteListRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::CreateDatabaseWhiteListRulesOutcomeCallable CfwClient::CreateDatabaseWhiteListRulesCallable(const CreateDatabaseWhiteListRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDatabaseWhiteListRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDatabaseWhiteListRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::CreateNatFwInstanceOutcome CfwClient::CreateNatFwInstance(const CreateNatFwInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateNatFwInstance");

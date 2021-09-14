@@ -19,10 +19,14 @@ set(rum_public_header
   )
 
 set(rum_public_header_model
+  include/tencentcloud/rum/v20210622/model/RumProject.h
   include/tencentcloud/rum/v20210622/model/DescribeDataPerformancePageResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeDataPerformancePageRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeProjectsResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeErrorRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeProjectsRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeLogListResponse.h
+  include/tencentcloud/rum/v20210622/model/Filter.h
   include/tencentcloud/rum/v20210622/model/DescribeDataLogUrlStatisticsResponse.h
   include/tencentcloud/rum/v20210622/model/CreateProjectResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeLogListRequest.h
@@ -33,10 +37,14 @@ set(rum_public_header_model
 
 set(rum_src
   src/v20210622/RumClient.cpp
+  src/v20210622/model/RumProject.cpp
   src/v20210622/model/DescribeDataPerformancePageResponse.cpp
   src/v20210622/model/DescribeDataPerformancePageRequest.cpp
+  src/v20210622/model/DescribeProjectsResponse.cpp
   src/v20210622/model/DescribeErrorRequest.cpp
+  src/v20210622/model/DescribeProjectsRequest.cpp
   src/v20210622/model/DescribeLogListResponse.cpp
+  src/v20210622/model/Filter.cpp
   src/v20210622/model/DescribeDataLogUrlStatisticsResponse.cpp
   src/v20210622/model/CreateProjectResponse.cpp
   src/v20210622/model/DescribeLogListRequest.cpp

@@ -25,8 +25,6 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/ims/v20201229/model/ImageModerationRequest.h>
 #include <tencentcloud/ims/v20201229/model/ImageModerationResponse.h>
-#include <tencentcloud/ims/v20201229/model/ImageRecognitionRequest.h>
-#include <tencentcloud/ims/v20201229/model/ImageRecognitionResponse.h>
 
 
 namespace TencentCloud
@@ -44,9 +42,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ImageModerationResponse> ImageModerationOutcome;
                 typedef std::future<ImageModerationOutcome> ImageModerationOutcomeCallable;
                 typedef std::function<void(const ImsClient*, const Model::ImageModerationRequest&, ImageModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageModerationAsyncHandler;
-                typedef Outcome<Core::Error, Model::ImageRecognitionResponse> ImageRecognitionOutcome;
-                typedef std::future<ImageRecognitionOutcome> ImageRecognitionOutcomeCallable;
-                typedef std::function<void(const ImsClient*, const Model::ImageRecognitionRequest&, ImageRecognitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageRecognitionAsyncHandler;
 
 
 
@@ -94,15 +89,6 @@ namespace TencentCloud
                 ImageModerationOutcome ImageModeration(const Model::ImageModerationRequest &request);
                 void ImageModerationAsync(const Model::ImageModerationRequest& request, const ImageModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ImageModerationOutcomeCallable ImageModerationCallable(const Model::ImageModerationRequest& request);
-
-                /**
-                 *图片内容审核服务能自动扫描图片，识别可能令人反感、不安全或不适宜的内容，同时支持用户配置图片黑名单，打击自定义识别类型的图片。
-                 * @param req ImageRecognitionRequest
-                 * @return ImageRecognitionOutcome
-                 */
-                ImageRecognitionOutcome ImageRecognition(const Model::ImageRecognitionRequest &request);
-                void ImageRecognitionAsync(const Model::ImageRecognitionRequest& request, const ImageRecognitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ImageRecognitionOutcomeCallable ImageRecognitionCallable(const Model::ImageRecognitionRequest& request);
 
             };
         }

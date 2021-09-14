@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcb/v20180608/model/HpaPolicy.h>
 
 
 namespace TencentCloud
@@ -529,6 +530,20 @@ namespace TencentCloud
                      */
                     bool RepoLanguageHasBeenSet() const;
 
+                    /**
+                     * 获取自动扩缩容策略组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PolicyDetail 自动扩缩容策略组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<HpaPolicy> GetPolicyDetail() const;
+
+                    /**
+                     * 判断参数 PolicyDetail 是否已赋值
+                     * @return PolicyDetail 是否已赋值
+                     */
+                    bool PolicyDetailHasBeenSet() const;
+
                 private:
 
                     /**
@@ -773,6 +788,13 @@ namespace TencentCloud
                      */
                     std::string m_repoLanguage;
                     bool m_repoLanguageHasBeenSet;
+
+                    /**
+                     * 自动扩缩容策略组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<HpaPolicy> m_policyDetail;
+                    bool m_policyDetailHasBeenSet;
 
                 };
             }

@@ -307,17 +307,17 @@ namespace TencentCloud
                     bool BanStatusHasBeenSet() const;
 
                     /**
-                     * 获取事件类型
+                     * 获取事件类型：200-暴力破解事件，300-暴力破解成功事件（页面展示），400-暴力破解不存在的帐号事件
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EventType 事件类型
+                     * @return EventType 事件类型：200-暴力破解事件，300-暴力破解成功事件（页面展示），400-暴力破解不存在的帐号事件
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetEventType() const;
 
                     /**
-                     * 设置事件类型
+                     * 设置事件类型：200-暴力破解事件，300-暴力破解成功事件（页面展示），400-暴力破解不存在的帐号事件
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EventType 事件类型
+                     * @param EventType 事件类型：200-暴力破解事件，300-暴力破解成功事件（页面展示），400-暴力破解不存在的帐号事件
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetEventType(const uint64_t& _eventType);
@@ -568,7 +568,7 @@ namespace TencentCloud
                     bool m_banStatusHasBeenSet;
 
                     /**
-                     * 事件类型
+                     * 事件类型：200-暴力破解事件，300-暴力破解成功事件（页面展示），400-暴力破解不存在的帐号事件
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_eventType;

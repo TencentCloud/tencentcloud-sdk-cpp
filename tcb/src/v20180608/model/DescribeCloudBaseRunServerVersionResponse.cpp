@@ -59,7 +59,8 @@ DescribeCloudBaseRunServerVersionResponse::DescribeCloudBaseRunServerVersionResp
     m_hasDockerfileHasBeenSet(false),
     m_baseImageHasBeenSet(false),
     m_entryPointHasBeenSet(false),
-    m_repoLanguageHasBeenSet(false)
+    m_repoLanguageHasBeenSet(false),
+    m_policyDetailHasBeenSet(false)
 {
 }
 
@@ -460,6 +461,26 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
         m_repoLanguageHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PolicyDetail") && !rsp["PolicyDetail"].IsNull())
+    {
+        if (!rsp["PolicyDetail"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PolicyDetail` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["PolicyDetail"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            HpaPolicy item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_policyDetail.push_back(item);
+        }
+        m_policyDetailHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -761,6 +782,21 @@ string DescribeCloudBaseRunServerVersionResponse::ToJsonString() const
         string key = "RepoLanguage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_repoLanguage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_policyDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolicyDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_policyDetail.begin(); itr != m_policyDetail.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1133,6 +1169,16 @@ string DescribeCloudBaseRunServerVersionResponse::GetRepoLanguage() const
 bool DescribeCloudBaseRunServerVersionResponse::RepoLanguageHasBeenSet() const
 {
     return m_repoLanguageHasBeenSet;
+}
+
+vector<HpaPolicy> DescribeCloudBaseRunServerVersionResponse::GetPolicyDetail() const
+{
+    return m_policyDetail;
+}
+
+bool DescribeCloudBaseRunServerVersionResponse::PolicyDetailHasBeenSet() const
+{
+    return m_policyDetailHasBeenSet;
 }
 
 

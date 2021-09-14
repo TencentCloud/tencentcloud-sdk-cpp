@@ -148,6 +148,28 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取nat公网ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NatIp nat公网ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetNatIp() const;
+
+                    /**
+                     * 设置nat公网ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NatIp nat公网ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNatIp(const std::string& _natIp);
+
+                    /**
+                     * 判断参数 NatIp 是否已赋值
+                     * @return NatIp 是否已赋值
+                     */
+                    bool NatIpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +204,13 @@ namespace TencentCloud
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * nat公网ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_natIp;
+                    bool m_natIpHasBeenSet;
 
                 };
             }

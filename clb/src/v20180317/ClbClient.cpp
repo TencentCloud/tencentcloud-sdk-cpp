@@ -1459,6 +1459,49 @@ ClbClient::DescribeExclusiveClustersOutcomeCallable ClbClient::DescribeExclusive
     return task->get_future();
 }
 
+ClbClient::DescribeLBListenersOutcome ClbClient::DescribeLBListeners(const DescribeLBListenersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLBListeners");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLBListenersResponse rsp = DescribeLBListenersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLBListenersOutcome(rsp);
+        else
+            return DescribeLBListenersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLBListenersOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeLBListenersAsync(const DescribeLBListenersRequest& request, const DescribeLBListenersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLBListeners(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::DescribeLBListenersOutcomeCallable ClbClient::DescribeLBListenersCallable(const DescribeLBListenersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLBListenersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLBListeners(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::DescribeListenersOutcome ClbClient::DescribeListeners(const DescribeListenersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeListeners");

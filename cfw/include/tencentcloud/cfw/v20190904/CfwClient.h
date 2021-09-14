@@ -27,6 +27,8 @@
 #include <tencentcloud/cfw/v20190904/model/CreateAcRulesResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateChooseVpcsRequest.h>
 #include <tencentcloud/cfw/v20190904/model/CreateChooseVpcsResponse.h>
+#include <tencentcloud/cfw/v20190904/model/CreateDatabaseWhiteListRulesRequest.h>
+#include <tencentcloud/cfw/v20190904/model/CreateDatabaseWhiteListRulesResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateNatFwInstanceRequest.h>
 #include <tencentcloud/cfw/v20190904/model/CreateNatFwInstanceResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateSecurityGroupApiRulesRequest.h>
@@ -167,6 +169,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateChooseVpcsResponse> CreateChooseVpcsOutcome;
                 typedef std::future<CreateChooseVpcsOutcome> CreateChooseVpcsOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::CreateChooseVpcsRequest&, CreateChooseVpcsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateChooseVpcsAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDatabaseWhiteListRulesResponse> CreateDatabaseWhiteListRulesOutcome;
+                typedef std::future<CreateDatabaseWhiteListRulesOutcome> CreateDatabaseWhiteListRulesOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::CreateDatabaseWhiteListRulesRequest&, CreateDatabaseWhiteListRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatabaseWhiteListRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateNatFwInstanceResponse> CreateNatFwInstanceOutcome;
                 typedef std::future<CreateNatFwInstanceOutcome> CreateNatFwInstanceOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::CreateNatFwInstanceRequest&, CreateNatFwInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNatFwInstanceAsyncHandler;
@@ -367,6 +372,15 @@ namespace TencentCloud
                 CreateChooseVpcsOutcome CreateChooseVpcs(const Model::CreateChooseVpcsRequest &request);
                 void CreateChooseVpcsAsync(const Model::CreateChooseVpcsRequest& request, const CreateChooseVpcsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateChooseVpcsOutcomeCallable CreateChooseVpcsCallable(const Model::CreateChooseVpcsRequest& request);
+
+                /**
+                 *创建暴露数据库白名单规则
+                 * @param req CreateDatabaseWhiteListRulesRequest
+                 * @return CreateDatabaseWhiteListRulesOutcome
+                 */
+                CreateDatabaseWhiteListRulesOutcome CreateDatabaseWhiteListRules(const Model::CreateDatabaseWhiteListRulesRequest &request);
+                void CreateDatabaseWhiteListRulesAsync(const Model::CreateDatabaseWhiteListRulesRequest& request, const CreateDatabaseWhiteListRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDatabaseWhiteListRulesOutcomeCallable CreateDatabaseWhiteListRulesCallable(const Model::CreateDatabaseWhiteListRulesRequest& request);
 
                 /**
                  *创建防火墙实例

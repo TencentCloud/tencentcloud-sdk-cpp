@@ -89,6 +89,8 @@
 #include <tencentcloud/clb/v20180317/model/DescribeCustomizedConfigListResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeExclusiveClustersRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeExclusiveClustersResponse.h>
+#include <tencentcloud/clb/v20180317/model/DescribeLBListenersRequest.h>
+#include <tencentcloud/clb/v20180317/model/DescribeLBListenersResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeListenersRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeListenersResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeLoadBalancerListByCertIdRequest.h>
@@ -270,6 +272,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeExclusiveClustersResponse> DescribeExclusiveClustersOutcome;
                 typedef std::future<DescribeExclusiveClustersOutcome> DescribeExclusiveClustersOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeExclusiveClustersRequest&, DescribeExclusiveClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExclusiveClustersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLBListenersResponse> DescribeLBListenersOutcome;
+                typedef std::future<DescribeLBListenersOutcome> DescribeLBListenersOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DescribeLBListenersRequest&, DescribeLBListenersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLBListenersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeListenersResponse> DescribeListenersOutcome;
                 typedef std::future<DescribeListenersOutcome> DescribeListenersOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeListenersRequest&, DescribeListenersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeListenersAsyncHandler;
@@ -685,6 +690,15 @@ namespace TencentCloud
                 DescribeExclusiveClustersOutcome DescribeExclusiveClusters(const Model::DescribeExclusiveClustersRequest &request);
                 void DescribeExclusiveClustersAsync(const Model::DescribeExclusiveClustersRequest& request, const DescribeExclusiveClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeExclusiveClustersOutcomeCallable DescribeExclusiveClustersCallable(const Model::DescribeExclusiveClustersRequest& request);
+
+                /**
+                 *查询后端云主机或弹性网卡绑定的负载均衡，支持弹性网卡和cvm查询。
+                 * @param req DescribeLBListenersRequest
+                 * @return DescribeLBListenersOutcome
+                 */
+                DescribeLBListenersOutcome DescribeLBListeners(const Model::DescribeLBListenersRequest &request);
+                void DescribeLBListenersAsync(const Model::DescribeLBListenersRequest& request, const DescribeLBListenersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLBListenersOutcomeCallable DescribeLBListenersCallable(const Model::DescribeLBListenersRequest& request);
 
                 /**
                  *DescribeListeners 接口可根据负载均衡器 ID、监听器的协议或端口作为过滤条件获取监听器列表。如果不指定任何过滤条件，则返回该负载均衡实例下的所有监听器。

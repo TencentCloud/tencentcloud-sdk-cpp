@@ -30,6 +30,7 @@
 #include <tencentcloud/tcb/v20180608/model/CloudBaseSecurityContext.h>
 #include <tencentcloud/tcb/v20180608/model/CloudRunServiceVolume.h>
 #include <tencentcloud/tcb/v20180608/model/CloudBaseRunServiceVolumeMount.h>
+#include <tencentcloud/tcb/v20180608/model/HpaPolicy.h>
 
 
 namespace TencentCloud
@@ -825,6 +826,24 @@ namespace TencentCloud
                      */
                     bool UploadFilenameHasBeenSet() const;
 
+                    /**
+                     * 获取自动扩缩容策略组
+                     * @return PolicyDetail 自动扩缩容策略组
+                     */
+                    std::vector<HpaPolicy> GetPolicyDetail() const;
+
+                    /**
+                     * 设置自动扩缩容策略组
+                     * @param PolicyDetail 自动扩缩容策略组
+                     */
+                    void SetPolicyDetail(const std::vector<HpaPolicy>& _policyDetail);
+
+                    /**
+                     * 判断参数 PolicyDetail 是否已赋值
+                     * @return PolicyDetail 是否已赋值
+                     */
+                    bool PolicyDetailHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1084,6 +1103,12 @@ namespace TencentCloud
                      */
                     std::string m_uploadFilename;
                     bool m_uploadFilenameHasBeenSet;
+
+                    /**
+                     * 自动扩缩容策略组
+                     */
+                    std::vector<HpaPolicy> m_policyDetail;
+                    bool m_policyDetailHasBeenSet;
 
                 };
             }

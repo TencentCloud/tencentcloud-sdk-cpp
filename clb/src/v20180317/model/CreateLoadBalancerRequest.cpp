@@ -39,6 +39,7 @@ CreateLoadBalancerRequest::CreateLoadBalancerRequest() :
     m_vipHasBeenSet(false),
     m_bandwidthPackageIdHasBeenSet(false),
     m_exclusiveClusterHasBeenSet(false),
+    m_slaTypeHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_snatProHasBeenSet(false),
     m_snatIpsHasBeenSet(false),
@@ -190,6 +191,14 @@ string CreateLoadBalancerRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_exclusiveCluster.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_slaTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SlaType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_slaType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clientTokenHasBeenSet)
@@ -509,6 +518,22 @@ void CreateLoadBalancerRequest::SetExclusiveCluster(const ExclusiveCluster& _exc
 bool CreateLoadBalancerRequest::ExclusiveClusterHasBeenSet() const
 {
     return m_exclusiveClusterHasBeenSet;
+}
+
+string CreateLoadBalancerRequest::GetSlaType() const
+{
+    return m_slaType;
+}
+
+void CreateLoadBalancerRequest::SetSlaType(const string& _slaType)
+{
+    m_slaType = _slaType;
+    m_slaTypeHasBeenSet = true;
+}
+
+bool CreateLoadBalancerRequest::SlaTypeHasBeenSet() const
+{
+    return m_slaTypeHasBeenSet;
 }
 
 string CreateLoadBalancerRequest::GetClientToken() const

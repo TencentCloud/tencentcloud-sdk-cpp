@@ -65,6 +65,8 @@
 #include <tencentcloud/vod/v20180717/model/CreateSuperPlayerConfigResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateTranscodeTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateTranscodeTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateVodDomainRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateVodDomainResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateWatermarkTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateWatermarkTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateWordSamplesRequest.h>
@@ -101,6 +103,8 @@
 #include <tencentcloud/vod/v20180717/model/DeleteSuperPlayerConfigResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteTranscodeTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteTranscodeTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/DeleteVodDomainRequest.h>
+#include <tencentcloud/vod/v20180717/model/DeleteVodDomainResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteWatermarkTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteWatermarkTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteWordSamplesRequest.h>
@@ -221,6 +225,10 @@
 #include <tencentcloud/vod/v20180717/model/ModifySuperPlayerConfigResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyTranscodeTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyTranscodeTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/ModifyVodDomainAccelerateConfigRequest.h>
+#include <tencentcloud/vod/v20180717/model/ModifyVodDomainAccelerateConfigResponse.h>
+#include <tencentcloud/vod/v20180717/model/ModifyVodDomainConfigRequest.h>
+#include <tencentcloud/vod/v20180717/model/ModifyVodDomainConfigResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyWatermarkTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyWatermarkTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyWordSampleRequest.h>
@@ -326,6 +334,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTranscodeTemplateResponse> CreateTranscodeTemplateOutcome;
                 typedef std::future<CreateTranscodeTemplateOutcome> CreateTranscodeTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateTranscodeTemplateRequest&, CreateTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTranscodeTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateVodDomainResponse> CreateVodDomainOutcome;
+                typedef std::future<CreateVodDomainOutcome> CreateVodDomainOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateVodDomainRequest&, CreateVodDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVodDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateWatermarkTemplateResponse> CreateWatermarkTemplateOutcome;
                 typedef std::future<CreateWatermarkTemplateOutcome> CreateWatermarkTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateWatermarkTemplateRequest&, CreateWatermarkTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWatermarkTemplateAsyncHandler;
@@ -380,6 +391,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteTranscodeTemplateResponse> DeleteTranscodeTemplateOutcome;
                 typedef std::future<DeleteTranscodeTemplateOutcome> DeleteTranscodeTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteTranscodeTemplateRequest&, DeleteTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTranscodeTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteVodDomainResponse> DeleteVodDomainOutcome;
+                typedef std::future<DeleteVodDomainOutcome> DeleteVodDomainOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DeleteVodDomainRequest&, DeleteVodDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVodDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteWatermarkTemplateResponse> DeleteWatermarkTemplateOutcome;
                 typedef std::future<DeleteWatermarkTemplateOutcome> DeleteWatermarkTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteWatermarkTemplateRequest&, DeleteWatermarkTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWatermarkTemplateAsyncHandler;
@@ -560,6 +574,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyTranscodeTemplateResponse> ModifyTranscodeTemplateOutcome;
                 typedef std::future<ModifyTranscodeTemplateOutcome> ModifyTranscodeTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyTranscodeTemplateRequest&, ModifyTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTranscodeTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyVodDomainAccelerateConfigResponse> ModifyVodDomainAccelerateConfigOutcome;
+                typedef std::future<ModifyVodDomainAccelerateConfigOutcome> ModifyVodDomainAccelerateConfigOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ModifyVodDomainAccelerateConfigRequest&, ModifyVodDomainAccelerateConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVodDomainAccelerateConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyVodDomainConfigResponse> ModifyVodDomainConfigOutcome;
+                typedef std::future<ModifyVodDomainConfigOutcome> ModifyVodDomainConfigOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ModifyVodDomainConfigRequest&, ModifyVodDomainConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVodDomainConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyWatermarkTemplateResponse> ModifyWatermarkTemplateOutcome;
                 typedef std::future<ModifyWatermarkTemplateOutcome> ModifyWatermarkTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyWatermarkTemplateRequest&, ModifyWatermarkTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWatermarkTemplateAsyncHandler;
@@ -808,6 +828,16 @@ namespace TencentCloud
                 CreateTranscodeTemplateOutcomeCallable CreateTranscodeTemplateCallable(const Model::CreateTranscodeTemplateRequest& request);
 
                 /**
+                 *该接口用于将加速域名添加到点播，一个用户最多添加20个加速域名。
+1.域名添加成功后点播会进行域名的部署，域名由部署状态变为在线状态大概需要2分钟的时间。
+                 * @param req CreateVodDomainRequest
+                 * @return CreateVodDomainOutcome
+                 */
+                CreateVodDomainOutcome CreateVodDomain(const Model::CreateVodDomainRequest &request);
+                void CreateVodDomainAsync(const Model::CreateVodDomainRequest& request, const CreateVodDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVodDomainOutcomeCallable CreateVodDomainCallable(const Model::CreateVodDomainRequest& request);
+
+                /**
                  *创建用户自定义水印模板，数量上限：1000。
                  * @param req CreateWatermarkTemplateRequest
                  * @return CreateWatermarkTemplateOutcome
@@ -973,6 +1003,16 @@ namespace TencentCloud
                 DeleteTranscodeTemplateOutcome DeleteTranscodeTemplate(const Model::DeleteTranscodeTemplateRequest &request);
                 void DeleteTranscodeTemplateAsync(const Model::DeleteTranscodeTemplateRequest& request, const DeleteTranscodeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTranscodeTemplateOutcomeCallable DeleteTranscodeTemplateCallable(const Model::DeleteTranscodeTemplateRequest& request);
+
+                /**
+                 *该接口用于删除点播加速域名。
+1、域名删除前需要先关闭所有区域的加速。
+                 * @param req DeleteVodDomainRequest
+                 * @return DeleteVodDomainOutcome
+                 */
+                DeleteVodDomainOutcome DeleteVodDomain(const Model::DeleteVodDomainRequest &request);
+                void DeleteVodDomainAsync(const Model::DeleteVodDomainRequest& request, const DeleteVodDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteVodDomainOutcomeCallable DeleteVodDomainCallable(const Model::DeleteVodDomainRequest& request);
 
                 /**
                  *删除用户自定义水印模板。
@@ -1612,6 +1652,26 @@ namespace TencentCloud
                 ModifyTranscodeTemplateOutcome ModifyTranscodeTemplate(const Model::ModifyTranscodeTemplateRequest &request);
                 void ModifyTranscodeTemplateAsync(const Model::ModifyTranscodeTemplateRequest& request, const ModifyTranscodeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyTranscodeTemplateOutcomeCallable ModifyTranscodeTemplateCallable(const Model::ModifyTranscodeTemplateRequest& request);
+
+                /**
+                 *该接口用于开启或者关闭点播域名的加速区域。
+1、域名部署状态为 Online 状态时才允许开启或者关闭域名加速区域。
+                 * @param req ModifyVodDomainAccelerateConfigRequest
+                 * @return ModifyVodDomainAccelerateConfigOutcome
+                 */
+                ModifyVodDomainAccelerateConfigOutcome ModifyVodDomainAccelerateConfig(const Model::ModifyVodDomainAccelerateConfigRequest &request);
+                void ModifyVodDomainAccelerateConfigAsync(const Model::ModifyVodDomainAccelerateConfigRequest& request, const ModifyVodDomainAccelerateConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyVodDomainAccelerateConfigOutcomeCallable ModifyVodDomainAccelerateConfigCallable(const Model::ModifyVodDomainAccelerateConfigRequest& request);
+
+                /**
+                 *该接口用于修改域名配置，可以修改域名的防盗链配置。
+1、域名部署状态为 Online 状态时才允许修改域名的配置。
+                 * @param req ModifyVodDomainConfigRequest
+                 * @return ModifyVodDomainConfigOutcome
+                 */
+                ModifyVodDomainConfigOutcome ModifyVodDomainConfig(const Model::ModifyVodDomainConfigRequest &request);
+                void ModifyVodDomainConfigAsync(const Model::ModifyVodDomainConfigRequest& request, const ModifyVodDomainConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyVodDomainConfigOutcomeCallable ModifyVodDomainConfigCallable(const Model::ModifyVodDomainConfigRequest& request);
 
                 /**
                  *修改用户自定义水印模板，水印类型不允许修改。
