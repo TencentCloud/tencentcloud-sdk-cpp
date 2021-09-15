@@ -23,6 +23,7 @@ set(af_public_header_model
   include/tencentcloud/af/v20200226/model/FinanceAntiFraudRecord.h
   include/tencentcloud/af/v20200226/model/DescribeAntiFraudResponse.h
   include/tencentcloud/af/v20200226/model/RiskDetail.h
+  include/tencentcloud/af/v20200226/model/FinanceOtherModelScores.h
   include/tencentcloud/af/v20200226/model/RiskDetailInfo.h
   include/tencentcloud/af/v20200226/model/DescribeAntiFraudRequest.h
   include/tencentcloud/af/v20200226/model/FinanceAntiFraudFilter.h
@@ -36,6 +37,7 @@ set(af_src
   src/v20200226/model/FinanceAntiFraudRecord.cpp
   src/v20200226/model/DescribeAntiFraudResponse.cpp
   src/v20200226/model/RiskDetail.cpp
+  src/v20200226/model/FinanceOtherModelScores.cpp
   src/v20200226/model/RiskDetailInfo.cpp
   src/v20200226/model/DescribeAntiFraudRequest.cpp
   src/v20200226/model/FinanceAntiFraudFilter.cpp

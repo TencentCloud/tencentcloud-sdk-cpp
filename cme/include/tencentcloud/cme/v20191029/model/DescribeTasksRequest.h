@@ -149,14 +149,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页返回的记录条数，默认值：10。
-                     * @return Limit 分页返回的记录条数，默认值：10。
+                     * 获取分页返回的记录条数，默认值：10。最大值：20。
+                     * @return Limit 分页返回的记录条数，默认值：10。最大值：20。
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置分页返回的记录条数，默认值：10。
-                     * @param Limit 分页返回的记录条数，默认值：10。
+                     * 设置分页返回的记录条数，默认值：10。最大值：20。
+                     * @param Limit 分页返回的记录条数，默认值：10。最大值：20。
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -221,7 +221,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页返回的记录条数，默认值：10。
+                     * 分页返回的记录条数，默认值：10。最大值：20。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

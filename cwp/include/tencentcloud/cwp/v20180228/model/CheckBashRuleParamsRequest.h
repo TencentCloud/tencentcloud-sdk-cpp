@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取用户填入的正则表达式：“正则表达式“需与“提交EventId对应的命令内容”相匹配
-                     * @return Rule 用户填入的正则表达式：“正则表达式“需与“提交EventId对应的命令内容”相匹配
+                     * 获取用户填入的正则表达式："正则表达式" 需与 "提交EventId对应的命令内容" 相匹配
+                     * @return Rule 用户填入的正则表达式："正则表达式" 需与 "提交EventId对应的命令内容" 相匹配
                      */
                     std::string GetRule() const;
 
                     /**
-                     * 设置用户填入的正则表达式：“正则表达式“需与“提交EventId对应的命令内容”相匹配
-                     * @param Rule 用户填入的正则表达式：“正则表达式“需与“提交EventId对应的命令内容”相匹配
+                     * 设置用户填入的正则表达式："正则表达式" 需与 "提交EventId对应的命令内容" 相匹配
+                     * @param Rule 用户填入的正则表达式："正则表达式" 需与 "提交EventId对应的命令内容" 相匹配
                      */
                     void SetRule(const std::string& _rule);
 
@@ -153,7 +153,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 用户填入的正则表达式：“正则表达式“需与“提交EventId对应的命令内容”相匹配
+                     * 用户填入的正则表达式："正则表达式" 需与 "提交EventId对应的命令内容" 相匹配
                      */
                     std::string m_rule;
                     bool m_ruleHasBeenSet;

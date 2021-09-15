@@ -47,20 +47,20 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取带宽封顶配置开关
+                     * 获取用量封顶配置开关
 on：开启
 off：关闭
-                     * @return Switch 带宽封顶配置开关
+                     * @return Switch 用量封顶配置开关
 on：开启
 off：关闭
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置带宽封顶配置开关
+                     * 设置用量封顶配置开关
 on：开启
 off：关闭
-                     * @param Switch 带宽封顶配置开关
+                     * @param Switch 用量封顶配置开关
 on：开启
 off：关闭
                      */
@@ -73,17 +73,17 @@ off：关闭
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取带宽封顶阈值，单位为bps
+                     * 获取用量封顶阈值，带宽单位为bps，流量单位byte
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BpsThreshold 带宽封顶阈值，单位为bps
+                     * @return BpsThreshold 用量封顶阈值，带宽单位为bps，流量单位byte
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetBpsThreshold() const;
 
                     /**
-                     * 设置带宽封顶阈值，单位为bps
+                     * 设置用量封顶阈值，带宽单位为bps，流量单位byte
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BpsThreshold 带宽封顶阈值，单位为bps
+                     * @param BpsThreshold 用量封顶阈值，带宽单位为bps，流量单位byte
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBpsThreshold(const int64_t& _bpsThreshold);
@@ -125,17 +125,17 @@ RETURN_404：全部请求返回 404
                     bool CounterMeasureHasBeenSet() const;
 
                     /**
-                     * 获取境内区域上次触发带宽封顶阈值的时间
+                     * 获取境内区域上次触发用量封顶阈值的时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LastTriggerTime 境内区域上次触发带宽封顶阈值的时间
+                     * @return LastTriggerTime 境内区域上次触发用量封顶阈值的时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetLastTriggerTime() const;
 
                     /**
-                     * 设置境内区域上次触发带宽封顶阈值的时间
+                     * 设置境内区域上次触发用量封顶阈值的时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastTriggerTime 境内区域上次触发带宽封顶阈值的时间
+                     * @param LastTriggerTime 境内区域上次触发用量封顶阈值的时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLastTriggerTime(const std::string& _lastTriggerTime);
@@ -147,11 +147,11 @@ RETURN_404：全部请求返回 404
                     bool LastTriggerTimeHasBeenSet() const;
 
                     /**
-                     * 获取带宽封顶提醒开关
+                     * 获取用量封顶提醒开关
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AlertSwitch 带宽封顶提醒开关
+                     * @return AlertSwitch 用量封顶提醒开关
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
@@ -159,11 +159,11 @@ off：关闭
                     std::string GetAlertSwitch() const;
 
                     /**
-                     * 设置带宽封顶提醒开关
+                     * 设置用量封顶提醒开关
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlertSwitch 带宽封顶提醒开关
+                     * @param AlertSwitch 用量封顶提醒开关
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
@@ -177,17 +177,17 @@ off：关闭
                     bool AlertSwitchHasBeenSet() const;
 
                     /**
-                     * 获取带宽封顶阈值提醒百分比
+                     * 获取用量封顶阈值提醒百分比
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AlertPercentage 带宽封顶阈值提醒百分比
+                     * @return AlertPercentage 用量封顶阈值提醒百分比
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetAlertPercentage() const;
 
                     /**
-                     * 设置带宽封顶阈值提醒百分比
+                     * 设置用量封顶阈值提醒百分比
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlertPercentage 带宽封顶阈值提醒百分比
+                     * @param AlertPercentage 用量封顶阈值提醒百分比
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAlertPercentage(const int64_t& _alertPercentage);
@@ -199,17 +199,17 @@ off：关闭
                     bool AlertPercentageHasBeenSet() const;
 
                     /**
-                     * 获取海外区域上次触发带宽封顶阈值的时间
+                     * 获取海外区域上次触发用量封顶阈值的时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LastTriggerTimeOverseas 海外区域上次触发带宽封顶阈值的时间
+                     * @return LastTriggerTimeOverseas 海外区域上次触发用量封顶阈值的时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetLastTriggerTimeOverseas() const;
 
                     /**
-                     * 设置海外区域上次触发带宽封顶阈值的时间
+                     * 设置海外区域上次触发用量封顶阈值的时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastTriggerTimeOverseas 海外区域上次触发带宽封顶阈值的时间
+                     * @param LastTriggerTimeOverseas 海外区域上次触发用量封顶阈值的时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLastTriggerTimeOverseas(const std::string& _lastTriggerTimeOverseas);
@@ -220,10 +220,40 @@ off：关闭
                      */
                     bool LastTriggerTimeOverseasHasBeenSet() const;
 
+                    /**
+                     * 获取用量阈值触发的维度
+带宽：bandwidth
+流量：flux
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Metric 用量阈值触发的维度
+带宽：bandwidth
+流量：flux
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMetric() const;
+
+                    /**
+                     * 设置用量阈值触发的维度
+带宽：bandwidth
+流量：flux
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Metric 用量阈值触发的维度
+带宽：bandwidth
+流量：flux
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMetric(const std::string& _metric);
+
+                    /**
+                     * 判断参数 Metric 是否已赋值
+                     * @return Metric 是否已赋值
+                     */
+                    bool MetricHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 带宽封顶配置开关
+                     * 用量封顶配置开关
 on：开启
 off：关闭
                      */
@@ -231,7 +261,7 @@ off：关闭
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 带宽封顶阈值，单位为bps
+                     * 用量封顶阈值，带宽单位为bps，流量单位byte
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_bpsThreshold;
@@ -247,14 +277,14 @@ RETURN_404：全部请求返回 404
                     bool m_counterMeasureHasBeenSet;
 
                     /**
-                     * 境内区域上次触发带宽封顶阈值的时间
+                     * 境内区域上次触发用量封顶阈值的时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastTriggerTime;
                     bool m_lastTriggerTimeHasBeenSet;
 
                     /**
-                     * 带宽封顶提醒开关
+                     * 用量封顶提醒开关
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
@@ -263,18 +293,27 @@ off：关闭
                     bool m_alertSwitchHasBeenSet;
 
                     /**
-                     * 带宽封顶阈值提醒百分比
+                     * 用量封顶阈值提醒百分比
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_alertPercentage;
                     bool m_alertPercentageHasBeenSet;
 
                     /**
-                     * 海外区域上次触发带宽封顶阈值的时间
+                     * 海外区域上次触发用量封顶阈值的时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastTriggerTimeOverseas;
                     bool m_lastTriggerTimeOverseasHasBeenSet;
+
+                    /**
+                     * 用量阈值触发的维度
+带宽：bandwidth
+流量：flux
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_metric;
+                    bool m_metricHasBeenSet;
 
                 };
             }

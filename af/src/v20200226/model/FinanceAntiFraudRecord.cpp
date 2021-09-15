@@ -25,6 +25,7 @@ FinanceAntiFraudRecord::FinanceAntiFraudRecord() :
     m_idFoundHasBeenSet(false),
     m_riskScoreHasBeenSet(false),
     m_riskInfoHasBeenSet(false),
+    m_otherModelScoresHasBeenSet(false),
     m_codeHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
@@ -83,6 +84,26 @@ CoreInternalOutcome FinanceAntiFraudRecord::Deserialize(const rapidjson::Value &
             m_riskInfo.push_back(item);
         }
         m_riskInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("OtherModelScores") && !value["OtherModelScores"].IsNull())
+    {
+        if (!value["OtherModelScores"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FinanceAntiFraudRecord.OtherModelScores` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["OtherModelScores"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FinanceOtherModelScores item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_otherModelScores.push_back(item);
+        }
+        m_otherModelScoresHasBeenSet = true;
     }
 
     if (value.HasMember("Code") && !value["Code"].IsNull())
@@ -145,6 +166,21 @@ void FinanceAntiFraudRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Do
 
         int i=0;
         for (auto itr = m_riskInfo.begin(); itr != m_riskInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_otherModelScoresHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OtherModelScores";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_otherModelScores.begin(); itr != m_otherModelScores.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -232,6 +268,22 @@ void FinanceAntiFraudRecord::SetRiskInfo(const vector<RiskDetailInfo>& _riskInfo
 bool FinanceAntiFraudRecord::RiskInfoHasBeenSet() const
 {
     return m_riskInfoHasBeenSet;
+}
+
+vector<FinanceOtherModelScores> FinanceAntiFraudRecord::GetOtherModelScores() const
+{
+    return m_otherModelScores;
+}
+
+void FinanceAntiFraudRecord::SetOtherModelScores(const vector<FinanceOtherModelScores>& _otherModelScores)
+{
+    m_otherModelScores = _otherModelScores;
+    m_otherModelScoresHasBeenSet = true;
+}
+
+bool FinanceAntiFraudRecord::OtherModelScoresHasBeenSet() const
+{
+    return m_otherModelScoresHasBeenSet;
 }
 
 string FinanceAntiFraudRecord::GetCode() const

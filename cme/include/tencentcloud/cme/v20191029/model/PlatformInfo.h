@@ -119,6 +119,36 @@ namespace TencentCloud
                     bool LicenseIdHasBeenSet() const;
 
                     /**
+                     * 获取平台状态，可取值为：
+<li>Normal：正常，可使用。；</li>
+<li>Stopped：已停用，暂无法使用；</li>
+<li>Expired：已过期，需要重新购买会员包。</li>
+                     * @return Status 平台状态，可取值为：
+<li>Normal：正常，可使用。；</li>
+<li>Stopped：已停用，暂无法使用；</li>
+<li>Expired：已过期，需要重新购买会员包。</li>
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置平台状态，可取值为：
+<li>Normal：正常，可使用。；</li>
+<li>Stopped：已停用，暂无法使用；</li>
+<li>Expired：已过期，需要重新购买会员包。</li>
+                     * @param Status 平台状态，可取值为：
+<li>Normal：正常，可使用。；</li>
+<li>Stopped：已停用，暂无法使用；</li>
+<li>Expired：已过期，需要重新购买会员包。</li>
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
                      * 获取创建时间，格式按照 ISO 8601 标准表示。
                      * @return CreateTime 创建时间，格式按照 ISO 8601 标准表示。
                      */
@@ -179,6 +209,15 @@ namespace TencentCloud
                      */
                     std::string m_licenseId;
                     bool m_licenseIdHasBeenSet;
+
+                    /**
+                     * 平台状态，可取值为：
+<li>Normal：正常，可使用。；</li>
+<li>Stopped：已停用，暂无法使用；</li>
+<li>Expired：已过期，需要重新购买会员包。</li>
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
 
                     /**
                      * 创建时间，格式按照 ISO 8601 标准表示。

@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/af/v20200226/model/RiskDetailInfo.h>
+#include <tencentcloud/af/v20200226/model/FinanceOtherModelScores.h>
 
 
 namespace TencentCloud
@@ -136,6 +137,28 @@ namespace TencentCloud
                     bool RiskInfoHasBeenSet() const;
 
                     /**
+                     * 获取多模型返回结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OtherModelScores 多模型返回结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<FinanceOtherModelScores> GetOtherModelScores() const;
+
+                    /**
+                     * 设置多模型返回结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OtherModelScores 多模型返回结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOtherModelScores(const std::vector<FinanceOtherModelScores>& _otherModelScores);
+
+                    /**
+                     * 判断参数 OtherModelScores 是否已赋值
+                     * @return OtherModelScores 是否已赋值
+                     */
+                    bool OtherModelScoresHasBeenSet() const;
+
+                    /**
                      * 获取业务侧错误码。成功时返回0，错误时返回非0值
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 业务侧错误码。成功时返回0，错误时返回非0值
@@ -212,6 +235,13 @@ namespace TencentCloud
                      */
                     std::vector<RiskDetailInfo> m_riskInfo;
                     bool m_riskInfoHasBeenSet;
+
+                    /**
+                     * 多模型返回结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<FinanceOtherModelScores> m_otherModelScores;
+                    bool m_otherModelScoresHasBeenSet;
 
                     /**
                      * 业务侧错误码。成功时返回0，错误时返回非0值

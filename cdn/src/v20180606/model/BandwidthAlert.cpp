@@ -27,7 +27,8 @@ BandwidthAlert::BandwidthAlert() :
     m_lastTriggerTimeHasBeenSet(false),
     m_alertSwitchHasBeenSet(false),
     m_alertPercentageHasBeenSet(false),
-    m_lastTriggerTimeOverseasHasBeenSet(false)
+    m_lastTriggerTimeOverseasHasBeenSet(false),
+    m_metricHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome BandwidthAlert::Deserialize(const rapidjson::Value &value)
         m_lastTriggerTimeOverseasHasBeenSet = true;
     }
 
+    if (value.HasMember("Metric") && !value["Metric"].IsNull())
+    {
+        if (!value["Metric"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BandwidthAlert.Metric` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_metric = string(value["Metric"].GetString());
+        m_metricHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void BandwidthAlert::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "LastTriggerTimeOverseas";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_lastTriggerTimeOverseas.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_metricHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Metric";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_metric.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void BandwidthAlert::SetLastTriggerTimeOverseas(const string& _lastTriggerTimeOv
 bool BandwidthAlert::LastTriggerTimeOverseasHasBeenSet() const
 {
     return m_lastTriggerTimeOverseasHasBeenSet;
+}
+
+string BandwidthAlert::GetMetric() const
+{
+    return m_metric;
+}
+
+void BandwidthAlert::SetMetric(const string& _metric)
+{
+    m_metric = _metric;
+    m_metricHasBeenSet = true;
+}
+
+bool BandwidthAlert::MetricHasBeenSet() const
+{
+    return m_metricHasBeenSet;
 }
 

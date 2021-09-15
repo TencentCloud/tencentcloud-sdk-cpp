@@ -25,6 +25,7 @@ PlatformInfo::PlatformInfo() :
     m_descriptionHasBeenSet(false),
     m_vodSubAppIdHasBeenSet(false),
     m_licenseIdHasBeenSet(false),
+    m_statusHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
 {
@@ -73,6 +74,16 @@ CoreInternalOutcome PlatformInfo::Deserialize(const rapidjson::Value &value)
         }
         m_licenseId = string(value["LicenseId"].GetString());
         m_licenseIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PlatformInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
     }
 
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
@@ -132,6 +143,14 @@ void PlatformInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "LicenseId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_licenseId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
@@ -215,6 +234,22 @@ void PlatformInfo::SetLicenseId(const string& _licenseId)
 bool PlatformInfo::LicenseIdHasBeenSet() const
 {
     return m_licenseIdHasBeenSet;
+}
+
+string PlatformInfo::GetStatus() const
+{
+    return m_status;
+}
+
+void PlatformInfo::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool PlatformInfo::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 
 string PlatformInfo::GetCreateTime() const
