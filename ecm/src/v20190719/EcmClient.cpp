@@ -255,6 +255,49 @@ EcmClient::AssociateSecurityGroupsOutcomeCallable EcmClient::AssociateSecurityGr
     return task->get_future();
 }
 
+EcmClient::AttachDisksOutcome EcmClient::AttachDisks(const AttachDisksRequest &request)
+{
+    auto outcome = MakeRequest(request, "AttachDisks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AttachDisksResponse rsp = AttachDisksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AttachDisksOutcome(rsp);
+        else
+            return AttachDisksOutcome(o.GetError());
+    }
+    else
+    {
+        return AttachDisksOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::AttachDisksAsync(const AttachDisksRequest& request, const AttachDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AttachDisks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::AttachDisksOutcomeCallable EcmClient::AttachDisksCallable(const AttachDisksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AttachDisksOutcome()>>(
+        [this, request]()
+        {
+            return this->AttachDisks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::AttachNetworkInterfaceOutcome EcmClient::AttachNetworkInterface(const AttachNetworkInterfaceRequest &request)
 {
     auto outcome = MakeRequest(request, "AttachNetworkInterface");
@@ -420,6 +463,49 @@ EcmClient::BatchRegisterTargetsOutcomeCallable EcmClient::BatchRegisterTargetsCa
         [this, request]()
         {
             return this->BatchRegisterTargets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::CreateDisksOutcome EcmClient::CreateDisks(const CreateDisksRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDisks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDisksResponse rsp = CreateDisksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDisksOutcome(rsp);
+        else
+            return CreateDisksOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDisksOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::CreateDisksAsync(const CreateDisksRequest& request, const CreateDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDisks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::CreateDisksOutcomeCallable EcmClient::CreateDisksCallable(const CreateDisksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDisksOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDisks(request);
         }
     );
 
@@ -1416,6 +1502,49 @@ EcmClient::DeleteSecurityGroupPoliciesOutcomeCallable EcmClient::DeleteSecurityG
     return task->get_future();
 }
 
+EcmClient::DeleteSnapshotsOutcome EcmClient::DeleteSnapshots(const DeleteSnapshotsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSnapshots");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSnapshotsResponse rsp = DeleteSnapshotsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSnapshotsOutcome(rsp);
+        else
+            return DeleteSnapshotsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSnapshotsOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DeleteSnapshotsAsync(const DeleteSnapshotsRequest& request, const DeleteSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSnapshots(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DeleteSnapshotsOutcomeCallable EcmClient::DeleteSnapshotsCallable(const DeleteSnapshotsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSnapshotsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSnapshots(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::DeleteSubnetOutcome EcmClient::DeleteSubnet(const DeleteSubnetRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteSubnet");
@@ -1753,6 +1882,49 @@ EcmClient::DescribeDefaultSubnetOutcomeCallable EcmClient::DescribeDefaultSubnet
         [this, request]()
         {
             return this->DescribeDefaultSubnet(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::DescribeDisksOutcome EcmClient::DescribeDisks(const DescribeDisksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDisks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDisksResponse rsp = DescribeDisksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDisksOutcome(rsp);
+        else
+            return DescribeDisksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDisksOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DescribeDisksAsync(const DescribeDisksRequest& request, const DescribeDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDisks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DescribeDisksOutcomeCallable EcmClient::DescribeDisksCallable(const DescribeDisksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDisksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDisks(request);
         }
     );
 
@@ -2749,6 +2921,49 @@ EcmClient::DescribeSecurityGroupsOutcomeCallable EcmClient::DescribeSecurityGrou
     return task->get_future();
 }
 
+EcmClient::DescribeSnapshotsOutcome EcmClient::DescribeSnapshots(const DescribeSnapshotsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSnapshots");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSnapshotsResponse rsp = DescribeSnapshotsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSnapshotsOutcome(rsp);
+        else
+            return DescribeSnapshotsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSnapshotsOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DescribeSnapshotsAsync(const DescribeSnapshotsRequest& request, const DescribeSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSnapshots(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DescribeSnapshotsOutcomeCallable EcmClient::DescribeSnapshotsCallable(const DescribeSnapshotsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSnapshotsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSnapshots(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::DescribeSubnetsOutcome EcmClient::DescribeSubnets(const DescribeSubnetsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSubnets");
@@ -3000,6 +3215,49 @@ EcmClient::DescribeVpcsOutcomeCallable EcmClient::DescribeVpcsCallable(const Des
         [this, request]()
         {
             return this->DescribeVpcs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::DetachDisksOutcome EcmClient::DetachDisks(const DetachDisksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetachDisks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetachDisksResponse rsp = DetachDisksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetachDisksOutcome(rsp);
+        else
+            return DetachDisksOutcome(o.GetError());
+    }
+    else
+    {
+        return DetachDisksOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DetachDisksAsync(const DetachDisksRequest& request, const DetachDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DetachDisks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DetachDisksOutcomeCallable EcmClient::DetachDisksCallable(const DetachDisksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DetachDisksOutcome()>>(
+        [this, request]()
+        {
+            return this->DetachDisks(request);
         }
     );
 
@@ -5107,6 +5365,49 @@ EcmClient::StopInstancesOutcomeCallable EcmClient::StopInstancesCallable(const S
         [this, request]()
         {
             return this->StopInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::TerminateDisksOutcome EcmClient::TerminateDisks(const TerminateDisksRequest &request)
+{
+    auto outcome = MakeRequest(request, "TerminateDisks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TerminateDisksResponse rsp = TerminateDisksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TerminateDisksOutcome(rsp);
+        else
+            return TerminateDisksOutcome(o.GetError());
+    }
+    else
+    {
+        return TerminateDisksOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::TerminateDisksAsync(const TerminateDisksRequest& request, const TerminateDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TerminateDisks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::TerminateDisksOutcomeCallable EcmClient::TerminateDisksCallable(const TerminateDisksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TerminateDisksOutcome()>>(
+        [this, request]()
+        {
+            return this->TerminateDisks(request);
         }
     );
 

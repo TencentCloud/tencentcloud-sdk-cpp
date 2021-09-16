@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool BackupDayHasBeenSet() const;
 
+                    /**
+                     * 获取备份模式，master_pkg-主节点上打包备份文件；master_no_pkg-主节点单库备份文件；slave_pkg-从节点上打包备份文件；slave_no_pkg-从节点上单库备份文件，从节点上备份只有在always on容灾模式下支持。
+                     * @return BackupModel 备份模式，master_pkg-主节点上打包备份文件；master_no_pkg-主节点单库备份文件；slave_pkg-从节点上打包备份文件；slave_no_pkg-从节点上单库备份文件，从节点上备份只有在always on容灾模式下支持。
+                     */
+                    std::string GetBackupModel() const;
+
+                    /**
+                     * 设置备份模式，master_pkg-主节点上打包备份文件；master_no_pkg-主节点单库备份文件；slave_pkg-从节点上打包备份文件；slave_no_pkg-从节点上单库备份文件，从节点上备份只有在always on容灾模式下支持。
+                     * @param BackupModel 备份模式，master_pkg-主节点上打包备份文件；master_no_pkg-主节点单库备份文件；slave_pkg-从节点上打包备份文件；slave_no_pkg-从节点上单库备份文件，从节点上备份只有在always on容灾模式下支持。
+                     */
+                    void SetBackupModel(const std::string& _backupModel);
+
+                    /**
+                     * 判断参数 BackupModel 是否已赋值
+                     * @return BackupModel 是否已赋值
+                     */
+                    bool BackupModelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     uint64_t m_backupDay;
                     bool m_backupDayHasBeenSet;
+
+                    /**
+                     * 备份模式，master_pkg-主节点上打包备份文件；master_no_pkg-主节点单库备份文件；slave_pkg-从节点上打包备份文件；slave_no_pkg-从节点上单库备份文件，从节点上备份只有在always on容灾模式下支持。
+                     */
+                    std::string m_backupModel;
+                    bool m_backupModelHasBeenSet;
 
                 };
             }

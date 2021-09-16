@@ -31,11 +31,12 @@ DescribeBackupByFlowIdResponse::DescribeBackupByFlowIdResponse() :
     m_endTimeHasBeenSet(false),
     m_sizeHasBeenSet(false),
     m_strategyHasBeenSet(false),
-    m_backupWayHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_backupWayHasBeenSet(false),
     m_dBsHasBeenSet(false),
     m_internalAddrHasBeenSet(false),
-    m_externalAddrHasBeenSet(false)
+    m_externalAddrHasBeenSet(false),
+    m_groupIdHasBeenSet(false)
 {
 }
 
@@ -143,16 +144,6 @@ CoreInternalOutcome DescribeBackupByFlowIdResponse::Deserialize(const string &pa
         m_strategyHasBeenSet = true;
     }
 
-    if (rsp.HasMember("BackupWay") && !rsp["BackupWay"].IsNull())
-    {
-        if (!rsp["BackupWay"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `BackupWay` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_backupWay = rsp["BackupWay"].GetInt64();
-        m_backupWayHasBeenSet = true;
-    }
-
     if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
     {
         if (!rsp["Status"].IsInt64())
@@ -161,6 +152,16 @@ CoreInternalOutcome DescribeBackupByFlowIdResponse::Deserialize(const string &pa
         }
         m_status = rsp["Status"].GetInt64();
         m_statusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("BackupWay") && !rsp["BackupWay"].IsNull())
+    {
+        if (!rsp["BackupWay"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupWay` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupWay = rsp["BackupWay"].GetInt64();
+        m_backupWayHasBeenSet = true;
     }
 
     if (rsp.HasMember("DBs") && !rsp["DBs"].IsNull())
@@ -194,6 +195,16 @@ CoreInternalOutcome DescribeBackupByFlowIdResponse::Deserialize(const string &pa
         }
         m_externalAddr = string(rsp["ExternalAddr"].GetString());
         m_externalAddrHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("GroupId") && !rsp["GroupId"].IsNull())
+    {
+        if (!rsp["GroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupId = string(rsp["GroupId"].GetString());
+        m_groupIdHasBeenSet = true;
     }
 
 
@@ -262,20 +273,20 @@ string DescribeBackupByFlowIdResponse::ToJsonString() const
         value.AddMember(iKey, m_strategy, allocator);
     }
 
-    if (m_backupWayHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BackupWay";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_backupWay, allocator);
-    }
-
     if (m_statusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_backupWayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupWay";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backupWay, allocator);
     }
 
     if (m_dBsHasBeenSet)
@@ -305,6 +316,14 @@ string DescribeBackupByFlowIdResponse::ToJsonString() const
         string key = "ExternalAddr";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_externalAddr.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -389,16 +408,6 @@ bool DescribeBackupByFlowIdResponse::StrategyHasBeenSet() const
     return m_strategyHasBeenSet;
 }
 
-int64_t DescribeBackupByFlowIdResponse::GetBackupWay() const
-{
-    return m_backupWay;
-}
-
-bool DescribeBackupByFlowIdResponse::BackupWayHasBeenSet() const
-{
-    return m_backupWayHasBeenSet;
-}
-
 int64_t DescribeBackupByFlowIdResponse::GetStatus() const
 {
     return m_status;
@@ -407,6 +416,16 @@ int64_t DescribeBackupByFlowIdResponse::GetStatus() const
 bool DescribeBackupByFlowIdResponse::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+int64_t DescribeBackupByFlowIdResponse::GetBackupWay() const
+{
+    return m_backupWay;
+}
+
+bool DescribeBackupByFlowIdResponse::BackupWayHasBeenSet() const
+{
+    return m_backupWayHasBeenSet;
 }
 
 vector<string> DescribeBackupByFlowIdResponse::GetDBs() const
@@ -437,6 +456,16 @@ string DescribeBackupByFlowIdResponse::GetExternalAddr() const
 bool DescribeBackupByFlowIdResponse::ExternalAddrHasBeenSet() const
 {
     return m_externalAddrHasBeenSet;
+}
+
+string DescribeBackupByFlowIdResponse::GetGroupId() const
+{
+    return m_groupId;
+}
+
+bool DescribeBackupByFlowIdResponse::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
 }
 
 

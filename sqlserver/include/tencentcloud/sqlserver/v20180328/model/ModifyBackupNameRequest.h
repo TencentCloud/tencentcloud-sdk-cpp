@@ -61,6 +61,24 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
+                     * 获取修改的备份名称
+                     * @return BackupName 修改的备份名称
+                     */
+                    std::string GetBackupName() const;
+
+                    /**
+                     * 设置修改的备份名称
+                     * @param BackupName 修改的备份名称
+                     */
+                    void SetBackupName(const std::string& _backupName);
+
+                    /**
+                     * 判断参数 BackupName 是否已赋值
+                     * @return BackupName 是否已赋值
+                     */
+                    bool BackupNameHasBeenSet() const;
+
+                    /**
                      * 获取要修改名称的备份ID，可通过 [DescribeBackups](https://cloud.tencent.com/document/product/238/19943)  接口获取。
                      * @return BackupId 要修改名称的备份ID，可通过 [DescribeBackups](https://cloud.tencent.com/document/product/238/19943)  接口获取。
                      */
@@ -79,22 +97,26 @@ namespace TencentCloud
                     bool BackupIdHasBeenSet() const;
 
                     /**
-                     * 获取修改的备份名称
-                     * @return BackupName 修改的备份名称
+                     * 获取备份任务组ID，在单库备份文件模式下，可通过[DescribeBackups](https://cloud.tencent.com/document/product/238/19943) 接口获得。
+ BackupId 和 GroupId 同时存在，按照BackupId进行修改。
+                     * @return GroupId 备份任务组ID，在单库备份文件模式下，可通过[DescribeBackups](https://cloud.tencent.com/document/product/238/19943) 接口获得。
+ BackupId 和 GroupId 同时存在，按照BackupId进行修改。
                      */
-                    std::string GetBackupName() const;
+                    std::string GetGroupId() const;
 
                     /**
-                     * 设置修改的备份名称
-                     * @param BackupName 修改的备份名称
+                     * 设置备份任务组ID，在单库备份文件模式下，可通过[DescribeBackups](https://cloud.tencent.com/document/product/238/19943) 接口获得。
+ BackupId 和 GroupId 同时存在，按照BackupId进行修改。
+                     * @param GroupId 备份任务组ID，在单库备份文件模式下，可通过[DescribeBackups](https://cloud.tencent.com/document/product/238/19943) 接口获得。
+ BackupId 和 GroupId 同时存在，按照BackupId进行修改。
                      */
-                    void SetBackupName(const std::string& _backupName);
+                    void SetGroupId(const std::string& _groupId);
 
                     /**
-                     * 判断参数 BackupName 是否已赋值
-                     * @return BackupName 是否已赋值
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
                      */
-                    bool BackupNameHasBeenSet() const;
+                    bool GroupIdHasBeenSet() const;
 
                 private:
 
@@ -105,16 +127,23 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
+                     * 修改的备份名称
+                     */
+                    std::string m_backupName;
+                    bool m_backupNameHasBeenSet;
+
+                    /**
                      * 要修改名称的备份ID，可通过 [DescribeBackups](https://cloud.tencent.com/document/product/238/19943)  接口获取。
                      */
                     uint64_t m_backupId;
                     bool m_backupIdHasBeenSet;
 
                     /**
-                     * 修改的备份名称
+                     * 备份任务组ID，在单库备份文件模式下，可通过[DescribeBackups](https://cloud.tencent.com/document/product/238/19943) 接口获得。
+ BackupId 和 GroupId 同时存在，按照BackupId进行修改。
                      */
-                    std::string m_backupName;
-                    bool m_backupNameHasBeenSet;
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
 
                 };
             }

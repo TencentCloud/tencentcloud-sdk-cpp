@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_PARTNERS_V20180321_MODEL_DESCRIBECLIENTBASEINFOREQUEST_H_
-#define TENCENTCLOUD_PARTNERS_V20180321_MODEL_DESCRIBECLIENTBASEINFOREQUEST_H_
+#ifndef TENCENTCLOUD_ECM_V20190719_MODEL_TERMINATEDISKSREQUEST_H_
+#define TENCENTCLOUD_ECM_V20190719_MODEL_TERMINATEDISKSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -25,48 +25,48 @@
 
 namespace TencentCloud
 {
-    namespace Partners
+    namespace Ecm
     {
-        namespace V20180321
+        namespace V20190719
         {
             namespace Model
             {
                 /**
-                * DescribeClientBaseInfo请求参数结构体
+                * TerminateDisks请求参数结构体
                 */
-                class DescribeClientBaseInfoRequest : public AbstractModel
+                class TerminateDisksRequest : public AbstractModel
                 {
                 public:
-                    DescribeClientBaseInfoRequest();
-                    ~DescribeClientBaseInfoRequest() = default;
+                    TerminateDisksRequest();
+                    ~TerminateDisksRequest() = default;
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取代客UIN
-                     * @return ClientUin 代客UIN
+                     * 获取需退还的云盘ID列表。
+                     * @return DiskIds 需退还的云盘ID列表。
                      */
-                    std::string GetClientUin() const;
+                    std::vector<std::string> GetDiskIds() const;
 
                     /**
-                     * 设置代客UIN
-                     * @param ClientUin 代客UIN
+                     * 设置需退还的云盘ID列表。
+                     * @param DiskIds 需退还的云盘ID列表。
                      */
-                    void SetClientUin(const std::string& _clientUin);
+                    void SetDiskIds(const std::vector<std::string>& _diskIds);
 
                     /**
-                     * 判断参数 ClientUin 是否已赋值
-                     * @return ClientUin 是否已赋值
+                     * 判断参数 DiskIds 是否已赋值
+                     * @return DiskIds 是否已赋值
                      */
-                    bool ClientUinHasBeenSet() const;
+                    bool DiskIdsHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 代客UIN
+                     * 需退还的云盘ID列表。
                      */
-                    std::string m_clientUin;
-                    bool m_clientUinHasBeenSet;
+                    std::vector<std::string> m_diskIds;
+                    bool m_diskIdsHasBeenSet;
 
                 };
             }
@@ -74,4 +74,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_PARTNERS_V20180321_MODEL_DESCRIBECLIENTBASEINFOREQUEST_H_
+#endif // !TENCENTCLOUD_ECM_V20190719_MODEL_TERMINATEDISKSREQUEST_H_

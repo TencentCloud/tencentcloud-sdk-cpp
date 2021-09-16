@@ -36,7 +36,8 @@ DescribeDBInstancesRequest::DescribeDBInstancesRequest() :
     m_versionSetHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_tagKeysHasBeenSet(false),
-    m_searchKeyHasBeenSet(false)
+    m_searchKeyHasBeenSet(false),
+    m_uidSetHasBeenSet(false)
 {
 }
 
@@ -182,6 +183,19 @@ string DescribeDBInstancesRequest::ToJsonString() const
         string key = "SearchKey";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_searchKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uidSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UidSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_uidSet.begin(); itr != m_uidSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -414,6 +428,22 @@ void DescribeDBInstancesRequest::SetSearchKey(const string& _searchKey)
 bool DescribeDBInstancesRequest::SearchKeyHasBeenSet() const
 {
     return m_searchKeyHasBeenSet;
+}
+
+vector<string> DescribeDBInstancesRequest::GetUidSet() const
+{
+    return m_uidSet;
+}
+
+void DescribeDBInstancesRequest::SetUidSet(const vector<string>& _uidSet)
+{
+    m_uidSet = _uidSet;
+    m_uidSetHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::UidSetHasBeenSet() const
+{
+    return m_uidSetHasBeenSet;
 }
 
 

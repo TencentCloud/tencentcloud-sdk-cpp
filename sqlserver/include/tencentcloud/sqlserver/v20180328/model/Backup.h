@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件名
-                     * @return FileName 文件名
+                     * 获取文件名，对于单库备份文件不返回此值；单库备份文件通过DescribeBackupFiles接口获取文件名
+                     * @return FileName 文件名，对于单库备份文件不返回此值；单库备份文件通过DescribeBackupFiles接口获取文件名
                      */
                     std::string GetFileName() const;
 
                     /**
-                     * 设置文件名
-                     * @param FileName 文件名
+                     * 设置文件名，对于单库备份文件不返回此值；单库备份文件通过DescribeBackupFiles接口获取文件名
+                     * @param FileName 文件名，对于单库备份文件不返回此值；单库备份文件通过DescribeBackupFiles接口获取文件名
                      */
                     void SetFileName(const std::string& _fileName);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool FileNameHasBeenSet() const;
 
                     /**
-                     * 获取文件大小，单位 KB
-                     * @return Size 文件大小，单位 KB
+                     * 获取文件大小，单位 KB，对于单库备份文件不返回此值；单库备份文件通过DescribeBackupFiles接口获取文件大小
+                     * @return Size 文件大小，单位 KB，对于单库备份文件不返回此值；单库备份文件通过DescribeBackupFiles接口获取文件大小
                      */
                     int64_t GetSize() const;
 
                     /**
-                     * 设置文件大小，单位 KB
-                     * @param Size 文件大小，单位 KB
+                     * 设置文件大小，单位 KB，对于单库备份文件不返回此值；单库备份文件通过DescribeBackupFiles接口获取文件大小
+                     * @param Size 文件大小，单位 KB，对于单库备份文件不返回此值；单库备份文件通过DescribeBackupFiles接口获取文件大小
                      */
                     void SetSize(const int64_t& _size);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取内网下载地址
-                     * @return InternalAddr 内网下载地址
+                     * 获取内网下载地址，对于单库备份文件不返回此值；单库备份文件通过DescribeBackupFiles接口获取下载地址
+                     * @return InternalAddr 内网下载地址，对于单库备份文件不返回此值；单库备份文件通过DescribeBackupFiles接口获取下载地址
                      */
                     std::string GetInternalAddr() const;
 
                     /**
-                     * 设置内网下载地址
-                     * @param InternalAddr 内网下载地址
+                     * 设置内网下载地址，对于单库备份文件不返回此值；单库备份文件通过DescribeBackupFiles接口获取下载地址
+                     * @param InternalAddr 内网下载地址，对于单库备份文件不返回此值；单库备份文件通过DescribeBackupFiles接口获取下载地址
                      */
                     void SetInternalAddr(const std::string& _internalAddr);
 
@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool InternalAddrHasBeenSet() const;
 
                     /**
-                     * 获取外网下载地址
-                     * @return ExternalAddr 外网下载地址
+                     * 获取外网下载地址，对于单库备份文件不返回此值；单库备份文件通过DescribeBackupFiles接口获取下载地址
+                     * @return ExternalAddr 外网下载地址，对于单库备份文件不返回此值；单库备份文件通过DescribeBackupFiles接口获取下载地址
                      */
                     std::string GetExternalAddr() const;
 
                     /**
-                     * 设置外网下载地址
-                     * @param ExternalAddr 外网下载地址
+                     * 设置外网下载地址，对于单库备份文件不返回此值；单库备份文件通过DescribeBackupFiles接口获取下载地址
+                     * @param ExternalAddr 外网下载地址，对于单库备份文件不返回此值；单库备份文件通过DescribeBackupFiles接口获取下载地址
                      */
                     void SetExternalAddr(const std::string& _externalAddr);
 
@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool ExternalAddrHasBeenSet() const;
 
                     /**
-                     * 获取备份文件唯一标识，RestoreInstance接口会用到该字段
-                     * @return Id 备份文件唯一标识，RestoreInstance接口会用到该字段
+                     * 获取备份文件唯一标识，RestoreInstance接口会用到该字段，对于单库备份文件不返回此值；单库备份文件通过DescribeBackupFiles接口获取可回档的ID
+                     * @return Id 备份文件唯一标识，RestoreInstance接口会用到该字段，对于单库备份文件不返回此值；单库备份文件通过DescribeBackupFiles接口获取可回档的ID
                      */
                     uint64_t GetId() const;
 
                     /**
-                     * 设置备份文件唯一标识，RestoreInstance接口会用到该字段
-                     * @param Id 备份文件唯一标识，RestoreInstance接口会用到该字段
+                     * 设置备份文件唯一标识，RestoreInstance接口会用到该字段，对于单库备份文件不返回此值；单库备份文件通过DescribeBackupFiles接口获取可回档的ID
+                     * @param Id 备份文件唯一标识，RestoreInstance接口会用到该字段，对于单库备份文件不返回此值；单库备份文件通过DescribeBackupFiles接口获取可回档的ID
                      */
                     void SetId(const uint64_t& _id);
 
@@ -245,14 +245,14 @@ namespace TencentCloud
                     bool BackupWayHasBeenSet() const;
 
                     /**
-                     * 获取备份名称，可自定义
-                     * @return BackupName 备份名称，可自定义
+                     * 获取备份任务名称，可自定义
+                     * @return BackupName 备份任务名称，可自定义
                      */
                     std::string GetBackupName() const;
 
                     /**
-                     * 设置备份名称，可自定义
-                     * @param BackupName 备份名称，可自定义
+                     * 设置备份任务名称，可自定义
+                     * @param BackupName 备份任务名称，可自定义
                      */
                     void SetBackupName(const std::string& _backupName);
 
@@ -262,16 +262,34 @@ namespace TencentCloud
                      */
                     bool BackupNameHasBeenSet() const;
 
+                    /**
+                     * 获取聚合Id，对于打包备份文件不返回此值。通过此值调用DescribeBackupFiles接口，获取单库备份文件的详细信息
+                     * @return GroupId 聚合Id，对于打包备份文件不返回此值。通过此值调用DescribeBackupFiles接口，获取单库备份文件的详细信息
+                     */
+                    std::string GetGroupId() const;
+
+                    /**
+                     * 设置聚合Id，对于打包备份文件不返回此值。通过此值调用DescribeBackupFiles接口，获取单库备份文件的详细信息
+                     * @param GroupId 聚合Id，对于打包备份文件不返回此值。通过此值调用DescribeBackupFiles接口，获取单库备份文件的详细信息
+                     */
+                    void SetGroupId(const std::string& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     */
+                    bool GroupIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 文件名
+                     * 文件名，对于单库备份文件不返回此值；单库备份文件通过DescribeBackupFiles接口获取文件名
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
 
                     /**
-                     * 文件大小，单位 KB
+                     * 文件大小，单位 KB，对于单库备份文件不返回此值；单库备份文件通过DescribeBackupFiles接口获取文件大小
                      */
                     int64_t m_size;
                     bool m_sizeHasBeenSet;
@@ -289,19 +307,19 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 内网下载地址
+                     * 内网下载地址，对于单库备份文件不返回此值；单库备份文件通过DescribeBackupFiles接口获取下载地址
                      */
                     std::string m_internalAddr;
                     bool m_internalAddrHasBeenSet;
 
                     /**
-                     * 外网下载地址
+                     * 外网下载地址，对于单库备份文件不返回此值；单库备份文件通过DescribeBackupFiles接口获取下载地址
                      */
                     std::string m_externalAddr;
                     bool m_externalAddrHasBeenSet;
 
                     /**
-                     * 备份文件唯一标识，RestoreInstance接口会用到该字段
+                     * 备份文件唯一标识，RestoreInstance接口会用到该字段，对于单库备份文件不返回此值；单库备份文件通过DescribeBackupFiles接口获取可回档的ID
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
@@ -331,10 +349,16 @@ namespace TencentCloud
                     bool m_backupWayHasBeenSet;
 
                     /**
-                     * 备份名称，可自定义
+                     * 备份任务名称，可自定义
                      */
                     std::string m_backupName;
                     bool m_backupNameHasBeenSet;
+
+                    /**
+                     * 聚合Id，对于打包备份文件不返回此值。通过此值调用DescribeBackupFiles接口，获取单库备份文件的详细信息
+                     */
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
 
                 };
             }

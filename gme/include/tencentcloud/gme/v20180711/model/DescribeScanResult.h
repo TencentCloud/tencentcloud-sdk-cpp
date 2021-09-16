@@ -283,6 +283,24 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取提交检测的应用 ID
+                     * @return BizId 提交检测的应用 ID
+                     */
+                    uint64_t GetBizId() const;
+
+                    /**
+                     * 设置提交检测的应用 ID
+                     * @param BizId 提交检测的应用 ID
+                     */
+                    void SetBizId(const uint64_t& _bizId);
+
+                    /**
+                     * 判断参数 BizId 是否已赋值
+                     * @return BizId 是否已赋值
+                     */
+                    bool BizIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -361,6 +379,12 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 提交检测的应用 ID
+                     */
+                    uint64_t m_bizId;
+                    bool m_bizIdHasBeenSet;
 
                 };
             }

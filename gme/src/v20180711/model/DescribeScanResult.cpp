@@ -32,7 +32,8 @@ DescribeScanResult::DescribeScanResult() :
     m_scenesHasBeenSet(false),
     m_taskIdHasBeenSet(false),
     m_urlHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_bizIdHasBeenSet(false)
 {
 }
 
@@ -174,6 +175,16 @@ CoreInternalOutcome DescribeScanResult::Deserialize(const rapidjson::Value &valu
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("BizId") && !value["BizId"].IsNull())
+    {
+        if (!value["BizId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeScanResult.BizId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_bizId = value["BizId"].GetUint64();
+        m_bizIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -287,6 +298,14 @@ void DescribeScanResult::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bizIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BizId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bizId, allocator);
     }
 
 }
@@ -482,5 +501,21 @@ void DescribeScanResult::SetStatus(const string& _status)
 bool DescribeScanResult::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+uint64_t DescribeScanResult::GetBizId() const
+{
+    return m_bizId;
+}
+
+void DescribeScanResult::SetBizId(const uint64_t& _bizId)
+{
+    m_bizId = _bizId;
+    m_bizIdHasBeenSet = true;
+}
+
+bool DescribeScanResult::BizIdHasBeenSet() const
+{
+    return m_bizIdHasBeenSet;
 }
 

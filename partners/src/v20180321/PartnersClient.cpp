@@ -728,49 +728,6 @@ PartnersClient::DescribeClientBalanceNewOutcomeCallable PartnersClient::Describe
     return task->get_future();
 }
 
-PartnersClient::DescribeClientBaseInfoOutcome PartnersClient::DescribeClientBaseInfo(const DescribeClientBaseInfoRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeClientBaseInfo");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeClientBaseInfoResponse rsp = DescribeClientBaseInfoResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeClientBaseInfoOutcome(rsp);
-        else
-            return DescribeClientBaseInfoOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeClientBaseInfoOutcome(outcome.GetError());
-    }
-}
-
-void PartnersClient::DescribeClientBaseInfoAsync(const DescribeClientBaseInfoRequest& request, const DescribeClientBaseInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClientBaseInfo(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-PartnersClient::DescribeClientBaseInfoOutcomeCallable PartnersClient::DescribeClientBaseInfoCallable(const DescribeClientBaseInfoRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeClientBaseInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClientBaseInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 PartnersClient::DescribeRebateInfosOutcome PartnersClient::DescribeRebateInfos(const DescribeRebateInfosRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRebateInfos");

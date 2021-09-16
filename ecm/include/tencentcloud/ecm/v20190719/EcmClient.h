@@ -33,6 +33,8 @@
 #include <tencentcloud/ecm/v20190719/model/AssociateAddressResponse.h>
 #include <tencentcloud/ecm/v20190719/model/AssociateSecurityGroupsRequest.h>
 #include <tencentcloud/ecm/v20190719/model/AssociateSecurityGroupsResponse.h>
+#include <tencentcloud/ecm/v20190719/model/AttachDisksRequest.h>
+#include <tencentcloud/ecm/v20190719/model/AttachDisksResponse.h>
 #include <tencentcloud/ecm/v20190719/model/AttachNetworkInterfaceRequest.h>
 #include <tencentcloud/ecm/v20190719/model/AttachNetworkInterfaceResponse.h>
 #include <tencentcloud/ecm/v20190719/model/BatchDeregisterTargetsRequest.h>
@@ -41,6 +43,8 @@
 #include <tencentcloud/ecm/v20190719/model/BatchModifyTargetWeightResponse.h>
 #include <tencentcloud/ecm/v20190719/model/BatchRegisterTargetsRequest.h>
 #include <tencentcloud/ecm/v20190719/model/BatchRegisterTargetsResponse.h>
+#include <tencentcloud/ecm/v20190719/model/CreateDisksRequest.h>
+#include <tencentcloud/ecm/v20190719/model/CreateDisksResponse.h>
 #include <tencentcloud/ecm/v20190719/model/CreateHaVipRequest.h>
 #include <tencentcloud/ecm/v20190719/model/CreateHaVipResponse.h>
 #include <tencentcloud/ecm/v20190719/model/CreateImageRequest.h>
@@ -87,6 +91,8 @@
 #include <tencentcloud/ecm/v20190719/model/DeleteSecurityGroupResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DeleteSecurityGroupPoliciesRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DeleteSecurityGroupPoliciesResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DeleteSnapshotsRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DeleteSnapshotsResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DeleteSubnetRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DeleteSubnetResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DeleteVpcRequest.h>
@@ -103,6 +109,8 @@
 #include <tencentcloud/ecm/v20190719/model/DescribeCustomImageTaskResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeDefaultSubnetRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeDefaultSubnetResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeDisksRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeDisksResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeHaVipsRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeHaVipsResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeImageRequest.h>
@@ -149,6 +157,8 @@
 #include <tencentcloud/ecm/v20190719/model/DescribeSecurityGroupPoliciesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeSecurityGroupsRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeSecurityGroupsResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeSnapshotsRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeSnapshotsResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeSubnetsRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeSubnetsResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeTargetHealthRequest.h>
@@ -161,6 +171,8 @@
 #include <tencentcloud/ecm/v20190719/model/DescribeTaskStatusResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeVpcsRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeVpcsResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DetachDisksRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DetachDisksResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DetachNetworkInterfaceRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DetachNetworkInterfaceResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DisableRoutesRequest.h>
@@ -259,6 +271,8 @@
 #include <tencentcloud/ecm/v20190719/model/StartInstancesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/StopInstancesRequest.h>
 #include <tencentcloud/ecm/v20190719/model/StopInstancesResponse.h>
+#include <tencentcloud/ecm/v20190719/model/TerminateDisksRequest.h>
+#include <tencentcloud/ecm/v20190719/model/TerminateDisksResponse.h>
 #include <tencentcloud/ecm/v20190719/model/TerminateInstancesRequest.h>
 #include <tencentcloud/ecm/v20190719/model/TerminateInstancesResponse.h>
 
@@ -290,6 +304,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AssociateSecurityGroupsResponse> AssociateSecurityGroupsOutcome;
                 typedef std::future<AssociateSecurityGroupsOutcome> AssociateSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::AssociateSecurityGroupsRequest&, AssociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateSecurityGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::AttachDisksResponse> AttachDisksOutcome;
+                typedef std::future<AttachDisksOutcome> AttachDisksOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::AttachDisksRequest&, AttachDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachDisksAsyncHandler;
                 typedef Outcome<Core::Error, Model::AttachNetworkInterfaceResponse> AttachNetworkInterfaceOutcome;
                 typedef std::future<AttachNetworkInterfaceOutcome> AttachNetworkInterfaceOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::AttachNetworkInterfaceRequest&, AttachNetworkInterfaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachNetworkInterfaceAsyncHandler;
@@ -302,6 +319,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BatchRegisterTargetsResponse> BatchRegisterTargetsOutcome;
                 typedef std::future<BatchRegisterTargetsOutcome> BatchRegisterTargetsOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::BatchRegisterTargetsRequest&, BatchRegisterTargetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchRegisterTargetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDisksResponse> CreateDisksOutcome;
+                typedef std::future<CreateDisksOutcome> CreateDisksOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::CreateDisksRequest&, CreateDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDisksAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateHaVipResponse> CreateHaVipOutcome;
                 typedef std::future<CreateHaVipOutcome> CreateHaVipOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::CreateHaVipRequest&, CreateHaVipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateHaVipAsyncHandler;
@@ -371,6 +391,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteSecurityGroupPoliciesResponse> DeleteSecurityGroupPoliciesOutcome;
                 typedef std::future<DeleteSecurityGroupPoliciesOutcome> DeleteSecurityGroupPoliciesOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DeleteSecurityGroupPoliciesRequest&, DeleteSecurityGroupPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityGroupPoliciesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSnapshotsResponse> DeleteSnapshotsOutcome;
+                typedef std::future<DeleteSnapshotsOutcome> DeleteSnapshotsOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DeleteSnapshotsRequest&, DeleteSnapshotsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSnapshotsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSubnetResponse> DeleteSubnetOutcome;
                 typedef std::future<DeleteSubnetOutcome> DeleteSubnetOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DeleteSubnetRequest&, DeleteSubnetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSubnetAsyncHandler;
@@ -395,6 +418,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDefaultSubnetResponse> DescribeDefaultSubnetOutcome;
                 typedef std::future<DescribeDefaultSubnetOutcome> DescribeDefaultSubnetOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribeDefaultSubnetRequest&, DescribeDefaultSubnetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDefaultSubnetAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDisksResponse> DescribeDisksOutcome;
+                typedef std::future<DescribeDisksOutcome> DescribeDisksOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DescribeDisksRequest&, DescribeDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDisksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeHaVipsResponse> DescribeHaVipsOutcome;
                 typedef std::future<DescribeHaVipsOutcome> DescribeHaVipsOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribeHaVipsRequest&, DescribeHaVipsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHaVipsAsyncHandler;
@@ -464,6 +490,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSecurityGroupsResponse> DescribeSecurityGroupsOutcome;
                 typedef std::future<DescribeSecurityGroupsOutcome> DescribeSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribeSecurityGroupsRequest&, DescribeSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSnapshotsResponse> DescribeSnapshotsOutcome;
+                typedef std::future<DescribeSnapshotsOutcome> DescribeSnapshotsOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DescribeSnapshotsRequest&, DescribeSnapshotsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSubnetsResponse> DescribeSubnetsOutcome;
                 typedef std::future<DescribeSubnetsOutcome> DescribeSubnetsOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribeSubnetsRequest&, DescribeSubnetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubnetsAsyncHandler;
@@ -482,6 +511,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVpcsResponse> DescribeVpcsOutcome;
                 typedef std::future<DescribeVpcsOutcome> DescribeVpcsOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribeVpcsRequest&, DescribeVpcsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DetachDisksResponse> DetachDisksOutcome;
+                typedef std::future<DetachDisksOutcome> DetachDisksOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DetachDisksRequest&, DetachDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachDisksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DetachNetworkInterfaceResponse> DetachNetworkInterfaceOutcome;
                 typedef std::future<DetachNetworkInterfaceOutcome> DetachNetworkInterfaceOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DetachNetworkInterfaceRequest&, DetachNetworkInterfaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachNetworkInterfaceAsyncHandler;
@@ -629,6 +661,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopInstancesResponse> StopInstancesOutcome;
                 typedef std::future<StopInstancesOutcome> StopInstancesOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::StopInstancesRequest&, StopInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::TerminateDisksResponse> TerminateDisksOutcome;
+                typedef std::future<TerminateDisksOutcome> TerminateDisksOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::TerminateDisksRequest&, TerminateDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateDisksAsyncHandler;
                 typedef Outcome<Core::Error, Model::TerminateInstancesResponse> TerminateInstancesOutcome;
                 typedef std::future<TerminateInstancesOutcome> TerminateInstancesOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::TerminateInstancesRequest&, TerminateInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateInstancesAsyncHandler;
@@ -684,6 +719,18 @@ namespace TencentCloud
                 AssociateSecurityGroupsOutcomeCallable AssociateSecurityGroupsCallable(const Model::AssociateSecurityGroupsRequest& request);
 
                 /**
+                 *本接口（AttachDisks）用于挂载云硬盘。
+ 
+* 支持批量操作，将多块云盘挂载到同一云主机。如果多个云盘中存在不允许挂载的云盘，则操作不执行，返回特定的错误码。
+* 本接口为异步接口，当挂载云盘的请求成功返回时，表示后台已发起挂载云盘的操作，可通过接口[DescribeDisks](/document/product/362/16315)来查询对应云盘的状态，如果云盘的状态由“ATTACHING”变为“ATTACHED”，则为挂载成功。
+                 * @param req AttachDisksRequest
+                 * @return AttachDisksOutcome
+                 */
+                AttachDisksOutcome AttachDisks(const Model::AttachDisksRequest &request);
+                void AttachDisksAsync(const Model::AttachDisksRequest& request, const AttachDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AttachDisksOutcomeCallable AttachDisksCallable(const Model::AttachDisksRequest& request);
+
+                /**
                  *弹性网卡绑定云主机
                  * @param req AttachNetworkInterfaceRequest
                  * @return AttachNetworkInterfaceOutcome
@@ -718,6 +765,19 @@ namespace TencentCloud
                 BatchRegisterTargetsOutcome BatchRegisterTargets(const Model::BatchRegisterTargetsRequest &request);
                 void BatchRegisterTargetsAsync(const Model::BatchRegisterTargetsRequest& request, const BatchRegisterTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BatchRegisterTargetsOutcomeCallable BatchRegisterTargetsCallable(const Model::BatchRegisterTargetsRequest& request);
+
+                /**
+                 *本接口（CreateDisks）用于创建云硬盘。
+
+* 预付费云盘的购买会预先扣除本次云盘购买所需金额，在调用本接口前请确保账户余额充足。
+* 本接口支持传入数据盘快照来创建云盘，实现将快照数据复制到新购云盘上。
+* 本接口为异步接口，当创建请求下发成功后会返回一个新建的云盘ID列表，此时云盘的创建并未立即完成。可以通过调用[DescribeDisks](/document/product/362/16315)接口根据DiskId查询对应云盘，如果能查到云盘，且状态为'UNATTACHED'或'ATTACHED'，则表示创建成功。
+                 * @param req CreateDisksRequest
+                 * @return CreateDisksOutcome
+                 */
+                CreateDisksOutcome CreateDisks(const Model::CreateDisksRequest &request);
+                void CreateDisksAsync(const Model::CreateDisksRequest& request, const CreateDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDisksOutcomeCallable CreateDisksCallable(const Model::CreateDisksRequest& request);
 
                 /**
                  *本接口（CreateHaVip）用于创建高可用虚拟IP（HAVIP）
@@ -942,6 +1002,18 @@ namespace TencentCloud
                 DeleteSecurityGroupPoliciesOutcomeCallable DeleteSecurityGroupPoliciesCallable(const Model::DeleteSecurityGroupPoliciesRequest& request);
 
                 /**
+                 *本接口（DeleteSnapshots）用于删除快照。
+
+* 快照必须处于NORMAL状态，快照状态可以通过[DescribeSnapshots](/document/product/362/15647)接口查询，见输出参数中SnapshotState字段解释。
+* 支持批量操作。如果多个快照存在无法删除的快照，则操作不执行，以返回特定的错误码返回。
+                 * @param req DeleteSnapshotsRequest
+                 * @return DeleteSnapshotsOutcome
+                 */
+                DeleteSnapshotsOutcome DeleteSnapshots(const Model::DeleteSnapshotsRequest &request);
+                void DeleteSnapshotsAsync(const Model::DeleteSnapshotsRequest& request, const DeleteSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSnapshotsOutcomeCallable DeleteSnapshotsCallable(const Model::DeleteSnapshotsRequest& request);
+
+                /**
                  *删除子网，若子网为可用区下的默认子网，则默认子网会回退到系统自动创建的默认子网，非用户最新创建的子网。若默认子网不满足需求，可调用设置默认子网接口设置。
                  * @param req DeleteSubnetRequest
                  * @return DeleteSubnetOutcome
@@ -1012,6 +1084,18 @@ namespace TencentCloud
                 DescribeDefaultSubnetOutcome DescribeDefaultSubnet(const Model::DescribeDefaultSubnetRequest &request);
                 void DescribeDefaultSubnetAsync(const Model::DescribeDefaultSubnetRequest& request, const DescribeDefaultSubnetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDefaultSubnetOutcomeCallable DescribeDefaultSubnetCallable(const Model::DescribeDefaultSubnetRequest& request);
+
+                /**
+                 *本接口（DescribeDisks）用于查询云硬盘列表。
+
+* 可以根据云硬盘ID、云硬盘类型或者云硬盘状态等信息来查询云硬盘的详细信息，不同条件之间为与(AND)的关系，过滤信息详细请见过滤器`Filter`。
+* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的云硬盘列表。
+                 * @param req DescribeDisksRequest
+                 * @return DescribeDisksOutcome
+                 */
+                DescribeDisksOutcome DescribeDisks(const Model::DescribeDisksRequest &request);
+                void DescribeDisksAsync(const Model::DescribeDisksRequest& request, const DescribeDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDisksOutcomeCallable DescribeDisksCallable(const Model::DescribeDisksRequest& request);
 
                 /**
                  *用于查询高可用虚拟IP（HAVIP）列表。
@@ -1221,6 +1305,18 @@ namespace TencentCloud
                 DescribeSecurityGroupsOutcomeCallable DescribeSecurityGroupsCallable(const Model::DescribeSecurityGroupsRequest& request);
 
                 /**
+                 *本接口（DescribeSnapshots）用于查询快照的详细信息。
+
+* 根据快照ID、创建快照的云硬盘ID、创建快照的云硬盘类型等对结果进行过滤，不同条件之间为与(AND)的关系，过滤信息详细请见过滤器`Filter`。
+*  如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的快照列表。
+                 * @param req DescribeSnapshotsRequest
+                 * @return DescribeSnapshotsOutcome
+                 */
+                DescribeSnapshotsOutcome DescribeSnapshots(const Model::DescribeSnapshotsRequest &request);
+                void DescribeSnapshotsAsync(const Model::DescribeSnapshotsRequest& request, const DescribeSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSnapshotsOutcomeCallable DescribeSnapshotsCallable(const Model::DescribeSnapshotsRequest& request);
+
+                /**
                  *查询子网列表
                  * @param req DescribeSubnetsRequest
                  * @return DescribeSubnetsOutcome
@@ -1273,6 +1369,18 @@ namespace TencentCloud
                 DescribeVpcsOutcome DescribeVpcs(const Model::DescribeVpcsRequest &request);
                 void DescribeVpcsAsync(const Model::DescribeVpcsRequest& request, const DescribeVpcsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVpcsOutcomeCallable DescribeVpcsCallable(const Model::DescribeVpcsRequest& request);
+
+                /**
+                 *本接口（DetachDisks）用于卸载云硬盘。
+
+* 支持批量操作，卸载挂载在同一主机上的多块云盘。如果多块云盘中存在不允许卸载的云盘，则操作不执行，返回特定的错误码。
+* 本接口为异步接口，当请求成功返回时，云盘并未立即从主机卸载，可通过接口[DescribeDisks](/document/product/362/16315)来查询对应云盘的状态，如果云盘的状态由“ATTACHED”变为“UNATTACHED”，则为卸载成功。
+                 * @param req DetachDisksRequest
+                 * @return DetachDisksOutcome
+                 */
+                DetachDisksOutcome DetachDisks(const Model::DetachDisksRequest &request);
+                void DetachDisksAsync(const Model::DetachDisksRequest& request, const DetachDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DetachDisksOutcomeCallable DetachDisksCallable(const Model::DetachDisksRequest& request);
 
                 /**
                  *弹性网卡解绑云主机
@@ -1725,6 +1833,19 @@ EIP 如果被封堵，则不能进行解绑定操作。
                 StopInstancesOutcome StopInstances(const Model::StopInstancesRequest &request);
                 void StopInstancesAsync(const Model::StopInstancesRequest& request, const StopInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopInstancesOutcomeCallable StopInstancesCallable(const Model::StopInstancesRequest& request);
+
+                /**
+                 *本接口（TerminateDisks）用于退还云硬盘。
+
+* 不再使用的云盘，可通过本接口主动退还。
+* 本接口支持退还预付费云盘和按小时后付费云盘。按小时后付费云盘可直接退还，预付费云盘需符合退还规则。
+* 支持批量操作，每次请求批量云硬盘的上限为50。如果批量云盘存在不允许操作的，请求会以特定错误码返回。
+                 * @param req TerminateDisksRequest
+                 * @return TerminateDisksOutcome
+                 */
+                TerminateDisksOutcome TerminateDisks(const Model::TerminateDisksRequest &request);
+                void TerminateDisksAsync(const Model::TerminateDisksRequest& request, const TerminateDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TerminateDisksOutcomeCallable TerminateDisksCallable(const Model::TerminateDisksRequest& request);
 
                 /**
                  *销毁实例

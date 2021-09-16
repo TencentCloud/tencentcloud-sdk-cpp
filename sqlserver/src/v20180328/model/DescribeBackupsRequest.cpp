@@ -32,7 +32,8 @@ DescribeBackupsRequest::DescribeBackupsRequest() :
     m_strategyHasBeenSet(false),
     m_backupWayHasBeenSet(false),
     m_backupIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false)
+    m_databaseNameHasBeenSet(false),
+    m_groupHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,14 @@ string DescribeBackupsRequest::ToJsonString() const
         string key = "DatabaseName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_databaseName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Group";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_group, allocator);
     }
 
 
@@ -289,6 +298,22 @@ void DescribeBackupsRequest::SetDatabaseName(const string& _databaseName)
 bool DescribeBackupsRequest::DatabaseNameHasBeenSet() const
 {
     return m_databaseNameHasBeenSet;
+}
+
+int64_t DescribeBackupsRequest::GetGroup() const
+{
+    return m_group;
+}
+
+void DescribeBackupsRequest::SetGroup(const int64_t& _group)
+{
+    m_group = _group;
+    m_groupHasBeenSet = true;
+}
+
+bool DescribeBackupsRequest::GroupHasBeenSet() const
+{
+    return m_groupHasBeenSet;
 }
 
 

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取备份文件唯一标识，RestoreInstance接口会用到该字段
-                     * @return Id 备份文件唯一标识，RestoreInstance接口会用到该字段
+                     * 获取备份文件唯一标识，RestoreInstance接口会用到该字段，对于单库备份文件只返回第一条记录的备份文件唯一标识；单库备份文件需要通过DescribeBackupFiles接口获取全部记录的可回档的ID
+                     * @return Id 备份文件唯一标识，RestoreInstance接口会用到该字段，对于单库备份文件只返回第一条记录的备份文件唯一标识；单库备份文件需要通过DescribeBackupFiles接口获取全部记录的可回档的ID
                      */
                     uint64_t GetId() const;
 
@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取存储文件名
-                     * @return FileName 存储文件名
+                     * 获取文件名，对于单库备份文件只返回第一条记录的文件名；单库备份文件需要通过DescribeBackupFiles接口获取全部记录的文件名
+                     * @return FileName 文件名，对于单库备份文件只返回第一条记录的文件名；单库备份文件需要通过DescribeBackupFiles接口获取全部记录的文件名
                      */
                     std::string GetFileName() const;
 
@@ -68,8 +68,8 @@ namespace TencentCloud
                     bool FileNameHasBeenSet() const;
 
                     /**
-                     * 获取备份名称，可自定义
-                     * @return BackupName 备份名称，可自定义
+                     * 获取备份任务名称，可自定义
+                     * @return BackupName 备份任务名称，可自定义
                      */
                     std::string GetBackupName() const;
 
@@ -104,8 +104,8 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取文件大小，单位 KB
-                     * @return Size 文件大小，单位 KB
+                     * 获取文件大小，单位 KB，对于单库备份文件只返回第一条记录的文件大小；单库备份文件需要通过DescribeBackupFiles接口获取全部记录的文件大小
+                     * @return Size 文件大小，单位 KB，对于单库备份文件只返回第一条记录的文件大小；单库备份文件需要通过DescribeBackupFiles接口获取全部记录的文件大小
                      */
                     uint64_t GetSize() const;
 
@@ -128,18 +128,6 @@ namespace TencentCloud
                     bool StrategyHasBeenSet() const;
 
                     /**
-                     * 获取备份方式，0-定时备份；1-手动临时备份；实例状态是0-创建中时，该字段为默认值0，无实际意义
-                     * @return BackupWay 备份方式，0-定时备份；1-手动临时备份；实例状态是0-创建中时，该字段为默认值0，无实际意义
-                     */
-                    int64_t GetBackupWay() const;
-
-                    /**
-                     * 判断参数 BackupWay 是否已赋值
-                     * @return BackupWay 是否已赋值
-                     */
-                    bool BackupWayHasBeenSet() const;
-
-                    /**
                      * 获取备份文件状态，0-创建中；1-成功；2-失败
                      * @return Status 备份文件状态，0-创建中；1-成功；2-失败
                      */
@@ -152,8 +140,20 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取多库备份时的DB列表
-                     * @return DBs 多库备份时的DB列表
+                     * 获取备份方式，0-定时备份；1-手动临时备份；实例状态是0-创建中时，该字段为默认值0，无实际意义
+                     * @return BackupWay 备份方式，0-定时备份；1-手动临时备份；实例状态是0-创建中时，该字段为默认值0，无实际意义
+                     */
+                    int64_t GetBackupWay() const;
+
+                    /**
+                     * 判断参数 BackupWay 是否已赋值
+                     * @return BackupWay 是否已赋值
+                     */
+                    bool BackupWayHasBeenSet() const;
+
+                    /**
+                     * 获取DB列表，对于单库备份文件只返回第一条记录包含的库名；单库备份文件需要通过DescribeBackupFiles接口获取全部记录的库名。
+                     * @return DBs DB列表，对于单库备份文件只返回第一条记录包含的库名；单库备份文件需要通过DescribeBackupFiles接口获取全部记录的库名。
                      */
                     std::vector<std::string> GetDBs() const;
 
@@ -164,8 +164,8 @@ namespace TencentCloud
                     bool DBsHasBeenSet() const;
 
                     /**
-                     * 获取内网下载地址
-                     * @return InternalAddr 内网下载地址
+                     * 获取内网下载地址，对于单库备份文件只返回第一条记录的内网下载地址；单库备份文件需要通过DescribeBackupFiles接口获取全部记录的下载地址
+                     * @return InternalAddr 内网下载地址，对于单库备份文件只返回第一条记录的内网下载地址；单库备份文件需要通过DescribeBackupFiles接口获取全部记录的下载地址
                      */
                     std::string GetInternalAddr() const;
 
@@ -176,8 +176,8 @@ namespace TencentCloud
                     bool InternalAddrHasBeenSet() const;
 
                     /**
-                     * 获取外网下载地址
-                     * @return ExternalAddr 外网下载地址
+                     * 获取外网下载地址，对于单库备份文件只返回第一条记录的外网下载地址；单库备份文件需要通过DescribeBackupFiles接口获取全部记录的下载地址
+                     * @return ExternalAddr 外网下载地址，对于单库备份文件只返回第一条记录的外网下载地址；单库备份文件需要通过DescribeBackupFiles接口获取全部记录的下载地址
                      */
                     std::string GetExternalAddr() const;
 
@@ -187,22 +187,34 @@ namespace TencentCloud
                      */
                     bool ExternalAddrHasBeenSet() const;
 
+                    /**
+                     * 获取聚合Id，对于打包备份文件不返回此值。通过此值调用DescribeBackupFiles接口，获取单库备份文件的详细信息
+                     * @return GroupId 聚合Id，对于打包备份文件不返回此值。通过此值调用DescribeBackupFiles接口，获取单库备份文件的详细信息
+                     */
+                    std::string GetGroupId() const;
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     */
+                    bool GroupIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 备份文件唯一标识，RestoreInstance接口会用到该字段
+                     * 备份文件唯一标识，RestoreInstance接口会用到该字段，对于单库备份文件只返回第一条记录的备份文件唯一标识；单库备份文件需要通过DescribeBackupFiles接口获取全部记录的可回档的ID
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 存储文件名
+                     * 文件名，对于单库备份文件只返回第一条记录的文件名；单库备份文件需要通过DescribeBackupFiles接口获取全部记录的文件名
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
 
                     /**
-                     * 备份名称，可自定义
+                     * 备份任务名称，可自定义
                      */
                     std::string m_backupName;
                     bool m_backupNameHasBeenSet;
@@ -220,7 +232,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 文件大小，单位 KB
+                     * 文件大小，单位 KB，对于单库备份文件只返回第一条记录的文件大小；单库备份文件需要通过DescribeBackupFiles接口获取全部记录的文件大小
                      */
                     uint64_t m_size;
                     bool m_sizeHasBeenSet;
@@ -232,34 +244,40 @@ namespace TencentCloud
                     bool m_strategyHasBeenSet;
 
                     /**
-                     * 备份方式，0-定时备份；1-手动临时备份；实例状态是0-创建中时，该字段为默认值0，无实际意义
-                     */
-                    int64_t m_backupWay;
-                    bool m_backupWayHasBeenSet;
-
-                    /**
                      * 备份文件状态，0-创建中；1-成功；2-失败
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 多库备份时的DB列表
+                     * 备份方式，0-定时备份；1-手动临时备份；实例状态是0-创建中时，该字段为默认值0，无实际意义
+                     */
+                    int64_t m_backupWay;
+                    bool m_backupWayHasBeenSet;
+
+                    /**
+                     * DB列表，对于单库备份文件只返回第一条记录包含的库名；单库备份文件需要通过DescribeBackupFiles接口获取全部记录的库名。
                      */
                     std::vector<std::string> m_dBs;
                     bool m_dBsHasBeenSet;
 
                     /**
-                     * 内网下载地址
+                     * 内网下载地址，对于单库备份文件只返回第一条记录的内网下载地址；单库备份文件需要通过DescribeBackupFiles接口获取全部记录的下载地址
                      */
                     std::string m_internalAddr;
                     bool m_internalAddrHasBeenSet;
 
                     /**
-                     * 外网下载地址
+                     * 外网下载地址，对于单库备份文件只返回第一条记录的外网下载地址；单库备份文件需要通过DescribeBackupFiles接口获取全部记录的下载地址
                      */
                     std::string m_externalAddr;
                     bool m_externalAddrHasBeenSet;
+
+                    /**
+                     * 聚合Id，对于打包备份文件不返回此值。通过此值调用DescribeBackupFiles接口，获取单库备份文件的详细信息
+                     */
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
 
                 };
             }

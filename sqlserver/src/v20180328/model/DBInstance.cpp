@@ -57,7 +57,8 @@ DBInstance::DBInstance() :
     m_subFlagHasBeenSet(false),
     m_rOFlagHasBeenSet(false),
     m_hAFlagHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false)
+    m_resourceTagsHasBeenSet(false),
+    m_backupModelHasBeenSet(false)
 {
 }
 
@@ -446,6 +447,16 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
         m_resourceTagsHasBeenSet = true;
     }
 
+    if (value.HasMember("BackupModel") && !value["BackupModel"].IsNull())
+    {
+        if (!value["BackupModel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBInstance.BackupModel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupModel = string(value["BackupModel"].GetString());
+        m_backupModelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -754,6 +765,14 @@ void DBInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_backupModelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupModel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_backupModel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1349,5 +1368,21 @@ void DBInstance::SetResourceTags(const vector<ResourceTag>& _resourceTags)
 bool DBInstance::ResourceTagsHasBeenSet() const
 {
     return m_resourceTagsHasBeenSet;
+}
+
+string DBInstance::GetBackupModel() const
+{
+    return m_backupModel;
+}
+
+void DBInstance::SetBackupModel(const string& _backupModel)
+{
+    m_backupModel = _backupModel;
+    m_backupModelHasBeenSet = true;
+}
+
+bool DBInstance::BackupModelHasBeenSet() const
+{
+    return m_backupModelHasBeenSet;
 }
 

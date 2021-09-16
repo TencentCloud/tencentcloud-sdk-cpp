@@ -26,7 +26,8 @@ RestoreInstanceRequest::RestoreInstanceRequest() :
     m_instanceIdHasBeenSet(false),
     m_backupIdHasBeenSet(false),
     m_targetInstanceIdHasBeenSet(false),
-    m_renameRestoreHasBeenSet(false)
+    m_renameRestoreHasBeenSet(false),
+    m_groupIdHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,14 @@ string RestoreInstanceRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -146,6 +155,22 @@ void RestoreInstanceRequest::SetRenameRestore(const vector<RenameRestoreDatabase
 bool RestoreInstanceRequest::RenameRestoreHasBeenSet() const
 {
     return m_renameRestoreHasBeenSet;
+}
+
+string RestoreInstanceRequest::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void RestoreInstanceRequest::SetGroupId(const string& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool RestoreInstanceRequest::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
 }
 
 

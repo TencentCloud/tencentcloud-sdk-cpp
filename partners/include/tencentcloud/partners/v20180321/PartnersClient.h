@@ -55,8 +55,6 @@
 #include <tencentcloud/partners/v20180321/model/DescribeClientBalanceResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeClientBalanceNewRequest.h>
 #include <tencentcloud/partners/v20180321/model/DescribeClientBalanceNewResponse.h>
-#include <tencentcloud/partners/v20180321/model/DescribeClientBaseInfoRequest.h>
-#include <tencentcloud/partners/v20180321/model/DescribeClientBaseInfoResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeRebateInfosRequest.h>
 #include <tencentcloud/partners/v20180321/model/DescribeRebateInfosResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeSalesmansRequest.h>
@@ -129,9 +127,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClientBalanceNewResponse> DescribeClientBalanceNewOutcome;
                 typedef std::future<DescribeClientBalanceNewOutcome> DescribeClientBalanceNewOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::DescribeClientBalanceNewRequest&, DescribeClientBalanceNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientBalanceNewAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeClientBaseInfoResponse> DescribeClientBaseInfoOutcome;
-                typedef std::future<DescribeClientBaseInfoOutcome> DescribeClientBaseInfoOutcomeCallable;
-                typedef std::function<void(const PartnersClient*, const Model::DescribeClientBaseInfoRequest&, DescribeClientBaseInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientBaseInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRebateInfosResponse> DescribeRebateInfosOutcome;
                 typedef std::future<DescribeRebateInfosOutcome> DescribeRebateInfosOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::DescribeRebateInfosRequest&, DescribeRebateInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRebateInfosAsyncHandler;
@@ -294,17 +289,6 @@ namespace TencentCloud
                 DescribeClientBalanceNewOutcome DescribeClientBalanceNew(const Model::DescribeClientBalanceNewRequest &request);
                 void DescribeClientBalanceNewAsync(const Model::DescribeClientBalanceNewRequest& request, const DescribeClientBalanceNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClientBalanceNewOutcomeCallable DescribeClientBalanceNewCallable(const Model::DescribeClientBalanceNewRequest& request);
-
-                /**
-                 *该接口即将下线，请切换调用DescribeClientBasicInfo。
-
-国际站根据UIN查询代客基础信息【本接口仅限主账号访问】
-                 * @param req DescribeClientBaseInfoRequest
-                 * @return DescribeClientBaseInfoOutcome
-                 */
-                DescribeClientBaseInfoOutcome DescribeClientBaseInfo(const Model::DescribeClientBaseInfoRequest &request);
-                void DescribeClientBaseInfoAsync(const Model::DescribeClientBaseInfoRequest& request, const DescribeClientBaseInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeClientBaseInfoOutcomeCallable DescribeClientBaseInfoCallable(const Model::DescribeClientBaseInfoRequest& request);
 
                 /**
                  *代理商可查询自己名下全部返佣信息

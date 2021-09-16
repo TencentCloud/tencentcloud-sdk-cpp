@@ -71,6 +71,8 @@
 #include <tencentcloud/sqlserver/v20180328/model/DescribeBackupByFlowIdResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeBackupCommandRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeBackupCommandResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeBackupFilesRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeBackupFilesResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeBackupMigrationRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeBackupMigrationResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeBackupUploadSizeRequest.h>
@@ -301,6 +303,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBackupCommandResponse> DescribeBackupCommandOutcome;
                 typedef std::future<DescribeBackupCommandOutcome> DescribeBackupCommandOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeBackupCommandRequest&, DescribeBackupCommandOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupCommandAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBackupFilesResponse> DescribeBackupFilesOutcome;
+                typedef std::future<DescribeBackupFilesOutcome> DescribeBackupFilesOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeBackupFilesRequest&, DescribeBackupFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupFilesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBackupMigrationResponse> DescribeBackupMigrationOutcome;
                 typedef std::future<DescribeBackupMigrationOutcome> DescribeBackupMigrationOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeBackupMigrationRequest&, DescribeBackupMigrationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupMigrationAsyncHandler;
@@ -737,6 +742,15 @@ namespace TencentCloud
                 DescribeBackupCommandOutcomeCallable DescribeBackupCommandCallable(const Model::DescribeBackupCommandRequest& request);
 
                 /**
+                 *本接口(DescribeBackupFiles)用于在非打包备份模式下单个库对应的备份文件
+                 * @param req DescribeBackupFilesRequest
+                 * @return DescribeBackupFilesOutcome
+                 */
+                DescribeBackupFilesOutcome DescribeBackupFiles(const Model::DescribeBackupFilesRequest &request);
+                void DescribeBackupFilesAsync(const Model::DescribeBackupFilesRequest& request, const DescribeBackupFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBackupFilesOutcomeCallable DescribeBackupFilesCallable(const Model::DescribeBackupFilesRequest& request);
+
+                /**
                  *本接口（DescribeBackupMigration）用于创建增量备份导入任务。
                  * @param req DescribeBackupMigrationRequest
                  * @return DescribeBackupMigrationOutcome
@@ -1070,7 +1084,7 @@ namespace TencentCloud
                 ModifyBackupMigrationOutcomeCallable ModifyBackupMigrationCallable(const Model::ModifyBackupMigrationRequest& request);
 
                 /**
-                 *本接口(ModifyBackupName)用于修改备份名称。
+                 *本接口(ModifyBackupName)用于修改备份任务名称。
                  * @param req ModifyBackupNameRequest
                  * @return ModifyBackupNameOutcome
                  */

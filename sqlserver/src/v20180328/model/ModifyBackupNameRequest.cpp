@@ -24,8 +24,9 @@ using namespace std;
 
 ModifyBackupNameRequest::ModifyBackupNameRequest() :
     m_instanceIdHasBeenSet(false),
+    m_backupNameHasBeenSet(false),
     m_backupIdHasBeenSet(false),
-    m_backupNameHasBeenSet(false)
+    m_groupIdHasBeenSet(false)
 {
 }
 
@@ -44,6 +45,14 @@ string ModifyBackupNameRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_backupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_backupName.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_backupIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -52,12 +61,12 @@ string ModifyBackupNameRequest::ToJsonString() const
         d.AddMember(iKey, m_backupId, allocator);
     }
 
-    if (m_backupNameHasBeenSet)
+    if (m_groupIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BackupName";
+        string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_backupName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -84,6 +93,22 @@ bool ModifyBackupNameRequest::InstanceIdHasBeenSet() const
     return m_instanceIdHasBeenSet;
 }
 
+string ModifyBackupNameRequest::GetBackupName() const
+{
+    return m_backupName;
+}
+
+void ModifyBackupNameRequest::SetBackupName(const string& _backupName)
+{
+    m_backupName = _backupName;
+    m_backupNameHasBeenSet = true;
+}
+
+bool ModifyBackupNameRequest::BackupNameHasBeenSet() const
+{
+    return m_backupNameHasBeenSet;
+}
+
 uint64_t ModifyBackupNameRequest::GetBackupId() const
 {
     return m_backupId;
@@ -100,20 +125,20 @@ bool ModifyBackupNameRequest::BackupIdHasBeenSet() const
     return m_backupIdHasBeenSet;
 }
 
-string ModifyBackupNameRequest::GetBackupName() const
+string ModifyBackupNameRequest::GetGroupId() const
 {
-    return m_backupName;
+    return m_groupId;
 }
 
-void ModifyBackupNameRequest::SetBackupName(const string& _backupName)
+void ModifyBackupNameRequest::SetGroupId(const string& _groupId)
 {
-    m_backupName = _backupName;
-    m_backupNameHasBeenSet = true;
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
 }
 
-bool ModifyBackupNameRequest::BackupNameHasBeenSet() const
+bool ModifyBackupNameRequest::GroupIdHasBeenSet() const
 {
-    return m_backupNameHasBeenSet;
+    return m_groupIdHasBeenSet;
 }
 
 

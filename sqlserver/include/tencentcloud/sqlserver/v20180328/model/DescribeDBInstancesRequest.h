@@ -342,6 +342,24 @@ namespace TencentCloud
                      */
                     bool SearchKeyHasBeenSet() const;
 
+                    /**
+                     * 获取实例唯一Uid列表
+                     * @return UidSet 实例唯一Uid列表
+                     */
+                    std::vector<std::string> GetUidSet() const;
+
+                    /**
+                     * 设置实例唯一Uid列表
+                     * @param UidSet 实例唯一Uid列表
+                     */
+                    void SetUidSet(const std::vector<std::string>& _uidSet);
+
+                    /**
+                     * 判断参数 UidSet 是否已赋值
+                     * @return UidSet 是否已赋值
+                     */
+                    bool UidSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -439,6 +457,12 @@ namespace TencentCloud
                      */
                     std::string m_searchKey;
                     bool m_searchKeyHasBeenSet;
+
+                    /**
+                     * 实例唯一Uid列表
+                     */
+                    std::vector<std::string> m_uidSet;
+                    bool m_uidSetHasBeenSet;
 
                 };
             }

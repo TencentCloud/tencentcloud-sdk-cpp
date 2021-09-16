@@ -26,7 +26,8 @@ ModifyBackupStrategyRequest::ModifyBackupStrategyRequest() :
     m_instanceIdHasBeenSet(false),
     m_backupTypeHasBeenSet(false),
     m_backupTimeHasBeenSet(false),
-    m_backupDayHasBeenSet(false)
+    m_backupDayHasBeenSet(false),
+    m_backupModelHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string ModifyBackupStrategyRequest::ToJsonString() const
         string key = "BackupDay";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_backupDay, allocator);
+    }
+
+    if (m_backupModelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupModel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_backupModel.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void ModifyBackupStrategyRequest::SetBackupDay(const uint64_t& _backupDay)
 bool ModifyBackupStrategyRequest::BackupDayHasBeenSet() const
 {
     return m_backupDayHasBeenSet;
+}
+
+string ModifyBackupStrategyRequest::GetBackupModel() const
+{
+    return m_backupModel;
+}
+
+void ModifyBackupStrategyRequest::SetBackupModel(const string& _backupModel)
+{
+    m_backupModel = _backupModel;
+    m_backupModelHasBeenSet = true;
+}
+
+bool ModifyBackupStrategyRequest::BackupModelHasBeenSet() const
+{
+    return m_backupModelHasBeenSet;
 }
 
 

@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/partners/v20180321/model/DescribeClientBaseInfoResponse.h>
+#include <tencentcloud/ecm/v20190719/model/CreateDisksResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Partners::V20180321::Model;
+using namespace TencentCloud::Ecm::V20190719::Model;
 using namespace std;
 
-DescribeClientBaseInfoResponse::DescribeClientBaseInfoResponse() :
-    m_clientBaseSetHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+CreateDisksResponse::CreateDisksResponse() :
+    m_diskIdSetHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeClientBaseInfoResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateDisksResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,67 +62,40 @@ CoreInternalOutcome DescribeClientBaseInfoResponse::Deserialize(const string &pa
     }
 
 
-    if (rsp.HasMember("ClientBaseSet") && !rsp["ClientBaseSet"].IsNull())
+    if (rsp.HasMember("DiskIdSet") && !rsp["DiskIdSet"].IsNull())
     {
-        if (!rsp["ClientBaseSet"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `ClientBaseSet` is not array type"));
+        if (!rsp["DiskIdSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DiskIdSet` is not array type"));
 
-        const rapidjson::Value &tmpValue = rsp["ClientBaseSet"];
+        const rapidjson::Value &tmpValue = rsp["DiskIdSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            ClientBaseElem item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_clientBaseSet.push_back(item);
+            m_diskIdSet.push_back((*itr).GetString());
         }
-        m_clientBaseSetHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
-    {
-        if (!rsp["TotalCount"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_totalCount = rsp["TotalCount"].GetUint64();
-        m_totalCountHasBeenSet = true;
+        m_diskIdSetHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeClientBaseInfoResponse::ToJsonString() const
+string CreateDisksResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_clientBaseSetHasBeenSet)
+    if (m_diskIdSetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClientBaseSet";
+        string key = "DiskIdSet";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
-        int i=0;
-        for (auto itr = m_clientBaseSet.begin(); itr != m_clientBaseSet.end(); ++itr, ++i)
+        for (auto itr = m_diskIdSet.begin(); itr != m_diskIdSet.end(); ++itr)
         {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
-    }
-
-    if (m_totalCountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TotalCount";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_totalCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -138,24 +110,14 @@ string DescribeClientBaseInfoResponse::ToJsonString() const
 }
 
 
-vector<ClientBaseElem> DescribeClientBaseInfoResponse::GetClientBaseSet() const
+vector<string> CreateDisksResponse::GetDiskIdSet() const
 {
-    return m_clientBaseSet;
+    return m_diskIdSet;
 }
 
-bool DescribeClientBaseInfoResponse::ClientBaseSetHasBeenSet() const
+bool CreateDisksResponse::DiskIdSetHasBeenSet() const
 {
-    return m_clientBaseSetHasBeenSet;
-}
-
-uint64_t DescribeClientBaseInfoResponse::GetTotalCount() const
-{
-    return m_totalCount;
-}
-
-bool DescribeClientBaseInfoResponse::TotalCountHasBeenSet() const
-{
-    return m_totalCountHasBeenSet;
+    return m_diskIdSetHasBeenSet;
 }
 
 

@@ -355,13 +355,17 @@ namespace TencentCloud
 
                     /**
                      * 获取折扣率
+当聚合之后折扣不唯一或者合同价的情况下，返回“-”
                      * @return Discount 折扣率
+当聚合之后折扣不唯一或者合同价的情况下，返回“-”
                      */
                     std::string GetDiscount() const;
 
                     /**
                      * 设置折扣率
+当聚合之后折扣不唯一或者合同价的情况下，返回“-”
                      * @param Discount 折扣率
+当聚合之后折扣不唯一或者合同价的情况下，返回“-”
                      */
                     void SetDiscount(const std::string& _discount);
 
@@ -751,6 +755,7 @@ namespace TencentCloud
 
                     /**
                      * 折扣率
+当聚合之后折扣不唯一或者合同价的情况下，返回“-”
                      */
                     std::string m_discount;
                     bool m_discountHasBeenSet;

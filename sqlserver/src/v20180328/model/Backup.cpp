@@ -32,7 +32,8 @@ Backup::Backup() :
     m_dBsHasBeenSet(false),
     m_strategyHasBeenSet(false),
     m_backupWayHasBeenSet(false),
-    m_backupNameHasBeenSet(false)
+    m_backupNameHasBeenSet(false),
+    m_groupIdHasBeenSet(false)
 {
 }
 
@@ -164,6 +165,16 @@ CoreInternalOutcome Backup::Deserialize(const rapidjson::Value &value)
         m_backupNameHasBeenSet = true;
     }
 
+    if (value.HasMember("GroupId") && !value["GroupId"].IsNull())
+    {
+        if (!value["GroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Backup.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupId = string(value["GroupId"].GetString());
+        m_groupIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -270,6 +281,14 @@ void Backup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "BackupName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_backupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -465,5 +484,21 @@ void Backup::SetBackupName(const string& _backupName)
 bool Backup::BackupNameHasBeenSet() const
 {
     return m_backupNameHasBeenSet;
+}
+
+string Backup::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void Backup::SetGroupId(const string& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool Backup::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
 }
 

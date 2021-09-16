@@ -14,32 +14,37 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/partners/v20180321/model/DescribeClientBaseInfoRequest.h>
+#include <tencentcloud/ecm/v20190719/model/TerminateDisksRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Partners::V20180321::Model;
+using namespace TencentCloud::Ecm::V20190719::Model;
 using namespace std;
 
-DescribeClientBaseInfoRequest::DescribeClientBaseInfoRequest() :
-    m_clientUinHasBeenSet(false)
+TerminateDisksRequest::TerminateDisksRequest() :
+    m_diskIdsHasBeenSet(false)
 {
 }
 
-string DescribeClientBaseInfoRequest::ToJsonString() const
+string TerminateDisksRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_clientUinHasBeenSet)
+    if (m_diskIdsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClientUin";
+        string key = "DiskIds";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_clientUin.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_diskIds.begin(); itr != m_diskIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -50,20 +55,20 @@ string DescribeClientBaseInfoRequest::ToJsonString() const
 }
 
 
-string DescribeClientBaseInfoRequest::GetClientUin() const
+vector<string> TerminateDisksRequest::GetDiskIds() const
 {
-    return m_clientUin;
+    return m_diskIds;
 }
 
-void DescribeClientBaseInfoRequest::SetClientUin(const string& _clientUin)
+void TerminateDisksRequest::SetDiskIds(const vector<string>& _diskIds)
 {
-    m_clientUin = _clientUin;
-    m_clientUinHasBeenSet = true;
+    m_diskIds = _diskIds;
+    m_diskIdsHasBeenSet = true;
 }
 
-bool DescribeClientBaseInfoRequest::ClientUinHasBeenSet() const
+bool TerminateDisksRequest::DiskIdsHasBeenSet() const
 {
-    return m_clientUinHasBeenSet;
+    return m_diskIdsHasBeenSet;
 }
 
 

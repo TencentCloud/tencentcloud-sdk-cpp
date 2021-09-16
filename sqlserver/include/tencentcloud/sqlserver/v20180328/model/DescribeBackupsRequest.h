@@ -222,6 +222,24 @@ namespace TencentCloud
                      */
                     bool DatabaseNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否分组查询，默认是0，单库备份情况下 0-兼容老方式不分组，1-单库备份分组后展示
+                     * @return Group 是否分组查询，默认是0，单库备份情况下 0-兼容老方式不分组，1-单库备份分组后展示
+                     */
+                    int64_t GetGroup() const;
+
+                    /**
+                     * 设置是否分组查询，默认是0，单库备份情况下 0-兼容老方式不分组，1-单库备份分组后展示
+                     * @param Group 是否分组查询，默认是0，单库备份情况下 0-兼容老方式不分组，1-单库备份分组后展示
+                     */
+                    void SetGroup(const int64_t& _group);
+
+                    /**
+                     * 判断参数 Group 是否已赋值
+                     * @return Group 是否已赋值
+                     */
+                    bool GroupHasBeenSet() const;
+
                 private:
 
                     /**
@@ -283,6 +301,12 @@ namespace TencentCloud
                      */
                     std::string m_databaseName;
                     bool m_databaseNameHasBeenSet;
+
+                    /**
+                     * 是否分组查询，默认是0，单库备份情况下 0-兼容老方式不分组，1-单库备份分组后展示
+                     */
+                    int64_t m_group;
+                    bool m_groupHasBeenSet;
 
                 };
             }
