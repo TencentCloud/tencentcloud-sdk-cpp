@@ -25,7 +25,9 @@ using namespace std;
 DescribeCmqQueuesRequest::DescribeCmqQueuesRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_queueNameHasBeenSet(false)
+    m_queueNameHasBeenSet(false),
+    m_queueNameListHasBeenSet(false),
+    m_isTagFilterHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,27 @@ string DescribeCmqQueuesRequest::ToJsonString() const
         string key = "QueueName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_queueName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queueNameListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueueNameList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_queueNameList.begin(); itr != m_queueNameList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_isTagFilterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsTagFilter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isTagFilter, allocator);
     }
 
 
@@ -114,6 +137,38 @@ void DescribeCmqQueuesRequest::SetQueueName(const string& _queueName)
 bool DescribeCmqQueuesRequest::QueueNameHasBeenSet() const
 {
     return m_queueNameHasBeenSet;
+}
+
+vector<string> DescribeCmqQueuesRequest::GetQueueNameList() const
+{
+    return m_queueNameList;
+}
+
+void DescribeCmqQueuesRequest::SetQueueNameList(const vector<string>& _queueNameList)
+{
+    m_queueNameList = _queueNameList;
+    m_queueNameListHasBeenSet = true;
+}
+
+bool DescribeCmqQueuesRequest::QueueNameListHasBeenSet() const
+{
+    return m_queueNameListHasBeenSet;
+}
+
+bool DescribeCmqQueuesRequest::GetIsTagFilter() const
+{
+    return m_isTagFilter;
+}
+
+void DescribeCmqQueuesRequest::SetIsTagFilter(const bool& _isTagFilter)
+{
+    m_isTagFilter = _isTagFilter;
+    m_isTagFilterHasBeenSet = true;
+}
+
+bool DescribeCmqQueuesRequest::IsTagFilterHasBeenSet() const
+{
+    return m_isTagFilterHasBeenSet;
 }
 
 

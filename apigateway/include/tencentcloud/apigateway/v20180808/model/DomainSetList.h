@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool DomainNameHasBeenSet() const;
 
                     /**
-                     * 获取域名解析状态。True 表示正常解析，False 表示解析失败。
-                     * @return Status 域名解析状态。True 表示正常解析，False 表示解析失败。
+                     * 获取域名解析状态。1 表示正常解析，0 表示解析失败。
+                     * @return Status 域名解析状态。1 表示正常解析，0 表示解析失败。
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置域名解析状态。True 表示正常解析，False 表示解析失败。
-                     * @param Status 域名解析状态。True 表示正常解析，False 表示解析失败。
+                     * 设置域名解析状态。1 表示正常解析，0 表示解析失败。
+                     * @param Status 域名解析状态。1 表示正常解析，0 表示解析失败。
                      */
                     void SetStatus(const int64_t& _status);
 
@@ -199,7 +199,7 @@ namespace TencentCloud
                     bool m_domainNameHasBeenSet;
 
                     /**
-                     * 域名解析状态。True 表示正常解析，False 表示解析失败。
+                     * 域名解析状态。1 表示正常解析，0 表示解析失败。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

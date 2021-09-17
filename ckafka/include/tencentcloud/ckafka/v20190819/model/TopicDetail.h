@@ -298,6 +298,28 @@ namespace TencentCloud
                      */
                     bool RetentionTimeConfigHasBeenSet() const;
 
+                    /**
+                     * 获取0:正常，1：已删除，2：删除中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 0:正常，1：已删除，2：删除中
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置0:正常，1：已删除，2：删除中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Status 0:正常，1：已删除，2：删除中
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -381,6 +403,13 @@ namespace TencentCloud
                      */
                     TopicRetentionTimeConfigRsp m_retentionTimeConfig;
                     bool m_retentionTimeConfigHasBeenSet;
+
+                    /**
+                     * 0:正常，1：已删除，2：删除中
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

@@ -728,6 +728,49 @@ TkeClient::CreateEKSClusterOutcomeCallable TkeClient::CreateEKSClusterCallable(c
     return task->get_future();
 }
 
+TkeClient::CreateEKSContainerInstancesOutcome TkeClient::CreateEKSContainerInstances(const CreateEKSContainerInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateEKSContainerInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateEKSContainerInstancesResponse rsp = CreateEKSContainerInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateEKSContainerInstancesOutcome(rsp);
+        else
+            return CreateEKSContainerInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateEKSContainerInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CreateEKSContainerInstancesAsync(const CreateEKSContainerInstancesRequest& request, const CreateEKSContainerInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateEKSContainerInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::CreateEKSContainerInstancesOutcomeCallable TkeClient::CreateEKSContainerInstancesCallable(const CreateEKSContainerInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateEKSContainerInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateEKSContainerInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::CreatePrometheusAlertRuleOutcome TkeClient::CreatePrometheusAlertRule(const CreatePrometheusAlertRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePrometheusAlertRule");
@@ -1237,6 +1280,49 @@ TkeClient::DeleteEKSClusterOutcomeCallable TkeClient::DeleteEKSClusterCallable(c
         [this, request]()
         {
             return this->DeleteEKSCluster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DeleteEKSContainerInstancesOutcome TkeClient::DeleteEKSContainerInstances(const DeleteEKSContainerInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteEKSContainerInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteEKSContainerInstancesResponse rsp = DeleteEKSContainerInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteEKSContainerInstancesOutcome(rsp);
+        else
+            return DeleteEKSContainerInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteEKSContainerInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DeleteEKSContainerInstancesAsync(const DeleteEKSContainerInstancesRequest& request, const DeleteEKSContainerInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteEKSContainerInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DeleteEKSContainerInstancesOutcomeCallable TkeClient::DeleteEKSContainerInstancesCallable(const DeleteEKSContainerInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteEKSContainerInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteEKSContainerInstances(request);
         }
     );
 
@@ -2104,6 +2190,49 @@ TkeClient::DescribeEKSClustersOutcomeCallable TkeClient::DescribeEKSClustersCall
     return task->get_future();
 }
 
+TkeClient::DescribeEKSContainerInstanceEventOutcome TkeClient::DescribeEKSContainerInstanceEvent(const DescribeEKSContainerInstanceEventRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEKSContainerInstanceEvent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEKSContainerInstanceEventResponse rsp = DescribeEKSContainerInstanceEventResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEKSContainerInstanceEventOutcome(rsp);
+        else
+            return DescribeEKSContainerInstanceEventOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEKSContainerInstanceEventOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeEKSContainerInstanceEventAsync(const DescribeEKSContainerInstanceEventRequest& request, const DescribeEKSContainerInstanceEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEKSContainerInstanceEvent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeEKSContainerInstanceEventOutcomeCallable TkeClient::DescribeEKSContainerInstanceEventCallable(const DescribeEKSContainerInstanceEventRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEKSContainerInstanceEventOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEKSContainerInstanceEvent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribeEKSContainerInstanceRegionsOutcome TkeClient::DescribeEKSContainerInstanceRegions(const DescribeEKSContainerInstanceRegionsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEKSContainerInstanceRegions");
@@ -2140,6 +2269,92 @@ TkeClient::DescribeEKSContainerInstanceRegionsOutcomeCallable TkeClient::Describ
         [this, request]()
         {
             return this->DescribeEKSContainerInstanceRegions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeEKSContainerInstancesOutcome TkeClient::DescribeEKSContainerInstances(const DescribeEKSContainerInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEKSContainerInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEKSContainerInstancesResponse rsp = DescribeEKSContainerInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEKSContainerInstancesOutcome(rsp);
+        else
+            return DescribeEKSContainerInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEKSContainerInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeEKSContainerInstancesAsync(const DescribeEKSContainerInstancesRequest& request, const DescribeEKSContainerInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEKSContainerInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeEKSContainerInstancesOutcomeCallable TkeClient::DescribeEKSContainerInstancesCallable(const DescribeEKSContainerInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEKSContainerInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEKSContainerInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeEksContainerInstanceLogOutcome TkeClient::DescribeEksContainerInstanceLog(const DescribeEksContainerInstanceLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEksContainerInstanceLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEksContainerInstanceLogResponse rsp = DescribeEksContainerInstanceLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEksContainerInstanceLogOutcome(rsp);
+        else
+            return DescribeEksContainerInstanceLogOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEksContainerInstanceLogOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeEksContainerInstanceLogAsync(const DescribeEksContainerInstanceLogRequest& request, const DescribeEksContainerInstanceLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEksContainerInstanceLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeEksContainerInstanceLogOutcomeCallable TkeClient::DescribeEksContainerInstanceLogCallable(const DescribeEksContainerInstanceLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEksContainerInstanceLogOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEksContainerInstanceLog(request);
         }
     );
 
@@ -3394,6 +3609,49 @@ TkeClient::RemoveNodeFromNodePoolOutcomeCallable TkeClient::RemoveNodeFromNodePo
     return task->get_future();
 }
 
+TkeClient::RestartEKSContainerInstancesOutcome TkeClient::RestartEKSContainerInstances(const RestartEKSContainerInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "RestartEKSContainerInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RestartEKSContainerInstancesResponse rsp = RestartEKSContainerInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RestartEKSContainerInstancesOutcome(rsp);
+        else
+            return RestartEKSContainerInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return RestartEKSContainerInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::RestartEKSContainerInstancesAsync(const RestartEKSContainerInstancesRequest& request, const RestartEKSContainerInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RestartEKSContainerInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::RestartEKSContainerInstancesOutcomeCallable TkeClient::RestartEKSContainerInstancesCallable(const RestartEKSContainerInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RestartEKSContainerInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->RestartEKSContainerInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::SetNodePoolNodeProtectionOutcome TkeClient::SetNodePoolNodeProtection(const SetNodePoolNodeProtectionRequest &request)
 {
     auto outcome = MakeRequest(request, "SetNodePoolNodeProtection");
@@ -3559,6 +3817,49 @@ TkeClient::UpdateEKSClusterOutcomeCallable TkeClient::UpdateEKSClusterCallable(c
         [this, request]()
         {
             return this->UpdateEKSCluster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::UpdateEKSContainerInstanceOutcome TkeClient::UpdateEKSContainerInstance(const UpdateEKSContainerInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateEKSContainerInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateEKSContainerInstanceResponse rsp = UpdateEKSContainerInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateEKSContainerInstanceOutcome(rsp);
+        else
+            return UpdateEKSContainerInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateEKSContainerInstanceOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::UpdateEKSContainerInstanceAsync(const UpdateEKSContainerInstanceRequest& request, const UpdateEKSContainerInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateEKSContainerInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::UpdateEKSContainerInstanceOutcomeCallable TkeClient::UpdateEKSContainerInstanceCallable(const UpdateEKSContainerInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateEKSContainerInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateEKSContainerInstance(request);
         }
     );
 

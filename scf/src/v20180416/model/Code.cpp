@@ -34,7 +34,8 @@ Code::Code() :
     m_gitBranchHasBeenSet(false),
     m_gitDirectoryHasBeenSet(false),
     m_gitCommitIdHasBeenSet(false),
-    m_gitUserNameSecretHasBeenSet(false)
+    m_gitUserNameSecretHasBeenSet(false),
+    m_imageConfigHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,23 @@ CoreInternalOutcome Code::Deserialize(const rapidjson::Value &value)
         m_gitUserNameSecretHasBeenSet = true;
     }
 
+    if (value.HasMember("ImageConfig") && !value["ImageConfig"].IsNull())
+    {
+        if (!value["ImageConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Code.ImageConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_imageConfig.Deserialize(value["ImageConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_imageConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +318,15 @@ void Code::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "GitUserNameSecret";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_gitUserNameSecret.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_imageConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -527,5 +554,21 @@ void Code::SetGitUserNameSecret(const string& _gitUserNameSecret)
 bool Code::GitUserNameSecretHasBeenSet() const
 {
     return m_gitUserNameSecretHasBeenSet;
+}
+
+ImageConfig Code::GetImageConfig() const
+{
+    return m_imageConfig;
+}
+
+void Code::SetImageConfig(const ImageConfig& _imageConfig)
+{
+    m_imageConfig = _imageConfig;
+    m_imageConfigHasBeenSet = true;
+}
+
+bool Code::ImageConfigHasBeenSet() const
+{
+    return m_imageConfigHasBeenSet;
 }
 

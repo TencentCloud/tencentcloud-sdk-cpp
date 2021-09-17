@@ -55,6 +55,8 @@
 #include <tencentcloud/tke/v20180525/model/CreateClusterRouteTableResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateEKSClusterRequest.h>
 #include <tencentcloud/tke/v20180525/model/CreateEKSClusterResponse.h>
+#include <tencentcloud/tke/v20180525/model/CreateEKSContainerInstancesRequest.h>
+#include <tencentcloud/tke/v20180525/model/CreateEKSContainerInstancesResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreatePrometheusAlertRuleRequest.h>
 #include <tencentcloud/tke/v20180525/model/CreatePrometheusAlertRuleResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreatePrometheusDashboardRequest.h>
@@ -79,6 +81,8 @@
 #include <tencentcloud/tke/v20180525/model/DeleteClusterRouteTableResponse.h>
 #include <tencentcloud/tke/v20180525/model/DeleteEKSClusterRequest.h>
 #include <tencentcloud/tke/v20180525/model/DeleteEKSClusterResponse.h>
+#include <tencentcloud/tke/v20180525/model/DeleteEKSContainerInstancesRequest.h>
+#include <tencentcloud/tke/v20180525/model/DeleteEKSContainerInstancesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DeletePrometheusAlertRuleRequest.h>
 #include <tencentcloud/tke/v20180525/model/DeletePrometheusAlertRuleResponse.h>
 #include <tencentcloud/tke/v20180525/model/DeletePrometheusTemplateRequest.h>
@@ -119,8 +123,14 @@
 #include <tencentcloud/tke/v20180525/model/DescribeEKSClusterCredentialResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeEKSClustersRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeEKSClustersResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeEKSContainerInstanceEventRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeEKSContainerInstanceEventResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeEKSContainerInstanceRegionsRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeEKSContainerInstanceRegionsResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeEKSContainerInstancesRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeEKSContainerInstancesResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeEksContainerInstanceLogRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeEksContainerInstanceLogResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeEnableVpcCniProgressRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeEnableVpcCniProgressResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeExistedInstancesRequest.h>
@@ -179,6 +189,8 @@
 #include <tencentcloud/tke/v20180525/model/ModifyPrometheusTemplateResponse.h>
 #include <tencentcloud/tke/v20180525/model/RemoveNodeFromNodePoolRequest.h>
 #include <tencentcloud/tke/v20180525/model/RemoveNodeFromNodePoolResponse.h>
+#include <tencentcloud/tke/v20180525/model/RestartEKSContainerInstancesRequest.h>
+#include <tencentcloud/tke/v20180525/model/RestartEKSContainerInstancesResponse.h>
 #include <tencentcloud/tke/v20180525/model/SetNodePoolNodeProtectionRequest.h>
 #include <tencentcloud/tke/v20180525/model/SetNodePoolNodeProtectionResponse.h>
 #include <tencentcloud/tke/v20180525/model/SyncPrometheusTemplateRequest.h>
@@ -187,6 +199,8 @@
 #include <tencentcloud/tke/v20180525/model/UpdateClusterVersionResponse.h>
 #include <tencentcloud/tke/v20180525/model/UpdateEKSClusterRequest.h>
 #include <tencentcloud/tke/v20180525/model/UpdateEKSClusterResponse.h>
+#include <tencentcloud/tke/v20180525/model/UpdateEKSContainerInstanceRequest.h>
+#include <tencentcloud/tke/v20180525/model/UpdateEKSContainerInstanceResponse.h>
 #include <tencentcloud/tke/v20180525/model/UpgradeClusterInstancesRequest.h>
 #include <tencentcloud/tke/v20180525/model/UpgradeClusterInstancesResponse.h>
 
@@ -251,6 +265,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateEKSClusterResponse> CreateEKSClusterOutcome;
                 typedef std::future<CreateEKSClusterOutcome> CreateEKSClusterOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CreateEKSClusterRequest&, CreateEKSClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEKSClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateEKSContainerInstancesResponse> CreateEKSContainerInstancesOutcome;
+                typedef std::future<CreateEKSContainerInstancesOutcome> CreateEKSContainerInstancesOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::CreateEKSContainerInstancesRequest&, CreateEKSContainerInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEKSContainerInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePrometheusAlertRuleResponse> CreatePrometheusAlertRuleOutcome;
                 typedef std::future<CreatePrometheusAlertRuleOutcome> CreatePrometheusAlertRuleOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CreatePrometheusAlertRuleRequest&, CreatePrometheusAlertRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrometheusAlertRuleAsyncHandler;
@@ -287,6 +304,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteEKSClusterResponse> DeleteEKSClusterOutcome;
                 typedef std::future<DeleteEKSClusterOutcome> DeleteEKSClusterOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DeleteEKSClusterRequest&, DeleteEKSClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEKSClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteEKSContainerInstancesResponse> DeleteEKSContainerInstancesOutcome;
+                typedef std::future<DeleteEKSContainerInstancesOutcome> DeleteEKSContainerInstancesOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DeleteEKSContainerInstancesRequest&, DeleteEKSContainerInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEKSContainerInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeletePrometheusAlertRuleResponse> DeletePrometheusAlertRuleOutcome;
                 typedef std::future<DeletePrometheusAlertRuleOutcome> DeletePrometheusAlertRuleOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DeletePrometheusAlertRuleRequest&, DeletePrometheusAlertRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePrometheusAlertRuleAsyncHandler;
@@ -347,9 +367,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEKSClustersResponse> DescribeEKSClustersOutcome;
                 typedef std::future<DescribeEKSClustersOutcome> DescribeEKSClustersOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeEKSClustersRequest&, DescribeEKSClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEKSClustersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEKSContainerInstanceEventResponse> DescribeEKSContainerInstanceEventOutcome;
+                typedef std::future<DescribeEKSContainerInstanceEventOutcome> DescribeEKSContainerInstanceEventOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeEKSContainerInstanceEventRequest&, DescribeEKSContainerInstanceEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEKSContainerInstanceEventAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEKSContainerInstanceRegionsResponse> DescribeEKSContainerInstanceRegionsOutcome;
                 typedef std::future<DescribeEKSContainerInstanceRegionsOutcome> DescribeEKSContainerInstanceRegionsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeEKSContainerInstanceRegionsRequest&, DescribeEKSContainerInstanceRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEKSContainerInstanceRegionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEKSContainerInstancesResponse> DescribeEKSContainerInstancesOutcome;
+                typedef std::future<DescribeEKSContainerInstancesOutcome> DescribeEKSContainerInstancesOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeEKSContainerInstancesRequest&, DescribeEKSContainerInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEKSContainerInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEksContainerInstanceLogResponse> DescribeEksContainerInstanceLogOutcome;
+                typedef std::future<DescribeEksContainerInstanceLogOutcome> DescribeEksContainerInstanceLogOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeEksContainerInstanceLogRequest&, DescribeEksContainerInstanceLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEksContainerInstanceLogAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEnableVpcCniProgressResponse> DescribeEnableVpcCniProgressOutcome;
                 typedef std::future<DescribeEnableVpcCniProgressOutcome> DescribeEnableVpcCniProgressOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeEnableVpcCniProgressRequest&, DescribeEnableVpcCniProgressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnableVpcCniProgressAsyncHandler;
@@ -437,6 +466,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RemoveNodeFromNodePoolResponse> RemoveNodeFromNodePoolOutcome;
                 typedef std::future<RemoveNodeFromNodePoolOutcome> RemoveNodeFromNodePoolOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::RemoveNodeFromNodePoolRequest&, RemoveNodeFromNodePoolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveNodeFromNodePoolAsyncHandler;
+                typedef Outcome<Core::Error, Model::RestartEKSContainerInstancesResponse> RestartEKSContainerInstancesOutcome;
+                typedef std::future<RestartEKSContainerInstancesOutcome> RestartEKSContainerInstancesOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::RestartEKSContainerInstancesRequest&, RestartEKSContainerInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartEKSContainerInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetNodePoolNodeProtectionResponse> SetNodePoolNodeProtectionOutcome;
                 typedef std::future<SetNodePoolNodeProtectionOutcome> SetNodePoolNodeProtectionOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::SetNodePoolNodeProtectionRequest&, SetNodePoolNodeProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetNodePoolNodeProtectionAsyncHandler;
@@ -449,6 +481,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateEKSClusterResponse> UpdateEKSClusterOutcome;
                 typedef std::future<UpdateEKSClusterOutcome> UpdateEKSClusterOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::UpdateEKSClusterRequest&, UpdateEKSClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateEKSClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateEKSContainerInstanceResponse> UpdateEKSContainerInstanceOutcome;
+                typedef std::future<UpdateEKSContainerInstanceOutcome> UpdateEKSContainerInstanceOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::UpdateEKSContainerInstanceRequest&, UpdateEKSContainerInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateEKSContainerInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpgradeClusterInstancesResponse> UpgradeClusterInstancesOutcome;
                 typedef std::future<UpgradeClusterInstancesOutcome> UpgradeClusterInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::UpgradeClusterInstancesRequest&, UpgradeClusterInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeClusterInstancesAsyncHandler;
@@ -600,6 +635,15 @@ namespace TencentCloud
                 CreateEKSClusterOutcomeCallable CreateEKSClusterCallable(const Model::CreateEKSClusterRequest& request);
 
                 /**
+                 *创建容器实例
+                 * @param req CreateEKSContainerInstancesRequest
+                 * @return CreateEKSContainerInstancesOutcome
+                 */
+                CreateEKSContainerInstancesOutcome CreateEKSContainerInstances(const Model::CreateEKSContainerInstancesRequest &request);
+                void CreateEKSContainerInstancesAsync(const Model::CreateEKSContainerInstancesRequest& request, const CreateEKSContainerInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateEKSContainerInstancesOutcomeCallable CreateEKSContainerInstancesCallable(const Model::CreateEKSContainerInstancesRequest& request);
+
+                /**
                  *创建告警规则
                  * @param req CreatePrometheusAlertRuleRequest
                  * @return CreatePrometheusAlertRuleOutcome
@@ -706,6 +750,15 @@ namespace TencentCloud
                 DeleteEKSClusterOutcome DeleteEKSCluster(const Model::DeleteEKSClusterRequest &request);
                 void DeleteEKSClusterAsync(const Model::DeleteEKSClusterRequest& request, const DeleteEKSClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteEKSClusterOutcomeCallable DeleteEKSClusterCallable(const Model::DeleteEKSClusterRequest& request);
+
+                /**
+                 *删除容器实例，可批量删除
+                 * @param req DeleteEKSContainerInstancesRequest
+                 * @return DeleteEKSContainerInstancesOutcome
+                 */
+                DeleteEKSContainerInstancesOutcome DeleteEKSContainerInstances(const Model::DeleteEKSContainerInstancesRequest &request);
+                void DeleteEKSContainerInstancesAsync(const Model::DeleteEKSContainerInstancesRequest& request, const DeleteEKSContainerInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteEKSContainerInstancesOutcomeCallable DeleteEKSContainerInstancesCallable(const Model::DeleteEKSContainerInstancesRequest& request);
 
                 /**
                  *删除告警规则
@@ -888,6 +941,15 @@ namespace TencentCloud
                 DescribeEKSClustersOutcomeCallable DescribeEKSClustersCallable(const Model::DescribeEKSClustersRequest& request);
 
                 /**
+                 *查询容器实例的事件
+                 * @param req DescribeEKSContainerInstanceEventRequest
+                 * @return DescribeEKSContainerInstanceEventOutcome
+                 */
+                DescribeEKSContainerInstanceEventOutcome DescribeEKSContainerInstanceEvent(const Model::DescribeEKSContainerInstanceEventRequest &request);
+                void DescribeEKSContainerInstanceEventAsync(const Model::DescribeEKSContainerInstanceEventRequest& request, const DescribeEKSContainerInstanceEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEKSContainerInstanceEventOutcomeCallable DescribeEKSContainerInstanceEventCallable(const Model::DescribeEKSContainerInstanceEventRequest& request);
+
+                /**
                  *查询容器实例支持的地域
                  * @param req DescribeEKSContainerInstanceRegionsRequest
                  * @return DescribeEKSContainerInstanceRegionsOutcome
@@ -895,6 +957,24 @@ namespace TencentCloud
                 DescribeEKSContainerInstanceRegionsOutcome DescribeEKSContainerInstanceRegions(const Model::DescribeEKSContainerInstanceRegionsRequest &request);
                 void DescribeEKSContainerInstanceRegionsAsync(const Model::DescribeEKSContainerInstanceRegionsRequest& request, const DescribeEKSContainerInstanceRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEKSContainerInstanceRegionsOutcomeCallable DescribeEKSContainerInstanceRegionsCallable(const Model::DescribeEKSContainerInstanceRegionsRequest& request);
+
+                /**
+                 *查询容器实例
+                 * @param req DescribeEKSContainerInstancesRequest
+                 * @return DescribeEKSContainerInstancesOutcome
+                 */
+                DescribeEKSContainerInstancesOutcome DescribeEKSContainerInstances(const Model::DescribeEKSContainerInstancesRequest &request);
+                void DescribeEKSContainerInstancesAsync(const Model::DescribeEKSContainerInstancesRequest& request, const DescribeEKSContainerInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEKSContainerInstancesOutcomeCallable DescribeEKSContainerInstancesCallable(const Model::DescribeEKSContainerInstancesRequest& request);
+
+                /**
+                 *查询容器实例中容器日志
+                 * @param req DescribeEksContainerInstanceLogRequest
+                 * @return DescribeEksContainerInstanceLogOutcome
+                 */
+                DescribeEksContainerInstanceLogOutcome DescribeEksContainerInstanceLog(const Model::DescribeEksContainerInstanceLogRequest &request);
+                void DescribeEksContainerInstanceLogAsync(const Model::DescribeEksContainerInstanceLogRequest& request, const DescribeEksContainerInstanceLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEksContainerInstanceLogOutcomeCallable DescribeEksContainerInstanceLogCallable(const Model::DescribeEksContainerInstanceLogRequest& request);
 
                 /**
                  *本接口用于查询开启vpc-cni模式的任务进度
@@ -1158,6 +1238,15 @@ namespace TencentCloud
                 RemoveNodeFromNodePoolOutcomeCallable RemoveNodeFromNodePoolCallable(const Model::RemoveNodeFromNodePoolRequest& request);
 
                 /**
+                 *重启弹性容器实例，支持批量操作
+                 * @param req RestartEKSContainerInstancesRequest
+                 * @return RestartEKSContainerInstancesOutcome
+                 */
+                RestartEKSContainerInstancesOutcome RestartEKSContainerInstances(const Model::RestartEKSContainerInstancesRequest &request);
+                void RestartEKSContainerInstancesAsync(const Model::RestartEKSContainerInstancesRequest& request, const RestartEKSContainerInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RestartEKSContainerInstancesOutcomeCallable RestartEKSContainerInstancesCallable(const Model::RestartEKSContainerInstancesRequest& request);
+
+                /**
                  *仅能设置节点池中处于伸缩组的节点
                  * @param req SetNodePoolNodeProtectionRequest
                  * @return SetNodePoolNodeProtectionOutcome
@@ -1192,6 +1281,15 @@ namespace TencentCloud
                 UpdateEKSClusterOutcome UpdateEKSCluster(const Model::UpdateEKSClusterRequest &request);
                 void UpdateEKSClusterAsync(const Model::UpdateEKSClusterRequest& request, const UpdateEKSClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateEKSClusterOutcomeCallable UpdateEKSClusterCallable(const Model::UpdateEKSClusterRequest& request);
+
+                /**
+                 *更新容器实例
+                 * @param req UpdateEKSContainerInstanceRequest
+                 * @return UpdateEKSContainerInstanceOutcome
+                 */
+                UpdateEKSContainerInstanceOutcome UpdateEKSContainerInstance(const Model::UpdateEKSContainerInstanceRequest &request);
+                void UpdateEKSContainerInstanceAsync(const Model::UpdateEKSContainerInstanceRequest& request, const UpdateEKSContainerInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateEKSContainerInstanceOutcomeCallable UpdateEKSContainerInstanceCallable(const Model::UpdateEKSContainerInstanceRequest& request);
 
                 /**
                  *给集群的一批work节点进行升级 

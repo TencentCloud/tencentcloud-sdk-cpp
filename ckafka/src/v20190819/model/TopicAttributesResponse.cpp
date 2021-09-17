@@ -28,7 +28,9 @@ TopicAttributesResponse::TopicAttributesResponse() :
     m_enableWhiteListHasBeenSet(false),
     m_ipWhiteListHasBeenSet(false),
     m_configHasBeenSet(false),
-    m_partitionsHasBeenSet(false)
+    m_partitionsHasBeenSet(false),
+    m_enableAclRuleHasBeenSet(false),
+    m_aclRuleListHasBeenSet(false)
 {
 }
 
@@ -137,6 +139,36 @@ CoreInternalOutcome TopicAttributesResponse::Deserialize(const rapidjson::Value 
         m_partitionsHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableAclRule") && !value["EnableAclRule"].IsNull())
+    {
+        if (!value["EnableAclRule"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicAttributesResponse.EnableAclRule` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableAclRule = value["EnableAclRule"].GetInt64();
+        m_enableAclRuleHasBeenSet = true;
+    }
+
+    if (value.HasMember("AclRuleList") && !value["AclRuleList"].IsNull())
+    {
+        if (!value["AclRuleList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TopicAttributesResponse.AclRuleList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AclRuleList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AclRule item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_aclRuleList.push_back(item);
+        }
+        m_aclRuleListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -215,6 +247,29 @@ void TopicAttributesResponse::ToJsonObject(rapidjson::Value &value, rapidjson::D
 
         int i=0;
         for (auto itr = m_partitions.begin(); itr != m_partitions.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_enableAclRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableAclRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableAclRule, allocator);
+    }
+
+    if (m_aclRuleListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AclRuleList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_aclRuleList.begin(); itr != m_aclRuleList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -350,5 +405,37 @@ void TopicAttributesResponse::SetPartitions(const vector<TopicPartitionDO>& _par
 bool TopicAttributesResponse::PartitionsHasBeenSet() const
 {
     return m_partitionsHasBeenSet;
+}
+
+int64_t TopicAttributesResponse::GetEnableAclRule() const
+{
+    return m_enableAclRule;
+}
+
+void TopicAttributesResponse::SetEnableAclRule(const int64_t& _enableAclRule)
+{
+    m_enableAclRule = _enableAclRule;
+    m_enableAclRuleHasBeenSet = true;
+}
+
+bool TopicAttributesResponse::EnableAclRuleHasBeenSet() const
+{
+    return m_enableAclRuleHasBeenSet;
+}
+
+vector<AclRule> TopicAttributesResponse::GetAclRuleList() const
+{
+    return m_aclRuleList;
+}
+
+void TopicAttributesResponse::SetAclRuleList(const vector<AclRule>& _aclRuleList)
+{
+    m_aclRuleList = _aclRuleList;
+    m_aclRuleListHasBeenSet = true;
+}
+
+bool TopicAttributesResponse::AclRuleListHasBeenSet() const
+{
+    return m_aclRuleListHasBeenSet;
 }
 

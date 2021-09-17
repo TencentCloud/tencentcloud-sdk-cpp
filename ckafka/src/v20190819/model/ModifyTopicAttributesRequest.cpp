@@ -32,7 +32,10 @@ ModifyTopicAttributesRequest::ModifyTopicAttributesRequest() :
     m_retentionMsHasBeenSet(false),
     m_segmentMsHasBeenSet(false),
     m_maxMessageBytesHasBeenSet(false),
-    m_cleanUpPolicyHasBeenSet(false)
+    m_cleanUpPolicyHasBeenSet(false),
+    m_ipWhiteListHasBeenSet(false),
+    m_enableAclRuleHasBeenSet(false),
+    m_aclRuleNameHasBeenSet(false)
 {
 }
 
@@ -121,6 +124,35 @@ string ModifyTopicAttributesRequest::ToJsonString() const
         string key = "CleanUpPolicy";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cleanUpPolicy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ipWhiteListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpWhiteList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_ipWhiteList.begin(); itr != m_ipWhiteList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_enableAclRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableAclRule";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableAclRule, allocator);
+    }
+
+    if (m_aclRuleNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AclRuleName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_aclRuleName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -289,6 +321,54 @@ void ModifyTopicAttributesRequest::SetCleanUpPolicy(const string& _cleanUpPolicy
 bool ModifyTopicAttributesRequest::CleanUpPolicyHasBeenSet() const
 {
     return m_cleanUpPolicyHasBeenSet;
+}
+
+vector<string> ModifyTopicAttributesRequest::GetIpWhiteList() const
+{
+    return m_ipWhiteList;
+}
+
+void ModifyTopicAttributesRequest::SetIpWhiteList(const vector<string>& _ipWhiteList)
+{
+    m_ipWhiteList = _ipWhiteList;
+    m_ipWhiteListHasBeenSet = true;
+}
+
+bool ModifyTopicAttributesRequest::IpWhiteListHasBeenSet() const
+{
+    return m_ipWhiteListHasBeenSet;
+}
+
+int64_t ModifyTopicAttributesRequest::GetEnableAclRule() const
+{
+    return m_enableAclRule;
+}
+
+void ModifyTopicAttributesRequest::SetEnableAclRule(const int64_t& _enableAclRule)
+{
+    m_enableAclRule = _enableAclRule;
+    m_enableAclRuleHasBeenSet = true;
+}
+
+bool ModifyTopicAttributesRequest::EnableAclRuleHasBeenSet() const
+{
+    return m_enableAclRuleHasBeenSet;
+}
+
+string ModifyTopicAttributesRequest::GetAclRuleName() const
+{
+    return m_aclRuleName;
+}
+
+void ModifyTopicAttributesRequest::SetAclRuleName(const string& _aclRuleName)
+{
+    m_aclRuleName = _aclRuleName;
+    m_aclRuleNameHasBeenSet = true;
+}
+
+bool ModifyTopicAttributesRequest::AclRuleNameHasBeenSet() const
+{
+    return m_aclRuleNameHasBeenSet;
 }
 
 

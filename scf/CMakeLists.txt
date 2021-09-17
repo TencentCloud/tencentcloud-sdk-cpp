@@ -136,6 +136,7 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/Alias.h
   include/tencentcloud/scf/v20180416/model/GetLayerVersionRequest.h
   include/tencentcloud/scf/v20180416/model/GetFunctionLogsResponse.h
+  include/tencentcloud/scf/v20180416/model/ImageConfig.h
   include/tencentcloud/scf/v20180416/model/DeleteTriggerResponse.h
   include/tencentcloud/scf/v20180416/model/SearchKey.h
   include/tencentcloud/scf/v20180416/model/DeleteTriggerRequest.h
@@ -266,6 +267,7 @@ set(scf_src
   src/v20180416/model/Alias.cpp
   src/v20180416/model/GetLayerVersionRequest.cpp
   src/v20180416/model/GetFunctionLogsResponse.cpp
+  src/v20180416/model/ImageConfig.cpp
   src/v20180416/model/DeleteTriggerResponse.cpp
   src/v20180416/model/SearchKey.cpp
   src/v20180416/model/DeleteTriggerRequest.cpp

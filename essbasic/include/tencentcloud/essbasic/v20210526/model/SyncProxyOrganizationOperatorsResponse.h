@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/essbasic/v20210526/model/SyncFailReason.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,55 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取Status 同步状态,全部同步失败接口会直接报错
+1-成功 
+2-部分成功
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status Status 同步状态,全部同步失败接口会直接报错
+1-成功 
+2-部分成功
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取同步失败经办人及其失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FailedList 同步失败经办人及其失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SyncFailReason> GetFailedList() const;
+
+                    /**
+                     * 判断参数 FailedList 是否已赋值
+                     * @return FailedList 是否已赋值
+                     */
+                    bool FailedListHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * Status 同步状态,全部同步失败接口会直接报错
+1-成功 
+2-部分成功
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 同步失败经办人及其失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SyncFailReason> m_failedList;
+                    bool m_failedListHasBeenSet;
 
                 };
             }

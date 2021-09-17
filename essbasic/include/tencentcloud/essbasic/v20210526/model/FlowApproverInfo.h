@@ -154,6 +154,42 @@ namespace TencentCloud
                      */
                     bool CallbackUrlHasBeenSet() const;
 
+                    /**
+                     * 获取签署人类型，PERSON和ORGANIZATION
+                     * @return ApproverType 签署人类型，PERSON和ORGANIZATION
+                     */
+                    std::string GetApproverType() const;
+
+                    /**
+                     * 设置签署人类型，PERSON和ORGANIZATION
+                     * @param ApproverType 签署人类型，PERSON和ORGANIZATION
+                     */
+                    void SetApproverType(const std::string& _approverType);
+
+                    /**
+                     * 判断参数 ApproverType 是否已赋值
+                     * @return ApproverType 是否已赋值
+                     */
+                    bool ApproverTypeHasBeenSet() const;
+
+                    /**
+                     * 获取用户侧第三方id
+                     * @return OpenId 用户侧第三方id
+                     */
+                    std::string GetOpenId() const;
+
+                    /**
+                     * 设置用户侧第三方id
+                     * @param OpenId 用户侧第三方id
+                     */
+                    void SetOpenId(const std::string& _openId);
+
+                    /**
+                     * 判断参数 OpenId 是否已赋值
+                     * @return OpenId 是否已赋值
+                     */
+                    bool OpenIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -191,6 +227,18 @@ namespace TencentCloud
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;
+
+                    /**
+                     * 签署人类型，PERSON和ORGANIZATION
+                     */
+                    std::string m_approverType;
+                    bool m_approverTypeHasBeenSet;
+
+                    /**
+                     * 用户侧第三方id
+                     */
+                    std::string m_openId;
+                    bool m_openIdHasBeenSet;
 
                 };
             }

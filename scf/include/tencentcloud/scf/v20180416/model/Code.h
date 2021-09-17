@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/scf/v20180416/model/ImageConfig.h>
 
 
 namespace TencentCloud
@@ -298,6 +299,24 @@ namespace TencentCloud
                      */
                     bool GitUserNameSecretHasBeenSet() const;
 
+                    /**
+                     * 获取镜像部署时配置TCR镜像信息
+                     * @return ImageConfig 镜像部署时配置TCR镜像信息
+                     */
+                    ImageConfig GetImageConfig() const;
+
+                    /**
+                     * 设置镜像部署时配置TCR镜像信息
+                     * @param ImageConfig 镜像部署时配置TCR镜像信息
+                     */
+                    void SetImageConfig(const ImageConfig& _imageConfig);
+
+                    /**
+                     * 判断参数 ImageConfig 是否已赋值
+                     * @return ImageConfig 是否已赋值
+                     */
+                    bool ImageConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -383,6 +402,12 @@ namespace TencentCloud
                      */
                     std::string m_gitUserNameSecret;
                     bool m_gitUserNameSecretHasBeenSet;
+
+                    /**
+                     * 镜像部署时配置TCR镜像信息
+                     */
+                    ImageConfig m_imageConfig;
+                    bool m_imageConfigHasBeenSet;
 
                 };
             }

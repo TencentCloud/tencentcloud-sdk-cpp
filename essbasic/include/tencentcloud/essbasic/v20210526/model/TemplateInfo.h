@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/essbasic/v20210526/model/Component.h>
+#include <tencentcloud/essbasic/v20210526/model/Recipient.h>
 
 
 namespace TencentCloud
@@ -173,6 +174,42 @@ namespace TencentCloud
                      */
                     bool CreatedOnHasBeenSet() const;
 
+                    /**
+                     * 获取模板类型：1-静默签；2-静默签授权；3-普通模版
+                     * @return TemplateType 模板类型：1-静默签；2-静默签授权；3-普通模版
+                     */
+                    int64_t GetTemplateType() const;
+
+                    /**
+                     * 设置模板类型：1-静默签；2-静默签授权；3-普通模版
+                     * @param TemplateType 模板类型：1-静默签；2-静默签授权；3-普通模版
+                     */
+                    void SetTemplateType(const int64_t& _templateType);
+
+                    /**
+                     * 判断参数 TemplateType 是否已赋值
+                     * @return TemplateType 是否已赋值
+                     */
+                    bool TemplateTypeHasBeenSet() const;
+
+                    /**
+                     * 获取模板中的流程参与人信息
+                     * @return Recipients 模板中的流程参与人信息
+                     */
+                    std::vector<Recipient> GetRecipients() const;
+
+                    /**
+                     * 设置模板中的流程参与人信息
+                     * @param Recipients 模板中的流程参与人信息
+                     */
+                    void SetRecipients(const std::vector<Recipient>& _recipients);
+
+                    /**
+                     * 判断参数 Recipients 是否已赋值
+                     * @return Recipients 是否已赋值
+                     */
+                    bool RecipientsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -216,6 +253,18 @@ namespace TencentCloud
                      */
                     int64_t m_createdOn;
                     bool m_createdOnHasBeenSet;
+
+                    /**
+                     * 模板类型：1-静默签；2-静默签授权；3-普通模版
+                     */
+                    int64_t m_templateType;
+                    bool m_templateTypeHasBeenSet;
+
+                    /**
+                     * 模板中的流程参与人信息
+                     */
+                    std::vector<Recipient> m_recipients;
+                    bool m_recipientsHasBeenSet;
 
                 };
             }

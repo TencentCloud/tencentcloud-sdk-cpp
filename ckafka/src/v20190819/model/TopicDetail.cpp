@@ -33,7 +33,8 @@ TopicDetail::TopicDetail() :
     m_forwardStatusHasBeenSet(false),
     m_forwardIntervalHasBeenSet(false),
     m_configHasBeenSet(false),
-    m_retentionTimeConfigHasBeenSet(false)
+    m_retentionTimeConfigHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -186,6 +187,16 @@ CoreInternalOutcome TopicDetail::Deserialize(const rapidjson::Value &value)
         m_retentionTimeConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicDetail.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -297,6 +308,14 @@ void TopicDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_retentionTimeConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
     }
 
 }
@@ -508,5 +527,21 @@ void TopicDetail::SetRetentionTimeConfig(const TopicRetentionTimeConfigRsp& _ret
 bool TopicDetail::RetentionTimeConfigHasBeenSet() const
 {
     return m_retentionTimeConfigHasBeenSet;
+}
+
+int64_t TopicDetail::GetStatus() const
+{
+    return m_status;
+}
+
+void TopicDetail::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool TopicDetail::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

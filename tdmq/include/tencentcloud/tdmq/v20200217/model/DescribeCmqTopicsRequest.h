@@ -96,6 +96,42 @@ namespace TencentCloud
                      */
                     bool TopicNameHasBeenSet() const;
 
+                    /**
+                     * 获取CMQ 主题名称列表过滤
+                     * @return TopicNameList CMQ 主题名称列表过滤
+                     */
+                    std::vector<std::string> GetTopicNameList() const;
+
+                    /**
+                     * 设置CMQ 主题名称列表过滤
+                     * @param TopicNameList CMQ 主题名称列表过滤
+                     */
+                    void SetTopicNameList(const std::vector<std::string>& _topicNameList);
+
+                    /**
+                     * 判断参数 TopicNameList 是否已赋值
+                     * @return TopicNameList 是否已赋值
+                     */
+                    bool TopicNameListHasBeenSet() const;
+
+                    /**
+                     * 获取标签过滤查找时，需要设置为 true
+                     * @return IsTagFilter 标签过滤查找时，需要设置为 true
+                     */
+                    bool GetIsTagFilter() const;
+
+                    /**
+                     * 设置标签过滤查找时，需要设置为 true
+                     * @param IsTagFilter 标签过滤查找时，需要设置为 true
+                     */
+                    void SetIsTagFilter(const bool& _isTagFilter);
+
+                    /**
+                     * 判断参数 IsTagFilter 是否已赋值
+                     * @return IsTagFilter 是否已赋值
+                     */
+                    bool IsTagFilterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +151,18 @@ namespace TencentCloud
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
+
+                    /**
+                     * CMQ 主题名称列表过滤
+                     */
+                    std::vector<std::string> m_topicNameList;
+                    bool m_topicNameListHasBeenSet;
+
+                    /**
+                     * 标签过滤查找时，需要设置为 true
+                     */
+                    bool m_isTagFilter;
+                    bool m_isTagFilterHasBeenSet;
 
                 };
             }

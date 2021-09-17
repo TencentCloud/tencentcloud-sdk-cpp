@@ -258,6 +258,42 @@ namespace TencentCloud
                      */
                     bool SegmentMsHasBeenSet() const;
 
+                    /**
+                     * 获取预设ACL规则, 1:打开  0:关闭，默认不打开
+                     * @return EnableAclRule 预设ACL规则, 1:打开  0:关闭，默认不打开
+                     */
+                    int64_t GetEnableAclRule() const;
+
+                    /**
+                     * 设置预设ACL规则, 1:打开  0:关闭，默认不打开
+                     * @param EnableAclRule 预设ACL规则, 1:打开  0:关闭，默认不打开
+                     */
+                    void SetEnableAclRule(const int64_t& _enableAclRule);
+
+                    /**
+                     * 判断参数 EnableAclRule 是否已赋值
+                     * @return EnableAclRule 是否已赋值
+                     */
+                    bool EnableAclRuleHasBeenSet() const;
+
+                    /**
+                     * 获取预设ACL规则的名称
+                     * @return AclRuleName 预设ACL规则的名称
+                     */
+                    std::string GetAclRuleName() const;
+
+                    /**
+                     * 设置预设ACL规则的名称
+                     * @param AclRuleName 预设ACL规则的名称
+                     */
+                    void SetAclRuleName(const std::string& _aclRuleName);
+
+                    /**
+                     * 判断参数 AclRuleName 是否已赋值
+                     * @return AclRuleName 是否已赋值
+                     */
+                    bool AclRuleNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -331,6 +367,18 @@ namespace TencentCloud
                      */
                     int64_t m_segmentMs;
                     bool m_segmentMsHasBeenSet;
+
+                    /**
+                     * 预设ACL规则, 1:打开  0:关闭，默认不打开
+                     */
+                    int64_t m_enableAclRule;
+                    bool m_enableAclRuleHasBeenSet;
+
+                    /**
+                     * 预设ACL规则的名称
+                     */
+                    std::string m_aclRuleName;
+                    bool m_aclRuleNameHasBeenSet;
 
                 };
             }

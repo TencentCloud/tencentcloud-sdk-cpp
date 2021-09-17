@@ -138,6 +138,42 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取控制台指定模块，文件/合同管理:"DOCUMENT"，模版管理:"TEMPLATE"，印章管理:"SEAL"，组织架构/人员:"OPERATOR"，空字符串："账号信息"
+                     * @return Module 控制台指定模块，文件/合同管理:"DOCUMENT"，模版管理:"TEMPLATE"，印章管理:"SEAL"，组织架构/人员:"OPERATOR"，空字符串："账号信息"
+                     */
+                    std::string GetModule() const;
+
+                    /**
+                     * 设置控制台指定模块，文件/合同管理:"DOCUMENT"，模版管理:"TEMPLATE"，印章管理:"SEAL"，组织架构/人员:"OPERATOR"，空字符串："账号信息"
+                     * @param Module 控制台指定模块，文件/合同管理:"DOCUMENT"，模版管理:"TEMPLATE"，印章管理:"SEAL"，组织架构/人员:"OPERATOR"，空字符串："账号信息"
+                     */
+                    void SetModule(const std::string& _module);
+
+                    /**
+                     * 判断参数 Module 是否已赋值
+                     * @return Module 是否已赋值
+                     */
+                    bool ModuleHasBeenSet() const;
+
+                    /**
+                     * 获取控制台指定模块Id
+                     * @return ModuleId 控制台指定模块Id
+                     */
+                    std::string GetModuleId() const;
+
+                    /**
+                     * 设置控制台指定模块Id
+                     * @param ModuleId 控制台指定模块Id
+                     */
+                    void SetModuleId(const std::string& _moduleId);
+
+                    /**
+                     * 判断参数 ModuleId 是否已赋值
+                     * @return ModuleId 是否已赋值
+                     */
+                    bool ModuleIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -170,6 +206,18 @@ namespace TencentCloud
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * 控制台指定模块，文件/合同管理:"DOCUMENT"，模版管理:"TEMPLATE"，印章管理:"SEAL"，组织架构/人员:"OPERATOR"，空字符串："账号信息"
+                     */
+                    std::string m_module;
+                    bool m_moduleHasBeenSet;
+
+                    /**
+                     * 控制台指定模块Id
+                     */
+                    std::string m_moduleId;
+                    bool m_moduleIdHasBeenSet;
 
                 };
             }

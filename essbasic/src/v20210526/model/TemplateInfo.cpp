@@ -27,7 +27,9 @@ TemplateInfo::TemplateInfo() :
     m_componentsHasBeenSet(false),
     m_signComponentsHasBeenSet(false),
     m_creatorHasBeenSet(false),
-    m_createdOnHasBeenSet(false)
+    m_createdOnHasBeenSet(false),
+    m_templateTypeHasBeenSet(false),
+    m_recipientsHasBeenSet(false)
 {
 }
 
@@ -126,6 +128,36 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
         m_createdOnHasBeenSet = true;
     }
 
+    if (value.HasMember("TemplateType") && !value["TemplateType"].IsNull())
+    {
+        if (!value["TemplateType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.TemplateType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_templateType = value["TemplateType"].GetInt64();
+        m_templateTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Recipients") && !value["Recipients"].IsNull())
+    {
+        if (!value["Recipients"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.Recipients` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Recipients"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Recipient item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_recipients.push_back(item);
+        }
+        m_recipientsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -201,6 +233,29 @@ void TemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "CreatedOn";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createdOn, allocator);
+    }
+
+    if (m_templateTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_templateType, allocator);
+    }
+
+    if (m_recipientsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Recipients";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_recipients.begin(); itr != m_recipients.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -316,5 +371,37 @@ void TemplateInfo::SetCreatedOn(const int64_t& _createdOn)
 bool TemplateInfo::CreatedOnHasBeenSet() const
 {
     return m_createdOnHasBeenSet;
+}
+
+int64_t TemplateInfo::GetTemplateType() const
+{
+    return m_templateType;
+}
+
+void TemplateInfo::SetTemplateType(const int64_t& _templateType)
+{
+    m_templateType = _templateType;
+    m_templateTypeHasBeenSet = true;
+}
+
+bool TemplateInfo::TemplateTypeHasBeenSet() const
+{
+    return m_templateTypeHasBeenSet;
+}
+
+vector<Recipient> TemplateInfo::GetRecipients() const
+{
+    return m_recipients;
+}
+
+void TemplateInfo::SetRecipients(const vector<Recipient>& _recipients)
+{
+    m_recipients = _recipients;
+    m_recipientsHasBeenSet = true;
+}
+
+bool TemplateInfo::RecipientsHasBeenSet() const
+{
+    return m_recipientsHasBeenSet;
 }
 

@@ -25,7 +25,9 @@ using namespace std;
 DescribeCmqTopicsRequest::DescribeCmqTopicsRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_topicNameHasBeenSet(false)
+    m_topicNameHasBeenSet(false),
+    m_topicNameListHasBeenSet(false),
+    m_isTagFilterHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,27 @@ string DescribeCmqTopicsRequest::ToJsonString() const
         string key = "TopicName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_topicName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_topicNameListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicNameList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_topicNameList.begin(); itr != m_topicNameList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_isTagFilterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsTagFilter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isTagFilter, allocator);
     }
 
 
@@ -114,6 +137,38 @@ void DescribeCmqTopicsRequest::SetTopicName(const string& _topicName)
 bool DescribeCmqTopicsRequest::TopicNameHasBeenSet() const
 {
     return m_topicNameHasBeenSet;
+}
+
+vector<string> DescribeCmqTopicsRequest::GetTopicNameList() const
+{
+    return m_topicNameList;
+}
+
+void DescribeCmqTopicsRequest::SetTopicNameList(const vector<string>& _topicNameList)
+{
+    m_topicNameList = _topicNameList;
+    m_topicNameListHasBeenSet = true;
+}
+
+bool DescribeCmqTopicsRequest::TopicNameListHasBeenSet() const
+{
+    return m_topicNameListHasBeenSet;
+}
+
+bool DescribeCmqTopicsRequest::GetIsTagFilter() const
+{
+    return m_isTagFilter;
+}
+
+void DescribeCmqTopicsRequest::SetIsTagFilter(const bool& _isTagFilter)
+{
+    m_isTagFilter = _isTagFilter;
+    m_isTagFilterHasBeenSet = true;
+}
+
+bool DescribeCmqTopicsRequest::IsTagFilterHasBeenSet() const
+{
+    return m_isTagFilterHasBeenSet;
 }
 
 

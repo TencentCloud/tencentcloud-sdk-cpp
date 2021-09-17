@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ckafka/v20190819/model/Config.h>
 #include <tencentcloud/ckafka/v20190819/model/TopicPartitionDO.h>
+#include <tencentcloud/ckafka/v20190819/model/AclRule.h>
 
 
 namespace TencentCloud
@@ -196,6 +197,50 @@ namespace TencentCloud
                      */
                     bool PartitionsHasBeenSet() const;
 
+                    /**
+                     * 获取ACL预设策略开关，1：打开； 0：关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableAclRule ACL预设策略开关，1：打开； 0：关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetEnableAclRule() const;
+
+                    /**
+                     * 设置ACL预设策略开关，1：打开； 0：关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnableAclRule ACL预设策略开关，1：打开； 0：关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnableAclRule(const int64_t& _enableAclRule);
+
+                    /**
+                     * 判断参数 EnableAclRule 是否已赋值
+                     * @return EnableAclRule 是否已赋值
+                     */
+                    bool EnableAclRuleHasBeenSet() const;
+
+                    /**
+                     * 获取预设策略列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AclRuleList 预设策略列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AclRule> GetAclRuleList() const;
+
+                    /**
+                     * 设置预设策略列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AclRuleList 预设策略列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAclRuleList(const std::vector<AclRule>& _aclRuleList);
+
+                    /**
+                     * 判断参数 AclRuleList 是否已赋值
+                     * @return AclRuleList 是否已赋值
+                     */
+                    bool AclRuleListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -246,6 +291,20 @@ namespace TencentCloud
                      */
                     std::vector<TopicPartitionDO> m_partitions;
                     bool m_partitionsHasBeenSet;
+
+                    /**
+                     * ACL预设策略开关，1：打开； 0：关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_enableAclRule;
+                    bool m_enableAclRuleHasBeenSet;
+
+                    /**
+                     * 预设策略列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AclRule> m_aclRuleList;
+                    bool m_aclRuleListHasBeenSet;
 
                 };
             }

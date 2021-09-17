@@ -40,6 +40,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/Region.h
   include/tencentcloud/ckafka/v20190819/model/DescribeInstancesDetailResponse.h
   include/tencentcloud/ckafka/v20190819/model/CreateInstancePreData.h
+  include/tencentcloud/ckafka/v20190819/model/AclRule.h
   include/tencentcloud/ckafka/v20190819/model/DescribeACLResponse.h
   include/tencentcloud/ckafka/v20190819/model/JgwOperateResponse.h
   include/tencentcloud/ckafka/v20190819/model/ZoneInfo.h
@@ -172,6 +173,7 @@ set(ckafka_src
   src/v20190819/model/Region.cpp
   src/v20190819/model/DescribeInstancesDetailResponse.cpp
   src/v20190819/model/CreateInstancePreData.cpp
+  src/v20190819/model/AclRule.cpp
   src/v20190819/model/DescribeACLResponse.cpp
   src/v20190819/model/JgwOperateResponse.cpp
   src/v20190819/model/ZoneInfo.cpp

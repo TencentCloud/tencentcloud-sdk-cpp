@@ -355,14 +355,14 @@ namespace TencentCloud
                     bool CfsConfigHasBeenSet() const;
 
                     /**
-                     * 获取函数初始化执行超时时间，默认15秒
-                     * @return InitTimeout 函数初始化执行超时时间，默认15秒
+                     * 获取函数初始化执行超时时间
+                     * @return InitTimeout 函数初始化执行超时时间
                      */
                     int64_t GetInitTimeout() const;
 
                     /**
-                     * 设置函数初始化执行超时时间，默认15秒
-                     * @param InitTimeout 函数初始化执行超时时间，默认15秒
+                     * 设置函数初始化执行超时时间
+                     * @param InitTimeout 函数初始化执行超时时间
                      */
                     void SetInitTimeout(const int64_t& _initTimeout);
 
@@ -477,7 +477,7 @@ namespace TencentCloud
                     bool m_cfsConfigHasBeenSet;
 
                     /**
-                     * 函数初始化执行超时时间，默认15秒
+                     * 函数初始化执行超时时间
                      */
                     int64_t m_initTimeout;
                     bool m_initTimeoutHasBeenSet;

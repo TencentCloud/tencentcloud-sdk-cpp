@@ -26,7 +26,8 @@ DescribeTopicRequest::DescribeTopicRequest() :
     m_instanceIdHasBeenSet(false),
     m_searchWordHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_aclRuleNameHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DescribeTopicRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_aclRuleNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AclRuleName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_aclRuleName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DescribeTopicRequest::SetLimit(const int64_t& _limit)
 bool DescribeTopicRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeTopicRequest::GetAclRuleName() const
+{
+    return m_aclRuleName;
+}
+
+void DescribeTopicRequest::SetAclRuleName(const string& _aclRuleName)
+{
+    m_aclRuleName = _aclRuleName;
+    m_aclRuleNameHasBeenSet = true;
+}
+
+bool DescribeTopicRequest::AclRuleNameHasBeenSet() const
+{
+    return m_aclRuleNameHasBeenSet;
 }
 
 

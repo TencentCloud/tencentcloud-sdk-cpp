@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Essbasic::V20210526::Model;
 using namespace std;
 
-SyncProxyOrganizationOperatorsResponse::SyncProxyOrganizationOperatorsResponse()
+SyncProxyOrganizationOperatorsResponse::SyncProxyOrganizationOperatorsResponse() :
+    m_statusHasBeenSet(false),
+    m_failedListHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,36 @@ CoreInternalOutcome SyncProxyOrganizationOperatorsResponse::Deserialize(const st
     }
 
 
+    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    {
+        if (!rsp["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = rsp["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FailedList") && !rsp["FailedList"].IsNull())
+    {
+        if (!rsp["FailedList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FailedList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["FailedList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SyncFailReason item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_failedList.push_back(item);
+        }
+        m_failedListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +102,29 @@ string SyncProxyOrganizationOperatorsResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_failedListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailedList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_failedList.begin(); itr != m_failedList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +137,25 @@ string SyncProxyOrganizationOperatorsResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t SyncProxyOrganizationOperatorsResponse::GetStatus() const
+{
+    return m_status;
+}
+
+bool SyncProxyOrganizationOperatorsResponse::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+vector<SyncFailReason> SyncProxyOrganizationOperatorsResponse::GetFailedList() const
+{
+    return m_failedList;
+}
+
+bool SyncProxyOrganizationOperatorsResponse::FailedListHasBeenSet() const
+{
+    return m_failedListHasBeenSet;
+}
 
 

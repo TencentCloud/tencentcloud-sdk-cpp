@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeTemplatesRequest::DescribeTemplatesRequest() :
     m_agentHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_templateIdHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,14 @@ string DescribeTemplatesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_templateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -91,6 +100,22 @@ void DescribeTemplatesRequest::SetOperator(const UserInfo& _operator)
 bool DescribeTemplatesRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+string DescribeTemplatesRequest::GetTemplateId() const
+{
+    return m_templateId;
+}
+
+void DescribeTemplatesRequest::SetTemplateId(const string& _templateId)
+{
+    m_templateId = _templateId;
+    m_templateIdHasBeenSet = true;
+}
+
+bool DescribeTemplatesRequest::TemplateIdHasBeenSet() const
+{
+    return m_templateIdHasBeenSet;
 }
 
 

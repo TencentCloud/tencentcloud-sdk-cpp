@@ -27,7 +27,9 @@ CreateConsoleLoginUrlRequest::CreateConsoleLoginUrlRequest() :
     m_proxyOrganizationNameHasBeenSet(false),
     m_uniformSocialCreditCodeHasBeenSet(false),
     m_proxyOperatorNameHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_moduleHasBeenSet(false),
+    m_moduleIdHasBeenSet(false)
 {
 }
 
@@ -78,6 +80,22 @@ string CreateConsoleLoginUrlRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_moduleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Module";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_module.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_moduleIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModuleId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_moduleId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -166,6 +184,38 @@ void CreateConsoleLoginUrlRequest::SetOperator(const UserInfo& _operator)
 bool CreateConsoleLoginUrlRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+string CreateConsoleLoginUrlRequest::GetModule() const
+{
+    return m_module;
+}
+
+void CreateConsoleLoginUrlRequest::SetModule(const string& _module)
+{
+    m_module = _module;
+    m_moduleHasBeenSet = true;
+}
+
+bool CreateConsoleLoginUrlRequest::ModuleHasBeenSet() const
+{
+    return m_moduleHasBeenSet;
+}
+
+string CreateConsoleLoginUrlRequest::GetModuleId() const
+{
+    return m_moduleId;
+}
+
+void CreateConsoleLoginUrlRequest::SetModuleId(const string& _moduleId)
+{
+    m_moduleId = _moduleId;
+    m_moduleIdHasBeenSet = true;
+}
+
+bool CreateConsoleLoginUrlRequest::ModuleIdHasBeenSet() const
+{
+    return m_moduleIdHasBeenSet;
 }
 
 

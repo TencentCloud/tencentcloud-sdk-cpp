@@ -26,7 +26,9 @@ FlowApproverInfo::FlowApproverInfo() :
     m_idCardNumberHasBeenSet(false),
     m_jumpUrlHasBeenSet(false),
     m_deadlineHasBeenSet(false),
-    m_callbackUrlHasBeenSet(false)
+    m_callbackUrlHasBeenSet(false),
+    m_approverTypeHasBeenSet(false),
+    m_openIdHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,26 @@ CoreInternalOutcome FlowApproverInfo::Deserialize(const rapidjson::Value &value)
         m_callbackUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("ApproverType") && !value["ApproverType"].IsNull())
+    {
+        if (!value["ApproverType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.ApproverType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_approverType = string(value["ApproverType"].GetString());
+        m_approverTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("OpenId") && !value["OpenId"].IsNull())
+    {
+        if (!value["OpenId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.OpenId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_openId = string(value["OpenId"].GetString());
+        m_openIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +170,22 @@ void FlowApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "CallbackUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_approverTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_approverType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_openIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpenId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_openId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +285,37 @@ void FlowApproverInfo::SetCallbackUrl(const string& _callbackUrl)
 bool FlowApproverInfo::CallbackUrlHasBeenSet() const
 {
     return m_callbackUrlHasBeenSet;
+}
+
+string FlowApproverInfo::GetApproverType() const
+{
+    return m_approverType;
+}
+
+void FlowApproverInfo::SetApproverType(const string& _approverType)
+{
+    m_approverType = _approverType;
+    m_approverTypeHasBeenSet = true;
+}
+
+bool FlowApproverInfo::ApproverTypeHasBeenSet() const
+{
+    return m_approverTypeHasBeenSet;
+}
+
+string FlowApproverInfo::GetOpenId() const
+{
+    return m_openId;
+}
+
+void FlowApproverInfo::SetOpenId(const string& _openId)
+{
+    m_openId = _openId;
+    m_openIdHasBeenSet = true;
+}
+
+bool FlowApproverInfo::OpenIdHasBeenSet() const
+{
+    return m_openIdHasBeenSet;
 }
 

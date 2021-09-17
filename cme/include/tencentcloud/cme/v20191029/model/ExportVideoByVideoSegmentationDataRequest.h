@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool ExportDestinationHasBeenSet() const;
 
                     /**
-                     * 获取导出的云剪素材信息。指定 ExportDestination = CME 时有效。
-                     * @return CMEExportInfo 导出的云剪素材信息。指定 ExportDestination = CME 时有效。
+                     * 获取导出的云剪媒体信息。当导出目标为 CME 时必填。
+                     * @return CMEExportInfo 导出的云剪媒体信息。当导出目标为 CME 时必填。
                      */
                     CMEExportInfo GetCMEExportInfo() const;
 
                     /**
-                     * 设置导出的云剪素材信息。指定 ExportDestination = CME 时有效。
-                     * @param CMEExportInfo 导出的云剪素材信息。指定 ExportDestination = CME 时有效。
+                     * 设置导出的云剪媒体信息。当导出目标为 CME 时必填。
+                     * @param CMEExportInfo 导出的云剪媒体信息。当导出目标为 CME 时必填。
                      */
                     void SetCMEExportInfo(const CMEExportInfo& _cMEExportInfo);
 
@@ -191,14 +191,14 @@ namespace TencentCloud
                     bool CMEExportInfoHasBeenSet() const;
 
                     /**
-                     * 获取导出的云点播媒资信息。指定 ExportDestination = VOD 时有效。
-                     * @return VODExportInfo 导出的云点播媒资信息。指定 ExportDestination = VOD 时有效。
+                     * 获取导出的云点播媒资信息。当导出目标为 VOD 时必填。
+                     * @return VODExportInfo 导出的云点播媒资信息。当导出目标为 VOD 时必填。
                      */
                     VODExportInfo GetVODExportInfo() const;
 
                     /**
-                     * 设置导出的云点播媒资信息。指定 ExportDestination = VOD 时有效。
-                     * @param VODExportInfo 导出的云点播媒资信息。指定 ExportDestination = VOD 时有效。
+                     * 设置导出的云点播媒资信息。当导出目标为 VOD 时必填。
+                     * @param VODExportInfo 导出的云点播媒资信息。当导出目标为 VOD 时必填。
                      */
                     void SetVODExportInfo(const VODExportInfo& _vODExportInfo);
 
@@ -270,13 +270,13 @@ namespace TencentCloud
                     bool m_exportDestinationHasBeenSet;
 
                     /**
-                     * 导出的云剪素材信息。指定 ExportDestination = CME 时有效。
+                     * 导出的云剪媒体信息。当导出目标为 CME 时必填。
                      */
                     CMEExportInfo m_cMEExportInfo;
                     bool m_cMEExportInfoHasBeenSet;
 
                     /**
-                     * 导出的云点播媒资信息。指定 ExportDestination = VOD 时有效。
+                     * 导出的云点播媒资信息。当导出目标为 VOD 时必填。
                      */
                     VODExportInfo m_vODExportInfo;
                     bool m_vODExportInfoHasBeenSet;

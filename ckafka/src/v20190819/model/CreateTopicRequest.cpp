@@ -34,7 +34,9 @@ CreateTopicRequest::CreateTopicRequest() :
     m_minInsyncReplicasHasBeenSet(false),
     m_uncleanLeaderElectionEnableHasBeenSet(false),
     m_retentionMsHasBeenSet(false),
-    m_segmentMsHasBeenSet(false)
+    m_segmentMsHasBeenSet(false),
+    m_enableAclRuleHasBeenSet(false),
+    m_aclRuleNameHasBeenSet(false)
 {
 }
 
@@ -144,6 +146,22 @@ string CreateTopicRequest::ToJsonString() const
         string key = "SegmentMs";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_segmentMs, allocator);
+    }
+
+    if (m_enableAclRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableAclRule";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableAclRule, allocator);
+    }
+
+    if (m_aclRuleNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AclRuleName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_aclRuleName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -344,6 +362,38 @@ void CreateTopicRequest::SetSegmentMs(const int64_t& _segmentMs)
 bool CreateTopicRequest::SegmentMsHasBeenSet() const
 {
     return m_segmentMsHasBeenSet;
+}
+
+int64_t CreateTopicRequest::GetEnableAclRule() const
+{
+    return m_enableAclRule;
+}
+
+void CreateTopicRequest::SetEnableAclRule(const int64_t& _enableAclRule)
+{
+    m_enableAclRule = _enableAclRule;
+    m_enableAclRuleHasBeenSet = true;
+}
+
+bool CreateTopicRequest::EnableAclRuleHasBeenSet() const
+{
+    return m_enableAclRuleHasBeenSet;
+}
+
+string CreateTopicRequest::GetAclRuleName() const
+{
+    return m_aclRuleName;
+}
+
+void CreateTopicRequest::SetAclRuleName(const string& _aclRuleName)
+{
+    m_aclRuleName = _aclRuleName;
+    m_aclRuleNameHasBeenSet = true;
+}
+
+bool CreateTopicRequest::AclRuleNameHasBeenSet() const
+{
+    return m_aclRuleNameHasBeenSet;
 }
 
 

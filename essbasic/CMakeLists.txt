@@ -37,10 +37,12 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/CreateConsoleLoginUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/CreateFlowsByTemplatesRequest.h
   include/tencentcloud/essbasic/v20210526/model/SyncProxyOrganizationRequest.h
+  include/tencentcloud/essbasic/v20210526/model/PrepareFlowsRequest.h
   include/tencentcloud/essbasic/v20210526/model/UsageDetail.h
   include/tencentcloud/essbasic/v20210526/model/CreateSignUrlsResponse.h
+  include/tencentcloud/essbasic/v20210526/model/SyncFailReason.h
   include/tencentcloud/essbasic/v20210526/model/DescribeUsageRequest.h
-  include/tencentcloud/essbasic/v20210526/model/PrepareFlowsRequest.h
+  include/tencentcloud/essbasic/v20210526/model/Recipient.h
   include/tencentcloud/essbasic/v20210526/model/Agent.h
   include/tencentcloud/essbasic/v20210526/model/FormField.h
   include/tencentcloud/essbasic/v20210526/model/FlowInfo.h
@@ -194,10 +196,12 @@ set(essbasic_src
   src/v20210526/model/CreateConsoleLoginUrlResponse.cpp
   src/v20210526/model/CreateFlowsByTemplatesRequest.cpp
   src/v20210526/model/SyncProxyOrganizationRequest.cpp
+  src/v20210526/model/PrepareFlowsRequest.cpp
   src/v20210526/model/UsageDetail.cpp
   src/v20210526/model/CreateSignUrlsResponse.cpp
+  src/v20210526/model/SyncFailReason.cpp
   src/v20210526/model/DescribeUsageRequest.cpp
-  src/v20210526/model/PrepareFlowsRequest.cpp
+  src/v20210526/model/Recipient.cpp
   src/v20210526/model/Agent.cpp
   src/v20210526/model/FormField.cpp
   src/v20210526/model/FlowInfo.cpp
