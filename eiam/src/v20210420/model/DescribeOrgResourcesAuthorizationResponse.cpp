@@ -28,7 +28,8 @@ DescribeOrgResourcesAuthorizationResponse::DescribeOrgResourcesAuthorizationResp
     m_orgNodeIdHasBeenSet(false),
     m_orgNodeNameHasBeenSet(false),
     m_orgNodePathHasBeenSet(false),
-    m_authorizationOrgResourceListHasBeenSet(false)
+    m_authorizationOrgResourceListHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,16 @@ CoreInternalOutcome DescribeOrgResourcesAuthorizationResponse::Deserialize(const
         m_authorizationOrgResourceListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -181,6 +192,14 @@ string DescribeOrgResourcesAuthorizationResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -243,6 +262,16 @@ vector<AuthorizationResouceEntityInfo> DescribeOrgResourcesAuthorizationResponse
 bool DescribeOrgResourcesAuthorizationResponse::AuthorizationOrgResourceListHasBeenSet() const
 {
     return m_authorizationOrgResourceListHasBeenSet;
+}
+
+uint64_t DescribeOrgResourcesAuthorizationResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeOrgResourcesAuthorizationResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
 }
 
 

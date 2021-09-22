@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<br><li> name
+                     * 获取<br><li> configName
 
-按照【采集配置名称】进行过滤。
+按照【采集配置名称】进行模糊匹配过滤。
 类型：String
 
 必选：否
@@ -67,9 +67,9 @@ namespace TencentCloud
 必选：否
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
-                     * @return Filters <br><li> name
+                     * @return Filters <br><li> configName
 
-按照【采集配置名称】进行过滤。
+按照【采集配置名称】进行模糊匹配过滤。
 类型：String
 
 必选：否
@@ -94,9 +94,9 @@ namespace TencentCloud
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置<br><li> name
+                     * 设置<br><li> configName
 
-按照【采集配置名称】进行过滤。
+按照【采集配置名称】进行模糊匹配过滤。
 类型：String
 
 必选：否
@@ -117,9 +117,9 @@ namespace TencentCloud
 必选：否
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
-                     * @param Filters <br><li> name
+                     * @param Filters <br><li> configName
 
-按照【采集配置名称】进行过滤。
+按照【采集配置名称】进行模糊匹配过滤。
 类型：String
 
 必选：否
@@ -188,9 +188,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <br><li> name
+                     * <br><li> configName
 
-按照【采集配置名称】进行过滤。
+按照【采集配置名称】进行模糊匹配过滤。
 类型：String
 
 必选：否

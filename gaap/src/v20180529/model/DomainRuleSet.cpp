@@ -39,7 +39,8 @@ DomainRuleSet::DomainRuleSet() :
     m_realServerCertificateDomainHasBeenSet(false),
     m_polyClientCertificateAliasInfoHasBeenSet(false),
     m_polyRealServerCertificateAliasInfoHasBeenSet(false),
-    m_domainStatusHasBeenSet(false)
+    m_domainStatusHasBeenSet(false),
+    m_banStatusHasBeenSet(false)
 {
 }
 
@@ -268,6 +269,16 @@ CoreInternalOutcome DomainRuleSet::Deserialize(const rapidjson::Value &value)
         m_domainStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("BanStatus") && !value["BanStatus"].IsNull())
+    {
+        if (!value["BanStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainRuleSet.BanStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_banStatus = string(value["BanStatus"].GetString());
+        m_banStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -446,6 +457,14 @@ void DomainRuleSet::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "DomainStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_domainStatus, allocator);
+    }
+
+    if (m_banStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BanStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_banStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -753,5 +772,21 @@ void DomainRuleSet::SetDomainStatus(const uint64_t& _domainStatus)
 bool DomainRuleSet::DomainStatusHasBeenSet() const
 {
     return m_domainStatusHasBeenSet;
+}
+
+string DomainRuleSet::GetBanStatus() const
+{
+    return m_banStatus;
+}
+
+void DomainRuleSet::SetBanStatus(const string& _banStatus)
+{
+    m_banStatus = _banStatus;
+    m_banStatusHasBeenSet = true;
+}
+
+bool DomainRuleSet::BanStatusHasBeenSet() const
+{
+    return m_banStatusHasBeenSet;
 }
 

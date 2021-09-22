@@ -50,7 +50,8 @@ ProxyInfo::ProxyInfo() :
     m_clientIPMethodHasBeenSet(false),
     m_iPAddressVersionHasBeenSet(false),
     m_networkTypeHasBeenSet(false),
-    m_packageTypeHasBeenSet(false)
+    m_packageTypeHasBeenSet(false),
+    m_banStatusHasBeenSet(false)
 {
 }
 
@@ -392,6 +393,16 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
         m_packageTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("BanStatus") && !value["BanStatus"].IsNull())
+    {
+        if (!value["BanStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.BanStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_banStatus = string(value["BanStatus"].GetString());
+        m_banStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -661,6 +672,14 @@ void ProxyInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "PackageType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_packageType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_banStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BanStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_banStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1144,5 +1163,21 @@ void ProxyInfo::SetPackageType(const string& _packageType)
 bool ProxyInfo::PackageTypeHasBeenSet() const
 {
     return m_packageTypeHasBeenSet;
+}
+
+string ProxyInfo::GetBanStatus() const
+{
+    return m_banStatus;
+}
+
+void ProxyInfo::SetBanStatus(const string& _banStatus)
+{
+    m_banStatus = _banStatus;
+    m_banStatusHasBeenSet = true;
+}
+
+bool ProxyInfo::BanStatusHasBeenSet() const
+{
+    return m_banStatusHasBeenSet;
 }
 

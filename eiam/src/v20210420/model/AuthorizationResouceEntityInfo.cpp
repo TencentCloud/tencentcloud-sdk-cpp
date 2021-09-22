@@ -23,7 +23,8 @@ using namespace std;
 AuthorizationResouceEntityInfo::AuthorizationResouceEntityInfo() :
     m_resourceIdHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
-    m_resourceHasBeenSet(false)
+    m_resourceHasBeenSet(false),
+    m_resourceNameHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome AuthorizationResouceEntityInfo::Deserialize(const rapidjson:
         m_resourceHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceName") && !value["ResourceName"].IsNull())
+    {
+        if (!value["ResourceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AuthorizationResouceEntityInfo.ResourceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceName = string(value["ResourceName"].GetString());
+        m_resourceNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void AuthorizationResouceEntityInfo::ToJsonObject(rapidjson::Value &value, rapid
         string key = "Resource";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void AuthorizationResouceEntityInfo::SetResource(const string& _resource)
 bool AuthorizationResouceEntityInfo::ResourceHasBeenSet() const
 {
     return m_resourceHasBeenSet;
+}
+
+string AuthorizationResouceEntityInfo::GetResourceName() const
+{
+    return m_resourceName;
+}
+
+void AuthorizationResouceEntityInfo::SetResourceName(const string& _resourceName)
+{
+    m_resourceName = _resourceName;
+    m_resourceNameHasBeenSet = true;
+}
+
+bool AuthorizationResouceEntityInfo::ResourceNameHasBeenSet() const
+{
+    return m_resourceNameHasBeenSet;
 }
 

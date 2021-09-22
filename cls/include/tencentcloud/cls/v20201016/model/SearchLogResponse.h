@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool ContextHasBeenSet() const;
 
                     /**
-                     * 获取日志查询结果是否全部返回
-                     * @return ListOver 日志查询结果是否全部返回
+                     * 获取原始日志查询结果是否全部返回。查询语句(Query)包含SQL时该参数无意义
+                     * @return ListOver 原始日志查询结果是否全部返回。查询语句(Query)包含SQL时该参数无意义
                      */
                     bool GetListOver() const;
 
@@ -161,7 +161,7 @@ namespace TencentCloud
                     bool m_contextHasBeenSet;
 
                     /**
-                     * 日志查询结果是否全部返回
+                     * 原始日志查询结果是否全部返回。查询语句(Query)包含SQL时该参数无意义
                      */
                     bool m_listOver;
                     bool m_listOverHasBeenSet;

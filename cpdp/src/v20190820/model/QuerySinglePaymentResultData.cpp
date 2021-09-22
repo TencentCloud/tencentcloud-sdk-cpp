@@ -26,7 +26,8 @@ QuerySinglePaymentResultData::QuerySinglePaymentResultData() :
     m_tradeStatusHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_agentIdHasBeenSet(false),
-    m_agentNameHasBeenSet(false)
+    m_agentNameHasBeenSet(false),
+    m_tradeStatusDescHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome QuerySinglePaymentResultData::Deserialize(const rapidjson::V
         m_agentNameHasBeenSet = true;
     }
 
+    if (value.HasMember("TradeStatusDesc") && !value["TradeStatusDesc"].IsNull())
+    {
+        if (!value["TradeStatusDesc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QuerySinglePaymentResultData.TradeStatusDesc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tradeStatusDesc = string(value["TradeStatusDesc"].GetString());
+        m_tradeStatusDescHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void QuerySinglePaymentResultData::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "AgentName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_agentName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tradeStatusDescHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TradeStatusDesc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tradeStatusDesc.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void QuerySinglePaymentResultData::SetAgentName(const string& _agentName)
 bool QuerySinglePaymentResultData::AgentNameHasBeenSet() const
 {
     return m_agentNameHasBeenSet;
+}
+
+string QuerySinglePaymentResultData::GetTradeStatusDesc() const
+{
+    return m_tradeStatusDesc;
+}
+
+void QuerySinglePaymentResultData::SetTradeStatusDesc(const string& _tradeStatusDesc)
+{
+    m_tradeStatusDesc = _tradeStatusDesc;
+    m_tradeStatusDescHasBeenSet = true;
+}
+
+bool QuerySinglePaymentResultData::TradeStatusDescHasBeenSet() const
+{
+    return m_tradeStatusDescHasBeenSet;
 }
 

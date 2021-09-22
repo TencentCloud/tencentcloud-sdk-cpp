@@ -218,6 +218,28 @@ namespace TencentCloud
                      */
                     bool AgentNameHasBeenSet() const;
 
+                    /**
+                     * 获取交易状态描述。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TradeStatusDesc 交易状态描述。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTradeStatusDesc() const;
+
+                    /**
+                     * 设置交易状态描述。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TradeStatusDesc 交易状态描述。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTradeStatusDesc(const std::string& _tradeStatusDesc);
+
+                    /**
+                     * 判断参数 TradeStatusDesc 是否已赋值
+                     * @return TradeStatusDesc 是否已赋值
+                     */
+                    bool TradeStatusDescHasBeenSet() const;
+
                 private:
 
                     /**
@@ -271,6 +293,13 @@ namespace TencentCloud
                      */
                     std::string m_agentName;
                     bool m_agentNameHasBeenSet;
+
+                    /**
+                     * 交易状态描述。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tradeStatusDesc;
+                    bool m_tradeStatusDescHasBeenSet;
 
                 };
             }

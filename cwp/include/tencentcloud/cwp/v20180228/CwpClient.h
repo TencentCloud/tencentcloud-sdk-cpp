@@ -97,34 +97,60 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackLogsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackVulTypeListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackVulTypeListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAvailableExpertServiceDetailRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAvailableExpertServiceDetailResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBanModeRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBanModeResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBanRegionsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBanRegionsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBanStatusRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBanStatusResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeBanWhiteListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeBanWhiteListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeBaselineAnalysisDataRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeBaselineAnalysisDataResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBaselineBasicInfoRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBaselineBasicInfoResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBaselineDetailRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBaselineDetailResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeBaselineEffectHostListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeBaselineEffectHostListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeBaselineHostTopRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeBaselineHostTopResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeBaselineListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeBaselineListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBaselineRuleRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBaselineRuleResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBaselineScanScheduleRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBaselineScanScheduleResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeBaselineStrategyDetailRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeBaselineStrategyDetailResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeBaselineStrategyListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeBaselineStrategyListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeBaselineTopRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeBaselineTopResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBashEventsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBashEventsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBashRulesRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBashRulesResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBruteAttackListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBruteAttackListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeBruteAttackRulesRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeBruteAttackRulesResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeComponentStatisticsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeComponentStatisticsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeESAggregationsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeESAggregationsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeESHitsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeESHitsResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeEmergencyResponseListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeEmergencyResponseListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeEmergencyVulListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeEmergencyVulListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeExpertServiceListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeExpertServiceListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeExpertServiceOrderListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeExpertServiceOrderListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeExportMachinesRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeExportMachinesResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeGeneralStatRequest.h>
@@ -137,6 +163,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeHostLoginListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeIgnoreBaselineRuleRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeIgnoreBaselineRuleResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeIgnoreRuleEffectHostListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeIgnoreRuleEffectHostListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeImportMachineInfoRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeImportMachineInfoResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeIndexListRequest.h>
@@ -159,6 +187,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeMachinesResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeMalWareListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeMalWareListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeMaliciousRequestWhiteListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeMaliciousRequestWhiteListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeMalwareFileRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeMalwareFileResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeMalwareInfoRequest.h>
@@ -187,6 +217,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeProtectDirListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeProtectDirRelatedServerRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeProtectDirRelatedServerResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeProtectNetListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeProtectNetListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeReverseShellEventsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeReverseShellEventsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeReverseShellRulesRequest.h>
@@ -203,6 +235,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeScanStateResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeScanTaskDetailsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeScanTaskDetailsResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeScanTaskStatusRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeScanTaskStatusResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeScanVulSettingRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeScanVulSettingResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeSearchExportListRequest.h>
@@ -237,6 +271,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeVulCountByDatesResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulHostCountScanTimeRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulHostCountScanTimeResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeVulHostTopRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeVulHostTopResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulInfoCvssRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulInfoCvssResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulLevelCountRequest.h>
@@ -289,6 +325,8 @@
 #include <tencentcloud/cwp/v20180228/model/ExportReverseShellEventsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ExportScanTaskDetailsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ExportScanTaskDetailsResponse.h>
+#include <tencentcloud/cwp/v20180228/model/ExportSecurityTrendsRequest.h>
+#include <tencentcloud/cwp/v20180228/model/ExportSecurityTrendsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ExportTasksRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ExportTasksResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ExportVulDetectionExcelRequest.h>
@@ -486,6 +524,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAttackVulTypeListResponse> DescribeAttackVulTypeListOutcome;
                 typedef std::future<DescribeAttackVulTypeListOutcome> DescribeAttackVulTypeListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeAttackVulTypeListRequest&, DescribeAttackVulTypeListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackVulTypeListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAvailableExpertServiceDetailResponse> DescribeAvailableExpertServiceDetailOutcome;
+                typedef std::future<DescribeAvailableExpertServiceDetailOutcome> DescribeAvailableExpertServiceDetailOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAvailableExpertServiceDetailRequest&, DescribeAvailableExpertServiceDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAvailableExpertServiceDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBanModeResponse> DescribeBanModeOutcome;
                 typedef std::future<DescribeBanModeOutcome> DescribeBanModeOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeBanModeRequest&, DescribeBanModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBanModeAsyncHandler;
@@ -495,18 +536,42 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBanStatusResponse> DescribeBanStatusOutcome;
                 typedef std::future<DescribeBanStatusOutcome> DescribeBanStatusOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeBanStatusRequest&, DescribeBanStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBanStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBanWhiteListResponse> DescribeBanWhiteListOutcome;
+                typedef std::future<DescribeBanWhiteListOutcome> DescribeBanWhiteListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeBanWhiteListRequest&, DescribeBanWhiteListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBanWhiteListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBaselineAnalysisDataResponse> DescribeBaselineAnalysisDataOutcome;
+                typedef std::future<DescribeBaselineAnalysisDataOutcome> DescribeBaselineAnalysisDataOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeBaselineAnalysisDataRequest&, DescribeBaselineAnalysisDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBaselineAnalysisDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBaselineBasicInfoResponse> DescribeBaselineBasicInfoOutcome;
                 typedef std::future<DescribeBaselineBasicInfoOutcome> DescribeBaselineBasicInfoOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeBaselineBasicInfoRequest&, DescribeBaselineBasicInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBaselineBasicInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBaselineDetailResponse> DescribeBaselineDetailOutcome;
                 typedef std::future<DescribeBaselineDetailOutcome> DescribeBaselineDetailOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeBaselineDetailRequest&, DescribeBaselineDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBaselineDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBaselineEffectHostListResponse> DescribeBaselineEffectHostListOutcome;
+                typedef std::future<DescribeBaselineEffectHostListOutcome> DescribeBaselineEffectHostListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeBaselineEffectHostListRequest&, DescribeBaselineEffectHostListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBaselineEffectHostListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBaselineHostTopResponse> DescribeBaselineHostTopOutcome;
+                typedef std::future<DescribeBaselineHostTopOutcome> DescribeBaselineHostTopOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeBaselineHostTopRequest&, DescribeBaselineHostTopOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBaselineHostTopAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBaselineListResponse> DescribeBaselineListOutcome;
+                typedef std::future<DescribeBaselineListOutcome> DescribeBaselineListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeBaselineListRequest&, DescribeBaselineListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBaselineListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBaselineRuleResponse> DescribeBaselineRuleOutcome;
                 typedef std::future<DescribeBaselineRuleOutcome> DescribeBaselineRuleOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeBaselineRuleRequest&, DescribeBaselineRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBaselineRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBaselineScanScheduleResponse> DescribeBaselineScanScheduleOutcome;
                 typedef std::future<DescribeBaselineScanScheduleOutcome> DescribeBaselineScanScheduleOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeBaselineScanScheduleRequest&, DescribeBaselineScanScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBaselineScanScheduleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBaselineStrategyDetailResponse> DescribeBaselineStrategyDetailOutcome;
+                typedef std::future<DescribeBaselineStrategyDetailOutcome> DescribeBaselineStrategyDetailOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeBaselineStrategyDetailRequest&, DescribeBaselineStrategyDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBaselineStrategyDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBaselineStrategyListResponse> DescribeBaselineStrategyListOutcome;
+                typedef std::future<DescribeBaselineStrategyListOutcome> DescribeBaselineStrategyListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeBaselineStrategyListRequest&, DescribeBaselineStrategyListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBaselineStrategyListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBaselineTopResponse> DescribeBaselineTopOutcome;
+                typedef std::future<DescribeBaselineTopOutcome> DescribeBaselineTopOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeBaselineTopRequest&, DescribeBaselineTopOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBaselineTopAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBashEventsResponse> DescribeBashEventsOutcome;
                 typedef std::future<DescribeBashEventsOutcome> DescribeBashEventsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeBashEventsRequest&, DescribeBashEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBashEventsAsyncHandler;
@@ -516,6 +581,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBruteAttackListResponse> DescribeBruteAttackListOutcome;
                 typedef std::future<DescribeBruteAttackListOutcome> DescribeBruteAttackListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeBruteAttackListRequest&, DescribeBruteAttackListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBruteAttackListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBruteAttackRulesResponse> DescribeBruteAttackRulesOutcome;
+                typedef std::future<DescribeBruteAttackRulesOutcome> DescribeBruteAttackRulesOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeBruteAttackRulesRequest&, DescribeBruteAttackRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBruteAttackRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeComponentStatisticsResponse> DescribeComponentStatisticsOutcome;
                 typedef std::future<DescribeComponentStatisticsOutcome> DescribeComponentStatisticsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeComponentStatisticsRequest&, DescribeComponentStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeComponentStatisticsAsyncHandler;
@@ -525,9 +593,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeESHitsResponse> DescribeESHitsOutcome;
                 typedef std::future<DescribeESHitsOutcome> DescribeESHitsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeESHitsRequest&, DescribeESHitsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeESHitsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEmergencyResponseListResponse> DescribeEmergencyResponseListOutcome;
+                typedef std::future<DescribeEmergencyResponseListOutcome> DescribeEmergencyResponseListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeEmergencyResponseListRequest&, DescribeEmergencyResponseListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEmergencyResponseListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEmergencyVulListResponse> DescribeEmergencyVulListOutcome;
                 typedef std::future<DescribeEmergencyVulListOutcome> DescribeEmergencyVulListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeEmergencyVulListRequest&, DescribeEmergencyVulListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEmergencyVulListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExpertServiceListResponse> DescribeExpertServiceListOutcome;
+                typedef std::future<DescribeExpertServiceListOutcome> DescribeExpertServiceListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeExpertServiceListRequest&, DescribeExpertServiceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExpertServiceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExpertServiceOrderListResponse> DescribeExpertServiceOrderListOutcome;
+                typedef std::future<DescribeExpertServiceOrderListOutcome> DescribeExpertServiceOrderListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeExpertServiceOrderListRequest&, DescribeExpertServiceOrderListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExpertServiceOrderListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeExportMachinesResponse> DescribeExportMachinesOutcome;
                 typedef std::future<DescribeExportMachinesOutcome> DescribeExportMachinesOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeExportMachinesRequest&, DescribeExportMachinesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExportMachinesAsyncHandler;
@@ -546,6 +623,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIgnoreBaselineRuleResponse> DescribeIgnoreBaselineRuleOutcome;
                 typedef std::future<DescribeIgnoreBaselineRuleOutcome> DescribeIgnoreBaselineRuleOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeIgnoreBaselineRuleRequest&, DescribeIgnoreBaselineRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIgnoreBaselineRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIgnoreRuleEffectHostListResponse> DescribeIgnoreRuleEffectHostListOutcome;
+                typedef std::future<DescribeIgnoreRuleEffectHostListOutcome> DescribeIgnoreRuleEffectHostListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeIgnoreRuleEffectHostListRequest&, DescribeIgnoreRuleEffectHostListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIgnoreRuleEffectHostListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeImportMachineInfoResponse> DescribeImportMachineInfoOutcome;
                 typedef std::future<DescribeImportMachineInfoOutcome> DescribeImportMachineInfoOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeImportMachineInfoRequest&, DescribeImportMachineInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImportMachineInfoAsyncHandler;
@@ -579,6 +659,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMalWareListResponse> DescribeMalWareListOutcome;
                 typedef std::future<DescribeMalWareListOutcome> DescribeMalWareListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeMalWareListRequest&, DescribeMalWareListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMalWareListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMaliciousRequestWhiteListResponse> DescribeMaliciousRequestWhiteListOutcome;
+                typedef std::future<DescribeMaliciousRequestWhiteListOutcome> DescribeMaliciousRequestWhiteListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeMaliciousRequestWhiteListRequest&, DescribeMaliciousRequestWhiteListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMaliciousRequestWhiteListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMalwareFileResponse> DescribeMalwareFileOutcome;
                 typedef std::future<DescribeMalwareFileOutcome> DescribeMalwareFileOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeMalwareFileRequest&, DescribeMalwareFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMalwareFileAsyncHandler;
@@ -621,6 +704,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProtectDirRelatedServerResponse> DescribeProtectDirRelatedServerOutcome;
                 typedef std::future<DescribeProtectDirRelatedServerOutcome> DescribeProtectDirRelatedServerOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeProtectDirRelatedServerRequest&, DescribeProtectDirRelatedServerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtectDirRelatedServerAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProtectNetListResponse> DescribeProtectNetListOutcome;
+                typedef std::future<DescribeProtectNetListOutcome> DescribeProtectNetListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeProtectNetListRequest&, DescribeProtectNetListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtectNetListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeReverseShellEventsResponse> DescribeReverseShellEventsOutcome;
                 typedef std::future<DescribeReverseShellEventsOutcome> DescribeReverseShellEventsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeReverseShellEventsRequest&, DescribeReverseShellEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReverseShellEventsAsyncHandler;
@@ -645,6 +731,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeScanTaskDetailsResponse> DescribeScanTaskDetailsOutcome;
                 typedef std::future<DescribeScanTaskDetailsOutcome> DescribeScanTaskDetailsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeScanTaskDetailsRequest&, DescribeScanTaskDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScanTaskDetailsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeScanTaskStatusResponse> DescribeScanTaskStatusOutcome;
+                typedef std::future<DescribeScanTaskStatusOutcome> DescribeScanTaskStatusOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeScanTaskStatusRequest&, DescribeScanTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScanTaskStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeScanVulSettingResponse> DescribeScanVulSettingOutcome;
                 typedef std::future<DescribeScanVulSettingOutcome> DescribeScanVulSettingOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeScanVulSettingRequest&, DescribeScanVulSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScanVulSettingAsyncHandler;
@@ -696,6 +785,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVulHostCountScanTimeResponse> DescribeVulHostCountScanTimeOutcome;
                 typedef std::future<DescribeVulHostCountScanTimeOutcome> DescribeVulHostCountScanTimeOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeVulHostCountScanTimeRequest&, DescribeVulHostCountScanTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulHostCountScanTimeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVulHostTopResponse> DescribeVulHostTopOutcome;
+                typedef std::future<DescribeVulHostTopOutcome> DescribeVulHostTopOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeVulHostTopRequest&, DescribeVulHostTopOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulHostTopAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVulInfoCvssResponse> DescribeVulInfoCvssOutcome;
                 typedef std::future<DescribeVulInfoCvssOutcome> DescribeVulInfoCvssOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeVulInfoCvssRequest&, DescribeVulInfoCvssOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulInfoCvssAsyncHandler;
@@ -774,6 +866,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ExportScanTaskDetailsResponse> ExportScanTaskDetailsOutcome;
                 typedef std::future<ExportScanTaskDetailsOutcome> ExportScanTaskDetailsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ExportScanTaskDetailsRequest&, ExportScanTaskDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportScanTaskDetailsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExportSecurityTrendsResponse> ExportSecurityTrendsOutcome;
+                typedef std::future<ExportSecurityTrendsOutcome> ExportSecurityTrendsOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::ExportSecurityTrendsRequest&, ExportSecurityTrendsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportSecurityTrendsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExportTasksResponse> ExportTasksOutcome;
                 typedef std::future<ExportTasksOutcome> ExportTasksOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ExportTasksRequest&, ExportTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportTasksAsyncHandler;
@@ -1221,6 +1316,15 @@ namespace TencentCloud
                 DescribeAttackVulTypeListOutcomeCallable DescribeAttackVulTypeListCallable(const Model::DescribeAttackVulTypeListRequest& request);
 
                 /**
+                 *专家服务-可用订单详情
+                 * @param req DescribeAvailableExpertServiceDetailRequest
+                 * @return DescribeAvailableExpertServiceDetailOutcome
+                 */
+                DescribeAvailableExpertServiceDetailOutcome DescribeAvailableExpertServiceDetail(const Model::DescribeAvailableExpertServiceDetailRequest &request);
+                void DescribeAvailableExpertServiceDetailAsync(const Model::DescribeAvailableExpertServiceDetailRequest& request, const DescribeAvailableExpertServiceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAvailableExpertServiceDetailOutcomeCallable DescribeAvailableExpertServiceDetailCallable(const Model::DescribeAvailableExpertServiceDetailRequest& request);
+
+                /**
                  *获取爆破阻断模式
                  * @param req DescribeBanModeRequest
                  * @return DescribeBanModeOutcome
@@ -1248,6 +1352,24 @@ namespace TencentCloud
                 DescribeBanStatusOutcomeCallable DescribeBanStatusCallable(const Model::DescribeBanStatusRequest& request);
 
                 /**
+                 *获取阻断白名单列表
+                 * @param req DescribeBanWhiteListRequest
+                 * @return DescribeBanWhiteListOutcome
+                 */
+                DescribeBanWhiteListOutcome DescribeBanWhiteList(const Model::DescribeBanWhiteListRequest &request);
+                void DescribeBanWhiteListAsync(const Model::DescribeBanWhiteListRequest& request, const DescribeBanWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBanWhiteListOutcomeCallable DescribeBanWhiteListCallable(const Model::DescribeBanWhiteListRequest& request);
+
+                /**
+                 *根据基线策略id查询基线策略数据概览统计
+                 * @param req DescribeBaselineAnalysisDataRequest
+                 * @return DescribeBaselineAnalysisDataOutcome
+                 */
+                DescribeBaselineAnalysisDataOutcome DescribeBaselineAnalysisData(const Model::DescribeBaselineAnalysisDataRequest &request);
+                void DescribeBaselineAnalysisDataAsync(const Model::DescribeBaselineAnalysisDataRequest& request, const DescribeBaselineAnalysisDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBaselineAnalysisDataOutcomeCallable DescribeBaselineAnalysisDataCallable(const Model::DescribeBaselineAnalysisDataRequest& request);
+
+                /**
                  *查询基线基础信息列表
                  * @param req DescribeBaselineBasicInfoRequest
                  * @return DescribeBaselineBasicInfoOutcome
@@ -1266,6 +1388,33 @@ namespace TencentCloud
                 DescribeBaselineDetailOutcomeCallable DescribeBaselineDetailCallable(const Model::DescribeBaselineDetailRequest& request);
 
                 /**
+                 *根据基线id查询基线影响主机列表
+                 * @param req DescribeBaselineEffectHostListRequest
+                 * @return DescribeBaselineEffectHostListOutcome
+                 */
+                DescribeBaselineEffectHostListOutcome DescribeBaselineEffectHostList(const Model::DescribeBaselineEffectHostListRequest &request);
+                void DescribeBaselineEffectHostListAsync(const Model::DescribeBaselineEffectHostListRequest& request, const DescribeBaselineEffectHostListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBaselineEffectHostListOutcomeCallable DescribeBaselineEffectHostListCallable(const Model::DescribeBaselineEffectHostListRequest& request);
+
+                /**
+                 *接口返回TopN的风险服务器
+                 * @param req DescribeBaselineHostTopRequest
+                 * @return DescribeBaselineHostTopOutcome
+                 */
+                DescribeBaselineHostTopOutcome DescribeBaselineHostTop(const Model::DescribeBaselineHostTopRequest &request);
+                void DescribeBaselineHostTopAsync(const Model::DescribeBaselineHostTopRequest& request, const DescribeBaselineHostTopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBaselineHostTopOutcomeCallable DescribeBaselineHostTopCallable(const Model::DescribeBaselineHostTopRequest& request);
+
+                /**
+                 *查询基线列表信息
+                 * @param req DescribeBaselineListRequest
+                 * @return DescribeBaselineListOutcome
+                 */
+                DescribeBaselineListOutcome DescribeBaselineList(const Model::DescribeBaselineListRequest &request);
+                void DescribeBaselineListAsync(const Model::DescribeBaselineListRequest& request, const DescribeBaselineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBaselineListOutcomeCallable DescribeBaselineListCallable(const Model::DescribeBaselineListRequest& request);
+
+                /**
                  *根据基线id查询下属检测项信息
                  * @param req DescribeBaselineRuleRequest
                  * @return DescribeBaselineRuleOutcome
@@ -1282,6 +1431,33 @@ namespace TencentCloud
                 DescribeBaselineScanScheduleOutcome DescribeBaselineScanSchedule(const Model::DescribeBaselineScanScheduleRequest &request);
                 void DescribeBaselineScanScheduleAsync(const Model::DescribeBaselineScanScheduleRequest& request, const DescribeBaselineScanScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBaselineScanScheduleOutcomeCallable DescribeBaselineScanScheduleCallable(const Model::DescribeBaselineScanScheduleRequest& request);
+
+                /**
+                 *根据基线策略id查询策略详情
+                 * @param req DescribeBaselineStrategyDetailRequest
+                 * @return DescribeBaselineStrategyDetailOutcome
+                 */
+                DescribeBaselineStrategyDetailOutcome DescribeBaselineStrategyDetail(const Model::DescribeBaselineStrategyDetailRequest &request);
+                void DescribeBaselineStrategyDetailAsync(const Model::DescribeBaselineStrategyDetailRequest& request, const DescribeBaselineStrategyDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBaselineStrategyDetailOutcomeCallable DescribeBaselineStrategyDetailCallable(const Model::DescribeBaselineStrategyDetailRequest& request);
+
+                /**
+                 *查询一个用户下的基线策略信息
+                 * @param req DescribeBaselineStrategyListRequest
+                 * @return DescribeBaselineStrategyListOutcome
+                 */
+                DescribeBaselineStrategyListOutcome DescribeBaselineStrategyList(const Model::DescribeBaselineStrategyListRequest &request);
+                void DescribeBaselineStrategyListAsync(const Model::DescribeBaselineStrategyListRequest& request, const DescribeBaselineStrategyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBaselineStrategyListOutcomeCallable DescribeBaselineStrategyListCallable(const Model::DescribeBaselineStrategyListRequest& request);
+
+                /**
+                 *根据策略id查询基线检测项TOP
+                 * @param req DescribeBaselineTopRequest
+                 * @return DescribeBaselineTopOutcome
+                 */
+                DescribeBaselineTopOutcome DescribeBaselineTop(const Model::DescribeBaselineTopRequest &request);
+                void DescribeBaselineTopAsync(const Model::DescribeBaselineTopRequest& request, const DescribeBaselineTopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBaselineTopOutcomeCallable DescribeBaselineTopCallable(const Model::DescribeBaselineTopRequest& request);
 
                 /**
                  *获取高危命令列表
@@ -1311,6 +1487,15 @@ namespace TencentCloud
                 DescribeBruteAttackListOutcomeCallable DescribeBruteAttackListCallable(const Model::DescribeBruteAttackListRequest& request);
 
                 /**
+                 *获取爆破破解规则
+                 * @param req DescribeBruteAttackRulesRequest
+                 * @return DescribeBruteAttackRulesOutcome
+                 */
+                DescribeBruteAttackRulesOutcome DescribeBruteAttackRules(const Model::DescribeBruteAttackRulesRequest &request);
+                void DescribeBruteAttackRulesAsync(const Model::DescribeBruteAttackRulesRequest& request, const DescribeBruteAttackRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBruteAttackRulesOutcomeCallable DescribeBruteAttackRulesCallable(const Model::DescribeBruteAttackRulesRequest& request);
+
+                /**
                  *本接口 (DescribeComponentStatistics) 用于获取组件统计列表数据。
                  * @param req DescribeComponentStatisticsRequest
                  * @return DescribeComponentStatisticsOutcome
@@ -1338,6 +1523,15 @@ namespace TencentCloud
                 DescribeESHitsOutcomeCallable DescribeESHitsCallable(const Model::DescribeESHitsRequest& request);
 
                 /**
+                 *专家服务-应急响应列表
+                 * @param req DescribeEmergencyResponseListRequest
+                 * @return DescribeEmergencyResponseListOutcome
+                 */
+                DescribeEmergencyResponseListOutcome DescribeEmergencyResponseList(const Model::DescribeEmergencyResponseListRequest &request);
+                void DescribeEmergencyResponseListAsync(const Model::DescribeEmergencyResponseListRequest& request, const DescribeEmergencyResponseListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEmergencyResponseListOutcomeCallable DescribeEmergencyResponseListCallable(const Model::DescribeEmergencyResponseListRequest& request);
+
+                /**
                  *获取应急漏洞列表
                  * @param req DescribeEmergencyVulListRequest
                  * @return DescribeEmergencyVulListOutcome
@@ -1345,6 +1539,24 @@ namespace TencentCloud
                 DescribeEmergencyVulListOutcome DescribeEmergencyVulList(const Model::DescribeEmergencyVulListRequest &request);
                 void DescribeEmergencyVulListAsync(const Model::DescribeEmergencyVulListRequest& request, const DescribeEmergencyVulListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEmergencyVulListOutcomeCallable DescribeEmergencyVulListCallable(const Model::DescribeEmergencyVulListRequest& request);
+
+                /**
+                 *专家服务-安全管家列表
+                 * @param req DescribeExpertServiceListRequest
+                 * @return DescribeExpertServiceListOutcome
+                 */
+                DescribeExpertServiceListOutcome DescribeExpertServiceList(const Model::DescribeExpertServiceListRequest &request);
+                void DescribeExpertServiceListAsync(const Model::DescribeExpertServiceListRequest& request, const DescribeExpertServiceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExpertServiceListOutcomeCallable DescribeExpertServiceListCallable(const Model::DescribeExpertServiceListRequest& request);
+
+                /**
+                 *专家服务-专家服务订单列表
+                 * @param req DescribeExpertServiceOrderListRequest
+                 * @return DescribeExpertServiceOrderListOutcome
+                 */
+                DescribeExpertServiceOrderListOutcome DescribeExpertServiceOrderList(const Model::DescribeExpertServiceOrderListRequest &request);
+                void DescribeExpertServiceOrderListAsync(const Model::DescribeExpertServiceOrderListRequest& request, const DescribeExpertServiceOrderListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExpertServiceOrderListOutcomeCallable DescribeExpertServiceOrderListCallable(const Model::DescribeExpertServiceOrderListRequest& request);
 
                 /**
                  *本接口 (DescribeExportMachines) 用于导出区域主机列表。
@@ -1399,6 +1611,15 @@ namespace TencentCloud
                 DescribeIgnoreBaselineRuleOutcome DescribeIgnoreBaselineRule(const Model::DescribeIgnoreBaselineRuleRequest &request);
                 void DescribeIgnoreBaselineRuleAsync(const Model::DescribeIgnoreBaselineRuleRequest& request, const DescribeIgnoreBaselineRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeIgnoreBaselineRuleOutcomeCallable DescribeIgnoreBaselineRuleCallable(const Model::DescribeIgnoreBaselineRuleRequest& request);
+
+                /**
+                 *根据检测项id与筛选条件查询忽略检测项影响主机列表信息
+                 * @param req DescribeIgnoreRuleEffectHostListRequest
+                 * @return DescribeIgnoreRuleEffectHostListOutcome
+                 */
+                DescribeIgnoreRuleEffectHostListOutcome DescribeIgnoreRuleEffectHostList(const Model::DescribeIgnoreRuleEffectHostListRequest &request);
+                void DescribeIgnoreRuleEffectHostListAsync(const Model::DescribeIgnoreRuleEffectHostListRequest& request, const DescribeIgnoreRuleEffectHostListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIgnoreRuleEffectHostListOutcomeCallable DescribeIgnoreRuleEffectHostListCallable(const Model::DescribeIgnoreRuleEffectHostListRequest& request);
 
                 /**
                  *查询批量导入机器信息
@@ -1498,6 +1719,15 @@ namespace TencentCloud
                 DescribeMalWareListOutcome DescribeMalWareList(const Model::DescribeMalWareListRequest &request);
                 void DescribeMalWareListAsync(const Model::DescribeMalWareListRequest& request, const DescribeMalWareListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMalWareListOutcomeCallable DescribeMalWareListCallable(const Model::DescribeMalWareListRequest& request);
+
+                /**
+                 *查询恶意请求白名单列表
+                 * @param req DescribeMaliciousRequestWhiteListRequest
+                 * @return DescribeMaliciousRequestWhiteListOutcome
+                 */
+                DescribeMaliciousRequestWhiteListOutcome DescribeMaliciousRequestWhiteList(const Model::DescribeMaliciousRequestWhiteListRequest &request);
+                void DescribeMaliciousRequestWhiteListAsync(const Model::DescribeMaliciousRequestWhiteListRequest& request, const DescribeMaliciousRequestWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMaliciousRequestWhiteListOutcomeCallable DescribeMaliciousRequestWhiteListCallable(const Model::DescribeMaliciousRequestWhiteListRequest& request);
 
                 /**
                  *获取木马文件下载地址
@@ -1626,6 +1856,15 @@ namespace TencentCloud
                 DescribeProtectDirRelatedServerOutcomeCallable DescribeProtectDirRelatedServerCallable(const Model::DescribeProtectDirRelatedServerRequest& request);
 
                 /**
+                 *专家服务-旗舰护网列表
+                 * @param req DescribeProtectNetListRequest
+                 * @return DescribeProtectNetListOutcome
+                 */
+                DescribeProtectNetListOutcome DescribeProtectNetList(const Model::DescribeProtectNetListRequest &request);
+                void DescribeProtectNetListAsync(const Model::DescribeProtectNetListRequest& request, const DescribeProtectNetListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProtectNetListOutcomeCallable DescribeProtectNetListCallable(const Model::DescribeProtectNetListRequest& request);
+
+                /**
                  *获取反弹Shell列表
                  * @param req DescribeReverseShellEventsRequest
                  * @return DescribeReverseShellEventsOutcome
@@ -1696,6 +1935,15 @@ namespace TencentCloud
                 DescribeScanTaskDetailsOutcome DescribeScanTaskDetails(const Model::DescribeScanTaskDetailsRequest &request);
                 void DescribeScanTaskDetailsAsync(const Model::DescribeScanTaskDetailsRequest& request, const DescribeScanTaskDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeScanTaskDetailsOutcomeCallable DescribeScanTaskDetailsCallable(const Model::DescribeScanTaskDetailsRequest& request);
+
+                /**
+                 *DescribeScanTaskStatus 查询机器扫描状态列表用于过滤筛选
+                 * @param req DescribeScanTaskStatusRequest
+                 * @return DescribeScanTaskStatusOutcome
+                 */
+                DescribeScanTaskStatusOutcome DescribeScanTaskStatus(const Model::DescribeScanTaskStatusRequest &request);
+                void DescribeScanTaskStatusAsync(const Model::DescribeScanTaskStatusRequest& request, const DescribeScanTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeScanTaskStatusOutcomeCallable DescribeScanTaskStatusCallable(const Model::DescribeScanTaskStatusRequest& request);
 
                 /**
                  *查询定期检测的配置
@@ -1849,6 +2097,15 @@ namespace TencentCloud
                 DescribeVulHostCountScanTimeOutcome DescribeVulHostCountScanTime(const Model::DescribeVulHostCountScanTimeRequest &request);
                 void DescribeVulHostCountScanTimeAsync(const Model::DescribeVulHostCountScanTimeRequest& request, const DescribeVulHostCountScanTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVulHostCountScanTimeOutcomeCallable DescribeVulHostCountScanTimeCallable(const Model::DescribeVulHostCountScanTimeRequest& request);
+
+                /**
+                 *获取服务器风险top列表
+                 * @param req DescribeVulHostTopRequest
+                 * @return DescribeVulHostTopOutcome
+                 */
+                DescribeVulHostTopOutcome DescribeVulHostTop(const Model::DescribeVulHostTopRequest &request);
+                void DescribeVulHostTopAsync(const Model::DescribeVulHostTopRequest& request, const DescribeVulHostTopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVulHostTopOutcomeCallable DescribeVulHostTopCallable(const Model::DescribeVulHostTopRequest& request);
 
                 /**
                  *漏洞详情，带CVSS版本
@@ -2083,6 +2340,15 @@ namespace TencentCloud
                 ExportScanTaskDetailsOutcome ExportScanTaskDetails(const Model::ExportScanTaskDetailsRequest &request);
                 void ExportScanTaskDetailsAsync(const Model::ExportScanTaskDetailsRequest& request, const ExportScanTaskDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ExportScanTaskDetailsOutcomeCallable ExportScanTaskDetailsCallable(const Model::ExportScanTaskDetailsRequest& request);
+
+                /**
+                 *导出风险趋势
+                 * @param req ExportSecurityTrendsRequest
+                 * @return ExportSecurityTrendsOutcome
+                 */
+                ExportSecurityTrendsOutcome ExportSecurityTrends(const Model::ExportSecurityTrendsRequest &request);
+                void ExportSecurityTrendsAsync(const Model::ExportSecurityTrendsRequest& request, const ExportSecurityTrendsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportSecurityTrendsOutcomeCallable ExportSecurityTrendsCallable(const Model::ExportSecurityTrendsRequest& request);
 
                 /**
                  *用于异步导出数据量大的日志文件

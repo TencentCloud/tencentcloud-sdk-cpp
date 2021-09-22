@@ -25,7 +25,8 @@ AuthorizationUserResouceInfo::AuthorizationUserResouceInfo() :
     m_resourceTypeHasBeenSet(false),
     m_resourceHasBeenSet(false),
     m_inheritedFormHasBeenSet(false),
-    m_applicationAccountsHasBeenSet(false)
+    m_applicationAccountsHasBeenSet(false),
+    m_resourceNameHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome AuthorizationUserResouceInfo::Deserialize(const rapidjson::V
         m_applicationAccountsHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceName") && !value["ResourceName"].IsNull())
+    {
+        if (!value["ResourceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AuthorizationUserResouceInfo.ResourceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceName = string(value["ResourceName"].GetString());
+        m_resourceNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +156,14 @@ void AuthorizationUserResouceInfo::ToJsonObject(rapidjson::Value &value, rapidjs
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_resourceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -228,5 +247,21 @@ void AuthorizationUserResouceInfo::SetApplicationAccounts(const vector<string>& 
 bool AuthorizationUserResouceInfo::ApplicationAccountsHasBeenSet() const
 {
     return m_applicationAccountsHasBeenSet;
+}
+
+string AuthorizationUserResouceInfo::GetResourceName() const
+{
+    return m_resourceName;
+}
+
+void AuthorizationUserResouceInfo::SetResourceName(const string& _resourceName)
+{
+    m_resourceName = _resourceName;
+    m_resourceNameHasBeenSet = true;
+}
+
+bool AuthorizationUserResouceInfo::ResourceNameHasBeenSet() const
+{
+    return m_resourceNameHasBeenSet;
 }
 

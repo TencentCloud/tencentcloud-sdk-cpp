@@ -494,6 +494,28 @@ namespace TencentCloud
                      */
                     bool DomainStatusHasBeenSet() const;
 
+                    /**
+                     * 获取封禁解封状态：BANNED表示已封禁，RECOVER表示已解封或未封禁，BANNING表示封禁中，RECOVERING表示解封中，BAN_FAILED表示封禁失败，RECOVER_FAILED表示解封失败。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BanStatus 封禁解封状态：BANNED表示已封禁，RECOVER表示已解封或未封禁，BANNING表示封禁中，RECOVERING表示解封中，BAN_FAILED表示封禁失败，RECOVER_FAILED表示解封失败。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBanStatus() const;
+
+                    /**
+                     * 设置封禁解封状态：BANNED表示已封禁，RECOVER表示已解封或未封禁，BANNING表示封禁中，RECOVERING表示解封中，BAN_FAILED表示封禁失败，RECOVER_FAILED表示解封失败。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BanStatus 封禁解封状态：BANNED表示已封禁，RECOVER表示已解封或未封禁，BANNING表示封禁中，RECOVERING表示解封中，BAN_FAILED表示封禁失败，RECOVER_FAILED表示解封失败。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBanStatus(const std::string& _banStatus);
+
+                    /**
+                     * 判断参数 BanStatus 是否已赋值
+                     * @return BanStatus 是否已赋值
+                     */
+                    bool BanStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -635,6 +657,13 @@ namespace TencentCloud
                      */
                     uint64_t m_domainStatus;
                     bool m_domainStatusHasBeenSet;
+
+                    /**
+                     * 封禁解封状态：BANNED表示已封禁，RECOVER表示已解封或未封禁，BANNING表示封禁中，RECOVERING表示解封中，BAN_FAILED表示封禁失败，RECOVER_FAILED表示解封失败。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_banStatus;
+                    bool m_banStatusHasBeenSet;
 
                 };
             }

@@ -587,17 +587,17 @@ UNKNOWN表示未知状态。
                     bool ModifyConfigTimeHasBeenSet() const;
 
                     /**
-                     * 获取通道类型
+                     * 获取通道类型，100表示THUNDER通道，103表示微软合作通道
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProxyType 通道类型
+                     * @return ProxyType 通道类型，100表示THUNDER通道，103表示微软合作通道
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetProxyType() const;
 
                     /**
-                     * 设置通道类型
+                     * 设置通道类型，100表示THUNDER通道，103表示微软合作通道
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProxyType 通道类型
+                     * @param ProxyType 通道类型，100表示THUNDER通道，103表示微软合作通道
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetProxyType(const uint64_t& _proxyType);
@@ -695,6 +695,28 @@ UNKNOWN表示未知状态。
                      * @return PackageType 是否已赋值
                      */
                     bool PackageTypeHasBeenSet() const;
+
+                    /**
+                     * 获取封禁解封状态：BANNED表示已封禁，RECOVER表示已解封或未封禁，BANNING表示封禁中，RECOVERING表示解封中，BAN_FAILED表示封禁失败，RECOVER_FAILED表示解封失败。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BanStatus 封禁解封状态：BANNED表示已封禁，RECOVER表示已解封或未封禁，BANNING表示封禁中，RECOVERING表示解封中，BAN_FAILED表示封禁失败，RECOVER_FAILED表示解封失败。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBanStatus() const;
+
+                    /**
+                     * 设置封禁解封状态：BANNED表示已封禁，RECOVER表示已解封或未封禁，BANNING表示封禁中，RECOVERING表示解封中，BAN_FAILED表示封禁失败，RECOVER_FAILED表示解封失败。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BanStatus 封禁解封状态：BANNED表示已封禁，RECOVER表示已解封或未封禁，BANNING表示封禁中，RECOVERING表示解封中，BAN_FAILED表示封禁失败，RECOVER_FAILED表示解封失败。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBanStatus(const std::string& _banStatus);
+
+                    /**
+                     * 判断参数 BanStatus 是否已赋值
+                     * @return BanStatus 是否已赋值
+                     */
+                    bool BanStatusHasBeenSet() const;
 
                 private:
 
@@ -871,7 +893,7 @@ UNKNOWN表示未知状态。
                     bool m_modifyConfigTimeHasBeenSet;
 
                     /**
-                     * 通道类型
+                     * 通道类型，100表示THUNDER通道，103表示微软合作通道
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_proxyType;
@@ -904,6 +926,13 @@ UNKNOWN表示未知状态。
                      */
                     std::string m_packageType;
                     bool m_packageTypeHasBeenSet;
+
+                    /**
+                     * 封禁解封状态：BANNED表示已封禁，RECOVER表示已解封或未封禁，BANNING表示封禁中，RECOVERING表示解封中，BAN_FAILED表示封禁失败，RECOVER_FAILED表示解封失败。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_banStatus;
+                    bool m_banStatusHasBeenSet;
 
                 };
             }

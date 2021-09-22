@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                     /**
-                     * 获取单次查询返回的日志条数，最大值为100
-                     * @return Limit 单次查询返回的日志条数，最大值为100
+                     * 获取单次查询返回的原始日志条数，最大值为100。查询语句(Query)包含SQL时，针对SQL的结果条数需在Query中指定，参考https://cloud.tencent.com/document/product/614/58977
+                     * @return Limit 单次查询返回的原始日志条数，最大值为100。查询语句(Query)包含SQL时，针对SQL的结果条数需在Query中指定，参考https://cloud.tencent.com/document/product/614/58977
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置单次查询返回的日志条数，最大值为100
-                     * @param Limit 单次查询返回的日志条数，最大值为100
+                     * 设置单次查询返回的原始日志条数，最大值为100。查询语句(Query)包含SQL时，针对SQL的结果条数需在Query中指定，参考https://cloud.tencent.com/document/product/614/58977
+                     * @param Limit 单次查询返回的原始日志条数，最大值为100。查询语句(Query)包含SQL时，针对SQL的结果条数需在Query中指定，参考https://cloud.tencent.com/document/product/614/58977
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -213,7 +213,7 @@ namespace TencentCloud
                     bool m_queryHasBeenSet;
 
                     /**
-                     * 单次查询返回的日志条数，最大值为100
+                     * 单次查询返回的原始日志条数，最大值为100。查询语句(Query)包含SQL时，针对SQL的结果条数需在Query中指定，参考https://cloud.tencent.com/document/product/614/58977
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

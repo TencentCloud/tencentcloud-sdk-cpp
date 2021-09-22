@@ -81,14 +81,14 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取模版唯一标识,可以通过模版列表处获取
-                     * @return TemplateId 模版唯一标识,可以通过模版列表处获取
+                     * 获取模版唯一标识
+                     * @return TemplateId 模版唯一标识
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置模版唯一标识,可以通过模版列表处获取
-                     * @param TemplateId 模版唯一标识,可以通过模版列表处获取
+                     * 设置模版唯一标识
+                     * @param TemplateId 模版唯一标识
                      */
                     void SetTemplateId(const std::string& _templateId);
 
@@ -113,7 +113,7 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 模版唯一标识,可以通过模版列表处获取
+                     * 模版唯一标识
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
