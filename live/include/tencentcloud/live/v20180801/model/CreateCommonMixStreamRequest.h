@@ -46,14 +46,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取混流会话（申请混流开始到取消混流结束）标识 ID。
-                     * @return MixStreamSessionId 混流会话（申请混流开始到取消混流结束）标识 ID。
+                     * 获取混流会话（申请混流开始到取消混流结束）标识 ID。80字节以内，仅含字母、数字以及下划线的字符串。
+                     * @return MixStreamSessionId 混流会话（申请混流开始到取消混流结束）标识 ID。80字节以内，仅含字母、数字以及下划线的字符串。
                      */
                     std::string GetMixStreamSessionId() const;
 
                     /**
-                     * 设置混流会话（申请混流开始到取消混流结束）标识 ID。
-                     * @param MixStreamSessionId 混流会话（申请混流开始到取消混流结束）标识 ID。
+                     * 设置混流会话（申请混流开始到取消混流结束）标识 ID。80字节以内，仅含字母、数字以及下划线的字符串。
+                     * @param MixStreamSessionId 混流会话（申请混流开始到取消混流结束）标识 ID。80字节以内，仅含字母、数字以及下划线的字符串。
                      */
                     void SetMixStreamSessionId(const std::string& _mixStreamSessionId);
 
@@ -162,7 +162,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 混流会话（申请混流开始到取消混流结束）标识 ID。
+                     * 混流会话（申请混流开始到取消混流结束）标识 ID。80字节以内，仅含字母、数字以及下划线的字符串。
                      */
                     std::string m_mixStreamSessionId;
                     bool m_mixStreamSessionIdHasBeenSet;

@@ -30,7 +30,8 @@ ScdnDomain::ScdnDomain() :
     m_projectIdHasBeenSet(false),
     m_aclRuleNumbersHasBeenSet(false),
     m_botHasBeenSet(false),
-    m_areaHasBeenSet(false)
+    m_areaHasBeenSet(false),
+    m_wafLevelHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome ScdnDomain::Deserialize(const rapidjson::Value &value)
         m_areaHasBeenSet = true;
     }
 
+    if (value.HasMember("WafLevel") && !value["WafLevel"].IsNull())
+    {
+        if (!value["WafLevel"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScdnDomain.WafLevel` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_wafLevel = value["WafLevel"].GetInt64();
+        m_wafLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void ScdnDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Area";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_wafLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WafLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_wafLevel, allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void ScdnDomain::SetArea(const string& _area)
 bool ScdnDomain::AreaHasBeenSet() const
 {
     return m_areaHasBeenSet;
+}
+
+int64_t ScdnDomain::GetWafLevel() const
+{
+    return m_wafLevel;
+}
+
+void ScdnDomain::SetWafLevel(const int64_t& _wafLevel)
+{
+    m_wafLevel = _wafLevel;
+    m_wafLevelHasBeenSet = true;
+}
+
+bool ScdnDomain::WafLevelHasBeenSet() const
+{
+    return m_wafLevelHasBeenSet;
 }
 

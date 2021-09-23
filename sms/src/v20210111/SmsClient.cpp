@@ -255,6 +255,49 @@ SmsClient::DeleteSmsTemplateOutcomeCallable SmsClient::DeleteSmsTemplateCallable
     return task->get_future();
 }
 
+SmsClient::DescribePhoneNumberInfoOutcome SmsClient::DescribePhoneNumberInfo(const DescribePhoneNumberInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePhoneNumberInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePhoneNumberInfoResponse rsp = DescribePhoneNumberInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePhoneNumberInfoOutcome(rsp);
+        else
+            return DescribePhoneNumberInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePhoneNumberInfoOutcome(outcome.GetError());
+    }
+}
+
+void SmsClient::DescribePhoneNumberInfoAsync(const DescribePhoneNumberInfoRequest& request, const DescribePhoneNumberInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePhoneNumberInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SmsClient::DescribePhoneNumberInfoOutcomeCallable SmsClient::DescribePhoneNumberInfoCallable(const DescribePhoneNumberInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePhoneNumberInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePhoneNumberInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SmsClient::DescribeSmsSignListOutcome SmsClient::DescribeSmsSignList(const DescribeSmsSignListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSmsSignList");

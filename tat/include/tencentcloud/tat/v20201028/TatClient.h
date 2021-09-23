@@ -25,8 +25,12 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/tat/v20201028/model/CreateCommandRequest.h>
 #include <tencentcloud/tat/v20201028/model/CreateCommandResponse.h>
+#include <tencentcloud/tat/v20201028/model/CreateInvokerRequest.h>
+#include <tencentcloud/tat/v20201028/model/CreateInvokerResponse.h>
 #include <tencentcloud/tat/v20201028/model/DeleteCommandRequest.h>
 #include <tencentcloud/tat/v20201028/model/DeleteCommandResponse.h>
+#include <tencentcloud/tat/v20201028/model/DeleteInvokerRequest.h>
+#include <tencentcloud/tat/v20201028/model/DeleteInvokerResponse.h>
 #include <tencentcloud/tat/v20201028/model/DescribeAutomationAgentStatusRequest.h>
 #include <tencentcloud/tat/v20201028/model/DescribeAutomationAgentStatusResponse.h>
 #include <tencentcloud/tat/v20201028/model/DescribeCommandsRequest.h>
@@ -35,12 +39,22 @@
 #include <tencentcloud/tat/v20201028/model/DescribeInvocationTasksResponse.h>
 #include <tencentcloud/tat/v20201028/model/DescribeInvocationsRequest.h>
 #include <tencentcloud/tat/v20201028/model/DescribeInvocationsResponse.h>
+#include <tencentcloud/tat/v20201028/model/DescribeInvokerRecordsRequest.h>
+#include <tencentcloud/tat/v20201028/model/DescribeInvokerRecordsResponse.h>
+#include <tencentcloud/tat/v20201028/model/DescribeInvokersRequest.h>
+#include <tencentcloud/tat/v20201028/model/DescribeInvokersResponse.h>
 #include <tencentcloud/tat/v20201028/model/DescribeRegionsRequest.h>
 #include <tencentcloud/tat/v20201028/model/DescribeRegionsResponse.h>
+#include <tencentcloud/tat/v20201028/model/DisableInvokerRequest.h>
+#include <tencentcloud/tat/v20201028/model/DisableInvokerResponse.h>
+#include <tencentcloud/tat/v20201028/model/EnableInvokerRequest.h>
+#include <tencentcloud/tat/v20201028/model/EnableInvokerResponse.h>
 #include <tencentcloud/tat/v20201028/model/InvokeCommandRequest.h>
 #include <tencentcloud/tat/v20201028/model/InvokeCommandResponse.h>
 #include <tencentcloud/tat/v20201028/model/ModifyCommandRequest.h>
 #include <tencentcloud/tat/v20201028/model/ModifyCommandResponse.h>
+#include <tencentcloud/tat/v20201028/model/ModifyInvokerRequest.h>
+#include <tencentcloud/tat/v20201028/model/ModifyInvokerResponse.h>
 #include <tencentcloud/tat/v20201028/model/PreviewReplacedCommandContentRequest.h>
 #include <tencentcloud/tat/v20201028/model/PreviewReplacedCommandContentResponse.h>
 #include <tencentcloud/tat/v20201028/model/RunCommandRequest.h>
@@ -62,9 +76,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCommandResponse> CreateCommandOutcome;
                 typedef std::future<CreateCommandOutcome> CreateCommandOutcomeCallable;
                 typedef std::function<void(const TatClient*, const Model::CreateCommandRequest&, CreateCommandOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCommandAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateInvokerResponse> CreateInvokerOutcome;
+                typedef std::future<CreateInvokerOutcome> CreateInvokerOutcomeCallable;
+                typedef std::function<void(const TatClient*, const Model::CreateInvokerRequest&, CreateInvokerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInvokerAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCommandResponse> DeleteCommandOutcome;
                 typedef std::future<DeleteCommandOutcome> DeleteCommandOutcomeCallable;
                 typedef std::function<void(const TatClient*, const Model::DeleteCommandRequest&, DeleteCommandOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCommandAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteInvokerResponse> DeleteInvokerOutcome;
+                typedef std::future<DeleteInvokerOutcome> DeleteInvokerOutcomeCallable;
+                typedef std::function<void(const TatClient*, const Model::DeleteInvokerRequest&, DeleteInvokerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInvokerAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAutomationAgentStatusResponse> DescribeAutomationAgentStatusOutcome;
                 typedef std::future<DescribeAutomationAgentStatusOutcome> DescribeAutomationAgentStatusOutcomeCallable;
                 typedef std::function<void(const TatClient*, const Model::DescribeAutomationAgentStatusRequest&, DescribeAutomationAgentStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutomationAgentStatusAsyncHandler;
@@ -77,15 +97,30 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInvocationsResponse> DescribeInvocationsOutcome;
                 typedef std::future<DescribeInvocationsOutcome> DescribeInvocationsOutcomeCallable;
                 typedef std::function<void(const TatClient*, const Model::DescribeInvocationsRequest&, DescribeInvocationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInvocationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInvokerRecordsResponse> DescribeInvokerRecordsOutcome;
+                typedef std::future<DescribeInvokerRecordsOutcome> DescribeInvokerRecordsOutcomeCallable;
+                typedef std::function<void(const TatClient*, const Model::DescribeInvokerRecordsRequest&, DescribeInvokerRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInvokerRecordsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInvokersResponse> DescribeInvokersOutcome;
+                typedef std::future<DescribeInvokersOutcome> DescribeInvokersOutcomeCallable;
+                typedef std::function<void(const TatClient*, const Model::DescribeInvokersRequest&, DescribeInvokersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInvokersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRegionsResponse> DescribeRegionsOutcome;
                 typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
                 typedef std::function<void(const TatClient*, const Model::DescribeRegionsRequest&, DescribeRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisableInvokerResponse> DisableInvokerOutcome;
+                typedef std::future<DisableInvokerOutcome> DisableInvokerOutcomeCallable;
+                typedef std::function<void(const TatClient*, const Model::DisableInvokerRequest&, DisableInvokerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableInvokerAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableInvokerResponse> EnableInvokerOutcome;
+                typedef std::future<EnableInvokerOutcome> EnableInvokerOutcomeCallable;
+                typedef std::function<void(const TatClient*, const Model::EnableInvokerRequest&, EnableInvokerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableInvokerAsyncHandler;
                 typedef Outcome<Core::Error, Model::InvokeCommandResponse> InvokeCommandOutcome;
                 typedef std::future<InvokeCommandOutcome> InvokeCommandOutcomeCallable;
                 typedef std::function<void(const TatClient*, const Model::InvokeCommandRequest&, InvokeCommandOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InvokeCommandAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCommandResponse> ModifyCommandOutcome;
                 typedef std::future<ModifyCommandOutcome> ModifyCommandOutcomeCallable;
                 typedef std::function<void(const TatClient*, const Model::ModifyCommandRequest&, ModifyCommandOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCommandAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInvokerResponse> ModifyInvokerOutcome;
+                typedef std::future<ModifyInvokerOutcome> ModifyInvokerOutcomeCallable;
+                typedef std::function<void(const TatClient*, const Model::ModifyInvokerRequest&, ModifyInvokerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInvokerAsyncHandler;
                 typedef Outcome<Core::Error, Model::PreviewReplacedCommandContentResponse> PreviewReplacedCommandContentOutcome;
                 typedef std::future<PreviewReplacedCommandContentOutcome> PreviewReplacedCommandContentOutcomeCallable;
                 typedef std::function<void(const TatClient*, const Model::PreviewReplacedCommandContentRequest&, PreviewReplacedCommandContentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PreviewReplacedCommandContentAsyncHandler;
@@ -105,13 +140,32 @@ namespace TencentCloud
                 CreateCommandOutcomeCallable CreateCommandCallable(const Model::CreateCommandRequest& request);
 
                 /**
+                 *此接口用于创建执行器。
+                 * @param req CreateInvokerRequest
+                 * @return CreateInvokerOutcome
+                 */
+                CreateInvokerOutcome CreateInvoker(const Model::CreateInvokerRequest &request);
+                void CreateInvokerAsync(const Model::CreateInvokerRequest& request, const CreateInvokerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateInvokerOutcomeCallable CreateInvokerCallable(const Model::CreateInvokerRequest& request);
+
+                /**
                  *此接口用于删除命令。
+如果命令与执行器关联，则无法被删除。
                  * @param req DeleteCommandRequest
                  * @return DeleteCommandOutcome
                  */
                 DeleteCommandOutcome DeleteCommand(const Model::DeleteCommandRequest &request);
                 void DeleteCommandAsync(const Model::DeleteCommandRequest& request, const DeleteCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteCommandOutcomeCallable DeleteCommandCallable(const Model::DeleteCommandRequest& request);
+
+                /**
+                 *此接口用于删除执行器。
+                 * @param req DeleteInvokerRequest
+                 * @return DeleteInvokerOutcome
+                 */
+                DeleteInvokerOutcome DeleteInvoker(const Model::DeleteInvokerRequest &request);
+                void DeleteInvokerAsync(const Model::DeleteInvokerRequest& request, const DeleteInvokerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteInvokerOutcomeCallable DeleteInvokerCallable(const Model::DeleteInvokerRequest& request);
 
                 /**
                  *此接口用于查询自动化助手客户端的状态。
@@ -150,6 +204,24 @@ namespace TencentCloud
                 DescribeInvocationsOutcomeCallable DescribeInvocationsCallable(const Model::DescribeInvocationsRequest& request);
 
                 /**
+                 *此接口用于查询执行器的执行记录。
+                 * @param req DescribeInvokerRecordsRequest
+                 * @return DescribeInvokerRecordsOutcome
+                 */
+                DescribeInvokerRecordsOutcome DescribeInvokerRecords(const Model::DescribeInvokerRecordsRequest &request);
+                void DescribeInvokerRecordsAsync(const Model::DescribeInvokerRecordsRequest& request, const DescribeInvokerRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInvokerRecordsOutcomeCallable DescribeInvokerRecordsCallable(const Model::DescribeInvokerRecordsRequest& request);
+
+                /**
+                 *此接口用于查询执行器信息。
+                 * @param req DescribeInvokersRequest
+                 * @return DescribeInvokersOutcome
+                 */
+                DescribeInvokersOutcome DescribeInvokers(const Model::DescribeInvokersRequest &request);
+                void DescribeInvokersAsync(const Model::DescribeInvokersRequest& request, const DescribeInvokersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInvokersOutcomeCallable DescribeInvokersCallable(const Model::DescribeInvokersRequest& request);
+
+                /**
                  *此接口用于查询 TAT 产品后台地域列表。
 RegionState 为 AVAILABLE，代表该地域的 TAT 后台服务已经可用；未返回，代表该地域的 TAT 后台服务尚不可用。
                  * @param req DescribeRegionsRequest
@@ -158,6 +230,24 @@ RegionState 为 AVAILABLE，代表该地域的 TAT 后台服务已经可用；�
                 DescribeRegionsOutcome DescribeRegions(const Model::DescribeRegionsRequest &request);
                 void DescribeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRegionsOutcomeCallable DescribeRegionsCallable(const Model::DescribeRegionsRequest& request);
+
+                /**
+                 *此接口用于停止执行器。
+                 * @param req DisableInvokerRequest
+                 * @return DisableInvokerOutcome
+                 */
+                DisableInvokerOutcome DisableInvoker(const Model::DisableInvokerRequest &request);
+                void DisableInvokerAsync(const Model::DisableInvokerRequest& request, const DisableInvokerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisableInvokerOutcomeCallable DisableInvokerCallable(const Model::DisableInvokerRequest& request);
+
+                /**
+                 *此接口用于启用执行器。
+                 * @param req EnableInvokerRequest
+                 * @return EnableInvokerOutcome
+                 */
+                EnableInvokerOutcome EnableInvoker(const Model::EnableInvokerRequest &request);
+                void EnableInvokerAsync(const Model::EnableInvokerRequest& request, const EnableInvokerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableInvokerOutcomeCallable EnableInvokerCallable(const Model::EnableInvokerRequest& request);
 
                 /**
                  *在指定的实例上触发命令，调用成功返回执行活动ID（inv-xxxxxxxx），每个执行活动内部有一个或多个执行任务（invt-xxxxxxxx），每个执行任务代表命令在一台 CVM 或一台 Lighthouse 上的执行记录。
@@ -182,6 +272,15 @@ RegionState 为 AVAILABLE，代表该地域的 TAT 后台服务已经可用；�
                 ModifyCommandOutcome ModifyCommand(const Model::ModifyCommandRequest &request);
                 void ModifyCommandAsync(const Model::ModifyCommandRequest& request, const ModifyCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyCommandOutcomeCallable ModifyCommandCallable(const Model::ModifyCommandRequest& request);
+
+                /**
+                 *此接口用于修改执行器。
+                 * @param req ModifyInvokerRequest
+                 * @return ModifyInvokerOutcome
+                 */
+                ModifyInvokerOutcome ModifyInvoker(const Model::ModifyInvokerRequest &request);
+                void ModifyInvokerAsync(const Model::ModifyInvokerRequest& request, const ModifyInvokerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInvokerOutcomeCallable ModifyInvokerCallable(const Model::ModifyInvokerRequest& request);
 
                 /**
                  *此接口用于预览自定义参数替换后的命令内容。不会触发真实执行。

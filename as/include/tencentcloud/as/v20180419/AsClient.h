@@ -746,8 +746,8 @@ namespace TencentCloud
                 ScaleOutInstancesOutcomeCallable ScaleOutInstancesCallable(const Model::ScaleOutInstancesRequest& request);
 
                 /**
-                 *本接口（SetInstancesProtection）用于设置实例移除保护。
-子机设置为移除保护之后，当发生不健康替换、报警策略、期望值变更等触发缩容时，将不对此子机缩容操作。
+                 *本接口（SetInstancesProtection）用于设置实例保护。
+实例设置保护之后，当发生不健康替换、报警策略、期望值变更等触发缩容时，将不对此实例缩容操作。
                  * @param req SetInstancesProtectionRequest
                  * @return SetInstancesProtectionOutcome
                  */

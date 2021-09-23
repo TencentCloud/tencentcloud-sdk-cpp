@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cii/v20210408/model/ClassifyInfo.h>
 
 
 namespace TencentCloud
@@ -82,6 +83,28 @@ namespace TencentCloud
                      */
                     bool StructureResultHasBeenSet() const;
 
+                    /**
+                     * 获取报告分类信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReportType 报告分类信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ClassifyInfo> GetReportType() const;
+
+                    /**
+                     * 设置报告分类信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ReportType 报告分类信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetReportType(const std::vector<ClassifyInfo>& _reportType);
+
+                    /**
+                     * 判断参数 ReportType 是否已赋值
+                     * @return ReportType 是否已赋值
+                     */
+                    bool ReportTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +118,13 @@ namespace TencentCloud
                      */
                     std::string m_structureResult;
                     bool m_structureResultHasBeenSet;
+
+                    /**
+                     * 报告分类信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ClassifyInfo> m_reportType;
+                    bool m_reportTypeHasBeenSet;
 
                 };
             }

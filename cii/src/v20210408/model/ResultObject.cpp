@@ -22,7 +22,8 @@ using namespace std;
 
 ResultObject::ResultObject() :
     m_qualityHasBeenSet(false),
-    m_structureResultHasBeenSet(false)
+    m_structureResultHasBeenSet(false),
+    m_reportTypeHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,26 @@ CoreInternalOutcome ResultObject::Deserialize(const rapidjson::Value &value)
         m_structureResultHasBeenSet = true;
     }
 
+    if (value.HasMember("ReportType") && !value["ReportType"].IsNull())
+    {
+        if (!value["ReportType"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ResultObject.ReportType` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ReportType"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ClassifyInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_reportType.push_back(item);
+        }
+        m_reportTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +93,21 @@ void ResultObject::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "StructureResult";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_structureResult.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reportTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReportType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_reportType.begin(); itr != m_reportType.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -107,5 +143,21 @@ void ResultObject::SetStructureResult(const string& _structureResult)
 bool ResultObject::StructureResultHasBeenSet() const
 {
     return m_structureResultHasBeenSet;
+}
+
+vector<ClassifyInfo> ResultObject::GetReportType() const
+{
+    return m_reportType;
+}
+
+void ResultObject::SetReportType(const vector<ClassifyInfo>& _reportType)
+{
+    m_reportType = _reportType;
+    m_reportTypeHasBeenSet = true;
+}
+
+bool ResultObject::ReportTypeHasBeenSet() const
+{
+    return m_reportTypeHasBeenSet;
 }
 

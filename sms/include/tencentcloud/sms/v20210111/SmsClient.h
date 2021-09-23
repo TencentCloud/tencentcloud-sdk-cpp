@@ -33,6 +33,8 @@
 #include <tencentcloud/sms/v20210111/model/DeleteSmsSignResponse.h>
 #include <tencentcloud/sms/v20210111/model/DeleteSmsTemplateRequest.h>
 #include <tencentcloud/sms/v20210111/model/DeleteSmsTemplateResponse.h>
+#include <tencentcloud/sms/v20210111/model/DescribePhoneNumberInfoRequest.h>
+#include <tencentcloud/sms/v20210111/model/DescribePhoneNumberInfoResponse.h>
 #include <tencentcloud/sms/v20210111/model/DescribeSmsSignListRequest.h>
 #include <tencentcloud/sms/v20210111/model/DescribeSmsSignListResponse.h>
 #include <tencentcloud/sms/v20210111/model/DescribeSmsTemplateListRequest.h>
@@ -84,6 +86,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteSmsTemplateResponse> DeleteSmsTemplateOutcome;
                 typedef std::future<DeleteSmsTemplateOutcome> DeleteSmsTemplateOutcomeCallable;
                 typedef std::function<void(const SmsClient*, const Model::DeleteSmsTemplateRequest&, DeleteSmsTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSmsTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePhoneNumberInfoResponse> DescribePhoneNumberInfoOutcome;
+                typedef std::future<DescribePhoneNumberInfoOutcome> DescribePhoneNumberInfoOutcomeCallable;
+                typedef std::function<void(const SmsClient*, const Model::DescribePhoneNumberInfoRequest&, DescribePhoneNumberInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePhoneNumberInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSmsSignListResponse> DescribeSmsSignListOutcome;
                 typedef std::future<DescribeSmsSignListOutcome> DescribeSmsSignListOutcomeCallable;
                 typedef std::function<void(const SmsClient*, const Model::DescribeSmsSignListRequest&, DescribeSmsSignListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSmsSignListAsyncHandler;
@@ -176,6 +181,15 @@ namespace TencentCloud
                 DeleteSmsTemplateOutcome DeleteSmsTemplate(const Model::DeleteSmsTemplateRequest &request);
                 void DeleteSmsTemplateAsync(const Model::DeleteSmsTemplateRequest& request, const DeleteSmsTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteSmsTemplateOutcomeCallable DeleteSmsTemplateCallable(const Model::DeleteSmsTemplateRequest& request);
+
+                /**
+                 *提供 E.164 格式号码国家或地区码识别，以及解析后规范的E.164号码。
+                 * @param req DescribePhoneNumberInfoRequest
+                 * @return DescribePhoneNumberInfoOutcome
+                 */
+                DescribePhoneNumberInfoOutcome DescribePhoneNumberInfo(const Model::DescribePhoneNumberInfoRequest &request);
+                void DescribePhoneNumberInfoAsync(const Model::DescribePhoneNumberInfoRequest& request, const DescribePhoneNumberInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePhoneNumberInfoOutcomeCallable DescribePhoneNumberInfoCallable(const Model::DescribePhoneNumberInfoRequest& request);
 
                 /**
                  *⚠️注意：个人认证用户不支持使用 API 查询短信签名，请参阅了解 [实名认证基本介绍](https://cloud.tencent.com/document/product/378/3629),如果为个人认证请登录 [控制台](https://console.cloud.tencent.com/smsv2) 查询短信签名。

@@ -28,7 +28,9 @@ MetricSet::MetricSet() :
     m_periodHasBeenSet(false),
     m_periodsHasBeenSet(false),
     m_meaningHasBeenSet(false),
-    m_dimensionsHasBeenSet(false)
+    m_dimensionsHasBeenSet(false),
+    m_metricCNameHasBeenSet(false),
+    m_metricENameHasBeenSet(false)
 {
 }
 
@@ -147,6 +149,26 @@ CoreInternalOutcome MetricSet::Deserialize(const rapidjson::Value &value)
         m_dimensionsHasBeenSet = true;
     }
 
+    if (value.HasMember("MetricCName") && !value["MetricCName"].IsNull())
+    {
+        if (!value["MetricCName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MetricSet.MetricCName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_metricCName = string(value["MetricCName"].GetString());
+        m_metricCNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("MetricEName") && !value["MetricEName"].IsNull())
+    {
+        if (!value["MetricEName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MetricSet.MetricEName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_metricEName = string(value["MetricEName"].GetString());
+        m_metricENameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -236,6 +258,22 @@ void MetricSet::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_metricCNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetricCName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_metricCName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_metricENameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetricEName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_metricEName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -367,5 +405,37 @@ void MetricSet::SetDimensions(const vector<DimensionsDesc>& _dimensions)
 bool MetricSet::DimensionsHasBeenSet() const
 {
     return m_dimensionsHasBeenSet;
+}
+
+string MetricSet::GetMetricCName() const
+{
+    return m_metricCName;
+}
+
+void MetricSet::SetMetricCName(const string& _metricCName)
+{
+    m_metricCName = _metricCName;
+    m_metricCNameHasBeenSet = true;
+}
+
+bool MetricSet::MetricCNameHasBeenSet() const
+{
+    return m_metricCNameHasBeenSet;
+}
+
+string MetricSet::GetMetricEName() const
+{
+    return m_metricEName;
+}
+
+void MetricSet::SetMetricEName(const string& _metricEName)
+{
+    m_metricEName = _metricEName;
+    m_metricENameHasBeenSet = true;
+}
+
+bool MetricSet::MetricENameHasBeenSet() const
+{
+    return m_metricENameHasBeenSet;
 }
 

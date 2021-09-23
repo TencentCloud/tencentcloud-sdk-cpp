@@ -230,6 +230,28 @@ namespace TencentCloud
                      */
                     bool AreaHasBeenSet() const;
 
+                    /**
+                     * 获取waf规则等级，可取100|200|300
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WafLevel waf规则等级，可取100|200|300
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetWafLevel() const;
+
+                    /**
+                     * 设置waf规则等级，可取100|200|300
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WafLevel waf规则等级，可取100|200|300
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWafLevel(const int64_t& _wafLevel);
+
+                    /**
+                     * 判断参数 WafLevel 是否已赋值
+                     * @return WafLevel 是否已赋值
+                     */
+                    bool WafLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -292,6 +314,13 @@ namespace TencentCloud
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
+
+                    /**
+                     * waf规则等级，可取100|200|300
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_wafLevel;
+                    bool m_wafLevelHasBeenSet;
 
                 };
             }

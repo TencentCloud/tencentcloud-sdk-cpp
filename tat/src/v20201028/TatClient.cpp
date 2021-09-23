@@ -83,6 +83,49 @@ TatClient::CreateCommandOutcomeCallable TatClient::CreateCommandCallable(const C
     return task->get_future();
 }
 
+TatClient::CreateInvokerOutcome TatClient::CreateInvoker(const CreateInvokerRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateInvoker");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateInvokerResponse rsp = CreateInvokerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateInvokerOutcome(rsp);
+        else
+            return CreateInvokerOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateInvokerOutcome(outcome.GetError());
+    }
+}
+
+void TatClient::CreateInvokerAsync(const CreateInvokerRequest& request, const CreateInvokerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateInvoker(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TatClient::CreateInvokerOutcomeCallable TatClient::CreateInvokerCallable(const CreateInvokerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateInvokerOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateInvoker(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TatClient::DeleteCommandOutcome TatClient::DeleteCommand(const DeleteCommandRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCommand");
@@ -119,6 +162,49 @@ TatClient::DeleteCommandOutcomeCallable TatClient::DeleteCommandCallable(const D
         [this, request]()
         {
             return this->DeleteCommand(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TatClient::DeleteInvokerOutcome TatClient::DeleteInvoker(const DeleteInvokerRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteInvoker");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteInvokerResponse rsp = DeleteInvokerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteInvokerOutcome(rsp);
+        else
+            return DeleteInvokerOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteInvokerOutcome(outcome.GetError());
+    }
+}
+
+void TatClient::DeleteInvokerAsync(const DeleteInvokerRequest& request, const DeleteInvokerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteInvoker(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TatClient::DeleteInvokerOutcomeCallable TatClient::DeleteInvokerCallable(const DeleteInvokerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteInvokerOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteInvoker(request);
         }
     );
 
@@ -298,6 +384,92 @@ TatClient::DescribeInvocationsOutcomeCallable TatClient::DescribeInvocationsCall
     return task->get_future();
 }
 
+TatClient::DescribeInvokerRecordsOutcome TatClient::DescribeInvokerRecords(const DescribeInvokerRecordsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInvokerRecords");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInvokerRecordsResponse rsp = DescribeInvokerRecordsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInvokerRecordsOutcome(rsp);
+        else
+            return DescribeInvokerRecordsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInvokerRecordsOutcome(outcome.GetError());
+    }
+}
+
+void TatClient::DescribeInvokerRecordsAsync(const DescribeInvokerRecordsRequest& request, const DescribeInvokerRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInvokerRecords(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TatClient::DescribeInvokerRecordsOutcomeCallable TatClient::DescribeInvokerRecordsCallable(const DescribeInvokerRecordsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInvokerRecordsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInvokerRecords(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TatClient::DescribeInvokersOutcome TatClient::DescribeInvokers(const DescribeInvokersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInvokers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInvokersResponse rsp = DescribeInvokersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInvokersOutcome(rsp);
+        else
+            return DescribeInvokersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInvokersOutcome(outcome.GetError());
+    }
+}
+
+void TatClient::DescribeInvokersAsync(const DescribeInvokersRequest& request, const DescribeInvokersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInvokers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TatClient::DescribeInvokersOutcomeCallable TatClient::DescribeInvokersCallable(const DescribeInvokersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInvokersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInvokers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TatClient::DescribeRegionsOutcome TatClient::DescribeRegions(const DescribeRegionsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRegions");
@@ -334,6 +506,92 @@ TatClient::DescribeRegionsOutcomeCallable TatClient::DescribeRegionsCallable(con
         [this, request]()
         {
             return this->DescribeRegions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TatClient::DisableInvokerOutcome TatClient::DisableInvoker(const DisableInvokerRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableInvoker");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableInvokerResponse rsp = DisableInvokerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableInvokerOutcome(rsp);
+        else
+            return DisableInvokerOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableInvokerOutcome(outcome.GetError());
+    }
+}
+
+void TatClient::DisableInvokerAsync(const DisableInvokerRequest& request, const DisableInvokerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableInvoker(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TatClient::DisableInvokerOutcomeCallable TatClient::DisableInvokerCallable(const DisableInvokerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableInvokerOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableInvoker(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TatClient::EnableInvokerOutcome TatClient::EnableInvoker(const EnableInvokerRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableInvoker");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableInvokerResponse rsp = EnableInvokerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableInvokerOutcome(rsp);
+        else
+            return EnableInvokerOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableInvokerOutcome(outcome.GetError());
+    }
+}
+
+void TatClient::EnableInvokerAsync(const EnableInvokerRequest& request, const EnableInvokerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableInvoker(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TatClient::EnableInvokerOutcomeCallable TatClient::EnableInvokerCallable(const EnableInvokerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableInvokerOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableInvoker(request);
         }
     );
 
@@ -420,6 +678,49 @@ TatClient::ModifyCommandOutcomeCallable TatClient::ModifyCommandCallable(const M
         [this, request]()
         {
             return this->ModifyCommand(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TatClient::ModifyInvokerOutcome TatClient::ModifyInvoker(const ModifyInvokerRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInvoker");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInvokerResponse rsp = ModifyInvokerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInvokerOutcome(rsp);
+        else
+            return ModifyInvokerOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInvokerOutcome(outcome.GetError());
+    }
+}
+
+void TatClient::ModifyInvokerAsync(const ModifyInvokerRequest& request, const ModifyInvokerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInvoker(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TatClient::ModifyInvokerOutcomeCallable TatClient::ModifyInvokerCallable(const ModifyInvokerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInvokerOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInvoker(request);
         }
     );
 

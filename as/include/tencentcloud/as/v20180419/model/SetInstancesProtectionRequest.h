@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取实例是否需要移出保护。
-                     * @return ProtectedFromScaleIn 实例是否需要移出保护。
+                     * 获取实例是否需要设置保护。
+                     * @return ProtectedFromScaleIn 实例是否需要设置保护。
                      */
                     bool GetProtectedFromScaleIn() const;
 
                     /**
-                     * 设置实例是否需要移出保护。
-                     * @param ProtectedFromScaleIn 实例是否需要移出保护。
+                     * 设置实例是否需要设置保护。
+                     * @param ProtectedFromScaleIn 实例是否需要设置保护。
                      */
                     void SetProtectedFromScaleIn(const bool& _protectedFromScaleIn);
 
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 实例是否需要移出保护。
+                     * 实例是否需要设置保护。
                      */
                     bool m_protectedFromScaleIn;
                     bool m_protectedFromScaleInHasBeenSet;

@@ -19,34 +19,51 @@ set(tat_public_header
   )
 
 set(tat_public_header_model
+  include/tencentcloud/tat/v20201028/model/ScheduleSettings.h
+  include/tencentcloud/tat/v20201028/model/InvocationTaskBasicInfo.h
   include/tencentcloud/tat/v20201028/model/PreviewReplacedCommandContentResponse.h
   include/tencentcloud/tat/v20201028/model/CreateCommandResponse.h
+  include/tencentcloud/tat/v20201028/model/DisableInvokerRequest.h
   include/tencentcloud/tat/v20201028/model/AutomationAgentInfo.h
   include/tencentcloud/tat/v20201028/model/RunCommandRequest.h
+  include/tencentcloud/tat/v20201028/model/Invoker.h
   include/tencentcloud/tat/v20201028/model/DescribeInvocationTasksRequest.h
   include/tencentcloud/tat/v20201028/model/Invocation.h
+  include/tencentcloud/tat/v20201028/model/DescribeRegionsRequest.h
   include/tencentcloud/tat/v20201028/model/CommandDocument.h
+  include/tencentcloud/tat/v20201028/model/DescribeInvokerRecordsResponse.h
   include/tencentcloud/tat/v20201028/model/TaskResult.h
+  include/tencentcloud/tat/v20201028/model/ModifyInvokerRequest.h
+  include/tencentcloud/tat/v20201028/model/EnableInvokerResponse.h
+  include/tencentcloud/tat/v20201028/model/EnableInvokerRequest.h
   include/tencentcloud/tat/v20201028/model/ModifyCommandResponse.h
   include/tencentcloud/tat/v20201028/model/RegionInfo.h
+  include/tencentcloud/tat/v20201028/model/DescribeInvokersResponse.h
   include/tencentcloud/tat/v20201028/model/DeleteCommandResponse.h
+  include/tencentcloud/tat/v20201028/model/DisableInvokerResponse.h
   include/tencentcloud/tat/v20201028/model/DescribeCommandsResponse.h
+  include/tencentcloud/tat/v20201028/model/CreateInvokerRequest.h
   include/tencentcloud/tat/v20201028/model/DescribeAutomationAgentStatusRequest.h
   include/tencentcloud/tat/v20201028/model/InvokeCommandResponse.h
   include/tencentcloud/tat/v20201028/model/ModifyCommandRequest.h
+  include/tencentcloud/tat/v20201028/model/DescribeInvokersRequest.h
   include/tencentcloud/tat/v20201028/model/DescribeCommandsRequest.h
+  include/tencentcloud/tat/v20201028/model/DeleteInvokerResponse.h
   include/tencentcloud/tat/v20201028/model/DescribeInvocationsRequest.h
-  include/tencentcloud/tat/v20201028/model/PreviewReplacedCommandContentRequest.h
   include/tencentcloud/tat/v20201028/model/Filter.h
   include/tencentcloud/tat/v20201028/model/DescribeInvocationsResponse.h
   include/tencentcloud/tat/v20201028/model/DescribeInvocationTasksResponse.h
   include/tencentcloud/tat/v20201028/model/Command.h
+  include/tencentcloud/tat/v20201028/model/PreviewReplacedCommandContentRequest.h
   include/tencentcloud/tat/v20201028/model/InvocationTask.h
+  include/tencentcloud/tat/v20201028/model/InvokerRecord.h
   include/tencentcloud/tat/v20201028/model/DescribeAutomationAgentStatusResponse.h
-  include/tencentcloud/tat/v20201028/model/InvocationTaskBasicInfo.h
+  include/tencentcloud/tat/v20201028/model/CreateInvokerResponse.h
+  include/tencentcloud/tat/v20201028/model/ModifyInvokerResponse.h
   include/tencentcloud/tat/v20201028/model/DeleteCommandRequest.h
+  include/tencentcloud/tat/v20201028/model/DeleteInvokerRequest.h
   include/tencentcloud/tat/v20201028/model/InvokeCommandRequest.h
-  include/tencentcloud/tat/v20201028/model/DescribeRegionsRequest.h
+  include/tencentcloud/tat/v20201028/model/DescribeInvokerRecordsRequest.h
   include/tencentcloud/tat/v20201028/model/Tag.h
   include/tencentcloud/tat/v20201028/model/RunCommandResponse.h
   include/tencentcloud/tat/v20201028/model/DescribeRegionsResponse.h
@@ -55,34 +72,51 @@ set(tat_public_header_model
 
 set(tat_src
   src/v20201028/TatClient.cpp
+  src/v20201028/model/ScheduleSettings.cpp
+  src/v20201028/model/InvocationTaskBasicInfo.cpp
   src/v20201028/model/PreviewReplacedCommandContentResponse.cpp
   src/v20201028/model/CreateCommandResponse.cpp
+  src/v20201028/model/DisableInvokerRequest.cpp
   src/v20201028/model/AutomationAgentInfo.cpp
   src/v20201028/model/RunCommandRequest.cpp
+  src/v20201028/model/Invoker.cpp
   src/v20201028/model/DescribeInvocationTasksRequest.cpp
   src/v20201028/model/Invocation.cpp
+  src/v20201028/model/DescribeRegionsRequest.cpp
   src/v20201028/model/CommandDocument.cpp
+  src/v20201028/model/DescribeInvokerRecordsResponse.cpp
   src/v20201028/model/TaskResult.cpp
+  src/v20201028/model/ModifyInvokerRequest.cpp
+  src/v20201028/model/EnableInvokerResponse.cpp
+  src/v20201028/model/EnableInvokerRequest.cpp
   src/v20201028/model/ModifyCommandResponse.cpp
   src/v20201028/model/RegionInfo.cpp
+  src/v20201028/model/DescribeInvokersResponse.cpp
   src/v20201028/model/DeleteCommandResponse.cpp
+  src/v20201028/model/DisableInvokerResponse.cpp
   src/v20201028/model/DescribeCommandsResponse.cpp
+  src/v20201028/model/CreateInvokerRequest.cpp
   src/v20201028/model/DescribeAutomationAgentStatusRequest.cpp
   src/v20201028/model/InvokeCommandResponse.cpp
   src/v20201028/model/ModifyCommandRequest.cpp
+  src/v20201028/model/DescribeInvokersRequest.cpp
   src/v20201028/model/DescribeCommandsRequest.cpp
+  src/v20201028/model/DeleteInvokerResponse.cpp
   src/v20201028/model/DescribeInvocationsRequest.cpp
-  src/v20201028/model/PreviewReplacedCommandContentRequest.cpp
   src/v20201028/model/Filter.cpp
   src/v20201028/model/DescribeInvocationsResponse.cpp
   src/v20201028/model/DescribeInvocationTasksResponse.cpp
   src/v20201028/model/Command.cpp
+  src/v20201028/model/PreviewReplacedCommandContentRequest.cpp
   src/v20201028/model/InvocationTask.cpp
+  src/v20201028/model/InvokerRecord.cpp
   src/v20201028/model/DescribeAutomationAgentStatusResponse.cpp
-  src/v20201028/model/InvocationTaskBasicInfo.cpp
+  src/v20201028/model/CreateInvokerResponse.cpp
+  src/v20201028/model/ModifyInvokerResponse.cpp
   src/v20201028/model/DeleteCommandRequest.cpp
+  src/v20201028/model/DeleteInvokerRequest.cpp
   src/v20201028/model/InvokeCommandRequest.cpp
-  src/v20201028/model/DescribeRegionsRequest.cpp
+  src/v20201028/model/DescribeInvokerRecordsRequest.cpp
   src/v20201028/model/Tag.cpp
   src/v20201028/model/RunCommandResponse.cpp
   src/v20201028/model/DescribeRegionsResponse.cpp

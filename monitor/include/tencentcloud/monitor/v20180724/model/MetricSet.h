@@ -193,6 +193,50 @@ namespace TencentCloud
                      */
                     bool DimensionsHasBeenSet() const;
 
+                    /**
+                     * 获取指标中文名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MetricCName 指标中文名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMetricCName() const;
+
+                    /**
+                     * 设置指标中文名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MetricCName 指标中文名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMetricCName(const std::string& _metricCName);
+
+                    /**
+                     * 判断参数 MetricCName 是否已赋值
+                     * @return MetricCName 是否已赋值
+                     */
+                    bool MetricCNameHasBeenSet() const;
+
+                    /**
+                     * 获取指标英文名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MetricEName 指标英文名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMetricEName() const;
+
+                    /**
+                     * 设置指标英文名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MetricEName 指标英文名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMetricEName(const std::string& _metricEName);
+
+                    /**
+                     * 判断参数 MetricEName 是否已赋值
+                     * @return MetricEName 是否已赋值
+                     */
+                    bool MetricENameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -242,6 +286,20 @@ namespace TencentCloud
                      */
                     std::vector<DimensionsDesc> m_dimensions;
                     bool m_dimensionsHasBeenSet;
+
+                    /**
+                     * 指标中文名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_metricCName;
+                    bool m_metricCNameHasBeenSet;
+
+                    /**
+                     * 指标英文名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_metricEName;
+                    bool m_metricENameHasBeenSet;
 
                 };
             }
