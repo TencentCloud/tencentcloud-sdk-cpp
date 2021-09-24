@@ -40,9 +40,11 @@ set(tcaplusdb_public_header_model
   include/tencentcloud/tcaplusdb/v20190823/model/DescribeTasksResponse.h
   include/tencentcloud/tcaplusdb/v20190823/model/DeleteTablesRequest.h
   include/tencentcloud/tcaplusdb/v20190823/model/DescribeRegionsResponse.h
+  include/tencentcloud/tcaplusdb/v20190823/model/SetTableDataFlowResponse.h
   include/tencentcloud/tcaplusdb/v20190823/model/SelectedTableInfoNew.h
   include/tencentcloud/tcaplusdb/v20190823/model/ModifyClusterPasswordRequest.h
   include/tencentcloud/tcaplusdb/v20190823/model/DescribeMachineResponse.h
+  include/tencentcloud/tcaplusdb/v20190823/model/DeleteTableDataFlowRequest.h
   include/tencentcloud/tcaplusdb/v20190823/model/DeleteTableGroupRequest.h
   include/tencentcloud/tcaplusdb/v20190823/model/DescribeSnapshotsRequest.h
   include/tencentcloud/tcaplusdb/v20190823/model/TagsInfoOfTableGroup.h
@@ -117,9 +119,12 @@ set(tcaplusdb_public_header_model
   include/tencentcloud/tcaplusdb/v20190823/model/EnableRestProxyResponse.h
   include/tencentcloud/tcaplusdb/v20190823/model/ModifyClusterNameResponse.h
   include/tencentcloud/tcaplusdb/v20190823/model/ModifyTablesRequest.h
+  include/tencentcloud/tcaplusdb/v20190823/model/SetTableDataFlowRequest.h
   include/tencentcloud/tcaplusdb/v20190823/model/DescribeTableGroupTagsRequest.h
   include/tencentcloud/tcaplusdb/v20190823/model/DescribeTablesInRecycleRequest.h
   include/tencentcloud/tcaplusdb/v20190823/model/DescribeTablesRequest.h
+  include/tencentcloud/tcaplusdb/v20190823/model/KafkaInfo.h
+  include/tencentcloud/tcaplusdb/v20190823/model/DeleteTableDataFlowResponse.h
   include/tencentcloud/tcaplusdb/v20190823/model/UpdateApplyRequest.h
   include/tencentcloud/tcaplusdb/v20190823/model/ModifyTableMemosRequest.h
   include/tencentcloud/tcaplusdb/v20190823/model/DescribeUinInWhitelistResponse.h
@@ -175,9 +180,11 @@ set(tcaplusdb_src
   src/v20190823/model/DescribeTasksResponse.cpp
   src/v20190823/model/DeleteTablesRequest.cpp
   src/v20190823/model/DescribeRegionsResponse.cpp
+  src/v20190823/model/SetTableDataFlowResponse.cpp
   src/v20190823/model/SelectedTableInfoNew.cpp
   src/v20190823/model/ModifyClusterPasswordRequest.cpp
   src/v20190823/model/DescribeMachineResponse.cpp
+  src/v20190823/model/DeleteTableDataFlowRequest.cpp
   src/v20190823/model/DeleteTableGroupRequest.cpp
   src/v20190823/model/DescribeSnapshotsRequest.cpp
   src/v20190823/model/TagsInfoOfTableGroup.cpp
@@ -252,9 +259,12 @@ set(tcaplusdb_src
   src/v20190823/model/EnableRestProxyResponse.cpp
   src/v20190823/model/ModifyClusterNameResponse.cpp
   src/v20190823/model/ModifyTablesRequest.cpp
+  src/v20190823/model/SetTableDataFlowRequest.cpp
   src/v20190823/model/DescribeTableGroupTagsRequest.cpp
   src/v20190823/model/DescribeTablesInRecycleRequest.cpp
   src/v20190823/model/DescribeTablesRequest.cpp
+  src/v20190823/model/KafkaInfo.cpp
+  src/v20190823/model/DeleteTableDataFlowResponse.cpp
   src/v20190823/model/UpdateApplyRequest.cpp
   src/v20190823/model/ModifyTableMemosRequest.cpp
   src/v20190823/model/DescribeUinInWhitelistResponse.cpp

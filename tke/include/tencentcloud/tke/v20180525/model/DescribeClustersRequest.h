@@ -102,14 +102,126 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件,当前只支持按照单个条件ClusterName进行过滤
-                     * @return Filters 过滤条件,当前只支持按照单个条件ClusterName进行过滤
+                     * 获取·  ClusterName
+    按照【集群名】进行过滤。
+    类型：String
+    必选：否
+
+·  Tags
+    按照【标签键值对】进行过滤。
+    类型：String
+    必选：否
+
+·  vpc-id
+    按照【VPC】进行过滤。
+    类型：String
+    必选：否
+
+·  tag-key
+    按照【标签键】进行过滤。
+    类型：String
+    必选：否
+
+·  tag-value
+    按照【标签值】进行过滤。
+    类型：String
+    必选：否
+
+·  tag:tag-key
+    按照【标签键值对】进行过滤。
+    类型：String
+    必选：否
+                     * @return Filters ·  ClusterName
+    按照【集群名】进行过滤。
+    类型：String
+    必选：否
+
+·  Tags
+    按照【标签键值对】进行过滤。
+    类型：String
+    必选：否
+
+·  vpc-id
+    按照【VPC】进行过滤。
+    类型：String
+    必选：否
+
+·  tag-key
+    按照【标签键】进行过滤。
+    类型：String
+    必选：否
+
+·  tag-value
+    按照【标签值】进行过滤。
+    类型：String
+    必选：否
+
+·  tag:tag-key
+    按照【标签键值对】进行过滤。
+    类型：String
+    必选：否
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件,当前只支持按照单个条件ClusterName进行过滤
-                     * @param Filters 过滤条件,当前只支持按照单个条件ClusterName进行过滤
+                     * 设置·  ClusterName
+    按照【集群名】进行过滤。
+    类型：String
+    必选：否
+
+·  Tags
+    按照【标签键值对】进行过滤。
+    类型：String
+    必选：否
+
+·  vpc-id
+    按照【VPC】进行过滤。
+    类型：String
+    必选：否
+
+·  tag-key
+    按照【标签键】进行过滤。
+    类型：String
+    必选：否
+
+·  tag-value
+    按照【标签值】进行过滤。
+    类型：String
+    必选：否
+
+·  tag:tag-key
+    按照【标签键值对】进行过滤。
+    类型：String
+    必选：否
+                     * @param Filters ·  ClusterName
+    按照【集群名】进行过滤。
+    类型：String
+    必选：否
+
+·  Tags
+    按照【标签键值对】进行过滤。
+    类型：String
+    必选：否
+
+·  vpc-id
+    按照【VPC】进行过滤。
+    类型：String
+    必选：否
+
+·  tag-key
+    按照【标签键】进行过滤。
+    类型：String
+    必选：否
+
+·  tag-value
+    按照【标签值】进行过滤。
+    类型：String
+    必选：否
+
+·  tag:tag-key
+    按照【标签键值对】进行过滤。
+    类型：String
+    必选：否
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -118,6 +230,24 @@ namespace TencentCloud
                      * @return Filters 是否已赋值
                      */
                     bool FiltersHasBeenSet() const;
+
+                    /**
+                     * 获取集群类型，例如：MANAGED_CLUSTER
+                     * @return ClusterType 集群类型，例如：MANAGED_CLUSTER
+                     */
+                    std::string GetClusterType() const;
+
+                    /**
+                     * 设置集群类型，例如：MANAGED_CLUSTER
+                     * @param ClusterType 集群类型，例如：MANAGED_CLUSTER
+                     */
+                    void SetClusterType(const std::string& _clusterType);
+
+                    /**
+                     * 判断参数 ClusterType 是否已赋值
+                     * @return ClusterType 是否已赋值
+                     */
+                    bool ClusterTypeHasBeenSet() const;
 
                 private:
 
@@ -141,10 +271,44 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 过滤条件,当前只支持按照单个条件ClusterName进行过滤
+                     * ·  ClusterName
+    按照【集群名】进行过滤。
+    类型：String
+    必选：否
+
+·  Tags
+    按照【标签键值对】进行过滤。
+    类型：String
+    必选：否
+
+·  vpc-id
+    按照【VPC】进行过滤。
+    类型：String
+    必选：否
+
+·  tag-key
+    按照【标签键】进行过滤。
+    类型：String
+    必选：否
+
+·  tag-value
+    按照【标签值】进行过滤。
+    类型：String
+    必选：否
+
+·  tag:tag-key
+    按照【标签键值对】进行过滤。
+    类型：String
+    必选：否
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 集群类型，例如：MANAGED_CLUSTER
+                     */
+                    std::string m_clusterType;
+                    bool m_clusterTypeHasBeenSet;
 
                 };
             }

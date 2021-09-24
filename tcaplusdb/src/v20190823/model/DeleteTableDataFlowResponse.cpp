@@ -14,23 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cii/v20210408/model/DescribeStructureResultResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/DeleteTableDataFlowResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cii::V20210408::Model;
+using namespace TencentCloud::Tcaplusdb::V20190823::Model;
 using namespace std;
 
-DescribeStructureResultResponse::DescribeStructureResultResponse() :
-    m_statusHasBeenSet(false),
-    m_resultsHasBeenSet(false),
-    m_mainTaskIdHasBeenSet(false)
+DeleteTableDataFlowResponse::DeleteTableDataFlowResponse() :
+    m_totalCountHasBeenSet(false),
+    m_tableResultsHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeStructureResultResponse::Deserialize(const string &payload)
+CoreInternalOutcome DeleteTableDataFlowResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -64,85 +63,67 @@ CoreInternalOutcome DescribeStructureResultResponse::Deserialize(const string &p
     }
 
 
-    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
-        if (!rsp["Status"].IsUint64())
+        if (!rsp["TotalCount"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_status = rsp["Status"].GetUint64();
-        m_statusHasBeenSet = true;
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
     }
 
-    if (rsp.HasMember("Results") && !rsp["Results"].IsNull())
+    if (rsp.HasMember("TableResults") && !rsp["TableResults"].IsNull())
     {
-        if (!rsp["Results"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Results` is not array type"));
+        if (!rsp["TableResults"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TableResults` is not array type"));
 
-        const rapidjson::Value &tmpValue = rsp["Results"];
+        const rapidjson::Value &tmpValue = rsp["TableResults"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            StructureResultObject item;
+            TableResultNew item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_results.push_back(item);
+            m_tableResults.push_back(item);
         }
-        m_resultsHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("MainTaskId") && !rsp["MainTaskId"].IsNull())
-    {
-        if (!rsp["MainTaskId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `MainTaskId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_mainTaskId = string(rsp["MainTaskId"].GetString());
-        m_mainTaskIdHasBeenSet = true;
+        m_tableResultsHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeStructureResultResponse::ToJsonString() const
+string DeleteTableDataFlowResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_statusHasBeenSet)
+    if (m_totalCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Status";
+        string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_status, allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
     }
 
-    if (m_resultsHasBeenSet)
+    if (m_tableResultsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Results";
+        string key = "TableResults";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_results.begin(); itr != m_results.end(); ++itr, ++i)
+        for (auto itr = m_tableResults.begin(); itr != m_tableResults.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
-    }
-
-    if (m_mainTaskIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MainTaskId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_mainTaskId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -157,34 +138,24 @@ string DescribeStructureResultResponse::ToJsonString() const
 }
 
 
-uint64_t DescribeStructureResultResponse::GetStatus() const
+uint64_t DeleteTableDataFlowResponse::GetTotalCount() const
 {
-    return m_status;
+    return m_totalCount;
 }
 
-bool DescribeStructureResultResponse::StatusHasBeenSet() const
+bool DeleteTableDataFlowResponse::TotalCountHasBeenSet() const
 {
-    return m_statusHasBeenSet;
+    return m_totalCountHasBeenSet;
 }
 
-vector<StructureResultObject> DescribeStructureResultResponse::GetResults() const
+vector<TableResultNew> DeleteTableDataFlowResponse::GetTableResults() const
 {
-    return m_results;
+    return m_tableResults;
 }
 
-bool DescribeStructureResultResponse::ResultsHasBeenSet() const
+bool DeleteTableDataFlowResponse::TableResultsHasBeenSet() const
 {
-    return m_resultsHasBeenSet;
-}
-
-string DescribeStructureResultResponse::GetMainTaskId() const
-{
-    return m_mainTaskId;
-}
-
-bool DescribeStructureResultResponse::MainTaskIdHasBeenSet() const
-{
-    return m_mainTaskIdHasBeenSet;
+    return m_tableResultsHasBeenSet;
 }
 
 

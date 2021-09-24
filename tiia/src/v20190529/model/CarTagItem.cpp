@@ -27,7 +27,8 @@ CarTagItem::CarTagItem() :
     m_colorHasBeenSet(false),
     m_confidenceHasBeenSet(false),
     m_yearHasBeenSet(false),
-    m_carLocationHasBeenSet(false)
+    m_carLocationHasBeenSet(false),
+    m_plateContentHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,23 @@ CoreInternalOutcome CarTagItem::Deserialize(const rapidjson::Value &value)
         m_carLocationHasBeenSet = true;
     }
 
+    if (value.HasMember("PlateContent") && !value["PlateContent"].IsNull())
+    {
+        if (!value["PlateContent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CarTagItem.PlateContent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_plateContent.Deserialize(value["PlateContent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_plateContentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +202,15 @@ void CarTagItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_plateContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PlateContent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_plateContent.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -299,5 +326,21 @@ void CarTagItem::SetCarLocation(const vector<Coord>& _carLocation)
 bool CarTagItem::CarLocationHasBeenSet() const
 {
     return m_carLocationHasBeenSet;
+}
+
+CarPlateContent CarTagItem::GetPlateContent() const
+{
+    return m_plateContent;
+}
+
+void CarTagItem::SetPlateContent(const CarPlateContent& _plateContent)
+{
+    m_plateContent = _plateContent;
+    m_plateContentHasBeenSet = true;
+}
+
+bool CarTagItem::PlateContentHasBeenSet() const
+{
+    return m_plateContentHasBeenSet;
 }
 

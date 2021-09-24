@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool StreamNameHasBeenSet() const;
 
                     /**
-                     * 获取页码
-                     * @return PageNum 页码
+                     * 获取页码。
+                     * @return PageNum 页码。
                      */
                     uint64_t GetPageNum() const;
 
                     /**
-                     * 设置页码
-                     * @param PageNum 页码
+                     * 设置页码。
+                     * @param PageNum 页码。
                      */
                     void SetPageNum(const uint64_t& _pageNum);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool PageNumHasBeenSet() const;
 
                     /**
-                     * 获取每页条数
-                     * @return PageSize 每页条数
+                     * 获取每页条数。
+                     * @return PageSize 每页条数。
                      */
                     uint64_t GetPageSize() const;
 
                     /**
-                     * 设置每页条数
-                     * @param PageSize 每页条数
+                     * 设置每页条数。
+                     * @param PageSize 每页条数。
                      */
                     void SetPageSize(const uint64_t& _pageSize);
 
@@ -136,11 +136,11 @@ namespace TencentCloud
                      * 获取事件类型。
 0: "断流",
 1: "推流",
-100: "录制"
+100: "录制"。
                      * @return EventType 事件类型。
 0: "断流",
 1: "推流",
-100: "录制"
+100: "录制"。
                      */
                     uint64_t GetEventType() const;
 
@@ -148,11 +148,11 @@ namespace TencentCloud
                      * 设置事件类型。
 0: "断流",
 1: "推流",
-100: "录制"
+100: "录制"。
                      * @param EventType 事件类型。
 0: "断流",
 1: "推流",
-100: "录制"
+100: "录制"。
                      */
                     void SetEventType(const uint64_t& _eventType);
 
@@ -163,14 +163,18 @@ namespace TencentCloud
                     bool EventTypeHasBeenSet() const;
 
                     /**
-                     * 获取回调结果。0为成功，其他为失败
-                     * @return ResultCode 回调结果。0为成功，其他为失败
+                     * 获取回调结果。
+0为成功，其他为失败。
+                     * @return ResultCode 回调结果。
+0为成功，其他为失败。
                      */
                     uint64_t GetResultCode() const;
 
                     /**
-                     * 设置回调结果。0为成功，其他为失败
-                     * @param ResultCode 回调结果。0为成功，其他为失败
+                     * 设置回调结果。
+0为成功，其他为失败。
+                     * @param ResultCode 回调结果。
+0为成功，其他为失败。
                      */
                     void SetResultCode(const uint64_t& _resultCode);
 
@@ -201,13 +205,13 @@ namespace TencentCloud
                     bool m_streamNameHasBeenSet;
 
                     /**
-                     * 页码
+                     * 页码。
                      */
                     uint64_t m_pageNum;
                     bool m_pageNumHasBeenSet;
 
                     /**
-                     * 每页条数
+                     * 每页条数。
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
@@ -216,13 +220,14 @@ namespace TencentCloud
                      * 事件类型。
 0: "断流",
 1: "推流",
-100: "录制"
+100: "录制"。
                      */
                     uint64_t m_eventType;
                     bool m_eventTypeHasBeenSet;
 
                     /**
-                     * 回调结果。0为成功，其他为失败
+                     * 回调结果。
+0为成功，其他为失败。
                      */
                     uint64_t m_resultCode;
                     bool m_resultCodeHasBeenSet;

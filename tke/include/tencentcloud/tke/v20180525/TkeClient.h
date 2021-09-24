@@ -135,6 +135,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeEnableVpcCniProgressResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeExistedInstancesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeExistedInstancesResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeExternalClusterSpecRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeExternalClusterSpecResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeImagesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeImagesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribePrometheusAgentInstancesRequest.h>
@@ -385,6 +387,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeExistedInstancesResponse> DescribeExistedInstancesOutcome;
                 typedef std::future<DescribeExistedInstancesOutcome> DescribeExistedInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeExistedInstancesRequest&, DescribeExistedInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExistedInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExternalClusterSpecResponse> DescribeExternalClusterSpecOutcome;
+                typedef std::future<DescribeExternalClusterSpecOutcome> DescribeExternalClusterSpecOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeExternalClusterSpecRequest&, DescribeExternalClusterSpecOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExternalClusterSpecAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeImagesResponse> DescribeImagesOutcome;
                 typedef std::future<DescribeImagesOutcome> DescribeImagesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeImagesRequest&, DescribeImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImagesAsyncHandler;
@@ -993,6 +998,15 @@ namespace TencentCloud
                 DescribeExistedInstancesOutcome DescribeExistedInstances(const Model::DescribeExistedInstancesRequest &request);
                 void DescribeExistedInstancesAsync(const Model::DescribeExistedInstancesRequest& request, const DescribeExistedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeExistedInstancesOutcomeCallable DescribeExistedInstancesCallable(const Model::DescribeExistedInstancesRequest& request);
+
+                /**
+                 *获取导入第三方集群YAML定义
+                 * @param req DescribeExternalClusterSpecRequest
+                 * @return DescribeExternalClusterSpecOutcome
+                 */
+                DescribeExternalClusterSpecOutcome DescribeExternalClusterSpec(const Model::DescribeExternalClusterSpecRequest &request);
+                void DescribeExternalClusterSpecAsync(const Model::DescribeExternalClusterSpecRequest& request, const DescribeExternalClusterSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExternalClusterSpecOutcomeCallable DescribeExternalClusterSpecCallable(const Model::DescribeExternalClusterSpecRequest& request);
 
                 /**
                  *获取镜像信息

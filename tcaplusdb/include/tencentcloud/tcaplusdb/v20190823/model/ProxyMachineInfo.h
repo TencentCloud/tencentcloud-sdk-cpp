@@ -82,6 +82,24 @@ namespace TencentCloud
                      */
                     bool MachineTypeHasBeenSet() const;
 
+                    /**
+                     * 获取可分配proxy资源数
+                     * @return AvailableCount 可分配proxy资源数
+                     */
+                    int64_t GetAvailableCount() const;
+
+                    /**
+                     * 设置可分配proxy资源数
+                     * @param AvailableCount 可分配proxy资源数
+                     */
+                    void SetAvailableCount(const int64_t& _availableCount);
+
+                    /**
+                     * 判断参数 AvailableCount 是否已赋值
+                     * @return AvailableCount 是否已赋值
+                     */
+                    bool AvailableCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +113,12 @@ namespace TencentCloud
                      */
                     std::string m_machineType;
                     bool m_machineTypeHasBeenSet;
+
+                    /**
+                     * 可分配proxy资源数
+                     */
+                    int64_t m_availableCount;
+                    bool m_availableCountHasBeenSet;
 
                 };
             }

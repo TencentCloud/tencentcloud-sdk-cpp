@@ -23,7 +23,8 @@ using namespace std;
 StructureResultObject::StructureResultObject() :
     m_codeHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
-    m_structureResultHasBeenSet(false)
+    m_structureResultHasBeenSet(false),
+    m_subTaskIdHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome StructureResultObject::Deserialize(const rapidjson::Value &v
         m_structureResultHasBeenSet = true;
     }
 
+    if (value.HasMember("SubTaskId") && !value["SubTaskId"].IsNull())
+    {
+        if (!value["SubTaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StructureResultObject.SubTaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subTaskId = string(value["SubTaskId"].GetString());
+        m_subTaskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void StructureResultObject::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "StructureResult";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_structureResult.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subTaskId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void StructureResultObject::SetStructureResult(const string& _structureResult)
 bool StructureResultObject::StructureResultHasBeenSet() const
 {
     return m_structureResultHasBeenSet;
+}
+
+string StructureResultObject::GetSubTaskId() const
+{
+    return m_subTaskId;
+}
+
+void StructureResultObject::SetSubTaskId(const string& _subTaskId)
+{
+    m_subTaskId = _subTaskId;
+    m_subTaskIdHasBeenSet = true;
+}
+
+bool StructureResultObject::SubTaskIdHasBeenSet() const
+{
+    return m_subTaskIdHasBeenSet;
 }
 

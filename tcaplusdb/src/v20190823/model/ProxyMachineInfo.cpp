@@ -22,7 +22,8 @@ using namespace std;
 
 ProxyMachineInfo::ProxyMachineInfo() :
     m_proxyUidHasBeenSet(false),
-    m_machineTypeHasBeenSet(false)
+    m_machineTypeHasBeenSet(false),
+    m_availableCountHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome ProxyMachineInfo::Deserialize(const rapidjson::Value &value)
         m_machineTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("AvailableCount") && !value["AvailableCount"].IsNull())
+    {
+        if (!value["AvailableCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyMachineInfo.AvailableCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_availableCount = value["AvailableCount"].GetInt64();
+        m_availableCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void ProxyMachineInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "MachineType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_machineType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_availableCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvailableCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_availableCount, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void ProxyMachineInfo::SetMachineType(const string& _machineType)
 bool ProxyMachineInfo::MachineTypeHasBeenSet() const
 {
     return m_machineTypeHasBeenSet;
+}
+
+int64_t ProxyMachineInfo::GetAvailableCount() const
+{
+    return m_availableCount;
+}
+
+void ProxyMachineInfo::SetAvailableCount(const int64_t& _availableCount)
+{
+    m_availableCount = _availableCount;
+    m_availableCountHasBeenSet = true;
+}
+
+bool ProxyMachineInfo::AvailableCountHasBeenSet() const
+{
+    return m_availableCountHasBeenSet;
 }
 

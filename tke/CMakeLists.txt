@@ -50,6 +50,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/CreatePrometheusTemplateRequest.h
   include/tencentcloud/tke/v20180525/model/Exec.h
   include/tencentcloud/tke/v20180525/model/RestartEKSContainerInstancesRequest.h
+  include/tencentcloud/tke/v20180525/model/DescribeExternalClusterSpecRequest.h
   include/tencentcloud/tke/v20180525/model/DeletePrometheusTemplateRequest.h
   include/tencentcloud/tke/v20180525/model/InstanceUpgradeProgressItem.h
   include/tencentcloud/tke/v20180525/model/DescribeEKSContainerInstanceRegionsRequest.h
@@ -144,6 +145,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribeEKSClusterCredentialRequest.h
   include/tencentcloud/tke/v20180525/model/GetUpgradeInstanceProgressRequest.h
   include/tencentcloud/tke/v20180525/model/ModifyPrometheusTemplateRequest.h
+  include/tencentcloud/tke/v20180525/model/DescribeExternalClusterSpecResponse.h
   include/tencentcloud/tke/v20180525/model/AddNodeToNodePoolResponse.h
   include/tencentcloud/tke/v20180525/model/PodLimitsByType.h
   include/tencentcloud/tke/v20180525/model/UpdateEKSClusterResponse.h
@@ -328,6 +330,7 @@ set(tke_src
   src/v20180525/model/CreatePrometheusTemplateRequest.cpp
   src/v20180525/model/Exec.cpp
   src/v20180525/model/RestartEKSContainerInstancesRequest.cpp
+  src/v20180525/model/DescribeExternalClusterSpecRequest.cpp
   src/v20180525/model/DeletePrometheusTemplateRequest.cpp
   src/v20180525/model/InstanceUpgradeProgressItem.cpp
   src/v20180525/model/DescribeEKSContainerInstanceRegionsRequest.cpp
@@ -422,6 +425,7 @@ set(tke_src
   src/v20180525/model/DescribeEKSClusterCredentialRequest.cpp
   src/v20180525/model/GetUpgradeInstanceProgressRequest.cpp
   src/v20180525/model/ModifyPrometheusTemplateRequest.cpp
+  src/v20180525/model/DescribeExternalClusterSpecResponse.cpp
   src/v20180525/model/AddNodeToNodePoolResponse.cpp
   src/v20180525/model/PodLimitsByType.cpp
   src/v20180525/model/UpdateEKSClusterResponse.cpp

@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ServerDetailInfo.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ProxyDetailInfo.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/KafkaInfo.h>
 
 
 namespace TencentCloud
@@ -520,6 +521,50 @@ namespace TencentCloud
                      */
                     bool DbaUinsHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启了数据订阅
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataFlowStatus 是否开启了数据订阅
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetDataFlowStatus() const;
+
+                    /**
+                     * 设置是否开启了数据订阅
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DataFlowStatus 是否开启了数据订阅
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDataFlowStatus(const int64_t& _dataFlowStatus);
+
+                    /**
+                     * 判断参数 DataFlowStatus 是否已赋值
+                     * @return DataFlowStatus 是否已赋值
+                     */
+                    bool DataFlowStatusHasBeenSet() const;
+
+                    /**
+                     * 获取数据订阅的kafka信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KafkaInfo 数据订阅的kafka信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    KafkaInfo GetKafkaInfo() const;
+
+                    /**
+                     * 设置数据订阅的kafka信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param KafkaInfo 数据订阅的kafka信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetKafkaInfo(const KafkaInfo& _kafkaInfo);
+
+                    /**
+                     * 判断参数 KafkaInfo 是否已赋值
+                     * @return KafkaInfo 是否已赋值
+                     */
+                    bool KafkaInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -675,6 +720,20 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_dbaUins;
                     bool m_dbaUinsHasBeenSet;
+
+                    /**
+                     * 是否开启了数据订阅
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_dataFlowStatus;
+                    bool m_dataFlowStatusHasBeenSet;
+
+                    /**
+                     * 数据订阅的kafka信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    KafkaInfo m_kafkaInfo;
+                    bool m_kafkaInfoHasBeenSet;
 
                 };
             }

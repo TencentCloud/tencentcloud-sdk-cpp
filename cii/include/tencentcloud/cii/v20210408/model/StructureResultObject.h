@@ -100,6 +100,24 @@ namespace TencentCloud
                      */
                     bool StructureResultHasBeenSet() const;
 
+                    /**
+                     * 获取子任务ID
+                     * @return SubTaskId 子任务ID
+                     */
+                    std::string GetSubTaskId() const;
+
+                    /**
+                     * 设置子任务ID
+                     * @param SubTaskId 子任务ID
+                     */
+                    void SetSubTaskId(const std::string& _subTaskId);
+
+                    /**
+                     * 判断参数 SubTaskId 是否已赋值
+                     * @return SubTaskId 是否已赋值
+                     */
+                    bool SubTaskIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +137,12 @@ namespace TencentCloud
                      */
                     std::string m_structureResult;
                     bool m_structureResultHasBeenSet;
+
+                    /**
+                     * 子任务ID
+                     */
+                    std::string m_subTaskId;
+                    bool m_subTaskIdHasBeenSet;
 
                 };
             }

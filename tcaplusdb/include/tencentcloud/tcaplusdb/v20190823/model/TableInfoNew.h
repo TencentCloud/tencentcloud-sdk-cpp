@@ -621,17 +621,17 @@ namespace TencentCloud
                     bool SortRuleHasBeenSet() const;
 
                     /**
-                     * 获取表格分布式索引信息
+                     * 获取表格分布式索引/缓写、kafka数据订阅信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DbClusterInfoStruct 表格分布式索引信息
+                     * @return DbClusterInfoStruct 表格分布式索引/缓写、kafka数据订阅信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDbClusterInfoStruct() const;
 
                     /**
-                     * 设置表格分布式索引信息
+                     * 设置表格分布式索引/缓写、kafka数据订阅信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DbClusterInfoStruct 表格分布式索引信息
+                     * @param DbClusterInfoStruct 表格分布式索引/缓写、kafka数据订阅信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDbClusterInfoStruct(const std::string& _dbClusterInfoStruct);
@@ -827,7 +827,7 @@ namespace TencentCloud
                     bool m_sortRuleHasBeenSet;
 
                     /**
-                     * 表格分布式索引信息
+                     * 表格分布式索引/缓写、kafka数据订阅信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dbClusterInfoStruct;

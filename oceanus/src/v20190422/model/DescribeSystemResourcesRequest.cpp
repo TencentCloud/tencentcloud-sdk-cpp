@@ -27,7 +27,8 @@ DescribeSystemResourcesRequest::DescribeSystemResourcesRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_clusterIdHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_flinkVersionHasBeenSet(false)
 {
 }
 
@@ -88,6 +89,14 @@ string DescribeSystemResourcesRequest::ToJsonString() const
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flinkVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlinkVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flinkVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -176,6 +185,22 @@ void DescribeSystemResourcesRequest::SetClusterId(const string& _clusterId)
 bool DescribeSystemResourcesRequest::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+string DescribeSystemResourcesRequest::GetFlinkVersion() const
+{
+    return m_flinkVersion;
+}
+
+void DescribeSystemResourcesRequest::SetFlinkVersion(const string& _flinkVersion)
+{
+    m_flinkVersion = _flinkVersion;
+    m_flinkVersionHasBeenSet = true;
+}
+
+bool DescribeSystemResourcesRequest::FlinkVersionHasBeenSet() const
+{
+    return m_flinkVersionHasBeenSet;
 }
 
 

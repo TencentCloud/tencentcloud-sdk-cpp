@@ -127,14 +127,22 @@ namespace TencentCloud
                     bool AgentStatusHasBeenSet() const;
 
                     /**
-                     * 获取Agent运行环境
-                     * @return Environment Agent运行环境
+                     * 获取Agent运行环境，取值范围：
+<li> Linux：Linux实例
+<li> Windows：Windows实例
+                     * @return Environment Agent运行环境，取值范围：
+<li> Linux：Linux实例
+<li> Windows：Windows实例
                      */
                     std::string GetEnvironment() const;
 
                     /**
-                     * 设置Agent运行环境
-                     * @param Environment Agent运行环境
+                     * 设置Agent运行环境，取值范围：
+<li> Linux：Linux实例
+<li> Windows：Windows实例
+                     * @param Environment Agent运行环境，取值范围：
+<li> Linux：Linux实例
+<li> Windows：Windows实例
                      */
                     void SetEnvironment(const std::string& _environment);
 
@@ -173,7 +181,9 @@ namespace TencentCloud
                     bool m_agentStatusHasBeenSet;
 
                     /**
-                     * Agent运行环境
+                     * Agent运行环境，取值范围：
+<li> Linux：Linux实例
+<li> Windows：Windows实例
                      */
                     std::string m_environment;
                     bool m_environmentHasBeenSet;

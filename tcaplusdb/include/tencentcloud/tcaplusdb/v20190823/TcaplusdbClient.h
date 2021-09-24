@@ -43,6 +43,8 @@
 #include <tencentcloud/tcaplusdb/v20190823/model/DeleteIdlFilesResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DeleteSnapshotsRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DeleteSnapshotsResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/DeleteTableDataFlowRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/DeleteTableDataFlowResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DeleteTableGroupRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DeleteTableGroupResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DeleteTableIndexRequest.h>
@@ -113,6 +115,8 @@
 #include <tencentcloud/tcaplusdb/v20190823/model/RecoverRecycleTablesResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/RollbackTablesRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/RollbackTablesResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/SetTableDataFlowRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/SetTableDataFlowResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/SetTableIndexRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/SetTableIndexResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/UpdateApplyRequest.h>
@@ -163,6 +167,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteSnapshotsResponse> DeleteSnapshotsOutcome;
                 typedef std::future<DeleteSnapshotsOutcome> DeleteSnapshotsOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::DeleteSnapshotsRequest&, DeleteSnapshotsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSnapshotsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteTableDataFlowResponse> DeleteTableDataFlowOutcome;
+                typedef std::future<DeleteTableDataFlowOutcome> DeleteTableDataFlowOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::DeleteTableDataFlowRequest&, DeleteTableDataFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTableDataFlowAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteTableGroupResponse> DeleteTableGroupOutcome;
                 typedef std::future<DeleteTableGroupOutcome> DeleteTableGroupOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::DeleteTableGroupRequest&, DeleteTableGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTableGroupAsyncHandler;
@@ -268,6 +275,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RollbackTablesResponse> RollbackTablesOutcome;
                 typedef std::future<RollbackTablesOutcome> RollbackTablesOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::RollbackTablesRequest&, RollbackTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RollbackTablesAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetTableDataFlowResponse> SetTableDataFlowOutcome;
+                typedef std::future<SetTableDataFlowOutcome> SetTableDataFlowOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::SetTableDataFlowRequest&, SetTableDataFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetTableDataFlowAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetTableIndexResponse> SetTableIndexOutcome;
                 typedef std::future<SetTableIndexOutcome> SetTableIndexOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::SetTableIndexRequest&, SetTableIndexOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetTableIndexAsyncHandler;
@@ -369,6 +379,15 @@ namespace TencentCloud
                 DeleteSnapshotsOutcome DeleteSnapshots(const Model::DeleteSnapshotsRequest &request);
                 void DeleteSnapshotsAsync(const Model::DeleteSnapshotsRequest& request, const DeleteSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteSnapshotsOutcomeCallable DeleteSnapshotsCallable(const Model::DeleteSnapshotsRequest& request);
+
+                /**
+                 *删除表格的数据订阅
+                 * @param req DeleteTableDataFlowRequest
+                 * @return DeleteTableDataFlowOutcome
+                 */
+                DeleteTableDataFlowOutcome DeleteTableDataFlow(const Model::DeleteTableDataFlowRequest &request);
+                void DeleteTableDataFlowAsync(const Model::DeleteTableDataFlowRequest& request, const DeleteTableDataFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteTableDataFlowOutcomeCallable DeleteTableDataFlowCallable(const Model::DeleteTableDataFlowRequest& request);
 
                 /**
                  *删除表格组
@@ -684,6 +703,15 @@ namespace TencentCloud
                 RollbackTablesOutcome RollbackTables(const Model::RollbackTablesRequest &request);
                 void RollbackTablesAsync(const Model::RollbackTablesRequest& request, const RollbackTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RollbackTablesOutcomeCallable RollbackTablesCallable(const Model::RollbackTablesRequest& request);
+
+                /**
+                 *新增、修改表格数据订阅
+                 * @param req SetTableDataFlowRequest
+                 * @return SetTableDataFlowOutcome
+                 */
+                SetTableDataFlowOutcome SetTableDataFlow(const Model::SetTableDataFlowRequest &request);
+                void SetTableDataFlowAsync(const Model::SetTableDataFlowRequest& request, const SetTableDataFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetTableDataFlowOutcomeCallable SetTableDataFlowCallable(const Model::SetTableDataFlowRequest& request);
 
                 /**
                  *设置表格分布式索引

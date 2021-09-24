@@ -133,6 +133,24 @@ namespace TencentCloud
                      */
                     bool ClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取查询对应Flink版本的内置connector
+                     * @return FlinkVersion 查询对应Flink版本的内置connector
+                     */
+                    std::string GetFlinkVersion() const;
+
+                    /**
+                     * 设置查询对应Flink版本的内置connector
+                     * @param FlinkVersion 查询对应Flink版本的内置connector
+                     */
+                    void SetFlinkVersion(const std::string& _flinkVersion);
+
+                    /**
+                     * 判断参数 FlinkVersion 是否已赋值
+                     * @return FlinkVersion 是否已赋值
+                     */
+                    bool FlinkVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -164,6 +182,12 @@ namespace TencentCloud
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 查询对应Flink版本的内置connector
+                     */
+                    std::string m_flinkVersion;
+                    bool m_flinkVersionHasBeenSet;
 
                 };
             }

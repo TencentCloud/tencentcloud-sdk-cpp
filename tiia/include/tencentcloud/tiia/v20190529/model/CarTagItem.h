@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tiia/v20190529/model/Coord.h>
+#include <tencentcloud/tiia/v20190529/model/CarPlateContent.h>
 
 
 namespace TencentCloud
@@ -173,6 +174,28 @@ namespace TencentCloud
                      */
                     bool CarLocationHasBeenSet() const;
 
+                    /**
+                     * 获取车牌信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PlateContent 车牌信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CarPlateContent GetPlateContent() const;
+
+                    /**
+                     * 设置车牌信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PlateContent 车牌信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPlateContent(const CarPlateContent& _plateContent);
+
+                    /**
+                     * 判断参数 PlateContent 是否已赋值
+                     * @return PlateContent 是否已赋值
+                     */
+                    bool PlateContentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -216,6 +239,13 @@ namespace TencentCloud
                      */
                     std::vector<Coord> m_carLocation;
                     bool m_carLocationHasBeenSet;
+
+                    /**
+                     * 车牌信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CarPlateContent m_plateContent;
+                    bool m_plateContentHasBeenSet;
 
                 };
             }

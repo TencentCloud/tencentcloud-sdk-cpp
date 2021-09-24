@@ -470,6 +470,49 @@ TcaplusdbClient::DeleteSnapshotsOutcomeCallable TcaplusdbClient::DeleteSnapshots
     return task->get_future();
 }
 
+TcaplusdbClient::DeleteTableDataFlowOutcome TcaplusdbClient::DeleteTableDataFlow(const DeleteTableDataFlowRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTableDataFlow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTableDataFlowResponse rsp = DeleteTableDataFlowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTableDataFlowOutcome(rsp);
+        else
+            return DeleteTableDataFlowOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTableDataFlowOutcome(outcome.GetError());
+    }
+}
+
+void TcaplusdbClient::DeleteTableDataFlowAsync(const DeleteTableDataFlowRequest& request, const DeleteTableDataFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteTableDataFlow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcaplusdbClient::DeleteTableDataFlowOutcomeCallable TcaplusdbClient::DeleteTableDataFlowCallable(const DeleteTableDataFlowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteTableDataFlowOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteTableDataFlow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcaplusdbClient::DeleteTableGroupOutcome TcaplusdbClient::DeleteTableGroup(const DeleteTableGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteTableGroup");
@@ -1968,6 +2011,49 @@ TcaplusdbClient::RollbackTablesOutcomeCallable TcaplusdbClient::RollbackTablesCa
         [this, request]()
         {
             return this->RollbackTables(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcaplusdbClient::SetTableDataFlowOutcome TcaplusdbClient::SetTableDataFlow(const SetTableDataFlowRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetTableDataFlow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetTableDataFlowResponse rsp = SetTableDataFlowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetTableDataFlowOutcome(rsp);
+        else
+            return SetTableDataFlowOutcome(o.GetError());
+    }
+    else
+    {
+        return SetTableDataFlowOutcome(outcome.GetError());
+    }
+}
+
+void TcaplusdbClient::SetTableDataFlowAsync(const SetTableDataFlowRequest& request, const SetTableDataFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetTableDataFlow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcaplusdbClient::SetTableDataFlowOutcomeCallable TcaplusdbClient::SetTableDataFlowCallable(const SetTableDataFlowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetTableDataFlowOutcome()>>(
+        [this, request]()
+        {
+            return this->SetTableDataFlow(request);
         }
     );
 

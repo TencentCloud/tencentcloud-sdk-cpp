@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/FieldInfo.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/KafkaInfo.h>
 
 
 namespace TencentCloud
@@ -138,14 +139,14 @@ namespace TencentCloud
                     bool TableTypeHasBeenSet() const;
 
                     /**
-                     * 获取待创建索引的字段列表
-                     * @return SelectedFields 待创建索引的字段列表
+                     * 获取待创建索引、缓写、数据订阅的字段列表
+                     * @return SelectedFields 待创建索引、缓写、数据订阅的字段列表
                      */
                     std::vector<FieldInfo> GetSelectedFields() const;
 
                     /**
-                     * 设置待创建索引的字段列表
-                     * @param SelectedFields 待创建索引的字段列表
+                     * 设置待创建索引、缓写、数据订阅的字段列表
+                     * @param SelectedFields 待创建索引、缓写、数据订阅的字段列表
                      */
                     void SetSelectedFields(const std::vector<FieldInfo>& _selectedFields);
 
@@ -172,6 +173,24 @@ namespace TencentCloud
                      * @return ShardNum 是否已赋值
                      */
                     bool ShardNumHasBeenSet() const;
+
+                    /**
+                     * 获取ckafka实例信息
+                     * @return KafkaInfo ckafka实例信息
+                     */
+                    KafkaInfo GetKafkaInfo() const;
+
+                    /**
+                     * 设置ckafka实例信息
+                     * @param KafkaInfo ckafka实例信息
+                     */
+                    void SetKafkaInfo(const KafkaInfo& _kafkaInfo);
+
+                    /**
+                     * 判断参数 KafkaInfo 是否已赋值
+                     * @return KafkaInfo 是否已赋值
+                     */
+                    bool KafkaInfoHasBeenSet() const;
 
                 private:
 
@@ -206,7 +225,7 @@ namespace TencentCloud
                     bool m_tableTypeHasBeenSet;
 
                     /**
-                     * 待创建索引的字段列表
+                     * 待创建索引、缓写、数据订阅的字段列表
                      */
                     std::vector<FieldInfo> m_selectedFields;
                     bool m_selectedFieldsHasBeenSet;
@@ -216,6 +235,12 @@ namespace TencentCloud
                      */
                     uint64_t m_shardNum;
                     bool m_shardNumHasBeenSet;
+
+                    /**
+                     * ckafka实例信息
+                     */
+                    KafkaInfo m_kafkaInfo;
+                    bool m_kafkaInfoHasBeenSet;
 
                 };
             }

@@ -44,7 +44,9 @@ ClusterInfo::ClusterInfo() :
     m_serverListHasBeenSet(false),
     m_proxyListHasBeenSet(false),
     m_censorshipHasBeenSet(false),
-    m_dbaUinsHasBeenSet(false)
+    m_dbaUinsHasBeenSet(false),
+    m_dataFlowStatusHasBeenSet(false),
+    m_kafkaInfoHasBeenSet(false)
 {
 }
 
@@ -316,6 +318,33 @@ CoreInternalOutcome ClusterInfo::Deserialize(const rapidjson::Value &value)
         m_dbaUinsHasBeenSet = true;
     }
 
+    if (value.HasMember("DataFlowStatus") && !value["DataFlowStatus"].IsNull())
+    {
+        if (!value["DataFlowStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInfo.DataFlowStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataFlowStatus = value["DataFlowStatus"].GetInt64();
+        m_dataFlowStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("KafkaInfo") && !value["KafkaInfo"].IsNull())
+    {
+        if (!value["KafkaInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInfo.KafkaInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_kafkaInfo.Deserialize(value["KafkaInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_kafkaInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -532,6 +561,23 @@ void ClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_dataFlowStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataFlowStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dataFlowStatus, allocator);
+    }
+
+    if (m_kafkaInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KafkaInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_kafkaInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -919,5 +965,37 @@ void ClusterInfo::SetDbaUins(const vector<string>& _dbaUins)
 bool ClusterInfo::DbaUinsHasBeenSet() const
 {
     return m_dbaUinsHasBeenSet;
+}
+
+int64_t ClusterInfo::GetDataFlowStatus() const
+{
+    return m_dataFlowStatus;
+}
+
+void ClusterInfo::SetDataFlowStatus(const int64_t& _dataFlowStatus)
+{
+    m_dataFlowStatus = _dataFlowStatus;
+    m_dataFlowStatusHasBeenSet = true;
+}
+
+bool ClusterInfo::DataFlowStatusHasBeenSet() const
+{
+    return m_dataFlowStatusHasBeenSet;
+}
+
+KafkaInfo ClusterInfo::GetKafkaInfo() const
+{
+    return m_kafkaInfo;
+}
+
+void ClusterInfo::SetKafkaInfo(const KafkaInfo& _kafkaInfo)
+{
+    m_kafkaInfo = _kafkaInfo;
+    m_kafkaInfoHasBeenSet = true;
+}
+
+bool ClusterInfo::KafkaInfoHasBeenSet() const
+{
+    return m_kafkaInfoHasBeenSet;
 }
 

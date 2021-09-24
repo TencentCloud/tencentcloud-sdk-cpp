@@ -74,6 +74,18 @@ namespace TencentCloud
                      */
                     bool ResultsHasBeenSet() const;
 
+                    /**
+                     * 获取主任务ID
+                     * @return MainTaskId 主任务ID
+                     */
+                    std::string GetMainTaskId() const;
+
+                    /**
+                     * 判断参数 MainTaskId 是否已赋值
+                     * @return MainTaskId 是否已赋值
+                     */
+                    bool MainTaskIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -90,6 +102,12 @@ namespace TencentCloud
                      */
                     std::vector<StructureResultObject> m_results;
                     bool m_resultsHasBeenSet;
+
+                    /**
+                     * 主任务ID
+                     */
+                    std::string m_mainTaskId;
+                    bool m_mainTaskIdHasBeenSet;
 
                 };
             }

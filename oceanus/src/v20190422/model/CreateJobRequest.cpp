@@ -29,7 +29,8 @@ CreateJobRequest::CreateJobRequest() :
     m_clusterIdHasBeenSet(false),
     m_cuMemHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_folderIdHasBeenSet(false)
+    m_folderIdHasBeenSet(false),
+    m_flinkVersionHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string CreateJobRequest::ToJsonString() const
         string key = "FolderId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_folderId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flinkVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlinkVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flinkVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +223,22 @@ void CreateJobRequest::SetFolderId(const string& _folderId)
 bool CreateJobRequest::FolderIdHasBeenSet() const
 {
     return m_folderIdHasBeenSet;
+}
+
+string CreateJobRequest::GetFlinkVersion() const
+{
+    return m_flinkVersion;
+}
+
+void CreateJobRequest::SetFlinkVersion(const string& _flinkVersion)
+{
+    m_flinkVersion = _flinkVersion;
+    m_flinkVersionHasBeenSet = true;
+}
+
+bool CreateJobRequest::FlinkVersionHasBeenSet() const
+{
+    return m_flinkVersionHasBeenSet;
 }
 
 

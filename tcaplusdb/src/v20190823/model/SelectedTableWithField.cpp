@@ -27,7 +27,8 @@ SelectedTableWithField::SelectedTableWithField() :
     m_tableIdlTypeHasBeenSet(false),
     m_tableTypeHasBeenSet(false),
     m_selectedFieldsHasBeenSet(false),
-    m_shardNumHasBeenSet(false)
+    m_shardNumHasBeenSet(false),
+    m_kafkaInfoHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,23 @@ CoreInternalOutcome SelectedTableWithField::Deserialize(const rapidjson::Value &
         m_shardNumHasBeenSet = true;
     }
 
+    if (value.HasMember("KafkaInfo") && !value["KafkaInfo"].IsNull())
+    {
+        if (!value["KafkaInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SelectedTableWithField.KafkaInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_kafkaInfo.Deserialize(value["KafkaInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_kafkaInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +202,15 @@ void SelectedTableWithField::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "ShardNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_shardNum, allocator);
+    }
+
+    if (m_kafkaInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KafkaInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_kafkaInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -299,5 +326,21 @@ void SelectedTableWithField::SetShardNum(const uint64_t& _shardNum)
 bool SelectedTableWithField::ShardNumHasBeenSet() const
 {
     return m_shardNumHasBeenSet;
+}
+
+KafkaInfo SelectedTableWithField::GetKafkaInfo() const
+{
+    return m_kafkaInfo;
+}
+
+void SelectedTableWithField::SetKafkaInfo(const KafkaInfo& _kafkaInfo)
+{
+    m_kafkaInfo = _kafkaInfo;
+    m_kafkaInfoHasBeenSet = true;
+}
+
+bool SelectedTableWithField::KafkaInfoHasBeenSet() const
+{
+    return m_kafkaInfoHasBeenSet;
 }
 

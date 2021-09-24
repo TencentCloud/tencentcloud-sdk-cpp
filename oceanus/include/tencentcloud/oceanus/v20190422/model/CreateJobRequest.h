@@ -168,6 +168,24 @@ namespace TencentCloud
                      */
                     bool FolderIdHasBeenSet() const;
 
+                    /**
+                     * 获取作业运行的Flink版本
+                     * @return FlinkVersion 作业运行的Flink版本
+                     */
+                    std::string GetFlinkVersion() const;
+
+                    /**
+                     * 设置作业运行的Flink版本
+                     * @param FlinkVersion 作业运行的Flink版本
+                     */
+                    void SetFlinkVersion(const std::string& _flinkVersion);
+
+                    /**
+                     * 判断参数 FlinkVersion 是否已赋值
+                     * @return FlinkVersion 是否已赋值
+                     */
+                    bool FlinkVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +229,12 @@ namespace TencentCloud
                      */
                     std::string m_folderId;
                     bool m_folderIdHasBeenSet;
+
+                    /**
+                     * 作业运行的Flink版本
+                     */
+                    std::string m_flinkVersion;
+                    bool m_flinkVersionHasBeenSet;
 
                 };
             }

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取回调事件列表
-                     * @return DataInfoList 回调事件列表
+                     * 获取回调事件列表。
+                     * @return DataInfoList 回调事件列表。
                      */
                     std::vector<CallbackEventInfo> GetDataInfoList() const;
 
@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool DataInfoListHasBeenSet() const;
 
                     /**
-                     * 获取页码
-                     * @return PageNum 页码
+                     * 获取页码。
+                     * @return PageNum 页码。
                      */
                     uint64_t GetPageNum() const;
 
@@ -69,8 +69,8 @@ namespace TencentCloud
                     bool PageNumHasBeenSet() const;
 
                     /**
-                     * 获取每页条数
-                     * @return PageSize 每页条数
+                     * 获取每页条数。
+                     * @return PageSize 每页条数。
                      */
                     uint64_t GetPageSize() const;
 
@@ -81,8 +81,8 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取总条数
-                     * @return TotalNum 总条数
+                     * 获取总条数。
+                     * @return TotalNum 总条数。
                      */
                     uint64_t GetTotalNum() const;
 
@@ -93,8 +93,8 @@ namespace TencentCloud
                     bool TotalNumHasBeenSet() const;
 
                     /**
-                     * 获取总页数
-                     * @return TotalPage 总页数
+                     * 获取总页数。
+                     * @return TotalPage 总页数。
                      */
                     uint64_t GetTotalPage() const;
 
@@ -107,31 +107,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 回调事件列表
+                     * 回调事件列表。
                      */
                     std::vector<CallbackEventInfo> m_dataInfoList;
                     bool m_dataInfoListHasBeenSet;
 
                     /**
-                     * 页码
+                     * 页码。
                      */
                     uint64_t m_pageNum;
                     bool m_pageNumHasBeenSet;
 
                     /**
-                     * 每页条数
+                     * 每页条数。
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 总条数
+                     * 总条数。
                      */
                     uint64_t m_totalNum;
                     bool m_totalNumHasBeenSet;
 
                     /**
-                     * 总页数
+                     * 总页数。
                      */
                     uint64_t m_totalPage;
                     bool m_totalPageHasBeenSet;
