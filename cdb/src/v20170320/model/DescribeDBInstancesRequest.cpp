@@ -49,7 +49,8 @@ DescribeDBInstancesRequest::DescribeDBInstancesRequest() :
     m_withRoHasBeenSet(false),
     m_withMasterHasBeenSet(false),
     m_deployGroupIdsHasBeenSet(false),
-    m_tagKeysForSearchHasBeenSet(false)
+    m_tagKeysForSearchHasBeenSet(false),
+    m_cageIdsHasBeenSet(false)
 {
 }
 
@@ -341,6 +342,19 @@ string DescribeDBInstancesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_tagKeysForSearch.begin(); itr != m_tagKeysForSearch.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_cageIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CageIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_cageIds.begin(); itr != m_cageIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -784,6 +798,22 @@ void DescribeDBInstancesRequest::SetTagKeysForSearch(const vector<string>& _tagK
 bool DescribeDBInstancesRequest::TagKeysForSearchHasBeenSet() const
 {
     return m_tagKeysForSearchHasBeenSet;
+}
+
+vector<string> DescribeDBInstancesRequest::GetCageIds() const
+{
+    return m_cageIds;
+}
+
+void DescribeDBInstancesRequest::SetCageIds(const vector<string>& _cageIds)
+{
+    m_cageIds = _cageIds;
+    m_cageIdsHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::CageIdsHasBeenSet() const
+{
+    return m_cageIdsHasBeenSet;
 }
 
 

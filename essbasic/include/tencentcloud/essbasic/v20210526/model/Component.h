@@ -155,14 +155,14 @@ SIGN_PERSONAL_SEAL - 个人签署印章控件；
                     bool ComponentTypeHasBeenSet() const;
 
                     /**
-                     * 获取控件名称
-                     * @return ComponentName 控件名称
+                     * 获取控件简称
+                     * @return ComponentName 控件简称
                      */
                     std::string GetComponentName() const;
 
                     /**
-                     * 设置控件名称
-                     * @param ComponentName 控件名称
+                     * 设置控件简称
+                     * @param ComponentName 控件简称
                      */
                     void SetComponentName(const std::string& _componentName);
 
@@ -483,7 +483,7 @@ SIGN_PERSONAL_SEAL - 个人签署印章控件；
                     bool m_componentTypeHasBeenSet;
 
                     /**
-                     * 控件名称
+                     * 控件简称
                      */
                     std::string m_componentName;
                     bool m_componentNameHasBeenSet;

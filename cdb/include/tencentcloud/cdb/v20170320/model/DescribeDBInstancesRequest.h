@@ -528,6 +528,24 @@ namespace TencentCloud
                      */
                     bool TagKeysForSearchHasBeenSet() const;
 
+                    /**
+                     * 获取金融围拢 ID 。
+                     * @return CageIds 金融围拢 ID 。
+                     */
+                    std::vector<std::string> GetCageIds() const;
+
+                    /**
+                     * 设置金融围拢 ID 。
+                     * @param CageIds 金融围拢 ID 。
+                     */
+                    void SetCageIds(const std::vector<std::string>& _cageIds);
+
+                    /**
+                     * 判断参数 CageIds 是否已赋值
+                     * @return CageIds 是否已赋值
+                     */
+                    bool CageIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -691,6 +709,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_tagKeysForSearch;
                     bool m_tagKeysForSearchHasBeenSet;
+
+                    /**
+                     * 金融围拢 ID 。
+                     */
+                    std::vector<std::string> m_cageIds;
+                    bool m_cageIdsHasBeenSet;
 
                 };
             }

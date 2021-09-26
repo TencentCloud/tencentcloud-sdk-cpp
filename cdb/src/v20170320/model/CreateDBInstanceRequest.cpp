@@ -54,7 +54,8 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_alarmPolicyListHasBeenSet(false),
     m_instanceNodesHasBeenSet(false),
     m_cpuHasBeenSet(false),
-    m_autoSyncFlagHasBeenSet(false)
+    m_autoSyncFlagHasBeenSet(false),
+    m_cageIdHasBeenSet(false)
 {
 }
 
@@ -344,6 +345,14 @@ string CreateDBInstanceRequest::ToJsonString() const
         string key = "AutoSyncFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoSyncFlag, allocator);
+    }
+
+    if (m_cageIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CageId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cageId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -864,6 +873,22 @@ void CreateDBInstanceRequest::SetAutoSyncFlag(const int64_t& _autoSyncFlag)
 bool CreateDBInstanceRequest::AutoSyncFlagHasBeenSet() const
 {
     return m_autoSyncFlagHasBeenSet;
+}
+
+string CreateDBInstanceRequest::GetCageId() const
+{
+    return m_cageId;
+}
+
+void CreateDBInstanceRequest::SetCageId(const string& _cageId)
+{
+    m_cageId = _cageId;
+    m_cageIdHasBeenSet = true;
+}
+
+bool CreateDBInstanceRequest::CageIdHasBeenSet() const
+{
+    return m_cageIdHasBeenSet;
 }
 
 
