@@ -178,6 +178,24 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取管理人姓名/邮箱/部门精准匹配
+                     * @return SearchKey 管理人姓名/邮箱/部门精准匹配
+                     */
+                    std::string GetSearchKey() const;
+
+                    /**
+                     * 设置管理人姓名/邮箱/部门精准匹配
+                     * @param SearchKey 管理人姓名/邮箱/部门精准匹配
+                     */
+                    void SetSearchKey(const std::string& _searchKey);
+
+                    /**
+                     * 判断参数 SearchKey 是否已赋值
+                     * @return SearchKey 是否已赋值
+                     */
+                    bool SearchKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -222,6 +240,12 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 管理人姓名/邮箱/部门精准匹配
+                     */
+                    std::string m_searchKey;
+                    bool m_searchKeyHasBeenSet;
 
                 };
             }

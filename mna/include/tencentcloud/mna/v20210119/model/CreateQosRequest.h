@@ -84,49 +84,49 @@ namespace TencentCloud
 
                     /**
                      * 获取加速套餐
-T100K：上/下行保障 100kbps
-T200K：上/下行保障 200kbps
-T400K：上/下行保障 400kbps
-BD1M：下行带宽保障1Mbps
-BD2M：下行带宽保障2Mbps
-BD4M：下行带宽保障4Mbps
-BU1M：上行带宽保障1Mbps
-BU2M：上行带宽保障2Mbps
-BU4M：上行带宽保障4Mbps
+T100K：时延性保障 + 带宽保障上下行保障 100kbps
+T200K：时延性保障 + 带宽保障上下行保障 200kbps
+T400K：时延性保障 + 带宽保障上下行保障  400kbps
+BD1M：带宽型保障 + 下行带宽保障1Mbps
+BD2M：带宽型保障 + 下行带宽保障2Mbps
+BD4M：带宽型保障 + 下行带宽保障4Mbps
+BU1M：带宽型保障 + 上行带宽保障1Mbps
+BU2M：带宽型保障 + 上行带宽保障2Mbps
+BU4M：带宽型保障 + 上行带宽保障4Mbps
                      * @return QosMenu 加速套餐
-T100K：上/下行保障 100kbps
-T200K：上/下行保障 200kbps
-T400K：上/下行保障 400kbps
-BD1M：下行带宽保障1Mbps
-BD2M：下行带宽保障2Mbps
-BD4M：下行带宽保障4Mbps
-BU1M：上行带宽保障1Mbps
-BU2M：上行带宽保障2Mbps
-BU4M：上行带宽保障4Mbps
+T100K：时延性保障 + 带宽保障上下行保障 100kbps
+T200K：时延性保障 + 带宽保障上下行保障 200kbps
+T400K：时延性保障 + 带宽保障上下行保障  400kbps
+BD1M：带宽型保障 + 下行带宽保障1Mbps
+BD2M：带宽型保障 + 下行带宽保障2Mbps
+BD4M：带宽型保障 + 下行带宽保障4Mbps
+BU1M：带宽型保障 + 上行带宽保障1Mbps
+BU2M：带宽型保障 + 上行带宽保障2Mbps
+BU4M：带宽型保障 + 上行带宽保障4Mbps
                      */
                     std::string GetQosMenu() const;
 
                     /**
                      * 设置加速套餐
-T100K：上/下行保障 100kbps
-T200K：上/下行保障 200kbps
-T400K：上/下行保障 400kbps
-BD1M：下行带宽保障1Mbps
-BD2M：下行带宽保障2Mbps
-BD4M：下行带宽保障4Mbps
-BU1M：上行带宽保障1Mbps
-BU2M：上行带宽保障2Mbps
-BU4M：上行带宽保障4Mbps
+T100K：时延性保障 + 带宽保障上下行保障 100kbps
+T200K：时延性保障 + 带宽保障上下行保障 200kbps
+T400K：时延性保障 + 带宽保障上下行保障  400kbps
+BD1M：带宽型保障 + 下行带宽保障1Mbps
+BD2M：带宽型保障 + 下行带宽保障2Mbps
+BD4M：带宽型保障 + 下行带宽保障4Mbps
+BU1M：带宽型保障 + 上行带宽保障1Mbps
+BU2M：带宽型保障 + 上行带宽保障2Mbps
+BU4M：带宽型保障 + 上行带宽保障4Mbps
                      * @param QosMenu 加速套餐
-T100K：上/下行保障 100kbps
-T200K：上/下行保障 200kbps
-T400K：上/下行保障 400kbps
-BD1M：下行带宽保障1Mbps
-BD2M：下行带宽保障2Mbps
-BD4M：下行带宽保障4Mbps
-BU1M：上行带宽保障1Mbps
-BU2M：上行带宽保障2Mbps
-BU4M：上行带宽保障4Mbps
+T100K：时延性保障 + 带宽保障上下行保障 100kbps
+T200K：时延性保障 + 带宽保障上下行保障 200kbps
+T400K：时延性保障 + 带宽保障上下行保障  400kbps
+BD1M：带宽型保障 + 下行带宽保障1Mbps
+BD2M：带宽型保障 + 下行带宽保障2Mbps
+BD4M：带宽型保障 + 下行带宽保障4Mbps
+BU1M：带宽型保障 + 上行带宽保障1Mbps
+BU2M：带宽型保障 + 上行带宽保障2Mbps
+BU4M：带宽型保障 + 上行带宽保障4Mbps
                      */
                     void SetQosMenu(const std::string& _qosMenu);
 
@@ -208,6 +208,36 @@ BU4M：上行带宽保障4Mbps
                      */
                     bool TemplateIdHasBeenSet() const;
 
+                    /**
+                     * 获取针对特殊协议进行加速
+1. IP （默认值）
+2. UDP
+3. TCP
+                     * @return Protocol 针对特殊协议进行加速
+1. IP （默认值）
+2. UDP
+3. TCP
+                     */
+                    uint64_t GetProtocol() const;
+
+                    /**
+                     * 设置针对特殊协议进行加速
+1. IP （默认值）
+2. UDP
+3. TCP
+                     * @param Protocol 针对特殊协议进行加速
+1. IP （默认值）
+2. UDP
+3. TCP
+                     */
+                    void SetProtocol(const uint64_t& _protocol);
+
+                    /**
+                     * 判断参数 Protocol 是否已赋值
+                     * @return Protocol 是否已赋值
+                     */
+                    bool ProtocolHasBeenSet() const;
+
                 private:
 
                     /**
@@ -224,15 +254,15 @@ BU4M：上行带宽保障4Mbps
 
                     /**
                      * 加速套餐
-T100K：上/下行保障 100kbps
-T200K：上/下行保障 200kbps
-T400K：上/下行保障 400kbps
-BD1M：下行带宽保障1Mbps
-BD2M：下行带宽保障2Mbps
-BD4M：下行带宽保障4Mbps
-BU1M：上行带宽保障1Mbps
-BU2M：上行带宽保障2Mbps
-BU4M：上行带宽保障4Mbps
+T100K：时延性保障 + 带宽保障上下行保障 100kbps
+T200K：时延性保障 + 带宽保障上下行保障 200kbps
+T400K：时延性保障 + 带宽保障上下行保障  400kbps
+BD1M：带宽型保障 + 下行带宽保障1Mbps
+BD2M：带宽型保障 + 下行带宽保障2Mbps
+BD4M：带宽型保障 + 下行带宽保障4Mbps
+BU1M：带宽型保障 + 上行带宽保障1Mbps
+BU2M：带宽型保障 + 上行带宽保障2Mbps
+BU4M：带宽型保障 + 上行带宽保障4Mbps
                      */
                     std::string m_qosMenu;
                     bool m_qosMenuHasBeenSet;
@@ -260,6 +290,15 @@ BU4M：上行带宽保障4Mbps
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
+
+                    /**
+                     * 针对特殊协议进行加速
+1. IP （默认值）
+2. UDP
+3. TCP
+                     */
+                    uint64_t m_protocol;
+                    bool m_protocolHasBeenSet;
 
                 };
             }

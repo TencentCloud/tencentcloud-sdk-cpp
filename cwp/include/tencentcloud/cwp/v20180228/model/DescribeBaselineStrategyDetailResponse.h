@@ -114,14 +114,14 @@ namespace TencentCloud
                     bool IsGlobalHasBeenSet() const;
 
                     /**
-                     * 获取云主机类型：
+                     * 获取云服务器类型：
 cvm：腾讯云服务器
 bm：裸金属
 ecm：边缘计算主机
 lh: 轻量应用服务器
 ohter: 混合云机器
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MachineType 云主机类型：
+                     * @return MachineType 云服务器类型：
 cvm：腾讯云服务器
 bm：裸金属
 ecm：边缘计算主机
@@ -231,7 +231,7 @@ ohter: 混合云机器
                     bool m_isGlobalHasBeenSet;
 
                     /**
-                     * 云主机类型：
+                     * 云服务器类型：
 cvm：腾讯云服务器
 bm：裸金属
 ecm：边缘计算主机

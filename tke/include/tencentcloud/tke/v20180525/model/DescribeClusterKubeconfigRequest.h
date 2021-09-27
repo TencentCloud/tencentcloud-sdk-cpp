@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool ClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取默认false 获取内网，是否获取外网访问的kubeconfig
+                     * @return IsExtranet 默认false 获取内网，是否获取外网访问的kubeconfig
+                     */
+                    bool GetIsExtranet() const;
+
+                    /**
+                     * 设置默认false 获取内网，是否获取外网访问的kubeconfig
+                     * @param IsExtranet 默认false 获取内网，是否获取外网访问的kubeconfig
+                     */
+                    void SetIsExtranet(const bool& _isExtranet);
+
+                    /**
+                     * 判断参数 IsExtranet 是否已赋值
+                     * @return IsExtranet 是否已赋值
+                     */
+                    bool IsExtranetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 默认false 获取内网，是否获取外网访问的kubeconfig
+                     */
+                    bool m_isExtranet;
+                    bool m_isExtranetHasBeenSet;
 
                 };
             }

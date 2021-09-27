@@ -69,8 +69,12 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseProjectLatestVersionListResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseProjectVersionListRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseProjectVersionListResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunAllVpcsRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunAllVpcsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunConfForGateWayRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunConfForGateWayResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunOperationTypesRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunOperationTypesResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunResourceRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunResourceResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunResourceForExtendRequest.h>
@@ -79,6 +83,8 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerVersionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionRsByConditionRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionRsByConditionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionSnapshotRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionSnapshotResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCurveDataRequest.h>
@@ -240,9 +246,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudBaseProjectVersionListResponse> DescribeCloudBaseProjectVersionListOutcome;
                 typedef std::future<DescribeCloudBaseProjectVersionListOutcome> DescribeCloudBaseProjectVersionListOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseProjectVersionListRequest&, DescribeCloudBaseProjectVersionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseProjectVersionListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudBaseRunAllVpcsResponse> DescribeCloudBaseRunAllVpcsOutcome;
+                typedef std::future<DescribeCloudBaseRunAllVpcsOutcome> DescribeCloudBaseRunAllVpcsOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseRunAllVpcsRequest&, DescribeCloudBaseRunAllVpcsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseRunAllVpcsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudBaseRunConfForGateWayResponse> DescribeCloudBaseRunConfForGateWayOutcome;
                 typedef std::future<DescribeCloudBaseRunConfForGateWayOutcome> DescribeCloudBaseRunConfForGateWayOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseRunConfForGateWayRequest&, DescribeCloudBaseRunConfForGateWayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseRunConfForGateWayAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudBaseRunOperationTypesResponse> DescribeCloudBaseRunOperationTypesOutcome;
+                typedef std::future<DescribeCloudBaseRunOperationTypesOutcome> DescribeCloudBaseRunOperationTypesOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseRunOperationTypesRequest&, DescribeCloudBaseRunOperationTypesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseRunOperationTypesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudBaseRunResourceResponse> DescribeCloudBaseRunResourceOutcome;
                 typedef std::future<DescribeCloudBaseRunResourceOutcome> DescribeCloudBaseRunResourceOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseRunResourceRequest&, DescribeCloudBaseRunResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseRunResourceAsyncHandler;
@@ -255,6 +267,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudBaseRunVersionResponse> DescribeCloudBaseRunVersionOutcome;
                 typedef std::future<DescribeCloudBaseRunVersionOutcome> DescribeCloudBaseRunVersionOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseRunVersionRequest&, DescribeCloudBaseRunVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseRunVersionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudBaseRunVersionRsByConditionResponse> DescribeCloudBaseRunVersionRsByConditionOutcome;
+                typedef std::future<DescribeCloudBaseRunVersionRsByConditionOutcome> DescribeCloudBaseRunVersionRsByConditionOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseRunVersionRsByConditionRequest&, DescribeCloudBaseRunVersionRsByConditionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseRunVersionRsByConditionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudBaseRunVersionSnapshotResponse> DescribeCloudBaseRunVersionSnapshotOutcome;
                 typedef std::future<DescribeCloudBaseRunVersionSnapshotOutcome> DescribeCloudBaseRunVersionSnapshotOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseRunVersionSnapshotRequest&, DescribeCloudBaseRunVersionSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseRunVersionSnapshotAsyncHandler;
@@ -583,6 +598,15 @@ namespace TencentCloud
                 DescribeCloudBaseProjectVersionListOutcomeCallable DescribeCloudBaseProjectVersionListCallable(const Model::DescribeCloudBaseProjectVersionListRequest& request);
 
                 /**
+                 *查询环境下所有的vpc列表
+                 * @param req DescribeCloudBaseRunAllVpcsRequest
+                 * @return DescribeCloudBaseRunAllVpcsOutcome
+                 */
+                DescribeCloudBaseRunAllVpcsOutcome DescribeCloudBaseRunAllVpcs(const Model::DescribeCloudBaseRunAllVpcsRequest &request);
+                void DescribeCloudBaseRunAllVpcsAsync(const Model::DescribeCloudBaseRunAllVpcsRequest& request, const DescribeCloudBaseRunAllVpcsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudBaseRunAllVpcsOutcomeCallable DescribeCloudBaseRunAllVpcsCallable(const Model::DescribeCloudBaseRunAllVpcsRequest& request);
+
+                /**
                  *独立网关中拉取云托管服务对应的配置信息
                  * @param req DescribeCloudBaseRunConfForGateWayRequest
                  * @return DescribeCloudBaseRunConfForGateWayOutcome
@@ -590,6 +614,15 @@ namespace TencentCloud
                 DescribeCloudBaseRunConfForGateWayOutcome DescribeCloudBaseRunConfForGateWay(const Model::DescribeCloudBaseRunConfForGateWayRequest &request);
                 void DescribeCloudBaseRunConfForGateWayAsync(const Model::DescribeCloudBaseRunConfForGateWayRequest& request, const DescribeCloudBaseRunConfForGateWayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCloudBaseRunConfForGateWayOutcomeCallable DescribeCloudBaseRunConfForGateWayCallable(const Model::DescribeCloudBaseRunConfForGateWayRequest& request);
+
+                /**
+                 *查询服务、版本和操作类型
+                 * @param req DescribeCloudBaseRunOperationTypesRequest
+                 * @return DescribeCloudBaseRunOperationTypesOutcome
+                 */
+                DescribeCloudBaseRunOperationTypesOutcome DescribeCloudBaseRunOperationTypes(const Model::DescribeCloudBaseRunOperationTypesRequest &request);
+                void DescribeCloudBaseRunOperationTypesAsync(const Model::DescribeCloudBaseRunOperationTypesRequest& request, const DescribeCloudBaseRunOperationTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudBaseRunOperationTypesOutcomeCallable DescribeCloudBaseRunOperationTypesCallable(const Model::DescribeCloudBaseRunOperationTypesRequest& request);
 
                 /**
                  *查看容器托管的集群状态
@@ -626,6 +659,15 @@ namespace TencentCloud
                 DescribeCloudBaseRunVersionOutcome DescribeCloudBaseRunVersion(const Model::DescribeCloudBaseRunVersionRequest &request);
                 void DescribeCloudBaseRunVersionAsync(const Model::DescribeCloudBaseRunVersionRequest& request, const DescribeCloudBaseRunVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCloudBaseRunVersionOutcomeCallable DescribeCloudBaseRunVersionCallable(const Model::DescribeCloudBaseRunVersionRequest& request);
+
+                /**
+                 *DescribeCloudBaseRunVersionRsByCondition 获取云托管详情
+                 * @param req DescribeCloudBaseRunVersionRsByConditionRequest
+                 * @return DescribeCloudBaseRunVersionRsByConditionOutcome
+                 */
+                DescribeCloudBaseRunVersionRsByConditionOutcome DescribeCloudBaseRunVersionRsByCondition(const Model::DescribeCloudBaseRunVersionRsByConditionRequest &request);
+                void DescribeCloudBaseRunVersionRsByConditionAsync(const Model::DescribeCloudBaseRunVersionRsByConditionRequest& request, const DescribeCloudBaseRunVersionRsByConditionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudBaseRunVersionRsByConditionOutcomeCallable DescribeCloudBaseRunVersionRsByConditionCallable(const Model::DescribeCloudBaseRunVersionRsByConditionRequest& request);
 
                 /**
                  *查询版本历史

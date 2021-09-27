@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cdn/v20180606/model/ScdnCCRules.h>
+#include <tencentcloud/cdn/v20180606/model/AdvancedCCRules.h>
 
 
 namespace TencentCloud
@@ -87,6 +88,28 @@ namespace TencentCloud
                      */
                     bool RulesHasBeenSet() const;
 
+                    /**
+                     * 获取增强自定义 cc 防护规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AdvancedRules 增强自定义 cc 防护规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AdvancedCCRules> GetAdvancedRules() const;
+
+                    /**
+                     * 设置增强自定义 cc 防护规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AdvancedRules 增强自定义 cc 防护规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAdvancedRules(const std::vector<AdvancedCCRules>& _advancedRules);
+
+                    /**
+                     * 判断参数 AdvancedRules 是否已赋值
+                     * @return AdvancedRules 是否已赋值
+                     */
+                    bool AdvancedRulesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +124,13 @@ namespace TencentCloud
                      */
                     std::vector<ScdnCCRules> m_rules;
                     bool m_rulesHasBeenSet;
+
+                    /**
+                     * 增强自定义 cc 防护规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AdvancedCCRules> m_advancedRules;
+                    bool m_advancedRulesHasBeenSet;
 
                 };
             }

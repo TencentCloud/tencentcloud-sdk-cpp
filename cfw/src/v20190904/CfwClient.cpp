@@ -40,6 +40,49 @@ CfwClient::CfwClient(const Credential &credential, const string &region, const C
 }
 
 
+CfwClient::AddAcRuleOutcome CfwClient::AddAcRule(const AddAcRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddAcRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddAcRuleResponse rsp = AddAcRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddAcRuleOutcome(rsp);
+        else
+            return AddAcRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return AddAcRuleOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::AddAcRuleAsync(const AddAcRuleRequest& request, const AddAcRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddAcRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::AddAcRuleOutcomeCallable CfwClient::AddAcRuleCallable(const AddAcRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddAcRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->AddAcRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::CreateAcRulesOutcome CfwClient::CreateAcRules(const CreateAcRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAcRules");
@@ -205,6 +248,49 @@ CfwClient::CreateNatFwInstanceOutcomeCallable CfwClient::CreateNatFwInstanceCall
         [this, request]()
         {
             return this->CreateNatFwInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::CreateNatFwInstanceWithDomainOutcome CfwClient::CreateNatFwInstanceWithDomain(const CreateNatFwInstanceWithDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateNatFwInstanceWithDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateNatFwInstanceWithDomainResponse rsp = CreateNatFwInstanceWithDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateNatFwInstanceWithDomainOutcome(rsp);
+        else
+            return CreateNatFwInstanceWithDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateNatFwInstanceWithDomainOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::CreateNatFwInstanceWithDomainAsync(const CreateNatFwInstanceWithDomainRequest& request, const CreateNatFwInstanceWithDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateNatFwInstanceWithDomain(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::CreateNatFwInstanceWithDomainOutcomeCallable CfwClient::CreateNatFwInstanceWithDomainCallable(const CreateNatFwInstanceWithDomainRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateNatFwInstanceWithDomainOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateNatFwInstanceWithDomain(request);
         }
     );
 
@@ -2570,6 +2656,49 @@ CfwClient::ModifyVPCSwitchStatusOutcomeCallable CfwClient::ModifyVPCSwitchStatus
         [this, request]()
         {
             return this->ModifyVPCSwitchStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::RemoveAcRuleOutcome CfwClient::RemoveAcRule(const RemoveAcRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveAcRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveAcRuleResponse rsp = RemoveAcRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveAcRuleOutcome(rsp);
+        else
+            return RemoveAcRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveAcRuleOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::RemoveAcRuleAsync(const RemoveAcRuleRequest& request, const RemoveAcRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RemoveAcRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::RemoveAcRuleOutcomeCallable CfwClient::RemoveAcRuleCallable(const RemoveAcRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RemoveAcRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->RemoveAcRule(request);
         }
     );
 

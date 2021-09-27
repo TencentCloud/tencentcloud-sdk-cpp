@@ -22,7 +22,8 @@ using namespace std;
 
 ScdnConfig::ScdnConfig() :
     m_switchHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+    m_rulesHasBeenSet(false),
+    m_advancedRulesHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,26 @@ CoreInternalOutcome ScdnConfig::Deserialize(const rapidjson::Value &value)
         m_rulesHasBeenSet = true;
     }
 
+    if (value.HasMember("AdvancedRules") && !value["AdvancedRules"].IsNull())
+    {
+        if (!value["AdvancedRules"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ScdnConfig.AdvancedRules` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AdvancedRules"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AdvancedCCRules item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_advancedRules.push_back(item);
+        }
+        m_advancedRulesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -85,6 +106,21 @@ void ScdnConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
 
         int i=0;
         for (auto itr = m_rules.begin(); itr != m_rules.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_advancedRulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdvancedRules";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_advancedRules.begin(); itr != m_advancedRules.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -124,5 +160,21 @@ void ScdnConfig::SetRules(const vector<ScdnCCRules>& _rules)
 bool ScdnConfig::RulesHasBeenSet() const
 {
     return m_rulesHasBeenSet;
+}
+
+vector<AdvancedCCRules> ScdnConfig::GetAdvancedRules() const
+{
+    return m_advancedRules;
+}
+
+void ScdnConfig::SetAdvancedRules(const vector<AdvancedCCRules>& _advancedRules)
+{
+    m_advancedRules = _advancedRules;
+    m_advancedRulesHasBeenSet = true;
+}
+
+bool ScdnConfig::AdvancedRulesHasBeenSet() const
+{
+    return m_advancedRulesHasBeenSet;
 }
 

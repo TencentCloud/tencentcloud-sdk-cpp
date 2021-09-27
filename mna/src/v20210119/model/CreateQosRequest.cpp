@@ -29,7 +29,8 @@ CreateQosRequest::CreateQosRequest() :
     m_deviceInfoHasBeenSet(false),
     m_durationHasBeenSet(false),
     m_capacityHasBeenSet(false),
-    m_templateIdHasBeenSet(false)
+    m_templateIdHasBeenSet(false),
+    m_protocolHasBeenSet(false)
 {
 }
 
@@ -98,6 +99,14 @@ string CreateQosRequest::ToJsonString() const
         string key = "TemplateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Protocol";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_protocol, allocator);
     }
 
 
@@ -218,6 +227,22 @@ void CreateQosRequest::SetTemplateId(const string& _templateId)
 bool CreateQosRequest::TemplateIdHasBeenSet() const
 {
     return m_templateIdHasBeenSet;
+}
+
+uint64_t CreateQosRequest::GetProtocol() const
+{
+    return m_protocol;
+}
+
+void CreateQosRequest::SetProtocol(const uint64_t& _protocol)
+{
+    m_protocol = _protocol;
+    m_protocolHasBeenSet = true;
+}
+
+bool CreateQosRequest::ProtocolHasBeenSet() const
+{
+    return m_protocolHasBeenSet;
 }
 
 

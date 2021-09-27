@@ -34,7 +34,8 @@ ManagerInfo::ManagerInfo() :
     m_managerIdHasBeenSet(false),
     m_expireTimeHasBeenSet(false),
     m_submitAuditTimeHasBeenSet(false),
-    m_verifyTimeHasBeenSet(false)
+    m_verifyTimeHasBeenSet(false),
+    m_statusInfoHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,26 @@ CoreInternalOutcome ManagerInfo::Deserialize(const rapidjson::Value &value)
         m_verifyTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("StatusInfo") && !value["StatusInfo"].IsNull())
+    {
+        if (!value["StatusInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ManagerInfo.StatusInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["StatusInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ManagerStatusInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_statusInfo.push_back(item);
+        }
+        m_statusInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +321,21 @@ void ManagerInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "VerifyTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_verifyTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatusInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_statusInfo.begin(); itr != m_statusInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -527,5 +563,21 @@ void ManagerInfo::SetVerifyTime(const string& _verifyTime)
 bool ManagerInfo::VerifyTimeHasBeenSet() const
 {
     return m_verifyTimeHasBeenSet;
+}
+
+vector<ManagerStatusInfo> ManagerInfo::GetStatusInfo() const
+{
+    return m_statusInfo;
+}
+
+void ManagerInfo::SetStatusInfo(const vector<ManagerStatusInfo>& _statusInfo)
+{
+    m_statusInfo = _statusInfo;
+    m_statusInfoHasBeenSet = true;
+}
+
+bool ManagerInfo::StatusInfoHasBeenSet() const
+{
+    return m_statusInfoHasBeenSet;
 }
 

@@ -35,6 +35,8 @@
 #include <tencentcloud/rum/v20210622/model/DescribeLogListResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeProjectsRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeProjectsResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeScoresRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeScoresResponse.h>
 
 
 namespace TencentCloud
@@ -67,6 +69,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProjectsResponse> DescribeProjectsOutcome;
                 typedef std::future<DescribeProjectsOutcome> DescribeProjectsOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeProjectsRequest&, DescribeProjectsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeScoresResponse> DescribeScoresOutcome;
+                typedef std::future<DescribeScoresOutcome> DescribeScoresOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeScoresRequest&, DescribeScoresOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScoresAsyncHandler;
 
 
 
@@ -123,6 +128,15 @@ namespace TencentCloud
                 DescribeProjectsOutcome DescribeProjects(const Model::DescribeProjectsRequest &request);
                 void DescribeProjectsAsync(const Model::DescribeProjectsRequest& request, const DescribeProjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeProjectsOutcomeCallable DescribeProjectsCallable(const Model::DescribeProjectsRequest& request);
+
+                /**
+                 *获取首页分数列表
+                 * @param req DescribeScoresRequest
+                 * @return DescribeScoresOutcome
+                 */
+                DescribeScoresOutcome DescribeScores(const Model::DescribeScoresRequest &request);
+                void DescribeScoresAsync(const Model::DescribeScoresRequest& request, const DescribeScoresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeScoresOutcomeCallable DescribeScoresCallable(const Model::DescribeScoresRequest& request);
 
             };
         }

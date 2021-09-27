@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取每个副本集内节点个数，当前副本集节点数固定为3，分片从节点数可选，具体参照查询云数据库的售卖规格返回参数
-                     * @return NodeNum 每个副本集内节点个数，当前副本集节点数固定为3，分片从节点数可选，具体参照查询云数据库的售卖规格返回参数
+                     * 获取每个副本集内节点个数，具体参照查询云数据库的售卖规格返回参数
+                     * @return NodeNum 每个副本集内节点个数，具体参照查询云数据库的售卖规格返回参数
                      */
                     uint64_t GetNodeNum() const;
 
                     /**
-                     * 设置每个副本集内节点个数，当前副本集节点数固定为3，分片从节点数可选，具体参照查询云数据库的售卖规格返回参数
-                     * @param NodeNum 每个副本集内节点个数，当前副本集节点数固定为3，分片从节点数可选，具体参照查询云数据库的售卖规格返回参数
+                     * 设置每个副本集内节点个数，具体参照查询云数据库的售卖规格返回参数
+                     * @param NodeNum 每个副本集内节点个数，具体参照查询云数据库的售卖规格返回参数
                      */
                     void SetNodeNum(const uint64_t& _nodeNum);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool VolumeHasBeenSet() const;
 
                     /**
-                     * 获取版本号，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本，MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本，MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本
-                     * @return MongoVersion 版本号，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本，MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本，MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本
+                     * 获取版本号，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本，MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本，MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本，MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本
+                     * @return MongoVersion 版本号，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本，MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本，MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本，MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本
                      */
                     std::string GetMongoVersion() const;
 
                     /**
-                     * 设置版本号，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本，MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本，MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本
-                     * @param MongoVersion 版本号，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本，MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本，MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本
+                     * 设置版本号，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本，MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本，MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本，MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本
+                     * @param MongoVersion 版本号，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本，MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本，MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本，MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本
                      */
                     void SetMongoVersion(const std::string& _mongoVersion);
 
@@ -134,14 +134,14 @@ namespace TencentCloud
                     bool GoodsNumHasBeenSet() const;
 
                     /**
-                     * 获取实例所属区域名称，格式如：ap-guangzhou-2
-                     * @return Zone 实例所属区域名称，格式如：ap-guangzhou-2
+                     * 获取实例所属区域名称，格式如：ap-guangzhou-2。注：此参数填写的是主可用区，如果选择多可用区部署，Zone必须是AvailabilityZoneList中的一个
+                     * @return Zone 实例所属区域名称，格式如：ap-guangzhou-2。注：此参数填写的是主可用区，如果选择多可用区部署，Zone必须是AvailabilityZoneList中的一个
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置实例所属区域名称，格式如：ap-guangzhou-2
-                     * @param Zone 实例所属区域名称，格式如：ap-guangzhou-2
+                     * 设置实例所属区域名称，格式如：ap-guangzhou-2。注：此参数填写的是主可用区，如果选择多可用区部署，Zone必须是AvailabilityZoneList中的一个
+                     * @param Zone 实例所属区域名称，格式如：ap-guangzhou-2。注：此参数填写的是主可用区，如果选择多可用区部署，Zone必须是AvailabilityZoneList中的一个
                      */
                     void SetZone(const std::string& _zone);
 
@@ -350,14 +350,14 @@ namespace TencentCloud
                     bool AutoVoucherHasBeenSet() const;
 
                     /**
-                     * 获取1:正式实例,2:临时实例,3:只读实例，4：灾备实例
-                     * @return Clone 1:正式实例,2:临时实例,3:只读实例，4：灾备实例
+                     * 获取1:正式实例,2:临时实例,3:只读实例,4:灾备实例,5:克隆实例
+                     * @return Clone 1:正式实例,2:临时实例,3:只读实例,4:灾备实例,5:克隆实例
                      */
                     int64_t GetClone() const;
 
                     /**
-                     * 设置1:正式实例,2:临时实例,3:只读实例，4：灾备实例
-                     * @param Clone 1:正式实例,2:临时实例,3:只读实例，4：灾备实例
+                     * 设置1:正式实例,2:临时实例,3:只读实例,4:灾备实例,5:克隆实例
+                     * @param Clone 1:正式实例,2:临时实例,3:只读实例,4:灾备实例,5:克隆实例
                      */
                     void SetClone(const int64_t& _clone);
 
@@ -368,14 +368,14 @@ namespace TencentCloud
                     bool CloneHasBeenSet() const;
 
                     /**
-                     * 获取若是只读，灾备实例，Father必须填写，即主实例ID
-                     * @return Father 若是只读，灾备实例，Father必须填写，即主实例ID
+                     * 获取若是只读，灾备实例或克隆实例，Father必须填写，即主实例ID
+                     * @return Father 若是只读，灾备实例或克隆实例，Father必须填写，即主实例ID
                      */
                     std::string GetFather() const;
 
                     /**
-                     * 设置若是只读，灾备实例，Father必须填写，即主实例ID
-                     * @param Father 若是只读，灾备实例，Father必须填写，即主实例ID
+                     * 设置若是只读，灾备实例或克隆实例，Father必须填写，即主实例ID
+                     * @param Father 若是只读，灾备实例或克隆实例，Father必须填写，即主实例ID
                      */
                     void SetFather(const std::string& _father);
 
@@ -403,10 +403,118 @@ namespace TencentCloud
                      */
                     bool SecurityGroupHasBeenSet() const;
 
+                    /**
+                     * 获取克隆实例回档时间。若是克隆实例，则必须填写，格式：2021-08-13 16:30:00。注：只能回档7天内的时间点
+                     * @return RestoreTime 克隆实例回档时间。若是克隆实例，则必须填写，格式：2021-08-13 16:30:00。注：只能回档7天内的时间点
+                     */
+                    std::string GetRestoreTime() const;
+
+                    /**
+                     * 设置克隆实例回档时间。若是克隆实例，则必须填写，格式：2021-08-13 16:30:00。注：只能回档7天内的时间点
+                     * @param RestoreTime 克隆实例回档时间。若是克隆实例，则必须填写，格式：2021-08-13 16:30:00。注：只能回档7天内的时间点
+                     */
+                    void SetRestoreTime(const std::string& _restoreTime);
+
+                    /**
+                     * 判断参数 RestoreTime 是否已赋值
+                     * @return RestoreTime 是否已赋值
+                     */
+                    bool RestoreTimeHasBeenSet() const;
+
+                    /**
+                     * 获取实例名称。注：名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符-
+                     * @return InstanceName 实例名称。注：名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符-
+                     */
+                    std::string GetInstanceName() const;
+
+                    /**
+                     * 设置实例名称。注：名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符-
+                     * @param InstanceName 实例名称。注：名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符-
+                     */
+                    void SetInstanceName(const std::string& _instanceName);
+
+                    /**
+                     * 判断参数 InstanceName 是否已赋值
+                     * @return InstanceName 是否已赋值
+                     */
+                    bool InstanceNameHasBeenSet() const;
+
+                    /**
+                     * 获取多可用区部署的节点列表，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。注：1、多可用区部署节点只能部署在3个不同可用区；2、为了保障跨可用区切换，不支持将集群的大多数节点部署在同一个可用区（如3节点集群不支持2个节点部署在同一个区）；3、不支持4.2及以上版本；4、不支持只读灾备实例；5、不能选择基础网络
+                     * @return AvailabilityZoneList 多可用区部署的节点列表，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。注：1、多可用区部署节点只能部署在3个不同可用区；2、为了保障跨可用区切换，不支持将集群的大多数节点部署在同一个可用区（如3节点集群不支持2个节点部署在同一个区）；3、不支持4.2及以上版本；4、不支持只读灾备实例；5、不能选择基础网络
+                     */
+                    std::vector<std::string> GetAvailabilityZoneList() const;
+
+                    /**
+                     * 设置多可用区部署的节点列表，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。注：1、多可用区部署节点只能部署在3个不同可用区；2、为了保障跨可用区切换，不支持将集群的大多数节点部署在同一个可用区（如3节点集群不支持2个节点部署在同一个区）；3、不支持4.2及以上版本；4、不支持只读灾备实例；5、不能选择基础网络
+                     * @param AvailabilityZoneList 多可用区部署的节点列表，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。注：1、多可用区部署节点只能部署在3个不同可用区；2、为了保障跨可用区切换，不支持将集群的大多数节点部署在同一个可用区（如3节点集群不支持2个节点部署在同一个区）；3、不支持4.2及以上版本；4、不支持只读灾备实例；5、不能选择基础网络
+                     */
+                    void SetAvailabilityZoneList(const std::vector<std::string>& _availabilityZoneList);
+
+                    /**
+                     * 判断参数 AvailabilityZoneList 是否已赋值
+                     * @return AvailabilityZoneList 是否已赋值
+                     */
+                    bool AvailabilityZoneListHasBeenSet() const;
+
+                    /**
+                     * 获取mongos cpu数量，购买MongoDB 4.2 WiredTiger存储引擎版本的分片集群时必须填写，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果
+                     * @return MongosCpu mongos cpu数量，购买MongoDB 4.2 WiredTiger存储引擎版本的分片集群时必须填写，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果
+                     */
+                    uint64_t GetMongosCpu() const;
+
+                    /**
+                     * 设置mongos cpu数量，购买MongoDB 4.2 WiredTiger存储引擎版本的分片集群时必须填写，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果
+                     * @param MongosCpu mongos cpu数量，购买MongoDB 4.2 WiredTiger存储引擎版本的分片集群时必须填写，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果
+                     */
+                    void SetMongosCpu(const uint64_t& _mongosCpu);
+
+                    /**
+                     * 判断参数 MongosCpu 是否已赋值
+                     * @return MongosCpu 是否已赋值
+                     */
+                    bool MongosCpuHasBeenSet() const;
+
+                    /**
+                     * 获取mongos 内存大小，购买MongoDB 4.2 WiredTiger存储引擎版本的分片集群时必须填写，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果
+                     * @return MongosMemory mongos 内存大小，购买MongoDB 4.2 WiredTiger存储引擎版本的分片集群时必须填写，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果
+                     */
+                    uint64_t GetMongosMemory() const;
+
+                    /**
+                     * 设置mongos 内存大小，购买MongoDB 4.2 WiredTiger存储引擎版本的分片集群时必须填写，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果
+                     * @param MongosMemory mongos 内存大小，购买MongoDB 4.2 WiredTiger存储引擎版本的分片集群时必须填写，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果
+                     */
+                    void SetMongosMemory(const uint64_t& _mongosMemory);
+
+                    /**
+                     * 判断参数 MongosMemory 是否已赋值
+                     * @return MongosMemory 是否已赋值
+                     */
+                    bool MongosMemoryHasBeenSet() const;
+
+                    /**
+                     * 获取mongos 数量，购买MongoDB 4.2 WiredTiger存储引擎版本的分片集群时必须填写，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。注：为了保障高可用，最低需要购买3个mongos，上限为32个
+                     * @return MongosNodeNum mongos 数量，购买MongoDB 4.2 WiredTiger存储引擎版本的分片集群时必须填写，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。注：为了保障高可用，最低需要购买3个mongos，上限为32个
+                     */
+                    uint64_t GetMongosNodeNum() const;
+
+                    /**
+                     * 设置mongos 数量，购买MongoDB 4.2 WiredTiger存储引擎版本的分片集群时必须填写，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。注：为了保障高可用，最低需要购买3个mongos，上限为32个
+                     * @param MongosNodeNum mongos 数量，购买MongoDB 4.2 WiredTiger存储引擎版本的分片集群时必须填写，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。注：为了保障高可用，最低需要购买3个mongos，上限为32个
+                     */
+                    void SetMongosNodeNum(const uint64_t& _mongosNodeNum);
+
+                    /**
+                     * 判断参数 MongosNodeNum 是否已赋值
+                     * @return MongosNodeNum 是否已赋值
+                     */
+                    bool MongosNodeNumHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 每个副本集内节点个数，当前副本集节点数固定为3，分片从节点数可选，具体参照查询云数据库的售卖规格返回参数
+                     * 每个副本集内节点个数，具体参照查询云数据库的售卖规格返回参数
                      */
                     uint64_t m_nodeNum;
                     bool m_nodeNumHasBeenSet;
@@ -424,7 +532,7 @@ namespace TencentCloud
                     bool m_volumeHasBeenSet;
 
                     /**
-                     * 版本号，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本，MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本，MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本
+                     * 版本号，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本，MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本，MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本，MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本
                      */
                     std::string m_mongoVersion;
                     bool m_mongoVersionHasBeenSet;
@@ -436,7 +544,7 @@ namespace TencentCloud
                     bool m_goodsNumHasBeenSet;
 
                     /**
-                     * 实例所属区域名称，格式如：ap-guangzhou-2
+                     * 实例所属区域名称，格式如：ap-guangzhou-2。注：此参数填写的是主可用区，如果选择多可用区部署，Zone必须是AvailabilityZoneList中的一个
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
@@ -508,13 +616,13 @@ namespace TencentCloud
                     bool m_autoVoucherHasBeenSet;
 
                     /**
-                     * 1:正式实例,2:临时实例,3:只读实例，4：灾备实例
+                     * 1:正式实例,2:临时实例,3:只读实例,4:灾备实例,5:克隆实例
                      */
                     int64_t m_clone;
                     bool m_cloneHasBeenSet;
 
                     /**
-                     * 若是只读，灾备实例，Father必须填写，即主实例ID
+                     * 若是只读，灾备实例或克隆实例，Father必须填写，即主实例ID
                      */
                     std::string m_father;
                     bool m_fatherHasBeenSet;
@@ -524,6 +632,42 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_securityGroup;
                     bool m_securityGroupHasBeenSet;
+
+                    /**
+                     * 克隆实例回档时间。若是克隆实例，则必须填写，格式：2021-08-13 16:30:00。注：只能回档7天内的时间点
+                     */
+                    std::string m_restoreTime;
+                    bool m_restoreTimeHasBeenSet;
+
+                    /**
+                     * 实例名称。注：名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符-
+                     */
+                    std::string m_instanceName;
+                    bool m_instanceNameHasBeenSet;
+
+                    /**
+                     * 多可用区部署的节点列表，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。注：1、多可用区部署节点只能部署在3个不同可用区；2、为了保障跨可用区切换，不支持将集群的大多数节点部署在同一个可用区（如3节点集群不支持2个节点部署在同一个区）；3、不支持4.2及以上版本；4、不支持只读灾备实例；5、不能选择基础网络
+                     */
+                    std::vector<std::string> m_availabilityZoneList;
+                    bool m_availabilityZoneListHasBeenSet;
+
+                    /**
+                     * mongos cpu数量，购买MongoDB 4.2 WiredTiger存储引擎版本的分片集群时必须填写，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果
+                     */
+                    uint64_t m_mongosCpu;
+                    bool m_mongosCpuHasBeenSet;
+
+                    /**
+                     * mongos 内存大小，购买MongoDB 4.2 WiredTiger存储引擎版本的分片集群时必须填写，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果
+                     */
+                    uint64_t m_mongosMemory;
+                    bool m_mongosMemoryHasBeenSet;
+
+                    /**
+                     * mongos 数量，购买MongoDB 4.2 WiredTiger存储引擎版本的分片集群时必须填写，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。注：为了保障高可用，最低需要购买3个mongos，上限为32个
+                     */
+                    uint64_t m_mongosNodeNum;
+                    bool m_mongosNodeNumHasBeenSet;
 
                 };
             }

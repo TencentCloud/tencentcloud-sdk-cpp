@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ssl/v20191205/model/ManagerStatusInfo.h>
 
 
 namespace TencentCloud
@@ -314,6 +315,28 @@ namespace TencentCloud
                      */
                     bool VerifyTimeHasBeenSet() const;
 
+                    /**
+                     * 获取具体审核状态信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StatusInfo 具体审核状态信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ManagerStatusInfo> GetStatusInfo() const;
+
+                    /**
+                     * 设置具体审核状态信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StatusInfo 具体审核状态信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStatusInfo(const std::vector<ManagerStatusInfo>& _statusInfo);
+
+                    /**
+                     * 判断参数 StatusInfo 是否已赋值
+                     * @return StatusInfo 是否已赋值
+                     */
+                    bool StatusInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -403,6 +426,13 @@ namespace TencentCloud
                      */
                     std::string m_verifyTime;
                     bool m_verifyTimeHasBeenSet;
+
+                    /**
+                     * 具体审核状态信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ManagerStatusInfo> m_statusInfo;
+                    bool m_statusInfoHasBeenSet;
 
                 };
             }

@@ -23,7 +23,8 @@ using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
 DescribeClusterKubeconfigRequest::DescribeClusterKubeconfigRequest() :
-    m_clusterIdHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_isExtranetHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeClusterKubeconfigRequest::ToJsonString() const
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isExtranetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsExtranet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isExtranet, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeClusterKubeconfigRequest::SetClusterId(const string& _clusterId)
 bool DescribeClusterKubeconfigRequest::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+bool DescribeClusterKubeconfigRequest::GetIsExtranet() const
+{
+    return m_isExtranet;
+}
+
+void DescribeClusterKubeconfigRequest::SetIsExtranet(const bool& _isExtranet)
+{
+    m_isExtranet = _isExtranet;
+    m_isExtranetHasBeenSet = true;
+}
+
+bool DescribeClusterKubeconfigRequest::IsExtranetHasBeenSet() const
+{
+    return m_isExtranetHasBeenSet;
 }
 
 

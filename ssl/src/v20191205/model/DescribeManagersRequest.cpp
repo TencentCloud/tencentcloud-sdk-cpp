@@ -28,7 +28,8 @@ DescribeManagersRequest::DescribeManagersRequest() :
     m_limitHasBeenSet(false),
     m_managerNameHasBeenSet(false),
     m_managerMailHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_searchKeyHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string DescribeManagersRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_searchKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SearchKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_searchKey.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void DescribeManagersRequest::SetStatus(const string& _status)
 bool DescribeManagersRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string DescribeManagersRequest::GetSearchKey() const
+{
+    return m_searchKey;
+}
+
+void DescribeManagersRequest::SetSearchKey(const string& _searchKey)
+{
+    m_searchKey = _searchKey;
+    m_searchKeyHasBeenSet = true;
+}
+
+bool DescribeManagersRequest::SearchKeyHasBeenSet() const
+{
+    return m_searchKeyHasBeenSet;
 }
 
 

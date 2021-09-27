@@ -31,7 +31,8 @@ CreateApplicationRequest::CreateApplicationRequest() :
     m_applicationResourceTypeHasBeenSet(false),
     m_applicationRuntimeTypeHasBeenSet(false),
     m_programIdHasBeenSet(false),
-    m_serviceConfigListHasBeenSet(false)
+    m_serviceConfigListHasBeenSet(false),
+    m_ignoreCreateImageRepositoryHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,14 @@ string CreateApplicationRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_ignoreCreateImageRepositoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IgnoreCreateImageRepository";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ignoreCreateImageRepository, allocator);
     }
 
 
@@ -271,6 +280,22 @@ void CreateApplicationRequest::SetServiceConfigList(const vector<ServiceConfig>&
 bool CreateApplicationRequest::ServiceConfigListHasBeenSet() const
 {
     return m_serviceConfigListHasBeenSet;
+}
+
+bool CreateApplicationRequest::GetIgnoreCreateImageRepository() const
+{
+    return m_ignoreCreateImageRepository;
+}
+
+void CreateApplicationRequest::SetIgnoreCreateImageRepository(const bool& _ignoreCreateImageRepository)
+{
+    m_ignoreCreateImageRepository = _ignoreCreateImageRepository;
+    m_ignoreCreateImageRepositoryHasBeenSet = true;
+}
+
+bool CreateApplicationRequest::IgnoreCreateImageRepositoryHasBeenSet() const
+{
+    return m_ignoreCreateImageRepositoryHasBeenSet;
 }
 
 

@@ -87,10 +87,60 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeAccountStatisticsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAccountsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAccountsResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetAppListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetAppListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetAppProcessListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetAppProcessListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetCoreModuleInfoRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetCoreModuleInfoResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetCoreModuleListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetCoreModuleListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetDatabaseInfoRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetDatabaseInfoResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetDatabaseListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetDatabaseListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetEnvListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetEnvListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAssetInfoRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAssetInfoResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetInitServiceListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetInitServiceListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetJarInfoRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetJarInfoResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetJarListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetJarListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetMachineDetailRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetMachineDetailResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetMachineListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetMachineListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetPlanTaskListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetPlanTaskListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetPortInfoListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetPortInfoListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetProcessInfoListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetProcessInfoListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAssetRecentMachineInfoRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAssetRecentMachineInfoResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetSystemPackageListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetSystemPackageListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetUserInfoRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetUserInfoResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetUserListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetUserListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetWebAppListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetWebAppListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetWebAppPluginListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetWebAppPluginListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetWebFrameListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetWebFrameListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetWebLocationInfoRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetWebLocationInfoResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetWebLocationListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetWebLocationListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetWebServiceInfoListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetWebServiceInfoListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetWebServiceProcessListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetWebServiceProcessListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackLogInfoRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackLogInfoResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackLogsRequest.h>
@@ -509,12 +559,87 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAccountsResponse> DescribeAccountsOutcome;
                 typedef std::future<DescribeAccountsOutcome> DescribeAccountsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeAccountsRequest&, DescribeAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetAppListResponse> DescribeAssetAppListOutcome;
+                typedef std::future<DescribeAssetAppListOutcome> DescribeAssetAppListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAssetAppListRequest&, DescribeAssetAppListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetAppListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetAppProcessListResponse> DescribeAssetAppProcessListOutcome;
+                typedef std::future<DescribeAssetAppProcessListOutcome> DescribeAssetAppProcessListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAssetAppProcessListRequest&, DescribeAssetAppProcessListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetAppProcessListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetCoreModuleInfoResponse> DescribeAssetCoreModuleInfoOutcome;
+                typedef std::future<DescribeAssetCoreModuleInfoOutcome> DescribeAssetCoreModuleInfoOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAssetCoreModuleInfoRequest&, DescribeAssetCoreModuleInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetCoreModuleInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetCoreModuleListResponse> DescribeAssetCoreModuleListOutcome;
+                typedef std::future<DescribeAssetCoreModuleListOutcome> DescribeAssetCoreModuleListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAssetCoreModuleListRequest&, DescribeAssetCoreModuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetCoreModuleListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetDatabaseInfoResponse> DescribeAssetDatabaseInfoOutcome;
+                typedef std::future<DescribeAssetDatabaseInfoOutcome> DescribeAssetDatabaseInfoOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAssetDatabaseInfoRequest&, DescribeAssetDatabaseInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetDatabaseInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetDatabaseListResponse> DescribeAssetDatabaseListOutcome;
+                typedef std::future<DescribeAssetDatabaseListOutcome> DescribeAssetDatabaseListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAssetDatabaseListRequest&, DescribeAssetDatabaseListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetDatabaseListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetEnvListResponse> DescribeAssetEnvListOutcome;
+                typedef std::future<DescribeAssetEnvListOutcome> DescribeAssetEnvListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAssetEnvListRequest&, DescribeAssetEnvListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetEnvListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAssetInfoResponse> DescribeAssetInfoOutcome;
                 typedef std::future<DescribeAssetInfoOutcome> DescribeAssetInfoOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeAssetInfoRequest&, DescribeAssetInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetInitServiceListResponse> DescribeAssetInitServiceListOutcome;
+                typedef std::future<DescribeAssetInitServiceListOutcome> DescribeAssetInitServiceListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAssetInitServiceListRequest&, DescribeAssetInitServiceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetInitServiceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetJarInfoResponse> DescribeAssetJarInfoOutcome;
+                typedef std::future<DescribeAssetJarInfoOutcome> DescribeAssetJarInfoOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAssetJarInfoRequest&, DescribeAssetJarInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetJarInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetJarListResponse> DescribeAssetJarListOutcome;
+                typedef std::future<DescribeAssetJarListOutcome> DescribeAssetJarListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAssetJarListRequest&, DescribeAssetJarListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetJarListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetMachineDetailResponse> DescribeAssetMachineDetailOutcome;
+                typedef std::future<DescribeAssetMachineDetailOutcome> DescribeAssetMachineDetailOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAssetMachineDetailRequest&, DescribeAssetMachineDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetMachineDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetMachineListResponse> DescribeAssetMachineListOutcome;
+                typedef std::future<DescribeAssetMachineListOutcome> DescribeAssetMachineListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAssetMachineListRequest&, DescribeAssetMachineListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetMachineListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetPlanTaskListResponse> DescribeAssetPlanTaskListOutcome;
+                typedef std::future<DescribeAssetPlanTaskListOutcome> DescribeAssetPlanTaskListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAssetPlanTaskListRequest&, DescribeAssetPlanTaskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetPlanTaskListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetPortInfoListResponse> DescribeAssetPortInfoListOutcome;
+                typedef std::future<DescribeAssetPortInfoListOutcome> DescribeAssetPortInfoListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAssetPortInfoListRequest&, DescribeAssetPortInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetPortInfoListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetProcessInfoListResponse> DescribeAssetProcessInfoListOutcome;
+                typedef std::future<DescribeAssetProcessInfoListOutcome> DescribeAssetProcessInfoListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAssetProcessInfoListRequest&, DescribeAssetProcessInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetProcessInfoListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAssetRecentMachineInfoResponse> DescribeAssetRecentMachineInfoOutcome;
                 typedef std::future<DescribeAssetRecentMachineInfoOutcome> DescribeAssetRecentMachineInfoOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeAssetRecentMachineInfoRequest&, DescribeAssetRecentMachineInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetRecentMachineInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetSystemPackageListResponse> DescribeAssetSystemPackageListOutcome;
+                typedef std::future<DescribeAssetSystemPackageListOutcome> DescribeAssetSystemPackageListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAssetSystemPackageListRequest&, DescribeAssetSystemPackageListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetSystemPackageListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetUserInfoResponse> DescribeAssetUserInfoOutcome;
+                typedef std::future<DescribeAssetUserInfoOutcome> DescribeAssetUserInfoOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAssetUserInfoRequest&, DescribeAssetUserInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetUserInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetUserListResponse> DescribeAssetUserListOutcome;
+                typedef std::future<DescribeAssetUserListOutcome> DescribeAssetUserListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAssetUserListRequest&, DescribeAssetUserListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetUserListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetWebAppListResponse> DescribeAssetWebAppListOutcome;
+                typedef std::future<DescribeAssetWebAppListOutcome> DescribeAssetWebAppListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAssetWebAppListRequest&, DescribeAssetWebAppListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetWebAppListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetWebAppPluginListResponse> DescribeAssetWebAppPluginListOutcome;
+                typedef std::future<DescribeAssetWebAppPluginListOutcome> DescribeAssetWebAppPluginListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAssetWebAppPluginListRequest&, DescribeAssetWebAppPluginListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetWebAppPluginListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetWebFrameListResponse> DescribeAssetWebFrameListOutcome;
+                typedef std::future<DescribeAssetWebFrameListOutcome> DescribeAssetWebFrameListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAssetWebFrameListRequest&, DescribeAssetWebFrameListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetWebFrameListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetWebLocationInfoResponse> DescribeAssetWebLocationInfoOutcome;
+                typedef std::future<DescribeAssetWebLocationInfoOutcome> DescribeAssetWebLocationInfoOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAssetWebLocationInfoRequest&, DescribeAssetWebLocationInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetWebLocationInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetWebLocationListResponse> DescribeAssetWebLocationListOutcome;
+                typedef std::future<DescribeAssetWebLocationListOutcome> DescribeAssetWebLocationListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAssetWebLocationListRequest&, DescribeAssetWebLocationListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetWebLocationListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetWebServiceInfoListResponse> DescribeAssetWebServiceInfoListOutcome;
+                typedef std::future<DescribeAssetWebServiceInfoListOutcome> DescribeAssetWebServiceInfoListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAssetWebServiceInfoListRequest&, DescribeAssetWebServiceInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetWebServiceInfoListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetWebServiceProcessListResponse> DescribeAssetWebServiceProcessListOutcome;
+                typedef std::future<DescribeAssetWebServiceProcessListOutcome> DescribeAssetWebServiceProcessListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAssetWebServiceProcessListRequest&, DescribeAssetWebServiceProcessListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetWebServiceProcessListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAttackLogInfoResponse> DescribeAttackLogInfoOutcome;
                 typedef std::future<DescribeAttackLogInfoOutcome> DescribeAttackLogInfoOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeAttackLogInfoRequest&, DescribeAttackLogInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackLogInfoAsyncHandler;
@@ -1271,6 +1396,69 @@ namespace TencentCloud
                 DescribeAccountsOutcomeCallable DescribeAccountsCallable(const Model::DescribeAccountsRequest& request);
 
                 /**
+                 *查询应用列表
+                 * @param req DescribeAssetAppListRequest
+                 * @return DescribeAssetAppListOutcome
+                 */
+                DescribeAssetAppListOutcome DescribeAssetAppList(const Model::DescribeAssetAppListRequest &request);
+                void DescribeAssetAppListAsync(const Model::DescribeAssetAppListRequest& request, const DescribeAssetAppListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetAppListOutcomeCallable DescribeAssetAppListCallable(const Model::DescribeAssetAppListRequest& request);
+
+                /**
+                 *获取软件关联进程列表
+                 * @param req DescribeAssetAppProcessListRequest
+                 * @return DescribeAssetAppProcessListOutcome
+                 */
+                DescribeAssetAppProcessListOutcome DescribeAssetAppProcessList(const Model::DescribeAssetAppProcessListRequest &request);
+                void DescribeAssetAppProcessListAsync(const Model::DescribeAssetAppProcessListRequest& request, const DescribeAssetAppProcessListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetAppProcessListOutcomeCallable DescribeAssetAppProcessListCallable(const Model::DescribeAssetAppProcessListRequest& request);
+
+                /**
+                 *获取内核模块详情
+                 * @param req DescribeAssetCoreModuleInfoRequest
+                 * @return DescribeAssetCoreModuleInfoOutcome
+                 */
+                DescribeAssetCoreModuleInfoOutcome DescribeAssetCoreModuleInfo(const Model::DescribeAssetCoreModuleInfoRequest &request);
+                void DescribeAssetCoreModuleInfoAsync(const Model::DescribeAssetCoreModuleInfoRequest& request, const DescribeAssetCoreModuleInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetCoreModuleInfoOutcomeCallable DescribeAssetCoreModuleInfoCallable(const Model::DescribeAssetCoreModuleInfoRequest& request);
+
+                /**
+                 *查询资产管理内核模块列表
+                 * @param req DescribeAssetCoreModuleListRequest
+                 * @return DescribeAssetCoreModuleListOutcome
+                 */
+                DescribeAssetCoreModuleListOutcome DescribeAssetCoreModuleList(const Model::DescribeAssetCoreModuleListRequest &request);
+                void DescribeAssetCoreModuleListAsync(const Model::DescribeAssetCoreModuleListRequest& request, const DescribeAssetCoreModuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetCoreModuleListOutcomeCallable DescribeAssetCoreModuleListCallable(const Model::DescribeAssetCoreModuleListRequest& request);
+
+                /**
+                 *获取资产管理数据库详情
+                 * @param req DescribeAssetDatabaseInfoRequest
+                 * @return DescribeAssetDatabaseInfoOutcome
+                 */
+                DescribeAssetDatabaseInfoOutcome DescribeAssetDatabaseInfo(const Model::DescribeAssetDatabaseInfoRequest &request);
+                void DescribeAssetDatabaseInfoAsync(const Model::DescribeAssetDatabaseInfoRequest& request, const DescribeAssetDatabaseInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetDatabaseInfoOutcomeCallable DescribeAssetDatabaseInfoCallable(const Model::DescribeAssetDatabaseInfoRequest& request);
+
+                /**
+                 *查询资产管理数据库列表
+                 * @param req DescribeAssetDatabaseListRequest
+                 * @return DescribeAssetDatabaseListOutcome
+                 */
+                DescribeAssetDatabaseListOutcome DescribeAssetDatabaseList(const Model::DescribeAssetDatabaseListRequest &request);
+                void DescribeAssetDatabaseListAsync(const Model::DescribeAssetDatabaseListRequest& request, const DescribeAssetDatabaseListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetDatabaseListOutcomeCallable DescribeAssetDatabaseListCallable(const Model::DescribeAssetDatabaseListRequest& request);
+
+                /**
+                 *查询资产管理环境变量列表
+                 * @param req DescribeAssetEnvListRequest
+                 * @return DescribeAssetEnvListOutcome
+                 */
+                DescribeAssetEnvListOutcome DescribeAssetEnvList(const Model::DescribeAssetEnvListRequest &request);
+                void DescribeAssetEnvListAsync(const Model::DescribeAssetEnvListRequest& request, const DescribeAssetEnvListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetEnvListOutcomeCallable DescribeAssetEnvListCallable(const Model::DescribeAssetEnvListRequest& request);
+
+                /**
                  *获取资产数量： 主机数、账号数、端口数、进程数、软件数、数据库数、Web应用数、Web框架数、Web服务数、Web站点数
                  * @param req DescribeAssetInfoRequest
                  * @return DescribeAssetInfoOutcome
@@ -1280,6 +1468,78 @@ namespace TencentCloud
                 DescribeAssetInfoOutcomeCallable DescribeAssetInfoCallable(const Model::DescribeAssetInfoRequest& request);
 
                 /**
+                 *查询资产管理启动服务列表
+                 * @param req DescribeAssetInitServiceListRequest
+                 * @return DescribeAssetInitServiceListOutcome
+                 */
+                DescribeAssetInitServiceListOutcome DescribeAssetInitServiceList(const Model::DescribeAssetInitServiceListRequest &request);
+                void DescribeAssetInitServiceListAsync(const Model::DescribeAssetInitServiceListRequest& request, const DescribeAssetInitServiceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetInitServiceListOutcomeCallable DescribeAssetInitServiceListCallable(const Model::DescribeAssetInitServiceListRequest& request);
+
+                /**
+                 *获取Jar包详情
+                 * @param req DescribeAssetJarInfoRequest
+                 * @return DescribeAssetJarInfoOutcome
+                 */
+                DescribeAssetJarInfoOutcome DescribeAssetJarInfo(const Model::DescribeAssetJarInfoRequest &request);
+                void DescribeAssetJarInfoAsync(const Model::DescribeAssetJarInfoRequest& request, const DescribeAssetJarInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetJarInfoOutcomeCallable DescribeAssetJarInfoCallable(const Model::DescribeAssetJarInfoRequest& request);
+
+                /**
+                 *查询Jar包列表
+                 * @param req DescribeAssetJarListRequest
+                 * @return DescribeAssetJarListOutcome
+                 */
+                DescribeAssetJarListOutcome DescribeAssetJarList(const Model::DescribeAssetJarListRequest &request);
+                void DescribeAssetJarListAsync(const Model::DescribeAssetJarListRequest& request, const DescribeAssetJarListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetJarListOutcomeCallable DescribeAssetJarListCallable(const Model::DescribeAssetJarListRequest& request);
+
+                /**
+                 *获取资产管理主机资源详细信息
+                 * @param req DescribeAssetMachineDetailRequest
+                 * @return DescribeAssetMachineDetailOutcome
+                 */
+                DescribeAssetMachineDetailOutcome DescribeAssetMachineDetail(const Model::DescribeAssetMachineDetailRequest &request);
+                void DescribeAssetMachineDetailAsync(const Model::DescribeAssetMachineDetailRequest& request, const DescribeAssetMachineDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetMachineDetailOutcomeCallable DescribeAssetMachineDetailCallable(const Model::DescribeAssetMachineDetailRequest& request);
+
+                /**
+                 *获取资产指纹页面的资源监控列表
+                 * @param req DescribeAssetMachineListRequest
+                 * @return DescribeAssetMachineListOutcome
+                 */
+                DescribeAssetMachineListOutcome DescribeAssetMachineList(const Model::DescribeAssetMachineListRequest &request);
+                void DescribeAssetMachineListAsync(const Model::DescribeAssetMachineListRequest& request, const DescribeAssetMachineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetMachineListOutcomeCallable DescribeAssetMachineListCallable(const Model::DescribeAssetMachineListRequest& request);
+
+                /**
+                 *查询资产管理计划任务列表
+                 * @param req DescribeAssetPlanTaskListRequest
+                 * @return DescribeAssetPlanTaskListOutcome
+                 */
+                DescribeAssetPlanTaskListOutcome DescribeAssetPlanTaskList(const Model::DescribeAssetPlanTaskListRequest &request);
+                void DescribeAssetPlanTaskListAsync(const Model::DescribeAssetPlanTaskListRequest& request, const DescribeAssetPlanTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetPlanTaskListOutcomeCallable DescribeAssetPlanTaskListCallable(const Model::DescribeAssetPlanTaskListRequest& request);
+
+                /**
+                 *获取资产管理端口列表
+                 * @param req DescribeAssetPortInfoListRequest
+                 * @return DescribeAssetPortInfoListOutcome
+                 */
+                DescribeAssetPortInfoListOutcome DescribeAssetPortInfoList(const Model::DescribeAssetPortInfoListRequest &request);
+                void DescribeAssetPortInfoListAsync(const Model::DescribeAssetPortInfoListRequest& request, const DescribeAssetPortInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetPortInfoListOutcomeCallable DescribeAssetPortInfoListCallable(const Model::DescribeAssetPortInfoListRequest& request);
+
+                /**
+                 *获取资产管理进程列表
+                 * @param req DescribeAssetProcessInfoListRequest
+                 * @return DescribeAssetProcessInfoListOutcome
+                 */
+                DescribeAssetProcessInfoListOutcome DescribeAssetProcessInfoList(const Model::DescribeAssetProcessInfoListRequest &request);
+                void DescribeAssetProcessInfoListAsync(const Model::DescribeAssetProcessInfoListRequest& request, const DescribeAssetProcessInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetProcessInfoListOutcomeCallable DescribeAssetProcessInfoListCallable(const Model::DescribeAssetProcessInfoListRequest& request);
+
+                /**
                  *获取主机最近趋势情况
                  * @param req DescribeAssetRecentMachineInfoRequest
                  * @return DescribeAssetRecentMachineInfoOutcome
@@ -1287,6 +1547,96 @@ namespace TencentCloud
                 DescribeAssetRecentMachineInfoOutcome DescribeAssetRecentMachineInfo(const Model::DescribeAssetRecentMachineInfoRequest &request);
                 void DescribeAssetRecentMachineInfoAsync(const Model::DescribeAssetRecentMachineInfoRequest& request, const DescribeAssetRecentMachineInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAssetRecentMachineInfoOutcomeCallable DescribeAssetRecentMachineInfoCallable(const Model::DescribeAssetRecentMachineInfoRequest& request);
+
+                /**
+                 *获取资产管理系统安装包列表
+                 * @param req DescribeAssetSystemPackageListRequest
+                 * @return DescribeAssetSystemPackageListOutcome
+                 */
+                DescribeAssetSystemPackageListOutcome DescribeAssetSystemPackageList(const Model::DescribeAssetSystemPackageListRequest &request);
+                void DescribeAssetSystemPackageListAsync(const Model::DescribeAssetSystemPackageListRequest& request, const DescribeAssetSystemPackageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetSystemPackageListOutcomeCallable DescribeAssetSystemPackageListCallable(const Model::DescribeAssetSystemPackageListRequest& request);
+
+                /**
+                 *获取主机账号详情
+                 * @param req DescribeAssetUserInfoRequest
+                 * @return DescribeAssetUserInfoOutcome
+                 */
+                DescribeAssetUserInfoOutcome DescribeAssetUserInfo(const Model::DescribeAssetUserInfoRequest &request);
+                void DescribeAssetUserInfoAsync(const Model::DescribeAssetUserInfoRequest& request, const DescribeAssetUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetUserInfoOutcomeCallable DescribeAssetUserInfoCallable(const Model::DescribeAssetUserInfoRequest& request);
+
+                /**
+                 *获取账号列表
+                 * @param req DescribeAssetUserListRequest
+                 * @return DescribeAssetUserListOutcome
+                 */
+                DescribeAssetUserListOutcome DescribeAssetUserList(const Model::DescribeAssetUserListRequest &request);
+                void DescribeAssetUserListAsync(const Model::DescribeAssetUserListRequest& request, const DescribeAssetUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetUserListOutcomeCallable DescribeAssetUserListCallable(const Model::DescribeAssetUserListRequest& request);
+
+                /**
+                 *获取资产管理Web应用列表
+                 * @param req DescribeAssetWebAppListRequest
+                 * @return DescribeAssetWebAppListOutcome
+                 */
+                DescribeAssetWebAppListOutcome DescribeAssetWebAppList(const Model::DescribeAssetWebAppListRequest &request);
+                void DescribeAssetWebAppListAsync(const Model::DescribeAssetWebAppListRequest& request, const DescribeAssetWebAppListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetWebAppListOutcomeCallable DescribeAssetWebAppListCallable(const Model::DescribeAssetWebAppListRequest& request);
+
+                /**
+                 *获取资产管理Web应用插件列表
+                 * @param req DescribeAssetWebAppPluginListRequest
+                 * @return DescribeAssetWebAppPluginListOutcome
+                 */
+                DescribeAssetWebAppPluginListOutcome DescribeAssetWebAppPluginList(const Model::DescribeAssetWebAppPluginListRequest &request);
+                void DescribeAssetWebAppPluginListAsync(const Model::DescribeAssetWebAppPluginListRequest& request, const DescribeAssetWebAppPluginListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetWebAppPluginListOutcomeCallable DescribeAssetWebAppPluginListCallable(const Model::DescribeAssetWebAppPluginListRequest& request);
+
+                /**
+                 *获取资产管理Web框架列表
+                 * @param req DescribeAssetWebFrameListRequest
+                 * @return DescribeAssetWebFrameListOutcome
+                 */
+                DescribeAssetWebFrameListOutcome DescribeAssetWebFrameList(const Model::DescribeAssetWebFrameListRequest &request);
+                void DescribeAssetWebFrameListAsync(const Model::DescribeAssetWebFrameListRequest& request, const DescribeAssetWebFrameListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetWebFrameListOutcomeCallable DescribeAssetWebFrameListCallable(const Model::DescribeAssetWebFrameListRequest& request);
+
+                /**
+                 *获取Web站点详情
+                 * @param req DescribeAssetWebLocationInfoRequest
+                 * @return DescribeAssetWebLocationInfoOutcome
+                 */
+                DescribeAssetWebLocationInfoOutcome DescribeAssetWebLocationInfo(const Model::DescribeAssetWebLocationInfoRequest &request);
+                void DescribeAssetWebLocationInfoAsync(const Model::DescribeAssetWebLocationInfoRequest& request, const DescribeAssetWebLocationInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetWebLocationInfoOutcomeCallable DescribeAssetWebLocationInfoCallable(const Model::DescribeAssetWebLocationInfoRequest& request);
+
+                /**
+                 *获取Web站点列表
+                 * @param req DescribeAssetWebLocationListRequest
+                 * @return DescribeAssetWebLocationListOutcome
+                 */
+                DescribeAssetWebLocationListOutcome DescribeAssetWebLocationList(const Model::DescribeAssetWebLocationListRequest &request);
+                void DescribeAssetWebLocationListAsync(const Model::DescribeAssetWebLocationListRequest& request, const DescribeAssetWebLocationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetWebLocationListOutcomeCallable DescribeAssetWebLocationListCallable(const Model::DescribeAssetWebLocationListRequest& request);
+
+                /**
+                 *查询资产管理Web服务列表
+                 * @param req DescribeAssetWebServiceInfoListRequest
+                 * @return DescribeAssetWebServiceInfoListOutcome
+                 */
+                DescribeAssetWebServiceInfoListOutcome DescribeAssetWebServiceInfoList(const Model::DescribeAssetWebServiceInfoListRequest &request);
+                void DescribeAssetWebServiceInfoListAsync(const Model::DescribeAssetWebServiceInfoListRequest& request, const DescribeAssetWebServiceInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetWebServiceInfoListOutcomeCallable DescribeAssetWebServiceInfoListCallable(const Model::DescribeAssetWebServiceInfoListRequest& request);
+
+                /**
+                 *获取Web服务关联进程列表
+                 * @param req DescribeAssetWebServiceProcessListRequest
+                 * @return DescribeAssetWebServiceProcessListOutcome
+                 */
+                DescribeAssetWebServiceProcessListOutcome DescribeAssetWebServiceProcessList(const Model::DescribeAssetWebServiceProcessListRequest &request);
+                void DescribeAssetWebServiceProcessListAsync(const Model::DescribeAssetWebServiceProcessListRequest& request, const DescribeAssetWebServiceProcessListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetWebServiceProcessListOutcomeCallable DescribeAssetWebServiceProcessListCallable(const Model::DescribeAssetWebServiceProcessListRequest& request);
 
                 /**
                  *网络攻击日志详情

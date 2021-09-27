@@ -2405,6 +2405,49 @@ IotcloudClient::RetryDeviceFirmwareTaskOutcomeCallable IotcloudClient::RetryDevi
     return task->get_future();
 }
 
+IotcloudClient::SetProductsForbiddenStatusOutcome IotcloudClient::SetProductsForbiddenStatus(const SetProductsForbiddenStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetProductsForbiddenStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetProductsForbiddenStatusResponse rsp = SetProductsForbiddenStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetProductsForbiddenStatusOutcome(rsp);
+        else
+            return SetProductsForbiddenStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return SetProductsForbiddenStatusOutcome(outcome.GetError());
+    }
+}
+
+void IotcloudClient::SetProductsForbiddenStatusAsync(const SetProductsForbiddenStatusRequest& request, const SetProductsForbiddenStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetProductsForbiddenStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotcloudClient::SetProductsForbiddenStatusOutcomeCallable IotcloudClient::SetProductsForbiddenStatusCallable(const SetProductsForbiddenStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetProductsForbiddenStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->SetProductsForbiddenStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotcloudClient::UnbindDevicesOutcome IotcloudClient::UnbindDevices(const UnbindDevicesRequest &request)
 {
     auto outcome = MakeRequest(request, "UnbindDevices");
@@ -2527,6 +2570,49 @@ IotcloudClient::UpdateDeviceShadowOutcomeCallable IotcloudClient::UpdateDeviceSh
         [this, request]()
         {
             return this->UpdateDeviceShadow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotcloudClient::UpdateDevicesEnableStateOutcome IotcloudClient::UpdateDevicesEnableState(const UpdateDevicesEnableStateRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateDevicesEnableState");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateDevicesEnableStateResponse rsp = UpdateDevicesEnableStateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateDevicesEnableStateOutcome(rsp);
+        else
+            return UpdateDevicesEnableStateOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateDevicesEnableStateOutcome(outcome.GetError());
+    }
+}
+
+void IotcloudClient::UpdateDevicesEnableStateAsync(const UpdateDevicesEnableStateRequest& request, const UpdateDevicesEnableStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateDevicesEnableState(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotcloudClient::UpdateDevicesEnableStateOutcomeCallable IotcloudClient::UpdateDevicesEnableStateCallable(const UpdateDevicesEnableStateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateDevicesEnableStateOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateDevicesEnableState(request);
         }
     );
 

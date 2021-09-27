@@ -104,6 +104,24 @@ namespace TencentCloud
                      */
                     bool SalesNameHasBeenSet() const;
 
+                    /**
+                     * 获取添加了此外部联系人的企业成员的归属部门id列表
+                     * @return DepartmentIdList 添加了此外部联系人的企业成员的归属部门id列表
+                     */
+                    std::vector<int64_t> GetDepartmentIdList() const;
+
+                    /**
+                     * 设置添加了此外部联系人的企业成员的归属部门id列表
+                     * @param DepartmentIdList 添加了此外部联系人的企业成员的归属部门id列表
+                     */
+                    void SetDepartmentIdList(const std::vector<int64_t>& _departmentIdList);
+
+                    /**
+                     * 判断参数 DepartmentIdList 是否已赋值
+                     * @return DepartmentIdList 是否已赋值
+                     */
+                    bool DepartmentIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +142,12 @@ namespace TencentCloud
                      */
                     std::string m_salesName;
                     bool m_salesNameHasBeenSet;
+
+                    /**
+                     * 添加了此外部联系人的企业成员的归属部门id列表
+                     */
+                    std::vector<int64_t> m_departmentIdList;
+                    bool m_departmentIdListHasBeenSet;
 
                 };
             }

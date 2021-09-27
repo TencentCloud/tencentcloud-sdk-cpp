@@ -23,7 +23,8 @@ using namespace std;
 ExternalContactSimpleInfo::ExternalContactSimpleInfo() :
     m_externalUserIdHasBeenSet(false),
     m_userIdHasBeenSet(false),
-    m_salesNameHasBeenSet(false)
+    m_salesNameHasBeenSet(false),
+    m_departmentIdListHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,19 @@ CoreInternalOutcome ExternalContactSimpleInfo::Deserialize(const rapidjson::Valu
         m_salesNameHasBeenSet = true;
     }
 
+    if (value.HasMember("DepartmentIdList") && !value["DepartmentIdList"].IsNull())
+    {
+        if (!value["DepartmentIdList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ExternalContactSimpleInfo.DepartmentIdList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DepartmentIdList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_departmentIdList.push_back((*itr).GetInt64());
+        }
+        m_departmentIdListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +105,19 @@ void ExternalContactSimpleInfo::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "SalesName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_salesName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_departmentIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DepartmentIdList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_departmentIdList.begin(); itr != m_departmentIdList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 }
@@ -142,5 +169,21 @@ void ExternalContactSimpleInfo::SetSalesName(const string& _salesName)
 bool ExternalContactSimpleInfo::SalesNameHasBeenSet() const
 {
     return m_salesNameHasBeenSet;
+}
+
+vector<int64_t> ExternalContactSimpleInfo::GetDepartmentIdList() const
+{
+    return m_departmentIdList;
+}
+
+void ExternalContactSimpleInfo::SetDepartmentIdList(const vector<int64_t>& _departmentIdList)
+{
+    m_departmentIdList = _departmentIdList;
+    m_departmentIdListHasBeenSet = true;
+}
+
+bool ExternalContactSimpleInfo::DepartmentIdListHasBeenSet() const
+{
+    return m_departmentIdListHasBeenSet;
 }
 

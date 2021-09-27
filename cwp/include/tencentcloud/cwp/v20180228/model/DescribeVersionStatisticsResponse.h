@@ -43,7 +43,43 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取基础版数量
+                     * @return BasicVersionNum 基础版数量
+                     */
+                    uint64_t GetBasicVersionNum() const;
+
+                    /**
+                     * 判断参数 BasicVersionNum 是否已赋值
+                     * @return BasicVersionNum 是否已赋值
+                     */
+                    bool BasicVersionNumHasBeenSet() const;
+
+                    /**
+                     * 获取专业版数量
+                     * @return ProVersionNum 专业版数量
+                     */
+                    uint64_t GetProVersionNum() const;
+
+                    /**
+                     * 判断参数 ProVersionNum 是否已赋值
+                     * @return ProVersionNum 是否已赋值
+                     */
+                    bool ProVersionNumHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 基础版数量
+                     */
+                    uint64_t m_basicVersionNum;
+                    bool m_basicVersionNumHasBeenSet;
+
+                    /**
+                     * 专业版数量
+                     */
+                    uint64_t m_proVersionNum;
+                    bool m_proVersionNumHasBeenSet;
 
                 };
             }

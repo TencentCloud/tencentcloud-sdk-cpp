@@ -133,12 +133,16 @@
 #include <tencentcloud/iotcloud/v20180614/model/ResetDeviceStateResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/RetryDeviceFirmwareTaskRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/RetryDeviceFirmwareTaskResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/SetProductsForbiddenStatusRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/SetProductsForbiddenStatusResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/UnbindDevicesRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/UnbindDevicesResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/UpdateDeviceAvailableStateRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/UpdateDeviceAvailableStateResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/UpdateDeviceShadowRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/UpdateDeviceShadowResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/UpdateDevicesEnableStateRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/UpdateDevicesEnableStateResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/UpdateTopicPolicyRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/UpdateTopicPolicyResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/UploadFirmwareRequest.h>
@@ -322,6 +326,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RetryDeviceFirmwareTaskResponse> RetryDeviceFirmwareTaskOutcome;
                 typedef std::future<RetryDeviceFirmwareTaskOutcome> RetryDeviceFirmwareTaskOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::RetryDeviceFirmwareTaskRequest&, RetryDeviceFirmwareTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RetryDeviceFirmwareTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetProductsForbiddenStatusResponse> SetProductsForbiddenStatusOutcome;
+                typedef std::future<SetProductsForbiddenStatusOutcome> SetProductsForbiddenStatusOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::SetProductsForbiddenStatusRequest&, SetProductsForbiddenStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetProductsForbiddenStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnbindDevicesResponse> UnbindDevicesOutcome;
                 typedef std::future<UnbindDevicesOutcome> UnbindDevicesOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::UnbindDevicesRequest&, UnbindDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindDevicesAsyncHandler;
@@ -331,6 +338,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateDeviceShadowResponse> UpdateDeviceShadowOutcome;
                 typedef std::future<UpdateDeviceShadowOutcome> UpdateDeviceShadowOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::UpdateDeviceShadowRequest&, UpdateDeviceShadowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDeviceShadowAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateDevicesEnableStateResponse> UpdateDevicesEnableStateOutcome;
+                typedef std::future<UpdateDevicesEnableStateOutcome> UpdateDevicesEnableStateOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::UpdateDevicesEnableStateRequest&, UpdateDevicesEnableStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDevicesEnableStateAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateTopicPolicyResponse> UpdateTopicPolicyOutcome;
                 typedef std::future<UpdateTopicPolicyOutcome> UpdateTopicPolicyOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::UpdateTopicPolicyRequest&, UpdateTopicPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTopicPolicyAsyncHandler;
@@ -836,6 +846,15 @@ namespace TencentCloud
                 RetryDeviceFirmwareTaskOutcomeCallable RetryDeviceFirmwareTaskCallable(const Model::RetryDeviceFirmwareTaskRequest& request);
 
                 /**
+                 *批量设置产品禁用状态
+                 * @param req SetProductsForbiddenStatusRequest
+                 * @return SetProductsForbiddenStatusOutcome
+                 */
+                SetProductsForbiddenStatusOutcome SetProductsForbiddenStatus(const Model::SetProductsForbiddenStatusRequest &request);
+                void SetProductsForbiddenStatusAsync(const Model::SetProductsForbiddenStatusRequest& request, const SetProductsForbiddenStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetProductsForbiddenStatusOutcomeCallable SetProductsForbiddenStatusCallable(const Model::SetProductsForbiddenStatusRequest& request);
+
+                /**
                  *本接口（UnbindDevices）用于网关设备批量解绑子设备 
                  * @param req UnbindDevicesRequest
                  * @return UnbindDevicesOutcome
@@ -861,6 +880,15 @@ namespace TencentCloud
                 UpdateDeviceShadowOutcome UpdateDeviceShadow(const Model::UpdateDeviceShadowRequest &request);
                 void UpdateDeviceShadowAsync(const Model::UpdateDeviceShadowRequest& request, const UpdateDeviceShadowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateDeviceShadowOutcomeCallable UpdateDeviceShadowCallable(const Model::UpdateDeviceShadowRequest& request);
+
+                /**
+                 *批量启用或者禁用设备 
+                 * @param req UpdateDevicesEnableStateRequest
+                 * @return UpdateDevicesEnableStateOutcome
+                 */
+                UpdateDevicesEnableStateOutcome UpdateDevicesEnableState(const Model::UpdateDevicesEnableStateRequest &request);
+                void UpdateDevicesEnableStateAsync(const Model::UpdateDevicesEnableStateRequest& request, const UpdateDevicesEnableStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateDevicesEnableStateOutcomeCallable UpdateDevicesEnableStateCallable(const Model::UpdateDevicesEnableStateRequest& request);
 
                 /**
                  *本接口（UpdateTopicPolicy）用于更新Topic信息

@@ -1416,6 +1416,307 @@ CwpClient::DescribeAccountsOutcomeCallable CwpClient::DescribeAccountsCallable(c
     return task->get_future();
 }
 
+CwpClient::DescribeAssetAppListOutcome CwpClient::DescribeAssetAppList(const DescribeAssetAppListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetAppList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetAppListResponse rsp = DescribeAssetAppListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetAppListOutcome(rsp);
+        else
+            return DescribeAssetAppListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetAppListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAssetAppListAsync(const DescribeAssetAppListRequest& request, const DescribeAssetAppListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetAppList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAssetAppListOutcomeCallable CwpClient::DescribeAssetAppListCallable(const DescribeAssetAppListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetAppListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetAppList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeAssetAppProcessListOutcome CwpClient::DescribeAssetAppProcessList(const DescribeAssetAppProcessListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetAppProcessList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetAppProcessListResponse rsp = DescribeAssetAppProcessListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetAppProcessListOutcome(rsp);
+        else
+            return DescribeAssetAppProcessListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetAppProcessListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAssetAppProcessListAsync(const DescribeAssetAppProcessListRequest& request, const DescribeAssetAppProcessListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetAppProcessList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAssetAppProcessListOutcomeCallable CwpClient::DescribeAssetAppProcessListCallable(const DescribeAssetAppProcessListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetAppProcessListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetAppProcessList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeAssetCoreModuleInfoOutcome CwpClient::DescribeAssetCoreModuleInfo(const DescribeAssetCoreModuleInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetCoreModuleInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetCoreModuleInfoResponse rsp = DescribeAssetCoreModuleInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetCoreModuleInfoOutcome(rsp);
+        else
+            return DescribeAssetCoreModuleInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetCoreModuleInfoOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAssetCoreModuleInfoAsync(const DescribeAssetCoreModuleInfoRequest& request, const DescribeAssetCoreModuleInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetCoreModuleInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAssetCoreModuleInfoOutcomeCallable CwpClient::DescribeAssetCoreModuleInfoCallable(const DescribeAssetCoreModuleInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetCoreModuleInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetCoreModuleInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeAssetCoreModuleListOutcome CwpClient::DescribeAssetCoreModuleList(const DescribeAssetCoreModuleListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetCoreModuleList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetCoreModuleListResponse rsp = DescribeAssetCoreModuleListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetCoreModuleListOutcome(rsp);
+        else
+            return DescribeAssetCoreModuleListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetCoreModuleListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAssetCoreModuleListAsync(const DescribeAssetCoreModuleListRequest& request, const DescribeAssetCoreModuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetCoreModuleList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAssetCoreModuleListOutcomeCallable CwpClient::DescribeAssetCoreModuleListCallable(const DescribeAssetCoreModuleListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetCoreModuleListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetCoreModuleList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeAssetDatabaseInfoOutcome CwpClient::DescribeAssetDatabaseInfo(const DescribeAssetDatabaseInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetDatabaseInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetDatabaseInfoResponse rsp = DescribeAssetDatabaseInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetDatabaseInfoOutcome(rsp);
+        else
+            return DescribeAssetDatabaseInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetDatabaseInfoOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAssetDatabaseInfoAsync(const DescribeAssetDatabaseInfoRequest& request, const DescribeAssetDatabaseInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetDatabaseInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAssetDatabaseInfoOutcomeCallable CwpClient::DescribeAssetDatabaseInfoCallable(const DescribeAssetDatabaseInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetDatabaseInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetDatabaseInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeAssetDatabaseListOutcome CwpClient::DescribeAssetDatabaseList(const DescribeAssetDatabaseListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetDatabaseList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetDatabaseListResponse rsp = DescribeAssetDatabaseListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetDatabaseListOutcome(rsp);
+        else
+            return DescribeAssetDatabaseListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetDatabaseListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAssetDatabaseListAsync(const DescribeAssetDatabaseListRequest& request, const DescribeAssetDatabaseListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetDatabaseList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAssetDatabaseListOutcomeCallable CwpClient::DescribeAssetDatabaseListCallable(const DescribeAssetDatabaseListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetDatabaseListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetDatabaseList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeAssetEnvListOutcome CwpClient::DescribeAssetEnvList(const DescribeAssetEnvListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetEnvList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetEnvListResponse rsp = DescribeAssetEnvListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetEnvListOutcome(rsp);
+        else
+            return DescribeAssetEnvListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetEnvListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAssetEnvListAsync(const DescribeAssetEnvListRequest& request, const DescribeAssetEnvListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetEnvList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAssetEnvListOutcomeCallable CwpClient::DescribeAssetEnvListCallable(const DescribeAssetEnvListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetEnvListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetEnvList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DescribeAssetInfoOutcome CwpClient::DescribeAssetInfo(const DescribeAssetInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAssetInfo");
@@ -1459,6 +1760,350 @@ CwpClient::DescribeAssetInfoOutcomeCallable CwpClient::DescribeAssetInfoCallable
     return task->get_future();
 }
 
+CwpClient::DescribeAssetInitServiceListOutcome CwpClient::DescribeAssetInitServiceList(const DescribeAssetInitServiceListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetInitServiceList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetInitServiceListResponse rsp = DescribeAssetInitServiceListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetInitServiceListOutcome(rsp);
+        else
+            return DescribeAssetInitServiceListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetInitServiceListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAssetInitServiceListAsync(const DescribeAssetInitServiceListRequest& request, const DescribeAssetInitServiceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetInitServiceList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAssetInitServiceListOutcomeCallable CwpClient::DescribeAssetInitServiceListCallable(const DescribeAssetInitServiceListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetInitServiceListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetInitServiceList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeAssetJarInfoOutcome CwpClient::DescribeAssetJarInfo(const DescribeAssetJarInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetJarInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetJarInfoResponse rsp = DescribeAssetJarInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetJarInfoOutcome(rsp);
+        else
+            return DescribeAssetJarInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetJarInfoOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAssetJarInfoAsync(const DescribeAssetJarInfoRequest& request, const DescribeAssetJarInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetJarInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAssetJarInfoOutcomeCallable CwpClient::DescribeAssetJarInfoCallable(const DescribeAssetJarInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetJarInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetJarInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeAssetJarListOutcome CwpClient::DescribeAssetJarList(const DescribeAssetJarListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetJarList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetJarListResponse rsp = DescribeAssetJarListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetJarListOutcome(rsp);
+        else
+            return DescribeAssetJarListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetJarListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAssetJarListAsync(const DescribeAssetJarListRequest& request, const DescribeAssetJarListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetJarList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAssetJarListOutcomeCallable CwpClient::DescribeAssetJarListCallable(const DescribeAssetJarListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetJarListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetJarList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeAssetMachineDetailOutcome CwpClient::DescribeAssetMachineDetail(const DescribeAssetMachineDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetMachineDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetMachineDetailResponse rsp = DescribeAssetMachineDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetMachineDetailOutcome(rsp);
+        else
+            return DescribeAssetMachineDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetMachineDetailOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAssetMachineDetailAsync(const DescribeAssetMachineDetailRequest& request, const DescribeAssetMachineDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetMachineDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAssetMachineDetailOutcomeCallable CwpClient::DescribeAssetMachineDetailCallable(const DescribeAssetMachineDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetMachineDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetMachineDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeAssetMachineListOutcome CwpClient::DescribeAssetMachineList(const DescribeAssetMachineListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetMachineList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetMachineListResponse rsp = DescribeAssetMachineListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetMachineListOutcome(rsp);
+        else
+            return DescribeAssetMachineListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetMachineListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAssetMachineListAsync(const DescribeAssetMachineListRequest& request, const DescribeAssetMachineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetMachineList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAssetMachineListOutcomeCallable CwpClient::DescribeAssetMachineListCallable(const DescribeAssetMachineListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetMachineListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetMachineList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeAssetPlanTaskListOutcome CwpClient::DescribeAssetPlanTaskList(const DescribeAssetPlanTaskListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetPlanTaskList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetPlanTaskListResponse rsp = DescribeAssetPlanTaskListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetPlanTaskListOutcome(rsp);
+        else
+            return DescribeAssetPlanTaskListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetPlanTaskListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAssetPlanTaskListAsync(const DescribeAssetPlanTaskListRequest& request, const DescribeAssetPlanTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetPlanTaskList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAssetPlanTaskListOutcomeCallable CwpClient::DescribeAssetPlanTaskListCallable(const DescribeAssetPlanTaskListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetPlanTaskListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetPlanTaskList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeAssetPortInfoListOutcome CwpClient::DescribeAssetPortInfoList(const DescribeAssetPortInfoListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetPortInfoList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetPortInfoListResponse rsp = DescribeAssetPortInfoListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetPortInfoListOutcome(rsp);
+        else
+            return DescribeAssetPortInfoListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetPortInfoListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAssetPortInfoListAsync(const DescribeAssetPortInfoListRequest& request, const DescribeAssetPortInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetPortInfoList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAssetPortInfoListOutcomeCallable CwpClient::DescribeAssetPortInfoListCallable(const DescribeAssetPortInfoListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetPortInfoListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetPortInfoList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeAssetProcessInfoListOutcome CwpClient::DescribeAssetProcessInfoList(const DescribeAssetProcessInfoListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetProcessInfoList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetProcessInfoListResponse rsp = DescribeAssetProcessInfoListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetProcessInfoListOutcome(rsp);
+        else
+            return DescribeAssetProcessInfoListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetProcessInfoListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAssetProcessInfoListAsync(const DescribeAssetProcessInfoListRequest& request, const DescribeAssetProcessInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetProcessInfoList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAssetProcessInfoListOutcomeCallable CwpClient::DescribeAssetProcessInfoListCallable(const DescribeAssetProcessInfoListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetProcessInfoListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetProcessInfoList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DescribeAssetRecentMachineInfoOutcome CwpClient::DescribeAssetRecentMachineInfo(const DescribeAssetRecentMachineInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAssetRecentMachineInfo");
@@ -1495,6 +2140,436 @@ CwpClient::DescribeAssetRecentMachineInfoOutcomeCallable CwpClient::DescribeAsse
         [this, request]()
         {
             return this->DescribeAssetRecentMachineInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeAssetSystemPackageListOutcome CwpClient::DescribeAssetSystemPackageList(const DescribeAssetSystemPackageListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetSystemPackageList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetSystemPackageListResponse rsp = DescribeAssetSystemPackageListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetSystemPackageListOutcome(rsp);
+        else
+            return DescribeAssetSystemPackageListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetSystemPackageListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAssetSystemPackageListAsync(const DescribeAssetSystemPackageListRequest& request, const DescribeAssetSystemPackageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetSystemPackageList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAssetSystemPackageListOutcomeCallable CwpClient::DescribeAssetSystemPackageListCallable(const DescribeAssetSystemPackageListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetSystemPackageListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetSystemPackageList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeAssetUserInfoOutcome CwpClient::DescribeAssetUserInfo(const DescribeAssetUserInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetUserInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetUserInfoResponse rsp = DescribeAssetUserInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetUserInfoOutcome(rsp);
+        else
+            return DescribeAssetUserInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetUserInfoOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAssetUserInfoAsync(const DescribeAssetUserInfoRequest& request, const DescribeAssetUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetUserInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAssetUserInfoOutcomeCallable CwpClient::DescribeAssetUserInfoCallable(const DescribeAssetUserInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetUserInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetUserInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeAssetUserListOutcome CwpClient::DescribeAssetUserList(const DescribeAssetUserListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetUserList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetUserListResponse rsp = DescribeAssetUserListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetUserListOutcome(rsp);
+        else
+            return DescribeAssetUserListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetUserListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAssetUserListAsync(const DescribeAssetUserListRequest& request, const DescribeAssetUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetUserList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAssetUserListOutcomeCallable CwpClient::DescribeAssetUserListCallable(const DescribeAssetUserListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetUserListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetUserList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeAssetWebAppListOutcome CwpClient::DescribeAssetWebAppList(const DescribeAssetWebAppListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetWebAppList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetWebAppListResponse rsp = DescribeAssetWebAppListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetWebAppListOutcome(rsp);
+        else
+            return DescribeAssetWebAppListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetWebAppListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAssetWebAppListAsync(const DescribeAssetWebAppListRequest& request, const DescribeAssetWebAppListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetWebAppList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAssetWebAppListOutcomeCallable CwpClient::DescribeAssetWebAppListCallable(const DescribeAssetWebAppListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetWebAppListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetWebAppList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeAssetWebAppPluginListOutcome CwpClient::DescribeAssetWebAppPluginList(const DescribeAssetWebAppPluginListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetWebAppPluginList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetWebAppPluginListResponse rsp = DescribeAssetWebAppPluginListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetWebAppPluginListOutcome(rsp);
+        else
+            return DescribeAssetWebAppPluginListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetWebAppPluginListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAssetWebAppPluginListAsync(const DescribeAssetWebAppPluginListRequest& request, const DescribeAssetWebAppPluginListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetWebAppPluginList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAssetWebAppPluginListOutcomeCallable CwpClient::DescribeAssetWebAppPluginListCallable(const DescribeAssetWebAppPluginListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetWebAppPluginListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetWebAppPluginList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeAssetWebFrameListOutcome CwpClient::DescribeAssetWebFrameList(const DescribeAssetWebFrameListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetWebFrameList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetWebFrameListResponse rsp = DescribeAssetWebFrameListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetWebFrameListOutcome(rsp);
+        else
+            return DescribeAssetWebFrameListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetWebFrameListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAssetWebFrameListAsync(const DescribeAssetWebFrameListRequest& request, const DescribeAssetWebFrameListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetWebFrameList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAssetWebFrameListOutcomeCallable CwpClient::DescribeAssetWebFrameListCallable(const DescribeAssetWebFrameListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetWebFrameListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetWebFrameList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeAssetWebLocationInfoOutcome CwpClient::DescribeAssetWebLocationInfo(const DescribeAssetWebLocationInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetWebLocationInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetWebLocationInfoResponse rsp = DescribeAssetWebLocationInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetWebLocationInfoOutcome(rsp);
+        else
+            return DescribeAssetWebLocationInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetWebLocationInfoOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAssetWebLocationInfoAsync(const DescribeAssetWebLocationInfoRequest& request, const DescribeAssetWebLocationInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetWebLocationInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAssetWebLocationInfoOutcomeCallable CwpClient::DescribeAssetWebLocationInfoCallable(const DescribeAssetWebLocationInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetWebLocationInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetWebLocationInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeAssetWebLocationListOutcome CwpClient::DescribeAssetWebLocationList(const DescribeAssetWebLocationListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetWebLocationList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetWebLocationListResponse rsp = DescribeAssetWebLocationListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetWebLocationListOutcome(rsp);
+        else
+            return DescribeAssetWebLocationListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetWebLocationListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAssetWebLocationListAsync(const DescribeAssetWebLocationListRequest& request, const DescribeAssetWebLocationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetWebLocationList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAssetWebLocationListOutcomeCallable CwpClient::DescribeAssetWebLocationListCallable(const DescribeAssetWebLocationListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetWebLocationListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetWebLocationList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeAssetWebServiceInfoListOutcome CwpClient::DescribeAssetWebServiceInfoList(const DescribeAssetWebServiceInfoListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetWebServiceInfoList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetWebServiceInfoListResponse rsp = DescribeAssetWebServiceInfoListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetWebServiceInfoListOutcome(rsp);
+        else
+            return DescribeAssetWebServiceInfoListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetWebServiceInfoListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAssetWebServiceInfoListAsync(const DescribeAssetWebServiceInfoListRequest& request, const DescribeAssetWebServiceInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetWebServiceInfoList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAssetWebServiceInfoListOutcomeCallable CwpClient::DescribeAssetWebServiceInfoListCallable(const DescribeAssetWebServiceInfoListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetWebServiceInfoListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetWebServiceInfoList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeAssetWebServiceProcessListOutcome CwpClient::DescribeAssetWebServiceProcessList(const DescribeAssetWebServiceProcessListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetWebServiceProcessList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetWebServiceProcessListResponse rsp = DescribeAssetWebServiceProcessListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetWebServiceProcessListOutcome(rsp);
+        else
+            return DescribeAssetWebServiceProcessListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetWebServiceProcessListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAssetWebServiceProcessListAsync(const DescribeAssetWebServiceProcessListRequest& request, const DescribeAssetWebServiceProcessListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetWebServiceProcessList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAssetWebServiceProcessListOutcomeCallable CwpClient::DescribeAssetWebServiceProcessListCallable(const DescribeAssetWebServiceProcessListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetWebServiceProcessListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetWebServiceProcessList(request);
         }
     );
 

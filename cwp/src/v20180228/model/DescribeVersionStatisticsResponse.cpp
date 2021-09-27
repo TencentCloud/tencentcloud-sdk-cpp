@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
-DescribeVersionStatisticsResponse::DescribeVersionStatisticsResponse()
+DescribeVersionStatisticsResponse::DescribeVersionStatisticsResponse() :
+    m_basicVersionNumHasBeenSet(false),
+    m_proVersionNumHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,26 @@ CoreInternalOutcome DescribeVersionStatisticsResponse::Deserialize(const string 
     }
 
 
+    if (rsp.HasMember("BasicVersionNum") && !rsp["BasicVersionNum"].IsNull())
+    {
+        if (!rsp["BasicVersionNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BasicVersionNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_basicVersionNum = rsp["BasicVersionNum"].GetUint64();
+        m_basicVersionNumHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ProVersionNum") && !rsp["ProVersionNum"].IsNull())
+    {
+        if (!rsp["ProVersionNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProVersionNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_proVersionNum = rsp["ProVersionNum"].GetUint64();
+        m_proVersionNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +92,22 @@ string DescribeVersionStatisticsResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_basicVersionNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BasicVersionNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_basicVersionNum, allocator);
+    }
+
+    if (m_proVersionNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProVersionNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_proVersionNum, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +120,25 @@ string DescribeVersionStatisticsResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t DescribeVersionStatisticsResponse::GetBasicVersionNum() const
+{
+    return m_basicVersionNum;
+}
+
+bool DescribeVersionStatisticsResponse::BasicVersionNumHasBeenSet() const
+{
+    return m_basicVersionNumHasBeenSet;
+}
+
+uint64_t DescribeVersionStatisticsResponse::GetProVersionNum() const
+{
+    return m_proVersionNum;
+}
+
+bool DescribeVersionStatisticsResponse::ProVersionNumHasBeenSet() const
+{
+    return m_proVersionNumHasBeenSet;
+}
 
 

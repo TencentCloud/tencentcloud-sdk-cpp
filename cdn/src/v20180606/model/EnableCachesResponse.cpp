@@ -24,7 +24,8 @@ using namespace TencentCloud::Cdn::V20180606::Model;
 using namespace std;
 
 EnableCachesResponse::EnableCachesResponse() :
-    m_cacheOptResultHasBeenSet(false)
+    m_cacheOptResultHasBeenSet(false),
+    m_taskIdHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,16 @@ CoreInternalOutcome EnableCachesResponse::Deserialize(const string &payload)
         m_cacheOptResultHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
+    {
+        if (!rsp["TaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskId = string(rsp["TaskId"].GetString());
+        m_taskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +107,14 @@ string EnableCachesResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cacheOptResult.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_taskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -118,6 +137,16 @@ CacheOptResult EnableCachesResponse::GetCacheOptResult() const
 bool EnableCachesResponse::CacheOptResultHasBeenSet() const
 {
     return m_cacheOptResultHasBeenSet;
+}
+
+string EnableCachesResponse::GetTaskId() const
+{
+    return m_taskId;
+}
+
+bool EnableCachesResponse::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
 }
 
 

@@ -39,7 +39,13 @@ CreateDBInstanceHourRequest::CreateDBInstanceHourRequest() :
     m_tagsHasBeenSet(false),
     m_cloneHasBeenSet(false),
     m_fatherHasBeenSet(false),
-    m_securityGroupHasBeenSet(false)
+    m_securityGroupHasBeenSet(false),
+    m_restoreTimeHasBeenSet(false),
+    m_instanceNameHasBeenSet(false),
+    m_availabilityZoneListHasBeenSet(false),
+    m_mongosCpuHasBeenSet(false),
+    m_mongosMemoryHasBeenSet(false),
+    m_mongosNodeNumHasBeenSet(false)
 {
 }
 
@@ -196,6 +202,59 @@ string CreateDBInstanceHourRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_restoreTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RestoreTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_restoreTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_availabilityZoneListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvailabilityZoneList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_availabilityZoneList.begin(); itr != m_availabilityZoneList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_mongosCpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MongosCpu";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_mongosCpu, allocator);
+    }
+
+    if (m_mongosMemoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MongosMemory";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_mongosMemory, allocator);
+    }
+
+    if (m_mongosNodeNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MongosNodeNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_mongosNodeNum, allocator);
     }
 
 
@@ -476,6 +535,102 @@ void CreateDBInstanceHourRequest::SetSecurityGroup(const vector<string>& _securi
 bool CreateDBInstanceHourRequest::SecurityGroupHasBeenSet() const
 {
     return m_securityGroupHasBeenSet;
+}
+
+string CreateDBInstanceHourRequest::GetRestoreTime() const
+{
+    return m_restoreTime;
+}
+
+void CreateDBInstanceHourRequest::SetRestoreTime(const string& _restoreTime)
+{
+    m_restoreTime = _restoreTime;
+    m_restoreTimeHasBeenSet = true;
+}
+
+bool CreateDBInstanceHourRequest::RestoreTimeHasBeenSet() const
+{
+    return m_restoreTimeHasBeenSet;
+}
+
+string CreateDBInstanceHourRequest::GetInstanceName() const
+{
+    return m_instanceName;
+}
+
+void CreateDBInstanceHourRequest::SetInstanceName(const string& _instanceName)
+{
+    m_instanceName = _instanceName;
+    m_instanceNameHasBeenSet = true;
+}
+
+bool CreateDBInstanceHourRequest::InstanceNameHasBeenSet() const
+{
+    return m_instanceNameHasBeenSet;
+}
+
+vector<string> CreateDBInstanceHourRequest::GetAvailabilityZoneList() const
+{
+    return m_availabilityZoneList;
+}
+
+void CreateDBInstanceHourRequest::SetAvailabilityZoneList(const vector<string>& _availabilityZoneList)
+{
+    m_availabilityZoneList = _availabilityZoneList;
+    m_availabilityZoneListHasBeenSet = true;
+}
+
+bool CreateDBInstanceHourRequest::AvailabilityZoneListHasBeenSet() const
+{
+    return m_availabilityZoneListHasBeenSet;
+}
+
+uint64_t CreateDBInstanceHourRequest::GetMongosCpu() const
+{
+    return m_mongosCpu;
+}
+
+void CreateDBInstanceHourRequest::SetMongosCpu(const uint64_t& _mongosCpu)
+{
+    m_mongosCpu = _mongosCpu;
+    m_mongosCpuHasBeenSet = true;
+}
+
+bool CreateDBInstanceHourRequest::MongosCpuHasBeenSet() const
+{
+    return m_mongosCpuHasBeenSet;
+}
+
+uint64_t CreateDBInstanceHourRequest::GetMongosMemory() const
+{
+    return m_mongosMemory;
+}
+
+void CreateDBInstanceHourRequest::SetMongosMemory(const uint64_t& _mongosMemory)
+{
+    m_mongosMemory = _mongosMemory;
+    m_mongosMemoryHasBeenSet = true;
+}
+
+bool CreateDBInstanceHourRequest::MongosMemoryHasBeenSet() const
+{
+    return m_mongosMemoryHasBeenSet;
+}
+
+uint64_t CreateDBInstanceHourRequest::GetMongosNodeNum() const
+{
+    return m_mongosNodeNum;
+}
+
+void CreateDBInstanceHourRequest::SetMongosNodeNum(const uint64_t& _mongosNodeNum)
+{
+    m_mongosNodeNum = _mongosNodeNum;
+    m_mongosNodeNumHasBeenSet = true;
+}
+
+bool CreateDBInstanceHourRequest::MongosNodeNumHasBeenSet() const
+{
+    return m_mongosNodeNumHasBeenSet;
 }
 
 

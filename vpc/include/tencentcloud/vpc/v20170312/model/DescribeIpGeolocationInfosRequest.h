@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询IP地址列表，支持IPv4和IPv6。
-                     * @return AddressIps 查询IP地址列表，支持IPv4和IPv6。
+                     * 获取需查询的IP地址列表，支持IPv4和IPv6。批量查询的IP地址上限为100个。
+                     * @return AddressIps 需查询的IP地址列表，支持IPv4和IPv6。批量查询的IP地址上限为100个。
                      */
                     std::vector<std::string> GetAddressIps() const;
 
                     /**
-                     * 设置查询IP地址列表，支持IPv4和IPv6。
-                     * @param AddressIps 查询IP地址列表，支持IPv4和IPv6。
+                     * 设置需查询的IP地址列表，支持IPv4和IPv6。批量查询的IP地址上限为100个。
+                     * @param AddressIps 需查询的IP地址列表，支持IPv4和IPv6。批量查询的IP地址上限为100个。
                      */
                     void SetAddressIps(const std::vector<std::string>& _addressIps);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool AddressIpsHasBeenSet() const;
 
                     /**
-                     * 获取查询IP地址的字段信息，包括"Country","Province","City","Region","Isp","AsName","AsId"
-                     * @return Fields 查询IP地址的字段信息，包括"Country","Province","City","Region","Isp","AsName","AsId"
+                     * 获取需查询的IP地址的字段信息。
+                     * @return Fields 需查询的IP地址的字段信息。
                      */
                     IpField GetFields() const;
 
                     /**
-                     * 设置查询IP地址的字段信息，包括"Country","Province","City","Region","Isp","AsName","AsId"
-                     * @param Fields 查询IP地址的字段信息，包括"Country","Province","City","Region","Isp","AsName","AsId"
+                     * 设置需查询的IP地址的字段信息。
+                     * @param Fields 需查询的IP地址的字段信息。
                      */
                     void SetFields(const IpField& _fields);
 
@@ -82,13 +82,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询IP地址列表，支持IPv4和IPv6。
+                     * 需查询的IP地址列表，支持IPv4和IPv6。批量查询的IP地址上限为100个。
                      */
                     std::vector<std::string> m_addressIps;
                     bool m_addressIpsHasBeenSet;
 
                     /**
-                     * 查询IP地址的字段信息，包括"Country","Province","City","Region","Isp","AsName","AsId"
+                     * 需查询的IP地址的字段信息。
                      */
                     IpField m_fields;
                     bool m_fieldsHasBeenSet;

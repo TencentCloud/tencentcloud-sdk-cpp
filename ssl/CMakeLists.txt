@@ -73,13 +73,14 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/CheckCertificateChainRequest.h
   include/tencentcloud/ssl/v20191205/model/ModifyCertificateAliasResponse.h
   include/tencentcloud/ssl/v20191205/model/DescribeManagerDetailResponse.h
-  include/tencentcloud/ssl/v20191205/model/SubmittedData.h
+  include/tencentcloud/ssl/v20191205/model/ManagerStatusInfo.h
   include/tencentcloud/ssl/v20191205/model/SubmitCertificateInformationRequest.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificatesRequest.h
   include/tencentcloud/ssl/v20191205/model/DescribeManagersRequest.h
   include/tencentcloud/ssl/v20191205/model/CompleteCertificateResponse.h
   include/tencentcloud/ssl/v20191205/model/SubmitCertificateInformationResponse.h
   include/tencentcloud/ssl/v20191205/model/RevokeCertificateRequest.h
+  include/tencentcloud/ssl/v20191205/model/SubmittedData.h
   )
 
 set(ssl_src
@@ -138,13 +139,14 @@ set(ssl_src
   src/v20191205/model/CheckCertificateChainRequest.cpp
   src/v20191205/model/ModifyCertificateAliasResponse.cpp
   src/v20191205/model/DescribeManagerDetailResponse.cpp
-  src/v20191205/model/SubmittedData.cpp
+  src/v20191205/model/ManagerStatusInfo.cpp
   src/v20191205/model/SubmitCertificateInformationRequest.cpp
   src/v20191205/model/DescribeCertificatesRequest.cpp
   src/v20191205/model/DescribeManagersRequest.cpp
   src/v20191205/model/CompleteCertificateResponse.cpp
   src/v20191205/model/SubmitCertificateInformationResponse.cpp
   src/v20191205/model/RevokeCertificateRequest.cpp
+  src/v20191205/model/SubmittedData.cpp
   )
 
 set(ssl_include

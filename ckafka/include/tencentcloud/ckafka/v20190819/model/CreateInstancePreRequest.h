@@ -206,14 +206,14 @@ namespace TencentCloud
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取支持指定版本Kafka版本（0.10.2/1.1.1/2.4.2） 。指定专业版参数specificationsType=pro
-                     * @return KafkaVersion 支持指定版本Kafka版本（0.10.2/1.1.1/2.4.2） 。指定专业版参数specificationsType=pro
+                     * 获取支持指定版本Kafka版本（0.10.2/1.1.1/2.4.1） 。指定专业版参数specificationsType=pro
+                     * @return KafkaVersion 支持指定版本Kafka版本（0.10.2/1.1.1/2.4.1） 。指定专业版参数specificationsType=pro
                      */
                     std::string GetKafkaVersion() const;
 
                     /**
-                     * 设置支持指定版本Kafka版本（0.10.2/1.1.1/2.4.2） 。指定专业版参数specificationsType=pro
-                     * @param KafkaVersion 支持指定版本Kafka版本（0.10.2/1.1.1/2.4.2） 。指定专业版参数specificationsType=pro
+                     * 设置支持指定版本Kafka版本（0.10.2/1.1.1/2.4.1） 。指定专业版参数specificationsType=pro
+                     * @param KafkaVersion 支持指定版本Kafka版本（0.10.2/1.1.1/2.4.1） 。指定专业版参数specificationsType=pro
                      */
                     void SetKafkaVersion(const std::string& _kafkaVersion);
 
@@ -388,7 +388,7 @@ namespace TencentCloud
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 支持指定版本Kafka版本（0.10.2/1.1.1/2.4.2） 。指定专业版参数specificationsType=pro
+                     * 支持指定版本Kafka版本（0.10.2/1.1.1/2.4.1） 。指定专业版参数specificationsType=pro
                      */
                     std::string m_kafkaVersion;
                     bool m_kafkaVersionHasBeenSet;

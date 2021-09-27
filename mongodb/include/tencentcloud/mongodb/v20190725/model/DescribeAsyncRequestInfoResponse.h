@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取状态
-                     * @return Status 状态
+                     * 获取状态。返回参数有：initial-初始化、running-运行中、paused-任务执行失败，已暂停、undoed-任务执行失败，已回滚、failed-任务执行失败, 已终止、success-成功
+                     * @return Status 状态。返回参数有：initial-初始化、running-运行中、paused-任务执行失败，已暂停、undoed-任务执行失败，已回滚、failed-任务执行失败, 已终止、success-成功
                      */
                     std::string GetStatus() const;
 
@@ -58,7 +58,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 状态
+                     * 状态。返回参数有：initial-初始化、running-运行中、paused-任务执行失败，已暂停、undoed-任务执行失败，已回滚、failed-任务执行失败, 已终止、success-成功
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

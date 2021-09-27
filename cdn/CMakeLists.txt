@@ -29,6 +29,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/UrlRecord.h
   include/tencentcloud/cdn/v20180606/model/DescribePushQuotaResponse.h
   include/tencentcloud/cdn/v20180606/model/DescribePurgeQuotaResponse.h
+  include/tencentcloud/cdn/v20180606/model/ScdnSevenLayerRules.h
   include/tencentcloud/cdn/v20180606/model/Authentication.h
   include/tencentcloud/cdn/v20180606/model/DescribeScdnTopDataResponse.h
   include/tencentcloud/cdn/v20180606/model/ImageOptimization.h
@@ -91,6 +92,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/DescribeCdnOriginIpRequest.h
   include/tencentcloud/cdn/v20180606/model/UpdatePayTypeResponse.h
   include/tencentcloud/cdn/v20180606/model/TopicInfo.h
+  include/tencentcloud/cdn/v20180606/model/AdvancedCCRules.h
   include/tencentcloud/cdn/v20180606/model/DescribeDomainsConfigResponse.h
   include/tencentcloud/cdn/v20180606/model/DescribeDiagnoseReportRequest.h
   include/tencentcloud/cdn/v20180606/model/ResourceBillingData.h
@@ -322,6 +324,7 @@ set(cdn_src
   src/v20180606/model/UrlRecord.cpp
   src/v20180606/model/DescribePushQuotaResponse.cpp
   src/v20180606/model/DescribePurgeQuotaResponse.cpp
+  src/v20180606/model/ScdnSevenLayerRules.cpp
   src/v20180606/model/Authentication.cpp
   src/v20180606/model/DescribeScdnTopDataResponse.cpp
   src/v20180606/model/ImageOptimization.cpp
@@ -384,6 +387,7 @@ set(cdn_src
   src/v20180606/model/DescribeCdnOriginIpRequest.cpp
   src/v20180606/model/UpdatePayTypeResponse.cpp
   src/v20180606/model/TopicInfo.cpp
+  src/v20180606/model/AdvancedCCRules.cpp
   src/v20180606/model/DescribeDomainsConfigResponse.cpp
   src/v20180606/model/DescribeDiagnoseReportRequest.cpp
   src/v20180606/model/ResourceBillingData.cpp

@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/cfw/v20190904/model/AddAcRuleRequest.h>
+#include <tencentcloud/cfw/v20190904/model/AddAcRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateAcRulesRequest.h>
 #include <tencentcloud/cfw/v20190904/model/CreateAcRulesResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateChooseVpcsRequest.h>
@@ -31,6 +33,8 @@
 #include <tencentcloud/cfw/v20190904/model/CreateDatabaseWhiteListRulesResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateNatFwInstanceRequest.h>
 #include <tencentcloud/cfw/v20190904/model/CreateNatFwInstanceResponse.h>
+#include <tencentcloud/cfw/v20190904/model/CreateNatFwInstanceWithDomainRequest.h>
+#include <tencentcloud/cfw/v20190904/model/CreateNatFwInstanceWithDomainResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateSecurityGroupApiRulesRequest.h>
 #include <tencentcloud/cfw/v20190904/model/CreateSecurityGroupApiRulesResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateSecurityGroupRulesRequest.h>
@@ -141,6 +145,8 @@
 #include <tencentcloud/cfw/v20190904/model/ModifyTableStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyVPCSwitchStatusRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyVPCSwitchStatusResponse.h>
+#include <tencentcloud/cfw/v20190904/model/RemoveAcRuleRequest.h>
+#include <tencentcloud/cfw/v20190904/model/RemoveAcRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/RunSyncAssetRequest.h>
 #include <tencentcloud/cfw/v20190904/model/RunSyncAssetResponse.h>
 #include <tencentcloud/cfw/v20190904/model/SetNatFwDnatRuleRequest.h>
@@ -163,6 +169,9 @@ namespace TencentCloud
                 CfwClient(const Credential &credential, const std::string &region);
                 CfwClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::AddAcRuleResponse> AddAcRuleOutcome;
+                typedef std::future<AddAcRuleOutcome> AddAcRuleOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::AddAcRuleRequest&, AddAcRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddAcRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAcRulesResponse> CreateAcRulesOutcome;
                 typedef std::future<CreateAcRulesOutcome> CreateAcRulesOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::CreateAcRulesRequest&, CreateAcRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAcRulesAsyncHandler;
@@ -175,6 +184,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateNatFwInstanceResponse> CreateNatFwInstanceOutcome;
                 typedef std::future<CreateNatFwInstanceOutcome> CreateNatFwInstanceOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::CreateNatFwInstanceRequest&, CreateNatFwInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNatFwInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateNatFwInstanceWithDomainResponse> CreateNatFwInstanceWithDomainOutcome;
+                typedef std::future<CreateNatFwInstanceWithDomainOutcome> CreateNatFwInstanceWithDomainOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::CreateNatFwInstanceWithDomainRequest&, CreateNatFwInstanceWithDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNatFwInstanceWithDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSecurityGroupApiRulesResponse> CreateSecurityGroupApiRulesOutcome;
                 typedef std::future<CreateSecurityGroupApiRulesOutcome> CreateSecurityGroupApiRulesOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::CreateSecurityGroupApiRulesRequest&, CreateSecurityGroupApiRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityGroupApiRulesAsyncHandler;
@@ -340,6 +352,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyVPCSwitchStatusResponse> ModifyVPCSwitchStatusOutcome;
                 typedef std::future<ModifyVPCSwitchStatusOutcome> ModifyVPCSwitchStatusOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyVPCSwitchStatusRequest&, ModifyVPCSwitchStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVPCSwitchStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::RemoveAcRuleResponse> RemoveAcRuleOutcome;
+                typedef std::future<RemoveAcRuleOutcome> RemoveAcRuleOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::RemoveAcRuleRequest&, RemoveAcRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveAcRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunSyncAssetResponse> RunSyncAssetOutcome;
                 typedef std::future<RunSyncAssetOutcome> RunSyncAssetOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::RunSyncAssetRequest&, RunSyncAssetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunSyncAssetAsyncHandler;
@@ -354,6 +369,15 @@ namespace TencentCloud
                 typedef std::function<void(const CfwClient*, const Model::StopSecurityGroupRuleDispatchRequest&, StopSecurityGroupRuleDispatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopSecurityGroupRuleDispatchAsyncHandler;
 
 
+
+                /**
+                 *添加互联网边界规则
+                 * @param req AddAcRuleRequest
+                 * @return AddAcRuleOutcome
+                 */
+                AddAcRuleOutcome AddAcRule(const Model::AddAcRuleRequest &request);
+                void AddAcRuleAsync(const Model::AddAcRuleRequest& request, const AddAcRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddAcRuleOutcomeCallable AddAcRuleCallable(const Model::AddAcRuleRequest& request);
 
                 /**
                  *创建规则
@@ -390,6 +414,15 @@ namespace TencentCloud
                 CreateNatFwInstanceOutcome CreateNatFwInstance(const Model::CreateNatFwInstanceRequest &request);
                 void CreateNatFwInstanceAsync(const Model::CreateNatFwInstanceRequest& request, const CreateNatFwInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateNatFwInstanceOutcomeCallable CreateNatFwInstanceCallable(const Model::CreateNatFwInstanceRequest& request);
+
+                /**
+                 *创建防火墙实例和接入域名
+                 * @param req CreateNatFwInstanceWithDomainRequest
+                 * @return CreateNatFwInstanceWithDomainOutcome
+                 */
+                CreateNatFwInstanceWithDomainOutcome CreateNatFwInstanceWithDomain(const Model::CreateNatFwInstanceWithDomainRequest &request);
+                void CreateNatFwInstanceWithDomainAsync(const Model::CreateNatFwInstanceWithDomainRequest& request, const CreateNatFwInstanceWithDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateNatFwInstanceWithDomainOutcomeCallable CreateNatFwInstanceWithDomainCallable(const Model::CreateNatFwInstanceWithDomainRequest& request);
 
                 /**
                  *创建安全组API规则
@@ -896,6 +929,15 @@ namespace TencentCloud
                 ModifyVPCSwitchStatusOutcome ModifyVPCSwitchStatus(const Model::ModifyVPCSwitchStatusRequest &request);
                 void ModifyVPCSwitchStatusAsync(const Model::ModifyVPCSwitchStatusRequest& request, const ModifyVPCSwitchStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyVPCSwitchStatusOutcomeCallable ModifyVPCSwitchStatusCallable(const Model::ModifyVPCSwitchStatusRequest& request);
+
+                /**
+                 *删除互联网边界规则
+                 * @param req RemoveAcRuleRequest
+                 * @return RemoveAcRuleOutcome
+                 */
+                RemoveAcRuleOutcome RemoveAcRule(const Model::RemoveAcRuleRequest &request);
+                void RemoveAcRuleAsync(const Model::RemoveAcRuleRequest& request, const RemoveAcRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RemoveAcRuleOutcomeCallable RemoveAcRuleCallable(const Model::RemoveAcRuleRequest& request);
 
                 /**
                  *同步资产-互联网&VPC

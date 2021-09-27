@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取IP地址信息列表
-                     * @return AddressInfo IP地址信息列表
+                     * 获取IP地址信息列表。
+                     * @return AddressInfo IP地址信息列表。
                      */
                     std::vector<IpGeolocationInfo> GetAddressInfo() const;
 
@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool AddressInfoHasBeenSet() const;
 
                     /**
-                     * 获取IP地址信息个数
-                     * @return Total IP地址信息个数
+                     * 获取IP地址信息个数。
+                     * @return Total IP地址信息个数。
                      */
                     int64_t GetTotal() const;
 
@@ -71,13 +71,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * IP地址信息列表
+                     * IP地址信息列表。
                      */
                     std::vector<IpGeolocationInfo> m_addressInfo;
                     bool m_addressInfoHasBeenSet;
 
                     /**
-                     * IP地址信息个数
+                     * IP地址信息个数。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;

@@ -1029,6 +1029,49 @@ TcbClient::DescribeCloudBaseProjectVersionListOutcomeCallable TcbClient::Describ
     return task->get_future();
 }
 
+TcbClient::DescribeCloudBaseRunAllVpcsOutcome TcbClient::DescribeCloudBaseRunAllVpcs(const DescribeCloudBaseRunAllVpcsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudBaseRunAllVpcs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudBaseRunAllVpcsResponse rsp = DescribeCloudBaseRunAllVpcsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudBaseRunAllVpcsOutcome(rsp);
+        else
+            return DescribeCloudBaseRunAllVpcsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudBaseRunAllVpcsOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeCloudBaseRunAllVpcsAsync(const DescribeCloudBaseRunAllVpcsRequest& request, const DescribeCloudBaseRunAllVpcsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudBaseRunAllVpcs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeCloudBaseRunAllVpcsOutcomeCallable TcbClient::DescribeCloudBaseRunAllVpcsCallable(const DescribeCloudBaseRunAllVpcsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseRunAllVpcsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudBaseRunAllVpcs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DescribeCloudBaseRunConfForGateWayOutcome TcbClient::DescribeCloudBaseRunConfForGateWay(const DescribeCloudBaseRunConfForGateWayRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloudBaseRunConfForGateWay");
@@ -1065,6 +1108,49 @@ TcbClient::DescribeCloudBaseRunConfForGateWayOutcomeCallable TcbClient::Describe
         [this, request]()
         {
             return this->DescribeCloudBaseRunConfForGateWay(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::DescribeCloudBaseRunOperationTypesOutcome TcbClient::DescribeCloudBaseRunOperationTypes(const DescribeCloudBaseRunOperationTypesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudBaseRunOperationTypes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudBaseRunOperationTypesResponse rsp = DescribeCloudBaseRunOperationTypesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudBaseRunOperationTypesOutcome(rsp);
+        else
+            return DescribeCloudBaseRunOperationTypesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudBaseRunOperationTypesOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeCloudBaseRunOperationTypesAsync(const DescribeCloudBaseRunOperationTypesRequest& request, const DescribeCloudBaseRunOperationTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudBaseRunOperationTypes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeCloudBaseRunOperationTypesOutcomeCallable TcbClient::DescribeCloudBaseRunOperationTypesCallable(const DescribeCloudBaseRunOperationTypesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseRunOperationTypesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudBaseRunOperationTypes(request);
         }
     );
 
@@ -1237,6 +1323,49 @@ TcbClient::DescribeCloudBaseRunVersionOutcomeCallable TcbClient::DescribeCloudBa
         [this, request]()
         {
             return this->DescribeCloudBaseRunVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::DescribeCloudBaseRunVersionRsByConditionOutcome TcbClient::DescribeCloudBaseRunVersionRsByCondition(const DescribeCloudBaseRunVersionRsByConditionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudBaseRunVersionRsByCondition");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudBaseRunVersionRsByConditionResponse rsp = DescribeCloudBaseRunVersionRsByConditionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudBaseRunVersionRsByConditionOutcome(rsp);
+        else
+            return DescribeCloudBaseRunVersionRsByConditionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudBaseRunVersionRsByConditionOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeCloudBaseRunVersionRsByConditionAsync(const DescribeCloudBaseRunVersionRsByConditionRequest& request, const DescribeCloudBaseRunVersionRsByConditionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudBaseRunVersionRsByCondition(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeCloudBaseRunVersionRsByConditionOutcomeCallable TcbClient::DescribeCloudBaseRunVersionRsByConditionCallable(const DescribeCloudBaseRunVersionRsByConditionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseRunVersionRsByConditionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudBaseRunVersionRsByCondition(request);
         }
     );
 

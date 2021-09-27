@@ -1,0 +1,356 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/cwp/v20180228/model/AssetSystemPackageInfo.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Cwp::V20180228::Model;
+using namespace std;
+
+AssetSystemPackageInfo::AssetSystemPackageInfo() :
+    m_nameHasBeenSet(false),
+    m_descHasBeenSet(false),
+    m_versionHasBeenSet(false),
+    m_installTimeHasBeenSet(false),
+    m_typeHasBeenSet(false),
+    m_machineNameHasBeenSet(false),
+    m_machineIpHasBeenSet(false),
+    m_osInfoHasBeenSet(false),
+    m_updateTimeHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome AssetSystemPackageInfo::Deserialize(const rapidjson::Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetSystemPackageInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Desc") && !value["Desc"].IsNull())
+    {
+        if (!value["Desc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetSystemPackageInfo.Desc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_desc = string(value["Desc"].GetString());
+        m_descHasBeenSet = true;
+    }
+
+    if (value.HasMember("Version") && !value["Version"].IsNull())
+    {
+        if (!value["Version"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetSystemPackageInfo.Version` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_version = string(value["Version"].GetString());
+        m_versionHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstallTime") && !value["InstallTime"].IsNull())
+    {
+        if (!value["InstallTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetSystemPackageInfo.InstallTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_installTime = string(value["InstallTime"].GetString());
+        m_installTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetSystemPackageInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
+    if (value.HasMember("MachineName") && !value["MachineName"].IsNull())
+    {
+        if (!value["MachineName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetSystemPackageInfo.MachineName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_machineName = string(value["MachineName"].GetString());
+        m_machineNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("MachineIp") && !value["MachineIp"].IsNull())
+    {
+        if (!value["MachineIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetSystemPackageInfo.MachineIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_machineIp = string(value["MachineIp"].GetString());
+        m_machineIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("OsInfo") && !value["OsInfo"].IsNull())
+    {
+        if (!value["OsInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetSystemPackageInfo.OsInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_osInfo = string(value["OsInfo"].GetString());
+        m_osInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetSystemPackageInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(value["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void AssetSystemPackageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
+{
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Desc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_desc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_versionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Version";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_installTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstallTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_installTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_machineNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_machineIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_osInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OsInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_osInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+}
+
+
+string AssetSystemPackageInfo::GetName() const
+{
+    return m_name;
+}
+
+void AssetSystemPackageInfo::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool AssetSystemPackageInfo::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+string AssetSystemPackageInfo::GetDesc() const
+{
+    return m_desc;
+}
+
+void AssetSystemPackageInfo::SetDesc(const string& _desc)
+{
+    m_desc = _desc;
+    m_descHasBeenSet = true;
+}
+
+bool AssetSystemPackageInfo::DescHasBeenSet() const
+{
+    return m_descHasBeenSet;
+}
+
+string AssetSystemPackageInfo::GetVersion() const
+{
+    return m_version;
+}
+
+void AssetSystemPackageInfo::SetVersion(const string& _version)
+{
+    m_version = _version;
+    m_versionHasBeenSet = true;
+}
+
+bool AssetSystemPackageInfo::VersionHasBeenSet() const
+{
+    return m_versionHasBeenSet;
+}
+
+string AssetSystemPackageInfo::GetInstallTime() const
+{
+    return m_installTime;
+}
+
+void AssetSystemPackageInfo::SetInstallTime(const string& _installTime)
+{
+    m_installTime = _installTime;
+    m_installTimeHasBeenSet = true;
+}
+
+bool AssetSystemPackageInfo::InstallTimeHasBeenSet() const
+{
+    return m_installTimeHasBeenSet;
+}
+
+string AssetSystemPackageInfo::GetType() const
+{
+    return m_type;
+}
+
+void AssetSystemPackageInfo::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool AssetSystemPackageInfo::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
+
+string AssetSystemPackageInfo::GetMachineName() const
+{
+    return m_machineName;
+}
+
+void AssetSystemPackageInfo::SetMachineName(const string& _machineName)
+{
+    m_machineName = _machineName;
+    m_machineNameHasBeenSet = true;
+}
+
+bool AssetSystemPackageInfo::MachineNameHasBeenSet() const
+{
+    return m_machineNameHasBeenSet;
+}
+
+string AssetSystemPackageInfo::GetMachineIp() const
+{
+    return m_machineIp;
+}
+
+void AssetSystemPackageInfo::SetMachineIp(const string& _machineIp)
+{
+    m_machineIp = _machineIp;
+    m_machineIpHasBeenSet = true;
+}
+
+bool AssetSystemPackageInfo::MachineIpHasBeenSet() const
+{
+    return m_machineIpHasBeenSet;
+}
+
+string AssetSystemPackageInfo::GetOsInfo() const
+{
+    return m_osInfo;
+}
+
+void AssetSystemPackageInfo::SetOsInfo(const string& _osInfo)
+{
+    m_osInfo = _osInfo;
+    m_osInfoHasBeenSet = true;
+}
+
+bool AssetSystemPackageInfo::OsInfoHasBeenSet() const
+{
+    return m_osInfoHasBeenSet;
+}
+
+string AssetSystemPackageInfo::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void AssetSystemPackageInfo::SetUpdateTime(const string& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool AssetSystemPackageInfo::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
+}
+
