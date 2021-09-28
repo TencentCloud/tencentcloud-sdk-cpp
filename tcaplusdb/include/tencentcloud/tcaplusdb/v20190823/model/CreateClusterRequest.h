@@ -224,6 +224,24 @@ namespace TencentCloud
                      */
                     bool ClusterTypeHasBeenSet() const;
 
+                    /**
+                     * 获取密码认证类型，0 静态认证， 1 签名认证
+                     * @return AuthType 密码认证类型，0 静态认证， 1 签名认证
+                     */
+                    int64_t GetAuthType() const;
+
+                    /**
+                     * 设置密码认证类型，0 静态认证， 1 签名认证
+                     * @param AuthType 密码认证类型，0 静态认证， 1 签名认证
+                     */
+                    void SetAuthType(const int64_t& _authType);
+
+                    /**
+                     * 判断参数 AuthType 是否已赋值
+                     * @return AuthType 是否已赋值
+                     */
+                    bool AuthTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -285,6 +303,12 @@ namespace TencentCloud
                      */
                     int64_t m_clusterType;
                     bool m_clusterTypeHasBeenSet;
+
+                    /**
+                     * 密码认证类型，0 静态认证， 1 签名认证
+                     */
+                    int64_t m_authType;
+                    bool m_authTypeHasBeenSet;
 
                 };
             }

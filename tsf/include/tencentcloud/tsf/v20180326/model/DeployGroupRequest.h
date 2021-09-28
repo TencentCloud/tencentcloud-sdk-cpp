@@ -313,6 +313,42 @@ namespace TencentCloud
                      */
                     bool IncrementalDeploymentHasBeenSet() const;
 
+                    /**
+                     * 获取JDK名称: konaJDK或openJDK
+                     * @return JdkName JDK名称: konaJDK或openJDK
+                     */
+                    std::string GetJdkName() const;
+
+                    /**
+                     * 设置JDK名称: konaJDK或openJDK
+                     * @param JdkName JDK名称: konaJDK或openJDK
+                     */
+                    void SetJdkName(const std::string& _jdkName);
+
+                    /**
+                     * 判断参数 JdkName 是否已赋值
+                     * @return JdkName 是否已赋值
+                     */
+                    bool JdkNameHasBeenSet() const;
+
+                    /**
+                     * 获取JDK版本: 8或11 (openJDK只支持8)
+                     * @return JdkVersion JDK版本: 8或11 (openJDK只支持8)
+                     */
+                    std::string GetJdkVersion() const;
+
+                    /**
+                     * 设置JDK版本: 8或11 (openJDK只支持8)
+                     * @param JdkVersion JDK版本: 8或11 (openJDK只支持8)
+                     */
+                    void SetJdkVersion(const std::string& _jdkVersion);
+
+                    /**
+                     * 判断参数 JdkVersion 是否已赋值
+                     * @return JdkVersion 是否已赋值
+                     */
+                    bool JdkVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -404,6 +440,18 @@ namespace TencentCloud
                      */
                     bool m_incrementalDeployment;
                     bool m_incrementalDeploymentHasBeenSet;
+
+                    /**
+                     * JDK名称: konaJDK或openJDK
+                     */
+                    std::string m_jdkName;
+                    bool m_jdkNameHasBeenSet;
+
+                    /**
+                     * JDK版本: 8或11 (openJDK只支持8)
+                     */
+                    std::string m_jdkVersion;
+                    bool m_jdkVersionHasBeenSet;
 
                 };
             }

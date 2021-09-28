@@ -108,6 +108,72 @@ string|tinyint|smallint|int|bigint|boolean|float|double|decimal|timestamp|date|b
                      */
                     bool CommentHasBeenSet() const;
 
+                    /**
+                     * 获取表示整个 numeric 的长度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Precision 表示整个 numeric 的长度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetPrecision() const;
+
+                    /**
+                     * 设置表示整个 numeric 的长度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Precision 表示整个 numeric 的长度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPrecision(const int64_t& _precision);
+
+                    /**
+                     * 判断参数 Precision 是否已赋值
+                     * @return Precision 是否已赋值
+                     */
+                    bool PrecisionHasBeenSet() const;
+
+                    /**
+                     * 获取表示小数部分的长度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Scale 表示小数部分的长度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetScale() const;
+
+                    /**
+                     * 设置表示小数部分的长度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Scale 表示小数部分的长度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetScale(const int64_t& _scale);
+
+                    /**
+                     * 判断参数 Scale 是否已赋值
+                     * @return Scale 是否已赋值
+                     */
+                    bool ScaleHasBeenSet() const;
+
+                    /**
+                     * 获取是否为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Nullable 是否为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetNullable() const;
+
+                    /**
+                     * 设置是否为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Nullable 是否为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNullable(const std::string& _nullable);
+
+                    /**
+                     * 判断参数 Nullable 是否已赋值
+                     * @return Nullable 是否已赋值
+                     */
+                    bool NullableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -129,6 +195,27 @@ string|tinyint|smallint|int|bigint|boolean|float|double|decimal|timestamp|date|b
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
+
+                    /**
+                     * 表示整个 numeric 的长度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_precision;
+                    bool m_precisionHasBeenSet;
+
+                    /**
+                     * 表示小数部分的长度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_scale;
+                    bool m_scaleHasBeenSet;
+
+                    /**
+                     * 是否为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_nullable;
+                    bool m_nullableHasBeenSet;
 
                 };
             }

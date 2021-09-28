@@ -23,7 +23,10 @@ using namespace std;
 Column::Column() :
     m_nameHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_commentHasBeenSet(false)
+    m_commentHasBeenSet(false),
+    m_precisionHasBeenSet(false),
+    m_scaleHasBeenSet(false),
+    m_nullableHasBeenSet(false)
 {
 }
 
@@ -62,6 +65,36 @@ CoreInternalOutcome Column::Deserialize(const rapidjson::Value &value)
         m_commentHasBeenSet = true;
     }
 
+    if (value.HasMember("Precision") && !value["Precision"].IsNull())
+    {
+        if (!value["Precision"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Column.Precision` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_precision = value["Precision"].GetInt64();
+        m_precisionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Scale") && !value["Scale"].IsNull())
+    {
+        if (!value["Scale"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Column.Scale` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_scale = value["Scale"].GetInt64();
+        m_scaleHasBeenSet = true;
+    }
+
+    if (value.HasMember("Nullable") && !value["Nullable"].IsNull())
+    {
+        if (!value["Nullable"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Column.Nullable` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nullable = string(value["Nullable"].GetString());
+        m_nullableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +124,30 @@ void Column::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "Comment";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_precisionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Precision";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_precision, allocator);
+    }
+
+    if (m_scaleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Scale";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scale, allocator);
+    }
+
+    if (m_nullableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Nullable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nullable.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +199,53 @@ void Column::SetComment(const string& _comment)
 bool Column::CommentHasBeenSet() const
 {
     return m_commentHasBeenSet;
+}
+
+int64_t Column::GetPrecision() const
+{
+    return m_precision;
+}
+
+void Column::SetPrecision(const int64_t& _precision)
+{
+    m_precision = _precision;
+    m_precisionHasBeenSet = true;
+}
+
+bool Column::PrecisionHasBeenSet() const
+{
+    return m_precisionHasBeenSet;
+}
+
+int64_t Column::GetScale() const
+{
+    return m_scale;
+}
+
+void Column::SetScale(const int64_t& _scale)
+{
+    m_scale = _scale;
+    m_scaleHasBeenSet = true;
+}
+
+bool Column::ScaleHasBeenSet() const
+{
+    return m_scaleHasBeenSet;
+}
+
+string Column::GetNullable() const
+{
+    return m_nullable;
+}
+
+void Column::SetNullable(const string& _nullable)
+{
+    m_nullable = _nullable;
+    m_nullableHasBeenSet = true;
+}
+
+bool Column::NullableHasBeenSet() const
+{
+    return m_nullableHasBeenSet;
 }
 

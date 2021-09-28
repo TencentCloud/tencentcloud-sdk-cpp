@@ -178,6 +178,28 @@ namespace TencentCloud
                      */
                     bool DescHasBeenSet() const;
 
+                    /**
+                     * 获取备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Description 备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Description 备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     */
+                    bool DescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -221,6 +243,13 @@ namespace TencentCloud
                      */
                     std::string m_desc;
                     bool m_descHasBeenSet;
+
+                    /**
+                     * 备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

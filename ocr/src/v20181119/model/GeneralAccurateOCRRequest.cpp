@@ -25,7 +25,8 @@ using namespace std;
 GeneralAccurateOCRRequest::GeneralAccurateOCRRequest() :
     m_imageBase64HasBeenSet(false),
     m_imageUrlHasBeenSet(false),
-    m_isWordsHasBeenSet(false)
+    m_isWordsHasBeenSet(false),
+    m_enableDetectSplitHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string GeneralAccurateOCRRequest::ToJsonString() const
         string key = "IsWords";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isWords, allocator);
+    }
+
+    if (m_enableDetectSplitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableDetectSplit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableDetectSplit, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void GeneralAccurateOCRRequest::SetIsWords(const bool& _isWords)
 bool GeneralAccurateOCRRequest::IsWordsHasBeenSet() const
 {
     return m_isWordsHasBeenSet;
+}
+
+bool GeneralAccurateOCRRequest::GetEnableDetectSplit() const
+{
+    return m_enableDetectSplit;
+}
+
+void GeneralAccurateOCRRequest::SetEnableDetectSplit(const bool& _enableDetectSplit)
+{
+    m_enableDetectSplit = _enableDetectSplit;
+    m_enableDetectSplitHasBeenSet = true;
+}
+
+bool GeneralAccurateOCRRequest::EnableDetectSplitHasBeenSet() const
+{
+    return m_enableDetectSplitHasBeenSet;
 }
 
 

@@ -37,7 +37,9 @@ DeployGroupRequest::DeployGroupRequest() :
     m_deployWaitTimeHasBeenSet(false),
     m_startScriptHasBeenSet(false),
     m_stopScriptHasBeenSet(false),
-    m_incrementalDeploymentHasBeenSet(false)
+    m_incrementalDeploymentHasBeenSet(false),
+    m_jdkNameHasBeenSet(false),
+    m_jdkVersionHasBeenSet(false)
 {
 }
 
@@ -172,6 +174,22 @@ string DeployGroupRequest::ToJsonString() const
         string key = "IncrementalDeployment";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_incrementalDeployment, allocator);
+    }
+
+    if (m_jdkNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JdkName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_jdkName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jdkVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JdkVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_jdkVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -420,6 +438,38 @@ void DeployGroupRequest::SetIncrementalDeployment(const bool& _incrementalDeploy
 bool DeployGroupRequest::IncrementalDeploymentHasBeenSet() const
 {
     return m_incrementalDeploymentHasBeenSet;
+}
+
+string DeployGroupRequest::GetJdkName() const
+{
+    return m_jdkName;
+}
+
+void DeployGroupRequest::SetJdkName(const string& _jdkName)
+{
+    m_jdkName = _jdkName;
+    m_jdkNameHasBeenSet = true;
+}
+
+bool DeployGroupRequest::JdkNameHasBeenSet() const
+{
+    return m_jdkNameHasBeenSet;
+}
+
+string DeployGroupRequest::GetJdkVersion() const
+{
+    return m_jdkVersion;
+}
+
+void DeployGroupRequest::SetJdkVersion(const string& _jdkVersion)
+{
+    m_jdkVersion = _jdkVersion;
+    m_jdkVersionHasBeenSet = true;
+}
+
+bool DeployGroupRequest::JdkVersionHasBeenSet() const
+{
+    return m_jdkVersionHasBeenSet;
 }
 
 

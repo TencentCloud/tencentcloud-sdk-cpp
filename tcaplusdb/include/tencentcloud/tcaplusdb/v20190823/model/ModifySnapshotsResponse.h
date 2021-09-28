@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取批量创建的快照数量
-                     * @return TotalCount 批量创建的快照数量
+                     * 获取批量修改的快照数量
+                     * @return TotalCount 批量修改的快照数量
                      */
                     uint64_t GetTotalCount() const;
 
@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取批量创建的快照结果列表
-                     * @return TableResults 批量创建的快照结果列表
+                     * 获取批量修改的快照结果列表
+                     * @return TableResults 批量修改的快照结果列表
                      */
                     std::vector<SnapshotResult> GetTableResults() const;
 
@@ -71,13 +71,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 批量创建的快照数量
+                     * 批量修改的快照数量
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 批量创建的快照结果列表
+                     * 批量修改的快照结果列表
                      */
                     std::vector<SnapshotResult> m_tableResults;
                     bool m_tableResultsHasBeenSet;

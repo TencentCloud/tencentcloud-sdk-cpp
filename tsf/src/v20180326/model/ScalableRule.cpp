@@ -26,7 +26,8 @@ ScalableRule::ScalableRule() :
     m_expandVmCountLimitHasBeenSet(false),
     m_shrinkVmCountLimitHasBeenSet(false),
     m_groupCountHasBeenSet(false),
-    m_descHasBeenSet(false)
+    m_descHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome ScalableRule::Deserialize(const rapidjson::Value &value)
         m_descHasBeenSet = true;
     }
 
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScalableRule.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void ScalableRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Desc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_desc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void ScalableRule::SetDesc(const string& _desc)
 bool ScalableRule::DescHasBeenSet() const
 {
     return m_descHasBeenSet;
+}
+
+string ScalableRule::GetDescription() const
+{
+    return m_description;
+}
+
+void ScalableRule::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool ScalableRule::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 

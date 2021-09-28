@@ -21,10 +21,11 @@ using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
 Policy::Policy() :
-    m_catalogHasBeenSet(false),
     m_databaseHasBeenSet(false),
+    m_catalogHasBeenSet(false),
     m_tableHasBeenSet(false),
-    m_operationHasBeenSet(false)
+    m_operationHasBeenSet(false),
+    m_policyTypeHasBeenSet(false)
 {
 }
 
@@ -32,16 +33,6 @@ CoreInternalOutcome Policy::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("Catalog") && !value["Catalog"].IsNull())
-    {
-        if (!value["Catalog"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Policy.Catalog` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_catalog = string(value["Catalog"].GetString());
-        m_catalogHasBeenSet = true;
-    }
 
     if (value.HasMember("Database") && !value["Database"].IsNull())
     {
@@ -51,6 +42,16 @@ CoreInternalOutcome Policy::Deserialize(const rapidjson::Value &value)
         }
         m_database = string(value["Database"].GetString());
         m_databaseHasBeenSet = true;
+    }
+
+    if (value.HasMember("Catalog") && !value["Catalog"].IsNull())
+    {
+        if (!value["Catalog"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Policy.Catalog` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_catalog = string(value["Catalog"].GetString());
+        m_catalogHasBeenSet = true;
     }
 
     if (value.HasMember("Table") && !value["Table"].IsNull())
@@ -73,6 +74,16 @@ CoreInternalOutcome Policy::Deserialize(const rapidjson::Value &value)
         m_operationHasBeenSet = true;
     }
 
+    if (value.HasMember("PolicyType") && !value["PolicyType"].IsNull())
+    {
+        if (!value["PolicyType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Policy.PolicyType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_policyType = string(value["PolicyType"].GetString());
+        m_policyTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,20 +91,20 @@ CoreInternalOutcome Policy::Deserialize(const rapidjson::Value &value)
 void Policy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_catalogHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Catalog";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_catalog.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_databaseHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Database";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_database.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_catalogHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Catalog";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_catalog.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tableHasBeenSet)
@@ -112,24 +123,16 @@ void Policy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         value.AddMember(iKey, rapidjson::Value(m_operation.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_policyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolicyType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_policyType.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
-
-string Policy::GetCatalog() const
-{
-    return m_catalog;
-}
-
-void Policy::SetCatalog(const string& _catalog)
-{
-    m_catalog = _catalog;
-    m_catalogHasBeenSet = true;
-}
-
-bool Policy::CatalogHasBeenSet() const
-{
-    return m_catalogHasBeenSet;
-}
 
 string Policy::GetDatabase() const
 {
@@ -145,6 +148,22 @@ void Policy::SetDatabase(const string& _database)
 bool Policy::DatabaseHasBeenSet() const
 {
     return m_databaseHasBeenSet;
+}
+
+string Policy::GetCatalog() const
+{
+    return m_catalog;
+}
+
+void Policy::SetCatalog(const string& _catalog)
+{
+    m_catalog = _catalog;
+    m_catalogHasBeenSet = true;
+}
+
+bool Policy::CatalogHasBeenSet() const
+{
+    return m_catalogHasBeenSet;
 }
 
 string Policy::GetTable() const
@@ -177,5 +196,21 @@ void Policy::SetOperation(const string& _operation)
 bool Policy::OperationHasBeenSet() const
 {
     return m_operationHasBeenSet;
+}
+
+string Policy::GetPolicyType() const
+{
+    return m_policyType;
+}
+
+void Policy::SetPolicyType(const string& _policyType)
+{
+    m_policyType = _policyType;
+    m_policyTypeHasBeenSet = true;
+}
+
+bool Policy::PolicyTypeHasBeenSet() const
+{
+    return m_policyTypeHasBeenSet;
 }
 

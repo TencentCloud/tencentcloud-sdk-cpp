@@ -112,6 +112,24 @@ namespace TencentCloud
                      */
                     bool IsWordsHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启原图切图检测功能，开启后可提升“整图面积大，但单字符占比面积小”（例如：试卷）场景下的识别效果，默认关
+                     * @return EnableDetectSplit 是否开启原图切图检测功能，开启后可提升“整图面积大，但单字符占比面积小”（例如：试卷）场景下的识别效果，默认关
+                     */
+                    bool GetEnableDetectSplit() const;
+
+                    /**
+                     * 设置是否开启原图切图检测功能，开启后可提升“整图面积大，但单字符占比面积小”（例如：试卷）场景下的识别效果，默认关
+                     * @param EnableDetectSplit 是否开启原图切图检测功能，开启后可提升“整图面积大，但单字符占比面积小”（例如：试卷）场景下的识别效果，默认关
+                     */
+                    void SetEnableDetectSplit(const bool& _enableDetectSplit);
+
+                    /**
+                     * 判断参数 EnableDetectSplit 是否已赋值
+                     * @return EnableDetectSplit 是否已赋值
+                     */
+                    bool EnableDetectSplitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -135,6 +153,12 @@ namespace TencentCloud
                      */
                     bool m_isWords;
                     bool m_isWordsHasBeenSet;
+
+                    /**
+                     * 是否开启原图切图检测功能，开启后可提升“整图面积大，但单字符占比面积小”（例如：试卷）场景下的识别效果，默认关
+                     */
+                    bool m_enableDetectSplit;
+                    bool m_enableDetectSplitHasBeenSet;
 
                 };
             }

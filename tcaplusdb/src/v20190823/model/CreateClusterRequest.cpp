@@ -32,7 +32,8 @@ CreateClusterRequest::CreateClusterRequest() :
     m_ipv6EnableHasBeenSet(false),
     m_serverListHasBeenSet(false),
     m_proxyListHasBeenSet(false),
-    m_clusterTypeHasBeenSet(false)
+    m_clusterTypeHasBeenSet(false),
+    m_authTypeHasBeenSet(false)
 {
 }
 
@@ -142,6 +143,14 @@ string CreateClusterRequest::ToJsonString() const
         string key = "ClusterType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_clusterType, allocator);
+    }
+
+    if (m_authTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_authType, allocator);
     }
 
 
@@ -310,6 +319,22 @@ void CreateClusterRequest::SetClusterType(const int64_t& _clusterType)
 bool CreateClusterRequest::ClusterTypeHasBeenSet() const
 {
     return m_clusterTypeHasBeenSet;
+}
+
+int64_t CreateClusterRequest::GetAuthType() const
+{
+    return m_authType;
+}
+
+void CreateClusterRequest::SetAuthType(const int64_t& _authType)
+{
+    m_authType = _authType;
+    m_authTypeHasBeenSet = true;
+}
+
+bool CreateClusterRequest::AuthTypeHasBeenSet() const
+{
+    return m_authTypeHasBeenSet;
 }
 
 
