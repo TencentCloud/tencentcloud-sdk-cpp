@@ -26,7 +26,8 @@ DescribeCloudBaseBuildServiceRequest::DescribeCloudBaseBuildServiceRequest() :
     m_envIdHasBeenSet(false),
     m_serviceNameHasBeenSet(false),
     m_cIBusinessHasBeenSet(false),
-    m_serviceVersionHasBeenSet(false)
+    m_serviceVersionHasBeenSet(false),
+    m_suffixHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DescribeCloudBaseBuildServiceRequest::ToJsonString() const
         string key = "ServiceVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_serviceVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_suffixHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Suffix";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_suffix.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DescribeCloudBaseBuildServiceRequest::SetServiceVersion(const string& _serv
 bool DescribeCloudBaseBuildServiceRequest::ServiceVersionHasBeenSet() const
 {
     return m_serviceVersionHasBeenSet;
+}
+
+string DescribeCloudBaseBuildServiceRequest::GetSuffix() const
+{
+    return m_suffix;
+}
+
+void DescribeCloudBaseBuildServiceRequest::SetSuffix(const string& _suffix)
+{
+    m_suffix = _suffix;
+    m_suffixHasBeenSet = true;
+}
+
+bool DescribeCloudBaseBuildServiceRequest::SuffixHasBeenSet() const
+{
+    return m_suffixHasBeenSet;
 }
 
 

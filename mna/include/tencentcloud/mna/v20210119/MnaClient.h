@@ -27,6 +27,8 @@
 #include <tencentcloud/mna/v20210119/model/CreateQosResponse.h>
 #include <tencentcloud/mna/v20210119/model/DeleteQosRequest.h>
 #include <tencentcloud/mna/v20210119/model/DeleteQosResponse.h>
+#include <tencentcloud/mna/v20210119/model/DescribeQosRequest.h>
+#include <tencentcloud/mna/v20210119/model/DescribeQosResponse.h>
 
 
 namespace TencentCloud
@@ -47,6 +49,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteQosResponse> DeleteQosOutcome;
                 typedef std::future<DeleteQosOutcome> DeleteQosOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::DeleteQosRequest&, DeleteQosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteQosAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeQosResponse> DescribeQosOutcome;
+                typedef std::future<DescribeQosOutcome> DescribeQosOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::DescribeQosRequest&, DescribeQosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQosAsyncHandler;
 
 
 
@@ -67,6 +72,15 @@ namespace TencentCloud
                 DeleteQosOutcome DeleteQos(const Model::DeleteQosRequest &request);
                 void DeleteQosAsync(const Model::DeleteQosRequest& request, const DeleteQosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteQosOutcomeCallable DeleteQosCallable(const Model::DeleteQosRequest& request);
+
+                /**
+                 *获取Qos加速状态
+                 * @param req DescribeQosRequest
+                 * @return DescribeQosOutcome
+                 */
+                DescribeQosOutcome DescribeQos(const Model::DescribeQosRequest &request);
+                void DescribeQosAsync(const Model::DescribeQosRequest& request, const DescribeQosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeQosOutcomeCallable DescribeQosCallable(const Model::DescribeQosRequest& request);
 
             };
         }

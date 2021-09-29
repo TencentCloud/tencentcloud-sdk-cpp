@@ -20,24 +20,28 @@ set(mna_public_header
 
 set(mna_public_header_model
   include/tencentcloud/mna/v20210119/model/Capacity.h
+  include/tencentcloud/mna/v20210119/model/DescribeQosRequest.h
   include/tencentcloud/mna/v20210119/model/DestAddressInfo.h
+  include/tencentcloud/mna/v20210119/model/SrcAddressInfo.h
   include/tencentcloud/mna/v20210119/model/DeleteQosRequest.h
   include/tencentcloud/mna/v20210119/model/DeviceInfo.h
   include/tencentcloud/mna/v20210119/model/DeleteQosResponse.h
   include/tencentcloud/mna/v20210119/model/CreateQosResponse.h
-  include/tencentcloud/mna/v20210119/model/SrcAddressInfo.h
+  include/tencentcloud/mna/v20210119/model/DescribeQosResponse.h
   include/tencentcloud/mna/v20210119/model/CreateQosRequest.h
   )
 
 set(mna_src
   src/v20210119/MnaClient.cpp
   src/v20210119/model/Capacity.cpp
+  src/v20210119/model/DescribeQosRequest.cpp
   src/v20210119/model/DestAddressInfo.cpp
+  src/v20210119/model/SrcAddressInfo.cpp
   src/v20210119/model/DeleteQosRequest.cpp
   src/v20210119/model/DeviceInfo.cpp
   src/v20210119/model/DeleteQosResponse.cpp
   src/v20210119/model/CreateQosResponse.cpp
-  src/v20210119/model/SrcAddressInfo.cpp
+  src/v20210119/model/DescribeQosResponse.cpp
   src/v20210119/model/CreateQosRequest.cpp
   )
 

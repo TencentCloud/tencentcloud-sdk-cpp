@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tke/v20180525/model/Label.h>
 #include <tencentcloud/tke/v20180525/model/Taint.h>
+#include <tencentcloud/tke/v20180525/model/InstanceExtraArgs.h>
 
 
 namespace TencentCloud
@@ -224,6 +225,24 @@ namespace TencentCloud
                      */
                     bool OsCustomizeTypeHasBeenSet() const;
 
+                    /**
+                     * 获取节点自定义参数
+                     * @return ExtraArgs 节点自定义参数
+                     */
+                    InstanceExtraArgs GetExtraArgs() const;
+
+                    /**
+                     * 设置节点自定义参数
+                     * @param ExtraArgs 节点自定义参数
+                     */
+                    void SetExtraArgs(const InstanceExtraArgs& _extraArgs);
+
+                    /**
+                     * 判断参数 ExtraArgs 是否已赋值
+                     * @return ExtraArgs 是否已赋值
+                     */
+                    bool ExtraArgsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -285,6 +304,12 @@ namespace TencentCloud
                      */
                     std::string m_osCustomizeType;
                     bool m_osCustomizeTypeHasBeenSet;
+
+                    /**
+                     * 节点自定义参数
+                     */
+                    InstanceExtraArgs m_extraArgs;
+                    bool m_extraArgsHasBeenSet;
 
                 };
             }

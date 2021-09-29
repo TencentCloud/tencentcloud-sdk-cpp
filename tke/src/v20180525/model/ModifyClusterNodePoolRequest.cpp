@@ -32,7 +32,8 @@ ModifyClusterNodePoolRequest::ModifyClusterNodePoolRequest() :
     m_taintsHasBeenSet(false),
     m_enableAutoscaleHasBeenSet(false),
     m_osNameHasBeenSet(false),
-    m_osCustomizeTypeHasBeenSet(false)
+    m_osCustomizeTypeHasBeenSet(false),
+    m_extraArgsHasBeenSet(false)
 {
 }
 
@@ -135,6 +136,15 @@ string ModifyClusterNodePoolRequest::ToJsonString() const
         string key = "OsCustomizeType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_osCustomizeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extraArgsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtraArgs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_extraArgs.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -303,6 +313,22 @@ void ModifyClusterNodePoolRequest::SetOsCustomizeType(const string& _osCustomize
 bool ModifyClusterNodePoolRequest::OsCustomizeTypeHasBeenSet() const
 {
     return m_osCustomizeTypeHasBeenSet;
+}
+
+InstanceExtraArgs ModifyClusterNodePoolRequest::GetExtraArgs() const
+{
+    return m_extraArgs;
+}
+
+void ModifyClusterNodePoolRequest::SetExtraArgs(const InstanceExtraArgs& _extraArgs)
+{
+    m_extraArgs = _extraArgs;
+    m_extraArgsHasBeenSet = true;
+}
+
+bool ModifyClusterNodePoolRequest::ExtraArgsHasBeenSet() const
+{
+    return m_extraArgsHasBeenSet;
 }
 
 

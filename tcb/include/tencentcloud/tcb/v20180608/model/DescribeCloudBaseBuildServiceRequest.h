@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool ServiceVersionHasBeenSet() const;
 
+                    /**
+                     * 获取文件后缀
+                     * @return Suffix 文件后缀
+                     */
+                    std::string GetSuffix() const;
+
+                    /**
+                     * 设置文件后缀
+                     * @param Suffix 文件后缀
+                     */
+                    void SetSuffix(const std::string& _suffix);
+
+                    /**
+                     * 判断参数 Suffix 是否已赋值
+                     * @return Suffix 是否已赋值
+                     */
+                    bool SuffixHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     std::string m_serviceVersion;
                     bool m_serviceVersionHasBeenSet;
+
+                    /**
+                     * 文件后缀
+                     */
+                    std::string m_suffix;
+                    bool m_suffixHasBeenSet;
 
                 };
             }

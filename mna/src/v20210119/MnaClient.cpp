@@ -126,3 +126,46 @@ MnaClient::DeleteQosOutcomeCallable MnaClient::DeleteQosCallable(const DeleteQos
     return task->get_future();
 }
 
+MnaClient::DescribeQosOutcome MnaClient::DescribeQos(const DescribeQosRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeQos");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeQosResponse rsp = DescribeQosResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeQosOutcome(rsp);
+        else
+            return DescribeQosOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeQosOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::DescribeQosAsync(const DescribeQosRequest& request, const DescribeQosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeQos(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::DescribeQosOutcomeCallable MnaClient::DescribeQosCallable(const DescribeQosRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeQosOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeQos(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
