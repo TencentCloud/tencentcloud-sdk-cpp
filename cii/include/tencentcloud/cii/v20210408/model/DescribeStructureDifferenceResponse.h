@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CII_V20210408_MODEL_DESCRIBESTRUCTURETASKRESULTTESTRESPONSE_H_
-#define TENCENTCLOUD_CII_V20210408_MODEL_DESCRIBESTRUCTURETASKRESULTTESTRESPONSE_H_
+#ifndef TENCENTCLOUD_CII_V20210408_MODEL_DESCRIBESTRUCTUREDIFFERENCERESPONSE_H_
+#define TENCENTCLOUD_CII_V20210408_MODEL_DESCRIBESTRUCTUREDIFFERENCERESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/cii/v20210408/model/ResultObject.h>
+#include <tencentcloud/cii/v20210408/model/PerStructDifference.h>
 
 
 namespace TencentCloud
@@ -33,28 +33,42 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * DescribeStructureTaskResultTest返回参数结构体
+                * DescribeStructureDifference返回参数结构体
                 */
-                class DescribeStructureTaskResultTestResponse : public AbstractModel
+                class DescribeStructureDifferenceResponse : public AbstractModel
                 {
                 public:
-                    DescribeStructureTaskResultTestResponse();
-                    ~DescribeStructureTaskResultTestResponse() = default;
+                    DescribeStructureDifferenceResponse();
+                    ~DescribeStructureDifferenceResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
+
+                    /**
+                     * 获取主任务号
+                     * @return MainTaskId 主任务号
+                     */
+                    std::string GetMainTaskId() const;
+
+                    /**
+                     * 判断参数 MainTaskId 是否已赋值
+                     * @return MainTaskId 是否已赋值
+                     */
+                    bool MainTaskIdHasBeenSet() const;
 
                     /**
                      * 获取结果状态：
 0：返回成功
 1：结果未生成
 2：结果生成失败
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 结果状态：
 0：返回成功
 1：结果未生成
 2：结果生成失败
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    uint64_t GetStatus() const;
+                    int64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
@@ -63,12 +77,10 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取结构化识别结果数组，每个数组元素对应一个图片的结构化结果，顺序和输入参数的ImageList或FileList对应。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Results 结构化识别结果数组，每个数组元素对应一个图片的结构化结果，顺序和输入参数的ImageList或FileList对应。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取差异的结果数组
+                     * @return Results 差异的结果数组
                      */
-                    std::vector<ResultObject> GetResults() const;
+                    std::vector<PerStructDifference> GetResults() const;
 
                     /**
                      * 判断参数 Results 是否已赋值
@@ -79,19 +91,25 @@ namespace TencentCloud
                 private:
 
                     /**
+                     * 主任务号
+                     */
+                    std::string m_mainTaskId;
+                    bool m_mainTaskIdHasBeenSet;
+
+                    /**
                      * 结果状态：
 0：返回成功
 1：结果未生成
 2：结果生成失败
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    uint64_t m_status;
+                    int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 结构化识别结果数组，每个数组元素对应一个图片的结构化结果，顺序和输入参数的ImageList或FileList对应。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 差异的结果数组
                      */
-                    std::vector<ResultObject> m_results;
+                    std::vector<PerStructDifference> m_results;
                     bool m_resultsHasBeenSet;
 
                 };
@@ -100,4 +118,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CII_V20210408_MODEL_DESCRIBESTRUCTURETASKRESULTTESTRESPONSE_H_
+#endif // !TENCENTCLOUD_CII_V20210408_MODEL_DESCRIBESTRUCTUREDIFFERENCERESPONSE_H_

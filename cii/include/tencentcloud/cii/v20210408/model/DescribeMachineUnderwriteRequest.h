@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CII_V20210408_MODEL_DESCRIBESTRUCTURETASKRESULTTESTREQUEST_H_
-#define TENCENTCLOUD_CII_V20210408_MODEL_DESCRIBESTRUCTURETASKRESULTTESTREQUEST_H_
+#ifndef TENCENTCLOUD_CII_V20210408_MODEL_DESCRIBEMACHINEUNDERWRITEREQUEST_H_
+#define TENCENTCLOUD_CII_V20210408_MODEL_DESCRIBEMACHINEUNDERWRITEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -32,41 +32,41 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * DescribeStructureTaskResultTest请求参数结构体
+                * DescribeMachineUnderwrite请求参数结构体
                 */
-                class DescribeStructureTaskResultTestRequest : public AbstractModel
+                class DescribeMachineUnderwriteRequest : public AbstractModel
                 {
                 public:
-                    DescribeStructureTaskResultTestRequest();
-                    ~DescribeStructureTaskResultTestRequest() = default;
+                    DescribeMachineUnderwriteRequest();
+                    ~DescribeMachineUnderwriteRequest() = default;
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取结构化任务ID
-                     * @return MainTaskId 结构化任务ID
+                     * 获取核保任务ID
+                     * @return UnderwriteTaskId 核保任务ID
                      */
-                    std::string GetMainTaskId() const;
+                    std::string GetUnderwriteTaskId() const;
 
                     /**
-                     * 设置结构化任务ID
-                     * @param MainTaskId 结构化任务ID
+                     * 设置核保任务ID
+                     * @param UnderwriteTaskId 核保任务ID
                      */
-                    void SetMainTaskId(const std::string& _mainTaskId);
+                    void SetUnderwriteTaskId(const std::string& _underwriteTaskId);
 
                     /**
-                     * 判断参数 MainTaskId 是否已赋值
-                     * @return MainTaskId 是否已赋值
+                     * 判断参数 UnderwriteTaskId 是否已赋值
+                     * @return UnderwriteTaskId 是否已赋值
                      */
-                    bool MainTaskIdHasBeenSet() const;
+                    bool UnderwriteTaskIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 结构化任务ID
+                     * 核保任务ID
                      */
-                    std::string m_mainTaskId;
-                    bool m_mainTaskIdHasBeenSet;
+                    std::string m_underwriteTaskId;
+                    bool m_underwriteTaskIdHasBeenSet;
 
                 };
             }
@@ -74,4 +74,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CII_V20210408_MODEL_DESCRIBESTRUCTURETASKRESULTTESTREQUEST_H_
+#endif // !TENCENTCLOUD_CII_V20210408_MODEL_DESCRIBEMACHINEUNDERWRITEREQUEST_H_

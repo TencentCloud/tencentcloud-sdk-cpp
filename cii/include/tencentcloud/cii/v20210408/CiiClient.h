@@ -25,16 +25,18 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/cii/v20210408/model/CreateStructureTaskRequest.h>
 #include <tencentcloud/cii/v20210408/model/CreateStructureTaskResponse.h>
-#include <tencentcloud/cii/v20210408/model/CreateStructureTaskTestRequest.h>
-#include <tencentcloud/cii/v20210408/model/CreateStructureTaskTestResponse.h>
+#include <tencentcloud/cii/v20210408/model/CreateUnderwriteTaskByIdRequest.h>
+#include <tencentcloud/cii/v20210408/model/CreateUnderwriteTaskByIdResponse.h>
+#include <tencentcloud/cii/v20210408/model/DescribeMachineUnderwriteRequest.h>
+#include <tencentcloud/cii/v20210408/model/DescribeMachineUnderwriteResponse.h>
 #include <tencentcloud/cii/v20210408/model/DescribeStructCompareDataRequest.h>
 #include <tencentcloud/cii/v20210408/model/DescribeStructCompareDataResponse.h>
+#include <tencentcloud/cii/v20210408/model/DescribeStructureDifferenceRequest.h>
+#include <tencentcloud/cii/v20210408/model/DescribeStructureDifferenceResponse.h>
 #include <tencentcloud/cii/v20210408/model/DescribeStructureResultRequest.h>
 #include <tencentcloud/cii/v20210408/model/DescribeStructureResultResponse.h>
 #include <tencentcloud/cii/v20210408/model/DescribeStructureTaskResultRequest.h>
 #include <tencentcloud/cii/v20210408/model/DescribeStructureTaskResultResponse.h>
-#include <tencentcloud/cii/v20210408/model/DescribeStructureTaskResultTestRequest.h>
-#include <tencentcloud/cii/v20210408/model/DescribeStructureTaskResultTestResponse.h>
 
 
 namespace TencentCloud
@@ -52,21 +54,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateStructureTaskResponse> CreateStructureTaskOutcome;
                 typedef std::future<CreateStructureTaskOutcome> CreateStructureTaskOutcomeCallable;
                 typedef std::function<void(const CiiClient*, const Model::CreateStructureTaskRequest&, CreateStructureTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStructureTaskAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateStructureTaskTestResponse> CreateStructureTaskTestOutcome;
-                typedef std::future<CreateStructureTaskTestOutcome> CreateStructureTaskTestOutcomeCallable;
-                typedef std::function<void(const CiiClient*, const Model::CreateStructureTaskTestRequest&, CreateStructureTaskTestOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStructureTaskTestAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateUnderwriteTaskByIdResponse> CreateUnderwriteTaskByIdOutcome;
+                typedef std::future<CreateUnderwriteTaskByIdOutcome> CreateUnderwriteTaskByIdOutcomeCallable;
+                typedef std::function<void(const CiiClient*, const Model::CreateUnderwriteTaskByIdRequest&, CreateUnderwriteTaskByIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUnderwriteTaskByIdAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMachineUnderwriteResponse> DescribeMachineUnderwriteOutcome;
+                typedef std::future<DescribeMachineUnderwriteOutcome> DescribeMachineUnderwriteOutcomeCallable;
+                typedef std::function<void(const CiiClient*, const Model::DescribeMachineUnderwriteRequest&, DescribeMachineUnderwriteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMachineUnderwriteAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeStructCompareDataResponse> DescribeStructCompareDataOutcome;
                 typedef std::future<DescribeStructCompareDataOutcome> DescribeStructCompareDataOutcomeCallable;
                 typedef std::function<void(const CiiClient*, const Model::DescribeStructCompareDataRequest&, DescribeStructCompareDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStructCompareDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStructureDifferenceResponse> DescribeStructureDifferenceOutcome;
+                typedef std::future<DescribeStructureDifferenceOutcome> DescribeStructureDifferenceOutcomeCallable;
+                typedef std::function<void(const CiiClient*, const Model::DescribeStructureDifferenceRequest&, DescribeStructureDifferenceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStructureDifferenceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeStructureResultResponse> DescribeStructureResultOutcome;
                 typedef std::future<DescribeStructureResultOutcome> DescribeStructureResultOutcomeCallable;
                 typedef std::function<void(const CiiClient*, const Model::DescribeStructureResultRequest&, DescribeStructureResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStructureResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeStructureTaskResultResponse> DescribeStructureTaskResultOutcome;
                 typedef std::future<DescribeStructureTaskResultOutcome> DescribeStructureTaskResultOutcomeCallable;
                 typedef std::function<void(const CiiClient*, const Model::DescribeStructureTaskResultRequest&, DescribeStructureTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStructureTaskResultAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeStructureTaskResultTestResponse> DescribeStructureTaskResultTestOutcome;
-                typedef std::future<DescribeStructureTaskResultTestOutcome> DescribeStructureTaskResultTestOutcomeCallable;
-                typedef std::function<void(const CiiClient*, const Model::DescribeStructureTaskResultTestRequest&, DescribeStructureTaskResultTestOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStructureTaskResultTestAsyncHandler;
 
 
 
@@ -80,13 +85,22 @@ namespace TencentCloud
                 CreateStructureTaskOutcomeCallable CreateStructureTaskCallable(const Model::CreateStructureTaskRequest& request);
 
                 /**
-                 *本接口(CreateStructureTaskTest)基于提供的客户及保单信息，创建并启动结构化识别任务。用于路由到测试环境。
-                 * @param req CreateStructureTaskTestRequest
-                 * @return CreateStructureTaskTestOutcome
+                 *本接口(CreateUnderwriteTaskById)用于根据结构化任务ID创建核保任务
+                 * @param req CreateUnderwriteTaskByIdRequest
+                 * @return CreateUnderwriteTaskByIdOutcome
                  */
-                CreateStructureTaskTestOutcome CreateStructureTaskTest(const Model::CreateStructureTaskTestRequest &request);
-                void CreateStructureTaskTestAsync(const Model::CreateStructureTaskTestRequest& request, const CreateStructureTaskTestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateStructureTaskTestOutcomeCallable CreateStructureTaskTestCallable(const Model::CreateStructureTaskTestRequest& request);
+                CreateUnderwriteTaskByIdOutcome CreateUnderwriteTaskById(const Model::CreateUnderwriteTaskByIdRequest &request);
+                void CreateUnderwriteTaskByIdAsync(const Model::CreateUnderwriteTaskByIdRequest& request, const CreateUnderwriteTaskByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateUnderwriteTaskByIdOutcomeCallable CreateUnderwriteTaskByIdCallable(const Model::CreateUnderwriteTaskByIdRequest& request);
+
+                /**
+                 *本接口(DescribeMachineUnderwrite)用于查询机器核保任务数据
+                 * @param req DescribeMachineUnderwriteRequest
+                 * @return DescribeMachineUnderwriteOutcome
+                 */
+                DescribeMachineUnderwriteOutcome DescribeMachineUnderwrite(const Model::DescribeMachineUnderwriteRequest &request);
+                void DescribeMachineUnderwriteAsync(const Model::DescribeMachineUnderwriteRequest& request, const DescribeMachineUnderwriteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMachineUnderwriteOutcomeCallable DescribeMachineUnderwriteCallable(const Model::DescribeMachineUnderwriteRequest& request);
 
                 /**
                  *结构化对比查询接口，对比结构化复核前后数据差异，查询识别正确率，召回率。
@@ -96,6 +110,15 @@ namespace TencentCloud
                 DescribeStructCompareDataOutcome DescribeStructCompareData(const Model::DescribeStructCompareDataRequest &request);
                 void DescribeStructCompareDataAsync(const Model::DescribeStructCompareDataRequest& request, const DescribeStructCompareDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeStructCompareDataOutcomeCallable DescribeStructCompareDataCallable(const Model::DescribeStructCompareDataRequest& request);
+
+                /**
+                 *结构化复核差异查询接口，对比结构化复核前后数据差异，返回差异的部分。
+                 * @param req DescribeStructureDifferenceRequest
+                 * @return DescribeStructureDifferenceOutcome
+                 */
+                DescribeStructureDifferenceOutcome DescribeStructureDifference(const Model::DescribeStructureDifferenceRequest &request);
+                void DescribeStructureDifferenceAsync(const Model::DescribeStructureDifferenceRequest& request, const DescribeStructureDifferenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStructureDifferenceOutcomeCallable DescribeStructureDifferenceCallable(const Model::DescribeStructureDifferenceRequest& request);
 
                 /**
                  *本接口(DescribeStructureResult)用于查询结构化结果接口
@@ -114,15 +137,6 @@ namespace TencentCloud
                 DescribeStructureTaskResultOutcome DescribeStructureTaskResult(const Model::DescribeStructureTaskResultRequest &request);
                 void DescribeStructureTaskResultAsync(const Model::DescribeStructureTaskResultRequest& request, const DescribeStructureTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeStructureTaskResultOutcomeCallable DescribeStructureTaskResultCallable(const Model::DescribeStructureTaskResultRequest& request);
-
-                /**
-                 *依据任务ID获取结构化结果接口，该接口用于路由到测试环境。
-                 * @param req DescribeStructureTaskResultTestRequest
-                 * @return DescribeStructureTaskResultTestOutcome
-                 */
-                DescribeStructureTaskResultTestOutcome DescribeStructureTaskResultTest(const Model::DescribeStructureTaskResultTestRequest &request);
-                void DescribeStructureTaskResultTestAsync(const Model::DescribeStructureTaskResultTestRequest& request, const DescribeStructureTaskResultTestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeStructureTaskResultTestOutcomeCallable DescribeStructureTaskResultTestCallable(const Model::DescribeStructureTaskResultTestRequest& request);
 
             };
         }

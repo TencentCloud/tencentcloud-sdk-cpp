@@ -40,7 +40,9 @@ RiskDnsList::RiskDnsList() :
     m_pidHasBeenSet(false),
     m_uuidHasBeenSet(false),
     m_suggestSchemeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_machineWanIpHasBeenSet(false),
+    m_machineStatusHasBeenSet(false)
 {
 }
 
@@ -252,6 +254,26 @@ CoreInternalOutcome RiskDnsList::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("MachineWanIp") && !value["MachineWanIp"].IsNull())
+    {
+        if (!value["MachineWanIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RiskDnsList.MachineWanIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_machineWanIp = string(value["MachineWanIp"].GetString());
+        m_machineWanIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("MachineStatus") && !value["MachineStatus"].IsNull())
+    {
+        if (!value["MachineStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RiskDnsList.MachineStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_machineStatus = string(value["MachineStatus"].GetString());
+        m_machineStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -422,6 +444,22 @@ void RiskDnsList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_machineWanIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineWanIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineWanIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_machineStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -745,5 +783,37 @@ void RiskDnsList::SetTags(const vector<string>& _tags)
 bool RiskDnsList::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string RiskDnsList::GetMachineWanIp() const
+{
+    return m_machineWanIp;
+}
+
+void RiskDnsList::SetMachineWanIp(const string& _machineWanIp)
+{
+    m_machineWanIp = _machineWanIp;
+    m_machineWanIpHasBeenSet = true;
+}
+
+bool RiskDnsList::MachineWanIpHasBeenSet() const
+{
+    return m_machineWanIpHasBeenSet;
+}
+
+string RiskDnsList::GetMachineStatus() const
+{
+    return m_machineStatus;
+}
+
+void RiskDnsList::SetMachineStatus(const string& _machineStatus)
+{
+    m_machineStatus = _machineStatus;
+    m_machineStatusHasBeenSet = true;
+}
+
+bool RiskDnsList::MachineStatusHasBeenSet() const
+{
+    return m_machineStatusHasBeenSet;
 }
 

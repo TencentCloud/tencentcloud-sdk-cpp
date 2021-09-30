@@ -83,42 +83,85 @@ CiiClient::CreateStructureTaskOutcomeCallable CiiClient::CreateStructureTaskCall
     return task->get_future();
 }
 
-CiiClient::CreateStructureTaskTestOutcome CiiClient::CreateStructureTaskTest(const CreateStructureTaskTestRequest &request)
+CiiClient::CreateUnderwriteTaskByIdOutcome CiiClient::CreateUnderwriteTaskById(const CreateUnderwriteTaskByIdRequest &request)
 {
-    auto outcome = MakeRequest(request, "CreateStructureTaskTest");
+    auto outcome = MakeRequest(request, "CreateUnderwriteTaskById");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        CreateStructureTaskTestResponse rsp = CreateStructureTaskTestResponse();
+        CreateUnderwriteTaskByIdResponse rsp = CreateUnderwriteTaskByIdResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return CreateStructureTaskTestOutcome(rsp);
+            return CreateUnderwriteTaskByIdOutcome(rsp);
         else
-            return CreateStructureTaskTestOutcome(o.GetError());
+            return CreateUnderwriteTaskByIdOutcome(o.GetError());
     }
     else
     {
-        return CreateStructureTaskTestOutcome(outcome.GetError());
+        return CreateUnderwriteTaskByIdOutcome(outcome.GetError());
     }
 }
 
-void CiiClient::CreateStructureTaskTestAsync(const CreateStructureTaskTestRequest& request, const CreateStructureTaskTestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void CiiClient::CreateUnderwriteTaskByIdAsync(const CreateUnderwriteTaskByIdRequest& request, const CreateUnderwriteTaskByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->CreateStructureTaskTest(request), context);
+        handler(this, request, this->CreateUnderwriteTaskById(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-CiiClient::CreateStructureTaskTestOutcomeCallable CiiClient::CreateStructureTaskTestCallable(const CreateStructureTaskTestRequest &request)
+CiiClient::CreateUnderwriteTaskByIdOutcomeCallable CiiClient::CreateUnderwriteTaskByIdCallable(const CreateUnderwriteTaskByIdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateStructureTaskTestOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<CreateUnderwriteTaskByIdOutcome()>>(
         [this, request]()
         {
-            return this->CreateStructureTaskTest(request);
+            return this->CreateUnderwriteTaskById(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CiiClient::DescribeMachineUnderwriteOutcome CiiClient::DescribeMachineUnderwrite(const DescribeMachineUnderwriteRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMachineUnderwrite");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMachineUnderwriteResponse rsp = DescribeMachineUnderwriteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMachineUnderwriteOutcome(rsp);
+        else
+            return DescribeMachineUnderwriteOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMachineUnderwriteOutcome(outcome.GetError());
+    }
+}
+
+void CiiClient::DescribeMachineUnderwriteAsync(const DescribeMachineUnderwriteRequest& request, const DescribeMachineUnderwriteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMachineUnderwrite(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CiiClient::DescribeMachineUnderwriteOutcomeCallable CiiClient::DescribeMachineUnderwriteCallable(const DescribeMachineUnderwriteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMachineUnderwriteOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMachineUnderwrite(request);
         }
     );
 
@@ -162,6 +205,49 @@ CiiClient::DescribeStructCompareDataOutcomeCallable CiiClient::DescribeStructCom
         [this, request]()
         {
             return this->DescribeStructCompareData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CiiClient::DescribeStructureDifferenceOutcome CiiClient::DescribeStructureDifference(const DescribeStructureDifferenceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeStructureDifference");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeStructureDifferenceResponse rsp = DescribeStructureDifferenceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeStructureDifferenceOutcome(rsp);
+        else
+            return DescribeStructureDifferenceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeStructureDifferenceOutcome(outcome.GetError());
+    }
+}
+
+void CiiClient::DescribeStructureDifferenceAsync(const DescribeStructureDifferenceRequest& request, const DescribeStructureDifferenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeStructureDifference(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CiiClient::DescribeStructureDifferenceOutcomeCallable CiiClient::DescribeStructureDifferenceCallable(const DescribeStructureDifferenceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeStructureDifferenceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeStructureDifference(request);
         }
     );
 
@@ -248,49 +334,6 @@ CiiClient::DescribeStructureTaskResultOutcomeCallable CiiClient::DescribeStructu
         [this, request]()
         {
             return this->DescribeStructureTaskResult(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-CiiClient::DescribeStructureTaskResultTestOutcome CiiClient::DescribeStructureTaskResultTest(const DescribeStructureTaskResultTestRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeStructureTaskResultTest");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeStructureTaskResultTestResponse rsp = DescribeStructureTaskResultTestResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeStructureTaskResultTestOutcome(rsp);
-        else
-            return DescribeStructureTaskResultTestOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeStructureTaskResultTestOutcome(outcome.GetError());
-    }
-}
-
-void CiiClient::DescribeStructureTaskResultTestAsync(const DescribeStructureTaskResultTestRequest& request, const DescribeStructureTaskResultTestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStructureTaskResultTest(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CiiClient::DescribeStructureTaskResultTestOutcomeCallable CiiClient::DescribeStructureTaskResultTestCallable(const DescribeStructureTaskResultTestRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeStructureTaskResultTestOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStructureTaskResultTest(request);
         }
     );
 

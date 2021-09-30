@@ -24,6 +24,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/LocalDiskInfo.h
   include/tencentcloud/es/v20180416/model/TaskDetail.h
   include/tencentcloud/es/v20180416/model/NodeInfo.h
+  include/tencentcloud/es/v20180416/model/UpdateJdkRequest.h
   include/tencentcloud/es/v20180416/model/GetRequestTargetNodeTypesRequest.h
   include/tencentcloud/es/v20180416/model/DescribeInstanceOperationsRequest.h
   include/tencentcloud/es/v20180416/model/OperationDetail.h
@@ -63,6 +64,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/MasterNodeInfo.h
   include/tencentcloud/es/v20180416/model/DeleteInstanceRequest.h
   include/tencentcloud/es/v20180416/model/SubTaskDetail.h
+  include/tencentcloud/es/v20180416/model/UpdateJdkResponse.h
   include/tencentcloud/es/v20180416/model/RestartNodesResponse.h
   include/tencentcloud/es/v20180416/model/UpgradeInstanceResponse.h
   include/tencentcloud/es/v20180416/model/UpdateInstanceResponse.h
@@ -79,6 +81,7 @@ set(es_src
   src/v20180416/model/LocalDiskInfo.cpp
   src/v20180416/model/TaskDetail.cpp
   src/v20180416/model/NodeInfo.cpp
+  src/v20180416/model/UpdateJdkRequest.cpp
   src/v20180416/model/GetRequestTargetNodeTypesRequest.cpp
   src/v20180416/model/DescribeInstanceOperationsRequest.cpp
   src/v20180416/model/OperationDetail.cpp
@@ -118,6 +121,7 @@ set(es_src
   src/v20180416/model/MasterNodeInfo.cpp
   src/v20180416/model/DeleteInstanceRequest.cpp
   src/v20180416/model/SubTaskDetail.cpp
+  src/v20180416/model/UpdateJdkResponse.cpp
   src/v20180416/model/RestartNodesResponse.cpp
   src/v20180416/model/UpgradeInstanceResponse.cpp
   src/v20180416/model/UpdateInstanceResponse.cpp

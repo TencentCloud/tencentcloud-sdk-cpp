@@ -341,6 +341,49 @@ WavClient::QueryChatArchivingListOutcomeCallable WavClient::QueryChatArchivingLi
     return task->get_future();
 }
 
+WavClient::QueryClueInfoListOutcome WavClient::QueryClueInfoList(const QueryClueInfoListRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryClueInfoList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryClueInfoListResponse rsp = QueryClueInfoListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryClueInfoListOutcome(rsp);
+        else
+            return QueryClueInfoListOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryClueInfoListOutcome(outcome.GetError());
+    }
+}
+
+void WavClient::QueryClueInfoListAsync(const QueryClueInfoListRequest& request, const QueryClueInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryClueInfoList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WavClient::QueryClueInfoListOutcomeCallable WavClient::QueryClueInfoListCallable(const QueryClueInfoListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryClueInfoListOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryClueInfoList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WavClient::QueryExternalContactDetailOutcome WavClient::QueryExternalContactDetail(const QueryExternalContactDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryExternalContactDetail");

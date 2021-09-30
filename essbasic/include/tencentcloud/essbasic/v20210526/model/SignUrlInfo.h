@@ -296,6 +296,28 @@ PERSON 自然人
                      */
                     bool FlowIdHasBeenSet() const;
 
+                    /**
+                     * 获取企业经办人 用户在渠道的编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OpenId 企业经办人 用户在渠道的编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOpenId() const;
+
+                    /**
+                     * 设置企业经办人 用户在渠道的编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OpenId 企业经办人 用户在渠道的编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOpenId(const std::string& _openId);
+
+                    /**
+                     * 判断参数 OpenId 是否已赋值
+                     * @return OpenId 是否已赋值
+                     */
+                    bool OpenIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -376,6 +398,13 @@ PERSON 自然人
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
+
+                    /**
+                     * 企业经办人 用户在渠道的编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_openId;
+                    bool m_openIdHasBeenSet;
 
                 };
             }

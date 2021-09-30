@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cii/v20210408/model/DescribeStructureTaskResultTestResponse.h>
+#include <tencentcloud/cbs/v20170312/model/DescribeDiskStoragePoolResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cii::V20210408::Model;
+using namespace TencentCloud::Cbs::V20170312::Model;
 using namespace std;
 
-DescribeStructureTaskResultTestResponse::DescribeStructureTaskResultTestResponse() :
-    m_statusHasBeenSet(false),
-    m_resultsHasBeenSet(false)
+DescribeDiskStoragePoolResponse::DescribeDiskStoragePoolResponse() :
+    m_totalCountHasBeenSet(false),
+    m_diskStoragePoolSetHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeStructureTaskResultTestResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeDiskStoragePoolResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,63 +63,63 @@ CoreInternalOutcome DescribeStructureTaskResultTestResponse::Deserialize(const s
     }
 
 
-    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
-        if (!rsp["Status"].IsUint64())
+        if (!rsp["TotalCount"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_status = rsp["Status"].GetUint64();
-        m_statusHasBeenSet = true;
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
     }
 
-    if (rsp.HasMember("Results") && !rsp["Results"].IsNull())
+    if (rsp.HasMember("DiskStoragePoolSet") && !rsp["DiskStoragePoolSet"].IsNull())
     {
-        if (!rsp["Results"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Results` is not array type"));
+        if (!rsp["DiskStoragePoolSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DiskStoragePoolSet` is not array type"));
 
-        const rapidjson::Value &tmpValue = rsp["Results"];
+        const rapidjson::Value &tmpValue = rsp["DiskStoragePoolSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            ResultObject item;
+            Cdc item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_results.push_back(item);
+            m_diskStoragePoolSet.push_back(item);
         }
-        m_resultsHasBeenSet = true;
+        m_diskStoragePoolSetHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeStructureTaskResultTestResponse::ToJsonString() const
+string DescribeDiskStoragePoolResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_statusHasBeenSet)
+    if (m_totalCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Status";
+        string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_status, allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
     }
 
-    if (m_resultsHasBeenSet)
+    if (m_diskStoragePoolSetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Results";
+        string key = "DiskStoragePoolSet";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_results.begin(); itr != m_results.end(); ++itr, ++i)
+        for (auto itr = m_diskStoragePoolSet.begin(); itr != m_diskStoragePoolSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -138,24 +138,24 @@ string DescribeStructureTaskResultTestResponse::ToJsonString() const
 }
 
 
-uint64_t DescribeStructureTaskResultTestResponse::GetStatus() const
+uint64_t DescribeDiskStoragePoolResponse::GetTotalCount() const
 {
-    return m_status;
+    return m_totalCount;
 }
 
-bool DescribeStructureTaskResultTestResponse::StatusHasBeenSet() const
+bool DescribeDiskStoragePoolResponse::TotalCountHasBeenSet() const
 {
-    return m_statusHasBeenSet;
+    return m_totalCountHasBeenSet;
 }
 
-vector<ResultObject> DescribeStructureTaskResultTestResponse::GetResults() const
+vector<Cdc> DescribeDiskStoragePoolResponse::GetDiskStoragePoolSet() const
 {
-    return m_results;
+    return m_diskStoragePoolSet;
 }
 
-bool DescribeStructureTaskResultTestResponse::ResultsHasBeenSet() const
+bool DescribeDiskStoragePoolResponse::DiskStoragePoolSetHasBeenSet() const
 {
-    return m_resultsHasBeenSet;
+    return m_diskStoragePoolSetHasBeenSet;
 }
 
 

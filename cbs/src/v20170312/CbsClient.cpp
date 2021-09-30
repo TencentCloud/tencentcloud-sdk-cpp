@@ -556,6 +556,49 @@ CbsClient::DescribeDiskOperationLogsOutcomeCallable CbsClient::DescribeDiskOpera
     return task->get_future();
 }
 
+CbsClient::DescribeDiskStoragePoolOutcome CbsClient::DescribeDiskStoragePool(const DescribeDiskStoragePoolRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDiskStoragePool");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDiskStoragePoolResponse rsp = DescribeDiskStoragePoolResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDiskStoragePoolOutcome(rsp);
+        else
+            return DescribeDiskStoragePoolOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDiskStoragePoolOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::DescribeDiskStoragePoolAsync(const DescribeDiskStoragePoolRequest& request, const DescribeDiskStoragePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDiskStoragePool(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CbsClient::DescribeDiskStoragePoolOutcomeCallable CbsClient::DescribeDiskStoragePoolCallable(const DescribeDiskStoragePoolRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDiskStoragePoolOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDiskStoragePool(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CbsClient::DescribeDisksOutcome CbsClient::DescribeDisks(const DescribeDisksRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDisks");

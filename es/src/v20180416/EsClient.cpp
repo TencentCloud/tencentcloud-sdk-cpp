@@ -556,6 +556,49 @@ EsClient::UpdateInstanceOutcomeCallable EsClient::UpdateInstanceCallable(const U
     return task->get_future();
 }
 
+EsClient::UpdateJdkOutcome EsClient::UpdateJdk(const UpdateJdkRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateJdk");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateJdkResponse rsp = UpdateJdkResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateJdkOutcome(rsp);
+        else
+            return UpdateJdkOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateJdkOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::UpdateJdkAsync(const UpdateJdkRequest& request, const UpdateJdkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateJdk(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::UpdateJdkOutcomeCallable EsClient::UpdateJdkCallable(const UpdateJdkRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateJdkOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateJdk(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EsClient::UpdatePluginsOutcome EsClient::UpdatePlugins(const UpdatePluginsRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdatePlugins");

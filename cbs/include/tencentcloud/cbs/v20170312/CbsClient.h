@@ -47,6 +47,8 @@
 #include <tencentcloud/cbs/v20170312/model/DescribeDiskConfigQuotaResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeDiskOperationLogsRequest.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeDiskOperationLogsResponse.h>
+#include <tencentcloud/cbs/v20170312/model/DescribeDiskStoragePoolRequest.h>
+#include <tencentcloud/cbs/v20170312/model/DescribeDiskStoragePoolResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeDisksRequest.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeDisksResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeInstancesDiskNumRequest.h>
@@ -141,6 +143,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDiskOperationLogsResponse> DescribeDiskOperationLogsOutcome;
                 typedef std::future<DescribeDiskOperationLogsOutcome> DescribeDiskOperationLogsOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::DescribeDiskOperationLogsRequest&, DescribeDiskOperationLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiskOperationLogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDiskStoragePoolResponse> DescribeDiskStoragePoolOutcome;
+                typedef std::future<DescribeDiskStoragePoolOutcome> DescribeDiskStoragePoolOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::DescribeDiskStoragePoolRequest&, DescribeDiskStoragePoolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiskStoragePoolAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDisksResponse> DescribeDisksOutcome;
                 typedef std::future<DescribeDisksOutcome> DescribeDisksOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::DescribeDisksRequest&, DescribeDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDisksAsyncHandler;
@@ -346,6 +351,18 @@ namespace TencentCloud
                 DescribeDiskOperationLogsOutcome DescribeDiskOperationLogs(const Model::DescribeDiskOperationLogsRequest &request);
                 void DescribeDiskOperationLogsAsync(const Model::DescribeDiskOperationLogsRequest& request, const DescribeDiskOperationLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDiskOperationLogsOutcomeCallable DescribeDiskOperationLogsCallable(const Model::DescribeDiskOperationLogsRequest& request);
+
+                /**
+                 *本接口（DescribeDiskStoragePool）查询用户的云硬盘独享集群列表。
+
+* 可以根据独享集群ID(CdcId)、集群区域名(zone)类型等信息来查询和过滤云硬盘独享集群详细信息，不同条件之间为与(AND)的关系，过滤信息详细请见过滤器`Filter`。
+* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的云硬盘独享集群列表。
+                 * @param req DescribeDiskStoragePoolRequest
+                 * @return DescribeDiskStoragePoolOutcome
+                 */
+                DescribeDiskStoragePoolOutcome DescribeDiskStoragePool(const Model::DescribeDiskStoragePoolRequest &request);
+                void DescribeDiskStoragePoolAsync(const Model::DescribeDiskStoragePoolRequest& request, const DescribeDiskStoragePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDiskStoragePoolOutcomeCallable DescribeDiskStoragePoolCallable(const Model::DescribeDiskStoragePoolRequest& request);
 
                 /**
                  *本接口（DescribeDisks）用于查询云硬盘列表。

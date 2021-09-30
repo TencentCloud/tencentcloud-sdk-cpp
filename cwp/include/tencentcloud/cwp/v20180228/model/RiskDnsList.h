@@ -406,6 +406,50 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取外网ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MachineWanIp 外网ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMachineWanIp() const;
+
+                    /**
+                     * 设置外网ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MachineWanIp 外网ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMachineWanIp(const std::string& _machineWanIp);
+
+                    /**
+                     * 判断参数 MachineWanIp 是否已赋值
+                     * @return MachineWanIp 是否已赋值
+                     */
+                    bool MachineWanIpHasBeenSet() const;
+
+                    /**
+                     * 获取主机在线状态 OFFLINE  ONLINE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MachineStatus 主机在线状态 OFFLINE  ONLINE
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMachineStatus() const;
+
+                    /**
+                     * 设置主机在线状态 OFFLINE  ONLINE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MachineStatus 主机在线状态 OFFLINE  ONLINE
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMachineStatus(const std::string& _machineStatus);
+
+                    /**
+                     * 判断参数 MachineStatus 是否已赋值
+                     * @return MachineStatus 是否已赋值
+                     */
+                    bool MachineStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -527,6 +571,20 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 外网ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_machineWanIp;
+                    bool m_machineWanIpHasBeenSet;
+
+                    /**
+                     * 主机在线状态 OFFLINE  ONLINE
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_machineStatus;
+                    bool m_machineStatusHasBeenSet;
 
                 };
             }

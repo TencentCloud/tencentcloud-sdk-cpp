@@ -23,12 +23,12 @@ using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
 EditBashRulesRequest::EditBashRulesRequest() :
-    m_nameHasBeenSet(false),
-    m_ruleHasBeenSet(false),
     m_idHasBeenSet(false),
     m_uuidsHasBeenSet(false),
     m_hostIpHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_levelHasBeenSet(false),
+    m_ruleHasBeenSet(false),
     m_isGlobalHasBeenSet(false),
     m_whiteHasBeenSet(false),
     m_eventIdHasBeenSet(false),
@@ -42,22 +42,6 @@ string EditBashRulesRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_nameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Name";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_ruleHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Rule";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_rule.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_idHasBeenSet)
     {
@@ -88,12 +72,28 @@ string EditBashRulesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_hostIp.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_levelHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Level";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_level, allocator);
+    }
+
+    if (m_ruleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Rule";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_rule.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isGlobalHasBeenSet)
@@ -135,38 +135,6 @@ string EditBashRulesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string EditBashRulesRequest::GetName() const
-{
-    return m_name;
-}
-
-void EditBashRulesRequest::SetName(const string& _name)
-{
-    m_name = _name;
-    m_nameHasBeenSet = true;
-}
-
-bool EditBashRulesRequest::NameHasBeenSet() const
-{
-    return m_nameHasBeenSet;
-}
-
-string EditBashRulesRequest::GetRule() const
-{
-    return m_rule;
-}
-
-void EditBashRulesRequest::SetRule(const string& _rule)
-{
-    m_rule = _rule;
-    m_ruleHasBeenSet = true;
-}
-
-bool EditBashRulesRequest::RuleHasBeenSet() const
-{
-    return m_ruleHasBeenSet;
-}
 
 uint64_t EditBashRulesRequest::GetId() const
 {
@@ -216,6 +184,22 @@ bool EditBashRulesRequest::HostIpHasBeenSet() const
     return m_hostIpHasBeenSet;
 }
 
+string EditBashRulesRequest::GetName() const
+{
+    return m_name;
+}
+
+void EditBashRulesRequest::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool EditBashRulesRequest::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
 uint64_t EditBashRulesRequest::GetLevel() const
 {
     return m_level;
@@ -230,6 +214,22 @@ void EditBashRulesRequest::SetLevel(const uint64_t& _level)
 bool EditBashRulesRequest::LevelHasBeenSet() const
 {
     return m_levelHasBeenSet;
+}
+
+string EditBashRulesRequest::GetRule() const
+{
+    return m_rule;
+}
+
+void EditBashRulesRequest::SetRule(const string& _rule)
+{
+    m_rule = _rule;
+    m_ruleHasBeenSet = true;
+}
+
+bool EditBashRulesRequest::RuleHasBeenSet() const
+{
+    return m_ruleHasBeenSet;
 }
 
 uint64_t EditBashRulesRequest::GetIsGlobal() const

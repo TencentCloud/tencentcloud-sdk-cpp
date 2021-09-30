@@ -37,6 +37,8 @@
 #include <tencentcloud/wav/v20210129/model/QueryChannelCodeListResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryChatArchivingListRequest.h>
 #include <tencentcloud/wav/v20210129/model/QueryChatArchivingListResponse.h>
+#include <tencentcloud/wav/v20210129/model/QueryClueInfoListRequest.h>
+#include <tencentcloud/wav/v20210129/model/QueryClueInfoListResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryExternalContactDetailRequest.h>
 #include <tencentcloud/wav/v20210129/model/QueryExternalContactDetailResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryExternalContactListRequest.h>
@@ -82,6 +84,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryChatArchivingListResponse> QueryChatArchivingListOutcome;
                 typedef std::future<QueryChatArchivingListOutcome> QueryChatArchivingListOutcomeCallable;
                 typedef std::function<void(const WavClient*, const Model::QueryChatArchivingListRequest&, QueryChatArchivingListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryChatArchivingListAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryClueInfoListResponse> QueryClueInfoListOutcome;
+                typedef std::future<QueryClueInfoListOutcome> QueryClueInfoListOutcomeCallable;
+                typedef std::function<void(const WavClient*, const Model::QueryClueInfoListRequest&, QueryClueInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryClueInfoListAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryExternalContactDetailResponse> QueryExternalContactDetailOutcome;
                 typedef std::future<QueryExternalContactDetailOutcome> QueryExternalContactDetailOutcomeCallable;
                 typedef std::function<void(const WavClient*, const Model::QueryExternalContactDetailRequest&, QueryExternalContactDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryExternalContactDetailAsyncHandler;
@@ -162,6 +167,15 @@ namespace TencentCloud
                 QueryChatArchivingListOutcome QueryChatArchivingList(const Model::QueryChatArchivingListRequest &request);
                 void QueryChatArchivingListAsync(const Model::QueryChatArchivingListRequest& request, const QueryChatArchivingListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryChatArchivingListOutcomeCallable QueryChatArchivingListCallable(const Model::QueryChatArchivingListRequest& request);
+
+                /**
+                 *企业可通过此接口获取线索列表。
+                 * @param req QueryClueInfoListRequest
+                 * @return QueryClueInfoListOutcome
+                 */
+                QueryClueInfoListOutcome QueryClueInfoList(const Model::QueryClueInfoListRequest &request);
+                void QueryClueInfoListAsync(const Model::QueryClueInfoListRequest& request, const QueryClueInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryClueInfoListOutcomeCallable QueryClueInfoListCallable(const Model::QueryClueInfoListRequest& request);
 
                 /**
                  *企业可通过此接口，根据外部联系人的userid，拉取客户详情

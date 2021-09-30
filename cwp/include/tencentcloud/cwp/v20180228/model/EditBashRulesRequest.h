@@ -43,42 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则名称
-                     * @return Name 规则名称
-                     */
-                    std::string GetName() const;
-
-                    /**
-                     * 设置规则名称
-                     * @param Name 规则名称
-                     */
-                    void SetName(const std::string& _name);
-
-                    /**
-                     * 判断参数 Name 是否已赋值
-                     * @return Name 是否已赋值
-                     */
-                    bool NameHasBeenSet() const;
-
-                    /**
-                     * 获取正则表达式
-                     * @return Rule 正则表达式
-                     */
-                    std::string GetRule() const;
-
-                    /**
-                     * 设置正则表达式
-                     * @param Rule 正则表达式
-                     */
-                    void SetRule(const std::string& _rule);
-
-                    /**
-                     * 判断参数 Rule 是否已赋值
-                     * @return Rule 是否已赋值
-                     */
-                    bool RuleHasBeenSet() const;
-
-                    /**
                      * 获取规则ID（新增时不填）
                      * @return Id 规则ID（新增时不填）
                      */
@@ -133,6 +97,24 @@ namespace TencentCloud
                     bool HostIpHasBeenSet() const;
 
                     /**
+                     * 获取规则名称，编辑时不可修改规则名称
+                     * @return Name 规则名称，编辑时不可修改规则名称
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置规则名称，编辑时不可修改规则名称
+                     * @param Name 规则名称，编辑时不可修改规则名称
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
                      * 获取危险等级(0:无，1: 高危 2:中危 3: 低危)
                      * @return Level 危险等级(0:无，1: 高危 2:中危 3: 低危)
                      */
@@ -149,6 +131,24 @@ namespace TencentCloud
                      * @return Level 是否已赋值
                      */
                     bool LevelHasBeenSet() const;
+
+                    /**
+                     * 获取正则表达式 ，编辑时不可修改正则表达式，需要对内容QueryEscape后再base64
+                     * @return Rule 正则表达式 ，编辑时不可修改正则表达式，需要对内容QueryEscape后再base64
+                     */
+                    std::string GetRule() const;
+
+                    /**
+                     * 设置正则表达式 ，编辑时不可修改正则表达式，需要对内容QueryEscape后再base64
+                     * @param Rule 正则表达式 ，编辑时不可修改正则表达式，需要对内容QueryEscape后再base64
+                     */
+                    void SetRule(const std::string& _rule);
+
+                    /**
+                     * 判断参数 Rule 是否已赋值
+                     * @return Rule 是否已赋值
+                     */
+                    bool RuleHasBeenSet() const;
 
                     /**
                      * 获取是否全局规则(默认否)：1-全局，0-非全局
@@ -225,18 +225,6 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 规则名称
-                     */
-                    std::string m_name;
-                    bool m_nameHasBeenSet;
-
-                    /**
-                     * 正则表达式
-                     */
-                    std::string m_rule;
-                    bool m_ruleHasBeenSet;
-
-                    /**
                      * 规则ID（新增时不填）
                      */
                     uint64_t m_id;
@@ -255,10 +243,22 @@ namespace TencentCloud
                     bool m_hostIpHasBeenSet;
 
                     /**
+                     * 规则名称，编辑时不可修改规则名称
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
+
+                    /**
                      * 危险等级(0:无，1: 高危 2:中危 3: 低危)
                      */
                     uint64_t m_level;
                     bool m_levelHasBeenSet;
+
+                    /**
+                     * 正则表达式 ，编辑时不可修改正则表达式，需要对内容QueryEscape后再base64
+                     */
+                    std::string m_rule;
+                    bool m_ruleHasBeenSet;
 
                     /**
                      * 是否全局规则(默认否)：1-全局，0-非全局

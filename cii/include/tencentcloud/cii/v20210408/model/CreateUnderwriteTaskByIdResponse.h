@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CII_V20210408_MODEL_CREATESTRUCTURETASKTESTRESPONSE_H_
-#define TENCENTCLOUD_CII_V20210408_MODEL_CREATESTRUCTURETASKTESTRESPONSE_H_
+#ifndef TENCENTCLOUD_CII_V20210408_MODEL_CREATEUNDERWRITETASKBYIDRESPONSE_H_
+#define TENCENTCLOUD_CII_V20210408_MODEL_CREATEUNDERWRITETASKBYIDRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -32,36 +32,36 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * CreateStructureTaskTest返回参数结构体
+                * CreateUnderwriteTaskById返回参数结构体
                 */
-                class CreateStructureTaskTestResponse : public AbstractModel
+                class CreateUnderwriteTaskByIdResponse : public AbstractModel
                 {
                 public:
-                    CreateStructureTaskTestResponse();
-                    ~CreateStructureTaskTestResponse() = default;
+                    CreateUnderwriteTaskByIdResponse();
+                    ~CreateUnderwriteTaskByIdResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取创建的主任务号，用于查询结果
-                     * @return MainTaskId 创建的主任务号，用于查询结果
+                     * 获取核保任务ID数据
+                     * @return UnderwriteTaskIds 核保任务ID数据
                      */
-                    std::string GetMainTaskId() const;
+                    std::vector<std::string> GetUnderwriteTaskIds() const;
 
                     /**
-                     * 判断参数 MainTaskId 是否已赋值
-                     * @return MainTaskId 是否已赋值
+                     * 判断参数 UnderwriteTaskIds 是否已赋值
+                     * @return UnderwriteTaskIds 是否已赋值
                      */
-                    bool MainTaskIdHasBeenSet() const;
+                    bool UnderwriteTaskIdsHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 创建的主任务号，用于查询结果
+                     * 核保任务ID数据
                      */
-                    std::string m_mainTaskId;
-                    bool m_mainTaskIdHasBeenSet;
+                    std::vector<std::string> m_underwriteTaskIds;
+                    bool m_underwriteTaskIdsHasBeenSet;
 
                 };
             }
@@ -69,4 +69,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CII_V20210408_MODEL_CREATESTRUCTURETASKTESTRESPONSE_H_
+#endif // !TENCENTCLOUD_CII_V20210408_MODEL_CREATEUNDERWRITETASKBYIDRESPONSE_H_

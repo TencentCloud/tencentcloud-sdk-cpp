@@ -47,6 +47,8 @@
 #include <tencentcloud/es/v20180416/model/UpdateDiagnoseSettingsResponse.h>
 #include <tencentcloud/es/v20180416/model/UpdateInstanceRequest.h>
 #include <tencentcloud/es/v20180416/model/UpdateInstanceResponse.h>
+#include <tencentcloud/es/v20180416/model/UpdateJdkRequest.h>
+#include <tencentcloud/es/v20180416/model/UpdateJdkResponse.h>
 #include <tencentcloud/es/v20180416/model/UpdatePluginsRequest.h>
 #include <tencentcloud/es/v20180416/model/UpdatePluginsResponse.h>
 #include <tencentcloud/es/v20180416/model/UpdateRequestTargetNodeTypesRequest.h>
@@ -105,6 +107,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateInstanceResponse> UpdateInstanceOutcome;
                 typedef std::future<UpdateInstanceOutcome> UpdateInstanceOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::UpdateInstanceRequest&, UpdateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateJdkResponse> UpdateJdkOutcome;
+                typedef std::future<UpdateJdkOutcome> UpdateJdkOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::UpdateJdkRequest&, UpdateJdkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateJdkAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdatePluginsResponse> UpdatePluginsOutcome;
                 typedef std::future<UpdatePluginsOutcome> UpdatePluginsOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::UpdatePluginsRequest&, UpdatePluginsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePluginsAsyncHandler;
@@ -234,6 +239,15 @@ namespace TencentCloud
                 UpdateInstanceOutcome UpdateInstance(const Model::UpdateInstanceRequest &request);
                 void UpdateInstanceAsync(const Model::UpdateInstanceRequest& request, const UpdateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateInstanceOutcomeCallable UpdateInstanceCallable(const Model::UpdateInstanceRequest& request);
+
+                /**
+                 *更新实例Jdk配置
+                 * @param req UpdateJdkRequest
+                 * @return UpdateJdkOutcome
+                 */
+                UpdateJdkOutcome UpdateJdk(const Model::UpdateJdkRequest &request);
+                void UpdateJdkAsync(const Model::UpdateJdkRequest& request, const UpdateJdkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateJdkOutcomeCallable UpdateJdkCallable(const Model::UpdateJdkRequest& request);
 
                 /**
                  *变更插件列表

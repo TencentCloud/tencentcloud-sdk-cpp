@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cii/v20210408/model/CreateStructureTaskTestResponse.h>
+#include <tencentcloud/es/v20180416/model/UpdateJdkResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cii::V20210408::Model;
+using namespace TencentCloud::Es::V20180416::Model;
 using namespace std;
 
-CreateStructureTaskTestResponse::CreateStructureTaskTestResponse() :
-    m_mainTaskIdHasBeenSet(false)
+UpdateJdkResponse::UpdateJdkResponse()
 {
 }
 
-CoreInternalOutcome CreateStructureTaskTestResponse::Deserialize(const string &payload)
+CoreInternalOutcome UpdateJdkResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,33 +61,15 @@ CoreInternalOutcome CreateStructureTaskTestResponse::Deserialize(const string &p
     }
 
 
-    if (rsp.HasMember("MainTaskId") && !rsp["MainTaskId"].IsNull())
-    {
-        if (!rsp["MainTaskId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `MainTaskId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_mainTaskId = string(rsp["MainTaskId"].GetString());
-        m_mainTaskIdHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string CreateStructureTaskTestResponse::ToJsonString() const
+string UpdateJdkResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_mainTaskIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MainTaskId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_mainTaskId.c_str(), allocator).Move(), allocator);
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -101,15 +82,5 @@ string CreateStructureTaskTestResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string CreateStructureTaskTestResponse::GetMainTaskId() const
-{
-    return m_mainTaskId;
-}
-
-bool CreateStructureTaskTestResponse::MainTaskIdHasBeenSet() const
-{
-    return m_mainTaskIdHasBeenSet;
-}
 
 

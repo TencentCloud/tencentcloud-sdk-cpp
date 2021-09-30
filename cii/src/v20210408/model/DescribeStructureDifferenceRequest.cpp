@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cii/v20210408/model/DescribeStructureTaskResultTestRequest.h>
+#include <tencentcloud/cii/v20210408/model/DescribeStructureDifferenceRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
@@ -22,12 +22,13 @@
 using namespace TencentCloud::Cii::V20210408::Model;
 using namespace std;
 
-DescribeStructureTaskResultTestRequest::DescribeStructureTaskResultTestRequest() :
-    m_mainTaskIdHasBeenSet(false)
+DescribeStructureDifferenceRequest::DescribeStructureDifferenceRequest() :
+    m_mainTaskIdHasBeenSet(false),
+    m_subTaskIdHasBeenSet(false)
 {
 }
 
-string DescribeStructureTaskResultTestRequest::ToJsonString() const
+string DescribeStructureDifferenceRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
@@ -42,6 +43,14 @@ string DescribeStructureTaskResultTestRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_mainTaskId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_subTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_subTaskId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -50,20 +59,36 @@ string DescribeStructureTaskResultTestRequest::ToJsonString() const
 }
 
 
-string DescribeStructureTaskResultTestRequest::GetMainTaskId() const
+string DescribeStructureDifferenceRequest::GetMainTaskId() const
 {
     return m_mainTaskId;
 }
 
-void DescribeStructureTaskResultTestRequest::SetMainTaskId(const string& _mainTaskId)
+void DescribeStructureDifferenceRequest::SetMainTaskId(const string& _mainTaskId)
 {
     m_mainTaskId = _mainTaskId;
     m_mainTaskIdHasBeenSet = true;
 }
 
-bool DescribeStructureTaskResultTestRequest::MainTaskIdHasBeenSet() const
+bool DescribeStructureDifferenceRequest::MainTaskIdHasBeenSet() const
 {
     return m_mainTaskIdHasBeenSet;
+}
+
+string DescribeStructureDifferenceRequest::GetSubTaskId() const
+{
+    return m_subTaskId;
+}
+
+void DescribeStructureDifferenceRequest::SetSubTaskId(const string& _subTaskId)
+{
+    m_subTaskId = _subTaskId;
+    m_subTaskIdHasBeenSet = true;
+}
+
+bool DescribeStructureDifferenceRequest::SubTaskIdHasBeenSet() const
+{
+    return m_subTaskIdHasBeenSet;
 }
 
 

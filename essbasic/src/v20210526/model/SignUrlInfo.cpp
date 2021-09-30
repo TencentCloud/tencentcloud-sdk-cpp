@@ -31,7 +31,8 @@ SignUrlInfo::SignUrlInfo() :
     m_organizationNameHasBeenSet(false),
     m_approverTypeHasBeenSet(false),
     m_idCardNumberHasBeenSet(false),
-    m_flowIdHasBeenSet(false)
+    m_flowIdHasBeenSet(false),
+    m_openIdHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,16 @@ CoreInternalOutcome SignUrlInfo::Deserialize(const rapidjson::Value &value)
         m_flowIdHasBeenSet = true;
     }
 
+    if (value.HasMember("OpenId") && !value["OpenId"].IsNull())
+    {
+        if (!value["OpenId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SignUrlInfo.OpenId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_openId = string(value["OpenId"].GetString());
+        m_openIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +254,14 @@ void SignUrlInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "FlowId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_flowId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_openIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpenId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_openId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +441,21 @@ void SignUrlInfo::SetFlowId(const string& _flowId)
 bool SignUrlInfo::FlowIdHasBeenSet() const
 {
     return m_flowIdHasBeenSet;
+}
+
+string SignUrlInfo::GetOpenId() const
+{
+    return m_openId;
+}
+
+void SignUrlInfo::SetOpenId(const string& _openId)
+{
+    m_openId = _openId;
+    m_openIdHasBeenSet = true;
+}
+
+bool SignUrlInfo::OpenIdHasBeenSet() const
+{
+    return m_openIdHasBeenSet;
 }
 
