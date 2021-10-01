@@ -1588,6 +1588,49 @@ TkeClient::DescribeClusterAsGroupsOutcomeCallable TkeClient::DescribeClusterAsGr
     return task->get_future();
 }
 
+TkeClient::DescribeClusterAuthenticationOptionsOutcome TkeClient::DescribeClusterAuthenticationOptions(const DescribeClusterAuthenticationOptionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterAuthenticationOptions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterAuthenticationOptionsResponse rsp = DescribeClusterAuthenticationOptionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterAuthenticationOptionsOutcome(rsp);
+        else
+            return DescribeClusterAuthenticationOptionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterAuthenticationOptionsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeClusterAuthenticationOptionsAsync(const DescribeClusterAuthenticationOptionsRequest& request, const DescribeClusterAuthenticationOptionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterAuthenticationOptions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeClusterAuthenticationOptionsOutcomeCallable TkeClient::DescribeClusterAuthenticationOptionsCallable(const DescribeClusterAuthenticationOptionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterAuthenticationOptionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterAuthenticationOptions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribeClusterCommonNamesOutcome TkeClient::DescribeClusterCommonNames(const DescribeClusterCommonNamesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusterCommonNames");
@@ -3344,6 +3387,49 @@ TkeClient::ModifyClusterAttributeOutcomeCallable TkeClient::ModifyClusterAttribu
         [this, request]()
         {
             return this->ModifyClusterAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::ModifyClusterAuthenticationOptionsOutcome TkeClient::ModifyClusterAuthenticationOptions(const ModifyClusterAuthenticationOptionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClusterAuthenticationOptions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterAuthenticationOptionsResponse rsp = ModifyClusterAuthenticationOptionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterAuthenticationOptionsOutcome(rsp);
+        else
+            return ModifyClusterAuthenticationOptionsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterAuthenticationOptionsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ModifyClusterAuthenticationOptionsAsync(const ModifyClusterAuthenticationOptionsRequest& request, const ModifyClusterAuthenticationOptionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyClusterAuthenticationOptions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::ModifyClusterAuthenticationOptionsOutcomeCallable TkeClient::ModifyClusterAuthenticationOptionsCallable(const ModifyClusterAuthenticationOptionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyClusterAuthenticationOptionsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyClusterAuthenticationOptions(request);
         }
     );
 
