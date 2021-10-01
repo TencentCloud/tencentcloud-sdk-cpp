@@ -384,6 +384,49 @@ IotexplorerClient::CreateStudioProductOutcomeCallable IotexplorerClient::CreateS
     return task->get_future();
 }
 
+IotexplorerClient::CreateTopicPolicyOutcome IotexplorerClient::CreateTopicPolicy(const CreateTopicPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTopicPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTopicPolicyResponse rsp = CreateTopicPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTopicPolicyOutcome(rsp);
+        else
+            return CreateTopicPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTopicPolicyOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CreateTopicPolicyAsync(const CreateTopicPolicyRequest& request, const CreateTopicPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateTopicPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::CreateTopicPolicyOutcomeCallable IotexplorerClient::CreateTopicPolicyCallable(const CreateTopicPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTopicPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateTopicPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::CreateTopicRuleOutcome IotexplorerClient::CreateTopicRule(const CreateTopicRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTopicRule");

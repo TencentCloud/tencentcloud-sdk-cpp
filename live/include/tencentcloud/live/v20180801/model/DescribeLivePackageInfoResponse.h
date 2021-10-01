@@ -68,7 +68,7 @@ namespace TencentCloud
 204: 日结流量
 205: 日结时长
 206: 月结时长
-304: 日结流量
+304: 日结流量。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageBillMode 套餐包当前计费方式:
 -1: 无计费方式或获取失败
@@ -79,7 +79,7 @@ namespace TencentCloud
 204: 日结流量
 205: 日结时长
 206: 月结时长
-304: 日结流量
+304: 日结流量。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetPackageBillMode() const;
@@ -91,9 +91,9 @@ namespace TencentCloud
                     bool PackageBillModeHasBeenSet() const;
 
                     /**
-                     * 获取总页数
+                     * 获取总页数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalPage 总页数
+                     * @return TotalPage 总页数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetTotalPage() const;
@@ -105,9 +105,9 @@ namespace TencentCloud
                     bool TotalPageHasBeenSet() const;
 
                     /**
-                     * 获取数据总条数
+                     * 获取数据总条数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalNum 数据总条数
+                     * @return TotalNum 数据总条数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetTotalNum() const;
@@ -119,9 +119,9 @@ namespace TencentCloud
                     bool TotalNumHasBeenSet() const;
 
                     /**
-                     * 获取当前页数
+                     * 获取当前页数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PageNum 当前页数
+                     * @return PageNum 当前页数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetPageNum() const;
@@ -133,9 +133,9 @@ namespace TencentCloud
                     bool PageNumHasBeenSet() const;
 
                     /**
-                     * 获取当前每页数量
+                     * 获取当前每页数量。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PageSize 当前每页数量
+                     * @return PageSize 当前每页数量。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetPageSize() const;
@@ -165,35 +165,35 @@ namespace TencentCloud
 204: 日结流量
 205: 日结时长
 206: 月结时长
-304: 日结流量
+304: 日结流量。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_packageBillMode;
                     bool m_packageBillModeHasBeenSet;
 
                     /**
-                     * 总页数
+                     * 总页数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalPage;
                     bool m_totalPageHasBeenSet;
 
                     /**
-                     * 数据总条数
+                     * 数据总条数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalNum;
                     bool m_totalNumHasBeenSet;
 
                     /**
-                     * 当前页数
+                     * 当前页数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_pageNum;
                     bool m_pageNumHasBeenSet;
 
                     /**
-                     * 当前每页数量
+                     * 当前每页数量。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_pageSize;

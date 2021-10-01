@@ -39,6 +39,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/CreateProjectResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateStudioProductRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateStudioProductResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateTopicPolicyRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateTopicPolicyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTopicRuleRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTopicRuleResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteDeviceRequest.h>
@@ -159,6 +161,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateStudioProductResponse> CreateStudioProductOutcome;
                 typedef std::future<CreateStudioProductOutcome> CreateStudioProductOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateStudioProductRequest&, CreateStudioProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStudioProductAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTopicPolicyResponse> CreateTopicPolicyOutcome;
+                typedef std::future<CreateTopicPolicyOutcome> CreateTopicPolicyOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreateTopicPolicyRequest&, CreateTopicPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTopicPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTopicRuleResponse> CreateTopicRuleOutcome;
                 typedef std::future<CreateTopicRuleOutcome> CreateTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateTopicRuleRequest&, CreateTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTopicRuleAsyncHandler;
@@ -356,6 +361,15 @@ namespace TencentCloud
                 CreateStudioProductOutcome CreateStudioProduct(const Model::CreateStudioProductRequest &request);
                 void CreateStudioProductAsync(const Model::CreateStudioProductRequest& request, const CreateStudioProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateStudioProductOutcomeCallable CreateStudioProductCallable(const Model::CreateStudioProductRequest& request);
+
+                /**
+                 *本接口（CreateTopicPolicy）用于创建一个Topic 
+                 * @param req CreateTopicPolicyRequest
+                 * @return CreateTopicPolicyOutcome
+                 */
+                CreateTopicPolicyOutcome CreateTopicPolicy(const Model::CreateTopicPolicyRequest &request);
+                void CreateTopicPolicyAsync(const Model::CreateTopicPolicyRequest& request, const CreateTopicPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTopicPolicyOutcomeCallable CreateTopicPolicyCallable(const Model::CreateTopicPolicyRequest& request);
 
                 /**
                  *创建规则

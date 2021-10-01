@@ -44,24 +44,24 @@ namespace TencentCloud
 
                     /**
                      * 获取包类型，可选值：
-0：流量包；
-1：转码包。
+0：流量包
+1：转码包
 2: 连麦包。
                      * @return PackageType 包类型，可选值：
-0：流量包；
-1：转码包。
+0：流量包
+1：转码包
 2: 连麦包。
                      */
                     int64_t GetPackageType() const;
 
                     /**
                      * 设置包类型，可选值：
-0：流量包；
-1：转码包。
+0：流量包
+1：转码包
 2: 连麦包。
                      * @param PackageType 包类型，可选值：
-0：流量包；
-1：转码包。
+0：流量包
+1：转码包
 2: 连麦包。
                      */
                     void SetPackageType(const int64_t& _packageType);
@@ -77,18 +77,18 @@ namespace TencentCloud
 1. BuyTimeDesc： 最新购买的排在最前面
 2. BuyTimeAsc： 最老购买的排在最前面
 3. ExpireTimeDesc： 最后过期的排在最前面
-4. ExpireTimeAsc：最先过期的排在最前面
+4. ExpireTimeAsc：最先过期的排在最前面。
 
 注意：
-1. PackageType 为 2（连麦包） 的时候，不支持 3、4 排序
+1. PackageType 为 2（连麦包） 的时候，不支持 3、4 排序。
                      * @return OrderBy 排序规则:
 1. BuyTimeDesc： 最新购买的排在最前面
 2. BuyTimeAsc： 最老购买的排在最前面
 3. ExpireTimeDesc： 最后过期的排在最前面
-4. ExpireTimeAsc：最先过期的排在最前面
+4. ExpireTimeAsc：最先过期的排在最前面。
 
 注意：
-1. PackageType 为 2（连麦包） 的时候，不支持 3、4 排序
+1. PackageType 为 2（连麦包） 的时候，不支持 3、4 排序。
                      */
                     std::string GetOrderBy() const;
 
@@ -97,18 +97,18 @@ namespace TencentCloud
 1. BuyTimeDesc： 最新购买的排在最前面
 2. BuyTimeAsc： 最老购买的排在最前面
 3. ExpireTimeDesc： 最后过期的排在最前面
-4. ExpireTimeAsc：最先过期的排在最前面
+4. ExpireTimeAsc：最先过期的排在最前面。
 
 注意：
-1. PackageType 为 2（连麦包） 的时候，不支持 3、4 排序
+1. PackageType 为 2（连麦包） 的时候，不支持 3、4 排序。
                      * @param OrderBy 排序规则:
 1. BuyTimeDesc： 最新购买的排在最前面
 2. BuyTimeAsc： 最老购买的排在最前面
 3. ExpireTimeDesc： 最后过期的排在最前面
-4. ExpireTimeAsc：最先过期的排在最前面
+4. ExpireTimeAsc：最先过期的排在最前面。
 
 注意：
-1. PackageType 为 2（连麦包） 的时候，不支持 3、4 排序
+1. PackageType 为 2（连麦包） 的时候，不支持 3、4 排序。
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
@@ -138,17 +138,17 @@ namespace TencentCloud
 
                     /**
                      * 获取分页大小，和 PageNum 同时传递才会生效。
-取值：10 ～ 100 之间的任意整数
+取值：10 ～ 100 之间的任意整数。
                      * @return PageSize 分页大小，和 PageNum 同时传递才会生效。
-取值：10 ～ 100 之间的任意整数
+取值：10 ～ 100 之间的任意整数。
                      */
                     int64_t GetPageSize() const;
 
                     /**
                      * 设置分页大小，和 PageNum 同时传递才会生效。
-取值：10 ～ 100 之间的任意整数
+取值：10 ～ 100 之间的任意整数。
                      * @param PageSize 分页大小，和 PageNum 同时传递才会生效。
-取值：10 ～ 100 之间的任意整数
+取值：10 ～ 100 之间的任意整数。
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
@@ -162,8 +162,8 @@ namespace TencentCloud
 
                     /**
                      * 包类型，可选值：
-0：流量包；
-1：转码包。
+0：流量包
+1：转码包
 2: 连麦包。
                      */
                     int64_t m_packageType;
@@ -174,10 +174,10 @@ namespace TencentCloud
 1. BuyTimeDesc： 最新购买的排在最前面
 2. BuyTimeAsc： 最老购买的排在最前面
 3. ExpireTimeDesc： 最后过期的排在最前面
-4. ExpireTimeAsc：最先过期的排在最前面
+4. ExpireTimeAsc：最先过期的排在最前面。
 
 注意：
-1. PackageType 为 2（连麦包） 的时候，不支持 3、4 排序
+1. PackageType 为 2（连麦包） 的时候，不支持 3、4 排序。
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
@@ -190,7 +190,7 @@ namespace TencentCloud
 
                     /**
                      * 分页大小，和 PageNum 同时传递才会生效。
-取值：10 ～ 100 之间的任意整数
+取值：10 ～ 100 之间的任意整数。
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;

@@ -27,6 +27,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/ModifyStudioProductResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteStudioProductResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/GetDeviceListResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/TopicRulePayload.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteLoRaFrequencyResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteTopicRuleResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyModelDefinitionRequest.h
@@ -87,7 +88,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/EventHistoryItem.h
   include/tencentcloud/iotexplorer/v20190423/model/DirectBindDeviceInFamilyResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/TopicRule.h
-  include/tencentcloud/iotexplorer/v20190423/model/TopicRulePayload.h
+  include/tencentcloud/iotexplorer/v20190423/model/CreateTopicPolicyResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/CallDeviceActionAsyncResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeTopicRuleResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/UpdateFirmwareRequest.h
@@ -95,6 +96,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/DescribeDeviceRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/UpdateDevicesEnableStateRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyTopicRuleResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/CreateTopicPolicyRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DirectBindDeviceInFamilyRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeLoRaFrequencyResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/SearchStudioProductResponse.h
@@ -147,6 +149,7 @@ set(iotexplorer_src
   src/v20190423/model/ModifyStudioProductResponse.cpp
   src/v20190423/model/DeleteStudioProductResponse.cpp
   src/v20190423/model/GetDeviceListResponse.cpp
+  src/v20190423/model/TopicRulePayload.cpp
   src/v20190423/model/DeleteLoRaFrequencyResponse.cpp
   src/v20190423/model/DeleteTopicRuleResponse.cpp
   src/v20190423/model/ModifyModelDefinitionRequest.cpp
@@ -207,7 +210,7 @@ set(iotexplorer_src
   src/v20190423/model/EventHistoryItem.cpp
   src/v20190423/model/DirectBindDeviceInFamilyResponse.cpp
   src/v20190423/model/TopicRule.cpp
-  src/v20190423/model/TopicRulePayload.cpp
+  src/v20190423/model/CreateTopicPolicyResponse.cpp
   src/v20190423/model/CallDeviceActionAsyncResponse.cpp
   src/v20190423/model/DescribeTopicRuleResponse.cpp
   src/v20190423/model/UpdateFirmwareRequest.cpp
@@ -215,6 +218,7 @@ set(iotexplorer_src
   src/v20190423/model/DescribeDeviceRequest.cpp
   src/v20190423/model/UpdateDevicesEnableStateRequest.cpp
   src/v20190423/model/ModifyTopicRuleResponse.cpp
+  src/v20190423/model/CreateTopicPolicyRequest.cpp
   src/v20190423/model/DirectBindDeviceInFamilyRequest.cpp
   src/v20190423/model/DescribeLoRaFrequencyResponse.cpp
   src/v20190423/model/SearchStudioProductResponse.cpp
