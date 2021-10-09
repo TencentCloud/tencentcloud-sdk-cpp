@@ -39,6 +39,10 @@
 #include <tencentcloud/tdmq/v20200217/model/CreateCmqTopicResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateEnvironmentRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateEnvironmentResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateEnvironmentRoleRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateEnvironmentRoleResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateRoleRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateRoleResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateSubscriptionRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateSubscriptionResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateTopicRequest.h>
@@ -51,8 +55,12 @@
 #include <tencentcloud/tdmq/v20200217/model/DeleteCmqSubscribeResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteCmqTopicRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteCmqTopicResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteEnvironmentRolesRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteEnvironmentRolesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteEnvironmentsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteEnvironmentsResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteRolesRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteRolesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteSubscriptionsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteSubscriptionsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteTopicsRequest.h>
@@ -89,6 +97,8 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeNodeHealthOptResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeProducersRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeProducersResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRolesRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRolesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeSubscriptionsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeSubscriptionsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeTopicsRequest.h>
@@ -103,6 +113,10 @@
 #include <tencentcloud/tdmq/v20200217/model/ModifyCmqTopicAttributeResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyEnvironmentAttributesRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyEnvironmentAttributesResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyEnvironmentRoleRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyEnvironmentRoleResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyRoleRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyRoleResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyTopicRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyTopicResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/PublishCmqMsgRequest.h>
@@ -161,6 +175,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateEnvironmentResponse> CreateEnvironmentOutcome;
                 typedef std::future<CreateEnvironmentOutcome> CreateEnvironmentOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::CreateEnvironmentRequest&, CreateEnvironmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEnvironmentAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateEnvironmentRoleResponse> CreateEnvironmentRoleOutcome;
+                typedef std::future<CreateEnvironmentRoleOutcome> CreateEnvironmentRoleOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::CreateEnvironmentRoleRequest&, CreateEnvironmentRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEnvironmentRoleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRoleResponse> CreateRoleOutcome;
+                typedef std::future<CreateRoleOutcome> CreateRoleOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::CreateRoleRequest&, CreateRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRoleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSubscriptionResponse> CreateSubscriptionOutcome;
                 typedef std::future<CreateSubscriptionOutcome> CreateSubscriptionOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::CreateSubscriptionRequest&, CreateSubscriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSubscriptionAsyncHandler;
@@ -179,9 +199,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteCmqTopicResponse> DeleteCmqTopicOutcome;
                 typedef std::future<DeleteCmqTopicOutcome> DeleteCmqTopicOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DeleteCmqTopicRequest&, DeleteCmqTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCmqTopicAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteEnvironmentRolesResponse> DeleteEnvironmentRolesOutcome;
+                typedef std::future<DeleteEnvironmentRolesOutcome> DeleteEnvironmentRolesOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DeleteEnvironmentRolesRequest&, DeleteEnvironmentRolesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEnvironmentRolesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteEnvironmentsResponse> DeleteEnvironmentsOutcome;
                 typedef std::future<DeleteEnvironmentsOutcome> DeleteEnvironmentsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DeleteEnvironmentsRequest&, DeleteEnvironmentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEnvironmentsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRolesResponse> DeleteRolesOutcome;
+                typedef std::future<DeleteRolesOutcome> DeleteRolesOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DeleteRolesRequest&, DeleteRolesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRolesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSubscriptionsResponse> DeleteSubscriptionsOutcome;
                 typedef std::future<DeleteSubscriptionsOutcome> DeleteSubscriptionsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DeleteSubscriptionsRequest&, DeleteSubscriptionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSubscriptionsAsyncHandler;
@@ -236,6 +262,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProducersResponse> DescribeProducersOutcome;
                 typedef std::future<DescribeProducersOutcome> DescribeProducersOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeProducersRequest&, DescribeProducersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProducersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRolesResponse> DescribeRolesOutcome;
+                typedef std::future<DescribeRolesOutcome> DescribeRolesOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeRolesRequest&, DescribeRolesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRolesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSubscriptionsResponse> DescribeSubscriptionsOutcome;
                 typedef std::future<DescribeSubscriptionsOutcome> DescribeSubscriptionsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeSubscriptionsRequest&, DescribeSubscriptionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubscriptionsAsyncHandler;
@@ -257,6 +286,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyEnvironmentAttributesResponse> ModifyEnvironmentAttributesOutcome;
                 typedef std::future<ModifyEnvironmentAttributesOutcome> ModifyEnvironmentAttributesOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ModifyEnvironmentAttributesRequest&, ModifyEnvironmentAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEnvironmentAttributesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyEnvironmentRoleResponse> ModifyEnvironmentRoleOutcome;
+                typedef std::future<ModifyEnvironmentRoleOutcome> ModifyEnvironmentRoleOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::ModifyEnvironmentRoleRequest&, ModifyEnvironmentRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEnvironmentRoleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRoleResponse> ModifyRoleOutcome;
+                typedef std::future<ModifyRoleOutcome> ModifyRoleOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::ModifyRoleRequest&, ModifyRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRoleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyTopicResponse> ModifyTopicOutcome;
                 typedef std::future<ModifyTopicOutcome> ModifyTopicOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ModifyTopicRequest&, ModifyTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTopicAsyncHandler;
@@ -363,6 +398,24 @@ namespace TencentCloud
                 CreateEnvironmentOutcomeCallable CreateEnvironmentCallable(const Model::CreateEnvironmentRequest& request);
 
                 /**
+                 *创建环境角色授权
+                 * @param req CreateEnvironmentRoleRequest
+                 * @return CreateEnvironmentRoleOutcome
+                 */
+                CreateEnvironmentRoleOutcome CreateEnvironmentRole(const Model::CreateEnvironmentRoleRequest &request);
+                void CreateEnvironmentRoleAsync(const Model::CreateEnvironmentRoleRequest& request, const CreateEnvironmentRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateEnvironmentRoleOutcomeCallable CreateEnvironmentRoleCallable(const Model::CreateEnvironmentRoleRequest& request);
+
+                /**
+                 *创建角色
+                 * @param req CreateRoleRequest
+                 * @return CreateRoleOutcome
+                 */
+                CreateRoleOutcome CreateRole(const Model::CreateRoleRequest &request);
+                void CreateRoleAsync(const Model::CreateRoleRequest& request, const CreateRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRoleOutcomeCallable CreateRoleCallable(const Model::CreateRoleRequest& request);
+
+                /**
                  *创建一个主题的订阅关系
                  * @param req CreateSubscriptionRequest
                  * @return CreateSubscriptionOutcome
@@ -417,6 +470,15 @@ namespace TencentCloud
                 DeleteCmqTopicOutcomeCallable DeleteCmqTopicCallable(const Model::DeleteCmqTopicRequest& request);
 
                 /**
+                 *删除环境角色授权。
+                 * @param req DeleteEnvironmentRolesRequest
+                 * @return DeleteEnvironmentRolesOutcome
+                 */
+                DeleteEnvironmentRolesOutcome DeleteEnvironmentRoles(const Model::DeleteEnvironmentRolesRequest &request);
+                void DeleteEnvironmentRolesAsync(const Model::DeleteEnvironmentRolesRequest& request, const DeleteEnvironmentRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteEnvironmentRolesOutcomeCallable DeleteEnvironmentRolesCallable(const Model::DeleteEnvironmentRolesRequest& request);
+
+                /**
                  *批量删除租户下的命名空间
                  * @param req DeleteEnvironmentsRequest
                  * @return DeleteEnvironmentsOutcome
@@ -424,6 +486,15 @@ namespace TencentCloud
                 DeleteEnvironmentsOutcome DeleteEnvironments(const Model::DeleteEnvironmentsRequest &request);
                 void DeleteEnvironmentsAsync(const Model::DeleteEnvironmentsRequest& request, const DeleteEnvironmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteEnvironmentsOutcomeCallable DeleteEnvironmentsCallable(const Model::DeleteEnvironmentsRequest& request);
+
+                /**
+                 *删除角色，支持批量。
+                 * @param req DeleteRolesRequest
+                 * @return DeleteRolesOutcome
+                 */
+                DeleteRolesOutcome DeleteRoles(const Model::DeleteRolesRequest &request);
+                void DeleteRolesAsync(const Model::DeleteRolesRequest& request, const DeleteRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRolesOutcomeCallable DeleteRolesCallable(const Model::DeleteRolesRequest& request);
 
                 /**
                  *删除订阅关系
@@ -588,6 +659,15 @@ namespace TencentCloud
                 DescribeProducersOutcomeCallable DescribeProducersCallable(const Model::DescribeProducersRequest& request);
 
                 /**
+                 *获取角色列表
+                 * @param req DescribeRolesRequest
+                 * @return DescribeRolesOutcome
+                 */
+                DescribeRolesOutcome DescribeRoles(const Model::DescribeRolesRequest &request);
+                void DescribeRolesAsync(const Model::DescribeRolesRequest& request, const DescribeRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRolesOutcomeCallable DescribeRolesCallable(const Model::DescribeRolesRequest& request);
+
+                /**
                  *查询指定环境和主题下的订阅者列表
                  * @param req DescribeSubscriptionsRequest
                  * @return DescribeSubscriptionsOutcome
@@ -649,6 +729,24 @@ namespace TencentCloud
                 ModifyEnvironmentAttributesOutcome ModifyEnvironmentAttributes(const Model::ModifyEnvironmentAttributesRequest &request);
                 void ModifyEnvironmentAttributesAsync(const Model::ModifyEnvironmentAttributesRequest& request, const ModifyEnvironmentAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyEnvironmentAttributesOutcomeCallable ModifyEnvironmentAttributesCallable(const Model::ModifyEnvironmentAttributesRequest& request);
+
+                /**
+                 *修改环境角色授权。
+                 * @param req ModifyEnvironmentRoleRequest
+                 * @return ModifyEnvironmentRoleOutcome
+                 */
+                ModifyEnvironmentRoleOutcome ModifyEnvironmentRole(const Model::ModifyEnvironmentRoleRequest &request);
+                void ModifyEnvironmentRoleAsync(const Model::ModifyEnvironmentRoleRequest& request, const ModifyEnvironmentRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyEnvironmentRoleOutcomeCallable ModifyEnvironmentRoleCallable(const Model::ModifyEnvironmentRoleRequest& request);
+
+                /**
+                 *角色修改
+                 * @param req ModifyRoleRequest
+                 * @return ModifyRoleOutcome
+                 */
+                ModifyRoleOutcome ModifyRole(const Model::ModifyRoleRequest &request);
+                void ModifyRoleAsync(const Model::ModifyRoleRequest& request, const ModifyRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRoleOutcomeCallable ModifyRoleCallable(const Model::ModifyRoleRequest& request);
 
                 /**
                  *修改主题备注和分区数

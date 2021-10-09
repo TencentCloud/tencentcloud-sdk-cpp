@@ -33,6 +33,7 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/ModifyMntMbrBindRelateAcctBankCodeRequest.h
   include/tencentcloud/cpdp/v20190820/model/CreateMerchantResult.h
   include/tencentcloud/cpdp/v20190820/model/ApplyPayerInfoResponse.h
+  include/tencentcloud/cpdp/v20190820/model/QueryMerchantPayWayListResponse.h
   include/tencentcloud/cpdp/v20190820/model/ApplyTradeResult.h
   include/tencentcloud/cpdp/v20190820/model/RevokeRechargeByThirdPayRequest.h
   include/tencentcloud/cpdp/v20190820/model/QueryTradeRequest.h
@@ -212,6 +213,7 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/QueryMemberBindResponse.h
   include/tencentcloud/cpdp/v20190820/model/AnchorContractInfo.h
   include/tencentcloud/cpdp/v20190820/model/QueryMerchantBalanceResult.h
+  include/tencentcloud/cpdp/v20190820/model/MerchantPayWayData.h
   include/tencentcloud/cpdp/v20190820/model/QueryDeclareResult.h
   include/tencentcloud/cpdp/v20190820/model/CreateCustAcctIdRequest.h
   include/tencentcloud/cpdp/v20190820/model/QueryBankClearResponse.h
@@ -279,6 +281,7 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/ChannelContractInfo.h
   include/tencentcloud/cpdp/v20190820/model/ModifyAgentTaxPaymentInfoRequest.h
   include/tencentcloud/cpdp/v20190820/model/QuerySmallAmountTransferRequest.h
+  include/tencentcloud/cpdp/v20190820/model/QueryMerchantPayWayListRequest.h
   include/tencentcloud/cpdp/v20190820/model/CreateBatchPaymentRecipient.h
   include/tencentcloud/cpdp/v20190820/model/DownloadReconciliationUrlRequest.h
   include/tencentcloud/cpdp/v20190820/model/CreateBatchPaymentRequest.h
@@ -332,6 +335,7 @@ set(cpdp_src
   src/v20190820/model/ModifyMntMbrBindRelateAcctBankCodeRequest.cpp
   src/v20190820/model/CreateMerchantResult.cpp
   src/v20190820/model/ApplyPayerInfoResponse.cpp
+  src/v20190820/model/QueryMerchantPayWayListResponse.cpp
   src/v20190820/model/ApplyTradeResult.cpp
   src/v20190820/model/RevokeRechargeByThirdPayRequest.cpp
   src/v20190820/model/QueryTradeRequest.cpp
@@ -511,6 +515,7 @@ set(cpdp_src
   src/v20190820/model/QueryMemberBindResponse.cpp
   src/v20190820/model/AnchorContractInfo.cpp
   src/v20190820/model/QueryMerchantBalanceResult.cpp
+  src/v20190820/model/MerchantPayWayData.cpp
   src/v20190820/model/QueryDeclareResult.cpp
   src/v20190820/model/CreateCustAcctIdRequest.cpp
   src/v20190820/model/QueryBankClearResponse.cpp
@@ -578,6 +583,7 @@ set(cpdp_src
   src/v20190820/model/ChannelContractInfo.cpp
   src/v20190820/model/ModifyAgentTaxPaymentInfoRequest.cpp
   src/v20190820/model/QuerySmallAmountTransferRequest.cpp
+  src/v20190820/model/QueryMerchantPayWayListRequest.cpp
   src/v20190820/model/CreateBatchPaymentRecipient.cpp
   src/v20190820/model/DownloadReconciliationUrlRequest.cpp
   src/v20190820/model/CreateBatchPaymentRequest.cpp

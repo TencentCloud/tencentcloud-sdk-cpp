@@ -384,6 +384,92 @@ TdmqClient::CreateEnvironmentOutcomeCallable TdmqClient::CreateEnvironmentCallab
     return task->get_future();
 }
 
+TdmqClient::CreateEnvironmentRoleOutcome TdmqClient::CreateEnvironmentRole(const CreateEnvironmentRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateEnvironmentRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateEnvironmentRoleResponse rsp = CreateEnvironmentRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateEnvironmentRoleOutcome(rsp);
+        else
+            return CreateEnvironmentRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateEnvironmentRoleOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::CreateEnvironmentRoleAsync(const CreateEnvironmentRoleRequest& request, const CreateEnvironmentRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateEnvironmentRole(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::CreateEnvironmentRoleOutcomeCallable TdmqClient::CreateEnvironmentRoleCallable(const CreateEnvironmentRoleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateEnvironmentRoleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateEnvironmentRole(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::CreateRoleOutcome TdmqClient::CreateRole(const CreateRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRoleResponse rsp = CreateRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRoleOutcome(rsp);
+        else
+            return CreateRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRoleOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::CreateRoleAsync(const CreateRoleRequest& request, const CreateRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRole(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::CreateRoleOutcomeCallable TdmqClient::CreateRoleCallable(const CreateRoleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRoleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRole(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::CreateSubscriptionOutcome TdmqClient::CreateSubscription(const CreateSubscriptionRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSubscription");
@@ -642,6 +728,49 @@ TdmqClient::DeleteCmqTopicOutcomeCallable TdmqClient::DeleteCmqTopicCallable(con
     return task->get_future();
 }
 
+TdmqClient::DeleteEnvironmentRolesOutcome TdmqClient::DeleteEnvironmentRoles(const DeleteEnvironmentRolesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteEnvironmentRoles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteEnvironmentRolesResponse rsp = DeleteEnvironmentRolesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteEnvironmentRolesOutcome(rsp);
+        else
+            return DeleteEnvironmentRolesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteEnvironmentRolesOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DeleteEnvironmentRolesAsync(const DeleteEnvironmentRolesRequest& request, const DeleteEnvironmentRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteEnvironmentRoles(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DeleteEnvironmentRolesOutcomeCallable TdmqClient::DeleteEnvironmentRolesCallable(const DeleteEnvironmentRolesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteEnvironmentRolesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteEnvironmentRoles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::DeleteEnvironmentsOutcome TdmqClient::DeleteEnvironments(const DeleteEnvironmentsRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteEnvironments");
@@ -678,6 +807,49 @@ TdmqClient::DeleteEnvironmentsOutcomeCallable TdmqClient::DeleteEnvironmentsCall
         [this, request]()
         {
             return this->DeleteEnvironments(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::DeleteRolesOutcome TdmqClient::DeleteRoles(const DeleteRolesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRoles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRolesResponse rsp = DeleteRolesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRolesOutcome(rsp);
+        else
+            return DeleteRolesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRolesOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DeleteRolesAsync(const DeleteRolesRequest& request, const DeleteRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRoles(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DeleteRolesOutcomeCallable TdmqClient::DeleteRolesCallable(const DeleteRolesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRolesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRoles(request);
         }
     );
 
@@ -1459,6 +1631,49 @@ TdmqClient::DescribeProducersOutcomeCallable TdmqClient::DescribeProducersCallab
     return task->get_future();
 }
 
+TdmqClient::DescribeRolesOutcome TdmqClient::DescribeRoles(const DescribeRolesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRoles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRolesResponse rsp = DescribeRolesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRolesOutcome(rsp);
+        else
+            return DescribeRolesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRolesOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeRolesAsync(const DescribeRolesRequest& request, const DescribeRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRoles(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeRolesOutcomeCallable TdmqClient::DescribeRolesCallable(const DescribeRolesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRolesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRoles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::DescribeSubscriptionsOutcome TdmqClient::DescribeSubscriptions(const DescribeSubscriptionsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSubscriptions");
@@ -1753,6 +1968,92 @@ TdmqClient::ModifyEnvironmentAttributesOutcomeCallable TdmqClient::ModifyEnviron
         [this, request]()
         {
             return this->ModifyEnvironmentAttributes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::ModifyEnvironmentRoleOutcome TdmqClient::ModifyEnvironmentRole(const ModifyEnvironmentRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyEnvironmentRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyEnvironmentRoleResponse rsp = ModifyEnvironmentRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyEnvironmentRoleOutcome(rsp);
+        else
+            return ModifyEnvironmentRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyEnvironmentRoleOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::ModifyEnvironmentRoleAsync(const ModifyEnvironmentRoleRequest& request, const ModifyEnvironmentRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyEnvironmentRole(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::ModifyEnvironmentRoleOutcomeCallable TdmqClient::ModifyEnvironmentRoleCallable(const ModifyEnvironmentRoleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyEnvironmentRoleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyEnvironmentRole(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::ModifyRoleOutcome TdmqClient::ModifyRole(const ModifyRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRoleResponse rsp = ModifyRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRoleOutcome(rsp);
+        else
+            return ModifyRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRoleOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::ModifyRoleAsync(const ModifyRoleRequest& request, const ModifyRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRole(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::ModifyRoleOutcomeCallable TdmqClient::ModifyRoleCallable(const ModifyRoleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRoleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRole(request);
         }
     );
 

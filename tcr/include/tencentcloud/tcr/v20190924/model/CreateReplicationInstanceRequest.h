@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool ReplicationRegionIdHasBeenSet() const;
 
+                    /**
+                     * 获取复制实例地域名称
+                     * @return ReplicationRegionName 复制实例地域名称
+                     */
+                    std::string GetReplicationRegionName() const;
+
+                    /**
+                     * 设置复制实例地域名称
+                     * @param ReplicationRegionName 复制实例地域名称
+                     */
+                    void SetReplicationRegionName(const std::string& _replicationRegionName);
+
+                    /**
+                     * 判断参数 ReplicationRegionName 是否已赋值
+                     * @return ReplicationRegionName 是否已赋值
+                     */
+                    bool ReplicationRegionNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     uint64_t m_replicationRegionId;
                     bool m_replicationRegionIdHasBeenSet;
+
+                    /**
+                     * 复制实例地域名称
+                     */
+                    std::string m_replicationRegionName;
+                    bool m_replicationRegionNameHasBeenSet;
 
                 };
             }

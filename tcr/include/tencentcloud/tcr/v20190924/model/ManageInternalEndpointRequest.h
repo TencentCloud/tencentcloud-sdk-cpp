@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取请求的地域ID
-                     * @return RegionId 请求的地域ID
+                     * 获取请求的地域ID，用于实例复制地域
+                     * @return RegionId 请求的地域ID，用于实例复制地域
                      */
                     uint64_t GetRegionId() const;
 
                     /**
-                     * 设置请求的地域ID
-                     * @param RegionId 请求的地域ID
+                     * 设置请求的地域ID，用于实例复制地域
+                     * @param RegionId 请求的地域ID，用于实例复制地域
                      */
                     void SetRegionId(const uint64_t& _regionId);
 
@@ -131,6 +131,24 @@ namespace TencentCloud
                      * @return RegionId 是否已赋值
                      */
                     bool RegionIdHasBeenSet() const;
+
+                    /**
+                     * 获取请求的地域名称，用于实例复制地域
+                     * @return RegionName 请求的地域名称，用于实例复制地域
+                     */
+                    std::string GetRegionName() const;
+
+                    /**
+                     * 设置请求的地域名称，用于实例复制地域
+                     * @param RegionName 请求的地域名称，用于实例复制地域
+                     */
+                    void SetRegionName(const std::string& _regionName);
+
+                    /**
+                     * 判断参数 RegionName 是否已赋值
+                     * @return RegionName 是否已赋值
+                     */
+                    bool RegionNameHasBeenSet() const;
 
                 private:
 
@@ -159,10 +177,16 @@ namespace TencentCloud
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 请求的地域ID
+                     * 请求的地域ID，用于实例复制地域
                      */
                     uint64_t m_regionId;
                     bool m_regionIdHasBeenSet;
+
+                    /**
+                     * 请求的地域名称，用于实例复制地域
+                     */
+                    std::string m_regionName;
+                    bool m_regionNameHasBeenSet;
 
                 };
             }

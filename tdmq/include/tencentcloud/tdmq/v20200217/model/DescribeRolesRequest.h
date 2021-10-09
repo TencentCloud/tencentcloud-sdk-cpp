@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TDMQ_V20200217_MODEL_DESCRIBEENVIRONMENTROLESREQUEST_H_
-#define TENCENTCLOUD_TDMQ_V20200217_MODEL_DESCRIBEENVIRONMENTROLESREQUEST_H_
+#ifndef TENCENTCLOUD_TDMQ_V20200217_MODEL_DESCRIBEROLESREQUEST_H_
+#define TENCENTCLOUD_TDMQ_V20200217_MODEL_DESCRIBEROLESREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -33,33 +33,33 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * DescribeEnvironmentRoles请求参数结构体
+                * DescribeRoles请求参数结构体
                 */
-                class DescribeEnvironmentRolesRequest : public AbstractModel
+                class DescribeRolesRequest : public AbstractModel
                 {
                 public:
-                    DescribeEnvironmentRolesRequest();
-                    ~DescribeEnvironmentRolesRequest() = default;
+                    DescribeRolesRequest();
+                    ~DescribeRolesRequest() = default;
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取必填字段，环境（命名空间）名称。
-                     * @return EnvironmentId 必填字段，环境（命名空间）名称。
+                     * 获取角色名称，模糊查询
+                     * @return RoleName 角色名称，模糊查询
                      */
-                    std::string GetEnvironmentId() const;
+                    std::string GetRoleName() const;
 
                     /**
-                     * 设置必填字段，环境（命名空间）名称。
-                     * @param EnvironmentId 必填字段，环境（命名空间）名称。
+                     * 设置角色名称，模糊查询
+                     * @param RoleName 角色名称，模糊查询
                      */
-                    void SetEnvironmentId(const std::string& _environmentId);
+                    void SetRoleName(const std::string& _roleName);
 
                     /**
-                     * 判断参数 EnvironmentId 是否已赋值
-                     * @return EnvironmentId 是否已赋值
+                     * 判断参数 RoleName 是否已赋值
+                     * @return RoleName 是否已赋值
                      */
-                    bool EnvironmentIdHasBeenSet() const;
+                    bool RoleNameHasBeenSet() const;
 
                     /**
                      * 获取起始下标，不填默认为0。
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取必填字段，Pulsar 集群的ID
-                     * @return ClusterId 必填字段，Pulsar 集群的ID
+                     * 获取必填字段，集群Id
+                     * @return ClusterId 必填字段，集群Id
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置必填字段，Pulsar 集群的ID
-                     * @param ClusterId 必填字段，Pulsar 集群的ID
+                     * 设置必填字段，集群Id
+                     * @param ClusterId 必填字段，集群Id
                      */
                     void SetClusterId(const std::string& _clusterId);
 
@@ -114,24 +114,6 @@ namespace TencentCloud
                      * @return ClusterId 是否已赋值
                      */
                     bool ClusterIdHasBeenSet() const;
-
-                    /**
-                     * 获取角色名称
-                     * @return RoleName 角色名称
-                     */
-                    std::string GetRoleName() const;
-
-                    /**
-                     * 设置角色名称
-                     * @param RoleName 角色名称
-                     */
-                    void SetRoleName(const std::string& _roleName);
-
-                    /**
-                     * 判断参数 RoleName 是否已赋值
-                     * @return RoleName 是否已赋值
-                     */
-                    bool RoleNameHasBeenSet() const;
 
                     /**
                      * 获取* RoleName
@@ -166,10 +148,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 必填字段，环境（命名空间）名称。
+                     * 角色名称，模糊查询
                      */
-                    std::string m_environmentId;
-                    bool m_environmentIdHasBeenSet;
+                    std::string m_roleName;
+                    bool m_roleNameHasBeenSet;
 
                     /**
                      * 起始下标，不填默认为0。
@@ -184,16 +166,10 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 必填字段，Pulsar 集群的ID
+                     * 必填字段，集群Id
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
-
-                    /**
-                     * 角色名称
-                     */
-                    std::string m_roleName;
-                    bool m_roleNameHasBeenSet;
 
                     /**
                      * * RoleName
@@ -210,4 +186,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TDMQ_V20200217_MODEL_DESCRIBEENVIRONMENTROLESREQUEST_H_
+#endif // !TENCENTCLOUD_TDMQ_V20200217_MODEL_DESCRIBEROLESREQUEST_H_

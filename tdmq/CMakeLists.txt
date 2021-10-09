@@ -19,10 +19,12 @@ set(tdmq_public_header
   )
 
 set(tdmq_public_header_model
+  include/tencentcloud/tdmq/v20200217/model/DescribeRolesResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeBindClustersResponse.h
   include/tencentcloud/tdmq/v20200217/model/CmqDeadLetterPolicy.h
   include/tencentcloud/tdmq/v20200217/model/BundleSetOpt.h
   include/tencentcloud/tdmq/v20200217/model/DescribeSubscriptionsRequest.h
+  include/tencentcloud/tdmq/v20200217/model/Role.h
   include/tencentcloud/tdmq/v20200217/model/DeleteClusterResponse.h
   include/tencentcloud/tdmq/v20200217/model/SendBatchMessagesResponse.h
   include/tencentcloud/tdmq/v20200217/model/ModifyCmqSubscriptionAttributeResponse.h
@@ -63,14 +65,18 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/PublishCmqMsgResponse.h
   include/tencentcloud/tdmq/v20200217/model/SendCmqMsgRequest.h
   include/tencentcloud/tdmq/v20200217/model/AcknowledgeMessageResponse.h
+  include/tencentcloud/tdmq/v20200217/model/DeleteEnvironmentRolesResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeClusterDetailRequest.h
+  include/tencentcloud/tdmq/v20200217/model/ModifyRoleResponse.h
   include/tencentcloud/tdmq/v20200217/model/Tag.h
   include/tencentcloud/tdmq/v20200217/model/DescribeNamespaceBundlesOptResponse.h
   include/tencentcloud/tdmq/v20200217/model/SendMessagesRequest.h
   include/tencentcloud/tdmq/v20200217/model/ModifyCmqTopicAttributeRequest.h
+  include/tencentcloud/tdmq/v20200217/model/DeleteRolesRequest.h
   include/tencentcloud/tdmq/v20200217/model/Subscription.h
   include/tencentcloud/tdmq/v20200217/model/CreateCmqSubscribeResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeSubscriptionsResponse.h
+  include/tencentcloud/tdmq/v20200217/model/ModifyRoleRequest.h
   include/tencentcloud/tdmq/v20200217/model/SendMessagesResponse.h
   include/tencentcloud/tdmq/v20200217/model/CreateTopicRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeTopicsRequest.h
@@ -88,6 +94,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/ClearCmqSubscriptionFilterTagsRequest.h
   include/tencentcloud/tdmq/v20200217/model/TopicRecord.h
   include/tencentcloud/tdmq/v20200217/model/DescribeEnvironmentRolesRequest.h
+  include/tencentcloud/tdmq/v20200217/model/DeleteRolesResponse.h
   include/tencentcloud/tdmq/v20200217/model/Environment.h
   include/tencentcloud/tdmq/v20200217/model/CreateCmqQueueResponse.h
   include/tencentcloud/tdmq/v20200217/model/PartitionsTopic.h
@@ -114,6 +121,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/DescribeNamespaceBundlesOptRequest.h
   include/tencentcloud/tdmq/v20200217/model/ModifyTopicRequest.h
   include/tencentcloud/tdmq/v20200217/model/ResetMsgSubOffsetByTimestampRequest.h
+  include/tencentcloud/tdmq/v20200217/model/CreateEnvironmentRoleResponse.h
   include/tencentcloud/tdmq/v20200217/model/Consumer.h
   include/tencentcloud/tdmq/v20200217/model/DescribeBindVpcsResponse.h
   include/tencentcloud/tdmq/v20200217/model/DeleteCmqSubscribeRequest.h
@@ -124,13 +132,19 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/RetentionPolicy.h
   include/tencentcloud/tdmq/v20200217/model/SendMsgRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeCmqQueueDetailRequest.h
+  include/tencentcloud/tdmq/v20200217/model/CreateRoleResponse.h
+  include/tencentcloud/tdmq/v20200217/model/DeleteEnvironmentRolesRequest.h
   include/tencentcloud/tdmq/v20200217/model/ClearCmqQueueResponse.h
   include/tencentcloud/tdmq/v20200217/model/DeleteEnvironmentsRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeBindClustersRequest.h
-  include/tencentcloud/tdmq/v20200217/model/DescribeClusterDetailResponse.h
+  include/tencentcloud/tdmq/v20200217/model/ModifyEnvironmentAttributesResponse.h
+  include/tencentcloud/tdmq/v20200217/model/EnvironmentRole.h
   include/tencentcloud/tdmq/v20200217/model/CreateCmqQueueRequest.h
+  include/tencentcloud/tdmq/v20200217/model/ModifyEnvironmentRoleResponse.h
   include/tencentcloud/tdmq/v20200217/model/DeleteCmqQueueRequest.h
+  include/tencentcloud/tdmq/v20200217/model/CreateRoleRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeProducersRequest.h
+  include/tencentcloud/tdmq/v20200217/model/ModifyEnvironmentRoleRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeEnvironmentAttributesResponse.h
   include/tencentcloud/tdmq/v20200217/model/SubscriptionTopic.h
   include/tencentcloud/tdmq/v20200217/model/DescribeProducersResponse.h
@@ -141,17 +155,20 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/UnbindCmqDeadLetterRequest.h
   include/tencentcloud/tdmq/v20200217/model/ModifyCmqQueueAttributeRequest.h
   include/tencentcloud/tdmq/v20200217/model/DeleteCmqSubscribeResponse.h
-  include/tencentcloud/tdmq/v20200217/model/ModifyEnvironmentAttributesResponse.h
+  include/tencentcloud/tdmq/v20200217/model/DescribeRolesRequest.h
   include/tencentcloud/tdmq/v20200217/model/DeleteSubscriptionsRequest.h
-  include/tencentcloud/tdmq/v20200217/model/EnvironmentRole.h
+  include/tencentcloud/tdmq/v20200217/model/DescribeClusterDetailResponse.h
+  include/tencentcloud/tdmq/v20200217/model/CreateEnvironmentRoleRequest.h
   )
 
 set(tdmq_src
   src/v20200217/TdmqClient.cpp
+  src/v20200217/model/DescribeRolesResponse.cpp
   src/v20200217/model/DescribeBindClustersResponse.cpp
   src/v20200217/model/CmqDeadLetterPolicy.cpp
   src/v20200217/model/BundleSetOpt.cpp
   src/v20200217/model/DescribeSubscriptionsRequest.cpp
+  src/v20200217/model/Role.cpp
   src/v20200217/model/DeleteClusterResponse.cpp
   src/v20200217/model/SendBatchMessagesResponse.cpp
   src/v20200217/model/ModifyCmqSubscriptionAttributeResponse.cpp
@@ -192,14 +209,18 @@ set(tdmq_src
   src/v20200217/model/PublishCmqMsgResponse.cpp
   src/v20200217/model/SendCmqMsgRequest.cpp
   src/v20200217/model/AcknowledgeMessageResponse.cpp
+  src/v20200217/model/DeleteEnvironmentRolesResponse.cpp
   src/v20200217/model/DescribeClusterDetailRequest.cpp
+  src/v20200217/model/ModifyRoleResponse.cpp
   src/v20200217/model/Tag.cpp
   src/v20200217/model/DescribeNamespaceBundlesOptResponse.cpp
   src/v20200217/model/SendMessagesRequest.cpp
   src/v20200217/model/ModifyCmqTopicAttributeRequest.cpp
+  src/v20200217/model/DeleteRolesRequest.cpp
   src/v20200217/model/Subscription.cpp
   src/v20200217/model/CreateCmqSubscribeResponse.cpp
   src/v20200217/model/DescribeSubscriptionsResponse.cpp
+  src/v20200217/model/ModifyRoleRequest.cpp
   src/v20200217/model/SendMessagesResponse.cpp
   src/v20200217/model/CreateTopicRequest.cpp
   src/v20200217/model/DescribeTopicsRequest.cpp
@@ -217,6 +238,7 @@ set(tdmq_src
   src/v20200217/model/ClearCmqSubscriptionFilterTagsRequest.cpp
   src/v20200217/model/TopicRecord.cpp
   src/v20200217/model/DescribeEnvironmentRolesRequest.cpp
+  src/v20200217/model/DeleteRolesResponse.cpp
   src/v20200217/model/Environment.cpp
   src/v20200217/model/CreateCmqQueueResponse.cpp
   src/v20200217/model/PartitionsTopic.cpp
@@ -243,6 +265,7 @@ set(tdmq_src
   src/v20200217/model/DescribeNamespaceBundlesOptRequest.cpp
   src/v20200217/model/ModifyTopicRequest.cpp
   src/v20200217/model/ResetMsgSubOffsetByTimestampRequest.cpp
+  src/v20200217/model/CreateEnvironmentRoleResponse.cpp
   src/v20200217/model/Consumer.cpp
   src/v20200217/model/DescribeBindVpcsResponse.cpp
   src/v20200217/model/DeleteCmqSubscribeRequest.cpp
@@ -253,13 +276,19 @@ set(tdmq_src
   src/v20200217/model/RetentionPolicy.cpp
   src/v20200217/model/SendMsgRequest.cpp
   src/v20200217/model/DescribeCmqQueueDetailRequest.cpp
+  src/v20200217/model/CreateRoleResponse.cpp
+  src/v20200217/model/DeleteEnvironmentRolesRequest.cpp
   src/v20200217/model/ClearCmqQueueResponse.cpp
   src/v20200217/model/DeleteEnvironmentsRequest.cpp
   src/v20200217/model/DescribeBindClustersRequest.cpp
-  src/v20200217/model/DescribeClusterDetailResponse.cpp
+  src/v20200217/model/ModifyEnvironmentAttributesResponse.cpp
+  src/v20200217/model/EnvironmentRole.cpp
   src/v20200217/model/CreateCmqQueueRequest.cpp
+  src/v20200217/model/ModifyEnvironmentRoleResponse.cpp
   src/v20200217/model/DeleteCmqQueueRequest.cpp
+  src/v20200217/model/CreateRoleRequest.cpp
   src/v20200217/model/DescribeProducersRequest.cpp
+  src/v20200217/model/ModifyEnvironmentRoleRequest.cpp
   src/v20200217/model/DescribeEnvironmentAttributesResponse.cpp
   src/v20200217/model/SubscriptionTopic.cpp
   src/v20200217/model/DescribeProducersResponse.cpp
@@ -270,9 +299,10 @@ set(tdmq_src
   src/v20200217/model/UnbindCmqDeadLetterRequest.cpp
   src/v20200217/model/ModifyCmqQueueAttributeRequest.cpp
   src/v20200217/model/DeleteCmqSubscribeResponse.cpp
-  src/v20200217/model/ModifyEnvironmentAttributesResponse.cpp
+  src/v20200217/model/DescribeRolesRequest.cpp
   src/v20200217/model/DeleteSubscriptionsRequest.cpp
-  src/v20200217/model/EnvironmentRole.cpp
+  src/v20200217/model/DescribeClusterDetailResponse.cpp
+  src/v20200217/model/CreateEnvironmentRoleRequest.cpp
   )
 
 set(tdmq_include

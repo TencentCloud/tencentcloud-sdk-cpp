@@ -24,7 +24,8 @@ using namespace std;
 
 CreateReplicationInstanceRequest::CreateReplicationInstanceRequest() :
     m_registryIdHasBeenSet(false),
-    m_replicationRegionIdHasBeenSet(false)
+    m_replicationRegionIdHasBeenSet(false),
+    m_replicationRegionNameHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string CreateReplicationInstanceRequest::ToJsonString() const
         string key = "ReplicationRegionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_replicationRegionId, allocator);
+    }
+
+    if (m_replicationRegionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReplicationRegionName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_replicationRegionName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void CreateReplicationInstanceRequest::SetReplicationRegionId(const uint64_t& _r
 bool CreateReplicationInstanceRequest::ReplicationRegionIdHasBeenSet() const
 {
     return m_replicationRegionIdHasBeenSet;
+}
+
+string CreateReplicationInstanceRequest::GetReplicationRegionName() const
+{
+    return m_replicationRegionName;
+}
+
+void CreateReplicationInstanceRequest::SetReplicationRegionName(const string& _replicationRegionName)
+{
+    m_replicationRegionName = _replicationRegionName;
+    m_replicationRegionNameHasBeenSet = true;
+}
+
+bool CreateReplicationInstanceRequest::ReplicationRegionNameHasBeenSet() const
+{
+    return m_replicationRegionNameHasBeenSet;
 }
 
 

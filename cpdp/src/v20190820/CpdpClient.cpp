@@ -3050,6 +3050,49 @@ CpdpClient::QueryMerchantOrderOutcomeCallable CpdpClient::QueryMerchantOrderCall
     return task->get_future();
 }
 
+CpdpClient::QueryMerchantPayWayListOutcome CpdpClient::QueryMerchantPayWayList(const QueryMerchantPayWayListRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryMerchantPayWayList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryMerchantPayWayListResponse rsp = QueryMerchantPayWayListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryMerchantPayWayListOutcome(rsp);
+        else
+            return QueryMerchantPayWayListOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryMerchantPayWayListOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryMerchantPayWayListAsync(const QueryMerchantPayWayListRequest& request, const QueryMerchantPayWayListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryMerchantPayWayList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryMerchantPayWayListOutcomeCallable CpdpClient::QueryMerchantPayWayListCallable(const QueryMerchantPayWayListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryMerchantPayWayListOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryMerchantPayWayList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::QueryOrderOutcome CpdpClient::QueryOrder(const QueryOrderRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryOrder");

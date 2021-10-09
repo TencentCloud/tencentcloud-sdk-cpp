@@ -163,6 +163,8 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryMerchantInfoForManagementResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMerchantOrderRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMerchantOrderResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryMerchantPayWayListRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryMerchantPayWayListResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOrderRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOutwardOrderRequest.h>
@@ -457,6 +459,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryMerchantOrderResponse> QueryMerchantOrderOutcome;
                 typedef std::future<QueryMerchantOrderOutcome> QueryMerchantOrderOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryMerchantOrderRequest&, QueryMerchantOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMerchantOrderAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryMerchantPayWayListResponse> QueryMerchantPayWayListOutcome;
+                typedef std::future<QueryMerchantPayWayListOutcome> QueryMerchantPayWayListOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryMerchantPayWayListRequest&, QueryMerchantPayWayListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMerchantPayWayListAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryOrderResponse> QueryOrderOutcome;
                 typedef std::future<QueryOrderOutcome> QueryOrderOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryOrderRequest&, QueryOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOrderAsyncHandler;
@@ -1203,6 +1208,15 @@ namespace TencentCloud
                 QueryMerchantOrderOutcome QueryMerchantOrder(const Model::QueryMerchantOrderRequest &request);
                 void QueryMerchantOrderAsync(const Model::QueryMerchantOrderRequest& request, const QueryMerchantOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryMerchantOrderOutcomeCallable QueryMerchantOrderCallable(const Model::QueryMerchantOrderRequest& request);
+
+                /**
+                 *商户查询已开通的支付方式列表
+                 * @param req QueryMerchantPayWayListRequest
+                 * @return QueryMerchantPayWayListOutcome
+                 */
+                QueryMerchantPayWayListOutcome QueryMerchantPayWayList(const Model::QueryMerchantPayWayListRequest &request);
+                void QueryMerchantPayWayListAsync(const Model::QueryMerchantPayWayListRequest& request, const QueryMerchantPayWayListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryMerchantPayWayListOutcomeCallable QueryMerchantPayWayListCallable(const Model::QueryMerchantPayWayListRequest& request);
 
                 /**
                  *根据订单号，或者用户Id，查询支付订单状态 

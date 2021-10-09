@@ -27,7 +27,8 @@ ManageInternalEndpointRequest::ManageInternalEndpointRequest() :
     m_operationHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_regionIdHasBeenSet(false)
+    m_regionIdHasBeenSet(false),
+    m_regionNameHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string ManageInternalEndpointRequest::ToJsonString() const
         string key = "RegionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_regionId, allocator);
+    }
+
+    if (m_regionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_regionName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void ManageInternalEndpointRequest::SetRegionId(const uint64_t& _regionId)
 bool ManageInternalEndpointRequest::RegionIdHasBeenSet() const
 {
     return m_regionIdHasBeenSet;
+}
+
+string ManageInternalEndpointRequest::GetRegionName() const
+{
+    return m_regionName;
+}
+
+void ManageInternalEndpointRequest::SetRegionName(const string& _regionName)
+{
+    m_regionName = _regionName;
+    m_regionNameHasBeenSet = true;
+}
+
+bool ManageInternalEndpointRequest::RegionNameHasBeenSet() const
+{
+    return m_regionNameHasBeenSet;
 }
 
 
