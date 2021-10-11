@@ -98,7 +98,7 @@ namespace TencentCloud
 9:IHS
 10:Tengine</li>
 <li>OsType- string - 是否必填：否 - Windows/linux</li>
-<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )
+<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>
                      * @return Filters 过滤条件。
 <li>User- string - 是否必填：否 - 运行用户</li>
 <li>Name- string - 是否必填：否 - Web服务名：
@@ -113,7 +113,7 @@ namespace TencentCloud
 9:IHS
 10:Tengine</li>
 <li>OsType- string - 是否必填：否 - Windows/linux</li>
-<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )
+<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>
                      */
                     std::vector<AssetFilters> GetFilters() const;
 
@@ -132,7 +132,7 @@ namespace TencentCloud
 9:IHS
 10:Tengine</li>
 <li>OsType- string - 是否必填：否 - Windows/linux</li>
-<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )
+<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>
                      * @param Filters 过滤条件。
 <li>User- string - 是否必填：否 - 运行用户</li>
 <li>Name- string - 是否必填：否 - Web服务名：
@@ -147,7 +147,7 @@ namespace TencentCloud
 9:IHS
 10:Tengine</li>
 <li>OsType- string - 是否必填：否 - Windows/linux</li>
-<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )
+<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>
                      */
                     void SetFilters(const std::vector<AssetFilters>& _filters);
 
@@ -241,7 +241,7 @@ namespace TencentCloud
 9:IHS
 10:Tengine</li>
 <li>OsType- string - 是否必填：否 - Windows/linux</li>
-<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )
+<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>
                      */
                     std::vector<AssetFilters> m_filters;
                     bool m_filtersHasBeenSet;

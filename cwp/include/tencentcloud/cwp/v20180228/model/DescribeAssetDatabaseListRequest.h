@@ -99,7 +99,7 @@ namespace TencentCloud
 10:TiDB</li>
 <li>Proto - String - 是否必填：否 - 协议：1:TCP, 2:UDP, 3:未知</li>
 <li>OsType - String - 是否必填：否 - 操作系统: linux/windows</li>
-<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )
+<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>
                      * @return Filters 过滤条件。
 <li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
 <li>User- string - 是否必填：否 - 运行用户</li>
@@ -119,7 +119,7 @@ namespace TencentCloud
 10:TiDB</li>
 <li>Proto - String - 是否必填：否 - 协议：1:TCP, 2:UDP, 3:未知</li>
 <li>OsType - String - 是否必填：否 - 操作系统: linux/windows</li>
-<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )
+<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>
                      */
                     std::vector<AssetFilters> GetFilters() const;
 
@@ -143,7 +143,7 @@ namespace TencentCloud
 10:TiDB</li>
 <li>Proto - String - 是否必填：否 - 协议：1:TCP, 2:UDP, 3:未知</li>
 <li>OsType - String - 是否必填：否 - 操作系统: linux/windows</li>
-<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )
+<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>
                      * @param Filters 过滤条件。
 <li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
 <li>User- string - 是否必填：否 - 运行用户</li>
@@ -163,7 +163,7 @@ namespace TencentCloud
 10:TiDB</li>
 <li>Proto - String - 是否必填：否 - 协议：1:TCP, 2:UDP, 3:未知</li>
 <li>OsType - String - 是否必填：否 - 操作系统: linux/windows</li>
-<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )
+<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>
                      */
                     void SetFilters(const std::vector<AssetFilters>& _filters);
 
@@ -225,7 +225,7 @@ namespace TencentCloud
 10:TiDB</li>
 <li>Proto - String - 是否必填：否 - 协议：1:TCP, 2:UDP, 3:未知</li>
 <li>OsType - String - 是否必填：否 - 操作系统: linux/windows</li>
-<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )
+<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>
                      */
                     std::vector<AssetFilters> m_filters;
                     bool m_filtersHasBeenSet;

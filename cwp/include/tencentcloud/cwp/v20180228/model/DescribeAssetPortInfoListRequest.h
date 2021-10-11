@@ -92,7 +92,7 @@ namespace TencentCloud
 <li>OsType - uint64 - 是否必填：否 - windows/linux</li>
 <li>RunTimeStart - String - 是否必填：否 - 运行开始时间</li>
 <li>RunTimeEnd - String - 是否必填：否 - 运行结束时间</li>
-<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )
+<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>
                      * @return Filters 过滤条件。
 <li>Port - uint64 - 是否必填：否 - 端口</li>
 <li>Ip - String - 是否必填：否 - 绑定IP</li>
@@ -105,7 +105,7 @@ namespace TencentCloud
 <li>OsType - uint64 - 是否必填：否 - windows/linux</li>
 <li>RunTimeStart - String - 是否必填：否 - 运行开始时间</li>
 <li>RunTimeEnd - String - 是否必填：否 - 运行结束时间</li>
-<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )
+<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -122,7 +122,7 @@ namespace TencentCloud
 <li>OsType - uint64 - 是否必填：否 - windows/linux</li>
 <li>RunTimeStart - String - 是否必填：否 - 运行开始时间</li>
 <li>RunTimeEnd - String - 是否必填：否 - 运行结束时间</li>
-<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )
+<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>
                      * @param Filters 过滤条件。
 <li>Port - uint64 - 是否必填：否 - 端口</li>
 <li>Ip - String - 是否必填：否 - 绑定IP</li>
@@ -135,7 +135,7 @@ namespace TencentCloud
 <li>OsType - uint64 - 是否必填：否 - windows/linux</li>
 <li>RunTimeStart - String - 是否必填：否 - 运行开始时间</li>
 <li>RunTimeEnd - String - 是否必填：否 - 运行结束时间</li>
-<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )
+<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -226,7 +226,7 @@ namespace TencentCloud
 <li>OsType - uint64 - 是否必填：否 - windows/linux</li>
 <li>RunTimeStart - String - 是否必填：否 - 运行开始时间</li>
 <li>RunTimeEnd - String - 是否必填：否 - 运行结束时间</li>
-<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )
+<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

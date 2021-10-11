@@ -95,7 +95,7 @@ namespace TencentCloud
 2: 20%～50%  3: 50%～80%
 4: 80%～100%</li>
 <li>Quuid：主机Quuid</li>
-<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )
+<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>
                      * @return Filters 过滤条件。
 <li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
 <li>OsType - String - 是否必填：否 - windows或linux</li>
@@ -111,7 +111,7 @@ namespace TencentCloud
 2: 20%～50%  3: 50%～80%
 4: 80%～100%</li>
 <li>Quuid：主机Quuid</li>
-<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )
+<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -131,7 +131,7 @@ namespace TencentCloud
 2: 20%～50%  3: 50%～80%
 4: 80%～100%</li>
 <li>Quuid：主机Quuid</li>
-<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )
+<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>
                      * @param Filters 过滤条件。
 <li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
 <li>OsType - String - 是否必填：否 - windows或linux</li>
@@ -147,7 +147,7 @@ namespace TencentCloud
 2: 20%～50%  3: 50%～80%
 4: 80%～100%</li>
 <li>Quuid：主机Quuid</li>
-<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )
+<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -223,7 +223,7 @@ namespace TencentCloud
 2: 20%～50%  3: 50%～80%
 4: 80%～100%</li>
 <li>Quuid：主机Quuid</li>
-<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )
+<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

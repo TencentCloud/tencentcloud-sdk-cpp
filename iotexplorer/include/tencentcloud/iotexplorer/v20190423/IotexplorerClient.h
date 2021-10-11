@@ -31,10 +31,16 @@
 #include <tencentcloud/iotexplorer/v20190423/model/ControlDeviceDataResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateFenceBindRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateFenceBindResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateLoRaFrequencyRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateLoRaFrequencyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateLoRaGatewayRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateLoRaGatewayResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreatePositionFenceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreatePositionFenceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreatePositionSpaceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreatePositionSpaceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateProjectRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateProjectResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateStudioProductRequest.h>
@@ -47,10 +53,16 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteDeviceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteDevicesRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteDevicesResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeleteFenceBindRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeleteFenceBindResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteLoRaFrequencyRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteLoRaFrequencyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteLoRaGatewayRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteLoRaGatewayResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeletePositionFenceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeletePositionFenceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeletePositionSpaceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeletePositionSpaceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteProjectRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteProjectResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteStudioProductRequest.h>
@@ -63,14 +75,24 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataHistoryRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataHistoryResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeDevicePositionListRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeDevicePositionListResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeFenceBindListRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeFenceBindListResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeFenceEventListRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeFenceEventListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareTaskRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareTaskResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeLoRaFrequencyRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeLoRaFrequencyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeModelDefinitionRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeModelDefinitionResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribePositionFenceListRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribePositionFenceListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeProjectRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeProjectResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeSpaceFenceEventListRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeSpaceFenceEventListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeStudioProductRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeStudioProductResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTopicRuleRequest.h>
@@ -85,8 +107,12 @@
 #include <tencentcloud/iotexplorer/v20190423/model/GetCOSURLResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetDeviceListRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetDeviceListResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetDeviceLocationHistoryRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetDeviceLocationHistoryResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetLoRaGatewayListRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetLoRaGatewayListResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetPositionSpaceListRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetPositionSpaceListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetProjectListRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetProjectListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetStudioProductListRequest.h>
@@ -97,14 +123,22 @@
 #include <tencentcloud/iotexplorer/v20190423/model/ListEventHistoryResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListFirmwaresRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListFirmwaresResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyFenceBindRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyFenceBindResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyLoRaFrequencyRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyLoRaFrequencyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyLoRaGatewayRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyLoRaGatewayResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyModelDefinitionRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyModelDefinitionResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyPositionFenceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyPositionFenceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyPositionSpaceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyPositionSpaceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyProjectRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyProjectResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifySpacePropertyRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifySpacePropertyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyStudioProductRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyStudioProductResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTopicRuleRequest.h>
@@ -113,6 +147,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/PublishMessageResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ReleaseStudioProductRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ReleaseStudioProductResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/SearchPositionSpaceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/SearchPositionSpaceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchStudioProductRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchStudioProductResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchTopicRuleRequest.h>
@@ -149,12 +185,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDeviceResponse> CreateDeviceOutcome;
                 typedef std::future<CreateDeviceOutcome> CreateDeviceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateDeviceRequest&, CreateDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateFenceBindResponse> CreateFenceBindOutcome;
+                typedef std::future<CreateFenceBindOutcome> CreateFenceBindOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreateFenceBindRequest&, CreateFenceBindOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFenceBindAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateLoRaFrequencyResponse> CreateLoRaFrequencyOutcome;
                 typedef std::future<CreateLoRaFrequencyOutcome> CreateLoRaFrequencyOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateLoRaFrequencyRequest&, CreateLoRaFrequencyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLoRaFrequencyAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateLoRaGatewayResponse> CreateLoRaGatewayOutcome;
                 typedef std::future<CreateLoRaGatewayOutcome> CreateLoRaGatewayOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateLoRaGatewayRequest&, CreateLoRaGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLoRaGatewayAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePositionFenceResponse> CreatePositionFenceOutcome;
+                typedef std::future<CreatePositionFenceOutcome> CreatePositionFenceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreatePositionFenceRequest&, CreatePositionFenceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePositionFenceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePositionSpaceResponse> CreatePositionSpaceOutcome;
+                typedef std::future<CreatePositionSpaceOutcome> CreatePositionSpaceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreatePositionSpaceRequest&, CreatePositionSpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePositionSpaceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateProjectResponse> CreateProjectOutcome;
                 typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateProjectRequest&, CreateProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProjectAsyncHandler;
@@ -173,12 +218,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDevicesResponse> DeleteDevicesOutcome;
                 typedef std::future<DeleteDevicesOutcome> DeleteDevicesOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeleteDevicesRequest&, DeleteDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDevicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteFenceBindResponse> DeleteFenceBindOutcome;
+                typedef std::future<DeleteFenceBindOutcome> DeleteFenceBindOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DeleteFenceBindRequest&, DeleteFenceBindOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFenceBindAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteLoRaFrequencyResponse> DeleteLoRaFrequencyOutcome;
                 typedef std::future<DeleteLoRaFrequencyOutcome> DeleteLoRaFrequencyOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeleteLoRaFrequencyRequest&, DeleteLoRaFrequencyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLoRaFrequencyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteLoRaGatewayResponse> DeleteLoRaGatewayOutcome;
                 typedef std::future<DeleteLoRaGatewayOutcome> DeleteLoRaGatewayOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeleteLoRaGatewayRequest&, DeleteLoRaGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLoRaGatewayAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeletePositionFenceResponse> DeletePositionFenceOutcome;
+                typedef std::future<DeletePositionFenceOutcome> DeletePositionFenceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DeletePositionFenceRequest&, DeletePositionFenceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePositionFenceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeletePositionSpaceResponse> DeletePositionSpaceOutcome;
+                typedef std::future<DeletePositionSpaceOutcome> DeletePositionSpaceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DeletePositionSpaceRequest&, DeletePositionSpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePositionSpaceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteProjectResponse> DeleteProjectOutcome;
                 typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeleteProjectRequest&, DeleteProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProjectAsyncHandler;
@@ -197,6 +251,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDeviceDataHistoryResponse> DescribeDeviceDataHistoryOutcome;
                 typedef std::future<DescribeDeviceDataHistoryOutcome> DescribeDeviceDataHistoryOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeDeviceDataHistoryRequest&, DescribeDeviceDataHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceDataHistoryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDevicePositionListResponse> DescribeDevicePositionListOutcome;
+                typedef std::future<DescribeDevicePositionListOutcome> DescribeDevicePositionListOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeDevicePositionListRequest&, DescribeDevicePositionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDevicePositionListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFenceBindListResponse> DescribeFenceBindListOutcome;
+                typedef std::future<DescribeFenceBindListOutcome> DescribeFenceBindListOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeFenceBindListRequest&, DescribeFenceBindListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFenceBindListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFenceEventListResponse> DescribeFenceEventListOutcome;
+                typedef std::future<DescribeFenceEventListOutcome> DescribeFenceEventListOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeFenceEventListRequest&, DescribeFenceEventListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFenceEventListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFirmwareTaskResponse> DescribeFirmwareTaskOutcome;
                 typedef std::future<DescribeFirmwareTaskOutcome> DescribeFirmwareTaskOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeFirmwareTaskRequest&, DescribeFirmwareTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirmwareTaskAsyncHandler;
@@ -206,9 +269,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeModelDefinitionResponse> DescribeModelDefinitionOutcome;
                 typedef std::future<DescribeModelDefinitionOutcome> DescribeModelDefinitionOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeModelDefinitionRequest&, DescribeModelDefinitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModelDefinitionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePositionFenceListResponse> DescribePositionFenceListOutcome;
+                typedef std::future<DescribePositionFenceListOutcome> DescribePositionFenceListOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribePositionFenceListRequest&, DescribePositionFenceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePositionFenceListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProjectResponse> DescribeProjectOutcome;
                 typedef std::future<DescribeProjectOutcome> DescribeProjectOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeProjectRequest&, DescribeProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSpaceFenceEventListResponse> DescribeSpaceFenceEventListOutcome;
+                typedef std::future<DescribeSpaceFenceEventListOutcome> DescribeSpaceFenceEventListOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeSpaceFenceEventListRequest&, DescribeSpaceFenceEventListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSpaceFenceEventListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeStudioProductResponse> DescribeStudioProductOutcome;
                 typedef std::future<DescribeStudioProductOutcome> DescribeStudioProductOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeStudioProductRequest&, DescribeStudioProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStudioProductAsyncHandler;
@@ -230,9 +299,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetDeviceListResponse> GetDeviceListOutcome;
                 typedef std::future<GetDeviceListOutcome> GetDeviceListOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetDeviceListRequest&, GetDeviceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDeviceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetDeviceLocationHistoryResponse> GetDeviceLocationHistoryOutcome;
+                typedef std::future<GetDeviceLocationHistoryOutcome> GetDeviceLocationHistoryOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::GetDeviceLocationHistoryRequest&, GetDeviceLocationHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDeviceLocationHistoryAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetLoRaGatewayListResponse> GetLoRaGatewayListOutcome;
                 typedef std::future<GetLoRaGatewayListOutcome> GetLoRaGatewayListOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetLoRaGatewayListRequest&, GetLoRaGatewayListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetLoRaGatewayListAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetPositionSpaceListResponse> GetPositionSpaceListOutcome;
+                typedef std::future<GetPositionSpaceListOutcome> GetPositionSpaceListOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::GetPositionSpaceListRequest&, GetPositionSpaceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetPositionSpaceListAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetProjectListResponse> GetProjectListOutcome;
                 typedef std::future<GetProjectListOutcome> GetProjectListOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetProjectListRequest&, GetProjectListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetProjectListAsyncHandler;
@@ -248,6 +323,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListFirmwaresResponse> ListFirmwaresOutcome;
                 typedef std::future<ListFirmwaresOutcome> ListFirmwaresOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ListFirmwaresRequest&, ListFirmwaresOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListFirmwaresAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyFenceBindResponse> ModifyFenceBindOutcome;
+                typedef std::future<ModifyFenceBindOutcome> ModifyFenceBindOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ModifyFenceBindRequest&, ModifyFenceBindOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFenceBindAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyLoRaFrequencyResponse> ModifyLoRaFrequencyOutcome;
                 typedef std::future<ModifyLoRaFrequencyOutcome> ModifyLoRaFrequencyOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ModifyLoRaFrequencyRequest&, ModifyLoRaFrequencyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoRaFrequencyAsyncHandler;
@@ -257,9 +335,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyModelDefinitionResponse> ModifyModelDefinitionOutcome;
                 typedef std::future<ModifyModelDefinitionOutcome> ModifyModelDefinitionOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ModifyModelDefinitionRequest&, ModifyModelDefinitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModelDefinitionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyPositionFenceResponse> ModifyPositionFenceOutcome;
+                typedef std::future<ModifyPositionFenceOutcome> ModifyPositionFenceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ModifyPositionFenceRequest&, ModifyPositionFenceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPositionFenceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyPositionSpaceResponse> ModifyPositionSpaceOutcome;
+                typedef std::future<ModifyPositionSpaceOutcome> ModifyPositionSpaceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ModifyPositionSpaceRequest&, ModifyPositionSpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPositionSpaceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyProjectResponse> ModifyProjectOutcome;
                 typedef std::future<ModifyProjectOutcome> ModifyProjectOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ModifyProjectRequest&, ModifyProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySpacePropertyResponse> ModifySpacePropertyOutcome;
+                typedef std::future<ModifySpacePropertyOutcome> ModifySpacePropertyOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ModifySpacePropertyRequest&, ModifySpacePropertyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySpacePropertyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyStudioProductResponse> ModifyStudioProductOutcome;
                 typedef std::future<ModifyStudioProductOutcome> ModifyStudioProductOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ModifyStudioProductRequest&, ModifyStudioProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStudioProductAsyncHandler;
@@ -272,6 +359,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ReleaseStudioProductResponse> ReleaseStudioProductOutcome;
                 typedef std::future<ReleaseStudioProductOutcome> ReleaseStudioProductOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ReleaseStudioProductRequest&, ReleaseStudioProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseStudioProductAsyncHandler;
+                typedef Outcome<Core::Error, Model::SearchPositionSpaceResponse> SearchPositionSpaceOutcome;
+                typedef std::future<SearchPositionSpaceOutcome> SearchPositionSpaceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::SearchPositionSpaceRequest&, SearchPositionSpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchPositionSpaceAsyncHandler;
                 typedef Outcome<Core::Error, Model::SearchStudioProductResponse> SearchStudioProductOutcome;
                 typedef std::future<SearchStudioProductOutcome> SearchStudioProductOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::SearchStudioProductRequest&, SearchStudioProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchStudioProductAsyncHandler;
@@ -327,6 +417,15 @@ namespace TencentCloud
                 CreateDeviceOutcomeCallable CreateDeviceCallable(const Model::CreateDeviceRequest& request);
 
                 /**
+                 *创建围栏绑定信息
+                 * @param req CreateFenceBindRequest
+                 * @return CreateFenceBindOutcome
+                 */
+                CreateFenceBindOutcome CreateFenceBind(const Model::CreateFenceBindRequest &request);
+                void CreateFenceBindAsync(const Model::CreateFenceBindRequest& request, const CreateFenceBindAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFenceBindOutcomeCallable CreateFenceBindCallable(const Model::CreateFenceBindRequest& request);
+
+                /**
                  *创建 LoRa 自定义频点
                  * @param req CreateLoRaFrequencyRequest
                  * @return CreateLoRaFrequencyOutcome
@@ -343,6 +442,24 @@ namespace TencentCloud
                 CreateLoRaGatewayOutcome CreateLoRaGateway(const Model::CreateLoRaGatewayRequest &request);
                 void CreateLoRaGatewayAsync(const Model::CreateLoRaGatewayRequest& request, const CreateLoRaGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateLoRaGatewayOutcomeCallable CreateLoRaGatewayCallable(const Model::CreateLoRaGatewayRequest& request);
+
+                /**
+                 *创建围栏
+                 * @param req CreatePositionFenceRequest
+                 * @return CreatePositionFenceOutcome
+                 */
+                CreatePositionFenceOutcome CreatePositionFence(const Model::CreatePositionFenceRequest &request);
+                void CreatePositionFenceAsync(const Model::CreatePositionFenceRequest& request, const CreatePositionFenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePositionFenceOutcomeCallable CreatePositionFenceCallable(const Model::CreatePositionFenceRequest& request);
+
+                /**
+                 *创建位置空间
+                 * @param req CreatePositionSpaceRequest
+                 * @return CreatePositionSpaceOutcome
+                 */
+                CreatePositionSpaceOutcome CreatePositionSpace(const Model::CreatePositionSpaceRequest &request);
+                void CreatePositionSpaceAsync(const Model::CreatePositionSpaceRequest& request, const CreatePositionSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePositionSpaceOutcomeCallable CreatePositionSpaceCallable(const Model::CreatePositionSpaceRequest& request);
 
                 /**
                  *为用户提供新建项目的能力，用于集中管理产品和应用。
@@ -399,6 +516,15 @@ namespace TencentCloud
                 DeleteDevicesOutcomeCallable DeleteDevicesCallable(const Model::DeleteDevicesRequest& request);
 
                 /**
+                 *删除围栏绑定信息
+                 * @param req DeleteFenceBindRequest
+                 * @return DeleteFenceBindOutcome
+                 */
+                DeleteFenceBindOutcome DeleteFenceBind(const Model::DeleteFenceBindRequest &request);
+                void DeleteFenceBindAsync(const Model::DeleteFenceBindRequest& request, const DeleteFenceBindAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteFenceBindOutcomeCallable DeleteFenceBindCallable(const Model::DeleteFenceBindRequest& request);
+
+                /**
                  *提供删除LoRa自定义频点的能力
                  * @param req DeleteLoRaFrequencyRequest
                  * @return DeleteLoRaFrequencyOutcome
@@ -415,6 +541,24 @@ namespace TencentCloud
                 DeleteLoRaGatewayOutcome DeleteLoRaGateway(const Model::DeleteLoRaGatewayRequest &request);
                 void DeleteLoRaGatewayAsync(const Model::DeleteLoRaGatewayRequest& request, const DeleteLoRaGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteLoRaGatewayOutcomeCallable DeleteLoRaGatewayCallable(const Model::DeleteLoRaGatewayRequest& request);
+
+                /**
+                 *删除围栏
+                 * @param req DeletePositionFenceRequest
+                 * @return DeletePositionFenceOutcome
+                 */
+                DeletePositionFenceOutcome DeletePositionFence(const Model::DeletePositionFenceRequest &request);
+                void DeletePositionFenceAsync(const Model::DeletePositionFenceRequest& request, const DeletePositionFenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeletePositionFenceOutcomeCallable DeletePositionFenceCallable(const Model::DeletePositionFenceRequest& request);
+
+                /**
+                 *删除位置空间
+                 * @param req DeletePositionSpaceRequest
+                 * @return DeletePositionSpaceOutcome
+                 */
+                DeletePositionSpaceOutcome DeletePositionSpace(const Model::DeletePositionSpaceRequest &request);
+                void DeletePositionSpaceAsync(const Model::DeletePositionSpaceRequest& request, const DeletePositionSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeletePositionSpaceOutcomeCallable DeletePositionSpaceCallable(const Model::DeletePositionSpaceRequest& request);
 
                 /**
                  *提供删除某个项目的能力
@@ -471,6 +615,33 @@ namespace TencentCloud
                 DescribeDeviceDataHistoryOutcomeCallable DescribeDeviceDataHistoryCallable(const Model::DescribeDeviceDataHistoryRequest& request);
 
                 /**
+                 *获取设备位置列表
+                 * @param req DescribeDevicePositionListRequest
+                 * @return DescribeDevicePositionListOutcome
+                 */
+                DescribeDevicePositionListOutcome DescribeDevicePositionList(const Model::DescribeDevicePositionListRequest &request);
+                void DescribeDevicePositionListAsync(const Model::DescribeDevicePositionListRequest& request, const DescribeDevicePositionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDevicePositionListOutcomeCallable DescribeDevicePositionListCallable(const Model::DescribeDevicePositionListRequest& request);
+
+                /**
+                 *获取围栏绑定信息列表
+                 * @param req DescribeFenceBindListRequest
+                 * @return DescribeFenceBindListOutcome
+                 */
+                DescribeFenceBindListOutcome DescribeFenceBindList(const Model::DescribeFenceBindListRequest &request);
+                void DescribeFenceBindListAsync(const Model::DescribeFenceBindListRequest& request, const DescribeFenceBindListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFenceBindListOutcomeCallable DescribeFenceBindListCallable(const Model::DescribeFenceBindListRequest& request);
+
+                /**
+                 *获取围栏告警事件列表
+                 * @param req DescribeFenceEventListRequest
+                 * @return DescribeFenceEventListOutcome
+                 */
+                DescribeFenceEventListOutcome DescribeFenceEventList(const Model::DescribeFenceEventListRequest &request);
+                void DescribeFenceEventListAsync(const Model::DescribeFenceEventListRequest& request, const DescribeFenceEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFenceEventListOutcomeCallable DescribeFenceEventListCallable(const Model::DescribeFenceEventListRequest& request);
+
+                /**
                  *查询固件升级任务列表
                  * @param req DescribeFirmwareTaskRequest
                  * @return DescribeFirmwareTaskOutcome
@@ -498,6 +669,15 @@ namespace TencentCloud
                 DescribeModelDefinitionOutcomeCallable DescribeModelDefinitionCallable(const Model::DescribeModelDefinitionRequest& request);
 
                 /**
+                 *获取围栏列表
+                 * @param req DescribePositionFenceListRequest
+                 * @return DescribePositionFenceListOutcome
+                 */
+                DescribePositionFenceListOutcome DescribePositionFenceList(const Model::DescribePositionFenceListRequest &request);
+                void DescribePositionFenceListAsync(const Model::DescribePositionFenceListRequest& request, const DescribePositionFenceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePositionFenceListOutcomeCallable DescribePositionFenceListCallable(const Model::DescribePositionFenceListRequest& request);
+
+                /**
                  *查询项目详情
                  * @param req DescribeProjectRequest
                  * @return DescribeProjectOutcome
@@ -505,6 +685,15 @@ namespace TencentCloud
                 DescribeProjectOutcome DescribeProject(const Model::DescribeProjectRequest &request);
                 void DescribeProjectAsync(const Model::DescribeProjectRequest& request, const DescribeProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeProjectOutcomeCallable DescribeProjectCallable(const Model::DescribeProjectRequest& request);
+
+                /**
+                 *获取位置空间中围栏告警事件列表
+                 * @param req DescribeSpaceFenceEventListRequest
+                 * @return DescribeSpaceFenceEventListOutcome
+                 */
+                DescribeSpaceFenceEventListOutcome DescribeSpaceFenceEventList(const Model::DescribeSpaceFenceEventListRequest &request);
+                void DescribeSpaceFenceEventListAsync(const Model::DescribeSpaceFenceEventListRequest& request, const DescribeSpaceFenceEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSpaceFenceEventListOutcomeCallable DescribeSpaceFenceEventListCallable(const Model::DescribeSpaceFenceEventListRequest& request);
 
                 /**
                  *提供查看产品详细信息的能力，包括产品的ID、数据协议、认证类型等重要参数
@@ -570,6 +759,15 @@ namespace TencentCloud
                 GetDeviceListOutcomeCallable GetDeviceListCallable(const Model::GetDeviceListRequest& request);
 
                 /**
+                 *获取设备历史位置
+                 * @param req GetDeviceLocationHistoryRequest
+                 * @return GetDeviceLocationHistoryOutcome
+                 */
+                GetDeviceLocationHistoryOutcome GetDeviceLocationHistory(const Model::GetDeviceLocationHistoryRequest &request);
+                void GetDeviceLocationHistoryAsync(const Model::GetDeviceLocationHistoryRequest& request, const GetDeviceLocationHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetDeviceLocationHistoryOutcomeCallable GetDeviceLocationHistoryCallable(const Model::GetDeviceLocationHistoryRequest& request);
+
+                /**
                  *获取 LoRa 网关列表接口
                  * @param req GetLoRaGatewayListRequest
                  * @return GetLoRaGatewayListOutcome
@@ -577,6 +775,15 @@ namespace TencentCloud
                 GetLoRaGatewayListOutcome GetLoRaGatewayList(const Model::GetLoRaGatewayListRequest &request);
                 void GetLoRaGatewayListAsync(const Model::GetLoRaGatewayListRequest& request, const GetLoRaGatewayListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetLoRaGatewayListOutcomeCallable GetLoRaGatewayListCallable(const Model::GetLoRaGatewayListRequest& request);
+
+                /**
+                 *获取位置空间列表
+                 * @param req GetPositionSpaceListRequest
+                 * @return GetPositionSpaceListOutcome
+                 */
+                GetPositionSpaceListOutcome GetPositionSpaceList(const Model::GetPositionSpaceListRequest &request);
+                void GetPositionSpaceListAsync(const Model::GetPositionSpaceListRequest& request, const GetPositionSpaceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetPositionSpaceListOutcomeCallable GetPositionSpaceListCallable(const Model::GetPositionSpaceListRequest& request);
 
                 /**
                  *提供查询用户所创建的项目列表查询功能。
@@ -624,6 +831,15 @@ namespace TencentCloud
                 ListFirmwaresOutcomeCallable ListFirmwaresCallable(const Model::ListFirmwaresRequest& request);
 
                 /**
+                 *更新围栏绑定信息
+                 * @param req ModifyFenceBindRequest
+                 * @return ModifyFenceBindOutcome
+                 */
+                ModifyFenceBindOutcome ModifyFenceBind(const Model::ModifyFenceBindRequest &request);
+                void ModifyFenceBindAsync(const Model::ModifyFenceBindRequest& request, const ModifyFenceBindAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyFenceBindOutcomeCallable ModifyFenceBindCallable(const Model::ModifyFenceBindRequest& request);
+
+                /**
                  *修改LoRa自定义频点
                  * @param req ModifyLoRaFrequencyRequest
                  * @return ModifyLoRaFrequencyOutcome
@@ -651,6 +867,24 @@ namespace TencentCloud
                 ModifyModelDefinitionOutcomeCallable ModifyModelDefinitionCallable(const Model::ModifyModelDefinitionRequest& request);
 
                 /**
+                 *更新围栏
+                 * @param req ModifyPositionFenceRequest
+                 * @return ModifyPositionFenceOutcome
+                 */
+                ModifyPositionFenceOutcome ModifyPositionFence(const Model::ModifyPositionFenceRequest &request);
+                void ModifyPositionFenceAsync(const Model::ModifyPositionFenceRequest& request, const ModifyPositionFenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPositionFenceOutcomeCallable ModifyPositionFenceCallable(const Model::ModifyPositionFenceRequest& request);
+
+                /**
+                 *更新位置空间
+                 * @param req ModifyPositionSpaceRequest
+                 * @return ModifyPositionSpaceOutcome
+                 */
+                ModifyPositionSpaceOutcome ModifyPositionSpace(const Model::ModifyPositionSpaceRequest &request);
+                void ModifyPositionSpaceAsync(const Model::ModifyPositionSpaceRequest& request, const ModifyPositionSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPositionSpaceOutcomeCallable ModifyPositionSpaceCallable(const Model::ModifyPositionSpaceRequest& request);
+
+                /**
                  *修改项目
                  * @param req ModifyProjectRequest
                  * @return ModifyProjectOutcome
@@ -658,6 +892,15 @@ namespace TencentCloud
                 ModifyProjectOutcome ModifyProject(const Model::ModifyProjectRequest &request);
                 void ModifyProjectAsync(const Model::ModifyProjectRequest& request, const ModifyProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyProjectOutcomeCallable ModifyProjectCallable(const Model::ModifyProjectRequest& request);
+
+                /**
+                 *更新位置空间产品属性
+                 * @param req ModifySpacePropertyRequest
+                 * @return ModifySpacePropertyOutcome
+                 */
+                ModifySpacePropertyOutcome ModifySpaceProperty(const Model::ModifySpacePropertyRequest &request);
+                void ModifySpacePropertyAsync(const Model::ModifySpacePropertyRequest& request, const ModifySpacePropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySpacePropertyOutcomeCallable ModifySpacePropertyCallable(const Model::ModifySpacePropertyRequest& request);
 
                 /**
                  *提供修改产品的名称和描述等信息的能力，对于已发布产品不允许进行修改。
@@ -694,6 +937,15 @@ namespace TencentCloud
                 ReleaseStudioProductOutcome ReleaseStudioProduct(const Model::ReleaseStudioProductRequest &request);
                 void ReleaseStudioProductAsync(const Model::ReleaseStudioProductRequest& request, const ReleaseStudioProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ReleaseStudioProductOutcomeCallable ReleaseStudioProductCallable(const Model::ReleaseStudioProductRequest& request);
+
+                /**
+                 *搜索位置空间
+                 * @param req SearchPositionSpaceRequest
+                 * @return SearchPositionSpaceOutcome
+                 */
+                SearchPositionSpaceOutcome SearchPositionSpace(const Model::SearchPositionSpaceRequest &request);
+                void SearchPositionSpaceAsync(const Model::SearchPositionSpaceRequest& request, const SearchPositionSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchPositionSpaceOutcomeCallable SearchPositionSpaceCallable(const Model::SearchPositionSpaceRequest& request);
 
                 /**
                  *提供根据产品名称查找产品的能力

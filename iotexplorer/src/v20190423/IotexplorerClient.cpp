@@ -212,6 +212,49 @@ IotexplorerClient::CreateDeviceOutcomeCallable IotexplorerClient::CreateDeviceCa
     return task->get_future();
 }
 
+IotexplorerClient::CreateFenceBindOutcome IotexplorerClient::CreateFenceBind(const CreateFenceBindRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFenceBind");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFenceBindResponse rsp = CreateFenceBindResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFenceBindOutcome(rsp);
+        else
+            return CreateFenceBindOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFenceBindOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CreateFenceBindAsync(const CreateFenceBindRequest& request, const CreateFenceBindAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFenceBind(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::CreateFenceBindOutcomeCallable IotexplorerClient::CreateFenceBindCallable(const CreateFenceBindRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFenceBindOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFenceBind(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::CreateLoRaFrequencyOutcome IotexplorerClient::CreateLoRaFrequency(const CreateLoRaFrequencyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateLoRaFrequency");
@@ -291,6 +334,92 @@ IotexplorerClient::CreateLoRaGatewayOutcomeCallable IotexplorerClient::CreateLoR
         [this, request]()
         {
             return this->CreateLoRaGateway(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::CreatePositionFenceOutcome IotexplorerClient::CreatePositionFence(const CreatePositionFenceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePositionFence");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePositionFenceResponse rsp = CreatePositionFenceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePositionFenceOutcome(rsp);
+        else
+            return CreatePositionFenceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePositionFenceOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CreatePositionFenceAsync(const CreatePositionFenceRequest& request, const CreatePositionFenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePositionFence(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::CreatePositionFenceOutcomeCallable IotexplorerClient::CreatePositionFenceCallable(const CreatePositionFenceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePositionFenceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePositionFence(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::CreatePositionSpaceOutcome IotexplorerClient::CreatePositionSpace(const CreatePositionSpaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePositionSpace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePositionSpaceResponse rsp = CreatePositionSpaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePositionSpaceOutcome(rsp);
+        else
+            return CreatePositionSpaceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePositionSpaceOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CreatePositionSpaceAsync(const CreatePositionSpaceRequest& request, const CreatePositionSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePositionSpace(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::CreatePositionSpaceOutcomeCallable IotexplorerClient::CreatePositionSpaceCallable(const CreatePositionSpaceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePositionSpaceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePositionSpace(request);
         }
     );
 
@@ -556,6 +685,49 @@ IotexplorerClient::DeleteDevicesOutcomeCallable IotexplorerClient::DeleteDevices
     return task->get_future();
 }
 
+IotexplorerClient::DeleteFenceBindOutcome IotexplorerClient::DeleteFenceBind(const DeleteFenceBindRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteFenceBind");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteFenceBindResponse rsp = DeleteFenceBindResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteFenceBindOutcome(rsp);
+        else
+            return DeleteFenceBindOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteFenceBindOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DeleteFenceBindAsync(const DeleteFenceBindRequest& request, const DeleteFenceBindAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteFenceBind(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DeleteFenceBindOutcomeCallable IotexplorerClient::DeleteFenceBindCallable(const DeleteFenceBindRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteFenceBindOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteFenceBind(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::DeleteLoRaFrequencyOutcome IotexplorerClient::DeleteLoRaFrequency(const DeleteLoRaFrequencyRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteLoRaFrequency");
@@ -635,6 +807,92 @@ IotexplorerClient::DeleteLoRaGatewayOutcomeCallable IotexplorerClient::DeleteLoR
         [this, request]()
         {
             return this->DeleteLoRaGateway(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DeletePositionFenceOutcome IotexplorerClient::DeletePositionFence(const DeletePositionFenceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePositionFence");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePositionFenceResponse rsp = DeletePositionFenceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePositionFenceOutcome(rsp);
+        else
+            return DeletePositionFenceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePositionFenceOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DeletePositionFenceAsync(const DeletePositionFenceRequest& request, const DeletePositionFenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeletePositionFence(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DeletePositionFenceOutcomeCallable IotexplorerClient::DeletePositionFenceCallable(const DeletePositionFenceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeletePositionFenceOutcome()>>(
+        [this, request]()
+        {
+            return this->DeletePositionFence(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DeletePositionSpaceOutcome IotexplorerClient::DeletePositionSpace(const DeletePositionSpaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePositionSpace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePositionSpaceResponse rsp = DeletePositionSpaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePositionSpaceOutcome(rsp);
+        else
+            return DeletePositionSpaceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePositionSpaceOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DeletePositionSpaceAsync(const DeletePositionSpaceRequest& request, const DeletePositionSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeletePositionSpace(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DeletePositionSpaceOutcomeCallable IotexplorerClient::DeletePositionSpaceCallable(const DeletePositionSpaceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeletePositionSpaceOutcome()>>(
+        [this, request]()
+        {
+            return this->DeletePositionSpace(request);
         }
     );
 
@@ -900,6 +1158,135 @@ IotexplorerClient::DescribeDeviceDataHistoryOutcomeCallable IotexplorerClient::D
     return task->get_future();
 }
 
+IotexplorerClient::DescribeDevicePositionListOutcome IotexplorerClient::DescribeDevicePositionList(const DescribeDevicePositionListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDevicePositionList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDevicePositionListResponse rsp = DescribeDevicePositionListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDevicePositionListOutcome(rsp);
+        else
+            return DescribeDevicePositionListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDevicePositionListOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeDevicePositionListAsync(const DescribeDevicePositionListRequest& request, const DescribeDevicePositionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDevicePositionList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeDevicePositionListOutcomeCallable IotexplorerClient::DescribeDevicePositionListCallable(const DescribeDevicePositionListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDevicePositionListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDevicePositionList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DescribeFenceBindListOutcome IotexplorerClient::DescribeFenceBindList(const DescribeFenceBindListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFenceBindList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFenceBindListResponse rsp = DescribeFenceBindListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFenceBindListOutcome(rsp);
+        else
+            return DescribeFenceBindListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFenceBindListOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeFenceBindListAsync(const DescribeFenceBindListRequest& request, const DescribeFenceBindListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFenceBindList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeFenceBindListOutcomeCallable IotexplorerClient::DescribeFenceBindListCallable(const DescribeFenceBindListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFenceBindListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFenceBindList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DescribeFenceEventListOutcome IotexplorerClient::DescribeFenceEventList(const DescribeFenceEventListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFenceEventList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFenceEventListResponse rsp = DescribeFenceEventListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFenceEventListOutcome(rsp);
+        else
+            return DescribeFenceEventListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFenceEventListOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeFenceEventListAsync(const DescribeFenceEventListRequest& request, const DescribeFenceEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFenceEventList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeFenceEventListOutcomeCallable IotexplorerClient::DescribeFenceEventListCallable(const DescribeFenceEventListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFenceEventListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFenceEventList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::DescribeFirmwareTaskOutcome IotexplorerClient::DescribeFirmwareTask(const DescribeFirmwareTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFirmwareTask");
@@ -1029,6 +1416,49 @@ IotexplorerClient::DescribeModelDefinitionOutcomeCallable IotexplorerClient::Des
     return task->get_future();
 }
 
+IotexplorerClient::DescribePositionFenceListOutcome IotexplorerClient::DescribePositionFenceList(const DescribePositionFenceListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePositionFenceList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePositionFenceListResponse rsp = DescribePositionFenceListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePositionFenceListOutcome(rsp);
+        else
+            return DescribePositionFenceListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePositionFenceListOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribePositionFenceListAsync(const DescribePositionFenceListRequest& request, const DescribePositionFenceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePositionFenceList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribePositionFenceListOutcomeCallable IotexplorerClient::DescribePositionFenceListCallable(const DescribePositionFenceListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePositionFenceListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePositionFenceList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::DescribeProjectOutcome IotexplorerClient::DescribeProject(const DescribeProjectRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeProject");
@@ -1065,6 +1495,49 @@ IotexplorerClient::DescribeProjectOutcomeCallable IotexplorerClient::DescribePro
         [this, request]()
         {
             return this->DescribeProject(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DescribeSpaceFenceEventListOutcome IotexplorerClient::DescribeSpaceFenceEventList(const DescribeSpaceFenceEventListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSpaceFenceEventList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSpaceFenceEventListResponse rsp = DescribeSpaceFenceEventListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSpaceFenceEventListOutcome(rsp);
+        else
+            return DescribeSpaceFenceEventListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSpaceFenceEventListOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeSpaceFenceEventListAsync(const DescribeSpaceFenceEventListRequest& request, const DescribeSpaceFenceEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSpaceFenceEventList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeSpaceFenceEventListOutcomeCallable IotexplorerClient::DescribeSpaceFenceEventListCallable(const DescribeSpaceFenceEventListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSpaceFenceEventListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSpaceFenceEventList(request);
         }
     );
 
@@ -1373,6 +1846,49 @@ IotexplorerClient::GetDeviceListOutcomeCallable IotexplorerClient::GetDeviceList
     return task->get_future();
 }
 
+IotexplorerClient::GetDeviceLocationHistoryOutcome IotexplorerClient::GetDeviceLocationHistory(const GetDeviceLocationHistoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetDeviceLocationHistory");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetDeviceLocationHistoryResponse rsp = GetDeviceLocationHistoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetDeviceLocationHistoryOutcome(rsp);
+        else
+            return GetDeviceLocationHistoryOutcome(o.GetError());
+    }
+    else
+    {
+        return GetDeviceLocationHistoryOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::GetDeviceLocationHistoryAsync(const GetDeviceLocationHistoryRequest& request, const GetDeviceLocationHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetDeviceLocationHistory(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::GetDeviceLocationHistoryOutcomeCallable IotexplorerClient::GetDeviceLocationHistoryCallable(const GetDeviceLocationHistoryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetDeviceLocationHistoryOutcome()>>(
+        [this, request]()
+        {
+            return this->GetDeviceLocationHistory(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::GetLoRaGatewayListOutcome IotexplorerClient::GetLoRaGatewayList(const GetLoRaGatewayListRequest &request)
 {
     auto outcome = MakeRequest(request, "GetLoRaGatewayList");
@@ -1409,6 +1925,49 @@ IotexplorerClient::GetLoRaGatewayListOutcomeCallable IotexplorerClient::GetLoRaG
         [this, request]()
         {
             return this->GetLoRaGatewayList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::GetPositionSpaceListOutcome IotexplorerClient::GetPositionSpaceList(const GetPositionSpaceListRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetPositionSpaceList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetPositionSpaceListResponse rsp = GetPositionSpaceListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetPositionSpaceListOutcome(rsp);
+        else
+            return GetPositionSpaceListOutcome(o.GetError());
+    }
+    else
+    {
+        return GetPositionSpaceListOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::GetPositionSpaceListAsync(const GetPositionSpaceListRequest& request, const GetPositionSpaceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetPositionSpaceList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::GetPositionSpaceListOutcomeCallable IotexplorerClient::GetPositionSpaceListCallable(const GetPositionSpaceListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetPositionSpaceListOutcome()>>(
+        [this, request]()
+        {
+            return this->GetPositionSpaceList(request);
         }
     );
 
@@ -1631,6 +2190,49 @@ IotexplorerClient::ListFirmwaresOutcomeCallable IotexplorerClient::ListFirmwares
     return task->get_future();
 }
 
+IotexplorerClient::ModifyFenceBindOutcome IotexplorerClient::ModifyFenceBind(const ModifyFenceBindRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyFenceBind");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyFenceBindResponse rsp = ModifyFenceBindResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyFenceBindOutcome(rsp);
+        else
+            return ModifyFenceBindOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyFenceBindOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::ModifyFenceBindAsync(const ModifyFenceBindRequest& request, const ModifyFenceBindAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyFenceBind(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::ModifyFenceBindOutcomeCallable IotexplorerClient::ModifyFenceBindCallable(const ModifyFenceBindRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyFenceBindOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyFenceBind(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::ModifyLoRaFrequencyOutcome IotexplorerClient::ModifyLoRaFrequency(const ModifyLoRaFrequencyRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyLoRaFrequency");
@@ -1760,6 +2362,92 @@ IotexplorerClient::ModifyModelDefinitionOutcomeCallable IotexplorerClient::Modif
     return task->get_future();
 }
 
+IotexplorerClient::ModifyPositionFenceOutcome IotexplorerClient::ModifyPositionFence(const ModifyPositionFenceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPositionFence");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPositionFenceResponse rsp = ModifyPositionFenceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPositionFenceOutcome(rsp);
+        else
+            return ModifyPositionFenceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPositionFenceOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::ModifyPositionFenceAsync(const ModifyPositionFenceRequest& request, const ModifyPositionFenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyPositionFence(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::ModifyPositionFenceOutcomeCallable IotexplorerClient::ModifyPositionFenceCallable(const ModifyPositionFenceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyPositionFenceOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyPositionFence(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::ModifyPositionSpaceOutcome IotexplorerClient::ModifyPositionSpace(const ModifyPositionSpaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPositionSpace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPositionSpaceResponse rsp = ModifyPositionSpaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPositionSpaceOutcome(rsp);
+        else
+            return ModifyPositionSpaceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPositionSpaceOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::ModifyPositionSpaceAsync(const ModifyPositionSpaceRequest& request, const ModifyPositionSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyPositionSpace(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::ModifyPositionSpaceOutcomeCallable IotexplorerClient::ModifyPositionSpaceCallable(const ModifyPositionSpaceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyPositionSpaceOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyPositionSpace(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::ModifyProjectOutcome IotexplorerClient::ModifyProject(const ModifyProjectRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyProject");
@@ -1796,6 +2484,49 @@ IotexplorerClient::ModifyProjectOutcomeCallable IotexplorerClient::ModifyProject
         [this, request]()
         {
             return this->ModifyProject(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::ModifySpacePropertyOutcome IotexplorerClient::ModifySpaceProperty(const ModifySpacePropertyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySpaceProperty");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySpacePropertyResponse rsp = ModifySpacePropertyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySpacePropertyOutcome(rsp);
+        else
+            return ModifySpacePropertyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySpacePropertyOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::ModifySpacePropertyAsync(const ModifySpacePropertyRequest& request, const ModifySpacePropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySpaceProperty(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::ModifySpacePropertyOutcomeCallable IotexplorerClient::ModifySpacePropertyCallable(const ModifySpacePropertyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySpacePropertyOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySpaceProperty(request);
         }
     );
 
@@ -1968,6 +2699,49 @@ IotexplorerClient::ReleaseStudioProductOutcomeCallable IotexplorerClient::Releas
         [this, request]()
         {
             return this->ReleaseStudioProduct(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::SearchPositionSpaceOutcome IotexplorerClient::SearchPositionSpace(const SearchPositionSpaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchPositionSpace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchPositionSpaceResponse rsp = SearchPositionSpaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchPositionSpaceOutcome(rsp);
+        else
+            return SearchPositionSpaceOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchPositionSpaceOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::SearchPositionSpaceAsync(const SearchPositionSpaceRequest& request, const SearchPositionSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchPositionSpace(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::SearchPositionSpaceOutcomeCallable IotexplorerClient::SearchPositionSpaceCallable(const SearchPositionSpaceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchPositionSpaceOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchPositionSpace(request);
         }
     );
 
