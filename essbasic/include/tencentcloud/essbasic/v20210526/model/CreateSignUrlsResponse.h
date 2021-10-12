@@ -56,6 +56,18 @@ namespace TencentCloud
                      */
                     bool SignUrlInfosHasBeenSet() const;
 
+                    /**
+                     * 获取生成失败时的错误信息，成功返回”“，顺序和出参SignUrlInfos保持一致
+                     * @return ErrorMessages 生成失败时的错误信息，成功返回”“，顺序和出参SignUrlInfos保持一致
+                     */
+                    std::vector<std::string> GetErrorMessages() const;
+
+                    /**
+                     * 判断参数 ErrorMessages 是否已赋值
+                     * @return ErrorMessages 是否已赋值
+                     */
+                    bool ErrorMessagesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -63,6 +75,12 @@ namespace TencentCloud
                      */
                     std::vector<SignUrlInfo> m_signUrlInfos;
                     bool m_signUrlInfosHasBeenSet;
+
+                    /**
+                     * 生成失败时的错误信息，成功返回”“，顺序和出参SignUrlInfos保持一致
+                     */
+                    std::vector<std::string> m_errorMessages;
+                    bool m_errorMessagesHasBeenSet;
 
                 };
             }

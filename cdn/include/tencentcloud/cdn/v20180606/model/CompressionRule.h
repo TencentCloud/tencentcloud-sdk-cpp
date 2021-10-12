@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 压缩规则配置，最多可设置 100 条
+                * 智能压缩规则配置
                 */
                 class CompressionRule : public AbstractModel
                 {
@@ -67,32 +67,6 @@ namespace TencentCloud
                      * @return Compress 是否已赋值
                      */
                     bool CompressHasBeenSet() const;
-
-                    /**
-                     * 获取根据文件后缀类型压缩
-例如 jpg、txt
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FileExtensions 根据文件后缀类型压缩
-例如 jpg、txt
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<std::string> GetFileExtensions() const;
-
-                    /**
-                     * 设置根据文件后缀类型压缩
-例如 jpg、txt
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FileExtensions 根据文件后缀类型压缩
-例如 jpg、txt
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetFileExtensions(const std::vector<std::string>& _fileExtensions);
-
-                    /**
-                     * 判断参数 FileExtensions 是否已赋值
-                     * @return FileExtensions 是否已赋值
-                     */
-                    bool FileExtensionsHasBeenSet() const;
 
                     /**
                      * 获取触发压缩的文件长度最小值，单位为字节数
@@ -172,6 +146,120 @@ brotli：指定Brotli压缩
                      */
                     bool AlgorithmsHasBeenSet() const;
 
+                    /**
+                     * 获取根据文件后缀类型压缩
+例如 jpg、txt
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FileExtensions 根据文件后缀类型压缩
+例如 jpg、txt
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetFileExtensions() const;
+
+                    /**
+                     * 设置根据文件后缀类型压缩
+例如 jpg、txt
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FileExtensions 根据文件后缀类型压缩
+例如 jpg、txt
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFileExtensions(const std::vector<std::string>& _fileExtensions);
+
+                    /**
+                     * 判断参数 FileExtensions 是否已赋值
+                     * @return FileExtensions 是否已赋值
+                     */
+                    bool FileExtensionsHasBeenSet() const;
+
+                    /**
+                     * 获取规则类型：
+all：所有文件生效
+file：指定文件后缀生效
+directory：指定路径生效
+path：指定绝对路径生效
+contentType：指定Content-Type头为特定值时生效
+当指定了此字段时，FileExtensions字段不生效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleType 规则类型：
+all：所有文件生效
+file：指定文件后缀生效
+directory：指定路径生效
+path：指定绝对路径生效
+contentType：指定Content-Type头为特定值时生效
+当指定了此字段时，FileExtensions字段不生效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRuleType() const;
+
+                    /**
+                     * 设置规则类型：
+all：所有文件生效
+file：指定文件后缀生效
+directory：指定路径生效
+path：指定绝对路径生效
+contentType：指定Content-Type头为特定值时生效
+当指定了此字段时，FileExtensions字段不生效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RuleType 规则类型：
+all：所有文件生效
+file：指定文件后缀生效
+directory：指定路径生效
+path：指定绝对路径生效
+contentType：指定Content-Type头为特定值时生效
+当指定了此字段时，FileExtensions字段不生效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRuleType(const std::string& _ruleType);
+
+                    /**
+                     * 判断参数 RuleType 是否已赋值
+                     * @return RuleType 是否已赋值
+                     */
+                    bool RuleTypeHasBeenSet() const;
+
+                    /**
+                     * 获取CacheType 对应类型下的匹配内容：
+all 时填充 *
+file 时填充后缀名，如 jpg、txt
+directory 时填充路径，如 /xxx/test
+path 时填充绝对路径，如 /xxx/test.html
+contentType 时填充 text/html
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RulePaths CacheType 对应类型下的匹配内容：
+all 时填充 *
+file 时填充后缀名，如 jpg、txt
+directory 时填充路径，如 /xxx/test
+path 时填充绝对路径，如 /xxx/test.html
+contentType 时填充 text/html
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetRulePaths() const;
+
+                    /**
+                     * 设置CacheType 对应类型下的匹配内容：
+all 时填充 *
+file 时填充后缀名，如 jpg、txt
+directory 时填充路径，如 /xxx/test
+path 时填充绝对路径，如 /xxx/test.html
+contentType 时填充 text/html
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RulePaths CacheType 对应类型下的匹配内容：
+all 时填充 *
+file 时填充后缀名，如 jpg、txt
+directory 时填充路径，如 /xxx/test
+path 时填充绝对路径，如 /xxx/test.html
+contentType 时填充 text/html
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRulePaths(const std::vector<std::string>& _rulePaths);
+
+                    /**
+                     * 判断参数 RulePaths 是否已赋值
+                     * @return RulePaths 是否已赋值
+                     */
+                    bool RulePathsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -180,14 +268,6 @@ brotli：指定Brotli压缩
                      */
                     bool m_compress;
                     bool m_compressHasBeenSet;
-
-                    /**
-                     * 根据文件后缀类型压缩
-例如 jpg、txt
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<std::string> m_fileExtensions;
-                    bool m_fileExtensionsHasBeenSet;
 
                     /**
                      * 触发压缩的文件长度最小值，单位为字节数
@@ -212,6 +292,39 @@ brotli：指定Brotli压缩
                      */
                     std::vector<std::string> m_algorithms;
                     bool m_algorithmsHasBeenSet;
+
+                    /**
+                     * 根据文件后缀类型压缩
+例如 jpg、txt
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_fileExtensions;
+                    bool m_fileExtensionsHasBeenSet;
+
+                    /**
+                     * 规则类型：
+all：所有文件生效
+file：指定文件后缀生效
+directory：指定路径生效
+path：指定绝对路径生效
+contentType：指定Content-Type头为特定值时生效
+当指定了此字段时，FileExtensions字段不生效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ruleType;
+                    bool m_ruleTypeHasBeenSet;
+
+                    /**
+                     * CacheType 对应类型下的匹配内容：
+all 时填充 *
+file 时填充后缀名，如 jpg、txt
+directory 时填充路径，如 /xxx/test
+path 时填充绝对路径，如 /xxx/test.html
+contentType 时填充 text/html
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_rulePaths;
+                    bool m_rulePathsHasBeenSet;
 
                 };
             }

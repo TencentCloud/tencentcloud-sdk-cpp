@@ -25,7 +25,10 @@ using namespace std;
 DescribeReplicationInstanceSyncStatusRequest::DescribeReplicationInstanceSyncStatusRequest() :
     m_registryIdHasBeenSet(false),
     m_replicationRegistryIdHasBeenSet(false),
-    m_replicationRegionIdHasBeenSet(false)
+    m_replicationRegionIdHasBeenSet(false),
+    m_showReplicationLogHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false)
 {
 }
 
@@ -58,6 +61,30 @@ string DescribeReplicationInstanceSyncStatusRequest::ToJsonString() const
         string key = "ReplicationRegionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_replicationRegionId, allocator);
+    }
+
+    if (m_showReplicationLogHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShowReplicationLog";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_showReplicationLog, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
     }
 
 
@@ -114,6 +141,54 @@ void DescribeReplicationInstanceSyncStatusRequest::SetReplicationRegionId(const 
 bool DescribeReplicationInstanceSyncStatusRequest::ReplicationRegionIdHasBeenSet() const
 {
     return m_replicationRegionIdHasBeenSet;
+}
+
+bool DescribeReplicationInstanceSyncStatusRequest::GetShowReplicationLog() const
+{
+    return m_showReplicationLog;
+}
+
+void DescribeReplicationInstanceSyncStatusRequest::SetShowReplicationLog(const bool& _showReplicationLog)
+{
+    m_showReplicationLog = _showReplicationLog;
+    m_showReplicationLogHasBeenSet = true;
+}
+
+bool DescribeReplicationInstanceSyncStatusRequest::ShowReplicationLogHasBeenSet() const
+{
+    return m_showReplicationLogHasBeenSet;
+}
+
+int64_t DescribeReplicationInstanceSyncStatusRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeReplicationInstanceSyncStatusRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeReplicationInstanceSyncStatusRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+int64_t DescribeReplicationInstanceSyncStatusRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeReplicationInstanceSyncStatusRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeReplicationInstanceSyncStatusRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
 }
 
 

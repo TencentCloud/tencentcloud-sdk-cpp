@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool OpenKeyHasBeenSet() const;
 
                     /**
-                     * 获取支付类型，逗号分隔
-                     * @return PayType 支付类型，逗号分隔
+                     * 获取支付类型，逗号分隔。1-现金，2-主扫，3-被扫，4-JSAPI。
+                     * @return PayType 支付类型，逗号分隔。1-现金，2-主扫，3-被扫，4-JSAPI。
                      */
                     std::string GetPayType() const;
 
                     /**
-                     * 设置支付类型，逗号分隔
-                     * @param PayType 支付类型，逗号分隔
+                     * 设置支付类型，逗号分隔。1-现金，2-主扫，3-被扫，4-JSAPI。
+                     * @param PayType 支付类型，逗号分隔。1-现金，2-主扫，3-被扫，4-JSAPI。
                      */
                     void SetPayType(const std::string& _payType);
 
@@ -129,7 +129,7 @@ namespace TencentCloud
                     bool m_openKeyHasBeenSet;
 
                     /**
-                     * 支付类型，逗号分隔
+                     * 支付类型，逗号分隔。1-现金，2-主扫，3-被扫，4-JSAPI。
                      */
                     std::string m_payType;
                     bool m_payTypeHasBeenSet;

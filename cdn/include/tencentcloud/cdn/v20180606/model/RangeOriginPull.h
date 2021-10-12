@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cdn/v20180606/model/RangeOriginPullRule.h>
 
 
 namespace TencentCloud
@@ -72,6 +73,28 @@ off：关闭
                      */
                     bool SwitchHasBeenSet() const;
 
+                    /**
+                     * 获取分路径分片回源配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RangeRules 分路径分片回源配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RangeOriginPullRule> GetRangeRules() const;
+
+                    /**
+                     * 设置分路径分片回源配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RangeRules 分路径分片回源配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRangeRules(const std::vector<RangeOriginPullRule>& _rangeRules);
+
+                    /**
+                     * 判断参数 RangeRules 是否已赋值
+                     * @return RangeRules 是否已赋值
+                     */
+                    bool RangeRulesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -81,6 +104,13 @@ off：关闭
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
+
+                    /**
+                     * 分路径分片回源配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RangeOriginPullRule> m_rangeRules;
+                    bool m_rangeRulesHasBeenSet;
 
                 };
             }

@@ -96,6 +96,60 @@ namespace TencentCloud
                      */
                     bool ReplicationRegionIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否显示同步日志
+                     * @return ShowReplicationLog 是否显示同步日志
+                     */
+                    bool GetShowReplicationLog() const;
+
+                    /**
+                     * 设置是否显示同步日志
+                     * @param ShowReplicationLog 是否显示同步日志
+                     */
+                    void SetShowReplicationLog(const bool& _showReplicationLog);
+
+                    /**
+                     * 判断参数 ShowReplicationLog 是否已赋值
+                     * @return ShowReplicationLog 是否已赋值
+                     */
+                    bool ShowReplicationLogHasBeenSet() const;
+
+                    /**
+                     * 获取日志页号, 默认0
+                     * @return Offset 日志页号, 默认0
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 设置日志页号, 默认0
+                     * @param Offset 日志页号, 默认0
+                     */
+                    void SetOffset(const int64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取最大输出条数，默认5，最大为20
+                     * @return Limit 最大输出条数，默认5，最大为20
+                     */
+                    int64_t GetLimit() const;
+
+                    /**
+                     * 设置最大输出条数，默认5，最大为20
+                     * @param Limit 最大输出条数，默认5，最大为20
+                     */
+                    void SetLimit(const int64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     */
+                    bool LimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +169,24 @@ namespace TencentCloud
                      */
                     uint64_t m_replicationRegionId;
                     bool m_replicationRegionIdHasBeenSet;
+
+                    /**
+                     * 是否显示同步日志
+                     */
+                    bool m_showReplicationLog;
+                    bool m_showReplicationLogHasBeenSet;
+
+                    /**
+                     * 日志页号, 默认0
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * 最大输出条数，默认5，最大为20
+                     */
+                    int64_t m_limit;
+                    bool m_limitHasBeenSet;
 
                 };
             }

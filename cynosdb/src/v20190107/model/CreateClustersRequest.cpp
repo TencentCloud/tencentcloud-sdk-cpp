@@ -56,7 +56,12 @@ CreateClustersRequest::CreateClustersRequest() :
     m_maxCpuHasBeenSet(false),
     m_autoPauseHasBeenSet(false),
     m_autoPauseDelayHasBeenSet(false),
-    m_storagePayModeHasBeenSet(false)
+    m_storagePayModeHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false),
+    m_alarmPolicyIdsHasBeenSet(false),
+    m_clusterParamsHasBeenSet(false),
+    m_dealModeHasBeenSet(false),
+    m_paramTemplateIdHasBeenSet(false)
 {
 }
 
@@ -344,6 +349,63 @@ string CreateClustersRequest::ToJsonString() const
         string key = "StoragePayMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_storagePayMode, allocator);
+    }
+
+    if (m_securityGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_alarmPolicyIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmPolicyIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_alarmPolicyIds.begin(); itr != m_alarmPolicyIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_clusterParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterParams";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_clusterParams.begin(); itr != m_clusterParams.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_dealModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DealMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dealMode, allocator);
+    }
+
+    if (m_paramTemplateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParamTemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_paramTemplateId, allocator);
     }
 
 
@@ -896,6 +958,86 @@ void CreateClustersRequest::SetStoragePayMode(const int64_t& _storagePayMode)
 bool CreateClustersRequest::StoragePayModeHasBeenSet() const
 {
     return m_storagePayModeHasBeenSet;
+}
+
+vector<string> CreateClustersRequest::GetSecurityGroupIds() const
+{
+    return m_securityGroupIds;
+}
+
+void CreateClustersRequest::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
+{
+    m_securityGroupIds = _securityGroupIds;
+    m_securityGroupIdsHasBeenSet = true;
+}
+
+bool CreateClustersRequest::SecurityGroupIdsHasBeenSet() const
+{
+    return m_securityGroupIdsHasBeenSet;
+}
+
+vector<string> CreateClustersRequest::GetAlarmPolicyIds() const
+{
+    return m_alarmPolicyIds;
+}
+
+void CreateClustersRequest::SetAlarmPolicyIds(const vector<string>& _alarmPolicyIds)
+{
+    m_alarmPolicyIds = _alarmPolicyIds;
+    m_alarmPolicyIdsHasBeenSet = true;
+}
+
+bool CreateClustersRequest::AlarmPolicyIdsHasBeenSet() const
+{
+    return m_alarmPolicyIdsHasBeenSet;
+}
+
+vector<ParamItem> CreateClustersRequest::GetClusterParams() const
+{
+    return m_clusterParams;
+}
+
+void CreateClustersRequest::SetClusterParams(const vector<ParamItem>& _clusterParams)
+{
+    m_clusterParams = _clusterParams;
+    m_clusterParamsHasBeenSet = true;
+}
+
+bool CreateClustersRequest::ClusterParamsHasBeenSet() const
+{
+    return m_clusterParamsHasBeenSet;
+}
+
+int64_t CreateClustersRequest::GetDealMode() const
+{
+    return m_dealMode;
+}
+
+void CreateClustersRequest::SetDealMode(const int64_t& _dealMode)
+{
+    m_dealMode = _dealMode;
+    m_dealModeHasBeenSet = true;
+}
+
+bool CreateClustersRequest::DealModeHasBeenSet() const
+{
+    return m_dealModeHasBeenSet;
+}
+
+int64_t CreateClustersRequest::GetParamTemplateId() const
+{
+    return m_paramTemplateId;
+}
+
+void CreateClustersRequest::SetParamTemplateId(const int64_t& _paramTemplateId)
+{
+    m_paramTemplateId = _paramTemplateId;
+    m_paramTemplateIdHasBeenSet = true;
+}
+
+bool CreateClustersRequest::ParamTemplateIdHasBeenSet() const
+{
+    return m_paramTemplateIdHasBeenSet;
 }
 
 

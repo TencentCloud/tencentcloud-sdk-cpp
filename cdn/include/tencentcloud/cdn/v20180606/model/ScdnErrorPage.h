@@ -48,13 +48,21 @@ namespace TencentCloud
 
                     /**
                      * 获取状态码
+执行动作为：intercept 默认传值 403
+执行动作为：redirect 默认传值 301
                      * @return RedirectCode 状态码
+执行动作为：intercept 默认传值 403
+执行动作为：redirect 默认传值 301
                      */
                     int64_t GetRedirectCode() const;
 
                     /**
                      * 设置状态码
+执行动作为：intercept 默认传值 403
+执行动作为：redirect 默认传值 301
                      * @param RedirectCode 状态码
+执行动作为：intercept 默认传值 403
+执行动作为：redirect 默认传值 301
                      */
                     void SetRedirectCode(const int64_t& _redirectCode);
 
@@ -86,6 +94,8 @@ namespace TencentCloud
 
                     /**
                      * 状态码
+执行动作为：intercept 默认传值 403
+执行动作为：redirect 默认传值 301
                      */
                     int64_t m_redirectCode;
                     bool m_redirectCodeHasBeenSet;

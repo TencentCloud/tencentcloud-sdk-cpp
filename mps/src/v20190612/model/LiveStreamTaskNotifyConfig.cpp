@@ -24,7 +24,9 @@ LiveStreamTaskNotifyConfig::LiveStreamTaskNotifyConfig() :
     m_cmqModelHasBeenSet(false),
     m_cmqRegionHasBeenSet(false),
     m_queueNameHasBeenSet(false),
-    m_topicNameHasBeenSet(false)
+    m_topicNameHasBeenSet(false),
+    m_notifyTypeHasBeenSet(false),
+    m_notifyUrlHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome LiveStreamTaskNotifyConfig::Deserialize(const rapidjson::Val
         m_topicNameHasBeenSet = true;
     }
 
+    if (value.HasMember("NotifyType") && !value["NotifyType"].IsNull())
+    {
+        if (!value["NotifyType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LiveStreamTaskNotifyConfig.NotifyType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_notifyType = string(value["NotifyType"].GetString());
+        m_notifyTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("NotifyUrl") && !value["NotifyUrl"].IsNull())
+    {
+        if (!value["NotifyUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LiveStreamTaskNotifyConfig.NotifyUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_notifyUrl = string(value["NotifyUrl"].GetString());
+        m_notifyUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void LiveStreamTaskNotifyConfig::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "TopicName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_topicName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_notifyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotifyType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_notifyType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_notifyUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotifyUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_notifyUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void LiveStreamTaskNotifyConfig::SetTopicName(const string& _topicName)
 bool LiveStreamTaskNotifyConfig::TopicNameHasBeenSet() const
 {
     return m_topicNameHasBeenSet;
+}
+
+string LiveStreamTaskNotifyConfig::GetNotifyType() const
+{
+    return m_notifyType;
+}
+
+void LiveStreamTaskNotifyConfig::SetNotifyType(const string& _notifyType)
+{
+    m_notifyType = _notifyType;
+    m_notifyTypeHasBeenSet = true;
+}
+
+bool LiveStreamTaskNotifyConfig::NotifyTypeHasBeenSet() const
+{
+    return m_notifyTypeHasBeenSet;
+}
+
+string LiveStreamTaskNotifyConfig::GetNotifyUrl() const
+{
+    return m_notifyUrl;
+}
+
+void LiveStreamTaskNotifyConfig::SetNotifyUrl(const string& _notifyUrl)
+{
+    m_notifyUrl = _notifyUrl;
+    m_notifyUrlHasBeenSet = true;
+}
+
+bool LiveStreamTaskNotifyConfig::NotifyUrlHasBeenSet() const
+{
+    return m_notifyUrlHasBeenSet;
 }
 

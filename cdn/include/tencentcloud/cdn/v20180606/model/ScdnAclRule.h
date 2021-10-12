@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取匹配关键字, params | url | ip | referer | user-agent
-                     * @return MatchKey 匹配关键字, params | url | ip | referer | user-agent
+                     * 获取匹配关键字
+                     * @return MatchKey 匹配关键字
                      */
                     std::string GetMatchKey() const;
 
                     /**
-                     * 设置匹配关键字, params | url | ip | referer | user-agent
-                     * @param MatchKey 匹配关键字, params | url | ip | referer | user-agent
+                     * 设置匹配关键字
+                     * @param MatchKey 匹配关键字
                      */
                     void SetMatchKey(const std::string& _matchKey);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool MatchKeyHasBeenSet() const;
 
                     /**
-                     * 获取逻辑操作符，取值 exclude, include, notequal, equal, len-less, len-equal, len-more
-                     * @return LogiOperator 逻辑操作符，取值 exclude, include, notequal, equal, len-less, len-equal, len-more
+                     * 获取逻辑操作符，取值如下
+                     * @return LogiOperator 逻辑操作符，取值如下
                      */
                     std::string GetLogiOperator() const;
 
                     /**
-                     * 设置逻辑操作符，取值 exclude, include, notequal, equal, len-less, len-equal, len-more
-                     * @param LogiOperator 逻辑操作符，取值 exclude, include, notequal, equal, len-less, len-equal, len-more
+                     * 设置逻辑操作符，取值如下
+                     * @param LogiOperator 逻辑操作符，取值如下
                      */
                     void SetLogiOperator(const std::string& _logiOperator);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool LogiOperatorHasBeenSet() const;
 
                     /**
-                     * 获取匹配值
-                     * @return MatchValue 匹配值
+                     * 获取匹配值。
+                     * @return MatchValue 匹配值。
                      */
                     std::string GetMatchValue() const;
 
                     /**
-                     * 设置匹配值
-                     * @param MatchValue 匹配值
+                     * 设置匹配值。
+                     * @param MatchValue 匹配值。
                      */
                     void SetMatchValue(const std::string& _matchValue);
 
@@ -103,19 +103,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 匹配关键字, params | url | ip | referer | user-agent
+                     * 匹配关键字
                      */
                     std::string m_matchKey;
                     bool m_matchKeyHasBeenSet;
 
                     /**
-                     * 逻辑操作符，取值 exclude, include, notequal, equal, len-less, len-equal, len-more
+                     * 逻辑操作符，取值如下
                      */
                     std::string m_logiOperator;
                     bool m_logiOperatorHasBeenSet;
 
                     /**
-                     * 匹配值
+                     * 匹配值。
                      */
                     std::string m_matchValue;
                     bool m_matchValueHasBeenSet;

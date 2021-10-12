@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CDN_V20180606_MODEL_SCDNACLGROUP_H_
-#define TENCENTCLOUD_CDN_V20180606_MODEL_SCDNACLGROUP_H_
+#ifndef TENCENTCLOUD_CDN_V20180606_MODEL_ADVANCEDSCDNACLGROUP_H_
+#define TENCENTCLOUD_CDN_V20180606_MODEL_ADVANCEDSCDNACLGROUP_H_
 
 #include <string>
 #include <vector>
@@ -24,7 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/cdn/v20180606/model/ScdnAclRule.h>
+#include <tencentcloud/cdn/v20180606/model/AdvancedScdnAclRule.h>
 #include <tencentcloud/cdn/v20180606/model/ScdnErrorPage.h>
 
 
@@ -39,11 +39,11 @@ namespace TencentCloud
                 /**
                 * SCDN精准访问控制配置
                 */
-                class ScdnAclGroup : public AbstractModel
+                class AdvancedScdnAclGroup : public AbstractModel
                 {
                 public:
-                    ScdnAclGroup();
-                    ~ScdnAclGroup() = default;
+                    AdvancedScdnAclGroup();
+                    ~AdvancedScdnAclGroup() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
@@ -70,13 +70,13 @@ namespace TencentCloud
                      * 获取具体配置
                      * @return Configure 具体配置
                      */
-                    std::vector<ScdnAclRule> GetConfigure() const;
+                    std::vector<AdvancedScdnAclRule> GetConfigure() const;
 
                     /**
                      * 设置具体配置
                      * @param Configure 具体配置
                      */
-                    void SetConfigure(const std::vector<ScdnAclRule>& _configure);
+                    void SetConfigure(const std::vector<AdvancedScdnAclRule>& _configure);
 
                     /**
                      * 判断参数 Configure 是否已赋值
@@ -122,17 +122,13 @@ namespace TencentCloud
 
                     /**
                      * 获取错误页面配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorPage 错误页面配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ScdnErrorPage GetErrorPage() const;
 
                     /**
                      * 设置错误页面配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ErrorPage 错误页面配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetErrorPage(const ScdnErrorPage& _errorPage);
 
@@ -153,7 +149,7 @@ namespace TencentCloud
                     /**
                      * 具体配置
                      */
-                    std::vector<ScdnAclRule> m_configure;
+                    std::vector<AdvancedScdnAclRule> m_configure;
                     bool m_configureHasBeenSet;
 
                     /**
@@ -170,7 +166,6 @@ namespace TencentCloud
 
                     /**
                      * 错误页面配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ScdnErrorPage m_errorPage;
                     bool m_errorPageHasBeenSet;
@@ -181,4 +176,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CDN_V20180606_MODEL_SCDNACLGROUP_H_
+#endif // !TENCENTCLOUD_CDN_V20180606_MODEL_ADVANCEDSCDNACLGROUP_H_

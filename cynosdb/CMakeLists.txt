@@ -73,7 +73,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeInstanceSpecsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ObjectTask.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeInstanceSpecsRequest.h
-  include/tencentcloud/cynosdb/v20190107/model/PolicyRule.h
+  include/tencentcloud/cynosdb/v20190107/model/ParamItem.h
   include/tencentcloud/cynosdb/v20190107/model/IsolateClusterResponse.h
   include/tencentcloud/cynosdb/v20190107/model/CreateClustersResponse.h
   include/tencentcloud/cynosdb/v20190107/model/SetRenewFlagRequest.h
@@ -85,6 +85,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/CynosdbInstanceGrp.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClustersResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyBackupConfigResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/PolicyRule.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeBackupConfigResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyDBInstanceSecurityGroupsRequest.h
   )
@@ -145,7 +146,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeInstanceSpecsResponse.cpp
   src/v20190107/model/ObjectTask.cpp
   src/v20190107/model/DescribeInstanceSpecsRequest.cpp
-  src/v20190107/model/PolicyRule.cpp
+  src/v20190107/model/ParamItem.cpp
   src/v20190107/model/IsolateClusterResponse.cpp
   src/v20190107/model/CreateClustersResponse.cpp
   src/v20190107/model/SetRenewFlagRequest.cpp
@@ -157,6 +158,7 @@ set(cynosdb_src
   src/v20190107/model/CynosdbInstanceGrp.cpp
   src/v20190107/model/DescribeClustersResponse.cpp
   src/v20190107/model/ModifyBackupConfigResponse.cpp
+  src/v20190107/model/PolicyRule.cpp
   src/v20190107/model/DescribeBackupConfigResponse.cpp
   src/v20190107/model/ModifyDBInstanceSecurityGroupsRequest.cpp
   )

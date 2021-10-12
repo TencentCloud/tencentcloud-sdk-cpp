@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool CosBucketNameHasBeenSet() const;
 
                     /**
-                     * 获取对象存储对象路径
-                     * @return CosObjectName 对象存储对象路径
+                     * 获取对象存储中代码包文件路径，以/开头
+                     * @return CosObjectName 对象存储中代码包文件路径，以/开头
                      */
                     std::string GetCosObjectName() const;
 
                     /**
-                     * 设置对象存储对象路径
-                     * @param CosObjectName 对象存储对象路径
+                     * 设置对象存储中代码包文件路径，以/开头
+                     * @param CosObjectName 对象存储中代码包文件路径，以/开头
                      */
                     void SetCosObjectName(const std::string& _cosObjectName);
 
@@ -326,7 +326,7 @@ namespace TencentCloud
                     bool m_cosBucketNameHasBeenSet;
 
                     /**
-                     * 对象存储对象路径
+                     * 对象存储中代码包文件路径，以/开头
                      */
                     std::string m_cosObjectName;
                     bool m_cosObjectNameHasBeenSet;

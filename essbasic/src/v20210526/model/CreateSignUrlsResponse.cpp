@@ -24,7 +24,8 @@ using namespace TencentCloud::Essbasic::V20210526::Model;
 using namespace std;
 
 CreateSignUrlsResponse::CreateSignUrlsResponse() :
-    m_signUrlInfosHasBeenSet(false)
+    m_signUrlInfosHasBeenSet(false),
+    m_errorMessagesHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,19 @@ CoreInternalOutcome CreateSignUrlsResponse::Deserialize(const string &payload)
         m_signUrlInfosHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ErrorMessages") && !rsp["ErrorMessages"].IsNull())
+    {
+        if (!rsp["ErrorMessages"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ErrorMessages` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ErrorMessages"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_errorMessages.push_back((*itr).GetString());
+        }
+        m_errorMessagesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +121,19 @@ string CreateSignUrlsResponse::ToJsonString() const
         }
     }
 
+    if (m_errorMessagesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorMessages";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_errorMessages.begin(); itr != m_errorMessages.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +154,16 @@ vector<SignUrlInfo> CreateSignUrlsResponse::GetSignUrlInfos() const
 bool CreateSignUrlsResponse::SignUrlInfosHasBeenSet() const
 {
     return m_signUrlInfosHasBeenSet;
+}
+
+vector<string> CreateSignUrlsResponse::GetErrorMessages() const
+{
+    return m_errorMessages;
+}
+
+bool CreateSignUrlsResponse::ErrorMessagesHasBeenSet() const
+{
+    return m_errorMessagesHasBeenSet;
 }
 
 

@@ -252,6 +252,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/DeleteRepositoryRequest.h
   include/tencentcloud/tcr/v20190924/model/CreateInternalEndpointDnsResponse.h
   include/tencentcloud/tcr/v20190924/model/CreateTagRetentionExecutionRequest.h
+  include/tencentcloud/tcr/v20190924/model/ReplicationLog.h
   include/tencentcloud/tcr/v20190924/model/CreateApplicationTriggerPersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/ManageInternalEndpointRequest.h
   include/tencentcloud/tcr/v20190924/model/BatchDeleteImagePersonalResponse.h
@@ -494,6 +495,7 @@ set(tcr_src
   src/v20190924/model/DeleteRepositoryRequest.cpp
   src/v20190924/model/CreateInternalEndpointDnsResponse.cpp
   src/v20190924/model/CreateTagRetentionExecutionRequest.cpp
+  src/v20190924/model/ReplicationLog.cpp
   src/v20190924/model/CreateApplicationTriggerPersonalResponse.cpp
   src/v20190924/model/ManageInternalEndpointRequest.cpp
   src/v20190924/model/BatchDeleteImagePersonalResponse.cpp

@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cdn/v20180606/model/ScdnAclGroup.h>
 #include <tencentcloud/cdn/v20180606/model/ScdnErrorPage.h>
+#include <tencentcloud/cdn/v20180606/model/AdvancedScdnAclGroup.h>
 
 
 namespace TencentCloud
@@ -67,17 +68,17 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取Acl规则组，switch为on时必填
+                     * 获取新版本请使用AdvancedScriptData
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScriptData Acl规则组，switch为on时必填
+                     * @return ScriptData 新版本请使用AdvancedScriptData
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ScdnAclGroup> GetScriptData() const;
 
                     /**
-                     * 设置Acl规则组，switch为on时必填
+                     * 设置新版本请使用AdvancedScriptData
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ScriptData Acl规则组，switch为on时必填
+                     * @param ScriptData 新版本请使用AdvancedScriptData
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetScriptData(const std::vector<ScdnAclGroup>& _scriptData);
@@ -110,6 +111,28 @@ namespace TencentCloud
                      */
                     bool ErrorPageHasBeenSet() const;
 
+                    /**
+                     * 获取Acl规则组，switch为on时必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AdvancedScriptData Acl规则组，switch为on时必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AdvancedScdnAclGroup> GetAdvancedScriptData() const;
+
+                    /**
+                     * 设置Acl规则组，switch为on时必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AdvancedScriptData Acl规则组，switch为on时必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAdvancedScriptData(const std::vector<AdvancedScdnAclGroup>& _advancedScriptData);
+
+                    /**
+                     * 判断参数 AdvancedScriptData 是否已赋值
+                     * @return AdvancedScriptData 是否已赋值
+                     */
+                    bool AdvancedScriptDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,7 +142,7 @@ namespace TencentCloud
                     bool m_switchHasBeenSet;
 
                     /**
-                     * Acl规则组，switch为on时必填
+                     * 新版本请使用AdvancedScriptData
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ScdnAclGroup> m_scriptData;
@@ -131,6 +154,13 @@ namespace TencentCloud
                      */
                     ScdnErrorPage m_errorPage;
                     bool m_errorPageHasBeenSet;
+
+                    /**
+                     * Acl规则组，switch为on时必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AdvancedScdnAclGroup> m_advancedScriptData;
+                    bool m_advancedScriptDataHasBeenSet;
 
                 };
             }

@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cynosdb/v20190107/model/Tag.h>
+#include <tencentcloud/cynosdb/v20190107/model/ParamItem.h>
 
 
 namespace TencentCloud
@@ -723,6 +724,96 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      */
                     bool StoragePayModeHasBeenSet() const;
 
+                    /**
+                     * 获取安全组id数组
+                     * @return SecurityGroupIds 安全组id数组
+                     */
+                    std::vector<std::string> GetSecurityGroupIds() const;
+
+                    /**
+                     * 设置安全组id数组
+                     * @param SecurityGroupIds 安全组id数组
+                     */
+                    void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
+
+                    /**
+                     * 判断参数 SecurityGroupIds 是否已赋值
+                     * @return SecurityGroupIds 是否已赋值
+                     */
+                    bool SecurityGroupIdsHasBeenSet() const;
+
+                    /**
+                     * 获取告警策略Id数组
+                     * @return AlarmPolicyIds 告警策略Id数组
+                     */
+                    std::vector<std::string> GetAlarmPolicyIds() const;
+
+                    /**
+                     * 设置告警策略Id数组
+                     * @param AlarmPolicyIds 告警策略Id数组
+                     */
+                    void SetAlarmPolicyIds(const std::vector<std::string>& _alarmPolicyIds);
+
+                    /**
+                     * 判断参数 AlarmPolicyIds 是否已赋值
+                     * @return AlarmPolicyIds 是否已赋值
+                     */
+                    bool AlarmPolicyIdsHasBeenSet() const;
+
+                    /**
+                     * 获取参数数组
+                     * @return ClusterParams 参数数组
+                     */
+                    std::vector<ParamItem> GetClusterParams() const;
+
+                    /**
+                     * 设置参数数组
+                     * @param ClusterParams 参数数组
+                     */
+                    void SetClusterParams(const std::vector<ParamItem>& _clusterParams);
+
+                    /**
+                     * 判断参数 ClusterParams 是否已赋值
+                     * @return ClusterParams 是否已赋值
+                     */
+                    bool ClusterParamsHasBeenSet() const;
+
+                    /**
+                     * 获取交易模式，0-下单且支付，1-下单
+                     * @return DealMode 交易模式，0-下单且支付，1-下单
+                     */
+                    int64_t GetDealMode() const;
+
+                    /**
+                     * 设置交易模式，0-下单且支付，1-下单
+                     * @param DealMode 交易模式，0-下单且支付，1-下单
+                     */
+                    void SetDealMode(const int64_t& _dealMode);
+
+                    /**
+                     * 判断参数 DealMode 是否已赋值
+                     * @return DealMode 是否已赋值
+                     */
+                    bool DealModeHasBeenSet() const;
+
+                    /**
+                     * 获取参数模版ID
+                     * @return ParamTemplateId 参数模版ID
+                     */
+                    int64_t GetParamTemplateId() const;
+
+                    /**
+                     * 设置参数模版ID
+                     * @param ParamTemplateId 参数模版ID
+                     */
+                    void SetParamTemplateId(const int64_t& _paramTemplateId);
+
+                    /**
+                     * 判断参数 ParamTemplateId 是否已赋值
+                     * @return ParamTemplateId 是否已赋值
+                     */
+                    bool ParamTemplateIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -945,6 +1036,36 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      */
                     int64_t m_storagePayMode;
                     bool m_storagePayModeHasBeenSet;
+
+                    /**
+                     * 安全组id数组
+                     */
+                    std::vector<std::string> m_securityGroupIds;
+                    bool m_securityGroupIdsHasBeenSet;
+
+                    /**
+                     * 告警策略Id数组
+                     */
+                    std::vector<std::string> m_alarmPolicyIds;
+                    bool m_alarmPolicyIdsHasBeenSet;
+
+                    /**
+                     * 参数数组
+                     */
+                    std::vector<ParamItem> m_clusterParams;
+                    bool m_clusterParamsHasBeenSet;
+
+                    /**
+                     * 交易模式，0-下单且支付，1-下单
+                     */
+                    int64_t m_dealMode;
+                    bool m_dealModeHasBeenSet;
+
+                    /**
+                     * 参数模版ID
+                     */
+                    int64_t m_paramTemplateId;
+                    bool m_paramTemplateIdHasBeenSet;
 
                 };
             }

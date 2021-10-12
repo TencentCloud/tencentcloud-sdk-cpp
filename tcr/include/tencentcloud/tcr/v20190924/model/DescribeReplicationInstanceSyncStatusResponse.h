@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcr/v20190924/model/ReplicationLog.h>
 
 
 namespace TencentCloud
@@ -67,6 +68,20 @@ namespace TencentCloud
                      */
                     bool ReplicationTimeHasBeenSet() const;
 
+                    /**
+                     * 获取同步日志
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReplicationLog 同步日志
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ReplicationLog GetReplicationLog() const;
+
+                    /**
+                     * 判断参数 ReplicationLog 是否已赋值
+                     * @return ReplicationLog 是否已赋值
+                     */
+                    bool ReplicationLogHasBeenSet() const;
+
                 private:
 
                     /**
@@ -80,6 +95,13 @@ namespace TencentCloud
                      */
                     std::string m_replicationTime;
                     bool m_replicationTimeHasBeenSet;
+
+                    /**
+                     * 同步日志
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ReplicationLog m_replicationLog;
+                    bool m_replicationLogHasBeenSet;
 
                 };
             }

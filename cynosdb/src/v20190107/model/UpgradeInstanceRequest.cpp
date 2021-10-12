@@ -29,7 +29,8 @@ UpgradeInstanceRequest::UpgradeInstanceRequest() :
     m_upgradeTypeHasBeenSet(false),
     m_storageLimitHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
-    m_dbTypeHasBeenSet(false)
+    m_dbTypeHasBeenSet(false),
+    m_dealModeHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string UpgradeInstanceRequest::ToJsonString() const
         string key = "DbType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dbType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dealModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DealMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dealMode, allocator);
     }
 
 
@@ -214,6 +223,22 @@ void UpgradeInstanceRequest::SetDbType(const string& _dbType)
 bool UpgradeInstanceRequest::DbTypeHasBeenSet() const
 {
     return m_dbTypeHasBeenSet;
+}
+
+int64_t UpgradeInstanceRequest::GetDealMode() const
+{
+    return m_dealMode;
+}
+
+void UpgradeInstanceRequest::SetDealMode(const int64_t& _dealMode)
+{
+    m_dealMode = _dealMode;
+    m_dealModeHasBeenSet = true;
+}
+
+bool UpgradeInstanceRequest::DealModeHasBeenSet() const
+{
+    return m_dealModeHasBeenSet;
 }
 
 

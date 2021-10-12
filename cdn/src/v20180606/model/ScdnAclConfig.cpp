@@ -23,7 +23,8 @@ using namespace std;
 ScdnAclConfig::ScdnAclConfig() :
     m_switchHasBeenSet(false),
     m_scriptDataHasBeenSet(false),
-    m_errorPageHasBeenSet(false)
+    m_errorPageHasBeenSet(false),
+    m_advancedScriptDataHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,26 @@ CoreInternalOutcome ScdnAclConfig::Deserialize(const rapidjson::Value &value)
         m_errorPageHasBeenSet = true;
     }
 
+    if (value.HasMember("AdvancedScriptData") && !value["AdvancedScriptData"].IsNull())
+    {
+        if (!value["AdvancedScriptData"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ScdnAclConfig.AdvancedScriptData` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AdvancedScriptData"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AdvancedScdnAclGroup item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_advancedScriptData.push_back(item);
+        }
+        m_advancedScriptDataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -116,6 +137,21 @@ void ScdnAclConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_errorPage.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_advancedScriptDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdvancedScriptData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_advancedScriptData.begin(); itr != m_advancedScriptData.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -167,5 +203,21 @@ void ScdnAclConfig::SetErrorPage(const ScdnErrorPage& _errorPage)
 bool ScdnAclConfig::ErrorPageHasBeenSet() const
 {
     return m_errorPageHasBeenSet;
+}
+
+vector<AdvancedScdnAclGroup> ScdnAclConfig::GetAdvancedScriptData() const
+{
+    return m_advancedScriptData;
+}
+
+void ScdnAclConfig::SetAdvancedScriptData(const vector<AdvancedScdnAclGroup>& _advancedScriptData)
+{
+    m_advancedScriptData = _advancedScriptData;
+    m_advancedScriptDataHasBeenSet = true;
+}
+
+bool ScdnAclConfig::AdvancedScriptDataHasBeenSet() const
+{
+    return m_advancedScriptDataHasBeenSet;
 }
 

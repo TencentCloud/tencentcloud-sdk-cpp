@@ -262,6 +262,24 @@ namespace TencentCloud
                      */
                     bool OrderSourceHasBeenSet() const;
 
+                    /**
+                     * 获取交易模式 0-下单并支付 1-下单
+                     * @return DealMode 交易模式 0-下单并支付 1-下单
+                     */
+                    int64_t GetDealMode() const;
+
+                    /**
+                     * 设置交易模式 0-下单并支付 1-下单
+                     * @param DealMode 交易模式 0-下单并支付 1-下单
+                     */
+                    void SetDealMode(const int64_t& _dealMode);
+
+                    /**
+                     * 判断参数 DealMode 是否已赋值
+                     * @return DealMode 是否已赋值
+                     */
+                    bool DealModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -336,6 +354,12 @@ namespace TencentCloud
                      */
                     std::string m_orderSource;
                     bool m_orderSourceHasBeenSet;
+
+                    /**
+                     * 交易模式 0-下单并支付 1-下单
+                     */
+                    int64_t m_dealMode;
+                    bool m_dealModeHasBeenSet;
 
                 };
             }

@@ -34,7 +34,8 @@ AddInstancesRequest::AddInstancesRequest() :
     m_instanceNameHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
     m_dbTypeHasBeenSet(false),
-    m_orderSourceHasBeenSet(false)
+    m_orderSourceHasBeenSet(false),
+    m_dealModeHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,14 @@ string AddInstancesRequest::ToJsonString() const
         string key = "OrderSource";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_orderSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dealModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DealMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dealMode, allocator);
     }
 
 
@@ -339,6 +348,22 @@ void AddInstancesRequest::SetOrderSource(const string& _orderSource)
 bool AddInstancesRequest::OrderSourceHasBeenSet() const
 {
     return m_orderSourceHasBeenSet;
+}
+
+int64_t AddInstancesRequest::GetDealMode() const
+{
+    return m_dealMode;
+}
+
+void AddInstancesRequest::SetDealMode(const int64_t& _dealMode)
+{
+    m_dealMode = _dealMode;
+    m_dealModeHasBeenSet = true;
+}
+
+bool AddInstancesRequest::DealModeHasBeenSet() const
+{
+    return m_dealModeHasBeenSet;
 }
 
 

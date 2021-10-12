@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeReplicationInstanceSyncStatusResponse::DescribeReplicationInstanceSyncStatusResponse() :
     m_replicationStatusHasBeenSet(false),
-    m_replicationTimeHasBeenSet(false)
+    m_replicationTimeHasBeenSet(false),
+    m_replicationLogHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,23 @@ CoreInternalOutcome DescribeReplicationInstanceSyncStatusResponse::Deserialize(c
         m_replicationTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ReplicationLog") && !rsp["ReplicationLog"].IsNull())
+    {
+        if (!rsp["ReplicationLog"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReplicationLog` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_replicationLog.Deserialize(rsp["ReplicationLog"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_replicationLogHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +125,15 @@ string DescribeReplicationInstanceSyncStatusResponse::ToJsonString() const
         string key = "ReplicationTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_replicationTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_replicationLogHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReplicationLog";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_replicationLog.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +166,16 @@ string DescribeReplicationInstanceSyncStatusResponse::GetReplicationTime() const
 bool DescribeReplicationInstanceSyncStatusResponse::ReplicationTimeHasBeenSet() const
 {
     return m_replicationTimeHasBeenSet;
+}
+
+ReplicationLog DescribeReplicationInstanceSyncStatusResponse::GetReplicationLog() const
+{
+    return m_replicationLog;
+}
+
+bool DescribeReplicationInstanceSyncStatusResponse::ReplicationLogHasBeenSet() const
+{
+    return m_replicationLogHasBeenSet;
 }
 
 
