@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool CcnIdHasBeenSet() const;
 
                     /**
-                     * 获取CCN名称，最大长度不能超过60个字节。
-                     * @return CcnName CCN名称，最大长度不能超过60个字节。
+                     * 获取CCN名称，最大长度不能超过60个字节，限制：CcnName和CcnDescription必须至少选择一个参数输入，否则报错。
+                     * @return CcnName CCN名称，最大长度不能超过60个字节，限制：CcnName和CcnDescription必须至少选择一个参数输入，否则报错。
                      */
                     std::string GetCcnName() const;
 
                     /**
-                     * 设置CCN名称，最大长度不能超过60个字节。
-                     * @param CcnName CCN名称，最大长度不能超过60个字节。
+                     * 设置CCN名称，最大长度不能超过60个字节，限制：CcnName和CcnDescription必须至少选择一个参数输入，否则报错。
+                     * @param CcnName CCN名称，最大长度不能超过60个字节，限制：CcnName和CcnDescription必须至少选择一个参数输入，否则报错。
                      */
                     void SetCcnName(const std::string& _ccnName);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool CcnNameHasBeenSet() const;
 
                     /**
-                     * 获取CCN描述信息，最大长度不能超过100个字节。
-                     * @return CcnDescription CCN描述信息，最大长度不能超过100个字节。
+                     * 获取CCN描述信息，最大长度不能超过100个字节，限制：CcnName和CcnDescription必须至少选择一个参数输入，否则报错。
+                     * @return CcnDescription CCN描述信息，最大长度不能超过100个字节，限制：CcnName和CcnDescription必须至少选择一个参数输入，否则报错。
                      */
                     std::string GetCcnDescription() const;
 
                     /**
-                     * 设置CCN描述信息，最大长度不能超过100个字节。
-                     * @param CcnDescription CCN描述信息，最大长度不能超过100个字节。
+                     * 设置CCN描述信息，最大长度不能超过100个字节，限制：CcnName和CcnDescription必须至少选择一个参数输入，否则报错。
+                     * @param CcnDescription CCN描述信息，最大长度不能超过100个字节，限制：CcnName和CcnDescription必须至少选择一个参数输入，否则报错。
                      */
                     void SetCcnDescription(const std::string& _ccnDescription);
 
@@ -105,13 +105,13 @@ namespace TencentCloud
                     bool m_ccnIdHasBeenSet;
 
                     /**
-                     * CCN名称，最大长度不能超过60个字节。
+                     * CCN名称，最大长度不能超过60个字节，限制：CcnName和CcnDescription必须至少选择一个参数输入，否则报错。
                      */
                     std::string m_ccnName;
                     bool m_ccnNameHasBeenSet;
 
                     /**
-                     * CCN描述信息，最大长度不能超过100个字节。
+                     * CCN描述信息，最大长度不能超过100个字节，限制：CcnName和CcnDescription必须至少选择一个参数输入，否则报错。
                      */
                     std::string m_ccnDescription;
                     bool m_ccnDescriptionHasBeenSet;

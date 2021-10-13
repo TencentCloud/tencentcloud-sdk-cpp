@@ -28,7 +28,8 @@ MediaVideoStreamItem::MediaVideoStreamItem() :
     m_fpsHasBeenSet(false),
     m_colorPrimariesHasBeenSet(false),
     m_colorSpaceHasBeenSet(false),
-    m_colorTransferHasBeenSet(false)
+    m_colorTransferHasBeenSet(false),
+    m_hdrTypeHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome MediaVideoStreamItem::Deserialize(const rapidjson::Value &va
         m_colorTransferHasBeenSet = true;
     }
 
+    if (value.HasMember("HdrType") && !value["HdrType"].IsNull())
+    {
+        if (!value["HdrType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaVideoStreamItem.HdrType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hdrType = string(value["HdrType"].GetString());
+        m_hdrTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void MediaVideoStreamItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "ColorTransfer";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_colorTransfer.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hdrTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HdrType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hdrType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void MediaVideoStreamItem::SetColorTransfer(const string& _colorTransfer)
 bool MediaVideoStreamItem::ColorTransferHasBeenSet() const
 {
     return m_colorTransferHasBeenSet;
+}
+
+string MediaVideoStreamItem::GetHdrType() const
+{
+    return m_hdrType;
+}
+
+void MediaVideoStreamItem::SetHdrType(const string& _hdrType)
+{
+    m_hdrType = _hdrType;
+    m_hdrTypeHasBeenSet = true;
+}
+
+bool MediaVideoStreamItem::HdrTypeHasBeenSet() const
+{
+    return m_hdrTypeHasBeenSet;
 }
 

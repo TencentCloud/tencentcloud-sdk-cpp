@@ -167,6 +167,8 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryMerchantPayWayListResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOrderRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOrderResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOrderStatusRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOrderStatusResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOutwardOrderRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOutwardOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryPayerInfoRequest.h>
@@ -201,6 +203,8 @@
 #include <tencentcloud/cpdp/v20190820/model/RefundMemberTransactionResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/RefundOrderRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/RefundOrderResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/RefundTlinxOrderRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/RefundTlinxOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/RegisterBehaviorRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/RegisterBehaviorResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/RegisterBillRequest.h>
@@ -227,6 +231,8 @@
 #include <tencentcloud/cpdp/v20190820/model/UnbindRelateAcctResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/UnifiedOrderRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/UnifiedOrderResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/UnifiedTlinxOrderRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/UnifiedTlinxOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/UploadExternalAnchorInfoRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/UploadExternalAnchorInfoResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/UploadTaxListRequest.h>
@@ -465,6 +471,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryOrderResponse> QueryOrderOutcome;
                 typedef std::future<QueryOrderOutcome> QueryOrderOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryOrderRequest&, QueryOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOrderAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryOrderStatusResponse> QueryOrderStatusOutcome;
+                typedef std::future<QueryOrderStatusOutcome> QueryOrderStatusOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryOrderStatusRequest&, QueryOrderStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOrderStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryOutwardOrderResponse> QueryOutwardOrderOutcome;
                 typedef std::future<QueryOutwardOrderOutcome> QueryOutwardOrderOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryOutwardOrderRequest&, QueryOutwardOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOutwardOrderAsyncHandler;
@@ -516,6 +525,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RefundOrderResponse> RefundOrderOutcome;
                 typedef std::future<RefundOrderOutcome> RefundOrderOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::RefundOrderRequest&, RefundOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RefundOrderAsyncHandler;
+                typedef Outcome<Core::Error, Model::RefundTlinxOrderResponse> RefundTlinxOrderOutcome;
+                typedef std::future<RefundTlinxOrderOutcome> RefundTlinxOrderOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::RefundTlinxOrderRequest&, RefundTlinxOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RefundTlinxOrderAsyncHandler;
                 typedef Outcome<Core::Error, Model::RegisterBehaviorResponse> RegisterBehaviorOutcome;
                 typedef std::future<RegisterBehaviorOutcome> RegisterBehaviorOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::RegisterBehaviorRequest&, RegisterBehaviorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterBehaviorAsyncHandler;
@@ -555,6 +567,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UnifiedOrderResponse> UnifiedOrderOutcome;
                 typedef std::future<UnifiedOrderOutcome> UnifiedOrderOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::UnifiedOrderRequest&, UnifiedOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnifiedOrderAsyncHandler;
+                typedef Outcome<Core::Error, Model::UnifiedTlinxOrderResponse> UnifiedTlinxOrderOutcome;
+                typedef std::future<UnifiedTlinxOrderOutcome> UnifiedTlinxOrderOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::UnifiedTlinxOrderRequest&, UnifiedTlinxOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnifiedTlinxOrderAsyncHandler;
                 typedef Outcome<Core::Error, Model::UploadExternalAnchorInfoResponse> UploadExternalAnchorInfoOutcome;
                 typedef std::future<UploadExternalAnchorInfoOutcome> UploadExternalAnchorInfoOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::UploadExternalAnchorInfoRequest&, UploadExternalAnchorInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadExternalAnchorInfoAsyncHandler;
@@ -1228,6 +1243,15 @@ namespace TencentCloud
                 QueryOrderOutcomeCallable QueryOrderCallable(const Model::QueryOrderRequest& request);
 
                 /**
+                 *云支付-查询订单付款状态
+                 * @param req QueryOrderStatusRequest
+                 * @return QueryOrderStatusOutcome
+                 */
+                QueryOrderStatusOutcome QueryOrderStatus(const Model::QueryOrderStatusRequest &request);
+                void QueryOrderStatusAsync(const Model::QueryOrderStatusRequest& request, const QueryOrderStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryOrderStatusOutcomeCallable QueryOrderStatusCallable(const Model::QueryOrderStatusRequest& request);
+
+                /**
                  *跨境-查询汇出结果
                  * @param req QueryOutwardOrderRequest
                  * @return QueryOutwardOrderOutcome
@@ -1381,6 +1405,15 @@ namespace TencentCloud
                 RefundOrderOutcomeCallable RefundOrderCallable(const Model::RefundOrderRequest& request);
 
                 /**
+                 *云支付Tlinx退款接口
+                 * @param req RefundTlinxOrderRequest
+                 * @return RefundTlinxOrderOutcome
+                 */
+                RefundTlinxOrderOutcome RefundTlinxOrder(const Model::RefundTlinxOrderRequest &request);
+                void RefundTlinxOrderAsync(const Model::RefundTlinxOrderRequest& request, const RefundTlinxOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RefundTlinxOrderOutcomeCallable RefundTlinxOrderCallable(const Model::RefundTlinxOrderRequest& request);
+
+                /**
                  *商户查询是否签约和签约行为上报
                  * @param req RegisterBehaviorRequest
                  * @return RegisterBehaviorOutcome
@@ -1496,6 +1529,15 @@ namespace TencentCloud
                 UnifiedOrderOutcome UnifiedOrder(const Model::UnifiedOrderRequest &request);
                 void UnifiedOrderAsync(const Model::UnifiedOrderRequest& request, const UnifiedOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UnifiedOrderOutcomeCallable UnifiedOrderCallable(const Model::UnifiedOrderRequest& request);
+
+                /**
+                 *云支付Tlinx统一下单接口
+                 * @param req UnifiedTlinxOrderRequest
+                 * @return UnifiedTlinxOrderOutcome
+                 */
+                UnifiedTlinxOrderOutcome UnifiedTlinxOrder(const Model::UnifiedTlinxOrderRequest &request);
+                void UnifiedTlinxOrderAsync(const Model::UnifiedTlinxOrderRequest& request, const UnifiedTlinxOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnifiedTlinxOrderOutcomeCallable UnifiedTlinxOrderCallable(const Model::UnifiedTlinxOrderRequest& request);
 
                 /**
                  *灵云-上传主播信息

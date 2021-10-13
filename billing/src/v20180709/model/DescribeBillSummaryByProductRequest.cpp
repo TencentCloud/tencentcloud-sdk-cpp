@@ -25,7 +25,8 @@ using namespace std;
 DescribeBillSummaryByProductRequest::DescribeBillSummaryByProductRequest() :
     m_beginTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_payerUinHasBeenSet(false)
+    m_payerUinHasBeenSet(false),
+    m_payTypeHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeBillSummaryByProductRequest::ToJsonString() const
         string key = "PayerUin";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_payerUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_payType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeBillSummaryByProductRequest::SetPayerUin(const string& _payerUin)
 bool DescribeBillSummaryByProductRequest::PayerUinHasBeenSet() const
 {
     return m_payerUinHasBeenSet;
+}
+
+string DescribeBillSummaryByProductRequest::GetPayType() const
+{
+    return m_payType;
+}
+
+void DescribeBillSummaryByProductRequest::SetPayType(const string& _payType)
+{
+    m_payType = _payType;
+    m_payTypeHasBeenSet = true;
+}
+
+bool DescribeBillSummaryByProductRequest::PayTypeHasBeenSet() const
+{
+    return m_payTypeHasBeenSet;
 }
 
 

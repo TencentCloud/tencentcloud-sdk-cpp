@@ -3136,6 +3136,49 @@ CpdpClient::QueryOrderOutcomeCallable CpdpClient::QueryOrderCallable(const Query
     return task->get_future();
 }
 
+CpdpClient::QueryOrderStatusOutcome CpdpClient::QueryOrderStatus(const QueryOrderStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryOrderStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryOrderStatusResponse rsp = QueryOrderStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryOrderStatusOutcome(rsp);
+        else
+            return QueryOrderStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryOrderStatusOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryOrderStatusAsync(const QueryOrderStatusRequest& request, const QueryOrderStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryOrderStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryOrderStatusOutcomeCallable CpdpClient::QueryOrderStatusCallable(const QueryOrderStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryOrderStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryOrderStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::QueryOutwardOrderOutcome CpdpClient::QueryOutwardOrder(const QueryOutwardOrderRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryOutwardOrder");
@@ -3867,6 +3910,49 @@ CpdpClient::RefundOrderOutcomeCallable CpdpClient::RefundOrderCallable(const Ref
     return task->get_future();
 }
 
+CpdpClient::RefundTlinxOrderOutcome CpdpClient::RefundTlinxOrder(const RefundTlinxOrderRequest &request)
+{
+    auto outcome = MakeRequest(request, "RefundTlinxOrder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RefundTlinxOrderResponse rsp = RefundTlinxOrderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RefundTlinxOrderOutcome(rsp);
+        else
+            return RefundTlinxOrderOutcome(o.GetError());
+    }
+    else
+    {
+        return RefundTlinxOrderOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::RefundTlinxOrderAsync(const RefundTlinxOrderRequest& request, const RefundTlinxOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RefundTlinxOrder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::RefundTlinxOrderOutcomeCallable CpdpClient::RefundTlinxOrderCallable(const RefundTlinxOrderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RefundTlinxOrderOutcome()>>(
+        [this, request]()
+        {
+            return this->RefundTlinxOrder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::RegisterBehaviorOutcome CpdpClient::RegisterBehavior(const RegisterBehaviorRequest &request)
 {
     auto outcome = MakeRequest(request, "RegisterBehavior");
@@ -4419,6 +4505,49 @@ CpdpClient::UnifiedOrderOutcomeCallable CpdpClient::UnifiedOrderCallable(const U
         [this, request]()
         {
             return this->UnifiedOrder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::UnifiedTlinxOrderOutcome CpdpClient::UnifiedTlinxOrder(const UnifiedTlinxOrderRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnifiedTlinxOrder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnifiedTlinxOrderResponse rsp = UnifiedTlinxOrderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnifiedTlinxOrderOutcome(rsp);
+        else
+            return UnifiedTlinxOrderOutcome(o.GetError());
+    }
+    else
+    {
+        return UnifiedTlinxOrderOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::UnifiedTlinxOrderAsync(const UnifiedTlinxOrderRequest& request, const UnifiedTlinxOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UnifiedTlinxOrder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::UnifiedTlinxOrderOutcomeCallable CpdpClient::UnifiedTlinxOrderCallable(const UnifiedTlinxOrderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UnifiedTlinxOrderOutcome()>>(
+        [this, request]()
+        {
+            return this->UnifiedTlinxOrder(request);
         }
     );
 

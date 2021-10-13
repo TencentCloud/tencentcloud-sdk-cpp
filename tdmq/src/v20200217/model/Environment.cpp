@@ -28,7 +28,8 @@ Environment::Environment() :
     m_updateTimeHasBeenSet(false),
     m_namespaceIdHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
-    m_topicNumHasBeenSet(false)
+    m_topicNumHasBeenSet(false),
+    m_retentionPolicyHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,23 @@ CoreInternalOutcome Environment::Deserialize(const rapidjson::Value &value)
         m_topicNumHasBeenSet = true;
     }
 
+    if (value.HasMember("RetentionPolicy") && !value["RetentionPolicy"].IsNull())
+    {
+        if (!value["RetentionPolicy"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Environment.RetentionPolicy` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_retentionPolicy.Deserialize(value["RetentionPolicy"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_retentionPolicyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +204,15 @@ void Environment::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "TopicNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_topicNum, allocator);
+    }
+
+    if (m_retentionPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetentionPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_retentionPolicy.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -317,5 +344,21 @@ void Environment::SetTopicNum(const int64_t& _topicNum)
 bool Environment::TopicNumHasBeenSet() const
 {
     return m_topicNumHasBeenSet;
+}
+
+RetentionPolicy Environment::GetRetentionPolicy() const
+{
+    return m_retentionPolicy;
+}
+
+void Environment::SetRetentionPolicy(const RetentionPolicy& _retentionPolicy)
+{
+    m_retentionPolicy = _retentionPolicy;
+    m_retentionPolicyHasBeenSet = true;
+}
+
+bool Environment::RetentionPolicyHasBeenSet() const
+{
+    return m_retentionPolicyHasBeenSet;
 }
 

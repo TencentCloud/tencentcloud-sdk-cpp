@@ -277,6 +277,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeLocalGatewayResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewayDestinationIpPortTranslationNatRulesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewayDestinationIpPortTranslationNatRulesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeNatGatewayDirectConnectGatewayRouteRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeNatGatewayDirectConnectGatewayRouteResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewaySourceIpTranslationNatRulesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewaySourceIpTranslationNatRulesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewaysRequest.h>
@@ -489,6 +491,8 @@
 #include <tencentcloud/vpc/v20170312/model/ModifyVpnGatewayRoutesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/NotifyRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/NotifyRoutesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/RefreshDirectConnectGatewayRouteToNatGatewayRequest.h>
+#include <tencentcloud/vpc/v20170312/model/RefreshDirectConnectGatewayRouteToNatGatewayResponse.h>
 #include <tencentcloud/vpc/v20170312/model/RejectAttachCcnInstancesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/RejectAttachCcnInstancesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ReleaseAddressesRequest.h>
@@ -930,6 +934,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNatGatewayDestinationIpPortTranslationNatRulesResponse> DescribeNatGatewayDestinationIpPortTranslationNatRulesOutcome;
                 typedef std::future<DescribeNatGatewayDestinationIpPortTranslationNatRulesOutcome> DescribeNatGatewayDestinationIpPortTranslationNatRulesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeNatGatewayDestinationIpPortTranslationNatRulesRequest&, DescribeNatGatewayDestinationIpPortTranslationNatRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatGatewayDestinationIpPortTranslationNatRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNatGatewayDirectConnectGatewayRouteResponse> DescribeNatGatewayDirectConnectGatewayRouteOutcome;
+                typedef std::future<DescribeNatGatewayDirectConnectGatewayRouteOutcome> DescribeNatGatewayDirectConnectGatewayRouteOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeNatGatewayDirectConnectGatewayRouteRequest&, DescribeNatGatewayDirectConnectGatewayRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatGatewayDirectConnectGatewayRouteAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNatGatewaySourceIpTranslationNatRulesResponse> DescribeNatGatewaySourceIpTranslationNatRulesOutcome;
                 typedef std::future<DescribeNatGatewaySourceIpTranslationNatRulesOutcome> DescribeNatGatewaySourceIpTranslationNatRulesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeNatGatewaySourceIpTranslationNatRulesRequest&, DescribeNatGatewaySourceIpTranslationNatRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatGatewaySourceIpTranslationNatRulesAsyncHandler;
@@ -1248,6 +1255,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::NotifyRoutesResponse> NotifyRoutesOutcome;
                 typedef std::future<NotifyRoutesOutcome> NotifyRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::NotifyRoutesRequest&, NotifyRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> NotifyRoutesAsyncHandler;
+                typedef Outcome<Core::Error, Model::RefreshDirectConnectGatewayRouteToNatGatewayResponse> RefreshDirectConnectGatewayRouteToNatGatewayOutcome;
+                typedef std::future<RefreshDirectConnectGatewayRouteToNatGatewayOutcome> RefreshDirectConnectGatewayRouteToNatGatewayOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::RefreshDirectConnectGatewayRouteToNatGatewayRequest&, RefreshDirectConnectGatewayRouteToNatGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RefreshDirectConnectGatewayRouteToNatGatewayAsyncHandler;
                 typedef Outcome<Core::Error, Model::RejectAttachCcnInstancesResponse> RejectAttachCcnInstancesOutcome;
                 typedef std::future<RejectAttachCcnInstancesOutcome> RejectAttachCcnInstancesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::RejectAttachCcnInstancesRequest&, RejectAttachCcnInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RejectAttachCcnInstancesAsyncHandler;
@@ -2618,6 +2628,15 @@ namespace TencentCloud
                 DescribeNatGatewayDestinationIpPortTranslationNatRulesOutcomeCallable DescribeNatGatewayDestinationIpPortTranslationNatRulesCallable(const Model::DescribeNatGatewayDestinationIpPortTranslationNatRulesRequest& request);
 
                 /**
+                 *查询专线绑定NAT的路由
+                 * @param req DescribeNatGatewayDirectConnectGatewayRouteRequest
+                 * @return DescribeNatGatewayDirectConnectGatewayRouteOutcome
+                 */
+                DescribeNatGatewayDirectConnectGatewayRouteOutcome DescribeNatGatewayDirectConnectGatewayRoute(const Model::DescribeNatGatewayDirectConnectGatewayRouteRequest &request);
+                void DescribeNatGatewayDirectConnectGatewayRouteAsync(const Model::DescribeNatGatewayDirectConnectGatewayRouteRequest& request, const DescribeNatGatewayDirectConnectGatewayRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNatGatewayDirectConnectGatewayRouteOutcomeCallable DescribeNatGatewayDirectConnectGatewayRouteCallable(const Model::DescribeNatGatewayDirectConnectGatewayRouteRequest& request);
+
+                /**
                  *本接口（DescribeNatGatewaySourceIpTranslationNatRules）用于查询NAT网关SNAT转发规则对象数组。
                  * @param req DescribeNatGatewaySourceIpTranslationNatRulesRequest
                  * @return DescribeNatGatewaySourceIpTranslationNatRulesOutcome
@@ -3642,6 +3661,15 @@ LimitTypes取值范围：
                 NotifyRoutesOutcome NotifyRoutes(const Model::NotifyRoutesRequest &request);
                 void NotifyRoutesAsync(const Model::NotifyRoutesRequest& request, const NotifyRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 NotifyRoutesOutcomeCallable NotifyRoutesCallable(const Model::NotifyRoutesRequest& request);
+
+                /**
+                 *刷新专线直连nat路由，更新nat到专线的路由表
+                 * @param req RefreshDirectConnectGatewayRouteToNatGatewayRequest
+                 * @return RefreshDirectConnectGatewayRouteToNatGatewayOutcome
+                 */
+                RefreshDirectConnectGatewayRouteToNatGatewayOutcome RefreshDirectConnectGatewayRouteToNatGateway(const Model::RefreshDirectConnectGatewayRouteToNatGatewayRequest &request);
+                void RefreshDirectConnectGatewayRouteToNatGatewayAsync(const Model::RefreshDirectConnectGatewayRouteToNatGatewayRequest& request, const RefreshDirectConnectGatewayRouteToNatGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RefreshDirectConnectGatewayRouteToNatGatewayOutcomeCallable RefreshDirectConnectGatewayRouteToNatGatewayCallable(const Model::RefreshDirectConnectGatewayRouteToNatGatewayRequest& request);
 
                 /**
                  *本接口（RejectAttachCcnInstances）用于跨账号关联实例时，云联网所有者拒绝关联操作。

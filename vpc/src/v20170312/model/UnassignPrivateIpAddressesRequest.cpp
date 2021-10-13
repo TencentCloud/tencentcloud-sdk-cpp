@@ -24,7 +24,8 @@ using namespace std;
 
 UnassignPrivateIpAddressesRequest::UnassignPrivateIpAddressesRequest() :
     m_networkInterfaceIdHasBeenSet(false),
-    m_privateIpAddressesHasBeenSet(false)
+    m_privateIpAddressesHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -56,6 +57,14 @@ string UnassignPrivateIpAddressesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -96,6 +105,22 @@ void UnassignPrivateIpAddressesRequest::SetPrivateIpAddresses(const vector<Priva
 bool UnassignPrivateIpAddressesRequest::PrivateIpAddressesHasBeenSet() const
 {
     return m_privateIpAddressesHasBeenSet;
+}
+
+string UnassignPrivateIpAddressesRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void UnassignPrivateIpAddressesRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool UnassignPrivateIpAddressesRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 
 

@@ -26,7 +26,8 @@ using namespace std;
 DescribeKTVMusicDetailResponse::DescribeKTVMusicDetailResponse() :
     m_kTVMusicBaseInfoHasBeenSet(false),
     m_playTokenHasBeenSet(false),
-    m_lyricsUrlHasBeenSet(false)
+    m_lyricsUrlHasBeenSet(false),
+    m_definitionInfoSetHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,26 @@ CoreInternalOutcome DescribeKTVMusicDetailResponse::Deserialize(const string &pa
         m_lyricsUrlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DefinitionInfoSet") && !rsp["DefinitionInfoSet"].IsNull())
+    {
+        if (!rsp["DefinitionInfoSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DefinitionInfoSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["DefinitionInfoSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            KTVMusicDefinitionInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_definitionInfoSet.push_back(item);
+        }
+        m_definitionInfoSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -134,6 +155,21 @@ string DescribeKTVMusicDetailResponse::ToJsonString() const
         string key = "LyricsUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_lyricsUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_definitionInfoSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefinitionInfoSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_definitionInfoSet.begin(); itr != m_definitionInfoSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -176,6 +212,16 @@ string DescribeKTVMusicDetailResponse::GetLyricsUrl() const
 bool DescribeKTVMusicDetailResponse::LyricsUrlHasBeenSet() const
 {
     return m_lyricsUrlHasBeenSet;
+}
+
+vector<KTVMusicDefinitionInfo> DescribeKTVMusicDetailResponse::GetDefinitionInfoSet() const
+{
+    return m_definitionInfoSet;
+}
+
+bool DescribeKTVMusicDetailResponse::DefinitionInfoSetHasBeenSet() const
+{
+    return m_definitionInfoSetHasBeenSet;
 }
 
 

@@ -5501,6 +5501,49 @@ VpcClient::DescribeNatGatewayDestinationIpPortTranslationNatRulesOutcomeCallable
     return task->get_future();
 }
 
+VpcClient::DescribeNatGatewayDirectConnectGatewayRouteOutcome VpcClient::DescribeNatGatewayDirectConnectGatewayRoute(const DescribeNatGatewayDirectConnectGatewayRouteRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNatGatewayDirectConnectGatewayRoute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNatGatewayDirectConnectGatewayRouteResponse rsp = DescribeNatGatewayDirectConnectGatewayRouteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNatGatewayDirectConnectGatewayRouteOutcome(rsp);
+        else
+            return DescribeNatGatewayDirectConnectGatewayRouteOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNatGatewayDirectConnectGatewayRouteOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeNatGatewayDirectConnectGatewayRouteAsync(const DescribeNatGatewayDirectConnectGatewayRouteRequest& request, const DescribeNatGatewayDirectConnectGatewayRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNatGatewayDirectConnectGatewayRoute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeNatGatewayDirectConnectGatewayRouteOutcomeCallable VpcClient::DescribeNatGatewayDirectConnectGatewayRouteCallable(const DescribeNatGatewayDirectConnectGatewayRouteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNatGatewayDirectConnectGatewayRouteOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNatGatewayDirectConnectGatewayRoute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeNatGatewaySourceIpTranslationNatRulesOutcome VpcClient::DescribeNatGatewaySourceIpTranslationNatRules(const DescribeNatGatewaySourceIpTranslationNatRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNatGatewaySourceIpTranslationNatRules");
@@ -10052,6 +10095,49 @@ VpcClient::NotifyRoutesOutcomeCallable VpcClient::NotifyRoutesCallable(const Not
         [this, request]()
         {
             return this->NotifyRoutes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::RefreshDirectConnectGatewayRouteToNatGatewayOutcome VpcClient::RefreshDirectConnectGatewayRouteToNatGateway(const RefreshDirectConnectGatewayRouteToNatGatewayRequest &request)
+{
+    auto outcome = MakeRequest(request, "RefreshDirectConnectGatewayRouteToNatGateway");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RefreshDirectConnectGatewayRouteToNatGatewayResponse rsp = RefreshDirectConnectGatewayRouteToNatGatewayResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RefreshDirectConnectGatewayRouteToNatGatewayOutcome(rsp);
+        else
+            return RefreshDirectConnectGatewayRouteToNatGatewayOutcome(o.GetError());
+    }
+    else
+    {
+        return RefreshDirectConnectGatewayRouteToNatGatewayOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::RefreshDirectConnectGatewayRouteToNatGatewayAsync(const RefreshDirectConnectGatewayRouteToNatGatewayRequest& request, const RefreshDirectConnectGatewayRouteToNatGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RefreshDirectConnectGatewayRouteToNatGateway(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::RefreshDirectConnectGatewayRouteToNatGatewayOutcomeCallable VpcClient::RefreshDirectConnectGatewayRouteToNatGatewayCallable(const RefreshDirectConnectGatewayRouteToNatGatewayRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RefreshDirectConnectGatewayRouteToNatGatewayOutcome()>>(
+        [this, request]()
+        {
+            return this->RefreshDirectConnectGatewayRouteToNatGateway(request);
         }
     );
 

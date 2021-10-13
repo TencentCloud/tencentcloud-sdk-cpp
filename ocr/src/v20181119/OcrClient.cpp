@@ -1889,6 +1889,49 @@ OcrClient::QuotaInvoiceOCROutcomeCallable OcrClient::QuotaInvoiceOCRCallable(con
     return task->get_future();
 }
 
+OcrClient::RecognizeOnlineTaxiItineraryOCROutcome OcrClient::RecognizeOnlineTaxiItineraryOCR(const RecognizeOnlineTaxiItineraryOCRRequest &request)
+{
+    auto outcome = MakeRequest(request, "RecognizeOnlineTaxiItineraryOCR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RecognizeOnlineTaxiItineraryOCRResponse rsp = RecognizeOnlineTaxiItineraryOCRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RecognizeOnlineTaxiItineraryOCROutcome(rsp);
+        else
+            return RecognizeOnlineTaxiItineraryOCROutcome(o.GetError());
+    }
+    else
+    {
+        return RecognizeOnlineTaxiItineraryOCROutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::RecognizeOnlineTaxiItineraryOCRAsync(const RecognizeOnlineTaxiItineraryOCRRequest& request, const RecognizeOnlineTaxiItineraryOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RecognizeOnlineTaxiItineraryOCR(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::RecognizeOnlineTaxiItineraryOCROutcomeCallable OcrClient::RecognizeOnlineTaxiItineraryOCRCallable(const RecognizeOnlineTaxiItineraryOCRRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RecognizeOnlineTaxiItineraryOCROutcome()>>(
+        [this, request]()
+        {
+            return this->RecognizeOnlineTaxiItineraryOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::RecognizeTableOCROutcome OcrClient::RecognizeTableOCR(const RecognizeTableOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "RecognizeTableOCR");

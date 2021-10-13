@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tdmq/v20200217/model/RetentionPolicy.h>
 
 
 namespace TencentCloud
@@ -194,6 +195,28 @@ namespace TencentCloud
                      */
                     bool TopicNumHasBeenSet() const;
 
+                    /**
+                     * 获取消息保留策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RetentionPolicy 消息保留策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RetentionPolicy GetRetentionPolicy() const;
+
+                    /**
+                     * 设置消息保留策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RetentionPolicy 消息保留策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRetentionPolicy(const RetentionPolicy& _retentionPolicy);
+
+                    /**
+                     * 判断参数 RetentionPolicy 是否已赋值
+                     * @return RetentionPolicy 是否已赋值
+                     */
+                    bool RetentionPolicyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -244,6 +267,13 @@ namespace TencentCloud
                      */
                     int64_t m_topicNum;
                     bool m_topicNumHasBeenSet;
+
+                    /**
+                     * 消息保留策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RetentionPolicy m_retentionPolicy;
+                    bool m_retentionPolicyHasBeenSet;
 
                 };
             }

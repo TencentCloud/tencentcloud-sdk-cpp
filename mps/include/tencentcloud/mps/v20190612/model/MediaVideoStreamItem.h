@@ -202,6 +202,28 @@ namespace TencentCloud
                      */
                     bool ColorTransferHasBeenSet() const;
 
+                    /**
+                     * 获取HDR类型。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HdrType HDR类型。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetHdrType() const;
+
+                    /**
+                     * 设置HDR类型。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HdrType HDR类型。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHdrType(const std::string& _hdrType);
+
+                    /**
+                     * 判断参数 HdrType 是否已赋值
+                     * @return HdrType 是否已赋值
+                     */
+                    bool HdrTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -254,6 +276,13 @@ namespace TencentCloud
                      */
                     std::string m_colorTransfer;
                     bool m_colorTransferHasBeenSet;
+
+                    /**
+                     * HDR类型。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_hdrType;
+                    bool m_hdrTypeHasBeenSet;
 
                 };
             }

@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ame/v20190916/model/KTVMusicBaseInfo.h>
+#include <tencentcloud/ame/v20190916/model/KTVMusicDefinitionInfo.h>
 
 
 namespace TencentCloud
@@ -80,6 +81,18 @@ namespace TencentCloud
                      */
                     bool LyricsUrlHasBeenSet() const;
 
+                    /**
+                     * 获取歌曲规格信息列表
+                     * @return DefinitionInfoSet 歌曲规格信息列表
+                     */
+                    std::vector<KTVMusicDefinitionInfo> GetDefinitionInfoSet() const;
+
+                    /**
+                     * 判断参数 DefinitionInfoSet 是否已赋值
+                     * @return DefinitionInfoSet 是否已赋值
+                     */
+                    bool DefinitionInfoSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -99,6 +112,12 @@ namespace TencentCloud
                      */
                     std::string m_lyricsUrl;
                     bool m_lyricsUrlHasBeenSet;
+
+                    /**
+                     * 歌曲规格信息列表
+                     */
+                    std::vector<KTVMusicDefinitionInfo> m_definitionInfoSet;
+                    bool m_definitionInfoSetHasBeenSet;
 
                 };
             }

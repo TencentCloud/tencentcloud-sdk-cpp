@@ -96,6 +96,44 @@ namespace TencentCloud
                      */
                     bool PayerUinHasBeenSet() const;
 
+                    /**
+                     * 获取款项类别，与L0账单上的汇总类别对应。
+此参数自账单3.0（即2021-05）之后开始生效。
+枚举值：
+consume-消费
+refund-退款
+adjustment-调账
+                     * @return PayType 款项类别，与L0账单上的汇总类别对应。
+此参数自账单3.0（即2021-05）之后开始生效。
+枚举值：
+consume-消费
+refund-退款
+adjustment-调账
+                     */
+                    std::string GetPayType() const;
+
+                    /**
+                     * 设置款项类别，与L0账单上的汇总类别对应。
+此参数自账单3.0（即2021-05）之后开始生效。
+枚举值：
+consume-消费
+refund-退款
+adjustment-调账
+                     * @param PayType 款项类别，与L0账单上的汇总类别对应。
+此参数自账单3.0（即2021-05）之后开始生效。
+枚举值：
+consume-消费
+refund-退款
+adjustment-调账
+                     */
+                    void SetPayType(const std::string& _payType);
+
+                    /**
+                     * 判断参数 PayType 是否已赋值
+                     * @return PayType 是否已赋值
+                     */
+                    bool PayTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +153,17 @@ namespace TencentCloud
                      */
                     std::string m_payerUin;
                     bool m_payerUinHasBeenSet;
+
+                    /**
+                     * 款项类别，与L0账单上的汇总类别对应。
+此参数自账单3.0（即2021-05）之后开始生效。
+枚举值：
+consume-消费
+refund-退款
+adjustment-调账
+                     */
+                    std::string m_payType;
+                    bool m_payTypeHasBeenSet;
 
                 };
             }

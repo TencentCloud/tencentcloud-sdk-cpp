@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool ChargeTypeHasBeenSet() const;
 
+                    /**
+                     * 获取退款时迁移为后付费带宽包。默认值：否
+                     * @return MigrateOnRefund 退款时迁移为后付费带宽包。默认值：否
+                     */
+                    bool GetMigrateOnRefund() const;
+
+                    /**
+                     * 设置退款时迁移为后付费带宽包。默认值：否
+                     * @param MigrateOnRefund 退款时迁移为后付费带宽包。默认值：否
+                     */
+                    void SetMigrateOnRefund(const bool& _migrateOnRefund);
+
+                    /**
+                     * 判断参数 MigrateOnRefund 是否已赋值
+                     * @return MigrateOnRefund 是否已赋值
+                     */
+                    bool MigrateOnRefundHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     std::string m_chargeType;
                     bool m_chargeTypeHasBeenSet;
+
+                    /**
+                     * 退款时迁移为后付费带宽包。默认值：否
+                     */
+                    bool m_migrateOnRefund;
+                    bool m_migrateOnRefundHasBeenSet;
 
                 };
             }

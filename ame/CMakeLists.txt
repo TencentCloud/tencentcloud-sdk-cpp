@@ -78,6 +78,7 @@ set(ame_public_header_model
   include/tencentcloud/ame/v20190916/model/DescribeKTVMusicDetailResponse.h
   include/tencentcloud/ame/v20190916/model/DescribeMusicRequest.h
   include/tencentcloud/ame/v20190916/model/ReportDataRequest.h
+  include/tencentcloud/ame/v20190916/model/KTVMusicDefinitionInfo.h
   )
 
 set(ame_src
@@ -141,6 +142,7 @@ set(ame_src
   src/v20190916/model/DescribeKTVMusicDetailResponse.cpp
   src/v20190916/model/DescribeMusicRequest.cpp
   src/v20190916/model/ReportDataRequest.cpp
+  src/v20190916/model/KTVMusicDefinitionInfo.cpp
   )
 
 set(ame_include
