@@ -89,6 +89,8 @@
 #include <tencentcloud/cdn/v20180606/model/DescribeReportDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeScdnConfigRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeScdnConfigResponse.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeScdnIpStrategyRequest.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeScdnIpStrategyResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeScdnTopDataRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeScdnTopDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeTrafficPackagesRequest.h>
@@ -270,6 +272,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeScdnConfigResponse> DescribeScdnConfigOutcome;
                 typedef std::future<DescribeScdnConfigOutcome> DescribeScdnConfigOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeScdnConfigRequest&, DescribeScdnConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeScdnIpStrategyResponse> DescribeScdnIpStrategyOutcome;
+                typedef std::future<DescribeScdnIpStrategyOutcome> DescribeScdnIpStrategyOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::DescribeScdnIpStrategyRequest&, DescribeScdnIpStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnIpStrategyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeScdnTopDataResponse> DescribeScdnTopDataOutcome;
                 typedef std::future<DescribeScdnTopDataOutcome> DescribeScdnTopDataOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeScdnTopDataRequest&, DescribeScdnTopDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnTopDataAsyncHandler;
@@ -699,6 +704,15 @@ namespace TencentCloud
                 DescribeScdnConfigOutcome DescribeScdnConfig(const Model::DescribeScdnConfigRequest &request);
                 void DescribeScdnConfigAsync(const Model::DescribeScdnConfigRequest& request, const DescribeScdnConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeScdnConfigOutcomeCallable DescribeScdnConfigCallable(const Model::DescribeScdnConfigRequest& request);
+
+                /**
+                 *查询在SCDN IP安全策略
+                 * @param req DescribeScdnIpStrategyRequest
+                 * @return DescribeScdnIpStrategyOutcome
+                 */
+                DescribeScdnIpStrategyOutcome DescribeScdnIpStrategy(const Model::DescribeScdnIpStrategyRequest &request);
+                void DescribeScdnIpStrategyAsync(const Model::DescribeScdnIpStrategyRequest& request, const DescribeScdnIpStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeScdnIpStrategyOutcomeCallable DescribeScdnIpStrategyCallable(const Model::DescribeScdnIpStrategyRequest& request);
 
                 /**
                  *获取SCDN的Top数据

@@ -212,6 +212,49 @@ DomainClient::CreateDomainBatchOutcomeCallable DomainClient::CreateDomainBatchCa
     return task->get_future();
 }
 
+DomainClient::CreatePhoneEmailOutcome DomainClient::CreatePhoneEmail(const CreatePhoneEmailRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePhoneEmail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePhoneEmailResponse rsp = CreatePhoneEmailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePhoneEmailOutcome(rsp);
+        else
+            return CreatePhoneEmailOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePhoneEmailOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::CreatePhoneEmailAsync(const CreatePhoneEmailRequest& request, const CreatePhoneEmailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePhoneEmail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::CreatePhoneEmailOutcomeCallable DomainClient::CreatePhoneEmailCallable(const CreatePhoneEmailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePhoneEmailOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePhoneEmail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DomainClient::CreateTemplateOutcome DomainClient::CreateTemplate(const CreateTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTemplate");
@@ -248,6 +291,49 @@ DomainClient::CreateTemplateOutcomeCallable DomainClient::CreateTemplateCallable
         [this, request]()
         {
             return this->CreateTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DomainClient::DeletePhoneEmailOutcome DomainClient::DeletePhoneEmail(const DeletePhoneEmailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePhoneEmail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePhoneEmailResponse rsp = DeletePhoneEmailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePhoneEmailOutcome(rsp);
+        else
+            return DeletePhoneEmailOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePhoneEmailOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::DeletePhoneEmailAsync(const DeletePhoneEmailRequest& request, const DeletePhoneEmailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeletePhoneEmail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::DeletePhoneEmailOutcomeCallable DomainClient::DeletePhoneEmailCallable(const DeletePhoneEmailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeletePhoneEmailOutcome()>>(
+        [this, request]()
+        {
+            return this->DeletePhoneEmail(request);
         }
     );
 
@@ -513,6 +599,49 @@ DomainClient::DescribeDomainPriceListOutcomeCallable DomainClient::DescribeDomai
     return task->get_future();
 }
 
+DomainClient::DescribePhoneEmailListOutcome DomainClient::DescribePhoneEmailList(const DescribePhoneEmailListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePhoneEmailList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePhoneEmailListResponse rsp = DescribePhoneEmailListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePhoneEmailListOutcome(rsp);
+        else
+            return DescribePhoneEmailListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePhoneEmailListOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::DescribePhoneEmailListAsync(const DescribePhoneEmailListRequest& request, const DescribePhoneEmailListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePhoneEmailList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::DescribePhoneEmailListOutcomeCallable DomainClient::DescribePhoneEmailListCallable(const DescribePhoneEmailListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePhoneEmailListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePhoneEmailList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DomainClient::DescribeTemplateOutcome DomainClient::DescribeTemplate(const DescribeTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTemplate");
@@ -721,6 +850,49 @@ DomainClient::RenewDomainBatchOutcomeCallable DomainClient::RenewDomainBatchCall
         [this, request]()
         {
             return this->RenewDomainBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DomainClient::SendPhoneEmailCodeOutcome DomainClient::SendPhoneEmailCode(const SendPhoneEmailCodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "SendPhoneEmailCode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SendPhoneEmailCodeResponse rsp = SendPhoneEmailCodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SendPhoneEmailCodeOutcome(rsp);
+        else
+            return SendPhoneEmailCodeOutcome(o.GetError());
+    }
+    else
+    {
+        return SendPhoneEmailCodeOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::SendPhoneEmailCodeAsync(const SendPhoneEmailCodeRequest& request, const SendPhoneEmailCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SendPhoneEmailCode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::SendPhoneEmailCodeOutcomeCallable DomainClient::SendPhoneEmailCodeCallable(const SendPhoneEmailCodeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SendPhoneEmailCodeOutcome()>>(
+        [this, request]()
+        {
+            return this->SendPhoneEmailCode(request);
         }
     );
 

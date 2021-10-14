@@ -31,6 +31,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/GetDeviceListResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/TopicRulePayload.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteLoRaFrequencyResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/DescribeTopicPolicyRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyPositionFenceRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/PositionFenceItem.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteTopicRuleResponse.h
@@ -38,7 +39,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/ModifyModelDefinitionRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateStudioProductResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/CallDeviceActionSyncRequest.h
-  include/tencentcloud/iotexplorer/v20190423/model/EnableTopicRuleResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/DescribeDevicePositionListRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/GetDeviceLocationHistoryResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/UpdateFirmwareResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyPositionFenceResponse.h
@@ -54,6 +55,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/SearchTopicRuleRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/FenceBindProductItem.h
+  include/tencentcloud/iotexplorer/v20190423/model/ListTopicPolicyResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/SearchPositionSpaceResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribePositionFenceListResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/GetDeviceLocationHistoryRequest.h
@@ -68,6 +70,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/DeviceDataHistoryItem.h
   include/tencentcloud/iotexplorer/v20190423/model/ProductEntry.h
   include/tencentcloud/iotexplorer/v20190423/model/ProjectEntryEx.h
+  include/tencentcloud/iotexplorer/v20190423/model/ListTopicPolicyRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeLoRaFrequencyRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteDeviceRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteLoRaFrequencyRequest.h
@@ -76,8 +79,10 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/ReleaseStudioProductResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeSpaceFenceEventListResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteLoRaGatewayRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/DescribeTopicPolicyResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/SearchPositionSpaceRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/LoRaFrequencyEntry.h
+  include/tencentcloud/iotexplorer/v20190423/model/ModifyTopicPolicyResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/SearchTopicRuleResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeFenceEventListResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/UpdateDevicesEnableStateRequest.h
@@ -121,9 +126,11 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/CallDeviceActionAsyncRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/CallDeviceActionAsyncResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteFenceBindResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/DeleteTopicPolicyRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateFenceBindResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeFenceBindListRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/CreatePositionFenceResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/TopicItem.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeTopicRuleResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/UpdateFirmwareRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/PositionSpaceInfo.h
@@ -139,8 +146,10 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/FenceEventItem.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeProjectRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/UploadFirmwareResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/ModifyTopicPolicyRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteTopicRuleRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateLoRaGatewayResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/DeleteTopicPolicyResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteLoRaGatewayResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateLoRaFrequencyRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/LoRaGatewayItem.h
@@ -154,7 +163,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/GetProjectListRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DeletePositionSpaceResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateLoRaFrequencyResponse.h
-  include/tencentcloud/iotexplorer/v20190423/model/DescribeDevicePositionListRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/EnableTopicRuleResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/SearchStudioProductRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteDevicesRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/AppDeviceInfo.h
@@ -197,6 +206,7 @@ set(iotexplorer_src
   src/v20190423/model/GetDeviceListResponse.cpp
   src/v20190423/model/TopicRulePayload.cpp
   src/v20190423/model/DeleteLoRaFrequencyResponse.cpp
+  src/v20190423/model/DescribeTopicPolicyRequest.cpp
   src/v20190423/model/ModifyPositionFenceRequest.cpp
   src/v20190423/model/PositionFenceItem.cpp
   src/v20190423/model/DeleteTopicRuleResponse.cpp
@@ -204,7 +214,7 @@ set(iotexplorer_src
   src/v20190423/model/ModifyModelDefinitionRequest.cpp
   src/v20190423/model/CreateStudioProductResponse.cpp
   src/v20190423/model/CallDeviceActionSyncRequest.cpp
-  src/v20190423/model/EnableTopicRuleResponse.cpp
+  src/v20190423/model/DescribeDevicePositionListRequest.cpp
   src/v20190423/model/GetDeviceLocationHistoryResponse.cpp
   src/v20190423/model/UpdateFirmwareResponse.cpp
   src/v20190423/model/ModifyPositionFenceResponse.cpp
@@ -220,6 +230,7 @@ set(iotexplorer_src
   src/v20190423/model/SearchTopicRuleRequest.cpp
   src/v20190423/model/DescribeDeviceDataRequest.cpp
   src/v20190423/model/FenceBindProductItem.cpp
+  src/v20190423/model/ListTopicPolicyResponse.cpp
   src/v20190423/model/SearchPositionSpaceResponse.cpp
   src/v20190423/model/DescribePositionFenceListResponse.cpp
   src/v20190423/model/GetDeviceLocationHistoryRequest.cpp
@@ -234,6 +245,7 @@ set(iotexplorer_src
   src/v20190423/model/DeviceDataHistoryItem.cpp
   src/v20190423/model/ProductEntry.cpp
   src/v20190423/model/ProjectEntryEx.cpp
+  src/v20190423/model/ListTopicPolicyRequest.cpp
   src/v20190423/model/DescribeLoRaFrequencyRequest.cpp
   src/v20190423/model/DeleteDeviceRequest.cpp
   src/v20190423/model/DeleteLoRaFrequencyRequest.cpp
@@ -242,8 +254,10 @@ set(iotexplorer_src
   src/v20190423/model/ReleaseStudioProductResponse.cpp
   src/v20190423/model/DescribeSpaceFenceEventListResponse.cpp
   src/v20190423/model/DeleteLoRaGatewayRequest.cpp
+  src/v20190423/model/DescribeTopicPolicyResponse.cpp
   src/v20190423/model/SearchPositionSpaceRequest.cpp
   src/v20190423/model/LoRaFrequencyEntry.cpp
+  src/v20190423/model/ModifyTopicPolicyResponse.cpp
   src/v20190423/model/SearchTopicRuleResponse.cpp
   src/v20190423/model/DescribeFenceEventListResponse.cpp
   src/v20190423/model/UpdateDevicesEnableStateRequest.cpp
@@ -287,9 +301,11 @@ set(iotexplorer_src
   src/v20190423/model/CallDeviceActionAsyncRequest.cpp
   src/v20190423/model/CallDeviceActionAsyncResponse.cpp
   src/v20190423/model/DeleteFenceBindResponse.cpp
+  src/v20190423/model/DeleteTopicPolicyRequest.cpp
   src/v20190423/model/CreateFenceBindResponse.cpp
   src/v20190423/model/DescribeFenceBindListRequest.cpp
   src/v20190423/model/CreatePositionFenceResponse.cpp
+  src/v20190423/model/TopicItem.cpp
   src/v20190423/model/DescribeTopicRuleResponse.cpp
   src/v20190423/model/UpdateFirmwareRequest.cpp
   src/v20190423/model/PositionSpaceInfo.cpp
@@ -305,8 +321,10 @@ set(iotexplorer_src
   src/v20190423/model/FenceEventItem.cpp
   src/v20190423/model/DescribeProjectRequest.cpp
   src/v20190423/model/UploadFirmwareResponse.cpp
+  src/v20190423/model/ModifyTopicPolicyRequest.cpp
   src/v20190423/model/DeleteTopicRuleRequest.cpp
   src/v20190423/model/CreateLoRaGatewayResponse.cpp
+  src/v20190423/model/DeleteTopicPolicyResponse.cpp
   src/v20190423/model/DeleteLoRaGatewayResponse.cpp
   src/v20190423/model/CreateLoRaFrequencyRequest.cpp
   src/v20190423/model/LoRaGatewayItem.cpp
@@ -320,7 +338,7 @@ set(iotexplorer_src
   src/v20190423/model/GetProjectListRequest.cpp
   src/v20190423/model/DeletePositionSpaceResponse.cpp
   src/v20190423/model/CreateLoRaFrequencyResponse.cpp
-  src/v20190423/model/DescribeDevicePositionListRequest.cpp
+  src/v20190423/model/EnableTopicRuleResponse.cpp
   src/v20190423/model/SearchStudioProductRequest.cpp
   src/v20190423/model/DeleteDevicesRequest.cpp
   src/v20190423/model/AppDeviceInfo.cpp

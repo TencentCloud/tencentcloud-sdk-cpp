@@ -47,6 +47,8 @@
 #include <tencentcloud/ssl/v20191205/model/DescribeCertificateOperateLogsResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeCertificatesRequest.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeCertificatesResponse.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeDeployedResourcesRequest.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeDeployedResourcesResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeManagerDetailRequest.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeManagerDetailResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeManagersRequest.h>
@@ -123,6 +125,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCertificatesResponse> DescribeCertificatesOutcome;
                 typedef std::future<DescribeCertificatesOutcome> DescribeCertificatesOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::DescribeCertificatesRequest&, DescribeCertificatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCertificatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDeployedResourcesResponse> DescribeDeployedResourcesOutcome;
+                typedef std::future<DescribeDeployedResourcesOutcome> DescribeDeployedResourcesOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::DescribeDeployedResourcesRequest&, DescribeDeployedResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeployedResourcesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeManagerDetailResponse> DescribeManagerDetailOutcome;
                 typedef std::future<DescribeManagerDetailOutcome> DescribeManagerDetailOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::DescribeManagerDetailRequest&, DescribeManagerDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeManagerDetailAsyncHandler;
@@ -272,6 +277,15 @@ namespace TencentCloud
                 DescribeCertificatesOutcome DescribeCertificates(const Model::DescribeCertificatesRequest &request);
                 void DescribeCertificatesAsync(const Model::DescribeCertificatesRequest& request, const DescribeCertificatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCertificatesOutcomeCallable DescribeCertificatesCallable(const Model::DescribeCertificatesRequest& request);
+
+                /**
+                 *证书查询关联资源
+                 * @param req DescribeDeployedResourcesRequest
+                 * @return DescribeDeployedResourcesOutcome
+                 */
+                DescribeDeployedResourcesOutcome DescribeDeployedResources(const Model::DescribeDeployedResourcesRequest &request);
+                void DescribeDeployedResourcesAsync(const Model::DescribeDeployedResourcesRequest& request, const DescribeDeployedResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeployedResourcesOutcomeCallable DescribeDeployedResourcesCallable(const Model::DescribeDeployedResourcesRequest& request);
 
                 /**
                  *查询管理人详情

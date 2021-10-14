@@ -76,6 +76,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/UpdateScdnDomainResponse.h
   include/tencentcloud/cdn/v20180606/model/Origin.h
   include/tencentcloud/cdn/v20180606/model/ViolationUrl.h
+  include/tencentcloud/cdn/v20180606/model/ScdnIpStrategyFilter.h
   include/tencentcloud/cdn/v20180606/model/DescribeDomainsConfigRequest.h
   include/tencentcloud/cdn/v20180606/model/TopData.h
   include/tencentcloud/cdn/v20180606/model/EnableCachesRequest.h
@@ -142,6 +143,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/AuthenticationTypeC.h
   include/tencentcloud/cdn/v20180606/model/AuthenticationTypeB.h
   include/tencentcloud/cdn/v20180606/model/AuthenticationTypeA.h
+  include/tencentcloud/cdn/v20180606/model/DescribeScdnIpStrategyResponse.h
   include/tencentcloud/cdn/v20180606/model/OriginAuthenticationTypeA.h
   include/tencentcloud/cdn/v20180606/model/SecurityConfig.h
   include/tencentcloud/cdn/v20180606/model/DescribePushTasksResponse.h
@@ -190,6 +192,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/DescribeScdnTopDataRequest.h
   include/tencentcloud/cdn/v20180606/model/DescribeUrlViolationsRequest.h
   include/tencentcloud/cdn/v20180606/model/RefererRule.h
+  include/tencentcloud/cdn/v20180606/model/DescribeScdnIpStrategyRequest.h
   include/tencentcloud/cdn/v20180606/model/ScdnCCRules.h
   include/tencentcloud/cdn/v20180606/model/IpFreqLimit.h
   include/tencentcloud/cdn/v20180606/model/ScdnDdosConfig.h
@@ -202,6 +205,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/DescribeTrafficPackagesResponse.h
   include/tencentcloud/cdn/v20180606/model/DescribeMapInfoRequest.h
   include/tencentcloud/cdn/v20180606/model/EnableCachesResponse.h
+  include/tencentcloud/cdn/v20180606/model/ScdnIpStrategy.h
   include/tencentcloud/cdn/v20180606/model/RuleQueryString.h
   include/tencentcloud/cdn/v20180606/model/AdvancedScdnAclRule.h
   include/tencentcloud/cdn/v20180606/model/DescribeIpVisitRequest.h
@@ -374,6 +378,7 @@ set(cdn_src
   src/v20180606/model/UpdateScdnDomainResponse.cpp
   src/v20180606/model/Origin.cpp
   src/v20180606/model/ViolationUrl.cpp
+  src/v20180606/model/ScdnIpStrategyFilter.cpp
   src/v20180606/model/DescribeDomainsConfigRequest.cpp
   src/v20180606/model/TopData.cpp
   src/v20180606/model/EnableCachesRequest.cpp
@@ -440,6 +445,7 @@ set(cdn_src
   src/v20180606/model/AuthenticationTypeC.cpp
   src/v20180606/model/AuthenticationTypeB.cpp
   src/v20180606/model/AuthenticationTypeA.cpp
+  src/v20180606/model/DescribeScdnIpStrategyResponse.cpp
   src/v20180606/model/OriginAuthenticationTypeA.cpp
   src/v20180606/model/SecurityConfig.cpp
   src/v20180606/model/DescribePushTasksResponse.cpp
@@ -488,6 +494,7 @@ set(cdn_src
   src/v20180606/model/DescribeScdnTopDataRequest.cpp
   src/v20180606/model/DescribeUrlViolationsRequest.cpp
   src/v20180606/model/RefererRule.cpp
+  src/v20180606/model/DescribeScdnIpStrategyRequest.cpp
   src/v20180606/model/ScdnCCRules.cpp
   src/v20180606/model/IpFreqLimit.cpp
   src/v20180606/model/ScdnDdosConfig.cpp
@@ -500,6 +507,7 @@ set(cdn_src
   src/v20180606/model/DescribeTrafficPackagesResponse.cpp
   src/v20180606/model/DescribeMapInfoRequest.cpp
   src/v20180606/model/EnableCachesResponse.cpp
+  src/v20180606/model/ScdnIpStrategy.cpp
   src/v20180606/model/RuleQueryString.cpp
   src/v20180606/model/AdvancedScdnAclRule.cpp
   src/v20180606/model/DescribeIpVisitRequest.cpp

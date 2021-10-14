@@ -47,6 +47,8 @@
 #include <tencentcloud/cam/v20190116/model/CreateSAMLProviderResponse.h>
 #include <tencentcloud/cam/v20190116/model/CreateServiceLinkedRoleRequest.h>
 #include <tencentcloud/cam/v20190116/model/CreateServiceLinkedRoleResponse.h>
+#include <tencentcloud/cam/v20190116/model/CreateUserSAMLConfigRequest.h>
+#include <tencentcloud/cam/v20190116/model/CreateUserSAMLConfigResponse.h>
 #include <tencentcloud/cam/v20190116/model/DeleteGroupRequest.h>
 #include <tencentcloud/cam/v20190116/model/DeleteGroupResponse.h>
 #include <tencentcloud/cam/v20190116/model/DeletePolicyRequest.h>
@@ -75,6 +77,8 @@
 #include <tencentcloud/cam/v20190116/model/DescribeSafeAuthFlagIntlResponse.h>
 #include <tencentcloud/cam/v20190116/model/DescribeSubAccountsRequest.h>
 #include <tencentcloud/cam/v20190116/model/DescribeSubAccountsResponse.h>
+#include <tencentcloud/cam/v20190116/model/DescribeUserSAMLConfigRequest.h>
+#include <tencentcloud/cam/v20190116/model/DescribeUserSAMLConfigResponse.h>
 #include <tencentcloud/cam/v20190116/model/DetachGroupPolicyRequest.h>
 #include <tencentcloud/cam/v20190116/model/DetachGroupPolicyResponse.h>
 #include <tencentcloud/cam/v20190116/model/DetachRolePolicyRequest.h>
@@ -155,6 +159,8 @@
 #include <tencentcloud/cam/v20190116/model/UpdateSAMLProviderResponse.h>
 #include <tencentcloud/cam/v20190116/model/UpdateUserRequest.h>
 #include <tencentcloud/cam/v20190116/model/UpdateUserResponse.h>
+#include <tencentcloud/cam/v20190116/model/UpdateUserSAMLConfigRequest.h>
+#include <tencentcloud/cam/v20190116/model/UpdateUserSAMLConfigResponse.h>
 
 
 namespace TencentCloud
@@ -205,6 +211,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateServiceLinkedRoleResponse> CreateServiceLinkedRoleOutcome;
                 typedef std::future<CreateServiceLinkedRoleOutcome> CreateServiceLinkedRoleOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::CreateServiceLinkedRoleRequest&, CreateServiceLinkedRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateServiceLinkedRoleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateUserSAMLConfigResponse> CreateUserSAMLConfigOutcome;
+                typedef std::future<CreateUserSAMLConfigOutcome> CreateUserSAMLConfigOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::CreateUserSAMLConfigRequest&, CreateUserSAMLConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserSAMLConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteGroupResponse> DeleteGroupOutcome;
                 typedef std::future<DeleteGroupOutcome> DeleteGroupOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DeleteGroupRequest&, DeleteGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGroupAsyncHandler;
@@ -247,6 +256,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSubAccountsResponse> DescribeSubAccountsOutcome;
                 typedef std::future<DescribeSubAccountsOutcome> DescribeSubAccountsOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DescribeSubAccountsRequest&, DescribeSubAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubAccountsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserSAMLConfigResponse> DescribeUserSAMLConfigOutcome;
+                typedef std::future<DescribeUserSAMLConfigOutcome> DescribeUserSAMLConfigOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::DescribeUserSAMLConfigRequest&, DescribeUserSAMLConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserSAMLConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DetachGroupPolicyResponse> DetachGroupPolicyOutcome;
                 typedef std::future<DetachGroupPolicyOutcome> DetachGroupPolicyOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DetachGroupPolicyRequest&, DetachGroupPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachGroupPolicyAsyncHandler;
@@ -367,6 +379,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateUserResponse> UpdateUserOutcome;
                 typedef std::future<UpdateUserOutcome> UpdateUserOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::UpdateUserRequest&, UpdateUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateUserSAMLConfigResponse> UpdateUserSAMLConfigOutcome;
+                typedef std::future<UpdateUserSAMLConfigOutcome> UpdateUserSAMLConfigOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::UpdateUserSAMLConfigRequest&, UpdateUserSAMLConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateUserSAMLConfigAsyncHandler;
 
 
 
@@ -477,6 +492,15 @@ namespace TencentCloud
                 CreateServiceLinkedRoleOutcome CreateServiceLinkedRole(const Model::CreateServiceLinkedRoleRequest &request);
                 void CreateServiceLinkedRoleAsync(const Model::CreateServiceLinkedRoleRequest& request, const CreateServiceLinkedRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateServiceLinkedRoleOutcomeCallable CreateServiceLinkedRoleCallable(const Model::CreateServiceLinkedRoleRequest& request);
+
+                /**
+                 *创建用户SAML配置
+                 * @param req CreateUserSAMLConfigRequest
+                 * @return CreateUserSAMLConfigOutcome
+                 */
+                CreateUserSAMLConfigOutcome CreateUserSAMLConfig(const Model::CreateUserSAMLConfigRequest &request);
+                void CreateUserSAMLConfigAsync(const Model::CreateUserSAMLConfigRequest& request, const CreateUserSAMLConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateUserSAMLConfigOutcomeCallable CreateUserSAMLConfigCallable(const Model::CreateUserSAMLConfigRequest& request);
 
                 /**
                  *删除用户组
@@ -603,6 +627,15 @@ namespace TencentCloud
                 DescribeSubAccountsOutcome DescribeSubAccounts(const Model::DescribeSubAccountsRequest &request);
                 void DescribeSubAccountsAsync(const Model::DescribeSubAccountsRequest& request, const DescribeSubAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSubAccountsOutcomeCallable DescribeSubAccountsCallable(const Model::DescribeSubAccountsRequest& request);
+
+                /**
+                 *查询用户SAML配置
+                 * @param req DescribeUserSAMLConfigRequest
+                 * @return DescribeUserSAMLConfigOutcome
+                 */
+                DescribeUserSAMLConfigOutcome DescribeUserSAMLConfig(const Model::DescribeUserSAMLConfigRequest &request);
+                void DescribeUserSAMLConfigAsync(const Model::DescribeUserSAMLConfigRequest& request, const DescribeUserSAMLConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserSAMLConfigOutcomeCallable DescribeUserSAMLConfigCallable(const Model::DescribeUserSAMLConfigRequest& request);
 
                 /**
                  *本接口（DetachGroupPolicy）可用于解除绑定到用户组的策略。
@@ -964,6 +997,15 @@ namespace TencentCloud
                 UpdateUserOutcome UpdateUser(const Model::UpdateUserRequest &request);
                 void UpdateUserAsync(const Model::UpdateUserRequest& request, const UpdateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateUserOutcomeCallable UpdateUserCallable(const Model::UpdateUserRequest& request);
+
+                /**
+                 *修改用户SAML配置
+                 * @param req UpdateUserSAMLConfigRequest
+                 * @return UpdateUserSAMLConfigOutcome
+                 */
+                UpdateUserSAMLConfigOutcome UpdateUserSAMLConfig(const Model::UpdateUserSAMLConfigRequest &request);
+                void UpdateUserSAMLConfigAsync(const Model::UpdateUserSAMLConfigRequest& request, const UpdateUserSAMLConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateUserSAMLConfigOutcomeCallable UpdateUserSAMLConfigCallable(const Model::UpdateUserSAMLConfigRequest& request);
 
             };
         }

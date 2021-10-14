@@ -556,6 +556,49 @@ SslClient::DescribeCertificatesOutcomeCallable SslClient::DescribeCertificatesCa
     return task->get_future();
 }
 
+SslClient::DescribeDeployedResourcesOutcome SslClient::DescribeDeployedResources(const DescribeDeployedResourcesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeployedResources");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeployedResourcesResponse rsp = DescribeDeployedResourcesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeployedResourcesOutcome(rsp);
+        else
+            return DescribeDeployedResourcesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeployedResourcesOutcome(outcome.GetError());
+    }
+}
+
+void SslClient::DescribeDeployedResourcesAsync(const DescribeDeployedResourcesRequest& request, const DescribeDeployedResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDeployedResources(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SslClient::DescribeDeployedResourcesOutcomeCallable SslClient::DescribeDeployedResourcesCallable(const DescribeDeployedResourcesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDeployedResourcesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDeployedResources(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SslClient::DescribeManagerDetailOutcome SslClient::DescribeManagerDetail(const DescribeManagerDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeManagerDetail");

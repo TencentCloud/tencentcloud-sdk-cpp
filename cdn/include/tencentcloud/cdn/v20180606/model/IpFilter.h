@@ -155,6 +155,32 @@ blacklist：黑名单
                      */
                     bool FilterRulesHasBeenSet() const;
 
+                    /**
+                     * 获取IP 黑白名单验证失败时返回的 HTTP Code
+合法值: 400~499
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReturnCode IP 黑白名单验证失败时返回的 HTTP Code
+合法值: 400~499
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetReturnCode() const;
+
+                    /**
+                     * 设置IP 黑白名单验证失败时返回的 HTTP Code
+合法值: 400~499
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ReturnCode IP 黑白名单验证失败时返回的 HTTP Code
+合法值: 400~499
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetReturnCode(const int64_t& _returnCode);
+
+                    /**
+                     * 判断参数 ReturnCode 是否已赋值
+                     * @return ReturnCode 是否已赋值
+                     */
+                    bool ReturnCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -189,6 +215,14 @@ blacklist：黑名单
                      */
                     std::vector<IpFilterPathRule> m_filterRules;
                     bool m_filterRulesHasBeenSet;
+
+                    /**
+                     * IP 黑白名单验证失败时返回的 HTTP Code
+合法值: 400~499
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_returnCode;
+                    bool m_returnCodeHasBeenSet;
 
                 };
             }

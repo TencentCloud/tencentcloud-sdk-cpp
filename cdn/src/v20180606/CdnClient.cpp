@@ -1459,6 +1459,49 @@ CdnClient::DescribeScdnConfigOutcomeCallable CdnClient::DescribeScdnConfigCallab
     return task->get_future();
 }
 
+CdnClient::DescribeScdnIpStrategyOutcome CdnClient::DescribeScdnIpStrategy(const DescribeScdnIpStrategyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeScdnIpStrategy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeScdnIpStrategyResponse rsp = DescribeScdnIpStrategyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeScdnIpStrategyOutcome(rsp);
+        else
+            return DescribeScdnIpStrategyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeScdnIpStrategyOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::DescribeScdnIpStrategyAsync(const DescribeScdnIpStrategyRequest& request, const DescribeScdnIpStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeScdnIpStrategy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::DescribeScdnIpStrategyOutcomeCallable CdnClient::DescribeScdnIpStrategyCallable(const DescribeScdnIpStrategyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeScdnIpStrategyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeScdnIpStrategy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::DescribeScdnTopDataOutcome CdnClient::DescribeScdnTopData(const DescribeScdnTopDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeScdnTopData");

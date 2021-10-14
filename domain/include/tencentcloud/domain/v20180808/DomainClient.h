@@ -31,8 +31,12 @@
 #include <tencentcloud/domain/v20180808/model/CheckDomainResponse.h>
 #include <tencentcloud/domain/v20180808/model/CreateDomainBatchRequest.h>
 #include <tencentcloud/domain/v20180808/model/CreateDomainBatchResponse.h>
+#include <tencentcloud/domain/v20180808/model/CreatePhoneEmailRequest.h>
+#include <tencentcloud/domain/v20180808/model/CreatePhoneEmailResponse.h>
 #include <tencentcloud/domain/v20180808/model/CreateTemplateRequest.h>
 #include <tencentcloud/domain/v20180808/model/CreateTemplateResponse.h>
+#include <tencentcloud/domain/v20180808/model/DeletePhoneEmailRequest.h>
+#include <tencentcloud/domain/v20180808/model/DeletePhoneEmailResponse.h>
 #include <tencentcloud/domain/v20180808/model/DeleteTemplateRequest.h>
 #include <tencentcloud/domain/v20180808/model/DeleteTemplateResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribeBatchOperationLogDetailsRequest.h>
@@ -45,6 +49,8 @@
 #include <tencentcloud/domain/v20180808/model/DescribeDomainNameListResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribeDomainPriceListRequest.h>
 #include <tencentcloud/domain/v20180808/model/DescribeDomainPriceListResponse.h>
+#include <tencentcloud/domain/v20180808/model/DescribePhoneEmailListRequest.h>
+#include <tencentcloud/domain/v20180808/model/DescribePhoneEmailListResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribeTemplateRequest.h>
 #include <tencentcloud/domain/v20180808/model/DescribeTemplateResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribeTemplateListRequest.h>
@@ -55,6 +61,8 @@
 #include <tencentcloud/domain/v20180808/model/ModifyDomainOwnerBatchResponse.h>
 #include <tencentcloud/domain/v20180808/model/RenewDomainBatchRequest.h>
 #include <tencentcloud/domain/v20180808/model/RenewDomainBatchResponse.h>
+#include <tencentcloud/domain/v20180808/model/SendPhoneEmailCodeRequest.h>
+#include <tencentcloud/domain/v20180808/model/SendPhoneEmailCodeResponse.h>
 #include <tencentcloud/domain/v20180808/model/SetDomainAutoRenewRequest.h>
 #include <tencentcloud/domain/v20180808/model/SetDomainAutoRenewResponse.h>
 #include <tencentcloud/domain/v20180808/model/TransferInDomainBatchRequest.h>
@@ -91,9 +99,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDomainBatchResponse> CreateDomainBatchOutcome;
                 typedef std::future<CreateDomainBatchOutcome> CreateDomainBatchOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::CreateDomainBatchRequest&, CreateDomainBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDomainBatchAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePhoneEmailResponse> CreatePhoneEmailOutcome;
+                typedef std::future<CreatePhoneEmailOutcome> CreatePhoneEmailOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::CreatePhoneEmailRequest&, CreatePhoneEmailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePhoneEmailAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTemplateResponse> CreateTemplateOutcome;
                 typedef std::future<CreateTemplateOutcome> CreateTemplateOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::CreateTemplateRequest&, CreateTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeletePhoneEmailResponse> DeletePhoneEmailOutcome;
+                typedef std::future<DeletePhoneEmailOutcome> DeletePhoneEmailOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::DeletePhoneEmailRequest&, DeletePhoneEmailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePhoneEmailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteTemplateResponse> DeleteTemplateOutcome;
                 typedef std::future<DeleteTemplateOutcome> DeleteTemplateOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::DeleteTemplateRequest&, DeleteTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTemplateAsyncHandler;
@@ -112,6 +126,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDomainPriceListResponse> DescribeDomainPriceListOutcome;
                 typedef std::future<DescribeDomainPriceListOutcome> DescribeDomainPriceListOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::DescribeDomainPriceListRequest&, DescribeDomainPriceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainPriceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePhoneEmailListResponse> DescribePhoneEmailListOutcome;
+                typedef std::future<DescribePhoneEmailListOutcome> DescribePhoneEmailListOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::DescribePhoneEmailListRequest&, DescribePhoneEmailListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePhoneEmailListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTemplateResponse> DescribeTemplateOutcome;
                 typedef std::future<DescribeTemplateOutcome> DescribeTemplateOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::DescribeTemplateRequest&, DescribeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTemplateAsyncHandler;
@@ -127,6 +144,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RenewDomainBatchResponse> RenewDomainBatchOutcome;
                 typedef std::future<RenewDomainBatchOutcome> RenewDomainBatchOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::RenewDomainBatchRequest&, RenewDomainBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewDomainBatchAsyncHandler;
+                typedef Outcome<Core::Error, Model::SendPhoneEmailCodeResponse> SendPhoneEmailCodeOutcome;
+                typedef std::future<SendPhoneEmailCodeOutcome> SendPhoneEmailCodeOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::SendPhoneEmailCodeRequest&, SendPhoneEmailCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendPhoneEmailCodeAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetDomainAutoRenewResponse> SetDomainAutoRenewOutcome;
                 typedef std::future<SetDomainAutoRenewOutcome> SetDomainAutoRenewOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::SetDomainAutoRenewRequest&, SetDomainAutoRenewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetDomainAutoRenewAsyncHandler;
@@ -182,6 +202,15 @@ namespace TencentCloud
                 CreateDomainBatchOutcomeCallable CreateDomainBatchCallable(const Model::CreateDomainBatchRequest& request);
 
                 /**
+                 *此接口用于创建有效的手机、邮箱
+                 * @param req CreatePhoneEmailRequest
+                 * @return CreatePhoneEmailOutcome
+                 */
+                CreatePhoneEmailOutcome CreatePhoneEmail(const Model::CreatePhoneEmailRequest &request);
+                void CreatePhoneEmailAsync(const Model::CreatePhoneEmailRequest& request, const CreatePhoneEmailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePhoneEmailOutcomeCallable CreatePhoneEmailCallable(const Model::CreatePhoneEmailRequest& request);
+
+                /**
                  *本接口 ( CreateTemplate ) 用于添加域名信息模板 。
                  * @param req CreateTemplateRequest
                  * @return CreateTemplateOutcome
@@ -189,6 +218,15 @@ namespace TencentCloud
                 CreateTemplateOutcome CreateTemplate(const Model::CreateTemplateRequest &request);
                 void CreateTemplateAsync(const Model::CreateTemplateRequest& request, const CreateTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTemplateOutcomeCallable CreateTemplateCallable(const Model::CreateTemplateRequest& request);
+
+                /**
+                 *此接口用于删除已验证的手机邮箱
+                 * @param req DeletePhoneEmailRequest
+                 * @return DeletePhoneEmailOutcome
+                 */
+                DeletePhoneEmailOutcome DeletePhoneEmail(const Model::DeletePhoneEmailRequest &request);
+                void DeletePhoneEmailAsync(const Model::DeletePhoneEmailRequest& request, const DeletePhoneEmailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeletePhoneEmailOutcomeCallable DeletePhoneEmailCallable(const Model::DeletePhoneEmailRequest& request);
 
                 /**
                  *本接口 ( DeleteTemplate ) 用于删除信息模板。
@@ -247,6 +285,15 @@ namespace TencentCloud
                 DescribeDomainPriceListOutcomeCallable DescribeDomainPriceListCallable(const Model::DescribeDomainPriceListRequest& request);
 
                 /**
+                 *本接口用于获取已验证的手机邮箱列表
+                 * @param req DescribePhoneEmailListRequest
+                 * @return DescribePhoneEmailListOutcome
+                 */
+                DescribePhoneEmailListOutcome DescribePhoneEmailList(const Model::DescribePhoneEmailListRequest &request);
+                void DescribePhoneEmailListAsync(const Model::DescribePhoneEmailListRequest& request, const DescribePhoneEmailListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePhoneEmailListOutcomeCallable DescribePhoneEmailListCallable(const Model::DescribePhoneEmailListRequest& request);
+
+                /**
                  *本接口 (DescribeTemplate) 用于获取模板信息。
                  * @param req DescribeTemplateRequest
                  * @return DescribeTemplateOutcome
@@ -292,6 +339,15 @@ namespace TencentCloud
                 RenewDomainBatchOutcome RenewDomainBatch(const Model::RenewDomainBatchRequest &request);
                 void RenewDomainBatchAsync(const Model::RenewDomainBatchRequest& request, const RenewDomainBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RenewDomainBatchOutcomeCallable RenewDomainBatchCallable(const Model::RenewDomainBatchRequest& request);
+
+                /**
+                 *此接口用于发送手机邮箱验证码。
+                 * @param req SendPhoneEmailCodeRequest
+                 * @return SendPhoneEmailCodeOutcome
+                 */
+                SendPhoneEmailCodeOutcome SendPhoneEmailCode(const Model::SendPhoneEmailCodeRequest &request);
+                void SendPhoneEmailCodeAsync(const Model::SendPhoneEmailCodeRequest& request, const SendPhoneEmailCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SendPhoneEmailCodeOutcomeCallable SendPhoneEmailCodeCallable(const Model::SendPhoneEmailCodeRequest& request);
 
                 /**
                  *本接口 ( SetDomainAutoRenew ) 用于设置域名自动续费。

@@ -67,6 +67,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteProjectResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteStudioProductRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteStudioProductResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeleteTopicPolicyRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeleteTopicPolicyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteTopicRuleRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteTopicRuleResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceRequest.h>
@@ -95,6 +97,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeSpaceFenceEventListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeStudioProductRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeStudioProductResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeTopicPolicyRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeTopicPolicyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTopicRuleRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTopicRuleResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DirectBindDeviceInFamilyRequest.h>
@@ -123,6 +127,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/ListEventHistoryResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListFirmwaresRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListFirmwaresResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ListTopicPolicyRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ListTopicPolicyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyFenceBindRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyFenceBindResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyLoRaFrequencyRequest.h>
@@ -141,6 +147,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/ModifySpacePropertyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyStudioProductRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyStudioProductResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyTopicPolicyRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyTopicPolicyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTopicRuleRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTopicRuleResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/PublishMessageRequest.h>
@@ -239,6 +247,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteStudioProductResponse> DeleteStudioProductOutcome;
                 typedef std::future<DeleteStudioProductOutcome> DeleteStudioProductOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeleteStudioProductRequest&, DeleteStudioProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStudioProductAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteTopicPolicyResponse> DeleteTopicPolicyOutcome;
+                typedef std::future<DeleteTopicPolicyOutcome> DeleteTopicPolicyOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DeleteTopicPolicyRequest&, DeleteTopicPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTopicPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteTopicRuleResponse> DeleteTopicRuleOutcome;
                 typedef std::future<DeleteTopicRuleOutcome> DeleteTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeleteTopicRuleRequest&, DeleteTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTopicRuleAsyncHandler;
@@ -281,6 +292,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeStudioProductResponse> DescribeStudioProductOutcome;
                 typedef std::future<DescribeStudioProductOutcome> DescribeStudioProductOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeStudioProductRequest&, DescribeStudioProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStudioProductAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTopicPolicyResponse> DescribeTopicPolicyOutcome;
+                typedef std::future<DescribeTopicPolicyOutcome> DescribeTopicPolicyOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeTopicPolicyRequest&, DescribeTopicPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTopicRuleResponse> DescribeTopicRuleOutcome;
                 typedef std::future<DescribeTopicRuleOutcome> DescribeTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeTopicRuleRequest&, DescribeTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicRuleAsyncHandler;
@@ -323,6 +337,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListFirmwaresResponse> ListFirmwaresOutcome;
                 typedef std::future<ListFirmwaresOutcome> ListFirmwaresOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ListFirmwaresRequest&, ListFirmwaresOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListFirmwaresAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListTopicPolicyResponse> ListTopicPolicyOutcome;
+                typedef std::future<ListTopicPolicyOutcome> ListTopicPolicyOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ListTopicPolicyRequest&, ListTopicPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTopicPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyFenceBindResponse> ModifyFenceBindOutcome;
                 typedef std::future<ModifyFenceBindOutcome> ModifyFenceBindOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ModifyFenceBindRequest&, ModifyFenceBindOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFenceBindAsyncHandler;
@@ -350,6 +367,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyStudioProductResponse> ModifyStudioProductOutcome;
                 typedef std::future<ModifyStudioProductOutcome> ModifyStudioProductOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ModifyStudioProductRequest&, ModifyStudioProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStudioProductAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyTopicPolicyResponse> ModifyTopicPolicyOutcome;
+                typedef std::future<ModifyTopicPolicyOutcome> ModifyTopicPolicyOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ModifyTopicPolicyRequest&, ModifyTopicPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTopicPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyTopicRuleResponse> ModifyTopicRuleOutcome;
                 typedef std::future<ModifyTopicRuleOutcome> ModifyTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ModifyTopicRuleRequest&, ModifyTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTopicRuleAsyncHandler;
@@ -579,6 +599,15 @@ namespace TencentCloud
                 DeleteStudioProductOutcomeCallable DeleteStudioProductCallable(const Model::DeleteStudioProductRequest& request);
 
                 /**
+                 *本接口（DeleteTopicPolicy）用于删除Topic 
+                 * @param req DeleteTopicPolicyRequest
+                 * @return DeleteTopicPolicyOutcome
+                 */
+                DeleteTopicPolicyOutcome DeleteTopicPolicy(const Model::DeleteTopicPolicyRequest &request);
+                void DeleteTopicPolicyAsync(const Model::DeleteTopicPolicyRequest& request, const DeleteTopicPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteTopicPolicyOutcomeCallable DeleteTopicPolicyCallable(const Model::DeleteTopicPolicyRequest& request);
+
+                /**
                  *删除规则
                  * @param req DeleteTopicRuleRequest
                  * @return DeleteTopicRuleOutcome
@@ -703,6 +732,15 @@ namespace TencentCloud
                 DescribeStudioProductOutcome DescribeStudioProduct(const Model::DescribeStudioProductRequest &request);
                 void DescribeStudioProductAsync(const Model::DescribeStudioProductRequest& request, const DescribeStudioProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeStudioProductOutcomeCallable DescribeStudioProductCallable(const Model::DescribeStudioProductRequest& request);
+
+                /**
+                 *本接口（DescribeTopicPolicy）用于查看Topic详细信息 
+                 * @param req DescribeTopicPolicyRequest
+                 * @return DescribeTopicPolicyOutcome
+                 */
+                DescribeTopicPolicyOutcome DescribeTopicPolicy(const Model::DescribeTopicPolicyRequest &request);
+                void DescribeTopicPolicyAsync(const Model::DescribeTopicPolicyRequest& request, const DescribeTopicPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTopicPolicyOutcomeCallable DescribeTopicPolicyCallable(const Model::DescribeTopicPolicyRequest& request);
 
                 /**
                  *获取规则信息
@@ -831,6 +869,15 @@ namespace TencentCloud
                 ListFirmwaresOutcomeCallable ListFirmwaresCallable(const Model::ListFirmwaresRequest& request);
 
                 /**
+                 *本接口（ListTopicPolicy）用于获取Topic列表
+                 * @param req ListTopicPolicyRequest
+                 * @return ListTopicPolicyOutcome
+                 */
+                ListTopicPolicyOutcome ListTopicPolicy(const Model::ListTopicPolicyRequest &request);
+                void ListTopicPolicyAsync(const Model::ListTopicPolicyRequest& request, const ListTopicPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListTopicPolicyOutcomeCallable ListTopicPolicyCallable(const Model::ListTopicPolicyRequest& request);
+
+                /**
                  *更新围栏绑定信息
                  * @param req ModifyFenceBindRequest
                  * @return ModifyFenceBindOutcome
@@ -910,6 +957,15 @@ namespace TencentCloud
                 ModifyStudioProductOutcome ModifyStudioProduct(const Model::ModifyStudioProductRequest &request);
                 void ModifyStudioProductAsync(const Model::ModifyStudioProductRequest& request, const ModifyStudioProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyStudioProductOutcomeCallable ModifyStudioProductCallable(const Model::ModifyStudioProductRequest& request);
+
+                /**
+                 *本接口（UpdateTopicPolicy）用于更新Topic信息 
+                 * @param req ModifyTopicPolicyRequest
+                 * @return ModifyTopicPolicyOutcome
+                 */
+                ModifyTopicPolicyOutcome ModifyTopicPolicy(const Model::ModifyTopicPolicyRequest &request);
+                void ModifyTopicPolicyAsync(const Model::ModifyTopicPolicyRequest& request, const ModifyTopicPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTopicPolicyOutcomeCallable ModifyTopicPolicyCallable(const Model::ModifyTopicPolicyRequest& request);
 
                 /**
                  *修改规则
