@@ -72,7 +72,8 @@ set(gaap_public_header_model
   include/tencentcloud/gaap/v20180529/model/CloseProxiesRequest.h
   include/tencentcloud/gaap/v20180529/model/DescribeListenerRealServersResponse.h
   include/tencentcloud/gaap/v20180529/model/DescribeProxyDetailRequest.h
-  include/tencentcloud/gaap/v20180529/model/ModifyTCPListenerAttributeRequest.h
+  include/tencentcloud/gaap/v20180529/model/IPDetail.h
+  include/tencentcloud/gaap/v20180529/model/ProxyStatus.h
   include/tencentcloud/gaap/v20180529/model/DeleteDomainRequest.h
   include/tencentcloud/gaap/v20180529/model/OpenSecurityPolicyResponse.h
   include/tencentcloud/gaap/v20180529/model/ModifyCertificateAttributesResponse.h
@@ -119,7 +120,7 @@ set(gaap_public_header_model
   include/tencentcloud/gaap/v20180529/model/CreateSecurityRulesRequest.h
   include/tencentcloud/gaap/v20180529/model/DescribeCertificatesRequest.h
   include/tencentcloud/gaap/v20180529/model/DescribeProxiesStatusRequest.h
-  include/tencentcloud/gaap/v20180529/model/ProxyStatus.h
+  include/tencentcloud/gaap/v20180529/model/ModifyTCPListenerAttributeRequest.h
   include/tencentcloud/gaap/v20180529/model/DeleteSecurityPolicyResponse.h
   include/tencentcloud/gaap/v20180529/model/CreateDomainResponse.h
   include/tencentcloud/gaap/v20180529/model/ModifyProxiesProjectResponse.h
@@ -291,7 +292,8 @@ set(gaap_src
   src/v20180529/model/CloseProxiesRequest.cpp
   src/v20180529/model/DescribeListenerRealServersResponse.cpp
   src/v20180529/model/DescribeProxyDetailRequest.cpp
-  src/v20180529/model/ModifyTCPListenerAttributeRequest.cpp
+  src/v20180529/model/IPDetail.cpp
+  src/v20180529/model/ProxyStatus.cpp
   src/v20180529/model/DeleteDomainRequest.cpp
   src/v20180529/model/OpenSecurityPolicyResponse.cpp
   src/v20180529/model/ModifyCertificateAttributesResponse.cpp
@@ -338,7 +340,7 @@ set(gaap_src
   src/v20180529/model/CreateSecurityRulesRequest.cpp
   src/v20180529/model/DescribeCertificatesRequest.cpp
   src/v20180529/model/DescribeProxiesStatusRequest.cpp
-  src/v20180529/model/ProxyStatus.cpp
+  src/v20180529/model/ModifyTCPListenerAttributeRequest.cpp
   src/v20180529/model/DeleteSecurityPolicyResponse.cpp
   src/v20180529/model/CreateDomainResponse.cpp
   src/v20180529/model/ModifyProxiesProjectResponse.cpp

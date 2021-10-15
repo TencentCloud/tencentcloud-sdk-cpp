@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ckafka/v20190819/model/SaleInfo.h>
 
 
 namespace TencentCloud
@@ -190,6 +191,28 @@ namespace TencentCloud
                      */
                     bool SoldOutHasBeenSet() const;
 
+                    /**
+                     * 获取标准版售罄信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SalesInfo 标准版售罄信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SaleInfo> GetSalesInfo() const;
+
+                    /**
+                     * 设置标准版售罄信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SalesInfo 标准版售罄信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSalesInfo(const std::vector<SaleInfo>& _salesInfo);
+
+                    /**
+                     * 判断参数 SalesInfo 是否已赋值
+                     * @return SalesInfo 是否已赋值
+                     */
+                    bool SalesInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -239,6 +262,13 @@ namespace TencentCloud
                      */
                     std::string m_soldOut;
                     bool m_soldOutHasBeenSet;
+
+                    /**
+                     * 标准版售罄信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SaleInfo> m_salesInfo;
+                    bool m_salesInfoHasBeenSet;
 
                 };
             }

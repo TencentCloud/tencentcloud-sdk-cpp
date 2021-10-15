@@ -100,6 +100,28 @@ namespace TencentCloud
                      */
                     bool ProxyIdHasBeenSet() const;
 
+                    /**
+                     * 获取绑定此源站的通道组ID，没有绑定时为空字符串。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GroupId 绑定此源站的通道组ID，没有绑定时为空字符串。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGroupId() const;
+
+                    /**
+                     * 设置绑定此源站的通道组ID，没有绑定时为空字符串。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GroupId 绑定此源站的通道组ID，没有绑定时为空字符串。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGroupId(const std::string& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     */
+                    bool GroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +141,13 @@ namespace TencentCloud
                      */
                     std::string m_proxyId;
                     bool m_proxyIdHasBeenSet;
+
+                    /**
+                     * 绑定此源站的通道组ID，没有绑定时为空字符串。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
 
                 };
             }

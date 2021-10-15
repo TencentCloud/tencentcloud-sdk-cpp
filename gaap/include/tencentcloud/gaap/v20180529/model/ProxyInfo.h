@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/gaap/v20180529/model/RegionDetail.h>
 #include <tencentcloud/gaap/v20180529/model/TagPair.h>
+#include <tencentcloud/gaap/v20180529/model/IPDetail.h>
 
 
 namespace TencentCloud
@@ -207,8 +208,7 @@ CLOSED表示已关闭；
 ADJUSTING表示配置变更中；
 ISOLATING表示隔离中；
 ISOLATED表示已隔离；
-CLONING表示复制中；
-UNKNOWN表示未知状态。
+CLONING表示复制中。
                      * @return Status 通道状态。其中：
 RUNNING表示运行中；
 CREATING表示创建中；
@@ -219,8 +219,7 @@ CLOSED表示已关闭；
 ADJUSTING表示配置变更中；
 ISOLATING表示隔离中；
 ISOLATED表示已隔离；
-CLONING表示复制中；
-UNKNOWN表示未知状态。
+CLONING表示复制中。
                      */
                     std::string GetStatus() const;
 
@@ -235,8 +234,7 @@ CLOSED表示已关闭；
 ADJUSTING表示配置变更中；
 ISOLATING表示隔离中；
 ISOLATED表示已隔离；
-CLONING表示复制中；
-UNKNOWN表示未知状态。
+CLONING表示复制中。
                      * @param Status 通道状态。其中：
 RUNNING表示运行中；
 CREATING表示创建中；
@@ -247,8 +245,7 @@ CLOSED表示已关闭；
 ADJUSTING表示配置变更中；
 ISOLATING表示隔离中；
 ISOLATED表示已隔离；
-CLONING表示复制中；
-UNKNOWN表示未知状态。
+CLONING表示复制中。
                      */
                     void SetStatus(const std::string& _status);
 
@@ -653,17 +650,17 @@ UNKNOWN表示未知状态。
                     bool IPAddressVersionHasBeenSet() const;
 
                     /**
-                     * 获取网络类型：normal、cn2
+                     * 获取网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NetworkType 网络类型：normal、cn2
+                     * @return NetworkType 网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetNetworkType() const;
 
                     /**
-                     * 设置网络类型：normal、cn2
+                     * 设置网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NetworkType 网络类型：normal、cn2
+                     * @param NetworkType 网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetNetworkType(const std::string& _networkType);
@@ -717,6 +714,28 @@ UNKNOWN表示未知状态。
                      * @return BanStatus 是否已赋值
                      */
                     bool BanStatusHasBeenSet() const;
+
+                    /**
+                     * 获取IP列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IPList IP列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<IPDetail> GetIPList() const;
+
+                    /**
+                     * 设置IP列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IPList IP列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIPList(const std::vector<IPDetail>& _iPList);
+
+                    /**
+                     * 判断参数 IPList 是否已赋值
+                     * @return IPList 是否已赋值
+                     */
+                    bool IPListHasBeenSet() const;
 
                 private:
 
@@ -780,8 +799,7 @@ CLOSED表示已关闭；
 ADJUSTING表示配置变更中；
 ISOLATING表示隔离中；
 ISOLATED表示已隔离；
-CLONING表示复制中；
-UNKNOWN表示未知状态。
+CLONING表示复制中。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -914,7 +932,7 @@ UNKNOWN表示未知状态。
                     bool m_iPAddressVersionHasBeenSet;
 
                     /**
-                     * 网络类型：normal、cn2
+                     * 网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_networkType;
@@ -933,6 +951,13 @@ UNKNOWN表示未知状态。
                      */
                     std::string m_banStatus;
                     bool m_banStatusHasBeenSet;
+
+                    /**
+                     * IP列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<IPDetail> m_iPList;
+                    bool m_iPListHasBeenSet;
 
                 };
             }

@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool VideoFpsHasBeenSet() const;
 
                     /**
-                     * 获取推流视频码率，单位: bps。
-                     * @return VideoSpeed 推流视频码率，单位: bps。
+                     * 获取推流视频码率，单位: Kbps。
+                     * @return VideoSpeed 推流视频码率，单位: Kbps。
                      */
                     uint64_t GetVideoSpeed() const;
 
                     /**
-                     * 设置推流视频码率，单位: bps。
-                     * @param VideoSpeed 推流视频码率，单位: bps。
+                     * 设置推流视频码率，单位: Kbps。
+                     * @param VideoSpeed 推流视频码率，单位: Kbps。
                      */
                     void SetVideoSpeed(const uint64_t& _videoSpeed);
 
@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool AudioFpsHasBeenSet() const;
 
                     /**
-                     * 获取推流音频码率，单位: bps。
-                     * @return AudioSpeed 推流音频码率，单位: bps。
+                     * 获取推流音频码率，单位: Kbps。
+                     * @return AudioSpeed 推流音频码率，单位: Kbps。
                      */
                     uint64_t GetAudioSpeed() const;
 
                     /**
-                     * 设置推流音频码率，单位: bps。
-                     * @param AudioSpeed 推流音频码率，单位: bps。
+                     * 设置推流音频码率，单位: Kbps。
+                     * @param AudioSpeed 推流音频码率，单位: Kbps。
                      */
                     void SetAudioSpeed(const uint64_t& _audioSpeed);
 
@@ -393,7 +393,7 @@ namespace TencentCloud
                     bool m_videoFpsHasBeenSet;
 
                     /**
-                     * 推流视频码率，单位: bps。
+                     * 推流视频码率，单位: Kbps。
                      */
                     uint64_t m_videoSpeed;
                     bool m_videoSpeedHasBeenSet;
@@ -405,7 +405,7 @@ namespace TencentCloud
                     bool m_audioFpsHasBeenSet;
 
                     /**
-                     * 推流音频码率，单位: bps。
+                     * 推流音频码率，单位: Kbps。
                      */
                     uint64_t m_audioSpeed;
                     bool m_audioSpeedHasBeenSet;

@@ -24,7 +24,8 @@ using namespace std;
 
 ListDiagnoseReportRequest::ListDiagnoseReportRequest() :
     m_keyWordsHasBeenSet(false),
-    m_diagnoseLinkHasBeenSet(false)
+    m_diagnoseLinkHasBeenSet(false),
+    m_originHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string ListDiagnoseReportRequest::ToJsonString() const
         string key = "DiagnoseLink";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_diagnoseLink.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Origin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_origin.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void ListDiagnoseReportRequest::SetDiagnoseLink(const string& _diagnoseLink)
 bool ListDiagnoseReportRequest::DiagnoseLinkHasBeenSet() const
 {
     return m_diagnoseLinkHasBeenSet;
+}
+
+string ListDiagnoseReportRequest::GetOrigin() const
+{
+    return m_origin;
+}
+
+void ListDiagnoseReportRequest::SetOrigin(const string& _origin)
+{
+    m_origin = _origin;
+    m_originHasBeenSet = true;
+}
+
+bool ListDiagnoseReportRequest::OriginHasBeenSet() const
+{
+    return m_originHasBeenSet;
 }
 
 

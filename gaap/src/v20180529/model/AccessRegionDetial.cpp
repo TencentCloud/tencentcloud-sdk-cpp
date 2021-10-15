@@ -24,7 +24,10 @@ AccessRegionDetial::AccessRegionDetial() :
     m_regionIdHasBeenSet(false),
     m_regionNameHasBeenSet(false),
     m_concurrentListHasBeenSet(false),
-    m_bandwidthListHasBeenSet(false)
+    m_bandwidthListHasBeenSet(false),
+    m_regionAreaHasBeenSet(false),
+    m_regionAreaNameHasBeenSet(false),
+    m_iDCTypeHasBeenSet(false)
 {
 }
 
@@ -79,6 +82,36 @@ CoreInternalOutcome AccessRegionDetial::Deserialize(const rapidjson::Value &valu
         m_bandwidthListHasBeenSet = true;
     }
 
+    if (value.HasMember("RegionArea") && !value["RegionArea"].IsNull())
+    {
+        if (!value["RegionArea"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessRegionDetial.RegionArea` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionArea = string(value["RegionArea"].GetString());
+        m_regionAreaHasBeenSet = true;
+    }
+
+    if (value.HasMember("RegionAreaName") && !value["RegionAreaName"].IsNull())
+    {
+        if (!value["RegionAreaName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessRegionDetial.RegionAreaName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionAreaName = string(value["RegionAreaName"].GetString());
+        m_regionAreaNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("IDCType") && !value["IDCType"].IsNull())
+    {
+        if (!value["IDCType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessRegionDetial.IDCType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iDCType = string(value["IDCType"].GetString());
+        m_iDCTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +159,30 @@ void AccessRegionDetial::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_regionAreaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionArea";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionArea.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionAreaNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionAreaName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionAreaName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iDCTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IDCType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iDCType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -193,5 +250,53 @@ void AccessRegionDetial::SetBandwidthList(const vector<int64_t>& _bandwidthList)
 bool AccessRegionDetial::BandwidthListHasBeenSet() const
 {
     return m_bandwidthListHasBeenSet;
+}
+
+string AccessRegionDetial::GetRegionArea() const
+{
+    return m_regionArea;
+}
+
+void AccessRegionDetial::SetRegionArea(const string& _regionArea)
+{
+    m_regionArea = _regionArea;
+    m_regionAreaHasBeenSet = true;
+}
+
+bool AccessRegionDetial::RegionAreaHasBeenSet() const
+{
+    return m_regionAreaHasBeenSet;
+}
+
+string AccessRegionDetial::GetRegionAreaName() const
+{
+    return m_regionAreaName;
+}
+
+void AccessRegionDetial::SetRegionAreaName(const string& _regionAreaName)
+{
+    m_regionAreaName = _regionAreaName;
+    m_regionAreaNameHasBeenSet = true;
+}
+
+bool AccessRegionDetial::RegionAreaNameHasBeenSet() const
+{
+    return m_regionAreaNameHasBeenSet;
+}
+
+string AccessRegionDetial::GetIDCType() const
+{
+    return m_iDCType;
+}
+
+void AccessRegionDetial::SetIDCType(const string& _iDCType)
+{
+    m_iDCType = _iDCType;
+    m_iDCTypeHasBeenSet = true;
+}
+
+bool AccessRegionDetial::IDCTypeHasBeenSet() const
+{
+    return m_iDCTypeHasBeenSet;
 }
 

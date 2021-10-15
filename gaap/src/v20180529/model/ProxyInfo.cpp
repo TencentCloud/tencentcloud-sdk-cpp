@@ -51,7 +51,8 @@ ProxyInfo::ProxyInfo() :
     m_iPAddressVersionHasBeenSet(false),
     m_networkTypeHasBeenSet(false),
     m_packageTypeHasBeenSet(false),
-    m_banStatusHasBeenSet(false)
+    m_banStatusHasBeenSet(false),
+    m_iPListHasBeenSet(false)
 {
 }
 
@@ -403,6 +404,26 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
         m_banStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("IPList") && !value["IPList"].IsNull())
+    {
+        if (!value["IPList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.IPList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["IPList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            IPDetail item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_iPList.push_back(item);
+        }
+        m_iPListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -680,6 +701,21 @@ void ProxyInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "BanStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_banStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iPListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_iPList.begin(); itr != m_iPList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1179,5 +1215,21 @@ void ProxyInfo::SetBanStatus(const string& _banStatus)
 bool ProxyInfo::BanStatusHasBeenSet() const
 {
     return m_banStatusHasBeenSet;
+}
+
+vector<IPDetail> ProxyInfo::GetIPList() const
+{
+    return m_iPList;
+}
+
+void ProxyInfo::SetIPList(const vector<IPDetail>& _iPList)
+{
+    m_iPList = _iPList;
+    m_iPListHasBeenSet = true;
+}
+
+bool ProxyInfo::IPListHasBeenSet() const
+{
+    return m_iPListHasBeenSet;
 }
 

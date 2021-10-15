@@ -29,6 +29,8 @@
 #include <tencentcloud/vpc/v20170312/model/AddBandwidthPackageResourcesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/AddIp6RulesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/AddIp6RulesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/AddTemplateMemberRequest.h>
+#include <tencentcloud/vpc/v20170312/model/AddTemplateMemberResponse.h>
 #include <tencentcloud/vpc/v20170312/model/AllocateAddressesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/AllocateAddressesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/AllocateIp6AddressesBandwidthRequest.h>
@@ -197,6 +199,8 @@
 #include <tencentcloud/vpc/v20170312/model/DeleteServiceTemplateGroupResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteSubnetRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteSubnetResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteTemplateMemberRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteTemplateMemberResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteVpcRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteVpcResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteVpcEndPointRequest.h>
@@ -473,6 +477,8 @@
 #include <tencentcloud/vpc/v20170312/model/ModifyServiceTemplateGroupAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifySubnetAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifySubnetAttributeResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyTemplateMemberRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyTemplateMemberResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyVpcAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyVpcAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyVpcEndPointAttributeRequest.h>
@@ -562,6 +568,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddIp6RulesResponse> AddIp6RulesOutcome;
                 typedef std::future<AddIp6RulesOutcome> AddIp6RulesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::AddIp6RulesRequest&, AddIp6RulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddIp6RulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddTemplateMemberResponse> AddTemplateMemberOutcome;
+                typedef std::future<AddTemplateMemberOutcome> AddTemplateMemberOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::AddTemplateMemberRequest&, AddTemplateMemberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddTemplateMemberAsyncHandler;
                 typedef Outcome<Core::Error, Model::AllocateAddressesResponse> AllocateAddressesOutcome;
                 typedef std::future<AllocateAddressesOutcome> AllocateAddressesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::AllocateAddressesRequest&, AllocateAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AllocateAddressesAsyncHandler;
@@ -814,6 +823,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteSubnetResponse> DeleteSubnetOutcome;
                 typedef std::future<DeleteSubnetOutcome> DeleteSubnetOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteSubnetRequest&, DeleteSubnetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSubnetAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteTemplateMemberResponse> DeleteTemplateMemberOutcome;
+                typedef std::future<DeleteTemplateMemberOutcome> DeleteTemplateMemberOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DeleteTemplateMemberRequest&, DeleteTemplateMemberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTemplateMemberAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteVpcResponse> DeleteVpcOutcome;
                 typedef std::future<DeleteVpcOutcome> DeleteVpcOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteVpcRequest&, DeleteVpcOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVpcAsyncHandler;
@@ -1228,6 +1240,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifySubnetAttributeResponse> ModifySubnetAttributeOutcome;
                 typedef std::future<ModifySubnetAttributeOutcome> ModifySubnetAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifySubnetAttributeRequest&, ModifySubnetAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySubnetAttributeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyTemplateMemberResponse> ModifyTemplateMemberOutcome;
+                typedef std::future<ModifyTemplateMemberOutcome> ModifyTemplateMemberOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ModifyTemplateMemberRequest&, ModifyTemplateMemberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTemplateMemberAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyVpcAttributeResponse> ModifyVpcAttributeOutcome;
                 typedef std::future<ModifyVpcAttributeOutcome> ModifyVpcAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyVpcAttributeRequest&, ModifyVpcAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVpcAttributeAsyncHandler;
@@ -1358,6 +1373,15 @@ namespace TencentCloud
                 AddIp6RulesOutcome AddIp6Rules(const Model::AddIp6RulesRequest &request);
                 void AddIp6RulesAsync(const Model::AddIp6RulesRequest& request, const AddIp6RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddIp6RulesOutcomeCallable AddIp6RulesCallable(const Model::AddIp6RulesRequest& request);
+
+                /**
+                 *增加模版对象中的IP地址、协议端口、IP地址组、协议端口组。当前仅支持北京、泰国、北美地域请求。
+                 * @param req AddTemplateMemberRequest
+                 * @return AddTemplateMemberOutcome
+                 */
+                AddTemplateMemberOutcome AddTemplateMember(const Model::AddTemplateMemberRequest &request);
+                void AddTemplateMemberAsync(const Model::AddTemplateMemberRequest& request, const AddTemplateMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddTemplateMemberOutcomeCallable AddTemplateMemberCallable(const Model::AddTemplateMemberRequest& request);
 
                 /**
                  *本接口 (AllocateAddresses) 用于申请一个或多个[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）。
@@ -2255,6 +2279,15 @@ namespace TencentCloud
                 DeleteSubnetOutcome DeleteSubnet(const Model::DeleteSubnetRequest &request);
                 void DeleteSubnetAsync(const Model::DeleteSubnetRequest& request, const DeleteSubnetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteSubnetOutcomeCallable DeleteSubnetCallable(const Model::DeleteSubnetRequest& request);
+
+                /**
+                 *删除模版对象中的IP地址、协议端口、IP地址组、协议端口组。当前仅支持北京、泰国、北美地域请求。
+                 * @param req DeleteTemplateMemberRequest
+                 * @return DeleteTemplateMemberOutcome
+                 */
+                DeleteTemplateMemberOutcome DeleteTemplateMember(const Model::DeleteTemplateMemberRequest &request);
+                void DeleteTemplateMemberAsync(const Model::DeleteTemplateMemberRequest& request, const DeleteTemplateMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteTemplateMemberOutcomeCallable DeleteTemplateMemberCallable(const Model::DeleteTemplateMemberRequest& request);
 
                 /**
                  *本接口（DeleteVpc）用于删除私有网络。
@@ -3578,6 +3611,15 @@ LimitTypes取值范围：
                 ModifySubnetAttributeOutcome ModifySubnetAttribute(const Model::ModifySubnetAttributeRequest &request);
                 void ModifySubnetAttributeAsync(const Model::ModifySubnetAttributeRequest& request, const ModifySubnetAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifySubnetAttributeOutcomeCallable ModifySubnetAttributeCallable(const Model::ModifySubnetAttributeRequest& request);
+
+                /**
+                 *修改模版对象中的IP地址、协议端口、IP地址组、协议端口组。当前仅支持北京、泰国、北美地域请求。
+                 * @param req ModifyTemplateMemberRequest
+                 * @return ModifyTemplateMemberOutcome
+                 */
+                ModifyTemplateMemberOutcome ModifyTemplateMember(const Model::ModifyTemplateMemberRequest &request);
+                void ModifyTemplateMemberAsync(const Model::ModifyTemplateMemberRequest& request, const ModifyTemplateMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTemplateMemberOutcomeCallable ModifyTemplateMemberCallable(const Model::ModifyTemplateMemberRequest& request);
 
                 /**
                  *本接口（ModifyVpcAttribute）用于修改私有网络（VPC）的相关属性。

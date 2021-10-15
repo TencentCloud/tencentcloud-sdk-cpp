@@ -136,6 +136,24 @@ namespace TencentCloud
                      */
                     bool LocationYHasBeenSet() const;
 
+                    /**
+                     * 获取混流-水印图片URL地址，支持png、jpg、jpeg、bmp格式，暂不支持透明通道。URL链接长度限制为512字节。WaterMarkUrl和WaterMarkId参数都填时，以WaterMarkUrl为准。图片大小限制不超过10MB。
+                     * @return WaterMarkUrl 混流-水印图片URL地址，支持png、jpg、jpeg、bmp格式，暂不支持透明通道。URL链接长度限制为512字节。WaterMarkUrl和WaterMarkId参数都填时，以WaterMarkUrl为准。图片大小限制不超过10MB。
+                     */
+                    std::string GetWaterMarkUrl() const;
+
+                    /**
+                     * 设置混流-水印图片URL地址，支持png、jpg、jpeg、bmp格式，暂不支持透明通道。URL链接长度限制为512字节。WaterMarkUrl和WaterMarkId参数都填时，以WaterMarkUrl为准。图片大小限制不超过10MB。
+                     * @param WaterMarkUrl 混流-水印图片URL地址，支持png、jpg、jpeg、bmp格式，暂不支持透明通道。URL链接长度限制为512字节。WaterMarkUrl和WaterMarkId参数都填时，以WaterMarkUrl为准。图片大小限制不超过10MB。
+                     */
+                    void SetWaterMarkUrl(const std::string& _waterMarkUrl);
+
+                    /**
+                     * 判断参数 WaterMarkUrl 是否已赋值
+                     * @return WaterMarkUrl 是否已赋值
+                     */
+                    bool WaterMarkUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +185,12 @@ namespace TencentCloud
                      */
                     uint64_t m_locationY;
                     bool m_locationYHasBeenSet;
+
+                    /**
+                     * 混流-水印图片URL地址，支持png、jpg、jpeg、bmp格式，暂不支持透明通道。URL链接长度限制为512字节。WaterMarkUrl和WaterMarkId参数都填时，以WaterMarkUrl为准。图片大小限制不超过10MB。
+                     */
+                    std::string m_waterMarkUrl;
+                    bool m_waterMarkUrlHasBeenSet;
 
                 };
             }

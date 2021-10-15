@@ -28,7 +28,8 @@ ZoneInfo::ZoneInfo() :
     m_zoneNameHasBeenSet(false),
     m_zoneStatusHasBeenSet(false),
     m_exflagHasBeenSet(false),
-    m_soldOutHasBeenSet(false)
+    m_soldOutHasBeenSet(false),
+    m_salesInfoHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,26 @@ CoreInternalOutcome ZoneInfo::Deserialize(const rapidjson::Value &value)
         m_soldOutHasBeenSet = true;
     }
 
+    if (value.HasMember("SalesInfo") && !value["SalesInfo"].IsNull())
+    {
+        if (!value["SalesInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.SalesInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SalesInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SaleInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_salesInfo.push_back(item);
+        }
+        m_salesInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +207,21 @@ void ZoneInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "SoldOut";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_soldOut.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_salesInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SalesInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_salesInfo.begin(); itr != m_salesInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -317,5 +353,21 @@ void ZoneInfo::SetSoldOut(const string& _soldOut)
 bool ZoneInfo::SoldOutHasBeenSet() const
 {
     return m_soldOutHasBeenSet;
+}
+
+vector<SaleInfo> ZoneInfo::GetSalesInfo() const
+{
+    return m_salesInfo;
+}
+
+void ZoneInfo::SetSalesInfo(const vector<SaleInfo>& _salesInfo)
+{
+    m_salesInfo = _salesInfo;
+    m_salesInfoHasBeenSet = true;
+}
+
+bool ZoneInfo::SalesInfoHasBeenSet() const
+{
+    return m_salesInfoHasBeenSet;
 }
 

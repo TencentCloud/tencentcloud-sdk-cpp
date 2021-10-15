@@ -25,7 +25,8 @@ WaterMarkParams::WaterMarkParams() :
     m_waterMarkWidthHasBeenSet(false),
     m_waterMarkHeightHasBeenSet(false),
     m_locationXHasBeenSet(false),
-    m_locationYHasBeenSet(false)
+    m_locationYHasBeenSet(false),
+    m_waterMarkUrlHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome WaterMarkParams::Deserialize(const rapidjson::Value &value)
         m_locationYHasBeenSet = true;
     }
 
+    if (value.HasMember("WaterMarkUrl") && !value["WaterMarkUrl"].IsNull())
+    {
+        if (!value["WaterMarkUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WaterMarkParams.WaterMarkUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_waterMarkUrl = string(value["WaterMarkUrl"].GetString());
+        m_waterMarkUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void WaterMarkParams::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "LocationY";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_locationY, allocator);
+    }
+
+    if (m_waterMarkUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WaterMarkUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_waterMarkUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void WaterMarkParams::SetLocationY(const uint64_t& _locationY)
 bool WaterMarkParams::LocationYHasBeenSet() const
 {
     return m_locationYHasBeenSet;
+}
+
+string WaterMarkParams::GetWaterMarkUrl() const
+{
+    return m_waterMarkUrl;
+}
+
+void WaterMarkParams::SetWaterMarkUrl(const string& _waterMarkUrl)
+{
+    m_waterMarkUrl = _waterMarkUrl;
+    m_waterMarkUrlHasBeenSet = true;
+}
+
+bool WaterMarkParams::WaterMarkUrlHasBeenSet() const
+{
+    return m_waterMarkUrlHasBeenSet;
 }
 

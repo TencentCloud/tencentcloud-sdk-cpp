@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool DiagnoseLinkHasBeenSet() const;
 
+                    /**
+                     * 获取请求源带协议头，形如：https://console.cloud.tencent.com
+                     * @return Origin 请求源带协议头，形如：https://console.cloud.tencent.com
+                     */
+                    std::string GetOrigin() const;
+
+                    /**
+                     * 设置请求源带协议头，形如：https://console.cloud.tencent.com
+                     * @param Origin 请求源带协议头，形如：https://console.cloud.tencent.com
+                     */
+                    void SetOrigin(const std::string& _origin);
+
+                    /**
+                     * 判断参数 Origin 是否已赋值
+                     * @return Origin 是否已赋值
+                     */
+                    bool OriginHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     std::string m_diagnoseLink;
                     bool m_diagnoseLinkHasBeenSet;
+
+                    /**
+                     * 请求源带协议头，形如：https://console.cloud.tencent.com
+                     */
+                    std::string m_origin;
+                    bool m_originHasBeenSet;
 
                 };
             }

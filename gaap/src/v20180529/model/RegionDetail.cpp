@@ -22,7 +22,10 @@ using namespace std;
 
 RegionDetail::RegionDetail() :
     m_regionIdHasBeenSet(false),
-    m_regionNameHasBeenSet(false)
+    m_regionNameHasBeenSet(false),
+    m_regionAreaHasBeenSet(false),
+    m_regionAreaNameHasBeenSet(false),
+    m_iDCTypeHasBeenSet(false)
 {
 }
 
@@ -51,6 +54,36 @@ CoreInternalOutcome RegionDetail::Deserialize(const rapidjson::Value &value)
         m_regionNameHasBeenSet = true;
     }
 
+    if (value.HasMember("RegionArea") && !value["RegionArea"].IsNull())
+    {
+        if (!value["RegionArea"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegionDetail.RegionArea` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionArea = string(value["RegionArea"].GetString());
+        m_regionAreaHasBeenSet = true;
+    }
+
+    if (value.HasMember("RegionAreaName") && !value["RegionAreaName"].IsNull())
+    {
+        if (!value["RegionAreaName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegionDetail.RegionAreaName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionAreaName = string(value["RegionAreaName"].GetString());
+        m_regionAreaNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("IDCType") && !value["IDCType"].IsNull())
+    {
+        if (!value["IDCType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegionDetail.IDCType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iDCType = string(value["IDCType"].GetString());
+        m_iDCTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +105,30 @@ void RegionDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "RegionName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_regionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionAreaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionArea";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionArea.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionAreaNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionAreaName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionAreaName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iDCTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IDCType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iDCType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +164,53 @@ void RegionDetail::SetRegionName(const string& _regionName)
 bool RegionDetail::RegionNameHasBeenSet() const
 {
     return m_regionNameHasBeenSet;
+}
+
+string RegionDetail::GetRegionArea() const
+{
+    return m_regionArea;
+}
+
+void RegionDetail::SetRegionArea(const string& _regionArea)
+{
+    m_regionArea = _regionArea;
+    m_regionAreaHasBeenSet = true;
+}
+
+bool RegionDetail::RegionAreaHasBeenSet() const
+{
+    return m_regionAreaHasBeenSet;
+}
+
+string RegionDetail::GetRegionAreaName() const
+{
+    return m_regionAreaName;
+}
+
+void RegionDetail::SetRegionAreaName(const string& _regionAreaName)
+{
+    m_regionAreaName = _regionAreaName;
+    m_regionAreaNameHasBeenSet = true;
+}
+
+bool RegionDetail::RegionAreaNameHasBeenSet() const
+{
+    return m_regionAreaNameHasBeenSet;
+}
+
+string RegionDetail::GetIDCType() const
+{
+    return m_iDCType;
+}
+
+void RegionDetail::SetIDCType(const string& _iDCType)
+{
+    m_iDCType = _iDCType;
+    m_iDCTypeHasBeenSet = true;
+}
+
+bool RegionDetail::IDCTypeHasBeenSet() const
+{
+    return m_iDCTypeHasBeenSet;
 }
 

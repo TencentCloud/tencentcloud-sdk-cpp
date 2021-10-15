@@ -23,7 +23,8 @@ using namespace TencentCloud::Cdn::V20180606::Model;
 using namespace std;
 
 CreateDiagnoseUrlRequest::CreateDiagnoseUrlRequest() :
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_originHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string CreateDiagnoseUrlRequest::ToJsonString() const
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Origin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_origin.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void CreateDiagnoseUrlRequest::SetUrl(const string& _url)
 bool CreateDiagnoseUrlRequest::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+string CreateDiagnoseUrlRequest::GetOrigin() const
+{
+    return m_origin;
+}
+
+void CreateDiagnoseUrlRequest::SetOrigin(const string& _origin)
+{
+    m_origin = _origin;
+    m_originHasBeenSet = true;
+}
+
+bool CreateDiagnoseUrlRequest::OriginHasBeenSet() const
+{
+    return m_originHasBeenSet;
 }
 
 

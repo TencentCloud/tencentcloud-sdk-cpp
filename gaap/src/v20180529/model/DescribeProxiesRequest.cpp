@@ -29,7 +29,9 @@ DescribeProxiesRequest::DescribeProxiesRequest() :
     m_filtersHasBeenSet(false),
     m_proxyIdsHasBeenSet(false),
     m_tagSetHasBeenSet(false),
-    m_independentHasBeenSet(false)
+    m_independentHasBeenSet(false),
+    m_orderHasBeenSet(false),
+    m_orderFieldHasBeenSet(false)
 {
 }
 
@@ -118,6 +120,22 @@ string DescribeProxiesRequest::ToJsonString() const
         string key = "Independent";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_independent, allocator);
+    }
+
+    if (m_orderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Order";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_order.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderFieldHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderField";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderField.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -238,6 +256,38 @@ void DescribeProxiesRequest::SetIndependent(const int64_t& _independent)
 bool DescribeProxiesRequest::IndependentHasBeenSet() const
 {
     return m_independentHasBeenSet;
+}
+
+string DescribeProxiesRequest::GetOrder() const
+{
+    return m_order;
+}
+
+void DescribeProxiesRequest::SetOrder(const string& _order)
+{
+    m_order = _order;
+    m_orderHasBeenSet = true;
+}
+
+bool DescribeProxiesRequest::OrderHasBeenSet() const
+{
+    return m_orderHasBeenSet;
+}
+
+string DescribeProxiesRequest::GetOrderField() const
+{
+    return m_orderField;
+}
+
+void DescribeProxiesRequest::SetOrderField(const string& _orderField)
+{
+    m_orderField = _orderField;
+    m_orderFieldHasBeenSet = true;
+}
+
+bool DescribeProxiesRequest::OrderFieldHasBeenSet() const
+{
+    return m_orderFieldHasBeenSet;
 }
 
 

@@ -169,6 +169,49 @@ VpcClient::AddIp6RulesOutcomeCallable VpcClient::AddIp6RulesCallable(const AddIp
     return task->get_future();
 }
 
+VpcClient::AddTemplateMemberOutcome VpcClient::AddTemplateMember(const AddTemplateMemberRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddTemplateMember");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddTemplateMemberResponse rsp = AddTemplateMemberResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddTemplateMemberOutcome(rsp);
+        else
+            return AddTemplateMemberOutcome(o.GetError());
+    }
+    else
+    {
+        return AddTemplateMemberOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::AddTemplateMemberAsync(const AddTemplateMemberRequest& request, const AddTemplateMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddTemplateMember(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::AddTemplateMemberOutcomeCallable VpcClient::AddTemplateMemberCallable(const AddTemplateMemberRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddTemplateMemberOutcome()>>(
+        [this, request]()
+        {
+            return this->AddTemplateMember(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::AllocateAddressesOutcome VpcClient::AllocateAddresses(const AllocateAddressesRequest &request)
 {
     auto outcome = MakeRequest(request, "AllocateAddresses");
@@ -3774,6 +3817,49 @@ VpcClient::DeleteSubnetOutcomeCallable VpcClient::DeleteSubnetCallable(const Del
         [this, request]()
         {
             return this->DeleteSubnet(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DeleteTemplateMemberOutcome VpcClient::DeleteTemplateMember(const DeleteTemplateMemberRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTemplateMember");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTemplateMemberResponse rsp = DeleteTemplateMemberResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTemplateMemberOutcome(rsp);
+        else
+            return DeleteTemplateMemberOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTemplateMemberOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeleteTemplateMemberAsync(const DeleteTemplateMemberRequest& request, const DeleteTemplateMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteTemplateMember(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DeleteTemplateMemberOutcomeCallable VpcClient::DeleteTemplateMemberCallable(const DeleteTemplateMemberRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteTemplateMemberOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteTemplateMember(request);
         }
     );
 
@@ -9708,6 +9794,49 @@ VpcClient::ModifySubnetAttributeOutcomeCallable VpcClient::ModifySubnetAttribute
         [this, request]()
         {
             return this->ModifySubnetAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ModifyTemplateMemberOutcome VpcClient::ModifyTemplateMember(const ModifyTemplateMemberRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyTemplateMember");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyTemplateMemberResponse rsp = ModifyTemplateMemberResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyTemplateMemberOutcome(rsp);
+        else
+            return ModifyTemplateMemberOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyTemplateMemberOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyTemplateMemberAsync(const ModifyTemplateMemberRequest& request, const ModifyTemplateMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyTemplateMember(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyTemplateMemberOutcomeCallable VpcClient::ModifyTemplateMemberCallable(const ModifyTemplateMemberRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyTemplateMemberOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyTemplateMember(request);
         }
     );
 

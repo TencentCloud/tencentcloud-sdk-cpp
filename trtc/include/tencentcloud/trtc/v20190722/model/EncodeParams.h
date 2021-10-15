@@ -272,6 +272,24 @@ namespace TencentCloud
                      */
                     bool AudioCodecHasBeenSet() const;
 
+                    /**
+                     * 获取混流-输出流背景图片URL地址，支持png、jpg、jpeg、bmp格式，暂不支持透明通道。URL链接长度限制为512字节。BackgroundImageUrl和BackgroundImageId参数都填时，以BackgroundImageUrl为准。图片大小限制不超过10MB。
+                     * @return BackgroundImageUrl 混流-输出流背景图片URL地址，支持png、jpg、jpeg、bmp格式，暂不支持透明通道。URL链接长度限制为512字节。BackgroundImageUrl和BackgroundImageId参数都填时，以BackgroundImageUrl为准。图片大小限制不超过10MB。
+                     */
+                    std::string GetBackgroundImageUrl() const;
+
+                    /**
+                     * 设置混流-输出流背景图片URL地址，支持png、jpg、jpeg、bmp格式，暂不支持透明通道。URL链接长度限制为512字节。BackgroundImageUrl和BackgroundImageId参数都填时，以BackgroundImageUrl为准。图片大小限制不超过10MB。
+                     * @param BackgroundImageUrl 混流-输出流背景图片URL地址，支持png、jpg、jpeg、bmp格式，暂不支持透明通道。URL链接长度限制为512字节。BackgroundImageUrl和BackgroundImageId参数都填时，以BackgroundImageUrl为准。图片大小限制不超过10MB。
+                     */
+                    void SetBackgroundImageUrl(const std::string& _backgroundImageUrl);
+
+                    /**
+                     * 判断参数 BackgroundImageUrl 是否已赋值
+                     * @return BackgroundImageUrl 是否已赋值
+                     */
+                    bool BackgroundImageUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -346,6 +364,12 @@ namespace TencentCloud
                      */
                     uint64_t m_audioCodec;
                     bool m_audioCodecHasBeenSet;
+
+                    /**
+                     * 混流-输出流背景图片URL地址，支持png、jpg、jpeg、bmp格式，暂不支持透明通道。URL链接长度限制为512字节。BackgroundImageUrl和BackgroundImageId参数都填时，以BackgroundImageUrl为准。图片大小限制不超过10MB。
+                     */
+                    std::string m_backgroundImageUrl;
+                    bool m_backgroundImageUrlHasBeenSet;
 
                 };
             }

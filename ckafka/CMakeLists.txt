@@ -46,6 +46,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/ZoneInfo.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicSubscribeGroupResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeCkafkaZoneRequest.h
+  include/tencentcloud/ckafka/v20190819/model/SaleInfo.h
   include/tencentcloud/ckafka/v20190819/model/Topic.h
   include/tencentcloud/ckafka/v20190819/model/Tag.h
   include/tencentcloud/ckafka/v20190819/model/GroupResponse.h
@@ -179,6 +180,7 @@ set(ckafka_src
   src/v20190819/model/ZoneInfo.cpp
   src/v20190819/model/DescribeTopicSubscribeGroupResponse.cpp
   src/v20190819/model/DescribeCkafkaZoneRequest.cpp
+  src/v20190819/model/SaleInfo.cpp
   src/v20190819/model/Topic.cpp
   src/v20190819/model/Tag.cpp
   src/v20190819/model/GroupResponse.cpp

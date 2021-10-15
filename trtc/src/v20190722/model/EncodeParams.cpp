@@ -31,7 +31,8 @@ EncodeParams::EncodeParams() :
     m_videoGopHasBeenSet(false),
     m_backgroundColorHasBeenSet(false),
     m_backgroundImageIdHasBeenSet(false),
-    m_audioCodecHasBeenSet(false)
+    m_audioCodecHasBeenSet(false),
+    m_backgroundImageUrlHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,16 @@ CoreInternalOutcome EncodeParams::Deserialize(const rapidjson::Value &value)
         m_audioCodecHasBeenSet = true;
     }
 
+    if (value.HasMember("BackgroundImageUrl") && !value["BackgroundImageUrl"].IsNull())
+    {
+        if (!value["BackgroundImageUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EncodeParams.BackgroundImageUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_backgroundImageUrl = string(value["BackgroundImageUrl"].GetString());
+        m_backgroundImageUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +254,14 @@ void EncodeParams::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "AudioCodec";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_audioCodec, allocator);
+    }
+
+    if (m_backgroundImageUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackgroundImageUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_backgroundImageUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +441,21 @@ void EncodeParams::SetAudioCodec(const uint64_t& _audioCodec)
 bool EncodeParams::AudioCodecHasBeenSet() const
 {
     return m_audioCodecHasBeenSet;
+}
+
+string EncodeParams::GetBackgroundImageUrl() const
+{
+    return m_backgroundImageUrl;
+}
+
+void EncodeParams::SetBackgroundImageUrl(const string& _backgroundImageUrl)
+{
+    m_backgroundImageUrl = _backgroundImageUrl;
+    m_backgroundImageUrlHasBeenSet = true;
+}
+
+bool EncodeParams::BackgroundImageUrlHasBeenSet() const
+{
+    return m_backgroundImageUrlHasBeenSet;
 }
 
