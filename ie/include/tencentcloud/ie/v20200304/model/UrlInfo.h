@@ -99,14 +99,14 @@ namespace TencentCloud
                     bool FormatHasBeenSet() const;
 
                     /**
-                     * 获取指定请求资源时，HTTP头部host的值。
-                     * @return Host 指定请求资源时，HTTP头部host的值。
+                     * 获取【不再支持】指定请求资源时，HTTP头部host的值。
+                     * @return Host 【不再支持】指定请求资源时，HTTP头部host的值。
                      */
                     std::string GetHost() const;
 
                     /**
-                     * 设置指定请求资源时，HTTP头部host的值。
-                     * @param Host 指定请求资源时，HTTP头部host的值。
+                     * 设置【不再支持】指定请求资源时，HTTP头部host的值。
+                     * @param Host 【不再支持】指定请求资源时，HTTP头部host的值。
                      */
                     void SetHost(const std::string& _host);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_formatHasBeenSet;
 
                     /**
-                     * 指定请求资源时，HTTP头部host的值。
+                     * 【不再支持】指定请求资源时，HTTP头部host的值。
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;

@@ -47,8 +47,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取加载后续内容的Context
-                     * @return Context 加载后续内容的Context
+                     * 获取加载后续内容的Context，过期时间1小时
+                     * @return Context 加载后续内容的Context，过期时间1小时
                      */
                     std::string GetContext() const;
 
@@ -155,7 +155,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 加载后续内容的Context
+                     * 加载后续内容的Context，过期时间1小时
                      */
                     std::string m_context;
                     bool m_contextHasBeenSet;

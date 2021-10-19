@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ProductDevicesPositionItem.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,43 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取产品设备位置信息列表
+                     * @return Positions 产品设备位置信息列表
+                     */
+                    std::vector<ProductDevicesPositionItem> GetPositions() const;
+
+                    /**
+                     * 判断参数 Positions 是否已赋值
+                     * @return Positions 是否已赋值
+                     */
+                    bool PositionsHasBeenSet() const;
+
+                    /**
+                     * 获取产品设备位置信息的数目
+                     * @return Total 产品设备位置信息的数目
+                     */
+                    int64_t GetTotal() const;
+
+                    /**
+                     * 判断参数 Total 是否已赋值
+                     * @return Total 是否已赋值
+                     */
+                    bool TotalHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 产品设备位置信息列表
+                     */
+                    std::vector<ProductDevicesPositionItem> m_positions;
+                    bool m_positionsHasBeenSet;
+
+                    /**
+                     * 产品设备位置信息的数目
+                     */
+                    int64_t m_total;
+                    bool m_totalHasBeenSet;
 
                 };
             }

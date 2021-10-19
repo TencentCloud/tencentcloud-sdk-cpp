@@ -39,6 +39,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/ModifyModelDefinitionRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateStudioProductResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/CallDeviceActionSyncRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/ProductDevicesPositionItem.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeDevicePositionListRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/GetDeviceLocationHistoryResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/UpdateFirmwareResponse.h
@@ -55,6 +56,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/SearchTopicRuleRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/FenceBindProductItem.h
+  include/tencentcloud/iotexplorer/v20190423/model/DevicePositionItem.h
   include/tencentcloud/iotexplorer/v20190423/model/ListTopicPolicyResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/SearchPositionSpaceResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribePositionFenceListResponse.h
@@ -214,6 +216,7 @@ set(iotexplorer_src
   src/v20190423/model/ModifyModelDefinitionRequest.cpp
   src/v20190423/model/CreateStudioProductResponse.cpp
   src/v20190423/model/CallDeviceActionSyncRequest.cpp
+  src/v20190423/model/ProductDevicesPositionItem.cpp
   src/v20190423/model/DescribeDevicePositionListRequest.cpp
   src/v20190423/model/GetDeviceLocationHistoryResponse.cpp
   src/v20190423/model/UpdateFirmwareResponse.cpp
@@ -230,6 +233,7 @@ set(iotexplorer_src
   src/v20190423/model/SearchTopicRuleRequest.cpp
   src/v20190423/model/DescribeDeviceDataRequest.cpp
   src/v20190423/model/FenceBindProductItem.cpp
+  src/v20190423/model/DevicePositionItem.cpp
   src/v20190423/model/ListTopicPolicyResponse.cpp
   src/v20190423/model/SearchPositionSpaceResponse.cpp
   src/v20190423/model/DescribePositionFenceListResponse.cpp

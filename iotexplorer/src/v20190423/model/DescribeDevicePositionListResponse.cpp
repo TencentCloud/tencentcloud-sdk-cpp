@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotexplorer::V20190423::Model;
 using namespace std;
 
-DescribeDevicePositionListResponse::DescribeDevicePositionListResponse()
+DescribeDevicePositionListResponse::DescribeDevicePositionListResponse() :
+    m_positionsHasBeenSet(false),
+    m_totalHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,36 @@ CoreInternalOutcome DescribeDevicePositionListResponse::Deserialize(const string
     }
 
 
+    if (rsp.HasMember("Positions") && !rsp["Positions"].IsNull())
+    {
+        if (!rsp["Positions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Positions` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Positions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ProductDevicesPositionItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_positions.push_back(item);
+        }
+        m_positionsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
+    {
+        if (!rsp["Total"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_total = rsp["Total"].GetInt64();
+        m_totalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +102,29 @@ string DescribeDevicePositionListResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_positionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Positions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_positions.begin(); itr != m_positions.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_totalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Total";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_total, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +137,25 @@ string DescribeDevicePositionListResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<ProductDevicesPositionItem> DescribeDevicePositionListResponse::GetPositions() const
+{
+    return m_positions;
+}
+
+bool DescribeDevicePositionListResponse::PositionsHasBeenSet() const
+{
+    return m_positionsHasBeenSet;
+}
+
+int64_t DescribeDevicePositionListResponse::GetTotal() const
+{
+    return m_total;
+}
+
+bool DescribeDevicePositionListResponse::TotalHasBeenSet() const
+{
+    return m_totalHasBeenSet;
+}
 
 

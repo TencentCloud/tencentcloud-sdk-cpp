@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容
-                     * @return Context 加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容
+                     * 获取加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时
+                     * @return Context 加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时
                      */
                     std::string GetContext() const;
 
                     /**
-                     * 设置加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容
-                     * @param Context 加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容
+                     * 设置加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时
+                     * @param Context 加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时
                      */
                     void SetContext(const std::string& _context);
 
@@ -219,7 +219,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容
+                     * 加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时
                      */
                     std::string m_context;
                     bool m_contextHasBeenSet;
