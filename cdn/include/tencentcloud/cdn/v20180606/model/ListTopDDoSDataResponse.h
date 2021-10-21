@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cdn/v20180606/model/DDoSTopData.h>
+#include <tencentcloud/cdn/v20180606/model/DDoSAttackIPTopData.h>
 
 
 namespace TencentCloud
@@ -45,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取DDoS Top数据
-                     * @return Data DDoS Top数据
+                     * 获取DDoS 攻击类型的top数据，当Metric=AttackType的时候返回攻击类型的统计数据，IPData为空
+                     * @return Data DDoS 攻击类型的top数据，当Metric=AttackType的时候返回攻击类型的统计数据，IPData为空
                      */
                     std::vector<DDoSTopData> GetData() const;
 
@@ -56,13 +57,31 @@ namespace TencentCloud
                      */
                     bool DataHasBeenSet() const;
 
+                    /**
+                     * 获取ddos攻击ip的top数据，Metric=AttackIP的时候返回IPData，Data为空
+                     * @return IPData ddos攻击ip的top数据，Metric=AttackIP的时候返回IPData，Data为空
+                     */
+                    std::vector<DDoSAttackIPTopData> GetIPData() const;
+
+                    /**
+                     * 判断参数 IPData 是否已赋值
+                     * @return IPData 是否已赋值
+                     */
+                    bool IPDataHasBeenSet() const;
+
                 private:
 
                     /**
-                     * DDoS Top数据
+                     * DDoS 攻击类型的top数据，当Metric=AttackType的时候返回攻击类型的统计数据，IPData为空
                      */
                     std::vector<DDoSTopData> m_data;
                     bool m_dataHasBeenSet;
+
+                    /**
+                     * ddos攻击ip的top数据，Metric=AttackIP的时候返回IPData，Data为空
+                     */
+                    std::vector<DDoSAttackIPTopData> m_iPData;
+                    bool m_iPDataHasBeenSet;
 
                 };
             }

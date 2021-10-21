@@ -25,7 +25,8 @@ using namespace std;
 ListTopDDoSDataRequest::ListTopDDoSDataRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_topCountHasBeenSet(false)
+    m_topCountHasBeenSet(false),
+    m_metricHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string ListTopDDoSDataRequest::ToJsonString() const
         string key = "TopCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_topCount, allocator);
+    }
+
+    if (m_metricHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Metric";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_metric.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void ListTopDDoSDataRequest::SetTopCount(const uint64_t& _topCount)
 bool ListTopDDoSDataRequest::TopCountHasBeenSet() const
 {
     return m_topCountHasBeenSet;
+}
+
+string ListTopDDoSDataRequest::GetMetric() const
+{
+    return m_metric;
+}
+
+void ListTopDDoSDataRequest::SetMetric(const string& _metric)
+{
+    m_metric = _metric;
+    m_metricHasBeenSet = true;
+}
+
+bool ListTopDDoSDataRequest::MetricHasBeenSet() const
+{
+    return m_metricHasBeenSet;
 }
 
 

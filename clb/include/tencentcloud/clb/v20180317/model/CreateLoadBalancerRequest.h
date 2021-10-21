@@ -488,6 +488,24 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     bool EipAddressIdHasBeenSet() const;
 
+                    /**
+                     * 获取Target是否放通来自CLB的流量。开启放通（true）：只验证CLB上的安全组；不开启放通（false）：需同时验证CLB和后端实例上的安全组。
+                     * @return LoadBalancerPassToTarget Target是否放通来自CLB的流量。开启放通（true）：只验证CLB上的安全组；不开启放通（false）：需同时验证CLB和后端实例上的安全组。
+                     */
+                    bool GetLoadBalancerPassToTarget() const;
+
+                    /**
+                     * 设置Target是否放通来自CLB的流量。开启放通（true）：只验证CLB上的安全组；不开启放通（false）：需同时验证CLB和后端实例上的安全组。
+                     * @param LoadBalancerPassToTarget Target是否放通来自CLB的流量。开启放通（true）：只验证CLB上的安全组；不开启放通（false）：需同时验证CLB和后端实例上的安全组。
+                     */
+                    void SetLoadBalancerPassToTarget(const bool& _loadBalancerPassToTarget);
+
+                    /**
+                     * 判断参数 LoadBalancerPassToTarget 是否已赋值
+                     * @return LoadBalancerPassToTarget 是否已赋值
+                     */
+                    bool LoadBalancerPassToTargetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -634,6 +652,12 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     std::string m_eipAddressId;
                     bool m_eipAddressIdHasBeenSet;
+
+                    /**
+                     * Target是否放通来自CLB的流量。开启放通（true）：只验证CLB上的安全组；不开启放通（false）：需同时验证CLB和后端实例上的安全组。
+                     */
+                    bool m_loadBalancerPassToTarget;
+                    bool m_loadBalancerPassToTargetHasBeenSet;
 
                 };
             }

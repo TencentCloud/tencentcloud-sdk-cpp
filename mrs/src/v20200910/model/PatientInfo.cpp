@@ -36,7 +36,12 @@ PatientInfo::PatientInfo() :
     m_educationBackgroundHasBeenSet(false),
     m_nationalityHasBeenSet(false),
     m_birthPlaceHasBeenSet(false),
-    m_medicalInsuranceTypeHasBeenSet(false)
+    m_medicalInsuranceTypeHasBeenSet(false),
+    m_ageNormHasBeenSet(false),
+    m_nationHasBeenSet(false),
+    m_marriedCodeHasBeenSet(false),
+    m_professionCodeHasBeenSet(false),
+    m_medicalInsuranceTypeCodeHasBeenSet(false)
 {
 }
 
@@ -205,6 +210,56 @@ CoreInternalOutcome PatientInfo::Deserialize(const rapidjson::Value &value)
         m_medicalInsuranceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("AgeNorm") && !value["AgeNorm"].IsNull())
+    {
+        if (!value["AgeNorm"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PatientInfo.AgeNorm` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ageNorm = string(value["AgeNorm"].GetString());
+        m_ageNormHasBeenSet = true;
+    }
+
+    if (value.HasMember("Nation") && !value["Nation"].IsNull())
+    {
+        if (!value["Nation"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PatientInfo.Nation` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nation = string(value["Nation"].GetString());
+        m_nationHasBeenSet = true;
+    }
+
+    if (value.HasMember("MarriedCode") && !value["MarriedCode"].IsNull())
+    {
+        if (!value["MarriedCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PatientInfo.MarriedCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_marriedCode = string(value["MarriedCode"].GetString());
+        m_marriedCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProfessionCode") && !value["ProfessionCode"].IsNull())
+    {
+        if (!value["ProfessionCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PatientInfo.ProfessionCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_professionCode = string(value["ProfessionCode"].GetString());
+        m_professionCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("MedicalInsuranceTypeCode") && !value["MedicalInsuranceTypeCode"].IsNull())
+    {
+        if (!value["MedicalInsuranceTypeCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PatientInfo.MedicalInsuranceTypeCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_medicalInsuranceTypeCode = string(value["MedicalInsuranceTypeCode"].GetString());
+        m_medicalInsuranceTypeCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +393,46 @@ void PatientInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "MedicalInsuranceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_medicalInsuranceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ageNormHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgeNorm";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ageNorm.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Nation";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nation.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_marriedCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MarriedCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_marriedCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_professionCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProfessionCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_professionCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_medicalInsuranceTypeCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MedicalInsuranceTypeCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_medicalInsuranceTypeCode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -597,5 +692,85 @@ void PatientInfo::SetMedicalInsuranceType(const string& _medicalInsuranceType)
 bool PatientInfo::MedicalInsuranceTypeHasBeenSet() const
 {
     return m_medicalInsuranceTypeHasBeenSet;
+}
+
+string PatientInfo::GetAgeNorm() const
+{
+    return m_ageNorm;
+}
+
+void PatientInfo::SetAgeNorm(const string& _ageNorm)
+{
+    m_ageNorm = _ageNorm;
+    m_ageNormHasBeenSet = true;
+}
+
+bool PatientInfo::AgeNormHasBeenSet() const
+{
+    return m_ageNormHasBeenSet;
+}
+
+string PatientInfo::GetNation() const
+{
+    return m_nation;
+}
+
+void PatientInfo::SetNation(const string& _nation)
+{
+    m_nation = _nation;
+    m_nationHasBeenSet = true;
+}
+
+bool PatientInfo::NationHasBeenSet() const
+{
+    return m_nationHasBeenSet;
+}
+
+string PatientInfo::GetMarriedCode() const
+{
+    return m_marriedCode;
+}
+
+void PatientInfo::SetMarriedCode(const string& _marriedCode)
+{
+    m_marriedCode = _marriedCode;
+    m_marriedCodeHasBeenSet = true;
+}
+
+bool PatientInfo::MarriedCodeHasBeenSet() const
+{
+    return m_marriedCodeHasBeenSet;
+}
+
+string PatientInfo::GetProfessionCode() const
+{
+    return m_professionCode;
+}
+
+void PatientInfo::SetProfessionCode(const string& _professionCode)
+{
+    m_professionCode = _professionCode;
+    m_professionCodeHasBeenSet = true;
+}
+
+bool PatientInfo::ProfessionCodeHasBeenSet() const
+{
+    return m_professionCodeHasBeenSet;
+}
+
+string PatientInfo::GetMedicalInsuranceTypeCode() const
+{
+    return m_medicalInsuranceTypeCode;
+}
+
+void PatientInfo::SetMedicalInsuranceTypeCode(const string& _medicalInsuranceTypeCode)
+{
+    m_medicalInsuranceTypeCode = _medicalInsuranceTypeCode;
+    m_medicalInsuranceTypeCodeHasBeenSet = true;
+}
+
+bool PatientInfo::MedicalInsuranceTypeCodeHasBeenSet() const
+{
+    return m_medicalInsuranceTypeCodeHasBeenSet;
 }
 

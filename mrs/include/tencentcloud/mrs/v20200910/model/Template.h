@@ -35,6 +35,7 @@
 #include <tencentcloud/mrs/v20200910/model/MedicalRecordInfo.h>
 #include <tencentcloud/mrs/v20200910/model/Hospitalization.h>
 #include <tencentcloud/mrs/v20200910/model/Surgery.h>
+#include <tencentcloud/mrs/v20200910/model/Electrocardiogram.h>
 
 
 namespace TencentCloud
@@ -321,6 +322,28 @@ namespace TencentCloud
                      */
                     bool SurgeryHasBeenSet() const;
 
+                    /**
+                     * 获取心电图报告
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Electrocardiogram 心电图报告
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Electrocardiogram GetElectrocardiogram() const;
+
+                    /**
+                     * 设置心电图报告
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Electrocardiogram 心电图报告
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetElectrocardiogram(const Electrocardiogram& _electrocardiogram);
+
+                    /**
+                     * 判断参数 Electrocardiogram 是否已赋值
+                     * @return Electrocardiogram 是否已赋值
+                     */
+                    bool ElectrocardiogramHasBeenSet() const;
+
                 private:
 
                     /**
@@ -406,6 +429,13 @@ namespace TencentCloud
                      */
                     Surgery m_surgery;
                     bool m_surgeryHasBeenSet;
+
+                    /**
+                     * 心电图报告
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Electrocardiogram m_electrocardiogram;
+                    bool m_electrocardiogramHasBeenSet;
 
                 };
             }

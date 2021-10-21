@@ -398,6 +398,116 @@ namespace TencentCloud
                      */
                     bool MedicalInsuranceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取标准化年龄
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AgeNorm 标准化年龄
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAgeNorm() const;
+
+                    /**
+                     * 设置标准化年龄
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AgeNorm 标准化年龄
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAgeNorm(const std::string& _ageNorm);
+
+                    /**
+                     * 判断参数 AgeNorm 是否已赋值
+                     * @return AgeNorm 是否已赋值
+                     */
+                    bool AgeNormHasBeenSet() const;
+
+                    /**
+                     * 获取民族
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Nation 民族
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetNation() const;
+
+                    /**
+                     * 设置民族
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Nation 民族
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNation(const std::string& _nation);
+
+                    /**
+                     * 判断参数 Nation 是否已赋值
+                     * @return Nation 是否已赋值
+                     */
+                    bool NationHasBeenSet() const;
+
+                    /**
+                     * 获取婚姻代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MarriedCode 婚姻代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMarriedCode() const;
+
+                    /**
+                     * 设置婚姻代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MarriedCode 婚姻代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMarriedCode(const std::string& _marriedCode);
+
+                    /**
+                     * 判断参数 MarriedCode 是否已赋值
+                     * @return MarriedCode 是否已赋值
+                     */
+                    bool MarriedCodeHasBeenSet() const;
+
+                    /**
+                     * 获取职业代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProfessionCode 职业代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProfessionCode() const;
+
+                    /**
+                     * 设置职业代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProfessionCode 职业代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProfessionCode(const std::string& _professionCode);
+
+                    /**
+                     * 判断参数 ProfessionCode 是否已赋值
+                     * @return ProfessionCode 是否已赋值
+                     */
+                    bool ProfessionCodeHasBeenSet() const;
+
+                    /**
+                     * 获取居民医保代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MedicalInsuranceTypeCode 居民医保代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMedicalInsuranceTypeCode() const;
+
+                    /**
+                     * 设置居民医保代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MedicalInsuranceTypeCode 居民医保代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMedicalInsuranceTypeCode(const std::string& _medicalInsuranceTypeCode);
+
+                    /**
+                     * 判断参数 MedicalInsuranceTypeCode 是否已赋值
+                     * @return MedicalInsuranceTypeCode 是否已赋值
+                     */
+                    bool MedicalInsuranceTypeCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -511,6 +621,41 @@ namespace TencentCloud
                      */
                     std::string m_medicalInsuranceType;
                     bool m_medicalInsuranceTypeHasBeenSet;
+
+                    /**
+                     * 标准化年龄
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ageNorm;
+                    bool m_ageNormHasBeenSet;
+
+                    /**
+                     * 民族
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_nation;
+                    bool m_nationHasBeenSet;
+
+                    /**
+                     * 婚姻代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_marriedCode;
+                    bool m_marriedCodeHasBeenSet;
+
+                    /**
+                     * 职业代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_professionCode;
+                    bool m_professionCodeHasBeenSet;
+
+                    /**
+                     * 居民医保代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_medicalInsuranceTypeCode;
+                    bool m_medicalInsuranceTypeCodeHasBeenSet;
 
                 };
             }

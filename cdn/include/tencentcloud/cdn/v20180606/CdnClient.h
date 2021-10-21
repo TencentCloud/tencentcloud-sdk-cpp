@@ -47,6 +47,8 @@
 #include <tencentcloud/cdn/v20180606/model/DeleteScdnDomainResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeBillingDataRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeBillingDataResponse.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeCcDataRequest.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeCcDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeCdnDataRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeCdnDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeCdnDomainLogsRequest.h>
@@ -57,6 +59,8 @@
 #include <tencentcloud/cdn/v20180606/model/DescribeCdnOriginIpResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeCertDomainsRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeCertDomainsResponse.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeDDoSDataRequest.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeDDoSDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeDiagnoseReportRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeDiagnoseReportResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeDistrictIspDataRequest.h>
@@ -65,6 +69,8 @@
 #include <tencentcloud/cdn/v20180606/model/DescribeDomainsResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeDomainsConfigRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeDomainsConfigResponse.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeEventLogDataRequest.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeEventLogDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeImageConfigRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeImageConfigResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeIpStatusRequest.h>
@@ -97,6 +103,8 @@
 #include <tencentcloud/cdn/v20180606/model/DescribeTrafficPackagesResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeUrlViolationsRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeUrlViolationsResponse.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeWafDataRequest.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeWafDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DisableCachesRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DisableCachesResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DisableClsLogTopicRequest.h>
@@ -123,6 +131,8 @@
 #include <tencentcloud/cdn/v20180606/model/ListTopBotDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ListTopCcDataRequest.h>
 #include <tencentcloud/cdn/v20180606/model/ListTopCcDataResponse.h>
+#include <tencentcloud/cdn/v20180606/model/ListTopClsLogDataRequest.h>
+#include <tencentcloud/cdn/v20180606/model/ListTopClsLogDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ListTopDDoSDataRequest.h>
 #include <tencentcloud/cdn/v20180606/model/ListTopDDoSDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ListTopDataRequest.h>
@@ -209,6 +219,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBillingDataResponse> DescribeBillingDataOutcome;
                 typedef std::future<DescribeBillingDataOutcome> DescribeBillingDataOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeBillingDataRequest&, DescribeBillingDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillingDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCcDataResponse> DescribeCcDataOutcome;
+                typedef std::future<DescribeCcDataOutcome> DescribeCcDataOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::DescribeCcDataRequest&, DescribeCcDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCcDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCdnDataResponse> DescribeCdnDataOutcome;
                 typedef std::future<DescribeCdnDataOutcome> DescribeCdnDataOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeCdnDataRequest&, DescribeCdnDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdnDataAsyncHandler;
@@ -224,6 +237,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCertDomainsResponse> DescribeCertDomainsOutcome;
                 typedef std::future<DescribeCertDomainsOutcome> DescribeCertDomainsOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeCertDomainsRequest&, DescribeCertDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCertDomainsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDDoSDataResponse> DescribeDDoSDataOutcome;
+                typedef std::future<DescribeDDoSDataOutcome> DescribeDDoSDataOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::DescribeDDoSDataRequest&, DescribeDDoSDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDDoSDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDiagnoseReportResponse> DescribeDiagnoseReportOutcome;
                 typedef std::future<DescribeDiagnoseReportOutcome> DescribeDiagnoseReportOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeDiagnoseReportRequest&, DescribeDiagnoseReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiagnoseReportAsyncHandler;
@@ -236,6 +252,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDomainsConfigResponse> DescribeDomainsConfigOutcome;
                 typedef std::future<DescribeDomainsConfigOutcome> DescribeDomainsConfigOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeDomainsConfigRequest&, DescribeDomainsConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainsConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEventLogDataResponse> DescribeEventLogDataOutcome;
+                typedef std::future<DescribeEventLogDataOutcome> DescribeEventLogDataOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::DescribeEventLogDataRequest&, DescribeEventLogDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventLogDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeImageConfigResponse> DescribeImageConfigOutcome;
                 typedef std::future<DescribeImageConfigOutcome> DescribeImageConfigOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeImageConfigRequest&, DescribeImageConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageConfigAsyncHandler;
@@ -284,6 +303,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUrlViolationsResponse> DescribeUrlViolationsOutcome;
                 typedef std::future<DescribeUrlViolationsOutcome> DescribeUrlViolationsOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeUrlViolationsRequest&, DescribeUrlViolationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUrlViolationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWafDataResponse> DescribeWafDataOutcome;
+                typedef std::future<DescribeWafDataOutcome> DescribeWafDataOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::DescribeWafDataRequest&, DescribeWafDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWafDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisableCachesResponse> DisableCachesOutcome;
                 typedef std::future<DisableCachesOutcome> DisableCachesOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DisableCachesRequest&, DisableCachesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableCachesAsyncHandler;
@@ -323,6 +345,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListTopCcDataResponse> ListTopCcDataOutcome;
                 typedef std::future<ListTopCcDataOutcome> ListTopCcDataOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::ListTopCcDataRequest&, ListTopCcDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTopCcDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListTopClsLogDataResponse> ListTopClsLogDataOutcome;
+                typedef std::future<ListTopClsLogDataOutcome> ListTopClsLogDataOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::ListTopClsLogDataRequest&, ListTopClsLogDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTopClsLogDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListTopDDoSDataResponse> ListTopDDoSDataOutcome;
                 typedef std::future<ListTopDDoSDataOutcome> ListTopDDoSDataOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::ListTopDDoSDataRequest&, ListTopDDoSDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTopDDoSDataAsyncHandler;
@@ -489,6 +514,15 @@ namespace TencentCloud
                 DescribeBillingDataOutcomeCallable DescribeBillingDataCallable(const Model::DescribeBillingDataRequest& request);
 
                 /**
+                 *CC统计数据查询
+                 * @param req DescribeCcDataRequest
+                 * @return DescribeCcDataOutcome
+                 */
+                DescribeCcDataOutcome DescribeCcData(const Model::DescribeCcDataRequest &request);
+                void DescribeCcDataAsync(const Model::DescribeCcDataRequest& request, const DescribeCcDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCcDataOutcomeCallable DescribeCcDataCallable(const Model::DescribeCcDataRequest& request);
+
+                /**
                  *DescribeCdnData 用于查询 CDN 实时访问监控数据，支持以下指标查询：
 
 + 流量（单位为 byte）
@@ -547,6 +581,15 @@ namespace TencentCloud
                 DescribeCertDomainsOutcomeCallable DescribeCertDomainsCallable(const Model::DescribeCertDomainsRequest& request);
 
                 /**
+                 *DDoS统计数据查询
+                 * @param req DescribeDDoSDataRequest
+                 * @return DescribeDDoSDataOutcome
+                 */
+                DescribeDDoSDataOutcome DescribeDDoSData(const Model::DescribeDDoSDataRequest &request);
+                void DescribeDDoSDataAsync(const Model::DescribeDDoSDataRequest& request, const DescribeDDoSDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDDoSDataOutcomeCallable DescribeDDoSDataCallable(const Model::DescribeDDoSDataRequest& request);
+
+                /**
                  *DescribeDiagnoseReport 用于获取指定报告id的内容
                  * @param req DescribeDiagnoseReportRequest
                  * @return DescribeDiagnoseReportOutcome
@@ -582,6 +625,15 @@ namespace TencentCloud
                 DescribeDomainsConfigOutcome DescribeDomainsConfig(const Model::DescribeDomainsConfigRequest &request);
                 void DescribeDomainsConfigAsync(const Model::DescribeDomainsConfigRequest& request, const DescribeDomainsConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDomainsConfigOutcomeCallable DescribeDomainsConfigCallable(const Model::DescribeDomainsConfigRequest& request);
+
+                /**
+                 *DescribeEventLogData 用于查询事件日志统计曲线
+                 * @param req DescribeEventLogDataRequest
+                 * @return DescribeEventLogDataOutcome
+                 */
+                DescribeEventLogDataOutcome DescribeEventLogData(const Model::DescribeEventLogDataRequest &request);
+                void DescribeEventLogDataAsync(const Model::DescribeEventLogDataRequest& request, const DescribeEventLogDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEventLogDataOutcomeCallable DescribeEventLogDataCallable(const Model::DescribeEventLogDataRequest& request);
 
                 /**
                  *DescribeImageConfig 用于获取域名图片优化的当前配置，支持Webp、TPG 和 Guetzli。 
@@ -743,6 +795,15 @@ namespace TencentCloud
                 DescribeUrlViolationsOutcomeCallable DescribeUrlViolationsCallable(const Model::DescribeUrlViolationsRequest& request);
 
                 /**
+                 *Waf统计数据查询
+                 * @param req DescribeWafDataRequest
+                 * @return DescribeWafDataOutcome
+                 */
+                DescribeWafDataOutcome DescribeWafData(const Model::DescribeWafDataRequest &request);
+                void DescribeWafDataAsync(const Model::DescribeWafDataRequest& request, const DescribeWafDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWafDataOutcomeCallable DescribeWafDataCallable(const Model::DescribeWafDataRequest& request);
+
+                /**
                  *DisableCaches 用于禁用 CDN 上指定 URL 的访问，禁用完成后，中国境内访问会直接返回 403。（注：接口尚在内测中，暂未全量开放；封禁URL并非无限期永久封禁）
                  * @param req DisableCachesRequest
                  * @return DisableCachesOutcome
@@ -859,6 +920,15 @@ namespace TencentCloud
                 ListTopCcDataOutcome ListTopCcData(const Model::ListTopCcDataRequest &request);
                 void ListTopCcDataAsync(const Model::ListTopCcDataRequest& request, const ListTopCcDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListTopCcDataOutcomeCallable ListTopCcDataCallable(const Model::ListTopCcDataRequest& request);
+
+                /**
+                 *通过CLS日志计算Top信息。支持近7天的日志数据。
+                 * @param req ListTopClsLogDataRequest
+                 * @return ListTopClsLogDataOutcome
+                 */
+                ListTopClsLogDataOutcome ListTopClsLogData(const Model::ListTopClsLogDataRequest &request);
+                void ListTopClsLogDataAsync(const Model::ListTopClsLogDataRequest& request, const ListTopClsLogDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListTopClsLogDataOutcomeCallable ListTopClsLogDataCallable(const Model::ListTopClsLogDataRequest& request);
 
                 /**
                  *获取DDoS攻击Top数据

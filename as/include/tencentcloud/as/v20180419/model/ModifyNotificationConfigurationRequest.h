@@ -120,6 +120,42 @@ namespace TencentCloud
                      */
                     bool NotificationUserGroupIdsHasBeenSet() const;
 
+                    /**
+                     * 获取CMQ 队列名。
+                     * @return QueueName CMQ 队列名。
+                     */
+                    std::string GetQueueName() const;
+
+                    /**
+                     * 设置CMQ 队列名。
+                     * @param QueueName CMQ 队列名。
+                     */
+                    void SetQueueName(const std::string& _queueName);
+
+                    /**
+                     * 判断参数 QueueName 是否已赋值
+                     * @return QueueName 是否已赋值
+                     */
+                    bool QueueNameHasBeenSet() const;
+
+                    /**
+                     * 获取CMQ 主题名。
+                     * @return TopicName CMQ 主题名。
+                     */
+                    std::string GetTopicName() const;
+
+                    /**
+                     * 设置CMQ 主题名。
+                     * @param TopicName CMQ 主题名。
+                     */
+                    void SetTopicName(const std::string& _topicName);
+
+                    /**
+                     * 判断参数 TopicName 是否已赋值
+                     * @return TopicName 是否已赋值
+                     */
+                    bool TopicNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -145,6 +181,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_notificationUserGroupIds;
                     bool m_notificationUserGroupIdsHasBeenSet;
+
+                    /**
+                     * CMQ 队列名。
+                     */
+                    std::string m_queueName;
+                    bool m_queueNameHasBeenSet;
+
+                    /**
+                     * CMQ 主题名。
+                     */
+                    std::string m_topicName;
+                    bool m_topicNameHasBeenSet;
 
                 };
             }

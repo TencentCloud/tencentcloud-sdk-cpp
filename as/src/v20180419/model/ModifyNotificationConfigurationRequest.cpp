@@ -25,7 +25,9 @@ using namespace std;
 ModifyNotificationConfigurationRequest::ModifyNotificationConfigurationRequest() :
     m_autoScalingNotificationIdHasBeenSet(false),
     m_notificationTypesHasBeenSet(false),
-    m_notificationUserGroupIdsHasBeenSet(false)
+    m_notificationUserGroupIdsHasBeenSet(false),
+    m_queueNameHasBeenSet(false),
+    m_topicNameHasBeenSet(false)
 {
 }
 
@@ -68,6 +70,22 @@ string ModifyNotificationConfigurationRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_queueNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueueName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_queueName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_topicNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_topicName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -124,6 +142,38 @@ void ModifyNotificationConfigurationRequest::SetNotificationUserGroupIds(const v
 bool ModifyNotificationConfigurationRequest::NotificationUserGroupIdsHasBeenSet() const
 {
     return m_notificationUserGroupIdsHasBeenSet;
+}
+
+string ModifyNotificationConfigurationRequest::GetQueueName() const
+{
+    return m_queueName;
+}
+
+void ModifyNotificationConfigurationRequest::SetQueueName(const string& _queueName)
+{
+    m_queueName = _queueName;
+    m_queueNameHasBeenSet = true;
+}
+
+bool ModifyNotificationConfigurationRequest::QueueNameHasBeenSet() const
+{
+    return m_queueNameHasBeenSet;
+}
+
+string ModifyNotificationConfigurationRequest::GetTopicName() const
+{
+    return m_topicName;
+}
+
+void ModifyNotificationConfigurationRequest::SetTopicName(const string& _topicName)
+{
+    m_topicName = _topicName;
+    m_topicNameHasBeenSet = true;
+}
+
+bool ModifyNotificationConfigurationRequest::TopicNameHasBeenSet() const
+{
+    return m_topicNameHasBeenSet;
 }
 
 

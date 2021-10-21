@@ -85,8 +85,6 @@
 #include <tencentcloud/cwp/v20180228/model/DeleteWebPageEventLogResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAccountStatisticsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAccountStatisticsResponse.h>
-#include <tencentcloud/cwp/v20180228/model/DescribeAccountsRequest.h>
-#include <tencentcloud/cwp/v20180228/model/DescribeAccountsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAssetAppListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAssetAppListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAssetAppProcessListRequest.h>
@@ -556,9 +554,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAccountStatisticsResponse> DescribeAccountStatisticsOutcome;
                 typedef std::future<DescribeAccountStatisticsOutcome> DescribeAccountStatisticsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeAccountStatisticsRequest&, DescribeAccountStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountStatisticsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeAccountsResponse> DescribeAccountsOutcome;
-                typedef std::future<DescribeAccountsOutcome> DescribeAccountsOutcomeCallable;
-                typedef std::function<void(const CwpClient*, const Model::DescribeAccountsRequest&, DescribeAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAssetAppListResponse> DescribeAssetAppListOutcome;
                 typedef std::future<DescribeAssetAppListOutcome> DescribeAssetAppListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeAssetAppListRequest&, DescribeAssetAppListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetAppListAsyncHandler;
@@ -1383,17 +1378,6 @@ namespace TencentCloud
                 DescribeAccountStatisticsOutcome DescribeAccountStatistics(const Model::DescribeAccountStatisticsRequest &request);
                 void DescribeAccountStatisticsAsync(const Model::DescribeAccountStatisticsRequest& request, const DescribeAccountStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAccountStatisticsOutcomeCallable DescribeAccountStatisticsCallable(const Model::DescribeAccountStatisticsRequest& request);
-
-                /**
-                 *该接口已废弃
-
-本接口 (DescribeAccounts) 用于获取帐号列表数据。
-                 * @param req DescribeAccountsRequest
-                 * @return DescribeAccountsOutcome
-                 */
-                DescribeAccountsOutcome DescribeAccounts(const Model::DescribeAccountsRequest &request);
-                void DescribeAccountsAsync(const Model::DescribeAccountsRequest& request, const DescribeAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeAccountsOutcomeCallable DescribeAccountsCallable(const Model::DescribeAccountsRequest& request);
 
                 /**
                  *查询应用列表

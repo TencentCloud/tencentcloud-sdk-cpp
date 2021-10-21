@@ -26,7 +26,8 @@ DeleteInternalEndpointDnsRequest::DeleteInternalEndpointDnsRequest() :
     m_instanceIdHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_eniLBIpHasBeenSet(false),
-    m_usePublicDomainHasBeenSet(false)
+    m_usePublicDomainHasBeenSet(false),
+    m_regionNameHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DeleteInternalEndpointDnsRequest::ToJsonString() const
         string key = "UsePublicDomain";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_usePublicDomain, allocator);
+    }
+
+    if (m_regionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_regionName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DeleteInternalEndpointDnsRequest::SetUsePublicDomain(const bool& _usePublic
 bool DeleteInternalEndpointDnsRequest::UsePublicDomainHasBeenSet() const
 {
     return m_usePublicDomainHasBeenSet;
+}
+
+string DeleteInternalEndpointDnsRequest::GetRegionName() const
+{
+    return m_regionName;
+}
+
+void DeleteInternalEndpointDnsRequest::SetRegionName(const string& _regionName)
+{
+    m_regionName = _regionName;
+    m_regionNameHasBeenSet = true;
+}
+
+bool DeleteInternalEndpointDnsRequest::RegionNameHasBeenSet() const
+{
+    return m_regionNameHasBeenSet;
 }
 
 

@@ -25,7 +25,10 @@ using namespace std;
 CreateNotificationConfigurationRequest::CreateNotificationConfigurationRequest() :
     m_autoScalingGroupIdHasBeenSet(false),
     m_notificationTypesHasBeenSet(false),
-    m_notificationUserGroupIdsHasBeenSet(false)
+    m_notificationUserGroupIdsHasBeenSet(false),
+    m_targetTypeHasBeenSet(false),
+    m_queueNameHasBeenSet(false),
+    m_topicNameHasBeenSet(false)
 {
 }
 
@@ -68,6 +71,30 @@ string CreateNotificationConfigurationRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_targetTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_targetType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queueNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueueName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_queueName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_topicNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_topicName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -124,6 +151,54 @@ void CreateNotificationConfigurationRequest::SetNotificationUserGroupIds(const v
 bool CreateNotificationConfigurationRequest::NotificationUserGroupIdsHasBeenSet() const
 {
     return m_notificationUserGroupIdsHasBeenSet;
+}
+
+string CreateNotificationConfigurationRequest::GetTargetType() const
+{
+    return m_targetType;
+}
+
+void CreateNotificationConfigurationRequest::SetTargetType(const string& _targetType)
+{
+    m_targetType = _targetType;
+    m_targetTypeHasBeenSet = true;
+}
+
+bool CreateNotificationConfigurationRequest::TargetTypeHasBeenSet() const
+{
+    return m_targetTypeHasBeenSet;
+}
+
+string CreateNotificationConfigurationRequest::GetQueueName() const
+{
+    return m_queueName;
+}
+
+void CreateNotificationConfigurationRequest::SetQueueName(const string& _queueName)
+{
+    m_queueName = _queueName;
+    m_queueNameHasBeenSet = true;
+}
+
+bool CreateNotificationConfigurationRequest::QueueNameHasBeenSet() const
+{
+    return m_queueNameHasBeenSet;
+}
+
+string CreateNotificationConfigurationRequest::GetTopicName() const
+{
+    return m_topicName;
+}
+
+void CreateNotificationConfigurationRequest::SetTopicName(const string& _topicName)
+{
+    m_topicName = _topicName;
+    m_topicNameHasBeenSet = true;
+}
+
+bool CreateNotificationConfigurationRequest::TopicNameHasBeenSet() const
+{
+    return m_topicNameHasBeenSet;
 }
 
 

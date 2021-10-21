@@ -100,6 +100,24 @@ namespace TencentCloud
                      */
                     bool TopCountHasBeenSet() const;
 
+                    /**
+                     * 获取AttackIP表示查询攻击ip的top排行，AttackType表示攻击类型的top排行，为空默认为AttackType
+                     * @return Metric AttackIP表示查询攻击ip的top排行，AttackType表示攻击类型的top排行，为空默认为AttackType
+                     */
+                    std::string GetMetric() const;
+
+                    /**
+                     * 设置AttackIP表示查询攻击ip的top排行，AttackType表示攻击类型的top排行，为空默认为AttackType
+                     * @param Metric AttackIP表示查询攻击ip的top排行，AttackType表示攻击类型的top排行，为空默认为AttackType
+                     */
+                    void SetMetric(const std::string& _metric);
+
+                    /**
+                     * 判断参数 Metric 是否已赋值
+                     * @return Metric 是否已赋值
+                     */
+                    bool MetricHasBeenSet() const;
+
                 private:
 
                     /**
@@ -120,6 +138,12 @@ namespace TencentCloud
                      */
                     uint64_t m_topCount;
                     bool m_topCountHasBeenSet;
+
+                    /**
+                     * AttackIP表示查询攻击ip的top排行，AttackType表示攻击类型的top排行，为空默认为AttackType
+                     */
+                    std::string m_metric;
+                    bool m_metricHasBeenSet;
 
                 };
             }

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tdmq/v20200217/model/Filter.h>
 
 
 namespace TencentCloud
@@ -96,6 +97,42 @@ namespace TencentCloud
                      */
                     bool ClusterIdListHasBeenSet() const;
 
+                    /**
+                     * 获取是否标签过滤
+                     * @return IsTagFilter 是否标签过滤
+                     */
+                    bool GetIsTagFilter() const;
+
+                    /**
+                     * 设置是否标签过滤
+                     * @param IsTagFilter 是否标签过滤
+                     */
+                    void SetIsTagFilter(const bool& _isTagFilter);
+
+                    /**
+                     * 判断参数 IsTagFilter 是否已赋值
+                     * @return IsTagFilter 是否已赋值
+                     */
+                    bool IsTagFilterHasBeenSet() const;
+
+                    /**
+                     * 获取过滤器。目前支持按标签过滤。
+                     * @return Filters 过滤器。目前支持按标签过滤。
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置过滤器。目前支持按标签过滤。
+                     * @param Filters 过滤器。目前支持按标签过滤。
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +152,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_clusterIdList;
                     bool m_clusterIdListHasBeenSet;
+
+                    /**
+                     * 是否标签过滤
+                     */
+                    bool m_isTagFilter;
+                    bool m_isTagFilterHasBeenSet;
+
+                    /**
+                     * 过滤器。目前支持按标签过滤。
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

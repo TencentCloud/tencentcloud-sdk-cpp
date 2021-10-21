@@ -349,6 +349,24 @@ namespace TencentCloud
                      */
                     bool InstanceNodesHasBeenSet() const;
 
+                    /**
+                     * 获取置放群组 ID。
+                     * @return DeployGroupId 置放群组 ID。
+                     */
+                    std::string GetDeployGroupId() const;
+
+                    /**
+                     * 设置置放群组 ID。
+                     * @param DeployGroupId 置放群组 ID。
+                     */
+                    void SetDeployGroupId(const std::string& _deployGroupId);
+
+                    /**
+                     * 判断参数 DeployGroupId 是否已赋值
+                     * @return DeployGroupId 是否已赋值
+                     */
+                    bool DeployGroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -452,6 +470,12 @@ namespace TencentCloud
                      */
                     int64_t m_instanceNodes;
                     bool m_instanceNodesHasBeenSet;
+
+                    /**
+                     * 置放群组 ID。
+                     */
+                    std::string m_deployGroupId;
+                    bool m_deployGroupIdHasBeenSet;
 
                 };
             }

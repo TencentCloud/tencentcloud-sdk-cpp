@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tdmq/v20200217/model/Tag.h>
 
 
 namespace TencentCloud
@@ -249,14 +250,14 @@ namespace TencentCloud
                     bool MaxQpsHasBeenSet() const;
 
                     /**
-                     * 获取消息保留时间
-                     * @return MessageRetentionTime 消息保留时间
+                     * 获取最大消息保留时间，分钟为单位
+                     * @return MessageRetentionTime 最大消息保留时间，分钟为单位
                      */
                     int64_t GetMessageRetentionTime() const;
 
                     /**
-                     * 设置消息保留时间
-                     * @param MessageRetentionTime 消息保留时间
+                     * 设置最大消息保留时间，分钟为单位
+                     * @param MessageRetentionTime 最大消息保留时间，分钟为单位
                      */
                     void SetMessageRetentionTime(const int64_t& _messageRetentionTime);
 
@@ -394,6 +395,182 @@ namespace TencentCloud
                      */
                     bool UsedStorageBudgetHasBeenSet() const;
 
+                    /**
+                     * 获取最大生产消息速率，以条数为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxPublishRateInMessages 最大生产消息速率，以条数为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMaxPublishRateInMessages() const;
+
+                    /**
+                     * 设置最大生产消息速率，以条数为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxPublishRateInMessages 最大生产消息速率，以条数为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxPublishRateInMessages(const int64_t& _maxPublishRateInMessages);
+
+                    /**
+                     * 判断参数 MaxPublishRateInMessages 是否已赋值
+                     * @return MaxPublishRateInMessages 是否已赋值
+                     */
+                    bool MaxPublishRateInMessagesHasBeenSet() const;
+
+                    /**
+                     * 获取最大推送消息速率，以条数为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxDispatchRateInMessages 最大推送消息速率，以条数为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMaxDispatchRateInMessages() const;
+
+                    /**
+                     * 设置最大推送消息速率，以条数为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxDispatchRateInMessages 最大推送消息速率，以条数为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxDispatchRateInMessages(const int64_t& _maxDispatchRateInMessages);
+
+                    /**
+                     * 判断参数 MaxDispatchRateInMessages 是否已赋值
+                     * @return MaxDispatchRateInMessages 是否已赋值
+                     */
+                    bool MaxDispatchRateInMessagesHasBeenSet() const;
+
+                    /**
+                     * 获取最大生产消息速率，以字节为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxPublishRateInBytes 最大生产消息速率，以字节为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMaxPublishRateInBytes() const;
+
+                    /**
+                     * 设置最大生产消息速率，以字节为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxPublishRateInBytes 最大生产消息速率，以字节为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxPublishRateInBytes(const int64_t& _maxPublishRateInBytes);
+
+                    /**
+                     * 判断参数 MaxPublishRateInBytes 是否已赋值
+                     * @return MaxPublishRateInBytes 是否已赋值
+                     */
+                    bool MaxPublishRateInBytesHasBeenSet() const;
+
+                    /**
+                     * 获取最大推送消息速率，以字节为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxDispatchRateInBytes 最大推送消息速率，以字节为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMaxDispatchRateInBytes() const;
+
+                    /**
+                     * 设置最大推送消息速率，以字节为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxDispatchRateInBytes 最大推送消息速率，以字节为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxDispatchRateInBytes(const int64_t& _maxDispatchRateInBytes);
+
+                    /**
+                     * 判断参数 MaxDispatchRateInBytes 是否已赋值
+                     * @return MaxDispatchRateInBytes 是否已赋值
+                     */
+                    bool MaxDispatchRateInBytesHasBeenSet() const;
+
+                    /**
+                     * 获取已创建主题数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TopicNum 已创建主题数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetTopicNum() const;
+
+                    /**
+                     * 设置已创建主题数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TopicNum 已创建主题数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTopicNum(const int64_t& _topicNum);
+
+                    /**
+                     * 判断参数 TopicNum 是否已赋值
+                     * @return TopicNum 是否已赋值
+                     */
+                    bool TopicNumHasBeenSet() const;
+
+                    /**
+                     * 获取最长消息延时，以秒为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxMessageDelayInSeconds 最长消息延时，以秒为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMaxMessageDelayInSeconds() const;
+
+                    /**
+                     * 设置最长消息延时，以秒为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxMessageDelayInSeconds 最长消息延时，以秒为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxMessageDelayInSeconds(const int64_t& _maxMessageDelayInSeconds);
+
+                    /**
+                     * 判断参数 MaxMessageDelayInSeconds 是否已赋值
+                     * @return MaxMessageDelayInSeconds 是否已赋值
+                     */
+                    bool MaxMessageDelayInSecondsHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启公网访问，不填时默认开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PublicAccessEnabled 是否开启公网访问，不填时默认开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetPublicAccessEnabled() const;
+
+                    /**
+                     * 设置是否开启公网访问，不填时默认开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PublicAccessEnabled 是否开启公网访问，不填时默认开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPublicAccessEnabled(const bool& _publicAccessEnabled);
+
+                    /**
+                     * 判断参数 PublicAccessEnabled 是否已赋值
+                     * @return PublicAccessEnabled 是否已赋值
+                     */
+                    bool PublicAccessEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Tags 标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -464,7 +641,7 @@ namespace TencentCloud
                     bool m_maxQpsHasBeenSet;
 
                     /**
-                     * 消息保留时间
+                     * 最大消息保留时间，分钟为单位
                      */
                     int64_t m_messageRetentionTime;
                     bool m_messageRetentionTimeHasBeenSet;
@@ -509,6 +686,62 @@ namespace TencentCloud
                      */
                     int64_t m_usedStorageBudget;
                     bool m_usedStorageBudgetHasBeenSet;
+
+                    /**
+                     * 最大生产消息速率，以条数为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_maxPublishRateInMessages;
+                    bool m_maxPublishRateInMessagesHasBeenSet;
+
+                    /**
+                     * 最大推送消息速率，以条数为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_maxDispatchRateInMessages;
+                    bool m_maxDispatchRateInMessagesHasBeenSet;
+
+                    /**
+                     * 最大生产消息速率，以字节为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_maxPublishRateInBytes;
+                    bool m_maxPublishRateInBytesHasBeenSet;
+
+                    /**
+                     * 最大推送消息速率，以字节为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_maxDispatchRateInBytes;
+                    bool m_maxDispatchRateInBytesHasBeenSet;
+
+                    /**
+                     * 已创建主题数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_topicNum;
+                    bool m_topicNumHasBeenSet;
+
+                    /**
+                     * 最长消息延时，以秒为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_maxMessageDelayInSeconds;
+                    bool m_maxMessageDelayInSecondsHasBeenSet;
+
+                    /**
+                     * 是否开启公网访问，不填时默认开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_publicAccessEnabled;
+                    bool m_publicAccessEnabledHasBeenSet;
+
+                    /**
+                     * 标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

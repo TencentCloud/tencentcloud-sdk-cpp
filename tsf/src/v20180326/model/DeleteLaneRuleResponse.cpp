@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cwp/v20180228/model/DescribeAccountsResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DeleteLaneRuleResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cwp::V20180228::Model;
+using namespace TencentCloud::Tsf::V20180326::Model;
 using namespace std;
 
-DescribeAccountsResponse::DescribeAccountsResponse() :
-    m_totalCountHasBeenSet(false),
-    m_accountsHasBeenSet(false)
+DeleteLaneRuleResponse::DeleteLaneRuleResponse() :
+    m_resultHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeAccountsResponse::Deserialize(const string &payload)
+CoreInternalOutcome DeleteLaneRuleResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,67 +62,32 @@ CoreInternalOutcome DescribeAccountsResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
     {
-        if (!rsp["TotalCount"].IsUint64())
+        if (!rsp["Result"].IsBool())
         {
-            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Result` IsBool=false incorrectly").SetRequestId(requestId));
         }
-        m_totalCount = rsp["TotalCount"].GetUint64();
-        m_totalCountHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Accounts") && !rsp["Accounts"].IsNull())
-    {
-        if (!rsp["Accounts"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Accounts` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["Accounts"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            Account item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_accounts.push_back(item);
-        }
-        m_accountsHasBeenSet = true;
+        m_result = rsp["Result"].GetBool();
+        m_resultHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeAccountsResponse::ToJsonString() const
+string DeleteLaneRuleResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_totalCountHasBeenSet)
+    if (m_resultHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TotalCount";
+        string key = "Result";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_totalCount, allocator);
-    }
-
-    if (m_accountsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Accounts";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_accounts.begin(); itr != m_accounts.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, m_result, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -138,24 +102,14 @@ string DescribeAccountsResponse::ToJsonString() const
 }
 
 
-uint64_t DescribeAccountsResponse::GetTotalCount() const
+bool DeleteLaneRuleResponse::GetResult() const
 {
-    return m_totalCount;
+    return m_result;
 }
 
-bool DescribeAccountsResponse::TotalCountHasBeenSet() const
+bool DeleteLaneRuleResponse::ResultHasBeenSet() const
 {
-    return m_totalCountHasBeenSet;
-}
-
-vector<Account> DescribeAccountsResponse::GetAccounts() const
-{
-    return m_accounts;
-}
-
-bool DescribeAccountsResponse::AccountsHasBeenSet() const
-{
-    return m_accountsHasBeenSet;
+    return m_resultHasBeenSet;
 }
 
 

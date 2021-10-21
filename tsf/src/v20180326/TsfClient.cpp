@@ -1502,6 +1502,49 @@ TsfClient::DeleteLaneOutcomeCallable TsfClient::DeleteLaneCallable(const DeleteL
     return task->get_future();
 }
 
+TsfClient::DeleteLaneRuleOutcome TsfClient::DeleteLaneRule(const DeleteLaneRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLaneRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLaneRuleResponse rsp = DeleteLaneRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLaneRuleOutcome(rsp);
+        else
+            return DeleteLaneRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLaneRuleOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DeleteLaneRuleAsync(const DeleteLaneRuleRequest& request, const DeleteLaneRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteLaneRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DeleteLaneRuleOutcomeCallable TsfClient::DeleteLaneRuleCallable(const DeleteLaneRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteLaneRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteLaneRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DeleteMicroserviceOutcome TsfClient::DeleteMicroservice(const DeleteMicroserviceRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteMicroservice");
@@ -3129,6 +3172,49 @@ TsfClient::DescribeGatewayAllGroupApisOutcomeCallable TsfClient::DescribeGateway
         [this, request]()
         {
             return this->DescribeGatewayAllGroupApis(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeGatewayApisOutcome TsfClient::DescribeGatewayApis(const DescribeGatewayApisRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGatewayApis");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGatewayApisResponse rsp = DescribeGatewayApisResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGatewayApisOutcome(rsp);
+        else
+            return DescribeGatewayApisOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGatewayApisOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeGatewayApisAsync(const DescribeGatewayApisRequest& request, const DescribeGatewayApisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGatewayApis(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeGatewayApisOutcomeCallable TsfClient::DescribeGatewayApisCallable(const DescribeGatewayApisRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGatewayApisOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGatewayApis(request);
         }
     );
 

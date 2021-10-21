@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lighthouse/v20200324/model/InstancePrice.h>
+#include <tencentcloud/lighthouse/v20200324/model/DataDiskPrice.h>
 
 
 namespace TencentCloud
@@ -65,6 +66,24 @@ namespace TencentCloud
                      */
                     bool InstancePriceHasBeenSet() const;
 
+                    /**
+                     * 获取数据盘价格。
+                     * @return DataDiskPrices 数据盘价格。
+                     */
+                    std::vector<DataDiskPrice> GetDataDiskPrices() const;
+
+                    /**
+                     * 设置数据盘价格。
+                     * @param DataDiskPrices 数据盘价格。
+                     */
+                    void SetDataDiskPrices(const std::vector<DataDiskPrice>& _dataDiskPrices);
+
+                    /**
+                     * 判断参数 DataDiskPrices 是否已赋值
+                     * @return DataDiskPrices 是否已赋值
+                     */
+                    bool DataDiskPricesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -72,6 +91,12 @@ namespace TencentCloud
                      */
                     InstancePrice m_instancePrice;
                     bool m_instancePriceHasBeenSet;
+
+                    /**
+                     * 数据盘价格。
+                     */
+                    std::vector<DataDiskPrice> m_dataDiskPrices;
+                    bool m_dataDiskPricesHasBeenSet;
 
                 };
             }

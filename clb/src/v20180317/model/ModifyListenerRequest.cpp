@@ -32,7 +32,8 @@ ModifyListenerRequest::ModifyListenerRequest() :
     m_schedulerHasBeenSet(false),
     m_sniSwitchHasBeenSet(false),
     m_keepaliveEnableHasBeenSet(false),
-    m_deregisterTargetRstHasBeenSet(false)
+    m_deregisterTargetRstHasBeenSet(false),
+    m_sessionTypeHasBeenSet(false)
 {
 }
 
@@ -123,6 +124,14 @@ string ModifyListenerRequest::ToJsonString() const
         string key = "DeregisterTargetRst";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deregisterTargetRst, allocator);
+    }
+
+    if (m_sessionTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sessionType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -291,6 +300,22 @@ void ModifyListenerRequest::SetDeregisterTargetRst(const bool& _deregisterTarget
 bool ModifyListenerRequest::DeregisterTargetRstHasBeenSet() const
 {
     return m_deregisterTargetRstHasBeenSet;
+}
+
+string ModifyListenerRequest::GetSessionType() const
+{
+    return m_sessionType;
+}
+
+void ModifyListenerRequest::SetSessionType(const string& _sessionType)
+{
+    m_sessionType = _sessionType;
+    m_sessionTypeHasBeenSet = true;
+}
+
+bool ModifyListenerRequest::SessionTypeHasBeenSet() const
+{
+    return m_sessionTypeHasBeenSet;
 }
 
 

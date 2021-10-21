@@ -24,7 +24,8 @@ using namespace TencentCloud::Cdn::V20180606::Model;
 using namespace std;
 
 ListTopDDoSDataResponse::ListTopDDoSDataResponse() :
-    m_dataHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_iPDataHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,26 @@ CoreInternalOutcome ListTopDDoSDataResponse::Deserialize(const string &payload)
         m_dataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IPData") && !rsp["IPData"].IsNull())
+    {
+        if (!rsp["IPData"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `IPData` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["IPData"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DDoSAttackIPTopData item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_iPData.push_back(item);
+        }
+        m_iPDataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -101,6 +122,21 @@ string ListTopDDoSDataResponse::ToJsonString() const
 
         int i=0;
         for (auto itr = m_data.begin(); itr != m_data.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_iPDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_iPData.begin(); itr != m_iPData.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -127,6 +163,16 @@ vector<DDoSTopData> ListTopDDoSDataResponse::GetData() const
 bool ListTopDDoSDataResponse::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+vector<DDoSAttackIPTopData> ListTopDDoSDataResponse::GetIPData() const
+{
+    return m_iPData;
+}
+
+bool ListTopDDoSDataResponse::IPDataHasBeenSet() const
+{
+    return m_iPDataHasBeenSet;
 }
 
 

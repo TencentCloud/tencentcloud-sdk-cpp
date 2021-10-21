@@ -120,6 +120,60 @@ namespace TencentCloud
                      */
                     bool NotificationUserGroupIdsHasBeenSet() const;
 
+                    /**
+                     * 获取通知接收端类型，取值：`USER_GROUP`，`CMQ_QUEUE`，`CMQ_TOPIC`。默认值为：`USER_GROUP`。
+                     * @return TargetType 通知接收端类型，取值：`USER_GROUP`，`CMQ_QUEUE`，`CMQ_TOPIC`。默认值为：`USER_GROUP`。
+                     */
+                    std::string GetTargetType() const;
+
+                    /**
+                     * 设置通知接收端类型，取值：`USER_GROUP`，`CMQ_QUEUE`，`CMQ_TOPIC`。默认值为：`USER_GROUP`。
+                     * @param TargetType 通知接收端类型，取值：`USER_GROUP`，`CMQ_QUEUE`，`CMQ_TOPIC`。默认值为：`USER_GROUP`。
+                     */
+                    void SetTargetType(const std::string& _targetType);
+
+                    /**
+                     * 判断参数 TargetType 是否已赋值
+                     * @return TargetType 是否已赋值
+                     */
+                    bool TargetTypeHasBeenSet() const;
+
+                    /**
+                     * 获取CMQ 队列名称，如 TargetType 取值为 `CMQ_QUEUE`，该字段必填。
+                     * @return QueueName CMQ 队列名称，如 TargetType 取值为 `CMQ_QUEUE`，该字段必填。
+                     */
+                    std::string GetQueueName() const;
+
+                    /**
+                     * 设置CMQ 队列名称，如 TargetType 取值为 `CMQ_QUEUE`，该字段必填。
+                     * @param QueueName CMQ 队列名称，如 TargetType 取值为 `CMQ_QUEUE`，该字段必填。
+                     */
+                    void SetQueueName(const std::string& _queueName);
+
+                    /**
+                     * 判断参数 QueueName 是否已赋值
+                     * @return QueueName 是否已赋值
+                     */
+                    bool QueueNameHasBeenSet() const;
+
+                    /**
+                     * 获取CMQ 主题名称，如 TargetType 取值为 `CMQ_TOPIC`，该字段必填。
+                     * @return TopicName CMQ 主题名称，如 TargetType 取值为 `CMQ_TOPIC`，该字段必填。
+                     */
+                    std::string GetTopicName() const;
+
+                    /**
+                     * 设置CMQ 主题名称，如 TargetType 取值为 `CMQ_TOPIC`，该字段必填。
+                     * @param TopicName CMQ 主题名称，如 TargetType 取值为 `CMQ_TOPIC`，该字段必填。
+                     */
+                    void SetTopicName(const std::string& _topicName);
+
+                    /**
+                     * 判断参数 TopicName 是否已赋值
+                     * @return TopicName 是否已赋值
+                     */
+                    bool TopicNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -145,6 +199,24 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_notificationUserGroupIds;
                     bool m_notificationUserGroupIdsHasBeenSet;
+
+                    /**
+                     * 通知接收端类型，取值：`USER_GROUP`，`CMQ_QUEUE`，`CMQ_TOPIC`。默认值为：`USER_GROUP`。
+                     */
+                    std::string m_targetType;
+                    bool m_targetTypeHasBeenSet;
+
+                    /**
+                     * CMQ 队列名称，如 TargetType 取值为 `CMQ_QUEUE`，该字段必填。
+                     */
+                    std::string m_queueName;
+                    bool m_queueNameHasBeenSet;
+
+                    /**
+                     * CMQ 主题名称，如 TargetType 取值为 `CMQ_TOPIC`，该字段必填。
+                     */
+                    std::string m_topicName;
+                    bool m_topicNameHasBeenSet;
 
                 };
             }

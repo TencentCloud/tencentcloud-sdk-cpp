@@ -263,7 +263,6 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeAssetWebLocationInfoResponse.h
   include/tencentcloud/cwp/v20180228/model/ModifyBruteAttackRulesRequest.h
   include/tencentcloud/cwp/v20180228/model/ExportVulListRequest.h
-  include/tencentcloud/cwp/v20180228/model/DescribeAccountsResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeBaselineScanScheduleRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeEmergencyVulListResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeAssetUserListResponse.h
@@ -277,7 +276,6 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/AssetFilters.h
   include/tencentcloud/cwp/v20180228/model/DescribeAssetDatabaseInfoResponse.h
   include/tencentcloud/cwp/v20180228/model/SetBashEventsStatusRequest.h
-  include/tencentcloud/cwp/v20180228/model/DescribeAccountsRequest.h
   include/tencentcloud/cwp/v20180228/model/AssetAppProcessInfo.h
   include/tencentcloud/cwp/v20180228/model/DescribeBaselineStrategyListRequest.h
   include/tencentcloud/cwp/v20180228/model/RegionInfo.h
@@ -289,7 +287,6 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeAssetUserInfoRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeProtectDirListRequest.h
   include/tencentcloud/cwp/v20180228/model/ExportPrivilegeEventsRequest.h
-  include/tencentcloud/cwp/v20180228/model/Account.h
   include/tencentcloud/cwp/v20180228/model/DescribeMalwareFileResponse.h
   include/tencentcloud/cwp/v20180228/model/TaskStatus.h
   include/tencentcloud/cwp/v20180228/model/DescribeRiskDnsListResponse.h
@@ -801,7 +798,6 @@ set(cwp_src
   src/v20180228/model/DescribeAssetWebLocationInfoResponse.cpp
   src/v20180228/model/ModifyBruteAttackRulesRequest.cpp
   src/v20180228/model/ExportVulListRequest.cpp
-  src/v20180228/model/DescribeAccountsResponse.cpp
   src/v20180228/model/DescribeBaselineScanScheduleRequest.cpp
   src/v20180228/model/DescribeEmergencyVulListResponse.cpp
   src/v20180228/model/DescribeAssetUserListResponse.cpp
@@ -815,7 +811,6 @@ set(cwp_src
   src/v20180228/model/AssetFilters.cpp
   src/v20180228/model/DescribeAssetDatabaseInfoResponse.cpp
   src/v20180228/model/SetBashEventsStatusRequest.cpp
-  src/v20180228/model/DescribeAccountsRequest.cpp
   src/v20180228/model/AssetAppProcessInfo.cpp
   src/v20180228/model/DescribeBaselineStrategyListRequest.cpp
   src/v20180228/model/RegionInfo.cpp
@@ -827,7 +822,6 @@ set(cwp_src
   src/v20180228/model/DescribeAssetUserInfoRequest.cpp
   src/v20180228/model/DescribeProtectDirListRequest.cpp
   src/v20180228/model/ExportPrivilegeEventsRequest.cpp
-  src/v20180228/model/Account.cpp
   src/v20180228/model/DescribeMalwareFileResponse.cpp
   src/v20180228/model/TaskStatus.cpp
   src/v20180228/model/DescribeRiskDnsListResponse.cpp

@@ -27,6 +27,8 @@
 #include <tencentcloud/ecm/v20190719/model/InstanceTypeConfig.h>
 #include <tencentcloud/ecm/v20190719/model/Image.h>
 #include <tencentcloud/ecm/v20190719/model/Tag.h>
+#include <tencentcloud/ecm/v20190719/model/SystemDisk.h>
+#include <tencentcloud/ecm/v20190719/model/DataDisk.h>
 
 
 namespace TencentCloud
@@ -317,6 +319,42 @@ DELETEFAILED：删除失败。
                      */
                     bool UserDataHasBeenSet() const;
 
+                    /**
+                     * 获取系统盘信息。
+                     * @return SystemDisk 系统盘信息。
+                     */
+                    SystemDisk GetSystemDisk() const;
+
+                    /**
+                     * 设置系统盘信息。
+                     * @param SystemDisk 系统盘信息。
+                     */
+                    void SetSystemDisk(const SystemDisk& _systemDisk);
+
+                    /**
+                     * 判断参数 SystemDisk 是否已赋值
+                     * @return SystemDisk 是否已赋值
+                     */
+                    bool SystemDiskHasBeenSet() const;
+
+                    /**
+                     * 获取数据盘信息。
+                     * @return DataDisks 数据盘信息。
+                     */
+                    std::vector<DataDisk> GetDataDisks() const;
+
+                    /**
+                     * 设置数据盘信息。
+                     * @param DataDisks 数据盘信息。
+                     */
+                    void SetDataDisks(const std::vector<DataDisk>& _dataDisks);
+
+                    /**
+                     * 判断参数 DataDisks 是否已赋值
+                     * @return DataDisks 是否已赋值
+                     */
+                    bool DataDisksHasBeenSet() const;
+
                 private:
 
                     /**
@@ -406,6 +444,18 @@ DELETEFAILED：删除失败。
                      */
                     std::string m_userData;
                     bool m_userDataHasBeenSet;
+
+                    /**
+                     * 系统盘信息。
+                     */
+                    SystemDisk m_systemDisk;
+                    bool m_systemDiskHasBeenSet;
+
+                    /**
+                     * 数据盘信息。
+                     */
+                    std::vector<DataDisk> m_dataDisks;
+                    bool m_dataDisksHasBeenSet;
 
                 };
             }

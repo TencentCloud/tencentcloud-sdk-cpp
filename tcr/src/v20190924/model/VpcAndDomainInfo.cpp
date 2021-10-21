@@ -24,7 +24,8 @@ VpcAndDomainInfo::VpcAndDomainInfo() :
     m_instanceIdHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_eniLBIpHasBeenSet(false),
-    m_usePublicDomainHasBeenSet(false)
+    m_usePublicDomainHasBeenSet(false),
+    m_regionNameHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome VpcAndDomainInfo::Deserialize(const rapidjson::Value &value)
         m_usePublicDomainHasBeenSet = true;
     }
 
+    if (value.HasMember("RegionName") && !value["RegionName"].IsNull())
+    {
+        if (!value["RegionName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcAndDomainInfo.RegionName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionName = string(value["RegionName"].GetString());
+        m_regionNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void VpcAndDomainInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "UsePublicDomain";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_usePublicDomain, allocator);
+    }
+
+    if (m_regionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void VpcAndDomainInfo::SetUsePublicDomain(const bool& _usePublicDomain)
 bool VpcAndDomainInfo::UsePublicDomainHasBeenSet() const
 {
     return m_usePublicDomainHasBeenSet;
+}
+
+string VpcAndDomainInfo::GetRegionName() const
+{
+    return m_regionName;
+}
+
+void VpcAndDomainInfo::SetRegionName(const string& _regionName)
+{
+    m_regionName = _regionName;
+    m_regionNameHasBeenSet = true;
+}
+
+bool VpcAndDomainInfo::RegionNameHasBeenSet() const
+{
+    return m_regionNameHasBeenSet;
 }
 

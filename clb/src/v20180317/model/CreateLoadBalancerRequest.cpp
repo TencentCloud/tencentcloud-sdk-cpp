@@ -45,7 +45,8 @@ CreateLoadBalancerRequest::CreateLoadBalancerRequest() :
     m_snatIpsHasBeenSet(false),
     m_clusterTagHasBeenSet(false),
     m_slaveZoneIdHasBeenSet(false),
-    m_eipAddressIdHasBeenSet(false)
+    m_eipAddressIdHasBeenSet(false),
+    m_loadBalancerPassToTargetHasBeenSet(false)
 {
 }
 
@@ -254,6 +255,14 @@ string CreateLoadBalancerRequest::ToJsonString() const
         string key = "EipAddressId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_eipAddressId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loadBalancerPassToTargetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadBalancerPassToTarget";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_loadBalancerPassToTarget, allocator);
     }
 
 
@@ -630,6 +639,22 @@ void CreateLoadBalancerRequest::SetEipAddressId(const string& _eipAddressId)
 bool CreateLoadBalancerRequest::EipAddressIdHasBeenSet() const
 {
     return m_eipAddressIdHasBeenSet;
+}
+
+bool CreateLoadBalancerRequest::GetLoadBalancerPassToTarget() const
+{
+    return m_loadBalancerPassToTarget;
+}
+
+void CreateLoadBalancerRequest::SetLoadBalancerPassToTarget(const bool& _loadBalancerPassToTarget)
+{
+    m_loadBalancerPassToTarget = _loadBalancerPassToTarget;
+    m_loadBalancerPassToTargetHasBeenSet = true;
+}
+
+bool CreateLoadBalancerRequest::LoadBalancerPassToTargetHasBeenSet() const
+{
+    return m_loadBalancerPassToTargetHasBeenSet;
 }
 
 

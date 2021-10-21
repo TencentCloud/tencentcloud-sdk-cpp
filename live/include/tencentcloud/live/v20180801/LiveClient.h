@@ -767,7 +767,7 @@ namespace TencentCloud
                 CreateLiveRecordRuleOutcomeCallable CreateLiveRecordRuleCallable(const Model::CreateLiveRecordRuleRequest& request);
 
                 /**
-                 *创建录制模板，成功返回模板id后，需要调用[CreateLiveRecordRule](/document/product/267/32615)接口，将模板id绑定到流进行使用。
+                 *创建录制模板，数量上限：50，成功返回模板id后，需要调用[CreateLiveRecordRule](/document/product/267/32615)接口，将模板id绑定到流进行使用。
 <br>录制相关文档：[直播录制](/document/product/267/32739)。
                  * @param req CreateLiveRecordTemplateRequest
                  * @return CreateLiveRecordTemplateOutcome

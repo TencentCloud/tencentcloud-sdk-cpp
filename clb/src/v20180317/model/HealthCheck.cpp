@@ -35,7 +35,8 @@ HealthCheck::HealthCheck() :
     m_sendContextHasBeenSet(false),
     m_recvContextHasBeenSet(false),
     m_checkTypeHasBeenSet(false),
-    m_httpVersionHasBeenSet(false)
+    m_httpVersionHasBeenSet(false),
+    m_sourceIpTypeHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,16 @@ CoreInternalOutcome HealthCheck::Deserialize(const rapidjson::Value &value)
         m_httpVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("SourceIpType") && !value["SourceIpType"].IsNull())
+    {
+        if (!value["SourceIpType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HealthCheck.SourceIpType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceIpType = value["SourceIpType"].GetInt64();
+        m_sourceIpTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +330,14 @@ void HealthCheck::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "HttpVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_httpVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceIpTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceIpType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sourceIpType, allocator);
     }
 
 }
@@ -562,5 +581,21 @@ void HealthCheck::SetHttpVersion(const string& _httpVersion)
 bool HealthCheck::HttpVersionHasBeenSet() const
 {
     return m_httpVersionHasBeenSet;
+}
+
+int64_t HealthCheck::GetSourceIpType() const
+{
+    return m_sourceIpType;
+}
+
+void HealthCheck::SetSourceIpType(const int64_t& _sourceIpType)
+{
+    m_sourceIpType = _sourceIpType;
+    m_sourceIpTypeHasBeenSet = true;
+}
+
+bool HealthCheck::SourceIpTypeHasBeenSet() const
+{
+    return m_sourceIpTypeHasBeenSet;
 }
 

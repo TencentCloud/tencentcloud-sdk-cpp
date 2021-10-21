@@ -118,6 +118,60 @@ namespace TencentCloud
                      */
                     bool AutoScalingNotificationIdHasBeenSet() const;
 
+                    /**
+                     * 获取通知接收端类型。
+                     * @return TargetType 通知接收端类型。
+                     */
+                    std::string GetTargetType() const;
+
+                    /**
+                     * 设置通知接收端类型。
+                     * @param TargetType 通知接收端类型。
+                     */
+                    void SetTargetType(const std::string& _targetType);
+
+                    /**
+                     * 判断参数 TargetType 是否已赋值
+                     * @return TargetType 是否已赋值
+                     */
+                    bool TargetTypeHasBeenSet() const;
+
+                    /**
+                     * 获取CMQ 队列名。
+                     * @return QueueName CMQ 队列名。
+                     */
+                    std::string GetQueueName() const;
+
+                    /**
+                     * 设置CMQ 队列名。
+                     * @param QueueName CMQ 队列名。
+                     */
+                    void SetQueueName(const std::string& _queueName);
+
+                    /**
+                     * 判断参数 QueueName 是否已赋值
+                     * @return QueueName 是否已赋值
+                     */
+                    bool QueueNameHasBeenSet() const;
+
+                    /**
+                     * 获取CMQ 主题名。
+                     * @return TopicName CMQ 主题名。
+                     */
+                    std::string GetTopicName() const;
+
+                    /**
+                     * 设置CMQ 主题名。
+                     * @param TopicName CMQ 主题名。
+                     */
+                    void SetTopicName(const std::string& _topicName);
+
+                    /**
+                     * 判断参数 TopicName 是否已赋值
+                     * @return TopicName 是否已赋值
+                     */
+                    bool TopicNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +197,24 @@ namespace TencentCloud
                      */
                     std::string m_autoScalingNotificationId;
                     bool m_autoScalingNotificationIdHasBeenSet;
+
+                    /**
+                     * 通知接收端类型。
+                     */
+                    std::string m_targetType;
+                    bool m_targetTypeHasBeenSet;
+
+                    /**
+                     * CMQ 队列名。
+                     */
+                    std::string m_queueName;
+                    bool m_queueNameHasBeenSet;
+
+                    /**
+                     * CMQ 主题名。
+                     */
+                    std::string m_topicName;
+                    bool m_topicNameHasBeenSet;
 
                 };
             }

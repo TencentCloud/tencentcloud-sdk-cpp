@@ -24,7 +24,10 @@ AutoScalingNotification::AutoScalingNotification() :
     m_autoScalingGroupIdHasBeenSet(false),
     m_notificationUserGroupIdsHasBeenSet(false),
     m_notificationTypesHasBeenSet(false),
-    m_autoScalingNotificationIdHasBeenSet(false)
+    m_autoScalingNotificationIdHasBeenSet(false),
+    m_targetTypeHasBeenSet(false),
+    m_queueNameHasBeenSet(false),
+    m_topicNameHasBeenSet(false)
 {
 }
 
@@ -79,6 +82,36 @@ CoreInternalOutcome AutoScalingNotification::Deserialize(const rapidjson::Value 
         m_autoScalingNotificationIdHasBeenSet = true;
     }
 
+    if (value.HasMember("TargetType") && !value["TargetType"].IsNull())
+    {
+        if (!value["TargetType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoScalingNotification.TargetType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetType = string(value["TargetType"].GetString());
+        m_targetTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("QueueName") && !value["QueueName"].IsNull())
+    {
+        if (!value["QueueName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoScalingNotification.QueueName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_queueName = string(value["QueueName"].GetString());
+        m_queueNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("TopicName") && !value["TopicName"].IsNull())
+    {
+        if (!value["TopicName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoScalingNotification.TopicName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_topicName = string(value["TopicName"].GetString());
+        m_topicNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +159,30 @@ void AutoScalingNotification::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "AutoScalingNotificationId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_autoScalingNotificationId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queueNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueueName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_queueName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_topicNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_topicName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -193,5 +250,53 @@ void AutoScalingNotification::SetAutoScalingNotificationId(const string& _autoSc
 bool AutoScalingNotification::AutoScalingNotificationIdHasBeenSet() const
 {
     return m_autoScalingNotificationIdHasBeenSet;
+}
+
+string AutoScalingNotification::GetTargetType() const
+{
+    return m_targetType;
+}
+
+void AutoScalingNotification::SetTargetType(const string& _targetType)
+{
+    m_targetType = _targetType;
+    m_targetTypeHasBeenSet = true;
+}
+
+bool AutoScalingNotification::TargetTypeHasBeenSet() const
+{
+    return m_targetTypeHasBeenSet;
+}
+
+string AutoScalingNotification::GetQueueName() const
+{
+    return m_queueName;
+}
+
+void AutoScalingNotification::SetQueueName(const string& _queueName)
+{
+    m_queueName = _queueName;
+    m_queueNameHasBeenSet = true;
+}
+
+bool AutoScalingNotification::QueueNameHasBeenSet() const
+{
+    return m_queueNameHasBeenSet;
+}
+
+string AutoScalingNotification::GetTopicName() const
+{
+    return m_topicName;
+}
+
+void AutoScalingNotification::SetTopicName(const string& _topicName)
+{
+    m_topicName = _topicName;
+    m_topicNameHasBeenSet = true;
+}
+
+bool AutoScalingNotification::TopicNameHasBeenSet() const
+{
+    return m_topicNameHasBeenSet;
 }
 

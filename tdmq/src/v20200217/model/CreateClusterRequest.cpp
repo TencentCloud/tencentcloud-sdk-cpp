@@ -26,7 +26,8 @@ CreateClusterRequest::CreateClusterRequest() :
     m_clusterNameHasBeenSet(false),
     m_bindClusterIdHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_publicAccessEnabledHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,14 @@ string CreateClusterRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_publicAccessEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicAccessEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_publicAccessEnabled, allocator);
     }
 
 
@@ -146,6 +155,22 @@ void CreateClusterRequest::SetTags(const vector<Tag>& _tags)
 bool CreateClusterRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+bool CreateClusterRequest::GetPublicAccessEnabled() const
+{
+    return m_publicAccessEnabled;
+}
+
+void CreateClusterRequest::SetPublicAccessEnabled(const bool& _publicAccessEnabled)
+{
+    m_publicAccessEnabled = _publicAccessEnabled;
+    m_publicAccessEnabledHasBeenSet = true;
+}
+
+bool CreateClusterRequest::PublicAccessEnabledHasBeenSet() const
+{
+    return m_publicAccessEnabledHasBeenSet;
 }
 
 

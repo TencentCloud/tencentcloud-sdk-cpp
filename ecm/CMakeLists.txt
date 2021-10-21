@@ -28,6 +28,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/DescribeNetworkInterfacesRequest.h
   include/tencentcloud/ecm/v20190719/model/CreateSecurityGroupPoliciesResponse.h
   include/tencentcloud/ecm/v20190719/model/DescribeMonthPeakNetworkRequest.h
+  include/tencentcloud/ecm/v20190719/model/SystemDisk.h
   include/tencentcloud/ecm/v20190719/model/DescribeNodeResponse.h
   include/tencentcloud/ecm/v20190719/model/DescribeModuleRequest.h
   include/tencentcloud/ecm/v20190719/model/RebootInstancesRequest.h
@@ -214,6 +215,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/DeleteModuleRequest.h
   include/tencentcloud/ecm/v20190719/model/DisableRoutesResponse.h
   include/tencentcloud/ecm/v20190719/model/DescribeConfigResponse.h
+  include/tencentcloud/ecm/v20190719/model/DataDisk.h
   include/tencentcloud/ecm/v20190719/model/ModifyVpcAttributeResponse.h
   include/tencentcloud/ecm/v20190719/model/PrivateIpAddressSpecification.h
   include/tencentcloud/ecm/v20190719/model/MigratePrivateIpAddressResponse.h
@@ -378,6 +380,7 @@ set(ecm_src
   src/v20190719/model/DescribeNetworkInterfacesRequest.cpp
   src/v20190719/model/CreateSecurityGroupPoliciesResponse.cpp
   src/v20190719/model/DescribeMonthPeakNetworkRequest.cpp
+  src/v20190719/model/SystemDisk.cpp
   src/v20190719/model/DescribeNodeResponse.cpp
   src/v20190719/model/DescribeModuleRequest.cpp
   src/v20190719/model/RebootInstancesRequest.cpp
@@ -564,6 +567,7 @@ set(ecm_src
   src/v20190719/model/DeleteModuleRequest.cpp
   src/v20190719/model/DisableRoutesResponse.cpp
   src/v20190719/model/DescribeConfigResponse.cpp
+  src/v20190719/model/DataDisk.cpp
   src/v20190719/model/ModifyVpcAttributeResponse.cpp
   src/v20190719/model/PrivateIpAddressSpecification.cpp
   src/v20190719/model/MigratePrivateIpAddressResponse.cpp

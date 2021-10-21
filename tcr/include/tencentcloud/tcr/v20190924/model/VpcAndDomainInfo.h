@@ -122,6 +122,24 @@ false: use instancename+"-vpc" as subdomain
                      */
                     bool UsePublicDomainHasBeenSet() const;
 
+                    /**
+                     * 获取解析地域，需要保证和vpc处于同一地域，如果不填则默认为主实例地域
+                     * @return RegionName 解析地域，需要保证和vpc处于同一地域，如果不填则默认为主实例地域
+                     */
+                    std::string GetRegionName() const;
+
+                    /**
+                     * 设置解析地域，需要保证和vpc处于同一地域，如果不填则默认为主实例地域
+                     * @param RegionName 解析地域，需要保证和vpc处于同一地域，如果不填则默认为主实例地域
+                     */
+                    void SetRegionName(const std::string& _regionName);
+
+                    /**
+                     * 判断参数 RegionName 是否已赋值
+                     * @return RegionName 是否已赋值
+                     */
+                    bool RegionNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -148,6 +166,12 @@ false: use instancename+"-vpc" as subdomain
                      */
                     bool m_usePublicDomain;
                     bool m_usePublicDomainHasBeenSet;
+
+                    /**
+                     * 解析地域，需要保证和vpc处于同一地域，如果不填则默认为主实例地域
+                     */
+                    std::string m_regionName;
+                    bool m_regionNameHasBeenSet;
 
                 };
             }

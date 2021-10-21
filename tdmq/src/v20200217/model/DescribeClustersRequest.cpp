@@ -25,7 +25,9 @@ using namespace std;
 DescribeClustersRequest::DescribeClustersRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_clusterIdListHasBeenSet(false)
+    m_clusterIdListHasBeenSet(false),
+    m_isTagFilterHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,29 @@ string DescribeClustersRequest::ToJsonString() const
         for (auto itr = m_clusterIdList.begin(); itr != m_clusterIdList.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_isTagFilterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsTagFilter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isTagFilter, allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -119,6 +144,38 @@ void DescribeClustersRequest::SetClusterIdList(const vector<string>& _clusterIdL
 bool DescribeClustersRequest::ClusterIdListHasBeenSet() const
 {
     return m_clusterIdListHasBeenSet;
+}
+
+bool DescribeClustersRequest::GetIsTagFilter() const
+{
+    return m_isTagFilter;
+}
+
+void DescribeClustersRequest::SetIsTagFilter(const bool& _isTagFilter)
+{
+    m_isTagFilter = _isTagFilter;
+    m_isTagFilterHasBeenSet = true;
+}
+
+bool DescribeClustersRequest::IsTagFilterHasBeenSet() const
+{
+    return m_isTagFilterHasBeenSet;
+}
+
+vector<Filter> DescribeClustersRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeClustersRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeClustersRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

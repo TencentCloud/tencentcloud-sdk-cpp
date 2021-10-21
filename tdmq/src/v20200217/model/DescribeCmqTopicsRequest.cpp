@@ -27,7 +27,8 @@ DescribeCmqTopicsRequest::DescribeCmqTopicsRequest() :
     m_limitHasBeenSet(false),
     m_topicNameHasBeenSet(false),
     m_topicNameListHasBeenSet(false),
-    m_isTagFilterHasBeenSet(false)
+    m_isTagFilterHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,21 @@ string DescribeCmqTopicsRequest::ToJsonString() const
         string key = "IsTagFilter";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isTagFilter, allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -169,6 +185,22 @@ void DescribeCmqTopicsRequest::SetIsTagFilter(const bool& _isTagFilter)
 bool DescribeCmqTopicsRequest::IsTagFilterHasBeenSet() const
 {
     return m_isTagFilterHasBeenSet;
+}
+
+vector<Filter> DescribeCmqTopicsRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeCmqTopicsRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeCmqTopicsRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

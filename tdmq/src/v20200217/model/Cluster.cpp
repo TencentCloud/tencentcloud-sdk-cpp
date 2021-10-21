@@ -38,7 +38,15 @@ Cluster::Cluster() :
     m_publicEndPointHasBeenSet(false),
     m_vpcEndPointHasBeenSet(false),
     m_namespaceNumHasBeenSet(false),
-    m_usedStorageBudgetHasBeenSet(false)
+    m_usedStorageBudgetHasBeenSet(false),
+    m_maxPublishRateInMessagesHasBeenSet(false),
+    m_maxDispatchRateInMessagesHasBeenSet(false),
+    m_maxPublishRateInBytesHasBeenSet(false),
+    m_maxDispatchRateInBytesHasBeenSet(false),
+    m_topicNumHasBeenSet(false),
+    m_maxMessageDelayInSecondsHasBeenSet(false),
+    m_publicAccessEnabledHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -227,6 +235,96 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_usedStorageBudgetHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxPublishRateInMessages") && !value["MaxPublishRateInMessages"].IsNull())
+    {
+        if (!value["MaxPublishRateInMessages"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.MaxPublishRateInMessages` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxPublishRateInMessages = value["MaxPublishRateInMessages"].GetInt64();
+        m_maxPublishRateInMessagesHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxDispatchRateInMessages") && !value["MaxDispatchRateInMessages"].IsNull())
+    {
+        if (!value["MaxDispatchRateInMessages"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.MaxDispatchRateInMessages` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxDispatchRateInMessages = value["MaxDispatchRateInMessages"].GetInt64();
+        m_maxDispatchRateInMessagesHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxPublishRateInBytes") && !value["MaxPublishRateInBytes"].IsNull())
+    {
+        if (!value["MaxPublishRateInBytes"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.MaxPublishRateInBytes` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxPublishRateInBytes = value["MaxPublishRateInBytes"].GetInt64();
+        m_maxPublishRateInBytesHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxDispatchRateInBytes") && !value["MaxDispatchRateInBytes"].IsNull())
+    {
+        if (!value["MaxDispatchRateInBytes"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.MaxDispatchRateInBytes` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxDispatchRateInBytes = value["MaxDispatchRateInBytes"].GetInt64();
+        m_maxDispatchRateInBytesHasBeenSet = true;
+    }
+
+    if (value.HasMember("TopicNum") && !value["TopicNum"].IsNull())
+    {
+        if (!value["TopicNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.TopicNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_topicNum = value["TopicNum"].GetInt64();
+        m_topicNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxMessageDelayInSeconds") && !value["MaxMessageDelayInSeconds"].IsNull())
+    {
+        if (!value["MaxMessageDelayInSeconds"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.MaxMessageDelayInSeconds` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxMessageDelayInSeconds = value["MaxMessageDelayInSeconds"].GetInt64();
+        m_maxMessageDelayInSecondsHasBeenSet = true;
+    }
+
+    if (value.HasMember("PublicAccessEnabled") && !value["PublicAccessEnabled"].IsNull())
+    {
+        if (!value["PublicAccessEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.PublicAccessEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicAccessEnabled = value["PublicAccessEnabled"].GetBool();
+        m_publicAccessEnabledHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Cluster.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +474,77 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "UsedStorageBudget";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_usedStorageBudget, allocator);
+    }
+
+    if (m_maxPublishRateInMessagesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxPublishRateInMessages";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxPublishRateInMessages, allocator);
+    }
+
+    if (m_maxDispatchRateInMessagesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxDispatchRateInMessages";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxDispatchRateInMessages, allocator);
+    }
+
+    if (m_maxPublishRateInBytesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxPublishRateInBytes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxPublishRateInBytes, allocator);
+    }
+
+    if (m_maxDispatchRateInBytesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxDispatchRateInBytes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxDispatchRateInBytes, allocator);
+    }
+
+    if (m_topicNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_topicNum, allocator);
+    }
+
+    if (m_maxMessageDelayInSecondsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxMessageDelayInSeconds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxMessageDelayInSeconds, allocator);
+    }
+
+    if (m_publicAccessEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicAccessEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_publicAccessEnabled, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -667,5 +836,133 @@ void Cluster::SetUsedStorageBudget(const int64_t& _usedStorageBudget)
 bool Cluster::UsedStorageBudgetHasBeenSet() const
 {
     return m_usedStorageBudgetHasBeenSet;
+}
+
+int64_t Cluster::GetMaxPublishRateInMessages() const
+{
+    return m_maxPublishRateInMessages;
+}
+
+void Cluster::SetMaxPublishRateInMessages(const int64_t& _maxPublishRateInMessages)
+{
+    m_maxPublishRateInMessages = _maxPublishRateInMessages;
+    m_maxPublishRateInMessagesHasBeenSet = true;
+}
+
+bool Cluster::MaxPublishRateInMessagesHasBeenSet() const
+{
+    return m_maxPublishRateInMessagesHasBeenSet;
+}
+
+int64_t Cluster::GetMaxDispatchRateInMessages() const
+{
+    return m_maxDispatchRateInMessages;
+}
+
+void Cluster::SetMaxDispatchRateInMessages(const int64_t& _maxDispatchRateInMessages)
+{
+    m_maxDispatchRateInMessages = _maxDispatchRateInMessages;
+    m_maxDispatchRateInMessagesHasBeenSet = true;
+}
+
+bool Cluster::MaxDispatchRateInMessagesHasBeenSet() const
+{
+    return m_maxDispatchRateInMessagesHasBeenSet;
+}
+
+int64_t Cluster::GetMaxPublishRateInBytes() const
+{
+    return m_maxPublishRateInBytes;
+}
+
+void Cluster::SetMaxPublishRateInBytes(const int64_t& _maxPublishRateInBytes)
+{
+    m_maxPublishRateInBytes = _maxPublishRateInBytes;
+    m_maxPublishRateInBytesHasBeenSet = true;
+}
+
+bool Cluster::MaxPublishRateInBytesHasBeenSet() const
+{
+    return m_maxPublishRateInBytesHasBeenSet;
+}
+
+int64_t Cluster::GetMaxDispatchRateInBytes() const
+{
+    return m_maxDispatchRateInBytes;
+}
+
+void Cluster::SetMaxDispatchRateInBytes(const int64_t& _maxDispatchRateInBytes)
+{
+    m_maxDispatchRateInBytes = _maxDispatchRateInBytes;
+    m_maxDispatchRateInBytesHasBeenSet = true;
+}
+
+bool Cluster::MaxDispatchRateInBytesHasBeenSet() const
+{
+    return m_maxDispatchRateInBytesHasBeenSet;
+}
+
+int64_t Cluster::GetTopicNum() const
+{
+    return m_topicNum;
+}
+
+void Cluster::SetTopicNum(const int64_t& _topicNum)
+{
+    m_topicNum = _topicNum;
+    m_topicNumHasBeenSet = true;
+}
+
+bool Cluster::TopicNumHasBeenSet() const
+{
+    return m_topicNumHasBeenSet;
+}
+
+int64_t Cluster::GetMaxMessageDelayInSeconds() const
+{
+    return m_maxMessageDelayInSeconds;
+}
+
+void Cluster::SetMaxMessageDelayInSeconds(const int64_t& _maxMessageDelayInSeconds)
+{
+    m_maxMessageDelayInSeconds = _maxMessageDelayInSeconds;
+    m_maxMessageDelayInSecondsHasBeenSet = true;
+}
+
+bool Cluster::MaxMessageDelayInSecondsHasBeenSet() const
+{
+    return m_maxMessageDelayInSecondsHasBeenSet;
+}
+
+bool Cluster::GetPublicAccessEnabled() const
+{
+    return m_publicAccessEnabled;
+}
+
+void Cluster::SetPublicAccessEnabled(const bool& _publicAccessEnabled)
+{
+    m_publicAccessEnabled = _publicAccessEnabled;
+    m_publicAccessEnabledHasBeenSet = true;
+}
+
+bool Cluster::PublicAccessEnabledHasBeenSet() const
+{
+    return m_publicAccessEnabledHasBeenSet;
+}
+
+vector<Tag> Cluster::GetTags() const
+{
+    return m_tags;
+}
+
+void Cluster::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool Cluster::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 

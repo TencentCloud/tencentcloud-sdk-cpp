@@ -556,6 +556,49 @@ CdnClient::DescribeBillingDataOutcomeCallable CdnClient::DescribeBillingDataCall
     return task->get_future();
 }
 
+CdnClient::DescribeCcDataOutcome CdnClient::DescribeCcData(const DescribeCcDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCcData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCcDataResponse rsp = DescribeCcDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCcDataOutcome(rsp);
+        else
+            return DescribeCcDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCcDataOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::DescribeCcDataAsync(const DescribeCcDataRequest& request, const DescribeCcDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCcData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::DescribeCcDataOutcomeCallable CdnClient::DescribeCcDataCallable(const DescribeCcDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCcDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCcData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::DescribeCdnDataOutcome CdnClient::DescribeCdnData(const DescribeCdnDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCdnData");
@@ -771,6 +814,49 @@ CdnClient::DescribeCertDomainsOutcomeCallable CdnClient::DescribeCertDomainsCall
     return task->get_future();
 }
 
+CdnClient::DescribeDDoSDataOutcome CdnClient::DescribeDDoSData(const DescribeDDoSDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDDoSData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDDoSDataResponse rsp = DescribeDDoSDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDDoSDataOutcome(rsp);
+        else
+            return DescribeDDoSDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDDoSDataOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::DescribeDDoSDataAsync(const DescribeDDoSDataRequest& request, const DescribeDDoSDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDDoSData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::DescribeDDoSDataOutcomeCallable CdnClient::DescribeDDoSDataCallable(const DescribeDDoSDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDDoSDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDDoSData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::DescribeDiagnoseReportOutcome CdnClient::DescribeDiagnoseReport(const DescribeDiagnoseReportRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDiagnoseReport");
@@ -936,6 +1022,49 @@ CdnClient::DescribeDomainsConfigOutcomeCallable CdnClient::DescribeDomainsConfig
         [this, request]()
         {
             return this->DescribeDomainsConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdnClient::DescribeEventLogDataOutcome CdnClient::DescribeEventLogData(const DescribeEventLogDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEventLogData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEventLogDataResponse rsp = DescribeEventLogDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEventLogDataOutcome(rsp);
+        else
+            return DescribeEventLogDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEventLogDataOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::DescribeEventLogDataAsync(const DescribeEventLogDataRequest& request, const DescribeEventLogDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEventLogData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::DescribeEventLogDataOutcomeCallable CdnClient::DescribeEventLogDataCallable(const DescribeEventLogDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEventLogDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEventLogData(request);
         }
     );
 
@@ -1631,6 +1760,49 @@ CdnClient::DescribeUrlViolationsOutcomeCallable CdnClient::DescribeUrlViolations
     return task->get_future();
 }
 
+CdnClient::DescribeWafDataOutcome CdnClient::DescribeWafData(const DescribeWafDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWafData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWafDataResponse rsp = DescribeWafDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWafDataOutcome(rsp);
+        else
+            return DescribeWafDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWafDataOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::DescribeWafDataAsync(const DescribeWafDataRequest& request, const DescribeWafDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWafData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::DescribeWafDataOutcomeCallable CdnClient::DescribeWafDataCallable(const DescribeWafDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWafDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWafData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::DisableCachesOutcome CdnClient::DisableCaches(const DisableCachesRequest &request)
 {
     auto outcome = MakeRequest(request, "DisableCaches");
@@ -2183,6 +2355,49 @@ CdnClient::ListTopCcDataOutcomeCallable CdnClient::ListTopCcDataCallable(const L
         [this, request]()
         {
             return this->ListTopCcData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdnClient::ListTopClsLogDataOutcome CdnClient::ListTopClsLogData(const ListTopClsLogDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListTopClsLogData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListTopClsLogDataResponse rsp = ListTopClsLogDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListTopClsLogDataOutcome(rsp);
+        else
+            return ListTopClsLogDataOutcome(o.GetError());
+    }
+    else
+    {
+        return ListTopClsLogDataOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::ListTopClsLogDataAsync(const ListTopClsLogDataRequest& request, const ListTopClsLogDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListTopClsLogData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::ListTopClsLogDataOutcomeCallable CdnClient::ListTopClsLogDataCallable(const ListTopClsLogDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListTopClsLogDataOutcome()>>(
+        [this, request]()
+        {
+            return this->ListTopClsLogData(request);
         }
     );
 

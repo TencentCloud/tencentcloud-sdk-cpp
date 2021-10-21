@@ -91,6 +91,8 @@
 #include <tencentcloud/tsf/v20180326/model/DeleteImageTagsResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteLaneRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteLaneResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DeleteLaneRuleRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DeleteLaneRuleResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteMicroserviceRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteMicroserviceResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteNamespaceRequest.h>
@@ -167,6 +169,8 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeFlowLastBatchStateResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeGatewayAllGroupApisRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeGatewayAllGroupApisResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeGatewayApisRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeGatewayApisResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeGatewayMonitorOverviewRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeGatewayMonitorOverviewResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeGroupRequest.h>
@@ -477,6 +481,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteLaneResponse> DeleteLaneOutcome;
                 typedef std::future<DeleteLaneOutcome> DeleteLaneOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DeleteLaneRequest&, DeleteLaneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLaneAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteLaneRuleResponse> DeleteLaneRuleOutcome;
+                typedef std::future<DeleteLaneRuleOutcome> DeleteLaneRuleOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DeleteLaneRuleRequest&, DeleteLaneRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLaneRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteMicroserviceResponse> DeleteMicroserviceOutcome;
                 typedef std::future<DeleteMicroserviceOutcome> DeleteMicroserviceOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DeleteMicroserviceRequest&, DeleteMicroserviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMicroserviceAsyncHandler;
@@ -591,6 +598,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeGatewayAllGroupApisResponse> DescribeGatewayAllGroupApisOutcome;
                 typedef std::future<DescribeGatewayAllGroupApisOutcome> DescribeGatewayAllGroupApisOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeGatewayAllGroupApisRequest&, DescribeGatewayAllGroupApisOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewayAllGroupApisAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGatewayApisResponse> DescribeGatewayApisOutcome;
+                typedef std::future<DescribeGatewayApisOutcome> DescribeGatewayApisOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeGatewayApisRequest&, DescribeGatewayApisOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewayApisAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGatewayMonitorOverviewResponse> DescribeGatewayMonitorOverviewOutcome;
                 typedef std::future<DescribeGatewayMonitorOverviewOutcome> DescribeGatewayMonitorOverviewOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeGatewayMonitorOverviewRequest&, DescribeGatewayMonitorOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewayMonitorOverviewAsyncHandler;
@@ -1192,6 +1202,15 @@ namespace TencentCloud
                 DeleteLaneOutcomeCallable DeleteLaneCallable(const Model::DeleteLaneRequest& request);
 
                 /**
+                 *删除泳道规则
+                 * @param req DeleteLaneRuleRequest
+                 * @return DeleteLaneRuleOutcome
+                 */
+                DeleteLaneRuleOutcome DeleteLaneRule(const Model::DeleteLaneRuleRequest &request);
+                void DeleteLaneRuleAsync(const Model::DeleteLaneRuleRequest& request, const DeleteLaneRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLaneRuleOutcomeCallable DeleteLaneRuleCallable(const Model::DeleteLaneRuleRequest& request);
+
+                /**
                  *删除微服务
                  * @param req DeleteMicroserviceRequest
                  * @return DeleteMicroserviceOutcome
@@ -1534,6 +1553,15 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeGatewayAllGroupApisOutcome DescribeGatewayAllGroupApis(const Model::DescribeGatewayAllGroupApisRequest &request);
                 void DescribeGatewayAllGroupApisAsync(const Model::DescribeGatewayAllGroupApisRequest& request, const DescribeGatewayAllGroupApisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeGatewayAllGroupApisOutcomeCallable DescribeGatewayAllGroupApisCallable(const Model::DescribeGatewayAllGroupApisRequest& request);
+
+                /**
+                 *查询API分组下的Api列表信息
+                 * @param req DescribeGatewayApisRequest
+                 * @return DescribeGatewayApisOutcome
+                 */
+                DescribeGatewayApisOutcome DescribeGatewayApis(const Model::DescribeGatewayApisRequest &request);
+                void DescribeGatewayApisAsync(const Model::DescribeGatewayApisRequest& request, const DescribeGatewayApisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGatewayApisOutcomeCallable DescribeGatewayApisCallable(const Model::DescribeGatewayApisRequest& request);
 
                 /**
                  *查询网关监控概览

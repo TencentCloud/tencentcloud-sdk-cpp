@@ -115,6 +115,24 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启公网访问，不填时默认开启
+                     * @return PublicAccessEnabled 是否开启公网访问，不填时默认开启
+                     */
+                    bool GetPublicAccessEnabled() const;
+
+                    /**
+                     * 设置是否开启公网访问，不填时默认开启
+                     * @param PublicAccessEnabled 是否开启公网访问，不填时默认开启
+                     */
+                    void SetPublicAccessEnabled(const bool& _publicAccessEnabled);
+
+                    /**
+                     * 判断参数 PublicAccessEnabled 是否已赋值
+                     * @return PublicAccessEnabled 是否已赋值
+                     */
+                    bool PublicAccessEnabledHasBeenSet() const;
+
                 private:
 
                     /**
@@ -140,6 +158,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 是否开启公网访问，不填时默认开启
+                     */
+                    bool m_publicAccessEnabled;
+                    bool m_publicAccessEnabledHasBeenSet;
 
                 };
             }

@@ -32,7 +32,8 @@ Template::Template() :
     m_reportTypeHasBeenSet(false),
     m_medicalRecordInfoHasBeenSet(false),
     m_hospitalizationHasBeenSet(false),
-    m_surgeryHasBeenSet(false)
+    m_surgeryHasBeenSet(false),
+    m_electrocardiogramHasBeenSet(false)
 {
 }
 
@@ -238,6 +239,23 @@ CoreInternalOutcome Template::Deserialize(const rapidjson::Value &value)
         m_surgeryHasBeenSet = true;
     }
 
+    if (value.HasMember("Electrocardiogram") && !value["Electrocardiogram"].IsNull())
+    {
+        if (!value["Electrocardiogram"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Template.Electrocardiogram` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_electrocardiogram.Deserialize(value["Electrocardiogram"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_electrocardiogramHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -350,6 +368,15 @@ void Template::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_surgery.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_electrocardiogramHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Electrocardiogram";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_electrocardiogram.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -545,5 +572,21 @@ void Template::SetSurgery(const Surgery& _surgery)
 bool Template::SurgeryHasBeenSet() const
 {
     return m_surgeryHasBeenSet;
+}
+
+Electrocardiogram Template::GetElectrocardiogram() const
+{
+    return m_electrocardiogram;
+}
+
+void Template::SetElectrocardiogram(const Electrocardiogram& _electrocardiogram)
+{
+    m_electrocardiogram = _electrocardiogram;
+    m_electrocardiogramHasBeenSet = true;
+}
+
+bool Template::ElectrocardiogramHasBeenSet() const
+{
+    return m_electrocardiogramHasBeenSet;
 }
 

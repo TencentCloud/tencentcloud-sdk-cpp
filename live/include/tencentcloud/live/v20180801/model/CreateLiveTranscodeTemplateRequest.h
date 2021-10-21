@@ -252,9 +252,11 @@ origin: 保持原始编码格式
                      * 获取高，默认0。
 范围[0-3000]
 数值必须是2的倍数，0是原始高度。
+极速高清模板（AiTransCode = 1 的时候）必须传。
                      * @return Height 高，默认0。
 范围[0-3000]
 数值必须是2的倍数，0是原始高度。
+极速高清模板（AiTransCode = 1 的时候）必须传。
                      */
                     int64_t GetHeight() const;
 
@@ -262,9 +264,11 @@ origin: 保持原始编码格式
                      * 设置高，默认0。
 范围[0-3000]
 数值必须是2的倍数，0是原始高度。
+极速高清模板（AiTransCode = 1 的时候）必须传。
                      * @param Height 高，默认0。
 范围[0-3000]
 数值必须是2的倍数，0是原始高度。
+极速高清模板（AiTransCode = 1 的时候）必须传。
                      */
                     void SetHeight(const int64_t& _height);
 
@@ -581,6 +585,7 @@ origin: 保持原始编码格式
                      * 高，默认0。
 范围[0-3000]
 数值必须是2的倍数，0是原始高度。
+极速高清模板（AiTransCode = 1 的时候）必须传。
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;

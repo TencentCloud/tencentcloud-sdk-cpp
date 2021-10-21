@@ -41,7 +41,9 @@ RunInstancesRequest::RunInstancesRequest() :
     m_internetMaxBandwidthInHasBeenSet(false),
     m_instanceChargeTypeHasBeenSet(false),
     m_keyIdsHasBeenSet(false),
-    m_keepImageLoginHasBeenSet(false)
+    m_keepImageLoginHasBeenSet(false),
+    m_systemDiskHasBeenSet(false),
+    m_dataDisksHasBeenSet(false)
 {
 }
 
@@ -227,6 +229,30 @@ string RunInstancesRequest::ToJsonString() const
         string key = "KeepImageLogin";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_keepImageLogin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_systemDiskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SystemDisk";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_systemDisk.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_dataDisksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataDisks";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dataDisks.begin(); itr != m_dataDisks.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -539,6 +565,38 @@ void RunInstancesRequest::SetKeepImageLogin(const string& _keepImageLogin)
 bool RunInstancesRequest::KeepImageLoginHasBeenSet() const
 {
     return m_keepImageLoginHasBeenSet;
+}
+
+SystemDisk RunInstancesRequest::GetSystemDisk() const
+{
+    return m_systemDisk;
+}
+
+void RunInstancesRequest::SetSystemDisk(const SystemDisk& _systemDisk)
+{
+    m_systemDisk = _systemDisk;
+    m_systemDiskHasBeenSet = true;
+}
+
+bool RunInstancesRequest::SystemDiskHasBeenSet() const
+{
+    return m_systemDiskHasBeenSet;
+}
+
+vector<DataDisk> RunInstancesRequest::GetDataDisks() const
+{
+    return m_dataDisks;
+}
+
+void RunInstancesRequest::SetDataDisks(const vector<DataDisk>& _dataDisks)
+{
+    m_dataDisks = _dataDisks;
+    m_dataDisksHasBeenSet = true;
+}
+
+bool RunInstancesRequest::DataDisksHasBeenSet() const
+{
+    return m_dataDisksHasBeenSet;
 }
 
 

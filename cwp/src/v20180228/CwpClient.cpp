@@ -1373,49 +1373,6 @@ CwpClient::DescribeAccountStatisticsOutcomeCallable CwpClient::DescribeAccountSt
     return task->get_future();
 }
 
-CwpClient::DescribeAccountsOutcome CwpClient::DescribeAccounts(const DescribeAccountsRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeAccounts");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeAccountsResponse rsp = DescribeAccountsResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeAccountsOutcome(rsp);
-        else
-            return DescribeAccountsOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeAccountsOutcome(outcome.GetError());
-    }
-}
-
-void CwpClient::DescribeAccountsAsync(const DescribeAccountsRequest& request, const DescribeAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAccounts(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CwpClient::DescribeAccountsOutcomeCallable CwpClient::DescribeAccountsCallable(const DescribeAccountsRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeAccountsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAccounts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CwpClient::DescribeAssetAppListOutcome CwpClient::DescribeAssetAppList(const DescribeAssetAppListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAssetAppList");
