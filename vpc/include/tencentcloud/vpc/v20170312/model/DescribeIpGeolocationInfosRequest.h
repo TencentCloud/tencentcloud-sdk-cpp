@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需查询的IP地址列表，支持IPv4和IPv6。批量查询的IP地址上限为100个。
-                     * @return AddressIps 需查询的IP地址列表，支持IPv4和IPv6。批量查询的IP地址上限为100个。
+                     * 获取需查询的IP地址列表，目前仅支持IPv4地址。查询的IP地址数量上限为100个。
+                     * @return AddressIps 需查询的IP地址列表，目前仅支持IPv4地址。查询的IP地址数量上限为100个。
                      */
                     std::vector<std::string> GetAddressIps() const;
 
                     /**
-                     * 设置需查询的IP地址列表，支持IPv4和IPv6。批量查询的IP地址上限为100个。
-                     * @param AddressIps 需查询的IP地址列表，支持IPv4和IPv6。批量查询的IP地址上限为100个。
+                     * 设置需查询的IP地址列表，目前仅支持IPv4地址。查询的IP地址数量上限为100个。
+                     * @param AddressIps 需查询的IP地址列表，目前仅支持IPv4地址。查询的IP地址数量上限为100个。
                      */
                     void SetAddressIps(const std::vector<std::string>& _addressIps);
 
@@ -82,7 +82,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需查询的IP地址列表，支持IPv4和IPv6。批量查询的IP地址上限为100个。
+                     * 需查询的IP地址列表，目前仅支持IPv4地址。查询的IP地址数量上限为100个。
                      */
                     std::vector<std::string> m_addressIps;
                     bool m_addressIpsHasBeenSet;

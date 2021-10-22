@@ -29,6 +29,8 @@
 #include <tencentcloud/essbasic/v20210526/model/CreateFlowsByTemplatesResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateSignUrlsRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateSignUrlsResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/DescribeResourceUrlsByFlowsRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/DescribeResourceUrlsByFlowsResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeTemplatesRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeTemplatesResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeUsageRequest.h>
@@ -62,6 +64,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSignUrlsResponse> CreateSignUrlsOutcome;
                 typedef std::future<CreateSignUrlsOutcome> CreateSignUrlsOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::CreateSignUrlsRequest&, CreateSignUrlsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSignUrlsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourceUrlsByFlowsResponse> DescribeResourceUrlsByFlowsOutcome;
+                typedef std::future<DescribeResourceUrlsByFlowsOutcome> DescribeResourceUrlsByFlowsOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::DescribeResourceUrlsByFlowsRequest&, DescribeResourceUrlsByFlowsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceUrlsByFlowsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTemplatesResponse> DescribeTemplatesOutcome;
                 typedef std::future<DescribeTemplatesOutcome> DescribeTemplatesOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::DescribeTemplatesRequest&, DescribeTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTemplatesAsyncHandler;
@@ -107,6 +112,15 @@ namespace TencentCloud
                 CreateSignUrlsOutcome CreateSignUrls(const Model::CreateSignUrlsRequest &request);
                 void CreateSignUrlsAsync(const Model::CreateSignUrlsRequest& request, const CreateSignUrlsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSignUrlsOutcomeCallable CreateSignUrlsCallable(const Model::CreateSignUrlsRequest& request);
+
+                /**
+                 *根据流程信息批量获取资源下载链接
+                 * @param req DescribeResourceUrlsByFlowsRequest
+                 * @return DescribeResourceUrlsByFlowsOutcome
+                 */
+                DescribeResourceUrlsByFlowsOutcome DescribeResourceUrlsByFlows(const Model::DescribeResourceUrlsByFlowsRequest &request);
+                void DescribeResourceUrlsByFlowsAsync(const Model::DescribeResourceUrlsByFlowsRequest& request, const DescribeResourceUrlsByFlowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourceUrlsByFlowsOutcomeCallable DescribeResourceUrlsByFlowsCallable(const Model::DescribeResourceUrlsByFlowsRequest& request);
 
                 /**
                  *通过此接口（DescribeTemplates）查询该企业在电子签渠道版中配置的有效模板列表

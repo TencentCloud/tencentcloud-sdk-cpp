@@ -169,6 +169,49 @@ EssbasicClient::CreateSignUrlsOutcomeCallable EssbasicClient::CreateSignUrlsCall
     return task->get_future();
 }
 
+EssbasicClient::DescribeResourceUrlsByFlowsOutcome EssbasicClient::DescribeResourceUrlsByFlows(const DescribeResourceUrlsByFlowsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceUrlsByFlows");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceUrlsByFlowsResponse rsp = DescribeResourceUrlsByFlowsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceUrlsByFlowsOutcome(rsp);
+        else
+            return DescribeResourceUrlsByFlowsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceUrlsByFlowsOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::DescribeResourceUrlsByFlowsAsync(const DescribeResourceUrlsByFlowsRequest& request, const DescribeResourceUrlsByFlowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeResourceUrlsByFlows(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::DescribeResourceUrlsByFlowsOutcomeCallable EssbasicClient::DescribeResourceUrlsByFlowsCallable(const DescribeResourceUrlsByFlowsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeResourceUrlsByFlowsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeResourceUrlsByFlows(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::DescribeTemplatesOutcome EssbasicClient::DescribeTemplates(const DescribeTemplatesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTemplates");

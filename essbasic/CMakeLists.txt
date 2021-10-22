@@ -20,19 +20,23 @@ set(essbasic_public_header
   )
 
 set(essbasic_public_header_model
+  include/tencentcloud/essbasic/v20210526/model/ResourceUrlInfo.h
   include/tencentcloud/essbasic/v20210526/model/SyncProxyOrganizationResponse.h
   include/tencentcloud/essbasic/v20210526/model/FlowApproverInfo.h
   include/tencentcloud/essbasic/v20210526/model/PrepareFlowsResponse.h
   include/tencentcloud/essbasic/v20210526/model/TemplateInfo.h
+  include/tencentcloud/essbasic/v20210526/model/DescribeResourceUrlsByFlowsResponse.h
   include/tencentcloud/essbasic/v20210526/model/DescribeTemplatesResponse.h
   include/tencentcloud/essbasic/v20210526/model/SyncProxyOrganizationOperatorsRequest.h
   include/tencentcloud/essbasic/v20210526/model/CreateSignUrlsRequest.h
+  include/tencentcloud/essbasic/v20210526/model/DescribeResourceUrlsByFlowsRequest.h
   include/tencentcloud/essbasic/v20210526/model/Component.h
   include/tencentcloud/essbasic/v20210526/model/SignUrlInfo.h
   include/tencentcloud/essbasic/v20210526/model/CreateConsoleLoginUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/CreateFlowsByTemplatesResponse.h
   include/tencentcloud/essbasic/v20210526/model/ProxyOrganizationOperator.h
   include/tencentcloud/essbasic/v20210526/model/SyncProxyOrganizationOperatorsResponse.h
+  include/tencentcloud/essbasic/v20210526/model/FlowResourceUrlInfo.h
   include/tencentcloud/essbasic/v20210526/model/DescribeTemplatesRequest.h
   include/tencentcloud/essbasic/v20210526/model/CreateConsoleLoginUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/CreateFlowsByTemplatesRequest.h
@@ -179,19 +183,23 @@ set(essbasic_public_header_model
 set(essbasic_src
   src/v20210526/EssbasicClient.cpp
   src/v20201222/EssbasicClient.cpp
+  src/v20210526/model/ResourceUrlInfo.cpp
   src/v20210526/model/SyncProxyOrganizationResponse.cpp
   src/v20210526/model/FlowApproverInfo.cpp
   src/v20210526/model/PrepareFlowsResponse.cpp
   src/v20210526/model/TemplateInfo.cpp
+  src/v20210526/model/DescribeResourceUrlsByFlowsResponse.cpp
   src/v20210526/model/DescribeTemplatesResponse.cpp
   src/v20210526/model/SyncProxyOrganizationOperatorsRequest.cpp
   src/v20210526/model/CreateSignUrlsRequest.cpp
+  src/v20210526/model/DescribeResourceUrlsByFlowsRequest.cpp
   src/v20210526/model/Component.cpp
   src/v20210526/model/SignUrlInfo.cpp
   src/v20210526/model/CreateConsoleLoginUrlRequest.cpp
   src/v20210526/model/CreateFlowsByTemplatesResponse.cpp
   src/v20210526/model/ProxyOrganizationOperator.cpp
   src/v20210526/model/SyncProxyOrganizationOperatorsResponse.cpp
+  src/v20210526/model/FlowResourceUrlInfo.cpp
   src/v20210526/model/DescribeTemplatesRequest.cpp
   src/v20210526/model/CreateConsoleLoginUrlResponse.cpp
   src/v20210526/model/CreateFlowsByTemplatesRequest.cpp
