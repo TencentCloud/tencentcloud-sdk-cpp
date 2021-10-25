@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/scf/v20180416/model/TriggerAction.h>
 
 
 namespace TencentCloud
@@ -136,6 +137,28 @@ namespace TencentCloud
                      */
                     bool QualifierHasBeenSet() const;
 
+                    /**
+                     * 获取预置并发定时任务。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TriggerActions 预置并发定时任务。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TriggerAction> GetTriggerActions() const;
+
+                    /**
+                     * 设置预置并发定时任务。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TriggerActions 预置并发定时任务。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTriggerActions(const std::vector<TriggerAction>& _triggerActions);
+
+                    /**
+                     * 判断参数 TriggerActions 是否已赋值
+                     * @return TriggerActions 是否已赋值
+                     */
+                    bool TriggerActionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +190,13 @@ namespace TencentCloud
                      */
                     std::string m_qualifier;
                     bool m_qualifierHasBeenSet;
+
+                    /**
+                     * 预置并发定时任务。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TriggerAction> m_triggerActions;
+                    bool m_triggerActionsHasBeenSet;
 
                 };
             }

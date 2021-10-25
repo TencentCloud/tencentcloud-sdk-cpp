@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源链接地址
+                     * 获取资源链接地址，过期时间5分钟
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Url 资源链接地址
+                     * @return Url 资源链接地址，过期时间5分钟
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置资源链接地址
+                     * 设置资源链接地址，过期时间5分钟
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Url 资源链接地址
+                     * @param Url 资源链接地址，过期时间5分钟
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUrl(const std::string& _url);
@@ -115,7 +115,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源链接地址
+                     * 资源链接地址，过期时间5分钟
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_url;

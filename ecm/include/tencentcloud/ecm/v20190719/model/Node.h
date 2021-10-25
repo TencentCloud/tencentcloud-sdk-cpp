@@ -54,14 +54,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取zone信息
-                     * @return ZoneInfo zone信息
+                     * 获取zone信息。
+                     * @return ZoneInfo zone信息。
                      */
                     ZoneInfo GetZoneInfo() const;
 
                     /**
-                     * 设置zone信息
-                     * @param ZoneInfo zone信息
+                     * 设置zone信息。
+                     * @param ZoneInfo zone信息。
                      */
                     void SetZoneInfo(const ZoneInfo& _zoneInfo);
 
@@ -72,14 +72,14 @@ namespace TencentCloud
                     bool ZoneInfoHasBeenSet() const;
 
                     /**
-                     * 获取国家信息
-                     * @return Country 国家信息
+                     * 获取国家信息。
+                     * @return Country 国家信息。
                      */
                     Country GetCountry() const;
 
                     /**
-                     * 设置国家信息
-                     * @param Country 国家信息
+                     * 设置国家信息。
+                     * @param Country 国家信息。
                      */
                     void SetCountry(const Country& _country);
 
@@ -90,14 +90,14 @@ namespace TencentCloud
                     bool CountryHasBeenSet() const;
 
                     /**
-                     * 获取区域信息
-                     * @return Area 区域信息
+                     * 获取区域信息。
+                     * @return Area 区域信息。
                      */
                     Area GetArea() const;
 
                     /**
-                     * 设置区域信息
-                     * @param Area 区域信息
+                     * 设置区域信息。
+                     * @param Area 区域信息。
                      */
                     void SetArea(const Area& _area);
 
@@ -108,14 +108,14 @@ namespace TencentCloud
                     bool AreaHasBeenSet() const;
 
                     /**
-                     * 获取省份信息
-                     * @return Province 省份信息
+                     * 获取省份信息。
+                     * @return Province 省份信息。
                      */
                     Province GetProvince() const;
 
                     /**
-                     * 设置省份信息
-                     * @param Province 省份信息
+                     * 设置省份信息。
+                     * @param Province 省份信息。
                      */
                     void SetProvince(const Province& _province);
 
@@ -126,14 +126,14 @@ namespace TencentCloud
                     bool ProvinceHasBeenSet() const;
 
                     /**
-                     * 获取城市信息
-                     * @return City 城市信息
+                     * 获取城市信息。
+                     * @return City 城市信息。
                      */
                     City GetCity() const;
 
                     /**
-                     * 设置城市信息
-                     * @param City 城市信息
+                     * 设置城市信息。
+                     * @param City 城市信息。
                      */
                     void SetCity(const City& _city);
 
@@ -144,14 +144,14 @@ namespace TencentCloud
                     bool CityHasBeenSet() const;
 
                     /**
-                     * 获取Region信息
-                     * @return RegionInfo Region信息
+                     * 获取Region信息。
+                     * @return RegionInfo Region信息。
                      */
                     RegionInfo GetRegionInfo() const;
 
                     /**
-                     * 设置Region信息
-                     * @param RegionInfo Region信息
+                     * 设置Region信息。
+                     * @param RegionInfo Region信息。
                      */
                     void SetRegionInfo(const RegionInfo& _regionInfo);
 
@@ -162,14 +162,14 @@ namespace TencentCloud
                     bool RegionInfoHasBeenSet() const;
 
                     /**
-                     * 获取运营商列表
-                     * @return ISPSet 运营商列表
+                     * 获取运营商列表。
+                     * @return ISPSet 运营商列表。
                      */
                     std::vector<ISP> GetISPSet() const;
 
                     /**
-                     * 设置运营商列表
-                     * @param ISPSet 运营商列表
+                     * 设置运营商列表。
+                     * @param ISPSet 运营商列表。
                      */
                     void SetISPSet(const std::vector<ISP>& _iSPSet);
 
@@ -180,14 +180,14 @@ namespace TencentCloud
                     bool ISPSetHasBeenSet() const;
 
                     /**
-                     * 获取运营商数量
-                     * @return ISPNum 运营商数量
+                     * 获取运营商数量。
+                     * @return ISPNum 运营商数量。
                      */
                     int64_t GetISPNum() const;
 
                     /**
-                     * 设置运营商数量
-                     * @param ISPNum 运营商数量
+                     * 设置运营商数量。
+                     * @param ISPNum 运营商数量。
                      */
                     void SetISPNum(const int64_t& _iSPNum);
 
@@ -200,49 +200,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * zone信息
+                     * zone信息。
                      */
                     ZoneInfo m_zoneInfo;
                     bool m_zoneInfoHasBeenSet;
 
                     /**
-                     * 国家信息
+                     * 国家信息。
                      */
                     Country m_country;
                     bool m_countryHasBeenSet;
 
                     /**
-                     * 区域信息
+                     * 区域信息。
                      */
                     Area m_area;
                     bool m_areaHasBeenSet;
 
                     /**
-                     * 省份信息
+                     * 省份信息。
                      */
                     Province m_province;
                     bool m_provinceHasBeenSet;
 
                     /**
-                     * 城市信息
+                     * 城市信息。
                      */
                     City m_city;
                     bool m_cityHasBeenSet;
 
                     /**
-                     * Region信息
+                     * Region信息。
                      */
                     RegionInfo m_regionInfo;
                     bool m_regionInfoHasBeenSet;
 
                     /**
-                     * 运营商列表
+                     * 运营商列表。
                      */
                     std::vector<ISP> m_iSPSet;
                     bool m_iSPSetHasBeenSet;
 
                     /**
-                     * 运营商数量
+                     * 运营商数量。
                      */
                     int64_t m_iSPNum;
                     bool m_iSPNumHasBeenSet;

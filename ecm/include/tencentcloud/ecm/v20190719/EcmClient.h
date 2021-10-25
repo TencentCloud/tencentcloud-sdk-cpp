@@ -141,6 +141,8 @@
 #include <tencentcloud/ecm/v20190719/model/DescribeNetworkInterfacesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeNodeRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeNodeResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DescribePackingQuotaGroupRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DescribePackingQuotaGroupResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribePeakBaseOverviewRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribePeakBaseOverviewResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribePeakNetworkOverviewRequest.h>
@@ -466,6 +468,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNodeResponse> DescribeNodeOutcome;
                 typedef std::future<DescribeNodeOutcome> DescribeNodeOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribeNodeRequest&, DescribeNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePackingQuotaGroupResponse> DescribePackingQuotaGroupOutcome;
+                typedef std::future<DescribePackingQuotaGroupOutcome> DescribePackingQuotaGroupOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DescribePackingQuotaGroupRequest&, DescribePackingQuotaGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePackingQuotaGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePeakBaseOverviewResponse> DescribePeakBaseOverviewOutcome;
                 typedef std::future<DescribePeakBaseOverviewOutcome> DescribePeakBaseOverviewOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribePeakBaseOverviewRequest&, DescribePeakBaseOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePeakBaseOverviewAsyncHandler;
@@ -1231,6 +1236,15 @@ namespace TencentCloud
                 DescribeNodeOutcome DescribeNode(const Model::DescribeNodeRequest &request);
                 void DescribeNodeAsync(const Model::DescribeNodeRequest& request, const DescribeNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNodeOutcomeCallable DescribeNodeCallable(const Model::DescribeNodeRequest& request);
+
+                /**
+                 *使用本接口获取某种机型在某些区域的装箱配额（当使用虚拟机型时，返回的是一组相互关联的装箱配额）。
+                 * @param req DescribePackingQuotaGroupRequest
+                 * @return DescribePackingQuotaGroupOutcome
+                 */
+                DescribePackingQuotaGroupOutcome DescribePackingQuotaGroup(const Model::DescribePackingQuotaGroupRequest &request);
+                void DescribePackingQuotaGroupAsync(const Model::DescribePackingQuotaGroupRequest& request, const DescribePackingQuotaGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePackingQuotaGroupOutcomeCallable DescribePackingQuotaGroupCallable(const Model::DescribePackingQuotaGroupRequest& request);
 
                 /**
                  *CPU 内存 硬盘等基础信息峰值数据

@@ -118,6 +118,7 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/RetryConfig.h
   include/tencentcloud/scf/v20180416/model/GetFunctionAddressResponse.h
   include/tencentcloud/scf/v20180416/model/CfsInsInfo.h
+  include/tencentcloud/scf/v20180416/model/TriggerAction.h
   include/tencentcloud/scf/v20180416/model/LimitsInfo.h
   include/tencentcloud/scf/v20180416/model/ListLayersResponse.h
   include/tencentcloud/scf/v20180416/model/FunctionVersion.h
@@ -249,6 +250,7 @@ set(scf_src
   src/v20180416/model/RetryConfig.cpp
   src/v20180416/model/GetFunctionAddressResponse.cpp
   src/v20180416/model/CfsInsInfo.cpp
+  src/v20180416/model/TriggerAction.cpp
   src/v20180416/model/LimitsInfo.cpp
   src/v20180416/model/ListLayersResponse.cpp
   src/v20180416/model/FunctionVersion.cpp

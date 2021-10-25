@@ -26,7 +26,8 @@ PutProvisionedConcurrencyConfigRequest::PutProvisionedConcurrencyConfigRequest()
     m_functionNameHasBeenSet(false),
     m_qualifierHasBeenSet(false),
     m_versionProvisionedConcurrencyNumHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
+    m_namespaceHasBeenSet(false),
+    m_triggerActionsHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,21 @@ string PutProvisionedConcurrencyConfigRequest::ToJsonString() const
         string key = "Namespace";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_namespace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_triggerActionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerActions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_triggerActions.begin(); itr != m_triggerActions.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -139,6 +155,22 @@ void PutProvisionedConcurrencyConfigRequest::SetNamespace(const string& _namespa
 bool PutProvisionedConcurrencyConfigRequest::NamespaceHasBeenSet() const
 {
     return m_namespaceHasBeenSet;
+}
+
+vector<TriggerAction> PutProvisionedConcurrencyConfigRequest::GetTriggerActions() const
+{
+    return m_triggerActions;
+}
+
+void PutProvisionedConcurrencyConfigRequest::SetTriggerActions(const vector<TriggerAction>& _triggerActions)
+{
+    m_triggerActions = _triggerActions;
+    m_triggerActionsHasBeenSet = true;
+}
+
+bool PutProvisionedConcurrencyConfigRequest::TriggerActionsHasBeenSet() const
+{
+    return m_triggerActionsHasBeenSet;
 }
 
 

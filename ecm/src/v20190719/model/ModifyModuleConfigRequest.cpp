@@ -25,7 +25,10 @@ using namespace std;
 ModifyModuleConfigRequest::ModifyModuleConfigRequest() :
     m_moduleIdHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
-    m_defaultDataDiskSizeHasBeenSet(false)
+    m_defaultDataDiskSizeHasBeenSet(false),
+    m_defaultSystemDiskSizeHasBeenSet(false),
+    m_systemDiskHasBeenSet(false),
+    m_dataDisksHasBeenSet(false)
 {
 }
 
@@ -58,6 +61,38 @@ string ModifyModuleConfigRequest::ToJsonString() const
         string key = "DefaultDataDiskSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_defaultDataDiskSize, allocator);
+    }
+
+    if (m_defaultSystemDiskSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultSystemDiskSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_defaultSystemDiskSize, allocator);
+    }
+
+    if (m_systemDiskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SystemDisk";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_systemDisk.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_dataDisksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataDisks";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dataDisks.begin(); itr != m_dataDisks.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -114,6 +149,54 @@ void ModifyModuleConfigRequest::SetDefaultDataDiskSize(const int64_t& _defaultDa
 bool ModifyModuleConfigRequest::DefaultDataDiskSizeHasBeenSet() const
 {
     return m_defaultDataDiskSizeHasBeenSet;
+}
+
+int64_t ModifyModuleConfigRequest::GetDefaultSystemDiskSize() const
+{
+    return m_defaultSystemDiskSize;
+}
+
+void ModifyModuleConfigRequest::SetDefaultSystemDiskSize(const int64_t& _defaultSystemDiskSize)
+{
+    m_defaultSystemDiskSize = _defaultSystemDiskSize;
+    m_defaultSystemDiskSizeHasBeenSet = true;
+}
+
+bool ModifyModuleConfigRequest::DefaultSystemDiskSizeHasBeenSet() const
+{
+    return m_defaultSystemDiskSizeHasBeenSet;
+}
+
+SystemDisk ModifyModuleConfigRequest::GetSystemDisk() const
+{
+    return m_systemDisk;
+}
+
+void ModifyModuleConfigRequest::SetSystemDisk(const SystemDisk& _systemDisk)
+{
+    m_systemDisk = _systemDisk;
+    m_systemDiskHasBeenSet = true;
+}
+
+bool ModifyModuleConfigRequest::SystemDiskHasBeenSet() const
+{
+    return m_systemDiskHasBeenSet;
+}
+
+vector<DataDisk> ModifyModuleConfigRequest::GetDataDisks() const
+{
+    return m_dataDisks;
+}
+
+void ModifyModuleConfigRequest::SetDataDisks(const vector<DataDisk>& _dataDisks)
+{
+    m_dataDisks = _dataDisks;
+    m_dataDisksHasBeenSet = true;
+}
+
+bool ModifyModuleConfigRequest::DataDisksHasBeenSet() const
+{
+    return m_dataDisksHasBeenSet;
 }
 
 

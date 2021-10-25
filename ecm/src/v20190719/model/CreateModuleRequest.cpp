@@ -33,7 +33,9 @@ CreateModuleRequest::CreateModuleRequest() :
     m_tagSpecificationHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
     m_defaultBandWidthInHasBeenSet(false),
-    m_disableWanIpHasBeenSet(false)
+    m_disableWanIpHasBeenSet(false),
+    m_systemDiskHasBeenSet(false),
+    m_dataDisksHasBeenSet(false)
 {
 }
 
@@ -142,6 +144,30 @@ string CreateModuleRequest::ToJsonString() const
         string key = "DisableWanIp";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_disableWanIp, allocator);
+    }
+
+    if (m_systemDiskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SystemDisk";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_systemDisk.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_dataDisksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataDisks";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dataDisks.begin(); itr != m_dataDisks.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -326,6 +352,38 @@ void CreateModuleRequest::SetDisableWanIp(const bool& _disableWanIp)
 bool CreateModuleRequest::DisableWanIpHasBeenSet() const
 {
     return m_disableWanIpHasBeenSet;
+}
+
+SystemDisk CreateModuleRequest::GetSystemDisk() const
+{
+    return m_systemDisk;
+}
+
+void CreateModuleRequest::SetSystemDisk(const SystemDisk& _systemDisk)
+{
+    m_systemDisk = _systemDisk;
+    m_systemDiskHasBeenSet = true;
+}
+
+bool CreateModuleRequest::SystemDiskHasBeenSet() const
+{
+    return m_systemDiskHasBeenSet;
+}
+
+vector<DataDisk> CreateModuleRequest::GetDataDisks() const
+{
+    return m_dataDisks;
+}
+
+void CreateModuleRequest::SetDataDisks(const vector<DataDisk>& _dataDisks)
+{
+    m_dataDisks = _dataDisks;
+    m_dataDisksHasBeenSet = true;
+}
+
+bool CreateModuleRequest::DataDisksHasBeenSet() const
+{
+    return m_dataDisksHasBeenSet;
 }
 
 

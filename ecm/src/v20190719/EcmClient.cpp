@@ -2577,6 +2577,49 @@ EcmClient::DescribeNodeOutcomeCallable EcmClient::DescribeNodeCallable(const Des
     return task->get_future();
 }
 
+EcmClient::DescribePackingQuotaGroupOutcome EcmClient::DescribePackingQuotaGroup(const DescribePackingQuotaGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePackingQuotaGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePackingQuotaGroupResponse rsp = DescribePackingQuotaGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePackingQuotaGroupOutcome(rsp);
+        else
+            return DescribePackingQuotaGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePackingQuotaGroupOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DescribePackingQuotaGroupAsync(const DescribePackingQuotaGroupRequest& request, const DescribePackingQuotaGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePackingQuotaGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DescribePackingQuotaGroupOutcomeCallable EcmClient::DescribePackingQuotaGroupCallable(const DescribePackingQuotaGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePackingQuotaGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePackingQuotaGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::DescribePeakBaseOverviewOutcome EcmClient::DescribePeakBaseOverview(const DescribePeakBaseOverviewRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePeakBaseOverview");

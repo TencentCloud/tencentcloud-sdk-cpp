@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/scf/v20180416/model/TriggerAction.h>
 
 
 namespace TencentCloud
@@ -114,6 +115,24 @@ namespace TencentCloud
                      */
                     bool NamespaceHasBeenSet() const;
 
+                    /**
+                     * 获取定时预置任务
+                     * @return TriggerActions 定时预置任务
+                     */
+                    std::vector<TriggerAction> GetTriggerActions() const;
+
+                    /**
+                     * 设置定时预置任务
+                     * @param TriggerActions 定时预置任务
+                     */
+                    void SetTriggerActions(const std::vector<TriggerAction>& _triggerActions);
+
+                    /**
+                     * 判断参数 TriggerActions 是否已赋值
+                     * @return TriggerActions 是否已赋值
+                     */
+                    bool TriggerActionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +158,12 @@ namespace TencentCloud
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
+
+                    /**
+                     * 定时预置任务
+                     */
+                    std::vector<TriggerAction> m_triggerActions;
+                    bool m_triggerActionsHasBeenSet;
 
                 };
             }

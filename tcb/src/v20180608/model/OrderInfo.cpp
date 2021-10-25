@@ -29,7 +29,9 @@ OrderInfo::OrderInfo() :
     m_createTimeHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_extensionIdHasBeenSet(false),
-    m_resourceReadyHasBeenSet(false)
+    m_resourceReadyHasBeenSet(false),
+    m_flagHasBeenSet(false),
+    m_reqBodyHasBeenSet(false)
 {
 }
 
@@ -128,6 +130,26 @@ CoreInternalOutcome OrderInfo::Deserialize(const rapidjson::Value &value)
         m_resourceReadyHasBeenSet = true;
     }
 
+    if (value.HasMember("Flag") && !value["Flag"].IsNull())
+    {
+        if (!value["Flag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrderInfo.Flag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_flag = string(value["Flag"].GetString());
+        m_flagHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReqBody") && !value["ReqBody"].IsNull())
+    {
+        if (!value["ReqBody"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrderInfo.ReqBody` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reqBody = string(value["ReqBody"].GetString());
+        m_reqBodyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +227,22 @@ void OrderInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ResourceReady";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resourceReady.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Flag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_flag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reqBodyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReqBody";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reqBody.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +390,37 @@ void OrderInfo::SetResourceReady(const string& _resourceReady)
 bool OrderInfo::ResourceReadyHasBeenSet() const
 {
     return m_resourceReadyHasBeenSet;
+}
+
+string OrderInfo::GetFlag() const
+{
+    return m_flag;
+}
+
+void OrderInfo::SetFlag(const string& _flag)
+{
+    m_flag = _flag;
+    m_flagHasBeenSet = true;
+}
+
+bool OrderInfo::FlagHasBeenSet() const
+{
+    return m_flagHasBeenSet;
+}
+
+string OrderInfo::GetReqBody() const
+{
+    return m_reqBody;
+}
+
+void OrderInfo::SetReqBody(const string& _reqBody)
+{
+    m_reqBody = _reqBody;
+    m_reqBodyHasBeenSet = true;
+}
+
+bool OrderInfo::ReqBodyHasBeenSet() const
+{
+    return m_reqBodyHasBeenSet;
 }
 

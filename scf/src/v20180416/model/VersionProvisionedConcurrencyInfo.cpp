@@ -25,7 +25,8 @@ VersionProvisionedConcurrencyInfo::VersionProvisionedConcurrencyInfo() :
     m_availableProvisionedConcurrencyNumHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
-    m_qualifierHasBeenSet(false)
+    m_qualifierHasBeenSet(false),
+    m_triggerActionsHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,26 @@ CoreInternalOutcome VersionProvisionedConcurrencyInfo::Deserialize(const rapidjs
         m_qualifierHasBeenSet = true;
     }
 
+    if (value.HasMember("TriggerActions") && !value["TriggerActions"].IsNull())
+    {
+        if (!value["TriggerActions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `VersionProvisionedConcurrencyInfo.TriggerActions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TriggerActions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TriggerAction item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_triggerActions.push_back(item);
+        }
+        m_triggerActionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +150,21 @@ void VersionProvisionedConcurrencyInfo::ToJsonObject(rapidjson::Value &value, ra
         string key = "Qualifier";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_qualifier.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_triggerActionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerActions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_triggerActions.begin(); itr != m_triggerActions.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -212,5 +248,21 @@ void VersionProvisionedConcurrencyInfo::SetQualifier(const string& _qualifier)
 bool VersionProvisionedConcurrencyInfo::QualifierHasBeenSet() const
 {
     return m_qualifierHasBeenSet;
+}
+
+vector<TriggerAction> VersionProvisionedConcurrencyInfo::GetTriggerActions() const
+{
+    return m_triggerActions;
+}
+
+void VersionProvisionedConcurrencyInfo::SetTriggerActions(const vector<TriggerAction>& _triggerActions)
+{
+    m_triggerActions = _triggerActions;
+    m_triggerActionsHasBeenSet = true;
+}
+
+bool VersionProvisionedConcurrencyInfo::TriggerActionsHasBeenSet() const
+{
+    return m_triggerActionsHasBeenSet;
 }
 

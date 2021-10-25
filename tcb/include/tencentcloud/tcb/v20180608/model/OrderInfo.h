@@ -268,6 +268,54 @@ namespace TencentCloud
                      */
                     bool ResourceReadyHasBeenSet() const;
 
+                    /**
+                     * 获取安装标记。建议使用方统一转大小写之后再判断。
+<li>QuickStart：快速启动来源</li>
+<li>Activity：活动来源</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Flag 安装标记。建议使用方统一转大小写之后再判断。
+<li>QuickStart：快速启动来源</li>
+<li>Activity：活动来源</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFlag() const;
+
+                    /**
+                     * 设置安装标记。建议使用方统一转大小写之后再判断。
+<li>QuickStart：快速启动来源</li>
+<li>Activity：活动来源</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Flag 安装标记。建议使用方统一转大小写之后再判断。
+<li>QuickStart：快速启动来源</li>
+<li>Activity：活动来源</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFlag(const std::string& _flag);
+
+                    /**
+                     * 判断参数 Flag 是否已赋值
+                     * @return Flag 是否已赋值
+                     */
+                    bool FlagHasBeenSet() const;
+
+                    /**
+                     * 获取下单时的参数
+                     * @return ReqBody 下单时的参数
+                     */
+                    std::string GetReqBody() const;
+
+                    /**
+                     * 设置下单时的参数
+                     * @param ReqBody 下单时的参数
+                     */
+                    void SetReqBody(const std::string& _reqBody);
+
+                    /**
+                     * 判断参数 ReqBody 是否已赋值
+                     * @return ReqBody 是否已赋值
+                     */
+                    bool ReqBodyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -338,6 +386,21 @@ namespace TencentCloud
                      */
                     std::string m_resourceReady;
                     bool m_resourceReadyHasBeenSet;
+
+                    /**
+                     * 安装标记。建议使用方统一转大小写之后再判断。
+<li>QuickStart：快速启动来源</li>
+<li>Activity：活动来源</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_flag;
+                    bool m_flagHasBeenSet;
+
+                    /**
+                     * 下单时的参数
+                     */
+                    std::string m_reqBody;
+                    bool m_reqBodyHasBeenSet;
 
                 };
             }

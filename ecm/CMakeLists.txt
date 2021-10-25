@@ -86,6 +86,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/NetworkInterface.h
   include/tencentcloud/ecm/v20190719/model/DescribeVpcsResponse.h
   include/tencentcloud/ecm/v20190719/model/ModifySecurityGroupAttributeRequest.h
+  include/tencentcloud/ecm/v20190719/model/DescribePackingQuotaGroupResponse.h
   include/tencentcloud/ecm/v20190719/model/LoadBalancer.h
   include/tencentcloud/ecm/v20190719/model/ModifyModuleNameResponse.h
   include/tencentcloud/ecm/v20190719/model/DescribePeakBaseOverviewRequest.h
@@ -104,6 +105,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/DescribeCustomImageTaskResponse.h
   include/tencentcloud/ecm/v20190719/model/ISPCounter.h
   include/tencentcloud/ecm/v20190719/model/CreateModuleResponse.h
+  include/tencentcloud/ecm/v20190719/model/DescribePackingQuotaGroupRequest.h
   include/tencentcloud/ecm/v20190719/model/SecurityGroupPolicy.h
   include/tencentcloud/ecm/v20190719/model/TerminateDisksResponse.h
   include/tencentcloud/ecm/v20190719/model/LoadBalancerHealth.h
@@ -311,6 +313,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/InstanceFamilyConfig.h
   include/tencentcloud/ecm/v20190719/model/ModifySecurityGroupPoliciesResponse.h
   include/tencentcloud/ecm/v20190719/model/ServiceTemplateSpecification.h
+  include/tencentcloud/ecm/v20190719/model/PackingQuotaInfo.h
   include/tencentcloud/ecm/v20190719/model/Image.h
   include/tencentcloud/ecm/v20190719/model/DetachNetworkInterfaceRequest.h
   include/tencentcloud/ecm/v20190719/model/ModifyTargetWeightRequest.h
@@ -353,6 +356,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/DescribeImageResponse.h
   include/tencentcloud/ecm/v20190719/model/ListenerBackend.h
   include/tencentcloud/ecm/v20190719/model/RegionInfo.h
+  include/tencentcloud/ecm/v20190719/model/PackingQuotaGroup.h
   include/tencentcloud/ecm/v20190719/model/DescribeNetworkInterfacesResponse.h
   include/tencentcloud/ecm/v20190719/model/EnableRoutesResponse.h
   include/tencentcloud/ecm/v20190719/model/AssignPrivateIpAddressesRequest.h
@@ -438,6 +442,7 @@ set(ecm_src
   src/v20190719/model/NetworkInterface.cpp
   src/v20190719/model/DescribeVpcsResponse.cpp
   src/v20190719/model/ModifySecurityGroupAttributeRequest.cpp
+  src/v20190719/model/DescribePackingQuotaGroupResponse.cpp
   src/v20190719/model/LoadBalancer.cpp
   src/v20190719/model/ModifyModuleNameResponse.cpp
   src/v20190719/model/DescribePeakBaseOverviewRequest.cpp
@@ -456,6 +461,7 @@ set(ecm_src
   src/v20190719/model/DescribeCustomImageTaskResponse.cpp
   src/v20190719/model/ISPCounter.cpp
   src/v20190719/model/CreateModuleResponse.cpp
+  src/v20190719/model/DescribePackingQuotaGroupRequest.cpp
   src/v20190719/model/SecurityGroupPolicy.cpp
   src/v20190719/model/TerminateDisksResponse.cpp
   src/v20190719/model/LoadBalancerHealth.cpp
@@ -663,6 +669,7 @@ set(ecm_src
   src/v20190719/model/InstanceFamilyConfig.cpp
   src/v20190719/model/ModifySecurityGroupPoliciesResponse.cpp
   src/v20190719/model/ServiceTemplateSpecification.cpp
+  src/v20190719/model/PackingQuotaInfo.cpp
   src/v20190719/model/Image.cpp
   src/v20190719/model/DetachNetworkInterfaceRequest.cpp
   src/v20190719/model/ModifyTargetWeightRequest.cpp
@@ -705,6 +712,7 @@ set(ecm_src
   src/v20190719/model/DescribeImageResponse.cpp
   src/v20190719/model/ListenerBackend.cpp
   src/v20190719/model/RegionInfo.cpp
+  src/v20190719/model/PackingQuotaGroup.cpp
   src/v20190719/model/DescribeNetworkInterfacesResponse.cpp
   src/v20190719/model/EnableRoutesResponse.cpp
   src/v20190719/model/AssignPrivateIpAddressesRequest.cpp
