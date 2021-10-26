@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/ServicesInfo.h>
 
 
 namespace TencentCloud
@@ -61,14 +62,14 @@ namespace TencentCloud
                     bool ServiceTemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取支持单个端口、多个端口、连续端口及所有端口，协议支持：TCP、UDP、ICMP、GRE 协议。
-                     * @return Services 支持单个端口、多个端口、连续端口及所有端口，协议支持：TCP、UDP、ICMP、GRE 协议。
+                     * 获取支持单个端口、多个端口、连续端口及所有端口，协议支持：TCP、UDP、ICMP、GRE 协议。Services与ServicesExtra必填其一。
+                     * @return Services 支持单个端口、多个端口、连续端口及所有端口，协议支持：TCP、UDP、ICMP、GRE 协议。Services与ServicesExtra必填其一。
                      */
                     std::vector<std::string> GetServices() const;
 
                     /**
-                     * 设置支持单个端口、多个端口、连续端口及所有端口，协议支持：TCP、UDP、ICMP、GRE 协议。
-                     * @param Services 支持单个端口、多个端口、连续端口及所有端口，协议支持：TCP、UDP、ICMP、GRE 协议。
+                     * 设置支持单个端口、多个端口、连续端口及所有端口，协议支持：TCP、UDP、ICMP、GRE 协议。Services与ServicesExtra必填其一。
+                     * @param Services 支持单个端口、多个端口、连续端口及所有端口，协议支持：TCP、UDP、ICMP、GRE 协议。Services与ServicesExtra必填其一。
                      */
                     void SetServices(const std::vector<std::string>& _services);
 
@@ -77,6 +78,24 @@ namespace TencentCloud
                      * @return Services 是否已赋值
                      */
                     bool ServicesHasBeenSet() const;
+
+                    /**
+                     * 获取支持添加备注，单个端口、多个端口、连续端口及所有端口，协议支持：TCP、UDP、ICMP、GRE 协议。Services与ServicesExtra必填其一。
+                     * @return ServicesExtra 支持添加备注，单个端口、多个端口、连续端口及所有端口，协议支持：TCP、UDP、ICMP、GRE 协议。Services与ServicesExtra必填其一。
+                     */
+                    std::vector<ServicesInfo> GetServicesExtra() const;
+
+                    /**
+                     * 设置支持添加备注，单个端口、多个端口、连续端口及所有端口，协议支持：TCP、UDP、ICMP、GRE 协议。Services与ServicesExtra必填其一。
+                     * @param ServicesExtra 支持添加备注，单个端口、多个端口、连续端口及所有端口，协议支持：TCP、UDP、ICMP、GRE 协议。Services与ServicesExtra必填其一。
+                     */
+                    void SetServicesExtra(const std::vector<ServicesInfo>& _servicesExtra);
+
+                    /**
+                     * 判断参数 ServicesExtra 是否已赋值
+                     * @return ServicesExtra 是否已赋值
+                     */
+                    bool ServicesExtraHasBeenSet() const;
 
                 private:
 
@@ -87,10 +106,16 @@ namespace TencentCloud
                     bool m_serviceTemplateNameHasBeenSet;
 
                     /**
-                     * 支持单个端口、多个端口、连续端口及所有端口，协议支持：TCP、UDP、ICMP、GRE 协议。
+                     * 支持单个端口、多个端口、连续端口及所有端口，协议支持：TCP、UDP、ICMP、GRE 协议。Services与ServicesExtra必填其一。
                      */
                     std::vector<std::string> m_services;
                     bool m_servicesHasBeenSet;
+
+                    /**
+                     * 支持添加备注，单个端口、多个端口、连续端口及所有端口，协议支持：TCP、UDP、ICMP、GRE 协议。Services与ServicesExtra必填其一。
+                     */
+                    std::vector<ServicesInfo> m_servicesExtra;
+                    bool m_servicesExtraHasBeenSet;
 
                 };
             }

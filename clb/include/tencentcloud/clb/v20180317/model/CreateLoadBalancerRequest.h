@@ -359,14 +359,22 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool ExclusiveClusterHasBeenSet() const;
 
                     /**
-                     * 获取创建性能独享型CLB，传SLA。
-                     * @return SlaType 创建性能独享型CLB，传SLA。
+                     * 获取创建性能容量型 CLB 实例。
+<ul><li>若需要创建性能容量型 CLB 实例，则此参数必填，且取值为：SLA，表示创建按量计费模式下的默认性能保障规格的性能容量型实例。</li>
+<li>若需要创建共享型 CLB 实例，则无需填写此参数。</li></ul>
+                     * @return SlaType 创建性能容量型 CLB 实例。
+<ul><li>若需要创建性能容量型 CLB 实例，则此参数必填，且取值为：SLA，表示创建按量计费模式下的默认性能保障规格的性能容量型实例。</li>
+<li>若需要创建共享型 CLB 实例，则无需填写此参数。</li></ul>
                      */
                     std::string GetSlaType() const;
 
                     /**
-                     * 设置创建性能独享型CLB，传SLA。
-                     * @param SlaType 创建性能独享型CLB，传SLA。
+                     * 设置创建性能容量型 CLB 实例。
+<ul><li>若需要创建性能容量型 CLB 实例，则此参数必填，且取值为：SLA，表示创建按量计费模式下的默认性能保障规格的性能容量型实例。</li>
+<li>若需要创建共享型 CLB 实例，则无需填写此参数。</li></ul>
+                     * @param SlaType 创建性能容量型 CLB 实例。
+<ul><li>若需要创建性能容量型 CLB 实例，则此参数必填，且取值为：SLA，表示创建按量计费模式下的默认性能保障规格的性能容量型实例。</li>
+<li>若需要创建共享型 CLB 实例，则无需填写此参数。</li></ul>
                      */
                     void SetSlaType(const std::string& _slaType);
 
@@ -611,7 +619,9 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_exclusiveClusterHasBeenSet;
 
                     /**
-                     * 创建性能独享型CLB，传SLA。
+                     * 创建性能容量型 CLB 实例。
+<ul><li>若需要创建性能容量型 CLB 实例，则此参数必填，且取值为：SLA，表示创建按量计费模式下的默认性能保障规格的性能容量型实例。</li>
+<li>若需要创建共享型 CLB 实例，则无需填写此参数。</li></ul>
                      */
                     std::string m_slaType;
                     bool m_slaTypeHasBeenSet;

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/AddressInfo.h>
 
 
 namespace TencentCloud
@@ -96,6 +97,24 @@ namespace TencentCloud
                      */
                     bool AddressesHasBeenSet() const;
 
+                    /**
+                     * 获取支持添加备注的地址信息，支持 IP、CIDR、IP 范围。
+                     * @return AddressesExtra 支持添加备注的地址信息，支持 IP、CIDR、IP 范围。
+                     */
+                    std::vector<AddressInfo> GetAddressesExtra() const;
+
+                    /**
+                     * 设置支持添加备注的地址信息，支持 IP、CIDR、IP 范围。
+                     * @param AddressesExtra 支持添加备注的地址信息，支持 IP、CIDR、IP 范围。
+                     */
+                    void SetAddressesExtra(const std::vector<AddressInfo>& _addressesExtra);
+
+                    /**
+                     * 判断参数 AddressesExtra 是否已赋值
+                     * @return AddressesExtra 是否已赋值
+                     */
+                    bool AddressesExtraHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +134,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_addresses;
                     bool m_addressesHasBeenSet;
+
+                    /**
+                     * 支持添加备注的地址信息，支持 IP、CIDR、IP 范围。
+                     */
+                    std::vector<AddressInfo> m_addressesExtra;
+                    bool m_addressesExtraHasBeenSet;
 
                 };
             }

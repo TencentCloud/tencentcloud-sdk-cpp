@@ -6361,6 +6361,49 @@ CwpClient::DescribeVulCountByDatesOutcomeCallable CwpClient::DescribeVulCountByD
     return task->get_future();
 }
 
+CwpClient::DescribeVulEffectHostListOutcome CwpClient::DescribeVulEffectHostList(const DescribeVulEffectHostListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVulEffectHostList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVulEffectHostListResponse rsp = DescribeVulEffectHostListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVulEffectHostListOutcome(rsp);
+        else
+            return DescribeVulEffectHostListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVulEffectHostListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeVulEffectHostListAsync(const DescribeVulEffectHostListRequest& request, const DescribeVulEffectHostListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVulEffectHostList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeVulEffectHostListOutcomeCallable CwpClient::DescribeVulEffectHostListCallable(const DescribeVulEffectHostListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVulEffectHostListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVulEffectHostList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DescribeVulHostCountScanTimeOutcome CwpClient::DescribeVulHostCountScanTime(const DescribeVulHostCountScanTimeRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVulHostCountScanTime");
@@ -6526,6 +6569,49 @@ CwpClient::DescribeVulLevelCountOutcomeCallable CwpClient::DescribeVulLevelCount
         [this, request]()
         {
             return this->DescribeVulLevelCount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeVulListOutcome CwpClient::DescribeVulList(const DescribeVulListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVulList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVulListResponse rsp = DescribeVulListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVulListOutcome(rsp);
+        else
+            return DescribeVulListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVulListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeVulListAsync(const DescribeVulListRequest& request, const DescribeVulListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVulList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeVulListOutcomeCallable CwpClient::DescribeVulListCallable(const DescribeVulListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVulListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVulList(request);
         }
     );
 

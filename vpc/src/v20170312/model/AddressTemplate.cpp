@@ -24,7 +24,8 @@ AddressTemplate::AddressTemplate() :
     m_addressTemplateNameHasBeenSet(false),
     m_addressTemplateIdHasBeenSet(false),
     m_addressSetHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_addressExtraSetHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,26 @@ CoreInternalOutcome AddressTemplate::Deserialize(const rapidjson::Value &value)
         m_createdTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("AddressExtraSet") && !value["AddressExtraSet"].IsNull())
+    {
+        if (!value["AddressExtraSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AddressTemplate.AddressExtraSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AddressExtraSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AddressInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_addressExtraSet.push_back(item);
+        }
+        m_addressExtraSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +139,21 @@ void AddressTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "CreatedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createdTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_addressExtraSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddressExtraSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_addressExtraSet.begin(); itr != m_addressExtraSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -185,5 +221,21 @@ void AddressTemplate::SetCreatedTime(const string& _createdTime)
 bool AddressTemplate::CreatedTimeHasBeenSet() const
 {
     return m_createdTimeHasBeenSet;
+}
+
+vector<AddressInfo> AddressTemplate::GetAddressExtraSet() const
+{
+    return m_addressExtraSet;
+}
+
+void AddressTemplate::SetAddressExtraSet(const vector<AddressInfo>& _addressExtraSet)
+{
+    m_addressExtraSet = _addressExtraSet;
+    m_addressExtraSetHasBeenSet = true;
+}
+
+bool AddressTemplate::AddressExtraSetHasBeenSet() const
+{
+    return m_addressExtraSetHasBeenSet;
 }
 

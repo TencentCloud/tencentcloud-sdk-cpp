@@ -45,21 +45,25 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤条件。
-<li>service-template-name - String - （过滤条件）协议端口模板名称。</li>
-<li>service-template-id - String - （过滤条件）协议端口模板实例ID，例如：ppm-e6dy460g。</li>
+<li>service-template-name - 协议端口模板名称。</li>
+<li>service-template-id - 协议端口模板实例ID，例如：ppm-e6dy460g。</li>
+<li>service-port- 协议端口。</li>
                      * @return Filters 过滤条件。
-<li>service-template-name - String - （过滤条件）协议端口模板名称。</li>
-<li>service-template-id - String - （过滤条件）协议端口模板实例ID，例如：ppm-e6dy460g。</li>
+<li>service-template-name - 协议端口模板名称。</li>
+<li>service-template-id - 协议端口模板实例ID，例如：ppm-e6dy460g。</li>
+<li>service-port- 协议端口。</li>
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件。
-<li>service-template-name - String - （过滤条件）协议端口模板名称。</li>
-<li>service-template-id - String - （过滤条件）协议端口模板实例ID，例如：ppm-e6dy460g。</li>
+<li>service-template-name - 协议端口模板名称。</li>
+<li>service-template-id - 协议端口模板实例ID，例如：ppm-e6dy460g。</li>
+<li>service-port- 协议端口。</li>
                      * @param Filters 过滤条件。
-<li>service-template-name - String - （过滤条件）协议端口模板名称。</li>
-<li>service-template-id - String - （过滤条件）协议端口模板实例ID，例如：ppm-e6dy460g。</li>
+<li>service-template-name - 协议端口模板名称。</li>
+<li>service-template-id - 协议端口模板实例ID，例如：ppm-e6dy460g。</li>
+<li>service-port- 协议端口。</li>
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -109,8 +113,9 @@ namespace TencentCloud
 
                     /**
                      * 过滤条件。
-<li>service-template-name - String - （过滤条件）协议端口模板名称。</li>
-<li>service-template-id - String - （过滤条件）协议端口模板实例ID，例如：ppm-e6dy460g。</li>
+<li>service-template-name - 协议端口模板名称。</li>
+<li>service-template-id - 协议端口模板实例ID，例如：ppm-e6dy460g。</li>
+<li>service-port- 协议端口。</li>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

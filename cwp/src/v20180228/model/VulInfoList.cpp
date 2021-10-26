@@ -1,0 +1,531 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/cwp/v20180228/model/VulInfoList.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Cwp::V20180228::Model;
+using namespace std;
+
+VulInfoList::VulInfoList() :
+    m_idsHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_vulIdHasBeenSet(false),
+    m_publishTimeHasBeenSet(false),
+    m_lastTimeHasBeenSet(false),
+    m_hostCountHasBeenSet(false),
+    m_levelHasBeenSet(false),
+    m_fromHasBeenSet(false),
+    m_descriptHasBeenSet(false),
+    m_publishTimeWisteriaHasBeenSet(false),
+    m_nameWisteriaHasBeenSet(false),
+    m_descriptWisteriaHasBeenSet(false),
+    m_statusStrHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome VulInfoList::Deserialize(const rapidjson::Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("Ids") && !value["Ids"].IsNull())
+    {
+        if (!value["Ids"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulInfoList.Ids` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ids = string(value["Ids"].GetString());
+        m_idsHasBeenSet = true;
+    }
+
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulInfoList.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulInfoList.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetUint64();
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("VulId") && !value["VulId"].IsNull())
+    {
+        if (!value["VulId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulInfoList.VulId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vulId = value["VulId"].GetUint64();
+        m_vulIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("PublishTime") && !value["PublishTime"].IsNull())
+    {
+        if (!value["PublishTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulInfoList.PublishTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publishTime = string(value["PublishTime"].GetString());
+        m_publishTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("LastTime") && !value["LastTime"].IsNull())
+    {
+        if (!value["LastTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulInfoList.LastTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastTime = string(value["LastTime"].GetString());
+        m_lastTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("HostCount") && !value["HostCount"].IsNull())
+    {
+        if (!value["HostCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulInfoList.HostCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostCount = value["HostCount"].GetUint64();
+        m_hostCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("Level") && !value["Level"].IsNull())
+    {
+        if (!value["Level"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulInfoList.Level` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_level = value["Level"].GetUint64();
+        m_levelHasBeenSet = true;
+    }
+
+    if (value.HasMember("From") && !value["From"].IsNull())
+    {
+        if (!value["From"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulInfoList.From` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_from = value["From"].GetUint64();
+        m_fromHasBeenSet = true;
+    }
+
+    if (value.HasMember("Descript") && !value["Descript"].IsNull())
+    {
+        if (!value["Descript"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulInfoList.Descript` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_descript = string(value["Descript"].GetString());
+        m_descriptHasBeenSet = true;
+    }
+
+    if (value.HasMember("PublishTimeWisteria") && !value["PublishTimeWisteria"].IsNull())
+    {
+        if (!value["PublishTimeWisteria"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulInfoList.PublishTimeWisteria` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publishTimeWisteria = string(value["PublishTimeWisteria"].GetString());
+        m_publishTimeWisteriaHasBeenSet = true;
+    }
+
+    if (value.HasMember("NameWisteria") && !value["NameWisteria"].IsNull())
+    {
+        if (!value["NameWisteria"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulInfoList.NameWisteria` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nameWisteria = string(value["NameWisteria"].GetString());
+        m_nameWisteriaHasBeenSet = true;
+    }
+
+    if (value.HasMember("DescriptWisteria") && !value["DescriptWisteria"].IsNull())
+    {
+        if (!value["DescriptWisteria"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulInfoList.DescriptWisteria` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_descriptWisteria = string(value["DescriptWisteria"].GetString());
+        m_descriptWisteriaHasBeenSet = true;
+    }
+
+    if (value.HasMember("StatusStr") && !value["StatusStr"].IsNull())
+    {
+        if (!value["StatusStr"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulInfoList.StatusStr` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_statusStr = string(value["StatusStr"].GetString());
+        m_statusStrHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void VulInfoList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
+{
+
+    if (m_idsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ids";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ids.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_vulIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VulId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vulId, allocator);
+    }
+
+    if (m_publishTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublishTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publishTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lastTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hostCount, allocator);
+    }
+
+    if (m_levelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Level";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_level, allocator);
+    }
+
+    if (m_fromHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "From";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_from, allocator);
+    }
+
+    if (m_descriptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Descript";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_descript.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publishTimeWisteriaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublishTimeWisteria";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publishTimeWisteria.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nameWisteriaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NameWisteria";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nameWisteria.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptWisteriaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DescriptWisteria";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_descriptWisteria.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusStrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatusStr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_statusStr.c_str(), allocator).Move(), allocator);
+    }
+
+}
+
+
+string VulInfoList::GetIds() const
+{
+    return m_ids;
+}
+
+void VulInfoList::SetIds(const string& _ids)
+{
+    m_ids = _ids;
+    m_idsHasBeenSet = true;
+}
+
+bool VulInfoList::IdsHasBeenSet() const
+{
+    return m_idsHasBeenSet;
+}
+
+string VulInfoList::GetName() const
+{
+    return m_name;
+}
+
+void VulInfoList::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool VulInfoList::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+uint64_t VulInfoList::GetStatus() const
+{
+    return m_status;
+}
+
+void VulInfoList::SetStatus(const uint64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool VulInfoList::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+uint64_t VulInfoList::GetVulId() const
+{
+    return m_vulId;
+}
+
+void VulInfoList::SetVulId(const uint64_t& _vulId)
+{
+    m_vulId = _vulId;
+    m_vulIdHasBeenSet = true;
+}
+
+bool VulInfoList::VulIdHasBeenSet() const
+{
+    return m_vulIdHasBeenSet;
+}
+
+string VulInfoList::GetPublishTime() const
+{
+    return m_publishTime;
+}
+
+void VulInfoList::SetPublishTime(const string& _publishTime)
+{
+    m_publishTime = _publishTime;
+    m_publishTimeHasBeenSet = true;
+}
+
+bool VulInfoList::PublishTimeHasBeenSet() const
+{
+    return m_publishTimeHasBeenSet;
+}
+
+string VulInfoList::GetLastTime() const
+{
+    return m_lastTime;
+}
+
+void VulInfoList::SetLastTime(const string& _lastTime)
+{
+    m_lastTime = _lastTime;
+    m_lastTimeHasBeenSet = true;
+}
+
+bool VulInfoList::LastTimeHasBeenSet() const
+{
+    return m_lastTimeHasBeenSet;
+}
+
+uint64_t VulInfoList::GetHostCount() const
+{
+    return m_hostCount;
+}
+
+void VulInfoList::SetHostCount(const uint64_t& _hostCount)
+{
+    m_hostCount = _hostCount;
+    m_hostCountHasBeenSet = true;
+}
+
+bool VulInfoList::HostCountHasBeenSet() const
+{
+    return m_hostCountHasBeenSet;
+}
+
+uint64_t VulInfoList::GetLevel() const
+{
+    return m_level;
+}
+
+void VulInfoList::SetLevel(const uint64_t& _level)
+{
+    m_level = _level;
+    m_levelHasBeenSet = true;
+}
+
+bool VulInfoList::LevelHasBeenSet() const
+{
+    return m_levelHasBeenSet;
+}
+
+uint64_t VulInfoList::GetFrom() const
+{
+    return m_from;
+}
+
+void VulInfoList::SetFrom(const uint64_t& _from)
+{
+    m_from = _from;
+    m_fromHasBeenSet = true;
+}
+
+bool VulInfoList::FromHasBeenSet() const
+{
+    return m_fromHasBeenSet;
+}
+
+string VulInfoList::GetDescript() const
+{
+    return m_descript;
+}
+
+void VulInfoList::SetDescript(const string& _descript)
+{
+    m_descript = _descript;
+    m_descriptHasBeenSet = true;
+}
+
+bool VulInfoList::DescriptHasBeenSet() const
+{
+    return m_descriptHasBeenSet;
+}
+
+string VulInfoList::GetPublishTimeWisteria() const
+{
+    return m_publishTimeWisteria;
+}
+
+void VulInfoList::SetPublishTimeWisteria(const string& _publishTimeWisteria)
+{
+    m_publishTimeWisteria = _publishTimeWisteria;
+    m_publishTimeWisteriaHasBeenSet = true;
+}
+
+bool VulInfoList::PublishTimeWisteriaHasBeenSet() const
+{
+    return m_publishTimeWisteriaHasBeenSet;
+}
+
+string VulInfoList::GetNameWisteria() const
+{
+    return m_nameWisteria;
+}
+
+void VulInfoList::SetNameWisteria(const string& _nameWisteria)
+{
+    m_nameWisteria = _nameWisteria;
+    m_nameWisteriaHasBeenSet = true;
+}
+
+bool VulInfoList::NameWisteriaHasBeenSet() const
+{
+    return m_nameWisteriaHasBeenSet;
+}
+
+string VulInfoList::GetDescriptWisteria() const
+{
+    return m_descriptWisteria;
+}
+
+void VulInfoList::SetDescriptWisteria(const string& _descriptWisteria)
+{
+    m_descriptWisteria = _descriptWisteria;
+    m_descriptWisteriaHasBeenSet = true;
+}
+
+bool VulInfoList::DescriptWisteriaHasBeenSet() const
+{
+    return m_descriptWisteriaHasBeenSet;
+}
+
+string VulInfoList::GetStatusStr() const
+{
+    return m_statusStr;
+}
+
+void VulInfoList::SetStatusStr(const string& _statusStr)
+{
+    m_statusStr = _statusStr;
+    m_statusStrHasBeenSet = true;
+}
+
+bool VulInfoList::StatusStrHasBeenSet() const
+{
+    return m_statusStrHasBeenSet;
+}
+

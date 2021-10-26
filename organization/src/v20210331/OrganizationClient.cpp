@@ -83,3 +83,46 @@ OrganizationClient::BindOrganizationMemberAuthAccountOutcomeCallable Organizatio
     return task->get_future();
 }
 
+OrganizationClient::CreateOrganizationMemberOutcome OrganizationClient::CreateOrganizationMember(const CreateOrganizationMemberRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOrganizationMember");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOrganizationMemberResponse rsp = CreateOrganizationMemberResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOrganizationMemberOutcome(rsp);
+        else
+            return CreateOrganizationMemberOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOrganizationMemberOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::CreateOrganizationMemberAsync(const CreateOrganizationMemberRequest& request, const CreateOrganizationMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateOrganizationMember(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::CreateOrganizationMemberOutcomeCallable OrganizationClient::CreateOrganizationMemberCallable(const CreateOrganizationMemberRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateOrganizationMemberOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateOrganizationMember(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

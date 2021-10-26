@@ -1158,6 +1158,49 @@ TcbClient::DescribeCloudBaseRunOperationTypesOutcomeCallable TcbClient::Describe
     return task->get_future();
 }
 
+TcbClient::DescribeCloudBaseRunPodListOutcome TcbClient::DescribeCloudBaseRunPodList(const DescribeCloudBaseRunPodListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudBaseRunPodList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudBaseRunPodListResponse rsp = DescribeCloudBaseRunPodListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudBaseRunPodListOutcome(rsp);
+        else
+            return DescribeCloudBaseRunPodListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudBaseRunPodListOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeCloudBaseRunPodListAsync(const DescribeCloudBaseRunPodListRequest& request, const DescribeCloudBaseRunPodListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudBaseRunPodList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeCloudBaseRunPodListOutcomeCallable TcbClient::DescribeCloudBaseRunPodListCallable(const DescribeCloudBaseRunPodListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseRunPodListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudBaseRunPodList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DescribeCloudBaseRunResourceOutcome TcbClient::DescribeCloudBaseRunResource(const DescribeCloudBaseRunResourceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloudBaseRunResource");
@@ -1237,6 +1280,49 @@ TcbClient::DescribeCloudBaseRunResourceForExtendOutcomeCallable TcbClient::Descr
         [this, request]()
         {
             return this->DescribeCloudBaseRunResourceForExtend(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::DescribeCloudBaseRunServerOutcome TcbClient::DescribeCloudBaseRunServer(const DescribeCloudBaseRunServerRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudBaseRunServer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudBaseRunServerResponse rsp = DescribeCloudBaseRunServerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudBaseRunServerOutcome(rsp);
+        else
+            return DescribeCloudBaseRunServerOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudBaseRunServerOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeCloudBaseRunServerAsync(const DescribeCloudBaseRunServerRequest& request, const DescribeCloudBaseRunServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudBaseRunServer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeCloudBaseRunServerOutcomeCallable TcbClient::DescribeCloudBaseRunServerCallable(const DescribeCloudBaseRunServerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseRunServerOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudBaseRunServer(request);
         }
     );
 

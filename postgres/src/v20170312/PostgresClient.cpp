@@ -642,6 +642,49 @@ PostgresClient::DescribeDBInstanceAttributeOutcomeCallable PostgresClient::Descr
     return task->get_future();
 }
 
+PostgresClient::DescribeDBInstanceParametersOutcome PostgresClient::DescribeDBInstanceParameters(const DescribeDBInstanceParametersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBInstanceParameters");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBInstanceParametersResponse rsp = DescribeDBInstanceParametersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBInstanceParametersOutcome(rsp);
+        else
+            return DescribeDBInstanceParametersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBInstanceParametersOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeDBInstanceParametersAsync(const DescribeDBInstanceParametersRequest& request, const DescribeDBInstanceParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBInstanceParameters(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DescribeDBInstanceParametersOutcomeCallable PostgresClient::DescribeDBInstanceParametersCallable(const DescribeDBInstanceParametersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBInstanceParametersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBInstanceParameters(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::DescribeDBInstancesOutcome PostgresClient::DescribeDBInstances(const DescribeDBInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBInstances");
@@ -850,6 +893,49 @@ PostgresClient::DescribeOrdersOutcomeCallable PostgresClient::DescribeOrdersCall
         [this, request]()
         {
             return this->DescribeOrders(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::DescribeParamsEventOutcome PostgresClient::DescribeParamsEvent(const DescribeParamsEventRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeParamsEvent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeParamsEventResponse rsp = DescribeParamsEventResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeParamsEventOutcome(rsp);
+        else
+            return DescribeParamsEventOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeParamsEventOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeParamsEventAsync(const DescribeParamsEventRequest& request, const DescribeParamsEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeParamsEvent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DescribeParamsEventOutcomeCallable PostgresClient::DescribeParamsEventCallable(const DescribeParamsEventRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeParamsEventOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeParamsEvent(request);
         }
     );
 
@@ -1538,6 +1624,49 @@ PostgresClient::ModifyDBInstanceNameOutcomeCallable PostgresClient::ModifyDBInst
         [this, request]()
         {
             return this->ModifyDBInstanceName(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::ModifyDBInstanceParametersOutcome PostgresClient::ModifyDBInstanceParameters(const ModifyDBInstanceParametersRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBInstanceParameters");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBInstanceParametersResponse rsp = ModifyDBInstanceParametersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBInstanceParametersOutcome(rsp);
+        else
+            return ModifyDBInstanceParametersOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBInstanceParametersOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::ModifyDBInstanceParametersAsync(const ModifyDBInstanceParametersRequest& request, const ModifyDBInstanceParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDBInstanceParameters(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::ModifyDBInstanceParametersOutcomeCallable PostgresClient::ModifyDBInstanceParametersCallable(const ModifyDBInstanceParametersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceParametersOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDBInstanceParameters(request);
         }
     );
 

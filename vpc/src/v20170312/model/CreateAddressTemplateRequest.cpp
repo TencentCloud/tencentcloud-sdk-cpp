@@ -24,7 +24,8 @@ using namespace std;
 
 CreateAddressTemplateRequest::CreateAddressTemplateRequest() :
     m_addressTemplateNameHasBeenSet(false),
-    m_addressesHasBeenSet(false)
+    m_addressesHasBeenSet(false),
+    m_addressesExtraHasBeenSet(false)
 {
 }
 
@@ -53,6 +54,21 @@ string CreateAddressTemplateRequest::ToJsonString() const
         for (auto itr = m_addresses.begin(); itr != m_addresses.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_addressesExtraHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddressesExtra";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_addressesExtra.begin(); itr != m_addressesExtra.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -94,6 +110,22 @@ void CreateAddressTemplateRequest::SetAddresses(const vector<string>& _addresses
 bool CreateAddressTemplateRequest::AddressesHasBeenSet() const
 {
     return m_addressesHasBeenSet;
+}
+
+vector<AddressInfo> CreateAddressTemplateRequest::GetAddressesExtra() const
+{
+    return m_addressesExtra;
+}
+
+void CreateAddressTemplateRequest::SetAddressesExtra(const vector<AddressInfo>& _addressesExtra)
+{
+    m_addressesExtra = _addressesExtra;
+    m_addressesExtraHasBeenSet = true;
+}
+
+bool CreateAddressTemplateRequest::AddressesExtraHasBeenSet() const
+{
+    return m_addressesExtraHasBeenSet;
 }
 
 

@@ -51,6 +51,8 @@
 #include <tencentcloud/postgres/v20170312/model/DescribeDBErrlogsResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDBInstanceAttributeRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDBInstanceAttributeResponse.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeDBInstanceParametersRequest.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeDBInstanceParametersResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDBInstancesRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDBInstancesResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDBSlowlogsRequest.h>
@@ -61,6 +63,8 @@
 #include <tencentcloud/postgres/v20170312/model/DescribeDatabasesResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeOrdersRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeOrdersResponse.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeParamsEventRequest.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeParamsEventResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeProductConfigRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeProductConfigResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeReadOnlyGroupsRequest.h>
@@ -93,6 +97,8 @@
 #include <tencentcloud/postgres/v20170312/model/ModifyAccountRemarkResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceNameRequest.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceNameResponse.h>
+#include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceParametersRequest.h>
+#include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceParametersResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceReadOnlyGroupRequest.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceReadOnlyGroupResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstancesProjectRequest.h>
@@ -175,6 +181,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBInstanceAttributeResponse> DescribeDBInstanceAttributeOutcome;
                 typedef std::future<DescribeDBInstanceAttributeOutcome> DescribeDBInstanceAttributeOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeDBInstanceAttributeRequest&, DescribeDBInstanceAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceAttributeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBInstanceParametersResponse> DescribeDBInstanceParametersOutcome;
+                typedef std::future<DescribeDBInstanceParametersOutcome> DescribeDBInstanceParametersOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::DescribeDBInstanceParametersRequest&, DescribeDBInstanceParametersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceParametersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBInstancesResponse> DescribeDBInstancesOutcome;
                 typedef std::future<DescribeDBInstancesOutcome> DescribeDBInstancesOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeDBInstancesRequest&, DescribeDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstancesAsyncHandler;
@@ -190,6 +199,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeOrdersResponse> DescribeOrdersOutcome;
                 typedef std::future<DescribeOrdersOutcome> DescribeOrdersOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeOrdersRequest&, DescribeOrdersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrdersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeParamsEventResponse> DescribeParamsEventOutcome;
+                typedef std::future<DescribeParamsEventOutcome> DescribeParamsEventOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::DescribeParamsEventRequest&, DescribeParamsEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeParamsEventAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProductConfigResponse> DescribeProductConfigOutcome;
                 typedef std::future<DescribeProductConfigOutcome> DescribeProductConfigOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeProductConfigRequest&, DescribeProductConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductConfigAsyncHandler;
@@ -238,6 +250,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceNameResponse> ModifyDBInstanceNameOutcome;
                 typedef std::future<ModifyDBInstanceNameOutcome> ModifyDBInstanceNameOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::ModifyDBInstanceNameRequest&, ModifyDBInstanceNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceNameAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDBInstanceParametersResponse> ModifyDBInstanceParametersOutcome;
+                typedef std::future<ModifyDBInstanceParametersOutcome> ModifyDBInstanceParametersOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::ModifyDBInstanceParametersRequest&, ModifyDBInstanceParametersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceParametersAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceReadOnlyGroupResponse> ModifyDBInstanceReadOnlyGroupOutcome;
                 typedef std::future<ModifyDBInstanceReadOnlyGroupOutcome> ModifyDBInstanceReadOnlyGroupOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::ModifyDBInstanceReadOnlyGroupRequest&, ModifyDBInstanceReadOnlyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceReadOnlyGroupAsyncHandler;
@@ -407,6 +422,15 @@ namespace TencentCloud
                 DescribeDBInstanceAttributeOutcomeCallable DescribeDBInstanceAttributeCallable(const Model::DescribeDBInstanceAttributeRequest& request);
 
                 /**
+                 *获取实例可修改参数列表
+                 * @param req DescribeDBInstanceParametersRequest
+                 * @return DescribeDBInstanceParametersOutcome
+                 */
+                DescribeDBInstanceParametersOutcome DescribeDBInstanceParameters(const Model::DescribeDBInstanceParametersRequest &request);
+                void DescribeDBInstanceParametersAsync(const Model::DescribeDBInstanceParametersRequest& request, const DescribeDBInstanceParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBInstanceParametersOutcomeCallable DescribeDBInstanceParametersCallable(const Model::DescribeDBInstanceParametersRequest& request);
+
+                /**
                  *本接口 (DescribeDBInstances) 用于查询一个或多个实例的详细信息。
                  * @param req DescribeDBInstancesRequest
                  * @return DescribeDBInstancesOutcome
@@ -450,6 +474,15 @@ namespace TencentCloud
                 DescribeOrdersOutcome DescribeOrders(const Model::DescribeOrdersRequest &request);
                 void DescribeOrdersAsync(const Model::DescribeOrdersRequest& request, const DescribeOrdersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeOrdersOutcomeCallable DescribeOrdersCallable(const Model::DescribeOrdersRequest& request);
+
+                /**
+                 *获取参数修改事件详情
+                 * @param req DescribeParamsEventRequest
+                 * @return DescribeParamsEventOutcome
+                 */
+                DescribeParamsEventOutcome DescribeParamsEvent(const Model::DescribeParamsEventRequest &request);
+                void DescribeParamsEventAsync(const Model::DescribeParamsEventRequest& request, const DescribeParamsEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeParamsEventOutcomeCallable DescribeParamsEventCallable(const Model::DescribeParamsEventRequest& request);
 
                 /**
                  *本接口 (DescribeProductConfig) 用于查询售卖规格配置。
@@ -594,6 +627,15 @@ namespace TencentCloud
                 ModifyDBInstanceNameOutcome ModifyDBInstanceName(const Model::ModifyDBInstanceNameRequest &request);
                 void ModifyDBInstanceNameAsync(const Model::ModifyDBInstanceNameRequest& request, const ModifyDBInstanceNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDBInstanceNameOutcomeCallable ModifyDBInstanceNameCallable(const Model::ModifyDBInstanceNameRequest& request);
+
+                /**
+                 *批量修改参数
+                 * @param req ModifyDBInstanceParametersRequest
+                 * @return ModifyDBInstanceParametersOutcome
+                 */
+                ModifyDBInstanceParametersOutcome ModifyDBInstanceParameters(const Model::ModifyDBInstanceParametersRequest &request);
+                void ModifyDBInstanceParametersAsync(const Model::ModifyDBInstanceParametersRequest& request, const ModifyDBInstanceParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBInstanceParametersOutcomeCallable ModifyDBInstanceParametersCallable(const Model::ModifyDBInstanceParametersRequest& request);
 
                 /**
                  *本接口（ModifyDBInstanceReadOnlyGroup）用于修改实例所属的只读组

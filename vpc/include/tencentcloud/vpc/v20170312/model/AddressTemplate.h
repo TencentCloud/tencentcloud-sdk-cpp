@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/AddressInfo.h>
 
 
 namespace TencentCloud
@@ -118,6 +119,24 @@ namespace TencentCloud
                      */
                     bool CreatedTimeHasBeenSet() const;
 
+                    /**
+                     * 获取带备注的IP地址信息。
+                     * @return AddressExtraSet 带备注的IP地址信息。
+                     */
+                    std::vector<AddressInfo> GetAddressExtraSet() const;
+
+                    /**
+                     * 设置带备注的IP地址信息。
+                     * @param AddressExtraSet 带备注的IP地址信息。
+                     */
+                    void SetAddressExtraSet(const std::vector<AddressInfo>& _addressExtraSet);
+
+                    /**
+                     * 判断参数 AddressExtraSet 是否已赋值
+                     * @return AddressExtraSet 是否已赋值
+                     */
+                    bool AddressExtraSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +162,12 @@ namespace TencentCloud
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
+
+                    /**
+                     * 带备注的IP地址信息。
+                     */
+                    std::vector<AddressInfo> m_addressExtraSet;
+                    bool m_addressExtraSetHasBeenSet;
 
                 };
             }

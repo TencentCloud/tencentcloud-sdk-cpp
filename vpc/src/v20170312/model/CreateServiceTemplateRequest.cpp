@@ -24,7 +24,8 @@ using namespace std;
 
 CreateServiceTemplateRequest::CreateServiceTemplateRequest() :
     m_serviceTemplateNameHasBeenSet(false),
-    m_servicesHasBeenSet(false)
+    m_servicesHasBeenSet(false),
+    m_servicesExtraHasBeenSet(false)
 {
 }
 
@@ -53,6 +54,21 @@ string CreateServiceTemplateRequest::ToJsonString() const
         for (auto itr = m_services.begin(); itr != m_services.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_servicesExtraHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServicesExtra";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_servicesExtra.begin(); itr != m_servicesExtra.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -94,6 +110,22 @@ void CreateServiceTemplateRequest::SetServices(const vector<string>& _services)
 bool CreateServiceTemplateRequest::ServicesHasBeenSet() const
 {
     return m_servicesHasBeenSet;
+}
+
+vector<ServicesInfo> CreateServiceTemplateRequest::GetServicesExtra() const
+{
+    return m_servicesExtra;
+}
+
+void CreateServiceTemplateRequest::SetServicesExtra(const vector<ServicesInfo>& _servicesExtra)
+{
+    m_servicesExtra = _servicesExtra;
+    m_servicesExtraHasBeenSet = true;
+}
+
+bool CreateServiceTemplateRequest::ServicesExtraHasBeenSet() const
+{
+    return m_servicesExtraHasBeenSet;
 }
 
 

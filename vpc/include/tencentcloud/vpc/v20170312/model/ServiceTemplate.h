@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/ServicesInfo.h>
 
 
 namespace TencentCloud
@@ -118,6 +119,24 @@ namespace TencentCloud
                      */
                     bool CreatedTimeHasBeenSet() const;
 
+                    /**
+                     * 获取带备注的协议端口信息。
+                     * @return ServiceExtraSet 带备注的协议端口信息。
+                     */
+                    std::vector<ServicesInfo> GetServiceExtraSet() const;
+
+                    /**
+                     * 设置带备注的协议端口信息。
+                     * @param ServiceExtraSet 带备注的协议端口信息。
+                     */
+                    void SetServiceExtraSet(const std::vector<ServicesInfo>& _serviceExtraSet);
+
+                    /**
+                     * 判断参数 ServiceExtraSet 是否已赋值
+                     * @return ServiceExtraSet 是否已赋值
+                     */
+                    bool ServiceExtraSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +162,12 @@ namespace TencentCloud
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
+
+                    /**
+                     * 带备注的协议端口信息。
+                     */
+                    std::vector<ServicesInfo> m_serviceExtraSet;
+                    bool m_serviceExtraSetHasBeenSet;
 
                 };
             }

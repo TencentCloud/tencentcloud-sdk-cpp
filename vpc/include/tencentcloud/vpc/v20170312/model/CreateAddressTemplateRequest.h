@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/AddressInfo.h>
 
 
 namespace TencentCloud
@@ -61,14 +62,14 @@ namespace TencentCloud
                     bool AddressTemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取地址信息，支持 IP、CIDR、IP 范围。
-                     * @return Addresses 地址信息，支持 IP、CIDR、IP 范围。
+                     * 获取地址信息，支持 IP、CIDR、IP 范围。Addresses与AddressesExtra必填其一。
+                     * @return Addresses 地址信息，支持 IP、CIDR、IP 范围。Addresses与AddressesExtra必填其一。
                      */
                     std::vector<std::string> GetAddresses() const;
 
                     /**
-                     * 设置地址信息，支持 IP、CIDR、IP 范围。
-                     * @param Addresses 地址信息，支持 IP、CIDR、IP 范围。
+                     * 设置地址信息，支持 IP、CIDR、IP 范围。Addresses与AddressesExtra必填其一。
+                     * @param Addresses 地址信息，支持 IP、CIDR、IP 范围。Addresses与AddressesExtra必填其一。
                      */
                     void SetAddresses(const std::vector<std::string>& _addresses);
 
@@ -77,6 +78,24 @@ namespace TencentCloud
                      * @return Addresses 是否已赋值
                      */
                     bool AddressesHasBeenSet() const;
+
+                    /**
+                     * 获取地址信息，支持携带备注，支持 IP、CIDR、IP 范围。Addresses与AddressesExtra必填其一。
+                     * @return AddressesExtra 地址信息，支持携带备注，支持 IP、CIDR、IP 范围。Addresses与AddressesExtra必填其一。
+                     */
+                    std::vector<AddressInfo> GetAddressesExtra() const;
+
+                    /**
+                     * 设置地址信息，支持携带备注，支持 IP、CIDR、IP 范围。Addresses与AddressesExtra必填其一。
+                     * @param AddressesExtra 地址信息，支持携带备注，支持 IP、CIDR、IP 范围。Addresses与AddressesExtra必填其一。
+                     */
+                    void SetAddressesExtra(const std::vector<AddressInfo>& _addressesExtra);
+
+                    /**
+                     * 判断参数 AddressesExtra 是否已赋值
+                     * @return AddressesExtra 是否已赋值
+                     */
+                    bool AddressesExtraHasBeenSet() const;
 
                 private:
 
@@ -87,10 +106,16 @@ namespace TencentCloud
                     bool m_addressTemplateNameHasBeenSet;
 
                     /**
-                     * 地址信息，支持 IP、CIDR、IP 范围。
+                     * 地址信息，支持 IP、CIDR、IP 范围。Addresses与AddressesExtra必填其一。
                      */
                     std::vector<std::string> m_addresses;
                     bool m_addressesHasBeenSet;
+
+                    /**
+                     * 地址信息，支持携带备注，支持 IP、CIDR、IP 范围。Addresses与AddressesExtra必填其一。
+                     */
+                    std::vector<AddressInfo> m_addressesExtra;
+                    bool m_addressesExtraHasBeenSet;
 
                 };
             }

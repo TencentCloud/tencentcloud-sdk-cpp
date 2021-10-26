@@ -317,6 +317,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeVersionStatisticsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulCountByDatesRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulCountByDatesResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeVulEffectHostListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeVulEffectHostListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulHostCountScanTimeRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulHostCountScanTimeResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulHostTopRequest.h>
@@ -325,6 +327,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeVulInfoCvssResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulLevelCountRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulLevelCountResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeVulListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeVulListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulTopRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulTopResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeWarningListRequest.h>
@@ -902,6 +906,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVulCountByDatesResponse> DescribeVulCountByDatesOutcome;
                 typedef std::future<DescribeVulCountByDatesOutcome> DescribeVulCountByDatesOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeVulCountByDatesRequest&, DescribeVulCountByDatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulCountByDatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVulEffectHostListResponse> DescribeVulEffectHostListOutcome;
+                typedef std::future<DescribeVulEffectHostListOutcome> DescribeVulEffectHostListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeVulEffectHostListRequest&, DescribeVulEffectHostListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulEffectHostListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVulHostCountScanTimeResponse> DescribeVulHostCountScanTimeOutcome;
                 typedef std::future<DescribeVulHostCountScanTimeOutcome> DescribeVulHostCountScanTimeOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeVulHostCountScanTimeRequest&, DescribeVulHostCountScanTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulHostCountScanTimeAsyncHandler;
@@ -914,6 +921,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVulLevelCountResponse> DescribeVulLevelCountOutcome;
                 typedef std::future<DescribeVulLevelCountOutcome> DescribeVulLevelCountOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeVulLevelCountRequest&, DescribeVulLevelCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulLevelCountAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVulListResponse> DescribeVulListOutcome;
+                typedef std::future<DescribeVulListOutcome> DescribeVulListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeVulListRequest&, DescribeVulListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVulTopResponse> DescribeVulTopOutcome;
                 typedef std::future<DescribeVulTopOutcome> DescribeVulTopOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeVulTopRequest&, DescribeVulTopOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulTopAsyncHandler;
@@ -2424,6 +2434,15 @@ namespace TencentCloud
                 DescribeVulCountByDatesOutcomeCallable DescribeVulCountByDatesCallable(const Model::DescribeVulCountByDatesRequest& request);
 
                 /**
+                 *漏洞影响主机列表
+                 * @param req DescribeVulEffectHostListRequest
+                 * @return DescribeVulEffectHostListOutcome
+                 */
+                DescribeVulEffectHostListOutcome DescribeVulEffectHostList(const Model::DescribeVulEffectHostListRequest &request);
+                void DescribeVulEffectHostListAsync(const Model::DescribeVulEffectHostListRequest& request, const DescribeVulEffectHostListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVulEffectHostListOutcomeCallable DescribeVulEffectHostListCallable(const Model::DescribeVulEffectHostListRequest& request);
+
+                /**
                  *获取待处理漏洞数+影响主机数
                  * @param req DescribeVulHostCountScanTimeRequest
                  * @return DescribeVulHostCountScanTimeOutcome
@@ -2458,6 +2477,15 @@ namespace TencentCloud
                 DescribeVulLevelCountOutcome DescribeVulLevelCount(const Model::DescribeVulLevelCountRequest &request);
                 void DescribeVulLevelCountAsync(const Model::DescribeVulLevelCountRequest& request, const DescribeVulLevelCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVulLevelCountOutcomeCallable DescribeVulLevelCountCallable(const Model::DescribeVulLevelCountRequest& request);
+
+                /**
+                 *获取漏洞列表数据
+                 * @param req DescribeVulListRequest
+                 * @return DescribeVulListOutcome
+                 */
+                DescribeVulListOutcome DescribeVulList(const Model::DescribeVulListRequest &request);
+                void DescribeVulListAsync(const Model::DescribeVulListRequest& request, const DescribeVulListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVulListOutcomeCallable DescribeVulListCallable(const Model::DescribeVulListRequest& request);
 
                 /**
                  *漏洞top统计

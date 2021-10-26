@@ -45,21 +45,25 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤条件。
-<li>address-template-name - String - （过滤条件）IP地址模板名称。</li>
-<li>address-template-id - String - （过滤条件）IP地址模板实例ID，例如：ipm-mdunqeb6。</li>
+<li>address-template-name - IP地址模板名称。</li>
+<li>address-template-id - IP地址模板实例ID，例如：ipm-mdunqeb6。</li>
+<li>address-ip - IP地址。</li>
                      * @return Filters 过滤条件。
-<li>address-template-name - String - （过滤条件）IP地址模板名称。</li>
-<li>address-template-id - String - （过滤条件）IP地址模板实例ID，例如：ipm-mdunqeb6。</li>
+<li>address-template-name - IP地址模板名称。</li>
+<li>address-template-id - IP地址模板实例ID，例如：ipm-mdunqeb6。</li>
+<li>address-ip - IP地址。</li>
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件。
-<li>address-template-name - String - （过滤条件）IP地址模板名称。</li>
-<li>address-template-id - String - （过滤条件）IP地址模板实例ID，例如：ipm-mdunqeb6。</li>
+<li>address-template-name - IP地址模板名称。</li>
+<li>address-template-id - IP地址模板实例ID，例如：ipm-mdunqeb6。</li>
+<li>address-ip - IP地址。</li>
                      * @param Filters 过滤条件。
-<li>address-template-name - String - （过滤条件）IP地址模板名称。</li>
-<li>address-template-id - String - （过滤条件）IP地址模板实例ID，例如：ipm-mdunqeb6。</li>
+<li>address-template-name - IP地址模板名称。</li>
+<li>address-template-id - IP地址模板实例ID，例如：ipm-mdunqeb6。</li>
+<li>address-ip - IP地址。</li>
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -109,8 +113,9 @@ namespace TencentCloud
 
                     /**
                      * 过滤条件。
-<li>address-template-name - String - （过滤条件）IP地址模板名称。</li>
-<li>address-template-id - String - （过滤条件）IP地址模板实例ID，例如：ipm-mdunqeb6。</li>
+<li>address-template-name - IP地址模板名称。</li>
+<li>address-template-id - IP地址模板实例ID，例如：ipm-mdunqeb6。</li>
+<li>address-ip - IP地址。</li>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

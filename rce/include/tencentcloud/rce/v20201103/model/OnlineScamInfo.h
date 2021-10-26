@@ -117,22 +117,14 @@ namespace TencentCloud
                     bool ContentTypeHasBeenSet() const;
 
                     /**
-                     * 获取诈骗账号类型：
-1：11位手机号。
-2：QQ账号。
-                     * @return FraudType 诈骗账号类型：
-1：11位手机号。
-2：QQ账号。
+                     * 获取类型
+                     * @return FraudType 类型
                      */
                     int64_t GetFraudType() const;
 
                     /**
-                     * 设置诈骗账号类型：
-1：11位手机号。
-2：QQ账号。
-                     * @param FraudType 诈骗账号类型：
-1：11位手机号。
-2：QQ账号。
+                     * 设置类型
+                     * @param FraudType 类型
                      */
                     void SetFraudType(const int64_t& _fraudType);
 
@@ -143,14 +135,14 @@ namespace TencentCloud
                     bool FraudTypeHasBeenSet() const;
 
                     /**
-                     * 获取诈骗账号，手机号或QQ账号。
-                     * @return FraudAccount 诈骗账号，手机号或QQ账号。
+                     * 获取账号
+                     * @return FraudAccount 账号
                      */
                     std::string GetFraudAccount() const;
 
                     /**
-                     * 设置诈骗账号，手机号或QQ账号。
-                     * @param FraudAccount 诈骗账号，手机号或QQ账号。
+                     * 设置账号
+                     * @param FraudAccount 账号
                      */
                     void SetFraudAccount(const std::string& _fraudAccount);
 
@@ -185,15 +177,13 @@ namespace TencentCloud
                     bool m_contentTypeHasBeenSet;
 
                     /**
-                     * 诈骗账号类型：
-1：11位手机号。
-2：QQ账号。
+                     * 类型
                      */
                     int64_t m_fraudType;
                     bool m_fraudTypeHasBeenSet;
 
                     /**
-                     * 诈骗账号，手机号或QQ账号。
+                     * 账号
                      */
                     std::string m_fraudAccount;
                     bool m_fraudAccountHasBeenSet;

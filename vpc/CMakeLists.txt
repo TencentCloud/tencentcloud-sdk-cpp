@@ -520,6 +520,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/DirectConnectGatewayCcnRoute.h
   include/tencentcloud/vpc/v20170312/model/DeleteHaVipRequest.h
   include/tencentcloud/vpc/v20170312/model/CreateLocalGatewayResponse.h
+  include/tencentcloud/vpc/v20170312/model/ServicesInfo.h
   include/tencentcloud/vpc/v20170312/model/MigratePrivateIpAddressRequest.h
   include/tencentcloud/vpc/v20170312/model/DescribeServiceTemplatesRequest.h
   include/tencentcloud/vpc/v20170312/model/RefreshDirectConnectGatewayRouteToNatGatewayResponse.h
@@ -635,11 +636,12 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/ModifyVpcEndPointServiceWhiteListResponse.h
   include/tencentcloud/vpc/v20170312/model/DescribeBandwidthPackageQuotaRequest.h
   include/tencentcloud/vpc/v20170312/model/DeleteVpcResponse.h
+  include/tencentcloud/vpc/v20170312/model/InstanceChargePrepaid.h
   include/tencentcloud/vpc/v20170312/model/DescribeTemplateLimitsRequest.h
   include/tencentcloud/vpc/v20170312/model/AddTemplateMemberRequest.h
   include/tencentcloud/vpc/v20170312/model/DescribeVpcEndPointServiceWhiteListResponse.h
   include/tencentcloud/vpc/v20170312/model/AcceptAttachCcnInstancesResponse.h
-  include/tencentcloud/vpc/v20170312/model/InstanceChargePrepaid.h
+  include/tencentcloud/vpc/v20170312/model/AddressInfo.h
   include/tencentcloud/vpc/v20170312/model/AuditCrossBorderComplianceRequest.h
   include/tencentcloud/vpc/v20170312/model/DescribeNetDetectsResponse.h
   )
@@ -1147,6 +1149,7 @@ set(vpc_src
   src/v20170312/model/DirectConnectGatewayCcnRoute.cpp
   src/v20170312/model/DeleteHaVipRequest.cpp
   src/v20170312/model/CreateLocalGatewayResponse.cpp
+  src/v20170312/model/ServicesInfo.cpp
   src/v20170312/model/MigratePrivateIpAddressRequest.cpp
   src/v20170312/model/DescribeServiceTemplatesRequest.cpp
   src/v20170312/model/RefreshDirectConnectGatewayRouteToNatGatewayResponse.cpp
@@ -1262,11 +1265,12 @@ set(vpc_src
   src/v20170312/model/ModifyVpcEndPointServiceWhiteListResponse.cpp
   src/v20170312/model/DescribeBandwidthPackageQuotaRequest.cpp
   src/v20170312/model/DeleteVpcResponse.cpp
+  src/v20170312/model/InstanceChargePrepaid.cpp
   src/v20170312/model/DescribeTemplateLimitsRequest.cpp
   src/v20170312/model/AddTemplateMemberRequest.cpp
   src/v20170312/model/DescribeVpcEndPointServiceWhiteListResponse.cpp
   src/v20170312/model/AcceptAttachCcnInstancesResponse.cpp
-  src/v20170312/model/InstanceChargePrepaid.cpp
+  src/v20170312/model/AddressInfo.cpp
   src/v20170312/model/AuditCrossBorderComplianceRequest.cpp
   src/v20170312/model/DescribeNetDetectsResponse.cpp
   )
