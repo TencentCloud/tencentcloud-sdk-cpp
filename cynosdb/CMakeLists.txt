@@ -44,6 +44,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/IsolateClusterRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterInstanceGrpsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/AddInstancesRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/NetAddr.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterDetailRequest.h
   include/tencentcloud/cynosdb/v20190107/model/Tag.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeProjectSecurityGroupsResponse.h
@@ -117,6 +118,7 @@ set(cynosdb_src
   src/v20190107/model/IsolateClusterRequest.cpp
   src/v20190107/model/DescribeClusterInstanceGrpsResponse.cpp
   src/v20190107/model/AddInstancesRequest.cpp
+  src/v20190107/model/NetAddr.cpp
   src/v20190107/model/DescribeClusterDetailRequest.cpp
   src/v20190107/model/Tag.cpp
   src/v20190107/model/DescribeProjectSecurityGroupsResponse.cpp

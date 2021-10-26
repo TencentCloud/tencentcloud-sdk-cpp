@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cynosdb/v20190107/model/ObjectTask.h>
 #include <tencentcloud/cynosdb/v20190107/model/Tag.h>
+#include <tencentcloud/cynosdb/v20190107/model/NetAddr.h>
 
 
 namespace TencentCloud
@@ -650,6 +651,24 @@ pause
                      */
                     bool MaxStorageSizeHasBeenSet() const;
 
+                    /**
+                     * 获取集群网络信息
+                     * @return NetAddrs 集群网络信息
+                     */
+                    std::vector<NetAddr> GetNetAddrs() const;
+
+                    /**
+                     * 设置集群网络信息
+                     * @param NetAddrs 集群网络信息
+                     */
+                    void SetNetAddrs(const std::vector<NetAddr>& _netAddrs);
+
+                    /**
+                     * 判断参数 NetAddrs 是否已赋值
+                     * @return NetAddrs 是否已赋值
+                     */
+                    bool NetAddrsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -851,6 +870,12 @@ pause
                      */
                     int64_t m_maxStorageSize;
                     bool m_maxStorageSizeHasBeenSet;
+
+                    /**
+                     * 集群网络信息
+                     */
+                    std::vector<NetAddr> m_netAddrs;
+                    bool m_netAddrsHasBeenSet;
 
                 };
             }

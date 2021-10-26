@@ -53,7 +53,8 @@ CynosdbCluster::CynosdbCluster() :
     m_storageIdHasBeenSet(false),
     m_storagePayModeHasBeenSet(false),
     m_minStorageSizeHasBeenSet(false),
-    m_maxStorageSizeHasBeenSet(false)
+    m_maxStorageSizeHasBeenSet(false),
+    m_netAddrsHasBeenSet(false)
 {
 }
 
@@ -412,6 +413,26 @@ CoreInternalOutcome CynosdbCluster::Deserialize(const rapidjson::Value &value)
         m_maxStorageSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("NetAddrs") && !value["NetAddrs"].IsNull())
+    {
+        if (!value["NetAddrs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CynosdbCluster.NetAddrs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["NetAddrs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            NetAddr item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_netAddrs.push_back(item);
+        }
+        m_netAddrsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -695,6 +716,21 @@ void CynosdbCluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "MaxStorageSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxStorageSize, allocator);
+    }
+
+    if (m_netAddrsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetAddrs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_netAddrs.begin(); itr != m_netAddrs.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1226,5 +1262,21 @@ void CynosdbCluster::SetMaxStorageSize(const int64_t& _maxStorageSize)
 bool CynosdbCluster::MaxStorageSizeHasBeenSet() const
 {
     return m_maxStorageSizeHasBeenSet;
+}
+
+vector<NetAddr> CynosdbCluster::GetNetAddrs() const
+{
+    return m_netAddrs;
+}
+
+void CynosdbCluster::SetNetAddrs(const vector<NetAddr>& _netAddrs)
+{
+    m_netAddrs = _netAddrs;
+    m_netAddrsHasBeenSet = true;
+}
+
+bool CynosdbCluster::NetAddrsHasBeenSet() const
+{
+    return m_netAddrsHasBeenSet;
 }
 
