@@ -14,59 +14,55 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CWP_V20180228_MODEL_RESCANIMPACTEDHOSTREQUEST_H_
-#define TENCENTCLOUD_CWP_V20180228_MODEL_RESCANIMPACTEDHOSTREQUEST_H_
+#ifndef TENCENTCLOUD_ECM_V20190719_MODEL_CREATEKEYPAIRRESPONSE_H_
+#define TENCENTCLOUD_ECM_V20190719_MODEL_CREATEKEYPAIRRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ecm/v20190719/model/KeyPair.h>
 
 
 namespace TencentCloud
 {
-    namespace Cwp
+    namespace Ecm
     {
-        namespace V20180228
+        namespace V20190719
         {
             namespace Model
             {
                 /**
-                * RescanImpactedHost请求参数结构体
+                * CreateKeyPair返回参数结构体
                 */
-                class RescanImpactedHostRequest : public AbstractModel
+                class CreateKeyPairResponse : public AbstractModel
                 {
                 public:
-                    RescanImpactedHostRequest();
-                    ~RescanImpactedHostRequest() = default;
+                    CreateKeyPairResponse();
+                    ~CreateKeyPairResponse() = default;
+                    CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取漏洞ID。
-                     * @return Id 漏洞ID。
+                     * 获取密钥对信息。
+                     * @return KeyPair 密钥对信息。
                      */
-                    uint64_t GetId() const;
+                    KeyPair GetKeyPair() const;
 
                     /**
-                     * 设置漏洞ID。
-                     * @param Id 漏洞ID。
+                     * 判断参数 KeyPair 是否已赋值
+                     * @return KeyPair 是否已赋值
                      */
-                    void SetId(const uint64_t& _id);
-
-                    /**
-                     * 判断参数 Id 是否已赋值
-                     * @return Id 是否已赋值
-                     */
-                    bool IdHasBeenSet() const;
+                    bool KeyPairHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 漏洞ID。
+                     * 密钥对信息。
                      */
-                    uint64_t m_id;
-                    bool m_idHasBeenSet;
+                    KeyPair m_keyPair;
+                    bool m_keyPairHasBeenSet;
 
                 };
             }
@@ -74,4 +70,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CWP_V20180228_MODEL_RESCANIMPACTEDHOSTREQUEST_H_
+#endif // !TENCENTCLOUD_ECM_V20190719_MODEL_CREATEKEYPAIRRESPONSE_H_

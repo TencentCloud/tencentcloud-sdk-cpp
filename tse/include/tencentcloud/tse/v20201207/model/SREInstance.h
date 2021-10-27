@@ -27,6 +27,7 @@
 #include <tencentcloud/tse/v20201207/model/EnvInfo.h>
 #include <tencentcloud/tse/v20201207/model/VpcInfo.h>
 #include <tencentcloud/tse/v20201207/model/ServiceGovernanceInfo.h>
+#include <tencentcloud/tse/v20201207/model/KVPair.h>
 
 
 namespace TencentCloud
@@ -457,6 +458,28 @@ namespace TencentCloud
                      */
                     bool ServiceGovernanceInfosHasBeenSet() const;
 
+                    /**
+                     * 获取实例的标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 实例的标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<KVPair> GetTags() const;
+
+                    /**
+                     * 设置实例的标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Tags 实例的标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTags(const std::vector<KVPair>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -590,6 +613,13 @@ namespace TencentCloud
                      */
                     std::vector<ServiceGovernanceInfo> m_serviceGovernanceInfos;
                     bool m_serviceGovernanceInfosHasBeenSet;
+
+                    /**
+                     * 实例的标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<KVPair> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

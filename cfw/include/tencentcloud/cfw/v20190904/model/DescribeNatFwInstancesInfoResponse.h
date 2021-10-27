@@ -59,9 +59,9 @@ namespace TencentCloud
                     bool NatinsLstHasBeenSet() const;
 
                     /**
-                     * 获取总共多少条数
+                     * 获取nat 防火墙个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Total 总共多少条数
+                     * @return Total nat 防火墙个数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetTotal() const;
@@ -82,7 +82,7 @@ namespace TencentCloud
                     bool m_natinsLstHasBeenSet;
 
                     /**
-                     * 总共多少条数
+                     * nat 防火墙个数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;

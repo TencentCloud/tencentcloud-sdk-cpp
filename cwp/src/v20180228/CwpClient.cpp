@@ -8640,49 +8640,6 @@ CwpClient::RenewProVersionOutcomeCallable CwpClient::RenewProVersionCallable(con
     return task->get_future();
 }
 
-CwpClient::RescanImpactedHostOutcome CwpClient::RescanImpactedHost(const RescanImpactedHostRequest &request)
-{
-    auto outcome = MakeRequest(request, "RescanImpactedHost");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        RescanImpactedHostResponse rsp = RescanImpactedHostResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return RescanImpactedHostOutcome(rsp);
-        else
-            return RescanImpactedHostOutcome(o.GetError());
-    }
-    else
-    {
-        return RescanImpactedHostOutcome(outcome.GetError());
-    }
-}
-
-void CwpClient::RescanImpactedHostAsync(const RescanImpactedHostRequest& request, const RescanImpactedHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RescanImpactedHost(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CwpClient::RescanImpactedHostOutcomeCallable CwpClient::RescanImpactedHostCallable(const RescanImpactedHostRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<RescanImpactedHostOutcome()>>(
-        [this, request]()
-        {
-            return this->RescanImpactedHost(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CwpClient::ScanAssetOutcome CwpClient::ScanAsset(const ScanAssetRequest &request)
 {
     auto outcome = MakeRequest(request, "ScanAsset");

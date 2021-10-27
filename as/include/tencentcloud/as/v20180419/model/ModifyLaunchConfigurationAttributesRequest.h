@@ -28,6 +28,7 @@
 #include <tencentcloud/as/v20180419/model/DataDisk.h>
 #include <tencentcloud/as/v20180419/model/HostNameSettings.h>
 #include <tencentcloud/as/v20180419/model/InstanceNameSettings.h>
+#include <tencentcloud/as/v20180419/model/EnhancedService.h>
 
 
 namespace TencentCloud
@@ -437,6 +438,24 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
                      */
                     bool InstanceNameSettingsHasBeenSet() const;
 
+                    /**
+                     * 获取增强服务。通过该参数可以指定是否开启云安全、云监控等服务。
+                     * @return EnhancedService 增强服务。通过该参数可以指定是否开启云安全、云监控等服务。
+                     */
+                    EnhancedService GetEnhancedService() const;
+
+                    /**
+                     * 设置增强服务。通过该参数可以指定是否开启云安全、云监控等服务。
+                     * @param EnhancedService 增强服务。通过该参数可以指定是否开启云安全、云监控等服务。
+                     */
+                    void SetEnhancedService(const EnhancedService& _enhancedService);
+
+                    /**
+                     * 判断参数 EnhancedService 是否已赋值
+                     * @return EnhancedService 是否已赋值
+                     */
+                    bool EnhancedServiceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -559,6 +578,12 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
                      */
                     InstanceNameSettings m_instanceNameSettings;
                     bool m_instanceNameSettingsHasBeenSet;
+
+                    /**
+                     * 增强服务。通过该参数可以指定是否开启云安全、云监控等服务。
+                     */
+                    EnhancedService m_enhancedService;
+                    bool m_enhancedServiceHasBeenSet;
 
                 };
             }

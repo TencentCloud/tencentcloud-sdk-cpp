@@ -14,32 +14,32 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cwp/v20180228/model/RescanImpactedHostRequest.h>
+#include <tencentcloud/ecm/v20190719/model/CreateKeyPairRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Cwp::V20180228::Model;
+using namespace TencentCloud::Ecm::V20190719::Model;
 using namespace std;
 
-RescanImpactedHostRequest::RescanImpactedHostRequest() :
-    m_idHasBeenSet(false)
+CreateKeyPairRequest::CreateKeyPairRequest() :
+    m_keyNameHasBeenSet(false)
 {
 }
 
-string RescanImpactedHostRequest::ToJsonString() const
+string CreateKeyPairRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_idHasBeenSet)
+    if (m_keyNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Id";
+        string key = "KeyName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_id, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_keyName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -50,20 +50,20 @@ string RescanImpactedHostRequest::ToJsonString() const
 }
 
 
-uint64_t RescanImpactedHostRequest::GetId() const
+string CreateKeyPairRequest::GetKeyName() const
 {
-    return m_id;
+    return m_keyName;
 }
 
-void RescanImpactedHostRequest::SetId(const uint64_t& _id)
+void CreateKeyPairRequest::SetKeyName(const string& _keyName)
 {
-    m_id = _id;
-    m_idHasBeenSet = true;
+    m_keyName = _keyName;
+    m_keyNameHasBeenSet = true;
 }
 
-bool RescanImpactedHostRequest::IdHasBeenSet() const
+bool CreateKeyPairRequest::KeyNameHasBeenSet() const
 {
-    return m_idHasBeenSet;
+    return m_keyNameHasBeenSet;
 }
 
 

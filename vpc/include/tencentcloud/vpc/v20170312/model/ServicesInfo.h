@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取协议端口
-                     * @return Service 协议端口
+                     * 获取协议端口。
+                     * @return Service 协议端口。
                      */
                     std::string GetService() const;
 
                     /**
-                     * 设置协议端口
-                     * @param Service 协议端口
+                     * 设置协议端口。
+                     * @param Service 协议端口。
                      */
                     void SetService(const std::string& _service);
 
@@ -65,17 +65,17 @@ namespace TencentCloud
                     bool ServiceHasBeenSet() const;
 
                     /**
-                     * 获取备注
+                     * 获取备注。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description 备注
+                     * @return Description 备注。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置备注
+                     * 设置备注。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 备注
+                     * @param Description 备注。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDescription(const std::string& _description);
@@ -89,13 +89,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 协议端口
+                     * 协议端口。
                      */
                     std::string m_service;
                     bool m_serviceHasBeenSet;
 
                     /**
-                     * 备注
+                     * 备注。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;

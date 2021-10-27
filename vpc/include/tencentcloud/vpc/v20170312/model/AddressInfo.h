@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ip地址
-                     * @return Address ip地址
+                     * 获取ip地址。
+                     * @return Address ip地址。
                      */
                     std::string GetAddress() const;
 
                     /**
-                     * 设置ip地址
-                     * @param Address ip地址
+                     * 设置ip地址。
+                     * @param Address ip地址。
                      */
                     void SetAddress(const std::string& _address);
 
@@ -65,17 +65,17 @@ namespace TencentCloud
                     bool AddressHasBeenSet() const;
 
                     /**
-                     * 获取备注
+                     * 获取备注。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description 备注
+                     * @return Description 备注。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置备注
+                     * 设置备注。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 备注
+                     * @param Description 备注。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDescription(const std::string& _description);
@@ -89,13 +89,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ip地址
+                     * ip地址。
                      */
                     std::string m_address;
                     bool m_addressHasBeenSet;
 
                     /**
-                     * 备注
+                     * 备注。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;

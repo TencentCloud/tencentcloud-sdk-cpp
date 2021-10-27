@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CBS_V20170312_MODEL_IMAGE_H_
-#define TENCENTCLOUD_CBS_V20170312_MODEL_IMAGE_H_
+#ifndef TENCENTCLOUD_TSE_V20201207_MODEL_KVPAIR_H_
+#define TENCENTCLOUD_TSE_V20201207_MODEL_KVPAIR_H_
 
 #include <string>
 #include <vector>
@@ -28,73 +28,73 @@
 
 namespace TencentCloud
 {
-    namespace Cbs
+    namespace Tse
     {
-        namespace V20170312
+        namespace V20201207
         {
             namespace Model
             {
                 /**
-                * 镜像。
+                * 键值对
                 */
-                class Image : public AbstractModel
+                class KVPair : public AbstractModel
                 {
                 public:
-                    Image();
-                    ~Image() = default;
+                    KVPair();
+                    ~KVPair() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取镜像名称。
-                     * @return ImageName 镜像名称。
+                     * 获取键
+                     * @return Key 键
                      */
-                    std::string GetImageName() const;
+                    std::string GetKey() const;
 
                     /**
-                     * 设置镜像名称。
-                     * @param ImageName 镜像名称。
+                     * 设置键
+                     * @param Key 键
                      */
-                    void SetImageName(const std::string& _imageName);
+                    void SetKey(const std::string& _key);
 
                     /**
-                     * 判断参数 ImageName 是否已赋值
-                     * @return ImageName 是否已赋值
+                     * 判断参数 Key 是否已赋值
+                     * @return Key 是否已赋值
                      */
-                    bool ImageNameHasBeenSet() const;
+                    bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取镜像实例ID。
-                     * @return ImageId 镜像实例ID。
+                     * 获取值
+                     * @return Value 值
                      */
-                    std::string GetImageId() const;
+                    std::string GetValue() const;
 
                     /**
-                     * 设置镜像实例ID。
-                     * @param ImageId 镜像实例ID。
+                     * 设置值
+                     * @param Value 值
                      */
-                    void SetImageId(const std::string& _imageId);
+                    void SetValue(const std::string& _value);
 
                     /**
-                     * 判断参数 ImageId 是否已赋值
-                     * @return ImageId 是否已赋值
+                     * 判断参数 Value 是否已赋值
+                     * @return Value 是否已赋值
                      */
-                    bool ImageIdHasBeenSet() const;
+                    bool ValueHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 镜像名称。
+                     * 键
                      */
-                    std::string m_imageName;
-                    bool m_imageNameHasBeenSet;
+                    std::string m_key;
+                    bool m_keyHasBeenSet;
 
                     /**
-                     * 镜像实例ID。
+                     * 值
                      */
-                    std::string m_imageId;
-                    bool m_imageIdHasBeenSet;
+                    std::string m_value;
+                    bool m_valueHasBeenSet;
 
                 };
             }
@@ -102,4 +102,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CBS_V20170312_MODEL_IMAGE_H_
+#endif // !TENCENTCLOUD_TSE_V20201207_MODEL_KVPAIR_H_

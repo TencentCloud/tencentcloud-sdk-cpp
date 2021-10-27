@@ -14,20 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cwp/v20180228/model/RescanImpactedHostResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyClusterParamResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cwp::V20180228::Model;
+using namespace TencentCloud::Cynosdb::V20190107::Model;
 using namespace std;
 
-RescanImpactedHostResponse::RescanImpactedHostResponse()
+ModifyClusterParamResponse::ModifyClusterParamResponse() :
+    m_asyncRequestIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome RescanImpactedHostResponse::Deserialize(const string &payload)
+CoreInternalOutcome ModifyClusterParamResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -61,15 +62,33 @@ CoreInternalOutcome RescanImpactedHostResponse::Deserialize(const string &payloa
     }
 
 
+    if (rsp.HasMember("AsyncRequestId") && !rsp["AsyncRequestId"].IsNull())
+    {
+        if (!rsp["AsyncRequestId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AsyncRequestId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_asyncRequestId = string(rsp["AsyncRequestId"].GetString());
+        m_asyncRequestIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
-string RescanImpactedHostResponse::ToJsonString() const
+string ModifyClusterParamResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_asyncRequestIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AsyncRequestId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_asyncRequestId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string RescanImpactedHostResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string ModifyClusterParamResponse::GetAsyncRequestId() const
+{
+    return m_asyncRequestId;
+}
+
+bool ModifyClusterParamResponse::AsyncRequestIdHasBeenSet() const
+{
+    return m_asyncRequestIdHasBeenSet;
+}
 
 

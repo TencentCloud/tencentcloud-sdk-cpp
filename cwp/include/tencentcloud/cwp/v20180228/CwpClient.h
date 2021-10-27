@@ -423,8 +423,6 @@
 #include <tencentcloud/cwp/v20180228/model/RecoverMalwaresResponse.h>
 #include <tencentcloud/cwp/v20180228/model/RenewProVersionRequest.h>
 #include <tencentcloud/cwp/v20180228/model/RenewProVersionResponse.h>
-#include <tencentcloud/cwp/v20180228/model/RescanImpactedHostRequest.h>
-#include <tencentcloud/cwp/v20180228/model/RescanImpactedHostResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ScanAssetRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ScanAssetResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ScanVulRequest.h>
@@ -1065,9 +1063,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RenewProVersionResponse> RenewProVersionOutcome;
                 typedef std::future<RenewProVersionOutcome> RenewProVersionOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::RenewProVersionRequest&, RenewProVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewProVersionAsyncHandler;
-                typedef Outcome<Core::Error, Model::RescanImpactedHostResponse> RescanImpactedHostOutcome;
-                typedef std::future<RescanImpactedHostOutcome> RescanImpactedHostOutcomeCallable;
-                typedef std::function<void(const CwpClient*, const Model::RescanImpactedHostRequest&, RescanImpactedHostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RescanImpactedHostAsyncHandler;
                 typedef Outcome<Core::Error, Model::ScanAssetResponse> ScanAssetOutcome;
                 typedef std::future<ScanAssetOutcome> ScanAssetOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ScanAssetRequest&, ScanAssetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScanAssetAsyncHandler;
@@ -2909,17 +2904,6 @@ namespace TencentCloud
                 RenewProVersionOutcome RenewProVersion(const Model::RenewProVersionRequest &request);
                 void RenewProVersionAsync(const Model::RenewProVersionRequest& request, const RenewProVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RenewProVersionOutcomeCallable RenewProVersionCallable(const Model::RenewProVersionRequest& request);
-
-                /**
-                 *该接口已废弃
-
-本接口 (RescanImpactedHost) 用于漏洞重新检测。
-                 * @param req RescanImpactedHostRequest
-                 * @return RescanImpactedHostOutcome
-                 */
-                RescanImpactedHostOutcome RescanImpactedHost(const Model::RescanImpactedHostRequest &request);
-                void RescanImpactedHostAsync(const Model::RescanImpactedHostRequest& request, const RescanImpactedHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RescanImpactedHostOutcomeCallable RescanImpactedHostCallable(const Model::RescanImpactedHostRequest& request);
 
                 /**
                  *资产指纹启动扫描

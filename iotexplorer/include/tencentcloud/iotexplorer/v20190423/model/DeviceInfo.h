@@ -390,6 +390,94 @@ namespace TencentCloud
                      */
                     bool CreatorNickNameHasBeenSet() const;
 
+                    /**
+                     * 获取启用/禁用状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableState 启用/禁用状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetEnableState() const;
+
+                    /**
+                     * 设置启用/禁用状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnableState 启用/禁用状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnableState(const int64_t& _enableState);
+
+                    /**
+                     * 判断参数 EnableState 是否已赋值
+                     * @return EnableState 是否已赋值
+                     */
+                    bool EnableStateHasBeenSet() const;
+
+                    /**
+                     * 获取产品ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductId 产品ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProductId() const;
+
+                    /**
+                     * 设置产品ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProductId 产品ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProductId(const std::string& _productId);
+
+                    /**
+                     * 判断参数 ProductId 是否已赋值
+                     * @return ProductId 是否已赋值
+                     */
+                    bool ProductIdHasBeenSet() const;
+
+                    /**
+                     * 获取产品名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductName 产品名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProductName() const;
+
+                    /**
+                     * 设置产品名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProductName 产品名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProductName(const std::string& _productName);
+
+                    /**
+                     * 判断参数 ProductName 是否已赋值
+                     * @return ProductName 是否已赋值
+                     */
+                    bool ProductNameHasBeenSet() const;
+
+                    /**
+                     * 获取设备类型（设备、子设备、网关）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeviceType 设备类型（设备、子设备、网关）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDeviceType() const;
+
+                    /**
+                     * 设置设备类型（设备、子设备、网关）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeviceType 设备类型（设备、子设备、网关）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeviceType(const std::string& _deviceType);
+
+                    /**
+                     * 判断参数 DeviceType 是否已赋值
+                     * @return DeviceType 是否已赋值
+                     */
+                    bool DeviceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -501,6 +589,34 @@ namespace TencentCloud
                      */
                     std::string m_creatorNickName;
                     bool m_creatorNickNameHasBeenSet;
+
+                    /**
+                     * 启用/禁用状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_enableState;
+                    bool m_enableStateHasBeenSet;
+
+                    /**
+                     * 产品ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_productId;
+                    bool m_productIdHasBeenSet;
+
+                    /**
+                     * 产品名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_productName;
+                    bool m_productNameHasBeenSet;
+
+                    /**
+                     * 设备类型（设备、子设备、网关）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deviceType;
+                    bool m_deviceTypeHasBeenSet;
 
                 };
             }

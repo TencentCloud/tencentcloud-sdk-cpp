@@ -23,7 +23,8 @@ using namespace TencentCloud::Rce::V20201103::Model;
 using namespace std;
 
 ManageMarketingRiskRequest::ManageMarketingRiskRequest() :
-    m_businessSecurityDataHasBeenSet(false)
+    m_businessSecurityDataHasBeenSet(false),
+    m_businessCryptoDataHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,15 @@ string ManageMarketingRiskRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_businessSecurityData.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_businessCryptoDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessCryptoData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_businessCryptoData.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -65,6 +75,22 @@ void ManageMarketingRiskRequest::SetBusinessSecurityData(const InputManageMarket
 bool ManageMarketingRiskRequest::BusinessSecurityDataHasBeenSet() const
 {
     return m_businessSecurityDataHasBeenSet;
+}
+
+InputCryptoManageMarketingRisk ManageMarketingRiskRequest::GetBusinessCryptoData() const
+{
+    return m_businessCryptoData;
+}
+
+void ManageMarketingRiskRequest::SetBusinessCryptoData(const InputCryptoManageMarketingRisk& _businessCryptoData)
+{
+    m_businessCryptoData = _businessCryptoData;
+    m_businessCryptoDataHasBeenSet = true;
+}
+
+bool ManageMarketingRiskRequest::BusinessCryptoDataHasBeenSet() const
+{
+    return m_businessCryptoDataHasBeenSet;
 }
 
 

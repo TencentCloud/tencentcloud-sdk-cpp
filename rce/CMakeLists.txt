@@ -30,6 +30,7 @@ set(rce_public_header_model
   include/tencentcloud/rce/v20201103/model/AccountInfo.h
   include/tencentcloud/rce/v20201103/model/OutputDescribeRiskModelValue.h
   include/tencentcloud/rce/v20201103/model/DescribeRiskModelRequest.h
+  include/tencentcloud/rce/v20201103/model/InputCryptoManageMarketingRisk.h
   include/tencentcloud/rce/v20201103/model/SponsorInfo.h
   include/tencentcloud/rce/v20201103/model/ManageMarketingRiskResponse.h
   include/tencentcloud/rce/v20201103/model/InputDetails.h
@@ -51,6 +52,7 @@ set(rce_src
   src/v20201103/model/AccountInfo.cpp
   src/v20201103/model/OutputDescribeRiskModelValue.cpp
   src/v20201103/model/DescribeRiskModelRequest.cpp
+  src/v20201103/model/InputCryptoManageMarketingRisk.cpp
   src/v20201103/model/SponsorInfo.cpp
   src/v20201103/model/ManageMarketingRiskResponse.cpp
   src/v20201103/model/InputDetails.cpp

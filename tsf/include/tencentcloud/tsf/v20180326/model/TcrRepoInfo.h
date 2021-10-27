@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取地域
+                     * 获取地域（填数字）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Region 地域
+                     * @return Region 地域（填数字）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域
+                     * 设置地域（填数字）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Region 地域
+                     * @param Region 地域（填数字）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRegion(const std::string& _region);
@@ -159,7 +159,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 地域
+                     * 地域（填数字）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;

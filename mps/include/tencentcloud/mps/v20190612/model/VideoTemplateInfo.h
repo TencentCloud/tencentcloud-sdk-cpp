@@ -51,12 +51,10 @@ namespace TencentCloud
 <li>libx264：H.264 编码</li>
 <li>libx265：H.265 编码</li>
 <li>av1：AOMedia Video 1 编码</li>
-目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。av1 编码容器目前只支持 mp4 。
                      * @return Codec 视频流的编码格式，可选值：
 <li>libx264：H.264 编码</li>
 <li>libx265：H.265 编码</li>
 <li>av1：AOMedia Video 1 编码</li>
-目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。av1 编码容器目前只支持 mp4 。
                      */
                     std::string GetCodec() const;
 
@@ -65,12 +63,10 @@ namespace TencentCloud
 <li>libx264：H.264 编码</li>
 <li>libx265：H.265 编码</li>
 <li>av1：AOMedia Video 1 编码</li>
-目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。av1 编码容器目前只支持 mp4 。
                      * @param Codec 视频流的编码格式，可选值：
 <li>libx264：H.264 编码</li>
 <li>libx265：H.265 编码</li>
 <li>av1：AOMedia Video 1 编码</li>
-目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。av1 编码容器目前只支持 mp4 。
                      */
                     void SetCodec(const std::string& _codec);
 
@@ -103,17 +99,17 @@ namespace TencentCloud
                     bool FpsHasBeenSet() const;
 
                     /**
-                     * 获取视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。
+                     * 获取视频流的码率，取值范围：0 和 [75, 35000]，单位：kbps。
 当取值为 0，表示视频码率和原始视频保持一致。
-                     * @return Bitrate 视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。
+                     * @return Bitrate 视频流的码率，取值范围：0 和 [75, 35000]，单位：kbps。
 当取值为 0，表示视频码率和原始视频保持一致。
                      */
                     uint64_t GetBitrate() const;
 
                     /**
-                     * 设置视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。
+                     * 设置视频流的码率，取值范围：0 和 [75, 35000]，单位：kbps。
 当取值为 0，表示视频码率和原始视频保持一致。
-                     * @param Bitrate 视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。
+                     * @param Bitrate 视频流的码率，取值范围：0 和 [75, 35000]，单位：kbps。
 当取值为 0，表示视频码率和原始视频保持一致。
                      */
                     void SetBitrate(const uint64_t& _bitrate);
@@ -323,7 +319,6 @@ namespace TencentCloud
 <li>libx264：H.264 编码</li>
 <li>libx265：H.265 编码</li>
 <li>av1：AOMedia Video 1 编码</li>
-目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。av1 编码容器目前只支持 mp4 。
                      */
                     std::string m_codec;
                     bool m_codecHasBeenSet;
@@ -336,7 +331,7 @@ namespace TencentCloud
                     bool m_fpsHasBeenSet;
 
                     /**
-                     * 视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。
+                     * 视频流的码率，取值范围：0 和 [75, 35000]，单位：kbps。
 当取值为 0，表示视频码率和原始视频保持一致。
                      */
                     uint64_t m_bitrate;

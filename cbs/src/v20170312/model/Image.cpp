@@ -21,8 +21,8 @@ using namespace TencentCloud::Cbs::V20170312::Model;
 using namespace std;
 
 Image::Image() :
-    m_imageIdHasBeenSet(false),
-    m_imageNameHasBeenSet(false)
+    m_imageNameHasBeenSet(false),
+    m_imageIdHasBeenSet(false)
 {
 }
 
@@ -30,16 +30,6 @@ CoreInternalOutcome Image::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("ImageId") && !value["ImageId"].IsNull())
-    {
-        if (!value["ImageId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Image.ImageId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_imageId = string(value["ImageId"].GetString());
-        m_imageIdHasBeenSet = true;
-    }
 
     if (value.HasMember("ImageName") && !value["ImageName"].IsNull())
     {
@@ -51,20 +41,22 @@ CoreInternalOutcome Image::Deserialize(const rapidjson::Value &value)
         m_imageNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ImageId") && !value["ImageId"].IsNull())
+    {
+        if (!value["ImageId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Image.ImageId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageId = string(value["ImageId"].GetString());
+        m_imageIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void Image::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_imageIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ImageId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_imageId.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_imageNameHasBeenSet)
     {
@@ -74,24 +66,16 @@ void Image::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         value.AddMember(iKey, rapidjson::Value(m_imageName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_imageIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageId.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
-
-string Image::GetImageId() const
-{
-    return m_imageId;
-}
-
-void Image::SetImageId(const string& _imageId)
-{
-    m_imageId = _imageId;
-    m_imageIdHasBeenSet = true;
-}
-
-bool Image::ImageIdHasBeenSet() const
-{
-    return m_imageIdHasBeenSet;
-}
 
 string Image::GetImageName() const
 {
@@ -107,5 +91,21 @@ void Image::SetImageName(const string& _imageName)
 bool Image::ImageNameHasBeenSet() const
 {
     return m_imageNameHasBeenSet;
+}
+
+string Image::GetImageId() const
+{
+    return m_imageId;
+}
+
+void Image::SetImageId(const string& _imageId)
+{
+    m_imageId = _imageId;
+    m_imageIdHasBeenSet = true;
+}
+
+bool Image::ImageIdHasBeenSet() const
+{
+    return m_imageIdHasBeenSet;
 }
 

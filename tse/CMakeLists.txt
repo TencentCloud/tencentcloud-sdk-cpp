@@ -23,6 +23,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/SREInstance.h
   include/tencentcloud/tse/v20201207/model/DescribeSREInstanceAccessAddressResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeSREInstancesResponse.h
+  include/tencentcloud/tse/v20201207/model/KVPair.h
   include/tencentcloud/tse/v20201207/model/EnvInfo.h
   include/tencentcloud/tse/v20201207/model/Filter.h
   include/tencentcloud/tse/v20201207/model/EnvAddressInfo.h
@@ -38,6 +39,7 @@ set(tse_src
   src/v20201207/model/SREInstance.cpp
   src/v20201207/model/DescribeSREInstanceAccessAddressResponse.cpp
   src/v20201207/model/DescribeSREInstancesResponse.cpp
+  src/v20201207/model/KVPair.cpp
   src/v20201207/model/EnvInfo.cpp
   src/v20201207/model/Filter.cpp
   src/v20201207/model/EnvAddressInfo.cpp

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CWP_V20180228_MODEL_RESCANIMPACTEDHOSTRESPONSE_H_
-#define TENCENTCLOUD_CWP_V20180228_MODEL_RESCANIMPACTEDHOSTRESPONSE_H_
+#ifndef TENCENTCLOUD_ECM_V20190719_MODEL_DISASSOCIATEINSTANCESKEYPAIRSRESPONSE_H_
+#define TENCENTCLOUD_ECM_V20190719_MODEL_DISASSOCIATEINSTANCESKEYPAIRSRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,20 +25,20 @@
 
 namespace TencentCloud
 {
-    namespace Cwp
+    namespace Ecm
     {
-        namespace V20180228
+        namespace V20190719
         {
             namespace Model
             {
                 /**
-                * RescanImpactedHost返回参数结构体
+                * DisassociateInstancesKeyPairs返回参数结构体
                 */
-                class RescanImpactedHostResponse : public AbstractModel
+                class DisassociateInstancesKeyPairsResponse : public AbstractModel
                 {
                 public:
-                    RescanImpactedHostResponse();
-                    ~RescanImpactedHostResponse() = default;
+                    DisassociateInstancesKeyPairsResponse();
+                    ~DisassociateInstancesKeyPairsResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
@@ -51,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CWP_V20180228_MODEL_RESCANIMPACTEDHOSTRESPONSE_H_
+#endif // !TENCENTCLOUD_ECM_V20190719_MODEL_DISASSOCIATEINSTANCESKEYPAIRSRESPONSE_H_

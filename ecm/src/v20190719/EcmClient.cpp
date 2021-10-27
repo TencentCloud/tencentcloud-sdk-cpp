@@ -599,6 +599,49 @@ EcmClient::CreateImageOutcomeCallable EcmClient::CreateImageCallable(const Creat
     return task->get_future();
 }
 
+EcmClient::CreateKeyPairOutcome EcmClient::CreateKeyPair(const CreateKeyPairRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateKeyPair");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateKeyPairResponse rsp = CreateKeyPairResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateKeyPairOutcome(rsp);
+        else
+            return CreateKeyPairOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateKeyPairOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::CreateKeyPairAsync(const CreateKeyPairRequest& request, const CreateKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateKeyPair(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::CreateKeyPairOutcomeCallable EcmClient::CreateKeyPairCallable(const CreateKeyPairRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateKeyPairOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateKeyPair(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::CreateListenerOutcome EcmClient::CreateListener(const CreateListenerRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateListener");
@@ -3430,6 +3473,49 @@ EcmClient::DisassociateAddressOutcomeCallable EcmClient::DisassociateAddressCall
         [this, request]()
         {
             return this->DisassociateAddress(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::DisassociateInstancesKeyPairsOutcome EcmClient::DisassociateInstancesKeyPairs(const DisassociateInstancesKeyPairsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisassociateInstancesKeyPairs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisassociateInstancesKeyPairsResponse rsp = DisassociateInstancesKeyPairsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisassociateInstancesKeyPairsOutcome(rsp);
+        else
+            return DisassociateInstancesKeyPairsOutcome(o.GetError());
+    }
+    else
+    {
+        return DisassociateInstancesKeyPairsOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DisassociateInstancesKeyPairsAsync(const DisassociateInstancesKeyPairsRequest& request, const DisassociateInstancesKeyPairsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisassociateInstancesKeyPairs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DisassociateInstancesKeyPairsOutcomeCallable EcmClient::DisassociateInstancesKeyPairsCallable(const DisassociateInstancesKeyPairsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisassociateInstancesKeyPairsOutcome()>>(
+        [this, request]()
+        {
+            return this->DisassociateInstancesKeyPairs(request);
         }
     );
 

@@ -28,7 +28,8 @@ GetAlarmLogRequest::GetAlarmLogRequest() :
     m_queryHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_contextHasBeenSet(false),
-    m_sortHasBeenSet(false)
+    m_sortHasBeenSet(false),
+    m_useNewAnalysisHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string GetAlarmLogRequest::ToJsonString() const
         string key = "Sort";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sort.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_useNewAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseNewAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_useNewAnalysis, allocator);
     }
 
 
@@ -189,6 +198,22 @@ void GetAlarmLogRequest::SetSort(const string& _sort)
 bool GetAlarmLogRequest::SortHasBeenSet() const
 {
     return m_sortHasBeenSet;
+}
+
+bool GetAlarmLogRequest::GetUseNewAnalysis() const
+{
+    return m_useNewAnalysis;
+}
+
+void GetAlarmLogRequest::SetUseNewAnalysis(const bool& _useNewAnalysis)
+{
+    m_useNewAnalysis = _useNewAnalysis;
+    m_useNewAnalysisHasBeenSet = true;
+}
+
+bool GetAlarmLogRequest::UseNewAnalysisHasBeenSet() const
+{
+    return m_useNewAnalysisHasBeenSet;
 }
 
 

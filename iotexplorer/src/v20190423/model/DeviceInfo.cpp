@@ -36,7 +36,11 @@ DeviceInfo::DeviceInfo() :
     m_appSKeyHasBeenSet(false),
     m_nwkSKeyHasBeenSet(false),
     m_createUserIdHasBeenSet(false),
-    m_creatorNickNameHasBeenSet(false)
+    m_creatorNickNameHasBeenSet(false),
+    m_enableStateHasBeenSet(false),
+    m_productIdHasBeenSet(false),
+    m_productNameHasBeenSet(false),
+    m_deviceTypeHasBeenSet(false)
 {
 }
 
@@ -205,6 +209,46 @@ CoreInternalOutcome DeviceInfo::Deserialize(const rapidjson::Value &value)
         m_creatorNickNameHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableState") && !value["EnableState"].IsNull())
+    {
+        if (!value["EnableState"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceInfo.EnableState` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableState = value["EnableState"].GetInt64();
+        m_enableStateHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProductId") && !value["ProductId"].IsNull())
+    {
+        if (!value["ProductId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceInfo.ProductId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_productId = string(value["ProductId"].GetString());
+        m_productIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProductName") && !value["ProductName"].IsNull())
+    {
+        if (!value["ProductName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceInfo.ProductName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_productName = string(value["ProductName"].GetString());
+        m_productNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeviceType") && !value["DeviceType"].IsNull())
+    {
+        if (!value["DeviceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceInfo.DeviceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceType = string(value["DeviceType"].GetString());
+        m_deviceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +382,38 @@ void DeviceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "CreatorNickName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_creatorNickName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableState, allocator);
+    }
+
+    if (m_productIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -597,5 +673,69 @@ void DeviceInfo::SetCreatorNickName(const string& _creatorNickName)
 bool DeviceInfo::CreatorNickNameHasBeenSet() const
 {
     return m_creatorNickNameHasBeenSet;
+}
+
+int64_t DeviceInfo::GetEnableState() const
+{
+    return m_enableState;
+}
+
+void DeviceInfo::SetEnableState(const int64_t& _enableState)
+{
+    m_enableState = _enableState;
+    m_enableStateHasBeenSet = true;
+}
+
+bool DeviceInfo::EnableStateHasBeenSet() const
+{
+    return m_enableStateHasBeenSet;
+}
+
+string DeviceInfo::GetProductId() const
+{
+    return m_productId;
+}
+
+void DeviceInfo::SetProductId(const string& _productId)
+{
+    m_productId = _productId;
+    m_productIdHasBeenSet = true;
+}
+
+bool DeviceInfo::ProductIdHasBeenSet() const
+{
+    return m_productIdHasBeenSet;
+}
+
+string DeviceInfo::GetProductName() const
+{
+    return m_productName;
+}
+
+void DeviceInfo::SetProductName(const string& _productName)
+{
+    m_productName = _productName;
+    m_productNameHasBeenSet = true;
+}
+
+bool DeviceInfo::ProductNameHasBeenSet() const
+{
+    return m_productNameHasBeenSet;
+}
+
+string DeviceInfo::GetDeviceType() const
+{
+    return m_deviceType;
+}
+
+void DeviceInfo::SetDeviceType(const string& _deviceType)
+{
+    m_deviceType = _deviceType;
+    m_deviceTypeHasBeenSet = true;
+}
+
+bool DeviceInfo::DeviceTypeHasBeenSet() const
+{
+    return m_deviceTypeHasBeenSet;
 }
 

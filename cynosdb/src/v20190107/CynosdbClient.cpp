@@ -900,6 +900,49 @@ CynosdbClient::ModifyBackupConfigOutcomeCallable CynosdbClient::ModifyBackupConf
     return task->get_future();
 }
 
+CynosdbClient::ModifyClusterParamOutcome CynosdbClient::ModifyClusterParam(const ModifyClusterParamRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClusterParam");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterParamResponse rsp = ModifyClusterParamResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterParamOutcome(rsp);
+        else
+            return ModifyClusterParamOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterParamOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ModifyClusterParamAsync(const ModifyClusterParamRequest& request, const ModifyClusterParamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyClusterParam(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::ModifyClusterParamOutcomeCallable CynosdbClient::ModifyClusterParamCallable(const ModifyClusterParamRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyClusterParamOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyClusterParam(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::ModifyDBInstanceSecurityGroupsOutcome CynosdbClient::ModifyDBInstanceSecurityGroups(const ModifyDBInstanceSecurityGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDBInstanceSecurityGroups");

@@ -38,7 +38,8 @@ ModifyLaunchConfigurationAttributesRequest::ModifyLaunchConfigurationAttributesR
     m_systemDiskHasBeenSet(false),
     m_dataDisksHasBeenSet(false),
     m_hostNameSettingsHasBeenSet(false),
-    m_instanceNameSettingsHasBeenSet(false)
+    m_instanceNameSettingsHasBeenSet(false),
+    m_enhancedServiceHasBeenSet(false)
 {
 }
 
@@ -198,6 +199,15 @@ string ModifyLaunchConfigurationAttributesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_instanceNameSettings.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_enhancedServiceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnhancedService";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_enhancedService.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -462,6 +472,22 @@ void ModifyLaunchConfigurationAttributesRequest::SetInstanceNameSettings(const I
 bool ModifyLaunchConfigurationAttributesRequest::InstanceNameSettingsHasBeenSet() const
 {
     return m_instanceNameSettingsHasBeenSet;
+}
+
+EnhancedService ModifyLaunchConfigurationAttributesRequest::GetEnhancedService() const
+{
+    return m_enhancedService;
+}
+
+void ModifyLaunchConfigurationAttributesRequest::SetEnhancedService(const EnhancedService& _enhancedService)
+{
+    m_enhancedService = _enhancedService;
+    m_enhancedServiceHasBeenSet = true;
+}
+
+bool ModifyLaunchConfigurationAttributesRequest::EnhancedServiceHasBeenSet() const
+{
+    return m_enhancedServiceHasBeenSet;
 }
 
 

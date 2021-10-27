@@ -49,6 +49,8 @@
 #include <tencentcloud/ecm/v20190719/model/CreateHaVipResponse.h>
 #include <tencentcloud/ecm/v20190719/model/CreateImageRequest.h>
 #include <tencentcloud/ecm/v20190719/model/CreateImageResponse.h>
+#include <tencentcloud/ecm/v20190719/model/CreateKeyPairRequest.h>
+#include <tencentcloud/ecm/v20190719/model/CreateKeyPairResponse.h>
 #include <tencentcloud/ecm/v20190719/model/CreateListenerRequest.h>
 #include <tencentcloud/ecm/v20190719/model/CreateListenerResponse.h>
 #include <tencentcloud/ecm/v20190719/model/CreateLoadBalancerRequest.h>
@@ -181,6 +183,8 @@
 #include <tencentcloud/ecm/v20190719/model/DisableRoutesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DisassociateAddressRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DisassociateAddressResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DisassociateInstancesKeyPairsRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DisassociateInstancesKeyPairsResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DisassociateSecurityGroupsRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DisassociateSecurityGroupsResponse.h>
 #include <tencentcloud/ecm/v20190719/model/EnableRoutesRequest.h>
@@ -330,6 +334,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateImageResponse> CreateImageOutcome;
                 typedef std::future<CreateImageOutcome> CreateImageOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::CreateImageRequest&, CreateImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateKeyPairResponse> CreateKeyPairOutcome;
+                typedef std::future<CreateKeyPairOutcome> CreateKeyPairOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::CreateKeyPairRequest&, CreateKeyPairOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateKeyPairAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateListenerResponse> CreateListenerOutcome;
                 typedef std::future<CreateListenerOutcome> CreateListenerOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::CreateListenerRequest&, CreateListenerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateListenerAsyncHandler;
@@ -528,6 +535,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DisassociateAddressResponse> DisassociateAddressOutcome;
                 typedef std::future<DisassociateAddressOutcome> DisassociateAddressOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DisassociateAddressRequest&, DisassociateAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateAddressAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisassociateInstancesKeyPairsResponse> DisassociateInstancesKeyPairsOutcome;
+                typedef std::future<DisassociateInstancesKeyPairsOutcome> DisassociateInstancesKeyPairsOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DisassociateInstancesKeyPairsRequest&, DisassociateInstancesKeyPairsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateInstancesKeyPairsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisassociateSecurityGroupsResponse> DisassociateSecurityGroupsOutcome;
                 typedef std::future<DisassociateSecurityGroupsOutcome> DisassociateSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DisassociateSecurityGroupsRequest&, DisassociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateSecurityGroupsAsyncHandler;
@@ -801,6 +811,15 @@ namespace TencentCloud
                 CreateImageOutcome CreateImage(const Model::CreateImageRequest &request);
                 void CreateImageAsync(const Model::CreateImageRequest& request, const CreateImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateImageOutcomeCallable CreateImageCallable(const Model::CreateImageRequest& request);
+
+                /**
+                 *用于创建一个 OpenSSH RSA 密钥对，可以用于登录 Linux 实例。
+                 * @param req CreateKeyPairRequest
+                 * @return CreateKeyPairOutcome
+                 */
+                CreateKeyPairOutcome CreateKeyPair(const Model::CreateKeyPairRequest &request);
+                void CreateKeyPairAsync(const Model::CreateKeyPairRequest& request, const CreateKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateKeyPairOutcomeCallable CreateKeyPairCallable(const Model::CreateKeyPairRequest& request);
 
                 /**
                  *创建负载均衡监听器。
@@ -1424,6 +1443,15 @@ EIP 如果被封堵，则不能进行解绑定操作。
                 DisassociateAddressOutcome DisassociateAddress(const Model::DisassociateAddressRequest &request);
                 void DisassociateAddressAsync(const Model::DisassociateAddressRequest& request, const DisassociateAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DisassociateAddressOutcomeCallable DisassociateAddressCallable(const Model::DisassociateAddressRequest& request);
+
+                /**
+                 *用于解除实例的密钥绑定关系。
+                 * @param req DisassociateInstancesKeyPairsRequest
+                 * @return DisassociateInstancesKeyPairsOutcome
+                 */
+                DisassociateInstancesKeyPairsOutcome DisassociateInstancesKeyPairs(const Model::DisassociateInstancesKeyPairsRequest &request);
+                void DisassociateInstancesKeyPairsAsync(const Model::DisassociateInstancesKeyPairsRequest& request, const DisassociateInstancesKeyPairsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisassociateInstancesKeyPairsOutcomeCallable DisassociateInstancesKeyPairsCallable(const Model::DisassociateInstancesKeyPairsRequest& request);
 
                 /**
                  *解绑安全组

@@ -63,6 +63,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/IsolateInstanceResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyBackupConfigRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyBackupConfigResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyClusterParamRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyClusterParamResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyDBInstanceSecurityGroupsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyDBInstanceSecurityGroupsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyMaintainPeriodConfigRequest.h>
@@ -149,6 +151,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyBackupConfigResponse> ModifyBackupConfigOutcome;
                 typedef std::future<ModifyBackupConfigOutcome> ModifyBackupConfigOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyBackupConfigRequest&, ModifyBackupConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyClusterParamResponse> ModifyClusterParamOutcome;
+                typedef std::future<ModifyClusterParamOutcome> ModifyClusterParamOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ModifyClusterParamRequest&, ModifyClusterParamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterParamAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceSecurityGroupsResponse> ModifyDBInstanceSecurityGroupsOutcome;
                 typedef std::future<ModifyDBInstanceSecurityGroupsOutcome> ModifyDBInstanceSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyDBInstanceSecurityGroupsRequest&, ModifyDBInstanceSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceSecurityGroupsAsyncHandler;
@@ -349,6 +354,15 @@ namespace TencentCloud
                 ModifyBackupConfigOutcome ModifyBackupConfig(const Model::ModifyBackupConfigRequest &request);
                 void ModifyBackupConfigAsync(const Model::ModifyBackupConfigRequest& request, const ModifyBackupConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyBackupConfigOutcomeCallable ModifyBackupConfigCallable(const Model::ModifyBackupConfigRequest& request);
+
+                /**
+                 *修改集群参数
+                 * @param req ModifyClusterParamRequest
+                 * @return ModifyClusterParamOutcome
+                 */
+                ModifyClusterParamOutcome ModifyClusterParam(const Model::ModifyClusterParamRequest &request);
+                void ModifyClusterParamAsync(const Model::ModifyClusterParamRequest& request, const ModifyClusterParamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyClusterParamOutcomeCallable ModifyClusterParamCallable(const Model::ModifyClusterParamRequest& request);
 
                 /**
                  *本接口(ModifyDBInstanceSecurityGroups)用于修改实例绑定的安全组。

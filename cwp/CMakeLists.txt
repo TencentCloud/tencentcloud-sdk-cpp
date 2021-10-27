@@ -125,7 +125,6 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeAssetMachineDetailRequest.h
   include/tencentcloud/cwp/v20180228/model/CancelIgnoreVulResponse.h
   include/tencentcloud/cwp/v20180228/model/IgnoreImpactedHostsResponse.h
-  include/tencentcloud/cwp/v20180228/model/RescanImpactedHostResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeAssetMachineDetailResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeStrategyExistResponse.h
   include/tencentcloud/cwp/v20180228/model/DeleteReverseShellEventsRequest.h
@@ -343,7 +342,6 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeAssetJarInfoResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeVulInfoCvssRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeComponentStatisticsRequest.h
-  include/tencentcloud/cwp/v20180228/model/RescanImpactedHostRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeMaliciousRequestWhiteListRequest.h
   include/tencentcloud/cwp/v20180228/model/ModifyBanStatusResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeLoginWhiteListResponse.h
@@ -666,7 +664,6 @@ set(cwp_src
   src/v20180228/model/DescribeAssetMachineDetailRequest.cpp
   src/v20180228/model/CancelIgnoreVulResponse.cpp
   src/v20180228/model/IgnoreImpactedHostsResponse.cpp
-  src/v20180228/model/RescanImpactedHostResponse.cpp
   src/v20180228/model/DescribeAssetMachineDetailResponse.cpp
   src/v20180228/model/DescribeStrategyExistResponse.cpp
   src/v20180228/model/DeleteReverseShellEventsRequest.cpp
@@ -884,7 +881,6 @@ set(cwp_src
   src/v20180228/model/DescribeAssetJarInfoResponse.cpp
   src/v20180228/model/DescribeVulInfoCvssRequest.cpp
   src/v20180228/model/DescribeComponentStatisticsRequest.cpp
-  src/v20180228/model/RescanImpactedHostRequest.cpp
   src/v20180228/model/DescribeMaliciousRequestWhiteListRequest.cpp
   src/v20180228/model/ModifyBanStatusResponse.cpp
   src/v20180228/model/DescribeLoginWhiteListResponse.cpp

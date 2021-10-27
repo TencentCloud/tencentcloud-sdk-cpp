@@ -150,6 +150,24 @@ namespace TencentCloud
                      */
                     bool SortHasBeenSet() const;
 
+                    /**
+                     * 获取为true代表使用新检索,响应参数AnalysisRecords和Columns有效， 为false时代表使用老检索方式, AnalysisResults和ColNames有效
+                     * @return UseNewAnalysis 为true代表使用新检索,响应参数AnalysisRecords和Columns有效， 为false时代表使用老检索方式, AnalysisResults和ColNames有效
+                     */
+                    bool GetUseNewAnalysis() const;
+
+                    /**
+                     * 设置为true代表使用新检索,响应参数AnalysisRecords和Columns有效， 为false时代表使用老检索方式, AnalysisResults和ColNames有效
+                     * @param UseNewAnalysis 为true代表使用新检索,响应参数AnalysisRecords和Columns有效， 为false时代表使用老检索方式, AnalysisResults和ColNames有效
+                     */
+                    void SetUseNewAnalysis(const bool& _useNewAnalysis);
+
+                    /**
+                     * 判断参数 UseNewAnalysis 是否已赋值
+                     * @return UseNewAnalysis 是否已赋值
+                     */
+                    bool UseNewAnalysisHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +205,12 @@ namespace TencentCloud
                      */
                     std::string m_sort;
                     bool m_sortHasBeenSet;
+
+                    /**
+                     * 为true代表使用新检索,响应参数AnalysisRecords和Columns有效， 为false时代表使用老检索方式, AnalysisResults和ColNames有效
+                     */
+                    bool m_useNewAnalysis;
+                    bool m_useNewAnalysisHasBeenSet;
 
                 };
             }
