@@ -58,6 +58,7 @@
 #include <tencentcloud/cdn/v20180606/model/Quic.h>
 #include <tencentcloud/cdn/v20180606/model/OssPrivateAccess.h>
 #include <tencentcloud/cdn/v20180606/model/WebSocket.h>
+#include <tencentcloud/cdn/v20180606/model/RemoteAuthentication.h>
 
 
 namespace TencentCloud
@@ -586,10 +587,12 @@ media：流媒体点播加速
 mainland：中国境内加速
 overseas：中国境外加速
 global：全球加速
+从mainland/overseas修改至global时，域名的配置将被同步至overseas/mainland。若域名含有后端特殊配置，此类配置的同步过程有一定延时，请耐心等待
                      * @return Area 域名加速区域
 mainland：中国境内加速
 overseas：中国境外加速
 global：全球加速
+从mainland/overseas修改至global时，域名的配置将被同步至overseas/mainland。若域名含有后端特殊配置，此类配置的同步过程有一定延时，请耐心等待
                      */
                     std::string GetArea() const;
 
@@ -598,10 +601,12 @@ global：全球加速
 mainland：中国境内加速
 overseas：中国境外加速
 global：全球加速
+从mainland/overseas修改至global时，域名的配置将被同步至overseas/mainland。若域名含有后端特殊配置，此类配置的同步过程有一定延时，请耐心等待
                      * @param Area 域名加速区域
 mainland：中国境内加速
 overseas：中国境外加速
 global：全球加速
+从mainland/overseas修改至global时，域名的配置将被同步至overseas/mainland。若域名含有后端特殊配置，此类配置的同步过程有一定延时，请耐心等待
                      */
                     void SetArea(const std::string& _area);
 
@@ -684,14 +689,14 @@ global：全球加速
                     bool AccessControlHasBeenSet() const;
 
                     /**
-                     * 获取URL重定向配置
-                     * @return UrlRedirect URL重定向配置
+                     * 获取访问URL重写配置
+                     * @return UrlRedirect 访问URL重写配置
                      */
                     UrlRedirect GetUrlRedirect() const;
 
                     /**
-                     * 设置URL重定向配置
-                     * @param UrlRedirect URL重定向配置
+                     * 设置访问URL重写配置
+                     * @param UrlRedirect 访问URL重写配置
                      */
                     void SetUrlRedirect(const UrlRedirect& _urlRedirect);
 
@@ -862,6 +867,24 @@ global：全球加速
                      * @return WebSocket 是否已赋值
                      */
                     bool WebSocketHasBeenSet() const;
+
+                    /**
+                     * 获取远程鉴权配置
+                     * @return RemoteAuthentication 远程鉴权配置
+                     */
+                    RemoteAuthentication GetRemoteAuthentication() const;
+
+                    /**
+                     * 设置远程鉴权配置
+                     * @param RemoteAuthentication 远程鉴权配置
+                     */
+                    void SetRemoteAuthentication(const RemoteAuthentication& _remoteAuthentication);
+
+                    /**
+                     * 判断参数 RemoteAuthentication 是否已赋值
+                     * @return RemoteAuthentication 是否已赋值
+                     */
+                    bool RemoteAuthenticationHasBeenSet() const;
 
                 private:
 
@@ -1036,6 +1059,7 @@ media：流媒体点播加速
 mainland：中国境内加速
 overseas：中国境外加速
 global：全球加速
+从mainland/overseas修改至global时，域名的配置将被同步至overseas/mainland。若域名含有后端特殊配置，此类配置的同步过程有一定延时，请耐心等待
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
@@ -1065,7 +1089,7 @@ global：全球加速
                     bool m_accessControlHasBeenSet;
 
                     /**
-                     * URL重定向配置
+                     * 访问URL重写配置
                      */
                     UrlRedirect m_urlRedirect;
                     bool m_urlRedirectHasBeenSet;
@@ -1123,6 +1147,12 @@ global：全球加速
                      */
                     WebSocket m_webSocket;
                     bool m_webSocketHasBeenSet;
+
+                    /**
+                     * 远程鉴权配置
+                     */
+                    RemoteAuthentication m_remoteAuthentication;
+                    bool m_remoteAuthenticationHasBeenSet;
 
                 };
             }

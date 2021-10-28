@@ -35,7 +35,8 @@ TrafficPackage::TrafficPackage() :
     m_areaHasBeenSet(false),
     m_lifeTimeMonthHasBeenSet(false),
     m_extensionAvailableHasBeenSet(false),
-    m_refundAvailableHasBeenSet(false)
+    m_refundAvailableHasBeenSet(false),
+    m_regionHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,16 @@ CoreInternalOutcome TrafficPackage::Deserialize(const rapidjson::Value &value)
         m_refundAvailableHasBeenSet = true;
     }
 
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrafficPackage.Region` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_region = value["Region"].GetInt64();
+        m_regionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +330,14 @@ void TrafficPackage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "RefundAvailable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_refundAvailable, allocator);
+    }
+
+    if (m_regionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_region, allocator);
     }
 
 }
@@ -562,5 +581,21 @@ void TrafficPackage::SetRefundAvailable(const bool& _refundAvailable)
 bool TrafficPackage::RefundAvailableHasBeenSet() const
 {
     return m_refundAvailableHasBeenSet;
+}
+
+int64_t TrafficPackage::GetRegion() const
+{
+    return m_region;
+}
+
+void TrafficPackage::SetRegion(const int64_t& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool TrafficPackage::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
 }
 

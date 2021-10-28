@@ -68,6 +68,7 @@
 #include <tencentcloud/cdn/v20180606/model/Quic.h>
 #include <tencentcloud/cdn/v20180606/model/OssPrivateAccess.h>
 #include <tencentcloud/cdn/v20180606/model/WebSocket.h>
+#include <tencentcloud/cdn/v20180606/model/RemoteAuthentication.h>
 
 
 namespace TencentCloud
@@ -457,17 +458,17 @@ media：流媒体点播加速
                     bool FollowRedirectHasBeenSet() const;
 
                     /**
-                     * 获取自定义错误页面配置（功能灰度中，敬请期待）
+                     * 获取自定义错误页面配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ErrorPage 自定义错误页面配置（功能灰度中，敬请期待）
+                     * @return ErrorPage 自定义错误页面配置
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ErrorPage GetErrorPage() const;
 
                     /**
-                     * 设置自定义错误页面配置（功能灰度中，敬请期待）
+                     * 设置自定义错误页面配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ErrorPage 自定义错误页面配置（功能灰度中，敬请期待）
+                     * @param ErrorPage 自定义错误页面配置
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetErrorPage(const ErrorPage& _errorPage);
@@ -1273,17 +1274,17 @@ off：不支持
                     bool Ipv6AccessHasBeenSet() const;
 
                     /**
-                     * 获取高级配置集合。
+                     * 获取高级配置集合
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AdvanceSet 高级配置集合。
+                     * @return AdvanceSet 高级配置集合
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AdvanceConfig> GetAdvanceSet() const;
 
                     /**
-                     * 设置高级配置集合。
+                     * 设置高级配置集合
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AdvanceSet 高级配置集合。
+                     * @param AdvanceSet 高级配置集合
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAdvanceSet(const std::vector<AdvanceConfig>& _advanceSet);
@@ -1295,17 +1296,17 @@ off：不支持
                     bool AdvanceSetHasBeenSet() const;
 
                     /**
-                     * 获取离线缓存
+                     * 获取离线缓存（功能灰度中，尚未全量，请等待后续全量发布）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OfflineCache 离线缓存
+                     * @return OfflineCache 离线缓存（功能灰度中，尚未全量，请等待后续全量发布）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OfflineCache GetOfflineCache() const;
 
                     /**
-                     * 设置离线缓存
+                     * 设置离线缓存（功能灰度中，尚未全量，请等待后续全量发布）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OfflineCache 离线缓存
+                     * @param OfflineCache 离线缓存（功能灰度中，尚未全量，请等待后续全量发布）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOfflineCache(const OfflineCache& _offlineCache);
@@ -1317,17 +1318,17 @@ off：不支持
                     bool OfflineCacheHasBeenSet() const;
 
                     /**
-                     * 获取合并回源
+                     * 获取合并回源（白名单功能）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OriginCombine 合并回源
+                     * @return OriginCombine 合并回源（白名单功能）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OriginCombine GetOriginCombine() const;
 
                     /**
-                     * 设置合并回源
+                     * 设置合并回源（白名单功能）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OriginCombine 合并回源
+                     * @param OriginCombine 合并回源（白名单功能）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOriginCombine(const OriginCombine& _originCombine);
@@ -1425,6 +1426,28 @@ off：不支持
                      * @return WebSocket 是否已赋值
                      */
                     bool WebSocketHasBeenSet() const;
+
+                    /**
+                     * 获取远程鉴权配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RemoteAuthentication 远程鉴权配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RemoteAuthentication GetRemoteAuthentication() const;
+
+                    /**
+                     * 设置远程鉴权配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RemoteAuthentication 远程鉴权配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRemoteAuthentication(const RemoteAuthentication& _remoteAuthentication);
+
+                    /**
+                     * 判断参数 RemoteAuthentication 是否已赋值
+                     * @return RemoteAuthentication 是否已赋值
+                     */
+                    bool RemoteAuthenticationHasBeenSet() const;
 
                 private:
 
@@ -1546,7 +1569,7 @@ media：流媒体点播加速
                     bool m_followRedirectHasBeenSet;
 
                     /**
-                     * 自定义错误页面配置（功能灰度中，敬请期待）
+                     * 自定义错误页面配置
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ErrorPage m_errorPage;
@@ -1801,21 +1824,21 @@ off：不支持
                     bool m_ipv6AccessHasBeenSet;
 
                     /**
-                     * 高级配置集合。
+                     * 高级配置集合
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AdvanceConfig> m_advanceSet;
                     bool m_advanceSetHasBeenSet;
 
                     /**
-                     * 离线缓存
+                     * 离线缓存（功能灰度中，尚未全量，请等待后续全量发布）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OfflineCache m_offlineCache;
                     bool m_offlineCacheHasBeenSet;
 
                     /**
-                     * 合并回源
+                     * 合并回源（白名单功能）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OriginCombine m_originCombine;
@@ -1848,6 +1871,13 @@ off：不支持
                      */
                     WebSocket m_webSocket;
                     bool m_webSocketHasBeenSet;
+
+                    /**
+                     * 远程鉴权配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RemoteAuthentication m_remoteAuthentication;
+                    bool m_remoteAuthenticationHasBeenSet;
 
                 };
             }

@@ -78,7 +78,8 @@ DetailDomain::DetailDomain() :
     m_postMaxSizeHasBeenSet(false),
     m_quicHasBeenSet(false),
     m_ossPrivateAccessHasBeenSet(false),
-    m_webSocketHasBeenSet(false)
+    m_webSocketHasBeenSet(false),
+    m_remoteAuthenticationHasBeenSet(false)
 {
 }
 
@@ -984,6 +985,23 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
         m_webSocketHasBeenSet = true;
     }
 
+    if (value.HasMember("RemoteAuthentication") && !value["RemoteAuthentication"].IsNull())
+    {
+        if (!value["RemoteAuthentication"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.RemoteAuthentication` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_remoteAuthentication.Deserialize(value["RemoteAuthentication"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_remoteAuthenticationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1514,6 +1532,15 @@ void DetailDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_webSocket.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_remoteAuthenticationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemoteAuthentication";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_remoteAuthentication.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -2445,5 +2472,21 @@ void DetailDomain::SetWebSocket(const WebSocket& _webSocket)
 bool DetailDomain::WebSocketHasBeenSet() const
 {
     return m_webSocketHasBeenSet;
+}
+
+RemoteAuthentication DetailDomain::GetRemoteAuthentication() const
+{
+    return m_remoteAuthentication;
+}
+
+void DetailDomain::SetRemoteAuthentication(const RemoteAuthentication& _remoteAuthentication)
+{
+    m_remoteAuthentication = _remoteAuthentication;
+    m_remoteAuthenticationHasBeenSet = true;
+}
+
+bool DetailDomain::RemoteAuthenticationHasBeenSet() const
+{
+    return m_remoteAuthenticationHasBeenSet;
 }
 

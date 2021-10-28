@@ -93,12 +93,16 @@
 #include <tencentcloud/cdn/v20180606/model/DescribePushTasksResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeReportDataRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeReportDataResponse.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeScdnBotRecordsRequest.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeScdnBotRecordsResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeScdnConfigRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeScdnConfigResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeScdnIpStrategyRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeScdnIpStrategyResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeScdnTopDataRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeScdnTopDataResponse.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeTopDataRequest.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeTopDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeTrafficPackagesRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeTrafficPackagesResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeUrlViolationsRequest.h>
@@ -127,6 +131,8 @@
 #include <tencentcloud/cdn/v20180606/model/ListScdnDomainsResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ListScdnLogTasksRequest.h>
 #include <tencentcloud/cdn/v20180606/model/ListScdnLogTasksResponse.h>
+#include <tencentcloud/cdn/v20180606/model/ListScdnTopBotDataRequest.h>
+#include <tencentcloud/cdn/v20180606/model/ListScdnTopBotDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ListTopBotDataRequest.h>
 #include <tencentcloud/cdn/v20180606/model/ListTopBotDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ListTopCcDataRequest.h>
@@ -288,6 +294,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeReportDataResponse> DescribeReportDataOutcome;
                 typedef std::future<DescribeReportDataOutcome> DescribeReportDataOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeReportDataRequest&, DescribeReportDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReportDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeScdnBotRecordsResponse> DescribeScdnBotRecordsOutcome;
+                typedef std::future<DescribeScdnBotRecordsOutcome> DescribeScdnBotRecordsOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::DescribeScdnBotRecordsRequest&, DescribeScdnBotRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnBotRecordsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeScdnConfigResponse> DescribeScdnConfigOutcome;
                 typedef std::future<DescribeScdnConfigOutcome> DescribeScdnConfigOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeScdnConfigRequest&, DescribeScdnConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnConfigAsyncHandler;
@@ -297,6 +306,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeScdnTopDataResponse> DescribeScdnTopDataOutcome;
                 typedef std::future<DescribeScdnTopDataOutcome> DescribeScdnTopDataOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeScdnTopDataRequest&, DescribeScdnTopDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnTopDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTopDataResponse> DescribeTopDataOutcome;
+                typedef std::future<DescribeTopDataOutcome> DescribeTopDataOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::DescribeTopDataRequest&, DescribeTopDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTrafficPackagesResponse> DescribeTrafficPackagesOutcome;
                 typedef std::future<DescribeTrafficPackagesOutcome> DescribeTrafficPackagesOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeTrafficPackagesRequest&, DescribeTrafficPackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrafficPackagesAsyncHandler;
@@ -339,6 +351,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListScdnLogTasksResponse> ListScdnLogTasksOutcome;
                 typedef std::future<ListScdnLogTasksOutcome> ListScdnLogTasksOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::ListScdnLogTasksRequest&, ListScdnLogTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListScdnLogTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListScdnTopBotDataResponse> ListScdnTopBotDataOutcome;
+                typedef std::future<ListScdnTopBotDataOutcome> ListScdnTopBotDataOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::ListScdnTopBotDataRequest&, ListScdnTopBotDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListScdnTopBotDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListTopBotDataResponse> ListTopBotDataOutcome;
                 typedef std::future<ListTopBotDataOutcome> ListTopBotDataOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::ListTopBotDataRequest&, ListTopBotDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTopBotDataAsyncHandler;
@@ -749,6 +764,15 @@ namespace TencentCloud
                 DescribeReportDataOutcomeCallable DescribeReportDataCallable(const Model::DescribeReportDataRequest& request);
 
                 /**
+                 *查询BOT会话记录列表
+                 * @param req DescribeScdnBotRecordsRequest
+                 * @return DescribeScdnBotRecordsOutcome
+                 */
+                DescribeScdnBotRecordsOutcome DescribeScdnBotRecords(const Model::DescribeScdnBotRecordsRequest &request);
+                void DescribeScdnBotRecordsAsync(const Model::DescribeScdnBotRecordsRequest& request, const DescribeScdnBotRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeScdnBotRecordsOutcomeCallable DescribeScdnBotRecordsCallable(const Model::DescribeScdnBotRecordsRequest& request);
+
+                /**
                  *DescribeScdnConfig 用于查询指定 SCDN 加速域名的安全相关配置
                  * @param req DescribeScdnConfigRequest
                  * @return DescribeScdnConfigOutcome
@@ -774,6 +798,26 @@ namespace TencentCloud
                 DescribeScdnTopDataOutcome DescribeScdnTopData(const Model::DescribeScdnTopDataRequest &request);
                 void DescribeScdnTopDataAsync(const Model::DescribeScdnTopDataRequest& request, const DescribeScdnTopDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeScdnTopDataOutcomeCallable DescribeScdnTopDataCallable(const Model::DescribeScdnTopDataRequest& request);
+
+                /**
+                 *DescribeTopData 通过入参 Metric 和 Filter 组合不同，可以查询以下排序数据：
+
++ 依据总流量、总请求数对访问 IP 排序，从大至小返回 TOP 100 IP
++ 依据总流量、总请求数对访问 Refer 排序，从大至小返回 TOP 100 Refer
++ 依据总流量、总请求数对访问 设备 排序，从大至小返回 设备类型
++ 依据总流量、总请求数对访问 操作系统 排序，从大至小返回 操作系统
++ 依据总流量、总请求数对访问 浏览器 排序，从大至小返回 浏览器
+
+注意：
++ 仅支持 90 天内数据查询，且从2021年09月20日开始有数据
++ 本接口为beta版，尚未正式全量发布
+
+                 * @param req DescribeTopDataRequest
+                 * @return DescribeTopDataOutcome
+                 */
+                DescribeTopDataOutcome DescribeTopData(const Model::DescribeTopDataRequest &request);
+                void DescribeTopDataAsync(const Model::DescribeTopDataRequest& request, const DescribeTopDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTopDataOutcomeCallable DescribeTopDataCallable(const Model::DescribeTopDataRequest& request);
 
                 /**
                  *DescribeTrafficPackages 用于查询中国境内 CDN 流量包详情。
@@ -902,6 +946,15 @@ namespace TencentCloud
                 ListScdnLogTasksOutcome ListScdnLogTasks(const Model::ListScdnLogTasksRequest &request);
                 void ListScdnLogTasksAsync(const Model::ListScdnLogTasksRequest& request, const ListScdnLogTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListScdnLogTasksOutcomeCallable ListScdnLogTasksCallable(const Model::ListScdnLogTasksRequest& request);
+
+                /**
+                 *获取Bot攻击的Top数据列表
+                 * @param req ListScdnTopBotDataRequest
+                 * @return ListScdnTopBotDataOutcome
+                 */
+                ListScdnTopBotDataOutcome ListScdnTopBotData(const Model::ListScdnTopBotDataRequest &request);
+                void ListScdnTopBotDataAsync(const Model::ListScdnTopBotDataRequest& request, const ListScdnTopBotDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListScdnTopBotDataOutcomeCallable ListScdnTopBotDataCallable(const Model::ListScdnTopBotDataRequest& request);
 
                 /**
                  *获取Bot攻击的Top信息

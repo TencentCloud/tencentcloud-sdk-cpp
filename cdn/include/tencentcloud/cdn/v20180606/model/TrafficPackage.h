@@ -257,14 +257,14 @@ disabled：未启用
                     bool ChannelHasBeenSet() const;
 
                     /**
-                     * 获取流量包生效区域，目前仅支持mainland
-                     * @return Area 流量包生效区域，目前仅支持mainland
+                     * 获取流量包生效区域，mainland或overseas
+                     * @return Area 流量包生效区域，mainland或overseas
                      */
                     std::string GetArea() const;
 
                     /**
-                     * 设置流量包生效区域，目前仅支持mainland
-                     * @param Area 流量包生效区域，目前仅支持mainland
+                     * 设置流量包生效区域，mainland或overseas
+                     * @param Area 流量包生效区域，mainland或overseas
                      */
                     void SetArea(const std::string& _area);
 
@@ -327,6 +327,64 @@ disabled：未启用
                      * @return RefundAvailable 是否已赋值
                      */
                     bool RefundAvailableHasBeenSet() const;
+
+                    /**
+                     * 获取流量包生效区域
+0：中国大陆
+1：亚太一区
+2：亚太二区
+3：亚太三区
+4：中东
+5：北美
+6：欧洲
+7：南美
+8：非洲
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Region 流量包生效区域
+0：中国大陆
+1：亚太一区
+2：亚太二区
+3：亚太三区
+4：中东
+5：北美
+6：欧洲
+7：南美
+8：非洲
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRegion() const;
+
+                    /**
+                     * 设置流量包生效区域
+0：中国大陆
+1：亚太一区
+2：亚太二区
+3：亚太三区
+4：中东
+5：北美
+6：欧洲
+7：南美
+8：非洲
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Region 流量包生效区域
+0：中国大陆
+1：亚太一区
+2：亚太二区
+3：亚太三区
+4：中东
+5：北美
+6：欧洲
+7：南美
+8：非洲
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRegion(const int64_t& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     */
+                    bool RegionHasBeenSet() const;
 
                 private:
 
@@ -400,7 +458,7 @@ disabled：未启用
                     bool m_channelHasBeenSet;
 
                     /**
-                     * 流量包生效区域，目前仅支持mainland
+                     * 流量包生效区域，mainland或overseas
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
@@ -422,6 +480,22 @@ disabled：未启用
                      */
                     bool m_refundAvailable;
                     bool m_refundAvailableHasBeenSet;
+
+                    /**
+                     * 流量包生效区域
+0：中国大陆
+1：亚太一区
+2：亚太二区
+3：亚太三区
+4：中东
+5：北美
+6：欧洲
+7：南美
+8：非洲
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_region;
+                    bool m_regionHasBeenSet;
 
                 };
             }

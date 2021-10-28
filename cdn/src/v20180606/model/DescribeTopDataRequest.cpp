@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cdn/v20180606/model/ListTopDataRequest.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeTopDataRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
@@ -22,7 +22,7 @@
 using namespace TencentCloud::Cdn::V20180606::Model;
 using namespace std;
 
-ListTopDataRequest::ListTopDataRequest() :
+DescribeTopDataRequest::DescribeTopDataRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_metricHasBeenSet(false),
@@ -30,15 +30,12 @@ ListTopDataRequest::ListTopDataRequest() :
     m_domainsHasBeenSet(false),
     m_projectHasBeenSet(false),
     m_detailHasBeenSet(false),
-    m_codeHasBeenSet(false),
     m_areaHasBeenSet(false),
-    m_areaTypeHasBeenSet(false),
-    m_productHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_productHasBeenSet(false)
 {
 }
 
-string ListTopDataRequest::ToJsonString() const
+string DescribeTopDataRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
@@ -106,28 +103,12 @@ string ListTopDataRequest::ToJsonString() const
         d.AddMember(iKey, m_detail, allocator);
     }
 
-    if (m_codeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Code";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_code.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_areaHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Area";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_areaTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AreaType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_areaType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_productHasBeenSet)
@@ -138,14 +119,6 @@ string ListTopDataRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_product.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_limitHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Limit";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -154,196 +127,148 @@ string ListTopDataRequest::ToJsonString() const
 }
 
 
-string ListTopDataRequest::GetStartTime() const
+string DescribeTopDataRequest::GetStartTime() const
 {
     return m_startTime;
 }
 
-void ListTopDataRequest::SetStartTime(const string& _startTime)
+void DescribeTopDataRequest::SetStartTime(const string& _startTime)
 {
     m_startTime = _startTime;
     m_startTimeHasBeenSet = true;
 }
 
-bool ListTopDataRequest::StartTimeHasBeenSet() const
+bool DescribeTopDataRequest::StartTimeHasBeenSet() const
 {
     return m_startTimeHasBeenSet;
 }
 
-string ListTopDataRequest::GetEndTime() const
+string DescribeTopDataRequest::GetEndTime() const
 {
     return m_endTime;
 }
 
-void ListTopDataRequest::SetEndTime(const string& _endTime)
+void DescribeTopDataRequest::SetEndTime(const string& _endTime)
 {
     m_endTime = _endTime;
     m_endTimeHasBeenSet = true;
 }
 
-bool ListTopDataRequest::EndTimeHasBeenSet() const
+bool DescribeTopDataRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
 }
 
-string ListTopDataRequest::GetMetric() const
+string DescribeTopDataRequest::GetMetric() const
 {
     return m_metric;
 }
 
-void ListTopDataRequest::SetMetric(const string& _metric)
+void DescribeTopDataRequest::SetMetric(const string& _metric)
 {
     m_metric = _metric;
     m_metricHasBeenSet = true;
 }
 
-bool ListTopDataRequest::MetricHasBeenSet() const
+bool DescribeTopDataRequest::MetricHasBeenSet() const
 {
     return m_metricHasBeenSet;
 }
 
-string ListTopDataRequest::GetFilter() const
+string DescribeTopDataRequest::GetFilter() const
 {
     return m_filter;
 }
 
-void ListTopDataRequest::SetFilter(const string& _filter)
+void DescribeTopDataRequest::SetFilter(const string& _filter)
 {
     m_filter = _filter;
     m_filterHasBeenSet = true;
 }
 
-bool ListTopDataRequest::FilterHasBeenSet() const
+bool DescribeTopDataRequest::FilterHasBeenSet() const
 {
     return m_filterHasBeenSet;
 }
 
-vector<string> ListTopDataRequest::GetDomains() const
+vector<string> DescribeTopDataRequest::GetDomains() const
 {
     return m_domains;
 }
 
-void ListTopDataRequest::SetDomains(const vector<string>& _domains)
+void DescribeTopDataRequest::SetDomains(const vector<string>& _domains)
 {
     m_domains = _domains;
     m_domainsHasBeenSet = true;
 }
 
-bool ListTopDataRequest::DomainsHasBeenSet() const
+bool DescribeTopDataRequest::DomainsHasBeenSet() const
 {
     return m_domainsHasBeenSet;
 }
 
-int64_t ListTopDataRequest::GetProject() const
+int64_t DescribeTopDataRequest::GetProject() const
 {
     return m_project;
 }
 
-void ListTopDataRequest::SetProject(const int64_t& _project)
+void DescribeTopDataRequest::SetProject(const int64_t& _project)
 {
     m_project = _project;
     m_projectHasBeenSet = true;
 }
 
-bool ListTopDataRequest::ProjectHasBeenSet() const
+bool DescribeTopDataRequest::ProjectHasBeenSet() const
 {
     return m_projectHasBeenSet;
 }
 
-bool ListTopDataRequest::GetDetail() const
+bool DescribeTopDataRequest::GetDetail() const
 {
     return m_detail;
 }
 
-void ListTopDataRequest::SetDetail(const bool& _detail)
+void DescribeTopDataRequest::SetDetail(const bool& _detail)
 {
     m_detail = _detail;
     m_detailHasBeenSet = true;
 }
 
-bool ListTopDataRequest::DetailHasBeenSet() const
+bool DescribeTopDataRequest::DetailHasBeenSet() const
 {
     return m_detailHasBeenSet;
 }
 
-string ListTopDataRequest::GetCode() const
-{
-    return m_code;
-}
-
-void ListTopDataRequest::SetCode(const string& _code)
-{
-    m_code = _code;
-    m_codeHasBeenSet = true;
-}
-
-bool ListTopDataRequest::CodeHasBeenSet() const
-{
-    return m_codeHasBeenSet;
-}
-
-string ListTopDataRequest::GetArea() const
+string DescribeTopDataRequest::GetArea() const
 {
     return m_area;
 }
 
-void ListTopDataRequest::SetArea(const string& _area)
+void DescribeTopDataRequest::SetArea(const string& _area)
 {
     m_area = _area;
     m_areaHasBeenSet = true;
 }
 
-bool ListTopDataRequest::AreaHasBeenSet() const
+bool DescribeTopDataRequest::AreaHasBeenSet() const
 {
     return m_areaHasBeenSet;
 }
 
-string ListTopDataRequest::GetAreaType() const
-{
-    return m_areaType;
-}
-
-void ListTopDataRequest::SetAreaType(const string& _areaType)
-{
-    m_areaType = _areaType;
-    m_areaTypeHasBeenSet = true;
-}
-
-bool ListTopDataRequest::AreaTypeHasBeenSet() const
-{
-    return m_areaTypeHasBeenSet;
-}
-
-string ListTopDataRequest::GetProduct() const
+string DescribeTopDataRequest::GetProduct() const
 {
     return m_product;
 }
 
-void ListTopDataRequest::SetProduct(const string& _product)
+void DescribeTopDataRequest::SetProduct(const string& _product)
 {
     m_product = _product;
     m_productHasBeenSet = true;
 }
 
-bool ListTopDataRequest::ProductHasBeenSet() const
+bool DescribeTopDataRequest::ProductHasBeenSet() const
 {
     return m_productHasBeenSet;
-}
-
-int64_t ListTopDataRequest::GetLimit() const
-{
-    return m_limit;
-}
-
-void ListTopDataRequest::SetLimit(const int64_t& _limit)
-{
-    m_limit = _limit;
-    m_limitHasBeenSet = true;
-}
-
-bool ListTopDataRequest::LimitHasBeenSet() const
-{
-    return m_limitHasBeenSet;
 }
 
 

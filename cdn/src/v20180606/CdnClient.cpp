@@ -1545,6 +1545,49 @@ CdnClient::DescribeReportDataOutcomeCallable CdnClient::DescribeReportDataCallab
     return task->get_future();
 }
 
+CdnClient::DescribeScdnBotRecordsOutcome CdnClient::DescribeScdnBotRecords(const DescribeScdnBotRecordsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeScdnBotRecords");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeScdnBotRecordsResponse rsp = DescribeScdnBotRecordsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeScdnBotRecordsOutcome(rsp);
+        else
+            return DescribeScdnBotRecordsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeScdnBotRecordsOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::DescribeScdnBotRecordsAsync(const DescribeScdnBotRecordsRequest& request, const DescribeScdnBotRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeScdnBotRecords(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::DescribeScdnBotRecordsOutcomeCallable CdnClient::DescribeScdnBotRecordsCallable(const DescribeScdnBotRecordsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeScdnBotRecordsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeScdnBotRecords(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::DescribeScdnConfigOutcome CdnClient::DescribeScdnConfig(const DescribeScdnConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeScdnConfig");
@@ -1667,6 +1710,49 @@ CdnClient::DescribeScdnTopDataOutcomeCallable CdnClient::DescribeScdnTopDataCall
         [this, request]()
         {
             return this->DescribeScdnTopData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdnClient::DescribeTopDataOutcome CdnClient::DescribeTopData(const DescribeTopDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTopData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTopDataResponse rsp = DescribeTopDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTopDataOutcome(rsp);
+        else
+            return DescribeTopDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTopDataOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::DescribeTopDataAsync(const DescribeTopDataRequest& request, const DescribeTopDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTopData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::DescribeTopDataOutcomeCallable CdnClient::DescribeTopDataCallable(const DescribeTopDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTopDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTopData(request);
         }
     );
 
@@ -2269,6 +2355,49 @@ CdnClient::ListScdnLogTasksOutcomeCallable CdnClient::ListScdnLogTasksCallable(c
         [this, request]()
         {
             return this->ListScdnLogTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdnClient::ListScdnTopBotDataOutcome CdnClient::ListScdnTopBotData(const ListScdnTopBotDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListScdnTopBotData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListScdnTopBotDataResponse rsp = ListScdnTopBotDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListScdnTopBotDataOutcome(rsp);
+        else
+            return ListScdnTopBotDataOutcome(o.GetError());
+    }
+    else
+    {
+        return ListScdnTopBotDataOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::ListScdnTopBotDataAsync(const ListScdnTopBotDataRequest& request, const ListScdnTopBotDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListScdnTopBotData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::ListScdnTopBotDataOutcomeCallable CdnClient::ListScdnTopBotDataCallable(const ListScdnTopBotDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListScdnTopBotDataOutcome()>>(
+        [this, request]()
+        {
+            return this->ListScdnTopBotData(request);
         }
     );
 

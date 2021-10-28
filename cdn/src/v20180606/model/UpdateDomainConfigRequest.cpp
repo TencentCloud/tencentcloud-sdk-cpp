@@ -64,7 +64,8 @@ UpdateDomainConfigRequest::UpdateDomainConfigRequest() :
     m_originCombineHasBeenSet(false),
     m_quicHasBeenSet(false),
     m_ossPrivateAccessHasBeenSet(false),
-    m_webSocketHasBeenSet(false)
+    m_webSocketHasBeenSet(false),
+    m_remoteAuthenticationHasBeenSet(false)
 {
 }
 
@@ -451,6 +452,15 @@ string UpdateDomainConfigRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_webSocket.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_remoteAuthenticationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemoteAuthentication";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_remoteAuthentication.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -1131,6 +1141,22 @@ void UpdateDomainConfigRequest::SetWebSocket(const WebSocket& _webSocket)
 bool UpdateDomainConfigRequest::WebSocketHasBeenSet() const
 {
     return m_webSocketHasBeenSet;
+}
+
+RemoteAuthentication UpdateDomainConfigRequest::GetRemoteAuthentication() const
+{
+    return m_remoteAuthentication;
+}
+
+void UpdateDomainConfigRequest::SetRemoteAuthentication(const RemoteAuthentication& _remoteAuthentication)
+{
+    m_remoteAuthentication = _remoteAuthentication;
+    m_remoteAuthenticationHasBeenSet = true;
+}
+
+bool UpdateDomainConfigRequest::RemoteAuthenticationHasBeenSet() const
+{
+    return m_remoteAuthenticationHasBeenSet;
 }
 
 
