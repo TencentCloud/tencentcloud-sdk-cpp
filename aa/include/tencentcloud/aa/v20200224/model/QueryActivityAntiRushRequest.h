@@ -43,34 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户账号类型（默认开通 QQ 开放账号、手机号，手机 MD5 账号类型查询。如需使用微信开放账号，则需要 提交工单 由腾讯云进行资格审核，审核通过后方可正常使用微信开放账号）：
-1：QQ 开放帐号。
-2：微信开放账号。
-4：手机号。
-0：其他。
-10004：手机号 MD5。
-                     * @return AccountType 用户账号类型（默认开通 QQ 开放账号、手机号，手机 MD5 账号类型查询。如需使用微信开放账号，则需要 提交工单 由腾讯云进行资格审核，审核通过后方可正常使用微信开放账号）：
-1：QQ 开放帐号。
-2：微信开放账号。
-4：手机号。
-0：其他。
-10004：手机号 MD5。
+                     * 获取账号类型
+                     * @return AccountType 账号类型
                      */
                     std::string GetAccountType() const;
 
                     /**
-                     * 设置用户账号类型（默认开通 QQ 开放账号、手机号，手机 MD5 账号类型查询。如需使用微信开放账号，则需要 提交工单 由腾讯云进行资格审核，审核通过后方可正常使用微信开放账号）：
-1：QQ 开放帐号。
-2：微信开放账号。
-4：手机号。
-0：其他。
-10004：手机号 MD5。
-                     * @param AccountType 用户账号类型（默认开通 QQ 开放账号、手机号，手机 MD5 账号类型查询。如需使用微信开放账号，则需要 提交工单 由腾讯云进行资格审核，审核通过后方可正常使用微信开放账号）：
-1：QQ 开放帐号。
-2：微信开放账号。
-4：手机号。
-0：其他。
-10004：手机号 MD5。
+                     * 设置账号类型
+                     * @param AccountType 账号类型
                      */
                     void SetAccountType(const std::string& _accountType);
 
@@ -81,14 +61,14 @@ namespace TencentCloud
                     bool AccountTypeHasBeenSet() const;
 
                     /**
-                     * 获取用户 ID 不同的 accountType 对应不同的用户 ID。如果是 QQ，则填入对应的 openid，微信用户则填入对应的 openid/unionid，手机号则填入对应真实用户手机号（如13123456789）。
-                     * @return Uid 用户 ID 不同的 accountType 对应不同的用户 ID。如果是 QQ，则填入对应的 openid，微信用户则填入对应的 openid/unionid，手机号则填入对应真实用户手机号（如13123456789）。
+                     * 获取uid值
+                     * @return Uid uid值
                      */
                     std::string GetUid() const;
 
                     /**
-                     * 设置用户 ID 不同的 accountType 对应不同的用户 ID。如果是 QQ，则填入对应的 openid，微信用户则填入对应的 openid/unionid，手机号则填入对应真实用户手机号（如13123456789）。
-                     * @param Uid 用户 ID 不同的 accountType 对应不同的用户 ID。如果是 QQ，则填入对应的 openid，微信用户则填入对应的 openid/unionid，手机号则填入对应真实用户手机号（如13123456789）。
+                     * 设置uid值
+                     * @param Uid uid值
                      */
                     void SetUid(const std::string& _uid);
 
@@ -171,14 +151,14 @@ namespace TencentCloud
                     bool NickNameHasBeenSet() const;
 
                     /**
-                     * 获取手机号。若 accountType 选4（手机号）、或10004（手机号 MD5），则无需重复填写。否则填入对应的手机号（如15912345687）。accountType为1或2时，该字段支持MD5值；
-                     * @return PhoneNumber 手机号。若 accountType 选4（手机号）、或10004（手机号 MD5），则无需重复填写。否则填入对应的手机号（如15912345687）。accountType为1或2时，该字段支持MD5值；
+                     * 获取手机号
+                     * @return PhoneNumber 手机号
                      */
                     std::string GetPhoneNumber() const;
 
                     /**
-                     * 设置手机号。若 accountType 选4（手机号）、或10004（手机号 MD5），则无需重复填写。否则填入对应的手机号（如15912345687）。accountType为1或2时，该字段支持MD5值；
-                     * @param PhoneNumber 手机号。若 accountType 选4（手机号）、或10004（手机号 MD5），则无需重复填写。否则填入对应的手机号（如15912345687）。accountType为1或2时，该字段支持MD5值；
+                     * 设置手机号
+                     * @param PhoneNumber 手机号
                      */
                     void SetPhoneNumber(const std::string& _phoneNumber);
 
@@ -641,18 +621,14 @@ namespace TencentCloud
                     bool RandNumHasBeenSet() const;
 
                     /**
-                     * 获取如果 accountType为2而且wxSubType有填，该字段必选，否则不需要填写；
-如果是微信小程序（WxSubType=2），该字段为以ssesion_key为key去签名随机数radnNum得到的值（ hmac_sha256签名算法）；如果是微信公众号或第三方登录，则为授权的access_token（网页版本的access_Token,而且获取token的scope字段必需填写snsapi_userinfo；）
-                     * @return WxToken 如果 accountType为2而且wxSubType有填，该字段必选，否则不需要填写；
-如果是微信小程序（WxSubType=2），该字段为以ssesion_key为key去签名随机数radnNum得到的值（ hmac_sha256签名算法）；如果是微信公众号或第三方登录，则为授权的access_token（网页版本的access_Token,而且获取token的scope字段必需填写snsapi_userinfo；）
+                     * 获取token
+                     * @return WxToken token
                      */
                     std::string GetWxToken() const;
 
                     /**
-                     * 设置如果 accountType为2而且wxSubType有填，该字段必选，否则不需要填写；
-如果是微信小程序（WxSubType=2），该字段为以ssesion_key为key去签名随机数radnNum得到的值（ hmac_sha256签名算法）；如果是微信公众号或第三方登录，则为授权的access_token（网页版本的access_Token,而且获取token的scope字段必需填写snsapi_userinfo；）
-                     * @param WxToken 如果 accountType为2而且wxSubType有填，该字段必选，否则不需要填写；
-如果是微信小程序（WxSubType=2），该字段为以ssesion_key为key去签名随机数radnNum得到的值（ hmac_sha256签名算法）；如果是微信公众号或第三方登录，则为授权的access_token（网页版本的access_Token,而且获取token的scope字段必需填写snsapi_userinfo；）
+                     * 设置token
+                     * @param WxToken token
                      */
                     void SetWxToken(const std::string& _wxToken);
 
@@ -691,18 +667,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户账号类型（默认开通 QQ 开放账号、手机号，手机 MD5 账号类型查询。如需使用微信开放账号，则需要 提交工单 由腾讯云进行资格审核，审核通过后方可正常使用微信开放账号）：
-1：QQ 开放帐号。
-2：微信开放账号。
-4：手机号。
-0：其他。
-10004：手机号 MD5。
+                     * 账号类型
                      */
                     std::string m_accountType;
                     bool m_accountTypeHasBeenSet;
 
                     /**
-                     * 用户 ID 不同的 accountType 对应不同的用户 ID。如果是 QQ，则填入对应的 openid，微信用户则填入对应的 openid/unionid，手机号则填入对应真实用户手机号（如13123456789）。
+                     * uid值
                      */
                     std::string m_uid;
                     bool m_uidHasBeenSet;
@@ -732,7 +703,7 @@ namespace TencentCloud
                     bool m_nickNameHasBeenSet;
 
                     /**
-                     * 手机号。若 accountType 选4（手机号）、或10004（手机号 MD5），则无需重复填写。否则填入对应的手机号（如15912345687）。accountType为1或2时，该字段支持MD5值；
+                     * 手机号
                      */
                     std::string m_phoneNumber;
                     bool m_phoneNumberHasBeenSet;
@@ -884,8 +855,7 @@ namespace TencentCloud
                     bool m_randNumHasBeenSet;
 
                     /**
-                     * 如果 accountType为2而且wxSubType有填，该字段必选，否则不需要填写；
-如果是微信小程序（WxSubType=2），该字段为以ssesion_key为key去签名随机数radnNum得到的值（ hmac_sha256签名算法）；如果是微信公众号或第三方登录，则为授权的access_token（网页版本的access_Token,而且获取token的scope字段必需填写snsapi_userinfo；）
+                     * token
                      */
                     std::string m_wxToken;
                     bool m_wxTokenHasBeenSet;

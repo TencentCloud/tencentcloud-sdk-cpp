@@ -148,11 +148,9 @@ namespace TencentCloud
                     bool AssociateAccountHasBeenSet() const;
 
                     /**
-                     * 获取用户ID 
-accountType不同对应不同的用户ID。如果是QQ或微信用户则填入对应的openId
+                     * 获取uid值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Uid 用户ID 
-accountType不同对应不同的用户ID。如果是QQ或微信用户则填入对应的openId
+                     * @return Uid uid值
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUid() const;
@@ -248,8 +246,7 @@ accountType不同对应不同的用户ID。如果是QQ或微信用户则填入�
                     bool m_associateAccountHasBeenSet;
 
                     /**
-                     * 用户ID 
-accountType不同对应不同的用户ID。如果是QQ或微信用户则填入对应的openId
+                     * uid值
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uid;

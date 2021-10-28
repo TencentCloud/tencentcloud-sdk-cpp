@@ -70,8 +70,8 @@ namespace TencentCloud
                     bool OutputParamsHasBeenSet() const;
 
                     /**
-                     * 获取返回状态
-                     * @return Status 返回状态
+                     * 获取返回状态，当设备不在线等部分情况，会通过该 Status 返回。
+                     * @return Status 返回状态，当设备不在线等部分情况，会通过该 Status 返回。
                      */
                     std::string GetStatus() const;
 
@@ -97,7 +97,7 @@ namespace TencentCloud
                     bool m_outputParamsHasBeenSet;
 
                     /**
-                     * 返回状态
+                     * 返回状态，当设备不在线等部分情况，会通过该 Status 返回。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

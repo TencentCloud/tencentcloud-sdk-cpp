@@ -41,6 +41,14 @@
 #include <tencentcloud/tdmq/v20200217/model/CreateEnvironmentResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateEnvironmentRoleRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateEnvironmentRoleResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateRocketMQClusterRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateRocketMQClusterResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateRocketMQGroupRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateRocketMQGroupResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateRocketMQNamespaceRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateRocketMQNamespaceResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateRocketMQTopicRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateRocketMQTopicResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateRoleRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateRoleResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateSubscriptionRequest.h>
@@ -59,6 +67,14 @@
 #include <tencentcloud/tdmq/v20200217/model/DeleteEnvironmentRolesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteEnvironmentsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteEnvironmentsResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteRocketMQClusterRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteRocketMQClusterResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteRocketMQGroupRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteRocketMQGroupResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteRocketMQNamespaceRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteRocketMQNamespaceResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteRocketMQTopicRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteRocketMQTopicResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteRolesRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteRolesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteSubscriptionsRequest.h>
@@ -97,6 +113,16 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeNodeHealthOptResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeProducersRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeProducersResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQClusterRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQClusterResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQClustersRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQClustersResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQGroupsRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQGroupsResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQNamespacesRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQNamespacesResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicsRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRolesRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRolesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeSubscriptionsRequest.h>
@@ -115,6 +141,14 @@
 #include <tencentcloud/tdmq/v20200217/model/ModifyEnvironmentAttributesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyEnvironmentRoleRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyEnvironmentRoleResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyRocketMQClusterRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyRocketMQClusterResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyRocketMQGroupRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyRocketMQGroupResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyRocketMQNamespaceRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyRocketMQNamespaceResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyRocketMQTopicRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyRocketMQTopicResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyRoleRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyRoleResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyTopicRequest.h>
@@ -178,6 +212,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateEnvironmentRoleResponse> CreateEnvironmentRoleOutcome;
                 typedef std::future<CreateEnvironmentRoleOutcome> CreateEnvironmentRoleOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::CreateEnvironmentRoleRequest&, CreateEnvironmentRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEnvironmentRoleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRocketMQClusterResponse> CreateRocketMQClusterOutcome;
+                typedef std::future<CreateRocketMQClusterOutcome> CreateRocketMQClusterOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::CreateRocketMQClusterRequest&, CreateRocketMQClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRocketMQClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRocketMQGroupResponse> CreateRocketMQGroupOutcome;
+                typedef std::future<CreateRocketMQGroupOutcome> CreateRocketMQGroupOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::CreateRocketMQGroupRequest&, CreateRocketMQGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRocketMQGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRocketMQNamespaceResponse> CreateRocketMQNamespaceOutcome;
+                typedef std::future<CreateRocketMQNamespaceOutcome> CreateRocketMQNamespaceOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::CreateRocketMQNamespaceRequest&, CreateRocketMQNamespaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRocketMQNamespaceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRocketMQTopicResponse> CreateRocketMQTopicOutcome;
+                typedef std::future<CreateRocketMQTopicOutcome> CreateRocketMQTopicOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::CreateRocketMQTopicRequest&, CreateRocketMQTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRocketMQTopicAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRoleResponse> CreateRoleOutcome;
                 typedef std::future<CreateRoleOutcome> CreateRoleOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::CreateRoleRequest&, CreateRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRoleAsyncHandler;
@@ -205,6 +251,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteEnvironmentsResponse> DeleteEnvironmentsOutcome;
                 typedef std::future<DeleteEnvironmentsOutcome> DeleteEnvironmentsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DeleteEnvironmentsRequest&, DeleteEnvironmentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEnvironmentsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRocketMQClusterResponse> DeleteRocketMQClusterOutcome;
+                typedef std::future<DeleteRocketMQClusterOutcome> DeleteRocketMQClusterOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DeleteRocketMQClusterRequest&, DeleteRocketMQClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRocketMQClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRocketMQGroupResponse> DeleteRocketMQGroupOutcome;
+                typedef std::future<DeleteRocketMQGroupOutcome> DeleteRocketMQGroupOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DeleteRocketMQGroupRequest&, DeleteRocketMQGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRocketMQGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRocketMQNamespaceResponse> DeleteRocketMQNamespaceOutcome;
+                typedef std::future<DeleteRocketMQNamespaceOutcome> DeleteRocketMQNamespaceOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DeleteRocketMQNamespaceRequest&, DeleteRocketMQNamespaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRocketMQNamespaceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRocketMQTopicResponse> DeleteRocketMQTopicOutcome;
+                typedef std::future<DeleteRocketMQTopicOutcome> DeleteRocketMQTopicOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DeleteRocketMQTopicRequest&, DeleteRocketMQTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRocketMQTopicAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteRolesResponse> DeleteRolesOutcome;
                 typedef std::future<DeleteRolesOutcome> DeleteRolesOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DeleteRolesRequest&, DeleteRolesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRolesAsyncHandler;
@@ -262,6 +320,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProducersResponse> DescribeProducersOutcome;
                 typedef std::future<DescribeProducersOutcome> DescribeProducersOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeProducersRequest&, DescribeProducersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProducersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRocketMQClusterResponse> DescribeRocketMQClusterOutcome;
+                typedef std::future<DescribeRocketMQClusterOutcome> DescribeRocketMQClusterOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQClusterRequest&, DescribeRocketMQClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRocketMQClustersResponse> DescribeRocketMQClustersOutcome;
+                typedef std::future<DescribeRocketMQClustersOutcome> DescribeRocketMQClustersOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQClustersRequest&, DescribeRocketMQClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQClustersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRocketMQGroupsResponse> DescribeRocketMQGroupsOutcome;
+                typedef std::future<DescribeRocketMQGroupsOutcome> DescribeRocketMQGroupsOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQGroupsRequest&, DescribeRocketMQGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRocketMQNamespacesResponse> DescribeRocketMQNamespacesOutcome;
+                typedef std::future<DescribeRocketMQNamespacesOutcome> DescribeRocketMQNamespacesOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQNamespacesRequest&, DescribeRocketMQNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQNamespacesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRocketMQTopicsResponse> DescribeRocketMQTopicsOutcome;
+                typedef std::future<DescribeRocketMQTopicsOutcome> DescribeRocketMQTopicsOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQTopicsRequest&, DescribeRocketMQTopicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQTopicsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRolesResponse> DescribeRolesOutcome;
                 typedef std::future<DescribeRolesOutcome> DescribeRolesOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRolesRequest&, DescribeRolesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRolesAsyncHandler;
@@ -289,6 +362,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyEnvironmentRoleResponse> ModifyEnvironmentRoleOutcome;
                 typedef std::future<ModifyEnvironmentRoleOutcome> ModifyEnvironmentRoleOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ModifyEnvironmentRoleRequest&, ModifyEnvironmentRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEnvironmentRoleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRocketMQClusterResponse> ModifyRocketMQClusterOutcome;
+                typedef std::future<ModifyRocketMQClusterOutcome> ModifyRocketMQClusterOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::ModifyRocketMQClusterRequest&, ModifyRocketMQClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRocketMQClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRocketMQGroupResponse> ModifyRocketMQGroupOutcome;
+                typedef std::future<ModifyRocketMQGroupOutcome> ModifyRocketMQGroupOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::ModifyRocketMQGroupRequest&, ModifyRocketMQGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRocketMQGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRocketMQNamespaceResponse> ModifyRocketMQNamespaceOutcome;
+                typedef std::future<ModifyRocketMQNamespaceOutcome> ModifyRocketMQNamespaceOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::ModifyRocketMQNamespaceRequest&, ModifyRocketMQNamespaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRocketMQNamespaceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRocketMQTopicResponse> ModifyRocketMQTopicOutcome;
+                typedef std::future<ModifyRocketMQTopicOutcome> ModifyRocketMQTopicOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::ModifyRocketMQTopicRequest&, ModifyRocketMQTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRocketMQTopicAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRoleResponse> ModifyRoleOutcome;
                 typedef std::future<ModifyRoleOutcome> ModifyRoleOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ModifyRoleRequest&, ModifyRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRoleAsyncHandler;
@@ -407,6 +492,42 @@ namespace TencentCloud
                 CreateEnvironmentRoleOutcomeCallable CreateEnvironmentRoleCallable(const Model::CreateEnvironmentRoleRequest& request);
 
                 /**
+                 *此接口用于创建一个RocketMQ集群
+                 * @param req CreateRocketMQClusterRequest
+                 * @return CreateRocketMQClusterOutcome
+                 */
+                CreateRocketMQClusterOutcome CreateRocketMQCluster(const Model::CreateRocketMQClusterRequest &request);
+                void CreateRocketMQClusterAsync(const Model::CreateRocketMQClusterRequest& request, const CreateRocketMQClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRocketMQClusterOutcomeCallable CreateRocketMQClusterCallable(const Model::CreateRocketMQClusterRequest& request);
+
+                /**
+                 *创建RocketMQ消费组
+                 * @param req CreateRocketMQGroupRequest
+                 * @return CreateRocketMQGroupOutcome
+                 */
+                CreateRocketMQGroupOutcome CreateRocketMQGroup(const Model::CreateRocketMQGroupRequest &request);
+                void CreateRocketMQGroupAsync(const Model::CreateRocketMQGroupRequest& request, const CreateRocketMQGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRocketMQGroupOutcomeCallable CreateRocketMQGroupCallable(const Model::CreateRocketMQGroupRequest& request);
+
+                /**
+                 *创建RocketMQ命名空间
+                 * @param req CreateRocketMQNamespaceRequest
+                 * @return CreateRocketMQNamespaceOutcome
+                 */
+                CreateRocketMQNamespaceOutcome CreateRocketMQNamespace(const Model::CreateRocketMQNamespaceRequest &request);
+                void CreateRocketMQNamespaceAsync(const Model::CreateRocketMQNamespaceRequest& request, const CreateRocketMQNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRocketMQNamespaceOutcomeCallable CreateRocketMQNamespaceCallable(const Model::CreateRocketMQNamespaceRequest& request);
+
+                /**
+                 *创建RocketMQ主题
+                 * @param req CreateRocketMQTopicRequest
+                 * @return CreateRocketMQTopicOutcome
+                 */
+                CreateRocketMQTopicOutcome CreateRocketMQTopic(const Model::CreateRocketMQTopicRequest &request);
+                void CreateRocketMQTopicAsync(const Model::CreateRocketMQTopicRequest& request, const CreateRocketMQTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRocketMQTopicOutcomeCallable CreateRocketMQTopicCallable(const Model::CreateRocketMQTopicRequest& request);
+
+                /**
                  *创建角色
                  * @param req CreateRoleRequest
                  * @return CreateRoleOutcome
@@ -486,6 +607,42 @@ namespace TencentCloud
                 DeleteEnvironmentsOutcome DeleteEnvironments(const Model::DeleteEnvironmentsRequest &request);
                 void DeleteEnvironmentsAsync(const Model::DeleteEnvironmentsRequest& request, const DeleteEnvironmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteEnvironmentsOutcomeCallable DeleteEnvironmentsCallable(const Model::DeleteEnvironmentsRequest& request);
+
+                /**
+                 *删除RocketMQ集群
+                 * @param req DeleteRocketMQClusterRequest
+                 * @return DeleteRocketMQClusterOutcome
+                 */
+                DeleteRocketMQClusterOutcome DeleteRocketMQCluster(const Model::DeleteRocketMQClusterRequest &request);
+                void DeleteRocketMQClusterAsync(const Model::DeleteRocketMQClusterRequest& request, const DeleteRocketMQClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRocketMQClusterOutcomeCallable DeleteRocketMQClusterCallable(const Model::DeleteRocketMQClusterRequest& request);
+
+                /**
+                 *删除RocketMQ消费组
+                 * @param req DeleteRocketMQGroupRequest
+                 * @return DeleteRocketMQGroupOutcome
+                 */
+                DeleteRocketMQGroupOutcome DeleteRocketMQGroup(const Model::DeleteRocketMQGroupRequest &request);
+                void DeleteRocketMQGroupAsync(const Model::DeleteRocketMQGroupRequest& request, const DeleteRocketMQGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRocketMQGroupOutcomeCallable DeleteRocketMQGroupCallable(const Model::DeleteRocketMQGroupRequest& request);
+
+                /**
+                 *删除RocketMQ命名空间
+                 * @param req DeleteRocketMQNamespaceRequest
+                 * @return DeleteRocketMQNamespaceOutcome
+                 */
+                DeleteRocketMQNamespaceOutcome DeleteRocketMQNamespace(const Model::DeleteRocketMQNamespaceRequest &request);
+                void DeleteRocketMQNamespaceAsync(const Model::DeleteRocketMQNamespaceRequest& request, const DeleteRocketMQNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRocketMQNamespaceOutcomeCallable DeleteRocketMQNamespaceCallable(const Model::DeleteRocketMQNamespaceRequest& request);
+
+                /**
+                 *删除RocketMQ主题
+                 * @param req DeleteRocketMQTopicRequest
+                 * @return DeleteRocketMQTopicOutcome
+                 */
+                DeleteRocketMQTopicOutcome DeleteRocketMQTopic(const Model::DeleteRocketMQTopicRequest &request);
+                void DeleteRocketMQTopicAsync(const Model::DeleteRocketMQTopicRequest& request, const DeleteRocketMQTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRocketMQTopicOutcomeCallable DeleteRocketMQTopicCallable(const Model::DeleteRocketMQTopicRequest& request);
 
                 /**
                  *删除角色，支持批量。
@@ -659,6 +816,51 @@ namespace TencentCloud
                 DescribeProducersOutcomeCallable DescribeProducersCallable(const Model::DescribeProducersRequest& request);
 
                 /**
+                 *获取单个RocketMQ集群信息
+                 * @param req DescribeRocketMQClusterRequest
+                 * @return DescribeRocketMQClusterOutcome
+                 */
+                DescribeRocketMQClusterOutcome DescribeRocketMQCluster(const Model::DescribeRocketMQClusterRequest &request);
+                void DescribeRocketMQClusterAsync(const Model::DescribeRocketMQClusterRequest& request, const DescribeRocketMQClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRocketMQClusterOutcomeCallable DescribeRocketMQClusterCallable(const Model::DescribeRocketMQClusterRequest& request);
+
+                /**
+                 *获取RocketMQ集群列表
+                 * @param req DescribeRocketMQClustersRequest
+                 * @return DescribeRocketMQClustersOutcome
+                 */
+                DescribeRocketMQClustersOutcome DescribeRocketMQClusters(const Model::DescribeRocketMQClustersRequest &request);
+                void DescribeRocketMQClustersAsync(const Model::DescribeRocketMQClustersRequest& request, const DescribeRocketMQClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRocketMQClustersOutcomeCallable DescribeRocketMQClustersCallable(const Model::DescribeRocketMQClustersRequest& request);
+
+                /**
+                 *获取RocketMQ消费组列表
+                 * @param req DescribeRocketMQGroupsRequest
+                 * @return DescribeRocketMQGroupsOutcome
+                 */
+                DescribeRocketMQGroupsOutcome DescribeRocketMQGroups(const Model::DescribeRocketMQGroupsRequest &request);
+                void DescribeRocketMQGroupsAsync(const Model::DescribeRocketMQGroupsRequest& request, const DescribeRocketMQGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRocketMQGroupsOutcomeCallable DescribeRocketMQGroupsCallable(const Model::DescribeRocketMQGroupsRequest& request);
+
+                /**
+                 *获取RocketMQ命名空间列表
+                 * @param req DescribeRocketMQNamespacesRequest
+                 * @return DescribeRocketMQNamespacesOutcome
+                 */
+                DescribeRocketMQNamespacesOutcome DescribeRocketMQNamespaces(const Model::DescribeRocketMQNamespacesRequest &request);
+                void DescribeRocketMQNamespacesAsync(const Model::DescribeRocketMQNamespacesRequest& request, const DescribeRocketMQNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRocketMQNamespacesOutcomeCallable DescribeRocketMQNamespacesCallable(const Model::DescribeRocketMQNamespacesRequest& request);
+
+                /**
+                 *获取RocketMQ主题列表
+                 * @param req DescribeRocketMQTopicsRequest
+                 * @return DescribeRocketMQTopicsOutcome
+                 */
+                DescribeRocketMQTopicsOutcome DescribeRocketMQTopics(const Model::DescribeRocketMQTopicsRequest &request);
+                void DescribeRocketMQTopicsAsync(const Model::DescribeRocketMQTopicsRequest& request, const DescribeRocketMQTopicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRocketMQTopicsOutcomeCallable DescribeRocketMQTopicsCallable(const Model::DescribeRocketMQTopicsRequest& request);
+
+                /**
                  *获取角色列表
                  * @param req DescribeRolesRequest
                  * @return DescribeRolesOutcome
@@ -738,6 +940,42 @@ namespace TencentCloud
                 ModifyEnvironmentRoleOutcome ModifyEnvironmentRole(const Model::ModifyEnvironmentRoleRequest &request);
                 void ModifyEnvironmentRoleAsync(const Model::ModifyEnvironmentRoleRequest& request, const ModifyEnvironmentRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyEnvironmentRoleOutcomeCallable ModifyEnvironmentRoleCallable(const Model::ModifyEnvironmentRoleRequest& request);
+
+                /**
+                 *更新RocketMQ集群信息
+                 * @param req ModifyRocketMQClusterRequest
+                 * @return ModifyRocketMQClusterOutcome
+                 */
+                ModifyRocketMQClusterOutcome ModifyRocketMQCluster(const Model::ModifyRocketMQClusterRequest &request);
+                void ModifyRocketMQClusterAsync(const Model::ModifyRocketMQClusterRequest& request, const ModifyRocketMQClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRocketMQClusterOutcomeCallable ModifyRocketMQClusterCallable(const Model::ModifyRocketMQClusterRequest& request);
+
+                /**
+                 *更新RocketMQ消费组信息
+                 * @param req ModifyRocketMQGroupRequest
+                 * @return ModifyRocketMQGroupOutcome
+                 */
+                ModifyRocketMQGroupOutcome ModifyRocketMQGroup(const Model::ModifyRocketMQGroupRequest &request);
+                void ModifyRocketMQGroupAsync(const Model::ModifyRocketMQGroupRequest& request, const ModifyRocketMQGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRocketMQGroupOutcomeCallable ModifyRocketMQGroupCallable(const Model::ModifyRocketMQGroupRequest& request);
+
+                /**
+                 *更新RocketMQ命名空间
+                 * @param req ModifyRocketMQNamespaceRequest
+                 * @return ModifyRocketMQNamespaceOutcome
+                 */
+                ModifyRocketMQNamespaceOutcome ModifyRocketMQNamespace(const Model::ModifyRocketMQNamespaceRequest &request);
+                void ModifyRocketMQNamespaceAsync(const Model::ModifyRocketMQNamespaceRequest& request, const ModifyRocketMQNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRocketMQNamespaceOutcomeCallable ModifyRocketMQNamespaceCallable(const Model::ModifyRocketMQNamespaceRequest& request);
+
+                /**
+                 *更新RocketMQ主题信息
+                 * @param req ModifyRocketMQTopicRequest
+                 * @return ModifyRocketMQTopicOutcome
+                 */
+                ModifyRocketMQTopicOutcome ModifyRocketMQTopic(const Model::ModifyRocketMQTopicRequest &request);
+                void ModifyRocketMQTopicAsync(const Model::ModifyRocketMQTopicRequest& request, const ModifyRocketMQTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRocketMQTopicOutcomeCallable ModifyRocketMQTopicCallable(const Model::ModifyRocketMQTopicRequest& request);
 
                 /**
                  *角色修改

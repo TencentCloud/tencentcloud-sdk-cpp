@@ -250,14 +250,14 @@ namespace TencentCloud
                     bool MaxQpsHasBeenSet() const;
 
                     /**
-                     * 获取最大消息保留时间，分钟为单位
-                     * @return MessageRetentionTime 最大消息保留时间，分钟为单位
+                     * 获取最大消息保留时间，秒为单位
+                     * @return MessageRetentionTime 最大消息保留时间，秒为单位
                      */
                     int64_t GetMessageRetentionTime() const;
 
                     /**
-                     * 设置最大消息保留时间，分钟为单位
-                     * @param MessageRetentionTime 最大消息保留时间，分钟为单位
+                     * 设置最大消息保留时间，秒为单位
+                     * @param MessageRetentionTime 最大消息保留时间，秒为单位
                      */
                     void SetMessageRetentionTime(const int64_t& _messageRetentionTime);
 
@@ -641,7 +641,7 @@ namespace TencentCloud
                     bool m_maxQpsHasBeenSet;
 
                     /**
-                     * 最大消息保留时间，分钟为单位
+                     * 最大消息保留时间，秒为单位
                      */
                     int64_t m_messageRetentionTime;
                     bool m_messageRetentionTimeHasBeenSet;

@@ -105,8 +105,8 @@ namespace TencentCloud
                     bool EmergencyResponseBuyHasBeenSet() const;
 
                     /**
-                     * 获取是否哦购买过旗舰护网
-                     * @return ProtectNetBuy 是否哦购买过旗舰护网
+                     * 获取是否购买过旗舰护网
+                     * @return ProtectNetBuy 是否购买过旗舰护网
                      */
                     bool GetProtectNetBuy() const;
 
@@ -149,7 +149,7 @@ namespace TencentCloud
                     bool m_emergencyResponseBuyHasBeenSet;
 
                     /**
-                     * 是否哦购买过旗舰护网
+                     * 是否购买过旗舰护网
                      */
                     bool m_protectNetBuy;
                     bool m_protectNetBuyHasBeenSet;
