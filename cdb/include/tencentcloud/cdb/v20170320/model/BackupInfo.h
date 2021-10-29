@@ -280,6 +280,24 @@ namespace TencentCloud
                      */
                     bool WayHasBeenSet() const;
 
+                    /**
+                     * 获取手动备份别名
+                     * @return ManualBackupName 手动备份别名
+                     */
+                    std::string GetManualBackupName() const;
+
+                    /**
+                     * 设置手动备份别名
+                     * @param ManualBackupName 手动备份别名
+                     */
+                    void SetManualBackupName(const std::string& _manualBackupName);
+
+                    /**
+                     * 判断参数 ManualBackupName 是否已赋值
+                     * @return ManualBackupName 是否已赋值
+                     */
+                    bool ManualBackupNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -359,6 +377,12 @@ namespace TencentCloud
                      */
                     std::string m_way;
                     bool m_wayHasBeenSet;
+
+                    /**
+                     * 手动备份别名
+                     */
+                    std::string m_manualBackupName;
+                    bool m_manualBackupNameHasBeenSet;
 
                 };
             }

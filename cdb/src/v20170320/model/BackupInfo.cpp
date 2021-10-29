@@ -33,7 +33,8 @@ BackupInfo::BackupInfo() :
     m_creatorHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_methodHasBeenSet(false),
-    m_wayHasBeenSet(false)
+    m_wayHasBeenSet(false),
+    m_manualBackupNameHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,16 @@ CoreInternalOutcome BackupInfo::Deserialize(const rapidjson::Value &value)
         m_wayHasBeenSet = true;
     }
 
+    if (value.HasMember("ManualBackupName") && !value["ManualBackupName"].IsNull())
+    {
+        if (!value["ManualBackupName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupInfo.ManualBackupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_manualBackupName = string(value["ManualBackupName"].GetString());
+        m_manualBackupNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +292,14 @@ void BackupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Way";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_way.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_manualBackupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ManualBackupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_manualBackupName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -492,5 +511,21 @@ void BackupInfo::SetWay(const string& _way)
 bool BackupInfo::WayHasBeenSet() const
 {
     return m_wayHasBeenSet;
+}
+
+string BackupInfo::GetManualBackupName() const
+{
+    return m_manualBackupName;
+}
+
+void BackupInfo::SetManualBackupName(const string& _manualBackupName)
+{
+    m_manualBackupName = _manualBackupName;
+    m_manualBackupNameHasBeenSet = true;
+}
+
+bool BackupInfo::ManualBackupNameHasBeenSet() const
+{
+    return m_manualBackupNameHasBeenSet;
 }
 

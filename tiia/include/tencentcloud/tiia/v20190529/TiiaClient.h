@@ -25,8 +25,18 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/tiia/v20190529/model/AssessQualityRequest.h>
 #include <tencentcloud/tiia/v20190529/model/AssessQualityResponse.h>
+#include <tencentcloud/tiia/v20190529/model/CreateGroupRequest.h>
+#include <tencentcloud/tiia/v20190529/model/CreateGroupResponse.h>
+#include <tencentcloud/tiia/v20190529/model/CreateImageRequest.h>
+#include <tencentcloud/tiia/v20190529/model/CreateImageResponse.h>
 #include <tencentcloud/tiia/v20190529/model/CropImageRequest.h>
 #include <tencentcloud/tiia/v20190529/model/CropImageResponse.h>
+#include <tencentcloud/tiia/v20190529/model/DeleteImagesRequest.h>
+#include <tencentcloud/tiia/v20190529/model/DeleteImagesResponse.h>
+#include <tencentcloud/tiia/v20190529/model/DescribeGroupsRequest.h>
+#include <tencentcloud/tiia/v20190529/model/DescribeGroupsResponse.h>
+#include <tencentcloud/tiia/v20190529/model/DescribeImagesRequest.h>
+#include <tencentcloud/tiia/v20190529/model/DescribeImagesResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DetectCelebrityRequest.h>
 #include <tencentcloud/tiia/v20190529/model/DetectCelebrityResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DetectDisgustRequest.h>
@@ -45,6 +55,8 @@
 #include <tencentcloud/tiia/v20190529/model/EnhanceImageResponse.h>
 #include <tencentcloud/tiia/v20190529/model/RecognizeCarRequest.h>
 #include <tencentcloud/tiia/v20190529/model/RecognizeCarResponse.h>
+#include <tencentcloud/tiia/v20190529/model/SearchImageRequest.h>
+#include <tencentcloud/tiia/v20190529/model/SearchImageResponse.h>
 
 
 namespace TencentCloud
@@ -62,9 +74,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AssessQualityResponse> AssessQualityOutcome;
                 typedef std::future<AssessQualityOutcome> AssessQualityOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::AssessQualityRequest&, AssessQualityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssessQualityAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateGroupResponse> CreateGroupOutcome;
+                typedef std::future<CreateGroupOutcome> CreateGroupOutcomeCallable;
+                typedef std::function<void(const TiiaClient*, const Model::CreateGroupRequest&, CreateGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateImageResponse> CreateImageOutcome;
+                typedef std::future<CreateImageOutcome> CreateImageOutcomeCallable;
+                typedef std::function<void(const TiiaClient*, const Model::CreateImageRequest&, CreateImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageAsyncHandler;
                 typedef Outcome<Core::Error, Model::CropImageResponse> CropImageOutcome;
                 typedef std::future<CropImageOutcome> CropImageOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::CropImageRequest&, CropImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CropImageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteImagesResponse> DeleteImagesOutcome;
+                typedef std::future<DeleteImagesOutcome> DeleteImagesOutcomeCallable;
+                typedef std::function<void(const TiiaClient*, const Model::DeleteImagesRequest&, DeleteImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImagesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGroupsResponse> DescribeGroupsOutcome;
+                typedef std::future<DescribeGroupsOutcome> DescribeGroupsOutcomeCallable;
+                typedef std::function<void(const TiiaClient*, const Model::DescribeGroupsRequest&, DescribeGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImagesResponse> DescribeImagesOutcome;
+                typedef std::future<DescribeImagesOutcome> DescribeImagesOutcomeCallable;
+                typedef std::function<void(const TiiaClient*, const Model::DescribeImagesRequest&, DescribeImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImagesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DetectCelebrityResponse> DetectCelebrityOutcome;
                 typedef std::future<DetectCelebrityOutcome> DetectCelebrityOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::DetectCelebrityRequest&, DetectCelebrityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectCelebrityAsyncHandler;
@@ -92,6 +119,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RecognizeCarResponse> RecognizeCarOutcome;
                 typedef std::future<RecognizeCarOutcome> RecognizeCarOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::RecognizeCarRequest&, RecognizeCarOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeCarAsyncHandler;
+                typedef Outcome<Core::Error, Model::SearchImageResponse> SearchImageOutcome;
+                typedef std::future<SearchImageOutcome> SearchImageOutcomeCallable;
+                typedef std::function<void(const TiiaClient*, const Model::SearchImageRequest&, SearchImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchImageAsyncHandler;
 
 
 
@@ -107,6 +137,25 @@ namespace TencentCloud
                 AssessQualityOutcomeCallable AssessQualityCallable(const Model::AssessQualityRequest& request);
 
                 /**
+                 *用于创建一个空的图片库，如果图片库已存在则返回错误。
+
+                 * @param req CreateGroupRequest
+                 * @return CreateGroupOutcome
+                 */
+                CreateGroupOutcome CreateGroup(const Model::CreateGroupRequest &request);
+                void CreateGroupAsync(const Model::CreateGroupRequest& request, const CreateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateGroupOutcomeCallable CreateGroupCallable(const Model::CreateGroupRequest& request);
+
+                /**
+                 *创建图片，并添加对应图片的自定义信息。
+                 * @param req CreateImageRequest
+                 * @return CreateImageOutcome
+                 */
+                CreateImageOutcome CreateImage(const Model::CreateImageRequest &request);
+                void CreateImageAsync(const Model::CreateImageRequest& request, const CreateImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateImageOutcomeCallable CreateImageCallable(const Model::CreateImageRequest& request);
+
+                /**
                  *根据输入的裁剪比例，智能判断一张图片的最佳裁剪区域，确保原图的主体区域不受影响。
 
 可以自动裁剪图片，适应不同平台、设备的展示要求，避免简单拉伸带来的变形。
@@ -118,6 +167,33 @@ namespace TencentCloud
                 CropImageOutcome CropImage(const Model::CropImageRequest &request);
                 void CropImageAsync(const Model::CropImageRequest& request, const CropImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CropImageOutcomeCallable CropImageCallable(const Model::CropImageRequest& request);
+
+                /**
+                 *删除图片。
+                 * @param req DeleteImagesRequest
+                 * @return DeleteImagesOutcome
+                 */
+                DeleteImagesOutcome DeleteImages(const Model::DeleteImagesRequest &request);
+                void DeleteImagesAsync(const Model::DeleteImagesRequest& request, const DeleteImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteImagesOutcomeCallable DeleteImagesCallable(const Model::DeleteImagesRequest& request);
+
+                /**
+                 *查询所有的图库信息。
+                 * @param req DescribeGroupsRequest
+                 * @return DescribeGroupsOutcome
+                 */
+                DescribeGroupsOutcome DescribeGroups(const Model::DescribeGroupsRequest &request);
+                void DescribeGroupsAsync(const Model::DescribeGroupsRequest& request, const DescribeGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGroupsOutcomeCallable DescribeGroupsCallable(const Model::DescribeGroupsRequest& request);
+
+                /**
+                 *获取指定图片库中的图片列表。
+                 * @param req DescribeImagesRequest
+                 * @return DescribeImagesOutcome
+                 */
+                DescribeImagesOutcome DescribeImages(const Model::DescribeImagesRequest &request);
+                void DescribeImagesAsync(const Model::DescribeImagesRequest& request, const DescribeImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImagesOutcomeCallable DescribeImagesCallable(const Model::DescribeImagesRequest& request);
 
                 /**
                  *传入一张图片，可以识别图片中包含的人物是否为公众人物，如果是，输出人物的姓名、基本信息、脸部坐标。
@@ -249,6 +325,15 @@ namespace TencentCloud
                 RecognizeCarOutcome RecognizeCar(const Model::RecognizeCarRequest &request);
                 void RecognizeCarAsync(const Model::RecognizeCarRequest& request, const RecognizeCarAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RecognizeCarOutcomeCallable RecognizeCarCallable(const Model::RecognizeCarRequest& request);
+
+                /**
+                 *本接口用于对一张待识别的商品图片，在指定图片库中检索出最相似的图片列表。
+                 * @param req SearchImageRequest
+                 * @return SearchImageOutcome
+                 */
+                SearchImageOutcome SearchImage(const Model::SearchImageRequest &request);
+                void SearchImageAsync(const Model::SearchImageRequest& request, const SearchImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchImageOutcomeCallable SearchImageCallable(const Model::SearchImageRequest& request);
 
             };
         }

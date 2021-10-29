@@ -639,6 +639,42 @@ namespace TencentCloud
                      */
                     bool CageIdHasBeenSet() const;
 
+                    /**
+                     * 获取告警策略名数组，例如:["policy-uyoee9wg"]，AlarmPolicyList不为空时该参数无效。
+                     * @return AlarmPolicyIdList 告警策略名数组，例如:["policy-uyoee9wg"]，AlarmPolicyList不为空时该参数无效。
+                     */
+                    std::vector<std::string> GetAlarmPolicyIdList() const;
+
+                    /**
+                     * 设置告警策略名数组，例如:["policy-uyoee9wg"]，AlarmPolicyList不为空时该参数无效。
+                     * @param AlarmPolicyIdList 告警策略名数组，例如:["policy-uyoee9wg"]，AlarmPolicyList不为空时该参数无效。
+                     */
+                    void SetAlarmPolicyIdList(const std::vector<std::string>& _alarmPolicyIdList);
+
+                    /**
+                     * 判断参数 AlarmPolicyIdList 是否已赋值
+                     * @return AlarmPolicyIdList 是否已赋值
+                     */
+                    bool AlarmPolicyIdListHasBeenSet() const;
+
+                    /**
+                     * 获取是否只预检此次请求。true：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制等。如果检查不通过，则返回对应错误码；如果检查通过，则返回RequestId.默认为false：发送正常请求，通过检查后直接创建实例。
+                     * @return DryRun 是否只预检此次请求。true：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制等。如果检查不通过，则返回对应错误码；如果检查通过，则返回RequestId.默认为false：发送正常请求，通过检查后直接创建实例。
+                     */
+                    bool GetDryRun() const;
+
+                    /**
+                     * 设置是否只预检此次请求。true：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制等。如果检查不通过，则返回对应错误码；如果检查通过，则返回RequestId.默认为false：发送正常请求，通过检查后直接创建实例。
+                     * @param DryRun 是否只预检此次请求。true：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制等。如果检查不通过，则返回对应错误码；如果检查通过，则返回RequestId.默认为false：发送正常请求，通过检查后直接创建实例。
+                     */
+                    void SetDryRun(const bool& _dryRun);
+
+                    /**
+                     * 判断参数 DryRun 是否已赋值
+                     * @return DryRun 是否已赋值
+                     */
+                    bool DryRunHasBeenSet() const;
+
                 private:
 
                     /**
@@ -838,6 +874,18 @@ namespace TencentCloud
                      */
                     std::string m_cageId;
                     bool m_cageIdHasBeenSet;
+
+                    /**
+                     * 告警策略名数组，例如:["policy-uyoee9wg"]，AlarmPolicyList不为空时该参数无效。
+                     */
+                    std::vector<std::string> m_alarmPolicyIdList;
+                    bool m_alarmPolicyIdListHasBeenSet;
+
+                    /**
+                     * 是否只预检此次请求。true：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制等。如果检查不通过，则返回对应错误码；如果检查通过，则返回RequestId.默认为false：发送正常请求，通过检查后直接创建实例。
+                     */
+                    bool m_dryRun;
+                    bool m_dryRunHasBeenSet;
 
                 };
             }

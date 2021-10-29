@@ -135,17 +135,17 @@ namespace TencentCloud
                     bool LastScanTimeHasBeenSet() const;
 
                     /**
-                     * 获取处理状态
+                     * 获取风险项处理状态状态：0-未通过，1-通过
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 处理状态
+                     * @return Status 风险项处理状态状态：0-未通过，1-通过
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置处理状态
+                     * 设置风险项处理状态状态：0-未通过，1-通过
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 处理状态
+                     * @param Status 风险项处理状态状态：0-未通过，1-通过
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStatus(const uint64_t& _status);
@@ -297,7 +297,7 @@ namespace TencentCloud
                     bool m_lastScanTimeHasBeenSet;
 
                     /**
-                     * 处理状态
+                     * 风险项处理状态状态：0-未通过，1-通过
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;

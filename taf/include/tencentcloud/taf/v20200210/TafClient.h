@@ -132,7 +132,7 @@ namespace TencentCloud
                 RecognizeTargetAudienceOutcomeCallable RecognizeTargetAudienceCallable(const Model::RecognizeTargetAudienceRequest& request);
 
                 /**
-                 *SendTrafficSecuritySmsMessage
+                 *流量安选产品，短信发送接口
                  * @param req SendTrafficSecuritySmsMessageRequest
                  * @return SendTrafficSecuritySmsMessageOutcome
                  */

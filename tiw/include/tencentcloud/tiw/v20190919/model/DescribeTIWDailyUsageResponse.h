@@ -14,55 +14,55 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TRTC_V20190722_MODEL_DESCRIBEREALTIMEQUALITYRESPONSE_H_
-#define TENCENTCLOUD_TRTC_V20190722_MODEL_DESCRIBEREALTIMEQUALITYRESPONSE_H_
+#ifndef TENCENTCLOUD_TIW_V20190919_MODEL_DESCRIBETIWDAILYUSAGERESPONSE_H_
+#define TENCENTCLOUD_TIW_V20190919_MODEL_DESCRIBETIWDAILYUSAGERESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/trtc/v20190722/model/RealtimeData.h>
+#include <tencentcloud/tiw/v20190919/model/UsageDataItem.h>
 
 
 namespace TencentCloud
 {
-    namespace Trtc
+    namespace Tiw
     {
-        namespace V20190722
+        namespace V20190919
         {
             namespace Model
             {
                 /**
-                * DescribeRealtimeQuality返回参数结构体
+                * DescribeTIWDailyUsage返回参数结构体
                 */
-                class DescribeRealtimeQualityResponse : public AbstractModel
+                class DescribeTIWDailyUsageResponse : public AbstractModel
                 {
                 public:
-                    DescribeRealtimeQualityResponse();
-                    ~DescribeRealtimeQualityResponse() = default;
+                    DescribeTIWDailyUsageResponse();
+                    ~DescribeTIWDailyUsageResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取返回的数据类型
-                     * @return Data 返回的数据类型
+                     * 获取指定区间指定产品的用量汇总
+                     * @return Usages 指定区间指定产品的用量汇总
                      */
-                    std::vector<RealtimeData> GetData() const;
+                    std::vector<UsageDataItem> GetUsages() const;
 
                     /**
-                     * 判断参数 Data 是否已赋值
-                     * @return Data 是否已赋值
+                     * 判断参数 Usages 是否已赋值
+                     * @return Usages 是否已赋值
                      */
-                    bool DataHasBeenSet() const;
+                    bool UsagesHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 返回的数据类型
+                     * 指定区间指定产品的用量汇总
                      */
-                    std::vector<RealtimeData> m_data;
-                    bool m_dataHasBeenSet;
+                    std::vector<UsageDataItem> m_usages;
+                    bool m_usagesHasBeenSet;
 
                 };
             }
@@ -70,4 +70,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TRTC_V20190722_MODEL_DESCRIBEREALTIMEQUALITYRESPONSE_H_
+#endif // !TENCENTCLOUD_TIW_V20190919_MODEL_DESCRIBETIWDAILYUSAGERESPONSE_H_

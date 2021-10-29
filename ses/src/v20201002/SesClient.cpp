@@ -40,6 +40,49 @@ SesClient::SesClient(const Credential &credential, const string &region, const C
 }
 
 
+SesClient::BatchSendEmailOutcome SesClient::BatchSendEmail(const BatchSendEmailRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchSendEmail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchSendEmailResponse rsp = BatchSendEmailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchSendEmailOutcome(rsp);
+        else
+            return BatchSendEmailOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchSendEmailOutcome(outcome.GetError());
+    }
+}
+
+void SesClient::BatchSendEmailAsync(const BatchSendEmailRequest& request, const BatchSendEmailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchSendEmail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SesClient::BatchSendEmailOutcomeCallable SesClient::BatchSendEmailCallable(const BatchSendEmailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchSendEmailOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchSendEmail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SesClient::CreateEmailAddressOutcome SesClient::CreateEmailAddress(const CreateEmailAddressRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateEmailAddress");

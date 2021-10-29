@@ -154,6 +154,28 @@ namespace TencentCloud
                      */
                     bool ExtraHasBeenSet() const;
 
+                    /**
+                     * 获取默认为false，设置该参数为true后，核身过程中的视频图片将会存储在人脸核身控制台授权cos的bucket中，拉取结果时会返回对应资源完整cos地址。开通地址见https://console.cloud.tencent.com/faceid/cos
+【注意】选择该参数为true后将不返回base64数据，请根据接入情况谨慎修改。
+                     * @return UseCos 默认为false，设置该参数为true后，核身过程中的视频图片将会存储在人脸核身控制台授权cos的bucket中，拉取结果时会返回对应资源完整cos地址。开通地址见https://console.cloud.tencent.com/faceid/cos
+【注意】选择该参数为true后将不返回base64数据，请根据接入情况谨慎修改。
+                     */
+                    bool GetUseCos() const;
+
+                    /**
+                     * 设置默认为false，设置该参数为true后，核身过程中的视频图片将会存储在人脸核身控制台授权cos的bucket中，拉取结果时会返回对应资源完整cos地址。开通地址见https://console.cloud.tencent.com/faceid/cos
+【注意】选择该参数为true后将不返回base64数据，请根据接入情况谨慎修改。
+                     * @param UseCos 默认为false，设置该参数为true后，核身过程中的视频图片将会存储在人脸核身控制台授权cos的bucket中，拉取结果时会返回对应资源完整cos地址。开通地址见https://console.cloud.tencent.com/faceid/cos
+【注意】选择该参数为true后将不返回base64数据，请根据接入情况谨慎修改。
+                     */
+                    void SetUseCos(const bool& _useCos);
+
+                    /**
+                     * 判断参数 UseCos 是否已赋值
+                     * @return UseCos 是否已赋值
+                     */
+                    bool UseCosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -192,6 +214,13 @@ namespace TencentCloud
                      */
                     std::string m_extra;
                     bool m_extraHasBeenSet;
+
+                    /**
+                     * 默认为false，设置该参数为true后，核身过程中的视频图片将会存储在人脸核身控制台授权cos的bucket中，拉取结果时会返回对应资源完整cos地址。开通地址见https://console.cloud.tencent.com/faceid/cos
+【注意】选择该参数为true后将不返回base64数据，请根据接入情况谨慎修改。
+                     */
+                    bool m_useCos;
+                    bool m_useCosHasBeenSet;
 
                 };
             }

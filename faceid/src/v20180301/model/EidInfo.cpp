@@ -22,7 +22,9 @@ using namespace std;
 
 EidInfo::EidInfo() :
     m_eidCodeHasBeenSet(false),
-    m_eidSignHasBeenSet(false)
+    m_eidSignHasBeenSet(false),
+    m_desKeyHasBeenSet(false),
+    m_userInfoHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,26 @@ CoreInternalOutcome EidInfo::Deserialize(const rapidjson::Value &value)
         m_eidSignHasBeenSet = true;
     }
 
+    if (value.HasMember("DesKey") && !value["DesKey"].IsNull())
+    {
+        if (!value["DesKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EidInfo.DesKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_desKey = string(value["DesKey"].GetString());
+        m_desKeyHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserInfo") && !value["UserInfo"].IsNull())
+    {
+        if (!value["UserInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EidInfo.UserInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userInfo = string(value["UserInfo"].GetString());
+        m_userInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +94,22 @@ void EidInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "EidSign";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_eidSign.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_desKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DesKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_desKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userInfo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +145,37 @@ void EidInfo::SetEidSign(const string& _eidSign)
 bool EidInfo::EidSignHasBeenSet() const
 {
     return m_eidSignHasBeenSet;
+}
+
+string EidInfo::GetDesKey() const
+{
+    return m_desKey;
+}
+
+void EidInfo::SetDesKey(const string& _desKey)
+{
+    m_desKey = _desKey;
+    m_desKeyHasBeenSet = true;
+}
+
+bool EidInfo::DesKeyHasBeenSet() const
+{
+    return m_desKeyHasBeenSet;
+}
+
+string EidInfo::GetUserInfo() const
+{
+    return m_userInfo;
+}
+
+void EidInfo::SetUserInfo(const string& _userInfo)
+{
+    m_userInfo = _userInfo;
+    m_userInfoHasBeenSet = true;
+}
+
+bool EidInfo::UserInfoHasBeenSet() const
+{
+    return m_userInfoHasBeenSet;
 }
 

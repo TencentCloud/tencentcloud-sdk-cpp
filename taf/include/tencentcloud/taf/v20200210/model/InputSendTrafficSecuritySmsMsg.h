@@ -82,6 +82,96 @@ namespace TencentCloud
                      */
                     bool MobilesHasBeenSet() const;
 
+                    /**
+                     * 获取是否授权，1：已授权
+                     * @return IsAuthorized 是否授权，1：已授权
+                     */
+                    int64_t GetIsAuthorized() const;
+
+                    /**
+                     * 设置是否授权，1：已授权
+                     * @param IsAuthorized 是否授权，1：已授权
+                     */
+                    void SetIsAuthorized(const int64_t& _isAuthorized);
+
+                    /**
+                     * 判断参数 IsAuthorized 是否已赋值
+                     * @return IsAuthorized 是否已赋值
+                     */
+                    bool IsAuthorizedHasBeenSet() const;
+
+                    /**
+                     * 获取加密方式，0：AES加密；1：DES加密
+                     * @return EncryptMethod 加密方式，0：AES加密；1：DES加密
+                     */
+                    int64_t GetEncryptMethod() const;
+
+                    /**
+                     * 设置加密方式，0：AES加密；1：DES加密
+                     * @param EncryptMethod 加密方式，0：AES加密；1：DES加密
+                     */
+                    void SetEncryptMethod(const int64_t& _encryptMethod);
+
+                    /**
+                     * 判断参数 EncryptMethod 是否已赋值
+                     * @return EncryptMethod 是否已赋值
+                     */
+                    bool EncryptMethodHasBeenSet() const;
+
+                    /**
+                     * 获取加密算法中的块处理模式，0：ECB模式；1：CBC模式；2：CTR模式；3：CFB模式；4：OFB模式；
+                     * @return EncryptMode 加密算法中的块处理模式，0：ECB模式；1：CBC模式；2：CTR模式；3：CFB模式；4：OFB模式；
+                     */
+                    int64_t GetEncryptMode() const;
+
+                    /**
+                     * 设置加密算法中的块处理模式，0：ECB模式；1：CBC模式；2：CTR模式；3：CFB模式；4：OFB模式；
+                     * @param EncryptMode 加密算法中的块处理模式，0：ECB模式；1：CBC模式；2：CTR模式；3：CFB模式；4：OFB模式；
+                     */
+                    void SetEncryptMode(const int64_t& _encryptMode);
+
+                    /**
+                     * 判断参数 EncryptMode 是否已赋值
+                     * @return EncryptMode 是否已赋值
+                     */
+                    bool EncryptModeHasBeenSet() const;
+
+                    /**
+                     * 获取填充模式，0：ZeroPadding；1：PKCS5Padding；2：PKCS7Padding；
+                     * @return PaddingType 填充模式，0：ZeroPadding；1：PKCS5Padding；2：PKCS7Padding；
+                     */
+                    int64_t GetPaddingType() const;
+
+                    /**
+                     * 设置填充模式，0：ZeroPadding；1：PKCS5Padding；2：PKCS7Padding；
+                     * @param PaddingType 填充模式，0：ZeroPadding；1：PKCS5Padding；2：PKCS7Padding；
+                     */
+                    void SetPaddingType(const int64_t& _paddingType);
+
+                    /**
+                     * 判断参数 PaddingType 是否已赋值
+                     * @return PaddingType 是否已赋值
+                     */
+                    bool PaddingTypeHasBeenSet() const;
+
+                    /**
+                     * 获取加密数据
+                     * @return EncryptData 加密数据
+                     */
+                    std::string GetEncryptData() const;
+
+                    /**
+                     * 设置加密数据
+                     * @param EncryptData 加密数据
+                     */
+                    void SetEncryptData(const std::string& _encryptData);
+
+                    /**
+                     * 判断参数 EncryptData 是否已赋值
+                     * @return EncryptData 是否已赋值
+                     */
+                    bool EncryptDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +185,36 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_mobiles;
                     bool m_mobilesHasBeenSet;
+
+                    /**
+                     * 是否授权，1：已授权
+                     */
+                    int64_t m_isAuthorized;
+                    bool m_isAuthorizedHasBeenSet;
+
+                    /**
+                     * 加密方式，0：AES加密；1：DES加密
+                     */
+                    int64_t m_encryptMethod;
+                    bool m_encryptMethodHasBeenSet;
+
+                    /**
+                     * 加密算法中的块处理模式，0：ECB模式；1：CBC模式；2：CTR模式；3：CFB模式；4：OFB模式；
+                     */
+                    int64_t m_encryptMode;
+                    bool m_encryptModeHasBeenSet;
+
+                    /**
+                     * 填充模式，0：ZeroPadding；1：PKCS5Padding；2：PKCS7Padding；
+                     */
+                    int64_t m_paddingType;
+                    bool m_paddingTypeHasBeenSet;
+
+                    /**
+                     * 加密数据
+                     */
+                    std::string m_encryptData;
+                    bool m_encryptDataHasBeenSet;
 
                 };
             }

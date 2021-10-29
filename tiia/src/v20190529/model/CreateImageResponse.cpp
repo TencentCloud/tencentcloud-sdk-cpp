@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/trtc/v20190722/model/DescribeRealtimeQualityResponse.h>
+#include <tencentcloud/tiia/v20190529/model/CreateImageResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Trtc::V20190722::Model;
+using namespace TencentCloud::Tiia::V20190529::Model;
 using namespace std;
 
-DescribeRealtimeQualityResponse::DescribeRealtimeQualityResponse() :
-    m_dataHasBeenSet(false)
+CreateImageResponse::CreateImageResponse()
 {
 }
 
-CoreInternalOutcome DescribeRealtimeQualityResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateImageResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,50 +61,15 @@ CoreInternalOutcome DescribeRealtimeQualityResponse::Deserialize(const string &p
     }
 
 
-    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
-    {
-        if (!rsp["Data"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Data` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["Data"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            RealtimeData item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_data.push_back(item);
-        }
-        m_dataHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeRealtimeQualityResponse::ToJsonString() const
+string CreateImageResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_dataHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Data";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_data.begin(); itr != m_data.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -118,15 +82,5 @@ string DescribeRealtimeQualityResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-vector<RealtimeData> DescribeRealtimeQualityResponse::GetData() const
-{
-    return m_data;
-}
-
-bool DescribeRealtimeQualityResponse::DataHasBeenSet() const
-{
-    return m_dataHasBeenSet;
-}
 
 

@@ -39,12 +39,6 @@
 #include <tencentcloud/trtc/v20190722/model/DescribeHistoryScaleResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribePictureRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribePictureResponse.h>
-#include <tencentcloud/trtc/v20190722/model/DescribeRealtimeNetworkRequest.h>
-#include <tencentcloud/trtc/v20190722/model/DescribeRealtimeNetworkResponse.h>
-#include <tencentcloud/trtc/v20190722/model/DescribeRealtimeQualityRequest.h>
-#include <tencentcloud/trtc/v20190722/model/DescribeRealtimeQualityResponse.h>
-#include <tencentcloud/trtc/v20190722/model/DescribeRealtimeScaleRequest.h>
-#include <tencentcloud/trtc/v20190722/model/DescribeRealtimeScaleResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeRecordStatisticRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeRecordStatisticResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeRoomInformationRequest.h>
@@ -111,15 +105,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePictureResponse> DescribePictureOutcome;
                 typedef std::future<DescribePictureOutcome> DescribePictureOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribePictureRequest&, DescribePictureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePictureAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeRealtimeNetworkResponse> DescribeRealtimeNetworkOutcome;
-                typedef std::future<DescribeRealtimeNetworkOutcome> DescribeRealtimeNetworkOutcomeCallable;
-                typedef std::function<void(const TrtcClient*, const Model::DescribeRealtimeNetworkRequest&, DescribeRealtimeNetworkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRealtimeNetworkAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeRealtimeQualityResponse> DescribeRealtimeQualityOutcome;
-                typedef std::future<DescribeRealtimeQualityOutcome> DescribeRealtimeQualityOutcomeCallable;
-                typedef std::function<void(const TrtcClient*, const Model::DescribeRealtimeQualityRequest&, DescribeRealtimeQualityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRealtimeQualityAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeRealtimeScaleResponse> DescribeRealtimeScaleOutcome;
-                typedef std::future<DescribeRealtimeScaleOutcome> DescribeRealtimeScaleOutcomeCallable;
-                typedef std::function<void(const TrtcClient*, const Model::DescribeRealtimeScaleRequest&, DescribeRealtimeScaleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRealtimeScaleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRecordStatisticResponse> DescribeRecordStatisticOutcome;
                 typedef std::future<DescribeRecordStatisticOutcome> DescribeRecordStatisticOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeRecordStatisticRequest&, DescribeRecordStatisticOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordStatisticAsyncHandler;
@@ -237,33 +222,6 @@ namespace TencentCloud
                 DescribePictureOutcome DescribePicture(const Model::DescribePictureRequest &request);
                 void DescribePictureAsync(const Model::DescribePictureRequest& request, const DescribePictureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePictureOutcomeCallable DescribePictureCallable(const Model::DescribePictureRequest& request);
-
-                /**
-                 *查询sdkappid维度下每分钟实时网络状态，包括上行丢包与下行丢包。可查询24小时内数据，查询起止时间不低于1分钟，不超过1个小时。
-                 * @param req DescribeRealtimeNetworkRequest
-                 * @return DescribeRealtimeNetworkOutcome
-                 */
-                DescribeRealtimeNetworkOutcome DescribeRealtimeNetwork(const Model::DescribeRealtimeNetworkRequest &request);
-                void DescribeRealtimeNetworkAsync(const Model::DescribeRealtimeNetworkRequest& request, const DescribeRealtimeNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeRealtimeNetworkOutcomeCallable DescribeRealtimeNetworkCallable(const Model::DescribeRealtimeNetworkRequest& request);
-
-                /**
-                 *查询sdkappid维度下每分钟实时质量数据，包括：进房成功率，首帧秒开率，音频卡顿率，视频卡顿率。可查询24小时内数据，查询起止时间不低于1分钟，不超过1个小时。
-                 * @param req DescribeRealtimeQualityRequest
-                 * @return DescribeRealtimeQualityOutcome
-                 */
-                DescribeRealtimeQualityOutcome DescribeRealtimeQuality(const Model::DescribeRealtimeQualityRequest &request);
-                void DescribeRealtimeQualityAsync(const Model::DescribeRealtimeQualityRequest& request, const DescribeRealtimeQualityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeRealtimeQualityOutcomeCallable DescribeRealtimeQualityCallable(const Model::DescribeRealtimeQualityRequest& request);
-
-                /**
-                 * 查询sdkappid维度下每分钟实时规模，可查询24小时内数据，查询起止时间不低于1分钟，不超过1个小时。
-                 * @param req DescribeRealtimeScaleRequest
-                 * @return DescribeRealtimeScaleOutcome
-                 */
-                DescribeRealtimeScaleOutcome DescribeRealtimeScale(const Model::DescribeRealtimeScaleRequest &request);
-                void DescribeRealtimeScaleAsync(const Model::DescribeRealtimeScaleRequest& request, const DescribeRealtimeScaleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeRealtimeScaleOutcomeCallable DescribeRealtimeScaleCallable(const Model::DescribeRealtimeScaleRequest& request);
 
                 /**
                  *查询云端录制计费时长。

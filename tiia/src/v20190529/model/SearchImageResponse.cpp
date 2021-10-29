@@ -14,21 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/trtc/v20190722/model/DescribeRealtimeNetworkResponse.h>
+#include <tencentcloud/tiia/v20190529/model/SearchImageResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Trtc::V20190722::Model;
+using namespace TencentCloud::Tiia::V20190529::Model;
 using namespace std;
 
-DescribeRealtimeNetworkResponse::DescribeRealtimeNetworkResponse() :
-    m_dataHasBeenSet(false)
+SearchImageResponse::SearchImageResponse() :
+    m_countHasBeenSet(false),
+    m_imageInfosHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeRealtimeNetworkResponse::Deserialize(const string &payload)
+CoreInternalOutcome SearchImageResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,45 +63,63 @@ CoreInternalOutcome DescribeRealtimeNetworkResponse::Deserialize(const string &p
     }
 
 
-    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
+    if (rsp.HasMember("Count") && !rsp["Count"].IsNull())
     {
-        if (!rsp["Data"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Data` is not array type"));
+        if (!rsp["Count"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Count` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_count = rsp["Count"].GetInt64();
+        m_countHasBeenSet = true;
+    }
 
-        const rapidjson::Value &tmpValue = rsp["Data"];
+    if (rsp.HasMember("ImageInfos") && !rsp["ImageInfos"].IsNull())
+    {
+        if (!rsp["ImageInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ImageInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ImageInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            RealtimeData item;
+            ImageInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_data.push_back(item);
+            m_imageInfos.push_back(item);
         }
-        m_dataHasBeenSet = true;
+        m_imageInfosHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeRealtimeNetworkResponse::ToJsonString() const
+string SearchImageResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_dataHasBeenSet)
+    if (m_countHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Data";
+        string key = "Count";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_count, allocator);
+    }
+
+    if (m_imageInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageInfos";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_data.begin(); itr != m_data.end(); ++itr, ++i)
+        for (auto itr = m_imageInfos.begin(); itr != m_imageInfos.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -119,14 +138,24 @@ string DescribeRealtimeNetworkResponse::ToJsonString() const
 }
 
 
-vector<RealtimeData> DescribeRealtimeNetworkResponse::GetData() const
+int64_t SearchImageResponse::GetCount() const
 {
-    return m_data;
+    return m_count;
 }
 
-bool DescribeRealtimeNetworkResponse::DataHasBeenSet() const
+bool SearchImageResponse::CountHasBeenSet() const
 {
-    return m_dataHasBeenSet;
+    return m_countHasBeenSet;
+}
+
+vector<ImageInfo> SearchImageResponse::GetImageInfos() const
+{
+    return m_imageInfos;
+}
+
+bool SearchImageResponse::ImageInfosHasBeenSet() const
+{
+    return m_imageInfosHasBeenSet;
 }
 
 

@@ -40,7 +40,8 @@ CreateCloneInstanceRequest::CreateCloneInstanceRequest() :
     m_backupZoneHasBeenSet(false),
     m_deviceTypeHasBeenSet(false),
     m_instanceNodesHasBeenSet(false),
-    m_deployGroupIdHasBeenSet(false)
+    m_deployGroupIdHasBeenSet(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,14 @@ string CreateCloneInstanceRequest::ToJsonString() const
         string key = "DeployGroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_deployGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dryRunHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DryRun";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dryRun, allocator);
     }
 
 
@@ -501,6 +510,22 @@ void CreateCloneInstanceRequest::SetDeployGroupId(const string& _deployGroupId)
 bool CreateCloneInstanceRequest::DeployGroupIdHasBeenSet() const
 {
     return m_deployGroupIdHasBeenSet;
+}
+
+bool CreateCloneInstanceRequest::GetDryRun() const
+{
+    return m_dryRun;
+}
+
+void CreateCloneInstanceRequest::SetDryRun(const bool& _dryRun)
+{
+    m_dryRun = _dryRun;
+    m_dryRunHasBeenSet = true;
+}
+
+bool CreateCloneInstanceRequest::DryRunHasBeenSet() const
+{
+    return m_dryRunHasBeenSet;
 }
 
 

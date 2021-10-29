@@ -14,55 +14,58 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TRTC_V20190722_MODEL_DESCRIBEREALTIMESCALERESPONSE_H_
-#define TENCENTCLOUD_TRTC_V20190722_MODEL_DESCRIBEREALTIMESCALERESPONSE_H_
+#ifndef TENCENTCLOUD_TIIA_V20190529_MODEL_DESCRIBEGROUPSRESPONSE_H_
+#define TENCENTCLOUD_TIIA_V20190529_MODEL_DESCRIBEGROUPSRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/trtc/v20190722/model/RealtimeData.h>
+#include <tencentcloud/tiia/v20190529/model/GroupInfo.h>
 
 
 namespace TencentCloud
 {
-    namespace Trtc
+    namespace Tiia
     {
-        namespace V20190722
+        namespace V20190529
         {
             namespace Model
             {
                 /**
-                * DescribeRealtimeScale返回参数结构体
+                * DescribeGroups返回参数结构体
                 */
-                class DescribeRealtimeScaleResponse : public AbstractModel
+                class DescribeGroupsResponse : public AbstractModel
                 {
                 public:
-                    DescribeRealtimeScaleResponse();
-                    ~DescribeRealtimeScaleResponse() = default;
+                    DescribeGroupsResponse();
+                    ~DescribeGroupsResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取返回的数据数组
-                     * @return Data 返回的数据数组
+                     * 获取图库信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Groups 图库信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<RealtimeData> GetData() const;
+                    std::vector<GroupInfo> GetGroups() const;
 
                     /**
-                     * 判断参数 Data 是否已赋值
-                     * @return Data 是否已赋值
+                     * 判断参数 Groups 是否已赋值
+                     * @return Groups 是否已赋值
                      */
-                    bool DataHasBeenSet() const;
+                    bool GroupsHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 返回的数据数组
+                     * 图库信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<RealtimeData> m_data;
-                    bool m_dataHasBeenSet;
+                    std::vector<GroupInfo> m_groups;
+                    bool m_groupsHasBeenSet;
 
                 };
             }
@@ -70,4 +73,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TRTC_V20190722_MODEL_DESCRIBEREALTIMESCALERESPONSE_H_
+#endif // !TENCENTCLOUD_TIIA_V20190529_MODEL_DESCRIBEGROUPSRESPONSE_H_

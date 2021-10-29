@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Eid出参
+                * Eid出参，包括商户方用户的标识和加密的用户姓名身份证信息。
                 */
                 class EidInfo : public AbstractModel
                 {
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool EidCodeHasBeenSet() const;
 
                     /**
-                     * 获取eID 中心针对商户方EidCode的电子签名
-                     * @return EidSign eID 中心针对商户方EidCode的电子签名
+                     * 获取Eid中心针对商户方EidCode的电子签名
+                     * @return EidSign Eid中心针对商户方EidCode的电子签名
                      */
                     std::string GetEidSign() const;
 
                     /**
-                     * 设置eID 中心针对商户方EidCode的电子签名
-                     * @param EidSign eID 中心针对商户方EidCode的电子签名
+                     * 设置Eid中心针对商户方EidCode的电子签名
+                     * @param EidSign Eid中心针对商户方EidCode的电子签名
                      */
                     void SetEidSign(const std::string& _eidSign);
 
@@ -81,6 +81,42 @@ namespace TencentCloud
                      * @return EidSign 是否已赋值
                      */
                     bool EidSignHasBeenSet() const;
+
+                    /**
+                     * 获取商户方公钥加密的会话密钥的base64字符串，[指引详见](https://cloud.tencent.com/document/product/1007/63370)
+                     * @return DesKey 商户方公钥加密的会话密钥的base64字符串，[指引详见](https://cloud.tencent.com/document/product/1007/63370)
+                     */
+                    std::string GetDesKey() const;
+
+                    /**
+                     * 设置商户方公钥加密的会话密钥的base64字符串，[指引详见](https://cloud.tencent.com/document/product/1007/63370)
+                     * @param DesKey 商户方公钥加密的会话密钥的base64字符串，[指引详见](https://cloud.tencent.com/document/product/1007/63370)
+                     */
+                    void SetDesKey(const std::string& _desKey);
+
+                    /**
+                     * 判断参数 DesKey 是否已赋值
+                     * @return DesKey 是否已赋值
+                     */
+                    bool DesKeyHasBeenSet() const;
+
+                    /**
+                     * 获取会话密钥sm2加密后的base64字符串，[指引详见](https://cloud.tencent.com/document/product/1007/63370)
+                     * @return UserInfo 会话密钥sm2加密后的base64字符串，[指引详见](https://cloud.tencent.com/document/product/1007/63370)
+                     */
+                    std::string GetUserInfo() const;
+
+                    /**
+                     * 设置会话密钥sm2加密后的base64字符串，[指引详见](https://cloud.tencent.com/document/product/1007/63370)
+                     * @param UserInfo 会话密钥sm2加密后的base64字符串，[指引详见](https://cloud.tencent.com/document/product/1007/63370)
+                     */
+                    void SetUserInfo(const std::string& _userInfo);
+
+                    /**
+                     * 判断参数 UserInfo 是否已赋值
+                     * @return UserInfo 是否已赋值
+                     */
+                    bool UserInfoHasBeenSet() const;
 
                 private:
 
@@ -91,10 +127,22 @@ namespace TencentCloud
                     bool m_eidCodeHasBeenSet;
 
                     /**
-                     * eID 中心针对商户方EidCode的电子签名
+                     * Eid中心针对商户方EidCode的电子签名
                      */
                     std::string m_eidSign;
                     bool m_eidSignHasBeenSet;
+
+                    /**
+                     * 商户方公钥加密的会话密钥的base64字符串，[指引详见](https://cloud.tencent.com/document/product/1007/63370)
+                     */
+                    std::string m_desKey;
+                    bool m_desKeyHasBeenSet;
+
+                    /**
+                     * 会话密钥sm2加密后的base64字符串，[指引详见](https://cloud.tencent.com/document/product/1007/63370)
+                     */
+                    std::string m_userInfo;
+                    bool m_userInfoHasBeenSet;
 
                 };
             }

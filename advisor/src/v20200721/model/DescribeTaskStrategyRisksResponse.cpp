@@ -26,7 +26,8 @@ using namespace std;
 DescribeTaskStrategyRisksResponse::DescribeTaskStrategyRisksResponse() :
     m_riskFieldsDescHasBeenSet(false),
     m_strategyIdHasBeenSet(false),
-    m_riskTotalCountHasBeenSet(false)
+    m_riskTotalCountHasBeenSet(false),
+    m_risksHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,16 @@ CoreInternalOutcome DescribeTaskStrategyRisksResponse::Deserialize(const string 
         m_riskTotalCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Risks") && !rsp["Risks"].IsNull())
+    {
+        if (!rsp["Risks"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Risks` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_risks = string(rsp["Risks"].GetString());
+        m_risksHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -143,6 +154,14 @@ string DescribeTaskStrategyRisksResponse::ToJsonString() const
         string key = "RiskTotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_riskTotalCount, allocator);
+    }
+
+    if (m_risksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Risks";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_risks.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -185,6 +204,16 @@ uint64_t DescribeTaskStrategyRisksResponse::GetRiskTotalCount() const
 bool DescribeTaskStrategyRisksResponse::RiskTotalCountHasBeenSet() const
 {
     return m_riskTotalCountHasBeenSet;
+}
+
+string DescribeTaskStrategyRisksResponse::GetRisks() const
+{
+    return m_risks;
+}
+
+bool DescribeTaskStrategyRisksResponse::RisksHasBeenSet() const
+{
+    return m_risksHasBeenSet;
 }
 
 

@@ -14,55 +14,54 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TRTC_V20190722_MODEL_DESCRIBEREALTIMENETWORKRESPONSE_H_
-#define TENCENTCLOUD_TRTC_V20190722_MODEL_DESCRIBEREALTIMENETWORKRESPONSE_H_
+#ifndef TENCENTCLOUD_SES_V20201002_MODEL_BATCHSENDEMAILRESPONSE_H_
+#define TENCENTCLOUD_SES_V20201002_MODEL_BATCHSENDEMAILRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/trtc/v20190722/model/RealtimeData.h>
 
 
 namespace TencentCloud
 {
-    namespace Trtc
+    namespace Ses
     {
-        namespace V20190722
+        namespace V20201002
         {
             namespace Model
             {
                 /**
-                * DescribeRealtimeNetwork返回参数结构体
+                * BatchSendEmail返回参数结构体
                 */
-                class DescribeRealtimeNetworkResponse : public AbstractModel
+                class BatchSendEmailResponse : public AbstractModel
                 {
                 public:
-                    DescribeRealtimeNetworkResponse();
-                    ~DescribeRealtimeNetworkResponse() = default;
+                    BatchSendEmailResponse();
+                    ~BatchSendEmailResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取查询返回的数据
-                     * @return Data 查询返回的数据
+                     * 获取发送任务ID
+                     * @return TaskId 发送任务ID
                      */
-                    std::vector<RealtimeData> GetData() const;
+                    uint64_t GetTaskId() const;
 
                     /**
-                     * 判断参数 Data 是否已赋值
-                     * @return Data 是否已赋值
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
                      */
-                    bool DataHasBeenSet() const;
+                    bool TaskIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 查询返回的数据
+                     * 发送任务ID
                      */
-                    std::vector<RealtimeData> m_data;
-                    bool m_dataHasBeenSet;
+                    uint64_t m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                 };
             }
@@ -70,4 +69,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TRTC_V20190722_MODEL_DESCRIBEREALTIMENETWORKRESPONSE_H_
+#endif // !TENCENTCLOUD_SES_V20201002_MODEL_BATCHSENDEMAILRESPONSE_H_

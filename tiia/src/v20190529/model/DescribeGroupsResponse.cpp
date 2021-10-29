@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/trtc/v20190722/model/DescribeRealtimeScaleResponse.h>
+#include <tencentcloud/tiia/v20190529/model/DescribeGroupsResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Trtc::V20190722::Model;
+using namespace TencentCloud::Tiia::V20190529::Model;
 using namespace std;
 
-DescribeRealtimeScaleResponse::DescribeRealtimeScaleResponse() :
-    m_dataHasBeenSet(false)
+DescribeGroupsResponse::DescribeGroupsResponse() :
+    m_groupsHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeRealtimeScaleResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeGroupsResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,45 +62,45 @@ CoreInternalOutcome DescribeRealtimeScaleResponse::Deserialize(const string &pay
     }
 
 
-    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
+    if (rsp.HasMember("Groups") && !rsp["Groups"].IsNull())
     {
-        if (!rsp["Data"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Data` is not array type"));
+        if (!rsp["Groups"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Groups` is not array type"));
 
-        const rapidjson::Value &tmpValue = rsp["Data"];
+        const rapidjson::Value &tmpValue = rsp["Groups"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            RealtimeData item;
+            GroupInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_data.push_back(item);
+            m_groups.push_back(item);
         }
-        m_dataHasBeenSet = true;
+        m_groupsHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeRealtimeScaleResponse::ToJsonString() const
+string DescribeGroupsResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_dataHasBeenSet)
+    if (m_groupsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Data";
+        string key = "Groups";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_data.begin(); itr != m_data.end(); ++itr, ++i)
+        for (auto itr = m_groups.begin(); itr != m_groups.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -119,14 +119,14 @@ string DescribeRealtimeScaleResponse::ToJsonString() const
 }
 
 
-vector<RealtimeData> DescribeRealtimeScaleResponse::GetData() const
+vector<GroupInfo> DescribeGroupsResponse::GetGroups() const
 {
-    return m_data;
+    return m_groups;
 }
 
-bool DescribeRealtimeScaleResponse::DataHasBeenSet() const
+bool DescribeGroupsResponse::GroupsHasBeenSet() const
 {
-    return m_dataHasBeenSet;
+    return m_groupsHasBeenSet;
 }
 
 

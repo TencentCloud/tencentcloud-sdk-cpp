@@ -28,7 +28,8 @@ OcrTextDetail::OcrTextDetail() :
     m_keywordsHasBeenSet(false),
     m_scoreHasBeenSet(false),
     m_locationHasBeenSet(false),
-    m_rateHasBeenSet(false)
+    m_rateHasBeenSet(false),
+    m_subLabelHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome OcrTextDetail::Deserialize(const rapidjson::Value &value)
         m_rateHasBeenSet = true;
     }
 
+    if (value.HasMember("SubLabel") && !value["SubLabel"].IsNull())
+    {
+        if (!value["SubLabel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OcrTextDetail.SubLabel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subLabel = string(value["SubLabel"].GetString());
+        m_subLabelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -202,6 +213,14 @@ void OcrTextDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Rate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rate, allocator);
+    }
+
+    if (m_subLabelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubLabel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subLabel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -333,5 +352,21 @@ void OcrTextDetail::SetRate(const uint64_t& _rate)
 bool OcrTextDetail::RateHasBeenSet() const
 {
     return m_rateHasBeenSet;
+}
+
+string OcrTextDetail::GetSubLabel() const
+{
+    return m_subLabel;
+}
+
+void OcrTextDetail::SetSubLabel(const string& _subLabel)
+{
+    m_subLabel = _subLabel;
+    m_subLabelHasBeenSet = true;
+}
+
+bool OcrTextDetail::SubLabelHasBeenSet() const
+{
+    return m_subLabelHasBeenSet;
 }
 

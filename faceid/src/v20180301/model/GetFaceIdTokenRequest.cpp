@@ -28,7 +28,8 @@ GetFaceIdTokenRequest::GetFaceIdTokenRequest() :
     m_nameHasBeenSet(false),
     m_imageBase64HasBeenSet(false),
     m_metaHasBeenSet(false),
-    m_extraHasBeenSet(false)
+    m_extraHasBeenSet(false),
+    m_useCosHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string GetFaceIdTokenRequest::ToJsonString() const
         string key = "Extra";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_extra.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_useCosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseCos";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_useCos, allocator);
     }
 
 
@@ -189,6 +198,22 @@ void GetFaceIdTokenRequest::SetExtra(const string& _extra)
 bool GetFaceIdTokenRequest::ExtraHasBeenSet() const
 {
     return m_extraHasBeenSet;
+}
+
+bool GetFaceIdTokenRequest::GetUseCos() const
+{
+    return m_useCos;
+}
+
+void GetFaceIdTokenRequest::SetUseCos(const bool& _useCos)
+{
+    m_useCos = _useCos;
+    m_useCosHasBeenSet = true;
+}
+
+bool GetFaceIdTokenRequest::UseCosHasBeenSet() const
+{
+    return m_useCosHasBeenSet;
 }
 
 

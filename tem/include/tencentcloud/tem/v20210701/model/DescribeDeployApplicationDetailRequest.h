@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool EnvironmentIdHasBeenSet() const;
 
+                    /**
+                     * 获取版本部署id
+                     * @return VersionId 版本部署id
+                     */
+                    std::string GetVersionId() const;
+
+                    /**
+                     * 设置版本部署id
+                     * @param VersionId 版本部署id
+                     */
+                    void SetVersionId(const std::string& _versionId);
+
+                    /**
+                     * 判断参数 VersionId 是否已赋值
+                     * @return VersionId 是否已赋值
+                     */
+                    bool VersionIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     std::string m_environmentId;
                     bool m_environmentIdHasBeenSet;
+
+                    /**
+                     * 版本部署id
+                     */
+                    std::string m_versionId;
+                    bool m_versionIdHasBeenSet;
 
                 };
             }

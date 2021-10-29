@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ses/v20201002/model/BatchSendEmailRequest.h>
+#include <tencentcloud/ses/v20201002/model/BatchSendEmailResponse.h>
 #include <tencentcloud/ses/v20201002/model/CreateEmailAddressRequest.h>
 #include <tencentcloud/ses/v20201002/model/CreateEmailAddressResponse.h>
 #include <tencentcloud/ses/v20201002/model/CreateEmailIdentityRequest.h>
@@ -73,6 +75,9 @@ namespace TencentCloud
                 SesClient(const Credential &credential, const std::string &region);
                 SesClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::BatchSendEmailResponse> BatchSendEmailOutcome;
+                typedef std::future<BatchSendEmailOutcome> BatchSendEmailOutcomeCallable;
+                typedef std::function<void(const SesClient*, const Model::BatchSendEmailRequest&, BatchSendEmailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchSendEmailAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateEmailAddressResponse> CreateEmailAddressOutcome;
                 typedef std::future<CreateEmailAddressOutcome> CreateEmailAddressOutcomeCallable;
                 typedef std::function<void(const SesClient*, const Model::CreateEmailAddressRequest&, CreateEmailAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEmailAddressAsyncHandler;
@@ -129,6 +134,15 @@ namespace TencentCloud
                 typedef std::function<void(const SesClient*, const Model::UpdateEmailTemplateRequest&, UpdateEmailTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateEmailTemplateAsyncHandler;
 
 
+
+                /**
+                 *您可以通过此API批量发送TEXT或者HTML邮件，适用于营销类、通知类邮件。默认仅支持使用模板发送邮件，如需发送自定义内容，请单独联系商务开通此功能。批量发送之前，需先创建收件人列表，和收件人地址，并通过收件人列表id来进行发送。批量发送任务支持定时发送和周期重复发送，定时发送需传TimedParam，周期重复发送需传CycleParam
+                 * @param req BatchSendEmailRequest
+                 * @return BatchSendEmailOutcome
+                 */
+                BatchSendEmailOutcome BatchSendEmail(const Model::BatchSendEmailRequest &request);
+                void BatchSendEmailAsync(const Model::BatchSendEmailRequest& request, const BatchSendEmailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchSendEmailOutcomeCallable BatchSendEmailCallable(const Model::BatchSendEmailRequest& request);
 
                 /**
                  *在验证了发信域名之后，您需要一个发信地址来发送邮件。例如发信域名是mail.qcloud.com，那么发信地址可以为 service@mail.qcloud.com。如果您想要收件人在收件箱列表中显示您的别名，例如"腾讯云邮件通知"。那么发信地址为： 别名 空格 尖括号 邮箱地址。请注意中间需要有空格
@@ -267,7 +281,7 @@ namespace TencentCloud
                 ListEmailTemplatesOutcomeCallable ListEmailTemplatesCallable(const Model::ListEmailTemplatesRequest& request);
 
                 /**
-                 *您可以通过此API发送TEXT或者HTML邮件，默认仅支持使用模板发送邮件，如需发送自定义内容，请单独联系商务开通此功能。
+                 *您可以通过此API发送TEXT或者HTML邮件，适用于触发类邮件（验证码、交易类）。默认仅支持使用模板发送邮件，如需发送自定义内容，请单独联系商务开通此功能。
                  * @param req SendEmailRequest
                  * @return SendEmailOutcome
                  */

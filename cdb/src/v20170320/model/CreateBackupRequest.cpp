@@ -25,7 +25,8 @@ using namespace std;
 CreateBackupRequest::CreateBackupRequest() :
     m_instanceIdHasBeenSet(false),
     m_backupMethodHasBeenSet(false),
-    m_backupDBTableListHasBeenSet(false)
+    m_backupDBTableListHasBeenSet(false),
+    m_manualBackupNameHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,14 @@ string CreateBackupRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_manualBackupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ManualBackupName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_manualBackupName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -121,6 +130,22 @@ void CreateBackupRequest::SetBackupDBTableList(const vector<BackupItem>& _backup
 bool CreateBackupRequest::BackupDBTableListHasBeenSet() const
 {
     return m_backupDBTableListHasBeenSet;
+}
+
+string CreateBackupRequest::GetManualBackupName() const
+{
+    return m_manualBackupName;
+}
+
+void CreateBackupRequest::SetManualBackupName(const string& _manualBackupName)
+{
+    m_manualBackupName = _manualBackupName;
+    m_manualBackupNameHasBeenSet = true;
+}
+
+bool CreateBackupRequest::ManualBackupNameHasBeenSet() const
+{
+    return m_manualBackupNameHasBeenSet;
 }
 
 

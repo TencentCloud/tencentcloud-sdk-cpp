@@ -80,18 +80,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取类型：
-0
-                     * @return Type 类型：
-0
+                     * 获取该字段已废弃，由Filters代替
+                     * @return Type 该字段已废弃，由Filters代替
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置类型：
-0
-                     * @param Type 类型：
-0
+                     * 设置该字段已废弃，由Filters代替
+                     * @param Type 该字段已废弃，由Filters代替
                      */
                     void SetType(const uint64_t& _type);
 
@@ -182,8 +178,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 类型：
-0
+                     * 该字段已废弃，由Filters代替
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;

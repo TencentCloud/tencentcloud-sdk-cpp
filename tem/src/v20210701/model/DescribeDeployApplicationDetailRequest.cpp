@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeDeployApplicationDetailRequest::DescribeDeployApplicationDetailRequest() :
     m_applicationIdHasBeenSet(false),
-    m_environmentIdHasBeenSet(false)
+    m_environmentIdHasBeenSet(false),
+    m_versionIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeDeployApplicationDetailRequest::ToJsonString() const
         string key = "EnvironmentId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_environmentId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_versionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VersionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_versionId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeDeployApplicationDetailRequest::SetEnvironmentId(const string& _env
 bool DescribeDeployApplicationDetailRequest::EnvironmentIdHasBeenSet() const
 {
     return m_environmentIdHasBeenSet;
+}
+
+string DescribeDeployApplicationDetailRequest::GetVersionId() const
+{
+    return m_versionId;
+}
+
+void DescribeDeployApplicationDetailRequest::SetVersionId(const string& _versionId)
+{
+    m_versionId = _versionId;
+    m_versionIdHasBeenSet = true;
+}
+
+bool DescribeDeployApplicationDetailRequest::VersionIdHasBeenSet() const
+{
+    return m_versionIdHasBeenSet;
 }
 
 

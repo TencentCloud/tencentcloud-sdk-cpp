@@ -25,7 +25,8 @@ ObjectDetail::ObjectDetail() :
     m_nameHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_scoreHasBeenSet(false),
-    m_locationHasBeenSet(false)
+    m_locationHasBeenSet(false),
+    m_subLabelHasBeenSet(false)
 {
 }
 
@@ -91,6 +92,16 @@ CoreInternalOutcome ObjectDetail::Deserialize(const rapidjson::Value &value)
         m_locationHasBeenSet = true;
     }
 
+    if (value.HasMember("SubLabel") && !value["SubLabel"].IsNull())
+    {
+        if (!value["SubLabel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ObjectDetail.SubLabel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subLabel = string(value["SubLabel"].GetString());
+        m_subLabelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +148,14 @@ void ObjectDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_location.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_subLabelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubLabel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subLabel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -220,5 +239,21 @@ void ObjectDetail::SetLocation(const Location& _location)
 bool ObjectDetail::LocationHasBeenSet() const
 {
     return m_locationHasBeenSet;
+}
+
+string ObjectDetail::GetSubLabel() const
+{
+    return m_subLabel;
+}
+
+void ObjectDetail::SetSubLabel(const string& _subLabel)
+{
+    m_subLabel = _subLabel;
+    m_subLabelHasBeenSet = true;
+}
+
+bool ObjectDetail::SubLabelHasBeenSet() const
+{
+    return m_subLabelHasBeenSet;
 }
 

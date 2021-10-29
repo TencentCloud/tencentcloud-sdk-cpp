@@ -104,9 +104,9 @@ namespace TencentCloud
                     bool SimilarityHasBeenSet() const;
 
                     /**
-                     * 获取用户核验的视频
+                     * 获取用户核验的视频base64，如果选择了使用cos，返回完整cos地址如https://bucket.cos.ap-guangzhou.myqcloud.com/objectKey
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VideoBase64 用户核验的视频
+                     * @return VideoBase64 用户核验的视频base64，如果选择了使用cos，返回完整cos地址如https://bucket.cos.ap-guangzhou.myqcloud.com/objectKey
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetVideoBase64() const;
@@ -118,9 +118,9 @@ namespace TencentCloud
                     bool VideoBase64HasBeenSet() const;
 
                     /**
-                     * 获取用户核验视频的截帧
+                     * 获取用户核验视频的截帧base64，如果选择了使用cos，返回完整cos地址如https://bucket.cos.ap-guangzhou.myqcloud.com/objectKey
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BestFrameBase64 用户核验视频的截帧
+                     * @return BestFrameBase64 用户核验视频的截帧base64，如果选择了使用cos，返回完整cos地址如https://bucket.cos.ap-guangzhou.myqcloud.com/objectKey
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetBestFrameBase64() const;
@@ -220,14 +220,14 @@ namespace TencentCloud
                     bool m_similarityHasBeenSet;
 
                     /**
-                     * 用户核验的视频
+                     * 用户核验的视频base64，如果选择了使用cos，返回完整cos地址如https://bucket.cos.ap-guangzhou.myqcloud.com/objectKey
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_videoBase64;
                     bool m_videoBase64HasBeenSet;
 
                     /**
-                     * 用户核验视频的截帧
+                     * 用户核验视频的截帧base64，如果选择了使用cos，返回完整cos地址如https://bucket.cos.ap-guangzhou.myqcloud.com/objectKey
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bestFrameBase64;

@@ -19,7 +19,10 @@ set(ses_public_header
   )
 
 set(ses_public_header_model
-  include/tencentcloud/ses/v20201002/model/Simple.h
+  include/tencentcloud/ses/v20201002/model/BatchSendEmailRequest.h
+  include/tencentcloud/ses/v20201002/model/GetEmailTemplateRequest.h
+  include/tencentcloud/ses/v20201002/model/CreateEmailTemplateRequest.h
+  include/tencentcloud/ses/v20201002/model/TemplatesMetadata.h
   include/tencentcloud/ses/v20201002/model/ListEmailAddressRequest.h
   include/tencentcloud/ses/v20201002/model/GetEmailIdentityResponse.h
   include/tencentcloud/ses/v20201002/model/ListBlackEmailAddressRequest.h
@@ -28,6 +31,7 @@ set(ses_public_header_model
   include/tencentcloud/ses/v20201002/model/GetSendEmailStatusResponse.h
   include/tencentcloud/ses/v20201002/model/SendEmailRequest.h
   include/tencentcloud/ses/v20201002/model/EmailSender.h
+  include/tencentcloud/ses/v20201002/model/BatchSendEmailResponse.h
   include/tencentcloud/ses/v20201002/model/DeleteEmailIdentityRequest.h
   include/tencentcloud/ses/v20201002/model/UpdateEmailIdentityRequest.h
   include/tencentcloud/ses/v20201002/model/GetEmailIdentityRequest.h
@@ -35,7 +39,7 @@ set(ses_public_header_model
   include/tencentcloud/ses/v20201002/model/GetStatisticsReportRequest.h
   include/tencentcloud/ses/v20201002/model/DeleteEmailTemplateResponse.h
   include/tencentcloud/ses/v20201002/model/Volume.h
-  include/tencentcloud/ses/v20201002/model/CreateEmailTemplateRequest.h
+  include/tencentcloud/ses/v20201002/model/CreateEmailIdentityRequest.h
   include/tencentcloud/ses/v20201002/model/UpdateEmailTemplateRequest.h
   include/tencentcloud/ses/v20201002/model/UpdateEmailIdentityResponse.h
   include/tencentcloud/ses/v20201002/model/DeleteEmailTemplateRequest.h
@@ -47,7 +51,7 @@ set(ses_public_header_model
   include/tencentcloud/ses/v20201002/model/SendEmailResponse.h
   include/tencentcloud/ses/v20201002/model/ListBlackEmailAddressResponse.h
   include/tencentcloud/ses/v20201002/model/GetSendEmailStatusRequest.h
-  include/tencentcloud/ses/v20201002/model/TemplatesMetadata.h
+  include/tencentcloud/ses/v20201002/model/Simple.h
   include/tencentcloud/ses/v20201002/model/ListEmailIdentitiesResponse.h
   include/tencentcloud/ses/v20201002/model/ListEmailAddressResponse.h
   include/tencentcloud/ses/v20201002/model/TemplateContent.h
@@ -55,14 +59,14 @@ set(ses_public_header_model
   include/tencentcloud/ses/v20201002/model/DeleteEmailAddressRequest.h
   include/tencentcloud/ses/v20201002/model/EmailIdentity.h
   include/tencentcloud/ses/v20201002/model/BlackEmailAddress.h
-  include/tencentcloud/ses/v20201002/model/GetEmailTemplateRequest.h
+  include/tencentcloud/ses/v20201002/model/CycleEmailParam.h
   include/tencentcloud/ses/v20201002/model/DeleteEmailAddressResponse.h
   include/tencentcloud/ses/v20201002/model/CreateEmailIdentityResponse.h
-  include/tencentcloud/ses/v20201002/model/CreateEmailIdentityRequest.h
   include/tencentcloud/ses/v20201002/model/CreateEmailAddressRequest.h
   include/tencentcloud/ses/v20201002/model/CreateEmailTemplateResponse.h
   include/tencentcloud/ses/v20201002/model/CreateEmailAddressResponse.h
   include/tencentcloud/ses/v20201002/model/UpdateEmailTemplateResponse.h
+  include/tencentcloud/ses/v20201002/model/TimedEmailParam.h
   include/tencentcloud/ses/v20201002/model/DNSAttributes.h
   include/tencentcloud/ses/v20201002/model/GetEmailTemplateResponse.h
   include/tencentcloud/ses/v20201002/model/ListEmailIdentitiesRequest.h
@@ -70,7 +74,10 @@ set(ses_public_header_model
 
 set(ses_src
   src/v20201002/SesClient.cpp
-  src/v20201002/model/Simple.cpp
+  src/v20201002/model/BatchSendEmailRequest.cpp
+  src/v20201002/model/GetEmailTemplateRequest.cpp
+  src/v20201002/model/CreateEmailTemplateRequest.cpp
+  src/v20201002/model/TemplatesMetadata.cpp
   src/v20201002/model/ListEmailAddressRequest.cpp
   src/v20201002/model/GetEmailIdentityResponse.cpp
   src/v20201002/model/ListBlackEmailAddressRequest.cpp
@@ -79,6 +86,7 @@ set(ses_src
   src/v20201002/model/GetSendEmailStatusResponse.cpp
   src/v20201002/model/SendEmailRequest.cpp
   src/v20201002/model/EmailSender.cpp
+  src/v20201002/model/BatchSendEmailResponse.cpp
   src/v20201002/model/DeleteEmailIdentityRequest.cpp
   src/v20201002/model/UpdateEmailIdentityRequest.cpp
   src/v20201002/model/GetEmailIdentityRequest.cpp
@@ -86,7 +94,7 @@ set(ses_src
   src/v20201002/model/GetStatisticsReportRequest.cpp
   src/v20201002/model/DeleteEmailTemplateResponse.cpp
   src/v20201002/model/Volume.cpp
-  src/v20201002/model/CreateEmailTemplateRequest.cpp
+  src/v20201002/model/CreateEmailIdentityRequest.cpp
   src/v20201002/model/UpdateEmailTemplateRequest.cpp
   src/v20201002/model/UpdateEmailIdentityResponse.cpp
   src/v20201002/model/DeleteEmailTemplateRequest.cpp
@@ -98,7 +106,7 @@ set(ses_src
   src/v20201002/model/SendEmailResponse.cpp
   src/v20201002/model/ListBlackEmailAddressResponse.cpp
   src/v20201002/model/GetSendEmailStatusRequest.cpp
-  src/v20201002/model/TemplatesMetadata.cpp
+  src/v20201002/model/Simple.cpp
   src/v20201002/model/ListEmailIdentitiesResponse.cpp
   src/v20201002/model/ListEmailAddressResponse.cpp
   src/v20201002/model/TemplateContent.cpp
@@ -106,14 +114,14 @@ set(ses_src
   src/v20201002/model/DeleteEmailAddressRequest.cpp
   src/v20201002/model/EmailIdentity.cpp
   src/v20201002/model/BlackEmailAddress.cpp
-  src/v20201002/model/GetEmailTemplateRequest.cpp
+  src/v20201002/model/CycleEmailParam.cpp
   src/v20201002/model/DeleteEmailAddressResponse.cpp
   src/v20201002/model/CreateEmailIdentityResponse.cpp
-  src/v20201002/model/CreateEmailIdentityRequest.cpp
   src/v20201002/model/CreateEmailAddressRequest.cpp
   src/v20201002/model/CreateEmailTemplateResponse.cpp
   src/v20201002/model/CreateEmailAddressResponse.cpp
   src/v20201002/model/UpdateEmailTemplateResponse.cpp
+  src/v20201002/model/TimedEmailParam.cpp
   src/v20201002/model/DNSAttributes.cpp
   src/v20201002/model/GetEmailTemplateResponse.cpp
   src/v20201002/model/ListEmailIdentitiesRequest.cpp

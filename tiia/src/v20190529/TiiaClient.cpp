@@ -83,6 +83,92 @@ TiiaClient::AssessQualityOutcomeCallable TiiaClient::AssessQualityCallable(const
     return task->get_future();
 }
 
+TiiaClient::CreateGroupOutcome TiiaClient::CreateGroup(const CreateGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateGroupResponse rsp = CreateGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateGroupOutcome(rsp);
+        else
+            return CreateGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateGroupOutcome(outcome.GetError());
+    }
+}
+
+void TiiaClient::CreateGroupAsync(const CreateGroupRequest& request, const CreateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiiaClient::CreateGroupOutcomeCallable TiiaClient::CreateGroupCallable(const CreateGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiiaClient::CreateImageOutcome TiiaClient::CreateImage(const CreateImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateImageResponse rsp = CreateImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateImageOutcome(rsp);
+        else
+            return CreateImageOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateImageOutcome(outcome.GetError());
+    }
+}
+
+void TiiaClient::CreateImageAsync(const CreateImageRequest& request, const CreateImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateImage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiiaClient::CreateImageOutcomeCallable TiiaClient::CreateImageCallable(const CreateImageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateImageOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateImage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiiaClient::CropImageOutcome TiiaClient::CropImage(const CropImageRequest &request)
 {
     auto outcome = MakeRequest(request, "CropImage");
@@ -119,6 +205,135 @@ TiiaClient::CropImageOutcomeCallable TiiaClient::CropImageCallable(const CropIma
         [this, request]()
         {
             return this->CropImage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiiaClient::DeleteImagesOutcome TiiaClient::DeleteImages(const DeleteImagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteImages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteImagesResponse rsp = DeleteImagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteImagesOutcome(rsp);
+        else
+            return DeleteImagesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteImagesOutcome(outcome.GetError());
+    }
+}
+
+void TiiaClient::DeleteImagesAsync(const DeleteImagesRequest& request, const DeleteImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteImages(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiiaClient::DeleteImagesOutcomeCallable TiiaClient::DeleteImagesCallable(const DeleteImagesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteImagesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteImages(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiiaClient::DescribeGroupsOutcome TiiaClient::DescribeGroups(const DescribeGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGroupsResponse rsp = DescribeGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGroupsOutcome(rsp);
+        else
+            return DescribeGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGroupsOutcome(outcome.GetError());
+    }
+}
+
+void TiiaClient::DescribeGroupsAsync(const DescribeGroupsRequest& request, const DescribeGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiiaClient::DescribeGroupsOutcomeCallable TiiaClient::DescribeGroupsCallable(const DescribeGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiiaClient::DescribeImagesOutcome TiiaClient::DescribeImages(const DescribeImagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImagesResponse rsp = DescribeImagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImagesOutcome(rsp);
+        else
+            return DescribeImagesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImagesOutcome(outcome.GetError());
+    }
+}
+
+void TiiaClient::DescribeImagesAsync(const DescribeImagesRequest& request, const DescribeImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeImages(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiiaClient::DescribeImagesOutcomeCallable TiiaClient::DescribeImagesCallable(const DescribeImagesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeImagesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeImages(request);
         }
     );
 
@@ -506,6 +721,49 @@ TiiaClient::RecognizeCarOutcomeCallable TiiaClient::RecognizeCarCallable(const R
         [this, request]()
         {
             return this->RecognizeCar(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiiaClient::SearchImageOutcome TiiaClient::SearchImage(const SearchImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchImageResponse rsp = SearchImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchImageOutcome(rsp);
+        else
+            return SearchImageOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchImageOutcome(outcome.GetError());
+    }
+}
+
+void TiiaClient::SearchImageAsync(const SearchImageRequest& request, const SearchImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchImage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiiaClient::SearchImageOutcomeCallable TiiaClient::SearchImageCallable(const SearchImageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchImageOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchImage(request);
         }
     );
 

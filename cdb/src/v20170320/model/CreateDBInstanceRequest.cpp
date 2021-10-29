@@ -55,7 +55,9 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_instanceNodesHasBeenSet(false),
     m_cpuHasBeenSet(false),
     m_autoSyncFlagHasBeenSet(false),
-    m_cageIdHasBeenSet(false)
+    m_cageIdHasBeenSet(false),
+    m_alarmPolicyIdListHasBeenSet(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -353,6 +355,27 @@ string CreateDBInstanceRequest::ToJsonString() const
         string key = "CageId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_alarmPolicyIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmPolicyIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_alarmPolicyIdList.begin(); itr != m_alarmPolicyIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_dryRunHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DryRun";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dryRun, allocator);
     }
 
 
@@ -889,6 +912,38 @@ void CreateDBInstanceRequest::SetCageId(const string& _cageId)
 bool CreateDBInstanceRequest::CageIdHasBeenSet() const
 {
     return m_cageIdHasBeenSet;
+}
+
+vector<string> CreateDBInstanceRequest::GetAlarmPolicyIdList() const
+{
+    return m_alarmPolicyIdList;
+}
+
+void CreateDBInstanceRequest::SetAlarmPolicyIdList(const vector<string>& _alarmPolicyIdList)
+{
+    m_alarmPolicyIdList = _alarmPolicyIdList;
+    m_alarmPolicyIdListHasBeenSet = true;
+}
+
+bool CreateDBInstanceRequest::AlarmPolicyIdListHasBeenSet() const
+{
+    return m_alarmPolicyIdListHasBeenSet;
+}
+
+bool CreateDBInstanceRequest::GetDryRun() const
+{
+    return m_dryRun;
+}
+
+void CreateDBInstanceRequest::SetDryRun(const bool& _dryRun)
+{
+    m_dryRun = _dryRun;
+    m_dryRunHasBeenSet = true;
+}
+
+bool CreateDBInstanceRequest::DryRunHasBeenSet() const
+{
+    return m_dryRunHasBeenSet;
 }
 
 
