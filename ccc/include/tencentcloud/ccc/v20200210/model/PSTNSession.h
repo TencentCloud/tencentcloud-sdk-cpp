@@ -296,6 +296,42 @@ finished 已完成
                      */
                     bool OutBoundCalleeHasBeenSet() const;
 
+                    /**
+                     * 获取主叫号码保护ID，开启号码保护映射功能时有效，且Caller字段置空
+                     * @return ProtectedCaller 主叫号码保护ID，开启号码保护映射功能时有效，且Caller字段置空
+                     */
+                    std::string GetProtectedCaller() const;
+
+                    /**
+                     * 设置主叫号码保护ID，开启号码保护映射功能时有效，且Caller字段置空
+                     * @param ProtectedCaller 主叫号码保护ID，开启号码保护映射功能时有效，且Caller字段置空
+                     */
+                    void SetProtectedCaller(const std::string& _protectedCaller);
+
+                    /**
+                     * 判断参数 ProtectedCaller 是否已赋值
+                     * @return ProtectedCaller 是否已赋值
+                     */
+                    bool ProtectedCallerHasBeenSet() const;
+
+                    /**
+                     * 获取被叫号码保护ID，开启号码保护映射功能时有效，且Callee字段置空
+                     * @return ProtectedCallee 被叫号码保护ID，开启号码保护映射功能时有效，且Callee字段置空
+                     */
+                    std::string GetProtectedCallee() const;
+
+                    /**
+                     * 设置被叫号码保护ID，开启号码保护映射功能时有效，且Callee字段置空
+                     * @param ProtectedCallee 被叫号码保护ID，开启号码保护映射功能时有效，且Callee字段置空
+                     */
+                    void SetProtectedCallee(const std::string& _protectedCallee);
+
+                    /**
+                     * 判断参数 ProtectedCallee 是否已赋值
+                     * @return ProtectedCallee 是否已赋值
+                     */
+                    bool ProtectedCalleeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -379,6 +415,18 @@ finished 已完成
                      */
                     std::string m_outBoundCallee;
                     bool m_outBoundCalleeHasBeenSet;
+
+                    /**
+                     * 主叫号码保护ID，开启号码保护映射功能时有效，且Caller字段置空
+                     */
+                    std::string m_protectedCaller;
+                    bool m_protectedCallerHasBeenSet;
+
+                    /**
+                     * 被叫号码保护ID，开启号码保护映射功能时有效，且Callee字段置空
+                     */
+                    std::string m_protectedCallee;
+                    bool m_protectedCalleeHasBeenSet;
 
                 };
             }

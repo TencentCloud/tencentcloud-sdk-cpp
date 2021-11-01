@@ -23,12 +23,13 @@ using namespace TencentCloud::Ccc::V20200210::Model;
 using namespace std;
 
 DescribeChatMessagesRequest::DescribeChatMessagesRequest() :
-    m_cdrIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_sdkAppIdHasBeenSet(false),
+    m_cdrIdHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_orderHasBeenSet(false)
+    m_orderHasBeenSet(false),
+    m_sessionIdHasBeenSet(false)
 {
 }
 
@@ -38,14 +39,6 @@ string DescribeChatMessagesRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_cdrIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CdrId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_cdrId.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_instanceIdHasBeenSet)
     {
@@ -61,6 +54,14 @@ string DescribeChatMessagesRequest::ToJsonString() const
         string key = "SdkAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sdkAppId, allocator);
+    }
+
+    if (m_cdrIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CdrId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cdrId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_limitHasBeenSet)
@@ -87,6 +88,14 @@ string DescribeChatMessagesRequest::ToJsonString() const
         d.AddMember(iKey, m_order, allocator);
     }
 
+    if (m_sessionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -94,22 +103,6 @@ string DescribeChatMessagesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string DescribeChatMessagesRequest::GetCdrId() const
-{
-    return m_cdrId;
-}
-
-void DescribeChatMessagesRequest::SetCdrId(const string& _cdrId)
-{
-    m_cdrId = _cdrId;
-    m_cdrIdHasBeenSet = true;
-}
-
-bool DescribeChatMessagesRequest::CdrIdHasBeenSet() const
-{
-    return m_cdrIdHasBeenSet;
-}
 
 int64_t DescribeChatMessagesRequest::GetInstanceId() const
 {
@@ -141,6 +134,22 @@ void DescribeChatMessagesRequest::SetSdkAppId(const int64_t& _sdkAppId)
 bool DescribeChatMessagesRequest::SdkAppIdHasBeenSet() const
 {
     return m_sdkAppIdHasBeenSet;
+}
+
+string DescribeChatMessagesRequest::GetCdrId() const
+{
+    return m_cdrId;
+}
+
+void DescribeChatMessagesRequest::SetCdrId(const string& _cdrId)
+{
+    m_cdrId = _cdrId;
+    m_cdrIdHasBeenSet = true;
+}
+
+bool DescribeChatMessagesRequest::CdrIdHasBeenSet() const
+{
+    return m_cdrIdHasBeenSet;
 }
 
 int64_t DescribeChatMessagesRequest::GetLimit() const
@@ -189,6 +198,22 @@ void DescribeChatMessagesRequest::SetOrder(const int64_t& _order)
 bool DescribeChatMessagesRequest::OrderHasBeenSet() const
 {
     return m_orderHasBeenSet;
+}
+
+string DescribeChatMessagesRequest::GetSessionId() const
+{
+    return m_sessionId;
+}
+
+void DescribeChatMessagesRequest::SetSessionId(const string& _sessionId)
+{
+    m_sessionId = _sessionId;
+    m_sessionIdHasBeenSet = true;
+}
+
+bool DescribeChatMessagesRequest::SessionIdHasBeenSet() const
+{
+    return m_sessionIdHasBeenSet;
 }
 
 

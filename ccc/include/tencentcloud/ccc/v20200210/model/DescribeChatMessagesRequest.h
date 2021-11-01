@@ -43,24 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务记录ID
-                     * @return CdrId 服务记录ID
-                     */
-                    std::string GetCdrId() const;
-
-                    /**
-                     * 设置服务记录ID
-                     * @param CdrId 服务记录ID
-                     */
-                    void SetCdrId(const std::string& _cdrId);
-
-                    /**
-                     * 判断参数 CdrId 是否已赋值
-                     * @return CdrId 是否已赋值
-                     */
-                    bool CdrIdHasBeenSet() const;
-
-                    /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
                      */
@@ -95,6 +77,24 @@ namespace TencentCloud
                      * @return SdkAppId 是否已赋值
                      */
                     bool SdkAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取服务记录ID
+                     * @return CdrId 服务记录ID
+                     */
+                    std::string GetCdrId() const;
+
+                    /**
+                     * 设置服务记录ID
+                     * @param CdrId 服务记录ID
+                     */
+                    void SetCdrId(const std::string& _cdrId);
+
+                    /**
+                     * 判断参数 CdrId 是否已赋值
+                     * @return CdrId 是否已赋值
+                     */
+                    bool CdrIdHasBeenSet() const;
 
                     /**
                      * 获取返回记录条数 最大为100默认20
@@ -150,13 +150,25 @@ namespace TencentCloud
                      */
                     bool OrderHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取服务记录SessionID
+                     * @return SessionId 服务记录SessionID
+                     */
+                    std::string GetSessionId() const;
 
                     /**
-                     * 服务记录ID
+                     * 设置服务记录SessionID
+                     * @param SessionId 服务记录SessionID
                      */
-                    std::string m_cdrId;
-                    bool m_cdrIdHasBeenSet;
+                    void SetSessionId(const std::string& _sessionId);
+
+                    /**
+                     * 判断参数 SessionId 是否已赋值
+                     * @return SessionId 是否已赋值
+                     */
+                    bool SessionIdHasBeenSet() const;
+
+                private:
 
                     /**
                      * 实例ID
@@ -169,6 +181,12 @@ namespace TencentCloud
                      */
                     int64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
+
+                    /**
+                     * 服务记录ID
+                     */
+                    std::string m_cdrId;
+                    bool m_cdrIdHasBeenSet;
 
                     /**
                      * 返回记录条数 最大为100默认20
@@ -187,6 +205,12 @@ namespace TencentCloud
                      */
                     int64_t m_order;
                     bool m_orderHasBeenSet;
+
+                    /**
+                     * 服务记录SessionID
+                     */
+                    std::string m_sessionId;
+                    bool m_sessionIdHasBeenSet;
 
                 };
             }

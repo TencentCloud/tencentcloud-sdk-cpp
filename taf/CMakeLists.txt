@@ -44,8 +44,9 @@ set(taf_public_header_model
   include/tencentcloud/taf/v20200210/model/OutputTaValue.h
   include/tencentcloud/taf/v20200210/model/RecognizePreciseTargetAudienceRequest.h
   include/tencentcloud/taf/v20200210/model/InputKolDataList.h
-  include/tencentcloud/taf/v20200210/model/InputRecognizeEffectiveFlow.h
   include/tencentcloud/taf/v20200210/model/RecognizePreciseTargetAudienceResponse.h
+  include/tencentcloud/taf/v20200210/model/InputRecognizeEffectiveFlow.h
+  include/tencentcloud/taf/v20200210/model/InputBusinessEncryptData.h
   include/tencentcloud/taf/v20200210/model/OutputRecognizeTargetAudience.h
   include/tencentcloud/taf/v20200210/model/InputSendTrafficSecuritySmsMsg.h
   )
@@ -77,8 +78,9 @@ set(taf_src
   src/v20200210/model/OutputTaValue.cpp
   src/v20200210/model/RecognizePreciseTargetAudienceRequest.cpp
   src/v20200210/model/InputKolDataList.cpp
-  src/v20200210/model/InputRecognizeEffectiveFlow.cpp
   src/v20200210/model/RecognizePreciseTargetAudienceResponse.cpp
+  src/v20200210/model/InputRecognizeEffectiveFlow.cpp
+  src/v20200210/model/InputBusinessEncryptData.cpp
   src/v20200210/model/OutputRecognizeTargetAudience.cpp
   src/v20200210/model/InputSendTrafficSecuritySmsMsg.cpp
   )

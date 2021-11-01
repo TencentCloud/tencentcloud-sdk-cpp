@@ -137,6 +137,24 @@ namespace TencentCloud
                     bool TrackDataHasBeenSet() const;
 
                     /**
+                     * 获取轨道数据对应的画布宽高比。
+                     * @return AspectRatio 轨道数据对应的画布宽高比。
+                     */
+                    std::string GetAspectRatio() const;
+
+                    /**
+                     * 设置轨道数据对应的画布宽高比。
+                     * @param AspectRatio 轨道数据对应的画布宽高比。
+                     */
+                    void SetAspectRatio(const std::string& _aspectRatio);
+
+                    /**
+                     * 判断参数 AspectRatio 是否已赋值
+                     * @return AspectRatio 是否已赋值
+                     */
+                    bool AspectRatioHasBeenSet() const;
+
+                    /**
                      * 获取视频封面图片文件（如 jpeg, png 等）进行 Base64 编码后的字符串，仅支持 gif、jpeg、png 三种图片格式，原图片文件不能超过2 M大 小。
                      * @return CoverData 视频封面图片文件（如 jpeg, png 等）进行 Base64 编码后的字符串，仅支持 gif、jpeg、png 三种图片格式，原图片文件不能超过2 M大 小。
                      */
@@ -238,6 +256,12 @@ namespace TencentCloud
                      */
                     std::string m_trackData;
                     bool m_trackDataHasBeenSet;
+
+                    /**
+                     * 轨道数据对应的画布宽高比。
+                     */
+                    std::string m_aspectRatio;
+                    bool m_aspectRatioHasBeenSet;
 
                     /**
                      * 视频封面图片文件（如 jpeg, png 等）进行 Base64 编码后的字符串，仅支持 gif、jpeg、png 三种图片格式，原图片文件不能超过2 M大 小。

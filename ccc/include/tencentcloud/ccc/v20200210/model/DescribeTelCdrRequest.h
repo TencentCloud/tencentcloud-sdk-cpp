@@ -204,6 +204,24 @@ namespace TencentCloud
                      */
                     bool PhonesHasBeenSet() const;
 
+                    /**
+                     * 获取按SessionId筛选
+                     * @return SessionIds 按SessionId筛选
+                     */
+                    std::vector<std::string> GetSessionIds() const;
+
+                    /**
+                     * 设置按SessionId筛选
+                     * @param SessionIds 按SessionId筛选
+                     */
+                    void SetSessionIds(const std::vector<std::string>& _sessionIds);
+
+                    /**
+                     * 判断参数 SessionIds 是否已赋值
+                     * @return SessionIds 是否已赋值
+                     */
+                    bool SessionIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +277,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_phones;
                     bool m_phonesHasBeenSet;
+
+                    /**
+                     * 按SessionId筛选
+                     */
+                    std::vector<std::string> m_sessionIds;
+                    bool m_sessionIdsHasBeenSet;
 
                 };
             }

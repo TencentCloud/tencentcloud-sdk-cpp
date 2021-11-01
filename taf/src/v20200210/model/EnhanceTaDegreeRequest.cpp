@@ -23,7 +23,8 @@ using namespace TencentCloud::Taf::V20200210::Model;
 using namespace std;
 
 EnhanceTaDegreeRequest::EnhanceTaDegreeRequest() :
-    m_bspDataHasBeenSet(false)
+    m_bspDataHasBeenSet(false),
+    m_businessEncryptDataHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,15 @@ string EnhanceTaDegreeRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_bspData.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_businessEncryptDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessEncryptData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_businessEncryptData.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -65,6 +75,22 @@ void EnhanceTaDegreeRequest::SetBspData(const InputTaBspData& _bspData)
 bool EnhanceTaDegreeRequest::BspDataHasBeenSet() const
 {
     return m_bspDataHasBeenSet;
+}
+
+InputBusinessEncryptData EnhanceTaDegreeRequest::GetBusinessEncryptData() const
+{
+    return m_businessEncryptData;
+}
+
+void EnhanceTaDegreeRequest::SetBusinessEncryptData(const InputBusinessEncryptData& _businessEncryptData)
+{
+    m_businessEncryptData = _businessEncryptData;
+    m_businessEncryptDataHasBeenSet = true;
+}
+
+bool EnhanceTaDegreeRequest::BusinessEncryptDataHasBeenSet() const
+{
+    return m_businessEncryptDataHasBeenSet;
 }
 
 

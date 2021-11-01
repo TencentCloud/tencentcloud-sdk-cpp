@@ -22,7 +22,10 @@
 using namespace TencentCloud::Cls::V20201016::Model;
 using namespace std;
 
-UploadLogRequest::UploadLogRequest()
+UploadLogRequest::UploadLogRequest() :
+    m_topicIdHasBeenSet(false),
+    m_hashKeyHasBeenSet(false),
+    m_compressTypeHasBeenSet(false)
 {
 }
 
@@ -33,6 +36,30 @@ string UploadLogRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_topicIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_topicId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hashKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HashKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hashKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_compressTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CompressType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_compressType.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +67,53 @@ string UploadLogRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string UploadLogRequest::GetTopicId() const
+{
+    return m_topicId;
+}
+
+void UploadLogRequest::SetTopicId(const string& _topicId)
+{
+    m_topicId = _topicId;
+    m_topicIdHasBeenSet = true;
+}
+
+bool UploadLogRequest::TopicIdHasBeenSet() const
+{
+    return m_topicIdHasBeenSet;
+}
+
+string UploadLogRequest::GetHashKey() const
+{
+    return m_hashKey;
+}
+
+void UploadLogRequest::SetHashKey(const string& _hashKey)
+{
+    m_hashKey = _hashKey;
+    m_hashKeyHasBeenSet = true;
+}
+
+bool UploadLogRequest::HashKeyHasBeenSet() const
+{
+    return m_hashKeyHasBeenSet;
+}
+
+string UploadLogRequest::GetCompressType() const
+{
+    return m_compressType;
+}
+
+void UploadLogRequest::SetCompressType(const string& _compressType)
+{
+    m_compressType = _compressType;
+    m_compressTypeHasBeenSet = true;
+}
+
+bool UploadLogRequest::CompressTypeHasBeenSet() const
+{
+    return m_compressTypeHasBeenSet;
+}
 
 

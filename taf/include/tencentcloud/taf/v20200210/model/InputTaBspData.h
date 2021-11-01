@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool GenderHasBeenSet() const;
 
                     /**
-                     * 获取用户操作时间
-                     * @return UserTime 用户操作时间
+                     * 获取用户操作时间,uinux时间戳，精确到秒
+                     * @return UserTime 用户操作时间,uinux时间戳，精确到秒
                      */
                     int64_t GetUserTime() const;
 
                     /**
-                     * 设置用户操作时间
-                     * @param UserTime 用户操作时间
+                     * 设置用户操作时间,uinux时间戳，精确到秒
+                     * @param UserTime 用户操作时间,uinux时间戳，精确到秒
                      */
                     void SetUserTime(const int64_t& _userTime);
 
@@ -496,6 +496,24 @@ namespace TencentCloud
                      */
                     bool ContextHasBeenSet() const;
 
+                    /**
+                     * 获取是否授权
+                     * @return IsAuthorized 是否授权
+                     */
+                    uint64_t GetIsAuthorized() const;
+
+                    /**
+                     * 设置是否授权
+                     * @param IsAuthorized 是否授权
+                     */
+                    void SetIsAuthorized(const uint64_t& _isAuthorized);
+
+                    /**
+                     * 判断参数 IsAuthorized 是否已赋值
+                     * @return IsAuthorized 是否已赋值
+                     */
+                    bool IsAuthorizedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -529,7 +547,7 @@ namespace TencentCloud
                     bool m_genderHasBeenSet;
 
                     /**
-                     * 用户操作时间
+                     * 用户操作时间,uinux时间戳，精确到秒
                      */
                     int64_t m_userTime;
                     bool m_userTimeHasBeenSet;
@@ -647,6 +665,12 @@ namespace TencentCloud
                      */
                     std::string m_context;
                     bool m_contextHasBeenSet;
+
+                    /**
+                     * 是否授权
+                     */
+                    uint64_t m_isAuthorized;
+                    bool m_isAuthorizedHasBeenSet;
 
                 };
             }

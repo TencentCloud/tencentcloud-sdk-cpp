@@ -42,7 +42,79 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取主题id
+                     * @return TopicId 主题id
+                     */
+                    std::string GetTopicId() const;
+
+                    /**
+                     * 设置主题id
+                     * @param TopicId 主题id
+                     */
+                    void SetTopicId(const std::string& _topicId);
+
+                    /**
+                     * 判断参数 TopicId 是否已赋值
+                     * @return TopicId 是否已赋值
+                     */
+                    bool TopicIdHasBeenSet() const;
+
+                    /**
+                     * 获取根据 hashkey 写入相应范围的主题分区
+                     * @return HashKey 根据 hashkey 写入相应范围的主题分区
+                     */
+                    std::string GetHashKey() const;
+
+                    /**
+                     * 设置根据 hashkey 写入相应范围的主题分区
+                     * @param HashKey 根据 hashkey 写入相应范围的主题分区
+                     */
+                    void SetHashKey(const std::string& _hashKey);
+
+                    /**
+                     * 判断参数 HashKey 是否已赋值
+                     * @return HashKey 是否已赋值
+                     */
+                    bool HashKeyHasBeenSet() const;
+
+                    /**
+                     * 获取压缩方法
+                     * @return CompressType 压缩方法
+                     */
+                    std::string GetCompressType() const;
+
+                    /**
+                     * 设置压缩方法
+                     * @param CompressType 压缩方法
+                     */
+                    void SetCompressType(const std::string& _compressType);
+
+                    /**
+                     * 判断参数 CompressType 是否已赋值
+                     * @return CompressType 是否已赋值
+                     */
+                    bool CompressTypeHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 主题id
+                     */
+                    std::string m_topicId;
+                    bool m_topicIdHasBeenSet;
+
+                    /**
+                     * 根据 hashkey 写入相应范围的主题分区
+                     */
+                    std::string m_hashKey;
+                    bool m_hashKeyHasBeenSet;
+
+                    /**
+                     * 压缩方法
+                     */
+                    std::string m_compressType;
+                    bool m_compressTypeHasBeenSet;
 
                 };
             }

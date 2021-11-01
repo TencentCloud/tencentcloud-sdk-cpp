@@ -31,7 +31,8 @@ DescribeTelCdrRequest::DescribeTelCdrRequest() :
     m_sdkAppIdHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
     m_pageNumberHasBeenSet(false),
-    m_phonesHasBeenSet(false)
+    m_phonesHasBeenSet(false),
+    m_sessionIdsHasBeenSet(false)
 {
 }
 
@@ -114,6 +115,19 @@ string DescribeTelCdrRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_phones.begin(); itr != m_phones.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_sessionIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_sessionIds.begin(); itr != m_sessionIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -269,6 +283,22 @@ void DescribeTelCdrRequest::SetPhones(const vector<string>& _phones)
 bool DescribeTelCdrRequest::PhonesHasBeenSet() const
 {
     return m_phonesHasBeenSet;
+}
+
+vector<string> DescribeTelCdrRequest::GetSessionIds() const
+{
+    return m_sessionIds;
+}
+
+void DescribeTelCdrRequest::SetSessionIds(const vector<string>& _sessionIds)
+{
+    m_sessionIds = _sessionIds;
+    m_sessionIdsHasBeenSet = true;
+}
+
+bool DescribeTelCdrRequest::SessionIdsHasBeenSet() const
+{
+    return m_sessionIdsHasBeenSet;
 }
 
 

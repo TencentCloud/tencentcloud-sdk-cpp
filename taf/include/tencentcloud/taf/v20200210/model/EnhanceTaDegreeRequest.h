@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/taf/v20200210/model/InputTaBspData.h>
+#include <tencentcloud/taf/v20200210/model/InputBusinessEncryptData.h>
 
 
 namespace TencentCloud
@@ -61,6 +62,24 @@ namespace TencentCloud
                      */
                     bool BspDataHasBeenSet() const;
 
+                    /**
+                     * 获取业务加密数据
+                     * @return BusinessEncryptData 业务加密数据
+                     */
+                    InputBusinessEncryptData GetBusinessEncryptData() const;
+
+                    /**
+                     * 设置业务加密数据
+                     * @param BusinessEncryptData 业务加密数据
+                     */
+                    void SetBusinessEncryptData(const InputBusinessEncryptData& _businessEncryptData);
+
+                    /**
+                     * 判断参数 BusinessEncryptData 是否已赋值
+                     * @return BusinessEncryptData 是否已赋值
+                     */
+                    bool BusinessEncryptDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -68,6 +87,12 @@ namespace TencentCloud
                      */
                     InputTaBspData m_bspData;
                     bool m_bspDataHasBeenSet;
+
+                    /**
+                     * 业务加密数据
+                     */
+                    InputBusinessEncryptData m_businessEncryptData;
+                    bool m_businessEncryptDataHasBeenSet;
 
                 };
             }

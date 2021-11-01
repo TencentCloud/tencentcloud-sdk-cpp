@@ -27,6 +27,7 @@ ExportVideoByEditorTrackDataRequest::ExportVideoByEditorTrackDataRequest() :
     m_definitionHasBeenSet(false),
     m_exportDestinationHasBeenSet(false),
     m_trackDataHasBeenSet(false),
+    m_aspectRatioHasBeenSet(false),
     m_coverDataHasBeenSet(false),
     m_cMEExportInfoHasBeenSet(false),
     m_vODExportInfoHasBeenSet(false),
@@ -71,6 +72,14 @@ string ExportVideoByEditorTrackDataRequest::ToJsonString() const
         string key = "TrackData";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_trackData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aspectRatioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AspectRatio";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_aspectRatio.c_str(), allocator).Move(), allocator);
     }
 
     if (m_coverDataHasBeenSet)
@@ -177,6 +186,22 @@ void ExportVideoByEditorTrackDataRequest::SetTrackData(const string& _trackData)
 bool ExportVideoByEditorTrackDataRequest::TrackDataHasBeenSet() const
 {
     return m_trackDataHasBeenSet;
+}
+
+string ExportVideoByEditorTrackDataRequest::GetAspectRatio() const
+{
+    return m_aspectRatio;
+}
+
+void ExportVideoByEditorTrackDataRequest::SetAspectRatio(const string& _aspectRatio)
+{
+    m_aspectRatio = _aspectRatio;
+    m_aspectRatioHasBeenSet = true;
+}
+
+bool ExportVideoByEditorTrackDataRequest::AspectRatioHasBeenSet() const
+{
+    return m_aspectRatioHasBeenSet;
 }
 
 string ExportVideoByEditorTrackDataRequest::GetCoverData() const

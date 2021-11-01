@@ -4211,49 +4211,6 @@ CdbClient::ModifyRoReplicationDelayOutcomeCallable CdbClient::ModifyRoReplicatio
     return task->get_future();
 }
 
-CdbClient::ModifyRoTypeOutcome CdbClient::ModifyRoType(const ModifyRoTypeRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyRoType");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyRoTypeResponse rsp = ModifyRoTypeResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyRoTypeOutcome(rsp);
-        else
-            return ModifyRoTypeOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyRoTypeOutcome(outcome.GetError());
-    }
-}
-
-void CdbClient::ModifyRoTypeAsync(const ModifyRoTypeRequest& request, const ModifyRoTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyRoType(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CdbClient::ModifyRoTypeOutcomeCallable CdbClient::ModifyRoTypeCallable(const ModifyRoTypeRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifyRoTypeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyRoType(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CdbClient::ModifyTimeWindowOutcome CdbClient::ModifyTimeWindow(const ModifyTimeWindowRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyTimeWindow");

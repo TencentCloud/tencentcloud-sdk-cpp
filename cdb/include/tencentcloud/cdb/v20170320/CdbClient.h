@@ -217,8 +217,6 @@
 #include <tencentcloud/cdb/v20170320/model/ModifyRoGroupInfoResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyRoReplicationDelayRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyRoReplicationDelayResponse.h>
-#include <tencentcloud/cdb/v20170320/model/ModifyRoTypeRequest.h>
-#include <tencentcloud/cdb/v20170320/model/ModifyRoTypeResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyTimeWindowRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyTimeWindowResponse.h>
 #include <tencentcloud/cdb/v20170320/model/OfflineIsolatedInstancesRequest.h>
@@ -560,9 +558,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyRoReplicationDelayResponse> ModifyRoReplicationDelayOutcome;
                 typedef std::future<ModifyRoReplicationDelayOutcome> ModifyRoReplicationDelayOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyRoReplicationDelayRequest&, ModifyRoReplicationDelayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRoReplicationDelayAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyRoTypeResponse> ModifyRoTypeOutcome;
-                typedef std::future<ModifyRoTypeOutcome> ModifyRoTypeOutcomeCallable;
-                typedef std::function<void(const CdbClient*, const Model::ModifyRoTypeRequest&, ModifyRoTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRoTypeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyTimeWindowResponse> ModifyTimeWindowOutcome;
                 typedef std::future<ModifyTimeWindowOutcome> ModifyTimeWindowOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyTimeWindowRequest&, ModifyTimeWindowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTimeWindowAsyncHandler;
@@ -1520,15 +1515,6 @@ namespace TencentCloud
                 ModifyRoReplicationDelayOutcome ModifyRoReplicationDelay(const Model::ModifyRoReplicationDelayRequest &request);
                 void ModifyRoReplicationDelayAsync(const Model::ModifyRoReplicationDelayRequest& request, const ModifyRoReplicationDelayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyRoReplicationDelayOutcomeCallable ModifyRoReplicationDelayCallable(const Model::ModifyRoReplicationDelayRequest& request);
-
-                /**
-                 *修改只读实例类型，可以将普通只读实例变为延迟只读实例，或者将延迟只读实例变为普通只读实例。
-                 * @param req ModifyRoTypeRequest
-                 * @return ModifyRoTypeOutcome
-                 */
-                ModifyRoTypeOutcome ModifyRoType(const Model::ModifyRoTypeRequest &request);
-                void ModifyRoTypeAsync(const Model::ModifyRoTypeRequest& request, const ModifyRoTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyRoTypeOutcomeCallable ModifyRoTypeCallable(const Model::ModifyRoTypeRequest& request);
 
                 /**
                  *本接口(ModifyTimeWindow)用于更新云数据库实例的维护时间窗口。

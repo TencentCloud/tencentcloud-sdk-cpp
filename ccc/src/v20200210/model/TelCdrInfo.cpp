@@ -44,7 +44,9 @@ TelCdrInfo::TelCdrInfo() :
     m_queuedTimestampHasBeenSet(false),
     m_postIVRKeyPressedHasBeenSet(false),
     m_queuedSkillGroupIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
+    m_sessionIdHasBeenSet(false),
+    m_protectedCallerHasBeenSet(false),
+    m_protectedCalleeHasBeenSet(false)
 {
 }
 
@@ -323,6 +325,26 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
         m_sessionIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ProtectedCaller") && !value["ProtectedCaller"].IsNull())
+    {
+        if (!value["ProtectedCaller"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.ProtectedCaller` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_protectedCaller = string(value["ProtectedCaller"].GetString());
+        m_protectedCallerHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProtectedCallee") && !value["ProtectedCallee"].IsNull())
+    {
+        if (!value["ProtectedCallee"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.ProtectedCallee` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_protectedCallee = string(value["ProtectedCallee"].GetString());
+        m_protectedCalleeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -540,6 +562,22 @@ void TelCdrInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "SessionId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protectedCallerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtectedCaller";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protectedCaller.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protectedCalleeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtectedCallee";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protectedCallee.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -927,5 +965,37 @@ void TelCdrInfo::SetSessionId(const string& _sessionId)
 bool TelCdrInfo::SessionIdHasBeenSet() const
 {
     return m_sessionIdHasBeenSet;
+}
+
+string TelCdrInfo::GetProtectedCaller() const
+{
+    return m_protectedCaller;
+}
+
+void TelCdrInfo::SetProtectedCaller(const string& _protectedCaller)
+{
+    m_protectedCaller = _protectedCaller;
+    m_protectedCallerHasBeenSet = true;
+}
+
+bool TelCdrInfo::ProtectedCallerHasBeenSet() const
+{
+    return m_protectedCallerHasBeenSet;
+}
+
+string TelCdrInfo::GetProtectedCallee() const
+{
+    return m_protectedCallee;
+}
+
+void TelCdrInfo::SetProtectedCallee(const string& _protectedCallee)
+{
+    m_protectedCallee = _protectedCallee;
+    m_protectedCalleeHasBeenSet = true;
+}
+
+bool TelCdrInfo::ProtectedCalleeHasBeenSet() const
+{
+    return m_protectedCalleeHasBeenSet;
 }
 

@@ -33,7 +33,9 @@ PSTNSession::PSTNSession() :
     m_sessionStatusHasBeenSet(false),
     m_directionHasBeenSet(false),
     m_outBoundCallerHasBeenSet(false),
-    m_outBoundCalleeHasBeenSet(false)
+    m_outBoundCalleeHasBeenSet(false),
+    m_protectedCallerHasBeenSet(false),
+    m_protectedCalleeHasBeenSet(false)
 {
 }
 
@@ -172,6 +174,26 @@ CoreInternalOutcome PSTNSession::Deserialize(const rapidjson::Value &value)
         m_outBoundCalleeHasBeenSet = true;
     }
 
+    if (value.HasMember("ProtectedCaller") && !value["ProtectedCaller"].IsNull())
+    {
+        if (!value["ProtectedCaller"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PSTNSession.ProtectedCaller` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_protectedCaller = string(value["ProtectedCaller"].GetString());
+        m_protectedCallerHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProtectedCallee") && !value["ProtectedCallee"].IsNull())
+    {
+        if (!value["ProtectedCallee"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PSTNSession.ProtectedCallee` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_protectedCallee = string(value["ProtectedCallee"].GetString());
+        m_protectedCalleeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +303,22 @@ void PSTNSession::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "OutBoundCallee";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_outBoundCallee.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protectedCallerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtectedCaller";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protectedCaller.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protectedCalleeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtectedCallee";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protectedCallee.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -492,5 +530,37 @@ void PSTNSession::SetOutBoundCallee(const string& _outBoundCallee)
 bool PSTNSession::OutBoundCalleeHasBeenSet() const
 {
     return m_outBoundCalleeHasBeenSet;
+}
+
+string PSTNSession::GetProtectedCaller() const
+{
+    return m_protectedCaller;
+}
+
+void PSTNSession::SetProtectedCaller(const string& _protectedCaller)
+{
+    m_protectedCaller = _protectedCaller;
+    m_protectedCallerHasBeenSet = true;
+}
+
+bool PSTNSession::ProtectedCallerHasBeenSet() const
+{
+    return m_protectedCallerHasBeenSet;
+}
+
+string PSTNSession::GetProtectedCallee() const
+{
+    return m_protectedCallee;
+}
+
+void PSTNSession::SetProtectedCallee(const string& _protectedCallee)
+{
+    m_protectedCallee = _protectedCallee;
+    m_protectedCalleeHasBeenSet = true;
+}
+
+bool PSTNSession::ProtectedCalleeHasBeenSet() const
+{
+    return m_protectedCalleeHasBeenSet;
 }
 

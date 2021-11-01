@@ -45,7 +45,8 @@ InputTaBspData::InputTaBspData() :
     m_locationHasBeenSet(false),
     m_latitudeHasBeenSet(false),
     m_longitudeHasBeenSet(false),
-    m_contextHasBeenSet(false)
+    m_contextHasBeenSet(false),
+    m_isAuthorizedHasBeenSet(false)
 {
 }
 
@@ -304,6 +305,16 @@ CoreInternalOutcome InputTaBspData::Deserialize(const rapidjson::Value &value)
         m_contextHasBeenSet = true;
     }
 
+    if (value.HasMember("IsAuthorized") && !value["IsAuthorized"].IsNull())
+    {
+        if (!value["IsAuthorized"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InputTaBspData.IsAuthorized` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isAuthorized = value["IsAuthorized"].GetUint64();
+        m_isAuthorizedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -509,6 +520,14 @@ void InputTaBspData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Context";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_context.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isAuthorizedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsAuthorized";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isAuthorized, allocator);
     }
 
 }
@@ -912,5 +931,21 @@ void InputTaBspData::SetContext(const string& _context)
 bool InputTaBspData::ContextHasBeenSet() const
 {
     return m_contextHasBeenSet;
+}
+
+uint64_t InputTaBspData::GetIsAuthorized() const
+{
+    return m_isAuthorized;
+}
+
+void InputTaBspData::SetIsAuthorized(const uint64_t& _isAuthorized)
+{
+    m_isAuthorized = _isAuthorized;
+    m_isAuthorizedHasBeenSet = true;
+}
+
+bool InputTaBspData::IsAuthorizedHasBeenSet() const
+{
+    return m_isAuthorizedHasBeenSet;
 }
 

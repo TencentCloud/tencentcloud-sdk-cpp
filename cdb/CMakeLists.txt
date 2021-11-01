@@ -31,7 +31,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeRoMinScaleResponse.h
   include/tencentcloud/cdb/v20170320/model/CreateAuditRuleResponse.h
   include/tencentcloud/cdb/v20170320/model/StopDBImportJobRequest.h
-  include/tencentcloud/cdb/v20170320/model/OfflineIsolatedInstancesResponse.h
+  include/tencentcloud/cdb/v20170320/model/RoWeightValue.h
   include/tencentcloud/cdb/v20170320/model/DescribeSlowLogDataResponse.h
   include/tencentcloud/cdb/v20170320/model/SellType.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBInstanceInfoResponse.h
@@ -168,7 +168,6 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeBackupTablesResponse.h
   include/tencentcloud/cdb/v20170320/model/Outbound.h
   include/tencentcloud/cdb/v20170320/model/SlaveInstanceInfo.h
-  include/tencentcloud/cdb/v20170320/model/RoWeightValue.h
   include/tencentcloud/cdb/v20170320/model/ModifyDBInstanceVipVportRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyParamTemplateResponse.h
   include/tencentcloud/cdb/v20170320/model/ModifyDBInstanceSecurityGroupsResponse.h
@@ -194,7 +193,6 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeAsyncRequestInfoRequest.h
   include/tencentcloud/cdb/v20170320/model/TablePrivilege.h
   include/tencentcloud/cdb/v20170320/model/BalanceRoGroupLoadRequest.h
-  include/tencentcloud/cdb/v20170320/model/ModifyRoTypeResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeAuditRulesRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeBackupOverviewResponse.h
   include/tencentcloud/cdb/v20170320/model/ColumnPrivilege.h
@@ -219,7 +217,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeDBInstanceConfigRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeBackupTablesRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeBinlogsResponse.h
-  include/tencentcloud/cdb/v20170320/model/ModifyRoTypeRequest.h
+  include/tencentcloud/cdb/v20170320/model/OfflineIsolatedInstancesResponse.h
   include/tencentcloud/cdb/v20170320/model/SwitchDrInstanceToMasterResponse.h
   include/tencentcloud/cdb/v20170320/model/DatabasePrivilege.h
   include/tencentcloud/cdb/v20170320/model/RoGroupAttr.h
@@ -338,7 +336,7 @@ set(cdb_src
   src/v20170320/model/DescribeRoMinScaleResponse.cpp
   src/v20170320/model/CreateAuditRuleResponse.cpp
   src/v20170320/model/StopDBImportJobRequest.cpp
-  src/v20170320/model/OfflineIsolatedInstancesResponse.cpp
+  src/v20170320/model/RoWeightValue.cpp
   src/v20170320/model/DescribeSlowLogDataResponse.cpp
   src/v20170320/model/SellType.cpp
   src/v20170320/model/DescribeDBInstanceInfoResponse.cpp
@@ -475,7 +473,6 @@ set(cdb_src
   src/v20170320/model/DescribeBackupTablesResponse.cpp
   src/v20170320/model/Outbound.cpp
   src/v20170320/model/SlaveInstanceInfo.cpp
-  src/v20170320/model/RoWeightValue.cpp
   src/v20170320/model/ModifyDBInstanceVipVportRequest.cpp
   src/v20170320/model/ModifyParamTemplateResponse.cpp
   src/v20170320/model/ModifyDBInstanceSecurityGroupsResponse.cpp
@@ -501,7 +498,6 @@ set(cdb_src
   src/v20170320/model/DescribeAsyncRequestInfoRequest.cpp
   src/v20170320/model/TablePrivilege.cpp
   src/v20170320/model/BalanceRoGroupLoadRequest.cpp
-  src/v20170320/model/ModifyRoTypeResponse.cpp
   src/v20170320/model/DescribeAuditRulesRequest.cpp
   src/v20170320/model/DescribeBackupOverviewResponse.cpp
   src/v20170320/model/ColumnPrivilege.cpp
@@ -526,7 +522,7 @@ set(cdb_src
   src/v20170320/model/DescribeDBInstanceConfigRequest.cpp
   src/v20170320/model/DescribeBackupTablesRequest.cpp
   src/v20170320/model/DescribeBinlogsResponse.cpp
-  src/v20170320/model/ModifyRoTypeRequest.cpp
+  src/v20170320/model/OfflineIsolatedInstancesResponse.cpp
   src/v20170320/model/SwitchDrInstanceToMasterResponse.cpp
   src/v20170320/model/DatabasePrivilege.cpp
   src/v20170320/model/RoGroupAttr.cpp

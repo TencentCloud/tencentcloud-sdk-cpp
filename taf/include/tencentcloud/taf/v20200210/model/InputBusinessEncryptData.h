@@ -14,33 +14,36 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CDB_V20170320_MODEL_MODIFYROTYPERESPONSE_H_
-#define TENCENTCLOUD_CDB_V20170320_MODEL_MODIFYROTYPERESPONSE_H_
+#ifndef TENCENTCLOUD_TAF_V20200210_MODEL_INPUTBUSINESSENCRYPTDATA_H_
+#define TENCENTCLOUD_TAF_V20200210_MODEL_INPUTBUSINESSENCRYPTDATA_H_
 
 #include <string>
 #include <vector>
 #include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 
 
 namespace TencentCloud
 {
-    namespace Cdb
+    namespace Taf
     {
-        namespace V20170320
+        namespace V20200210
         {
             namespace Model
             {
                 /**
-                * ModifyRoType返回参数结构体
+                * 业务入参
                 */
-                class ModifyRoTypeResponse : public AbstractModel
+                class InputBusinessEncryptData : public AbstractModel
                 {
                 public:
-                    ModifyRoTypeResponse();
-                    ~ModifyRoTypeResponse() = default;
-                    CoreInternalOutcome Deserialize(const std::string &payload);
-                    std::string ToJsonString() const;
+                    InputBusinessEncryptData();
+                    ~InputBusinessEncryptData() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                 private:
@@ -51,4 +54,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CDB_V20170320_MODEL_MODIFYROTYPERESPONSE_H_
+#endif // !TENCENTCLOUD_TAF_V20200210_MODEL_INPUTBUSINESSENCRYPTDATA_H_
