@@ -160,6 +160,24 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
+                     * 获取编辑视频任务进度，取值范围 [0-100] 。
+                     * @return Progress 编辑视频任务进度，取值范围 [0-100] 。
+                     */
+                    int64_t GetProgress() const;
+
+                    /**
+                     * 设置编辑视频任务进度，取值范围 [0-100] 。
+                     * @param Progress 编辑视频任务进度，取值范围 [0-100] 。
+                     */
+                    void SetProgress(const int64_t& _progress);
+
+                    /**
+                     * 判断参数 Progress 是否已赋值
+                     * @return Progress 是否已赋值
+                     */
+                    bool ProgressHasBeenSet() const;
+
+                    /**
                      * 获取视频编辑任务的输入。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Input 视频编辑任务的输入。
@@ -204,6 +222,24 @@ namespace TencentCloud
                     bool OutputHasBeenSet() const;
 
                     /**
+                     * 获取原始视频的元信息。
+                     * @return MetaData 原始视频的元信息。
+                     */
+                    MediaMetaData GetMetaData() const;
+
+                    /**
+                     * 设置原始视频的元信息。
+                     * @param MetaData 原始视频的元信息。
+                     */
+                    void SetMetaData(const MediaMetaData& _metaData);
+
+                    /**
+                     * 判断参数 MetaData 是否已赋值
+                     * @return MetaData 是否已赋值
+                     */
+                    bool MetaDataHasBeenSet() const;
+
+                    /**
                      * 获取若发起视频编辑任务时指定了视频处理流程，则该字段为流程任务 ID。
                      * @return ProcedureTaskId 若发起视频编辑任务时指定了视频处理流程，则该字段为流程任务 ID。
                      */
@@ -220,24 +256,6 @@ namespace TencentCloud
                      * @return ProcedureTaskId 是否已赋值
                      */
                     bool ProcedureTaskIdHasBeenSet() const;
-
-                    /**
-                     * 获取来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-                     * @return SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-                     */
-                    std::string GetSessionContext() const;
-
-                    /**
-                     * 设置来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-                     * @param SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-                     */
-                    void SetSessionContext(const std::string& _sessionContext);
-
-                    /**
-                     * 判断参数 SessionContext 是否已赋值
-                     * @return SessionContext 是否已赋值
-                     */
-                    bool SessionContextHasBeenSet() const;
 
                     /**
                      * 获取用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
@@ -258,22 +276,22 @@ namespace TencentCloud
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取原始视频的元信息。
-                     * @return MetaData 原始视频的元信息。
+                     * 获取来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * @return SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
                      */
-                    MediaMetaData GetMetaData() const;
+                    std::string GetSessionContext() const;
 
                     /**
-                     * 设置原始视频的元信息。
-                     * @param MetaData 原始视频的元信息。
+                     * 设置来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * @param SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
                      */
-                    void SetMetaData(const MediaMetaData& _metaData);
+                    void SetSessionContext(const std::string& _sessionContext);
 
                     /**
-                     * 判断参数 MetaData 是否已赋值
-                     * @return MetaData 是否已赋值
+                     * 判断参数 SessionContext 是否已赋值
+                     * @return SessionContext 是否已赋值
                      */
-                    bool MetaDataHasBeenSet() const;
+                    bool SessionContextHasBeenSet() const;
 
                 private:
 
@@ -313,6 +331,12 @@ namespace TencentCloud
                     bool m_messageHasBeenSet;
 
                     /**
+                     * 编辑视频任务进度，取值范围 [0-100] 。
+                     */
+                    int64_t m_progress;
+                    bool m_progressHasBeenSet;
+
+                    /**
                      * 视频编辑任务的输入。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -327,16 +351,16 @@ namespace TencentCloud
                     bool m_outputHasBeenSet;
 
                     /**
+                     * 原始视频的元信息。
+                     */
+                    MediaMetaData m_metaData;
+                    bool m_metaDataHasBeenSet;
+
+                    /**
                      * 若发起视频编辑任务时指定了视频处理流程，则该字段为流程任务 ID。
                      */
                     std::string m_procedureTaskId;
                     bool m_procedureTaskIdHasBeenSet;
-
-                    /**
-                     * 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-                     */
-                    std::string m_sessionContext;
-                    bool m_sessionContextHasBeenSet;
 
                     /**
                      * 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
@@ -345,10 +369,10 @@ namespace TencentCloud
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * 原始视频的元信息。
+                     * 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
                      */
-                    MediaMetaData m_metaData;
-                    bool m_metaDataHasBeenSet;
+                    std::string m_sessionContext;
+                    bool m_sessionContextHasBeenSet;
 
                 };
             }

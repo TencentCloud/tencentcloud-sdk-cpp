@@ -179,6 +179,50 @@ namespace TencentCloud
                      */
                     bool UuidHasBeenSet() const;
 
+                    /**
+                     * 获取内核版本号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KernelVersion 内核版本号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetKernelVersion() const;
+
+                    /**
+                     * 设置内核版本号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param KernelVersion 内核版本号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetKernelVersion(const std::string& _kernelVersion);
+
+                    /**
+                     * 判断参数 KernelVersion 是否已赋值
+                     * @return KernelVersion 是否已赋值
+                     */
+                    bool KernelVersionHasBeenSet() const;
+
+                    /**
+                     * 获取在线状态 OFFLINE，ONLINE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MachineStatus 在线状态 OFFLINE，ONLINE
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMachineStatus() const;
+
+                    /**
+                     * 设置在线状态 OFFLINE，ONLINE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MachineStatus 在线状态 OFFLINE，ONLINE
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMachineStatus(const std::string& _machineStatus);
+
+                    /**
+                     * 判断参数 MachineStatus 是否已赋值
+                     * @return MachineStatus 是否已赋值
+                     */
+                    bool MachineStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -222,6 +266,20 @@ namespace TencentCloud
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;
+
+                    /**
+                     * 内核版本号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_kernelVersion;
+                    bool m_kernelVersionHasBeenSet;
+
+                    /**
+                     * 在线状态 OFFLINE，ONLINE
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_machineStatus;
+                    bool m_machineStatusHasBeenSet;
 
                 };
             }

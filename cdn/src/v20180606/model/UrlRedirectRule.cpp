@@ -24,7 +24,8 @@ UrlRedirectRule::UrlRedirectRule() :
     m_redirectStatusCodeHasBeenSet(false),
     m_patternHasBeenSet(false),
     m_redirectUrlHasBeenSet(false),
-    m_redirectHostHasBeenSet(false)
+    m_redirectHostHasBeenSet(false),
+    m_fullMatchHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome UrlRedirectRule::Deserialize(const rapidjson::Value &value)
         m_redirectHostHasBeenSet = true;
     }
 
+    if (value.HasMember("FullMatch") && !value["FullMatch"].IsNull())
+    {
+        if (!value["FullMatch"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `UrlRedirectRule.FullMatch` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_fullMatch = value["FullMatch"].GetBool();
+        m_fullMatchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void UrlRedirectRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "RedirectHost";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_redirectHost.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fullMatchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FullMatch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fullMatch, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void UrlRedirectRule::SetRedirectHost(const string& _redirectHost)
 bool UrlRedirectRule::RedirectHostHasBeenSet() const
 {
     return m_redirectHostHasBeenSet;
+}
+
+bool UrlRedirectRule::GetFullMatch() const
+{
+    return m_fullMatch;
+}
+
+void UrlRedirectRule::SetFullMatch(const bool& _fullMatch)
+{
+    m_fullMatch = _fullMatch;
+    m_fullMatchHasBeenSet = true;
+}
+
+bool UrlRedirectRule::FullMatchHasBeenSet() const
+{
+    return m_fullMatchHasBeenSet;
 }
 

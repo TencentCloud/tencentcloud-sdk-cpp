@@ -25,7 +25,8 @@ using namespace std;
 TerminateAsyncEventRequest::TerminateAsyncEventRequest() :
     m_functionNameHasBeenSet(false),
     m_invokeRequestIdHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
+    m_namespaceHasBeenSet(false),
+    m_graceShutdownHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string TerminateAsyncEventRequest::ToJsonString() const
         string key = "Namespace";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_namespace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_graceShutdownHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GraceShutdown";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_graceShutdown, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void TerminateAsyncEventRequest::SetNamespace(const string& _namespace)
 bool TerminateAsyncEventRequest::NamespaceHasBeenSet() const
 {
     return m_namespaceHasBeenSet;
+}
+
+bool TerminateAsyncEventRequest::GetGraceShutdown() const
+{
+    return m_graceShutdown;
+}
+
+void TerminateAsyncEventRequest::SetGraceShutdown(const bool& _graceShutdown)
+{
+    m_graceShutdown = _graceShutdown;
+    m_graceShutdownHasBeenSet = true;
+}
+
+bool TerminateAsyncEventRequest::GraceShutdownHasBeenSet() const
+{
+    return m_graceShutdownHasBeenSet;
 }
 
 

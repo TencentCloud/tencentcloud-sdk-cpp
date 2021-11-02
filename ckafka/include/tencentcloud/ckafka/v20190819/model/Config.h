@@ -204,6 +204,28 @@ delete：日志按保存时间删除；compact：日志按 key 压缩；compact,
                      */
                     bool MaxMessageBytesHasBeenSet() const;
 
+                    /**
+                     * 获取消息保留文件大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RetentionBytes 消息保留文件大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRetentionBytes() const;
+
+                    /**
+                     * 设置消息保留文件大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RetentionBytes 消息保留文件大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRetentionBytes(const int64_t& _retentionBytes);
+
+                    /**
+                     * 判断参数 RetentionBytes 是否已赋值
+                     * @return RetentionBytes 是否已赋值
+                     */
+                    bool RetentionBytesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -255,6 +277,13 @@ delete：日志按保存时间删除；compact：日志按 key 压缩；compact,
                      */
                     int64_t m_maxMessageBytes;
                     bool m_maxMessageBytesHasBeenSet;
+
+                    /**
+                     * 消息保留文件大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_retentionBytes;
+                    bool m_retentionBytesHasBeenSet;
 
                 };
             }

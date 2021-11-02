@@ -276,6 +276,24 @@ namespace TencentCloud
                      */
                     bool AclRuleNameHasBeenSet() const;
 
+                    /**
+                     * 获取可选, 保留文件大小. 默认为-1,单位bytes, 当前最小值为1048576B
+                     * @return RetentionBytes 可选, 保留文件大小. 默认为-1,单位bytes, 当前最小值为1048576B
+                     */
+                    int64_t GetRetentionBytes() const;
+
+                    /**
+                     * 设置可选, 保留文件大小. 默认为-1,单位bytes, 当前最小值为1048576B
+                     * @param RetentionBytes 可选, 保留文件大小. 默认为-1,单位bytes, 当前最小值为1048576B
+                     */
+                    void SetRetentionBytes(const int64_t& _retentionBytes);
+
+                    /**
+                     * 判断参数 RetentionBytes 是否已赋值
+                     * @return RetentionBytes 是否已赋值
+                     */
+                    bool RetentionBytesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -355,6 +373,12 @@ namespace TencentCloud
                      */
                     std::string m_aclRuleName;
                     bool m_aclRuleNameHasBeenSet;
+
+                    /**
+                     * 可选, 保留文件大小. 默认为-1,单位bytes, 当前最小值为1048576B
+                     */
+                    int64_t m_retentionBytes;
+                    bool m_retentionBytesHasBeenSet;
 
                 };
             }

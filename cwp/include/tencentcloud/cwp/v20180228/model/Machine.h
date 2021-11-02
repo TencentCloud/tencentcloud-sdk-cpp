@@ -484,6 +484,24 @@ namespace TencentCloud
                      */
                     bool MachineTypeHasBeenSet() const;
 
+                    /**
+                     * 获取内核版本
+                     * @return KernelVersion 内核版本
+                     */
+                    std::string GetKernelVersion() const;
+
+                    /**
+                     * 设置内核版本
+                     * @param KernelVersion 内核版本
+                     */
+                    void SetKernelVersion(const std::string& _kernelVersion);
+
+                    /**
+                     * 判断参数 KernelVersion 是否已赋值
+                     * @return KernelVersion 是否已赋值
+                     */
+                    bool KernelVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -627,6 +645,12 @@ namespace TencentCloud
                      */
                     std::string m_machineType;
                     bool m_machineTypeHasBeenSet;
+
+                    /**
+                     * 内核版本
+                     */
+                    std::string m_kernelVersion;
+                    bool m_kernelVersionHasBeenSet;
 
                 };
             }

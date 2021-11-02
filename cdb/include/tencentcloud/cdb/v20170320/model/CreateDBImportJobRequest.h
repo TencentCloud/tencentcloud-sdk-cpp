@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取文件名称。该文件是指用户已上传到腾讯云的文件。
-                     * @return FileName 文件名称。该文件是指用户已上传到腾讯云的文件。
+                     * 获取文件名称。该文件是指用户已上传到腾讯云的文件，仅支持.sql文件。
+                     * @return FileName 文件名称。该文件是指用户已上传到腾讯云的文件，仅支持.sql文件。
                      */
                     std::string GetFileName() const;
 
                     /**
-                     * 设置文件名称。该文件是指用户已上传到腾讯云的文件。
-                     * @param FileName 文件名称。该文件是指用户已上传到腾讯云的文件。
+                     * 设置文件名称。该文件是指用户已上传到腾讯云的文件，仅支持.sql文件。
+                     * @param FileName 文件名称。该文件是指用户已上传到腾讯云的文件，仅支持.sql文件。
                      */
                     void SetFileName(const std::string& _fileName);
 
@@ -141,7 +141,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 文件名称。该文件是指用户已上传到腾讯云的文件。
+                     * 文件名称。该文件是指用户已上传到腾讯云的文件，仅支持.sql文件。
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;

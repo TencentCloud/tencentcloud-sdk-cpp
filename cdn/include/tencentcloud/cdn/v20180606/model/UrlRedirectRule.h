@@ -122,6 +122,28 @@ namespace TencentCloud
                      */
                     bool RedirectHostHasBeenSet() const;
 
+                    /**
+                     * 获取指定是全路径配置还是任意匹配
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FullMatch 指定是全路径配置还是任意匹配
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetFullMatch() const;
+
+                    /**
+                     * 设置指定是全路径配置还是任意匹配
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FullMatch 指定是全路径配置还是任意匹配
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFullMatch(const bool& _fullMatch);
+
+                    /**
+                     * 判断参数 FullMatch 是否已赋值
+                     * @return FullMatch 是否已赋值
+                     */
+                    bool FullMatchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -148,6 +170,13 @@ namespace TencentCloud
                      */
                     std::string m_redirectHost;
                     bool m_redirectHostHasBeenSet;
+
+                    /**
+                     * 指定是全路径配置还是任意匹配
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_fullMatch;
+                    bool m_fullMatchHasBeenSet;
 
                 };
             }

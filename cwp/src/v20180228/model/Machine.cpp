@@ -42,7 +42,8 @@ Machine::Machine() :
     m_licenseStatusHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_hasAssetScanHasBeenSet(false),
-    m_machineTypeHasBeenSet(false)
+    m_machineTypeHasBeenSet(false),
+    m_kernelVersionHasBeenSet(false)
 {
 }
 
@@ -288,6 +289,16 @@ CoreInternalOutcome Machine::Deserialize(const rapidjson::Value &value)
         m_machineTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("KernelVersion") && !value["KernelVersion"].IsNull())
+    {
+        if (!value["KernelVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Machine.KernelVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kernelVersion = string(value["KernelVersion"].GetString());
+        m_kernelVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -477,6 +488,14 @@ void Machine::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "MachineType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_machineType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kernelVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KernelVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kernelVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -832,5 +851,21 @@ void Machine::SetMachineType(const string& _machineType)
 bool Machine::MachineTypeHasBeenSet() const
 {
     return m_machineTypeHasBeenSet;
+}
+
+string Machine::GetKernelVersion() const
+{
+    return m_kernelVersion;
+}
+
+void Machine::SetKernelVersion(const string& _kernelVersion)
+{
+    m_kernelVersion = _kernelVersion;
+    m_kernelVersionHasBeenSet = true;
+}
+
+bool Machine::KernelVersionHasBeenSet() const
+{
+    return m_kernelVersionHasBeenSet;
 }
 

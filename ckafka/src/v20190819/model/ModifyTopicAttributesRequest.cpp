@@ -35,7 +35,8 @@ ModifyTopicAttributesRequest::ModifyTopicAttributesRequest() :
     m_cleanUpPolicyHasBeenSet(false),
     m_ipWhiteListHasBeenSet(false),
     m_enableAclRuleHasBeenSet(false),
-    m_aclRuleNameHasBeenSet(false)
+    m_aclRuleNameHasBeenSet(false),
+    m_retentionBytesHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,14 @@ string ModifyTopicAttributesRequest::ToJsonString() const
         string key = "AclRuleName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_aclRuleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_retentionBytesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetentionBytes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_retentionBytes, allocator);
     }
 
 
@@ -369,6 +378,22 @@ void ModifyTopicAttributesRequest::SetAclRuleName(const string& _aclRuleName)
 bool ModifyTopicAttributesRequest::AclRuleNameHasBeenSet() const
 {
     return m_aclRuleNameHasBeenSet;
+}
+
+int64_t ModifyTopicAttributesRequest::GetRetentionBytes() const
+{
+    return m_retentionBytes;
+}
+
+void ModifyTopicAttributesRequest::SetRetentionBytes(const int64_t& _retentionBytes)
+{
+    m_retentionBytes = _retentionBytes;
+    m_retentionBytesHasBeenSet = true;
+}
+
+bool ModifyTopicAttributesRequest::RetentionBytesHasBeenSet() const
+{
+    return m_retentionBytesHasBeenSet;
 }
 
 

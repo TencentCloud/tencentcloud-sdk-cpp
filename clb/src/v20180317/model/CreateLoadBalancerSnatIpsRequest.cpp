@@ -24,7 +24,8 @@ using namespace std;
 
 CreateLoadBalancerSnatIpsRequest::CreateLoadBalancerSnatIpsRequest() :
     m_loadBalancerIdHasBeenSet(false),
-    m_snatIpsHasBeenSet(false)
+    m_snatIpsHasBeenSet(false),
+    m_numberHasBeenSet(false)
 {
 }
 
@@ -56,6 +57,14 @@ string CreateLoadBalancerSnatIpsRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_numberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Number";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_number, allocator);
     }
 
 
@@ -96,6 +105,22 @@ void CreateLoadBalancerSnatIpsRequest::SetSnatIps(const vector<SnatIp>& _snatIps
 bool CreateLoadBalancerSnatIpsRequest::SnatIpsHasBeenSet() const
 {
     return m_snatIpsHasBeenSet;
+}
+
+uint64_t CreateLoadBalancerSnatIpsRequest::GetNumber() const
+{
+    return m_number;
+}
+
+void CreateLoadBalancerSnatIpsRequest::SetNumber(const uint64_t& _number)
+{
+    m_number = _number;
+    m_numberHasBeenSet = true;
+}
+
+bool CreateLoadBalancerSnatIpsRequest::NumberHasBeenSet() const
+{
+    return m_numberHasBeenSet;
 }
 
 

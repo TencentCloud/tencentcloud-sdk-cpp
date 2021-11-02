@@ -79,6 +79,24 @@ namespace TencentCloud
                      */
                     bool SnatIpsHasBeenSet() const;
 
+                    /**
+                     * 获取添加SnatIp个数，与SnatIps一起使用，当指定Ip时，不能指定创建SnatIp个数。
+                     * @return Number 添加SnatIp个数，与SnatIps一起使用，当指定Ip时，不能指定创建SnatIp个数。
+                     */
+                    uint64_t GetNumber() const;
+
+                    /**
+                     * 设置添加SnatIp个数，与SnatIps一起使用，当指定Ip时，不能指定创建SnatIp个数。
+                     * @param Number 添加SnatIp个数，与SnatIps一起使用，当指定Ip时，不能指定创建SnatIp个数。
+                     */
+                    void SetNumber(const uint64_t& _number);
+
+                    /**
+                     * 判断参数 Number 是否已赋值
+                     * @return Number 是否已赋值
+                     */
+                    bool NumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -92,6 +110,12 @@ namespace TencentCloud
                      */
                     std::vector<SnatIp> m_snatIps;
                     bool m_snatIpsHasBeenSet;
+
+                    /**
+                     * 添加SnatIp个数，与SnatIps一起使用，当指定Ip时，不能指定创建SnatIp个数。
+                     */
+                    uint64_t m_number;
+                    bool m_numberHasBeenSet;
 
                 };
             }

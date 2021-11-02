@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool NamespaceHasBeenSet() const;
 
+                    /**
+                     * 获取优雅关停
+                     * @return GraceShutdown 优雅关停
+                     */
+                    bool GetGraceShutdown() const;
+
+                    /**
+                     * 设置优雅关停
+                     * @param GraceShutdown 优雅关停
+                     */
+                    void SetGraceShutdown(const bool& _graceShutdown);
+
+                    /**
+                     * 判断参数 GraceShutdown 是否已赋值
+                     * @return GraceShutdown 是否已赋值
+                     */
+                    bool GraceShutdownHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
+
+                    /**
+                     * 优雅关停
+                     */
+                    bool m_graceShutdown;
+                    bool m_graceShutdownHasBeenSet;
 
                 };
             }

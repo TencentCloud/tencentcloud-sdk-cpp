@@ -67,6 +67,18 @@ namespace TencentCloud
                      */
                     bool ProVersionNumHasBeenSet() const;
 
+                    /**
+                     * 获取旗舰版数量
+                     * @return UltimateVersionNum 旗舰版数量
+                     */
+                    uint64_t GetUltimateVersionNum() const;
+
+                    /**
+                     * 判断参数 UltimateVersionNum 是否已赋值
+                     * @return UltimateVersionNum 是否已赋值
+                     */
+                    bool UltimateVersionNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -80,6 +92,12 @@ namespace TencentCloud
                      */
                     uint64_t m_proVersionNum;
                     bool m_proVersionNumHasBeenSet;
+
+                    /**
+                     * 旗舰版数量
+                     */
+                    uint64_t m_ultimateVersionNum;
+                    bool m_ultimateVersionNumHasBeenSet;
 
                 };
             }

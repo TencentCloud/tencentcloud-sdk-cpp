@@ -27,7 +27,8 @@ Config::Config() :
     m_segmentMsHasBeenSet(false),
     m_uncleanLeaderElectionEnableHasBeenSet(false),
     m_segmentBytesHasBeenSet(false),
-    m_maxMessageBytesHasBeenSet(false)
+    m_maxMessageBytesHasBeenSet(false),
+    m_retentionBytesHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome Config::Deserialize(const rapidjson::Value &value)
         m_maxMessageBytesHasBeenSet = true;
     }
 
+    if (value.HasMember("RetentionBytes") && !value["RetentionBytes"].IsNull())
+    {
+        if (!value["RetentionBytes"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Config.RetentionBytes` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_retentionBytes = value["RetentionBytes"].GetInt64();
+        m_retentionBytesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void Config::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "MaxMessageBytes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxMessageBytes, allocator);
+    }
+
+    if (m_retentionBytesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetentionBytes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_retentionBytes, allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void Config::SetMaxMessageBytes(const int64_t& _maxMessageBytes)
 bool Config::MaxMessageBytesHasBeenSet() const
 {
     return m_maxMessageBytesHasBeenSet;
+}
+
+int64_t Config::GetRetentionBytes() const
+{
+    return m_retentionBytes;
+}
+
+void Config::SetRetentionBytes(const int64_t& _retentionBytes)
+{
+    m_retentionBytes = _retentionBytes;
+    m_retentionBytesHasBeenSet = true;
+}
+
+bool Config::RetentionBytesHasBeenSet() const
+{
+    return m_retentionBytesHasBeenSet;
 }
 

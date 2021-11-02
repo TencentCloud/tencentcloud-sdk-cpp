@@ -26,7 +26,9 @@ EffectiveMachineInfo::EffectiveMachineInfo() :
     m_machinePrivateIpHasBeenSet(false),
     m_machineTagHasBeenSet(false),
     m_quuidHasBeenSet(false),
-    m_uuidHasBeenSet(false)
+    m_uuidHasBeenSet(false),
+    m_kernelVersionHasBeenSet(false),
+    m_machineStatusHasBeenSet(false)
 {
 }
 
@@ -105,6 +107,26 @@ CoreInternalOutcome EffectiveMachineInfo::Deserialize(const rapidjson::Value &va
         m_uuidHasBeenSet = true;
     }
 
+    if (value.HasMember("KernelVersion") && !value["KernelVersion"].IsNull())
+    {
+        if (!value["KernelVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EffectiveMachineInfo.KernelVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kernelVersion = string(value["KernelVersion"].GetString());
+        m_kernelVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("MachineStatus") && !value["MachineStatus"].IsNull())
+    {
+        if (!value["MachineStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EffectiveMachineInfo.MachineStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_machineStatus = string(value["MachineStatus"].GetString());
+        m_machineStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -165,6 +187,22 @@ void EffectiveMachineInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "Uuid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_uuid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kernelVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KernelVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kernelVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_machineStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -264,5 +302,37 @@ void EffectiveMachineInfo::SetUuid(const string& _uuid)
 bool EffectiveMachineInfo::UuidHasBeenSet() const
 {
     return m_uuidHasBeenSet;
+}
+
+string EffectiveMachineInfo::GetKernelVersion() const
+{
+    return m_kernelVersion;
+}
+
+void EffectiveMachineInfo::SetKernelVersion(const string& _kernelVersion)
+{
+    m_kernelVersion = _kernelVersion;
+    m_kernelVersionHasBeenSet = true;
+}
+
+bool EffectiveMachineInfo::KernelVersionHasBeenSet() const
+{
+    return m_kernelVersionHasBeenSet;
+}
+
+string EffectiveMachineInfo::GetMachineStatus() const
+{
+    return m_machineStatus;
+}
+
+void EffectiveMachineInfo::SetMachineStatus(const string& _machineStatus)
+{
+    m_machineStatus = _machineStatus;
+    m_machineStatusHasBeenSet = true;
+}
+
+bool EffectiveMachineInfo::MachineStatusHasBeenSet() const
+{
+    return m_machineStatusHasBeenSet;
 }
 

@@ -58,7 +58,8 @@ InputRecognizeTargetAudience::InputRecognizeTargetAudience() :
     m_adTypeHasBeenSet(false),
     m_appNameHasBeenSet(false),
     m_appVerHasBeenSet(false),
-    m_reqTypeHasBeenSet(false)
+    m_reqTypeHasBeenSet(false),
+    m_isAuthorizedHasBeenSet(false)
 {
 }
 
@@ -450,6 +451,16 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
         m_reqTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("IsAuthorized") && !value["IsAuthorized"].IsNull())
+    {
+        if (!value["IsAuthorized"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.IsAuthorized` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isAuthorized = value["IsAuthorized"].GetUint64();
+        m_isAuthorizedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -764,6 +775,14 @@ void InputRecognizeTargetAudience::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "ReqType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_reqType, allocator);
+    }
+
+    if (m_isAuthorizedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsAuthorized";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isAuthorized, allocator);
     }
 
 }
@@ -1375,5 +1394,21 @@ void InputRecognizeTargetAudience::SetReqType(const int64_t& _reqType)
 bool InputRecognizeTargetAudience::ReqTypeHasBeenSet() const
 {
     return m_reqTypeHasBeenSet;
+}
+
+uint64_t InputRecognizeTargetAudience::GetIsAuthorized() const
+{
+    return m_isAuthorized;
+}
+
+void InputRecognizeTargetAudience::SetIsAuthorized(const uint64_t& _isAuthorized)
+{
+    m_isAuthorized = _isAuthorized;
+    m_isAuthorizedHasBeenSet = true;
+}
+
+bool InputRecognizeTargetAudience::IsAuthorizedHasBeenSet() const
+{
+    return m_isAuthorizedHasBeenSet;
 }
 

@@ -36,7 +36,8 @@ CreateTopicRequest::CreateTopicRequest() :
     m_retentionMsHasBeenSet(false),
     m_segmentMsHasBeenSet(false),
     m_enableAclRuleHasBeenSet(false),
-    m_aclRuleNameHasBeenSet(false)
+    m_aclRuleNameHasBeenSet(false),
+    m_retentionBytesHasBeenSet(false)
 {
 }
 
@@ -162,6 +163,14 @@ string CreateTopicRequest::ToJsonString() const
         string key = "AclRuleName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_aclRuleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_retentionBytesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetentionBytes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_retentionBytes, allocator);
     }
 
 
@@ -394,6 +403,22 @@ void CreateTopicRequest::SetAclRuleName(const string& _aclRuleName)
 bool CreateTopicRequest::AclRuleNameHasBeenSet() const
 {
     return m_aclRuleNameHasBeenSet;
+}
+
+int64_t CreateTopicRequest::GetRetentionBytes() const
+{
+    return m_retentionBytes;
+}
+
+void CreateTopicRequest::SetRetentionBytes(const int64_t& _retentionBytes)
+{
+    m_retentionBytes = _retentionBytes;
+    m_retentionBytesHasBeenSet = true;
+}
+
+bool CreateTopicRequest::RetentionBytesHasBeenSet() const
+{
+    return m_retentionBytesHasBeenSet;
 }
 
 

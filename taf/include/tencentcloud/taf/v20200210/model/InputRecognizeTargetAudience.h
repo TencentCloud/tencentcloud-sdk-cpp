@@ -677,14 +677,14 @@ namespace TencentCloud
                     bool AdTypeHasBeenSet() const;
 
                     /**
-                     * 获取app name
-                     * @return AppName app name
+                     * 获取app名称
+                     * @return AppName app名称
                      */
                     std::string GetAppName() const;
 
                     /**
-                     * 设置app name
-                     * @param AppName app name
+                     * 设置app名称
+                     * @param AppName app名称
                      */
                     void SetAppName(const std::string& _appName);
 
@@ -695,14 +695,14 @@ namespace TencentCloud
                     bool AppNameHasBeenSet() const;
 
                     /**
-                     * 获取appVer
-                     * @return AppVer appVer
+                     * 获取app版本描述
+                     * @return AppVer app版本描述
                      */
                     std::string GetAppVer() const;
 
                     /**
-                     * 设置appVer
-                     * @param AppVer appVer
+                     * 设置app版本描述
+                     * @param AppVer app版本描述
                      */
                     void SetAppVer(const std::string& _appVer);
 
@@ -729,6 +729,24 @@ namespace TencentCloud
                      * @return ReqType 是否已赋值
                      */
                     bool ReqTypeHasBeenSet() const;
+
+                    /**
+                     * 获取用户是否授权,1为授权，0为未授权
+                     * @return IsAuthorized 用户是否授权,1为授权，0为未授权
+                     */
+                    uint64_t GetIsAuthorized() const;
+
+                    /**
+                     * 设置用户是否授权,1为授权，0为未授权
+                     * @param IsAuthorized 用户是否授权,1为授权，0为未授权
+                     */
+                    void SetIsAuthorized(const uint64_t& _isAuthorized);
+
+                    /**
+                     * 判断参数 IsAuthorized 是否已赋值
+                     * @return IsAuthorized 是否已赋值
+                     */
+                    bool IsAuthorizedHasBeenSet() const;
 
                 private:
 
@@ -943,13 +961,13 @@ namespace TencentCloud
                     bool m_adTypeHasBeenSet;
 
                     /**
-                     * app name
+                     * app名称
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;
 
                     /**
-                     * appVer
+                     * app版本描述
                      */
                     std::string m_appVer;
                     bool m_appVerHasBeenSet;
@@ -959,6 +977,12 @@ namespace TencentCloud
                      */
                     int64_t m_reqType;
                     bool m_reqTypeHasBeenSet;
+
+                    /**
+                     * 用户是否授权,1为授权，0为未授权
+                     */
+                    uint64_t m_isAuthorized;
+                    bool m_isAuthorizedHasBeenSet;
 
                 };
             }

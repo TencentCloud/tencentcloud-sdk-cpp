@@ -138,6 +138,24 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
+                     * 获取制作媒体文件任务进度，取值范围 [0-100] 。
+                     * @return Progress 制作媒体文件任务进度，取值范围 [0-100] 。
+                     */
+                    int64_t GetProgress() const;
+
+                    /**
+                     * 设置制作媒体文件任务进度，取值范围 [0-100] 。
+                     * @param Progress 制作媒体文件任务进度，取值范围 [0-100] 。
+                     */
+                    void SetProgress(const int64_t& _progress);
+
+                    /**
+                     * 判断参数 Progress 是否已赋值
+                     * @return Progress 是否已赋值
+                     */
+                    bool ProgressHasBeenSet() const;
+
+                    /**
                      * 获取制作媒体文件任务的输入。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Input 制作媒体文件任务的输入。
@@ -204,24 +222,6 @@ namespace TencentCloud
                     bool MetaDataHasBeenSet() const;
 
                     /**
-                     * 获取来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-                     * @return SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-                     */
-                    std::string GetSessionContext() const;
-
-                    /**
-                     * 设置来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-                     * @param SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-                     */
-                    void SetSessionContext(const std::string& _sessionContext);
-
-                    /**
-                     * 判断参数 SessionContext 是否已赋值
-                     * @return SessionContext 是否已赋值
-                     */
-                    bool SessionContextHasBeenSet() const;
-
-                    /**
                      * 获取用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
                      * @return SessionId 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
                      */
@@ -238,6 +238,24 @@ namespace TencentCloud
                      * @return SessionId 是否已赋值
                      */
                     bool SessionIdHasBeenSet() const;
+
+                    /**
+                     * 获取来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * @return SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     */
+                    std::string GetSessionContext() const;
+
+                    /**
+                     * 设置来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * @param SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     */
+                    void SetSessionContext(const std::string& _sessionContext);
+
+                    /**
+                     * 判断参数 SessionContext 是否已赋值
+                     * @return SessionContext 是否已赋值
+                     */
+                    bool SessionContextHasBeenSet() const;
 
                 private:
 
@@ -270,6 +288,12 @@ namespace TencentCloud
                     bool m_messageHasBeenSet;
 
                     /**
+                     * 制作媒体文件任务进度，取值范围 [0-100] 。
+                     */
+                    int64_t m_progress;
+                    bool m_progressHasBeenSet;
+
+                    /**
                      * 制作媒体文件任务的输入。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -291,16 +315,16 @@ namespace TencentCloud
                     bool m_metaDataHasBeenSet;
 
                     /**
-                     * 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-                     */
-                    std::string m_sessionContext;
-                    bool m_sessionContextHasBeenSet;
-
-                    /**
                      * 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
+
+                    /**
+                     * 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     */
+                    std::string m_sessionContext;
+                    bool m_sessionContextHasBeenSet;
 
                 };
             }
