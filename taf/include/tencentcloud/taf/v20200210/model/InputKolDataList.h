@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * CheckKol
+                * CheckKOL
                 */
                 class InputKolDataList : public AbstractModel
                 {
@@ -136,6 +136,24 @@ namespace TencentCloud
                      */
                     bool AgentInfoHasBeenSet() const;
 
+                    /**
+                     * 获取是否授权
+                     * @return IsAuthorized 是否授权
+                     */
+                    uint64_t GetIsAuthorized() const;
+
+                    /**
+                     * 设置是否授权
+                     * @param IsAuthorized 是否授权
+                     */
+                    void SetIsAuthorized(const uint64_t& _isAuthorized);
+
+                    /**
+                     * 判断参数 IsAuthorized 是否已赋值
+                     * @return IsAuthorized 是否已赋值
+                     */
+                    bool IsAuthorizedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +185,12 @@ namespace TencentCloud
                      */
                     std::string m_agentInfo;
                     bool m_agentInfoHasBeenSet;
+
+                    /**
+                     * 是否授权
+                     */
+                    uint64_t m_isAuthorized;
+                    bool m_isAuthorizedHasBeenSet;
 
                 };
             }

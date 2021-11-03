@@ -23,7 +23,8 @@ using namespace TencentCloud::Taf::V20200210::Model;
 using namespace std;
 
 DetectFraudKOLRequest::DetectFraudKOLRequest() :
-    m_bspDataHasBeenSet(false)
+    m_bspDataHasBeenSet(false),
+    m_businessEncryptDataHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,15 @@ string DetectFraudKOLRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_bspData.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_businessEncryptDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessEncryptData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_businessEncryptData.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -65,6 +75,22 @@ void DetectFraudKOLRequest::SetBspData(const InputKolBspData& _bspData)
 bool DetectFraudKOLRequest::BspDataHasBeenSet() const
 {
     return m_bspDataHasBeenSet;
+}
+
+InputBusinessEncryptData DetectFraudKOLRequest::GetBusinessEncryptData() const
+{
+    return m_businessEncryptData;
+}
+
+void DetectFraudKOLRequest::SetBusinessEncryptData(const InputBusinessEncryptData& _businessEncryptData)
+{
+    m_businessEncryptData = _businessEncryptData;
+    m_businessEncryptDataHasBeenSet = true;
+}
+
+bool DetectFraudKOLRequest::BusinessEncryptDataHasBeenSet() const
+{
+    return m_businessEncryptDataHasBeenSet;
 }
 
 

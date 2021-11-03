@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取通道唯一标识
-                     * @return ChannelId 通道唯一标识
+                     * 获取通道唯一标识（接口升级字段为必填）
+                     * @return ChannelId 通道唯一标识（接口升级字段为必填）
                      */
                     std::string GetChannelId() const;
 
                     /**
-                     * 设置通道唯一标识
-                     * @param ChannelId 通道唯一标识
+                     * 设置通道唯一标识（接口升级字段为必填）
+                     * @param ChannelId 通道唯一标识（接口升级字段为必填）
                      */
                     void SetChannelId(const std::string& _channelId);
 
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 通道唯一标识
+                     * 通道唯一标识（接口升级字段为必填）
                      */
                     std::string m_channelId;
                     bool m_channelIdHasBeenSet;

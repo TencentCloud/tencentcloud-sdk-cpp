@@ -25,7 +25,8 @@ InputKolDataList::InputKolDataList() :
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_phoneHasBeenSet(false),
-    m_agentInfoHasBeenSet(false)
+    m_agentInfoHasBeenSet(false),
+    m_isAuthorizedHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome InputKolDataList::Deserialize(const rapidjson::Value &value)
         m_agentInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("IsAuthorized") && !value["IsAuthorized"].IsNull())
+    {
+        if (!value["IsAuthorized"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InputKolDataList.IsAuthorized` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isAuthorized = value["IsAuthorized"].GetUint64();
+        m_isAuthorizedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void InputKolDataList::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "AgentInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_agentInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isAuthorizedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsAuthorized";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isAuthorized, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void InputKolDataList::SetAgentInfo(const string& _agentInfo)
 bool InputKolDataList::AgentInfoHasBeenSet() const
 {
     return m_agentInfoHasBeenSet;
+}
+
+uint64_t InputKolDataList::GetIsAuthorized() const
+{
+    return m_isAuthorized;
+}
+
+void InputKolDataList::SetIsAuthorized(const uint64_t& _isAuthorized)
+{
+    m_isAuthorized = _isAuthorized;
+    m_isAuthorizedHasBeenSet = true;
+}
+
+bool InputKolDataList::IsAuthorizedHasBeenSet() const
+{
+    return m_isAuthorizedHasBeenSet;
 }
 

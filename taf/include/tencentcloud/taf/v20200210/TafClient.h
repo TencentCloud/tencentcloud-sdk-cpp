@@ -76,7 +76,7 @@ namespace TencentCloud
 
 
                 /**
-                 *DetectFraudKOL
+                 *流量反欺诈-KOL欺诈识别
                  * @param req DetectFraudKOLRequest
                  * @return DetectFraudKOLOutcome
                  */
