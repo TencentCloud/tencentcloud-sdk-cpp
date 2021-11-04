@@ -170,14 +170,14 @@ namespace TencentCloud
                     bool ZoneBakHasBeenSet() const;
 
                     /**
-                     * 获取异地灾备 1：使用异地灾备；0：不使用异地灾备
-                     * @return CrossAZone 异地灾备 1：使用异地灾备；0：不使用异地灾备
+                     * 获取异地灾备 1：使用异地灾备；0：不使用异地灾备；为空则默认不使用异地灾备
+                     * @return CrossAZone 异地灾备 1：使用异地灾备；0：不使用异地灾备；为空则默认不使用异地灾备
                      */
                     int64_t GetCrossAZone() const;
 
                     /**
-                     * 设置异地灾备 1：使用异地灾备；0：不使用异地灾备
-                     * @param CrossAZone 异地灾备 1：使用异地灾备；0：不使用异地灾备
+                     * 设置异地灾备 1：使用异地灾备；0：不使用异地灾备；为空则默认不使用异地灾备
+                     * @param CrossAZone 异地灾备 1：使用异地灾备；0：不使用异地灾备；为空则默认不使用异地灾备
                      */
                     void SetCrossAZone(const int64_t& _crossAZone);
 
@@ -232,7 +232,7 @@ namespace TencentCloud
                     bool m_zoneBakHasBeenSet;
 
                     /**
-                     * 异地灾备 1：使用异地灾备；0：不使用异地灾备
+                     * 异地灾备 1：使用异地灾备；0：不使用异地灾备；为空则默认不使用异地灾备
                      */
                     int64_t m_crossAZone;
                     bool m_crossAZoneHasBeenSet;

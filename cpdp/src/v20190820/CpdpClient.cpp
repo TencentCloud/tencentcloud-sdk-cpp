@@ -2792,6 +2792,49 @@ CpdpClient::QueryInvoiceV2OutcomeCallable CpdpClient::QueryInvoiceV2Callable(con
     return task->get_future();
 }
 
+CpdpClient::QueryMaliciousRegistrationOutcome CpdpClient::QueryMaliciousRegistration(const QueryMaliciousRegistrationRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryMaliciousRegistration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryMaliciousRegistrationResponse rsp = QueryMaliciousRegistrationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryMaliciousRegistrationOutcome(rsp);
+        else
+            return QueryMaliciousRegistrationOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryMaliciousRegistrationOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryMaliciousRegistrationAsync(const QueryMaliciousRegistrationRequest& request, const QueryMaliciousRegistrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryMaliciousRegistration(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryMaliciousRegistrationOutcomeCallable CpdpClient::QueryMaliciousRegistrationCallable(const QueryMaliciousRegistrationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryMaliciousRegistrationOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryMaliciousRegistration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::QueryMemberBindOutcome CpdpClient::QueryMemberBind(const QueryMemberBindRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryMemberBind");

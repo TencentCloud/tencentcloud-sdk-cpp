@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CPDP_V20190820_MODEL_UNIFIEDTLINXORDERRESPONSE_H_
-#define TENCENTCLOUD_CPDP_V20190820_MODEL_UNIFIEDTLINXORDERRESPONSE_H_
+#ifndef TENCENTCLOUD_CPDP_V20190820_MODEL_QUERYMALICIOUSREGISTRATIONRESPONSE_H_
+#define TENCENTCLOUD_CPDP_V20190820_MODEL_QUERYMALICIOUSREGISTRATIONRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/cpdp/v20190820/model/PayOrderResult.h>
+#include <tencentcloud/cpdp/v20190820/model/MerchantRiskInfo.h>
 
 
 namespace TencentCloud
@@ -33,34 +33,20 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * UnifiedTlinxOrder返回参数结构体
+                * QueryMaliciousRegistration返回参数结构体
                 */
-                class UnifiedTlinxOrderResponse : public AbstractModel
+                class QueryMaliciousRegistrationResponse : public AbstractModel
                 {
                 public:
-                    UnifiedTlinxOrderResponse();
-                    ~UnifiedTlinxOrderResponse() = default;
+                    QueryMaliciousRegistrationResponse();
+                    ~QueryMaliciousRegistrationResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取业务系统返回消息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ErrMessage 业务系统返回消息
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetErrMessage() const;
-
-                    /**
-                     * 判断参数 ErrMessage 是否已赋值
-                     * @return ErrMessage 是否已赋值
-                     */
-                    bool ErrMessageHasBeenSet() const;
-
-                    /**
-                     * 获取业务系统返回码
-                     * @return ErrCode 业务系统返回码
+                     * 获取错误码
+                     * @return ErrCode 错误码
                      */
                     std::string GetErrCode() const;
 
@@ -71,12 +57,24 @@ namespace TencentCloud
                     bool ErrCodeHasBeenSet() const;
 
                     /**
-                     * 获取统一下单响应对象
+                     * 获取错误消息
+                     * @return ErrMsg 错误消息
+                     */
+                    std::string GetErrMsg() const;
+
+                    /**
+                     * 判断参数 ErrMsg 是否已赋值
+                     * @return ErrMsg 是否已赋值
+                     */
+                    bool ErrMsgHasBeenSet() const;
+
+                    /**
+                     * 获取商户风险信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Result 统一下单响应对象
+                     * @return Result 商户风险信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    PayOrderResult GetResult() const;
+                    MerchantRiskInfo GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
@@ -87,23 +85,22 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 业务系统返回消息
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_errMessage;
-                    bool m_errMessageHasBeenSet;
-
-                    /**
-                     * 业务系统返回码
+                     * 错误码
                      */
                     std::string m_errCode;
                     bool m_errCodeHasBeenSet;
 
                     /**
-                     * 统一下单响应对象
+                     * 错误消息
+                     */
+                    std::string m_errMsg;
+                    bool m_errMsgHasBeenSet;
+
+                    /**
+                     * 商户风险信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    PayOrderResult m_result;
+                    MerchantRiskInfo m_result;
                     bool m_resultHasBeenSet;
 
                 };
@@ -112,4 +109,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CPDP_V20190820_MODEL_UNIFIEDTLINXORDERRESPONSE_H_
+#endif // !TENCENTCLOUD_CPDP_V20190820_MODEL_QUERYMALICIOUSREGISTRATIONRESPONSE_H_

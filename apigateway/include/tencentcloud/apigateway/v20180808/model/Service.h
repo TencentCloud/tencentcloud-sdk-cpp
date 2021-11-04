@@ -443,6 +443,28 @@ namespace TencentCloud
                      */
                     bool SetTypeHasBeenSet() const;
 
+                    /**
+                     * 获取服务部署的集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeploymentType 服务部署的集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDeploymentType() const;
+
+                    /**
+                     * 设置服务部署的集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeploymentType 服务部署的集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeploymentType(const std::string& _deploymentType);
+
+                    /**
+                     * 判断参数 DeploymentType 是否已赋值
+                     * @return DeploymentType 是否已赋值
+                     */
+                    bool DeploymentTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -570,6 +592,13 @@ namespace TencentCloud
                      */
                     std::string m_setType;
                     bool m_setTypeHasBeenSet;
+
+                    /**
+                     * 服务部署的集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deploymentType;
+                    bool m_deploymentTypeHasBeenSet;
 
                 };
             }

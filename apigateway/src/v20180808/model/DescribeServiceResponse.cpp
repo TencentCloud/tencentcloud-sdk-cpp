@@ -47,7 +47,9 @@ DescribeServiceResponse::DescribeServiceResponse() :
     m_tagsHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
-    m_setTypeHasBeenSet(false)
+    m_setTypeHasBeenSet(false),
+    m_deploymentTypeHasBeenSet(false),
+    m_specialUseHasBeenSet(false)
 {
 }
 
@@ -361,6 +363,26 @@ CoreInternalOutcome DescribeServiceResponse::Deserialize(const string &payload)
         m_setTypeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DeploymentType") && !rsp["DeploymentType"].IsNull())
+    {
+        if (!rsp["DeploymentType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeploymentType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deploymentType = string(rsp["DeploymentType"].GetString());
+        m_deploymentTypeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SpecialUse") && !rsp["SpecialUse"].IsNull())
+    {
+        if (!rsp["SpecialUse"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SpecialUse` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_specialUse = string(rsp["SpecialUse"].GetString());
+        m_specialUseHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -592,6 +614,22 @@ string DescribeServiceResponse::ToJsonString() const
         string key = "SetType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_setType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deploymentTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeploymentType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deploymentType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_specialUseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpecialUse";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_specialUse.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -844,6 +882,26 @@ string DescribeServiceResponse::GetSetType() const
 bool DescribeServiceResponse::SetTypeHasBeenSet() const
 {
     return m_setTypeHasBeenSet;
+}
+
+string DescribeServiceResponse::GetDeploymentType() const
+{
+    return m_deploymentType;
+}
+
+bool DescribeServiceResponse::DeploymentTypeHasBeenSet() const
+{
+    return m_deploymentTypeHasBeenSet;
+}
+
+string DescribeServiceResponse::GetSpecialUse() const
+{
+    return m_specialUse;
+}
+
+bool DescribeServiceResponse::SpecialUseHasBeenSet() const
+{
+    return m_specialUseHasBeenSet;
 }
 
 

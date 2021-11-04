@@ -151,6 +151,8 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryInvoiceResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryInvoiceV2Request.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryInvoiceV2Response.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryMaliciousRegistrationRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryMaliciousRegistrationResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMemberBindRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMemberBindResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMemberTransactionRequest.h>
@@ -447,6 +449,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryInvoiceV2Response> QueryInvoiceV2Outcome;
                 typedef std::future<QueryInvoiceV2Outcome> QueryInvoiceV2OutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryInvoiceV2Request&, QueryInvoiceV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryInvoiceV2AsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryMaliciousRegistrationResponse> QueryMaliciousRegistrationOutcome;
+                typedef std::future<QueryMaliciousRegistrationOutcome> QueryMaliciousRegistrationOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryMaliciousRegistrationRequest&, QueryMaliciousRegistrationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMaliciousRegistrationAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryMemberBindResponse> QueryMemberBindOutcome;
                 typedef std::future<QueryMemberBindOutcome> QueryMemberBindOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryMemberBindRequest&, QueryMemberBindOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMemberBindAsyncHandler;
@@ -1170,6 +1175,15 @@ namespace TencentCloud
                 QueryInvoiceV2OutcomeCallable QueryInvoiceV2Callable(const Model::QueryInvoiceV2Request& request);
 
                 /**
+                 *商户恶意注册接口
+                 * @param req QueryMaliciousRegistrationRequest
+                 * @return QueryMaliciousRegistrationOutcome
+                 */
+                QueryMaliciousRegistrationOutcome QueryMaliciousRegistration(const Model::QueryMaliciousRegistrationRequest &request);
+                void QueryMaliciousRegistrationAsync(const Model::QueryMaliciousRegistrationRequest& request, const QueryMaliciousRegistrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryMaliciousRegistrationOutcomeCallable QueryMaliciousRegistrationCallable(const Model::QueryMaliciousRegistrationRequest& request);
+
+                /**
                  *会员绑定信息查询。查询标志为“单个会员”的情况下，返回该会员的有效的绑定账户信息。
 查询标志为“全部会员”的情况下，返回市场下的全部的有效的绑定账户信息。查询标志为“单个会员的证件信息”的情况下，返回市场下的指定的会员的留存在电商见证宝系统的证件信息。
                  * @param req QueryMemberBindRequest
@@ -1531,7 +1545,7 @@ namespace TencentCloud
                 UnifiedOrderOutcomeCallable UnifiedOrderCallable(const Model::UnifiedOrderRequest& request);
 
                 /**
-                 *云支付Tlinx统一下单接口
+                 *云支付-统一下单接口
                  * @param req UnifiedTlinxOrderRequest
                  * @return UnifiedTlinxOrderOutcome
                  */

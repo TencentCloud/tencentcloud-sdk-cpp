@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cpdp/v20190820/model/UnifiedTlinxOrderResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryMaliciousRegistrationResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
@@ -23,14 +23,14 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cpdp::V20190820::Model;
 using namespace std;
 
-UnifiedTlinxOrderResponse::UnifiedTlinxOrderResponse() :
-    m_errMessageHasBeenSet(false),
+QueryMaliciousRegistrationResponse::QueryMaliciousRegistrationResponse() :
     m_errCodeHasBeenSet(false),
+    m_errMsgHasBeenSet(false),
     m_resultHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome UnifiedTlinxOrderResponse::Deserialize(const string &payload)
+CoreInternalOutcome QueryMaliciousRegistrationResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -64,16 +64,6 @@ CoreInternalOutcome UnifiedTlinxOrderResponse::Deserialize(const string &payload
     }
 
 
-    if (rsp.HasMember("ErrMessage") && !rsp["ErrMessage"].IsNull())
-    {
-        if (!rsp["ErrMessage"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ErrMessage` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_errMessage = string(rsp["ErrMessage"].GetString());
-        m_errMessageHasBeenSet = true;
-    }
-
     if (rsp.HasMember("ErrCode") && !rsp["ErrCode"].IsNull())
     {
         if (!rsp["ErrCode"].IsString())
@@ -82,6 +72,16 @@ CoreInternalOutcome UnifiedTlinxOrderResponse::Deserialize(const string &payload
         }
         m_errCode = string(rsp["ErrCode"].GetString());
         m_errCodeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ErrMsg") && !rsp["ErrMsg"].IsNull())
+    {
+        if (!rsp["ErrMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errMsg = string(rsp["ErrMsg"].GetString());
+        m_errMsgHasBeenSet = true;
     }
 
     if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
@@ -105,19 +105,11 @@ CoreInternalOutcome UnifiedTlinxOrderResponse::Deserialize(const string &payload
     return CoreInternalOutcome(true);
 }
 
-string UnifiedTlinxOrderResponse::ToJsonString() const
+string QueryMaliciousRegistrationResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_errMessageHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ErrMessage";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_errMessage.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_errCodeHasBeenSet)
     {
@@ -125,6 +117,14 @@ string UnifiedTlinxOrderResponse::ToJsonString() const
         string key = "ErrCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_errCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_errMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errMsg.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resultHasBeenSet)
@@ -148,32 +148,32 @@ string UnifiedTlinxOrderResponse::ToJsonString() const
 }
 
 
-string UnifiedTlinxOrderResponse::GetErrMessage() const
-{
-    return m_errMessage;
-}
-
-bool UnifiedTlinxOrderResponse::ErrMessageHasBeenSet() const
-{
-    return m_errMessageHasBeenSet;
-}
-
-string UnifiedTlinxOrderResponse::GetErrCode() const
+string QueryMaliciousRegistrationResponse::GetErrCode() const
 {
     return m_errCode;
 }
 
-bool UnifiedTlinxOrderResponse::ErrCodeHasBeenSet() const
+bool QueryMaliciousRegistrationResponse::ErrCodeHasBeenSet() const
 {
     return m_errCodeHasBeenSet;
 }
 
-PayOrderResult UnifiedTlinxOrderResponse::GetResult() const
+string QueryMaliciousRegistrationResponse::GetErrMsg() const
+{
+    return m_errMsg;
+}
+
+bool QueryMaliciousRegistrationResponse::ErrMsgHasBeenSet() const
+{
+    return m_errMsgHasBeenSet;
+}
+
+MerchantRiskInfo QueryMaliciousRegistrationResponse::GetResult() const
 {
     return m_result;
 }
 
-bool UnifiedTlinxOrderResponse::ResultHasBeenSet() const
+bool QueryMaliciousRegistrationResponse::ResultHasBeenSet() const
 {
     return m_resultHasBeenSet;
 }

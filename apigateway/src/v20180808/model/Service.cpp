@@ -38,7 +38,8 @@ Service::Service() :
     m_tradeIsolateStatusHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_setTypeHasBeenSet(false)
+    m_setTypeHasBeenSet(false),
+    m_deploymentTypeHasBeenSet(false)
 {
 }
 
@@ -243,6 +244,16 @@ CoreInternalOutcome Service::Deserialize(const rapidjson::Value &value)
         m_setTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("DeploymentType") && !value["DeploymentType"].IsNull())
+    {
+        if (!value["DeploymentType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Service.DeploymentType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deploymentType = string(value["DeploymentType"].GetString());
+        m_deploymentTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -409,6 +420,14 @@ void Service::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "SetType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_setType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deploymentTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeploymentType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deploymentType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -700,5 +719,21 @@ void Service::SetSetType(const string& _setType)
 bool Service::SetTypeHasBeenSet() const
 {
     return m_setTypeHasBeenSet;
+}
+
+string Service::GetDeploymentType() const
+{
+    return m_deploymentType;
+}
+
+void Service::SetDeploymentType(const string& _deploymentType)
+{
+    m_deploymentType = _deploymentType;
+    m_deploymentTypeHasBeenSet = true;
+}
+
+bool Service::DeploymentTypeHasBeenSet() const
+{
+    return m_deploymentTypeHasBeenSet;
 }
 

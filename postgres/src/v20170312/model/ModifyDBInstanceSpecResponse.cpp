@@ -14,23 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cpdp/v20190820/model/UnifiedTlinxOrderResponse.h>
+#include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceSpecResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cpdp::V20190820::Model;
+using namespace TencentCloud::Postgres::V20170312::Model;
 using namespace std;
 
-UnifiedTlinxOrderResponse::UnifiedTlinxOrderResponse() :
-    m_errMessageHasBeenSet(false),
-    m_errCodeHasBeenSet(false),
-    m_resultHasBeenSet(false)
+ModifyDBInstanceSpecResponse::ModifyDBInstanceSpecResponse() :
+    m_dealNameHasBeenSet(false),
+    m_billIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome UnifiedTlinxOrderResponse::Deserialize(const string &payload)
+CoreInternalOutcome ModifyDBInstanceSpecResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -64,76 +63,50 @@ CoreInternalOutcome UnifiedTlinxOrderResponse::Deserialize(const string &payload
     }
 
 
-    if (rsp.HasMember("ErrMessage") && !rsp["ErrMessage"].IsNull())
+    if (rsp.HasMember("DealName") && !rsp["DealName"].IsNull())
     {
-        if (!rsp["ErrMessage"].IsString())
+        if (!rsp["DealName"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `ErrMessage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DealName` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_errMessage = string(rsp["ErrMessage"].GetString());
-        m_errMessageHasBeenSet = true;
+        m_dealName = string(rsp["DealName"].GetString());
+        m_dealNameHasBeenSet = true;
     }
 
-    if (rsp.HasMember("ErrCode") && !rsp["ErrCode"].IsNull())
+    if (rsp.HasMember("BillId") && !rsp["BillId"].IsNull())
     {
-        if (!rsp["ErrCode"].IsString())
+        if (!rsp["BillId"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `ErrCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_errCode = string(rsp["ErrCode"].GetString());
-        m_errCodeHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
-    {
-        if (!rsp["Result"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `Result` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_result.Deserialize(rsp["Result"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_resultHasBeenSet = true;
+        m_billId = string(rsp["BillId"].GetString());
+        m_billIdHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string UnifiedTlinxOrderResponse::ToJsonString() const
+string ModifyDBInstanceSpecResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_errMessageHasBeenSet)
+    if (m_dealNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ErrMessage";
+        string key = "DealName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_errMessage.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dealName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_errCodeHasBeenSet)
+    if (m_billIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ErrCode";
+        string key = "BillId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_errCode.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_resultHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Result";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_result.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, rapidjson::Value(m_billId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -148,34 +121,24 @@ string UnifiedTlinxOrderResponse::ToJsonString() const
 }
 
 
-string UnifiedTlinxOrderResponse::GetErrMessage() const
+string ModifyDBInstanceSpecResponse::GetDealName() const
 {
-    return m_errMessage;
+    return m_dealName;
 }
 
-bool UnifiedTlinxOrderResponse::ErrMessageHasBeenSet() const
+bool ModifyDBInstanceSpecResponse::DealNameHasBeenSet() const
 {
-    return m_errMessageHasBeenSet;
+    return m_dealNameHasBeenSet;
 }
 
-string UnifiedTlinxOrderResponse::GetErrCode() const
+string ModifyDBInstanceSpecResponse::GetBillId() const
 {
-    return m_errCode;
+    return m_billId;
 }
 
-bool UnifiedTlinxOrderResponse::ErrCodeHasBeenSet() const
+bool ModifyDBInstanceSpecResponse::BillIdHasBeenSet() const
 {
-    return m_errCodeHasBeenSet;
-}
-
-PayOrderResult UnifiedTlinxOrderResponse::GetResult() const
-{
-    return m_result;
-}
-
-bool UnifiedTlinxOrderResponse::ResultHasBeenSet() const
-{
-    return m_resultHasBeenSet;
+    return m_billIdHasBeenSet;
 }
 
 

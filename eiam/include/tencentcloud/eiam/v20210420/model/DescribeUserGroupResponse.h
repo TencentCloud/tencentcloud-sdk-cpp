@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取昵称，长度限制：64个字符。 DisplayName不唯一。
+                     * 获取用户组昵称，长度限制：64个字符。 DisplayName不唯一。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DisplayName 昵称，长度限制：64个字符。 DisplayName不唯一。
+                     * @return DisplayName 用户组昵称，长度限制：64个字符。 DisplayName不唯一。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDisplayName() const;
@@ -58,9 +58,9 @@ namespace TencentCloud
                     bool DisplayNameHasBeenSet() const;
 
                     /**
-                     * 获取用户备注，长度限制：512个字符。
+                     * 获取用户组备注，长度限制：512个字符。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description 用户备注，长度限制：512个字符。
+                     * @return Description 用户组备注，长度限制：512个字符。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDescription() const;
@@ -88,14 +88,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 昵称，长度限制：64个字符。 DisplayName不唯一。
+                     * 用户组昵称，长度限制：64个字符。 DisplayName不唯一。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_displayName;
                     bool m_displayNameHasBeenSet;
 
                     /**
-                     * 用户备注，长度限制：512个字符。
+                     * 用户组备注，长度限制：512个字符。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;

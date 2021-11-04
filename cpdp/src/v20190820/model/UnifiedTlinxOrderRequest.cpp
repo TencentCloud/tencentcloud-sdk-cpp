@@ -23,25 +23,26 @@ using namespace TencentCloud::Cpdp::V20190820::Model;
 using namespace std;
 
 UnifiedTlinxOrderRequest::UnifiedTlinxOrderRequest() :
-    m_openIdHasBeenSet(false),
-    m_openKeyHasBeenSet(false),
     m_developerNoHasBeenSet(false),
+    m_openIdHasBeenSet(false),
+    m_notifyUrlHasBeenSet(false),
+    m_openKeyHasBeenSet(false),
     m_payTagHasBeenSet(false),
     m_tradeAmountHasBeenSet(false),
+    m_remarkHasBeenSet(false),
     m_tagHasBeenSet(false),
-    m_notifyUrlHasBeenSet(false),
-    m_payNameHasBeenSet(false),
-    m_orderNameHasBeenSet(false),
-    m_originalAmountHasBeenSet(false),
-    m_discountAmountHasBeenSet(false),
     m_ignoreAmountHasBeenSet(false),
+    m_authCodeHasBeenSet(false),
+    m_originalAmountHasBeenSet(false),
+    m_orderNameHasBeenSet(false),
+    m_jumpUrlHasBeenSet(false),
+    m_profileHasBeenSet(false),
+    m_tradeResultHasBeenSet(false),
     m_tradeAccountHasBeenSet(false),
     m_tradeNoHasBeenSet(false),
-    m_tradeResultHasBeenSet(false),
-    m_remarkHasBeenSet(false),
-    m_authCodeHasBeenSet(false),
-    m_jumpUrlHasBeenSet(false),
-    m_profileHasBeenSet(false)
+    m_discountAmountHasBeenSet(false),
+    m_payNameHasBeenSet(false),
+    m_royaltyHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,14 @@ string UnifiedTlinxOrderRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_developerNoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeveloperNo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_developerNo.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_openIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -60,20 +69,20 @@ string UnifiedTlinxOrderRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_openId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_notifyUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotifyUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_notifyUrl.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_openKeyHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OpenKey";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_openKey.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_developerNoHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DeveloperNo";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_developerNo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_payTagHasBeenSet)
@@ -92,52 +101,20 @@ string UnifiedTlinxOrderRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_tradeAmount.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_remarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_tagHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_tag.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_notifyUrlHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "NotifyUrl";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_notifyUrl.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_payNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PayName";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_payName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_orderNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OrderName";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_orderName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_originalAmountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OriginalAmount";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_originalAmount.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_discountAmountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DiscountAmount";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_discountAmount.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ignoreAmountHasBeenSet)
@@ -148,44 +125,28 @@ string UnifiedTlinxOrderRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_ignoreAmount.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_tradeAccountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TradeAccount";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_tradeAccount.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_tradeNoHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TradeNo";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_tradeNo.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_tradeResultHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TradeResult";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_tradeResult.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_remarkHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Remark";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_authCodeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AuthCode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_authCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originalAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginalAmount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_originalAmount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_jumpUrlHasBeenSet)
@@ -204,6 +165,54 @@ string UnifiedTlinxOrderRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_profile.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_tradeResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TradeResult";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tradeResult.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tradeAccountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TradeAccount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tradeAccount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tradeNoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TradeNo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tradeNo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_discountAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiscountAmount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_discountAmount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_payName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_royaltyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Royalty";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_royalty.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -211,6 +220,22 @@ string UnifiedTlinxOrderRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string UnifiedTlinxOrderRequest::GetDeveloperNo() const
+{
+    return m_developerNo;
+}
+
+void UnifiedTlinxOrderRequest::SetDeveloperNo(const string& _developerNo)
+{
+    m_developerNo = _developerNo;
+    m_developerNoHasBeenSet = true;
+}
+
+bool UnifiedTlinxOrderRequest::DeveloperNoHasBeenSet() const
+{
+    return m_developerNoHasBeenSet;
+}
 
 string UnifiedTlinxOrderRequest::GetOpenId() const
 {
@@ -228,6 +253,22 @@ bool UnifiedTlinxOrderRequest::OpenIdHasBeenSet() const
     return m_openIdHasBeenSet;
 }
 
+string UnifiedTlinxOrderRequest::GetNotifyUrl() const
+{
+    return m_notifyUrl;
+}
+
+void UnifiedTlinxOrderRequest::SetNotifyUrl(const string& _notifyUrl)
+{
+    m_notifyUrl = _notifyUrl;
+    m_notifyUrlHasBeenSet = true;
+}
+
+bool UnifiedTlinxOrderRequest::NotifyUrlHasBeenSet() const
+{
+    return m_notifyUrlHasBeenSet;
+}
+
 string UnifiedTlinxOrderRequest::GetOpenKey() const
 {
     return m_openKey;
@@ -242,22 +283,6 @@ void UnifiedTlinxOrderRequest::SetOpenKey(const string& _openKey)
 bool UnifiedTlinxOrderRequest::OpenKeyHasBeenSet() const
 {
     return m_openKeyHasBeenSet;
-}
-
-string UnifiedTlinxOrderRequest::GetDeveloperNo() const
-{
-    return m_developerNo;
-}
-
-void UnifiedTlinxOrderRequest::SetDeveloperNo(const string& _developerNo)
-{
-    m_developerNo = _developerNo;
-    m_developerNoHasBeenSet = true;
-}
-
-bool UnifiedTlinxOrderRequest::DeveloperNoHasBeenSet() const
-{
-    return m_developerNoHasBeenSet;
 }
 
 string UnifiedTlinxOrderRequest::GetPayTag() const
@@ -292,6 +317,22 @@ bool UnifiedTlinxOrderRequest::TradeAmountHasBeenSet() const
     return m_tradeAmountHasBeenSet;
 }
 
+string UnifiedTlinxOrderRequest::GetRemark() const
+{
+    return m_remark;
+}
+
+void UnifiedTlinxOrderRequest::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool UnifiedTlinxOrderRequest::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
+}
+
 string UnifiedTlinxOrderRequest::GetTag() const
 {
     return m_tag;
@@ -308,52 +349,36 @@ bool UnifiedTlinxOrderRequest::TagHasBeenSet() const
     return m_tagHasBeenSet;
 }
 
-string UnifiedTlinxOrderRequest::GetNotifyUrl() const
+string UnifiedTlinxOrderRequest::GetIgnoreAmount() const
 {
-    return m_notifyUrl;
+    return m_ignoreAmount;
 }
 
-void UnifiedTlinxOrderRequest::SetNotifyUrl(const string& _notifyUrl)
+void UnifiedTlinxOrderRequest::SetIgnoreAmount(const string& _ignoreAmount)
 {
-    m_notifyUrl = _notifyUrl;
-    m_notifyUrlHasBeenSet = true;
+    m_ignoreAmount = _ignoreAmount;
+    m_ignoreAmountHasBeenSet = true;
 }
 
-bool UnifiedTlinxOrderRequest::NotifyUrlHasBeenSet() const
+bool UnifiedTlinxOrderRequest::IgnoreAmountHasBeenSet() const
 {
-    return m_notifyUrlHasBeenSet;
+    return m_ignoreAmountHasBeenSet;
 }
 
-string UnifiedTlinxOrderRequest::GetPayName() const
+string UnifiedTlinxOrderRequest::GetAuthCode() const
 {
-    return m_payName;
+    return m_authCode;
 }
 
-void UnifiedTlinxOrderRequest::SetPayName(const string& _payName)
+void UnifiedTlinxOrderRequest::SetAuthCode(const string& _authCode)
 {
-    m_payName = _payName;
-    m_payNameHasBeenSet = true;
+    m_authCode = _authCode;
+    m_authCodeHasBeenSet = true;
 }
 
-bool UnifiedTlinxOrderRequest::PayNameHasBeenSet() const
+bool UnifiedTlinxOrderRequest::AuthCodeHasBeenSet() const
 {
-    return m_payNameHasBeenSet;
-}
-
-string UnifiedTlinxOrderRequest::GetOrderName() const
-{
-    return m_orderName;
-}
-
-void UnifiedTlinxOrderRequest::SetOrderName(const string& _orderName)
-{
-    m_orderName = _orderName;
-    m_orderNameHasBeenSet = true;
-}
-
-bool UnifiedTlinxOrderRequest::OrderNameHasBeenSet() const
-{
-    return m_orderNameHasBeenSet;
+    return m_authCodeHasBeenSet;
 }
 
 string UnifiedTlinxOrderRequest::GetOriginalAmount() const
@@ -372,36 +397,68 @@ bool UnifiedTlinxOrderRequest::OriginalAmountHasBeenSet() const
     return m_originalAmountHasBeenSet;
 }
 
-string UnifiedTlinxOrderRequest::GetDiscountAmount() const
+string UnifiedTlinxOrderRequest::GetOrderName() const
 {
-    return m_discountAmount;
+    return m_orderName;
 }
 
-void UnifiedTlinxOrderRequest::SetDiscountAmount(const string& _discountAmount)
+void UnifiedTlinxOrderRequest::SetOrderName(const string& _orderName)
 {
-    m_discountAmount = _discountAmount;
-    m_discountAmountHasBeenSet = true;
+    m_orderName = _orderName;
+    m_orderNameHasBeenSet = true;
 }
 
-bool UnifiedTlinxOrderRequest::DiscountAmountHasBeenSet() const
+bool UnifiedTlinxOrderRequest::OrderNameHasBeenSet() const
 {
-    return m_discountAmountHasBeenSet;
+    return m_orderNameHasBeenSet;
 }
 
-string UnifiedTlinxOrderRequest::GetIgnoreAmount() const
+string UnifiedTlinxOrderRequest::GetJumpUrl() const
 {
-    return m_ignoreAmount;
+    return m_jumpUrl;
 }
 
-void UnifiedTlinxOrderRequest::SetIgnoreAmount(const string& _ignoreAmount)
+void UnifiedTlinxOrderRequest::SetJumpUrl(const string& _jumpUrl)
 {
-    m_ignoreAmount = _ignoreAmount;
-    m_ignoreAmountHasBeenSet = true;
+    m_jumpUrl = _jumpUrl;
+    m_jumpUrlHasBeenSet = true;
 }
 
-bool UnifiedTlinxOrderRequest::IgnoreAmountHasBeenSet() const
+bool UnifiedTlinxOrderRequest::JumpUrlHasBeenSet() const
 {
-    return m_ignoreAmountHasBeenSet;
+    return m_jumpUrlHasBeenSet;
+}
+
+string UnifiedTlinxOrderRequest::GetProfile() const
+{
+    return m_profile;
+}
+
+void UnifiedTlinxOrderRequest::SetProfile(const string& _profile)
+{
+    m_profile = _profile;
+    m_profileHasBeenSet = true;
+}
+
+bool UnifiedTlinxOrderRequest::ProfileHasBeenSet() const
+{
+    return m_profileHasBeenSet;
+}
+
+string UnifiedTlinxOrderRequest::GetTradeResult() const
+{
+    return m_tradeResult;
+}
+
+void UnifiedTlinxOrderRequest::SetTradeResult(const string& _tradeResult)
+{
+    m_tradeResult = _tradeResult;
+    m_tradeResultHasBeenSet = true;
+}
+
+bool UnifiedTlinxOrderRequest::TradeResultHasBeenSet() const
+{
+    return m_tradeResultHasBeenSet;
 }
 
 string UnifiedTlinxOrderRequest::GetTradeAccount() const
@@ -436,84 +493,52 @@ bool UnifiedTlinxOrderRequest::TradeNoHasBeenSet() const
     return m_tradeNoHasBeenSet;
 }
 
-string UnifiedTlinxOrderRequest::GetTradeResult() const
+string UnifiedTlinxOrderRequest::GetDiscountAmount() const
 {
-    return m_tradeResult;
+    return m_discountAmount;
 }
 
-void UnifiedTlinxOrderRequest::SetTradeResult(const string& _tradeResult)
+void UnifiedTlinxOrderRequest::SetDiscountAmount(const string& _discountAmount)
 {
-    m_tradeResult = _tradeResult;
-    m_tradeResultHasBeenSet = true;
+    m_discountAmount = _discountAmount;
+    m_discountAmountHasBeenSet = true;
 }
 
-bool UnifiedTlinxOrderRequest::TradeResultHasBeenSet() const
+bool UnifiedTlinxOrderRequest::DiscountAmountHasBeenSet() const
 {
-    return m_tradeResultHasBeenSet;
+    return m_discountAmountHasBeenSet;
 }
 
-string UnifiedTlinxOrderRequest::GetRemark() const
+string UnifiedTlinxOrderRequest::GetPayName() const
 {
-    return m_remark;
+    return m_payName;
 }
 
-void UnifiedTlinxOrderRequest::SetRemark(const string& _remark)
+void UnifiedTlinxOrderRequest::SetPayName(const string& _payName)
 {
-    m_remark = _remark;
-    m_remarkHasBeenSet = true;
+    m_payName = _payName;
+    m_payNameHasBeenSet = true;
 }
 
-bool UnifiedTlinxOrderRequest::RemarkHasBeenSet() const
+bool UnifiedTlinxOrderRequest::PayNameHasBeenSet() const
 {
-    return m_remarkHasBeenSet;
+    return m_payNameHasBeenSet;
 }
 
-string UnifiedTlinxOrderRequest::GetAuthCode() const
+string UnifiedTlinxOrderRequest::GetRoyalty() const
 {
-    return m_authCode;
+    return m_royalty;
 }
 
-void UnifiedTlinxOrderRequest::SetAuthCode(const string& _authCode)
+void UnifiedTlinxOrderRequest::SetRoyalty(const string& _royalty)
 {
-    m_authCode = _authCode;
-    m_authCodeHasBeenSet = true;
+    m_royalty = _royalty;
+    m_royaltyHasBeenSet = true;
 }
 
-bool UnifiedTlinxOrderRequest::AuthCodeHasBeenSet() const
+bool UnifiedTlinxOrderRequest::RoyaltyHasBeenSet() const
 {
-    return m_authCodeHasBeenSet;
-}
-
-string UnifiedTlinxOrderRequest::GetJumpUrl() const
-{
-    return m_jumpUrl;
-}
-
-void UnifiedTlinxOrderRequest::SetJumpUrl(const string& _jumpUrl)
-{
-    m_jumpUrl = _jumpUrl;
-    m_jumpUrlHasBeenSet = true;
-}
-
-bool UnifiedTlinxOrderRequest::JumpUrlHasBeenSet() const
-{
-    return m_jumpUrlHasBeenSet;
-}
-
-string UnifiedTlinxOrderRequest::GetProfile() const
-{
-    return m_profile;
-}
-
-void UnifiedTlinxOrderRequest::SetProfile(const string& _profile)
-{
-    m_profile = _profile;
-    m_profileHasBeenSet = true;
-}
-
-bool UnifiedTlinxOrderRequest::ProfileHasBeenSet() const
-{
-    return m_profileHasBeenSet;
+    return m_royaltyHasBeenSet;
 }
 
 

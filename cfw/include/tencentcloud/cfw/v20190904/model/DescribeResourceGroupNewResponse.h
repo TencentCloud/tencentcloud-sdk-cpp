@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return UnResourceNum 无
+                     * 获取未分类实例数量
+                     * @return UnResourceNum 未分类实例数量
                      */
                     int64_t GetUnResourceNum() const;
 
@@ -68,8 +68,8 @@ namespace TencentCloud
                     bool UnResourceNumHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return ReturnMsg 无
+                     * 获取接口返回消息
+                     * @return ReturnMsg 接口返回消息
                      */
                     std::string GetReturnMsg() const;
 
@@ -80,8 +80,8 @@ namespace TencentCloud
                     bool ReturnMsgHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return ReturnCode 无
+                     * 获取返回码；0为请求成功
+                     * @return ReturnCode 返回码；0为请求成功
                      */
                     int64_t GetReturnCode() const;
 
@@ -100,19 +100,19 @@ namespace TencentCloud
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 无
+                     * 未分类实例数量
                      */
                     int64_t m_unResourceNum;
                     bool m_unResourceNumHasBeenSet;
 
                     /**
-                     * 无
+                     * 接口返回消息
                      */
                     std::string m_returnMsg;
                     bool m_returnMsgHasBeenSet;
 
                     /**
-                     * 无
+                     * 返回码；0为请求成功
                      */
                     int64_t m_returnCode;
                     bool m_returnCodeHasBeenSet;

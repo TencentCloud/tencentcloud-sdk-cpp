@@ -57,6 +57,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/DisIsolateDBInstancesRequest.h
   include/tencentcloud/postgres/v20170312/model/ServerlessDBInstanceNetInfo.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBInstancesRequest.h
+  include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceSpecRequest.h
   include/tencentcloud/postgres/v20170312/model/ModifyAccountRemarkResponse.h
   include/tencentcloud/postgres/v20170312/model/UpgradeDBInstanceRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeZonesRequest.h
@@ -91,6 +92,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/InquiryPriceUpgradeDBInstanceRequest.h
   include/tencentcloud/postgres/v20170312/model/RebalanceReadOnlyGroupResponse.h
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceNameRequest.h
+  include/tencentcloud/postgres/v20170312/model/OpenServerlessDBExtranetAccessResponse.h
   include/tencentcloud/postgres/v20170312/model/InquiryPriceRenewDBInstanceResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeSlowQueryAnalysisRequest.h
   include/tencentcloud/postgres/v20170312/model/ErrLogDetail.h
@@ -144,7 +146,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/DescribeDBSlowlogsRequest.h
   include/tencentcloud/postgres/v20170312/model/DestroyDBInstanceResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBInstanceAttributeResponse.h
-  include/tencentcloud/postgres/v20170312/model/OpenServerlessDBExtranetAccessResponse.h
+  include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceSpecResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBXlogsResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBSlowlogsResponse.h
   include/tencentcloud/postgres/v20170312/model/CreateDBInstancesResponse.h
@@ -190,6 +192,7 @@ set(postgres_src
   src/v20170312/model/DisIsolateDBInstancesRequest.cpp
   src/v20170312/model/ServerlessDBInstanceNetInfo.cpp
   src/v20170312/model/DescribeDBInstancesRequest.cpp
+  src/v20170312/model/ModifyDBInstanceSpecRequest.cpp
   src/v20170312/model/ModifyAccountRemarkResponse.cpp
   src/v20170312/model/UpgradeDBInstanceRequest.cpp
   src/v20170312/model/DescribeZonesRequest.cpp
@@ -224,6 +227,7 @@ set(postgres_src
   src/v20170312/model/InquiryPriceUpgradeDBInstanceRequest.cpp
   src/v20170312/model/RebalanceReadOnlyGroupResponse.cpp
   src/v20170312/model/ModifyDBInstanceNameRequest.cpp
+  src/v20170312/model/OpenServerlessDBExtranetAccessResponse.cpp
   src/v20170312/model/InquiryPriceRenewDBInstanceResponse.cpp
   src/v20170312/model/DescribeSlowQueryAnalysisRequest.cpp
   src/v20170312/model/ErrLogDetail.cpp
@@ -277,7 +281,7 @@ set(postgres_src
   src/v20170312/model/DescribeDBSlowlogsRequest.cpp
   src/v20170312/model/DestroyDBInstanceResponse.cpp
   src/v20170312/model/DescribeDBInstanceAttributeResponse.cpp
-  src/v20170312/model/OpenServerlessDBExtranetAccessResponse.cpp
+  src/v20170312/model/ModifyDBInstanceSpecResponse.cpp
   src/v20170312/model/DescribeDBXlogsResponse.cpp
   src/v20170312/model/DescribeDBSlowlogsResponse.cpp
   src/v20170312/model/CreateDBInstancesResponse.cpp

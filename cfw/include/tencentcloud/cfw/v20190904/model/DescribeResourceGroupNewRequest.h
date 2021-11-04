@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询类型 网络结构 vpc，业务识别- resource ，资源标签-tag
-                     * @return QueryType 查询类型 网络结构 vpc，业务识别- resource ，资源标签-tag
+                     * 获取查询类型 网络结构-vpc，业务识别-resource ，资源标签-tag
+                     * @return QueryType 查询类型 网络结构-vpc，业务识别-resource ，资源标签-tag
                      */
                     std::string GetQueryType() const;
 
                     /**
-                     * 设置查询类型 网络结构 vpc，业务识别- resource ，资源标签-tag
-                     * @param QueryType 查询类型 网络结构 vpc，业务识别- resource ，资源标签-tag
+                     * 设置查询类型 网络结构-vpc，业务识别-resource ，资源标签-tag
+                     * @param QueryType 查询类型 网络结构-vpc，业务识别-resource ，资源标签-tag
                      */
                     void SetQueryType(const std::string& _queryType);
 
@@ -99,7 +99,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询类型 网络结构 vpc，业务识别- resource ，资源标签-tag
+                     * 查询类型 网络结构-vpc，业务识别-resource ，资源标签-tag
                      */
                     std::string m_queryType;
                     bool m_queryTypeHasBeenSet;

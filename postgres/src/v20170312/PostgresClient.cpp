@@ -1717,6 +1717,49 @@ PostgresClient::ModifyDBInstanceReadOnlyGroupOutcomeCallable PostgresClient::Mod
     return task->get_future();
 }
 
+PostgresClient::ModifyDBInstanceSpecOutcome PostgresClient::ModifyDBInstanceSpec(const ModifyDBInstanceSpecRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBInstanceSpec");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBInstanceSpecResponse rsp = ModifyDBInstanceSpecResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBInstanceSpecOutcome(rsp);
+        else
+            return ModifyDBInstanceSpecOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBInstanceSpecOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::ModifyDBInstanceSpecAsync(const ModifyDBInstanceSpecRequest& request, const ModifyDBInstanceSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDBInstanceSpec(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::ModifyDBInstanceSpecOutcomeCallable PostgresClient::ModifyDBInstanceSpecCallable(const ModifyDBInstanceSpecRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceSpecOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDBInstanceSpec(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::ModifyDBInstancesProjectOutcome PostgresClient::ModifyDBInstancesProject(const ModifyDBInstancesProjectRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDBInstancesProject");

@@ -70,8 +70,8 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取10
-                     * @return Total 10
+                     * 获取返回数据总数
+                     * @return Total 返回数据总数
                      */
                     int64_t GetTotal() const;
 
@@ -96,7 +96,7 @@ namespace TencentCloud
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 10
+                     * 返回数据总数
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;

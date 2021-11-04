@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool InsTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否未分组 1是
-                     * @return ChooseType 是否未分组 1是
+                     * 获取ChooseType为1，查询已经分组的资产；ChooseType不为1查询没有分组的资产
+                     * @return ChooseType ChooseType为1，查询已经分组的资产；ChooseType不为1查询没有分组的资产
                      */
                     std::string GetChooseType() const;
 
                     /**
-                     * 设置是否未分组 1是
-                     * @param ChooseType 是否未分组 1是
+                     * 设置ChooseType为1，查询已经分组的资产；ChooseType不为1查询没有分组的资产
+                     * @param ChooseType ChooseType为1，查询已经分组的资产；ChooseType不为1查询没有分组的资产
                      */
                     void SetChooseType(const std::string& _chooseType);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取页大小
-                     * @return Limit 页大小
+                     * 获取查询单页的最大值；eg：10；则最多返回10条结果
+                     * @return Limit 查询单页的最大值；eg：10；则最多返回10条结果
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置页大小
-                     * @param Limit 页大小
+                     * 设置查询单页的最大值；eg：10；则最多返回10条结果
+                     * @param Limit 查询单页的最大值；eg：10；则最多返回10条结果
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取查询结果的偏移量
+                     * @return Offset 查询结果的偏移量
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param Offset 偏移量
+                     * 设置查询结果的偏移量
+                     * @param Offset 查询结果的偏移量
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -165,7 +165,7 @@ namespace TencentCloud
                     bool m_insTypeHasBeenSet;
 
                     /**
-                     * 是否未分组 1是
+                     * ChooseType为1，查询已经分组的资产；ChooseType不为1查询没有分组的资产
                      */
                     std::string m_chooseType;
                     bool m_chooseTypeHasBeenSet;
@@ -177,13 +177,13 @@ namespace TencentCloud
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 页大小
+                     * 查询单页的最大值；eg：10；则最多返回10条结果
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * 查询结果的偏移量
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
