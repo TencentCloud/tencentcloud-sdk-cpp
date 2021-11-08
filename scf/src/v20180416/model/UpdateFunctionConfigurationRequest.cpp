@@ -40,7 +40,8 @@ UpdateFunctionConfigurationRequest::UpdateFunctionConfigurationRequest() :
     m_deadLetterConfigHasBeenSet(false),
     m_publicNetConfigHasBeenSet(false),
     m_cfsConfigHasBeenSet(false),
-    m_initTimeoutHasBeenSet(false)
+    m_initTimeoutHasBeenSet(false),
+    m_protocolParamsHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,15 @@ string UpdateFunctionConfigurationRequest::ToJsonString() const
         string key = "InitTimeout";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_initTimeout, allocator);
+    }
+
+    if (m_protocolParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtocolParams";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_protocolParams.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -501,6 +511,22 @@ void UpdateFunctionConfigurationRequest::SetInitTimeout(const int64_t& _initTime
 bool UpdateFunctionConfigurationRequest::InitTimeoutHasBeenSet() const
 {
     return m_initTimeoutHasBeenSet;
+}
+
+ProtocolParams UpdateFunctionConfigurationRequest::GetProtocolParams() const
+{
+    return m_protocolParams;
+}
+
+void UpdateFunctionConfigurationRequest::SetProtocolParams(const ProtocolParams& _protocolParams)
+{
+    m_protocolParams = _protocolParams;
+    m_protocolParamsHasBeenSet = true;
+}
+
+bool UpdateFunctionConfigurationRequest::ProtocolParamsHasBeenSet() const
+{
+    return m_protocolParamsHasBeenSet;
 }
 
 

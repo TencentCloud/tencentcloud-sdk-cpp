@@ -47,7 +47,11 @@ UpdateInstanceRequest::UpdateInstanceRequest() :
     m_multiZoneInfoHasBeenSet(false),
     m_sceneTypeHasBeenSet(false),
     m_kibanaConfigHasBeenSet(false),
-    m_webNodeTypeInfoHasBeenSet(false)
+    m_webNodeTypeInfoHasBeenSet(false),
+    m_switchPrivateLinkHasBeenSet(false),
+    m_enableCerebroHasBeenSet(false),
+    m_cerebroPublicAccessHasBeenSet(false),
+    m_cerebroPrivateAccessHasBeenSet(false)
 {
 }
 
@@ -274,6 +278,38 @@ string UpdateInstanceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_webNodeTypeInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_switchPrivateLinkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SwitchPrivateLink";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_switchPrivateLink.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableCerebroHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableCerebro";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableCerebro, allocator);
+    }
+
+    if (m_cerebroPublicAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CerebroPublicAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cerebroPublicAccess.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cerebroPrivateAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CerebroPrivateAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cerebroPrivateAccess.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -682,6 +718,70 @@ void UpdateInstanceRequest::SetWebNodeTypeInfo(const WebNodeTypeInfo& _webNodeTy
 bool UpdateInstanceRequest::WebNodeTypeInfoHasBeenSet() const
 {
     return m_webNodeTypeInfoHasBeenSet;
+}
+
+string UpdateInstanceRequest::GetSwitchPrivateLink() const
+{
+    return m_switchPrivateLink;
+}
+
+void UpdateInstanceRequest::SetSwitchPrivateLink(const string& _switchPrivateLink)
+{
+    m_switchPrivateLink = _switchPrivateLink;
+    m_switchPrivateLinkHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::SwitchPrivateLinkHasBeenSet() const
+{
+    return m_switchPrivateLinkHasBeenSet;
+}
+
+bool UpdateInstanceRequest::GetEnableCerebro() const
+{
+    return m_enableCerebro;
+}
+
+void UpdateInstanceRequest::SetEnableCerebro(const bool& _enableCerebro)
+{
+    m_enableCerebro = _enableCerebro;
+    m_enableCerebroHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::EnableCerebroHasBeenSet() const
+{
+    return m_enableCerebroHasBeenSet;
+}
+
+string UpdateInstanceRequest::GetCerebroPublicAccess() const
+{
+    return m_cerebroPublicAccess;
+}
+
+void UpdateInstanceRequest::SetCerebroPublicAccess(const string& _cerebroPublicAccess)
+{
+    m_cerebroPublicAccess = _cerebroPublicAccess;
+    m_cerebroPublicAccessHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::CerebroPublicAccessHasBeenSet() const
+{
+    return m_cerebroPublicAccessHasBeenSet;
+}
+
+string UpdateInstanceRequest::GetCerebroPrivateAccess() const
+{
+    return m_cerebroPrivateAccess;
+}
+
+void UpdateInstanceRequest::SetCerebroPrivateAccess(const string& _cerebroPrivateAccess)
+{
+    m_cerebroPrivateAccess = _cerebroPrivateAccess;
+    m_cerebroPrivateAccessHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::CerebroPrivateAccessHasBeenSet() const
+{
+    return m_cerebroPrivateAccessHasBeenSet;
 }
 
 

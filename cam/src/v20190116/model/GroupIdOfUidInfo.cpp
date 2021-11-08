@@ -21,8 +21,9 @@ using namespace TencentCloud::Cam::V20190116::Model;
 using namespace std;
 
 GroupIdOfUidInfo::GroupIdOfUidInfo() :
+    m_groupIdHasBeenSet(false),
     m_uidHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
+    m_uinHasBeenSet(false)
 {
 }
 
@@ -30,16 +31,6 @@ CoreInternalOutcome GroupIdOfUidInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("Uid") && !value["Uid"].IsNull())
-    {
-        if (!value["Uid"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `GroupIdOfUidInfo.Uid` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_uid = value["Uid"].GetUint64();
-        m_uidHasBeenSet = true;
-    }
 
     if (value.HasMember("GroupId") && !value["GroupId"].IsNull())
     {
@@ -51,20 +42,32 @@ CoreInternalOutcome GroupIdOfUidInfo::Deserialize(const rapidjson::Value &value)
         m_groupIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Uid") && !value["Uid"].IsNull())
+    {
+        if (!value["Uid"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `GroupIdOfUidInfo.Uid` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_uid = value["Uid"].GetUint64();
+        m_uidHasBeenSet = true;
+    }
+
+    if (value.HasMember("Uin") && !value["Uin"].IsNull())
+    {
+        if (!value["Uin"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `GroupIdOfUidInfo.Uin` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_uin = value["Uin"].GetUint64();
+        m_uinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void GroupIdOfUidInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_uidHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Uid";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_uid, allocator);
-    }
 
     if (m_groupIdHasBeenSet)
     {
@@ -74,8 +77,40 @@ void GroupIdOfUidInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, m_groupId, allocator);
     }
 
+    if (m_uidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Uid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_uid, allocator);
+    }
+
+    if (m_uinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Uin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_uin, allocator);
+    }
+
 }
 
+
+uint64_t GroupIdOfUidInfo::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void GroupIdOfUidInfo::SetGroupId(const uint64_t& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool GroupIdOfUidInfo::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
+}
 
 uint64_t GroupIdOfUidInfo::GetUid() const
 {
@@ -93,19 +128,19 @@ bool GroupIdOfUidInfo::UidHasBeenSet() const
     return m_uidHasBeenSet;
 }
 
-uint64_t GroupIdOfUidInfo::GetGroupId() const
+uint64_t GroupIdOfUidInfo::GetUin() const
 {
-    return m_groupId;
+    return m_uin;
 }
 
-void GroupIdOfUidInfo::SetGroupId(const uint64_t& _groupId)
+void GroupIdOfUidInfo::SetUin(const uint64_t& _uin)
 {
-    m_groupId = _groupId;
-    m_groupIdHasBeenSet = true;
+    m_uin = _uin;
+    m_uinHasBeenSet = true;
 }
 
-bool GroupIdOfUidInfo::GroupIdHasBeenSet() const
+bool GroupIdOfUidInfo::UinHasBeenSet() const
 {
-    return m_groupIdHasBeenSet;
+    return m_uinHasBeenSet;
 }
 

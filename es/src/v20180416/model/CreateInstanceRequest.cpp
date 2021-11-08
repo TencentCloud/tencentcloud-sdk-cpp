@@ -51,7 +51,8 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_tagListHasBeenSet(false),
     m_basicSecurityTypeHasBeenSet(false),
     m_sceneTypeHasBeenSet(false),
-    m_webNodeTypeInfoHasBeenSet(false)
+    m_webNodeTypeInfoHasBeenSet(false),
+    m_protocolHasBeenSet(false)
 {
 }
 
@@ -319,6 +320,14 @@ string CreateInstanceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_webNodeTypeInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_protocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Protocol";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -791,6 +800,22 @@ void CreateInstanceRequest::SetWebNodeTypeInfo(const WebNodeTypeInfo& _webNodeTy
 bool CreateInstanceRequest::WebNodeTypeInfoHasBeenSet() const
 {
     return m_webNodeTypeInfoHasBeenSet;
+}
+
+string CreateInstanceRequest::GetProtocol() const
+{
+    return m_protocol;
+}
+
+void CreateInstanceRequest::SetProtocol(const string& _protocol)
+{
+    m_protocol = _protocol;
+    m_protocolHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::ProtocolHasBeenSet() const
+{
+    return m_protocolHasBeenSet;
 }
 
 

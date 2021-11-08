@@ -32,6 +32,7 @@
 #include <tencentcloud/scf/v20180416/model/PublicNetConfigOut.h>
 #include <tencentcloud/scf/v20180416/model/CfsConfig.h>
 #include <tencentcloud/scf/v20180416/model/StatusReason.h>
+#include <tencentcloud/scf/v20180416/model/ProtocolParams.h>
 
 
 namespace TencentCloud
@@ -574,6 +575,34 @@ namespace TencentCloud
                      */
                     bool TraceEnableHasBeenSet() const;
 
+                    /**
+                     * 获取HTTP函数支持的访问协议。当前支持WebSockets协议。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProtocolType HTTP函数支持的访问协议。当前支持WebSockets协议。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProtocolType() const;
+
+                    /**
+                     * 判断参数 ProtocolType 是否已赋值
+                     * @return ProtocolType 是否已赋值
+                     */
+                    bool ProtocolTypeHasBeenSet() const;
+
+                    /**
+                     * 获取HTTP函数配置ProtocolType访问协议，当前协议配置的参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProtocolParams HTTP函数配置ProtocolType访问协议，当前协议配置的参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ProtocolParams GetProtocolParams() const;
+
+                    /**
+                     * 判断参数 ProtocolParams 是否已赋值
+                     * @return ProtocolParams 是否已赋值
+                     */
+                    bool ProtocolParamsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -835,6 +864,20 @@ namespace TencentCloud
                      */
                     std::string m_traceEnable;
                     bool m_traceEnableHasBeenSet;
+
+                    /**
+                     * HTTP函数支持的访问协议。当前支持WebSockets协议。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_protocolType;
+                    bool m_protocolTypeHasBeenSet;
+
+                    /**
+                     * HTTP函数配置ProtocolType访问协议，当前协议配置的参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ProtocolParams m_protocolParams;
+                    bool m_protocolParamsHasBeenSet;
 
                 };
             }

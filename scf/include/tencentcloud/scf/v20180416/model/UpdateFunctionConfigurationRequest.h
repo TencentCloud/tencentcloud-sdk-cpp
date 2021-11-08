@@ -27,6 +27,7 @@
 #include <tencentcloud/scf/v20180416/model/DeadLetterConfig.h>
 #include <tencentcloud/scf/v20180416/model/PublicNetConfigIn.h>
 #include <tencentcloud/scf/v20180416/model/CfsConfig.h>
+#include <tencentcloud/scf/v20180416/model/ProtocolParams.h>
 
 
 namespace TencentCloud
@@ -372,6 +373,24 @@ namespace TencentCloud
                      */
                     bool InitTimeoutHasBeenSet() const;
 
+                    /**
+                     * 获取HTTP函数配置ProtocolType访问协议，当前协议可配置的参数
+                     * @return ProtocolParams HTTP函数配置ProtocolType访问协议，当前协议可配置的参数
+                     */
+                    ProtocolParams GetProtocolParams() const;
+
+                    /**
+                     * 设置HTTP函数配置ProtocolType访问协议，当前协议可配置的参数
+                     * @param ProtocolParams HTTP函数配置ProtocolType访问协议，当前协议可配置的参数
+                     */
+                    void SetProtocolParams(const ProtocolParams& _protocolParams);
+
+                    /**
+                     * 判断参数 ProtocolParams 是否已赋值
+                     * @return ProtocolParams 是否已赋值
+                     */
+                    bool ProtocolParamsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -481,6 +500,12 @@ namespace TencentCloud
                      */
                     int64_t m_initTimeout;
                     bool m_initTimeoutHasBeenSet;
+
+                    /**
+                     * HTTP函数配置ProtocolType访问协议，当前协议可配置的参数
+                     */
+                    ProtocolParams m_protocolParams;
+                    bool m_protocolParamsHasBeenSet;
 
                 };
             }

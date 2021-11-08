@@ -45,7 +45,9 @@ CreateFunctionRequest::CreateFunctionRequest() :
     m_initTimeoutHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_asyncRunEnableHasBeenSet(false),
-    m_traceEnableHasBeenSet(false)
+    m_traceEnableHasBeenSet(false),
+    m_protocolTypeHasBeenSet(false),
+    m_protocolParamsHasBeenSet(false)
 {
 }
 
@@ -258,6 +260,23 @@ string CreateFunctionRequest::ToJsonString() const
         string key = "TraceEnable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_traceEnable.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protocolTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtocolType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_protocolType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protocolParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtocolParams";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_protocolParams.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -634,6 +653,38 @@ void CreateFunctionRequest::SetTraceEnable(const string& _traceEnable)
 bool CreateFunctionRequest::TraceEnableHasBeenSet() const
 {
     return m_traceEnableHasBeenSet;
+}
+
+string CreateFunctionRequest::GetProtocolType() const
+{
+    return m_protocolType;
+}
+
+void CreateFunctionRequest::SetProtocolType(const string& _protocolType)
+{
+    m_protocolType = _protocolType;
+    m_protocolTypeHasBeenSet = true;
+}
+
+bool CreateFunctionRequest::ProtocolTypeHasBeenSet() const
+{
+    return m_protocolTypeHasBeenSet;
+}
+
+ProtocolParams CreateFunctionRequest::GetProtocolParams() const
+{
+    return m_protocolParams;
+}
+
+void CreateFunctionRequest::SetProtocolParams(const ProtocolParams& _protocolParams)
+{
+    m_protocolParams = _protocolParams;
+    m_protocolParamsHasBeenSet = true;
+}
+
+bool CreateFunctionRequest::ProtocolParamsHasBeenSet() const
+{
+    return m_protocolParamsHasBeenSet;
 }
 
 

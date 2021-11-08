@@ -65,7 +65,9 @@ GetFunctionResponse::GetFunctionResponse() :
     m_initTimeoutHasBeenSet(false),
     m_statusReasonsHasBeenSet(false),
     m_asyncRunEnableHasBeenSet(false),
-    m_traceEnableHasBeenSet(false)
+    m_traceEnableHasBeenSet(false),
+    m_protocolTypeHasBeenSet(false),
+    m_protocolParamsHasBeenSet(false)
 {
 }
 
@@ -612,6 +614,33 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
         m_traceEnableHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ProtocolType") && !rsp["ProtocolType"].IsNull())
+    {
+        if (!rsp["ProtocolType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProtocolType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_protocolType = string(rsp["ProtocolType"].GetString());
+        m_protocolTypeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ProtocolParams") && !rsp["ProtocolParams"].IsNull())
+    {
+        if (!rsp["ProtocolParams"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProtocolParams` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_protocolParams.Deserialize(rsp["ProtocolParams"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_protocolParamsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -991,6 +1020,23 @@ string GetFunctionResponse::ToJsonString() const
         string key = "TraceEnable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_traceEnable.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protocolTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtocolType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocolType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protocolParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtocolParams";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_protocolParams.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1423,6 +1469,26 @@ string GetFunctionResponse::GetTraceEnable() const
 bool GetFunctionResponse::TraceEnableHasBeenSet() const
 {
     return m_traceEnableHasBeenSet;
+}
+
+string GetFunctionResponse::GetProtocolType() const
+{
+    return m_protocolType;
+}
+
+bool GetFunctionResponse::ProtocolTypeHasBeenSet() const
+{
+    return m_protocolTypeHasBeenSet;
+}
+
+ProtocolParams GetFunctionResponse::GetProtocolParams() const
+{
+    return m_protocolParams;
+}
+
+bool GetFunctionResponse::ProtocolParamsHasBeenSet() const
+{
+    return m_protocolParamsHasBeenSet;
 }
 
 

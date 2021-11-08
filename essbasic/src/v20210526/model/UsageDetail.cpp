@@ -23,7 +23,8 @@ using namespace std;
 UsageDetail::UsageDetail() :
     m_proxyOrganizationOpenIdHasBeenSet(false),
     m_usageHasBeenSet(false),
-    m_dateHasBeenSet(false)
+    m_dateHasBeenSet(false),
+    m_proxyOrganizationNameHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome UsageDetail::Deserialize(const rapidjson::Value &value)
         m_dateHasBeenSet = true;
     }
 
+    if (value.HasMember("ProxyOrganizationName") && !value["ProxyOrganizationName"].IsNull())
+    {
+        if (!value["ProxyOrganizationName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsageDetail.ProxyOrganizationName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_proxyOrganizationName = string(value["ProxyOrganizationName"].GetString());
+        m_proxyOrganizationNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void UsageDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Date";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_date.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_proxyOrganizationNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyOrganizationName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_proxyOrganizationName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void UsageDetail::SetDate(const string& _date)
 bool UsageDetail::DateHasBeenSet() const
 {
     return m_dateHasBeenSet;
+}
+
+string UsageDetail::GetProxyOrganizationName() const
+{
+    return m_proxyOrganizationName;
+}
+
+void UsageDetail::SetProxyOrganizationName(const string& _proxyOrganizationName)
+{
+    m_proxyOrganizationName = _proxyOrganizationName;
+    m_proxyOrganizationNameHasBeenSet = true;
+}
+
+bool UsageDetail::ProxyOrganizationNameHasBeenSet() const
+{
+    return m_proxyOrganizationNameHasBeenSet;
 }
 

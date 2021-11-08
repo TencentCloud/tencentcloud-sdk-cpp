@@ -255,92 +255,6 @@ DtsClient::CreateSubscribeOutcomeCallable DtsClient::CreateSubscribeCallable(con
     return task->get_future();
 }
 
-DtsClient::CreateSyncCheckJobOutcome DtsClient::CreateSyncCheckJob(const CreateSyncCheckJobRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateSyncCheckJob");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateSyncCheckJobResponse rsp = CreateSyncCheckJobResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateSyncCheckJobOutcome(rsp);
-        else
-            return CreateSyncCheckJobOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateSyncCheckJobOutcome(outcome.GetError());
-    }
-}
-
-void DtsClient::CreateSyncCheckJobAsync(const CreateSyncCheckJobRequest& request, const CreateSyncCheckJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSyncCheckJob(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-DtsClient::CreateSyncCheckJobOutcomeCallable DtsClient::CreateSyncCheckJobCallable(const CreateSyncCheckJobRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateSyncCheckJobOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSyncCheckJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-DtsClient::CreateSyncJobOutcome DtsClient::CreateSyncJob(const CreateSyncJobRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateSyncJob");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateSyncJobResponse rsp = CreateSyncJobResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateSyncJobOutcome(rsp);
-        else
-            return CreateSyncJobOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateSyncJobOutcome(outcome.GetError());
-    }
-}
-
-void DtsClient::CreateSyncJobAsync(const CreateSyncJobRequest& request, const CreateSyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSyncJob(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-DtsClient::CreateSyncJobOutcomeCallable DtsClient::CreateSyncJobCallable(const CreateSyncJobRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateSyncJobOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSyncJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 DtsClient::DeleteMigrateJobOutcome DtsClient::DeleteMigrateJob(const DeleteMigrateJobRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteMigrateJob");
@@ -377,49 +291,6 @@ DtsClient::DeleteMigrateJobOutcomeCallable DtsClient::DeleteMigrateJobCallable(c
         [this, request]()
         {
             return this->DeleteMigrateJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-DtsClient::DeleteSyncJobOutcome DtsClient::DeleteSyncJob(const DeleteSyncJobRequest &request)
-{
-    auto outcome = MakeRequest(request, "DeleteSyncJob");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DeleteSyncJobResponse rsp = DeleteSyncJobResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DeleteSyncJobOutcome(rsp);
-        else
-            return DeleteSyncJobOutcome(o.GetError());
-    }
-    else
-    {
-        return DeleteSyncJobOutcome(outcome.GetError());
-    }
-}
-
-void DtsClient::DeleteSyncJobAsync(const DeleteSyncJobRequest& request, const DeleteSyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteSyncJob(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-DtsClient::DeleteSyncJobOutcomeCallable DtsClient::DeleteSyncJobCallable(const DeleteSyncJobRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DeleteSyncJobOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteSyncJob(request);
         }
     );
 
@@ -721,49 +592,6 @@ DtsClient::DescribeSyncCheckJobOutcomeCallable DtsClient::DescribeSyncCheckJobCa
         [this, request]()
         {
             return this->DescribeSyncCheckJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-DtsClient::DescribeSyncJobsOutcome DtsClient::DescribeSyncJobs(const DescribeSyncJobsRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeSyncJobs");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeSyncJobsResponse rsp = DescribeSyncJobsResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeSyncJobsOutcome(rsp);
-        else
-            return DescribeSyncJobsOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeSyncJobsOutcome(outcome.GetError());
-    }
-}
-
-void DtsClient::DescribeSyncJobsAsync(const DescribeSyncJobsRequest& request, const DescribeSyncJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSyncJobs(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-DtsClient::DescribeSyncJobsOutcomeCallable DtsClient::DescribeSyncJobsCallable(const DescribeSyncJobsRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeSyncJobsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSyncJobs(request);
         }
     );
 
@@ -1244,49 +1072,6 @@ DtsClient::StartMigrateJobOutcomeCallable DtsClient::StartMigrateJobCallable(con
     return task->get_future();
 }
 
-DtsClient::StartSyncJobOutcome DtsClient::StartSyncJob(const StartSyncJobRequest &request)
-{
-    auto outcome = MakeRequest(request, "StartSyncJob");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        StartSyncJobResponse rsp = StartSyncJobResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return StartSyncJobOutcome(rsp);
-        else
-            return StartSyncJobOutcome(o.GetError());
-    }
-    else
-    {
-        return StartSyncJobOutcome(outcome.GetError());
-    }
-}
-
-void DtsClient::StartSyncJobAsync(const StartSyncJobRequest& request, const StartSyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartSyncJob(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-DtsClient::StartSyncJobOutcomeCallable DtsClient::StartSyncJobCallable(const StartSyncJobRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<StartSyncJobOutcome()>>(
-        [this, request]()
-        {
-            return this->StartSyncJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 DtsClient::StopMigrateJobOutcome DtsClient::StopMigrateJob(const StopMigrateJobRequest &request)
 {
     auto outcome = MakeRequest(request, "StopMigrateJob");
@@ -1323,49 +1108,6 @@ DtsClient::StopMigrateJobOutcomeCallable DtsClient::StopMigrateJobCallable(const
         [this, request]()
         {
             return this->StopMigrateJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-DtsClient::SwitchDrToMasterOutcome DtsClient::SwitchDrToMaster(const SwitchDrToMasterRequest &request)
-{
-    auto outcome = MakeRequest(request, "SwitchDrToMaster");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        SwitchDrToMasterResponse rsp = SwitchDrToMasterResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return SwitchDrToMasterOutcome(rsp);
-        else
-            return SwitchDrToMasterOutcome(o.GetError());
-    }
-    else
-    {
-        return SwitchDrToMasterOutcome(outcome.GetError());
-    }
-}
-
-void DtsClient::SwitchDrToMasterAsync(const SwitchDrToMasterRequest& request, const SwitchDrToMasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SwitchDrToMaster(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-DtsClient::SwitchDrToMasterOutcomeCallable DtsClient::SwitchDrToMasterCallable(const SwitchDrToMasterRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<SwitchDrToMasterOutcome()>>(
-        [this, request]()
-        {
-            return this->SwitchDrToMaster(request);
         }
     );
 

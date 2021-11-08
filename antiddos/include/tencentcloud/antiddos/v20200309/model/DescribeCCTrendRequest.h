@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取指标，取值[inqps(总请求峰值，dropqps(攻击请求峰值))]
-                     * @return MetricName 指标，取值[inqps(总请求峰值，dropqps(攻击请求峰值))]
+                     * 获取指标，取值[inqps(总请求峰值，dropqps(攻击请求峰值))，incount(请求次数), dropcount(攻击次数)]
+                     * @return MetricName 指标，取值[inqps(总请求峰值，dropqps(攻击请求峰值))，incount(请求次数), dropcount(攻击次数)]
                      */
                     std::string GetMetricName() const;
 
                     /**
-                     * 设置指标，取值[inqps(总请求峰值，dropqps(攻击请求峰值))]
-                     * @param MetricName 指标，取值[inqps(总请求峰值，dropqps(攻击请求峰值))]
+                     * 设置指标，取值[inqps(总请求峰值，dropqps(攻击请求峰值))，incount(请求次数), dropcount(攻击次数)]
+                     * @param MetricName 指标，取值[inqps(总请求峰值，dropqps(攻击请求峰值))，incount(请求次数), dropcount(攻击次数)]
                      */
                     void SetMetricName(const std::string& _metricName);
 
@@ -219,7 +219,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 指标，取值[inqps(总请求峰值，dropqps(攻击请求峰值))]
+                     * 指标，取值[inqps(总请求峰值，dropqps(攻击请求峰值))，incount(请求次数), dropcount(攻击次数)]
                      */
                     std::string m_metricName;
                     bool m_metricNameHasBeenSet;

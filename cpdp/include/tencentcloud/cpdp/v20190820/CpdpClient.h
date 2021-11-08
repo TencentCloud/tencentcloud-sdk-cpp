@@ -1419,7 +1419,7 @@ namespace TencentCloud
                 RefundOrderOutcomeCallable RefundOrderCallable(const Model::RefundOrderRequest& request);
 
                 /**
-                 *云支付Tlinx退款接口
+                 *云支付订单退款接口
                  * @param req RefundTlinxOrderRequest
                  * @return RefundTlinxOrderOutcome
                  */

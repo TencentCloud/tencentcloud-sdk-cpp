@@ -600,6 +600,24 @@ namespace TencentCloud
                      */
                     bool WebNodeTypeInfoHasBeenSet() const;
 
+                    /**
+                     * 获取创建https集群，默认是http
+                     * @return Protocol 创建https集群，默认是http
+                     */
+                    std::string GetProtocol() const;
+
+                    /**
+                     * 设置创建https集群，默认是http
+                     * @param Protocol 创建https集群，默认是http
+                     */
+                    void SetProtocol(const std::string& _protocol);
+
+                    /**
+                     * 判断参数 Protocol 是否已赋值
+                     * @return Protocol 是否已赋值
+                     */
+                    bool ProtocolHasBeenSet() const;
+
                 private:
 
                     /**
@@ -783,6 +801,12 @@ namespace TencentCloud
                      */
                     WebNodeTypeInfo m_webNodeTypeInfo;
                     bool m_webNodeTypeInfoHasBeenSet;
+
+                    /**
+                     * 创建https集群，默认是http
+                     */
+                    std::string m_protocol;
+                    bool m_protocolHasBeenSet;
 
                 };
             }

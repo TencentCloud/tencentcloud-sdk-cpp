@@ -104,6 +104,28 @@ namespace TencentCloud
                      */
                     bool DateHasBeenSet() const;
 
+                    /**
+                     * 获取渠道侧合作企业名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProxyOrganizationName 渠道侧合作企业名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProxyOrganizationName() const;
+
+                    /**
+                     * 设置渠道侧合作企业名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProxyOrganizationName 渠道侧合作企业名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProxyOrganizationName(const std::string& _proxyOrganizationName);
+
+                    /**
+                     * 判断参数 ProxyOrganizationName 是否已赋值
+                     * @return ProxyOrganizationName 是否已赋值
+                     */
+                    bool ProxyOrganizationNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +146,13 @@ namespace TencentCloud
                      */
                     std::string m_date;
                     bool m_dateHasBeenSet;
+
+                    /**
+                     * 渠道侧合作企业名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_proxyOrganizationName;
+                    bool m_proxyOrganizationNameHasBeenSet;
 
                 };
             }

@@ -47,6 +47,24 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取用户组 ID
+                     * @return GroupId 用户组 ID
+                     */
+                    uint64_t GetGroupId() const;
+
+                    /**
+                     * 设置用户组 ID
+                     * @param GroupId 用户组 ID
+                     */
+                    void SetGroupId(const uint64_t& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     */
+                    bool GroupIdHasBeenSet() const;
+
+                    /**
                      * 获取子用户 UID
                      * @return Uid 子用户 UID
                      */
@@ -65,24 +83,30 @@ namespace TencentCloud
                     bool UidHasBeenSet() const;
 
                     /**
-                     * 获取用户组 ID
-                     * @return GroupId 用户组 ID
+                     * 获取子用户 Uin，Uid和Uin至少有一个必填
+                     * @return Uin 子用户 Uin，Uid和Uin至少有一个必填
                      */
-                    uint64_t GetGroupId() const;
+                    uint64_t GetUin() const;
 
                     /**
-                     * 设置用户组 ID
-                     * @param GroupId 用户组 ID
+                     * 设置子用户 Uin，Uid和Uin至少有一个必填
+                     * @param Uin 子用户 Uin，Uid和Uin至少有一个必填
                      */
-                    void SetGroupId(const uint64_t& _groupId);
+                    void SetUin(const uint64_t& _uin);
 
                     /**
-                     * 判断参数 GroupId 是否已赋值
-                     * @return GroupId 是否已赋值
+                     * 判断参数 Uin 是否已赋值
+                     * @return Uin 是否已赋值
                      */
-                    bool GroupIdHasBeenSet() const;
+                    bool UinHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 用户组 ID
+                     */
+                    uint64_t m_groupId;
+                    bool m_groupIdHasBeenSet;
 
                     /**
                      * 子用户 UID
@@ -91,10 +115,10 @@ namespace TencentCloud
                     bool m_uidHasBeenSet;
 
                     /**
-                     * 用户组 ID
+                     * 子用户 Uin，Uid和Uin至少有一个必填
                      */
-                    uint64_t m_groupId;
-                    bool m_groupIdHasBeenSet;
+                    uint64_t m_uin;
+                    bool m_uinHasBeenSet;
 
                 };
             }

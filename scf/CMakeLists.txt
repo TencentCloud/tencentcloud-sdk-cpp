@@ -26,6 +26,7 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/ListAliasesResponse.h
   include/tencentcloud/scf/v20180416/model/DeleteLayerVersionResponse.h
   include/tencentcloud/scf/v20180416/model/GetReservedConcurrencyConfigResponse.h
+  include/tencentcloud/scf/v20180416/model/ProtocolParams.h
   include/tencentcloud/scf/v20180416/model/RoutingConfig.h
   include/tencentcloud/scf/v20180416/model/DeleteProvisionedConcurrencyConfigResponse.h
   include/tencentcloud/scf/v20180416/model/VersionWeight.h
@@ -56,6 +57,7 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/PublishVersionRequest.h
   include/tencentcloud/scf/v20180416/model/DeleteAliasRequest.h
   include/tencentcloud/scf/v20180416/model/ListVersionByFunctionResponse.h
+  include/tencentcloud/scf/v20180416/model/WSParams.h
   include/tencentcloud/scf/v20180416/model/GetAliasRequest.h
   include/tencentcloud/scf/v20180416/model/CreateNamespaceResponse.h
   include/tencentcloud/scf/v20180416/model/PublicNetConfigOut.h
@@ -158,6 +160,7 @@ set(scf_src
   src/v20180416/model/ListAliasesResponse.cpp
   src/v20180416/model/DeleteLayerVersionResponse.cpp
   src/v20180416/model/GetReservedConcurrencyConfigResponse.cpp
+  src/v20180416/model/ProtocolParams.cpp
   src/v20180416/model/RoutingConfig.cpp
   src/v20180416/model/DeleteProvisionedConcurrencyConfigResponse.cpp
   src/v20180416/model/VersionWeight.cpp
@@ -188,6 +191,7 @@ set(scf_src
   src/v20180416/model/PublishVersionRequest.cpp
   src/v20180416/model/DeleteAliasRequest.cpp
   src/v20180416/model/ListVersionByFunctionResponse.cpp
+  src/v20180416/model/WSParams.cpp
   src/v20180416/model/GetAliasRequest.cpp
   src/v20180416/model/CreateNamespaceResponse.cpp
   src/v20180416/model/PublicNetConfigOut.cpp

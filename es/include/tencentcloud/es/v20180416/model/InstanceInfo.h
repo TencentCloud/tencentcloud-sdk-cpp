@@ -1165,6 +1165,50 @@ namespace TencentCloud
                      */
                     bool JdkHasBeenSet() const;
 
+                    /**
+                     * 获取集群网络通讯协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Protocol 集群网络通讯协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProtocol() const;
+
+                    /**
+                     * 设置集群网络通讯协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Protocol 集群网络通讯协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProtocol(const std::string& _protocol);
+
+                    /**
+                     * 判断参数 Protocol 是否已赋值
+                     * @return Protocol 是否已赋值
+                     */
+                    bool ProtocolHasBeenSet() const;
+
+                    /**
+                     * 获取安全组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SecurityGroups 安全组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetSecurityGroups() const;
+
+                    /**
+                     * 设置安全组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SecurityGroups 安全组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSecurityGroups(const std::vector<std::string>& _securityGroups);
+
+                    /**
+                     * 判断参数 SecurityGroups 是否已赋值
+                     * @return SecurityGroups 是否已赋值
+                     */
+                    bool SecurityGroupsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1529,6 +1573,20 @@ namespace TencentCloud
                      */
                     std::string m_jdk;
                     bool m_jdkHasBeenSet;
+
+                    /**
+                     * 集群网络通讯协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_protocol;
+                    bool m_protocolHasBeenSet;
+
+                    /**
+                     * 安全组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_securityGroups;
+                    bool m_securityGroupsHasBeenSet;
 
                 };
             }

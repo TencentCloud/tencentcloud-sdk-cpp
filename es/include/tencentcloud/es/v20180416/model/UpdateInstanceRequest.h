@@ -522,6 +522,78 @@ namespace TencentCloud
                      */
                     bool WebNodeTypeInfoHasBeenSet() const;
 
+                    /**
+                     * 获取切换到新网络架构
+                     * @return SwitchPrivateLink 切换到新网络架构
+                     */
+                    std::string GetSwitchPrivateLink() const;
+
+                    /**
+                     * 设置切换到新网络架构
+                     * @param SwitchPrivateLink 切换到新网络架构
+                     */
+                    void SetSwitchPrivateLink(const std::string& _switchPrivateLink);
+
+                    /**
+                     * 判断参数 SwitchPrivateLink 是否已赋值
+                     * @return SwitchPrivateLink 是否已赋值
+                     */
+                    bool SwitchPrivateLinkHasBeenSet() const;
+
+                    /**
+                     * 获取启用Cerebro
+                     * @return EnableCerebro 启用Cerebro
+                     */
+                    bool GetEnableCerebro() const;
+
+                    /**
+                     * 设置启用Cerebro
+                     * @param EnableCerebro 启用Cerebro
+                     */
+                    void SetEnableCerebro(const bool& _enableCerebro);
+
+                    /**
+                     * 判断参数 EnableCerebro 是否已赋值
+                     * @return EnableCerebro 是否已赋值
+                     */
+                    bool EnableCerebroHasBeenSet() const;
+
+                    /**
+                     * 获取Cerebro公网访问状态
+                     * @return CerebroPublicAccess Cerebro公网访问状态
+                     */
+                    std::string GetCerebroPublicAccess() const;
+
+                    /**
+                     * 设置Cerebro公网访问状态
+                     * @param CerebroPublicAccess Cerebro公网访问状态
+                     */
+                    void SetCerebroPublicAccess(const std::string& _cerebroPublicAccess);
+
+                    /**
+                     * 判断参数 CerebroPublicAccess 是否已赋值
+                     * @return CerebroPublicAccess 是否已赋值
+                     */
+                    bool CerebroPublicAccessHasBeenSet() const;
+
+                    /**
+                     * 获取Cerebro内网访问状态
+                     * @return CerebroPrivateAccess Cerebro内网访问状态
+                     */
+                    std::string GetCerebroPrivateAccess() const;
+
+                    /**
+                     * 设置Cerebro内网访问状态
+                     * @param CerebroPrivateAccess Cerebro内网访问状态
+                     */
+                    void SetCerebroPrivateAccess(const std::string& _cerebroPrivateAccess);
+
+                    /**
+                     * 判断参数 CerebroPrivateAccess 是否已赋值
+                     * @return CerebroPrivateAccess 是否已赋值
+                     */
+                    bool CerebroPrivateAccessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -679,6 +751,30 @@ namespace TencentCloud
                      */
                     WebNodeTypeInfo m_webNodeTypeInfo;
                     bool m_webNodeTypeInfoHasBeenSet;
+
+                    /**
+                     * 切换到新网络架构
+                     */
+                    std::string m_switchPrivateLink;
+                    bool m_switchPrivateLinkHasBeenSet;
+
+                    /**
+                     * 启用Cerebro
+                     */
+                    bool m_enableCerebro;
+                    bool m_enableCerebroHasBeenSet;
+
+                    /**
+                     * Cerebro公网访问状态
+                     */
+                    std::string m_cerebroPublicAccess;
+                    bool m_cerebroPublicAccessHasBeenSet;
+
+                    /**
+                     * Cerebro内网访问状态
+                     */
+                    std::string m_cerebroPrivateAccess;
+                    bool m_cerebroPrivateAccessHasBeenSet;
 
                 };
             }

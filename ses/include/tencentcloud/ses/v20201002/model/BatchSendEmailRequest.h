@@ -110,14 +110,14 @@ namespace TencentCloud
                     bool SubjectHasBeenSet() const;
 
                     /**
-                     * 获取任务类型 1即时 2 定时 3 周期
-                     * @return TaskType 任务类型 1即时 2 定时 3 周期
+                     * 获取任务类型 1: 立即发送 2: 定时发送 3: 周期（频率）发送
+                     * @return TaskType 任务类型 1: 立即发送 2: 定时发送 3: 周期（频率）发送
                      */
                     uint64_t GetTaskType() const;
 
                     /**
-                     * 设置任务类型 1即时 2 定时 3 周期
-                     * @param TaskType 任务类型 1即时 2 定时 3 周期
+                     * 设置任务类型 1: 立即发送 2: 定时发送 3: 周期（频率）发送
+                     * @param TaskType 任务类型 1: 立即发送 2: 定时发送 3: 周期（频率）发送
                      */
                     void SetTaskType(const uint64_t& _taskType);
 
@@ -258,7 +258,7 @@ namespace TencentCloud
                     bool m_subjectHasBeenSet;
 
                     /**
-                     * 任务类型 1即时 2 定时 3 周期
+                     * 任务类型 1: 立即发送 2: 定时发送 3: 周期（频率）发送
                      */
                     uint64_t m_taskType;
                     bool m_taskTypeHasBeenSet;

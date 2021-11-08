@@ -29,6 +29,7 @@
 #include <tencentcloud/scf/v20180416/model/PublicNetConfigIn.h>
 #include <tencentcloud/scf/v20180416/model/CfsConfig.h>
 #include <tencentcloud/scf/v20180416/model/Tag.h>
+#include <tencentcloud/scf/v20180416/model/ProtocolParams.h>
 
 
 namespace TencentCloud
@@ -464,6 +465,42 @@ namespace TencentCloud
                      */
                     bool TraceEnableHasBeenSet() const;
 
+                    /**
+                     * 获取HTTP函数支持的访问协议。当前支持WebSockets协议，值为WS
+                     * @return ProtocolType HTTP函数支持的访问协议。当前支持WebSockets协议，值为WS
+                     */
+                    std::string GetProtocolType() const;
+
+                    /**
+                     * 设置HTTP函数支持的访问协议。当前支持WebSockets协议，值为WS
+                     * @param ProtocolType HTTP函数支持的访问协议。当前支持WebSockets协议，值为WS
+                     */
+                    void SetProtocolType(const std::string& _protocolType);
+
+                    /**
+                     * 判断参数 ProtocolType 是否已赋值
+                     * @return ProtocolType 是否已赋值
+                     */
+                    bool ProtocolTypeHasBeenSet() const;
+
+                    /**
+                     * 获取HTTP函数配置ProtocolType访问协议，当前协议可配置的参数
+                     * @return ProtocolParams HTTP函数配置ProtocolType访问协议，当前协议可配置的参数
+                     */
+                    ProtocolParams GetProtocolParams() const;
+
+                    /**
+                     * 设置HTTP函数配置ProtocolType访问协议，当前协议可配置的参数
+                     * @param ProtocolParams HTTP函数配置ProtocolType访问协议，当前协议可配置的参数
+                     */
+                    void SetProtocolParams(const ProtocolParams& _protocolParams);
+
+                    /**
+                     * 判断参数 ProtocolParams 是否已赋值
+                     * @return ProtocolParams 是否已赋值
+                     */
+                    bool ProtocolParamsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -603,6 +640,18 @@ namespace TencentCloud
                      */
                     std::string m_traceEnable;
                     bool m_traceEnableHasBeenSet;
+
+                    /**
+                     * HTTP函数支持的访问协议。当前支持WebSockets协议，值为WS
+                     */
+                    std::string m_protocolType;
+                    bool m_protocolTypeHasBeenSet;
+
+                    /**
+                     * HTTP函数配置ProtocolType访问协议，当前协议可配置的参数
+                     */
+                    ProtocolParams m_protocolParams;
+                    bool m_protocolParamsHasBeenSet;
 
                 };
             }
