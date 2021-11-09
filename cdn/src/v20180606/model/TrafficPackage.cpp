@@ -36,7 +36,8 @@ TrafficPackage::TrafficPackage() :
     m_lifeTimeMonthHasBeenSet(false),
     m_extensionAvailableHasBeenSet(false),
     m_refundAvailableHasBeenSet(false),
-    m_regionHasBeenSet(false)
+    m_regionHasBeenSet(false),
+    m_configIdHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,16 @@ CoreInternalOutcome TrafficPackage::Deserialize(const rapidjson::Value &value)
         m_regionHasBeenSet = true;
     }
 
+    if (value.HasMember("ConfigId") && !value["ConfigId"].IsNull())
+    {
+        if (!value["ConfigId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrafficPackage.ConfigId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_configId = value["ConfigId"].GetInt64();
+        m_configIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +349,14 @@ void TrafficPackage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_region, allocator);
+    }
+
+    if (m_configIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_configId, allocator);
     }
 
 }
@@ -597,5 +616,21 @@ void TrafficPackage::SetRegion(const int64_t& _region)
 bool TrafficPackage::RegionHasBeenSet() const
 {
     return m_regionHasBeenSet;
+}
+
+int64_t TrafficPackage::GetConfigId() const
+{
+    return m_configId;
+}
+
+void TrafficPackage::SetConfigId(const int64_t& _configId)
+{
+    m_configId = _configId;
+    m_configIdHasBeenSet = true;
+}
+
+bool TrafficPackage::ConfigIdHasBeenSet() const
+{
+    return m_configIdHasBeenSet;
 }
 

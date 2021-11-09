@@ -1545,6 +1545,49 @@ CdnClient::DescribeReportDataOutcomeCallable CdnClient::DescribeReportDataCallab
     return task->get_future();
 }
 
+CdnClient::DescribeScdnBotDataOutcome CdnClient::DescribeScdnBotData(const DescribeScdnBotDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeScdnBotData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeScdnBotDataResponse rsp = DescribeScdnBotDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeScdnBotDataOutcome(rsp);
+        else
+            return DescribeScdnBotDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeScdnBotDataOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::DescribeScdnBotDataAsync(const DescribeScdnBotDataRequest& request, const DescribeScdnBotDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeScdnBotData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::DescribeScdnBotDataOutcomeCallable CdnClient::DescribeScdnBotDataCallable(const DescribeScdnBotDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeScdnBotDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeScdnBotData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::DescribeScdnBotRecordsOutcome CdnClient::DescribeScdnBotRecords(const DescribeScdnBotRecordsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeScdnBotRecords");

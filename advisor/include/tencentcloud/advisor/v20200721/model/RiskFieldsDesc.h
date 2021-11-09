@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/advisor/v20200721/model/KeyValue.h>
 
 
 namespace TencentCloud
@@ -116,6 +117,28 @@ tags: 标签类型, 例如: [{"Key":"kkk","Value":"vvv"},{"Key":"kkk2","Value":"
                      */
                     bool FieldTypeHasBeenSet() const;
 
+                    /**
+                     * 获取字段值对应字典
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FieldDict 字段值对应字典
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<KeyValue> GetFieldDict() const;
+
+                    /**
+                     * 设置字段值对应字典
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FieldDict 字段值对应字典
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFieldDict(const std::vector<KeyValue>& _fieldDict);
+
+                    /**
+                     * 判断参数 FieldDict 是否已赋值
+                     * @return FieldDict 是否已赋值
+                     */
+                    bool FieldDictHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +162,13 @@ tags: 标签类型, 例如: [{"Key":"kkk","Value":"vvv"},{"Key":"kkk2","Value":"
                      */
                     std::string m_fieldType;
                     bool m_fieldTypeHasBeenSet;
+
+                    /**
+                     * 字段值对应字典
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<KeyValue> m_fieldDict;
+                    bool m_fieldDictHasBeenSet;
 
                 };
             }

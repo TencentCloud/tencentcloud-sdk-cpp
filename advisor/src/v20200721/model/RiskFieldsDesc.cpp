@@ -23,7 +23,8 @@ using namespace std;
 RiskFieldsDesc::RiskFieldsDesc() :
     m_fieldHasBeenSet(false),
     m_fieldNameHasBeenSet(false),
-    m_fieldTypeHasBeenSet(false)
+    m_fieldTypeHasBeenSet(false),
+    m_fieldDictHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,26 @@ CoreInternalOutcome RiskFieldsDesc::Deserialize(const rapidjson::Value &value)
         m_fieldTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("FieldDict") && !value["FieldDict"].IsNull())
+    {
+        if (!value["FieldDict"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RiskFieldsDesc.FieldDict` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["FieldDict"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            KeyValue item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_fieldDict.push_back(item);
+        }
+        m_fieldDictHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +112,21 @@ void RiskFieldsDesc::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "FieldType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_fieldType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fieldDictHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FieldDict";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_fieldDict.begin(); itr != m_fieldDict.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -142,5 +178,21 @@ void RiskFieldsDesc::SetFieldType(const string& _fieldType)
 bool RiskFieldsDesc::FieldTypeHasBeenSet() const
 {
     return m_fieldTypeHasBeenSet;
+}
+
+vector<KeyValue> RiskFieldsDesc::GetFieldDict() const
+{
+    return m_fieldDict;
+}
+
+void RiskFieldsDesc::SetFieldDict(const vector<KeyValue>& _fieldDict)
+{
+    m_fieldDict = _fieldDict;
+    m_fieldDictHasBeenSet = true;
+}
+
+bool RiskFieldsDesc::FieldDictHasBeenSet() const
+{
+    return m_fieldDictHasBeenSet;
 }
 

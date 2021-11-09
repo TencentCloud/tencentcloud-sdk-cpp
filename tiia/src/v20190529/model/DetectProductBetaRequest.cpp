@@ -24,7 +24,8 @@ using namespace std;
 
 DetectProductBetaRequest::DetectProductBetaRequest() :
     m_imageUrlHasBeenSet(false),
-    m_imageBase64HasBeenSet(false)
+    m_imageBase64HasBeenSet(false),
+    m_needLemmaHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DetectProductBetaRequest::ToJsonString() const
         string key = "ImageBase64";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_imageBase64.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_needLemmaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedLemma";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needLemma, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DetectProductBetaRequest::SetImageBase64(const string& _imageBase64)
 bool DetectProductBetaRequest::ImageBase64HasBeenSet() const
 {
     return m_imageBase64HasBeenSet;
+}
+
+int64_t DetectProductBetaRequest::GetNeedLemma() const
+{
+    return m_needLemma;
+}
+
+void DetectProductBetaRequest::SetNeedLemma(const int64_t& _needLemma)
+{
+    m_needLemma = _needLemma;
+    m_needLemmaHasBeenSet = true;
+}
+
+bool DetectProductBetaRequest::NeedLemmaHasBeenSet() const
+{
+    return m_needLemmaHasBeenSet;
 }
 
 

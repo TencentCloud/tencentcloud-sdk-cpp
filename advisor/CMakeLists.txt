@@ -23,6 +23,7 @@ set(advisor_public_header_model
   include/tencentcloud/advisor/v20200721/model/DescribeTaskStrategyRisksRequest.h
   include/tencentcloud/advisor/v20200721/model/DescribeStrategie.h
   include/tencentcloud/advisor/v20200721/model/DescribeTaskStrategyRisksResponse.h
+  include/tencentcloud/advisor/v20200721/model/KeyValue.h
   include/tencentcloud/advisor/v20200721/model/RiskFieldsDesc.h
   include/tencentcloud/advisor/v20200721/model/DescribeStrategiesCondition.h
   include/tencentcloud/advisor/v20200721/model/DescribeStrategiesRequest.h
@@ -34,6 +35,7 @@ set(advisor_src
   src/v20200721/model/DescribeTaskStrategyRisksRequest.cpp
   src/v20200721/model/DescribeStrategie.cpp
   src/v20200721/model/DescribeTaskStrategyRisksResponse.cpp
+  src/v20200721/model/KeyValue.cpp
   src/v20200721/model/RiskFieldsDesc.cpp
   src/v20200721/model/DescribeStrategiesCondition.cpp
   src/v20200721/model/DescribeStrategiesRequest.cpp

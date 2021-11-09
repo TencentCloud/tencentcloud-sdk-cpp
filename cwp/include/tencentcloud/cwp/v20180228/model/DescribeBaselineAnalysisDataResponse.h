@@ -58,9 +58,9 @@ namespace TencentCloud
                     bool LatestScanTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否全部服务器
+                     * 获取是否全部服务器：1-是 0-否
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsGlobal 是否全部服务器
+                     * @return IsGlobal 是否全部服务器：1-是 0-否
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetIsGlobal() const;
@@ -123,7 +123,7 @@ namespace TencentCloud
                     bool m_latestScanTimeHasBeenSet;
 
                     /**
-                     * 是否全部服务器
+                     * 是否全部服务器：1-是 0-否
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isGlobal;

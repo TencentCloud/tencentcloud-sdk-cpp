@@ -556,49 +556,6 @@ DtsClient::DescribeSubscribesOutcomeCallable DtsClient::DescribeSubscribesCallab
     return task->get_future();
 }
 
-DtsClient::DescribeSyncCheckJobOutcome DtsClient::DescribeSyncCheckJob(const DescribeSyncCheckJobRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeSyncCheckJob");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeSyncCheckJobResponse rsp = DescribeSyncCheckJobResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeSyncCheckJobOutcome(rsp);
-        else
-            return DescribeSyncCheckJobOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeSyncCheckJobOutcome(outcome.GetError());
-    }
-}
-
-void DtsClient::DescribeSyncCheckJobAsync(const DescribeSyncCheckJobRequest& request, const DescribeSyncCheckJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSyncCheckJob(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-DtsClient::DescribeSyncCheckJobOutcomeCallable DtsClient::DescribeSyncCheckJobCallable(const DescribeSyncCheckJobRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeSyncCheckJobOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSyncCheckJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 DtsClient::IsolateSubscribeOutcome DtsClient::IsolateSubscribe(const IsolateSubscribeRequest &request)
 {
     auto outcome = MakeRequest(request, "IsolateSubscribe");
@@ -893,49 +850,6 @@ DtsClient::ModifySubscribeVipVportOutcomeCallable DtsClient::ModifySubscribeVipV
         [this, request]()
         {
             return this->ModifySubscribeVipVport(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-DtsClient::ModifySyncJobOutcome DtsClient::ModifySyncJob(const ModifySyncJobRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifySyncJob");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifySyncJobResponse rsp = ModifySyncJobResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifySyncJobOutcome(rsp);
-        else
-            return ModifySyncJobOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifySyncJobOutcome(outcome.GetError());
-    }
-}
-
-void DtsClient::ModifySyncJobAsync(const ModifySyncJobRequest& request, const ModifySyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifySyncJob(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-DtsClient::ModifySyncJobOutcomeCallable DtsClient::ModifySyncJobCallable(const ModifySyncJobRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifySyncJobOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifySyncJob(request);
         }
     );
 

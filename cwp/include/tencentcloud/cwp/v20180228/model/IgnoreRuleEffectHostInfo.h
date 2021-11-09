@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool HostNameHasBeenSet() const;
 
                     /**
-                     * 获取危害等级
+                     * 获取危害等级：1-低位，2-中危，3-高危，4-严重
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Level 危害等级
+                     * @return Level 危害等级：1-低位，2-中危，3-高危，4-严重
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetLevel() const;
 
                     /**
-                     * 设置危害等级
+                     * 设置危害等级：1-低位，2-中危，3-高危，4-严重
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Level 危害等级
+                     * @param Level 危害等级：1-低位，2-中危，3-高危，4-严重
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLevel(const uint64_t& _level);
@@ -113,17 +113,17 @@ namespace TencentCloud
                     bool TagListHasBeenSet() const;
 
                     /**
-                     * 获取状态
+                     * 获取状态：0-未通过，1-忽略，3-已通过，5-检测中
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 状态
+                     * @return Status 状态：0-未通过，1-忽略，3-已通过，5-检测中
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置状态
+                     * 设置状态：0-未通过，1-忽略，3-已通过，5-检测中
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 状态
+                     * @param Status 状态：0-未通过，1-忽略，3-已通过，5-检测中
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStatus(const uint64_t& _status);
@@ -135,17 +135,17 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取最后检测事件
+                     * 获取最后检测时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LastScanTime 最后检测事件
+                     * @return LastScanTime 最后检测时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetLastScanTime() const;
 
                     /**
-                     * 设置最后检测事件
+                     * 设置最后检测时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastScanTime 最后检测事件
+                     * @param LastScanTime 最后检测时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLastScanTime(const std::string& _lastScanTime);
@@ -210,7 +210,7 @@ namespace TencentCloud
                     bool m_hostNameHasBeenSet;
 
                     /**
-                     * 危害等级
+                     * 危害等级：1-低位，2-中危，3-高危，4-严重
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_level;
@@ -224,14 +224,14 @@ namespace TencentCloud
                     bool m_tagListHasBeenSet;
 
                     /**
-                     * 状态
+                     * 状态：0-未通过，1-忽略，3-已通过，5-检测中
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 最后检测事件
+                     * 最后检测时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastScanTime;

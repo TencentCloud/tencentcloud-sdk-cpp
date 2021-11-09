@@ -14,32 +14,32 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/dts/v20180330/model/DescribeSyncCheckJobRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunOneClickTaskExternalRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Dts::V20180330::Model;
+using namespace TencentCloud::Tcb::V20180608::Model;
 using namespace std;
 
-DescribeSyncCheckJobRequest::DescribeSyncCheckJobRequest() :
-    m_jobIdHasBeenSet(false)
+DescribeCloudBaseRunOneClickTaskExternalRequest::DescribeCloudBaseRunOneClickTaskExternalRequest() :
+    m_externalIdHasBeenSet(false)
 {
 }
 
-string DescribeSyncCheckJobRequest::ToJsonString() const
+string DescribeCloudBaseRunOneClickTaskExternalRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_jobIdHasBeenSet)
+    if (m_externalIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "JobId";
+        string key = "ExternalId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_jobId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_externalId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -50,20 +50,20 @@ string DescribeSyncCheckJobRequest::ToJsonString() const
 }
 
 
-string DescribeSyncCheckJobRequest::GetJobId() const
+string DescribeCloudBaseRunOneClickTaskExternalRequest::GetExternalId() const
 {
-    return m_jobId;
+    return m_externalId;
 }
 
-void DescribeSyncCheckJobRequest::SetJobId(const string& _jobId)
+void DescribeCloudBaseRunOneClickTaskExternalRequest::SetExternalId(const string& _externalId)
 {
-    m_jobId = _jobId;
-    m_jobIdHasBeenSet = true;
+    m_externalId = _externalId;
+    m_externalIdHasBeenSet = true;
 }
 
-bool DescribeSyncCheckJobRequest::JobIdHasBeenSet() const
+bool DescribeCloudBaseRunOneClickTaskExternalRequest::ExternalIdHasBeenSet() const
 {
-    return m_jobIdHasBeenSet;
+    return m_externalIdHasBeenSet;
 }
 
 

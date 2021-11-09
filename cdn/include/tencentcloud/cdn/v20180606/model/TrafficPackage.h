@@ -386,6 +386,28 @@ disabled：未启用
                      */
                     bool RegionHasBeenSet() const;
 
+                    /**
+                     * 获取流量包类型id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConfigId 流量包类型id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetConfigId() const;
+
+                    /**
+                     * 设置流量包类型id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ConfigId 流量包类型id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetConfigId(const int64_t& _configId);
+
+                    /**
+                     * 判断参数 ConfigId 是否已赋值
+                     * @return ConfigId 是否已赋值
+                     */
+                    bool ConfigIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -496,6 +518,13 @@ disabled：未启用
                      */
                     int64_t m_region;
                     bool m_regionHasBeenSet;
+
+                    /**
+                     * 流量包类型id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_configId;
+                    bool m_configIdHasBeenSet;
 
                 };
             }

@@ -166,14 +166,14 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取排序方式，asc升序 或 desc降序
-                     * @return Order 排序方式，asc升序 或 desc降序
+                     * 获取排序方式，asc-升序 或 desc-降序
+                     * @return Order 排序方式，asc-升序 或 desc-降序
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置排序方式，asc升序 或 desc降序
-                     * @param Order 排序方式，asc升序 或 desc降序
+                     * 设置排序方式，asc-升序 或 desc-降序
+                     * @param Order 排序方式，asc-升序 或 desc-降序
                      */
                     void SetOrder(const std::string& _order);
 
@@ -242,7 +242,7 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 排序方式，asc升序 或 desc降序
+                     * 排序方式，asc-升序 或 desc-降序
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;

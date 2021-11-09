@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分页参数
-                     * @return Limit 分页参数
+                     * 获取返回数量，默认为10，最大值为100。
+                     * @return Limit 返回数量，默认为10，最大值为100。
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置分页参数
-                     * @param Limit 分页参数
+                     * 设置返回数量，默认为10，最大值为100。
+                     * @param Limit 返回数量，默认为10，最大值为100。
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页参数
-                     * @return Offset 分页参数
+                     * 获取偏移量，默认为0。
+                     * @return Offset 偏移量，默认为0。
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页参数
-                     * @param Offset 分页参数
+                     * 设置偏移量，默认为0。
+                     * @param Offset 偏移量，默认为0。
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -108,13 +108,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 分页参数
+                     * 返回数量，默认为10，最大值为100。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页参数
+                     * 偏移量，默认为0。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

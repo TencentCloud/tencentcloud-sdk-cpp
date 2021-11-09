@@ -47,8 +47,6 @@
 #include <tencentcloud/dts/v20180330/model/DescribeSubscribeConfResponse.h>
 #include <tencentcloud/dts/v20180330/model/DescribeSubscribesRequest.h>
 #include <tencentcloud/dts/v20180330/model/DescribeSubscribesResponse.h>
-#include <tencentcloud/dts/v20180330/model/DescribeSyncCheckJobRequest.h>
-#include <tencentcloud/dts/v20180330/model/DescribeSyncCheckJobResponse.h>
 #include <tencentcloud/dts/v20180330/model/IsolateSubscribeRequest.h>
 #include <tencentcloud/dts/v20180330/model/IsolateSubscribeResponse.h>
 #include <tencentcloud/dts/v20180330/model/ModifyMigrateJobRequest.h>
@@ -63,8 +61,6 @@
 #include <tencentcloud/dts/v20180330/model/ModifySubscribeObjectsResponse.h>
 #include <tencentcloud/dts/v20180330/model/ModifySubscribeVipVportRequest.h>
 #include <tencentcloud/dts/v20180330/model/ModifySubscribeVipVportResponse.h>
-#include <tencentcloud/dts/v20180330/model/ModifySyncJobRequest.h>
-#include <tencentcloud/dts/v20180330/model/ModifySyncJobResponse.h>
 #include <tencentcloud/dts/v20180330/model/OfflineIsolatedSubscribeRequest.h>
 #include <tencentcloud/dts/v20180330/model/OfflineIsolatedSubscribeResponse.h>
 #include <tencentcloud/dts/v20180330/model/ResetSubscribeRequest.h>
@@ -123,9 +119,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSubscribesResponse> DescribeSubscribesOutcome;
                 typedef std::future<DescribeSubscribesOutcome> DescribeSubscribesOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::DescribeSubscribesRequest&, DescribeSubscribesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubscribesAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeSyncCheckJobResponse> DescribeSyncCheckJobOutcome;
-                typedef std::future<DescribeSyncCheckJobOutcome> DescribeSyncCheckJobOutcomeCallable;
-                typedef std::function<void(const DtsClient*, const Model::DescribeSyncCheckJobRequest&, DescribeSyncCheckJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSyncCheckJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::IsolateSubscribeResponse> IsolateSubscribeOutcome;
                 typedef std::future<IsolateSubscribeOutcome> IsolateSubscribeOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::IsolateSubscribeRequest&, IsolateSubscribeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IsolateSubscribeAsyncHandler;
@@ -147,9 +140,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifySubscribeVipVportResponse> ModifySubscribeVipVportOutcome;
                 typedef std::future<ModifySubscribeVipVportOutcome> ModifySubscribeVipVportOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::ModifySubscribeVipVportRequest&, ModifySubscribeVipVportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySubscribeVipVportAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifySyncJobResponse> ModifySyncJobOutcome;
-                typedef std::future<ModifySyncJobOutcome> ModifySyncJobOutcomeCallable;
-                typedef std::function<void(const DtsClient*, const Model::ModifySyncJobRequest&, ModifySyncJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySyncJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::OfflineIsolatedSubscribeResponse> OfflineIsolatedSubscribeOutcome;
                 typedef std::future<OfflineIsolatedSubscribeOutcome> OfflineIsolatedSubscribeOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::OfflineIsolatedSubscribeRequest&, OfflineIsolatedSubscribeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OfflineIsolatedSubscribeAsyncHandler;
@@ -284,20 +274,6 @@ namespace TencentCloud
                 DescribeSubscribesOutcomeCallable DescribeSubscribesCallable(const Model::DescribeSubscribesRequest& request);
 
                 /**
-                 *本接口用于在通过 CreateSyncCheckJob 接口创建灾备同步校验任务后，获取校验的结果。能查询到当前校验的状态和进度。
-若通过校验, 则可调用 StartSyncJob 启动同步任务。
-若未通过校验, 则会返回校验失败的原因。 可通过 ModifySyncJob 修改配置，然后再次发起校验。
-校验任务需要大概约30秒，当返回的 Status 不为 finished 时表示尚未校验完成，需要轮询该接口。
-如果 Status=finished 且 CheckFlag=1 时表示校验成功。
-如果 Status=finished 且 CheckFlag !=1 时表示校验失败。
-                 * @param req DescribeSyncCheckJobRequest
-                 * @return DescribeSyncCheckJobOutcome
-                 */
-                DescribeSyncCheckJobOutcome DescribeSyncCheckJob(const Model::DescribeSyncCheckJobRequest &request);
-                void DescribeSyncCheckJobAsync(const Model::DescribeSyncCheckJobRequest& request, const DescribeSyncCheckJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeSyncCheckJobOutcomeCallable DescribeSyncCheckJobCallable(const Model::DescribeSyncCheckJobRequest& request);
-
-                /**
                  *本接口（IsolateSubscribe）用于隔离小时计费的订阅实例。调用后，订阅实例将不能使用，同时停止计费。
                  * @param req IsolateSubscribeRequest
                  * @return IsolateSubscribeOutcome
@@ -362,17 +338,6 @@ namespace TencentCloud
                 ModifySubscribeVipVportOutcome ModifySubscribeVipVport(const Model::ModifySubscribeVipVportRequest &request);
                 void ModifySubscribeVipVportAsync(const Model::ModifySubscribeVipVportRequest& request, const ModifySubscribeVipVportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifySubscribeVipVportOutcomeCallable ModifySubscribeVipVportCallable(const Model::ModifySubscribeVipVportRequest& request);
-
-                /**
-                 *修改灾备同步任务. 
-当同步任务处于下述状态时, 允许调用本接口: 同步任务创建中, 创建完成, 校验成功, 校验失败. 
-源实例和目标实例信息不允许修改，可以修改任务名、需要同步的库表。
-                 * @param req ModifySyncJobRequest
-                 * @return ModifySyncJobOutcome
-                 */
-                ModifySyncJobOutcome ModifySyncJob(const Model::ModifySyncJobRequest &request);
-                void ModifySyncJobAsync(const Model::ModifySyncJobRequest& request, const ModifySyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifySyncJobOutcomeCallable ModifySyncJobCallable(const Model::ModifySyncJobRequest& request);
 
                 /**
                  *本接口（OfflineIsolatedSubscribe）用于下线已隔离的数据订阅实例

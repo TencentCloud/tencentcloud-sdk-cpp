@@ -26,7 +26,9 @@ GeneralAccurateOCRRequest::GeneralAccurateOCRRequest() :
     m_imageBase64HasBeenSet(false),
     m_imageUrlHasBeenSet(false),
     m_isWordsHasBeenSet(false),
-    m_enableDetectSplitHasBeenSet(false)
+    m_enableDetectSplitHasBeenSet(false),
+    m_isPdfHasBeenSet(false),
+    m_pdfPageNumberHasBeenSet(false)
 {
 }
 
@@ -67,6 +69,22 @@ string GeneralAccurateOCRRequest::ToJsonString() const
         string key = "EnableDetectSplit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableDetectSplit, allocator);
+    }
+
+    if (m_isPdfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPdf";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isPdf, allocator);
+    }
+
+    if (m_pdfPageNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PdfPageNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pdfPageNumber, allocator);
     }
 
 
@@ -139,6 +157,38 @@ void GeneralAccurateOCRRequest::SetEnableDetectSplit(const bool& _enableDetectSp
 bool GeneralAccurateOCRRequest::EnableDetectSplitHasBeenSet() const
 {
     return m_enableDetectSplitHasBeenSet;
+}
+
+bool GeneralAccurateOCRRequest::GetIsPdf() const
+{
+    return m_isPdf;
+}
+
+void GeneralAccurateOCRRequest::SetIsPdf(const bool& _isPdf)
+{
+    m_isPdf = _isPdf;
+    m_isPdfHasBeenSet = true;
+}
+
+bool GeneralAccurateOCRRequest::IsPdfHasBeenSet() const
+{
+    return m_isPdfHasBeenSet;
+}
+
+uint64_t GeneralAccurateOCRRequest::GetPdfPageNumber() const
+{
+    return m_pdfPageNumber;
+}
+
+void GeneralAccurateOCRRequest::SetPdfPageNumber(const uint64_t& _pdfPageNumber)
+{
+    m_pdfPageNumber = _pdfPageNumber;
+    m_pdfPageNumberHasBeenSet = true;
+}
+
+bool GeneralAccurateOCRRequest::PdfPageNumberHasBeenSet() const
+{
+    return m_pdfPageNumberHasBeenSet;
 }
 
 

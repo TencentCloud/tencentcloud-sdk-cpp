@@ -73,6 +73,8 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunAllVpcsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunConfForGateWayRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunConfForGateWayResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunOneClickTaskExternalRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunOneClickTaskExternalResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunOperationTypesRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunOperationTypesResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunPodListRequest.h>
@@ -83,6 +85,8 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunResourceForExtendResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerDomainNameRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerDomainNameResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerVersionRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerVersionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionRequest.h>
@@ -256,6 +260,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudBaseRunConfForGateWayResponse> DescribeCloudBaseRunConfForGateWayOutcome;
                 typedef std::future<DescribeCloudBaseRunConfForGateWayOutcome> DescribeCloudBaseRunConfForGateWayOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseRunConfForGateWayRequest&, DescribeCloudBaseRunConfForGateWayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseRunConfForGateWayAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudBaseRunOneClickTaskExternalResponse> DescribeCloudBaseRunOneClickTaskExternalOutcome;
+                typedef std::future<DescribeCloudBaseRunOneClickTaskExternalOutcome> DescribeCloudBaseRunOneClickTaskExternalOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseRunOneClickTaskExternalRequest&, DescribeCloudBaseRunOneClickTaskExternalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseRunOneClickTaskExternalAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudBaseRunOperationTypesResponse> DescribeCloudBaseRunOperationTypesOutcome;
                 typedef std::future<DescribeCloudBaseRunOperationTypesOutcome> DescribeCloudBaseRunOperationTypesOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseRunOperationTypesRequest&, DescribeCloudBaseRunOperationTypesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseRunOperationTypesAsyncHandler;
@@ -271,6 +278,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudBaseRunServerResponse> DescribeCloudBaseRunServerOutcome;
                 typedef std::future<DescribeCloudBaseRunServerOutcome> DescribeCloudBaseRunServerOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseRunServerRequest&, DescribeCloudBaseRunServerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseRunServerAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudBaseRunServerDomainNameResponse> DescribeCloudBaseRunServerDomainNameOutcome;
+                typedef std::future<DescribeCloudBaseRunServerDomainNameOutcome> DescribeCloudBaseRunServerDomainNameOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseRunServerDomainNameRequest&, DescribeCloudBaseRunServerDomainNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseRunServerDomainNameAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudBaseRunServerVersionResponse> DescribeCloudBaseRunServerVersionOutcome;
                 typedef std::future<DescribeCloudBaseRunServerVersionOutcome> DescribeCloudBaseRunServerVersionOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseRunServerVersionRequest&, DescribeCloudBaseRunServerVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseRunServerVersionAsyncHandler;
@@ -626,6 +636,15 @@ namespace TencentCloud
                 DescribeCloudBaseRunConfForGateWayOutcomeCallable DescribeCloudBaseRunConfForGateWayCallable(const Model::DescribeCloudBaseRunConfForGateWayRequest& request);
 
                 /**
+                 *查询一键部署任务 （特定接口：外部查询使用）
+                 * @param req DescribeCloudBaseRunOneClickTaskExternalRequest
+                 * @return DescribeCloudBaseRunOneClickTaskExternalOutcome
+                 */
+                DescribeCloudBaseRunOneClickTaskExternalOutcome DescribeCloudBaseRunOneClickTaskExternal(const Model::DescribeCloudBaseRunOneClickTaskExternalRequest &request);
+                void DescribeCloudBaseRunOneClickTaskExternalAsync(const Model::DescribeCloudBaseRunOneClickTaskExternalRequest& request, const DescribeCloudBaseRunOneClickTaskExternalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudBaseRunOneClickTaskExternalOutcomeCallable DescribeCloudBaseRunOneClickTaskExternalCallable(const Model::DescribeCloudBaseRunOneClickTaskExternalRequest& request);
+
+                /**
                  *查询服务、版本和操作类型
                  * @param req DescribeCloudBaseRunOperationTypesRequest
                  * @return DescribeCloudBaseRunOperationTypesOutcome
@@ -669,6 +688,15 @@ namespace TencentCloud
                 DescribeCloudBaseRunServerOutcome DescribeCloudBaseRunServer(const Model::DescribeCloudBaseRunServerRequest &request);
                 void DescribeCloudBaseRunServerAsync(const Model::DescribeCloudBaseRunServerRequest& request, const DescribeCloudBaseRunServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCloudBaseRunServerOutcomeCallable DescribeCloudBaseRunServerCallable(const Model::DescribeCloudBaseRunServerRequest& request);
+
+                /**
+                 *查询微信云托管服务域名
+                 * @param req DescribeCloudBaseRunServerDomainNameRequest
+                 * @return DescribeCloudBaseRunServerDomainNameOutcome
+                 */
+                DescribeCloudBaseRunServerDomainNameOutcome DescribeCloudBaseRunServerDomainName(const Model::DescribeCloudBaseRunServerDomainNameRequest &request);
+                void DescribeCloudBaseRunServerDomainNameAsync(const Model::DescribeCloudBaseRunServerDomainNameRequest& request, const DescribeCloudBaseRunServerDomainNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudBaseRunServerDomainNameOutcomeCallable DescribeCloudBaseRunServerDomainNameCallable(const Model::DescribeCloudBaseRunServerDomainNameRequest& request);
 
                 /**
                  *查询服务版本的详情，CPU和MEM  请使用CPUSize和MemSize

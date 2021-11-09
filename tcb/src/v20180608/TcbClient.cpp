@@ -1115,6 +1115,49 @@ TcbClient::DescribeCloudBaseRunConfForGateWayOutcomeCallable TcbClient::Describe
     return task->get_future();
 }
 
+TcbClient::DescribeCloudBaseRunOneClickTaskExternalOutcome TcbClient::DescribeCloudBaseRunOneClickTaskExternal(const DescribeCloudBaseRunOneClickTaskExternalRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudBaseRunOneClickTaskExternal");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudBaseRunOneClickTaskExternalResponse rsp = DescribeCloudBaseRunOneClickTaskExternalResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudBaseRunOneClickTaskExternalOutcome(rsp);
+        else
+            return DescribeCloudBaseRunOneClickTaskExternalOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudBaseRunOneClickTaskExternalOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeCloudBaseRunOneClickTaskExternalAsync(const DescribeCloudBaseRunOneClickTaskExternalRequest& request, const DescribeCloudBaseRunOneClickTaskExternalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudBaseRunOneClickTaskExternal(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeCloudBaseRunOneClickTaskExternalOutcomeCallable TcbClient::DescribeCloudBaseRunOneClickTaskExternalCallable(const DescribeCloudBaseRunOneClickTaskExternalRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseRunOneClickTaskExternalOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudBaseRunOneClickTaskExternal(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DescribeCloudBaseRunOperationTypesOutcome TcbClient::DescribeCloudBaseRunOperationTypes(const DescribeCloudBaseRunOperationTypesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloudBaseRunOperationTypes");
@@ -1323,6 +1366,49 @@ TcbClient::DescribeCloudBaseRunServerOutcomeCallable TcbClient::DescribeCloudBas
         [this, request]()
         {
             return this->DescribeCloudBaseRunServer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::DescribeCloudBaseRunServerDomainNameOutcome TcbClient::DescribeCloudBaseRunServerDomainName(const DescribeCloudBaseRunServerDomainNameRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudBaseRunServerDomainName");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudBaseRunServerDomainNameResponse rsp = DescribeCloudBaseRunServerDomainNameResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudBaseRunServerDomainNameOutcome(rsp);
+        else
+            return DescribeCloudBaseRunServerDomainNameOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudBaseRunServerDomainNameOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeCloudBaseRunServerDomainNameAsync(const DescribeCloudBaseRunServerDomainNameRequest& request, const DescribeCloudBaseRunServerDomainNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudBaseRunServerDomainName(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeCloudBaseRunServerDomainNameOutcomeCallable TcbClient::DescribeCloudBaseRunServerDomainNameCallable(const DescribeCloudBaseRunServerDomainNameRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseRunServerDomainNameOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudBaseRunServerDomainName(request);
         }
     );
 

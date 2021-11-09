@@ -93,6 +93,8 @@
 #include <tencentcloud/cdn/v20180606/model/DescribePushTasksResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeReportDataRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeReportDataResponse.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeScdnBotDataRequest.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeScdnBotDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeScdnBotRecordsRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeScdnBotRecordsResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeScdnConfigRequest.h>
@@ -294,6 +296,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeReportDataResponse> DescribeReportDataOutcome;
                 typedef std::future<DescribeReportDataOutcome> DescribeReportDataOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeReportDataRequest&, DescribeReportDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReportDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeScdnBotDataResponse> DescribeScdnBotDataOutcome;
+                typedef std::future<DescribeScdnBotDataOutcome> DescribeScdnBotDataOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::DescribeScdnBotDataRequest&, DescribeScdnBotDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnBotDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeScdnBotRecordsResponse> DescribeScdnBotRecordsOutcome;
                 typedef std::future<DescribeScdnBotRecordsOutcome> DescribeScdnBotRecordsOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeScdnBotRecordsRequest&, DescribeScdnBotRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnBotRecordsAsyncHandler;
@@ -762,6 +767,15 @@ namespace TencentCloud
                 DescribeReportDataOutcome DescribeReportData(const Model::DescribeReportDataRequest &request);
                 void DescribeReportDataAsync(const Model::DescribeReportDataRequest& request, const DescribeReportDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeReportDataOutcomeCallable DescribeReportDataCallable(const Model::DescribeReportDataRequest& request);
+
+                /**
+                 *获取BOT统计数据列表
+                 * @param req DescribeScdnBotDataRequest
+                 * @return DescribeScdnBotDataOutcome
+                 */
+                DescribeScdnBotDataOutcome DescribeScdnBotData(const Model::DescribeScdnBotDataRequest &request);
+                void DescribeScdnBotDataAsync(const Model::DescribeScdnBotDataRequest& request, const DescribeScdnBotDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeScdnBotDataOutcomeCallable DescribeScdnBotDataCallable(const Model::DescribeScdnBotDataRequest& request);
 
                 /**
                  *查询BOT会话记录列表

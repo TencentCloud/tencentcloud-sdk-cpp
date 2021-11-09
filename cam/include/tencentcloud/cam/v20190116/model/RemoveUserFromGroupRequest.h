@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要删除的用户 UID和用户组 ID对应数组
-                     * @return Info 要删除的用户 UID和用户组 ID对应数组
+                     * 获取要删除的用户 UIN/UID和用户组 ID对应数组
+                     * @return Info 要删除的用户 UIN/UID和用户组 ID对应数组
                      */
                     std::vector<GroupIdOfUidInfo> GetInfo() const;
 
                     /**
-                     * 设置要删除的用户 UID和用户组 ID对应数组
-                     * @param Info 要删除的用户 UID和用户组 ID对应数组
+                     * 设置要删除的用户 UIN/UID和用户组 ID对应数组
+                     * @param Info 要删除的用户 UIN/UID和用户组 ID对应数组
                      */
                     void SetInfo(const std::vector<GroupIdOfUidInfo>& _info);
 
@@ -64,7 +64,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 要删除的用户 UID和用户组 ID对应数组
+                     * 要删除的用户 UIN/UID和用户组 ID对应数组
                      */
                     std::vector<GroupIdOfUidInfo> m_info;
                     bool m_infoHasBeenSet;

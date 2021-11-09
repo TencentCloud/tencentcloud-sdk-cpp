@@ -49,6 +49,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/UpdatePayTypeRequest.h
   include/tencentcloud/cdn/v20180606/model/SpecificConfig.h
   include/tencentcloud/cdn/v20180606/model/DescribeTopDataRequest.h
+  include/tencentcloud/cdn/v20180606/model/DescribeScdnBotDataResponse.h
   include/tencentcloud/cdn/v20180606/model/RequestHeader.h
   include/tencentcloud/cdn/v20180606/model/DescribePurgeQuotaRequest.h
   include/tencentcloud/cdn/v20180606/model/DisableCachesResponse.h
@@ -96,7 +97,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/DeleteClsLogTopicRequest.h
   include/tencentcloud/cdn/v20180606/model/UserAgentFilter.h
   include/tencentcloud/cdn/v20180606/model/ListTopCcDataRequest.h
-  include/tencentcloud/cdn/v20180606/model/StartCdnDomainRequest.h
+  include/tencentcloud/cdn/v20180606/model/ReportData.h
   include/tencentcloud/cdn/v20180606/model/DeleteScdnDomainRequest.h
   include/tencentcloud/cdn/v20180606/model/DescribeDistrictIspDataResponse.h
   include/tencentcloud/cdn/v20180606/model/DescribeCdnOriginIpRequest.h
@@ -120,7 +121,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/BotCookie.h
   include/tencentcloud/cdn/v20180606/model/DescribeCdnIpRequest.h
   include/tencentcloud/cdn/v20180606/model/Ipv6.h
-  include/tencentcloud/cdn/v20180606/model/WafSubRuleStatus.h
+  include/tencentcloud/cdn/v20180606/model/BotStats.h
   include/tencentcloud/cdn/v20180606/model/DescribeTrafficPackagesRequest.h
   include/tencentcloud/cdn/v20180606/model/StatusCodeCache.h
   include/tencentcloud/cdn/v20180606/model/DescribeIpVisitResponse.h
@@ -145,6 +146,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/SearchClsLogResponse.h
   include/tencentcloud/cdn/v20180606/model/CreateScdnLogTaskResponse.h
   include/tencentcloud/cdn/v20180606/model/ScdnEventLogConditions.h
+  include/tencentcloud/cdn/v20180606/model/ScdnAclConfig.h
   include/tencentcloud/cdn/v20180606/model/WebSocket.h
   include/tencentcloud/cdn/v20180606/model/MapInfo.h
   include/tencentcloud/cdn/v20180606/model/DescribeCertDomainsResponse.h
@@ -276,9 +278,10 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/DDoSAttackBandwidthData.h
   include/tencentcloud/cdn/v20180606/model/OriginPullOptimization.h
   include/tencentcloud/cdn/v20180606/model/ErrorPage.h
+  include/tencentcloud/cdn/v20180606/model/StartCdnDomainRequest.h
   include/tencentcloud/cdn/v20180606/model/PushTask.h
   include/tencentcloud/cdn/v20180606/model/CreateEdgePackTaskResponse.h
-  include/tencentcloud/cdn/v20180606/model/ReportData.h
+  include/tencentcloud/cdn/v20180606/model/BotStatsDetailData.h
   include/tencentcloud/cdn/v20180606/model/DescribeScdnConfigResponse.h
   include/tencentcloud/cdn/v20180606/model/DescribePushQuotaRequest.h
   include/tencentcloud/cdn/v20180606/model/TopDetailData.h
@@ -295,6 +298,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/ListTopDataResponse.h
   include/tencentcloud/cdn/v20180606/model/MaxAge.h
   include/tencentcloud/cdn/v20180606/model/UpdateDomainConfigResponse.h
+  include/tencentcloud/cdn/v20180606/model/WafSubRuleStatus.h
   include/tencentcloud/cdn/v20180606/model/OssPrivateAccess.h
   include/tencentcloud/cdn/v20180606/model/LogSetInfo.h
   include/tencentcloud/cdn/v20180606/model/ListDiagnoseReportResponse.h
@@ -310,7 +314,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/ClsSearchLogs.h
   include/tencentcloud/cdn/v20180606/model/DescribeUrlViolationsResponse.h
   include/tencentcloud/cdn/v20180606/model/IpFilter.h
-  include/tencentcloud/cdn/v20180606/model/ScdnAclConfig.h
+  include/tencentcloud/cdn/v20180606/model/DescribeScdnBotDataRequest.h
   include/tencentcloud/cdn/v20180606/model/DiagnoseUnit.h
   include/tencentcloud/cdn/v20180606/model/DiagnoseInfo.h
   include/tencentcloud/cdn/v20180606/model/DescribeScdnBotRecordsResponse.h
@@ -379,6 +383,7 @@ set(cdn_src
   src/v20180606/model/UpdatePayTypeRequest.cpp
   src/v20180606/model/SpecificConfig.cpp
   src/v20180606/model/DescribeTopDataRequest.cpp
+  src/v20180606/model/DescribeScdnBotDataResponse.cpp
   src/v20180606/model/RequestHeader.cpp
   src/v20180606/model/DescribePurgeQuotaRequest.cpp
   src/v20180606/model/DisableCachesResponse.cpp
@@ -426,7 +431,7 @@ set(cdn_src
   src/v20180606/model/DeleteClsLogTopicRequest.cpp
   src/v20180606/model/UserAgentFilter.cpp
   src/v20180606/model/ListTopCcDataRequest.cpp
-  src/v20180606/model/StartCdnDomainRequest.cpp
+  src/v20180606/model/ReportData.cpp
   src/v20180606/model/DeleteScdnDomainRequest.cpp
   src/v20180606/model/DescribeDistrictIspDataResponse.cpp
   src/v20180606/model/DescribeCdnOriginIpRequest.cpp
@@ -450,7 +455,7 @@ set(cdn_src
   src/v20180606/model/BotCookie.cpp
   src/v20180606/model/DescribeCdnIpRequest.cpp
   src/v20180606/model/Ipv6.cpp
-  src/v20180606/model/WafSubRuleStatus.cpp
+  src/v20180606/model/BotStats.cpp
   src/v20180606/model/DescribeTrafficPackagesRequest.cpp
   src/v20180606/model/StatusCodeCache.cpp
   src/v20180606/model/DescribeIpVisitResponse.cpp
@@ -475,6 +480,7 @@ set(cdn_src
   src/v20180606/model/SearchClsLogResponse.cpp
   src/v20180606/model/CreateScdnLogTaskResponse.cpp
   src/v20180606/model/ScdnEventLogConditions.cpp
+  src/v20180606/model/ScdnAclConfig.cpp
   src/v20180606/model/WebSocket.cpp
   src/v20180606/model/MapInfo.cpp
   src/v20180606/model/DescribeCertDomainsResponse.cpp
@@ -606,9 +612,10 @@ set(cdn_src
   src/v20180606/model/DDoSAttackBandwidthData.cpp
   src/v20180606/model/OriginPullOptimization.cpp
   src/v20180606/model/ErrorPage.cpp
+  src/v20180606/model/StartCdnDomainRequest.cpp
   src/v20180606/model/PushTask.cpp
   src/v20180606/model/CreateEdgePackTaskResponse.cpp
-  src/v20180606/model/ReportData.cpp
+  src/v20180606/model/BotStatsDetailData.cpp
   src/v20180606/model/DescribeScdnConfigResponse.cpp
   src/v20180606/model/DescribePushQuotaRequest.cpp
   src/v20180606/model/TopDetailData.cpp
@@ -625,6 +632,7 @@ set(cdn_src
   src/v20180606/model/ListTopDataResponse.cpp
   src/v20180606/model/MaxAge.cpp
   src/v20180606/model/UpdateDomainConfigResponse.cpp
+  src/v20180606/model/WafSubRuleStatus.cpp
   src/v20180606/model/OssPrivateAccess.cpp
   src/v20180606/model/LogSetInfo.cpp
   src/v20180606/model/ListDiagnoseReportResponse.cpp
@@ -640,7 +648,7 @@ set(cdn_src
   src/v20180606/model/ClsSearchLogs.cpp
   src/v20180606/model/DescribeUrlViolationsResponse.cpp
   src/v20180606/model/IpFilter.cpp
-  src/v20180606/model/ScdnAclConfig.cpp
+  src/v20180606/model/DescribeScdnBotDataRequest.cpp
   src/v20180606/model/DiagnoseUnit.cpp
   src/v20180606/model/DiagnoseInfo.cpp
   src/v20180606/model/DescribeScdnBotRecordsResponse.cpp

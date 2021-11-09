@@ -86,6 +86,24 @@ namespace TencentCloud
                      */
                     bool ImageBase64HasBeenSet() const;
 
+                    /**
+                     * 获取是否需要百科信息 1：是，0: 否，默认是0
+                     * @return NeedLemma 是否需要百科信息 1：是，0: 否，默认是0
+                     */
+                    int64_t GetNeedLemma() const;
+
+                    /**
+                     * 设置是否需要百科信息 1：是，0: 否，默认是0
+                     * @param NeedLemma 是否需要百科信息 1：是，0: 否，默认是0
+                     */
+                    void SetNeedLemma(const int64_t& _needLemma);
+
+                    /**
+                     * 判断参数 NeedLemma 是否已赋值
+                     * @return NeedLemma 是否已赋值
+                     */
+                    bool NeedLemmaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +119,12 @@ namespace TencentCloud
                      */
                     std::string m_imageBase64;
                     bool m_imageBase64HasBeenSet;
+
+                    /**
+                     * 是否需要百科信息 1：是，0: 否，默认是0
+                     */
+                    int64_t m_needLemma;
+                    bool m_needLemmaHasBeenSet;
 
                 };
             }
