@@ -245,6 +245,28 @@ namespace TencentCloud
                      */
                     bool SessionTypeHasBeenSet() const;
 
+                    /**
+                     * 获取端口段结束端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EndPort 端口段结束端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetEndPort() const;
+
+                    /**
+                     * 设置端口段结束端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EndPort 端口段结束端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEndPort(const int64_t& _endPort);
+
+                    /**
+                     * 判断参数 EndPort 是否已赋值
+                     * @return EndPort 是否已赋值
+                     */
+                    bool EndPortHasBeenSet() const;
+
                 private:
 
                     /**
@@ -309,6 +331,13 @@ namespace TencentCloud
                      */
                     std::string m_sessionType;
                     bool m_sessionTypeHasBeenSet;
+
+                    /**
+                     * 端口段结束端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_endPort;
+                    bool m_endPortHasBeenSet;
 
                 };
             }

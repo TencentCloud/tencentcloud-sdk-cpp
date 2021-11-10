@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取平台名称。
-                     * @return Platform 平台名称。
+                     * 获取平台标识。
+                     * @return Platform 平台标识。
                      */
                     std::string GetPlatform() const;
 
                     /**
-                     * 设置平台名称。
-                     * @param Platform 平台名称。
+                     * 设置平台标识。
+                     * @param Platform 平台标识。
                      */
                     void SetPlatform(const std::string& _platform);
 
@@ -187,7 +187,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 平台名称。
+                     * 平台标识。
                      */
                     std::string m_platform;
                     bool m_platformHasBeenSet;

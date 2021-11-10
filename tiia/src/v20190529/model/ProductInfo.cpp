@@ -28,7 +28,8 @@ ProductInfo::ProductInfo() :
     m_priceHasBeenSet(false),
     m_productCategoryHasBeenSet(false),
     m_scoreHasBeenSet(false),
-    m_imageHasBeenSet(false)
+    m_imageHasBeenSet(false),
+    m_lemmaInfoListHasBeenSet(false)
 {
 }
 
@@ -124,6 +125,26 @@ CoreInternalOutcome ProductInfo::Deserialize(const rapidjson::Value &value)
         m_imageHasBeenSet = true;
     }
 
+    if (value.HasMember("LemmaInfoList") && !value["LemmaInfoList"].IsNull())
+    {
+        if (!value["LemmaInfoList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ProductInfo.LemmaInfoList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["LemmaInfoList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            LemmaInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_lemmaInfoList.push_back(item);
+        }
+        m_lemmaInfoListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -194,6 +215,21 @@ void ProductInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Image";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_image.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lemmaInfoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LemmaInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_lemmaInfoList.begin(); itr != m_lemmaInfoList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -325,5 +361,21 @@ void ProductInfo::SetImage(const string& _image)
 bool ProductInfo::ImageHasBeenSet() const
 {
     return m_imageHasBeenSet;
+}
+
+vector<LemmaInfo> ProductInfo::GetLemmaInfoList() const
+{
+    return m_lemmaInfoList;
+}
+
+void ProductInfo::SetLemmaInfoList(const vector<LemmaInfo>& _lemmaInfoList)
+{
+    m_lemmaInfoList = _lemmaInfoList;
+    m_lemmaInfoListHasBeenSet = true;
+}
+
+bool ProductInfo::LemmaInfoListHasBeenSet() const
+{
+    return m_lemmaInfoListHasBeenSet;
 }
 

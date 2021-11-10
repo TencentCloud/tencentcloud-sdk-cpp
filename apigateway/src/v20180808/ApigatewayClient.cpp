@@ -1717,6 +1717,92 @@ ApigatewayClient::DescribeApisStatusOutcomeCallable ApigatewayClient::DescribeAp
     return task->get_future();
 }
 
+ApigatewayClient::DescribeExclusiveInstanceDetailOutcome ApigatewayClient::DescribeExclusiveInstanceDetail(const DescribeExclusiveInstanceDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExclusiveInstanceDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExclusiveInstanceDetailResponse rsp = DescribeExclusiveInstanceDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExclusiveInstanceDetailOutcome(rsp);
+        else
+            return DescribeExclusiveInstanceDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExclusiveInstanceDetailOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::DescribeExclusiveInstanceDetailAsync(const DescribeExclusiveInstanceDetailRequest& request, const DescribeExclusiveInstanceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExclusiveInstanceDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::DescribeExclusiveInstanceDetailOutcomeCallable ApigatewayClient::DescribeExclusiveInstanceDetailCallable(const DescribeExclusiveInstanceDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExclusiveInstanceDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExclusiveInstanceDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ApigatewayClient::DescribeExclusiveInstancesOutcome ApigatewayClient::DescribeExclusiveInstances(const DescribeExclusiveInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExclusiveInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExclusiveInstancesResponse rsp = DescribeExclusiveInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExclusiveInstancesOutcome(rsp);
+        else
+            return DescribeExclusiveInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExclusiveInstancesOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::DescribeExclusiveInstancesAsync(const DescribeExclusiveInstancesRequest& request, const DescribeExclusiveInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExclusiveInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::DescribeExclusiveInstancesOutcomeCallable ApigatewayClient::DescribeExclusiveInstancesCallable(const DescribeExclusiveInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExclusiveInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExclusiveInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ApigatewayClient::DescribeIPStrategyOutcome ApigatewayClient::DescribeIPStrategy(const DescribeIPStrategyRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeIPStrategy");
@@ -3000,6 +3086,49 @@ ApigatewayClient::ModifyApiIncrementOutcomeCallable ApigatewayClient::ModifyApiI
         [this, request]()
         {
             return this->ModifyApiIncrement(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ApigatewayClient::ModifyExclusiveInstanceOutcome ApigatewayClient::ModifyExclusiveInstance(const ModifyExclusiveInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyExclusiveInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyExclusiveInstanceResponse rsp = ModifyExclusiveInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyExclusiveInstanceOutcome(rsp);
+        else
+            return ModifyExclusiveInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyExclusiveInstanceOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::ModifyExclusiveInstanceAsync(const ModifyExclusiveInstanceRequest& request, const ModifyExclusiveInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyExclusiveInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::ModifyExclusiveInstanceOutcomeCallable ApigatewayClient::ModifyExclusiveInstanceCallable(const ModifyExclusiveInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyExclusiveInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyExclusiveInstance(request);
         }
     );
 

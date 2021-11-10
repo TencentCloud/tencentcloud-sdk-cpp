@@ -35,7 +35,23 @@ ResidenceBookletOCRResponse::ResidenceBookletOCRResponse() :
     m_educationDegreeHasBeenSet(false),
     m_servicePlaceHasBeenSet(false),
     m_householdHasBeenSet(false),
-    m_addressHasBeenSet(false)
+    m_addressHasBeenSet(false),
+    m_signatureHasBeenSet(false),
+    m_issueDateHasBeenSet(false),
+    m_homePageNumberHasBeenSet(false),
+    m_householderNameHasBeenSet(false),
+    m_relationshipHasBeenSet(false),
+    m_otherAddressesHasBeenSet(false),
+    m_religiousBeliefHasBeenSet(false),
+    m_heightHasBeenSet(false),
+    m_bloodTypeHasBeenSet(false),
+    m_maritalStatusHasBeenSet(false),
+    m_veteranStatusHasBeenSet(false),
+    m_professionHasBeenSet(false),
+    m_moveToCityInformationHasBeenSet(false),
+    m_moveToSiteInformationHasBeenSet(false),
+    m_registrationDateHasBeenSet(false),
+    m_formerNameHasBeenSet(false)
 {
 }
 
@@ -193,6 +209,166 @@ CoreInternalOutcome ResidenceBookletOCRResponse::Deserialize(const string &paylo
         m_addressHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Signature") && !rsp["Signature"].IsNull())
+    {
+        if (!rsp["Signature"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Signature` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_signature = string(rsp["Signature"].GetString());
+        m_signatureHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IssueDate") && !rsp["IssueDate"].IsNull())
+    {
+        if (!rsp["IssueDate"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IssueDate` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_issueDate = string(rsp["IssueDate"].GetString());
+        m_issueDateHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("HomePageNumber") && !rsp["HomePageNumber"].IsNull())
+    {
+        if (!rsp["HomePageNumber"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HomePageNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_homePageNumber = string(rsp["HomePageNumber"].GetString());
+        m_homePageNumberHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("HouseholderName") && !rsp["HouseholderName"].IsNull())
+    {
+        if (!rsp["HouseholderName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HouseholderName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_householderName = string(rsp["HouseholderName"].GetString());
+        m_householderNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Relationship") && !rsp["Relationship"].IsNull())
+    {
+        if (!rsp["Relationship"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Relationship` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_relationship = string(rsp["Relationship"].GetString());
+        m_relationshipHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("OtherAddresses") && !rsp["OtherAddresses"].IsNull())
+    {
+        if (!rsp["OtherAddresses"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OtherAddresses` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_otherAddresses = string(rsp["OtherAddresses"].GetString());
+        m_otherAddressesHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ReligiousBelief") && !rsp["ReligiousBelief"].IsNull())
+    {
+        if (!rsp["ReligiousBelief"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReligiousBelief` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_religiousBelief = string(rsp["ReligiousBelief"].GetString());
+        m_religiousBeliefHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Height") && !rsp["Height"].IsNull())
+    {
+        if (!rsp["Height"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Height` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_height = string(rsp["Height"].GetString());
+        m_heightHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("BloodType") && !rsp["BloodType"].IsNull())
+    {
+        if (!rsp["BloodType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BloodType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bloodType = string(rsp["BloodType"].GetString());
+        m_bloodTypeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("MaritalStatus") && !rsp["MaritalStatus"].IsNull())
+    {
+        if (!rsp["MaritalStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MaritalStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_maritalStatus = string(rsp["MaritalStatus"].GetString());
+        m_maritalStatusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("VeteranStatus") && !rsp["VeteranStatus"].IsNull())
+    {
+        if (!rsp["VeteranStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VeteranStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_veteranStatus = string(rsp["VeteranStatus"].GetString());
+        m_veteranStatusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Profession") && !rsp["Profession"].IsNull())
+    {
+        if (!rsp["Profession"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Profession` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_profession = string(rsp["Profession"].GetString());
+        m_professionHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("MoveToCityInformation") && !rsp["MoveToCityInformation"].IsNull())
+    {
+        if (!rsp["MoveToCityInformation"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MoveToCityInformation` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_moveToCityInformation = string(rsp["MoveToCityInformation"].GetString());
+        m_moveToCityInformationHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("MoveToSiteInformation") && !rsp["MoveToSiteInformation"].IsNull())
+    {
+        if (!rsp["MoveToSiteInformation"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MoveToSiteInformation` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_moveToSiteInformation = string(rsp["MoveToSiteInformation"].GetString());
+        m_moveToSiteInformationHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RegistrationDate") && !rsp["RegistrationDate"].IsNull())
+    {
+        if (!rsp["RegistrationDate"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegistrationDate` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_registrationDate = string(rsp["RegistrationDate"].GetString());
+        m_registrationDateHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FormerName") && !rsp["FormerName"].IsNull())
+    {
+        if (!rsp["FormerName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FormerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_formerName = string(rsp["FormerName"].GetString());
+        m_formerNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -297,6 +473,134 @@ string ResidenceBookletOCRResponse::ToJsonString() const
         string key = "Address";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_address.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_signatureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Signature";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_signature.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_issueDateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IssueDate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_issueDate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_homePageNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HomePageNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_homePageNumber.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_householderNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HouseholderName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_householderName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_relationshipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Relationship";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_relationship.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_otherAddressesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OtherAddresses";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_otherAddresses.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_religiousBeliefHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReligiousBelief";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_religiousBelief.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_heightHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Height";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_height.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bloodTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BloodType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bloodType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maritalStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaritalStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_maritalStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_veteranStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VeteranStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_veteranStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_professionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Profession";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_profession.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_moveToCityInformationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MoveToCityInformation";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_moveToCityInformation.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_moveToSiteInformationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MoveToSiteInformation";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_moveToSiteInformation.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_registrationDateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegistrationDate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_registrationDate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_formerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FormerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_formerName.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -429,6 +733,166 @@ string ResidenceBookletOCRResponse::GetAddress() const
 bool ResidenceBookletOCRResponse::AddressHasBeenSet() const
 {
     return m_addressHasBeenSet;
+}
+
+string ResidenceBookletOCRResponse::GetSignature() const
+{
+    return m_signature;
+}
+
+bool ResidenceBookletOCRResponse::SignatureHasBeenSet() const
+{
+    return m_signatureHasBeenSet;
+}
+
+string ResidenceBookletOCRResponse::GetIssueDate() const
+{
+    return m_issueDate;
+}
+
+bool ResidenceBookletOCRResponse::IssueDateHasBeenSet() const
+{
+    return m_issueDateHasBeenSet;
+}
+
+string ResidenceBookletOCRResponse::GetHomePageNumber() const
+{
+    return m_homePageNumber;
+}
+
+bool ResidenceBookletOCRResponse::HomePageNumberHasBeenSet() const
+{
+    return m_homePageNumberHasBeenSet;
+}
+
+string ResidenceBookletOCRResponse::GetHouseholderName() const
+{
+    return m_householderName;
+}
+
+bool ResidenceBookletOCRResponse::HouseholderNameHasBeenSet() const
+{
+    return m_householderNameHasBeenSet;
+}
+
+string ResidenceBookletOCRResponse::GetRelationship() const
+{
+    return m_relationship;
+}
+
+bool ResidenceBookletOCRResponse::RelationshipHasBeenSet() const
+{
+    return m_relationshipHasBeenSet;
+}
+
+string ResidenceBookletOCRResponse::GetOtherAddresses() const
+{
+    return m_otherAddresses;
+}
+
+bool ResidenceBookletOCRResponse::OtherAddressesHasBeenSet() const
+{
+    return m_otherAddressesHasBeenSet;
+}
+
+string ResidenceBookletOCRResponse::GetReligiousBelief() const
+{
+    return m_religiousBelief;
+}
+
+bool ResidenceBookletOCRResponse::ReligiousBeliefHasBeenSet() const
+{
+    return m_religiousBeliefHasBeenSet;
+}
+
+string ResidenceBookletOCRResponse::GetHeight() const
+{
+    return m_height;
+}
+
+bool ResidenceBookletOCRResponse::HeightHasBeenSet() const
+{
+    return m_heightHasBeenSet;
+}
+
+string ResidenceBookletOCRResponse::GetBloodType() const
+{
+    return m_bloodType;
+}
+
+bool ResidenceBookletOCRResponse::BloodTypeHasBeenSet() const
+{
+    return m_bloodTypeHasBeenSet;
+}
+
+string ResidenceBookletOCRResponse::GetMaritalStatus() const
+{
+    return m_maritalStatus;
+}
+
+bool ResidenceBookletOCRResponse::MaritalStatusHasBeenSet() const
+{
+    return m_maritalStatusHasBeenSet;
+}
+
+string ResidenceBookletOCRResponse::GetVeteranStatus() const
+{
+    return m_veteranStatus;
+}
+
+bool ResidenceBookletOCRResponse::VeteranStatusHasBeenSet() const
+{
+    return m_veteranStatusHasBeenSet;
+}
+
+string ResidenceBookletOCRResponse::GetProfession() const
+{
+    return m_profession;
+}
+
+bool ResidenceBookletOCRResponse::ProfessionHasBeenSet() const
+{
+    return m_professionHasBeenSet;
+}
+
+string ResidenceBookletOCRResponse::GetMoveToCityInformation() const
+{
+    return m_moveToCityInformation;
+}
+
+bool ResidenceBookletOCRResponse::MoveToCityInformationHasBeenSet() const
+{
+    return m_moveToCityInformationHasBeenSet;
+}
+
+string ResidenceBookletOCRResponse::GetMoveToSiteInformation() const
+{
+    return m_moveToSiteInformation;
+}
+
+bool ResidenceBookletOCRResponse::MoveToSiteInformationHasBeenSet() const
+{
+    return m_moveToSiteInformationHasBeenSet;
+}
+
+string ResidenceBookletOCRResponse::GetRegistrationDate() const
+{
+    return m_registrationDate;
+}
+
+bool ResidenceBookletOCRResponse::RegistrationDateHasBeenSet() const
+{
+    return m_registrationDateHasBeenSet;
+}
+
+string ResidenceBookletOCRResponse::GetFormerName() const
+{
+    return m_formerName;
+}
+
+bool ResidenceBookletOCRResponse::FormerNameHasBeenSet() const
+{
+    return m_formerNameHasBeenSet;
 }
 
 

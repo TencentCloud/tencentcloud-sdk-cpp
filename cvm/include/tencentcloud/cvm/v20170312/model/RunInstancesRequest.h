@@ -91,13 +91,17 @@ namespace TencentCloud
 
                     /**
                      * 获取实例所在的位置。通过该参数可以指定实例所属可用区，所属项目，所属宿主机（在专用宿主机上创建子机时指定）等属性。
+注：本数据结构中的Zone为必填参数。
                      * @return Placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目，所属宿主机（在专用宿主机上创建子机时指定）等属性。
+注：本数据结构中的Zone为必填参数。
                      */
                     Placement GetPlacement() const;
 
                     /**
                      * 设置实例所在的位置。通过该参数可以指定实例所属可用区，所属项目，所属宿主机（在专用宿主机上创建子机时指定）等属性。
+注：本数据结构中的Zone为必填参数。
                      * @param Placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目，所属宿主机（在专用宿主机上创建子机时指定）等属性。
+注：本数据结构中的Zone为必填参数。
                      */
                     void SetPlacement(const Placement& _placement);
 
@@ -400,14 +404,14 @@ namespace TencentCloud
                     bool TagSpecificationHasBeenSet() const;
 
                     /**
-                     * 获取实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。
-                     * @return InstanceMarketOptions 实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。
+                     * 获取实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费但没有传递该参数时，默认按当前固定折扣价格出价。
+                     * @return InstanceMarketOptions 实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费但没有传递该参数时，默认按当前固定折扣价格出价。
                      */
                     InstanceMarketOptionsRequest GetInstanceMarketOptions() const;
 
                     /**
-                     * 设置实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。
-                     * @param InstanceMarketOptions 实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。
+                     * 设置实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费但没有传递该参数时，默认按当前固定折扣价格出价。
+                     * @param InstanceMarketOptions 实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费但没有传递该参数时，默认按当前固定折扣价格出价。
                      */
                     void SetInstanceMarketOptions(const InstanceMarketOptionsRequest& _instanceMarketOptions);
 
@@ -521,6 +525,7 @@ false（默认）：发送正常请求，通过检查后直接创建实例
 
                     /**
                      * 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目，所属宿主机（在专用宿主机上创建子机时指定）等属性。
+注：本数据结构中的Zone为必填参数。
                      */
                     Placement m_placement;
                     bool m_placementHasBeenSet;
@@ -623,7 +628,7 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool m_tagSpecificationHasBeenSet;
 
                     /**
-                     * 实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。
+                     * 实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费但没有传递该参数时，默认按当前固定折扣价格出价。
                      */
                     InstanceMarketOptionsRequest m_instanceMarketOptions;
                     bool m_instanceMarketOptionsHasBeenSet;

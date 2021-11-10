@@ -104,6 +104,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/InvoiceGeneralOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/TaxiInvoiceOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/PropOwnerCertOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeContainerOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/TextDetectRequest.h
   include/tencentcloud/ocr/v20181119/model/VatRollInvoiceOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/VatInvoiceVerifyRequest.h
@@ -189,6 +190,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/QuotaInvoiceOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/RideHailingTransportLicenseOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/CandWord.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeContainerOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/EnterpriseLicenseInfo.h
   include/tencentcloud/ocr/v20181119/model/InsuranceBillOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/GeneralHandwritingOCRResponse.h
@@ -305,6 +307,7 @@ set(ocr_src
   src/v20181119/model/InvoiceGeneralOCRResponse.cpp
   src/v20181119/model/TaxiInvoiceOCRRequest.cpp
   src/v20181119/model/PropOwnerCertOCRRequest.cpp
+  src/v20181119/model/RecognizeContainerOCRRequest.cpp
   src/v20181119/model/TextDetectRequest.cpp
   src/v20181119/model/VatRollInvoiceOCRResponse.cpp
   src/v20181119/model/VatInvoiceVerifyRequest.cpp
@@ -390,6 +393,7 @@ set(ocr_src
   src/v20181119/model/QuotaInvoiceOCRResponse.cpp
   src/v20181119/model/RideHailingTransportLicenseOCRResponse.cpp
   src/v20181119/model/CandWord.cpp
+  src/v20181119/model/RecognizeContainerOCRResponse.cpp
   src/v20181119/model/EnterpriseLicenseInfo.cpp
   src/v20181119/model/InsuranceBillOCRRequest.cpp
   src/v20181119/model/GeneralHandwritingOCRResponse.cpp

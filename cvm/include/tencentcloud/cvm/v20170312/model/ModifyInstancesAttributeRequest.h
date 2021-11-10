@@ -62,13 +62,17 @@ namespace TencentCloud
 
                     /**
                      * 获取实例名称。可任意命名，但不得超过60个字符。
+<dx-alert infotype="explain" title="">必须指定InstanceName与SecurityGroups的其中一个，但不能同时设置</dx-alert>
                      * @return InstanceName 实例名称。可任意命名，但不得超过60个字符。
+<dx-alert infotype="explain" title="">必须指定InstanceName与SecurityGroups的其中一个，但不能同时设置</dx-alert>
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名称。可任意命名，但不得超过60个字符。
+<dx-alert infotype="explain" title="">必须指定InstanceName与SecurityGroups的其中一个，但不能同时设置</dx-alert>
                      * @param InstanceName 实例名称。可任意命名，但不得超过60个字符。
+<dx-alert infotype="explain" title="">必须指定InstanceName与SecurityGroups的其中一个，但不能同时设置</dx-alert>
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
@@ -79,14 +83,14 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取指定实例的安全组Id列表，子机将重新关联指定列表的安全组，原本关联的安全组会被解绑。
-                     * @return SecurityGroups 指定实例的安全组Id列表，子机将重新关联指定列表的安全组，原本关联的安全组会被解绑。
+                     * 获取指定实例的安全组Id列表，子机将重新关联指定列表的安全组，原本关联的安全组会被解绑。<dx-alert infotype="explain" title="">必须指定SecurityGroups与InstanceName的其中一个，但不能同时设置</dx-alert>
+                     * @return SecurityGroups 指定实例的安全组Id列表，子机将重新关联指定列表的安全组，原本关联的安全组会被解绑。<dx-alert infotype="explain" title="">必须指定SecurityGroups与InstanceName的其中一个，但不能同时设置</dx-alert>
                      */
                     std::vector<std::string> GetSecurityGroups() const;
 
                     /**
-                     * 设置指定实例的安全组Id列表，子机将重新关联指定列表的安全组，原本关联的安全组会被解绑。
-                     * @param SecurityGroups 指定实例的安全组Id列表，子机将重新关联指定列表的安全组，原本关联的安全组会被解绑。
+                     * 设置指定实例的安全组Id列表，子机将重新关联指定列表的安全组，原本关联的安全组会被解绑。<dx-alert infotype="explain" title="">必须指定SecurityGroups与InstanceName的其中一个，但不能同时设置</dx-alert>
+                     * @param SecurityGroups 指定实例的安全组Id列表，子机将重新关联指定列表的安全组，原本关联的安全组会被解绑。<dx-alert infotype="explain" title="">必须指定SecurityGroups与InstanceName的其中一个，但不能同时设置</dx-alert>
                      */
                     void SetSecurityGroups(const std::vector<std::string>& _securityGroups);
 
@@ -106,12 +110,13 @@ namespace TencentCloud
 
                     /**
                      * 实例名称。可任意命名，但不得超过60个字符。
+<dx-alert infotype="explain" title="">必须指定InstanceName与SecurityGroups的其中一个，但不能同时设置</dx-alert>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 指定实例的安全组Id列表，子机将重新关联指定列表的安全组，原本关联的安全组会被解绑。
+                     * 指定实例的安全组Id列表，子机将重新关联指定列表的安全组，原本关联的安全组会被解绑。<dx-alert infotype="explain" title="">必须指定SecurityGroups与InstanceName的其中一个，但不能同时设置</dx-alert>
                      */
                     std::vector<std::string> m_securityGroups;
                     bool m_securityGroupsHasBeenSet;

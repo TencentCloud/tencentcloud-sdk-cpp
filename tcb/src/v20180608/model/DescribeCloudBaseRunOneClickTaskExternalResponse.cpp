@@ -32,7 +32,8 @@ DescribeCloudBaseRunOneClickTaskExternalResponse::DescribeCloudBaseRunOneClickTa
     m_createTimeHasBeenSet(false),
     m_stageHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_failReasonHasBeenSet(false)
+    m_failReasonHasBeenSet(false),
+    m_userEnvIdHasBeenSet(false)
 {
 }
 
@@ -160,6 +161,16 @@ CoreInternalOutcome DescribeCloudBaseRunOneClickTaskExternalResponse::Deserializ
         m_failReasonHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UserEnvId") && !rsp["UserEnvId"].IsNull())
+    {
+        if (!rsp["UserEnvId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserEnvId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userEnvId = string(rsp["UserEnvId"].GetString());
+        m_userEnvIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -240,6 +251,14 @@ string DescribeCloudBaseRunOneClickTaskExternalResponse::ToJsonString() const
         string key = "FailReason";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_failReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userEnvIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserEnvId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userEnvId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -342,6 +361,16 @@ string DescribeCloudBaseRunOneClickTaskExternalResponse::GetFailReason() const
 bool DescribeCloudBaseRunOneClickTaskExternalResponse::FailReasonHasBeenSet() const
 {
     return m_failReasonHasBeenSet;
+}
+
+string DescribeCloudBaseRunOneClickTaskExternalResponse::GetUserEnvId() const
+{
+    return m_userEnvId;
+}
+
+bool DescribeCloudBaseRunOneClickTaskExternalResponse::UserEnvIdHasBeenSet() const
+{
+    return m_userEnvIdHasBeenSet;
 }
 
 

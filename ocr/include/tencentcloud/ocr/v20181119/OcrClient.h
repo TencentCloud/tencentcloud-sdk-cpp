@@ -109,6 +109,8 @@
 #include <tencentcloud/ocr/v20181119/model/QueryBarCodeResponse.h>
 #include <tencentcloud/ocr/v20181119/model/QuotaInvoiceOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/QuotaInvoiceOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeContainerOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeContainerOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeOnlineTaxiItineraryOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeOnlineTaxiItineraryOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeTableOCRRequest.h>
@@ -302,6 +304,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QuotaInvoiceOCRResponse> QuotaInvoiceOCROutcome;
                 typedef std::future<QuotaInvoiceOCROutcome> QuotaInvoiceOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::QuotaInvoiceOCRRequest&, QuotaInvoiceOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> QuotaInvoiceOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::RecognizeContainerOCRResponse> RecognizeContainerOCROutcome;
+                typedef std::future<RecognizeContainerOCROutcome> RecognizeContainerOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::RecognizeContainerOCRRequest&, RecognizeContainerOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeContainerOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeOnlineTaxiItineraryOCRResponse> RecognizeOnlineTaxiItineraryOCROutcome;
                 typedef std::future<RecognizeOnlineTaxiItineraryOCROutcome> RecognizeOnlineTaxiItineraryOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeOnlineTaxiItineraryOCRRequest&, RecognizeOnlineTaxiItineraryOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeOnlineTaxiItineraryOCRAsyncHandler;
@@ -1026,6 +1031,16 @@ namespace TencentCloud
                 QuotaInvoiceOCROutcome QuotaInvoiceOCR(const Model::QuotaInvoiceOCRRequest &request);
                 void QuotaInvoiceOCRAsync(const Model::QuotaInvoiceOCRRequest& request, const QuotaInvoiceOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QuotaInvoiceOCROutcomeCallable QuotaInvoiceOCRCallable(const Model::QuotaInvoiceOCRRequest& request);
+
+                /**
+                 *本接口支持集装箱箱门信息识别，识别字段包括集装箱箱号、类型、总重量、有效承重、容量、自身重量，具备集装箱箱号、类型不完整或者不清晰的告警功能。
+
+                 * @param req RecognizeContainerOCRRequest
+                 * @return RecognizeContainerOCROutcome
+                 */
+                RecognizeContainerOCROutcome RecognizeContainerOCR(const Model::RecognizeContainerOCRRequest &request);
+                void RecognizeContainerOCRAsync(const Model::RecognizeContainerOCRRequest& request, const RecognizeContainerOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RecognizeContainerOCROutcomeCallable RecognizeContainerOCRCallable(const Model::RecognizeContainerOCRRequest& request);
 
                 /**
                  *本接口支持网约车行程单关键字段的识别，包括行程起止日期、上车时间、起点、终点、里程、金额等字段。

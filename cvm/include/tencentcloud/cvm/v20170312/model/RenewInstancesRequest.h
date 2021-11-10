@@ -62,14 +62,18 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。包年包月实例该参数为必传参数。
-                     * @return InstanceChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。包年包月实例该参数为必传参数。
+                     * 获取预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。<dx-alert infotype="explain" title="">
+包年包月实例该参数为必传参数。</dx-alert>
+                     * @return InstanceChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。<dx-alert infotype="explain" title="">
+包年包月实例该参数为必传参数。</dx-alert>
                      */
                     InstanceChargePrepaid GetInstanceChargePrepaid() const;
 
                     /**
-                     * 设置预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。包年包月实例该参数为必传参数。
-                     * @param InstanceChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。包年包月实例该参数为必传参数。
+                     * 设置预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。<dx-alert infotype="explain" title="">
+包年包月实例该参数为必传参数。</dx-alert>
+                     * @param InstanceChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。<dx-alert infotype="explain" title="">
+包年包月实例该参数为必传参数。</dx-alert>
                      */
                     void SetInstanceChargePrepaid(const InstanceChargePrepaid& _instanceChargePrepaid);
 
@@ -106,7 +110,8 @@ namespace TencentCloud
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。包年包月实例该参数为必传参数。
+                     * 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。<dx-alert infotype="explain" title="">
+包年包月实例该参数为必传参数。</dx-alert>
                      */
                     InstanceChargePrepaid m_instanceChargePrepaid;
                     bool m_instanceChargePrepaidHasBeenSet;

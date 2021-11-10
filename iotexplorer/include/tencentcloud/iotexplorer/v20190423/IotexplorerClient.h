@@ -29,6 +29,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/CallDeviceActionSyncResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ControlDeviceDataRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ControlDeviceDataResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateBatchProductionRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateBatchProductionResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateFenceBindRequest.h>
@@ -71,6 +73,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteTopicPolicyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteTopicRuleRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteTopicRuleResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeBatchProductionRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeBatchProductionResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataRequest.h>
@@ -107,6 +111,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DisableTopicRuleResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/EnableTopicRuleRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/EnableTopicRuleResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetBatchProductionsListRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetBatchProductionsListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetCOSURLRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetCOSURLResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetDeviceListRequest.h>
@@ -190,6 +196,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ControlDeviceDataResponse> ControlDeviceDataOutcome;
                 typedef std::future<ControlDeviceDataOutcome> ControlDeviceDataOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ControlDeviceDataRequest&, ControlDeviceDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ControlDeviceDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateBatchProductionResponse> CreateBatchProductionOutcome;
+                typedef std::future<CreateBatchProductionOutcome> CreateBatchProductionOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreateBatchProductionRequest&, CreateBatchProductionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchProductionAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDeviceResponse> CreateDeviceOutcome;
                 typedef std::future<CreateDeviceOutcome> CreateDeviceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateDeviceRequest&, CreateDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceAsyncHandler;
@@ -253,6 +262,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteTopicRuleResponse> DeleteTopicRuleOutcome;
                 typedef std::future<DeleteTopicRuleOutcome> DeleteTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeleteTopicRuleRequest&, DeleteTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTopicRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBatchProductionResponse> DescribeBatchProductionOutcome;
+                typedef std::future<DescribeBatchProductionOutcome> DescribeBatchProductionOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeBatchProductionRequest&, DescribeBatchProductionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchProductionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDeviceResponse> DescribeDeviceOutcome;
                 typedef std::future<DescribeDeviceOutcome> DescribeDeviceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeDeviceRequest&, DescribeDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceAsyncHandler;
@@ -307,6 +319,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::EnableTopicRuleResponse> EnableTopicRuleOutcome;
                 typedef std::future<EnableTopicRuleOutcome> EnableTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::EnableTopicRuleRequest&, EnableTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableTopicRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetBatchProductionsListResponse> GetBatchProductionsListOutcome;
+                typedef std::future<GetBatchProductionsListOutcome> GetBatchProductionsListOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::GetBatchProductionsListRequest&, GetBatchProductionsListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetBatchProductionsListAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetCOSURLResponse> GetCOSURLOutcome;
                 typedef std::future<GetCOSURLOutcome> GetCOSURLOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetCOSURLRequest&, GetCOSURLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetCOSURLAsyncHandler;
@@ -426,6 +441,15 @@ namespace TencentCloud
                 ControlDeviceDataOutcome ControlDeviceData(const Model::ControlDeviceDataRequest &request);
                 void ControlDeviceDataAsync(const Model::ControlDeviceDataRequest& request, const ControlDeviceDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ControlDeviceDataOutcomeCallable ControlDeviceDataCallable(const Model::ControlDeviceDataRequest& request);
+
+                /**
+                 *用于新建批量生产设备
+                 * @param req CreateBatchProductionRequest
+                 * @return CreateBatchProductionOutcome
+                 */
+                CreateBatchProductionOutcome CreateBatchProduction(const Model::CreateBatchProductionRequest &request);
+                void CreateBatchProductionAsync(const Model::CreateBatchProductionRequest& request, const CreateBatchProductionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBatchProductionOutcomeCallable CreateBatchProductionCallable(const Model::CreateBatchProductionRequest& request);
 
                 /**
                  *创建设备
@@ -617,6 +641,15 @@ namespace TencentCloud
                 DeleteTopicRuleOutcomeCallable DeleteTopicRuleCallable(const Model::DeleteTopicRuleRequest& request);
 
                 /**
+                 *获取量产详情信息。
+                 * @param req DescribeBatchProductionRequest
+                 * @return DescribeBatchProductionOutcome
+                 */
+                DescribeBatchProductionOutcome DescribeBatchProduction(const Model::DescribeBatchProductionRequest &request);
+                void DescribeBatchProductionAsync(const Model::DescribeBatchProductionRequest& request, const DescribeBatchProductionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBatchProductionOutcomeCallable DescribeBatchProductionCallable(const Model::DescribeBatchProductionRequest& request);
+
+                /**
                  *用于查看某个设备的详细信息
                  * @param req DescribeDeviceRequest
                  * @return DescribeDeviceOutcome
@@ -777,6 +810,15 @@ namespace TencentCloud
                 EnableTopicRuleOutcome EnableTopicRule(const Model::EnableTopicRuleRequest &request);
                 void EnableTopicRuleAsync(const Model::EnableTopicRuleRequest& request, const EnableTopicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnableTopicRuleOutcomeCallable EnableTopicRuleCallable(const Model::EnableTopicRuleRequest& request);
+
+                /**
+                 *列出量产数据列表信息。
+                 * @param req GetBatchProductionsListRequest
+                 * @return GetBatchProductionsListOutcome
+                 */
+                GetBatchProductionsListOutcome GetBatchProductionsList(const Model::GetBatchProductionsListRequest &request);
+                void GetBatchProductionsListAsync(const Model::GetBatchProductionsListRequest& request, const GetBatchProductionsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetBatchProductionsListOutcomeCallable GetBatchProductionsListCallable(const Model::GetBatchProductionsListRequest& request);
 
                 /**
                  *本接口（GetCOSURL）用于获取固件存储在COS的URL 

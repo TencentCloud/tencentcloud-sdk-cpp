@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tiia/v20190529/model/Location.h>
+#include <tencentcloud/tiia/v20190529/model/LemmaInfo.h>
 
 
 namespace TencentCloud
@@ -208,6 +209,28 @@ namespace TencentCloud
                      */
                     bool ImageHasBeenSet() const;
 
+                    /**
+                     * 获取百科词条列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LemmaInfoList 百科词条列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<LemmaInfo> GetLemmaInfoList() const;
+
+                    /**
+                     * 设置百科词条列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LemmaInfoList 百科词条列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLemmaInfoList(const std::vector<LemmaInfo>& _lemmaInfoList);
+
+                    /**
+                     * 判断参数 LemmaInfoList 是否已赋值
+                     * @return LemmaInfoList 是否已赋值
+                     */
+                    bool LemmaInfoListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -261,6 +284,13 @@ namespace TencentCloud
                      */
                     std::string m_image;
                     bool m_imageHasBeenSet;
+
+                    /**
+                     * 百科词条列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<LemmaInfo> m_lemmaInfoList;
+                    bool m_lemmaInfoListHasBeenSet;
 
                 };
             }

@@ -187,6 +187,198 @@ namespace TencentCloud
                      */
                     bool AddressHasBeenSet() const;
 
+                    /**
+                     * 获取承办人签章文字
+                     * @return Signature 承办人签章文字
+                     */
+                    std::string GetSignature() const;
+
+                    /**
+                     * 判断参数 Signature 是否已赋值
+                     * @return Signature 是否已赋值
+                     */
+                    bool SignatureHasBeenSet() const;
+
+                    /**
+                     * 获取签发日期
+                     * @return IssueDate 签发日期
+                     */
+                    std::string GetIssueDate() const;
+
+                    /**
+                     * 判断参数 IssueDate 是否已赋值
+                     * @return IssueDate 是否已赋值
+                     */
+                    bool IssueDateHasBeenSet() const;
+
+                    /**
+                     * 获取户主页编号
+                     * @return HomePageNumber 户主页编号
+                     */
+                    std::string GetHomePageNumber() const;
+
+                    /**
+                     * 判断参数 HomePageNumber 是否已赋值
+                     * @return HomePageNumber 是否已赋值
+                     */
+                    bool HomePageNumberHasBeenSet() const;
+
+                    /**
+                     * 获取户主姓名
+                     * @return HouseholderName 户主姓名
+                     */
+                    std::string GetHouseholderName() const;
+
+                    /**
+                     * 判断参数 HouseholderName 是否已赋值
+                     * @return HouseholderName 是否已赋值
+                     */
+                    bool HouseholderNameHasBeenSet() const;
+
+                    /**
+                     * 获取户主或与户主关系
+                     * @return Relationship 户主或与户主关系
+                     */
+                    std::string GetRelationship() const;
+
+                    /**
+                     * 判断参数 Relationship 是否已赋值
+                     * @return Relationship 是否已赋值
+                     */
+                    bool RelationshipHasBeenSet() const;
+
+                    /**
+                     * 获取本市（县）其他住址
+                     * @return OtherAddresses 本市（县）其他住址
+                     */
+                    std::string GetOtherAddresses() const;
+
+                    /**
+                     * 判断参数 OtherAddresses 是否已赋值
+                     * @return OtherAddresses 是否已赋值
+                     */
+                    bool OtherAddressesHasBeenSet() const;
+
+                    /**
+                     * 获取宗教信仰
+                     * @return ReligiousBelief 宗教信仰
+                     */
+                    std::string GetReligiousBelief() const;
+
+                    /**
+                     * 判断参数 ReligiousBelief 是否已赋值
+                     * @return ReligiousBelief 是否已赋值
+                     */
+                    bool ReligiousBeliefHasBeenSet() const;
+
+                    /**
+                     * 获取身高
+                     * @return Height 身高
+                     */
+                    std::string GetHeight() const;
+
+                    /**
+                     * 判断参数 Height 是否已赋值
+                     * @return Height 是否已赋值
+                     */
+                    bool HeightHasBeenSet() const;
+
+                    /**
+                     * 获取血型
+                     * @return BloodType 血型
+                     */
+                    std::string GetBloodType() const;
+
+                    /**
+                     * 判断参数 BloodType 是否已赋值
+                     * @return BloodType 是否已赋值
+                     */
+                    bool BloodTypeHasBeenSet() const;
+
+                    /**
+                     * 获取婚姻状况
+                     * @return MaritalStatus 婚姻状况
+                     */
+                    std::string GetMaritalStatus() const;
+
+                    /**
+                     * 判断参数 MaritalStatus 是否已赋值
+                     * @return MaritalStatus 是否已赋值
+                     */
+                    bool MaritalStatusHasBeenSet() const;
+
+                    /**
+                     * 获取兵役状况
+                     * @return VeteranStatus 兵役状况
+                     */
+                    std::string GetVeteranStatus() const;
+
+                    /**
+                     * 判断参数 VeteranStatus 是否已赋值
+                     * @return VeteranStatus 是否已赋值
+                     */
+                    bool VeteranStatusHasBeenSet() const;
+
+                    /**
+                     * 获取职业
+                     * @return Profession 职业
+                     */
+                    std::string GetProfession() const;
+
+                    /**
+                     * 判断参数 Profession 是否已赋值
+                     * @return Profession 是否已赋值
+                     */
+                    bool ProfessionHasBeenSet() const;
+
+                    /**
+                     * 获取何时由何地迁来本市(县)
+                     * @return MoveToCityInformation 何时由何地迁来本市(县)
+                     */
+                    std::string GetMoveToCityInformation() const;
+
+                    /**
+                     * 判断参数 MoveToCityInformation 是否已赋值
+                     * @return MoveToCityInformation 是否已赋值
+                     */
+                    bool MoveToCityInformationHasBeenSet() const;
+
+                    /**
+                     * 获取何时由何地迁来本址
+                     * @return MoveToSiteInformation 何时由何地迁来本址
+                     */
+                    std::string GetMoveToSiteInformation() const;
+
+                    /**
+                     * 判断参数 MoveToSiteInformation 是否已赋值
+                     * @return MoveToSiteInformation 是否已赋值
+                     */
+                    bool MoveToSiteInformationHasBeenSet() const;
+
+                    /**
+                     * 获取登记日期
+                     * @return RegistrationDate 登记日期
+                     */
+                    std::string GetRegistrationDate() const;
+
+                    /**
+                     * 判断参数 RegistrationDate 是否已赋值
+                     * @return RegistrationDate 是否已赋值
+                     */
+                    bool RegistrationDateHasBeenSet() const;
+
+                    /**
+                     * 获取曾用名
+                     * @return FormerName 曾用名
+                     */
+                    std::string GetFormerName() const;
+
+                    /**
+                     * 判断参数 FormerName 是否已赋值
+                     * @return FormerName 是否已赋值
+                     */
+                    bool FormerNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -260,6 +452,102 @@ namespace TencentCloud
                      */
                     std::string m_address;
                     bool m_addressHasBeenSet;
+
+                    /**
+                     * 承办人签章文字
+                     */
+                    std::string m_signature;
+                    bool m_signatureHasBeenSet;
+
+                    /**
+                     * 签发日期
+                     */
+                    std::string m_issueDate;
+                    bool m_issueDateHasBeenSet;
+
+                    /**
+                     * 户主页编号
+                     */
+                    std::string m_homePageNumber;
+                    bool m_homePageNumberHasBeenSet;
+
+                    /**
+                     * 户主姓名
+                     */
+                    std::string m_householderName;
+                    bool m_householderNameHasBeenSet;
+
+                    /**
+                     * 户主或与户主关系
+                     */
+                    std::string m_relationship;
+                    bool m_relationshipHasBeenSet;
+
+                    /**
+                     * 本市（县）其他住址
+                     */
+                    std::string m_otherAddresses;
+                    bool m_otherAddressesHasBeenSet;
+
+                    /**
+                     * 宗教信仰
+                     */
+                    std::string m_religiousBelief;
+                    bool m_religiousBeliefHasBeenSet;
+
+                    /**
+                     * 身高
+                     */
+                    std::string m_height;
+                    bool m_heightHasBeenSet;
+
+                    /**
+                     * 血型
+                     */
+                    std::string m_bloodType;
+                    bool m_bloodTypeHasBeenSet;
+
+                    /**
+                     * 婚姻状况
+                     */
+                    std::string m_maritalStatus;
+                    bool m_maritalStatusHasBeenSet;
+
+                    /**
+                     * 兵役状况
+                     */
+                    std::string m_veteranStatus;
+                    bool m_veteranStatusHasBeenSet;
+
+                    /**
+                     * 职业
+                     */
+                    std::string m_profession;
+                    bool m_professionHasBeenSet;
+
+                    /**
+                     * 何时由何地迁来本市(县)
+                     */
+                    std::string m_moveToCityInformation;
+                    bool m_moveToCityInformationHasBeenSet;
+
+                    /**
+                     * 何时由何地迁来本址
+                     */
+                    std::string m_moveToSiteInformation;
+                    bool m_moveToSiteInformationHasBeenSet;
+
+                    /**
+                     * 登记日期
+                     */
+                    std::string m_registrationDate;
+                    bool m_registrationDateHasBeenSet;
+
+                    /**
+                     * 曾用名
+                     */
+                    std::string m_formerName;
+                    bool m_formerNameHasBeenSet;
 
                 };
             }

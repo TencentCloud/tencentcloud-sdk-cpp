@@ -29,7 +29,8 @@ Listener::Listener() :
     m_sessionExpireTimeHasBeenSet(false),
     m_listenerNameHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_sessionTypeHasBeenSet(false)
+    m_sessionTypeHasBeenSet(false),
+    m_endPortHasBeenSet(false)
 {
 }
 
@@ -135,6 +136,16 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
         m_sessionTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("EndPort") && !value["EndPort"].IsNull())
+    {
+        if (!value["EndPort"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Listener.EndPort` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_endPort = value["EndPort"].GetInt64();
+        m_endPortHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -213,6 +224,14 @@ void Listener::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "SessionType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sessionType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endPortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndPort";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_endPort, allocator);
     }
 
 }
@@ -360,5 +379,21 @@ void Listener::SetSessionType(const string& _sessionType)
 bool Listener::SessionTypeHasBeenSet() const
 {
     return m_sessionTypeHasBeenSet;
+}
+
+int64_t Listener::GetEndPort() const
+{
+    return m_endPort;
+}
+
+void Listener::SetEndPort(const int64_t& _endPort)
+{
+    m_endPort = _endPort;
+    m_endPortHasBeenSet = true;
+}
+
+bool Listener::EndPortHasBeenSet() const
+{
+    return m_endPortHasBeenSet;
 }
 

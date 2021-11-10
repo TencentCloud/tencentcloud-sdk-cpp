@@ -54,7 +54,7 @@ set(apigateway_public_header_model
   include/tencentcloud/apigateway/v20180808/model/DeleteIPStrategyRequest.h
   include/tencentcloud/apigateway/v20180808/model/DescribeApiAppRequest.h
   include/tencentcloud/apigateway/v20180808/model/DescribePluginResponse.h
-  include/tencentcloud/apigateway/v20180808/model/DomainSets.h
+  include/tencentcloud/apigateway/v20180808/model/DescribeExclusiveInstancesResponse.h
   include/tencentcloud/apigateway/v20180808/model/DeleteUsagePlanRequest.h
   include/tencentcloud/apigateway/v20180808/model/DeleteServiceRequest.h
   include/tencentcloud/apigateway/v20180808/model/DescribeApiEnvironmentStrategyRequest.h
@@ -63,10 +63,11 @@ set(apigateway_public_header_model
   include/tencentcloud/apigateway/v20180808/model/DeleteApiAppResponse.h
   include/tencentcloud/apigateway/v20180808/model/DescribeServiceResponse.h
   include/tencentcloud/apigateway/v20180808/model/UsagePlanEnvironmentStatus.h
-  include/tencentcloud/apigateway/v20180808/model/ModifyIPStrategyResponse.h
+  include/tencentcloud/apigateway/v20180808/model/DescribeExclusiveInstancesRequest.h
   include/tencentcloud/apigateway/v20180808/model/BindSubDomainResponse.h
   include/tencentcloud/apigateway/v20180808/model/BindEnvironmentResponse.h
   include/tencentcloud/apigateway/v20180808/model/Tag.h
+  include/tencentcloud/apigateway/v20180808/model/DescribeExclusiveInstanceDetailResponse.h
   include/tencentcloud/apigateway/v20180808/model/DescribeApiBindApiAppsStatusResponse.h
   include/tencentcloud/apigateway/v20180808/model/ConstantParameter.h
   include/tencentcloud/apigateway/v20180808/model/DescribeApiForApiAppRequest.h
@@ -77,6 +78,7 @@ set(apigateway_public_header_model
   include/tencentcloud/apigateway/v20180808/model/DisableApiKeyRequest.h
   include/tencentcloud/apigateway/v20180808/model/PathMapping.h
   include/tencentcloud/apigateway/v20180808/model/UnBindIPStrategyResponse.h
+  include/tencentcloud/apigateway/v20180808/model/DescribeExclusiveInstanceDetailRequest.h
   include/tencentcloud/apigateway/v20180808/model/ModifyPluginRequest.h
   include/tencentcloud/apigateway/v20180808/model/BindIPStrategyResponse.h
   include/tencentcloud/apigateway/v20180808/model/AvailableApiInfo.h
@@ -90,16 +92,18 @@ set(apigateway_public_header_model
   include/tencentcloud/apigateway/v20180808/model/AttachedApiInfo.h
   include/tencentcloud/apigateway/v20180808/model/CreateApiResponse.h
   include/tencentcloud/apigateway/v20180808/model/DescribeIPStrategyApisStatusRequest.h
-  include/tencentcloud/apigateway/v20180808/model/UnBindEnvironmentRequest.h
+  include/tencentcloud/apigateway/v20180808/model/ModifyIPStrategyResponse.h
   include/tencentcloud/apigateway/v20180808/model/OauthConfig.h
   include/tencentcloud/apigateway/v20180808/model/ModifyApiEnvironmentStrategyRequest.h
+  include/tencentcloud/apigateway/v20180808/model/NetworkConfig.h
   include/tencentcloud/apigateway/v20180808/model/ModifyUsagePlanResponse.h
   include/tencentcloud/apigateway/v20180808/model/CreateUsagePlanResponse.h
-  include/tencentcloud/apigateway/v20180808/model/ReqParameter.h
+  include/tencentcloud/apigateway/v20180808/model/DomainSets.h
   include/tencentcloud/apigateway/v20180808/model/DeletePluginRequest.h
   include/tencentcloud/apigateway/v20180808/model/Base64EncodedTriggerRule.h
   include/tencentcloud/apigateway/v20180808/model/RequestConfig.h
   include/tencentcloud/apigateway/v20180808/model/DeleteApiKeyResponse.h
+  include/tencentcloud/apigateway/v20180808/model/ModifyExclusiveInstanceRequest.h
   include/tencentcloud/apigateway/v20180808/model/UsagePlan.h
   include/tencentcloud/apigateway/v20180808/model/DescribeServiceReleaseVersionRequest.h
   include/tencentcloud/apigateway/v20180808/model/DescribeUsagePlanSecretIdsRequest.h
@@ -125,7 +129,7 @@ set(apigateway_public_header_model
   include/tencentcloud/apigateway/v20180808/model/ModifySubDomainResponse.h
   include/tencentcloud/apigateway/v20180808/model/DescribePluginsRequest.h
   include/tencentcloud/apigateway/v20180808/model/BindSecretIdsRequest.h
-  include/tencentcloud/apigateway/v20180808/model/UnBindEnvironmentResponse.h
+  include/tencentcloud/apigateway/v20180808/model/ParameterInfo.h
   include/tencentcloud/apigateway/v20180808/model/UsagePlanBindSecret.h
   include/tencentcloud/apigateway/v20180808/model/DeleteApiKeyRequest.h
   include/tencentcloud/apigateway/v20180808/model/ModifyApiEnvironmentStrategyResponse.h
@@ -152,6 +156,7 @@ set(apigateway_public_header_model
   include/tencentcloud/apigateway/v20180808/model/UsagePlanStatusInfo.h
   include/tencentcloud/apigateway/v20180808/model/ServiceReleaseHistoryInfo.h
   include/tencentcloud/apigateway/v20180808/model/CreatePluginResponse.h
+  include/tencentcloud/apigateway/v20180808/model/ModifyExclusiveInstanceResponse.h
   include/tencentcloud/apigateway/v20180808/model/DescribePluginsResponse.h
   include/tencentcloud/apigateway/v20180808/model/ReleaseServiceResponse.h
   include/tencentcloud/apigateway/v20180808/model/APIDocInfo.h
@@ -169,6 +174,7 @@ set(apigateway_public_header_model
   include/tencentcloud/apigateway/v20180808/model/BindSecretIdsResponse.h
   include/tencentcloud/apigateway/v20180808/model/CreateApiRsp.h
   include/tencentcloud/apigateway/v20180808/model/UsagePlanBindEnvironment.h
+  include/tencentcloud/apigateway/v20180808/model/InstanceInfo.h
   include/tencentcloud/apigateway/v20180808/model/DeleteApiRequest.h
   include/tencentcloud/apigateway/v20180808/model/DescribeServiceSubDomainMappingsRequest.h
   include/tencentcloud/apigateway/v20180808/model/DescribeApiAppResponse.h
@@ -188,6 +194,7 @@ set(apigateway_public_header_model
   include/tencentcloud/apigateway/v20180808/model/ModifyPluginResponse.h
   include/tencentcloud/apigateway/v20180808/model/UnBindSecretIdsRequest.h
   include/tencentcloud/apigateway/v20180808/model/DescribeApiRequest.h
+  include/tencentcloud/apigateway/v20180808/model/VpcConfig.h
   include/tencentcloud/apigateway/v20180808/model/UnBindSecretIdsResponse.h
   include/tencentcloud/apigateway/v20180808/model/ResetAPIDocPasswordRequest.h
   include/tencentcloud/apigateway/v20180808/model/ApiUsagePlan.h
@@ -209,6 +216,7 @@ set(apigateway_public_header_model
   include/tencentcloud/apigateway/v20180808/model/ApiAppInfos.h
   include/tencentcloud/apigateway/v20180808/model/IPStrategyApiStatus.h
   include/tencentcloud/apigateway/v20180808/model/CreateIPStrategyResponse.h
+  include/tencentcloud/apigateway/v20180808/model/UnBindEnvironmentResponse.h
   include/tencentcloud/apigateway/v20180808/model/DeleteApiResponse.h
   include/tencentcloud/apigateway/v20180808/model/BindIPStrategyRequest.h
   include/tencentcloud/apigateway/v20180808/model/UpdateServiceRequest.h
@@ -216,6 +224,7 @@ set(apigateway_public_header_model
   include/tencentcloud/apigateway/v20180808/model/ErrorCodes.h
   include/tencentcloud/apigateway/v20180808/model/DescribeServiceEnvironmentListRequest.h
   include/tencentcloud/apigateway/v20180808/model/ServiceEnvironmentStrategyStatus.h
+  include/tencentcloud/apigateway/v20180808/model/ReqParameter.h
   include/tencentcloud/apigateway/v20180808/model/DescribeApiEnvironmentStrategyResponse.h
   include/tencentcloud/apigateway/v20180808/model/MicroService.h
   include/tencentcloud/apigateway/v20180808/model/ApiEnvironmentStrategyStataus.h
@@ -226,11 +235,13 @@ set(apigateway_public_header_model
   include/tencentcloud/apigateway/v20180808/model/ApiKey.h
   include/tencentcloud/apigateway/v20180808/model/ApiAppApiInfo.h
   include/tencentcloud/apigateway/v20180808/model/DescribeUsagePlanResponse.h
+  include/tencentcloud/apigateway/v20180808/model/UnBindEnvironmentRequest.h
   include/tencentcloud/apigateway/v20180808/model/AttachPluginResponse.h
   include/tencentcloud/apigateway/v20180808/model/BindEnvironmentRequest.h
   include/tencentcloud/apigateway/v20180808/model/DescribeIPStrategyRequest.h
   include/tencentcloud/apigateway/v20180808/model/DescribeApiForApiAppResponse.h
   include/tencentcloud/apigateway/v20180808/model/EnvironmentStrategy.h
+  include/tencentcloud/apigateway/v20180808/model/InstanceParameterInput.h
   include/tencentcloud/apigateway/v20180808/model/DescribeUsagePlanEnvironmentsRequest.h
   include/tencentcloud/apigateway/v20180808/model/DescribeServiceReleaseVersionResponse.h
   include/tencentcloud/apigateway/v20180808/model/ApiAppApiInfos.h
@@ -256,11 +267,13 @@ set(apigateway_public_header_model
   include/tencentcloud/apigateway/v20180808/model/ApiEnvironmentStrategy.h
   include/tencentcloud/apigateway/v20180808/model/DescribeIPStrategysStatusResponse.h
   include/tencentcloud/apigateway/v20180808/model/UpdateApiAppKeyResponse.h
+  include/tencentcloud/apigateway/v20180808/model/InstanceDetail.h
   include/tencentcloud/apigateway/v20180808/model/CreateApiAppRequest.h
   include/tencentcloud/apigateway/v20180808/model/EnableApiKeyRequest.h
   include/tencentcloud/apigateway/v20180808/model/ResetAPIDocPasswordResponse.h
   include/tencentcloud/apigateway/v20180808/model/DescribeServicesStatusRequest.h
   include/tencentcloud/apigateway/v20180808/model/RequestParameter.h
+  include/tencentcloud/apigateway/v20180808/model/InstanceChargePrepaid.h
   include/tencentcloud/apigateway/v20180808/model/ServiceReleaseVersion.h
   include/tencentcloud/apigateway/v20180808/model/DescribeServicesStatusResponse.h
   include/tencentcloud/apigateway/v20180808/model/CreateApiKeyRequest.h
@@ -303,7 +316,7 @@ set(apigateway_src
   src/v20180808/model/DeleteIPStrategyRequest.cpp
   src/v20180808/model/DescribeApiAppRequest.cpp
   src/v20180808/model/DescribePluginResponse.cpp
-  src/v20180808/model/DomainSets.cpp
+  src/v20180808/model/DescribeExclusiveInstancesResponse.cpp
   src/v20180808/model/DeleteUsagePlanRequest.cpp
   src/v20180808/model/DeleteServiceRequest.cpp
   src/v20180808/model/DescribeApiEnvironmentStrategyRequest.cpp
@@ -312,10 +325,11 @@ set(apigateway_src
   src/v20180808/model/DeleteApiAppResponse.cpp
   src/v20180808/model/DescribeServiceResponse.cpp
   src/v20180808/model/UsagePlanEnvironmentStatus.cpp
-  src/v20180808/model/ModifyIPStrategyResponse.cpp
+  src/v20180808/model/DescribeExclusiveInstancesRequest.cpp
   src/v20180808/model/BindSubDomainResponse.cpp
   src/v20180808/model/BindEnvironmentResponse.cpp
   src/v20180808/model/Tag.cpp
+  src/v20180808/model/DescribeExclusiveInstanceDetailResponse.cpp
   src/v20180808/model/DescribeApiBindApiAppsStatusResponse.cpp
   src/v20180808/model/ConstantParameter.cpp
   src/v20180808/model/DescribeApiForApiAppRequest.cpp
@@ -326,6 +340,7 @@ set(apigateway_src
   src/v20180808/model/DisableApiKeyRequest.cpp
   src/v20180808/model/PathMapping.cpp
   src/v20180808/model/UnBindIPStrategyResponse.cpp
+  src/v20180808/model/DescribeExclusiveInstanceDetailRequest.cpp
   src/v20180808/model/ModifyPluginRequest.cpp
   src/v20180808/model/BindIPStrategyResponse.cpp
   src/v20180808/model/AvailableApiInfo.cpp
@@ -339,16 +354,18 @@ set(apigateway_src
   src/v20180808/model/AttachedApiInfo.cpp
   src/v20180808/model/CreateApiResponse.cpp
   src/v20180808/model/DescribeIPStrategyApisStatusRequest.cpp
-  src/v20180808/model/UnBindEnvironmentRequest.cpp
+  src/v20180808/model/ModifyIPStrategyResponse.cpp
   src/v20180808/model/OauthConfig.cpp
   src/v20180808/model/ModifyApiEnvironmentStrategyRequest.cpp
+  src/v20180808/model/NetworkConfig.cpp
   src/v20180808/model/ModifyUsagePlanResponse.cpp
   src/v20180808/model/CreateUsagePlanResponse.cpp
-  src/v20180808/model/ReqParameter.cpp
+  src/v20180808/model/DomainSets.cpp
   src/v20180808/model/DeletePluginRequest.cpp
   src/v20180808/model/Base64EncodedTriggerRule.cpp
   src/v20180808/model/RequestConfig.cpp
   src/v20180808/model/DeleteApiKeyResponse.cpp
+  src/v20180808/model/ModifyExclusiveInstanceRequest.cpp
   src/v20180808/model/UsagePlan.cpp
   src/v20180808/model/DescribeServiceReleaseVersionRequest.cpp
   src/v20180808/model/DescribeUsagePlanSecretIdsRequest.cpp
@@ -374,7 +391,7 @@ set(apigateway_src
   src/v20180808/model/ModifySubDomainResponse.cpp
   src/v20180808/model/DescribePluginsRequest.cpp
   src/v20180808/model/BindSecretIdsRequest.cpp
-  src/v20180808/model/UnBindEnvironmentResponse.cpp
+  src/v20180808/model/ParameterInfo.cpp
   src/v20180808/model/UsagePlanBindSecret.cpp
   src/v20180808/model/DeleteApiKeyRequest.cpp
   src/v20180808/model/ModifyApiEnvironmentStrategyResponse.cpp
@@ -401,6 +418,7 @@ set(apigateway_src
   src/v20180808/model/UsagePlanStatusInfo.cpp
   src/v20180808/model/ServiceReleaseHistoryInfo.cpp
   src/v20180808/model/CreatePluginResponse.cpp
+  src/v20180808/model/ModifyExclusiveInstanceResponse.cpp
   src/v20180808/model/DescribePluginsResponse.cpp
   src/v20180808/model/ReleaseServiceResponse.cpp
   src/v20180808/model/APIDocInfo.cpp
@@ -418,6 +436,7 @@ set(apigateway_src
   src/v20180808/model/BindSecretIdsResponse.cpp
   src/v20180808/model/CreateApiRsp.cpp
   src/v20180808/model/UsagePlanBindEnvironment.cpp
+  src/v20180808/model/InstanceInfo.cpp
   src/v20180808/model/DeleteApiRequest.cpp
   src/v20180808/model/DescribeServiceSubDomainMappingsRequest.cpp
   src/v20180808/model/DescribeApiAppResponse.cpp
@@ -437,6 +456,7 @@ set(apigateway_src
   src/v20180808/model/ModifyPluginResponse.cpp
   src/v20180808/model/UnBindSecretIdsRequest.cpp
   src/v20180808/model/DescribeApiRequest.cpp
+  src/v20180808/model/VpcConfig.cpp
   src/v20180808/model/UnBindSecretIdsResponse.cpp
   src/v20180808/model/ResetAPIDocPasswordRequest.cpp
   src/v20180808/model/ApiUsagePlan.cpp
@@ -458,6 +478,7 @@ set(apigateway_src
   src/v20180808/model/ApiAppInfos.cpp
   src/v20180808/model/IPStrategyApiStatus.cpp
   src/v20180808/model/CreateIPStrategyResponse.cpp
+  src/v20180808/model/UnBindEnvironmentResponse.cpp
   src/v20180808/model/DeleteApiResponse.cpp
   src/v20180808/model/BindIPStrategyRequest.cpp
   src/v20180808/model/UpdateServiceRequest.cpp
@@ -465,6 +486,7 @@ set(apigateway_src
   src/v20180808/model/ErrorCodes.cpp
   src/v20180808/model/DescribeServiceEnvironmentListRequest.cpp
   src/v20180808/model/ServiceEnvironmentStrategyStatus.cpp
+  src/v20180808/model/ReqParameter.cpp
   src/v20180808/model/DescribeApiEnvironmentStrategyResponse.cpp
   src/v20180808/model/MicroService.cpp
   src/v20180808/model/ApiEnvironmentStrategyStataus.cpp
@@ -475,11 +497,13 @@ set(apigateway_src
   src/v20180808/model/ApiKey.cpp
   src/v20180808/model/ApiAppApiInfo.cpp
   src/v20180808/model/DescribeUsagePlanResponse.cpp
+  src/v20180808/model/UnBindEnvironmentRequest.cpp
   src/v20180808/model/AttachPluginResponse.cpp
   src/v20180808/model/BindEnvironmentRequest.cpp
   src/v20180808/model/DescribeIPStrategyRequest.cpp
   src/v20180808/model/DescribeApiForApiAppResponse.cpp
   src/v20180808/model/EnvironmentStrategy.cpp
+  src/v20180808/model/InstanceParameterInput.cpp
   src/v20180808/model/DescribeUsagePlanEnvironmentsRequest.cpp
   src/v20180808/model/DescribeServiceReleaseVersionResponse.cpp
   src/v20180808/model/ApiAppApiInfos.cpp
@@ -505,11 +529,13 @@ set(apigateway_src
   src/v20180808/model/ApiEnvironmentStrategy.cpp
   src/v20180808/model/DescribeIPStrategysStatusResponse.cpp
   src/v20180808/model/UpdateApiAppKeyResponse.cpp
+  src/v20180808/model/InstanceDetail.cpp
   src/v20180808/model/CreateApiAppRequest.cpp
   src/v20180808/model/EnableApiKeyRequest.cpp
   src/v20180808/model/ResetAPIDocPasswordResponse.cpp
   src/v20180808/model/DescribeServicesStatusRequest.cpp
   src/v20180808/model/RequestParameter.cpp
+  src/v20180808/model/InstanceChargePrepaid.cpp
   src/v20180808/model/ServiceReleaseVersion.cpp
   src/v20180808/model/DescribeServicesStatusResponse.cpp
   src/v20180808/model/CreateApiKeyRequest.cpp

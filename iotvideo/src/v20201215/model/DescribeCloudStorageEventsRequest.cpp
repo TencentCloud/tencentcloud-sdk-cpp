@@ -30,7 +30,8 @@ DescribeCloudStorageEventsRequest::DescribeCloudStorageEventsRequest() :
     m_contextHasBeenSet(false),
     m_sizeHasBeenSet(false),
     m_eventIdHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_channelIdHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string DescribeCloudStorageEventsRequest::ToJsonString() const
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_channelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_channelId, allocator);
     }
 
 
@@ -239,6 +248,22 @@ void DescribeCloudStorageEventsRequest::SetUserId(const string& _userId)
 bool DescribeCloudStorageEventsRequest::UserIdHasBeenSet() const
 {
     return m_userIdHasBeenSet;
+}
+
+uint64_t DescribeCloudStorageEventsRequest::GetChannelId() const
+{
+    return m_channelId;
+}
+
+void DescribeCloudStorageEventsRequest::SetChannelId(const uint64_t& _channelId)
+{
+    m_channelId = _channelId;
+    m_channelIdHasBeenSet = true;
+}
+
+bool DescribeCloudStorageEventsRequest::ChannelIdHasBeenSet() const
+{
+    return m_channelIdHasBeenSet;
 }
 
 

@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool ExternalIdHasBeenSet() const;
 
                     /**
-                     * 获取环境Id
-                     * @return EnvId 环境Id
+                     * 获取弃用
+                     * @return EnvId 弃用
                      */
                     std::string GetEnvId() const;
 
@@ -165,6 +165,18 @@ finished
                      */
                     bool FailReasonHasBeenSet() const;
 
+                    /**
+                     * 获取用户envId
+                     * @return UserEnvId 用户envId
+                     */
+                    std::string GetUserEnvId() const;
+
+                    /**
+                     * 判断参数 UserEnvId 是否已赋值
+                     * @return UserEnvId 是否已赋值
+                     */
+                    bool UserEnvIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -174,7 +186,7 @@ finished
                     bool m_externalIdHasBeenSet;
 
                     /**
-                     * 环境Id
+                     * 弃用
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;
@@ -227,6 +239,12 @@ finished
                      */
                     std::string m_failReason;
                     bool m_failReasonHasBeenSet;
+
+                    /**
+                     * 用户envId
+                     */
+                    std::string m_userEnvId;
+                    bool m_userEnvIdHasBeenSet;
 
                 };
             }

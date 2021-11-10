@@ -169,6 +169,49 @@ IotexplorerClient::ControlDeviceDataOutcomeCallable IotexplorerClient::ControlDe
     return task->get_future();
 }
 
+IotexplorerClient::CreateBatchProductionOutcome IotexplorerClient::CreateBatchProduction(const CreateBatchProductionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBatchProduction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBatchProductionResponse rsp = CreateBatchProductionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBatchProductionOutcome(rsp);
+        else
+            return CreateBatchProductionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBatchProductionOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CreateBatchProductionAsync(const CreateBatchProductionRequest& request, const CreateBatchProductionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBatchProduction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::CreateBatchProductionOutcomeCallable IotexplorerClient::CreateBatchProductionCallable(const CreateBatchProductionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBatchProductionOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBatchProduction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::CreateDeviceOutcome IotexplorerClient::CreateDevice(const CreateDeviceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDevice");
@@ -1072,6 +1115,49 @@ IotexplorerClient::DeleteTopicRuleOutcomeCallable IotexplorerClient::DeleteTopic
     return task->get_future();
 }
 
+IotexplorerClient::DescribeBatchProductionOutcome IotexplorerClient::DescribeBatchProduction(const DescribeBatchProductionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBatchProduction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBatchProductionResponse rsp = DescribeBatchProductionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBatchProductionOutcome(rsp);
+        else
+            return DescribeBatchProductionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBatchProductionOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeBatchProductionAsync(const DescribeBatchProductionRequest& request, const DescribeBatchProductionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBatchProduction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeBatchProductionOutcomeCallable IotexplorerClient::DescribeBatchProductionCallable(const DescribeBatchProductionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBatchProductionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBatchProduction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::DescribeDeviceOutcome IotexplorerClient::DescribeDevice(const DescribeDeviceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDevice");
@@ -1839,6 +1925,49 @@ IotexplorerClient::EnableTopicRuleOutcomeCallable IotexplorerClient::EnableTopic
         [this, request]()
         {
             return this->EnableTopicRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::GetBatchProductionsListOutcome IotexplorerClient::GetBatchProductionsList(const GetBatchProductionsListRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetBatchProductionsList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetBatchProductionsListResponse rsp = GetBatchProductionsListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetBatchProductionsListOutcome(rsp);
+        else
+            return GetBatchProductionsListOutcome(o.GetError());
+    }
+    else
+    {
+        return GetBatchProductionsListOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::GetBatchProductionsListAsync(const GetBatchProductionsListRequest& request, const GetBatchProductionsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetBatchProductionsList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::GetBatchProductionsListOutcomeCallable IotexplorerClient::GetBatchProductionsListCallable(const GetBatchProductionsListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetBatchProductionsListOutcome()>>(
+        [this, request]()
+        {
+            return this->GetBatchProductionsList(request);
         }
     );
 

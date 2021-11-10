@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取升级后的实例内存大小，单位GiB。
-                     * @return Memory 升级后的实例内存大小，单位GiB。
+                     * 获取修改后的实例内存大小，单位GiB。
+                     * @return Memory 修改后的实例内存大小，单位GiB。
                      */
                     uint64_t GetMemory() const;
 
                     /**
-                     * 设置升级后的实例内存大小，单位GiB。
-                     * @param Memory 升级后的实例内存大小，单位GiB。
+                     * 设置修改后的实例内存大小，单位GiB。
+                     * @param Memory 修改后的实例内存大小，单位GiB。
                      */
                     void SetMemory(const uint64_t& _memory);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取升级后的实例磁盘大小，单位GiB。
-                     * @return Storage 升级后的实例磁盘大小，单位GiB。
+                     * 获取修改后的实例磁盘大小，单位GiB。
+                     * @return Storage 修改后的实例磁盘大小，单位GiB。
                      */
                     uint64_t GetStorage() const;
 
                     /**
-                     * 设置升级后的实例磁盘大小，单位GiB。
-                     * @param Storage 升级后的实例磁盘大小，单位GiB。
+                     * 设置修改后的实例磁盘大小，单位GiB。
+                     * @param Storage 修改后的实例磁盘大小，单位GiB。
                      */
                     void SetStorage(const uint64_t& _storage);
 
@@ -213,13 +213,13 @@ namespace TencentCloud
                     bool m_dBInstanceIdHasBeenSet;
 
                     /**
-                     * 升级后的实例内存大小，单位GiB。
+                     * 修改后的实例内存大小，单位GiB。
                      */
                     uint64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 升级后的实例磁盘大小，单位GiB。
+                     * 修改后的实例磁盘大小，单位GiB。
                      */
                     uint64_t m_storage;
                     bool m_storageHasBeenSet;

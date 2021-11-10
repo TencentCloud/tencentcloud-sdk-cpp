@@ -1889,6 +1889,49 @@ OcrClient::QuotaInvoiceOCROutcomeCallable OcrClient::QuotaInvoiceOCRCallable(con
     return task->get_future();
 }
 
+OcrClient::RecognizeContainerOCROutcome OcrClient::RecognizeContainerOCR(const RecognizeContainerOCRRequest &request)
+{
+    auto outcome = MakeRequest(request, "RecognizeContainerOCR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RecognizeContainerOCRResponse rsp = RecognizeContainerOCRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RecognizeContainerOCROutcome(rsp);
+        else
+            return RecognizeContainerOCROutcome(o.GetError());
+    }
+    else
+    {
+        return RecognizeContainerOCROutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::RecognizeContainerOCRAsync(const RecognizeContainerOCRRequest& request, const RecognizeContainerOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RecognizeContainerOCR(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::RecognizeContainerOCROutcomeCallable OcrClient::RecognizeContainerOCRCallable(const RecognizeContainerOCRRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RecognizeContainerOCROutcome()>>(
+        [this, request]()
+        {
+            return this->RecognizeContainerOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::RecognizeOnlineTaxiItineraryOCROutcome OcrClient::RecognizeOnlineTaxiItineraryOCR(const RecognizeOnlineTaxiItineraryOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "RecognizeOnlineTaxiItineraryOCR");

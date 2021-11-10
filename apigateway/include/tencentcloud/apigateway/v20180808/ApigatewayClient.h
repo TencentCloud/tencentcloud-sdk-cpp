@@ -101,6 +101,10 @@
 #include <tencentcloud/apigateway/v20180808/model/DescribeApiUsagePlanResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeApisStatusRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeApisStatusResponse.h>
+#include <tencentcloud/apigateway/v20180808/model/DescribeExclusiveInstanceDetailRequest.h>
+#include <tencentcloud/apigateway/v20180808/model/DescribeExclusiveInstanceDetailResponse.h>
+#include <tencentcloud/apigateway/v20180808/model/DescribeExclusiveInstancesRequest.h>
+#include <tencentcloud/apigateway/v20180808/model/DescribeExclusiveInstancesResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeIPStrategyRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeIPStrategyResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeIPStrategyApisStatusRequest.h>
@@ -161,6 +165,8 @@
 #include <tencentcloud/apigateway/v20180808/model/ModifyApiEnvironmentStrategyResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/ModifyApiIncrementRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/ModifyApiIncrementResponse.h>
+#include <tencentcloud/apigateway/v20180808/model/ModifyExclusiveInstanceRequest.h>
+#include <tencentcloud/apigateway/v20180808/model/ModifyExclusiveInstanceResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/ModifyIPStrategyRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/ModifyIPStrategyResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/ModifyPluginRequest.h>
@@ -326,6 +332,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeApisStatusResponse> DescribeApisStatusOutcome;
                 typedef std::future<DescribeApisStatusOutcome> DescribeApisStatusOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::DescribeApisStatusRequest&, DescribeApisStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApisStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExclusiveInstanceDetailResponse> DescribeExclusiveInstanceDetailOutcome;
+                typedef std::future<DescribeExclusiveInstanceDetailOutcome> DescribeExclusiveInstanceDetailOutcomeCallable;
+                typedef std::function<void(const ApigatewayClient*, const Model::DescribeExclusiveInstanceDetailRequest&, DescribeExclusiveInstanceDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExclusiveInstanceDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExclusiveInstancesResponse> DescribeExclusiveInstancesOutcome;
+                typedef std::future<DescribeExclusiveInstancesOutcome> DescribeExclusiveInstancesOutcomeCallable;
+                typedef std::function<void(const ApigatewayClient*, const Model::DescribeExclusiveInstancesRequest&, DescribeExclusiveInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExclusiveInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeIPStrategyResponse> DescribeIPStrategyOutcome;
                 typedef std::future<DescribeIPStrategyOutcome> DescribeIPStrategyOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::DescribeIPStrategyRequest&, DescribeIPStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIPStrategyAsyncHandler;
@@ -416,6 +428,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyApiIncrementResponse> ModifyApiIncrementOutcome;
                 typedef std::future<ModifyApiIncrementOutcome> ModifyApiIncrementOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::ModifyApiIncrementRequest&, ModifyApiIncrementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApiIncrementAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyExclusiveInstanceResponse> ModifyExclusiveInstanceOutcome;
+                typedef std::future<ModifyExclusiveInstanceOutcome> ModifyExclusiveInstanceOutcomeCallable;
+                typedef std::function<void(const ApigatewayClient*, const Model::ModifyExclusiveInstanceRequest&, ModifyExclusiveInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyExclusiveInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyIPStrategyResponse> ModifyIPStrategyOutcome;
                 typedef std::future<ModifyIPStrategyOutcome> ModifyIPStrategyOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::ModifyIPStrategyRequest&, ModifyIPStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIPStrategyAsyncHandler;
@@ -834,6 +849,24 @@ API 网关使用的最大单元为服务，每个服务中可创建多个 API �
                 DescribeApisStatusOutcomeCallable DescribeApisStatusCallable(const Model::DescribeApisStatusRequest& request);
 
                 /**
+                 *本接口（DescribeExclusiveInstanceDetail）用于查询独享实例详情信息。​
+                 * @param req DescribeExclusiveInstanceDetailRequest
+                 * @return DescribeExclusiveInstanceDetailOutcome
+                 */
+                DescribeExclusiveInstanceDetailOutcome DescribeExclusiveInstanceDetail(const Model::DescribeExclusiveInstanceDetailRequest &request);
+                void DescribeExclusiveInstanceDetailAsync(const Model::DescribeExclusiveInstanceDetailRequest& request, const DescribeExclusiveInstanceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExclusiveInstanceDetailOutcomeCallable DescribeExclusiveInstanceDetailCallable(const Model::DescribeExclusiveInstanceDetailRequest& request);
+
+                /**
+                 *本接口（DescribeExclusiveInstances）用于查询独享实例列表信息。​
+                 * @param req DescribeExclusiveInstancesRequest
+                 * @return DescribeExclusiveInstancesOutcome
+                 */
+                DescribeExclusiveInstancesOutcome DescribeExclusiveInstances(const Model::DescribeExclusiveInstancesRequest &request);
+                void DescribeExclusiveInstancesAsync(const Model::DescribeExclusiveInstancesRequest& request, const DescribeExclusiveInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExclusiveInstancesOutcomeCallable DescribeExclusiveInstancesCallable(const Model::DescribeExclusiveInstancesRequest& request);
+
+                /**
                  *本接口（DescribeIPStrategy）用于查询IP策略详情。
                  * @param req DescribeIPStrategyRequest
                  * @return DescribeIPStrategyOutcome
@@ -1109,6 +1142,15 @@ API 网关可绑定自定义域名到服务，用于服务调用。此接口用�
                 ModifyApiIncrementOutcome ModifyApiIncrement(const Model::ModifyApiIncrementRequest &request);
                 void ModifyApiIncrementAsync(const Model::ModifyApiIncrementRequest& request, const ModifyApiIncrementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyApiIncrementOutcomeCallable ModifyApiIncrementCallable(const Model::ModifyApiIncrementRequest& request);
+
+                /**
+                 *本接口（ModifyExclusiveInstance）用于修改独享实例信息。​
+                 * @param req ModifyExclusiveInstanceRequest
+                 * @return ModifyExclusiveInstanceOutcome
+                 */
+                ModifyExclusiveInstanceOutcome ModifyExclusiveInstance(const Model::ModifyExclusiveInstanceRequest &request);
+                void ModifyExclusiveInstanceAsync(const Model::ModifyExclusiveInstanceRequest& request, const ModifyExclusiveInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyExclusiveInstanceOutcomeCallable ModifyExclusiveInstanceCallable(const Model::ModifyExclusiveInstanceRequest& request);
 
                 /**
                  *本接口（ModifyIPStrategy）用于修改服务IP策略。

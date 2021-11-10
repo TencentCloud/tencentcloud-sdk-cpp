@@ -81,8 +81,8 @@ namespace TencentCloud
                     bool ListoverHasBeenSet() const;
 
                     /**
-                     * 获取拉取结果数量
-                     * @return Total 拉取结果数量
+                     * 获取内部结果数量，并不等同于事件总数。
+                     * @return Total 内部结果数量，并不等同于事件总数。
                      */
                     uint64_t GetTotal() const;
 
@@ -125,7 +125,7 @@ namespace TencentCloud
                     bool m_listoverHasBeenSet;
 
                     /**
-                     * 拉取结果数量
+                     * 内部结果数量，并不等同于事件总数。
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;
