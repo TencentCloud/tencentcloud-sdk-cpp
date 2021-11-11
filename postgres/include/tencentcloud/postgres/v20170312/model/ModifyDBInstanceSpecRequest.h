@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool SwitchTagHasBeenSet() const;
 
                     /**
-                     * 获取切换开始时间。
-                     * @return SwitchStartTime 切换开始时间。
+                     * 获取切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。
+                     * @return SwitchStartTime 切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。
                      */
                     std::string GetSwitchStartTime() const;
 
                     /**
-                     * 设置切换开始时间。
-                     * @param SwitchStartTime 切换开始时间。
+                     * 设置切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。
+                     * @param SwitchStartTime 切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。
                      */
                     void SetSwitchStartTime(const std::string& _switchStartTime);
 
@@ -187,14 +187,14 @@ namespace TencentCloud
                     bool SwitchStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取切换截止时间。
-                     * @return SwitchEndTime 切换截止时间。
+                     * 获取切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。
+                     * @return SwitchEndTime 切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。
                      */
                     std::string GetSwitchEndTime() const;
 
                     /**
-                     * 设置切换截止时间。
-                     * @param SwitchEndTime 切换截止时间。
+                     * 设置切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。
+                     * @param SwitchEndTime 切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。
                      */
                     void SetSwitchEndTime(const std::string& _switchEndTime);
 
@@ -249,13 +249,13 @@ namespace TencentCloud
                     bool m_switchTagHasBeenSet;
 
                     /**
-                     * 切换开始时间。
+                     * 切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。
                      */
                     std::string m_switchStartTime;
                     bool m_switchStartTimeHasBeenSet;
 
                     /**
-                     * 切换截止时间。
+                     * 切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。
                      */
                     std::string m_switchEndTime;
                     bool m_switchEndTimeHasBeenSet;

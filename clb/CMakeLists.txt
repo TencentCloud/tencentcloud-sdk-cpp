@@ -63,7 +63,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/RegisterTargetsWithClassicalLBResponse.h
   include/tencentcloud/clb/v20180317/model/DescribeTargetGroupsResponse.h
   include/tencentcloud/clb/v20180317/model/LoadBalancerHealth.h
-  include/tencentcloud/clb/v20180317/model/SetLoadBalancerClsLogRequest.h
+  include/tencentcloud/clb/v20180317/model/ModifyLoadBalancerSlaResponse.h
   include/tencentcloud/clb/v20180317/model/DeleteLoadBalancerListenersRequest.h
   include/tencentcloud/clb/v20180317/model/BlockedIP.h
   include/tencentcloud/clb/v20180317/model/ModifyRuleResponse.h
@@ -77,6 +77,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/BatchRegisterTargetsResponse.h
   include/tencentcloud/clb/v20180317/model/ModifyLoadBalancerAttributesRequest.h
   include/tencentcloud/clb/v20180317/model/DescribeLBListenersRequest.h
+  include/tencentcloud/clb/v20180317/model/SlaUpdateParam.h
   include/tencentcloud/clb/v20180317/model/Target.h
   include/tencentcloud/clb/v20180317/model/DescribeLoadBalancerTrafficRequest.h
   include/tencentcloud/clb/v20180317/model/DescribeBlockIPListRequest.h
@@ -183,10 +184,12 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/DescribeBlockIPTaskResponse.h
   include/tencentcloud/clb/v20180317/model/DescribeClassicalLBListenersResponse.h
   include/tencentcloud/clb/v20180317/model/DescribeExclusiveClustersRequest.h
+  include/tencentcloud/clb/v20180317/model/ModifyLoadBalancerSlaRequest.h
   include/tencentcloud/clb/v20180317/model/DescribeBlockIPTaskRequest.h
   include/tencentcloud/clb/v20180317/model/CreateLoadBalancerResponse.h
   include/tencentcloud/clb/v20180317/model/DescribeRewriteResponse.h
   include/tencentcloud/clb/v20180317/model/Quota.h
+  include/tencentcloud/clb/v20180317/model/SetLoadBalancerClsLogRequest.h
   include/tencentcloud/clb/v20180317/model/LBItem.h
   include/tencentcloud/clb/v20180317/model/ModifyTargetGroupAttributeResponse.h
   include/tencentcloud/clb/v20180317/model/DeleteLoadBalancerListenersResponse.h
@@ -258,7 +261,7 @@ set(clb_src
   src/v20180317/model/RegisterTargetsWithClassicalLBResponse.cpp
   src/v20180317/model/DescribeTargetGroupsResponse.cpp
   src/v20180317/model/LoadBalancerHealth.cpp
-  src/v20180317/model/SetLoadBalancerClsLogRequest.cpp
+  src/v20180317/model/ModifyLoadBalancerSlaResponse.cpp
   src/v20180317/model/DeleteLoadBalancerListenersRequest.cpp
   src/v20180317/model/BlockedIP.cpp
   src/v20180317/model/ModifyRuleResponse.cpp
@@ -272,6 +275,7 @@ set(clb_src
   src/v20180317/model/BatchRegisterTargetsResponse.cpp
   src/v20180317/model/ModifyLoadBalancerAttributesRequest.cpp
   src/v20180317/model/DescribeLBListenersRequest.cpp
+  src/v20180317/model/SlaUpdateParam.cpp
   src/v20180317/model/Target.cpp
   src/v20180317/model/DescribeLoadBalancerTrafficRequest.cpp
   src/v20180317/model/DescribeBlockIPListRequest.cpp
@@ -378,10 +382,12 @@ set(clb_src
   src/v20180317/model/DescribeBlockIPTaskResponse.cpp
   src/v20180317/model/DescribeClassicalLBListenersResponse.cpp
   src/v20180317/model/DescribeExclusiveClustersRequest.cpp
+  src/v20180317/model/ModifyLoadBalancerSlaRequest.cpp
   src/v20180317/model/DescribeBlockIPTaskRequest.cpp
   src/v20180317/model/CreateLoadBalancerResponse.cpp
   src/v20180317/model/DescribeRewriteResponse.cpp
   src/v20180317/model/Quota.cpp
+  src/v20180317/model/SetLoadBalancerClsLogRequest.cpp
   src/v20180317/model/LBItem.cpp
   src/v20180317/model/ModifyTargetGroupAttributeResponse.cpp
   src/v20180317/model/DeleteLoadBalancerListenersResponse.cpp

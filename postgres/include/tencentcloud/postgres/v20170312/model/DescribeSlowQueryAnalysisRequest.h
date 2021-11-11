@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询j结束时间戳，格式 “YYYY-MM-DD HH:mm:ss”。
-                     * @return EndTime 查询j结束时间戳，格式 “YYYY-MM-DD HH:mm:ss”。
+                     * 获取查询结束时间戳，格式 “YYYY-MM-DD HH:mm:ss”。
+                     * @return EndTime 查询结束时间戳，格式 “YYYY-MM-DD HH:mm:ss”。
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置查询j结束时间戳，格式 “YYYY-MM-DD HH:mm:ss”。
-                     * @param EndTime 查询j结束时间戳，格式 “YYYY-MM-DD HH:mm:ss”。
+                     * 设置查询结束时间戳，格式 “YYYY-MM-DD HH:mm:ss”。
+                     * @param EndTime 查询结束时间戳，格式 “YYYY-MM-DD HH:mm:ss”。
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool DatabaseNameHasBeenSet() const;
 
                     /**
-                     * 获取排序维度。 可选参数，取值范围[CallNum,CostTime,AvgCostTime]。
-                     * @return OrderBy 排序维度。 可选参数，取值范围[CallNum,CostTime,AvgCostTime]。
+                     * 获取排序维度。 可选参数，取值范围[CallNum,CostTime,AvgCostTime]。默认CallNum。
+                     * @return OrderBy 排序维度。 可选参数，取值范围[CallNum,CostTime,AvgCostTime]。默认CallNum。
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置排序维度。 可选参数，取值范围[CallNum,CostTime,AvgCostTime]。
-                     * @param OrderBy 排序维度。 可选参数，取值范围[CallNum,CostTime,AvgCostTime]。
+                     * 设置排序维度。 可选参数，取值范围[CallNum,CostTime,AvgCostTime]。默认CallNum。
+                     * @param OrderBy 排序维度。 可选参数，取值范围[CallNum,CostTime,AvgCostTime]。默认CallNum。
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取排序类型。升序asc、降序desc。
-                     * @return OrderByType 排序类型。升序asc、降序desc。
+                     * 获取排序类型。升序asc、降序desc。默认desc。
+                     * @return OrderByType 排序类型。升序asc、降序desc。默认desc。
                      */
                     std::string GetOrderByType() const;
 
                     /**
-                     * 设置排序类型。升序asc、降序desc。
-                     * @param OrderByType 排序类型。升序asc、降序desc。
+                     * 设置排序类型。升序asc、降序desc。默认desc。
+                     * @param OrderByType 排序类型。升序asc、降序desc。默认desc。
                      */
                     void SetOrderByType(const std::string& _orderByType);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool OrderByTypeHasBeenSet() const;
 
                     /**
-                     * 获取分页大小。取值范围[1,100]。
-                     * @return Limit 分页大小。取值范围[1,100]。
+                     * 获取分页大小。取值范围[1,100]。默认50。
+                     * @return Limit 分页大小。取值范围[1,100]。默认50。
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页大小。取值范围[1,100]。
-                     * @param Limit 分页大小。取值范围[1,100]。
+                     * 设置分页大小。取值范围[1,100]。默认50。
+                     * @param Limit 分页大小。取值范围[1,100]。默认50。
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移。取值范围[0,INF)。
-                     * @return Offset 分页偏移。取值范围[0,INF)。
+                     * 获取分页偏移。取值范围[0,INF)。默认0。
+                     * @return Offset 分页偏移。取值范围[0,INF)。默认0。
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移。取值范围[0,INF)。
-                     * @param Offset 分页偏移。取值范围[0,INF)。
+                     * 设置分页偏移。取值范围[0,INF)。默认0。
+                     * @param Offset 分页偏移。取值范围[0,INF)。默认0。
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -201,7 +201,7 @@ namespace TencentCloud
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询j结束时间戳，格式 “YYYY-MM-DD HH:mm:ss”。
+                     * 查询结束时间戳，格式 “YYYY-MM-DD HH:mm:ss”。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -213,25 +213,25 @@ namespace TencentCloud
                     bool m_databaseNameHasBeenSet;
 
                     /**
-                     * 排序维度。 可选参数，取值范围[CallNum,CostTime,AvgCostTime]。
+                     * 排序维度。 可选参数，取值范围[CallNum,CostTime,AvgCostTime]。默认CallNum。
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 排序类型。升序asc、降序desc。
+                     * 排序类型。升序asc、降序desc。默认desc。
                      */
                     std::string m_orderByType;
                     bool m_orderByTypeHasBeenSet;
 
                     /**
-                     * 分页大小。取值范围[1,100]。
+                     * 分页大小。取值范围[1,100]。默认50。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页偏移。取值范围[0,INF)。
+                     * 分页偏移。取值范围[0,INF)。默认0。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

@@ -30,7 +30,8 @@ CreateListenerRequest::CreateListenerRequest() :
     m_healthCheckHasBeenSet(false),
     m_sessionExpireTimeHasBeenSet(false),
     m_schedulerHasBeenSet(false),
-    m_sessionTypeHasBeenSet(false)
+    m_sessionTypeHasBeenSet(false),
+    m_endPortsHasBeenSet(false)
 {
 }
 
@@ -114,6 +115,19 @@ string CreateListenerRequest::ToJsonString() const
         string key = "SessionType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sessionType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endPortsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndPorts";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_endPorts.begin(); itr != m_endPorts.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -250,6 +264,22 @@ void CreateListenerRequest::SetSessionType(const string& _sessionType)
 bool CreateListenerRequest::SessionTypeHasBeenSet() const
 {
     return m_sessionTypeHasBeenSet;
+}
+
+vector<int64_t> CreateListenerRequest::GetEndPorts() const
+{
+    return m_endPorts;
+}
+
+void CreateListenerRequest::SetEndPorts(const vector<int64_t>& _endPorts)
+{
+    m_endPorts = _endPorts;
+    m_endPortsHasBeenSet = true;
+}
+
+bool CreateListenerRequest::EndPortsHasBeenSet() const
+{
+    return m_endPortsHasBeenSet;
 }
 
 

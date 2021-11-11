@@ -1459,6 +1459,49 @@ CdbClient::DescribeBackupDatabasesOutcomeCallable CdbClient::DescribeBackupDatab
     return task->get_future();
 }
 
+CdbClient::DescribeBackupDownloadRestrictionOutcome CdbClient::DescribeBackupDownloadRestriction(const DescribeBackupDownloadRestrictionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackupDownloadRestriction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackupDownloadRestrictionResponse rsp = DescribeBackupDownloadRestrictionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackupDownloadRestrictionOutcome(rsp);
+        else
+            return DescribeBackupDownloadRestrictionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackupDownloadRestrictionOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeBackupDownloadRestrictionAsync(const DescribeBackupDownloadRestrictionRequest& request, const DescribeBackupDownloadRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBackupDownloadRestriction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeBackupDownloadRestrictionOutcomeCallable CdbClient::DescribeBackupDownloadRestrictionCallable(const DescribeBackupDownloadRestrictionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBackupDownloadRestrictionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBackupDownloadRestriction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::DescribeBackupOverviewOutcome CdbClient::DescribeBackupOverview(const DescribeBackupOverviewRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBackupOverview");
@@ -3774,6 +3817,49 @@ CdbClient::ModifyBackupConfigOutcomeCallable CdbClient::ModifyBackupConfigCallab
         [this, request]()
         {
             return this->ModifyBackupConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdbClient::ModifyBackupDownloadRestrictionOutcome CdbClient::ModifyBackupDownloadRestriction(const ModifyBackupDownloadRestrictionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBackupDownloadRestriction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBackupDownloadRestrictionResponse rsp = ModifyBackupDownloadRestrictionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBackupDownloadRestrictionOutcome(rsp);
+        else
+            return ModifyBackupDownloadRestrictionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBackupDownloadRestrictionOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::ModifyBackupDownloadRestrictionAsync(const ModifyBackupDownloadRestrictionRequest& request, const ModifyBackupDownloadRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBackupDownloadRestriction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::ModifyBackupDownloadRestrictionOutcomeCallable CdbClient::ModifyBackupDownloadRestrictionCallable(const ModifyBackupDownloadRestrictionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBackupDownloadRestrictionOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBackupDownloadRestriction(request);
         }
     );
 

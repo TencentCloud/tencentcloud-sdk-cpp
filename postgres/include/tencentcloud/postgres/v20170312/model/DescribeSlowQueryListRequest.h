@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询j结束时间戳，格式 “YYYY-MM-DD HH:mm:ss”。
-                     * @return EndTime 查询j结束时间戳，格式 “YYYY-MM-DD HH:mm:ss”。
+                     * 获取查询结束时间戳，格式 “YYYY-MM-DD HH:mm:ss”。
+                     * @return EndTime 查询结束时间戳，格式 “YYYY-MM-DD HH:mm:ss”。
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置查询j结束时间戳，格式 “YYYY-MM-DD HH:mm:ss”。
-                     * @param EndTime 查询j结束时间戳，格式 “YYYY-MM-DD HH:mm:ss”。
+                     * 设置查询结束时间戳，格式 “YYYY-MM-DD HH:mm:ss”。
+                     * @param EndTime 查询结束时间戳，格式 “YYYY-MM-DD HH:mm:ss”。
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -201,7 +201,7 @@ namespace TencentCloud
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询j结束时间戳，格式 “YYYY-MM-DD HH:mm:ss”。
+                     * 查询结束时间戳，格式 “YYYY-MM-DD HH:mm:ss”。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

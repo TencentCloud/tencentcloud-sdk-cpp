@@ -191,6 +191,24 @@ namespace TencentCloud
                      */
                     bool SessionTypeHasBeenSet() const;
 
+                    /**
+                     * 获取批量端口段的结束端口，必须和Ports长度一样。
+                     * @return EndPorts 批量端口段的结束端口，必须和Ports长度一样。
+                     */
+                    std::vector<int64_t> GetEndPorts() const;
+
+                    /**
+                     * 设置批量端口段的结束端口，必须和Ports长度一样。
+                     * @param EndPorts 批量端口段的结束端口，必须和Ports长度一样。
+                     */
+                    void SetEndPorts(const std::vector<int64_t>& _endPorts);
+
+                    /**
+                     * 判断参数 EndPorts 是否已赋值
+                     * @return EndPorts 是否已赋值
+                     */
+                    bool EndPortsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -241,6 +259,12 @@ namespace TencentCloud
                      */
                     std::string m_sessionType;
                     bool m_sessionTypeHasBeenSet;
+
+                    /**
+                     * 批量端口段的结束端口，必须和Ports长度一样。
+                     */
+                    std::vector<int64_t> m_endPorts;
+                    bool m_endPortsHasBeenSet;
 
                 };
             }

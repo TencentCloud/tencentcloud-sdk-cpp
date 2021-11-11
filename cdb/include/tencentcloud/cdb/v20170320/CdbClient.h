@@ -89,6 +89,8 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeBackupConfigResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBackupDatabasesRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBackupDatabasesResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeBackupDownloadRestrictionRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeBackupDownloadRestrictionResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBackupOverviewRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBackupOverviewResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBackupSummariesRequest.h>
@@ -197,6 +199,8 @@
 #include <tencentcloud/cdb/v20170320/model/ModifyAutoRenewFlagResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyBackupConfigRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyBackupConfigResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyBackupDownloadRestrictionRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyBackupDownloadRestrictionResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceNameRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceNameResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceProjectRequest.h>
@@ -366,6 +370,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBackupDatabasesResponse> DescribeBackupDatabasesOutcome;
                 typedef std::future<DescribeBackupDatabasesOutcome> DescribeBackupDatabasesOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeBackupDatabasesRequest&, DescribeBackupDatabasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupDatabasesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBackupDownloadRestrictionResponse> DescribeBackupDownloadRestrictionOutcome;
+                typedef std::future<DescribeBackupDownloadRestrictionOutcome> DescribeBackupDownloadRestrictionOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeBackupDownloadRestrictionRequest&, DescribeBackupDownloadRestrictionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupDownloadRestrictionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBackupOverviewResponse> DescribeBackupOverviewOutcome;
                 typedef std::future<DescribeBackupOverviewOutcome> DescribeBackupOverviewOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeBackupOverviewRequest&, DescribeBackupOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupOverviewAsyncHandler;
@@ -528,6 +535,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyBackupConfigResponse> ModifyBackupConfigOutcome;
                 typedef std::future<ModifyBackupConfigOutcome> ModifyBackupConfigOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyBackupConfigRequest&, ModifyBackupConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyBackupDownloadRestrictionResponse> ModifyBackupDownloadRestrictionOutcome;
+                typedef std::future<ModifyBackupDownloadRestrictionOutcome> ModifyBackupDownloadRestrictionOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::ModifyBackupDownloadRestrictionRequest&, ModifyBackupDownloadRestrictionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupDownloadRestrictionAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceNameResponse> ModifyDBInstanceNameOutcome;
                 typedef std::future<ModifyDBInstanceNameOutcome> ModifyDBInstanceNameOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyDBInstanceNameRequest&, ModifyDBInstanceNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceNameAsyncHandler;
@@ -932,6 +942,15 @@ namespace TencentCloud
                 DescribeBackupDatabasesOutcome DescribeBackupDatabases(const Model::DescribeBackupDatabasesRequest &request);
                 void DescribeBackupDatabasesAsync(const Model::DescribeBackupDatabasesRequest& request, const DescribeBackupDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBackupDatabasesOutcomeCallable DescribeBackupDatabasesCallable(const Model::DescribeBackupDatabasesRequest& request);
+
+                /**
+                 *该接口用户查询当前地域用户设置的默认备份下载来源限制。
+                 * @param req DescribeBackupDownloadRestrictionRequest
+                 * @return DescribeBackupDownloadRestrictionOutcome
+                 */
+                DescribeBackupDownloadRestrictionOutcome DescribeBackupDownloadRestriction(const Model::DescribeBackupDownloadRestrictionRequest &request);
+                void DescribeBackupDownloadRestrictionAsync(const Model::DescribeBackupDownloadRestrictionRequest& request, const DescribeBackupDownloadRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBackupDownloadRestrictionOutcomeCallable DescribeBackupDownloadRestrictionCallable(const Model::DescribeBackupDownloadRestrictionRequest& request);
 
                 /**
                  *本接口(DescribeBackupOverview)用于查询用户的备份概览。返回用户当前备份总个数、备份总的占用容量、赠送的免费容量、计费容量（容量单位为字节）。
@@ -1425,6 +1444,15 @@ namespace TencentCloud
                 ModifyBackupConfigOutcome ModifyBackupConfig(const Model::ModifyBackupConfigRequest &request);
                 void ModifyBackupConfigAsync(const Model::ModifyBackupConfigRequest& request, const ModifyBackupConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyBackupConfigOutcomeCallable ModifyBackupConfigCallable(const Model::ModifyBackupConfigRequest& request);
+
+                /**
+                 *该接口用于修改用户当前地域的备份文件限制下载来源，可以设置内外网均可下载、仅内网可下载，或内网指定的vpc、ip可以下载。
+                 * @param req ModifyBackupDownloadRestrictionRequest
+                 * @return ModifyBackupDownloadRestrictionOutcome
+                 */
+                ModifyBackupDownloadRestrictionOutcome ModifyBackupDownloadRestriction(const Model::ModifyBackupDownloadRestrictionRequest &request);
+                void ModifyBackupDownloadRestrictionAsync(const Model::ModifyBackupDownloadRestrictionRequest& request, const ModifyBackupDownloadRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBackupDownloadRestrictionOutcomeCallable ModifyBackupDownloadRestrictionCallable(const Model::ModifyBackupDownloadRestrictionRequest& request);
 
                 /**
                  *本接口(ModifyDBInstanceName)用于修改云数据库实例的名称。
