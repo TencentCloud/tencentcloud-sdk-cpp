@@ -29,7 +29,8 @@ CreateConfigRequest::CreateConfigRequest() :
     m_applicationIdHasBeenSet(false),
     m_configVersionDescHasBeenSet(false),
     m_configTypeHasBeenSet(false),
-    m_encodeWithBase64HasBeenSet(false)
+    m_encodeWithBase64HasBeenSet(false),
+    m_programIdListHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,19 @@ string CreateConfigRequest::ToJsonString() const
         string key = "EncodeWithBase64";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_encodeWithBase64, allocator);
+    }
+
+    if (m_programIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProgramIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_programIdList.begin(); itr != m_programIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -214,6 +228,22 @@ void CreateConfigRequest::SetEncodeWithBase64(const bool& _encodeWithBase64)
 bool CreateConfigRequest::EncodeWithBase64HasBeenSet() const
 {
     return m_encodeWithBase64HasBeenSet;
+}
+
+vector<string> CreateConfigRequest::GetProgramIdList() const
+{
+    return m_programIdList;
+}
+
+void CreateConfigRequest::SetProgramIdList(const vector<string>& _programIdList)
+{
+    m_programIdList = _programIdList;
+    m_programIdListHasBeenSet = true;
+}
+
+bool CreateConfigRequest::ProgramIdListHasBeenSet() const
+{
+    return m_programIdListHasBeenSet;
 }
 
 

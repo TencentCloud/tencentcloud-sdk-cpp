@@ -186,6 +186,24 @@ namespace TencentCloud
                      */
                     bool ClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取无
+                     * @return GroupIdList 无
+                     */
+                    std::vector<std::string> GetGroupIdList() const;
+
+                    /**
+                     * 设置无
+                     * @param GroupIdList 无
+                     */
+                    void SetGroupIdList(const std::vector<std::string>& _groupIdList);
+
+                    /**
+                     * 判断参数 GroupIdList 是否已赋值
+                     * @return GroupIdList 是否已赋值
+                     */
+                    bool GroupIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,6 +253,12 @@ namespace TencentCloud
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 无
+                     */
+                    std::vector<std::string> m_groupIdList;
+                    bool m_groupIdListHasBeenSet;
 
                 };
             }

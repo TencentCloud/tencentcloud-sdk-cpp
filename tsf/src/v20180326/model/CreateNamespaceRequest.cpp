@@ -30,7 +30,8 @@ CreateNamespaceRequest::CreateNamespaceRequest() :
     m_namespaceTypeHasBeenSet(false),
     m_namespaceIdHasBeenSet(false),
     m_isHaEnableHasBeenSet(false),
-    m_programIdHasBeenSet(false)
+    m_programIdHasBeenSet(false),
+    m_programIdListHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,19 @@ string CreateNamespaceRequest::ToJsonString() const
         string key = "ProgramId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_programId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_programIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProgramIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_programIdList.begin(); itr != m_programIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -239,6 +253,22 @@ void CreateNamespaceRequest::SetProgramId(const string& _programId)
 bool CreateNamespaceRequest::ProgramIdHasBeenSet() const
 {
     return m_programIdHasBeenSet;
+}
+
+vector<string> CreateNamespaceRequest::GetProgramIdList() const
+{
+    return m_programIdList;
+}
+
+void CreateNamespaceRequest::SetProgramIdList(const vector<string>& _programIdList)
+{
+    m_programIdList = _programIdList;
+    m_programIdListHasBeenSet = true;
+}
+
+bool CreateNamespaceRequest::ProgramIdListHasBeenSet() const
+{
+    return m_programIdListHasBeenSet;
 }
 
 

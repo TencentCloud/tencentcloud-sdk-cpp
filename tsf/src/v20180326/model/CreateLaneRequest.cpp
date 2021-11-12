@@ -25,7 +25,8 @@ using namespace std;
 CreateLaneRequest::CreateLaneRequest() :
     m_laneNameHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_laneGroupListHasBeenSet(false)
+    m_laneGroupListHasBeenSet(false),
+    m_programIdListHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,19 @@ string CreateLaneRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_programIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProgramIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_programIdList.begin(); itr != m_programIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -121,6 +135,22 @@ void CreateLaneRequest::SetLaneGroupList(const vector<LaneGroup>& _laneGroupList
 bool CreateLaneRequest::LaneGroupListHasBeenSet() const
 {
     return m_laneGroupListHasBeenSet;
+}
+
+vector<string> CreateLaneRequest::GetProgramIdList() const
+{
+    return m_programIdList;
+}
+
+void CreateLaneRequest::SetProgramIdList(const vector<string>& _programIdList)
+{
+    m_programIdList = _programIdList;
+    m_programIdListHasBeenSet = true;
+}
+
+bool CreateLaneRequest::ProgramIdListHasBeenSet() const
+{
+    return m_programIdListHasBeenSet;
 }
 
 

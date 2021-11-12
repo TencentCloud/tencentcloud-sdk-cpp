@@ -32,7 +32,8 @@ DescribeGroupsRequest::DescribeGroupsRequest() :
     m_namespaceIdHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
     m_groupResourceTypeListHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_groupIdListHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,19 @@ string DescribeGroupsRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_groupIdList.begin(); itr != m_groupIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -294,6 +308,22 @@ void DescribeGroupsRequest::SetStatus(const string& _status)
 bool DescribeGroupsRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+vector<string> DescribeGroupsRequest::GetGroupIdList() const
+{
+    return m_groupIdList;
+}
+
+void DescribeGroupsRequest::SetGroupIdList(const vector<string>& _groupIdList)
+{
+    m_groupIdList = _groupIdList;
+    m_groupIdListHasBeenSet = true;
+}
+
+bool DescribeGroupsRequest::GroupIdListHasBeenSet() const
+{
+    return m_groupIdListHasBeenSet;
 }
 
 

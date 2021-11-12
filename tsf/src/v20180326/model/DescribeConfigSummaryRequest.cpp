@@ -28,7 +28,10 @@ DescribeConfigSummaryRequest::DescribeConfigSummaryRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_orderByHasBeenSet(false),
-    m_orderTypeHasBeenSet(false)
+    m_orderTypeHasBeenSet(false),
+    m_configTagListHasBeenSet(false),
+    m_disableProgramAuthCheckHasBeenSet(false),
+    m_configIdListHasBeenSet(false)
 {
 }
 
@@ -85,6 +88,40 @@ string DescribeConfigSummaryRequest::ToJsonString() const
         string key = "OrderType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_orderType, allocator);
+    }
+
+    if (m_configTagListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigTagList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_configTagList.begin(); itr != m_configTagList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_disableProgramAuthCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableProgramAuthCheck";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_disableProgramAuthCheck, allocator);
+    }
+
+    if (m_configIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_configIdList.begin(); itr != m_configIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -189,6 +226,54 @@ void DescribeConfigSummaryRequest::SetOrderType(const int64_t& _orderType)
 bool DescribeConfigSummaryRequest::OrderTypeHasBeenSet() const
 {
     return m_orderTypeHasBeenSet;
+}
+
+vector<string> DescribeConfigSummaryRequest::GetConfigTagList() const
+{
+    return m_configTagList;
+}
+
+void DescribeConfigSummaryRequest::SetConfigTagList(const vector<string>& _configTagList)
+{
+    m_configTagList = _configTagList;
+    m_configTagListHasBeenSet = true;
+}
+
+bool DescribeConfigSummaryRequest::ConfigTagListHasBeenSet() const
+{
+    return m_configTagListHasBeenSet;
+}
+
+bool DescribeConfigSummaryRequest::GetDisableProgramAuthCheck() const
+{
+    return m_disableProgramAuthCheck;
+}
+
+void DescribeConfigSummaryRequest::SetDisableProgramAuthCheck(const bool& _disableProgramAuthCheck)
+{
+    m_disableProgramAuthCheck = _disableProgramAuthCheck;
+    m_disableProgramAuthCheckHasBeenSet = true;
+}
+
+bool DescribeConfigSummaryRequest::DisableProgramAuthCheckHasBeenSet() const
+{
+    return m_disableProgramAuthCheckHasBeenSet;
+}
+
+vector<string> DescribeConfigSummaryRequest::GetConfigIdList() const
+{
+    return m_configIdList;
+}
+
+void DescribeConfigSummaryRequest::SetConfigIdList(const vector<string>& _configIdList)
+{
+    m_configIdList = _configIdList;
+    m_configIdListHasBeenSet = true;
+}
+
+bool DescribeConfigSummaryRequest::ConfigIdListHasBeenSet() const
+{
+    return m_configIdListHasBeenSet;
 }
 
 

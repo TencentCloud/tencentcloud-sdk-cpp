@@ -27,7 +27,8 @@ DescribeSimpleClustersRequest::DescribeSimpleClustersRequest() :
     m_clusterTypeHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_searchWordHasBeenSet(false)
+    m_searchWordHasBeenSet(false),
+    m_disableProgramAuthCheckHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,14 @@ string DescribeSimpleClustersRequest::ToJsonString() const
         string key = "SearchWord";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_searchWord.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_disableProgramAuthCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableProgramAuthCheck";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_disableProgramAuthCheck, allocator);
     }
 
 
@@ -169,6 +178,22 @@ void DescribeSimpleClustersRequest::SetSearchWord(const string& _searchWord)
 bool DescribeSimpleClustersRequest::SearchWordHasBeenSet() const
 {
     return m_searchWordHasBeenSet;
+}
+
+bool DescribeSimpleClustersRequest::GetDisableProgramAuthCheck() const
+{
+    return m_disableProgramAuthCheck;
+}
+
+void DescribeSimpleClustersRequest::SetDisableProgramAuthCheck(const bool& _disableProgramAuthCheck)
+{
+    m_disableProgramAuthCheck = _disableProgramAuthCheck;
+    m_disableProgramAuthCheckHasBeenSet = true;
+}
+
+bool DescribeSimpleClustersRequest::DisableProgramAuthCheckHasBeenSet() const
+{
+    return m_disableProgramAuthCheckHasBeenSet;
 }
 
 

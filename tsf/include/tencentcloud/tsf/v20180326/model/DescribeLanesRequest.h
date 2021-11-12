@@ -96,6 +96,42 @@ namespace TencentCloud
                      */
                     bool SearchWordHasBeenSet() const;
 
+                    /**
+                     * 获取无
+                     * @return LaneIdList 无
+                     */
+                    std::vector<std::string> GetLaneIdList() const;
+
+                    /**
+                     * 设置无
+                     * @param LaneIdList 无
+                     */
+                    void SetLaneIdList(const std::vector<std::string>& _laneIdList);
+
+                    /**
+                     * 判断参数 LaneIdList 是否已赋值
+                     * @return LaneIdList 是否已赋值
+                     */
+                    bool LaneIdListHasBeenSet() const;
+
+                    /**
+                     * 获取无
+                     * @return DisableProgramAuthCheck 无
+                     */
+                    bool GetDisableProgramAuthCheck() const;
+
+                    /**
+                     * 设置无
+                     * @param DisableProgramAuthCheck 无
+                     */
+                    void SetDisableProgramAuthCheck(const bool& _disableProgramAuthCheck);
+
+                    /**
+                     * 判断参数 DisableProgramAuthCheck 是否已赋值
+                     * @return DisableProgramAuthCheck 是否已赋值
+                     */
+                    bool DisableProgramAuthCheckHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +151,18 @@ namespace TencentCloud
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;
+
+                    /**
+                     * 无
+                     */
+                    std::vector<std::string> m_laneIdList;
+                    bool m_laneIdListHasBeenSet;
+
+                    /**
+                     * 无
+                     */
+                    bool m_disableProgramAuthCheck;
+                    bool m_disableProgramAuthCheckHasBeenSet;
 
                 };
             }

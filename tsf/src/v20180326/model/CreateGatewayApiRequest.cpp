@@ -24,7 +24,8 @@ using namespace std;
 
 CreateGatewayApiRequest::CreateGatewayApiRequest() :
     m_groupIdHasBeenSet(false),
-    m_apiListHasBeenSet(false)
+    m_apiListHasBeenSet(false),
+    m_programIdListHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,19 @@ string CreateGatewayApiRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_programIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProgramIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_programIdList.begin(); itr != m_programIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -96,6 +110,22 @@ void CreateGatewayApiRequest::SetApiList(const vector<ApiInfo>& _apiList)
 bool CreateGatewayApiRequest::ApiListHasBeenSet() const
 {
     return m_apiListHasBeenSet;
+}
+
+vector<string> CreateGatewayApiRequest::GetProgramIdList() const
+{
+    return m_programIdList;
+}
+
+void CreateGatewayApiRequest::SetProgramIdList(const vector<string>& _programIdList)
+{
+    m_programIdList = _programIdList;
+    m_programIdListHasBeenSet = true;
+}
+
+bool CreateGatewayApiRequest::ProgramIdListHasBeenSet() const
+{
+    return m_programIdListHasBeenSet;
 }
 
 

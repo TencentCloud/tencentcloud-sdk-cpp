@@ -32,7 +32,8 @@ DescribeSimpleNamespacesRequest::DescribeSimpleNamespacesRequest() :
     m_searchWordHasBeenSet(false),
     m_namespaceTypeListHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
-    m_isDefaultHasBeenSet(false)
+    m_isDefaultHasBeenSet(false),
+    m_disableProgramAuthCheckHasBeenSet(false)
 {
 }
 
@@ -136,6 +137,14 @@ string DescribeSimpleNamespacesRequest::ToJsonString() const
         string key = "IsDefault";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_isDefault.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_disableProgramAuthCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableProgramAuthCheck";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_disableProgramAuthCheck, allocator);
     }
 
 
@@ -304,6 +313,22 @@ void DescribeSimpleNamespacesRequest::SetIsDefault(const string& _isDefault)
 bool DescribeSimpleNamespacesRequest::IsDefaultHasBeenSet() const
 {
     return m_isDefaultHasBeenSet;
+}
+
+bool DescribeSimpleNamespacesRequest::GetDisableProgramAuthCheck() const
+{
+    return m_disableProgramAuthCheck;
+}
+
+void DescribeSimpleNamespacesRequest::SetDisableProgramAuthCheck(const bool& _disableProgramAuthCheck)
+{
+    m_disableProgramAuthCheck = _disableProgramAuthCheck;
+    m_disableProgramAuthCheckHasBeenSet = true;
+}
+
+bool DescribeSimpleNamespacesRequest::DisableProgramAuthCheckHasBeenSet() const
+{
+    return m_disableProgramAuthCheckHasBeenSet;
 }
 
 

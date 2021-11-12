@@ -132,6 +132,60 @@ namespace TencentCloud
                      */
                     bool OrderTypeHasBeenSet() const;
 
+                    /**
+                     * 获取无
+                     * @return ConfigTagList 无
+                     */
+                    std::vector<std::string> GetConfigTagList() const;
+
+                    /**
+                     * 设置无
+                     * @param ConfigTagList 无
+                     */
+                    void SetConfigTagList(const std::vector<std::string>& _configTagList);
+
+                    /**
+                     * 判断参数 ConfigTagList 是否已赋值
+                     * @return ConfigTagList 是否已赋值
+                     */
+                    bool ConfigTagListHasBeenSet() const;
+
+                    /**
+                     * 获取无
+                     * @return DisableProgramAuthCheck 无
+                     */
+                    bool GetDisableProgramAuthCheck() const;
+
+                    /**
+                     * 设置无
+                     * @param DisableProgramAuthCheck 无
+                     */
+                    void SetDisableProgramAuthCheck(const bool& _disableProgramAuthCheck);
+
+                    /**
+                     * 判断参数 DisableProgramAuthCheck 是否已赋值
+                     * @return DisableProgramAuthCheck 是否已赋值
+                     */
+                    bool DisableProgramAuthCheckHasBeenSet() const;
+
+                    /**
+                     * 获取无
+                     * @return ConfigIdList 无
+                     */
+                    std::vector<std::string> GetConfigIdList() const;
+
+                    /**
+                     * 设置无
+                     * @param ConfigIdList 无
+                     */
+                    void SetConfigIdList(const std::vector<std::string>& _configIdList);
+
+                    /**
+                     * 判断参数 ConfigIdList 是否已赋值
+                     * @return ConfigIdList 是否已赋值
+                     */
+                    bool ConfigIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +217,24 @@ namespace TencentCloud
                      */
                     int64_t m_orderType;
                     bool m_orderTypeHasBeenSet;
+
+                    /**
+                     * 无
+                     */
+                    std::vector<std::string> m_configTagList;
+                    bool m_configTagListHasBeenSet;
+
+                    /**
+                     * 无
+                     */
+                    bool m_disableProgramAuthCheck;
+                    bool m_disableProgramAuthCheckHasBeenSet;
+
+                    /**
+                     * 无
+                     */
+                    std::vector<std::string> m_configIdList;
+                    bool m_configIdListHasBeenSet;
 
                 };
             }

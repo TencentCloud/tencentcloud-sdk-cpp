@@ -25,7 +25,9 @@ using namespace std;
 DescribeLanesRequest::DescribeLanesRequest() :
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_searchWordHasBeenSet(false)
+    m_searchWordHasBeenSet(false),
+    m_laneIdListHasBeenSet(false),
+    m_disableProgramAuthCheckHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,27 @@ string DescribeLanesRequest::ToJsonString() const
         string key = "SearchWord";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_searchWord.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_laneIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LaneIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_laneIdList.begin(); itr != m_laneIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_disableProgramAuthCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableProgramAuthCheck";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_disableProgramAuthCheck, allocator);
     }
 
 
@@ -114,6 +137,38 @@ void DescribeLanesRequest::SetSearchWord(const string& _searchWord)
 bool DescribeLanesRequest::SearchWordHasBeenSet() const
 {
     return m_searchWordHasBeenSet;
+}
+
+vector<string> DescribeLanesRequest::GetLaneIdList() const
+{
+    return m_laneIdList;
+}
+
+void DescribeLanesRequest::SetLaneIdList(const vector<string>& _laneIdList)
+{
+    m_laneIdList = _laneIdList;
+    m_laneIdListHasBeenSet = true;
+}
+
+bool DescribeLanesRequest::LaneIdListHasBeenSet() const
+{
+    return m_laneIdListHasBeenSet;
+}
+
+bool DescribeLanesRequest::GetDisableProgramAuthCheck() const
+{
+    return m_disableProgramAuthCheck;
+}
+
+void DescribeLanesRequest::SetDisableProgramAuthCheck(const bool& _disableProgramAuthCheck)
+{
+    m_disableProgramAuthCheck = _disableProgramAuthCheck;
+    m_disableProgramAuthCheckHasBeenSet = true;
+}
+
+bool DescribeLanesRequest::DisableProgramAuthCheckHasBeenSet() const
+{
+    return m_disableProgramAuthCheckHasBeenSet;
 }
 
 

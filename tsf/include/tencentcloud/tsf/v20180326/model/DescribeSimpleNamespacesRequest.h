@@ -222,6 +222,24 @@ namespace TencentCloud
                      */
                     bool IsDefaultHasBeenSet() const;
 
+                    /**
+                     * 获取无
+                     * @return DisableProgramAuthCheck 无
+                     */
+                    bool GetDisableProgramAuthCheck() const;
+
+                    /**
+                     * 设置无
+                     * @param DisableProgramAuthCheck 无
+                     */
+                    void SetDisableProgramAuthCheck(const bool& _disableProgramAuthCheck);
+
+                    /**
+                     * 判断参数 DisableProgramAuthCheck 是否已赋值
+                     * @return DisableProgramAuthCheck 是否已赋值
+                     */
+                    bool DisableProgramAuthCheckHasBeenSet() const;
+
                 private:
 
                     /**
@@ -283,6 +301,12 @@ namespace TencentCloud
                      */
                     std::string m_isDefault;
                     bool m_isDefaultHasBeenSet;
+
+                    /**
+                     * 无
+                     */
+                    bool m_disableProgramAuthCheck;
+                    bool m_disableProgramAuthCheckHasBeenSet;
 
                 };
             }

@@ -258,6 +258,78 @@ namespace TencentCloud
                      */
                     bool ProgramIdHasBeenSet() const;
 
+                    /**
+                     * 获取api地址
+                     * @return KuberneteApiServer api地址
+                     */
+                    std::string GetKuberneteApiServer() const;
+
+                    /**
+                     * 设置api地址
+                     * @param KuberneteApiServer api地址
+                     */
+                    void SetKuberneteApiServer(const std::string& _kuberneteApiServer);
+
+                    /**
+                     * 判断参数 KuberneteApiServer 是否已赋值
+                     * @return KuberneteApiServer 是否已赋值
+                     */
+                    bool KuberneteApiServerHasBeenSet() const;
+
+                    /**
+                     * 获取K : kubeconfig, S : service account
+                     * @return KuberneteNativeType K : kubeconfig, S : service account
+                     */
+                    std::string GetKuberneteNativeType() const;
+
+                    /**
+                     * 设置K : kubeconfig, S : service account
+                     * @param KuberneteNativeType K : kubeconfig, S : service account
+                     */
+                    void SetKuberneteNativeType(const std::string& _kuberneteNativeType);
+
+                    /**
+                     * 判断参数 KuberneteNativeType 是否已赋值
+                     * @return KuberneteNativeType 是否已赋值
+                     */
+                    bool KuberneteNativeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取native secret
+                     * @return KuberneteNativeSecret native secret
+                     */
+                    std::string GetKuberneteNativeSecret() const;
+
+                    /**
+                     * 设置native secret
+                     * @param KuberneteNativeSecret native secret
+                     */
+                    void SetKuberneteNativeSecret(const std::string& _kuberneteNativeSecret);
+
+                    /**
+                     * 判断参数 KuberneteNativeSecret 是否已赋值
+                     * @return KuberneteNativeSecret 是否已赋值
+                     */
+                    bool KuberneteNativeSecretHasBeenSet() const;
+
+                    /**
+                     * 获取无
+                     * @return ProgramIdList 无
+                     */
+                    std::vector<std::string> GetProgramIdList() const;
+
+                    /**
+                     * 设置无
+                     * @param ProgramIdList 无
+                     */
+                    void SetProgramIdList(const std::vector<std::string>& _programIdList);
+
+                    /**
+                     * 判断参数 ProgramIdList 是否已赋值
+                     * @return ProgramIdList 是否已赋值
+                     */
+                    bool ProgramIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -331,6 +403,30 @@ namespace TencentCloud
                      */
                     std::string m_programId;
                     bool m_programIdHasBeenSet;
+
+                    /**
+                     * api地址
+                     */
+                    std::string m_kuberneteApiServer;
+                    bool m_kuberneteApiServerHasBeenSet;
+
+                    /**
+                     * K : kubeconfig, S : service account
+                     */
+                    std::string m_kuberneteNativeType;
+                    bool m_kuberneteNativeTypeHasBeenSet;
+
+                    /**
+                     * native secret
+                     */
+                    std::string m_kuberneteNativeSecret;
+                    bool m_kuberneteNativeSecretHasBeenSet;
+
+                    /**
+                     * 无
+                     */
+                    std::vector<std::string> m_programIdList;
+                    bool m_programIdListHasBeenSet;
 
                 };
             }

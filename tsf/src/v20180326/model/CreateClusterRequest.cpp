@@ -34,7 +34,11 @@ CreateClusterRequest::CreateClusterRequest() :
     m_clusterVersionHasBeenSet(false),
     m_maxNodePodNumHasBeenSet(false),
     m_maxClusterServiceNumHasBeenSet(false),
-    m_programIdHasBeenSet(false)
+    m_programIdHasBeenSet(false),
+    m_kuberneteApiServerHasBeenSet(false),
+    m_kuberneteNativeTypeHasBeenSet(false),
+    m_kuberneteNativeSecretHasBeenSet(false),
+    m_programIdListHasBeenSet(false)
 {
 }
 
@@ -139,6 +143,43 @@ string CreateClusterRequest::ToJsonString() const
         string key = "ProgramId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_programId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kuberneteApiServerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KuberneteApiServer";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_kuberneteApiServer.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kuberneteNativeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KuberneteNativeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_kuberneteNativeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kuberneteNativeSecretHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KuberneteNativeSecret";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_kuberneteNativeSecret.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_programIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProgramIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_programIdList.begin(); itr != m_programIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -339,6 +380,70 @@ void CreateClusterRequest::SetProgramId(const string& _programId)
 bool CreateClusterRequest::ProgramIdHasBeenSet() const
 {
     return m_programIdHasBeenSet;
+}
+
+string CreateClusterRequest::GetKuberneteApiServer() const
+{
+    return m_kuberneteApiServer;
+}
+
+void CreateClusterRequest::SetKuberneteApiServer(const string& _kuberneteApiServer)
+{
+    m_kuberneteApiServer = _kuberneteApiServer;
+    m_kuberneteApiServerHasBeenSet = true;
+}
+
+bool CreateClusterRequest::KuberneteApiServerHasBeenSet() const
+{
+    return m_kuberneteApiServerHasBeenSet;
+}
+
+string CreateClusterRequest::GetKuberneteNativeType() const
+{
+    return m_kuberneteNativeType;
+}
+
+void CreateClusterRequest::SetKuberneteNativeType(const string& _kuberneteNativeType)
+{
+    m_kuberneteNativeType = _kuberneteNativeType;
+    m_kuberneteNativeTypeHasBeenSet = true;
+}
+
+bool CreateClusterRequest::KuberneteNativeTypeHasBeenSet() const
+{
+    return m_kuberneteNativeTypeHasBeenSet;
+}
+
+string CreateClusterRequest::GetKuberneteNativeSecret() const
+{
+    return m_kuberneteNativeSecret;
+}
+
+void CreateClusterRequest::SetKuberneteNativeSecret(const string& _kuberneteNativeSecret)
+{
+    m_kuberneteNativeSecret = _kuberneteNativeSecret;
+    m_kuberneteNativeSecretHasBeenSet = true;
+}
+
+bool CreateClusterRequest::KuberneteNativeSecretHasBeenSet() const
+{
+    return m_kuberneteNativeSecretHasBeenSet;
+}
+
+vector<string> CreateClusterRequest::GetProgramIdList() const
+{
+    return m_programIdList;
+}
+
+void CreateClusterRequest::SetProgramIdList(const vector<string>& _programIdList)
+{
+    m_programIdList = _programIdList;
+    m_programIdListHasBeenSet = true;
+}
+
+bool CreateClusterRequest::ProgramIdListHasBeenSet() const
+{
+    return m_programIdListHasBeenSet;
 }
 
 

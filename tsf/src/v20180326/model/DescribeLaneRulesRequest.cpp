@@ -26,7 +26,8 @@ DescribeLaneRulesRequest::DescribeLaneRulesRequest() :
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_searchWordHasBeenSet(false),
-    m_ruleIdHasBeenSet(false)
+    m_ruleIdHasBeenSet(false),
+    m_ruleIdListHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,19 @@ string DescribeLaneRulesRequest::ToJsonString() const
         string key = "RuleId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_ruleId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_ruleIdList.begin(); itr != m_ruleIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -139,6 +153,22 @@ void DescribeLaneRulesRequest::SetRuleId(const string& _ruleId)
 bool DescribeLaneRulesRequest::RuleIdHasBeenSet() const
 {
     return m_ruleIdHasBeenSet;
+}
+
+vector<string> DescribeLaneRulesRequest::GetRuleIdList() const
+{
+    return m_ruleIdList;
+}
+
+void DescribeLaneRulesRequest::SetRuleIdList(const vector<string>& _ruleIdList)
+{
+    m_ruleIdList = _ruleIdList;
+    m_ruleIdListHasBeenSet = true;
+}
+
+bool DescribeLaneRulesRequest::RuleIdListHasBeenSet() const
+{
+    return m_ruleIdListHasBeenSet;
 }
 
 

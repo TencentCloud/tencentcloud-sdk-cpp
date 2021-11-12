@@ -29,7 +29,8 @@ DescribeSimpleApplicationsRequest::DescribeSimpleApplicationsRequest() :
     m_offsetHasBeenSet(false),
     m_microserviceTypeHasBeenSet(false),
     m_applicationResourceTypeListHasBeenSet(false),
-    m_searchWordHasBeenSet(false)
+    m_searchWordHasBeenSet(false),
+    m_disableProgramAuthCheckHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,14 @@ string DescribeSimpleApplicationsRequest::ToJsonString() const
         string key = "SearchWord";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_searchWord.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_disableProgramAuthCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableProgramAuthCheck";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_disableProgramAuthCheck, allocator);
     }
 
 
@@ -224,6 +233,22 @@ void DescribeSimpleApplicationsRequest::SetSearchWord(const string& _searchWord)
 bool DescribeSimpleApplicationsRequest::SearchWordHasBeenSet() const
 {
     return m_searchWordHasBeenSet;
+}
+
+bool DescribeSimpleApplicationsRequest::GetDisableProgramAuthCheck() const
+{
+    return m_disableProgramAuthCheck;
+}
+
+void DescribeSimpleApplicationsRequest::SetDisableProgramAuthCheck(const bool& _disableProgramAuthCheck)
+{
+    m_disableProgramAuthCheck = _disableProgramAuthCheck;
+    m_disableProgramAuthCheckHasBeenSet = true;
+}
+
+bool DescribeSimpleApplicationsRequest::DisableProgramAuthCheckHasBeenSet() const
+{
+    return m_disableProgramAuthCheckHasBeenSet;
 }
 
 

@@ -27,7 +27,8 @@ CreateLaneRuleRequest::CreateLaneRuleRequest() :
     m_remarkHasBeenSet(false),
     m_ruleTagListHasBeenSet(false),
     m_ruleTagRelationshipHasBeenSet(false),
-    m_laneIdHasBeenSet(false)
+    m_laneIdHasBeenSet(false),
+    m_programIdListHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,19 @@ string CreateLaneRuleRequest::ToJsonString() const
         string key = "LaneId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_laneId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_programIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProgramIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_programIdList.begin(); itr != m_programIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -171,6 +185,22 @@ void CreateLaneRuleRequest::SetLaneId(const string& _laneId)
 bool CreateLaneRuleRequest::LaneIdHasBeenSet() const
 {
     return m_laneIdHasBeenSet;
+}
+
+vector<string> CreateLaneRuleRequest::GetProgramIdList() const
+{
+    return m_programIdList;
+}
+
+void CreateLaneRuleRequest::SetProgramIdList(const vector<string>& _programIdList)
+{
+    m_programIdList = _programIdList;
+    m_programIdListHasBeenSet = true;
+}
+
+bool CreateLaneRuleRequest::ProgramIdListHasBeenSet() const
+{
+    return m_programIdListHasBeenSet;
 }
 
 

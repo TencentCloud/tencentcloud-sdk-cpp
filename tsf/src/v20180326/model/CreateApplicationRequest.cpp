@@ -32,7 +32,8 @@ CreateApplicationRequest::CreateApplicationRequest() :
     m_applicationRuntimeTypeHasBeenSet(false),
     m_programIdHasBeenSet(false),
     m_serviceConfigListHasBeenSet(false),
-    m_ignoreCreateImageRepositoryHasBeenSet(false)
+    m_ignoreCreateImageRepositoryHasBeenSet(false),
+    m_programIdListHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,19 @@ string CreateApplicationRequest::ToJsonString() const
         string key = "IgnoreCreateImageRepository";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_ignoreCreateImageRepository, allocator);
+    }
+
+    if (m_programIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProgramIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_programIdList.begin(); itr != m_programIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -296,6 +310,22 @@ void CreateApplicationRequest::SetIgnoreCreateImageRepository(const bool& _ignor
 bool CreateApplicationRequest::IgnoreCreateImageRepositoryHasBeenSet() const
 {
     return m_ignoreCreateImageRepositoryHasBeenSet;
+}
+
+vector<string> CreateApplicationRequest::GetProgramIdList() const
+{
+    return m_programIdList;
+}
+
+void CreateApplicationRequest::SetProgramIdList(const vector<string>& _programIdList)
+{
+    m_programIdList = _programIdList;
+    m_programIdListHasBeenSet = true;
+}
+
+bool CreateApplicationRequest::ProgramIdListHasBeenSet() const
+{
+    return m_programIdListHasBeenSet;
 }
 
 
