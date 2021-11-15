@@ -29,12 +29,10 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/DescribeAutoScalingGroupsRequest.h
   include/tencentcloud/as/v20180419/model/CreateAutoScalingGroupResponse.h
   include/tencentcloud/as/v20180419/model/DescribeAccountLimitsResponse.h
-  include/tencentcloud/as/v20180419/model/CreatePaiInstanceResponse.h
   include/tencentcloud/as/v20180419/model/CreateLaunchConfigurationResponse.h
   include/tencentcloud/as/v20180419/model/CreateLifecycleHookResponse.h
   include/tencentcloud/as/v20180419/model/ClearLaunchConfigurationAttributesResponse.h
   include/tencentcloud/as/v20180419/model/DescribeAutoScalingGroupsResponse.h
-  include/tencentcloud/as/v20180419/model/CreatePaiInstanceRequest.h
   include/tencentcloud/as/v20180419/model/SystemDisk.h
   include/tencentcloud/as/v20180419/model/SpotMarketOptions.h
   include/tencentcloud/as/v20180419/model/StopAutoScalingInstancesResponse.h
@@ -164,12 +162,10 @@ set(as_src
   src/v20180419/model/DescribeAutoScalingGroupsRequest.cpp
   src/v20180419/model/CreateAutoScalingGroupResponse.cpp
   src/v20180419/model/DescribeAccountLimitsResponse.cpp
-  src/v20180419/model/CreatePaiInstanceResponse.cpp
   src/v20180419/model/CreateLaunchConfigurationResponse.cpp
   src/v20180419/model/CreateLifecycleHookResponse.cpp
   src/v20180419/model/ClearLaunchConfigurationAttributesResponse.cpp
   src/v20180419/model/DescribeAutoScalingGroupsResponse.cpp
-  src/v20180419/model/CreatePaiInstanceRequest.cpp
   src/v20180419/model/SystemDisk.cpp
   src/v20180419/model/SpotMarketOptions.cpp
   src/v20180419/model/StopAutoScalingInstancesResponse.cpp

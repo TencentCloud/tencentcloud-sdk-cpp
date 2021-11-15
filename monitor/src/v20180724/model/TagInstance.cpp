@@ -78,11 +78,11 @@ CoreInternalOutcome TagInstance::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("RegionId") && !value["RegionId"].IsNull())
     {
-        if (!value["RegionId"].IsString())
+        if (!value["RegionId"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `TagInstance.RegionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagInstance.RegionId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_regionId = string(value["RegionId"].GetString());
+        m_regionId = value["RegionId"].GetInt64();
         m_regionIdHasBeenSet = true;
     }
 
@@ -150,7 +150,7 @@ void TagInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegionId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_regionId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_regionId, allocator);
     }
 
     if (m_bindingStatusHasBeenSet)
@@ -236,12 +236,12 @@ bool TagInstance::ServiceTypeHasBeenSet() const
     return m_serviceTypeHasBeenSet;
 }
 
-string TagInstance::GetRegionId() const
+int64_t TagInstance::GetRegionId() const
 {
     return m_regionId;
 }
 
-void TagInstance::SetRegionId(const string& _regionId)
+void TagInstance::SetRegionId(const int64_t& _regionId)
 {
     m_regionId = _regionId;
     m_regionIdHasBeenSet = true;

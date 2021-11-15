@@ -155,6 +155,8 @@
 #include <tencentcloud/tcb/v20180608/model/EstablishWxGatewayRouteResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyCloudBaseRunServerFlowConfRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyCloudBaseRunServerFlowConfResponse.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyCloudBaseRunServerVersionRequest.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyCloudBaseRunServerVersionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyDatabaseACLRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyDatabaseACLResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyEndUserRequest.h>
@@ -383,6 +385,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyCloudBaseRunServerFlowConfResponse> ModifyCloudBaseRunServerFlowConfOutcome;
                 typedef std::future<ModifyCloudBaseRunServerFlowConfOutcome> ModifyCloudBaseRunServerFlowConfOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyCloudBaseRunServerFlowConfRequest&, ModifyCloudBaseRunServerFlowConfOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudBaseRunServerFlowConfAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCloudBaseRunServerVersionResponse> ModifyCloudBaseRunServerVersionOutcome;
+                typedef std::future<ModifyCloudBaseRunServerVersionOutcome> ModifyCloudBaseRunServerVersionOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::ModifyCloudBaseRunServerVersionRequest&, ModifyCloudBaseRunServerVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudBaseRunServerVersionAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDatabaseACLResponse> ModifyDatabaseACLOutcome;
                 typedef std::future<ModifyDatabaseACLOutcome> ModifyDatabaseACLOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyDatabaseACLRequest&, ModifyDatabaseACLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDatabaseACLAsyncHandler;
@@ -1006,6 +1011,15 @@ namespace TencentCloud
                 ModifyCloudBaseRunServerFlowConfOutcome ModifyCloudBaseRunServerFlowConf(const Model::ModifyCloudBaseRunServerFlowConfRequest &request);
                 void ModifyCloudBaseRunServerFlowConfAsync(const Model::ModifyCloudBaseRunServerFlowConfRequest& request, const ModifyCloudBaseRunServerFlowConfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyCloudBaseRunServerFlowConfOutcomeCallable ModifyCloudBaseRunServerFlowConfCallable(const Model::ModifyCloudBaseRunServerFlowConfRequest& request);
+
+                /**
+                 *修改服务版本的副本数，环境变量
+                 * @param req ModifyCloudBaseRunServerVersionRequest
+                 * @return ModifyCloudBaseRunServerVersionOutcome
+                 */
+                ModifyCloudBaseRunServerVersionOutcome ModifyCloudBaseRunServerVersion(const Model::ModifyCloudBaseRunServerVersionRequest &request);
+                void ModifyCloudBaseRunServerVersionAsync(const Model::ModifyCloudBaseRunServerVersionRequest& request, const ModifyCloudBaseRunServerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCloudBaseRunServerVersionOutcomeCallable ModifyCloudBaseRunServerVersionCallable(const Model::ModifyCloudBaseRunServerVersionRequest& request);
 
                 /**
                  *修改数据库权限

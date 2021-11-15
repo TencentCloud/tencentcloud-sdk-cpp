@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取资源版本号
+                     * @return ResourceConfigVersion 资源版本号
+                     */
+                    int64_t GetResourceConfigVersion() const;
+
+                    /**
+                     * 设置资源版本号
+                     * @param ResourceConfigVersion 资源版本号
+                     */
+                    void SetResourceConfigVersion(const int64_t& _resourceConfigVersion);
+
+                    /**
+                     * 判断参数 ResourceConfigVersion 是否已赋值
+                     * @return ResourceConfigVersion 是否已赋值
+                     */
+                    bool ResourceConfigVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 资源版本号
+                     */
+                    int64_t m_resourceConfigVersion;
+                    bool m_resourceConfigVersionHasBeenSet;
 
                 };
             }

@@ -59,6 +59,8 @@
 #include <tencentcloud/cpdp/v20190820/model/CreateAcctResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateAgentTaxPaymentInfosRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateAgentTaxPaymentInfosResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateAnchorRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateAnchorResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateBatchPaymentRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateBatchPaymentResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateCustAcctIdRequest.h>
@@ -237,6 +239,8 @@
 #include <tencentcloud/cpdp/v20190820/model/UnifiedTlinxOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/UploadExternalAnchorInfoRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/UploadExternalAnchorInfoResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/UploadFileRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/UploadFileResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/UploadTaxListRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/UploadTaxListResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/UploadTaxPaymentRequest.h>
@@ -311,6 +315,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAgentTaxPaymentInfosResponse> CreateAgentTaxPaymentInfosOutcome;
                 typedef std::future<CreateAgentTaxPaymentInfosOutcome> CreateAgentTaxPaymentInfosOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateAgentTaxPaymentInfosRequest&, CreateAgentTaxPaymentInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAgentTaxPaymentInfosAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAnchorResponse> CreateAnchorOutcome;
+                typedef std::future<CreateAnchorOutcome> CreateAnchorOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::CreateAnchorRequest&, CreateAnchorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAnchorAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateBatchPaymentResponse> CreateBatchPaymentOutcome;
                 typedef std::future<CreateBatchPaymentOutcome> CreateBatchPaymentOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateBatchPaymentRequest&, CreateBatchPaymentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchPaymentAsyncHandler;
@@ -578,6 +585,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UploadExternalAnchorInfoResponse> UploadExternalAnchorInfoOutcome;
                 typedef std::future<UploadExternalAnchorInfoOutcome> UploadExternalAnchorInfoOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::UploadExternalAnchorInfoRequest&, UploadExternalAnchorInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadExternalAnchorInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::UploadFileResponse> UploadFileOutcome;
+                typedef std::future<UploadFileOutcome> UploadFileOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::UploadFileRequest&, UploadFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadFileAsyncHandler;
                 typedef Outcome<Core::Error, Model::UploadTaxListResponse> UploadTaxListOutcome;
                 typedef std::future<UploadTaxListOutcome> UploadTaxListOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::UploadTaxListRequest&, UploadTaxListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadTaxListAsyncHandler;
@@ -758,6 +768,15 @@ namespace TencentCloud
                 CreateAgentTaxPaymentInfosOutcome CreateAgentTaxPaymentInfos(const Model::CreateAgentTaxPaymentInfosRequest &request);
                 void CreateAgentTaxPaymentInfosAsync(const Model::CreateAgentTaxPaymentInfosRequest& request, const CreateAgentTaxPaymentInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAgentTaxPaymentInfosOutcomeCallable CreateAgentTaxPaymentInfosCallable(const Model::CreateAgentTaxPaymentInfosRequest& request);
+
+                /**
+                 *直播平台-主播入驻
+                 * @param req CreateAnchorRequest
+                 * @return CreateAnchorOutcome
+                 */
+                CreateAnchorOutcome CreateAnchor(const Model::CreateAnchorRequest &request);
+                void CreateAnchorAsync(const Model::CreateAnchorRequest& request, const CreateAnchorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAnchorOutcomeCallable CreateAnchorCallable(const Model::CreateAnchorRequest& request);
 
                 /**
                  *灵云-批量主播转账接口
@@ -1561,6 +1580,15 @@ namespace TencentCloud
                 UploadExternalAnchorInfoOutcome UploadExternalAnchorInfo(const Model::UploadExternalAnchorInfoRequest &request);
                 void UploadExternalAnchorInfoAsync(const Model::UploadExternalAnchorInfoRequest& request, const UploadExternalAnchorInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UploadExternalAnchorInfoOutcomeCallable UploadExternalAnchorInfoCallable(const Model::UploadExternalAnchorInfoRequest& request);
+
+                /**
+                 *直播平台-文件上传
+                 * @param req UploadFileRequest
+                 * @return UploadFileOutcome
+                 */
+                UploadFileOutcome UploadFile(const Model::UploadFileRequest &request);
+                void UploadFileAsync(const Model::UploadFileRequest& request, const UploadFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UploadFileOutcomeCallable UploadFileCallable(const Model::UploadFileRequest& request);
 
                 /**
                  *直播平台-上传代理商完税列表

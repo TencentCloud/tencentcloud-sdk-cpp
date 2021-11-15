@@ -62,24 +62,6 @@ namespace TencentCloud
                     bool ResourceLocHasBeenSet() const;
 
                     /**
-                     * 获取资源名称
-                     * @return Name 资源名称
-                     */
-                    std::string GetName() const;
-
-                    /**
-                     * 设置资源名称
-                     * @param Name 资源名称
-                     */
-                    void SetName(const std::string& _name);
-
-                    /**
-                     * 判断参数 Name 是否已赋值
-                     * @return Name 是否已赋值
-                     */
-                    bool NameHasBeenSet() const;
-
-                    /**
                      * 获取资源类型。目前只支持 JAR，取值为 1
                      * @return ResourceType 资源类型。目前只支持 JAR，取值为 1
                      */
@@ -116,6 +98,24 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
+                     * 获取资源名称
+                     * @return Name 资源名称
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置资源名称
+                     * @param Name 资源名称
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
                      * 获取资源版本描述
                      * @return ResourceConfigRemark 资源版本描述
                      */
@@ -133,6 +133,24 @@ namespace TencentCloud
                      */
                     bool ResourceConfigRemarkHasBeenSet() const;
 
+                    /**
+                     * 获取目录ID
+                     * @return FolderId 目录ID
+                     */
+                    std::string GetFolderId() const;
+
+                    /**
+                     * 设置目录ID
+                     * @param FolderId 目录ID
+                     */
+                    void SetFolderId(const std::string& _folderId);
+
+                    /**
+                     * 判断参数 FolderId 是否已赋值
+                     * @return FolderId 是否已赋值
+                     */
+                    bool FolderIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -140,12 +158,6 @@ namespace TencentCloud
                      */
                     ResourceLoc m_resourceLoc;
                     bool m_resourceLocHasBeenSet;
-
-                    /**
-                     * 资源名称
-                     */
-                    std::string m_name;
-                    bool m_nameHasBeenSet;
 
                     /**
                      * 资源类型。目前只支持 JAR，取值为 1
@@ -160,10 +172,22 @@ namespace TencentCloud
                     bool m_remarkHasBeenSet;
 
                     /**
+                     * 资源名称
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
+
+                    /**
                      * 资源版本描述
                      */
                     std::string m_resourceConfigRemark;
                     bool m_resourceConfigRemarkHasBeenSet;
+
+                    /**
+                     * 目录ID
+                     */
+                    std::string m_folderId;
+                    bool m_folderIdHasBeenSet;
 
                 };
             }

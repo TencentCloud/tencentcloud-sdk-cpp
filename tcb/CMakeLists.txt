@@ -211,6 +211,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CloudBaseProjectVersion.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvDealRegionRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeDatabaseACLResponse.h
+  include/tencentcloud/tcb/v20180608/model/ModifyCloudBaseRunServerVersionResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeExtensionUploadInfoResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyEnvRequest.h
   include/tencentcloud/tcb/v20180608/model/PostpayEnvQuota.h
@@ -218,6 +219,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribePostpayPackageFreeQuotasResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeExtraPkgBillingInfoResponse.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseCodeRepoName.h
+  include/tencentcloud/tcb/v20180608/model/ModifyCloudBaseRunServerVersionRequest.h
   include/tencentcloud/tcb/v20180608/model/RollUpdateCloudBaseRunServerVersionRequest.h
   )
 
@@ -415,6 +417,7 @@ set(tcb_src
   src/v20180608/model/CloudBaseProjectVersion.cpp
   src/v20180608/model/DescribeEnvDealRegionRequest.cpp
   src/v20180608/model/DescribeDatabaseACLResponse.cpp
+  src/v20180608/model/ModifyCloudBaseRunServerVersionResponse.cpp
   src/v20180608/model/DescribeExtensionUploadInfoResponse.cpp
   src/v20180608/model/ModifyEnvRequest.cpp
   src/v20180608/model/PostpayEnvQuota.cpp
@@ -422,6 +425,7 @@ set(tcb_src
   src/v20180608/model/DescribePostpayPackageFreeQuotasResponse.cpp
   src/v20180608/model/DescribeExtraPkgBillingInfoResponse.cpp
   src/v20180608/model/CloudBaseCodeRepoName.cpp
+  src/v20180608/model/ModifyCloudBaseRunServerVersionRequest.cpp
   src/v20180608/model/RollUpdateCloudBaseRunServerVersionRequest.cpp
   )
 

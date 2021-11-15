@@ -814,6 +814,49 @@ CpdpClient::CreateAgentTaxPaymentInfosOutcomeCallable CpdpClient::CreateAgentTax
     return task->get_future();
 }
 
+CpdpClient::CreateAnchorOutcome CpdpClient::CreateAnchor(const CreateAnchorRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAnchor");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAnchorResponse rsp = CreateAnchorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAnchorOutcome(rsp);
+        else
+            return CreateAnchorOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAnchorOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::CreateAnchorAsync(const CreateAnchorRequest& request, const CreateAnchorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAnchor(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::CreateAnchorOutcomeCallable CpdpClient::CreateAnchorCallable(const CreateAnchorRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAnchorOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAnchor(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::CreateBatchPaymentOutcome CpdpClient::CreateBatchPayment(const CreateBatchPaymentRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateBatchPayment");
@@ -4634,6 +4677,49 @@ CpdpClient::UploadExternalAnchorInfoOutcomeCallable CpdpClient::UploadExternalAn
         [this, request]()
         {
             return this->UploadExternalAnchorInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::UploadFileOutcome CpdpClient::UploadFile(const UploadFileRequest &request)
+{
+    auto outcome = MakeRequest(request, "UploadFile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UploadFileResponse rsp = UploadFileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UploadFileOutcome(rsp);
+        else
+            return UploadFileOutcome(o.GetError());
+    }
+    else
+    {
+        return UploadFileOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::UploadFileAsync(const UploadFileRequest& request, const UploadFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UploadFile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::UploadFileOutcomeCallable CpdpClient::UploadFileCallable(const UploadFileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UploadFileOutcome()>>(
+        [this, request]()
+        {
+            return this->UploadFile(request);
         }
     );
 

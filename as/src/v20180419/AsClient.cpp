@@ -384,49 +384,6 @@ AsClient::CreateNotificationConfigurationOutcomeCallable AsClient::CreateNotific
     return task->get_future();
 }
 
-AsClient::CreatePaiInstanceOutcome AsClient::CreatePaiInstance(const CreatePaiInstanceRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreatePaiInstance");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreatePaiInstanceResponse rsp = CreatePaiInstanceResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreatePaiInstanceOutcome(rsp);
-        else
-            return CreatePaiInstanceOutcome(o.GetError());
-    }
-    else
-    {
-        return CreatePaiInstanceOutcome(outcome.GetError());
-    }
-}
-
-void AsClient::CreatePaiInstanceAsync(const CreatePaiInstanceRequest& request, const CreatePaiInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreatePaiInstance(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-AsClient::CreatePaiInstanceOutcomeCallable AsClient::CreatePaiInstanceCallable(const CreatePaiInstanceRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreatePaiInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreatePaiInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 AsClient::CreateScalingPolicyOutcome AsClient::CreateScalingPolicy(const CreateScalingPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateScalingPolicy");

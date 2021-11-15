@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/as/v20180419/model/CreatePaiInstanceResponse.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyCloudBaseRunServerVersionResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::As::V20180419::Model;
+using namespace TencentCloud::Tcb::V20180608::Model;
 using namespace std;
 
-CreatePaiInstanceResponse::CreatePaiInstanceResponse() :
-    m_instanceIdSetHasBeenSet(false)
+ModifyCloudBaseRunServerVersionResponse::ModifyCloudBaseRunServerVersionResponse() :
+    m_resultHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome CreatePaiInstanceResponse::Deserialize(const string &payload)
+CoreInternalOutcome ModifyCloudBaseRunServerVersionResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,40 +62,32 @@ CoreInternalOutcome CreatePaiInstanceResponse::Deserialize(const string &payload
     }
 
 
-    if (rsp.HasMember("InstanceIdSet") && !rsp["InstanceIdSet"].IsNull())
+    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
     {
-        if (!rsp["InstanceIdSet"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `InstanceIdSet` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["InstanceIdSet"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["Result"].IsString())
         {
-            m_instanceIdSet.push_back((*itr).GetString());
+            return CoreInternalOutcome(Core::Error("response `Result` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_instanceIdSetHasBeenSet = true;
+        m_result = string(rsp["Result"].GetString());
+        m_resultHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string CreatePaiInstanceResponse::ToJsonString() const
+string ModifyCloudBaseRunServerVersionResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_instanceIdSetHasBeenSet)
+    if (m_resultHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceIdSet";
+        string key = "Result";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_instanceIdSet.begin(); itr != m_instanceIdSet.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
+        value.AddMember(iKey, rapidjson::Value(m_result.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,14 +102,14 @@ string CreatePaiInstanceResponse::ToJsonString() const
 }
 
 
-vector<string> CreatePaiInstanceResponse::GetInstanceIdSet() const
+string ModifyCloudBaseRunServerVersionResponse::GetResult() const
 {
-    return m_instanceIdSet;
+    return m_result;
 }
 
-bool CreatePaiInstanceResponse::InstanceIdSetHasBeenSet() const
+bool ModifyCloudBaseRunServerVersionResponse::ResultHasBeenSet() const
 {
-    return m_instanceIdSetHasBeenSet;
+    return m_resultHasBeenSet;
 }
 
 

@@ -26,7 +26,8 @@ DescribeResourceRelatedJobsRequest::DescribeResourceRelatedJobsRequest() :
     m_resourceIdHasBeenSet(false),
     m_dESCByJobConfigCreateTimeHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_resourceConfigVersionHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DescribeResourceRelatedJobsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_resourceConfigVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceConfigVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_resourceConfigVersion, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DescribeResourceRelatedJobsRequest::SetLimit(const int64_t& _limit)
 bool DescribeResourceRelatedJobsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+int64_t DescribeResourceRelatedJobsRequest::GetResourceConfigVersion() const
+{
+    return m_resourceConfigVersion;
+}
+
+void DescribeResourceRelatedJobsRequest::SetResourceConfigVersion(const int64_t& _resourceConfigVersion)
+{
+    m_resourceConfigVersion = _resourceConfigVersion;
+    m_resourceConfigVersionHasBeenSet = true;
+}
+
+bool DescribeResourceRelatedJobsRequest::ResourceConfigVersionHasBeenSet() const
+{
+    return m_resourceConfigVersionHasBeenSet;
 }
 
 

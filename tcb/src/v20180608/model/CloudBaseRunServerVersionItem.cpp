@@ -37,7 +37,8 @@ CloudBaseRunServerVersionItem::CloudBaseRunServerVersionItem() :
     m_maxReplicasHasBeenSet(false),
     m_runIdHasBeenSet(false),
     m_percentHasBeenSet(false),
-    m_currentReplicasHasBeenSet(false)
+    m_currentReplicasHasBeenSet(false),
+    m_architectureHasBeenSet(false)
 {
 }
 
@@ -233,6 +234,16 @@ CoreInternalOutcome CloudBaseRunServerVersionItem::Deserialize(const rapidjson::
         m_currentReplicasHasBeenSet = true;
     }
 
+    if (value.HasMember("Architecture") && !value["Architecture"].IsNull())
+    {
+        if (!value["Architecture"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunServerVersionItem.Architecture` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_architecture = string(value["Architecture"].GetString());
+        m_architectureHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -382,6 +393,14 @@ void CloudBaseRunServerVersionItem::ToJsonObject(rapidjson::Value &value, rapidj
         string key = "CurrentReplicas";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_currentReplicas, allocator);
+    }
+
+    if (m_architectureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Architecture";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_architecture.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -657,5 +676,21 @@ void CloudBaseRunServerVersionItem::SetCurrentReplicas(const int64_t& _currentRe
 bool CloudBaseRunServerVersionItem::CurrentReplicasHasBeenSet() const
 {
     return m_currentReplicasHasBeenSet;
+}
+
+string CloudBaseRunServerVersionItem::GetArchitecture() const
+{
+    return m_architecture;
+}
+
+void CloudBaseRunServerVersionItem::SetArchitecture(const string& _architecture)
+{
+    m_architecture = _architecture;
+    m_architectureHasBeenSet = true;
+}
+
+bool CloudBaseRunServerVersionItem::ArchitectureHasBeenSet() const
+{
+    return m_architectureHasBeenSet;
 }
 

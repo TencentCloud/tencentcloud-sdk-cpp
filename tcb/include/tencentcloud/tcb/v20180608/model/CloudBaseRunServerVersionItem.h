@@ -414,6 +414,28 @@ namespace TencentCloud
                      */
                     bool CurrentReplicasHasBeenSet() const;
 
+                    /**
+                     * 获取Monolithic，Microservice
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Architecture Monolithic，Microservice
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetArchitecture() const;
+
+                    /**
+                     * 设置Monolithic，Microservice
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Architecture Monolithic，Microservice
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetArchitecture(const std::string& _architecture);
+
+                    /**
+                     * 判断参数 Architecture 是否已赋值
+                     * @return Architecture 是否已赋值
+                     */
+                    bool ArchitectureHasBeenSet() const;
+
                 private:
 
                     /**
@@ -532,6 +554,13 @@ namespace TencentCloud
                      */
                     int64_t m_currentReplicas;
                     bool m_currentReplicasHasBeenSet;
+
+                    /**
+                     * Monolithic，Microservice
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_architecture;
+                    bool m_architectureHasBeenSet;
 
                 };
             }

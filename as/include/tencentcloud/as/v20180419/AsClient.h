@@ -39,8 +39,6 @@
 #include <tencentcloud/as/v20180419/model/CreateLifecycleHookResponse.h>
 #include <tencentcloud/as/v20180419/model/CreateNotificationConfigurationRequest.h>
 #include <tencentcloud/as/v20180419/model/CreateNotificationConfigurationResponse.h>
-#include <tencentcloud/as/v20180419/model/CreatePaiInstanceRequest.h>
-#include <tencentcloud/as/v20180419/model/CreatePaiInstanceResponse.h>
 #include <tencentcloud/as/v20180419/model/CreateScalingPolicyRequest.h>
 #include <tencentcloud/as/v20180419/model/CreateScalingPolicyResponse.h>
 #include <tencentcloud/as/v20180419/model/CreateScheduledActionRequest.h>
@@ -157,9 +155,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateNotificationConfigurationResponse> CreateNotificationConfigurationOutcome;
                 typedef std::future<CreateNotificationConfigurationOutcome> CreateNotificationConfigurationOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::CreateNotificationConfigurationRequest&, CreateNotificationConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNotificationConfigurationAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreatePaiInstanceResponse> CreatePaiInstanceOutcome;
-                typedef std::future<CreatePaiInstanceOutcome> CreatePaiInstanceOutcomeCallable;
-                typedef std::function<void(const AsClient*, const Model::CreatePaiInstanceRequest&, CreatePaiInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePaiInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateScalingPolicyResponse> CreateScalingPolicyOutcome;
                 typedef std::future<CreateScalingPolicyOutcome> CreateScalingPolicyOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::CreateScalingPolicyRequest&, CreateScalingPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScalingPolicyAsyncHandler;
@@ -407,15 +402,6 @@ namespace TencentCloud
                 CreateNotificationConfigurationOutcome CreateNotificationConfiguration(const Model::CreateNotificationConfigurationRequest &request);
                 void CreateNotificationConfigurationAsync(const Model::CreateNotificationConfigurationRequest& request, const CreateNotificationConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateNotificationConfigurationOutcomeCallable CreateNotificationConfigurationCallable(const Model::CreateNotificationConfigurationRequest& request);
-
-                /**
-                 *本接口 (CreatePaiInstance) 用于创建一个指定配置的PAI实例。
-                 * @param req CreatePaiInstanceRequest
-                 * @return CreatePaiInstanceOutcome
-                 */
-                CreatePaiInstanceOutcome CreatePaiInstance(const Model::CreatePaiInstanceRequest &request);
-                void CreatePaiInstanceAsync(const Model::CreatePaiInstanceRequest& request, const CreatePaiInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreatePaiInstanceOutcomeCallable CreatePaiInstanceCallable(const Model::CreatePaiInstanceRequest& request);
 
                 /**
                  *本接口（CreateScalingPolicy）用于创建告警触发策略。

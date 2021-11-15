@@ -24,10 +24,11 @@ using namespace std;
 
 CreateResourceRequest::CreateResourceRequest() :
     m_resourceLocHasBeenSet(false),
-    m_nameHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_resourceConfigRemarkHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_resourceConfigRemarkHasBeenSet(false),
+    m_folderIdHasBeenSet(false)
 {
 }
 
@@ -47,14 +48,6 @@ string CreateResourceRequest::ToJsonString() const
         m_resourceLoc.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_nameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Name";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_resourceTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -71,12 +64,28 @@ string CreateResourceRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_resourceConfigRemarkHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceConfigRemark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_resourceConfigRemark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_folderIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FolderId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_folderId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -101,22 +110,6 @@ void CreateResourceRequest::SetResourceLoc(const ResourceLoc& _resourceLoc)
 bool CreateResourceRequest::ResourceLocHasBeenSet() const
 {
     return m_resourceLocHasBeenSet;
-}
-
-string CreateResourceRequest::GetName() const
-{
-    return m_name;
-}
-
-void CreateResourceRequest::SetName(const string& _name)
-{
-    m_name = _name;
-    m_nameHasBeenSet = true;
-}
-
-bool CreateResourceRequest::NameHasBeenSet() const
-{
-    return m_nameHasBeenSet;
 }
 
 int64_t CreateResourceRequest::GetResourceType() const
@@ -151,6 +144,22 @@ bool CreateResourceRequest::RemarkHasBeenSet() const
     return m_remarkHasBeenSet;
 }
 
+string CreateResourceRequest::GetName() const
+{
+    return m_name;
+}
+
+void CreateResourceRequest::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool CreateResourceRequest::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
 string CreateResourceRequest::GetResourceConfigRemark() const
 {
     return m_resourceConfigRemark;
@@ -165,6 +174,22 @@ void CreateResourceRequest::SetResourceConfigRemark(const string& _resourceConfi
 bool CreateResourceRequest::ResourceConfigRemarkHasBeenSet() const
 {
     return m_resourceConfigRemarkHasBeenSet;
+}
+
+string CreateResourceRequest::GetFolderId() const
+{
+    return m_folderId;
+}
+
+void CreateResourceRequest::SetFolderId(const string& _folderId)
+{
+    m_folderId = _folderId;
+    m_folderIdHasBeenSet = true;
+}
+
+bool CreateResourceRequest::FolderIdHasBeenSet() const
+{
+    return m_folderIdHasBeenSet;
 }
 
 

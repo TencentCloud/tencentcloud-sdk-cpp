@@ -2878,6 +2878,49 @@ TcbClient::ModifyCloudBaseRunServerFlowConfOutcomeCallable TcbClient::ModifyClou
     return task->get_future();
 }
 
+TcbClient::ModifyCloudBaseRunServerVersionOutcome TcbClient::ModifyCloudBaseRunServerVersion(const ModifyCloudBaseRunServerVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCloudBaseRunServerVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCloudBaseRunServerVersionResponse rsp = ModifyCloudBaseRunServerVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCloudBaseRunServerVersionOutcome(rsp);
+        else
+            return ModifyCloudBaseRunServerVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCloudBaseRunServerVersionOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::ModifyCloudBaseRunServerVersionAsync(const ModifyCloudBaseRunServerVersionRequest& request, const ModifyCloudBaseRunServerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCloudBaseRunServerVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::ModifyCloudBaseRunServerVersionOutcomeCallable TcbClient::ModifyCloudBaseRunServerVersionCallable(const ModifyCloudBaseRunServerVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCloudBaseRunServerVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCloudBaseRunServerVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::ModifyDatabaseACLOutcome TcbClient::ModifyDatabaseACL(const ModifyDatabaseACLRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDatabaseACL");
