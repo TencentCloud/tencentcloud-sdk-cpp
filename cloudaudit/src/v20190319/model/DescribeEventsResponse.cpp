@@ -26,7 +26,8 @@ using namespace std;
 DescribeEventsResponse::DescribeEventsResponse() :
     m_listOverHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
-    m_eventsHasBeenSet(false)
+    m_eventsHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,16 @@ CoreInternalOutcome DescribeEventsResponse::Deserialize(const string &payload)
         m_eventsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -143,6 +154,14 @@ string DescribeEventsResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -185,6 +204,16 @@ vector<Event> DescribeEventsResponse::GetEvents() const
 bool DescribeEventsResponse::EventsHasBeenSet() const
 {
     return m_eventsHasBeenSet;
+}
+
+uint64_t DescribeEventsResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeEventsResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
 }
 
 

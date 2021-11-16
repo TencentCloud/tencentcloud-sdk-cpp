@@ -33,7 +33,9 @@ Template::Template() :
     m_medicalRecordInfoHasBeenSet(false),
     m_hospitalizationHasBeenSet(false),
     m_surgeryHasBeenSet(false),
-    m_electrocardiogramHasBeenSet(false)
+    m_electrocardiogramHasBeenSet(false),
+    m_endoscopyHasBeenSet(false),
+    m_prescriptionHasBeenSet(false)
 {
 }
 
@@ -256,6 +258,40 @@ CoreInternalOutcome Template::Deserialize(const rapidjson::Value &value)
         m_electrocardiogramHasBeenSet = true;
     }
 
+    if (value.HasMember("Endoscopy") && !value["Endoscopy"].IsNull())
+    {
+        if (!value["Endoscopy"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Template.Endoscopy` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_endoscopy.Deserialize(value["Endoscopy"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_endoscopyHasBeenSet = true;
+    }
+
+    if (value.HasMember("Prescription") && !value["Prescription"].IsNull())
+    {
+        if (!value["Prescription"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Template.Prescription` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_prescription.Deserialize(value["Prescription"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_prescriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -377,6 +413,24 @@ void Template::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_electrocardiogram.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_endoscopyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Endoscopy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_endoscopy.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_prescriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Prescription";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_prescription.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -588,5 +642,37 @@ void Template::SetElectrocardiogram(const Electrocardiogram& _electrocardiogram)
 bool Template::ElectrocardiogramHasBeenSet() const
 {
     return m_electrocardiogramHasBeenSet;
+}
+
+Endoscopy Template::GetEndoscopy() const
+{
+    return m_endoscopy;
+}
+
+void Template::SetEndoscopy(const Endoscopy& _endoscopy)
+{
+    m_endoscopy = _endoscopy;
+    m_endoscopyHasBeenSet = true;
+}
+
+bool Template::EndoscopyHasBeenSet() const
+{
+    return m_endoscopyHasBeenSet;
+}
+
+Prescription Template::GetPrescription() const
+{
+    return m_prescription;
+}
+
+void Template::SetPrescription(const Prescription& _prescription)
+{
+    m_prescription = _prescription;
+    m_prescriptionHasBeenSet = true;
+}
+
+bool Template::PrescriptionHasBeenSet() const
+{
+    return m_prescriptionHasBeenSet;
 }
 

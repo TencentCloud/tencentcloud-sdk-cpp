@@ -101,30 +101,30 @@ namespace TencentCloud
                     bool IsStaticPPTHasBeenSet() const;
 
                     /**
-                     * 获取注意: 该参数已废弃, 请使用 MinScaleResolution
+                     * 获取注意: 该参数已废弃, 请使用最新的 [云API SDK](https://cloud.tencent.com/document/api/1137/40060#SDK) ，使用 MinScaleResolution字段传递分辨率
 
 转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率
 
-注意分辨率宽高中间为英文字母"xyz"的"x"
-                     * @return MinResolution 注意: 该参数已废弃, 请使用 MinScaleResolution
+示例：1280x720，注意分辨率宽高中间为英文字母"xyz"的"x"
+                     * @return MinResolution 注意: 该参数已废弃, 请使用最新的 [云API SDK](https://cloud.tencent.com/document/api/1137/40060#SDK) ，使用 MinScaleResolution字段传递分辨率
 
 转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率
 
-注意分辨率宽高中间为英文字母"xyz"的"x"
+示例：1280x720，注意分辨率宽高中间为英文字母"xyz"的"x"
                      */
                     std::string GetMinResolution() const;
 
                     /**
-                     * 设置注意: 该参数已废弃, 请使用 MinScaleResolution
+                     * 设置注意: 该参数已废弃, 请使用最新的 [云API SDK](https://cloud.tencent.com/document/api/1137/40060#SDK) ，使用 MinScaleResolution字段传递分辨率
 
 转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率
 
-注意分辨率宽高中间为英文字母"xyz"的"x"
-                     * @param MinResolution 注意: 该参数已废弃, 请使用 MinScaleResolution
+示例：1280x720，注意分辨率宽高中间为英文字母"xyz"的"x"
+                     * @param MinResolution 注意: 该参数已废弃, 请使用最新的 [云API SDK](https://cloud.tencent.com/document/api/1137/40060#SDK) ，使用 MinScaleResolution字段传递分辨率
 
 转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率
 
-注意分辨率宽高中间为英文字母"xyz"的"x"
+示例：1280x720，注意分辨率宽高中间为英文字母"xyz"的"x"
                      */
                     void SetMinResolution(const std::string& _minResolution);
 
@@ -286,11 +286,11 @@ tar.gz： 生成`.tar.gz`压缩包
                     bool m_isStaticPPTHasBeenSet;
 
                     /**
-                     * 注意: 该参数已废弃, 请使用 MinScaleResolution
+                     * 注意: 该参数已废弃, 请使用最新的 [云API SDK](https://cloud.tencent.com/document/api/1137/40060#SDK) ，使用 MinScaleResolution字段传递分辨率
 
 转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率
 
-注意分辨率宽高中间为英文字母"xyz"的"x"
+示例：1280x720，注意分辨率宽高中间为英文字母"xyz"的"x"
                      */
                     std::string m_minResolution;
                     bool m_minResolutionHasBeenSet;

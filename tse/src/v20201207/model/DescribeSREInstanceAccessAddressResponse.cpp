@@ -26,7 +26,9 @@ using namespace std;
 DescribeSREInstanceAccessAddressResponse::DescribeSREInstanceAccessAddressResponse() :
     m_intranetAddressHasBeenSet(false),
     m_internetAddressHasBeenSet(false),
-    m_envAddressInfosHasBeenSet(false)
+    m_envAddressInfosHasBeenSet(false),
+    m_consoleInternetAddressHasBeenSet(false),
+    m_consoleIntranetAddressHasBeenSet(false)
 {
 }
 
@@ -104,6 +106,26 @@ CoreInternalOutcome DescribeSREInstanceAccessAddressResponse::Deserialize(const 
         m_envAddressInfosHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ConsoleInternetAddress") && !rsp["ConsoleInternetAddress"].IsNull())
+    {
+        if (!rsp["ConsoleInternetAddress"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsoleInternetAddress` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_consoleInternetAddress = string(rsp["ConsoleInternetAddress"].GetString());
+        m_consoleInternetAddressHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ConsoleIntranetAddress") && !rsp["ConsoleIntranetAddress"].IsNull())
+    {
+        if (!rsp["ConsoleIntranetAddress"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsoleIntranetAddress` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_consoleIntranetAddress = string(rsp["ConsoleIntranetAddress"].GetString());
+        m_consoleIntranetAddressHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -143,6 +165,22 @@ string DescribeSREInstanceAccessAddressResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_consoleInternetAddressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsoleInternetAddress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_consoleInternetAddress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_consoleIntranetAddressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsoleIntranetAddress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_consoleIntranetAddress.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -185,6 +223,26 @@ vector<EnvAddressInfo> DescribeSREInstanceAccessAddressResponse::GetEnvAddressIn
 bool DescribeSREInstanceAccessAddressResponse::EnvAddressInfosHasBeenSet() const
 {
     return m_envAddressInfosHasBeenSet;
+}
+
+string DescribeSREInstanceAccessAddressResponse::GetConsoleInternetAddress() const
+{
+    return m_consoleInternetAddress;
+}
+
+bool DescribeSREInstanceAccessAddressResponse::ConsoleInternetAddressHasBeenSet() const
+{
+    return m_consoleInternetAddressHasBeenSet;
+}
+
+string DescribeSREInstanceAccessAddressResponse::GetConsoleIntranetAddress() const
+{
+    return m_consoleIntranetAddress;
+}
+
+bool DescribeSREInstanceAccessAddressResponse::ConsoleIntranetAddressHasBeenSet() const
+{
+    return m_consoleIntranetAddressHasBeenSet;
 }
 
 

@@ -23,8 +23,10 @@ using namespace TencentCloud::Sms::V20210111::Model;
 using namespace std;
 
 DescribeSmsTemplateListRequest::DescribeSmsTemplateListRequest() :
+    m_internationalHasBeenSet(false),
     m_templateIdSetHasBeenSet(false),
-    m_internationalHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false)
 {
 }
 
@@ -34,6 +36,14 @@ string DescribeSmsTemplateListRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_internationalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "International";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_international, allocator);
+    }
 
     if (m_templateIdSetHasBeenSet)
     {
@@ -48,12 +58,20 @@ string DescribeSmsTemplateListRequest::ToJsonString() const
         }
     }
 
-    if (m_internationalHasBeenSet)
+    if (m_limitHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "International";
+        string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_international, allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
 
@@ -63,6 +81,22 @@ string DescribeSmsTemplateListRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t DescribeSmsTemplateListRequest::GetInternational() const
+{
+    return m_international;
+}
+
+void DescribeSmsTemplateListRequest::SetInternational(const uint64_t& _international)
+{
+    m_international = _international;
+    m_internationalHasBeenSet = true;
+}
+
+bool DescribeSmsTemplateListRequest::InternationalHasBeenSet() const
+{
+    return m_internationalHasBeenSet;
+}
 
 vector<uint64_t> DescribeSmsTemplateListRequest::GetTemplateIdSet() const
 {
@@ -80,20 +114,36 @@ bool DescribeSmsTemplateListRequest::TemplateIdSetHasBeenSet() const
     return m_templateIdSetHasBeenSet;
 }
 
-uint64_t DescribeSmsTemplateListRequest::GetInternational() const
+uint64_t DescribeSmsTemplateListRequest::GetLimit() const
 {
-    return m_international;
+    return m_limit;
 }
 
-void DescribeSmsTemplateListRequest::SetInternational(const uint64_t& _international)
+void DescribeSmsTemplateListRequest::SetLimit(const uint64_t& _limit)
 {
-    m_international = _international;
-    m_internationalHasBeenSet = true;
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
 }
 
-bool DescribeSmsTemplateListRequest::InternationalHasBeenSet() const
+bool DescribeSmsTemplateListRequest::LimitHasBeenSet() const
 {
-    return m_internationalHasBeenSet;
+    return m_limitHasBeenSet;
+}
+
+uint64_t DescribeSmsTemplateListRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeSmsTemplateListRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeSmsTemplateListRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 

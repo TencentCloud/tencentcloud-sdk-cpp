@@ -82,6 +82,20 @@ namespace TencentCloud
                      */
                     bool EventsHasBeenSet() const;
 
+                    /**
+                     * 获取总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TotalCount 总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     */
+                    bool TotalCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -102,6 +116,13 @@ namespace TencentCloud
                      */
                     std::vector<Event> m_events;
                     bool m_eventsHasBeenSet;
+
+                    /**
+                     * 总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                 };
             }

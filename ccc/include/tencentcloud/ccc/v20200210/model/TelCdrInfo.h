@@ -753,6 +753,28 @@ notInService       不在服务区
                      */
                     bool ProtectedCalleeHasBeenSet() const;
 
+                    /**
+                     * 获取客户自定义数据（User-to-User Interface）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Uui 客户自定义数据（User-to-User Interface）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUui() const;
+
+                    /**
+                     * 设置客户自定义数据（User-to-User Interface）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Uui 客户自定义数据（User-to-User Interface）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUui(const std::string& _uui);
+
+                    /**
+                     * 判断参数 Uui 是否已赋值
+                     * @return Uui 是否已赋值
+                     */
+                    bool UuiHasBeenSet() const;
+
                 private:
 
                     /**
@@ -969,6 +991,13 @@ notInService       不在服务区
                      */
                     std::string m_protectedCallee;
                     bool m_protectedCalleeHasBeenSet;
+
+                    /**
+                     * 客户自定义数据（User-to-User Interface）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_uui;
+                    bool m_uuiHasBeenSet;
 
                 };
             }

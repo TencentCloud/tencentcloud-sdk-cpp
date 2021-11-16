@@ -80,6 +80,34 @@ namespace TencentCloud
                      */
                     bool EnvAddressInfosHasBeenSet() const;
 
+                    /**
+                     * 获取控制台公网访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConsoleInternetAddress 控制台公网访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetConsoleInternetAddress() const;
+
+                    /**
+                     * 判断参数 ConsoleInternetAddress 是否已赋值
+                     * @return ConsoleInternetAddress 是否已赋值
+                     */
+                    bool ConsoleInternetAddressHasBeenSet() const;
+
+                    /**
+                     * 获取控制台内网访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConsoleIntranetAddress 控制台内网访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetConsoleIntranetAddress() const;
+
+                    /**
+                     * 判断参数 ConsoleIntranetAddress 是否已赋值
+                     * @return ConsoleIntranetAddress 是否已赋值
+                     */
+                    bool ConsoleIntranetAddressHasBeenSet() const;
+
                 private:
 
                     /**
@@ -99,6 +127,20 @@ namespace TencentCloud
                      */
                     std::vector<EnvAddressInfo> m_envAddressInfos;
                     bool m_envAddressInfosHasBeenSet;
+
+                    /**
+                     * 控制台公网访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_consoleInternetAddress;
+                    bool m_consoleInternetAddressHasBeenSet;
+
+                    /**
+                     * 控制台内网访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_consoleIntranetAddress;
+                    bool m_consoleIntranetAddressHasBeenSet;
 
                 };
             }

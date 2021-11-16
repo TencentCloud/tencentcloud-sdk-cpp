@@ -480,6 +480,50 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取引擎实例是否开启控制台公网访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableConsoleInternet 引擎实例是否开启控制台公网访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetEnableConsoleInternet() const;
+
+                    /**
+                     * 设置引擎实例是否开启控制台公网访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnableConsoleInternet 引擎实例是否开启控制台公网访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnableConsoleInternet(const bool& _enableConsoleInternet);
+
+                    /**
+                     * 判断参数 EnableConsoleInternet 是否已赋值
+                     * @return EnableConsoleInternet 是否已赋值
+                     */
+                    bool EnableConsoleInternetHasBeenSet() const;
+
+                    /**
+                     * 获取引擎实例是否开启控制台内网访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableConsoleIntranet 引擎实例是否开启控制台内网访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetEnableConsoleIntranet() const;
+
+                    /**
+                     * 设置引擎实例是否开启控制台内网访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnableConsoleIntranet 引擎实例是否开启控制台内网访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnableConsoleIntranet(const bool& _enableConsoleIntranet);
+
+                    /**
+                     * 判断参数 EnableConsoleIntranet 是否已赋值
+                     * @return EnableConsoleIntranet 是否已赋值
+                     */
+                    bool EnableConsoleIntranetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -620,6 +664,20 @@ namespace TencentCloud
                      */
                     std::vector<KVPair> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 引擎实例是否开启控制台公网访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enableConsoleInternet;
+                    bool m_enableConsoleInternetHasBeenSet;
+
+                    /**
+                     * 引擎实例是否开启控制台内网访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enableConsoleIntranet;
+                    bool m_enableConsoleIntranetHasBeenSet;
 
                 };
             }

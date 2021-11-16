@@ -41,7 +41,9 @@ SREInstance::SREInstance() :
     m_enableInternetHasBeenSet(false),
     m_vpcInfosHasBeenSet(false),
     m_serviceGovernanceInfosHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_enableConsoleInternetHasBeenSet(false),
+    m_enableConsoleIntranetHasBeenSet(false)
 {
 }
 
@@ -303,6 +305,26 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableConsoleInternet") && !value["EnableConsoleInternet"].IsNull())
+    {
+        if (!value["EnableConsoleInternet"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SREInstance.EnableConsoleInternet` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableConsoleInternet = value["EnableConsoleInternet"].GetBool();
+        m_enableConsoleInternetHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableConsoleIntranet") && !value["EnableConsoleIntranet"].IsNull())
+    {
+        if (!value["EnableConsoleIntranet"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SREInstance.EnableConsoleIntranet` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableConsoleIntranet = value["EnableConsoleIntranet"].GetBool();
+        m_enableConsoleIntranetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -509,6 +531,22 @@ void SREInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_enableConsoleInternetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableConsoleInternet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableConsoleInternet, allocator);
+    }
+
+    if (m_enableConsoleIntranetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableConsoleIntranet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableConsoleIntranet, allocator);
     }
 
 }
@@ -848,5 +886,37 @@ void SREInstance::SetTags(const vector<KVPair>& _tags)
 bool SREInstance::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+bool SREInstance::GetEnableConsoleInternet() const
+{
+    return m_enableConsoleInternet;
+}
+
+void SREInstance::SetEnableConsoleInternet(const bool& _enableConsoleInternet)
+{
+    m_enableConsoleInternet = _enableConsoleInternet;
+    m_enableConsoleInternetHasBeenSet = true;
+}
+
+bool SREInstance::EnableConsoleInternetHasBeenSet() const
+{
+    return m_enableConsoleInternetHasBeenSet;
+}
+
+bool SREInstance::GetEnableConsoleIntranet() const
+{
+    return m_enableConsoleIntranet;
+}
+
+void SREInstance::SetEnableConsoleIntranet(const bool& _enableConsoleIntranet)
+{
+    m_enableConsoleIntranet = _enableConsoleIntranet;
+    m_enableConsoleIntranetHasBeenSet = true;
+}
+
+bool SREInstance::EnableConsoleIntranetHasBeenSet() const
+{
+    return m_enableConsoleIntranetHasBeenSet;
 }
 

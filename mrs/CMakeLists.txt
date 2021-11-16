@@ -23,8 +23,10 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/Template.h
   include/tencentcloud/mrs/v20200910/model/Elastic.h
   include/tencentcloud/mrs/v20200910/model/ReportInfo.h
+  include/tencentcloud/mrs/v20200910/model/Endoscopy.h
   include/tencentcloud/mrs/v20200910/model/IHCInfo.h
   include/tencentcloud/mrs/v20200910/model/SurgeryHistory.h
+  include/tencentcloud/mrs/v20200910/model/Medicine.h
   include/tencentcloud/mrs/v20200910/model/HandleParam.h
   include/tencentcloud/mrs/v20200910/model/ImageToObjectRequest.h
   include/tencentcloud/mrs/v20200910/model/TextToObjectRequest.h
@@ -37,6 +39,7 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/FamilyMedicalHistory.h
   include/tencentcloud/mrs/v20200910/model/Advice.h
   include/tencentcloud/mrs/v20200910/model/TextToObjectResponse.h
+  include/tencentcloud/mrs/v20200910/model/MedicalRecordInfo.h
   include/tencentcloud/mrs/v20200910/model/Part.h
   include/tencentcloud/mrs/v20200910/model/ImageToClassResponse.h
   include/tencentcloud/mrs/v20200910/model/Lymph.h
@@ -44,9 +47,11 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/EcgItem.h
   include/tencentcloud/mrs/v20200910/model/NormPart.h
   include/tencentcloud/mrs/v20200910/model/MedDoc.h
-  include/tencentcloud/mrs/v20200910/model/Desc.h
+  include/tencentcloud/mrs/v20200910/model/EndoscopyOrgan.h
   include/tencentcloud/mrs/v20200910/model/PatientInfo.h
+  include/tencentcloud/mrs/v20200910/model/HistologyLevel.h
   include/tencentcloud/mrs/v20200910/model/ImageToObjectResponse.h
+  include/tencentcloud/mrs/v20200910/model/Prescription.h
   include/tencentcloud/mrs/v20200910/model/PersonalMedicalHistory.h
   include/tencentcloud/mrs/v20200910/model/Organ.h
   include/tencentcloud/mrs/v20200910/model/DiagCert.h
@@ -60,21 +65,22 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/BlockInfo.h
   include/tencentcloud/mrs/v20200910/model/SurgeryAttr.h
   include/tencentcloud/mrs/v20200910/model/TextType.h
-  include/tencentcloud/mrs/v20200910/model/HistologyLevel.h
+  include/tencentcloud/mrs/v20200910/model/EndoscopyDesc.h
   include/tencentcloud/mrs/v20200910/model/EcgDescription.h
   include/tencentcloud/mrs/v20200910/model/IndicatorItem.h
   include/tencentcloud/mrs/v20200910/model/ImageInfo.h
   include/tencentcloud/mrs/v20200910/model/DiagCertItem.h
+  include/tencentcloud/mrs/v20200910/model/BiopsyPart.h
   include/tencentcloud/mrs/v20200910/model/MenstrualMedicalHistory.h
   include/tencentcloud/mrs/v20200910/model/ImageToClassRequest.h
   include/tencentcloud/mrs/v20200910/model/NormSize.h
   include/tencentcloud/mrs/v20200910/model/FirstPage.h
-  include/tencentcloud/mrs/v20200910/model/DischargeDiagnosis.h
+  include/tencentcloud/mrs/v20200910/model/Check.h
   include/tencentcloud/mrs/v20200910/model/EcgDiagnosis.h
   include/tencentcloud/mrs/v20200910/model/TextToClassRequest.h
   include/tencentcloud/mrs/v20200910/model/Surgery.h
-  include/tencentcloud/mrs/v20200910/model/MedicalRecordInfo.h
-  include/tencentcloud/mrs/v20200910/model/Check.h
+  include/tencentcloud/mrs/v20200910/model/Desc.h
+  include/tencentcloud/mrs/v20200910/model/DischargeDiagnosis.h
   include/tencentcloud/mrs/v20200910/model/Electrocardiogram.h
   include/tencentcloud/mrs/v20200910/model/Size.h
   )
@@ -85,8 +91,10 @@ set(mrs_src
   src/v20200910/model/Template.cpp
   src/v20200910/model/Elastic.cpp
   src/v20200910/model/ReportInfo.cpp
+  src/v20200910/model/Endoscopy.cpp
   src/v20200910/model/IHCInfo.cpp
   src/v20200910/model/SurgeryHistory.cpp
+  src/v20200910/model/Medicine.cpp
   src/v20200910/model/HandleParam.cpp
   src/v20200910/model/ImageToObjectRequest.cpp
   src/v20200910/model/TextToObjectRequest.cpp
@@ -99,6 +107,7 @@ set(mrs_src
   src/v20200910/model/FamilyMedicalHistory.cpp
   src/v20200910/model/Advice.cpp
   src/v20200910/model/TextToObjectResponse.cpp
+  src/v20200910/model/MedicalRecordInfo.cpp
   src/v20200910/model/Part.cpp
   src/v20200910/model/ImageToClassResponse.cpp
   src/v20200910/model/Lymph.cpp
@@ -106,9 +115,11 @@ set(mrs_src
   src/v20200910/model/EcgItem.cpp
   src/v20200910/model/NormPart.cpp
   src/v20200910/model/MedDoc.cpp
-  src/v20200910/model/Desc.cpp
+  src/v20200910/model/EndoscopyOrgan.cpp
   src/v20200910/model/PatientInfo.cpp
+  src/v20200910/model/HistologyLevel.cpp
   src/v20200910/model/ImageToObjectResponse.cpp
+  src/v20200910/model/Prescription.cpp
   src/v20200910/model/PersonalMedicalHistory.cpp
   src/v20200910/model/Organ.cpp
   src/v20200910/model/DiagCert.cpp
@@ -122,21 +133,22 @@ set(mrs_src
   src/v20200910/model/BlockInfo.cpp
   src/v20200910/model/SurgeryAttr.cpp
   src/v20200910/model/TextType.cpp
-  src/v20200910/model/HistologyLevel.cpp
+  src/v20200910/model/EndoscopyDesc.cpp
   src/v20200910/model/EcgDescription.cpp
   src/v20200910/model/IndicatorItem.cpp
   src/v20200910/model/ImageInfo.cpp
   src/v20200910/model/DiagCertItem.cpp
+  src/v20200910/model/BiopsyPart.cpp
   src/v20200910/model/MenstrualMedicalHistory.cpp
   src/v20200910/model/ImageToClassRequest.cpp
   src/v20200910/model/NormSize.cpp
   src/v20200910/model/FirstPage.cpp
-  src/v20200910/model/DischargeDiagnosis.cpp
+  src/v20200910/model/Check.cpp
   src/v20200910/model/EcgDiagnosis.cpp
   src/v20200910/model/TextToClassRequest.cpp
   src/v20200910/model/Surgery.cpp
-  src/v20200910/model/MedicalRecordInfo.cpp
-  src/v20200910/model/Check.cpp
+  src/v20200910/model/Desc.cpp
+  src/v20200910/model/DischargeDiagnosis.cpp
   src/v20200910/model/Electrocardiogram.cpp
   src/v20200910/model/Size.cpp
   )

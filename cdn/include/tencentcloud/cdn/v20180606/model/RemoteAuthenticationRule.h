@@ -47,14 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取远程鉴权服务http url
-                     * @return Server 远程鉴权服务http url
+                     * 获取远程鉴权Server。
+默认值:和上层配置的"Server"一致；
+                     * @return Server 远程鉴权Server。
+默认值:和上层配置的"Server"一致；
                      */
                     std::string GetServer() const;
 
                     /**
-                     * 设置远程鉴权服务http url
-                     * @param Server 远程鉴权服务http url
+                     * 设置远程鉴权Server。
+默认值:和上层配置的"Server"一致；
+                     * @param Server 远程鉴权Server。
+默认值:和上层配置的"Server"一致；
                      */
                     void SetServer(const std::string& _server);
 
@@ -65,18 +69,22 @@ namespace TencentCloud
                     bool ServerHasBeenSet() const;
 
                     /**
-                     * 获取请求远程鉴权服务器的http方法；取值范围[get,post,head,all]; all 表示不限制请求方法；
-all: 不指定访问访问方法；
-                     * @return AuthMethod 请求远程鉴权服务器的http方法；取值范围[get,post,head,all]; all 表示不限制请求方法；
-all: 不指定访问访问方法；
+                     * 获取请求远程鉴权服务器的http方法；取值范围[get,post,head,all]; 
+all: 表示"遵循终端用户请求方法"
+默认值: all
+                     * @return AuthMethod 请求远程鉴权服务器的http方法；取值范围[get,post,head,all]; 
+all: 表示"遵循终端用户请求方法"
+默认值: all
                      */
                     std::string GetAuthMethod() const;
 
                     /**
-                     * 设置请求远程鉴权服务器的http方法；取值范围[get,post,head,all]; all 表示不限制请求方法；
-all: 不指定访问访问方法；
-                     * @param AuthMethod 请求远程鉴权服务器的http方法；取值范围[get,post,head,all]; all 表示不限制请求方法；
-all: 不指定访问访问方法；
+                     * 设置请求远程鉴权服务器的http方法；取值范围[get,post,head,all]; 
+all: 表示"遵循终端用户请求方法"
+默认值: all
+                     * @param AuthMethod 请求远程鉴权服务器的http方法；取值范围[get,post,head,all]; 
+all: 表示"遵循终端用户请求方法"
+默认值: all
                      */
                     void SetAuthMethod(const std::string& _authMethod);
 
@@ -90,13 +98,15 @@ all: 不指定访问访问方法；
                      * 获取规则类型：
 all：所有文件生效
 file：指定文件后缀生效
-directory：指定路径生效
-path：指定绝对路径生效
+directory：指定目录生效
+path：指定文件绝对路径生效
+默认值:all
                      * @return RuleType 规则类型：
 all：所有文件生效
 file：指定文件后缀生效
-directory：指定路径生效
-path：指定绝对路径生效
+directory：指定目录生效
+path：指定文件绝对路径生效
+默认值:all
                      */
                     std::string GetRuleType() const;
 
@@ -104,13 +114,15 @@ path：指定绝对路径生效
                      * 设置规则类型：
 all：所有文件生效
 file：指定文件后缀生效
-directory：指定路径生效
-path：指定绝对路径生效
+directory：指定目录生效
+path：指定文件绝对路径生效
+默认值:all
                      * @param RuleType 规则类型：
 all：所有文件生效
 file：指定文件后缀生效
-directory：指定路径生效
-path：指定绝对路径生效
+directory：指定目录生效
+path：指定文件绝对路径生效
+默认值:all
                      */
                     void SetRuleType(const std::string& _ruleType);
 
@@ -127,12 +139,14 @@ file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test
 path 时填充绝对路径，如 /xxx/test.html
 index 时填充 /
+默认值:*
                      * @return RulePaths 对应类型下的匹配内容：
 all 时填充 *
 file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test
 path 时填充绝对路径，如 /xxx/test.html
 index 时填充 /
+默认值:*
                      */
                     std::vector<std::string> GetRulePaths() const;
 
@@ -143,12 +157,14 @@ file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test
 path 时填充绝对路径，如 /xxx/test.html
 index 时填充 /
+默认值:*
                      * @param RulePaths 对应类型下的匹配内容：
 all 时填充 *
 file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test
 path 时填充绝对路径，如 /xxx/test.html
 index 时填充 /
+默认值:*
                      */
                     void SetRulePaths(const std::vector<std::string>& _rulePaths);
 
@@ -161,16 +177,20 @@ index 时填充 /
                     /**
                      * 获取请求远程鉴权服务器超时时间，单位毫秒；
 取值范围：[1,30 000]
+默认值:20000
                      * @return AuthTimeout 请求远程鉴权服务器超时时间，单位毫秒；
 取值范围：[1,30 000]
+默认值:20000
                      */
                     int64_t GetAuthTimeout() const;
 
                     /**
                      * 设置请求远程鉴权服务器超时时间，单位毫秒；
 取值范围：[1,30 000]
+默认值:20000
                      * @param AuthTimeout 请求远程鉴权服务器超时时间，单位毫秒；
 取值范围：[1,30 000]
+默认值:20000
                      */
                     void SetAuthTimeout(const int64_t& _authTimeout);
 
@@ -183,20 +203,24 @@ index 时填充 /
                     /**
                      * 获取请求远程鉴权服务器超时后执行拦截或者放行；
 RETURN_200: 超时后放行；
-RETURN_403:超时返回403；
+RETURN_403:超时拦截；
+默认值:RETURN_200
                      * @return AuthTimeoutAction 请求远程鉴权服务器超时后执行拦截或者放行；
 RETURN_200: 超时后放行；
-RETURN_403:超时返回403；
+RETURN_403:超时拦截；
+默认值:RETURN_200
                      */
                     std::string GetAuthTimeoutAction() const;
 
                     /**
                      * 设置请求远程鉴权服务器超时后执行拦截或者放行；
 RETURN_200: 超时后放行；
-RETURN_403:超时返回403；
+RETURN_403:超时拦截；
+默认值:RETURN_200
                      * @param AuthTimeoutAction 请求远程鉴权服务器超时后执行拦截或者放行；
 RETURN_200: 超时后放行；
-RETURN_403:超时返回403；
+RETURN_403:超时拦截；
+默认值:RETURN_200
                      */
                     void SetAuthTimeoutAction(const std::string& _authTimeoutAction);
 
@@ -209,14 +233,16 @@ RETURN_403:超时返回403；
                 private:
 
                     /**
-                     * 远程鉴权服务http url
+                     * 远程鉴权Server。
+默认值:和上层配置的"Server"一致；
                      */
                     std::string m_server;
                     bool m_serverHasBeenSet;
 
                     /**
-                     * 请求远程鉴权服务器的http方法；取值范围[get,post,head,all]; all 表示不限制请求方法；
-all: 不指定访问访问方法；
+                     * 请求远程鉴权服务器的http方法；取值范围[get,post,head,all]; 
+all: 表示"遵循终端用户请求方法"
+默认值: all
                      */
                     std::string m_authMethod;
                     bool m_authMethodHasBeenSet;
@@ -225,8 +251,9 @@ all: 不指定访问访问方法；
                      * 规则类型：
 all：所有文件生效
 file：指定文件后缀生效
-directory：指定路径生效
-path：指定绝对路径生效
+directory：指定目录生效
+path：指定文件绝对路径生效
+默认值:all
                      */
                     std::string m_ruleType;
                     bool m_ruleTypeHasBeenSet;
@@ -238,6 +265,7 @@ file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test
 path 时填充绝对路径，如 /xxx/test.html
 index 时填充 /
+默认值:*
                      */
                     std::vector<std::string> m_rulePaths;
                     bool m_rulePathsHasBeenSet;
@@ -245,6 +273,7 @@ index 时填充 /
                     /**
                      * 请求远程鉴权服务器超时时间，单位毫秒；
 取值范围：[1,30 000]
+默认值:20000
                      */
                     int64_t m_authTimeout;
                     bool m_authTimeoutHasBeenSet;
@@ -252,7 +281,8 @@ index 时填充 /
                     /**
                      * 请求远程鉴权服务器超时后执行拦截或者放行；
 RETURN_200: 超时后放行；
-RETURN_403:超时返回403；
+RETURN_403:超时拦截；
+默认值:RETURN_200
                      */
                     std::string m_authTimeoutAction;
                     bool m_authTimeoutActionHasBeenSet;

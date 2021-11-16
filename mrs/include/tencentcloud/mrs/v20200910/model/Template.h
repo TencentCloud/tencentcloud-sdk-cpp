@@ -36,6 +36,8 @@
 #include <tencentcloud/mrs/v20200910/model/Hospitalization.h>
 #include <tencentcloud/mrs/v20200910/model/Surgery.h>
 #include <tencentcloud/mrs/v20200910/model/Electrocardiogram.h>
+#include <tencentcloud/mrs/v20200910/model/Endoscopy.h>
+#include <tencentcloud/mrs/v20200910/model/Prescription.h>
 
 
 namespace TencentCloud
@@ -344,6 +346,50 @@ namespace TencentCloud
                      */
                     bool ElectrocardiogramHasBeenSet() const;
 
+                    /**
+                     * 获取内窥镜报告
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Endoscopy 内窥镜报告
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Endoscopy GetEndoscopy() const;
+
+                    /**
+                     * 设置内窥镜报告
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Endoscopy 内窥镜报告
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEndoscopy(const Endoscopy& _endoscopy);
+
+                    /**
+                     * 判断参数 Endoscopy 是否已赋值
+                     * @return Endoscopy 是否已赋值
+                     */
+                    bool EndoscopyHasBeenSet() const;
+
+                    /**
+                     * 获取处方单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Prescription 处方单
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Prescription GetPrescription() const;
+
+                    /**
+                     * 设置处方单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Prescription 处方单
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPrescription(const Prescription& _prescription);
+
+                    /**
+                     * 判断参数 Prescription 是否已赋值
+                     * @return Prescription 是否已赋值
+                     */
+                    bool PrescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -436,6 +482,20 @@ namespace TencentCloud
                      */
                     Electrocardiogram m_electrocardiogram;
                     bool m_electrocardiogramHasBeenSet;
+
+                    /**
+                     * 内窥镜报告
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Endoscopy m_endoscopy;
+                    bool m_endoscopyHasBeenSet;
+
+                    /**
+                     * 处方单
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Prescription m_prescription;
+                    bool m_prescriptionHasBeenSet;
 
                 };
             }
