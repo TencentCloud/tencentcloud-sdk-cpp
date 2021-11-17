@@ -161,14 +161,18 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取普通实例Cpu核数
-                     * @return Cpu 普通实例Cpu核数
+                     * 获取当DbMode为NORMAL或不填时必选
+普通实例Cpu核数
+                     * @return Cpu 当DbMode为NORMAL或不填时必选
+普通实例Cpu核数
                      */
                     int64_t GetCpu() const;
 
                     /**
-                     * 设置普通实例Cpu核数
-                     * @param Cpu 普通实例Cpu核数
+                     * 设置当DbMode为NORMAL或不填时必选
+普通实例Cpu核数
+                     * @param Cpu 当DbMode为NORMAL或不填时必选
+普通实例Cpu核数
                      */
                     void SetCpu(const int64_t& _cpu);
 
@@ -179,14 +183,18 @@ namespace TencentCloud
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取普通实例内存,单位G
-                     * @return Memory 普通实例内存,单位G
+                     * 获取当DbMode为NORMAL或不填时必选
+普通实例内存,单位G
+                     * @return Memory 当DbMode为NORMAL或不填时必选
+普通实例内存,单位G
                      */
                     int64_t GetMemory() const;
 
                     /**
-                     * 设置普通实例内存,单位G
-                     * @param Memory 普通实例内存,单位G
+                     * 设置当DbMode为NORMAL或不填时必选
+普通实例内存,单位G
+                     * @param Memory 当DbMode为NORMAL或不填时必选
+普通实例内存,单位G
                      */
                     void SetMemory(const int64_t& _memory);
 
@@ -197,14 +205,18 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取存储大小，单位G
-                     * @return Storage 存储大小，单位G
+                     * 获取该参数无实际意义，已废弃。
+存储大小，单位G。
+                     * @return Storage 该参数无实际意义，已废弃。
+存储大小，单位G。
                      */
                     int64_t GetStorage() const;
 
                     /**
-                     * 设置存储大小，单位G
-                     * @param Storage 存储大小，单位G
+                     * 设置该参数无实际意义，已废弃。
+存储大小，单位G。
+                     * @param Storage 该参数无实际意义，已废弃。
+存储大小，单位G。
                      */
                     void SetStorage(const int64_t& _storage);
 
@@ -389,14 +401,18 @@ timeRollback，时间点回档
                     bool ExpectTimeHasBeenSet() const;
 
                     /**
-                     * 获取时间点回档，指定时间允许范围
-                     * @return ExpectTimeThresh 时间点回档，指定时间允许范围
+                     * 获取该参数无实际意义，已废弃。
+时间点回档，指定时间允许范围
+                     * @return ExpectTimeThresh 该参数无实际意义，已废弃。
+时间点回档，指定时间允许范围
                      */
                     uint64_t GetExpectTimeThresh() const;
 
                     /**
-                     * 设置时间点回档，指定时间允许范围
-                     * @param ExpectTimeThresh 时间点回档，指定时间允许范围
+                     * 设置该参数无实际意义，已废弃。
+时间点回档，指定时间允许范围
+                     * @param ExpectTimeThresh 该参数无实际意义，已废弃。
+时间点回档，指定时间允许范围
                      */
                     void SetExpectTimeThresh(const uint64_t& _expectTimeThresh);
 
@@ -855,19 +871,22 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 普通实例Cpu核数
+                     * 当DbMode为NORMAL或不填时必选
+普通实例Cpu核数
                      */
                     int64_t m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * 普通实例内存,单位G
+                     * 当DbMode为NORMAL或不填时必选
+普通实例内存,单位G
                      */
                     int64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 存储大小，单位G
+                     * 该参数无实际意义，已废弃。
+存储大小，单位G。
                      */
                     int64_t m_storage;
                     bool m_storageHasBeenSet;
@@ -930,7 +949,8 @@ timeRollback，时间点回档
                     bool m_expectTimeHasBeenSet;
 
                     /**
-                     * 时间点回档，指定时间允许范围
+                     * 该参数无实际意义，已废弃。
+时间点回档，指定时间允许范围
                      */
                     uint64_t m_expectTimeThresh;
                     bool m_expectTimeThreshHasBeenSet;

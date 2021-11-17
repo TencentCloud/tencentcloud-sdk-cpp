@@ -212,6 +212,24 @@ namespace TencentCloud
                     bool RoleHasBeenSet() const;
 
                     /**
+                     * 获取[在线依赖安装](https://cloud.tencent.com/document/product/583/37920)，TRUE 表示安装，默认值为 FALSE。仅支持 Node.js 函数。
+                     * @return InstallDependency [在线依赖安装](https://cloud.tencent.com/document/product/583/37920)，TRUE 表示安装，默认值为 FALSE。仅支持 Node.js 函数。
+                     */
+                    std::string GetInstallDependency() const;
+
+                    /**
+                     * 设置[在线依赖安装](https://cloud.tencent.com/document/product/583/37920)，TRUE 表示安装，默认值为 FALSE。仅支持 Node.js 函数。
+                     * @param InstallDependency [在线依赖安装](https://cloud.tencent.com/document/product/583/37920)，TRUE 表示安装，默认值为 FALSE。仅支持 Node.js 函数。
+                     */
+                    void SetInstallDependency(const std::string& _installDependency);
+
+                    /**
+                     * 判断参数 InstallDependency 是否已赋值
+                     * @return InstallDependency 是否已赋值
+                     */
+                    bool InstallDependencyHasBeenSet() const;
+
+                    /**
                      * 获取日志投递到的cls日志集ID
                      * @return ClsLogsetId 日志投递到的cls日志集ID
                      */
@@ -446,6 +464,12 @@ namespace TencentCloud
                      */
                     std::string m_role;
                     bool m_roleHasBeenSet;
+
+                    /**
+                     * [在线依赖安装](https://cloud.tencent.com/document/product/583/37920)，TRUE 表示安装，默认值为 FALSE。仅支持 Node.js 函数。
+                     */
+                    std::string m_installDependency;
+                    bool m_installDependencyHasBeenSet;
 
                     /**
                      * 日志投递到的cls日志集ID

@@ -35,6 +35,8 @@
 #include <tencentcloud/cme/v20191029/model/CreateProjectResponse.h>
 #include <tencentcloud/cme/v20191029/model/CreateTeamRequest.h>
 #include <tencentcloud/cme/v20191029/model/CreateTeamResponse.h>
+#include <tencentcloud/cme/v20191029/model/CreateVideoEncodingPresetRequest.h>
+#include <tencentcloud/cme/v20191029/model/CreateVideoEncodingPresetResponse.h>
 #include <tencentcloud/cme/v20191029/model/DeleteClassRequest.h>
 #include <tencentcloud/cme/v20191029/model/DeleteClassResponse.h>
 #include <tencentcloud/cme/v20191029/model/DeleteLoginStatusRequest.h>
@@ -47,6 +49,8 @@
 #include <tencentcloud/cme/v20191029/model/DeleteTeamResponse.h>
 #include <tencentcloud/cme/v20191029/model/DeleteTeamMembersRequest.h>
 #include <tencentcloud/cme/v20191029/model/DeleteTeamMembersResponse.h>
+#include <tencentcloud/cme/v20191029/model/DeleteVideoEncodingPresetRequest.h>
+#include <tencentcloud/cme/v20191029/model/DeleteVideoEncodingPresetResponse.h>
 #include <tencentcloud/cme/v20191029/model/DescribeAccountsRequest.h>
 #include <tencentcloud/cme/v20191029/model/DescribeAccountsResponse.h>
 #include <tencentcloud/cme/v20191029/model/DescribeClassRequest.h>
@@ -73,6 +77,8 @@
 #include <tencentcloud/cme/v20191029/model/DescribeTeamMembersResponse.h>
 #include <tencentcloud/cme/v20191029/model/DescribeTeamsRequest.h>
 #include <tencentcloud/cme/v20191029/model/DescribeTeamsResponse.h>
+#include <tencentcloud/cme/v20191029/model/DescribeVideoEncodingPresetsRequest.h>
+#include <tencentcloud/cme/v20191029/model/DescribeVideoEncodingPresetsResponse.h>
 #include <tencentcloud/cme/v20191029/model/ExportVideoByEditorTrackDataRequest.h>
 #include <tencentcloud/cme/v20191029/model/ExportVideoByEditorTrackDataResponse.h>
 #include <tencentcloud/cme/v20191029/model/ExportVideoByTemplateRequest.h>
@@ -103,6 +109,8 @@
 #include <tencentcloud/cme/v20191029/model/ModifyTeamResponse.h>
 #include <tencentcloud/cme/v20191029/model/ModifyTeamMemberRequest.h>
 #include <tencentcloud/cme/v20191029/model/ModifyTeamMemberResponse.h>
+#include <tencentcloud/cme/v20191029/model/ModifyVideoEncodingPresetRequest.h>
+#include <tencentcloud/cme/v20191029/model/ModifyVideoEncodingPresetResponse.h>
 #include <tencentcloud/cme/v20191029/model/MoveClassRequest.h>
 #include <tencentcloud/cme/v20191029/model/MoveClassResponse.h>
 #include <tencentcloud/cme/v20191029/model/MoveResourceRequest.h>
@@ -145,6 +153,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTeamResponse> CreateTeamOutcome;
                 typedef std::future<CreateTeamOutcome> CreateTeamOutcomeCallable;
                 typedef std::function<void(const CmeClient*, const Model::CreateTeamRequest&, CreateTeamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTeamAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateVideoEncodingPresetResponse> CreateVideoEncodingPresetOutcome;
+                typedef std::future<CreateVideoEncodingPresetOutcome> CreateVideoEncodingPresetOutcomeCallable;
+                typedef std::function<void(const CmeClient*, const Model::CreateVideoEncodingPresetRequest&, CreateVideoEncodingPresetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVideoEncodingPresetAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteClassResponse> DeleteClassOutcome;
                 typedef std::future<DeleteClassOutcome> DeleteClassOutcomeCallable;
                 typedef std::function<void(const CmeClient*, const Model::DeleteClassRequest&, DeleteClassOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClassAsyncHandler;
@@ -163,6 +174,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteTeamMembersResponse> DeleteTeamMembersOutcome;
                 typedef std::future<DeleteTeamMembersOutcome> DeleteTeamMembersOutcomeCallable;
                 typedef std::function<void(const CmeClient*, const Model::DeleteTeamMembersRequest&, DeleteTeamMembersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTeamMembersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteVideoEncodingPresetResponse> DeleteVideoEncodingPresetOutcome;
+                typedef std::future<DeleteVideoEncodingPresetOutcome> DeleteVideoEncodingPresetOutcomeCallable;
+                typedef std::function<void(const CmeClient*, const Model::DeleteVideoEncodingPresetRequest&, DeleteVideoEncodingPresetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVideoEncodingPresetAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAccountsResponse> DescribeAccountsOutcome;
                 typedef std::future<DescribeAccountsOutcome> DescribeAccountsOutcomeCallable;
                 typedef std::function<void(const CmeClient*, const Model::DescribeAccountsRequest&, DescribeAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountsAsyncHandler;
@@ -202,6 +216,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTeamsResponse> DescribeTeamsOutcome;
                 typedef std::future<DescribeTeamsOutcome> DescribeTeamsOutcomeCallable;
                 typedef std::function<void(const CmeClient*, const Model::DescribeTeamsRequest&, DescribeTeamsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTeamsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVideoEncodingPresetsResponse> DescribeVideoEncodingPresetsOutcome;
+                typedef std::future<DescribeVideoEncodingPresetsOutcome> DescribeVideoEncodingPresetsOutcomeCallable;
+                typedef std::function<void(const CmeClient*, const Model::DescribeVideoEncodingPresetsRequest&, DescribeVideoEncodingPresetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoEncodingPresetsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExportVideoByEditorTrackDataResponse> ExportVideoByEditorTrackDataOutcome;
                 typedef std::future<ExportVideoByEditorTrackDataOutcome> ExportVideoByEditorTrackDataOutcomeCallable;
                 typedef std::function<void(const CmeClient*, const Model::ExportVideoByEditorTrackDataRequest&, ExportVideoByEditorTrackDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportVideoByEditorTrackDataAsyncHandler;
@@ -247,6 +264,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyTeamMemberResponse> ModifyTeamMemberOutcome;
                 typedef std::future<ModifyTeamMemberOutcome> ModifyTeamMemberOutcomeCallable;
                 typedef std::function<void(const CmeClient*, const Model::ModifyTeamMemberRequest&, ModifyTeamMemberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTeamMemberAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyVideoEncodingPresetResponse> ModifyVideoEncodingPresetOutcome;
+                typedef std::future<ModifyVideoEncodingPresetOutcome> ModifyVideoEncodingPresetOutcomeCallable;
+                typedef std::function<void(const CmeClient*, const Model::ModifyVideoEncodingPresetRequest&, ModifyVideoEncodingPresetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVideoEncodingPresetAsyncHandler;
                 typedef Outcome<Core::Error, Model::MoveClassResponse> MoveClassOutcome;
                 typedef std::future<MoveClassOutcome> MoveClassOutcomeCallable;
                 typedef std::function<void(const CmeClient*, const Model::MoveClassRequest&, MoveClassOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MoveClassAsyncHandler;
@@ -323,6 +343,15 @@ namespace TencentCloud
                 CreateTeamOutcomeCallable CreateTeamCallable(const Model::CreateTeamRequest& request);
 
                 /**
+                 *指定导出的参数，创建一个视频编码配置
+                 * @param req CreateVideoEncodingPresetRequest
+                 * @return CreateVideoEncodingPresetOutcome
+                 */
+                CreateVideoEncodingPresetOutcome CreateVideoEncodingPreset(const Model::CreateVideoEncodingPresetRequest &request);
+                void CreateVideoEncodingPresetAsync(const Model::CreateVideoEncodingPresetRequest& request, const CreateVideoEncodingPresetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVideoEncodingPresetOutcomeCallable CreateVideoEncodingPresetCallable(const Model::CreateVideoEncodingPresetRequest& request);
+
+                /**
                  *删除分类信息，删除时检验下述限制：
 <li>分类路径必须存在；</li>
 <li>分类下没有绑定素材。</li>
@@ -379,6 +408,15 @@ namespace TencentCloud
                 DeleteTeamMembersOutcome DeleteTeamMembers(const Model::DeleteTeamMembersRequest &request);
                 void DeleteTeamMembersAsync(const Model::DeleteTeamMembersRequest& request, const DeleteTeamMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTeamMembersOutcomeCallable DeleteTeamMembersCallable(const Model::DeleteTeamMembersRequest& request);
+
+                /**
+                 *删除指定 ID 的视频编码配置
+                 * @param req DeleteVideoEncodingPresetRequest
+                 * @return DeleteVideoEncodingPresetOutcome
+                 */
+                DeleteVideoEncodingPresetOutcome DeleteVideoEncodingPreset(const Model::DeleteVideoEncodingPresetRequest &request);
+                void DeleteVideoEncodingPresetAsync(const Model::DeleteVideoEncodingPresetRequest& request, const DeleteVideoEncodingPresetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteVideoEncodingPresetOutcomeCallable DeleteVideoEncodingPresetCallable(const Model::DeleteVideoEncodingPresetRequest& request);
 
                 /**
                  *获取用户账号信息。
@@ -501,6 +539,15 @@ namespace TencentCloud
                 DescribeTeamsOutcome DescribeTeams(const Model::DescribeTeamsRequest &request);
                 void DescribeTeamsAsync(const Model::DescribeTeamsRequest& request, const DescribeTeamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTeamsOutcomeCallable DescribeTeamsCallable(const Model::DescribeTeamsRequest& request);
+
+                /**
+                 *查询视频编码配置信息。
+                 * @param req DescribeVideoEncodingPresetsRequest
+                 * @return DescribeVideoEncodingPresetsOutcome
+                 */
+                DescribeVideoEncodingPresetsOutcome DescribeVideoEncodingPresets(const Model::DescribeVideoEncodingPresetsRequest &request);
+                void DescribeVideoEncodingPresetsAsync(const Model::DescribeVideoEncodingPresetsRequest& request, const DescribeVideoEncodingPresetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVideoEncodingPresetsOutcomeCallable DescribeVideoEncodingPresetsCallable(const Model::DescribeVideoEncodingPresetsRequest& request);
 
                 /**
                  *使用视频合成协议导出视频，支持导出到CME云媒资和VOD云媒资。
@@ -653,6 +700,15 @@ namespace TencentCloud
                 ModifyTeamMemberOutcome ModifyTeamMember(const Model::ModifyTeamMemberRequest &request);
                 void ModifyTeamMemberAsync(const Model::ModifyTeamMemberRequest& request, const ModifyTeamMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyTeamMemberOutcomeCallable ModifyTeamMemberCallable(const Model::ModifyTeamMemberRequest& request);
+
+                /**
+                 *修改视频编码配置信息。
+                 * @param req ModifyVideoEncodingPresetRequest
+                 * @return ModifyVideoEncodingPresetOutcome
+                 */
+                ModifyVideoEncodingPresetOutcome ModifyVideoEncodingPreset(const Model::ModifyVideoEncodingPresetRequest &request);
+                void ModifyVideoEncodingPresetAsync(const Model::ModifyVideoEncodingPresetRequest& request, const ModifyVideoEncodingPresetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyVideoEncodingPresetOutcomeCallable ModifyVideoEncodingPresetCallable(const Model::ModifyVideoEncodingPresetRequest& request);
 
                 /**
                  *移动某一个分类到另外一个分类下，也可用于分类重命名。

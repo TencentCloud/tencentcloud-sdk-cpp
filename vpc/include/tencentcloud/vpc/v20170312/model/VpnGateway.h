@@ -371,6 +371,42 @@ namespace TencentCloud
                      */
                     bool NetworkInstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取CDC 实例ID
+                     * @return CdcId CDC 实例ID
+                     */
+                    std::string GetCdcId() const;
+
+                    /**
+                     * 设置CDC 实例ID
+                     * @param CdcId CDC 实例ID
+                     */
+                    void SetCdcId(const std::string& _cdcId);
+
+                    /**
+                     * 判断参数 CdcId 是否已赋值
+                     * @return CdcId 是否已赋值
+                     */
+                    bool CdcIdHasBeenSet() const;
+
+                    /**
+                     * 获取SSL-VPN 客户端连接数。
+                     * @return MaxConnection SSL-VPN 客户端连接数。
+                     */
+                    uint64_t GetMaxConnection() const;
+
+                    /**
+                     * 设置SSL-VPN 客户端连接数。
+                     * @param MaxConnection SSL-VPN 客户端连接数。
+                     */
+                    void SetMaxConnection(const uint64_t& _maxConnection);
+
+                    /**
+                     * 判断参数 MaxConnection 是否已赋值
+                     * @return MaxConnection 是否已赋值
+                     */
+                    bool MaxConnectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -480,6 +516,18 @@ namespace TencentCloud
                      */
                     std::string m_networkInstanceId;
                     bool m_networkInstanceIdHasBeenSet;
+
+                    /**
+                     * CDC 实例ID
+                     */
+                    std::string m_cdcId;
+                    bool m_cdcIdHasBeenSet;
+
+                    /**
+                     * SSL-VPN 客户端连接数。
+                     */
+                    uint64_t m_maxConnection;
+                    bool m_maxConnectionHasBeenSet;
 
                 };
             }

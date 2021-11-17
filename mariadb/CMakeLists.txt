@@ -60,6 +60,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/DescribeRenewalPriceRequest.h
   include/tencentcloud/mariadb/v20170312/model/NodeInfo.h
   include/tencentcloud/mariadb/v20170312/model/DescribeOrdersResponse.h
+  include/tencentcloud/mariadb/v20170312/model/ModifySyncTaskAttributeResponse.h
   include/tencentcloud/mariadb/v20170312/model/DcnDetailItem.h
   include/tencentcloud/mariadb/v20170312/model/ResetAccountPasswordRequest.h
   include/tencentcloud/mariadb/v20170312/model/CopyAccountPrivilegesResponse.h
@@ -101,6 +102,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/UpgradeDBInstanceRequest.h
   include/tencentcloud/mariadb/v20170312/model/SecurityGroupBound.h
   include/tencentcloud/mariadb/v20170312/model/ColumnPrivilege.h
+  include/tencentcloud/mariadb/v20170312/model/ModifySyncTaskAttributeRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeUpgradePriceResponse.h
   include/tencentcloud/mariadb/v20170312/model/AssociateSecurityGroupsResponse.h
   include/tencentcloud/mariadb/v20170312/model/DBInstance.h
@@ -135,6 +137,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/DescribeFlowRequest.h
   include/tencentcloud/mariadb/v20170312/model/ModifyAccountPrivilegesRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBPerformanceResponse.h
+  include/tencentcloud/mariadb/v20170312/model/ModifyDBSyncModeRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeInstanceNodeInfoRequest.h
   include/tencentcloud/mariadb/v20170312/model/CreateAccountResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeLogFileRetentionPeriodResponse.h
@@ -157,6 +160,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/ModifyDBInstancesProjectRequest.h
   include/tencentcloud/mariadb/v20170312/model/FlushBinlogRequest.h
   include/tencentcloud/mariadb/v20170312/model/MonitorData.h
+  include/tencentcloud/mariadb/v20170312/model/ModifyDBSyncModeResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeInstanceNodeInfoResponse.h
   include/tencentcloud/mariadb/v20170312/model/ModifyLogFileRetentionPeriodResponse.h
   include/tencentcloud/mariadb/v20170312/model/DisassociateSecurityGroupsResponse.h
@@ -207,6 +211,7 @@ set(mariadb_src
   src/v20170312/model/DescribeRenewalPriceRequest.cpp
   src/v20170312/model/NodeInfo.cpp
   src/v20170312/model/DescribeOrdersResponse.cpp
+  src/v20170312/model/ModifySyncTaskAttributeResponse.cpp
   src/v20170312/model/DcnDetailItem.cpp
   src/v20170312/model/ResetAccountPasswordRequest.cpp
   src/v20170312/model/CopyAccountPrivilegesResponse.cpp
@@ -248,6 +253,7 @@ set(mariadb_src
   src/v20170312/model/UpgradeDBInstanceRequest.cpp
   src/v20170312/model/SecurityGroupBound.cpp
   src/v20170312/model/ColumnPrivilege.cpp
+  src/v20170312/model/ModifySyncTaskAttributeRequest.cpp
   src/v20170312/model/DescribeUpgradePriceResponse.cpp
   src/v20170312/model/AssociateSecurityGroupsResponse.cpp
   src/v20170312/model/DBInstance.cpp
@@ -282,6 +288,7 @@ set(mariadb_src
   src/v20170312/model/DescribeFlowRequest.cpp
   src/v20170312/model/ModifyAccountPrivilegesRequest.cpp
   src/v20170312/model/DescribeDBPerformanceResponse.cpp
+  src/v20170312/model/ModifyDBSyncModeRequest.cpp
   src/v20170312/model/DescribeInstanceNodeInfoRequest.cpp
   src/v20170312/model/CreateAccountResponse.cpp
   src/v20170312/model/DescribeLogFileRetentionPeriodResponse.cpp
@@ -304,6 +311,7 @@ set(mariadb_src
   src/v20170312/model/ModifyDBInstancesProjectRequest.cpp
   src/v20170312/model/FlushBinlogRequest.cpp
   src/v20170312/model/MonitorData.cpp
+  src/v20170312/model/ModifyDBSyncModeResponse.cpp
   src/v20170312/model/DescribeInstanceNodeInfoResponse.cpp
   src/v20170312/model/ModifyLogFileRetentionPeriodResponse.cpp
   src/v20170312/model/DisassociateSecurityGroupsResponse.cpp

@@ -51,11 +51,13 @@ namespace TencentCloud
 <li>Record：来自录制。如直播录制、直播时移录制等。</li>
 <li>Upload：来自上传。如拉取上传、服务端上传、客户端 UGC 上传等。</li>
 <li>VideoProcessing：来自视频处理。如视频拼接、视频剪辑等。</li>
+<li>WebPageRecord：来自全景录制。</li>
 <li>Unknown：未知来源。</li>
                      * @return SourceType 媒体文件的来源类别：
 <li>Record：来自录制。如直播录制、直播时移录制等。</li>
 <li>Upload：来自上传。如拉取上传、服务端上传、客户端 UGC 上传等。</li>
 <li>VideoProcessing：来自视频处理。如视频拼接、视频剪辑等。</li>
+<li>WebPageRecord：来自全景录制。</li>
 <li>Unknown：未知来源。</li>
                      */
                     std::string GetSourceType() const;
@@ -65,11 +67,13 @@ namespace TencentCloud
 <li>Record：来自录制。如直播录制、直播时移录制等。</li>
 <li>Upload：来自上传。如拉取上传、服务端上传、客户端 UGC 上传等。</li>
 <li>VideoProcessing：来自视频处理。如视频拼接、视频剪辑等。</li>
+<li>WebPageRecord：来自全景录制。</li>
 <li>Unknown：未知来源。</li>
                      * @param SourceType 媒体文件的来源类别：
 <li>Record：来自录制。如直播录制、直播时移录制等。</li>
 <li>Upload：来自上传。如拉取上传、服务端上传、客户端 UGC 上传等。</li>
 <li>VideoProcessing：来自视频处理。如视频拼接、视频剪辑等。</li>
+<li>WebPageRecord：来自全景录制。</li>
 <li>Unknown：未知来源。</li>
                      */
                     void SetSourceType(const std::string& _sourceType);
@@ -105,6 +109,7 @@ namespace TencentCloud
 <li>Record：来自录制。如直播录制、直播时移录制等。</li>
 <li>Upload：来自上传。如拉取上传、服务端上传、客户端 UGC 上传等。</li>
 <li>VideoProcessing：来自视频处理。如视频拼接、视频剪辑等。</li>
+<li>WebPageRecord：来自全景录制。</li>
 <li>Unknown：未知来源。</li>
                      */
                     std::string m_sourceType;

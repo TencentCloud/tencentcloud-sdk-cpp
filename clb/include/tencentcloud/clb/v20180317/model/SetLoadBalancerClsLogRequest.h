@@ -61,14 +61,22 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取日志服务(CLS)的日志集ID。
-                     * @return LogSetId 日志服务(CLS)的日志集ID。
+                     * 获取日志服务(CLS)的日志集 ID。
+<li>增加和更新日志主题时可调用 [DescribeLogsets](https://cloud.tencent.com/document/product/614/56454) 接口获取日志集 ID。</li>
+<li>删除日志主题时，此参数填写为null即可。</li>
+                     * @return LogSetId 日志服务(CLS)的日志集 ID。
+<li>增加和更新日志主题时可调用 [DescribeLogsets](https://cloud.tencent.com/document/product/614/56454) 接口获取日志集 ID。</li>
+<li>删除日志主题时，此参数填写为null即可。</li>
                      */
                     std::string GetLogSetId() const;
 
                     /**
-                     * 设置日志服务(CLS)的日志集ID。
-                     * @param LogSetId 日志服务(CLS)的日志集ID。
+                     * 设置日志服务(CLS)的日志集 ID。
+<li>增加和更新日志主题时可调用 [DescribeLogsets](https://cloud.tencent.com/document/product/614/56454) 接口获取日志集 ID。</li>
+<li>删除日志主题时，此参数填写为null即可。</li>
+                     * @param LogSetId 日志服务(CLS)的日志集 ID。
+<li>增加和更新日志主题时可调用 [DescribeLogsets](https://cloud.tencent.com/document/product/614/56454) 接口获取日志集 ID。</li>
+<li>删除日志主题时，此参数填写为null即可。</li>
                      */
                     void SetLogSetId(const std::string& _logSetId);
 
@@ -79,14 +87,22 @@ namespace TencentCloud
                     bool LogSetIdHasBeenSet() const;
 
                     /**
-                     * 获取日志服务(CLS)的日志主题ID。
-                     * @return LogTopicId 日志服务(CLS)的日志主题ID。
+                     * 获取日志服务(CLS)的日志主题 ID。
+<li>增加和更新日志主题时可调用 [DescribeTopics](https://cloud.tencent.com/document/product/614/58624) 接口获取日志主题 ID。</li>
+<li>删除日志主题时，此参数填写为null即可。</li>
+                     * @return LogTopicId 日志服务(CLS)的日志主题 ID。
+<li>增加和更新日志主题时可调用 [DescribeTopics](https://cloud.tencent.com/document/product/614/58624) 接口获取日志主题 ID。</li>
+<li>删除日志主题时，此参数填写为null即可。</li>
                      */
                     std::string GetLogTopicId() const;
 
                     /**
-                     * 设置日志服务(CLS)的日志主题ID。
-                     * @param LogTopicId 日志服务(CLS)的日志主题ID。
+                     * 设置日志服务(CLS)的日志主题 ID。
+<li>增加和更新日志主题时可调用 [DescribeTopics](https://cloud.tencent.com/document/product/614/58624) 接口获取日志主题 ID。</li>
+<li>删除日志主题时，此参数填写为null即可。</li>
+                     * @param LogTopicId 日志服务(CLS)的日志主题 ID。
+<li>增加和更新日志主题时可调用 [DescribeTopics](https://cloud.tencent.com/document/product/614/58624) 接口获取日志主题 ID。</li>
+<li>删除日志主题时，此参数填写为null即可。</li>
                      */
                     void SetLogTopicId(const std::string& _logTopicId);
 
@@ -97,14 +113,26 @@ namespace TencentCloud
                     bool LogTopicIdHasBeenSet() const;
 
                     /**
-                     * 获取日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
-                     * @return LogType 日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
+                     * 获取日志类型：
+<li>ACCESS：访问日志</li>
+<li>HEALTH：健康检查日志</li>
+默认为ACCESS。
+                     * @return LogType 日志类型：
+<li>ACCESS：访问日志</li>
+<li>HEALTH：健康检查日志</li>
+默认为ACCESS。
                      */
                     std::string GetLogType() const;
 
                     /**
-                     * 设置日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
-                     * @param LogType 日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
+                     * 设置日志类型：
+<li>ACCESS：访问日志</li>
+<li>HEALTH：健康检查日志</li>
+默认为ACCESS。
+                     * @param LogType 日志类型：
+<li>ACCESS：访问日志</li>
+<li>HEALTH：健康检查日志</li>
+默认为ACCESS。
                      */
                     void SetLogType(const std::string& _logType);
 
@@ -123,19 +151,26 @@ namespace TencentCloud
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 日志服务(CLS)的日志集ID。
+                     * 日志服务(CLS)的日志集 ID。
+<li>增加和更新日志主题时可调用 [DescribeLogsets](https://cloud.tencent.com/document/product/614/56454) 接口获取日志集 ID。</li>
+<li>删除日志主题时，此参数填写为null即可。</li>
                      */
                     std::string m_logSetId;
                     bool m_logSetIdHasBeenSet;
 
                     /**
-                     * 日志服务(CLS)的日志主题ID。
+                     * 日志服务(CLS)的日志主题 ID。
+<li>增加和更新日志主题时可调用 [DescribeTopics](https://cloud.tencent.com/document/product/614/58624) 接口获取日志主题 ID。</li>
+<li>删除日志主题时，此参数填写为null即可。</li>
                      */
                     std::string m_logTopicId;
                     bool m_logTopicIdHasBeenSet;
 
                     /**
-                     * 日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
+                     * 日志类型：
+<li>ACCESS：访问日志</li>
+<li>HEALTH：健康检查日志</li>
+默认为ACCESS。
                      */
                     std::string m_logType;
                     bool m_logTypeHasBeenSet;

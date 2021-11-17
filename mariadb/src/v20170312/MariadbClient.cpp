@@ -2104,6 +2104,49 @@ MariadbClient::ModifyDBParametersOutcomeCallable MariadbClient::ModifyDBParamete
     return task->get_future();
 }
 
+MariadbClient::ModifyDBSyncModeOutcome MariadbClient::ModifyDBSyncMode(const ModifyDBSyncModeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBSyncMode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBSyncModeResponse rsp = ModifyDBSyncModeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBSyncModeOutcome(rsp);
+        else
+            return ModifyDBSyncModeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBSyncModeOutcome(outcome.GetError());
+    }
+}
+
+void MariadbClient::ModifyDBSyncModeAsync(const ModifyDBSyncModeRequest& request, const ModifyDBSyncModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDBSyncMode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MariadbClient::ModifyDBSyncModeOutcomeCallable MariadbClient::ModifyDBSyncModeCallable(const ModifyDBSyncModeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDBSyncModeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDBSyncMode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MariadbClient::ModifyLogFileRetentionPeriodOutcome MariadbClient::ModifyLogFileRetentionPeriod(const ModifyLogFileRetentionPeriodRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyLogFileRetentionPeriod");
@@ -2183,6 +2226,49 @@ MariadbClient::ModifyRealServerAccessStrategyOutcomeCallable MariadbClient::Modi
         [this, request]()
         {
             return this->ModifyRealServerAccessStrategy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MariadbClient::ModifySyncTaskAttributeOutcome MariadbClient::ModifySyncTaskAttribute(const ModifySyncTaskAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySyncTaskAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySyncTaskAttributeResponse rsp = ModifySyncTaskAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySyncTaskAttributeOutcome(rsp);
+        else
+            return ModifySyncTaskAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySyncTaskAttributeOutcome(outcome.GetError());
+    }
+}
+
+void MariadbClient::ModifySyncTaskAttributeAsync(const ModifySyncTaskAttributeRequest& request, const ModifySyncTaskAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySyncTaskAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MariadbClient::ModifySyncTaskAttributeOutcomeCallable MariadbClient::ModifySyncTaskAttributeCallable(const ModifySyncTaskAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySyncTaskAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySyncTaskAttribute(request);
         }
     );
 

@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cme/v20191029/model/CMEExportInfo.h>
 #include <tencentcloud/cme/v20191029/model/VODExportInfo.h>
+#include <tencentcloud/cme/v20191029/model/VideoExportExtensionArgs.h>
 
 
 namespace TencentCloud
@@ -81,11 +82,11 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取导出模板 Id，目前不支持自定义创建，只支持下面的预置模板 Id。
+                     * 获取视频编码配置 ID，支持自定义创建，推荐优先使用系统预置的导出配置。
 <li>10：分辨率为 480P，输出视频格式为 MP4；</li>
 <li>11：分辨率为 720P，输出视频格式为 MP4；</li>
 <li>12：分辨率为 1080P，输出视频格式为 MP4。</li>
-                     * @return Definition 导出模板 Id，目前不支持自定义创建，只支持下面的预置模板 Id。
+                     * @return Definition 视频编码配置 ID，支持自定义创建，推荐优先使用系统预置的导出配置。
 <li>10：分辨率为 480P，输出视频格式为 MP4；</li>
 <li>11：分辨率为 720P，输出视频格式为 MP4；</li>
 <li>12：分辨率为 1080P，输出视频格式为 MP4。</li>
@@ -93,11 +94,11 @@ namespace TencentCloud
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置导出模板 Id，目前不支持自定义创建，只支持下面的预置模板 Id。
+                     * 设置视频编码配置 ID，支持自定义创建，推荐优先使用系统预置的导出配置。
 <li>10：分辨率为 480P，输出视频格式为 MP4；</li>
 <li>11：分辨率为 720P，输出视频格式为 MP4；</li>
 <li>12：分辨率为 1080P，输出视频格式为 MP4。</li>
-                     * @param Definition 导出模板 Id，目前不支持自定义创建，只支持下面的预置模板 Id。
+                     * @param Definition 视频编码配置 ID，支持自定义创建，推荐优先使用系统预置的导出配置。
 <li>10：分辨率为 480P，输出视频格式为 MP4；</li>
 <li>11：分辨率为 720P，输出视频格式为 MP4；</li>
 <li>12：分辨率为 1080P，输出视频格式为 MP4。</li>
@@ -191,6 +192,24 @@ namespace TencentCloud
                     bool VODExportInfoHasBeenSet() const;
 
                     /**
+                     * 获取视频导出扩展参数。可以覆盖导出模板中的参数，灵活的指定导出规格及参数。
+                     * @return ExportExtensionArgs 视频导出扩展参数。可以覆盖导出模板中的参数，灵活的指定导出规格及参数。
+                     */
+                    VideoExportExtensionArgs GetExportExtensionArgs() const;
+
+                    /**
+                     * 设置视频导出扩展参数。可以覆盖导出模板中的参数，灵活的指定导出规格及参数。
+                     * @param ExportExtensionArgs 视频导出扩展参数。可以覆盖导出模板中的参数，灵活的指定导出规格及参数。
+                     */
+                    void SetExportExtensionArgs(const VideoExportExtensionArgs& _exportExtensionArgs);
+
+                    /**
+                     * 判断参数 ExportExtensionArgs 是否已赋值
+                     * @return ExportExtensionArgs 是否已赋值
+                     */
+                    bool ExportExtensionArgsHasBeenSet() const;
+
+                    /**
                      * 获取操作者。填写用户的 Id，用于标识调用者及校验项目导出权限。
                      * @return Operator 操作者。填写用户的 Id，用于标识调用者及校验项目导出权限。
                      */
@@ -223,7 +242,7 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 导出模板 Id，目前不支持自定义创建，只支持下面的预置模板 Id。
+                     * 视频编码配置 ID，支持自定义创建，推荐优先使用系统预置的导出配置。
 <li>10：分辨率为 480P，输出视频格式为 MP4；</li>
 <li>11：分辨率为 720P，输出视频格式为 MP4；</li>
 <li>12：分辨率为 1080P，输出视频格式为 MP4。</li>
@@ -256,6 +275,12 @@ namespace TencentCloud
                      */
                     VODExportInfo m_vODExportInfo;
                     bool m_vODExportInfoHasBeenSet;
+
+                    /**
+                     * 视频导出扩展参数。可以覆盖导出模板中的参数，灵活的指定导出规格及参数。
+                     */
+                    VideoExportExtensionArgs m_exportExtensionArgs;
+                    bool m_exportExtensionArgsHasBeenSet;
 
                     /**
                      * 操作者。填写用户的 Id，用于标识调用者及校验项目导出权限。

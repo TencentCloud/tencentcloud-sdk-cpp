@@ -374,6 +374,24 @@ namespace TencentCloud
                      */
                     bool ExampleSqlHasBeenSet() const;
 
+                    /**
+                     * 获取账户的域名
+                     * @return Host 账户的域名
+                     */
+                    std::string GetHost() const;
+
+                    /**
+                     * 设置账户的域名
+                     * @param Host 账户的域名
+                     */
+                    void SetHost(const std::string& _host);
+
+                    /**
+                     * 判断参数 Host 是否已赋值
+                     * @return Host 是否已赋值
+                     */
+                    bool HostHasBeenSet() const;
+
                 private:
 
                     /**
@@ -484,6 +502,12 @@ namespace TencentCloud
                      */
                     std::string m_exampleSql;
                     bool m_exampleSqlHasBeenSet;
+
+                    /**
+                     * 账户的域名
+                     */
+                    std::string m_host;
+                    bool m_hostHasBeenSet;
 
                 };
             }

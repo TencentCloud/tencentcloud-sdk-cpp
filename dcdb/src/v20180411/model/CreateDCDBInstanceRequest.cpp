@@ -42,7 +42,8 @@ CreateDCDBInstanceRequest::CreateDCDBInstanceRequest() :
     m_resourceTagsHasBeenSet(false),
     m_initParamsHasBeenSet(false),
     m_dcnRegionHasBeenSet(false),
-    m_dcnInstanceIdHasBeenSet(false)
+    m_dcnInstanceIdHasBeenSet(false),
+    m_autoRenewFlagHasBeenSet(false)
 {
 }
 
@@ -235,6 +236,14 @@ string CreateDCDBInstanceRequest::ToJsonString() const
         string key = "DcnInstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dcnInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoRenewFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoRenewFlag, allocator);
     }
 
 
@@ -563,6 +572,22 @@ void CreateDCDBInstanceRequest::SetDcnInstanceId(const string& _dcnInstanceId)
 bool CreateDCDBInstanceRequest::DcnInstanceIdHasBeenSet() const
 {
     return m_dcnInstanceIdHasBeenSet;
+}
+
+int64_t CreateDCDBInstanceRequest::GetAutoRenewFlag() const
+{
+    return m_autoRenewFlag;
+}
+
+void CreateDCDBInstanceRequest::SetAutoRenewFlag(const int64_t& _autoRenewFlag)
+{
+    m_autoRenewFlag = _autoRenewFlag;
+    m_autoRenewFlagHasBeenSet = true;
+}
+
+bool CreateDCDBInstanceRequest::AutoRenewFlagHasBeenSet() const
+{
+    return m_autoRenewFlagHasBeenSet;
 }
 
 

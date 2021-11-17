@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
-ModifyIp6AddressesBandwidthResponse::ModifyIp6AddressesBandwidthResponse()
+ModifyIp6AddressesBandwidthResponse::ModifyIp6AddressesBandwidthResponse() :
+    m_taskIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome ModifyIp6AddressesBandwidthResponse::Deserialize(const strin
     }
 
 
+    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
+    {
+        if (!rsp["TaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskId = string(rsp["TaskId"].GetString());
+        m_taskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string ModifyIp6AddressesBandwidthResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_taskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string ModifyIp6AddressesBandwidthResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string ModifyIp6AddressesBandwidthResponse::GetTaskId() const
+{
+    return m_taskId;
+}
+
+bool ModifyIp6AddressesBandwidthResponse::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
+}
 
 

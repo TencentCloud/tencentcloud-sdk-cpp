@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取添加SnatIp信息，可指定IP申请，或者指定子网自动申请。
-                     * @return SnatIps 添加SnatIp信息，可指定IP申请，或者指定子网自动申请。
+                     * 获取添加的SnatIp信息，可指定IP申请，或者指定子网自动申请。单个CLB实例可申请的默认上限为10个。
+                     * @return SnatIps 添加的SnatIp信息，可指定IP申请，或者指定子网自动申请。单个CLB实例可申请的默认上限为10个。
                      */
                     std::vector<SnatIp> GetSnatIps() const;
 
                     /**
-                     * 设置添加SnatIp信息，可指定IP申请，或者指定子网自动申请。
-                     * @param SnatIps 添加SnatIp信息，可指定IP申请，或者指定子网自动申请。
+                     * 设置添加的SnatIp信息，可指定IP申请，或者指定子网自动申请。单个CLB实例可申请的默认上限为10个。
+                     * @param SnatIps 添加的SnatIp信息，可指定IP申请，或者指定子网自动申请。单个CLB实例可申请的默认上限为10个。
                      */
                     void SetSnatIps(const std::vector<SnatIp>& _snatIps);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool SnatIpsHasBeenSet() const;
 
                     /**
-                     * 获取添加SnatIp个数，与SnatIps一起使用，当指定Ip时，不能指定创建SnatIp个数。
-                     * @return Number 添加SnatIp个数，与SnatIps一起使用，当指定Ip时，不能指定创建SnatIp个数。
+                     * 获取添加的SnatIp的个数，可与SnatIps一起使用，但若指定IP时，则不能指定创建的SnatIp个数。默认值为1，数量上限与用户配置有关，默认上限为10。
+                     * @return Number 添加的SnatIp的个数，可与SnatIps一起使用，但若指定IP时，则不能指定创建的SnatIp个数。默认值为1，数量上限与用户配置有关，默认上限为10。
                      */
                     uint64_t GetNumber() const;
 
                     /**
-                     * 设置添加SnatIp个数，与SnatIps一起使用，当指定Ip时，不能指定创建SnatIp个数。
-                     * @param Number 添加SnatIp个数，与SnatIps一起使用，当指定Ip时，不能指定创建SnatIp个数。
+                     * 设置添加的SnatIp的个数，可与SnatIps一起使用，但若指定IP时，则不能指定创建的SnatIp个数。默认值为1，数量上限与用户配置有关，默认上限为10。
+                     * @param Number 添加的SnatIp的个数，可与SnatIps一起使用，但若指定IP时，则不能指定创建的SnatIp个数。默认值为1，数量上限与用户配置有关，默认上限为10。
                      */
                     void SetNumber(const uint64_t& _number);
 
@@ -106,13 +106,13 @@ namespace TencentCloud
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 添加SnatIp信息，可指定IP申请，或者指定子网自动申请。
+                     * 添加的SnatIp信息，可指定IP申请，或者指定子网自动申请。单个CLB实例可申请的默认上限为10个。
                      */
                     std::vector<SnatIp> m_snatIps;
                     bool m_snatIpsHasBeenSet;
 
                     /**
-                     * 添加SnatIp个数，与SnatIps一起使用，当指定Ip时，不能指定创建SnatIp个数。
+                     * 添加的SnatIp的个数，可与SnatIps一起使用，但若指定IP时，则不能指定创建的SnatIp个数。默认值为1，数量上限与用户配置有关，默认上限为10。
                      */
                     uint64_t m_number;
                     bool m_numberHasBeenSet;

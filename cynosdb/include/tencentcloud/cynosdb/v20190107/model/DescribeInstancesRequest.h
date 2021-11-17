@@ -168,14 +168,42 @@ namespace TencentCloud
                     bool DbTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例状态
-                     * @return Status 实例状态
+                     * 获取实例状态, 可选值:
+creating 创建中
+running 运行中
+isolating 隔离中
+isolated 已隔离
+activating 恢复中
+offlining 下线中
+offlined 已下线
+                     * @return Status 实例状态, 可选值:
+creating 创建中
+running 运行中
+isolating 隔离中
+isolated 已隔离
+activating 恢复中
+offlining 下线中
+offlined 已下线
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置实例状态
-                     * @param Status 实例状态
+                     * 设置实例状态, 可选值:
+creating 创建中
+running 运行中
+isolating 隔离中
+isolated 已隔离
+activating 恢复中
+offlining 下线中
+offlined 已下线
+                     * @param Status 实例状态, 可选值:
+creating 创建中
+running 运行中
+isolating 隔离中
+isolated 已隔离
+activating 恢复中
+offlining 下线中
+offlined 已下线
                      */
                     void SetStatus(const std::string& _status);
 
@@ -246,7 +274,14 @@ namespace TencentCloud
                     bool m_dbTypeHasBeenSet;
 
                     /**
-                     * 实例状态
+                     * 实例状态, 可选值:
+creating 创建中
+running 运行中
+isolating 隔离中
+isolated 已隔离
+activating 恢复中
+offlining 下线中
+offlined 已下线
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

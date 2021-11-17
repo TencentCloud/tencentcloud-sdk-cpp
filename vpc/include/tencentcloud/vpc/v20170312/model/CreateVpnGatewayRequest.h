@@ -153,14 +153,14 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取VPN网关类型。值“CCN”云联网类型VPN网关
-                     * @return Type VPN网关类型。值“CCN”云联网类型VPN网关
+                     * 获取VPN网关类型。值“CCN”云联网类型VPN网关，值SSL为SSL-VPN
+                     * @return Type VPN网关类型。值“CCN”云联网类型VPN网关，值SSL为SSL-VPN
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置VPN网关类型。值“CCN”云联网类型VPN网关
-                     * @param Type VPN网关类型。值“CCN”云联网类型VPN网关
+                     * 设置VPN网关类型。值“CCN”云联网类型VPN网关，值SSL为SSL-VPN
+                     * @param Type VPN网关类型。值“CCN”云联网类型VPN网关，值SSL为SSL-VPN
                      */
                     void SetType(const std::string& _type);
 
@@ -187,6 +187,42 @@ namespace TencentCloud
                      * @return Tags 是否已赋值
                      */
                     bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取CDC实例ID
+                     * @return CdcId CDC实例ID
+                     */
+                    std::string GetCdcId() const;
+
+                    /**
+                     * 设置CDC实例ID
+                     * @param CdcId CDC实例ID
+                     */
+                    void SetCdcId(const std::string& _cdcId);
+
+                    /**
+                     * 判断参数 CdcId 是否已赋值
+                     * @return CdcId 是否已赋值
+                     */
+                    bool CdcIdHasBeenSet() const;
+
+                    /**
+                     * 获取SSL-VPN 最大CLIENT 连接数。可选 [5, 10, 20, 50, 100]。仅SSL-VPN 需要选这个参数。
+                     * @return MaxConnection SSL-VPN 最大CLIENT 连接数。可选 [5, 10, 20, 50, 100]。仅SSL-VPN 需要选这个参数。
+                     */
+                    uint64_t GetMaxConnection() const;
+
+                    /**
+                     * 设置SSL-VPN 最大CLIENT 连接数。可选 [5, 10, 20, 50, 100]。仅SSL-VPN 需要选这个参数。
+                     * @param MaxConnection SSL-VPN 最大CLIENT 连接数。可选 [5, 10, 20, 50, 100]。仅SSL-VPN 需要选这个参数。
+                     */
+                    void SetMaxConnection(const uint64_t& _maxConnection);
+
+                    /**
+                     * 判断参数 MaxConnection 是否已赋值
+                     * @return MaxConnection 是否已赋值
+                     */
+                    bool MaxConnectionHasBeenSet() const;
 
                 private:
 
@@ -227,7 +263,7 @@ namespace TencentCloud
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * VPN网关类型。值“CCN”云联网类型VPN网关
+                     * VPN网关类型。值“CCN”云联网类型VPN网关，值SSL为SSL-VPN
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -237,6 +273,18 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * CDC实例ID
+                     */
+                    std::string m_cdcId;
+                    bool m_cdcIdHasBeenSet;
+
+                    /**
+                     * SSL-VPN 最大CLIENT 连接数。可选 [5, 10, 20, 50, 100]。仅SSL-VPN 需要选这个参数。
+                     */
+                    uint64_t m_maxConnection;
+                    bool m_maxConnectionHasBeenSet;
 
                 };
             }

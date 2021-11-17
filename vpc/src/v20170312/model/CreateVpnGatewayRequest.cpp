@@ -30,7 +30,9 @@ CreateVpnGatewayRequest::CreateVpnGatewayRequest() :
     m_instanceChargePrepaidHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_cdcIdHasBeenSet(false),
+    m_maxConnectionHasBeenSet(false)
 {
 }
 
@@ -111,6 +113,22 @@ string CreateVpnGatewayRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_cdcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CdcId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cdcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxConnectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxConnection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxConnection, allocator);
     }
 
 
@@ -247,6 +265,38 @@ void CreateVpnGatewayRequest::SetTags(const vector<Tag>& _tags)
 bool CreateVpnGatewayRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string CreateVpnGatewayRequest::GetCdcId() const
+{
+    return m_cdcId;
+}
+
+void CreateVpnGatewayRequest::SetCdcId(const string& _cdcId)
+{
+    m_cdcId = _cdcId;
+    m_cdcIdHasBeenSet = true;
+}
+
+bool CreateVpnGatewayRequest::CdcIdHasBeenSet() const
+{
+    return m_cdcIdHasBeenSet;
+}
+
+uint64_t CreateVpnGatewayRequest::GetMaxConnection() const
+{
+    return m_maxConnection;
+}
+
+void CreateVpnGatewayRequest::SetMaxConnection(const uint64_t& _maxConnection)
+{
+    m_maxConnection = _maxConnection;
+    m_maxConnectionHasBeenSet = true;
+}
+
+bool CreateVpnGatewayRequest::MaxConnectionHasBeenSet() const
+{
+    return m_maxConnectionHasBeenSet;
 }
 
 

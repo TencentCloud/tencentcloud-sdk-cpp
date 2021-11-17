@@ -38,7 +38,8 @@ SlowLogData::SlowLogData() :
     m_tsMaxHasBeenSet(false),
     m_tsMinHasBeenSet(false),
     m_userHasBeenSet(false),
-    m_exampleSqlHasBeenSet(false)
+    m_exampleSqlHasBeenSet(false),
+    m_hostHasBeenSet(false)
 {
 }
 
@@ -227,6 +228,16 @@ CoreInternalOutcome SlowLogData::Deserialize(const rapidjson::Value &value)
         m_exampleSqlHasBeenSet = true;
     }
 
+    if (value.HasMember("Host") && !value["Host"].IsNull())
+    {
+        if (!value["Host"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SlowLogData.Host` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_host = string(value["Host"].GetString());
+        m_hostHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +387,14 @@ void SlowLogData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ExampleSql";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_exampleSql.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Host";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_host.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -667,5 +686,21 @@ void SlowLogData::SetExampleSql(const string& _exampleSql)
 bool SlowLogData::ExampleSqlHasBeenSet() const
 {
     return m_exampleSqlHasBeenSet;
+}
+
+string SlowLogData::GetHost() const
+{
+    return m_host;
+}
+
+void SlowLogData::SetHost(const string& _host)
+{
+    m_host = _host;
+    m_hostHasBeenSet = true;
+}
+
+bool SlowLogData::HostHasBeenSet() const
+{
+    return m_hostHasBeenSet;
 }
 

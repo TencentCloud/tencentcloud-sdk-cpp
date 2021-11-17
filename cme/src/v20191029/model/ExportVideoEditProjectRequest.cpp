@@ -30,6 +30,7 @@ ExportVideoEditProjectRequest::ExportVideoEditProjectRequest() :
     m_coverDataHasBeenSet(false),
     m_cMEExportInfoHasBeenSet(false),
     m_vODExportInfoHasBeenSet(false),
+    m_exportExtensionArgsHasBeenSet(false),
     m_operatorHasBeenSet(false)
 {
 }
@@ -97,6 +98,15 @@ string ExportVideoEditProjectRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_vODExportInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_exportExtensionArgsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExportExtensionArgs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_exportExtensionArgs.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_operatorHasBeenSet)
@@ -225,6 +235,22 @@ void ExportVideoEditProjectRequest::SetVODExportInfo(const VODExportInfo& _vODEx
 bool ExportVideoEditProjectRequest::VODExportInfoHasBeenSet() const
 {
     return m_vODExportInfoHasBeenSet;
+}
+
+VideoExportExtensionArgs ExportVideoEditProjectRequest::GetExportExtensionArgs() const
+{
+    return m_exportExtensionArgs;
+}
+
+void ExportVideoEditProjectRequest::SetExportExtensionArgs(const VideoExportExtensionArgs& _exportExtensionArgs)
+{
+    m_exportExtensionArgs = _exportExtensionArgs;
+    m_exportExtensionArgsHasBeenSet = true;
+}
+
+bool ExportVideoEditProjectRequest::ExportExtensionArgsHasBeenSet() const
+{
+    return m_exportExtensionArgsHasBeenSet;
 }
 
 string ExportVideoEditProjectRequest::GetOperator() const

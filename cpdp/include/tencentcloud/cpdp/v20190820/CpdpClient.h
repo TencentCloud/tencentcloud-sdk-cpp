@@ -23,6 +23,12 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/cpdp/v20190820/model/AddContractRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/AddContractResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/AddMerchantRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/AddMerchantResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/AddShopRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/AddShopResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ApplyApplicationMaterialRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/ApplyApplicationMaterialResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ApplyOutwardOrderRequest.h>
@@ -95,8 +101,26 @@
 #include <tencentcloud/cpdp/v20190820/model/DescribeChargeDetailResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/DescribeOrderStatusRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/DescribeOrderStatusResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/DistributeAccreditQueryRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/DistributeAccreditQueryResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/DistributeAccreditTlinxRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/DistributeAccreditTlinxResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/DistributeAddReceiverRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/DistributeAddReceiverResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/DistributeApplyRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/DistributeApplyResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/DistributeCancelRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/DistributeCancelResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/DistributeQueryRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/DistributeQueryResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/DistributeQueryReceiverRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/DistributeQueryReceiverResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/DistributeRemoveReceiverRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/DistributeRemoveReceiverResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/DownloadBillRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/DownloadBillResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/DownloadOrgFileRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/DownloadOrgFileResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/DownloadReconciliationUrlRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/DownloadReconciliationUrlResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ExecuteMemberTransactionRequest.h>
@@ -139,10 +163,18 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryBatchPaymentResultResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryBillDownloadURLRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryBillDownloadURLResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryCityCodeRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryCityCodeResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryCommonTransferRechargeRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryCommonTransferRechargeResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryContractRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryContractResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryContractPayFeeRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryContractPayFeeResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryContractPayWayListRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryContractPayWayListResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryContractRelateShopRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryContractRelateShopResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryCustAcctIdBalanceRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryCustAcctIdBalanceResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryDownloadBillURLRequest.h>
@@ -163,6 +195,8 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryMerchantResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMerchantBalanceRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMerchantBalanceResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryMerchantClassificationRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryMerchantClassificationResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMerchantInfoForManagementRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMerchantInfoForManagementResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMerchantOrderRequest.h>
@@ -181,6 +215,8 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryReconciliationDocumentResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryRefundRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryRefundResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryShopOpenIdRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryShopOpenIdResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QuerySinglePayRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QuerySinglePayResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QuerySinglePaymentResultRequest.h>
@@ -241,10 +277,18 @@
 #include <tencentcloud/cpdp/v20190820/model/UploadExternalAnchorInfoResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/UploadFileRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/UploadFileResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/UploadOrgFileRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/UploadOrgFileResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/UploadTaxListRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/UploadTaxListResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/UploadTaxPaymentRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/UploadTaxPaymentResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/ViewContractRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/ViewContractResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/ViewMerchantRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/ViewMerchantResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/ViewShopRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/ViewShopResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/WithdrawCashMembershipRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/WithdrawCashMembershipResponse.h>
 
@@ -261,6 +305,15 @@ namespace TencentCloud
                 CpdpClient(const Credential &credential, const std::string &region);
                 CpdpClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::AddContractResponse> AddContractOutcome;
+                typedef std::future<AddContractOutcome> AddContractOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::AddContractRequest&, AddContractOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddContractAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddMerchantResponse> AddMerchantOutcome;
+                typedef std::future<AddMerchantOutcome> AddMerchantOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::AddMerchantRequest&, AddMerchantOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddMerchantAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddShopResponse> AddShopOutcome;
+                typedef std::future<AddShopOutcome> AddShopOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::AddShopRequest&, AddShopOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddShopAsyncHandler;
                 typedef Outcome<Core::Error, Model::ApplyApplicationMaterialResponse> ApplyApplicationMaterialOutcome;
                 typedef std::future<ApplyApplicationMaterialOutcome> ApplyApplicationMaterialOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::ApplyApplicationMaterialRequest&, ApplyApplicationMaterialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyApplicationMaterialAsyncHandler;
@@ -369,9 +422,36 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeOrderStatusResponse> DescribeOrderStatusOutcome;
                 typedef std::future<DescribeOrderStatusOutcome> DescribeOrderStatusOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::DescribeOrderStatusRequest&, DescribeOrderStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrderStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DistributeAccreditQueryResponse> DistributeAccreditQueryOutcome;
+                typedef std::future<DistributeAccreditQueryOutcome> DistributeAccreditQueryOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::DistributeAccreditQueryRequest&, DistributeAccreditQueryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DistributeAccreditQueryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DistributeAccreditTlinxResponse> DistributeAccreditTlinxOutcome;
+                typedef std::future<DistributeAccreditTlinxOutcome> DistributeAccreditTlinxOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::DistributeAccreditTlinxRequest&, DistributeAccreditTlinxOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DistributeAccreditTlinxAsyncHandler;
+                typedef Outcome<Core::Error, Model::DistributeAddReceiverResponse> DistributeAddReceiverOutcome;
+                typedef std::future<DistributeAddReceiverOutcome> DistributeAddReceiverOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::DistributeAddReceiverRequest&, DistributeAddReceiverOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DistributeAddReceiverAsyncHandler;
+                typedef Outcome<Core::Error, Model::DistributeApplyResponse> DistributeApplyOutcome;
+                typedef std::future<DistributeApplyOutcome> DistributeApplyOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::DistributeApplyRequest&, DistributeApplyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DistributeApplyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DistributeCancelResponse> DistributeCancelOutcome;
+                typedef std::future<DistributeCancelOutcome> DistributeCancelOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::DistributeCancelRequest&, DistributeCancelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DistributeCancelAsyncHandler;
+                typedef Outcome<Core::Error, Model::DistributeQueryResponse> DistributeQueryOutcome;
+                typedef std::future<DistributeQueryOutcome> DistributeQueryOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::DistributeQueryRequest&, DistributeQueryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DistributeQueryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DistributeQueryReceiverResponse> DistributeQueryReceiverOutcome;
+                typedef std::future<DistributeQueryReceiverOutcome> DistributeQueryReceiverOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::DistributeQueryReceiverRequest&, DistributeQueryReceiverOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DistributeQueryReceiverAsyncHandler;
+                typedef Outcome<Core::Error, Model::DistributeRemoveReceiverResponse> DistributeRemoveReceiverOutcome;
+                typedef std::future<DistributeRemoveReceiverOutcome> DistributeRemoveReceiverOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::DistributeRemoveReceiverRequest&, DistributeRemoveReceiverOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DistributeRemoveReceiverAsyncHandler;
                 typedef Outcome<Core::Error, Model::DownloadBillResponse> DownloadBillOutcome;
                 typedef std::future<DownloadBillOutcome> DownloadBillOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::DownloadBillRequest&, DownloadBillOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadBillAsyncHandler;
+                typedef Outcome<Core::Error, Model::DownloadOrgFileResponse> DownloadOrgFileOutcome;
+                typedef std::future<DownloadOrgFileOutcome> DownloadOrgFileOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::DownloadOrgFileRequest&, DownloadOrgFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadOrgFileAsyncHandler;
                 typedef Outcome<Core::Error, Model::DownloadReconciliationUrlResponse> DownloadReconciliationUrlOutcome;
                 typedef std::future<DownloadReconciliationUrlOutcome> DownloadReconciliationUrlOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::DownloadReconciliationUrlRequest&, DownloadReconciliationUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadReconciliationUrlAsyncHandler;
@@ -435,12 +515,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryBillDownloadURLResponse> QueryBillDownloadURLOutcome;
                 typedef std::future<QueryBillDownloadURLOutcome> QueryBillDownloadURLOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryBillDownloadURLRequest&, QueryBillDownloadURLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryBillDownloadURLAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryCityCodeResponse> QueryCityCodeOutcome;
+                typedef std::future<QueryCityCodeOutcome> QueryCityCodeOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryCityCodeRequest&, QueryCityCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryCityCodeAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryCommonTransferRechargeResponse> QueryCommonTransferRechargeOutcome;
                 typedef std::future<QueryCommonTransferRechargeOutcome> QueryCommonTransferRechargeOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryCommonTransferRechargeRequest&, QueryCommonTransferRechargeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryCommonTransferRechargeAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryContractResponse> QueryContractOutcome;
                 typedef std::future<QueryContractOutcome> QueryContractOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryContractRequest&, QueryContractOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryContractAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryContractPayFeeResponse> QueryContractPayFeeOutcome;
+                typedef std::future<QueryContractPayFeeOutcome> QueryContractPayFeeOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryContractPayFeeRequest&, QueryContractPayFeeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryContractPayFeeAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryContractPayWayListResponse> QueryContractPayWayListOutcome;
+                typedef std::future<QueryContractPayWayListOutcome> QueryContractPayWayListOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryContractPayWayListRequest&, QueryContractPayWayListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryContractPayWayListAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryContractRelateShopResponse> QueryContractRelateShopOutcome;
+                typedef std::future<QueryContractRelateShopOutcome> QueryContractRelateShopOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryContractRelateShopRequest&, QueryContractRelateShopOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryContractRelateShopAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryCustAcctIdBalanceResponse> QueryCustAcctIdBalanceOutcome;
                 typedef std::future<QueryCustAcctIdBalanceOutcome> QueryCustAcctIdBalanceOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryCustAcctIdBalanceRequest&, QueryCustAcctIdBalanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryCustAcctIdBalanceAsyncHandler;
@@ -471,6 +563,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryMerchantBalanceResponse> QueryMerchantBalanceOutcome;
                 typedef std::future<QueryMerchantBalanceOutcome> QueryMerchantBalanceOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryMerchantBalanceRequest&, QueryMerchantBalanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMerchantBalanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryMerchantClassificationResponse> QueryMerchantClassificationOutcome;
+                typedef std::future<QueryMerchantClassificationOutcome> QueryMerchantClassificationOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryMerchantClassificationRequest&, QueryMerchantClassificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMerchantClassificationAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryMerchantInfoForManagementResponse> QueryMerchantInfoForManagementOutcome;
                 typedef std::future<QueryMerchantInfoForManagementOutcome> QueryMerchantInfoForManagementOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryMerchantInfoForManagementRequest&, QueryMerchantInfoForManagementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMerchantInfoForManagementAsyncHandler;
@@ -498,6 +593,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryRefundResponse> QueryRefundOutcome;
                 typedef std::future<QueryRefundOutcome> QueryRefundOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryRefundRequest&, QueryRefundOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryRefundAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryShopOpenIdResponse> QueryShopOpenIdOutcome;
+                typedef std::future<QueryShopOpenIdOutcome> QueryShopOpenIdOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryShopOpenIdRequest&, QueryShopOpenIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryShopOpenIdAsyncHandler;
                 typedef Outcome<Core::Error, Model::QuerySinglePayResponse> QuerySinglePayOutcome;
                 typedef std::future<QuerySinglePayOutcome> QuerySinglePayOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QuerySinglePayRequest&, QuerySinglePayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QuerySinglePayAsyncHandler;
@@ -588,17 +686,56 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UploadFileResponse> UploadFileOutcome;
                 typedef std::future<UploadFileOutcome> UploadFileOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::UploadFileRequest&, UploadFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadFileAsyncHandler;
+                typedef Outcome<Core::Error, Model::UploadOrgFileResponse> UploadOrgFileOutcome;
+                typedef std::future<UploadOrgFileOutcome> UploadOrgFileOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::UploadOrgFileRequest&, UploadOrgFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadOrgFileAsyncHandler;
                 typedef Outcome<Core::Error, Model::UploadTaxListResponse> UploadTaxListOutcome;
                 typedef std::future<UploadTaxListOutcome> UploadTaxListOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::UploadTaxListRequest&, UploadTaxListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadTaxListAsyncHandler;
                 typedef Outcome<Core::Error, Model::UploadTaxPaymentResponse> UploadTaxPaymentOutcome;
                 typedef std::future<UploadTaxPaymentOutcome> UploadTaxPaymentOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::UploadTaxPaymentRequest&, UploadTaxPaymentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadTaxPaymentAsyncHandler;
+                typedef Outcome<Core::Error, Model::ViewContractResponse> ViewContractOutcome;
+                typedef std::future<ViewContractOutcome> ViewContractOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::ViewContractRequest&, ViewContractOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ViewContractAsyncHandler;
+                typedef Outcome<Core::Error, Model::ViewMerchantResponse> ViewMerchantOutcome;
+                typedef std::future<ViewMerchantOutcome> ViewMerchantOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::ViewMerchantRequest&, ViewMerchantOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ViewMerchantAsyncHandler;
+                typedef Outcome<Core::Error, Model::ViewShopResponse> ViewShopOutcome;
+                typedef std::future<ViewShopOutcome> ViewShopOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::ViewShopRequest&, ViewShopOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ViewShopAsyncHandler;
                 typedef Outcome<Core::Error, Model::WithdrawCashMembershipResponse> WithdrawCashMembershipOutcome;
                 typedef std::future<WithdrawCashMembershipOutcome> WithdrawCashMembershipOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::WithdrawCashMembershipRequest&, WithdrawCashMembershipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> WithdrawCashMembershipAsyncHandler;
 
 
+
+                /**
+                 *云支付-添加合同接口
+                 * @param req AddContractRequest
+                 * @return AddContractOutcome
+                 */
+                AddContractOutcome AddContract(const Model::AddContractRequest &request);
+                void AddContractAsync(const Model::AddContractRequest& request, const AddContractAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddContractOutcomeCallable AddContractCallable(const Model::AddContractRequest& request);
+
+                /**
+                 *云支付-添加商户接口
+                 * @param req AddMerchantRequest
+                 * @return AddMerchantOutcome
+                 */
+                AddMerchantOutcome AddMerchant(const Model::AddMerchantRequest &request);
+                void AddMerchantAsync(const Model::AddMerchantRequest& request, const AddMerchantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddMerchantOutcomeCallable AddMerchantCallable(const Model::AddMerchantRequest& request);
+
+                /**
+                 *云支付-添加门店接口
+                 * @param req AddShopRequest
+                 * @return AddShopOutcome
+                 */
+                AddShopOutcome AddShop(const Model::AddShopRequest &request);
+                void AddShopAsync(const Model::AddShopRequest& request, const AddShopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddShopOutcomeCallable AddShopCallable(const Model::AddShopRequest& request);
 
                 /**
                  *跨境-提交申报材料。申报材料的主体是付款人，需要提前调用【跨境-付款人申请】接口提交付款人信息且审核通过后调用。
@@ -933,6 +1070,78 @@ namespace TencentCloud
                 DescribeOrderStatusOutcomeCallable DescribeOrderStatusCallable(const Model::DescribeOrderStatusRequest& request);
 
                 /**
+                 *云支付-分账授权申请查询接口
+                 * @param req DistributeAccreditQueryRequest
+                 * @return DistributeAccreditQueryOutcome
+                 */
+                DistributeAccreditQueryOutcome DistributeAccreditQuery(const Model::DistributeAccreditQueryRequest &request);
+                void DistributeAccreditQueryAsync(const Model::DistributeAccreditQueryRequest& request, const DistributeAccreditQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DistributeAccreditQueryOutcomeCallable DistributeAccreditQueryCallable(const Model::DistributeAccreditQueryRequest& request);
+
+                /**
+                 *云支付-分账授权申请接口
+                 * @param req DistributeAccreditTlinxRequest
+                 * @return DistributeAccreditTlinxOutcome
+                 */
+                DistributeAccreditTlinxOutcome DistributeAccreditTlinx(const Model::DistributeAccreditTlinxRequest &request);
+                void DistributeAccreditTlinxAsync(const Model::DistributeAccreditTlinxRequest& request, const DistributeAccreditTlinxAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DistributeAccreditTlinxOutcomeCallable DistributeAccreditTlinxCallable(const Model::DistributeAccreditTlinxRequest& request);
+
+                /**
+                 *云支付-分账添加分账接收方接口
+                 * @param req DistributeAddReceiverRequest
+                 * @return DistributeAddReceiverOutcome
+                 */
+                DistributeAddReceiverOutcome DistributeAddReceiver(const Model::DistributeAddReceiverRequest &request);
+                void DistributeAddReceiverAsync(const Model::DistributeAddReceiverRequest& request, const DistributeAddReceiverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DistributeAddReceiverOutcomeCallable DistributeAddReceiverCallable(const Model::DistributeAddReceiverRequest& request);
+
+                /**
+                 *云支付-分账请求接口
+                 * @param req DistributeApplyRequest
+                 * @return DistributeApplyOutcome
+                 */
+                DistributeApplyOutcome DistributeApply(const Model::DistributeApplyRequest &request);
+                void DistributeApplyAsync(const Model::DistributeApplyRequest& request, const DistributeApplyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DistributeApplyOutcomeCallable DistributeApplyCallable(const Model::DistributeApplyRequest& request);
+
+                /**
+                 *云支付-分账撤销接口
+                 * @param req DistributeCancelRequest
+                 * @return DistributeCancelOutcome
+                 */
+                DistributeCancelOutcome DistributeCancel(const Model::DistributeCancelRequest &request);
+                void DistributeCancelAsync(const Model::DistributeCancelRequest& request, const DistributeCancelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DistributeCancelOutcomeCallable DistributeCancelCallable(const Model::DistributeCancelRequest& request);
+
+                /**
+                 *云支付-分账结果查询接口
+                 * @param req DistributeQueryRequest
+                 * @return DistributeQueryOutcome
+                 */
+                DistributeQueryOutcome DistributeQuery(const Model::DistributeQueryRequest &request);
+                void DistributeQueryAsync(const Model::DistributeQueryRequest& request, const DistributeQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DistributeQueryOutcomeCallable DistributeQueryCallable(const Model::DistributeQueryRequest& request);
+
+                /**
+                 *云支付-T查询已添加分账接收方接口
+                 * @param req DistributeQueryReceiverRequest
+                 * @return DistributeQueryReceiverOutcome
+                 */
+                DistributeQueryReceiverOutcome DistributeQueryReceiver(const Model::DistributeQueryReceiverRequest &request);
+                void DistributeQueryReceiverAsync(const Model::DistributeQueryReceiverRequest& request, const DistributeQueryReceiverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DistributeQueryReceiverOutcomeCallable DistributeQueryReceiverCallable(const Model::DistributeQueryReceiverRequest& request);
+
+                /**
+                 *云支付-分账解除分账接收方接口
+                 * @param req DistributeRemoveReceiverRequest
+                 * @return DistributeRemoveReceiverOutcome
+                 */
+                DistributeRemoveReceiverOutcome DistributeRemoveReceiver(const Model::DistributeRemoveReceiverRequest &request);
+                void DistributeRemoveReceiverAsync(const Model::DistributeRemoveReceiverRequest& request, const DistributeRemoveReceiverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DistributeRemoveReceiverOutcomeCallable DistributeRemoveReceiverCallable(const Model::DistributeRemoveReceiverRequest& request);
+
+                /**
                  *账单下载接口，根据本接口返回的URL地址，在D+1日下载对账单。注意，本接口返回的URL地址有时效，请尽快下载。URL超时时效后，请重新调用本接口再次获取。
                  * @param req DownloadBillRequest
                  * @return DownloadBillOutcome
@@ -940,6 +1149,15 @@ namespace TencentCloud
                 DownloadBillOutcome DownloadBill(const Model::DownloadBillRequest &request);
                 void DownloadBillAsync(const Model::DownloadBillRequest& request, const DownloadBillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DownloadBillOutcomeCallable DownloadBillCallable(const Model::DownloadBillRequest& request);
+
+                /**
+                 *云支付-下载机构文件接口
+                 * @param req DownloadOrgFileRequest
+                 * @return DownloadOrgFileOutcome
+                 */
+                DownloadOrgFileOutcome DownloadOrgFile(const Model::DownloadOrgFileRequest &request);
+                void DownloadOrgFileAsync(const Model::DownloadOrgFileRequest& request, const DownloadOrgFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DownloadOrgFileOutcomeCallable DownloadOrgFileCallable(const Model::DownloadOrgFileRequest& request);
 
                 /**
                  *获取对账中心账单下载地址的接口
@@ -1131,6 +1349,15 @@ namespace TencentCloud
                 QueryBillDownloadURLOutcomeCallable QueryBillDownloadURLCallable(const Model::QueryBillDownloadURLRequest& request);
 
                 /**
+                 *云支付-查询城市编码接口
+                 * @param req QueryCityCodeRequest
+                 * @return QueryCityCodeOutcome
+                 */
+                QueryCityCodeOutcome QueryCityCode(const Model::QueryCityCodeRequest &request);
+                void QueryCityCodeAsync(const Model::QueryCityCodeRequest& request, const QueryCityCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryCityCodeOutcomeCallable QueryCityCodeCallable(const Model::QueryCityCodeRequest& request);
+
+                /**
                  *查询普通转账充值明细。接口用于查询会员主动转账进资金汇总账户的明细情况。若会员使用绑定账号转入，则直接入账到会员子账户。若未使用绑定账号转入，则系统无法自动清分到对应子账户，则转入挂账子账户由平台自行清分。若是 “见证+收单充值”T0充值记录时备注Note为“见证+收单充值,订单号” 此接口可以查到T0到账的“见证+收单充值”充值记录。
                  * @param req QueryCommonTransferRechargeRequest
                  * @return QueryCommonTransferRechargeOutcome
@@ -1147,6 +1374,33 @@ namespace TencentCloud
                 QueryContractOutcome QueryContract(const Model::QueryContractRequest &request);
                 void QueryContractAsync(const Model::QueryContractRequest& request, const QueryContractAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryContractOutcomeCallable QueryContractCallable(const Model::QueryContractRequest& request);
+
+                /**
+                 *云支付-查询支付方式费率及自定义表单项接口
+                 * @param req QueryContractPayFeeRequest
+                 * @return QueryContractPayFeeOutcome
+                 */
+                QueryContractPayFeeOutcome QueryContractPayFee(const Model::QueryContractPayFeeRequest &request);
+                void QueryContractPayFeeAsync(const Model::QueryContractPayFeeRequest& request, const QueryContractPayFeeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryContractPayFeeOutcomeCallable QueryContractPayFeeCallable(const Model::QueryContractPayFeeRequest& request);
+
+                /**
+                 *云支付-查询合同支付方式列表接口
+                 * @param req QueryContractPayWayListRequest
+                 * @return QueryContractPayWayListOutcome
+                 */
+                QueryContractPayWayListOutcome QueryContractPayWayList(const Model::QueryContractPayWayListRequest &request);
+                void QueryContractPayWayListAsync(const Model::QueryContractPayWayListRequest& request, const QueryContractPayWayListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryContractPayWayListOutcomeCallable QueryContractPayWayListCallable(const Model::QueryContractPayWayListRequest& request);
+
+                /**
+                 *云支付-查询合同可关联门店接口
+                 * @param req QueryContractRelateShopRequest
+                 * @return QueryContractRelateShopOutcome
+                 */
+                QueryContractRelateShopOutcome QueryContractRelateShop(const Model::QueryContractRelateShopRequest &request);
+                void QueryContractRelateShopAsync(const Model::QueryContractRelateShopRequest& request, const QueryContractRelateShopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryContractRelateShopOutcomeCallable QueryContractRelateShopCallable(const Model::QueryContractRelateShopRequest& request);
 
                 /**
                  *查询银行子账户余额。查询会员子账户以及平台的功能子账户的余额。
@@ -1240,6 +1494,15 @@ namespace TencentCloud
                 QueryMerchantBalanceOutcomeCallable QueryMerchantBalanceCallable(const Model::QueryMerchantBalanceRequest& request);
 
                 /**
+                 *云支付-查询商户分类接口
+                 * @param req QueryMerchantClassificationRequest
+                 * @return QueryMerchantClassificationOutcome
+                 */
+                QueryMerchantClassificationOutcome QueryMerchantClassification(const Model::QueryMerchantClassificationRequest &request);
+                void QueryMerchantClassificationAsync(const Model::QueryMerchantClassificationRequest& request, const QueryMerchantClassificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryMerchantClassificationOutcomeCallable QueryMerchantClassificationCallable(const Model::QueryMerchantClassificationRequest& request);
+
+                /**
                  *智慧零售-查询管理端商户
                  * @param req QueryMerchantInfoForManagementRequest
                  * @return QueryMerchantInfoForManagementOutcome
@@ -1319,6 +1582,15 @@ namespace TencentCloud
                 QueryRefundOutcome QueryRefund(const Model::QueryRefundRequest &request);
                 void QueryRefundAsync(const Model::QueryRefundRequest& request, const QueryRefundAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryRefundOutcomeCallable QueryRefundCallable(const Model::QueryRefundRequest& request);
+
+                /**
+                 *云支付-获取门店OpenId接口
+                 * @param req QueryShopOpenIdRequest
+                 * @return QueryShopOpenIdOutcome
+                 */
+                QueryShopOpenIdOutcome QueryShopOpenId(const Model::QueryShopOpenIdRequest &request);
+                void QueryShopOpenIdAsync(const Model::QueryShopOpenIdRequest& request, const QueryShopOpenIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryShopOpenIdOutcomeCallable QueryShopOpenIdCallable(const Model::QueryShopOpenIdRequest& request);
 
                 /**
                  *银企直连-单笔支付状态查询接口
@@ -1591,6 +1863,15 @@ namespace TencentCloud
                 UploadFileOutcomeCallable UploadFileCallable(const Model::UploadFileRequest& request);
 
                 /**
+                 *云支付-上传机构文件接口
+                 * @param req UploadOrgFileRequest
+                 * @return UploadOrgFileOutcome
+                 */
+                UploadOrgFileOutcome UploadOrgFile(const Model::UploadOrgFileRequest &request);
+                void UploadOrgFileAsync(const Model::UploadOrgFileRequest& request, const UploadOrgFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UploadOrgFileOutcomeCallable UploadOrgFileCallable(const Model::UploadOrgFileRequest& request);
+
+                /**
                  *直播平台-上传代理商完税列表
                  * @param req UploadTaxListRequest
                  * @return UploadTaxListOutcome
@@ -1607,6 +1888,33 @@ namespace TencentCloud
                 UploadTaxPaymentOutcome UploadTaxPayment(const Model::UploadTaxPaymentRequest &request);
                 void UploadTaxPaymentAsync(const Model::UploadTaxPaymentRequest& request, const UploadTaxPaymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UploadTaxPaymentOutcomeCallable UploadTaxPaymentCallable(const Model::UploadTaxPaymentRequest& request);
+
+                /**
+                 *云支付-查询合同明细接口
+                 * @param req ViewContractRequest
+                 * @return ViewContractOutcome
+                 */
+                ViewContractOutcome ViewContract(const Model::ViewContractRequest &request);
+                void ViewContractAsync(const Model::ViewContractRequest& request, const ViewContractAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ViewContractOutcomeCallable ViewContractCallable(const Model::ViewContractRequest& request);
+
+                /**
+                 *云支付-查询商户明细接口
+                 * @param req ViewMerchantRequest
+                 * @return ViewMerchantOutcome
+                 */
+                ViewMerchantOutcome ViewMerchant(const Model::ViewMerchantRequest &request);
+                void ViewMerchantAsync(const Model::ViewMerchantRequest& request, const ViewMerchantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ViewMerchantOutcomeCallable ViewMerchantCallable(const Model::ViewMerchantRequest& request);
+
+                /**
+                 *云支付-查询门店明细接口
+                 * @param req ViewShopRequest
+                 * @return ViewShopOutcome
+                 */
+                ViewShopOutcome ViewShop(const Model::ViewShopRequest &request);
+                void ViewShopAsync(const Model::ViewShopRequest& request, const ViewShopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ViewShopOutcomeCallable ViewShopCallable(const Model::ViewShopRequest& request);
 
                 /**
                  *会员提现-不验证。此接口受理会员发起的提现申请。会员子账户的可提现余额、可用余额会减少，市场的资金汇总账户(监管账户)会减少相应的发生金额，提现到会员申请的收款账户。		

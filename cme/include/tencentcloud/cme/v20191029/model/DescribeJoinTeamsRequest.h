@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool MemberIdHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移量，默认值：0
-                     * @return Offset 分页偏移量，默认值：0
+                     * 获取分页偏移量，默认值：0。
+                     * @return Offset 分页偏移量，默认值：0。
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移量，默认值：0
-                     * @param Offset 分页偏移量，默认值：0
+                     * 设置分页偏移量，默认值：0。
+                     * @param Offset 分页偏移量，默认值：0。
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -129,7 +129,7 @@ namespace TencentCloud
                     bool m_memberIdHasBeenSet;
 
                     /**
-                     * 分页偏移量，默认值：0
+                     * 分页偏移量，默认值：0。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

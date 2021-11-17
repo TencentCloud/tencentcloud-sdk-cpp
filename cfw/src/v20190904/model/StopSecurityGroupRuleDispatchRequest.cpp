@@ -22,7 +22,8 @@
 using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
-StopSecurityGroupRuleDispatchRequest::StopSecurityGroupRuleDispatchRequest()
+StopSecurityGroupRuleDispatchRequest::StopSecurityGroupRuleDispatchRequest() :
+    m_stopTypeHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string StopSecurityGroupRuleDispatchRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_stopTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StopType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_stopType, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string StopSecurityGroupRuleDispatchRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t StopSecurityGroupRuleDispatchRequest::GetStopType() const
+{
+    return m_stopType;
+}
+
+void StopSecurityGroupRuleDispatchRequest::SetStopType(const int64_t& _stopType)
+{
+    m_stopType = _stopType;
+    m_stopTypeHasBeenSet = true;
+}
+
+bool StopSecurityGroupRuleDispatchRequest::StopTypeHasBeenSet() const
+{
+    return m_stopTypeHasBeenSet;
+}
 
 

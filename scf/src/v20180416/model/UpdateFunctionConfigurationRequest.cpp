@@ -32,6 +32,7 @@ UpdateFunctionConfigurationRequest::UpdateFunctionConfigurationRequest() :
     m_namespaceHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
     m_roleHasBeenSet(false),
+    m_installDependencyHasBeenSet(false),
     m_clsLogsetIdHasBeenSet(false),
     m_clsTopicIdHasBeenSet(false),
     m_publishHasBeenSet(false),
@@ -124,6 +125,14 @@ string UpdateFunctionConfigurationRequest::ToJsonString() const
         string key = "Role";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_role.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_installDependencyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstallDependency";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_installDependency.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clsLogsetIdHasBeenSet)
@@ -367,6 +376,22 @@ void UpdateFunctionConfigurationRequest::SetRole(const string& _role)
 bool UpdateFunctionConfigurationRequest::RoleHasBeenSet() const
 {
     return m_roleHasBeenSet;
+}
+
+string UpdateFunctionConfigurationRequest::GetInstallDependency() const
+{
+    return m_installDependency;
+}
+
+void UpdateFunctionConfigurationRequest::SetInstallDependency(const string& _installDependency)
+{
+    m_installDependency = _installDependency;
+    m_installDependencyHasBeenSet = true;
+}
+
+bool UpdateFunctionConfigurationRequest::InstallDependencyHasBeenSet() const
+{
+    return m_installDependencyHasBeenSet;
 }
 
 string UpdateFunctionConfigurationRequest::GetClsLogsetId() const

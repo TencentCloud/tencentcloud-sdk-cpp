@@ -298,6 +298,49 @@ CmeClient::CreateTeamOutcomeCallable CmeClient::CreateTeamCallable(const CreateT
     return task->get_future();
 }
 
+CmeClient::CreateVideoEncodingPresetOutcome CmeClient::CreateVideoEncodingPreset(const CreateVideoEncodingPresetRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateVideoEncodingPreset");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateVideoEncodingPresetResponse rsp = CreateVideoEncodingPresetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateVideoEncodingPresetOutcome(rsp);
+        else
+            return CreateVideoEncodingPresetOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateVideoEncodingPresetOutcome(outcome.GetError());
+    }
+}
+
+void CmeClient::CreateVideoEncodingPresetAsync(const CreateVideoEncodingPresetRequest& request, const CreateVideoEncodingPresetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateVideoEncodingPreset(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CmeClient::CreateVideoEncodingPresetOutcomeCallable CmeClient::CreateVideoEncodingPresetCallable(const CreateVideoEncodingPresetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateVideoEncodingPresetOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateVideoEncodingPreset(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CmeClient::DeleteClassOutcome CmeClient::DeleteClass(const DeleteClassRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteClass");
@@ -549,6 +592,49 @@ CmeClient::DeleteTeamMembersOutcomeCallable CmeClient::DeleteTeamMembersCallable
         [this, request]()
         {
             return this->DeleteTeamMembers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CmeClient::DeleteVideoEncodingPresetOutcome CmeClient::DeleteVideoEncodingPreset(const DeleteVideoEncodingPresetRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteVideoEncodingPreset");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteVideoEncodingPresetResponse rsp = DeleteVideoEncodingPresetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteVideoEncodingPresetOutcome(rsp);
+        else
+            return DeleteVideoEncodingPresetOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteVideoEncodingPresetOutcome(outcome.GetError());
+    }
+}
+
+void CmeClient::DeleteVideoEncodingPresetAsync(const DeleteVideoEncodingPresetRequest& request, const DeleteVideoEncodingPresetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteVideoEncodingPreset(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CmeClient::DeleteVideoEncodingPresetOutcomeCallable CmeClient::DeleteVideoEncodingPresetCallable(const DeleteVideoEncodingPresetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteVideoEncodingPresetOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteVideoEncodingPreset(request);
         }
     );
 
@@ -1108,6 +1194,49 @@ CmeClient::DescribeTeamsOutcomeCallable CmeClient::DescribeTeamsCallable(const D
         [this, request]()
         {
             return this->DescribeTeams(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CmeClient::DescribeVideoEncodingPresetsOutcome CmeClient::DescribeVideoEncodingPresets(const DescribeVideoEncodingPresetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVideoEncodingPresets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVideoEncodingPresetsResponse rsp = DescribeVideoEncodingPresetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVideoEncodingPresetsOutcome(rsp);
+        else
+            return DescribeVideoEncodingPresetsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVideoEncodingPresetsOutcome(outcome.GetError());
+    }
+}
+
+void CmeClient::DescribeVideoEncodingPresetsAsync(const DescribeVideoEncodingPresetsRequest& request, const DescribeVideoEncodingPresetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVideoEncodingPresets(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CmeClient::DescribeVideoEncodingPresetsOutcomeCallable CmeClient::DescribeVideoEncodingPresetsCallable(const DescribeVideoEncodingPresetsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVideoEncodingPresetsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVideoEncodingPresets(request);
         }
     );
 
@@ -1753,6 +1882,49 @@ CmeClient::ModifyTeamMemberOutcomeCallable CmeClient::ModifyTeamMemberCallable(c
         [this, request]()
         {
             return this->ModifyTeamMember(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CmeClient::ModifyVideoEncodingPresetOutcome CmeClient::ModifyVideoEncodingPreset(const ModifyVideoEncodingPresetRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyVideoEncodingPreset");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyVideoEncodingPresetResponse rsp = ModifyVideoEncodingPresetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyVideoEncodingPresetOutcome(rsp);
+        else
+            return ModifyVideoEncodingPresetOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyVideoEncodingPresetOutcome(outcome.GetError());
+    }
+}
+
+void CmeClient::ModifyVideoEncodingPresetAsync(const ModifyVideoEncodingPresetRequest& request, const ModifyVideoEncodingPresetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyVideoEncodingPreset(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CmeClient::ModifyVideoEncodingPresetOutcomeCallable CmeClient::ModifyVideoEncodingPresetCallable(const ModifyVideoEncodingPresetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyVideoEncodingPresetOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyVideoEncodingPreset(request);
         }
     );
 

@@ -38,7 +38,9 @@ VpnGateway::VpnGateway() :
     m_zoneHasBeenSet(false),
     m_vpnGatewayQuotaSetHasBeenSet(false),
     m_versionHasBeenSet(false),
-    m_networkInstanceIdHasBeenSet(false)
+    m_networkInstanceIdHasBeenSet(false),
+    m_cdcIdHasBeenSet(false),
+    m_maxConnectionHasBeenSet(false)
 {
 }
 
@@ -237,6 +239,26 @@ CoreInternalOutcome VpnGateway::Deserialize(const rapidjson::Value &value)
         m_networkInstanceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("CdcId") && !value["CdcId"].IsNull())
+    {
+        if (!value["CdcId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpnGateway.CdcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cdcId = string(value["CdcId"].GetString());
+        m_cdcIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxConnection") && !value["MaxConnection"].IsNull())
+    {
+        if (!value["MaxConnection"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpnGateway.MaxConnection` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxConnection = value["MaxConnection"].GetUint64();
+        m_maxConnectionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -393,6 +415,22 @@ void VpnGateway::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "NetworkInstanceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_networkInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cdcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CdcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cdcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxConnectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxConnection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxConnection, allocator);
     }
 
 }
@@ -684,5 +722,37 @@ void VpnGateway::SetNetworkInstanceId(const string& _networkInstanceId)
 bool VpnGateway::NetworkInstanceIdHasBeenSet() const
 {
     return m_networkInstanceIdHasBeenSet;
+}
+
+string VpnGateway::GetCdcId() const
+{
+    return m_cdcId;
+}
+
+void VpnGateway::SetCdcId(const string& _cdcId)
+{
+    m_cdcId = _cdcId;
+    m_cdcIdHasBeenSet = true;
+}
+
+bool VpnGateway::CdcIdHasBeenSet() const
+{
+    return m_cdcIdHasBeenSet;
+}
+
+uint64_t VpnGateway::GetMaxConnection() const
+{
+    return m_maxConnection;
+}
+
+void VpnGateway::SetMaxConnection(const uint64_t& _maxConnection)
+{
+    m_maxConnection = _maxConnection;
+    m_maxConnectionHasBeenSet = true;
+}
+
+bool VpnGateway::MaxConnectionHasBeenSet() const
+{
+    return m_maxConnectionHasBeenSet;
 }
 

@@ -34,6 +34,7 @@ CreateFunctionRequest::CreateFunctionRequest() :
     m_vpcConfigHasBeenSet(false),
     m_namespaceHasBeenSet(false),
     m_roleHasBeenSet(false),
+    m_installDependencyHasBeenSet(false),
     m_clsLogsetIdHasBeenSet(false),
     m_clsTopicIdHasBeenSet(false),
     m_typeHasBeenSet(false),
@@ -147,6 +148,14 @@ string CreateFunctionRequest::ToJsonString() const
         string key = "Role";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_role.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_installDependencyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstallDependency";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_installDependency.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clsLogsetIdHasBeenSet)
@@ -461,6 +470,22 @@ void CreateFunctionRequest::SetRole(const string& _role)
 bool CreateFunctionRequest::RoleHasBeenSet() const
 {
     return m_roleHasBeenSet;
+}
+
+string CreateFunctionRequest::GetInstallDependency() const
+{
+    return m_installDependency;
+}
+
+void CreateFunctionRequest::SetInstallDependency(const string& _installDependency)
+{
+    m_installDependency = _installDependency;
+    m_installDependencyHasBeenSet = true;
+}
+
+bool CreateFunctionRequest::InstallDependencyHasBeenSet() const
+{
+    return m_installDependencyHasBeenSet;
 }
 
 string CreateFunctionRequest::GetClsLogsetId() const

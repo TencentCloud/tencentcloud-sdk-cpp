@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取团队列表
-                     * @return TeamSet 团队列表
+                     * 获取团队列表。
+                     * @return TeamSet 团队列表。
                      */
                     std::vector<JoinTeamInfo> GetTeamSet() const;
 
@@ -77,7 +77,7 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 团队列表
+                     * 团队列表。
                      */
                     std::vector<JoinTeamInfo> m_teamSet;
                     bool m_teamSetHasBeenSet;

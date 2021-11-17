@@ -119,10 +119,14 @@
 #include <tencentcloud/mariadb/v20170312/model/ModifyDBInstancesProjectResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyDBParametersRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyDBParametersResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/ModifyDBSyncModeRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/ModifyDBSyncModeResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyLogFileRetentionPeriodRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyLogFileRetentionPeriodResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyRealServerAccessStrategyRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyRealServerAccessStrategyResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/ModifySyncTaskAttributeRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/ModifySyncTaskAttributeResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/OpenDBExtranetAccessRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/OpenDBExtranetAccessResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/RenewDBInstanceRequest.h>
@@ -291,12 +295,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDBParametersResponse> ModifyDBParametersOutcome;
                 typedef std::future<ModifyDBParametersOutcome> ModifyDBParametersOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::ModifyDBParametersRequest&, ModifyDBParametersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBParametersAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDBSyncModeResponse> ModifyDBSyncModeOutcome;
+                typedef std::future<ModifyDBSyncModeOutcome> ModifyDBSyncModeOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::ModifyDBSyncModeRequest&, ModifyDBSyncModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBSyncModeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyLogFileRetentionPeriodResponse> ModifyLogFileRetentionPeriodOutcome;
                 typedef std::future<ModifyLogFileRetentionPeriodOutcome> ModifyLogFileRetentionPeriodOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::ModifyLogFileRetentionPeriodRequest&, ModifyLogFileRetentionPeriodOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLogFileRetentionPeriodAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRealServerAccessStrategyResponse> ModifyRealServerAccessStrategyOutcome;
                 typedef std::future<ModifyRealServerAccessStrategyOutcome> ModifyRealServerAccessStrategyOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::ModifyRealServerAccessStrategyRequest&, ModifyRealServerAccessStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRealServerAccessStrategyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySyncTaskAttributeResponse> ModifySyncTaskAttributeOutcome;
+                typedef std::future<ModifySyncTaskAttributeOutcome> ModifySyncTaskAttributeOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::ModifySyncTaskAttributeRequest&, ModifySyncTaskAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySyncTaskAttributeAsyncHandler;
                 typedef Outcome<Core::Error, Model::OpenDBExtranetAccessResponse> OpenDBExtranetAccessOutcome;
                 typedef std::future<OpenDBExtranetAccessOutcome> OpenDBExtranetAccessOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::OpenDBExtranetAccessRequest&, OpenDBExtranetAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenDBExtranetAccessAsyncHandler;
@@ -758,6 +768,15 @@ namespace TencentCloud
                 ModifyDBParametersOutcomeCallable ModifyDBParametersCallable(const Model::ModifyDBParametersRequest& request);
 
                 /**
+                 *本接口（ModifyDBSyncMode）用于修改云数据库实例的同步模式。
+                 * @param req ModifyDBSyncModeRequest
+                 * @return ModifyDBSyncModeOutcome
+                 */
+                ModifyDBSyncModeOutcome ModifyDBSyncMode(const Model::ModifyDBSyncModeRequest &request);
+                void ModifyDBSyncModeAsync(const Model::ModifyDBSyncModeRequest& request, const ModifyDBSyncModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBSyncModeOutcomeCallable ModifyDBSyncModeCallable(const Model::ModifyDBSyncModeRequest& request);
+
+                /**
                  *本接口(ModifyLogFileRetentionPeriod)用于修改数据库备份日志保存天数。
                  * @param req ModifyLogFileRetentionPeriodRequest
                  * @return ModifyLogFileRetentionPeriodOutcome
@@ -779,6 +798,15 @@ namespace TencentCloud
                 ModifyRealServerAccessStrategyOutcome ModifyRealServerAccessStrategy(const Model::ModifyRealServerAccessStrategyRequest &request);
                 void ModifyRealServerAccessStrategyAsync(const Model::ModifyRealServerAccessStrategyRequest& request, const ModifyRealServerAccessStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyRealServerAccessStrategyOutcomeCallable ModifyRealServerAccessStrategyCallable(const Model::ModifyRealServerAccessStrategyRequest& request);
+
+                /**
+                 *本接口 (ModifySyncTaskAttribute) 用于修改同步任务的属性（目前只支持修改任务名称）
+                 * @param req ModifySyncTaskAttributeRequest
+                 * @return ModifySyncTaskAttributeOutcome
+                 */
+                ModifySyncTaskAttributeOutcome ModifySyncTaskAttribute(const Model::ModifySyncTaskAttributeRequest &request);
+                void ModifySyncTaskAttributeAsync(const Model::ModifySyncTaskAttributeRequest& request, const ModifySyncTaskAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySyncTaskAttributeOutcomeCallable ModifySyncTaskAttributeCallable(const Model::ModifySyncTaskAttributeRequest& request);
 
                 /**
                  *本接口（OpenDBExtranetAccess）用于开通云数据库实例的外网访问。开通外网访问后，您可通过外网域名和端口访问实例，可使用查询实例列表接口获取外网域名和端口信息。
