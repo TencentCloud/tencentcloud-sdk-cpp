@@ -36,7 +36,8 @@ DescribeVulInfoCvssResponse::DescribeVulInfoCvssResponse() :
     m_publicDateHasBeenSet(false),
     m_cvssScoreHasBeenSet(false),
     m_cveInfoHasBeenSet(false),
-    m_cvssScoreFloatHasBeenSet(false)
+    m_cvssScoreFloatHasBeenSet(false),
+    m_labelsHasBeenSet(false)
 {
 }
 
@@ -204,6 +205,16 @@ CoreInternalOutcome DescribeVulInfoCvssResponse::Deserialize(const string &paylo
         m_cvssScoreFloatHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Labels") && !rsp["Labels"].IsNull())
+    {
+        if (!rsp["Labels"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Labels` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_labels = string(rsp["Labels"].GetString());
+        m_labelsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -316,6 +327,14 @@ string DescribeVulInfoCvssResponse::ToJsonString() const
         string key = "CvssScoreFloat";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cvssScoreFloat, allocator);
+    }
+
+    if (m_labelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Labels";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_labels.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -458,6 +477,16 @@ double DescribeVulInfoCvssResponse::GetCvssScoreFloat() const
 bool DescribeVulInfoCvssResponse::CvssScoreFloatHasBeenSet() const
 {
     return m_cvssScoreFloatHasBeenSet;
+}
+
+string DescribeVulInfoCvssResponse::GetLabels() const
+{
+    return m_labels;
+}
+
+bool DescribeVulInfoCvssResponse::LabelsHasBeenSet() const
+{
+    return m_labelsHasBeenSet;
 }
 
 

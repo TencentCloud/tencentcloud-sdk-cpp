@@ -23,9 +23,9 @@ using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
 ScanVulRequest::ScanVulRequest() :
-    m_vulCategoriesHasBeenSet(false),
     m_vulLevelsHasBeenSet(false),
     m_hostTypeHasBeenSet(false),
+    m_vulCategoriesHasBeenSet(false),
     m_quuidListHasBeenSet(false),
     m_vulEmergencyHasBeenSet(false),
     m_timeoutPeriodHasBeenSet(false),
@@ -39,14 +39,6 @@ string ScanVulRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_vulCategoriesHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "VulCategories";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_vulCategories.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_vulLevelsHasBeenSet)
     {
@@ -62,6 +54,14 @@ string ScanVulRequest::ToJsonString() const
         string key = "HostType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_hostType, allocator);
+    }
+
+    if (m_vulCategoriesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VulCategories";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_vulCategories.c_str(), allocator).Move(), allocator);
     }
 
     if (m_quuidListHasBeenSet)
@@ -114,22 +114,6 @@ string ScanVulRequest::ToJsonString() const
 }
 
 
-string ScanVulRequest::GetVulCategories() const
-{
-    return m_vulCategories;
-}
-
-void ScanVulRequest::SetVulCategories(const string& _vulCategories)
-{
-    m_vulCategories = _vulCategories;
-    m_vulCategoriesHasBeenSet = true;
-}
-
-bool ScanVulRequest::VulCategoriesHasBeenSet() const
-{
-    return m_vulCategoriesHasBeenSet;
-}
-
 string ScanVulRequest::GetVulLevels() const
 {
     return m_vulLevels;
@@ -160,6 +144,22 @@ void ScanVulRequest::SetHostType(const uint64_t& _hostType)
 bool ScanVulRequest::HostTypeHasBeenSet() const
 {
     return m_hostTypeHasBeenSet;
+}
+
+string ScanVulRequest::GetVulCategories() const
+{
+    return m_vulCategories;
+}
+
+void ScanVulRequest::SetVulCategories(const string& _vulCategories)
+{
+    m_vulCategories = _vulCategories;
+    m_vulCategoriesHasBeenSet = true;
+}
+
+bool ScanVulRequest::VulCategoriesHasBeenSet() const
+{
+    return m_vulCategoriesHasBeenSet;
 }
 
 vector<string> ScanVulRequest::GetQuuidList() const

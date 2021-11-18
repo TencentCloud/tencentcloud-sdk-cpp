@@ -190,6 +190,94 @@ namespace TencentCloud
                      */
                     bool ProgressHasBeenSet() const;
 
+                    /**
+                     * 获取cve编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CveId cve编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCveId() const;
+
+                    /**
+                     * 设置cve编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CveId cve编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCveId(const std::string& _cveId);
+
+                    /**
+                     * 判断参数 CveId 是否已赋值
+                     * @return CveId 是否已赋值
+                     */
+                    bool CveIdHasBeenSet() const;
+
+                    /**
+                     * 获取CVSS评分
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CvssScore CVSS评分
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetCvssScore() const;
+
+                    /**
+                     * 设置CVSS评分
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CvssScore CVSS评分
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCvssScore(const double& _cvssScore);
+
+                    /**
+                     * 判断参数 CvssScore 是否已赋值
+                     * @return CvssScore 是否已赋值
+                     */
+                    bool CvssScoreHasBeenSet() const;
+
+                    /**
+                     * 获取漏洞标签 多个逗号分割
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Labels 漏洞标签 多个逗号分割
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLabels() const;
+
+                    /**
+                     * 设置漏洞标签 多个逗号分割
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Labels 漏洞标签 多个逗号分割
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLabels(const std::string& _labels);
+
+                    /**
+                     * 判断参数 Labels 是否已赋值
+                     * @return Labels 是否已赋值
+                     */
+                    bool LabelsHasBeenSet() const;
+
+                    /**
+                     * 获取影响机器数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HostCount 影响机器数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetHostCount() const;
+
+                    /**
+                     * 设置影响机器数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HostCount 影响机器数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHostCount(const uint64_t& _hostCount);
+
+                    /**
+                     * 判断参数 HostCount 是否已赋值
+                     * @return HostCount 是否已赋值
+                     */
+                    bool HostCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -239,6 +327,34 @@ namespace TencentCloud
                      */
                     uint64_t m_progress;
                     bool m_progressHasBeenSet;
+
+                    /**
+                     * cve编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cveId;
+                    bool m_cveIdHasBeenSet;
+
+                    /**
+                     * CVSS评分
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_cvssScore;
+                    bool m_cvssScoreHasBeenSet;
+
+                    /**
+                     * 漏洞标签 多个逗号分割
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_labels;
+                    bool m_labelsHasBeenSet;
+
+                    /**
+                     * 影响机器数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_hostCount;
+                    bool m_hostCountHasBeenSet;
 
                 };
             }

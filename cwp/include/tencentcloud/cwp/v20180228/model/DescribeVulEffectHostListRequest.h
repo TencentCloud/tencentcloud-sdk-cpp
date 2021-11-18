@@ -101,12 +101,12 @@ namespace TencentCloud
                      * 获取过滤条件。
 <li>AliasName - String - 主机名筛选</li>
 <li>TagIds - String - 主机标签id串，多个用英文逗号分隔</li>
-<li>Status - String - 状态,0: 待处理 1:忽略  3:已修复  5:检测中  6:修复这中.</li>
+<li>Status - String - 状态,0: 待处理 1:忽略  3:已修复  5:检测中  6:修复中  8=:修复失败.</li>
 <li>Uuid - String数组 - Uuid串数组</li>
                      * @return Filters 过滤条件。
 <li>AliasName - String - 主机名筛选</li>
 <li>TagIds - String - 主机标签id串，多个用英文逗号分隔</li>
-<li>Status - String - 状态,0: 待处理 1:忽略  3:已修复  5:检测中  6:修复这中.</li>
+<li>Status - String - 状态,0: 待处理 1:忽略  3:已修复  5:检测中  6:修复中  8=:修复失败.</li>
 <li>Uuid - String数组 - Uuid串数组</li>
                      */
                     std::vector<Filter> GetFilters() const;
@@ -115,12 +115,12 @@ namespace TencentCloud
                      * 设置过滤条件。
 <li>AliasName - String - 主机名筛选</li>
 <li>TagIds - String - 主机标签id串，多个用英文逗号分隔</li>
-<li>Status - String - 状态,0: 待处理 1:忽略  3:已修复  5:检测中  6:修复这中.</li>
+<li>Status - String - 状态,0: 待处理 1:忽略  3:已修复  5:检测中  6:修复中  8=:修复失败.</li>
 <li>Uuid - String数组 - Uuid串数组</li>
                      * @param Filters 过滤条件。
 <li>AliasName - String - 主机名筛选</li>
 <li>TagIds - String - 主机标签id串，多个用英文逗号分隔</li>
-<li>Status - String - 状态,0: 待处理 1:忽略  3:已修复  5:检测中  6:修复这中.</li>
+<li>Status - String - 状态,0: 待处理 1:忽略  3:已修复  5:检测中  6:修复中  8=:修复失败.</li>
 <li>Uuid - String数组 - Uuid串数组</li>
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -155,7 +155,7 @@ namespace TencentCloud
                      * 过滤条件。
 <li>AliasName - String - 主机名筛选</li>
 <li>TagIds - String - 主机标签id串，多个用英文逗号分隔</li>
-<li>Status - String - 状态,0: 待处理 1:忽略  3:已修复  5:检测中  6:修复这中.</li>
+<li>Status - String - 状态,0: 待处理 1:忽略  3:已修复  5:检测中  6:修复中  8=:修复失败.</li>
 <li>Uuid - String数组 - Uuid串数组</li>
                      */
                     std::vector<Filter> m_filters;

@@ -43,24 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取漏洞类型：1: web应用漏洞 2:系统组件漏洞 (多选英文;分隔)
-                     * @return VulCategories 漏洞类型：1: web应用漏洞 2:系统组件漏洞 (多选英文;分隔)
-                     */
-                    std::string GetVulCategories() const;
-
-                    /**
-                     * 设置漏洞类型：1: web应用漏洞 2:系统组件漏洞 (多选英文;分隔)
-                     * @param VulCategories 漏洞类型：1: web应用漏洞 2:系统组件漏洞 (多选英文;分隔)
-                     */
-                    void SetVulCategories(const std::string& _vulCategories);
-
-                    /**
-                     * 判断参数 VulCategories 是否已赋值
-                     * @return VulCategories 是否已赋值
-                     */
-                    bool VulCategoriesHasBeenSet() const;
-
-                    /**
                      * 获取危害等级：1-低危；2-中危；3-高危；4-严重 (多选英文;分隔)
                      * @return VulLevels 危害等级：1-低危；2-中危；3-高危；4-严重 (多选英文;分隔)
                      */
@@ -95,6 +77,24 @@ namespace TencentCloud
                      * @return HostType 是否已赋值
                      */
                     bool HostTypeHasBeenSet() const;
+
+                    /**
+                     * 获取漏洞类型：1: web应用漏洞（webCMS） 2:系统组件（应用漏洞）漏洞  3:安全基线 4:Linux软件漏洞 5:Windows系统漏洞(多选英文;分隔)
+                     * @return VulCategories 漏洞类型：1: web应用漏洞（webCMS） 2:系统组件（应用漏洞）漏洞  3:安全基线 4:Linux软件漏洞 5:Windows系统漏洞(多选英文;分隔)
+                     */
+                    std::string GetVulCategories() const;
+
+                    /**
+                     * 设置漏洞类型：1: web应用漏洞（webCMS） 2:系统组件（应用漏洞）漏洞  3:安全基线 4:Linux软件漏洞 5:Windows系统漏洞(多选英文;分隔)
+                     * @param VulCategories 漏洞类型：1: web应用漏洞（webCMS） 2:系统组件（应用漏洞）漏洞  3:安全基线 4:Linux软件漏洞 5:Windows系统漏洞(多选英文;分隔)
+                     */
+                    void SetVulCategories(const std::string& _vulCategories);
+
+                    /**
+                     * 判断参数 VulCategories 是否已赋值
+                     * @return VulCategories 是否已赋值
+                     */
+                    bool VulCategoriesHasBeenSet() const;
 
                     /**
                      * 获取自选服务器时生效，主机quuid的string数组
@@ -171,12 +171,6 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 漏洞类型：1: web应用漏洞 2:系统组件漏洞 (多选英文;分隔)
-                     */
-                    std::string m_vulCategories;
-                    bool m_vulCategoriesHasBeenSet;
-
-                    /**
                      * 危害等级：1-低危；2-中危；3-高危；4-严重 (多选英文;分隔)
                      */
                     std::string m_vulLevels;
@@ -187,6 +181,12 @@ namespace TencentCloud
                      */
                     uint64_t m_hostType;
                     bool m_hostTypeHasBeenSet;
+
+                    /**
+                     * 漏洞类型：1: web应用漏洞（webCMS） 2:系统组件（应用漏洞）漏洞  3:安全基线 4:Linux软件漏洞 5:Windows系统漏洞(多选英文;分隔)
+                     */
+                    std::string m_vulCategories;
+                    bool m_vulCategoriesHasBeenSet;
 
                     /**
                      * 自选服务器时生效，主机quuid的string数组

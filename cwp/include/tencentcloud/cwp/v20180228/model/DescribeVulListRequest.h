@@ -81,45 +81,33 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤条件。
-<li>IfEmergency - String - 是否必填：否 - 是否为应急漏洞，查询应急漏洞传:yes</li>
-<li>Status - String - 是否必填：是 - 漏洞状态筛选，0: 待处理 1:忽略  3:已修复  5:检测中，6：修复中 控制台仅处理0,1,3,5,6五种状态</li>
-<li>Level - String - 是否必填：否 - 漏洞等级筛选 1:低 2:中 3:高 4:提示</li>
-<li>VulName- String - 是否必填：否 - 漏洞名称搜索</li>
-<li>LastDay- int - 是否必填：否 - 查询近几日的数据，需要 -1 之后传入，例如近3日数据，传2</li>
-<li>OrderBy - String 是否必填：否 默认按照处理状态,威胁等级,检测时间排序 -排序字段，支持：level,lastTime的动态排序  hostCount 影响主机台数排序</li>
-<li>IsShowFollowVul -  String 是否必填：否   是否仅展示重点关注漏洞  0=展示全部 1=仅展示重点关注漏洞</li>
-<li>VulCategory-  String 是否必填：否   1: web应用漏洞 2:系统组件漏洞3:安全基线 4: Linux系统漏洞 5: windows补丁</li>
+<li>Status - String - 是否必填：否 - 处理状态  0 -- 待处理 1 -- 已加白 2 -- 已删除 3 - 已忽略</li>
+<li>ModifyTime - String - 是否必填：否 - 最近发生时间</li>
+<li>Uuid- String - 是否必填：否 - 主机uuid查询</li>
+<li>VulName- string -</li>
+<li>HostIp- string - 是否必填：否 - 主机ip</li>
                      * @return Filters 过滤条件。
-<li>IfEmergency - String - 是否必填：否 - 是否为应急漏洞，查询应急漏洞传:yes</li>
-<li>Status - String - 是否必填：是 - 漏洞状态筛选，0: 待处理 1:忽略  3:已修复  5:检测中，6：修复中 控制台仅处理0,1,3,5,6五种状态</li>
-<li>Level - String - 是否必填：否 - 漏洞等级筛选 1:低 2:中 3:高 4:提示</li>
-<li>VulName- String - 是否必填：否 - 漏洞名称搜索</li>
-<li>LastDay- int - 是否必填：否 - 查询近几日的数据，需要 -1 之后传入，例如近3日数据，传2</li>
-<li>OrderBy - String 是否必填：否 默认按照处理状态,威胁等级,检测时间排序 -排序字段，支持：level,lastTime的动态排序  hostCount 影响主机台数排序</li>
-<li>IsShowFollowVul -  String 是否必填：否   是否仅展示重点关注漏洞  0=展示全部 1=仅展示重点关注漏洞</li>
-<li>VulCategory-  String 是否必填：否   1: web应用漏洞 2:系统组件漏洞3:安全基线 4: Linux系统漏洞 5: windows补丁</li>
+<li>Status - String - 是否必填：否 - 处理状态  0 -- 待处理 1 -- 已加白 2 -- 已删除 3 - 已忽略</li>
+<li>ModifyTime - String - 是否必填：否 - 最近发生时间</li>
+<li>Uuid- String - 是否必填：否 - 主机uuid查询</li>
+<li>VulName- string -</li>
+<li>HostIp- string - 是否必填：否 - 主机ip</li>
                      */
                     std::vector<Filters> GetFilters() const;
 
                     /**
                      * 设置过滤条件。
-<li>IfEmergency - String - 是否必填：否 - 是否为应急漏洞，查询应急漏洞传:yes</li>
-<li>Status - String - 是否必填：是 - 漏洞状态筛选，0: 待处理 1:忽略  3:已修复  5:检测中，6：修复中 控制台仅处理0,1,3,5,6五种状态</li>
-<li>Level - String - 是否必填：否 - 漏洞等级筛选 1:低 2:中 3:高 4:提示</li>
-<li>VulName- String - 是否必填：否 - 漏洞名称搜索</li>
-<li>LastDay- int - 是否必填：否 - 查询近几日的数据，需要 -1 之后传入，例如近3日数据，传2</li>
-<li>OrderBy - String 是否必填：否 默认按照处理状态,威胁等级,检测时间排序 -排序字段，支持：level,lastTime的动态排序  hostCount 影响主机台数排序</li>
-<li>IsShowFollowVul -  String 是否必填：否   是否仅展示重点关注漏洞  0=展示全部 1=仅展示重点关注漏洞</li>
-<li>VulCategory-  String 是否必填：否   1: web应用漏洞 2:系统组件漏洞3:安全基线 4: Linux系统漏洞 5: windows补丁</li>
+<li>Status - String - 是否必填：否 - 处理状态  0 -- 待处理 1 -- 已加白 2 -- 已删除 3 - 已忽略</li>
+<li>ModifyTime - String - 是否必填：否 - 最近发生时间</li>
+<li>Uuid- String - 是否必填：否 - 主机uuid查询</li>
+<li>VulName- string -</li>
+<li>HostIp- string - 是否必填：否 - 主机ip</li>
                      * @param Filters 过滤条件。
-<li>IfEmergency - String - 是否必填：否 - 是否为应急漏洞，查询应急漏洞传:yes</li>
-<li>Status - String - 是否必填：是 - 漏洞状态筛选，0: 待处理 1:忽略  3:已修复  5:检测中，6：修复中 控制台仅处理0,1,3,5,6五种状态</li>
-<li>Level - String - 是否必填：否 - 漏洞等级筛选 1:低 2:中 3:高 4:提示</li>
-<li>VulName- String - 是否必填：否 - 漏洞名称搜索</li>
-<li>LastDay- int - 是否必填：否 - 查询近几日的数据，需要 -1 之后传入，例如近3日数据，传2</li>
-<li>OrderBy - String 是否必填：否 默认按照处理状态,威胁等级,检测时间排序 -排序字段，支持：level,lastTime的动态排序  hostCount 影响主机台数排序</li>
-<li>IsShowFollowVul -  String 是否必填：否   是否仅展示重点关注漏洞  0=展示全部 1=仅展示重点关注漏洞</li>
-<li>VulCategory-  String 是否必填：否   1: web应用漏洞 2:系统组件漏洞3:安全基线 4: Linux系统漏洞 5: windows补丁</li>
+<li>Status - String - 是否必填：否 - 处理状态  0 -- 待处理 1 -- 已加白 2 -- 已删除 3 - 已忽略</li>
+<li>ModifyTime - String - 是否必填：否 - 最近发生时间</li>
+<li>Uuid- String - 是否必填：否 - 主机uuid查询</li>
+<li>VulName- string -</li>
+<li>HostIp- string - 是否必填：否 - 主机ip</li>
                      */
                     void SetFilters(const std::vector<Filters>& _filters);
 
@@ -128,6 +116,42 @@ namespace TencentCloud
                      * @return Filters 是否已赋值
                      */
                     bool FiltersHasBeenSet() const;
+
+                    /**
+                     * 获取可选排序字段 Level，LastTime，HostCount
+                     * @return By 可选排序字段 Level，LastTime，HostCount
+                     */
+                    std::string GetBy() const;
+
+                    /**
+                     * 设置可选排序字段 Level，LastTime，HostCount
+                     * @param By 可选排序字段 Level，LastTime，HostCount
+                     */
+                    void SetBy(const std::string& _by);
+
+                    /**
+                     * 判断参数 By 是否已赋值
+                     * @return By 是否已赋值
+                     */
+                    bool ByHasBeenSet() const;
+
+                    /**
+                     * 获取排序顺序：desc  默认asc
+                     * @return Order 排序顺序：desc  默认asc
+                     */
+                    std::string GetOrder() const;
+
+                    /**
+                     * 设置排序顺序：desc  默认asc
+                     * @param Order 排序顺序：desc  默认asc
+                     */
+                    void SetOrder(const std::string& _order);
+
+                    /**
+                     * 判断参数 Order 是否已赋值
+                     * @return Order 是否已赋值
+                     */
+                    bool OrderHasBeenSet() const;
 
                 private:
 
@@ -145,17 +169,26 @@ namespace TencentCloud
 
                     /**
                      * 过滤条件。
-<li>IfEmergency - String - 是否必填：否 - 是否为应急漏洞，查询应急漏洞传:yes</li>
-<li>Status - String - 是否必填：是 - 漏洞状态筛选，0: 待处理 1:忽略  3:已修复  5:检测中，6：修复中 控制台仅处理0,1,3,5,6五种状态</li>
-<li>Level - String - 是否必填：否 - 漏洞等级筛选 1:低 2:中 3:高 4:提示</li>
-<li>VulName- String - 是否必填：否 - 漏洞名称搜索</li>
-<li>LastDay- int - 是否必填：否 - 查询近几日的数据，需要 -1 之后传入，例如近3日数据，传2</li>
-<li>OrderBy - String 是否必填：否 默认按照处理状态,威胁等级,检测时间排序 -排序字段，支持：level,lastTime的动态排序  hostCount 影响主机台数排序</li>
-<li>IsShowFollowVul -  String 是否必填：否   是否仅展示重点关注漏洞  0=展示全部 1=仅展示重点关注漏洞</li>
-<li>VulCategory-  String 是否必填：否   1: web应用漏洞 2:系统组件漏洞3:安全基线 4: Linux系统漏洞 5: windows补丁</li>
+<li>Status - String - 是否必填：否 - 处理状态  0 -- 待处理 1 -- 已加白 2 -- 已删除 3 - 已忽略</li>
+<li>ModifyTime - String - 是否必填：否 - 最近发生时间</li>
+<li>Uuid- String - 是否必填：否 - 主机uuid查询</li>
+<li>VulName- string -</li>
+<li>HostIp- string - 是否必填：否 - 主机ip</li>
                      */
                     std::vector<Filters> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 可选排序字段 Level，LastTime，HostCount
+                     */
+                    std::string m_by;
+                    bool m_byHasBeenSet;
+
+                    /**
+                     * 排序顺序：desc  默认asc
+                     */
+                    std::string m_order;
+                    bool m_orderHasBeenSet;
 
                 };
             }

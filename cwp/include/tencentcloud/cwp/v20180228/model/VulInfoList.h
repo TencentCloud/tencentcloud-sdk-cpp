@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取0: 待处理 1:忽略  3:已修复  5:检测中 6:修复中 控制台仅处理0,1,3,5,6四种状态
-                     * @return Status 0: 待处理 1:忽略  3:已修复  5:检测中 6:修复中 控制台仅处理0,1,3,5,6四种状态
+                     * 获取0: 待处理 1:忽略  3:已修复  5:检测中 6:修复中  8:修复失败
+                     * @return Status 0: 待处理 1:忽略  3:已修复  5:检测中 6:修复中  8:修复失败
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置0: 待处理 1:忽略  3:已修复  5:检测中 6:修复中 控制台仅处理0,1,3,5,6四种状态
-                     * @param Status 0: 待处理 1:忽略  3:已修复  5:检测中 6:修复中 控制台仅处理0,1,3,5,6四种状态
+                     * 设置0: 待处理 1:忽略  3:已修复  5:检测中 6:修复中  8:修复失败
+                     * @param Status 0: 待处理 1:忽略  3:已修复  5:检测中 6:修复中  8:修复失败
                      */
                     void SetStatus(const uint64_t& _status);
 
@@ -322,6 +322,116 @@ namespace TencentCloud
                      */
                     bool StatusStrHasBeenSet() const;
 
+                    /**
+                     * 获取cve编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CveId cve编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCveId() const;
+
+                    /**
+                     * 设置cve编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CveId cve编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCveId(const std::string& _cveId);
+
+                    /**
+                     * 判断参数 CveId 是否已赋值
+                     * @return CveId 是否已赋值
+                     */
+                    bool CveIdHasBeenSet() const;
+
+                    /**
+                     * 获取CVSS评分
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CvssScore CVSS评分
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetCvssScore() const;
+
+                    /**
+                     * 设置CVSS评分
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CvssScore CVSS评分
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCvssScore(const double& _cvssScore);
+
+                    /**
+                     * 判断参数 CvssScore 是否已赋值
+                     * @return CvssScore 是否已赋值
+                     */
+                    bool CvssScoreHasBeenSet() const;
+
+                    /**
+                     * 获取漏洞标签 多个逗号分割
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Labels 漏洞标签 多个逗号分割
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLabels() const;
+
+                    /**
+                     * 设置漏洞标签 多个逗号分割
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Labels 漏洞标签 多个逗号分割
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLabels(const std::string& _labels);
+
+                    /**
+                     * 判断参数 Labels 是否已赋值
+                     * @return Labels 是否已赋值
+                     */
+                    bool LabelsHasBeenSet() const;
+
+                    /**
+                     * 获取是否能自动修复且包含能自动修复的主机， 0=否  1=是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FixSwitch 是否能自动修复且包含能自动修复的主机， 0=否  1=是
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetFixSwitch() const;
+
+                    /**
+                     * 设置是否能自动修复且包含能自动修复的主机， 0=否  1=是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FixSwitch 是否能自动修复且包含能自动修复的主机， 0=否  1=是
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFixSwitch(const uint64_t& _fixSwitch);
+
+                    /**
+                     * 判断参数 FixSwitch 是否已赋值
+                     * @return FixSwitch 是否已赋值
+                     */
+                    bool FixSwitchHasBeenSet() const;
+
+                    /**
+                     * 获取最后扫描任务的id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskId 最后扫描任务的id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetTaskId() const;
+
+                    /**
+                     * 设置最后扫描任务的id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TaskId 最后扫描任务的id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTaskId(const uint64_t& _taskId);
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     */
+                    bool TaskIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -337,7 +447,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 0: 待处理 1:忽略  3:已修复  5:检测中 6:修复中 控制台仅处理0,1,3,5,6四种状态
+                     * 0: 待处理 1:忽略  3:已修复  5:检测中 6:修复中  8:修复失败
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
@@ -413,6 +523,41 @@ namespace TencentCloud
                      */
                     std::string m_statusStr;
                     bool m_statusStrHasBeenSet;
+
+                    /**
+                     * cve编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cveId;
+                    bool m_cveIdHasBeenSet;
+
+                    /**
+                     * CVSS评分
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_cvssScore;
+                    bool m_cvssScoreHasBeenSet;
+
+                    /**
+                     * 漏洞标签 多个逗号分割
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_labels;
+                    bool m_labelsHasBeenSet;
+
+                    /**
+                     * 是否能自动修复且包含能自动修复的主机， 0=否  1=是
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_fixSwitch;
+                    bool m_fixSwitchHasBeenSet;
+
+                    /**
+                     * 最后扫描任务的id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                 };
             }

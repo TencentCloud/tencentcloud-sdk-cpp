@@ -83,6 +83,28 @@ namespace TencentCloud
                      */
                     bool TracingHasBeenSet() const;
 
+                    /**
+                     * 获取禁用策略检查功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DisablePolicyChecks 禁用策略检查功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetDisablePolicyChecks() const;
+
+                    /**
+                     * 设置禁用策略检查功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DisablePolicyChecks 禁用策略检查功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDisablePolicyChecks(const bool& _disablePolicyChecks);
+
+                    /**
+                     * 判断参数 DisablePolicyChecks 是否已赋值
+                     * @return DisablePolicyChecks 是否已赋值
+                     */
+                    bool DisablePolicyChecksHasBeenSet() const;
+
                 private:
 
                     /**
@@ -96,6 +118,13 @@ namespace TencentCloud
                      */
                     TracingConfig m_tracing;
                     bool m_tracingHasBeenSet;
+
+                    /**
+                     * 禁用策略检查功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_disablePolicyChecks;
+                    bool m_disablePolicyChecksHasBeenSet;
 
                 };
             }

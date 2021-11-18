@@ -25,7 +25,9 @@ using namespace std;
 DescribeVulListRequest::DescribeVulListRequest() :
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_byHasBeenSet(false),
+    m_orderHasBeenSet(false)
 {
 }
 
@@ -65,6 +67,22 @@ string DescribeVulListRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_byHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "By";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_by.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Order";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_order.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -121,6 +139,38 @@ void DescribeVulListRequest::SetFilters(const vector<Filters>& _filters)
 bool DescribeVulListRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+string DescribeVulListRequest::GetBy() const
+{
+    return m_by;
+}
+
+void DescribeVulListRequest::SetBy(const string& _by)
+{
+    m_by = _by;
+    m_byHasBeenSet = true;
+}
+
+bool DescribeVulListRequest::ByHasBeenSet() const
+{
+    return m_byHasBeenSet;
+}
+
+string DescribeVulListRequest::GetOrder() const
+{
+    return m_order;
+}
+
+void DescribeVulListRequest::SetOrder(const string& _order)
+{
+    m_order = _order;
+    m_orderHasBeenSet = true;
+}
+
+bool DescribeVulListRequest::OrderHasBeenSet() const
+{
+    return m_orderHasBeenSet;
 }
 
 

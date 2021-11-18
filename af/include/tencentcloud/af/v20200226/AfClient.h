@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/af/v20200226/model/DescribeAntiFraudRequest.h>
 #include <tencentcloud/af/v20200226/model/DescribeAntiFraudResponse.h>
+#include <tencentcloud/af/v20200226/model/GetAntiFraudRequest.h>
+#include <tencentcloud/af/v20200226/model/GetAntiFraudResponse.h>
 #include <tencentcloud/af/v20200226/model/QueryAntiFraudRequest.h>
 #include <tencentcloud/af/v20200226/model/QueryAntiFraudResponse.h>
 
@@ -44,6 +46,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAntiFraudResponse> DescribeAntiFraudOutcome;
                 typedef std::future<DescribeAntiFraudOutcome> DescribeAntiFraudOutcomeCallable;
                 typedef std::function<void(const AfClient*, const Model::DescribeAntiFraudRequest&, DescribeAntiFraudOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAntiFraudAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetAntiFraudResponse> GetAntiFraudOutcome;
+                typedef std::future<GetAntiFraudOutcome> GetAntiFraudOutcomeCallable;
+                typedef std::function<void(const AfClient*, const Model::GetAntiFraudRequest&, GetAntiFraudOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAntiFraudAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryAntiFraudResponse> QueryAntiFraudOutcome;
                 typedef std::future<QueryAntiFraudOutcome> QueryAntiFraudOutcomeCallable;
                 typedef std::function<void(const AfClient*, const Model::QueryAntiFraudRequest&, QueryAntiFraudOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryAntiFraudAsyncHandler;
@@ -60,6 +65,15 @@ namespace TencentCloud
                 DescribeAntiFraudOutcome DescribeAntiFraud(const Model::DescribeAntiFraudRequest &request);
                 void DescribeAntiFraudAsync(const Model::DescribeAntiFraudRequest& request, const DescribeAntiFraudAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAntiFraudOutcomeCallable DescribeAntiFraudCallable(const Model::DescribeAntiFraudRequest& request);
+
+                /**
+                 *反欺诈评分接口
+                 * @param req GetAntiFraudRequest
+                 * @return GetAntiFraudOutcome
+                 */
+                GetAntiFraudOutcome GetAntiFraud(const Model::GetAntiFraudRequest &request);
+                void GetAntiFraudAsync(const Model::GetAntiFraudRequest& request, const GetAntiFraudAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetAntiFraudOutcomeCallable GetAntiFraudCallable(const Model::GetAntiFraudRequest& request);
 
                 /**
                  *天御反欺诈服务，主要应用于银行、证券、保险、消费金融等金融行业客户，通过腾讯的大数据风控能力，

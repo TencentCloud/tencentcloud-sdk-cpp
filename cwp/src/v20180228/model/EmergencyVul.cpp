@@ -28,7 +28,11 @@ EmergencyVul::EmergencyVul() :
     m_categoryHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_lastScanTimeHasBeenSet(false),
-    m_progressHasBeenSet(false)
+    m_progressHasBeenSet(false),
+    m_cveIdHasBeenSet(false),
+    m_cvssScoreHasBeenSet(false),
+    m_labelsHasBeenSet(false),
+    m_hostCountHasBeenSet(false)
 {
 }
 
@@ -117,6 +121,46 @@ CoreInternalOutcome EmergencyVul::Deserialize(const rapidjson::Value &value)
         m_progressHasBeenSet = true;
     }
 
+    if (value.HasMember("CveId") && !value["CveId"].IsNull())
+    {
+        if (!value["CveId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmergencyVul.CveId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cveId = string(value["CveId"].GetString());
+        m_cveIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CvssScore") && !value["CvssScore"].IsNull())
+    {
+        if (!value["CvssScore"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmergencyVul.CvssScore` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_cvssScore = value["CvssScore"].GetDouble();
+        m_cvssScoreHasBeenSet = true;
+    }
+
+    if (value.HasMember("Labels") && !value["Labels"].IsNull())
+    {
+        if (!value["Labels"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmergencyVul.Labels` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_labels = string(value["Labels"].GetString());
+        m_labelsHasBeenSet = true;
+    }
+
+    if (value.HasMember("HostCount") && !value["HostCount"].IsNull())
+    {
+        if (!value["HostCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmergencyVul.HostCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostCount = value["HostCount"].GetUint64();
+        m_hostCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +230,38 @@ void EmergencyVul::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Progress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_progress, allocator);
+    }
+
+    if (m_cveIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CveId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cveId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cvssScoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CvssScore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cvssScore, allocator);
+    }
+
+    if (m_labelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Labels";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_labels.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hostCount, allocator);
     }
 
 }
@@ -317,5 +393,69 @@ void EmergencyVul::SetProgress(const uint64_t& _progress)
 bool EmergencyVul::ProgressHasBeenSet() const
 {
     return m_progressHasBeenSet;
+}
+
+string EmergencyVul::GetCveId() const
+{
+    return m_cveId;
+}
+
+void EmergencyVul::SetCveId(const string& _cveId)
+{
+    m_cveId = _cveId;
+    m_cveIdHasBeenSet = true;
+}
+
+bool EmergencyVul::CveIdHasBeenSet() const
+{
+    return m_cveIdHasBeenSet;
+}
+
+double EmergencyVul::GetCvssScore() const
+{
+    return m_cvssScore;
+}
+
+void EmergencyVul::SetCvssScore(const double& _cvssScore)
+{
+    m_cvssScore = _cvssScore;
+    m_cvssScoreHasBeenSet = true;
+}
+
+bool EmergencyVul::CvssScoreHasBeenSet() const
+{
+    return m_cvssScoreHasBeenSet;
+}
+
+string EmergencyVul::GetLabels() const
+{
+    return m_labels;
+}
+
+void EmergencyVul::SetLabels(const string& _labels)
+{
+    m_labels = _labels;
+    m_labelsHasBeenSet = true;
+}
+
+bool EmergencyVul::LabelsHasBeenSet() const
+{
+    return m_labelsHasBeenSet;
+}
+
+uint64_t EmergencyVul::GetHostCount() const
+{
+    return m_hostCount;
+}
+
+void EmergencyVul::SetHostCount(const uint64_t& _hostCount)
+{
+    m_hostCount = _hostCount;
+    m_hostCountHasBeenSet = true;
+}
+
+bool EmergencyVul::HostCountHasBeenSet() const
+{
+    return m_hostCountHasBeenSet;
 }
 

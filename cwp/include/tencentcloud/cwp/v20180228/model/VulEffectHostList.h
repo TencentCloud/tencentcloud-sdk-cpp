@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool EventIdHasBeenSet() const;
 
                     /**
-                     * 获取状态：0: 待处理 1:忽略  3:已修复  5:检测中 6:修复中
+                     * 获取状态：0: 待处理 1:忽略  3:已修复  5:检测中 6:修复中 7: 回滚中 8:修复失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 状态：0: 待处理 1:忽略  3:已修复  5:检测中 6:修复中
+                     * @return Status 状态：0: 待处理 1:忽略  3:已修复  5:检测中 6:修复中 7: 回滚中 8:修复失败
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置状态：0: 待处理 1:忽略  3:已修复  5:检测中 6:修复中
+                     * 设置状态：0: 待处理 1:忽略  3:已修复  5:检测中 6:修复中 7: 回滚中 8:修复失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 状态：0: 待处理 1:忽略  3:已修复  5:检测中 6:修复中
+                     * @param Status 状态：0: 待处理 1:忽略  3:已修复  5:检测中 6:修复中 7: 回滚中 8:修复失败
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStatus(const uint64_t& _status);
@@ -266,6 +266,72 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取版本信息 0=普通版本 1=专业版 2=旗舰版
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HostVersion 版本信息 0=普通版本 1=专业版 2=旗舰版
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetHostVersion() const;
+
+                    /**
+                     * 设置版本信息 0=普通版本 1=专业版 2=旗舰版
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HostVersion 版本信息 0=普通版本 1=专业版 2=旗舰版
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHostVersion(const uint64_t& _hostVersion);
+
+                    /**
+                     * 判断参数 HostVersion 是否已赋值
+                     * @return HostVersion 是否已赋值
+                     */
+                    bool HostVersionHasBeenSet() const;
+
+                    /**
+                     * 获取是否能自动修复 0 :漏洞不可自动修复，  1：可自动修复， 2：客户端已离线， 3：主机不是旗舰版只能手动修复， 4：机型不允许 ，5：修复中 ，6：已修复， 7：检测中  9:修复失败，10:已忽略 11:漏洞只支持linux不支持Windows 12：漏洞只支持Windows不支持linux，13:修复失败但此时主机已离线，14:修复失败但此时主机不是旗舰版， 15:已手动修复
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsSupportAutoFix 是否能自动修复 0 :漏洞不可自动修复，  1：可自动修复， 2：客户端已离线， 3：主机不是旗舰版只能手动修复， 4：机型不允许 ，5：修复中 ，6：已修复， 7：检测中  9:修复失败，10:已忽略 11:漏洞只支持linux不支持Windows 12：漏洞只支持Windows不支持linux，13:修复失败但此时主机已离线，14:修复失败但此时主机不是旗舰版， 15:已手动修复
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetIsSupportAutoFix() const;
+
+                    /**
+                     * 设置是否能自动修复 0 :漏洞不可自动修复，  1：可自动修复， 2：客户端已离线， 3：主机不是旗舰版只能手动修复， 4：机型不允许 ，5：修复中 ，6：已修复， 7：检测中  9:修复失败，10:已忽略 11:漏洞只支持linux不支持Windows 12：漏洞只支持Windows不支持linux，13:修复失败但此时主机已离线，14:修复失败但此时主机不是旗舰版， 15:已手动修复
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsSupportAutoFix 是否能自动修复 0 :漏洞不可自动修复，  1：可自动修复， 2：客户端已离线， 3：主机不是旗舰版只能手动修复， 4：机型不允许 ，5：修复中 ，6：已修复， 7：检测中  9:修复失败，10:已忽略 11:漏洞只支持linux不支持Windows 12：漏洞只支持Windows不支持linux，13:修复失败但此时主机已离线，14:修复失败但此时主机不是旗舰版， 15:已手动修复
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsSupportAutoFix(const uint64_t& _isSupportAutoFix);
+
+                    /**
+                     * 判断参数 IsSupportAutoFix 是否已赋值
+                     * @return IsSupportAutoFix 是否已赋值
+                     */
+                    bool IsSupportAutoFixHasBeenSet() const;
+
+                    /**
+                     * 获取失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FixStatusMsg 失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFixStatusMsg() const;
+
+                    /**
+                     * 设置失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FixStatusMsg 失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFixStatusMsg(const std::string& _fixStatusMsg);
+
+                    /**
+                     * 判断参数 FixStatusMsg 是否已赋值
+                     * @return FixStatusMsg 是否已赋值
+                     */
+                    bool FixStatusMsgHasBeenSet() const;
+
                 private:
 
                     /**
@@ -276,7 +342,7 @@ namespace TencentCloud
                     bool m_eventIdHasBeenSet;
 
                     /**
-                     * 状态：0: 待处理 1:忽略  3:已修复  5:检测中 6:修复中
+                     * 状态：0: 待处理 1:忽略  3:已修复  5:检测中 6:修复中 7: 回滚中 8:修复失败
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;
@@ -337,6 +403,27 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 版本信息 0=普通版本 1=专业版 2=旗舰版
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_hostVersion;
+                    bool m_hostVersionHasBeenSet;
+
+                    /**
+                     * 是否能自动修复 0 :漏洞不可自动修复，  1：可自动修复， 2：客户端已离线， 3：主机不是旗舰版只能手动修复， 4：机型不允许 ，5：修复中 ，6：已修复， 7：检测中  9:修复失败，10:已忽略 11:漏洞只支持linux不支持Windows 12：漏洞只支持Windows不支持linux，13:修复失败但此时主机已离线，14:修复失败但此时主机不是旗舰版， 15:已手动修复
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_isSupportAutoFix;
+                    bool m_isSupportAutoFixHasBeenSet;
+
+                    /**
+                     * 失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_fixStatusMsg;
+                    bool m_fixStatusMsgHasBeenSet;
 
                 };
             }

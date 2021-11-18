@@ -37,7 +37,9 @@ DescribeSecurityEventsCntResponse::DescribeSecurityEventsCntResponse() :
     m_baseLineHasBeenSet(false),
     m_attackLogsHasBeenSet(false),
     m_effectMachineCountHasBeenSet(false),
-    m_eventsCountHasBeenSet(false)
+    m_eventsCountHasBeenSet(false),
+    m_windowVulHasBeenSet(false),
+    m_linuxVulHasBeenSet(false)
 {
 }
 
@@ -299,6 +301,40 @@ CoreInternalOutcome DescribeSecurityEventsCntResponse::Deserialize(const string 
         m_eventsCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("WindowVul") && !rsp["WindowVul"].IsNull())
+    {
+        if (!rsp["WindowVul"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `WindowVul` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_windowVul.Deserialize(rsp["WindowVul"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_windowVulHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("LinuxVul") && !rsp["LinuxVul"].IsNull())
+    {
+        if (!rsp["LinuxVul"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LinuxVul` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_linuxVul.Deserialize(rsp["LinuxVul"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_linuxVulHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -431,6 +467,24 @@ string DescribeSecurityEventsCntResponse::ToJsonString() const
         string key = "EventsCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_eventsCount, allocator);
+    }
+
+    if (m_windowVulHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WindowVul";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_windowVul.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_linuxVulHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LinuxVul";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_linuxVul.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -583,6 +637,26 @@ uint64_t DescribeSecurityEventsCntResponse::GetEventsCount() const
 bool DescribeSecurityEventsCntResponse::EventsCountHasBeenSet() const
 {
     return m_eventsCountHasBeenSet;
+}
+
+SecurityEventInfo DescribeSecurityEventsCntResponse::GetWindowVul() const
+{
+    return m_windowVul;
+}
+
+bool DescribeSecurityEventsCntResponse::WindowVulHasBeenSet() const
+{
+    return m_windowVulHasBeenSet;
+}
+
+SecurityEventInfo DescribeSecurityEventsCntResponse::GetLinuxVul() const
+{
+    return m_linuxVul;
+}
+
+bool DescribeSecurityEventsCntResponse::LinuxVulHasBeenSet() const
+{
+    return m_linuxVulHasBeenSet;
 }
 
 

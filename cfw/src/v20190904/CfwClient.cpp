@@ -83,6 +83,49 @@ CfwClient::AddAcRuleOutcomeCallable CfwClient::AddAcRuleCallable(const AddAcRule
     return task->get_future();
 }
 
+CfwClient::AddEnterpriseSecurityGroupRulesOutcome CfwClient::AddEnterpriseSecurityGroupRules(const AddEnterpriseSecurityGroupRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddEnterpriseSecurityGroupRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddEnterpriseSecurityGroupRulesResponse rsp = AddEnterpriseSecurityGroupRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddEnterpriseSecurityGroupRulesOutcome(rsp);
+        else
+            return AddEnterpriseSecurityGroupRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return AddEnterpriseSecurityGroupRulesOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::AddEnterpriseSecurityGroupRulesAsync(const AddEnterpriseSecurityGroupRulesRequest& request, const AddEnterpriseSecurityGroupRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddEnterpriseSecurityGroupRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::AddEnterpriseSecurityGroupRulesOutcomeCallable CfwClient::AddEnterpriseSecurityGroupRulesCallable(const AddEnterpriseSecurityGroupRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddEnterpriseSecurityGroupRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->AddEnterpriseSecurityGroupRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::CreateAcRulesOutcome CfwClient::CreateAcRules(const CreateAcRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAcRules");
@@ -893,6 +936,49 @@ CfwClient::DescribeCfwEipsOutcomeCallable CfwClient::DescribeCfwEipsCallable(con
         [this, request]()
         {
             return this->DescribeCfwEips(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::DescribeEnterpriseSecurityGroupRuleOutcome CfwClient::DescribeEnterpriseSecurityGroupRule(const DescribeEnterpriseSecurityGroupRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEnterpriseSecurityGroupRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEnterpriseSecurityGroupRuleResponse rsp = DescribeEnterpriseSecurityGroupRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEnterpriseSecurityGroupRuleOutcome(rsp);
+        else
+            return DescribeEnterpriseSecurityGroupRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEnterpriseSecurityGroupRuleOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeEnterpriseSecurityGroupRuleAsync(const DescribeEnterpriseSecurityGroupRuleRequest& request, const DescribeEnterpriseSecurityGroupRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEnterpriseSecurityGroupRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DescribeEnterpriseSecurityGroupRuleOutcomeCallable CfwClient::DescribeEnterpriseSecurityGroupRuleCallable(const DescribeEnterpriseSecurityGroupRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEnterpriseSecurityGroupRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEnterpriseSecurityGroupRule(request);
         }
     );
 
@@ -2699,6 +2785,49 @@ CfwClient::RemoveAcRuleOutcomeCallable CfwClient::RemoveAcRuleCallable(const Rem
         [this, request]()
         {
             return this->RemoveAcRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::RemoveEnterpriseSecurityGroupRuleOutcome CfwClient::RemoveEnterpriseSecurityGroupRule(const RemoveEnterpriseSecurityGroupRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveEnterpriseSecurityGroupRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveEnterpriseSecurityGroupRuleResponse rsp = RemoveEnterpriseSecurityGroupRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveEnterpriseSecurityGroupRuleOutcome(rsp);
+        else
+            return RemoveEnterpriseSecurityGroupRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveEnterpriseSecurityGroupRuleOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::RemoveEnterpriseSecurityGroupRuleAsync(const RemoveEnterpriseSecurityGroupRuleRequest& request, const RemoveEnterpriseSecurityGroupRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RemoveEnterpriseSecurityGroupRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::RemoveEnterpriseSecurityGroupRuleOutcomeCallable CfwClient::RemoveEnterpriseSecurityGroupRuleCallable(const RemoveEnterpriseSecurityGroupRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RemoveEnterpriseSecurityGroupRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->RemoveEnterpriseSecurityGroupRule(request);
         }
     );
 

@@ -22,7 +22,8 @@ using namespace std;
 
 IstioConfig::IstioConfig() :
     m_outboundTrafficPolicyHasBeenSet(false),
-    m_tracingHasBeenSet(false)
+    m_tracingHasBeenSet(false),
+    m_disablePolicyChecksHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,16 @@ CoreInternalOutcome IstioConfig::Deserialize(const rapidjson::Value &value)
         m_tracingHasBeenSet = true;
     }
 
+    if (value.HasMember("DisablePolicyChecks") && !value["DisablePolicyChecks"].IsNull())
+    {
+        if (!value["DisablePolicyChecks"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IstioConfig.DisablePolicyChecks` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_disablePolicyChecks = value["DisablePolicyChecks"].GetBool();
+        m_disablePolicyChecksHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +91,14 @@ void IstioConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_tracing.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_disablePolicyChecksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisablePolicyChecks";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_disablePolicyChecks, allocator);
     }
 
 }
@@ -115,5 +134,21 @@ void IstioConfig::SetTracing(const TracingConfig& _tracing)
 bool IstioConfig::TracingHasBeenSet() const
 {
     return m_tracingHasBeenSet;
+}
+
+bool IstioConfig::GetDisablePolicyChecks() const
+{
+    return m_disablePolicyChecks;
+}
+
+void IstioConfig::SetDisablePolicyChecks(const bool& _disablePolicyChecks)
+{
+    m_disablePolicyChecks = _disablePolicyChecks;
+    m_disablePolicyChecksHasBeenSet = true;
+}
+
+bool IstioConfig::DisablePolicyChecksHasBeenSet() const
+{
+    return m_disablePolicyChecksHasBeenSet;
 }
 

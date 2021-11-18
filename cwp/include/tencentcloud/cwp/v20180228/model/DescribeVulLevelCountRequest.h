@@ -42,7 +42,31 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取1: web应用漏洞 2=系统组件漏洞3:安全基线 4: Linux系统漏洞 5: windows补丁 6:应急漏洞
+                     * @return VulCategory 1: web应用漏洞 2=系统组件漏洞3:安全基线 4: Linux系统漏洞 5: windows补丁 6:应急漏洞
+                     */
+                    uint64_t GetVulCategory() const;
+
+                    /**
+                     * 设置1: web应用漏洞 2=系统组件漏洞3:安全基线 4: Linux系统漏洞 5: windows补丁 6:应急漏洞
+                     * @param VulCategory 1: web应用漏洞 2=系统组件漏洞3:安全基线 4: Linux系统漏洞 5: windows补丁 6:应急漏洞
+                     */
+                    void SetVulCategory(const uint64_t& _vulCategory);
+
+                    /**
+                     * 判断参数 VulCategory 是否已赋值
+                     * @return VulCategory 是否已赋值
+                     */
+                    bool VulCategoryHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 1: web应用漏洞 2=系统组件漏洞3:安全基线 4: Linux系统漏洞 5: windows补丁 6:应急漏洞
+                     */
+                    uint64_t m_vulCategory;
+                    bool m_vulCategoryHasBeenSet;
 
                 };
             }

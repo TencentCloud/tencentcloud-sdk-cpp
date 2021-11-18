@@ -28,7 +28,10 @@ DescribeScanStateResponse::DescribeScanStateResponse() :
     m_scheduleHasBeenSet(false),
     m_taskIdHasBeenSet(false),
     m_vulIdHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_scanBeginTimeHasBeenSet(false),
+    m_riskEventCountHasBeenSet(false),
+    m_scanEndTimeHasBeenSet(false)
 {
 }
 
@@ -119,6 +122,36 @@ CoreInternalOutcome DescribeScanStateResponse::Deserialize(const string &payload
         m_typeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ScanBeginTime") && !rsp["ScanBeginTime"].IsNull())
+    {
+        if (!rsp["ScanBeginTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScanBeginTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scanBeginTime = string(rsp["ScanBeginTime"].GetString());
+        m_scanBeginTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RiskEventCount") && !rsp["RiskEventCount"].IsNull())
+    {
+        if (!rsp["RiskEventCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RiskEventCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_riskEventCount = rsp["RiskEventCount"].GetUint64();
+        m_riskEventCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ScanEndTime") && !rsp["ScanEndTime"].IsNull())
+    {
+        if (!rsp["ScanEndTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScanEndTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scanEndTime = string(rsp["ScanEndTime"].GetString());
+        m_scanEndTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -172,6 +205,30 @@ string DescribeScanStateResponse::ToJsonString() const
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_type, allocator);
+    }
+
+    if (m_scanBeginTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanBeginTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scanBeginTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_riskEventCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskEventCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_riskEventCount, allocator);
+    }
+
+    if (m_scanEndTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanEndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scanEndTime.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -234,6 +291,36 @@ uint64_t DescribeScanStateResponse::GetType() const
 bool DescribeScanStateResponse::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+string DescribeScanStateResponse::GetScanBeginTime() const
+{
+    return m_scanBeginTime;
+}
+
+bool DescribeScanStateResponse::ScanBeginTimeHasBeenSet() const
+{
+    return m_scanBeginTimeHasBeenSet;
+}
+
+uint64_t DescribeScanStateResponse::GetRiskEventCount() const
+{
+    return m_riskEventCount;
+}
+
+bool DescribeScanStateResponse::RiskEventCountHasBeenSet() const
+{
+    return m_riskEventCountHasBeenSet;
+}
+
+string DescribeScanStateResponse::GetScanEndTime() const
+{
+    return m_scanEndTime;
+}
+
+bool DescribeScanStateResponse::ScanEndTimeHasBeenSet() const
+{
+    return m_scanEndTimeHasBeenSet;
 }
 
 

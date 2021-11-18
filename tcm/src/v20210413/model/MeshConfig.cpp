@@ -23,7 +23,8 @@ using namespace std;
 MeshConfig::MeshConfig() :
     m_istioHasBeenSet(false),
     m_accessLogHasBeenSet(false),
-    m_prometheusHasBeenSet(false)
+    m_prometheusHasBeenSet(false),
+    m_injectHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,23 @@ CoreInternalOutcome MeshConfig::Deserialize(const rapidjson::Value &value)
         m_prometheusHasBeenSet = true;
     }
 
+    if (value.HasMember("Inject") && !value["Inject"].IsNull())
+    {
+        if (!value["Inject"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MeshConfig.Inject` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_inject.Deserialize(value["Inject"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_injectHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -115,6 +133,15 @@ void MeshConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_prometheus.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_injectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Inject";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_inject.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -166,5 +193,21 @@ void MeshConfig::SetPrometheus(const PrometheusConfig& _prometheus)
 bool MeshConfig::PrometheusHasBeenSet() const
 {
     return m_prometheusHasBeenSet;
+}
+
+InjectConfig MeshConfig::GetInject() const
+{
+    return m_inject;
+}
+
+void MeshConfig::SetInject(const InjectConfig& _inject)
+{
+    m_inject = _inject;
+    m_injectHasBeenSet = true;
+}
+
+bool MeshConfig::InjectHasBeenSet() const
+{
+    return m_injectHasBeenSet;
 }
 

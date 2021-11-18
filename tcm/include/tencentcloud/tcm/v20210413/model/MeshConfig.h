@@ -27,6 +27,7 @@
 #include <tencentcloud/tcm/v20210413/model/IstioConfig.h>
 #include <tencentcloud/tcm/v20210413/model/AccessLogConfig.h>
 #include <tencentcloud/tcm/v20210413/model/PrometheusConfig.h>
+#include <tencentcloud/tcm/v20210413/model/InjectConfig.h>
 
 
 namespace TencentCloud
@@ -103,6 +104,28 @@ namespace TencentCloud
                      */
                     bool PrometheusHasBeenSet() const;
 
+                    /**
+                     * 获取自动注入配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Inject 自动注入配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    InjectConfig GetInject() const;
+
+                    /**
+                     * 设置自动注入配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Inject 自动注入配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInject(const InjectConfig& _inject);
+
+                    /**
+                     * 判断参数 Inject 是否已赋值
+                     * @return Inject 是否已赋值
+                     */
+                    bool InjectHasBeenSet() const;
+
                 private:
 
                     /**
@@ -122,6 +145,13 @@ namespace TencentCloud
                      */
                     PrometheusConfig m_prometheus;
                     bool m_prometheusHasBeenSet;
+
+                    /**
+                     * 自动注入配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    InjectConfig m_inject;
+                    bool m_injectHasBeenSet;
 
                 };
             }

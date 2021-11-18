@@ -36,7 +36,7 @@ set(tcm_public_header_model
   include/tencentcloud/tcm/v20210413/model/GrafanaInfo.h
   include/tencentcloud/tcm/v20210413/model/MeshStatus.h
   include/tencentcloud/tcm/v20210413/model/IstiodConfig.h
-  include/tencentcloud/tcm/v20210413/model/SelectedRange.h
+  include/tencentcloud/tcm/v20210413/model/InjectConfig.h
   include/tencentcloud/tcm/v20210413/model/PodsMetricSource.h
   include/tencentcloud/tcm/v20210413/model/Resource.h
   include/tencentcloud/tcm/v20210413/model/DeployConfig.h
@@ -54,6 +54,7 @@ set(tcm_public_header_model
   include/tencentcloud/tcm/v20210413/model/DescribeMeshListResponse.h
   include/tencentcloud/tcm/v20210413/model/ResourceRequirements.h
   include/tencentcloud/tcm/v20210413/model/ClusterStatus.h
+  include/tencentcloud/tcm/v20210413/model/SelectedRange.h
   include/tencentcloud/tcm/v20210413/model/AccessLogConfig.h
   include/tencentcloud/tcm/v20210413/model/LoadBalancer.h
   )
@@ -77,7 +78,7 @@ set(tcm_src
   src/v20210413/model/GrafanaInfo.cpp
   src/v20210413/model/MeshStatus.cpp
   src/v20210413/model/IstiodConfig.cpp
-  src/v20210413/model/SelectedRange.cpp
+  src/v20210413/model/InjectConfig.cpp
   src/v20210413/model/PodsMetricSource.cpp
   src/v20210413/model/Resource.cpp
   src/v20210413/model/DeployConfig.cpp
@@ -95,6 +96,7 @@ set(tcm_src
   src/v20210413/model/DescribeMeshListResponse.cpp
   src/v20210413/model/ResourceRequirements.cpp
   src/v20210413/model/ClusterStatus.cpp
+  src/v20210413/model/SelectedRange.cpp
   src/v20210413/model/AccessLogConfig.cpp
   src/v20210413/model/LoadBalancer.cpp
   )

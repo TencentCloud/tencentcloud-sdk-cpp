@@ -30,7 +30,10 @@ VulEffectHostList::VulEffectHostList() :
     m_hostIpHasBeenSet(false),
     m_aliasNameHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_hostVersionHasBeenSet(false),
+    m_isSupportAutoFixHasBeenSet(false),
+    m_fixStatusMsgHasBeenSet(false)
 {
 }
 
@@ -142,6 +145,36 @@ CoreInternalOutcome VulEffectHostList::Deserialize(const rapidjson::Value &value
         m_descriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("HostVersion") && !value["HostVersion"].IsNull())
+    {
+        if (!value["HostVersion"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulEffectHostList.HostVersion` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostVersion = value["HostVersion"].GetUint64();
+        m_hostVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsSupportAutoFix") && !value["IsSupportAutoFix"].IsNull())
+    {
+        if (!value["IsSupportAutoFix"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulEffectHostList.IsSupportAutoFix` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSupportAutoFix = value["IsSupportAutoFix"].GetUint64();
+        m_isSupportAutoFixHasBeenSet = true;
+    }
+
+    if (value.HasMember("FixStatusMsg") && !value["FixStatusMsg"].IsNull())
+    {
+        if (!value["FixStatusMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulEffectHostList.FixStatusMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fixStatusMsg = string(value["FixStatusMsg"].GetString());
+        m_fixStatusMsgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -232,6 +265,30 @@ void VulEffectHostList::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hostVersion, allocator);
+    }
+
+    if (m_isSupportAutoFixHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSupportAutoFix";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSupportAutoFix, allocator);
+    }
+
+    if (m_fixStatusMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FixStatusMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fixStatusMsg.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -395,5 +452,53 @@ void VulEffectHostList::SetDescription(const string& _description)
 bool VulEffectHostList::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+uint64_t VulEffectHostList::GetHostVersion() const
+{
+    return m_hostVersion;
+}
+
+void VulEffectHostList::SetHostVersion(const uint64_t& _hostVersion)
+{
+    m_hostVersion = _hostVersion;
+    m_hostVersionHasBeenSet = true;
+}
+
+bool VulEffectHostList::HostVersionHasBeenSet() const
+{
+    return m_hostVersionHasBeenSet;
+}
+
+uint64_t VulEffectHostList::GetIsSupportAutoFix() const
+{
+    return m_isSupportAutoFix;
+}
+
+void VulEffectHostList::SetIsSupportAutoFix(const uint64_t& _isSupportAutoFix)
+{
+    m_isSupportAutoFix = _isSupportAutoFix;
+    m_isSupportAutoFixHasBeenSet = true;
+}
+
+bool VulEffectHostList::IsSupportAutoFixHasBeenSet() const
+{
+    return m_isSupportAutoFixHasBeenSet;
+}
+
+string VulEffectHostList::GetFixStatusMsg() const
+{
+    return m_fixStatusMsg;
+}
+
+void VulEffectHostList::SetFixStatusMsg(const string& _fixStatusMsg)
+{
+    m_fixStatusMsg = _fixStatusMsg;
+    m_fixStatusMsgHasBeenSet = true;
+}
+
+bool VulEffectHostList::FixStatusMsgHasBeenSet() const
+{
+    return m_fixStatusMsgHasBeenSet;
 }
 

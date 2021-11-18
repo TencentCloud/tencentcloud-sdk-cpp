@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/afc/v20200226/model/GetAntiFraudVipRequest.h>
+#include <tencentcloud/afc/v20200226/model/GetAntiFraudVipResponse.h>
 #include <tencentcloud/afc/v20200226/model/QueryAntiFraudVipRequest.h>
 #include <tencentcloud/afc/v20200226/model/QueryAntiFraudVipResponse.h>
 
@@ -39,11 +41,23 @@ namespace TencentCloud
                 AfcClient(const Credential &credential, const std::string &region);
                 AfcClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::GetAntiFraudVipResponse> GetAntiFraudVipOutcome;
+                typedef std::future<GetAntiFraudVipOutcome> GetAntiFraudVipOutcomeCallable;
+                typedef std::function<void(const AfcClient*, const Model::GetAntiFraudVipRequest&, GetAntiFraudVipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAntiFraudVipAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryAntiFraudVipResponse> QueryAntiFraudVipOutcome;
                 typedef std::future<QueryAntiFraudVipOutcome> QueryAntiFraudVipOutcomeCallable;
                 typedef std::function<void(const AfcClient*, const Model::QueryAntiFraudVipRequest&, QueryAntiFraudVipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryAntiFraudVipAsyncHandler;
 
 
+
+                /**
+                 *反欺诈VIP评分接口
+                 * @param req GetAntiFraudVipRequest
+                 * @return GetAntiFraudVipOutcome
+                 */
+                GetAntiFraudVipOutcome GetAntiFraudVip(const Model::GetAntiFraudVipRequest &request);
+                void GetAntiFraudVipAsync(const Model::GetAntiFraudVipRequest& request, const GetAntiFraudVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetAntiFraudVipOutcomeCallable GetAntiFraudVipCallable(const Model::GetAntiFraudVipRequest& request);
 
                 /**
                  *天御反欺诈服务，主要应用于银行、证券、保险、P2P等金融行业客户，通过腾讯的大数据风控能力，

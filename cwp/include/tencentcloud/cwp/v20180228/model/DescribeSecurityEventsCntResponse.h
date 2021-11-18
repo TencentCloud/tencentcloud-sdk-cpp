@@ -129,8 +129,8 @@ namespace TencentCloud
                     bool ReverseShellHasBeenSet() const;
 
                     /**
-                     * 获取系统组件相关风险事件
-                     * @return SysVul 系统组件相关风险事件
+                     * 获取应用漏洞风险事件
+                     * @return SysVul 应用漏洞风险事件
                      */
                     SecurityEventInfo GetSysVul() const;
 
@@ -212,6 +212,34 @@ namespace TencentCloud
                      */
                     bool EventsCountHasBeenSet() const;
 
+                    /**
+                     * 获取window 系统漏洞事件总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WindowVul window 系统漏洞事件总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SecurityEventInfo GetWindowVul() const;
+
+                    /**
+                     * 判断参数 WindowVul 是否已赋值
+                     * @return WindowVul 是否已赋值
+                     */
+                    bool WindowVulHasBeenSet() const;
+
+                    /**
+                     * 获取linux系统漏洞事件总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LinuxVul linux系统漏洞事件总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SecurityEventInfo GetLinuxVul() const;
+
+                    /**
+                     * 判断参数 LinuxVul 是否已赋值
+                     * @return LinuxVul 是否已赋值
+                     */
+                    bool LinuxVulHasBeenSet() const;
+
                 private:
 
                     /**
@@ -257,7 +285,7 @@ namespace TencentCloud
                     bool m_reverseShellHasBeenSet;
 
                     /**
-                     * 系统组件相关风险事件
+                     * 应用漏洞风险事件
                      */
                     SecurityEventInfo m_sysVul;
                     bool m_sysVulHasBeenSet;
@@ -297,6 +325,20 @@ namespace TencentCloud
                      */
                     uint64_t m_eventsCount;
                     bool m_eventsCountHasBeenSet;
+
+                    /**
+                     * window 系统漏洞事件总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SecurityEventInfo m_windowVul;
+                    bool m_windowVulHasBeenSet;
+
+                    /**
+                     * linux系统漏洞事件总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SecurityEventInfo m_linuxVul;
+                    bool m_linuxVulHasBeenSet;
 
                 };
             }

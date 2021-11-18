@@ -34,7 +34,12 @@ VulInfoList::VulInfoList() :
     m_publishTimeWisteriaHasBeenSet(false),
     m_nameWisteriaHasBeenSet(false),
     m_descriptWisteriaHasBeenSet(false),
-    m_statusStrHasBeenSet(false)
+    m_statusStrHasBeenSet(false),
+    m_cveIdHasBeenSet(false),
+    m_cvssScoreHasBeenSet(false),
+    m_labelsHasBeenSet(false),
+    m_fixSwitchHasBeenSet(false),
+    m_taskIdHasBeenSet(false)
 {
 }
 
@@ -183,6 +188,56 @@ CoreInternalOutcome VulInfoList::Deserialize(const rapidjson::Value &value)
         m_statusStrHasBeenSet = true;
     }
 
+    if (value.HasMember("CveId") && !value["CveId"].IsNull())
+    {
+        if (!value["CveId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulInfoList.CveId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cveId = string(value["CveId"].GetString());
+        m_cveIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CvssScore") && !value["CvssScore"].IsNull())
+    {
+        if (!value["CvssScore"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulInfoList.CvssScore` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_cvssScore = value["CvssScore"].GetDouble();
+        m_cvssScoreHasBeenSet = true;
+    }
+
+    if (value.HasMember("Labels") && !value["Labels"].IsNull())
+    {
+        if (!value["Labels"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulInfoList.Labels` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_labels = string(value["Labels"].GetString());
+        m_labelsHasBeenSet = true;
+    }
+
+    if (value.HasMember("FixSwitch") && !value["FixSwitch"].IsNull())
+    {
+        if (!value["FixSwitch"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulInfoList.FixSwitch` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fixSwitch = value["FixSwitch"].GetUint64();
+        m_fixSwitchHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskId") && !value["TaskId"].IsNull())
+    {
+        if (!value["TaskId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulInfoList.TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskId = value["TaskId"].GetUint64();
+        m_taskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +355,46 @@ void VulInfoList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "StatusStr";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_statusStr.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cveIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CveId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cveId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cvssScoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CvssScore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cvssScore, allocator);
+    }
+
+    if (m_labelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Labels";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_labels.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fixSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FixSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fixSwitch, allocator);
+    }
+
+    if (m_taskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskId, allocator);
     }
 
 }
@@ -527,5 +622,85 @@ void VulInfoList::SetStatusStr(const string& _statusStr)
 bool VulInfoList::StatusStrHasBeenSet() const
 {
     return m_statusStrHasBeenSet;
+}
+
+string VulInfoList::GetCveId() const
+{
+    return m_cveId;
+}
+
+void VulInfoList::SetCveId(const string& _cveId)
+{
+    m_cveId = _cveId;
+    m_cveIdHasBeenSet = true;
+}
+
+bool VulInfoList::CveIdHasBeenSet() const
+{
+    return m_cveIdHasBeenSet;
+}
+
+double VulInfoList::GetCvssScore() const
+{
+    return m_cvssScore;
+}
+
+void VulInfoList::SetCvssScore(const double& _cvssScore)
+{
+    m_cvssScore = _cvssScore;
+    m_cvssScoreHasBeenSet = true;
+}
+
+bool VulInfoList::CvssScoreHasBeenSet() const
+{
+    return m_cvssScoreHasBeenSet;
+}
+
+string VulInfoList::GetLabels() const
+{
+    return m_labels;
+}
+
+void VulInfoList::SetLabels(const string& _labels)
+{
+    m_labels = _labels;
+    m_labelsHasBeenSet = true;
+}
+
+bool VulInfoList::LabelsHasBeenSet() const
+{
+    return m_labelsHasBeenSet;
+}
+
+uint64_t VulInfoList::GetFixSwitch() const
+{
+    return m_fixSwitch;
+}
+
+void VulInfoList::SetFixSwitch(const uint64_t& _fixSwitch)
+{
+    m_fixSwitch = _fixSwitch;
+    m_fixSwitchHasBeenSet = true;
+}
+
+bool VulInfoList::FixSwitchHasBeenSet() const
+{
+    return m_fixSwitchHasBeenSet;
+}
+
+uint64_t VulInfoList::GetTaskId() const
+{
+    return m_taskId;
+}
+
+void VulInfoList::SetTaskId(const uint64_t& _taskId)
+{
+    m_taskId = _taskId;
+    m_taskIdHasBeenSet = true;
+}
+
+bool VulInfoList::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
 }
 

@@ -19,16 +19,30 @@ set(afc_public_header
   )
 
 set(afc_public_header_model
-  include/tencentcloud/afc/v20200226/model/QueryAntiFraudVipRequest.h
-  include/tencentcloud/afc/v20200226/model/RiskDetail.h
+  include/tencentcloud/afc/v20200226/model/OtherModelScores.h
   include/tencentcloud/afc/v20200226/model/QueryAntiFraudVipResponse.h
+  include/tencentcloud/afc/v20200226/model/RiskDetail.h
+  include/tencentcloud/afc/v20200226/model/SimpleKindRiskDetail.h
+  include/tencentcloud/afc/v20200226/model/GetAntiFraudVipResponse.h
+  include/tencentcloud/afc/v20200226/model/AntiFraudVipCryptoFilter.h
+  include/tencentcloud/afc/v20200226/model/AntiFraudVipFilter.h
+  include/tencentcloud/afc/v20200226/model/QueryAntiFraudVipRequest.h
+  include/tencentcloud/afc/v20200226/model/GetAntiFraudVipRequest.h
+  include/tencentcloud/afc/v20200226/model/AntiFraudVipRecord.h
   )
 
 set(afc_src
   src/v20200226/AfcClient.cpp
-  src/v20200226/model/QueryAntiFraudVipRequest.cpp
-  src/v20200226/model/RiskDetail.cpp
+  src/v20200226/model/OtherModelScores.cpp
   src/v20200226/model/QueryAntiFraudVipResponse.cpp
+  src/v20200226/model/RiskDetail.cpp
+  src/v20200226/model/SimpleKindRiskDetail.cpp
+  src/v20200226/model/GetAntiFraudVipResponse.cpp
+  src/v20200226/model/AntiFraudVipCryptoFilter.cpp
+  src/v20200226/model/AntiFraudVipFilter.cpp
+  src/v20200226/model/QueryAntiFraudVipRequest.cpp
+  src/v20200226/model/GetAntiFraudVipRequest.cpp
+  src/v20200226/model/AntiFraudVipRecord.cpp
   )
 
 set(afc_include

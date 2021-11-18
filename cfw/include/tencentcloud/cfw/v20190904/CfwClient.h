@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/cfw/v20190904/model/AddAcRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/AddAcRuleResponse.h>
+#include <tencentcloud/cfw/v20190904/model/AddEnterpriseSecurityGroupRulesRequest.h>
+#include <tencentcloud/cfw/v20190904/model/AddEnterpriseSecurityGroupRulesResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateAcRulesRequest.h>
 #include <tencentcloud/cfw/v20190904/model/CreateAcRulesResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateChooseVpcsRequest.h>
@@ -63,6 +65,8 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeBlockStaticListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeCfwEipsRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeCfwEipsResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeEnterpriseSecurityGroupRuleRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeEnterpriseSecurityGroupRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeGuideScanInfoRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeGuideScanInfoResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatFwInfoCountRequest.h>
@@ -147,6 +151,8 @@
 #include <tencentcloud/cfw/v20190904/model/ModifyVPCSwitchStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/RemoveAcRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/RemoveAcRuleResponse.h>
+#include <tencentcloud/cfw/v20190904/model/RemoveEnterpriseSecurityGroupRuleRequest.h>
+#include <tencentcloud/cfw/v20190904/model/RemoveEnterpriseSecurityGroupRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/RunSyncAssetRequest.h>
 #include <tencentcloud/cfw/v20190904/model/RunSyncAssetResponse.h>
 #include <tencentcloud/cfw/v20190904/model/SetNatFwDnatRuleRequest.h>
@@ -172,6 +178,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddAcRuleResponse> AddAcRuleOutcome;
                 typedef std::future<AddAcRuleOutcome> AddAcRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::AddAcRuleRequest&, AddAcRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddAcRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddEnterpriseSecurityGroupRulesResponse> AddEnterpriseSecurityGroupRulesOutcome;
+                typedef std::future<AddEnterpriseSecurityGroupRulesOutcome> AddEnterpriseSecurityGroupRulesOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::AddEnterpriseSecurityGroupRulesRequest&, AddEnterpriseSecurityGroupRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddEnterpriseSecurityGroupRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAcRulesResponse> CreateAcRulesOutcome;
                 typedef std::future<CreateAcRulesOutcome> CreateAcRulesOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::CreateAcRulesRequest&, CreateAcRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAcRulesAsyncHandler;
@@ -229,6 +238,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCfwEipsResponse> DescribeCfwEipsOutcome;
                 typedef std::future<DescribeCfwEipsOutcome> DescribeCfwEipsOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeCfwEipsRequest&, DescribeCfwEipsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCfwEipsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEnterpriseSecurityGroupRuleResponse> DescribeEnterpriseSecurityGroupRuleOutcome;
+                typedef std::future<DescribeEnterpriseSecurityGroupRuleOutcome> DescribeEnterpriseSecurityGroupRuleOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeEnterpriseSecurityGroupRuleRequest&, DescribeEnterpriseSecurityGroupRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnterpriseSecurityGroupRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGuideScanInfoResponse> DescribeGuideScanInfoOutcome;
                 typedef std::future<DescribeGuideScanInfoOutcome> DescribeGuideScanInfoOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeGuideScanInfoRequest&, DescribeGuideScanInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGuideScanInfoAsyncHandler;
@@ -355,6 +367,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RemoveAcRuleResponse> RemoveAcRuleOutcome;
                 typedef std::future<RemoveAcRuleOutcome> RemoveAcRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::RemoveAcRuleRequest&, RemoveAcRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveAcRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::RemoveEnterpriseSecurityGroupRuleResponse> RemoveEnterpriseSecurityGroupRuleOutcome;
+                typedef std::future<RemoveEnterpriseSecurityGroupRuleOutcome> RemoveEnterpriseSecurityGroupRuleOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::RemoveEnterpriseSecurityGroupRuleRequest&, RemoveEnterpriseSecurityGroupRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveEnterpriseSecurityGroupRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunSyncAssetResponse> RunSyncAssetOutcome;
                 typedef std::future<RunSyncAssetOutcome> RunSyncAssetOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::RunSyncAssetRequest&, RunSyncAssetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunSyncAssetAsyncHandler;
@@ -378,6 +393,15 @@ namespace TencentCloud
                 AddAcRuleOutcome AddAcRule(const Model::AddAcRuleRequest &request);
                 void AddAcRuleAsync(const Model::AddAcRuleRequest& request, const AddAcRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddAcRuleOutcomeCallable AddAcRuleCallable(const Model::AddAcRuleRequest& request);
+
+                /**
+                 *创建新企业安全组规则
+                 * @param req AddEnterpriseSecurityGroupRulesRequest
+                 * @return AddEnterpriseSecurityGroupRulesOutcome
+                 */
+                AddEnterpriseSecurityGroupRulesOutcome AddEnterpriseSecurityGroupRules(const Model::AddEnterpriseSecurityGroupRulesRequest &request);
+                void AddEnterpriseSecurityGroupRulesAsync(const Model::AddEnterpriseSecurityGroupRulesRequest& request, const AddEnterpriseSecurityGroupRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddEnterpriseSecurityGroupRulesOutcomeCallable AddEnterpriseSecurityGroupRulesCallable(const Model::AddEnterpriseSecurityGroupRulesRequest& request);
 
                 /**
                  *创建规则
@@ -551,6 +575,15 @@ namespace TencentCloud
                 DescribeCfwEipsOutcome DescribeCfwEips(const Model::DescribeCfwEipsRequest &request);
                 void DescribeCfwEipsAsync(const Model::DescribeCfwEipsRequest& request, const DescribeCfwEipsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCfwEipsOutcomeCallable DescribeCfwEipsCallable(const Model::DescribeCfwEipsRequest& request);
+
+                /**
+                 *查询新企业安全组规则
+                 * @param req DescribeEnterpriseSecurityGroupRuleRequest
+                 * @return DescribeEnterpriseSecurityGroupRuleOutcome
+                 */
+                DescribeEnterpriseSecurityGroupRuleOutcome DescribeEnterpriseSecurityGroupRule(const Model::DescribeEnterpriseSecurityGroupRuleRequest &request);
+                void DescribeEnterpriseSecurityGroupRuleAsync(const Model::DescribeEnterpriseSecurityGroupRuleRequest& request, const DescribeEnterpriseSecurityGroupRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEnterpriseSecurityGroupRuleOutcomeCallable DescribeEnterpriseSecurityGroupRuleCallable(const Model::DescribeEnterpriseSecurityGroupRuleRequest& request);
 
                 /**
                  *DescribeGuideScanInfo新手引导扫描接口信息
@@ -938,6 +971,15 @@ namespace TencentCloud
                 RemoveAcRuleOutcome RemoveAcRule(const Model::RemoveAcRuleRequest &request);
                 void RemoveAcRuleAsync(const Model::RemoveAcRuleRequest& request, const RemoveAcRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RemoveAcRuleOutcomeCallable RemoveAcRuleCallable(const Model::RemoveAcRuleRequest& request);
+
+                /**
+                 *删除新企业安全组规则
+                 * @param req RemoveEnterpriseSecurityGroupRuleRequest
+                 * @return RemoveEnterpriseSecurityGroupRuleOutcome
+                 */
+                RemoveEnterpriseSecurityGroupRuleOutcome RemoveEnterpriseSecurityGroupRule(const Model::RemoveEnterpriseSecurityGroupRuleRequest &request);
+                void RemoveEnterpriseSecurityGroupRuleAsync(const Model::RemoveEnterpriseSecurityGroupRuleRequest& request, const RemoveEnterpriseSecurityGroupRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RemoveEnterpriseSecurityGroupRuleOutcomeCallable RemoveEnterpriseSecurityGroupRuleCallable(const Model::RemoveEnterpriseSecurityGroupRuleRequest& request);
 
                 /**
                  *同步资产-互联网&VPC

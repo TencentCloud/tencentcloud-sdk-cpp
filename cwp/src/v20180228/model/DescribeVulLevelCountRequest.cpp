@@ -22,7 +22,8 @@
 using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
-DescribeVulLevelCountRequest::DescribeVulLevelCountRequest()
+DescribeVulLevelCountRequest::DescribeVulLevelCountRequest() :
+    m_vulCategoryHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string DescribeVulLevelCountRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_vulCategoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VulCategory";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_vulCategory, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string DescribeVulLevelCountRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t DescribeVulLevelCountRequest::GetVulCategory() const
+{
+    return m_vulCategory;
+}
+
+void DescribeVulLevelCountRequest::SetVulCategory(const uint64_t& _vulCategory)
+{
+    m_vulCategory = _vulCategory;
+    m_vulCategoryHasBeenSet = true;
+}
+
+bool DescribeVulLevelCountRequest::VulCategoryHasBeenSet() const
+{
+    return m_vulCategoryHasBeenSet;
+}
 
 

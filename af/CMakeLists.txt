@@ -19,30 +19,44 @@ set(af_public_header
   )
 
 set(af_public_header_model
-  include/tencentcloud/af/v20200226/model/FinanceAntiFraudCryptoFilter.h
+  include/tencentcloud/af/v20200226/model/RiskDetailInfo.h
+  include/tencentcloud/af/v20200226/model/AntiFraudRecord.h
+  include/tencentcloud/af/v20200226/model/AntiFraudFilter.h
+  include/tencentcloud/af/v20200226/model/AntiFraudCryptoFilter.h
   include/tencentcloud/af/v20200226/model/FinanceAntiFraudRecord.h
   include/tencentcloud/af/v20200226/model/DescribeAntiFraudResponse.h
   include/tencentcloud/af/v20200226/model/RiskDetail.h
   include/tencentcloud/af/v20200226/model/FinanceOtherModelScores.h
-  include/tencentcloud/af/v20200226/model/RiskDetailInfo.h
+  include/tencentcloud/af/v20200226/model/SimpleKindRiskDetail.h
+  include/tencentcloud/af/v20200226/model/OtherModelScoresDetail.h
+  include/tencentcloud/af/v20200226/model/GetAntiFraudRequest.h
   include/tencentcloud/af/v20200226/model/DescribeAntiFraudRequest.h
   include/tencentcloud/af/v20200226/model/FinanceAntiFraudFilter.h
-  include/tencentcloud/af/v20200226/model/QueryAntiFraudRequest.h
   include/tencentcloud/af/v20200226/model/QueryAntiFraudResponse.h
+  include/tencentcloud/af/v20200226/model/GetAntiFraudResponse.h
+  include/tencentcloud/af/v20200226/model/QueryAntiFraudRequest.h
+  include/tencentcloud/af/v20200226/model/FinanceAntiFraudCryptoFilter.h
   )
 
 set(af_src
   src/v20200226/AfClient.cpp
-  src/v20200226/model/FinanceAntiFraudCryptoFilter.cpp
+  src/v20200226/model/RiskDetailInfo.cpp
+  src/v20200226/model/AntiFraudRecord.cpp
+  src/v20200226/model/AntiFraudFilter.cpp
+  src/v20200226/model/AntiFraudCryptoFilter.cpp
   src/v20200226/model/FinanceAntiFraudRecord.cpp
   src/v20200226/model/DescribeAntiFraudResponse.cpp
   src/v20200226/model/RiskDetail.cpp
   src/v20200226/model/FinanceOtherModelScores.cpp
-  src/v20200226/model/RiskDetailInfo.cpp
+  src/v20200226/model/SimpleKindRiskDetail.cpp
+  src/v20200226/model/OtherModelScoresDetail.cpp
+  src/v20200226/model/GetAntiFraudRequest.cpp
   src/v20200226/model/DescribeAntiFraudRequest.cpp
   src/v20200226/model/FinanceAntiFraudFilter.cpp
-  src/v20200226/model/QueryAntiFraudRequest.cpp
   src/v20200226/model/QueryAntiFraudResponse.cpp
+  src/v20200226/model/GetAntiFraudResponse.cpp
+  src/v20200226/model/QueryAntiFraudRequest.cpp
+  src/v20200226/model/FinanceAntiFraudCryptoFilter.cpp
   )
 
 set(af_include

@@ -83,6 +83,49 @@ AfClient::DescribeAntiFraudOutcomeCallable AfClient::DescribeAntiFraudCallable(c
     return task->get_future();
 }
 
+AfClient::GetAntiFraudOutcome AfClient::GetAntiFraud(const GetAntiFraudRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetAntiFraud");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetAntiFraudResponse rsp = GetAntiFraudResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetAntiFraudOutcome(rsp);
+        else
+            return GetAntiFraudOutcome(o.GetError());
+    }
+    else
+    {
+        return GetAntiFraudOutcome(outcome.GetError());
+    }
+}
+
+void AfClient::GetAntiFraudAsync(const GetAntiFraudRequest& request, const GetAntiFraudAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetAntiFraud(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AfClient::GetAntiFraudOutcomeCallable AfClient::GetAntiFraudCallable(const GetAntiFraudRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetAntiFraudOutcome()>>(
+        [this, request]()
+        {
+            return this->GetAntiFraud(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AfClient::QueryAntiFraudOutcome AfClient::QueryAntiFraud(const QueryAntiFraudRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryAntiFraud");

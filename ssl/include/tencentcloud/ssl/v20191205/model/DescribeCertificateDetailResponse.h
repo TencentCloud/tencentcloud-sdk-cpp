@@ -398,9 +398,9 @@ namespace TencentCloud
                     bool StatusNameHasBeenSet() const;
 
                     /**
-                     * 获取证书包含的多个域名（包含主域名）
+                     * 获取证书包含的多个域名（不包含主域名，主域名使用Domain字段）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubjectAltName 证书包含的多个域名（包含主域名）
+                     * @return SubjectAltName 证书包含的多个域名（不包含主域名，主域名使用Domain字段）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetSubjectAltName() const;
@@ -701,7 +701,7 @@ namespace TencentCloud
                     bool m_statusNameHasBeenSet;
 
                     /**
-                     * 证书包含的多个域名（包含主域名）
+                     * 证书包含的多个域名（不包含主域名，主域名使用Domain字段）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_subjectAltName;

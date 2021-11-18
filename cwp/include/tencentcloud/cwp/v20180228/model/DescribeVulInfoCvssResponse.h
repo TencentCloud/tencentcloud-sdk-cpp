@@ -86,9 +86,9 @@ namespace TencentCloud
                     bool VulLevelHasBeenSet() const;
 
                     /**
-                     * 获取漏洞分类 1: web应用漏洞 2:系统组件漏洞
+                     * 获取漏洞分类 1: web应用漏洞 2:应用漏洞3:安全基线 4: Linux系统漏洞 5: Windows系统漏洞
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VulType 漏洞分类 1: web应用漏洞 2:系统组件漏洞
+                     * @return VulType 漏洞分类 1: web应用漏洞 2:应用漏洞3:安全基线 4: Linux系统漏洞 5: Windows系统漏洞
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetVulType() const;
@@ -225,6 +225,20 @@ namespace TencentCloud
                      */
                     bool CvssScoreFloatHasBeenSet() const;
 
+                    /**
+                     * 获取漏洞标签 多个逗号分割
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Labels 漏洞标签 多个逗号分割
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLabels() const;
+
+                    /**
+                     * 判断参数 Labels 是否已赋值
+                     * @return Labels 是否已赋值
+                     */
+                    bool LabelsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -249,7 +263,7 @@ namespace TencentCloud
                     bool m_vulLevelHasBeenSet;
 
                     /**
-                     * 漏洞分类 1: web应用漏洞 2:系统组件漏洞
+                     * 漏洞分类 1: web应用漏洞 2:应用漏洞3:安全基线 4: Linux系统漏洞 5: Windows系统漏洞
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_vulType;
@@ -317,6 +331,13 @@ namespace TencentCloud
                      */
                     double m_cvssScoreFloat;
                     bool m_cvssScoreFloatHasBeenSet;
+
+                    /**
+                     * 漏洞标签 多个逗号分割
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_labels;
+                    bool m_labelsHasBeenSet;
 
                 };
             }
