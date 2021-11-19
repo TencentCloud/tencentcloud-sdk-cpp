@@ -2276,6 +2276,49 @@ IotvideoClient::DescribeProductOutcomeCallable IotvideoClient::DescribeProductCa
     return task->get_future();
 }
 
+IotvideoClient::DescribeProductDynamicRegisterOutcome IotvideoClient::DescribeProductDynamicRegister(const DescribeProductDynamicRegisterRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeProductDynamicRegister");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeProductDynamicRegisterResponse rsp = DescribeProductDynamicRegisterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeProductDynamicRegisterOutcome(rsp);
+        else
+            return DescribeProductDynamicRegisterOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeProductDynamicRegisterOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DescribeProductDynamicRegisterAsync(const DescribeProductDynamicRegisterRequest& request, const DescribeProductDynamicRegisterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeProductDynamicRegister(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DescribeProductDynamicRegisterOutcomeCallable IotvideoClient::DescribeProductDynamicRegisterCallable(const DescribeProductDynamicRegisterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeProductDynamicRegisterOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeProductDynamicRegister(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::DescribeProductsOutcome IotvideoClient::DescribeProducts(const DescribeProductsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeProducts");
@@ -2957,6 +3000,49 @@ IotvideoClient::ModifyProductOutcomeCallable IotvideoClient::ModifyProductCallab
         [this, request]()
         {
             return this->ModifyProduct(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::ModifyProductDynamicRegisterOutcome IotvideoClient::ModifyProductDynamicRegister(const ModifyProductDynamicRegisterRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyProductDynamicRegister");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyProductDynamicRegisterResponse rsp = ModifyProductDynamicRegisterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyProductDynamicRegisterOutcome(rsp);
+        else
+            return ModifyProductDynamicRegisterOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyProductDynamicRegisterOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::ModifyProductDynamicRegisterAsync(const ModifyProductDynamicRegisterRequest& request, const ModifyProductDynamicRegisterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyProductDynamicRegister(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::ModifyProductDynamicRegisterOutcomeCallable IotvideoClient::ModifyProductDynamicRegisterCallable(const ModifyProductDynamicRegisterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyProductDynamicRegisterOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyProductDynamicRegister(request);
         }
     );
 

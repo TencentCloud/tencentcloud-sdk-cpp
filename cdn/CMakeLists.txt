@@ -261,6 +261,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/KeyRule.h
   include/tencentcloud/cdn/v20180606/model/ClientCert.h
   include/tencentcloud/cdn/v20180606/model/CappingRule.h
+  include/tencentcloud/cdn/v20180606/model/ShareCname.h
   include/tencentcloud/cdn/v20180606/model/DeleteScdnDomainResponse.h
   include/tencentcloud/cdn/v20180606/model/ListClsLogTopicsRequest.h
   include/tencentcloud/cdn/v20180606/model/Seo.h
@@ -595,6 +596,7 @@ set(cdn_src
   src/v20180606/model/KeyRule.cpp
   src/v20180606/model/ClientCert.cpp
   src/v20180606/model/CappingRule.cpp
+  src/v20180606/model/ShareCname.cpp
   src/v20180606/model/DeleteScdnDomainResponse.cpp
   src/v20180606/model/ListClsLogTopicsRequest.cpp
   src/v20180606/model/Seo.cpp

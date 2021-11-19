@@ -211,6 +211,32 @@ hex：十六进制
                      */
                     bool TimeFormatHasBeenSet() const;
 
+                    /**
+                     * 获取计算签名的备用密钥
+仅允许大小写字母与数字，长度 6~32 位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BackupSecretKey 计算签名的备用密钥
+仅允许大小写字母与数字，长度 6~32 位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBackupSecretKey() const;
+
+                    /**
+                     * 设置计算签名的备用密钥
+仅允许大小写字母与数字，长度 6~32 位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BackupSecretKey 计算签名的备用密钥
+仅允许大小写字母与数字，长度 6~32 位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBackupSecretKey(const std::string& _backupSecretKey);
+
+                    /**
+                     * 判断参数 BackupSecretKey 是否已赋值
+                     * @return BackupSecretKey 是否已赋值
+                     */
+                    bool BackupSecretKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +289,14 @@ hex：十六进制
                      */
                     std::string m_timeFormat;
                     bool m_timeFormatHasBeenSet;
+
+                    /**
+                     * 计算签名的备用密钥
+仅允许大小写字母与数字，长度 6~32 位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_backupSecretKey;
+                    bool m_backupSecretKeyHasBeenSet;
 
                 };
             }

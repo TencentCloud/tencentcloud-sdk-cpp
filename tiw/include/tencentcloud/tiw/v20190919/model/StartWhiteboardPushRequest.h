@@ -63,14 +63,22 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取需要推流白板的房间号，取值范围: (1, 4294967295)
-                     * @return RoomId 需要推流白板的房间号，取值范围: (1, 4294967295)
+                     * 获取需要推流的白板房间号，取值范围: (1, 4294967295)。
+
+在没有指定TRTCRoomId和TRTCRoomIdStr的情况下，默认会以RoomId作为白板流进行推流的TRTC房间号。
+                     * @return RoomId 需要推流的白板房间号，取值范围: (1, 4294967295)。
+
+在没有指定TRTCRoomId和TRTCRoomIdStr的情况下，默认会以RoomId作为白板流进行推流的TRTC房间号。
                      */
                     int64_t GetRoomId() const;
 
                     /**
-                     * 设置需要推流白板的房间号，取值范围: (1, 4294967295)
-                     * @param RoomId 需要推流白板的房间号，取值范围: (1, 4294967295)
+                     * 设置需要推流的白板房间号，取值范围: (1, 4294967295)。
+
+在没有指定TRTCRoomId和TRTCRoomIdStr的情况下，默认会以RoomId作为白板流进行推流的TRTC房间号。
+                     * @param RoomId 需要推流的白板房间号，取值范围: (1, 4294967295)。
+
+在没有指定TRTCRoomId和TRTCRoomIdStr的情况下，默认会以RoomId作为白板流进行推流的TRTC房间号。
                      */
                     void SetRoomId(const int64_t& _roomId);
 
@@ -476,6 +484,82 @@ SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
                      */
                     bool ExtraDataHasBeenSet() const;
 
+                    /**
+                     * 获取**内部体验字段，若需要体验可以提工单申请开通体验**
+
+TRTC数字类型房间号，取值范围: (1, 4294967295)。
+
+在同时指定了RoomId与TRTCRoomId的情况下，优先使用TRTCRoomId作为白板流进行推流的TRTC房间号。
+
+当指定了TRTCRoomIdStr的情况下，此字段将被忽略。
+                     * @return TRTCRoomId **内部体验字段，若需要体验可以提工单申请开通体验**
+
+TRTC数字类型房间号，取值范围: (1, 4294967295)。
+
+在同时指定了RoomId与TRTCRoomId的情况下，优先使用TRTCRoomId作为白板流进行推流的TRTC房间号。
+
+当指定了TRTCRoomIdStr的情况下，此字段将被忽略。
+                     */
+                    int64_t GetTRTCRoomId() const;
+
+                    /**
+                     * 设置**内部体验字段，若需要体验可以提工单申请开通体验**
+
+TRTC数字类型房间号，取值范围: (1, 4294967295)。
+
+在同时指定了RoomId与TRTCRoomId的情况下，优先使用TRTCRoomId作为白板流进行推流的TRTC房间号。
+
+当指定了TRTCRoomIdStr的情况下，此字段将被忽略。
+                     * @param TRTCRoomId **内部体验字段，若需要体验可以提工单申请开通体验**
+
+TRTC数字类型房间号，取值范围: (1, 4294967295)。
+
+在同时指定了RoomId与TRTCRoomId的情况下，优先使用TRTCRoomId作为白板流进行推流的TRTC房间号。
+
+当指定了TRTCRoomIdStr的情况下，此字段将被忽略。
+                     */
+                    void SetTRTCRoomId(const int64_t& _tRTCRoomId);
+
+                    /**
+                     * 判断参数 TRTCRoomId 是否已赋值
+                     * @return TRTCRoomId 是否已赋值
+                     */
+                    bool TRTCRoomIdHasBeenSet() const;
+
+                    /**
+                     * 获取**内部体验字段，若需要体验可以提工单申请开通体验**
+
+TRTC字符串类型房间号。
+
+在指定了TRTCRoomIdStr的情况下，会优先使用TRTCRoomIdStr作为白板流进行推流的TRTC房间号。
+                     * @return TRTCRoomIdStr **内部体验字段，若需要体验可以提工单申请开通体验**
+
+TRTC字符串类型房间号。
+
+在指定了TRTCRoomIdStr的情况下，会优先使用TRTCRoomIdStr作为白板流进行推流的TRTC房间号。
+                     */
+                    std::string GetTRTCRoomIdStr() const;
+
+                    /**
+                     * 设置**内部体验字段，若需要体验可以提工单申请开通体验**
+
+TRTC字符串类型房间号。
+
+在指定了TRTCRoomIdStr的情况下，会优先使用TRTCRoomIdStr作为白板流进行推流的TRTC房间号。
+                     * @param TRTCRoomIdStr **内部体验字段，若需要体验可以提工单申请开通体验**
+
+TRTC字符串类型房间号。
+
+在指定了TRTCRoomIdStr的情况下，会优先使用TRTCRoomIdStr作为白板流进行推流的TRTC房间号。
+                     */
+                    void SetTRTCRoomIdStr(const std::string& _tRTCRoomIdStr);
+
+                    /**
+                     * 判断参数 TRTCRoomIdStr 是否已赋值
+                     * @return TRTCRoomIdStr 是否已赋值
+                     */
+                    bool TRTCRoomIdStrHasBeenSet() const;
+
                 private:
 
                     /**
@@ -485,7 +569,9 @@ SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 需要推流白板的房间号，取值范围: (1, 4294967295)
+                     * 需要推流的白板房间号，取值范围: (1, 4294967295)。
+
+在没有指定TRTCRoomId和TRTCRoomIdStr的情况下，默认会以RoomId作为白板流进行推流的TRTC房间号。
                      */
                     int64_t m_roomId;
                     bool m_roomIdHasBeenSet;
@@ -609,6 +695,28 @@ SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
                      */
                     std::string m_extraData;
                     bool m_extraDataHasBeenSet;
+
+                    /**
+                     * **内部体验字段，若需要体验可以提工单申请开通体验**
+
+TRTC数字类型房间号，取值范围: (1, 4294967295)。
+
+在同时指定了RoomId与TRTCRoomId的情况下，优先使用TRTCRoomId作为白板流进行推流的TRTC房间号。
+
+当指定了TRTCRoomIdStr的情况下，此字段将被忽略。
+                     */
+                    int64_t m_tRTCRoomId;
+                    bool m_tRTCRoomIdHasBeenSet;
+
+                    /**
+                     * **内部体验字段，若需要体验可以提工单申请开通体验**
+
+TRTC字符串类型房间号。
+
+在指定了TRTCRoomIdStr的情况下，会优先使用TRTCRoomIdStr作为白板流进行推流的TRTC房间号。
+                     */
+                    std::string m_tRTCRoomIdStr;
+                    bool m_tRTCRoomIdStrHasBeenSet;
 
                 };
             }

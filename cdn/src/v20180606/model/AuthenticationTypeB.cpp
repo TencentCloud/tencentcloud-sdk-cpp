@@ -24,7 +24,8 @@ AuthenticationTypeB::AuthenticationTypeB() :
     m_secretKeyHasBeenSet(false),
     m_expireTimeHasBeenSet(false),
     m_fileExtensionsHasBeenSet(false),
-    m_filterTypeHasBeenSet(false)
+    m_filterTypeHasBeenSet(false),
+    m_backupSecretKeyHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,16 @@ CoreInternalOutcome AuthenticationTypeB::Deserialize(const rapidjson::Value &val
         m_filterTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("BackupSecretKey") && !value["BackupSecretKey"].IsNull())
+    {
+        if (!value["BackupSecretKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AuthenticationTypeB.BackupSecretKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupSecretKey = string(value["BackupSecretKey"].GetString());
+        m_backupSecretKeyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +129,14 @@ void AuthenticationTypeB::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "FilterType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_filterType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupSecretKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupSecretKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_backupSecretKey.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -185,5 +204,21 @@ void AuthenticationTypeB::SetFilterType(const string& _filterType)
 bool AuthenticationTypeB::FilterTypeHasBeenSet() const
 {
     return m_filterTypeHasBeenSet;
+}
+
+string AuthenticationTypeB::GetBackupSecretKey() const
+{
+    return m_backupSecretKey;
+}
+
+void AuthenticationTypeB::SetBackupSecretKey(const string& _backupSecretKey)
+{
+    m_backupSecretKey = _backupSecretKey;
+    m_backupSecretKeyHasBeenSet = true;
+}
+
+bool AuthenticationTypeB::BackupSecretKeyHasBeenSet() const
+{
+    return m_backupSecretKeyHasBeenSet;
 }
 

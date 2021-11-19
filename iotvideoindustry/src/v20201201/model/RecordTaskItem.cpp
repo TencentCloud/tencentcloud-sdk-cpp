@@ -27,7 +27,10 @@ RecordTaskItem::RecordTaskItem() :
     m_endTimeHasBeenSet(false),
     m_eventIdHasBeenSet(false),
     m_videoUrlHasBeenSet(false),
-    m_recordStatusHasBeenSet(false)
+    m_recordStatusHasBeenSet(false),
+    m_sceneIdHasBeenSet(false),
+    m_warnIdHasBeenSet(false),
+    m_recordIdHasBeenSet(false)
 {
 }
 
@@ -106,6 +109,36 @@ CoreInternalOutcome RecordTaskItem::Deserialize(const rapidjson::Value &value)
         m_recordStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("SceneId") && !value["SceneId"].IsNull())
+    {
+        if (!value["SceneId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecordTaskItem.SceneId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sceneId = value["SceneId"].GetInt64();
+        m_sceneIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("WarnId") && !value["WarnId"].IsNull())
+    {
+        if (!value["WarnId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecordTaskItem.WarnId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_warnId = value["WarnId"].GetInt64();
+        m_warnIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("RecordId") && !value["RecordId"].IsNull())
+    {
+        if (!value["RecordId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecordTaskItem.RecordId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordId = string(value["RecordId"].GetString());
+        m_recordIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +200,30 @@ void RecordTaskItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "RecordStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_recordStatus, allocator);
+    }
+
+    if (m_sceneIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sceneId, allocator);
+    }
+
+    if (m_warnIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WarnId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_warnId, allocator);
+    }
+
+    if (m_recordIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recordId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +339,53 @@ void RecordTaskItem::SetRecordStatus(const int64_t& _recordStatus)
 bool RecordTaskItem::RecordStatusHasBeenSet() const
 {
     return m_recordStatusHasBeenSet;
+}
+
+int64_t RecordTaskItem::GetSceneId() const
+{
+    return m_sceneId;
+}
+
+void RecordTaskItem::SetSceneId(const int64_t& _sceneId)
+{
+    m_sceneId = _sceneId;
+    m_sceneIdHasBeenSet = true;
+}
+
+bool RecordTaskItem::SceneIdHasBeenSet() const
+{
+    return m_sceneIdHasBeenSet;
+}
+
+int64_t RecordTaskItem::GetWarnId() const
+{
+    return m_warnId;
+}
+
+void RecordTaskItem::SetWarnId(const int64_t& _warnId)
+{
+    m_warnId = _warnId;
+    m_warnIdHasBeenSet = true;
+}
+
+bool RecordTaskItem::WarnIdHasBeenSet() const
+{
+    return m_warnIdHasBeenSet;
+}
+
+string RecordTaskItem::GetRecordId() const
+{
+    return m_recordId;
+}
+
+void RecordTaskItem::SetRecordId(const string& _recordId)
+{
+    m_recordId = _recordId;
+    m_recordIdHasBeenSet = true;
+}
+
+bool RecordTaskItem::RecordIdHasBeenSet() const
+{
+    return m_recordIdHasBeenSet;
 }
 

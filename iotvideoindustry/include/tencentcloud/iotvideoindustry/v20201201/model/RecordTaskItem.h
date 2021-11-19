@@ -200,6 +200,72 @@ namespace TencentCloud
                      */
                     bool RecordStatusHasBeenSet() const;
 
+                    /**
+                     * 获取场景ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SceneId 场景ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetSceneId() const;
+
+                    /**
+                     * 设置场景ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SceneId 场景ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSceneId(const int64_t& _sceneId);
+
+                    /**
+                     * 判断参数 SceneId 是否已赋值
+                     * @return SceneId 是否已赋值
+                     */
+                    bool SceneIdHasBeenSet() const;
+
+                    /**
+                     * 获取告警ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WarnId 告警ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetWarnId() const;
+
+                    /**
+                     * 设置告警ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WarnId 告警ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWarnId(const int64_t& _warnId);
+
+                    /**
+                     * 判断参数 WarnId 是否已赋值
+                     * @return WarnId 是否已赋值
+                     */
+                    bool WarnIdHasBeenSet() const;
+
+                    /**
+                     * 获取录制id，NVR下属设备有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RecordId 录制id，NVR下属设备有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRecordId() const;
+
+                    /**
+                     * 设置录制id，NVR下属设备有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RecordId 录制id，NVR下属设备有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRecordId(const std::string& _recordId);
+
+                    /**
+                     * 判断参数 RecordId 是否已赋值
+                     * @return RecordId 是否已赋值
+                     */
+                    bool RecordIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -250,6 +316,27 @@ namespace TencentCloud
                      */
                     int64_t m_recordStatus;
                     bool m_recordStatusHasBeenSet;
+
+                    /**
+                     * 场景ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_sceneId;
+                    bool m_sceneIdHasBeenSet;
+
+                    /**
+                     * 告警ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_warnId;
+                    bool m_warnIdHasBeenSet;
+
+                    /**
+                     * 录制id，NVR下属设备有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_recordId;
+                    bool m_recordIdHasBeenSet;
 
                 };
             }

@@ -65,7 +65,8 @@ UpdateDomainConfigRequest::UpdateDomainConfigRequest() :
     m_quicHasBeenSet(false),
     m_ossPrivateAccessHasBeenSet(false),
     m_webSocketHasBeenSet(false),
-    m_remoteAuthenticationHasBeenSet(false)
+    m_remoteAuthenticationHasBeenSet(false),
+    m_shareCnameHasBeenSet(false)
 {
 }
 
@@ -461,6 +462,15 @@ string UpdateDomainConfigRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_remoteAuthentication.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_shareCnameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShareCname";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_shareCname.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -1157,6 +1167,22 @@ void UpdateDomainConfigRequest::SetRemoteAuthentication(const RemoteAuthenticati
 bool UpdateDomainConfigRequest::RemoteAuthenticationHasBeenSet() const
 {
     return m_remoteAuthenticationHasBeenSet;
+}
+
+ShareCname UpdateDomainConfigRequest::GetShareCname() const
+{
+    return m_shareCname;
+}
+
+void UpdateDomainConfigRequest::SetShareCname(const ShareCname& _shareCname)
+{
+    m_shareCname = _shareCname;
+    m_shareCnameHasBeenSet = true;
+}
+
+bool UpdateDomainConfigRequest::ShareCnameHasBeenSet() const
+{
+    return m_shareCnameHasBeenSet;
 }
 
 

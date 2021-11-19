@@ -25,7 +25,8 @@ AuthenticationTypeC::AuthenticationTypeC() :
     m_expireTimeHasBeenSet(false),
     m_fileExtensionsHasBeenSet(false),
     m_filterTypeHasBeenSet(false),
-    m_timeFormatHasBeenSet(false)
+    m_timeFormatHasBeenSet(false),
+    m_backupSecretKeyHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,16 @@ CoreInternalOutcome AuthenticationTypeC::Deserialize(const rapidjson::Value &val
         m_timeFormatHasBeenSet = true;
     }
 
+    if (value.HasMember("BackupSecretKey") && !value["BackupSecretKey"].IsNull())
+    {
+        if (!value["BackupSecretKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AuthenticationTypeC.BackupSecretKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupSecretKey = string(value["BackupSecretKey"].GetString());
+        m_backupSecretKeyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +148,14 @@ void AuthenticationTypeC::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "TimeFormat";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_timeFormat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupSecretKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupSecretKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_backupSecretKey.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -220,5 +239,21 @@ void AuthenticationTypeC::SetTimeFormat(const string& _timeFormat)
 bool AuthenticationTypeC::TimeFormatHasBeenSet() const
 {
     return m_timeFormatHasBeenSet;
+}
+
+string AuthenticationTypeC::GetBackupSecretKey() const
+{
+    return m_backupSecretKey;
+}
+
+void AuthenticationTypeC::SetBackupSecretKey(const string& _backupSecretKey)
+{
+    m_backupSecretKey = _backupSecretKey;
+    m_backupSecretKeyHasBeenSet = true;
+}
+
+bool AuthenticationTypeC::BackupSecretKeyHasBeenSet() const
+{
+    return m_backupSecretKeyHasBeenSet;
 }
 

@@ -69,6 +69,7 @@
 #include <tencentcloud/cdn/v20180606/model/OssPrivateAccess.h>
 #include <tencentcloud/cdn/v20180606/model/WebSocket.h>
 #include <tencentcloud/cdn/v20180606/model/RemoteAuthentication.h>
+#include <tencentcloud/cdn/v20180606/model/ShareCname.h>
 
 
 namespace TencentCloud
@@ -1449,6 +1450,28 @@ off：不支持
                      */
                     bool RemoteAuthenticationHasBeenSet() const;
 
+                    /**
+                     * 获取共享CNAME配置（白名单功能）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ShareCname 共享CNAME配置（白名单功能）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ShareCname GetShareCname() const;
+
+                    /**
+                     * 设置共享CNAME配置（白名单功能）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ShareCname 共享CNAME配置（白名单功能）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetShareCname(const ShareCname& _shareCname);
+
+                    /**
+                     * 判断参数 ShareCname 是否已赋值
+                     * @return ShareCname 是否已赋值
+                     */
+                    bool ShareCnameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1878,6 +1901,13 @@ off：不支持
                      */
                     RemoteAuthentication m_remoteAuthentication;
                     bool m_remoteAuthenticationHasBeenSet;
+
+                    /**
+                     * 共享CNAME配置（白名单功能）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ShareCname m_shareCname;
+                    bool m_shareCnameHasBeenSet;
 
                 };
             }

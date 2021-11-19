@@ -182,6 +182,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20201215/model/ImportModelDefinitionResponse.h
   include/tencentcloud/iotvideo/v20201215/model/ApplyAIModelRequest.h
   include/tencentcloud/iotvideo/v20201215/model/CreateBatchRequest.h
+  include/tencentcloud/iotvideo/v20201215/model/ModifyProductDynamicRegisterResponse.h
   include/tencentcloud/iotvideo/v20201215/model/CancelAIModelApplicationResponse.h
   include/tencentcloud/iotvideo/v20201215/model/DescribeCloudStorageTimeResponse.h
   include/tencentcloud/iotvideo/v20201215/model/DescribeDeviceStatusLogResponse.h
@@ -282,6 +283,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20201215/model/ModifyForwardRuleResponse.h
   include/tencentcloud/iotvideo/v20201215/model/BalanceTransaction.h
   include/tencentcloud/iotvideo/v20201215/model/FirmwareTaskInfo.h
+  include/tencentcloud/iotvideo/v20201215/model/DescribeProductDynamicRegisterRequest.h
   include/tencentcloud/iotvideo/v20201215/model/AIModelApplication.h
   include/tencentcloud/iotvideo/v20201215/model/DescribeFirmwareTaskDistributionResponse.h
   include/tencentcloud/iotvideo/v20201215/model/DescribeBatchResponse.h
@@ -316,6 +318,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20201215/model/ModifyDeviceLogLevelResponse.h
   include/tencentcloud/iotvideo/v20201215/model/CreateDataForwardRequest.h
   include/tencentcloud/iotvideo/v20201215/model/BatchUpdateFirmwareRequest.h
+  include/tencentcloud/iotvideo/v20201215/model/ModifyProductDynamicRegisterRequest.h
   include/tencentcloud/iotvideo/v20201215/model/DescribeCloudStorageThumbnailRequest.h
   include/tencentcloud/iotvideo/v20201215/model/GetFirmwareURLRequest.h
   include/tencentcloud/iotvideo/v20201215/model/CreateAIDetectionRequest.h
@@ -336,6 +339,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20201215/model/SearchKeyword.h
   include/tencentcloud/iotvideo/v20201215/model/DescribeDevicesRequest.h
   include/tencentcloud/iotvideo/v20201215/model/DescribeModelDefinitionRequest.h
+  include/tencentcloud/iotvideo/v20201215/model/DescribeProductDynamicRegisterResponse.h
   include/tencentcloud/iotvideo/v20201215/model/DescribeFirmwareTaskStatisticsResponse.h
   include/tencentcloud/iotvideo/v20201215/model/CheckForwardAuthResponse.h
   include/tencentcloud/iotvideo/v20201215/model/DescribeDeviceResponse.h
@@ -520,6 +524,7 @@ set(iotvideo_src
   src/v20201215/model/ImportModelDefinitionResponse.cpp
   src/v20201215/model/ApplyAIModelRequest.cpp
   src/v20201215/model/CreateBatchRequest.cpp
+  src/v20201215/model/ModifyProductDynamicRegisterResponse.cpp
   src/v20201215/model/CancelAIModelApplicationResponse.cpp
   src/v20201215/model/DescribeCloudStorageTimeResponse.cpp
   src/v20201215/model/DescribeDeviceStatusLogResponse.cpp
@@ -620,6 +625,7 @@ set(iotvideo_src
   src/v20201215/model/ModifyForwardRuleResponse.cpp
   src/v20201215/model/BalanceTransaction.cpp
   src/v20201215/model/FirmwareTaskInfo.cpp
+  src/v20201215/model/DescribeProductDynamicRegisterRequest.cpp
   src/v20201215/model/AIModelApplication.cpp
   src/v20201215/model/DescribeFirmwareTaskDistributionResponse.cpp
   src/v20201215/model/DescribeBatchResponse.cpp
@@ -654,6 +660,7 @@ set(iotvideo_src
   src/v20201215/model/ModifyDeviceLogLevelResponse.cpp
   src/v20201215/model/CreateDataForwardRequest.cpp
   src/v20201215/model/BatchUpdateFirmwareRequest.cpp
+  src/v20201215/model/ModifyProductDynamicRegisterRequest.cpp
   src/v20201215/model/DescribeCloudStorageThumbnailRequest.cpp
   src/v20201215/model/GetFirmwareURLRequest.cpp
   src/v20201215/model/CreateAIDetectionRequest.cpp
@@ -674,6 +681,7 @@ set(iotvideo_src
   src/v20201215/model/SearchKeyword.cpp
   src/v20201215/model/DescribeDevicesRequest.cpp
   src/v20201215/model/DescribeModelDefinitionRequest.cpp
+  src/v20201215/model/DescribeProductDynamicRegisterResponse.cpp
   src/v20201215/model/DescribeFirmwareTaskStatisticsResponse.cpp
   src/v20201215/model/CheckForwardAuthResponse.cpp
   src/v20201215/model/DescribeDeviceResponse.cpp

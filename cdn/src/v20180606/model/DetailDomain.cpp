@@ -79,7 +79,8 @@ DetailDomain::DetailDomain() :
     m_quicHasBeenSet(false),
     m_ossPrivateAccessHasBeenSet(false),
     m_webSocketHasBeenSet(false),
-    m_remoteAuthenticationHasBeenSet(false)
+    m_remoteAuthenticationHasBeenSet(false),
+    m_shareCnameHasBeenSet(false)
 {
 }
 
@@ -1002,6 +1003,23 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
         m_remoteAuthenticationHasBeenSet = true;
     }
 
+    if (value.HasMember("ShareCname") && !value["ShareCname"].IsNull())
+    {
+        if (!value["ShareCname"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.ShareCname` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_shareCname.Deserialize(value["ShareCname"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_shareCnameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1541,6 +1559,15 @@ void DetailDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_remoteAuthentication.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_shareCnameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShareCname";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_shareCname.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -2488,5 +2515,21 @@ void DetailDomain::SetRemoteAuthentication(const RemoteAuthentication& _remoteAu
 bool DetailDomain::RemoteAuthenticationHasBeenSet() const
 {
     return m_remoteAuthenticationHasBeenSet;
+}
+
+ShareCname DetailDomain::GetShareCname() const
+{
+    return m_shareCname;
+}
+
+void DetailDomain::SetShareCname(const ShareCname& _shareCname)
+{
+    m_shareCname = _shareCname;
+    m_shareCnameHasBeenSet = true;
+}
+
+bool DetailDomain::ShareCnameHasBeenSet() const
+{
+    return m_shareCnameHasBeenSet;
 }
 

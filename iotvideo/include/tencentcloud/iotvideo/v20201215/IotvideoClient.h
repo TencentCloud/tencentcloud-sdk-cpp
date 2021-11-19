@@ -127,6 +127,8 @@
 #include <tencentcloud/iotvideo/v20201215/model/DescribeModelDefinitionResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/DescribeProductRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/DescribeProductResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeProductDynamicRegisterRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeProductDynamicRegisterResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/DescribeProductsRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/DescribeProductsResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/DescribeSDKLogRequest.h>
@@ -159,6 +161,8 @@
 #include <tencentcloud/iotvideo/v20201215/model/ModifyModelDefinitionResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/ModifyProductRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/ModifyProductResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/ModifyProductDynamicRegisterRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/ModifyProductDynamicRegisterResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/PublishMessageRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/PublishMessageResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/ReportAliveDeviceRequest.h>
@@ -347,6 +351,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProductResponse> DescribeProductOutcome;
                 typedef std::future<DescribeProductOutcome> DescribeProductOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeProductRequest&, DescribeProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProductDynamicRegisterResponse> DescribeProductDynamicRegisterOutcome;
+                typedef std::future<DescribeProductDynamicRegisterOutcome> DescribeProductDynamicRegisterOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::DescribeProductDynamicRegisterRequest&, DescribeProductDynamicRegisterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductDynamicRegisterAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProductsResponse> DescribeProductsOutcome;
                 typedef std::future<DescribeProductsOutcome> DescribeProductsOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeProductsRequest&, DescribeProductsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductsAsyncHandler;
@@ -395,6 +402,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyProductResponse> ModifyProductOutcome;
                 typedef std::future<ModifyProductOutcome> ModifyProductOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::ModifyProductRequest&, ModifyProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProductAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyProductDynamicRegisterResponse> ModifyProductDynamicRegisterOutcome;
+                typedef std::future<ModifyProductDynamicRegisterOutcome> ModifyProductDynamicRegisterOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::ModifyProductDynamicRegisterRequest&, ModifyProductDynamicRegisterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProductDynamicRegisterAsyncHandler;
                 typedef Outcome<Core::Error, Model::PublishMessageResponse> PublishMessageOutcome;
                 typedef std::future<PublishMessageOutcome> PublishMessageOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::PublishMessageRequest&, PublishMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishMessageAsyncHandler;
@@ -894,6 +904,15 @@ namespace TencentCloud
                 DescribeProductOutcomeCallable DescribeProductCallable(const Model::DescribeProductRequest& request);
 
                 /**
+                 *获取产品动态注册详情
+                 * @param req DescribeProductDynamicRegisterRequest
+                 * @return DescribeProductDynamicRegisterOutcome
+                 */
+                DescribeProductDynamicRegisterOutcome DescribeProductDynamicRegister(const Model::DescribeProductDynamicRegisterRequest &request);
+                void DescribeProductDynamicRegisterAsync(const Model::DescribeProductDynamicRegisterRequest& request, const DescribeProductDynamicRegisterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProductDynamicRegisterOutcomeCallable DescribeProductDynamicRegisterCallable(const Model::DescribeProductDynamicRegisterRequest& request);
+
+                /**
                  *获取产品列表
                  * @param req DescribeProductsRequest
                  * @return DescribeProductsOutcome
@@ -1036,6 +1055,15 @@ namespace TencentCloud
                 ModifyProductOutcome ModifyProduct(const Model::ModifyProductRequest &request);
                 void ModifyProductAsync(const Model::ModifyProductRequest& request, const ModifyProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyProductOutcomeCallable ModifyProductCallable(const Model::ModifyProductRequest& request);
+
+                /**
+                 *修改产品动态注册
+                 * @param req ModifyProductDynamicRegisterRequest
+                 * @return ModifyProductDynamicRegisterOutcome
+                 */
+                ModifyProductDynamicRegisterOutcome ModifyProductDynamicRegister(const Model::ModifyProductDynamicRegisterRequest &request);
+                void ModifyProductDynamicRegisterAsync(const Model::ModifyProductDynamicRegisterRequest& request, const ModifyProductDynamicRegisterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyProductDynamicRegisterOutcomeCallable ModifyProductDynamicRegisterCallable(const Model::ModifyProductDynamicRegisterRequest& request);
 
                 /**
                  *本接口（PublishMessage）用于使用自定义透传协议进行设备远控

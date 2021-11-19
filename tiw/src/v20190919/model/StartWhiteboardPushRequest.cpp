@@ -38,7 +38,9 @@ StartWhiteboardPushRequest::StartWhiteboardPushRequest() :
     m_userDefinedRecordIdHasBeenSet(false),
     m_autoPublishHasBeenSet(false),
     m_userDefinedStreamIdHasBeenSet(false),
-    m_extraDataHasBeenSet(false)
+    m_extraDataHasBeenSet(false),
+    m_tRTCRoomIdHasBeenSet(false),
+    m_tRTCRoomIdStrHasBeenSet(false)
 {
 }
 
@@ -177,6 +179,22 @@ string StartWhiteboardPushRequest::ToJsonString() const
         string key = "ExtraData";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_extraData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tRTCRoomIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TRTCRoomId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_tRTCRoomId, allocator);
+    }
+
+    if (m_tRTCRoomIdStrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TRTCRoomIdStr";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tRTCRoomIdStr.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -441,6 +459,38 @@ void StartWhiteboardPushRequest::SetExtraData(const string& _extraData)
 bool StartWhiteboardPushRequest::ExtraDataHasBeenSet() const
 {
     return m_extraDataHasBeenSet;
+}
+
+int64_t StartWhiteboardPushRequest::GetTRTCRoomId() const
+{
+    return m_tRTCRoomId;
+}
+
+void StartWhiteboardPushRequest::SetTRTCRoomId(const int64_t& _tRTCRoomId)
+{
+    m_tRTCRoomId = _tRTCRoomId;
+    m_tRTCRoomIdHasBeenSet = true;
+}
+
+bool StartWhiteboardPushRequest::TRTCRoomIdHasBeenSet() const
+{
+    return m_tRTCRoomIdHasBeenSet;
+}
+
+string StartWhiteboardPushRequest::GetTRTCRoomIdStr() const
+{
+    return m_tRTCRoomIdStr;
+}
+
+void StartWhiteboardPushRequest::SetTRTCRoomIdStr(const string& _tRTCRoomIdStr)
+{
+    m_tRTCRoomIdStr = _tRTCRoomIdStr;
+    m_tRTCRoomIdStrHasBeenSet = true;
+}
+
+bool StartWhiteboardPushRequest::TRTCRoomIdStrHasBeenSet() const
+{
+    return m_tRTCRoomIdStrHasBeenSet;
 }
 
 

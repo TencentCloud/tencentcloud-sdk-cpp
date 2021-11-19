@@ -149,6 +149,8 @@
 #include <tencentcloud/ecm/v20190719/model/DescribePeakBaseOverviewResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribePeakNetworkOverviewRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribePeakNetworkOverviewResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DescribePriceRunInstanceRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DescribePriceRunInstanceResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeRouteConflictsRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeRouteConflictsResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeRouteTablesRequest.h>
@@ -484,6 +486,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePeakNetworkOverviewResponse> DescribePeakNetworkOverviewOutcome;
                 typedef std::future<DescribePeakNetworkOverviewOutcome> DescribePeakNetworkOverviewOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribePeakNetworkOverviewRequest&, DescribePeakNetworkOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePeakNetworkOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePriceRunInstanceResponse> DescribePriceRunInstanceOutcome;
+                typedef std::future<DescribePriceRunInstanceOutcome> DescribePriceRunInstanceOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DescribePriceRunInstanceRequest&, DescribePriceRunInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePriceRunInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRouteConflictsResponse> DescribeRouteConflictsOutcome;
                 typedef std::future<DescribeRouteConflictsOutcome> DescribeRouteConflictsOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribeRouteConflictsRequest&, DescribeRouteConflictsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRouteConflictsAsyncHandler;
@@ -1282,6 +1287,15 @@ namespace TencentCloud
                 DescribePeakNetworkOverviewOutcome DescribePeakNetworkOverview(const Model::DescribePeakNetworkOverviewRequest &request);
                 void DescribePeakNetworkOverviewAsync(const Model::DescribePeakNetworkOverviewRequest& request, const DescribePeakNetworkOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePeakNetworkOverviewOutcomeCallable DescribePeakNetworkOverviewCallable(const Model::DescribePeakNetworkOverviewRequest& request);
+
+                /**
+                 *查询实例价格
+                 * @param req DescribePriceRunInstanceRequest
+                 * @return DescribePriceRunInstanceOutcome
+                 */
+                DescribePriceRunInstanceOutcome DescribePriceRunInstance(const Model::DescribePriceRunInstanceRequest &request);
+                void DescribePriceRunInstanceAsync(const Model::DescribePriceRunInstanceRequest& request, const DescribePriceRunInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePriceRunInstanceOutcomeCallable DescribePriceRunInstanceCallable(const Model::DescribePriceRunInstanceRequest& request);
 
                 /**
                  *查询自定义路由策略与云联网路由策略冲突列表
