@@ -21,6 +21,7 @@ set(ssa_public_header
 set(ssa_public_header_model
   include/tencentcloud/ssa/v20180608/model/DescribeAssetDetailRequest.h
   include/tencentcloud/ssa/v20180608/model/DescribeVulListResponse.h
+  include/tencentcloud/ssa/v20180608/model/DescribeSocAlertDetailsRequest.h
   include/tencentcloud/ssa/v20180608/model/DescribeComplianceAssetListResponse.h
   include/tencentcloud/ssa/v20180608/model/DataCheck.h
   include/tencentcloud/ssa/v20180608/model/SocProductionItem.h
@@ -31,6 +32,7 @@ set(ssa_public_header_model
   include/tencentcloud/ssa/v20180608/model/AggregationObj.h
   include/tencentcloud/ssa/v20180608/model/DescribeCheckConfigDetailResponse.h
   include/tencentcloud/ssa/v20180608/model/DescribeAssetListResponse.h
+  include/tencentcloud/ssa/v20180608/model/DescribeSocAlertDetailsResponse.h
   include/tencentcloud/ssa/v20180608/model/VulItem.h
   include/tencentcloud/ssa/v20180608/model/DescribeCheckConfigAssetListResponse.h
   include/tencentcloud/ssa/v20180608/model/AlertListData.h
@@ -49,6 +51,7 @@ set(ssa_public_header_model
   include/tencentcloud/ssa/v20180608/model/DescribeSafetyEventListResponse.h
   include/tencentcloud/ssa/v20180608/model/SaDivulgeDataQueryPubList.h
   include/tencentcloud/ssa/v20180608/model/DescribeSafetyEventListRequest.h
+  include/tencentcloud/ssa/v20180608/model/Tag.h
   include/tencentcloud/ssa/v20180608/model/AlertType.h
   include/tencentcloud/ssa/v20180608/model/DescribeSocAlertListRequest.h
   include/tencentcloud/ssa/v20180608/model/ComplianceCheckDetail.h
@@ -78,7 +81,7 @@ set(ssa_public_header_model
   include/tencentcloud/ssa/v20180608/model/DescribeAssetDetailResponse.h
   include/tencentcloud/ssa/v20180608/model/DescribeVulDetailResponse.h
   include/tencentcloud/ssa/v20180608/model/DescribeSocCspmComplianceRequest.h
-  include/tencentcloud/ssa/v20180608/model/Tag.h
+  include/tencentcloud/ssa/v20180608/model/AlertDetail.h
   include/tencentcloud/ssa/v20180608/model/DescribeComplianceDetailRequest.h
   )
 
@@ -86,6 +89,7 @@ set(ssa_src
   src/v20180608/SsaClient.cpp
   src/v20180608/model/DescribeAssetDetailRequest.cpp
   src/v20180608/model/DescribeVulListResponse.cpp
+  src/v20180608/model/DescribeSocAlertDetailsRequest.cpp
   src/v20180608/model/DescribeComplianceAssetListResponse.cpp
   src/v20180608/model/DataCheck.cpp
   src/v20180608/model/SocProductionItem.cpp
@@ -96,6 +100,7 @@ set(ssa_src
   src/v20180608/model/AggregationObj.cpp
   src/v20180608/model/DescribeCheckConfigDetailResponse.cpp
   src/v20180608/model/DescribeAssetListResponse.cpp
+  src/v20180608/model/DescribeSocAlertDetailsResponse.cpp
   src/v20180608/model/VulItem.cpp
   src/v20180608/model/DescribeCheckConfigAssetListResponse.cpp
   src/v20180608/model/AlertListData.cpp
@@ -114,6 +119,7 @@ set(ssa_src
   src/v20180608/model/DescribeSafetyEventListResponse.cpp
   src/v20180608/model/SaDivulgeDataQueryPubList.cpp
   src/v20180608/model/DescribeSafetyEventListRequest.cpp
+  src/v20180608/model/Tag.cpp
   src/v20180608/model/AlertType.cpp
   src/v20180608/model/DescribeSocAlertListRequest.cpp
   src/v20180608/model/ComplianceCheckDetail.cpp
@@ -143,7 +149,7 @@ set(ssa_src
   src/v20180608/model/DescribeAssetDetailResponse.cpp
   src/v20180608/model/DescribeVulDetailResponse.cpp
   src/v20180608/model/DescribeSocCspmComplianceRequest.cpp
-  src/v20180608/model/Tag.cpp
+  src/v20180608/model/AlertDetail.cpp
   src/v20180608/model/DescribeComplianceDetailRequest.cpp
   )
 

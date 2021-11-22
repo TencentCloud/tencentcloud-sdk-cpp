@@ -436,6 +436,24 @@ namespace TencentCloud
                      */
                     bool DomainHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启安全加速，是为1，否为0。
+                     * @return DamDDoSStatus 是否开启安全加速，是为1，否为0。
+                     */
+                    uint64_t GetDamDDoSStatus() const;
+
+                    /**
+                     * 设置是否开启安全加速，是为1，否为0。
+                     * @param DamDDoSStatus 是否开启安全加速，是为1，否为0。
+                     */
+                    void SetDamDDoSStatus(const uint64_t& _damDDoSStatus);
+
+                    /**
+                     * 判断参数 DamDDoSStatus 是否已赋值
+                     * @return DamDDoSStatus 是否已赋值
+                     */
+                    bool DamDDoSStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -558,6 +576,12 @@ namespace TencentCloud
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
+
+                    /**
+                     * 是否开启安全加速，是为1，否为0。
+                     */
+                    uint64_t m_damDDoSStatus;
+                    bool m_damDDoSStatusHasBeenSet;
 
                 };
             }

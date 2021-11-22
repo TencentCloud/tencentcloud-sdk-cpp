@@ -228,6 +228,24 @@ namespace TencentCloud
                      */
                     bool FilterEipEipAddressStatusHasBeenSet() const;
 
+                    /**
+                     * 获取是否只获取安全加速实例。填写时，只能填写1或者0。当填写1时，表示返回安全加速实例。当填写0时，表示返回非安全加速实例。
+                     * @return FilterDamDDoSStatus 是否只获取安全加速实例。填写时，只能填写1或者0。当填写1时，表示返回安全加速实例。当填写0时，表示返回非安全加速实例。
+                     */
+                    int64_t GetFilterDamDDoSStatus() const;
+
+                    /**
+                     * 设置是否只获取安全加速实例。填写时，只能填写1或者0。当填写1时，表示返回安全加速实例。当填写0时，表示返回非安全加速实例。
+                     * @param FilterDamDDoSStatus 是否只获取安全加速实例。填写时，只能填写1或者0。当填写1时，表示返回安全加速实例。当填写0时，表示返回非安全加速实例。
+                     */
+                    void SetFilterDamDDoSStatus(const int64_t& _filterDamDDoSStatus);
+
+                    /**
+                     * 判断参数 FilterDamDDoSStatus 是否已赋值
+                     * @return FilterDamDDoSStatus 是否已赋值
+                     */
+                    bool FilterDamDDoSStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -289,6 +307,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_filterEipEipAddressStatus;
                     bool m_filterEipEipAddressStatusHasBeenSet;
+
+                    /**
+                     * 是否只获取安全加速实例。填写时，只能填写1或者0。当填写1时，表示返回安全加速实例。当填写0时，表示返回非安全加速实例。
+                     */
+                    int64_t m_filterDamDDoSStatus;
+                    bool m_filterDamDDoSStatusHasBeenSet;
 
                 };
             }

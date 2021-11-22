@@ -47,6 +47,8 @@
 #include <tencentcloud/ssa/v20180608/model/DescribeLeakDetectionListResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeSafetyEventListRequest.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeSafetyEventListResponse.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeSocAlertDetailsRequest.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeSocAlertDetailsResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeSocAlertListRequest.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeSocAlertListResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeSocCspmComplianceRequest.h>
@@ -107,6 +109,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSafetyEventListResponse> DescribeSafetyEventListOutcome;
                 typedef std::future<DescribeSafetyEventListOutcome> DescribeSafetyEventListOutcomeCallable;
                 typedef std::function<void(const SsaClient*, const Model::DescribeSafetyEventListRequest&, DescribeSafetyEventListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSafetyEventListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSocAlertDetailsResponse> DescribeSocAlertDetailsOutcome;
+                typedef std::future<DescribeSocAlertDetailsOutcome> DescribeSocAlertDetailsOutcomeCallable;
+                typedef std::function<void(const SsaClient*, const Model::DescribeSocAlertDetailsRequest&, DescribeSocAlertDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSocAlertDetailsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSocAlertListResponse> DescribeSocAlertListOutcome;
                 typedef std::future<DescribeSocAlertListOutcome> DescribeSocAlertListOutcomeCallable;
                 typedef std::function<void(const SsaClient*, const Model::DescribeSocAlertListRequest&, DescribeSocAlertListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSocAlertListAsyncHandler;
@@ -232,6 +237,15 @@ namespace TencentCloud
                 DescribeSafetyEventListOutcome DescribeSafetyEventList(const Model::DescribeSafetyEventListRequest &request);
                 void DescribeSafetyEventListAsync(const Model::DescribeSafetyEventListRequest& request, const DescribeSafetyEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSafetyEventListOutcomeCallable DescribeSafetyEventListCallable(const Model::DescribeSafetyEventListRequest& request);
+
+                /**
+                 *返回告警详情
+                 * @param req DescribeSocAlertDetailsRequest
+                 * @return DescribeSocAlertDetailsOutcome
+                 */
+                DescribeSocAlertDetailsOutcome DescribeSocAlertDetails(const Model::DescribeSocAlertDetailsRequest &request);
+                void DescribeSocAlertDetailsAsync(const Model::DescribeSocAlertDetailsRequest& request, const DescribeSocAlertDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSocAlertDetailsOutcomeCallable DescribeSocAlertDetailsCallable(const Model::DescribeSocAlertDetailsRequest& request);
 
                 /**
                  *拉取告警列表

@@ -261,8 +261,8 @@ namespace TencentCloud
                     bool ApprDateHasBeenSet() const;
 
                     /**
-                     * 获取省
-                     * @return Province 省
+                     * 获取省（返回空值）
+                     * @return Province 省（返回空值）
                      */
                     std::string GetProvince() const;
 
@@ -273,8 +273,8 @@ namespace TencentCloud
                     bool ProvinceHasBeenSet() const;
 
                     /**
-                     * 获取地级市
-                     * @return City 地级市
+                     * 获取地级市（返回空值）
+                     * @return City 地级市（返回空值）
                      */
                     std::string GetCity() const;
 
@@ -285,8 +285,8 @@ namespace TencentCloud
                     bool CityHasBeenSet() const;
 
                     /**
-                     * 获取区\县
-                     * @return County 区\县
+                     * 获取区\县（返回空值）
+                     * @return County 区\县（返回空值）
                      */
                     std::string GetCounty() const;
 
@@ -297,8 +297,8 @@ namespace TencentCloud
                     bool CountyHasBeenSet() const;
 
                     /**
-                     * 获取住所所在行政区划代码
-                     * @return AreaCode 住所所在行政区划代码
+                     * 获取住所所在行政区划代码（返回空值）
+                     * @return AreaCode 住所所在行政区划代码（返回空值）
                      */
                     std::string GetAreaCode() const;
 
@@ -309,8 +309,8 @@ namespace TencentCloud
                     bool AreaCodeHasBeenSet() const;
 
                     /**
-                     * 获取行业门类代码
-                     * @return IndustryPhyCode 行业门类代码
+                     * 获取行业门类代码（返回空值）
+                     * @return IndustryPhyCode 行业门类代码（返回空值）
                      */
                     std::string GetIndustryPhyCode() const;
 
@@ -321,8 +321,8 @@ namespace TencentCloud
                     bool IndustryPhyCodeHasBeenSet() const;
 
                     /**
-                     * 获取行业门类名称
-                     * @return IndustryPhyName 行业门类名称
+                     * 获取行业门类名称（返回空值）
+                     * @return IndustryPhyName 行业门类名称（返回空值）
                      */
                     std::string GetIndustryPhyName() const;
 
@@ -333,8 +333,8 @@ namespace TencentCloud
                     bool IndustryPhyNameHasBeenSet() const;
 
                     /**
-                     * 获取国民经济行业代码
-                     * @return IndustryCode 国民经济行业代码
+                     * 获取国民经济行业代码（返回空值）
+                     * @return IndustryCode 国民经济行业代码（返回空值）
                      */
                     std::string GetIndustryCode() const;
 
@@ -345,8 +345,8 @@ namespace TencentCloud
                     bool IndustryCodeHasBeenSet() const;
 
                     /**
-                     * 获取国民经济行业名称
-                     * @return IndustryName 国民经济行业名称
+                     * 获取国民经济行业名称（返回空值）
+                     * @return IndustryName 国民经济行业名称（返回空值）
                      */
                     std::string GetIndustryName() const;
 
@@ -563,49 +563,49 @@ namespace TencentCloud
                     bool m_apprDateHasBeenSet;
 
                     /**
-                     * 省
+                     * 省（返回空值）
                      */
                     std::string m_province;
                     bool m_provinceHasBeenSet;
 
                     /**
-                     * 地级市
+                     * 地级市（返回空值）
                      */
                     std::string m_city;
                     bool m_cityHasBeenSet;
 
                     /**
-                     * 区\县
+                     * 区\县（返回空值）
                      */
                     std::string m_county;
                     bool m_countyHasBeenSet;
 
                     /**
-                     * 住所所在行政区划代码
+                     * 住所所在行政区划代码（返回空值）
                      */
                     std::string m_areaCode;
                     bool m_areaCodeHasBeenSet;
 
                     /**
-                     * 行业门类代码
+                     * 行业门类代码（返回空值）
                      */
                     std::string m_industryPhyCode;
                     bool m_industryPhyCodeHasBeenSet;
 
                     /**
-                     * 行业门类名称
+                     * 行业门类名称（返回空值）
                      */
                     std::string m_industryPhyName;
                     bool m_industryPhyNameHasBeenSet;
 
                     /**
-                     * 国民经济行业代码
+                     * 国民经济行业代码（返回空值）
                      */
                     std::string m_industryCode;
                     bool m_industryCodeHasBeenSet;
 
                     /**
-                     * 国民经济行业名称
+                     * 国民经济行业名称（返回空值）
                      */
                     std::string m_industryName;
                     bool m_industryNameHasBeenSet;

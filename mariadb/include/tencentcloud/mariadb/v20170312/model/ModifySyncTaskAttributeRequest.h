@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取一个或多个待操作的任务ID。可通过[DescribeSyncTasks](https://tcloud-dev.oa.com/document/product/237/32979?!preview&!document=1) API返回值中的TaskId获取。每次请求允许操作的实例数量上限是100。
-                     * @return TaskIds 一个或多个待操作的任务ID。可通过[DescribeSyncTasks](https://tcloud-dev.oa.com/document/product/237/32979?!preview&!document=1) API返回值中的TaskId获取。每次请求允许操作的实例数量上限是100。
+                     * 获取一个或多个待操作的任务ID。可通过DescribeSyncTasks API返回值中的TaskId获取。每次请求允许操作的实例数量上限是100。
+                     * @return TaskIds 一个或多个待操作的任务ID。可通过DescribeSyncTasks API返回值中的TaskId获取。每次请求允许操作的实例数量上限是100。
                      */
                     std::vector<std::string> GetTaskIds() const;
 
                     /**
-                     * 设置一个或多个待操作的任务ID。可通过[DescribeSyncTasks](https://tcloud-dev.oa.com/document/product/237/32979?!preview&!document=1) API返回值中的TaskId获取。每次请求允许操作的实例数量上限是100。
-                     * @param TaskIds 一个或多个待操作的任务ID。可通过[DescribeSyncTasks](https://tcloud-dev.oa.com/document/product/237/32979?!preview&!document=1) API返回值中的TaskId获取。每次请求允许操作的实例数量上限是100。
+                     * 设置一个或多个待操作的任务ID。可通过DescribeSyncTasks API返回值中的TaskId获取。每次请求允许操作的实例数量上限是100。
+                     * @param TaskIds 一个或多个待操作的任务ID。可通过DescribeSyncTasks API返回值中的TaskId获取。每次请求允许操作的实例数量上限是100。
                      */
                     void SetTaskIds(const std::vector<std::string>& _taskIds);
 
@@ -81,7 +81,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 一个或多个待操作的任务ID。可通过[DescribeSyncTasks](https://tcloud-dev.oa.com/document/product/237/32979?!preview&!document=1) API返回值中的TaskId获取。每次请求允许操作的实例数量上限是100。
+                     * 一个或多个待操作的任务ID。可通过DescribeSyncTasks API返回值中的TaskId获取。每次请求允许操作的实例数量上限是100。
                      */
                     std::vector<std::string> m_taskIds;
                     bool m_taskIdsHasBeenSet;

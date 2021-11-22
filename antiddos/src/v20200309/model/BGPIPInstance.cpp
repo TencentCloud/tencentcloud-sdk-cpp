@@ -37,7 +37,8 @@ BGPIPInstance::BGPIPInstance() :
     m_eipFlagHasBeenSet(false),
     m_eipAddressPackRelationHasBeenSet(false),
     m_eipAddressInfoHasBeenSet(false),
-    m_domainHasBeenSet(false)
+    m_domainHasBeenSet(false),
+    m_damDDoSStatusHasBeenSet(false)
 {
 }
 
@@ -272,6 +273,16 @@ CoreInternalOutcome BGPIPInstance::Deserialize(const rapidjson::Value &value)
         m_domainHasBeenSet = true;
     }
 
+    if (value.HasMember("DamDDoSStatus") && !value["DamDDoSStatus"].IsNull())
+    {
+        if (!value["DamDDoSStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstance.DamDDoSStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_damDDoSStatus = value["DamDDoSStatus"].GetUint64();
+        m_damDDoSStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -421,6 +432,14 @@ void BGPIPInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Domain";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_damDDoSStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DamDDoSStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_damDDoSStatus, allocator);
     }
 
 }
@@ -696,5 +715,21 @@ void BGPIPInstance::SetDomain(const string& _domain)
 bool BGPIPInstance::DomainHasBeenSet() const
 {
     return m_domainHasBeenSet;
+}
+
+uint64_t BGPIPInstance::GetDamDDoSStatus() const
+{
+    return m_damDDoSStatus;
+}
+
+void BGPIPInstance::SetDamDDoSStatus(const uint64_t& _damDDoSStatus)
+{
+    m_damDDoSStatus = _damDDoSStatus;
+    m_damDDoSStatusHasBeenSet = true;
+}
+
+bool BGPIPInstance::DamDDoSStatusHasBeenSet() const
+{
+    return m_damDDoSStatusHasBeenSet;
 }
 
