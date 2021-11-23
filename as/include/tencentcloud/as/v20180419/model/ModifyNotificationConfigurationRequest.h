@@ -121,14 +121,14 @@ namespace TencentCloud
                     bool NotificationUserGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取CMQ 队列名。
-                     * @return QueueName CMQ 队列名。
+                     * 获取CMQ 队列或 TDMQ CMQ 队列名。
+                     * @return QueueName CMQ 队列或 TDMQ CMQ 队列名。
                      */
                     std::string GetQueueName() const;
 
                     /**
-                     * 设置CMQ 队列名。
-                     * @param QueueName CMQ 队列名。
+                     * 设置CMQ 队列或 TDMQ CMQ 队列名。
+                     * @param QueueName CMQ 队列或 TDMQ CMQ 队列名。
                      */
                     void SetQueueName(const std::string& _queueName);
 
@@ -139,14 +139,14 @@ namespace TencentCloud
                     bool QueueNameHasBeenSet() const;
 
                     /**
-                     * 获取CMQ 主题名。
-                     * @return TopicName CMQ 主题名。
+                     * 获取CMQ 主题或 TDMQ CMQ 主题名。
+                     * @return TopicName CMQ 主题或 TDMQ CMQ 主题名。
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置CMQ 主题名。
-                     * @param TopicName CMQ 主题名。
+                     * 设置CMQ 主题或 TDMQ CMQ 主题名。
+                     * @param TopicName CMQ 主题或 TDMQ CMQ 主题名。
                      */
                     void SetTopicName(const std::string& _topicName);
 
@@ -183,13 +183,13 @@ namespace TencentCloud
                     bool m_notificationUserGroupIdsHasBeenSet;
 
                     /**
-                     * CMQ 队列名。
+                     * CMQ 队列或 TDMQ CMQ 队列名。
                      */
                     std::string m_queueName;
                     bool m_queueNameHasBeenSet;
 
                     /**
-                     * CMQ 主题名。
+                     * CMQ 主题或 TDMQ CMQ 主题名。
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;

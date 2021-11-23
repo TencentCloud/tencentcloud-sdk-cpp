@@ -37,6 +37,8 @@
 #include <tencentcloud/cii/v20210408/model/DescribeStructureResultResponse.h>
 #include <tencentcloud/cii/v20210408/model/DescribeStructureTaskResultRequest.h>
 #include <tencentcloud/cii/v20210408/model/DescribeStructureTaskResultResponse.h>
+#include <tencentcloud/cii/v20210408/model/UploadMedicalFileRequest.h>
+#include <tencentcloud/cii/v20210408/model/UploadMedicalFileResponse.h>
 
 
 namespace TencentCloud
@@ -72,6 +74,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeStructureTaskResultResponse> DescribeStructureTaskResultOutcome;
                 typedef std::future<DescribeStructureTaskResultOutcome> DescribeStructureTaskResultOutcomeCallable;
                 typedef std::function<void(const CiiClient*, const Model::DescribeStructureTaskResultRequest&, DescribeStructureTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStructureTaskResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::UploadMedicalFileResponse> UploadMedicalFileOutcome;
+                typedef std::future<UploadMedicalFileOutcome> UploadMedicalFileOutcomeCallable;
+                typedef std::function<void(const CiiClient*, const Model::UploadMedicalFileRequest&, UploadMedicalFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadMedicalFileAsyncHandler;
 
 
 
@@ -137,6 +142,15 @@ namespace TencentCloud
                 DescribeStructureTaskResultOutcome DescribeStructureTaskResult(const Model::DescribeStructureTaskResultRequest &request);
                 void DescribeStructureTaskResultAsync(const Model::DescribeStructureTaskResultRequest& request, const DescribeStructureTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeStructureTaskResultOutcomeCallable DescribeStructureTaskResultCallable(const Model::DescribeStructureTaskResultRequest& request);
+
+                /**
+                 *上传医疗影像文件，可以用来做结构化。
+                 * @param req UploadMedicalFileRequest
+                 * @return UploadMedicalFileOutcome
+                 */
+                UploadMedicalFileOutcome UploadMedicalFile(const Model::UploadMedicalFileRequest &request);
+                void UploadMedicalFileAsync(const Model::UploadMedicalFileRequest& request, const UploadMedicalFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UploadMedicalFileOutcomeCallable UploadMedicalFileCallable(const Model::UploadMedicalFileRequest& request);
 
             };
         }

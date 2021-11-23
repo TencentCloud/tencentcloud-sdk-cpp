@@ -24,7 +24,9 @@ using namespace std;
 
 ResetCloudStorageRequest::ResetCloudStorageRequest() :
     m_productIdHasBeenSet(false),
-    m_deviceNameHasBeenSet(false)
+    m_deviceNameHasBeenSet(false),
+    m_channelIdHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,22 @@ string ResetCloudStorageRequest::ToJsonString() const
         string key = "DeviceName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_deviceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_channelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_channelId, allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +107,38 @@ void ResetCloudStorageRequest::SetDeviceName(const string& _deviceName)
 bool ResetCloudStorageRequest::DeviceNameHasBeenSet() const
 {
     return m_deviceNameHasBeenSet;
+}
+
+uint64_t ResetCloudStorageRequest::GetChannelId() const
+{
+    return m_channelId;
+}
+
+void ResetCloudStorageRequest::SetChannelId(const uint64_t& _channelId)
+{
+    m_channelId = _channelId;
+    m_channelIdHasBeenSet = true;
+}
+
+bool ResetCloudStorageRequest::ChannelIdHasBeenSet() const
+{
+    return m_channelIdHasBeenSet;
+}
+
+string ResetCloudStorageRequest::GetUserId() const
+{
+    return m_userId;
+}
+
+void ResetCloudStorageRequest::SetUserId(const string& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool ResetCloudStorageRequest::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
 }
 
 

@@ -80,6 +80,28 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
+                     * 获取活体检测类型，取值：LIP/ACTION/SILENT。
+LIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模式选择一种传入。
+                     * @return LivenessType 活体检测类型，取值：LIP/ACTION/SILENT。
+LIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模式选择一种传入。
+                     */
+                    std::string GetLivenessType() const;
+
+                    /**
+                     * 设置活体检测类型，取值：LIP/ACTION/SILENT。
+LIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模式选择一种传入。
+                     * @param LivenessType 活体检测类型，取值：LIP/ACTION/SILENT。
+LIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模式选择一种传入。
+                     */
+                    void SetLivenessType(const std::string& _livenessType);
+
+                    /**
+                     * 判断参数 LivenessType 是否已赋值
+                     * @return LivenessType 是否已赋值
+                     */
+                    bool LivenessTypeHasBeenSet() const;
+
+                    /**
                      * 获取用于活体检测的视频，视频的BASE64值；
 BASE64编码后的大小不超过8M，支持mp4、avi、flv格式。
                      * @return VideoBase64 用于活体检测的视频，视频的BASE64值；
@@ -102,26 +124,38 @@ BASE64编码后的大小不超过8M，支持mp4、avi、flv格式。
                     bool VideoBase64HasBeenSet() const;
 
                     /**
-                     * 获取活体检测类型，取值：LIP/ACTION/SILENT。
-LIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模式选择一种传入。
-                     * @return LivenessType 活体检测类型，取值：LIP/ACTION/SILENT。
-LIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模式选择一种传入。
+                     * 获取用于活体检测的视频Url 地址。视频下载后经Base64编码不超过 8M，视频下载耗时不超过4S，支持mp4、avi、flv格式。
+
+视频的 VideoUrl、VideoBase64 必须提供一个，如果都提供，只使用 VideoBase64。
+
+建议视频存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议视频存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * @return VideoUrl 用于活体检测的视频Url 地址。视频下载后经Base64编码不超过 8M，视频下载耗时不超过4S，支持mp4、avi、flv格式。
+
+视频的 VideoUrl、VideoBase64 必须提供一个，如果都提供，只使用 VideoBase64。
+
+建议视频存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议视频存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。
                      */
-                    std::string GetLivenessType() const;
+                    std::string GetVideoUrl() const;
 
                     /**
-                     * 设置活体检测类型，取值：LIP/ACTION/SILENT。
-LIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模式选择一种传入。
-                     * @param LivenessType 活体检测类型，取值：LIP/ACTION/SILENT。
-LIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模式选择一种传入。
+                     * 设置用于活体检测的视频Url 地址。视频下载后经Base64编码不超过 8M，视频下载耗时不超过4S，支持mp4、avi、flv格式。
+
+视频的 VideoUrl、VideoBase64 必须提供一个，如果都提供，只使用 VideoBase64。
+
+建议视频存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议视频存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * @param VideoUrl 用于活体检测的视频Url 地址。视频下载后经Base64编码不超过 8M，视频下载耗时不超过4S，支持mp4、avi、flv格式。
+
+视频的 VideoUrl、VideoBase64 必须提供一个，如果都提供，只使用 VideoBase64。
+
+建议视频存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议视频存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。
                      */
-                    void SetLivenessType(const std::string& _livenessType);
+                    void SetVideoUrl(const std::string& _videoUrl);
 
                     /**
-                     * 判断参数 LivenessType 是否已赋值
-                     * @return LivenessType 是否已赋值
+                     * 判断参数 VideoUrl 是否已赋值
+                     * @return VideoUrl 是否已赋值
                      */
-                    bool LivenessTypeHasBeenSet() const;
+                    bool VideoUrlHasBeenSet() const;
 
                     /**
                      * 获取数字模式传参：传数字验证码，验证码需先调用<a href="https://cloud.tencent.com/document/product/1007/31821">获取数字验证码接口</a>得到；
@@ -212,6 +246,13 @@ LIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模�
                     bool m_nameHasBeenSet;
 
                     /**
+                     * 活体检测类型，取值：LIP/ACTION/SILENT。
+LIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模式选择一种传入。
+                     */
+                    std::string m_livenessType;
+                    bool m_livenessTypeHasBeenSet;
+
+                    /**
                      * 用于活体检测的视频，视频的BASE64值；
 BASE64编码后的大小不超过8M，支持mp4、avi、flv格式。
                      */
@@ -219,11 +260,14 @@ BASE64编码后的大小不超过8M，支持mp4、avi、flv格式。
                     bool m_videoBase64HasBeenSet;
 
                     /**
-                     * 活体检测类型，取值：LIP/ACTION/SILENT。
-LIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模式选择一种传入。
+                     * 用于活体检测的视频Url 地址。视频下载后经Base64编码不超过 8M，视频下载耗时不超过4S，支持mp4、avi、flv格式。
+
+视频的 VideoUrl、VideoBase64 必须提供一个，如果都提供，只使用 VideoBase64。
+
+建议视频存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议视频存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。
                      */
-                    std::string m_livenessType;
-                    bool m_livenessTypeHasBeenSet;
+                    std::string m_videoUrl;
+                    bool m_videoUrlHasBeenSet;
 
                     /**
                      * 数字模式传参：传数字验证码，验证码需先调用<a href="https://cloud.tencent.com/document/product/1007/31821">获取数字验证码接口</a>得到；

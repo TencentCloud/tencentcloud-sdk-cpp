@@ -23,11 +23,13 @@ using namespace TencentCloud::Faceid::V20180301::Model;
 using namespace std;
 
 LivenessCompareRequest::LivenessCompareRequest() :
-    m_imageBase64HasBeenSet(false),
-    m_videoBase64HasBeenSet(false),
     m_livenessTypeHasBeenSet(false),
+    m_imageBase64HasBeenSet(false),
+    m_imageUrlHasBeenSet(false),
     m_validateDataHasBeenSet(false),
-    m_optionalHasBeenSet(false)
+    m_optionalHasBeenSet(false),
+    m_videoBase64HasBeenSet(false),
+    m_videoUrlHasBeenSet(false)
 {
 }
 
@@ -38,6 +40,14 @@ string LivenessCompareRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_livenessTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LivenessType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_livenessType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_imageBase64HasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -46,20 +56,12 @@ string LivenessCompareRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_imageBase64.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_videoBase64HasBeenSet)
+    if (m_imageUrlHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "VideoBase64";
+        string key = "ImageUrl";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_videoBase64.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_livenessTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "LivenessType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_livenessType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_imageUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_validateDataHasBeenSet)
@@ -78,6 +80,22 @@ string LivenessCompareRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_optional.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_videoBase64HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoBase64";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_videoBase64.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_videoUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_videoUrl.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -85,6 +103,22 @@ string LivenessCompareRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string LivenessCompareRequest::GetLivenessType() const
+{
+    return m_livenessType;
+}
+
+void LivenessCompareRequest::SetLivenessType(const string& _livenessType)
+{
+    m_livenessType = _livenessType;
+    m_livenessTypeHasBeenSet = true;
+}
+
+bool LivenessCompareRequest::LivenessTypeHasBeenSet() const
+{
+    return m_livenessTypeHasBeenSet;
+}
 
 string LivenessCompareRequest::GetImageBase64() const
 {
@@ -102,36 +136,20 @@ bool LivenessCompareRequest::ImageBase64HasBeenSet() const
     return m_imageBase64HasBeenSet;
 }
 
-string LivenessCompareRequest::GetVideoBase64() const
+string LivenessCompareRequest::GetImageUrl() const
 {
-    return m_videoBase64;
+    return m_imageUrl;
 }
 
-void LivenessCompareRequest::SetVideoBase64(const string& _videoBase64)
+void LivenessCompareRequest::SetImageUrl(const string& _imageUrl)
 {
-    m_videoBase64 = _videoBase64;
-    m_videoBase64HasBeenSet = true;
+    m_imageUrl = _imageUrl;
+    m_imageUrlHasBeenSet = true;
 }
 
-bool LivenessCompareRequest::VideoBase64HasBeenSet() const
+bool LivenessCompareRequest::ImageUrlHasBeenSet() const
 {
-    return m_videoBase64HasBeenSet;
-}
-
-string LivenessCompareRequest::GetLivenessType() const
-{
-    return m_livenessType;
-}
-
-void LivenessCompareRequest::SetLivenessType(const string& _livenessType)
-{
-    m_livenessType = _livenessType;
-    m_livenessTypeHasBeenSet = true;
-}
-
-bool LivenessCompareRequest::LivenessTypeHasBeenSet() const
-{
-    return m_livenessTypeHasBeenSet;
+    return m_imageUrlHasBeenSet;
 }
 
 string LivenessCompareRequest::GetValidateData() const
@@ -164,6 +182,38 @@ void LivenessCompareRequest::SetOptional(const string& _optional)
 bool LivenessCompareRequest::OptionalHasBeenSet() const
 {
     return m_optionalHasBeenSet;
+}
+
+string LivenessCompareRequest::GetVideoBase64() const
+{
+    return m_videoBase64;
+}
+
+void LivenessCompareRequest::SetVideoBase64(const string& _videoBase64)
+{
+    m_videoBase64 = _videoBase64;
+    m_videoBase64HasBeenSet = true;
+}
+
+bool LivenessCompareRequest::VideoBase64HasBeenSet() const
+{
+    return m_videoBase64HasBeenSet;
+}
+
+string LivenessCompareRequest::GetVideoUrl() const
+{
+    return m_videoUrl;
+}
+
+void LivenessCompareRequest::SetVideoUrl(const string& _videoUrl)
+{
+    m_videoUrl = _videoUrl;
+    m_videoUrlHasBeenSet = true;
+}
+
+bool LivenessCompareRequest::VideoUrlHasBeenSet() const
+{
+    return m_videoUrlHasBeenSet;
 }
 
 

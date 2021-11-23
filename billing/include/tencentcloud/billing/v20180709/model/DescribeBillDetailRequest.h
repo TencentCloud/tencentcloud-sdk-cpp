@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool NeedRecordNumHasBeenSet() const;
 
                     /**
-                     * 获取查询指定产品信息（暂时未开放获取）
-                     * @return ProductCode 查询指定产品信息（暂时未开放获取）
+                     * 获取已废弃参数，未开放
+                     * @return ProductCode 已废弃参数，未开放
                      */
                     std::string GetProductCode() const;
 
                     /**
-                     * 设置查询指定产品信息（暂时未开放获取）
-                     * @param ProductCode 查询指定产品信息（暂时未开放获取）
+                     * 设置已废弃参数，未开放
+                     * @param ProductCode 已废弃参数，未开放
                      */
                     void SetProductCode(const std::string& _productCode);
 
@@ -262,6 +262,28 @@ namespace TencentCloud
                      */
                     bool ProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取商品名称代码
+备注：如需获取当月使用过的BusinessCode，请调用API：<a href="https://cloud.tencent.com/document/product/555/35761">获取产品汇总费用分布</a>
+                     * @return BusinessCode 商品名称代码
+备注：如需获取当月使用过的BusinessCode，请调用API：<a href="https://cloud.tencent.com/document/product/555/35761">获取产品汇总费用分布</a>
+                     */
+                    std::string GetBusinessCode() const;
+
+                    /**
+                     * 设置商品名称代码
+备注：如需获取当月使用过的BusinessCode，请调用API：<a href="https://cloud.tencent.com/document/product/555/35761">获取产品汇总费用分布</a>
+                     * @param BusinessCode 商品名称代码
+备注：如需获取当月使用过的BusinessCode，请调用API：<a href="https://cloud.tencent.com/document/product/555/35761">获取产品汇总费用分布</a>
+                     */
+                    void SetBusinessCode(const std::string& _businessCode);
+
+                    /**
+                     * 判断参数 BusinessCode 是否已赋值
+                     * @return BusinessCode 是否已赋值
+                     */
+                    bool BusinessCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -308,7 +330,7 @@ namespace TencentCloud
                     bool m_needRecordNumHasBeenSet;
 
                     /**
-                     * 查询指定产品信息（暂时未开放获取）
+                     * 已废弃参数，未开放
                      */
                     std::string m_productCode;
                     bool m_productCodeHasBeenSet;
@@ -336,6 +358,13 @@ namespace TencentCloud
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 商品名称代码
+备注：如需获取当月使用过的BusinessCode，请调用API：<a href="https://cloud.tencent.com/document/product/555/35761">获取产品汇总费用分布</a>
+                     */
+                    std::string m_businessCode;
+                    bool m_businessCodeHasBeenSet;
 
                 };
             }

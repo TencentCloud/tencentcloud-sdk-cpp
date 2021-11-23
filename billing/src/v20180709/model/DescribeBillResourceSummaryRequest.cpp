@@ -30,7 +30,8 @@ DescribeBillResourceSummaryRequest::DescribeBillResourceSummaryRequest() :
     m_needRecordNumHasBeenSet(false),
     m_actionTypeHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
-    m_payModeHasBeenSet(false)
+    m_payModeHasBeenSet(false),
+    m_businessCodeHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string DescribeBillResourceSummaryRequest::ToJsonString() const
         string key = "PayMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_payMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_businessCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessCode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_businessCode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -239,6 +248,22 @@ void DescribeBillResourceSummaryRequest::SetPayMode(const string& _payMode)
 bool DescribeBillResourceSummaryRequest::PayModeHasBeenSet() const
 {
     return m_payModeHasBeenSet;
+}
+
+string DescribeBillResourceSummaryRequest::GetBusinessCode() const
+{
+    return m_businessCode;
+}
+
+void DescribeBillResourceSummaryRequest::SetBusinessCode(const string& _businessCode)
+{
+    m_businessCode = _businessCode;
+    m_businessCodeHasBeenSet = true;
+}
+
+bool DescribeBillResourceSummaryRequest::BusinessCodeHasBeenSet() const
+{
+    return m_businessCodeHasBeenSet;
 }
 
 

@@ -115,6 +115,8 @@
 #include <tencentcloud/antiddos/v20200309/model/ModifyDomainUsrNameResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/ModifyL7RulesEdgeRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/ModifyL7RulesEdgeResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/ModifyNewDomainRulesRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/ModifyNewDomainRulesResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/ModifyPacketFilterConfigRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/ModifyPacketFilterConfigResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/SwitchWaterPrintConfigRequest.h>
@@ -271,6 +273,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyL7RulesEdgeResponse> ModifyL7RulesEdgeOutcome;
                 typedef std::future<ModifyL7RulesEdgeOutcome> ModifyL7RulesEdgeOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::ModifyL7RulesEdgeRequest&, ModifyL7RulesEdgeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyL7RulesEdgeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyNewDomainRulesResponse> ModifyNewDomainRulesOutcome;
+                typedef std::future<ModifyNewDomainRulesOutcome> ModifyNewDomainRulesOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::ModifyNewDomainRulesRequest&, ModifyNewDomainRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNewDomainRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyPacketFilterConfigResponse> ModifyPacketFilterConfigOutcome;
                 typedef std::future<ModifyPacketFilterConfigOutcome> ModifyPacketFilterConfigOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::ModifyPacketFilterConfigRequest&, ModifyPacketFilterConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPacketFilterConfigAsyncHandler;
@@ -695,6 +700,15 @@ namespace TencentCloud
                 ModifyL7RulesEdgeOutcome ModifyL7RulesEdge(const Model::ModifyL7RulesEdgeRequest &request);
                 void ModifyL7RulesEdgeAsync(const Model::ModifyL7RulesEdgeRequest& request, const ModifyL7RulesEdgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyL7RulesEdgeOutcomeCallable ModifyL7RulesEdgeCallable(const Model::ModifyL7RulesEdgeRequest& request);
+
+                /**
+                 *修改7层转发规则
+                 * @param req ModifyNewDomainRulesRequest
+                 * @return ModifyNewDomainRulesOutcome
+                 */
+                ModifyNewDomainRulesOutcome ModifyNewDomainRules(const Model::ModifyNewDomainRulesRequest &request);
+                void ModifyNewDomainRulesAsync(const Model::ModifyNewDomainRulesRequest& request, const ModifyNewDomainRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyNewDomainRulesOutcomeCallable ModifyNewDomainRulesCallable(const Model::ModifyNewDomainRulesRequest& request);
 
                 /**
                  *修改DDoS防护的特征过滤规则

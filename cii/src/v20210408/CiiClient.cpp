@@ -341,3 +341,46 @@ CiiClient::DescribeStructureTaskResultOutcomeCallable CiiClient::DescribeStructu
     return task->get_future();
 }
 
+CiiClient::UploadMedicalFileOutcome CiiClient::UploadMedicalFile(const UploadMedicalFileRequest &request)
+{
+    auto outcome = MakeRequest(request, "UploadMedicalFile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UploadMedicalFileResponse rsp = UploadMedicalFileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UploadMedicalFileOutcome(rsp);
+        else
+            return UploadMedicalFileOutcome(o.GetError());
+    }
+    else
+    {
+        return UploadMedicalFileOutcome(outcome.GetError());
+    }
+}
+
+void CiiClient::UploadMedicalFileAsync(const UploadMedicalFileRequest& request, const UploadMedicalFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UploadMedicalFile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CiiClient::UploadMedicalFileOutcomeCallable CiiClient::UploadMedicalFileCallable(const UploadMedicalFileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UploadMedicalFileOutcome()>>(
+        [this, request]()
+        {
+            return this->UploadMedicalFile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

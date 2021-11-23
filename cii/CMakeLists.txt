@@ -28,6 +28,7 @@ set(cii_public_header_model
   include/tencentcloud/cii/v20210408/model/InsuranceResult.h
   include/tencentcloud/cii/v20210408/model/DescribeStructureDifferenceResponse.h
   include/tencentcloud/cii/v20210408/model/PerStructDifference.h
+  include/tencentcloud/cii/v20210408/model/UploadMedicalFileRequest.h
   include/tencentcloud/cii/v20210408/model/CompareMetricsData.h
   include/tencentcloud/cii/v20210408/model/DescribeMachineUnderwriteRequest.h
   include/tencentcloud/cii/v20210408/model/ReviewDataTaskInfo.h
@@ -46,6 +47,7 @@ set(cii_public_header_model
   include/tencentcloud/cii/v20210408/model/StructureResultObject.h
   include/tencentcloud/cii/v20210408/model/CreateStructureTaskInfo.h
   include/tencentcloud/cii/v20210408/model/DescribeStructureDifferenceRequest.h
+  include/tencentcloud/cii/v20210408/model/UploadMedicalFileResponse.h
   include/tencentcloud/cii/v20210408/model/StructureModifyItem.h
   include/tencentcloud/cii/v20201210/model/DescribeStructCompareDataResponse.h
   include/tencentcloud/cii/v20201210/model/DescribeStructureTaskResultRequest.h
@@ -68,6 +70,7 @@ set(cii_src
   src/v20210408/model/InsuranceResult.cpp
   src/v20210408/model/DescribeStructureDifferenceResponse.cpp
   src/v20210408/model/PerStructDifference.cpp
+  src/v20210408/model/UploadMedicalFileRequest.cpp
   src/v20210408/model/CompareMetricsData.cpp
   src/v20210408/model/DescribeMachineUnderwriteRequest.cpp
   src/v20210408/model/ReviewDataTaskInfo.cpp
@@ -86,6 +89,7 @@ set(cii_src
   src/v20210408/model/StructureResultObject.cpp
   src/v20210408/model/CreateStructureTaskInfo.cpp
   src/v20210408/model/DescribeStructureDifferenceRequest.cpp
+  src/v20210408/model/UploadMedicalFileResponse.cpp
   src/v20210408/model/StructureModifyItem.cpp
   src/v20201210/model/DescribeStructCompareDataResponse.cpp
   src/v20201210/model/DescribeStructureTaskResultRequest.cpp

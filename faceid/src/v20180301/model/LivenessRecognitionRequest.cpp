@@ -25,8 +25,9 @@ using namespace std;
 LivenessRecognitionRequest::LivenessRecognitionRequest() :
     m_idCardHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_videoBase64HasBeenSet(false),
     m_livenessTypeHasBeenSet(false),
+    m_videoBase64HasBeenSet(false),
+    m_videoUrlHasBeenSet(false),
     m_validateDataHasBeenSet(false),
     m_optionalHasBeenSet(false),
     m_encryptionHasBeenSet(false)
@@ -56,6 +57,14 @@ string LivenessRecognitionRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_livenessTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LivenessType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_livenessType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_videoBase64HasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -64,12 +73,12 @@ string LivenessRecognitionRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_videoBase64.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_livenessTypeHasBeenSet)
+    if (m_videoUrlHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "LivenessType";
+        string key = "VideoUrl";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_livenessType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_videoUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_validateDataHasBeenSet)
@@ -137,6 +146,22 @@ bool LivenessRecognitionRequest::NameHasBeenSet() const
     return m_nameHasBeenSet;
 }
 
+string LivenessRecognitionRequest::GetLivenessType() const
+{
+    return m_livenessType;
+}
+
+void LivenessRecognitionRequest::SetLivenessType(const string& _livenessType)
+{
+    m_livenessType = _livenessType;
+    m_livenessTypeHasBeenSet = true;
+}
+
+bool LivenessRecognitionRequest::LivenessTypeHasBeenSet() const
+{
+    return m_livenessTypeHasBeenSet;
+}
+
 string LivenessRecognitionRequest::GetVideoBase64() const
 {
     return m_videoBase64;
@@ -153,20 +178,20 @@ bool LivenessRecognitionRequest::VideoBase64HasBeenSet() const
     return m_videoBase64HasBeenSet;
 }
 
-string LivenessRecognitionRequest::GetLivenessType() const
+string LivenessRecognitionRequest::GetVideoUrl() const
 {
-    return m_livenessType;
+    return m_videoUrl;
 }
 
-void LivenessRecognitionRequest::SetLivenessType(const string& _livenessType)
+void LivenessRecognitionRequest::SetVideoUrl(const string& _videoUrl)
 {
-    m_livenessType = _livenessType;
-    m_livenessTypeHasBeenSet = true;
+    m_videoUrl = _videoUrl;
+    m_videoUrlHasBeenSet = true;
 }
 
-bool LivenessRecognitionRequest::LivenessTypeHasBeenSet() const
+bool LivenessRecognitionRequest::VideoUrlHasBeenSet() const
 {
-    return m_livenessTypeHasBeenSet;
+    return m_videoUrlHasBeenSet;
 }
 
 string LivenessRecognitionRequest::GetValidateData() const

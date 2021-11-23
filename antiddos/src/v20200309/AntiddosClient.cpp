@@ -2018,6 +2018,49 @@ AntiddosClient::ModifyL7RulesEdgeOutcomeCallable AntiddosClient::ModifyL7RulesEd
     return task->get_future();
 }
 
+AntiddosClient::ModifyNewDomainRulesOutcome AntiddosClient::ModifyNewDomainRules(const ModifyNewDomainRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyNewDomainRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyNewDomainRulesResponse rsp = ModifyNewDomainRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyNewDomainRulesOutcome(rsp);
+        else
+            return ModifyNewDomainRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyNewDomainRulesOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::ModifyNewDomainRulesAsync(const ModifyNewDomainRulesRequest& request, const ModifyNewDomainRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyNewDomainRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::ModifyNewDomainRulesOutcomeCallable AntiddosClient::ModifyNewDomainRulesCallable(const ModifyNewDomainRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyNewDomainRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyNewDomainRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AntiddosClient::ModifyPacketFilterConfigOutcome AntiddosClient::ModifyPacketFilterConfig(const ModifyPacketFilterConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyPacketFilterConfig");

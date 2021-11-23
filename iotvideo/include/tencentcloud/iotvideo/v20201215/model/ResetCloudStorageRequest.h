@@ -78,6 +78,42 @@ namespace TencentCloud
                      */
                     bool DeviceNameHasBeenSet() const;
 
+                    /**
+                     * 获取通道ID 非NVR设备则不填 NVR设备则必填 默认为无
+                     * @return ChannelId 通道ID 非NVR设备则不填 NVR设备则必填 默认为无
+                     */
+                    uint64_t GetChannelId() const;
+
+                    /**
+                     * 设置通道ID 非NVR设备则不填 NVR设备则必填 默认为无
+                     * @param ChannelId 通道ID 非NVR设备则不填 NVR设备则必填 默认为无
+                     */
+                    void SetChannelId(const uint64_t& _channelId);
+
+                    /**
+                     * 判断参数 ChannelId 是否已赋值
+                     * @return ChannelId 是否已赋值
+                     */
+                    bool ChannelIdHasBeenSet() const;
+
+                    /**
+                     * 获取云存用户Id，为空则为默认云存空间。
+                     * @return UserId 云存用户Id，为空则为默认云存空间。
+                     */
+                    std::string GetUserId() const;
+
+                    /**
+                     * 设置云存用户Id，为空则为默认云存空间。
+                     * @param UserId 云存用户Id，为空则为默认云存空间。
+                     */
+                    void SetUserId(const std::string& _userId);
+
+                    /**
+                     * 判断参数 UserId 是否已赋值
+                     * @return UserId 是否已赋值
+                     */
+                    bool UserIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +127,18 @@ namespace TencentCloud
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
+
+                    /**
+                     * 通道ID 非NVR设备则不填 NVR设备则必填 默认为无
+                     */
+                    uint64_t m_channelId;
+                    bool m_channelIdHasBeenSet;
+
+                    /**
+                     * 云存用户Id，为空则为默认云存空间。
+                     */
+                    std::string m_userId;
+                    bool m_userIdHasBeenSet;
 
                 };
             }

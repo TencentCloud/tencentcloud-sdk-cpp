@@ -33,6 +33,7 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/DescribeL7RulesBySSLCertIdResponse.h
   include/tencentcloud/antiddos/v20200309/model/DescribeListDDoSSpeedLimitConfigRequest.h
   include/tencentcloud/antiddos/v20200309/model/InstanceRelation.h
+  include/tencentcloud/antiddos/v20200309/model/ModifyNewDomainRulesRequest.h
   include/tencentcloud/antiddos/v20200309/model/DescribeListProtocolBlockConfigResponse.h
   include/tencentcloud/antiddos/v20200309/model/DescribeListBGPInstancesRequest.h
   include/tencentcloud/antiddos/v20200309/model/KeyValue.h
@@ -45,6 +46,7 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/DescribeDefaultAlarmThresholdResponse.h
   include/tencentcloud/antiddos/v20200309/model/CreateDDoSAIRequest.h
   include/tencentcloud/antiddos/v20200309/model/DescribeListProtectThresholdConfigRequest.h
+  include/tencentcloud/antiddos/v20200309/model/ModifyNewDomainRulesResponse.h
   include/tencentcloud/antiddos/v20200309/model/CreateWaterPrintConfigResponse.h
   include/tencentcloud/antiddos/v20200309/model/DescribeListBGPIPInstancesRequest.h
   include/tencentcloud/antiddos/v20200309/model/StaticPackRelation.h
@@ -132,6 +134,7 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/AssociateDDoSEipLoadBalancerResponse.h
   include/tencentcloud/antiddos/v20200309/model/CreateBlackWhiteIpListRequest.h
   include/tencentcloud/antiddos/v20200309/model/DescribeBizTrendResponse.h
+  include/tencentcloud/antiddos/v20200309/model/NewL7RuleEntry.h
   include/tencentcloud/antiddos/v20200309/model/CreateBoundIPResponse.h
   include/tencentcloud/antiddos/v20200309/model/SpeedValue.h
   include/tencentcloud/antiddos/v20200309/model/SwitchWaterPrintConfigRequest.h
@@ -180,6 +183,7 @@ set(antiddos_src
   src/v20200309/model/DescribeL7RulesBySSLCertIdResponse.cpp
   src/v20200309/model/DescribeListDDoSSpeedLimitConfigRequest.cpp
   src/v20200309/model/InstanceRelation.cpp
+  src/v20200309/model/ModifyNewDomainRulesRequest.cpp
   src/v20200309/model/DescribeListProtocolBlockConfigResponse.cpp
   src/v20200309/model/DescribeListBGPInstancesRequest.cpp
   src/v20200309/model/KeyValue.cpp
@@ -192,6 +196,7 @@ set(antiddos_src
   src/v20200309/model/DescribeDefaultAlarmThresholdResponse.cpp
   src/v20200309/model/CreateDDoSAIRequest.cpp
   src/v20200309/model/DescribeListProtectThresholdConfigRequest.cpp
+  src/v20200309/model/ModifyNewDomainRulesResponse.cpp
   src/v20200309/model/CreateWaterPrintConfigResponse.cpp
   src/v20200309/model/DescribeListBGPIPInstancesRequest.cpp
   src/v20200309/model/StaticPackRelation.cpp
@@ -279,6 +284,7 @@ set(antiddos_src
   src/v20200309/model/AssociateDDoSEipLoadBalancerResponse.cpp
   src/v20200309/model/CreateBlackWhiteIpListRequest.cpp
   src/v20200309/model/DescribeBizTrendResponse.cpp
+  src/v20200309/model/NewL7RuleEntry.cpp
   src/v20200309/model/CreateBoundIPResponse.cpp
   src/v20200309/model/SpeedValue.cpp
   src/v20200309/model/SwitchWaterPrintConfigRequest.cpp
