@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool PluginNameHasBeenSet() const;
 
                     /**
-                     * 获取插件类型。目前支持IPControl, TrafficControl, Cors, CustomReq, CustomAuth。
-                     * @return PluginType 插件类型。目前支持IPControl, TrafficControl, Cors, CustomReq, CustomAuth。
+                     * 获取插件类型。目前支持IPControl, TrafficControl, Cors, CustomReq, CustomAuth，Routing，TrafficControlByParameter。
+                     * @return PluginType 插件类型。目前支持IPControl, TrafficControl, Cors, CustomReq, CustomAuth，Routing，TrafficControlByParameter。
                      */
                     std::string GetPluginType() const;
 
                     /**
-                     * 设置插件类型。目前支持IPControl, TrafficControl, Cors, CustomReq, CustomAuth。
-                     * @param PluginType 插件类型。目前支持IPControl, TrafficControl, Cors, CustomReq, CustomAuth。
+                     * 设置插件类型。目前支持IPControl, TrafficControl, Cors, CustomReq, CustomAuth，Routing，TrafficControlByParameter。
+                     * @param PluginType 插件类型。目前支持IPControl, TrafficControl, Cors, CustomReq, CustomAuth，Routing，TrafficControlByParameter。
                      */
                     void SetPluginType(const std::string& _pluginType);
 
@@ -123,7 +123,7 @@ namespace TencentCloud
                     bool m_pluginNameHasBeenSet;
 
                     /**
-                     * 插件类型。目前支持IPControl, TrafficControl, Cors, CustomReq, CustomAuth。
+                     * 插件类型。目前支持IPControl, TrafficControl, Cors, CustomReq, CustomAuth，Routing，TrafficControlByParameter。
                      */
                     std::string m_pluginType;
                     bool m_pluginTypeHasBeenSet;

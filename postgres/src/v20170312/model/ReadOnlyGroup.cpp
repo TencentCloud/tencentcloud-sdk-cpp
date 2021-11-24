@@ -37,7 +37,8 @@ ReadOnlyGroup::ReadOnlyGroup() :
     m_statusHasBeenSet(false),
     m_readOnlyDBInstanceListHasBeenSet(false),
     m_rebalanceHasBeenSet(false),
-    m_dBInstanceNetInfoHasBeenSet(false)
+    m_dBInstanceNetInfoHasBeenSet(false),
+    m_networkAccessListHasBeenSet(false)
 {
 }
 
@@ -236,6 +237,26 @@ CoreInternalOutcome ReadOnlyGroup::Deserialize(const rapidjson::Value &value)
         m_dBInstanceNetInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("NetworkAccessList") && !value["NetworkAccessList"].IsNull())
+    {
+        if (!value["NetworkAccessList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ReadOnlyGroup.NetworkAccessList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["NetworkAccessList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            NetworkAccess item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_networkAccessList.push_back(item);
+        }
+        m_networkAccessListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -387,6 +408,21 @@ void ReadOnlyGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
 
         int i=0;
         for (auto itr = m_dBInstanceNetInfo.begin(); itr != m_dBInstanceNetInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_networkAccessListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkAccessList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_networkAccessList.begin(); itr != m_networkAccessList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -666,5 +702,21 @@ void ReadOnlyGroup::SetDBInstanceNetInfo(const vector<DBInstanceNetInfo>& _dBIns
 bool ReadOnlyGroup::DBInstanceNetInfoHasBeenSet() const
 {
     return m_dBInstanceNetInfoHasBeenSet;
+}
+
+vector<NetworkAccess> ReadOnlyGroup::GetNetworkAccessList() const
+{
+    return m_networkAccessList;
+}
+
+void ReadOnlyGroup::SetNetworkAccessList(const vector<NetworkAccess>& _networkAccessList)
+{
+    m_networkAccessList = _networkAccessList;
+    m_networkAccessListHasBeenSet = true;
+}
+
+bool ReadOnlyGroup::NetworkAccessListHasBeenSet() const
+{
+    return m_networkAccessListHasBeenSet;
 }
 

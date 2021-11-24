@@ -29,6 +29,16 @@
 #include <tencentcloud/tdmq/v20200217/model/ClearCmqQueueResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ClearCmqSubscriptionFilterTagsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ClearCmqSubscriptionFilterTagsResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateAMQPClusterRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateAMQPClusterResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateAMQPExchangeRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateAMQPExchangeResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateAMQPQueueRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateAMQPQueueResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateAMQPRouteRelationRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateAMQPRouteRelationResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateAMQPVHostRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateAMQPVHostResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateClusterRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateClusterResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateCmqQueueRequest.h>
@@ -55,6 +65,16 @@
 #include <tencentcloud/tdmq/v20200217/model/CreateSubscriptionResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateTopicRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateTopicResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteAMQPClusterRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteAMQPClusterResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteAMQPExchangeRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteAMQPExchangeResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteAMQPQueueRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteAMQPQueueResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteAMQPRouteRelationRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteAMQPRouteRelationResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteAMQPVHostRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteAMQPVHostResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteClusterRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteClusterResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteCmqQueueRequest.h>
@@ -81,6 +101,20 @@
 #include <tencentcloud/tdmq/v20200217/model/DeleteSubscriptionsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteTopicsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteTopicsResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeAMQPClusterRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeAMQPClusterResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeAMQPClustersRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeAMQPClustersResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeAMQPCreateQuotaRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeAMQPCreateQuotaResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeAMQPExchangesRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeAMQPExchangesResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeAMQPQueuesRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeAMQPQueuesResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeAMQPRouteRelationsRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeAMQPRouteRelationsResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeAMQPVHostsRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeAMQPVHostsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeBindClustersRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeBindClustersResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeBindVpcsRequest.h>
@@ -129,6 +163,14 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeSubscriptionsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeTopicsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeTopicsResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyAMQPClusterRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyAMQPClusterResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyAMQPExchangeRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyAMQPExchangeResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyAMQPQueueRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyAMQPQueueResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyAMQPVHostRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyAMQPVHostResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyClusterRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyClusterResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyCmqQueueAttributeRequest.h>
@@ -194,6 +236,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ClearCmqSubscriptionFilterTagsResponse> ClearCmqSubscriptionFilterTagsOutcome;
                 typedef std::future<ClearCmqSubscriptionFilterTagsOutcome> ClearCmqSubscriptionFilterTagsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ClearCmqSubscriptionFilterTagsRequest&, ClearCmqSubscriptionFilterTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ClearCmqSubscriptionFilterTagsAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAMQPClusterResponse> CreateAMQPClusterOutcome;
+                typedef std::future<CreateAMQPClusterOutcome> CreateAMQPClusterOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::CreateAMQPClusterRequest&, CreateAMQPClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAMQPClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAMQPExchangeResponse> CreateAMQPExchangeOutcome;
+                typedef std::future<CreateAMQPExchangeOutcome> CreateAMQPExchangeOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::CreateAMQPExchangeRequest&, CreateAMQPExchangeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAMQPExchangeAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAMQPQueueResponse> CreateAMQPQueueOutcome;
+                typedef std::future<CreateAMQPQueueOutcome> CreateAMQPQueueOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::CreateAMQPQueueRequest&, CreateAMQPQueueOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAMQPQueueAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAMQPRouteRelationResponse> CreateAMQPRouteRelationOutcome;
+                typedef std::future<CreateAMQPRouteRelationOutcome> CreateAMQPRouteRelationOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::CreateAMQPRouteRelationRequest&, CreateAMQPRouteRelationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAMQPRouteRelationAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAMQPVHostResponse> CreateAMQPVHostOutcome;
+                typedef std::future<CreateAMQPVHostOutcome> CreateAMQPVHostOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::CreateAMQPVHostRequest&, CreateAMQPVHostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAMQPVHostAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateClusterResponse> CreateClusterOutcome;
                 typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::CreateClusterRequest&, CreateClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterAsyncHandler;
@@ -233,6 +290,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTopicResponse> CreateTopicOutcome;
                 typedef std::future<CreateTopicOutcome> CreateTopicOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::CreateTopicRequest&, CreateTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTopicAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAMQPClusterResponse> DeleteAMQPClusterOutcome;
+                typedef std::future<DeleteAMQPClusterOutcome> DeleteAMQPClusterOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DeleteAMQPClusterRequest&, DeleteAMQPClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAMQPClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAMQPExchangeResponse> DeleteAMQPExchangeOutcome;
+                typedef std::future<DeleteAMQPExchangeOutcome> DeleteAMQPExchangeOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DeleteAMQPExchangeRequest&, DeleteAMQPExchangeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAMQPExchangeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAMQPQueueResponse> DeleteAMQPQueueOutcome;
+                typedef std::future<DeleteAMQPQueueOutcome> DeleteAMQPQueueOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DeleteAMQPQueueRequest&, DeleteAMQPQueueOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAMQPQueueAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAMQPRouteRelationResponse> DeleteAMQPRouteRelationOutcome;
+                typedef std::future<DeleteAMQPRouteRelationOutcome> DeleteAMQPRouteRelationOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DeleteAMQPRouteRelationRequest&, DeleteAMQPRouteRelationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAMQPRouteRelationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAMQPVHostResponse> DeleteAMQPVHostOutcome;
+                typedef std::future<DeleteAMQPVHostOutcome> DeleteAMQPVHostOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DeleteAMQPVHostRequest&, DeleteAMQPVHostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAMQPVHostAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteClusterResponse> DeleteClusterOutcome;
                 typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DeleteClusterRequest&, DeleteClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterAsyncHandler;
@@ -272,6 +344,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteTopicsResponse> DeleteTopicsOutcome;
                 typedef std::future<DeleteTopicsOutcome> DeleteTopicsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DeleteTopicsRequest&, DeleteTopicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTopicsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAMQPClusterResponse> DescribeAMQPClusterOutcome;
+                typedef std::future<DescribeAMQPClusterOutcome> DescribeAMQPClusterOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeAMQPClusterRequest&, DescribeAMQPClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAMQPClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAMQPClustersResponse> DescribeAMQPClustersOutcome;
+                typedef std::future<DescribeAMQPClustersOutcome> DescribeAMQPClustersOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeAMQPClustersRequest&, DescribeAMQPClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAMQPClustersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAMQPCreateQuotaResponse> DescribeAMQPCreateQuotaOutcome;
+                typedef std::future<DescribeAMQPCreateQuotaOutcome> DescribeAMQPCreateQuotaOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeAMQPCreateQuotaRequest&, DescribeAMQPCreateQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAMQPCreateQuotaAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAMQPExchangesResponse> DescribeAMQPExchangesOutcome;
+                typedef std::future<DescribeAMQPExchangesOutcome> DescribeAMQPExchangesOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeAMQPExchangesRequest&, DescribeAMQPExchangesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAMQPExchangesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAMQPQueuesResponse> DescribeAMQPQueuesOutcome;
+                typedef std::future<DescribeAMQPQueuesOutcome> DescribeAMQPQueuesOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeAMQPQueuesRequest&, DescribeAMQPQueuesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAMQPQueuesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAMQPRouteRelationsResponse> DescribeAMQPRouteRelationsOutcome;
+                typedef std::future<DescribeAMQPRouteRelationsOutcome> DescribeAMQPRouteRelationsOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeAMQPRouteRelationsRequest&, DescribeAMQPRouteRelationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAMQPRouteRelationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAMQPVHostsResponse> DescribeAMQPVHostsOutcome;
+                typedef std::future<DescribeAMQPVHostsOutcome> DescribeAMQPVHostsOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeAMQPVHostsRequest&, DescribeAMQPVHostsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAMQPVHostsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBindClustersResponse> DescribeBindClustersOutcome;
                 typedef std::future<DescribeBindClustersOutcome> DescribeBindClustersOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeBindClustersRequest&, DescribeBindClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBindClustersAsyncHandler;
@@ -344,6 +437,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTopicsResponse> DescribeTopicsOutcome;
                 typedef std::future<DescribeTopicsOutcome> DescribeTopicsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeTopicsRequest&, DescribeTopicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAMQPClusterResponse> ModifyAMQPClusterOutcome;
+                typedef std::future<ModifyAMQPClusterOutcome> ModifyAMQPClusterOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::ModifyAMQPClusterRequest&, ModifyAMQPClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAMQPClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAMQPExchangeResponse> ModifyAMQPExchangeOutcome;
+                typedef std::future<ModifyAMQPExchangeOutcome> ModifyAMQPExchangeOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::ModifyAMQPExchangeRequest&, ModifyAMQPExchangeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAMQPExchangeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAMQPQueueResponse> ModifyAMQPQueueOutcome;
+                typedef std::future<ModifyAMQPQueueOutcome> ModifyAMQPQueueOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::ModifyAMQPQueueRequest&, ModifyAMQPQueueOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAMQPQueueAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAMQPVHostResponse> ModifyAMQPVHostOutcome;
+                typedef std::future<ModifyAMQPVHostOutcome> ModifyAMQPVHostOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::ModifyAMQPVHostRequest&, ModifyAMQPVHostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAMQPVHostAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyClusterResponse> ModifyClusterOutcome;
                 typedef std::future<ModifyClusterOutcome> ModifyClusterOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ModifyClusterRequest&, ModifyClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterAsyncHandler;
@@ -436,6 +541,51 @@ namespace TencentCloud
                 ClearCmqSubscriptionFilterTagsOutcome ClearCmqSubscriptionFilterTags(const Model::ClearCmqSubscriptionFilterTagsRequest &request);
                 void ClearCmqSubscriptionFilterTagsAsync(const Model::ClearCmqSubscriptionFilterTagsRequest& request, const ClearCmqSubscriptionFilterTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ClearCmqSubscriptionFilterTagsOutcomeCallable ClearCmqSubscriptionFilterTagsCallable(const Model::ClearCmqSubscriptionFilterTagsRequest& request);
+
+                /**
+                 *创建AMQP集群
+                 * @param req CreateAMQPClusterRequest
+                 * @return CreateAMQPClusterOutcome
+                 */
+                CreateAMQPClusterOutcome CreateAMQPCluster(const Model::CreateAMQPClusterRequest &request);
+                void CreateAMQPClusterAsync(const Model::CreateAMQPClusterRequest& request, const CreateAMQPClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAMQPClusterOutcomeCallable CreateAMQPClusterCallable(const Model::CreateAMQPClusterRequest& request);
+
+                /**
+                 *创建AMQP Exchange
+                 * @param req CreateAMQPExchangeRequest
+                 * @return CreateAMQPExchangeOutcome
+                 */
+                CreateAMQPExchangeOutcome CreateAMQPExchange(const Model::CreateAMQPExchangeRequest &request);
+                void CreateAMQPExchangeAsync(const Model::CreateAMQPExchangeRequest& request, const CreateAMQPExchangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAMQPExchangeOutcomeCallable CreateAMQPExchangeCallable(const Model::CreateAMQPExchangeRequest& request);
+
+                /**
+                 *创建AMQP队列
+                 * @param req CreateAMQPQueueRequest
+                 * @return CreateAMQPQueueOutcome
+                 */
+                CreateAMQPQueueOutcome CreateAMQPQueue(const Model::CreateAMQPQueueRequest &request);
+                void CreateAMQPQueueAsync(const Model::CreateAMQPQueueRequest& request, const CreateAMQPQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAMQPQueueOutcomeCallable CreateAMQPQueueCallable(const Model::CreateAMQPQueueRequest& request);
+
+                /**
+                 *创建AMQP路由关系
+                 * @param req CreateAMQPRouteRelationRequest
+                 * @return CreateAMQPRouteRelationOutcome
+                 */
+                CreateAMQPRouteRelationOutcome CreateAMQPRouteRelation(const Model::CreateAMQPRouteRelationRequest &request);
+                void CreateAMQPRouteRelationAsync(const Model::CreateAMQPRouteRelationRequest& request, const CreateAMQPRouteRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAMQPRouteRelationOutcomeCallable CreateAMQPRouteRelationCallable(const Model::CreateAMQPRouteRelationRequest& request);
+
+                /**
+                 *创建Amqp Vhost
+                 * @param req CreateAMQPVHostRequest
+                 * @return CreateAMQPVHostOutcome
+                 */
+                CreateAMQPVHostOutcome CreateAMQPVHost(const Model::CreateAMQPVHostRequest &request);
+                void CreateAMQPVHostAsync(const Model::CreateAMQPVHostRequest& request, const CreateAMQPVHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAMQPVHostOutcomeCallable CreateAMQPVHostCallable(const Model::CreateAMQPVHostRequest& request);
 
                 /**
                  *创建用户的集群
@@ -555,6 +705,51 @@ namespace TencentCloud
                 CreateTopicOutcomeCallable CreateTopicCallable(const Model::CreateTopicRequest& request);
 
                 /**
+                 *删除AMQP集群
+                 * @param req DeleteAMQPClusterRequest
+                 * @return DeleteAMQPClusterOutcome
+                 */
+                DeleteAMQPClusterOutcome DeleteAMQPCluster(const Model::DeleteAMQPClusterRequest &request);
+                void DeleteAMQPClusterAsync(const Model::DeleteAMQPClusterRequest& request, const DeleteAMQPClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAMQPClusterOutcomeCallable DeleteAMQPClusterCallable(const Model::DeleteAMQPClusterRequest& request);
+
+                /**
+                 *删除Amqp交换机
+                 * @param req DeleteAMQPExchangeRequest
+                 * @return DeleteAMQPExchangeOutcome
+                 */
+                DeleteAMQPExchangeOutcome DeleteAMQPExchange(const Model::DeleteAMQPExchangeRequest &request);
+                void DeleteAMQPExchangeAsync(const Model::DeleteAMQPExchangeRequest& request, const DeleteAMQPExchangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAMQPExchangeOutcomeCallable DeleteAMQPExchangeCallable(const Model::DeleteAMQPExchangeRequest& request);
+
+                /**
+                 *删除Amqp队列
+                 * @param req DeleteAMQPQueueRequest
+                 * @return DeleteAMQPQueueOutcome
+                 */
+                DeleteAMQPQueueOutcome DeleteAMQPQueue(const Model::DeleteAMQPQueueRequest &request);
+                void DeleteAMQPQueueAsync(const Model::DeleteAMQPQueueRequest& request, const DeleteAMQPQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAMQPQueueOutcomeCallable DeleteAMQPQueueCallable(const Model::DeleteAMQPQueueRequest& request);
+
+                /**
+                 *删除Amqp路由关系
+                 * @param req DeleteAMQPRouteRelationRequest
+                 * @return DeleteAMQPRouteRelationOutcome
+                 */
+                DeleteAMQPRouteRelationOutcome DeleteAMQPRouteRelation(const Model::DeleteAMQPRouteRelationRequest &request);
+                void DeleteAMQPRouteRelationAsync(const Model::DeleteAMQPRouteRelationRequest& request, const DeleteAMQPRouteRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAMQPRouteRelationOutcomeCallable DeleteAMQPRouteRelationCallable(const Model::DeleteAMQPRouteRelationRequest& request);
+
+                /**
+                 *删除Vhost
+                 * @param req DeleteAMQPVHostRequest
+                 * @return DeleteAMQPVHostOutcome
+                 */
+                DeleteAMQPVHostOutcome DeleteAMQPVHost(const Model::DeleteAMQPVHostRequest &request);
+                void DeleteAMQPVHostAsync(const Model::DeleteAMQPVHostRequest& request, const DeleteAMQPVHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAMQPVHostOutcomeCallable DeleteAMQPVHostCallable(const Model::DeleteAMQPVHostRequest& request);
+
+                /**
                  *删除集群
                  * @param req DeleteClusterRequest
                  * @return DeleteClusterOutcome
@@ -670,6 +865,69 @@ namespace TencentCloud
                 DeleteTopicsOutcome DeleteTopics(const Model::DeleteTopicsRequest &request);
                 void DeleteTopicsAsync(const Model::DeleteTopicsRequest& request, const DeleteTopicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTopicsOutcomeCallable DeleteTopicsCallable(const Model::DeleteTopicsRequest& request);
+
+                /**
+                 *获取单个Amqp集群信息
+                 * @param req DescribeAMQPClusterRequest
+                 * @return DescribeAMQPClusterOutcome
+                 */
+                DescribeAMQPClusterOutcome DescribeAMQPCluster(const Model::DescribeAMQPClusterRequest &request);
+                void DescribeAMQPClusterAsync(const Model::DescribeAMQPClusterRequest& request, const DescribeAMQPClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAMQPClusterOutcomeCallable DescribeAMQPClusterCallable(const Model::DescribeAMQPClusterRequest& request);
+
+                /**
+                 *获取amqp集群列表
+                 * @param req DescribeAMQPClustersRequest
+                 * @return DescribeAMQPClustersOutcome
+                 */
+                DescribeAMQPClustersOutcome DescribeAMQPClusters(const Model::DescribeAMQPClustersRequest &request);
+                void DescribeAMQPClustersAsync(const Model::DescribeAMQPClustersRequest& request, const DescribeAMQPClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAMQPClustersOutcomeCallable DescribeAMQPClustersCallable(const Model::DescribeAMQPClustersRequest& request);
+
+                /**
+                 *获取用户的配额，如Queue容量，Exchange容量，Vhost容量，单Vhost Tps数,剩余可创建集群数
+                 * @param req DescribeAMQPCreateQuotaRequest
+                 * @return DescribeAMQPCreateQuotaOutcome
+                 */
+                DescribeAMQPCreateQuotaOutcome DescribeAMQPCreateQuota(const Model::DescribeAMQPCreateQuotaRequest &request);
+                void DescribeAMQPCreateQuotaAsync(const Model::DescribeAMQPCreateQuotaRequest& request, const DescribeAMQPCreateQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAMQPCreateQuotaOutcomeCallable DescribeAMQPCreateQuotaCallable(const Model::DescribeAMQPCreateQuotaRequest& request);
+
+                /**
+                 *获取AMQP Exchange列表
+                 * @param req DescribeAMQPExchangesRequest
+                 * @return DescribeAMQPExchangesOutcome
+                 */
+                DescribeAMQPExchangesOutcome DescribeAMQPExchanges(const Model::DescribeAMQPExchangesRequest &request);
+                void DescribeAMQPExchangesAsync(const Model::DescribeAMQPExchangesRequest& request, const DescribeAMQPExchangesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAMQPExchangesOutcomeCallable DescribeAMQPExchangesCallable(const Model::DescribeAMQPExchangesRequest& request);
+
+                /**
+                 *获取Amqp队列列表
+                 * @param req DescribeAMQPQueuesRequest
+                 * @return DescribeAMQPQueuesOutcome
+                 */
+                DescribeAMQPQueuesOutcome DescribeAMQPQueues(const Model::DescribeAMQPQueuesRequest &request);
+                void DescribeAMQPQueuesAsync(const Model::DescribeAMQPQueuesRequest& request, const DescribeAMQPQueuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAMQPQueuesOutcomeCallable DescribeAMQPQueuesCallable(const Model::DescribeAMQPQueuesRequest& request);
+
+                /**
+                 *获取Amqp路由关系列表
+                 * @param req DescribeAMQPRouteRelationsRequest
+                 * @return DescribeAMQPRouteRelationsOutcome
+                 */
+                DescribeAMQPRouteRelationsOutcome DescribeAMQPRouteRelations(const Model::DescribeAMQPRouteRelationsRequest &request);
+                void DescribeAMQPRouteRelationsAsync(const Model::DescribeAMQPRouteRelationsRequest& request, const DescribeAMQPRouteRelationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAMQPRouteRelationsOutcomeCallable DescribeAMQPRouteRelationsCallable(const Model::DescribeAMQPRouteRelationsRequest& request);
+
+                /**
+                 *获取Amqp Vhost 列表
+                 * @param req DescribeAMQPVHostsRequest
+                 * @return DescribeAMQPVHostsOutcome
+                 */
+                DescribeAMQPVHostsOutcome DescribeAMQPVHosts(const Model::DescribeAMQPVHostsRequest &request);
+                void DescribeAMQPVHostsAsync(const Model::DescribeAMQPVHostsRequest& request, const DescribeAMQPVHostsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAMQPVHostsOutcomeCallable DescribeAMQPVHostsCallable(const Model::DescribeAMQPVHostsRequest& request);
 
                 /**
                  *获取用户绑定的专享集群列表
@@ -886,6 +1144,42 @@ namespace TencentCloud
                 DescribeTopicsOutcome DescribeTopics(const Model::DescribeTopicsRequest &request);
                 void DescribeTopicsAsync(const Model::DescribeTopicsRequest& request, const DescribeTopicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTopicsOutcomeCallable DescribeTopicsCallable(const Model::DescribeTopicsRequest& request);
+
+                /**
+                 *更新Amqp集群信息
+                 * @param req ModifyAMQPClusterRequest
+                 * @return ModifyAMQPClusterOutcome
+                 */
+                ModifyAMQPClusterOutcome ModifyAMQPCluster(const Model::ModifyAMQPClusterRequest &request);
+                void ModifyAMQPClusterAsync(const Model::ModifyAMQPClusterRequest& request, const ModifyAMQPClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAMQPClusterOutcomeCallable ModifyAMQPClusterCallable(const Model::ModifyAMQPClusterRequest& request);
+
+                /**
+                 *更新Amqp交换机
+                 * @param req ModifyAMQPExchangeRequest
+                 * @return ModifyAMQPExchangeOutcome
+                 */
+                ModifyAMQPExchangeOutcome ModifyAMQPExchange(const Model::ModifyAMQPExchangeRequest &request);
+                void ModifyAMQPExchangeAsync(const Model::ModifyAMQPExchangeRequest& request, const ModifyAMQPExchangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAMQPExchangeOutcomeCallable ModifyAMQPExchangeCallable(const Model::ModifyAMQPExchangeRequest& request);
+
+                /**
+                 *更新Amqp队列
+                 * @param req ModifyAMQPQueueRequest
+                 * @return ModifyAMQPQueueOutcome
+                 */
+                ModifyAMQPQueueOutcome ModifyAMQPQueue(const Model::ModifyAMQPQueueRequest &request);
+                void ModifyAMQPQueueAsync(const Model::ModifyAMQPQueueRequest& request, const ModifyAMQPQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAMQPQueueOutcomeCallable ModifyAMQPQueueCallable(const Model::ModifyAMQPQueueRequest& request);
+
+                /**
+                 *更新Vhost
+                 * @param req ModifyAMQPVHostRequest
+                 * @return ModifyAMQPVHostOutcome
+                 */
+                ModifyAMQPVHostOutcome ModifyAMQPVHost(const Model::ModifyAMQPVHostRequest &request);
+                void ModifyAMQPVHostAsync(const Model::ModifyAMQPVHostRequest& request, const ModifyAMQPVHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAMQPVHostOutcomeCallable ModifyAMQPVHostCallable(const Model::ModifyAMQPVHostRequest& request);
 
                 /**
                  *更新集群信息

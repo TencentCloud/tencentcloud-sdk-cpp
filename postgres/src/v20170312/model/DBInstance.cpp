@@ -52,7 +52,9 @@ DBInstance::DBInstance() :
     m_masterDBInstanceIdHasBeenSet(false),
     m_readOnlyInstanceNumHasBeenSet(false),
     m_statusInReadonlyGroupHasBeenSet(false),
-    m_offlineTimeHasBeenSet(false)
+    m_offlineTimeHasBeenSet(false),
+    m_dBKernelVersionHasBeenSet(false),
+    m_networkAccessListHasBeenSet(false)
 {
 }
 
@@ -401,6 +403,36 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
         m_offlineTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("DBKernelVersion") && !value["DBKernelVersion"].IsNull())
+    {
+        if (!value["DBKernelVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBInstance.DBKernelVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dBKernelVersion = string(value["DBKernelVersion"].GetString());
+        m_dBKernelVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("NetworkAccessList") && !value["NetworkAccessList"].IsNull())
+    {
+        if (!value["NetworkAccessList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DBInstance.NetworkAccessList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["NetworkAccessList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            NetworkAccess item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_networkAccessList.push_back(item);
+        }
+        m_networkAccessListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -676,6 +708,29 @@ void DBInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "OfflineTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_offlineTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dBKernelVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DBKernelVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dBKernelVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkAccessListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkAccessList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_networkAccessList.begin(); itr != m_networkAccessList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1191,5 +1246,37 @@ void DBInstance::SetOfflineTime(const string& _offlineTime)
 bool DBInstance::OfflineTimeHasBeenSet() const
 {
     return m_offlineTimeHasBeenSet;
+}
+
+string DBInstance::GetDBKernelVersion() const
+{
+    return m_dBKernelVersion;
+}
+
+void DBInstance::SetDBKernelVersion(const string& _dBKernelVersion)
+{
+    m_dBKernelVersion = _dBKernelVersion;
+    m_dBKernelVersionHasBeenSet = true;
+}
+
+bool DBInstance::DBKernelVersionHasBeenSet() const
+{
+    return m_dBKernelVersionHasBeenSet;
+}
+
+vector<NetworkAccess> DBInstance::GetNetworkAccessList() const
+{
+    return m_networkAccessList;
+}
+
+void DBInstance::SetNetworkAccessList(const vector<NetworkAccess>& _networkAccessList)
+{
+    m_networkAccessList = _networkAccessList;
+    m_networkAccessListHasBeenSet = true;
+}
+
+bool DBInstance::NetworkAccessListHasBeenSet() const
+{
+    return m_networkAccessListHasBeenSet;
 }
 

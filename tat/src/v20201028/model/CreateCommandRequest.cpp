@@ -32,7 +32,9 @@ CreateCommandRequest::CreateCommandRequest() :
     m_enableParameterHasBeenSet(false),
     m_defaultParametersHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_usernameHasBeenSet(false)
+    m_usernameHasBeenSet(false),
+    m_outputCOSBucketUrlHasBeenSet(false),
+    m_outputCOSKeyPrefixHasBeenSet(false)
 {
 }
 
@@ -128,6 +130,22 @@ string CreateCommandRequest::ToJsonString() const
         string key = "Username";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_username.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outputCOSBucketUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputCOSBucketUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_outputCOSBucketUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outputCOSKeyPrefixHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputCOSKeyPrefix";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_outputCOSKeyPrefix.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -296,6 +314,38 @@ void CreateCommandRequest::SetUsername(const string& _username)
 bool CreateCommandRequest::UsernameHasBeenSet() const
 {
     return m_usernameHasBeenSet;
+}
+
+string CreateCommandRequest::GetOutputCOSBucketUrl() const
+{
+    return m_outputCOSBucketUrl;
+}
+
+void CreateCommandRequest::SetOutputCOSBucketUrl(const string& _outputCOSBucketUrl)
+{
+    m_outputCOSBucketUrl = _outputCOSBucketUrl;
+    m_outputCOSBucketUrlHasBeenSet = true;
+}
+
+bool CreateCommandRequest::OutputCOSBucketUrlHasBeenSet() const
+{
+    return m_outputCOSBucketUrlHasBeenSet;
+}
+
+string CreateCommandRequest::GetOutputCOSKeyPrefix() const
+{
+    return m_outputCOSKeyPrefix;
+}
+
+void CreateCommandRequest::SetOutputCOSKeyPrefix(const string& _outputCOSKeyPrefix)
+{
+    m_outputCOSKeyPrefix = _outputCOSKeyPrefix;
+    m_outputCOSKeyPrefixHasBeenSet = true;
+}
+
+bool CreateCommandRequest::OutputCOSKeyPrefixHasBeenSet() const
+{
+    return m_outputCOSKeyPrefixHasBeenSet;
 }
 
 

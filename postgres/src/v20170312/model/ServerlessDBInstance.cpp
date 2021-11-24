@@ -35,7 +35,8 @@ ServerlessDBInstance::ServerlessDBInstance() :
     m_dBInstanceNetInfoHasBeenSet(false),
     m_dBAccountSetHasBeenSet(false),
     m_dBDatabaseListHasBeenSet(false),
-    m_tagListHasBeenSet(false)
+    m_tagListHasBeenSet(false),
+    m_dBKernelVersionHasBeenSet(false)
 {
 }
 
@@ -227,6 +228,16 @@ CoreInternalOutcome ServerlessDBInstance::Deserialize(const rapidjson::Value &va
         m_tagListHasBeenSet = true;
     }
 
+    if (value.HasMember("DBKernelVersion") && !value["DBKernelVersion"].IsNull())
+    {
+        if (!value["DBKernelVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerlessDBInstance.DBKernelVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dBKernelVersion = string(value["DBKernelVersion"].GetString());
+        m_dBKernelVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -378,6 +389,14 @@ void ServerlessDBInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_dBKernelVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DBKernelVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dBKernelVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -621,5 +640,21 @@ void ServerlessDBInstance::SetTagList(const vector<Tag>& _tagList)
 bool ServerlessDBInstance::TagListHasBeenSet() const
 {
     return m_tagListHasBeenSet;
+}
+
+string ServerlessDBInstance::GetDBKernelVersion() const
+{
+    return m_dBKernelVersion;
+}
+
+void ServerlessDBInstance::SetDBKernelVersion(const string& _dBKernelVersion)
+{
+    m_dBKernelVersion = _dBKernelVersion;
+    m_dBKernelVersionHasBeenSet = true;
+}
+
+bool ServerlessDBInstance::DBKernelVersionHasBeenSet() const
+{
+    return m_dBKernelVersionHasBeenSet;
 }
 

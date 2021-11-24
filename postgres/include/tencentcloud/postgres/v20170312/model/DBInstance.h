@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/postgres/v20170312/model/DBInstanceNetInfo.h>
 #include <tencentcloud/postgres/v20170312/model/Tag.h>
+#include <tencentcloud/postgres/v20170312/model/NetworkAccess.h>
 
 
 namespace TencentCloud
@@ -319,14 +320,14 @@ namespace TencentCloud
                     bool DBCharsetHasBeenSet() const;
 
                     /**
-                     * 获取PostgreSQL内核版本
-                     * @return DBVersion PostgreSQL内核版本
+                     * 获取PostgreSQL主版本
+                     * @return DBVersion PostgreSQL主版本
                      */
                     std::string GetDBVersion() const;
 
                     /**
-                     * 设置PostgreSQL内核版本
-                     * @param DBVersion PostgreSQL内核版本
+                     * 设置PostgreSQL主版本
+                     * @param DBVersion PostgreSQL主版本
                      */
                     void SetDBVersion(const std::string& _dBVersion);
 
@@ -644,6 +645,50 @@ namespace TencentCloud
                      */
                     bool OfflineTimeHasBeenSet() const;
 
+                    /**
+                     * 获取数据库内核版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DBKernelVersion 数据库内核版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDBKernelVersion() const;
+
+                    /**
+                     * 设置数据库内核版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DBKernelVersion 数据库内核版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDBKernelVersion(const std::string& _dBKernelVersion);
+
+                    /**
+                     * 判断参数 DBKernelVersion 是否已赋值
+                     * @return DBKernelVersion 是否已赋值
+                     */
+                    bool DBKernelVersionHasBeenSet() const;
+
+                    /**
+                     * 获取实例网络信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NetworkAccessList 实例网络信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<NetworkAccess> GetNetworkAccessList() const;
+
+                    /**
+                     * 设置实例网络信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NetworkAccessList 实例网络信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNetworkAccessList(const std::vector<NetworkAccess>& _networkAccessList);
+
+                    /**
+                     * 判断参数 NetworkAccessList 是否已赋值
+                     * @return NetworkAccessList 是否已赋值
+                     */
+                    bool NetworkAccessListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -737,7 +782,7 @@ namespace TencentCloud
                     bool m_dBCharsetHasBeenSet;
 
                     /**
-                     * PostgreSQL内核版本
+                     * PostgreSQL主版本
                      */
                     std::string m_dBVersion;
                     bool m_dBVersionHasBeenSet;
@@ -842,6 +887,20 @@ namespace TencentCloud
                      */
                     std::string m_offlineTime;
                     bool m_offlineTimeHasBeenSet;
+
+                    /**
+                     * 数据库内核版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dBKernelVersion;
+                    bool m_dBKernelVersionHasBeenSet;
+
+                    /**
+                     * 实例网络信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<NetworkAccess> m_networkAccessList;
+                    bool m_networkAccessListHasBeenSet;
 
                 };
             }

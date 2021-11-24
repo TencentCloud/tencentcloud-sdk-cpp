@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/postgres/v20170312/model/DBInstance.h>
 #include <tencentcloud/postgres/v20170312/model/DBInstanceNetInfo.h>
+#include <tencentcloud/postgres/v20170312/model/NetworkAccess.h>
 
 
 namespace TencentCloud
@@ -378,6 +379,28 @@ namespace TencentCloud
                      */
                     bool DBInstanceNetInfoHasBeenSet() const;
 
+                    /**
+                     * 获取只读组网络信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NetworkAccessList 只读组网络信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<NetworkAccess> GetNetworkAccessList() const;
+
+                    /**
+                     * 设置只读组网络信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NetworkAccessList 只读组网络信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNetworkAccessList(const std::vector<NetworkAccess>& _networkAccessList);
+
+                    /**
+                     * 判断参数 NetworkAccessList 是否已赋值
+                     * @return NetworkAccessList 是否已赋值
+                     */
+                    bool NetworkAccessListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -487,6 +510,13 @@ namespace TencentCloud
                      */
                     std::vector<DBInstanceNetInfo> m_dBInstanceNetInfo;
                     bool m_dBInstanceNetInfoHasBeenSet;
+
+                    /**
+                     * 只读组网络信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<NetworkAccess> m_networkAccessList;
+                    bool m_networkAccessListHasBeenSet;
 
                 };
             }

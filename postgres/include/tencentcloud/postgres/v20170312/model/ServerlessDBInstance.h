@@ -379,6 +379,28 @@ namespace TencentCloud
                      */
                     bool TagListHasBeenSet() const;
 
+                    /**
+                     * 获取数据库内核版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DBKernelVersion 数据库内核版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDBKernelVersion() const;
+
+                    /**
+                     * 设置数据库内核版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DBKernelVersion 数据库内核版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDBKernelVersion(const std::string& _dBKernelVersion);
+
+                    /**
+                     * 判断参数 DBKernelVersion 是否已赋值
+                     * @return DBKernelVersion 是否已赋值
+                     */
+                    bool DBKernelVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -485,6 +507,13 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tagList;
                     bool m_tagListHasBeenSet;
+
+                    /**
+                     * 数据库内核版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dBKernelVersion;
+                    bool m_dBKernelVersionHasBeenSet;
 
                 };
             }
