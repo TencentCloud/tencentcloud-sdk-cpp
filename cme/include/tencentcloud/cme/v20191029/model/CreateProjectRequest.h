@@ -87,13 +87,17 @@ namespace TencentCloud
 
                     /**
                      * 获取项目归属者。
+注：云转推项目，仅支持个人归属。
                      * @return Owner 项目归属者。
+注：云转推项目，仅支持个人归属。
                      */
                     Entity GetOwner() const;
 
                     /**
                      * 设置项目归属者。
+注：云转推项目，仅支持个人归属。
                      * @param Owner 项目归属者。
+注：云转推项目，仅支持个人归属。
                      */
                     void SetOwner(const Entity& _owner);
 
@@ -335,6 +339,7 @@ namespace TencentCloud
 
                     /**
                      * 项目归属者。
+注：云转推项目，仅支持个人归属。
                      */
                     Entity m_owner;
                     bool m_ownerHasBeenSet;

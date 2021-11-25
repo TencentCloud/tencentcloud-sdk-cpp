@@ -197,6 +197,10 @@
 #include <tencentcloud/tke/v20180525/model/RemoveNodeFromNodePoolResponse.h>
 #include <tencentcloud/tke/v20180525/model/RestartEKSContainerInstancesRequest.h>
 #include <tencentcloud/tke/v20180525/model/RestartEKSContainerInstancesResponse.h>
+#include <tencentcloud/tke/v20180525/model/ScaleInClusterMasterRequest.h>
+#include <tencentcloud/tke/v20180525/model/ScaleInClusterMasterResponse.h>
+#include <tencentcloud/tke/v20180525/model/ScaleOutClusterMasterRequest.h>
+#include <tencentcloud/tke/v20180525/model/ScaleOutClusterMasterResponse.h>
 #include <tencentcloud/tke/v20180525/model/SetNodePoolNodeProtectionRequest.h>
 #include <tencentcloud/tke/v20180525/model/SetNodePoolNodeProtectionResponse.h>
 #include <tencentcloud/tke/v20180525/model/SyncPrometheusTemplateRequest.h>
@@ -484,6 +488,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RestartEKSContainerInstancesResponse> RestartEKSContainerInstancesOutcome;
                 typedef std::future<RestartEKSContainerInstancesOutcome> RestartEKSContainerInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::RestartEKSContainerInstancesRequest&, RestartEKSContainerInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartEKSContainerInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ScaleInClusterMasterResponse> ScaleInClusterMasterOutcome;
+                typedef std::future<ScaleInClusterMasterOutcome> ScaleInClusterMasterOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::ScaleInClusterMasterRequest&, ScaleInClusterMasterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScaleInClusterMasterAsyncHandler;
+                typedef Outcome<Core::Error, Model::ScaleOutClusterMasterResponse> ScaleOutClusterMasterOutcome;
+                typedef std::future<ScaleOutClusterMasterOutcome> ScaleOutClusterMasterOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::ScaleOutClusterMasterRequest&, ScaleOutClusterMasterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScaleOutClusterMasterAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetNodePoolNodeProtectionResponse> SetNodePoolNodeProtectionOutcome;
                 typedef std::future<SetNodePoolNodeProtectionOutcome> SetNodePoolNodeProtectionOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::SetNodePoolNodeProtectionRequest&, SetNodePoolNodeProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetNodePoolNodeProtectionAsyncHandler;
@@ -1287,6 +1297,24 @@ namespace TencentCloud
                 RestartEKSContainerInstancesOutcome RestartEKSContainerInstances(const Model::RestartEKSContainerInstancesRequest &request);
                 void RestartEKSContainerInstancesAsync(const Model::RestartEKSContainerInstancesRequest& request, const RestartEKSContainerInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RestartEKSContainerInstancesOutcomeCallable RestartEKSContainerInstancesCallable(const Model::RestartEKSContainerInstancesRequest& request);
+
+                /**
+                 *缩容独立集群master节点
+                 * @param req ScaleInClusterMasterRequest
+                 * @return ScaleInClusterMasterOutcome
+                 */
+                ScaleInClusterMasterOutcome ScaleInClusterMaster(const Model::ScaleInClusterMasterRequest &request);
+                void ScaleInClusterMasterAsync(const Model::ScaleInClusterMasterRequest& request, const ScaleInClusterMasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ScaleInClusterMasterOutcomeCallable ScaleInClusterMasterCallable(const Model::ScaleInClusterMasterRequest& request);
+
+                /**
+                 *扩容独立集群master节点
+                 * @param req ScaleOutClusterMasterRequest
+                 * @return ScaleOutClusterMasterOutcome
+                 */
+                ScaleOutClusterMasterOutcome ScaleOutClusterMaster(const Model::ScaleOutClusterMasterRequest &request);
+                void ScaleOutClusterMasterAsync(const Model::ScaleOutClusterMasterRequest& request, const ScaleOutClusterMasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ScaleOutClusterMasterOutcomeCallable ScaleOutClusterMasterCallable(const Model::ScaleOutClusterMasterRequest& request);
 
                 /**
                  *仅能设置节点池中处于伸缩组的节点

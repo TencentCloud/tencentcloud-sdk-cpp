@@ -3781,6 +3781,92 @@ TkeClient::RestartEKSContainerInstancesOutcomeCallable TkeClient::RestartEKSCont
     return task->get_future();
 }
 
+TkeClient::ScaleInClusterMasterOutcome TkeClient::ScaleInClusterMaster(const ScaleInClusterMasterRequest &request)
+{
+    auto outcome = MakeRequest(request, "ScaleInClusterMaster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ScaleInClusterMasterResponse rsp = ScaleInClusterMasterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ScaleInClusterMasterOutcome(rsp);
+        else
+            return ScaleInClusterMasterOutcome(o.GetError());
+    }
+    else
+    {
+        return ScaleInClusterMasterOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ScaleInClusterMasterAsync(const ScaleInClusterMasterRequest& request, const ScaleInClusterMasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ScaleInClusterMaster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::ScaleInClusterMasterOutcomeCallable TkeClient::ScaleInClusterMasterCallable(const ScaleInClusterMasterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ScaleInClusterMasterOutcome()>>(
+        [this, request]()
+        {
+            return this->ScaleInClusterMaster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::ScaleOutClusterMasterOutcome TkeClient::ScaleOutClusterMaster(const ScaleOutClusterMasterRequest &request)
+{
+    auto outcome = MakeRequest(request, "ScaleOutClusterMaster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ScaleOutClusterMasterResponse rsp = ScaleOutClusterMasterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ScaleOutClusterMasterOutcome(rsp);
+        else
+            return ScaleOutClusterMasterOutcome(o.GetError());
+    }
+    else
+    {
+        return ScaleOutClusterMasterOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ScaleOutClusterMasterAsync(const ScaleOutClusterMasterRequest& request, const ScaleOutClusterMasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ScaleOutClusterMaster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::ScaleOutClusterMasterOutcomeCallable TkeClient::ScaleOutClusterMasterCallable(const ScaleOutClusterMasterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ScaleOutClusterMasterOutcome()>>(
+        [this, request]()
+        {
+            return this->ScaleOutClusterMaster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::SetNodePoolNodeProtectionOutcome TkeClient::SetNodePoolNodeProtection(const SetNodePoolNodeProtectionRequest &request)
 {
     auto outcome = MakeRequest(request, "SetNodePoolNodeProtection");
