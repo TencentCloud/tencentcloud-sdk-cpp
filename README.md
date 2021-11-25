@@ -67,7 +67,7 @@ yum install libuuid-devel
 
 # 从源代码构建 SDK
 
-1. 前往 [Github 代码托管地址](https://github.com/tencentcloud/tencentcloud-sdk-cpp) 下载最新代码
+1. 前往 [Github 仓库](https://github.com/tencentcloud/tencentcloud-sdk-cpp) 或者 [Gitee 仓库](https://gitee.com/tencentcloud/tencentcloud-sdk-cpp) 下载最新代码
 2. 进入 SDK 创建生成必要的构建文件
 
 ```
