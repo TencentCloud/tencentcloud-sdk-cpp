@@ -58,9 +58,7 @@ namespace TencentCloud
 
                     /**
                      * 获取各个共享空间对应的授权者信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthorizerSet 各个共享空间对应的授权者信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Authorizer> GetAuthorizerSet() const;
 
@@ -80,7 +78,6 @@ namespace TencentCloud
 
                     /**
                      * 各个共享空间对应的授权者信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Authorizer> m_authorizerSet;
                     bool m_authorizerSetHasBeenSet;

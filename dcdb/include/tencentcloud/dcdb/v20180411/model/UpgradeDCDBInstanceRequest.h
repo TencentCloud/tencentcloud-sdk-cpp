@@ -183,6 +183,24 @@ namespace TencentCloud
                      */
                     bool VoucherIdsHasBeenSet() const;
 
+                    /**
+                     * 获取变更部署时指定的新可用区列表，第1个为主可用区，其余为从可用区
+                     * @return Zones 变更部署时指定的新可用区列表，第1个为主可用区，其余为从可用区
+                     */
+                    std::vector<std::string> GetZones() const;
+
+                    /**
+                     * 设置变更部署时指定的新可用区列表，第1个为主可用区，其余为从可用区
+                     * @param Zones 变更部署时指定的新可用区列表，第1个为主可用区，其余为从可用区
+                     */
+                    void SetZones(const std::vector<std::string>& _zones);
+
+                    /**
+                     * 判断参数 Zones 是否已赋值
+                     * @return Zones 是否已赋值
+                     */
+                    bool ZonesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -229,6 +247,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_voucherIds;
                     bool m_voucherIdsHasBeenSet;
+
+                    /**
+                     * 变更部署时指定的新可用区列表，第1个为主可用区，其余为从可用区
+                     */
+                    std::vector<std::string> m_zones;
+                    bool m_zonesHasBeenSet;
 
                 };
             }

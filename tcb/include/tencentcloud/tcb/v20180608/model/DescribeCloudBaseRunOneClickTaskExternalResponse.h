@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcb/v20180608/model/OneClickTaskStepInfo.h>
 
 
 namespace TencentCloud
@@ -177,6 +178,30 @@ finished
                      */
                     bool UserEnvIdHasBeenSet() const;
 
+                    /**
+                     * 获取创建时间
+                     * @return StartTime 创建时间
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取步骤信息
+                     * @return Steps 步骤信息
+                     */
+                    std::vector<OneClickTaskStepInfo> GetSteps() const;
+
+                    /**
+                     * 判断参数 Steps 是否已赋值
+                     * @return Steps 是否已赋值
+                     */
+                    bool StepsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -245,6 +270,18 @@ finished
                      */
                     std::string m_userEnvId;
                     bool m_userEnvIdHasBeenSet;
+
+                    /**
+                     * 创建时间
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 步骤信息
+                     */
+                    std::vector<OneClickTaskStepInfo> m_steps;
+                    bool m_stepsHasBeenSet;
 
                 };
             }

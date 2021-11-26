@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取平台名称，指定访问的平台。
-                     * @return Platform 平台名称，指定访问的平台。
+                     * 获取平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @return Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     std::string GetPlatform() const;
 
                     /**
-                     * 设置平台名称，指定访问的平台。
-                     * @param Platform 平台名称，指定访问的平台。
+                     * 设置平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @param Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     void SetPlatform(const std::string& _platform);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool PlatformHasBeenSet() const;
 
                     /**
-                     * 获取用户 Id 列表，N 从 0 开始取值，最大 19。
-                     * @return UserIds 用户 Id 列表，N 从 0 开始取值，最大 19。
+                     * 获取用户 Id 列表，N 从0开始取值，最大19。
+                     * @return UserIds 用户 Id 列表，N 从0开始取值，最大19。
                      */
                     std::vector<std::string> GetUserIds() const;
 
                     /**
-                     * 设置用户 Id 列表，N 从 0 开始取值，最大 19。
-                     * @param UserIds 用户 Id 列表，N 从 0 开始取值，最大 19。
+                     * 设置用户 Id 列表，N 从0开始取值，最大19。
+                     * @param UserIds 用户 Id 列表，N 从0开始取值，最大19。
                      */
                     void SetUserIds(const std::vector<std::string>& _userIds);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 平台名称，指定访问的平台。
+                     * 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     std::string m_platform;
                     bool m_platformHasBeenSet;
 
                     /**
-                     * 用户 Id 列表，N 从 0 开始取值，最大 19。
+                     * 用户 Id 列表，N 从0开始取值，最大19。
                      */
                     std::vector<std::string> m_userIds;
                     bool m_userIdsHasBeenSet;

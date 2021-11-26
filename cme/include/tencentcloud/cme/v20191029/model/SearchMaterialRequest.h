@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取平台名称，指定访问的平台。
-                     * @return Platform 平台名称，指定访问的平台。
+                     * 获取平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @return Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     std::string GetPlatform() const;
 
                     /**
-                     * 设置平台名称，指定访问的平台。
-                     * @param Platform 平台名称，指定访问的平台。
+                     * 设置平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @param Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     void SetPlatform(const std::string& _platform);
 
@@ -83,26 +83,30 @@ namespace TencentCloud
                     bool SearchScopesHasBeenSet() const;
 
                     /**
-                     * 获取媒体类型，取值：
+                     * 获取媒体类型，可取值有：
 <li>AUDIO：音频；</li>
 <li>VIDEO：视频 ；</li>
-<li>IMAGE：图片。</li>
-                     * @return MaterialTypes 媒体类型，取值：
+<li>IMAGE：图片；</li>
+<li>VIDEO_EDIT_TEMPLATE：剪辑模板。</li>
+                     * @return MaterialTypes 媒体类型，可取值有：
 <li>AUDIO：音频；</li>
 <li>VIDEO：视频 ；</li>
-<li>IMAGE：图片。</li>
+<li>IMAGE：图片；</li>
+<li>VIDEO_EDIT_TEMPLATE：剪辑模板。</li>
                      */
                     std::vector<std::string> GetMaterialTypes() const;
 
                     /**
-                     * 设置媒体类型，取值：
+                     * 设置媒体类型，可取值有：
 <li>AUDIO：音频；</li>
 <li>VIDEO：视频 ；</li>
-<li>IMAGE：图片。</li>
-                     * @param MaterialTypes 媒体类型，取值：
+<li>IMAGE：图片；</li>
+<li>VIDEO_EDIT_TEMPLATE：剪辑模板。</li>
+                     * @param MaterialTypes 媒体类型，可取值有：
 <li>AUDIO：音频；</li>
 <li>VIDEO：视频 ；</li>
-<li>IMAGE：图片。</li>
+<li>IMAGE：图片；</li>
+<li>VIDEO_EDIT_TEMPLATE：剪辑模板。</li>
                      */
                     void SetMaterialTypes(const std::vector<std::string>& _materialTypes);
 
@@ -257,14 +261,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取操作者。填写用户的 Id，用于标识调用者及校验媒体访问权限。
-                     * @return Operator 操作者。填写用户的 Id，用于标识调用者及校验媒体访问权限。
+                     * 获取操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以搜索任意媒体的信息。如果指定操作者，则操作者必须对媒体有读权限。
+                     * @return Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以搜索任意媒体的信息。如果指定操作者，则操作者必须对媒体有读权限。
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置操作者。填写用户的 Id，用于标识调用者及校验媒体访问权限。
-                     * @param Operator 操作者。填写用户的 Id，用于标识调用者及校验媒体访问权限。
+                     * 设置操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以搜索任意媒体的信息。如果指定操作者，则操作者必须对媒体有读权限。
+                     * @param Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以搜索任意媒体的信息。如果指定操作者，则操作者必须对媒体有读权限。
                      */
                     void SetOperator(const std::string& _operator);
 
@@ -277,7 +281,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 平台名称，指定访问的平台。
+                     * 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     std::string m_platform;
                     bool m_platformHasBeenSet;
@@ -289,10 +293,11 @@ namespace TencentCloud
                     bool m_searchScopesHasBeenSet;
 
                     /**
-                     * 媒体类型，取值：
+                     * 媒体类型，可取值有：
 <li>AUDIO：音频；</li>
 <li>VIDEO：视频 ；</li>
-<li>IMAGE：图片。</li>
+<li>IMAGE：图片；</li>
+<li>VIDEO_EDIT_TEMPLATE：剪辑模板。</li>
                      */
                     std::vector<std::string> m_materialTypes;
                     bool m_materialTypesHasBeenSet;
@@ -346,7 +351,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 操作者。填写用户的 Id，用于标识调用者及校验媒体访问权限。
+                     * 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以搜索任意媒体的信息。如果指定操作者，则操作者必须对媒体有读权限。
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;

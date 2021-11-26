@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取平台名称，指定访问的平台。
-                     * @return Platform 平台名称，指定访问的平台。
+                     * 获取平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @return Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     std::string GetPlatform() const;
 
                     /**
-                     * 设置平台名称，指定访问的平台。
-                     * @param Platform 平台名称，指定访问的平台。
+                     * 设置平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @param Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     void SetPlatform(const std::string& _platform);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool PlatformHasBeenSet() const;
 
                     /**
-                     * 获取媒体 Id。
-                     * @return MaterialId 媒体 Id。
+                     * 获取要修改的媒体 Id。
+                     * @return MaterialId 要修改的媒体 Id。
                      */
                     std::string GetMaterialId() const;
 
                     /**
-                     * 设置媒体 Id。
-                     * @param MaterialId 媒体 Id。
+                     * 设置要修改的媒体 Id。
+                     * @param MaterialId 要修改的媒体 Id。
                      */
                     void SetMaterialId(const std::string& _materialId);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool MaterialIdHasBeenSet() const;
 
                     /**
-                     * 获取媒体或分类路径归属。
-                     * @return Owner 媒体或分类路径归属。
+                     * 获取媒体归属者。
+                     * @return Owner 媒体归属者。
                      */
                     Entity GetOwner() const;
 
                     /**
-                     * 设置媒体或分类路径归属。
-                     * @param Owner 媒体或分类路径归属。
+                     * 设置媒体归属者。
+                     * @param Owner 媒体归属者。
                      */
                     void SetOwner(const Entity& _owner);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool OwnerHasBeenSet() const;
 
                     /**
-                     * 获取媒体名称，不能超过30个字符。
-                     * @return Name 媒体名称，不能超过30个字符。
+                     * 获取媒体名称，不能超过30个字符，不填则不修改。
+                     * @return Name 媒体名称，不能超过30个字符，不填则不修改。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置媒体名称，不能超过30个字符。
-                     * @param Name 媒体名称，不能超过30个字符。
+                     * 设置媒体名称，不能超过30个字符，不填则不修改。
+                     * @param Name 媒体名称，不能超过30个字符，不填则不修改。
                      */
                     void SetName(const std::string& _name);
 
@@ -134,14 +134,14 @@ namespace TencentCloud
                     bool ClassPathHasBeenSet() const;
 
                     /**
-                     * 获取操作者。填写用户的 Id，用于标识调用者及校验操作权限。
-                     * @return Operator 操作者。填写用户的 Id，用于标识调用者及校验操作权限。
+                     * 获取操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以修改任意媒体的信息。如果指定操作者，则操作者必须对媒体有写权限。
+                     * @return Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以修改任意媒体的信息。如果指定操作者，则操作者必须对媒体有写权限。
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置操作者。填写用户的 Id，用于标识调用者及校验操作权限。
-                     * @param Operator 操作者。填写用户的 Id，用于标识调用者及校验操作权限。
+                     * 设置操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以修改任意媒体的信息。如果指定操作者，则操作者必须对媒体有写权限。
+                     * @param Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以修改任意媒体的信息。如果指定操作者，则操作者必须对媒体有写权限。
                      */
                     void SetOperator(const std::string& _operator);
 
@@ -154,25 +154,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 平台名称，指定访问的平台。
+                     * 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     std::string m_platform;
                     bool m_platformHasBeenSet;
 
                     /**
-                     * 媒体 Id。
+                     * 要修改的媒体 Id。
                      */
                     std::string m_materialId;
                     bool m_materialIdHasBeenSet;
 
                     /**
-                     * 媒体或分类路径归属。
+                     * 媒体归属者。
                      */
                     Entity m_owner;
                     bool m_ownerHasBeenSet;
 
                     /**
-                     * 媒体名称，不能超过30个字符。
+                     * 媒体名称，不能超过30个字符，不填则不修改。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -184,7 +184,7 @@ namespace TencentCloud
                     bool m_classPathHasBeenSet;
 
                     /**
-                     * 操作者。填写用户的 Id，用于标识调用者及校验操作权限。
+                     * 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以修改任意媒体的信息。如果指定操作者，则操作者必须对媒体有写权限。
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;

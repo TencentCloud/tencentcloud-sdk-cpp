@@ -50,14 +50,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取平台名称，指定访问的平台。
-                     * @return Platform 平台名称，指定访问的平台。
+                     * 获取平台 Id，指定访问的平台。平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @return Platform 平台 Id，指定访问的平台。平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     std::string GetPlatform() const;
 
                     /**
-                     * 设置平台名称，指定访问的平台。
-                     * @param Platform 平台名称，指定访问的平台。
+                     * 设置平台 Id，指定访问的平台。平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @param Platform 平台 Id，指定访问的平台。平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     void SetPlatform(const std::string& _platform);
 
@@ -86,18 +86,22 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取项目归属者。
-注：云转推项目，仅支持个人归属。
-                     * @return Owner 项目归属者。
-注：云转推项目，仅支持个人归属。
+                     * 获取项目归属者，即项目的所有者，后续操作只有该所有者有权限操作。
+
+注：目前所有项目只能设置归属个人，暂不支持团队项目。
+                     * @return Owner 项目归属者，即项目的所有者，后续操作只有该所有者有权限操作。
+
+注：目前所有项目只能设置归属个人，暂不支持团队项目。
                      */
                     Entity GetOwner() const;
 
                     /**
-                     * 设置项目归属者。
-注：云转推项目，仅支持个人归属。
-                     * @param Owner 项目归属者。
-注：云转推项目，仅支持个人归属。
+                     * 设置项目归属者，即项目的所有者，后续操作只有该所有者有权限操作。
+
+注：目前所有项目只能设置归属个人，暂不支持团队项目。
+                     * @param Owner 项目归属者，即项目的所有者，后续操作只有该所有者有权限操作。
+
+注：目前所有项目只能设置归属个人，暂不支持团队项目。
                      */
                     void SetOwner(const Entity& _owner);
 
@@ -148,24 +152,32 @@ namespace TencentCloud
                     /**
                      * 获取项目模式，一个项目可以有多种模式并相互切换。
 当 Category 为 VIDEO_EDIT 时，可选模式有：
-<li>Default：默认模式。</li>
-<li>VideoEditTemplate：视频编辑模板制作模式。</li>
+<li>Default：默认模式，即普通视频编辑项目。</li>
+<li>VideoEditTemplate：剪辑模板制作模式，用于制作剪辑模板。</li>
+
+注：不填则为默认模式。
                      * @return Mode 项目模式，一个项目可以有多种模式并相互切换。
 当 Category 为 VIDEO_EDIT 时，可选模式有：
-<li>Default：默认模式。</li>
-<li>VideoEditTemplate：视频编辑模板制作模式。</li>
+<li>Default：默认模式，即普通视频编辑项目。</li>
+<li>VideoEditTemplate：剪辑模板制作模式，用于制作剪辑模板。</li>
+
+注：不填则为默认模式。
                      */
                     std::string GetMode() const;
 
                     /**
                      * 设置项目模式，一个项目可以有多种模式并相互切换。
 当 Category 为 VIDEO_EDIT 时，可选模式有：
-<li>Default：默认模式。</li>
-<li>VideoEditTemplate：视频编辑模板制作模式。</li>
+<li>Default：默认模式，即普通视频编辑项目。</li>
+<li>VideoEditTemplate：剪辑模板制作模式，用于制作剪辑模板。</li>
+
+注：不填则为默认模式。
                      * @param Mode 项目模式，一个项目可以有多种模式并相互切换。
 当 Category 为 VIDEO_EDIT 时，可选模式有：
-<li>Default：默认模式。</li>
-<li>VideoEditTemplate：视频编辑模板制作模式。</li>
+<li>Default：默认模式，即普通视频编辑项目。</li>
+<li>VideoEditTemplate：剪辑模板制作模式，用于制作剪辑模板。</li>
+
+注：不填则为默认模式。
                      */
                     void SetMode(const std::string& _mode);
 
@@ -216,14 +228,14 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取导播台信息，仅当项目类型为 SWITCHER 时必填。
-                     * @return SwitcherProjectInput 导播台信息，仅当项目类型为 SWITCHER 时必填。
+                     * 获取导播台项目输入信息，仅当项目类型为 SWITCHER 时必填。
+                     * @return SwitcherProjectInput 导播台项目输入信息，仅当项目类型为 SWITCHER 时必填。
                      */
                     SwitcherProjectInput GetSwitcherProjectInput() const;
 
                     /**
-                     * 设置导播台信息，仅当项目类型为 SWITCHER 时必填。
-                     * @param SwitcherProjectInput 导播台信息，仅当项目类型为 SWITCHER 时必填。
+                     * 设置导播台项目输入信息，仅当项目类型为 SWITCHER 时必填。
+                     * @param SwitcherProjectInput 导播台项目输入信息，仅当项目类型为 SWITCHER 时必填。
                      */
                     void SetSwitcherProjectInput(const SwitcherProjectInput& _switcherProjectInput);
 
@@ -234,14 +246,14 @@ namespace TencentCloud
                     bool SwitcherProjectInputHasBeenSet() const;
 
                     /**
-                     * 获取直播剪辑信息，暂未开放，请勿使用。
-                     * @return LiveStreamClipProjectInput 直播剪辑信息，暂未开放，请勿使用。
+                     * 获取直播剪辑项目输入信息，暂未开放，请勿使用。
+                     * @return LiveStreamClipProjectInput 直播剪辑项目输入信息，暂未开放，请勿使用。
                      */
                     LiveStreamClipProjectInput GetLiveStreamClipProjectInput() const;
 
                     /**
-                     * 设置直播剪辑信息，暂未开放，请勿使用。
-                     * @param LiveStreamClipProjectInput 直播剪辑信息，暂未开放，请勿使用。
+                     * 设置直播剪辑项目输入信息，暂未开放，请勿使用。
+                     * @param LiveStreamClipProjectInput 直播剪辑项目输入信息，暂未开放，请勿使用。
                      */
                     void SetLiveStreamClipProjectInput(const LiveStreamClipProjectInput& _liveStreamClipProjectInput);
 
@@ -252,14 +264,14 @@ namespace TencentCloud
                     bool LiveStreamClipProjectInputHasBeenSet() const;
 
                     /**
-                     * 获取视频编辑信息，仅当项目类型为 VIDEO_EDIT 时必填。
-                     * @return VideoEditProjectInput 视频编辑信息，仅当项目类型为 VIDEO_EDIT 时必填。
+                     * 获取视频编辑项目输入信息，仅当项目类型为 VIDEO_EDIT 时必填。
+                     * @return VideoEditProjectInput 视频编辑项目输入信息，仅当项目类型为 VIDEO_EDIT 时必填。
                      */
                     VideoEditProjectInput GetVideoEditProjectInput() const;
 
                     /**
-                     * 设置视频编辑信息，仅当项目类型为 VIDEO_EDIT 时必填。
-                     * @param VideoEditProjectInput 视频编辑信息，仅当项目类型为 VIDEO_EDIT 时必填。
+                     * 设置视频编辑项目输入信息，仅当项目类型为 VIDEO_EDIT 时必填。
+                     * @param VideoEditProjectInput 视频编辑项目输入信息，仅当项目类型为 VIDEO_EDIT 时必填。
                      */
                     void SetVideoEditProjectInput(const VideoEditProjectInput& _videoEditProjectInput);
 
@@ -270,14 +282,14 @@ namespace TencentCloud
                     bool VideoEditProjectInputHasBeenSet() const;
 
                     /**
-                     * 获取视频拆条信息，仅当项目类型为 VIDEO_SEGMENTATION  时必填。
-                     * @return VideoSegmentationProjectInput 视频拆条信息，仅当项目类型为 VIDEO_SEGMENTATION  时必填。
+                     * 获取视频拆条项目输入信息，仅当项目类型为 VIDEO_SEGMENTATION  时必填。
+                     * @return VideoSegmentationProjectInput 视频拆条项目输入信息，仅当项目类型为 VIDEO_SEGMENTATION  时必填。
                      */
                     VideoSegmentationProjectInput GetVideoSegmentationProjectInput() const;
 
                     /**
-                     * 设置视频拆条信息，仅当项目类型为 VIDEO_SEGMENTATION  时必填。
-                     * @param VideoSegmentationProjectInput 视频拆条信息，仅当项目类型为 VIDEO_SEGMENTATION  时必填。
+                     * 设置视频拆条项目输入信息，仅当项目类型为 VIDEO_SEGMENTATION  时必填。
+                     * @param VideoSegmentationProjectInput 视频拆条项目输入信息，仅当项目类型为 VIDEO_SEGMENTATION  时必填。
                      */
                     void SetVideoSegmentationProjectInput(const VideoSegmentationProjectInput& _videoSegmentationProjectInput);
 
@@ -288,14 +300,14 @@ namespace TencentCloud
                     bool VideoSegmentationProjectInputHasBeenSet() const;
 
                     /**
-                     * 获取云转推项目信息，仅当项目类型为 STREAM_CONNECT 时必填。
-                     * @return StreamConnectProjectInput 云转推项目信息，仅当项目类型为 STREAM_CONNECT 时必填。
+                     * 获取云转推项目输入信息，仅当项目类型为 STREAM_CONNECT 时必填。
+                     * @return StreamConnectProjectInput 云转推项目输入信息，仅当项目类型为 STREAM_CONNECT 时必填。
                      */
                     StreamConnectProjectInput GetStreamConnectProjectInput() const;
 
                     /**
-                     * 设置云转推项目信息，仅当项目类型为 STREAM_CONNECT 时必填。
-                     * @param StreamConnectProjectInput 云转推项目信息，仅当项目类型为 STREAM_CONNECT 时必填。
+                     * 设置云转推项目输入信息，仅当项目类型为 STREAM_CONNECT 时必填。
+                     * @param StreamConnectProjectInput 云转推项目输入信息，仅当项目类型为 STREAM_CONNECT 时必填。
                      */
                     void SetStreamConnectProjectInput(const StreamConnectProjectInput& _streamConnectProjectInput);
 
@@ -306,14 +318,14 @@ namespace TencentCloud
                     bool StreamConnectProjectInputHasBeenSet() const;
 
                     /**
-                     * 获取录制回放项目信息，仅当项目类型为 RECORD_REPLAY 时必填。
-                     * @return RecordReplayProjectInput 录制回放项目信息，仅当项目类型为 RECORD_REPLAY 时必填。
+                     * 获取录制回放项目输入信息，仅当项目类型为 RECORD_REPLAY 时必填。
+                     * @return RecordReplayProjectInput 录制回放项目输入信息，仅当项目类型为 RECORD_REPLAY 时必填。
                      */
                     RecordReplayProjectInput GetRecordReplayProjectInput() const;
 
                     /**
-                     * 设置录制回放项目信息，仅当项目类型为 RECORD_REPLAY 时必填。
-                     * @param RecordReplayProjectInput 录制回放项目信息，仅当项目类型为 RECORD_REPLAY 时必填。
+                     * 设置录制回放项目输入信息，仅当项目类型为 RECORD_REPLAY 时必填。
+                     * @param RecordReplayProjectInput 录制回放项目输入信息，仅当项目类型为 RECORD_REPLAY 时必填。
                      */
                     void SetRecordReplayProjectInput(const RecordReplayProjectInput& _recordReplayProjectInput);
 
@@ -326,7 +338,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 平台名称，指定访问的平台。
+                     * 平台 Id，指定访问的平台。平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     std::string m_platform;
                     bool m_platformHasBeenSet;
@@ -338,8 +350,9 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 项目归属者。
-注：云转推项目，仅支持个人归属。
+                     * 项目归属者，即项目的所有者，后续操作只有该所有者有权限操作。
+
+注：目前所有项目只能设置归属个人，暂不支持团队项目。
                      */
                     Entity m_owner;
                     bool m_ownerHasBeenSet;
@@ -358,8 +371,10 @@ namespace TencentCloud
                     /**
                      * 项目模式，一个项目可以有多种模式并相互切换。
 当 Category 为 VIDEO_EDIT 时，可选模式有：
-<li>Default：默认模式。</li>
-<li>VideoEditTemplate：视频编辑模板制作模式。</li>
+<li>Default：默认模式，即普通视频编辑项目。</li>
+<li>VideoEditTemplate：剪辑模板制作模式，用于制作剪辑模板。</li>
+
+注：不填则为默认模式。
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
@@ -378,37 +393,37 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 导播台信息，仅当项目类型为 SWITCHER 时必填。
+                     * 导播台项目输入信息，仅当项目类型为 SWITCHER 时必填。
                      */
                     SwitcherProjectInput m_switcherProjectInput;
                     bool m_switcherProjectInputHasBeenSet;
 
                     /**
-                     * 直播剪辑信息，暂未开放，请勿使用。
+                     * 直播剪辑项目输入信息，暂未开放，请勿使用。
                      */
                     LiveStreamClipProjectInput m_liveStreamClipProjectInput;
                     bool m_liveStreamClipProjectInputHasBeenSet;
 
                     /**
-                     * 视频编辑信息，仅当项目类型为 VIDEO_EDIT 时必填。
+                     * 视频编辑项目输入信息，仅当项目类型为 VIDEO_EDIT 时必填。
                      */
                     VideoEditProjectInput m_videoEditProjectInput;
                     bool m_videoEditProjectInputHasBeenSet;
 
                     /**
-                     * 视频拆条信息，仅当项目类型为 VIDEO_SEGMENTATION  时必填。
+                     * 视频拆条项目输入信息，仅当项目类型为 VIDEO_SEGMENTATION  时必填。
                      */
                     VideoSegmentationProjectInput m_videoSegmentationProjectInput;
                     bool m_videoSegmentationProjectInputHasBeenSet;
 
                     /**
-                     * 云转推项目信息，仅当项目类型为 STREAM_CONNECT 时必填。
+                     * 云转推项目输入信息，仅当项目类型为 STREAM_CONNECT 时必填。
                      */
                     StreamConnectProjectInput m_streamConnectProjectInput;
                     bool m_streamConnectProjectInputHasBeenSet;
 
                     /**
-                     * 录制回放项目信息，仅当项目类型为 RECORD_REPLAY 时必填。
+                     * 录制回放项目输入信息，仅当项目类型为 RECORD_REPLAY 时必填。
                      */
                     RecordReplayProjectInput m_recordReplayProjectInput;
                     bool m_recordReplayProjectInputHasBeenSet;

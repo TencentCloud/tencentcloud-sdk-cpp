@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合搜索条件的记录总数。
-                     * @return TotalCount 符合搜索条件的记录总数。
+                     * 获取符合查询条件的记录总数。
+                     * @return TotalCount 符合查询条件的记录总数。
                      */
                     uint64_t GetTotalCount() const;
 
@@ -71,7 +71,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 符合搜索条件的记录总数。
+                     * 符合查询条件的记录总数。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

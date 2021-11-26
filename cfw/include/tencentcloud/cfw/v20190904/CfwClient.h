@@ -57,6 +57,8 @@
 #include <tencentcloud/cfw/v20190904/model/DeleteVpcInstanceResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeAcListsRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeAcListsResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeAddrTemplateListRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeAddrTemplateListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeAssociatedInstanceListRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeAssociatedInstanceListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeBlockByIpTimesListRequest.h>
@@ -226,6 +228,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAcListsResponse> DescribeAcListsOutcome;
                 typedef std::future<DescribeAcListsOutcome> DescribeAcListsOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeAcListsRequest&, DescribeAcListsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAcListsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAddrTemplateListResponse> DescribeAddrTemplateListOutcome;
+                typedef std::future<DescribeAddrTemplateListOutcome> DescribeAddrTemplateListOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeAddrTemplateListRequest&, DescribeAddrTemplateListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAddrTemplateListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAssociatedInstanceListResponse> DescribeAssociatedInstanceListOutcome;
                 typedef std::future<DescribeAssociatedInstanceListOutcome> DescribeAssociatedInstanceListOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeAssociatedInstanceListRequest&, DescribeAssociatedInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssociatedInstanceListAsyncHandler;
@@ -537,6 +542,15 @@ namespace TencentCloud
                 DescribeAcListsOutcome DescribeAcLists(const Model::DescribeAcListsRequest &request);
                 void DescribeAcListsAsync(const Model::DescribeAcListsRequest& request, const DescribeAcListsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAcListsOutcomeCallable DescribeAcListsCallable(const Model::DescribeAcListsRequest& request);
+
+                /**
+                 *获取地址模版列表
+                 * @param req DescribeAddrTemplateListRequest
+                 * @return DescribeAddrTemplateListOutcome
+                 */
+                DescribeAddrTemplateListOutcome DescribeAddrTemplateList(const Model::DescribeAddrTemplateListRequest &request);
+                void DescribeAddrTemplateListAsync(const Model::DescribeAddrTemplateListRequest& request, const DescribeAddrTemplateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAddrTemplateListOutcomeCallable DescribeAddrTemplateListCallable(const Model::DescribeAddrTemplateListRequest& request);
 
                 /**
                  *获取安全组关联实例列表

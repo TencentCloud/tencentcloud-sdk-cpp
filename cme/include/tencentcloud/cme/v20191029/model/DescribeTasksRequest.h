@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取平台名称，指定访问的平台。
-                     * @return Platform 平台名称，指定访问的平台。
+                     * 获取平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @return Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     std::string GetPlatform() const;
 
                     /**
-                     * 设置平台名称，指定访问的平台。
-                     * @param Platform 平台名称，指定访问的平台。
+                     * 设置平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @param Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     void SetPlatform(const std::string& _platform);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool PlatformHasBeenSet() const;
 
                     /**
-                     * 获取项目 Id。
-                     * @return ProjectId 项目 Id。
+                     * 获取项目 Id，使用项目 Id 进行过滤。
+                     * @return ProjectId 项目 Id，使用项目 Id 进行过滤。
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目 Id。
-                     * @param ProjectId 项目 Id。
+                     * 设置项目 Id，使用项目 Id 进行过滤。
+                     * @param ProjectId 项目 Id，使用项目 Id 进行过滤。
                      */
                     void SetProjectId(const std::string& _projectId);
 
@@ -81,16 +81,24 @@ namespace TencentCloud
                     /**
                      * 获取任务类型集合，取值有：
 <li>VIDEO_EDIT_PROJECT_EXPORT：视频编辑项目导出。</li>
+
+注：不填不使用任务类型进行过滤。
                      * @return TaskTypeSet 任务类型集合，取值有：
 <li>VIDEO_EDIT_PROJECT_EXPORT：视频编辑项目导出。</li>
+
+注：不填不使用任务类型进行过滤。
                      */
                     std::vector<std::string> GetTaskTypeSet() const;
 
                     /**
                      * 设置任务类型集合，取值有：
 <li>VIDEO_EDIT_PROJECT_EXPORT：视频编辑项目导出。</li>
+
+注：不填不使用任务类型进行过滤。
                      * @param TaskTypeSet 任务类型集合，取值有：
 <li>VIDEO_EDIT_PROJECT_EXPORT：视频编辑项目导出。</li>
+
+注：不填不使用任务类型进行过滤。
                      */
                     void SetTaskTypeSet(const std::vector<std::string>& _taskTypeSet);
 
@@ -105,10 +113,14 @@ namespace TencentCloud
 <li>PROCESSING：处理中；</li>
 <li>SUCCESS：成功；</li>
 <li>FAIL：失败。</li>
+
+注：不填则不使用任务状态进行过滤。
                      * @return StatusSet 任务状态集合，取值有：
 <li>PROCESSING：处理中；</li>
 <li>SUCCESS：成功；</li>
 <li>FAIL：失败。</li>
+
+注：不填则不使用任务状态进行过滤。
                      */
                     std::vector<std::string> GetStatusSet() const;
 
@@ -117,10 +129,14 @@ namespace TencentCloud
 <li>PROCESSING：处理中；</li>
 <li>SUCCESS：成功；</li>
 <li>FAIL：失败。</li>
+
+注：不填则不使用任务状态进行过滤。
                      * @param StatusSet 任务状态集合，取值有：
 <li>PROCESSING：处理中；</li>
 <li>SUCCESS：成功；</li>
 <li>FAIL：失败。</li>
+
+注：不填则不使用任务状态进行过滤。
                      */
                     void SetStatusSet(const std::vector<std::string>& _statusSet);
 
@@ -167,14 +183,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取操作者。填写用户的 Id，用于标识调用者及校验对任务的访问权限。
-                     * @return Operator 操作者。填写用户的 Id，用于标识调用者及校验对任务的访问权限。
+                     * 获取操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以获取所有任务信息。如果指定操作者，则操作者需要是任务发起者。
+                     * @return Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以获取所有任务信息。如果指定操作者，则操作者需要是任务发起者。
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置操作者。填写用户的 Id，用于标识调用者及校验对任务的访问权限。
-                     * @param Operator 操作者。填写用户的 Id，用于标识调用者及校验对任务的访问权限。
+                     * 设置操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以获取所有任务信息。如果指定操作者，则操作者需要是任务发起者。
+                     * @param Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以获取所有任务信息。如果指定操作者，则操作者需要是任务发起者。
                      */
                     void SetOperator(const std::string& _operator);
 
@@ -187,13 +203,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 平台名称，指定访问的平台。
+                     * 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     std::string m_platform;
                     bool m_platformHasBeenSet;
 
                     /**
-                     * 项目 Id。
+                     * 项目 Id，使用项目 Id 进行过滤。
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
@@ -201,6 +217,8 @@ namespace TencentCloud
                     /**
                      * 任务类型集合，取值有：
 <li>VIDEO_EDIT_PROJECT_EXPORT：视频编辑项目导出。</li>
+
+注：不填不使用任务类型进行过滤。
                      */
                     std::vector<std::string> m_taskTypeSet;
                     bool m_taskTypeSetHasBeenSet;
@@ -210,6 +228,8 @@ namespace TencentCloud
 <li>PROCESSING：处理中；</li>
 <li>SUCCESS：成功；</li>
 <li>FAIL：失败。</li>
+
+注：不填则不使用任务状态进行过滤。
                      */
                     std::vector<std::string> m_statusSet;
                     bool m_statusSetHasBeenSet;
@@ -227,7 +247,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 操作者。填写用户的 Id，用于标识调用者及校验对任务的访问权限。
+                     * 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以获取所有任务信息。如果指定操作者，则操作者需要是任务发起者。
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;

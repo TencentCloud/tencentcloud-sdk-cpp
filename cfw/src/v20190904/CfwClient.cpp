@@ -771,6 +771,49 @@ CfwClient::DescribeAcListsOutcomeCallable CfwClient::DescribeAcListsCallable(con
     return task->get_future();
 }
 
+CfwClient::DescribeAddrTemplateListOutcome CfwClient::DescribeAddrTemplateList(const DescribeAddrTemplateListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAddrTemplateList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAddrTemplateListResponse rsp = DescribeAddrTemplateListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAddrTemplateListOutcome(rsp);
+        else
+            return DescribeAddrTemplateListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAddrTemplateListOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeAddrTemplateListAsync(const DescribeAddrTemplateListRequest& request, const DescribeAddrTemplateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAddrTemplateList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DescribeAddrTemplateListOutcomeCallable CfwClient::DescribeAddrTemplateListCallable(const DescribeAddrTemplateListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAddrTemplateListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAddrTemplateList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::DescribeAssociatedInstanceListOutcome CfwClient::DescribeAssociatedInstanceList(const DescribeAssociatedInstanceListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAssociatedInstanceList");

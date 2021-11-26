@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取平台名称，指定访问的平台。
-                     * @return Platform 平台名称，指定访问的平台。
+                     * 获取平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @return Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     std::string GetPlatform() const;
 
                     /**
-                     * 设置平台名称，指定访问的平台。
-                     * @param Platform 平台名称，指定访问的平台。
+                     * 设置平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @param Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     void SetPlatform(const std::string& _platform);
 
@@ -62,20 +62,20 @@ namespace TencentCloud
                     bool PlatformHasBeenSet() const;
 
                     /**
-                     * 获取链接类型，取值有:
+                     * 获取链接类型，可取值有:
 <li>CLASS: 分类链接；</li>
 <li> MATERIAL：媒体文件链接。</li>
-                     * @return Type 链接类型，取值有:
+                     * @return Type 链接类型，可取值有:
 <li>CLASS: 分类链接；</li>
 <li> MATERIAL：媒体文件链接。</li>
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置链接类型，取值有:
+                     * 设置链接类型，可取值有:
 <li>CLASS: 分类链接；</li>
 <li> MATERIAL：媒体文件链接。</li>
-                     * @param Type 链接类型，取值有:
+                     * @param Type 链接类型，可取值有:
 <li>CLASS: 分类链接；</li>
 <li> MATERIAL：媒体文件链接。</li>
                      */
@@ -124,20 +124,20 @@ namespace TencentCloud
                     bool OwnerHasBeenSet() const;
 
                     /**
-                     * 获取目标资源Id。取值：
+                     * 获取目标资源Id。可取值有：
 <li>当 Type 为 MATERIAL 时填媒体 ID；</li>
 <li>当 Type 为 CLASS 时填写分类路径。</li>
-                     * @return DestinationId 目标资源Id。取值：
+                     * @return DestinationId 目标资源Id。可取值有：
 <li>当 Type 为 MATERIAL 时填媒体 ID；</li>
 <li>当 Type 为 CLASS 时填写分类路径。</li>
                      */
                     std::string GetDestinationId() const;
 
                     /**
-                     * 设置目标资源Id。取值：
+                     * 设置目标资源Id。可取值有：
 <li>当 Type 为 MATERIAL 时填媒体 ID；</li>
 <li>当 Type 为 CLASS 时填写分类路径。</li>
-                     * @param DestinationId 目标资源Id。取值：
+                     * @param DestinationId 目标资源Id。可取值有：
 <li>当 Type 为 MATERIAL 时填媒体 ID；</li>
 <li>当 Type 为 CLASS 时填写分类路径。</li>
                      */
@@ -186,14 +186,14 @@ namespace TencentCloud
                     bool ClassPathHasBeenSet() const;
 
                     /**
-                     * 获取操作者。填写用户的 Id，用于标识调用者及校验操作权限。
-                     * @return Operator 操作者。填写用户的 Id，用于标识调用者及校验操作权限。
+                     * 获取操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以创建任意源及目标资源的链接。如果指定操作者，则操作者必须对源资源有读权限，对目标媒体有写权限。
+                     * @return Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以创建任意源及目标资源的链接。如果指定操作者，则操作者必须对源资源有读权限，对目标媒体有写权限。
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置操作者。填写用户的 Id，用于标识调用者及校验操作权限。
-                     * @param Operator 操作者。填写用户的 Id，用于标识调用者及校验操作权限。
+                     * 设置操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以创建任意源及目标资源的链接。如果指定操作者，则操作者必须对源资源有读权限，对目标媒体有写权限。
+                     * @param Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以创建任意源及目标资源的链接。如果指定操作者，则操作者必须对源资源有读权限，对目标媒体有写权限。
                      */
                     void SetOperator(const std::string& _operator);
 
@@ -206,13 +206,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 平台名称，指定访问的平台。
+                     * 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     std::string m_platform;
                     bool m_platformHasBeenSet;
 
                     /**
-                     * 链接类型，取值有:
+                     * 链接类型，可取值有:
 <li>CLASS: 分类链接；</li>
 <li> MATERIAL：媒体文件链接。</li>
                      */
@@ -232,7 +232,7 @@ namespace TencentCloud
                     bool m_ownerHasBeenSet;
 
                     /**
-                     * 目标资源Id。取值：
+                     * 目标资源Id。可取值有：
 <li>当 Type 为 MATERIAL 时填媒体 ID；</li>
 <li>当 Type 为 CLASS 时填写分类路径。</li>
                      */
@@ -252,7 +252,7 @@ namespace TencentCloud
                     bool m_classPathHasBeenSet;
 
                     /**
-                     * 操作者。填写用户的 Id，用于标识调用者及校验操作权限。
+                     * 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以创建任意源及目标资源的链接。如果指定操作者，则操作者必须对源资源有读权限，对目标媒体有写权限。
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;

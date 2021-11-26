@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取平台名称，指定访问的平台。
-                     * @return Platform 平台名称，指定访问的平台。
+                     * 获取平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @return Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     std::string GetPlatform() const;
 
                     /**
-                     * 设置平台名称，指定访问的平台。
-                     * @param Platform 平台名称，指定访问的平台。
+                     * 设置平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @param Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     void SetPlatform(const std::string& _platform);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool PlatformHasBeenSet() const;
 
                     /**
-                     * 获取媒体 ID 列表，N 从 0 开始取值，最大 19。
-                     * @return MaterialIds 媒体 ID 列表，N 从 0 开始取值，最大 19。
+                     * 获取媒体 ID 列表，一次最多可拉取20个媒体的信息。
+                     * @return MaterialIds 媒体 ID 列表，一次最多可拉取20个媒体的信息。
                      */
                     std::vector<std::string> GetMaterialIds() const;
 
                     /**
-                     * 设置媒体 ID 列表，N 从 0 开始取值，最大 19。
-                     * @param MaterialIds 媒体 ID 列表，N 从 0 开始取值，最大 19。
+                     * 设置媒体 ID 列表，一次最多可拉取20个媒体的信息。
+                     * @param MaterialIds 媒体 ID 列表，一次最多可拉取20个媒体的信息。
                      */
                     void SetMaterialIds(const std::vector<std::string>& _materialIds);
 
@@ -106,14 +106,14 @@ namespace TencentCloud
                     bool SortHasBeenSet() const;
 
                     /**
-                     * 获取操作者。填写用户的 Id，用于标识调用者及校验媒体的访问权限。
-                     * @return Operator 操作者。填写用户的 Id，用于标识调用者及校验媒体的访问权限。
+                     * 获取操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以获取任意媒体的信息。如果指定操作者，则操作者必须对媒体有读权限。
+                     * @return Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以获取任意媒体的信息。如果指定操作者，则操作者必须对媒体有读权限。
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置操作者。填写用户的 Id，用于标识调用者及校验媒体的访问权限。
-                     * @param Operator 操作者。填写用户的 Id，用于标识调用者及校验媒体的访问权限。
+                     * 设置操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以获取任意媒体的信息。如果指定操作者，则操作者必须对媒体有读权限。
+                     * @param Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以获取任意媒体的信息。如果指定操作者，则操作者必须对媒体有读权限。
                      */
                     void SetOperator(const std::string& _operator);
 
@@ -126,13 +126,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 平台名称，指定访问的平台。
+                     * 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     std::string m_platform;
                     bool m_platformHasBeenSet;
 
                     /**
-                     * 媒体 ID 列表，N 从 0 开始取值，最大 19。
+                     * 媒体 ID 列表，一次最多可拉取20个媒体的信息。
                      */
                     std::vector<std::string> m_materialIds;
                     bool m_materialIdsHasBeenSet;
@@ -146,7 +146,7 @@ namespace TencentCloud
                     bool m_sortHasBeenSet;
 
                     /**
-                     * 操作者。填写用户的 Id，用于标识调用者及校验媒体的访问权限。
+                     * 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以获取任意媒体的信息。如果指定操作者，则操作者必须对媒体有读权限。
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;

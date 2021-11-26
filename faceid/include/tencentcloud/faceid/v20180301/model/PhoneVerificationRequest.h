@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool PhoneHasBeenSet() const;
 
                     /**
-                     * 获取有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅 <a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
-                     * @return CiphertextBlob 有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅 <a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
+                     * 获取有加密需求的用户，传入kms的CiphertextBlob，关于数据加密可查阅 <a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
+                     * @return CiphertextBlob 有加密需求的用户，传入kms的CiphertextBlob，关于数据加密可查阅 <a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
                      */
                     std::string GetCiphertextBlob() const;
 
                     /**
-                     * 设置有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅 <a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
-                     * @param CiphertextBlob 有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅 <a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
+                     * 设置有加密需求的用户，传入kms的CiphertextBlob，关于数据加密可查阅 <a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
+                     * @param CiphertextBlob 有加密需求的用户，传入kms的CiphertextBlob，关于数据加密可查阅 <a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
                      */
                     void SetCiphertextBlob(const std::string& _ciphertextBlob);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool CiphertextBlobHasBeenSet() const;
 
                     /**
-                     * 获取在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的IdCard，Name，Phone中的一个或多个
-                     * @return EncryptList 在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的IdCard，Name，Phone中的一个或多个
+                     * 获取在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的IdCard，Name，Phone中的一个或多个。
+                     * @return EncryptList 在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的IdCard，Name，Phone中的一个或多个。
                      */
                     std::vector<std::string> GetEncryptList() const;
 
                     /**
-                     * 设置在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的IdCard，Name，Phone中的一个或多个
-                     * @param EncryptList 在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的IdCard，Name，Phone中的一个或多个
+                     * 设置在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的IdCard，Name，Phone中的一个或多个。
+                     * @param EncryptList 在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的IdCard，Name，Phone中的一个或多个。
                      */
                     void SetEncryptList(const std::vector<std::string>& _encryptList);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool EncryptListHasBeenSet() const;
 
                     /**
-                     * 获取有加密需求的用户，传入CBC加密的初试向量
-                     * @return Iv 有加密需求的用户，传入CBC加密的初试向量
+                     * 获取有加密需求的用户，传入CBC加密的初始向量。
+                     * @return Iv 有加密需求的用户，传入CBC加密的初始向量。
                      */
                     std::string GetIv() const;
 
                     /**
-                     * 设置有加密需求的用户，传入CBC加密的初试向量
-                     * @param Iv 有加密需求的用户，传入CBC加密的初试向量
+                     * 设置有加密需求的用户，传入CBC加密的初始向量。
+                     * @param Iv 有加密需求的用户，传入CBC加密的初始向量。
                      */
                     void SetIv(const std::string& _iv);
 
@@ -171,19 +171,19 @@ namespace TencentCloud
                     bool m_phoneHasBeenSet;
 
                     /**
-                     * 有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅 <a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
+                     * 有加密需求的用户，传入kms的CiphertextBlob，关于数据加密可查阅 <a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
                      */
                     std::string m_ciphertextBlob;
                     bool m_ciphertextBlobHasBeenSet;
 
                     /**
-                     * 在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的IdCard，Name，Phone中的一个或多个
+                     * 在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的IdCard，Name，Phone中的一个或多个。
                      */
                     std::vector<std::string> m_encryptList;
                     bool m_encryptListHasBeenSet;
 
                     /**
-                     * 有加密需求的用户，传入CBC加密的初试向量
+                     * 有加密需求的用户，传入CBC加密的初始向量。
                      */
                     std::string m_iv;
                     bool m_ivHasBeenSet;

@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取平台名称，指定访问的平台。
-                     * @return Platform 平台名称，指定访问的平台。
+                     * 获取平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @return Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     std::string GetPlatform() const;
 
                     /**
-                     * 设置平台名称，指定访问的平台。
-                     * @param Platform 平台名称，指定访问的平台。
+                     * 设置平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @param Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     void SetPlatform(const std::string& _platform);
 
@@ -98,22 +98,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取画布宽高比，取值有：
-<li>16:9；</li>
-<li>9:16。</li>
-                     * @return AspectRatio 画布宽高比，取值有：
-<li>16:9；</li>
-<li>9:16。</li>
+                     * 获取画布宽高比，值为视频编辑项目画布宽与高的像素值的比值，如 16:9、9:16 等。
+                     * @return AspectRatio 画布宽高比，值为视频编辑项目画布宽与高的像素值的比值，如 16:9、9:16 等。
                      */
                     std::string GetAspectRatio() const;
 
                     /**
-                     * 设置画布宽高比，取值有：
-<li>16:9；</li>
-<li>9:16。</li>
-                     * @param AspectRatio 画布宽高比，取值有：
-<li>16:9；</li>
-<li>9:16。</li>
+                     * 设置画布宽高比，值为视频编辑项目画布宽与高的像素值的比值，如 16:9、9:16 等。
+                     * @param AspectRatio 画布宽高比，值为视频编辑项目画布宽与高的像素值的比值，如 16:9、9:16 等。
                      */
                     void SetAspectRatio(const std::string& _aspectRatio);
 
@@ -124,14 +116,14 @@ namespace TencentCloud
                     bool AspectRatioHasBeenSet() const;
 
                     /**
-                     * 获取项目归属者。
-                     * @return Owner 项目归属者。
+                     * 获取项目所有者。目前仅支持个人项目，不支持团队项目。
+                     * @return Owner 项目所有者。目前仅支持个人项目，不支持团队项目。
                      */
                     Entity GetOwner() const;
 
                     /**
-                     * 设置项目归属者。
-                     * @param Owner 项目归属者。
+                     * 设置项目所有者。目前仅支持个人项目，不支持团队项目。
+                     * @param Owner 项目所有者。目前仅支持个人项目，不支持团队项目。
                      */
                     void SetOwner(const Entity& _owner);
 
@@ -144,24 +136,24 @@ namespace TencentCloud
                     /**
                      * 获取项目模式，一个项目可以有多种模式并相互切换。
 当 Category 为 VIDEO_EDIT 时，可选模式有：
-<li>Defualt：默认模式。</li>
-<li>VideoEditTemplate：视频编辑模板制作模式。</li>
+<li>Default：默认模式，即普通视频编辑项目。</li>
+<li>VideoEditTemplate：剪辑模板制作模式，用于制作剪辑模板。</li>
                      * @return Mode 项目模式，一个项目可以有多种模式并相互切换。
 当 Category 为 VIDEO_EDIT 时，可选模式有：
-<li>Defualt：默认模式。</li>
-<li>VideoEditTemplate：视频编辑模板制作模式。</li>
+<li>Default：默认模式，即普通视频编辑项目。</li>
+<li>VideoEditTemplate：剪辑模板制作模式，用于制作剪辑模板。</li>
                      */
                     std::string GetMode() const;
 
                     /**
                      * 设置项目模式，一个项目可以有多种模式并相互切换。
 当 Category 为 VIDEO_EDIT 时，可选模式有：
-<li>Defualt：默认模式。</li>
-<li>VideoEditTemplate：视频编辑模板制作模式。</li>
+<li>Default：默认模式，即普通视频编辑项目。</li>
+<li>VideoEditTemplate：剪辑模板制作模式，用于制作剪辑模板。</li>
                      * @param Mode 项目模式，一个项目可以有多种模式并相互切换。
 当 Category 为 VIDEO_EDIT 时，可选模式有：
-<li>Defualt：默认模式。</li>
-<li>VideoEditTemplate：视频编辑模板制作模式。</li>
+<li>Default：默认模式，即普通视频编辑项目。</li>
+<li>VideoEditTemplate：剪辑模板制作模式，用于制作剪辑模板。</li>
                      */
                     void SetMode(const std::string& _mode);
 
@@ -174,7 +166,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 平台名称，指定访问的平台。
+                     * 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     std::string m_platform;
                     bool m_platformHasBeenSet;
@@ -192,15 +184,13 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 画布宽高比，取值有：
-<li>16:9；</li>
-<li>9:16。</li>
+                     * 画布宽高比，值为视频编辑项目画布宽与高的像素值的比值，如 16:9、9:16 等。
                      */
                     std::string m_aspectRatio;
                     bool m_aspectRatioHasBeenSet;
 
                     /**
-                     * 项目归属者。
+                     * 项目所有者。目前仅支持个人项目，不支持团队项目。
                      */
                     Entity m_owner;
                     bool m_ownerHasBeenSet;
@@ -208,8 +198,8 @@ namespace TencentCloud
                     /**
                      * 项目模式，一个项目可以有多种模式并相互切换。
 当 Category 为 VIDEO_EDIT 时，可选模式有：
-<li>Defualt：默认模式。</li>
-<li>VideoEditTemplate：视频编辑模板制作模式。</li>
+<li>Default：默认模式，即普通视频编辑项目。</li>
+<li>VideoEditTemplate：剪辑模板制作模式，用于制作剪辑模板。</li>
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取平台集合。
-                     * @return Platforms 平台集合。
+                     * 获取平台 Id 列表。如果不填，则不按平台 Id 进行过滤。
+                     * @return Platforms 平台 Id 列表。如果不填，则不按平台 Id 进行过滤。
                      */
                     std::vector<std::string> GetPlatforms() const;
 
                     /**
-                     * 设置平台集合。
-                     * @param Platforms 平台集合。
+                     * 设置平台 Id 列表。如果不填，则不按平台 Id 进行过滤。
+                     * @param Platforms 平台 Id 列表。如果不填，则不按平台 Id 进行过滤。
                      */
                     void SetPlatforms(const std::vector<std::string>& _platforms);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool PlatformsHasBeenSet() const;
 
                     /**
-                     * 获取平台绑定的 license Id 集合。
-                     * @return LicenseIds 平台绑定的 license Id 集合。
+                     * 获取平台绑定的 License Id 列表。如果不填，则不按平台绑定的 License Id 进行过滤。
+                     * @return LicenseIds 平台绑定的 License Id 列表。如果不填，则不按平台绑定的 License Id 进行过滤。
                      */
                     std::vector<std::string> GetLicenseIds() const;
 
                     /**
-                     * 设置平台绑定的 license Id 集合。
-                     * @param LicenseIds 平台绑定的 license Id 集合。
+                     * 设置平台绑定的 License Id 列表。如果不填，则不按平台绑定的 License Id 进行过滤。
+                     * @param LicenseIds 平台绑定的 License Id 列表。如果不填，则不按平台绑定的 License Id 进行过滤。
                      */
                     void SetLicenseIds(const std::vector<std::string>& _licenseIds);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页返回的记录条数，默认值：10。
-                     * @return Limit 分页返回的记录条数，默认值：10。
+                     * 获取分页返回的记录条数，默认值：10，最大值：20。
+                     * @return Limit 分页返回的记录条数，默认值：10，最大值：20。
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置分页返回的记录条数，默认值：10。
-                     * @param Limit 分页返回的记录条数，默认值：10。
+                     * 设置分页返回的记录条数，默认值：10，最大值：20。
+                     * @param Limit 分页返回的记录条数，默认值：10，最大值：20。
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -117,13 +117,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 平台集合。
+                     * 平台 Id 列表。如果不填，则不按平台 Id 进行过滤。
                      */
                     std::vector<std::string> m_platforms;
                     bool m_platformsHasBeenSet;
 
                     /**
-                     * 平台绑定的 license Id 集合。
+                     * 平台绑定的 License Id 列表。如果不填，则不按平台绑定的 License Id 进行过滤。
                      */
                     std::vector<std::string> m_licenseIds;
                     bool m_licenseIdsHasBeenSet;
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页返回的记录条数，默认值：10。
+                     * 分页返回的记录条数，默认值：10，最大值：20。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

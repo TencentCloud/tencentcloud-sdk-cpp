@@ -46,14 +46,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取平台名称，指定访问的平台。
-                     * @return Platform 平台名称，指定访问的平台。
+                     * 获取平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @return Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     std::string GetPlatform() const;
 
                     /**
-                     * 设置平台名称，指定访问的平台。
-                     * @param Platform 平台名称，指定访问的平台。
+                     * 设置平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @param Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     void SetPlatform(const std::string& _platform);
 
@@ -82,11 +82,11 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取导出模板 Id，目前不支持自定义创建，只支持下面的预置模板 Id。
+                     * 获取导出视频预设配置 Id，推荐优先使用下面的默认预设配置 Id，有其他需求可通过接口定制预设配置。
 <li>10：分辨率为 480P，输出视频格式为 MP4；</li>
 <li>11：分辨率为 720P，输出视频格式为 MP4；</li>
 <li>12：分辨率为 1080P，输出视频格式为 MP4。</li>
-                     * @return Definition 导出模板 Id，目前不支持自定义创建，只支持下面的预置模板 Id。
+                     * @return Definition 导出视频预设配置 Id，推荐优先使用下面的默认预设配置 Id，有其他需求可通过接口定制预设配置。
 <li>10：分辨率为 480P，输出视频格式为 MP4；</li>
 <li>11：分辨率为 720P，输出视频格式为 MP4；</li>
 <li>12：分辨率为 1080P，输出视频格式为 MP4。</li>
@@ -94,11 +94,11 @@ namespace TencentCloud
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置导出模板 Id，目前不支持自定义创建，只支持下面的预置模板 Id。
+                     * 设置导出视频预设配置 Id，推荐优先使用下面的默认预设配置 Id，有其他需求可通过接口定制预设配置。
 <li>10：分辨率为 480P，输出视频格式为 MP4；</li>
 <li>11：分辨率为 720P，输出视频格式为 MP4；</li>
 <li>12：分辨率为 1080P，输出视频格式为 MP4。</li>
-                     * @param Definition 导出模板 Id，目前不支持自定义创建，只支持下面的预置模板 Id。
+                     * @param Definition 导出视频预设配置 Id，推荐优先使用下面的默认预设配置 Id，有其他需求可通过接口定制预设配置。
 <li>10：分辨率为 480P，输出视频格式为 MP4；</li>
 <li>11：分辨率为 720P，输出视频格式为 MP4；</li>
 <li>12：分辨率为 1080P，输出视频格式为 MP4。</li>
@@ -112,22 +112,22 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取导出目标，可取值为：
-<li>CME：云剪，即导出为云剪媒体；</li>
-<li>VOD：云点播，即导出为云点播媒资。</li>
-                     * @return ExportDestination 导出目标，可取值为：
-<li>CME：云剪，即导出为云剪媒体；</li>
-<li>VOD：云点播，即导出为云点播媒资。</li>
+                     * 获取导出目标，指定导出视频的目标媒资库，可取值有：
+<li>CME：云剪，即导出为云剪媒资库，此导出目标在云点播媒资库依然可见；</li>
+<li>VOD：云点播，即导出为云点播媒资库，此导出目标在云剪媒资库将不可见。</li>
+                     * @return ExportDestination 导出目标，指定导出视频的目标媒资库，可取值有：
+<li>CME：云剪，即导出为云剪媒资库，此导出目标在云点播媒资库依然可见；</li>
+<li>VOD：云点播，即导出为云点播媒资库，此导出目标在云剪媒资库将不可见。</li>
                      */
                     std::string GetExportDestination() const;
 
                     /**
-                     * 设置导出目标，可取值为：
-<li>CME：云剪，即导出为云剪媒体；</li>
-<li>VOD：云点播，即导出为云点播媒资。</li>
-                     * @param ExportDestination 导出目标，可取值为：
-<li>CME：云剪，即导出为云剪媒体；</li>
-<li>VOD：云点播，即导出为云点播媒资。</li>
+                     * 设置导出目标，指定导出视频的目标媒资库，可取值有：
+<li>CME：云剪，即导出为云剪媒资库，此导出目标在云点播媒资库依然可见；</li>
+<li>VOD：云点播，即导出为云点播媒资库，此导出目标在云剪媒资库将不可见。</li>
+                     * @param ExportDestination 导出目标，指定导出视频的目标媒资库，可取值有：
+<li>CME：云剪，即导出为云剪媒资库，此导出目标在云点播媒资库依然可见；</li>
+<li>VOD：云点播，即导出为云点播媒资库，此导出目标在云剪媒资库将不可见。</li>
                      */
                     void SetExportDestination(const std::string& _exportDestination);
 
@@ -156,14 +156,14 @@ namespace TencentCloud
                     bool SlotReplacementsHasBeenSet() const;
 
                     /**
-                     * 获取导出的云剪媒体信息。当导出目标为 CME 时必填。
-                     * @return CMEExportInfo 导出的云剪媒体信息。当导出目标为 CME 时必填。
+                     * 获取导出的云剪媒资信息。当导出目标为 CME 时必填。
+                     * @return CMEExportInfo 导出的云剪媒资信息。当导出目标为 CME 时必填。
                      */
                     CMEExportInfo GetCMEExportInfo() const;
 
                     /**
-                     * 设置导出的云剪媒体信息。当导出目标为 CME 时必填。
-                     * @param CMEExportInfo 导出的云剪媒体信息。当导出目标为 CME 时必填。
+                     * 设置导出的云剪媒资信息。当导出目标为 CME 时必填。
+                     * @param CMEExportInfo 导出的云剪媒资信息。当导出目标为 CME 时必填。
                      */
                     void SetCMEExportInfo(const CMEExportInfo& _cMEExportInfo);
 
@@ -192,14 +192,14 @@ namespace TencentCloud
                     bool VODExportInfoHasBeenSet() const;
 
                     /**
-                     * 获取操作者。填写用户的 Id，用于标识调用者及校验项目导出权限。
-                     * @return Operator 操作者。填写用户的 Id，用于标识调用者及校验项目导出权限。
+                     * 获取操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，无权限限制。如果指定操作者，则操作者需要有替换媒体及剪辑模板的权限。
+                     * @return Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，无权限限制。如果指定操作者，则操作者需要有替换媒体及剪辑模板的权限。
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置操作者。填写用户的 Id，用于标识调用者及校验项目导出权限。
-                     * @param Operator 操作者。填写用户的 Id，用于标识调用者及校验项目导出权限。
+                     * 设置操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，无权限限制。如果指定操作者，则操作者需要有替换媒体及剪辑模板的权限。
+                     * @param Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，无权限限制。如果指定操作者，则操作者需要有替换媒体及剪辑模板的权限。
                      */
                     void SetOperator(const std::string& _operator);
 
@@ -212,7 +212,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 平台名称，指定访问的平台。
+                     * 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     std::string m_platform;
                     bool m_platformHasBeenSet;
@@ -224,7 +224,7 @@ namespace TencentCloud
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 导出模板 Id，目前不支持自定义创建，只支持下面的预置模板 Id。
+                     * 导出视频预设配置 Id，推荐优先使用下面的默认预设配置 Id，有其他需求可通过接口定制预设配置。
 <li>10：分辨率为 480P，输出视频格式为 MP4；</li>
 <li>11：分辨率为 720P，输出视频格式为 MP4；</li>
 <li>12：分辨率为 1080P，输出视频格式为 MP4。</li>
@@ -233,9 +233,9 @@ namespace TencentCloud
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * 导出目标，可取值为：
-<li>CME：云剪，即导出为云剪媒体；</li>
-<li>VOD：云点播，即导出为云点播媒资。</li>
+                     * 导出目标，指定导出视频的目标媒资库，可取值有：
+<li>CME：云剪，即导出为云剪媒资库，此导出目标在云点播媒资库依然可见；</li>
+<li>VOD：云点播，即导出为云点播媒资库，此导出目标在云剪媒资库将不可见。</li>
                      */
                     std::string m_exportDestination;
                     bool m_exportDestinationHasBeenSet;
@@ -247,7 +247,7 @@ namespace TencentCloud
                     bool m_slotReplacementsHasBeenSet;
 
                     /**
-                     * 导出的云剪媒体信息。当导出目标为 CME 时必填。
+                     * 导出的云剪媒资信息。当导出目标为 CME 时必填。
                      */
                     CMEExportInfo m_cMEExportInfo;
                     bool m_cMEExportInfoHasBeenSet;
@@ -259,7 +259,7 @@ namespace TencentCloud
                     bool m_vODExportInfoHasBeenSet;
 
                     /**
-                     * 操作者。填写用户的 Id，用于标识调用者及校验项目导出权限。
+                     * 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，无权限限制。如果指定操作者，则操作者需要有替换媒体及剪辑模板的权限。
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;

@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取平台名称，指定访问的平台。
-                     * @return Platform 平台名称，指定访问的平台。
+                     * 获取平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @return Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     std::string GetPlatform() const;
 
                     /**
-                     * 设置平台名称，指定访问的平台。
-                     * @param Platform 平台名称，指定访问的平台。
+                     * 设置平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @param Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     void SetPlatform(const std::string& _platform);
 
@@ -63,14 +63,14 @@ namespace TencentCloud
                     bool PlatformHasBeenSet() const;
 
                     /**
-                     * 获取项目 Id 列表，N 从 0 开始取值，最大 19。
-                     * @return ProjectIds 项目 Id 列表，N 从 0 开始取值，最大 19。
+                     * 获取项目 Id 过滤参数列表，最大支持20个项目 Id 过滤。如果不填不需要项目 Id 进行过滤。
+                     * @return ProjectIds 项目 Id 过滤参数列表，最大支持20个项目 Id 过滤。如果不填不需要项目 Id 进行过滤。
                      */
                     std::vector<std::string> GetProjectIds() const;
 
                     /**
-                     * 设置项目 Id 列表，N 从 0 开始取值，最大 19。
-                     * @param ProjectIds 项目 Id 列表，N 从 0 开始取值，最大 19。
+                     * 设置项目 Id 过滤参数列表，最大支持20个项目 Id 过滤。如果不填不需要项目 Id 进行过滤。
+                     * @param ProjectIds 项目 Id 过滤参数列表，最大支持20个项目 Id 过滤。如果不填不需要项目 Id 进行过滤。
                      */
                     void SetProjectIds(const std::vector<std::string>& _projectIds);
 
@@ -81,14 +81,14 @@ namespace TencentCloud
                     bool ProjectIdsHasBeenSet() const;
 
                     /**
-                     * 获取画布宽高比集合。
-                     * @return AspectRatioSet 画布宽高比集合。
+                     * 获取画布宽高比过滤参数列表。如果不填则不用画布宽高比进行过滤。
+                     * @return AspectRatioSet 画布宽高比过滤参数列表。如果不填则不用画布宽高比进行过滤。
                      */
                     std::vector<std::string> GetAspectRatioSet() const;
 
                     /**
-                     * 设置画布宽高比集合。
-                     * @param AspectRatioSet 画布宽高比集合。
+                     * 设置画布宽高比过滤参数列表。如果不填则不用画布宽高比进行过滤。
+                     * @param AspectRatioSet 画布宽高比过滤参数列表。如果不填则不用画布宽高比进行过滤。
                      */
                     void SetAspectRatioSet(const std::vector<std::string>& _aspectRatioSet);
 
@@ -99,34 +99,42 @@ namespace TencentCloud
                     bool AspectRatioSetHasBeenSet() const;
 
                     /**
-                     * 获取项目类别，取值有：
+                     * 获取项目类型过滤参数列表，取值有：
 <li>VIDEO_EDIT：视频编辑。</li>
 <li>SWITCHER：导播台。</li>
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
 <li>STREAM_CONNECT：云转推。</li>
 <li>RECORD_REPLAY：录制回放。</li>
-                     * @return CategorySet 项目类别，取值有：
+
+注：如果不填则不使用项目类型进行过滤。
+                     * @return CategorySet 项目类型过滤参数列表，取值有：
 <li>VIDEO_EDIT：视频编辑。</li>
 <li>SWITCHER：导播台。</li>
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
 <li>STREAM_CONNECT：云转推。</li>
 <li>RECORD_REPLAY：录制回放。</li>
+
+注：如果不填则不使用项目类型进行过滤。
                      */
                     std::vector<std::string> GetCategorySet() const;
 
                     /**
-                     * 设置项目类别，取值有：
+                     * 设置项目类型过滤参数列表，取值有：
 <li>VIDEO_EDIT：视频编辑。</li>
 <li>SWITCHER：导播台。</li>
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
 <li>STREAM_CONNECT：云转推。</li>
 <li>RECORD_REPLAY：录制回放。</li>
-                     * @param CategorySet 项目类别，取值有：
+
+注：如果不填则不使用项目类型进行过滤。
+                     * @param CategorySet 项目类型过滤参数列表，取值有：
 <li>VIDEO_EDIT：视频编辑。</li>
 <li>SWITCHER：导播台。</li>
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
 <li>STREAM_CONNECT：云转推。</li>
 <li>RECORD_REPLAY：录制回放。</li>
+
+注：如果不填则不使用项目类型进行过滤。
                      */
                     void SetCategorySet(const std::vector<std::string>& _categorySet);
 
@@ -137,26 +145,34 @@ namespace TencentCloud
                     bool CategorySetHasBeenSet() const;
 
                     /**
-                     * 获取项目模式，一个项目可以有多种模式并相互切换。
+                     * 获取项目模式过滤参数列表，一个项目可以有多种模式并相互切换。
 当 Category 为 VIDEO_EDIT 时，可选模式有：
 <li>Default：默认模式。</li>
 <li>VideoEditTemplate：视频编辑模板制作模式。</li>
-                     * @return Modes 项目模式，一个项目可以有多种模式并相互切换。
+
+注：不填不使用项目模式进行过滤。
+                     * @return Modes 项目模式过滤参数列表，一个项目可以有多种模式并相互切换。
 当 Category 为 VIDEO_EDIT 时，可选模式有：
 <li>Default：默认模式。</li>
 <li>VideoEditTemplate：视频编辑模板制作模式。</li>
+
+注：不填不使用项目模式进行过滤。
                      */
                     std::vector<std::string> GetModes() const;
 
                     /**
-                     * 设置项目模式，一个项目可以有多种模式并相互切换。
+                     * 设置项目模式过滤参数列表，一个项目可以有多种模式并相互切换。
 当 Category 为 VIDEO_EDIT 时，可选模式有：
 <li>Default：默认模式。</li>
 <li>VideoEditTemplate：视频编辑模板制作模式。</li>
-                     * @param Modes 项目模式，一个项目可以有多种模式并相互切换。
+
+注：不填不使用项目模式进行过滤。
+                     * @param Modes 项目模式过滤参数列表，一个项目可以有多种模式并相互切换。
 当 Category 为 VIDEO_EDIT 时，可选模式有：
 <li>Default：默认模式。</li>
 <li>VideoEditTemplate：视频编辑模板制作模式。</li>
+
+注：不填不使用项目模式进行过滤。
                      */
                     void SetModes(const std::vector<std::string>& _modes);
 
@@ -167,22 +183,30 @@ namespace TencentCloud
                     bool ModesHasBeenSet() const;
 
                     /**
-                     * 获取列表排序，支持下列排序字段：
+                     * 获取结果排序方式，支持下列排序字段：
 <li>CreateTime：创建时间；</li>
 <li>UpdateTime：更新时间。</li>
-                     * @return Sort 列表排序，支持下列排序字段：
+
+注：如不填，则使用项目创建时间倒序排列。
+                     * @return Sort 结果排序方式，支持下列排序字段：
 <li>CreateTime：创建时间；</li>
 <li>UpdateTime：更新时间。</li>
+
+注：如不填，则使用项目创建时间倒序排列。
                      */
                     SortBy GetSort() const;
 
                     /**
-                     * 设置列表排序，支持下列排序字段：
+                     * 设置结果排序方式，支持下列排序字段：
 <li>CreateTime：创建时间；</li>
 <li>UpdateTime：更新时间。</li>
-                     * @param Sort 列表排序，支持下列排序字段：
+
+注：如不填，则使用项目创建时间倒序排列。
+                     * @param Sort 结果排序方式，支持下列排序字段：
 <li>CreateTime：创建时间；</li>
 <li>UpdateTime：更新时间。</li>
+
+注：如不填，则使用项目创建时间倒序排列。
                      */
                     void SetSort(const SortBy& _sort);
 
@@ -193,14 +217,14 @@ namespace TencentCloud
                     bool SortHasBeenSet() const;
 
                     /**
-                     * 获取项目归属者。
-                     * @return Owner 项目归属者。
+                     * 获取项目所有者，目前仅支持个人项目过滤。
+                     * @return Owner 项目所有者，目前仅支持个人项目过滤。
                      */
                     Entity GetOwner() const;
 
                     /**
-                     * 设置项目归属者。
-                     * @param Owner 项目归属者。
+                     * 设置项目所有者，目前仅支持个人项目过滤。
+                     * @param Owner 项目所有者，目前仅支持个人项目过滤。
                      */
                     void SetOwner(const Entity& _owner);
 
@@ -247,14 +271,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取操作者。填写用户的 Id，用于标识调用者及校验项目访问权限。
-                     * @return Operator 操作者。填写用户的 Id，用于标识调用者及校验项目访问权限。
+                     * 获取操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以查询一切用户项目信息。如果指定操作者，则操作者必须为项目所有者。
+                     * @return Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以查询一切用户项目信息。如果指定操作者，则操作者必须为项目所有者。
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置操作者。填写用户的 Id，用于标识调用者及校验项目访问权限。
-                     * @param Operator 操作者。填写用户的 Id，用于标识调用者及校验项目访问权限。
+                     * 设置操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以查询一切用户项目信息。如果指定操作者，则操作者必须为项目所有者。
+                     * @param Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以查询一切用户项目信息。如果指定操作者，则操作者必须为项目所有者。
                      */
                     void SetOperator(const std::string& _operator);
 
@@ -267,53 +291,59 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 平台名称，指定访问的平台。
+                     * 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     std::string m_platform;
                     bool m_platformHasBeenSet;
 
                     /**
-                     * 项目 Id 列表，N 从 0 开始取值，最大 19。
+                     * 项目 Id 过滤参数列表，最大支持20个项目 Id 过滤。如果不填不需要项目 Id 进行过滤。
                      */
                     std::vector<std::string> m_projectIds;
                     bool m_projectIdsHasBeenSet;
 
                     /**
-                     * 画布宽高比集合。
+                     * 画布宽高比过滤参数列表。如果不填则不用画布宽高比进行过滤。
                      */
                     std::vector<std::string> m_aspectRatioSet;
                     bool m_aspectRatioSetHasBeenSet;
 
                     /**
-                     * 项目类别，取值有：
+                     * 项目类型过滤参数列表，取值有：
 <li>VIDEO_EDIT：视频编辑。</li>
 <li>SWITCHER：导播台。</li>
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
 <li>STREAM_CONNECT：云转推。</li>
 <li>RECORD_REPLAY：录制回放。</li>
+
+注：如果不填则不使用项目类型进行过滤。
                      */
                     std::vector<std::string> m_categorySet;
                     bool m_categorySetHasBeenSet;
 
                     /**
-                     * 项目模式，一个项目可以有多种模式并相互切换。
+                     * 项目模式过滤参数列表，一个项目可以有多种模式并相互切换。
 当 Category 为 VIDEO_EDIT 时，可选模式有：
 <li>Default：默认模式。</li>
 <li>VideoEditTemplate：视频编辑模板制作模式。</li>
+
+注：不填不使用项目模式进行过滤。
                      */
                     std::vector<std::string> m_modes;
                     bool m_modesHasBeenSet;
 
                     /**
-                     * 列表排序，支持下列排序字段：
+                     * 结果排序方式，支持下列排序字段：
 <li>CreateTime：创建时间；</li>
 <li>UpdateTime：更新时间。</li>
+
+注：如不填，则使用项目创建时间倒序排列。
                      */
                     SortBy m_sort;
                     bool m_sortHasBeenSet;
 
                     /**
-                     * 项目归属者。
+                     * 项目所有者，目前仅支持个人项目过滤。
                      */
                     Entity m_owner;
                     bool m_ownerHasBeenSet;
@@ -331,7 +361,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 操作者。填写用户的 Id，用于标识调用者及校验项目访问权限。
+                     * 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以查询一切用户项目信息。如果指定操作者，则操作者必须为项目所有者。
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;

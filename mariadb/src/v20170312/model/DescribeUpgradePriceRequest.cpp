@@ -25,7 +25,8 @@ using namespace std;
 DescribeUpgradePriceRequest::DescribeUpgradePriceRequest() :
     m_instanceIdHasBeenSet(false),
     m_memoryHasBeenSet(false),
-    m_storageHasBeenSet(false)
+    m_storageHasBeenSet(false),
+    m_nodeCountHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeUpgradePriceRequest::ToJsonString() const
         string key = "Storage";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_storage, allocator);
+    }
+
+    if (m_nodeCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_nodeCount, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeUpgradePriceRequest::SetStorage(const int64_t& _storage)
 bool DescribeUpgradePriceRequest::StorageHasBeenSet() const
 {
     return m_storageHasBeenSet;
+}
+
+int64_t DescribeUpgradePriceRequest::GetNodeCount() const
+{
+    return m_nodeCount;
+}
+
+void DescribeUpgradePriceRequest::SetNodeCount(const int64_t& _nodeCount)
+{
+    m_nodeCount = _nodeCount;
+    m_nodeCountHasBeenSet = true;
+}
+
+bool DescribeUpgradePriceRequest::NodeCountHasBeenSet() const
+{
+    return m_nodeCountHasBeenSet;
 }
 
 

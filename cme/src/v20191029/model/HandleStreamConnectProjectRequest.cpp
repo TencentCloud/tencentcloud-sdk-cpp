@@ -29,7 +29,8 @@ HandleStreamConnectProjectRequest::HandleStreamConnectProjectRequest() :
     m_inputInfoHasBeenSet(false),
     m_inputEndpointHasBeenSet(false),
     m_outputInfoHasBeenSet(false),
-    m_currentStopTimeHasBeenSet(false)
+    m_currentStopTimeHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,14 @@ string HandleStreamConnectProjectRequest::ToJsonString() const
         string key = "CurrentStopTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_currentStopTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_operator.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -216,6 +225,22 @@ void HandleStreamConnectProjectRequest::SetCurrentStopTime(const string& _curren
 bool HandleStreamConnectProjectRequest::CurrentStopTimeHasBeenSet() const
 {
     return m_currentStopTimeHasBeenSet;
+}
+
+string HandleStreamConnectProjectRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void HandleStreamConnectProjectRequest::SetOperator(const string& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool HandleStreamConnectProjectRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 

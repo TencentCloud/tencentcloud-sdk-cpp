@@ -302,6 +302,42 @@ drop：拒绝
                      */
                     bool ServiceTemplateIdHasBeenSet() const;
 
+                    /**
+                     * 获取规则对应的唯一id
+                     * @return Id 规则对应的唯一id
+                     */
+                    std::string GetId() const;
+
+                    /**
+                     * 设置规则对应的唯一id
+                     * @param Id 规则对应的唯一id
+                     */
+                    void SetId(const std::string& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     */
+                    bool IdHasBeenSet() const;
+
+                    /**
+                     * 获取规则状态，true表示启用，false表示禁用
+                     * @return Enable 规则状态，true表示启用，false表示禁用
+                     */
+                    std::string GetEnable() const;
+
+                    /**
+                     * 设置规则状态，true表示启用，false表示禁用
+                     * @param Enable 规则状态，true表示启用，false表示禁用
+                     */
+                    void SetEnable(const std::string& _enable);
+
+                    /**
+                     * 判断参数 Enable 是否已赋值
+                     * @return Enable 是否已赋值
+                     */
+                    bool EnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -382,6 +418,18 @@ drop：拒绝
                      */
                     std::string m_serviceTemplateId;
                     bool m_serviceTemplateIdHasBeenSet;
+
+                    /**
+                     * 规则对应的唯一id
+                     */
+                    std::string m_id;
+                    bool m_idHasBeenSet;
+
+                    /**
+                     * 规则状态，true表示启用，false表示禁用
+                     */
+                    std::string m_enable;
+                    bool m_enableHasBeenSet;
 
                 };
             }

@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取平台名称，指定访问的平台。
-                     * @return Platform 平台名称，指定访问的平台。
+                     * 获取平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @return Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     std::string GetPlatform() const;
 
                     /**
-                     * 设置平台名称，指定访问的平台。
-                     * @param Platform 平台名称，指定访问的平台。
+                     * 设置平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @param Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     void SetPlatform(const std::string& _platform);
 
@@ -63,11 +63,11 @@ namespace TencentCloud
                     bool PlatformHasBeenSet() const;
 
                     /**
-                     * 获取导出视频编码配置 Id，推荐优先使用下面的预置模板 Id，有其他需求可通过接口定制视频编码配置。
+                     * 获取导出视频预设配置 Id，推荐优先使用下面的默认预设配置 Id，有其他需求可通过接口定制预设配置。
 <li>10：分辨率为 480P，输出视频格式为 MP4；</li>
 <li>11：分辨率为 720P，输出视频格式为 MP4；</li>
 <li>12：分辨率为 1080P，输出视频格式为 MP4。</li>
-                     * @return Definition 导出视频编码配置 Id，推荐优先使用下面的预置模板 Id，有其他需求可通过接口定制视频编码配置。
+                     * @return Definition 导出视频预设配置 Id，推荐优先使用下面的默认预设配置 Id，有其他需求可通过接口定制预设配置。
 <li>10：分辨率为 480P，输出视频格式为 MP4；</li>
 <li>11：分辨率为 720P，输出视频格式为 MP4；</li>
 <li>12：分辨率为 1080P，输出视频格式为 MP4。</li>
@@ -75,11 +75,11 @@ namespace TencentCloud
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置导出视频编码配置 Id，推荐优先使用下面的预置模板 Id，有其他需求可通过接口定制视频编码配置。
+                     * 设置导出视频预设配置 Id，推荐优先使用下面的默认预设配置 Id，有其他需求可通过接口定制预设配置。
 <li>10：分辨率为 480P，输出视频格式为 MP4；</li>
 <li>11：分辨率为 720P，输出视频格式为 MP4；</li>
 <li>12：分辨率为 1080P，输出视频格式为 MP4。</li>
-                     * @param Definition 导出视频编码配置 Id，推荐优先使用下面的预置模板 Id，有其他需求可通过接口定制视频编码配置。
+                     * @param Definition 导出视频预设配置 Id，推荐优先使用下面的默认预设配置 Id，有其他需求可通过接口定制预设配置。
 <li>10：分辨率为 480P，输出视频格式为 MP4；</li>
 <li>11：分辨率为 720P，输出视频格式为 MP4；</li>
 <li>12：分辨率为 1080P，输出视频格式为 MP4。</li>
@@ -93,22 +93,22 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取导出目标。
-<li>CME：云剪，即导出为云剪素材；</li>
-<li>VOD：云点播，即导出为云点播媒资。</li>
-                     * @return ExportDestination 导出目标。
-<li>CME：云剪，即导出为云剪素材；</li>
-<li>VOD：云点播，即导出为云点播媒资。</li>
+                     * 获取导出目标，指定导出视频的目标媒资库，可取值有：
+<li>CME：云剪，即导出为云剪媒资库，此导出目标在云点播媒资库依然可见；</li>
+<li>VOD：云点播，即导出为云点播媒资库，此导出目标在云剪媒资库将不可见。</li>
+                     * @return ExportDestination 导出目标，指定导出视频的目标媒资库，可取值有：
+<li>CME：云剪，即导出为云剪媒资库，此导出目标在云点播媒资库依然可见；</li>
+<li>VOD：云点播，即导出为云点播媒资库，此导出目标在云剪媒资库将不可见。</li>
                      */
                     std::string GetExportDestination() const;
 
                     /**
-                     * 设置导出目标。
-<li>CME：云剪，即导出为云剪素材；</li>
-<li>VOD：云点播，即导出为云点播媒资。</li>
-                     * @param ExportDestination 导出目标。
-<li>CME：云剪，即导出为云剪素材；</li>
-<li>VOD：云点播，即导出为云点播媒资。</li>
+                     * 设置导出目标，指定导出视频的目标媒资库，可取值有：
+<li>CME：云剪，即导出为云剪媒资库，此导出目标在云点播媒资库依然可见；</li>
+<li>VOD：云点播，即导出为云点播媒资库，此导出目标在云剪媒资库将不可见。</li>
+                     * @param ExportDestination 导出目标，指定导出视频的目标媒资库，可取值有：
+<li>CME：云剪，即导出为云剪媒资库，此导出目标在云点播媒资库依然可见；</li>
+<li>VOD：云点播，即导出为云点播媒资库，此导出目标在云剪媒资库将不可见。</li>
                      */
                     void SetExportDestination(const std::string& _exportDestination);
 
@@ -137,22 +137,22 @@ namespace TencentCloud
                     bool TrackDataHasBeenSet() const;
 
                     /**
-                     * 获取轨道数据对应的画布宽高比，配合视频编码配置中的视频短边尺寸，可决定导出画面的尺寸。例：
-<li>如果 AspectRatio 取值 16:9，视频编码配置选为12（短边1080），则导出尺寸为 1920 * 1080；</li>
-<li>如果 AspectRatio 取值 9:16，视频编码配置选为11（短边720），则导出尺寸为 720 *1280。</li>
-                     * @return AspectRatio 轨道数据对应的画布宽高比，配合视频编码配置中的视频短边尺寸，可决定导出画面的尺寸。例：
-<li>如果 AspectRatio 取值 16:9，视频编码配置选为12（短边1080），则导出尺寸为 1920 * 1080；</li>
-<li>如果 AspectRatio 取值 9:16，视频编码配置选为11（短边720），则导出尺寸为 720 *1280。</li>
+                     * 获取轨道数据对应的画布宽高比，配合预设配置中的视频短边尺寸，可决定导出画面的尺寸。例：
+<li>如果 AspectRatio 取值 16:9，预设配置选为12（短边1080），则导出尺寸为 1920 * 1080；</li>
+<li>如果 AspectRatio 取值 9:16，预设配置选为11（短边720），则导出尺寸为 720 *1280。</li>
+                     * @return AspectRatio 轨道数据对应的画布宽高比，配合预设配置中的视频短边尺寸，可决定导出画面的尺寸。例：
+<li>如果 AspectRatio 取值 16:9，预设配置选为12（短边1080），则导出尺寸为 1920 * 1080；</li>
+<li>如果 AspectRatio 取值 9:16，预设配置选为11（短边720），则导出尺寸为 720 *1280。</li>
                      */
                     std::string GetAspectRatio() const;
 
                     /**
-                     * 设置轨道数据对应的画布宽高比，配合视频编码配置中的视频短边尺寸，可决定导出画面的尺寸。例：
-<li>如果 AspectRatio 取值 16:9，视频编码配置选为12（短边1080），则导出尺寸为 1920 * 1080；</li>
-<li>如果 AspectRatio 取值 9:16，视频编码配置选为11（短边720），则导出尺寸为 720 *1280。</li>
-                     * @param AspectRatio 轨道数据对应的画布宽高比，配合视频编码配置中的视频短边尺寸，可决定导出画面的尺寸。例：
-<li>如果 AspectRatio 取值 16:9，视频编码配置选为12（短边1080），则导出尺寸为 1920 * 1080；</li>
-<li>如果 AspectRatio 取值 9:16，视频编码配置选为11（短边720），则导出尺寸为 720 *1280。</li>
+                     * 设置轨道数据对应的画布宽高比，配合预设配置中的视频短边尺寸，可决定导出画面的尺寸。例：
+<li>如果 AspectRatio 取值 16:9，预设配置选为12（短边1080），则导出尺寸为 1920 * 1080；</li>
+<li>如果 AspectRatio 取值 9:16，预设配置选为11（短边720），则导出尺寸为 720 *1280。</li>
+                     * @param AspectRatio 轨道数据对应的画布宽高比，配合预设配置中的视频短边尺寸，可决定导出画面的尺寸。例：
+<li>如果 AspectRatio 取值 16:9，预设配置选为12（短边1080），则导出尺寸为 1920 * 1080；</li>
+<li>如果 AspectRatio 取值 9:16，预设配置选为11（短边720），则导出尺寸为 720 *1280。</li>
                      */
                     void SetAspectRatio(const std::string& _aspectRatio);
 
@@ -217,14 +217,14 @@ namespace TencentCloud
                     bool VODExportInfoHasBeenSet() const;
 
                     /**
-                     * 获取操作者。填写用户的 Id，用于标识调用者及校验导出操作权限。
-                     * @return Operator 操作者。填写用户的 Id，用于标识调用者及校验导出操作权限。
+                     * 获取操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，无权限限制。如果指定操作者，轨道数据中使的媒资该操作者需要拥有使用权限。
+                     * @return Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，无权限限制。如果指定操作者，轨道数据中使的媒资该操作者需要拥有使用权限。
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置操作者。填写用户的 Id，用于标识调用者及校验导出操作权限。
-                     * @param Operator 操作者。填写用户的 Id，用于标识调用者及校验导出操作权限。
+                     * 设置操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，无权限限制。如果指定操作者，轨道数据中使的媒资该操作者需要拥有使用权限。
+                     * @param Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，无权限限制。如果指定操作者，轨道数据中使的媒资该操作者需要拥有使用权限。
                      */
                     void SetOperator(const std::string& _operator);
 
@@ -237,13 +237,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 平台名称，指定访问的平台。
+                     * 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     std::string m_platform;
                     bool m_platformHasBeenSet;
 
                     /**
-                     * 导出视频编码配置 Id，推荐优先使用下面的预置模板 Id，有其他需求可通过接口定制视频编码配置。
+                     * 导出视频预设配置 Id，推荐优先使用下面的默认预设配置 Id，有其他需求可通过接口定制预设配置。
 <li>10：分辨率为 480P，输出视频格式为 MP4；</li>
 <li>11：分辨率为 720P，输出视频格式为 MP4；</li>
 <li>12：分辨率为 1080P，输出视频格式为 MP4。</li>
@@ -252,9 +252,9 @@ namespace TencentCloud
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * 导出目标。
-<li>CME：云剪，即导出为云剪素材；</li>
-<li>VOD：云点播，即导出为云点播媒资。</li>
+                     * 导出目标，指定导出视频的目标媒资库，可取值有：
+<li>CME：云剪，即导出为云剪媒资库，此导出目标在云点播媒资库依然可见；</li>
+<li>VOD：云点播，即导出为云点播媒资库，此导出目标在云剪媒资库将不可见。</li>
                      */
                     std::string m_exportDestination;
                     bool m_exportDestinationHasBeenSet;
@@ -266,9 +266,9 @@ namespace TencentCloud
                     bool m_trackDataHasBeenSet;
 
                     /**
-                     * 轨道数据对应的画布宽高比，配合视频编码配置中的视频短边尺寸，可决定导出画面的尺寸。例：
-<li>如果 AspectRatio 取值 16:9，视频编码配置选为12（短边1080），则导出尺寸为 1920 * 1080；</li>
-<li>如果 AspectRatio 取值 9:16，视频编码配置选为11（短边720），则导出尺寸为 720 *1280。</li>
+                     * 轨道数据对应的画布宽高比，配合预设配置中的视频短边尺寸，可决定导出画面的尺寸。例：
+<li>如果 AspectRatio 取值 16:9，预设配置选为12（短边1080），则导出尺寸为 1920 * 1080；</li>
+<li>如果 AspectRatio 取值 9:16，预设配置选为11（短边720），则导出尺寸为 720 *1280。</li>
                      */
                     std::string m_aspectRatio;
                     bool m_aspectRatioHasBeenSet;
@@ -292,7 +292,7 @@ namespace TencentCloud
                     bool m_vODExportInfoHasBeenSet;
 
                     /**
-                     * 操作者。填写用户的 Id，用于标识调用者及校验导出操作权限。
+                     * 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，无权限限制。如果指定操作者，轨道数据中使的媒资该操作者需要拥有使用权限。
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;

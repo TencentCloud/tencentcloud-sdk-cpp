@@ -29,7 +29,8 @@ UpgradeDCDBInstanceRequest::UpgradeDCDBInstanceRequest() :
     m_expandShardConfigHasBeenSet(false),
     m_splitShardConfigHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
-    m_voucherIdsHasBeenSet(false)
+    m_voucherIdsHasBeenSet(false),
+    m_zonesHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,19 @@ string UpgradeDCDBInstanceRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_voucherIds.begin(); itr != m_voucherIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_zonesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zones";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_zones.begin(); itr != m_zones.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -222,6 +236,22 @@ void UpgradeDCDBInstanceRequest::SetVoucherIds(const vector<string>& _voucherIds
 bool UpgradeDCDBInstanceRequest::VoucherIdsHasBeenSet() const
 {
     return m_voucherIdsHasBeenSet;
+}
+
+vector<string> UpgradeDCDBInstanceRequest::GetZones() const
+{
+    return m_zones;
+}
+
+void UpgradeDCDBInstanceRequest::SetZones(const vector<string>& _zones)
+{
+    m_zones = _zones;
+    m_zonesHasBeenSet = true;
+}
+
+bool UpgradeDCDBInstanceRequest::ZonesHasBeenSet() const
+{
+    return m_zonesHasBeenSet;
 }
 
 

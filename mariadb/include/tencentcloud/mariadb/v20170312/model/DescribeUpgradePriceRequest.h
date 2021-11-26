@@ -104,6 +104,24 @@ namespace TencentCloud
                      */
                     bool StorageHasBeenSet() const;
 
+                    /**
+                     * 获取新节点数，传0表示节点数不变
+                     * @return NodeCount 新节点数，传0表示节点数不变
+                     */
+                    int64_t GetNodeCount() const;
+
+                    /**
+                     * 设置新节点数，传0表示节点数不变
+                     * @param NodeCount 新节点数，传0表示节点数不变
+                     */
+                    void SetNodeCount(const int64_t& _nodeCount);
+
+                    /**
+                     * 判断参数 NodeCount 是否已赋值
+                     * @return NodeCount 是否已赋值
+                     */
+                    bool NodeCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +143,12 @@ namespace TencentCloud
                      */
                     int64_t m_storage;
                     bool m_storageHasBeenSet;
+
+                    /**
+                     * 新节点数，传0表示节点数不变
+                     */
+                    int64_t m_nodeCount;
+                    bool m_nodeCountHasBeenSet;
 
                 };
             }

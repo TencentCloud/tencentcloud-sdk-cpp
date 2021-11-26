@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取平台唯一标识。
-                     * @return Platform 平台唯一标识。
+                     * 获取平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @return Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     std::string GetPlatform() const;
 
                     /**
-                     * 设置平台唯一标识。
-                     * @param Platform 平台唯一标识。
+                     * 设置平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @param Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     void SetPlatform(const std::string& _platform);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool PlatformHasBeenSet() const;
 
                     /**
-                     * 获取手机号码。
-                     * @return Phone 手机号码。
+                     * 获取手机号码。指定手机号获取账号信息，目前仅支持国内手机号，且号码不加地区码 `+86` 等。
+                     * @return Phone 手机号码。指定手机号获取账号信息，目前仅支持国内手机号，且号码不加地区码 `+86` 等。
                      */
                     std::string GetPhone() const;
 
                     /**
-                     * 设置手机号码。
-                     * @param Phone 手机号码。
+                     * 设置手机号码。指定手机号获取账号信息，目前仅支持国内手机号，且号码不加地区码 `+86` 等。
+                     * @param Phone 手机号码。指定手机号获取账号信息，目前仅支持国内手机号，且号码不加地区码 `+86` 等。
                      */
                     void SetPhone(const std::string& _phone);
 
@@ -117,13 +117,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 平台唯一标识。
+                     * 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     std::string m_platform;
                     bool m_platformHasBeenSet;
 
                     /**
-                     * 手机号码。
+                     * 手机号码。指定手机号获取账号信息，目前仅支持国内手机号，且号码不加地区码 `+86` 等。
                      */
                     std::string m_phone;
                     bool m_phoneHasBeenSet;

@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取平台名称，指定访问的平台。
-                     * @return Platform 平台名称，指定访问的平台。
+                     * 获取平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @return Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     std::string GetPlatform() const;
 
                     /**
-                     * 设置平台名称，指定访问的平台。
-                     * @param Platform 平台名称，指定访问的平台。
+                     * 设置平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @param Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     void SetPlatform(const std::string& _platform);
 
@@ -63,14 +63,14 @@ namespace TencentCloud
                     bool PlatformHasBeenSet() const;
 
                     /**
-                     * 获取媒体归属者，团队或个人。
-                     * @return Owner 媒体归属者，团队或个人。
+                     * 获取媒体归属者，可支持归属团队或个人。
+                     * @return Owner 媒体归属者，可支持归属团队或个人。
                      */
                     Entity GetOwner() const;
 
                     /**
-                     * 设置媒体归属者，团队或个人。
-                     * @param Owner 媒体归属者，团队或个人。
+                     * 设置媒体归属者，可支持归属团队或个人。
+                     * @param Owner 媒体归属者，可支持归属团队或个人。
                      */
                     void SetOwner(const Entity& _owner);
 
@@ -103,12 +103,12 @@ namespace TencentCloud
 <li>VOD：云点播文件；</li>
 <li>EXTERNAL：媒资绑定。</li>
 
-注意：如果不填默认为云点播文件，如果媒体存储在非腾讯云点播中，都需要使用媒资绑定。
+注意：如果不填默认为云点播文件，如果媒体存储在非腾讯云点播中，都需要使用媒资绑定。另外，导入云点播的文件，使用云点播的子应用 Id 必须与创建云剪平台时使用的云点播子应用一致。
                      * @return SourceType 导入媒资类型，取值：
 <li>VOD：云点播文件；</li>
 <li>EXTERNAL：媒资绑定。</li>
 
-注意：如果不填默认为云点播文件，如果媒体存储在非腾讯云点播中，都需要使用媒资绑定。
+注意：如果不填默认为云点播文件，如果媒体存储在非腾讯云点播中，都需要使用媒资绑定。另外，导入云点播的文件，使用云点播的子应用 Id 必须与创建云剪平台时使用的云点播子应用一致。
                      */
                     std::string GetSourceType() const;
 
@@ -117,12 +117,12 @@ namespace TencentCloud
 <li>VOD：云点播文件；</li>
 <li>EXTERNAL：媒资绑定。</li>
 
-注意：如果不填默认为云点播文件，如果媒体存储在非腾讯云点播中，都需要使用媒资绑定。
+注意：如果不填默认为云点播文件，如果媒体存储在非腾讯云点播中，都需要使用媒资绑定。另外，导入云点播的文件，使用云点播的子应用 Id 必须与创建云剪平台时使用的云点播子应用一致。
                      * @param SourceType 导入媒资类型，取值：
 <li>VOD：云点播文件；</li>
 <li>EXTERNAL：媒资绑定。</li>
 
-注意：如果不填默认为云点播文件，如果媒体存储在非腾讯云点播中，都需要使用媒资绑定。
+注意：如果不填默认为云点播文件，如果媒体存储在非腾讯云点播中，都需要使用媒资绑定。另外，导入云点播的文件，使用云点播的子应用 Id 必须与创建云剪平台时使用的云点播子应用一致。
                      */
                     void SetSourceType(const std::string& _sourceType);
 
@@ -187,17 +187,17 @@ namespace TencentCloud
                     bool ClassPathHasBeenSet() const;
 
                     /**
-                     * 获取媒体预处理任务模板 ID。取值：
+                     * 获取媒体预处理任务参数 ID。可取值有：
 <li>10：进行编辑预处理。</li>
-                     * @return PreProcessDefinition 媒体预处理任务模板 ID。取值：
+                     * @return PreProcessDefinition 媒体预处理任务参数 ID。可取值有：
 <li>10：进行编辑预处理。</li>
                      */
                     int64_t GetPreProcessDefinition() const;
 
                     /**
-                     * 设置媒体预处理任务模板 ID。取值：
+                     * 设置媒体预处理任务参数 ID。可取值有：
 <li>10：进行编辑预处理。</li>
-                     * @param PreProcessDefinition 媒体预处理任务模板 ID。取值：
+                     * @param PreProcessDefinition 媒体预处理任务参数 ID。可取值有：
 <li>10：进行编辑预处理。</li>
                      */
                     void SetPreProcessDefinition(const int64_t& _preProcessDefinition);
@@ -209,14 +209,14 @@ namespace TencentCloud
                     bool PreProcessDefinitionHasBeenSet() const;
 
                     /**
-                     * 获取操作者。填写用户的 Id，用于标识调用者及校验操作权限。
-                     * @return Operator 操作者。填写用户的 Id，用于标识调用者及校验操作权限。
+                     * 获取操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以向任意团队或者个人导入媒体。如果指定操作者，如果媒体归属为个人，则操作者必须与归属者一致；如果媒体归属为团队，则必须为团队可导入媒体的团队成员(如果没有特殊设置，所有团队成员可导入媒体)。
+                     * @return Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以向任意团队或者个人导入媒体。如果指定操作者，如果媒体归属为个人，则操作者必须与归属者一致；如果媒体归属为团队，则必须为团队可导入媒体的团队成员(如果没有特殊设置，所有团队成员可导入媒体)。
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置操作者。填写用户的 Id，用于标识调用者及校验操作权限。
-                     * @param Operator 操作者。填写用户的 Id，用于标识调用者及校验操作权限。
+                     * 设置操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以向任意团队或者个人导入媒体。如果指定操作者，如果媒体归属为个人，则操作者必须与归属者一致；如果媒体归属为团队，则必须为团队可导入媒体的团队成员(如果没有特殊设置，所有团队成员可导入媒体)。
+                     * @param Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以向任意团队或者个人导入媒体。如果指定操作者，如果媒体归属为个人，则操作者必须与归属者一致；如果媒体归属为团队，则必须为团队可导入媒体的团队成员(如果没有特殊设置，所有团队成员可导入媒体)。
                      */
                     void SetOperator(const std::string& _operator);
 
@@ -229,13 +229,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 平台名称，指定访问的平台。
+                     * 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     std::string m_platform;
                     bool m_platformHasBeenSet;
 
                     /**
-                     * 媒体归属者，团队或个人。
+                     * 媒体归属者，可支持归属团队或个人。
                      */
                     Entity m_owner;
                     bool m_ownerHasBeenSet;
@@ -251,7 +251,7 @@ namespace TencentCloud
 <li>VOD：云点播文件；</li>
 <li>EXTERNAL：媒资绑定。</li>
 
-注意：如果不填默认为云点播文件，如果媒体存储在非腾讯云点播中，都需要使用媒资绑定。
+注意：如果不填默认为云点播文件，如果媒体存储在非腾讯云点播中，都需要使用媒资绑定。另外，导入云点播的文件，使用云点播的子应用 Id 必须与创建云剪平台时使用的云点播子应用一致。
                      */
                     std::string m_sourceType;
                     bool m_sourceTypeHasBeenSet;
@@ -275,14 +275,14 @@ namespace TencentCloud
                     bool m_classPathHasBeenSet;
 
                     /**
-                     * 媒体预处理任务模板 ID。取值：
+                     * 媒体预处理任务参数 ID。可取值有：
 <li>10：进行编辑预处理。</li>
                      */
                     int64_t m_preProcessDefinition;
                     bool m_preProcessDefinitionHasBeenSet;
 
                     /**
-                     * 操作者。填写用户的 Id，用于标识调用者及校验操作权限。
+                     * 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以向任意团队或者个人导入媒体。如果指定操作者，如果媒体归属为个人，则操作者必须与归属者一致；如果媒体归属为团队，则必须为团队可导入媒体的团队成员(如果没有特殊设置，所有团队成员可导入媒体)。
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;

@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取平台名称，指定访问的平台。
-                     * @return Platform 平台名称，指定访问的平台。
+                     * 获取平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @return Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     std::string GetPlatform() const;
 
                     /**
-                     * 设置平台名称，指定访问的平台。
-                     * @param Platform 平台名称，指定访问的平台。
+                     * 设置平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @param Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     void SetPlatform(const std::string& _platform);
 
@@ -63,14 +63,14 @@ namespace TencentCloud
                     bool PlatformHasBeenSet() const;
 
                     /**
-                     * 获取云转推项目Id 。
-                     * @return ProjectId 云转推项目Id 。
+                     * 获取云转推项目 Id 。
+                     * @return ProjectId 云转推项目 Id 。
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置云转推项目Id 。
-                     * @param ProjectId 云转推项目Id 。
+                     * 设置云转推项目 Id 。
+                     * @param ProjectId 云转推项目 Id 。
                      */
                     void SetProjectId(const std::string& _projectId);
 
@@ -178,16 +178,34 @@ namespace TencentCloud
                      */
                     bool CurrentStopTimeHasBeenSet() const;
 
+                    /**
+                     * 获取操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以操作所有云转推项目。如果指定操作者，则操作者必须为项目所有者。
+                     * @return Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以操作所有云转推项目。如果指定操作者，则操作者必须为项目所有者。
+                     */
+                    std::string GetOperator() const;
+
+                    /**
+                     * 设置操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以操作所有云转推项目。如果指定操作者，则操作者必须为项目所有者。
+                     * @param Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以操作所有云转推项目。如果指定操作者，则操作者必须为项目所有者。
+                     */
+                    void SetOperator(const std::string& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     */
+                    bool OperatorHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 平台名称，指定访问的平台。
+                     * 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      */
                     std::string m_platform;
                     bool m_platformHasBeenSet;
 
                     /**
-                     * 云转推项目Id 。
+                     * 云转推项目 Id 。
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
@@ -223,6 +241,12 @@ namespace TencentCloud
                      */
                     std::string m_currentStopTime;
                     bool m_currentStopTimeHasBeenSet;
+
+                    /**
+                     * 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以操作所有云转推项目。如果指定操作者，则操作者必须为项目所有者。
+                     */
+                    std::string m_operator;
+                    bool m_operatorHasBeenSet;
 
                 };
             }

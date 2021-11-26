@@ -30,7 +30,9 @@ SecurityGroupRule::SecurityGroupRule() :
     m_orderIndexHasBeenSet(false),
     m_protocolHasBeenSet(false),
     m_portHasBeenSet(false),
-    m_serviceTemplateIdHasBeenSet(false)
+    m_serviceTemplateIdHasBeenSet(false),
+    m_idHasBeenSet(false),
+    m_enableHasBeenSet(false)
 {
 }
 
@@ -139,6 +141,26 @@ CoreInternalOutcome SecurityGroupRule::Deserialize(const rapidjson::Value &value
         m_serviceTemplateIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupRule.Id` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = string(value["Id"].GetString());
+        m_idHasBeenSet = true;
+    }
+
+    if (value.HasMember("Enable") && !value["Enable"].IsNull())
+    {
+        if (!value["Enable"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupRule.Enable` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_enable = string(value["Enable"].GetString());
+        m_enableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +246,22 @@ void SecurityGroupRule::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "ServiceTemplateId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_serviceTemplateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Enable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_enable.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +425,37 @@ void SecurityGroupRule::SetServiceTemplateId(const string& _serviceTemplateId)
 bool SecurityGroupRule::ServiceTemplateIdHasBeenSet() const
 {
     return m_serviceTemplateIdHasBeenSet;
+}
+
+string SecurityGroupRule::GetId() const
+{
+    return m_id;
+}
+
+void SecurityGroupRule::SetId(const string& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool SecurityGroupRule::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
+}
+
+string SecurityGroupRule::GetEnable() const
+{
+    return m_enable;
+}
+
+void SecurityGroupRule::SetEnable(const string& _enable)
+{
+    m_enable = _enable;
+    m_enableHasBeenSet = true;
+}
+
+bool SecurityGroupRule::EnableHasBeenSet() const
+{
+    return m_enableHasBeenSet;
 }
 
