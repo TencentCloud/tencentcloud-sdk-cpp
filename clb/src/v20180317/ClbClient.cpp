@@ -255,6 +255,49 @@ ClbClient::BatchRegisterTargetsOutcomeCallable ClbClient::BatchRegisterTargetsCa
     return task->get_future();
 }
 
+ClbClient::CloneLoadBalancerOutcome ClbClient::CloneLoadBalancer(const CloneLoadBalancerRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloneLoadBalancer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloneLoadBalancerResponse rsp = CloneLoadBalancerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloneLoadBalancerOutcome(rsp);
+        else
+            return CloneLoadBalancerOutcome(o.GetError());
+    }
+    else
+    {
+        return CloneLoadBalancerOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::CloneLoadBalancerAsync(const CloneLoadBalancerRequest& request, const CloneLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CloneLoadBalancer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::CloneLoadBalancerOutcomeCallable ClbClient::CloneLoadBalancerCallable(const CloneLoadBalancerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CloneLoadBalancerOutcome()>>(
+        [this, request]()
+        {
+            return this->CloneLoadBalancer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::CreateClsLogSetOutcome ClbClient::CreateClsLogSet(const CreateClsLogSetRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateClsLogSet");

@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool StateMachineResourceNameHasBeenSet() const;
 
                     /**
-                     * 获取输入参数
-                     * @return Input 输入参数
+                     * 获取输入参数，内容为JsonObject，长度不大于524288字符。
+                     * @return Input 输入参数，内容为JsonObject，长度不大于524288字符。
                      */
                     std::string GetInput() const;
 
                     /**
-                     * 设置输入参数
-                     * @param Input 输入参数
+                     * 设置输入参数，内容为JsonObject，长度不大于524288字符。
+                     * @param Input 输入参数，内容为JsonObject，长度不大于524288字符。
                      */
                     void SetInput(const std::string& _input);
 
@@ -105,7 +105,7 @@ namespace TencentCloud
                     bool m_stateMachineResourceNameHasBeenSet;
 
                     /**
-                     * 输入参数
+                     * 输入参数，内容为JsonObject，长度不大于524288字符。
                      */
                     std::string m_input;
                     bool m_inputHasBeenSet;

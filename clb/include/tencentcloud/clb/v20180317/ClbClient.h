@@ -33,6 +33,8 @@
 #include <tencentcloud/clb/v20180317/model/BatchModifyTargetWeightResponse.h>
 #include <tencentcloud/clb/v20180317/model/BatchRegisterTargetsRequest.h>
 #include <tencentcloud/clb/v20180317/model/BatchRegisterTargetsResponse.h>
+#include <tencentcloud/clb/v20180317/model/CloneLoadBalancerRequest.h>
+#include <tencentcloud/clb/v20180317/model/CloneLoadBalancerResponse.h>
 #include <tencentcloud/clb/v20180317/model/CreateClsLogSetRequest.h>
 #include <tencentcloud/clb/v20180317/model/CreateClsLogSetResponse.h>
 #include <tencentcloud/clb/v20180317/model/CreateListenerRequest.h>
@@ -190,6 +192,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BatchRegisterTargetsResponse> BatchRegisterTargetsOutcome;
                 typedef std::future<BatchRegisterTargetsOutcome> BatchRegisterTargetsOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::BatchRegisterTargetsRequest&, BatchRegisterTargetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchRegisterTargetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::CloneLoadBalancerResponse> CloneLoadBalancerOutcome;
+                typedef std::future<CloneLoadBalancerOutcome> CloneLoadBalancerOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::CloneLoadBalancerRequest&, CloneLoadBalancerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloneLoadBalancerAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateClsLogSetResponse> CreateClsLogSetOutcome;
                 typedef std::future<CreateClsLogSetOutcome> CreateClsLogSetOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::CreateClsLogSetRequest&, CreateClsLogSetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClsLogSetAsyncHandler;
@@ -432,6 +437,15 @@ namespace TencentCloud
                 BatchRegisterTargetsOutcome BatchRegisterTargets(const Model::BatchRegisterTargetsRequest &request);
                 void BatchRegisterTargetsAsync(const Model::BatchRegisterTargetsRequest& request, const BatchRegisterTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BatchRegisterTargetsOutcomeCallable BatchRegisterTargetsCallable(const Model::BatchRegisterTargetsRequest& request);
+
+                /**
+                 *克隆负载均衡实例，根据指定的负载均衡实例，复制出相同规则和绑定关系的负载均衡实例。
+                 * @param req CloneLoadBalancerRequest
+                 * @return CloneLoadBalancerOutcome
+                 */
+                CloneLoadBalancerOutcome CloneLoadBalancer(const Model::CloneLoadBalancerRequest &request);
+                void CloneLoadBalancerAsync(const Model::CloneLoadBalancerRequest& request, const CloneLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloneLoadBalancerOutcomeCallable CloneLoadBalancerCallable(const Model::CloneLoadBalancerRequest& request);
 
                 /**
                  *创建CLB专有日志集，此日志集用于存储CLB的日志。

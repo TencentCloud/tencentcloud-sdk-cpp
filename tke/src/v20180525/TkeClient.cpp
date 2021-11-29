@@ -3136,6 +3136,49 @@ TkeClient::DescribeVpcCniPodLimitsOutcomeCallable TkeClient::DescribeVpcCniPodLi
     return task->get_future();
 }
 
+TkeClient::DisableClusterDeletionProtectionOutcome TkeClient::DisableClusterDeletionProtection(const DisableClusterDeletionProtectionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableClusterDeletionProtection");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableClusterDeletionProtectionResponse rsp = DisableClusterDeletionProtectionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableClusterDeletionProtectionOutcome(rsp);
+        else
+            return DisableClusterDeletionProtectionOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableClusterDeletionProtectionOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DisableClusterDeletionProtectionAsync(const DisableClusterDeletionProtectionRequest& request, const DisableClusterDeletionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableClusterDeletionProtection(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DisableClusterDeletionProtectionOutcomeCallable TkeClient::DisableClusterDeletionProtectionCallable(const DisableClusterDeletionProtectionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableClusterDeletionProtectionOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableClusterDeletionProtection(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DisableVpcCniNetworkTypeOutcome TkeClient::DisableVpcCniNetworkType(const DisableVpcCniNetworkTypeRequest &request)
 {
     auto outcome = MakeRequest(request, "DisableVpcCniNetworkType");
@@ -3172,6 +3215,49 @@ TkeClient::DisableVpcCniNetworkTypeOutcomeCallable TkeClient::DisableVpcCniNetwo
         [this, request]()
         {
             return this->DisableVpcCniNetworkType(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::EnableClusterDeletionProtectionOutcome TkeClient::EnableClusterDeletionProtection(const EnableClusterDeletionProtectionRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableClusterDeletionProtection");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableClusterDeletionProtectionResponse rsp = EnableClusterDeletionProtectionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableClusterDeletionProtectionOutcome(rsp);
+        else
+            return EnableClusterDeletionProtectionOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableClusterDeletionProtectionOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::EnableClusterDeletionProtectionAsync(const EnableClusterDeletionProtectionRequest& request, const EnableClusterDeletionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableClusterDeletionProtection(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::EnableClusterDeletionProtectionOutcomeCallable TkeClient::EnableClusterDeletionProtectionCallable(const EnableClusterDeletionProtectionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableClusterDeletionProtectionOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableClusterDeletionProtection(request);
         }
     );
 

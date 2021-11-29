@@ -167,8 +167,12 @@
 #include <tencentcloud/tke/v20180525/model/DescribeVersionsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeVpcCniPodLimitsRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeVpcCniPodLimitsResponse.h>
+#include <tencentcloud/tke/v20180525/model/DisableClusterDeletionProtectionRequest.h>
+#include <tencentcloud/tke/v20180525/model/DisableClusterDeletionProtectionResponse.h>
 #include <tencentcloud/tke/v20180525/model/DisableVpcCniNetworkTypeRequest.h>
 #include <tencentcloud/tke/v20180525/model/DisableVpcCniNetworkTypeResponse.h>
+#include <tencentcloud/tke/v20180525/model/EnableClusterDeletionProtectionRequest.h>
+#include <tencentcloud/tke/v20180525/model/EnableClusterDeletionProtectionResponse.h>
 #include <tencentcloud/tke/v20180525/model/EnableVpcCniNetworkTypeRequest.h>
 #include <tencentcloud/tke/v20180525/model/EnableVpcCniNetworkTypeResponse.h>
 #include <tencentcloud/tke/v20180525/model/GetUpgradeInstanceProgressRequest.h>
@@ -443,9 +447,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVpcCniPodLimitsResponse> DescribeVpcCniPodLimitsOutcome;
                 typedef std::future<DescribeVpcCniPodLimitsOutcome> DescribeVpcCniPodLimitsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeVpcCniPodLimitsRequest&, DescribeVpcCniPodLimitsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcCniPodLimitsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisableClusterDeletionProtectionResponse> DisableClusterDeletionProtectionOutcome;
+                typedef std::future<DisableClusterDeletionProtectionOutcome> DisableClusterDeletionProtectionOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DisableClusterDeletionProtectionRequest&, DisableClusterDeletionProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableClusterDeletionProtectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisableVpcCniNetworkTypeResponse> DisableVpcCniNetworkTypeOutcome;
                 typedef std::future<DisableVpcCniNetworkTypeOutcome> DisableVpcCniNetworkTypeOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DisableVpcCniNetworkTypeRequest&, DisableVpcCniNetworkTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableVpcCniNetworkTypeAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableClusterDeletionProtectionResponse> EnableClusterDeletionProtectionOutcome;
+                typedef std::future<EnableClusterDeletionProtectionOutcome> EnableClusterDeletionProtectionOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::EnableClusterDeletionProtectionRequest&, EnableClusterDeletionProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableClusterDeletionProtectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::EnableVpcCniNetworkTypeResponse> EnableVpcCniNetworkTypeOutcome;
                 typedef std::future<EnableVpcCniNetworkTypeOutcome> EnableVpcCniNetworkTypeOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::EnableVpcCniNetworkTypeRequest&, EnableVpcCniNetworkTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableVpcCniNetworkTypeAsyncHandler;
@@ -1164,6 +1174,15 @@ namespace TencentCloud
                 DescribeVpcCniPodLimitsOutcomeCallable DescribeVpcCniPodLimitsCallable(const Model::DescribeVpcCniPodLimitsRequest& request);
 
                 /**
+                 *关闭集群删除保护
+                 * @param req DisableClusterDeletionProtectionRequest
+                 * @return DisableClusterDeletionProtectionOutcome
+                 */
+                DisableClusterDeletionProtectionOutcome DisableClusterDeletionProtection(const Model::DisableClusterDeletionProtectionRequest &request);
+                void DisableClusterDeletionProtectionAsync(const Model::DisableClusterDeletionProtectionRequest& request, const DisableClusterDeletionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisableClusterDeletionProtectionOutcomeCallable DisableClusterDeletionProtectionCallable(const Model::DisableClusterDeletionProtectionRequest& request);
+
+                /**
                  *提供给附加了VPC-CNI能力的Global-Route集群关闭VPC-CNI
                  * @param req DisableVpcCniNetworkTypeRequest
                  * @return DisableVpcCniNetworkTypeOutcome
@@ -1171,6 +1190,15 @@ namespace TencentCloud
                 DisableVpcCniNetworkTypeOutcome DisableVpcCniNetworkType(const Model::DisableVpcCniNetworkTypeRequest &request);
                 void DisableVpcCniNetworkTypeAsync(const Model::DisableVpcCniNetworkTypeRequest& request, const DisableVpcCniNetworkTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DisableVpcCniNetworkTypeOutcomeCallable DisableVpcCniNetworkTypeCallable(const Model::DisableVpcCniNetworkTypeRequest& request);
+
+                /**
+                 *启用集群删除保护
+                 * @param req EnableClusterDeletionProtectionRequest
+                 * @return EnableClusterDeletionProtectionOutcome
+                 */
+                EnableClusterDeletionProtectionOutcome EnableClusterDeletionProtection(const Model::EnableClusterDeletionProtectionRequest &request);
+                void EnableClusterDeletionProtectionAsync(const Model::EnableClusterDeletionProtectionRequest& request, const EnableClusterDeletionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableClusterDeletionProtectionOutcomeCallable EnableClusterDeletionProtectionCallable(const Model::EnableClusterDeletionProtectionRequest& request);
 
                 /**
                  *GR集群可以通过本接口附加vpc-cni容器网络插件，开启vpc-cni容器网络能力

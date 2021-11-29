@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool TimestampHasBeenSet() const;
 
                     /**
-                     * 获取Sql的执行时长。
+                     * 获取Sql的执行时长（秒）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QueryTime Sql的执行时长。
+                     * @return QueryTime Sql的执行时长（秒）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetQueryTime() const;
 
                     /**
-                     * 设置Sql的执行时长。
+                     * 设置Sql的执行时长（秒）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param QueryTime Sql的执行时长。
+                     * @param QueryTime Sql的执行时长（秒）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetQueryTime(const double& _queryTime);
@@ -179,17 +179,17 @@ namespace TencentCloud
                     bool DatabaseHasBeenSet() const;
 
                     /**
-                     * 获取锁时长。
+                     * 获取锁时长（秒）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LockTime 锁时长。
+                     * @return LockTime 锁时长（秒）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetLockTime() const;
 
                     /**
-                     * 设置锁时长。
+                     * 设置锁时长（秒）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LockTime 锁时长。
+                     * @param LockTime 锁时长（秒）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLockTime(const double& _lockTime);
@@ -298,7 +298,7 @@ namespace TencentCloud
                     bool m_timestampHasBeenSet;
 
                     /**
-                     * Sql的执行时长。
+                     * Sql的执行时长（秒）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_queryTime;
@@ -333,7 +333,7 @@ namespace TencentCloud
                     bool m_databaseHasBeenSet;
 
                     /**
-                     * 锁时长。
+                     * 锁时长（秒）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_lockTime;

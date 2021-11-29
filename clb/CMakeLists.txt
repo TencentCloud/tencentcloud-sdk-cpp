@@ -32,6 +32,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/CreateLoadBalancerRequest.h
   include/tencentcloud/clb/v20180317/model/RuleHealth.h
   include/tencentcloud/clb/v20180317/model/DeleteRuleRequest.h
+  include/tencentcloud/clb/v20180317/model/CloneLoadBalancerRequest.h
   include/tencentcloud/clb/v20180317/model/DisassociateTargetGroupsResponse.h
   include/tencentcloud/clb/v20180317/model/SetLoadBalancerClsLogResponse.h
   include/tencentcloud/clb/v20180317/model/DescribeLoadBalancerTrafficResponse.h
@@ -166,6 +167,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/DescribeTargetHealthRequest.h
   include/tencentcloud/clb/v20180317/model/ReplaceCertForLoadBalancersRequest.h
   include/tencentcloud/clb/v20180317/model/DeleteRuleResponse.h
+  include/tencentcloud/clb/v20180317/model/CloneLoadBalancerResponse.h
   include/tencentcloud/clb/v20180317/model/DescribeClsLogSetResponse.h
   include/tencentcloud/clb/v20180317/model/ModifyTargetGroupAttributeRequest.h
   include/tencentcloud/clb/v20180317/model/ExclusiveCluster.h
@@ -230,6 +232,7 @@ set(clb_src
   src/v20180317/model/CreateLoadBalancerRequest.cpp
   src/v20180317/model/RuleHealth.cpp
   src/v20180317/model/DeleteRuleRequest.cpp
+  src/v20180317/model/CloneLoadBalancerRequest.cpp
   src/v20180317/model/DisassociateTargetGroupsResponse.cpp
   src/v20180317/model/SetLoadBalancerClsLogResponse.cpp
   src/v20180317/model/DescribeLoadBalancerTrafficResponse.cpp
@@ -364,6 +367,7 @@ set(clb_src
   src/v20180317/model/DescribeTargetHealthRequest.cpp
   src/v20180317/model/ReplaceCertForLoadBalancersRequest.cpp
   src/v20180317/model/DeleteRuleResponse.cpp
+  src/v20180317/model/CloneLoadBalancerResponse.cpp
   src/v20180317/model/DescribeClsLogSetResponse.cpp
   src/v20180317/model/ModifyTargetGroupAttributeRequest.cpp
   src/v20180317/model/ExclusiveCluster.cpp
