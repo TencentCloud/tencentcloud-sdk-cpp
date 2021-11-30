@@ -38,6 +38,7 @@
 #include <tencentcloud/mrs/v20200910/model/Electrocardiogram.h>
 #include <tencentcloud/mrs/v20200910/model/Endoscopy.h>
 #include <tencentcloud/mrs/v20200910/model/Prescription.h>
+#include <tencentcloud/mrs/v20200910/model/VaccineCertificate.h>
 
 
 namespace TencentCloud
@@ -390,6 +391,28 @@ namespace TencentCloud
                      */
                     bool PrescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取免疫接种证明
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VaccineCertificate 免疫接种证明
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    VaccineCertificate GetVaccineCertificate() const;
+
+                    /**
+                     * 设置免疫接种证明
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VaccineCertificate 免疫接种证明
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVaccineCertificate(const VaccineCertificate& _vaccineCertificate);
+
+                    /**
+                     * 判断参数 VaccineCertificate 是否已赋值
+                     * @return VaccineCertificate 是否已赋值
+                     */
+                    bool VaccineCertificateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -496,6 +519,13 @@ namespace TencentCloud
                      */
                     Prescription m_prescription;
                     bool m_prescriptionHasBeenSet;
+
+                    /**
+                     * 免疫接种证明
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    VaccineCertificate m_vaccineCertificate;
+                    bool m_vaccineCertificateHasBeenSet;
 
                 };
             }

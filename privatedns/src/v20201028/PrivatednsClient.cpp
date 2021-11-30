@@ -40,6 +40,49 @@ PrivatednsClient::PrivatednsClient(const Credential &credential, const string &r
 }
 
 
+PrivatednsClient::CreatePrivateDNSAccountOutcome PrivatednsClient::CreatePrivateDNSAccount(const CreatePrivateDNSAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePrivateDNSAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePrivateDNSAccountResponse rsp = CreatePrivateDNSAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePrivateDNSAccountOutcome(rsp);
+        else
+            return CreatePrivateDNSAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePrivateDNSAccountOutcome(outcome.GetError());
+    }
+}
+
+void PrivatednsClient::CreatePrivateDNSAccountAsync(const CreatePrivateDNSAccountRequest& request, const CreatePrivateDNSAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePrivateDNSAccount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PrivatednsClient::CreatePrivateDNSAccountOutcomeCallable PrivatednsClient::CreatePrivateDNSAccountCallable(const CreatePrivateDNSAccountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePrivateDNSAccountOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePrivateDNSAccount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PrivatednsClient::CreatePrivateZoneOutcome PrivatednsClient::CreatePrivateZone(const CreatePrivateZoneRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePrivateZone");
@@ -126,6 +169,49 @@ PrivatednsClient::CreatePrivateZoneRecordOutcomeCallable PrivatednsClient::Creat
     return task->get_future();
 }
 
+PrivatednsClient::DeletePrivateDNSAccountOutcome PrivatednsClient::DeletePrivateDNSAccount(const DeletePrivateDNSAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePrivateDNSAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePrivateDNSAccountResponse rsp = DeletePrivateDNSAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePrivateDNSAccountOutcome(rsp);
+        else
+            return DeletePrivateDNSAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePrivateDNSAccountOutcome(outcome.GetError());
+    }
+}
+
+void PrivatednsClient::DeletePrivateDNSAccountAsync(const DeletePrivateDNSAccountRequest& request, const DeletePrivateDNSAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeletePrivateDNSAccount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PrivatednsClient::DeletePrivateDNSAccountOutcomeCallable PrivatednsClient::DeletePrivateDNSAccountCallable(const DeletePrivateDNSAccountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeletePrivateDNSAccountOutcome()>>(
+        [this, request]()
+        {
+            return this->DeletePrivateDNSAccount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PrivatednsClient::DeletePrivateZoneOutcome PrivatednsClient::DeletePrivateZone(const DeletePrivateZoneRequest &request)
 {
     auto outcome = MakeRequest(request, "DeletePrivateZone");
@@ -205,6 +291,49 @@ PrivatednsClient::DeletePrivateZoneRecordOutcomeCallable PrivatednsClient::Delet
         [this, request]()
         {
             return this->DeletePrivateZoneRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PrivatednsClient::DescribeAccountVpcListOutcome PrivatednsClient::DescribeAccountVpcList(const DescribeAccountVpcListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccountVpcList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccountVpcListResponse rsp = DescribeAccountVpcListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccountVpcListOutcome(rsp);
+        else
+            return DescribeAccountVpcListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccountVpcListOutcome(outcome.GetError());
+    }
+}
+
+void PrivatednsClient::DescribeAccountVpcListAsync(const DescribeAccountVpcListRequest& request, const DescribeAccountVpcListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAccountVpcList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PrivatednsClient::DescribeAccountVpcListOutcomeCallable PrivatednsClient::DescribeAccountVpcListCallable(const DescribeAccountVpcListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAccountVpcListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAccountVpcList(request);
         }
     );
 

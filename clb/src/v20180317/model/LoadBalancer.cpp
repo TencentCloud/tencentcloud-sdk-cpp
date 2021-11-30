@@ -71,7 +71,9 @@ LoadBalancer::LoadBalancer() :
     m_zonesHasBeenSet(false),
     m_nfvInfoHasBeenSet(false),
     m_healthLogSetIdHasBeenSet(false),
-    m_healthLogTopicIdHasBeenSet(false)
+    m_healthLogTopicIdHasBeenSet(false),
+    m_clusterIdsHasBeenSet(false),
+    m_attributeFlagsHasBeenSet(false)
 {
 }
 
@@ -671,6 +673,32 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
         m_healthLogTopicIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterIds") && !value["ClusterIds"].IsNull())
+    {
+        if (!value["ClusterIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.ClusterIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ClusterIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_clusterIds.push_back((*itr).GetString());
+        }
+        m_clusterIdsHasBeenSet = true;
+    }
+
+    if (value.HasMember("AttributeFlags") && !value["AttributeFlags"].IsNull())
+    {
+        if (!value["AttributeFlags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.AttributeFlags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AttributeFlags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_attributeFlags.push_back((*itr).GetString());
+        }
+        m_attributeFlagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1126,6 +1154,32 @@ void LoadBalancer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "HealthLogTopicId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_healthLogTopicId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_clusterIds.begin(); itr != m_clusterIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_attributeFlagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AttributeFlags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_attributeFlags.begin(); itr != m_attributeFlags.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -1945,5 +1999,37 @@ void LoadBalancer::SetHealthLogTopicId(const string& _healthLogTopicId)
 bool LoadBalancer::HealthLogTopicIdHasBeenSet() const
 {
     return m_healthLogTopicIdHasBeenSet;
+}
+
+vector<string> LoadBalancer::GetClusterIds() const
+{
+    return m_clusterIds;
+}
+
+void LoadBalancer::SetClusterIds(const vector<string>& _clusterIds)
+{
+    m_clusterIds = _clusterIds;
+    m_clusterIdsHasBeenSet = true;
+}
+
+bool LoadBalancer::ClusterIdsHasBeenSet() const
+{
+    return m_clusterIdsHasBeenSet;
+}
+
+vector<string> LoadBalancer::GetAttributeFlags() const
+{
+    return m_attributeFlags;
+}
+
+void LoadBalancer::SetAttributeFlags(const vector<string>& _attributeFlags)
+{
+    m_attributeFlags = _attributeFlags;
+    m_attributeFlagsHasBeenSet = true;
+}
+
+bool LoadBalancer::AttributeFlagsHasBeenSet() const
+{
+    return m_attributeFlagsHasBeenSet;
 }
 

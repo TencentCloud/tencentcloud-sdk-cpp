@@ -1164,6 +1164,50 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     bool HealthLogTopicIdHasBeenSet() const;
 
+                    /**
+                     * 获取集群ID.
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterIds 集群ID.
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetClusterIds() const;
+
+                    /**
+                     * 设置集群ID.
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ClusterIds 集群ID.
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClusterIds(const std::vector<std::string>& _clusterIds);
+
+                    /**
+                     * 判断参数 ClusterIds 是否已赋值
+                     * @return ClusterIds 是否已赋值
+                     */
+                    bool ClusterIdsHasBeenSet() const;
+
+                    /**
+                     * 获取负载均衡的属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AttributeFlags 负载均衡的属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetAttributeFlags() const;
+
+                    /**
+                     * 设置负载均衡的属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AttributeFlags 负载均衡的属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAttributeFlags(const std::vector<std::string>& _attributeFlags);
+
+                    /**
+                     * 判断参数 AttributeFlags 是否已赋值
+                     * @return AttributeFlags 是否已赋值
+                     */
+                    bool AttributeFlagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1519,6 +1563,20 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     std::string m_healthLogTopicId;
                     bool m_healthLogTopicIdHasBeenSet;
+
+                    /**
+                     * 集群ID.
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_clusterIds;
+                    bool m_clusterIdsHasBeenSet;
+
+                    /**
+                     * 负载均衡的属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_attributeFlags;
+                    bool m_attributeFlagsHasBeenSet;
 
                 };
             }

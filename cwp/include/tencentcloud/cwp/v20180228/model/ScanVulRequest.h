@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool HostTypeHasBeenSet() const;
 
                     /**
-                     * 获取漏洞类型：1: web应用漏洞（webCMS） 2:系统组件（应用漏洞）漏洞  3:安全基线 4:Linux软件漏洞 5:Windows系统漏洞(多选英文;分隔)
-                     * @return VulCategories 漏洞类型：1: web应用漏洞（webCMS） 2:系统组件（应用漏洞）漏洞  3:安全基线 4:Linux软件漏洞 5:Windows系统漏洞(多选英文;分隔)
+                     * 获取漏洞类型：1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞 (多选英文;分隔)
+                     * @return VulCategories 漏洞类型：1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞 (多选英文;分隔)
                      */
                     std::string GetVulCategories() const;
 
                     /**
-                     * 设置漏洞类型：1: web应用漏洞（webCMS） 2:系统组件（应用漏洞）漏洞  3:安全基线 4:Linux软件漏洞 5:Windows系统漏洞(多选英文;分隔)
-                     * @param VulCategories 漏洞类型：1: web应用漏洞（webCMS） 2:系统组件（应用漏洞）漏洞  3:安全基线 4:Linux软件漏洞 5:Windows系统漏洞(多选英文;分隔)
+                     * 设置漏洞类型：1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞 (多选英文;分隔)
+                     * @param VulCategories 漏洞类型：1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞 (多选英文;分隔)
                      */
                     void SetVulCategories(const std::string& _vulCategories);
 
@@ -183,7 +183,7 @@ namespace TencentCloud
                     bool m_hostTypeHasBeenSet;
 
                     /**
-                     * 漏洞类型：1: web应用漏洞（webCMS） 2:系统组件（应用漏洞）漏洞  3:安全基线 4:Linux软件漏洞 5:Windows系统漏洞(多选英文;分隔)
+                     * 漏洞类型：1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞 (多选英文;分隔)
                      */
                     std::string m_vulCategories;
                     bool m_vulCategoriesHasBeenSet;

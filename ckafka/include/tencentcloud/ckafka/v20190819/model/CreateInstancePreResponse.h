@@ -82,6 +82,20 @@ namespace TencentCloud
                      */
                     bool DataHasBeenSet() const;
 
+                    /**
+                     * 获取删除是时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeleteRouteTimestamp 删除是时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDeleteRouteTimestamp() const;
+
+                    /**
+                     * 判断参数 DeleteRouteTimestamp 是否已赋值
+                     * @return DeleteRouteTimestamp 是否已赋值
+                     */
+                    bool DeleteRouteTimestampHasBeenSet() const;
+
                 private:
 
                     /**
@@ -102,6 +116,13 @@ namespace TencentCloud
                      */
                     CreateInstancePreData m_data;
                     bool m_dataHasBeenSet;
+
+                    /**
+                     * 删除是时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deleteRouteTimestamp;
+                    bool m_deleteRouteTimestampHasBeenSet;
 
                 };
             }

@@ -175,6 +175,10 @@
 #include <tencentcloud/tke/v20180525/model/EnableClusterDeletionProtectionResponse.h>
 #include <tencentcloud/tke/v20180525/model/EnableVpcCniNetworkTypeRequest.h>
 #include <tencentcloud/tke/v20180525/model/EnableVpcCniNetworkTypeResponse.h>
+#include <tencentcloud/tke/v20180525/model/ForwardApplicationRequestV3Request.h>
+#include <tencentcloud/tke/v20180525/model/ForwardApplicationRequestV3Response.h>
+#include <tencentcloud/tke/v20180525/model/GetTkeAppChartListRequest.h>
+#include <tencentcloud/tke/v20180525/model/GetTkeAppChartListResponse.h>
 #include <tencentcloud/tke/v20180525/model/GetUpgradeInstanceProgressRequest.h>
 #include <tencentcloud/tke/v20180525/model/GetUpgradeInstanceProgressResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterAsGroupAttributeRequest.h>
@@ -459,6 +463,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::EnableVpcCniNetworkTypeResponse> EnableVpcCniNetworkTypeOutcome;
                 typedef std::future<EnableVpcCniNetworkTypeOutcome> EnableVpcCniNetworkTypeOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::EnableVpcCniNetworkTypeRequest&, EnableVpcCniNetworkTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableVpcCniNetworkTypeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ForwardApplicationRequestV3Response> ForwardApplicationRequestV3Outcome;
+                typedef std::future<ForwardApplicationRequestV3Outcome> ForwardApplicationRequestV3OutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::ForwardApplicationRequestV3Request&, ForwardApplicationRequestV3Outcome, const std::shared_ptr<const AsyncCallerContext>&)> ForwardApplicationRequestV3AsyncHandler;
+                typedef Outcome<Core::Error, Model::GetTkeAppChartListResponse> GetTkeAppChartListOutcome;
+                typedef std::future<GetTkeAppChartListOutcome> GetTkeAppChartListOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::GetTkeAppChartListRequest&, GetTkeAppChartListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTkeAppChartListAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetUpgradeInstanceProgressResponse> GetUpgradeInstanceProgressOutcome;
                 typedef std::future<GetUpgradeInstanceProgressOutcome> GetUpgradeInstanceProgressOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::GetUpgradeInstanceProgressRequest&, GetUpgradeInstanceProgressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetUpgradeInstanceProgressAsyncHandler;
@@ -1208,6 +1218,24 @@ namespace TencentCloud
                 EnableVpcCniNetworkTypeOutcome EnableVpcCniNetworkType(const Model::EnableVpcCniNetworkTypeRequest &request);
                 void EnableVpcCniNetworkTypeAsync(const Model::EnableVpcCniNetworkTypeRequest& request, const EnableVpcCniNetworkTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnableVpcCniNetworkTypeOutcomeCallable EnableVpcCniNetworkTypeCallable(const Model::EnableVpcCniNetworkTypeRequest& request);
+
+                /**
+                 *操作TKE集群的addon
+                 * @param req ForwardApplicationRequestV3Request
+                 * @return ForwardApplicationRequestV3Outcome
+                 */
+                ForwardApplicationRequestV3Outcome ForwardApplicationRequestV3(const Model::ForwardApplicationRequestV3Request &request);
+                void ForwardApplicationRequestV3Async(const Model::ForwardApplicationRequestV3Request& request, const ForwardApplicationRequestV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ForwardApplicationRequestV3OutcomeCallable ForwardApplicationRequestV3Callable(const Model::ForwardApplicationRequestV3Request& request);
+
+                /**
+                 *获取TKE支持的App列表
+                 * @param req GetTkeAppChartListRequest
+                 * @return GetTkeAppChartListOutcome
+                 */
+                GetTkeAppChartListOutcome GetTkeAppChartList(const Model::GetTkeAppChartListRequest &request);
+                void GetTkeAppChartListAsync(const Model::GetTkeAppChartListRequest& request, const GetTkeAppChartListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetTkeAppChartListOutcomeCallable GetTkeAppChartListCallable(const Model::GetTkeAppChartListRequest& request);
 
                 /**
                  *获得节点升级当前的进度 

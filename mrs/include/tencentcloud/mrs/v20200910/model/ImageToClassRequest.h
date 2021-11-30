@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取图片列表，允许传入多张图片，支持传入图片的url或base64编码
-                     * @return ImageInfoList 图片列表，允许传入多张图片，支持传入图片的url或base64编码
+                     * 获取图片列表，允许传入多张图片，支持传入图片的base64编码，暂不支持图片url
+                     * @return ImageInfoList 图片列表，允许传入多张图片，支持传入图片的base64编码，暂不支持图片url
                      */
                     std::vector<ImageInfo> GetImageInfoList() const;
 
                     /**
-                     * 设置图片列表，允许传入多张图片，支持传入图片的url或base64编码
-                     * @param ImageInfoList 图片列表，允许传入多张图片，支持传入图片的url或base64编码
+                     * 设置图片列表，允许传入多张图片，支持传入图片的base64编码，暂不支持图片url
+                     * @param ImageInfoList 图片列表，允许传入多张图片，支持传入图片的base64编码，暂不支持图片url
                      */
                     void SetImageInfoList(const std::vector<ImageInfo>& _imageInfoList);
 
@@ -81,14 +81,14 @@ namespace TencentCloud
                     bool HandleParamHasBeenSet() const;
 
                     /**
-                     * 获取图片类型，目前支持11（检验报告），12（检查报告），15（病理报告），218（诊断证明）。
-                     * @return Type 图片类型，目前支持11（检验报告），12（检查报告），15（病理报告），218（诊断证明）。
+                     * 获取不填，默认为0
+                     * @return Type 不填，默认为0
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置图片类型，目前支持11（检验报告），12（检查报告），15（病理报告），218（诊断证明）。
-                     * @param Type 图片类型，目前支持11（检验报告），12（检查报告），15（病理报告），218（诊断证明）。
+                     * 设置不填，默认为0
+                     * @param Type 不填，默认为0
                      */
                     void SetType(const uint64_t& _type);
 
@@ -101,7 +101,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 图片列表，允许传入多张图片，支持传入图片的url或base64编码
+                     * 图片列表，允许传入多张图片，支持传入图片的base64编码，暂不支持图片url
                      */
                     std::vector<ImageInfo> m_imageInfoList;
                     bool m_imageInfoListHasBeenSet;
@@ -113,7 +113,7 @@ namespace TencentCloud
                     bool m_handleParamHasBeenSet;
 
                     /**
-                     * 图片类型，目前支持11（检验报告），12（检查报告），15（病理报告），218（诊断证明）。
+                     * 不填，默认为0
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;

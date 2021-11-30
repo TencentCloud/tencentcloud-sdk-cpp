@@ -97,6 +97,8 @@
 #include <tencentcloud/clb/v20180317/model/DescribeListenersResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeLoadBalancerListByCertIdRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeLoadBalancerListByCertIdResponse.h>
+#include <tencentcloud/clb/v20180317/model/DescribeLoadBalancerOverviewRequest.h>
+#include <tencentcloud/clb/v20180317/model/DescribeLoadBalancerOverviewResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeLoadBalancerTrafficRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeLoadBalancerTrafficResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeLoadBalancersRequest.h>
@@ -288,6 +290,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLoadBalancerListByCertIdResponse> DescribeLoadBalancerListByCertIdOutcome;
                 typedef std::future<DescribeLoadBalancerListByCertIdOutcome> DescribeLoadBalancerListByCertIdOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeLoadBalancerListByCertIdRequest&, DescribeLoadBalancerListByCertIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoadBalancerListByCertIdAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLoadBalancerOverviewResponse> DescribeLoadBalancerOverviewOutcome;
+                typedef std::future<DescribeLoadBalancerOverviewOutcome> DescribeLoadBalancerOverviewOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DescribeLoadBalancerOverviewRequest&, DescribeLoadBalancerOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoadBalancerOverviewAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLoadBalancerTrafficResponse> DescribeLoadBalancerTrafficOutcome;
                 typedef std::future<DescribeLoadBalancerTrafficOutcome> DescribeLoadBalancerTrafficOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeLoadBalancerTrafficRequest&, DescribeLoadBalancerTrafficOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoadBalancerTrafficAsyncHandler;
@@ -736,6 +741,15 @@ namespace TencentCloud
                 DescribeLoadBalancerListByCertIdOutcome DescribeLoadBalancerListByCertId(const Model::DescribeLoadBalancerListByCertIdRequest &request);
                 void DescribeLoadBalancerListByCertIdAsync(const Model::DescribeLoadBalancerListByCertIdRequest& request, const DescribeLoadBalancerListByCertIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLoadBalancerListByCertIdOutcomeCallable DescribeLoadBalancerListByCertIdCallable(const Model::DescribeLoadBalancerListByCertIdRequest& request);
+
+                /**
+                 *查询运行中、隔离中、即将到期和负载均衡总数。
+                 * @param req DescribeLoadBalancerOverviewRequest
+                 * @return DescribeLoadBalancerOverviewOutcome
+                 */
+                DescribeLoadBalancerOverviewOutcome DescribeLoadBalancerOverview(const Model::DescribeLoadBalancerOverviewRequest &request);
+                void DescribeLoadBalancerOverviewAsync(const Model::DescribeLoadBalancerOverviewRequest& request, const DescribeLoadBalancerOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLoadBalancerOverviewOutcomeCallable DescribeLoadBalancerOverviewCallable(const Model::DescribeLoadBalancerOverviewRequest& request);
 
                 /**
                  *查询账号下的高流量负载均衡，返回前10个负载均衡。如果是子账号登录，只返回子账号有权限的负载均衡。

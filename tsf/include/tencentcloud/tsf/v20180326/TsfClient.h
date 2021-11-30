@@ -175,6 +175,8 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeGatewayMonitorOverviewResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeGroupResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeGroupAttributeRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeGroupAttributeResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeGroupBindedGatewaysRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeGroupBindedGatewaysResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeGroupGatewaysRequest.h>
@@ -607,6 +609,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeGroupResponse> DescribeGroupOutcome;
                 typedef std::future<DescribeGroupOutcome> DescribeGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeGroupRequest&, DescribeGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGroupAttributeResponse> DescribeGroupAttributeOutcome;
+                typedef std::future<DescribeGroupAttributeOutcome> DescribeGroupAttributeOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeGroupAttributeRequest&, DescribeGroupAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupAttributeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGroupBindedGatewaysResponse> DescribeGroupBindedGatewaysOutcome;
                 typedef std::future<DescribeGroupBindedGatewaysOutcome> DescribeGroupBindedGatewaysOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeGroupBindedGatewaysRequest&, DescribeGroupBindedGatewaysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupBindedGatewaysAsyncHandler;
@@ -1580,6 +1585,15 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeGroupOutcome DescribeGroup(const Model::DescribeGroupRequest &request);
                 void DescribeGroupAsync(const Model::DescribeGroupRequest& request, const DescribeGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeGroupOutcomeCallable DescribeGroupCallable(const Model::DescribeGroupRequest& request);
+
+                /**
+                 *获取部署组其他属性
+                 * @param req DescribeGroupAttributeRequest
+                 * @return DescribeGroupAttributeOutcome
+                 */
+                DescribeGroupAttributeOutcome DescribeGroupAttribute(const Model::DescribeGroupAttributeRequest &request);
+                void DescribeGroupAttributeAsync(const Model::DescribeGroupAttributeRequest& request, const DescribeGroupAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGroupAttributeOutcomeCallable DescribeGroupAttributeCallable(const Model::DescribeGroupAttributeRequest& request);
 
                 /**
                  *查询某个API分组已绑定的网关部署组信息列表

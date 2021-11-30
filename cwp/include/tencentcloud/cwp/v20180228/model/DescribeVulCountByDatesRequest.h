@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool LastDaysHasBeenSet() const;
 
                     /**
-                     * 获取漏洞的分类，最小值为1最大值为5
-                     * @return VulCategory 漏洞的分类，最小值为1最大值为5
+                     * 获取漏洞的分类: 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞
+                     * @return VulCategory 漏洞的分类: 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞
                      */
                     uint64_t GetVulCategory() const;
 
                     /**
-                     * 设置漏洞的分类，最小值为1最大值为5
-                     * @param VulCategory 漏洞的分类，最小值为1最大值为5
+                     * 设置漏洞的分类: 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞
+                     * @param VulCategory 漏洞的分类: 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞
                      */
                     void SetVulCategory(const uint64_t& _vulCategory);
 
@@ -105,7 +105,7 @@ namespace TencentCloud
                     bool m_lastDaysHasBeenSet;
 
                     /**
-                     * 漏洞的分类，最小值为1最大值为5
+                     * 漏洞的分类: 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞
                      */
                     uint64_t m_vulCategory;
                     bool m_vulCategoryHasBeenSet;

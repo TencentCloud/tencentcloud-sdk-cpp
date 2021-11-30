@@ -26,7 +26,8 @@ using namespace std;
 CreateInstancePreResponse::CreateInstancePreResponse() :
     m_returnCodeHasBeenSet(false),
     m_returnMessageHasBeenSet(false),
-    m_dataHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_deleteRouteTimestampHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,16 @@ CoreInternalOutcome CreateInstancePreResponse::Deserialize(const string &payload
         m_dataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DeleteRouteTimestamp") && !rsp["DeleteRouteTimestamp"].IsNull())
+    {
+        if (!rsp["DeleteRouteTimestamp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeleteRouteTimestamp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deleteRouteTimestamp = string(rsp["DeleteRouteTimestamp"].GetString());
+        m_deleteRouteTimestampHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -134,6 +145,14 @@ string CreateInstancePreResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_data.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_deleteRouteTimestampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteRouteTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deleteRouteTimestamp.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -176,6 +195,16 @@ CreateInstancePreData CreateInstancePreResponse::GetData() const
 bool CreateInstancePreResponse::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+string CreateInstancePreResponse::GetDeleteRouteTimestamp() const
+{
+    return m_deleteRouteTimestamp;
+}
+
+bool CreateInstancePreResponse::DeleteRouteTimestampHasBeenSet() const
+{
+    return m_deleteRouteTimestampHasBeenSet;
 }
 
 

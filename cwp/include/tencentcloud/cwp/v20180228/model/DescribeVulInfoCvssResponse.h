@@ -86,9 +86,9 @@ namespace TencentCloud
                     bool VulLevelHasBeenSet() const;
 
                     /**
-                     * 获取漏洞分类 1: web应用漏洞 2:应用漏洞3:安全基线 4: Linux系统漏洞 5: Windows系统漏洞
+                     * 获取漏洞分类 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VulType 漏洞分类 1: web应用漏洞 2:应用漏洞3:安全基线 4: Linux系统漏洞 5: Windows系统漏洞
+                     * @return VulType 漏洞分类 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetVulType() const;
@@ -263,7 +263,7 @@ namespace TencentCloud
                     bool m_vulLevelHasBeenSet;
 
                     /**
-                     * 漏洞分类 1: web应用漏洞 2:应用漏洞3:安全基线 4: Linux系统漏洞 5: Windows系统漏洞
+                     * 漏洞分类 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_vulType;

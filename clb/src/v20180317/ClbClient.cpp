@@ -1631,6 +1631,49 @@ ClbClient::DescribeLoadBalancerListByCertIdOutcomeCallable ClbClient::DescribeLo
     return task->get_future();
 }
 
+ClbClient::DescribeLoadBalancerOverviewOutcome ClbClient::DescribeLoadBalancerOverview(const DescribeLoadBalancerOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLoadBalancerOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLoadBalancerOverviewResponse rsp = DescribeLoadBalancerOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLoadBalancerOverviewOutcome(rsp);
+        else
+            return DescribeLoadBalancerOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLoadBalancerOverviewOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeLoadBalancerOverviewAsync(const DescribeLoadBalancerOverviewRequest& request, const DescribeLoadBalancerOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLoadBalancerOverview(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::DescribeLoadBalancerOverviewOutcomeCallable ClbClient::DescribeLoadBalancerOverviewCallable(const DescribeLoadBalancerOverviewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLoadBalancerOverviewOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLoadBalancerOverview(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::DescribeLoadBalancerTrafficOutcome ClbClient::DescribeLoadBalancerTraffic(const DescribeLoadBalancerTrafficRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLoadBalancerTraffic");

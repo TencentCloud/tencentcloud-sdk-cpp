@@ -23,14 +23,20 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/privatedns/v20201028/model/CreatePrivateDNSAccountRequest.h>
+#include <tencentcloud/privatedns/v20201028/model/CreatePrivateDNSAccountResponse.h>
 #include <tencentcloud/privatedns/v20201028/model/CreatePrivateZoneRequest.h>
 #include <tencentcloud/privatedns/v20201028/model/CreatePrivateZoneResponse.h>
 #include <tencentcloud/privatedns/v20201028/model/CreatePrivateZoneRecordRequest.h>
 #include <tencentcloud/privatedns/v20201028/model/CreatePrivateZoneRecordResponse.h>
+#include <tencentcloud/privatedns/v20201028/model/DeletePrivateDNSAccountRequest.h>
+#include <tencentcloud/privatedns/v20201028/model/DeletePrivateDNSAccountResponse.h>
 #include <tencentcloud/privatedns/v20201028/model/DeletePrivateZoneRequest.h>
 #include <tencentcloud/privatedns/v20201028/model/DeletePrivateZoneResponse.h>
 #include <tencentcloud/privatedns/v20201028/model/DeletePrivateZoneRecordRequest.h>
 #include <tencentcloud/privatedns/v20201028/model/DeletePrivateZoneRecordResponse.h>
+#include <tencentcloud/privatedns/v20201028/model/DescribeAccountVpcListRequest.h>
+#include <tencentcloud/privatedns/v20201028/model/DescribeAccountVpcListResponse.h>
 #include <tencentcloud/privatedns/v20201028/model/DescribeAuditLogRequest.h>
 #include <tencentcloud/privatedns/v20201028/model/DescribeAuditLogResponse.h>
 #include <tencentcloud/privatedns/v20201028/model/DescribeDashboardRequest.h>
@@ -69,18 +75,27 @@ namespace TencentCloud
                 PrivatednsClient(const Credential &credential, const std::string &region);
                 PrivatednsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CreatePrivateDNSAccountResponse> CreatePrivateDNSAccountOutcome;
+                typedef std::future<CreatePrivateDNSAccountOutcome> CreatePrivateDNSAccountOutcomeCallable;
+                typedef std::function<void(const PrivatednsClient*, const Model::CreatePrivateDNSAccountRequest&, CreatePrivateDNSAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrivateDNSAccountAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePrivateZoneResponse> CreatePrivateZoneOutcome;
                 typedef std::future<CreatePrivateZoneOutcome> CreatePrivateZoneOutcomeCallable;
                 typedef std::function<void(const PrivatednsClient*, const Model::CreatePrivateZoneRequest&, CreatePrivateZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrivateZoneAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePrivateZoneRecordResponse> CreatePrivateZoneRecordOutcome;
                 typedef std::future<CreatePrivateZoneRecordOutcome> CreatePrivateZoneRecordOutcomeCallable;
                 typedef std::function<void(const PrivatednsClient*, const Model::CreatePrivateZoneRecordRequest&, CreatePrivateZoneRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrivateZoneRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeletePrivateDNSAccountResponse> DeletePrivateDNSAccountOutcome;
+                typedef std::future<DeletePrivateDNSAccountOutcome> DeletePrivateDNSAccountOutcomeCallable;
+                typedef std::function<void(const PrivatednsClient*, const Model::DeletePrivateDNSAccountRequest&, DeletePrivateDNSAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePrivateDNSAccountAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeletePrivateZoneResponse> DeletePrivateZoneOutcome;
                 typedef std::future<DeletePrivateZoneOutcome> DeletePrivateZoneOutcomeCallable;
                 typedef std::function<void(const PrivatednsClient*, const Model::DeletePrivateZoneRequest&, DeletePrivateZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePrivateZoneAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeletePrivateZoneRecordResponse> DeletePrivateZoneRecordOutcome;
                 typedef std::future<DeletePrivateZoneRecordOutcome> DeletePrivateZoneRecordOutcomeCallable;
                 typedef std::function<void(const PrivatednsClient*, const Model::DeletePrivateZoneRecordRequest&, DeletePrivateZoneRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePrivateZoneRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAccountVpcListResponse> DescribeAccountVpcListOutcome;
+                typedef std::future<DescribeAccountVpcListOutcome> DescribeAccountVpcListOutcomeCallable;
+                typedef std::function<void(const PrivatednsClient*, const Model::DescribeAccountVpcListRequest&, DescribeAccountVpcListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountVpcListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAuditLogResponse> DescribeAuditLogOutcome;
                 typedef std::future<DescribeAuditLogOutcome> DescribeAuditLogOutcomeCallable;
                 typedef std::function<void(const PrivatednsClient*, const Model::DescribeAuditLogRequest&, DescribeAuditLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditLogAsyncHandler;
@@ -121,6 +136,15 @@ namespace TencentCloud
 
 
                 /**
+                 *创建私有域解析账号
+                 * @param req CreatePrivateDNSAccountRequest
+                 * @return CreatePrivateDNSAccountOutcome
+                 */
+                CreatePrivateDNSAccountOutcome CreatePrivateDNSAccount(const Model::CreatePrivateDNSAccountRequest &request);
+                void CreatePrivateDNSAccountAsync(const Model::CreatePrivateDNSAccountRequest& request, const CreatePrivateDNSAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePrivateDNSAccountOutcomeCallable CreatePrivateDNSAccountCallable(const Model::CreatePrivateDNSAccountRequest& request);
+
+                /**
                  *创建私有域
                  * @param req CreatePrivateZoneRequest
                  * @return CreatePrivateZoneOutcome
@@ -139,6 +163,15 @@ namespace TencentCloud
                 CreatePrivateZoneRecordOutcomeCallable CreatePrivateZoneRecordCallable(const Model::CreatePrivateZoneRecordRequest& request);
 
                 /**
+                 *删除私有域解析账号
+                 * @param req DeletePrivateDNSAccountRequest
+                 * @return DeletePrivateDNSAccountOutcome
+                 */
+                DeletePrivateDNSAccountOutcome DeletePrivateDNSAccount(const Model::DeletePrivateDNSAccountRequest &request);
+                void DeletePrivateDNSAccountAsync(const Model::DeletePrivateDNSAccountRequest& request, const DeletePrivateDNSAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeletePrivateDNSAccountOutcomeCallable DeletePrivateDNSAccountCallable(const Model::DeletePrivateDNSAccountRequest& request);
+
+                /**
                  *删除私有域并停止解析
                  * @param req DeletePrivateZoneRequest
                  * @return DeletePrivateZoneOutcome
@@ -155,6 +188,15 @@ namespace TencentCloud
                 DeletePrivateZoneRecordOutcome DeletePrivateZoneRecord(const Model::DeletePrivateZoneRecordRequest &request);
                 void DeletePrivateZoneRecordAsync(const Model::DeletePrivateZoneRecordRequest& request, const DeletePrivateZoneRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeletePrivateZoneRecordOutcomeCallable DeletePrivateZoneRecordCallable(const Model::DeletePrivateZoneRecordRequest& request);
+
+                /**
+                 *获取私有域解析账号的VPC列表
+                 * @param req DescribeAccountVpcListRequest
+                 * @return DescribeAccountVpcListOutcome
+                 */
+                DescribeAccountVpcListOutcome DescribeAccountVpcList(const Model::DescribeAccountVpcListRequest &request);
+                void DescribeAccountVpcListAsync(const Model::DescribeAccountVpcListRequest& request, const DescribeAccountVpcListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAccountVpcListOutcomeCallable DescribeAccountVpcListCallable(const Model::DescribeAccountVpcListRequest& request);
 
                 /**
                  *获取操作日志列表

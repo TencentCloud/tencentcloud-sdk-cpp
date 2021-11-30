@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取漏洞类型：1: web应用漏洞 2:系统组件漏洞 (多选英文逗号分隔)
-                     * @return VulCategories 漏洞类型：1: web应用漏洞 2:系统组件漏洞 (多选英文逗号分隔)
+                     * 获取漏洞类型：1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞
+                     * @return VulCategories 漏洞类型：1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞
                      */
                     std::string GetVulCategories() const;
 
@@ -154,7 +154,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 漏洞类型：1: web应用漏洞 2:系统组件漏洞 (多选英文逗号分隔)
+                     * 漏洞类型：1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞
                      */
                     std::string m_vulCategories;
                     bool m_vulCategoriesHasBeenSet;

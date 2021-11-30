@@ -3308,6 +3308,49 @@ TsfClient::DescribeGroupOutcomeCallable TsfClient::DescribeGroupCallable(const D
     return task->get_future();
 }
 
+TsfClient::DescribeGroupAttributeOutcome TsfClient::DescribeGroupAttribute(const DescribeGroupAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGroupAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGroupAttributeResponse rsp = DescribeGroupAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGroupAttributeOutcome(rsp);
+        else
+            return DescribeGroupAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGroupAttributeOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeGroupAttributeAsync(const DescribeGroupAttributeRequest& request, const DescribeGroupAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGroupAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeGroupAttributeOutcomeCallable TsfClient::DescribeGroupAttributeCallable(const DescribeGroupAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGroupAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGroupAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DescribeGroupBindedGatewaysOutcome TsfClient::DescribeGroupBindedGateways(const DescribeGroupBindedGatewaysRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeGroupBindedGateways");

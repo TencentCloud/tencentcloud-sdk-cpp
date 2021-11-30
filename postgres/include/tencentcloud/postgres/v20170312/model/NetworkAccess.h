@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 网络类型信息，用于实例查询接口和RO组查询接口的返回。
+                * 网络相关信息。
                 */
                 class NetworkAccess : public AbstractModel
                 {
@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取网络资源id，实例id或RO组id
+                     * 获取网络资源id，实例id或RO组id(此字段已废弃)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceId 网络资源id，实例id或RO组id
+                     * @return ResourceId 网络资源id，实例id或RO组id(此字段已废弃)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置网络资源id，实例id或RO组id
+                     * 设置网络资源id，实例id或RO组id(此字段已废弃)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceId 网络资源id，实例id或RO组id
+                     * @param ResourceId 网络资源id，实例id或RO组id(此字段已废弃)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取资源类型，1-实例 2-RO组
+                     * 获取资源类型，1-实例 2-RO组(此字段已废弃)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceType 资源类型，1-实例 2-RO组
+                     * @return ResourceType 资源类型，1-实例 2-RO组(此字段已废弃)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetResourceType() const;
 
                     /**
-                     * 设置资源类型，1-实例 2-RO组
+                     * 设置资源类型，1-实例 2-RO组(此字段已废弃)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceType 资源类型，1-实例 2-RO组
+                     * @param ResourceType 资源类型，1-实例 2-RO组(此字段已废弃)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetResourceType(const uint64_t& _resourceType);
@@ -113,17 +113,17 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取IP地址
+                     * 获取IPV4地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Vip IP地址
+                     * @return Vip IPV4地址
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetVip() const;
 
                     /**
-                     * 设置IP地址
+                     * 设置IPV4地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Vip IP地址
+                     * @param Vip IPV4地址
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetVip(const std::string& _vip);
@@ -135,17 +135,17 @@ namespace TencentCloud
                     bool VipHasBeenSet() const;
 
                     /**
-                     * 获取ipv6的IP地址
+                     * 获取IPV6地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Vip6 ipv6的IP地址
+                     * @return Vip6 IPV6地址
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetVip6() const;
 
                     /**
-                     * 设置ipv6的IP地址
+                     * 设置IPV6地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Vip6 ipv6的IP地址
+                     * @param Vip6 IPV6地址
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetVip6(const std::string& _vip6);
@@ -157,17 +157,17 @@ namespace TencentCloud
                     bool Vip6HasBeenSet() const;
 
                     /**
-                     * 获取连接Port地址
+                     * 获取访问端口
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Vport 连接Port地址
+                     * @return Vport 访问端口
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetVport() const;
 
                     /**
-                     * 设置连接Port地址
+                     * 设置访问端口
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Vport 连接Port地址
+                     * @param Vport 访问端口
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetVport(const int64_t& _vport);
@@ -225,14 +225,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 网络资源id，实例id或RO组id
+                     * 网络资源id，实例id或RO组id(此字段已废弃)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 资源类型，1-实例 2-RO组
+                     * 资源类型，1-实例 2-RO组(此字段已废弃)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_resourceType;
@@ -246,21 +246,21 @@ namespace TencentCloud
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * IP地址
+                     * IPV4地址
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
-                     * ipv6的IP地址
+                     * IPV6地址
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vip6;
                     bool m_vip6HasBeenSet;
 
                     /**
-                     * 连接Port地址
+                     * 访问端口
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_vport;

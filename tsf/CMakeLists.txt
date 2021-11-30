@@ -264,6 +264,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/DescribeServerlessGroupResponse.h
   include/tencentcloud/tsf/v20180326/model/BindApiGroupResponse.h
   include/tencentcloud/tsf/v20180326/model/MetricDataPointMap.h
+  include/tencentcloud/tsf/v20180326/model/DescribeGroupAttributeResponse.h
   include/tencentcloud/tsf/v20180326/model/ModifyPathRewriteResponse.h
   include/tencentcloud/tsf/v20180326/model/EnableUnitRuleResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribeEnabledUnitRuleResponse.h
@@ -351,6 +352,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/CreateTaskFlowResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribeMicroservicesRequest.h
   include/tencentcloud/tsf/v20180326/model/AddClusterInstancesResponse.h
+  include/tencentcloud/tsf/v20180326/model/VmGroupOther.h
   include/tencentcloud/tsf/v20180326/model/DescribeTaskLastStatusResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribePublicConfigsRequest.h
   include/tencentcloud/tsf/v20180326/model/GatewayGroupApiVo.h
@@ -385,6 +387,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/RevocationPublicConfigRequest.h
   include/tencentcloud/tsf/v20180326/model/ModifyLaneRuleResponse.h
   include/tencentcloud/tsf/v20180326/model/TsfPageSimpleGroup.h
+  include/tencentcloud/tsf/v20180326/model/DescribeGroupAttributeRequest.h
   include/tencentcloud/tsf/v20180326/model/TaskRule.h
   include/tencentcloud/tsf/v20180326/model/PkgInfo.h
   include/tencentcloud/tsf/v20180326/model/GroupPod.h
@@ -742,6 +745,7 @@ set(tsf_src
   src/v20180326/model/DescribeServerlessGroupResponse.cpp
   src/v20180326/model/BindApiGroupResponse.cpp
   src/v20180326/model/MetricDataPointMap.cpp
+  src/v20180326/model/DescribeGroupAttributeResponse.cpp
   src/v20180326/model/ModifyPathRewriteResponse.cpp
   src/v20180326/model/EnableUnitRuleResponse.cpp
   src/v20180326/model/DescribeEnabledUnitRuleResponse.cpp
@@ -829,6 +833,7 @@ set(tsf_src
   src/v20180326/model/CreateTaskFlowResponse.cpp
   src/v20180326/model/DescribeMicroservicesRequest.cpp
   src/v20180326/model/AddClusterInstancesResponse.cpp
+  src/v20180326/model/VmGroupOther.cpp
   src/v20180326/model/DescribeTaskLastStatusResponse.cpp
   src/v20180326/model/DescribePublicConfigsRequest.cpp
   src/v20180326/model/GatewayGroupApiVo.cpp
@@ -863,6 +868,7 @@ set(tsf_src
   src/v20180326/model/RevocationPublicConfigRequest.cpp
   src/v20180326/model/ModifyLaneRuleResponse.cpp
   src/v20180326/model/TsfPageSimpleGroup.cpp
+  src/v20180326/model/DescribeGroupAttributeRequest.cpp
   src/v20180326/model/TaskRule.cpp
   src/v20180326/model/PkgInfo.cpp
   src/v20180326/model/GroupPod.cpp

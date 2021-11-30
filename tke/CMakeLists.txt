@@ -92,6 +92,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/CreateClusterNodePoolFromExistingAsgRequest.h
   include/tencentcloud/tke/v20180525/model/PrometheusAlertRule.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusAgentInstancesRequest.h
+  include/tencentcloud/tke/v20180525/model/ForwardApplicationRequestV3Response.h
   include/tencentcloud/tke/v20180525/model/ClusterNetworkSettings.h
   include/tencentcloud/tke/v20180525/model/DescribeImagesResponse.h
   include/tencentcloud/tke/v20180525/model/AutoScalingGroupRange.h
@@ -213,10 +214,12 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/AddClusterCIDRResponse.h
   include/tencentcloud/tke/v20180525/model/PrometheusAgentOverview.h
   include/tencentcloud/tke/v20180525/model/ControllerStatus.h
+  include/tencentcloud/tke/v20180525/model/AppChart.h
   include/tencentcloud/tke/v20180525/model/Filter.h
   include/tencentcloud/tke/v20180525/model/ModifyClusterNodePoolRequest.h
   include/tencentcloud/tke/v20180525/model/ImageInstance.h
   include/tencentcloud/tke/v20180525/model/UpgradeAbleInstancesItem.h
+  include/tencentcloud/tke/v20180525/model/GetTkeAppChartListRequest.h
   include/tencentcloud/tke/v20180525/model/CreateClusterEndpointResponse.h
   include/tencentcloud/tke/v20180525/model/CreateClusterNodePoolRequest.h
   include/tencentcloud/tke/v20180525/model/ClusterAdvancedSettings.h
@@ -224,6 +227,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/Taint.h
   include/tencentcloud/tke/v20180525/model/RestartEKSContainerInstancesResponse.h
   include/tencentcloud/tke/v20180525/model/ModifyPrometheusTemplateResponse.h
+  include/tencentcloud/tke/v20180525/model/GetTkeAppChartListResponse.h
   include/tencentcloud/tke/v20180525/model/DeletePrometheusTemplateResponse.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusTemplateSyncRequest.h
   include/tencentcloud/tke/v20180525/model/UpdateClusterVersionRequest.h
@@ -306,6 +310,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribeClusterAsGroupsResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeEKSContainerInstancesRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterNodePoolDetailResponse.h
+  include/tencentcloud/tke/v20180525/model/ForwardApplicationRequestV3Request.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterControllersRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeEKSContainerInstanceEventRequest.h
   include/tencentcloud/tke/v20180525/model/ScaleOutClusterMasterResponse.h
@@ -386,6 +391,7 @@ set(tke_src
   src/v20180525/model/CreateClusterNodePoolFromExistingAsgRequest.cpp
   src/v20180525/model/PrometheusAlertRule.cpp
   src/v20180525/model/DescribePrometheusAgentInstancesRequest.cpp
+  src/v20180525/model/ForwardApplicationRequestV3Response.cpp
   src/v20180525/model/ClusterNetworkSettings.cpp
   src/v20180525/model/DescribeImagesResponse.cpp
   src/v20180525/model/AutoScalingGroupRange.cpp
@@ -507,10 +513,12 @@ set(tke_src
   src/v20180525/model/AddClusterCIDRResponse.cpp
   src/v20180525/model/PrometheusAgentOverview.cpp
   src/v20180525/model/ControllerStatus.cpp
+  src/v20180525/model/AppChart.cpp
   src/v20180525/model/Filter.cpp
   src/v20180525/model/ModifyClusterNodePoolRequest.cpp
   src/v20180525/model/ImageInstance.cpp
   src/v20180525/model/UpgradeAbleInstancesItem.cpp
+  src/v20180525/model/GetTkeAppChartListRequest.cpp
   src/v20180525/model/CreateClusterEndpointResponse.cpp
   src/v20180525/model/CreateClusterNodePoolRequest.cpp
   src/v20180525/model/ClusterAdvancedSettings.cpp
@@ -518,6 +526,7 @@ set(tke_src
   src/v20180525/model/Taint.cpp
   src/v20180525/model/RestartEKSContainerInstancesResponse.cpp
   src/v20180525/model/ModifyPrometheusTemplateResponse.cpp
+  src/v20180525/model/GetTkeAppChartListResponse.cpp
   src/v20180525/model/DeletePrometheusTemplateResponse.cpp
   src/v20180525/model/DescribePrometheusTemplateSyncRequest.cpp
   src/v20180525/model/UpdateClusterVersionRequest.cpp
@@ -600,6 +609,7 @@ set(tke_src
   src/v20180525/model/DescribeClusterAsGroupsResponse.cpp
   src/v20180525/model/DescribeEKSContainerInstancesRequest.cpp
   src/v20180525/model/DescribeClusterNodePoolDetailResponse.cpp
+  src/v20180525/model/ForwardApplicationRequestV3Request.cpp
   src/v20180525/model/DescribeClusterControllersRequest.cpp
   src/v20180525/model/DescribeEKSContainerInstanceEventRequest.cpp
   src/v20180525/model/ScaleOutClusterMasterResponse.cpp

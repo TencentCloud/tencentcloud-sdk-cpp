@@ -22,6 +22,7 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/Indicator.h
   include/tencentcloud/mrs/v20200910/model/Template.h
   include/tencentcloud/mrs/v20200910/model/Elastic.h
+  include/tencentcloud/mrs/v20200910/model/Vaccination.h
   include/tencentcloud/mrs/v20200910/model/ReportInfo.h
   include/tencentcloud/mrs/v20200910/model/Endoscopy.h
   include/tencentcloud/mrs/v20200910/model/IHCInfo.h
@@ -56,6 +57,7 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/Organ.h
   include/tencentcloud/mrs/v20200910/model/DiagCert.h
   include/tencentcloud/mrs/v20200910/model/TreatmentRecord.h
+  include/tencentcloud/mrs/v20200910/model/VaccineCertificate.h
   include/tencentcloud/mrs/v20200910/model/Value.h
   include/tencentcloud/mrs/v20200910/model/Summary.h
   include/tencentcloud/mrs/v20200910/model/DiseaseMedicalHistory.h
@@ -90,6 +92,7 @@ set(mrs_src
   src/v20200910/model/Indicator.cpp
   src/v20200910/model/Template.cpp
   src/v20200910/model/Elastic.cpp
+  src/v20200910/model/Vaccination.cpp
   src/v20200910/model/ReportInfo.cpp
   src/v20200910/model/Endoscopy.cpp
   src/v20200910/model/IHCInfo.cpp
@@ -124,6 +127,7 @@ set(mrs_src
   src/v20200910/model/Organ.cpp
   src/v20200910/model/DiagCert.cpp
   src/v20200910/model/TreatmentRecord.cpp
+  src/v20200910/model/VaccineCertificate.cpp
   src/v20200910/model/Value.cpp
   src/v20200910/model/Summary.cpp
   src/v20200910/model/DiseaseMedicalHistory.cpp

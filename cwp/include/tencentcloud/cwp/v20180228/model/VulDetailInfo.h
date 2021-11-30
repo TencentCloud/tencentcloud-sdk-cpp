@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool CveIdHasBeenSet() const;
 
                     /**
-                     * 获取漏洞分类
-                     * @return VulCategory 漏洞分类
+                     * 获取1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞 0= 应急漏洞
+                     * @return VulCategory 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞 0= 应急漏洞
                      */
                     uint64_t GetVulCategory() const;
 
                     /**
-                     * 设置漏洞分类
-                     * @param VulCategory 漏洞分类
+                     * 设置1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞 0= 应急漏洞
+                     * @param VulCategory 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞 0= 应急漏洞
                      */
                     void SetVulCategory(const uint64_t& _vulCategory);
 
@@ -271,7 +271,7 @@ namespace TencentCloud
                     bool m_cveIdHasBeenSet;
 
                     /**
-                     * 漏洞分类
+                     * 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞 0= 应急漏洞
                      */
                     uint64_t m_vulCategory;
                     bool m_vulCategoryHasBeenSet;

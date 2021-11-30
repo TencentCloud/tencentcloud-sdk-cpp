@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool TimerIntervalHasBeenSet() const;
 
                     /**
-                     * 获取漏洞类型：1: web应用漏洞 2:系统组件漏洞, 以数组方式传参[1,2]
-                     * @return VulCategories 漏洞类型：1: web应用漏洞 2:系统组件漏洞, 以数组方式传参[1,2]
+                     * 获取漏洞类型：1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞, 以数组方式传参[1,2]
+                     * @return VulCategories 漏洞类型：1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞, 以数组方式传参[1,2]
                      */
                     std::vector<uint64_t> GetVulCategories() const;
 
                     /**
-                     * 设置漏洞类型：1: web应用漏洞 2:系统组件漏洞, 以数组方式传参[1,2]
-                     * @param VulCategories 漏洞类型：1: web应用漏洞 2:系统组件漏洞, 以数组方式传参[1,2]
+                     * 设置漏洞类型：1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞, 以数组方式传参[1,2]
+                     * @param VulCategories 漏洞类型：1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞, 以数组方式传参[1,2]
                      */
                     void SetVulCategories(const std::vector<uint64_t>& _vulCategories);
 
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_timerIntervalHasBeenSet;
 
                     /**
-                     * 漏洞类型：1: web应用漏洞 2:系统组件漏洞, 以数组方式传参[1,2]
+                     * 漏洞类型：1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞, 以数组方式传参[1,2]
                      */
                     std::vector<uint64_t> m_vulCategories;
                     bool m_vulCategoriesHasBeenSet;

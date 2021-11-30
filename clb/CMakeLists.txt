@@ -30,7 +30,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/BatchModifyTargetWeightResponse.h
   include/tencentcloud/clb/v20180317/model/SetSecurityGroupForLoadbalancersRequest.h
   include/tencentcloud/clb/v20180317/model/CreateLoadBalancerRequest.h
-  include/tencentcloud/clb/v20180317/model/RuleHealth.h
+  include/tencentcloud/clb/v20180317/model/DescribeLoadBalancerOverviewResponse.h
   include/tencentcloud/clb/v20180317/model/DeleteRuleRequest.h
   include/tencentcloud/clb/v20180317/model/CloneLoadBalancerRequest.h
   include/tencentcloud/clb/v20180317/model/DisassociateTargetGroupsResponse.h
@@ -56,6 +56,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/TargetGroupInstance.h
   include/tencentcloud/clb/v20180317/model/DescribeClassicalLBByInstanceIdResponse.h
   include/tencentcloud/clb/v20180317/model/CreateRuleResponse.h
+  include/tencentcloud/clb/v20180317/model/RuleHealth.h
   include/tencentcloud/clb/v20180317/model/DescribeExclusiveClustersResponse.h
   include/tencentcloud/clb/v20180317/model/RegisterTargetGroupInstancesResponse.h
   include/tencentcloud/clb/v20180317/model/ClassicalTargetInfo.h
@@ -153,6 +154,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/DeleteLoadBalancerResponse.h
   include/tencentcloud/clb/v20180317/model/AutoRewriteResponse.h
   include/tencentcloud/clb/v20180317/model/DeregisterTargetsResponse.h
+  include/tencentcloud/clb/v20180317/model/DescribeLoadBalancerOverviewRequest.h
   include/tencentcloud/clb/v20180317/model/RewriteTarget.h
   include/tencentcloud/clb/v20180317/model/Cluster.h
   include/tencentcloud/clb/v20180317/model/ModifyTargetWeightRequest.h
@@ -230,7 +232,7 @@ set(clb_src
   src/v20180317/model/BatchModifyTargetWeightResponse.cpp
   src/v20180317/model/SetSecurityGroupForLoadbalancersRequest.cpp
   src/v20180317/model/CreateLoadBalancerRequest.cpp
-  src/v20180317/model/RuleHealth.cpp
+  src/v20180317/model/DescribeLoadBalancerOverviewResponse.cpp
   src/v20180317/model/DeleteRuleRequest.cpp
   src/v20180317/model/CloneLoadBalancerRequest.cpp
   src/v20180317/model/DisassociateTargetGroupsResponse.cpp
@@ -256,6 +258,7 @@ set(clb_src
   src/v20180317/model/TargetGroupInstance.cpp
   src/v20180317/model/DescribeClassicalLBByInstanceIdResponse.cpp
   src/v20180317/model/CreateRuleResponse.cpp
+  src/v20180317/model/RuleHealth.cpp
   src/v20180317/model/DescribeExclusiveClustersResponse.cpp
   src/v20180317/model/RegisterTargetGroupInstancesResponse.cpp
   src/v20180317/model/ClassicalTargetInfo.cpp
@@ -353,6 +356,7 @@ set(clb_src
   src/v20180317/model/DeleteLoadBalancerResponse.cpp
   src/v20180317/model/AutoRewriteResponse.cpp
   src/v20180317/model/DeregisterTargetsResponse.cpp
+  src/v20180317/model/DescribeLoadBalancerOverviewRequest.cpp
   src/v20180317/model/RewriteTarget.cpp
   src/v20180317/model/Cluster.cpp
   src/v20180317/model/ModifyTargetWeightRequest.cpp

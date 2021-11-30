@@ -35,7 +35,8 @@ Template::Template() :
     m_surgeryHasBeenSet(false),
     m_electrocardiogramHasBeenSet(false),
     m_endoscopyHasBeenSet(false),
-    m_prescriptionHasBeenSet(false)
+    m_prescriptionHasBeenSet(false),
+    m_vaccineCertificateHasBeenSet(false)
 {
 }
 
@@ -292,6 +293,23 @@ CoreInternalOutcome Template::Deserialize(const rapidjson::Value &value)
         m_prescriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("VaccineCertificate") && !value["VaccineCertificate"].IsNull())
+    {
+        if (!value["VaccineCertificate"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Template.VaccineCertificate` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_vaccineCertificate.Deserialize(value["VaccineCertificate"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_vaccineCertificateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -431,6 +449,15 @@ void Template::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_prescription.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_vaccineCertificateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VaccineCertificate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_vaccineCertificate.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -674,5 +701,21 @@ void Template::SetPrescription(const Prescription& _prescription)
 bool Template::PrescriptionHasBeenSet() const
 {
     return m_prescriptionHasBeenSet;
+}
+
+VaccineCertificate Template::GetVaccineCertificate() const
+{
+    return m_vaccineCertificate;
+}
+
+void Template::SetVaccineCertificate(const VaccineCertificate& _vaccineCertificate)
+{
+    m_vaccineCertificate = _vaccineCertificate;
+    m_vaccineCertificateHasBeenSet = true;
+}
+
+bool Template::VaccineCertificateHasBeenSet() const
+{
+    return m_vaccineCertificateHasBeenSet;
 }
 
