@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/apm/v20210622/model/DescribeApmAgentRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeApmAgentResponse.h>
+#include <tencentcloud/apm/v20210622/model/DescribeApmInstancesRequest.h>
+#include <tencentcloud/apm/v20210622/model/DescribeApmInstancesResponse.h>
 
 
 namespace TencentCloud
@@ -42,6 +44,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeApmAgentResponse> DescribeApmAgentOutcome;
                 typedef std::future<DescribeApmAgentOutcome> DescribeApmAgentOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeApmAgentRequest&, DescribeApmAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApmAgentAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeApmInstancesResponse> DescribeApmInstancesOutcome;
+                typedef std::future<DescribeApmInstancesOutcome> DescribeApmInstancesOutcomeCallable;
+                typedef std::function<void(const ApmClient*, const Model::DescribeApmInstancesRequest&, DescribeApmInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApmInstancesAsyncHandler;
 
 
 
@@ -53,6 +58,15 @@ namespace TencentCloud
                 DescribeApmAgentOutcome DescribeApmAgent(const Model::DescribeApmAgentRequest &request);
                 void DescribeApmAgentAsync(const Model::DescribeApmAgentRequest& request, const DescribeApmAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeApmAgentOutcomeCallable DescribeApmAgentCallable(const Model::DescribeApmAgentRequest& request);
+
+                /**
+                 *APM实例列表拉取
+                 * @param req DescribeApmInstancesRequest
+                 * @return DescribeApmInstancesOutcome
+                 */
+                DescribeApmInstancesOutcome DescribeApmInstances(const Model::DescribeApmInstancesRequest &request);
+                void DescribeApmInstancesAsync(const Model::DescribeApmInstancesRequest& request, const DescribeApmInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeApmInstancesOutcomeCallable DescribeApmInstancesCallable(const Model::DescribeApmInstancesRequest& request);
 
             };
         }

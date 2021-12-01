@@ -83,3 +83,46 @@ ApmClient::DescribeApmAgentOutcomeCallable ApmClient::DescribeApmAgentCallable(c
     return task->get_future();
 }
 
+ApmClient::DescribeApmInstancesOutcome ApmClient::DescribeApmInstances(const DescribeApmInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApmInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApmInstancesResponse rsp = DescribeApmInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApmInstancesOutcome(rsp);
+        else
+            return DescribeApmInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApmInstancesOutcome(outcome.GetError());
+    }
+}
+
+void ApmClient::DescribeApmInstancesAsync(const DescribeApmInstancesRequest& request, const DescribeApmInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApmInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApmClient::DescribeApmInstancesOutcomeCallable ApmClient::DescribeApmInstancesCallable(const DescribeApmInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeApmInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApmInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

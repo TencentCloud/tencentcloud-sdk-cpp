@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool ScanResultInfoHasBeenSet() const;
 
                     /**
-                     * 获取扫描状态 0扫描中 1完成   2没赠送过扫描显示开启界面
-                     * @return ScanStatus 扫描状态 0扫描中 1完成   2没赠送过扫描显示开启界面
+                     * 获取扫描状态 0扫描中 1完成  2未勾选自动扫描
+                     * @return ScanStatus 扫描状态 0扫描中 1完成  2未勾选自动扫描
                      */
                     int64_t GetScanStatus() const;
 
                     /**
-                     * 设置扫描状态 0扫描中 1完成   2没赠送过扫描显示开启界面
-                     * @param ScanStatus 扫描状态 0扫描中 1完成   2没赠送过扫描显示开启界面
+                     * 设置扫描状态 0扫描中 1完成  2未勾选自动扫描
+                     * @param ScanStatus 扫描状态 0扫描中 1完成  2未勾选自动扫描
                      */
                     void SetScanStatus(const int64_t& _scanStatus);
 
@@ -128,7 +128,7 @@ namespace TencentCloud
                     bool m_scanResultInfoHasBeenSet;
 
                     /**
-                     * 扫描状态 0扫描中 1完成   2没赠送过扫描显示开启界面
+                     * 扫描状态 0扫描中 1完成  2未勾选自动扫描
                      */
                     int64_t m_scanStatus;
                     bool m_scanStatusHasBeenSet;
