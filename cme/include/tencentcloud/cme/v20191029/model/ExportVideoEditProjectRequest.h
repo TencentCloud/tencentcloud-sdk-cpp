@@ -112,22 +112,22 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取导出目标。
-<li>CME：云剪，即导出为云剪媒体；</li>
-<li>VOD：云点播，即导出为云点播媒资。</li>
-                     * @return ExportDestination 导出目标。
-<li>CME：云剪，即导出为云剪媒体；</li>
-<li>VOD：云点播，即导出为云点播媒资。</li>
+                     * 获取导出目标，指定导出视频的目标媒资库，可取值有：
+<li>CME：多媒体创作引擎，即导出为多媒体创作引擎媒资库，此导出目标在云点播媒资库依然可见；</li>
+<li>VOD：云点播，即导出为云点播媒资库，此导出目标在多媒体创作引擎媒资库将不可见。</li>
+                     * @return ExportDestination 导出目标，指定导出视频的目标媒资库，可取值有：
+<li>CME：多媒体创作引擎，即导出为多媒体创作引擎媒资库，此导出目标在云点播媒资库依然可见；</li>
+<li>VOD：云点播，即导出为云点播媒资库，此导出目标在多媒体创作引擎媒资库将不可见。</li>
                      */
                     std::string GetExportDestination() const;
 
                     /**
-                     * 设置导出目标。
-<li>CME：云剪，即导出为云剪媒体；</li>
-<li>VOD：云点播，即导出为云点播媒资。</li>
-                     * @param ExportDestination 导出目标。
-<li>CME：云剪，即导出为云剪媒体；</li>
-<li>VOD：云点播，即导出为云点播媒资。</li>
+                     * 设置导出目标，指定导出视频的目标媒资库，可取值有：
+<li>CME：多媒体创作引擎，即导出为多媒体创作引擎媒资库，此导出目标在云点播媒资库依然可见；</li>
+<li>VOD：云点播，即导出为云点播媒资库，此导出目标在多媒体创作引擎媒资库将不可见。</li>
+                     * @param ExportDestination 导出目标，指定导出视频的目标媒资库，可取值有：
+<li>CME：多媒体创作引擎，即导出为多媒体创作引擎媒资库，此导出目标在云点播媒资库依然可见；</li>
+<li>VOD：云点播，即导出为云点播媒资库，此导出目标在多媒体创作引擎媒资库将不可见。</li>
                      */
                     void SetExportDestination(const std::string& _exportDestination);
 
@@ -156,14 +156,14 @@ namespace TencentCloud
                     bool CoverDataHasBeenSet() const;
 
                     /**
-                     * 获取导出的云剪媒体信息。当导出目标为 CME 时必填。
-                     * @return CMEExportInfo 导出的云剪媒体信息。当导出目标为 CME 时必填。
+                     * 获取导出的多媒体创作引擎媒体信息。当导出目标为 CME 时必填。
+                     * @return CMEExportInfo 导出的多媒体创作引擎媒体信息。当导出目标为 CME 时必填。
                      */
                     CMEExportInfo GetCMEExportInfo() const;
 
                     /**
-                     * 设置导出的云剪媒体信息。当导出目标为 CME 时必填。
-                     * @param CMEExportInfo 导出的云剪媒体信息。当导出目标为 CME 时必填。
+                     * 设置导出的多媒体创作引擎媒体信息。当导出目标为 CME 时必填。
+                     * @param CMEExportInfo 导出的多媒体创作引擎媒体信息。当导出目标为 CME 时必填。
                      */
                     void SetCMEExportInfo(const CMEExportInfo& _cMEExportInfo);
 
@@ -251,9 +251,9 @@ namespace TencentCloud
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * 导出目标。
-<li>CME：云剪，即导出为云剪媒体；</li>
-<li>VOD：云点播，即导出为云点播媒资。</li>
+                     * 导出目标，指定导出视频的目标媒资库，可取值有：
+<li>CME：多媒体创作引擎，即导出为多媒体创作引擎媒资库，此导出目标在云点播媒资库依然可见；</li>
+<li>VOD：云点播，即导出为云点播媒资库，此导出目标在多媒体创作引擎媒资库将不可见。</li>
                      */
                     std::string m_exportDestination;
                     bool m_exportDestinationHasBeenSet;
@@ -265,7 +265,7 @@ namespace TencentCloud
                     bool m_coverDataHasBeenSet;
 
                     /**
-                     * 导出的云剪媒体信息。当导出目标为 CME 时必填。
+                     * 导出的多媒体创作引擎媒体信息。当导出目标为 CME 时必填。
                      */
                     CMEExportInfo m_cMEExportInfo;
                     bool m_cMEExportInfoHasBeenSet;

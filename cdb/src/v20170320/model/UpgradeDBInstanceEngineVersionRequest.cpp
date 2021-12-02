@@ -26,7 +26,8 @@ UpgradeDBInstanceEngineVersionRequest::UpgradeDBInstanceEngineVersionRequest() :
     m_instanceIdHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
     m_waitSwitchHasBeenSet(false),
-    m_upgradeSubversionHasBeenSet(false)
+    m_upgradeSubversionHasBeenSet(false),
+    m_maxDelayTimeHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string UpgradeDBInstanceEngineVersionRequest::ToJsonString() const
         string key = "UpgradeSubversion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_upgradeSubversion, allocator);
+    }
+
+    if (m_maxDelayTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxDelayTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxDelayTime, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void UpgradeDBInstanceEngineVersionRequest::SetUpgradeSubversion(const int64_t& 
 bool UpgradeDBInstanceEngineVersionRequest::UpgradeSubversionHasBeenSet() const
 {
     return m_upgradeSubversionHasBeenSet;
+}
+
+int64_t UpgradeDBInstanceEngineVersionRequest::GetMaxDelayTime() const
+{
+    return m_maxDelayTime;
+}
+
+void UpgradeDBInstanceEngineVersionRequest::SetMaxDelayTime(const int64_t& _maxDelayTime)
+{
+    m_maxDelayTime = _maxDelayTime;
+    m_maxDelayTimeHasBeenSet = true;
+}
+
+bool UpgradeDBInstanceEngineVersionRequest::MaxDelayTimeHasBeenSet() const
+{
+    return m_maxDelayTimeHasBeenSet;
 }
 
 

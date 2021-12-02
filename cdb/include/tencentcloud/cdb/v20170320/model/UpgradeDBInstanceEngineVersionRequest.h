@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool UpgradeSubversionHasBeenSet() const;
 
+                    /**
+                     * 获取延迟阈值。取值范围1~10
+                     * @return MaxDelayTime 延迟阈值。取值范围1~10
+                     */
+                    int64_t GetMaxDelayTime() const;
+
+                    /**
+                     * 设置延迟阈值。取值范围1~10
+                     * @param MaxDelayTime 延迟阈值。取值范围1~10
+                     */
+                    void SetMaxDelayTime(const int64_t& _maxDelayTime);
+
+                    /**
+                     * 判断参数 MaxDelayTime 是否已赋值
+                     * @return MaxDelayTime 是否已赋值
+                     */
+                    bool MaxDelayTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     int64_t m_upgradeSubversion;
                     bool m_upgradeSubversionHasBeenSet;
+
+                    /**
+                     * 延迟阈值。取值范围1~10
+                     */
+                    int64_t m_maxDelayTime;
+                    bool m_maxDelayTimeHasBeenSet;
 
                 };
             }

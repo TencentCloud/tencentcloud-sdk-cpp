@@ -454,6 +454,28 @@ namespace TencentCloud
                      */
                     bool DamDDoSStatusHasBeenSet() const;
 
+                    /**
+                     * 获取是否Ipv6版本的IP, 是为1，否为0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return V6Flag 是否Ipv6版本的IP, 是为1，否为0
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetV6Flag() const;
+
+                    /**
+                     * 设置是否Ipv6版本的IP, 是为1，否为0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param V6Flag 是否Ipv6版本的IP, 是为1，否为0
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetV6Flag(const uint64_t& _v6Flag);
+
+                    /**
+                     * 判断参数 V6Flag 是否已赋值
+                     * @return V6Flag 是否已赋值
+                     */
+                    bool V6FlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -582,6 +604,13 @@ namespace TencentCloud
                      */
                     uint64_t m_damDDoSStatus;
                     bool m_damDDoSStatusHasBeenSet;
+
+                    /**
+                     * 是否Ipv6版本的IP, 是为1，否为0
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_v6Flag;
+                    bool m_v6FlagHasBeenSet;
 
                 };
             }

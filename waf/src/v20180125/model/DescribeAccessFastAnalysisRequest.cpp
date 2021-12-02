@@ -22,7 +22,12 @@
 using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
-DescribeAccessFastAnalysisRequest::DescribeAccessFastAnalysisRequest()
+DescribeAccessFastAnalysisRequest::DescribeAccessFastAnalysisRequest() :
+    m_topicIdHasBeenSet(false),
+    m_fromHasBeenSet(false),
+    m_toHasBeenSet(false),
+    m_queryHasBeenSet(false),
+    m_fieldNameHasBeenSet(false)
 {
 }
 
@@ -33,6 +38,46 @@ string DescribeAccessFastAnalysisRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_topicIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_topicId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fromHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "From";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_from, allocator);
+    }
+
+    if (m_toHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "To";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_to, allocator);
+    }
+
+    if (m_queryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Query";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_query.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fieldNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FieldName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fieldName.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +85,85 @@ string DescribeAccessFastAnalysisRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeAccessFastAnalysisRequest::GetTopicId() const
+{
+    return m_topicId;
+}
+
+void DescribeAccessFastAnalysisRequest::SetTopicId(const string& _topicId)
+{
+    m_topicId = _topicId;
+    m_topicIdHasBeenSet = true;
+}
+
+bool DescribeAccessFastAnalysisRequest::TopicIdHasBeenSet() const
+{
+    return m_topicIdHasBeenSet;
+}
+
+int64_t DescribeAccessFastAnalysisRequest::GetFrom() const
+{
+    return m_from;
+}
+
+void DescribeAccessFastAnalysisRequest::SetFrom(const int64_t& _from)
+{
+    m_from = _from;
+    m_fromHasBeenSet = true;
+}
+
+bool DescribeAccessFastAnalysisRequest::FromHasBeenSet() const
+{
+    return m_fromHasBeenSet;
+}
+
+int64_t DescribeAccessFastAnalysisRequest::GetTo() const
+{
+    return m_to;
+}
+
+void DescribeAccessFastAnalysisRequest::SetTo(const int64_t& _to)
+{
+    m_to = _to;
+    m_toHasBeenSet = true;
+}
+
+bool DescribeAccessFastAnalysisRequest::ToHasBeenSet() const
+{
+    return m_toHasBeenSet;
+}
+
+string DescribeAccessFastAnalysisRequest::GetQuery() const
+{
+    return m_query;
+}
+
+void DescribeAccessFastAnalysisRequest::SetQuery(const string& _query)
+{
+    m_query = _query;
+    m_queryHasBeenSet = true;
+}
+
+bool DescribeAccessFastAnalysisRequest::QueryHasBeenSet() const
+{
+    return m_queryHasBeenSet;
+}
+
+string DescribeAccessFastAnalysisRequest::GetFieldName() const
+{
+    return m_fieldName;
+}
+
+void DescribeAccessFastAnalysisRequest::SetFieldName(const string& _fieldName)
+{
+    m_fieldName = _fieldName;
+    m_fieldNameHasBeenSet = true;
+}
+
+bool DescribeAccessFastAnalysisRequest::FieldNameHasBeenSet() const
+{
+    return m_fieldNameHasBeenSet;
+}
 
 

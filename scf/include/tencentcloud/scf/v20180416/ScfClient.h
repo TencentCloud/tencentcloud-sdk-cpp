@@ -63,6 +63,8 @@
 #include <tencentcloud/scf/v20180416/model/GetLayerVersionResponse.h>
 #include <tencentcloud/scf/v20180416/model/GetProvisionedConcurrencyConfigRequest.h>
 #include <tencentcloud/scf/v20180416/model/GetProvisionedConcurrencyConfigResponse.h>
+#include <tencentcloud/scf/v20180416/model/GetRequestStatusRequest.h>
+#include <tencentcloud/scf/v20180416/model/GetRequestStatusResponse.h>
 #include <tencentcloud/scf/v20180416/model/GetReservedConcurrencyConfigRequest.h>
 #include <tencentcloud/scf/v20180416/model/GetReservedConcurrencyConfigResponse.h>
 #include <tencentcloud/scf/v20180416/model/InvokeRequest.h>
@@ -181,6 +183,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetProvisionedConcurrencyConfigResponse> GetProvisionedConcurrencyConfigOutcome;
                 typedef std::future<GetProvisionedConcurrencyConfigOutcome> GetProvisionedConcurrencyConfigOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::GetProvisionedConcurrencyConfigRequest&, GetProvisionedConcurrencyConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetProvisionedConcurrencyConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetRequestStatusResponse> GetRequestStatusOutcome;
+                typedef std::future<GetRequestStatusOutcome> GetRequestStatusOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::GetRequestStatusRequest&, GetRequestStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRequestStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetReservedConcurrencyConfigResponse> GetReservedConcurrencyConfigOutcome;
                 typedef std::future<GetReservedConcurrencyConfigOutcome> GetReservedConcurrencyConfigOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::GetReservedConcurrencyConfigRequest&, GetReservedConcurrencyConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetReservedConcurrencyConfigAsyncHandler;
@@ -436,6 +441,15 @@ namespace TencentCloud
                 GetProvisionedConcurrencyConfigOutcome GetProvisionedConcurrencyConfig(const Model::GetProvisionedConcurrencyConfigRequest &request);
                 void GetProvisionedConcurrencyConfigAsync(const Model::GetProvisionedConcurrencyConfigRequest& request, const GetProvisionedConcurrencyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetProvisionedConcurrencyConfigOutcomeCallable GetProvisionedConcurrencyConfigCallable(const Model::GetProvisionedConcurrencyConfigRequest& request);
+
+                /**
+                 *该接口根据指定的查询条件返回函数单个请求运行状态。
+                 * @param req GetRequestStatusRequest
+                 * @return GetRequestStatusOutcome
+                 */
+                GetRequestStatusOutcome GetRequestStatus(const Model::GetRequestStatusRequest &request);
+                void GetRequestStatusAsync(const Model::GetRequestStatusRequest& request, const GetRequestStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetRequestStatusOutcomeCallable GetRequestStatusCallable(const Model::GetRequestStatusRequest& request);
 
                 /**
                  *获取函数的最大独占配额详情。

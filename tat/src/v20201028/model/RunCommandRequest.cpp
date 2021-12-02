@@ -35,7 +35,9 @@ RunCommandRequest::RunCommandRequest() :
     m_defaultParametersHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_usernameHasBeenSet(false)
+    m_usernameHasBeenSet(false),
+    m_outputCOSBucketUrlHasBeenSet(false),
+    m_outputCOSKeyPrefixHasBeenSet(false)
 {
 }
 
@@ -160,6 +162,22 @@ string RunCommandRequest::ToJsonString() const
         string key = "Username";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_username.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outputCOSBucketUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputCOSBucketUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_outputCOSBucketUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outputCOSKeyPrefixHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputCOSKeyPrefix";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_outputCOSKeyPrefix.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -376,6 +394,38 @@ void RunCommandRequest::SetUsername(const string& _username)
 bool RunCommandRequest::UsernameHasBeenSet() const
 {
     return m_usernameHasBeenSet;
+}
+
+string RunCommandRequest::GetOutputCOSBucketUrl() const
+{
+    return m_outputCOSBucketUrl;
+}
+
+void RunCommandRequest::SetOutputCOSBucketUrl(const string& _outputCOSBucketUrl)
+{
+    m_outputCOSBucketUrl = _outputCOSBucketUrl;
+    m_outputCOSBucketUrlHasBeenSet = true;
+}
+
+bool RunCommandRequest::OutputCOSBucketUrlHasBeenSet() const
+{
+    return m_outputCOSBucketUrlHasBeenSet;
+}
+
+string RunCommandRequest::GetOutputCOSKeyPrefix() const
+{
+    return m_outputCOSKeyPrefix;
+}
+
+void RunCommandRequest::SetOutputCOSKeyPrefix(const string& _outputCOSKeyPrefix)
+{
+    m_outputCOSKeyPrefix = _outputCOSKeyPrefix;
+    m_outputCOSKeyPrefixHasBeenSet = true;
+}
+
+bool RunCommandRequest::OutputCOSKeyPrefixHasBeenSet() const
+{
+    return m_outputCOSKeyPrefixHasBeenSet;
 }
 
 

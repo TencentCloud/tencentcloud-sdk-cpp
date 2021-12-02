@@ -40,6 +40,49 @@ ApmClient::ApmClient(const Credential &credential, const string &region, const C
 }
 
 
+ApmClient::CreateApmInstanceOutcome ApmClient::CreateApmInstance(const CreateApmInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateApmInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateApmInstanceResponse rsp = CreateApmInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateApmInstanceOutcome(rsp);
+        else
+            return CreateApmInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateApmInstanceOutcome(outcome.GetError());
+    }
+}
+
+void ApmClient::CreateApmInstanceAsync(const CreateApmInstanceRequest& request, const CreateApmInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateApmInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApmClient::CreateApmInstanceOutcomeCallable ApmClient::CreateApmInstanceCallable(const CreateApmInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateApmInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateApmInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ApmClient::DescribeApmAgentOutcome ApmClient::DescribeApmAgent(const DescribeApmAgentRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeApmAgent");

@@ -341,6 +341,54 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
                      */
                     bool UsernameHasBeenSet() const;
 
+                    /**
+                     * 获取指定日志上传的cos bucket 地址，必须以https开头，如 https://BucketName-123454321.cos.ap-beijing.myqcloud.com。
+                     * @return OutputCOSBucketUrl 指定日志上传的cos bucket 地址，必须以https开头，如 https://BucketName-123454321.cos.ap-beijing.myqcloud.com。
+                     */
+                    std::string GetOutputCOSBucketUrl() const;
+
+                    /**
+                     * 设置指定日志上传的cos bucket 地址，必须以https开头，如 https://BucketName-123454321.cos.ap-beijing.myqcloud.com。
+                     * @param OutputCOSBucketUrl 指定日志上传的cos bucket 地址，必须以https开头，如 https://BucketName-123454321.cos.ap-beijing.myqcloud.com。
+                     */
+                    void SetOutputCOSBucketUrl(const std::string& _outputCOSBucketUrl);
+
+                    /**
+                     * 判断参数 OutputCOSBucketUrl 是否已赋值
+                     * @return OutputCOSBucketUrl 是否已赋值
+                     */
+                    bool OutputCOSBucketUrlHasBeenSet() const;
+
+                    /**
+                     * 获取指定日志在cos bucket中的目录，目录命名有如下规则：
+1. 可用数字、中英文和可见字符的组合，长度最多为60。
+2. 用 / 分割路径，可快速创建子目录。
+3. 不允许连续 / ；不允许以 / 开头；不允许以..作为文件夹名称。
+                     * @return OutputCOSKeyPrefix 指定日志在cos bucket中的目录，目录命名有如下规则：
+1. 可用数字、中英文和可见字符的组合，长度最多为60。
+2. 用 / 分割路径，可快速创建子目录。
+3. 不允许连续 / ；不允许以 / 开头；不允许以..作为文件夹名称。
+                     */
+                    std::string GetOutputCOSKeyPrefix() const;
+
+                    /**
+                     * 设置指定日志在cos bucket中的目录，目录命名有如下规则：
+1. 可用数字、中英文和可见字符的组合，长度最多为60。
+2. 用 / 分割路径，可快速创建子目录。
+3. 不允许连续 / ；不允许以 / 开头；不允许以..作为文件夹名称。
+                     * @param OutputCOSKeyPrefix 指定日志在cos bucket中的目录，目录命名有如下规则：
+1. 可用数字、中英文和可见字符的组合，长度最多为60。
+2. 用 / 分割路径，可快速创建子目录。
+3. 不允许连续 / ；不允许以 / 开头；不允许以..作为文件夹名称。
+                     */
+                    void SetOutputCOSKeyPrefix(const std::string& _outputCOSKeyPrefix);
+
+                    /**
+                     * 判断参数 OutputCOSKeyPrefix 是否已赋值
+                     * @return OutputCOSKeyPrefix 是否已赋值
+                     */
+                    bool OutputCOSKeyPrefixHasBeenSet() const;
+
                 private:
 
                     /**
@@ -436,6 +484,21 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
                      */
                     std::string m_username;
                     bool m_usernameHasBeenSet;
+
+                    /**
+                     * 指定日志上传的cos bucket 地址，必须以https开头，如 https://BucketName-123454321.cos.ap-beijing.myqcloud.com。
+                     */
+                    std::string m_outputCOSBucketUrl;
+                    bool m_outputCOSBucketUrlHasBeenSet;
+
+                    /**
+                     * 指定日志在cos bucket中的目录，目录命名有如下规则：
+1. 可用数字、中英文和可见字符的组合，长度最多为60。
+2. 用 / 分割路径，可快速创建子目录。
+3. 不允许连续 / ；不允许以 / 开头；不允许以..作为文件夹名称。
+                     */
+                    std::string m_outputCOSKeyPrefix;
+                    bool m_outputCOSKeyPrefixHasBeenSet;
 
                 };
             }

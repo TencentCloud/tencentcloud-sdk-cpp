@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool NetTypeHasBeenSet() const;
 
                     /**
-                     * 获取网络连接状态
-                     * @return Status 网络连接状态
+                     * 获取网络连接状态，1、initing（未开通）；2、opened（已开通）；3、closed（已关闭）；4、opening（开通中）；5、closing（关闭中）；
+                     * @return Status 网络连接状态，1、initing（未开通）；2、opened（已开通）；3、closed（已关闭）；4、opening（开通中）；5、closing（关闭中）；
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置网络连接状态
-                     * @param Status 网络连接状态
+                     * 设置网络连接状态，1、initing（未开通）；2、opened（已开通）；3、closed（已关闭）；4、opening（开通中）；5、closing（关闭中）；
+                     * @param Status 网络连接状态，1、initing（未开通）；2、opened（已开通）；3、closed（已关闭）；4、opening（开通中）；5、closing（关闭中）；
                      */
                     void SetStatus(const std::string& _status);
 
@@ -135,6 +135,50 @@ namespace TencentCloud
                      * @return Status 是否已赋值
                      */
                     bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取私有网络ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VpcId 私有网络ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVpcId() const;
+
+                    /**
+                     * 设置私有网络ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VpcId 私有网络ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVpcId(const std::string& _vpcId);
+
+                    /**
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
+                     */
+                    bool VpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取子网ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubnetId 子网ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSubnetId() const;
+
+                    /**
+                     * 设置子网ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SubnetId 子网ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSubnetId(const std::string& _subnetId);
+
+                    /**
+                     * 判断参数 SubnetId 是否已赋值
+                     * @return SubnetId 是否已赋值
+                     */
+                    bool SubnetIdHasBeenSet() const;
 
                 private:
 
@@ -163,10 +207,24 @@ namespace TencentCloud
                     bool m_netTypeHasBeenSet;
 
                     /**
-                     * 网络连接状态
+                     * 网络连接状态，1、initing（未开通）；2、opened（已开通）；3、closed（已关闭）；4、opening（开通中）；5、closing（关闭中）；
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 私有网络ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vpcId;
+                    bool m_vpcIdHasBeenSet;
+
+                    /**
+                     * 子网ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subnetId;
+                    bool m_subnetIdHasBeenSet;
 
                 };
             }

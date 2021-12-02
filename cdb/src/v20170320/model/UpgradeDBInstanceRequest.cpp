@@ -35,7 +35,8 @@ UpgradeDBInstanceRequest::UpgradeDBInstanceRequest() :
     m_instanceRoleHasBeenSet(false),
     m_deviceTypeHasBeenSet(false),
     m_cpuHasBeenSet(false),
-    m_fastUpgradeHasBeenSet(false)
+    m_fastUpgradeHasBeenSet(false),
+    m_maxDelayTimeHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,14 @@ string UpgradeDBInstanceRequest::ToJsonString() const
         string key = "FastUpgrade";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_fastUpgrade, allocator);
+    }
+
+    if (m_maxDelayTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxDelayTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxDelayTime, allocator);
     }
 
 
@@ -364,6 +373,22 @@ void UpgradeDBInstanceRequest::SetFastUpgrade(const int64_t& _fastUpgrade)
 bool UpgradeDBInstanceRequest::FastUpgradeHasBeenSet() const
 {
     return m_fastUpgradeHasBeenSet;
+}
+
+int64_t UpgradeDBInstanceRequest::GetMaxDelayTime() const
+{
+    return m_maxDelayTime;
+}
+
+void UpgradeDBInstanceRequest::SetMaxDelayTime(const int64_t& _maxDelayTime)
+{
+    m_maxDelayTime = _maxDelayTime;
+    m_maxDelayTimeHasBeenSet = true;
+}
+
+bool UpgradeDBInstanceRequest::MaxDelayTimeHasBeenSet() const
+{
+    return m_maxDelayTimeHasBeenSet;
 }
 
 

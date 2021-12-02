@@ -900,6 +900,49 @@ ScfClient::GetProvisionedConcurrencyConfigOutcomeCallable ScfClient::GetProvisio
     return task->get_future();
 }
 
+ScfClient::GetRequestStatusOutcome ScfClient::GetRequestStatus(const GetRequestStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetRequestStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetRequestStatusResponse rsp = GetRequestStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetRequestStatusOutcome(rsp);
+        else
+            return GetRequestStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return GetRequestStatusOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::GetRequestStatusAsync(const GetRequestStatusRequest& request, const GetRequestStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetRequestStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::GetRequestStatusOutcomeCallable ScfClient::GetRequestStatusCallable(const GetRequestStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetRequestStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->GetRequestStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ScfClient::GetReservedConcurrencyConfigOutcome ScfClient::GetReservedConcurrencyConfig(const GetReservedConcurrencyConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "GetReservedConcurrencyConfig");

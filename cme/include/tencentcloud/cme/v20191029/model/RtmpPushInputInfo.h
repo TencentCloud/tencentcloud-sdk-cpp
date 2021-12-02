@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 直播推流信息，包括推流地址有效时长，云剪后端生成直播推流地址。
+                * 直播推流信息，包括推流地址有效时长，多媒体创作引擎后端生成直播推流地址。
                 */
                 class RtmpPushInputInfo : public AbstractModel
                 {
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool ExpiredSecondHasBeenSet() const;
 
                     /**
-                     * 获取直播推流地址，入参不填默认由云剪生成。
-                     * @return PushUrl 直播推流地址，入参不填默认由云剪生成。
+                     * 获取直播推流地址，入参不填默认由多媒体创作引擎生成。
+                     * @return PushUrl 直播推流地址，入参不填默认由多媒体创作引擎生成。
                      */
                     std::string GetPushUrl() const;
 
                     /**
-                     * 设置直播推流地址，入参不填默认由云剪生成。
-                     * @param PushUrl 直播推流地址，入参不填默认由云剪生成。
+                     * 设置直播推流地址，入参不填默认由多媒体创作引擎生成。
+                     * @param PushUrl 直播推流地址，入参不填默认由多媒体创作引擎生成。
                      */
                     void SetPushUrl(const std::string& _pushUrl);
 
@@ -91,7 +91,7 @@ namespace TencentCloud
                     bool m_expiredSecondHasBeenSet;
 
                     /**
-                     * 直播推流地址，入参不填默认由云剪生成。
+                     * 直播推流地址，入参不填默认由多媒体创作引擎生成。
                      */
                     std::string m_pushUrl;
                     bool m_pushUrlHasBeenSet;

@@ -38,7 +38,8 @@ BGPIPInstance::BGPIPInstance() :
     m_eipAddressPackRelationHasBeenSet(false),
     m_eipAddressInfoHasBeenSet(false),
     m_domainHasBeenSet(false),
-    m_damDDoSStatusHasBeenSet(false)
+    m_damDDoSStatusHasBeenSet(false),
+    m_v6FlagHasBeenSet(false)
 {
 }
 
@@ -283,6 +284,16 @@ CoreInternalOutcome BGPIPInstance::Deserialize(const rapidjson::Value &value)
         m_damDDoSStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("V6Flag") && !value["V6Flag"].IsNull())
+    {
+        if (!value["V6Flag"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstance.V6Flag` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_v6Flag = value["V6Flag"].GetUint64();
+        m_v6FlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -440,6 +451,14 @@ void BGPIPInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "DamDDoSStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_damDDoSStatus, allocator);
+    }
+
+    if (m_v6FlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "V6Flag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_v6Flag, allocator);
     }
 
 }
@@ -731,5 +750,21 @@ void BGPIPInstance::SetDamDDoSStatus(const uint64_t& _damDDoSStatus)
 bool BGPIPInstance::DamDDoSStatusHasBeenSet() const
 {
     return m_damDDoSStatusHasBeenSet;
+}
+
+uint64_t BGPIPInstance::GetV6Flag() const
+{
+    return m_v6Flag;
+}
+
+void BGPIPInstance::SetV6Flag(const uint64_t& _v6Flag)
+{
+    m_v6Flag = _v6Flag;
+    m_v6FlagHasBeenSet = true;
+}
+
+bool BGPIPInstance::V6FlagHasBeenSet() const
+{
+    return m_v6FlagHasBeenSet;
 }
 

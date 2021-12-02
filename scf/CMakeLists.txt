@@ -45,6 +45,7 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/GetFunctionLogsRequest.h
   include/tencentcloud/scf/v20180416/model/StatusReason.h
   include/tencentcloud/scf/v20180416/model/Tag.h
+  include/tencentcloud/scf/v20180416/model/GetRequestStatusRequest.h
   include/tencentcloud/scf/v20180416/model/LogFilter.h
   include/tencentcloud/scf/v20180416/model/EipConfigIn.h
   include/tencentcloud/scf/v20180416/model/ListLayerVersionsResponse.h
@@ -85,6 +86,7 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/CreateAliasResponse.h
   include/tencentcloud/scf/v20180416/model/LogSearchContext.h
   include/tencentcloud/scf/v20180416/model/TriggerInfo.h
+  include/tencentcloud/scf/v20180416/model/RequestStatus.h
   include/tencentcloud/scf/v20180416/model/CreateFunctionRequest.h
   include/tencentcloud/scf/v20180416/model/GetAccountRequest.h
   include/tencentcloud/scf/v20180416/model/PutTotalConcurrencyConfigResponse.h
@@ -114,6 +116,7 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/PutTotalConcurrencyConfigRequest.h
   include/tencentcloud/scf/v20180416/model/UpdateNamespaceRequest.h
   include/tencentcloud/scf/v20180416/model/GetLayerVersionResponse.h
+  include/tencentcloud/scf/v20180416/model/GetRequestStatusResponse.h
   include/tencentcloud/scf/v20180416/model/PutReservedConcurrencyConfigResponse.h
   include/tencentcloud/scf/v20180416/model/FunctionLog.h
   include/tencentcloud/scf/v20180416/model/InvokeFunctionRequest.h
@@ -179,6 +182,7 @@ set(scf_src
   src/v20180416/model/GetFunctionLogsRequest.cpp
   src/v20180416/model/StatusReason.cpp
   src/v20180416/model/Tag.cpp
+  src/v20180416/model/GetRequestStatusRequest.cpp
   src/v20180416/model/LogFilter.cpp
   src/v20180416/model/EipConfigIn.cpp
   src/v20180416/model/ListLayerVersionsResponse.cpp
@@ -219,6 +223,7 @@ set(scf_src
   src/v20180416/model/CreateAliasResponse.cpp
   src/v20180416/model/LogSearchContext.cpp
   src/v20180416/model/TriggerInfo.cpp
+  src/v20180416/model/RequestStatus.cpp
   src/v20180416/model/CreateFunctionRequest.cpp
   src/v20180416/model/GetAccountRequest.cpp
   src/v20180416/model/PutTotalConcurrencyConfigResponse.cpp
@@ -248,6 +253,7 @@ set(scf_src
   src/v20180416/model/PutTotalConcurrencyConfigRequest.cpp
   src/v20180416/model/UpdateNamespaceRequest.cpp
   src/v20180416/model/GetLayerVersionResponse.cpp
+  src/v20180416/model/GetRequestStatusResponse.cpp
   src/v20180416/model/PutReservedConcurrencyConfigResponse.cpp
   src/v20180416/model/FunctionLog.cpp
   src/v20180416/model/InvokeFunctionRequest.cpp

@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取导出的云剪素材 MaterialId，仅当导出为云剪素材时有效。
-                     * @return MaterialId 导出的云剪素材 MaterialId，仅当导出为云剪素材时有效。
+                     * 获取导出的多媒体创作引擎媒体 Id，仅当导出目标为多媒体创作引擎媒体时有效。
+                     * @return MaterialId 导出的多媒体创作引擎媒体 Id，仅当导出目标为多媒体创作引擎媒体时有效。
                      */
                     std::string GetMaterialId() const;
 
                     /**
-                     * 设置导出的云剪素材 MaterialId，仅当导出为云剪素材时有效。
-                     * @param MaterialId 导出的云剪素材 MaterialId，仅当导出为云剪素材时有效。
+                     * 设置导出的多媒体创作引擎媒体 Id，仅当导出目标为多媒体创作引擎媒体时有效。
+                     * @param MaterialId 导出的多媒体创作引擎媒体 Id，仅当导出目标为多媒体创作引擎媒体时有效。
                      */
                     void SetMaterialId(const std::string& _materialId);
 
@@ -126,7 +126,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 导出的云剪素材 MaterialId，仅当导出为云剪素材时有效。
+                     * 导出的多媒体创作引擎媒体 Id，仅当导出目标为多媒体创作引擎媒体时有效。
                      */
                     std::string m_materialId;
                     bool m_materialIdHasBeenSet;

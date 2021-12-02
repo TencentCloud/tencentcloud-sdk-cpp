@@ -24,6 +24,7 @@ VideoExportExtensionArgs::VideoExportExtensionArgs() :
     m_containerHasBeenSet(false),
     m_shortEdgeHasBeenSet(false),
     m_videoBitrateHasBeenSet(false),
+    m_frameRateHasBeenSet(false),
     m_removeVideoHasBeenSet(false),
     m_removeAudioHasBeenSet(false),
     m_startTimeHasBeenSet(false),
@@ -64,6 +65,16 @@ CoreInternalOutcome VideoExportExtensionArgs::Deserialize(const rapidjson::Value
         }
         m_videoBitrate = value["VideoBitrate"].GetUint64();
         m_videoBitrateHasBeenSet = true;
+    }
+
+    if (value.HasMember("FrameRate") && !value["FrameRate"].IsNull())
+    {
+        if (!value["FrameRate"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoExportExtensionArgs.FrameRate` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_frameRate = value["FrameRate"].GetDouble();
+        m_frameRateHasBeenSet = true;
     }
 
     if (value.HasMember("RemoveVideo") && !value["RemoveVideo"].IsNull())
@@ -135,6 +146,14 @@ void VideoExportExtensionArgs::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "VideoBitrate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_videoBitrate, allocator);
+    }
+
+    if (m_frameRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FrameRate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_frameRate, allocator);
     }
 
     if (m_removeVideoHasBeenSet)
@@ -218,6 +237,22 @@ void VideoExportExtensionArgs::SetVideoBitrate(const uint64_t& _videoBitrate)
 bool VideoExportExtensionArgs::VideoBitrateHasBeenSet() const
 {
     return m_videoBitrateHasBeenSet;
+}
+
+double VideoExportExtensionArgs::GetFrameRate() const
+{
+    return m_frameRate;
+}
+
+void VideoExportExtensionArgs::SetFrameRate(const double& _frameRate)
+{
+    m_frameRate = _frameRate;
+    m_frameRateHasBeenSet = true;
+}
+
+bool VideoExportExtensionArgs::FrameRateHasBeenSet() const
+{
+    return m_frameRateHasBeenSet;
 }
 
 int64_t VideoExportExtensionArgs::GetRemoveVideo() const

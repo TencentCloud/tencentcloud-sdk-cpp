@@ -380,17 +380,17 @@ namespace TencentCloud
                     bool DBInstanceNetInfoHasBeenSet() const;
 
                     /**
-                     * 获取只读组网络信息列表
+                     * 获取只读组网络信息列表（此字段已废弃）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NetworkAccessList 只读组网络信息列表
+                     * @return NetworkAccessList 只读组网络信息列表（此字段已废弃）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NetworkAccess> GetNetworkAccessList() const;
 
                     /**
-                     * 设置只读组网络信息列表
+                     * 设置只读组网络信息列表（此字段已废弃）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NetworkAccessList 只读组网络信息列表
+                     * @param NetworkAccessList 只读组网络信息列表（此字段已废弃）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetNetworkAccessList(const std::vector<NetworkAccess>& _networkAccessList);
@@ -512,7 +512,7 @@ namespace TencentCloud
                     bool m_dBInstanceNetInfoHasBeenSet;
 
                     /**
-                     * 只读组网络信息列表
+                     * 只读组网络信息列表（此字段已废弃）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NetworkAccess> m_networkAccessList;

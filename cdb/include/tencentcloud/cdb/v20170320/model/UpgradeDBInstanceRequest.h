@@ -276,6 +276,24 @@ namespace TencentCloud
                      */
                     bool FastUpgradeHasBeenSet() const;
 
+                    /**
+                     * 获取延迟阈值。取值范围1~10，默认值为10。
+                     * @return MaxDelayTime 延迟阈值。取值范围1~10，默认值为10。
+                     */
+                    int64_t GetMaxDelayTime() const;
+
+                    /**
+                     * 设置延迟阈值。取值范围1~10，默认值为10。
+                     * @param MaxDelayTime 延迟阈值。取值范围1~10，默认值为10。
+                     */
+                    void SetMaxDelayTime(const int64_t& _maxDelayTime);
+
+                    /**
+                     * 判断参数 MaxDelayTime 是否已赋值
+                     * @return MaxDelayTime 是否已赋值
+                     */
+                    bool MaxDelayTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -355,6 +373,12 @@ namespace TencentCloud
                      */
                     int64_t m_fastUpgrade;
                     bool m_fastUpgradeHasBeenSet;
+
+                    /**
+                     * 延迟阈值。取值范围1~10，默认值为10。
+                     */
+                    int64_t m_maxDelayTime;
+                    bool m_maxDelayTimeHasBeenSet;
 
                 };
             }

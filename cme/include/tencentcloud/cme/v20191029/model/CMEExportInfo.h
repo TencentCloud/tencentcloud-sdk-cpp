@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 云剪导出信息。
+                * 多媒体创作引擎导出信息。
                 */
                 class CMEExportInfo : public AbstractModel
                 {

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 网络相关信息。
+                * 网络相关信息。（该数据结构已废弃，网络相关信息使用DBInstanceNetInfo）
                 */
                 class NetworkAccess : public AbstractModel
                 {
@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取网络资源id，实例id或RO组id(此字段已废弃)
+                     * 获取网络资源id，实例id或RO组id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceId 网络资源id，实例id或RO组id(此字段已废弃)
+                     * @return ResourceId 网络资源id，实例id或RO组id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置网络资源id，实例id或RO组id(此字段已废弃)
+                     * 设置网络资源id，实例id或RO组id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceId 网络资源id，实例id或RO组id(此字段已废弃)
+                     * @param ResourceId 网络资源id，实例id或RO组id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取资源类型，1-实例 2-RO组(此字段已废弃)
+                     * 获取资源类型，1-实例 2-RO组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceType 资源类型，1-实例 2-RO组(此字段已废弃)
+                     * @return ResourceType 资源类型，1-实例 2-RO组
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetResourceType() const;
 
                     /**
-                     * 设置资源类型，1-实例 2-RO组(此字段已废弃)
+                     * 设置资源类型，1-实例 2-RO组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceType 资源类型，1-实例 2-RO组(此字段已废弃)
+                     * @param ResourceType 资源类型，1-实例 2-RO组
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetResourceType(const uint64_t& _resourceType);
@@ -225,14 +225,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 网络资源id，实例id或RO组id(此字段已废弃)
+                     * 网络资源id，实例id或RO组id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 资源类型，1-实例 2-RO组(此字段已废弃)
+                     * 资源类型，1-实例 2-RO组
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_resourceType;

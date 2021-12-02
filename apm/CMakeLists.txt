@@ -19,7 +19,9 @@ set(apm_public_header
   )
 
 set(apm_public_header_model
+  include/tencentcloud/apm/v20210622/model/CreateApmInstanceResponse.h
   include/tencentcloud/apm/v20210622/model/ApmInstanceDetail.h
+  include/tencentcloud/apm/v20210622/model/CreateApmInstanceRequest.h
   include/tencentcloud/apm/v20210622/model/DescribeApmAgentResponse.h
   include/tencentcloud/apm/v20210622/model/ApmTag.h
   include/tencentcloud/apm/v20210622/model/DescribeApmInstancesResponse.h
@@ -30,7 +32,9 @@ set(apm_public_header_model
 
 set(apm_src
   src/v20210622/ApmClient.cpp
+  src/v20210622/model/CreateApmInstanceResponse.cpp
   src/v20210622/model/ApmInstanceDetail.cpp
+  src/v20210622/model/CreateApmInstanceRequest.cpp
   src/v20210622/model/DescribeApmAgentResponse.cpp
   src/v20210622/model/ApmTag.cpp
   src/v20210622/model/DescribeApmInstancesResponse.cpp

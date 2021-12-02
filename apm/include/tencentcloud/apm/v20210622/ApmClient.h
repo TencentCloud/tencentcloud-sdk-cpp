@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/apm/v20210622/model/CreateApmInstanceRequest.h>
+#include <tencentcloud/apm/v20210622/model/CreateApmInstanceResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeApmAgentRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeApmAgentResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeApmInstancesRequest.h>
@@ -41,6 +43,9 @@ namespace TencentCloud
                 ApmClient(const Credential &credential, const std::string &region);
                 ApmClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CreateApmInstanceResponse> CreateApmInstanceOutcome;
+                typedef std::future<CreateApmInstanceOutcome> CreateApmInstanceOutcomeCallable;
+                typedef std::function<void(const ApmClient*, const Model::CreateApmInstanceRequest&, CreateApmInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateApmInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeApmAgentResponse> DescribeApmAgentOutcome;
                 typedef std::future<DescribeApmAgentOutcome> DescribeApmAgentOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeApmAgentRequest&, DescribeApmAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApmAgentAsyncHandler;
@@ -49,6 +54,15 @@ namespace TencentCloud
                 typedef std::function<void(const ApmClient*, const Model::DescribeApmInstancesRequest&, DescribeApmInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApmInstancesAsyncHandler;
 
 
+
+                /**
+                 *业务购买APM实例，调用该接口创建
+                 * @param req CreateApmInstanceRequest
+                 * @return CreateApmInstanceOutcome
+                 */
+                CreateApmInstanceOutcome CreateApmInstance(const Model::CreateApmInstanceRequest &request);
+                void CreateApmInstanceAsync(const Model::CreateApmInstanceRequest& request, const CreateApmInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateApmInstanceOutcomeCallable CreateApmInstanceCallable(const Model::CreateApmInstanceRequest& request);
 
                 /**
                  *获取Apm Agent信息
