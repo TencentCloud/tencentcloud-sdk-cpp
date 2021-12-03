@@ -136,6 +136,42 @@ namespace TencentCloud
                      */
                     bool DroppedHasBeenSet() const;
 
+                    /**
+                     * 获取日志在cos中的地址
+                     * @return OutputUrl 日志在cos中的地址
+                     */
+                    std::string GetOutputUrl() const;
+
+                    /**
+                     * 设置日志在cos中的地址
+                     * @param OutputUrl 日志在cos中的地址
+                     */
+                    void SetOutputUrl(const std::string& _outputUrl);
+
+                    /**
+                     * 判断参数 OutputUrl 是否已赋值
+                     * @return OutputUrl 是否已赋值
+                     */
+                    bool OutputUrlHasBeenSet() const;
+
+                    /**
+                     * 获取日志上传cos的错误信息。
+                     * @return OutputUploadCOSErrorInfo 日志上传cos的错误信息。
+                     */
+                    std::string GetOutputUploadCOSErrorInfo() const;
+
+                    /**
+                     * 设置日志上传cos的错误信息。
+                     * @param OutputUploadCOSErrorInfo 日志上传cos的错误信息。
+                     */
+                    void SetOutputUploadCOSErrorInfo(const std::string& _outputUploadCOSErrorInfo);
+
+                    /**
+                     * 判断参数 OutputUploadCOSErrorInfo 是否已赋值
+                     * @return OutputUploadCOSErrorInfo 是否已赋值
+                     */
+                    bool OutputUploadCOSErrorInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +203,18 @@ namespace TencentCloud
                      */
                     uint64_t m_dropped;
                     bool m_droppedHasBeenSet;
+
+                    /**
+                     * 日志在cos中的地址
+                     */
+                    std::string m_outputUrl;
+                    bool m_outputUrlHasBeenSet;
+
+                    /**
+                     * 日志上传cos的错误信息。
+                     */
+                    std::string m_outputUploadCOSErrorInfo;
+                    bool m_outputUploadCOSErrorInfoHasBeenSet;
 
                 };
             }

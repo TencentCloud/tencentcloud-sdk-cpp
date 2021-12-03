@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取策略组id，如传入 PolicyId 则该字段会被忽略可传入任意值如 0
-                     * @return GroupId 策略组id，如传入 PolicyId 则该字段会被忽略可传入任意值如 0
+                     * 获取策略组id，例如 4739573。逐渐弃用，建议使用 PolicyId 参数
+                     * @return GroupId 策略组id，例如 4739573。逐渐弃用，建议使用 PolicyId 参数
                      */
                     int64_t GetGroupId() const;
 
                     /**
-                     * 设置策略组id，如传入 PolicyId 则该字段会被忽略可传入任意值如 0
-                     * @param GroupId 策略组id，如传入 PolicyId 则该字段会被忽略可传入任意值如 0
+                     * 设置策略组id，例如 4739573。逐渐弃用，建议使用 PolicyId 参数
+                     * @param GroupId 策略组id，例如 4739573。逐渐弃用，建议使用 PolicyId 参数
                      */
                     void SetGroupId(const int64_t& _groupId);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取告警策略ID，使用此字段时 GroupId 会被忽略
-                     * @return PolicyId 告警策略ID，使用此字段时 GroupId 会被忽略
+                     * 获取告警策略ID，例如“policy-gh892hg0”。PolicyId 参数与 GroupId 参数至少要填一个，否则会报参数错误，建议使用该参数。若两者同时存在则以该参数为准
+                     * @return PolicyId 告警策略ID，例如“policy-gh892hg0”。PolicyId 参数与 GroupId 参数至少要填一个，否则会报参数错误，建议使用该参数。若两者同时存在则以该参数为准
                      */
                     std::string GetPolicyId() const;
 
                     /**
-                     * 设置告警策略ID，使用此字段时 GroupId 会被忽略
-                     * @param PolicyId 告警策略ID，使用此字段时 GroupId 会被忽略
+                     * 设置告警策略ID，例如“policy-gh892hg0”。PolicyId 参数与 GroupId 参数至少要填一个，否则会报参数错误，建议使用该参数。若两者同时存在则以该参数为准
+                     * @param PolicyId 告警策略ID，例如“policy-gh892hg0”。PolicyId 参数与 GroupId 参数至少要填一个，否则会报参数错误，建议使用该参数。若两者同时存在则以该参数为准
                      */
                     void SetPolicyId(const std::string& _policyId);
 
@@ -142,13 +142,13 @@ namespace TencentCloud
                     bool m_moduleHasBeenSet;
 
                     /**
-                     * 策略组id，如传入 PolicyId 则该字段会被忽略可传入任意值如 0
+                     * 策略组id，例如 4739573。逐渐弃用，建议使用 PolicyId 参数
                      */
                     int64_t m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 告警策略ID，使用此字段时 GroupId 会被忽略
+                     * 告警策略ID，例如“policy-gh892hg0”。PolicyId 参数与 GroupId 参数至少要填一个，否则会报参数错误，建议使用该参数。若两者同时存在则以该参数为准
                      */
                     std::string m_policyId;
                     bool m_policyIdHasBeenSet;

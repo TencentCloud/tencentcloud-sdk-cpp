@@ -27,7 +27,8 @@ DescribeProxyStatisticsRequest::DescribeProxyStatisticsRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_metricNamesHasBeenSet(false),
-    m_granularityHasBeenSet(false)
+    m_granularityHasBeenSet(false),
+    m_ispHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,14 @@ string DescribeProxyStatisticsRequest::ToJsonString() const
         string key = "Granularity";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_granularity, allocator);
+    }
+
+    if (m_ispHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Isp";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_isp.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -169,6 +178,22 @@ void DescribeProxyStatisticsRequest::SetGranularity(const uint64_t& _granularity
 bool DescribeProxyStatisticsRequest::GranularityHasBeenSet() const
 {
     return m_granularityHasBeenSet;
+}
+
+string DescribeProxyStatisticsRequest::GetIsp() const
+{
+    return m_isp;
+}
+
+void DescribeProxyStatisticsRequest::SetIsp(const string& _isp)
+{
+    m_isp = _isp;
+    m_ispHasBeenSet = true;
+}
+
+bool DescribeProxyStatisticsRequest::IspHasBeenSet() const
+{
+    return m_ispHasBeenSet;
 }
 
 

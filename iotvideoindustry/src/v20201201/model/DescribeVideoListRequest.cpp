@@ -35,7 +35,11 @@ DescribeVideoListRequest::DescribeVideoListRequest() :
     m_startFileSizeHasBeenSet(false),
     m_endFileSizeHasBeenSet(false),
     m_isRecordingHasBeenSet(false),
-    m_channelIdHasBeenSet(false)
+    m_channelIdHasBeenSet(false),
+    m_planIdHasBeenSet(false),
+    m_sceneIdHasBeenSet(false),
+    m_warnIdHasBeenSet(false),
+    m_recordTypeHasBeenSet(false)
 {
 }
 
@@ -148,6 +152,43 @@ string DescribeVideoListRequest::ToJsonString() const
         string key = "ChannelId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_channelId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_planIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PlanId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_planId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sceneIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sceneId, allocator);
+    }
+
+    if (m_warnIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WarnId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_warnId, allocator);
+    }
+
+    if (m_recordTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_recordType.begin(); itr != m_recordType.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -364,6 +405,70 @@ void DescribeVideoListRequest::SetChannelId(const string& _channelId)
 bool DescribeVideoListRequest::ChannelIdHasBeenSet() const
 {
     return m_channelIdHasBeenSet;
+}
+
+string DescribeVideoListRequest::GetPlanId() const
+{
+    return m_planId;
+}
+
+void DescribeVideoListRequest::SetPlanId(const string& _planId)
+{
+    m_planId = _planId;
+    m_planIdHasBeenSet = true;
+}
+
+bool DescribeVideoListRequest::PlanIdHasBeenSet() const
+{
+    return m_planIdHasBeenSet;
+}
+
+int64_t DescribeVideoListRequest::GetSceneId() const
+{
+    return m_sceneId;
+}
+
+void DescribeVideoListRequest::SetSceneId(const int64_t& _sceneId)
+{
+    m_sceneId = _sceneId;
+    m_sceneIdHasBeenSet = true;
+}
+
+bool DescribeVideoListRequest::SceneIdHasBeenSet() const
+{
+    return m_sceneIdHasBeenSet;
+}
+
+int64_t DescribeVideoListRequest::GetWarnId() const
+{
+    return m_warnId;
+}
+
+void DescribeVideoListRequest::SetWarnId(const int64_t& _warnId)
+{
+    m_warnId = _warnId;
+    m_warnIdHasBeenSet = true;
+}
+
+bool DescribeVideoListRequest::WarnIdHasBeenSet() const
+{
+    return m_warnIdHasBeenSet;
+}
+
+vector<int64_t> DescribeVideoListRequest::GetRecordType() const
+{
+    return m_recordType;
+}
+
+void DescribeVideoListRequest::SetRecordType(const vector<int64_t>& _recordType)
+{
+    m_recordType = _recordType;
+    m_recordTypeHasBeenSet = true;
+}
+
+bool DescribeVideoListRequest::RecordTypeHasBeenSet() const
+{
+    return m_recordTypeHasBeenSet;
 }
 
 

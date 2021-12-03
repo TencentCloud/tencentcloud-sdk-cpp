@@ -170,6 +170,24 @@ namespace TencentCloud
                     bool CosBucketRegionHasBeenSet() const;
 
                     /**
+                     * 获取是否自动安装依赖
+                     * @return InstallDependency 是否自动安装依赖
+                     */
+                    std::string GetInstallDependency() const;
+
+                    /**
+                     * 设置是否自动安装依赖
+                     * @param InstallDependency 是否自动安装依赖
+                     */
+                    void SetInstallDependency(const std::string& _installDependency);
+
+                    /**
+                     * 判断参数 InstallDependency 是否已赋值
+                     * @return InstallDependency 是否已赋值
+                     */
+                    bool InstallDependencyHasBeenSet() const;
+
+                    /**
                      * 获取函数所属环境
                      * @return EnvId 函数所属环境
                      */
@@ -284,6 +302,12 @@ namespace TencentCloud
                      */
                     std::string m_cosBucketRegion;
                     bool m_cosBucketRegionHasBeenSet;
+
+                    /**
+                     * 是否自动安装依赖
+                     */
+                    std::string m_installDependency;
+                    bool m_installDependencyHasBeenSet;
 
                     /**
                      * 函数所属环境

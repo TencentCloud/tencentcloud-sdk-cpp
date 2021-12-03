@@ -38,7 +38,9 @@ Invocation::Invocation() :
     m_commandContentHasBeenSet(false),
     m_commandTypeHasBeenSet(false),
     m_timeoutHasBeenSet(false),
-    m_workingDirectoryHasBeenSet(false)
+    m_workingDirectoryHasBeenSet(false),
+    m_outputCOSBucketUrlHasBeenSet(false),
+    m_outputCOSKeyPrefixHasBeenSet(false)
 {
 }
 
@@ -237,6 +239,26 @@ CoreInternalOutcome Invocation::Deserialize(const rapidjson::Value &value)
         m_workingDirectoryHasBeenSet = true;
     }
 
+    if (value.HasMember("OutputCOSBucketUrl") && !value["OutputCOSBucketUrl"].IsNull())
+    {
+        if (!value["OutputCOSBucketUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Invocation.OutputCOSBucketUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_outputCOSBucketUrl = string(value["OutputCOSBucketUrl"].GetString());
+        m_outputCOSBucketUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("OutputCOSKeyPrefix") && !value["OutputCOSKeyPrefix"].IsNull())
+    {
+        if (!value["OutputCOSKeyPrefix"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Invocation.OutputCOSKeyPrefix` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_outputCOSKeyPrefix = string(value["OutputCOSKeyPrefix"].GetString());
+        m_outputCOSKeyPrefixHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -393,6 +415,22 @@ void Invocation::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "WorkingDirectory";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_workingDirectory.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outputCOSBucketUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputCOSBucketUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outputCOSBucketUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outputCOSKeyPrefixHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputCOSKeyPrefix";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outputCOSKeyPrefix.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -684,5 +722,37 @@ void Invocation::SetWorkingDirectory(const string& _workingDirectory)
 bool Invocation::WorkingDirectoryHasBeenSet() const
 {
     return m_workingDirectoryHasBeenSet;
+}
+
+string Invocation::GetOutputCOSBucketUrl() const
+{
+    return m_outputCOSBucketUrl;
+}
+
+void Invocation::SetOutputCOSBucketUrl(const string& _outputCOSBucketUrl)
+{
+    m_outputCOSBucketUrl = _outputCOSBucketUrl;
+    m_outputCOSBucketUrlHasBeenSet = true;
+}
+
+bool Invocation::OutputCOSBucketUrlHasBeenSet() const
+{
+    return m_outputCOSBucketUrlHasBeenSet;
+}
+
+string Invocation::GetOutputCOSKeyPrefix() const
+{
+    return m_outputCOSKeyPrefix;
+}
+
+void Invocation::SetOutputCOSKeyPrefix(const string& _outputCOSKeyPrefix)
+{
+    m_outputCOSKeyPrefix = _outputCOSKeyPrefix;
+    m_outputCOSKeyPrefixHasBeenSet = true;
+}
+
+bool Invocation::OutputCOSKeyPrefixHasBeenSet() const
+{
+    return m_outputCOSKeyPrefixHasBeenSet;
 }
 

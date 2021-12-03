@@ -2018,6 +2018,49 @@ TdmqClient::DescribeAMQPVHostsOutcomeCallable TdmqClient::DescribeAMQPVHostsCall
     return task->get_future();
 }
 
+TdmqClient::DescribeAllTenantsOutcome TdmqClient::DescribeAllTenants(const DescribeAllTenantsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAllTenants");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAllTenantsResponse rsp = DescribeAllTenantsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAllTenantsOutcome(rsp);
+        else
+            return DescribeAllTenantsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAllTenantsOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeAllTenantsAsync(const DescribeAllTenantsRequest& request, const DescribeAllTenantsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAllTenants(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeAllTenantsOutcomeCallable TdmqClient::DescribeAllTenantsCallable(const DescribeAllTenantsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAllTenantsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAllTenants(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::DescribeBindClustersOutcome TdmqClient::DescribeBindClusters(const DescribeBindClustersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBindClusters");

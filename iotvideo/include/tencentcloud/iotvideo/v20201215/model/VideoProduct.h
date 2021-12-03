@@ -244,6 +244,28 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取连接类型，wifi表示WIFI连接，cellular表示4G连接
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NetType 连接类型，wifi表示WIFI连接，cellular表示4G连接
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetNetType() const;
+
+                    /**
+                     * 设置连接类型，wifi表示WIFI连接，cellular表示4G连接
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NetType 连接类型，wifi表示WIFI连接，cellular表示4G连接
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNetType(const std::string& _netType);
+
+                    /**
+                     * 判断参数 NetType 是否已赋值
+                     * @return NetType 是否已赋值
+                     */
+                    bool NetTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -311,6 +333,13 @@ namespace TencentCloud
                      */
                     uint64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 连接类型，wifi表示WIFI连接，cellular表示4G连接
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_netType;
+                    bool m_netTypeHasBeenSet;
 
                 };
             }

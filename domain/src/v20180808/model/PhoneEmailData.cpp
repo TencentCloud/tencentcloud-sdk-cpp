@@ -23,7 +23,8 @@ using namespace std;
 PhoneEmailData::PhoneEmailData() :
     m_codeHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_createdOnHasBeenSet(false)
+    m_createdOnHasBeenSet(false),
+    m_checkStatusHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome PhoneEmailData::Deserialize(const rapidjson::Value &value)
         m_createdOnHasBeenSet = true;
     }
 
+    if (value.HasMember("CheckStatus") && !value["CheckStatus"].IsNull())
+    {
+        if (!value["CheckStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PhoneEmailData.CheckStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_checkStatus = value["CheckStatus"].GetInt64();
+        m_checkStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void PhoneEmailData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "CreatedOn";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createdOn.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_checkStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_checkStatus, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void PhoneEmailData::SetCreatedOn(const string& _createdOn)
 bool PhoneEmailData::CreatedOnHasBeenSet() const
 {
     return m_createdOnHasBeenSet;
+}
+
+int64_t PhoneEmailData::GetCheckStatus() const
+{
+    return m_checkStatus;
+}
+
+void PhoneEmailData::SetCheckStatus(const int64_t& _checkStatus)
+{
+    m_checkStatus = _checkStatus;
+    m_checkStatusHasBeenSet = true;
+}
+
+bool PhoneEmailData::CheckStatusHasBeenSet() const
+{
+    return m_checkStatusHasBeenSet;
 }
 

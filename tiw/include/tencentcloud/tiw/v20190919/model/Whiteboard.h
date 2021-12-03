@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实时录制结果里白板视频宽，默认为1280
-                     * @return Width 实时录制结果里白板视频宽，默认为1280
+                     * 获取实时录制结果里白板视频宽，取值必须大于等于2，默认为1280
+                     * @return Width 实时录制结果里白板视频宽，取值必须大于等于2，默认为1280
                      */
                     int64_t GetWidth() const;
 
                     /**
-                     * 设置实时录制结果里白板视频宽，默认为1280
-                     * @param Width 实时录制结果里白板视频宽，默认为1280
+                     * 设置实时录制结果里白板视频宽，取值必须大于等于2，默认为1280
+                     * @param Width 实时录制结果里白板视频宽，取值必须大于等于2，默认为1280
                      */
                     void SetWidth(const int64_t& _width);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取实时录制结果里白板视频高，默认为960
-                     * @return Height 实时录制结果里白板视频高，默认为960
+                     * 获取实时录制结果里白板视频高，取值必须大于等于2，默认为960
+                     * @return Height 实时录制结果里白板视频高，取值必须大于等于2，默认为960
                      */
                     int64_t GetHeight() const;
 
                     /**
-                     * 设置实时录制结果里白板视频高，默认为960
-                     * @param Height 实时录制结果里白板视频高，默认为960
+                     * 设置实时录制结果里白板视频高，取值必须大于等于2，默认为960
+                     * @param Height 实时录制结果里白板视频高，取值必须大于等于2，默认为960
                      */
                     void SetHeight(const int64_t& _height);
 
@@ -103,13 +103,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实时录制结果里白板视频宽，默认为1280
+                     * 实时录制结果里白板视频宽，取值必须大于等于2，默认为1280
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 实时录制结果里白板视频高，默认为960
+                     * 实时录制结果里白板视频高，取值必须大于等于2，默认为960
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;

@@ -127,6 +127,20 @@ namespace TencentCloud
                      */
                     bool P2PPeakValueHasBeenSet() const;
 
+                    /**
+                     * 获取RTMP推流路数 ( 直播推流)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LivePushTotal RTMP推流路数 ( 直播推流)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetLivePushTotal() const;
+
+                    /**
+                     * 判断参数 LivePushTotal 是否已赋值
+                     * @return LivePushTotal 是否已赋值
+                     */
+                    bool LivePushTotalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -170,6 +184,13 @@ namespace TencentCloud
                      */
                     double m_p2PPeakValue;
                     bool m_p2PPeakValueHasBeenSet;
+
+                    /**
+                     * RTMP推流路数 ( 直播推流)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_livePushTotal;
+                    bool m_livePushTotalHasBeenSet;
 
                 };
             }

@@ -29,7 +29,8 @@ DescribeStatisticSummaryResponse::DescribeStatisticSummaryResponse() :
     m_watchFluxHasBeenSet(false),
     m_storageUsageHasBeenSet(false),
     m_p2PFluxTotalHasBeenSet(false),
-    m_p2PPeakValueHasBeenSet(false)
+    m_p2PPeakValueHasBeenSet(false),
+    m_livePushTotalHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome DescribeStatisticSummaryResponse::Deserialize(const string &
         m_p2PPeakValueHasBeenSet = true;
     }
 
+    if (rsp.HasMember("LivePushTotal") && !rsp["LivePushTotal"].IsNull())
+    {
+        if (!rsp["LivePushTotal"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LivePushTotal` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_livePushTotal = rsp["LivePushTotal"].GetInt64();
+        m_livePushTotalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -183,6 +194,14 @@ string DescribeStatisticSummaryResponse::ToJsonString() const
         string key = "P2PPeakValue";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_p2PPeakValue, allocator);
+    }
+
+    if (m_livePushTotalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LivePushTotal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_livePushTotal, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -255,6 +274,16 @@ double DescribeStatisticSummaryResponse::GetP2PPeakValue() const
 bool DescribeStatisticSummaryResponse::P2PPeakValueHasBeenSet() const
 {
     return m_p2PPeakValueHasBeenSet;
+}
+
+int64_t DescribeStatisticSummaryResponse::GetLivePushTotal() const
+{
+    return m_livePushTotal;
+}
+
+bool DescribeStatisticSummaryResponse::LivePushTotalHasBeenSet() const
+{
+    return m_livePushTotalHasBeenSet;
 }
 
 

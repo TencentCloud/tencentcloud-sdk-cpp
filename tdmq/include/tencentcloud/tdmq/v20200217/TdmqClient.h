@@ -115,6 +115,8 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeAMQPRouteRelationsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeAMQPVHostsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeAMQPVHostsResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeAllTenantsRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeAllTenantsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeBindClustersRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeBindClustersResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeBindVpcsRequest.h>
@@ -365,6 +367,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAMQPVHostsResponse> DescribeAMQPVHostsOutcome;
                 typedef std::future<DescribeAMQPVHostsOutcome> DescribeAMQPVHostsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeAMQPVHostsRequest&, DescribeAMQPVHostsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAMQPVHostsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAllTenantsResponse> DescribeAllTenantsOutcome;
+                typedef std::future<DescribeAllTenantsOutcome> DescribeAllTenantsOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeAllTenantsRequest&, DescribeAllTenantsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllTenantsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBindClustersResponse> DescribeBindClustersOutcome;
                 typedef std::future<DescribeBindClustersOutcome> DescribeBindClustersOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeBindClustersRequest&, DescribeBindClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBindClustersAsyncHandler;
@@ -928,6 +933,15 @@ namespace TencentCloud
                 DescribeAMQPVHostsOutcome DescribeAMQPVHosts(const Model::DescribeAMQPVHostsRequest &request);
                 void DescribeAMQPVHostsAsync(const Model::DescribeAMQPVHostsRequest& request, const DescribeAMQPVHostsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAMQPVHostsOutcomeCallable DescribeAMQPVHostsCallable(const Model::DescribeAMQPVHostsRequest& request);
+
+                /**
+                 *获取某个租户的虚拟集群列表
+                 * @param req DescribeAllTenantsRequest
+                 * @return DescribeAllTenantsOutcome
+                 */
+                DescribeAllTenantsOutcome DescribeAllTenants(const Model::DescribeAllTenantsRequest &request);
+                void DescribeAllTenantsAsync(const Model::DescribeAllTenantsRequest& request, const DescribeAllTenantsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAllTenantsOutcomeCallable DescribeAllTenantsCallable(const Model::DescribeAllTenantsRequest& request);
 
                 /**
                  *获取用户绑定的专享集群列表

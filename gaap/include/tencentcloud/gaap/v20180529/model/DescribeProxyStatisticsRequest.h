@@ -144,6 +144,24 @@ namespace TencentCloud
                      */
                     bool GranularityHasBeenSet() const;
 
+                    /**
+                     * 获取运营商（通道为三网通道时有效），支持CMCC，CUCC，CTCC，传空值或不传则合并三个运营商数据
+                     * @return Isp 运营商（通道为三网通道时有效），支持CMCC，CUCC，CTCC，传空值或不传则合并三个运营商数据
+                     */
+                    std::string GetIsp() const;
+
+                    /**
+                     * 设置运营商（通道为三网通道时有效），支持CMCC，CUCC，CTCC，传空值或不传则合并三个运营商数据
+                     * @param Isp 运营商（通道为三网通道时有效），支持CMCC，CUCC，CTCC，传空值或不传则合并三个运营商数据
+                     */
+                    void SetIsp(const std::string& _isp);
+
+                    /**
+                     * 判断参数 Isp 是否已赋值
+                     * @return Isp 是否已赋值
+                     */
+                    bool IspHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +196,12 @@ namespace TencentCloud
                      */
                     uint64_t m_granularity;
                     bool m_granularityHasBeenSet;
+
+                    /**
+                     * 运营商（通道为三网通道时有效），支持CMCC，CUCC，CTCC，传空值或不传则合并三个运营商数据
+                     */
+                    std::string m_isp;
+                    bool m_ispHasBeenSet;
 
                 };
             }

@@ -276,6 +276,78 @@ namespace TencentCloud
                      */
                     bool ChannelIdHasBeenSet() const;
 
+                    /**
+                     * 获取录制计划ID
+                     * @return PlanId 录制计划ID
+                     */
+                    std::string GetPlanId() const;
+
+                    /**
+                     * 设置录制计划ID
+                     * @param PlanId 录制计划ID
+                     */
+                    void SetPlanId(const std::string& _planId);
+
+                    /**
+                     * 判断参数 PlanId 是否已赋值
+                     * @return PlanId 是否已赋值
+                     */
+                    bool PlanIdHasBeenSet() const;
+
+                    /**
+                     * 获取场景ID
+                     * @return SceneId 场景ID
+                     */
+                    int64_t GetSceneId() const;
+
+                    /**
+                     * 设置场景ID
+                     * @param SceneId 场景ID
+                     */
+                    void SetSceneId(const int64_t& _sceneId);
+
+                    /**
+                     * 判断参数 SceneId 是否已赋值
+                     * @return SceneId 是否已赋值
+                     */
+                    bool SceneIdHasBeenSet() const;
+
+                    /**
+                     * 获取告警ID
+                     * @return WarnId 告警ID
+                     */
+                    int64_t GetWarnId() const;
+
+                    /**
+                     * 设置告警ID
+                     * @param WarnId 告警ID
+                     */
+                    void SetWarnId(const int64_t& _warnId);
+
+                    /**
+                     * 判断参数 WarnId 是否已赋值
+                     * @return WarnId 是否已赋值
+                     */
+                    bool WarnIdHasBeenSet() const;
+
+                    /**
+                     * 获取录制类型 1: 联动计划录制 2: 告警录制
+                     * @return RecordType 录制类型 1: 联动计划录制 2: 告警录制
+                     */
+                    std::vector<int64_t> GetRecordType() const;
+
+                    /**
+                     * 设置录制类型 1: 联动计划录制 2: 告警录制
+                     * @param RecordType 录制类型 1: 联动计划录制 2: 告警录制
+                     */
+                    void SetRecordType(const std::vector<int64_t>& _recordType);
+
+                    /**
+                     * 判断参数 RecordType 是否已赋值
+                     * @return RecordType 是否已赋值
+                     */
+                    bool RecordTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -355,6 +427,30 @@ namespace TencentCloud
                      */
                     std::string m_channelId;
                     bool m_channelIdHasBeenSet;
+
+                    /**
+                     * 录制计划ID
+                     */
+                    std::string m_planId;
+                    bool m_planIdHasBeenSet;
+
+                    /**
+                     * 场景ID
+                     */
+                    int64_t m_sceneId;
+                    bool m_sceneIdHasBeenSet;
+
+                    /**
+                     * 告警ID
+                     */
+                    int64_t m_warnId;
+                    bool m_warnIdHasBeenSet;
+
+                    /**
+                     * 录制类型 1: 联动计划录制 2: 告警录制
+                     */
+                    std::vector<int64_t> m_recordType;
+                    bool m_recordTypeHasBeenSet;
 
                 };
             }

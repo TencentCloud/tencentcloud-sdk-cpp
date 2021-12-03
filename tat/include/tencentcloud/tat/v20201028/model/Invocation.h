@@ -395,6 +395,42 @@ namespace TencentCloud
                      */
                     bool WorkingDirectoryHasBeenSet() const;
 
+                    /**
+                     * 获取日志上传的cos bucket 地址。
+                     * @return OutputCOSBucketUrl 日志上传的cos bucket 地址。
+                     */
+                    std::string GetOutputCOSBucketUrl() const;
+
+                    /**
+                     * 设置日志上传的cos bucket 地址。
+                     * @param OutputCOSBucketUrl 日志上传的cos bucket 地址。
+                     */
+                    void SetOutputCOSBucketUrl(const std::string& _outputCOSBucketUrl);
+
+                    /**
+                     * 判断参数 OutputCOSBucketUrl 是否已赋值
+                     * @return OutputCOSBucketUrl 是否已赋值
+                     */
+                    bool OutputCOSBucketUrlHasBeenSet() const;
+
+                    /**
+                     * 获取日志在cos bucket中的目录。
+                     * @return OutputCOSKeyPrefix 日志在cos bucket中的目录。
+                     */
+                    std::string GetOutputCOSKeyPrefix() const;
+
+                    /**
+                     * 设置日志在cos bucket中的目录。
+                     * @param OutputCOSKeyPrefix 日志在cos bucket中的目录。
+                     */
+                    void SetOutputCOSKeyPrefix(const std::string& _outputCOSKeyPrefix);
+
+                    /**
+                     * 判断参数 OutputCOSKeyPrefix 是否已赋值
+                     * @return OutputCOSKeyPrefix 是否已赋值
+                     */
+                    bool OutputCOSKeyPrefixHasBeenSet() const;
+
                 private:
 
                     /**
@@ -510,6 +546,18 @@ namespace TencentCloud
                      */
                     std::string m_workingDirectory;
                     bool m_workingDirectoryHasBeenSet;
+
+                    /**
+                     * 日志上传的cos bucket 地址。
+                     */
+                    std::string m_outputCOSBucketUrl;
+                    bool m_outputCOSBucketUrlHasBeenSet;
+
+                    /**
+                     * 日志在cos bucket中的目录。
+                     */
+                    std::string m_outputCOSKeyPrefix;
+                    bool m_outputCOSKeyPrefixHasBeenSet;
 
                 };
             }

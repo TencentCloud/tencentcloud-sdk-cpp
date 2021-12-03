@@ -204,6 +204,24 @@ namespace TencentCloud
                      */
                     bool EncryptionTypeHasBeenSet() const;
 
+                    /**
+                     * 获取连接类型，wifi表示WIFI连接，cellular表示4G连接
+                     * @return NetType 连接类型，wifi表示WIFI连接，cellular表示4G连接
+                     */
+                    std::string GetNetType() const;
+
+                    /**
+                     * 设置连接类型，wifi表示WIFI连接，cellular表示4G连接
+                     * @param NetType 连接类型，wifi表示WIFI连接，cellular表示4G连接
+                     */
+                    void SetNetType(const std::string& _netType);
+
+                    /**
+                     * 判断参数 NetType 是否已赋值
+                     * @return NetType 是否已赋值
+                     */
+                    bool NetTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +277,12 @@ namespace TencentCloud
                      */
                     uint64_t m_encryptionType;
                     bool m_encryptionTypeHasBeenSet;
+
+                    /**
+                     * 连接类型，wifi表示WIFI连接，cellular表示4G连接
+                     */
+                    std::string m_netType;
+                    bool m_netTypeHasBeenSet;
 
                 };
             }

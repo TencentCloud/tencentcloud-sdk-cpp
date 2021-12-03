@@ -30,6 +30,7 @@ UpdateFunctionCodeRequest::UpdateFunctionCodeRequest() :
     m_zipFileHasBeenSet(false),
     m_namespaceHasBeenSet(false),
     m_cosBucketRegionHasBeenSet(false),
+    m_installDependencyHasBeenSet(false),
     m_envIdHasBeenSet(false),
     m_publishHasBeenSet(false),
     m_codeHasBeenSet(false),
@@ -98,6 +99,14 @@ string UpdateFunctionCodeRequest::ToJsonString() const
         string key = "CosBucketRegion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cosBucketRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_installDependencyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstallDependency";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_installDependency.c_str(), allocator).Move(), allocator);
     }
 
     if (m_envIdHasBeenSet)
@@ -251,6 +260,22 @@ void UpdateFunctionCodeRequest::SetCosBucketRegion(const string& _cosBucketRegio
 bool UpdateFunctionCodeRequest::CosBucketRegionHasBeenSet() const
 {
     return m_cosBucketRegionHasBeenSet;
+}
+
+string UpdateFunctionCodeRequest::GetInstallDependency() const
+{
+    return m_installDependency;
+}
+
+void UpdateFunctionCodeRequest::SetInstallDependency(const string& _installDependency)
+{
+    m_installDependency = _installDependency;
+    m_installDependencyHasBeenSet = true;
+}
+
+bool UpdateFunctionCodeRequest::InstallDependencyHasBeenSet() const
+{
+    return m_installDependencyHasBeenSet;
 }
 
 string UpdateFunctionCodeRequest::GetEnvId() const

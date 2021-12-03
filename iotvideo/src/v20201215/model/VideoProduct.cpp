@@ -31,7 +31,8 @@ VideoProduct::VideoProduct() :
     m_chipIdHasBeenSet(false),
     m_productDescriptionHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_netTypeHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,16 @@ CoreInternalOutcome VideoProduct::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("NetType") && !value["NetType"].IsNull())
+    {
+        if (!value["NetType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoProduct.NetType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_netType = string(value["NetType"].GetString());
+        m_netTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +262,14 @@ void VideoProduct::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_updateTime, allocator);
+    }
+
+    if (m_netTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_netType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -430,5 +449,21 @@ void VideoProduct::SetUpdateTime(const uint64_t& _updateTime)
 bool VideoProduct::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string VideoProduct::GetNetType() const
+{
+    return m_netType;
+}
+
+void VideoProduct::SetNetType(const string& _netType)
+{
+    m_netType = _netType;
+    m_netTypeHasBeenSet = true;
+}
+
+bool VideoProduct::NetTypeHasBeenSet() const
+{
+    return m_netTypeHasBeenSet;
 }
 

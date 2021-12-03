@@ -25,7 +25,9 @@ TaskResult::TaskResult() :
     m_outputHasBeenSet(false),
     m_execStartTimeHasBeenSet(false),
     m_execEndTimeHasBeenSet(false),
-    m_droppedHasBeenSet(false)
+    m_droppedHasBeenSet(false),
+    m_outputUrlHasBeenSet(false),
+    m_outputUploadCOSErrorInfoHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,26 @@ CoreInternalOutcome TaskResult::Deserialize(const rapidjson::Value &value)
         m_droppedHasBeenSet = true;
     }
 
+    if (value.HasMember("OutputUrl") && !value["OutputUrl"].IsNull())
+    {
+        if (!value["OutputUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskResult.OutputUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_outputUrl = string(value["OutputUrl"].GetString());
+        m_outputUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("OutputUploadCOSErrorInfo") && !value["OutputUploadCOSErrorInfo"].IsNull())
+    {
+        if (!value["OutputUploadCOSErrorInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskResult.OutputUploadCOSErrorInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_outputUploadCOSErrorInfo = string(value["OutputUploadCOSErrorInfo"].GetString());
+        m_outputUploadCOSErrorInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +151,22 @@ void TaskResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Dropped";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dropped, allocator);
+    }
+
+    if (m_outputUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outputUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outputUploadCOSErrorInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputUploadCOSErrorInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outputUploadCOSErrorInfo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +250,37 @@ void TaskResult::SetDropped(const uint64_t& _dropped)
 bool TaskResult::DroppedHasBeenSet() const
 {
     return m_droppedHasBeenSet;
+}
+
+string TaskResult::GetOutputUrl() const
+{
+    return m_outputUrl;
+}
+
+void TaskResult::SetOutputUrl(const string& _outputUrl)
+{
+    m_outputUrl = _outputUrl;
+    m_outputUrlHasBeenSet = true;
+}
+
+bool TaskResult::OutputUrlHasBeenSet() const
+{
+    return m_outputUrlHasBeenSet;
+}
+
+string TaskResult::GetOutputUploadCOSErrorInfo() const
+{
+    return m_outputUploadCOSErrorInfo;
+}
+
+void TaskResult::SetOutputUploadCOSErrorInfo(const string& _outputUploadCOSErrorInfo)
+{
+    m_outputUploadCOSErrorInfo = _outputUploadCOSErrorInfo;
+    m_outputUploadCOSErrorInfoHasBeenSet = true;
+}
+
+bool TaskResult::OutputUploadCOSErrorInfoHasBeenSet() const
+{
+    return m_outputUploadCOSErrorInfoHasBeenSet;
 }
 

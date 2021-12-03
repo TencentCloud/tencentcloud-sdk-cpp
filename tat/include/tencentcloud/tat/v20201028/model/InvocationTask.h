@@ -114,6 +114,9 @@ namespace TencentCloud
 <li> FAILED：命令执行失败，执行完退出码不为 0
 <li> TIMEOUT：命令超时
 <li> TASK_TIMEOUT：执行任务超时
+<li> CANCELLING：取消中
+<li> CANCELLED：已取消（命令启动前就被取消）
+<li> TERMINATED：已中止（命令执行期间被取消）
                      * @return TaskStatus 执行任务状态。取值范围：
 <li> PENDING：等待下发 
 <li> DELIVERING：下发中
@@ -125,6 +128,9 @@ namespace TencentCloud
 <li> FAILED：命令执行失败，执行完退出码不为 0
 <li> TIMEOUT：命令超时
 <li> TASK_TIMEOUT：执行任务超时
+<li> CANCELLING：取消中
+<li> CANCELLED：已取消（命令启动前就被取消）
+<li> TERMINATED：已中止（命令执行期间被取消）
                      */
                     std::string GetTaskStatus() const;
 
@@ -140,6 +146,9 @@ namespace TencentCloud
 <li> FAILED：命令执行失败，执行完退出码不为 0
 <li> TIMEOUT：命令超时
 <li> TASK_TIMEOUT：执行任务超时
+<li> CANCELLING：取消中
+<li> CANCELLED：已取消（命令启动前就被取消）
+<li> TERMINATED：已中止（命令执行期间被取消）
                      * @param TaskStatus 执行任务状态。取值范围：
 <li> PENDING：等待下发 
 <li> DELIVERING：下发中
@@ -151,6 +160,9 @@ namespace TencentCloud
 <li> FAILED：命令执行失败，执行完退出码不为 0
 <li> TIMEOUT：命令超时
 <li> TASK_TIMEOUT：执行任务超时
+<li> CANCELLING：取消中
+<li> CANCELLED：已取消（命令启动前就被取消）
+<li> TERMINATED：已中止（命令执行期间被取消）
                      */
                     void SetTaskStatus(const std::string& _taskStatus);
 
@@ -354,6 +366,9 @@ namespace TencentCloud
 <li> FAILED：命令执行失败，执行完退出码不为 0
 <li> TIMEOUT：命令超时
 <li> TASK_TIMEOUT：执行任务超时
+<li> CANCELLING：取消中
+<li> CANCELLED：已取消（命令启动前就被取消）
+<li> TERMINATED：已中止（命令执行期间被取消）
                      */
                     std::string m_taskStatus;
                     bool m_taskStatusHasBeenSet;

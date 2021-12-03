@@ -100,6 +100,24 @@ namespace TencentCloud
                      */
                     bool CreatedOnHasBeenSet() const;
 
+                    /**
+                     * 获取1=控制台校验，2=第三方校验
+                     * @return CheckStatus 1=控制台校验，2=第三方校验
+                     */
+                    int64_t GetCheckStatus() const;
+
+                    /**
+                     * 设置1=控制台校验，2=第三方校验
+                     * @param CheckStatus 1=控制台校验，2=第三方校验
+                     */
+                    void SetCheckStatus(const int64_t& _checkStatus);
+
+                    /**
+                     * 判断参数 CheckStatus 是否已赋值
+                     * @return CheckStatus 是否已赋值
+                     */
+                    bool CheckStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +137,12 @@ namespace TencentCloud
                      */
                     std::string m_createdOn;
                     bool m_createdOnHasBeenSet;
+
+                    /**
+                     * 1=控制台校验，2=第三方校验
+                     */
+                    int64_t m_checkStatus;
+                    bool m_checkStatusHasBeenSet;
 
                 };
             }

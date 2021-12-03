@@ -31,7 +31,8 @@ CreateProductRequest::CreateProductRequest() :
     m_chipManufactureIdHasBeenSet(false),
     m_chipIdHasBeenSet(false),
     m_productDescriptionHasBeenSet(false),
-    m_encryptionTypeHasBeenSet(false)
+    m_encryptionTypeHasBeenSet(false),
+    m_netTypeHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,14 @@ string CreateProductRequest::ToJsonString() const
         string key = "EncryptionType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_encryptionType, allocator);
+    }
+
+    if (m_netTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_netType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -269,6 +278,22 @@ void CreateProductRequest::SetEncryptionType(const uint64_t& _encryptionType)
 bool CreateProductRequest::EncryptionTypeHasBeenSet() const
 {
     return m_encryptionTypeHasBeenSet;
+}
+
+string CreateProductRequest::GetNetType() const
+{
+    return m_netType;
+}
+
+void CreateProductRequest::SetNetType(const string& _netType)
+{
+    m_netType = _netType;
+    m_netTypeHasBeenSet = true;
+}
+
+bool CreateProductRequest::NetTypeHasBeenSet() const
+{
+    return m_netTypeHasBeenSet;
 }
 
 
