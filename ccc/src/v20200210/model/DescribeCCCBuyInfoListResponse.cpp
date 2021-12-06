@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cdn/v20180606/model/ListClsLogTopicsResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeCCCBuyInfoListResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cdn::V20180606::Model;
+using namespace TencentCloud::Ccc::V20200210::Model;
 using namespace std;
 
-ListClsLogTopicsResponse::ListClsLogTopicsResponse() :
-    m_logsetHasBeenSet(false),
-    m_topicsHasBeenSet(false),
-    m_extraLogsetHasBeenSet(false)
+DescribeCCCBuyInfoListResponse::DescribeCCCBuyInfoListResponse() :
+    m_totalCountHasBeenSet(false),
+    m_sdkAppIdBuyListHasBeenSet(false),
+    m_packageBuyListHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome ListClsLogTopicsResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeCCCBuyInfoListResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -64,106 +64,98 @@ CoreInternalOutcome ListClsLogTopicsResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("Logset") && !rsp["Logset"].IsNull())
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
-        if (!rsp["Logset"].IsObject())
+        if (!rsp["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `Logset` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-
-        CoreInternalOutcome outcome = m_logset.Deserialize(rsp["Logset"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_logsetHasBeenSet = true;
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
     }
 
-    if (rsp.HasMember("Topics") && !rsp["Topics"].IsNull())
+    if (rsp.HasMember("SdkAppIdBuyList") && !rsp["SdkAppIdBuyList"].IsNull())
     {
-        if (!rsp["Topics"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Topics` is not array type"));
+        if (!rsp["SdkAppIdBuyList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SdkAppIdBuyList` is not array type"));
 
-        const rapidjson::Value &tmpValue = rsp["Topics"];
+        const rapidjson::Value &tmpValue = rsp["SdkAppIdBuyList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            TopicInfo item;
+            SdkAppIdBuyInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_topics.push_back(item);
+            m_sdkAppIdBuyList.push_back(item);
         }
-        m_topicsHasBeenSet = true;
+        m_sdkAppIdBuyListHasBeenSet = true;
     }
 
-    if (rsp.HasMember("ExtraLogset") && !rsp["ExtraLogset"].IsNull())
+    if (rsp.HasMember("PackageBuyList") && !rsp["PackageBuyList"].IsNull())
     {
-        if (!rsp["ExtraLogset"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `ExtraLogset` is not array type"));
+        if (!rsp["PackageBuyList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PackageBuyList` is not array type"));
 
-        const rapidjson::Value &tmpValue = rsp["ExtraLogset"];
+        const rapidjson::Value &tmpValue = rsp["PackageBuyList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            ExtraLogset item;
+            PackageBuyInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_extraLogset.push_back(item);
+            m_packageBuyList.push_back(item);
         }
-        m_extraLogsetHasBeenSet = true;
+        m_packageBuyListHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string ListClsLogTopicsResponse::ToJsonString() const
+string DescribeCCCBuyInfoListResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_logsetHasBeenSet)
+    if (m_totalCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Logset";
+        string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_logset.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
     }
 
-    if (m_topicsHasBeenSet)
+    if (m_sdkAppIdBuyListHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Topics";
+        string key = "SdkAppIdBuyList";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_topics.begin(); itr != m_topics.end(); ++itr, ++i)
+        for (auto itr = m_sdkAppIdBuyList.begin(); itr != m_sdkAppIdBuyList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
-    if (m_extraLogsetHasBeenSet)
+    if (m_packageBuyListHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ExtraLogset";
+        string key = "PackageBuyList";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_extraLogset.begin(); itr != m_extraLogset.end(); ++itr, ++i)
+        for (auto itr = m_packageBuyList.begin(); itr != m_packageBuyList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -182,34 +174,34 @@ string ListClsLogTopicsResponse::ToJsonString() const
 }
 
 
-LogSetInfo ListClsLogTopicsResponse::GetLogset() const
+int64_t DescribeCCCBuyInfoListResponse::GetTotalCount() const
 {
-    return m_logset;
+    return m_totalCount;
 }
 
-bool ListClsLogTopicsResponse::LogsetHasBeenSet() const
+bool DescribeCCCBuyInfoListResponse::TotalCountHasBeenSet() const
 {
-    return m_logsetHasBeenSet;
+    return m_totalCountHasBeenSet;
 }
 
-vector<TopicInfo> ListClsLogTopicsResponse::GetTopics() const
+vector<SdkAppIdBuyInfo> DescribeCCCBuyInfoListResponse::GetSdkAppIdBuyList() const
 {
-    return m_topics;
+    return m_sdkAppIdBuyList;
 }
 
-bool ListClsLogTopicsResponse::TopicsHasBeenSet() const
+bool DescribeCCCBuyInfoListResponse::SdkAppIdBuyListHasBeenSet() const
 {
-    return m_topicsHasBeenSet;
+    return m_sdkAppIdBuyListHasBeenSet;
 }
 
-vector<ExtraLogset> ListClsLogTopicsResponse::GetExtraLogset() const
+vector<PackageBuyInfo> DescribeCCCBuyInfoListResponse::GetPackageBuyList() const
 {
-    return m_extraLogset;
+    return m_packageBuyList;
 }
 
-bool ListClsLogTopicsResponse::ExtraLogsetHasBeenSet() const
+bool DescribeCCCBuyInfoListResponse::PackageBuyListHasBeenSet() const
 {
-    return m_extraLogsetHasBeenSet;
+    return m_packageBuyListHasBeenSet;
 }
 
 

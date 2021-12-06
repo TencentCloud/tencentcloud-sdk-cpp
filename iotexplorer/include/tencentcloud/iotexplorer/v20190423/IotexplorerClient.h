@@ -111,6 +111,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DisableTopicRuleResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/EnableTopicRuleRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/EnableTopicRuleResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GenSingleDeviceSignatureOfPublicRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GenSingleDeviceSignatureOfPublicResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetBatchProductionsListRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetBatchProductionsListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetCOSURLRequest.h>
@@ -319,6 +321,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::EnableTopicRuleResponse> EnableTopicRuleOutcome;
                 typedef std::future<EnableTopicRuleOutcome> EnableTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::EnableTopicRuleRequest&, EnableTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableTopicRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::GenSingleDeviceSignatureOfPublicResponse> GenSingleDeviceSignatureOfPublicOutcome;
+                typedef std::future<GenSingleDeviceSignatureOfPublicOutcome> GenSingleDeviceSignatureOfPublicOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::GenSingleDeviceSignatureOfPublicRequest&, GenSingleDeviceSignatureOfPublicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenSingleDeviceSignatureOfPublicAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetBatchProductionsListResponse> GetBatchProductionsListOutcome;
                 typedef std::future<GetBatchProductionsListOutcome> GetBatchProductionsListOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetBatchProductionsListRequest&, GetBatchProductionsListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetBatchProductionsListAsyncHandler;
@@ -810,6 +815,15 @@ namespace TencentCloud
                 EnableTopicRuleOutcome EnableTopicRule(const Model::EnableTopicRuleRequest &request);
                 void EnableTopicRuleAsync(const Model::EnableTopicRuleRequest& request, const EnableTopicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnableTopicRuleOutcomeCallable EnableTopicRuleCallable(const Model::EnableTopicRuleRequest& request);
+
+                /**
+                 *无
+                 * @param req GenSingleDeviceSignatureOfPublicRequest
+                 * @return GenSingleDeviceSignatureOfPublicOutcome
+                 */
+                GenSingleDeviceSignatureOfPublicOutcome GenSingleDeviceSignatureOfPublic(const Model::GenSingleDeviceSignatureOfPublicRequest &request);
+                void GenSingleDeviceSignatureOfPublicAsync(const Model::GenSingleDeviceSignatureOfPublicRequest& request, const GenSingleDeviceSignatureOfPublicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GenSingleDeviceSignatureOfPublicOutcomeCallable GenSingleDeviceSignatureOfPublicCallable(const Model::GenSingleDeviceSignatureOfPublicRequest& request);
 
                 /**
                  *列出量产数据列表信息。

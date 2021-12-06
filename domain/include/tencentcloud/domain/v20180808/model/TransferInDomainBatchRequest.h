@@ -166,6 +166,42 @@ false：关闭60天内禁止转移注册商锁定
                      */
                     bool LockTransferHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启更新锁：0=默认不开启，1=开启
+                     * @return UpdateProhibition 是否开启更新锁：0=默认不开启，1=开启
+                     */
+                    int64_t GetUpdateProhibition() const;
+
+                    /**
+                     * 设置是否开启更新锁：0=默认不开启，1=开启
+                     * @param UpdateProhibition 是否开启更新锁：0=默认不开启，1=开启
+                     */
+                    void SetUpdateProhibition(const int64_t& _updateProhibition);
+
+                    /**
+                     * 判断参数 UpdateProhibition 是否已赋值
+                     * @return UpdateProhibition 是否已赋值
+                     */
+                    bool UpdateProhibitionHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启转移锁：0=默认不开启，1=开启
+                     * @return TransferProhibition 是否开启转移锁：0=默认不开启，1=开启
+                     */
+                    int64_t GetTransferProhibition() const;
+
+                    /**
+                     * 设置是否开启转移锁：0=默认不开启，1=开启
+                     * @param TransferProhibition 是否开启转移锁：0=默认不开启，1=开启
+                     */
+                    void SetTransferProhibition(const int64_t& _transferProhibition);
+
+                    /**
+                     * 判断参数 TransferProhibition 是否已赋值
+                     * @return TransferProhibition 是否已赋值
+                     */
+                    bool TransferProhibitionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +243,18 @@ false：关闭60天内禁止转移注册商锁定
                      */
                     bool m_lockTransfer;
                     bool m_lockTransferHasBeenSet;
+
+                    /**
+                     * 是否开启更新锁：0=默认不开启，1=开启
+                     */
+                    int64_t m_updateProhibition;
+                    bool m_updateProhibitionHasBeenSet;
+
+                    /**
+                     * 是否开启转移锁：0=默认不开启，1=开启
+                     */
+                    int64_t m_transferProhibition;
+                    bool m_transferProhibitionHasBeenSet;
 
                 };
             }

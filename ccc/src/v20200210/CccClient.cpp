@@ -255,6 +255,49 @@ CccClient::DeleteStaffOutcomeCallable CccClient::DeleteStaffCallable(const Delet
     return task->get_future();
 }
 
+CccClient::DescribeCCCBuyInfoListOutcome CccClient::DescribeCCCBuyInfoList(const DescribeCCCBuyInfoListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCCCBuyInfoList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCCCBuyInfoListResponse rsp = DescribeCCCBuyInfoListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCCCBuyInfoListOutcome(rsp);
+        else
+            return DescribeCCCBuyInfoListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCCCBuyInfoListOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::DescribeCCCBuyInfoListAsync(const DescribeCCCBuyInfoListRequest& request, const DescribeCCCBuyInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCCCBuyInfoList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::DescribeCCCBuyInfoListOutcomeCallable CccClient::DescribeCCCBuyInfoListCallable(const DescribeCCCBuyInfoListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCCCBuyInfoListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCCCBuyInfoList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::DescribeCallInMetricsOutcome CccClient::DescribeCallInMetrics(const DescribeCallInMetricsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCallInMetrics");

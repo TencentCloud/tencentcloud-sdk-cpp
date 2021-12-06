@@ -14,16 +14,18 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CDN_V20180606_MODEL_LISTCLSLOGTOPICSRESPONSE_H_
-#define TENCENTCLOUD_CDN_V20180606_MODEL_LISTCLSLOGTOPICSRESPONSE_H_
+#ifndef TENCENTCLOUD_CDN_V20180606_MODEL_EXTRALOGSET_H_
+#define TENCENTCLOUD_CDN_V20180606_MODEL_EXTRALOGSET_H_
 
 #include <string>
 #include <vector>
 #include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cdn/v20180606/model/LogSetInfo.h>
 #include <tencentcloud/cdn/v20180606/model/TopicInfo.h>
-#include <tencentcloud/cdn/v20180606/model/ExtraLogset.h>
 
 
 namespace TencentCloud
@@ -35,22 +37,32 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * ListClsLogTopics返回参数结构体
+                * 除上海外其他区域日志集和日志主题信息
                 */
-                class ListClsLogTopicsResponse : public AbstractModel
+                class ExtraLogset : public AbstractModel
                 {
                 public:
-                    ListClsLogTopicsResponse();
-                    ~ListClsLogTopicsResponse() = default;
-                    CoreInternalOutcome Deserialize(const std::string &payload);
-                    std::string ToJsonString() const;
+                    ExtraLogset();
+                    ~ExtraLogset() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取上海区域日志集信息
-                     * @return Logset 上海区域日志集信息
+                     * 获取日志集信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Logset 日志集信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     LogSetInfo GetLogset() const;
+
+                    /**
+                     * 设置日志集信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Logset 日志集信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLogset(const LogSetInfo& _logset);
 
                     /**
                      * 判断参数 Logset 是否已赋值
@@ -59,12 +71,20 @@ namespace TencentCloud
                     bool LogsetHasBeenSet() const;
 
                     /**
-                     * 获取上海区域日志主题信息列表
+                     * 获取日志主题信息列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Topics 上海区域日志主题信息列表
+                     * @return Topics 日志主题信息列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TopicInfo> GetTopics() const;
+
+                    /**
+                     * 设置日志主题信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Topics 日志主题信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTopics(const std::vector<TopicInfo>& _topics);
 
                     /**
                      * 判断参数 Topics 是否已赋值
@@ -72,41 +92,21 @@ namespace TencentCloud
                      */
                     bool TopicsHasBeenSet() const;
 
-                    /**
-                     * 获取其他区域日志集信息列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExtraLogset 其他区域日志集信息列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<ExtraLogset> GetExtraLogset() const;
-
-                    /**
-                     * 判断参数 ExtraLogset 是否已赋值
-                     * @return ExtraLogset 是否已赋值
-                     */
-                    bool ExtraLogsetHasBeenSet() const;
-
                 private:
 
                     /**
-                     * 上海区域日志集信息
+                     * 日志集信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     LogSetInfo m_logset;
                     bool m_logsetHasBeenSet;
 
                     /**
-                     * 上海区域日志主题信息列表
+                     * 日志主题信息列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TopicInfo> m_topics;
                     bool m_topicsHasBeenSet;
-
-                    /**
-                     * 其他区域日志集信息列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<ExtraLogset> m_extraLogset;
-                    bool m_extraLogsetHasBeenSet;
 
                 };
             }
@@ -114,4 +114,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CDN_V20180606_MODEL_LISTCLSLOGTOPICSRESPONSE_H_
+#endif // !TENCENTCLOUD_CDN_V20180606_MODEL_EXTRALOGSET_H_

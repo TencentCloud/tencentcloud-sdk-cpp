@@ -1545,6 +1545,49 @@ CpdpClient::CreateTransferBatchOutcomeCallable CpdpClient::CreateTransferBatchCa
     return task->get_future();
 }
 
+CpdpClient::DeduceQuotaOutcome CpdpClient::DeduceQuota(const DeduceQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeduceQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeduceQuotaResponse rsp = DeduceQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeduceQuotaOutcome(rsp);
+        else
+            return DeduceQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return DeduceQuotaOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::DeduceQuotaAsync(const DeduceQuotaRequest& request, const DeduceQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeduceQuota(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::DeduceQuotaOutcomeCallable CpdpClient::DeduceQuotaCallable(const DeduceQuotaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeduceQuotaOutcome()>>(
+        [this, request]()
+        {
+            return this->DeduceQuota(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::DeleteAgentTaxPaymentInfoOutcome CpdpClient::DeleteAgentTaxPaymentInfo(const DeleteAgentTaxPaymentInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAgentTaxPaymentInfo");
@@ -2785,6 +2828,49 @@ CpdpClient::QueryApplicationMaterialOutcomeCallable CpdpClient::QueryApplication
         [this, request]()
         {
             return this->QueryApplicationMaterial(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::QueryAssignmentOutcome CpdpClient::QueryAssignment(const QueryAssignmentRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryAssignment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryAssignmentResponse rsp = QueryAssignmentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryAssignmentOutcome(rsp);
+        else
+            return QueryAssignmentOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryAssignmentOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryAssignmentAsync(const QueryAssignmentRequest& request, const QueryAssignmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryAssignment(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryAssignmentOutcomeCallable CpdpClient::QueryAssignmentCallable(const QueryAssignmentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryAssignmentOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryAssignment(request);
         }
     );
 

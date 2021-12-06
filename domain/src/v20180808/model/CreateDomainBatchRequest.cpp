@@ -28,7 +28,9 @@ CreateDomainBatchRequest::CreateDomainBatchRequest() :
     m_domainsHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_autoRenewFlagHasBeenSet(false),
-    m_packageResourceIdHasBeenSet(false)
+    m_packageResourceIdHasBeenSet(false),
+    m_updateProhibitionHasBeenSet(false),
+    m_transferProhibitionHasBeenSet(false)
 {
 }
 
@@ -90,6 +92,22 @@ string CreateDomainBatchRequest::ToJsonString() const
         string key = "PackageResourceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_packageResourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateProhibitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateProhibition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_updateProhibition, allocator);
+    }
+
+    if (m_transferProhibitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransferProhibition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_transferProhibition, allocator);
     }
 
 
@@ -194,6 +212,38 @@ void CreateDomainBatchRequest::SetPackageResourceId(const string& _packageResour
 bool CreateDomainBatchRequest::PackageResourceIdHasBeenSet() const
 {
     return m_packageResourceIdHasBeenSet;
+}
+
+int64_t CreateDomainBatchRequest::GetUpdateProhibition() const
+{
+    return m_updateProhibition;
+}
+
+void CreateDomainBatchRequest::SetUpdateProhibition(const int64_t& _updateProhibition)
+{
+    m_updateProhibition = _updateProhibition;
+    m_updateProhibitionHasBeenSet = true;
+}
+
+bool CreateDomainBatchRequest::UpdateProhibitionHasBeenSet() const
+{
+    return m_updateProhibitionHasBeenSet;
+}
+
+int64_t CreateDomainBatchRequest::GetTransferProhibition() const
+{
+    return m_transferProhibition;
+}
+
+void CreateDomainBatchRequest::SetTransferProhibition(const int64_t& _transferProhibition)
+{
+    m_transferProhibition = _transferProhibition;
+    m_transferProhibitionHasBeenSet = true;
+}
+
+bool CreateDomainBatchRequest::TransferProhibitionHasBeenSet() const
+{
+    return m_transferProhibitionHasBeenSet;
 }
 
 

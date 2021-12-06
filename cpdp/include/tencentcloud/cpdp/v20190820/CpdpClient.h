@@ -93,6 +93,8 @@
 #include <tencentcloud/cpdp/v20190820/model/CreateSinglePaymentResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateTransferBatchRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateTransferBatchResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/DeduceQuotaRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/DeduceQuotaResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/DeleteAgentTaxPaymentInfoRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/DeleteAgentTaxPaymentInfoResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/DeleteAgentTaxPaymentInfosRequest.h>
@@ -151,6 +153,8 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryAnchorContractInfoResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryApplicationMaterialRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryApplicationMaterialResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryAssignmentRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryAssignmentResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryBalanceRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryBalanceResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryBankClearRequest.h>
@@ -410,6 +414,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTransferBatchResponse> CreateTransferBatchOutcome;
                 typedef std::future<CreateTransferBatchOutcome> CreateTransferBatchOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateTransferBatchRequest&, CreateTransferBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTransferBatchAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeduceQuotaResponse> DeduceQuotaOutcome;
+                typedef std::future<DeduceQuotaOutcome> DeduceQuotaOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::DeduceQuotaRequest&, DeduceQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeduceQuotaAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAgentTaxPaymentInfoResponse> DeleteAgentTaxPaymentInfoOutcome;
                 typedef std::future<DeleteAgentTaxPaymentInfoOutcome> DeleteAgentTaxPaymentInfoOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::DeleteAgentTaxPaymentInfoRequest&, DeleteAgentTaxPaymentInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAgentTaxPaymentInfoAsyncHandler;
@@ -497,6 +504,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryApplicationMaterialResponse> QueryApplicationMaterialOutcome;
                 typedef std::future<QueryApplicationMaterialOutcome> QueryApplicationMaterialOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryApplicationMaterialRequest&, QueryApplicationMaterialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryApplicationMaterialAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryAssignmentResponse> QueryAssignmentOutcome;
+                typedef std::future<QueryAssignmentOutcome> QueryAssignmentOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryAssignmentRequest&, QueryAssignmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryAssignmentAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryBalanceResponse> QueryBalanceOutcome;
                 typedef std::future<QueryBalanceOutcome> QueryBalanceOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryBalanceRequest&, QueryBalanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryBalanceAsyncHandler;
@@ -1034,6 +1044,15 @@ namespace TencentCloud
                 CreateTransferBatchOutcomeCallable CreateTransferBatchCallable(const Model::CreateTransferBatchRequest& request);
 
                 /**
+                 *直播平台-扣减额度
+                 * @param req DeduceQuotaRequest
+                 * @return DeduceQuotaOutcome
+                 */
+                DeduceQuotaOutcome DeduceQuota(const Model::DeduceQuotaRequest &request);
+                void DeduceQuotaAsync(const Model::DeduceQuotaRequest& request, const DeduceQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeduceQuotaOutcomeCallable DeduceQuotaCallable(const Model::DeduceQuotaRequest& request);
+
+                /**
                  *直播平台-删除代理商完税信息
                  * @param req DeleteAgentTaxPaymentInfoRequest
                  * @return DeleteAgentTaxPaymentInfoOutcome
@@ -1293,6 +1312,15 @@ namespace TencentCloud
                 QueryApplicationMaterialOutcome QueryApplicationMaterial(const Model::QueryApplicationMaterialRequest &request);
                 void QueryApplicationMaterialAsync(const Model::QueryApplicationMaterialRequest& request, const QueryApplicationMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryApplicationMaterialOutcomeCallable QueryApplicationMaterialCallable(const Model::QueryApplicationMaterialRequest& request);
+
+                /**
+                 *直播平台-查询分配关系
+                 * @param req QueryAssignmentRequest
+                 * @return QueryAssignmentOutcome
+                 */
+                QueryAssignmentOutcome QueryAssignment(const Model::QueryAssignmentRequest &request);
+                void QueryAssignmentAsync(const Model::QueryAssignmentRequest& request, const QueryAssignmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryAssignmentOutcomeCallable QueryAssignmentCallable(const Model::QueryAssignmentRequest& request);
 
                 /**
                  *子商户余额查询

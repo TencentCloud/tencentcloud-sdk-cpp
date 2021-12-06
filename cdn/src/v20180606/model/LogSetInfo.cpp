@@ -28,7 +28,9 @@ LogSetInfo::LogSetInfo() :
     m_isDefaultHasBeenSet(false),
     m_logsetSavePeriodHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_regionHasBeenSet(false)
+    m_regionHasBeenSet(false),
+    m_deletedHasBeenSet(false),
+    m_regionEnHasBeenSet(false)
 {
 }
 
@@ -117,6 +119,26 @@ CoreInternalOutcome LogSetInfo::Deserialize(const rapidjson::Value &value)
         m_regionHasBeenSet = true;
     }
 
+    if (value.HasMember("Deleted") && !value["Deleted"].IsNull())
+    {
+        if (!value["Deleted"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogSetInfo.Deleted` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deleted = string(value["Deleted"].GetString());
+        m_deletedHasBeenSet = true;
+    }
+
+    if (value.HasMember("RegionEn") && !value["RegionEn"].IsNull())
+    {
+        if (!value["RegionEn"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogSetInfo.RegionEn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionEn = string(value["RegionEn"].GetString());
+        m_regionEnHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +208,22 @@ void LogSetInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deletedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Deleted";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deleted.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionEnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionEn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionEn.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +355,37 @@ void LogSetInfo::SetRegion(const string& _region)
 bool LogSetInfo::RegionHasBeenSet() const
 {
     return m_regionHasBeenSet;
+}
+
+string LogSetInfo::GetDeleted() const
+{
+    return m_deleted;
+}
+
+void LogSetInfo::SetDeleted(const string& _deleted)
+{
+    m_deleted = _deleted;
+    m_deletedHasBeenSet = true;
+}
+
+bool LogSetInfo::DeletedHasBeenSet() const
+{
+    return m_deletedHasBeenSet;
+}
+
+string LogSetInfo::GetRegionEn() const
+{
+    return m_regionEn;
+}
+
+void LogSetInfo::SetRegionEn(const string& _regionEn)
+{
+    m_regionEn = _regionEn;
+    m_regionEnHasBeenSet = true;
+}
+
+bool LogSetInfo::RegionEnHasBeenSet() const
+{
+    return m_regionEnHasBeenSet;
 }
 

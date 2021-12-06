@@ -899,6 +899,78 @@ namespace TencentCloud
                      */
                     bool ServiceScfFunctionTypeHasBeenSet() const;
 
+                    /**
+                     * 获取EIAM应用类型。
+                     * @return EIAMAppType EIAM应用类型。
+                     */
+                    std::string GetEIAMAppType() const;
+
+                    /**
+                     * 设置EIAM应用类型。
+                     * @param EIAMAppType EIAM应用类型。
+                     */
+                    void SetEIAMAppType(const std::string& _eIAMAppType);
+
+                    /**
+                     * 判断参数 EIAMAppType 是否已赋值
+                     * @return EIAMAppType 是否已赋值
+                     */
+                    bool EIAMAppTypeHasBeenSet() const;
+
+                    /**
+                     * 获取EIAM应用认证类型，支持仅认证（AuthenticationOnly）、认证和鉴权（Authorization）。
+                     * @return EIAMAuthType EIAM应用认证类型，支持仅认证（AuthenticationOnly）、认证和鉴权（Authorization）。
+                     */
+                    std::string GetEIAMAuthType() const;
+
+                    /**
+                     * 设置EIAM应用认证类型，支持仅认证（AuthenticationOnly）、认证和鉴权（Authorization）。
+                     * @param EIAMAuthType EIAM应用认证类型，支持仅认证（AuthenticationOnly）、认证和鉴权（Authorization）。
+                     */
+                    void SetEIAMAuthType(const std::string& _eIAMAuthType);
+
+                    /**
+                     * 判断参数 EIAMAuthType 是否已赋值
+                     * @return EIAMAuthType 是否已赋值
+                     */
+                    bool EIAMAuthTypeHasBeenSet() const;
+
+                    /**
+                     * 获取EIAM应用Token 有效时间，单位为秒，默认为7200秒。
+                     * @return TokenTimeout EIAM应用Token 有效时间，单位为秒，默认为7200秒。
+                     */
+                    int64_t GetTokenTimeout() const;
+
+                    /**
+                     * 设置EIAM应用Token 有效时间，单位为秒，默认为7200秒。
+                     * @param TokenTimeout EIAM应用Token 有效时间，单位为秒，默认为7200秒。
+                     */
+                    void SetTokenTimeout(const int64_t& _tokenTimeout);
+
+                    /**
+                     * 判断参数 TokenTimeout 是否已赋值
+                     * @return TokenTimeout 是否已赋值
+                     */
+                    bool TokenTimeoutHasBeenSet() const;
+
+                    /**
+                     * 获取EIAM应用ID。
+                     * @return EIAMAppId EIAM应用ID。
+                     */
+                    std::string GetEIAMAppId() const;
+
+                    /**
+                     * 设置EIAM应用ID。
+                     * @param EIAMAppId EIAM应用ID。
+                     */
+                    void SetEIAMAppId(const std::string& _eIAMAppId);
+
+                    /**
+                     * 判断参数 EIAMAppId 是否已赋值
+                     * @return EIAMAppId 是否已赋值
+                     */
+                    bool EIAMAppIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1182,6 +1254,30 @@ namespace TencentCloud
                      */
                     std::string m_serviceScfFunctionType;
                     bool m_serviceScfFunctionTypeHasBeenSet;
+
+                    /**
+                     * EIAM应用类型。
+                     */
+                    std::string m_eIAMAppType;
+                    bool m_eIAMAppTypeHasBeenSet;
+
+                    /**
+                     * EIAM应用认证类型，支持仅认证（AuthenticationOnly）、认证和鉴权（Authorization）。
+                     */
+                    std::string m_eIAMAuthType;
+                    bool m_eIAMAuthTypeHasBeenSet;
+
+                    /**
+                     * EIAM应用Token 有效时间，单位为秒，默认为7200秒。
+                     */
+                    int64_t m_tokenTimeout;
+                    bool m_tokenTimeoutHasBeenSet;
+
+                    /**
+                     * EIAM应用ID。
+                     */
+                    std::string m_eIAMAppId;
+                    bool m_eIAMAppIdHasBeenSet;
 
                 };
             }

@@ -1932,6 +1932,49 @@ IotexplorerClient::EnableTopicRuleOutcomeCallable IotexplorerClient::EnableTopic
     return task->get_future();
 }
 
+IotexplorerClient::GenSingleDeviceSignatureOfPublicOutcome IotexplorerClient::GenSingleDeviceSignatureOfPublic(const GenSingleDeviceSignatureOfPublicRequest &request)
+{
+    auto outcome = MakeRequest(request, "GenSingleDeviceSignatureOfPublic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GenSingleDeviceSignatureOfPublicResponse rsp = GenSingleDeviceSignatureOfPublicResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GenSingleDeviceSignatureOfPublicOutcome(rsp);
+        else
+            return GenSingleDeviceSignatureOfPublicOutcome(o.GetError());
+    }
+    else
+    {
+        return GenSingleDeviceSignatureOfPublicOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::GenSingleDeviceSignatureOfPublicAsync(const GenSingleDeviceSignatureOfPublicRequest& request, const GenSingleDeviceSignatureOfPublicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GenSingleDeviceSignatureOfPublic(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::GenSingleDeviceSignatureOfPublicOutcomeCallable IotexplorerClient::GenSingleDeviceSignatureOfPublicCallable(const GenSingleDeviceSignatureOfPublicRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GenSingleDeviceSignatureOfPublicOutcome()>>(
+        [this, request]()
+        {
+            return this->GenSingleDeviceSignatureOfPublic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::GetBatchProductionsListOutcome IotexplorerClient::GetBatchProductionsList(const GetBatchProductionsListRequest &request)
 {
     auto outcome = MakeRequest(request, "GetBatchProductionsList");

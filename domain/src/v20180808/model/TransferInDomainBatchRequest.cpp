@@ -28,7 +28,9 @@ TransferInDomainBatchRequest::TransferInDomainBatchRequest() :
     m_templateIdHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_autoRenewFlagHasBeenSet(false),
-    m_lockTransferHasBeenSet(false)
+    m_lockTransferHasBeenSet(false),
+    m_updateProhibitionHasBeenSet(false),
+    m_transferProhibitionHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,22 @@ string TransferInDomainBatchRequest::ToJsonString() const
         string key = "LockTransfer";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_lockTransfer, allocator);
+    }
+
+    if (m_updateProhibitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateProhibition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_updateProhibition, allocator);
+    }
+
+    if (m_transferProhibitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransferProhibition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_transferProhibition, allocator);
     }
 
 
@@ -199,6 +217,38 @@ void TransferInDomainBatchRequest::SetLockTransfer(const bool& _lockTransfer)
 bool TransferInDomainBatchRequest::LockTransferHasBeenSet() const
 {
     return m_lockTransferHasBeenSet;
+}
+
+int64_t TransferInDomainBatchRequest::GetUpdateProhibition() const
+{
+    return m_updateProhibition;
+}
+
+void TransferInDomainBatchRequest::SetUpdateProhibition(const int64_t& _updateProhibition)
+{
+    m_updateProhibition = _updateProhibition;
+    m_updateProhibitionHasBeenSet = true;
+}
+
+bool TransferInDomainBatchRequest::UpdateProhibitionHasBeenSet() const
+{
+    return m_updateProhibitionHasBeenSet;
+}
+
+int64_t TransferInDomainBatchRequest::GetTransferProhibition() const
+{
+    return m_transferProhibition;
+}
+
+void TransferInDomainBatchRequest::SetTransferProhibition(const int64_t& _transferProhibition)
+{
+    m_transferProhibition = _transferProhibition;
+    m_transferProhibitionHasBeenSet = true;
+}
+
+bool TransferInDomainBatchRequest::TransferProhibitionHasBeenSet() const
+{
+    return m_transferProhibitionHasBeenSet;
 }
 
 

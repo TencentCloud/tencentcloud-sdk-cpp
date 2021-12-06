@@ -258,6 +258,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/ListTopClsLogDataResponse.h
   include/tencentcloud/cdn/v20180606/model/StatusCodeCacheRule.h
   include/tencentcloud/cdn/v20180606/model/RemoteAuthentication.h
+  include/tencentcloud/cdn/v20180606/model/ExtraLogset.h
   include/tencentcloud/cdn/v20180606/model/KeyRule.h
   include/tencentcloud/cdn/v20180606/model/ClientCert.h
   include/tencentcloud/cdn/v20180606/model/CappingRule.h
@@ -593,6 +594,7 @@ set(cdn_src
   src/v20180606/model/ListTopClsLogDataResponse.cpp
   src/v20180606/model/StatusCodeCacheRule.cpp
   src/v20180606/model/RemoteAuthentication.cpp
+  src/v20180606/model/ExtraLogset.cpp
   src/v20180606/model/KeyRule.cpp
   src/v20180606/model/ClientCert.cpp
   src/v20180606/model/CappingRule.cpp

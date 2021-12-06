@@ -144,6 +144,28 @@ namespace TencentCloud
                      */
                     bool ChannelHasBeenSet() const;
 
+                    /**
+                     * 获取cls侧是否已经被删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Deleted cls侧是否已经被删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDeleted() const;
+
+                    /**
+                     * 设置cls侧是否已经被删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Deleted cls侧是否已经被删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeleted(const std::string& _deleted);
+
+                    /**
+                     * 判断参数 Deleted 是否已赋值
+                     * @return Deleted 是否已赋值
+                     */
+                    bool DeletedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -177,6 +199,13 @@ namespace TencentCloud
                      */
                     std::string m_channel;
                     bool m_channelHasBeenSet;
+
+                    /**
+                     * cls侧是否已经被删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deleted;
+                    bool m_deletedHasBeenSet;
 
                 };
             }

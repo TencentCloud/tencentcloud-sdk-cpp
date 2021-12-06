@@ -69,7 +69,11 @@ CreateApiRequest::CreateApiRequest() :
     m_targetNamespaceIdHasBeenSet(false),
     m_userTypeHasBeenSet(false),
     m_isBase64EncodedHasBeenSet(false),
-    m_serviceScfFunctionTypeHasBeenSet(false)
+    m_serviceScfFunctionTypeHasBeenSet(false),
+    m_eIAMAppTypeHasBeenSet(false),
+    m_eIAMAuthTypeHasBeenSet(false),
+    m_tokenTimeoutHasBeenSet(false),
+    m_eIAMAppIdHasBeenSet(false)
 {
 }
 
@@ -502,6 +506,38 @@ string CreateApiRequest::ToJsonString() const
         string key = "ServiceScfFunctionType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_serviceScfFunctionType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eIAMAppTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EIAMAppType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_eIAMAppType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eIAMAuthTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EIAMAuthType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_eIAMAuthType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tokenTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TokenTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_tokenTimeout, allocator);
+    }
+
+    if (m_eIAMAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EIAMAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_eIAMAppId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -1262,6 +1298,70 @@ void CreateApiRequest::SetServiceScfFunctionType(const string& _serviceScfFuncti
 bool CreateApiRequest::ServiceScfFunctionTypeHasBeenSet() const
 {
     return m_serviceScfFunctionTypeHasBeenSet;
+}
+
+string CreateApiRequest::GetEIAMAppType() const
+{
+    return m_eIAMAppType;
+}
+
+void CreateApiRequest::SetEIAMAppType(const string& _eIAMAppType)
+{
+    m_eIAMAppType = _eIAMAppType;
+    m_eIAMAppTypeHasBeenSet = true;
+}
+
+bool CreateApiRequest::EIAMAppTypeHasBeenSet() const
+{
+    return m_eIAMAppTypeHasBeenSet;
+}
+
+string CreateApiRequest::GetEIAMAuthType() const
+{
+    return m_eIAMAuthType;
+}
+
+void CreateApiRequest::SetEIAMAuthType(const string& _eIAMAuthType)
+{
+    m_eIAMAuthType = _eIAMAuthType;
+    m_eIAMAuthTypeHasBeenSet = true;
+}
+
+bool CreateApiRequest::EIAMAuthTypeHasBeenSet() const
+{
+    return m_eIAMAuthTypeHasBeenSet;
+}
+
+int64_t CreateApiRequest::GetTokenTimeout() const
+{
+    return m_tokenTimeout;
+}
+
+void CreateApiRequest::SetTokenTimeout(const int64_t& _tokenTimeout)
+{
+    m_tokenTimeout = _tokenTimeout;
+    m_tokenTimeoutHasBeenSet = true;
+}
+
+bool CreateApiRequest::TokenTimeoutHasBeenSet() const
+{
+    return m_tokenTimeoutHasBeenSet;
+}
+
+string CreateApiRequest::GetEIAMAppId() const
+{
+    return m_eIAMAppId;
+}
+
+void CreateApiRequest::SetEIAMAppId(const string& _eIAMAppId)
+{
+    m_eIAMAppId = _eIAMAppId;
+    m_eIAMAppIdHasBeenSet = true;
+}
+
+bool CreateApiRequest::EIAMAppIdHasBeenSet() const
+{
+    return m_eIAMAppIdHasBeenSet;
 }
 
 
