@@ -75,14 +75,20 @@ cd <path/to/tencentcloud-sdk-cpp>
 mkdir sdk_build
 cd sdk_build
 # centos 下使用 cmake3 ..
-cmake ..
+# 指定产品编译，分号;分隔
+cmake -DBUILD_MODULES="cvm;cbs" ..
 make
 sudo make install
 ```
 
-通过修改 SDK 根目录下的 `CMakeLists.txt` 可以控制部分编译行为
-1. 生成静态库文件：修改 `option(BUILD_SHARED_LIBS  "Enable shared library" ON)` 将 ON 改为 OFF。删除 `sdk_build` 目录，重新执行编译。
-2. 关闭不需要产品的编译，例如云服务器 cvm：注释掉 `add_subdirectory(cvm)`，改为 `#add_subdirectory(cvm)`
+注意：从3.0.387版本开始，默认将不再编译所有产品。因为对于低版本编译器将需要约 8GB 内存才能编译完成，且未来随着产品和接口的增长，内存需求会逐渐增加。
+
+通过指定编译选项，可以控制部分编译行为。注意：某些选项的变更需要删除 `sdk_build` 目录后才会生效。更多选项可以参考 `CMakeLists.txt` 文件：
+
+1. 生成静态库文件：`cmake -DBUILD_SHARED_LIBS=off ..`。
+2. 指定产品编译，分号;分隔：`cmake -DBUILD_MODULES="cvm;vpc;cdb" ..`
+3. 编译所有产品：`cmake -DBUILD_MODULES_ALL=on ..`
+4. 如果产品列表过长，以上参数都不方便使用，可以直接编辑根路径下的 `CMakeLists.txt` 文件，关闭不需要产品的编译，例如云服务器 cvm，用 `#` 符号注释掉 `add_subdirectory(cvm)` 及附近相关代码，改为 `#add_subdirectory(cvm)`。
 
 # 使用 C++ SDK 示例
 下文以 cvm 产品的 DescribeInstances 接口为例：
