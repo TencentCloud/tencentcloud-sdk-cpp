@@ -388,6 +388,50 @@ namespace TencentCloud
                      */
                     bool TaskManagerSpecHasBeenSet() const;
 
+                    /**
+                     * 获取CLS日志集ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClsLogsetId CLS日志集ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetClsLogsetId() const;
+
+                    /**
+                     * 设置CLS日志集ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ClsLogsetId CLS日志集ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClsLogsetId(const std::string& _clsLogsetId);
+
+                    /**
+                     * 判断参数 ClsLogsetId 是否已赋值
+                     * @return ClsLogsetId 是否已赋值
+                     */
+                    bool ClsLogsetIdHasBeenSet() const;
+
+                    /**
+                     * 获取CLS日志主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClsTopicId CLS日志主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetClsTopicId() const;
+
+                    /**
+                     * 设置CLS日志主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ClsTopicId CLS日志主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClsTopicId(const std::string& _clsTopicId);
+
+                    /**
+                     * 判断参数 ClsTopicId 是否已赋值
+                     * @return ClsTopicId 是否已赋值
+                     */
+                    bool ClsTopicIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -498,6 +542,20 @@ namespace TencentCloud
                      */
                     double m_taskManagerSpec;
                     bool m_taskManagerSpecHasBeenSet;
+
+                    /**
+                     * CLS日志集ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clsLogsetId;
+                    bool m_clsLogsetIdHasBeenSet;
+
+                    /**
+                     * CLS日志主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clsTopicId;
+                    bool m_clsTopicIdHasBeenSet;
 
                 };
             }

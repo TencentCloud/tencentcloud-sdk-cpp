@@ -24,7 +24,8 @@ using namespace std;
 
 CommonServiceAPIRequest::CommonServiceAPIRequest() :
     m_serviceHasBeenSet(false),
-    m_jSONDataHasBeenSet(false)
+    m_jSONDataHasBeenSet(false),
+    m_apiRoleHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string CommonServiceAPIRequest::ToJsonString() const
         string key = "JSONData";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_jSONData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apiRoleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiRole";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_apiRole.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void CommonServiceAPIRequest::SetJSONData(const string& _jSONData)
 bool CommonServiceAPIRequest::JSONDataHasBeenSet() const
 {
     return m_jSONDataHasBeenSet;
+}
+
+string CommonServiceAPIRequest::GetApiRole() const
+{
+    return m_apiRole;
+}
+
+void CommonServiceAPIRequest::SetApiRole(const string& _apiRole)
+{
+    m_apiRole = _apiRole;
+    m_apiRoleHasBeenSet = true;
+}
+
+bool CommonServiceAPIRequest::ApiRoleHasBeenSet() const
+{
+    return m_apiRoleHasBeenSet;
 }
 
 

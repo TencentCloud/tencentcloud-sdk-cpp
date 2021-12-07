@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool JSONDataHasBeenSet() const;
 
+                    /**
+                     * 获取指定角色
+                     * @return ApiRole 指定角色
+                     */
+                    std::string GetApiRole() const;
+
+                    /**
+                     * 设置指定角色
+                     * @param ApiRole 指定角色
+                     */
+                    void SetApiRole(const std::string& _apiRole);
+
+                    /**
+                     * 判断参数 ApiRole 是否已赋值
+                     * @return ApiRole 是否已赋值
+                     */
+                    bool ApiRoleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     std::string m_jSONData;
                     bool m_jSONDataHasBeenSet;
+
+                    /**
+                     * 指定角色
+                     */
+                    std::string m_apiRole;
+                    bool m_apiRoleHasBeenSet;
 
                 };
             }

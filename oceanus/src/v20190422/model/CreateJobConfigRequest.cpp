@@ -34,7 +34,9 @@ CreateJobConfigRequest::CreateJobConfigRequest() :
     m_cOSBucketHasBeenSet(false),
     m_logCollectHasBeenSet(false),
     m_jobManagerSpecHasBeenSet(false),
-    m_taskManagerSpecHasBeenSet(false)
+    m_taskManagerSpecHasBeenSet(false),
+    m_clsLogsetIdHasBeenSet(false),
+    m_clsTopicIdHasBeenSet(false)
 {
 }
 
@@ -153,6 +155,22 @@ string CreateJobConfigRequest::ToJsonString() const
         string key = "TaskManagerSpec";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_taskManagerSpec, allocator);
+    }
+
+    if (m_clsLogsetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClsLogsetId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clsLogsetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clsTopicIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClsTopicId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clsTopicId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -353,6 +371,38 @@ void CreateJobConfigRequest::SetTaskManagerSpec(const double& _taskManagerSpec)
 bool CreateJobConfigRequest::TaskManagerSpecHasBeenSet() const
 {
     return m_taskManagerSpecHasBeenSet;
+}
+
+string CreateJobConfigRequest::GetClsLogsetId() const
+{
+    return m_clsLogsetId;
+}
+
+void CreateJobConfigRequest::SetClsLogsetId(const string& _clsLogsetId)
+{
+    m_clsLogsetId = _clsLogsetId;
+    m_clsLogsetIdHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::ClsLogsetIdHasBeenSet() const
+{
+    return m_clsLogsetIdHasBeenSet;
+}
+
+string CreateJobConfigRequest::GetClsTopicId() const
+{
+    return m_clsTopicId;
+}
+
+void CreateJobConfigRequest::SetClsTopicId(const string& _clsTopicId)
+{
+    m_clsTopicId = _clsTopicId;
+    m_clsTopicIdHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::ClsTopicIdHasBeenSet() const
+{
+    return m_clsTopicIdHasBeenSet;
 }
 
 

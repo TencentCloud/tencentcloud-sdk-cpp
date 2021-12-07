@@ -1,0 +1,1022 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/tcss/v20201101/model/DescribeVirusDetailResponse.h>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Tcss::V20201101::Model;
+using namespace std;
+
+DescribeVirusDetailResponse::DescribeVirusDetailResponse() :
+    m_imageIdHasBeenSet(false),
+    m_imageNameHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_sizeHasBeenSet(false),
+    m_filePathHasBeenSet(false),
+    m_modifyTimeHasBeenSet(false),
+    m_virusNameHasBeenSet(false),
+    m_riskLevelHasBeenSet(false),
+    m_containerNameHasBeenSet(false),
+    m_containerIdHasBeenSet(false),
+    m_hostNameHasBeenSet(false),
+    m_hostIdHasBeenSet(false),
+    m_processNameHasBeenSet(false),
+    m_processPathHasBeenSet(false),
+    m_processMd5HasBeenSet(false),
+    m_processIdHasBeenSet(false),
+    m_processArgvHasBeenSet(false),
+    m_processChanHasBeenSet(false),
+    m_processAccountGroupHasBeenSet(false),
+    m_processStartAccountHasBeenSet(false),
+    m_processFileAuthorityHasBeenSet(false),
+    m_sourceTypeHasBeenSet(false),
+    m_podNameHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_harmDescribeHasBeenSet(false),
+    m_suggestSchemeHasBeenSet(false),
+    m_markHasBeenSet(false),
+    m_fileNameHasBeenSet(false),
+    m_fileMd5HasBeenSet(false),
+    m_eventTypeHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_subStatusHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome DescribeVirusDetailResponse::Deserialize(const string &payload)
+{
+    rapidjson::Document d;
+    d.Parse(payload.c_str());
+    if (d.HasParseError() || !d.IsObject())
+    {
+        return CoreInternalOutcome(Core::Error("response not json format"));
+    }
+    if (!d.HasMember("Response") || !d["Response"].IsObject())
+    {
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
+    }
+    rapidjson::Value &rsp = d["Response"];
+    if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
+    {
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
+    }
+    string requestId(rsp["RequestId"].GetString());
+    SetRequestId(requestId);
+
+    if (rsp.HasMember("Error"))
+    {
+        if (!rsp["Error"].IsObject() ||
+            !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
+            !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
+        }
+        string errorCode(rsp["Error"]["Code"].GetString());
+        string errorMsg(rsp["Error"]["Message"].GetString());
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
+    }
+
+
+    if (rsp.HasMember("ImageId") && !rsp["ImageId"].IsNull())
+    {
+        if (!rsp["ImageId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageId = string(rsp["ImageId"].GetString());
+        m_imageIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ImageName") && !rsp["ImageName"].IsNull())
+    {
+        if (!rsp["ImageName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageName = string(rsp["ImageName"].GetString());
+        m_imageNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CreateTime") && !rsp["CreateTime"].IsNull())
+    {
+        if (!rsp["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(rsp["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Size") && !rsp["Size"].IsNull())
+    {
+        if (!rsp["Size"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Size` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_size = rsp["Size"].GetUint64();
+        m_sizeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FilePath") && !rsp["FilePath"].IsNull())
+    {
+        if (!rsp["FilePath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FilePath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_filePath = string(rsp["FilePath"].GetString());
+        m_filePathHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ModifyTime") && !rsp["ModifyTime"].IsNull())
+    {
+        if (!rsp["ModifyTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifyTime = string(rsp["ModifyTime"].GetString());
+        m_modifyTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("VirusName") && !rsp["VirusName"].IsNull())
+    {
+        if (!rsp["VirusName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VirusName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_virusName = string(rsp["VirusName"].GetString());
+        m_virusNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RiskLevel") && !rsp["RiskLevel"].IsNull())
+    {
+        if (!rsp["RiskLevel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RiskLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_riskLevel = string(rsp["RiskLevel"].GetString());
+        m_riskLevelHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ContainerName") && !rsp["ContainerName"].IsNull())
+    {
+        if (!rsp["ContainerName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContainerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerName = string(rsp["ContainerName"].GetString());
+        m_containerNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ContainerId") && !rsp["ContainerId"].IsNull())
+    {
+        if (!rsp["ContainerId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContainerId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerId = string(rsp["ContainerId"].GetString());
+        m_containerIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("HostName") && !rsp["HostName"].IsNull())
+    {
+        if (!rsp["HostName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostName = string(rsp["HostName"].GetString());
+        m_hostNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("HostId") && !rsp["HostId"].IsNull())
+    {
+        if (!rsp["HostId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostId = string(rsp["HostId"].GetString());
+        m_hostIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ProcessName") && !rsp["ProcessName"].IsNull())
+    {
+        if (!rsp["ProcessName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcessName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_processName = string(rsp["ProcessName"].GetString());
+        m_processNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ProcessPath") && !rsp["ProcessPath"].IsNull())
+    {
+        if (!rsp["ProcessPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcessPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_processPath = string(rsp["ProcessPath"].GetString());
+        m_processPathHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ProcessMd5") && !rsp["ProcessMd5"].IsNull())
+    {
+        if (!rsp["ProcessMd5"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcessMd5` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_processMd5 = string(rsp["ProcessMd5"].GetString());
+        m_processMd5HasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ProcessId") && !rsp["ProcessId"].IsNull())
+    {
+        if (!rsp["ProcessId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcessId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_processId = rsp["ProcessId"].GetUint64();
+        m_processIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ProcessArgv") && !rsp["ProcessArgv"].IsNull())
+    {
+        if (!rsp["ProcessArgv"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcessArgv` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_processArgv = string(rsp["ProcessArgv"].GetString());
+        m_processArgvHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ProcessChan") && !rsp["ProcessChan"].IsNull())
+    {
+        if (!rsp["ProcessChan"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcessChan` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_processChan = string(rsp["ProcessChan"].GetString());
+        m_processChanHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ProcessAccountGroup") && !rsp["ProcessAccountGroup"].IsNull())
+    {
+        if (!rsp["ProcessAccountGroup"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcessAccountGroup` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_processAccountGroup = string(rsp["ProcessAccountGroup"].GetString());
+        m_processAccountGroupHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ProcessStartAccount") && !rsp["ProcessStartAccount"].IsNull())
+    {
+        if (!rsp["ProcessStartAccount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcessStartAccount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_processStartAccount = string(rsp["ProcessStartAccount"].GetString());
+        m_processStartAccountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ProcessFileAuthority") && !rsp["ProcessFileAuthority"].IsNull())
+    {
+        if (!rsp["ProcessFileAuthority"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcessFileAuthority` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_processFileAuthority = string(rsp["ProcessFileAuthority"].GetString());
+        m_processFileAuthorityHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SourceType") && !rsp["SourceType"].IsNull())
+    {
+        if (!rsp["SourceType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SourceType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceType = rsp["SourceType"].GetInt64();
+        m_sourceTypeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PodName") && !rsp["PodName"].IsNull())
+    {
+        if (!rsp["PodName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PodName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_podName = string(rsp["PodName"].GetString());
+        m_podNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Tags") && !rsp["Tags"].IsNull())
+    {
+        if (!rsp["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_tags.push_back((*itr).GetString());
+        }
+        m_tagsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("HarmDescribe") && !rsp["HarmDescribe"].IsNull())
+    {
+        if (!rsp["HarmDescribe"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HarmDescribe` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_harmDescribe = string(rsp["HarmDescribe"].GetString());
+        m_harmDescribeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SuggestScheme") && !rsp["SuggestScheme"].IsNull())
+    {
+        if (!rsp["SuggestScheme"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SuggestScheme` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_suggestScheme = string(rsp["SuggestScheme"].GetString());
+        m_suggestSchemeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Mark") && !rsp["Mark"].IsNull())
+    {
+        if (!rsp["Mark"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Mark` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mark = string(rsp["Mark"].GetString());
+        m_markHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FileName") && !rsp["FileName"].IsNull())
+    {
+        if (!rsp["FileName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileName = string(rsp["FileName"].GetString());
+        m_fileNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FileMd5") && !rsp["FileMd5"].IsNull())
+    {
+        if (!rsp["FileMd5"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileMd5` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileMd5 = string(rsp["FileMd5"].GetString());
+        m_fileMd5HasBeenSet = true;
+    }
+
+    if (rsp.HasMember("EventType") && !rsp["EventType"].IsNull())
+    {
+        if (!rsp["EventType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eventType = string(rsp["EventType"].GetString());
+        m_eventTypeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    {
+        if (!rsp["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(rsp["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SubStatus") && !rsp["SubStatus"].IsNull())
+    {
+        if (!rsp["SubStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subStatus = string(rsp["SubStatus"].GetString());
+        m_subStatusHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+string DescribeVirusDetailResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_imageIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Size";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_size, allocator);
+    }
+
+    if (m_filePathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilePath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_filePath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modifyTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_virusNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VirusName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_virusName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_riskLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_riskLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containerIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hostName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hostId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_processNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_processName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_processPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_processPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_processMd5HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessMd5";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_processMd5.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_processIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_processId, allocator);
+    }
+
+    if (m_processArgvHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessArgv";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_processArgv.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_processChanHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessChan";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_processChan.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_processAccountGroupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessAccountGroup";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_processAccountGroup.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_processStartAccountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessStartAccount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_processStartAccount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_processFileAuthorityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessFileAuthority";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_processFileAuthority.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sourceType, allocator);
+    }
+
+    if (m_podNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_podName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_harmDescribeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HarmDescribe";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_harmDescribe.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_suggestSchemeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuggestScheme";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_suggestScheme.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_markHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Mark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileMd5HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileMd5";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileMd5.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eventTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eventType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
+
+string DescribeVirusDetailResponse::GetImageId() const
+{
+    return m_imageId;
+}
+
+bool DescribeVirusDetailResponse::ImageIdHasBeenSet() const
+{
+    return m_imageIdHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetImageName() const
+{
+    return m_imageName;
+}
+
+bool DescribeVirusDetailResponse::ImageNameHasBeenSet() const
+{
+    return m_imageNameHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+bool DescribeVirusDetailResponse::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+uint64_t DescribeVirusDetailResponse::GetSize() const
+{
+    return m_size;
+}
+
+bool DescribeVirusDetailResponse::SizeHasBeenSet() const
+{
+    return m_sizeHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetFilePath() const
+{
+    return m_filePath;
+}
+
+bool DescribeVirusDetailResponse::FilePathHasBeenSet() const
+{
+    return m_filePathHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetModifyTime() const
+{
+    return m_modifyTime;
+}
+
+bool DescribeVirusDetailResponse::ModifyTimeHasBeenSet() const
+{
+    return m_modifyTimeHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetVirusName() const
+{
+    return m_virusName;
+}
+
+bool DescribeVirusDetailResponse::VirusNameHasBeenSet() const
+{
+    return m_virusNameHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetRiskLevel() const
+{
+    return m_riskLevel;
+}
+
+bool DescribeVirusDetailResponse::RiskLevelHasBeenSet() const
+{
+    return m_riskLevelHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetContainerName() const
+{
+    return m_containerName;
+}
+
+bool DescribeVirusDetailResponse::ContainerNameHasBeenSet() const
+{
+    return m_containerNameHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetContainerId() const
+{
+    return m_containerId;
+}
+
+bool DescribeVirusDetailResponse::ContainerIdHasBeenSet() const
+{
+    return m_containerIdHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetHostName() const
+{
+    return m_hostName;
+}
+
+bool DescribeVirusDetailResponse::HostNameHasBeenSet() const
+{
+    return m_hostNameHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetHostId() const
+{
+    return m_hostId;
+}
+
+bool DescribeVirusDetailResponse::HostIdHasBeenSet() const
+{
+    return m_hostIdHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetProcessName() const
+{
+    return m_processName;
+}
+
+bool DescribeVirusDetailResponse::ProcessNameHasBeenSet() const
+{
+    return m_processNameHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetProcessPath() const
+{
+    return m_processPath;
+}
+
+bool DescribeVirusDetailResponse::ProcessPathHasBeenSet() const
+{
+    return m_processPathHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetProcessMd5() const
+{
+    return m_processMd5;
+}
+
+bool DescribeVirusDetailResponse::ProcessMd5HasBeenSet() const
+{
+    return m_processMd5HasBeenSet;
+}
+
+uint64_t DescribeVirusDetailResponse::GetProcessId() const
+{
+    return m_processId;
+}
+
+bool DescribeVirusDetailResponse::ProcessIdHasBeenSet() const
+{
+    return m_processIdHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetProcessArgv() const
+{
+    return m_processArgv;
+}
+
+bool DescribeVirusDetailResponse::ProcessArgvHasBeenSet() const
+{
+    return m_processArgvHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetProcessChan() const
+{
+    return m_processChan;
+}
+
+bool DescribeVirusDetailResponse::ProcessChanHasBeenSet() const
+{
+    return m_processChanHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetProcessAccountGroup() const
+{
+    return m_processAccountGroup;
+}
+
+bool DescribeVirusDetailResponse::ProcessAccountGroupHasBeenSet() const
+{
+    return m_processAccountGroupHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetProcessStartAccount() const
+{
+    return m_processStartAccount;
+}
+
+bool DescribeVirusDetailResponse::ProcessStartAccountHasBeenSet() const
+{
+    return m_processStartAccountHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetProcessFileAuthority() const
+{
+    return m_processFileAuthority;
+}
+
+bool DescribeVirusDetailResponse::ProcessFileAuthorityHasBeenSet() const
+{
+    return m_processFileAuthorityHasBeenSet;
+}
+
+int64_t DescribeVirusDetailResponse::GetSourceType() const
+{
+    return m_sourceType;
+}
+
+bool DescribeVirusDetailResponse::SourceTypeHasBeenSet() const
+{
+    return m_sourceTypeHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetPodName() const
+{
+    return m_podName;
+}
+
+bool DescribeVirusDetailResponse::PodNameHasBeenSet() const
+{
+    return m_podNameHasBeenSet;
+}
+
+vector<string> DescribeVirusDetailResponse::GetTags() const
+{
+    return m_tags;
+}
+
+bool DescribeVirusDetailResponse::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetHarmDescribe() const
+{
+    return m_harmDescribe;
+}
+
+bool DescribeVirusDetailResponse::HarmDescribeHasBeenSet() const
+{
+    return m_harmDescribeHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetSuggestScheme() const
+{
+    return m_suggestScheme;
+}
+
+bool DescribeVirusDetailResponse::SuggestSchemeHasBeenSet() const
+{
+    return m_suggestSchemeHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetMark() const
+{
+    return m_mark;
+}
+
+bool DescribeVirusDetailResponse::MarkHasBeenSet() const
+{
+    return m_markHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetFileName() const
+{
+    return m_fileName;
+}
+
+bool DescribeVirusDetailResponse::FileNameHasBeenSet() const
+{
+    return m_fileNameHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetFileMd5() const
+{
+    return m_fileMd5;
+}
+
+bool DescribeVirusDetailResponse::FileMd5HasBeenSet() const
+{
+    return m_fileMd5HasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetEventType() const
+{
+    return m_eventType;
+}
+
+bool DescribeVirusDetailResponse::EventTypeHasBeenSet() const
+{
+    return m_eventTypeHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetStatus() const
+{
+    return m_status;
+}
+
+bool DescribeVirusDetailResponse::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetSubStatus() const
+{
+    return m_subStatus;
+}
+
+bool DescribeVirusDetailResponse::SubStatusHasBeenSet() const
+{
+    return m_subStatusHasBeenSet;
+}
+
+

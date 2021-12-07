@@ -36,7 +36,9 @@ JobConfig::JobConfig() :
     m_logCollectHasBeenSet(false),
     m_maxParallelismHasBeenSet(false),
     m_jobManagerSpecHasBeenSet(false),
-    m_taskManagerSpecHasBeenSet(false)
+    m_taskManagerSpecHasBeenSet(false),
+    m_clsLogsetIdHasBeenSet(false),
+    m_clsTopicIdHasBeenSet(false)
 {
 }
 
@@ -225,6 +227,26 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
         m_taskManagerSpecHasBeenSet = true;
     }
 
+    if (value.HasMember("ClsLogsetId") && !value["ClsLogsetId"].IsNull())
+    {
+        if (!value["ClsLogsetId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobConfig.ClsLogsetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clsLogsetId = string(value["ClsLogsetId"].GetString());
+        m_clsLogsetIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClsTopicId") && !value["ClsTopicId"].IsNull())
+    {
+        if (!value["ClsTopicId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobConfig.ClsTopicId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clsTopicId = string(value["ClsTopicId"].GetString());
+        m_clsTopicIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -372,6 +394,22 @@ void JobConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "TaskManagerSpec";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskManagerSpec, allocator);
+    }
+
+    if (m_clsLogsetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClsLogsetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clsLogsetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clsTopicIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClsTopicId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clsTopicId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -631,5 +669,37 @@ void JobConfig::SetTaskManagerSpec(const double& _taskManagerSpec)
 bool JobConfig::TaskManagerSpecHasBeenSet() const
 {
     return m_taskManagerSpecHasBeenSet;
+}
+
+string JobConfig::GetClsLogsetId() const
+{
+    return m_clsLogsetId;
+}
+
+void JobConfig::SetClsLogsetId(const string& _clsLogsetId)
+{
+    m_clsLogsetId = _clsLogsetId;
+    m_clsLogsetIdHasBeenSet = true;
+}
+
+bool JobConfig::ClsLogsetIdHasBeenSet() const
+{
+    return m_clsLogsetIdHasBeenSet;
+}
+
+string JobConfig::GetClsTopicId() const
+{
+    return m_clsTopicId;
+}
+
+void JobConfig::SetClsTopicId(const string& _clsTopicId)
+{
+    m_clsTopicId = _clsTopicId;
+    m_clsTopicIdHasBeenSet = true;
+}
+
+bool JobConfig::ClsTopicIdHasBeenSet() const
+{
+    return m_clsTopicIdHasBeenSet;
 }
 
