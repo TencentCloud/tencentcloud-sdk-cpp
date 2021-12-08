@@ -42,7 +42,10 @@ DescribeAssetHostDetailResponse::DescribeAssetHostDetailResponse() :
     m_k8sMasterIPHasBeenSet(false),
     m_k8sVersionHasBeenSet(false),
     m_kubeProxyVersionHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_isContainerdHasBeenSet(false),
+    m_machineTypeHasBeenSet(false),
+    m_publicIpHasBeenSet(false)
 {
 }
 
@@ -270,6 +273,36 @@ CoreInternalOutcome DescribeAssetHostDetailResponse::Deserialize(const string &p
         m_statusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsContainerd") && !rsp["IsContainerd"].IsNull())
+    {
+        if (!rsp["IsContainerd"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsContainerd` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isContainerd = rsp["IsContainerd"].GetBool();
+        m_isContainerdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("MachineType") && !rsp["MachineType"].IsNull())
+    {
+        if (!rsp["MachineType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MachineType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_machineType = string(rsp["MachineType"].GetString());
+        m_machineTypeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PublicIp") && !rsp["PublicIp"].IsNull())
+    {
+        if (!rsp["PublicIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PublicIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicIp = string(rsp["PublicIp"].GetString());
+        m_publicIpHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -430,6 +463,30 @@ string DescribeAssetHostDetailResponse::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isContainerdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsContainerd";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isContainerd, allocator);
+    }
+
+    if (m_machineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publicIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicIp.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -632,6 +689,36 @@ string DescribeAssetHostDetailResponse::GetStatus() const
 bool DescribeAssetHostDetailResponse::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+bool DescribeAssetHostDetailResponse::GetIsContainerd() const
+{
+    return m_isContainerd;
+}
+
+bool DescribeAssetHostDetailResponse::IsContainerdHasBeenSet() const
+{
+    return m_isContainerdHasBeenSet;
+}
+
+string DescribeAssetHostDetailResponse::GetMachineType() const
+{
+    return m_machineType;
+}
+
+bool DescribeAssetHostDetailResponse::MachineTypeHasBeenSet() const
+{
+    return m_machineTypeHasBeenSet;
+}
+
+string DescribeAssetHostDetailResponse::GetPublicIp() const
+{
+    return m_publicIp;
+}
+
+bool DescribeAssetHostDetailResponse::PublicIpHasBeenSet() const
+{
+    return m_publicIpHasBeenSet;
 }
 
 

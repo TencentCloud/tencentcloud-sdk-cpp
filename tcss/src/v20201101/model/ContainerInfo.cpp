@@ -35,7 +35,8 @@ ContainerInfo::ContainerInfo() :
     m_hostIDHasBeenSet(false),
     m_hostIPHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_hostNameHasBeenSet(false)
+    m_hostNameHasBeenSet(false),
+    m_publicIpHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,16 @@ CoreInternalOutcome ContainerInfo::Deserialize(const rapidjson::Value &value)
         m_hostNameHasBeenSet = true;
     }
 
+    if (value.HasMember("PublicIp") && !value["PublicIp"].IsNull())
+    {
+        if (!value["PublicIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContainerInfo.PublicIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicIp = string(value["PublicIp"].GetString());
+        m_publicIpHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +330,14 @@ void ContainerInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "HostName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_hostName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publicIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicIp.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -562,5 +581,21 @@ void ContainerInfo::SetHostName(const string& _hostName)
 bool ContainerInfo::HostNameHasBeenSet() const
 {
     return m_hostNameHasBeenSet;
+}
+
+string ContainerInfo::GetPublicIp() const
+{
+    return m_publicIp;
+}
+
+void ContainerInfo::SetPublicIp(const string& _publicIp)
+{
+    m_publicIp = _publicIp;
+    m_publicIpHasBeenSet = true;
+}
+
+bool ContainerInfo::PublicIpHasBeenSet() const
+{
+    return m_publicIpHasBeenSet;
 }
 

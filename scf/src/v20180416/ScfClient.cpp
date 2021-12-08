@@ -642,6 +642,49 @@ ScfClient::GetAliasOutcomeCallable ScfClient::GetAliasCallable(const GetAliasReq
     return task->get_future();
 }
 
+ScfClient::GetAsyncEventStatusOutcome ScfClient::GetAsyncEventStatus(const GetAsyncEventStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetAsyncEventStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetAsyncEventStatusResponse rsp = GetAsyncEventStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetAsyncEventStatusOutcome(rsp);
+        else
+            return GetAsyncEventStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return GetAsyncEventStatusOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::GetAsyncEventStatusAsync(const GetAsyncEventStatusRequest& request, const GetAsyncEventStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetAsyncEventStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::GetAsyncEventStatusOutcomeCallable ScfClient::GetAsyncEventStatusCallable(const GetAsyncEventStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetAsyncEventStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->GetAsyncEventStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ScfClient::GetFunctionOutcome ScfClient::GetFunction(const GetFunctionRequest &request)
 {
     auto outcome = MakeRequest(request, "GetFunction");

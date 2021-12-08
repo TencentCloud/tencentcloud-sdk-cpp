@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/ckafka/v20190819/model/CreateInstancePreData.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateInstancePreResp.h>
 
 
 namespace TencentCloud
@@ -33,7 +33,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 创建预付费实例返回结构
+                * CreateInstancePre返回参数结构体
                 */
                 class CreateInstancePreResponse : public AbstractModel
                 {
@@ -45,84 +45,24 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回的code，0为正常，非0为错误
-                     * @return ReturnCode 返回的code，0为正常，非0为错误
+                     * 获取返回结果
+                     * @return Result 返回结果
                      */
-                    std::string GetReturnCode() const;
+                    CreateInstancePreResp GetResult() const;
 
                     /**
-                     * 判断参数 ReturnCode 是否已赋值
-                     * @return ReturnCode 是否已赋值
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
                      */
-                    bool ReturnCodeHasBeenSet() const;
-
-                    /**
-                     * 获取成功消息
-                     * @return ReturnMessage 成功消息
-                     */
-                    std::string GetReturnMessage() const;
-
-                    /**
-                     * 判断参数 ReturnMessage 是否已赋值
-                     * @return ReturnMessage 是否已赋值
-                     */
-                    bool ReturnMessageHasBeenSet() const;
-
-                    /**
-                     * 获取操作型返回的Data数据
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 操作型返回的Data数据
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    CreateInstancePreData GetData() const;
-
-                    /**
-                     * 判断参数 Data 是否已赋值
-                     * @return Data 是否已赋值
-                     */
-                    bool DataHasBeenSet() const;
-
-                    /**
-                     * 获取删除是时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeleteRouteTimestamp 删除是时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetDeleteRouteTimestamp() const;
-
-                    /**
-                     * 判断参数 DeleteRouteTimestamp 是否已赋值
-                     * @return DeleteRouteTimestamp 是否已赋值
-                     */
-                    bool DeleteRouteTimestampHasBeenSet() const;
+                    bool ResultHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 返回的code，0为正常，非0为错误
+                     * 返回结果
                      */
-                    std::string m_returnCode;
-                    bool m_returnCodeHasBeenSet;
-
-                    /**
-                     * 成功消息
-                     */
-                    std::string m_returnMessage;
-                    bool m_returnMessageHasBeenSet;
-
-                    /**
-                     * 操作型返回的Data数据
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    CreateInstancePreData m_data;
-                    bool m_dataHasBeenSet;
-
-                    /**
-                     * 删除是时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_deleteRouteTimestamp;
-                    bool m_deleteRouteTimestampHasBeenSet;
+                    CreateInstancePreResp m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }

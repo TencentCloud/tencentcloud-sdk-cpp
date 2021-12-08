@@ -14,54 +14,55 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TCSS_V20201101_MODEL_CREATECHECKCOMPONENTRESPONSE_H_
-#define TENCENTCLOUD_TCSS_V20201101_MODEL_CREATECHECKCOMPONENTRESPONSE_H_
+#ifndef TENCENTCLOUD_SCF_V20180416_MODEL_GETASYNCEVENTSTATUSRESPONSE_H_
+#define TENCENTCLOUD_SCF_V20180416_MODEL_GETASYNCEVENTSTATUSRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/scf/v20180416/model/AsyncEventStatus.h>
 
 
 namespace TencentCloud
 {
-    namespace Tcss
+    namespace Scf
     {
-        namespace V20201101
+        namespace V20180416
         {
             namespace Model
             {
                 /**
-                * CreateCheckComponent返回参数结构体
+                * GetAsyncEventStatus返回参数结构体
                 */
-                class CreateCheckComponentResponse : public AbstractModel
+                class GetAsyncEventStatusResponse : public AbstractModel
                 {
                 public:
-                    CreateCheckComponentResponse();
-                    ~CreateCheckComponentResponse() = default;
+                    GetAsyncEventStatusResponse();
+                    ~GetAsyncEventStatusResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取"InstallSucc"表示安装成功，"InstallFailed"表示安装失败
-                     * @return InstallResult "InstallSucc"表示安装成功，"InstallFailed"表示安装失败
+                     * 获取异步事件状态
+                     * @return Result 异步事件状态
                      */
-                    std::string GetInstallResult() const;
+                    AsyncEventStatus GetResult() const;
 
                     /**
-                     * 判断参数 InstallResult 是否已赋值
-                     * @return InstallResult 是否已赋值
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
                      */
-                    bool InstallResultHasBeenSet() const;
+                    bool ResultHasBeenSet() const;
 
                 private:
 
                     /**
-                     * "InstallSucc"表示安装成功，"InstallFailed"表示安装失败
+                     * 异步事件状态
                      */
-                    std::string m_installResult;
-                    bool m_installResultHasBeenSet;
+                    AsyncEventStatus m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }
@@ -69,4 +70,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TCSS_V20201101_MODEL_CREATECHECKCOMPONENTRESPONSE_H_
+#endif // !TENCENTCLOUD_SCF_V20180416_MODEL_GETASYNCEVENTSTATUSRESPONSE_H_

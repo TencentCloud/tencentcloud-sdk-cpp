@@ -32,7 +32,9 @@ PortInfo::PortInfo() :
     m_processNameHasBeenSet(false),
     m_listenContainerHasBeenSet(false),
     m_listenHostHasBeenSet(false),
-    m_runAsHasBeenSet(false)
+    m_runAsHasBeenSet(false),
+    m_hostNameHasBeenSet(false),
+    m_publicIpHasBeenSet(false)
 {
 }
 
@@ -161,6 +163,26 @@ CoreInternalOutcome PortInfo::Deserialize(const rapidjson::Value &value)
         m_runAsHasBeenSet = true;
     }
 
+    if (value.HasMember("HostName") && !value["HostName"].IsNull())
+    {
+        if (!value["HostName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PortInfo.HostName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostName = string(value["HostName"].GetString());
+        m_hostNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("PublicIp") && !value["PublicIp"].IsNull())
+    {
+        if (!value["PublicIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PortInfo.PublicIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicIp = string(value["PublicIp"].GetString());
+        m_publicIpHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +284,22 @@ void PortInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "RunAs";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_runAs.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hostName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publicIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicIp.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -457,5 +495,37 @@ void PortInfo::SetRunAs(const string& _runAs)
 bool PortInfo::RunAsHasBeenSet() const
 {
     return m_runAsHasBeenSet;
+}
+
+string PortInfo::GetHostName() const
+{
+    return m_hostName;
+}
+
+void PortInfo::SetHostName(const string& _hostName)
+{
+    m_hostName = _hostName;
+    m_hostNameHasBeenSet = true;
+}
+
+bool PortInfo::HostNameHasBeenSet() const
+{
+    return m_hostNameHasBeenSet;
+}
+
+string PortInfo::GetPublicIp() const
+{
+    return m_publicIp;
+}
+
+void PortInfo::SetPublicIp(const string& _publicIp)
+{
+    m_publicIp = _publicIp;
+    m_publicIpHasBeenSet = true;
+}
+
+bool PortInfo::PublicIpHasBeenSet() const
+{
+    return m_publicIpHasBeenSet;
 }
 

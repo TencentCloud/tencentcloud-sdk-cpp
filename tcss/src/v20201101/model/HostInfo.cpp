@@ -29,7 +29,11 @@ HostInfo::HostInfo() :
     m_dockerFileSystemDriverHasBeenSet(false),
     m_imageCntHasBeenSet(false),
     m_containerCntHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_isContainerdHasBeenSet(false),
+    m_machineTypeHasBeenSet(false),
+    m_publicIpHasBeenSet(false),
+    m_uuidHasBeenSet(false)
 {
 }
 
@@ -128,6 +132,46 @@ CoreInternalOutcome HostInfo::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("IsContainerd") && !value["IsContainerd"].IsNull())
+    {
+        if (!value["IsContainerd"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostInfo.IsContainerd` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isContainerd = value["IsContainerd"].GetBool();
+        m_isContainerdHasBeenSet = true;
+    }
+
+    if (value.HasMember("MachineType") && !value["MachineType"].IsNull())
+    {
+        if (!value["MachineType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostInfo.MachineType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_machineType = string(value["MachineType"].GetString());
+        m_machineTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PublicIp") && !value["PublicIp"].IsNull())
+    {
+        if (!value["PublicIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostInfo.PublicIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicIp = string(value["PublicIp"].GetString());
+        m_publicIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("Uuid") && !value["Uuid"].IsNull())
+    {
+        if (!value["Uuid"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostInfo.Uuid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uuid = string(value["Uuid"].GetString());
+        m_uuidHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +249,38 @@ void HostInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isContainerdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsContainerd";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isContainerd, allocator);
+    }
+
+    if (m_machineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publicIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uuidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Uuid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uuid.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +428,69 @@ void HostInfo::SetStatus(const string& _status)
 bool HostInfo::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+bool HostInfo::GetIsContainerd() const
+{
+    return m_isContainerd;
+}
+
+void HostInfo::SetIsContainerd(const bool& _isContainerd)
+{
+    m_isContainerd = _isContainerd;
+    m_isContainerdHasBeenSet = true;
+}
+
+bool HostInfo::IsContainerdHasBeenSet() const
+{
+    return m_isContainerdHasBeenSet;
+}
+
+string HostInfo::GetMachineType() const
+{
+    return m_machineType;
+}
+
+void HostInfo::SetMachineType(const string& _machineType)
+{
+    m_machineType = _machineType;
+    m_machineTypeHasBeenSet = true;
+}
+
+bool HostInfo::MachineTypeHasBeenSet() const
+{
+    return m_machineTypeHasBeenSet;
+}
+
+string HostInfo::GetPublicIp() const
+{
+    return m_publicIp;
+}
+
+void HostInfo::SetPublicIp(const string& _publicIp)
+{
+    m_publicIp = _publicIp;
+    m_publicIpHasBeenSet = true;
+}
+
+bool HostInfo::PublicIpHasBeenSet() const
+{
+    return m_publicIpHasBeenSet;
+}
+
+string HostInfo::GetUuid() const
+{
+    return m_uuid;
+}
+
+void HostInfo::SetUuid(const string& _uuid)
+{
+    m_uuid = _uuid;
+    m_uuidHasBeenSet = true;
+}
+
+bool HostInfo::UuidHasBeenSet() const
+{
+    return m_uuidHasBeenSet;
 }
 

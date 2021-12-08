@@ -50,7 +50,13 @@ ClusterInstancesInfo::ClusterInstancesInfo() :
     m_serviceClassHasBeenSet(false),
     m_aliasInfoHasBeenSet(false),
     m_productIdHasBeenSet(false),
-    m_zoneHasBeenSet(false)
+    m_zoneHasBeenSet(false),
+    m_sceneNameHasBeenSet(false),
+    m_sceneServiceClassHasBeenSet(false),
+    m_sceneEmrVersionHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
+    m_vpcNameHasBeenSet(false),
+    m_subnetNameHasBeenSet(false)
 {
 }
 
@@ -376,6 +382,66 @@ CoreInternalOutcome ClusterInstancesInfo::Deserialize(const rapidjson::Value &va
         m_zoneHasBeenSet = true;
     }
 
+    if (value.HasMember("SceneName") && !value["SceneName"].IsNull())
+    {
+        if (!value["SceneName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInstancesInfo.SceneName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sceneName = string(value["SceneName"].GetString());
+        m_sceneNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("SceneServiceClass") && !value["SceneServiceClass"].IsNull())
+    {
+        if (!value["SceneServiceClass"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInstancesInfo.SceneServiceClass` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sceneServiceClass = string(value["SceneServiceClass"].GetString());
+        m_sceneServiceClassHasBeenSet = true;
+    }
+
+    if (value.HasMember("SceneEmrVersion") && !value["SceneEmrVersion"].IsNull())
+    {
+        if (!value["SceneEmrVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInstancesInfo.SceneEmrVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sceneEmrVersion = string(value["SceneEmrVersion"].GetString());
+        m_sceneEmrVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("DisplayName") && !value["DisplayName"].IsNull())
+    {
+        if (!value["DisplayName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInstancesInfo.DisplayName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_displayName = string(value["DisplayName"].GetString());
+        m_displayNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("VpcName") && !value["VpcName"].IsNull())
+    {
+        if (!value["VpcName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInstancesInfo.VpcName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcName = string(value["VpcName"].GetString());
+        m_vpcNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubnetName") && !value["SubnetName"].IsNull())
+    {
+        if (!value["SubnetName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInstancesInfo.SubnetName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subnetName = string(value["SubnetName"].GetString());
+        m_subnetNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -629,6 +695,54 @@ void ClusterInstancesInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sceneNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sceneName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sceneServiceClassHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneServiceClass";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sceneServiceClass.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sceneEmrVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneEmrVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sceneEmrVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_displayNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisplayName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_displayName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subnetNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubnetName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subnetName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1112,5 +1226,101 @@ void ClusterInstancesInfo::SetZone(const string& _zone)
 bool ClusterInstancesInfo::ZoneHasBeenSet() const
 {
     return m_zoneHasBeenSet;
+}
+
+string ClusterInstancesInfo::GetSceneName() const
+{
+    return m_sceneName;
+}
+
+void ClusterInstancesInfo::SetSceneName(const string& _sceneName)
+{
+    m_sceneName = _sceneName;
+    m_sceneNameHasBeenSet = true;
+}
+
+bool ClusterInstancesInfo::SceneNameHasBeenSet() const
+{
+    return m_sceneNameHasBeenSet;
+}
+
+string ClusterInstancesInfo::GetSceneServiceClass() const
+{
+    return m_sceneServiceClass;
+}
+
+void ClusterInstancesInfo::SetSceneServiceClass(const string& _sceneServiceClass)
+{
+    m_sceneServiceClass = _sceneServiceClass;
+    m_sceneServiceClassHasBeenSet = true;
+}
+
+bool ClusterInstancesInfo::SceneServiceClassHasBeenSet() const
+{
+    return m_sceneServiceClassHasBeenSet;
+}
+
+string ClusterInstancesInfo::GetSceneEmrVersion() const
+{
+    return m_sceneEmrVersion;
+}
+
+void ClusterInstancesInfo::SetSceneEmrVersion(const string& _sceneEmrVersion)
+{
+    m_sceneEmrVersion = _sceneEmrVersion;
+    m_sceneEmrVersionHasBeenSet = true;
+}
+
+bool ClusterInstancesInfo::SceneEmrVersionHasBeenSet() const
+{
+    return m_sceneEmrVersionHasBeenSet;
+}
+
+string ClusterInstancesInfo::GetDisplayName() const
+{
+    return m_displayName;
+}
+
+void ClusterInstancesInfo::SetDisplayName(const string& _displayName)
+{
+    m_displayName = _displayName;
+    m_displayNameHasBeenSet = true;
+}
+
+bool ClusterInstancesInfo::DisplayNameHasBeenSet() const
+{
+    return m_displayNameHasBeenSet;
+}
+
+string ClusterInstancesInfo::GetVpcName() const
+{
+    return m_vpcName;
+}
+
+void ClusterInstancesInfo::SetVpcName(const string& _vpcName)
+{
+    m_vpcName = _vpcName;
+    m_vpcNameHasBeenSet = true;
+}
+
+bool ClusterInstancesInfo::VpcNameHasBeenSet() const
+{
+    return m_vpcNameHasBeenSet;
+}
+
+string ClusterInstancesInfo::GetSubnetName() const
+{
+    return m_subnetName;
+}
+
+void ClusterInstancesInfo::SetSubnetName(const string& _subnetName)
+{
+    m_subnetName = _subnetName;
+    m_subnetNameHasBeenSet = true;
+}
+
+bool ClusterInstancesInfo::SubnetNameHasBeenSet() const
+{
+    return m_subnetNameHasBeenSet;
 }
 

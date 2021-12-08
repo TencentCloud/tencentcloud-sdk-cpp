@@ -70,6 +70,20 @@ namespace TencentCloud
                      */
                     bool FaceMorphOutputHasBeenSet() const;
 
+                    /**
+                     * 获取当前任务状态码：1：排队中、3: 处理中、5: 处理失败、7:处理完成
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return JobStatusCode 当前任务状态码：1：排队中、3: 处理中、5: 处理失败、7:处理完成
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetJobStatusCode() const;
+
+                    /**
+                     * 判断参数 JobStatusCode 是否已赋值
+                     * @return JobStatusCode 是否已赋值
+                     */
+                    bool JobStatusCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -84,6 +98,13 @@ namespace TencentCloud
                      */
                     FaceMorphOutput m_faceMorphOutput;
                     bool m_faceMorphOutputHasBeenSet;
+
+                    /**
+                     * 当前任务状态码：1：排队中、3: 处理中、5: 处理失败、7:处理完成
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_jobStatusCode;
+                    bool m_jobStatusCodeHasBeenSet;
 
                 };
             }

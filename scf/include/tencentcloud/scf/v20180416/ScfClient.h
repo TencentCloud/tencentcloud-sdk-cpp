@@ -51,6 +51,8 @@
 #include <tencentcloud/scf/v20180416/model/GetAccountResponse.h>
 #include <tencentcloud/scf/v20180416/model/GetAliasRequest.h>
 #include <tencentcloud/scf/v20180416/model/GetAliasResponse.h>
+#include <tencentcloud/scf/v20180416/model/GetAsyncEventStatusRequest.h>
+#include <tencentcloud/scf/v20180416/model/GetAsyncEventStatusResponse.h>
 #include <tencentcloud/scf/v20180416/model/GetFunctionRequest.h>
 #include <tencentcloud/scf/v20180416/model/GetFunctionResponse.h>
 #include <tencentcloud/scf/v20180416/model/GetFunctionAddressRequest.h>
@@ -165,6 +167,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetAliasResponse> GetAliasOutcome;
                 typedef std::future<GetAliasOutcome> GetAliasOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::GetAliasRequest&, GetAliasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAliasAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetAsyncEventStatusResponse> GetAsyncEventStatusOutcome;
+                typedef std::future<GetAsyncEventStatusOutcome> GetAsyncEventStatusOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::GetAsyncEventStatusRequest&, GetAsyncEventStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAsyncEventStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetFunctionResponse> GetFunctionOutcome;
                 typedef std::future<GetFunctionOutcome> GetFunctionOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::GetFunctionRequest&, GetFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFunctionAsyncHandler;
@@ -387,6 +392,15 @@ namespace TencentCloud
                 GetAliasOutcome GetAlias(const Model::GetAliasRequest &request);
                 void GetAliasAsync(const Model::GetAliasRequest& request, const GetAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetAliasOutcomeCallable GetAliasCallable(const Model::GetAliasRequest& request);
+
+                /**
+                 *获取函数异步执行事件状态，事件状态保留 3 * 24 小时（从事件完成开始计时）。
+                 * @param req GetAsyncEventStatusRequest
+                 * @return GetAsyncEventStatusOutcome
+                 */
+                GetAsyncEventStatusOutcome GetAsyncEventStatus(const Model::GetAsyncEventStatusRequest &request);
+                void GetAsyncEventStatusAsync(const Model::GetAsyncEventStatusRequest& request, const GetAsyncEventStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetAsyncEventStatusOutcomeCallable GetAsyncEventStatusCallable(const Model::GetAsyncEventStatusRequest& request);
 
                 /**
                  *该接口获取某个函数的详细信息，包括名称、代码、处理方法、关联触发器和超时时间等字段。

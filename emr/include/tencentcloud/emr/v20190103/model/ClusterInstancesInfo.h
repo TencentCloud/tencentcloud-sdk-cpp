@@ -816,6 +816,138 @@ namespace TencentCloud
                      */
                     bool ZoneHasBeenSet() const;
 
+                    /**
+                     * 获取场景名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SceneName 场景名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSceneName() const;
+
+                    /**
+                     * 设置场景名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SceneName 场景名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSceneName(const std::string& _sceneName);
+
+                    /**
+                     * 判断参数 SceneName 是否已赋值
+                     * @return SceneName 是否已赋值
+                     */
+                    bool SceneNameHasBeenSet() const;
+
+                    /**
+                     * 获取场景化集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SceneServiceClass 场景化集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSceneServiceClass() const;
+
+                    /**
+                     * 设置场景化集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SceneServiceClass 场景化集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSceneServiceClass(const std::string& _sceneServiceClass);
+
+                    /**
+                     * 判断参数 SceneServiceClass 是否已赋值
+                     * @return SceneServiceClass 是否已赋值
+                     */
+                    bool SceneServiceClassHasBeenSet() const;
+
+                    /**
+                     * 获取场景化EMR版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SceneEmrVersion 场景化EMR版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSceneEmrVersion() const;
+
+                    /**
+                     * 设置场景化EMR版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SceneEmrVersion 场景化EMR版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSceneEmrVersion(const std::string& _sceneEmrVersion);
+
+                    /**
+                     * 判断参数 SceneEmrVersion 是否已赋值
+                     * @return SceneEmrVersion 是否已赋值
+                     */
+                    bool SceneEmrVersionHasBeenSet() const;
+
+                    /**
+                     * 获取场景化集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DisplayName 场景化集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDisplayName() const;
+
+                    /**
+                     * 设置场景化集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DisplayName 场景化集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDisplayName(const std::string& _displayName);
+
+                    /**
+                     * 判断参数 DisplayName 是否已赋值
+                     * @return DisplayName 是否已赋值
+                     */
+                    bool DisplayNameHasBeenSet() const;
+
+                    /**
+                     * 获取vpc name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VpcName vpc name
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVpcName() const;
+
+                    /**
+                     * 设置vpc name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VpcName vpc name
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVpcName(const std::string& _vpcName);
+
+                    /**
+                     * 判断参数 VpcName 是否已赋值
+                     * @return VpcName 是否已赋值
+                     */
+                    bool VpcNameHasBeenSet() const;
+
+                    /**
+                     * 获取subnet name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubnetName subnet name
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSubnetName() const;
+
+                    /**
+                     * 设置subnet name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SubnetName subnet name
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSubnetName(const std::string& _subnetName);
+
+                    /**
+                     * 判断参数 SubnetName 是否已赋值
+                     * @return SubnetName 是否已赋值
+                     */
+                    bool SubnetNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1054,6 +1186,48 @@ namespace TencentCloud
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
+
+                    /**
+                     * 场景名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sceneName;
+                    bool m_sceneNameHasBeenSet;
+
+                    /**
+                     * 场景化集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sceneServiceClass;
+                    bool m_sceneServiceClassHasBeenSet;
+
+                    /**
+                     * 场景化EMR版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sceneEmrVersion;
+                    bool m_sceneEmrVersionHasBeenSet;
+
+                    /**
+                     * 场景化集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_displayName;
+                    bool m_displayNameHasBeenSet;
+
+                    /**
+                     * vpc name
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vpcName;
+                    bool m_vpcNameHasBeenSet;
+
+                    /**
+                     * subnet name
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subnetName;
+                    bool m_subnetNameHasBeenSet;
 
                 };
             }

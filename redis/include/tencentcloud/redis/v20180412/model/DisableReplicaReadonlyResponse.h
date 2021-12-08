@@ -44,24 +44,27 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取失败:ERROR，成功:OK
-                     * @return Status 失败:ERROR，成功:OK
+                     * 获取任务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskId 任务ID
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string GetStatus() const;
+                    int64_t GetTaskId() const;
 
                     /**
-                     * 判断参数 Status 是否已赋值
-                     * @return Status 是否已赋值
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
                      */
-                    bool StatusHasBeenSet() const;
+                    bool TaskIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 失败:ERROR，成功:OK
+                     * 任务ID
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_status;
-                    bool m_statusHasBeenSet;
+                    int64_t m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                 };
             }

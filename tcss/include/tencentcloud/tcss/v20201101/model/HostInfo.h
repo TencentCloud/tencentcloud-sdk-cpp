@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool HostIDHasBeenSet() const;
 
                     /**
-                     * 获取主机ip
-                     * @return HostIP 主机ip
+                     * 获取主机ip即内网ip
+                     * @return HostIP 主机ip即内网ip
                      */
                     std::string GetHostIP() const;
 
                     /**
-                     * 设置主机ip
-                     * @param HostIP 主机ip
+                     * 设置主机ip即内网ip
+                     * @param HostIP 主机ip即内网ip
                      */
                     void SetHostIP(const std::string& _hostIP);
 
@@ -191,14 +191,14 @@ namespace TencentCloud
                     bool ContainerCntHasBeenSet() const;
 
                     /**
-                     * 获取主机运行状态
-                     * @return Status 主机运行状态
+                     * 获取agent运行状态
+                     * @return Status agent运行状态
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置主机运行状态
-                     * @param Status 主机运行状态
+                     * 设置agent运行状态
+                     * @param Status agent运行状态
                      */
                     void SetStatus(const std::string& _status);
 
@@ -207,6 +207,78 @@ namespace TencentCloud
                      * @return Status 是否已赋值
                      */
                     bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取是否是Containerd
+                     * @return IsContainerd 是否是Containerd
+                     */
+                    bool GetIsContainerd() const;
+
+                    /**
+                     * 设置是否是Containerd
+                     * @param IsContainerd 是否是Containerd
+                     */
+                    void SetIsContainerd(const bool& _isContainerd);
+
+                    /**
+                     * 判断参数 IsContainerd 是否已赋值
+                     * @return IsContainerd 是否已赋值
+                     */
+                    bool IsContainerdHasBeenSet() const;
+
+                    /**
+                     * 获取主机来源
+                     * @return MachineType 主机来源
+                     */
+                    std::string GetMachineType() const;
+
+                    /**
+                     * 设置主机来源
+                     * @param MachineType 主机来源
+                     */
+                    void SetMachineType(const std::string& _machineType);
+
+                    /**
+                     * 判断参数 MachineType 是否已赋值
+                     * @return MachineType 是否已赋值
+                     */
+                    bool MachineTypeHasBeenSet() const;
+
+                    /**
+                     * 获取外网ip
+                     * @return PublicIp 外网ip
+                     */
+                    std::string GetPublicIp() const;
+
+                    /**
+                     * 设置外网ip
+                     * @param PublicIp 外网ip
+                     */
+                    void SetPublicIp(const std::string& _publicIp);
+
+                    /**
+                     * 判断参数 PublicIp 是否已赋值
+                     * @return PublicIp 是否已赋值
+                     */
+                    bool PublicIpHasBeenSet() const;
+
+                    /**
+                     * 获取主机uuid
+                     * @return Uuid 主机uuid
+                     */
+                    std::string GetUuid() const;
+
+                    /**
+                     * 设置主机uuid
+                     * @param Uuid 主机uuid
+                     */
+                    void SetUuid(const std::string& _uuid);
+
+                    /**
+                     * 判断参数 Uuid 是否已赋值
+                     * @return Uuid 是否已赋值
+                     */
+                    bool UuidHasBeenSet() const;
 
                 private:
 
@@ -217,7 +289,7 @@ namespace TencentCloud
                     bool m_hostIDHasBeenSet;
 
                     /**
-                     * 主机ip
+                     * 主机ip即内网ip
                      */
                     std::string m_hostIP;
                     bool m_hostIPHasBeenSet;
@@ -259,10 +331,34 @@ namespace TencentCloud
                     bool m_containerCntHasBeenSet;
 
                     /**
-                     * 主机运行状态
+                     * agent运行状态
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 是否是Containerd
+                     */
+                    bool m_isContainerd;
+                    bool m_isContainerdHasBeenSet;
+
+                    /**
+                     * 主机来源
+                     */
+                    std::string m_machineType;
+                    bool m_machineTypeHasBeenSet;
+
+                    /**
+                     * 外网ip
+                     */
+                    std::string m_publicIp;
+                    bool m_publicIpHasBeenSet;
+
+                    /**
+                     * 主机uuid
+                     */
+                    std::string m_uuid;
+                    bool m_uuidHasBeenSet;
 
                 };
             }

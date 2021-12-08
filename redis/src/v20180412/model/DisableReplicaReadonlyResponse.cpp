@@ -24,7 +24,7 @@ using namespace TencentCloud::Redis::V20180412::Model;
 using namespace std;
 
 DisableReplicaReadonlyResponse::DisableReplicaReadonlyResponse() :
-    m_statusHasBeenSet(false)
+    m_taskIdHasBeenSet(false)
 {
 }
 
@@ -62,14 +62,14 @@ CoreInternalOutcome DisableReplicaReadonlyResponse::Deserialize(const string &pa
     }
 
 
-    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
     {
-        if (!rsp["Status"].IsString())
+        if (!rsp["TaskId"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_status = string(rsp["Status"].GetString());
-        m_statusHasBeenSet = true;
+        m_taskId = rsp["TaskId"].GetInt64();
+        m_taskIdHasBeenSet = true;
     }
 
 
@@ -82,12 +82,12 @@ string DisableReplicaReadonlyResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_statusHasBeenSet)
+    if (m_taskIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Status";
+        string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_taskId, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,14 +102,14 @@ string DisableReplicaReadonlyResponse::ToJsonString() const
 }
 
 
-string DisableReplicaReadonlyResponse::GetStatus() const
+int64_t DisableReplicaReadonlyResponse::GetTaskId() const
 {
-    return m_status;
+    return m_taskId;
 }
 
-bool DisableReplicaReadonlyResponse::StatusHasBeenSet() const
+bool DisableReplicaReadonlyResponse::TaskIdHasBeenSet() const
 {
-    return m_statusHasBeenSet;
+    return m_taskIdHasBeenSet;
 }
 
 

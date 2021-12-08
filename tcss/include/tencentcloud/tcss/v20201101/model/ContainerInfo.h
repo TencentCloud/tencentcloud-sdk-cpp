@@ -316,6 +316,24 @@ namespace TencentCloud
                      */
                     bool HostNameHasBeenSet() const;
 
+                    /**
+                     * 获取外网ip
+                     * @return PublicIp 外网ip
+                     */
+                    std::string GetPublicIp() const;
+
+                    /**
+                     * 设置外网ip
+                     * @param PublicIp 外网ip
+                     */
+                    void SetPublicIp(const std::string& _publicIp);
+
+                    /**
+                     * 判断参数 PublicIp 是否已赋值
+                     * @return PublicIp 是否已赋值
+                     */
+                    bool PublicIpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -407,6 +425,12 @@ namespace TencentCloud
                      */
                     std::string m_hostName;
                     bool m_hostNameHasBeenSet;
+
+                    /**
+                     * 外网ip
+                     */
+                    std::string m_publicIp;
+                    bool m_publicIpHasBeenSet;
 
                 };
             }

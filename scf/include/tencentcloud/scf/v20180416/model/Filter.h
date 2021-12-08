@@ -49,14 +49,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要过滤的字段。
-                     * @return Name 需要过滤的字段。
+                     * 获取需要过滤的字段。过滤条件数量限制为10。
+Name可选值：VpcId, SubnetId, ClsTopicId, ClsLogsetId, Role, CfsId, CfsMountInsId, Eip；Values 长度限制为1。
+Name可选值：Status, Runtime, FunctionType, PublicNetStatus, AsyncRunEnable, TraceEnable；Values 长度限制为20。
+当 Name = Runtime 时，CustomImage 表示过滤镜像类型函数。
+                     * @return Name 需要过滤的字段。过滤条件数量限制为10。
+Name可选值：VpcId, SubnetId, ClsTopicId, ClsLogsetId, Role, CfsId, CfsMountInsId, Eip；Values 长度限制为1。
+Name可选值：Status, Runtime, FunctionType, PublicNetStatus, AsyncRunEnable, TraceEnable；Values 长度限制为20。
+当 Name = Runtime 时，CustomImage 表示过滤镜像类型函数。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置需要过滤的字段。
-                     * @param Name 需要过滤的字段。
+                     * 设置需要过滤的字段。过滤条件数量限制为10。
+Name可选值：VpcId, SubnetId, ClsTopicId, ClsLogsetId, Role, CfsId, CfsMountInsId, Eip；Values 长度限制为1。
+Name可选值：Status, Runtime, FunctionType, PublicNetStatus, AsyncRunEnable, TraceEnable；Values 长度限制为20。
+当 Name = Runtime 时，CustomImage 表示过滤镜像类型函数。
+                     * @param Name 需要过滤的字段。过滤条件数量限制为10。
+Name可选值：VpcId, SubnetId, ClsTopicId, ClsLogsetId, Role, CfsId, CfsMountInsId, Eip；Values 长度限制为1。
+Name可选值：Status, Runtime, FunctionType, PublicNetStatus, AsyncRunEnable, TraceEnable；Values 长度限制为20。
+当 Name = Runtime 时，CustomImage 表示过滤镜像类型函数。
                      */
                     void SetName(const std::string& _name);
 
@@ -87,7 +99,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需要过滤的字段。
+                     * 需要过滤的字段。过滤条件数量限制为10。
+Name可选值：VpcId, SubnetId, ClsTopicId, ClsLogsetId, Role, CfsId, CfsMountInsId, Eip；Values 长度限制为1。
+Name可选值：Status, Runtime, FunctionType, PublicNetStatus, AsyncRunEnable, TraceEnable；Values 长度限制为20。
+当 Name = Runtime 时，CustomImage 表示过滤镜像类型函数。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

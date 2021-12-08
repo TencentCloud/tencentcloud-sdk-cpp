@@ -39,7 +39,9 @@ ServiceInfo::ServiceInfo() :
     m_mainTypeHasBeenSet(false),
     m_exeHasBeenSet(false),
     m_parameterHasBeenSet(false),
-    m_containerIdHasBeenSet(false)
+    m_containerIdHasBeenSet(false),
+    m_hostNameHasBeenSet(false),
+    m_publicIpHasBeenSet(false)
 {
 }
 
@@ -244,6 +246,26 @@ CoreInternalOutcome ServiceInfo::Deserialize(const rapidjson::Value &value)
         m_containerIdHasBeenSet = true;
     }
 
+    if (value.HasMember("HostName") && !value["HostName"].IsNull())
+    {
+        if (!value["HostName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.HostName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostName = string(value["HostName"].GetString());
+        m_hostNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("PublicIp") && !value["PublicIp"].IsNull())
+    {
+        if (!value["PublicIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.PublicIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicIp = string(value["PublicIp"].GetString());
+        m_publicIpHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -411,6 +433,22 @@ void ServiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ContainerId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_containerId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hostName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publicIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicIp.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -718,5 +756,37 @@ void ServiceInfo::SetContainerId(const string& _containerId)
 bool ServiceInfo::ContainerIdHasBeenSet() const
 {
     return m_containerIdHasBeenSet;
+}
+
+string ServiceInfo::GetHostName() const
+{
+    return m_hostName;
+}
+
+void ServiceInfo::SetHostName(const string& _hostName)
+{
+    m_hostName = _hostName;
+    m_hostNameHasBeenSet = true;
+}
+
+bool ServiceInfo::HostNameHasBeenSet() const
+{
+    return m_hostNameHasBeenSet;
+}
+
+string ServiceInfo::GetPublicIp() const
+{
+    return m_publicIp;
+}
+
+void ServiceInfo::SetPublicIp(const string& _publicIp)
+{
+    m_publicIp = _publicIp;
+    m_publicIpHasBeenSet = true;
+}
+
+bool ServiceInfo::PublicIpHasBeenSet() const
+{
+    return m_publicIpHasBeenSet;
 }
 

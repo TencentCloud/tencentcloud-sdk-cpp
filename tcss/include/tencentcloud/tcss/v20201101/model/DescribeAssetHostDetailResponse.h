@@ -224,8 +224,8 @@ namespace TencentCloud
                     bool ContainerCntHasBeenSet() const;
 
                     /**
-                     * 获取k8s ip
-                     * @return K8sMasterIP k8s ip
+                     * 获取k8s IP
+                     * @return K8sMasterIP k8s IP
                      */
                     std::string GetK8sMasterIP() const;
 
@@ -260,8 +260,8 @@ namespace TencentCloud
                     bool KubeProxyVersionHasBeenSet() const;
 
                     /**
-                     * 获取主机运行状态 offline,online,pause
-                     * @return Status 主机运行状态 offline,online,pause
+                     * 获取"UNINSTALL"："未安装","OFFLINE"："离线", "ONLINE"："防护中
+                     * @return Status "UNINSTALL"："未安装","OFFLINE"："离线", "ONLINE"："防护中
                      */
                     std::string GetStatus() const;
 
@@ -270,6 +270,42 @@ namespace TencentCloud
                      * @return Status 是否已赋值
                      */
                     bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取是否Containerd
+                     * @return IsContainerd 是否Containerd
+                     */
+                    bool GetIsContainerd() const;
+
+                    /**
+                     * 判断参数 IsContainerd 是否已赋值
+                     * @return IsContainerd 是否已赋值
+                     */
+                    bool IsContainerdHasBeenSet() const;
+
+                    /**
+                     * 获取主机来源;"TENCENTCLOUD":"腾讯云服务器","OTHERCLOUD":"非腾讯云服务器"
+                     * @return MachineType 主机来源;"TENCENTCLOUD":"腾讯云服务器","OTHERCLOUD":"非腾讯云服务器"
+                     */
+                    std::string GetMachineType() const;
+
+                    /**
+                     * 判断参数 MachineType 是否已赋值
+                     * @return MachineType 是否已赋值
+                     */
+                    bool MachineTypeHasBeenSet() const;
+
+                    /**
+                     * 获取外网ip
+                     * @return PublicIp 外网ip
+                     */
+                    std::string GetPublicIp() const;
+
+                    /**
+                     * 判断参数 PublicIp 是否已赋值
+                     * @return PublicIp 是否已赋值
+                     */
+                    bool PublicIpHasBeenSet() const;
 
                 private:
 
@@ -364,7 +400,7 @@ namespace TencentCloud
                     bool m_containerCntHasBeenSet;
 
                     /**
-                     * k8s ip
+                     * k8s IP
                      */
                     std::string m_k8sMasterIP;
                     bool m_k8sMasterIPHasBeenSet;
@@ -382,10 +418,28 @@ namespace TencentCloud
                     bool m_kubeProxyVersionHasBeenSet;
 
                     /**
-                     * 主机运行状态 offline,online,pause
+                     * "UNINSTALL"："未安装","OFFLINE"："离线", "ONLINE"："防护中
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 是否Containerd
+                     */
+                    bool m_isContainerd;
+                    bool m_isContainerdHasBeenSet;
+
+                    /**
+                     * 主机来源;"TENCENTCLOUD":"腾讯云服务器","OTHERCLOUD":"非腾讯云服务器"
+                     */
+                    std::string m_machineType;
+                    bool m_machineTypeHasBeenSet;
+
+                    /**
+                     * 外网ip
+                     */
+                    std::string m_publicIp;
+                    bool m_publicIpHasBeenSet;
 
                 };
             }

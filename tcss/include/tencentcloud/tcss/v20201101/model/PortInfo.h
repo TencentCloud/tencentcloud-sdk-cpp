@@ -262,6 +262,42 @@ namespace TencentCloud
                      */
                     bool RunAsHasBeenSet() const;
 
+                    /**
+                     * 获取主机名称
+                     * @return HostName 主机名称
+                     */
+                    std::string GetHostName() const;
+
+                    /**
+                     * 设置主机名称
+                     * @param HostName 主机名称
+                     */
+                    void SetHostName(const std::string& _hostName);
+
+                    /**
+                     * 判断参数 HostName 是否已赋值
+                     * @return HostName 是否已赋值
+                     */
+                    bool HostNameHasBeenSet() const;
+
+                    /**
+                     * 获取外网ip
+                     * @return PublicIp 外网ip
+                     */
+                    std::string GetPublicIp() const;
+
+                    /**
+                     * 设置外网ip
+                     * @param PublicIp 外网ip
+                     */
+                    void SetPublicIp(const std::string& _publicIp);
+
+                    /**
+                     * 判断参数 PublicIp 是否已赋值
+                     * @return PublicIp 是否已赋值
+                     */
+                    bool PublicIpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -335,6 +371,18 @@ namespace TencentCloud
                      */
                     std::string m_runAs;
                     bool m_runAsHasBeenSet;
+
+                    /**
+                     * 主机名称
+                     */
+                    std::string m_hostName;
+                    bool m_hostNameHasBeenSet;
+
+                    /**
+                     * 外网ip
+                     */
+                    std::string m_publicIp;
+                    bool m_publicIpHasBeenSet;
 
                 };
             }

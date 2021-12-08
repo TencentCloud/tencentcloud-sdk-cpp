@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取需购买的虚拟机核数
-                     * @return CoresCnt 需购买的虚拟机核数
+                     * 获取需购买的机器核数
+                     * @return CoresCnt 需购买的机器核数
                      */
                     uint64_t GetCoresCnt() const;
 
@@ -126,7 +126,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 需购买的虚拟机核数
+                     * 需购买的机器核数
                      */
                     uint64_t m_coresCnt;
                     bool m_coresCntHasBeenSet;

@@ -25,7 +25,8 @@ using namespace std;
 
 QueryFaceMorphJobResponse::QueryFaceMorphJobResponse() :
     m_jobStatusHasBeenSet(false),
-    m_faceMorphOutputHasBeenSet(false)
+    m_faceMorphOutputHasBeenSet(false),
+    m_jobStatusCodeHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,16 @@ CoreInternalOutcome QueryFaceMorphJobResponse::Deserialize(const string &payload
         m_faceMorphOutputHasBeenSet = true;
     }
 
+    if (rsp.HasMember("JobStatusCode") && !rsp["JobStatusCode"].IsNull())
+    {
+        if (!rsp["JobStatusCode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobStatusCode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobStatusCode = rsp["JobStatusCode"].GetInt64();
+        m_jobStatusCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -115,6 +126,14 @@ string QueryFaceMorphJobResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_faceMorphOutput.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_jobStatusCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobStatusCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_jobStatusCode, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -147,6 +166,16 @@ FaceMorphOutput QueryFaceMorphJobResponse::GetFaceMorphOutput() const
 bool QueryFaceMorphJobResponse::FaceMorphOutputHasBeenSet() const
 {
     return m_faceMorphOutputHasBeenSet;
+}
+
+int64_t QueryFaceMorphJobResponse::GetJobStatusCode() const
+{
+    return m_jobStatusCode;
+}
+
+bool QueryFaceMorphJobResponse::JobStatusCodeHasBeenSet() const
+{
+    return m_jobStatusCodeHasBeenSet;
 }
 
 

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取“Succ"表示设置成功，"Failed"表示设置失败
-                     * @return SetCheckResult “Succ"表示设置成功，"Failed"表示设置失败
+                     * 获取"Succ"表示设置成功，"Failed"表示设置失败
+                     * @return SetCheckResult "Succ"表示设置成功，"Failed"表示设置失败
                      */
                     std::string GetSetCheckResult() const;
 
@@ -58,7 +58,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * “Succ"表示设置成功，"Failed"表示设置失败
+                     * "Succ"表示设置成功，"Failed"表示设置失败
                      */
                     std::string m_setCheckResult;
                     bool m_setCheckResultHasBeenSet;

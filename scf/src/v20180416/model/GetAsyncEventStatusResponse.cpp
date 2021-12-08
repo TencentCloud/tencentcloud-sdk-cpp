@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ckafka/v20190819/model/CreateInstancePreResponse.h>
+#include <tencentcloud/scf/v20180416/model/GetAsyncEventStatusResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Ckafka::V20190819::Model;
+using namespace TencentCloud::Scf::V20180416::Model;
 using namespace std;
 
-CreateInstancePreResponse::CreateInstancePreResponse() :
+GetAsyncEventStatusResponse::GetAsyncEventStatusResponse() :
     m_resultHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome CreateInstancePreResponse::Deserialize(const string &payload)
+CoreInternalOutcome GetAsyncEventStatusResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -83,7 +83,7 @@ CoreInternalOutcome CreateInstancePreResponse::Deserialize(const string &payload
     return CoreInternalOutcome(true);
 }
 
-string CreateInstancePreResponse::ToJsonString() const
+string GetAsyncEventStatusResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
@@ -110,12 +110,12 @@ string CreateInstancePreResponse::ToJsonString() const
 }
 
 
-CreateInstancePreResp CreateInstancePreResponse::GetResult() const
+AsyncEventStatus GetAsyncEventStatusResponse::GetResult() const
 {
     return m_result;
 }
 
-bool CreateInstancePreResponse::ResultHasBeenSet() const
+bool GetAsyncEventStatusResponse::ResultHasBeenSet() const
 {
     return m_resultHasBeenSet;
 }

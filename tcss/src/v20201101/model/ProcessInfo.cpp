@@ -30,7 +30,9 @@ ProcessInfo::ProcessInfo() :
     m_containerNameHasBeenSet(false),
     m_hostIDHasBeenSet(false),
     m_hostIPHasBeenSet(false),
-    m_processNameHasBeenSet(false)
+    m_processNameHasBeenSet(false),
+    m_hostNameHasBeenSet(false),
+    m_publicIpHasBeenSet(false)
 {
 }
 
@@ -139,6 +141,26 @@ CoreInternalOutcome ProcessInfo::Deserialize(const rapidjson::Value &value)
         m_processNameHasBeenSet = true;
     }
 
+    if (value.HasMember("HostName") && !value["HostName"].IsNull())
+    {
+        if (!value["HostName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcessInfo.HostName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostName = string(value["HostName"].GetString());
+        m_hostNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("PublicIp") && !value["PublicIp"].IsNull())
+    {
+        if (!value["PublicIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcessInfo.PublicIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicIp = string(value["PublicIp"].GetString());
+        m_publicIpHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +246,22 @@ void ProcessInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ProcessName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_processName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hostName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publicIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicIp.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +425,37 @@ void ProcessInfo::SetProcessName(const string& _processName)
 bool ProcessInfo::ProcessNameHasBeenSet() const
 {
     return m_processNameHasBeenSet;
+}
+
+string ProcessInfo::GetHostName() const
+{
+    return m_hostName;
+}
+
+void ProcessInfo::SetHostName(const string& _hostName)
+{
+    m_hostName = _hostName;
+    m_hostNameHasBeenSet = true;
+}
+
+bool ProcessInfo::HostNameHasBeenSet() const
+{
+    return m_hostNameHasBeenSet;
+}
+
+string ProcessInfo::GetPublicIp() const
+{
+    return m_publicIp;
+}
+
+void ProcessInfo::SetPublicIp(const string& _publicIp)
+{
+    m_publicIp = _publicIp;
+    m_publicIpHasBeenSet = true;
+}
+
+bool ProcessInfo::PublicIpHasBeenSet() const
+{
+    return m_publicIpHasBeenSet;
 }
 
