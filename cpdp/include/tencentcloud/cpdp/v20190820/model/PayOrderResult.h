@@ -354,6 +354,138 @@ namespace TencentCloud
                      */
                     bool TradeQrcodeHasBeenSet() const;
 
+                    /**
+                     * 获取微信返回调起小程序/原生JS支付的appid参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WechatAppId 微信返回调起小程序/原生JS支付的appid参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetWechatAppId() const;
+
+                    /**
+                     * 设置微信返回调起小程序/原生JS支付的appid参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WechatAppId 微信返回调起小程序/原生JS支付的appid参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWechatAppId(const std::string& _wechatAppId);
+
+                    /**
+                     * 判断参数 WechatAppId 是否已赋值
+                     * @return WechatAppId 是否已赋值
+                     */
+                    bool WechatAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取微信返回调起小程序/原生JS支付的timeStamp参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WechatTimeStamp 微信返回调起小程序/原生JS支付的timeStamp参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetWechatTimeStamp() const;
+
+                    /**
+                     * 设置微信返回调起小程序/原生JS支付的timeStamp参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WechatTimeStamp 微信返回调起小程序/原生JS支付的timeStamp参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWechatTimeStamp(const std::string& _wechatTimeStamp);
+
+                    /**
+                     * 判断参数 WechatTimeStamp 是否已赋值
+                     * @return WechatTimeStamp 是否已赋值
+                     */
+                    bool WechatTimeStampHasBeenSet() const;
+
+                    /**
+                     * 获取微信返回调起小程序/原生JS支付的nonceStr参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WechatNonceStr 微信返回调起小程序/原生JS支付的nonceStr参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetWechatNonceStr() const;
+
+                    /**
+                     * 设置微信返回调起小程序/原生JS支付的nonceStr参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WechatNonceStr 微信返回调起小程序/原生JS支付的nonceStr参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWechatNonceStr(const std::string& _wechatNonceStr);
+
+                    /**
+                     * 判断参数 WechatNonceStr 是否已赋值
+                     * @return WechatNonceStr 是否已赋值
+                     */
+                    bool WechatNonceStrHasBeenSet() const;
+
+                    /**
+                     * 获取微信返回调起小程序/原生JS支付的signType参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WechatSignType 微信返回调起小程序/原生JS支付的signType参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetWechatSignType() const;
+
+                    /**
+                     * 设置微信返回调起小程序/原生JS支付的signType参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WechatSignType 微信返回调起小程序/原生JS支付的signType参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWechatSignType(const std::string& _wechatSignType);
+
+                    /**
+                     * 判断参数 WechatSignType 是否已赋值
+                     * @return WechatSignType 是否已赋值
+                     */
+                    bool WechatSignTypeHasBeenSet() const;
+
+                    /**
+                     * 获取微信返回调起小程序/原生JS支付的package参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WechatPackage 微信返回调起小程序/原生JS支付的package参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetWechatPackage() const;
+
+                    /**
+                     * 设置微信返回调起小程序/原生JS支付的package参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WechatPackage 微信返回调起小程序/原生JS支付的package参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWechatPackage(const std::string& _wechatPackage);
+
+                    /**
+                     * 判断参数 WechatPackage 是否已赋值
+                     * @return WechatPackage 是否已赋值
+                     */
+                    bool WechatPackageHasBeenSet() const;
+
+                    /**
+                     * 获取微信返回调起小程序/原生JS支付的paySign参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WechatPaySign 微信返回调起小程序/原生JS支付的paySign参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetWechatPaySign() const;
+
+                    /**
+                     * 设置微信返回调起小程序/原生JS支付的paySign参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WechatPaySign 微信返回调起小程序/原生JS支付的paySign参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWechatPaySign(const std::string& _wechatPaySign);
+
+                    /**
+                     * 判断参数 WechatPaySign 是否已赋值
+                     * @return WechatPaySign 是否已赋值
+                     */
+                    bool WechatPaySignHasBeenSet() const;
+
                 private:
 
                     /**
@@ -453,6 +585,48 @@ namespace TencentCloud
                      */
                     std::string m_tradeQrcode;
                     bool m_tradeQrcodeHasBeenSet;
+
+                    /**
+                     * 微信返回调起小程序/原生JS支付的appid参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_wechatAppId;
+                    bool m_wechatAppIdHasBeenSet;
+
+                    /**
+                     * 微信返回调起小程序/原生JS支付的timeStamp参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_wechatTimeStamp;
+                    bool m_wechatTimeStampHasBeenSet;
+
+                    /**
+                     * 微信返回调起小程序/原生JS支付的nonceStr参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_wechatNonceStr;
+                    bool m_wechatNonceStrHasBeenSet;
+
+                    /**
+                     * 微信返回调起小程序/原生JS支付的signType参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_wechatSignType;
+                    bool m_wechatSignTypeHasBeenSet;
+
+                    /**
+                     * 微信返回调起小程序/原生JS支付的package参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_wechatPackage;
+                    bool m_wechatPackageHasBeenSet;
+
+                    /**
+                     * 微信返回调起小程序/原生JS支付的paySign参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_wechatPaySign;
+                    bool m_wechatPaySignHasBeenSet;
 
                 };
             }

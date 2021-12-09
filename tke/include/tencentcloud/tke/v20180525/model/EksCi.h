@@ -529,6 +529,28 @@ Pending是创建中，Running是 运行中。
                      */
                     bool AutoCreatedEipIdHasBeenSet() const;
 
+                    /**
+                     * 获取容器状态是否持久化
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PersistStatus 容器状态是否持久化
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetPersistStatus() const;
+
+                    /**
+                     * 设置容器状态是否持久化
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PersistStatus 容器状态是否持久化
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPersistStatus(const bool& _persistStatus);
+
+                    /**
+                     * 判断参数 PersistStatus 是否已赋值
+                     * @return PersistStatus 是否已赋值
+                     */
+                    bool PersistStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -683,6 +705,13 @@ Pending是创建中，Running是 运行中。
                      */
                     std::string m_autoCreatedEipId;
                     bool m_autoCreatedEipIdHasBeenSet;
+
+                    /**
+                     * 容器状态是否持久化
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_persistStatus;
+                    bool m_persistStatusHasBeenSet;
 
                 };
             }

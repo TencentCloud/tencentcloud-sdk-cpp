@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/tat/v20201028/model/CancelInvocationRequest.h>
+#include <tencentcloud/tat/v20201028/model/CancelInvocationResponse.h>
 #include <tencentcloud/tat/v20201028/model/CreateCommandRequest.h>
 #include <tencentcloud/tat/v20201028/model/CreateCommandResponse.h>
 #include <tencentcloud/tat/v20201028/model/CreateInvokerRequest.h>
@@ -73,6 +75,9 @@ namespace TencentCloud
                 TatClient(const Credential &credential, const std::string &region);
                 TatClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CancelInvocationResponse> CancelInvocationOutcome;
+                typedef std::future<CancelInvocationOutcome> CancelInvocationOutcomeCallable;
+                typedef std::function<void(const TatClient*, const Model::CancelInvocationRequest&, CancelInvocationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelInvocationAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCommandResponse> CreateCommandOutcome;
                 typedef std::future<CreateCommandOutcome> CreateCommandOutcomeCallable;
                 typedef std::function<void(const TatClient*, const Model::CreateCommandRequest&, CreateCommandOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCommandAsyncHandler;
@@ -129,6 +134,18 @@ namespace TencentCloud
                 typedef std::function<void(const TatClient*, const Model::RunCommandRequest&, RunCommandOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunCommandAsyncHandler;
 
 
+
+                /**
+                 *取消一台或多台CVM实例执行的命令
+
+* 如果命令还未下发到agent，任务状态处于处于PENDING、DELIVERING、DELIVER_DELAYED，取消后任务状态是CANCELLED
+* 如果命令已下发到agent，任务状态处于RUNNING， 取消后任务状态是TERMINATED
+                 * @param req CancelInvocationRequest
+                 * @return CancelInvocationOutcome
+                 */
+                CancelInvocationOutcome CancelInvocation(const Model::CancelInvocationRequest &request);
+                void CancelInvocationAsync(const Model::CancelInvocationRequest& request, const CancelInvocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelInvocationOutcomeCallable CancelInvocationCallable(const Model::CancelInvocationRequest& request);
 
                 /**
                  *此接口用于创建命令。

@@ -25,10 +25,14 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/rum/v20210622/model/CreateProjectRequest.h>
 #include <tencentcloud/rum/v20210622/model/CreateProjectResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataEventUrlRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataEventUrlResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataLogUrlStatisticsRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataLogUrlStatisticsResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataPerformancePageRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataPerformancePageResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataPvUrlStatisticsRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataPvUrlStatisticsResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeErrorRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeErrorResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeLogListRequest.h>
@@ -54,12 +58,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateProjectResponse> CreateProjectOutcome;
                 typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::CreateProjectRequest&, CreateProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataEventUrlResponse> DescribeDataEventUrlOutcome;
+                typedef std::future<DescribeDataEventUrlOutcome> DescribeDataEventUrlOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeDataEventUrlRequest&, DescribeDataEventUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataEventUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataLogUrlStatisticsResponse> DescribeDataLogUrlStatisticsOutcome;
                 typedef std::future<DescribeDataLogUrlStatisticsOutcome> DescribeDataLogUrlStatisticsOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeDataLogUrlStatisticsRequest&, DescribeDataLogUrlStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataLogUrlStatisticsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataPerformancePageResponse> DescribeDataPerformancePageOutcome;
                 typedef std::future<DescribeDataPerformancePageOutcome> DescribeDataPerformancePageOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeDataPerformancePageRequest&, DescribeDataPerformancePageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataPerformancePageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataPvUrlStatisticsResponse> DescribeDataPvUrlStatisticsOutcome;
+                typedef std::future<DescribeDataPvUrlStatisticsOutcome> DescribeDataPvUrlStatisticsOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeDataPvUrlStatisticsRequest&, DescribeDataPvUrlStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataPvUrlStatisticsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeErrorResponse> DescribeErrorOutcome;
                 typedef std::future<DescribeErrorOutcome> DescribeErrorOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeErrorRequest&, DescribeErrorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeErrorAsyncHandler;
@@ -85,6 +95,15 @@ namespace TencentCloud
                 CreateProjectOutcomeCallable CreateProjectCallable(const Model::CreateProjectRequest& request);
 
                 /**
+                 *获取DescribeDataEventUrl信息
+                 * @param req DescribeDataEventUrlRequest
+                 * @return DescribeDataEventUrlOutcome
+                 */
+                DescribeDataEventUrlOutcome DescribeDataEventUrl(const Model::DescribeDataEventUrlRequest &request);
+                void DescribeDataEventUrlAsync(const Model::DescribeDataEventUrlRequest& request, const DescribeDataEventUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataEventUrlOutcomeCallable DescribeDataEventUrlCallable(const Model::DescribeDataEventUrlRequest& request);
+
+                /**
                  *获取LogUrlStatistics信息
                  * @param req DescribeDataLogUrlStatisticsRequest
                  * @return DescribeDataLogUrlStatisticsOutcome
@@ -101,6 +120,15 @@ namespace TencentCloud
                 DescribeDataPerformancePageOutcome DescribeDataPerformancePage(const Model::DescribeDataPerformancePageRequest &request);
                 void DescribeDataPerformancePageAsync(const Model::DescribeDataPerformancePageRequest& request, const DescribeDataPerformancePageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDataPerformancePageOutcomeCallable DescribeDataPerformancePageCallable(const Model::DescribeDataPerformancePageRequest& request);
+
+                /**
+                 *获取DescribeDataPvUrlStatistics信息
+                 * @param req DescribeDataPvUrlStatisticsRequest
+                 * @return DescribeDataPvUrlStatisticsOutcome
+                 */
+                DescribeDataPvUrlStatisticsOutcome DescribeDataPvUrlStatistics(const Model::DescribeDataPvUrlStatisticsRequest &request);
+                void DescribeDataPvUrlStatisticsAsync(const Model::DescribeDataPvUrlStatisticsRequest& request, const DescribeDataPvUrlStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataPvUrlStatisticsOutcomeCallable DescribeDataPvUrlStatisticsCallable(const Model::DescribeDataPvUrlStatisticsRequest& request);
 
                 /**
                  *获取首页错误信息

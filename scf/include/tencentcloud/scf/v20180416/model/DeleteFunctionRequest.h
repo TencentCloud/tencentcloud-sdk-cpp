@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool NamespaceHasBeenSet() const;
 
                     /**
-                     * 获取函数版本
-                     * @return Qualifier 函数版本
+                     * 获取函数版本，如果删除版本的话传入版本号，不传入改字段删除函数下的所有版本
+                     * @return Qualifier 函数版本，如果删除版本的话传入版本号，不传入改字段删除函数下的所有版本
                      */
                     std::string GetQualifier() const;
 
                     /**
-                     * 设置函数版本
-                     * @param Qualifier 函数版本
+                     * 设置函数版本，如果删除版本的话传入版本号，不传入改字段删除函数下的所有版本
+                     * @param Qualifier 函数版本，如果删除版本的话传入版本号，不传入改字段删除函数下的所有版本
                      */
                     void SetQualifier(const std::string& _qualifier);
 
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_namespaceHasBeenSet;
 
                     /**
-                     * 函数版本
+                     * 函数版本，如果删除版本的话传入版本号，不传入改字段删除函数下的所有版本
                      */
                     std::string m_qualifier;
                     bool m_qualifierHasBeenSet;

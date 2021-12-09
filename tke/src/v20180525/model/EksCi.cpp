@@ -42,7 +42,8 @@ EksCi::EksCi() :
     m_subnetIdHasBeenSet(false),
     m_initContainersHasBeenSet(false),
     m_camRoleNameHasBeenSet(false),
-    m_autoCreatedEipIdHasBeenSet(false)
+    m_autoCreatedEipIdHasBeenSet(false),
+    m_persistStatusHasBeenSet(false)
 {
 }
 
@@ -308,6 +309,16 @@ CoreInternalOutcome EksCi::Deserialize(const rapidjson::Value &value)
         m_autoCreatedEipIdHasBeenSet = true;
     }
 
+    if (value.HasMember("PersistStatus") && !value["PersistStatus"].IsNull())
+    {
+        if (!value["PersistStatus"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `EksCi.PersistStatus` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_persistStatus = value["PersistStatus"].GetBool();
+        m_persistStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -510,6 +521,14 @@ void EksCi::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "AutoCreatedEipId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_autoCreatedEipId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_persistStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PersistStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_persistStatus, allocator);
     }
 
 }
@@ -865,5 +884,21 @@ void EksCi::SetAutoCreatedEipId(const string& _autoCreatedEipId)
 bool EksCi::AutoCreatedEipIdHasBeenSet() const
 {
     return m_autoCreatedEipIdHasBeenSet;
+}
+
+bool EksCi::GetPersistStatus() const
+{
+    return m_persistStatus;
+}
+
+void EksCi::SetPersistStatus(const bool& _persistStatus)
+{
+    m_persistStatus = _persistStatus;
+    m_persistStatusHasBeenSet = true;
+}
+
+bool EksCi::PersistStatusHasBeenSet() const
+{
+    return m_persistStatusHasBeenSet;
 }
 

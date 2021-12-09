@@ -217,6 +217,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/SegmentConfigureInfoForUpdate.h
   include/tencentcloud/vod/v20180717/model/UserDefineConfigureInfo.h
   include/tencentcloud/vod/v20180717/model/AiRecognitionTaskSegmentSegmentItem.h
+  include/tencentcloud/vod/v20180717/model/RestoreMediaTask.h
   include/tencentcloud/vod/v20180717/model/AiReviewPornOcrTaskInput.h
   include/tencentcloud/vod/v20180717/model/OcrWordsConfigureInfo.h
   include/tencentcloud/vod/v20180717/model/CreateSuperPlayerConfigResponse.h
@@ -778,6 +779,7 @@ set(vod_src
   src/v20180717/model/SegmentConfigureInfoForUpdate.cpp
   src/v20180717/model/UserDefineConfigureInfo.cpp
   src/v20180717/model/AiRecognitionTaskSegmentSegmentItem.cpp
+  src/v20180717/model/RestoreMediaTask.cpp
   src/v20180717/model/AiReviewPornOcrTaskInput.cpp
   src/v20180717/model/OcrWordsConfigureInfo.cpp
   src/v20180717/model/CreateSuperPlayerConfigResponse.cpp

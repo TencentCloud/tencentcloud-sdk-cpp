@@ -395,17 +395,17 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取商品名称代码
+                     * 获取产品名称代码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BusinessCode 商品名称代码
+                     * @return BusinessCode 产品名称代码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetBusinessCode() const;
 
                     /**
-                     * 设置商品名称代码
+                     * 设置产品名称代码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BusinessCode 商品名称代码
+                     * @param BusinessCode 产品名称代码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBusinessCode(const std::string& _businessCode);
@@ -417,17 +417,17 @@ namespace TencentCloud
                     bool BusinessCodeHasBeenSet() const;
 
                     /**
-                     * 获取子商品名称代码
+                     * 获取子产品名称代码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProductCode 子商品名称代码
+                     * @return ProductCode 子产品名称代码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetProductCode() const;
 
                     /**
-                     * 设置子商品名称代码
+                     * 设置子产品名称代码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductCode 子商品名称代码
+                     * @param ProductCode 子产品名称代码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetProductCode(const std::string& _productCode);
@@ -439,17 +439,17 @@ namespace TencentCloud
                     bool ProductCodeHasBeenSet() const;
 
                     /**
-                     * 获取交易类型代码（未开放的字段）
+                     * 获取交易类型代码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ActionType 交易类型代码（未开放的字段）
+                     * @return ActionType 交易类型代码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetActionType() const;
 
                     /**
-                     * 设置交易类型代码（未开放的字段）
+                     * 设置交易类型代码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ActionType 交易类型代码（未开放的字段）
+                     * @param ActionType 交易类型代码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetActionType(const std::string& _actionType);
@@ -618,21 +618,21 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 商品名称代码
+                     * 产品名称代码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_businessCode;
                     bool m_businessCodeHasBeenSet;
 
                     /**
-                     * 子商品名称代码
+                     * 子产品名称代码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productCode;
                     bool m_productCodeHasBeenSet;
 
                     /**
-                     * 交易类型代码（未开放的字段）
+                     * 交易类型代码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_actionType;

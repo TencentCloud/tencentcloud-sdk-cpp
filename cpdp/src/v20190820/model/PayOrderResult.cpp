@@ -34,7 +34,13 @@ PayOrderResult::PayOrderResult() :
     m_payTagHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_orderCurrencyHasBeenSet(false),
-    m_tradeQrcodeHasBeenSet(false)
+    m_tradeQrcodeHasBeenSet(false),
+    m_wechatAppIdHasBeenSet(false),
+    m_wechatTimeStampHasBeenSet(false),
+    m_wechatNonceStrHasBeenSet(false),
+    m_wechatSignTypeHasBeenSet(false),
+    m_wechatPackageHasBeenSet(false),
+    m_wechatPaySignHasBeenSet(false)
 {
 }
 
@@ -183,6 +189,66 @@ CoreInternalOutcome PayOrderResult::Deserialize(const rapidjson::Value &value)
         m_tradeQrcodeHasBeenSet = true;
     }
 
+    if (value.HasMember("WechatAppId") && !value["WechatAppId"].IsNull())
+    {
+        if (!value["WechatAppId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PayOrderResult.WechatAppId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_wechatAppId = string(value["WechatAppId"].GetString());
+        m_wechatAppIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("WechatTimeStamp") && !value["WechatTimeStamp"].IsNull())
+    {
+        if (!value["WechatTimeStamp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PayOrderResult.WechatTimeStamp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_wechatTimeStamp = string(value["WechatTimeStamp"].GetString());
+        m_wechatTimeStampHasBeenSet = true;
+    }
+
+    if (value.HasMember("WechatNonceStr") && !value["WechatNonceStr"].IsNull())
+    {
+        if (!value["WechatNonceStr"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PayOrderResult.WechatNonceStr` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_wechatNonceStr = string(value["WechatNonceStr"].GetString());
+        m_wechatNonceStrHasBeenSet = true;
+    }
+
+    if (value.HasMember("WechatSignType") && !value["WechatSignType"].IsNull())
+    {
+        if (!value["WechatSignType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PayOrderResult.WechatSignType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_wechatSignType = string(value["WechatSignType"].GetString());
+        m_wechatSignTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("WechatPackage") && !value["WechatPackage"].IsNull())
+    {
+        if (!value["WechatPackage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PayOrderResult.WechatPackage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_wechatPackage = string(value["WechatPackage"].GetString());
+        m_wechatPackageHasBeenSet = true;
+    }
+
+    if (value.HasMember("WechatPaySign") && !value["WechatPaySign"].IsNull())
+    {
+        if (!value["WechatPaySign"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PayOrderResult.WechatPaySign` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_wechatPaySign = string(value["WechatPaySign"].GetString());
+        m_wechatPaySignHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +366,54 @@ void PayOrderResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "TradeQrcode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tradeQrcode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_wechatAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WechatAppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_wechatAppId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_wechatTimeStampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WechatTimeStamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_wechatTimeStamp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_wechatNonceStrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WechatNonceStr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_wechatNonceStr.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_wechatSignTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WechatSignType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_wechatSignType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_wechatPackageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WechatPackage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_wechatPackage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_wechatPaySignHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WechatPaySign";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_wechatPaySign.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +641,101 @@ void PayOrderResult::SetTradeQrcode(const string& _tradeQrcode)
 bool PayOrderResult::TradeQrcodeHasBeenSet() const
 {
     return m_tradeQrcodeHasBeenSet;
+}
+
+string PayOrderResult::GetWechatAppId() const
+{
+    return m_wechatAppId;
+}
+
+void PayOrderResult::SetWechatAppId(const string& _wechatAppId)
+{
+    m_wechatAppId = _wechatAppId;
+    m_wechatAppIdHasBeenSet = true;
+}
+
+bool PayOrderResult::WechatAppIdHasBeenSet() const
+{
+    return m_wechatAppIdHasBeenSet;
+}
+
+string PayOrderResult::GetWechatTimeStamp() const
+{
+    return m_wechatTimeStamp;
+}
+
+void PayOrderResult::SetWechatTimeStamp(const string& _wechatTimeStamp)
+{
+    m_wechatTimeStamp = _wechatTimeStamp;
+    m_wechatTimeStampHasBeenSet = true;
+}
+
+bool PayOrderResult::WechatTimeStampHasBeenSet() const
+{
+    return m_wechatTimeStampHasBeenSet;
+}
+
+string PayOrderResult::GetWechatNonceStr() const
+{
+    return m_wechatNonceStr;
+}
+
+void PayOrderResult::SetWechatNonceStr(const string& _wechatNonceStr)
+{
+    m_wechatNonceStr = _wechatNonceStr;
+    m_wechatNonceStrHasBeenSet = true;
+}
+
+bool PayOrderResult::WechatNonceStrHasBeenSet() const
+{
+    return m_wechatNonceStrHasBeenSet;
+}
+
+string PayOrderResult::GetWechatSignType() const
+{
+    return m_wechatSignType;
+}
+
+void PayOrderResult::SetWechatSignType(const string& _wechatSignType)
+{
+    m_wechatSignType = _wechatSignType;
+    m_wechatSignTypeHasBeenSet = true;
+}
+
+bool PayOrderResult::WechatSignTypeHasBeenSet() const
+{
+    return m_wechatSignTypeHasBeenSet;
+}
+
+string PayOrderResult::GetWechatPackage() const
+{
+    return m_wechatPackage;
+}
+
+void PayOrderResult::SetWechatPackage(const string& _wechatPackage)
+{
+    m_wechatPackage = _wechatPackage;
+    m_wechatPackageHasBeenSet = true;
+}
+
+bool PayOrderResult::WechatPackageHasBeenSet() const
+{
+    return m_wechatPackageHasBeenSet;
+}
+
+string PayOrderResult::GetWechatPaySign() const
+{
+    return m_wechatPaySign;
+}
+
+void PayOrderResult::SetWechatPaySign(const string& _wechatPaySign)
+{
+    m_wechatPaySign = _wechatPaySign;
+    m_wechatPaySignHasBeenSet = true;
+}
+
+bool PayOrderResult::WechatPaySignHasBeenSet() const
+{
+    return m_wechatPaySignHasBeenSet;
 }
 

@@ -159,6 +159,28 @@ namespace TencentCloud
                      */
                     bool ResultDetailHasBeenSet() const;
 
+                    /**
+                     * 获取音频时长(秒)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AudioDuration 音频时长(秒)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetAudioDuration() const;
+
+                    /**
+                     * 设置音频时长(秒)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AudioDuration 音频时长(秒)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAudioDuration(const double& _audioDuration);
+
+                    /**
+                     * 判断参数 AudioDuration 是否已赋值
+                     * @return AudioDuration 是否已赋值
+                     */
+                    bool AudioDurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -197,6 +219,13 @@ namespace TencentCloud
                      */
                     std::vector<SentenceDetail> m_resultDetail;
                     bool m_resultDetailHasBeenSet;
+
+                    /**
+                     * 音频时长(秒)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_audioDuration;
+                    bool m_audioDurationHasBeenSet;
 
                 };
             }

@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品码
-                     * @return BusinessCode 产品码
+                     * 获取产品名称代码
+                     * @return BusinessCode 产品名称代码
                      */
                     std::string GetBusinessCode() const;
 
                     /**
-                     * 设置产品码
-                     * @param BusinessCode 产品码
+                     * 设置产品名称代码
+                     * @param BusinessCode 产品名称代码
                      */
                     void SetBusinessCode(const std::string& _businessCode);
 
@@ -122,7 +122,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 产品码
+                     * 产品名称代码
                      */
                     std::string m_businessCode;
                     bool m_businessCodeHasBeenSet;

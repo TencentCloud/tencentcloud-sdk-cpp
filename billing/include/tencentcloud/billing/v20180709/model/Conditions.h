@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool TimeRangeHasBeenSet() const;
 
                     /**
-                     * 获取产品编码
-                     * @return BusinessCode 产品编码
+                     * 获取产品名称代码
+                     * @return BusinessCode 产品名称代码
                      */
                     std::string GetBusinessCode() const;
 
                     /**
-                     * 设置产品编码
-                     * @param BusinessCode 产品编码
+                     * 设置产品名称代码
+                     * @param BusinessCode 产品名称代码
                      */
                     void SetBusinessCode(const std::string& _businessCode);
 
@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool ResourceKeywordHasBeenSet() const;
 
                     /**
-                     * 获取产品编码
-                     * @return BusinessCodes 产品编码
+                     * 获取产品名称代码
+                     * @return BusinessCodes 产品名称代码
                      */
                     std::vector<std::string> GetBusinessCodes() const;
 
                     /**
-                     * 设置产品编码
-                     * @param BusinessCodes 产品编码
+                     * 设置产品名称代码
+                     * @param BusinessCodes 产品名称代码
                      */
                     void SetBusinessCodes(const std::vector<std::string>& _businessCodes);
 
@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool BusinessCodesHasBeenSet() const;
 
                     /**
-                     * 获取子产品编码
-                     * @return ProductCodes 子产品编码
+                     * 获取子产品名称代码
+                     * @return ProductCodes 子产品名称代码
                      */
                     std::vector<std::string> GetProductCodes() const;
 
                     /**
-                     * 设置子产品编码
-                     * @param ProductCodes 子产品编码
+                     * 设置子产品名称代码
+                     * @param ProductCodes 子产品名称代码
                      */
                     void SetProductCodes(const std::vector<std::string>& _productCodes);
 
@@ -397,7 +397,7 @@ namespace TencentCloud
                     bool m_timeRangeHasBeenSet;
 
                     /**
-                     * 产品编码
+                     * 产品名称代码
                      */
                     std::string m_businessCode;
                     bool m_businessCodeHasBeenSet;
@@ -427,13 +427,13 @@ namespace TencentCloud
                     bool m_resourceKeywordHasBeenSet;
 
                     /**
-                     * 产品编码
+                     * 产品名称代码
                      */
                     std::vector<std::string> m_businessCodes;
                     bool m_businessCodesHasBeenSet;
 
                     /**
-                     * 子产品编码
+                     * 子产品名称代码
                      */
                     std::vector<std::string> m_productCodes;
                     bool m_productCodesHasBeenSet;

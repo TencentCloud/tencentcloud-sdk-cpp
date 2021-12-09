@@ -48,6 +48,8 @@ set(tem_public_header_model
   include/tencentcloud/tem/v20210701/model/DescribeRunPodPage.h
   include/tencentcloud/tem/v20210701/model/IngressTls.h
   include/tencentcloud/tem/v20210701/model/DeployServicePodDetail.h
+  include/tencentcloud/tem/v20210701/model/ModifyApplicationReplicasResponse.h
+  include/tencentcloud/tem/v20210701/model/ModifyApplicationReplicasRequest.h
   include/tencentcloud/tem/v20210701/model/LogOutputConf.h
   include/tencentcloud/tem/v20210701/model/DescribeIngressesResponse.h
   include/tencentcloud/tem/v20210701/model/DeleteIngressResponse.h
@@ -173,6 +175,8 @@ set(tem_src
   src/v20210701/model/DescribeRunPodPage.cpp
   src/v20210701/model/IngressTls.cpp
   src/v20210701/model/DeployServicePodDetail.cpp
+  src/v20210701/model/ModifyApplicationReplicasResponse.cpp
+  src/v20210701/model/ModifyApplicationReplicasRequest.cpp
   src/v20210701/model/LogOutputConf.cpp
   src/v20210701/model/DescribeIngressesResponse.cpp
   src/v20210701/model/DeleteIngressResponse.cpp

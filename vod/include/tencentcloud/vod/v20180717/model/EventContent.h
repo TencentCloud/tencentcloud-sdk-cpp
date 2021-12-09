@@ -38,6 +38,7 @@
 #include <tencentcloud/vod/v20180717/model/SnapshotByTimeOffsetTask2017.h>
 #include <tencentcloud/vod/v20180717/model/WechatPublishTask.h>
 #include <tencentcloud/vod/v20180717/model/WechatMiniProgramPublishTask.h>
+#include <tencentcloud/vod/v20180717/model/RestoreMediaTask.h>
 
 
 namespace TencentCloud
@@ -464,6 +465,28 @@ namespace TencentCloud
                      */
                     bool WechatMiniProgramPublishCompleteEventHasBeenSet() const;
 
+                    /**
+                     * 获取视频取回完成事件，当事件类型为RestoreMediaComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RestoreMediaCompleteEvent 视频取回完成事件，当事件类型为RestoreMediaComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RestoreMediaTask GetRestoreMediaCompleteEvent() const;
+
+                    /**
+                     * 设置视频取回完成事件，当事件类型为RestoreMediaComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RestoreMediaCompleteEvent 视频取回完成事件，当事件类型为RestoreMediaComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRestoreMediaCompleteEvent(const RestoreMediaTask& _restoreMediaCompleteEvent);
+
+                    /**
+                     * 判断参数 RestoreMediaCompleteEvent 是否已赋值
+                     * @return RestoreMediaCompleteEvent 是否已赋值
+                     */
+                    bool RestoreMediaCompleteEventHasBeenSet() const;
+
                 private:
 
                     /**
@@ -590,6 +613,13 @@ namespace TencentCloud
                      */
                     WechatMiniProgramPublishTask m_wechatMiniProgramPublishCompleteEvent;
                     bool m_wechatMiniProgramPublishCompleteEventHasBeenSet;
+
+                    /**
+                     * 视频取回完成事件，当事件类型为RestoreMediaComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RestoreMediaTask m_restoreMediaCompleteEvent;
+                    bool m_restoreMediaCompleteEventHasBeenSet;
 
                 };
             }

@@ -42,7 +42,10 @@ UnifiedTlinxOrderRequest::UnifiedTlinxOrderRequest() :
     m_tradeNoHasBeenSet(false),
     m_discountAmountHasBeenSet(false),
     m_payNameHasBeenSet(false),
-    m_royaltyHasBeenSet(false)
+    m_royaltyHasBeenSet(false),
+    m_jsapiHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
+    m_subOpenIdHasBeenSet(false)
 {
 }
 
@@ -211,6 +214,30 @@ string UnifiedTlinxOrderRequest::ToJsonString() const
         string key = "Royalty";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_royalty.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jsapiHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Jsapi";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_jsapi.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_subAppId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subOpenIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubOpenId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_subOpenId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -539,6 +566,54 @@ void UnifiedTlinxOrderRequest::SetRoyalty(const string& _royalty)
 bool UnifiedTlinxOrderRequest::RoyaltyHasBeenSet() const
 {
     return m_royaltyHasBeenSet;
+}
+
+string UnifiedTlinxOrderRequest::GetJsapi() const
+{
+    return m_jsapi;
+}
+
+void UnifiedTlinxOrderRequest::SetJsapi(const string& _jsapi)
+{
+    m_jsapi = _jsapi;
+    m_jsapiHasBeenSet = true;
+}
+
+bool UnifiedTlinxOrderRequest::JsapiHasBeenSet() const
+{
+    return m_jsapiHasBeenSet;
+}
+
+string UnifiedTlinxOrderRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void UnifiedTlinxOrderRequest::SetSubAppId(const string& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool UnifiedTlinxOrderRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
+}
+
+string UnifiedTlinxOrderRequest::GetSubOpenId() const
+{
+    return m_subOpenId;
+}
+
+void UnifiedTlinxOrderRequest::SetSubOpenId(const string& _subOpenId)
+{
+    m_subOpenId = _subOpenId;
+    m_subOpenIdHasBeenSet = true;
+}
+
+bool UnifiedTlinxOrderRequest::SubOpenIdHasBeenSet() const
+{
+    return m_subOpenIdHasBeenSet;
 }
 
 

@@ -82,6 +82,24 @@ namespace TencentCloud
                      */
                     bool CountHasBeenSet() const;
 
+                    /**
+                     * 获取是否为内部ip
+                     * @return InternalService 是否为内部ip
+                     */
+                    bool GetInternalService() const;
+
+                    /**
+                     * 设置是否为内部ip
+                     * @param InternalService 是否为内部ip
+                     */
+                    void SetInternalService(const bool& _internalService);
+
+                    /**
+                     * 判断参数 InternalService 是否已赋值
+                     * @return InternalService 是否已赋值
+                     */
+                    bool InternalServiceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +113,12 @@ namespace TencentCloud
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;
+
+                    /**
+                     * 是否为内部ip
+                     */
+                    bool m_internalService;
+                    bool m_internalServiceHasBeenSet;
 
                 };
             }

@@ -36,7 +36,8 @@ EventContent::EventContent() :
     m_concatCompleteEventHasBeenSet(false),
     m_snapshotByTimeOffsetCompleteEventHasBeenSet(false),
     m_wechatPublishCompleteEventHasBeenSet(false),
-    m_wechatMiniProgramPublishCompleteEventHasBeenSet(false)
+    m_wechatMiniProgramPublishCompleteEventHasBeenSet(false),
+    m_restoreMediaCompleteEventHasBeenSet(false)
 {
 }
 
@@ -303,6 +304,23 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
         m_wechatMiniProgramPublishCompleteEventHasBeenSet = true;
     }
 
+    if (value.HasMember("RestoreMediaCompleteEvent") && !value["RestoreMediaCompleteEvent"].IsNull())
+    {
+        if (!value["RestoreMediaCompleteEvent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventContent.RestoreMediaCompleteEvent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_restoreMediaCompleteEvent.Deserialize(value["RestoreMediaCompleteEvent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_restoreMediaCompleteEventHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -450,6 +468,15 @@ void EventContent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_wechatMiniProgramPublishCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_restoreMediaCompleteEventHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RestoreMediaCompleteEvent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_restoreMediaCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -709,5 +736,21 @@ void EventContent::SetWechatMiniProgramPublishCompleteEvent(const WechatMiniProg
 bool EventContent::WechatMiniProgramPublishCompleteEventHasBeenSet() const
 {
     return m_wechatMiniProgramPublishCompleteEventHasBeenSet;
+}
+
+RestoreMediaTask EventContent::GetRestoreMediaCompleteEvent() const
+{
+    return m_restoreMediaCompleteEvent;
+}
+
+void EventContent::SetRestoreMediaCompleteEvent(const RestoreMediaTask& _restoreMediaCompleteEvent)
+{
+    m_restoreMediaCompleteEvent = _restoreMediaCompleteEvent;
+    m_restoreMediaCompleteEventHasBeenSet = true;
+}
+
+bool EventContent::RestoreMediaCompleteEventHasBeenSet() const
+{
+    return m_restoreMediaCompleteEventHasBeenSet;
 }
 

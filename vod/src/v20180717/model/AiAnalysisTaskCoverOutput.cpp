@@ -21,7 +21,9 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 AiAnalysisTaskCoverOutput::AiAnalysisTaskCoverOutput() :
-    m_coverSetHasBeenSet(false)
+    m_coverSetHasBeenSet(false),
+    m_coverSetFileUrlHasBeenSet(false),
+    m_coverSetFileUrlExpireTimeHasBeenSet(false)
 {
 }
 
@@ -50,6 +52,26 @@ CoreInternalOutcome AiAnalysisTaskCoverOutput::Deserialize(const rapidjson::Valu
         m_coverSetHasBeenSet = true;
     }
 
+    if (value.HasMember("CoverSetFileUrl") && !value["CoverSetFileUrl"].IsNull())
+    {
+        if (!value["CoverSetFileUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisTaskCoverOutput.CoverSetFileUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_coverSetFileUrl = string(value["CoverSetFileUrl"].GetString());
+        m_coverSetFileUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("CoverSetFileUrlExpireTime") && !value["CoverSetFileUrlExpireTime"].IsNull())
+    {
+        if (!value["CoverSetFileUrlExpireTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisTaskCoverOutput.CoverSetFileUrlExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_coverSetFileUrlExpireTime = string(value["CoverSetFileUrlExpireTime"].GetString());
+        m_coverSetFileUrlExpireTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +94,22 @@ void AiAnalysisTaskCoverOutput::ToJsonObject(rapidjson::Value &value, rapidjson:
         }
     }
 
+    if (m_coverSetFileUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CoverSetFileUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_coverSetFileUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_coverSetFileUrlExpireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CoverSetFileUrlExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_coverSetFileUrlExpireTime.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
@@ -89,5 +127,37 @@ void AiAnalysisTaskCoverOutput::SetCoverSet(const vector<MediaAiAnalysisCoverIte
 bool AiAnalysisTaskCoverOutput::CoverSetHasBeenSet() const
 {
     return m_coverSetHasBeenSet;
+}
+
+string AiAnalysisTaskCoverOutput::GetCoverSetFileUrl() const
+{
+    return m_coverSetFileUrl;
+}
+
+void AiAnalysisTaskCoverOutput::SetCoverSetFileUrl(const string& _coverSetFileUrl)
+{
+    m_coverSetFileUrl = _coverSetFileUrl;
+    m_coverSetFileUrlHasBeenSet = true;
+}
+
+bool AiAnalysisTaskCoverOutput::CoverSetFileUrlHasBeenSet() const
+{
+    return m_coverSetFileUrlHasBeenSet;
+}
+
+string AiAnalysisTaskCoverOutput::GetCoverSetFileUrlExpireTime() const
+{
+    return m_coverSetFileUrlExpireTime;
+}
+
+void AiAnalysisTaskCoverOutput::SetCoverSetFileUrlExpireTime(const string& _coverSetFileUrlExpireTime)
+{
+    m_coverSetFileUrlExpireTime = _coverSetFileUrlExpireTime;
+    m_coverSetFileUrlExpireTimeHasBeenSet = true;
+}
+
+bool AiAnalysisTaskCoverOutput::CoverSetFileUrlExpireTimeHasBeenSet() const
+{
+    return m_coverSetFileUrlExpireTimeHasBeenSet;
 }
 

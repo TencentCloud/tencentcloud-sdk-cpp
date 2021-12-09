@@ -130,6 +130,28 @@ namespace TencentCloud
                      */
                     bool ModTimeHasBeenSet() const;
 
+                    /**
+                     * 获取版本状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 版本状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置版本状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Status 版本状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -158,6 +180,13 @@ namespace TencentCloud
                      */
                     std::string m_modTime;
                     bool m_modTimeHasBeenSet;
+
+                    /**
+                     * 版本状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

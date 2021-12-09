@@ -40,6 +40,49 @@ TatClient::TatClient(const Credential &credential, const string &region, const C
 }
 
 
+TatClient::CancelInvocationOutcome TatClient::CancelInvocation(const CancelInvocationRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelInvocation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelInvocationResponse rsp = CancelInvocationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelInvocationOutcome(rsp);
+        else
+            return CancelInvocationOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelInvocationOutcome(outcome.GetError());
+    }
+}
+
+void TatClient::CancelInvocationAsync(const CancelInvocationRequest& request, const CancelInvocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelInvocation(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TatClient::CancelInvocationOutcomeCallable TatClient::CancelInvocationCallable(const CancelInvocationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelInvocationOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelInvocation(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TatClient::CreateCommandOutcome TatClient::CreateCommand(const CreateCommandRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCommand");

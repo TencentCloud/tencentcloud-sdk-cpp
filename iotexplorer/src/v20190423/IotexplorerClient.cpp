@@ -3007,6 +3007,49 @@ IotexplorerClient::PublishMessageOutcomeCallable IotexplorerClient::PublishMessa
     return task->get_future();
 }
 
+IotexplorerClient::PublishRRPCMessageOutcome IotexplorerClient::PublishRRPCMessage(const PublishRRPCMessageRequest &request)
+{
+    auto outcome = MakeRequest(request, "PublishRRPCMessage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PublishRRPCMessageResponse rsp = PublishRRPCMessageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PublishRRPCMessageOutcome(rsp);
+        else
+            return PublishRRPCMessageOutcome(o.GetError());
+    }
+    else
+    {
+        return PublishRRPCMessageOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::PublishRRPCMessageAsync(const PublishRRPCMessageRequest& request, const PublishRRPCMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PublishRRPCMessage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::PublishRRPCMessageOutcomeCallable IotexplorerClient::PublishRRPCMessageCallable(const PublishRRPCMessageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PublishRRPCMessageOutcome()>>(
+        [this, request]()
+        {
+            return this->PublishRRPCMessage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::ReleaseStudioProductOutcome IotexplorerClient::ReleaseStudioProduct(const ReleaseStudioProductRequest &request)
 {
     auto outcome = MakeRequest(request, "ReleaseStudioProduct");

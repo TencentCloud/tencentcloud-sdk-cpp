@@ -83,6 +83,49 @@ RumClient::CreateProjectOutcomeCallable RumClient::CreateProjectCallable(const C
     return task->get_future();
 }
 
+RumClient::DescribeDataEventUrlOutcome RumClient::DescribeDataEventUrl(const DescribeDataEventUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDataEventUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDataEventUrlResponse rsp = DescribeDataEventUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDataEventUrlOutcome(rsp);
+        else
+            return DescribeDataEventUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDataEventUrlOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeDataEventUrlAsync(const DescribeDataEventUrlRequest& request, const DescribeDataEventUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDataEventUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RumClient::DescribeDataEventUrlOutcomeCallable RumClient::DescribeDataEventUrlCallable(const DescribeDataEventUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDataEventUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDataEventUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RumClient::DescribeDataLogUrlStatisticsOutcome RumClient::DescribeDataLogUrlStatistics(const DescribeDataLogUrlStatisticsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDataLogUrlStatistics");
@@ -162,6 +205,49 @@ RumClient::DescribeDataPerformancePageOutcomeCallable RumClient::DescribeDataPer
         [this, request]()
         {
             return this->DescribeDataPerformancePage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+RumClient::DescribeDataPvUrlStatisticsOutcome RumClient::DescribeDataPvUrlStatistics(const DescribeDataPvUrlStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDataPvUrlStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDataPvUrlStatisticsResponse rsp = DescribeDataPvUrlStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDataPvUrlStatisticsOutcome(rsp);
+        else
+            return DescribeDataPvUrlStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDataPvUrlStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeDataPvUrlStatisticsAsync(const DescribeDataPvUrlStatisticsRequest& request, const DescribeDataPvUrlStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDataPvUrlStatistics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RumClient::DescribeDataPvUrlStatisticsOutcomeCallable RumClient::DescribeDataPvUrlStatisticsCallable(const DescribeDataPvUrlStatisticsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDataPvUrlStatisticsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDataPvUrlStatistics(request);
         }
     );
 

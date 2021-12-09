@@ -402,6 +402,68 @@ namespace TencentCloud
                      */
                     bool RoyaltyHasBeenSet() const;
 
+                    /**
+                     * 获取小程序支付参数：填默认值 1
+                     * @return Jsapi 小程序支付参数：填默认值 1
+                     */
+                    std::string GetJsapi() const;
+
+                    /**
+                     * 设置小程序支付参数：填默认值 1
+                     * @param Jsapi 小程序支付参数：填默认值 1
+                     */
+                    void SetJsapi(const std::string& _jsapi);
+
+                    /**
+                     * 判断参数 Jsapi 是否已赋值
+                     * @return Jsapi 是否已赋值
+                     */
+                    bool JsapiHasBeenSet() const;
+
+                    /**
+                     * 获取小程序支付参数：
+当前调起支付的小程序APPID
+                     * @return SubAppId 小程序支付参数：
+当前调起支付的小程序APPID
+                     */
+                    std::string GetSubAppId() const;
+
+                    /**
+                     * 设置小程序支付参数：
+当前调起支付的小程序APPID
+                     * @param SubAppId 小程序支付参数：
+当前调起支付的小程序APPID
+                     */
+                    void SetSubAppId(const std::string& _subAppId);
+
+                    /**
+                     * 判断参数 SubAppId 是否已赋值
+                     * @return SubAppId 是否已赋值
+                     */
+                    bool SubAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取小程序支付参数:
+用户在子商户appid下的唯一标识。
+                     * @return SubOpenId 小程序支付参数:
+用户在子商户appid下的唯一标识。
+                     */
+                    std::string GetSubOpenId() const;
+
+                    /**
+                     * 设置小程序支付参数:
+用户在子商户appid下的唯一标识。
+                     * @param SubOpenId 小程序支付参数:
+用户在子商户appid下的唯一标识。
+                     */
+                    void SetSubOpenId(const std::string& _subOpenId);
+
+                    /**
+                     * 判断参数 SubOpenId 是否已赋值
+                     * @return SubOpenId 是否已赋值
+                     */
+                    bool SubOpenIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -523,6 +585,26 @@ namespace TencentCloud
                      */
                     std::string m_royalty;
                     bool m_royaltyHasBeenSet;
+
+                    /**
+                     * 小程序支付参数：填默认值 1
+                     */
+                    std::string m_jsapi;
+                    bool m_jsapiHasBeenSet;
+
+                    /**
+                     * 小程序支付参数：
+当前调起支付的小程序APPID
+                     */
+                    std::string m_subAppId;
+                    bool m_subAppIdHasBeenSet;
+
+                    /**
+                     * 小程序支付参数:
+用户在子商户appid下的唯一标识。
+                     */
+                    std::string m_subOpenId;
+                    bool m_subOpenIdHasBeenSet;
 
                 };
             }

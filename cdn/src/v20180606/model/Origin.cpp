@@ -31,7 +31,8 @@ Origin::Origin() :
     m_backupServerNameHasBeenSet(false),
     m_basePathHasBeenSet(false),
     m_pathRulesHasBeenSet(false),
-    m_pathBasedOriginHasBeenSet(false)
+    m_pathBasedOriginHasBeenSet(false),
+    m_advanceHttpsHasBeenSet(false)
 {
 }
 
@@ -176,6 +177,23 @@ CoreInternalOutcome Origin::Deserialize(const rapidjson::Value &value)
         m_pathBasedOriginHasBeenSet = true;
     }
 
+    if (value.HasMember("AdvanceHttps") && !value["AdvanceHttps"].IsNull())
+    {
+        if (!value["AdvanceHttps"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Origin.AdvanceHttps` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_advanceHttps.Deserialize(value["AdvanceHttps"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_advanceHttpsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -293,6 +311,15 @@ void Origin::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_advanceHttpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdvanceHttps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_advanceHttps.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -472,5 +499,21 @@ void Origin::SetPathBasedOrigin(const vector<PathBasedOriginRule>& _pathBasedOri
 bool Origin::PathBasedOriginHasBeenSet() const
 {
     return m_pathBasedOriginHasBeenSet;
+}
+
+AdvanceHttps Origin::GetAdvanceHttps() const
+{
+    return m_advanceHttps;
+}
+
+void Origin::SetAdvanceHttps(const AdvanceHttps& _advanceHttps)
+{
+    m_advanceHttps = _advanceHttps;
+    m_advanceHttpsHasBeenSet = true;
+}
+
+bool Origin::AdvanceHttpsHasBeenSet() const
+{
+    return m_advanceHttpsHasBeenSet;
 }
 

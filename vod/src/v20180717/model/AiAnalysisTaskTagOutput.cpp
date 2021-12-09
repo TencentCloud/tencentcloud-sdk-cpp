@@ -21,7 +21,9 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 AiAnalysisTaskTagOutput::AiAnalysisTaskTagOutput() :
-    m_tagSetHasBeenSet(false)
+    m_tagSetHasBeenSet(false),
+    m_tagSetFileUrlHasBeenSet(false),
+    m_tagSetFileUrlExpireTimeHasBeenSet(false)
 {
 }
 
@@ -50,6 +52,26 @@ CoreInternalOutcome AiAnalysisTaskTagOutput::Deserialize(const rapidjson::Value 
         m_tagSetHasBeenSet = true;
     }
 
+    if (value.HasMember("TagSetFileUrl") && !value["TagSetFileUrl"].IsNull())
+    {
+        if (!value["TagSetFileUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisTaskTagOutput.TagSetFileUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tagSetFileUrl = string(value["TagSetFileUrl"].GetString());
+        m_tagSetFileUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("TagSetFileUrlExpireTime") && !value["TagSetFileUrlExpireTime"].IsNull())
+    {
+        if (!value["TagSetFileUrlExpireTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisTaskTagOutput.TagSetFileUrlExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tagSetFileUrlExpireTime = string(value["TagSetFileUrlExpireTime"].GetString());
+        m_tagSetFileUrlExpireTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +94,22 @@ void AiAnalysisTaskTagOutput::ToJsonObject(rapidjson::Value &value, rapidjson::D
         }
     }
 
+    if (m_tagSetFileUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagSetFileUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tagSetFileUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagSetFileUrlExpireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagSetFileUrlExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tagSetFileUrlExpireTime.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
@@ -89,5 +127,37 @@ void AiAnalysisTaskTagOutput::SetTagSet(const vector<MediaAiAnalysisTagItem>& _t
 bool AiAnalysisTaskTagOutput::TagSetHasBeenSet() const
 {
     return m_tagSetHasBeenSet;
+}
+
+string AiAnalysisTaskTagOutput::GetTagSetFileUrl() const
+{
+    return m_tagSetFileUrl;
+}
+
+void AiAnalysisTaskTagOutput::SetTagSetFileUrl(const string& _tagSetFileUrl)
+{
+    m_tagSetFileUrl = _tagSetFileUrl;
+    m_tagSetFileUrlHasBeenSet = true;
+}
+
+bool AiAnalysisTaskTagOutput::TagSetFileUrlHasBeenSet() const
+{
+    return m_tagSetFileUrlHasBeenSet;
+}
+
+string AiAnalysisTaskTagOutput::GetTagSetFileUrlExpireTime() const
+{
+    return m_tagSetFileUrlExpireTime;
+}
+
+void AiAnalysisTaskTagOutput::SetTagSetFileUrlExpireTime(const string& _tagSetFileUrlExpireTime)
+{
+    m_tagSetFileUrlExpireTime = _tagSetFileUrlExpireTime;
+    m_tagSetFileUrlExpireTimeHasBeenSet = true;
+}
+
+bool AiAnalysisTaskTagOutput::TagSetFileUrlExpireTimeHasBeenSet() const
+{
+    return m_tagSetFileUrlExpireTimeHasBeenSet;
 }
 

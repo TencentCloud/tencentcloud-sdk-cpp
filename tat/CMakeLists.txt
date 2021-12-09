@@ -39,6 +39,7 @@ set(tat_public_header_model
   include/tencentcloud/tat/v20201028/model/ModifyCommandResponse.h
   include/tencentcloud/tat/v20201028/model/RegionInfo.h
   include/tencentcloud/tat/v20201028/model/DescribeInvokersResponse.h
+  include/tencentcloud/tat/v20201028/model/CancelInvocationResponse.h
   include/tencentcloud/tat/v20201028/model/DeleteCommandResponse.h
   include/tencentcloud/tat/v20201028/model/DisableInvokerResponse.h
   include/tencentcloud/tat/v20201028/model/DescribeCommandsResponse.h
@@ -56,10 +57,11 @@ set(tat_public_header_model
   include/tencentcloud/tat/v20201028/model/Command.h
   include/tencentcloud/tat/v20201028/model/PreviewReplacedCommandContentRequest.h
   include/tencentcloud/tat/v20201028/model/InvocationTask.h
+  include/tencentcloud/tat/v20201028/model/ModifyInvokerResponse.h
   include/tencentcloud/tat/v20201028/model/InvokerRecord.h
   include/tencentcloud/tat/v20201028/model/DescribeAutomationAgentStatusResponse.h
   include/tencentcloud/tat/v20201028/model/CreateInvokerResponse.h
-  include/tencentcloud/tat/v20201028/model/ModifyInvokerResponse.h
+  include/tencentcloud/tat/v20201028/model/CancelInvocationRequest.h
   include/tencentcloud/tat/v20201028/model/DeleteCommandRequest.h
   include/tencentcloud/tat/v20201028/model/DeleteInvokerRequest.h
   include/tencentcloud/tat/v20201028/model/InvokeCommandRequest.h
@@ -92,6 +94,7 @@ set(tat_src
   src/v20201028/model/ModifyCommandResponse.cpp
   src/v20201028/model/RegionInfo.cpp
   src/v20201028/model/DescribeInvokersResponse.cpp
+  src/v20201028/model/CancelInvocationResponse.cpp
   src/v20201028/model/DeleteCommandResponse.cpp
   src/v20201028/model/DisableInvokerResponse.cpp
   src/v20201028/model/DescribeCommandsResponse.cpp
@@ -109,10 +112,11 @@ set(tat_src
   src/v20201028/model/Command.cpp
   src/v20201028/model/PreviewReplacedCommandContentRequest.cpp
   src/v20201028/model/InvocationTask.cpp
+  src/v20201028/model/ModifyInvokerResponse.cpp
   src/v20201028/model/InvokerRecord.cpp
   src/v20201028/model/DescribeAutomationAgentStatusResponse.cpp
   src/v20201028/model/CreateInvokerResponse.cpp
-  src/v20201028/model/ModifyInvokerResponse.cpp
+  src/v20201028/model/CancelInvocationRequest.cpp
   src/v20201028/model/DeleteCommandRequest.cpp
   src/v20201028/model/DeleteInvokerRequest.cpp
   src/v20201028/model/InvokeCommandRequest.cpp

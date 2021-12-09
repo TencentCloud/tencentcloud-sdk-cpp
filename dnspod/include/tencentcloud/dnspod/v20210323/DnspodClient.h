@@ -47,6 +47,8 @@
 #include <tencentcloud/dnspod/v20210323/model/DescribeBatchTaskResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeDomainAliasListRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeDomainAliasListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainListRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainLogListRequest.h>
@@ -137,6 +139,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDomainResponse> DescribeDomainOutcome;
                 typedef std::future<DescribeDomainOutcome> DescribeDomainOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeDomainRequest&, DescribeDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDomainAliasListResponse> DescribeDomainAliasListOutcome;
+                typedef std::future<DescribeDomainAliasListOutcome> DescribeDomainAliasListOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DescribeDomainAliasListRequest&, DescribeDomainAliasListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainAliasListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDomainListResponse> DescribeDomainListOutcome;
                 typedef std::future<DescribeDomainListOutcome> DescribeDomainListOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeDomainListRequest&, DescribeDomainListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainListAsyncHandler;
@@ -310,6 +315,15 @@ namespace TencentCloud
                 DescribeDomainOutcome DescribeDomain(const Model::DescribeDomainRequest &request);
                 void DescribeDomainAsync(const Model::DescribeDomainRequest& request, const DescribeDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDomainOutcomeCallable DescribeDomainCallable(const Model::DescribeDomainRequest& request);
+
+                /**
+                 *获取域名别名列表
+                 * @param req DescribeDomainAliasListRequest
+                 * @return DescribeDomainAliasListOutcome
+                 */
+                DescribeDomainAliasListOutcome DescribeDomainAliasList(const Model::DescribeDomainAliasListRequest &request);
+                void DescribeDomainAliasListAsync(const Model::DescribeDomainAliasListRequest& request, const DescribeDomainAliasListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDomainAliasListOutcomeCallable DescribeDomainAliasListCallable(const Model::DescribeDomainAliasListRequest& request);
 
                 /**
                  *获取域名列表

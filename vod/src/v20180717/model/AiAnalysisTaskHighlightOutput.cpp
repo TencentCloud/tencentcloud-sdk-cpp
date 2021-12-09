@@ -21,7 +21,9 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 AiAnalysisTaskHighlightOutput::AiAnalysisTaskHighlightOutput() :
-    m_highlightSetHasBeenSet(false)
+    m_highlightSetHasBeenSet(false),
+    m_highlightSetFileUrlHasBeenSet(false),
+    m_highlightSetFileUrlExpireTimeHasBeenSet(false)
 {
 }
 
@@ -50,6 +52,26 @@ CoreInternalOutcome AiAnalysisTaskHighlightOutput::Deserialize(const rapidjson::
         m_highlightSetHasBeenSet = true;
     }
 
+    if (value.HasMember("HighlightSetFileUrl") && !value["HighlightSetFileUrl"].IsNull())
+    {
+        if (!value["HighlightSetFileUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisTaskHighlightOutput.HighlightSetFileUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_highlightSetFileUrl = string(value["HighlightSetFileUrl"].GetString());
+        m_highlightSetFileUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("HighlightSetFileUrlExpireTime") && !value["HighlightSetFileUrlExpireTime"].IsNull())
+    {
+        if (!value["HighlightSetFileUrlExpireTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisTaskHighlightOutput.HighlightSetFileUrlExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_highlightSetFileUrlExpireTime = string(value["HighlightSetFileUrlExpireTime"].GetString());
+        m_highlightSetFileUrlExpireTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +94,22 @@ void AiAnalysisTaskHighlightOutput::ToJsonObject(rapidjson::Value &value, rapidj
         }
     }
 
+    if (m_highlightSetFileUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HighlightSetFileUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_highlightSetFileUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_highlightSetFileUrlExpireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HighlightSetFileUrlExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_highlightSetFileUrlExpireTime.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
@@ -89,5 +127,37 @@ void AiAnalysisTaskHighlightOutput::SetHighlightSet(const vector<MediaAiAnalysis
 bool AiAnalysisTaskHighlightOutput::HighlightSetHasBeenSet() const
 {
     return m_highlightSetHasBeenSet;
+}
+
+string AiAnalysisTaskHighlightOutput::GetHighlightSetFileUrl() const
+{
+    return m_highlightSetFileUrl;
+}
+
+void AiAnalysisTaskHighlightOutput::SetHighlightSetFileUrl(const string& _highlightSetFileUrl)
+{
+    m_highlightSetFileUrl = _highlightSetFileUrl;
+    m_highlightSetFileUrlHasBeenSet = true;
+}
+
+bool AiAnalysisTaskHighlightOutput::HighlightSetFileUrlHasBeenSet() const
+{
+    return m_highlightSetFileUrlHasBeenSet;
+}
+
+string AiAnalysisTaskHighlightOutput::GetHighlightSetFileUrlExpireTime() const
+{
+    return m_highlightSetFileUrlExpireTime;
+}
+
+void AiAnalysisTaskHighlightOutput::SetHighlightSetFileUrlExpireTime(const string& _highlightSetFileUrlExpireTime)
+{
+    m_highlightSetFileUrlExpireTime = _highlightSetFileUrlExpireTime;
+    m_highlightSetFileUrlExpireTimeHasBeenSet = true;
+}
+
+bool AiAnalysisTaskHighlightOutput::HighlightSetFileUrlExpireTimeHasBeenSet() const
+{
+    return m_highlightSetFileUrlExpireTimeHasBeenSet;
 }
 

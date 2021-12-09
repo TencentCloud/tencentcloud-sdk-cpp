@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool BusinessCodeNameHasBeenSet() const;
 
                     /**
-                     * 获取子产品：云产品子类，如云服务器CVM-标准型S1， 当没有获取到子产品名称时，返回"-"
-                     * @return ProductCodeName 子产品：云产品子类，如云服务器CVM-标准型S1， 当没有获取到子产品名称时，返回"-"
+                     * 获取子产品名称：云产品子类，如云服务器CVM-标准型S1， 当没有获取到子产品名称时，返回"-"
+                     * @return ProductCodeName 子产品名称：云产品子类，如云服务器CVM-标准型S1， 当没有获取到子产品名称时，返回"-"
                      */
                     std::string GetProductCodeName() const;
 
                     /**
-                     * 设置子产品：云产品子类，如云服务器CVM-标准型S1， 当没有获取到子产品名称时，返回"-"
-                     * @param ProductCodeName 子产品：云产品子类，如云服务器CVM-标准型S1， 当没有获取到子产品名称时，返回"-"
+                     * 设置子产品名称：云产品子类，如云服务器CVM-标准型S1， 当没有获取到子产品名称时，返回"-"
+                     * @param ProductCodeName 子产品名称：云产品子类，如云服务器CVM-标准型S1， 当没有获取到子产品名称时，返回"-"
                      */
                     void SetProductCodeName(const std::string& _productCodeName);
 
@@ -596,14 +596,14 @@ namespace TencentCloud
                     bool OperateUinHasBeenSet() const;
 
                     /**
-                     * 获取商品名称代码
-                     * @return BusinessCode 商品名称代码
+                     * 获取产品名称代码
+                     * @return BusinessCode 产品名称代码
                      */
                     std::string GetBusinessCode() const;
 
                     /**
-                     * 设置商品名称代码
-                     * @param BusinessCode 商品名称代码
+                     * 设置产品名称代码
+                     * @param BusinessCode 产品名称代码
                      */
                     void SetBusinessCode(const std::string& _businessCode);
 
@@ -614,14 +614,14 @@ namespace TencentCloud
                     bool BusinessCodeHasBeenSet() const;
 
                     /**
-                     * 获取子商品名称代码
-                     * @return ProductCode 子商品名称代码
+                     * 获取子产品名称代码
+                     * @return ProductCode 子产品名称代码
                      */
                     std::string GetProductCode() const;
 
                     /**
-                     * 设置子商品名称代码
-                     * @param ProductCode 子商品名称代码
+                     * 设置子产品名称代码
+                     * @param ProductCode 子产品名称代码
                      */
                     void SetProductCode(const std::string& _productCode);
 
@@ -658,7 +658,7 @@ namespace TencentCloud
                     bool m_businessCodeNameHasBeenSet;
 
                     /**
-                     * 子产品：云产品子类，如云服务器CVM-标准型S1， 当没有获取到子产品名称时，返回"-"
+                     * 子产品名称：云产品子类，如云服务器CVM-标准型S1， 当没有获取到子产品名称时，返回"-"
                      */
                     std::string m_productCodeName;
                     bool m_productCodeNameHasBeenSet;
@@ -834,13 +834,13 @@ namespace TencentCloud
                     bool m_operateUinHasBeenSet;
 
                     /**
-                     * 商品名称代码
+                     * 产品名称代码
                      */
                     std::string m_businessCode;
                     bool m_businessCodeHasBeenSet;
 
                     /**
-                     * 子商品名称代码
+                     * 子产品名称代码
                      */
                     std::string m_productCode;
                     bool m_productCodeHasBeenSet;

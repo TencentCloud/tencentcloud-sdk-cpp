@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool PayerUinHasBeenSet() const;
 
                     /**
-                     * 获取业务名称
-                     * @return BusinessCodeName 业务名称
+                     * 获取产品名称
+                     * @return BusinessCodeName 产品名称
                      */
                     std::string GetBusinessCodeName() const;
 
                     /**
-                     * 设置业务名称
-                     * @param BusinessCodeName 业务名称
+                     * 设置产品名称
+                     * @param BusinessCodeName 产品名称
                      */
                     void SetBusinessCodeName(const std::string& _businessCodeName);
 
@@ -84,14 +84,14 @@ namespace TencentCloud
                     bool BusinessCodeNameHasBeenSet() const;
 
                     /**
-                     * 获取产品名称
-                     * @return ProductCodeName 产品名称
+                     * 获取子产品名称
+                     * @return ProductCodeName 子产品名称
                      */
                     std::string GetProductCodeName() const;
 
                     /**
-                     * 设置产品名称
-                     * @param ProductCodeName 产品名称
+                     * 设置子产品名称
+                     * @param ProductCodeName 子产品名称
                      */
                     void SetProductCodeName(const std::string& _productCodeName);
 
@@ -322,14 +322,14 @@ namespace TencentCloud
                     bool ComponentSetHasBeenSet() const;
 
                     /**
-                     * 获取产品代码
-                     * @return ProductCode 产品代码
+                     * 获取子产品名称代码
+                     * @return ProductCode 子产品名称代码
                      */
                     std::string GetProductCode() const;
 
                     /**
-                     * 设置产品代码
-                     * @param ProductCode 产品代码
+                     * 设置子产品名称代码
+                     * @param ProductCode 子产品名称代码
                      */
                     void SetProductCode(const std::string& _productCode);
 
@@ -348,13 +348,13 @@ namespace TencentCloud
                     bool m_payerUinHasBeenSet;
 
                     /**
-                     * 业务名称
+                     * 产品名称
                      */
                     std::string m_businessCodeName;
                     bool m_businessCodeNameHasBeenSet;
 
                     /**
-                     * 产品名称
+                     * 子产品名称
                      */
                     std::string m_productCodeName;
                     bool m_productCodeNameHasBeenSet;
@@ -433,7 +433,7 @@ namespace TencentCloud
                     bool m_componentSetHasBeenSet;
 
                     /**
-                     * 产品代码
+                     * 子产品名称代码
                      */
                     std::string m_productCode;
                     bool m_productCodeHasBeenSet;

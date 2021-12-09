@@ -26,7 +26,8 @@ TaskStatus::TaskStatus() :
     m_statusStrHasBeenSet(false),
     m_resultHasBeenSet(false),
     m_errorMsgHasBeenSet(false),
-    m_resultDetailHasBeenSet(false)
+    m_resultDetailHasBeenSet(false),
+    m_audioDurationHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome TaskStatus::Deserialize(const rapidjson::Value &value)
         m_resultDetailHasBeenSet = true;
     }
 
+    if (value.HasMember("AudioDuration") && !value["AudioDuration"].IsNull())
+    {
+        if (!value["AudioDuration"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskStatus.AudioDuration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_audioDuration = value["AudioDuration"].GetDouble();
+        m_audioDurationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -165,6 +176,14 @@ void TaskStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_audioDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioDuration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_audioDuration, allocator);
     }
 
 }
@@ -264,5 +283,21 @@ void TaskStatus::SetResultDetail(const vector<SentenceDetail>& _resultDetail)
 bool TaskStatus::ResultDetailHasBeenSet() const
 {
     return m_resultDetailHasBeenSet;
+}
+
+double TaskStatus::GetAudioDuration() const
+{
+    return m_audioDuration;
+}
+
+void TaskStatus::SetAudioDuration(const double& _audioDuration)
+{
+    m_audioDuration = _audioDuration;
+    m_audioDurationHasBeenSet = true;
+}
+
+bool TaskStatus::AudioDurationHasBeenSet() const
+{
+    return m_audioDurationHasBeenSet;
 }
 

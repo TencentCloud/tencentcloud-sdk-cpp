@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool NamespaceHasBeenSet() const;
 
                     /**
-                     * 获取优雅关停
-                     * @return GraceShutdown 优雅关停
+                     * 获取该参数已下线
+                     * @return GraceShutdown 该参数已下线
                      */
                     bool GetGraceShutdown() const;
 
                     /**
-                     * 设置优雅关停
-                     * @param GraceShutdown 优雅关停
+                     * 设置该参数已下线
+                     * @param GraceShutdown 该参数已下线
                      */
                     void SetGraceShutdown(const bool& _graceShutdown);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_namespaceHasBeenSet;
 
                     /**
-                     * 优雅关停
+                     * 该参数已下线
                      */
                     bool m_graceShutdown;
                     bool m_graceShutdownHasBeenSet;

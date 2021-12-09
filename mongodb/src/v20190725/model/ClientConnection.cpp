@@ -22,7 +22,8 @@ using namespace std;
 
 ClientConnection::ClientConnection() :
     m_iPHasBeenSet(false),
-    m_countHasBeenSet(false)
+    m_countHasBeenSet(false),
+    m_internalServiceHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome ClientConnection::Deserialize(const rapidjson::Value &value)
         m_countHasBeenSet = true;
     }
 
+    if (value.HasMember("InternalService") && !value["InternalService"].IsNull())
+    {
+        if (!value["InternalService"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClientConnection.InternalService` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_internalService = value["InternalService"].GetBool();
+        m_internalServiceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void ClientConnection::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Count";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_count, allocator);
+    }
+
+    if (m_internalServiceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InternalService";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_internalService, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void ClientConnection::SetCount(const uint64_t& _count)
 bool ClientConnection::CountHasBeenSet() const
 {
     return m_countHasBeenSet;
+}
+
+bool ClientConnection::GetInternalService() const
+{
+    return m_internalService;
+}
+
+void ClientConnection::SetInternalService(const bool& _internalService)
+{
+    m_internalService = _internalService;
+    m_internalServiceHasBeenSet = true;
+}
+
+bool ClientConnection::InternalServiceHasBeenSet() const
+{
+    return m_internalServiceHasBeenSet;
 }
 

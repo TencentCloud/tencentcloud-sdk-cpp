@@ -556,6 +556,49 @@ DnspodClient::DescribeDomainOutcomeCallable DnspodClient::DescribeDomainCallable
     return task->get_future();
 }
 
+DnspodClient::DescribeDomainAliasListOutcome DnspodClient::DescribeDomainAliasList(const DescribeDomainAliasListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDomainAliasList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDomainAliasListResponse rsp = DescribeDomainAliasListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDomainAliasListOutcome(rsp);
+        else
+            return DescribeDomainAliasListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDomainAliasListOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DescribeDomainAliasListAsync(const DescribeDomainAliasListRequest& request, const DescribeDomainAliasListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDomainAliasList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DescribeDomainAliasListOutcomeCallable DnspodClient::DescribeDomainAliasListCallable(const DescribeDomainAliasListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDomainAliasListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDomainAliasList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DnspodClient::DescribeDomainListOutcome DnspodClient::DescribeDomainList(const DescribeDomainListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDomainList");

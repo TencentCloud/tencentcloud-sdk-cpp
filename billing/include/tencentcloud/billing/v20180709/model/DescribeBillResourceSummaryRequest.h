@@ -167,6 +167,7 @@ namespace TencentCloud
 按量计费冲正
 按量计费冲正
 按量计费冲正
+包年包月转按量
                      * @return ActionType 查询交易类型，如下：
 包年包月新购
 包年包月续费
@@ -197,6 +198,7 @@ namespace TencentCloud
 按量计费冲正
 按量计费冲正
 按量计费冲正
+包年包月转按量
                      */
                     std::string GetActionType() const;
 
@@ -231,6 +233,7 @@ namespace TencentCloud
 按量计费冲正
 按量计费冲正
 按量计费冲正
+包年包月转按量
                      * @param ActionType 查询交易类型，如下：
 包年包月新购
 包年包月续费
@@ -261,6 +264,7 @@ namespace TencentCloud
 按量计费冲正
 按量计费冲正
 按量计费冲正
+包年包月转按量
                      */
                     void SetActionType(const std::string& _actionType);
 
@@ -307,17 +311,17 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取商品名称代码
+                     * 获取产品名称代码
 备注：如需获取当月使用过的BusinessCode，请调用API：<a href="https://cloud.tencent.com/document/product/555/35761">获取产品汇总费用分布</a>
-                     * @return BusinessCode 商品名称代码
+                     * @return BusinessCode 产品名称代码
 备注：如需获取当月使用过的BusinessCode，请调用API：<a href="https://cloud.tencent.com/document/product/555/35761">获取产品汇总费用分布</a>
                      */
                     std::string GetBusinessCode() const;
 
                     /**
-                     * 设置商品名称代码
+                     * 设置产品名称代码
 备注：如需获取当月使用过的BusinessCode，请调用API：<a href="https://cloud.tencent.com/document/product/555/35761">获取产品汇总费用分布</a>
-                     * @param BusinessCode 商品名称代码
+                     * @param BusinessCode 产品名称代码
 备注：如需获取当月使用过的BusinessCode，请调用API：<a href="https://cloud.tencent.com/document/product/555/35761">获取产品汇总费用分布</a>
                      */
                     void SetBusinessCode(const std::string& _businessCode);
@@ -392,6 +396,7 @@ namespace TencentCloud
 按量计费冲正
 按量计费冲正
 按量计费冲正
+包年包月转按量
                      */
                     std::string m_actionType;
                     bool m_actionTypeHasBeenSet;
@@ -409,7 +414,7 @@ namespace TencentCloud
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 商品名称代码
+                     * 产品名称代码
 备注：如需获取当月使用过的BusinessCode，请调用API：<a href="https://cloud.tencent.com/document/product/555/35761">获取产品汇总费用分布</a>
                      */
                     std::string m_businessCode;

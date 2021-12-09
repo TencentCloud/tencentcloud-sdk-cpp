@@ -642,6 +642,49 @@ TemClient::ModifyApplicationInfoOutcomeCallable TemClient::ModifyApplicationInfo
     return task->get_future();
 }
 
+TemClient::ModifyApplicationReplicasOutcome TemClient::ModifyApplicationReplicas(const ModifyApplicationReplicasRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyApplicationReplicas");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyApplicationReplicasResponse rsp = ModifyApplicationReplicasResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyApplicationReplicasOutcome(rsp);
+        else
+            return ModifyApplicationReplicasOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyApplicationReplicasOutcome(outcome.GetError());
+    }
+}
+
+void TemClient::ModifyApplicationReplicasAsync(const ModifyApplicationReplicasRequest& request, const ModifyApplicationReplicasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyApplicationReplicas(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TemClient::ModifyApplicationReplicasOutcomeCallable TemClient::ModifyApplicationReplicasCallable(const ModifyApplicationReplicasRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyApplicationReplicasOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyApplicationReplicas(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TemClient::ModifyEnvironmentOutcome TemClient::ModifyEnvironment(const ModifyEnvironmentRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyEnvironment");

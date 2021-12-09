@@ -161,6 +161,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTopicRuleResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/PublishMessageRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/PublishMessageResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/PublishRRPCMessageRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/PublishRRPCMessageResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ReleaseStudioProductRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ReleaseStudioProductResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchPositionSpaceRequest.h>
@@ -396,6 +398,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::PublishMessageResponse> PublishMessageOutcome;
                 typedef std::future<PublishMessageOutcome> PublishMessageOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::PublishMessageRequest&, PublishMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishMessageAsyncHandler;
+                typedef Outcome<Core::Error, Model::PublishRRPCMessageResponse> PublishRRPCMessageOutcome;
+                typedef std::future<PublishRRPCMessageOutcome> PublishRRPCMessageOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::PublishRRPCMessageRequest&, PublishRRPCMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishRRPCMessageAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReleaseStudioProductResponse> ReleaseStudioProductOutcome;
                 typedef std::future<ReleaseStudioProductOutcome> ReleaseStudioProductOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ReleaseStudioProductRequest&, ReleaseStudioProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseStudioProductAsyncHandler;
@@ -1040,6 +1045,15 @@ namespace TencentCloud
                 PublishMessageOutcome PublishMessage(const Model::PublishMessageRequest &request);
                 void PublishMessageAsync(const Model::PublishMessageRequest& request, const PublishMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 PublishMessageOutcomeCallable PublishMessageCallable(const Model::PublishMessageRequest& request);
+
+                /**
+                 *下发RRPC消息
+                 * @param req PublishRRPCMessageRequest
+                 * @return PublishRRPCMessageOutcome
+                 */
+                PublishRRPCMessageOutcome PublishRRPCMessage(const Model::PublishRRPCMessageRequest &request);
+                void PublishRRPCMessageAsync(const Model::PublishRRPCMessageRequest& request, const PublishRRPCMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PublishRRPCMessageOutcomeCallable PublishRRPCMessageCallable(const Model::PublishRRPCMessageRequest& request);
 
                 /**
                  *产品开发完成并测试通过后，通过发布产品将产品设置为发布状态

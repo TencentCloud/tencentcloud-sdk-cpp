@@ -24,7 +24,8 @@ FunctionVersion::FunctionVersion() :
     m_versionHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_addTimeHasBeenSet(false),
-    m_modTimeHasBeenSet(false)
+    m_modTimeHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome FunctionVersion::Deserialize(const rapidjson::Value &value)
         m_modTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FunctionVersion.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void FunctionVersion::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ModTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void FunctionVersion::SetModTime(const string& _modTime)
 bool FunctionVersion::ModTimeHasBeenSet() const
 {
     return m_modTimeHasBeenSet;
+}
+
+string FunctionVersion::GetStatus() const
+{
+    return m_status;
+}
+
+void FunctionVersion::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool FunctionVersion::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

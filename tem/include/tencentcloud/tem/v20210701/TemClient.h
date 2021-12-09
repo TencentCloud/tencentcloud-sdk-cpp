@@ -51,6 +51,8 @@
 #include <tencentcloud/tem/v20210701/model/GenerateApplicationPackageDownloadUrlResponse.h>
 #include <tencentcloud/tem/v20210701/model/ModifyApplicationInfoRequest.h>
 #include <tencentcloud/tem/v20210701/model/ModifyApplicationInfoResponse.h>
+#include <tencentcloud/tem/v20210701/model/ModifyApplicationReplicasRequest.h>
+#include <tencentcloud/tem/v20210701/model/ModifyApplicationReplicasResponse.h>
 #include <tencentcloud/tem/v20210701/model/ModifyEnvironmentRequest.h>
 #include <tencentcloud/tem/v20210701/model/ModifyEnvironmentResponse.h>
 #include <tencentcloud/tem/v20210701/model/ModifyIngressRequest.h>
@@ -117,6 +119,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyApplicationInfoResponse> ModifyApplicationInfoOutcome;
                 typedef std::future<ModifyApplicationInfoOutcome> ModifyApplicationInfoOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::ModifyApplicationInfoRequest&, ModifyApplicationInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApplicationInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyApplicationReplicasResponse> ModifyApplicationReplicasOutcome;
+                typedef std::future<ModifyApplicationReplicasOutcome> ModifyApplicationReplicasOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::ModifyApplicationReplicasRequest&, ModifyApplicationReplicasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApplicationReplicasAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyEnvironmentResponse> ModifyEnvironmentOutcome;
                 typedef std::future<ModifyEnvironmentOutcome> ModifyEnvironmentOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::ModifyEnvironmentRequest&, ModifyEnvironmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEnvironmentAsyncHandler;
@@ -260,6 +265,15 @@ namespace TencentCloud
                 ModifyApplicationInfoOutcome ModifyApplicationInfo(const Model::ModifyApplicationInfoRequest &request);
                 void ModifyApplicationInfoAsync(const Model::ModifyApplicationInfoRequest& request, const ModifyApplicationInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyApplicationInfoOutcomeCallable ModifyApplicationInfoCallable(const Model::ModifyApplicationInfoRequest& request);
+
+                /**
+                 *修改应用实例数量
+                 * @param req ModifyApplicationReplicasRequest
+                 * @return ModifyApplicationReplicasOutcome
+                 */
+                ModifyApplicationReplicasOutcome ModifyApplicationReplicas(const Model::ModifyApplicationReplicasRequest &request);
+                void ModifyApplicationReplicasAsync(const Model::ModifyApplicationReplicasRequest& request, const ModifyApplicationReplicasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyApplicationReplicasOutcomeCallable ModifyApplicationReplicasCallable(const Model::ModifyApplicationReplicasRequest& request);
 
                 /**
                  *编辑环境

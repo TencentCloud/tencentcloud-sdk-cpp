@@ -21,42 +21,50 @@ set(rum_public_header
 set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/RumProject.h
   include/tencentcloud/rum/v20210622/model/DescribeDataPerformancePageResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeLogListResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeDataPerformancePageRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeProjectsResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeScoresRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeErrorRequest.h
   include/tencentcloud/rum/v20210622/model/ScoreInfo.h
   include/tencentcloud/rum/v20210622/model/DescribeProjectsRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeLogListResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataEventUrlResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeLogListRequest.h
   include/tencentcloud/rum/v20210622/model/Filter.h
   include/tencentcloud/rum/v20210622/model/DescribeDataLogUrlStatisticsResponse.h
   include/tencentcloud/rum/v20210622/model/CreateProjectResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeLogListRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeScoresResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataEventUrlRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataPvUrlStatisticsRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeErrorResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeDataLogUrlStatisticsRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataPvUrlStatisticsResponse.h
   include/tencentcloud/rum/v20210622/model/CreateProjectRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeScoresResponse.h
   )
 
 set(rum_src
   src/v20210622/RumClient.cpp
   src/v20210622/model/RumProject.cpp
   src/v20210622/model/DescribeDataPerformancePageResponse.cpp
+  src/v20210622/model/DescribeLogListResponse.cpp
   src/v20210622/model/DescribeDataPerformancePageRequest.cpp
   src/v20210622/model/DescribeProjectsResponse.cpp
   src/v20210622/model/DescribeScoresRequest.cpp
   src/v20210622/model/DescribeErrorRequest.cpp
   src/v20210622/model/ScoreInfo.cpp
   src/v20210622/model/DescribeProjectsRequest.cpp
-  src/v20210622/model/DescribeLogListResponse.cpp
+  src/v20210622/model/DescribeDataEventUrlResponse.cpp
+  src/v20210622/model/DescribeLogListRequest.cpp
   src/v20210622/model/Filter.cpp
   src/v20210622/model/DescribeDataLogUrlStatisticsResponse.cpp
   src/v20210622/model/CreateProjectResponse.cpp
-  src/v20210622/model/DescribeLogListRequest.cpp
-  src/v20210622/model/DescribeScoresResponse.cpp
+  src/v20210622/model/DescribeDataEventUrlRequest.cpp
+  src/v20210622/model/DescribeDataPvUrlStatisticsRequest.cpp
   src/v20210622/model/DescribeErrorResponse.cpp
   src/v20210622/model/DescribeDataLogUrlStatisticsRequest.cpp
+  src/v20210622/model/DescribeDataPvUrlStatisticsResponse.cpp
   src/v20210622/model/CreateProjectRequest.cpp
+  src/v20210622/model/DescribeScoresResponse.cpp
   )
 
 set(rum_include
