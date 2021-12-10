@@ -35,7 +35,8 @@ InquiryPriceCreateInstanceRequest::InquiryPriceCreateInstanceRequest() :
     m_metaTypeHasBeenSet(false),
     m_unifyMetaInstanceIdHasBeenSet(false),
     m_metaDBInfoHasBeenSet(false),
-    m_productIdHasBeenSet(false)
+    m_productIdHasBeenSet(false),
+    m_sceneNameHasBeenSet(false)
 {
 }
 
@@ -157,6 +158,14 @@ string InquiryPriceCreateInstanceRequest::ToJsonString() const
         string key = "ProductId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_productId, allocator);
+    }
+
+    if (m_sceneNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sceneName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -373,6 +382,22 @@ void InquiryPriceCreateInstanceRequest::SetProductId(const uint64_t& _productId)
 bool InquiryPriceCreateInstanceRequest::ProductIdHasBeenSet() const
 {
     return m_productIdHasBeenSet;
+}
+
+string InquiryPriceCreateInstanceRequest::GetSceneName() const
+{
+    return m_sceneName;
+}
+
+void InquiryPriceCreateInstanceRequest::SetSceneName(const string& _sceneName)
+{
+    m_sceneName = _sceneName;
+    m_sceneNameHasBeenSet = true;
+}
+
+bool InquiryPriceCreateInstanceRequest::SceneNameHasBeenSet() const
+{
+    return m_sceneNameHasBeenSet;
 }
 
 

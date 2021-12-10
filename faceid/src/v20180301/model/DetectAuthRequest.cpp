@@ -30,7 +30,8 @@ DetectAuthRequest::DetectAuthRequest() :
     m_redirectUrlHasBeenSet(false),
     m_extraHasBeenSet(false),
     m_imageBase64HasBeenSet(false),
-    m_encryptionHasBeenSet(false)
+    m_encryptionHasBeenSet(false),
+    m_intentionVerifyTextHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,14 @@ string DetectAuthRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_encryption.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_intentionVerifyTextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntentionVerifyText";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_intentionVerifyText.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -240,6 +249,22 @@ void DetectAuthRequest::SetEncryption(const Encryption& _encryption)
 bool DetectAuthRequest::EncryptionHasBeenSet() const
 {
     return m_encryptionHasBeenSet;
+}
+
+string DetectAuthRequest::GetIntentionVerifyText() const
+{
+    return m_intentionVerifyText;
+}
+
+void DetectAuthRequest::SetIntentionVerifyText(const string& _intentionVerifyText)
+{
+    m_intentionVerifyText = _intentionVerifyText;
+    m_intentionVerifyTextHasBeenSet = true;
+}
+
+bool DetectAuthRequest::IntentionVerifyTextHasBeenSet() const
+{
+    return m_intentionVerifyTextHasBeenSet;
 }
 
 

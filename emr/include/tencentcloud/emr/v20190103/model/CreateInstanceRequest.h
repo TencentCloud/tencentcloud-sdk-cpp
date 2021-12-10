@@ -700,6 +700,40 @@ namespace TencentCloud
                      */
                     bool ApplicationRoleHasBeenSet() const;
 
+                    /**
+                     * 获取场景化取值：
+Hadoop-Kudu
+Hadoop-Zookeeper
+Hadoop-Presto
+Hadoop-Hbase
+                     * @return SceneName 场景化取值：
+Hadoop-Kudu
+Hadoop-Zookeeper
+Hadoop-Presto
+Hadoop-Hbase
+                     */
+                    std::string GetSceneName() const;
+
+                    /**
+                     * 设置场景化取值：
+Hadoop-Kudu
+Hadoop-Zookeeper
+Hadoop-Presto
+Hadoop-Hbase
+                     * @param SceneName 场景化取值：
+Hadoop-Kudu
+Hadoop-Zookeeper
+Hadoop-Presto
+Hadoop-Hbase
+                     */
+                    void SetSceneName(const std::string& _sceneName);
+
+                    /**
+                     * 判断参数 SceneName 是否已赋值
+                     * @return SceneName 是否已赋值
+                     */
+                    bool SceneNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -904,6 +938,16 @@ namespace TencentCloud
                      */
                     std::string m_applicationRole;
                     bool m_applicationRoleHasBeenSet;
+
+                    /**
+                     * 场景化取值：
+Hadoop-Kudu
+Hadoop-Zookeeper
+Hadoop-Presto
+Hadoop-Hbase
+                     */
+                    std::string m_sceneName;
+                    bool m_sceneNameHasBeenSet;
 
                 };
             }

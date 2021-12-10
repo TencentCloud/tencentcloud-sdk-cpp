@@ -105,17 +105,17 @@ namespace TencentCloud
                     bool RegistryIdHasBeenSet() const;
 
                     /**
-                     * 获取应用的ENTRYPOINT
+                     * 获取参数已废弃
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EntryPoint 应用的ENTRYPOINT
+                     * @return EntryPoint 参数已废弃
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetEntryPoint() const;
 
                     /**
-                     * 设置应用的ENTRYPOINT
+                     * 设置参数已废弃
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EntryPoint 应用的ENTRYPOINT
+                     * @param EntryPoint 参数已废弃
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetEntryPoint(const std::string& _entryPoint);
@@ -192,7 +192,7 @@ namespace TencentCloud
                     bool m_registryIdHasBeenSet;
 
                     /**
-                     * 应用的ENTRYPOINT
+                     * 参数已废弃
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_entryPoint;

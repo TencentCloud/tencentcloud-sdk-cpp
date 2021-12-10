@@ -49,7 +49,8 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_metaTypeHasBeenSet(false),
     m_unifyMetaInstanceIdHasBeenSet(false),
     m_metaDBInfoHasBeenSet(false),
-    m_applicationRoleHasBeenSet(false)
+    m_applicationRoleHasBeenSet(false),
+    m_sceneNameHasBeenSet(false)
 {
 }
 
@@ -304,6 +305,14 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "ApplicationRole";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_applicationRole.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sceneNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sceneName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -744,6 +753,22 @@ void CreateInstanceRequest::SetApplicationRole(const string& _applicationRole)
 bool CreateInstanceRequest::ApplicationRoleHasBeenSet() const
 {
     return m_applicationRoleHasBeenSet;
+}
+
+string CreateInstanceRequest::GetSceneName() const
+{
+    return m_sceneName;
+}
+
+void CreateInstanceRequest::SetSceneName(const string& _sceneName)
+{
+    m_sceneName = _sceneName;
+    m_sceneNameHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::SceneNameHasBeenSet() const
+{
+    return m_sceneNameHasBeenSet;
 }
 
 

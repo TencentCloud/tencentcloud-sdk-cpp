@@ -775,6 +775,28 @@ notInService       不在服务区
                      */
                     bool UuiHasBeenSet() const;
 
+                    /**
+                     * 获取IVR按键信息（e.g. [{"Key":"1","Label":"非常满意"}]）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IVRKeyPressedEx IVR按键信息（e.g. [{"Key":"1","Label":"非常满意"}]）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<IVRKeyPressedElement> GetIVRKeyPressedEx() const;
+
+                    /**
+                     * 设置IVR按键信息（e.g. [{"Key":"1","Label":"非常满意"}]）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IVRKeyPressedEx IVR按键信息（e.g. [{"Key":"1","Label":"非常满意"}]）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIVRKeyPressedEx(const std::vector<IVRKeyPressedElement>& _iVRKeyPressedEx);
+
+                    /**
+                     * 判断参数 IVRKeyPressedEx 是否已赋值
+                     * @return IVRKeyPressedEx 是否已赋值
+                     */
+                    bool IVRKeyPressedExHasBeenSet() const;
+
                 private:
 
                     /**
@@ -998,6 +1020,13 @@ notInService       不在服务区
                      */
                     std::string m_uui;
                     bool m_uuiHasBeenSet;
+
+                    /**
+                     * IVR按键信息（e.g. [{"Key":"1","Label":"非常满意"}]）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<IVRKeyPressedElement> m_iVRKeyPressedEx;
+                    bool m_iVRKeyPressedExHasBeenSet;
 
                 };
             }

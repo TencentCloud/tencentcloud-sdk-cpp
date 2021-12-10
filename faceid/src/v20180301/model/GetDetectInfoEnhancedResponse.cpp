@@ -28,7 +28,8 @@ GetDetectInfoEnhancedResponse::GetDetectInfoEnhancedResponse() :
     m_idCardDataHasBeenSet(false),
     m_bestFrameHasBeenSet(false),
     m_videoDataHasBeenSet(false),
-    m_encryptionHasBeenSet(false)
+    m_encryptionHasBeenSet(false),
+    m_intentionVerifyDataHasBeenSet(false)
 {
 }
 
@@ -151,6 +152,23 @@ CoreInternalOutcome GetDetectInfoEnhancedResponse::Deserialize(const string &pay
         m_encryptionHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IntentionVerifyData") && !rsp["IntentionVerifyData"].IsNull())
+    {
+        if (!rsp["IntentionVerifyData"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntentionVerifyData` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_intentionVerifyData.Deserialize(rsp["IntentionVerifyData"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_intentionVerifyDataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -204,6 +222,15 @@ string GetDetectInfoEnhancedResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_encryption.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_intentionVerifyDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntentionVerifyData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_intentionVerifyData.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -266,6 +293,16 @@ Encryption GetDetectInfoEnhancedResponse::GetEncryption() const
 bool GetDetectInfoEnhancedResponse::EncryptionHasBeenSet() const
 {
     return m_encryptionHasBeenSet;
+}
+
+IntentionVerifyData GetDetectInfoEnhancedResponse::GetIntentionVerifyData() const
+{
+    return m_intentionVerifyData;
+}
+
+bool GetDetectInfoEnhancedResponse::IntentionVerifyDataHasBeenSet() const
+{
+    return m_intentionVerifyDataHasBeenSet;
 }
 
 

@@ -2147,6 +2147,49 @@ IotexplorerClient::GetDeviceLocationHistoryOutcomeCallable IotexplorerClient::Ge
     return task->get_future();
 }
 
+IotexplorerClient::GetFamilyDeviceUserListOutcome IotexplorerClient::GetFamilyDeviceUserList(const GetFamilyDeviceUserListRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetFamilyDeviceUserList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetFamilyDeviceUserListResponse rsp = GetFamilyDeviceUserListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetFamilyDeviceUserListOutcome(rsp);
+        else
+            return GetFamilyDeviceUserListOutcome(o.GetError());
+    }
+    else
+    {
+        return GetFamilyDeviceUserListOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::GetFamilyDeviceUserListAsync(const GetFamilyDeviceUserListRequest& request, const GetFamilyDeviceUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetFamilyDeviceUserList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::GetFamilyDeviceUserListOutcomeCallable IotexplorerClient::GetFamilyDeviceUserListCallable(const GetFamilyDeviceUserListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetFamilyDeviceUserListOutcome()>>(
+        [this, request]()
+        {
+            return this->GetFamilyDeviceUserList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::GetLoRaGatewayListOutcome IotexplorerClient::GetLoRaGatewayList(const GetLoRaGatewayListRequest &request)
 {
     auto outcome = MakeRequest(request, "GetLoRaGatewayList");

@@ -36,7 +36,8 @@ Template::Template() :
     m_electrocardiogramHasBeenSet(false),
     m_endoscopyHasBeenSet(false),
     m_prescriptionHasBeenSet(false),
-    m_vaccineCertificateHasBeenSet(false)
+    m_vaccineCertificateHasBeenSet(false),
+    m_ocrTextHasBeenSet(false)
 {
 }
 
@@ -310,6 +311,16 @@ CoreInternalOutcome Template::Deserialize(const rapidjson::Value &value)
         m_vaccineCertificateHasBeenSet = true;
     }
 
+    if (value.HasMember("OcrText") && !value["OcrText"].IsNull())
+    {
+        if (!value["OcrText"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Template.OcrText` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ocrText = string(value["OcrText"].GetString());
+        m_ocrTextHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -458,6 +469,14 @@ void Template::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_vaccineCertificate.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_ocrTextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OcrText";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ocrText.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -717,5 +736,21 @@ void Template::SetVaccineCertificate(const VaccineCertificate& _vaccineCertifica
 bool Template::VaccineCertificateHasBeenSet() const
 {
     return m_vaccineCertificateHasBeenSet;
+}
+
+string Template::GetOcrText() const
+{
+    return m_ocrText;
+}
+
+void Template::SetOcrText(const string& _ocrText)
+{
+    m_ocrText = _ocrText;
+    m_ocrTextHasBeenSet = true;
+}
+
+bool Template::OcrTextHasBeenSet() const
+{
+    return m_ocrTextHasBeenSet;
 }
 

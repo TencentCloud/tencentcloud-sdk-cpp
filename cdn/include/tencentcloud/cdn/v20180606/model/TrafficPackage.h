@@ -408,6 +408,28 @@ disabled：未启用
                      */
                     bool ConfigIdHasBeenSet() const;
 
+                    /**
+                     * 获取流量包当前续订模式，0 未续订、1到期续订、2用完续订、3到期或用完续订
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExtensionMode 流量包当前续订模式，0 未续订、1到期续订、2用完续订、3到期或用完续订
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetExtensionMode() const;
+
+                    /**
+                     * 设置流量包当前续订模式，0 未续订、1到期续订、2用完续订、3到期或用完续订
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ExtensionMode 流量包当前续订模式，0 未续订、1到期续订、2用完续订、3到期或用完续订
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExtensionMode(const uint64_t& _extensionMode);
+
+                    /**
+                     * 判断参数 ExtensionMode 是否已赋值
+                     * @return ExtensionMode 是否已赋值
+                     */
+                    bool ExtensionModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -525,6 +547,13 @@ disabled：未启用
                      */
                     int64_t m_configId;
                     bool m_configIdHasBeenSet;
+
+                    /**
+                     * 流量包当前续订模式，0 未续订、1到期续订、2用完续订、3到期或用完续订
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_extensionMode;
+                    bool m_extensionModeHasBeenSet;
 
                 };
             }

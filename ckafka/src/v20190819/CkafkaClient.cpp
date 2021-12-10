@@ -427,6 +427,49 @@ CkafkaClient::DeleteAclRuleOutcomeCallable CkafkaClient::DeleteAclRuleCallable(c
     return task->get_future();
 }
 
+CkafkaClient::DeleteInstancePreOutcome CkafkaClient::DeleteInstancePre(const DeleteInstancePreRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteInstancePre");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteInstancePreResponse rsp = DeleteInstancePreResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteInstancePreOutcome(rsp);
+        else
+            return DeleteInstancePreOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteInstancePreOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::DeleteInstancePreAsync(const DeleteInstancePreRequest& request, const DeleteInstancePreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteInstancePre(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::DeleteInstancePreOutcomeCallable CkafkaClient::DeleteInstancePreCallable(const DeleteInstancePreRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteInstancePreOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteInstancePre(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::DeleteRouteTriggerTimeOutcome CkafkaClient::DeleteRouteTriggerTime(const DeleteRouteTriggerTimeRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteRouteTriggerTime");

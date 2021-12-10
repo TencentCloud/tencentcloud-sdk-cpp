@@ -81,6 +81,7 @@ set(faceid_public_header_model
   include/tencentcloud/faceid/v20180301/model/DetectInfoIdCardData.h
   include/tencentcloud/faceid/v20180301/model/CheckPhoneAndNameRequest.h
   include/tencentcloud/faceid/v20180301/model/GetEidTokenResponse.h
+  include/tencentcloud/faceid/v20180301/model/IntentionVerifyData.h
   include/tencentcloud/faceid/v20180301/model/LivenessCompareRequest.h
   include/tencentcloud/faceid/v20180301/model/DetectDetail.h
   include/tencentcloud/faceid/v20180301/model/GetFaceIdResultResponse.h
@@ -153,6 +154,7 @@ set(faceid_src
   src/v20180301/model/DetectInfoIdCardData.cpp
   src/v20180301/model/CheckPhoneAndNameRequest.cpp
   src/v20180301/model/GetEidTokenResponse.cpp
+  src/v20180301/model/IntentionVerifyData.cpp
   src/v20180301/model/LivenessCompareRequest.cpp
   src/v20180301/model/DetectDetail.cpp
   src/v20180301/model/GetFaceIdResultResponse.cpp

@@ -26,6 +26,7 @@
 #include <tencentcloud/faceid/v20180301/model/DetectInfoBestFrame.h>
 #include <tencentcloud/faceid/v20180301/model/DetectInfoVideoData.h>
 #include <tencentcloud/faceid/v20180301/model/Encryption.h>
+#include <tencentcloud/faceid/v20180301/model/IntentionVerifyData.h>
 
 
 namespace TencentCloud
@@ -118,6 +119,20 @@ namespace TencentCloud
                      */
                     bool EncryptionHasBeenSet() const;
 
+                    /**
+                     * 获取意愿核身相关信息。若未使用意愿核身功能，该字段返回值可以不处理。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IntentionVerifyData 意愿核身相关信息。若未使用意愿核身功能，该字段返回值可以不处理。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    IntentionVerifyData GetIntentionVerifyData() const;
+
+                    /**
+                     * 判断参数 IntentionVerifyData 是否已赋值
+                     * @return IntentionVerifyData 是否已赋值
+                     */
+                    bool IntentionVerifyDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -154,6 +169,13 @@ namespace TencentCloud
                      */
                     Encryption m_encryption;
                     bool m_encryptionHasBeenSet;
+
+                    /**
+                     * 意愿核身相关信息。若未使用意愿核身功能，该字段返回值可以不处理。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    IntentionVerifyData m_intentionVerifyData;
+                    bool m_intentionVerifyDataHasBeenSet;
 
                 };
             }

@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool CmdHasBeenSet() const;
 
                     /**
-                     * 获取cpu 使用率 *1000
-                     * @return CPUUsage cpu 使用率 *1000
+                     * 获取CPU使用率 *1000
+                     * @return CPUUsage CPU使用率 *1000
                      */
                     uint64_t GetCPUUsage() const;
 
                     /**
-                     * 设置cpu 使用率 *1000
-                     * @param CPUUsage cpu 使用率 *1000
+                     * 设置CPU使用率 *1000
+                     * @param CPUUsage CPU使用率 *1000
                      */
                     void SetCPUUsage(const uint64_t& _cPUUsage);
 
@@ -373,7 +373,7 @@ namespace TencentCloud
                     bool m_cmdHasBeenSet;
 
                     /**
-                     * cpu 使用率 *1000
+                     * CPU使用率 *1000
                      */
                     uint64_t m_cPUUsage;
                     bool m_cPUUsageHasBeenSet;

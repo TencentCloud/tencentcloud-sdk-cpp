@@ -37,7 +37,8 @@ TrafficPackage::TrafficPackage() :
     m_extensionAvailableHasBeenSet(false),
     m_refundAvailableHasBeenSet(false),
     m_regionHasBeenSet(false),
-    m_configIdHasBeenSet(false)
+    m_configIdHasBeenSet(false),
+    m_extensionModeHasBeenSet(false)
 {
 }
 
@@ -216,6 +217,16 @@ CoreInternalOutcome TrafficPackage::Deserialize(const rapidjson::Value &value)
         m_configIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ExtensionMode") && !value["ExtensionMode"].IsNull())
+    {
+        if (!value["ExtensionMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrafficPackage.ExtensionMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_extensionMode = value["ExtensionMode"].GetUint64();
+        m_extensionModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -357,6 +368,14 @@ void TrafficPackage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ConfigId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_configId, allocator);
+    }
+
+    if (m_extensionModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtensionMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_extensionMode, allocator);
     }
 
 }
@@ -632,5 +651,21 @@ void TrafficPackage::SetConfigId(const int64_t& _configId)
 bool TrafficPackage::ConfigIdHasBeenSet() const
 {
     return m_configIdHasBeenSet;
+}
+
+uint64_t TrafficPackage::GetExtensionMode() const
+{
+    return m_extensionMode;
+}
+
+void TrafficPackage::SetExtensionMode(const uint64_t& _extensionMode)
+{
+    m_extensionMode = _extensionMode;
+    m_extensionModeHasBeenSet = true;
+}
+
+bool TrafficPackage::ExtensionModeHasBeenSet() const
+{
+    return m_extensionModeHasBeenSet;
 }
 

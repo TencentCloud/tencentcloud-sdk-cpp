@@ -413,6 +413,28 @@ namespace TencentCloud
                      */
                     bool VaccineCertificateHasBeenSet() const;
 
+                    /**
+                     * 获取OCR文本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OcrText OCR文本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOcrText() const;
+
+                    /**
+                     * 设置OCR文本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OcrText OCR文本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOcrText(const std::string& _ocrText);
+
+                    /**
+                     * 判断参数 OcrText 是否已赋值
+                     * @return OcrText 是否已赋值
+                     */
+                    bool OcrTextHasBeenSet() const;
+
                 private:
 
                     /**
@@ -526,6 +548,13 @@ namespace TencentCloud
                      */
                     VaccineCertificate m_vaccineCertificate;
                     bool m_vaccineCertificateHasBeenSet;
+
+                    /**
+                     * OCR文本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ocrText;
+                    bool m_ocrTextHasBeenSet;
 
                 };
             }

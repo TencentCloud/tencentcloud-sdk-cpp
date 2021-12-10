@@ -121,6 +121,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/GetDeviceListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetDeviceLocationHistoryRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetDeviceLocationHistoryResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetFamilyDeviceUserListRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetFamilyDeviceUserListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetLoRaGatewayListRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetLoRaGatewayListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetPositionSpaceListRequest.h>
@@ -338,6 +340,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetDeviceLocationHistoryResponse> GetDeviceLocationHistoryOutcome;
                 typedef std::future<GetDeviceLocationHistoryOutcome> GetDeviceLocationHistoryOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetDeviceLocationHistoryRequest&, GetDeviceLocationHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDeviceLocationHistoryAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetFamilyDeviceUserListResponse> GetFamilyDeviceUserListOutcome;
+                typedef std::future<GetFamilyDeviceUserListOutcome> GetFamilyDeviceUserListOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::GetFamilyDeviceUserListRequest&, GetFamilyDeviceUserListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFamilyDeviceUserListAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetLoRaGatewayListResponse> GetLoRaGatewayListOutcome;
                 typedef std::future<GetLoRaGatewayListOutcome> GetLoRaGatewayListOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetLoRaGatewayListRequest&, GetLoRaGatewayListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetLoRaGatewayListAsyncHandler;
@@ -865,6 +870,15 @@ namespace TencentCloud
                 GetDeviceLocationHistoryOutcome GetDeviceLocationHistory(const Model::GetDeviceLocationHistoryRequest &request);
                 void GetDeviceLocationHistoryAsync(const Model::GetDeviceLocationHistoryRequest& request, const GetDeviceLocationHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetDeviceLocationHistoryOutcomeCallable GetDeviceLocationHistoryCallable(const Model::GetDeviceLocationHistoryRequest& request);
+
+                /**
+                 *用于获取设备绑定的用户列表
+                 * @param req GetFamilyDeviceUserListRequest
+                 * @return GetFamilyDeviceUserListOutcome
+                 */
+                GetFamilyDeviceUserListOutcome GetFamilyDeviceUserList(const Model::GetFamilyDeviceUserListRequest &request);
+                void GetFamilyDeviceUserListAsync(const Model::GetFamilyDeviceUserListRequest& request, const GetFamilyDeviceUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetFamilyDeviceUserListOutcomeCallable GetFamilyDeviceUserListCallable(const Model::GetFamilyDeviceUserListRequest& request);
 
                 /**
                  *获取 LoRa 网关列表接口

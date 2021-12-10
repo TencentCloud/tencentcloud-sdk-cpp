@@ -195,6 +195,24 @@ Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。请
                      */
                     bool EncryptionHasBeenSet() const;
 
+                    /**
+                     * 获取意愿核身使用的文案，若未使用意愿核身功能，该字段无需传入。默认为空，最长可接受100的字符串长度。
+                     * @return IntentionVerifyText 意愿核身使用的文案，若未使用意愿核身功能，该字段无需传入。默认为空，最长可接受100的字符串长度。
+                     */
+                    std::string GetIntentionVerifyText() const;
+
+                    /**
+                     * 设置意愿核身使用的文案，若未使用意愿核身功能，该字段无需传入。默认为空，最长可接受100的字符串长度。
+                     * @param IntentionVerifyText 意愿核身使用的文案，若未使用意愿核身功能，该字段无需传入。默认为空，最长可接受100的字符串长度。
+                     */
+                    void SetIntentionVerifyText(const std::string& _intentionVerifyText);
+
+                    /**
+                     * 判断参数 IntentionVerifyText 是否已赋值
+                     * @return IntentionVerifyText 是否已赋值
+                     */
+                    bool IntentionVerifyTextHasBeenSet() const;
+
                 private:
 
                     /**
@@ -246,6 +264,12 @@ Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。请
                      */
                     Encryption m_encryption;
                     bool m_encryptionHasBeenSet;
+
+                    /**
+                     * 意愿核身使用的文案，若未使用意愿核身功能，该字段无需传入。默认为空，最长可接受100的字符串长度。
+                     */
+                    std::string m_intentionVerifyText;
+                    bool m_intentionVerifyTextHasBeenSet;
 
                 };
             }
