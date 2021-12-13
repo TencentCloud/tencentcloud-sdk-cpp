@@ -30,6 +30,7 @@ set(cii_public_header_model
   include/tencentcloud/cii/v20210408/model/PerStructDifference.h
   include/tencentcloud/cii/v20210408/model/UploadMedicalFileRequest.h
   include/tencentcloud/cii/v20210408/model/CompareMetricsData.h
+  include/tencentcloud/cii/v20210408/model/CreateAutoClassifyStructureTaskRequest.h
   include/tencentcloud/cii/v20210408/model/DescribeMachineUnderwriteRequest.h
   include/tencentcloud/cii/v20210408/model/ReviewDataTaskInfo.h
   include/tencentcloud/cii/v20210408/model/DescribeStructureResultRequest.h
@@ -42,12 +43,14 @@ set(cii_public_header_model
   include/tencentcloud/cii/v20210408/model/CreateStructureTaskResponse.h
   include/tencentcloud/cii/v20210408/model/DescribeStructureTaskResultResponse.h
   include/tencentcloud/cii/v20210408/model/DescribeMachineUnderwriteResponse.h
+  include/tencentcloud/cii/v20210408/model/CreateAutoClassifyStructureTaskResponse.h
   include/tencentcloud/cii/v20210408/model/CreateUnderwriteTaskByIdRequest.h
   include/tencentcloud/cii/v20210408/model/CreateUnderwriteTaskByIdResponse.h
   include/tencentcloud/cii/v20210408/model/StructureResultObject.h
   include/tencentcloud/cii/v20210408/model/CreateStructureTaskInfo.h
   include/tencentcloud/cii/v20210408/model/DescribeStructureDifferenceRequest.h
   include/tencentcloud/cii/v20210408/model/UploadMedicalFileResponse.h
+  include/tencentcloud/cii/v20210408/model/CreateAutoClassifyStructureTaskInfo.h
   include/tencentcloud/cii/v20210408/model/StructureModifyItem.h
   include/tencentcloud/cii/v20201210/model/DescribeStructCompareDataResponse.h
   include/tencentcloud/cii/v20201210/model/DescribeStructureTaskResultRequest.h
@@ -72,6 +75,7 @@ set(cii_src
   src/v20210408/model/PerStructDifference.cpp
   src/v20210408/model/UploadMedicalFileRequest.cpp
   src/v20210408/model/CompareMetricsData.cpp
+  src/v20210408/model/CreateAutoClassifyStructureTaskRequest.cpp
   src/v20210408/model/DescribeMachineUnderwriteRequest.cpp
   src/v20210408/model/ReviewDataTaskInfo.cpp
   src/v20210408/model/DescribeStructureResultRequest.cpp
@@ -84,12 +88,14 @@ set(cii_src
   src/v20210408/model/CreateStructureTaskResponse.cpp
   src/v20210408/model/DescribeStructureTaskResultResponse.cpp
   src/v20210408/model/DescribeMachineUnderwriteResponse.cpp
+  src/v20210408/model/CreateAutoClassifyStructureTaskResponse.cpp
   src/v20210408/model/CreateUnderwriteTaskByIdRequest.cpp
   src/v20210408/model/CreateUnderwriteTaskByIdResponse.cpp
   src/v20210408/model/StructureResultObject.cpp
   src/v20210408/model/CreateStructureTaskInfo.cpp
   src/v20210408/model/DescribeStructureDifferenceRequest.cpp
   src/v20210408/model/UploadMedicalFileResponse.cpp
+  src/v20210408/model/CreateAutoClassifyStructureTaskInfo.cpp
   src/v20210408/model/StructureModifyItem.cpp
   src/v20201210/model/DescribeStructCompareDataResponse.cpp
   src/v20201210/model/DescribeStructureTaskResultRequest.cpp

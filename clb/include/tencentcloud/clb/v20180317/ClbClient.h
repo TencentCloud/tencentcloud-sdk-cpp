@@ -125,6 +125,8 @@
 #include <tencentcloud/clb/v20180317/model/DisassociateTargetGroupsResponse.h>
 #include <tencentcloud/clb/v20180317/model/ManualRewriteRequest.h>
 #include <tencentcloud/clb/v20180317/model/ManualRewriteResponse.h>
+#include <tencentcloud/clb/v20180317/model/MigrateClassicalLoadBalancersRequest.h>
+#include <tencentcloud/clb/v20180317/model/MigrateClassicalLoadBalancersResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyBlockIPListRequest.h>
 #include <tencentcloud/clb/v20180317/model/ModifyBlockIPListResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyDomainRequest.h>
@@ -332,6 +334,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ManualRewriteResponse> ManualRewriteOutcome;
                 typedef std::future<ManualRewriteOutcome> ManualRewriteOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::ManualRewriteRequest&, ManualRewriteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ManualRewriteAsyncHandler;
+                typedef Outcome<Core::Error, Model::MigrateClassicalLoadBalancersResponse> MigrateClassicalLoadBalancersOutcome;
+                typedef std::future<MigrateClassicalLoadBalancersOutcome> MigrateClassicalLoadBalancersOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::MigrateClassicalLoadBalancersRequest&, MigrateClassicalLoadBalancersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MigrateClassicalLoadBalancersAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyBlockIPListResponse> ModifyBlockIPListOutcome;
                 typedef std::future<ModifyBlockIPListOutcome> ModifyBlockIPListOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::ModifyBlockIPListRequest&, ModifyBlockIPListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBlockIPListAsyncHandler;
@@ -870,6 +875,16 @@ namespace TencentCloud
                 ManualRewriteOutcome ManualRewrite(const Model::ManualRewriteRequest &request);
                 void ManualRewriteAsync(const Model::ManualRewriteRequest& request, const ManualRewriteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ManualRewriteOutcomeCallable ManualRewriteCallable(const Model::ManualRewriteRequest& request);
+
+                /**
+                 *本接口将传统型负载均衡迁移成(原应用型)负载均衡
+本接口为异步接口，接口成功返回后，可使用 DescribeLoadBalancers 接口查询负载均衡实例的状态（如创建中、正常），以确定是否创建成功。
+                 * @param req MigrateClassicalLoadBalancersRequest
+                 * @return MigrateClassicalLoadBalancersOutcome
+                 */
+                MigrateClassicalLoadBalancersOutcome MigrateClassicalLoadBalancers(const Model::MigrateClassicalLoadBalancersRequest &request);
+                void MigrateClassicalLoadBalancersAsync(const Model::MigrateClassicalLoadBalancersRequest& request, const MigrateClassicalLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                MigrateClassicalLoadBalancersOutcomeCallable MigrateClassicalLoadBalancersCallable(const Model::MigrateClassicalLoadBalancersRequest& request);
 
                 /**
                  *修改负载均衡的IP（client IP）封禁黑名单列表，一个转发规则最多支持封禁 2000000 个IP，及黑名单容量为 2000000。

@@ -26,6 +26,7 @@
 #include <tencentcloud/thpc/v20211109/model/ComputeNode.h>
 #include <tencentcloud/thpc/v20211109/model/VirtualPrivateCloud.h>
 #include <tencentcloud/thpc/v20211109/model/LoginSettings.h>
+#include <tencentcloud/thpc/v20211109/model/StorageOption.h>
 
 
 namespace TencentCloud
@@ -315,6 +316,24 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      */
                     bool ClusterNameHasBeenSet() const;
 
+                    /**
+                     * 获取集群存储选项
+                     * @return StorageOption 集群存储选项
+                     */
+                    StorageOption GetStorageOption() const;
+
+                    /**
+                     * 设置集群存储选项
+                     * @param StorageOption 集群存储选项
+                     */
+                    void SetStorageOption(const StorageOption& _storageOption);
+
+                    /**
+                     * 判断参数 StorageOption 是否已赋值
+                     * @return StorageOption 是否已赋值
+                     */
+                    bool StorageOptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -404,6 +423,12 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
+
+                    /**
+                     * 集群存储选项
+                     */
+                    StorageOption m_storageOption;
+                    bool m_storageOptionHasBeenSet;
 
                 };
             }

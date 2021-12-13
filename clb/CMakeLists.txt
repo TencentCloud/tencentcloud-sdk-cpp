@@ -103,6 +103,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/ClassicalHealth.h
   include/tencentcloud/clb/v20180317/model/DescribeCustomizedConfigAssociateListRequest.h
   include/tencentcloud/clb/v20180317/model/ModifyTargetPortResponse.h
+  include/tencentcloud/clb/v20180317/model/MigrateClassicalLoadBalancersRequest.h
   include/tencentcloud/clb/v20180317/model/DescribeLoadBalancersDetailRequest.h
   include/tencentcloud/clb/v20180317/model/TargetGroupBackend.h
   include/tencentcloud/clb/v20180317/model/DescribeClassicalLBByInstanceIdRequest.h
@@ -124,6 +125,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/SetCustomizedConfigForLoadBalancerRequest.h
   include/tencentcloud/clb/v20180317/model/CreateListenerResponse.h
   include/tencentcloud/clb/v20180317/model/CreateTargetGroupResponse.h
+  include/tencentcloud/clb/v20180317/model/MigrateClassicalLoadBalancersResponse.h
   include/tencentcloud/clb/v20180317/model/CreateLoadBalancerSnatIpsResponse.h
   include/tencentcloud/clb/v20180317/model/ClassicalLoadBalancerInfo.h
   include/tencentcloud/clb/v20180317/model/DescribeListenersResponse.h
@@ -305,6 +307,7 @@ set(clb_src
   src/v20180317/model/ClassicalHealth.cpp
   src/v20180317/model/DescribeCustomizedConfigAssociateListRequest.cpp
   src/v20180317/model/ModifyTargetPortResponse.cpp
+  src/v20180317/model/MigrateClassicalLoadBalancersRequest.cpp
   src/v20180317/model/DescribeLoadBalancersDetailRequest.cpp
   src/v20180317/model/TargetGroupBackend.cpp
   src/v20180317/model/DescribeClassicalLBByInstanceIdRequest.cpp
@@ -326,6 +329,7 @@ set(clb_src
   src/v20180317/model/SetCustomizedConfigForLoadBalancerRequest.cpp
   src/v20180317/model/CreateListenerResponse.cpp
   src/v20180317/model/CreateTargetGroupResponse.cpp
+  src/v20180317/model/MigrateClassicalLoadBalancersResponse.cpp
   src/v20180317/model/CreateLoadBalancerSnatIpsResponse.cpp
   src/v20180317/model/ClassicalLoadBalancerInfo.cpp
   src/v20180317/model/DescribeListenersResponse.cpp

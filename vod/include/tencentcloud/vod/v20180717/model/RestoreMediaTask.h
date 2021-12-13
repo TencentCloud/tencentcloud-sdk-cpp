@@ -47,42 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取取回任务状态，0表示取回完成，其他值表示取回还未完成。
-                     * @return Status 取回任务状态，0表示取回完成，其他值表示取回还未完成。
-                     */
-                    int64_t GetStatus() const;
-
-                    /**
-                     * 设置取回任务状态，0表示取回完成，其他值表示取回还未完成。
-                     * @param Status 取回任务状态，0表示取回完成，其他值表示取回还未完成。
-                     */
-                    void SetStatus(const int64_t& _status);
-
-                    /**
-                     * 判断参数 Status 是否已赋值
-                     * @return Status 是否已赋值
-                     */
-                    bool StatusHasBeenSet() const;
-
-                    /**
-                     * 获取提示信息。
-                     * @return Message 提示信息。
-                     */
-                    std::string GetMessage() const;
-
-                    /**
-                     * 设置提示信息。
-                     * @param Message 提示信息。
-                     */
-                    void SetMessage(const std::string& _message);
-
-                    /**
-                     * 判断参数 Message 是否已赋值
-                     * @return Message 是否已赋值
-                     */
-                    bool MessageHasBeenSet() const;
-
-                    /**
                      * 获取文件ID。
                      * @return FileId 文件ID。
                      */
@@ -168,17 +132,13 @@ namespace TencentCloud
 
                     /**
                      * 获取临时取回副本有效期，单位：天。对于永久取回，取值为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RestoreDay 临时取回副本有效期，单位：天。对于永久取回，取值为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetRestoreDay() const;
 
                     /**
                      * 设置临时取回副本有效期，单位：天。对于永久取回，取值为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param RestoreDay 临时取回副本有效期，单位：天。对于永久取回，取值为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRestoreDay(const int64_t& _restoreDay);
 
@@ -188,19 +148,43 @@ namespace TencentCloud
                      */
                     bool RestoreDayHasBeenSet() const;
 
+                    /**
+                     * 获取该字段已废弃。
+                     * @return Status 该字段已废弃。
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置该字段已废弃。
+                     * @param Status 该字段已废弃。
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取该字段已废弃。
+                     * @return Message 该字段已废弃。
+                     */
+                    std::string GetMessage() const;
+
+                    /**
+                     * 设置该字段已废弃。
+                     * @param Message 该字段已废弃。
+                     */
+                    void SetMessage(const std::string& _message);
+
+                    /**
+                     * 判断参数 Message 是否已赋值
+                     * @return Message 是否已赋值
+                     */
+                    bool MessageHasBeenSet() const;
+
                 private:
-
-                    /**
-                     * 取回任务状态，0表示取回完成，其他值表示取回还未完成。
-                     */
-                    int64_t m_status;
-                    bool m_statusHasBeenSet;
-
-                    /**
-                     * 提示信息。
-                     */
-                    std::string m_message;
-                    bool m_messageHasBeenSet;
 
                     /**
                      * 文件ID。
@@ -231,10 +215,21 @@ namespace TencentCloud
 
                     /**
                      * 临时取回副本有效期，单位：天。对于永久取回，取值为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_restoreDay;
                     bool m_restoreDayHasBeenSet;
+
+                    /**
+                     * 该字段已废弃。
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 该字段已废弃。
+                     */
+                    std::string m_message;
+                    bool m_messageHasBeenSet;
 
                 };
             }

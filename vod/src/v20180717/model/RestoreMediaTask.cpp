@@ -21,13 +21,13 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 RestoreMediaTask::RestoreMediaTask() :
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false),
     m_fileIdHasBeenSet(false),
     m_originalStorageClassHasBeenSet(false),
     m_targetStorageClassHasBeenSet(false),
     m_restoreTierHasBeenSet(false),
-    m_restoreDayHasBeenSet(false)
+    m_restoreDayHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_messageHasBeenSet(false)
 {
 }
 
@@ -35,26 +35,6 @@ CoreInternalOutcome RestoreMediaTask::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("Status") && !value["Status"].IsNull())
-    {
-        if (!value["Status"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `RestoreMediaTask.Status` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_status = value["Status"].GetInt64();
-        m_statusHasBeenSet = true;
-    }
-
-    if (value.HasMember("Message") && !value["Message"].IsNull())
-    {
-        if (!value["Message"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `RestoreMediaTask.Message` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_message = string(value["Message"].GetString());
-        m_messageHasBeenSet = true;
-    }
 
     if (value.HasMember("FileId") && !value["FileId"].IsNull())
     {
@@ -106,28 +86,32 @@ CoreInternalOutcome RestoreMediaTask::Deserialize(const rapidjson::Value &value)
         m_restoreDayHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RestoreMediaTask.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("Message") && !value["Message"].IsNull())
+    {
+        if (!value["Message"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RestoreMediaTask.Message` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_message = string(value["Message"].GetString());
+        m_messageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void RestoreMediaTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_statusHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Status";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_status, allocator);
-    }
-
-    if (m_messageHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Message";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_fileIdHasBeenSet)
     {
@@ -169,40 +153,24 @@ void RestoreMediaTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, m_restoreDay, allocator);
     }
 
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_messageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Message";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
-
-int64_t RestoreMediaTask::GetStatus() const
-{
-    return m_status;
-}
-
-void RestoreMediaTask::SetStatus(const int64_t& _status)
-{
-    m_status = _status;
-    m_statusHasBeenSet = true;
-}
-
-bool RestoreMediaTask::StatusHasBeenSet() const
-{
-    return m_statusHasBeenSet;
-}
-
-string RestoreMediaTask::GetMessage() const
-{
-    return m_message;
-}
-
-void RestoreMediaTask::SetMessage(const string& _message)
-{
-    m_message = _message;
-    m_messageHasBeenSet = true;
-}
-
-bool RestoreMediaTask::MessageHasBeenSet() const
-{
-    return m_messageHasBeenSet;
-}
 
 string RestoreMediaTask::GetFileId() const
 {
@@ -282,5 +250,37 @@ void RestoreMediaTask::SetRestoreDay(const int64_t& _restoreDay)
 bool RestoreMediaTask::RestoreDayHasBeenSet() const
 {
     return m_restoreDayHasBeenSet;
+}
+
+int64_t RestoreMediaTask::GetStatus() const
+{
+    return m_status;
+}
+
+void RestoreMediaTask::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool RestoreMediaTask::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string RestoreMediaTask::GetMessage() const
+{
+    return m_message;
+}
+
+void RestoreMediaTask::SetMessage(const string& _message)
+{
+    m_message = _message;
+    m_messageHasBeenSet = true;
+}
+
+bool RestoreMediaTask::MessageHasBeenSet() const
+{
+    return m_messageHasBeenSet;
 }
 

@@ -2190,6 +2190,49 @@ CvmClient::ModifyImageSharePermissionOutcomeCallable CvmClient::ModifyImageShare
     return task->get_future();
 }
 
+CvmClient::ModifyInstanceDiskTypeOutcome CvmClient::ModifyInstanceDiskType(const ModifyInstanceDiskTypeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceDiskType");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceDiskTypeResponse rsp = ModifyInstanceDiskTypeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceDiskTypeOutcome(rsp);
+        else
+            return ModifyInstanceDiskTypeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceDiskTypeOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::ModifyInstanceDiskTypeAsync(const ModifyInstanceDiskTypeRequest& request, const ModifyInstanceDiskTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstanceDiskType(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CvmClient::ModifyInstanceDiskTypeOutcomeCallable CvmClient::ModifyInstanceDiskTypeCallable(const ModifyInstanceDiskTypeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceDiskTypeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstanceDiskType(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CvmClient::ModifyInstancesAttributeOutcome CvmClient::ModifyInstancesAttribute(const ModifyInstancesAttributeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyInstancesAttribute");

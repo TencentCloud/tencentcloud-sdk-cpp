@@ -129,6 +129,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/DescribeDisasterRecoverGroupsResponse.h
   include/tencentcloud/cvm/v20170312/model/RunSecurityServiceEnabled.h
   include/tencentcloud/cvm/v20170312/model/ActionTimer.h
+  include/tencentcloud/cvm/v20170312/model/ModifyInstanceDiskTypeResponse.h
   include/tencentcloud/cvm/v20170312/model/DescribeReservedInstancesConfigInfosRequest.h
   include/tencentcloud/cvm/v20170312/model/TagSpecification.h
   include/tencentcloud/cvm/v20170312/model/ResetInstancesInternetMaxBandwidthRequest.h
@@ -177,6 +178,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/ReservedInstancePriceItem.h
   include/tencentcloud/cvm/v20170312/model/RebootInstancesResponse.h
   include/tencentcloud/cvm/v20170312/model/CreateDisasterRecoverGroupResponse.h
+  include/tencentcloud/cvm/v20170312/model/ModifyInstanceDiskTypeRequest.h
   include/tencentcloud/cvm/v20170312/model/InquiryPriceResetInstancesTypeResponse.h
   include/tencentcloud/cvm/v20170312/model/ReservedInstancesOffering.h
   include/tencentcloud/cvm/v20170312/model/OsVersion.h
@@ -331,6 +333,7 @@ set(cvm_src
   src/v20170312/model/DescribeDisasterRecoverGroupsResponse.cpp
   src/v20170312/model/RunSecurityServiceEnabled.cpp
   src/v20170312/model/ActionTimer.cpp
+  src/v20170312/model/ModifyInstanceDiskTypeResponse.cpp
   src/v20170312/model/DescribeReservedInstancesConfigInfosRequest.cpp
   src/v20170312/model/TagSpecification.cpp
   src/v20170312/model/ResetInstancesInternetMaxBandwidthRequest.cpp
@@ -379,6 +382,7 @@ set(cvm_src
   src/v20170312/model/ReservedInstancePriceItem.cpp
   src/v20170312/model/RebootInstancesResponse.cpp
   src/v20170312/model/CreateDisasterRecoverGroupResponse.cpp
+  src/v20170312/model/ModifyInstanceDiskTypeRequest.cpp
   src/v20170312/model/InquiryPriceResetInstancesTypeResponse.cpp
   src/v20170312/model/ReservedInstancesOffering.cpp
   src/v20170312/model/OsVersion.cpp

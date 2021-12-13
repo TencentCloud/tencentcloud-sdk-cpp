@@ -36,7 +36,8 @@ CreateClusterRequest::CreateClusterRequest() :
     m_clientTokenHasBeenSet(false),
     m_dryRunHasBeenSet(false),
     m_accountTypeHasBeenSet(false),
-    m_clusterNameHasBeenSet(false)
+    m_clusterNameHasBeenSet(false),
+    m_storageOptionHasBeenSet(false)
 {
 }
 
@@ -167,6 +168,15 @@ string CreateClusterRequest::ToJsonString() const
         string key = "ClusterName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageOption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_storageOption.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -399,6 +409,22 @@ void CreateClusterRequest::SetClusterName(const string& _clusterName)
 bool CreateClusterRequest::ClusterNameHasBeenSet() const
 {
     return m_clusterNameHasBeenSet;
+}
+
+StorageOption CreateClusterRequest::GetStorageOption() const
+{
+    return m_storageOption;
+}
+
+void CreateClusterRequest::SetStorageOption(const StorageOption& _storageOption)
+{
+    m_storageOption = _storageOption;
+    m_storageOptionHasBeenSet = true;
+}
+
+bool CreateClusterRequest::StorageOptionHasBeenSet() const
+{
+    return m_storageOptionHasBeenSet;
 }
 
 

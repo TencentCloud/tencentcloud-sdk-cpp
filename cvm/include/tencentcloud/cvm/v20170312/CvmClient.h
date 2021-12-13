@@ -123,6 +123,8 @@
 #include <tencentcloud/cvm/v20170312/model/ModifyImageAttributeResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyImageSharePermissionRequest.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyImageSharePermissionResponse.h>
+#include <tencentcloud/cvm/v20170312/model/ModifyInstanceDiskTypeRequest.h>
+#include <tencentcloud/cvm/v20170312/model/ModifyInstanceDiskTypeResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyInstancesAttributeRequest.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyInstancesAttributeResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyInstancesChargeTypeRequest.h>
@@ -327,6 +329,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyImageSharePermissionResponse> ModifyImageSharePermissionOutcome;
                 typedef std::future<ModifyImageSharePermissionOutcome> ModifyImageSharePermissionOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::ModifyImageSharePermissionRequest&, ModifyImageSharePermissionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyImageSharePermissionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceDiskTypeResponse> ModifyInstanceDiskTypeOutcome;
+                typedef std::future<ModifyInstanceDiskTypeOutcome> ModifyInstanceDiskTypeOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::ModifyInstanceDiskTypeRequest&, ModifyInstanceDiskTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceDiskTypeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyInstancesAttributeResponse> ModifyInstancesAttributeOutcome;
                 typedef std::future<ModifyInstancesAttributeOutcome> ModifyInstancesAttributeOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::ModifyInstancesAttributeRequest&, ModifyInstancesAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstancesAttributeAsyncHandler;
@@ -937,6 +942,20 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 ModifyImageSharePermissionOutcome ModifyImageSharePermission(const Model::ModifyImageSharePermissionRequest &request);
                 void ModifyImageSharePermissionAsync(const Model::ModifyImageSharePermissionRequest& request, const ModifyImageSharePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyImageSharePermissionOutcomeCallable ModifyImageSharePermissionCallable(const Model::ModifyImageSharePermissionRequest& request);
+
+                /**
+                 *本接口 (ModifyInstanceDiskType) 用于修改实例硬盘介质类型。
+
+* 只支持实例的本地系统盘、本地数据盘转化成指定云硬盘介质。
+* 只支持实例在关机状态下转换成指定云硬盘介质。
+* 不支持竞价实例类型。
+* 修改前请确保账户余额充足。可通过[`DescribeAccountBalance`](https://cloud.tencent.com/document/product/378/4397)接口查询账户余额。
+                 * @param req ModifyInstanceDiskTypeRequest
+                 * @return ModifyInstanceDiskTypeOutcome
+                 */
+                ModifyInstanceDiskTypeOutcome ModifyInstanceDiskType(const Model::ModifyInstanceDiskTypeRequest &request);
+                void ModifyInstanceDiskTypeAsync(const Model::ModifyInstanceDiskTypeRequest& request, const ModifyInstanceDiskTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceDiskTypeOutcomeCallable ModifyInstanceDiskTypeCallable(const Model::ModifyInstanceDiskTypeRequest& request);
 
                 /**
                  *本接口 (ModifyInstancesAttribute) 用于修改实例的属性（目前只支持修改实例的名称和关联的安全组）。

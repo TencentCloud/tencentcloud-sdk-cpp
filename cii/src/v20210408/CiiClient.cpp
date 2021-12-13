@@ -40,6 +40,49 @@ CiiClient::CiiClient(const Credential &credential, const string &region, const C
 }
 
 
+CiiClient::CreateAutoClassifyStructureTaskOutcome CiiClient::CreateAutoClassifyStructureTask(const CreateAutoClassifyStructureTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAutoClassifyStructureTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAutoClassifyStructureTaskResponse rsp = CreateAutoClassifyStructureTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAutoClassifyStructureTaskOutcome(rsp);
+        else
+            return CreateAutoClassifyStructureTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAutoClassifyStructureTaskOutcome(outcome.GetError());
+    }
+}
+
+void CiiClient::CreateAutoClassifyStructureTaskAsync(const CreateAutoClassifyStructureTaskRequest& request, const CreateAutoClassifyStructureTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAutoClassifyStructureTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CiiClient::CreateAutoClassifyStructureTaskOutcomeCallable CiiClient::CreateAutoClassifyStructureTaskCallable(const CreateAutoClassifyStructureTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAutoClassifyStructureTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAutoClassifyStructureTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CiiClient::CreateStructureTaskOutcome CiiClient::CreateStructureTask(const CreateStructureTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateStructureTask");

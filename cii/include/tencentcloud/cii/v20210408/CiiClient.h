@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/cii/v20210408/model/CreateAutoClassifyStructureTaskRequest.h>
+#include <tencentcloud/cii/v20210408/model/CreateAutoClassifyStructureTaskResponse.h>
 #include <tencentcloud/cii/v20210408/model/CreateStructureTaskRequest.h>
 #include <tencentcloud/cii/v20210408/model/CreateStructureTaskResponse.h>
 #include <tencentcloud/cii/v20210408/model/CreateUnderwriteTaskByIdRequest.h>
@@ -53,6 +55,9 @@ namespace TencentCloud
                 CiiClient(const Credential &credential, const std::string &region);
                 CiiClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CreateAutoClassifyStructureTaskResponse> CreateAutoClassifyStructureTaskOutcome;
+                typedef std::future<CreateAutoClassifyStructureTaskOutcome> CreateAutoClassifyStructureTaskOutcomeCallable;
+                typedef std::function<void(const CiiClient*, const Model::CreateAutoClassifyStructureTaskRequest&, CreateAutoClassifyStructureTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAutoClassifyStructureTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateStructureTaskResponse> CreateStructureTaskOutcome;
                 typedef std::future<CreateStructureTaskOutcome> CreateStructureTaskOutcomeCallable;
                 typedef std::function<void(const CiiClient*, const Model::CreateStructureTaskRequest&, CreateStructureTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStructureTaskAsyncHandler;
@@ -79,6 +84,15 @@ namespace TencentCloud
                 typedef std::function<void(const CiiClient*, const Model::UploadMedicalFileRequest&, UploadMedicalFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadMedicalFileAsyncHandler;
 
 
+
+                /**
+                 *本接口(CreateAutoClassifyStructureTask)基于提供的客户及保单信息，创建并启动结构化识别任务。
+                 * @param req CreateAutoClassifyStructureTaskRequest
+                 * @return CreateAutoClassifyStructureTaskOutcome
+                 */
+                CreateAutoClassifyStructureTaskOutcome CreateAutoClassifyStructureTask(const Model::CreateAutoClassifyStructureTaskRequest &request);
+                void CreateAutoClassifyStructureTaskAsync(const Model::CreateAutoClassifyStructureTaskRequest& request, const CreateAutoClassifyStructureTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAutoClassifyStructureTaskOutcomeCallable CreateAutoClassifyStructureTaskCallable(const Model::CreateAutoClassifyStructureTaskRequest& request);
 
                 /**
                  *本接口(CreateStructureTask)基于提供的客户及保单信息，创建并启动结构化识别任务。

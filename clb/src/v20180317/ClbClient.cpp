@@ -2233,6 +2233,49 @@ ClbClient::ManualRewriteOutcomeCallable ClbClient::ManualRewriteCallable(const M
     return task->get_future();
 }
 
+ClbClient::MigrateClassicalLoadBalancersOutcome ClbClient::MigrateClassicalLoadBalancers(const MigrateClassicalLoadBalancersRequest &request)
+{
+    auto outcome = MakeRequest(request, "MigrateClassicalLoadBalancers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        MigrateClassicalLoadBalancersResponse rsp = MigrateClassicalLoadBalancersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return MigrateClassicalLoadBalancersOutcome(rsp);
+        else
+            return MigrateClassicalLoadBalancersOutcome(o.GetError());
+    }
+    else
+    {
+        return MigrateClassicalLoadBalancersOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::MigrateClassicalLoadBalancersAsync(const MigrateClassicalLoadBalancersRequest& request, const MigrateClassicalLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->MigrateClassicalLoadBalancers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::MigrateClassicalLoadBalancersOutcomeCallable ClbClient::MigrateClassicalLoadBalancersCallable(const MigrateClassicalLoadBalancersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<MigrateClassicalLoadBalancersOutcome()>>(
+        [this, request]()
+        {
+            return this->MigrateClassicalLoadBalancers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::ModifyBlockIPListOutcome ClbClient::ModifyBlockIPList(const ModifyBlockIPListRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyBlockIPList");
