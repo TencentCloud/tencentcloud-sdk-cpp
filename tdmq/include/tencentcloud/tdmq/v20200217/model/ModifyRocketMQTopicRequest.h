@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取分区数，全局类型无效，不可小于当前分区数
+                     * @return PartitionNum 分区数，全局类型无效，不可小于当前分区数
+                     */
+                    int64_t GetPartitionNum() const;
+
+                    /**
+                     * 设置分区数，全局类型无效，不可小于当前分区数
+                     * @param PartitionNum 分区数，全局类型无效，不可小于当前分区数
+                     */
+                    void SetPartitionNum(const int64_t& _partitionNum);
+
+                    /**
+                     * 判断参数 PartitionNum 是否已赋值
+                     * @return PartitionNum 是否已赋值
+                     */
+                    bool PartitionNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 分区数，全局类型无效，不可小于当前分区数
+                     */
+                    int64_t m_partitionNum;
+                    bool m_partitionNumHasBeenSet;
 
                 };
             }

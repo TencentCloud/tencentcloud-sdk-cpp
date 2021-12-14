@@ -420,6 +420,24 @@ namespace TencentCloud
                      */
                     bool CostTypeHasBeenSet() const;
 
+                    /**
+                     * 获取环境变量
+                     * @return Env 环境变量
+                     */
+                    std::string GetEnv() const;
+
+                    /**
+                     * 设置环境变量
+                     * @param Env 环境变量
+                     */
+                    void SetEnv(const std::string& _env);
+
+                    /**
+                     * 判断参数 Env 是否已赋值
+                     * @return Env 是否已赋值
+                     */
+                    bool EnvHasBeenSet() const;
+
                 private:
 
                     /**
@@ -547,6 +565,12 @@ namespace TencentCloud
                      */
                     std::string m_costType;
                     bool m_costTypeHasBeenSet;
+
+                    /**
+                     * 环境变量
+                     */
+                    std::string m_env;
+                    bool m_envHasBeenSet;
 
                 };
             }

@@ -402,6 +402,24 @@ namespace TencentCloud
                      */
                     bool BrowserHasBeenSet() const;
 
+                    /**
+                     * 获取环境
+                     * @return Env 环境
+                     */
+                    std::string GetEnv() const;
+
+                    /**
+                     * 设置环境
+                     * @param Env 环境
+                     */
+                    void SetEnv(const std::string& _env);
+
+                    /**
+                     * 判断参数 Env 是否已赋值
+                     * @return Env 是否已赋值
+                     */
+                    bool EnvHasBeenSet() const;
+
                 private:
 
                     /**
@@ -523,6 +541,12 @@ namespace TencentCloud
                      */
                     std::string m_browser;
                     bool m_browserHasBeenSet;
+
+                    /**
+                     * 环境
+                     */
+                    std::string m_env;
+                    bool m_envHasBeenSet;
 
                 };
             }

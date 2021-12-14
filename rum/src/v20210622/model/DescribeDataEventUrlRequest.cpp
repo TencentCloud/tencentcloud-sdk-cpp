@@ -43,7 +43,8 @@ DescribeDataEventUrlRequest::DescribeDataEventUrlRequest() :
     m_isAbroadHasBeenSet(false),
     m_osHasBeenSet(false),
     m_browserHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_envHasBeenSet(false)
 {
 }
 
@@ -220,6 +221,14 @@ string DescribeDataEventUrlRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_envHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Env";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_env.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -564,6 +573,22 @@ void DescribeDataEventUrlRequest::SetName(const string& _name)
 bool DescribeDataEventUrlRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+string DescribeDataEventUrlRequest::GetEnv() const
+{
+    return m_env;
+}
+
+void DescribeDataEventUrlRequest::SetEnv(const string& _env)
+{
+    m_env = _env;
+    m_envHasBeenSet = true;
+}
+
+bool DescribeDataEventUrlRequest::EnvHasBeenSet() const
+{
+    return m_envHasBeenSet;
 }
 
 

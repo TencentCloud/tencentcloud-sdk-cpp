@@ -27,7 +27,8 @@ CreateRocketMQTopicRequest::CreateRocketMQTopicRequest() :
     m_namespacesHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_partitionNumHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,14 @@ string CreateRocketMQTopicRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_partitionNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PartitionNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_partitionNum, allocator);
     }
 
 
@@ -169,6 +178,22 @@ void CreateRocketMQTopicRequest::SetRemark(const string& _remark)
 bool CreateRocketMQTopicRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+int64_t CreateRocketMQTopicRequest::GetPartitionNum() const
+{
+    return m_partitionNum;
+}
+
+void CreateRocketMQTopicRequest::SetPartitionNum(const int64_t& _partitionNum)
+{
+    m_partitionNum = _partitionNum;
+    m_partitionNumHasBeenSet = true;
+}
+
+bool CreateRocketMQTopicRequest::PartitionNumHasBeenSet() const
+{
+    return m_partitionNumHasBeenSet;
 }
 
 

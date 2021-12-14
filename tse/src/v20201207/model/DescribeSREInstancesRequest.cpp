@@ -26,7 +26,8 @@ DescribeSREInstancesRequest::DescribeSREInstancesRequest() :
     m_filtersHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_queryTypeHasBeenSet(false)
+    m_queryTypeHasBeenSet(false),
+    m_querySourceHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,14 @@ string DescribeSREInstancesRequest::ToJsonString() const
         string key = "QueryType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_queryType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_querySourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuerySource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_querySource.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -146,6 +155,22 @@ void DescribeSREInstancesRequest::SetQueryType(const string& _queryType)
 bool DescribeSREInstancesRequest::QueryTypeHasBeenSet() const
 {
     return m_queryTypeHasBeenSet;
+}
+
+string DescribeSREInstancesRequest::GetQuerySource() const
+{
+    return m_querySource;
+}
+
+void DescribeSREInstancesRequest::SetQuerySource(const string& _querySource)
+{
+    m_querySource = _querySource;
+    m_querySourceHasBeenSet = true;
+}
+
+bool DescribeSREInstancesRequest::QuerySourceHasBeenSet() const
+{
+    return m_querySourceHasBeenSet;
 }
 
 

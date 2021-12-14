@@ -47,30 +47,32 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取媒资绑定模板 ID，可取值为：
-<li>1000000：媒体文件为 URL，且 URL Scheme 为 https；</li>
-<li>1000001：媒体文件为 URL，且 URL Scheme 为 http。</li>
+                     * 获取目前仅支持绑定 COS 桶的媒体，请填写存储对象 Key 值，例如：`example-folder/example.mp4`。
+                     * @return MediaKey 目前仅支持绑定 COS 桶的媒体，请填写存储对象 Key 值，例如：`example-folder/example.mp4`。
+                     */
+                    std::string GetMediaKey() const;
 
-注：如果要支持其它存储平台或者类型的媒体绑定，请联系 [客服](https://cloud.tencent.com/online-service?from=doc_1156)。
-                     * @return Definition 媒资绑定模板 ID，可取值为：
-<li>1000000：媒体文件为 URL，且 URL Scheme 为 https；</li>
-<li>1000001：媒体文件为 URL，且 URL Scheme 为 http。</li>
+                    /**
+                     * 设置目前仅支持绑定 COS 桶的媒体，请填写存储对象 Key 值，例如：`example-folder/example.mp4`。
+                     * @param MediaKey 目前仅支持绑定 COS 桶的媒体，请填写存储对象 Key 值，例如：`example-folder/example.mp4`。
+                     */
+                    void SetMediaKey(const std::string& _mediaKey);
 
-注：如果要支持其它存储平台或者类型的媒体绑定，请联系 [客服](https://cloud.tencent.com/online-service?from=doc_1156)。
+                    /**
+                     * 判断参数 MediaKey 是否已赋值
+                     * @return MediaKey 是否已赋值
+                     */
+                    bool MediaKeyHasBeenSet() const;
+
+                    /**
+                     * 获取该字段废弃，请勿使用。
+                     * @return Definition 该字段废弃，请勿使用。
                      */
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置媒资绑定模板 ID，可取值为：
-<li>1000000：媒体文件为 URL，且 URL Scheme 为 https；</li>
-<li>1000001：媒体文件为 URL，且 URL Scheme 为 http。</li>
-
-注：如果要支持其它存储平台或者类型的媒体绑定，请联系 [客服](https://cloud.tencent.com/online-service?from=doc_1156)。
-                     * @param Definition 媒资绑定模板 ID，可取值为：
-<li>1000000：媒体文件为 URL，且 URL Scheme 为 https；</li>
-<li>1000001：媒体文件为 URL，且 URL Scheme 为 http。</li>
-
-注：如果要支持其它存储平台或者类型的媒体绑定，请联系 [客服](https://cloud.tencent.com/online-service?from=doc_1156)。
+                     * 设置该字段废弃，请勿使用。
+                     * @param Definition 该字段废弃，请勿使用。
                      */
                     void SetDefinition(const int64_t& _definition);
 
@@ -81,45 +83,42 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取媒资绑定媒体路径或文件 ID。如果要绑定 URL 类型的媒体，请将 URL 的 <code>'https://'</code> 或者 <code>'http://'</code> 去掉，例如：
-原始媒体 URL 为 `https://www.example.com/a.mp4`，则 MediaKey 为 `www.example.com/a.mp4`。
-                     * @return MediaKey 媒资绑定媒体路径或文件 ID。如果要绑定 URL 类型的媒体，请将 URL 的 <code>'https://'</code> 或者 <code>'http://'</code> 去掉，例如：
-原始媒体 URL 为 `https://www.example.com/a.mp4`，则 MediaKey 为 `www.example.com/a.mp4`。
+                     * 获取媒资挂载的存储 Id。
+                     * @return StorageId 媒资挂载的存储 Id。
                      */
-                    std::string GetMediaKey() const;
+                    std::string GetStorageId() const;
 
                     /**
-                     * 设置媒资绑定媒体路径或文件 ID。如果要绑定 URL 类型的媒体，请将 URL 的 <code>'https://'</code> 或者 <code>'http://'</code> 去掉，例如：
-原始媒体 URL 为 `https://www.example.com/a.mp4`，则 MediaKey 为 `www.example.com/a.mp4`。
-                     * @param MediaKey 媒资绑定媒体路径或文件 ID。如果要绑定 URL 类型的媒体，请将 URL 的 <code>'https://'</code> 或者 <code>'http://'</code> 去掉，例如：
-原始媒体 URL 为 `https://www.example.com/a.mp4`，则 MediaKey 为 `www.example.com/a.mp4`。
+                     * 设置媒资挂载的存储 Id。
+                     * @param StorageId 媒资挂载的存储 Id。
                      */
-                    void SetMediaKey(const std::string& _mediaKey);
+                    void SetStorageId(const std::string& _storageId);
 
                     /**
-                     * 判断参数 MediaKey 是否已赋值
-                     * @return MediaKey 是否已赋值
+                     * 判断参数 StorageId 是否已赋值
+                     * @return StorageId 是否已赋值
                      */
-                    bool MediaKeyHasBeenSet() const;
+                    bool StorageIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 媒资绑定模板 ID，可取值为：
-<li>1000000：媒体文件为 URL，且 URL Scheme 为 https；</li>
-<li>1000001：媒体文件为 URL，且 URL Scheme 为 http。</li>
+                     * 目前仅支持绑定 COS 桶的媒体，请填写存储对象 Key 值，例如：`example-folder/example.mp4`。
+                     */
+                    std::string m_mediaKey;
+                    bool m_mediaKeyHasBeenSet;
 
-注：如果要支持其它存储平台或者类型的媒体绑定，请联系 [客服](https://cloud.tencent.com/online-service?from=doc_1156)。
+                    /**
+                     * 该字段废弃，请勿使用。
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * 媒资绑定媒体路径或文件 ID。如果要绑定 URL 类型的媒体，请将 URL 的 <code>'https://'</code> 或者 <code>'http://'</code> 去掉，例如：
-原始媒体 URL 为 `https://www.example.com/a.mp4`，则 MediaKey 为 `www.example.com/a.mp4`。
+                     * 媒资挂载的存储 Id。
                      */
-                    std::string m_mediaKey;
-                    bool m_mediaKeyHasBeenSet;
+                    std::string m_storageId;
+                    bool m_storageIdHasBeenSet;
 
                 };
             }

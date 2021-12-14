@@ -85,6 +85,8 @@
 #include <tencentcloud/clb/v20180317/model/DescribeClsLogSetResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeClusterResourcesRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeClusterResourcesResponse.h>
+#include <tencentcloud/clb/v20180317/model/DescribeCrossTargetsRequest.h>
+#include <tencentcloud/clb/v20180317/model/DescribeCrossTargetsResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeCustomizedConfigAssociateListRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeCustomizedConfigAssociateListResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeCustomizedConfigListRequest.h>
@@ -274,6 +276,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClusterResourcesResponse> DescribeClusterResourcesOutcome;
                 typedef std::future<DescribeClusterResourcesOutcome> DescribeClusterResourcesOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeClusterResourcesRequest&, DescribeClusterResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterResourcesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCrossTargetsResponse> DescribeCrossTargetsOutcome;
+                typedef std::future<DescribeCrossTargetsOutcome> DescribeCrossTargetsOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DescribeCrossTargetsRequest&, DescribeCrossTargetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCrossTargetsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCustomizedConfigAssociateListResponse> DescribeCustomizedConfigAssociateListOutcome;
                 typedef std::future<DescribeCustomizedConfigAssociateListOutcome> DescribeCustomizedConfigAssociateListOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeCustomizedConfigAssociateListRequest&, DescribeCustomizedConfigAssociateListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomizedConfigAssociateListAsyncHandler;
@@ -694,6 +699,15 @@ namespace TencentCloud
                 DescribeClusterResourcesOutcomeCallable DescribeClusterResourcesCallable(const Model::DescribeClusterResourcesRequest& request);
 
                 /**
+                 *查询跨域2.0版本云联网后端子机和网卡信息。
+                 * @param req DescribeCrossTargetsRequest
+                 * @return DescribeCrossTargetsOutcome
+                 */
+                DescribeCrossTargetsOutcome DescribeCrossTargets(const Model::DescribeCrossTargetsRequest &request);
+                void DescribeCrossTargetsAsync(const Model::DescribeCrossTargetsRequest& request, const DescribeCrossTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCrossTargetsOutcomeCallable DescribeCrossTargetsCallable(const Model::DescribeCrossTargetsRequest& request);
+
+                /**
                  *拉取配置绑定的 server 或 location，如果 domain 存在，结果将根据 domain 过滤。或拉取配置绑定的 loadbalancer。
                  * @param req DescribeCustomizedConfigAssociateListRequest
                  * @return DescribeCustomizedConfigAssociateListOutcome
@@ -936,7 +950,7 @@ namespace TencentCloud
                 ModifyLoadBalancerAttributesOutcomeCallable ModifyLoadBalancerAttributesCallable(const Model::ModifyLoadBalancerAttributesRequest& request);
 
                 /**
-                 *升、降配接口。支持共享型clb升级到性能保障型clb。支持性能保障型提升等级。支持性能保障降低规格。（不支持性能保障降级到共享型）。
+                 *支持共享型clb升级到性能容量型clb（不支持性能保障降级到共享型）。
                  * @param req ModifyLoadBalancerSlaRequest
                  * @return ModifyLoadBalancerSlaOutcome
                  */

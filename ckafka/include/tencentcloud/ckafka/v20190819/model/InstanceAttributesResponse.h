@@ -674,6 +674,50 @@ namespace TencentCloud
                      */
                     bool DeleteRouteTimestampHasBeenSet() const;
 
+                    /**
+                     * 获取剩余创建分区数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RemainingPartitions 剩余创建分区数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRemainingPartitions() const;
+
+                    /**
+                     * 设置剩余创建分区数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RemainingPartitions 剩余创建分区数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRemainingPartitions(const int64_t& _remainingPartitions);
+
+                    /**
+                     * 判断参数 RemainingPartitions 是否已赋值
+                     * @return RemainingPartitions 是否已赋值
+                     */
+                    bool RemainingPartitionsHasBeenSet() const;
+
+                    /**
+                     * 获取剩余创建主题数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RemainingTopics 剩余创建主题数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRemainingTopics() const;
+
+                    /**
+                     * 设置剩余创建主题数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RemainingTopics 剩余创建主题数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRemainingTopics(const int64_t& _remainingTopics);
+
+                    /**
+                     * 判断参数 RemainingTopics 是否已赋值
+                     * @return RemainingTopics 是否已赋值
+                     */
+                    bool RemainingTopicsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -879,6 +923,20 @@ namespace TencentCloud
                      */
                     std::string m_deleteRouteTimestamp;
                     bool m_deleteRouteTimestampHasBeenSet;
+
+                    /**
+                     * 剩余创建分区数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_remainingPartitions;
+                    bool m_remainingPartitionsHasBeenSet;
+
+                    /**
+                     * 剩余创建主题数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_remainingTopics;
+                    bool m_remainingTopicsHasBeenSet;
 
                 };
             }

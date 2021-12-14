@@ -115,6 +115,24 @@ namespace TencentCloud
                      */
                     bool QueryTypeHasBeenSet() const;
 
+                    /**
+                     * 获取调用方来源
+                     * @return QuerySource 调用方来源
+                     */
+                    std::string GetQuerySource() const;
+
+                    /**
+                     * 设置调用方来源
+                     * @param QuerySource 调用方来源
+                     */
+                    void SetQuerySource(const std::string& _querySource);
+
+                    /**
+                     * 判断参数 QuerySource 是否已赋值
+                     * @return QuerySource 是否已赋值
+                     */
+                    bool QuerySourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -140,6 +158,12 @@ namespace TencentCloud
                      */
                     std::string m_queryType;
                     bool m_queryTypeHasBeenSet;
+
+                    /**
+                     * 调用方来源
+                     */
+                    std::string m_querySource;
+                    bool m_querySourceHasBeenSet;
 
                 };
             }

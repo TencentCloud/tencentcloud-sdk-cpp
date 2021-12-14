@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取匹配标签key值。
-                     * @return TagKey 匹配标签key值。
+                     * 获取已废弃。匹配标签key值。
+                     * @return TagKey 已废弃。匹配标签key值。
                      */
                     std::string GetTagKey() const;
 
                     /**
-                     * 设置匹配标签key值。
-                     * @param TagKey 匹配标签key值。
+                     * 设置已废弃。匹配标签key值。
+                     * @param TagKey 已废弃。匹配标签key值。
                      */
                     void SetTagKey(const std::string& _tagKey);
 
@@ -183,7 +183,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 匹配标签key值。
+                     * 已废弃。匹配标签key值。
                      */
                     std::string m_tagKey;
                     bool m_tagKeyHasBeenSet;

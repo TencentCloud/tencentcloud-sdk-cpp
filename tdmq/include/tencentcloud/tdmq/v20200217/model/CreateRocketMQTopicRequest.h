@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool NamespacesHasBeenSet() const;
 
                     /**
-                     * 获取主题类型，可选值为Normal, GlobalOrder, PartitionedOrder, Transaction
-                     * @return Type 主题类型，可选值为Normal, GlobalOrder, PartitionedOrder, Transaction
+                     * 获取主题类型，可选值为Normal, GlobalOrder, PartitionedOrder
+                     * @return Type 主题类型，可选值为Normal, GlobalOrder, PartitionedOrder
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置主题类型，可选值为Normal, GlobalOrder, PartitionedOrder, Transaction
-                     * @param Type 主题类型，可选值为Normal, GlobalOrder, PartitionedOrder, Transaction
+                     * 设置主题类型，可选值为Normal, GlobalOrder, PartitionedOrder
+                     * @param Type 主题类型，可选值为Normal, GlobalOrder, PartitionedOrder
                      */
                     void SetType(const std::string& _type);
 
@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取分区数，全局顺序无效
+                     * @return PartitionNum 分区数，全局顺序无效
+                     */
+                    int64_t GetPartitionNum() const;
+
+                    /**
+                     * 设置分区数，全局顺序无效
+                     * @param PartitionNum 分区数，全局顺序无效
+                     */
+                    void SetPartitionNum(const int64_t& _partitionNum);
+
+                    /**
+                     * 判断参数 PartitionNum 是否已赋值
+                     * @return PartitionNum 是否已赋值
+                     */
+                    bool PartitionNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -147,7 +165,7 @@ namespace TencentCloud
                     bool m_namespacesHasBeenSet;
 
                     /**
-                     * 主题类型，可选值为Normal, GlobalOrder, PartitionedOrder, Transaction
+                     * 主题类型，可选值为Normal, GlobalOrder, PartitionedOrder
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 分区数，全局顺序无效
+                     */
+                    int64_t m_partitionNum;
+                    bool m_partitionNumHasBeenSet;
 
                 };
             }

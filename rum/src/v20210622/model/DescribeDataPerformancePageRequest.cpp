@@ -43,7 +43,8 @@ DescribeDataPerformancePageRequest::DescribeDataPerformancePageRequest() :
     m_engineHasBeenSet(false),
     m_brandHasBeenSet(false),
     m_fromHasBeenSet(false),
-    m_costTypeHasBeenSet(false)
+    m_costTypeHasBeenSet(false),
+    m_envHasBeenSet(false)
 {
 }
 
@@ -220,6 +221,14 @@ string DescribeDataPerformancePageRequest::ToJsonString() const
         string key = "CostType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_costType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_envHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Env";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_env.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -564,6 +573,22 @@ void DescribeDataPerformancePageRequest::SetCostType(const string& _costType)
 bool DescribeDataPerformancePageRequest::CostTypeHasBeenSet() const
 {
     return m_costTypeHasBeenSet;
+}
+
+string DescribeDataPerformancePageRequest::GetEnv() const
+{
+    return m_env;
+}
+
+void DescribeDataPerformancePageRequest::SetEnv(const string& _env)
+{
+    m_env = _env;
+    m_envHasBeenSet = true;
+}
+
+bool DescribeDataPerformancePageRequest::EnvHasBeenSet() const
+{
+    return m_envHasBeenSet;
 }
 
 

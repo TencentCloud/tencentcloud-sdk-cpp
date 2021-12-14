@@ -42,7 +42,8 @@ DescribeDataPvUrlStatisticsRequest::DescribeDataPvUrlStatisticsRequest() :
     m_deviceHasBeenSet(false),
     m_isAbroadHasBeenSet(false),
     m_osHasBeenSet(false),
-    m_browserHasBeenSet(false)
+    m_browserHasBeenSet(false),
+    m_envHasBeenSet(false)
 {
 }
 
@@ -211,6 +212,14 @@ string DescribeDataPvUrlStatisticsRequest::ToJsonString() const
         string key = "Browser";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_browser.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_envHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Env";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_env.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -539,6 +548,22 @@ void DescribeDataPvUrlStatisticsRequest::SetBrowser(const string& _browser)
 bool DescribeDataPvUrlStatisticsRequest::BrowserHasBeenSet() const
 {
     return m_browserHasBeenSet;
+}
+
+string DescribeDataPvUrlStatisticsRequest::GetEnv() const
+{
+    return m_env;
+}
+
+void DescribeDataPvUrlStatisticsRequest::SetEnv(const string& _env)
+{
+    m_env = _env;
+    m_envHasBeenSet = true;
+}
+
+bool DescribeDataPvUrlStatisticsRequest::EnvHasBeenSet() const
+{
+    return m_envHasBeenSet;
 }
 
 

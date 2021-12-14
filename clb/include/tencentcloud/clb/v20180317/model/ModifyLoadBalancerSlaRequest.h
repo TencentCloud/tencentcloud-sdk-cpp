@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取负载均衡性能保障实例ID和变配的目标规格
-                     * @return LoadBalancerSla 负载均衡性能保障实例ID和变配的目标规格
+                     * 获取负载均衡实例信息
+                     * @return LoadBalancerSla 负载均衡实例信息
                      */
                     std::vector<SlaUpdateParam> GetLoadBalancerSla() const;
 
                     /**
-                     * 设置负载均衡性能保障实例ID和变配的目标规格
-                     * @param LoadBalancerSla 负载均衡性能保障实例ID和变配的目标规格
+                     * 设置负载均衡实例信息
+                     * @param LoadBalancerSla 负载均衡实例信息
                      */
                     void SetLoadBalancerSla(const std::vector<SlaUpdateParam>& _loadBalancerSla);
 
@@ -64,7 +64,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 负载均衡性能保障实例ID和变配的目标规格
+                     * 负载均衡实例信息
                      */
                     std::vector<SlaUpdateParam> m_loadBalancerSla;
                     bool m_loadBalancerSlaHasBeenSet;

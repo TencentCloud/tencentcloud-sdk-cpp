@@ -90,6 +90,116 @@ namespace TencentCloud
                      */
                     bool DisplayNameHasBeenSet() const;
 
+                    /**
+                     * 获取用户名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserName 用户名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUserName() const;
+
+                    /**
+                     * 设置用户名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UserName 用户名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUserName(const std::string& _userName);
+
+                    /**
+                     * 判断参数 UserName 是否已赋值
+                     * @return UserName 是否已赋值
+                     */
+                    bool UserNameHasBeenSet() const;
+
+                    /**
+                     * 获取用户手机号。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Phone 用户手机号。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPhone() const;
+
+                    /**
+                     * 设置用户手机号。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Phone 用户手机号。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPhone(const std::string& _phone);
+
+                    /**
+                     * 判断参数 Phone 是否已赋值
+                     * @return Phone 是否已赋值
+                     */
+                    bool PhoneHasBeenSet() const;
+
+                    /**
+                     * 获取邮箱地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Email 邮箱地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEmail() const;
+
+                    /**
+                     * 设置邮箱地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Email 邮箱地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEmail(const std::string& _email);
+
+                    /**
+                     * 判断参数 Email 是否已赋值
+                     * @return Email 是否已赋值
+                     */
+                    bool EmailHasBeenSet() const;
+
+                    /**
+                     * 获取用户状态。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 用户状态。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置用户状态。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Status 用户状态。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取数据来源。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataSource 数据来源。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDataSource() const;
+
+                    /**
+                     * 设置数据来源。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DataSource 数据来源。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDataSource(const std::string& _dataSource);
+
+                    /**
+                     * 判断参数 DataSource 是否已赋值
+                     * @return DataSource 是否已赋值
+                     */
+                    bool DataSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -105,6 +215,41 @@ namespace TencentCloud
                      */
                     std::string m_displayName;
                     bool m_displayNameHasBeenSet;
+
+                    /**
+                     * 用户名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_userName;
+                    bool m_userNameHasBeenSet;
+
+                    /**
+                     * 用户手机号。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_phone;
+                    bool m_phoneHasBeenSet;
+
+                    /**
+                     * 邮箱地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_email;
+                    bool m_emailHasBeenSet;
+
+                    /**
+                     * 用户状态。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 数据来源。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dataSource;
+                    bool m_dataSourceHasBeenSet;
 
                 };
             }

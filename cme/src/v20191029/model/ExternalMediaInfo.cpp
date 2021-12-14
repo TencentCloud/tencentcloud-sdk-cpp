@@ -21,8 +21,9 @@ using namespace TencentCloud::Cme::V20191029::Model;
 using namespace std;
 
 ExternalMediaInfo::ExternalMediaInfo() :
+    m_mediaKeyHasBeenSet(false),
     m_definitionHasBeenSet(false),
-    m_mediaKeyHasBeenSet(false)
+    m_storageIdHasBeenSet(false)
 {
 }
 
@@ -30,16 +31,6 @@ CoreInternalOutcome ExternalMediaInfo::Deserialize(const rapidjson::Value &value
 {
     string requestId = "";
 
-
-    if (value.HasMember("Definition") && !value["Definition"].IsNull())
-    {
-        if (!value["Definition"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `ExternalMediaInfo.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_definition = value["Definition"].GetInt64();
-        m_definitionHasBeenSet = true;
-    }
 
     if (value.HasMember("MediaKey") && !value["MediaKey"].IsNull())
     {
@@ -51,20 +42,32 @@ CoreInternalOutcome ExternalMediaInfo::Deserialize(const rapidjson::Value &value
         m_mediaKeyHasBeenSet = true;
     }
 
+    if (value.HasMember("Definition") && !value["Definition"].IsNull())
+    {
+        if (!value["Definition"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExternalMediaInfo.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_definition = value["Definition"].GetInt64();
+        m_definitionHasBeenSet = true;
+    }
+
+    if (value.HasMember("StorageId") && !value["StorageId"].IsNull())
+    {
+        if (!value["StorageId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExternalMediaInfo.StorageId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_storageId = string(value["StorageId"].GetString());
+        m_storageIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void ExternalMediaInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_definitionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Definition";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_definition, allocator);
-    }
 
     if (m_mediaKeyHasBeenSet)
     {
@@ -74,8 +77,40 @@ void ExternalMediaInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         value.AddMember(iKey, rapidjson::Value(m_mediaKey.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_definitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Definition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_definition, allocator);
+    }
+
+    if (m_storageIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_storageId.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
+
+string ExternalMediaInfo::GetMediaKey() const
+{
+    return m_mediaKey;
+}
+
+void ExternalMediaInfo::SetMediaKey(const string& _mediaKey)
+{
+    m_mediaKey = _mediaKey;
+    m_mediaKeyHasBeenSet = true;
+}
+
+bool ExternalMediaInfo::MediaKeyHasBeenSet() const
+{
+    return m_mediaKeyHasBeenSet;
+}
 
 int64_t ExternalMediaInfo::GetDefinition() const
 {
@@ -93,19 +128,19 @@ bool ExternalMediaInfo::DefinitionHasBeenSet() const
     return m_definitionHasBeenSet;
 }
 
-string ExternalMediaInfo::GetMediaKey() const
+string ExternalMediaInfo::GetStorageId() const
 {
-    return m_mediaKey;
+    return m_storageId;
 }
 
-void ExternalMediaInfo::SetMediaKey(const string& _mediaKey)
+void ExternalMediaInfo::SetStorageId(const string& _storageId)
 {
-    m_mediaKey = _mediaKey;
-    m_mediaKeyHasBeenSet = true;
+    m_storageId = _storageId;
+    m_storageIdHasBeenSet = true;
 }
 
-bool ExternalMediaInfo::MediaKeyHasBeenSet() const
+bool ExternalMediaInfo::StorageIdHasBeenSet() const
 {
-    return m_mediaKeyHasBeenSet;
+    return m_storageIdHasBeenSet;
 }
 

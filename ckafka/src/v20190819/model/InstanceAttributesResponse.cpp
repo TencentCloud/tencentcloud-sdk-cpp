@@ -52,7 +52,9 @@ InstanceAttributesResponse::InstanceAttributesResponse() :
     m_retentionTimeConfigHasBeenSet(false),
     m_maxConnectionHasBeenSet(false),
     m_publicNetworkHasBeenSet(false),
-    m_deleteRouteTimestampHasBeenSet(false)
+    m_deleteRouteTimestampHasBeenSet(false),
+    m_remainingPartitionsHasBeenSet(false),
+    m_remainingTopicsHasBeenSet(false)
 {
 }
 
@@ -421,6 +423,26 @@ CoreInternalOutcome InstanceAttributesResponse::Deserialize(const rapidjson::Val
         m_deleteRouteTimestampHasBeenSet = true;
     }
 
+    if (value.HasMember("RemainingPartitions") && !value["RemainingPartitions"].IsNull())
+    {
+        if (!value["RemainingPartitions"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAttributesResponse.RemainingPartitions` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_remainingPartitions = value["RemainingPartitions"].GetInt64();
+        m_remainingPartitionsHasBeenSet = true;
+    }
+
+    if (value.HasMember("RemainingTopics") && !value["RemainingTopics"].IsNull())
+    {
+        if (!value["RemainingTopics"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAttributesResponse.RemainingTopics` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_remainingTopics = value["RemainingTopics"].GetInt64();
+        m_remainingTopicsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -708,6 +730,22 @@ void InstanceAttributesResponse::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "DeleteRouteTimestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_deleteRouteTimestamp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remainingPartitionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemainingPartitions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_remainingPartitions, allocator);
+    }
+
+    if (m_remainingTopicsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemainingTopics";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_remainingTopics, allocator);
     }
 
 }
@@ -1223,5 +1261,37 @@ void InstanceAttributesResponse::SetDeleteRouteTimestamp(const string& _deleteRo
 bool InstanceAttributesResponse::DeleteRouteTimestampHasBeenSet() const
 {
     return m_deleteRouteTimestampHasBeenSet;
+}
+
+int64_t InstanceAttributesResponse::GetRemainingPartitions() const
+{
+    return m_remainingPartitions;
+}
+
+void InstanceAttributesResponse::SetRemainingPartitions(const int64_t& _remainingPartitions)
+{
+    m_remainingPartitions = _remainingPartitions;
+    m_remainingPartitionsHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::RemainingPartitionsHasBeenSet() const
+{
+    return m_remainingPartitionsHasBeenSet;
+}
+
+int64_t InstanceAttributesResponse::GetRemainingTopics() const
+{
+    return m_remainingTopics;
+}
+
+void InstanceAttributesResponse::SetRemainingTopics(const int64_t& _remainingTopics)
+{
+    m_remainingTopics = _remainingTopics;
+    m_remainingTopicsHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::RemainingTopicsHasBeenSet() const
+{
+    return m_remainingTopicsHasBeenSet;
 }
 

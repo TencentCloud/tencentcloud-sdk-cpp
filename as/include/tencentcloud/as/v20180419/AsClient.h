@@ -59,6 +59,8 @@
 #include <tencentcloud/as/v20180419/model/DescribeAccountLimitsResponse.h>
 #include <tencentcloud/as/v20180419/model/DescribeAutoScalingActivitiesRequest.h>
 #include <tencentcloud/as/v20180419/model/DescribeAutoScalingActivitiesResponse.h>
+#include <tencentcloud/as/v20180419/model/DescribeAutoScalingAdvicesRequest.h>
+#include <tencentcloud/as/v20180419/model/DescribeAutoScalingAdvicesResponse.h>
 #include <tencentcloud/as/v20180419/model/DescribeAutoScalingGroupLastActivitiesRequest.h>
 #include <tencentcloud/as/v20180419/model/DescribeAutoScalingGroupLastActivitiesResponse.h>
 #include <tencentcloud/as/v20180419/model/DescribeAutoScalingGroupsRequest.h>
@@ -185,6 +187,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAutoScalingActivitiesResponse> DescribeAutoScalingActivitiesOutcome;
                 typedef std::future<DescribeAutoScalingActivitiesOutcome> DescribeAutoScalingActivitiesOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::DescribeAutoScalingActivitiesRequest&, DescribeAutoScalingActivitiesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoScalingActivitiesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAutoScalingAdvicesResponse> DescribeAutoScalingAdvicesOutcome;
+                typedef std::future<DescribeAutoScalingAdvicesOutcome> DescribeAutoScalingAdvicesOutcomeCallable;
+                typedef std::function<void(const AsClient*, const Model::DescribeAutoScalingAdvicesRequest&, DescribeAutoScalingAdvicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoScalingAdvicesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAutoScalingGroupLastActivitiesResponse> DescribeAutoScalingGroupLastActivitiesOutcome;
                 typedef std::future<DescribeAutoScalingGroupLastActivitiesOutcome> DescribeAutoScalingGroupLastActivitiesOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::DescribeAutoScalingGroupLastActivitiesRequest&, DescribeAutoScalingGroupLastActivitiesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoScalingGroupLastActivitiesAsyncHandler;
@@ -495,6 +500,15 @@ namespace TencentCloud
                 DescribeAutoScalingActivitiesOutcome DescribeAutoScalingActivities(const Model::DescribeAutoScalingActivitiesRequest &request);
                 void DescribeAutoScalingActivitiesAsync(const Model::DescribeAutoScalingActivitiesRequest& request, const DescribeAutoScalingActivitiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAutoScalingActivitiesOutcomeCallable DescribeAutoScalingActivitiesCallable(const Model::DescribeAutoScalingActivitiesRequest& request);
+
+                /**
+                 *此接口用于查询伸缩组配置建议。
+                 * @param req DescribeAutoScalingAdvicesRequest
+                 * @return DescribeAutoScalingAdvicesOutcome
+                 */
+                DescribeAutoScalingAdvicesOutcome DescribeAutoScalingAdvices(const Model::DescribeAutoScalingAdvicesRequest &request);
+                void DescribeAutoScalingAdvicesAsync(const Model::DescribeAutoScalingAdvicesRequest& request, const DescribeAutoScalingAdvicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAutoScalingAdvicesOutcomeCallable DescribeAutoScalingAdvicesCallable(const Model::DescribeAutoScalingAdvicesRequest& request);
 
                 /**
                  *本接口（DescribeAutoScalingGroupLastActivities）用于查询伸缩组的最新一次伸缩活动记录。

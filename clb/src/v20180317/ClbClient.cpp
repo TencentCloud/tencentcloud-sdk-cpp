@@ -1373,6 +1373,49 @@ ClbClient::DescribeClusterResourcesOutcomeCallable ClbClient::DescribeClusterRes
     return task->get_future();
 }
 
+ClbClient::DescribeCrossTargetsOutcome ClbClient::DescribeCrossTargets(const DescribeCrossTargetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCrossTargets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCrossTargetsResponse rsp = DescribeCrossTargetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCrossTargetsOutcome(rsp);
+        else
+            return DescribeCrossTargetsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCrossTargetsOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeCrossTargetsAsync(const DescribeCrossTargetsRequest& request, const DescribeCrossTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCrossTargets(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::DescribeCrossTargetsOutcomeCallable ClbClient::DescribeCrossTargetsCallable(const DescribeCrossTargetsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCrossTargetsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCrossTargets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::DescribeCustomizedConfigAssociateListOutcome ClbClient::DescribeCustomizedConfigAssociateList(const DescribeCustomizedConfigAssociateListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCustomizedConfigAssociateList");

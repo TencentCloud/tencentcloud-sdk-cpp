@@ -435,6 +435,28 @@ namespace TencentCloud
                      */
                     bool OcrTextHasBeenSet() const;
 
+                    /**
+                     * 获取OCR拼接后文本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OcrResult OCR拼接后文本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOcrResult() const;
+
+                    /**
+                     * 设置OCR拼接后文本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OcrResult OCR拼接后文本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOcrResult(const std::string& _ocrResult);
+
+                    /**
+                     * 判断参数 OcrResult 是否已赋值
+                     * @return OcrResult 是否已赋值
+                     */
+                    bool OcrResultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -555,6 +577,13 @@ namespace TencentCloud
                      */
                     std::string m_ocrText;
                     bool m_ocrTextHasBeenSet;
+
+                    /**
+                     * OCR拼接后文本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ocrResult;
+                    bool m_ocrResultHasBeenSet;
 
                 };
             }

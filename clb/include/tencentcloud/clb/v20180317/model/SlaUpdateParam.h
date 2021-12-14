@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 性能保障变配参数
+                * 性能容量型变配参数
                 */
                 class SlaUpdateParam : public AbstractModel
                 {
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取需要变更的性能保障级别
-                     * @return SlaType 需要变更的性能保障级别
+                     * 获取变更为性能容量型，固定为SLA
+                     * @return SlaType 变更为性能容量型，固定为SLA
                      */
                     std::string GetSlaType() const;
 
                     /**
-                     * 设置需要变更的性能保障级别
-                     * @param SlaType 需要变更的性能保障级别
+                     * 设置变更为性能容量型，固定为SLA
+                     * @param SlaType 变更为性能容量型，固定为SLA
                      */
                     void SetSlaType(const std::string& _slaType);
 
@@ -91,7 +91,7 @@ namespace TencentCloud
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 需要变更的性能保障级别
+                     * 变更为性能容量型，固定为SLA
                      */
                     std::string m_slaType;
                     bool m_slaTypeHasBeenSet;

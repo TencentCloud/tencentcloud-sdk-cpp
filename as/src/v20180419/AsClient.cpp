@@ -814,6 +814,49 @@ AsClient::DescribeAutoScalingActivitiesOutcomeCallable AsClient::DescribeAutoSca
     return task->get_future();
 }
 
+AsClient::DescribeAutoScalingAdvicesOutcome AsClient::DescribeAutoScalingAdvices(const DescribeAutoScalingAdvicesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAutoScalingAdvices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAutoScalingAdvicesResponse rsp = DescribeAutoScalingAdvicesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAutoScalingAdvicesOutcome(rsp);
+        else
+            return DescribeAutoScalingAdvicesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAutoScalingAdvicesOutcome(outcome.GetError());
+    }
+}
+
+void AsClient::DescribeAutoScalingAdvicesAsync(const DescribeAutoScalingAdvicesRequest& request, const DescribeAutoScalingAdvicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAutoScalingAdvices(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsClient::DescribeAutoScalingAdvicesOutcomeCallable AsClient::DescribeAutoScalingAdvicesCallable(const DescribeAutoScalingAdvicesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAutoScalingAdvicesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAutoScalingAdvices(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AsClient::DescribeAutoScalingGroupLastActivitiesOutcome AsClient::DescribeAutoScalingGroupLastActivities(const DescribeAutoScalingGroupLastActivitiesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAutoScalingGroupLastActivities");
