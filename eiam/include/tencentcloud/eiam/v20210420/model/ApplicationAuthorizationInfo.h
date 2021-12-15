@@ -113,6 +113,50 @@ namespace TencentCloud
                      */
                     bool InheritedFormHasBeenSet() const;
 
+                    /**
+                     * 获取应用名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationName 应用名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetApplicationName() const;
+
+                    /**
+                     * 设置应用名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ApplicationName 应用名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetApplicationName(const std::string& _applicationName);
+
+                    /**
+                     * 判断参数 ApplicationName 是否已赋值
+                     * @return ApplicationName 是否已赋值
+                     */
+                    bool ApplicationNameHasBeenSet() const;
+
+                    /**
+                     * 获取应用创建时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreatedDate 应用创建时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCreatedDate() const;
+
+                    /**
+                     * 设置应用创建时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CreatedDate 应用创建时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCreatedDate(const std::string& _createdDate);
+
+                    /**
+                     * 判断参数 CreatedDate 是否已赋值
+                     * @return CreatedDate 是否已赋值
+                     */
+                    bool CreatedDateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -135,6 +179,20 @@ namespace TencentCloud
                      */
                     InheritedForm m_inheritedForm;
                     bool m_inheritedFormHasBeenSet;
+
+                    /**
+                     * 应用名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applicationName;
+                    bool m_applicationNameHasBeenSet;
+
+                    /**
+                     * 应用创建时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_createdDate;
+                    bool m_createdDateHasBeenSet;
 
                 };
             }

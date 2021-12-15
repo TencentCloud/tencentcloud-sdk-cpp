@@ -27,7 +27,8 @@ OrgNodeChildInfo::OrgNodeChildInfo() :
     m_parentOrgNodeIdHasBeenSet(false),
     m_orgNodeIdHasBeenSet(false),
     m_dataSourceHasBeenSet(false),
-    m_createdDateHasBeenSet(false)
+    m_createdDateHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome OrgNodeChildInfo::Deserialize(const rapidjson::Value &value)
         m_createdDateHasBeenSet = true;
     }
 
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrgNodeChildInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void OrgNodeChildInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "CreatedDate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createdDate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void OrgNodeChildInfo::SetCreatedDate(const string& _createdDate)
 bool OrgNodeChildInfo::CreatedDateHasBeenSet() const
 {
     return m_createdDateHasBeenSet;
+}
+
+string OrgNodeChildInfo::GetDescription() const
+{
+    return m_description;
+}
+
+void OrgNodeChildInfo::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool OrgNodeChildInfo::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 

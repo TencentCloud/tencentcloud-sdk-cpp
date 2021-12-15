@@ -31,7 +31,8 @@ DescribeOrgNodeResponse::DescribeOrgNodeResponse() :
     m_orgNodeIdHasBeenSet(false),
     m_dataSourceHasBeenSet(false),
     m_createdDateHasBeenSet(false),
-    m_orgNodeChildInfoHasBeenSet(false)
+    m_orgNodeChildInfoHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -159,6 +160,16 @@ CoreInternalOutcome DescribeOrgNodeResponse::Deserialize(const string &payload)
         m_orgNodeChildInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Description") && !rsp["Description"].IsNull())
+    {
+        if (!rsp["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(rsp["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -238,6 +249,14 @@ string DescribeOrgNodeResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -330,6 +349,16 @@ vector<OrgNodeChildInfo> DescribeOrgNodeResponse::GetOrgNodeChildInfo() const
 bool DescribeOrgNodeResponse::OrgNodeChildInfoHasBeenSet() const
 {
     return m_orgNodeChildInfoHasBeenSet;
+}
+
+string DescribeOrgNodeResponse::GetDescription() const
+{
+    return m_description;
+}
+
+bool DescribeOrgNodeResponse::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 
 

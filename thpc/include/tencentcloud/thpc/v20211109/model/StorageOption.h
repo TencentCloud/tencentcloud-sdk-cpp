@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/thpc/v20211109/model/CFSOption.h>
+#include <tencentcloud/thpc/v20211109/model/GooseFSOption.h>
 
 
 namespace TencentCloud
@@ -65,6 +66,24 @@ namespace TencentCloud
                      */
                     bool CFSOptionsHasBeenSet() const;
 
+                    /**
+                     * 获取集群挂在GooseFS文件系统选项
+                     * @return GooseFSOptions 集群挂在GooseFS文件系统选项
+                     */
+                    std::vector<GooseFSOption> GetGooseFSOptions() const;
+
+                    /**
+                     * 设置集群挂在GooseFS文件系统选项
+                     * @param GooseFSOptions 集群挂在GooseFS文件系统选项
+                     */
+                    void SetGooseFSOptions(const std::vector<GooseFSOption>& _gooseFSOptions);
+
+                    /**
+                     * 判断参数 GooseFSOptions 是否已赋值
+                     * @return GooseFSOptions 是否已赋值
+                     */
+                    bool GooseFSOptionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -72,6 +91,12 @@ namespace TencentCloud
                      */
                     std::vector<CFSOption> m_cFSOptions;
                     bool m_cFSOptionsHasBeenSet;
+
+                    /**
+                     * 集群挂在GooseFS文件系统选项
+                     */
+                    std::vector<GooseFSOption> m_gooseFSOptions;
+                    bool m_gooseFSOptionsHasBeenSet;
 
                 };
             }

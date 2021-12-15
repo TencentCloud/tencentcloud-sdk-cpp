@@ -246,6 +246,24 @@ namespace TencentCloud
                      */
                     bool FilterDamDDoSStatusHasBeenSet() const;
 
+                    /**
+                     * 获取获取特定状态的资源，运行中填idle，攻击中填attacking，封堵中填blocking
+                     * @return FilterStatus 获取特定状态的资源，运行中填idle，攻击中填attacking，封堵中填blocking
+                     */
+                    std::string GetFilterStatus() const;
+
+                    /**
+                     * 设置获取特定状态的资源，运行中填idle，攻击中填attacking，封堵中填blocking
+                     * @param FilterStatus 获取特定状态的资源，运行中填idle，攻击中填attacking，封堵中填blocking
+                     */
+                    void SetFilterStatus(const std::string& _filterStatus);
+
+                    /**
+                     * 判断参数 FilterStatus 是否已赋值
+                     * @return FilterStatus 是否已赋值
+                     */
+                    bool FilterStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -313,6 +331,12 @@ namespace TencentCloud
                      */
                     int64_t m_filterDamDDoSStatus;
                     bool m_filterDamDDoSStatusHasBeenSet;
+
+                    /**
+                     * 获取特定状态的资源，运行中填idle，攻击中填attacking，封堵中填blocking
+                     */
+                    std::string m_filterStatus;
+                    bool m_filterStatusHasBeenSet;
 
                 };
             }

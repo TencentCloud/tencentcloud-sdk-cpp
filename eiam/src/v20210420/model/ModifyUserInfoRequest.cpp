@@ -32,7 +32,8 @@ ModifyUserInfoRequest::ModifyUserInfoRequest() :
     m_expirationTimeHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_emailHasBeenSet(false),
-    m_pwdNeedResetHasBeenSet(false)
+    m_pwdNeedResetHasBeenSet(false),
+    m_orgNodeIdHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,14 @@ string ModifyUserInfoRequest::ToJsonString() const
         string key = "PwdNeedReset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pwdNeedReset, allocator);
+    }
+
+    if (m_orgNodeIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrgNodeId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orgNodeId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -294,6 +303,22 @@ void ModifyUserInfoRequest::SetPwdNeedReset(const bool& _pwdNeedReset)
 bool ModifyUserInfoRequest::PwdNeedResetHasBeenSet() const
 {
     return m_pwdNeedResetHasBeenSet;
+}
+
+string ModifyUserInfoRequest::GetOrgNodeId() const
+{
+    return m_orgNodeId;
+}
+
+void ModifyUserInfoRequest::SetOrgNodeId(const string& _orgNodeId)
+{
+    m_orgNodeId = _orgNodeId;
+    m_orgNodeIdHasBeenSet = true;
+}
+
+bool ModifyUserInfoRequest::OrgNodeIdHasBeenSet() const
+{
+    return m_orgNodeIdHasBeenSet;
 }
 
 

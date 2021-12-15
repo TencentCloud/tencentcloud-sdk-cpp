@@ -344,7 +344,7 @@ namespace TencentCloud
                 CreateAlarmOutcomeCallable CreateAlarmCallable(const Model::CreateAlarmRequest& request);
 
                 /**
-                 *该接口用户创建告警通知模板。
+                 *该接口用户创建通知渠道组。
                  * @param req CreateAlarmNoticeRequest
                  * @return CreateAlarmNoticeOutcome
                  */
@@ -443,7 +443,7 @@ namespace TencentCloud
                 DeleteAlarmOutcomeCallable DeleteAlarmCallable(const Model::DeleteAlarmRequest& request);
 
                 /**
-                 *该接口用于删除告警通知模板
+                 *该接口用于删除通知渠道组
                  * @param req DeleteAlarmNoticeRequest
                  * @return DeleteAlarmNoticeOutcome
                  */
@@ -542,7 +542,7 @@ namespace TencentCloud
                 DeleteTopicOutcomeCallable DeleteTopicCallable(const Model::DeleteTopicRequest& request);
 
                 /**
-                 *该接口用于获取告警通知模板列表
+                 *该接口用于获取通知渠道组列表
                  * @param req DescribeAlarmNoticesRequest
                  * @return DescribeAlarmNoticesOutcome
                  */
@@ -551,7 +551,7 @@ namespace TencentCloud
                 DescribeAlarmNoticesOutcomeCallable DescribeAlarmNoticesCallable(const Model::DescribeAlarmNoticesRequest& request);
 
                 /**
-                 *本接口用于获取告警策略。
+                 *本接口用于获取告警策略列表。
                  * @param req DescribeAlarmsRequest
                  * @return DescribeAlarmsOutcome
                  */
@@ -740,7 +740,7 @@ namespace TencentCloud
                 ModifyAlarmOutcomeCallable ModifyAlarmCallable(const Model::ModifyAlarmRequest& request);
 
                 /**
-                 *该接口用于修改告警通知模板。
+                 *该接口用于修改通知渠道组
                  * @param req ModifyAlarmNoticeRequest
                  * @return ModifyAlarmNoticeOutcome
                  */
@@ -813,7 +813,7 @@ namespace TencentCloud
                 RetryShipperTaskOutcomeCallable RetryShipperTaskCallable(const Model::RetryShipperTaskRequest& request);
 
                 /**
-                 *本接口用于搜索日志
+                 *本接口用于搜索日志, 该接口除受默认接口请求频率限制外，针对单个日志主题，并发数不能超过15
                  * @param req SearchLogRequest
                  * @return SearchLogOutcome
                  */

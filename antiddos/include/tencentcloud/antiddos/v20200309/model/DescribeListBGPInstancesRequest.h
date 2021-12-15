@@ -168,6 +168,42 @@ namespace TencentCloud
                      */
                     bool FilterLineHasBeenSet() const;
 
+                    /**
+                     * 获取状态搜索，idle：允许中；attacking：攻击中；blocking：封堵中
+                     * @return FilterStatus 状态搜索，idle：允许中；attacking：攻击中；blocking：封堵中
+                     */
+                    std::string GetFilterStatus() const;
+
+                    /**
+                     * 设置状态搜索，idle：允许中；attacking：攻击中；blocking：封堵中
+                     * @param FilterStatus 状态搜索，idle：允许中；attacking：攻击中；blocking：封堵中
+                     */
+                    void SetFilterStatus(const std::string& _filterStatus);
+
+                    /**
+                     * 判断参数 FilterStatus 是否已赋值
+                     * @return FilterStatus 是否已赋值
+                     */
+                    bool FilterStatusHasBeenSet() const;
+
+                    /**
+                     * 获取高防包绑定状态搜索，bounding：绑定中； failed：绑定失败
+                     * @return FilterBoundStatus 高防包绑定状态搜索，bounding：绑定中； failed：绑定失败
+                     */
+                    std::string GetFilterBoundStatus() const;
+
+                    /**
+                     * 设置高防包绑定状态搜索，bounding：绑定中； failed：绑定失败
+                     * @param FilterBoundStatus 高防包绑定状态搜索，bounding：绑定中； failed：绑定失败
+                     */
+                    void SetFilterBoundStatus(const std::string& _filterBoundStatus);
+
+                    /**
+                     * 判断参数 FilterBoundStatus 是否已赋值
+                     * @return FilterBoundStatus 是否已赋值
+                     */
+                    bool FilterBoundStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +247,18 @@ namespace TencentCloud
                      */
                     uint64_t m_filterLine;
                     bool m_filterLineHasBeenSet;
+
+                    /**
+                     * 状态搜索，idle：允许中；attacking：攻击中；blocking：封堵中
+                     */
+                    std::string m_filterStatus;
+                    bool m_filterStatusHasBeenSet;
+
+                    /**
+                     * 高防包绑定状态搜索，bounding：绑定中； failed：绑定失败
+                     */
+                    std::string m_filterBoundStatus;
+                    bool m_filterBoundStatusHasBeenSet;
 
                 };
             }

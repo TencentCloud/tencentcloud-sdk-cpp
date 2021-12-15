@@ -23,20 +23,36 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/eiam/v20210420/model/AddAccountToAccountGroupRequest.h>
+#include <tencentcloud/eiam/v20210420/model/AddAccountToAccountGroupResponse.h>
 #include <tencentcloud/eiam/v20210420/model/AddUserToUserGroupRequest.h>
 #include <tencentcloud/eiam/v20210420/model/AddUserToUserGroupResponse.h>
+#include <tencentcloud/eiam/v20210420/model/CreateAccountGroupRequest.h>
+#include <tencentcloud/eiam/v20210420/model/CreateAccountGroupResponse.h>
+#include <tencentcloud/eiam/v20210420/model/CreateAppAccountRequest.h>
+#include <tencentcloud/eiam/v20210420/model/CreateAppAccountResponse.h>
 #include <tencentcloud/eiam/v20210420/model/CreateOrgNodeRequest.h>
 #include <tencentcloud/eiam/v20210420/model/CreateOrgNodeResponse.h>
 #include <tencentcloud/eiam/v20210420/model/CreateUserRequest.h>
 #include <tencentcloud/eiam/v20210420/model/CreateUserResponse.h>
 #include <tencentcloud/eiam/v20210420/model/CreateUserGroupRequest.h>
 #include <tencentcloud/eiam/v20210420/model/CreateUserGroupResponse.h>
+#include <tencentcloud/eiam/v20210420/model/DeleteAccountGroupRequest.h>
+#include <tencentcloud/eiam/v20210420/model/DeleteAccountGroupResponse.h>
+#include <tencentcloud/eiam/v20210420/model/DeleteAppAccountRequest.h>
+#include <tencentcloud/eiam/v20210420/model/DeleteAppAccountResponse.h>
 #include <tencentcloud/eiam/v20210420/model/DeleteOrgNodeRequest.h>
 #include <tencentcloud/eiam/v20210420/model/DeleteOrgNodeResponse.h>
 #include <tencentcloud/eiam/v20210420/model/DeleteUserRequest.h>
 #include <tencentcloud/eiam/v20210420/model/DeleteUserResponse.h>
 #include <tencentcloud/eiam/v20210420/model/DeleteUserGroupRequest.h>
 #include <tencentcloud/eiam/v20210420/model/DeleteUserGroupResponse.h>
+#include <tencentcloud/eiam/v20210420/model/DeleteUsersRequest.h>
+#include <tencentcloud/eiam/v20210420/model/DeleteUsersResponse.h>
+#include <tencentcloud/eiam/v20210420/model/DescribeAccountGroupRequest.h>
+#include <tencentcloud/eiam/v20210420/model/DescribeAccountGroupResponse.h>
+#include <tencentcloud/eiam/v20210420/model/DescribeAppAccountRequest.h>
+#include <tencentcloud/eiam/v20210420/model/DescribeAppAccountResponse.h>
 #include <tencentcloud/eiam/v20210420/model/DescribeApplicationRequest.h>
 #include <tencentcloud/eiam/v20210420/model/DescribeApplicationResponse.h>
 #include <tencentcloud/eiam/v20210420/model/DescribeOrgNodeRequest.h>
@@ -53,6 +69,10 @@
 #include <tencentcloud/eiam/v20210420/model/DescribeUserInfoResponse.h>
 #include <tencentcloud/eiam/v20210420/model/DescribeUserResourcesAuthorizationRequest.h>
 #include <tencentcloud/eiam/v20210420/model/DescribeUserResourcesAuthorizationResponse.h>
+#include <tencentcloud/eiam/v20210420/model/DescribeUserThirdPartyAccountInfoRequest.h>
+#include <tencentcloud/eiam/v20210420/model/DescribeUserThirdPartyAccountInfoResponse.h>
+#include <tencentcloud/eiam/v20210420/model/ListAccountInAccountGroupRequest.h>
+#include <tencentcloud/eiam/v20210420/model/ListAccountInAccountGroupResponse.h>
 #include <tencentcloud/eiam/v20210420/model/ListApplicationAuthorizationsRequest.h>
 #include <tencentcloud/eiam/v20210420/model/ListApplicationAuthorizationsResponse.h>
 #include <tencentcloud/eiam/v20210420/model/ListApplicationsRequest.h>
@@ -73,10 +93,16 @@
 #include <tencentcloud/eiam/v20210420/model/ListUsersInOrgNodeResponse.h>
 #include <tencentcloud/eiam/v20210420/model/ListUsersInUserGroupRequest.h>
 #include <tencentcloud/eiam/v20210420/model/ListUsersInUserGroupResponse.h>
+#include <tencentcloud/eiam/v20210420/model/ModifyAccountGroupRequest.h>
+#include <tencentcloud/eiam/v20210420/model/ModifyAccountGroupResponse.h>
+#include <tencentcloud/eiam/v20210420/model/ModifyAppAccountRequest.h>
+#include <tencentcloud/eiam/v20210420/model/ModifyAppAccountResponse.h>
 #include <tencentcloud/eiam/v20210420/model/ModifyApplicationRequest.h>
 #include <tencentcloud/eiam/v20210420/model/ModifyApplicationResponse.h>
 #include <tencentcloud/eiam/v20210420/model/ModifyUserInfoRequest.h>
 #include <tencentcloud/eiam/v20210420/model/ModifyUserInfoResponse.h>
+#include <tencentcloud/eiam/v20210420/model/RemoveAccountFromAccountGroupRequest.h>
+#include <tencentcloud/eiam/v20210420/model/RemoveAccountFromAccountGroupResponse.h>
 #include <tencentcloud/eiam/v20210420/model/RemoveUserFromUserGroupRequest.h>
 #include <tencentcloud/eiam/v20210420/model/RemoveUserFromUserGroupResponse.h>
 #include <tencentcloud/eiam/v20210420/model/UpdateOrgNodeRequest.h>
@@ -95,9 +121,18 @@ namespace TencentCloud
                 EiamClient(const Credential &credential, const std::string &region);
                 EiamClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::AddAccountToAccountGroupResponse> AddAccountToAccountGroupOutcome;
+                typedef std::future<AddAccountToAccountGroupOutcome> AddAccountToAccountGroupOutcomeCallable;
+                typedef std::function<void(const EiamClient*, const Model::AddAccountToAccountGroupRequest&, AddAccountToAccountGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddAccountToAccountGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddUserToUserGroupResponse> AddUserToUserGroupOutcome;
                 typedef std::future<AddUserToUserGroupOutcome> AddUserToUserGroupOutcomeCallable;
                 typedef std::function<void(const EiamClient*, const Model::AddUserToUserGroupRequest&, AddUserToUserGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddUserToUserGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAccountGroupResponse> CreateAccountGroupOutcome;
+                typedef std::future<CreateAccountGroupOutcome> CreateAccountGroupOutcomeCallable;
+                typedef std::function<void(const EiamClient*, const Model::CreateAccountGroupRequest&, CreateAccountGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccountGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAppAccountResponse> CreateAppAccountOutcome;
+                typedef std::future<CreateAppAccountOutcome> CreateAppAccountOutcomeCallable;
+                typedef std::function<void(const EiamClient*, const Model::CreateAppAccountRequest&, CreateAppAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAppAccountAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateOrgNodeResponse> CreateOrgNodeOutcome;
                 typedef std::future<CreateOrgNodeOutcome> CreateOrgNodeOutcomeCallable;
                 typedef std::function<void(const EiamClient*, const Model::CreateOrgNodeRequest&, CreateOrgNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrgNodeAsyncHandler;
@@ -107,6 +142,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateUserGroupResponse> CreateUserGroupOutcome;
                 typedef std::future<CreateUserGroupOutcome> CreateUserGroupOutcomeCallable;
                 typedef std::function<void(const EiamClient*, const Model::CreateUserGroupRequest&, CreateUserGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAccountGroupResponse> DeleteAccountGroupOutcome;
+                typedef std::future<DeleteAccountGroupOutcome> DeleteAccountGroupOutcomeCallable;
+                typedef std::function<void(const EiamClient*, const Model::DeleteAccountGroupRequest&, DeleteAccountGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccountGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAppAccountResponse> DeleteAppAccountOutcome;
+                typedef std::future<DeleteAppAccountOutcome> DeleteAppAccountOutcomeCallable;
+                typedef std::function<void(const EiamClient*, const Model::DeleteAppAccountRequest&, DeleteAppAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAppAccountAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteOrgNodeResponse> DeleteOrgNodeOutcome;
                 typedef std::future<DeleteOrgNodeOutcome> DeleteOrgNodeOutcomeCallable;
                 typedef std::function<void(const EiamClient*, const Model::DeleteOrgNodeRequest&, DeleteOrgNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOrgNodeAsyncHandler;
@@ -116,6 +157,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteUserGroupResponse> DeleteUserGroupOutcome;
                 typedef std::future<DeleteUserGroupOutcome> DeleteUserGroupOutcomeCallable;
                 typedef std::function<void(const EiamClient*, const Model::DeleteUserGroupRequest&, DeleteUserGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteUsersResponse> DeleteUsersOutcome;
+                typedef std::future<DeleteUsersOutcome> DeleteUsersOutcomeCallable;
+                typedef std::function<void(const EiamClient*, const Model::DeleteUsersRequest&, DeleteUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUsersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAccountGroupResponse> DescribeAccountGroupOutcome;
+                typedef std::future<DescribeAccountGroupOutcome> DescribeAccountGroupOutcomeCallable;
+                typedef std::function<void(const EiamClient*, const Model::DescribeAccountGroupRequest&, DescribeAccountGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAppAccountResponse> DescribeAppAccountOutcome;
+                typedef std::future<DescribeAppAccountOutcome> DescribeAppAccountOutcomeCallable;
+                typedef std::function<void(const EiamClient*, const Model::DescribeAppAccountRequest&, DescribeAppAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppAccountAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeApplicationResponse> DescribeApplicationOutcome;
                 typedef std::future<DescribeApplicationOutcome> DescribeApplicationOutcomeCallable;
                 typedef std::function<void(const EiamClient*, const Model::DescribeApplicationRequest&, DescribeApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationAsyncHandler;
@@ -140,6 +190,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserResourcesAuthorizationResponse> DescribeUserResourcesAuthorizationOutcome;
                 typedef std::future<DescribeUserResourcesAuthorizationOutcome> DescribeUserResourcesAuthorizationOutcomeCallable;
                 typedef std::function<void(const EiamClient*, const Model::DescribeUserResourcesAuthorizationRequest&, DescribeUserResourcesAuthorizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserResourcesAuthorizationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserThirdPartyAccountInfoResponse> DescribeUserThirdPartyAccountInfoOutcome;
+                typedef std::future<DescribeUserThirdPartyAccountInfoOutcome> DescribeUserThirdPartyAccountInfoOutcomeCallable;
+                typedef std::function<void(const EiamClient*, const Model::DescribeUserThirdPartyAccountInfoRequest&, DescribeUserThirdPartyAccountInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserThirdPartyAccountInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListAccountInAccountGroupResponse> ListAccountInAccountGroupOutcome;
+                typedef std::future<ListAccountInAccountGroupOutcome> ListAccountInAccountGroupOutcomeCallable;
+                typedef std::function<void(const EiamClient*, const Model::ListAccountInAccountGroupRequest&, ListAccountInAccountGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAccountInAccountGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListApplicationAuthorizationsResponse> ListApplicationAuthorizationsOutcome;
                 typedef std::future<ListApplicationAuthorizationsOutcome> ListApplicationAuthorizationsOutcomeCallable;
                 typedef std::function<void(const EiamClient*, const Model::ListApplicationAuthorizationsRequest&, ListApplicationAuthorizationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListApplicationAuthorizationsAsyncHandler;
@@ -170,12 +226,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListUsersInUserGroupResponse> ListUsersInUserGroupOutcome;
                 typedef std::future<ListUsersInUserGroupOutcome> ListUsersInUserGroupOutcomeCallable;
                 typedef std::function<void(const EiamClient*, const Model::ListUsersInUserGroupRequest&, ListUsersInUserGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListUsersInUserGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAccountGroupResponse> ModifyAccountGroupOutcome;
+                typedef std::future<ModifyAccountGroupOutcome> ModifyAccountGroupOutcomeCallable;
+                typedef std::function<void(const EiamClient*, const Model::ModifyAccountGroupRequest&, ModifyAccountGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAppAccountResponse> ModifyAppAccountOutcome;
+                typedef std::future<ModifyAppAccountOutcome> ModifyAppAccountOutcomeCallable;
+                typedef std::function<void(const EiamClient*, const Model::ModifyAppAccountRequest&, ModifyAppAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAppAccountAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyApplicationResponse> ModifyApplicationOutcome;
                 typedef std::future<ModifyApplicationOutcome> ModifyApplicationOutcomeCallable;
                 typedef std::function<void(const EiamClient*, const Model::ModifyApplicationRequest&, ModifyApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApplicationAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyUserInfoResponse> ModifyUserInfoOutcome;
                 typedef std::future<ModifyUserInfoOutcome> ModifyUserInfoOutcomeCallable;
                 typedef std::function<void(const EiamClient*, const Model::ModifyUserInfoRequest&, ModifyUserInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::RemoveAccountFromAccountGroupResponse> RemoveAccountFromAccountGroupOutcome;
+                typedef std::future<RemoveAccountFromAccountGroupOutcome> RemoveAccountFromAccountGroupOutcomeCallable;
+                typedef std::function<void(const EiamClient*, const Model::RemoveAccountFromAccountGroupRequest&, RemoveAccountFromAccountGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveAccountFromAccountGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::RemoveUserFromUserGroupResponse> RemoveUserFromUserGroupOutcome;
                 typedef std::future<RemoveUserFromUserGroupOutcome> RemoveUserFromUserGroupOutcomeCallable;
                 typedef std::function<void(const EiamClient*, const Model::RemoveUserFromUserGroupRequest&, RemoveUserFromUserGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveUserFromUserGroupAsyncHandler;
@@ -186,6 +251,15 @@ namespace TencentCloud
 
 
                 /**
+                 *账号组添加账号
+                 * @param req AddAccountToAccountGroupRequest
+                 * @return AddAccountToAccountGroupOutcome
+                 */
+                AddAccountToAccountGroupOutcome AddAccountToAccountGroup(const Model::AddAccountToAccountGroupRequest &request);
+                void AddAccountToAccountGroupAsync(const Model::AddAccountToAccountGroupRequest& request, const AddAccountToAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddAccountToAccountGroupOutcomeCallable AddAccountToAccountGroupCallable(const Model::AddAccountToAccountGroupRequest& request);
+
+                /**
                  *加入用户到用户组
                  * @param req AddUserToUserGroupRequest
                  * @return AddUserToUserGroupOutcome
@@ -193,6 +267,24 @@ namespace TencentCloud
                 AddUserToUserGroupOutcome AddUserToUserGroup(const Model::AddUserToUserGroupRequest &request);
                 void AddUserToUserGroupAsync(const Model::AddUserToUserGroupRequest& request, const AddUserToUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddUserToUserGroupOutcomeCallable AddUserToUserGroupCallable(const Model::AddUserToUserGroupRequest& request);
+
+                /**
+                 *创建账号组
+                 * @param req CreateAccountGroupRequest
+                 * @return CreateAccountGroupOutcome
+                 */
+                CreateAccountGroupOutcome CreateAccountGroup(const Model::CreateAccountGroupRequest &request);
+                void CreateAccountGroupAsync(const Model::CreateAccountGroupRequest& request, const CreateAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAccountGroupOutcomeCallable CreateAccountGroupCallable(const Model::CreateAccountGroupRequest& request);
+
+                /**
+                 *创建应用账号
+                 * @param req CreateAppAccountRequest
+                 * @return CreateAppAccountOutcome
+                 */
+                CreateAppAccountOutcome CreateAppAccount(const Model::CreateAppAccountRequest &request);
+                void CreateAppAccountAsync(const Model::CreateAppAccountRequest& request, const CreateAppAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAppAccountOutcomeCallable CreateAppAccountCallable(const Model::CreateAppAccountRequest& request);
 
                 /**
                  *新建一个机构节点
@@ -222,6 +314,24 @@ namespace TencentCloud
                 CreateUserGroupOutcomeCallable CreateUserGroupCallable(const Model::CreateUserGroupRequest& request);
 
                 /**
+                 *删除账号组
+                 * @param req DeleteAccountGroupRequest
+                 * @return DeleteAccountGroupOutcome
+                 */
+                DeleteAccountGroupOutcome DeleteAccountGroup(const Model::DeleteAccountGroupRequest &request);
+                void DeleteAccountGroupAsync(const Model::DeleteAccountGroupRequest& request, const DeleteAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAccountGroupOutcomeCallable DeleteAccountGroupCallable(const Model::DeleteAccountGroupRequest& request);
+
+                /**
+                 *删除应用账号
+                 * @param req DeleteAppAccountRequest
+                 * @return DeleteAppAccountOutcome
+                 */
+                DeleteAppAccountOutcome DeleteAppAccount(const Model::DeleteAppAccountRequest &request);
+                void DeleteAppAccountAsync(const Model::DeleteAppAccountRequest& request, const DeleteAppAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAppAccountOutcomeCallable DeleteAppAccountCallable(const Model::DeleteAppAccountRequest& request);
+
+                /**
                  *删除一个机构节点
                  * @param req DeleteOrgNodeRequest
                  * @return DeleteOrgNodeOutcome
@@ -247,6 +357,33 @@ namespace TencentCloud
                 DeleteUserGroupOutcome DeleteUserGroup(const Model::DeleteUserGroupRequest &request);
                 void DeleteUserGroupAsync(const Model::DeleteUserGroupRequest& request, const DeleteUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteUserGroupOutcomeCallable DeleteUserGroupCallable(const Model::DeleteUserGroupRequest& request);
+
+                /**
+                 *批量删除当前节点下的用户。如果出现个别用户删除错误，将不影响其余被勾选用户被删除的操作，同时提示未被删除的用户名称/用户ID。
+                 * @param req DeleteUsersRequest
+                 * @return DeleteUsersOutcome
+                 */
+                DeleteUsersOutcome DeleteUsers(const Model::DeleteUsersRequest &request);
+                void DeleteUsersAsync(const Model::DeleteUsersRequest& request, const DeleteUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteUsersOutcomeCallable DeleteUsersCallable(const Model::DeleteUsersRequest& request);
+
+                /**
+                 *查询账号组列表
+                 * @param req DescribeAccountGroupRequest
+                 * @return DescribeAccountGroupOutcome
+                 */
+                DescribeAccountGroupOutcome DescribeAccountGroup(const Model::DescribeAccountGroupRequest &request);
+                void DescribeAccountGroupAsync(const Model::DescribeAccountGroupRequest& request, const DescribeAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAccountGroupOutcomeCallable DescribeAccountGroupCallable(const Model::DescribeAccountGroupRequest& request);
+
+                /**
+                 *查询应用账号列表
+                 * @param req DescribeAppAccountRequest
+                 * @return DescribeAppAccountOutcome
+                 */
+                DescribeAppAccountOutcome DescribeAppAccount(const Model::DescribeAppAccountRequest &request);
+                void DescribeAppAccountAsync(const Model::DescribeAppAccountRequest& request, const DescribeAppAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAppAccountOutcomeCallable DescribeAppAccountCallable(const Model::DescribeAppAccountRequest& request);
 
                 /**
                  *获取一个应用的信息。
@@ -319,6 +456,24 @@ namespace TencentCloud
                 DescribeUserResourcesAuthorizationOutcome DescribeUserResourcesAuthorization(const Model::DescribeUserResourcesAuthorizationRequest &request);
                 void DescribeUserResourcesAuthorizationAsync(const Model::DescribeUserResourcesAuthorizationRequest& request, const DescribeUserResourcesAuthorizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserResourcesAuthorizationOutcomeCallable DescribeUserResourcesAuthorizationCallable(const Model::DescribeUserResourcesAuthorizationRequest& request);
+
+                /**
+                 *通过用户名或用户 id 获取用户的第三方账号绑定信息。
+                 * @param req DescribeUserThirdPartyAccountInfoRequest
+                 * @return DescribeUserThirdPartyAccountInfoOutcome
+                 */
+                DescribeUserThirdPartyAccountInfoOutcome DescribeUserThirdPartyAccountInfo(const Model::DescribeUserThirdPartyAccountInfoRequest &request);
+                void DescribeUserThirdPartyAccountInfoAsync(const Model::DescribeUserThirdPartyAccountInfoRequest& request, const DescribeUserThirdPartyAccountInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserThirdPartyAccountInfoOutcomeCallable DescribeUserThirdPartyAccountInfoCallable(const Model::DescribeUserThirdPartyAccountInfoRequest& request);
+
+                /**
+                 * 获取账号组中的账号列表
+                 * @param req ListAccountInAccountGroupRequest
+                 * @return ListAccountInAccountGroupOutcome
+                 */
+                ListAccountInAccountGroupOutcome ListAccountInAccountGroup(const Model::ListAccountInAccountGroupRequest &request);
+                void ListAccountInAccountGroupAsync(const Model::ListAccountInAccountGroupRequest& request, const ListAccountInAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListAccountInAccountGroupOutcomeCallable ListAccountInAccountGroupCallable(const Model::ListAccountInAccountGroupRequest& request);
 
                 /**
                  *应用授权关系列表（含搜索条件匹配）。
@@ -411,6 +566,24 @@ namespace TencentCloud
                 ListUsersInUserGroupOutcomeCallable ListUsersInUserGroupCallable(const Model::ListUsersInUserGroupRequest& request);
 
                 /**
+                 *修改账号组
+                 * @param req ModifyAccountGroupRequest
+                 * @return ModifyAccountGroupOutcome
+                 */
+                ModifyAccountGroupOutcome ModifyAccountGroup(const Model::ModifyAccountGroupRequest &request);
+                void ModifyAccountGroupAsync(const Model::ModifyAccountGroupRequest& request, const ModifyAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAccountGroupOutcomeCallable ModifyAccountGroupCallable(const Model::ModifyAccountGroupRequest& request);
+
+                /**
+                 *修改应用账号
+                 * @param req ModifyAppAccountRequest
+                 * @return ModifyAppAccountOutcome
+                 */
+                ModifyAppAccountOutcome ModifyAppAccount(const Model::ModifyAppAccountRequest &request);
+                void ModifyAppAccountAsync(const Model::ModifyAppAccountRequest& request, const ModifyAppAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAppAccountOutcomeCallable ModifyAppAccountCallable(const Model::ModifyAppAccountRequest& request);
+
+                /**
                  *更新一个应用的信息
                  * @param req ModifyApplicationRequest
                  * @return ModifyApplicationOutcome
@@ -427,6 +600,15 @@ namespace TencentCloud
                 ModifyUserInfoOutcome ModifyUserInfo(const Model::ModifyUserInfoRequest &request);
                 void ModifyUserInfoAsync(const Model::ModifyUserInfoRequest& request, const ModifyUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyUserInfoOutcomeCallable ModifyUserInfoCallable(const Model::ModifyUserInfoRequest& request);
+
+                /**
+                 *从账号组中移除账号
+                 * @param req RemoveAccountFromAccountGroupRequest
+                 * @return RemoveAccountFromAccountGroupOutcome
+                 */
+                RemoveAccountFromAccountGroupOutcome RemoveAccountFromAccountGroup(const Model::RemoveAccountFromAccountGroupRequest &request);
+                void RemoveAccountFromAccountGroupAsync(const Model::RemoveAccountFromAccountGroupRequest& request, const RemoveAccountFromAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RemoveAccountFromAccountGroupOutcomeCallable RemoveAccountFromAccountGroupCallable(const Model::RemoveAccountFromAccountGroupRequest& request);
 
                 /**
                  *从用户组中移除用户

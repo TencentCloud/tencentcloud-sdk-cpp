@@ -29,7 +29,9 @@ DescribeListBGPInstancesRequest::DescribeListBGPInstancesRequest() :
     m_filterInstanceIdHasBeenSet(false),
     m_filterRegionHasBeenSet(false),
     m_filterNameHasBeenSet(false),
-    m_filterLineHasBeenSet(false)
+    m_filterLineHasBeenSet(false),
+    m_filterStatusHasBeenSet(false),
+    m_filterBoundStatusHasBeenSet(false)
 {
 }
 
@@ -94,6 +96,22 @@ string DescribeListBGPInstancesRequest::ToJsonString() const
         string key = "FilterLine";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_filterLine, allocator);
+    }
+
+    if (m_filterStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_filterStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filterBoundStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterBoundStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_filterBoundStatus.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +232,38 @@ void DescribeListBGPInstancesRequest::SetFilterLine(const uint64_t& _filterLine)
 bool DescribeListBGPInstancesRequest::FilterLineHasBeenSet() const
 {
     return m_filterLineHasBeenSet;
+}
+
+string DescribeListBGPInstancesRequest::GetFilterStatus() const
+{
+    return m_filterStatus;
+}
+
+void DescribeListBGPInstancesRequest::SetFilterStatus(const string& _filterStatus)
+{
+    m_filterStatus = _filterStatus;
+    m_filterStatusHasBeenSet = true;
+}
+
+bool DescribeListBGPInstancesRequest::FilterStatusHasBeenSet() const
+{
+    return m_filterStatusHasBeenSet;
+}
+
+string DescribeListBGPInstancesRequest::GetFilterBoundStatus() const
+{
+    return m_filterBoundStatus;
+}
+
+void DescribeListBGPInstancesRequest::SetFilterBoundStatus(const string& _filterBoundStatus)
+{
+    m_filterBoundStatus = _filterBoundStatus;
+    m_filterBoundStatusHasBeenSet = true;
+}
+
+bool DescribeListBGPInstancesRequest::FilterBoundStatusHasBeenSet() const
+{
+    return m_filterBoundStatusHasBeenSet;
 }
 
 

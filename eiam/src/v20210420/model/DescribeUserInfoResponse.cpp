@@ -35,7 +35,8 @@ DescribeUserInfoResponse::DescribeUserInfoResponse() :
     m_orgNodeIdHasBeenSet(false),
     m_dataSourceHasBeenSet(false),
     m_expirationTimeHasBeenSet(false),
-    m_activationTimeHasBeenSet(false)
+    m_activationTimeHasBeenSet(false),
+    m_pwdNeedResetHasBeenSet(false)
 {
 }
 
@@ -196,6 +197,16 @@ CoreInternalOutcome DescribeUserInfoResponse::Deserialize(const string &payload)
         m_activationTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PwdNeedReset") && !rsp["PwdNeedReset"].IsNull())
+    {
+        if (!rsp["PwdNeedReset"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `PwdNeedReset` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_pwdNeedReset = rsp["PwdNeedReset"].GetBool();
+        m_pwdNeedResetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -305,6 +316,14 @@ string DescribeUserInfoResponse::ToJsonString() const
         string key = "ActivationTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_activationTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pwdNeedResetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PwdNeedReset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pwdNeedReset, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -437,6 +456,16 @@ string DescribeUserInfoResponse::GetActivationTime() const
 bool DescribeUserInfoResponse::ActivationTimeHasBeenSet() const
 {
     return m_activationTimeHasBeenSet;
+}
+
+bool DescribeUserInfoResponse::GetPwdNeedReset() const
+{
+    return m_pwdNeedReset;
+}
+
+bool DescribeUserInfoResponse::PwdNeedResetHasBeenSet() const
+{
+    return m_pwdNeedResetHasBeenSet;
 }
 
 

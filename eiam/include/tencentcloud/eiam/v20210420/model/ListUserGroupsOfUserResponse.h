@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/eiam/v20210420/model/UserGroupInfo.h>
 
 
 namespace TencentCloud
@@ -71,6 +72,34 @@ namespace TencentCloud
                      */
                     bool UserIdHasBeenSet() const;
 
+                    /**
+                     * 获取用户所属的用户组信息列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserGroupInfoList 用户所属的用户组信息列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<UserGroupInfo> GetUserGroupInfoList() const;
+
+                    /**
+                     * 判断参数 UserGroupInfoList 是否已赋值
+                     * @return UserGroupInfoList 是否已赋值
+                     */
+                    bool UserGroupInfoListHasBeenSet() const;
+
+                    /**
+                     * 获取返回的用户组信息总数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TotalCount 返回的用户组信息总数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     */
+                    bool TotalCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -86,6 +115,20 @@ namespace TencentCloud
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
+
+                    /**
+                     * 用户所属的用户组信息列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<UserGroupInfo> m_userGroupInfoList;
+                    bool m_userGroupInfoListHasBeenSet;
+
+                    /**
+                     * 返回的用户组信息总数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                 };
             }

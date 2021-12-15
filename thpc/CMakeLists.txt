@@ -28,8 +28,9 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20211109/model/InternetAccessible.h
   include/tencentcloud/thpc/v20211109/model/ComputeNode.h
   include/tencentcloud/thpc/v20211109/model/VirtualPrivateCloud.h
-  include/tencentcloud/thpc/v20211109/model/DeleteClusterResponse.h
   include/tencentcloud/thpc/v20211109/model/StorageOption.h
+  include/tencentcloud/thpc/v20211109/model/DeleteClusterResponse.h
+  include/tencentcloud/thpc/v20211109/model/GooseFSOption.h
   include/tencentcloud/thpc/v20211109/model/InstanceChargePrepaid.h
   include/tencentcloud/thpc/v20211109/model/CFSOption.h
   include/tencentcloud/thpc/v20211109/model/CreateClusterResponse.h
@@ -47,8 +48,9 @@ set(thpc_src
   src/v20211109/model/InternetAccessible.cpp
   src/v20211109/model/ComputeNode.cpp
   src/v20211109/model/VirtualPrivateCloud.cpp
-  src/v20211109/model/DeleteClusterResponse.cpp
   src/v20211109/model/StorageOption.cpp
+  src/v20211109/model/DeleteClusterResponse.cpp
+  src/v20211109/model/GooseFSOption.cpp
   src/v20211109/model/InstanceChargePrepaid.cpp
   src/v20211109/model/CFSOption.cpp
   src/v20211109/model/CreateClusterResponse.cpp

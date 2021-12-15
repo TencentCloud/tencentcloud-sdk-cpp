@@ -33,20 +33,42 @@
 #include <tencentcloud/iotvideoindustry/v20201201/model/CreateDeviceResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/CreateDeviceGroupRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/CreateDeviceGroupResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/CreateLiveChannelRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/CreateLiveChannelResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/CreateLiveRecordPlanRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/CreateLiveRecordPlanResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/CreateRecordPlanRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/CreateRecordPlanResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/CreateSceneRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/CreateSceneResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/CreateTimeTemplateRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/CreateTimeTemplateResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DeleteChannelRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DeleteChannelResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DeleteDeviceRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DeleteDeviceResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DeleteDeviceGroupRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DeleteDeviceGroupResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DeleteLiveChannelRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DeleteLiveChannelResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DeleteLiveRecordPlanRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DeleteLiveRecordPlanResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DeleteLiveVideoListRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DeleteLiveVideoListResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DeleteRecordPlanRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DeleteRecordPlanResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DeleteSceneRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DeleteSceneResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DeleteTimeTemplateRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DeleteTimeTemplateResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DeleteVideoListRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DeleteVideoListResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeAllDeviceListRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeAllDeviceListResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeBindSceneDevicesRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeBindSceneDevicesResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeChannelsByLiveRecordPlanRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeChannelsByLiveRecordPlanResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeDeviceGroupRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeDeviceGroupResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeDevicePassWordRequest.h>
@@ -63,16 +85,34 @@
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeGroupsResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeIPCChannelsRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeIPCChannelsResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveChannelRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveChannelResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveChannelListRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveChannelListResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveRecordPlanByIdRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveRecordPlanByIdResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveRecordPlanIdsRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveRecordPlanIdsResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveStreamRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveStreamResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveVideoListRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveVideoListResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordDatesByLiveRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordDatesByLiveResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordStreamRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordStreamResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeSIPServerRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeSIPServerResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeScenesRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeScenesResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeStatisticDetailsRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeStatisticDetailsResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeStatisticSummaryRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeStatisticSummaryResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeSubGroupsRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeSubGroupsResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeSubscriptionStatusRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeSubscriptionStatusResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeVideoListRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeVideoListResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/GetRecordDatesByDevRequest.h>
@@ -89,8 +129,20 @@
 #include <tencentcloud/iotvideoindustry/v20201201/model/GetTimeTemplatesResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/GetVideoListByConRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/GetVideoListByConResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ModifyBindPlanLiveChannelRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ModifyBindPlanLiveChannelResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/ModifyDeviceDataRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/ModifyDeviceDataResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ModifyLiveChannelRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ModifyLiveChannelResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ModifyLiveRecordPlanRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ModifyLiveRecordPlanResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ModifyLiveVideoRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ModifyLiveVideoResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ModifySubscriptionStatusRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ModifySubscriptionStatusResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ModifyVideoInfoRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ModifyVideoInfoResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/UpdateDeviceGroupRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/UpdateDeviceGroupResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/UpdateDevicePassWordRequest.h>
@@ -128,27 +180,60 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDeviceGroupResponse> CreateDeviceGroupOutcome;
                 typedef std::future<CreateDeviceGroupOutcome> CreateDeviceGroupOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::CreateDeviceGroupRequest&, CreateDeviceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateLiveChannelResponse> CreateLiveChannelOutcome;
+                typedef std::future<CreateLiveChannelOutcome> CreateLiveChannelOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::CreateLiveChannelRequest&, CreateLiveChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLiveChannelAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateLiveRecordPlanResponse> CreateLiveRecordPlanOutcome;
+                typedef std::future<CreateLiveRecordPlanOutcome> CreateLiveRecordPlanOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::CreateLiveRecordPlanRequest&, CreateLiveRecordPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLiveRecordPlanAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRecordPlanResponse> CreateRecordPlanOutcome;
                 typedef std::future<CreateRecordPlanOutcome> CreateRecordPlanOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::CreateRecordPlanRequest&, CreateRecordPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRecordPlanAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSceneResponse> CreateSceneOutcome;
+                typedef std::future<CreateSceneOutcome> CreateSceneOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::CreateSceneRequest&, CreateSceneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSceneAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTimeTemplateResponse> CreateTimeTemplateOutcome;
                 typedef std::future<CreateTimeTemplateOutcome> CreateTimeTemplateOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::CreateTimeTemplateRequest&, CreateTimeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTimeTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteChannelResponse> DeleteChannelOutcome;
+                typedef std::future<DeleteChannelOutcome> DeleteChannelOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DeleteChannelRequest&, DeleteChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteChannelAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDeviceResponse> DeleteDeviceOutcome;
                 typedef std::future<DeleteDeviceOutcome> DeleteDeviceOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DeleteDeviceRequest&, DeleteDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDeviceGroupResponse> DeleteDeviceGroupOutcome;
                 typedef std::future<DeleteDeviceGroupOutcome> DeleteDeviceGroupOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DeleteDeviceGroupRequest&, DeleteDeviceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteLiveChannelResponse> DeleteLiveChannelOutcome;
+                typedef std::future<DeleteLiveChannelOutcome> DeleteLiveChannelOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DeleteLiveChannelRequest&, DeleteLiveChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveChannelAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteLiveRecordPlanResponse> DeleteLiveRecordPlanOutcome;
+                typedef std::future<DeleteLiveRecordPlanOutcome> DeleteLiveRecordPlanOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DeleteLiveRecordPlanRequest&, DeleteLiveRecordPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveRecordPlanAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteLiveVideoListResponse> DeleteLiveVideoListOutcome;
+                typedef std::future<DeleteLiveVideoListOutcome> DeleteLiveVideoListOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DeleteLiveVideoListRequest&, DeleteLiveVideoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveVideoListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteRecordPlanResponse> DeleteRecordPlanOutcome;
                 typedef std::future<DeleteRecordPlanOutcome> DeleteRecordPlanOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DeleteRecordPlanRequest&, DeleteRecordPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRecordPlanAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSceneResponse> DeleteSceneOutcome;
+                typedef std::future<DeleteSceneOutcome> DeleteSceneOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DeleteSceneRequest&, DeleteSceneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSceneAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteTimeTemplateResponse> DeleteTimeTemplateOutcome;
                 typedef std::future<DeleteTimeTemplateOutcome> DeleteTimeTemplateOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DeleteTimeTemplateRequest&, DeleteTimeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTimeTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteVideoListResponse> DeleteVideoListOutcome;
+                typedef std::future<DeleteVideoListOutcome> DeleteVideoListOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DeleteVideoListRequest&, DeleteVideoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVideoListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAllDeviceListResponse> DescribeAllDeviceListOutcome;
                 typedef std::future<DescribeAllDeviceListOutcome> DescribeAllDeviceListOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeAllDeviceListRequest&, DescribeAllDeviceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllDeviceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBindSceneDevicesResponse> DescribeBindSceneDevicesOutcome;
+                typedef std::future<DescribeBindSceneDevicesOutcome> DescribeBindSceneDevicesOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeBindSceneDevicesRequest&, DescribeBindSceneDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBindSceneDevicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeChannelsByLiveRecordPlanResponse> DescribeChannelsByLiveRecordPlanOutcome;
+                typedef std::future<DescribeChannelsByLiveRecordPlanOutcome> DescribeChannelsByLiveRecordPlanOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeChannelsByLiveRecordPlanRequest&, DescribeChannelsByLiveRecordPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChannelsByLiveRecordPlanAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDeviceGroupResponse> DescribeDeviceGroupOutcome;
                 typedef std::future<DescribeDeviceGroupOutcome> DescribeDeviceGroupOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeDeviceGroupRequest&, DescribeDeviceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceGroupAsyncHandler;
@@ -173,12 +258,36 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIPCChannelsResponse> DescribeIPCChannelsOutcome;
                 typedef std::future<DescribeIPCChannelsOutcome> DescribeIPCChannelsOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeIPCChannelsRequest&, DescribeIPCChannelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIPCChannelsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLiveChannelResponse> DescribeLiveChannelOutcome;
+                typedef std::future<DescribeLiveChannelOutcome> DescribeLiveChannelOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeLiveChannelRequest&, DescribeLiveChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveChannelAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLiveChannelListResponse> DescribeLiveChannelListOutcome;
+                typedef std::future<DescribeLiveChannelListOutcome> DescribeLiveChannelListOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeLiveChannelListRequest&, DescribeLiveChannelListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveChannelListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLiveRecordPlanByIdResponse> DescribeLiveRecordPlanByIdOutcome;
+                typedef std::future<DescribeLiveRecordPlanByIdOutcome> DescribeLiveRecordPlanByIdOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeLiveRecordPlanByIdRequest&, DescribeLiveRecordPlanByIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveRecordPlanByIdAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLiveRecordPlanIdsResponse> DescribeLiveRecordPlanIdsOutcome;
+                typedef std::future<DescribeLiveRecordPlanIdsOutcome> DescribeLiveRecordPlanIdsOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeLiveRecordPlanIdsRequest&, DescribeLiveRecordPlanIdsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveRecordPlanIdsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLiveStreamResponse> DescribeLiveStreamOutcome;
+                typedef std::future<DescribeLiveStreamOutcome> DescribeLiveStreamOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeLiveStreamRequest&, DescribeLiveStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLiveVideoListResponse> DescribeLiveVideoListOutcome;
+                typedef std::future<DescribeLiveVideoListOutcome> DescribeLiveVideoListOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeLiveVideoListRequest&, DescribeLiveVideoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveVideoListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRecordDatesByLiveResponse> DescribeRecordDatesByLiveOutcome;
+                typedef std::future<DescribeRecordDatesByLiveOutcome> DescribeRecordDatesByLiveOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeRecordDatesByLiveRequest&, DescribeRecordDatesByLiveOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordDatesByLiveAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRecordStreamResponse> DescribeRecordStreamOutcome;
                 typedef std::future<DescribeRecordStreamOutcome> DescribeRecordStreamOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeRecordStreamRequest&, DescribeRecordStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordStreamAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSIPServerResponse> DescribeSIPServerOutcome;
                 typedef std::future<DescribeSIPServerOutcome> DescribeSIPServerOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeSIPServerRequest&, DescribeSIPServerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSIPServerAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeScenesResponse> DescribeScenesOutcome;
+                typedef std::future<DescribeScenesOutcome> DescribeScenesOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeScenesRequest&, DescribeScenesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScenesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeStatisticDetailsResponse> DescribeStatisticDetailsOutcome;
                 typedef std::future<DescribeStatisticDetailsOutcome> DescribeStatisticDetailsOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeStatisticDetailsRequest&, DescribeStatisticDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStatisticDetailsAsyncHandler;
@@ -188,6 +297,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSubGroupsResponse> DescribeSubGroupsOutcome;
                 typedef std::future<DescribeSubGroupsOutcome> DescribeSubGroupsOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeSubGroupsRequest&, DescribeSubGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSubscriptionStatusResponse> DescribeSubscriptionStatusOutcome;
+                typedef std::future<DescribeSubscriptionStatusOutcome> DescribeSubscriptionStatusOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeSubscriptionStatusRequest&, DescribeSubscriptionStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubscriptionStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVideoListResponse> DescribeVideoListOutcome;
                 typedef std::future<DescribeVideoListOutcome> DescribeVideoListOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeVideoListRequest&, DescribeVideoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoListAsyncHandler;
@@ -212,9 +324,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetVideoListByConResponse> GetVideoListByConOutcome;
                 typedef std::future<GetVideoListByConOutcome> GetVideoListByConOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::GetVideoListByConRequest&, GetVideoListByConOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetVideoListByConAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyBindPlanLiveChannelResponse> ModifyBindPlanLiveChannelOutcome;
+                typedef std::future<ModifyBindPlanLiveChannelOutcome> ModifyBindPlanLiveChannelOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::ModifyBindPlanLiveChannelRequest&, ModifyBindPlanLiveChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBindPlanLiveChannelAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDeviceDataResponse> ModifyDeviceDataOutcome;
                 typedef std::future<ModifyDeviceDataOutcome> ModifyDeviceDataOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::ModifyDeviceDataRequest&, ModifyDeviceDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeviceDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLiveChannelResponse> ModifyLiveChannelOutcome;
+                typedef std::future<ModifyLiveChannelOutcome> ModifyLiveChannelOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::ModifyLiveChannelRequest&, ModifyLiveChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLiveChannelAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLiveRecordPlanResponse> ModifyLiveRecordPlanOutcome;
+                typedef std::future<ModifyLiveRecordPlanOutcome> ModifyLiveRecordPlanOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::ModifyLiveRecordPlanRequest&, ModifyLiveRecordPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLiveRecordPlanAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLiveVideoResponse> ModifyLiveVideoOutcome;
+                typedef std::future<ModifyLiveVideoOutcome> ModifyLiveVideoOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::ModifyLiveVideoRequest&, ModifyLiveVideoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLiveVideoAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySubscriptionStatusResponse> ModifySubscriptionStatusOutcome;
+                typedef std::future<ModifySubscriptionStatusOutcome> ModifySubscriptionStatusOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::ModifySubscriptionStatusRequest&, ModifySubscriptionStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySubscriptionStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyVideoInfoResponse> ModifyVideoInfoOutcome;
+                typedef std::future<ModifyVideoInfoOutcome> ModifyVideoInfoOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::ModifyVideoInfoRequest&, ModifyVideoInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVideoInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateDeviceGroupResponse> UpdateDeviceGroupOutcome;
                 typedef std::future<UpdateDeviceGroupOutcome> UpdateDeviceGroupOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::UpdateDeviceGroupRequest&, UpdateDeviceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDeviceGroupAsyncHandler;
@@ -276,6 +406,24 @@ namespace TencentCloud
                 CreateDeviceGroupOutcomeCallable CreateDeviceGroupCallable(const Model::CreateDeviceGroupRequest& request);
 
                 /**
+                 *创建直播频道
+                 * @param req CreateLiveChannelRequest
+                 * @return CreateLiveChannelOutcome
+                 */
+                CreateLiveChannelOutcome CreateLiveChannel(const Model::CreateLiveChannelRequest &request);
+                void CreateLiveChannelAsync(const Model::CreateLiveChannelRequest& request, const CreateLiveChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLiveChannelOutcomeCallable CreateLiveChannelCallable(const Model::CreateLiveChannelRequest& request);
+
+                /**
+                 *创建直播录制计划
+                 * @param req CreateLiveRecordPlanRequest
+                 * @return CreateLiveRecordPlanOutcome
+                 */
+                CreateLiveRecordPlanOutcome CreateLiveRecordPlan(const Model::CreateLiveRecordPlanRequest &request);
+                void CreateLiveRecordPlanAsync(const Model::CreateLiveRecordPlanRequest& request, const CreateLiveRecordPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLiveRecordPlanOutcomeCallable CreateLiveRecordPlanCallable(const Model::CreateLiveRecordPlanRequest& request);
+
+                /**
                  *本接口(CreateRecordPlan) 用于创建录制计划，使设备与时间模板绑定，以便及时启动录制
                  * @param req CreateRecordPlanRequest
                  * @return CreateRecordPlanOutcome
@@ -285,6 +433,15 @@ namespace TencentCloud
                 CreateRecordPlanOutcomeCallable CreateRecordPlanCallable(const Model::CreateRecordPlanRequest& request);
 
                 /**
+                 *创建场景
+                 * @param req CreateSceneRequest
+                 * @return CreateSceneOutcome
+                 */
+                CreateSceneOutcome CreateScene(const Model::CreateSceneRequest &request);
+                void CreateSceneAsync(const Model::CreateSceneRequest& request, const CreateSceneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSceneOutcomeCallable CreateSceneCallable(const Model::CreateSceneRequest& request);
+
+                /**
                  *本接口(CreateTimeTemplate) 用于根据模板描述的具体录制时间片段，创建定制化的时间模板。
                  * @param req CreateTimeTemplateRequest
                  * @return CreateTimeTemplateOutcome
@@ -292,6 +449,15 @@ namespace TencentCloud
                 CreateTimeTemplateOutcome CreateTimeTemplate(const Model::CreateTimeTemplateRequest &request);
                 void CreateTimeTemplateAsync(const Model::CreateTimeTemplateRequest& request, const CreateTimeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTimeTemplateOutcomeCallable CreateTimeTemplateCallable(const Model::CreateTimeTemplateRequest& request);
+
+                /**
+                 *删除通道接口
+                 * @param req DeleteChannelRequest
+                 * @return DeleteChannelOutcome
+                 */
+                DeleteChannelOutcome DeleteChannel(const Model::DeleteChannelRequest &request);
+                void DeleteChannelAsync(const Model::DeleteChannelRequest& request, const DeleteChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteChannelOutcomeCallable DeleteChannelCallable(const Model::DeleteChannelRequest& request);
 
                 /**
                  *本接口(DeleteDevice)用于删除设备。
@@ -312,6 +478,33 @@ namespace TencentCloud
                 DeleteDeviceGroupOutcomeCallable DeleteDeviceGroupCallable(const Model::DeleteDeviceGroupRequest& request);
 
                 /**
+                 *删除直播接口
+                 * @param req DeleteLiveChannelRequest
+                 * @return DeleteLiveChannelOutcome
+                 */
+                DeleteLiveChannelOutcome DeleteLiveChannel(const Model::DeleteLiveChannelRequest &request);
+                void DeleteLiveChannelAsync(const Model::DeleteLiveChannelRequest& request, const DeleteLiveChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLiveChannelOutcomeCallable DeleteLiveChannelCallable(const Model::DeleteLiveChannelRequest& request);
+
+                /**
+                 *删除直播录制计划
+                 * @param req DeleteLiveRecordPlanRequest
+                 * @return DeleteLiveRecordPlanOutcome
+                 */
+                DeleteLiveRecordPlanOutcome DeleteLiveRecordPlan(const Model::DeleteLiveRecordPlanRequest &request);
+                void DeleteLiveRecordPlanAsync(const Model::DeleteLiveRecordPlanRequest& request, const DeleteLiveRecordPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLiveRecordPlanOutcomeCallable DeleteLiveRecordPlanCallable(const Model::DeleteLiveRecordPlanRequest& request);
+
+                /**
+                 *直播录像删除
+                 * @param req DeleteLiveVideoListRequest
+                 * @return DeleteLiveVideoListOutcome
+                 */
+                DeleteLiveVideoListOutcome DeleteLiveVideoList(const Model::DeleteLiveVideoListRequest &request);
+                void DeleteLiveVideoListAsync(const Model::DeleteLiveVideoListRequest& request, const DeleteLiveVideoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLiveVideoListOutcomeCallable DeleteLiveVideoListCallable(const Model::DeleteLiveVideoListRequest& request);
+
+                /**
                  *本接口(DeleteRecordPlan)用于删除录制计划
 录制计划删除的同时，会停止该录制计划下的全部录制任务。
                  * @param req DeleteRecordPlanRequest
@@ -320,6 +513,15 @@ namespace TencentCloud
                 DeleteRecordPlanOutcome DeleteRecordPlan(const Model::DeleteRecordPlanRequest &request);
                 void DeleteRecordPlanAsync(const Model::DeleteRecordPlanRequest& request, const DeleteRecordPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteRecordPlanOutcomeCallable DeleteRecordPlanCallable(const Model::DeleteRecordPlanRequest& request);
+
+                /**
+                 *删除场景
+                 * @param req DeleteSceneRequest
+                 * @return DeleteSceneOutcome
+                 */
+                DeleteSceneOutcome DeleteScene(const Model::DeleteSceneRequest &request);
+                void DeleteSceneAsync(const Model::DeleteSceneRequest& request, const DeleteSceneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSceneOutcomeCallable DeleteSceneCallable(const Model::DeleteSceneRequest& request);
 
                 /**
                  *本接口(DeleteTimeTemplate) 用于删除时间模板。
@@ -331,6 +533,15 @@ namespace TencentCloud
                 DeleteTimeTemplateOutcomeCallable DeleteTimeTemplateCallable(const Model::DeleteTimeTemplateRequest& request);
 
                 /**
+                 *删除录像存储列表
+                 * @param req DeleteVideoListRequest
+                 * @return DeleteVideoListOutcome
+                 */
+                DeleteVideoListOutcome DeleteVideoList(const Model::DeleteVideoListRequest &request);
+                void DeleteVideoListAsync(const Model::DeleteVideoListRequest& request, const DeleteVideoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteVideoListOutcomeCallable DeleteVideoListCallable(const Model::DeleteVideoListRequest& request);
+
+                /**
                  *本接口(DescribeAllDeviceList) 用于获取设备列表。
                  * @param req DescribeAllDeviceListRequest
                  * @return DescribeAllDeviceListOutcome
@@ -338,6 +549,24 @@ namespace TencentCloud
                 DescribeAllDeviceListOutcome DescribeAllDeviceList(const Model::DescribeAllDeviceListRequest &request);
                 void DescribeAllDeviceListAsync(const Model::DescribeAllDeviceListRequest& request, const DescribeAllDeviceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAllDeviceListOutcomeCallable DescribeAllDeviceListCallable(const Model::DescribeAllDeviceListRequest& request);
+
+                /**
+                 *获取场景绑定设备列表
+                 * @param req DescribeBindSceneDevicesRequest
+                 * @return DescribeBindSceneDevicesOutcome
+                 */
+                DescribeBindSceneDevicesOutcome DescribeBindSceneDevices(const Model::DescribeBindSceneDevicesRequest &request);
+                void DescribeBindSceneDevicesAsync(const Model::DescribeBindSceneDevicesRequest& request, const DescribeBindSceneDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBindSceneDevicesOutcomeCallable DescribeBindSceneDevicesCallable(const Model::DescribeBindSceneDevicesRequest& request);
+
+                /**
+                 *根据直播录制计划获取频道列表
+                 * @param req DescribeChannelsByLiveRecordPlanRequest
+                 * @return DescribeChannelsByLiveRecordPlanOutcome
+                 */
+                DescribeChannelsByLiveRecordPlanOutcome DescribeChannelsByLiveRecordPlan(const Model::DescribeChannelsByLiveRecordPlanRequest &request);
+                void DescribeChannelsByLiveRecordPlanAsync(const Model::DescribeChannelsByLiveRecordPlanRequest& request, const DescribeChannelsByLiveRecordPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeChannelsByLiveRecordPlanOutcomeCallable DescribeChannelsByLiveRecordPlanCallable(const Model::DescribeChannelsByLiveRecordPlanRequest& request);
 
                 /**
                  *本接口(DescribeDeviceGroup)用于根据设备ID查询设备所在分组信息，可批量查询。
@@ -412,6 +641,69 @@ namespace TencentCloud
                 DescribeIPCChannelsOutcomeCallable DescribeIPCChannelsCallable(const Model::DescribeIPCChannelsRequest& request);
 
                 /**
+                 *直播详情接口
+                 * @param req DescribeLiveChannelRequest
+                 * @return DescribeLiveChannelOutcome
+                 */
+                DescribeLiveChannelOutcome DescribeLiveChannel(const Model::DescribeLiveChannelRequest &request);
+                void DescribeLiveChannelAsync(const Model::DescribeLiveChannelRequest& request, const DescribeLiveChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLiveChannelOutcomeCallable DescribeLiveChannelCallable(const Model::DescribeLiveChannelRequest& request);
+
+                /**
+                 *直播列表接口
+                 * @param req DescribeLiveChannelListRequest
+                 * @return DescribeLiveChannelListOutcome
+                 */
+                DescribeLiveChannelListOutcome DescribeLiveChannelList(const Model::DescribeLiveChannelListRequest &request);
+                void DescribeLiveChannelListAsync(const Model::DescribeLiveChannelListRequest& request, const DescribeLiveChannelListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLiveChannelListOutcomeCallable DescribeLiveChannelListCallable(const Model::DescribeLiveChannelListRequest& request);
+
+                /**
+                 *获取直播录制计划详情
+                 * @param req DescribeLiveRecordPlanByIdRequest
+                 * @return DescribeLiveRecordPlanByIdOutcome
+                 */
+                DescribeLiveRecordPlanByIdOutcome DescribeLiveRecordPlanById(const Model::DescribeLiveRecordPlanByIdRequest &request);
+                void DescribeLiveRecordPlanByIdAsync(const Model::DescribeLiveRecordPlanByIdRequest& request, const DescribeLiveRecordPlanByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLiveRecordPlanByIdOutcomeCallable DescribeLiveRecordPlanByIdCallable(const Model::DescribeLiveRecordPlanByIdRequest& request);
+
+                /**
+                 *获取直播录制计划列表
+                 * @param req DescribeLiveRecordPlanIdsRequest
+                 * @return DescribeLiveRecordPlanIdsOutcome
+                 */
+                DescribeLiveRecordPlanIdsOutcome DescribeLiveRecordPlanIds(const Model::DescribeLiveRecordPlanIdsRequest &request);
+                void DescribeLiveRecordPlanIdsAsync(const Model::DescribeLiveRecordPlanIdsRequest& request, const DescribeLiveRecordPlanIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLiveRecordPlanIdsOutcomeCallable DescribeLiveRecordPlanIdsCallable(const Model::DescribeLiveRecordPlanIdsRequest& request);
+
+                /**
+                 *直播拉流接口
+                 * @param req DescribeLiveStreamRequest
+                 * @return DescribeLiveStreamOutcome
+                 */
+                DescribeLiveStreamOutcome DescribeLiveStream(const Model::DescribeLiveStreamRequest &request);
+                void DescribeLiveStreamAsync(const Model::DescribeLiveStreamRequest& request, const DescribeLiveStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLiveStreamOutcomeCallable DescribeLiveStreamCallable(const Model::DescribeLiveStreamRequest& request);
+
+                /**
+                 *直播录像回放列表
+                 * @param req DescribeLiveVideoListRequest
+                 * @return DescribeLiveVideoListOutcome
+                 */
+                DescribeLiveVideoListOutcome DescribeLiveVideoList(const Model::DescribeLiveVideoListRequest &request);
+                void DescribeLiveVideoListAsync(const Model::DescribeLiveVideoListRequest& request, const DescribeLiveVideoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLiveVideoListOutcomeCallable DescribeLiveVideoListCallable(const Model::DescribeLiveVideoListRequest& request);
+
+                /**
+                 *直播录像存储日期列表
+                 * @param req DescribeRecordDatesByLiveRequest
+                 * @return DescribeRecordDatesByLiveOutcome
+                 */
+                DescribeRecordDatesByLiveOutcome DescribeRecordDatesByLive(const Model::DescribeRecordDatesByLiveRequest &request);
+                void DescribeRecordDatesByLiveAsync(const Model::DescribeRecordDatesByLiveRequest& request, const DescribeRecordDatesByLiveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRecordDatesByLiveOutcomeCallable DescribeRecordDatesByLiveCallable(const Model::DescribeRecordDatesByLiveRequest& request);
+
+                /**
                  *获取回放视频流(NVR录制用)
 RecordId和StartTime/EndTime互斥
 当存在RecordId时，StartTime和EndTime无效
@@ -431,6 +723,15 @@ RecordId和StartTime/EndTime互斥
                 DescribeSIPServerOutcome DescribeSIPServer(const Model::DescribeSIPServerRequest &request);
                 void DescribeSIPServerAsync(const Model::DescribeSIPServerRequest& request, const DescribeSIPServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSIPServerOutcomeCallable DescribeSIPServerCallable(const Model::DescribeSIPServerRequest& request);
+
+                /**
+                 *获取场景列表
+                 * @param req DescribeScenesRequest
+                 * @return DescribeScenesOutcome
+                 */
+                DescribeScenesOutcome DescribeScenes(const Model::DescribeScenesRequest &request);
+                void DescribeScenesAsync(const Model::DescribeScenesRequest& request, const DescribeScenesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeScenesOutcomeCallable DescribeScenesCallable(const Model::DescribeScenesRequest& request);
 
                 /**
                  *本接口(DescribeStatisticDetails)用于查询指定统计项详情，返回结果按天为单位聚合，支持的最大时间查询范围为31天。
@@ -458,6 +759,15 @@ RecordId和StartTime/EndTime互斥
                 DescribeSubGroupsOutcome DescribeSubGroups(const Model::DescribeSubGroupsRequest &request);
                 void DescribeSubGroupsAsync(const Model::DescribeSubGroupsRequest& request, const DescribeSubGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSubGroupsOutcomeCallable DescribeSubGroupsCallable(const Model::DescribeSubGroupsRequest& request);
+
+                /**
+                 *查询主设备订阅状态
+                 * @param req DescribeSubscriptionStatusRequest
+                 * @return DescribeSubscriptionStatusOutcome
+                 */
+                DescribeSubscriptionStatusOutcome DescribeSubscriptionStatus(const Model::DescribeSubscriptionStatusRequest &request);
+                void DescribeSubscriptionStatusAsync(const Model::DescribeSubscriptionStatusRequest& request, const DescribeSubscriptionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSubscriptionStatusOutcomeCallable DescribeSubscriptionStatusCallable(const Model::DescribeSubscriptionStatusRequest& request);
 
                 /**
                  *根据时间获取回放文件列表(云端录制用)
@@ -532,6 +842,15 @@ RecordId和StartTime/EndTime互斥
                 GetVideoListByConOutcomeCallable GetVideoListByConCallable(const Model::GetVideoListByConRequest& request);
 
                 /**
+                 *直播录制计划绑定解绑直播频道
+                 * @param req ModifyBindPlanLiveChannelRequest
+                 * @return ModifyBindPlanLiveChannelOutcome
+                 */
+                ModifyBindPlanLiveChannelOutcome ModifyBindPlanLiveChannel(const Model::ModifyBindPlanLiveChannelRequest &request);
+                void ModifyBindPlanLiveChannelAsync(const Model::ModifyBindPlanLiveChannelRequest& request, const ModifyBindPlanLiveChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBindPlanLiveChannelOutcomeCallable ModifyBindPlanLiveChannelCallable(const Model::ModifyBindPlanLiveChannelRequest& request);
+
+                /**
                  *本接口(ModifyDeviceData)用于编辑设备信息。
                  * @param req ModifyDeviceDataRequest
                  * @return ModifyDeviceDataOutcome
@@ -539,6 +858,51 @@ RecordId和StartTime/EndTime互斥
                 ModifyDeviceDataOutcome ModifyDeviceData(const Model::ModifyDeviceDataRequest &request);
                 void ModifyDeviceDataAsync(const Model::ModifyDeviceDataRequest& request, const ModifyDeviceDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDeviceDataOutcomeCallable ModifyDeviceDataCallable(const Model::ModifyDeviceDataRequest& request);
+
+                /**
+                 *编辑直播接口
+                 * @param req ModifyLiveChannelRequest
+                 * @return ModifyLiveChannelOutcome
+                 */
+                ModifyLiveChannelOutcome ModifyLiveChannel(const Model::ModifyLiveChannelRequest &request);
+                void ModifyLiveChannelAsync(const Model::ModifyLiveChannelRequest& request, const ModifyLiveChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLiveChannelOutcomeCallable ModifyLiveChannelCallable(const Model::ModifyLiveChannelRequest& request);
+
+                /**
+                 *编辑直播录制计划
+                 * @param req ModifyLiveRecordPlanRequest
+                 * @return ModifyLiveRecordPlanOutcome
+                 */
+                ModifyLiveRecordPlanOutcome ModifyLiveRecordPlan(const Model::ModifyLiveRecordPlanRequest &request);
+                void ModifyLiveRecordPlanAsync(const Model::ModifyLiveRecordPlanRequest& request, const ModifyLiveRecordPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLiveRecordPlanOutcomeCallable ModifyLiveRecordPlanCallable(const Model::ModifyLiveRecordPlanRequest& request);
+
+                /**
+                 *直播录像编辑
+                 * @param req ModifyLiveVideoRequest
+                 * @return ModifyLiveVideoOutcome
+                 */
+                ModifyLiveVideoOutcome ModifyLiveVideo(const Model::ModifyLiveVideoRequest &request);
+                void ModifyLiveVideoAsync(const Model::ModifyLiveVideoRequest& request, const ModifyLiveVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLiveVideoOutcomeCallable ModifyLiveVideoCallable(const Model::ModifyLiveVideoRequest& request);
+
+                /**
+                 *编辑设备订阅状态
+                 * @param req ModifySubscriptionStatusRequest
+                 * @return ModifySubscriptionStatusOutcome
+                 */
+                ModifySubscriptionStatusOutcome ModifySubscriptionStatus(const Model::ModifySubscriptionStatusRequest &request);
+                void ModifySubscriptionStatusAsync(const Model::ModifySubscriptionStatusRequest& request, const ModifySubscriptionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySubscriptionStatusOutcomeCallable ModifySubscriptionStatusCallable(const Model::ModifySubscriptionStatusRequest& request);
+
+                /**
+                 *修改录像存储列表
+                 * @param req ModifyVideoInfoRequest
+                 * @return ModifyVideoInfoOutcome
+                 */
+                ModifyVideoInfoOutcome ModifyVideoInfo(const Model::ModifyVideoInfoRequest &request);
+                void ModifyVideoInfoAsync(const Model::ModifyVideoInfoRequest& request, const ModifyVideoInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyVideoInfoOutcomeCallable ModifyVideoInfoCallable(const Model::ModifyVideoInfoRequest& request);
 
                 /**
                  *本接口(UpdateDeviceGroup)用于修改分组信息。

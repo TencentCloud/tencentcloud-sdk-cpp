@@ -470,6 +470,49 @@ DbbrainClient::DescribeDBDiagEventOutcomeCallable DbbrainClient::DescribeDBDiagE
     return task->get_future();
 }
 
+DbbrainClient::DescribeDBDiagEventsOutcome DbbrainClient::DescribeDBDiagEvents(const DescribeDBDiagEventsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBDiagEvents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBDiagEventsResponse rsp = DescribeDBDiagEventsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBDiagEventsOutcome(rsp);
+        else
+            return DescribeDBDiagEventsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBDiagEventsOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeDBDiagEventsAsync(const DescribeDBDiagEventsRequest& request, const DescribeDBDiagEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBDiagEvents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeDBDiagEventsOutcomeCallable DbbrainClient::DescribeDBDiagEventsCallable(const DescribeDBDiagEventsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBDiagEventsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBDiagEvents(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::DescribeDBDiagHistoryOutcome DbbrainClient::DescribeDBDiagHistory(const DescribeDBDiagHistoryRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBDiagHistory");

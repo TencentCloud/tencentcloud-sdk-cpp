@@ -101,6 +101,34 @@ namespace TencentCloud
                      */
                     bool TotalUserNumHasBeenSet() const;
 
+                    /**
+                     * 获取组织机构ID路径。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OrgNodeIdPath 组织机构ID路径。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOrgNodeIdPath() const;
+
+                    /**
+                     * 判断参数 OrgNodeIdPath 是否已赋值
+                     * @return OrgNodeIdPath 是否已赋值
+                     */
+                    bool OrgNodeIdPathHasBeenSet() const;
+
+                    /**
+                     * 获取组织机构名称路径。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OrgNodeNamePath 组织机构名称路径。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOrgNodeNamePath() const;
+
+                    /**
+                     * 判断参数 OrgNodeNamePath 是否已赋值
+                     * @return OrgNodeNamePath 是否已赋值
+                     */
+                    bool OrgNodeNamePathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -130,6 +158,20 @@ namespace TencentCloud
                      */
                     int64_t m_totalUserNum;
                     bool m_totalUserNumHasBeenSet;
+
+                    /**
+                     * 组织机构ID路径。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_orgNodeIdPath;
+                    bool m_orgNodeIdPathHasBeenSet;
+
+                    /**
+                     * 组织机构名称路径。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_orgNodeNamePath;
+                    bool m_orgNodeNamePathHasBeenSet;
 
                 };
             }

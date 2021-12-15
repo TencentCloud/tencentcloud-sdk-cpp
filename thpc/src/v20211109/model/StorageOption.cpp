@@ -21,7 +21,8 @@ using namespace TencentCloud::Thpc::V20211109::Model;
 using namespace std;
 
 StorageOption::StorageOption() :
-    m_cFSOptionsHasBeenSet(false)
+    m_cFSOptionsHasBeenSet(false),
+    m_gooseFSOptionsHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,26 @@ CoreInternalOutcome StorageOption::Deserialize(const rapidjson::Value &value)
         m_cFSOptionsHasBeenSet = true;
     }
 
+    if (value.HasMember("GooseFSOptions") && !value["GooseFSOptions"].IsNull())
+    {
+        if (!value["GooseFSOptions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `StorageOption.GooseFSOptions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["GooseFSOptions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            GooseFSOption item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_gooseFSOptions.push_back(item);
+        }
+        m_gooseFSOptionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -66,6 +87,21 @@ void StorageOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
 
         int i=0;
         for (auto itr = m_cFSOptions.begin(); itr != m_cFSOptions.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_gooseFSOptionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GooseFSOptions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_gooseFSOptions.begin(); itr != m_gooseFSOptions.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -89,5 +125,21 @@ void StorageOption::SetCFSOptions(const vector<CFSOption>& _cFSOptions)
 bool StorageOption::CFSOptionsHasBeenSet() const
 {
     return m_cFSOptionsHasBeenSet;
+}
+
+vector<GooseFSOption> StorageOption::GetGooseFSOptions() const
+{
+    return m_gooseFSOptions;
+}
+
+void StorageOption::SetGooseFSOptions(const vector<GooseFSOption>& _gooseFSOptions)
+{
+    m_gooseFSOptions = _gooseFSOptions;
+    m_gooseFSOptionsHasBeenSet = true;
+}
+
+bool StorageOption::GooseFSOptionsHasBeenSet() const
+{
+    return m_gooseFSOptionsHasBeenSet;
 }
 

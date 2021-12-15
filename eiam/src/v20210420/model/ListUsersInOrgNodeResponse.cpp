@@ -27,7 +27,9 @@ ListUsersInOrgNodeResponse::ListUsersInOrgNodeResponse() :
     m_orgNodeChildUserInfoHasBeenSet(false),
     m_orgNodeIdHasBeenSet(false),
     m_userInfoHasBeenSet(false),
-    m_totalUserNumHasBeenSet(false)
+    m_totalUserNumHasBeenSet(false),
+    m_orgNodeIdPathHasBeenSet(false),
+    m_orgNodeNamePathHasBeenSet(false)
 {
 }
 
@@ -125,6 +127,26 @@ CoreInternalOutcome ListUsersInOrgNodeResponse::Deserialize(const string &payloa
         m_totalUserNumHasBeenSet = true;
     }
 
+    if (rsp.HasMember("OrgNodeIdPath") && !rsp["OrgNodeIdPath"].IsNull())
+    {
+        if (!rsp["OrgNodeIdPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrgNodeIdPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_orgNodeIdPath = string(rsp["OrgNodeIdPath"].GetString());
+        m_orgNodeIdPathHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("OrgNodeNamePath") && !rsp["OrgNodeNamePath"].IsNull())
+    {
+        if (!rsp["OrgNodeNamePath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrgNodeNamePath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_orgNodeNamePath = string(rsp["OrgNodeNamePath"].GetString());
+        m_orgNodeNamePathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -181,6 +203,22 @@ string ListUsersInOrgNodeResponse::ToJsonString() const
         value.AddMember(iKey, m_totalUserNum, allocator);
     }
 
+    if (m_orgNodeIdPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrgNodeIdPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_orgNodeIdPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orgNodeNamePathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrgNodeNamePath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_orgNodeNamePath.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -231,6 +269,26 @@ int64_t ListUsersInOrgNodeResponse::GetTotalUserNum() const
 bool ListUsersInOrgNodeResponse::TotalUserNumHasBeenSet() const
 {
     return m_totalUserNumHasBeenSet;
+}
+
+string ListUsersInOrgNodeResponse::GetOrgNodeIdPath() const
+{
+    return m_orgNodeIdPath;
+}
+
+bool ListUsersInOrgNodeResponse::OrgNodeIdPathHasBeenSet() const
+{
+    return m_orgNodeIdPathHasBeenSet;
+}
+
+string ListUsersInOrgNodeResponse::GetOrgNodeNamePath() const
+{
+    return m_orgNodeNamePath;
+}
+
+bool ListUsersInOrgNodeResponse::OrgNodeNamePathHasBeenSet() const
+{
+    return m_orgNodeNamePathHasBeenSet;
 }
 
 

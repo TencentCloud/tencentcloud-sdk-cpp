@@ -32,7 +32,8 @@ DescribeListBGPIPInstancesRequest::DescribeListBGPIPInstancesRequest() :
     m_filterNameHasBeenSet(false),
     m_filterEipTypeHasBeenSet(false),
     m_filterEipEipAddressStatusHasBeenSet(false),
-    m_filterDamDDoSStatusHasBeenSet(false)
+    m_filterDamDDoSStatusHasBeenSet(false),
+    m_filterStatusHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,14 @@ string DescribeListBGPIPInstancesRequest::ToJsonString() const
         string key = "FilterDamDDoSStatus";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_filterDamDDoSStatus, allocator);
+    }
+
+    if (m_filterStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_filterStatus.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -294,6 +303,22 @@ void DescribeListBGPIPInstancesRequest::SetFilterDamDDoSStatus(const int64_t& _f
 bool DescribeListBGPIPInstancesRequest::FilterDamDDoSStatusHasBeenSet() const
 {
     return m_filterDamDDoSStatusHasBeenSet;
+}
+
+string DescribeListBGPIPInstancesRequest::GetFilterStatus() const
+{
+    return m_filterStatus;
+}
+
+void DescribeListBGPIPInstancesRequest::SetFilterStatus(const string& _filterStatus)
+{
+    m_filterStatus = _filterStatus;
+    m_filterStatusHasBeenSet = true;
+}
+
+bool DescribeListBGPIPInstancesRequest::FilterStatusHasBeenSet() const
+{
+    return m_filterStatusHasBeenSet;
 }
 
 

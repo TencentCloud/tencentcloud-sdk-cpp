@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/Filter.h>
 
 
 namespace TencentCloud
@@ -60,6 +61,60 @@ namespace TencentCloud
                      */
                     bool SecurityGroupIdHasBeenSet() const;
 
+                    /**
+                     * 获取过滤条件,不支持同时指定SecurityGroupId和Filters参数。
+<li>security-group-id - String - 安全组ID。</li>
+<li>ip - String - IP，支持IPV4和IPV6模糊匹配。</li>
+<li>address-module - String - IP地址模板或IP地址组模板ID。</li>
+<li>service-module - String - 协议端口模板或协议端口组模板ID。</li>
+<li>protocol-type - String - 安全组策略支持的协议，可选值：`TCP`, `UDP`, `ICMP`, `ICMPV6`, `GRE`, `ALL`。</li>
+<li>port - String - 是否必填：否 -协议端口，支持模糊匹配，值为`ALL`时，查询所有的端口。</li>
+<li>poly - String - 协议策略，可选值：`ALL`，所有策略；`ACCEPT`，允许；`DROP`，拒绝。</li>
+<li>direction - String - 协议规则，可选值：`ALL`，所有策略；`INBOUND`，入站规则；`OUTBOUND`，出站规则。</li>
+<li>description - String - 协议描述，该过滤条件支持模糊匹配。</li>
+                     * @return Filters 过滤条件,不支持同时指定SecurityGroupId和Filters参数。
+<li>security-group-id - String - 安全组ID。</li>
+<li>ip - String - IP，支持IPV4和IPV6模糊匹配。</li>
+<li>address-module - String - IP地址模板或IP地址组模板ID。</li>
+<li>service-module - String - 协议端口模板或协议端口组模板ID。</li>
+<li>protocol-type - String - 安全组策略支持的协议，可选值：`TCP`, `UDP`, `ICMP`, `ICMPV6`, `GRE`, `ALL`。</li>
+<li>port - String - 是否必填：否 -协议端口，支持模糊匹配，值为`ALL`时，查询所有的端口。</li>
+<li>poly - String - 协议策略，可选值：`ALL`，所有策略；`ACCEPT`，允许；`DROP`，拒绝。</li>
+<li>direction - String - 协议规则，可选值：`ALL`，所有策略；`INBOUND`，入站规则；`OUTBOUND`，出站规则。</li>
+<li>description - String - 协议描述，该过滤条件支持模糊匹配。</li>
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置过滤条件,不支持同时指定SecurityGroupId和Filters参数。
+<li>security-group-id - String - 安全组ID。</li>
+<li>ip - String - IP，支持IPV4和IPV6模糊匹配。</li>
+<li>address-module - String - IP地址模板或IP地址组模板ID。</li>
+<li>service-module - String - 协议端口模板或协议端口组模板ID。</li>
+<li>protocol-type - String - 安全组策略支持的协议，可选值：`TCP`, `UDP`, `ICMP`, `ICMPV6`, `GRE`, `ALL`。</li>
+<li>port - String - 是否必填：否 -协议端口，支持模糊匹配，值为`ALL`时，查询所有的端口。</li>
+<li>poly - String - 协议策略，可选值：`ALL`，所有策略；`ACCEPT`，允许；`DROP`，拒绝。</li>
+<li>direction - String - 协议规则，可选值：`ALL`，所有策略；`INBOUND`，入站规则；`OUTBOUND`，出站规则。</li>
+<li>description - String - 协议描述，该过滤条件支持模糊匹配。</li>
+                     * @param Filters 过滤条件,不支持同时指定SecurityGroupId和Filters参数。
+<li>security-group-id - String - 安全组ID。</li>
+<li>ip - String - IP，支持IPV4和IPV6模糊匹配。</li>
+<li>address-module - String - IP地址模板或IP地址组模板ID。</li>
+<li>service-module - String - 协议端口模板或协议端口组模板ID。</li>
+<li>protocol-type - String - 安全组策略支持的协议，可选值：`TCP`, `UDP`, `ICMP`, `ICMPV6`, `GRE`, `ALL`。</li>
+<li>port - String - 是否必填：否 -协议端口，支持模糊匹配，值为`ALL`时，查询所有的端口。</li>
+<li>poly - String - 协议策略，可选值：`ALL`，所有策略；`ACCEPT`，允许；`DROP`，拒绝。</li>
+<li>direction - String - 协议规则，可选值：`ALL`，所有策略；`INBOUND`，入站规则；`OUTBOUND`，出站规则。</li>
+<li>description - String - 协议描述，该过滤条件支持模糊匹配。</li>
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +122,21 @@ namespace TencentCloud
                      */
                     std::string m_securityGroupId;
                     bool m_securityGroupIdHasBeenSet;
+
+                    /**
+                     * 过滤条件,不支持同时指定SecurityGroupId和Filters参数。
+<li>security-group-id - String - 安全组ID。</li>
+<li>ip - String - IP，支持IPV4和IPV6模糊匹配。</li>
+<li>address-module - String - IP地址模板或IP地址组模板ID。</li>
+<li>service-module - String - 协议端口模板或协议端口组模板ID。</li>
+<li>protocol-type - String - 安全组策略支持的协议，可选值：`TCP`, `UDP`, `ICMP`, `ICMPV6`, `GRE`, `ALL`。</li>
+<li>port - String - 是否必填：否 -协议端口，支持模糊匹配，值为`ALL`时，查询所有的端口。</li>
+<li>poly - String - 协议策略，可选值：`ALL`，所有策略；`ACCEPT`，允许；`DROP`，拒绝。</li>
+<li>direction - String - 协议规则，可选值：`ALL`，所有策略；`INBOUND`，入站规则；`OUTBOUND`，出站规则。</li>
+<li>description - String - 协议描述，该过滤条件支持模糊匹配。</li>
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

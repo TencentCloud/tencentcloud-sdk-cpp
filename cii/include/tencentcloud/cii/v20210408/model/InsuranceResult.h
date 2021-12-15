@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取险种
-                     * @return InsuranceType 险种
+                     * 获取险种:CriticalDiseaseInsurance(重疾险);LifeInsurance(寿险);AccidentInsurance(意外险);MedicalInsurance(医疗险)
+                     * @return InsuranceType 险种:CriticalDiseaseInsurance(重疾险);LifeInsurance(寿险);AccidentInsurance(意外险);MedicalInsurance(医疗险)
                      */
                     std::string GetInsuranceType() const;
 
                     /**
-                     * 设置险种
-                     * @param InsuranceType 险种
+                     * 设置险种:CriticalDiseaseInsurance(重疾险);LifeInsurance(寿险);AccidentInsurance(意外险);MedicalInsurance(医疗险)
+                     * @param InsuranceType 险种:CriticalDiseaseInsurance(重疾险);LifeInsurance(寿险);AccidentInsurance(意外险);MedicalInsurance(医疗险)
                      */
                     void SetInsuranceType(const std::string& _insuranceType);
 
@@ -86,7 +86,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 险种
+                     * 险种:CriticalDiseaseInsurance(重疾险);LifeInsurance(寿险);AccidentInsurance(意外险);MedicalInsurance(医疗险)
                      */
                     std::string m_insuranceType;
                     bool m_insuranceTypeHasBeenSet;

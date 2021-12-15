@@ -23,7 +23,9 @@ using namespace std;
 OrgNodeChildUserInfo::OrgNodeChildUserInfo() :
     m_orgNodeIdHasBeenSet(false),
     m_userInfoHasBeenSet(false),
-    m_totalUserNumHasBeenSet(false)
+    m_totalUserNumHasBeenSet(false),
+    m_orgNodeIdPathHasBeenSet(false),
+    m_orgNodeNamePathHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,26 @@ CoreInternalOutcome OrgNodeChildUserInfo::Deserialize(const rapidjson::Value &va
         m_totalUserNumHasBeenSet = true;
     }
 
+    if (value.HasMember("OrgNodeIdPath") && !value["OrgNodeIdPath"].IsNull())
+    {
+        if (!value["OrgNodeIdPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrgNodeChildUserInfo.OrgNodeIdPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_orgNodeIdPath = string(value["OrgNodeIdPath"].GetString());
+        m_orgNodeIdPathHasBeenSet = true;
+    }
+
+    if (value.HasMember("OrgNodeNamePath") && !value["OrgNodeNamePath"].IsNull())
+    {
+        if (!value["OrgNodeNamePath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrgNodeChildUserInfo.OrgNodeNamePath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_orgNodeNamePath = string(value["OrgNodeNamePath"].GetString());
+        m_orgNodeNamePathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +130,22 @@ void OrgNodeChildUserInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "TotalUserNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalUserNum, allocator);
+    }
+
+    if (m_orgNodeIdPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrgNodeIdPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_orgNodeIdPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orgNodeNamePathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrgNodeNamePath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_orgNodeNamePath.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -159,5 +197,37 @@ void OrgNodeChildUserInfo::SetTotalUserNum(const int64_t& _totalUserNum)
 bool OrgNodeChildUserInfo::TotalUserNumHasBeenSet() const
 {
     return m_totalUserNumHasBeenSet;
+}
+
+string OrgNodeChildUserInfo::GetOrgNodeIdPath() const
+{
+    return m_orgNodeIdPath;
+}
+
+void OrgNodeChildUserInfo::SetOrgNodeIdPath(const string& _orgNodeIdPath)
+{
+    m_orgNodeIdPath = _orgNodeIdPath;
+    m_orgNodeIdPathHasBeenSet = true;
+}
+
+bool OrgNodeChildUserInfo::OrgNodeIdPathHasBeenSet() const
+{
+    return m_orgNodeIdPathHasBeenSet;
+}
+
+string OrgNodeChildUserInfo::GetOrgNodeNamePath() const
+{
+    return m_orgNodeNamePath;
+}
+
+void OrgNodeChildUserInfo::SetOrgNodeNamePath(const string& _orgNodeNamePath)
+{
+    m_orgNodeNamePath = _orgNodeNamePath;
+    m_orgNodeNamePathHasBeenSet = true;
+}
+
+bool OrgNodeChildUserInfo::OrgNodeNamePathHasBeenSet() const
+{
+    return m_orgNodeNamePathHasBeenSet;
 }
 

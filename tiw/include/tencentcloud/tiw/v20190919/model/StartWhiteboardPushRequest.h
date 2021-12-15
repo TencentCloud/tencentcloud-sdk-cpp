@@ -485,16 +485,12 @@ SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
                     bool ExtraDataHasBeenSet() const;
 
                     /**
-                     * 获取**内部体验字段，若需要体验可以提工单申请开通体验**
-
-TRTC数字类型房间号，取值范围: (1, 4294967295)。
+                     * 获取TRTC数字类型房间号，取值范围: (1, 4294967295)。
 
 在同时指定了RoomId与TRTCRoomId的情况下，优先使用TRTCRoomId作为白板流进行推流的TRTC房间号。
 
 当指定了TRTCRoomIdStr的情况下，此字段将被忽略。
-                     * @return TRTCRoomId **内部体验字段，若需要体验可以提工单申请开通体验**
-
-TRTC数字类型房间号，取值范围: (1, 4294967295)。
+                     * @return TRTCRoomId TRTC数字类型房间号，取值范围: (1, 4294967295)。
 
 在同时指定了RoomId与TRTCRoomId的情况下，优先使用TRTCRoomId作为白板流进行推流的TRTC房间号。
 
@@ -503,16 +499,12 @@ TRTC数字类型房间号，取值范围: (1, 4294967295)。
                     int64_t GetTRTCRoomId() const;
 
                     /**
-                     * 设置**内部体验字段，若需要体验可以提工单申请开通体验**
-
-TRTC数字类型房间号，取值范围: (1, 4294967295)。
+                     * 设置TRTC数字类型房间号，取值范围: (1, 4294967295)。
 
 在同时指定了RoomId与TRTCRoomId的情况下，优先使用TRTCRoomId作为白板流进行推流的TRTC房间号。
 
 当指定了TRTCRoomIdStr的情况下，此字段将被忽略。
-                     * @param TRTCRoomId **内部体验字段，若需要体验可以提工单申请开通体验**
-
-TRTC数字类型房间号，取值范围: (1, 4294967295)。
+                     * @param TRTCRoomId TRTC数字类型房间号，取值范围: (1, 4294967295)。
 
 在同时指定了RoomId与TRTCRoomId的情况下，优先使用TRTCRoomId作为白板流进行推流的TRTC房间号。
 
@@ -527,28 +519,20 @@ TRTC数字类型房间号，取值范围: (1, 4294967295)。
                     bool TRTCRoomIdHasBeenSet() const;
 
                     /**
-                     * 获取**内部体验字段，若需要体验可以提工单申请开通体验**
-
-TRTC字符串类型房间号。
+                     * 获取TRTC字符串类型房间号。
 
 在指定了TRTCRoomIdStr的情况下，会优先使用TRTCRoomIdStr作为白板流进行推流的TRTC房间号。
-                     * @return TRTCRoomIdStr **内部体验字段，若需要体验可以提工单申请开通体验**
-
-TRTC字符串类型房间号。
+                     * @return TRTCRoomIdStr TRTC字符串类型房间号。
 
 在指定了TRTCRoomIdStr的情况下，会优先使用TRTCRoomIdStr作为白板流进行推流的TRTC房间号。
                      */
                     std::string GetTRTCRoomIdStr() const;
 
                     /**
-                     * 设置**内部体验字段，若需要体验可以提工单申请开通体验**
-
-TRTC字符串类型房间号。
+                     * 设置TRTC字符串类型房间号。
 
 在指定了TRTCRoomIdStr的情况下，会优先使用TRTCRoomIdStr作为白板流进行推流的TRTC房间号。
-                     * @param TRTCRoomIdStr **内部体验字段，若需要体验可以提工单申请开通体验**
-
-TRTC字符串类型房间号。
+                     * @param TRTCRoomIdStr TRTC字符串类型房间号。
 
 在指定了TRTCRoomIdStr的情况下，会优先使用TRTCRoomIdStr作为白板流进行推流的TRTC房间号。
                      */
@@ -697,9 +681,7 @@ SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
                     bool m_extraDataHasBeenSet;
 
                     /**
-                     * **内部体验字段，若需要体验可以提工单申请开通体验**
-
-TRTC数字类型房间号，取值范围: (1, 4294967295)。
+                     * TRTC数字类型房间号，取值范围: (1, 4294967295)。
 
 在同时指定了RoomId与TRTCRoomId的情况下，优先使用TRTCRoomId作为白板流进行推流的TRTC房间号。
 
@@ -709,9 +691,7 @@ TRTC数字类型房间号，取值范围: (1, 4294967295)。
                     bool m_tRTCRoomIdHasBeenSet;
 
                     /**
-                     * **内部体验字段，若需要体验可以提工单申请开通体验**
-
-TRTC字符串类型房间号。
+                     * TRTC字符串类型房间号。
 
 在指定了TRTCRoomIdStr的情况下，会优先使用TRTCRoomIdStr作为白板流进行推流的TRTC房间号。
                      */

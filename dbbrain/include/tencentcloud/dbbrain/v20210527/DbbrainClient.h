@@ -43,6 +43,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeAllUserGroupResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBDiagEventRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBDiagEventResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeDBDiagEventsRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeDBDiagEventsResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBDiagHistoryRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBDiagHistoryResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBDiagReportTasksRequest.h>
@@ -125,6 +127,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBDiagEventResponse> DescribeDBDiagEventOutcome;
                 typedef std::future<DescribeDBDiagEventOutcome> DescribeDBDiagEventOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeDBDiagEventRequest&, DescribeDBDiagEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBDiagEventAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBDiagEventsResponse> DescribeDBDiagEventsOutcome;
+                typedef std::future<DescribeDBDiagEventsOutcome> DescribeDBDiagEventsOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeDBDiagEventsRequest&, DescribeDBDiagEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBDiagEventsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBDiagHistoryResponse> DescribeDBDiagHistoryOutcome;
                 typedef std::future<DescribeDBDiagHistoryOutcome> DescribeDBDiagHistoryOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeDBDiagHistoryRequest&, DescribeDBDiagHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBDiagHistoryAsyncHandler;
@@ -274,6 +279,15 @@ namespace TencentCloud
                 DescribeDBDiagEventOutcome DescribeDBDiagEvent(const Model::DescribeDBDiagEventRequest &request);
                 void DescribeDBDiagEventAsync(const Model::DescribeDBDiagEventRequest& request, const DescribeDBDiagEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDBDiagEventOutcomeCallable DescribeDBDiagEventCallable(const Model::DescribeDBDiagEventRequest& request);
+
+                /**
+                 *获取指定时间段内的诊断事件列表，支持依据风险等级、实例ID等条件过滤。
+                 * @param req DescribeDBDiagEventsRequest
+                 * @return DescribeDBDiagEventsOutcome
+                 */
+                DescribeDBDiagEventsOutcome DescribeDBDiagEvents(const Model::DescribeDBDiagEventsRequest &request);
+                void DescribeDBDiagEventsAsync(const Model::DescribeDBDiagEventsRequest& request, const DescribeDBDiagEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBDiagEventsOutcomeCallable DescribeDBDiagEventsCallable(const Model::DescribeDBDiagEventsRequest& request);
 
                 /**
                  *获取实例诊断事件的列表。

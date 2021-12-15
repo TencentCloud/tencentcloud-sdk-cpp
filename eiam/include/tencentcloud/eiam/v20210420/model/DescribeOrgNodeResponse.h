@@ -156,6 +156,20 @@ namespace TencentCloud
                      */
                     bool OrgNodeChildInfoHasBeenSet() const;
 
+                    /**
+                     * 获取机构节点描述。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Description 机构节点描述。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     */
+                    bool DescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -213,6 +227,13 @@ namespace TencentCloud
                      */
                     std::vector<OrgNodeChildInfo> m_orgNodeChildInfo;
                     bool m_orgNodeChildInfoHasBeenSet;
+
+                    /**
+                     * 机构节点描述。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

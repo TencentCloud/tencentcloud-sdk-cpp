@@ -136,11 +136,13 @@ namespace TencentCloud
                      * 获取事件类型。
 0: "断流",
 1: "推流",
-100: "录制"。
+100: "录制"
+200: "截图回调"。
                      * @return EventType 事件类型。
 0: "断流",
 1: "推流",
-100: "录制"。
+100: "录制"
+200: "截图回调"。
                      */
                     uint64_t GetEventType() const;
 
@@ -148,11 +150,13 @@ namespace TencentCloud
                      * 设置事件类型。
 0: "断流",
 1: "推流",
-100: "录制"。
+100: "录制"
+200: "截图回调"。
                      * @param EventType 事件类型。
 0: "断流",
 1: "推流",
-100: "录制"。
+100: "录制"
+200: "截图回调"。
                      */
                     void SetEventType(const uint64_t& _eventType);
 
@@ -220,7 +224,8 @@ namespace TencentCloud
                      * 事件类型。
 0: "断流",
 1: "推流",
-100: "录制"。
+100: "录制"
+200: "截图回调"。
                      */
                     uint64_t m_eventType;
                     bool m_eventTypeHasBeenSet;

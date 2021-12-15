@@ -211,6 +211,20 @@ namespace TencentCloud
                      */
                     bool ActivationTimeHasBeenSet() const;
 
+                    /**
+                     * 获取当前用户的密码是否需要重置，该字段为false表示不需要重置密码。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PwdNeedReset 当前用户的密码是否需要重置，该字段为false表示不需要重置密码。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetPwdNeedReset() const;
+
+                    /**
+                     * 判断参数 PwdNeedReset 是否已赋值
+                     * @return PwdNeedReset 是否已赋值
+                     */
+                    bool PwdNeedResetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -296,6 +310,13 @@ namespace TencentCloud
                      */
                     std::string m_activationTime;
                     bool m_activationTimeHasBeenSet;
+
+                    /**
+                     * 当前用户的密码是否需要重置，该字段为false表示不需要重置密码。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_pwdNeedReset;
+                    bool m_pwdNeedResetHasBeenSet;
 
                 };
             }

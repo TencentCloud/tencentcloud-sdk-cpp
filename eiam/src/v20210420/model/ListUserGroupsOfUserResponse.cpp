@@ -25,7 +25,9 @@ using namespace std;
 
 ListUserGroupsOfUserResponse::ListUserGroupsOfUserResponse() :
     m_userGroupIdsHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_userGroupInfoListHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -86,6 +88,36 @@ CoreInternalOutcome ListUserGroupsOfUserResponse::Deserialize(const string &payl
         m_userIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UserGroupInfoList") && !rsp["UserGroupInfoList"].IsNull())
+    {
+        if (!rsp["UserGroupInfoList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `UserGroupInfoList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["UserGroupInfoList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            UserGroupInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_userGroupInfoList.push_back(item);
+        }
+        m_userGroupInfoListHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -115,6 +147,29 @@ string ListUserGroupsOfUserResponse::ToJsonString() const
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userGroupInfoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserGroupInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_userGroupInfoList.begin(); itr != m_userGroupInfoList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -147,6 +202,26 @@ string ListUserGroupsOfUserResponse::GetUserId() const
 bool ListUserGroupsOfUserResponse::UserIdHasBeenSet() const
 {
     return m_userIdHasBeenSet;
+}
+
+vector<UserGroupInfo> ListUserGroupsOfUserResponse::GetUserGroupInfoList() const
+{
+    return m_userGroupInfoList;
+}
+
+bool ListUserGroupsOfUserResponse::UserGroupInfoListHasBeenSet() const
+{
+    return m_userGroupInfoListHasBeenSet;
+}
+
+uint64_t ListUserGroupsOfUserResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool ListUserGroupsOfUserResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
 }
 
 

@@ -29,7 +29,8 @@ DescribeLivePackageInfoResponse::DescribeLivePackageInfoResponse() :
     m_totalPageHasBeenSet(false),
     m_totalNumHasBeenSet(false),
     m_pageNumHasBeenSet(false),
-    m_pageSizeHasBeenSet(false)
+    m_pageSizeHasBeenSet(false),
+    m_fluxPackageBillModeHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,16 @@ CoreInternalOutcome DescribeLivePackageInfoResponse::Deserialize(const string &p
         m_pageSizeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FluxPackageBillMode") && !rsp["FluxPackageBillMode"].IsNull())
+    {
+        if (!rsp["FluxPackageBillMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FluxPackageBillMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fluxPackageBillMode = string(rsp["FluxPackageBillMode"].GetString());
+        m_fluxPackageBillModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -200,6 +211,14 @@ string DescribeLivePackageInfoResponse::ToJsonString() const
         string key = "PageSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_fluxPackageBillModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FluxPackageBillMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fluxPackageBillMode.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -272,6 +291,16 @@ int64_t DescribeLivePackageInfoResponse::GetPageSize() const
 bool DescribeLivePackageInfoResponse::PageSizeHasBeenSet() const
 {
     return m_pageSizeHasBeenSet;
+}
+
+string DescribeLivePackageInfoResponse::GetFluxPackageBillMode() const
+{
+    return m_fluxPackageBillMode;
+}
+
+bool DescribeLivePackageInfoResponse::FluxPackageBillModeHasBeenSet() const
+{
+    return m_fluxPackageBillModeHasBeenSet;
 }
 
 

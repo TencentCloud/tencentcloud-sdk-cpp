@@ -112,6 +112,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/InstanceConfs.h
   include/tencentcloud/dbbrain/v20210527/model/CreateSecurityAuditLogExportTaskRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBDiagEventResponse.h
+  include/tencentcloud/dbbrain/v20210527/model/DescribeDBDiagEventsResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBDiagReportTasksResponse.h
   include/tencentcloud/dbbrain/v20210527/model/AddUserContactResponse.h
   include/tencentcloud/dbbrain/v20210527/model/ModifyDiagDBInstanceConfResponse.h
@@ -127,12 +128,12 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/TimeSlice.h
   include/tencentcloud/dbbrain/v20210527/model/ModifyDiagDBInstanceConfRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeSecurityAuditLogDownloadUrlsRequest.h
-  include/tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportTaskResponse.h
+  include/tencentcloud/dbbrain/v20210527/model/MySqlProcess.h
   include/tencentcloud/dbbrain/v20210527/model/CreateMailProfileResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeSlowLogTimeSeriesStatsRequest.h
   include/tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportUrlResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBDiagHistoryRequest.h
-  include/tencentcloud/dbbrain/v20210527/model/MySqlProcess.h
+  include/tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportTaskResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DiagHistoryEventItem.h
   include/tencentcloud/dbbrain/v20210527/model/SlowLogHost.h
   include/tencentcloud/dbbrain/v20210527/model/CreateMailProfileRequest.h
@@ -179,6 +180,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/DescribeAllUserGroupResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeUserSqlAdviceResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBSpaceStatusResponse.h
+  include/tencentcloud/dbbrain/v20210527/model/DescribeDBDiagEventsRequest.h
   include/tencentcloud/dbbrain/v20210527/model/GroupItem.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceTableTimeSeriesRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBDiagReportTasksRequest.h
@@ -288,6 +290,7 @@ set(dbbrain_src
   src/v20210527/model/InstanceConfs.cpp
   src/v20210527/model/CreateSecurityAuditLogExportTaskRequest.cpp
   src/v20210527/model/DescribeDBDiagEventResponse.cpp
+  src/v20210527/model/DescribeDBDiagEventsResponse.cpp
   src/v20210527/model/DescribeDBDiagReportTasksResponse.cpp
   src/v20210527/model/AddUserContactResponse.cpp
   src/v20210527/model/ModifyDiagDBInstanceConfResponse.cpp
@@ -303,12 +306,12 @@ set(dbbrain_src
   src/v20210527/model/TimeSlice.cpp
   src/v20210527/model/ModifyDiagDBInstanceConfRequest.cpp
   src/v20210527/model/DescribeSecurityAuditLogDownloadUrlsRequest.cpp
-  src/v20210527/model/CreateDBDiagReportTaskResponse.cpp
+  src/v20210527/model/MySqlProcess.cpp
   src/v20210527/model/CreateMailProfileResponse.cpp
   src/v20210527/model/DescribeSlowLogTimeSeriesStatsRequest.cpp
   src/v20210527/model/CreateDBDiagReportUrlResponse.cpp
   src/v20210527/model/DescribeDBDiagHistoryRequest.cpp
-  src/v20210527/model/MySqlProcess.cpp
+  src/v20210527/model/CreateDBDiagReportTaskResponse.cpp
   src/v20210527/model/DiagHistoryEventItem.cpp
   src/v20210527/model/SlowLogHost.cpp
   src/v20210527/model/CreateMailProfileRequest.cpp
@@ -355,6 +358,7 @@ set(dbbrain_src
   src/v20210527/model/DescribeAllUserGroupResponse.cpp
   src/v20210527/model/DescribeUserSqlAdviceResponse.cpp
   src/v20210527/model/DescribeDBSpaceStatusResponse.cpp
+  src/v20210527/model/DescribeDBDiagEventsRequest.cpp
   src/v20210527/model/GroupItem.cpp
   src/v20210527/model/DescribeTopSpaceTableTimeSeriesRequest.cpp
   src/v20210527/model/DescribeDBDiagReportTasksRequest.cpp

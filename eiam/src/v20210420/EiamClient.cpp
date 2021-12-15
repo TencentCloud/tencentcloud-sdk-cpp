@@ -40,6 +40,49 @@ EiamClient::EiamClient(const Credential &credential, const string &region, const
 }
 
 
+EiamClient::AddAccountToAccountGroupOutcome EiamClient::AddAccountToAccountGroup(const AddAccountToAccountGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddAccountToAccountGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddAccountToAccountGroupResponse rsp = AddAccountToAccountGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddAccountToAccountGroupOutcome(rsp);
+        else
+            return AddAccountToAccountGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return AddAccountToAccountGroupOutcome(outcome.GetError());
+    }
+}
+
+void EiamClient::AddAccountToAccountGroupAsync(const AddAccountToAccountGroupRequest& request, const AddAccountToAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddAccountToAccountGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EiamClient::AddAccountToAccountGroupOutcomeCallable EiamClient::AddAccountToAccountGroupCallable(const AddAccountToAccountGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddAccountToAccountGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->AddAccountToAccountGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EiamClient::AddUserToUserGroupOutcome EiamClient::AddUserToUserGroup(const AddUserToUserGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "AddUserToUserGroup");
@@ -76,6 +119,92 @@ EiamClient::AddUserToUserGroupOutcomeCallable EiamClient::AddUserToUserGroupCall
         [this, request]()
         {
             return this->AddUserToUserGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EiamClient::CreateAccountGroupOutcome EiamClient::CreateAccountGroup(const CreateAccountGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAccountGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAccountGroupResponse rsp = CreateAccountGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAccountGroupOutcome(rsp);
+        else
+            return CreateAccountGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAccountGroupOutcome(outcome.GetError());
+    }
+}
+
+void EiamClient::CreateAccountGroupAsync(const CreateAccountGroupRequest& request, const CreateAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAccountGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EiamClient::CreateAccountGroupOutcomeCallable EiamClient::CreateAccountGroupCallable(const CreateAccountGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAccountGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAccountGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EiamClient::CreateAppAccountOutcome EiamClient::CreateAppAccount(const CreateAppAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAppAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAppAccountResponse rsp = CreateAppAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAppAccountOutcome(rsp);
+        else
+            return CreateAppAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAppAccountOutcome(outcome.GetError());
+    }
+}
+
+void EiamClient::CreateAppAccountAsync(const CreateAppAccountRequest& request, const CreateAppAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAppAccount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EiamClient::CreateAppAccountOutcomeCallable EiamClient::CreateAppAccountCallable(const CreateAppAccountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAppAccountOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAppAccount(request);
         }
     );
 
@@ -212,6 +341,92 @@ EiamClient::CreateUserGroupOutcomeCallable EiamClient::CreateUserGroupCallable(c
     return task->get_future();
 }
 
+EiamClient::DeleteAccountGroupOutcome EiamClient::DeleteAccountGroup(const DeleteAccountGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAccountGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAccountGroupResponse rsp = DeleteAccountGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAccountGroupOutcome(rsp);
+        else
+            return DeleteAccountGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAccountGroupOutcome(outcome.GetError());
+    }
+}
+
+void EiamClient::DeleteAccountGroupAsync(const DeleteAccountGroupRequest& request, const DeleteAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAccountGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EiamClient::DeleteAccountGroupOutcomeCallable EiamClient::DeleteAccountGroupCallable(const DeleteAccountGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAccountGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAccountGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EiamClient::DeleteAppAccountOutcome EiamClient::DeleteAppAccount(const DeleteAppAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAppAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAppAccountResponse rsp = DeleteAppAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAppAccountOutcome(rsp);
+        else
+            return DeleteAppAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAppAccountOutcome(outcome.GetError());
+    }
+}
+
+void EiamClient::DeleteAppAccountAsync(const DeleteAppAccountRequest& request, const DeleteAppAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAppAccount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EiamClient::DeleteAppAccountOutcomeCallable EiamClient::DeleteAppAccountCallable(const DeleteAppAccountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAppAccountOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAppAccount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EiamClient::DeleteOrgNodeOutcome EiamClient::DeleteOrgNode(const DeleteOrgNodeRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteOrgNode");
@@ -334,6 +549,135 @@ EiamClient::DeleteUserGroupOutcomeCallable EiamClient::DeleteUserGroupCallable(c
         [this, request]()
         {
             return this->DeleteUserGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EiamClient::DeleteUsersOutcome EiamClient::DeleteUsers(const DeleteUsersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteUsers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteUsersResponse rsp = DeleteUsersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteUsersOutcome(rsp);
+        else
+            return DeleteUsersOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteUsersOutcome(outcome.GetError());
+    }
+}
+
+void EiamClient::DeleteUsersAsync(const DeleteUsersRequest& request, const DeleteUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteUsers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EiamClient::DeleteUsersOutcomeCallable EiamClient::DeleteUsersCallable(const DeleteUsersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteUsersOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteUsers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EiamClient::DescribeAccountGroupOutcome EiamClient::DescribeAccountGroup(const DescribeAccountGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccountGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccountGroupResponse rsp = DescribeAccountGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccountGroupOutcome(rsp);
+        else
+            return DescribeAccountGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccountGroupOutcome(outcome.GetError());
+    }
+}
+
+void EiamClient::DescribeAccountGroupAsync(const DescribeAccountGroupRequest& request, const DescribeAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAccountGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EiamClient::DescribeAccountGroupOutcomeCallable EiamClient::DescribeAccountGroupCallable(const DescribeAccountGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAccountGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAccountGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EiamClient::DescribeAppAccountOutcome EiamClient::DescribeAppAccount(const DescribeAppAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAppAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAppAccountResponse rsp = DescribeAppAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAppAccountOutcome(rsp);
+        else
+            return DescribeAppAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAppAccountOutcome(outcome.GetError());
+    }
+}
+
+void EiamClient::DescribeAppAccountAsync(const DescribeAppAccountRequest& request, const DescribeAppAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAppAccount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EiamClient::DescribeAppAccountOutcomeCallable EiamClient::DescribeAppAccountCallable(const DescribeAppAccountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAppAccountOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAppAccount(request);
         }
     );
 
@@ -678,6 +1022,92 @@ EiamClient::DescribeUserResourcesAuthorizationOutcomeCallable EiamClient::Descri
         [this, request]()
         {
             return this->DescribeUserResourcesAuthorization(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EiamClient::DescribeUserThirdPartyAccountInfoOutcome EiamClient::DescribeUserThirdPartyAccountInfo(const DescribeUserThirdPartyAccountInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserThirdPartyAccountInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserThirdPartyAccountInfoResponse rsp = DescribeUserThirdPartyAccountInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserThirdPartyAccountInfoOutcome(rsp);
+        else
+            return DescribeUserThirdPartyAccountInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserThirdPartyAccountInfoOutcome(outcome.GetError());
+    }
+}
+
+void EiamClient::DescribeUserThirdPartyAccountInfoAsync(const DescribeUserThirdPartyAccountInfoRequest& request, const DescribeUserThirdPartyAccountInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserThirdPartyAccountInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EiamClient::DescribeUserThirdPartyAccountInfoOutcomeCallable EiamClient::DescribeUserThirdPartyAccountInfoCallable(const DescribeUserThirdPartyAccountInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserThirdPartyAccountInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserThirdPartyAccountInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EiamClient::ListAccountInAccountGroupOutcome EiamClient::ListAccountInAccountGroup(const ListAccountInAccountGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListAccountInAccountGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListAccountInAccountGroupResponse rsp = ListAccountInAccountGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListAccountInAccountGroupOutcome(rsp);
+        else
+            return ListAccountInAccountGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ListAccountInAccountGroupOutcome(outcome.GetError());
+    }
+}
+
+void EiamClient::ListAccountInAccountGroupAsync(const ListAccountInAccountGroupRequest& request, const ListAccountInAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListAccountInAccountGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EiamClient::ListAccountInAccountGroupOutcomeCallable EiamClient::ListAccountInAccountGroupCallable(const ListAccountInAccountGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListAccountInAccountGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->ListAccountInAccountGroup(request);
         }
     );
 
@@ -1115,6 +1545,92 @@ EiamClient::ListUsersInUserGroupOutcomeCallable EiamClient::ListUsersInUserGroup
     return task->get_future();
 }
 
+EiamClient::ModifyAccountGroupOutcome EiamClient::ModifyAccountGroup(const ModifyAccountGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAccountGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAccountGroupResponse rsp = ModifyAccountGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAccountGroupOutcome(rsp);
+        else
+            return ModifyAccountGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAccountGroupOutcome(outcome.GetError());
+    }
+}
+
+void EiamClient::ModifyAccountGroupAsync(const ModifyAccountGroupRequest& request, const ModifyAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAccountGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EiamClient::ModifyAccountGroupOutcomeCallable EiamClient::ModifyAccountGroupCallable(const ModifyAccountGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAccountGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAccountGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EiamClient::ModifyAppAccountOutcome EiamClient::ModifyAppAccount(const ModifyAppAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAppAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAppAccountResponse rsp = ModifyAppAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAppAccountOutcome(rsp);
+        else
+            return ModifyAppAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAppAccountOutcome(outcome.GetError());
+    }
+}
+
+void EiamClient::ModifyAppAccountAsync(const ModifyAppAccountRequest& request, const ModifyAppAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAppAccount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EiamClient::ModifyAppAccountOutcomeCallable EiamClient::ModifyAppAccountCallable(const ModifyAppAccountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAppAccountOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAppAccount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EiamClient::ModifyApplicationOutcome EiamClient::ModifyApplication(const ModifyApplicationRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyApplication");
@@ -1194,6 +1710,49 @@ EiamClient::ModifyUserInfoOutcomeCallable EiamClient::ModifyUserInfoCallable(con
         [this, request]()
         {
             return this->ModifyUserInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EiamClient::RemoveAccountFromAccountGroupOutcome EiamClient::RemoveAccountFromAccountGroup(const RemoveAccountFromAccountGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveAccountFromAccountGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveAccountFromAccountGroupResponse rsp = RemoveAccountFromAccountGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveAccountFromAccountGroupOutcome(rsp);
+        else
+            return RemoveAccountFromAccountGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveAccountFromAccountGroupOutcome(outcome.GetError());
+    }
+}
+
+void EiamClient::RemoveAccountFromAccountGroupAsync(const RemoveAccountFromAccountGroupRequest& request, const RemoveAccountFromAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RemoveAccountFromAccountGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EiamClient::RemoveAccountFromAccountGroupOutcomeCallable EiamClient::RemoveAccountFromAccountGroupCallable(const RemoveAccountFromAccountGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RemoveAccountFromAccountGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->RemoveAccountFromAccountGroup(request);
         }
     );
 
