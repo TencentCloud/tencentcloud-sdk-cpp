@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tiia/v20190529/model/ImageRect.h>
 
 
 namespace TencentCloud
@@ -196,6 +197,24 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
                      */
                     bool FilterHasBeenSet() const;
 
+                    /**
+                     * 获取图像主体区域。
+                     * @return ImageRect 图像主体区域。
+                     */
+                    ImageRect GetImageRect() const;
+
+                    /**
+                     * 设置图像主体区域。
+                     * @param ImageRect 图像主体区域。
+                     */
+                    void SetImageRect(const ImageRect& _imageRect);
+
+                    /**
+                     * 判断参数 ImageRect 是否已赋值
+                     * @return ImageRect 是否已赋值
+                     */
+                    bool ImageRectHasBeenSet() const;
+
                 private:
 
                     /**
@@ -246,6 +265,12 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
                      */
                     std::string m_filter;
                     bool m_filterHasBeenSet;
+
+                    /**
+                     * 图像主体区域。
+                     */
+                    ImageRect m_imageRect;
+                    bool m_imageRectHasBeenSet;
 
                 };
             }

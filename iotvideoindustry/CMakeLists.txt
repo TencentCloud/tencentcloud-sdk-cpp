@@ -38,13 +38,14 @@ set(iotvideoindustry_public_header_model
   include/tencentcloud/iotvideoindustry/v20201201/model/DeviceItem.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteDeviceGroupResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteRecordPlanResponse.h
-  include/tencentcloud/iotvideoindustry/v20201201/model/ModifyVideoInfoRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DeleteMessageForwardResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ModifyBindPlanLiveChannelResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/UpdateDeviceGroupResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/GetVideoListByConRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DevGroupInfo.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveRecordPlanByIdRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/LiveRecordPlanItem.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeVideoListResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/RecordTaskItem.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeIPCChannelsRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeSubGroupsRequest.h
@@ -61,9 +62,12 @@ set(iotvideoindustry_public_header_model
   include/tencentcloud/iotvideoindustry/v20201201/model/GetRecordPlanByIdResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteDeviceRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/UpdateDevicePassWordRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeMessageForwardRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/CreateTimeTemplateRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/CreateMessageForwardRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ModifyBindPlanLiveChannelRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveStreamRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/ModifyMessageForwardRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ModifyLiveRecordPlanResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/LiveChannelInfo.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeAllDeviceListRequest.h
@@ -89,6 +93,7 @@ set(iotvideoindustry_public_header_model
   include/tencentcloud/iotvideoindustry/v20201201/model/SceneItem.h
   include/tencentcloud/iotvideoindustry/v20201201/model/GetTimeTemplateByIdResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveChannelResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeMessageForwardsRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ControlDevicePTZResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/TimeTemplateSpec.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ControlDevicePTZRequest.h
@@ -109,6 +114,7 @@ set(iotvideoindustry_public_header_model
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveRecordPlanByIdResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordDatesByLiveResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ModifySubscriptionStatusResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/MessageForward.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ModifyDeviceDataRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteSceneResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/GetRecordDatesByDevRequest.h
@@ -142,17 +148,21 @@ set(iotvideoindustry_public_header_model
   include/tencentcloud/iotvideoindustry/v20201201/model/ModifyLiveChannelResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/GetTimeTemplateByIdRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/RecordPlanItem.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeMessageForwardsResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/ModifyVideoInfoRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/GetRecordPlansRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteTimeTemplateRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ModifyLiveChannelRequest.h
-  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeVideoListResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeMessageForwardResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveRecordPlanIdsRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteLiveVideoListRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/ModifyMessageForwardResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeScenesRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteLiveRecordPlanResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ModifyVideoInfoResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeGroupByIdResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ControlRecordStreamResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DeleteMessageForwardRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteLiveChannelResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/StreamAddress.h
   include/tencentcloud/iotvideoindustry/v20201201/model/BindGroupDevicesResponse.h
@@ -163,6 +173,7 @@ set(iotvideoindustry_public_header_model
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeBindSceneDevicesResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ModifyLiveVideoRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeGroupByPathResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/CreateMessageForwardResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/CreateLiveChannelRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeGroupDevicesResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteSceneRequest.h
@@ -190,13 +201,14 @@ set(iotvideoindustry_src
   src/v20201201/model/DeviceItem.cpp
   src/v20201201/model/DeleteDeviceGroupResponse.cpp
   src/v20201201/model/DeleteRecordPlanResponse.cpp
-  src/v20201201/model/ModifyVideoInfoRequest.cpp
+  src/v20201201/model/DeleteMessageForwardResponse.cpp
   src/v20201201/model/ModifyBindPlanLiveChannelResponse.cpp
   src/v20201201/model/UpdateDeviceGroupResponse.cpp
   src/v20201201/model/GetVideoListByConRequest.cpp
   src/v20201201/model/DevGroupInfo.cpp
   src/v20201201/model/DescribeLiveRecordPlanByIdRequest.cpp
   src/v20201201/model/LiveRecordPlanItem.cpp
+  src/v20201201/model/DescribeVideoListResponse.cpp
   src/v20201201/model/RecordTaskItem.cpp
   src/v20201201/model/DescribeIPCChannelsRequest.cpp
   src/v20201201/model/DescribeSubGroupsRequest.cpp
@@ -213,9 +225,12 @@ set(iotvideoindustry_src
   src/v20201201/model/GetRecordPlanByIdResponse.cpp
   src/v20201201/model/DeleteDeviceRequest.cpp
   src/v20201201/model/UpdateDevicePassWordRequest.cpp
+  src/v20201201/model/DescribeMessageForwardRequest.cpp
   src/v20201201/model/CreateTimeTemplateRequest.cpp
+  src/v20201201/model/CreateMessageForwardRequest.cpp
   src/v20201201/model/ModifyBindPlanLiveChannelRequest.cpp
   src/v20201201/model/DescribeLiveStreamRequest.cpp
+  src/v20201201/model/ModifyMessageForwardRequest.cpp
   src/v20201201/model/ModifyLiveRecordPlanResponse.cpp
   src/v20201201/model/LiveChannelInfo.cpp
   src/v20201201/model/DescribeAllDeviceListRequest.cpp
@@ -241,6 +256,7 @@ set(iotvideoindustry_src
   src/v20201201/model/SceneItem.cpp
   src/v20201201/model/GetTimeTemplateByIdResponse.cpp
   src/v20201201/model/DescribeLiveChannelResponse.cpp
+  src/v20201201/model/DescribeMessageForwardsRequest.cpp
   src/v20201201/model/ControlDevicePTZResponse.cpp
   src/v20201201/model/TimeTemplateSpec.cpp
   src/v20201201/model/ControlDevicePTZRequest.cpp
@@ -261,6 +277,7 @@ set(iotvideoindustry_src
   src/v20201201/model/DescribeLiveRecordPlanByIdResponse.cpp
   src/v20201201/model/DescribeRecordDatesByLiveResponse.cpp
   src/v20201201/model/ModifySubscriptionStatusResponse.cpp
+  src/v20201201/model/MessageForward.cpp
   src/v20201201/model/ModifyDeviceDataRequest.cpp
   src/v20201201/model/DeleteSceneResponse.cpp
   src/v20201201/model/GetRecordDatesByDevRequest.cpp
@@ -294,17 +311,21 @@ set(iotvideoindustry_src
   src/v20201201/model/ModifyLiveChannelResponse.cpp
   src/v20201201/model/GetTimeTemplateByIdRequest.cpp
   src/v20201201/model/RecordPlanItem.cpp
+  src/v20201201/model/DescribeMessageForwardsResponse.cpp
+  src/v20201201/model/ModifyVideoInfoRequest.cpp
   src/v20201201/model/GetRecordPlansRequest.cpp
   src/v20201201/model/DeleteTimeTemplateRequest.cpp
   src/v20201201/model/ModifyLiveChannelRequest.cpp
-  src/v20201201/model/DescribeVideoListResponse.cpp
+  src/v20201201/model/DescribeMessageForwardResponse.cpp
   src/v20201201/model/DescribeLiveRecordPlanIdsRequest.cpp
   src/v20201201/model/DeleteLiveVideoListRequest.cpp
+  src/v20201201/model/ModifyMessageForwardResponse.cpp
   src/v20201201/model/DescribeScenesRequest.cpp
   src/v20201201/model/DeleteLiveRecordPlanResponse.cpp
   src/v20201201/model/ModifyVideoInfoResponse.cpp
   src/v20201201/model/DescribeGroupByIdResponse.cpp
   src/v20201201/model/ControlRecordStreamResponse.cpp
+  src/v20201201/model/DeleteMessageForwardRequest.cpp
   src/v20201201/model/DeleteLiveChannelResponse.cpp
   src/v20201201/model/StreamAddress.cpp
   src/v20201201/model/BindGroupDevicesResponse.cpp
@@ -315,6 +336,7 @@ set(iotvideoindustry_src
   src/v20201201/model/DescribeBindSceneDevicesResponse.cpp
   src/v20201201/model/ModifyLiveVideoRequest.cpp
   src/v20201201/model/DescribeGroupByPathResponse.cpp
+  src/v20201201/model/CreateMessageForwardResponse.cpp
   src/v20201201/model/CreateLiveChannelRequest.cpp
   src/v20201201/model/DescribeGroupDevicesResponse.cpp
   src/v20201201/model/DeleteSceneRequest.cpp

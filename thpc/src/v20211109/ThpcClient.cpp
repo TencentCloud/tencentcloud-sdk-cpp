@@ -40,6 +40,49 @@ ThpcClient::ThpcClient(const Credential &credential, const string &region, const
 }
 
 
+ThpcClient::BindAutoScalingGroupOutcome ThpcClient::BindAutoScalingGroup(const BindAutoScalingGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindAutoScalingGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindAutoScalingGroupResponse rsp = BindAutoScalingGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindAutoScalingGroupOutcome(rsp);
+        else
+            return BindAutoScalingGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return BindAutoScalingGroupOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::BindAutoScalingGroupAsync(const BindAutoScalingGroupRequest& request, const BindAutoScalingGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BindAutoScalingGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ThpcClient::BindAutoScalingGroupOutcomeCallable ThpcClient::BindAutoScalingGroupCallable(const BindAutoScalingGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BindAutoScalingGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->BindAutoScalingGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ThpcClient::CreateClusterOutcome ThpcClient::CreateCluster(const CreateClusterRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCluster");

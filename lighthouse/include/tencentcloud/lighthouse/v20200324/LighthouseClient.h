@@ -29,6 +29,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/AssociateInstancesKeyPairsResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/AttachCcnRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/AttachCcnResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/AttachDisksRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/AttachDisksResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateBlueprintRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateBlueprintResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateFirewallRulesRequest.h>
@@ -55,6 +57,16 @@
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBundlesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeCcnAttachedInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeCcnAttachedInstancesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeDiskConfigsRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeDiskConfigsResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeDiskDiscountRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeDiskDiscountResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeDisksRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeDisksResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeDisksDeniedActionsRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeDisksDeniedActionsResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeDisksReturnableRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeDisksReturnableResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesTemplateRequest.h>
@@ -69,6 +81,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/DescribeInstancesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeInstancesDeniedActionsRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeInstancesDeniedActionsResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeInstancesDiskNumRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeInstancesDiskNumResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeInstancesReturnableRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeInstancesReturnableResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeInstancesTrafficPackagesRequest.h>
@@ -89,18 +103,28 @@
 #include <tencentcloud/lighthouse/v20200324/model/DescribeZonesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DetachCcnRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DetachCcnResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DetachDisksRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DetachDisksResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DisassociateInstancesKeyPairsRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DisassociateInstancesKeyPairsResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ImportKeyPairRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ImportKeyPairResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/InquirePriceCreateBlueprintRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/InquirePriceCreateBlueprintResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/InquirePriceCreateDisksRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/InquirePriceCreateDisksResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/InquirePriceCreateInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/InquirePriceCreateInstancesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/InquirePriceRenewDisksRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/InquirePriceRenewDisksResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/InquirePriceRenewInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/InquirePriceRenewInstancesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyBlueprintAttributeRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyBlueprintAttributeResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifyDisksAttributeRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifyDisksAttributeResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifyDisksRenewFlagRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifyDisksRenewFlagResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyFirewallRuleDescriptionRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyFirewallRuleDescriptionResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyFirewallRulesRequest.h>
@@ -125,6 +149,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/StartInstancesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/StopInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/StopInstancesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/TerminateDisksRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/TerminateDisksResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/TerminateInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/TerminateInstancesResponse.h>
 
@@ -150,6 +176,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AttachCcnResponse> AttachCcnOutcome;
                 typedef std::future<AttachCcnOutcome> AttachCcnOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::AttachCcnRequest&, AttachCcnOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachCcnAsyncHandler;
+                typedef Outcome<Core::Error, Model::AttachDisksResponse> AttachDisksOutcome;
+                typedef std::future<AttachDisksOutcome> AttachDisksOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::AttachDisksRequest&, AttachDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachDisksAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateBlueprintResponse> CreateBlueprintOutcome;
                 typedef std::future<CreateBlueprintOutcome> CreateBlueprintOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::CreateBlueprintRequest&, CreateBlueprintOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBlueprintAsyncHandler;
@@ -189,6 +218,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCcnAttachedInstancesResponse> DescribeCcnAttachedInstancesOutcome;
                 typedef std::future<DescribeCcnAttachedInstancesOutcome> DescribeCcnAttachedInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeCcnAttachedInstancesRequest&, DescribeCcnAttachedInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCcnAttachedInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDiskConfigsResponse> DescribeDiskConfigsOutcome;
+                typedef std::future<DescribeDiskConfigsOutcome> DescribeDiskConfigsOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeDiskConfigsRequest&, DescribeDiskConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiskConfigsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDiskDiscountResponse> DescribeDiskDiscountOutcome;
+                typedef std::future<DescribeDiskDiscountOutcome> DescribeDiskDiscountOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeDiskDiscountRequest&, DescribeDiskDiscountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiskDiscountAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDisksResponse> DescribeDisksOutcome;
+                typedef std::future<DescribeDisksOutcome> DescribeDisksOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeDisksRequest&, DescribeDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDisksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDisksDeniedActionsResponse> DescribeDisksDeniedActionsOutcome;
+                typedef std::future<DescribeDisksDeniedActionsOutcome> DescribeDisksDeniedActionsOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeDisksDeniedActionsRequest&, DescribeDisksDeniedActionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDisksDeniedActionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDisksReturnableResponse> DescribeDisksReturnableOutcome;
+                typedef std::future<DescribeDisksReturnableOutcome> DescribeDisksReturnableOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeDisksReturnableRequest&, DescribeDisksReturnableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDisksReturnableAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFirewallRulesResponse> DescribeFirewallRulesOutcome;
                 typedef std::future<DescribeFirewallRulesOutcome> DescribeFirewallRulesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeFirewallRulesRequest&, DescribeFirewallRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirewallRulesAsyncHandler;
@@ -210,6 +254,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstancesDeniedActionsResponse> DescribeInstancesDeniedActionsOutcome;
                 typedef std::future<DescribeInstancesDeniedActionsOutcome> DescribeInstancesDeniedActionsOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeInstancesDeniedActionsRequest&, DescribeInstancesDeniedActionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesDeniedActionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstancesDiskNumResponse> DescribeInstancesDiskNumOutcome;
+                typedef std::future<DescribeInstancesDiskNumOutcome> DescribeInstancesDiskNumOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeInstancesDiskNumRequest&, DescribeInstancesDiskNumOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesDiskNumAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstancesReturnableResponse> DescribeInstancesReturnableOutcome;
                 typedef std::future<DescribeInstancesReturnableOutcome> DescribeInstancesReturnableOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeInstancesReturnableRequest&, DescribeInstancesReturnableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesReturnableAsyncHandler;
@@ -240,6 +287,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DetachCcnResponse> DetachCcnOutcome;
                 typedef std::future<DetachCcnOutcome> DetachCcnOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DetachCcnRequest&, DetachCcnOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachCcnAsyncHandler;
+                typedef Outcome<Core::Error, Model::DetachDisksResponse> DetachDisksOutcome;
+                typedef std::future<DetachDisksOutcome> DetachDisksOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DetachDisksRequest&, DetachDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachDisksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisassociateInstancesKeyPairsResponse> DisassociateInstancesKeyPairsOutcome;
                 typedef std::future<DisassociateInstancesKeyPairsOutcome> DisassociateInstancesKeyPairsOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DisassociateInstancesKeyPairsRequest&, DisassociateInstancesKeyPairsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateInstancesKeyPairsAsyncHandler;
@@ -249,15 +299,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InquirePriceCreateBlueprintResponse> InquirePriceCreateBlueprintOutcome;
                 typedef std::future<InquirePriceCreateBlueprintOutcome> InquirePriceCreateBlueprintOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::InquirePriceCreateBlueprintRequest&, InquirePriceCreateBlueprintOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceCreateBlueprintAsyncHandler;
+                typedef Outcome<Core::Error, Model::InquirePriceCreateDisksResponse> InquirePriceCreateDisksOutcome;
+                typedef std::future<InquirePriceCreateDisksOutcome> InquirePriceCreateDisksOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::InquirePriceCreateDisksRequest&, InquirePriceCreateDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceCreateDisksAsyncHandler;
                 typedef Outcome<Core::Error, Model::InquirePriceCreateInstancesResponse> InquirePriceCreateInstancesOutcome;
                 typedef std::future<InquirePriceCreateInstancesOutcome> InquirePriceCreateInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::InquirePriceCreateInstancesRequest&, InquirePriceCreateInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceCreateInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::InquirePriceRenewDisksResponse> InquirePriceRenewDisksOutcome;
+                typedef std::future<InquirePriceRenewDisksOutcome> InquirePriceRenewDisksOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::InquirePriceRenewDisksRequest&, InquirePriceRenewDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceRenewDisksAsyncHandler;
                 typedef Outcome<Core::Error, Model::InquirePriceRenewInstancesResponse> InquirePriceRenewInstancesOutcome;
                 typedef std::future<InquirePriceRenewInstancesOutcome> InquirePriceRenewInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::InquirePriceRenewInstancesRequest&, InquirePriceRenewInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceRenewInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyBlueprintAttributeResponse> ModifyBlueprintAttributeOutcome;
                 typedef std::future<ModifyBlueprintAttributeOutcome> ModifyBlueprintAttributeOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ModifyBlueprintAttributeRequest&, ModifyBlueprintAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBlueprintAttributeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDisksAttributeResponse> ModifyDisksAttributeOutcome;
+                typedef std::future<ModifyDisksAttributeOutcome> ModifyDisksAttributeOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::ModifyDisksAttributeRequest&, ModifyDisksAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDisksAttributeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDisksRenewFlagResponse> ModifyDisksRenewFlagOutcome;
+                typedef std::future<ModifyDisksRenewFlagOutcome> ModifyDisksRenewFlagOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::ModifyDisksRenewFlagRequest&, ModifyDisksRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDisksRenewFlagAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyFirewallRuleDescriptionResponse> ModifyFirewallRuleDescriptionOutcome;
                 typedef std::future<ModifyFirewallRuleDescriptionOutcome> ModifyFirewallRuleDescriptionOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ModifyFirewallRuleDescriptionRequest&, ModifyFirewallRuleDescriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFirewallRuleDescriptionAsyncHandler;
@@ -294,6 +356,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopInstancesResponse> StopInstancesOutcome;
                 typedef std::future<StopInstancesOutcome> StopInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::StopInstancesRequest&, StopInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::TerminateDisksResponse> TerminateDisksOutcome;
+                typedef std::future<TerminateDisksOutcome> TerminateDisksOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::TerminateDisksRequest&, TerminateDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateDisksAsyncHandler;
                 typedef Outcome<Core::Error, Model::TerminateInstancesResponse> TerminateInstancesOutcome;
                 typedef std::future<TerminateInstancesOutcome> TerminateInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::TerminateInstancesRequest&, TerminateInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateInstancesAsyncHandler;
@@ -335,6 +400,15 @@ namespace TencentCloud
                 AttachCcnOutcome AttachCcn(const Model::AttachCcnRequest &request);
                 void AttachCcnAsync(const Model::AttachCcnRequest& request, const AttachCcnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AttachCcnOutcomeCallable AttachCcnCallable(const Model::AttachCcnRequest& request);
+
+                /**
+                 *本接口（AttachDisks）用于挂载一个或多个弹性云盘。
+                 * @param req AttachDisksRequest
+                 * @return AttachDisksOutcome
+                 */
+                AttachDisksOutcome AttachDisks(const Model::AttachDisksRequest &request);
+                void AttachDisksAsync(const Model::AttachDisksRequest& request, const AttachDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AttachDisksOutcomeCallable AttachDisksCallable(const Model::AttachDisksRequest& request);
 
                 /**
                  *本接口 (CreateBlueprint) 用于创建镜像。
@@ -474,6 +548,51 @@ namespace TencentCloud
                 DescribeCcnAttachedInstancesOutcomeCallable DescribeCcnAttachedInstancesCallable(const Model::DescribeCcnAttachedInstancesRequest& request);
 
                 /**
+                 *本接口（DescribeDiskConfigs）用于查询磁盘配置。
+                 * @param req DescribeDiskConfigsRequest
+                 * @return DescribeDiskConfigsOutcome
+                 */
+                DescribeDiskConfigsOutcome DescribeDiskConfigs(const Model::DescribeDiskConfigsRequest &request);
+                void DescribeDiskConfigsAsync(const Model::DescribeDiskConfigsRequest& request, const DescribeDiskConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDiskConfigsOutcomeCallable DescribeDiskConfigsCallable(const Model::DescribeDiskConfigsRequest& request);
+
+                /**
+                 *本接口(DescribeDiskDiscount)用于查询云硬盘折扣信息
+                 * @param req DescribeDiskDiscountRequest
+                 * @return DescribeDiskDiscountOutcome
+                 */
+                DescribeDiskDiscountOutcome DescribeDiskDiscount(const Model::DescribeDiskDiscountRequest &request);
+                void DescribeDiskDiscountAsync(const Model::DescribeDiskDiscountRequest& request, const DescribeDiskDiscountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDiskDiscountOutcomeCallable DescribeDiskDiscountCallable(const Model::DescribeDiskDiscountRequest& request);
+
+                /**
+                 *本接口（DescribeDisks）用于查询磁盘信息。
+                 * @param req DescribeDisksRequest
+                 * @return DescribeDisksOutcome
+                 */
+                DescribeDisksOutcome DescribeDisks(const Model::DescribeDisksRequest &request);
+                void DescribeDisksAsync(const Model::DescribeDisksRequest& request, const DescribeDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDisksOutcomeCallable DescribeDisksCallable(const Model::DescribeDisksRequest& request);
+
+                /**
+                 *本接口（DescribeDisksDeniedActions）用于查询一个或多个磁盘的操作限制列表信息
+                 * @param req DescribeDisksDeniedActionsRequest
+                 * @return DescribeDisksDeniedActionsOutcome
+                 */
+                DescribeDisksDeniedActionsOutcome DescribeDisksDeniedActions(const Model::DescribeDisksDeniedActionsRequest &request);
+                void DescribeDisksDeniedActionsAsync(const Model::DescribeDisksDeniedActionsRequest& request, const DescribeDisksDeniedActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDisksDeniedActionsOutcomeCallable DescribeDisksDeniedActionsCallable(const Model::DescribeDisksDeniedActionsRequest& request);
+
+                /**
+                 *本接口（DescribeDisksReturnable）用于查询磁盘是否可退还。
+                 * @param req DescribeDisksReturnableRequest
+                 * @return DescribeDisksReturnableOutcome
+                 */
+                DescribeDisksReturnableOutcome DescribeDisksReturnable(const Model::DescribeDisksReturnableRequest &request);
+                void DescribeDisksReturnableAsync(const Model::DescribeDisksReturnableRequest& request, const DescribeDisksReturnableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDisksReturnableOutcomeCallable DescribeDisksReturnableCallable(const Model::DescribeDisksReturnableRequest& request);
+
+                /**
                  *本接口（DescribeFirewallRules）用于查询实例的防火墙规则。
                  * @param req DescribeFirewallRulesRequest
                  * @return DescribeFirewallRulesOutcome
@@ -545,6 +664,15 @@ namespace TencentCloud
                 DescribeInstancesDeniedActionsOutcome DescribeInstancesDeniedActions(const Model::DescribeInstancesDeniedActionsRequest &request);
                 void DescribeInstancesDeniedActionsAsync(const Model::DescribeInstancesDeniedActionsRequest& request, const DescribeInstancesDeniedActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstancesDeniedActionsOutcomeCallable DescribeInstancesDeniedActionsCallable(const Model::DescribeInstancesDeniedActionsRequest& request);
+
+                /**
+                 *本接口(DescribeInstancesDiskNum)用于查询实例挂载云盘数量。
+                 * @param req DescribeInstancesDiskNumRequest
+                 * @return DescribeInstancesDiskNumOutcome
+                 */
+                DescribeInstancesDiskNumOutcome DescribeInstancesDiskNum(const Model::DescribeInstancesDiskNumRequest &request);
+                void DescribeInstancesDiskNumAsync(const Model::DescribeInstancesDiskNumRequest& request, const DescribeInstancesDiskNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstancesDiskNumOutcomeCallable DescribeInstancesDiskNumCallable(const Model::DescribeInstancesDiskNumRequest& request);
 
                 /**
                  *本接口（DescribeInstancesReturnable）用于查询实例是否可退还。
@@ -637,6 +765,15 @@ namespace TencentCloud
                 DetachCcnOutcomeCallable DetachCcnCallable(const Model::DetachCcnRequest& request);
 
                 /**
+                 *本接口（DetachDisks）用于卸载一个或多个弹性云盘。
+                 * @param req DetachDisksRequest
+                 * @return DetachDisksOutcome
+                 */
+                DetachDisksOutcome DetachDisks(const Model::DetachDisksRequest &request);
+                void DetachDisksAsync(const Model::DetachDisksRequest& request, const DetachDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DetachDisksOutcomeCallable DetachDisksCallable(const Model::DetachDisksRequest& request);
+
+                /**
                  *本接口（DisassociateInstancesKeyPairs）用于解除实例与指定密钥对的绑定关系。
 
 * 只支持 [RUNNING, STOPPED] 状态的 LINUX_UNIX 操作系统的实例。处于 RUNNING 状态的实例会强制关机，然后解绑。
@@ -670,6 +807,15 @@ namespace TencentCloud
                 InquirePriceCreateBlueprintOutcomeCallable InquirePriceCreateBlueprintCallable(const Model::InquirePriceCreateBlueprintRequest& request);
 
                 /**
+                 *本接口（InquirePriceCreateDisks）用于新购磁盘询价。
+                 * @param req InquirePriceCreateDisksRequest
+                 * @return InquirePriceCreateDisksOutcome
+                 */
+                InquirePriceCreateDisksOutcome InquirePriceCreateDisks(const Model::InquirePriceCreateDisksRequest &request);
+                void InquirePriceCreateDisksAsync(const Model::InquirePriceCreateDisksRequest& request, const InquirePriceCreateDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquirePriceCreateDisksOutcomeCallable InquirePriceCreateDisksCallable(const Model::InquirePriceCreateDisksRequest& request);
+
+                /**
                  *本接口（InquiryPriceCreateInstances）用于创建实例询价。
                  * @param req InquirePriceCreateInstancesRequest
                  * @return InquirePriceCreateInstancesOutcome
@@ -677,6 +823,15 @@ namespace TencentCloud
                 InquirePriceCreateInstancesOutcome InquirePriceCreateInstances(const Model::InquirePriceCreateInstancesRequest &request);
                 void InquirePriceCreateInstancesAsync(const Model::InquirePriceCreateInstancesRequest& request, const InquirePriceCreateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InquirePriceCreateInstancesOutcomeCallable InquirePriceCreateInstancesCallable(const Model::InquirePriceCreateInstancesRequest& request);
+
+                /**
+                 *本接口（InquirePriceRenewDisks）用于续费磁盘询价。
+                 * @param req InquirePriceRenewDisksRequest
+                 * @return InquirePriceRenewDisksOutcome
+                 */
+                InquirePriceRenewDisksOutcome InquirePriceRenewDisks(const Model::InquirePriceRenewDisksRequest &request);
+                void InquirePriceRenewDisksAsync(const Model::InquirePriceRenewDisksRequest& request, const InquirePriceRenewDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquirePriceRenewDisksOutcomeCallable InquirePriceRenewDisksCallable(const Model::InquirePriceRenewDisksRequest& request);
 
                 /**
                  *本接口（InquirePriceCreateInstances）用于续费实例询价。
@@ -695,6 +850,24 @@ namespace TencentCloud
                 ModifyBlueprintAttributeOutcome ModifyBlueprintAttribute(const Model::ModifyBlueprintAttributeRequest &request);
                 void ModifyBlueprintAttributeAsync(const Model::ModifyBlueprintAttributeRequest& request, const ModifyBlueprintAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyBlueprintAttributeOutcomeCallable ModifyBlueprintAttributeCallable(const Model::ModifyBlueprintAttributeRequest& request);
+
+                /**
+                 *本接口(ModifyDisksAttribute)用于修改磁盘属性
+                 * @param req ModifyDisksAttributeRequest
+                 * @return ModifyDisksAttributeOutcome
+                 */
+                ModifyDisksAttributeOutcome ModifyDisksAttribute(const Model::ModifyDisksAttributeRequest &request);
+                void ModifyDisksAttributeAsync(const Model::ModifyDisksAttributeRequest& request, const ModifyDisksAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDisksAttributeOutcomeCallable ModifyDisksAttributeCallable(const Model::ModifyDisksAttributeRequest& request);
+
+                /**
+                 *本接口（ModifyDisksRenewFlag）用于修改磁盘续费标识。
+                 * @param req ModifyDisksRenewFlagRequest
+                 * @return ModifyDisksRenewFlagOutcome
+                 */
+                ModifyDisksRenewFlagOutcome ModifyDisksRenewFlag(const Model::ModifyDisksRenewFlagRequest &request);
+                void ModifyDisksRenewFlagAsync(const Model::ModifyDisksRenewFlagRequest& request, const ModifyDisksRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDisksRenewFlagOutcomeCallable ModifyDisksRenewFlagCallable(const Model::ModifyDisksRenewFlagRequest& request);
 
                 /**
                  *本接口（ModifyFirewallRuleDescription）用于修改单条防火墙规则描述。
@@ -857,6 +1030,15 @@ namespace TencentCloud
                 StopInstancesOutcome StopInstances(const Model::StopInstancesRequest &request);
                 void StopInstancesAsync(const Model::StopInstancesRequest& request, const StopInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopInstancesOutcomeCallable StopInstancesCallable(const Model::StopInstancesRequest& request);
+
+                /**
+                 *本接口（TerminateDisks）用于销毁一个或多个磁盘。
+                 * @param req TerminateDisksRequest
+                 * @return TerminateDisksOutcome
+                 */
+                TerminateDisksOutcome TerminateDisks(const Model::TerminateDisksRequest &request);
+                void TerminateDisksAsync(const Model::TerminateDisksRequest& request, const TerminateDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TerminateDisksOutcomeCallable TerminateDisksCallable(const Model::TerminateDisksRequest& request);
 
                 /**
                  *本接口 (TerminateInstances) 用于销毁实例。

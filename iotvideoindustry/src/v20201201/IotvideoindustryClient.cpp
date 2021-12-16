@@ -341,6 +341,49 @@ IotvideoindustryClient::CreateLiveRecordPlanOutcomeCallable IotvideoindustryClie
     return task->get_future();
 }
 
+IotvideoindustryClient::CreateMessageForwardOutcome IotvideoindustryClient::CreateMessageForward(const CreateMessageForwardRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMessageForward");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMessageForwardResponse rsp = CreateMessageForwardResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMessageForwardOutcome(rsp);
+        else
+            return CreateMessageForwardOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMessageForwardOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoindustryClient::CreateMessageForwardAsync(const CreateMessageForwardRequest& request, const CreateMessageForwardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateMessageForward(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoindustryClient::CreateMessageForwardOutcomeCallable IotvideoindustryClient::CreateMessageForwardCallable(const CreateMessageForwardRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateMessageForwardOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateMessageForward(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoindustryClient::CreateRecordPlanOutcome IotvideoindustryClient::CreateRecordPlan(const CreateRecordPlanRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRecordPlan");
@@ -721,6 +764,49 @@ IotvideoindustryClient::DeleteLiveVideoListOutcomeCallable IotvideoindustryClien
         [this, request]()
         {
             return this->DeleteLiveVideoList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoindustryClient::DeleteMessageForwardOutcome IotvideoindustryClient::DeleteMessageForward(const DeleteMessageForwardRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteMessageForward");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteMessageForwardResponse rsp = DeleteMessageForwardResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteMessageForwardOutcome(rsp);
+        else
+            return DeleteMessageForwardOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteMessageForwardOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoindustryClient::DeleteMessageForwardAsync(const DeleteMessageForwardRequest& request, const DeleteMessageForwardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteMessageForward(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoindustryClient::DeleteMessageForwardOutcomeCallable IotvideoindustryClient::DeleteMessageForwardCallable(const DeleteMessageForwardRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteMessageForwardOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteMessageForward(request);
         }
     );
 
@@ -1631,6 +1717,92 @@ IotvideoindustryClient::DescribeLiveVideoListOutcomeCallable IotvideoindustryCli
     return task->get_future();
 }
 
+IotvideoindustryClient::DescribeMessageForwardOutcome IotvideoindustryClient::DescribeMessageForward(const DescribeMessageForwardRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMessageForward");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMessageForwardResponse rsp = DescribeMessageForwardResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMessageForwardOutcome(rsp);
+        else
+            return DescribeMessageForwardOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMessageForwardOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoindustryClient::DescribeMessageForwardAsync(const DescribeMessageForwardRequest& request, const DescribeMessageForwardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMessageForward(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoindustryClient::DescribeMessageForwardOutcomeCallable IotvideoindustryClient::DescribeMessageForwardCallable(const DescribeMessageForwardRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMessageForwardOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMessageForward(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoindustryClient::DescribeMessageForwardsOutcome IotvideoindustryClient::DescribeMessageForwards(const DescribeMessageForwardsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMessageForwards");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMessageForwardsResponse rsp = DescribeMessageForwardsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMessageForwardsOutcome(rsp);
+        else
+            return DescribeMessageForwardsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMessageForwardsOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoindustryClient::DescribeMessageForwardsAsync(const DescribeMessageForwardsRequest& request, const DescribeMessageForwardsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMessageForwards(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoindustryClient::DescribeMessageForwardsOutcomeCallable IotvideoindustryClient::DescribeMessageForwardsCallable(const DescribeMessageForwardsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMessageForwardsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMessageForwards(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoindustryClient::DescribeRecordDatesByLiveOutcome IotvideoindustryClient::DescribeRecordDatesByLive(const DescribeRecordDatesByLiveRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRecordDatesByLive");
@@ -2527,6 +2699,49 @@ IotvideoindustryClient::ModifyLiveVideoOutcomeCallable IotvideoindustryClient::M
         [this, request]()
         {
             return this->ModifyLiveVideo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoindustryClient::ModifyMessageForwardOutcome IotvideoindustryClient::ModifyMessageForward(const ModifyMessageForwardRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyMessageForward");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyMessageForwardResponse rsp = ModifyMessageForwardResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyMessageForwardOutcome(rsp);
+        else
+            return ModifyMessageForwardOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyMessageForwardOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoindustryClient::ModifyMessageForwardAsync(const ModifyMessageForwardRequest& request, const ModifyMessageForwardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyMessageForward(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoindustryClient::ModifyMessageForwardOutcomeCallable IotvideoindustryClient::ModifyMessageForwardCallable(const ModifyMessageForwardRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyMessageForwardOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyMessageForward(request);
         }
     );
 

@@ -50,6 +50,7 @@ set(tiia_public_header_model
   include/tencentcloud/tiia/v20190529/model/Face.h
   include/tencentcloud/tiia/v20190529/model/DetectProductResponse.h
   include/tencentcloud/tiia/v20190529/model/DetectLabelBetaRequest.h
+  include/tencentcloud/tiia/v20190529/model/ImageRect.h
   include/tencentcloud/tiia/v20190529/model/CreateImageResponse.h
   include/tencentcloud/tiia/v20190529/model/DetectLabelItem.h
   include/tencentcloud/tiia/v20190529/model/Location.h
@@ -102,6 +103,7 @@ set(tiia_src
   src/v20190529/model/Face.cpp
   src/v20190529/model/DetectProductResponse.cpp
   src/v20190529/model/DetectLabelBetaRequest.cpp
+  src/v20190529/model/ImageRect.cpp
   src/v20190529/model/CreateImageResponse.cpp
   src/v20190529/model/DetectLabelItem.cpp
   src/v20190529/model/Location.cpp

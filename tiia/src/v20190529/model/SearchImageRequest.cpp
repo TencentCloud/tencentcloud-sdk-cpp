@@ -29,7 +29,8 @@ SearchImageRequest::SearchImageRequest() :
     m_matchThresholdHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_filterHasBeenSet(false)
+    m_filterHasBeenSet(false),
+    m_imageRectHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,15 @@ string SearchImageRequest::ToJsonString() const
         string key = "Filter";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_filter.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageRectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageRect";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_imageRect.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -214,6 +224,22 @@ void SearchImageRequest::SetFilter(const string& _filter)
 bool SearchImageRequest::FilterHasBeenSet() const
 {
     return m_filterHasBeenSet;
+}
+
+ImageRect SearchImageRequest::GetImageRect() const
+{
+    return m_imageRect;
+}
+
+void SearchImageRequest::SetImageRect(const ImageRect& _imageRect)
+{
+    m_imageRect = _imageRect;
+    m_imageRectHasBeenSet = true;
+}
+
+bool SearchImageRequest::ImageRectHasBeenSet() const
+{
+    return m_imageRectHasBeenSet;
 }
 
 

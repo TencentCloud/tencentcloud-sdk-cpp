@@ -126,6 +126,49 @@ StsClient::AssumeRoleWithSAMLOutcomeCallable StsClient::AssumeRoleWithSAMLCallab
     return task->get_future();
 }
 
+StsClient::GetCallerIdentityOutcome StsClient::GetCallerIdentity(const GetCallerIdentityRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetCallerIdentity");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetCallerIdentityResponse rsp = GetCallerIdentityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetCallerIdentityOutcome(rsp);
+        else
+            return GetCallerIdentityOutcome(o.GetError());
+    }
+    else
+    {
+        return GetCallerIdentityOutcome(outcome.GetError());
+    }
+}
+
+void StsClient::GetCallerIdentityAsync(const GetCallerIdentityRequest& request, const GetCallerIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetCallerIdentity(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+StsClient::GetCallerIdentityOutcomeCallable StsClient::GetCallerIdentityCallable(const GetCallerIdentityRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetCallerIdentityOutcome()>>(
+        [this, request]()
+        {
+            return this->GetCallerIdentity(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 StsClient::GetFederationTokenOutcome StsClient::GetFederationToken(const GetFederationTokenRequest &request)
 {
     auto outcome = MakeRequest(request, "GetFederationToken");

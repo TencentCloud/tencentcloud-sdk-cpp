@@ -37,6 +37,8 @@
 #include <tencentcloud/iotvideoindustry/v20201201/model/CreateLiveChannelResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/CreateLiveRecordPlanRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/CreateLiveRecordPlanResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/CreateMessageForwardRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/CreateMessageForwardResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/CreateRecordPlanRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/CreateRecordPlanResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/CreateSceneRequest.h>
@@ -55,6 +57,8 @@
 #include <tencentcloud/iotvideoindustry/v20201201/model/DeleteLiveRecordPlanResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DeleteLiveVideoListRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DeleteLiveVideoListResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DeleteMessageForwardRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DeleteMessageForwardResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DeleteRecordPlanRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DeleteRecordPlanResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DeleteSceneRequest.h>
@@ -97,6 +101,10 @@
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveStreamResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveVideoListRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveVideoListResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeMessageForwardRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeMessageForwardResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeMessageForwardsRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeMessageForwardsResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordDatesByLiveRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordDatesByLiveResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordStreamRequest.h>
@@ -139,6 +147,8 @@
 #include <tencentcloud/iotvideoindustry/v20201201/model/ModifyLiveRecordPlanResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/ModifyLiveVideoRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/ModifyLiveVideoResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ModifyMessageForwardRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ModifyMessageForwardResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/ModifySubscriptionStatusRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/ModifySubscriptionStatusResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/ModifyVideoInfoRequest.h>
@@ -186,6 +196,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateLiveRecordPlanResponse> CreateLiveRecordPlanOutcome;
                 typedef std::future<CreateLiveRecordPlanOutcome> CreateLiveRecordPlanOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::CreateLiveRecordPlanRequest&, CreateLiveRecordPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLiveRecordPlanAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateMessageForwardResponse> CreateMessageForwardOutcome;
+                typedef std::future<CreateMessageForwardOutcome> CreateMessageForwardOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::CreateMessageForwardRequest&, CreateMessageForwardOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMessageForwardAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRecordPlanResponse> CreateRecordPlanOutcome;
                 typedef std::future<CreateRecordPlanOutcome> CreateRecordPlanOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::CreateRecordPlanRequest&, CreateRecordPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRecordPlanAsyncHandler;
@@ -213,6 +226,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteLiveVideoListResponse> DeleteLiveVideoListOutcome;
                 typedef std::future<DeleteLiveVideoListOutcome> DeleteLiveVideoListOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DeleteLiveVideoListRequest&, DeleteLiveVideoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveVideoListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteMessageForwardResponse> DeleteMessageForwardOutcome;
+                typedef std::future<DeleteMessageForwardOutcome> DeleteMessageForwardOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DeleteMessageForwardRequest&, DeleteMessageForwardOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMessageForwardAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteRecordPlanResponse> DeleteRecordPlanOutcome;
                 typedef std::future<DeleteRecordPlanOutcome> DeleteRecordPlanOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DeleteRecordPlanRequest&, DeleteRecordPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRecordPlanAsyncHandler;
@@ -276,6 +292,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLiveVideoListResponse> DescribeLiveVideoListOutcome;
                 typedef std::future<DescribeLiveVideoListOutcome> DescribeLiveVideoListOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeLiveVideoListRequest&, DescribeLiveVideoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveVideoListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMessageForwardResponse> DescribeMessageForwardOutcome;
+                typedef std::future<DescribeMessageForwardOutcome> DescribeMessageForwardOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeMessageForwardRequest&, DescribeMessageForwardOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMessageForwardAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMessageForwardsResponse> DescribeMessageForwardsOutcome;
+                typedef std::future<DescribeMessageForwardsOutcome> DescribeMessageForwardsOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeMessageForwardsRequest&, DescribeMessageForwardsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMessageForwardsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRecordDatesByLiveResponse> DescribeRecordDatesByLiveOutcome;
                 typedef std::future<DescribeRecordDatesByLiveOutcome> DescribeRecordDatesByLiveOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeRecordDatesByLiveRequest&, DescribeRecordDatesByLiveOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordDatesByLiveAsyncHandler;
@@ -339,6 +361,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyLiveVideoResponse> ModifyLiveVideoOutcome;
                 typedef std::future<ModifyLiveVideoOutcome> ModifyLiveVideoOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::ModifyLiveVideoRequest&, ModifyLiveVideoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLiveVideoAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyMessageForwardResponse> ModifyMessageForwardOutcome;
+                typedef std::future<ModifyMessageForwardOutcome> ModifyMessageForwardOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::ModifyMessageForwardRequest&, ModifyMessageForwardOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMessageForwardAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySubscriptionStatusResponse> ModifySubscriptionStatusOutcome;
                 typedef std::future<ModifySubscriptionStatusOutcome> ModifySubscriptionStatusOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::ModifySubscriptionStatusRequest&, ModifySubscriptionStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySubscriptionStatusAsyncHandler;
@@ -424,6 +449,15 @@ namespace TencentCloud
                 CreateLiveRecordPlanOutcomeCallable CreateLiveRecordPlanCallable(const Model::CreateLiveRecordPlanRequest& request);
 
                 /**
+                 *创建消息转发配置
+                 * @param req CreateMessageForwardRequest
+                 * @return CreateMessageForwardOutcome
+                 */
+                CreateMessageForwardOutcome CreateMessageForward(const Model::CreateMessageForwardRequest &request);
+                void CreateMessageForwardAsync(const Model::CreateMessageForwardRequest& request, const CreateMessageForwardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMessageForwardOutcomeCallable CreateMessageForwardCallable(const Model::CreateMessageForwardRequest& request);
+
+                /**
                  *本接口(CreateRecordPlan) 用于创建录制计划，使设备与时间模板绑定，以便及时启动录制
                  * @param req CreateRecordPlanRequest
                  * @return CreateRecordPlanOutcome
@@ -503,6 +537,15 @@ namespace TencentCloud
                 DeleteLiveVideoListOutcome DeleteLiveVideoList(const Model::DeleteLiveVideoListRequest &request);
                 void DeleteLiveVideoListAsync(const Model::DeleteLiveVideoListRequest& request, const DeleteLiveVideoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteLiveVideoListOutcomeCallable DeleteLiveVideoListCallable(const Model::DeleteLiveVideoListRequest& request);
+
+                /**
+                 *删除消息转发配置
+                 * @param req DeleteMessageForwardRequest
+                 * @return DeleteMessageForwardOutcome
+                 */
+                DeleteMessageForwardOutcome DeleteMessageForward(const Model::DeleteMessageForwardRequest &request);
+                void DeleteMessageForwardAsync(const Model::DeleteMessageForwardRequest& request, const DeleteMessageForwardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteMessageForwardOutcomeCallable DeleteMessageForwardCallable(const Model::DeleteMessageForwardRequest& request);
 
                 /**
                  *本接口(DeleteRecordPlan)用于删除录制计划
@@ -695,6 +738,24 @@ namespace TencentCloud
                 DescribeLiveVideoListOutcomeCallable DescribeLiveVideoListCallable(const Model::DescribeLiveVideoListRequest& request);
 
                 /**
+                 *查看消息转发配置详情
+                 * @param req DescribeMessageForwardRequest
+                 * @return DescribeMessageForwardOutcome
+                 */
+                DescribeMessageForwardOutcome DescribeMessageForward(const Model::DescribeMessageForwardRequest &request);
+                void DescribeMessageForwardAsync(const Model::DescribeMessageForwardRequest& request, const DescribeMessageForwardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMessageForwardOutcomeCallable DescribeMessageForwardCallable(const Model::DescribeMessageForwardRequest& request);
+
+                /**
+                 *查看消息转发配置列表
+                 * @param req DescribeMessageForwardsRequest
+                 * @return DescribeMessageForwardsOutcome
+                 */
+                DescribeMessageForwardsOutcome DescribeMessageForwards(const Model::DescribeMessageForwardsRequest &request);
+                void DescribeMessageForwardsAsync(const Model::DescribeMessageForwardsRequest& request, const DescribeMessageForwardsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMessageForwardsOutcomeCallable DescribeMessageForwardsCallable(const Model::DescribeMessageForwardsRequest& request);
+
+                /**
                  *直播录像存储日期列表
                  * @param req DescribeRecordDatesByLiveRequest
                  * @return DescribeRecordDatesByLiveOutcome
@@ -885,6 +946,15 @@ RecordId和StartTime/EndTime互斥
                 ModifyLiveVideoOutcome ModifyLiveVideo(const Model::ModifyLiveVideoRequest &request);
                 void ModifyLiveVideoAsync(const Model::ModifyLiveVideoRequest& request, const ModifyLiveVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyLiveVideoOutcomeCallable ModifyLiveVideoCallable(const Model::ModifyLiveVideoRequest& request);
+
+                /**
+                 *修改消息转发配置
+                 * @param req ModifyMessageForwardRequest
+                 * @return ModifyMessageForwardOutcome
+                 */
+                ModifyMessageForwardOutcome ModifyMessageForward(const Model::ModifyMessageForwardRequest &request);
+                void ModifyMessageForwardAsync(const Model::ModifyMessageForwardRequest& request, const ModifyMessageForwardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyMessageForwardOutcomeCallable ModifyMessageForwardCallable(const Model::ModifyMessageForwardRequest& request);
 
                 /**
                  *编辑设备订阅状态

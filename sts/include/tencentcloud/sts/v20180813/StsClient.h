@@ -27,6 +27,8 @@
 #include <tencentcloud/sts/v20180813/model/AssumeRoleResponse.h>
 #include <tencentcloud/sts/v20180813/model/AssumeRoleWithSAMLRequest.h>
 #include <tencentcloud/sts/v20180813/model/AssumeRoleWithSAMLResponse.h>
+#include <tencentcloud/sts/v20180813/model/GetCallerIdentityRequest.h>
+#include <tencentcloud/sts/v20180813/model/GetCallerIdentityResponse.h>
 #include <tencentcloud/sts/v20180813/model/GetFederationTokenRequest.h>
 #include <tencentcloud/sts/v20180813/model/GetFederationTokenResponse.h>
 #include <tencentcloud/sts/v20180813/model/QueryApiKeyRequest.h>
@@ -51,6 +53,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AssumeRoleWithSAMLResponse> AssumeRoleWithSAMLOutcome;
                 typedef std::future<AssumeRoleWithSAMLOutcome> AssumeRoleWithSAMLOutcomeCallable;
                 typedef std::function<void(const StsClient*, const Model::AssumeRoleWithSAMLRequest&, AssumeRoleWithSAMLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssumeRoleWithSAMLAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetCallerIdentityResponse> GetCallerIdentityOutcome;
+                typedef std::future<GetCallerIdentityOutcome> GetCallerIdentityOutcomeCallable;
+                typedef std::function<void(const StsClient*, const Model::GetCallerIdentityRequest&, GetCallerIdentityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetCallerIdentityAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetFederationTokenResponse> GetFederationTokenOutcome;
                 typedef std::future<GetFederationTokenOutcome> GetFederationTokenOutcomeCallable;
                 typedef std::function<void(const StsClient*, const Model::GetFederationTokenRequest&, GetFederationTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFederationTokenAsyncHandler;
@@ -77,6 +82,16 @@ namespace TencentCloud
                 AssumeRoleWithSAMLOutcome AssumeRoleWithSAML(const Model::AssumeRoleWithSAMLRequest &request);
                 void AssumeRoleWithSAMLAsync(const Model::AssumeRoleWithSAMLRequest& request, const AssumeRoleWithSAMLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AssumeRoleWithSAMLOutcomeCallable AssumeRoleWithSAMLCallable(const Model::AssumeRoleWithSAMLRequest& request);
+
+                /**
+                 *获取当前调用者的身份信息。
+接口支持主账号，子账号长期密钥以及AssumeRole，GetFederationToken生成的临时凭据的身份获取。
+                 * @param req GetCallerIdentityRequest
+                 * @return GetCallerIdentityOutcome
+                 */
+                GetCallerIdentityOutcome GetCallerIdentity(const Model::GetCallerIdentityRequest &request);
+                void GetCallerIdentityAsync(const Model::GetCallerIdentityRequest& request, const GetCallerIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetCallerIdentityOutcomeCallable GetCallerIdentityCallable(const Model::GetCallerIdentityRequest& request);
 
                 /**
                  *获取联合身份临时访问凭证

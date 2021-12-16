@@ -427,6 +427,49 @@ FaceidClient::DetectAuthOutcomeCallable FaceidClient::DetectAuthCallable(const D
     return task->get_future();
 }
 
+FaceidClient::DetectReflectLivenessAndCompareOutcome FaceidClient::DetectReflectLivenessAndCompare(const DetectReflectLivenessAndCompareRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetectReflectLivenessAndCompare");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetectReflectLivenessAndCompareResponse rsp = DetectReflectLivenessAndCompareResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetectReflectLivenessAndCompareOutcome(rsp);
+        else
+            return DetectReflectLivenessAndCompareOutcome(o.GetError());
+    }
+    else
+    {
+        return DetectReflectLivenessAndCompareOutcome(outcome.GetError());
+    }
+}
+
+void FaceidClient::DetectReflectLivenessAndCompareAsync(const DetectReflectLivenessAndCompareRequest& request, const DetectReflectLivenessAndCompareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DetectReflectLivenessAndCompare(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FaceidClient::DetectReflectLivenessAndCompareOutcomeCallable FaceidClient::DetectReflectLivenessAndCompareCallable(const DetectReflectLivenessAndCompareRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DetectReflectLivenessAndCompareOutcome()>>(
+        [this, request]()
+        {
+            return this->DetectReflectLivenessAndCompare(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 FaceidClient::EncryptedPhoneVerificationOutcome FaceidClient::EncryptedPhoneVerification(const EncryptedPhoneVerificationRequest &request)
 {
     auto outcome = MakeRequest(request, "EncryptedPhoneVerification");

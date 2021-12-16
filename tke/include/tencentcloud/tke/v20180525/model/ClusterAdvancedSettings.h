@@ -288,14 +288,14 @@ ipvs-bpf模式: 设置KubeProxyMode为kube-proxy-bpf
                     bool AuditLogTopicIdHasBeenSet() const;
 
                     /**
-                     * 获取区分单网卡多IP模式和独立网卡模式
-                     * @return VpcCniType 区分单网卡多IP模式和独立网卡模式
+                     * 获取区分共享网卡多IP模式和独立网卡模式，共享网卡多 IP 模式填写"tke-route-eni"，独立网卡模式填写"tke-direct-eni"，默认为共享网卡模式
+                     * @return VpcCniType 区分共享网卡多IP模式和独立网卡模式，共享网卡多 IP 模式填写"tke-route-eni"，独立网卡模式填写"tke-direct-eni"，默认为共享网卡模式
                      */
                     std::string GetVpcCniType() const;
 
                     /**
-                     * 设置区分单网卡多IP模式和独立网卡模式
-                     * @param VpcCniType 区分单网卡多IP模式和独立网卡模式
+                     * 设置区分共享网卡多IP模式和独立网卡模式，共享网卡多 IP 模式填写"tke-route-eni"，独立网卡模式填写"tke-direct-eni"，默认为共享网卡模式
+                     * @param VpcCniType 区分共享网卡多IP模式和独立网卡模式，共享网卡多 IP 模式填写"tke-route-eni"，独立网卡模式填写"tke-direct-eni"，默认为共享网卡模式
                      */
                     void SetVpcCniType(const std::string& _vpcCniType);
 
@@ -458,7 +458,7 @@ ipvs-bpf模式: 设置KubeProxyMode为kube-proxy-bpf
                     bool m_auditLogTopicIdHasBeenSet;
 
                     /**
-                     * 区分单网卡多IP模式和独立网卡模式
+                     * 区分共享网卡多IP模式和独立网卡模式，共享网卡多 IP 模式填写"tke-route-eni"，独立网卡模式填写"tke-direct-eni"，默认为共享网卡模式
                      */
                     std::string m_vpcCniType;
                     bool m_vpcCniTypeHasBeenSet;

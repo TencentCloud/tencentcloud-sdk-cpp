@@ -85,6 +85,8 @@
 #include <tencentcloud/monitor/v20180724/model/DescribeProductEventListResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeProductListRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeProductListResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusInstancesRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusInstancesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeServiceDiscoveryRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeServiceDiscoveryResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeStatisticDataRequest.h>
@@ -230,6 +232,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProductListResponse> DescribeProductListOutcome;
                 typedef std::future<DescribeProductListOutcome> DescribeProductListOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeProductListRequest&, DescribeProductListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePrometheusInstancesResponse> DescribePrometheusInstancesOutcome;
+                typedef std::future<DescribePrometheusInstancesOutcome> DescribePrometheusInstancesOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusInstancesRequest&, DescribePrometheusInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeServiceDiscoveryResponse> DescribeServiceDiscoveryOutcome;
                 typedef std::future<DescribeServiceDiscoveryOutcome> DescribeServiceDiscoveryOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeServiceDiscoveryRequest&, DescribeServiceDiscoveryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceDiscoveryAsyncHandler;
@@ -576,6 +581,19 @@ namespace TencentCloud
                 DescribeProductListOutcome DescribeProductList(const Model::DescribeProductListRequest &request);
                 void DescribeProductListAsync(const Model::DescribeProductListRequest& request, const DescribeProductListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeProductListOutcomeCallable DescribeProductListCallable(const Model::DescribeProductListRequest& request);
+
+                /**
+                 *本接口 (DescribePrometheusInstances) 用于查询一个或多个实例的详细信息。
+<ul>
+<li>可以根据实例ID、实例名称或者实例状态等信息来查询实例的详细信息</li>
+<li>如果参数为空，返回当前用户一定数量（Limit所指定的数量，默认为20）的实例。</li>
+</ul>
+                 * @param req DescribePrometheusInstancesRequest
+                 * @return DescribePrometheusInstancesOutcome
+                 */
+                DescribePrometheusInstancesOutcome DescribePrometheusInstances(const Model::DescribePrometheusInstancesRequest &request);
+                void DescribePrometheusInstancesAsync(const Model::DescribePrometheusInstancesRequest& request, const DescribePrometheusInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrometheusInstancesOutcomeCallable DescribePrometheusInstancesCallable(const Model::DescribePrometheusInstancesRequest& request);
 
                 /**
                  *列出在腾讯云容器服务下创建的 Prometheus 服务发现。

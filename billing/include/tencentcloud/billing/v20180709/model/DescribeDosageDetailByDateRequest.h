@@ -174,17 +174,17 @@ cdn业务：
 
                     /**
                      * 获取查询域名 例如 www.qq.com
-非CDN业务查询时值为空
+非CDN业务查询时传入空字符串，返回的值为空
                      * @return Domain 查询域名 例如 www.qq.com
-非CDN业务查询时值为空
+非CDN业务查询时传入空字符串，返回的值为空
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置查询域名 例如 www.qq.com
-非CDN业务查询时值为空
+非CDN业务查询时传入空字符串，返回的值为空
                      * @param Domain 查询域名 例如 www.qq.com
-非CDN业务查询时值为空
+非CDN业务查询时传入空字符串，返回的值为空
                      */
                     void SetDomain(const std::string& _domain);
 
@@ -257,7 +257,7 @@ cdn业务：
 
                     /**
                      * 查询域名 例如 www.qq.com
-非CDN业务查询时值为空
+非CDN业务查询时传入空字符串，返回的值为空
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;

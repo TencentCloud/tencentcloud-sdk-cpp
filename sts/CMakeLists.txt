@@ -27,8 +27,10 @@ set(sts_public_header_model
   include/tencentcloud/sts/v20180813/model/AssumeRoleResponse.h
   include/tencentcloud/sts/v20180813/model/QueryApiKeyRequest.h
   include/tencentcloud/sts/v20180813/model/GetFederationTokenRequest.h
+  include/tencentcloud/sts/v20180813/model/GetCallerIdentityResponse.h
   include/tencentcloud/sts/v20180813/model/Credentials.h
   include/tencentcloud/sts/v20180813/model/AssumeRoleRequest.h
+  include/tencentcloud/sts/v20180813/model/GetCallerIdentityRequest.h
   )
 
 set(sts_src
@@ -41,8 +43,10 @@ set(sts_src
   src/v20180813/model/AssumeRoleResponse.cpp
   src/v20180813/model/QueryApiKeyRequest.cpp
   src/v20180813/model/GetFederationTokenRequest.cpp
+  src/v20180813/model/GetCallerIdentityResponse.cpp
   src/v20180813/model/Credentials.cpp
   src/v20180813/model/AssumeRoleRequest.cpp
+  src/v20180813/model/GetCallerIdentityRequest.cpp
   )
 
 set(sts_include

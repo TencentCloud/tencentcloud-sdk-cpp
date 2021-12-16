@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool TitleHasBeenSet() const;
 
                     /**
-                     * 获取核保结论
-                     * @return Conclusion 核保结论
+                     * 获取核保结论：加费、承保、拒保、延期、除外、加费+除外
+                     * @return Conclusion 核保结论：加费、承保、拒保、延期、除外、加费+除外
                      */
                     std::string GetConclusion() const;
 
                     /**
-                     * 设置核保结论
-                     * @param Conclusion 核保结论
+                     * 设置核保结论：加费、承保、拒保、延期、除外、加费+除外
+                     * @param Conclusion 核保结论：加费、承保、拒保、延期、除外、加费+除外
                      */
                     void SetConclusion(const std::string& _conclusion);
 
@@ -146,7 +146,7 @@ namespace TencentCloud
                     bool m_titleHasBeenSet;
 
                     /**
-                     * 核保结论
+                     * 核保结论：加费、承保、拒保、延期、除外、加费+除外
                      */
                     std::string m_conclusion;
                     bool m_conclusionHasBeenSet;

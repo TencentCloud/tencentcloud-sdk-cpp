@@ -19,6 +19,7 @@ set(thpc_public_header
   )
 
 set(thpc_public_header_model
+  include/tencentcloud/thpc/v20211109/model/BindAutoScalingGroupRequest.h
   include/tencentcloud/thpc/v20211109/model/DeleteClusterRequest.h
   include/tencentcloud/thpc/v20211109/model/SystemDisk.h
   include/tencentcloud/thpc/v20211109/model/ManagerNode.h
@@ -31,6 +32,7 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20211109/model/StorageOption.h
   include/tencentcloud/thpc/v20211109/model/DeleteClusterResponse.h
   include/tencentcloud/thpc/v20211109/model/GooseFSOption.h
+  include/tencentcloud/thpc/v20211109/model/BindAutoScalingGroupResponse.h
   include/tencentcloud/thpc/v20211109/model/InstanceChargePrepaid.h
   include/tencentcloud/thpc/v20211109/model/CFSOption.h
   include/tencentcloud/thpc/v20211109/model/CreateClusterResponse.h
@@ -39,6 +41,7 @@ set(thpc_public_header_model
 
 set(thpc_src
   src/v20211109/ThpcClient.cpp
+  src/v20211109/model/BindAutoScalingGroupRequest.cpp
   src/v20211109/model/DeleteClusterRequest.cpp
   src/v20211109/model/SystemDisk.cpp
   src/v20211109/model/ManagerNode.cpp
@@ -51,6 +54,7 @@ set(thpc_src
   src/v20211109/model/StorageOption.cpp
   src/v20211109/model/DeleteClusterResponse.cpp
   src/v20211109/model/GooseFSOption.cpp
+  src/v20211109/model/BindAutoScalingGroupResponse.cpp
   src/v20211109/model/InstanceChargePrepaid.cpp
   src/v20211109/model/CFSOption.cpp
   src/v20211109/model/CreateClusterResponse.cpp

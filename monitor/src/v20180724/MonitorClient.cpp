@@ -1373,6 +1373,49 @@ MonitorClient::DescribeProductListOutcomeCallable MonitorClient::DescribeProduct
     return task->get_future();
 }
 
+MonitorClient::DescribePrometheusInstancesOutcome MonitorClient::DescribePrometheusInstances(const DescribePrometheusInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrometheusInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrometheusInstancesResponse rsp = DescribePrometheusInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrometheusInstancesOutcome(rsp);
+        else
+            return DescribePrometheusInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrometheusInstancesOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribePrometheusInstancesAsync(const DescribePrometheusInstancesRequest& request, const DescribePrometheusInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrometheusInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribePrometheusInstancesOutcomeCallable MonitorClient::DescribePrometheusInstancesCallable(const DescribePrometheusInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePrometheusInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrometheusInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::DescribeServiceDiscoveryOutcome MonitorClient::DescribeServiceDiscovery(const DescribeServiceDiscoveryRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeServiceDiscovery");

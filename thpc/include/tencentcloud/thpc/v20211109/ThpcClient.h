@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/thpc/v20211109/model/BindAutoScalingGroupRequest.h>
+#include <tencentcloud/thpc/v20211109/model/BindAutoScalingGroupResponse.h>
 #include <tencentcloud/thpc/v20211109/model/CreateClusterRequest.h>
 #include <tencentcloud/thpc/v20211109/model/CreateClusterResponse.h>
 #include <tencentcloud/thpc/v20211109/model/DeleteClusterRequest.h>
@@ -41,6 +43,9 @@ namespace TencentCloud
                 ThpcClient(const Credential &credential, const std::string &region);
                 ThpcClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::BindAutoScalingGroupResponse> BindAutoScalingGroupOutcome;
+                typedef std::future<BindAutoScalingGroupOutcome> BindAutoScalingGroupOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::BindAutoScalingGroupRequest&, BindAutoScalingGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindAutoScalingGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateClusterResponse> CreateClusterOutcome;
                 typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::CreateClusterRequest&, CreateClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterAsyncHandler;
@@ -49,6 +54,15 @@ namespace TencentCloud
                 typedef std::function<void(const ThpcClient*, const Model::DeleteClusterRequest&, DeleteClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterAsyncHandler;
 
 
+
+                /**
+                 *本接口(BindAutoScalingGroup)用于为集群队列绑定弹性伸缩组
+                 * @param req BindAutoScalingGroupRequest
+                 * @return BindAutoScalingGroupOutcome
+                 */
+                BindAutoScalingGroupOutcome BindAutoScalingGroup(const Model::BindAutoScalingGroupRequest &request);
+                void BindAutoScalingGroupAsync(const Model::BindAutoScalingGroupRequest& request, const BindAutoScalingGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindAutoScalingGroupOutcomeCallable BindAutoScalingGroupCallable(const Model::BindAutoScalingGroupRequest& request);
 
                 /**
                  *本接口 (CreateCluster) 用于创建并启动集群。

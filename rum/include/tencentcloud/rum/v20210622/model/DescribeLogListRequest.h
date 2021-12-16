@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool SortHasBeenSet() const;
 
                     /**
-                     * 获取searchlog   histogram
-                     * @return ActionType searchlog   histogram
+                     * 获取searchlog  histogram
+                     * @return ActionType searchlog  histogram
                      */
                     std::string GetActionType() const;
 
                     /**
-                     * 设置searchlog   histogram
-                     * @param ActionType searchlog   histogram
+                     * 设置searchlog  histogram
+                     * @param ActionType searchlog  histogram
                      */
                     void SetActionType(const std::string& _actionType);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取限制
-                     * @return Limit 限制
+                     * 获取单次查询返回的原始日志条数，最大值为100
+                     * @return Limit 单次查询返回的原始日志条数，最大值为100
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置限制
-                     * @param Limit 限制
+                     * 设置单次查询返回的原始日志条数，最大值为100
+                     * @param Limit 单次查询返回的原始日志条数，最大值为100
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取上下文
-                     * @return Context 上下文
+                     * 获取上下文，加载更多日志时使用，透传上次返回的 Context 值，获取后续的日志内容，总计最多可获取1万条原始日志。过期时间1小时
+                     * @return Context 上下文，加载更多日志时使用，透传上次返回的 Context 值，获取后续的日志内容，总计最多可获取1万条原始日志。过期时间1小时
                      */
                     std::string GetContext() const;
 
                     /**
-                     * 设置上下文
-                     * @param Context 上下文
+                     * 设置上下文，加载更多日志时使用，透传上次返回的 Context 值，获取后续的日志内容，总计最多可获取1万条原始日志。过期时间1小时
+                     * @param Context 上下文，加载更多日志时使用，透传上次返回的 Context 值，获取后续的日志内容，总计最多可获取1万条原始日志。过期时间1小时
                      */
                     void SetContext(const std::string& _context);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool ContextHasBeenSet() const;
 
                     /**
-                     * 获取查询语句
-                     * @return Query 查询语句
+                     * 获取查询语句，语句长度最大为4096
+                     * @return Query 查询语句，语句长度最大为4096
                      */
                     std::string GetQuery() const;
 
                     /**
-                     * 设置查询语句
-                     * @param Query 查询语句
+                     * 设置查询语句，语句长度最大为4096
+                     * @param Query 查询语句，语句长度最大为4096
                      */
                     void SetQuery(const std::string& _query);
 
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_sortHasBeenSet;
 
                     /**
-                     * searchlog   histogram
+                     * searchlog  histogram
                      */
                     std::string m_actionType;
                     bool m_actionTypeHasBeenSet;
@@ -213,19 +213,19 @@ namespace TencentCloud
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 限制
+                     * 单次查询返回的原始日志条数，最大值为100
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 上下文
+                     * 上下文，加载更多日志时使用，透传上次返回的 Context 值，获取后续的日志内容，总计最多可获取1万条原始日志。过期时间1小时
                      */
                     std::string m_context;
                     bool m_contextHasBeenSet;
 
                     /**
-                     * 查询语句
+                     * 查询语句，语句长度最大为4096
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;
