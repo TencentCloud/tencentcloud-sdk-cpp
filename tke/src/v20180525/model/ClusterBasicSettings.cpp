@@ -29,7 +29,8 @@ ClusterBasicSettings::ClusterBasicSettings() :
     m_projectIdHasBeenSet(false),
     m_tagSpecificationHasBeenSet(false),
     m_osCustomizeTypeHasBeenSet(false),
-    m_needWorkSecurityGroupHasBeenSet(false)
+    m_needWorkSecurityGroupHasBeenSet(false),
+    m_subnetIdHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,16 @@ CoreInternalOutcome ClusterBasicSettings::Deserialize(const rapidjson::Value &va
         m_needWorkSecurityGroupHasBeenSet = true;
     }
 
+    if (value.HasMember("SubnetId") && !value["SubnetId"].IsNull())
+    {
+        if (!value["SubnetId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterBasicSettings.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subnetId = string(value["SubnetId"].GetString());
+        m_subnetIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -222,6 +233,14 @@ void ClusterBasicSettings::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "NeedWorkSecurityGroup";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_needWorkSecurityGroup, allocator);
+    }
+
+    if (m_subnetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -369,5 +388,21 @@ void ClusterBasicSettings::SetNeedWorkSecurityGroup(const bool& _needWorkSecurit
 bool ClusterBasicSettings::NeedWorkSecurityGroupHasBeenSet() const
 {
     return m_needWorkSecurityGroupHasBeenSet;
+}
+
+string ClusterBasicSettings::GetSubnetId() const
+{
+    return m_subnetId;
+}
+
+void ClusterBasicSettings::SetSubnetId(const string& _subnetId)
+{
+    m_subnetId = _subnetId;
+    m_subnetIdHasBeenSet = true;
+}
+
+bool ClusterBasicSettings::SubnetIdHasBeenSet() const
+{
+    return m_subnetIdHasBeenSet;
 }
 

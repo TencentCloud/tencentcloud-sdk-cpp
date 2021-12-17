@@ -237,7 +237,7 @@ namespace TencentCloud
                 BindWorkGroupsToUserOutcomeCallable BindWorkGroupsToUserCallable(const Model::BindWorkGroupsToUserRequest& request);
 
                 /**
-                 *取消任务执行
+                 *本接口（CancelTask），用于取消任务执行
                  * @param req CancelTaskRequest
                  * @return CancelTaskOutcome
                  */
@@ -291,7 +291,7 @@ namespace TencentCloud
                 CreateTaskOutcomeCallable CreateTaskCallable(const Model::CreateTaskRequest& request);
 
                 /**
-                 *批量创建任务
+                 *本接口（CreateTasks），用于批量创建任务
                  * @param req CreateTasksRequest
                  * @return CreateTasksOutcome
                  */
@@ -390,7 +390,7 @@ namespace TencentCloud
                 DescribeStoreLocationOutcomeCallable DescribeStoreLocationCallable(const Model::DescribeStoreLocationRequest& request);
 
                 /**
-                 *查询单个表的详细信息。
+                 *本接口（DescribeTable），用于查询单个表的详细信息。
                  * @param req DescribeTableRequest
                  * @return DescribeTableOutcome
                  */
@@ -399,7 +399,7 @@ namespace TencentCloud
                 DescribeTableOutcomeCallable DescribeTableCallable(const Model::DescribeTableRequest& request);
 
                 /**
-                 *本接口（DescribleTables）用于查询数据表列表。
+                 *本接口（DescribeTables）用于查询数据表列表。
                  * @param req DescribeTablesRequest
                  * @return DescribeTablesOutcome
                  */

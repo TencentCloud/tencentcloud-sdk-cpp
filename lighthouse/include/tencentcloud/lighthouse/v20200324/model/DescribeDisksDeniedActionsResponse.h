@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取磁盘操作限制列表详细信息。
-                     * @return DiskDeniedActionSet 磁盘操作限制列表详细信息。
+                     * 获取云硬盘操作限制列表详细信息。
+                     * @return DiskDeniedActionSet 云硬盘操作限制列表详细信息。
                      */
                     std::vector<DiskDeniedActions> GetDiskDeniedActionSet() const;
 
@@ -59,7 +59,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 磁盘操作限制列表详细信息。
+                     * 云硬盘操作限制列表详细信息。
                      */
                     std::vector<DiskDeniedActions> m_diskDeniedActionSet;
                     bool m_diskDeniedActionSetHasBeenSet;

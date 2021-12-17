@@ -27,7 +27,11 @@ DescribeViewsRequest::DescribeViewsRequest() :
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_datasourceConnectionNameHasBeenSet(false)
+    m_datasourceConnectionNameHasBeenSet(false),
+    m_sortHasBeenSet(false),
+    m_ascHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false)
 {
 }
 
@@ -83,6 +87,38 @@ string DescribeViewsRequest::ToJsonString() const
         string key = "DatasourceConnectionName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_datasourceConnectionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Sort";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sort.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ascHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Asc";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_asc, allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -171,6 +207,70 @@ void DescribeViewsRequest::SetDatasourceConnectionName(const string& _datasource
 bool DescribeViewsRequest::DatasourceConnectionNameHasBeenSet() const
 {
     return m_datasourceConnectionNameHasBeenSet;
+}
+
+string DescribeViewsRequest::GetSort() const
+{
+    return m_sort;
+}
+
+void DescribeViewsRequest::SetSort(const string& _sort)
+{
+    m_sort = _sort;
+    m_sortHasBeenSet = true;
+}
+
+bool DescribeViewsRequest::SortHasBeenSet() const
+{
+    return m_sortHasBeenSet;
+}
+
+bool DescribeViewsRequest::GetAsc() const
+{
+    return m_asc;
+}
+
+void DescribeViewsRequest::SetAsc(const bool& _asc)
+{
+    m_asc = _asc;
+    m_ascHasBeenSet = true;
+}
+
+bool DescribeViewsRequest::AscHasBeenSet() const
+{
+    return m_ascHasBeenSet;
+}
+
+string DescribeViewsRequest::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void DescribeViewsRequest::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool DescribeViewsRequest::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+string DescribeViewsRequest::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void DescribeViewsRequest::SetEndTime(const string& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool DescribeViewsRequest::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
 }
 
 

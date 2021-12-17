@@ -31,7 +31,8 @@ BotRecord::BotRecord() :
     m_scoreHasBeenSet(false),
     m_avgSpeedHasBeenSet(false),
     m_tcbDetailHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_domainHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,16 @@ CoreInternalOutcome BotRecord::Deserialize(const rapidjson::Value &value)
         m_idHasBeenSet = true;
     }
 
+    if (value.HasMember("Domain") && !value["Domain"].IsNull())
+    {
+        if (!value["Domain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BotRecord.Domain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domain = string(value["Domain"].GetString());
+        m_domainHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +262,14 @@ void BotRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -430,5 +449,21 @@ void BotRecord::SetId(const string& _id)
 bool BotRecord::IdHasBeenSet() const
 {
     return m_idHasBeenSet;
+}
+
+string BotRecord::GetDomain() const
+{
+    return m_domain;
+}
+
+void BotRecord::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool BotRecord::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
 }
 

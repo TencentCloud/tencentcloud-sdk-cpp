@@ -75,6 +75,8 @@
 #include <tencentcloud/dcdb/v20180411/model/DescribeDatabasesResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeDcnDetailRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeDcnDetailResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/DescribeFileDownloadUrlRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/DescribeFileDownloadUrlResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeFlowRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeFlowResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeOrdersRequest.h>
@@ -215,6 +217,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDcnDetailResponse> DescribeDcnDetailOutcome;
                 typedef std::future<DescribeDcnDetailOutcome> DescribeDcnDetailOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeDcnDetailRequest&, DescribeDcnDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcnDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFileDownloadUrlResponse> DescribeFileDownloadUrlOutcome;
+                typedef std::future<DescribeFileDownloadUrlOutcome> DescribeFileDownloadUrlOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::DescribeFileDownloadUrlRequest&, DescribeFileDownloadUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFileDownloadUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFlowResponse> DescribeFlowOutcome;
                 typedef std::future<DescribeFlowOutcome> DescribeFlowOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeFlowRequest&, DescribeFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowAsyncHandler;
@@ -526,6 +531,15 @@ namespace TencentCloud
                 DescribeDcnDetailOutcome DescribeDcnDetail(const Model::DescribeDcnDetailRequest &request);
                 void DescribeDcnDetailAsync(const Model::DescribeDcnDetailRequest& request, const DescribeDcnDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDcnDetailOutcomeCallable DescribeDcnDetailCallable(const Model::DescribeDcnDetailRequest& request);
+
+                /**
+                 *本接口(DescribeFileDownloadUrl)用于获取数据库指定备份或日志文件的下载连接。
+                 * @param req DescribeFileDownloadUrlRequest
+                 * @return DescribeFileDownloadUrlOutcome
+                 */
+                DescribeFileDownloadUrlOutcome DescribeFileDownloadUrl(const Model::DescribeFileDownloadUrlRequest &request);
+                void DescribeFileDownloadUrlAsync(const Model::DescribeFileDownloadUrlRequest& request, const DescribeFileDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFileDownloadUrlOutcomeCallable DescribeFileDownloadUrlCallable(const Model::DescribeFileDownloadUrlRequest& request);
 
                 /**
                  *本接口（DescribeFlow）用于查询流程状态

@@ -360,6 +360,182 @@ namespace TencentCloud
                      */
                     bool ProgressDetailHasBeenSet() const;
 
+                    /**
+                     * 获取任务结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpdateTime 任务结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUpdateTime() const;
+
+                    /**
+                     * 设置任务结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UpdateTime 任务结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUpdateTime(const std::string& _updateTime);
+
+                    /**
+                     * 判断参数 UpdateTime 是否已赋值
+                     * @return UpdateTime 是否已赋值
+                     */
+                    bool UpdateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取计算资源id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataEngineId 计算资源id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDataEngineId() const;
+
+                    /**
+                     * 设置计算资源id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DataEngineId 计算资源id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDataEngineId(const std::string& _dataEngineId);
+
+                    /**
+                     * 判断参数 DataEngineId 是否已赋值
+                     * @return DataEngineId 是否已赋值
+                     */
+                    bool DataEngineIdHasBeenSet() const;
+
+                    /**
+                     * 获取执行sql的子uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OperateUin 执行sql的子uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOperateUin() const;
+
+                    /**
+                     * 设置执行sql的子uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OperateUin 执行sql的子uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOperateUin(const std::string& _operateUin);
+
+                    /**
+                     * 判断参数 OperateUin 是否已赋值
+                     * @return OperateUin 是否已赋值
+                     */
+                    bool OperateUinHasBeenSet() const;
+
+                    /**
+                     * 获取计算资源名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataEngineName 计算资源名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDataEngineName() const;
+
+                    /**
+                     * 设置计算资源名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DataEngineName 计算资源名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDataEngineName(const std::string& _dataEngineName);
+
+                    /**
+                     * 判断参数 DataEngineName 是否已赋值
+                     * @return DataEngineName 是否已赋值
+                     */
+                    bool DataEngineNameHasBeenSet() const;
+
+                    /**
+                     * 获取导入类型是本地导入还是cos
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InputType 导入类型是本地导入还是cos
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInputType() const;
+
+                    /**
+                     * 设置导入类型是本地导入还是cos
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InputType 导入类型是本地导入还是cos
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInputType(const std::string& _inputType);
+
+                    /**
+                     * 判断参数 InputType 是否已赋值
+                     * @return InputType 是否已赋值
+                     */
+                    bool InputTypeHasBeenSet() const;
+
+                    /**
+                     * 获取导入配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InputConf 导入配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInputConf() const;
+
+                    /**
+                     * 设置导入配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InputConf 导入配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInputConf(const std::string& _inputConf);
+
+                    /**
+                     * 判断参数 InputConf 是否已赋值
+                     * @return InputConf 是否已赋值
+                     */
+                    bool InputConfHasBeenSet() const;
+
+                    /**
+                     * 获取数据条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataNumber 数据条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetDataNumber() const;
+
+                    /**
+                     * 设置数据条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DataNumber 数据条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDataNumber(const int64_t& _dataNumber);
+
+                    /**
+                     * 判断参数 DataNumber 是否已赋值
+                     * @return DataNumber 是否已赋值
+                     */
+                    bool DataNumberHasBeenSet() const;
+
+                    /**
+                     * 获取查询数据能不能下载
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CanDownload 查询数据能不能下载
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetCanDownload() const;
+
+                    /**
+                     * 设置查询数据能不能下载
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CanDownload 查询数据能不能下载
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCanDownload(const bool& _canDownload);
+
+                    /**
+                     * 判断参数 CanDownload 是否已赋值
+                     * @return CanDownload 是否已赋值
+                     */
+                    bool CanDownloadHasBeenSet() const;
+
                 private:
 
                     /**
@@ -465,6 +641,62 @@ namespace TencentCloud
                      */
                     std::string m_progressDetail;
                     bool m_progressDetailHasBeenSet;
+
+                    /**
+                     * 任务结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_updateTime;
+                    bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 计算资源id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dataEngineId;
+                    bool m_dataEngineIdHasBeenSet;
+
+                    /**
+                     * 执行sql的子uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_operateUin;
+                    bool m_operateUinHasBeenSet;
+
+                    /**
+                     * 计算资源名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dataEngineName;
+                    bool m_dataEngineNameHasBeenSet;
+
+                    /**
+                     * 导入类型是本地导入还是cos
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_inputType;
+                    bool m_inputTypeHasBeenSet;
+
+                    /**
+                     * 导入配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_inputConf;
+                    bool m_inputConfHasBeenSet;
+
+                    /**
+                     * 数据条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_dataNumber;
+                    bool m_dataNumberHasBeenSet;
+
+                    /**
+                     * 查询数据能不能下载
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_canDownload;
+                    bool m_canDownloadHasBeenSet;
 
                 };
             }

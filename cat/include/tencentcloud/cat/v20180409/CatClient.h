@@ -27,10 +27,14 @@
 #include <tencentcloud/cat/v20180409/model/BindAlarmPolicyResponse.h>
 #include <tencentcloud/cat/v20180409/model/CreateAgentGroupRequest.h>
 #include <tencentcloud/cat/v20180409/model/CreateAgentGroupResponse.h>
+#include <tencentcloud/cat/v20180409/model/CreateProbeTasksRequest.h>
+#include <tencentcloud/cat/v20180409/model/CreateProbeTasksResponse.h>
 #include <tencentcloud/cat/v20180409/model/CreateTaskExRequest.h>
 #include <tencentcloud/cat/v20180409/model/CreateTaskExResponse.h>
 #include <tencentcloud/cat/v20180409/model/DeleteAgentGroupRequest.h>
 #include <tencentcloud/cat/v20180409/model/DeleteAgentGroupResponse.h>
+#include <tencentcloud/cat/v20180409/model/DeleteProbeTaskRequest.h>
+#include <tencentcloud/cat/v20180409/model/DeleteProbeTaskResponse.h>
 #include <tencentcloud/cat/v20180409/model/DeleteTasksRequest.h>
 #include <tencentcloud/cat/v20180409/model/DeleteTasksResponse.h>
 #include <tencentcloud/cat/v20180409/model/DescribeAgentGroupsRequest.h>
@@ -45,6 +49,12 @@
 #include <tencentcloud/cat/v20180409/model/DescribeAlarmsByTaskResponse.h>
 #include <tencentcloud/cat/v20180409/model/DescribeCatLogsRequest.h>
 #include <tencentcloud/cat/v20180409/model/DescribeCatLogsResponse.h>
+#include <tencentcloud/cat/v20180409/model/DescribeDetailedSingleProbeDataRequest.h>
+#include <tencentcloud/cat/v20180409/model/DescribeDetailedSingleProbeDataResponse.h>
+#include <tencentcloud/cat/v20180409/model/DescribeProbeNodesRequest.h>
+#include <tencentcloud/cat/v20180409/model/DescribeProbeNodesResponse.h>
+#include <tencentcloud/cat/v20180409/model/DescribeProbeTasksRequest.h>
+#include <tencentcloud/cat/v20180409/model/DescribeProbeTasksResponse.h>
 #include <tencentcloud/cat/v20180409/model/DescribeTaskDetailRequest.h>
 #include <tencentcloud/cat/v20180409/model/DescribeTaskDetailResponse.h>
 #include <tencentcloud/cat/v20180409/model/DescribeTasksByTypeRequest.h>
@@ -73,8 +83,14 @@
 #include <tencentcloud/cat/v20180409/model/ModifyTaskExResponse.h>
 #include <tencentcloud/cat/v20180409/model/PauseTaskRequest.h>
 #include <tencentcloud/cat/v20180409/model/PauseTaskResponse.h>
+#include <tencentcloud/cat/v20180409/model/ResumeProbeTaskRequest.h>
+#include <tencentcloud/cat/v20180409/model/ResumeProbeTaskResponse.h>
 #include <tencentcloud/cat/v20180409/model/RunTaskRequest.h>
 #include <tencentcloud/cat/v20180409/model/RunTaskResponse.h>
+#include <tencentcloud/cat/v20180409/model/SuspendProbeTaskRequest.h>
+#include <tencentcloud/cat/v20180409/model/SuspendProbeTaskResponse.h>
+#include <tencentcloud/cat/v20180409/model/UpdateProbeTaskConfigurationListRequest.h>
+#include <tencentcloud/cat/v20180409/model/UpdateProbeTaskConfigurationListResponse.h>
 #include <tencentcloud/cat/v20180409/model/VerifyResultRequest.h>
 #include <tencentcloud/cat/v20180409/model/VerifyResultResponse.h>
 
@@ -97,12 +113,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAgentGroupResponse> CreateAgentGroupOutcome;
                 typedef std::future<CreateAgentGroupOutcome> CreateAgentGroupOutcomeCallable;
                 typedef std::function<void(const CatClient*, const Model::CreateAgentGroupRequest&, CreateAgentGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAgentGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateProbeTasksResponse> CreateProbeTasksOutcome;
+                typedef std::future<CreateProbeTasksOutcome> CreateProbeTasksOutcomeCallable;
+                typedef std::function<void(const CatClient*, const Model::CreateProbeTasksRequest&, CreateProbeTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProbeTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTaskExResponse> CreateTaskExOutcome;
                 typedef std::future<CreateTaskExOutcome> CreateTaskExOutcomeCallable;
                 typedef std::function<void(const CatClient*, const Model::CreateTaskExRequest&, CreateTaskExOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskExAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAgentGroupResponse> DeleteAgentGroupOutcome;
                 typedef std::future<DeleteAgentGroupOutcome> DeleteAgentGroupOutcomeCallable;
                 typedef std::function<void(const CatClient*, const Model::DeleteAgentGroupRequest&, DeleteAgentGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAgentGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteProbeTaskResponse> DeleteProbeTaskOutcome;
+                typedef std::future<DeleteProbeTaskOutcome> DeleteProbeTaskOutcomeCallable;
+                typedef std::function<void(const CatClient*, const Model::DeleteProbeTaskRequest&, DeleteProbeTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProbeTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteTasksResponse> DeleteTasksOutcome;
                 typedef std::future<DeleteTasksOutcome> DeleteTasksOutcomeCallable;
                 typedef std::function<void(const CatClient*, const Model::DeleteTasksRequest&, DeleteTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTasksAsyncHandler;
@@ -124,6 +146,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCatLogsResponse> DescribeCatLogsOutcome;
                 typedef std::future<DescribeCatLogsOutcome> DescribeCatLogsOutcomeCallable;
                 typedef std::function<void(const CatClient*, const Model::DescribeCatLogsRequest&, DescribeCatLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCatLogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDetailedSingleProbeDataResponse> DescribeDetailedSingleProbeDataOutcome;
+                typedef std::future<DescribeDetailedSingleProbeDataOutcome> DescribeDetailedSingleProbeDataOutcomeCallable;
+                typedef std::function<void(const CatClient*, const Model::DescribeDetailedSingleProbeDataRequest&, DescribeDetailedSingleProbeDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDetailedSingleProbeDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProbeNodesResponse> DescribeProbeNodesOutcome;
+                typedef std::future<DescribeProbeNodesOutcome> DescribeProbeNodesOutcomeCallable;
+                typedef std::function<void(const CatClient*, const Model::DescribeProbeNodesRequest&, DescribeProbeNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProbeNodesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProbeTasksResponse> DescribeProbeTasksOutcome;
+                typedef std::future<DescribeProbeTasksOutcome> DescribeProbeTasksOutcomeCallable;
+                typedef std::function<void(const CatClient*, const Model::DescribeProbeTasksRequest&, DescribeProbeTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProbeTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTaskDetailResponse> DescribeTaskDetailOutcome;
                 typedef std::future<DescribeTaskDetailOutcome> DescribeTaskDetailOutcomeCallable;
                 typedef std::function<void(const CatClient*, const Model::DescribeTaskDetailRequest&, DescribeTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskDetailAsyncHandler;
@@ -166,9 +197,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::PauseTaskResponse> PauseTaskOutcome;
                 typedef std::future<PauseTaskOutcome> PauseTaskOutcomeCallable;
                 typedef std::function<void(const CatClient*, const Model::PauseTaskRequest&, PauseTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PauseTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResumeProbeTaskResponse> ResumeProbeTaskOutcome;
+                typedef std::future<ResumeProbeTaskOutcome> ResumeProbeTaskOutcomeCallable;
+                typedef std::function<void(const CatClient*, const Model::ResumeProbeTaskRequest&, ResumeProbeTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumeProbeTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunTaskResponse> RunTaskOutcome;
                 typedef std::future<RunTaskOutcome> RunTaskOutcomeCallable;
                 typedef std::function<void(const CatClient*, const Model::RunTaskRequest&, RunTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::SuspendProbeTaskResponse> SuspendProbeTaskOutcome;
+                typedef std::future<SuspendProbeTaskOutcome> SuspendProbeTaskOutcomeCallable;
+                typedef std::function<void(const CatClient*, const Model::SuspendProbeTaskRequest&, SuspendProbeTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SuspendProbeTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateProbeTaskConfigurationListResponse> UpdateProbeTaskConfigurationListOutcome;
+                typedef std::future<UpdateProbeTaskConfigurationListOutcome> UpdateProbeTaskConfigurationListOutcomeCallable;
+                typedef std::function<void(const CatClient*, const Model::UpdateProbeTaskConfigurationListRequest&, UpdateProbeTaskConfigurationListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateProbeTaskConfigurationListAsyncHandler;
                 typedef Outcome<Core::Error, Model::VerifyResultResponse> VerifyResultOutcome;
                 typedef std::future<VerifyResultOutcome> VerifyResultOutcomeCallable;
                 typedef std::function<void(const CatClient*, const Model::VerifyResultRequest&, VerifyResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyResultAsyncHandler;
@@ -194,6 +234,15 @@ namespace TencentCloud
                 CreateAgentGroupOutcomeCallable CreateAgentGroupCallable(const Model::CreateAgentGroupRequest& request);
 
                 /**
+                 *批量创建探测任务
+                 * @param req CreateProbeTasksRequest
+                 * @return CreateProbeTasksOutcome
+                 */
+                CreateProbeTasksOutcome CreateProbeTasks(const Model::CreateProbeTasksRequest &request);
+                void CreateProbeTasksAsync(const Model::CreateProbeTasksRequest& request, const CreateProbeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateProbeTasksOutcomeCallable CreateProbeTasksCallable(const Model::CreateProbeTasksRequest& request);
+
+                /**
                  *创建拨测任务(扩展)
                  * @param req CreateTaskExRequest
                  * @return CreateTaskExOutcome
@@ -210,6 +259,15 @@ namespace TencentCloud
                 DeleteAgentGroupOutcome DeleteAgentGroup(const Model::DeleteAgentGroupRequest &request);
                 void DeleteAgentGroupAsync(const Model::DeleteAgentGroupRequest& request, const DeleteAgentGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAgentGroupOutcomeCallable DeleteAgentGroupCallable(const Model::DeleteAgentGroupRequest& request);
+
+                /**
+                 *删除拨测任务
+                 * @param req DeleteProbeTaskRequest
+                 * @return DeleteProbeTaskOutcome
+                 */
+                DeleteProbeTaskOutcome DeleteProbeTask(const Model::DeleteProbeTaskRequest &request);
+                void DeleteProbeTaskAsync(const Model::DeleteProbeTaskRequest& request, const DeleteProbeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteProbeTaskOutcomeCallable DeleteProbeTaskCallable(const Model::DeleteProbeTaskRequest& request);
 
                 /**
                  *删除多个拨测任务
@@ -273,6 +331,33 @@ namespace TencentCloud
                 DescribeCatLogsOutcome DescribeCatLogs(const Model::DescribeCatLogsRequest &request);
                 void DescribeCatLogsAsync(const Model::DescribeCatLogsRequest& request, const DescribeCatLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCatLogsOutcomeCallable DescribeCatLogsCallable(const Model::DescribeCatLogsRequest& request);
+
+                /**
+                 *根据时间范围、任务ID、运营商等条件查询单次拨测详情数据
+                 * @param req DescribeDetailedSingleProbeDataRequest
+                 * @return DescribeDetailedSingleProbeDataOutcome
+                 */
+                DescribeDetailedSingleProbeDataOutcome DescribeDetailedSingleProbeData(const Model::DescribeDetailedSingleProbeDataRequest &request);
+                void DescribeDetailedSingleProbeDataAsync(const Model::DescribeDetailedSingleProbeDataRequest& request, const DescribeDetailedSingleProbeDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDetailedSingleProbeDataOutcomeCallable DescribeDetailedSingleProbeDataCallable(const Model::DescribeDetailedSingleProbeDataRequest& request);
+
+                /**
+                 *查询拨测节点
+                 * @param req DescribeProbeNodesRequest
+                 * @return DescribeProbeNodesOutcome
+                 */
+                DescribeProbeNodesOutcome DescribeProbeNodes(const Model::DescribeProbeNodesRequest &request);
+                void DescribeProbeNodesAsync(const Model::DescribeProbeNodesRequest& request, const DescribeProbeNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProbeNodesOutcomeCallable DescribeProbeNodesCallable(const Model::DescribeProbeNodesRequest& request);
+
+                /**
+                 *查询探测任务列表
+                 * @param req DescribeProbeTasksRequest
+                 * @return DescribeProbeTasksOutcome
+                 */
+                DescribeProbeTasksOutcome DescribeProbeTasks(const Model::DescribeProbeTasksRequest &request);
+                void DescribeProbeTasksAsync(const Model::DescribeProbeTasksRequest& request, const DescribeProbeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProbeTasksOutcomeCallable DescribeProbeTasksCallable(const Model::DescribeProbeTasksRequest& request);
 
                 /**
                  *查询拨测任务信息
@@ -401,6 +486,15 @@ namespace TencentCloud
                 PauseTaskOutcomeCallable PauseTaskCallable(const Model::PauseTaskRequest& request);
 
                 /**
+                 *恢复拨测任务
+                 * @param req ResumeProbeTaskRequest
+                 * @return ResumeProbeTaskOutcome
+                 */
+                ResumeProbeTaskOutcome ResumeProbeTask(const Model::ResumeProbeTaskRequest &request);
+                void ResumeProbeTaskAsync(const Model::ResumeProbeTaskRequest& request, const ResumeProbeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResumeProbeTaskOutcomeCallable ResumeProbeTaskCallable(const Model::ResumeProbeTaskRequest& request);
+
+                /**
                  *运行拨测任务
                  * @param req RunTaskRequest
                  * @return RunTaskOutcome
@@ -408,6 +502,24 @@ namespace TencentCloud
                 RunTaskOutcome RunTask(const Model::RunTaskRequest &request);
                 void RunTaskAsync(const Model::RunTaskRequest& request, const RunTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RunTaskOutcomeCallable RunTaskCallable(const Model::RunTaskRequest& request);
+
+                /**
+                 *暂停拨测任务
+                 * @param req SuspendProbeTaskRequest
+                 * @return SuspendProbeTaskOutcome
+                 */
+                SuspendProbeTaskOutcome SuspendProbeTask(const Model::SuspendProbeTaskRequest &request);
+                void SuspendProbeTaskAsync(const Model::SuspendProbeTaskRequest& request, const SuspendProbeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SuspendProbeTaskOutcomeCallable SuspendProbeTaskCallable(const Model::SuspendProbeTaskRequest& request);
+
+                /**
+                 *批量更新拨测任务配置
+                 * @param req UpdateProbeTaskConfigurationListRequest
+                 * @return UpdateProbeTaskConfigurationListOutcome
+                 */
+                UpdateProbeTaskConfigurationListOutcome UpdateProbeTaskConfigurationList(const Model::UpdateProbeTaskConfigurationListRequest &request);
+                void UpdateProbeTaskConfigurationListAsync(const Model::UpdateProbeTaskConfigurationListRequest& request, const UpdateProbeTaskConfigurationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateProbeTaskConfigurationListOutcomeCallable UpdateProbeTaskConfigurationListCallable(const Model::UpdateProbeTaskConfigurationListRequest& request);
 
                 /**
                  *验证拨测任务，结果验证查询（验证成功的，才建议创建拨测任务）

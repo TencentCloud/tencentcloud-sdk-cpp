@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 续费磁盘包年包月相关参数设置
+                * 续费云硬盘包年包月相关参数设置
                 */
                 class RenewDiskChargePrepaid : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取新购周期
-                     * @return Period 新购周期
+                     * 获取新购周期。
+                     * @return Period 新购周期。
                      */
                     int64_t GetPeriod() const;
 
                     /**
-                     * 设置新购周期
-                     * @param Period 新购周期
+                     * 设置新购周期。
+                     * @param Period 新购周期。
                      */
                     void SetPeriod(const int64_t& _period);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取续费标识
-                     * @return RenewFlag 续费标识
+                     * 获取续费标识。
+                     * @return RenewFlag 续费标识。
                      */
                     std::string GetRenewFlag() const;
 
                     /**
-                     * 设置续费标识
-                     * @param RenewFlag 续费标识
+                     * 设置续费标识。
+                     * @param RenewFlag 续费标识。
                      */
                     void SetRenewFlag(const std::string& _renewFlag);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取周期单位. 默认值: "m"
-                     * @return TimeUnit 周期单位. 默认值: "m"
+                     * 获取周期单位. 默认值: "m"。
+                     * @return TimeUnit 周期单位. 默认值: "m"。
                      */
                     std::string GetTimeUnit() const;
 
                     /**
-                     * 设置周期单位. 默认值: "m"
-                     * @param TimeUnit 周期单位. 默认值: "m"
+                     * 设置周期单位. 默认值: "m"。
+                     * @param TimeUnit 周期单位. 默认值: "m"。
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool TimeUnitHasBeenSet() const;
 
                     /**
-                     * 获取当前实例到期时间
-                     * @return CurInstanceDeadline 当前实例到期时间
+                     * 获取当前实例到期时间。
+                     * @return CurInstanceDeadline 当前实例到期时间。
                      */
                     std::string GetCurInstanceDeadline() const;
 
                     /**
-                     * 设置当前实例到期时间
-                     * @param CurInstanceDeadline 当前实例到期时间
+                     * 设置当前实例到期时间。
+                     * @param CurInstanceDeadline 当前实例到期时间。
                      */
                     void SetCurInstanceDeadline(const std::string& _curInstanceDeadline);
 
@@ -121,25 +121,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 新购周期
+                     * 新购周期。
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 续费标识
+                     * 续费标识。
                      */
                     std::string m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 周期单位. 默认值: "m"
+                     * 周期单位. 默认值: "m"。
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;
 
                     /**
-                     * 当前实例到期时间
+                     * 当前实例到期时间。
                      */
                     std::string m_curInstanceDeadline;
                     bool m_curInstanceDeadlineHasBeenSet;

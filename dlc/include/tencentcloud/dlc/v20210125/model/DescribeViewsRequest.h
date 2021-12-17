@@ -141,6 +141,78 @@ view-id - String - （过滤条件）view id形如：12342。
                      */
                     bool DatasourceConnectionNameHasBeenSet() const;
 
+                    /**
+                     * 获取排序字段
+                     * @return Sort 排序字段
+                     */
+                    std::string GetSort() const;
+
+                    /**
+                     * 设置排序字段
+                     * @param Sort 排序字段
+                     */
+                    void SetSort(const std::string& _sort);
+
+                    /**
+                     * 判断参数 Sort 是否已赋值
+                     * @return Sort 是否已赋值
+                     */
+                    bool SortHasBeenSet() const;
+
+                    /**
+                     * 获取排序规则
+                     * @return Asc 排序规则
+                     */
+                    bool GetAsc() const;
+
+                    /**
+                     * 设置排序规则
+                     * @param Asc 排序规则
+                     */
+                    void SetAsc(const bool& _asc);
+
+                    /**
+                     * 判断参数 Asc 是否已赋值
+                     * @return Asc 是否已赋值
+                     */
+                    bool AscHasBeenSet() const;
+
+                    /**
+                     * 获取开始时间
+                     * @return StartTime 开始时间
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置开始时间
+                     * @param StartTime 开始时间
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取结束时间
+                     * @return EndTime 结束时间
+                     */
+                    std::string GetEndTime() const;
+
+                    /**
+                     * 设置结束时间
+                     * @param EndTime 结束时间
+                     */
+                    void SetEndTime(const std::string& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     */
+                    bool EndTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -174,6 +246,30 @@ view-id - String - （过滤条件）view id形如：12342。
                      */
                     std::string m_datasourceConnectionName;
                     bool m_datasourceConnectionNameHasBeenSet;
+
+                    /**
+                     * 排序字段
+                     */
+                    std::string m_sort;
+                    bool m_sortHasBeenSet;
+
+                    /**
+                     * 排序规则
+                     */
+                    bool m_asc;
+                    bool m_ascHasBeenSet;
+
+                    /**
+                     * 开始时间
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 结束时间
+                     */
+                    std::string m_endTime;
+                    bool m_endTimeHasBeenSet;
 
                 };
             }

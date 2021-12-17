@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取磁盘类型, 取值: "CLOUD_PREMIUM"
-                     * @return DiskType 磁盘类型, 取值: "CLOUD_PREMIUM"
+                     * 获取云硬盘类型, 取值: "CLOUD_PREMIUM"。
+                     * @return DiskType 云硬盘类型, 取值: "CLOUD_PREMIUM"。
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置磁盘类型, 取值: "CLOUD_PREMIUM"
-                     * @param DiskType 磁盘类型, 取值: "CLOUD_PREMIUM"
+                     * 设置云硬盘类型, 取值: "CLOUD_PREMIUM"。
+                     * @param DiskType 云硬盘类型, 取值: "CLOUD_PREMIUM"。
                      */
                     void SetDiskType(const std::string& _diskType);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool DiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取磁盘大小
-                     * @return DiskSize 磁盘大小
+                     * 获取云硬盘大小。
+                     * @return DiskSize 云硬盘大小。
                      */
                     int64_t GetDiskSize() const;
 
                     /**
-                     * 设置磁盘大小
-                     * @param DiskSize 磁盘大小
+                     * 设置云硬盘大小。
+                     * @param DiskSize 云硬盘大小。
                      */
                     void SetDiskSize(const int64_t& _diskSize);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 磁盘类型, 取值: "CLOUD_PREMIUM"
+                     * 云硬盘类型, 取值: "CLOUD_PREMIUM"。
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
-                     * 磁盘大小
+                     * 云硬盘大小。
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;

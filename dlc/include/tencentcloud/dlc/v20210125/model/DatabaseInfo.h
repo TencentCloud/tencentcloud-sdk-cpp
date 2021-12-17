@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据库名称。
-                     * @return DatabaseName 数据库名称。
+                     * 获取数据库名称，长度0~128，支持数字、字母下划线，不允许数字大头，统一转换为小写。
+                     * @return DatabaseName 数据库名称，长度0~128，支持数字、字母下划线，不允许数字大头，统一转换为小写。
                      */
                     std::string GetDatabaseName() const;
 
                     /**
-                     * 设置数据库名称。
-                     * @param DatabaseName 数据库名称。
+                     * 设置数据库名称，长度0~128，支持数字、字母下划线，不允许数字大头，统一转换为小写。
+                     * @param DatabaseName 数据库名称，长度0~128，支持数字、字母下划线，不允许数字大头，统一转换为小写。
                      */
                     void SetDatabaseName(const std::string& _databaseName);
 
@@ -66,17 +66,17 @@ namespace TencentCloud
                     bool DatabaseNameHasBeenSet() const;
 
                     /**
-                     * 获取数据库描述信息，长度 0~256。
+                     * 获取数据库描述信息，长度 0~500。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Comment 数据库描述信息，长度 0~256。
+                     * @return Comment 数据库描述信息，长度 0~500。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置数据库描述信息，长度 0~256。
+                     * 设置数据库描述信息，长度 0~500。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Comment 数据库描述信息，长度 0~256。
+                     * @param Comment 数据库描述信息，长度 0~500。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetComment(const std::string& _comment);
@@ -109,16 +109,38 @@ namespace TencentCloud
                      */
                     bool PropertiesHasBeenSet() const;
 
+                    /**
+                     * 获取数据库cos路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Location 数据库cos路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLocation() const;
+
+                    /**
+                     * 设置数据库cos路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Location 数据库cos路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLocation(const std::string& _location);
+
+                    /**
+                     * 判断参数 Location 是否已赋值
+                     * @return Location 是否已赋值
+                     */
+                    bool LocationHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 数据库名称。
+                     * 数据库名称，长度0~128，支持数字、字母下划线，不允许数字大头，统一转换为小写。
                      */
                     std::string m_databaseName;
                     bool m_databaseNameHasBeenSet;
 
                     /**
-                     * 数据库描述信息，长度 0~256。
+                     * 数据库描述信息，长度 0~500。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_comment;
@@ -130,6 +152,13 @@ namespace TencentCloud
                      */
                     std::vector<Property> m_properties;
                     bool m_propertiesHasBeenSet;
+
+                    /**
+                     * 数据库cos路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_location;
+                    bool m_locationHasBeenSet;
 
                 };
             }

@@ -159,14 +159,14 @@ namespace TencentCloud
                     bool InstanceAdvancedSettingsHasBeenSet() const;
 
                     /**
-                     * 获取已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过100。
-                     * @return ExistedInstancesForNode 已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过100。
+                     * 获取已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过100，不支持添加竞价实例。
+                     * @return ExistedInstancesForNode 已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过100，不支持添加竞价实例。
                      */
                     std::vector<ExistedInstancesForNode> GetExistedInstancesForNode() const;
 
                     /**
-                     * 设置已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过100。
-                     * @param ExistedInstancesForNode 已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过100。
+                     * 设置已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过100，不支持添加竞价实例。
+                     * @param ExistedInstancesForNode 已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过100，不支持添加竞价实例。
                      */
                     void SetExistedInstancesForNode(const std::vector<ExistedInstancesForNode>& _existedInstancesForNode);
 
@@ -251,7 +251,7 @@ namespace TencentCloud
                     bool m_instanceAdvancedSettingsHasBeenSet;
 
                     /**
-                     * 已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过100。
+                     * 已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过100，不支持添加竞价实例。
                      */
                     std::vector<ExistedInstancesForNode> m_existedInstancesForNode;
                     bool m_existedInstancesForNodeHasBeenSet;

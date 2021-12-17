@@ -28,7 +28,8 @@ CreateDirectConnectGatewayRequest::CreateDirectConnectGatewayRequest() :
     m_networkInstanceIdHasBeenSet(false),
     m_gatewayTypeHasBeenSet(false),
     m_modeTypeHasBeenSet(false),
-    m_zoneHasBeenSet(false)
+    m_zoneHasBeenSet(false),
+    m_haZoneGroupIdHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string CreateDirectConnectGatewayRequest::ToJsonString() const
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_haZoneGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HaZoneGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_haZoneGroupId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void CreateDirectConnectGatewayRequest::SetZone(const string& _zone)
 bool CreateDirectConnectGatewayRequest::ZoneHasBeenSet() const
 {
     return m_zoneHasBeenSet;
+}
+
+string CreateDirectConnectGatewayRequest::GetHaZoneGroupId() const
+{
+    return m_haZoneGroupId;
+}
+
+void CreateDirectConnectGatewayRequest::SetHaZoneGroupId(const string& _haZoneGroupId)
+{
+    m_haZoneGroupId = _haZoneGroupId;
+    m_haZoneGroupIdHasBeenSet = true;
+}
+
+bool CreateDirectConnectGatewayRequest::HaZoneGroupIdHasBeenSet() const
+{
+    return m_haZoneGroupIdHasBeenSet;
 }
 
 

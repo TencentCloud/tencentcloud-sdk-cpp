@@ -37,7 +37,12 @@ DirectConnectGateway::DirectConnectGateway() :
     m_vXLANSupportHasBeenSet(false),
     m_modeTypeHasBeenSet(false),
     m_localZoneHasBeenSet(false),
-    m_zoneHasBeenSet(false)
+    m_zoneHasBeenSet(false),
+    m_enableFlowDetailsHasBeenSet(false),
+    m_flowDetailsUpdateTimeHasBeenSet(false),
+    m_newAfcHasBeenSet(false),
+    m_accessNetworkTypeHasBeenSet(false),
+    m_haZoneListHasBeenSet(false)
 {
 }
 
@@ -219,6 +224,59 @@ CoreInternalOutcome DirectConnectGateway::Deserialize(const rapidjson::Value &va
         m_zoneHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableFlowDetails") && !value["EnableFlowDetails"].IsNull())
+    {
+        if (!value["EnableFlowDetails"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DirectConnectGateway.EnableFlowDetails` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableFlowDetails = value["EnableFlowDetails"].GetUint64();
+        m_enableFlowDetailsHasBeenSet = true;
+    }
+
+    if (value.HasMember("FlowDetailsUpdateTime") && !value["FlowDetailsUpdateTime"].IsNull())
+    {
+        if (!value["FlowDetailsUpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DirectConnectGateway.FlowDetailsUpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowDetailsUpdateTime = string(value["FlowDetailsUpdateTime"].GetString());
+        m_flowDetailsUpdateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("NewAfc") && !value["NewAfc"].IsNull())
+    {
+        if (!value["NewAfc"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DirectConnectGateway.NewAfc` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_newAfc = value["NewAfc"].GetUint64();
+        m_newAfcHasBeenSet = true;
+    }
+
+    if (value.HasMember("AccessNetworkType") && !value["AccessNetworkType"].IsNull())
+    {
+        if (!value["AccessNetworkType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DirectConnectGateway.AccessNetworkType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessNetworkType = string(value["AccessNetworkType"].GetString());
+        m_accessNetworkTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("HaZoneList") && !value["HaZoneList"].IsNull())
+    {
+        if (!value["HaZoneList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DirectConnectGateway.HaZoneList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["HaZoneList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_haZoneList.push_back((*itr).GetString());
+        }
+        m_haZoneListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -365,6 +423,51 @@ void DirectConnectGateway::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableFlowDetailsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableFlowDetails";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableFlowDetails, allocator);
+    }
+
+    if (m_flowDetailsUpdateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowDetailsUpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_flowDetailsUpdateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_newAfcHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewAfc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_newAfc, allocator);
+    }
+
+    if (m_accessNetworkTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessNetworkType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accessNetworkType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_haZoneListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HaZoneList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_haZoneList.begin(); itr != m_haZoneList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -640,5 +743,85 @@ void DirectConnectGateway::SetZone(const string& _zone)
 bool DirectConnectGateway::ZoneHasBeenSet() const
 {
     return m_zoneHasBeenSet;
+}
+
+uint64_t DirectConnectGateway::GetEnableFlowDetails() const
+{
+    return m_enableFlowDetails;
+}
+
+void DirectConnectGateway::SetEnableFlowDetails(const uint64_t& _enableFlowDetails)
+{
+    m_enableFlowDetails = _enableFlowDetails;
+    m_enableFlowDetailsHasBeenSet = true;
+}
+
+bool DirectConnectGateway::EnableFlowDetailsHasBeenSet() const
+{
+    return m_enableFlowDetailsHasBeenSet;
+}
+
+string DirectConnectGateway::GetFlowDetailsUpdateTime() const
+{
+    return m_flowDetailsUpdateTime;
+}
+
+void DirectConnectGateway::SetFlowDetailsUpdateTime(const string& _flowDetailsUpdateTime)
+{
+    m_flowDetailsUpdateTime = _flowDetailsUpdateTime;
+    m_flowDetailsUpdateTimeHasBeenSet = true;
+}
+
+bool DirectConnectGateway::FlowDetailsUpdateTimeHasBeenSet() const
+{
+    return m_flowDetailsUpdateTimeHasBeenSet;
+}
+
+uint64_t DirectConnectGateway::GetNewAfc() const
+{
+    return m_newAfc;
+}
+
+void DirectConnectGateway::SetNewAfc(const uint64_t& _newAfc)
+{
+    m_newAfc = _newAfc;
+    m_newAfcHasBeenSet = true;
+}
+
+bool DirectConnectGateway::NewAfcHasBeenSet() const
+{
+    return m_newAfcHasBeenSet;
+}
+
+string DirectConnectGateway::GetAccessNetworkType() const
+{
+    return m_accessNetworkType;
+}
+
+void DirectConnectGateway::SetAccessNetworkType(const string& _accessNetworkType)
+{
+    m_accessNetworkType = _accessNetworkType;
+    m_accessNetworkTypeHasBeenSet = true;
+}
+
+bool DirectConnectGateway::AccessNetworkTypeHasBeenSet() const
+{
+    return m_accessNetworkTypeHasBeenSet;
+}
+
+vector<string> DirectConnectGateway::GetHaZoneList() const
+{
+    return m_haZoneList;
+}
+
+void DirectConnectGateway::SetHaZoneList(const vector<string>& _haZoneList)
+{
+    m_haZoneList = _haZoneList;
+    m_haZoneListHasBeenSet = true;
+}
+
+bool DirectConnectGateway::HaZoneListHasBeenSet() const
+{
+    return m_haZoneListHasBeenSet;
 }
 

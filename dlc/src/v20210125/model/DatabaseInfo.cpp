@@ -23,7 +23,8 @@ using namespace std;
 DatabaseInfo::DatabaseInfo() :
     m_databaseNameHasBeenSet(false),
     m_commentHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+    m_propertiesHasBeenSet(false),
+    m_locationHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome DatabaseInfo::Deserialize(const rapidjson::Value &value)
         m_propertiesHasBeenSet = true;
     }
 
+    if (value.HasMember("Location") && !value["Location"].IsNull())
+    {
+        if (!value["Location"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseInfo.Location` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_location = string(value["Location"].GetString());
+        m_locationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +119,14 @@ void DatabaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_locationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Location";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_location.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -159,5 +178,21 @@ void DatabaseInfo::SetProperties(const vector<Property>& _properties)
 bool DatabaseInfo::PropertiesHasBeenSet() const
 {
     return m_propertiesHasBeenSet;
+}
+
+string DatabaseInfo::GetLocation() const
+{
+    return m_location;
+}
+
+void DatabaseInfo::SetLocation(const string& _location)
+{
+    m_location = _location;
+    m_locationHasBeenSet = true;
+}
+
+bool DatabaseInfo::LocationHasBeenSet() const
+{
+    return m_locationHasBeenSet;
 }
 

@@ -209,6 +209,24 @@ namespace TencentCloud
                      */
                     bool NeedWorkSecurityGroupHasBeenSet() const;
 
+                    /**
+                     * 获取当选择Cilium Overlay网络插件时，TKE会从该子网获取2个IP用来创建内网负载均衡
+                     * @return SubnetId 当选择Cilium Overlay网络插件时，TKE会从该子网获取2个IP用来创建内网负载均衡
+                     */
+                    std::string GetSubnetId() const;
+
+                    /**
+                     * 设置当选择Cilium Overlay网络插件时，TKE会从该子网获取2个IP用来创建内网负载均衡
+                     * @param SubnetId 当选择Cilium Overlay网络插件时，TKE会从该子网获取2个IP用来创建内网负载均衡
+                     */
+                    void SetSubnetId(const std::string& _subnetId);
+
+                    /**
+                     * 判断参数 SubnetId 是否已赋值
+                     * @return SubnetId 是否已赋值
+                     */
+                    bool SubnetIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -264,6 +282,12 @@ namespace TencentCloud
                      */
                     bool m_needWorkSecurityGroup;
                     bool m_needWorkSecurityGroupHasBeenSet;
+
+                    /**
+                     * 当选择Cilium Overlay网络插件时，TKE会从该子网获取2个IP用来创建内网负载均衡
+                     */
+                    std::string m_subnetId;
+                    bool m_subnetIdHasBeenSet;
 
                 };
             }

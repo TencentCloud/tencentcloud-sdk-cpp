@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool NamespaceHasBeenSet() const;
 
                     /**
-                     * 获取查询的开始时间，例如：2017-05-16 20:00:00，不填默认为当前时间 - 24小时
-                     * @return StartTime 查询的开始时间，例如：2017-05-16 20:00:00，不填默认为当前时间 - 24小时
+                     * 获取查询的开始时间，例如：2017-05-16 20:00:00，不填默认为当前时间 - 15min
+                     * @return StartTime 查询的开始时间，例如：2017-05-16 20:00:00，不填默认为当前时间 - 15min
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置查询的开始时间，例如：2017-05-16 20:00:00，不填默认为当前时间 - 24小时
-                     * @param StartTime 查询的开始时间，例如：2017-05-16 20:00:00，不填默认为当前时间 - 24小时
+                     * 设置查询的开始时间，例如：2017-05-16 20:00:00，不填默认为当前时间 - 15min
+                     * @param StartTime 查询的开始时间，例如：2017-05-16 20:00:00，不填默认为当前时间 - 15min
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -153,7 +153,7 @@ namespace TencentCloud
                     bool m_namespaceHasBeenSet;
 
                     /**
-                     * 查询的开始时间，例如：2017-05-16 20:00:00，不填默认为当前时间 - 24小时
+                     * 查询的开始时间，例如：2017-05-16 20:00:00，不填默认为当前时间 - 15min
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;

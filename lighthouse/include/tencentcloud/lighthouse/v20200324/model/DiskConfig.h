@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 磁盘配置
+                * 云硬盘配置
                 */
                 class DiskConfig : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取可用区
-                     * @return Zone 可用区
+                     * 获取可用区。
+                     * @return Zone 可用区。
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区
-                     * @param Zone 可用区
+                     * 设置可用区。
+                     * @param Zone 可用区。
                      */
                     void SetZone(const std::string& _zone);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取磁盘类型
-                     * @return DiskType 磁盘类型
+                     * 获取云硬盘类型。
+                     * @return DiskType 云硬盘类型。
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置磁盘类型
-                     * @param DiskType 磁盘类型
+                     * 设置云硬盘类型。
+                     * @param DiskType 云硬盘类型。
                      */
                     void SetDiskType(const std::string& _diskType);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool DiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取磁盘可售卖状态
-                     * @return DiskSalesState 磁盘可售卖状态
+                     * 获取云硬盘可售卖状态。
+                     * @return DiskSalesState 云硬盘可售卖状态。
                      */
                     std::string GetDiskSalesState() const;
 
                     /**
-                     * 设置磁盘可售卖状态
-                     * @param DiskSalesState 磁盘可售卖状态
+                     * 设置云硬盘可售卖状态。
+                     * @param DiskSalesState 云硬盘可售卖状态。
                      */
                     void SetDiskSalesState(const std::string& _diskSalesState);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool DiskSalesStateHasBeenSet() const;
 
                     /**
-                     * 获取最大磁盘大小
-                     * @return MaxDiskSize 最大磁盘大小
+                     * 获取最大云硬盘大小。
+                     * @return MaxDiskSize 最大云硬盘大小。
                      */
                     int64_t GetMaxDiskSize() const;
 
                     /**
-                     * 设置最大磁盘大小
-                     * @param MaxDiskSize 最大磁盘大小
+                     * 设置最大云硬盘大小。
+                     * @param MaxDiskSize 最大云硬盘大小。
                      */
                     void SetMaxDiskSize(const int64_t& _maxDiskSize);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool MaxDiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取最小磁盘大小
-                     * @return MinDiskSize 最小磁盘大小
+                     * 获取最小云硬盘大小。
+                     * @return MinDiskSize 最小云硬盘大小。
                      */
                     int64_t GetMinDiskSize() const;
 
                     /**
-                     * 设置最小磁盘大小
-                     * @param MinDiskSize 最小磁盘大小
+                     * 设置最小云硬盘大小。
+                     * @param MinDiskSize 最小云硬盘大小。
                      */
                     void SetMinDiskSize(const int64_t& _minDiskSize);
 
@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool MinDiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取磁盘步长
-                     * @return DiskStepSize 磁盘步长
+                     * 获取云硬盘步长。
+                     * @return DiskStepSize 云硬盘步长。
                      */
                     int64_t GetDiskStepSize() const;
 
                     /**
-                     * 设置磁盘步长
-                     * @param DiskStepSize 磁盘步长
+                     * 设置云硬盘步长。
+                     * @param DiskStepSize 云硬盘步长。
                      */
                     void SetDiskStepSize(const int64_t& _diskStepSize);
 
@@ -157,37 +157,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 可用区
+                     * 可用区。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 磁盘类型
+                     * 云硬盘类型。
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
-                     * 磁盘可售卖状态
+                     * 云硬盘可售卖状态。
                      */
                     std::string m_diskSalesState;
                     bool m_diskSalesStateHasBeenSet;
 
                     /**
-                     * 最大磁盘大小
+                     * 最大云硬盘大小。
                      */
                     int64_t m_maxDiskSize;
                     bool m_maxDiskSizeHasBeenSet;
 
                     /**
-                     * 最小磁盘大小
+                     * 最小云硬盘大小。
                      */
                     int64_t m_minDiskSize;
                     bool m_minDiskSizeHasBeenSet;
 
                     /**
-                     * 磁盘步长
+                     * 云硬盘步长。
                      */
                     int64_t m_diskStepSize;
                     bool m_diskStepSizeHasBeenSet;

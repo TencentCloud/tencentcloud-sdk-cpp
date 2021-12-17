@@ -33,7 +33,8 @@ DescribeScdnBotRecordsRequest::DescribeScdnBotRecordsRequest() :
     m_sortByHasBeenSet(false),
     m_filterNameHasBeenSet(false),
     m_filterActionHasBeenSet(false),
-    m_filterIpHasBeenSet(false)
+    m_filterIpHasBeenSet(false),
+    m_domainsHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,19 @@ string DescribeScdnBotRecordsRequest::ToJsonString() const
         string key = "FilterIp";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_filterIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domains";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_domains.begin(); itr != m_domains.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -321,6 +335,22 @@ void DescribeScdnBotRecordsRequest::SetFilterIp(const string& _filterIp)
 bool DescribeScdnBotRecordsRequest::FilterIpHasBeenSet() const
 {
     return m_filterIpHasBeenSet;
+}
+
+vector<string> DescribeScdnBotRecordsRequest::GetDomains() const
+{
+    return m_domains;
+}
+
+void DescribeScdnBotRecordsRequest::SetDomains(const vector<string>& _domains)
+{
+    m_domains = _domains;
+    m_domainsHasBeenSet = true;
+}
+
+bool DescribeScdnBotRecordsRequest::DomainsHasBeenSet() const
+{
+    return m_domainsHasBeenSet;
 }
 
 

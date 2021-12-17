@@ -34,6 +34,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/FlushBinlogResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDBSecurityGroupsResponse.h
   include/tencentcloud/dcdb/v20180411/model/CancelDcnJobResponse.h
+  include/tencentcloud/dcdb/v20180411/model/DescribeFileDownloadUrlRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDBSyncModeResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeProjectSecurityGroupsRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBUpgradePriceResponse.h
@@ -83,6 +84,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DCDBInstanceInfo.h
   include/tencentcloud/dcdb/v20180411/model/ModifyDBInstanceSecurityGroupsRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDcnDetailRequest.h
+  include/tencentcloud/dcdb/v20180411/model/DescribeFileDownloadUrlResponse.h
   include/tencentcloud/dcdb/v20180411/model/ModifyDBParametersResponse.h
   include/tencentcloud/dcdb/v20180411/model/DCDBShardInfo.h
   include/tencentcloud/dcdb/v20180411/model/CopyAccountPrivilegesRequest.h
@@ -171,6 +173,7 @@ set(dcdb_src
   src/v20180411/model/FlushBinlogResponse.cpp
   src/v20180411/model/DescribeDBSecurityGroupsResponse.cpp
   src/v20180411/model/CancelDcnJobResponse.cpp
+  src/v20180411/model/DescribeFileDownloadUrlRequest.cpp
   src/v20180411/model/DescribeDBSyncModeResponse.cpp
   src/v20180411/model/DescribeProjectSecurityGroupsRequest.cpp
   src/v20180411/model/DescribeDCDBUpgradePriceResponse.cpp
@@ -220,6 +223,7 @@ set(dcdb_src
   src/v20180411/model/DCDBInstanceInfo.cpp
   src/v20180411/model/ModifyDBInstanceSecurityGroupsRequest.cpp
   src/v20180411/model/DescribeDcnDetailRequest.cpp
+  src/v20180411/model/DescribeFileDownloadUrlResponse.cpp
   src/v20180411/model/ModifyDBParametersResponse.cpp
   src/v20180411/model/DCDBShardInfo.cpp
   src/v20180411/model/CopyAccountPrivilegesRequest.cpp

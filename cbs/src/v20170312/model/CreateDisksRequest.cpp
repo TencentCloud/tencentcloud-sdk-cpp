@@ -36,7 +36,8 @@ CreateDisksRequest::CreateDisksRequest() :
     m_clientTokenHasBeenSet(false),
     m_encryptHasBeenSet(false),
     m_diskChargePrepaidHasBeenSet(false),
-    m_deleteSnapshotHasBeenSet(false)
+    m_deleteSnapshotHasBeenSet(false),
+    m_autoMountConfigurationHasBeenSet(false)
 {
 }
 
@@ -166,6 +167,15 @@ string CreateDisksRequest::ToJsonString() const
         string key = "DeleteSnapshot";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deleteSnapshot, allocator);
+    }
+
+    if (m_autoMountConfigurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoMountConfiguration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_autoMountConfiguration.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -398,6 +408,22 @@ void CreateDisksRequest::SetDeleteSnapshot(const int64_t& _deleteSnapshot)
 bool CreateDisksRequest::DeleteSnapshotHasBeenSet() const
 {
     return m_deleteSnapshotHasBeenSet;
+}
+
+AutoMountConfiguration CreateDisksRequest::GetAutoMountConfiguration() const
+{
+    return m_autoMountConfiguration;
+}
+
+void CreateDisksRequest::SetAutoMountConfiguration(const AutoMountConfiguration& _autoMountConfiguration)
+{
+    m_autoMountConfiguration = _autoMountConfiguration;
+    m_autoMountConfigurationHasBeenSet = true;
+}
+
+bool CreateDisksRequest::AutoMountConfigurationHasBeenSet() const
+{
+    return m_autoMountConfigurationHasBeenSet;
 }
 
 

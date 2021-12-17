@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取磁盘ID列表
-                     * @return DiskIds 磁盘ID列表
+                     * 获取云硬盘ID列表。
+                     * @return DiskIds 云硬盘ID列表。
                      */
                     std::vector<std::string> GetDiskIds() const;
 
                     /**
-                     * 设置磁盘ID列表
-                     * @param DiskIds 磁盘ID列表
+                     * 设置云硬盘ID列表。
+                     * @param DiskIds 云硬盘ID列表。
                      */
                     void SetDiskIds(const std::vector<std::string>& _diskIds);
 
@@ -64,7 +64,7 @@ namespace TencentCloud
                     /**
                      * 获取过滤器列表。
 disk-id
-按照【磁盘 ID】进行过滤。
+按照【云硬盘 ID】进行过滤。
 类型：String
 必选：否
 instance-id
@@ -72,7 +72,7 @@ instance-id
 类型：String
 必选：否
 disk-name
-按照【磁盘名称】进行过滤。
+按照【云硬盘名称】进行过滤。
 类型：String
 必选：否
 zone
@@ -80,17 +80,17 @@ zone
 类型：String
 必选：否
 disk-usage
-按照【磁盘类型】进行过滤。
+按照【云硬盘类型】进行过滤。
 类型：String
 必选：否
 disk-state
-按照【磁盘状态】进行过滤。
+按照【云硬盘状态】进行过滤。
 类型：String
 必选：否
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 DiskIds 和 Filters。
                      * @return Filters 过滤器列表。
 disk-id
-按照【磁盘 ID】进行过滤。
+按照【云硬盘 ID】进行过滤。
 类型：String
 必选：否
 instance-id
@@ -98,7 +98,7 @@ instance-id
 类型：String
 必选：否
 disk-name
-按照【磁盘名称】进行过滤。
+按照【云硬盘名称】进行过滤。
 类型：String
 必选：否
 zone
@@ -106,11 +106,11 @@ zone
 类型：String
 必选：否
 disk-usage
-按照【磁盘类型】进行过滤。
+按照【云硬盘类型】进行过滤。
 类型：String
 必选：否
 disk-state
-按照【磁盘状态】进行过滤。
+按照【云硬盘状态】进行过滤。
 类型：String
 必选：否
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 DiskIds 和 Filters。
@@ -120,7 +120,7 @@ disk-state
                     /**
                      * 设置过滤器列表。
 disk-id
-按照【磁盘 ID】进行过滤。
+按照【云硬盘 ID】进行过滤。
 类型：String
 必选：否
 instance-id
@@ -128,7 +128,7 @@ instance-id
 类型：String
 必选：否
 disk-name
-按照【磁盘名称】进行过滤。
+按照【云硬盘名称】进行过滤。
 类型：String
 必选：否
 zone
@@ -136,17 +136,17 @@ zone
 类型：String
 必选：否
 disk-usage
-按照【磁盘类型】进行过滤。
+按照【云硬盘类型】进行过滤。
 类型：String
 必选：否
 disk-state
-按照【磁盘状态】进行过滤。
+按照【云硬盘状态】进行过滤。
 类型：String
 必选：否
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 DiskIds 和 Filters。
                      * @param Filters 过滤器列表。
 disk-id
-按照【磁盘 ID】进行过滤。
+按照【云硬盘 ID】进行过滤。
 类型：String
 必选：否
 instance-id
@@ -154,7 +154,7 @@ instance-id
 类型：String
 必选：否
 disk-name
-按照【磁盘名称】进行过滤。
+按照【云硬盘名称】进行过滤。
 类型：String
 必选：否
 zone
@@ -162,11 +162,11 @@ zone
 类型：String
 必选：否
 disk-usage
-按照【磁盘类型】进行过滤。
+按照【云硬盘类型】进行过滤。
 类型：String
 必选：否
 disk-state
-按照【磁盘状态】进行过滤。
+按照【云硬盘状态】进行过滤。
 类型：String
 必选：否
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 DiskIds 和 Filters。
@@ -198,14 +198,14 @@ disk-state
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0
-                     * @return Offset 偏移量，默认为0
+                     * 获取偏移量，默认为0。
+                     * @return Offset 偏移量，默认为0。
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0
-                     * @param Offset 偏移量，默认为0
+                     * 设置偏移量，默认为0。
+                     * @param Offset 偏移量，默认为0。
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -216,14 +216,14 @@ disk-state
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取云盘列表排序的依据字段。取值范围："CREATED_TIME"：依据云盘的创建时间排序。 "EXPIRED_TIME"：依据云盘的到期时间排序。"DISK_SIZE"：依据云盘的大小排序。默认按云盘创建时间排序。
-                     * @return OrderField 云盘列表排序的依据字段。取值范围："CREATED_TIME"：依据云盘的创建时间排序。 "EXPIRED_TIME"：依据云盘的到期时间排序。"DISK_SIZE"：依据云盘的大小排序。默认按云盘创建时间排序。
+                     * 获取云硬盘列表排序的依据字段。取值范围："CREATED_TIME"：依据云硬盘的创建时间排序。 "EXPIRED_TIME"：依据云硬盘的到期时间排序。"DISK_SIZE"：依据云硬盘的大小排序。默认按云硬盘创建时间排序。
+                     * @return OrderField 云硬盘列表排序的依据字段。取值范围："CREATED_TIME"：依据云硬盘的创建时间排序。 "EXPIRED_TIME"：依据云硬盘的到期时间排序。"DISK_SIZE"：依据云硬盘的大小排序。默认按云硬盘创建时间排序。
                      */
                     std::string GetOrderField() const;
 
                     /**
-                     * 设置云盘列表排序的依据字段。取值范围："CREATED_TIME"：依据云盘的创建时间排序。 "EXPIRED_TIME"：依据云盘的到期时间排序。"DISK_SIZE"：依据云盘的大小排序。默认按云盘创建时间排序。
-                     * @param OrderField 云盘列表排序的依据字段。取值范围："CREATED_TIME"：依据云盘的创建时间排序。 "EXPIRED_TIME"：依据云盘的到期时间排序。"DISK_SIZE"：依据云盘的大小排序。默认按云盘创建时间排序。
+                     * 设置云硬盘列表排序的依据字段。取值范围："CREATED_TIME"：依据云硬盘的创建时间排序。 "EXPIRED_TIME"：依据云硬盘的到期时间排序。"DISK_SIZE"：依据云硬盘的大小排序。默认按云硬盘创建时间排序。
+                     * @param OrderField 云硬盘列表排序的依据字段。取值范围："CREATED_TIME"：依据云硬盘的创建时间排序。 "EXPIRED_TIME"：依据云硬盘的到期时间排序。"DISK_SIZE"：依据云硬盘的大小排序。默认按云硬盘创建时间排序。
                      */
                     void SetOrderField(const std::string& _orderField);
 
@@ -234,14 +234,14 @@ disk-state
                     bool OrderFieldHasBeenSet() const;
 
                     /**
-                     * 获取输出云盘列表的排列顺序。取值范围："ASC"：升序排列。 "DESC"：降序排列。默认按降序排列
-                     * @return Order 输出云盘列表的排列顺序。取值范围："ASC"：升序排列。 "DESC"：降序排列。默认按降序排列
+                     * 获取输出云硬盘列表的排列顺序。取值范围："ASC"：升序排列。 "DESC"：降序排列。默认按降序排列。
+                     * @return Order 输出云硬盘列表的排列顺序。取值范围："ASC"：升序排列。 "DESC"：降序排列。默认按降序排列。
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置输出云盘列表的排列顺序。取值范围："ASC"：升序排列。 "DESC"：降序排列。默认按降序排列
-                     * @param Order 输出云盘列表的排列顺序。取值范围："ASC"：升序排列。 "DESC"：降序排列。默认按降序排列
+                     * 设置输出云硬盘列表的排列顺序。取值范围："ASC"：升序排列。 "DESC"：降序排列。默认按降序排列。
+                     * @param Order 输出云硬盘列表的排列顺序。取值范围："ASC"：升序排列。 "DESC"：降序排列。默认按降序排列。
                      */
                     void SetOrder(const std::string& _order);
 
@@ -254,7 +254,7 @@ disk-state
                 private:
 
                     /**
-                     * 磁盘ID列表
+                     * 云硬盘ID列表。
                      */
                     std::vector<std::string> m_diskIds;
                     bool m_diskIdsHasBeenSet;
@@ -262,7 +262,7 @@ disk-state
                     /**
                      * 过滤器列表。
 disk-id
-按照【磁盘 ID】进行过滤。
+按照【云硬盘 ID】进行过滤。
 类型：String
 必选：否
 instance-id
@@ -270,7 +270,7 @@ instance-id
 类型：String
 必选：否
 disk-name
-按照【磁盘名称】进行过滤。
+按照【云硬盘名称】进行过滤。
 类型：String
 必选：否
 zone
@@ -278,11 +278,11 @@ zone
 类型：String
 必选：否
 disk-usage
-按照【磁盘类型】进行过滤。
+按照【云硬盘类型】进行过滤。
 类型：String
 必选：否
 disk-state
-按照【磁盘状态】进行过滤。
+按照【云硬盘状态】进行过滤。
 类型：String
 必选：否
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 DiskIds 和 Filters。
@@ -297,19 +297,19 @@ disk-state
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0
+                     * 偏移量，默认为0。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 云盘列表排序的依据字段。取值范围："CREATED_TIME"：依据云盘的创建时间排序。 "EXPIRED_TIME"：依据云盘的到期时间排序。"DISK_SIZE"：依据云盘的大小排序。默认按云盘创建时间排序。
+                     * 云硬盘列表排序的依据字段。取值范围："CREATED_TIME"：依据云硬盘的创建时间排序。 "EXPIRED_TIME"：依据云硬盘的到期时间排序。"DISK_SIZE"：依据云硬盘的大小排序。默认按云硬盘创建时间排序。
                      */
                     std::string m_orderField;
                     bool m_orderFieldHasBeenSet;
 
                     /**
-                     * 输出云盘列表的排列顺序。取值范围："ASC"：升序排列。 "DESC"：降序排列。默认按降序排列
+                     * 输出云硬盘列表的排列顺序。取值范围："ASC"：升序排列。 "DESC"：降序排列。默认按降序排列。
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;

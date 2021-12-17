@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取磁盘ID列表
-                     * @return DiskIds 磁盘ID列表
+                     * 获取云硬盘ID列表。
+                     * @return DiskIds 云硬盘ID列表。
                      */
                     std::vector<std::string> GetDiskIds() const;
 
                     /**
-                     * 设置磁盘ID列表
-                     * @param DiskIds 磁盘ID列表
+                     * 设置云硬盘ID列表。
+                     * @param DiskIds 云硬盘ID列表。
                      */
                     void SetDiskIds(const std::vector<std::string>& _diskIds);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool DiskIdsHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取实例ID。
+                     * @return InstanceId 实例ID。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * 设置实例ID。
+                     * @param InstanceId 实例ID。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取续费标识
-                     * @return RenewFlag 续费标识
+                     * 获取续费标识。
+                     * @return RenewFlag 续费标识。
                      */
                     std::string GetRenewFlag() const;
 
                     /**
-                     * 设置续费标识
-                     * @param RenewFlag 续费标识
+                     * 设置续费标识。
+                     * @param RenewFlag 续费标识。
                      */
                     void SetRenewFlag(const std::string& _renewFlag);
 
@@ -99,19 +99,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 磁盘ID列表
+                     * 云硬盘ID列表。
                      */
                     std::vector<std::string> m_diskIds;
                     bool m_diskIdsHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * 实例ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 续费标识
+                     * 续费标识。
                      */
                     std::string m_renewFlag;
                     bool m_renewFlagHasBeenSet;

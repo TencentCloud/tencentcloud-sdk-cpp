@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 可退还磁盘详细信息
+                * 可退还云硬盘详细信息
                 */
                 class DiskReturnable : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取磁盘ID
-                     * @return DiskId 磁盘ID
+                     * 获取云硬盘ID。
+                     * @return DiskId 云硬盘ID。
                      */
                     std::string GetDiskId() const;
 
                     /**
-                     * 设置磁盘ID
-                     * @param DiskId 磁盘ID
+                     * 设置云硬盘ID。
+                     * @param DiskId 云硬盘ID。
                      */
                     void SetDiskId(const std::string& _diskId);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool DiskIdHasBeenSet() const;
 
                     /**
-                     * 获取磁盘是否可退还。
-                     * @return IsReturnable 磁盘是否可退还。
+                     * 获取云硬盘是否可退还。
+                     * @return IsReturnable 云硬盘是否可退还。
                      */
                     bool GetIsReturnable() const;
 
                     /**
-                     * 设置磁盘是否可退还。
-                     * @param IsReturnable 磁盘是否可退还。
+                     * 设置云硬盘是否可退还。
+                     * @param IsReturnable 云硬盘是否可退还。
                      */
                     void SetIsReturnable(const bool& _isReturnable);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool IsReturnableHasBeenSet() const;
 
                     /**
-                     * 获取实例退还失败错误码。
-                     * @return ReturnFailCode 实例退还失败错误码。
+                     * 获取云硬盘退还失败错误码。
+                     * @return ReturnFailCode 云硬盘退还失败错误码。
                      */
                     int64_t GetReturnFailCode() const;
 
                     /**
-                     * 设置实例退还失败错误码。
-                     * @param ReturnFailCode 实例退还失败错误码。
+                     * 设置云硬盘退还失败错误码。
+                     * @param ReturnFailCode 云硬盘退还失败错误码。
                      */
                     void SetReturnFailCode(const int64_t& _returnFailCode);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool ReturnFailCodeHasBeenSet() const;
 
                     /**
-                     * 获取实例退还失败错误信息。
-                     * @return ReturnFailMessage 实例退还失败错误信息。
+                     * 获取云硬盘退还失败错误信息。
+                     * @return ReturnFailMessage 云硬盘退还失败错误信息。
                      */
                     std::string GetReturnFailMessage() const;
 
                     /**
-                     * 设置实例退还失败错误信息。
-                     * @param ReturnFailMessage 实例退还失败错误信息。
+                     * 设置云硬盘退还失败错误信息。
+                     * @param ReturnFailMessage 云硬盘退还失败错误信息。
                      */
                     void SetReturnFailMessage(const std::string& _returnFailMessage);
 
@@ -121,25 +121,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 磁盘ID
+                     * 云硬盘ID。
                      */
                     std::string m_diskId;
                     bool m_diskIdHasBeenSet;
 
                     /**
-                     * 磁盘是否可退还。
+                     * 云硬盘是否可退还。
                      */
                     bool m_isReturnable;
                     bool m_isReturnableHasBeenSet;
 
                     /**
-                     * 实例退还失败错误码。
+                     * 云硬盘退还失败错误码。
                      */
                     int64_t m_returnFailCode;
                     bool m_returnFailCodeHasBeenSet;
 
                     /**
-                     * 实例退还失败错误信息。
+                     * 云硬盘退还失败错误信息。
                      */
                     std::string m_returnFailMessage;
                     bool m_returnFailMessageHasBeenSet;

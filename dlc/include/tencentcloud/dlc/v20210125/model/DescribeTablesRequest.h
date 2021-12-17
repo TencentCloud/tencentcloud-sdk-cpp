@@ -124,14 +124,14 @@ table-id - String - （过滤条件）table id形如：12342。
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取指定查询的数据源名称，默认为CosDataCatalog
-                     * @return DatasourceConnectionName 指定查询的数据源名称，默认为CosDataCatalog
+                     * 获取指定查询的数据源名称，默认为DataLakeCatalog
+                     * @return DatasourceConnectionName 指定查询的数据源名称，默认为DataLakeCatalog
                      */
                     std::string GetDatasourceConnectionName() const;
 
                     /**
-                     * 设置指定查询的数据源名称，默认为CosDataCatalog
-                     * @param DatasourceConnectionName 指定查询的数据源名称，默认为CosDataCatalog
+                     * 设置指定查询的数据源名称，默认为DataLakeCatalog
+                     * @param DatasourceConnectionName 指定查询的数据源名称，默认为DataLakeCatalog
                      */
                     void SetDatasourceConnectionName(const std::string& _datasourceConnectionName);
 
@@ -140,6 +140,96 @@ table-id - String - （过滤条件）table id形如：12342。
                      * @return DatasourceConnectionName 是否已赋值
                      */
                     bool DatasourceConnectionNameHasBeenSet() const;
+
+                    /**
+                     * 获取起始时间：用于对更新时间的筛选
+                     * @return StartTime 起始时间：用于对更新时间的筛选
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置起始时间：用于对更新时间的筛选
+                     * @param StartTime 起始时间：用于对更新时间的筛选
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取终止时间：用于对更新时间的筛选
+                     * @return EndTime 终止时间：用于对更新时间的筛选
+                     */
+                    std::string GetEndTime() const;
+
+                    /**
+                     * 设置终止时间：用于对更新时间的筛选
+                     * @param EndTime 终止时间：用于对更新时间的筛选
+                     */
+                    void SetEndTime(const std::string& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     */
+                    bool EndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取排序字段，支持：ModifiedTime（默认）；CreateTime
+                     * @return Sort 排序字段，支持：ModifiedTime（默认）；CreateTime
+                     */
+                    std::string GetSort() const;
+
+                    /**
+                     * 设置排序字段，支持：ModifiedTime（默认）；CreateTime
+                     * @param Sort 排序字段，支持：ModifiedTime（默认）；CreateTime
+                     */
+                    void SetSort(const std::string& _sort);
+
+                    /**
+                     * 判断参数 Sort 是否已赋值
+                     * @return Sort 是否已赋值
+                     */
+                    bool SortHasBeenSet() const;
+
+                    /**
+                     * 获取排序字段，false：降序（默认）；true
+                     * @return Asc 排序字段，false：降序（默认）；true
+                     */
+                    bool GetAsc() const;
+
+                    /**
+                     * 设置排序字段，false：降序（默认）；true
+                     * @param Asc 排序字段，false：降序（默认）；true
+                     */
+                    void SetAsc(const bool& _asc);
+
+                    /**
+                     * 判断参数 Asc 是否已赋值
+                     * @return Asc 是否已赋值
+                     */
+                    bool AscHasBeenSet() const;
+
+                    /**
+                     * 获取table type，表类型查询,可用值:EXTERNAL_TABLE,INDEX_TABLE,MANAGED_TABLE,MATERIALIZED_VIEW,TABLE,VIEW,VIRTUAL_VIEW
+                     * @return TableType table type，表类型查询,可用值:EXTERNAL_TABLE,INDEX_TABLE,MANAGED_TABLE,MATERIALIZED_VIEW,TABLE,VIEW,VIRTUAL_VIEW
+                     */
+                    std::string GetTableType() const;
+
+                    /**
+                     * 设置table type，表类型查询,可用值:EXTERNAL_TABLE,INDEX_TABLE,MANAGED_TABLE,MATERIALIZED_VIEW,TABLE,VIEW,VIRTUAL_VIEW
+                     * @param TableType table type，表类型查询,可用值:EXTERNAL_TABLE,INDEX_TABLE,MANAGED_TABLE,MATERIALIZED_VIEW,TABLE,VIEW,VIRTUAL_VIEW
+                     */
+                    void SetTableType(const std::string& _tableType);
+
+                    /**
+                     * 判断参数 TableType 是否已赋值
+                     * @return TableType 是否已赋值
+                     */
+                    bool TableTypeHasBeenSet() const;
 
                 private:
 
@@ -170,10 +260,40 @@ table-id - String - （过滤条件）table id形如：12342。
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 指定查询的数据源名称，默认为CosDataCatalog
+                     * 指定查询的数据源名称，默认为DataLakeCatalog
                      */
                     std::string m_datasourceConnectionName;
                     bool m_datasourceConnectionNameHasBeenSet;
+
+                    /**
+                     * 起始时间：用于对更新时间的筛选
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 终止时间：用于对更新时间的筛选
+                     */
+                    std::string m_endTime;
+                    bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 排序字段，支持：ModifiedTime（默认）；CreateTime
+                     */
+                    std::string m_sort;
+                    bool m_sortHasBeenSet;
+
+                    /**
+                     * 排序字段，false：降序（默认）；true
+                     */
+                    bool m_asc;
+                    bool m_ascHasBeenSet;
+
+                    /**
+                     * table type，表类型查询,可用值:EXTERNAL_TABLE,INDEX_TABLE,MANAGED_TABLE,MATERIALIZED_VIEW,TABLE,VIEW,VIRTUAL_VIEW
+                     */
+                    std::string m_tableType;
+                    bool m_tableTypeHasBeenSet;
 
                 };
             }

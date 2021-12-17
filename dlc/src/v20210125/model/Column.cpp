@@ -26,7 +26,10 @@ Column::Column() :
     m_commentHasBeenSet(false),
     m_precisionHasBeenSet(false),
     m_scaleHasBeenSet(false),
-    m_nullableHasBeenSet(false)
+    m_nullableHasBeenSet(false),
+    m_positionHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_modifiedTimeHasBeenSet(false)
 {
 }
 
@@ -95,6 +98,36 @@ CoreInternalOutcome Column::Deserialize(const rapidjson::Value &value)
         m_nullableHasBeenSet = true;
     }
 
+    if (value.HasMember("Position") && !value["Position"].IsNull())
+    {
+        if (!value["Position"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Column.Position` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_position = value["Position"].GetInt64();
+        m_positionHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Column.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ModifiedTime") && !value["ModifiedTime"].IsNull())
+    {
+        if (!value["ModifiedTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Column.ModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifiedTime = string(value["ModifiedTime"].GetString());
+        m_modifiedTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +181,30 @@ void Column::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "Nullable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_nullable.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_positionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Position";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_position, allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modifiedTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifiedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modifiedTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +304,53 @@ void Column::SetNullable(const string& _nullable)
 bool Column::NullableHasBeenSet() const
 {
     return m_nullableHasBeenSet;
+}
+
+int64_t Column::GetPosition() const
+{
+    return m_position;
+}
+
+void Column::SetPosition(const int64_t& _position)
+{
+    m_position = _position;
+    m_positionHasBeenSet = true;
+}
+
+bool Column::PositionHasBeenSet() const
+{
+    return m_positionHasBeenSet;
+}
+
+string Column::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void Column::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool Column::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+string Column::GetModifiedTime() const
+{
+    return m_modifiedTime;
+}
+
+void Column::SetModifiedTime(const string& _modifiedTime)
+{
+    m_modifiedTime = _modifiedTime;
+    m_modifiedTimeHasBeenSet = true;
+}
+
+bool Column::ModifiedTimeHasBeenSet() const
+{
+    return m_modifiedTimeHasBeenSet;
 }
 

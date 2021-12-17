@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取磁盘ID列表
-                     * @return DiskIds 磁盘ID列表
+                     * 获取云硬盘ID列表。
+                     * @return DiskIds 云硬盘ID列表。
                      */
                     std::vector<std::string> GetDiskIds() const;
 
                     /**
-                     * 设置磁盘ID列表
-                     * @param DiskIds 磁盘ID列表
+                     * 设置云硬盘ID列表。
+                     * @param DiskIds 云硬盘ID列表。
                      */
                     void SetDiskIds(const std::vector<std::string>& _diskIds);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool DiskIdsHasBeenSet() const;
 
                     /**
-                     * 获取磁盘名称
-                     * @return DiskName 磁盘名称
+                     * 获取云硬盘名称。
+                     * @return DiskName 云硬盘名称。
                      */
                     std::string GetDiskName() const;
 
                     /**
-                     * 设置磁盘名称
-                     * @param DiskName 磁盘名称
+                     * 设置云硬盘名称。
+                     * @param DiskName 云硬盘名称。
                      */
                     void SetDiskName(const std::string& _diskName);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 磁盘ID列表
+                     * 云硬盘ID列表。
                      */
                     std::vector<std::string> m_diskIds;
                     bool m_diskIdsHasBeenSet;
 
                     /**
-                     * 磁盘名称
+                     * 云硬盘名称。
                      */
                     std::string m_diskName;
                     bool m_diskNameHasBeenSet;

@@ -298,6 +298,49 @@ ClsClient::CreateConfigOutcomeCallable ClsClient::CreateConfigCallable(const Cre
     return task->get_future();
 }
 
+ClsClient::CreateConsumerOutcome ClsClient::CreateConsumer(const CreateConsumerRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateConsumer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateConsumerResponse rsp = CreateConsumerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateConsumerOutcome(rsp);
+        else
+            return CreateConsumerOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateConsumerOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CreateConsumerAsync(const CreateConsumerRequest& request, const CreateConsumerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateConsumer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::CreateConsumerOutcomeCallable ClsClient::CreateConsumerCallable(const CreateConsumerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateConsumerOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateConsumer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::CreateExportOutcome ClsClient::CreateExport(const CreateExportRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateExport");
@@ -807,6 +850,49 @@ ClsClient::DeleteConfigFromMachineGroupOutcomeCallable ClsClient::DeleteConfigFr
         [this, request]()
         {
             return this->DeleteConfigFromMachineGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::DeleteConsumerOutcome ClsClient::DeleteConsumer(const DeleteConsumerRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteConsumer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteConsumerResponse rsp = DeleteConsumerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteConsumerOutcome(rsp);
+        else
+            return DeleteConsumerOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteConsumerOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteConsumerAsync(const DeleteConsumerRequest& request, const DeleteConsumerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteConsumer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DeleteConsumerOutcomeCallable ClsClient::DeleteConsumerCallable(const DeleteConsumerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteConsumerOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteConsumer(request);
         }
     );
 
@@ -1409,6 +1495,49 @@ ClsClient::DescribeConfigsOutcomeCallable ClsClient::DescribeConfigsCallable(con
         [this, request]()
         {
             return this->DescribeConfigs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::DescribeConsumerOutcome ClsClient::DescribeConsumer(const DescribeConsumerRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConsumer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConsumerResponse rsp = DescribeConsumerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConsumerOutcome(rsp);
+        else
+            return DescribeConsumerOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConsumerOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeConsumerAsync(const DescribeConsumerRequest& request, const DescribeConsumerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConsumer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DescribeConsumerOutcomeCallable ClsClient::DescribeConsumerCallable(const DescribeConsumerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConsumerOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConsumer(request);
         }
     );
 
@@ -2097,6 +2226,49 @@ ClsClient::ModifyConfigOutcomeCallable ClsClient::ModifyConfigCallable(const Mod
         [this, request]()
         {
             return this->ModifyConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::ModifyConsumerOutcome ClsClient::ModifyConsumer(const ModifyConsumerRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyConsumer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyConsumerResponse rsp = ModifyConsumerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyConsumerOutcome(rsp);
+        else
+            return ModifyConsumerOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyConsumerOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifyConsumerAsync(const ModifyConsumerRequest& request, const ModifyConsumerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyConsumer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::ModifyConsumerOutcomeCallable ClsClient::ModifyConsumerCallable(const ModifyConsumerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyConsumerOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyConsumer(request);
         }
     );
 

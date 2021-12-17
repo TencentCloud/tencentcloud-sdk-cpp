@@ -493,6 +493,24 @@ IDC-IP Google
                      */
                     bool FilterIpHasBeenSet() const;
 
+                    /**
+                     * 获取域名列表，为空表示查询AppID维度数据
+                     * @return Domains 域名列表，为空表示查询AppID维度数据
+                     */
+                    std::vector<std::string> GetDomains() const;
+
+                    /**
+                     * 设置域名列表，为空表示查询AppID维度数据
+                     * @param Domains 域名列表，为空表示查询AppID维度数据
+                     */
+                    void SetDomains(const std::vector<std::string>& _domains);
+
+                    /**
+                     * 判断参数 Domains 是否已赋值
+                     * @return Domains 是否已赋值
+                     */
+                    bool DomainsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -623,6 +641,12 @@ IDC-IP Google
                      */
                     std::string m_filterIp;
                     bool m_filterIpHasBeenSet;
+
+                    /**
+                     * 域名列表，为空表示查询AppID维度数据
+                     */
+                    std::vector<std::string> m_domains;
+                    bool m_domainsHasBeenSet;
 
                 };
             }

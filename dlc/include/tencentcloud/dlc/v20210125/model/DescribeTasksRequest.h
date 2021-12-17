@@ -84,10 +84,14 @@ namespace TencentCloud
 task-id - String - （任务ID准确过滤）task-id取值形如：e386471f-139a-4e59-877f-50ece8135b99。
 task-state - String - （任务状态过滤）取值范围 0(初始化)， 1(运行中)， 2(成功)， -1(失败)。
 task-sql-keyword - String - （SQL语句关键字模糊过滤）取值形如：DROP TABLE。
+task-operator- string （子uin过滤）
+task-type -string （任务类型过滤）分导入任务和sql任务
                      * @return Filters 过滤条件，如下支持的过滤类型，传参Name应为以下其中一个,其中task-id支持最大50个过滤个数，其他过滤参数支持的总数不超过5个。
 task-id - String - （任务ID准确过滤）task-id取值形如：e386471f-139a-4e59-877f-50ece8135b99。
 task-state - String - （任务状态过滤）取值范围 0(初始化)， 1(运行中)， 2(成功)， -1(失败)。
 task-sql-keyword - String - （SQL语句关键字模糊过滤）取值形如：DROP TABLE。
+task-operator- string （子uin过滤）
+task-type -string （任务类型过滤）分导入任务和sql任务
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -96,10 +100,14 @@ task-sql-keyword - String - （SQL语句关键字模糊过滤）取值形如：D
 task-id - String - （任务ID准确过滤）task-id取值形如：e386471f-139a-4e59-877f-50ece8135b99。
 task-state - String - （任务状态过滤）取值范围 0(初始化)， 1(运行中)， 2(成功)， -1(失败)。
 task-sql-keyword - String - （SQL语句关键字模糊过滤）取值形如：DROP TABLE。
+task-operator- string （子uin过滤）
+task-type -string （任务类型过滤）分导入任务和sql任务
                      * @param Filters 过滤条件，如下支持的过滤类型，传参Name应为以下其中一个,其中task-id支持最大50个过滤个数，其他过滤参数支持的总数不超过5个。
 task-id - String - （任务ID准确过滤）task-id取值形如：e386471f-139a-4e59-877f-50ece8135b99。
 task-state - String - （任务状态过滤）取值范围 0(初始化)， 1(运行中)， 2(成功)， -1(失败)。
 task-sql-keyword - String - （SQL语句关键字模糊过滤）取值形如：DROP TABLE。
+task-operator- string （子uin过滤）
+task-type -string （任务类型过滤）分导入任务和sql任务
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -110,14 +118,14 @@ task-sql-keyword - String - （SQL语句关键字模糊过滤）取值形如：D
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取排序字段，支持如下字段类型，create-time
-                     * @return SortBy 排序字段，支持如下字段类型，create-time
+                     * 获取排序字段，支持如下字段类型，create-time（创建时间，默认）、update-time（更新时间）
+                     * @return SortBy 排序字段，支持如下字段类型，create-time（创建时间，默认）、update-time（更新时间）
                      */
                     std::string GetSortBy() const;
 
                     /**
-                     * 设置排序字段，支持如下字段类型，create-time
-                     * @param SortBy 排序字段，支持如下字段类型，create-time
+                     * 设置排序字段，支持如下字段类型，create-time（创建时间，默认）、update-time（更新时间）
+                     * @param SortBy 排序字段，支持如下字段类型，create-time（创建时间，默认）、update-time（更新时间）
                      */
                     void SetSortBy(const std::string& _sortBy);
 
@@ -181,6 +189,24 @@ task-sql-keyword - String - （SQL语句关键字模糊过滤）取值形如：D
                      */
                     bool EndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取支持计算资源名字筛选
+                     * @return DataEngineName 支持计算资源名字筛选
+                     */
+                    std::string GetDataEngineName() const;
+
+                    /**
+                     * 设置支持计算资源名字筛选
+                     * @param DataEngineName 支持计算资源名字筛选
+                     */
+                    void SetDataEngineName(const std::string& _dataEngineName);
+
+                    /**
+                     * 判断参数 DataEngineName 是否已赋值
+                     * @return DataEngineName 是否已赋值
+                     */
+                    bool DataEngineNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -200,12 +226,14 @@ task-sql-keyword - String - （SQL语句关键字模糊过滤）取值形如：D
 task-id - String - （任务ID准确过滤）task-id取值形如：e386471f-139a-4e59-877f-50ece8135b99。
 task-state - String - （任务状态过滤）取值范围 0(初始化)， 1(运行中)， 2(成功)， -1(失败)。
 task-sql-keyword - String - （SQL语句关键字模糊过滤）取值形如：DROP TABLE。
+task-operator- string （子uin过滤）
+task-type -string （任务类型过滤）分导入任务和sql任务
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 排序字段，支持如下字段类型，create-time
+                     * 排序字段，支持如下字段类型，create-time（创建时间，默认）、update-time（更新时间）
                      */
                     std::string m_sortBy;
                     bool m_sortByHasBeenSet;
@@ -227,6 +255,12 @@ task-sql-keyword - String - （SQL语句关键字模糊过滤）取值形如：D
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 支持计算资源名字筛选
+                     */
+                    std::string m_dataEngineName;
+                    bool m_dataEngineNameHasBeenSet;
 
                 };
             }

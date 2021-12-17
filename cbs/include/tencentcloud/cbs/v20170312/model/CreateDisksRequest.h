@@ -24,6 +24,7 @@
 #include <tencentcloud/cbs/v20170312/model/Placement.h>
 #include <tencentcloud/cbs/v20170312/model/Tag.h>
 #include <tencentcloud/cbs/v20170312/model/DiskChargePrepaid.h>
+#include <tencentcloud/cbs/v20170312/model/AutoMountConfiguration.h>
 
 
 namespace TencentCloud
@@ -297,6 +298,24 @@ namespace TencentCloud
                      */
                     bool DeleteSnapshotHasBeenSet() const;
 
+                    /**
+                     * 获取创建云盘时指定自动挂载并初始化该数据盘。
+                     * @return AutoMountConfiguration 创建云盘时指定自动挂载并初始化该数据盘。
+                     */
+                    AutoMountConfiguration GetAutoMountConfiguration() const;
+
+                    /**
+                     * 设置创建云盘时指定自动挂载并初始化该数据盘。
+                     * @param AutoMountConfiguration 创建云盘时指定自动挂载并初始化该数据盘。
+                     */
+                    void SetAutoMountConfiguration(const AutoMountConfiguration& _autoMountConfiguration);
+
+                    /**
+                     * 判断参数 AutoMountConfiguration 是否已赋值
+                     * @return AutoMountConfiguration 是否已赋值
+                     */
+                    bool AutoMountConfigurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -382,6 +401,12 @@ namespace TencentCloud
                      */
                     int64_t m_deleteSnapshot;
                     bool m_deleteSnapshotHasBeenSet;
+
+                    /**
+                     * 创建云盘时指定自动挂载并初始化该数据盘。
+                     */
+                    AutoMountConfiguration m_autoMountConfiguration;
+                    bool m_autoMountConfigurationHasBeenSet;
 
                 };
             }

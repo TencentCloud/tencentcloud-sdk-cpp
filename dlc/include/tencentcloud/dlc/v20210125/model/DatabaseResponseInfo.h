@@ -88,17 +88,17 @@ namespace TencentCloud
                     bool CommentHasBeenSet() const;
 
                     /**
-                     * 获取数据库属性列表。
+                     * 获取允许针对数据库的属性元数据信息进行指定。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Properties 数据库属性列表。
+                     * @return Properties 允许针对数据库的属性元数据信息进行指定。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Property> GetProperties() const;
 
                     /**
-                     * 设置数据库属性列表。
+                     * 设置允许针对数据库的属性元数据信息进行指定。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Properties 数据库属性列表。
+                     * @param Properties 允许针对数据库的属性元数据信息进行指定。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetProperties(const std::vector<Property>& _properties);
@@ -169,7 +169,7 @@ namespace TencentCloud
                     bool m_commentHasBeenSet;
 
                     /**
-                     * 数据库属性列表。
+                     * 允许针对数据库的属性元数据信息进行指定。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Property> m_properties;

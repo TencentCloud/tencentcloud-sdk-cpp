@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 磁盘价格
+                * 云硬盘价格
                 */
                 class DiskPrice : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取磁盘单价
-                     * @return OriginalDiskPrice 磁盘单价
+                     * 获取云硬盘单价。
+                     * @return OriginalDiskPrice 云硬盘单价。
                      */
                     double GetOriginalDiskPrice() const;
 
                     /**
-                     * 设置磁盘单价
-                     * @param OriginalDiskPrice 磁盘单价
+                     * 设置云硬盘单价。
+                     * @param OriginalDiskPrice 云硬盘单价。
                      */
                     void SetOriginalDiskPrice(const double& _originalDiskPrice);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool OriginalDiskPriceHasBeenSet() const;
 
                     /**
-                     * 获取磁盘总价
-                     * @return OriginalPrice 磁盘总价
+                     * 获取云硬盘总价。
+                     * @return OriginalPrice 云硬盘总价。
                      */
                     double GetOriginalPrice() const;
 
                     /**
-                     * 设置磁盘总价
-                     * @param OriginalPrice 磁盘总价
+                     * 设置云硬盘总价。
+                     * @param OriginalPrice 云硬盘总价。
                      */
                     void SetOriginalPrice(const double& _originalPrice);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool OriginalPriceHasBeenSet() const;
 
                     /**
-                     * 获取折扣
-                     * @return Discount 折扣
+                     * 获取折扣。
+                     * @return Discount 折扣。
                      */
                     double GetDiscount() const;
 
                     /**
-                     * 设置折扣
-                     * @param Discount 折扣
+                     * 设置折扣。
+                     * @param Discount 折扣。
                      */
                     void SetDiscount(const double& _discount);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool DiscountHasBeenSet() const;
 
                     /**
-                     * 获取折后总价
-                     * @return DiscountPrice 折后总价
+                     * 获取折后总价。
+                     * @return DiscountPrice 折后总价。
                      */
                     double GetDiscountPrice() const;
 
                     /**
-                     * 设置折后总价
-                     * @param DiscountPrice 折后总价
+                     * 设置折后总价。
+                     * @param DiscountPrice 折后总价。
                      */
                     void SetDiscountPrice(const double& _discountPrice);
 
@@ -121,25 +121,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 磁盘单价
+                     * 云硬盘单价。
                      */
                     double m_originalDiskPrice;
                     bool m_originalDiskPriceHasBeenSet;
 
                     /**
-                     * 磁盘总价
+                     * 云硬盘总价。
                      */
                     double m_originalPrice;
                     bool m_originalPriceHasBeenSet;
 
                     /**
-                     * 折扣
+                     * 折扣。
                      */
                     double m_discount;
                     bool m_discountHasBeenSet;
 
                     /**
-                     * 折后总价
+                     * 折后总价。
                      */
                     double m_discountPrice;
                     bool m_discountPriceHasBeenSet;

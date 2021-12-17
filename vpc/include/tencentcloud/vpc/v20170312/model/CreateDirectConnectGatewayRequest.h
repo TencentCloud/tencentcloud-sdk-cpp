@@ -170,6 +170,24 @@ namespace TencentCloud
                      */
                     bool ZoneHasBeenSet() const;
 
+                    /**
+                     * 获取专线网关高可用区容灾组ID
+                     * @return HaZoneGroupId 专线网关高可用区容灾组ID
+                     */
+                    std::string GetHaZoneGroupId() const;
+
+                    /**
+                     * 设置专线网关高可用区容灾组ID
+                     * @param HaZoneGroupId 专线网关高可用区容灾组ID
+                     */
+                    void SetHaZoneGroupId(const std::string& _haZoneGroupId);
+
+                    /**
+                     * 判断参数 HaZoneGroupId 是否已赋值
+                     * @return HaZoneGroupId 是否已赋值
+                     */
+                    bool HaZoneGroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -212,6 +230,12 @@ namespace TencentCloud
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
+
+                    /**
+                     * 专线网关高可用区容灾组ID
+                     */
+                    std::string m_haZoneGroupId;
+                    bool m_haZoneGroupIdHasBeenSet;
 
                 };
             }

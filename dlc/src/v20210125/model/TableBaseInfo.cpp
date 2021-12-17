@@ -23,7 +23,10 @@ using namespace std;
 TableBaseInfo::TableBaseInfo() :
     m_databaseNameHasBeenSet(false),
     m_tableNameHasBeenSet(false),
-    m_datasourceConnectionNameHasBeenSet(false)
+    m_datasourceConnectionNameHasBeenSet(false),
+    m_tableCommentHasBeenSet(false),
+    m_typeHasBeenSet(false),
+    m_tableFormatHasBeenSet(false)
 {
 }
 
@@ -62,6 +65,36 @@ CoreInternalOutcome TableBaseInfo::Deserialize(const rapidjson::Value &value)
         m_datasourceConnectionNameHasBeenSet = true;
     }
 
+    if (value.HasMember("TableComment") && !value["TableComment"].IsNull())
+    {
+        if (!value["TableComment"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableBaseInfo.TableComment` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tableComment = string(value["TableComment"].GetString());
+        m_tableCommentHasBeenSet = true;
+    }
+
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableBaseInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TableFormat") && !value["TableFormat"].IsNull())
+    {
+        if (!value["TableFormat"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableBaseInfo.TableFormat` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tableFormat = string(value["TableFormat"].GetString());
+        m_tableFormatHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +124,30 @@ void TableBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "DatasourceConnectionName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_datasourceConnectionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tableCommentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableComment";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tableComment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tableFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableFormat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tableFormat.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +199,53 @@ void TableBaseInfo::SetDatasourceConnectionName(const string& _datasourceConnect
 bool TableBaseInfo::DatasourceConnectionNameHasBeenSet() const
 {
     return m_datasourceConnectionNameHasBeenSet;
+}
+
+string TableBaseInfo::GetTableComment() const
+{
+    return m_tableComment;
+}
+
+void TableBaseInfo::SetTableComment(const string& _tableComment)
+{
+    m_tableComment = _tableComment;
+    m_tableCommentHasBeenSet = true;
+}
+
+bool TableBaseInfo::TableCommentHasBeenSet() const
+{
+    return m_tableCommentHasBeenSet;
+}
+
+string TableBaseInfo::GetType() const
+{
+    return m_type;
+}
+
+void TableBaseInfo::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool TableBaseInfo::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
+
+string TableBaseInfo::GetTableFormat() const
+{
+    return m_tableFormat;
+}
+
+void TableBaseInfo::SetTableFormat(const string& _tableFormat)
+{
+    m_tableFormat = _tableFormat;
+    m_tableFormatHasBeenSet = true;
+}
+
+bool TableBaseInfo::TableFormatHasBeenSet() const
+{
+    return m_tableFormatHasBeenSet;
 }
 

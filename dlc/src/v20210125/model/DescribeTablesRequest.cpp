@@ -27,7 +27,12 @@ DescribeTablesRequest::DescribeTablesRequest() :
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_datasourceConnectionNameHasBeenSet(false)
+    m_datasourceConnectionNameHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
+    m_sortHasBeenSet(false),
+    m_ascHasBeenSet(false),
+    m_tableTypeHasBeenSet(false)
 {
 }
 
@@ -83,6 +88,46 @@ string DescribeTablesRequest::ToJsonString() const
         string key = "DatasourceConnectionName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_datasourceConnectionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Sort";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sort.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ascHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Asc";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_asc, allocator);
+    }
+
+    if (m_tableTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tableType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -171,6 +216,86 @@ void DescribeTablesRequest::SetDatasourceConnectionName(const string& _datasourc
 bool DescribeTablesRequest::DatasourceConnectionNameHasBeenSet() const
 {
     return m_datasourceConnectionNameHasBeenSet;
+}
+
+string DescribeTablesRequest::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void DescribeTablesRequest::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool DescribeTablesRequest::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+string DescribeTablesRequest::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void DescribeTablesRequest::SetEndTime(const string& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool DescribeTablesRequest::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
+}
+
+string DescribeTablesRequest::GetSort() const
+{
+    return m_sort;
+}
+
+void DescribeTablesRequest::SetSort(const string& _sort)
+{
+    m_sort = _sort;
+    m_sortHasBeenSet = true;
+}
+
+bool DescribeTablesRequest::SortHasBeenSet() const
+{
+    return m_sortHasBeenSet;
+}
+
+bool DescribeTablesRequest::GetAsc() const
+{
+    return m_asc;
+}
+
+void DescribeTablesRequest::SetAsc(const bool& _asc)
+{
+    m_asc = _asc;
+    m_ascHasBeenSet = true;
+}
+
+bool DescribeTablesRequest::AscHasBeenSet() const
+{
+    return m_ascHasBeenSet;
+}
+
+string DescribeTablesRequest::GetTableType() const
+{
+    return m_tableType;
+}
+
+void DescribeTablesRequest::SetTableType(const string& _tableType)
+{
+    m_tableType = _tableType;
+    m_tableTypeHasBeenSet = true;
+}
+
+bool DescribeTablesRequest::TableTypeHasBeenSet() const
+{
+    return m_tableTypeHasBeenSet;
 }
 
 

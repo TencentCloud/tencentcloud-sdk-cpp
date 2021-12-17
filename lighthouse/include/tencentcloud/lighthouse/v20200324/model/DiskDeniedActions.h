@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取磁盘ID
-                     * @return DiskId 磁盘ID
+                     * 获取云硬盘ID。
+                     * @return DiskId 云硬盘ID。
                      */
                     std::string GetDiskId() const;
 
                     /**
-                     * 设置磁盘ID
-                     * @param DiskId 磁盘ID
+                     * 设置云硬盘ID。
+                     * @param DiskId 云硬盘ID。
                      */
                     void SetDiskId(const std::string& _diskId);
 
@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool DiskIdHasBeenSet() const;
 
                     /**
-                     * 获取操作限制列表
-                     * @return DeniedActions 操作限制列表
+                     * 获取操作限制列表。
+                     * @return DeniedActions 操作限制列表。
                      */
                     std::vector<DeniedAction> GetDeniedActions() const;
 
                     /**
-                     * 设置操作限制列表
-                     * @param DeniedActions 操作限制列表
+                     * 设置操作限制列表。
+                     * @param DeniedActions 操作限制列表。
                      */
                     void SetDeniedActions(const std::vector<DeniedAction>& _deniedActions);
 
@@ -86,13 +86,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 磁盘ID
+                     * 云硬盘ID。
                      */
                     std::string m_diskId;
                     bool m_diskIdHasBeenSet;
 
                     /**
-                     * 操作限制列表
+                     * 操作限制列表。
                      */
                     std::vector<DeniedAction> m_deniedActions;
                     bool m_deniedActionsHasBeenSet;

@@ -25,7 +25,8 @@ using namespace std;
 CreateTaskRequest::CreateTaskRequest() :
     m_taskHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
-    m_datasourceConnectionNameHasBeenSet(false)
+    m_datasourceConnectionNameHasBeenSet(false),
+    m_dataEngineNameHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string CreateTaskRequest::ToJsonString() const
         string key = "DatasourceConnectionName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_datasourceConnectionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataEngineNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataEngineName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dataEngineName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +124,22 @@ void CreateTaskRequest::SetDatasourceConnectionName(const string& _datasourceCon
 bool CreateTaskRequest::DatasourceConnectionNameHasBeenSet() const
 {
     return m_datasourceConnectionNameHasBeenSet;
+}
+
+string CreateTaskRequest::GetDataEngineName() const
+{
+    return m_dataEngineName;
+}
+
+void CreateTaskRequest::SetDataEngineName(const string& _dataEngineName)
+{
+    m_dataEngineName = _dataEngineName;
+    m_dataEngineNameHasBeenSet = true;
+}
+
+bool CreateTaskRequest::DataEngineNameHasBeenSet() const
+{
+    return m_dataEngineNameHasBeenSet;
 }
 
 

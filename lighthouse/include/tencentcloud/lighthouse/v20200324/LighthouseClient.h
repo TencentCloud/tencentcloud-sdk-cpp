@@ -402,7 +402,7 @@ namespace TencentCloud
                 AttachCcnOutcomeCallable AttachCcnCallable(const Model::AttachCcnRequest& request);
 
                 /**
-                 *本接口（AttachDisks）用于挂载一个或多个弹性云盘。
+                 *本接口（AttachDisks）用于挂载一个或多个云硬盘。
                  * @param req AttachDisksRequest
                  * @return AttachDisksOutcome
                  */
@@ -557,7 +557,7 @@ namespace TencentCloud
                 DescribeDiskConfigsOutcomeCallable DescribeDiskConfigsCallable(const Model::DescribeDiskConfigsRequest& request);
 
                 /**
-                 *本接口(DescribeDiskDiscount)用于查询云硬盘折扣信息
+                 *本接口(DescribeDiskDiscount)用于查询云硬盘折扣信息。
                  * @param req DescribeDiskDiscountRequest
                  * @return DescribeDiskDiscountOutcome
                  */
@@ -566,7 +566,7 @@ namespace TencentCloud
                 DescribeDiskDiscountOutcomeCallable DescribeDiskDiscountCallable(const Model::DescribeDiskDiscountRequest& request);
 
                 /**
-                 *本接口（DescribeDisks）用于查询磁盘信息。
+                 *本接口（DescribeDisks）用于查询云硬盘信息。
                  * @param req DescribeDisksRequest
                  * @return DescribeDisksOutcome
                  */
@@ -575,7 +575,7 @@ namespace TencentCloud
                 DescribeDisksOutcomeCallable DescribeDisksCallable(const Model::DescribeDisksRequest& request);
 
                 /**
-                 *本接口（DescribeDisksDeniedActions）用于查询一个或多个磁盘的操作限制列表信息
+                 *本接口（DescribeDisksDeniedActions）用于查询一个或多个云硬盘的操作限制列表信息。
                  * @param req DescribeDisksDeniedActionsRequest
                  * @return DescribeDisksDeniedActionsOutcome
                  */
@@ -584,7 +584,7 @@ namespace TencentCloud
                 DescribeDisksDeniedActionsOutcomeCallable DescribeDisksDeniedActionsCallable(const Model::DescribeDisksDeniedActionsRequest& request);
 
                 /**
-                 *本接口（DescribeDisksReturnable）用于查询磁盘是否可退还。
+                 *本接口（DescribeDisksReturnable）用于查询云硬盘是否可退还。
                  * @param req DescribeDisksReturnableRequest
                  * @return DescribeDisksReturnableOutcome
                  */
@@ -666,7 +666,7 @@ namespace TencentCloud
                 DescribeInstancesDeniedActionsOutcomeCallable DescribeInstancesDeniedActionsCallable(const Model::DescribeInstancesDeniedActionsRequest& request);
 
                 /**
-                 *本接口(DescribeInstancesDiskNum)用于查询实例挂载云盘数量。
+                 *本接口(DescribeInstancesDiskNum)用于查询实例挂载云硬盘数量。
                  * @param req DescribeInstancesDiskNumRequest
                  * @return DescribeInstancesDiskNumOutcome
                  */
@@ -765,7 +765,7 @@ namespace TencentCloud
                 DetachCcnOutcomeCallable DetachCcnCallable(const Model::DetachCcnRequest& request);
 
                 /**
-                 *本接口（DetachDisks）用于卸载一个或多个弹性云盘。
+                 *本接口（DetachDisks）用于卸载一个或多个云硬盘。
                  * @param req DetachDisksRequest
                  * @return DetachDisksOutcome
                  */
@@ -825,7 +825,7 @@ namespace TencentCloud
                 InquirePriceCreateInstancesOutcomeCallable InquirePriceCreateInstancesCallable(const Model::InquirePriceCreateInstancesRequest& request);
 
                 /**
-                 *本接口（InquirePriceRenewDisks）用于续费磁盘询价。
+                 *本接口（InquirePriceRenewDisks）用于续费云硬盘询价。
                  * @param req InquirePriceRenewDisksRequest
                  * @return InquirePriceRenewDisksOutcome
                  */
@@ -852,7 +852,7 @@ namespace TencentCloud
                 ModifyBlueprintAttributeOutcomeCallable ModifyBlueprintAttributeCallable(const Model::ModifyBlueprintAttributeRequest& request);
 
                 /**
-                 *本接口(ModifyDisksAttribute)用于修改磁盘属性
+                 *本接口(ModifyDisksAttribute)用于修改云硬盘属性。
                  * @param req ModifyDisksAttributeRequest
                  * @return ModifyDisksAttributeOutcome
                  */
@@ -861,7 +861,7 @@ namespace TencentCloud
                 ModifyDisksAttributeOutcomeCallable ModifyDisksAttributeCallable(const Model::ModifyDisksAttributeRequest& request);
 
                 /**
-                 *本接口（ModifyDisksRenewFlag）用于修改磁盘续费标识。
+                 *本接口（ModifyDisksRenewFlag）用于修改云硬盘续费标识。
                  * @param req ModifyDisksRenewFlagRequest
                  * @return ModifyDisksRenewFlagOutcome
                  */
@@ -1032,7 +1032,7 @@ namespace TencentCloud
                 StopInstancesOutcomeCallable StopInstancesCallable(const Model::StopInstancesRequest& request);
 
                 /**
-                 *本接口（TerminateDisks）用于销毁一个或多个磁盘。
+                 *本接口（TerminateDisks）用于销毁一个或多个云硬盘。
                  * @param req TerminateDisksRequest
                  * @return TerminateDisksOutcome
                  */

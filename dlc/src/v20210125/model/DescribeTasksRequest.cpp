@@ -29,7 +29,8 @@ DescribeTasksRequest::DescribeTasksRequest() :
     m_sortByHasBeenSet(false),
     m_sortingHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_dataEngineNameHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,14 @@ string DescribeTasksRequest::ToJsonString() const
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataEngineNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataEngineName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dataEngineName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -221,6 +230,22 @@ void DescribeTasksRequest::SetEndTime(const string& _endTime)
 bool DescribeTasksRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+string DescribeTasksRequest::GetDataEngineName() const
+{
+    return m_dataEngineName;
+}
+
+void DescribeTasksRequest::SetDataEngineName(const string& _dataEngineName)
+{
+    m_dataEngineName = _dataEngineName;
+    m_dataEngineNameHasBeenSet = true;
+}
+
+bool DescribeTasksRequest::DataEngineNameHasBeenSet() const
+{
+    return m_dataEngineNameHasBeenSet;
 }
 
 

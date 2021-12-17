@@ -26,7 +26,9 @@ DescribeDatabasesRequest::DescribeDatabasesRequest() :
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_keyWordHasBeenSet(false),
-    m_datasourceConnectionNameHasBeenSet(false)
+    m_datasourceConnectionNameHasBeenSet(false),
+    m_sortHasBeenSet(false),
+    m_ascHasBeenSet(false)
 {
 }
 
@@ -67,6 +69,22 @@ string DescribeDatabasesRequest::ToJsonString() const
         string key = "DatasourceConnectionName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_datasourceConnectionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Sort";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sort.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ascHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Asc";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_asc, allocator);
     }
 
 
@@ -139,6 +157,38 @@ void DescribeDatabasesRequest::SetDatasourceConnectionName(const string& _dataso
 bool DescribeDatabasesRequest::DatasourceConnectionNameHasBeenSet() const
 {
     return m_datasourceConnectionNameHasBeenSet;
+}
+
+string DescribeDatabasesRequest::GetSort() const
+{
+    return m_sort;
+}
+
+void DescribeDatabasesRequest::SetSort(const string& _sort)
+{
+    m_sort = _sort;
+    m_sortHasBeenSet = true;
+}
+
+bool DescribeDatabasesRequest::SortHasBeenSet() const
+{
+    return m_sortHasBeenSet;
+}
+
+bool DescribeDatabasesRequest::GetAsc() const
+{
+    return m_asc;
+}
+
+void DescribeDatabasesRequest::SetAsc(const bool& _asc)
+{
+    m_asc = _asc;
+    m_ascHasBeenSet = true;
+}
+
+bool DescribeDatabasesRequest::AscHasBeenSet() const
+{
+    return m_ascHasBeenSet;
 }
 
 

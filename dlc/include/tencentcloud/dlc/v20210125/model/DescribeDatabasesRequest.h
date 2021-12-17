@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool KeyWordHasBeenSet() const;
 
                     /**
-                     * 获取数据源唯名称，该名称可以通过DescribeDatasourceConnection接口查询到。默认为CosDataCatalog
-                     * @return DatasourceConnectionName 数据源唯名称，该名称可以通过DescribeDatasourceConnection接口查询到。默认为CosDataCatalog
+                     * 获取数据源唯名称，该名称可以通过DescribeDatasourceConnection接口查询到。默认为DataLakeCatalog
+                     * @return DatasourceConnectionName 数据源唯名称，该名称可以通过DescribeDatasourceConnection接口查询到。默认为DataLakeCatalog
                      */
                     std::string GetDatasourceConnectionName() const;
 
                     /**
-                     * 设置数据源唯名称，该名称可以通过DescribeDatasourceConnection接口查询到。默认为CosDataCatalog
-                     * @param DatasourceConnectionName 数据源唯名称，该名称可以通过DescribeDatasourceConnection接口查询到。默认为CosDataCatalog
+                     * 设置数据源唯名称，该名称可以通过DescribeDatasourceConnection接口查询到。默认为DataLakeCatalog
+                     * @param DatasourceConnectionName 数据源唯名称，该名称可以通过DescribeDatasourceConnection接口查询到。默认为DataLakeCatalog
                      */
                     void SetDatasourceConnectionName(const std::string& _datasourceConnectionName);
 
@@ -113,6 +113,42 @@ namespace TencentCloud
                      * @return DatasourceConnectionName 是否已赋值
                      */
                     bool DatasourceConnectionNameHasBeenSet() const;
+
+                    /**
+                     * 获取排序字段，当前版本仅支持按库名排序
+                     * @return Sort 排序字段，当前版本仅支持按库名排序
+                     */
+                    std::string GetSort() const;
+
+                    /**
+                     * 设置排序字段，当前版本仅支持按库名排序
+                     * @param Sort 排序字段，当前版本仅支持按库名排序
+                     */
+                    void SetSort(const std::string& _sort);
+
+                    /**
+                     * 判断参数 Sort 是否已赋值
+                     * @return Sort 是否已赋值
+                     */
+                    bool SortHasBeenSet() const;
+
+                    /**
+                     * 获取排序类型：false：降序（默认）、true：升序
+                     * @return Asc 排序类型：false：降序（默认）、true：升序
+                     */
+                    bool GetAsc() const;
+
+                    /**
+                     * 设置排序类型：false：降序（默认）、true：升序
+                     * @param Asc 排序类型：false：降序（默认）、true：升序
+                     */
+                    void SetAsc(const bool& _asc);
+
+                    /**
+                     * 判断参数 Asc 是否已赋值
+                     * @return Asc 是否已赋值
+                     */
+                    bool AscHasBeenSet() const;
 
                 private:
 
@@ -135,10 +171,22 @@ namespace TencentCloud
                     bool m_keyWordHasBeenSet;
 
                     /**
-                     * 数据源唯名称，该名称可以通过DescribeDatasourceConnection接口查询到。默认为CosDataCatalog
+                     * 数据源唯名称，该名称可以通过DescribeDatasourceConnection接口查询到。默认为DataLakeCatalog
                      */
                     std::string m_datasourceConnectionName;
                     bool m_datasourceConnectionNameHasBeenSet;
+
+                    /**
+                     * 排序字段，当前版本仅支持按库名排序
+                     */
+                    std::string m_sort;
+                    bool m_sortHasBeenSet;
+
+                    /**
+                     * 排序类型：false：降序（默认）、true：升序
+                     */
+                    bool m_asc;
+                    bool m_ascHasBeenSet;
 
                 };
             }

@@ -97,6 +97,24 @@ namespace TencentCloud
                      */
                     bool DatasourceConnectionNameHasBeenSet() const;
 
+                    /**
+                     * 获取数据引擎名称，不填提交到默认集群
+                     * @return DataEngineName 数据引擎名称，不填提交到默认集群
+                     */
+                    std::string GetDataEngineName() const;
+
+                    /**
+                     * 设置数据引擎名称，不填提交到默认集群
+                     * @param DataEngineName 数据引擎名称，不填提交到默认集群
+                     */
+                    void SetDataEngineName(const std::string& _dataEngineName);
+
+                    /**
+                     * 判断参数 DataEngineName 是否已赋值
+                     * @return DataEngineName 是否已赋值
+                     */
+                    bool DataEngineNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,6 +134,12 @@ namespace TencentCloud
                      */
                     std::string m_datasourceConnectionName;
                     bool m_datasourceConnectionNameHasBeenSet;
+
+                    /**
+                     * 数据引擎名称，不填提交到默认集群
+                     */
+                    std::string m_dataEngineName;
+                    bool m_dataEngineNameHasBeenSet;
 
                 };
             }

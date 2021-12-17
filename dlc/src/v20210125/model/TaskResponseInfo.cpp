@@ -37,7 +37,15 @@ TaskResponseInfo::TaskResponseInfo() :
     m_percentageHasBeenSet(false),
     m_outputMessageHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
-    m_progressDetailHasBeenSet(false)
+    m_progressDetailHasBeenSet(false),
+    m_updateTimeHasBeenSet(false),
+    m_dataEngineIdHasBeenSet(false),
+    m_operateUinHasBeenSet(false),
+    m_dataEngineNameHasBeenSet(false),
+    m_inputTypeHasBeenSet(false),
+    m_inputConfHasBeenSet(false),
+    m_dataNumberHasBeenSet(false),
+    m_canDownloadHasBeenSet(false)
 {
 }
 
@@ -216,6 +224,86 @@ CoreInternalOutcome TaskResponseInfo::Deserialize(const rapidjson::Value &value)
         m_progressDetailHasBeenSet = true;
     }
 
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskResponseInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(value["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DataEngineId") && !value["DataEngineId"].IsNull())
+    {
+        if (!value["DataEngineId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskResponseInfo.DataEngineId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataEngineId = string(value["DataEngineId"].GetString());
+        m_dataEngineIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("OperateUin") && !value["OperateUin"].IsNull())
+    {
+        if (!value["OperateUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskResponseInfo.OperateUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_operateUin = string(value["OperateUin"].GetString());
+        m_operateUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("DataEngineName") && !value["DataEngineName"].IsNull())
+    {
+        if (!value["DataEngineName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskResponseInfo.DataEngineName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataEngineName = string(value["DataEngineName"].GetString());
+        m_dataEngineNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("InputType") && !value["InputType"].IsNull())
+    {
+        if (!value["InputType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskResponseInfo.InputType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_inputType = string(value["InputType"].GetString());
+        m_inputTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InputConf") && !value["InputConf"].IsNull())
+    {
+        if (!value["InputConf"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskResponseInfo.InputConf` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_inputConf = string(value["InputConf"].GetString());
+        m_inputConfHasBeenSet = true;
+    }
+
+    if (value.HasMember("DataNumber") && !value["DataNumber"].IsNull())
+    {
+        if (!value["DataNumber"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskResponseInfo.DataNumber` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataNumber = value["DataNumber"].GetInt64();
+        m_dataNumberHasBeenSet = true;
+    }
+
+    if (value.HasMember("CanDownload") && !value["CanDownload"].IsNull())
+    {
+        if (!value["CanDownload"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskResponseInfo.CanDownload` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_canDownload = value["CanDownload"].GetBool();
+        m_canDownloadHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -357,6 +445,70 @@ void TaskResponseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ProgressDetail";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_progressDetail.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataEngineIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataEngineId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dataEngineId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operateUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperateUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operateUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataEngineNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataEngineName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dataEngineName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inputTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inputType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inputConfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputConf";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inputConf.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dataNumber, allocator);
+    }
+
+    if (m_canDownloadHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanDownload";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_canDownload, allocator);
     }
 
 }
@@ -632,5 +784,133 @@ void TaskResponseInfo::SetProgressDetail(const string& _progressDetail)
 bool TaskResponseInfo::ProgressDetailHasBeenSet() const
 {
     return m_progressDetailHasBeenSet;
+}
+
+string TaskResponseInfo::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void TaskResponseInfo::SetUpdateTime(const string& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool TaskResponseInfo::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
+}
+
+string TaskResponseInfo::GetDataEngineId() const
+{
+    return m_dataEngineId;
+}
+
+void TaskResponseInfo::SetDataEngineId(const string& _dataEngineId)
+{
+    m_dataEngineId = _dataEngineId;
+    m_dataEngineIdHasBeenSet = true;
+}
+
+bool TaskResponseInfo::DataEngineIdHasBeenSet() const
+{
+    return m_dataEngineIdHasBeenSet;
+}
+
+string TaskResponseInfo::GetOperateUin() const
+{
+    return m_operateUin;
+}
+
+void TaskResponseInfo::SetOperateUin(const string& _operateUin)
+{
+    m_operateUin = _operateUin;
+    m_operateUinHasBeenSet = true;
+}
+
+bool TaskResponseInfo::OperateUinHasBeenSet() const
+{
+    return m_operateUinHasBeenSet;
+}
+
+string TaskResponseInfo::GetDataEngineName() const
+{
+    return m_dataEngineName;
+}
+
+void TaskResponseInfo::SetDataEngineName(const string& _dataEngineName)
+{
+    m_dataEngineName = _dataEngineName;
+    m_dataEngineNameHasBeenSet = true;
+}
+
+bool TaskResponseInfo::DataEngineNameHasBeenSet() const
+{
+    return m_dataEngineNameHasBeenSet;
+}
+
+string TaskResponseInfo::GetInputType() const
+{
+    return m_inputType;
+}
+
+void TaskResponseInfo::SetInputType(const string& _inputType)
+{
+    m_inputType = _inputType;
+    m_inputTypeHasBeenSet = true;
+}
+
+bool TaskResponseInfo::InputTypeHasBeenSet() const
+{
+    return m_inputTypeHasBeenSet;
+}
+
+string TaskResponseInfo::GetInputConf() const
+{
+    return m_inputConf;
+}
+
+void TaskResponseInfo::SetInputConf(const string& _inputConf)
+{
+    m_inputConf = _inputConf;
+    m_inputConfHasBeenSet = true;
+}
+
+bool TaskResponseInfo::InputConfHasBeenSet() const
+{
+    return m_inputConfHasBeenSet;
+}
+
+int64_t TaskResponseInfo::GetDataNumber() const
+{
+    return m_dataNumber;
+}
+
+void TaskResponseInfo::SetDataNumber(const int64_t& _dataNumber)
+{
+    m_dataNumber = _dataNumber;
+    m_dataNumberHasBeenSet = true;
+}
+
+bool TaskResponseInfo::DataNumberHasBeenSet() const
+{
+    return m_dataNumberHasBeenSet;
+}
+
+bool TaskResponseInfo::GetCanDownload() const
+{
+    return m_canDownload;
+}
+
+void TaskResponseInfo::SetCanDownload(const bool& _canDownload)
+{
+    m_canDownload = _canDownload;
+    m_canDownloadHasBeenSet = true;
+}
+
+bool TaskResponseInfo::CanDownloadHasBeenSet() const
+{
+    return m_canDownloadHasBeenSet;
 }
 

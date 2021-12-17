@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取可退还磁盘详细信息列表。
-                     * @return DiskReturnableSet 可退还磁盘详细信息列表。
+                     * 获取可退还云硬盘详细信息列表。
+                     * @return DiskReturnableSet 可退还云硬盘详细信息列表。
                      */
                     std::vector<DiskReturnable> GetDiskReturnableSet() const;
 
@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool DiskReturnableSetHasBeenSet() const;
 
                     /**
-                     * 获取符合条件的磁盘数量。
-                     * @return TotalCount 符合条件的磁盘数量。
+                     * 获取符合条件的云硬盘数量。
+                     * @return TotalCount 符合条件的云硬盘数量。
                      */
                     int64_t GetTotalCount() const;
 
@@ -71,13 +71,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 可退还磁盘详细信息列表。
+                     * 可退还云硬盘详细信息列表。
                      */
                     std::vector<DiskReturnable> m_diskReturnableSet;
                     bool m_diskReturnableSetHasBeenSet;
 
                     /**
-                     * 符合条件的磁盘数量。
+                     * 符合条件的云硬盘数量。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

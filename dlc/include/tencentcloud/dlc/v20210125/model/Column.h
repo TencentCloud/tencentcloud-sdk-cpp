@@ -174,6 +174,72 @@ string|tinyint|smallint|int|bigint|boolean|float|double|decimal|timestamp|date|b
                      */
                     bool NullableHasBeenSet() const;
 
+                    /**
+                     * 获取字段位置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Position 字段位置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetPosition() const;
+
+                    /**
+                     * 设置字段位置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Position 字段位置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPosition(const int64_t& _position);
+
+                    /**
+                     * 判断参数 Position 是否已赋值
+                     * @return Position 是否已赋值
+                     */
+                    bool PositionHasBeenSet() const;
+
+                    /**
+                     * 获取字段创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateTime 字段创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置字段创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CreateTime 字段创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取字段修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ModifiedTime 字段修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetModifiedTime() const;
+
+                    /**
+                     * 设置字段修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ModifiedTime 字段修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetModifiedTime(const std::string& _modifiedTime);
+
+                    /**
+                     * 判断参数 ModifiedTime 是否已赋值
+                     * @return ModifiedTime 是否已赋值
+                     */
+                    bool ModifiedTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -216,6 +282,27 @@ string|tinyint|smallint|int|bigint|boolean|float|double|decimal|timestamp|date|b
                      */
                     std::string m_nullable;
                     bool m_nullableHasBeenSet;
+
+                    /**
+                     * 字段位置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_position;
+                    bool m_positionHasBeenSet;
+
+                    /**
+                     * 字段创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 字段修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_modifiedTime;
+                    bool m_modifiedTimeHasBeenSet;
 
                 };
             }

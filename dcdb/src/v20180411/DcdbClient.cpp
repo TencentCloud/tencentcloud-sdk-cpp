@@ -1158,6 +1158,49 @@ DcdbClient::DescribeDcnDetailOutcomeCallable DcdbClient::DescribeDcnDetailCallab
     return task->get_future();
 }
 
+DcdbClient::DescribeFileDownloadUrlOutcome DcdbClient::DescribeFileDownloadUrl(const DescribeFileDownloadUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFileDownloadUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFileDownloadUrlResponse rsp = DescribeFileDownloadUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFileDownloadUrlOutcome(rsp);
+        else
+            return DescribeFileDownloadUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFileDownloadUrlOutcome(outcome.GetError());
+    }
+}
+
+void DcdbClient::DescribeFileDownloadUrlAsync(const DescribeFileDownloadUrlRequest& request, const DescribeFileDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFileDownloadUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcdbClient::DescribeFileDownloadUrlOutcomeCallable DcdbClient::DescribeFileDownloadUrlCallable(const DescribeFileDownloadUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFileDownloadUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFileDownloadUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DcdbClient::DescribeFlowOutcome DcdbClient::DescribeFlow(const DescribeFlowRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFlow");

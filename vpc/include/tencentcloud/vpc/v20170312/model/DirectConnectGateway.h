@@ -408,6 +408,144 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
                      */
                     bool ZoneHasBeenSet() const;
 
+                    /**
+                     * 获取网关流控明细启用状态：
+0：关闭
+1：开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableFlowDetails 网关流控明细启用状态：
+0：关闭
+1：开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetEnableFlowDetails() const;
+
+                    /**
+                     * 设置网关流控明细启用状态：
+0：关闭
+1：开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnableFlowDetails 网关流控明细启用状态：
+0：关闭
+1：开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnableFlowDetails(const uint64_t& _enableFlowDetails);
+
+                    /**
+                     * 判断参数 EnableFlowDetails 是否已赋值
+                     * @return EnableFlowDetails 是否已赋值
+                     */
+                    bool EnableFlowDetailsHasBeenSet() const;
+
+                    /**
+                     * 获取开启、关闭网关流控明细时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FlowDetailsUpdateTime 开启、关闭网关流控明细时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFlowDetailsUpdateTime() const;
+
+                    /**
+                     * 设置开启、关闭网关流控明细时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FlowDetailsUpdateTime 开启、关闭网关流控明细时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFlowDetailsUpdateTime(const std::string& _flowDetailsUpdateTime);
+
+                    /**
+                     * 判断参数 FlowDetailsUpdateTime 是否已赋值
+                     * @return FlowDetailsUpdateTime 是否已赋值
+                     */
+                    bool FlowDetailsUpdateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取是否支持开启网关流控明细
+0：不支持
+1：支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NewAfc 是否支持开启网关流控明细
+0：不支持
+1：支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetNewAfc() const;
+
+                    /**
+                     * 设置是否支持开启网关流控明细
+0：不支持
+1：支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NewAfc 是否支持开启网关流控明细
+0：不支持
+1：支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNewAfc(const uint64_t& _newAfc);
+
+                    /**
+                     * 判断参数 NewAfc 是否已赋值
+                     * @return NewAfc 是否已赋值
+                     */
+                    bool NewAfcHasBeenSet() const;
+
+                    /**
+                     * 获取专线网关接入网络类型：
+<li>`VXLAN` - VXLAN类型。</li>
+<li>`MPLS` - MPLS类型。</li>
+<li>`Hybrid` - Hybrid类型。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AccessNetworkType 专线网关接入网络类型：
+<li>`VXLAN` - VXLAN类型。</li>
+<li>`MPLS` - MPLS类型。</li>
+<li>`Hybrid` - Hybrid类型。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAccessNetworkType() const;
+
+                    /**
+                     * 设置专线网关接入网络类型：
+<li>`VXLAN` - VXLAN类型。</li>
+<li>`MPLS` - MPLS类型。</li>
+<li>`Hybrid` - Hybrid类型。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AccessNetworkType 专线网关接入网络类型：
+<li>`VXLAN` - VXLAN类型。</li>
+<li>`MPLS` - MPLS类型。</li>
+<li>`Hybrid` - Hybrid类型。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAccessNetworkType(const std::string& _accessNetworkType);
+
+                    /**
+                     * 判断参数 AccessNetworkType 是否已赋值
+                     * @return AccessNetworkType 是否已赋值
+                     */
+                    bool AccessNetworkTypeHasBeenSet() const;
+
+                    /**
+                     * 获取跨可用区容灾专线网关的可用区列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HaZoneList 跨可用区容灾专线网关的可用区列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetHaZoneList() const;
+
+                    /**
+                     * 设置跨可用区容灾专线网关的可用区列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HaZoneList 跨可用区容灾专线网关的可用区列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHaZoneList(const std::vector<std::string>& _haZoneList);
+
+                    /**
+                     * 判断参数 HaZoneList 是否已赋值
+                     * @return HaZoneList 是否已赋值
+                     */
+                    bool HaZoneListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -525,6 +663,48 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
+
+                    /**
+                     * 网关流控明细启用状态：
+0：关闭
+1：开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_enableFlowDetails;
+                    bool m_enableFlowDetailsHasBeenSet;
+
+                    /**
+                     * 开启、关闭网关流控明细时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_flowDetailsUpdateTime;
+                    bool m_flowDetailsUpdateTimeHasBeenSet;
+
+                    /**
+                     * 是否支持开启网关流控明细
+0：不支持
+1：支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_newAfc;
+                    bool m_newAfcHasBeenSet;
+
+                    /**
+                     * 专线网关接入网络类型：
+<li>`VXLAN` - VXLAN类型。</li>
+<li>`MPLS` - MPLS类型。</li>
+<li>`Hybrid` - Hybrid类型。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_accessNetworkType;
+                    bool m_accessNetworkTypeHasBeenSet;
+
+                    /**
+                     * 跨可用区容灾专线网关的可用区列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_haZoneList;
+                    bool m_haZoneListHasBeenSet;
 
                 };
             }

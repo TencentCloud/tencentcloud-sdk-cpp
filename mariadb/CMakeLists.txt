@@ -35,6 +35,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/FlushBinlogResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBSecurityGroupsResponse.h
   include/tencentcloud/mariadb/v20170312/model/CancelDcnJobResponse.h
+  include/tencentcloud/mariadb/v20170312/model/DescribeFileDownloadUrlRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBResourceUsageDetailsResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBInstanceSpecsResponse.h
   include/tencentcloud/mariadb/v20170312/model/DestroyHourDBInstanceResponse.h
@@ -91,6 +92,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/ModifyDBParametersRequest.h
   include/tencentcloud/mariadb/v20170312/model/ModifyDBInstanceSecurityGroupsRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDcnDetailRequest.h
+  include/tencentcloud/mariadb/v20170312/model/DescribeFileDownloadUrlResponse.h
   include/tencentcloud/mariadb/v20170312/model/ModifyDBParametersResponse.h
   include/tencentcloud/mariadb/v20170312/model/CopyAccountPrivilegesRequest.h
   include/tencentcloud/mariadb/v20170312/model/SecurityGroup.h
@@ -186,6 +188,7 @@ set(mariadb_src
   src/v20170312/model/FlushBinlogResponse.cpp
   src/v20170312/model/DescribeDBSecurityGroupsResponse.cpp
   src/v20170312/model/CancelDcnJobResponse.cpp
+  src/v20170312/model/DescribeFileDownloadUrlRequest.cpp
   src/v20170312/model/DescribeDBResourceUsageDetailsResponse.cpp
   src/v20170312/model/DescribeDBInstanceSpecsResponse.cpp
   src/v20170312/model/DestroyHourDBInstanceResponse.cpp
@@ -242,6 +245,7 @@ set(mariadb_src
   src/v20170312/model/ModifyDBParametersRequest.cpp
   src/v20170312/model/ModifyDBInstanceSecurityGroupsRequest.cpp
   src/v20170312/model/DescribeDcnDetailRequest.cpp
+  src/v20170312/model/DescribeFileDownloadUrlResponse.cpp
   src/v20170312/model/ModifyDBParametersResponse.cpp
   src/v20170312/model/CopyAccountPrivilegesRequest.cpp
   src/v20170312/model/SecurityGroup.cpp

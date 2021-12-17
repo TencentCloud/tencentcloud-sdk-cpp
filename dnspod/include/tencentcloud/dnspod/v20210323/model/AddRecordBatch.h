@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool ValueHasBeenSet() const;
 
                     /**
-                     * 获取子域名(主机记录)。
-                     * @return SubDomain 子域名(主机记录)。
+                     * 获取子域名(主机记录)，默认为@。
+                     * @return SubDomain 子域名(主机记录)，默认为@。
                      */
                     std::string GetSubDomain() const;
 
                     /**
-                     * 设置子域名(主机记录)。
-                     * @param SubDomain 子域名(主机记录)。
+                     * 设置子域名(主机记录)，默认为@。
+                     * @param SubDomain 子域名(主机记录)，默认为@。
                      */
                     void SetSubDomain(const std::string& _subDomain);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool SubDomainHasBeenSet() const;
 
                     /**
-                     * 获取解析记录的线路，详见 DescribeRecordLineList 接口。
-                     * @return RecordLine 解析记录的线路，详见 DescribeRecordLineList 接口。
+                     * 获取解析记录的线路，详见 DescribeRecordLineList 接口，RecordLine和RecordLineId都未填时，默认为「默认」线路。
+                     * @return RecordLine 解析记录的线路，详见 DescribeRecordLineList 接口，RecordLine和RecordLineId都未填时，默认为「默认」线路。
                      */
                     std::string GetRecordLine() const;
 
                     /**
-                     * 设置解析记录的线路，详见 DescribeRecordLineList 接口。
-                     * @param RecordLine 解析记录的线路，详见 DescribeRecordLineList 接口。
+                     * 设置解析记录的线路，详见 DescribeRecordLineList 接口，RecordLine和RecordLineId都未填时，默认为「默认」线路。
+                     * @param RecordLine 解析记录的线路，详见 DescribeRecordLineList 接口，RecordLine和RecordLineId都未填时，默认为「默认」线路。
                      */
                     void SetRecordLine(const std::string& _recordLine);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool RecordLineHasBeenSet() const;
 
                     /**
-                     * 获取解析记录的线路 ID，RecordLine和RecordLineId都有时，系统优先取 RecordLineId
-                     * @return RecordLineId 解析记录的线路 ID，RecordLine和RecordLineId都有时，系统优先取 RecordLineId
+                     * 获取解析记录的线路 ID，RecordLine和RecordLineId都有时，系统优先取 RecordLineId。
+                     * @return RecordLineId 解析记录的线路 ID，RecordLine和RecordLineId都有时，系统优先取 RecordLineId。
                      */
                     std::string GetRecordLineId() const;
 
                     /**
-                     * 设置解析记录的线路 ID，RecordLine和RecordLineId都有时，系统优先取 RecordLineId
-                     * @param RecordLineId 解析记录的线路 ID，RecordLine和RecordLineId都有时，系统优先取 RecordLineId
+                     * 设置解析记录的线路 ID，RecordLine和RecordLineId都有时，系统优先取 RecordLineId。
+                     * @param RecordLineId 解析记录的线路 ID，RecordLine和RecordLineId都有时，系统优先取 RecordLineId。
                      */
                     void SetRecordLineId(const std::string& _recordLineId);
 
@@ -137,17 +137,17 @@ namespace TencentCloud
                     bool RecordLineIdHasBeenSet() const;
 
                     /**
-                     * 获取记录权重值。
+                     * 获取记录权重值(暂未支持)。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Weight 记录权重值。
+                     * @return Weight 记录权重值(暂未支持)。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetWeight() const;
 
                     /**
-                     * 设置记录权重值。
+                     * 设置记录权重值(暂未支持)。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Weight 记录权重值。
+                     * @param Weight 记录权重值(暂未支持)。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetWeight(const uint64_t& _weight);
@@ -159,14 +159,14 @@ namespace TencentCloud
                     bool WeightHasBeenSet() const;
 
                     /**
-                     * 获取记录的 MX 记录值，非 MX 记录类型，默认为 0，MX记录则必选
-                     * @return MX 记录的 MX 记录值，非 MX 记录类型，默认为 0，MX记录则必选
+                     * 获取记录的 MX 记录值，非 MX 记录类型，默认为 0，MX记录则必选。
+                     * @return MX 记录的 MX 记录值，非 MX 记录类型，默认为 0，MX记录则必选。
                      */
                     uint64_t GetMX() const;
 
                     /**
-                     * 设置记录的 MX 记录值，非 MX 记录类型，默认为 0，MX记录则必选
-                     * @param MX 记录的 MX 记录值，非 MX 记录类型，默认为 0，MX记录则必选
+                     * 设置记录的 MX 记录值，非 MX 记录类型，默认为 0，MX记录则必选。
+                     * @param MX 记录的 MX 记录值，非 MX 记录类型，默认为 0，MX记录则必选。
                      */
                     void SetMX(const uint64_t& _mX);
 
@@ -177,14 +177,14 @@ namespace TencentCloud
                     bool MXHasBeenSet() const;
 
                     /**
-                     * 获取记录的 TTL 值，默认600
-                     * @return TTL 记录的 TTL 值，默认600
+                     * 获取记录的 TTL 值，默认600。
+                     * @return TTL 记录的 TTL 值，默认600。
                      */
                     uint64_t GetTTL() const;
 
                     /**
-                     * 设置记录的 TTL 值，默认600
-                     * @param TTL 记录的 TTL 值，默认600
+                     * 设置记录的 TTL 值，默认600。
+                     * @param TTL 记录的 TTL 值，默认600。
                      */
                     void SetTTL(const uint64_t& _tTL);
 
@@ -195,14 +195,14 @@ namespace TencentCloud
                     bool TTLHasBeenSet() const;
 
                     /**
-                     * 获取记录状态。0表示禁用，1表示启用，默认启用
-                     * @return Enabled 记录状态。0表示禁用，1表示启用，默认启用
+                     * 获取记录状态(暂未支持)。0表示禁用，1表示启用。默认启用。
+                     * @return Enabled 记录状态(暂未支持)。0表示禁用，1表示启用。默认启用。
                      */
                     uint64_t GetEnabled() const;
 
                     /**
-                     * 设置记录状态。0表示禁用，1表示启用，默认启用
-                     * @param Enabled 记录状态。0表示禁用，1表示启用，默认启用
+                     * 设置记录状态(暂未支持)。0表示禁用，1表示启用。默认启用。
+                     * @param Enabled 记录状态(暂未支持)。0表示禁用，1表示启用。默认启用。
                      */
                     void SetEnabled(const uint64_t& _enabled);
 
@@ -213,14 +213,14 @@ namespace TencentCloud
                     bool EnabledHasBeenSet() const;
 
                     /**
-                     * 获取记录别名
-                     * @return Remark 记录别名
+                     * 获取记录备注(暂未支持)。
+                     * @return Remark 记录备注(暂未支持)。
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置记录别名
-                     * @param Remark 记录别名
+                     * 设置记录备注(暂未支持)。
+                     * @param Remark 记录备注(暂未支持)。
                      */
                     void SetRemark(const std::string& _remark);
 
@@ -245,50 +245,50 @@ namespace TencentCloud
                     bool m_valueHasBeenSet;
 
                     /**
-                     * 子域名(主机记录)。
+                     * 子域名(主机记录)，默认为@。
                      */
                     std::string m_subDomain;
                     bool m_subDomainHasBeenSet;
 
                     /**
-                     * 解析记录的线路，详见 DescribeRecordLineList 接口。
+                     * 解析记录的线路，详见 DescribeRecordLineList 接口，RecordLine和RecordLineId都未填时，默认为「默认」线路。
                      */
                     std::string m_recordLine;
                     bool m_recordLineHasBeenSet;
 
                     /**
-                     * 解析记录的线路 ID，RecordLine和RecordLineId都有时，系统优先取 RecordLineId
+                     * 解析记录的线路 ID，RecordLine和RecordLineId都有时，系统优先取 RecordLineId。
                      */
                     std::string m_recordLineId;
                     bool m_recordLineIdHasBeenSet;
 
                     /**
-                     * 记录权重值。
+                     * 记录权重值(暂未支持)。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_weight;
                     bool m_weightHasBeenSet;
 
                     /**
-                     * 记录的 MX 记录值，非 MX 记录类型，默认为 0，MX记录则必选
+                     * 记录的 MX 记录值，非 MX 记录类型，默认为 0，MX记录则必选。
                      */
                     uint64_t m_mX;
                     bool m_mXHasBeenSet;
 
                     /**
-                     * 记录的 TTL 值，默认600
+                     * 记录的 TTL 值，默认600。
                      */
                     uint64_t m_tTL;
                     bool m_tTLHasBeenSet;
 
                     /**
-                     * 记录状态。0表示禁用，1表示启用，默认启用
+                     * 记录状态(暂未支持)。0表示禁用，1表示启用。默认启用。
                      */
                     uint64_t m_enabled;
                     bool m_enabledHasBeenSet;
 
                     /**
-                     * 记录别名
+                     * 记录备注(暂未支持)。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
