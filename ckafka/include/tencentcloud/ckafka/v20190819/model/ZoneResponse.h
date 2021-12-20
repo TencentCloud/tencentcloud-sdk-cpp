@@ -249,6 +249,50 @@ namespace TencentCloud
                      */
                     bool PhysicalHasBeenSet() const;
 
+                    /**
+                     * 获取公网带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PublicNetwork 公网带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPublicNetwork() const;
+
+                    /**
+                     * 设置公网带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PublicNetwork 公网带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPublicNetwork(const std::string& _publicNetwork);
+
+                    /**
+                     * 判断参数 PublicNetwork 是否已赋值
+                     * @return PublicNetwork 是否已赋值
+                     */
+                    bool PublicNetworkHasBeenSet() const;
+
+                    /**
+                     * 获取公网带宽配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PublicNetworkLimit 公网带宽配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPublicNetworkLimit() const;
+
+                    /**
+                     * 设置公网带宽配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PublicNetworkLimit 公网带宽配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPublicNetworkLimit(const std::string& _publicNetworkLimit);
+
+                    /**
+                     * 判断参数 PublicNetworkLimit 是否已赋值
+                     * @return PublicNetworkLimit 是否已赋值
+                     */
+                    bool PublicNetworkLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -315,6 +359,20 @@ namespace TencentCloud
                      */
                     std::string m_physical;
                     bool m_physicalHasBeenSet;
+
+                    /**
+                     * 公网带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_publicNetwork;
+                    bool m_publicNetworkHasBeenSet;
+
+                    /**
+                     * 公网带宽配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_publicNetworkLimit;
+                    bool m_publicNetworkLimitHasBeenSet;
 
                 };
             }

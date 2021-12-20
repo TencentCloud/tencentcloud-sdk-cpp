@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文本内容Base64编码，限制原文长度不能超过10000个unicode字符
-                     * @return Content 文本内容Base64编码，限制原文长度不能超过10000个unicode字符
+                     * 获取该字段表示待检测对象的文本内容，长度不能超过10000（按unicode编码计算）
+                     * @return Content 该字段表示待检测对象的文本内容，长度不能超过10000（按unicode编码计算）
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置文本内容Base64编码，限制原文长度不能超过10000个unicode字符
-                     * @param Content 文本内容Base64编码，限制原文长度不能超过10000个unicode字符
+                     * 设置该字段表示待检测对象的文本内容，长度不能超过10000（按unicode编码计算）
+                     * @param Content 该字段表示待检测对象的文本内容，长度不能超过10000（按unicode编码计算）
                      */
                     void SetContent(const std::string& _content);
 
@@ -137,7 +137,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文本内容Base64编码，限制原文长度不能超过10000个unicode字符
+                     * 该字段表示待检测对象的文本内容，长度不能超过10000（按unicode编码计算）
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;

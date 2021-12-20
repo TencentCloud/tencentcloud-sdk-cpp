@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lighthouse/v20200324/model/Price.h>
+#include <tencentcloud/lighthouse/v20200324/model/DataDiskPrice.h>
 
 
 namespace TencentCloud
@@ -56,6 +57,20 @@ namespace TencentCloud
                      */
                     bool PriceHasBeenSet() const;
 
+                    /**
+                     * 获取数据盘价格信息列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataDiskPriceSet 数据盘价格信息列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DataDiskPrice> GetDataDiskPriceSet() const;
+
+                    /**
+                     * 判断参数 DataDiskPriceSet 是否已赋值
+                     * @return DataDiskPriceSet 是否已赋值
+                     */
+                    bool DataDiskPriceSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -63,6 +78,13 @@ namespace TencentCloud
                      */
                     Price m_price;
                     bool m_priceHasBeenSet;
+
+                    /**
+                     * 数据盘价格信息列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DataDiskPrice> m_dataDiskPriceSet;
+                    bool m_dataDiskPriceSetHasBeenSet;
 
                 };
             }

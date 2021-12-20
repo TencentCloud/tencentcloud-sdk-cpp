@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取磁盘价格
-                     * @return DiskPrice 磁盘价格
+                     * 获取云硬盘价格。
+                     * @return DiskPrice 云硬盘价格。
                      */
                     DiskPrice GetDiskPrice() const;
 
@@ -59,7 +59,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 磁盘价格
+                     * 云硬盘价格。
                      */
                     DiskPrice m_diskPrice;
                     bool m_diskPriceHasBeenSet;

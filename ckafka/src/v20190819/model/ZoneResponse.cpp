@@ -30,7 +30,9 @@ ZoneResponse::ZoneResponse() :
     m_standardHasBeenSet(false),
     m_standardS2HasBeenSet(false),
     m_professionHasBeenSet(false),
-    m_physicalHasBeenSet(false)
+    m_physicalHasBeenSet(false),
+    m_publicNetworkHasBeenSet(false),
+    m_publicNetworkLimitHasBeenSet(false)
 {
 }
 
@@ -173,6 +175,26 @@ CoreInternalOutcome ZoneResponse::Deserialize(const rapidjson::Value &value)
         m_physicalHasBeenSet = true;
     }
 
+    if (value.HasMember("PublicNetwork") && !value["PublicNetwork"].IsNull())
+    {
+        if (!value["PublicNetwork"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZoneResponse.PublicNetwork` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicNetwork = string(value["PublicNetwork"].GetString());
+        m_publicNetworkHasBeenSet = true;
+    }
+
+    if (value.HasMember("PublicNetworkLimit") && !value["PublicNetworkLimit"].IsNull())
+    {
+        if (!value["PublicNetworkLimit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZoneResponse.PublicNetworkLimit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicNetworkLimit = string(value["PublicNetworkLimit"].GetString());
+        m_publicNetworkLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -274,6 +296,22 @@ void ZoneResponse::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Physical";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_physical.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publicNetworkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicNetwork";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicNetwork.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publicNetworkLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicNetworkLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicNetworkLimit.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -437,5 +475,37 @@ void ZoneResponse::SetPhysical(const string& _physical)
 bool ZoneResponse::PhysicalHasBeenSet() const
 {
     return m_physicalHasBeenSet;
+}
+
+string ZoneResponse::GetPublicNetwork() const
+{
+    return m_publicNetwork;
+}
+
+void ZoneResponse::SetPublicNetwork(const string& _publicNetwork)
+{
+    m_publicNetwork = _publicNetwork;
+    m_publicNetworkHasBeenSet = true;
+}
+
+bool ZoneResponse::PublicNetworkHasBeenSet() const
+{
+    return m_publicNetworkHasBeenSet;
+}
+
+string ZoneResponse::GetPublicNetworkLimit() const
+{
+    return m_publicNetworkLimit;
+}
+
+void ZoneResponse::SetPublicNetworkLimit(const string& _publicNetworkLimit)
+{
+    m_publicNetworkLimit = _publicNetworkLimit;
+    m_publicNetworkLimitHasBeenSet = true;
+}
+
+bool ZoneResponse::PublicNetworkLimitHasBeenSet() const
+{
+    return m_publicNetworkLimitHasBeenSet;
 }
 

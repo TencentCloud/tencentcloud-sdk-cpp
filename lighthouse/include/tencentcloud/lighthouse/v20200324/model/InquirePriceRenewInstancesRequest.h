@@ -79,6 +79,42 @@ namespace TencentCloud
                      */
                     bool InstanceChargePrepaidHasBeenSet() const;
 
+                    /**
+                     * 获取是否续费数据盘
+                     * @return RenewDataDisk 是否续费数据盘
+                     */
+                    bool GetRenewDataDisk() const;
+
+                    /**
+                     * 设置是否续费数据盘
+                     * @param RenewDataDisk 是否续费数据盘
+                     */
+                    void SetRenewDataDisk(const bool& _renewDataDisk);
+
+                    /**
+                     * 判断参数 RenewDataDisk 是否已赋值
+                     * @return RenewDataDisk 是否已赋值
+                     */
+                    bool RenewDataDiskHasBeenSet() const;
+
+                    /**
+                     * 获取数据盘是否对齐实例到期时间
+                     * @return AlignInstanceExpiredTime 数据盘是否对齐实例到期时间
+                     */
+                    bool GetAlignInstanceExpiredTime() const;
+
+                    /**
+                     * 设置数据盘是否对齐实例到期时间
+                     * @param AlignInstanceExpiredTime 数据盘是否对齐实例到期时间
+                     */
+                    void SetAlignInstanceExpiredTime(const bool& _alignInstanceExpiredTime);
+
+                    /**
+                     * 判断参数 AlignInstanceExpiredTime 是否已赋值
+                     * @return AlignInstanceExpiredTime 是否已赋值
+                     */
+                    bool AlignInstanceExpiredTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -92,6 +128,18 @@ namespace TencentCloud
                      */
                     InstanceChargePrepaid m_instanceChargePrepaid;
                     bool m_instanceChargePrepaidHasBeenSet;
+
+                    /**
+                     * 是否续费数据盘
+                     */
+                    bool m_renewDataDisk;
+                    bool m_renewDataDiskHasBeenSet;
+
+                    /**
+                     * 数据盘是否对齐实例到期时间
+                     */
+                    bool m_alignInstanceExpiredTime;
+                    bool m_alignInstanceExpiredTimeHasBeenSet;
 
                 };
             }

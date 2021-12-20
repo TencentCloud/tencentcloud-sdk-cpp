@@ -89,6 +89,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/DeleteSnapshotsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyDisksRenewFlagRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DisassociateInstancesKeyPairsRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/DataDiskPrice.h
   include/tencentcloud/lighthouse/v20200324/model/ImportKeyPairRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DeleteBlueprintsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyInstancesLoginKeyPairAttributeRequest.h
@@ -263,6 +264,7 @@ set(lighthouse_src
   src/v20200324/model/DeleteSnapshotsResponse.cpp
   src/v20200324/model/ModifyDisksRenewFlagRequest.cpp
   src/v20200324/model/DisassociateInstancesKeyPairsRequest.cpp
+  src/v20200324/model/DataDiskPrice.cpp
   src/v20200324/model/ImportKeyPairRequest.cpp
   src/v20200324/model/DeleteBlueprintsResponse.cpp
   src/v20200324/model/ModifyInstancesLoginKeyPairAttributeRequest.cpp

@@ -25,6 +25,10 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/ckafka/v20190819/model/BatchCreateAclRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/BatchCreateAclResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/BatchModifyGroupOffsetsRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/BatchModifyGroupOffsetsResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/BatchModifyTopicAttributesRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/BatchModifyTopicAttributesResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateAclRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateAclResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateInstancePreRequest.h>
@@ -114,6 +118,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BatchCreateAclResponse> BatchCreateAclOutcome;
                 typedef std::future<BatchCreateAclOutcome> BatchCreateAclOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::BatchCreateAclRequest&, BatchCreateAclOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchCreateAclAsyncHandler;
+                typedef Outcome<Core::Error, Model::BatchModifyGroupOffsetsResponse> BatchModifyGroupOffsetsOutcome;
+                typedef std::future<BatchModifyGroupOffsetsOutcome> BatchModifyGroupOffsetsOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::BatchModifyGroupOffsetsRequest&, BatchModifyGroupOffsetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchModifyGroupOffsetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::BatchModifyTopicAttributesResponse> BatchModifyTopicAttributesOutcome;
+                typedef std::future<BatchModifyTopicAttributesOutcome> BatchModifyTopicAttributesOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::BatchModifyTopicAttributesRequest&, BatchModifyTopicAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchModifyTopicAttributesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAclResponse> CreateAclOutcome;
                 typedef std::future<CreateAclOutcome> CreateAclOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreateAclRequest&, CreateAclOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAclAsyncHandler;
@@ -233,6 +243,24 @@ namespace TencentCloud
                 BatchCreateAclOutcome BatchCreateAcl(const Model::BatchCreateAclRequest &request);
                 void BatchCreateAclAsync(const Model::BatchCreateAclRequest& request, const BatchCreateAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BatchCreateAclOutcomeCallable BatchCreateAclCallable(const Model::BatchCreateAclRequest& request);
+
+                /**
+                 *批量修改消费组offset
+                 * @param req BatchModifyGroupOffsetsRequest
+                 * @return BatchModifyGroupOffsetsOutcome
+                 */
+                BatchModifyGroupOffsetsOutcome BatchModifyGroupOffsets(const Model::BatchModifyGroupOffsetsRequest &request);
+                void BatchModifyGroupOffsetsAsync(const Model::BatchModifyGroupOffsetsRequest& request, const BatchModifyGroupOffsetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchModifyGroupOffsetsOutcomeCallable BatchModifyGroupOffsetsCallable(const Model::BatchModifyGroupOffsetsRequest& request);
+
+                /**
+                 *批量设置主题属性
+                 * @param req BatchModifyTopicAttributesRequest
+                 * @return BatchModifyTopicAttributesOutcome
+                 */
+                BatchModifyTopicAttributesOutcome BatchModifyTopicAttributes(const Model::BatchModifyTopicAttributesRequest &request);
+                void BatchModifyTopicAttributesAsync(const Model::BatchModifyTopicAttributesRequest& request, const BatchModifyTopicAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchModifyTopicAttributesOutcomeCallable BatchModifyTopicAttributesCallable(const Model::BatchModifyTopicAttributesRequest& request);
 
                 /**
                  *添加 ACL 策略

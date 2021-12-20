@@ -44,18 +44,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取- zone:
-可用区
-                     * @return Filters - zone:
-可用区
+                     * 获取过滤器列表。
+<li>zone</li>按照【可用区】进行过滤。
+类型：String
+必选：否
+                     * @return Filters 过滤器列表。
+<li>zone</li>按照【可用区】进行过滤。
+类型：String
+必选：否
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置- zone:
-可用区
-                     * @param Filters - zone:
-可用区
+                     * 设置过滤器列表。
+<li>zone</li>按照【可用区】进行过滤。
+类型：String
+必选：否
+                     * @param Filters 过滤器列表。
+<li>zone</li>按照【可用区】进行过滤。
+类型：String
+必选：否
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -68,8 +76,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * - zone:
-可用区
+                     * 过滤器列表。
+<li>zone</li>按照【可用区】进行过滤。
+类型：String
+必选：否
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

@@ -43,16 +43,12 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资产的类型，传入时，只查询此类型资产的定时任务；不传，则返回所有定时任务。
-
-取值为：
+                     * 获取资产的类型，取值为：
 ASSET_CONTAINER, 容器
 ASSET_IMAGE, 镜像
 ASSET_HOST, 主机
 ASSET_K8S, K8S资产
-                     * @return AssetType 资产的类型，传入时，只查询此类型资产的定时任务；不传，则返回所有定时任务。
-
-取值为：
+                     * @return AssetType 资产的类型，取值为：
 ASSET_CONTAINER, 容器
 ASSET_IMAGE, 镜像
 ASSET_HOST, 主机
@@ -61,16 +57,12 @@ ASSET_K8S, K8S资产
                     std::string GetAssetType() const;
 
                     /**
-                     * 设置资产的类型，传入时，只查询此类型资产的定时任务；不传，则返回所有定时任务。
-
-取值为：
+                     * 设置资产的类型，取值为：
 ASSET_CONTAINER, 容器
 ASSET_IMAGE, 镜像
 ASSET_HOST, 主机
 ASSET_K8S, K8S资产
-                     * @param AssetType 资产的类型，传入时，只查询此类型资产的定时任务；不传，则返回所有定时任务。
-
-取值为：
+                     * @param AssetType 资产的类型，取值为：
 ASSET_CONTAINER, 容器
 ASSET_IMAGE, 镜像
 ASSET_HOST, 主机
@@ -123,9 +115,7 @@ ASSET_K8S, K8S资产
                 private:
 
                     /**
-                     * 资产的类型，传入时，只查询此类型资产的定时任务；不传，则返回所有定时任务。
-
-取值为：
+                     * 资产的类型，取值为：
 ASSET_CONTAINER, 容器
 ASSET_IMAGE, 镜像
 ASSET_HOST, 主机

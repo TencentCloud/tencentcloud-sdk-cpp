@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取磁盘配置列表
-                     * @return DiskConfigSet 磁盘配置列表
+                     * 获取云硬盘配置列表。
+                     * @return DiskConfigSet 云硬盘配置列表。
                      */
                     std::vector<DiskConfig> GetDiskConfigSet() const;
 
@@ -59,7 +59,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 磁盘配置列表
+                     * 云硬盘配置列表。
                      */
                     std::vector<DiskConfig> m_diskConfigSet;
                     bool m_diskConfigSetHasBeenSet;

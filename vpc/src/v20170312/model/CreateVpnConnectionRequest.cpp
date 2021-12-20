@@ -35,7 +35,11 @@ CreateVpnConnectionRequest::CreateVpnConnectionRequest() :
     m_enableHealthCheckHasBeenSet(false),
     m_healthCheckLocalIpHasBeenSet(false),
     m_healthCheckRemoteIpHasBeenSet(false),
-    m_routeTypeHasBeenSet(false)
+    m_routeTypeHasBeenSet(false),
+    m_negotiationTypeHasBeenSet(false),
+    m_dpdEnableHasBeenSet(false),
+    m_dpdTimeoutHasBeenSet(false),
+    m_dpdActionHasBeenSet(false)
 {
 }
 
@@ -164,6 +168,38 @@ string CreateVpnConnectionRequest::ToJsonString() const
         string key = "RouteType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_routeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_negotiationTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NegotiationType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_negotiationType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dpdEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DpdEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dpdEnable, allocator);
+    }
+
+    if (m_dpdTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DpdTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dpdTimeout.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dpdActionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DpdAction";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dpdAction.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -380,6 +416,70 @@ void CreateVpnConnectionRequest::SetRouteType(const string& _routeType)
 bool CreateVpnConnectionRequest::RouteTypeHasBeenSet() const
 {
     return m_routeTypeHasBeenSet;
+}
+
+string CreateVpnConnectionRequest::GetNegotiationType() const
+{
+    return m_negotiationType;
+}
+
+void CreateVpnConnectionRequest::SetNegotiationType(const string& _negotiationType)
+{
+    m_negotiationType = _negotiationType;
+    m_negotiationTypeHasBeenSet = true;
+}
+
+bool CreateVpnConnectionRequest::NegotiationTypeHasBeenSet() const
+{
+    return m_negotiationTypeHasBeenSet;
+}
+
+int64_t CreateVpnConnectionRequest::GetDpdEnable() const
+{
+    return m_dpdEnable;
+}
+
+void CreateVpnConnectionRequest::SetDpdEnable(const int64_t& _dpdEnable)
+{
+    m_dpdEnable = _dpdEnable;
+    m_dpdEnableHasBeenSet = true;
+}
+
+bool CreateVpnConnectionRequest::DpdEnableHasBeenSet() const
+{
+    return m_dpdEnableHasBeenSet;
+}
+
+string CreateVpnConnectionRequest::GetDpdTimeout() const
+{
+    return m_dpdTimeout;
+}
+
+void CreateVpnConnectionRequest::SetDpdTimeout(const string& _dpdTimeout)
+{
+    m_dpdTimeout = _dpdTimeout;
+    m_dpdTimeoutHasBeenSet = true;
+}
+
+bool CreateVpnConnectionRequest::DpdTimeoutHasBeenSet() const
+{
+    return m_dpdTimeoutHasBeenSet;
+}
+
+string CreateVpnConnectionRequest::GetDpdAction() const
+{
+    return m_dpdAction;
+}
+
+void CreateVpnConnectionRequest::SetDpdAction(const string& _dpdAction)
+{
+    m_dpdAction = _dpdAction;
+    m_dpdActionHasBeenSet = true;
+}
+
+bool CreateVpnConnectionRequest::DpdActionHasBeenSet() const
+{
+    return m_dpdActionHasBeenSet;
 }
 
 

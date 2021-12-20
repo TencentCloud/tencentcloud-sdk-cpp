@@ -548,7 +548,7 @@ namespace TencentCloud
                 DescribeCcnAttachedInstancesOutcomeCallable DescribeCcnAttachedInstancesCallable(const Model::DescribeCcnAttachedInstancesRequest& request);
 
                 /**
-                 *本接口（DescribeDiskConfigs）用于查询磁盘配置。
+                 *本接口（DescribeDiskConfigs）用于查询云硬盘配置。
                  * @param req DescribeDiskConfigsRequest
                  * @return DescribeDiskConfigsOutcome
                  */
@@ -807,7 +807,7 @@ namespace TencentCloud
                 InquirePriceCreateBlueprintOutcomeCallable InquirePriceCreateBlueprintCallable(const Model::InquirePriceCreateBlueprintRequest& request);
 
                 /**
-                 *本接口（InquirePriceCreateDisks）用于新购磁盘询价。
+                 *本接口（InquirePriceCreateDisks）用于新购云硬盘询价。
                  * @param req InquirePriceCreateDisksRequest
                  * @return InquirePriceCreateDisksOutcome
                  */

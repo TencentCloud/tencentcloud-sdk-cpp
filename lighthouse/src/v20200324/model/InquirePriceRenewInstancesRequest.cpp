@@ -24,7 +24,9 @@ using namespace std;
 
 InquirePriceRenewInstancesRequest::InquirePriceRenewInstancesRequest() :
     m_instanceIdsHasBeenSet(false),
-    m_instanceChargePrepaidHasBeenSet(false)
+    m_instanceChargePrepaidHasBeenSet(false),
+    m_renewDataDiskHasBeenSet(false),
+    m_alignInstanceExpiredTimeHasBeenSet(false)
 {
 }
 
@@ -55,6 +57,22 @@ string InquirePriceRenewInstancesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_instanceChargePrepaid.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_renewDataDiskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RenewDataDisk";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_renewDataDisk, allocator);
+    }
+
+    if (m_alignInstanceExpiredTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlignInstanceExpiredTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_alignInstanceExpiredTime, allocator);
     }
 
 
@@ -95,6 +113,38 @@ void InquirePriceRenewInstancesRequest::SetInstanceChargePrepaid(const InstanceC
 bool InquirePriceRenewInstancesRequest::InstanceChargePrepaidHasBeenSet() const
 {
     return m_instanceChargePrepaidHasBeenSet;
+}
+
+bool InquirePriceRenewInstancesRequest::GetRenewDataDisk() const
+{
+    return m_renewDataDisk;
+}
+
+void InquirePriceRenewInstancesRequest::SetRenewDataDisk(const bool& _renewDataDisk)
+{
+    m_renewDataDisk = _renewDataDisk;
+    m_renewDataDiskHasBeenSet = true;
+}
+
+bool InquirePriceRenewInstancesRequest::RenewDataDiskHasBeenSet() const
+{
+    return m_renewDataDiskHasBeenSet;
+}
+
+bool InquirePriceRenewInstancesRequest::GetAlignInstanceExpiredTime() const
+{
+    return m_alignInstanceExpiredTime;
+}
+
+void InquirePriceRenewInstancesRequest::SetAlignInstanceExpiredTime(const bool& _alignInstanceExpiredTime)
+{
+    m_alignInstanceExpiredTime = _alignInstanceExpiredTime;
+    m_alignInstanceExpiredTimeHasBeenSet = true;
+}
+
+bool InquirePriceRenewInstancesRequest::AlignInstanceExpiredTimeHasBeenSet() const
+{
+    return m_alignInstanceExpiredTimeHasBeenSet;
 }
 
 

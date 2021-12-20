@@ -284,6 +284,78 @@ CCN VPN 形的通道 可以不传VPCID
                      */
                     bool RouteTypeHasBeenSet() const;
 
+                    /**
+                     * 获取协商类型，默认为active（主动协商）。可选值：active（主动协商），passive（被动协商），flowTrigger（流量协商）
+                     * @return NegotiationType 协商类型，默认为active（主动协商）。可选值：active（主动协商），passive（被动协商），flowTrigger（流量协商）
+                     */
+                    std::string GetNegotiationType() const;
+
+                    /**
+                     * 设置协商类型，默认为active（主动协商）。可选值：active（主动协商），passive（被动协商），flowTrigger（流量协商）
+                     * @param NegotiationType 协商类型，默认为active（主动协商）。可选值：active（主动协商），passive（被动协商），flowTrigger（流量协商）
+                     */
+                    void SetNegotiationType(const std::string& _negotiationType);
+
+                    /**
+                     * 判断参数 NegotiationType 是否已赋值
+                     * @return NegotiationType 是否已赋值
+                     */
+                    bool NegotiationTypeHasBeenSet() const;
+
+                    /**
+                     * 获取DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）
+                     * @return DpdEnable DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）
+                     */
+                    int64_t GetDpdEnable() const;
+
+                    /**
+                     * 设置DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）
+                     * @param DpdEnable DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）
+                     */
+                    void SetDpdEnable(const int64_t& _dpdEnable);
+
+                    /**
+                     * 判断参数 DpdEnable 是否已赋值
+                     * @return DpdEnable 是否已赋值
+                     */
+                    bool DpdEnableHasBeenSet() const;
+
+                    /**
+                     * 获取DPD超时时间。即探测确认对端不存在需要的时间。dpdEnable为1（开启）时有效。默认30，单位为秒
+                     * @return DpdTimeout DPD超时时间。即探测确认对端不存在需要的时间。dpdEnable为1（开启）时有效。默认30，单位为秒
+                     */
+                    std::string GetDpdTimeout() const;
+
+                    /**
+                     * 设置DPD超时时间。即探测确认对端不存在需要的时间。dpdEnable为1（开启）时有效。默认30，单位为秒
+                     * @param DpdTimeout DPD超时时间。即探测确认对端不存在需要的时间。dpdEnable为1（开启）时有效。默认30，单位为秒
+                     */
+                    void SetDpdTimeout(const std::string& _dpdTimeout);
+
+                    /**
+                     * 判断参数 DpdTimeout 是否已赋值
+                     * @return DpdTimeout 是否已赋值
+                     */
+                    bool DpdTimeoutHasBeenSet() const;
+
+                    /**
+                     * 获取DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）
+                     * @return DpdAction DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）
+                     */
+                    std::string GetDpdAction() const;
+
+                    /**
+                     * 设置DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）
+                     * @param DpdAction DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）
+                     */
+                    void SetDpdAction(const std::string& _dpdAction);
+
+                    /**
+                     * 判断参数 DpdAction 是否已赋值
+                     * @return DpdAction 是否已赋值
+                     */
+                    bool DpdActionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -364,6 +436,30 @@ CCN VPN 形的通道 可以不传VPCID
                      */
                     std::string m_routeType;
                     bool m_routeTypeHasBeenSet;
+
+                    /**
+                     * 协商类型，默认为active（主动协商）。可选值：active（主动协商），passive（被动协商），flowTrigger（流量协商）
+                     */
+                    std::string m_negotiationType;
+                    bool m_negotiationTypeHasBeenSet;
+
+                    /**
+                     * DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）
+                     */
+                    int64_t m_dpdEnable;
+                    bool m_dpdEnableHasBeenSet;
+
+                    /**
+                     * DPD超时时间。即探测确认对端不存在需要的时间。dpdEnable为1（开启）时有效。默认30，单位为秒
+                     */
+                    std::string m_dpdTimeout;
+                    bool m_dpdTimeoutHasBeenSet;
+
+                    /**
+                     * DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）
+                     */
+                    std::string m_dpdAction;
+                    bool m_dpdActionHasBeenSet;
 
                 };
             }

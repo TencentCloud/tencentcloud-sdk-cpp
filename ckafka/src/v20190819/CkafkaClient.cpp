@@ -83,6 +83,92 @@ CkafkaClient::BatchCreateAclOutcomeCallable CkafkaClient::BatchCreateAclCallable
     return task->get_future();
 }
 
+CkafkaClient::BatchModifyGroupOffsetsOutcome CkafkaClient::BatchModifyGroupOffsets(const BatchModifyGroupOffsetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchModifyGroupOffsets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchModifyGroupOffsetsResponse rsp = BatchModifyGroupOffsetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchModifyGroupOffsetsOutcome(rsp);
+        else
+            return BatchModifyGroupOffsetsOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchModifyGroupOffsetsOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::BatchModifyGroupOffsetsAsync(const BatchModifyGroupOffsetsRequest& request, const BatchModifyGroupOffsetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchModifyGroupOffsets(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::BatchModifyGroupOffsetsOutcomeCallable CkafkaClient::BatchModifyGroupOffsetsCallable(const BatchModifyGroupOffsetsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchModifyGroupOffsetsOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchModifyGroupOffsets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CkafkaClient::BatchModifyTopicAttributesOutcome CkafkaClient::BatchModifyTopicAttributes(const BatchModifyTopicAttributesRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchModifyTopicAttributes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchModifyTopicAttributesResponse rsp = BatchModifyTopicAttributesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchModifyTopicAttributesOutcome(rsp);
+        else
+            return BatchModifyTopicAttributesOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchModifyTopicAttributesOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::BatchModifyTopicAttributesAsync(const BatchModifyTopicAttributesRequest& request, const BatchModifyTopicAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchModifyTopicAttributes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::BatchModifyTopicAttributesOutcomeCallable CkafkaClient::BatchModifyTopicAttributesCallable(const BatchModifyTopicAttributesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchModifyTopicAttributesOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchModifyTopicAttributes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::CreateAclOutcome CkafkaClient::CreateAcl(const CreateAclRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAcl");

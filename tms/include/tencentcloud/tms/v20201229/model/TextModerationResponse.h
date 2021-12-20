@@ -163,6 +163,20 @@ namespace TencentCloud
                      */
                     bool DataIdHasBeenSet() const;
 
+                    /**
+                     * 获取该字段用于返回当前标签（Label）下的二级标签。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubLabel 该字段用于返回当前标签（Label）下的二级标签。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSubLabel() const;
+
+                    /**
+                     * 判断参数 SubLabel 是否已赋值
+                     * @return SubLabel 是否已赋值
+                     */
+                    bool SubLabelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -223,6 +237,13 @@ namespace TencentCloud
                      */
                     std::string m_dataId;
                     bool m_dataIdHasBeenSet;
+
+                    /**
+                     * 该字段用于返回当前标签（Label）下的二级标签。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subLabel;
+                    bool m_subLabelHasBeenSet;
 
                 };
             }

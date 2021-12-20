@@ -204,6 +204,32 @@ namespace TencentCloud
                      */
                     bool LibTypeHasBeenSet() const;
 
+                    /**
+                     * 获取该字段用于返回当前标签（Lable）下的二级标签。
+注意：此字段可能返回null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubLabel 该字段用于返回当前标签（Lable）下的二级标签。
+注意：此字段可能返回null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSubLabel() const;
+
+                    /**
+                     * 设置该字段用于返回当前标签（Lable）下的二级标签。
+注意：此字段可能返回null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SubLabel 该字段用于返回当前标签（Lable）下的二级标签。
+注意：此字段可能返回null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSubLabel(const std::string& _subLabel);
+
+                    /**
+                     * 判断参数 SubLabel 是否已赋值
+                     * @return SubLabel 是否已赋值
+                     */
+                    bool SubLabelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -255,6 +281,14 @@ namespace TencentCloud
                      */
                     int64_t m_libType;
                     bool m_libTypeHasBeenSet;
+
+                    /**
+                     * 该字段用于返回当前标签（Lable）下的二级标签。
+注意：此字段可能返回null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subLabel;
+                    bool m_subLabelHasBeenSet;
 
                 };
             }

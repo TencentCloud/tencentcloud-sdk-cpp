@@ -24,7 +24,8 @@ using namespace TencentCloud::Lighthouse::V20200324::Model;
 using namespace std;
 
 InquirePriceRenewInstancesResponse::InquirePriceRenewInstancesResponse() :
-    m_priceHasBeenSet(false)
+    m_priceHasBeenSet(false),
+    m_dataDiskPriceSetHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,26 @@ CoreInternalOutcome InquirePriceRenewInstancesResponse::Deserialize(const string
         m_priceHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DataDiskPriceSet") && !rsp["DataDiskPriceSet"].IsNull())
+    {
+        if (!rsp["DataDiskPriceSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DataDiskPriceSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["DataDiskPriceSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DataDiskPrice item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_dataDiskPriceSet.push_back(item);
+        }
+        m_dataDiskPriceSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +117,21 @@ string InquirePriceRenewInstancesResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_price.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_dataDiskPriceSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataDiskPriceSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dataDiskPriceSet.begin(); itr != m_dataDiskPriceSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -118,6 +154,16 @@ Price InquirePriceRenewInstancesResponse::GetPrice() const
 bool InquirePriceRenewInstancesResponse::PriceHasBeenSet() const
 {
     return m_priceHasBeenSet;
+}
+
+vector<DataDiskPrice> InquirePriceRenewInstancesResponse::GetDataDiskPriceSet() const
+{
+    return m_dataDiskPriceSet;
+}
+
+bool InquirePriceRenewInstancesResponse::DataDiskPriceSetHasBeenSet() const
+{
+    return m_dataDiskPriceSetHasBeenSet;
 }
 
 

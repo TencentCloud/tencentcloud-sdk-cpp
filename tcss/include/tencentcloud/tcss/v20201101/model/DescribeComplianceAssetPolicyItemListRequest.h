@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资产的ID。
-                     * @return CustomerAssetId 资产的ID。
+                     * 获取客户资产的ID。
+                     * @return CustomerAssetId 客户资产的ID。
                      */
                     uint64_t GetCustomerAssetId() const;
 
                     /**
-                     * 设置资产的ID。
-                     * @param CustomerAssetId 资产的ID。
+                     * 设置客户资产的ID。
+                     * @param CustomerAssetId 客户资产的ID。
                      */
                     void SetCustomerAssetId(const uint64_t& _customerAssetId);
 
@@ -122,7 +122,7 @@ RiskLevel
                 private:
 
                     /**
-                     * 资产的ID。
+                     * 客户资产的ID。
                      */
                     uint64_t m_customerAssetId;
                     bool m_customerAssetIdHasBeenSet;

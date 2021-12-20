@@ -43,12 +43,12 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指定要扫描的资产类型列表。若不填，对所有资产触发扫描。
+                     * 获取指定要扫描的资产类型列表。
 ASSET_CONTAINER, 容器
 ASSET_IMAGE, 镜像
 ASSET_HOST, 主机
 ASSET_K8S, K8S资产
-                     * @return AssetTypeSet 指定要扫描的资产类型列表。若不填，对所有资产触发扫描。
+                     * @return AssetTypeSet 指定要扫描的资产类型列表。
 ASSET_CONTAINER, 容器
 ASSET_IMAGE, 镜像
 ASSET_HOST, 主机
@@ -57,12 +57,12 @@ ASSET_K8S, K8S资产
                     std::vector<std::string> GetAssetTypeSet() const;
 
                     /**
-                     * 设置指定要扫描的资产类型列表。若不填，对所有资产触发扫描。
+                     * 设置指定要扫描的资产类型列表。
 ASSET_CONTAINER, 容器
 ASSET_IMAGE, 镜像
 ASSET_HOST, 主机
 ASSET_K8S, K8S资产
-                     * @param AssetTypeSet 指定要扫描的资产类型列表。若不填，对所有资产触发扫描。
+                     * @param AssetTypeSet 指定要扫描的资产类型列表。
 ASSET_CONTAINER, 容器
 ASSET_IMAGE, 镜像
 ASSET_HOST, 主机
@@ -115,7 +115,7 @@ ASSET_K8S, K8S资产
                 private:
 
                     /**
-                     * 指定要扫描的资产类型列表。若不填，对所有资产触发扫描。
+                     * 指定要扫描的资产类型列表。
 ASSET_CONTAINER, 容器
 ASSET_IMAGE, 镜像
 ASSET_HOST, 主机

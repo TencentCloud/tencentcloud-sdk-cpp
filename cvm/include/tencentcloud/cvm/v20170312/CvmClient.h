@@ -35,12 +35,20 @@
 #include <tencentcloud/cvm/v20170312/model/CreateImageResponse.h>
 #include <tencentcloud/cvm/v20170312/model/CreateKeyPairRequest.h>
 #include <tencentcloud/cvm/v20170312/model/CreateKeyPairResponse.h>
+#include <tencentcloud/cvm/v20170312/model/CreateLaunchTemplateRequest.h>
+#include <tencentcloud/cvm/v20170312/model/CreateLaunchTemplateResponse.h>
+#include <tencentcloud/cvm/v20170312/model/CreateLaunchTemplateVersionRequest.h>
+#include <tencentcloud/cvm/v20170312/model/CreateLaunchTemplateVersionResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DeleteDisasterRecoverGroupsRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DeleteDisasterRecoverGroupsResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DeleteImagesRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DeleteImagesResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DeleteKeyPairsRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DeleteKeyPairsResponse.h>
+#include <tencentcloud/cvm/v20170312/model/DeleteLaunchTemplateRequest.h>
+#include <tencentcloud/cvm/v20170312/model/DeleteLaunchTemplateResponse.h>
+#include <tencentcloud/cvm/v20170312/model/DeleteLaunchTemplateVersionsRequest.h>
+#include <tencentcloud/cvm/v20170312/model/DeleteLaunchTemplateVersionsResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeAccountQuotaRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeAccountQuotaResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeDisasterRecoverGroupQuotaRequest.h>
@@ -77,6 +85,10 @@
 #include <tencentcloud/cvm/v20170312/model/DescribeInternetChargeTypeConfigsResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeKeyPairsRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeKeyPairsResponse.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeLaunchTemplateVersionsRequest.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeLaunchTemplateVersionsResponse.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeLaunchTemplatesRequest.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeLaunchTemplatesResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeRegionsRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeRegionsResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeReservedInstancesRequest.h>
@@ -137,6 +149,8 @@
 #include <tencentcloud/cvm/v20170312/model/ModifyInstancesVpcAttributeResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyKeyPairAttributeRequest.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyKeyPairAttributeResponse.h>
+#include <tencentcloud/cvm/v20170312/model/ModifyLaunchTemplateDefaultVersionRequest.h>
+#include <tencentcloud/cvm/v20170312/model/ModifyLaunchTemplateDefaultVersionResponse.h>
 #include <tencentcloud/cvm/v20170312/model/PurchaseReservedInstancesOfferingRequest.h>
 #include <tencentcloud/cvm/v20170312/model/PurchaseReservedInstancesOfferingResponse.h>
 #include <tencentcloud/cvm/v20170312/model/RebootInstancesRequest.h>
@@ -197,6 +211,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateKeyPairResponse> CreateKeyPairOutcome;
                 typedef std::future<CreateKeyPairOutcome> CreateKeyPairOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::CreateKeyPairRequest&, CreateKeyPairOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateKeyPairAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateLaunchTemplateResponse> CreateLaunchTemplateOutcome;
+                typedef std::future<CreateLaunchTemplateOutcome> CreateLaunchTemplateOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::CreateLaunchTemplateRequest&, CreateLaunchTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLaunchTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateLaunchTemplateVersionResponse> CreateLaunchTemplateVersionOutcome;
+                typedef std::future<CreateLaunchTemplateVersionOutcome> CreateLaunchTemplateVersionOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::CreateLaunchTemplateVersionRequest&, CreateLaunchTemplateVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLaunchTemplateVersionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDisasterRecoverGroupsResponse> DeleteDisasterRecoverGroupsOutcome;
                 typedef std::future<DeleteDisasterRecoverGroupsOutcome> DeleteDisasterRecoverGroupsOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DeleteDisasterRecoverGroupsRequest&, DeleteDisasterRecoverGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDisasterRecoverGroupsAsyncHandler;
@@ -206,6 +226,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteKeyPairsResponse> DeleteKeyPairsOutcome;
                 typedef std::future<DeleteKeyPairsOutcome> DeleteKeyPairsOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DeleteKeyPairsRequest&, DeleteKeyPairsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteKeyPairsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteLaunchTemplateResponse> DeleteLaunchTemplateOutcome;
+                typedef std::future<DeleteLaunchTemplateOutcome> DeleteLaunchTemplateOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::DeleteLaunchTemplateRequest&, DeleteLaunchTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLaunchTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteLaunchTemplateVersionsResponse> DeleteLaunchTemplateVersionsOutcome;
+                typedef std::future<DeleteLaunchTemplateVersionsOutcome> DeleteLaunchTemplateVersionsOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::DeleteLaunchTemplateVersionsRequest&, DeleteLaunchTemplateVersionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLaunchTemplateVersionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAccountQuotaResponse> DescribeAccountQuotaOutcome;
                 typedef std::future<DescribeAccountQuotaOutcome> DescribeAccountQuotaOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DescribeAccountQuotaRequest&, DescribeAccountQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountQuotaAsyncHandler;
@@ -260,6 +286,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeKeyPairsResponse> DescribeKeyPairsOutcome;
                 typedef std::future<DescribeKeyPairsOutcome> DescribeKeyPairsOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DescribeKeyPairsRequest&, DescribeKeyPairsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKeyPairsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLaunchTemplateVersionsResponse> DescribeLaunchTemplateVersionsOutcome;
+                typedef std::future<DescribeLaunchTemplateVersionsOutcome> DescribeLaunchTemplateVersionsOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::DescribeLaunchTemplateVersionsRequest&, DescribeLaunchTemplateVersionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLaunchTemplateVersionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLaunchTemplatesResponse> DescribeLaunchTemplatesOutcome;
+                typedef std::future<DescribeLaunchTemplatesOutcome> DescribeLaunchTemplatesOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::DescribeLaunchTemplatesRequest&, DescribeLaunchTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLaunchTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRegionsResponse> DescribeRegionsOutcome;
                 typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DescribeRegionsRequest&, DescribeRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
@@ -350,6 +382,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyKeyPairAttributeResponse> ModifyKeyPairAttributeOutcome;
                 typedef std::future<ModifyKeyPairAttributeOutcome> ModifyKeyPairAttributeOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::ModifyKeyPairAttributeRequest&, ModifyKeyPairAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyKeyPairAttributeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLaunchTemplateDefaultVersionResponse> ModifyLaunchTemplateDefaultVersionOutcome;
+                typedef std::future<ModifyLaunchTemplateDefaultVersionOutcome> ModifyLaunchTemplateDefaultVersionOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::ModifyLaunchTemplateDefaultVersionRequest&, ModifyLaunchTemplateDefaultVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLaunchTemplateDefaultVersionAsyncHandler;
                 typedef Outcome<Core::Error, Model::PurchaseReservedInstancesOfferingResponse> PurchaseReservedInstancesOfferingOutcome;
                 typedef std::future<PurchaseReservedInstancesOfferingOutcome> PurchaseReservedInstancesOfferingOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::PurchaseReservedInstancesOfferingRequest&, PurchaseReservedInstancesOfferingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PurchaseReservedInstancesOfferingAsyncHandler;
@@ -462,6 +497,28 @@ namespace TencentCloud
                 CreateKeyPairOutcomeCallable CreateKeyPairCallable(const Model::CreateKeyPairRequest& request);
 
                 /**
+                 *本接口（CreateLaunchTemplate）用于创建实例启动模板。
+
+实例启动模板是一种配置数据并可用于创建实例，其内容包含创建实例所需的配置，比如实例类型，数据盘和系统盘的类型和大小，以及安全组等信息。
+
+初次创建实例模板后，其模板版本为默认版本1，新版本的创建可使用CreateLaunchTemplateVersion创建，版本号递增。默认情况下，在RunInstances中指定实例启动模板，若不指定模板版本号，则使用默认版本。
+                 * @param req CreateLaunchTemplateRequest
+                 * @return CreateLaunchTemplateOutcome
+                 */
+                CreateLaunchTemplateOutcome CreateLaunchTemplate(const Model::CreateLaunchTemplateRequest &request);
+                void CreateLaunchTemplateAsync(const Model::CreateLaunchTemplateRequest& request, const CreateLaunchTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLaunchTemplateOutcomeCallable CreateLaunchTemplateCallable(const Model::CreateLaunchTemplateRequest& request);
+
+                /**
+                 *本接口（CreateLaunchTemplateVersion）根据指定的实例模板ID以及对应的模板版本号创建新的实例启动模板，若未指定模板版本号则使用默认版本号。每个实例启动模板最多创建30个版本。
+                 * @param req CreateLaunchTemplateVersionRequest
+                 * @return CreateLaunchTemplateVersionOutcome
+                 */
+                CreateLaunchTemplateVersionOutcome CreateLaunchTemplateVersion(const Model::CreateLaunchTemplateVersionRequest &request);
+                void CreateLaunchTemplateVersionAsync(const Model::CreateLaunchTemplateVersionRequest& request, const CreateLaunchTemplateVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLaunchTemplateVersionOutcomeCallable CreateLaunchTemplateVersionCallable(const Model::CreateLaunchTemplateVersionRequest& request);
+
+                /**
                  *本接口 (DeleteDisasterRecoverGroups)用于删除[分散置放群组](https://cloud.tencent.com/document/product/213/15486)。只有空的置放群组才能被删除，非空的群组需要先销毁组内所有云服务器，才能执行删除操作，不然会产生删除置放群组失败的错误。
                  * @param req DeleteDisasterRecoverGroupsRequest
                  * @return DeleteDisasterRecoverGroupsOutcome
@@ -494,6 +551,24 @@ namespace TencentCloud
                 DeleteKeyPairsOutcome DeleteKeyPairs(const Model::DeleteKeyPairsRequest &request);
                 void DeleteKeyPairsAsync(const Model::DeleteKeyPairsRequest& request, const DeleteKeyPairsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteKeyPairsOutcomeCallable DeleteKeyPairsCallable(const Model::DeleteKeyPairsRequest& request);
+
+                /**
+                 *本接口（DeleteLaunchTemplate）用于删除一个实例启动模板。
+                 * @param req DeleteLaunchTemplateRequest
+                 * @return DeleteLaunchTemplateOutcome
+                 */
+                DeleteLaunchTemplateOutcome DeleteLaunchTemplate(const Model::DeleteLaunchTemplateRequest &request);
+                void DeleteLaunchTemplateAsync(const Model::DeleteLaunchTemplateRequest& request, const DeleteLaunchTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLaunchTemplateOutcomeCallable DeleteLaunchTemplateCallable(const Model::DeleteLaunchTemplateRequest& request);
+
+                /**
+                 *本接口（DeleteLaunchTemplateVersions）用于删除一个或者多个实例启动模板版本。
+                 * @param req DeleteLaunchTemplateVersionsRequest
+                 * @return DeleteLaunchTemplateVersionsOutcome
+                 */
+                DeleteLaunchTemplateVersionsOutcome DeleteLaunchTemplateVersions(const Model::DeleteLaunchTemplateVersionsRequest &request);
+                void DeleteLaunchTemplateVersionsAsync(const Model::DeleteLaunchTemplateVersionsRequest& request, const DeleteLaunchTemplateVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLaunchTemplateVersionsOutcomeCallable DeleteLaunchTemplateVersionsCallable(const Model::DeleteLaunchTemplateVersionsRequest& request);
 
                 /**
                  *本接口(DescribeAccountQuota)用于查询用户配额详情。
@@ -691,6 +766,24 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 DescribeKeyPairsOutcome DescribeKeyPairs(const Model::DescribeKeyPairsRequest &request);
                 void DescribeKeyPairsAsync(const Model::DescribeKeyPairsRequest& request, const DescribeKeyPairsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeKeyPairsOutcomeCallable DescribeKeyPairsCallable(const Model::DescribeKeyPairsRequest& request);
+
+                /**
+                 *本接口（DescribeLaunchTemplateVersions）用于查询实例模板版本信息。
+                 * @param req DescribeLaunchTemplateVersionsRequest
+                 * @return DescribeLaunchTemplateVersionsOutcome
+                 */
+                DescribeLaunchTemplateVersionsOutcome DescribeLaunchTemplateVersions(const Model::DescribeLaunchTemplateVersionsRequest &request);
+                void DescribeLaunchTemplateVersionsAsync(const Model::DescribeLaunchTemplateVersionsRequest& request, const DescribeLaunchTemplateVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLaunchTemplateVersionsOutcomeCallable DescribeLaunchTemplateVersionsCallable(const Model::DescribeLaunchTemplateVersionsRequest& request);
+
+                /**
+                 *本接口（DescribeLaunchTemplates）用于查询一个或者多个实例启动模板。
+                 * @param req DescribeLaunchTemplatesRequest
+                 * @return DescribeLaunchTemplatesOutcome
+                 */
+                DescribeLaunchTemplatesOutcome DescribeLaunchTemplates(const Model::DescribeLaunchTemplatesRequest &request);
+                void DescribeLaunchTemplatesAsync(const Model::DescribeLaunchTemplatesRequest& request, const DescribeLaunchTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLaunchTemplatesOutcomeCallable DescribeLaunchTemplatesCallable(const Model::DescribeLaunchTemplatesRequest& request);
 
                 /**
                  *本接口(DescribeRegions)用于查询地域信息。因平台策略原因，该接口暂时停止更新，为确保您正常调用，可切换至新链接：https://cloud.tencent.com/document/product/1278/55255。
@@ -1037,6 +1130,15 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 ModifyKeyPairAttributeOutcome ModifyKeyPairAttribute(const Model::ModifyKeyPairAttributeRequest &request);
                 void ModifyKeyPairAttributeAsync(const Model::ModifyKeyPairAttributeRequest& request, const ModifyKeyPairAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyKeyPairAttributeOutcomeCallable ModifyKeyPairAttributeCallable(const Model::ModifyKeyPairAttributeRequest& request);
+
+                /**
+                 *本接口（ModifyLaunchTemplateDefaultVersion）用于修改实例启动模板默认版本。
+                 * @param req ModifyLaunchTemplateDefaultVersionRequest
+                 * @return ModifyLaunchTemplateDefaultVersionOutcome
+                 */
+                ModifyLaunchTemplateDefaultVersionOutcome ModifyLaunchTemplateDefaultVersion(const Model::ModifyLaunchTemplateDefaultVersionRequest &request);
+                void ModifyLaunchTemplateDefaultVersionAsync(const Model::ModifyLaunchTemplateDefaultVersionRequest& request, const ModifyLaunchTemplateDefaultVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLaunchTemplateDefaultVersionOutcomeCallable ModifyLaunchTemplateDefaultVersionCallable(const Model::ModifyLaunchTemplateDefaultVersionRequest& request);
 
                 /**
                  *本接口(PurchaseReservedInstancesOffering)用于用户购买一个或者多个指定配置的预留实例

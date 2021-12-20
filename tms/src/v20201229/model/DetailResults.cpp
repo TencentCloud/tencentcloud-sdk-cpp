@@ -27,7 +27,8 @@ DetailResults::DetailResults() :
     m_scoreHasBeenSet(false),
     m_libTypeHasBeenSet(false),
     m_libIdHasBeenSet(false),
-    m_libNameHasBeenSet(false)
+    m_libNameHasBeenSet(false),
+    m_subLabelHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,16 @@ CoreInternalOutcome DetailResults::Deserialize(const rapidjson::Value &value)
         m_libNameHasBeenSet = true;
     }
 
+    if (value.HasMember("SubLabel") && !value["SubLabel"].IsNull())
+    {
+        if (!value["SubLabel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DetailResults.SubLabel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subLabel = string(value["SubLabel"].GetString());
+        m_subLabelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -175,6 +186,14 @@ void DetailResults::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "LibName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_libName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subLabelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubLabel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subLabel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -290,5 +309,21 @@ void DetailResults::SetLibName(const string& _libName)
 bool DetailResults::LibNameHasBeenSet() const
 {
     return m_libNameHasBeenSet;
+}
+
+string DetailResults::GetSubLabel() const
+{
+    return m_subLabel;
+}
+
+void DetailResults::SetSubLabel(const string& _subLabel)
+{
+    m_subLabel = _subLabel;
+    m_subLabelHasBeenSet = true;
+}
+
+bool DetailResults::SubLabelHasBeenSet() const
+{
+    return m_subLabelHasBeenSet;
 }
 

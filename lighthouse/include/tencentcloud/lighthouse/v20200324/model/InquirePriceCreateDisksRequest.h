@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取磁盘大小
-                     * @return DiskSize 磁盘大小
+                     * 获取云硬盘大小, 单位: GB。
+                     * @return DiskSize 云硬盘大小, 单位: GB。
                      */
                     int64_t GetDiskSize() const;
 
                     /**
-                     * 设置磁盘大小
-                     * @param DiskSize 磁盘大小
+                     * 设置云硬盘大小, 单位: GB。
+                     * @param DiskSize 云硬盘大小, 单位: GB。
                      */
                     void SetDiskSize(const int64_t& _diskSize);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取硬盘介质类型
-                     * @return DiskType 硬盘介质类型
+                     * 获取云硬盘介质类型。取值: "CLOUD_PREMIUM"(高性能云盘), "CLOUD_SSD"(SSD云硬盘)。
+                     * @return DiskType 云硬盘介质类型。取值: "CLOUD_PREMIUM"(高性能云盘), "CLOUD_SSD"(SSD云硬盘)。
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置硬盘介质类型
-                     * @param DiskType 硬盘介质类型
+                     * 设置云硬盘介质类型。取值: "CLOUD_PREMIUM"(高性能云盘), "CLOUD_SSD"(SSD云硬盘)。
+                     * @param DiskType 云硬盘介质类型。取值: "CLOUD_PREMIUM"(高性能云盘), "CLOUD_SSD"(SSD云硬盘)。
                      */
                     void SetDiskType(const std::string& _diskType);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool DiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取新购磁盘包年包月相关参数设置
-                     * @return DiskChargePrepaid 新购磁盘包年包月相关参数设置
+                     * 获取新购云硬盘包年包月相关参数设置。
+                     * @return DiskChargePrepaid 新购云硬盘包年包月相关参数设置。
                      */
                     DiskChargePrepaid GetDiskChargePrepaid() const;
 
                     /**
-                     * 设置新购磁盘包年包月相关参数设置
-                     * @param DiskChargePrepaid 新购磁盘包年包月相关参数设置
+                     * 设置新购云硬盘包年包月相关参数设置。
+                     * @param DiskChargePrepaid 新购云硬盘包年包月相关参数设置。
                      */
                     void SetDiskChargePrepaid(const DiskChargePrepaid& _diskChargePrepaid);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool DiskChargePrepaidHasBeenSet() const;
 
                     /**
-                     * 获取磁盘个数, 默认值: 1
-                     * @return DiskCount 磁盘个数, 默认值: 1
+                     * 获取云硬盘个数, 默认值: 1。
+                     * @return DiskCount 云硬盘个数, 默认值: 1。
                      */
                     int64_t GetDiskCount() const;
 
                     /**
-                     * 设置磁盘个数, 默认值: 1
-                     * @param DiskCount 磁盘个数, 默认值: 1
+                     * 设置云硬盘个数, 默认值: 1。
+                     * @param DiskCount 云硬盘个数, 默认值: 1。
                      */
                     void SetDiskCount(const int64_t& _diskCount);
 
@@ -118,25 +118,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 磁盘大小
+                     * 云硬盘大小, 单位: GB。
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * 硬盘介质类型
+                     * 云硬盘介质类型。取值: "CLOUD_PREMIUM"(高性能云盘), "CLOUD_SSD"(SSD云硬盘)。
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
-                     * 新购磁盘包年包月相关参数设置
+                     * 新购云硬盘包年包月相关参数设置。
                      */
                     DiskChargePrepaid m_diskChargePrepaid;
                     bool m_diskChargePrepaidHasBeenSet;
 
                     /**
-                     * 磁盘个数, 默认值: 1
+                     * 云硬盘个数, 默认值: 1。
                      */
                     int64_t m_diskCount;
                     bool m_diskCountHasBeenSet;
