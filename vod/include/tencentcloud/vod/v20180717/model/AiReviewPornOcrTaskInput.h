@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 内容审核 Ocr 文字鉴黄任务输入参数类型
+                * 智能识别 Ocr 文字涉及令人反感的信息的任务输入参数类型
                 */
                 class AiReviewPornOcrTaskInput : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取鉴黄模板 ID。
-                     * @return Definition 鉴黄模板 ID。
+                     * 获取鉴别涉及令人反感的信息的模板 ID。
+                     * @return Definition 鉴别涉及令人反感的信息的模板 ID。
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置鉴黄模板 ID。
-                     * @param Definition 鉴黄模板 ID。
+                     * 设置鉴别涉及令人反感的信息的模板 ID。
+                     * @param Definition 鉴别涉及令人反感的信息的模板 ID。
                      */
                     void SetDefinition(const uint64_t& _definition);
 
@@ -67,7 +67,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 鉴黄模板 ID。
+                     * 鉴别涉及令人反感的信息的模板 ID。
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;

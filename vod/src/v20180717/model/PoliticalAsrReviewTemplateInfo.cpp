@@ -22,8 +22,8 @@ using namespace std;
 
 PoliticalAsrReviewTemplateInfo::PoliticalAsrReviewTemplateInfo() :
     m_switchHasBeenSet(false),
-    m_blockConfidenceHasBeenSet(false),
-    m_reviewConfidenceHasBeenSet(false)
+    m_reviewConfidenceHasBeenSet(false),
+    m_blockConfidenceHasBeenSet(false)
 {
 }
 
@@ -42,16 +42,6 @@ CoreInternalOutcome PoliticalAsrReviewTemplateInfo::Deserialize(const rapidjson:
         m_switchHasBeenSet = true;
     }
 
-    if (value.HasMember("BlockConfidence") && !value["BlockConfidence"].IsNull())
-    {
-        if (!value["BlockConfidence"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `PoliticalAsrReviewTemplateInfo.BlockConfidence` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_blockConfidence = value["BlockConfidence"].GetInt64();
-        m_blockConfidenceHasBeenSet = true;
-    }
-
     if (value.HasMember("ReviewConfidence") && !value["ReviewConfidence"].IsNull())
     {
         if (!value["ReviewConfidence"].IsInt64())
@@ -60,6 +50,16 @@ CoreInternalOutcome PoliticalAsrReviewTemplateInfo::Deserialize(const rapidjson:
         }
         m_reviewConfidence = value["ReviewConfidence"].GetInt64();
         m_reviewConfidenceHasBeenSet = true;
+    }
+
+    if (value.HasMember("BlockConfidence") && !value["BlockConfidence"].IsNull())
+    {
+        if (!value["BlockConfidence"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PoliticalAsrReviewTemplateInfo.BlockConfidence` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_blockConfidence = value["BlockConfidence"].GetInt64();
+        m_blockConfidenceHasBeenSet = true;
     }
 
 
@@ -77,20 +77,20 @@ void PoliticalAsrReviewTemplateInfo::ToJsonObject(rapidjson::Value &value, rapid
         value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_blockConfidenceHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BlockConfidence";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_blockConfidence, allocator);
-    }
-
     if (m_reviewConfidenceHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReviewConfidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_reviewConfidence, allocator);
+    }
+
+    if (m_blockConfidenceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BlockConfidence";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_blockConfidence, allocator);
     }
 
 }
@@ -112,22 +112,6 @@ bool PoliticalAsrReviewTemplateInfo::SwitchHasBeenSet() const
     return m_switchHasBeenSet;
 }
 
-int64_t PoliticalAsrReviewTemplateInfo::GetBlockConfidence() const
-{
-    return m_blockConfidence;
-}
-
-void PoliticalAsrReviewTemplateInfo::SetBlockConfidence(const int64_t& _blockConfidence)
-{
-    m_blockConfidence = _blockConfidence;
-    m_blockConfidenceHasBeenSet = true;
-}
-
-bool PoliticalAsrReviewTemplateInfo::BlockConfidenceHasBeenSet() const
-{
-    return m_blockConfidenceHasBeenSet;
-}
-
 int64_t PoliticalAsrReviewTemplateInfo::GetReviewConfidence() const
 {
     return m_reviewConfidence;
@@ -142,5 +126,21 @@ void PoliticalAsrReviewTemplateInfo::SetReviewConfidence(const int64_t& _reviewC
 bool PoliticalAsrReviewTemplateInfo::ReviewConfidenceHasBeenSet() const
 {
     return m_reviewConfidenceHasBeenSet;
+}
+
+int64_t PoliticalAsrReviewTemplateInfo::GetBlockConfidence() const
+{
+    return m_blockConfidence;
+}
+
+void PoliticalAsrReviewTemplateInfo::SetBlockConfidence(const int64_t& _blockConfidence)
+{
+    m_blockConfidence = _blockConfidence;
+    m_blockConfidenceHasBeenSet = true;
+}
+
+bool PoliticalAsrReviewTemplateInfo::BlockConfidenceHasBeenSet() const
+{
+    return m_blockConfidenceHasBeenSet;
 }
 

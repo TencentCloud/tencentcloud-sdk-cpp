@@ -28,7 +28,8 @@ FlowApproverInfo::FlowApproverInfo() :
     m_deadlineHasBeenSet(false),
     m_callbackUrlHasBeenSet(false),
     m_approverTypeHasBeenSet(false),
-    m_openIdHasBeenSet(false)
+    m_openIdHasBeenSet(false),
+    m_preReadTimeHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome FlowApproverInfo::Deserialize(const rapidjson::Value &value)
         m_openIdHasBeenSet = true;
     }
 
+    if (value.HasMember("PreReadTime") && !value["PreReadTime"].IsNull())
+    {
+        if (!value["PreReadTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.PreReadTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_preReadTime = value["PreReadTime"].GetInt64();
+        m_preReadTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void FlowApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "OpenId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_openId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_preReadTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreReadTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_preReadTime, allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void FlowApproverInfo::SetOpenId(const string& _openId)
 bool FlowApproverInfo::OpenIdHasBeenSet() const
 {
     return m_openIdHasBeenSet;
+}
+
+int64_t FlowApproverInfo::GetPreReadTime() const
+{
+    return m_preReadTime;
+}
+
+void FlowApproverInfo::SetPreReadTime(const int64_t& _preReadTime)
+{
+    m_preReadTime = _preReadTime;
+    m_preReadTimeHasBeenSet = true;
+}
+
+bool FlowApproverInfo::PreReadTimeHasBeenSet() const
+{
+    return m_preReadTimeHasBeenSet;
 }
 

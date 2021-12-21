@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 画面鉴恐任务控制参数。
+                * 画面鉴别涉及令人不安全的信息的任务控制参数。
                 */
                 class TerrorismImgReviewTemplateInfoForUpdate : public AbstractModel
                 {
@@ -47,22 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取画面鉴恐任务开关，可选值：
-<li>ON：开启画面鉴恐任务；</li>
-<li>OFF：关闭画面鉴恐任务。</li>
-                     * @return Switch 画面鉴恐任务开关，可选值：
-<li>ON：开启画面鉴恐任务；</li>
-<li>OFF：关闭画面鉴恐任务。</li>
+                     * 获取画面鉴别涉及令人不安全的信息的任务开关，可选值：
+<li>ON：开启画面鉴别涉及令人不安全的信息的任务；</li>
+<li>OFF：关闭画面鉴别涉及令人不安全的信息的任务。</li>
+                     * @return Switch 画面鉴别涉及令人不安全的信息的任务开关，可选值：
+<li>ON：开启画面鉴别涉及令人不安全的信息的任务；</li>
+<li>OFF：关闭画面鉴别涉及令人不安全的信息的任务。</li>
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置画面鉴恐任务开关，可选值：
-<li>ON：开启画面鉴恐任务；</li>
-<li>OFF：关闭画面鉴恐任务。</li>
-                     * @param Switch 画面鉴恐任务开关，可选值：
-<li>ON：开启画面鉴恐任务；</li>
-<li>OFF：关闭画面鉴恐任务。</li>
+                     * 设置画面鉴别涉及令人不安全的信息的任务开关，可选值：
+<li>ON：开启画面鉴别涉及令人不安全的信息的任务；</li>
+<li>OFF：关闭画面鉴别涉及令人不安全的信息的任务。</li>
+                     * @param Switch 画面鉴别涉及令人不安全的信息的任务开关，可选值：
+<li>ON：开启画面鉴别涉及令人不安全的信息的任务；</li>
+<li>OFF：关闭画面鉴别涉及令人不安全的信息的任务。</li>
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -73,7 +73,7 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取画面鉴恐过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：
+                     * 获取画面鉴别涉及令人不安全的信息的过滤标签，智能识别结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：
 <li>guns：武器枪支；</li>
 <li>crowd：人群聚集；</li>
 <li>bloody：血腥画面；</li>
@@ -83,7 +83,7 @@ namespace TencentCloud
 <li>explosion：爆炸火灾；</li>
 <li>terrorists：暴恐人物；</li>
 <li>scenario：暴恐画面。</li>
-                     * @return LabelSet 画面鉴恐过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：
+                     * @return LabelSet 画面鉴别涉及令人不安全的信息的过滤标签，智能识别结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：
 <li>guns：武器枪支；</li>
 <li>crowd：人群聚集；</li>
 <li>bloody：血腥画面；</li>
@@ -97,7 +97,7 @@ namespace TencentCloud
                     std::vector<std::string> GetLabelSet() const;
 
                     /**
-                     * 设置画面鉴恐过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：
+                     * 设置画面鉴别涉及令人不安全的信息的过滤标签，智能识别结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：
 <li>guns：武器枪支；</li>
 <li>crowd：人群聚集；</li>
 <li>bloody：血腥画面；</li>
@@ -107,7 +107,7 @@ namespace TencentCloud
 <li>explosion：爆炸火灾；</li>
 <li>terrorists：暴恐人物；</li>
 <li>scenario：暴恐画面。</li>
-                     * @param LabelSet 画面鉴恐过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：
+                     * @param LabelSet 画面鉴别涉及令人不安全的信息的过滤标签，智能识别结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：
 <li>guns：武器枪支；</li>
 <li>crowd：人群聚集；</li>
 <li>bloody：血腥画面；</li>
@@ -127,14 +127,14 @@ namespace TencentCloud
                     bool LabelSetHasBeenSet() const;
 
                     /**
-                     * 获取判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规。取值范围：0~100。
-                     * @return BlockConfidence 判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规。取值范围：0~100。
+                     * 获取判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规。取值范围：0~100。
+                     * @return BlockConfidence 判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规。取值范围：0~100。
                      */
                     int64_t GetBlockConfidence() const;
 
                     /**
-                     * 设置判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规。取值范围：0~100。
-                     * @param BlockConfidence 判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规。取值范围：0~100。
+                     * 设置判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规。取值范围：0~100。
+                     * @param BlockConfidence 判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规。取值范围：0~100。
                      */
                     void SetBlockConfidence(const int64_t& _blockConfidence);
 
@@ -145,14 +145,14 @@ namespace TencentCloud
                     bool BlockConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核。取值范围：0~100。
-                     * @return ReviewConfidence 判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核。取值范围：0~100。
+                     * 获取判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核。取值范围：0~100。
+                     * @return ReviewConfidence 判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核。取值范围：0~100。
                      */
                     int64_t GetReviewConfidence() const;
 
                     /**
-                     * 设置判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核。取值范围：0~100。
-                     * @param ReviewConfidence 判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核。取值范围：0~100。
+                     * 设置判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核。取值范围：0~100。
+                     * @param ReviewConfidence 判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核。取值范围：0~100。
                      */
                     void SetReviewConfidence(const int64_t& _reviewConfidence);
 
@@ -165,15 +165,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 画面鉴恐任务开关，可选值：
-<li>ON：开启画面鉴恐任务；</li>
-<li>OFF：关闭画面鉴恐任务。</li>
+                     * 画面鉴别涉及令人不安全的信息的任务开关，可选值：
+<li>ON：开启画面鉴别涉及令人不安全的信息的任务；</li>
+<li>OFF：关闭画面鉴别涉及令人不安全的信息的任务。</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 画面鉴恐过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：
+                     * 画面鉴别涉及令人不安全的信息的过滤标签，智能识别结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：
 <li>guns：武器枪支；</li>
 <li>crowd：人群聚集；</li>
 <li>bloody：血腥画面；</li>
@@ -188,13 +188,13 @@ namespace TencentCloud
                     bool m_labelSetHasBeenSet;
 
                     /**
-                     * 判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规。取值范围：0~100。
+                     * 判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规。取值范围：0~100。
                      */
                     int64_t m_blockConfidence;
                     bool m_blockConfidenceHasBeenSet;
 
                     /**
-                     * 判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核。取值范围：0~100。
+                     * 判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核。取值范围：0~100。
                      */
                     int64_t m_reviewConfidence;
                     bool m_reviewConfidenceHasBeenSet;

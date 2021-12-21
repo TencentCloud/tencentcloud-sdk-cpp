@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 智能内容审核任务类型
+                * 智能识别任务类型
                 */
                 class AiContentReviewTaskInput : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取视频内容审核模板 ID。
-                     * @return Definition 视频内容审核模板 ID。
+                     * 获取智能识别模板 ID。
+                     * @return Definition 智能识别模板 ID。
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置视频内容审核模板 ID。
-                     * @param Definition 视频内容审核模板 ID。
+                     * 设置智能识别模板 ID。
+                     * @param Definition 智能识别模板 ID。
                      */
                     void SetDefinition(const uint64_t& _definition);
 
@@ -67,7 +67,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 视频内容审核模板 ID。
+                     * 智能识别模板 ID。
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;

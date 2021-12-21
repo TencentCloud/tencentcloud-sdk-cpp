@@ -190,6 +190,24 @@ namespace TencentCloud
                      */
                     bool OpenIdHasBeenSet() const;
 
+                    /**
+                     * 获取合同的强制预览时间：3~300s，未指定则按合同页数计算
+                     * @return PreReadTime 合同的强制预览时间：3~300s，未指定则按合同页数计算
+                     */
+                    int64_t GetPreReadTime() const;
+
+                    /**
+                     * 设置合同的强制预览时间：3~300s，未指定则按合同页数计算
+                     * @param PreReadTime 合同的强制预览时间：3~300s，未指定则按合同页数计算
+                     */
+                    void SetPreReadTime(const int64_t& _preReadTime);
+
+                    /**
+                     * 判断参数 PreReadTime 是否已赋值
+                     * @return PreReadTime 是否已赋值
+                     */
+                    bool PreReadTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -239,6 +257,12 @@ namespace TencentCloud
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;
+
+                    /**
+                     * 合同的强制预览时间：3~300s，未指定则按合同页数计算
+                     */
+                    int64_t m_preReadTime;
+                    bool m_preReadTimeHasBeenSet;
 
                 };
             }

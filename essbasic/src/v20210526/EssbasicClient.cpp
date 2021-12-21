@@ -298,6 +298,92 @@ EssbasicClient::DescribeUsageOutcomeCallable EssbasicClient::DescribeUsageCallab
     return task->get_future();
 }
 
+EssbasicClient::GetDownloadFlowUrlOutcome EssbasicClient::GetDownloadFlowUrl(const GetDownloadFlowUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetDownloadFlowUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetDownloadFlowUrlResponse rsp = GetDownloadFlowUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetDownloadFlowUrlOutcome(rsp);
+        else
+            return GetDownloadFlowUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return GetDownloadFlowUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::GetDownloadFlowUrlAsync(const GetDownloadFlowUrlRequest& request, const GetDownloadFlowUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetDownloadFlowUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::GetDownloadFlowUrlOutcomeCallable EssbasicClient::GetDownloadFlowUrlCallable(const GetDownloadFlowUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetDownloadFlowUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->GetDownloadFlowUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssbasicClient::OperateChannelTemplateOutcome EssbasicClient::OperateChannelTemplate(const OperateChannelTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "OperateChannelTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OperateChannelTemplateResponse rsp = OperateChannelTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OperateChannelTemplateOutcome(rsp);
+        else
+            return OperateChannelTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return OperateChannelTemplateOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::OperateChannelTemplateAsync(const OperateChannelTemplateRequest& request, const OperateChannelTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->OperateChannelTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::OperateChannelTemplateOutcomeCallable EssbasicClient::OperateChannelTemplateCallable(const OperateChannelTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<OperateChannelTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->OperateChannelTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::PrepareFlowsOutcome EssbasicClient::PrepareFlows(const PrepareFlowsRequest &request)
 {
     auto outcome = MakeRequest(request, "PrepareFlows");

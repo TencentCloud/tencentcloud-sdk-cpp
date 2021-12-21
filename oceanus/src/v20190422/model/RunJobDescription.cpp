@@ -24,7 +24,9 @@ RunJobDescription::RunJobDescription() :
     m_jobIdHasBeenSet(false),
     m_runTypeHasBeenSet(false),
     m_startModeHasBeenSet(false),
-    m_jobConfigVersionHasBeenSet(false)
+    m_jobConfigVersionHasBeenSet(false),
+    m_savepointPathHasBeenSet(false),
+    m_savepointIdHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome RunJobDescription::Deserialize(const rapidjson::Value &value
         m_jobConfigVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("SavepointPath") && !value["SavepointPath"].IsNull())
+    {
+        if (!value["SavepointPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunJobDescription.SavepointPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_savepointPath = string(value["SavepointPath"].GetString());
+        m_savepointPathHasBeenSet = true;
+    }
+
+    if (value.HasMember("SavepointId") && !value["SavepointId"].IsNull())
+    {
+        if (!value["SavepointId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunJobDescription.SavepointId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_savepointId = string(value["SavepointId"].GetString());
+        m_savepointIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void RunJobDescription::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "JobConfigVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_jobConfigVersion, allocator);
+    }
+
+    if (m_savepointPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SavepointPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_savepointPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_savepointIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SavepointId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_savepointId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void RunJobDescription::SetJobConfigVersion(const uint64_t& _jobConfigVersion)
 bool RunJobDescription::JobConfigVersionHasBeenSet() const
 {
     return m_jobConfigVersionHasBeenSet;
+}
+
+string RunJobDescription::GetSavepointPath() const
+{
+    return m_savepointPath;
+}
+
+void RunJobDescription::SetSavepointPath(const string& _savepointPath)
+{
+    m_savepointPath = _savepointPath;
+    m_savepointPathHasBeenSet = true;
+}
+
+bool RunJobDescription::SavepointPathHasBeenSet() const
+{
+    return m_savepointPathHasBeenSet;
+}
+
+string RunJobDescription::GetSavepointId() const
+{
+    return m_savepointId;
+}
+
+void RunJobDescription::SetSavepointId(const string& _savepointId)
+{
+    m_savepointId = _savepointId;
+    m_savepointIdHasBeenSet = true;
+}
+
+bool RunJobDescription::SavepointIdHasBeenSet() const
+{
+    return m_savepointIdHasBeenSet;
 }
 

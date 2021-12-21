@@ -20,7 +20,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cvm::V20170312::Model;
 using namespace std;
 
-LaunchTemplate::LaunchTemplate()
+LaunchTemplate::LaunchTemplate() :
+    m_launchTemplateIdHasBeenSet(false),
+    m_launchTemplateVersionHasBeenSet(false)
 {
 }
 
@@ -29,6 +31,26 @@ CoreInternalOutcome LaunchTemplate::Deserialize(const rapidjson::Value &value)
     string requestId = "";
 
 
+    if (value.HasMember("LaunchTemplateId") && !value["LaunchTemplateId"].IsNull())
+    {
+        if (!value["LaunchTemplateId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LaunchTemplate.LaunchTemplateId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_launchTemplateId = string(value["LaunchTemplateId"].GetString());
+        m_launchTemplateIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("LaunchTemplateVersion") && !value["LaunchTemplateVersion"].IsNull())
+    {
+        if (!value["LaunchTemplateVersion"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LaunchTemplate.LaunchTemplateVersion` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_launchTemplateVersion = value["LaunchTemplateVersion"].GetUint64();
+        m_launchTemplateVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -36,6 +58,54 @@ CoreInternalOutcome LaunchTemplate::Deserialize(const rapidjson::Value &value)
 void LaunchTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_launchTemplateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LaunchTemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_launchTemplateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_launchTemplateVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LaunchTemplateVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_launchTemplateVersion, allocator);
+    }
+
 }
 
+
+string LaunchTemplate::GetLaunchTemplateId() const
+{
+    return m_launchTemplateId;
+}
+
+void LaunchTemplate::SetLaunchTemplateId(const string& _launchTemplateId)
+{
+    m_launchTemplateId = _launchTemplateId;
+    m_launchTemplateIdHasBeenSet = true;
+}
+
+bool LaunchTemplate::LaunchTemplateIdHasBeenSet() const
+{
+    return m_launchTemplateIdHasBeenSet;
+}
+
+uint64_t LaunchTemplate::GetLaunchTemplateVersion() const
+{
+    return m_launchTemplateVersion;
+}
+
+void LaunchTemplate::SetLaunchTemplateVersion(const uint64_t& _launchTemplateVersion)
+{
+    m_launchTemplateVersion = _launchTemplateVersion;
+    m_launchTemplateVersionHasBeenSet = true;
+}
+
+bool LaunchTemplate::LaunchTemplateVersionHasBeenSet() const
+{
+    return m_launchTemplateVersionHasBeenSet;
+}
 

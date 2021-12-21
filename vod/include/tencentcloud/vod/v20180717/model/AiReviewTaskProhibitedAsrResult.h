@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 内容审核 Asr 文字鉴任违禁务结果类型
+                * 智能识别 Asr 文字鉴任违禁务结果类型
                 */
                 class AiReviewTaskProhibitedAsrResult : public AbstractModel
                 {
@@ -121,14 +121,14 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取内容审核 Asr 文字鉴违禁任务输入。
-                     * @return Input 内容审核 Asr 文字鉴违禁任务输入。
+                     * 获取智能识别 Asr 文字鉴违禁任务输入。
+                     * @return Input 智能识别 Asr 文字鉴违禁任务输入。
                      */
                     AiReviewProhibitedAsrTaskInput GetInput() const;
 
                     /**
-                     * 设置内容审核 Asr 文字鉴违禁任务输入。
-                     * @param Input 内容审核 Asr 文字鉴违禁任务输入。
+                     * 设置智能识别 Asr 文字鉴违禁任务输入。
+                     * @param Input 智能识别 Asr 文字鉴违禁任务输入。
                      */
                     void SetInput(const AiReviewProhibitedAsrTaskInput& _input);
 
@@ -139,17 +139,17 @@ namespace TencentCloud
                     bool InputHasBeenSet() const;
 
                     /**
-                     * 获取内容审核 Asr 文字鉴违禁任务输出。
+                     * 获取智能识别 Asr 文字鉴违禁任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Output 内容审核 Asr 文字鉴违禁任务输出。
+                     * @return Output 智能识别 Asr 文字鉴违禁任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiReviewProhibitedAsrTaskOutput GetOutput() const;
 
                     /**
-                     * 设置内容审核 Asr 文字鉴违禁任务输出。
+                     * 设置智能识别 Asr 文字鉴违禁任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Output 内容审核 Asr 文字鉴违禁任务输出。
+                     * @param Output 智能识别 Asr 文字鉴违禁任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOutput(const AiReviewProhibitedAsrTaskOutput& _output);
@@ -187,13 +187,13 @@ namespace TencentCloud
                     bool m_messageHasBeenSet;
 
                     /**
-                     * 内容审核 Asr 文字鉴违禁任务输入。
+                     * 智能识别 Asr 文字鉴违禁任务输入。
                      */
                     AiReviewProhibitedAsrTaskInput m_input;
                     bool m_inputHasBeenSet;
 
                     /**
-                     * 内容审核 Asr 文字鉴违禁任务输出。
+                     * 智能识别 Asr 文字鉴违禁任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiReviewProhibitedAsrTaskOutput m_output;

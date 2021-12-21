@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool MediaProcessTaskHasBeenSet() const;
 
                     /**
-                     * 获取AI 智能内容审核类型任务参数。
-                     * @return AiContentReviewTask AI 智能内容审核类型任务参数。
+                     * 获取AI 智能识别类型任务参数。
+                     * @return AiContentReviewTask AI 智能识别类型任务参数。
                      */
                     AiContentReviewTaskInput GetAiContentReviewTask() const;
 
                     /**
-                     * 设置AI 智能内容审核类型任务参数。
-                     * @param AiContentReviewTask AI 智能内容审核类型任务参数。
+                     * 设置AI 智能识别类型任务参数。
+                     * @param AiContentReviewTask AI 智能识别类型任务参数。
                      */
                     void SetAiContentReviewTask(const AiContentReviewTaskInput& _aiContentReviewTask);
 
@@ -193,7 +193,7 @@ namespace TencentCloud
                     bool m_mediaProcessTaskHasBeenSet;
 
                     /**
-                     * AI 智能内容审核类型任务参数。
+                     * AI 智能识别类型任务参数。
                      */
                     AiContentReviewTaskInput m_aiContentReviewTask;
                     bool m_aiContentReviewTaskHasBeenSet;

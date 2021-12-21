@@ -2749,6 +2749,92 @@ TdmqClient::DescribeProducersOutcomeCallable TdmqClient::DescribeProducersCallab
     return task->get_future();
 }
 
+TdmqClient::DescribePublisherSummaryOutcome TdmqClient::DescribePublisherSummary(const DescribePublisherSummaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePublisherSummary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePublisherSummaryResponse rsp = DescribePublisherSummaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePublisherSummaryOutcome(rsp);
+        else
+            return DescribePublisherSummaryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePublisherSummaryOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribePublisherSummaryAsync(const DescribePublisherSummaryRequest& request, const DescribePublisherSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePublisherSummary(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribePublisherSummaryOutcomeCallable TdmqClient::DescribePublisherSummaryCallable(const DescribePublisherSummaryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePublisherSummaryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePublisherSummary(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::DescribePublishersOutcome TdmqClient::DescribePublishers(const DescribePublishersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePublishers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePublishersResponse rsp = DescribePublishersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePublishersOutcome(rsp);
+        else
+            return DescribePublishersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePublishersOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribePublishersAsync(const DescribePublishersRequest& request, const DescribePublishersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePublishers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribePublishersOutcomeCallable TdmqClient::DescribePublishersCallable(const DescribePublishersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePublishersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePublishers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::DescribeRocketMQClusterOutcome TdmqClient::DescribeRocketMQCluster(const DescribeRocketMQClusterRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRocketMQCluster");

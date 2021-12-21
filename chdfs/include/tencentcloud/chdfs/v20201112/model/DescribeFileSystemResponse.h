@@ -57,9 +57,9 @@ namespace TencentCloud
                     bool FileSystemHasBeenSet() const;
 
                     /**
-                     * 获取已使用容量（byte），包括标准和归档存储
+                     * 获取文件系统已使用容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CapacityUsed 已使用容量（byte），包括标准和归档存储
+                     * @return CapacityUsed 文件系统已使用容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetCapacityUsed() const;
@@ -71,9 +71,9 @@ namespace TencentCloud
                     bool CapacityUsedHasBeenSet() const;
 
                     /**
-                     * 获取已使用归档存储容量（byte）
+                     * 获取已使用COS归档存储容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ArchiveCapacityUsed 已使用归档存储容量（byte）
+                     * @return ArchiveCapacityUsed 已使用COS归档存储容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetArchiveCapacityUsed() const;
@@ -84,6 +84,34 @@ namespace TencentCloud
                      */
                     bool ArchiveCapacityUsedHasBeenSet() const;
 
+                    /**
+                     * 获取已使用COS标准存储容量（byte）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StandardCapacityUsed 已使用COS标准存储容量（byte）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetStandardCapacityUsed() const;
+
+                    /**
+                     * 判断参数 StandardCapacityUsed 是否已赋值
+                     * @return StandardCapacityUsed 是否已赋值
+                     */
+                    bool StandardCapacityUsedHasBeenSet() const;
+
+                    /**
+                     * 获取已使用COS低频存储容量（byte）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DegradeCapacityUsed 已使用COS低频存储容量（byte）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetDegradeCapacityUsed() const;
+
+                    /**
+                     * 判断参数 DegradeCapacityUsed 是否已赋值
+                     * @return DegradeCapacityUsed 是否已赋值
+                     */
+                    bool DegradeCapacityUsedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -93,18 +121,32 @@ namespace TencentCloud
                     bool m_fileSystemHasBeenSet;
 
                     /**
-                     * 已使用容量（byte），包括标准和归档存储
+                     * 文件系统已使用容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_capacityUsed;
                     bool m_capacityUsedHasBeenSet;
 
                     /**
-                     * 已使用归档存储容量（byte）
+                     * 已使用COS归档存储容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_archiveCapacityUsed;
                     bool m_archiveCapacityUsedHasBeenSet;
+
+                    /**
+                     * 已使用COS标准存储容量（byte）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_standardCapacityUsed;
+                    bool m_standardCapacityUsedHasBeenSet;
+
+                    /**
+                     * 已使用COS低频存储容量（byte）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_degradeCapacityUsed;
+                    bool m_degradeCapacityUsedHasBeenSet;
 
                 };
             }

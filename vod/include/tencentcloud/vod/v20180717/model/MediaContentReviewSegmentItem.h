@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 内容审核涉黄/暴恐嫌疑片段
+                * 智能识别涉及令人反感的信息、涉及令人不安全的信息的嫌疑片段
                 */
                 class MediaContentReviewSegmentItem : public AbstractModel
                 {
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool EndTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取嫌疑片段涉黄分数。
-                     * @return Confidence 嫌疑片段涉黄分数。
+                     * 获取嫌疑片段涉及令人反感的信息的分数。
+                     * @return Confidence 嫌疑片段涉及令人反感的信息的分数。
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置嫌疑片段涉黄分数。
-                     * @param Confidence 嫌疑片段涉黄分数。
+                     * 设置嫌疑片段涉及令人反感的信息的分数。
+                     * @param Confidence 嫌疑片段涉及令人反感的信息的分数。
                      */
                     void SetConfidence(const double& _confidence);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取嫌疑片段鉴黄结果标签。
-                     * @return Label 嫌疑片段鉴黄结果标签。
+                     * 获取嫌疑片段涉及令人反感的信息的结果标签。
+                     * @return Label 嫌疑片段涉及令人反感的信息的结果标签。
                      */
                     std::string GetLabel() const;
 
                     /**
-                     * 设置嫌疑片段鉴黄结果标签。
-                     * @param Label 嫌疑片段鉴黄结果标签。
+                     * 设置嫌疑片段涉及令人反感的信息的结果标签。
+                     * @param Label 嫌疑片段涉及令人反感的信息的结果标签。
                      */
                     void SetLabel(const std::string& _label);
 
@@ -119,11 +119,11 @@ namespace TencentCloud
                     bool LabelHasBeenSet() const;
 
                     /**
-                     * 获取嫌疑片段鉴黄结果建议，取值范围：
+                     * 获取嫌疑片段鉴别涉及令人反感的信息的结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-                     * @return Suggestion 嫌疑片段鉴黄结果建议，取值范围：
+                     * @return Suggestion 嫌疑片段鉴别涉及令人反感的信息的结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
@@ -131,11 +131,11 @@ namespace TencentCloud
                     std::string GetSuggestion() const;
 
                     /**
-                     * 设置嫌疑片段鉴黄结果建议，取值范围：
+                     * 设置嫌疑片段鉴别涉及令人反感的信息的结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-                     * @param Suggestion 嫌疑片段鉴黄结果建议，取值范围：
+                     * @param Suggestion 嫌疑片段鉴别涉及令人反感的信息的结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
@@ -221,19 +221,19 @@ namespace TencentCloud
                     bool m_endTimeOffsetHasBeenSet;
 
                     /**
-                     * 嫌疑片段涉黄分数。
+                     * 嫌疑片段涉及令人反感的信息的分数。
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * 嫌疑片段鉴黄结果标签。
+                     * 嫌疑片段涉及令人反感的信息的结果标签。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
-                     * 嫌疑片段鉴黄结果建议，取值范围：
+                     * 嫌疑片段鉴别涉及令人反感的信息的结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>

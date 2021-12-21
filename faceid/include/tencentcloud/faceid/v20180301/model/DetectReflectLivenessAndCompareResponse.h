@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取验证通过后的视频最佳截图照片资源地址，jpg格式。
-                     * @return BestFrameUrl 验证通过后的视频最佳截图照片资源地址，jpg格式。
+                     * 获取验证通过后的视频最佳截图资源临时地址，jpg格式，资源和链接有效期2小时，务必在有效期内下载。
+                     * @return BestFrameUrl 验证通过后的视频最佳截图资源临时地址，jpg格式，资源和链接有效期2小时，务必在有效期内下载。
                      */
                     std::string GetBestFrameUrl() const;
 
@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool BestFrameUrlHasBeenSet() const;
 
                     /**
-                     * 获取验证通过后的视频最佳截图照片资源Md5。
-                     * @return BestFrameMd5 验证通过后的视频最佳截图照片资源Md5。
+                     * 获取验证通过后的视频最佳截图资源MD5（32位，用于校验BestFrame的一致性）。
+                     * @return BestFrameMd5 验证通过后的视频最佳截图资源MD5（32位，用于校验BestFrame的一致性）。
                      */
                     std::string GetBestFrameMd5() const;
 
@@ -68,8 +68,8 @@ namespace TencentCloud
                     bool BestFrameMd5HasBeenSet() const;
 
                     /**
-                     * 获取业务错误码，成功情况返回Success, 错误情况请参考下方错误码 列表中FailedOperation部分
-                     * @return Result 业务错误码，成功情况返回Success, 错误情况请参考下方错误码 列表中FailedOperation部分
+                     * 获取业务错误码，成功情况返回Success，错误情况请参考下方错误码 列表中FailedOperation部分。
+                     * @return Result 业务错误码，成功情况返回Success，错误情况请参考下方错误码 列表中FailedOperation部分。
                      */
                     std::string GetResult() const;
 
@@ -106,19 +106,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 验证通过后的视频最佳截图照片资源地址，jpg格式。
+                     * 验证通过后的视频最佳截图资源临时地址，jpg格式，资源和链接有效期2小时，务必在有效期内下载。
                      */
                     std::string m_bestFrameUrl;
                     bool m_bestFrameUrlHasBeenSet;
 
                     /**
-                     * 验证通过后的视频最佳截图照片资源Md5。
+                     * 验证通过后的视频最佳截图资源MD5（32位，用于校验BestFrame的一致性）。
                      */
                     std::string m_bestFrameMd5;
                     bool m_bestFrameMd5HasBeenSet;
 
                     /**
-                     * 业务错误码，成功情况返回Success, 错误情况请参考下方错误码 列表中FailedOperation部分
+                     * 业务错误码，成功情况返回Success，错误情况请参考下方错误码 列表中FailedOperation部分。
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;

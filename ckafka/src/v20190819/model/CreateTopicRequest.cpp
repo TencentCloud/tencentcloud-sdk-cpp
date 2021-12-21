@@ -37,7 +37,8 @@ CreateTopicRequest::CreateTopicRequest() :
     m_segmentMsHasBeenSet(false),
     m_enableAclRuleHasBeenSet(false),
     m_aclRuleNameHasBeenSet(false),
-    m_retentionBytesHasBeenSet(false)
+    m_retentionBytesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -171,6 +172,21 @@ string CreateTopicRequest::ToJsonString() const
         string key = "RetentionBytes";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_retentionBytes, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -419,6 +435,22 @@ void CreateTopicRequest::SetRetentionBytes(const int64_t& _retentionBytes)
 bool CreateTopicRequest::RetentionBytesHasBeenSet() const
 {
     return m_retentionBytesHasBeenSet;
+}
+
+vector<Tag> CreateTopicRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateTopicRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateTopicRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

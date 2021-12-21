@@ -38,7 +38,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 用户自定义审核任务控制参数。
+                * 用户自定义智能识别任务控制参数。
                 */
                 class UserDefineConfigureInfoForUpdate : public AbstractModel
                 {
@@ -50,14 +50,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户自定义人物审核控制参数。
-                     * @return FaceReviewInfo 用户自定义人物审核控制参数。
+                     * 获取用户自定义人物智能识别控制参数。
+                     * @return FaceReviewInfo 用户自定义人物智能识别控制参数。
                      */
                     UserDefineFaceReviewTemplateInfoForUpdate GetFaceReviewInfo() const;
 
                     /**
-                     * 设置用户自定义人物审核控制参数。
-                     * @param FaceReviewInfo 用户自定义人物审核控制参数。
+                     * 设置用户自定义人物智能识别控制参数。
+                     * @param FaceReviewInfo 用户自定义人物智能识别控制参数。
                      */
                     void SetFaceReviewInfo(const UserDefineFaceReviewTemplateInfoForUpdate& _faceReviewInfo);
 
@@ -68,14 +68,14 @@ namespace TencentCloud
                     bool FaceReviewInfoHasBeenSet() const;
 
                     /**
-                     * 获取用户自定义语音审核控制参数。
-                     * @return AsrReviewInfo 用户自定义语音审核控制参数。
+                     * 获取用户自定义语音智能识别控制参数。
+                     * @return AsrReviewInfo 用户自定义语音智能识别控制参数。
                      */
                     UserDefineAsrTextReviewTemplateInfoForUpdate GetAsrReviewInfo() const;
 
                     /**
-                     * 设置用户自定义语音审核控制参数。
-                     * @param AsrReviewInfo 用户自定义语音审核控制参数。
+                     * 设置用户自定义语音智能识别控制参数。
+                     * @param AsrReviewInfo 用户自定义语音智能识别控制参数。
                      */
                     void SetAsrReviewInfo(const UserDefineAsrTextReviewTemplateInfoForUpdate& _asrReviewInfo);
 
@@ -86,14 +86,14 @@ namespace TencentCloud
                     bool AsrReviewInfoHasBeenSet() const;
 
                     /**
-                     * 获取用户自定义文本审核控制参数。
-                     * @return OcrReviewInfo 用户自定义文本审核控制参数。
+                     * 获取用户自定义文本智能识别控制参数。
+                     * @return OcrReviewInfo 用户自定义文本智能识别控制参数。
                      */
                     UserDefineOcrTextReviewTemplateInfoForUpdate GetOcrReviewInfo() const;
 
                     /**
-                     * 设置用户自定义文本审核控制参数。
-                     * @param OcrReviewInfo 用户自定义文本审核控制参数。
+                     * 设置用户自定义文本智能识别控制参数。
+                     * @param OcrReviewInfo 用户自定义文本智能识别控制参数。
                      */
                     void SetOcrReviewInfo(const UserDefineOcrTextReviewTemplateInfoForUpdate& _ocrReviewInfo);
 
@@ -106,19 +106,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户自定义人物审核控制参数。
+                     * 用户自定义人物智能识别控制参数。
                      */
                     UserDefineFaceReviewTemplateInfoForUpdate m_faceReviewInfo;
                     bool m_faceReviewInfoHasBeenSet;
 
                     /**
-                     * 用户自定义语音审核控制参数。
+                     * 用户自定义语音智能识别控制参数。
                      */
                     UserDefineAsrTextReviewTemplateInfoForUpdate m_asrReviewInfo;
                     bool m_asrReviewInfoHasBeenSet;
 
                     /**
-                     * 用户自定义文本审核控制参数。
+                     * 用户自定义文本智能识别控制参数。
                      */
                     UserDefineOcrTextReviewTemplateInfoForUpdate m_ocrReviewInfo;
                     bool m_ocrReviewInfoHasBeenSet;

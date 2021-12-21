@@ -24,7 +24,9 @@ using namespace std;
 
 ApplySnapshotRequest::ApplySnapshotRequest() :
     m_snapshotIdHasBeenSet(false),
-    m_diskIdHasBeenSet(false)
+    m_diskIdHasBeenSet(false),
+    m_autoStopInstanceHasBeenSet(false),
+    m_autoStartInstanceHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,22 @@ string ApplySnapshotRequest::ToJsonString() const
         string key = "DiskId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_diskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoStopInstanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoStopInstance";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoStopInstance, allocator);
+    }
+
+    if (m_autoStartInstanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoStartInstance";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoStartInstance, allocator);
     }
 
 
@@ -89,6 +107,38 @@ void ApplySnapshotRequest::SetDiskId(const string& _diskId)
 bool ApplySnapshotRequest::DiskIdHasBeenSet() const
 {
     return m_diskIdHasBeenSet;
+}
+
+bool ApplySnapshotRequest::GetAutoStopInstance() const
+{
+    return m_autoStopInstance;
+}
+
+void ApplySnapshotRequest::SetAutoStopInstance(const bool& _autoStopInstance)
+{
+    m_autoStopInstance = _autoStopInstance;
+    m_autoStopInstanceHasBeenSet = true;
+}
+
+bool ApplySnapshotRequest::AutoStopInstanceHasBeenSet() const
+{
+    return m_autoStopInstanceHasBeenSet;
+}
+
+bool ApplySnapshotRequest::GetAutoStartInstance() const
+{
+    return m_autoStartInstance;
+}
+
+void ApplySnapshotRequest::SetAutoStartInstance(const bool& _autoStartInstance)
+{
+    m_autoStartInstance = _autoStartInstance;
+    m_autoStartInstanceHasBeenSet = true;
+}
+
+bool ApplySnapshotRequest::AutoStartInstanceHasBeenSet() const
+{
+    return m_autoStartInstanceHasBeenSet;
 }
 
 

@@ -244,6 +244,50 @@ namespace TencentCloud
                      */
                     bool PosixAclHasBeenSet() const;
 
+                    /**
+                     * 获取是否打开Ranger地址校验
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableRanger 是否打开Ranger地址校验
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetEnableRanger() const;
+
+                    /**
+                     * 设置是否打开Ranger地址校验
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnableRanger 是否打开Ranger地址校验
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnableRanger(const bool& _enableRanger);
+
+                    /**
+                     * 判断参数 EnableRanger 是否已赋值
+                     * @return EnableRanger 是否已赋值
+                     */
+                    bool EnableRangerHasBeenSet() const;
+
+                    /**
+                     * 获取Ranger地址列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RangerServiceAddresses Ranger地址列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetRangerServiceAddresses() const;
+
+                    /**
+                     * 设置Ranger地址列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RangerServiceAddresses Ranger地址列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRangerServiceAddresses(const std::vector<std::string>& _rangerServiceAddresses);
+
+                    /**
+                     * 判断参数 RangerServiceAddresses 是否已赋值
+                     * @return RangerServiceAddresses 是否已赋值
+                     */
+                    bool RangerServiceAddressesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -311,6 +355,20 @@ namespace TencentCloud
                      */
                     bool m_posixAcl;
                     bool m_posixAclHasBeenSet;
+
+                    /**
+                     * 是否打开Ranger地址校验
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enableRanger;
+                    bool m_enableRangerHasBeenSet;
+
+                    /**
+                     * Ranger地址列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_rangerServiceAddresses;
+                    bool m_rangerServiceAddressesHasBeenSet;
 
                 };
             }

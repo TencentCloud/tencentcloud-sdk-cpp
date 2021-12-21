@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 内容审核涉政嫌疑片段
+                * 智能识别涉及令人不适宜信息的嫌疑片段
                 */
                 class MediaContentReviewPoliticalSegmentItem : public AbstractModel
                 {
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool EndTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取嫌疑片段涉政分数。
-                     * @return Confidence 嫌疑片段涉政分数。
+                     * 获取嫌疑片段分数。
+                     * @return Confidence 嫌疑片段分数。
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置嫌疑片段涉政分数。
-                     * @param Confidence 嫌疑片段涉政分数。
+                     * 设置嫌疑片段分数。
+                     * @param Confidence 嫌疑片段分数。
                      */
                     void SetConfidence(const double& _confidence);
 
@@ -101,11 +101,11 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取嫌疑片段鉴政结果建议，取值范围：
+                     * 获取嫌疑片段涉及令人不适宜的信息的结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-                     * @return Suggestion 嫌疑片段鉴政结果建议，取值范围：
+                     * @return Suggestion 嫌疑片段涉及令人不适宜的信息的结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
@@ -113,11 +113,11 @@ namespace TencentCloud
                     std::string GetSuggestion() const;
 
                     /**
-                     * 设置嫌疑片段鉴政结果建议，取值范围：
+                     * 设置嫌疑片段涉及令人不适宜的信息的结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-                     * @param Suggestion 嫌疑片段鉴政结果建议，取值范围：
+                     * @param Suggestion 嫌疑片段涉及令人不适宜的信息的结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
@@ -131,14 +131,14 @@ namespace TencentCloud
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取涉政人物、违规图标名字。
-                     * @return Name 涉政人物、违规图标名字。
+                     * 获取涉及令人不适宜的信息、违规图标名字。
+                     * @return Name 涉及令人不适宜的信息、违规图标名字。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置涉政人物、违规图标名字。
-                     * @param Name 涉政人物、违规图标名字。
+                     * 设置涉及令人不适宜的信息、违规图标名字。
+                     * @param Name 涉及令人不适宜的信息、违规图标名字。
                      */
                     void SetName(const std::string& _name);
 
@@ -149,7 +149,7 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取嫌疑片段鉴政结果标签。内容审核模板[画面鉴政任务控制参数](https://cloud.tencent.com/document/api/266/31773#PoliticalImgReviewTemplateInfo)里 LabelSet 参数与此参数取值范围的对应关系：
+                     * 获取嫌疑片段涉及令人不适宜的信息的结果标签。智能识别模板[画面涉及令人不适宜的信息的任务控制参数](https://cloud.tencent.com/document/api/266/31773#PoliticalImgReviewTemplateInfo)里 LabelSet 参数与此参数取值范围的对应关系：
 violation_photo：
 <li>violation_photo：违规图标。</li>
 politician：
@@ -158,22 +158,22 @@ politician：
 <li>bureau_politician：厅局级领导人；</li>
 <li>county_politician：县处级领导人；</li>
 <li>rural_politician：乡科级领导人；</li>
-<li>sensitive_politician：敏感政治人物；</li>
+<li>sensitive_politician：违规相关人物；</li>
 <li>foreign_politician：国外领导人。</li>
 entertainment：
-<li>sensitive_entertainment：敏感娱乐人物。</li>
+<li>sensitive_entertainment：违规娱乐人物。</li>
 sport：
-<li>sensitive_sport：敏感体育人物。</li>
+<li>sensitive_sport：违规体育人物。</li>
 entrepreneur：
-<li>sensitive_entrepreneur：敏感商业人物。</li>
+<li>sensitive_entrepreneur：违规商业人物。</li>
 scholar：
-<li>sensitive_scholar：敏感教育学者。</li>
+<li>sensitive_scholar：违规教育学者。</li>
 celebrity：
-<li>sensitive_celebrity：敏感知名人物；</li>
+<li>sensitive_celebrity：违规知名人物；</li>
 <li>historical_celebrity：历史知名人物。</li>
 military：
-<li>sensitive_military：敏感军事人物。</li>
-                     * @return Label 嫌疑片段鉴政结果标签。内容审核模板[画面鉴政任务控制参数](https://cloud.tencent.com/document/api/266/31773#PoliticalImgReviewTemplateInfo)里 LabelSet 参数与此参数取值范围的对应关系：
+<li>sensitive_military：违规相关人物。</li>
+                     * @return Label 嫌疑片段涉及令人不适宜的信息的结果标签。智能识别模板[画面涉及令人不适宜的信息的任务控制参数](https://cloud.tencent.com/document/api/266/31773#PoliticalImgReviewTemplateInfo)里 LabelSet 参数与此参数取值范围的对应关系：
 violation_photo：
 <li>violation_photo：违规图标。</li>
 politician：
@@ -182,26 +182,26 @@ politician：
 <li>bureau_politician：厅局级领导人；</li>
 <li>county_politician：县处级领导人；</li>
 <li>rural_politician：乡科级领导人；</li>
-<li>sensitive_politician：敏感政治人物；</li>
+<li>sensitive_politician：违规相关人物；</li>
 <li>foreign_politician：国外领导人。</li>
 entertainment：
-<li>sensitive_entertainment：敏感娱乐人物。</li>
+<li>sensitive_entertainment：违规娱乐人物。</li>
 sport：
-<li>sensitive_sport：敏感体育人物。</li>
+<li>sensitive_sport：违规体育人物。</li>
 entrepreneur：
-<li>sensitive_entrepreneur：敏感商业人物。</li>
+<li>sensitive_entrepreneur：违规商业人物。</li>
 scholar：
-<li>sensitive_scholar：敏感教育学者。</li>
+<li>sensitive_scholar：违规教育学者。</li>
 celebrity：
-<li>sensitive_celebrity：敏感知名人物；</li>
+<li>sensitive_celebrity：违规知名人物；</li>
 <li>historical_celebrity：历史知名人物。</li>
 military：
-<li>sensitive_military：敏感军事人物。</li>
+<li>sensitive_military：违规相关人物。</li>
                      */
                     std::string GetLabel() const;
 
                     /**
-                     * 设置嫌疑片段鉴政结果标签。内容审核模板[画面鉴政任务控制参数](https://cloud.tencent.com/document/api/266/31773#PoliticalImgReviewTemplateInfo)里 LabelSet 参数与此参数取值范围的对应关系：
+                     * 设置嫌疑片段涉及令人不适宜的信息的结果标签。智能识别模板[画面涉及令人不适宜的信息的任务控制参数](https://cloud.tencent.com/document/api/266/31773#PoliticalImgReviewTemplateInfo)里 LabelSet 参数与此参数取值范围的对应关系：
 violation_photo：
 <li>violation_photo：违规图标。</li>
 politician：
@@ -210,22 +210,22 @@ politician：
 <li>bureau_politician：厅局级领导人；</li>
 <li>county_politician：县处级领导人；</li>
 <li>rural_politician：乡科级领导人；</li>
-<li>sensitive_politician：敏感政治人物；</li>
+<li>sensitive_politician：违规相关人物；</li>
 <li>foreign_politician：国外领导人。</li>
 entertainment：
-<li>sensitive_entertainment：敏感娱乐人物。</li>
+<li>sensitive_entertainment：违规娱乐人物。</li>
 sport：
-<li>sensitive_sport：敏感体育人物。</li>
+<li>sensitive_sport：违规体育人物。</li>
 entrepreneur：
-<li>sensitive_entrepreneur：敏感商业人物。</li>
+<li>sensitive_entrepreneur：违规商业人物。</li>
 scholar：
-<li>sensitive_scholar：敏感教育学者。</li>
+<li>sensitive_scholar：违规教育学者。</li>
 celebrity：
-<li>sensitive_celebrity：敏感知名人物；</li>
+<li>sensitive_celebrity：违规知名人物；</li>
 <li>historical_celebrity：历史知名人物。</li>
 military：
-<li>sensitive_military：敏感军事人物。</li>
-                     * @param Label 嫌疑片段鉴政结果标签。内容审核模板[画面鉴政任务控制参数](https://cloud.tencent.com/document/api/266/31773#PoliticalImgReviewTemplateInfo)里 LabelSet 参数与此参数取值范围的对应关系：
+<li>sensitive_military：违规相关人物。</li>
+                     * @param Label 嫌疑片段涉及令人不适宜的信息的结果标签。智能识别模板[画面涉及令人不适宜的信息的任务控制参数](https://cloud.tencent.com/document/api/266/31773#PoliticalImgReviewTemplateInfo)里 LabelSet 参数与此参数取值范围的对应关系：
 violation_photo：
 <li>violation_photo：违规图标。</li>
 politician：
@@ -234,21 +234,21 @@ politician：
 <li>bureau_politician：厅局级领导人；</li>
 <li>county_politician：县处级领导人；</li>
 <li>rural_politician：乡科级领导人；</li>
-<li>sensitive_politician：敏感政治人物；</li>
+<li>sensitive_politician：违规相关人物；</li>
 <li>foreign_politician：国外领导人。</li>
 entertainment：
-<li>sensitive_entertainment：敏感娱乐人物。</li>
+<li>sensitive_entertainment：违规娱乐人物。</li>
 sport：
-<li>sensitive_sport：敏感体育人物。</li>
+<li>sensitive_sport：违规体育人物。</li>
 entrepreneur：
-<li>sensitive_entrepreneur：敏感商业人物。</li>
+<li>sensitive_entrepreneur：违规商业人物。</li>
 scholar：
-<li>sensitive_scholar：敏感教育学者。</li>
+<li>sensitive_scholar：违规教育学者。</li>
 celebrity：
-<li>sensitive_celebrity：敏感知名人物；</li>
+<li>sensitive_celebrity：违规知名人物；</li>
 <li>historical_celebrity：历史知名人物。</li>
 military：
-<li>sensitive_military：敏感军事人物。</li>
+<li>sensitive_military：违规相关人物。</li>
                      */
                     void SetLabel(const std::string& _label);
 
@@ -281,14 +281,14 @@ military：
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取涉政人物、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
-                     * @return AreaCoordSet 涉政人物、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
+                     * 获取涉及令人不适宜的信息、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
+                     * @return AreaCoordSet 涉及令人不适宜的信息、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
                      */
                     std::vector<int64_t> GetAreaCoordSet() const;
 
                     /**
-                     * 设置涉政人物、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
-                     * @param AreaCoordSet 涉政人物、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
+                     * 设置涉及令人不适宜的信息、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
+                     * @param AreaCoordSet 涉及令人不适宜的信息、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
                      */
                     void SetAreaCoordSet(const std::vector<int64_t>& _areaCoordSet);
 
@@ -349,13 +349,13 @@ military：
                     bool m_endTimeOffsetHasBeenSet;
 
                     /**
-                     * 嫌疑片段涉政分数。
+                     * 嫌疑片段分数。
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * 嫌疑片段鉴政结果建议，取值范围：
+                     * 嫌疑片段涉及令人不适宜的信息的结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
@@ -364,13 +364,13 @@ military：
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * 涉政人物、违规图标名字。
+                     * 涉及令人不适宜的信息、违规图标名字。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 嫌疑片段鉴政结果标签。内容审核模板[画面鉴政任务控制参数](https://cloud.tencent.com/document/api/266/31773#PoliticalImgReviewTemplateInfo)里 LabelSet 参数与此参数取值范围的对应关系：
+                     * 嫌疑片段涉及令人不适宜的信息的结果标签。智能识别模板[画面涉及令人不适宜的信息的任务控制参数](https://cloud.tencent.com/document/api/266/31773#PoliticalImgReviewTemplateInfo)里 LabelSet 参数与此参数取值范围的对应关系：
 violation_photo：
 <li>violation_photo：违规图标。</li>
 politician：
@@ -379,21 +379,21 @@ politician：
 <li>bureau_politician：厅局级领导人；</li>
 <li>county_politician：县处级领导人；</li>
 <li>rural_politician：乡科级领导人；</li>
-<li>sensitive_politician：敏感政治人物；</li>
+<li>sensitive_politician：违规相关人物；</li>
 <li>foreign_politician：国外领导人。</li>
 entertainment：
-<li>sensitive_entertainment：敏感娱乐人物。</li>
+<li>sensitive_entertainment：违规娱乐人物。</li>
 sport：
-<li>sensitive_sport：敏感体育人物。</li>
+<li>sensitive_sport：违规体育人物。</li>
 entrepreneur：
-<li>sensitive_entrepreneur：敏感商业人物。</li>
+<li>sensitive_entrepreneur：违规商业人物。</li>
 scholar：
-<li>sensitive_scholar：敏感教育学者。</li>
+<li>sensitive_scholar：违规教育学者。</li>
 celebrity：
-<li>sensitive_celebrity：敏感知名人物；</li>
+<li>sensitive_celebrity：违规知名人物；</li>
 <li>historical_celebrity：历史知名人物。</li>
 military：
-<li>sensitive_military：敏感军事人物。</li>
+<li>sensitive_military：违规相关人物。</li>
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
@@ -406,7 +406,7 @@ military：
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 涉政人物、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
+                     * 涉及令人不适宜的信息、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
                      */
                     std::vector<int64_t> m_areaCoordSet;
                     bool m_areaCoordSetHasBeenSet;

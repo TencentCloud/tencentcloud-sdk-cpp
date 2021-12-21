@@ -31,7 +31,9 @@ FileSystem::FileSystem() :
     m_capacityQuotaHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_superUsersHasBeenSet(false),
-    m_posixAclHasBeenSet(false)
+    m_posixAclHasBeenSet(false),
+    m_enableRangerHasBeenSet(false),
+    m_rangerServiceAddressesHasBeenSet(false)
 {
 }
 
@@ -153,6 +155,29 @@ CoreInternalOutcome FileSystem::Deserialize(const rapidjson::Value &value)
         m_posixAclHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableRanger") && !value["EnableRanger"].IsNull())
+    {
+        if (!value["EnableRanger"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileSystem.EnableRanger` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableRanger = value["EnableRanger"].GetBool();
+        m_enableRangerHasBeenSet = true;
+    }
+
+    if (value.HasMember("RangerServiceAddresses") && !value["RangerServiceAddresses"].IsNull())
+    {
+        if (!value["RangerServiceAddresses"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FileSystem.RangerServiceAddresses` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RangerServiceAddresses"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_rangerServiceAddresses.push_back((*itr).GetString());
+        }
+        m_rangerServiceAddressesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +276,27 @@ void FileSystem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "PosixAcl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_posixAcl, allocator);
+    }
+
+    if (m_enableRangerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableRanger";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableRanger, allocator);
+    }
+
+    if (m_rangerServiceAddressesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RangerServiceAddresses";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_rangerServiceAddresses.begin(); itr != m_rangerServiceAddresses.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -430,5 +476,37 @@ void FileSystem::SetPosixAcl(const bool& _posixAcl)
 bool FileSystem::PosixAclHasBeenSet() const
 {
     return m_posixAclHasBeenSet;
+}
+
+bool FileSystem::GetEnableRanger() const
+{
+    return m_enableRanger;
+}
+
+void FileSystem::SetEnableRanger(const bool& _enableRanger)
+{
+    m_enableRanger = _enableRanger;
+    m_enableRangerHasBeenSet = true;
+}
+
+bool FileSystem::EnableRangerHasBeenSet() const
+{
+    return m_enableRangerHasBeenSet;
+}
+
+vector<string> FileSystem::GetRangerServiceAddresses() const
+{
+    return m_rangerServiceAddresses;
+}
+
+void FileSystem::SetRangerServiceAddresses(const vector<string>& _rangerServiceAddresses)
+{
+    m_rangerServiceAddresses = _rangerServiceAddresses;
+    m_rangerServiceAddressesHasBeenSet = true;
+}
+
+bool FileSystem::RangerServiceAddressesHasBeenSet() const
+{
+    return m_rangerServiceAddressesHasBeenSet;
 }
 

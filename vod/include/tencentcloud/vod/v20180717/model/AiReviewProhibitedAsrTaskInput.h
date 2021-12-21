@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 内容审核 Asr 文字鉴违禁任务输入参数类型
+                * 智能识别 Asr 文字鉴违禁任务输入参数类型
                 */
                 class AiReviewProhibitedAsrTaskInput : public AbstractModel
                 {

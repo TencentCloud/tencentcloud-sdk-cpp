@@ -31,7 +31,8 @@ CreateMigrateJobRequest::CreateMigrateJobRequest() :
     m_dstDatabaseTypeHasBeenSet(false),
     m_dstAccessTypeHasBeenSet(false),
     m_dstInfoHasBeenSet(false),
-    m_databaseInfoHasBeenSet(false)
+    m_databaseInfoHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -115,6 +116,21 @@ string CreateMigrateJobRequest::ToJsonString() const
         string key = "DatabaseInfo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_databaseInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -267,6 +283,22 @@ void CreateMigrateJobRequest::SetDatabaseInfo(const string& _databaseInfo)
 bool CreateMigrateJobRequest::DatabaseInfoHasBeenSet() const
 {
     return m_databaseInfoHasBeenSet;
+}
+
+vector<TagItem> CreateMigrateJobRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateMigrateJobRequest::SetTags(const vector<TagItem>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateMigrateJobRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

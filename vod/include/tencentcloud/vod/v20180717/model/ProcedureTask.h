@@ -250,14 +250,14 @@ namespace TencentCloud
                     bool MediaProcessResultSetHasBeenSet() const;
 
                     /**
-                     * 获取视频内容审核任务的执行状态与结果。
-                     * @return AiContentReviewResultSet 视频内容审核任务的执行状态与结果。
+                     * 获取视频智能识别任务的执行状态与结果。
+                     * @return AiContentReviewResultSet 视频智能识别任务的执行状态与结果。
                      */
                     std::vector<AiContentReviewResult> GetAiContentReviewResultSet() const;
 
                     /**
-                     * 设置视频内容审核任务的执行状态与结果。
-                     * @param AiContentReviewResultSet 视频内容审核任务的执行状态与结果。
+                     * 设置视频智能识别任务的执行状态与结果。
+                     * @param AiContentReviewResultSet 视频智能识别任务的执行状态与结果。
                      */
                     void SetAiContentReviewResultSet(const std::vector<AiContentReviewResult>& _aiContentReviewResultSet);
 
@@ -453,7 +453,7 @@ namespace TencentCloud
                     bool m_mediaProcessResultSetHasBeenSet;
 
                     /**
-                     * 视频内容审核任务的执行状态与结果。
+                     * 视频智能识别任务的执行状态与结果。
                      */
                     std::vector<AiContentReviewResult> m_aiContentReviewResultSet;
                     bool m_aiContentReviewResultSetHasBeenSet;

@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 内容审核鉴黄任务结果类型
+                * 智能识别涉及令人反感的信息的任务结果类型
                 */
                 class AiReviewTaskPornResult : public AbstractModel
                 {
@@ -121,14 +121,14 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取内容审核鉴黄任务输入。
-                     * @return Input 内容审核鉴黄任务输入。
+                     * 获取智能识别涉及令人反感的信息的任务输入。
+                     * @return Input 智能识别涉及令人反感的信息的任务输入。
                      */
                     AiReviewPornTaskInput GetInput() const;
 
                     /**
-                     * 设置内容审核鉴黄任务输入。
-                     * @param Input 内容审核鉴黄任务输入。
+                     * 设置智能识别涉及令人反感的信息的任务输入。
+                     * @param Input 智能识别涉及令人反感的信息的任务输入。
                      */
                     void SetInput(const AiReviewPornTaskInput& _input);
 
@@ -139,17 +139,17 @@ namespace TencentCloud
                     bool InputHasBeenSet() const;
 
                     /**
-                     * 获取内容审核鉴黄任务输出。
+                     * 获取智能识别涉及令人反感的信息的任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Output 内容审核鉴黄任务输出。
+                     * @return Output 智能识别涉及令人反感的信息的任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiReviewPornTaskOutput GetOutput() const;
 
                     /**
-                     * 设置内容审核鉴黄任务输出。
+                     * 设置智能识别涉及令人反感的信息的任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Output 内容审核鉴黄任务输出。
+                     * @param Output 智能识别涉及令人反感的信息的任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOutput(const AiReviewPornTaskOutput& _output);
@@ -187,13 +187,13 @@ namespace TencentCloud
                     bool m_messageHasBeenSet;
 
                     /**
-                     * 内容审核鉴黄任务输入。
+                     * 智能识别涉及令人反感的信息的任务输入。
                      */
                     AiReviewPornTaskInput m_input;
                     bool m_inputHasBeenSet;
 
                     /**
-                     * 内容审核鉴黄任务输出。
+                     * 智能识别涉及令人反感的信息的任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiReviewPornTaskOutput m_output;

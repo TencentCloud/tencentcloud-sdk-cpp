@@ -63,6 +63,8 @@
 #include <tencentcloud/tem/v20210701/model/ResumeDeployApplicationResponse.h>
 #include <tencentcloud/tem/v20210701/model/RevertDeployApplicationRequest.h>
 #include <tencentcloud/tem/v20210701/model/RevertDeployApplicationResponse.h>
+#include <tencentcloud/tem/v20210701/model/RollingUpdateApplicationByVersionRequest.h>
+#include <tencentcloud/tem/v20210701/model/RollingUpdateApplicationByVersionResponse.h>
 
 
 namespace TencentCloud
@@ -137,6 +139,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RevertDeployApplicationResponse> RevertDeployApplicationOutcome;
                 typedef std::future<RevertDeployApplicationOutcome> RevertDeployApplicationOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::RevertDeployApplicationRequest&, RevertDeployApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RevertDeployApplicationAsyncHandler;
+                typedef Outcome<Core::Error, Model::RollingUpdateApplicationByVersionResponse> RollingUpdateApplicationByVersionOutcome;
+                typedef std::future<RollingUpdateApplicationByVersionOutcome> RollingUpdateApplicationByVersionOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::RollingUpdateApplicationByVersionRequest&, RollingUpdateApplicationByVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RollingUpdateApplicationByVersionAsyncHandler;
 
 
 
@@ -319,6 +324,15 @@ namespace TencentCloud
                 RevertDeployApplicationOutcome RevertDeployApplication(const Model::RevertDeployApplicationRequest &request);
                 void RevertDeployApplicationAsync(const Model::RevertDeployApplicationRequest& request, const RevertDeployApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RevertDeployApplicationOutcomeCallable RevertDeployApplicationCallable(const Model::RevertDeployApplicationRequest& request);
+
+                /**
+                 *更新应用部署版本
+                 * @param req RollingUpdateApplicationByVersionRequest
+                 * @return RollingUpdateApplicationByVersionOutcome
+                 */
+                RollingUpdateApplicationByVersionOutcome RollingUpdateApplicationByVersion(const Model::RollingUpdateApplicationByVersionRequest &request);
+                void RollingUpdateApplicationByVersionAsync(const Model::RollingUpdateApplicationByVersionRequest& request, const RollingUpdateApplicationByVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RollingUpdateApplicationByVersionOutcomeCallable RollingUpdateApplicationByVersionCallable(const Model::RollingUpdateApplicationByVersionRequest& request);
 
             };
         }

@@ -121,6 +121,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/DescribeKeyPairsRequest.h
   include/tencentcloud/cvm/v20170312/model/OperationCountLimit.h
   include/tencentcloud/cvm/v20170312/model/ReservedInstanceConfigInfoItem.h
+  include/tencentcloud/cvm/v20170312/model/LaunchTemplateVersionData.h
   include/tencentcloud/cvm/v20170312/model/DeleteDisasterRecoverGroupsResponse.h
   include/tencentcloud/cvm/v20170312/model/HostItem.h
   include/tencentcloud/cvm/v20170312/model/Externals.h
@@ -342,6 +343,7 @@ set(cvm_src
   src/v20170312/model/DescribeKeyPairsRequest.cpp
   src/v20170312/model/OperationCountLimit.cpp
   src/v20170312/model/ReservedInstanceConfigInfoItem.cpp
+  src/v20170312/model/LaunchTemplateVersionData.cpp
   src/v20170312/model/DeleteDisasterRecoverGroupsResponse.cpp
   src/v20170312/model/HostItem.cpp
   src/v20170312/model/Externals.cpp

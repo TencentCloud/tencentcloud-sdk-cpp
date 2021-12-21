@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取SDK生成的数据包活体数据包的资源地址。
-                     * @return LiveDataUrl SDK生成的数据包活体数据包的资源地址。
+                     * 获取SDK生成的活体检测数据包的资源地址。
+                     * @return LiveDataUrl SDK生成的活体检测数据包的资源地址。
                      */
                     std::string GetLiveDataUrl() const;
 
                     /**
-                     * 设置SDK生成的数据包活体数据包的资源地址。
-                     * @param LiveDataUrl SDK生成的数据包活体数据包的资源地址。
+                     * 设置SDK生成的活体检测数据包的资源地址。
+                     * @param LiveDataUrl SDK生成的活体检测数据包的资源地址。
                      */
                     void SetLiveDataUrl(const std::string& _liveDataUrl);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool LiveDataUrlHasBeenSet() const;
 
                     /**
-                     * 获取SDK生成的数据包活体数据包的资源Md5。
-                     * @return LiveDataMd5 SDK生成的数据包活体数据包的资源Md5。
+                     * 获取SDK生成的活体检测数据包的资源内容MD5（32位，用于校验LiveData的一致性）。
+                     * @return LiveDataMd5 SDK生成的活体检测数据包的资源内容MD5（32位，用于校验LiveData的一致性）。
                      */
                     std::string GetLiveDataMd5() const;
 
                     /**
-                     * 设置SDK生成的数据包活体数据包的资源Md5。
-                     * @param LiveDataMd5 SDK生成的数据包活体数据包的资源Md5。
+                     * 设置SDK生成的活体检测数据包的资源内容MD5（32位，用于校验LiveData的一致性）。
+                     * @param LiveDataMd5 SDK生成的活体检测数据包的资源内容MD5（32位，用于校验LiveData的一致性）。
                      */
                     void SetLiveDataMd5(const std::string& _liveDataMd5);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool ImageUrlHasBeenSet() const;
 
                     /**
-                     * 获取用于比对的目标图片的资源Md5。
-                     * @return ImageMd5 用于比对的目标图片的资源Md5。
+                     * 获取用于比对的目标图片的资源MD5（32位，用于校验Image的一致性）。
+                     * @return ImageMd5 用于比对的目标图片的资源MD5（32位，用于校验Image的一致性）。
                      */
                     std::string GetImageMd5() const;
 
                     /**
-                     * 设置用于比对的目标图片的资源Md5。
-                     * @param ImageMd5 用于比对的目标图片的资源Md5。
+                     * 设置用于比对的目标图片的资源MD5（32位，用于校验Image的一致性）。
+                     * @param ImageMd5 用于比对的目标图片的资源MD5（32位，用于校验Image的一致性）。
                      */
                     void SetImageMd5(const std::string& _imageMd5);
 
@@ -117,13 +117,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * SDK生成的数据包活体数据包的资源地址。
+                     * SDK生成的活体检测数据包的资源地址。
                      */
                     std::string m_liveDataUrl;
                     bool m_liveDataUrlHasBeenSet;
 
                     /**
-                     * SDK生成的数据包活体数据包的资源Md5。
+                     * SDK生成的活体检测数据包的资源内容MD5（32位，用于校验LiveData的一致性）。
                      */
                     std::string m_liveDataMd5;
                     bool m_liveDataMd5HasBeenSet;
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_imageUrlHasBeenSet;
 
                     /**
-                     * 用于比对的目标图片的资源Md5。
+                     * 用于比对的目标图片的资源MD5（32位，用于校验Image的一致性）。
                      */
                     std::string m_imageMd5;
                     bool m_imageMd5HasBeenSet;

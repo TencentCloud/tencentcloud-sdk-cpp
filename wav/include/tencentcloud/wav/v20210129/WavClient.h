@@ -27,6 +27,8 @@
 #include <tencentcloud/wav/v20210129/model/CreateChannelCodeResponse.h>
 #include <tencentcloud/wav/v20210129/model/CreateCorpTagRequest.h>
 #include <tencentcloud/wav/v20210129/model/CreateCorpTagResponse.h>
+#include <tencentcloud/wav/v20210129/model/CreateLeadRequest.h>
+#include <tencentcloud/wav/v20210129/model/CreateLeadResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryActivityJoinListRequest.h>
 #include <tencentcloud/wav/v20210129/model/QueryActivityJoinListResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryActivityListRequest.h>
@@ -39,6 +41,8 @@
 #include <tencentcloud/wav/v20210129/model/QueryChatArchivingListResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryClueInfoListRequest.h>
 #include <tencentcloud/wav/v20210129/model/QueryClueInfoListResponse.h>
+#include <tencentcloud/wav/v20210129/model/QueryDealerInfoListRequest.h>
+#include <tencentcloud/wav/v20210129/model/QueryDealerInfoListResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryExternalContactDetailRequest.h>
 #include <tencentcloud/wav/v20210129/model/QueryExternalContactDetailResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryExternalContactListRequest.h>
@@ -49,6 +53,8 @@
 #include <tencentcloud/wav/v20210129/model/QueryLicenseInfoResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryMiniAppCodeListRequest.h>
 #include <tencentcloud/wav/v20210129/model/QueryMiniAppCodeListResponse.h>
+#include <tencentcloud/wav/v20210129/model/QueryVehicleInfoListRequest.h>
+#include <tencentcloud/wav/v20210129/model/QueryVehicleInfoListResponse.h>
 
 
 namespace TencentCloud
@@ -69,6 +75,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCorpTagResponse> CreateCorpTagOutcome;
                 typedef std::future<CreateCorpTagOutcome> CreateCorpTagOutcomeCallable;
                 typedef std::function<void(const WavClient*, const Model::CreateCorpTagRequest&, CreateCorpTagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCorpTagAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateLeadResponse> CreateLeadOutcome;
+                typedef std::future<CreateLeadOutcome> CreateLeadOutcomeCallable;
+                typedef std::function<void(const WavClient*, const Model::CreateLeadRequest&, CreateLeadOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLeadAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryActivityJoinListResponse> QueryActivityJoinListOutcome;
                 typedef std::future<QueryActivityJoinListOutcome> QueryActivityJoinListOutcomeCallable;
                 typedef std::function<void(const WavClient*, const Model::QueryActivityJoinListRequest&, QueryActivityJoinListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryActivityJoinListAsyncHandler;
@@ -87,6 +96,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryClueInfoListResponse> QueryClueInfoListOutcome;
                 typedef std::future<QueryClueInfoListOutcome> QueryClueInfoListOutcomeCallable;
                 typedef std::function<void(const WavClient*, const Model::QueryClueInfoListRequest&, QueryClueInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryClueInfoListAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryDealerInfoListResponse> QueryDealerInfoListOutcome;
+                typedef std::future<QueryDealerInfoListOutcome> QueryDealerInfoListOutcomeCallable;
+                typedef std::function<void(const WavClient*, const Model::QueryDealerInfoListRequest&, QueryDealerInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryDealerInfoListAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryExternalContactDetailResponse> QueryExternalContactDetailOutcome;
                 typedef std::future<QueryExternalContactDetailOutcome> QueryExternalContactDetailOutcomeCallable;
                 typedef std::function<void(const WavClient*, const Model::QueryExternalContactDetailRequest&, QueryExternalContactDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryExternalContactDetailAsyncHandler;
@@ -102,6 +114,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryMiniAppCodeListResponse> QueryMiniAppCodeListOutcome;
                 typedef std::future<QueryMiniAppCodeListOutcome> QueryMiniAppCodeListOutcomeCallable;
                 typedef std::function<void(const WavClient*, const Model::QueryMiniAppCodeListRequest&, QueryMiniAppCodeListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMiniAppCodeListAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryVehicleInfoListResponse> QueryVehicleInfoListOutcome;
+                typedef std::future<QueryVehicleInfoListOutcome> QueryVehicleInfoListOutcomeCallable;
+                typedef std::function<void(const WavClient*, const Model::QueryVehicleInfoListRequest&, QueryVehicleInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryVehicleInfoListAsyncHandler;
 
 
 
@@ -122,6 +137,15 @@ namespace TencentCloud
                 CreateCorpTagOutcome CreateCorpTag(const Model::CreateCorpTagRequest &request);
                 void CreateCorpTagAsync(const Model::CreateCorpTagRequest& request, const CreateCorpTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateCorpTagOutcomeCallable CreateCorpTagCallable(const Model::CreateCorpTagRequest& request);
+
+                /**
+                 *线索回收接口
+                 * @param req CreateLeadRequest
+                 * @return CreateLeadOutcome
+                 */
+                CreateLeadOutcome CreateLead(const Model::CreateLeadRequest &request);
+                void CreateLeadAsync(const Model::CreateLeadRequest& request, const CreateLeadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLeadOutcomeCallable CreateLeadCallable(const Model::CreateLeadRequest& request);
 
                 /**
                  *根据游标拉取活动参与列表信息
@@ -178,6 +202,15 @@ namespace TencentCloud
                 QueryClueInfoListOutcomeCallable QueryClueInfoListCallable(const Model::QueryClueInfoListRequest& request);
 
                 /**
+                 *企业可通过此接口获取录入在企微SaaS平台上的经销商信息。
+                 * @param req QueryDealerInfoListRequest
+                 * @return QueryDealerInfoListOutcome
+                 */
+                QueryDealerInfoListOutcome QueryDealerInfoList(const Model::QueryDealerInfoListRequest &request);
+                void QueryDealerInfoListAsync(const Model::QueryDealerInfoListRequest& request, const QueryDealerInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryDealerInfoListOutcomeCallable QueryDealerInfoListCallable(const Model::QueryDealerInfoListRequest& request);
+
+                /**
                  *企业可通过此接口，根据外部联系人的userid，拉取客户详情
                  * @param req QueryExternalContactDetailRequest
                  * @return QueryExternalContactDetailOutcome
@@ -221,6 +254,15 @@ namespace TencentCloud
                 QueryMiniAppCodeListOutcome QueryMiniAppCodeList(const Model::QueryMiniAppCodeListRequest &request);
                 void QueryMiniAppCodeListAsync(const Model::QueryMiniAppCodeListRequest& request, const QueryMiniAppCodeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryMiniAppCodeListOutcomeCallable QueryMiniAppCodeListCallable(const Model::QueryMiniAppCodeListRequest& request);
+
+                /**
+                 *企业可通过此接口获取企微SaaS平台上的车系车型信息。
+                 * @param req QueryVehicleInfoListRequest
+                 * @return QueryVehicleInfoListOutcome
+                 */
+                QueryVehicleInfoListOutcome QueryVehicleInfoList(const Model::QueryVehicleInfoListRequest &request);
+                void QueryVehicleInfoListAsync(const Model::QueryVehicleInfoListRequest& request, const QueryVehicleInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryVehicleInfoListOutcomeCallable QueryVehicleInfoListCallable(const Model::QueryVehicleInfoListRequest& request);
 
             };
         }

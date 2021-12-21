@@ -118,6 +118,42 @@ namespace TencentCloud
                      */
                     bool JobConfigVersionHasBeenSet() const;
 
+                    /**
+                     * 获取Savepoint路径
+                     * @return SavepointPath Savepoint路径
+                     */
+                    std::string GetSavepointPath() const;
+
+                    /**
+                     * 设置Savepoint路径
+                     * @param SavepointPath Savepoint路径
+                     */
+                    void SetSavepointPath(const std::string& _savepointPath);
+
+                    /**
+                     * 判断参数 SavepointPath 是否已赋值
+                     * @return SavepointPath 是否已赋值
+                     */
+                    bool SavepointPathHasBeenSet() const;
+
+                    /**
+                     * 获取Savepoint的Id
+                     * @return SavepointId Savepoint的Id
+                     */
+                    std::string GetSavepointId() const;
+
+                    /**
+                     * 设置Savepoint的Id
+                     * @param SavepointId Savepoint的Id
+                     */
+                    void SetSavepointId(const std::string& _savepointId);
+
+                    /**
+                     * 判断参数 SavepointId 是否已赋值
+                     * @return SavepointId 是否已赋值
+                     */
+                    bool SavepointIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +179,18 @@ namespace TencentCloud
                      */
                     uint64_t m_jobConfigVersion;
                     bool m_jobConfigVersionHasBeenSet;
+
+                    /**
+                     * Savepoint路径
+                     */
+                    std::string m_savepointPath;
+                    bool m_savepointPathHasBeenSet;
+
+                    /**
+                     * Savepoint的Id
+                     */
+                    std::string m_savepointId;
+                    bool m_savepointIdHasBeenSet;
 
                 };
             }

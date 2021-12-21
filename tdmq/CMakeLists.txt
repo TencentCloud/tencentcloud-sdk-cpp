@@ -54,6 +54,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/ModifyAMQPVHostRequest.h
   include/tencentcloud/tdmq/v20200217/model/CreateSubscriptionRequest.h
   include/tencentcloud/tdmq/v20200217/model/CreateRocketMQNamespaceRequest.h
+  include/tencentcloud/tdmq/v20200217/model/Topic.h
   include/tencentcloud/tdmq/v20200217/model/DescribeCmqTopicDetailResponse.h
   include/tencentcloud/tdmq/v20200217/model/Environment.h
   include/tencentcloud/tdmq/v20200217/model/CmqQueue.h
@@ -63,7 +64,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/DeleteAMQPQueueResponse.h
   include/tencentcloud/tdmq/v20200217/model/ModifyCmqTopicAttributeResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeCmqSubscriptionDetailRequest.h
-  include/tencentcloud/tdmq/v20200217/model/Topic.h
+  include/tencentcloud/tdmq/v20200217/model/DescribePublisherSummaryResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeAMQPVHostsResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeEnvironmentsRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQNamespacesRequest.h
@@ -77,6 +78,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/CreateAMQPQueueRequest.h
   include/tencentcloud/tdmq/v20200217/model/ClearCmqQueueRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeClustersRequest.h
+  include/tencentcloud/tdmq/v20200217/model/Publisher.h
   include/tencentcloud/tdmq/v20200217/model/RocketMQTopic.h
   include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQClusterResponse.h
   include/tencentcloud/tdmq/v20200217/model/CreateAMQPVHostResponse.h
@@ -94,6 +96,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/DeleteAMQPClusterRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeTopicsResponse.h
   include/tencentcloud/tdmq/v20200217/model/PublishCmqMsgResponse.h
+  include/tencentcloud/tdmq/v20200217/model/DescribePublishersRequest.h
   include/tencentcloud/tdmq/v20200217/model/CreateRocketMQClusterRequest.h
   include/tencentcloud/tdmq/v20200217/model/DeleteAMQPVHostRequest.h
   include/tencentcloud/tdmq/v20200217/model/AcknowledgeMessageResponse.h
@@ -156,6 +159,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/CreateClusterResponse.h
   include/tencentcloud/tdmq/v20200217/model/DeleteAMQPExchangeResponse.h
   include/tencentcloud/tdmq/v20200217/model/DeleteRocketMQNamespaceRequest.h
+  include/tencentcloud/tdmq/v20200217/model/DescribeRolesRequest.h
   include/tencentcloud/tdmq/v20200217/model/CreateAMQPQueueResponse.h
   include/tencentcloud/tdmq/v20200217/model/CreateClusterRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeAMQPClustersRequest.h
@@ -193,10 +197,12 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/DeleteRocketMQTopicRequest.h
   include/tencentcloud/tdmq/v20200217/model/ConsumersSchedule.h
   include/tencentcloud/tdmq/v20200217/model/Cluster.h
+  include/tencentcloud/tdmq/v20200217/model/SubscriptionTopic.h
   include/tencentcloud/tdmq/v20200217/model/RetentionPolicy.h
   include/tencentcloud/tdmq/v20200217/model/CreateRocketMQClusterResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeAMQPCreateQuotaRequest.h
   include/tencentcloud/tdmq/v20200217/model/AMQPQueueDetail.h
+  include/tencentcloud/tdmq/v20200217/model/DescribePublishersResponse.h
   include/tencentcloud/tdmq/v20200217/model/DeleteAMQPRouteRelationResponse.h
   include/tencentcloud/tdmq/v20200217/model/SendMsgRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeCmqQueueDetailRequest.h
@@ -226,7 +232,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/DescribeEnvironmentAttributesResponse.h
   include/tencentcloud/tdmq/v20200217/model/Role.h
   include/tencentcloud/tdmq/v20200217/model/ModifyAMQPClusterResponse.h
-  include/tencentcloud/tdmq/v20200217/model/SubscriptionTopic.h
+  include/tencentcloud/tdmq/v20200217/model/Sort.h
   include/tencentcloud/tdmq/v20200217/model/AMQPClusterConfig.h
   include/tencentcloud/tdmq/v20200217/model/DescribeAMQPExchangesRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeProducersResponse.h
@@ -241,7 +247,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/UnbindCmqDeadLetterRequest.h
   include/tencentcloud/tdmq/v20200217/model/CreateAMQPRouteRelationRequest.h
   include/tencentcloud/tdmq/v20200217/model/DeleteCmqSubscribeResponse.h
-  include/tencentcloud/tdmq/v20200217/model/DescribeRolesRequest.h
+  include/tencentcloud/tdmq/v20200217/model/DescribePublisherSummaryRequest.h
   include/tencentcloud/tdmq/v20200217/model/DeleteSubscriptionsRequest.h
   include/tencentcloud/tdmq/v20200217/model/SendCmqMsgRequest.h
   include/tencentcloud/tdmq/v20200217/model/ModifyCmqQueueAttributeRequest.h
@@ -292,6 +298,7 @@ set(tdmq_src
   src/v20200217/model/ModifyAMQPVHostRequest.cpp
   src/v20200217/model/CreateSubscriptionRequest.cpp
   src/v20200217/model/CreateRocketMQNamespaceRequest.cpp
+  src/v20200217/model/Topic.cpp
   src/v20200217/model/DescribeCmqTopicDetailResponse.cpp
   src/v20200217/model/Environment.cpp
   src/v20200217/model/CmqQueue.cpp
@@ -301,7 +308,7 @@ set(tdmq_src
   src/v20200217/model/DeleteAMQPQueueResponse.cpp
   src/v20200217/model/ModifyCmqTopicAttributeResponse.cpp
   src/v20200217/model/DescribeCmqSubscriptionDetailRequest.cpp
-  src/v20200217/model/Topic.cpp
+  src/v20200217/model/DescribePublisherSummaryResponse.cpp
   src/v20200217/model/DescribeAMQPVHostsResponse.cpp
   src/v20200217/model/DescribeEnvironmentsRequest.cpp
   src/v20200217/model/DescribeRocketMQNamespacesRequest.cpp
@@ -315,6 +322,7 @@ set(tdmq_src
   src/v20200217/model/CreateAMQPQueueRequest.cpp
   src/v20200217/model/ClearCmqQueueRequest.cpp
   src/v20200217/model/DescribeClustersRequest.cpp
+  src/v20200217/model/Publisher.cpp
   src/v20200217/model/RocketMQTopic.cpp
   src/v20200217/model/DescribeRocketMQClusterResponse.cpp
   src/v20200217/model/CreateAMQPVHostResponse.cpp
@@ -332,6 +340,7 @@ set(tdmq_src
   src/v20200217/model/DeleteAMQPClusterRequest.cpp
   src/v20200217/model/DescribeTopicsResponse.cpp
   src/v20200217/model/PublishCmqMsgResponse.cpp
+  src/v20200217/model/DescribePublishersRequest.cpp
   src/v20200217/model/CreateRocketMQClusterRequest.cpp
   src/v20200217/model/DeleteAMQPVHostRequest.cpp
   src/v20200217/model/AcknowledgeMessageResponse.cpp
@@ -394,6 +403,7 @@ set(tdmq_src
   src/v20200217/model/CreateClusterResponse.cpp
   src/v20200217/model/DeleteAMQPExchangeResponse.cpp
   src/v20200217/model/DeleteRocketMQNamespaceRequest.cpp
+  src/v20200217/model/DescribeRolesRequest.cpp
   src/v20200217/model/CreateAMQPQueueResponse.cpp
   src/v20200217/model/CreateClusterRequest.cpp
   src/v20200217/model/DescribeAMQPClustersRequest.cpp
@@ -431,10 +441,12 @@ set(tdmq_src
   src/v20200217/model/DeleteRocketMQTopicRequest.cpp
   src/v20200217/model/ConsumersSchedule.cpp
   src/v20200217/model/Cluster.cpp
+  src/v20200217/model/SubscriptionTopic.cpp
   src/v20200217/model/RetentionPolicy.cpp
   src/v20200217/model/CreateRocketMQClusterResponse.cpp
   src/v20200217/model/DescribeAMQPCreateQuotaRequest.cpp
   src/v20200217/model/AMQPQueueDetail.cpp
+  src/v20200217/model/DescribePublishersResponse.cpp
   src/v20200217/model/DeleteAMQPRouteRelationResponse.cpp
   src/v20200217/model/SendMsgRequest.cpp
   src/v20200217/model/DescribeCmqQueueDetailRequest.cpp
@@ -464,7 +476,7 @@ set(tdmq_src
   src/v20200217/model/DescribeEnvironmentAttributesResponse.cpp
   src/v20200217/model/Role.cpp
   src/v20200217/model/ModifyAMQPClusterResponse.cpp
-  src/v20200217/model/SubscriptionTopic.cpp
+  src/v20200217/model/Sort.cpp
   src/v20200217/model/AMQPClusterConfig.cpp
   src/v20200217/model/DescribeAMQPExchangesRequest.cpp
   src/v20200217/model/DescribeProducersResponse.cpp
@@ -479,7 +491,7 @@ set(tdmq_src
   src/v20200217/model/UnbindCmqDeadLetterRequest.cpp
   src/v20200217/model/CreateAMQPRouteRelationRequest.cpp
   src/v20200217/model/DeleteCmqSubscribeResponse.cpp
-  src/v20200217/model/DescribeRolesRequest.cpp
+  src/v20200217/model/DescribePublisherSummaryRequest.cpp
   src/v20200217/model/DeleteSubscriptionsRequest.cpp
   src/v20200217/model/SendCmqMsgRequest.cpp
   src/v20200217/model/ModifyCmqQueueAttributeRequest.cpp

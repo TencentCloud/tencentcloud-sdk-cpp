@@ -38,7 +38,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 鉴黄任务控制参数。
+                * 鉴别涉及令人反感的信息的任务控制参数。
                 */
                 class PornConfigureInfoForUpdate : public AbstractModel
                 {
@@ -50,14 +50,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取画面鉴黄控制参数。
-                     * @return ImgReviewInfo 画面鉴黄控制参数。
+                     * 获取画面鉴别涉及令人反感的信息的控制参数。
+                     * @return ImgReviewInfo 画面鉴别涉及令人反感的信息的控制参数。
                      */
                     PornImgReviewTemplateInfoForUpdate GetImgReviewInfo() const;
 
                     /**
-                     * 设置画面鉴黄控制参数。
-                     * @param ImgReviewInfo 画面鉴黄控制参数。
+                     * 设置画面鉴别涉及令人反感的信息的控制参数。
+                     * @param ImgReviewInfo 画面鉴别涉及令人反感的信息的控制参数。
                      */
                     void SetImgReviewInfo(const PornImgReviewTemplateInfoForUpdate& _imgReviewInfo);
 
@@ -68,14 +68,14 @@ namespace TencentCloud
                     bool ImgReviewInfoHasBeenSet() const;
 
                     /**
-                     * 获取语音鉴黄控制参数。
-                     * @return AsrReviewInfo 语音鉴黄控制参数。
+                     * 获取语音鉴别涉及令人反感的信息的控制参数。
+                     * @return AsrReviewInfo 语音鉴别涉及令人反感的信息的控制参数。
                      */
                     PornAsrReviewTemplateInfoForUpdate GetAsrReviewInfo() const;
 
                     /**
-                     * 设置语音鉴黄控制参数。
-                     * @param AsrReviewInfo 语音鉴黄控制参数。
+                     * 设置语音鉴别涉及令人反感的信息的控制参数。
+                     * @param AsrReviewInfo 语音鉴别涉及令人反感的信息的控制参数。
                      */
                     void SetAsrReviewInfo(const PornAsrReviewTemplateInfoForUpdate& _asrReviewInfo);
 
@@ -86,14 +86,14 @@ namespace TencentCloud
                     bool AsrReviewInfoHasBeenSet() const;
 
                     /**
-                     * 获取文本鉴黄控制参数。
-                     * @return OcrReviewInfo 文本鉴黄控制参数。
+                     * 获取文本鉴别涉及令人反感的信息的控制参数。
+                     * @return OcrReviewInfo 文本鉴别涉及令人反感的信息的控制参数。
                      */
                     PornOcrReviewTemplateInfoForUpdate GetOcrReviewInfo() const;
 
                     /**
-                     * 设置文本鉴黄控制参数。
-                     * @param OcrReviewInfo 文本鉴黄控制参数。
+                     * 设置文本鉴别涉及令人反感的信息的控制参数。
+                     * @param OcrReviewInfo 文本鉴别涉及令人反感的信息的控制参数。
                      */
                     void SetOcrReviewInfo(const PornOcrReviewTemplateInfoForUpdate& _ocrReviewInfo);
 
@@ -106,19 +106,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 画面鉴黄控制参数。
+                     * 画面鉴别涉及令人反感的信息的控制参数。
                      */
                     PornImgReviewTemplateInfoForUpdate m_imgReviewInfo;
                     bool m_imgReviewInfoHasBeenSet;
 
                     /**
-                     * 语音鉴黄控制参数。
+                     * 语音鉴别涉及令人反感的信息的控制参数。
                      */
                     PornAsrReviewTemplateInfoForUpdate m_asrReviewInfo;
                     bool m_asrReviewInfoHasBeenSet;
 
                     /**
-                     * 文本鉴黄控制参数。
+                     * 文本鉴别涉及令人反感的信息的控制参数。
                      */
                     PornOcrReviewTemplateInfoForUpdate m_ocrReviewInfo;
                     bool m_ocrReviewInfoHasBeenSet;

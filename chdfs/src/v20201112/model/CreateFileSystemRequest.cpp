@@ -29,7 +29,9 @@ CreateFileSystemRequest::CreateFileSystemRequest() :
     m_descriptionHasBeenSet(false),
     m_superUsersHasBeenSet(false),
     m_rootInodeUserHasBeenSet(false),
-    m_rootInodeGroupHasBeenSet(false)
+    m_rootInodeGroupHasBeenSet(false),
+    m_enableRangerHasBeenSet(false),
+    m_rangerServiceAddressesHasBeenSet(false)
 {
 }
 
@@ -99,6 +101,27 @@ string CreateFileSystemRequest::ToJsonString() const
         string key = "RootInodeGroup";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_rootInodeGroup.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableRangerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableRanger";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableRanger, allocator);
+    }
+
+    if (m_rangerServiceAddressesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RangerServiceAddresses";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_rangerServiceAddresses.begin(); itr != m_rangerServiceAddresses.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -219,6 +242,38 @@ void CreateFileSystemRequest::SetRootInodeGroup(const string& _rootInodeGroup)
 bool CreateFileSystemRequest::RootInodeGroupHasBeenSet() const
 {
     return m_rootInodeGroupHasBeenSet;
+}
+
+bool CreateFileSystemRequest::GetEnableRanger() const
+{
+    return m_enableRanger;
+}
+
+void CreateFileSystemRequest::SetEnableRanger(const bool& _enableRanger)
+{
+    m_enableRanger = _enableRanger;
+    m_enableRangerHasBeenSet = true;
+}
+
+bool CreateFileSystemRequest::EnableRangerHasBeenSet() const
+{
+    return m_enableRangerHasBeenSet;
+}
+
+vector<string> CreateFileSystemRequest::GetRangerServiceAddresses() const
+{
+    return m_rangerServiceAddresses;
+}
+
+void CreateFileSystemRequest::SetRangerServiceAddresses(const vector<string>& _rangerServiceAddresses)
+{
+    m_rangerServiceAddresses = _rangerServiceAddresses;
+    m_rangerServiceAddressesHasBeenSet = true;
+}
+
+bool CreateFileSystemRequest::RangerServiceAddressesHasBeenSet() const
+{
+    return m_rangerServiceAddressesHasBeenSet;
 }
 
 

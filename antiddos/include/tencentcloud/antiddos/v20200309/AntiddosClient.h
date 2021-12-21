@@ -33,6 +33,8 @@
 #include <tencentcloud/antiddos/v20200309/model/CreateBoundIPResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateDDoSAIRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateDDoSAIResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/CreateDDoSBlackWhiteIpListRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/CreateDDoSBlackWhiteIpListResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateDDoSGeoIPBlockConfigRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateDDoSGeoIPBlockConfigResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateDDoSSpeedLimitConfigRequest.h>
@@ -55,6 +57,8 @@
 #include <tencentcloud/antiddos/v20200309/model/CreateWaterPrintKeyResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DeleteBlackWhiteIpListRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DeleteBlackWhiteIpListResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/DeleteDDoSBlackWhiteIpListRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/DeleteDDoSBlackWhiteIpListResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DeleteDDoSGeoIPBlockConfigRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DeleteDDoSGeoIPBlockConfigResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DeleteDDoSSpeedLimitConfigRequest.h>
@@ -73,6 +77,8 @@
 #include <tencentcloud/antiddos/v20200309/model/DescribeBlackWhiteIpListResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeCCTrendRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeCCTrendResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeDDoSBlackWhiteIpListRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeDDoSBlackWhiteIpListResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeDDoSTrendRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeDDoSTrendResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeDefaultAlarmThresholdRequest.h>
@@ -150,6 +156,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDDoSAIResponse> CreateDDoSAIOutcome;
                 typedef std::future<CreateDDoSAIOutcome> CreateDDoSAIOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::CreateDDoSAIRequest&, CreateDDoSAIOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDDoSAIAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDDoSBlackWhiteIpListResponse> CreateDDoSBlackWhiteIpListOutcome;
+                typedef std::future<CreateDDoSBlackWhiteIpListOutcome> CreateDDoSBlackWhiteIpListOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::CreateDDoSBlackWhiteIpListRequest&, CreateDDoSBlackWhiteIpListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDDoSBlackWhiteIpListAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDDoSGeoIPBlockConfigResponse> CreateDDoSGeoIPBlockConfigOutcome;
                 typedef std::future<CreateDDoSGeoIPBlockConfigOutcome> CreateDDoSGeoIPBlockConfigOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::CreateDDoSGeoIPBlockConfigRequest&, CreateDDoSGeoIPBlockConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDDoSGeoIPBlockConfigAsyncHandler;
@@ -183,6 +192,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteBlackWhiteIpListResponse> DeleteBlackWhiteIpListOutcome;
                 typedef std::future<DeleteBlackWhiteIpListOutcome> DeleteBlackWhiteIpListOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DeleteBlackWhiteIpListRequest&, DeleteBlackWhiteIpListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBlackWhiteIpListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDDoSBlackWhiteIpListResponse> DeleteDDoSBlackWhiteIpListOutcome;
+                typedef std::future<DeleteDDoSBlackWhiteIpListOutcome> DeleteDDoSBlackWhiteIpListOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::DeleteDDoSBlackWhiteIpListRequest&, DeleteDDoSBlackWhiteIpListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDDoSBlackWhiteIpListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDDoSGeoIPBlockConfigResponse> DeleteDDoSGeoIPBlockConfigOutcome;
                 typedef std::future<DeleteDDoSGeoIPBlockConfigOutcome> DeleteDDoSGeoIPBlockConfigOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DeleteDDoSGeoIPBlockConfigRequest&, DeleteDDoSGeoIPBlockConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDDoSGeoIPBlockConfigAsyncHandler;
@@ -210,6 +222,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCCTrendResponse> DescribeCCTrendOutcome;
                 typedef std::future<DescribeCCTrendOutcome> DescribeCCTrendOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeCCTrendRequest&, DescribeCCTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCCTrendAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDDoSBlackWhiteIpListResponse> DescribeDDoSBlackWhiteIpListOutcome;
+                typedef std::future<DescribeDDoSBlackWhiteIpListOutcome> DescribeDDoSBlackWhiteIpListOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::DescribeDDoSBlackWhiteIpListRequest&, DescribeDDoSBlackWhiteIpListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDDoSBlackWhiteIpListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDDoSTrendResponse> DescribeDDoSTrendOutcome;
                 typedef std::future<DescribeDDoSTrendOutcome> DescribeDDoSTrendOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeDDoSTrendRequest&, DescribeDDoSTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDDoSTrendAsyncHandler;
@@ -331,6 +346,15 @@ namespace TencentCloud
                 CreateDDoSAIOutcomeCallable CreateDDoSAICallable(const Model::CreateDDoSAIRequest& request);
 
                 /**
+                 *添加DDoS防护的IP网段黑白名单
+                 * @param req CreateDDoSBlackWhiteIpListRequest
+                 * @return CreateDDoSBlackWhiteIpListOutcome
+                 */
+                CreateDDoSBlackWhiteIpListOutcome CreateDDoSBlackWhiteIpList(const Model::CreateDDoSBlackWhiteIpListRequest &request);
+                void CreateDDoSBlackWhiteIpListAsync(const Model::CreateDDoSBlackWhiteIpListRequest& request, const CreateDDoSBlackWhiteIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDDoSBlackWhiteIpListOutcomeCallable CreateDDoSBlackWhiteIpListCallable(const Model::CreateDDoSBlackWhiteIpListRequest& request);
+
+                /**
                  *添加DDoS防护的区域封禁配置
                  * @param req CreateDDoSGeoIPBlockConfigRequest
                  * @return CreateDDoSGeoIPBlockConfigOutcome
@@ -430,6 +454,15 @@ namespace TencentCloud
                 DeleteBlackWhiteIpListOutcomeCallable DeleteBlackWhiteIpListCallable(const Model::DeleteBlackWhiteIpListRequest& request);
 
                 /**
+                 *删除DDoS防护的IP网段黑白名单
+                 * @param req DeleteDDoSBlackWhiteIpListRequest
+                 * @return DeleteDDoSBlackWhiteIpListOutcome
+                 */
+                DeleteDDoSBlackWhiteIpListOutcome DeleteDDoSBlackWhiteIpList(const Model::DeleteDDoSBlackWhiteIpListRequest &request);
+                void DeleteDDoSBlackWhiteIpListAsync(const Model::DeleteDDoSBlackWhiteIpListRequest& request, const DeleteDDoSBlackWhiteIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDDoSBlackWhiteIpListOutcomeCallable DeleteDDoSBlackWhiteIpListCallable(const Model::DeleteDDoSBlackWhiteIpListRequest& request);
+
+                /**
                  *删除DDoS防护的区域封禁配置
                  * @param req DeleteDDoSGeoIPBlockConfigRequest
                  * @return DeleteDDoSGeoIPBlockConfigOutcome
@@ -509,6 +542,15 @@ namespace TencentCloud
                 DescribeCCTrendOutcome DescribeCCTrend(const Model::DescribeCCTrendRequest &request);
                 void DescribeCCTrendAsync(const Model::DescribeCCTrendRequest& request, const DescribeCCTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCCTrendOutcomeCallable DescribeCCTrendCallable(const Model::DescribeCCTrendRequest& request);
+
+                /**
+                 *获取DDoS防护的IP网段黑白名单
+                 * @param req DescribeDDoSBlackWhiteIpListRequest
+                 * @return DescribeDDoSBlackWhiteIpListOutcome
+                 */
+                DescribeDDoSBlackWhiteIpListOutcome DescribeDDoSBlackWhiteIpList(const Model::DescribeDDoSBlackWhiteIpListRequest &request);
+                void DescribeDDoSBlackWhiteIpListAsync(const Model::DescribeDDoSBlackWhiteIpListRequest& request, const DescribeDDoSBlackWhiteIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDDoSBlackWhiteIpListOutcomeCallable DescribeDDoSBlackWhiteIpListCallable(const Model::DescribeDDoSBlackWhiteIpListRequest& request);
 
                 /**
                  *获取DDoS攻击流量带宽和攻击包速率数据

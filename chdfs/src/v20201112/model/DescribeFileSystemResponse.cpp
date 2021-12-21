@@ -26,7 +26,9 @@ using namespace std;
 DescribeFileSystemResponse::DescribeFileSystemResponse() :
     m_fileSystemHasBeenSet(false),
     m_capacityUsedHasBeenSet(false),
-    m_archiveCapacityUsedHasBeenSet(false)
+    m_archiveCapacityUsedHasBeenSet(false),
+    m_standardCapacityUsedHasBeenSet(false),
+    m_degradeCapacityUsedHasBeenSet(false)
 {
 }
 
@@ -101,6 +103,26 @@ CoreInternalOutcome DescribeFileSystemResponse::Deserialize(const string &payloa
         m_archiveCapacityUsedHasBeenSet = true;
     }
 
+    if (rsp.HasMember("StandardCapacityUsed") && !rsp["StandardCapacityUsed"].IsNull())
+    {
+        if (!rsp["StandardCapacityUsed"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `StandardCapacityUsed` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_standardCapacityUsed = rsp["StandardCapacityUsed"].GetUint64();
+        m_standardCapacityUsedHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DegradeCapacityUsed") && !rsp["DegradeCapacityUsed"].IsNull())
+    {
+        if (!rsp["DegradeCapacityUsed"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DegradeCapacityUsed` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_degradeCapacityUsed = rsp["DegradeCapacityUsed"].GetUint64();
+        m_degradeCapacityUsedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -134,6 +156,22 @@ string DescribeFileSystemResponse::ToJsonString() const
         string key = "ArchiveCapacityUsed";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_archiveCapacityUsed, allocator);
+    }
+
+    if (m_standardCapacityUsedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StandardCapacityUsed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_standardCapacityUsed, allocator);
+    }
+
+    if (m_degradeCapacityUsedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DegradeCapacityUsed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_degradeCapacityUsed, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -176,6 +214,26 @@ uint64_t DescribeFileSystemResponse::GetArchiveCapacityUsed() const
 bool DescribeFileSystemResponse::ArchiveCapacityUsedHasBeenSet() const
 {
     return m_archiveCapacityUsedHasBeenSet;
+}
+
+uint64_t DescribeFileSystemResponse::GetStandardCapacityUsed() const
+{
+    return m_standardCapacityUsed;
+}
+
+bool DescribeFileSystemResponse::StandardCapacityUsedHasBeenSet() const
+{
+    return m_standardCapacityUsedHasBeenSet;
+}
+
+uint64_t DescribeFileSystemResponse::GetDegradeCapacityUsed() const
+{
+    return m_degradeCapacityUsed;
+}
+
+bool DescribeFileSystemResponse::DegradeCapacityUsedHasBeenSet() const
+{
+    return m_degradeCapacityUsedHasBeenSet;
 }
 
 

@@ -97,17 +97,17 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取文件系统容量（byte），下限为1G，上限为1P，且必须是1G的整数倍
+                     * 获取文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍
 注意：修改的文件系统容量不能小于当前使用量
-                     * @return CapacityQuota 文件系统容量（byte），下限为1G，上限为1P，且必须是1G的整数倍
+                     * @return CapacityQuota 文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍
 注意：修改的文件系统容量不能小于当前使用量
                      */
                     uint64_t GetCapacityQuota() const;
 
                     /**
-                     * 设置文件系统容量（byte），下限为1G，上限为1P，且必须是1G的整数倍
+                     * 设置文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍
 注意：修改的文件系统容量不能小于当前使用量
-                     * @param CapacityQuota 文件系统容量（byte），下限为1G，上限为1P，且必须是1G的整数倍
+                     * @param CapacityQuota 文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍
 注意：修改的文件系统容量不能小于当前使用量
                      */
                     void SetCapacityQuota(const uint64_t& _capacityQuota);
@@ -154,6 +154,42 @@ namespace TencentCloud
                      */
                     bool PosixAclHasBeenSet() const;
 
+                    /**
+                     * 获取是否打开Ranger地址校验
+                     * @return EnableRanger 是否打开Ranger地址校验
+                     */
+                    bool GetEnableRanger() const;
+
+                    /**
+                     * 设置是否打开Ranger地址校验
+                     * @param EnableRanger 是否打开Ranger地址校验
+                     */
+                    void SetEnableRanger(const bool& _enableRanger);
+
+                    /**
+                     * 判断参数 EnableRanger 是否已赋值
+                     * @return EnableRanger 是否已赋值
+                     */
+                    bool EnableRangerHasBeenSet() const;
+
+                    /**
+                     * 获取Ranger地址列表，可以为空数组
+                     * @return RangerServiceAddresses Ranger地址列表，可以为空数组
+                     */
+                    std::vector<std::string> GetRangerServiceAddresses() const;
+
+                    /**
+                     * 设置Ranger地址列表，可以为空数组
+                     * @param RangerServiceAddresses Ranger地址列表，可以为空数组
+                     */
+                    void SetRangerServiceAddresses(const std::vector<std::string>& _rangerServiceAddresses);
+
+                    /**
+                     * 判断参数 RangerServiceAddresses 是否已赋值
+                     * @return RangerServiceAddresses 是否已赋值
+                     */
+                    bool RangerServiceAddressesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -175,7 +211,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 文件系统容量（byte），下限为1G，上限为1P，且必须是1G的整数倍
+                     * 文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍
 注意：修改的文件系统容量不能小于当前使用量
                      */
                     uint64_t m_capacityQuota;
@@ -192,6 +228,18 @@ namespace TencentCloud
                      */
                     bool m_posixAcl;
                     bool m_posixAclHasBeenSet;
+
+                    /**
+                     * 是否打开Ranger地址校验
+                     */
+                    bool m_enableRanger;
+                    bool m_enableRangerHasBeenSet;
+
+                    /**
+                     * Ranger地址列表，可以为空数组
+                     */
+                    std::vector<std::string> m_rangerServiceAddresses;
+                    bool m_rangerServiceAddressesHasBeenSet;
 
                 };
             }

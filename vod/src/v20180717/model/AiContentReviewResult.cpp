@@ -30,8 +30,8 @@ AiContentReviewResult::AiContentReviewResult() :
     m_politicalAsrTaskHasBeenSet(false),
     m_politicalOcrTaskHasBeenSet(false),
     m_terrorismOcrTaskHasBeenSet(false),
-    m_prohibitedAsrTaskHasBeenSet(false),
-    m_prohibitedOcrTaskHasBeenSet(false)
+    m_prohibitedOcrTaskHasBeenSet(false),
+    m_prohibitedAsrTaskHasBeenSet(false)
 {
 }
 
@@ -186,23 +186,6 @@ CoreInternalOutcome AiContentReviewResult::Deserialize(const rapidjson::Value &v
         m_terrorismOcrTaskHasBeenSet = true;
     }
 
-    if (value.HasMember("ProhibitedAsrTask") && !value["ProhibitedAsrTask"].IsNull())
-    {
-        if (!value["ProhibitedAsrTask"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `AiContentReviewResult.ProhibitedAsrTask` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_prohibitedAsrTask.Deserialize(value["ProhibitedAsrTask"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_prohibitedAsrTaskHasBeenSet = true;
-    }
-
     if (value.HasMember("ProhibitedOcrTask") && !value["ProhibitedOcrTask"].IsNull())
     {
         if (!value["ProhibitedOcrTask"].IsObject())
@@ -218,6 +201,23 @@ CoreInternalOutcome AiContentReviewResult::Deserialize(const rapidjson::Value &v
         }
 
         m_prohibitedOcrTaskHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProhibitedAsrTask") && !value["ProhibitedAsrTask"].IsNull())
+    {
+        if (!value["ProhibitedAsrTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiContentReviewResult.ProhibitedAsrTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_prohibitedAsrTask.Deserialize(value["ProhibitedAsrTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_prohibitedAsrTaskHasBeenSet = true;
     }
 
 
@@ -307,15 +307,6 @@ void AiContentReviewResult::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         m_terrorismOcrTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_prohibitedAsrTaskHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ProhibitedAsrTask";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_prohibitedAsrTask.ToJsonObject(value[key.c_str()], allocator);
-    }
-
     if (m_prohibitedOcrTaskHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -323,6 +314,15 @@ void AiContentReviewResult::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_prohibitedOcrTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_prohibitedAsrTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProhibitedAsrTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_prohibitedAsrTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -472,22 +472,6 @@ bool AiContentReviewResult::TerrorismOcrTaskHasBeenSet() const
     return m_terrorismOcrTaskHasBeenSet;
 }
 
-AiReviewTaskProhibitedAsrResult AiContentReviewResult::GetProhibitedAsrTask() const
-{
-    return m_prohibitedAsrTask;
-}
-
-void AiContentReviewResult::SetProhibitedAsrTask(const AiReviewTaskProhibitedAsrResult& _prohibitedAsrTask)
-{
-    m_prohibitedAsrTask = _prohibitedAsrTask;
-    m_prohibitedAsrTaskHasBeenSet = true;
-}
-
-bool AiContentReviewResult::ProhibitedAsrTaskHasBeenSet() const
-{
-    return m_prohibitedAsrTaskHasBeenSet;
-}
-
 AiReviewTaskProhibitedOcrResult AiContentReviewResult::GetProhibitedOcrTask() const
 {
     return m_prohibitedOcrTask;
@@ -502,5 +486,21 @@ void AiContentReviewResult::SetProhibitedOcrTask(const AiReviewTaskProhibitedOcr
 bool AiContentReviewResult::ProhibitedOcrTaskHasBeenSet() const
 {
     return m_prohibitedOcrTaskHasBeenSet;
+}
+
+AiReviewTaskProhibitedAsrResult AiContentReviewResult::GetProhibitedAsrTask() const
+{
+    return m_prohibitedAsrTask;
+}
+
+void AiContentReviewResult::SetProhibitedAsrTask(const AiReviewTaskProhibitedAsrResult& _prohibitedAsrTask)
+{
+    m_prohibitedAsrTask = _prohibitedAsrTask;
+    m_prohibitedAsrTaskHasBeenSet = true;
+}
+
+bool AiContentReviewResult::ProhibitedAsrTaskHasBeenSet() const
+{
+    return m_prohibitedAsrTaskHasBeenSet;
 }
 

@@ -126,6 +126,49 @@ WavClient::CreateCorpTagOutcomeCallable WavClient::CreateCorpTagCallable(const C
     return task->get_future();
 }
 
+WavClient::CreateLeadOutcome WavClient::CreateLead(const CreateLeadRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLead");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLeadResponse rsp = CreateLeadResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLeadOutcome(rsp);
+        else
+            return CreateLeadOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLeadOutcome(outcome.GetError());
+    }
+}
+
+void WavClient::CreateLeadAsync(const CreateLeadRequest& request, const CreateLeadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateLead(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WavClient::CreateLeadOutcomeCallable WavClient::CreateLeadCallable(const CreateLeadRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateLeadOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateLead(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WavClient::QueryActivityJoinListOutcome WavClient::QueryActivityJoinList(const QueryActivityJoinListRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryActivityJoinList");
@@ -384,6 +427,49 @@ WavClient::QueryClueInfoListOutcomeCallable WavClient::QueryClueInfoListCallable
     return task->get_future();
 }
 
+WavClient::QueryDealerInfoListOutcome WavClient::QueryDealerInfoList(const QueryDealerInfoListRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryDealerInfoList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryDealerInfoListResponse rsp = QueryDealerInfoListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryDealerInfoListOutcome(rsp);
+        else
+            return QueryDealerInfoListOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryDealerInfoListOutcome(outcome.GetError());
+    }
+}
+
+void WavClient::QueryDealerInfoListAsync(const QueryDealerInfoListRequest& request, const QueryDealerInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryDealerInfoList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WavClient::QueryDealerInfoListOutcomeCallable WavClient::QueryDealerInfoListCallable(const QueryDealerInfoListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryDealerInfoListOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryDealerInfoList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WavClient::QueryExternalContactDetailOutcome WavClient::QueryExternalContactDetail(const QueryExternalContactDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryExternalContactDetail");
@@ -592,6 +678,49 @@ WavClient::QueryMiniAppCodeListOutcomeCallable WavClient::QueryMiniAppCodeListCa
         [this, request]()
         {
             return this->QueryMiniAppCodeList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WavClient::QueryVehicleInfoListOutcome WavClient::QueryVehicleInfoList(const QueryVehicleInfoListRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryVehicleInfoList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryVehicleInfoListResponse rsp = QueryVehicleInfoListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryVehicleInfoListOutcome(rsp);
+        else
+            return QueryVehicleInfoListOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryVehicleInfoListOutcome(outcome.GetError());
+    }
+}
+
+void WavClient::QueryVehicleInfoListAsync(const QueryVehicleInfoListRequest& request, const QueryVehicleInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryVehicleInfoList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WavClient::QueryVehicleInfoListOutcomeCallable WavClient::QueryVehicleInfoListCallable(const QueryVehicleInfoListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryVehicleInfoListOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryVehicleInfoList(request);
         }
     );
 

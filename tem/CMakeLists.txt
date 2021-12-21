@@ -60,7 +60,8 @@ set(tem_public_header_model
   include/tencentcloud/tem/v20210701/model/CreateCosTokenResponse.h
   include/tencentcloud/tem/v20210701/model/IngressRule.h
   include/tencentcloud/tem/v20210701/model/CronHorizontalAutoscaler.h
-  include/tencentcloud/tem/v20210701/model/StorageConf.h
+  include/tencentcloud/tem/v20210701/model/RollingUpdateApplicationByVersionResponse.h
+  include/tencentcloud/tem/v20210701/model/RollingUpdateApplicationByVersionRequest.h
   include/tencentcloud/tem/v20210701/model/RunVersionPod.h
   include/tencentcloud/tem/v20210701/model/DescribeDeployApplicationDetailResponse.h
   include/tencentcloud/tem/v20210701/model/IngressRuleValue.h
@@ -85,6 +86,7 @@ set(tem_public_header_model
   include/tencentcloud/tem/v20210701/model/CronHorizontalAutoscalerSchedule.h
   include/tencentcloud/tem/v20210701/model/ResumeDeployApplicationRequest.h
   include/tencentcloud/tem/v20210701/model/DeployApplicationResponse.h
+  include/tencentcloud/tem/v20210701/model/StorageConf.h
   include/tencentcloud/tem/v20210701/model/CreateEnvironmentRequest.h
   include/tencentcloud/tem/v20210701/model/Pair.h
   include/tencentcloud/tem/v20201221/model/MountedSettingConf.h
@@ -187,7 +189,8 @@ set(tem_src
   src/v20210701/model/CreateCosTokenResponse.cpp
   src/v20210701/model/IngressRule.cpp
   src/v20210701/model/CronHorizontalAutoscaler.cpp
-  src/v20210701/model/StorageConf.cpp
+  src/v20210701/model/RollingUpdateApplicationByVersionResponse.cpp
+  src/v20210701/model/RollingUpdateApplicationByVersionRequest.cpp
   src/v20210701/model/RunVersionPod.cpp
   src/v20210701/model/DescribeDeployApplicationDetailResponse.cpp
   src/v20210701/model/IngressRuleValue.cpp
@@ -212,6 +215,7 @@ set(tem_src
   src/v20210701/model/CronHorizontalAutoscalerSchedule.cpp
   src/v20210701/model/ResumeDeployApplicationRequest.cpp
   src/v20210701/model/DeployApplicationResponse.cpp
+  src/v20210701/model/StorageConf.cpp
   src/v20210701/model/CreateEnvironmentRequest.cpp
   src/v20210701/model/Pair.cpp
   src/v20201221/model/MountedSettingConf.cpp

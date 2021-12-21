@@ -900,3 +900,46 @@ TemClient::RevertDeployApplicationOutcomeCallable TemClient::RevertDeployApplica
     return task->get_future();
 }
 
+TemClient::RollingUpdateApplicationByVersionOutcome TemClient::RollingUpdateApplicationByVersion(const RollingUpdateApplicationByVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "RollingUpdateApplicationByVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RollingUpdateApplicationByVersionResponse rsp = RollingUpdateApplicationByVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RollingUpdateApplicationByVersionOutcome(rsp);
+        else
+            return RollingUpdateApplicationByVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return RollingUpdateApplicationByVersionOutcome(outcome.GetError());
+    }
+}
+
+void TemClient::RollingUpdateApplicationByVersionAsync(const RollingUpdateApplicationByVersionRequest& request, const RollingUpdateApplicationByVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RollingUpdateApplicationByVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TemClient::RollingUpdateApplicationByVersionOutcomeCallable TemClient::RollingUpdateApplicationByVersionCallable(const RollingUpdateApplicationByVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RollingUpdateApplicationByVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->RollingUpdateApplicationByVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

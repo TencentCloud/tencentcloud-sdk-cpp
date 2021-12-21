@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 语音鉴黄任务控制参数
+                * 语音鉴别涉及令人反感的信息的任务控制参数
                 */
                 class PornAsrReviewTemplateInfo : public AbstractModel
                 {
@@ -47,22 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取语音鉴黄任务开关，可选值：
-<li>ON：开启语音鉴黄任务；</li>
-<li>OFF：关闭语音鉴黄任务。</li>
-                     * @return Switch 语音鉴黄任务开关，可选值：
-<li>ON：开启语音鉴黄任务；</li>
-<li>OFF：关闭语音鉴黄任务。</li>
+                     * 获取语音鉴别涉及令人反感的信息的任务开关，可选值：
+<li>ON：开启语音鉴别涉及令人反感的信息的任务；</li>
+<li>OFF：关闭语音鉴别涉及令人反感的信息的任务。</li>
+                     * @return Switch 语音鉴别涉及令人反感的信息的任务开关，可选值：
+<li>ON：开启语音鉴别涉及令人反感的信息的任务；</li>
+<li>OFF：关闭语音鉴别涉及令人反感的信息的任务。</li>
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置语音鉴黄任务开关，可选值：
-<li>ON：开启语音鉴黄任务；</li>
-<li>OFF：关闭语音鉴黄任务。</li>
-                     * @param Switch 语音鉴黄任务开关，可选值：
-<li>ON：开启语音鉴黄任务；</li>
-<li>OFF：关闭语音鉴黄任务。</li>
+                     * 设置语音鉴别涉及令人反感的信息的任务开关，可选值：
+<li>ON：开启语音鉴别涉及令人反感的信息的任务；</li>
+<li>OFF：关闭语音鉴别涉及令人反感的信息的任务。</li>
+                     * @param Switch 语音鉴别涉及令人反感的信息的任务开关，可选值：
+<li>ON：开启语音鉴别涉及令人反感的信息的任务；</li>
+<li>OFF：关闭语音鉴别涉及令人反感的信息的任务。</li>
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -73,14 +73,14 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。
-                     * @return BlockConfidence 判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。
+                     * 获取判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。
+                     * @return BlockConfidence 判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。
                      */
                     int64_t GetBlockConfidence() const;
 
                     /**
-                     * 设置判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。
-                     * @param BlockConfidence 判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。
+                     * 设置判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。
+                     * @param BlockConfidence 判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。
                      */
                     void SetBlockConfidence(const int64_t& _blockConfidence);
 
@@ -91,14 +91,14 @@ namespace TencentCloud
                     bool BlockConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。
-                     * @return ReviewConfidence 判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。
+                     * 获取判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。
+                     * @return ReviewConfidence 判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。
                      */
                     int64_t GetReviewConfidence() const;
 
                     /**
-                     * 设置判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。
-                     * @param ReviewConfidence 判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。
+                     * 设置判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。
+                     * @param ReviewConfidence 判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。
                      */
                     void SetReviewConfidence(const int64_t& _reviewConfidence);
 
@@ -111,21 +111,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 语音鉴黄任务开关，可选值：
-<li>ON：开启语音鉴黄任务；</li>
-<li>OFF：关闭语音鉴黄任务。</li>
+                     * 语音鉴别涉及令人反感的信息的任务开关，可选值：
+<li>ON：开启语音鉴别涉及令人反感的信息的任务；</li>
+<li>OFF：关闭语音鉴别涉及令人反感的信息的任务。</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。
+                     * 判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。
                      */
                     int64_t m_blockConfidence;
                     bool m_blockConfidenceHasBeenSet;
 
                     /**
-                     * 判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。
+                     * 判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。
                      */
                     int64_t m_reviewConfidence;
                     bool m_reviewConfidenceHasBeenSet;

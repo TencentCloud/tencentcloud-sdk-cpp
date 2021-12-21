@@ -28,7 +28,9 @@ ModifyFileSystemRequest::ModifyFileSystemRequest() :
     m_descriptionHasBeenSet(false),
     m_capacityQuotaHasBeenSet(false),
     m_superUsersHasBeenSet(false),
-    m_posixAclHasBeenSet(false)
+    m_posixAclHasBeenSet(false),
+    m_enableRangerHasBeenSet(false),
+    m_rangerServiceAddressesHasBeenSet(false)
 {
 }
 
@@ -90,6 +92,27 @@ string ModifyFileSystemRequest::ToJsonString() const
         string key = "PosixAcl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_posixAcl, allocator);
+    }
+
+    if (m_enableRangerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableRanger";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableRanger, allocator);
+    }
+
+    if (m_rangerServiceAddressesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RangerServiceAddresses";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_rangerServiceAddresses.begin(); itr != m_rangerServiceAddresses.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -194,6 +217,38 @@ void ModifyFileSystemRequest::SetPosixAcl(const bool& _posixAcl)
 bool ModifyFileSystemRequest::PosixAclHasBeenSet() const
 {
     return m_posixAclHasBeenSet;
+}
+
+bool ModifyFileSystemRequest::GetEnableRanger() const
+{
+    return m_enableRanger;
+}
+
+void ModifyFileSystemRequest::SetEnableRanger(const bool& _enableRanger)
+{
+    m_enableRanger = _enableRanger;
+    m_enableRangerHasBeenSet = true;
+}
+
+bool ModifyFileSystemRequest::EnableRangerHasBeenSet() const
+{
+    return m_enableRangerHasBeenSet;
+}
+
+vector<string> ModifyFileSystemRequest::GetRangerServiceAddresses() const
+{
+    return m_rangerServiceAddresses;
+}
+
+void ModifyFileSystemRequest::SetRangerServiceAddresses(const vector<string>& _rangerServiceAddresses)
+{
+    m_rangerServiceAddresses = _rangerServiceAddresses;
+    m_rangerServiceAddressesHasBeenSet = true;
+}
+
+bool ModifyFileSystemRequest::RangerServiceAddressesHasBeenSet() const
+{
+    return m_rangerServiceAddressesHasBeenSet;
 }
 
 

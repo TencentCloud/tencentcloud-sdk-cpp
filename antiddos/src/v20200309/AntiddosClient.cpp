@@ -255,6 +255,49 @@ AntiddosClient::CreateDDoSAIOutcomeCallable AntiddosClient::CreateDDoSAICallable
     return task->get_future();
 }
 
+AntiddosClient::CreateDDoSBlackWhiteIpListOutcome AntiddosClient::CreateDDoSBlackWhiteIpList(const CreateDDoSBlackWhiteIpListRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDDoSBlackWhiteIpList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDDoSBlackWhiteIpListResponse rsp = CreateDDoSBlackWhiteIpListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDDoSBlackWhiteIpListOutcome(rsp);
+        else
+            return CreateDDoSBlackWhiteIpListOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDDoSBlackWhiteIpListOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::CreateDDoSBlackWhiteIpListAsync(const CreateDDoSBlackWhiteIpListRequest& request, const CreateDDoSBlackWhiteIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDDoSBlackWhiteIpList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::CreateDDoSBlackWhiteIpListOutcomeCallable AntiddosClient::CreateDDoSBlackWhiteIpListCallable(const CreateDDoSBlackWhiteIpListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDDoSBlackWhiteIpListOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDDoSBlackWhiteIpList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AntiddosClient::CreateDDoSGeoIPBlockConfigOutcome AntiddosClient::CreateDDoSGeoIPBlockConfig(const CreateDDoSGeoIPBlockConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDDoSGeoIPBlockConfig");
@@ -728,6 +771,49 @@ AntiddosClient::DeleteBlackWhiteIpListOutcomeCallable AntiddosClient::DeleteBlac
     return task->get_future();
 }
 
+AntiddosClient::DeleteDDoSBlackWhiteIpListOutcome AntiddosClient::DeleteDDoSBlackWhiteIpList(const DeleteDDoSBlackWhiteIpListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDDoSBlackWhiteIpList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDDoSBlackWhiteIpListResponse rsp = DeleteDDoSBlackWhiteIpListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDDoSBlackWhiteIpListOutcome(rsp);
+        else
+            return DeleteDDoSBlackWhiteIpListOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDDoSBlackWhiteIpListOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DeleteDDoSBlackWhiteIpListAsync(const DeleteDDoSBlackWhiteIpListRequest& request, const DeleteDDoSBlackWhiteIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteDDoSBlackWhiteIpList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DeleteDDoSBlackWhiteIpListOutcomeCallable AntiddosClient::DeleteDDoSBlackWhiteIpListCallable(const DeleteDDoSBlackWhiteIpListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteDDoSBlackWhiteIpListOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteDDoSBlackWhiteIpList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AntiddosClient::DeleteDDoSGeoIPBlockConfigOutcome AntiddosClient::DeleteDDoSGeoIPBlockConfig(const DeleteDDoSGeoIPBlockConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteDDoSGeoIPBlockConfig");
@@ -1108,6 +1194,49 @@ AntiddosClient::DescribeCCTrendOutcomeCallable AntiddosClient::DescribeCCTrendCa
         [this, request]()
         {
             return this->DescribeCCTrend(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::DescribeDDoSBlackWhiteIpListOutcome AntiddosClient::DescribeDDoSBlackWhiteIpList(const DescribeDDoSBlackWhiteIpListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDDoSBlackWhiteIpList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDDoSBlackWhiteIpListResponse rsp = DescribeDDoSBlackWhiteIpListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDDoSBlackWhiteIpListOutcome(rsp);
+        else
+            return DescribeDDoSBlackWhiteIpListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDDoSBlackWhiteIpListOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribeDDoSBlackWhiteIpListAsync(const DescribeDDoSBlackWhiteIpListRequest& request, const DescribeDDoSBlackWhiteIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDDoSBlackWhiteIpList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DescribeDDoSBlackWhiteIpListOutcomeCallable AntiddosClient::DescribeDDoSBlackWhiteIpListCallable(const DescribeDDoSBlackWhiteIpListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDDoSBlackWhiteIpListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDDoSBlackWhiteIpList(request);
         }
     );
 

@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool FilePathHasBeenSet() const;
 
                     /**
-                     * 获取回热任务类型（1：标准；2：极速；3：批量）
-                     * @return Type 回热任务类型（1：标准；2：极速；3：批量）
+                     * 获取回热任务类型（1：标准；2：极速；3：批量，暂时仅支持极速）
+                     * @return Type 回热任务类型（1：标准；2：极速；3：批量，暂时仅支持极速）
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置回热任务类型（1：标准；2：极速；3：批量）
-                     * @param Type 回热任务类型（1：标准；2：极速；3：批量）
+                     * 设置回热任务类型（1：标准；2：极速；3：批量，暂时仅支持极速）
+                     * @param Type 回热任务类型（1：标准；2：极速；3：批量，暂时仅支持极速）
                      */
                     void SetType(const uint64_t& _type);
 
@@ -169,7 +169,7 @@ namespace TencentCloud
                     bool m_filePathHasBeenSet;
 
                     /**
-                     * 回热任务类型（1：标准；2：极速；3：批量）
+                     * 回热任务类型（1：标准；2：极速；3：批量，暂时仅支持极速）
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
