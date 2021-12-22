@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/essbasic/v20210526/model/FlowApproverInfo.h>
 #include <tencentcloud/essbasic/v20210526/model/FormField.h>
+#include <tencentcloud/essbasic/v20210526/model/CcInfo.h>
 
 
 namespace TencentCloud
@@ -226,6 +227,24 @@ namespace TencentCloud
                      */
                     bool CustomerDataHasBeenSet() const;
 
+                    /**
+                     * 获取被抄送人的信息列表
+                     * @return CcInfos 被抄送人的信息列表
+                     */
+                    std::vector<CcInfo> GetCcInfos() const;
+
+                    /**
+                     * 设置被抄送人的信息列表
+                     * @param CcInfos 被抄送人的信息列表
+                     */
+                    void SetCcInfos(const std::vector<CcInfo>& _ccInfos);
+
+                    /**
+                     * 判断参数 CcInfos 是否已赋值
+                     * @return CcInfos 是否已赋值
+                     */
+                    bool CcInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -285,6 +304,12 @@ namespace TencentCloud
                      */
                     std::string m_customerData;
                     bool m_customerDataHasBeenSet;
+
+                    /**
+                     * 被抄送人的信息列表
+                     */
+                    std::vector<CcInfo> m_ccInfos;
+                    bool m_ccInfosHasBeenSet;
 
                 };
             }

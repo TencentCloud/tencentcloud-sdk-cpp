@@ -14,21 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cdb/v20170320/model/StartDelayReplicationResponse.h>
+#include <tencentcloud/thpc/v20211109/model/DescribeClustersResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cdb::V20170320::Model;
+using namespace TencentCloud::Thpc::V20211109::Model;
 using namespace std;
 
-StartDelayReplicationResponse::StartDelayReplicationResponse() :
-    m_asyncRequestIdHasBeenSet(false)
+DescribeClustersResponse::DescribeClustersResponse() :
+    m_clusterSetHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome StartDelayReplicationResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeClustersResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,32 +63,67 @@ CoreInternalOutcome StartDelayReplicationResponse::Deserialize(const string &pay
     }
 
 
-    if (rsp.HasMember("AsyncRequestId") && !rsp["AsyncRequestId"].IsNull())
+    if (rsp.HasMember("ClusterSet") && !rsp["ClusterSet"].IsNull())
     {
-        if (!rsp["AsyncRequestId"].IsString())
+        if (!rsp["ClusterSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ClusterSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ClusterSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `AsyncRequestId` IsString=false incorrectly").SetRequestId(requestId));
+            ClusterOverview item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_clusterSet.push_back(item);
         }
-        m_asyncRequestId = string(rsp["AsyncRequestId"].GetString());
-        m_asyncRequestIdHasBeenSet = true;
+        m_clusterSetHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string StartDelayReplicationResponse::ToJsonString() const
+string DescribeClustersResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_asyncRequestIdHasBeenSet)
+    if (m_clusterSetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AsyncRequestId";
+        string key = "ClusterSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_asyncRequestId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_clusterSet.begin(); itr != m_clusterSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,14 +138,24 @@ string StartDelayReplicationResponse::ToJsonString() const
 }
 
 
-string StartDelayReplicationResponse::GetAsyncRequestId() const
+vector<ClusterOverview> DescribeClustersResponse::GetClusterSet() const
 {
-    return m_asyncRequestId;
+    return m_clusterSet;
 }
 
-bool StartDelayReplicationResponse::AsyncRequestIdHasBeenSet() const
+bool DescribeClustersResponse::ClusterSetHasBeenSet() const
 {
-    return m_asyncRequestIdHasBeenSet;
+    return m_clusterSetHasBeenSet;
+}
+
+int64_t DescribeClustersResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeClustersResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
 }
 
 

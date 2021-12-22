@@ -26,7 +26,8 @@ ModifyRoGroupInfoRequest::ModifyRoGroupInfoRequest() :
     m_roGroupIdHasBeenSet(false),
     m_roGroupInfoHasBeenSet(false),
     m_roWeightValuesHasBeenSet(false),
-    m_isBalanceRoLoadHasBeenSet(false)
+    m_isBalanceRoLoadHasBeenSet(false),
+    m_replicationDelayTimeHasBeenSet(false)
 {
 }
 
@@ -75,6 +76,14 @@ string ModifyRoGroupInfoRequest::ToJsonString() const
         string key = "IsBalanceRoLoad";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isBalanceRoLoad, allocator);
+    }
+
+    if (m_replicationDelayTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReplicationDelayTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_replicationDelayTime, allocator);
     }
 
 
@@ -147,6 +156,22 @@ void ModifyRoGroupInfoRequest::SetIsBalanceRoLoad(const int64_t& _isBalanceRoLoa
 bool ModifyRoGroupInfoRequest::IsBalanceRoLoadHasBeenSet() const
 {
     return m_isBalanceRoLoadHasBeenSet;
+}
+
+int64_t ModifyRoGroupInfoRequest::GetReplicationDelayTime() const
+{
+    return m_replicationDelayTime;
+}
+
+void ModifyRoGroupInfoRequest::SetReplicationDelayTime(const int64_t& _replicationDelayTime)
+{
+    m_replicationDelayTime = _replicationDelayTime;
+    m_replicationDelayTimeHasBeenSet = true;
+}
+
+bool ModifyRoGroupInfoRequest::ReplicationDelayTimeHasBeenSet() const
+{
+    return m_replicationDelayTimeHasBeenSet;
 }
 
 

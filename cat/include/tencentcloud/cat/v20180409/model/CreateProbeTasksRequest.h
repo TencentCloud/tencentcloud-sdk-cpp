@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cat/v20180409/model/ProbeTaskBasicConfiguration.h>
+#include <tencentcloud/cat/v20180409/model/Tag.h>
 
 
 namespace TencentCloud
@@ -80,14 +81,14 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取探测节点
-                     * @return Nodes 探测节点
+                     * 获取拨测节点
+                     * @return Nodes 拨测节点
                      */
                     std::vector<std::string> GetNodes() const;
 
                     /**
-                     * 设置探测节点
-                     * @param Nodes 探测节点
+                     * 设置拨测节点
+                     * @param Nodes 拨测节点
                      */
                     void SetNodes(const std::vector<std::string>& _nodes);
 
@@ -98,14 +99,14 @@ namespace TencentCloud
                     bool NodesHasBeenSet() const;
 
                     /**
-                     * 获取探测间隔
-                     * @return Interval 探测间隔
+                     * 获取拨测间隔
+                     * @return Interval 拨测间隔
                      */
                     int64_t GetInterval() const;
 
                     /**
-                     * 设置探测间隔
-                     * @param Interval 探测间隔
+                     * 设置拨测间隔
+                     * @param Interval 拨测间隔
                      */
                     void SetInterval(const int64_t& _interval);
 
@@ -116,14 +117,14 @@ namespace TencentCloud
                     bool IntervalHasBeenSet() const;
 
                     /**
-                     * 获取探测参数
-                     * @return Parameters 探测参数
+                     * 获取拨测参数
+                     * @return Parameters 拨测参数
                      */
                     std::string GetParameters() const;
 
                     /**
-                     * 设置探测参数
-                     * @param Parameters 探测参数
+                     * 设置拨测参数
+                     * @param Parameters 拨测参数
                      */
                     void SetParameters(const std::string& _parameters);
 
@@ -177,6 +178,24 @@ namespace TencentCloud
                      */
                     bool CronHasBeenSet() const;
 
+                    /**
+                     * 获取资源标签值
+                     * @return Tag 资源标签值
+                     */
+                    std::vector<Tag> GetTag() const;
+
+                    /**
+                     * 设置资源标签值
+                     * @param Tag 资源标签值
+                     */
+                    void SetTag(const std::vector<Tag>& _tag);
+
+                    /**
+                     * 判断参数 Tag 是否已赋值
+                     * @return Tag 是否已赋值
+                     */
+                    bool TagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -192,19 +211,19 @@ namespace TencentCloud
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 探测节点
+                     * 拨测节点
                      */
                     std::vector<std::string> m_nodes;
                     bool m_nodesHasBeenSet;
 
                     /**
-                     * 探测间隔
+                     * 拨测间隔
                      */
                     int64_t m_interval;
                     bool m_intervalHasBeenSet;
 
                     /**
-                     * 探测参数
+                     * 拨测参数
                      */
                     std::string m_parameters;
                     bool m_parametersHasBeenSet;
@@ -222,6 +241,12 @@ namespace TencentCloud
                      */
                     std::string m_cron;
                     bool m_cronHasBeenSet;
+
+                    /**
+                     * 资源标签值
+                     */
+                    std::vector<Tag> m_tag;
+                    bool m_tagHasBeenSet;
 
                 };
             }

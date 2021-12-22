@@ -14,20 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cdb/v20170320/model/ModifyRoReplicationDelayResponse.h>
+#include <tencentcloud/tem/v20210701/model/DeleteApplicationResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cdb::V20170320::Model;
+using namespace TencentCloud::Tem::V20210701::Model;
 using namespace std;
 
-ModifyRoReplicationDelayResponse::ModifyRoReplicationDelayResponse()
+DeleteApplicationResponse::DeleteApplicationResponse() :
+    m_resultHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome ModifyRoReplicationDelayResponse::Deserialize(const string &payload)
+CoreInternalOutcome DeleteApplicationResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -61,15 +62,33 @@ CoreInternalOutcome ModifyRoReplicationDelayResponse::Deserialize(const string &
     }
 
 
+    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
+    {
+        if (!rsp["Result"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Result` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_result = rsp["Result"].GetBool();
+        m_resultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
-string ModifyRoReplicationDelayResponse::ToJsonString() const
+string DeleteApplicationResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_resultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Result";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_result, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string ModifyRoReplicationDelayResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+bool DeleteApplicationResponse::GetResult() const
+{
+    return m_result;
+}
+
+bool DeleteApplicationResponse::ResultHasBeenSet() const
+{
+    return m_resultHasBeenSet;
+}
 
 

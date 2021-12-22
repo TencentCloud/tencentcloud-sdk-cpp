@@ -127,17 +127,17 @@ namespace TencentCloud
                     bool EntryPointHasBeenSet() const;
 
                     /**
-                     * 获取entrypoint执行命令
+                     * 获取容器的启动命令。该参数为可选参数，如果不填写，则默认使用 Dockerfile 中的 Entrypoint。传入规范，填写可运行的指令，例如 python
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Command entrypoint执行命令
+                     * @return Command 容器的启动命令。该参数为可选参数，如果不填写，则默认使用 Dockerfile 中的 Entrypoint。传入规范，填写可运行的指令，例如 python
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCommand() const;
 
                     /**
-                     * 设置entrypoint执行命令
+                     * 设置容器的启动命令。该参数为可选参数，如果不填写，则默认使用 Dockerfile 中的 Entrypoint。传入规范，填写可运行的指令，例如 python
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Command entrypoint执行命令
+                     * @param Command 容器的启动命令。该参数为可选参数，如果不填写，则默认使用 Dockerfile 中的 Entrypoint。传入规范，填写可运行的指令，例如 python
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCommand(const std::string& _command);
@@ -149,17 +149,17 @@ namespace TencentCloud
                     bool CommandHasBeenSet() const;
 
                     /**
-                     * 获取命令参数
+                     * 获取容器的启动参数。该参数为可选参数，如果不填写，则默认使用 Dockerfile 中的 CMD。传入规范，以“空格”作为参数的分割标识，例如 -u app.py
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Args 命令参数
+                     * @return Args 容器的启动参数。该参数为可选参数，如果不填写，则默认使用 Dockerfile 中的 CMD。传入规范，以“空格”作为参数的分割标识，例如 -u app.py
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetArgs() const;
 
                     /**
-                     * 设置命令参数
+                     * 设置容器的启动参数。该参数为可选参数，如果不填写，则默认使用 Dockerfile 中的 CMD。传入规范，以“空格”作为参数的分割标识，例如 -u app.py
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Args 命令参数
+                     * @param Args 容器的启动参数。该参数为可选参数，如果不填写，则默认使用 Dockerfile 中的 CMD。传入规范，以“空格”作为参数的分割标识，例如 -u app.py
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetArgs(const std::string& _args);
@@ -199,14 +199,14 @@ namespace TencentCloud
                     bool m_entryPointHasBeenSet;
 
                     /**
-                     * entrypoint执行命令
+                     * 容器的启动命令。该参数为可选参数，如果不填写，则默认使用 Dockerfile 中的 Entrypoint。传入规范，填写可运行的指令，例如 python
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_command;
                     bool m_commandHasBeenSet;
 
                     /**
-                     * 命令参数
+                     * 容器的启动参数。该参数为可选参数，如果不填写，则默认使用 Dockerfile 中的 CMD。传入规范，以“空格”作为参数的分割标识，例如 -u app.py
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_args;

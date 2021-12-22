@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CDB_V20170320_MODEL_STOPDELAYREPLICATIONREQUEST_H_
-#define TENCENTCLOUD_CDB_V20170320_MODEL_STOPDELAYREPLICATIONREQUEST_H_
+#ifndef TENCENTCLOUD_TEM_V20210701_MODEL_DELETEAPPLICATIONRESPONSE_H_
+#define TENCENTCLOUD_TEM_V20210701_MODEL_DELETEAPPLICATIONRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,48 +25,43 @@
 
 namespace TencentCloud
 {
-    namespace Cdb
+    namespace Tem
     {
-        namespace V20170320
+        namespace V20210701
         {
             namespace Model
             {
                 /**
-                * StopDelayReplication请求参数结构体
+                * DeleteApplication返回参数结构体
                 */
-                class StopDelayReplicationRequest : public AbstractModel
+                class DeleteApplicationResponse : public AbstractModel
                 {
                 public:
-                    StopDelayReplicationRequest();
-                    ~StopDelayReplicationRequest() = default;
+                    DeleteApplicationResponse();
+                    ~DeleteApplicationResponse() = default;
+                    CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取实例 ID。
-                     * @return InstanceId 实例 ID。
+                     * 获取返回结果
+                     * @return Result 返回结果
                      */
-                    std::string GetInstanceId() const;
+                    bool GetResult() const;
 
                     /**
-                     * 设置实例 ID。
-                     * @param InstanceId 实例 ID。
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
                      */
-                    void SetInstanceId(const std::string& _instanceId);
-
-                    /**
-                     * 判断参数 InstanceId 是否已赋值
-                     * @return InstanceId 是否已赋值
-                     */
-                    bool InstanceIdHasBeenSet() const;
+                    bool ResultHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 实例 ID。
+                     * 返回结果
                      */
-                    std::string m_instanceId;
-                    bool m_instanceIdHasBeenSet;
+                    bool m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }
@@ -74,4 +69,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CDB_V20170320_MODEL_STOPDELAYREPLICATIONREQUEST_H_
+#endif // !TENCENTCLOUD_TEM_V20210701_MODEL_DELETEAPPLICATIONRESPONSE_H_

@@ -234,7 +234,7 @@ namespace TencentCloud
                 CreateAgentGroupOutcomeCallable CreateAgentGroupCallable(const Model::CreateAgentGroupRequest& request);
 
                 /**
-                 *批量创建探测任务
+                 *批量创建拨测任务
                  * @param req CreateProbeTasksRequest
                  * @return CreateProbeTasksOutcome
                  */
@@ -351,7 +351,7 @@ namespace TencentCloud
                 DescribeProbeNodesOutcomeCallable DescribeProbeNodesCallable(const Model::DescribeProbeNodesRequest& request);
 
                 /**
-                 *查询探测任务列表
+                 *查询拨测任务列表
                  * @param req DescribeProbeTasksRequest
                  * @return DescribeProbeTasksOutcome
                  */

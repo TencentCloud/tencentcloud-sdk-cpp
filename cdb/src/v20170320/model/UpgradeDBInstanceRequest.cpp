@@ -36,7 +36,9 @@ UpgradeDBInstanceRequest::UpgradeDBInstanceRequest() :
     m_deviceTypeHasBeenSet(false),
     m_cpuHasBeenSet(false),
     m_fastUpgradeHasBeenSet(false),
-    m_maxDelayTimeHasBeenSet(false)
+    m_maxDelayTimeHasBeenSet(false),
+    m_crossClusterHasBeenSet(false),
+    m_zoneIdHasBeenSet(false)
 {
 }
 
@@ -157,6 +159,22 @@ string UpgradeDBInstanceRequest::ToJsonString() const
         string key = "MaxDelayTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxDelayTime, allocator);
+    }
+
+    if (m_crossClusterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CrossCluster";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_crossCluster, allocator);
+    }
+
+    if (m_zoneIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -389,6 +407,38 @@ void UpgradeDBInstanceRequest::SetMaxDelayTime(const int64_t& _maxDelayTime)
 bool UpgradeDBInstanceRequest::MaxDelayTimeHasBeenSet() const
 {
     return m_maxDelayTimeHasBeenSet;
+}
+
+int64_t UpgradeDBInstanceRequest::GetCrossCluster() const
+{
+    return m_crossCluster;
+}
+
+void UpgradeDBInstanceRequest::SetCrossCluster(const int64_t& _crossCluster)
+{
+    m_crossCluster = _crossCluster;
+    m_crossClusterHasBeenSet = true;
+}
+
+bool UpgradeDBInstanceRequest::CrossClusterHasBeenSet() const
+{
+    return m_crossClusterHasBeenSet;
+}
+
+string UpgradeDBInstanceRequest::GetZoneId() const
+{
+    return m_zoneId;
+}
+
+void UpgradeDBInstanceRequest::SetZoneId(const string& _zoneId)
+{
+    m_zoneId = _zoneId;
+    m_zoneIdHasBeenSet = true;
+}
+
+bool UpgradeDBInstanceRequest::ZoneIdHasBeenSet() const
+{
+    return m_zoneIdHasBeenSet;
 }
 
 

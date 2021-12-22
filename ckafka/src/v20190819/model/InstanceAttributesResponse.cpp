@@ -54,7 +54,8 @@ InstanceAttributesResponse::InstanceAttributesResponse() :
     m_publicNetworkHasBeenSet(false),
     m_deleteRouteTimestampHasBeenSet(false),
     m_remainingPartitionsHasBeenSet(false),
-    m_remainingTopicsHasBeenSet(false)
+    m_remainingTopicsHasBeenSet(false),
+    m_dynamicDiskConfigHasBeenSet(false)
 {
 }
 
@@ -443,6 +444,23 @@ CoreInternalOutcome InstanceAttributesResponse::Deserialize(const rapidjson::Val
         m_remainingTopicsHasBeenSet = true;
     }
 
+    if (value.HasMember("DynamicDiskConfig") && !value["DynamicDiskConfig"].IsNull())
+    {
+        if (!value["DynamicDiskConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAttributesResponse.DynamicDiskConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_dynamicDiskConfig.Deserialize(value["DynamicDiskConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dynamicDiskConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -746,6 +764,15 @@ void InstanceAttributesResponse::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "RemainingTopics";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_remainingTopics, allocator);
+    }
+
+    if (m_dynamicDiskConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DynamicDiskConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dynamicDiskConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1293,5 +1320,21 @@ void InstanceAttributesResponse::SetRemainingTopics(const int64_t& _remainingTop
 bool InstanceAttributesResponse::RemainingTopicsHasBeenSet() const
 {
     return m_remainingTopicsHasBeenSet;
+}
+
+DynamicDiskConfig InstanceAttributesResponse::GetDynamicDiskConfig() const
+{
+    return m_dynamicDiskConfig;
+}
+
+void InstanceAttributesResponse::SetDynamicDiskConfig(const DynamicDiskConfig& _dynamicDiskConfig)
+{
+    m_dynamicDiskConfig = _dynamicDiskConfig;
+    m_dynamicDiskConfigHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::DynamicDiskConfigHasBeenSet() const
+{
+    return m_dynamicDiskConfigHasBeenSet;
 }
 

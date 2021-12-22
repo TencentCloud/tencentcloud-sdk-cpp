@@ -25,7 +25,8 @@ RoGroupAttr::RoGroupAttr() :
     m_roMaxDelayTimeHasBeenSet(false),
     m_roOfflineDelayHasBeenSet(false),
     m_minRoInGroupHasBeenSet(false),
-    m_weightModeHasBeenSet(false)
+    m_weightModeHasBeenSet(false),
+    m_replicationDelayTimeHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome RoGroupAttr::Deserialize(const rapidjson::Value &value)
         m_weightModeHasBeenSet = true;
     }
 
+    if (value.HasMember("ReplicationDelayTime") && !value["ReplicationDelayTime"].IsNull())
+    {
+        if (!value["ReplicationDelayTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoGroupAttr.ReplicationDelayTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_replicationDelayTime = value["ReplicationDelayTime"].GetInt64();
+        m_replicationDelayTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void RoGroupAttr::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "WeightMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_weightMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_replicationDelayTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReplicationDelayTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_replicationDelayTime, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void RoGroupAttr::SetWeightMode(const string& _weightMode)
 bool RoGroupAttr::WeightModeHasBeenSet() const
 {
     return m_weightModeHasBeenSet;
+}
+
+int64_t RoGroupAttr::GetReplicationDelayTime() const
+{
+    return m_replicationDelayTime;
+}
+
+void RoGroupAttr::SetReplicationDelayTime(const int64_t& _replicationDelayTime)
+{
+    m_replicationDelayTime = _replicationDelayTime;
+    m_replicationDelayTimeHasBeenSet = true;
+}
+
+bool RoGroupAttr::ReplicationDelayTimeHasBeenSet() const
+{
+    return m_replicationDelayTimeHasBeenSet;
 }
 

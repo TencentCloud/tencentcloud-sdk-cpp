@@ -443,7 +443,7 @@ namespace TencentCloud
                 DescribeGroupOffsetsOutcomeCallable DescribeGroupOffsetsCallable(const Model::DescribeGroupOffsetsRequest& request);
 
                 /**
-                 *获取实例属性
+                 *获取实例属性 
                  * @param req DescribeInstanceAttributesRequest
                  * @return DescribeInstanceAttributesOutcome
                  */

@@ -29,7 +29,8 @@ ModifyInstanceAttributesRequest::ModifyInstanceAttributesRequest() :
     m_configHasBeenSet(false),
     m_dynamicRetentionConfigHasBeenSet(false),
     m_rebalanceTimeHasBeenSet(false),
-    m_publicNetworkHasBeenSet(false)
+    m_publicNetworkHasBeenSet(false),
+    m_dynamicDiskConfigHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,15 @@ string ModifyInstanceAttributesRequest::ToJsonString() const
         string key = "PublicNetwork";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_publicNetwork, allocator);
+    }
+
+    if (m_dynamicDiskConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DynamicDiskConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dynamicDiskConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -216,6 +226,22 @@ void ModifyInstanceAttributesRequest::SetPublicNetwork(const int64_t& _publicNet
 bool ModifyInstanceAttributesRequest::PublicNetworkHasBeenSet() const
 {
     return m_publicNetworkHasBeenSet;
+}
+
+DynamicDiskConfig ModifyInstanceAttributesRequest::GetDynamicDiskConfig() const
+{
+    return m_dynamicDiskConfig;
+}
+
+void ModifyInstanceAttributesRequest::SetDynamicDiskConfig(const DynamicDiskConfig& _dynamicDiskConfig)
+{
+    m_dynamicDiskConfig = _dynamicDiskConfig;
+    m_dynamicDiskConfigHasBeenSet = true;
+}
+
+bool ModifyInstanceAttributesRequest::DynamicDiskConfigHasBeenSet() const
+{
+    return m_dynamicDiskConfigHasBeenSet;
 }
 
 

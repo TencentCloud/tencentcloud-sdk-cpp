@@ -19,6 +19,7 @@ set(dlc_public_header
   )
 
 set(dlc_public_header_model
+  include/tencentcloud/dlc/v20210125/model/DescribeTaskResultResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeDatabasesRequest.h
   include/tencentcloud/dlc/v20210125/model/WorkGroupMessage.h
   include/tencentcloud/dlc/v20210125/model/DeleteUserRequest.h
@@ -31,7 +32,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DeleteScriptResponse.h
   include/tencentcloud/dlc/v20210125/model/Task.h
   include/tencentcloud/dlc/v20210125/model/DetachUserPolicyRequest.h
-  include/tencentcloud/dlc/v20210125/model/DeleteWorkGroupResponse.h
+  include/tencentcloud/dlc/v20210125/model/TableInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeTasksResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateTasksInOrderRequest.h
   include/tencentcloud/dlc/v20210125/model/DetachWorkGroupPolicyResponse.h
@@ -76,6 +77,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CreateScriptRequest.h
   include/tencentcloud/dlc/v20210125/model/BindWorkGroupsToUserRequest.h
   include/tencentcloud/dlc/v20210125/model/Column.h
+  include/tencentcloud/dlc/v20210125/model/DescribeTaskResultRequest.h
   include/tencentcloud/dlc/v20210125/model/Filter.h
   include/tencentcloud/dlc/v20210125/model/DescribeUsersResponse.h
   include/tencentcloud/dlc/v20210125/model/DataFormat.h
@@ -83,9 +85,10 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CreateUserRequest.h
   include/tencentcloud/dlc/v20210125/model/ModifyWorkGroupRequest.h
   include/tencentcloud/dlc/v20210125/model/CancelTaskResponse.h
-  include/tencentcloud/dlc/v20210125/model/TableInfo.h
+  include/tencentcloud/dlc/v20210125/model/DeleteWorkGroupResponse.h
   include/tencentcloud/dlc/v20210125/model/WorkGroupIdSetOfUserId.h
   include/tencentcloud/dlc/v20210125/model/CreateWorkGroupResponse.h
+  include/tencentcloud/dlc/v20210125/model/TaskResultInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeTablesRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeDatabasesResponse.h
   include/tencentcloud/dlc/v20210125/model/DatabaseInfo.h
@@ -117,6 +120,7 @@ set(dlc_public_header_model
 
 set(dlc_src
   src/v20210125/DlcClient.cpp
+  src/v20210125/model/DescribeTaskResultResponse.cpp
   src/v20210125/model/DescribeDatabasesRequest.cpp
   src/v20210125/model/WorkGroupMessage.cpp
   src/v20210125/model/DeleteUserRequest.cpp
@@ -129,7 +133,7 @@ set(dlc_src
   src/v20210125/model/DeleteScriptResponse.cpp
   src/v20210125/model/Task.cpp
   src/v20210125/model/DetachUserPolicyRequest.cpp
-  src/v20210125/model/DeleteWorkGroupResponse.cpp
+  src/v20210125/model/TableInfo.cpp
   src/v20210125/model/DescribeTasksResponse.cpp
   src/v20210125/model/CreateTasksInOrderRequest.cpp
   src/v20210125/model/DetachWorkGroupPolicyResponse.cpp
@@ -174,6 +178,7 @@ set(dlc_src
   src/v20210125/model/CreateScriptRequest.cpp
   src/v20210125/model/BindWorkGroupsToUserRequest.cpp
   src/v20210125/model/Column.cpp
+  src/v20210125/model/DescribeTaskResultRequest.cpp
   src/v20210125/model/Filter.cpp
   src/v20210125/model/DescribeUsersResponse.cpp
   src/v20210125/model/DataFormat.cpp
@@ -181,9 +186,10 @@ set(dlc_src
   src/v20210125/model/CreateUserRequest.cpp
   src/v20210125/model/ModifyWorkGroupRequest.cpp
   src/v20210125/model/CancelTaskResponse.cpp
-  src/v20210125/model/TableInfo.cpp
+  src/v20210125/model/DeleteWorkGroupResponse.cpp
   src/v20210125/model/WorkGroupIdSetOfUserId.cpp
   src/v20210125/model/CreateWorkGroupResponse.cpp
+  src/v20210125/model/TaskResultInfo.cpp
   src/v20210125/model/DescribeTablesRequest.cpp
   src/v20210125/model/DescribeDatabasesResponse.cpp
   src/v20210125/model/DatabaseInfo.cpp

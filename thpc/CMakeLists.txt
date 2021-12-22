@@ -19,45 +19,55 @@ set(thpc_public_header
   )
 
 set(thpc_public_header_model
-  include/tencentcloud/thpc/v20211109/model/BindAutoScalingGroupRequest.h
-  include/tencentcloud/thpc/v20211109/model/DeleteClusterRequest.h
-  include/tencentcloud/thpc/v20211109/model/SystemDisk.h
-  include/tencentcloud/thpc/v20211109/model/ManagerNode.h
-  include/tencentcloud/thpc/v20211109/model/Placement.h
-  include/tencentcloud/thpc/v20211109/model/CreateClusterRequest.h
+  include/tencentcloud/thpc/v20211109/model/ClusterOverview.h
+  include/tencentcloud/thpc/v20211109/model/DescribeClustersRequest.h
   include/tencentcloud/thpc/v20211109/model/LoginSettings.h
-  include/tencentcloud/thpc/v20211109/model/InternetAccessible.h
-  include/tencentcloud/thpc/v20211109/model/ComputeNode.h
-  include/tencentcloud/thpc/v20211109/model/VirtualPrivateCloud.h
-  include/tencentcloud/thpc/v20211109/model/StorageOption.h
   include/tencentcloud/thpc/v20211109/model/DeleteClusterResponse.h
-  include/tencentcloud/thpc/v20211109/model/GooseFSOption.h
-  include/tencentcloud/thpc/v20211109/model/BindAutoScalingGroupResponse.h
-  include/tencentcloud/thpc/v20211109/model/InstanceChargePrepaid.h
   include/tencentcloud/thpc/v20211109/model/CFSOption.h
   include/tencentcloud/thpc/v20211109/model/CreateClusterResponse.h
+  include/tencentcloud/thpc/v20211109/model/CreateClusterRequest.h
+  include/tencentcloud/thpc/v20211109/model/BindAutoScalingGroupResponse.h
+  include/tencentcloud/thpc/v20211109/model/ManagerNodeOverview.h
+  include/tencentcloud/thpc/v20211109/model/ManagerNode.h
+  include/tencentcloud/thpc/v20211109/model/DeleteClusterRequest.h
+  include/tencentcloud/thpc/v20211109/model/ComputeNodeOverview.h
+  include/tencentcloud/thpc/v20211109/model/SystemDisk.h
+  include/tencentcloud/thpc/v20211109/model/Placement.h
+  include/tencentcloud/thpc/v20211109/model/BindAutoScalingGroupRequest.h
+  include/tencentcloud/thpc/v20211109/model/VirtualPrivateCloud.h
+  include/tencentcloud/thpc/v20211109/model/StorageOption.h
+  include/tencentcloud/thpc/v20211109/model/InternetAccessible.h
+  include/tencentcloud/thpc/v20211109/model/ComputeNode.h
+  include/tencentcloud/thpc/v20211109/model/DescribeClustersResponse.h
+  include/tencentcloud/thpc/v20211109/model/GooseFSOption.h
+  include/tencentcloud/thpc/v20211109/model/InstanceChargePrepaid.h
   include/tencentcloud/thpc/v20211109/model/DataDisk.h
   )
 
 set(thpc_src
   src/v20211109/ThpcClient.cpp
-  src/v20211109/model/BindAutoScalingGroupRequest.cpp
-  src/v20211109/model/DeleteClusterRequest.cpp
-  src/v20211109/model/SystemDisk.cpp
-  src/v20211109/model/ManagerNode.cpp
-  src/v20211109/model/Placement.cpp
-  src/v20211109/model/CreateClusterRequest.cpp
+  src/v20211109/model/ClusterOverview.cpp
+  src/v20211109/model/DescribeClustersRequest.cpp
   src/v20211109/model/LoginSettings.cpp
-  src/v20211109/model/InternetAccessible.cpp
-  src/v20211109/model/ComputeNode.cpp
-  src/v20211109/model/VirtualPrivateCloud.cpp
-  src/v20211109/model/StorageOption.cpp
   src/v20211109/model/DeleteClusterResponse.cpp
-  src/v20211109/model/GooseFSOption.cpp
-  src/v20211109/model/BindAutoScalingGroupResponse.cpp
-  src/v20211109/model/InstanceChargePrepaid.cpp
   src/v20211109/model/CFSOption.cpp
   src/v20211109/model/CreateClusterResponse.cpp
+  src/v20211109/model/CreateClusterRequest.cpp
+  src/v20211109/model/BindAutoScalingGroupResponse.cpp
+  src/v20211109/model/ManagerNodeOverview.cpp
+  src/v20211109/model/ManagerNode.cpp
+  src/v20211109/model/DeleteClusterRequest.cpp
+  src/v20211109/model/ComputeNodeOverview.cpp
+  src/v20211109/model/SystemDisk.cpp
+  src/v20211109/model/Placement.cpp
+  src/v20211109/model/BindAutoScalingGroupRequest.cpp
+  src/v20211109/model/VirtualPrivateCloud.cpp
+  src/v20211109/model/StorageOption.cpp
+  src/v20211109/model/InternetAccessible.cpp
+  src/v20211109/model/ComputeNode.cpp
+  src/v20211109/model/DescribeClustersResponse.cpp
+  src/v20211109/model/GooseFSOption.cpp
+  src/v20211109/model/InstanceChargePrepaid.cpp
   src/v20211109/model/DataDisk.cpp
   )
 

@@ -31,6 +31,8 @@
 #include <tencentcloud/tem/v20210701/model/CreateEnvironmentResponse.h>
 #include <tencentcloud/tem/v20210701/model/CreateResourceRequest.h>
 #include <tencentcloud/tem/v20210701/model/CreateResourceResponse.h>
+#include <tencentcloud/tem/v20210701/model/DeleteApplicationRequest.h>
+#include <tencentcloud/tem/v20210701/model/DeleteApplicationResponse.h>
 #include <tencentcloud/tem/v20210701/model/DeleteIngressRequest.h>
 #include <tencentcloud/tem/v20210701/model/DeleteIngressResponse.h>
 #include <tencentcloud/tem/v20210701/model/DeployApplicationRequest.h>
@@ -91,6 +93,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateResourceResponse> CreateResourceOutcome;
                 typedef std::future<CreateResourceOutcome> CreateResourceOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::CreateResourceRequest&, CreateResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateResourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteApplicationResponse> DeleteApplicationOutcome;
+                typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::DeleteApplicationRequest&, DeleteApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteApplicationAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteIngressResponse> DeleteIngressOutcome;
                 typedef std::future<DeleteIngressOutcome> DeleteIngressOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::DeleteIngressRequest&, DeleteIngressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIngressAsyncHandler;
@@ -180,6 +185,18 @@ namespace TencentCloud
                 CreateResourceOutcome CreateResource(const Model::CreateResourceRequest &request);
                 void CreateResourceAsync(const Model::CreateResourceRequest& request, const CreateResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateResourceOutcomeCallable CreateResourceCallable(const Model::CreateResourceRequest& request);
+
+                /**
+                 *服务删除
+  - 停止当前运行服务
+  - 删除服务相关资源
+  - 删除服务
+                 * @param req DeleteApplicationRequest
+                 * @return DeleteApplicationOutcome
+                 */
+                DeleteApplicationOutcome DeleteApplication(const Model::DeleteApplicationRequest &request);
+                void DeleteApplicationAsync(const Model::DeleteApplicationRequest& request, const DeleteApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteApplicationOutcomeCallable DeleteApplicationCallable(const Model::DeleteApplicationRequest& request);
 
                 /**
                  *删除 Ingress 规则

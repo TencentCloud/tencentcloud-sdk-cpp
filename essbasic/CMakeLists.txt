@@ -24,6 +24,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/SyncProxyOrganizationResponse.h
   include/tencentcloud/essbasic/v20210526/model/FlowApproverInfo.h
   include/tencentcloud/essbasic/v20210526/model/PrepareFlowsResponse.h
+  include/tencentcloud/essbasic/v20210526/model/ProxyOrganizationOperator.h
   include/tencentcloud/essbasic/v20210526/model/TemplateInfo.h
   include/tencentcloud/essbasic/v20210526/model/GetDownloadFlowUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/DescribeResourceUrlsByFlowsResponse.h
@@ -52,7 +53,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/DownloadFlowInfo.h
   include/tencentcloud/essbasic/v20210526/model/SyncFailReason.h
   include/tencentcloud/essbasic/v20210526/model/DescribeUsageRequest.h
-  include/tencentcloud/essbasic/v20210526/model/ProxyOrganizationOperator.h
+  include/tencentcloud/essbasic/v20210526/model/CcInfo.h
   include/tencentcloud/essbasic/v20210526/model/Agent.h
   include/tencentcloud/essbasic/v20210526/model/FormField.h
   include/tencentcloud/essbasic/v20210526/model/FlowInfo.h
@@ -193,6 +194,7 @@ set(essbasic_src
   src/v20210526/model/SyncProxyOrganizationResponse.cpp
   src/v20210526/model/FlowApproverInfo.cpp
   src/v20210526/model/PrepareFlowsResponse.cpp
+  src/v20210526/model/ProxyOrganizationOperator.cpp
   src/v20210526/model/TemplateInfo.cpp
   src/v20210526/model/GetDownloadFlowUrlResponse.cpp
   src/v20210526/model/DescribeResourceUrlsByFlowsResponse.cpp
@@ -221,7 +223,7 @@ set(essbasic_src
   src/v20210526/model/DownloadFlowInfo.cpp
   src/v20210526/model/SyncFailReason.cpp
   src/v20210526/model/DescribeUsageRequest.cpp
-  src/v20210526/model/ProxyOrganizationOperator.cpp
+  src/v20210526/model/CcInfo.cpp
   src/v20210526/model/Agent.cpp
   src/v20210526/model/FormField.cpp
   src/v20210526/model/FlowInfo.cpp

@@ -35,7 +35,8 @@ RoGroup::RoGroup() :
     m_uniqVpcIdHasBeenSet(false),
     m_uniqSubnetIdHasBeenSet(false),
     m_roGroupRegionHasBeenSet(false),
-    m_roGroupZoneHasBeenSet(false)
+    m_roGroupZoneHasBeenSet(false),
+    m_delayReplicationTimeHasBeenSet(false)
 {
 }
 
@@ -204,6 +205,16 @@ CoreInternalOutcome RoGroup::Deserialize(const rapidjson::Value &value)
         m_roGroupZoneHasBeenSet = true;
     }
 
+    if (value.HasMember("DelayReplicationTime") && !value["DelayReplicationTime"].IsNull())
+    {
+        if (!value["DelayReplicationTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoGroup.DelayReplicationTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_delayReplicationTime = value["DelayReplicationTime"].GetInt64();
+        m_delayReplicationTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -336,6 +347,14 @@ void RoGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "RoGroupZone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_roGroupZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_delayReplicationTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DelayReplicationTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_delayReplicationTime, allocator);
     }
 
 }
@@ -579,5 +598,21 @@ void RoGroup::SetRoGroupZone(const string& _roGroupZone)
 bool RoGroup::RoGroupZoneHasBeenSet() const
 {
     return m_roGroupZoneHasBeenSet;
+}
+
+int64_t RoGroup::GetDelayReplicationTime() const
+{
+    return m_delayReplicationTime;
+}
+
+void RoGroup::SetDelayReplicationTime(const int64_t& _delayReplicationTime)
+{
+    m_delayReplicationTime = _delayReplicationTime;
+    m_delayReplicationTimeHasBeenSet = true;
+}
+
+bool RoGroup::DelayReplicationTimeHasBeenSet() const
+{
+    return m_delayReplicationTimeHasBeenSet;
 }
 

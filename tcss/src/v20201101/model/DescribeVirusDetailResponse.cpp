@@ -55,7 +55,9 @@ DescribeVirusDetailResponse::DescribeVirusDetailResponse() :
     m_fileMd5HasBeenSet(false),
     m_eventTypeHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_subStatusHasBeenSet(false)
+    m_subStatusHasBeenSet(false),
+    m_hostIPHasBeenSet(false),
+    m_clientIPHasBeenSet(false)
 {
 }
 
@@ -416,6 +418,26 @@ CoreInternalOutcome DescribeVirusDetailResponse::Deserialize(const string &paylo
         m_subStatusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("HostIP") && !rsp["HostIP"].IsNull())
+    {
+        if (!rsp["HostIP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostIP = string(rsp["HostIP"].GetString());
+        m_hostIPHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ClientIP") && !rsp["ClientIP"].IsNull())
+    {
+        if (!rsp["ClientIP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClientIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clientIP = string(rsp["ClientIP"].GetString());
+        m_clientIPHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -685,6 +707,22 @@ string DescribeVirusDetailResponse::ToJsonString() const
         string key = "SubStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hostIP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clientIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clientIP.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1017,6 +1055,26 @@ string DescribeVirusDetailResponse::GetSubStatus() const
 bool DescribeVirusDetailResponse::SubStatusHasBeenSet() const
 {
     return m_subStatusHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetHostIP() const
+{
+    return m_hostIP;
+}
+
+bool DescribeVirusDetailResponse::HostIPHasBeenSet() const
+{
+    return m_hostIPHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetClientIP() const
+{
+    return m_clientIP;
+}
+
+bool DescribeVirusDetailResponse::ClientIPHasBeenSet() const
+{
+    return m_clientIPHasBeenSet;
 }
 
 

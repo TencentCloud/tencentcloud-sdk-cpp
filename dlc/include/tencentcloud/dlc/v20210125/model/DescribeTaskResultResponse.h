@@ -14,57 +14,58 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CDB_V20170320_MODEL_STARTDELAYREPLICATIONRESPONSE_H_
-#define TENCENTCLOUD_CDB_V20170320_MODEL_STARTDELAYREPLICATIONRESPONSE_H_
+#ifndef TENCENTCLOUD_DLC_V20210125_MODEL_DESCRIBETASKRESULTRESPONSE_H_
+#define TENCENTCLOUD_DLC_V20210125_MODEL_DESCRIBETASKRESULTRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/TaskResultInfo.h>
 
 
 namespace TencentCloud
 {
-    namespace Cdb
+    namespace Dlc
     {
-        namespace V20170320
+        namespace V20210125
         {
             namespace Model
             {
                 /**
-                * StartDelayReplication返回参数结构体
+                * DescribeTaskResult返回参数结构体
                 */
-                class StartDelayReplicationResponse : public AbstractModel
+                class DescribeTaskResultResponse : public AbstractModel
                 {
                 public:
-                    StartDelayReplicationResponse();
-                    ~StartDelayReplicationResponse() = default;
+                    DescribeTaskResultResponse();
+                    ~DescribeTaskResultResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取延迟复制任务 ID。DelayReplicationType不为DEFAULT时返回，可用来查询回放任务状态。
+                     * 获取查询的任务信息，返回为空表示输入任务ID对应的任务不存在。只有当任务状态为成功（2）的时候，才会返回任务的结果。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AsyncRequestId 延迟复制任务 ID。DelayReplicationType不为DEFAULT时返回，可用来查询回放任务状态。
+                     * @return TaskInfo 查询的任务信息，返回为空表示输入任务ID对应的任务不存在。只有当任务状态为成功（2）的时候，才会返回任务的结果。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string GetAsyncRequestId() const;
+                    TaskResultInfo GetTaskInfo() const;
 
                     /**
-                     * 判断参数 AsyncRequestId 是否已赋值
-                     * @return AsyncRequestId 是否已赋值
+                     * 判断参数 TaskInfo 是否已赋值
+                     * @return TaskInfo 是否已赋值
                      */
-                    bool AsyncRequestIdHasBeenSet() const;
+                    bool TaskInfoHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 延迟复制任务 ID。DelayReplicationType不为DEFAULT时返回，可用来查询回放任务状态。
+                     * 查询的任务信息，返回为空表示输入任务ID对应的任务不存在。只有当任务状态为成功（2）的时候，才会返回任务的结果。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_asyncRequestId;
-                    bool m_asyncRequestIdHasBeenSet;
+                    TaskResultInfo m_taskInfo;
+                    bool m_taskInfoHasBeenSet;
 
                 };
             }
@@ -72,4 +73,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CDB_V20170320_MODEL_STARTDELAYREPLICATIONRESPONSE_H_
+#endif // !TENCENTCLOUD_DLC_V20210125_MODEL_DESCRIBETASKRESULTRESPONSE_H_

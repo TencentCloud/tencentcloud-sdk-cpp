@@ -29,6 +29,8 @@
 #include <tencentcloud/thpc/v20211109/model/CreateClusterResponse.h>
 #include <tencentcloud/thpc/v20211109/model/DeleteClusterRequest.h>
 #include <tencentcloud/thpc/v20211109/model/DeleteClusterResponse.h>
+#include <tencentcloud/thpc/v20211109/model/DescribeClustersRequest.h>
+#include <tencentcloud/thpc/v20211109/model/DescribeClustersResponse.h>
 
 
 namespace TencentCloud
@@ -52,6 +54,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteClusterResponse> DeleteClusterOutcome;
                 typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::DeleteClusterRequest&, DeleteClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClustersResponse> DescribeClustersOutcome;
+                typedef std::future<DescribeClustersOutcome> DescribeClustersOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::DescribeClustersRequest&, DescribeClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClustersAsyncHandler;
 
 
 
@@ -81,6 +86,15 @@ namespace TencentCloud
                 DeleteClusterOutcome DeleteCluster(const Model::DeleteClusterRequest &request);
                 void DeleteClusterAsync(const Model::DeleteClusterRequest& request, const DeleteClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteClusterOutcomeCallable DeleteClusterCallable(const Model::DeleteClusterRequest& request);
+
+                /**
+                 *本接口（DescribeClusters）用于查询集群列表。
+                 * @param req DescribeClustersRequest
+                 * @return DescribeClustersOutcome
+                 */
+                DescribeClustersOutcome DescribeClusters(const Model::DescribeClustersRequest &request);
+                void DescribeClustersAsync(const Model::DescribeClustersRequest& request, const DescribeClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClustersOutcomeCallable DescribeClustersCallable(const Model::DescribeClustersRequest& request);
 
             };
         }

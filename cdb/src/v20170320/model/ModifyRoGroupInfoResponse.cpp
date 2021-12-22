@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdb::V20170320::Model;
 using namespace std;
 
-ModifyRoGroupInfoResponse::ModifyRoGroupInfoResponse()
+ModifyRoGroupInfoResponse::ModifyRoGroupInfoResponse() :
+    m_asyncRequestIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome ModifyRoGroupInfoResponse::Deserialize(const string &payload
     }
 
 
+    if (rsp.HasMember("AsyncRequestId") && !rsp["AsyncRequestId"].IsNull())
+    {
+        if (!rsp["AsyncRequestId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AsyncRequestId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_asyncRequestId = string(rsp["AsyncRequestId"].GetString());
+        m_asyncRequestIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string ModifyRoGroupInfoResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_asyncRequestIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AsyncRequestId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_asyncRequestId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string ModifyRoGroupInfoResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string ModifyRoGroupInfoResponse::GetAsyncRequestId() const
+{
+    return m_asyncRequestId;
+}
+
+bool ModifyRoGroupInfoResponse::AsyncRequestIdHasBeenSet() const
+{
+    return m_asyncRequestIdHasBeenSet;
+}
 
 

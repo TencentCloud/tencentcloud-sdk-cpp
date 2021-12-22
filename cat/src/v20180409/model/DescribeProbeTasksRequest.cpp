@@ -34,7 +34,8 @@ DescribeProbeTasksRequest::DescribeProbeTasksRequest() :
     m_taskTypeHasBeenSet(false),
     m_taskCategoryHasBeenSet(false),
     m_orderByHasBeenSet(false),
-    m_ascendHasBeenSet(false)
+    m_ascendHasBeenSet(false),
+    m_tagFiltersHasBeenSet(false)
 {
 }
 
@@ -159,6 +160,21 @@ string DescribeProbeTasksRequest::ToJsonString() const
         string key = "Ascend";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_ascend, allocator);
+    }
+
+    if (m_tagFiltersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagFilters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagFilters.begin(); itr != m_tagFilters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -359,6 +375,22 @@ void DescribeProbeTasksRequest::SetAscend(const bool& _ascend)
 bool DescribeProbeTasksRequest::AscendHasBeenSet() const
 {
     return m_ascendHasBeenSet;
+}
+
+vector<KeyValuePair> DescribeProbeTasksRequest::GetTagFilters() const
+{
+    return m_tagFilters;
+}
+
+void DescribeProbeTasksRequest::SetTagFilters(const vector<KeyValuePair>& _tagFilters)
+{
+    m_tagFilters = _tagFilters;
+    m_tagFiltersHasBeenSet = true;
+}
+
+bool DescribeProbeTasksRequest::TagFiltersHasBeenSet() const
+{
+    return m_tagFiltersHasBeenSet;
 }
 
 

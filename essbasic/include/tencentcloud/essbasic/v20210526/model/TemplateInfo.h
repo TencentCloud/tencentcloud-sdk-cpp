@@ -210,6 +210,24 @@ namespace TencentCloud
                      */
                     bool RecipientsHasBeenSet() const;
 
+                    /**
+                     * 获取是否是发起人
+                     * @return IsPromoter 是否是发起人
+                     */
+                    bool GetIsPromoter() const;
+
+                    /**
+                     * 设置是否是发起人
+                     * @param IsPromoter 是否是发起人
+                     */
+                    void SetIsPromoter(const bool& _isPromoter);
+
+                    /**
+                     * 判断参数 IsPromoter 是否已赋值
+                     * @return IsPromoter 是否已赋值
+                     */
+                    bool IsPromoterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -265,6 +283,12 @@ namespace TencentCloud
                      */
                     std::vector<Recipient> m_recipients;
                     bool m_recipientsHasBeenSet;
+
+                    /**
+                     * 是否是发起人
+                     */
+                    bool m_isPromoter;
+                    bool m_isPromoterHasBeenSet;
 
                 };
             }

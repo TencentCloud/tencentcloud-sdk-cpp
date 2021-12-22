@@ -32,7 +32,8 @@ CreateAsyncRecognitionTaskRequest::CreateAsyncRecognitionTaskRequest() :
     m_filterPuncHasBeenSet(false),
     m_convertNumModeHasBeenSet(false),
     m_wordInfoHasBeenSet(false),
-    m_hotwordIdHasBeenSet(false)
+    m_hotwordIdHasBeenSet(false),
+    m_audioDataHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,14 @@ string CreateAsyncRecognitionTaskRequest::ToJsonString() const
         string key = "HotwordId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_hotwordId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_audioDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_audioData, allocator);
     }
 
 
@@ -289,6 +298,22 @@ void CreateAsyncRecognitionTaskRequest::SetHotwordId(const string& _hotwordId)
 bool CreateAsyncRecognitionTaskRequest::HotwordIdHasBeenSet() const
 {
     return m_hotwordIdHasBeenSet;
+}
+
+bool CreateAsyncRecognitionTaskRequest::GetAudioData() const
+{
+    return m_audioData;
+}
+
+void CreateAsyncRecognitionTaskRequest::SetAudioData(const bool& _audioData)
+{
+    m_audioData = _audioData;
+    m_audioDataHasBeenSet = true;
+}
+
+bool CreateAsyncRecognitionTaskRequest::AudioDataHasBeenSet() const
+{
+    return m_audioDataHasBeenSet;
 }
 
 

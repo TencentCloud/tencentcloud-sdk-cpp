@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cat/v20180409/model/KeyValuePair.h>
 
 
 namespace TencentCloud
@@ -35,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 探测任务
+                * 拨测任务
                 */
                 class ProbeTask : public AbstractModel
                 {
@@ -105,14 +106,14 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取探测节点列表
-                     * @return Nodes 探测节点列表
+                     * 获取拨测节点列表
+                     * @return Nodes 拨测节点列表
                      */
                     std::vector<std::string> GetNodes() const;
 
                     /**
-                     * 设置探测节点列表
-                     * @param Nodes 探测节点列表
+                     * 设置拨测节点列表
+                     * @param Nodes 拨测节点列表
                      */
                     void SetNodes(const std::vector<std::string>& _nodes);
 
@@ -123,14 +124,14 @@ namespace TencentCloud
                     bool NodesHasBeenSet() const;
 
                     /**
-                     * 获取探测间隔
-                     * @return Interval 探测间隔
+                     * 获取拨测间隔
+                     * @return Interval 拨测间隔
                      */
                     int64_t GetInterval() const;
 
                     /**
-                     * 设置探测间隔
-                     * @param Interval 探测间隔
+                     * 设置拨测间隔
+                     * @param Interval 拨测间隔
                      */
                     void SetInterval(const int64_t& _interval);
 
@@ -141,14 +142,14 @@ namespace TencentCloud
                     bool IntervalHasBeenSet() const;
 
                     /**
-                     * 获取探测参数
-                     * @return Parameters 探测参数
+                     * 获取拨测参数
+                     * @return Parameters 拨测参数
                      */
                     std::string GetParameters() const;
 
                     /**
-                     * 设置探测参数
-                     * @param Parameters 探测参数
+                     * 设置拨测参数
+                     * @param Parameters 拨测参数
                      */
                     void SetParameters(const std::string& _parameters);
 
@@ -334,6 +335,28 @@ namespace TencentCloud
                      */
                     bool CronStateHasBeenSet() const;
 
+                    /**
+                     * 获取任务当前绑定的标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagInfoList 任务当前绑定的标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<KeyValuePair> GetTagInfoList() const;
+
+                    /**
+                     * 设置任务当前绑定的标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TagInfoList 任务当前绑定的标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTagInfoList(const std::vector<KeyValuePair>& _tagInfoList);
+
+                    /**
+                     * 判断参数 TagInfoList 是否已赋值
+                     * @return TagInfoList 是否已赋值
+                     */
+                    bool TagInfoListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -356,19 +379,19 @@ namespace TencentCloud
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 探测节点列表
+                     * 拨测节点列表
                      */
                     std::vector<std::string> m_nodes;
                     bool m_nodesHasBeenSet;
 
                     /**
-                     * 探测间隔
+                     * 拨测间隔
                      */
                     int64_t m_interval;
                     bool m_intervalHasBeenSet;
 
                     /**
-                     * 探测参数
+                     * 拨测参数
                      */
                     std::string m_parameters;
                     bool m_parametersHasBeenSet;
@@ -428,6 +451,13 @@ namespace TencentCloud
                      */
                     int64_t m_cronState;
                     bool m_cronStateHasBeenSet;
+
+                    /**
+                     * 任务当前绑定的标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<KeyValuePair> m_tagInfoList;
+                    bool m_tagInfoListHasBeenSet;
 
                 };
             }

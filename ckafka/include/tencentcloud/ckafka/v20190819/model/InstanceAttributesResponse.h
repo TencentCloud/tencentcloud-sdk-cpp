@@ -28,6 +28,7 @@
 #include <tencentcloud/ckafka/v20190819/model/InstanceConfigDO.h>
 #include <tencentcloud/ckafka/v20190819/model/Tag.h>
 #include <tencentcloud/ckafka/v20190819/model/DynamicRetentionTime.h>
+#include <tencentcloud/ckafka/v20190819/model/DynamicDiskConfig.h>
 
 
 namespace TencentCloud
@@ -718,6 +719,28 @@ namespace TencentCloud
                      */
                     bool RemainingTopicsHasBeenSet() const;
 
+                    /**
+                     * 获取动态硬盘扩容策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DynamicDiskConfig 动态硬盘扩容策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DynamicDiskConfig GetDynamicDiskConfig() const;
+
+                    /**
+                     * 设置动态硬盘扩容策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DynamicDiskConfig 动态硬盘扩容策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDynamicDiskConfig(const DynamicDiskConfig& _dynamicDiskConfig);
+
+                    /**
+                     * 判断参数 DynamicDiskConfig 是否已赋值
+                     * @return DynamicDiskConfig 是否已赋值
+                     */
+                    bool DynamicDiskConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -937,6 +960,13 @@ namespace TencentCloud
                      */
                     int64_t m_remainingTopics;
                     bool m_remainingTopicsHasBeenSet;
+
+                    /**
+                     * 动态硬盘扩容策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DynamicDiskConfig m_dynamicDiskConfig;
+                    bool m_dynamicDiskConfigHasBeenSet;
 
                 };
             }

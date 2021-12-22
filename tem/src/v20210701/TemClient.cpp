@@ -212,6 +212,49 @@ TemClient::CreateResourceOutcomeCallable TemClient::CreateResourceCallable(const
     return task->get_future();
 }
 
+TemClient::DeleteApplicationOutcome TemClient::DeleteApplication(const DeleteApplicationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteApplication");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteApplicationResponse rsp = DeleteApplicationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteApplicationOutcome(rsp);
+        else
+            return DeleteApplicationOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteApplicationOutcome(outcome.GetError());
+    }
+}
+
+void TemClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteApplication(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TemClient::DeleteApplicationOutcomeCallable TemClient::DeleteApplicationCallable(const DeleteApplicationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteApplicationOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteApplication(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TemClient::DeleteIngressOutcome TemClient::DeleteIngress(const DeleteIngressRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteIngress");

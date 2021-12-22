@@ -29,7 +29,8 @@ FlowInfo::FlowInfo() :
     m_flowApproversHasBeenSet(false),
     m_formFieldsHasBeenSet(false),
     m_flowDescriptionHasBeenSet(false),
-    m_customerDataHasBeenSet(false)
+    m_customerDataHasBeenSet(false),
+    m_ccInfosHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,26 @@ CoreInternalOutcome FlowInfo::Deserialize(const rapidjson::Value &value)
         m_customerDataHasBeenSet = true;
     }
 
+    if (value.HasMember("CcInfos") && !value["CcInfos"].IsNull())
+    {
+        if (!value["CcInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FlowInfo.CcInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CcInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CcInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_ccInfos.push_back(item);
+        }
+        m_ccInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -239,6 +260,21 @@ void FlowInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "CustomerData";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_customerData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ccInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CcInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ccInfos.begin(); itr != m_ccInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -386,5 +422,21 @@ void FlowInfo::SetCustomerData(const string& _customerData)
 bool FlowInfo::CustomerDataHasBeenSet() const
 {
     return m_customerDataHasBeenSet;
+}
+
+vector<CcInfo> FlowInfo::GetCcInfos() const
+{
+    return m_ccInfos;
+}
+
+void FlowInfo::SetCcInfos(const vector<CcInfo>& _ccInfos)
+{
+    m_ccInfos = _ccInfos;
+    m_ccInfosHasBeenSet = true;
+}
+
+bool FlowInfo::CcInfosHasBeenSet() const
+{
+    return m_ccInfosHasBeenSet;
 }
 

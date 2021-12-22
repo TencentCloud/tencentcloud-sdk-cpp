@@ -116,6 +116,24 @@ namespace TencentCloud
                      */
                     bool IsBalanceRoLoadHasBeenSet() const;
 
+                    /**
+                     * 获取废弃参数，无意义。
+                     * @return ReplicationDelayTime 废弃参数，无意义。
+                     */
+                    int64_t GetReplicationDelayTime() const;
+
+                    /**
+                     * 设置废弃参数，无意义。
+                     * @param ReplicationDelayTime 废弃参数，无意义。
+                     */
+                    void SetReplicationDelayTime(const int64_t& _replicationDelayTime);
+
+                    /**
+                     * 判断参数 ReplicationDelayTime 是否已赋值
+                     * @return ReplicationDelayTime 是否已赋值
+                     */
+                    bool ReplicationDelayTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -141,6 +159,12 @@ namespace TencentCloud
                      */
                     int64_t m_isBalanceRoLoad;
                     bool m_isBalanceRoLoadHasBeenSet;
+
+                    /**
+                     * 废弃参数，无意义。
+                     */
+                    int64_t m_replicationDelayTime;
+                    bool m_replicationDelayTimeHasBeenSet;
 
                 };
             }

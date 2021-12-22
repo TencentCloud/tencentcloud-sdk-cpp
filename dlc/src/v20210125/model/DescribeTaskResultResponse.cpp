@@ -14,20 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cdb/v20170320/model/StopDelayReplicationResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeTaskResultResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cdb::V20170320::Model;
+using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
-StopDelayReplicationResponse::StopDelayReplicationResponse()
+DescribeTaskResultResponse::DescribeTaskResultResponse() :
+    m_taskInfoHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome StopDelayReplicationResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeTaskResultResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -61,15 +62,41 @@ CoreInternalOutcome StopDelayReplicationResponse::Deserialize(const string &payl
     }
 
 
+    if (rsp.HasMember("TaskInfo") && !rsp["TaskInfo"].IsNull())
+    {
+        if (!rsp["TaskInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_taskInfo.Deserialize(rsp["TaskInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_taskInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
-string StopDelayReplicationResponse::ToJsonString() const
+string DescribeTaskResultResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_taskInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_taskInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +109,15 @@ string StopDelayReplicationResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+TaskResultInfo DescribeTaskResultResponse::GetTaskInfo() const
+{
+    return m_taskInfo;
+}
+
+bool DescribeTaskResultResponse::TaskInfoHasBeenSet() const
+{
+    return m_taskInfoHasBeenSet;
+}
 
 

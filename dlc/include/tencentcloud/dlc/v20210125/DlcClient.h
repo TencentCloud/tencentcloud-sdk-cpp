@@ -69,6 +69,8 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeTableResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTablesRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTablesResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeTaskResultRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeTaskResultResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTasksRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTasksResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeUsersRequest.h>
@@ -170,6 +172,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTablesResponse> DescribeTablesOutcome;
                 typedef std::future<DescribeTablesOutcome> DescribeTablesOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeTablesRequest&, DescribeTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTablesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTaskResultResponse> DescribeTaskResultOutcome;
+                typedef std::future<DescribeTaskResultOutcome> DescribeTaskResultOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeTaskResultRequest&, DescribeTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTasksResponse> DescribeTasksOutcome;
                 typedef std::future<DescribeTasksOutcome> DescribeTasksOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeTasksRequest&, DescribeTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTasksAsyncHandler;
@@ -406,6 +411,15 @@ namespace TencentCloud
                 DescribeTablesOutcome DescribeTables(const Model::DescribeTablesRequest &request);
                 void DescribeTablesAsync(const Model::DescribeTablesRequest& request, const DescribeTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTablesOutcomeCallable DescribeTablesCallable(const Model::DescribeTablesRequest& request);
+
+                /**
+                 *查询任务结果
+                 * @param req DescribeTaskResultRequest
+                 * @return DescribeTaskResultOutcome
+                 */
+                DescribeTaskResultOutcome DescribeTaskResult(const Model::DescribeTaskResultRequest &request);
+                void DescribeTaskResultAsync(const Model::DescribeTaskResultRequest& request, const DescribeTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTaskResultOutcomeCallable DescribeTaskResultCallable(const Model::DescribeTaskResultRequest& request);
 
                 /**
                  *该接口（DescribleTasks）用于查询任务列表

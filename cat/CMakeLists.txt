@@ -43,6 +43,7 @@ set(cat_public_header_model
   include/tencentcloud/cat/v20180409/model/DescribeUserLimitRequest.h
   include/tencentcloud/cat/v20180409/model/Label.h
   include/tencentcloud/cat/v20180409/model/DescribeAgentsRequest.h
+  include/tencentcloud/cat/v20180409/model/KeyValuePair.h
   include/tencentcloud/cat/v20180409/model/CatReturnDetail.h
   include/tencentcloud/cat/v20180409/model/IspDetail.h
   include/tencentcloud/cat/v20180409/model/GetReturnCodeInfoRequest.h
@@ -51,6 +52,7 @@ set(cat_public_header_model
   include/tencentcloud/cat/v20180409/model/DescribeDetailedSingleProbeDataRequest.h
   include/tencentcloud/cat/v20180409/model/DeleteAgentGroupResponse.h
   include/tencentcloud/cat/v20180409/model/AgentGroup.h
+  include/tencentcloud/cat/v20180409/model/Tag.h
   include/tencentcloud/cat/v20180409/model/GetReturnCodeHistoryRequest.h
   include/tencentcloud/cat/v20180409/model/ProvinceDetail.h
   include/tencentcloud/cat/v20180409/model/GetRealAvailRatioResponse.h
@@ -139,6 +141,7 @@ set(cat_src
   src/v20180409/model/DescribeUserLimitRequest.cpp
   src/v20180409/model/Label.cpp
   src/v20180409/model/DescribeAgentsRequest.cpp
+  src/v20180409/model/KeyValuePair.cpp
   src/v20180409/model/CatReturnDetail.cpp
   src/v20180409/model/IspDetail.cpp
   src/v20180409/model/GetReturnCodeInfoRequest.cpp
@@ -147,6 +150,7 @@ set(cat_src
   src/v20180409/model/DescribeDetailedSingleProbeDataRequest.cpp
   src/v20180409/model/DeleteAgentGroupResponse.cpp
   src/v20180409/model/AgentGroup.cpp
+  src/v20180409/model/Tag.cpp
   src/v20180409/model/GetReturnCodeHistoryRequest.cpp
   src/v20180409/model/ProvinceDetail.cpp
   src/v20180409/model/GetRealAvailRatioResponse.cpp

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ecdn/v20191012/model/AdvanceHttps.h>
 
 
 namespace TencentCloud
@@ -182,6 +183,28 @@ namespace TencentCloud
                      */
                     bool BackupOriginTypeHasBeenSet() const;
 
+                    /**
+                     * 获取HTTPS回源高级配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AdvanceHttps HTTPS回源高级配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AdvanceHttps GetAdvanceHttps() const;
+
+                    /**
+                     * 设置HTTPS回源高级配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AdvanceHttps HTTPS回源高级配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAdvanceHttps(const AdvanceHttps& _advanceHttps);
+
+                    /**
+                     * 判断参数 AdvanceHttps 是否已赋值
+                     * @return AdvanceHttps 是否已赋值
+                     */
+                    bool AdvanceHttpsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -226,6 +249,13 @@ namespace TencentCloud
                      */
                     std::string m_backupOriginType;
                     bool m_backupOriginTypeHasBeenSet;
+
+                    /**
+                     * HTTPS回源高级配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AdvanceHttps m_advanceHttps;
+                    bool m_advanceHttpsHasBeenSet;
 
                 };
             }

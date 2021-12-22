@@ -33,7 +33,9 @@ RunTimeEventBaseInfo::RunTimeEventBaseInfo() :
     m_eventNameHasBeenSet(false),
     m_eventTypeHasBeenSet(false),
     m_eventCountHasBeenSet(false),
-    m_latestFoundTimeHasBeenSet(false)
+    m_latestFoundTimeHasBeenSet(false),
+    m_hostIPHasBeenSet(false),
+    m_clientIPHasBeenSet(false)
 {
 }
 
@@ -172,6 +174,26 @@ CoreInternalOutcome RunTimeEventBaseInfo::Deserialize(const rapidjson::Value &va
         m_latestFoundTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("HostIP") && !value["HostIP"].IsNull())
+    {
+        if (!value["HostIP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunTimeEventBaseInfo.HostIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostIP = string(value["HostIP"].GetString());
+        m_hostIPHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClientIP") && !value["ClientIP"].IsNull())
+    {
+        if (!value["ClientIP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunTimeEventBaseInfo.ClientIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clientIP = string(value["ClientIP"].GetString());
+        m_clientIPHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +303,22 @@ void RunTimeEventBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "LatestFoundTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_latestFoundTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hostIP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clientIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clientIP.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -492,5 +530,37 @@ void RunTimeEventBaseInfo::SetLatestFoundTime(const string& _latestFoundTime)
 bool RunTimeEventBaseInfo::LatestFoundTimeHasBeenSet() const
 {
     return m_latestFoundTimeHasBeenSet;
+}
+
+string RunTimeEventBaseInfo::GetHostIP() const
+{
+    return m_hostIP;
+}
+
+void RunTimeEventBaseInfo::SetHostIP(const string& _hostIP)
+{
+    m_hostIP = _hostIP;
+    m_hostIPHasBeenSet = true;
+}
+
+bool RunTimeEventBaseInfo::HostIPHasBeenSet() const
+{
+    return m_hostIPHasBeenSet;
+}
+
+string RunTimeEventBaseInfo::GetClientIP() const
+{
+    return m_clientIP;
+}
+
+void RunTimeEventBaseInfo::SetClientIP(const string& _clientIP)
+{
+    m_clientIP = _clientIP;
+    m_clientIPHasBeenSet = true;
+}
+
+bool RunTimeEventBaseInfo::ClientIPHasBeenSet() const
+{
+    return m_clientIPHasBeenSet;
 }
 

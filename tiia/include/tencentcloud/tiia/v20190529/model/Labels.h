@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取公众人物身份标签的一级分类，例如体育明星、娱乐明星、政治人物等；
+                     * 获取公众人物身份标签的一级分类，例如体育明星、娱乐明星等；
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FirstLabel 公众人物身份标签的一级分类，例如体育明星、娱乐明星、政治人物等；
+                     * @return FirstLabel 公众人物身份标签的一级分类，例如体育明星、娱乐明星等；
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFirstLabel() const;
 
                     /**
-                     * 设置公众人物身份标签的一级分类，例如体育明星、娱乐明星、政治人物等；
+                     * 设置公众人物身份标签的一级分类，例如体育明星、娱乐明星等；
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FirstLabel 公众人物身份标签的一级分类，例如体育明星、娱乐明星、政治人物等；
+                     * @param FirstLabel 公众人物身份标签的一级分类，例如体育明星、娱乐明星等；
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFirstLabel(const std::string& _firstLabel);
@@ -93,7 +93,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 公众人物身份标签的一级分类，例如体育明星、娱乐明星、政治人物等；
+                     * 公众人物身份标签的一级分类，例如体育明星、娱乐明星等；
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_firstLabel;

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cat/v20180409/model/KeyValuePair.h>
 
 
 namespace TencentCloud
@@ -79,14 +80,14 @@ namespace TencentCloud
                     bool TaskNameHasBeenSet() const;
 
                     /**
-                     * 获取探测目标
-                     * @return TargetAddress 探测目标
+                     * 获取拨测目标
+                     * @return TargetAddress 拨测目标
                      */
                     std::string GetTargetAddress() const;
 
                     /**
-                     * 设置探测目标
-                     * @param TargetAddress 探测目标
+                     * 设置拨测目标
+                     * @param TargetAddress 拨测目标
                      */
                     void SetTargetAddress(const std::string& _targetAddress);
 
@@ -274,6 +275,24 @@ namespace TencentCloud
                      */
                     bool AscendHasBeenSet() const;
 
+                    /**
+                     * 获取资源标签值
+                     * @return TagFilters 资源标签值
+                     */
+                    std::vector<KeyValuePair> GetTagFilters() const;
+
+                    /**
+                     * 设置资源标签值
+                     * @param TagFilters 资源标签值
+                     */
+                    void SetTagFilters(const std::vector<KeyValuePair>& _tagFilters);
+
+                    /**
+                     * 判断参数 TagFilters 是否已赋值
+                     * @return TagFilters 是否已赋值
+                     */
+                    bool TagFiltersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -289,7 +308,7 @@ namespace TencentCloud
                     bool m_taskNameHasBeenSet;
 
                     /**
-                     * 探测目标
+                     * 拨测目标
                      */
                     std::string m_targetAddress;
                     bool m_targetAddressHasBeenSet;
@@ -351,6 +370,12 @@ namespace TencentCloud
                      */
                     bool m_ascend;
                     bool m_ascendHasBeenSet;
+
+                    /**
+                     * 资源标签值
+                     */
+                    std::vector<KeyValuePair> m_tagFilters;
+                    bool m_tagFiltersHasBeenSet;
 
                 };
             }

@@ -294,6 +294,42 @@ namespace TencentCloud
                      */
                     bool MaxDelayTimeHasBeenSet() const;
 
+                    /**
+                     * 获取是否跨区迁移。0-普通迁移，1-跨区迁移，默认值为0。该值为1时支持变更实例主节点可用区。
+                     * @return CrossCluster 是否跨区迁移。0-普通迁移，1-跨区迁移，默认值为0。该值为1时支持变更实例主节点可用区。
+                     */
+                    int64_t GetCrossCluster() const;
+
+                    /**
+                     * 设置是否跨区迁移。0-普通迁移，1-跨区迁移，默认值为0。该值为1时支持变更实例主节点可用区。
+                     * @param CrossCluster 是否跨区迁移。0-普通迁移，1-跨区迁移，默认值为0。该值为1时支持变更实例主节点可用区。
+                     */
+                    void SetCrossCluster(const int64_t& _crossCluster);
+
+                    /**
+                     * 判断参数 CrossCluster 是否已赋值
+                     * @return CrossCluster 是否已赋值
+                     */
+                    bool CrossClusterHasBeenSet() const;
+
+                    /**
+                     * 获取主节点可用区，该值仅在跨区迁移时生效。仅支持同地域下的可用区进行迁移。
+                     * @return ZoneId 主节点可用区，该值仅在跨区迁移时生效。仅支持同地域下的可用区进行迁移。
+                     */
+                    std::string GetZoneId() const;
+
+                    /**
+                     * 设置主节点可用区，该值仅在跨区迁移时生效。仅支持同地域下的可用区进行迁移。
+                     * @param ZoneId 主节点可用区，该值仅在跨区迁移时生效。仅支持同地域下的可用区进行迁移。
+                     */
+                    void SetZoneId(const std::string& _zoneId);
+
+                    /**
+                     * 判断参数 ZoneId 是否已赋值
+                     * @return ZoneId 是否已赋值
+                     */
+                    bool ZoneIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -379,6 +415,18 @@ namespace TencentCloud
                      */
                     int64_t m_maxDelayTime;
                     bool m_maxDelayTimeHasBeenSet;
+
+                    /**
+                     * 是否跨区迁移。0-普通迁移，1-跨区迁移，默认值为0。该值为1时支持变更实例主节点可用区。
+                     */
+                    int64_t m_crossCluster;
+                    bool m_crossClusterHasBeenSet;
+
+                    /**
+                     * 主节点可用区，该值仅在跨区迁移时生效。仅支持同地域下的可用区进行迁移。
+                     */
+                    std::string m_zoneId;
+                    bool m_zoneIdHasBeenSet;
 
                 };
             }

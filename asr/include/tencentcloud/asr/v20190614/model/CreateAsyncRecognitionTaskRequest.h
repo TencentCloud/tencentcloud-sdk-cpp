@@ -238,6 +238,24 @@ namespace TencentCloud
                      */
                     bool HotwordIdHasBeenSet() const;
 
+                    /**
+                     * 获取回调数据中，是否需要对应音频数据。
+                     * @return AudioData 回调数据中，是否需要对应音频数据。
+                     */
+                    bool GetAudioData() const;
+
+                    /**
+                     * 设置回调数据中，是否需要对应音频数据。
+                     * @param AudioData 回调数据中，是否需要对应音频数据。
+                     */
+                    void SetAudioData(const bool& _audioData);
+
+                    /**
+                     * 判断参数 AudioData 是否已赋值
+                     * @return AudioData 是否已赋值
+                     */
+                    bool AudioDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -303,6 +321,12 @@ namespace TencentCloud
                      */
                     std::string m_hotwordId;
                     bool m_hotwordIdHasBeenSet;
+
+                    /**
+                     * 回调数据中，是否需要对应音频数据。
+                     */
+                    bool m_audioData;
+                    bool m_audioDataHasBeenSet;
 
                 };
             }

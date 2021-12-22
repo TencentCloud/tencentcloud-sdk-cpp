@@ -29,7 +29,8 @@ CreateProbeTasksRequest::CreateProbeTasksRequest() :
     m_intervalHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_taskCategoryHasBeenSet(false),
-    m_cronHasBeenSet(false)
+    m_cronHasBeenSet(false),
+    m_tagHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,21 @@ string CreateProbeTasksRequest::ToJsonString() const
         string key = "Cron";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cron.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tag.begin(); itr != m_tag.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -226,6 +242,22 @@ void CreateProbeTasksRequest::SetCron(const string& _cron)
 bool CreateProbeTasksRequest::CronHasBeenSet() const
 {
     return m_cronHasBeenSet;
+}
+
+vector<Tag> CreateProbeTasksRequest::GetTag() const
+{
+    return m_tag;
+}
+
+void CreateProbeTasksRequest::SetTag(const vector<Tag>& _tag)
+{
+    m_tag = _tag;
+    m_tagHasBeenSet = true;
+}
+
+bool CreateProbeTasksRequest::TagHasBeenSet() const
+{
+    return m_tagHasBeenSet;
 }
 
 

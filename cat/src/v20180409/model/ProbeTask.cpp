@@ -34,7 +34,8 @@ ProbeTask::ProbeTask() :
     m_taskCategoryHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_cronHasBeenSet(false),
-    m_cronStateHasBeenSet(false)
+    m_cronStateHasBeenSet(false),
+    m_tagInfoListHasBeenSet(false)
 {
 }
 
@@ -186,6 +187,26 @@ CoreInternalOutcome ProbeTask::Deserialize(const rapidjson::Value &value)
         m_cronStateHasBeenSet = true;
     }
 
+    if (value.HasMember("TagInfoList") && !value["TagInfoList"].IsNull())
+    {
+        if (!value["TagInfoList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ProbeTask.TagInfoList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TagInfoList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            KeyValuePair item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagInfoList.push_back(item);
+        }
+        m_tagInfoListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -308,6 +329,21 @@ void ProbeTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "CronState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cronState, allocator);
+    }
+
+    if (m_tagInfoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagInfoList.begin(); itr != m_tagInfoList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -535,5 +571,21 @@ void ProbeTask::SetCronState(const int64_t& _cronState)
 bool ProbeTask::CronStateHasBeenSet() const
 {
     return m_cronStateHasBeenSet;
+}
+
+vector<KeyValuePair> ProbeTask::GetTagInfoList() const
+{
+    return m_tagInfoList;
+}
+
+void ProbeTask::SetTagInfoList(const vector<KeyValuePair>& _tagInfoList)
+{
+    m_tagInfoList = _tagInfoList;
+    m_tagInfoListHasBeenSet = true;
+}
+
+bool ProbeTask::TagInfoListHasBeenSet() const
+{
+    return m_tagInfoListHasBeenSet;
 }
 

@@ -44,6 +44,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/CreateInstancePreData.h
   include/tencentcloud/ckafka/v20190819/model/AclRule.h
   include/tencentcloud/ckafka/v20190819/model/DescribeACLResponse.h
+  include/tencentcloud/ckafka/v20190819/model/DynamicDiskConfig.h
   include/tencentcloud/ckafka/v20190819/model/JgwOperateResponse.h
   include/tencentcloud/ckafka/v20190819/model/ZoneInfo.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicSubscribeGroupResponse.h
@@ -188,6 +189,7 @@ set(ckafka_src
   src/v20190819/model/CreateInstancePreData.cpp
   src/v20190819/model/AclRule.cpp
   src/v20190819/model/DescribeACLResponse.cpp
+  src/v20190819/model/DynamicDiskConfig.cpp
   src/v20190819/model/JgwOperateResponse.cpp
   src/v20190819/model/ZoneInfo.cpp
   src/v20190819/model/DescribeTopicSubscribeGroupResponse.cpp

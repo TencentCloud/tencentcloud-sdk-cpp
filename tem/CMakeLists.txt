@@ -22,6 +22,7 @@ set(tem_public_header
 set(tem_public_header_model
   include/tencentcloud/tem/v20210701/model/MountedSettingConf.h
   include/tencentcloud/tem/v20210701/model/RestartApplicationPodResponse.h
+  include/tencentcloud/tem/v20210701/model/DeleteApplicationRequest.h
   include/tencentcloud/tem/v20210701/model/CreateResourceRequest.h
   include/tencentcloud/tem/v20210701/model/ResumeDeployApplicationResponse.h
   include/tencentcloud/tem/v20210701/model/HealthCheckConfig.h
@@ -68,12 +69,13 @@ set(tem_public_header_model
   include/tencentcloud/tem/v20210701/model/CreateResourceResponse.h
   include/tencentcloud/tem/v20210701/model/ModifyApplicationInfoRequest.h
   include/tencentcloud/tem/v20210701/model/ModifyApplicationInfoResponse.h
-  include/tencentcloud/tem/v20210701/model/RevertDeployApplicationRequest.h
+  include/tencentcloud/tem/v20210701/model/DeleteApplicationResponse.h
   include/tencentcloud/tem/v20210701/model/IngressRulePath.h
   include/tencentcloud/tem/v20210701/model/CreateEnvironmentResponse.h
   include/tencentcloud/tem/v20210701/model/NamespacePage.h
   include/tencentcloud/tem/v20210701/model/CreateApplicationResponse.h
   include/tencentcloud/tem/v20210701/model/HorizontalAutoscaler.h
+  include/tencentcloud/tem/v20210701/model/RevertDeployApplicationRequest.h
   include/tencentcloud/tem/v20210701/model/StorageMountConf.h
   include/tencentcloud/tem/v20210701/model/ModifyEnvironmentRequest.h
   include/tencentcloud/tem/v20210701/model/PortMapping.h
@@ -151,6 +153,7 @@ set(tem_src
   src/v20201221/TemClient.cpp
   src/v20210701/model/MountedSettingConf.cpp
   src/v20210701/model/RestartApplicationPodResponse.cpp
+  src/v20210701/model/DeleteApplicationRequest.cpp
   src/v20210701/model/CreateResourceRequest.cpp
   src/v20210701/model/ResumeDeployApplicationResponse.cpp
   src/v20210701/model/HealthCheckConfig.cpp
@@ -197,12 +200,13 @@ set(tem_src
   src/v20210701/model/CreateResourceResponse.cpp
   src/v20210701/model/ModifyApplicationInfoRequest.cpp
   src/v20210701/model/ModifyApplicationInfoResponse.cpp
-  src/v20210701/model/RevertDeployApplicationRequest.cpp
+  src/v20210701/model/DeleteApplicationResponse.cpp
   src/v20210701/model/IngressRulePath.cpp
   src/v20210701/model/CreateEnvironmentResponse.cpp
   src/v20210701/model/NamespacePage.cpp
   src/v20210701/model/CreateApplicationResponse.cpp
   src/v20210701/model/HorizontalAutoscaler.cpp
+  src/v20210701/model/RevertDeployApplicationRequest.cpp
   src/v20210701/model/StorageMountConf.cpp
   src/v20210701/model/ModifyEnvironmentRequest.cpp
   src/v20210701/model/PortMapping.cpp

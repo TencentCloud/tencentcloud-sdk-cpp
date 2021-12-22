@@ -333,6 +333,28 @@ namespace TencentCloud
                      */
                     bool RoGroupZoneHasBeenSet() const;
 
+                    /**
+                     * 获取延迟复制时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DelayReplicationTime 延迟复制时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetDelayReplicationTime() const;
+
+                    /**
+                     * 设置延迟复制时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DelayReplicationTime 延迟复制时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDelayReplicationTime(const int64_t& _delayReplicationTime);
+
+                    /**
+                     * 判断参数 DelayReplicationTime 是否已赋值
+                     * @return DelayReplicationTime 是否已赋值
+                     */
+                    bool DelayReplicationTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -428,6 +450,13 @@ namespace TencentCloud
                      */
                     std::string m_roGroupZone;
                     bool m_roGroupZoneHasBeenSet;
+
+                    /**
+                     * 延迟复制时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_delayReplicationTime;
+                    bool m_delayReplicationTimeHasBeenSet;
 
                 };
             }

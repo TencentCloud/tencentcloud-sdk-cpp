@@ -519,6 +519,34 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
                      */
                     bool SubStatusHasBeenSet() const;
 
+                    /**
+                     * 获取内网ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HostIP 内网ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetHostIP() const;
+
+                    /**
+                     * 判断参数 HostIP 是否已赋值
+                     * @return HostIP 是否已赋值
+                     */
+                    bool HostIPHasBeenSet() const;
+
+                    /**
+                     * 获取外网ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClientIP 外网ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetClientIP() const;
+
+                    /**
+                     * 判断参数 ClientIP 是否已赋值
+                     * @return ClientIP 是否已赋值
+                     */
+                    bool ClientIPHasBeenSet() const;
+
                 private:
 
                     /**
@@ -758,6 +786,20 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
                      */
                     std::string m_subStatus;
                     bool m_subStatusHasBeenSet;
+
+                    /**
+                     * 内网ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_hostIP;
+                    bool m_hostIPHasBeenSet;
+
+                    /**
+                     * 外网ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clientIP;
+                    bool m_clientIPHasBeenSet;
 
                 };
             }

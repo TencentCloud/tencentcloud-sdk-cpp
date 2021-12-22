@@ -29,7 +29,8 @@ TemplateInfo::TemplateInfo() :
     m_creatorHasBeenSet(false),
     m_createdOnHasBeenSet(false),
     m_templateTypeHasBeenSet(false),
-    m_recipientsHasBeenSet(false)
+    m_recipientsHasBeenSet(false),
+    m_isPromoterHasBeenSet(false)
 {
 }
 
@@ -158,6 +159,16 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
         m_recipientsHasBeenSet = true;
     }
 
+    if (value.HasMember("IsPromoter") && !value["IsPromoter"].IsNull())
+    {
+        if (!value["IsPromoter"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.IsPromoter` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isPromoter = value["IsPromoter"].GetBool();
+        m_isPromoterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -256,6 +267,14 @@ void TemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isPromoterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPromoter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isPromoter, allocator);
     }
 
 }
@@ -403,5 +422,21 @@ void TemplateInfo::SetRecipients(const vector<Recipient>& _recipients)
 bool TemplateInfo::RecipientsHasBeenSet() const
 {
     return m_recipientsHasBeenSet;
+}
+
+bool TemplateInfo::GetIsPromoter() const
+{
+    return m_isPromoter;
+}
+
+void TemplateInfo::SetIsPromoter(const bool& _isPromoter)
+{
+    m_isPromoter = _isPromoter;
+    m_isPromoterHasBeenSet = true;
+}
+
+bool TemplateInfo::IsPromoterHasBeenSet() const
+{
+    return m_isPromoterHasBeenSet;
 }
 

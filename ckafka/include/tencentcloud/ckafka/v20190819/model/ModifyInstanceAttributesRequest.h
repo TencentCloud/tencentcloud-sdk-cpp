@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyInstanceAttributesConfig.h>
 #include <tencentcloud/ckafka/v20190819/model/DynamicRetentionTime.h>
+#include <tencentcloud/ckafka/v20190819/model/DynamicDiskConfig.h>
 
 
 namespace TencentCloud
@@ -170,6 +171,24 @@ namespace TencentCloud
                      */
                     bool PublicNetworkHasBeenSet() const;
 
+                    /**
+                     * 获取动态硬盘扩容策略配置
+                     * @return DynamicDiskConfig 动态硬盘扩容策略配置
+                     */
+                    DynamicDiskConfig GetDynamicDiskConfig() const;
+
+                    /**
+                     * 设置动态硬盘扩容策略配置
+                     * @param DynamicDiskConfig 动态硬盘扩容策略配置
+                     */
+                    void SetDynamicDiskConfig(const DynamicDiskConfig& _dynamicDiskConfig);
+
+                    /**
+                     * 判断参数 DynamicDiskConfig 是否已赋值
+                     * @return DynamicDiskConfig 是否已赋值
+                     */
+                    bool DynamicDiskConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -213,6 +232,12 @@ namespace TencentCloud
                      */
                     int64_t m_publicNetwork;
                     bool m_publicNetworkHasBeenSet;
+
+                    /**
+                     * 动态硬盘扩容策略配置
+                     */
+                    DynamicDiskConfig m_dynamicDiskConfig;
+                    bool m_dynamicDiskConfigHasBeenSet;
 
                 };
             }
