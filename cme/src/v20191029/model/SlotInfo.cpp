@@ -24,6 +24,7 @@ SlotInfo::SlotInfo() :
     m_idHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_defaultMaterialIdHasBeenSet(false),
+    m_defaultTextSlotInfoHasBeenSet(false),
     m_durationHasBeenSet(false)
 {
 }
@@ -61,6 +62,23 @@ CoreInternalOutcome SlotInfo::Deserialize(const rapidjson::Value &value)
         }
         m_defaultMaterialId = string(value["DefaultMaterialId"].GetString());
         m_defaultMaterialIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("DefaultTextSlotInfo") && !value["DefaultTextSlotInfo"].IsNull())
+    {
+        if (!value["DefaultTextSlotInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SlotInfo.DefaultTextSlotInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_defaultTextSlotInfo.Deserialize(value["DefaultTextSlotInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_defaultTextSlotInfoHasBeenSet = true;
     }
 
     if (value.HasMember("Duration") && !value["Duration"].IsNull())
@@ -102,6 +120,15 @@ void SlotInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "DefaultMaterialId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_defaultMaterialId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_defaultTextSlotInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultTextSlotInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_defaultTextSlotInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_durationHasBeenSet)
@@ -161,6 +188,22 @@ void SlotInfo::SetDefaultMaterialId(const string& _defaultMaterialId)
 bool SlotInfo::DefaultMaterialIdHasBeenSet() const
 {
     return m_defaultMaterialIdHasBeenSet;
+}
+
+TextSlotInfo SlotInfo::GetDefaultTextSlotInfo() const
+{
+    return m_defaultTextSlotInfo;
+}
+
+void SlotInfo::SetDefaultTextSlotInfo(const TextSlotInfo& _defaultTextSlotInfo)
+{
+    m_defaultTextSlotInfo = _defaultTextSlotInfo;
+    m_defaultTextSlotInfoHasBeenSet = true;
+}
+
+bool SlotInfo::DefaultTextSlotInfoHasBeenSet() const
+{
+    return m_defaultTextSlotInfoHasBeenSet;
 }
 
 double SlotInfo::GetDuration() const

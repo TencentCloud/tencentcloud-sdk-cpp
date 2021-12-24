@@ -33,14 +33,16 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/OperateChannelTemplateResponse.h
   include/tencentcloud/essbasic/v20210526/model/CreateSignUrlsRequest.h
   include/tencentcloud/essbasic/v20210526/model/AuthFailMessage.h
+  include/tencentcloud/essbasic/v20210526/model/DescribeFlowDetailInfoRequest.h
   include/tencentcloud/essbasic/v20210526/model/DescribeResourceUrlsByFlowsRequest.h
   include/tencentcloud/essbasic/v20210526/model/Component.h
   include/tencentcloud/essbasic/v20210526/model/GetDownloadFlowUrlRequest.h
-  include/tencentcloud/essbasic/v20210526/model/SignUrlInfo.h
+  include/tencentcloud/essbasic/v20210526/model/FlowDetailInfo.h
   include/tencentcloud/essbasic/v20210526/model/CreateConsoleLoginUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/CreateFlowsByTemplatesResponse.h
   include/tencentcloud/essbasic/v20210526/model/PrepareFlowsRequest.h
   include/tencentcloud/essbasic/v20210526/model/SyncProxyOrganizationOperatorsResponse.h
+  include/tencentcloud/essbasic/v20210526/model/SignUrlInfo.h
   include/tencentcloud/essbasic/v20210526/model/FlowResourceUrlInfo.h
   include/tencentcloud/essbasic/v20210526/model/DescribeTemplatesRequest.h
   include/tencentcloud/essbasic/v20210526/model/SyncProxyOrganizationOperatorsRequest.h
@@ -56,9 +58,11 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/CcInfo.h
   include/tencentcloud/essbasic/v20210526/model/Agent.h
   include/tencentcloud/essbasic/v20210526/model/FormField.h
+  include/tencentcloud/essbasic/v20210526/model/FlowApproverDetail.h
   include/tencentcloud/essbasic/v20210526/model/FlowInfo.h
   include/tencentcloud/essbasic/v20210526/model/UserInfo.h
   include/tencentcloud/essbasic/v20210526/model/DescribeUsageResponse.h
+  include/tencentcloud/essbasic/v20210526/model/DescribeFlowDetailInfoResponse.h
   include/tencentcloud/essbasic/v20201222/model/DescribeFaceIdResultsRequest.h
   include/tencentcloud/essbasic/v20201222/model/CreateSubOrganizationRequest.h
   include/tencentcloud/essbasic/v20201222/model/Component.h
@@ -203,14 +207,16 @@ set(essbasic_src
   src/v20210526/model/OperateChannelTemplateResponse.cpp
   src/v20210526/model/CreateSignUrlsRequest.cpp
   src/v20210526/model/AuthFailMessage.cpp
+  src/v20210526/model/DescribeFlowDetailInfoRequest.cpp
   src/v20210526/model/DescribeResourceUrlsByFlowsRequest.cpp
   src/v20210526/model/Component.cpp
   src/v20210526/model/GetDownloadFlowUrlRequest.cpp
-  src/v20210526/model/SignUrlInfo.cpp
+  src/v20210526/model/FlowDetailInfo.cpp
   src/v20210526/model/CreateConsoleLoginUrlRequest.cpp
   src/v20210526/model/CreateFlowsByTemplatesResponse.cpp
   src/v20210526/model/PrepareFlowsRequest.cpp
   src/v20210526/model/SyncProxyOrganizationOperatorsResponse.cpp
+  src/v20210526/model/SignUrlInfo.cpp
   src/v20210526/model/FlowResourceUrlInfo.cpp
   src/v20210526/model/DescribeTemplatesRequest.cpp
   src/v20210526/model/SyncProxyOrganizationOperatorsRequest.cpp
@@ -226,9 +232,11 @@ set(essbasic_src
   src/v20210526/model/CcInfo.cpp
   src/v20210526/model/Agent.cpp
   src/v20210526/model/FormField.cpp
+  src/v20210526/model/FlowApproverDetail.cpp
   src/v20210526/model/FlowInfo.cpp
   src/v20210526/model/UserInfo.cpp
   src/v20210526/model/DescribeUsageResponse.cpp
+  src/v20210526/model/DescribeFlowDetailInfoResponse.cpp
   src/v20201222/model/DescribeFaceIdResultsRequest.cpp
   src/v20201222/model/CreateSubOrganizationRequest.cpp
   src/v20201222/model/Component.cpp

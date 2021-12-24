@@ -97,6 +97,8 @@
 #include <tencentcloud/cam/v20190116/model/GetPolicyVersionResponse.h>
 #include <tencentcloud/cam/v20190116/model/GetRoleRequest.h>
 #include <tencentcloud/cam/v20190116/model/GetRoleResponse.h>
+#include <tencentcloud/cam/v20190116/model/GetRolePermissionBoundaryRequest.h>
+#include <tencentcloud/cam/v20190116/model/GetRolePermissionBoundaryResponse.h>
 #include <tencentcloud/cam/v20190116/model/GetSAMLProviderRequest.h>
 #include <tencentcloud/cam/v20190116/model/GetSAMLProviderResponse.h>
 #include <tencentcloud/cam/v20190116/model/GetSecurityLastUsedRequest.h>
@@ -105,6 +107,8 @@
 #include <tencentcloud/cam/v20190116/model/GetServiceLinkedRoleDeletionStatusResponse.h>
 #include <tencentcloud/cam/v20190116/model/GetUserRequest.h>
 #include <tencentcloud/cam/v20190116/model/GetUserResponse.h>
+#include <tencentcloud/cam/v20190116/model/GetUserPermissionBoundaryRequest.h>
+#include <tencentcloud/cam/v20190116/model/GetUserPermissionBoundaryResponse.h>
 #include <tencentcloud/cam/v20190116/model/ListAccessKeysRequest.h>
 #include <tencentcloud/cam/v20190116/model/ListAccessKeysResponse.h>
 #include <tencentcloud/cam/v20190116/model/ListAttachedGroupPoliciesRequest.h>
@@ -286,6 +290,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetRoleResponse> GetRoleOutcome;
                 typedef std::future<GetRoleOutcome> GetRoleOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::GetRoleRequest&, GetRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRoleAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetRolePermissionBoundaryResponse> GetRolePermissionBoundaryOutcome;
+                typedef std::future<GetRolePermissionBoundaryOutcome> GetRolePermissionBoundaryOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::GetRolePermissionBoundaryRequest&, GetRolePermissionBoundaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRolePermissionBoundaryAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetSAMLProviderResponse> GetSAMLProviderOutcome;
                 typedef std::future<GetSAMLProviderOutcome> GetSAMLProviderOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::GetSAMLProviderRequest&, GetSAMLProviderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetSAMLProviderAsyncHandler;
@@ -298,6 +305,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetUserResponse> GetUserOutcome;
                 typedef std::future<GetUserOutcome> GetUserOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::GetUserRequest&, GetUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetUserPermissionBoundaryResponse> GetUserPermissionBoundaryOutcome;
+                typedef std::future<GetUserPermissionBoundaryOutcome> GetUserPermissionBoundaryOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::GetUserPermissionBoundaryRequest&, GetUserPermissionBoundaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetUserPermissionBoundaryAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListAccessKeysResponse> ListAccessKeysOutcome;
                 typedef std::future<ListAccessKeysOutcome> ListAccessKeysOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::ListAccessKeysRequest&, ListAccessKeysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAccessKeysAsyncHandler;
@@ -719,6 +729,15 @@ namespace TencentCloud
                 GetRoleOutcomeCallable GetRoleCallable(const Model::GetRoleRequest& request);
 
                 /**
+                 *获取角色权限边界
+                 * @param req GetRolePermissionBoundaryRequest
+                 * @return GetRolePermissionBoundaryOutcome
+                 */
+                GetRolePermissionBoundaryOutcome GetRolePermissionBoundary(const Model::GetRolePermissionBoundaryRequest &request);
+                void GetRolePermissionBoundaryAsync(const Model::GetRolePermissionBoundaryRequest& request, const GetRolePermissionBoundaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetRolePermissionBoundaryOutcomeCallable GetRolePermissionBoundaryCallable(const Model::GetRolePermissionBoundaryRequest& request);
+
+                /**
                  *查询SAML身份提供商详情
                  * @param req GetSAMLProviderRequest
                  * @return GetSAMLProviderOutcome
@@ -753,6 +772,15 @@ namespace TencentCloud
                 GetUserOutcome GetUser(const Model::GetUserRequest &request);
                 void GetUserAsync(const Model::GetUserRequest& request, const GetUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetUserOutcomeCallable GetUserCallable(const Model::GetUserRequest& request);
+
+                /**
+                 *获取用户权限边界
+                 * @param req GetUserPermissionBoundaryRequest
+                 * @return GetUserPermissionBoundaryOutcome
+                 */
+                GetUserPermissionBoundaryOutcome GetUserPermissionBoundary(const Model::GetUserPermissionBoundaryRequest &request);
+                void GetUserPermissionBoundaryAsync(const Model::GetUserPermissionBoundaryRequest& request, const GetUserPermissionBoundaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetUserPermissionBoundaryOutcomeCallable GetUserPermissionBoundaryCallable(const Model::GetUserPermissionBoundaryRequest& request);
 
                 /**
                  *列出指定CAM用户的访问密钥

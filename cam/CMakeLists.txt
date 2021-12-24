@@ -24,8 +24,9 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/LoginActionFlagIntl.h
   include/tencentcloud/cam/v20190116/model/ListAccessKeysRequest.h
   include/tencentcloud/cam/v20190116/model/SetMfaFlagResponse.h
+  include/tencentcloud/cam/v20190116/model/UpdateSAMLProviderRequest.h
   include/tencentcloud/cam/v20190116/model/DeleteUserRequest.h
-  include/tencentcloud/cam/v20190116/model/DetachGroupPolicyRequest.h
+  include/tencentcloud/cam/v20190116/model/GetRolePermissionBoundaryResponse.h
   include/tencentcloud/cam/v20190116/model/DescribeRoleListResponse.h
   include/tencentcloud/cam/v20190116/model/CreatePolicyResponse.h
   include/tencentcloud/cam/v20190116/model/GetRoleRequest.h
@@ -33,6 +34,8 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/ListAttachedGroupPoliciesRequest.h
   include/tencentcloud/cam/v20190116/model/ListGroupsForUserRequest.h
   include/tencentcloud/cam/v20190116/model/AttachRolePolicyResponse.h
+  include/tencentcloud/cam/v20190116/model/GetUserPermissionBoundaryRequest.h
+  include/tencentcloud/cam/v20190116/model/GetRolePermissionBoundaryRequest.h
   include/tencentcloud/cam/v20190116/model/GetServiceLinkedRoleDeletionStatusResponse.h
   include/tencentcloud/cam/v20190116/model/GetSecurityLastUsedRequest.h
   include/tencentcloud/cam/v20190116/model/DescribeUserSAMLConfigResponse.h
@@ -54,7 +57,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/ListSAMLProvidersRequest.h
   include/tencentcloud/cam/v20190116/model/ListGroupsRequest.h
   include/tencentcloud/cam/v20190116/model/DeletePolicyVersionResponse.h
-  include/tencentcloud/cam/v20190116/model/UpdateSAMLProviderRequest.h
+  include/tencentcloud/cam/v20190116/model/DetachGroupPolicyRequest.h
   include/tencentcloud/cam/v20190116/model/UpdateAssumeRolePolicyRequest.h
   include/tencentcloud/cam/v20190116/model/ListGroupsForUserResponse.h
   include/tencentcloud/cam/v20190116/model/ListUsersForGroupRequest.h
@@ -73,6 +76,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/SecretIdLastUsed.h
   include/tencentcloud/cam/v20190116/model/DeleteGroupRequest.h
   include/tencentcloud/cam/v20190116/model/GetUserResponse.h
+  include/tencentcloud/cam/v20190116/model/GetUserPermissionBoundaryResponse.h
   include/tencentcloud/cam/v20190116/model/DeleteUserResponse.h
   include/tencentcloud/cam/v20190116/model/DetachRolePolicyRequest.h
   include/tencentcloud/cam/v20190116/model/ListPoliciesGrantingServiceAccessResponse.h
@@ -190,8 +194,9 @@ set(cam_src
   src/v20190116/model/LoginActionFlagIntl.cpp
   src/v20190116/model/ListAccessKeysRequest.cpp
   src/v20190116/model/SetMfaFlagResponse.cpp
+  src/v20190116/model/UpdateSAMLProviderRequest.cpp
   src/v20190116/model/DeleteUserRequest.cpp
-  src/v20190116/model/DetachGroupPolicyRequest.cpp
+  src/v20190116/model/GetRolePermissionBoundaryResponse.cpp
   src/v20190116/model/DescribeRoleListResponse.cpp
   src/v20190116/model/CreatePolicyResponse.cpp
   src/v20190116/model/GetRoleRequest.cpp
@@ -199,6 +204,8 @@ set(cam_src
   src/v20190116/model/ListAttachedGroupPoliciesRequest.cpp
   src/v20190116/model/ListGroupsForUserRequest.cpp
   src/v20190116/model/AttachRolePolicyResponse.cpp
+  src/v20190116/model/GetUserPermissionBoundaryRequest.cpp
+  src/v20190116/model/GetRolePermissionBoundaryRequest.cpp
   src/v20190116/model/GetServiceLinkedRoleDeletionStatusResponse.cpp
   src/v20190116/model/GetSecurityLastUsedRequest.cpp
   src/v20190116/model/DescribeUserSAMLConfigResponse.cpp
@@ -220,7 +227,7 @@ set(cam_src
   src/v20190116/model/ListSAMLProvidersRequest.cpp
   src/v20190116/model/ListGroupsRequest.cpp
   src/v20190116/model/DeletePolicyVersionResponse.cpp
-  src/v20190116/model/UpdateSAMLProviderRequest.cpp
+  src/v20190116/model/DetachGroupPolicyRequest.cpp
   src/v20190116/model/UpdateAssumeRolePolicyRequest.cpp
   src/v20190116/model/ListGroupsForUserResponse.cpp
   src/v20190116/model/ListUsersForGroupRequest.cpp
@@ -239,6 +246,7 @@ set(cam_src
   src/v20190116/model/SecretIdLastUsed.cpp
   src/v20190116/model/DeleteGroupRequest.cpp
   src/v20190116/model/GetUserResponse.cpp
+  src/v20190116/model/GetUserPermissionBoundaryResponse.cpp
   src/v20190116/model/DeleteUserResponse.cpp
   src/v20190116/model/DetachRolePolicyRequest.cpp
   src/v20190116/model/ListPoliciesGrantingServiceAccessResponse.cpp

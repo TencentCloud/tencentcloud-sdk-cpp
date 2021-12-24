@@ -1631,6 +1631,49 @@ CamClient::GetRoleOutcomeCallable CamClient::GetRoleCallable(const GetRoleReques
     return task->get_future();
 }
 
+CamClient::GetRolePermissionBoundaryOutcome CamClient::GetRolePermissionBoundary(const GetRolePermissionBoundaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetRolePermissionBoundary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetRolePermissionBoundaryResponse rsp = GetRolePermissionBoundaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetRolePermissionBoundaryOutcome(rsp);
+        else
+            return GetRolePermissionBoundaryOutcome(o.GetError());
+    }
+    else
+    {
+        return GetRolePermissionBoundaryOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::GetRolePermissionBoundaryAsync(const GetRolePermissionBoundaryRequest& request, const GetRolePermissionBoundaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetRolePermissionBoundary(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::GetRolePermissionBoundaryOutcomeCallable CamClient::GetRolePermissionBoundaryCallable(const GetRolePermissionBoundaryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetRolePermissionBoundaryOutcome()>>(
+        [this, request]()
+        {
+            return this->GetRolePermissionBoundary(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::GetSAMLProviderOutcome CamClient::GetSAMLProvider(const GetSAMLProviderRequest &request)
 {
     auto outcome = MakeRequest(request, "GetSAMLProvider");
@@ -1796,6 +1839,49 @@ CamClient::GetUserOutcomeCallable CamClient::GetUserCallable(const GetUserReques
         [this, request]()
         {
             return this->GetUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CamClient::GetUserPermissionBoundaryOutcome CamClient::GetUserPermissionBoundary(const GetUserPermissionBoundaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetUserPermissionBoundary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetUserPermissionBoundaryResponse rsp = GetUserPermissionBoundaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetUserPermissionBoundaryOutcome(rsp);
+        else
+            return GetUserPermissionBoundaryOutcome(o.GetError());
+    }
+    else
+    {
+        return GetUserPermissionBoundaryOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::GetUserPermissionBoundaryAsync(const GetUserPermissionBoundaryRequest& request, const GetUserPermissionBoundaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetUserPermissionBoundary(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::GetUserPermissionBoundaryOutcomeCallable CamClient::GetUserPermissionBoundaryCallable(const GetUserPermissionBoundaryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetUserPermissionBoundaryOutcome()>>(
+        [this, request]()
+        {
+            return this->GetUserPermissionBoundary(request);
         }
     );
 

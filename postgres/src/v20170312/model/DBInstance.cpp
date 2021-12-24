@@ -54,7 +54,8 @@ DBInstance::DBInstance() :
     m_statusInReadonlyGroupHasBeenSet(false),
     m_offlineTimeHasBeenSet(false),
     m_dBKernelVersionHasBeenSet(false),
-    m_networkAccessListHasBeenSet(false)
+    m_networkAccessListHasBeenSet(false),
+    m_dBMajorVersionHasBeenSet(false)
 {
 }
 
@@ -433,6 +434,16 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
         m_networkAccessListHasBeenSet = true;
     }
 
+    if (value.HasMember("DBMajorVersion") && !value["DBMajorVersion"].IsNull())
+    {
+        if (!value["DBMajorVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBInstance.DBMajorVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dBMajorVersion = string(value["DBMajorVersion"].GetString());
+        m_dBMajorVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -731,6 +742,14 @@ void DBInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_dBMajorVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DBMajorVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dBMajorVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1278,5 +1297,21 @@ void DBInstance::SetNetworkAccessList(const vector<NetworkAccess>& _networkAcces
 bool DBInstance::NetworkAccessListHasBeenSet() const
 {
     return m_networkAccessListHasBeenSet;
+}
+
+string DBInstance::GetDBMajorVersion() const
+{
+    return m_dBMajorVersion;
+}
+
+void DBInstance::SetDBMajorVersion(const string& _dBMajorVersion)
+{
+    m_dBMajorVersion = _dBMajorVersion;
+    m_dBMajorVersionHasBeenSet = true;
+}
+
+bool DBInstance::DBMajorVersionHasBeenSet() const
+{
+    return m_dBMajorVersionHasBeenSet;
 }
 

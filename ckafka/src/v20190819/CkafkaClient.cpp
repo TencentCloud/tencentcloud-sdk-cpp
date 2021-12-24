@@ -1717,3 +1717,46 @@ CkafkaClient::ModifyTopicAttributesOutcomeCallable CkafkaClient::ModifyTopicAttr
     return task->get_future();
 }
 
+CkafkaClient::SendMessageOutcome CkafkaClient::SendMessage(const SendMessageRequest &request)
+{
+    auto outcome = MakeRequest(request, "SendMessage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SendMessageResponse rsp = SendMessageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SendMessageOutcome(rsp);
+        else
+            return SendMessageOutcome(o.GetError());
+    }
+    else
+    {
+        return SendMessageOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::SendMessageAsync(const SendMessageRequest& request, const SendMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SendMessage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::SendMessageOutcomeCallable CkafkaClient::SendMessageCallable(const SendMessageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SendMessageOutcome()>>(
+        [this, request]()
+        {
+            return this->SendMessage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

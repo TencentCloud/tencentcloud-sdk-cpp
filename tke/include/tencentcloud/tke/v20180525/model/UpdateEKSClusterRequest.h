@@ -225,6 +225,24 @@ namespace TencentCloud
                      */
                     bool NeedDeleteCbsHasBeenSet() const;
 
+                    /**
+                     * 获取标记是否是新的内外网。默认为false
+                     * @return ProxyLB 标记是否是新的内外网。默认为false
+                     */
+                    bool GetProxyLB() const;
+
+                    /**
+                     * 设置标记是否是新的内外网。默认为false
+                     * @param ProxyLB 标记是否是新的内外网。默认为false
+                     */
+                    void SetProxyLB(const bool& _proxyLB);
+
+                    /**
+                     * 判断参数 ProxyLB 是否已赋值
+                     * @return ProxyLB 是否已赋值
+                     */
+                    bool ProxyLBHasBeenSet() const;
+
                 private:
 
                     /**
@@ -286,6 +304,12 @@ namespace TencentCloud
                      */
                     bool m_needDeleteCbs;
                     bool m_needDeleteCbsHasBeenSet;
+
+                    /**
+                     * 标记是否是新的内外网。默认为false
+                     */
+                    bool m_proxyLB;
+                    bool m_proxyLBHasBeenSet;
 
                 };
             }

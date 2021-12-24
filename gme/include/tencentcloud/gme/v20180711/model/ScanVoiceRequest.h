@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool BizIdHasBeenSet() const;
 
                     /**
-                     * 获取语音检测场景，参数值目前要求为 default。 预留场景设置： 谩骂、色情、涉政、广告、暴恐、违禁等场景，<a href="#Label_Value">具体取值见上述 Label 说明。</a>
-                     * @return Scenes 语音检测场景，参数值目前要求为 default。 预留场景设置： 谩骂、色情、涉政、广告、暴恐、违禁等场景，<a href="#Label_Value">具体取值见上述 Label 说明。</a>
+                     * 获取语音检测场景，参数值目前要求为 default。 预留场景设置： 谩骂、色情、广告、违禁等场景，<a href="#Label_Value">具体取值见上述 Label 说明。</a>
+                     * @return Scenes 语音检测场景，参数值目前要求为 default。 预留场景设置： 谩骂、色情、广告、违禁等场景，<a href="#Label_Value">具体取值见上述 Label 说明。</a>
                      */
                     std::vector<std::string> GetScenes() const;
 
                     /**
-                     * 设置语音检测场景，参数值目前要求为 default。 预留场景设置： 谩骂、色情、涉政、广告、暴恐、违禁等场景，<a href="#Label_Value">具体取值见上述 Label 说明。</a>
-                     * @param Scenes 语音检测场景，参数值目前要求为 default。 预留场景设置： 谩骂、色情、涉政、广告、暴恐、违禁等场景，<a href="#Label_Value">具体取值见上述 Label 说明。</a>
+                     * 设置语音检测场景，参数值目前要求为 default。 预留场景设置： 谩骂、色情、广告、违禁等场景，<a href="#Label_Value">具体取值见上述 Label 说明。</a>
+                     * @param Scenes 语音检测场景，参数值目前要求为 default。 预留场景设置： 谩骂、色情、广告、违禁等场景，<a href="#Label_Value">具体取值见上述 Label 说明。</a>
                      */
                     void SetScenes(const std::vector<std::string>& _scenes);
 
@@ -141,6 +141,24 @@ namespace TencentCloud
                      */
                     bool CallbackHasBeenSet() const;
 
+                    /**
+                     * 获取语言，目前jp代表日语
+                     * @return Lang 语言，目前jp代表日语
+                     */
+                    std::string GetLang() const;
+
+                    /**
+                     * 设置语言，目前jp代表日语
+                     * @param Lang 语言，目前jp代表日语
+                     */
+                    void SetLang(const std::string& _lang);
+
+                    /**
+                     * 判断参数 Lang 是否已赋值
+                     * @return Lang 是否已赋值
+                     */
+                    bool LangHasBeenSet() const;
+
                 private:
 
                     /**
@@ -150,7 +168,7 @@ namespace TencentCloud
                     bool m_bizIdHasBeenSet;
 
                     /**
-                     * 语音检测场景，参数值目前要求为 default。 预留场景设置： 谩骂、色情、涉政、广告、暴恐、违禁等场景，<a href="#Label_Value">具体取值见上述 Label 说明。</a>
+                     * 语音检测场景，参数值目前要求为 default。 预留场景设置： 谩骂、色情、广告、违禁等场景，<a href="#Label_Value">具体取值见上述 Label 说明。</a>
                      */
                     std::vector<std::string> m_scenes;
                     bool m_scenesHasBeenSet;
@@ -174,6 +192,12 @@ namespace TencentCloud
                      */
                     std::string m_callback;
                     bool m_callbackHasBeenSet;
+
+                    /**
+                     * 语言，目前jp代表日语
+                     */
+                    std::string m_lang;
+                    bool m_langHasBeenSet;
 
                 };
             }

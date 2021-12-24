@@ -30,7 +30,9 @@ SpecItemInfo::SpecItemInfo() :
     m_minStorageHasBeenSet(false),
     m_qpsHasBeenSet(false),
     m_pidHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_majorVersionHasBeenSet(false),
+    m_kernelVersionHasBeenSet(false)
 {
 }
 
@@ -139,6 +141,26 @@ CoreInternalOutcome SpecItemInfo::Deserialize(const rapidjson::Value &value)
         m_typeHasBeenSet = true;
     }
 
+    if (value.HasMember("MajorVersion") && !value["MajorVersion"].IsNull())
+    {
+        if (!value["MajorVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SpecItemInfo.MajorVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_majorVersion = string(value["MajorVersion"].GetString());
+        m_majorVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("KernelVersion") && !value["KernelVersion"].IsNull())
+    {
+        if (!value["KernelVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SpecItemInfo.KernelVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kernelVersion = string(value["KernelVersion"].GetString());
+        m_kernelVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +246,22 @@ void SpecItemInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_majorVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MajorVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_majorVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kernelVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KernelVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kernelVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +425,37 @@ void SpecItemInfo::SetType(const string& _type)
 bool SpecItemInfo::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+string SpecItemInfo::GetMajorVersion() const
+{
+    return m_majorVersion;
+}
+
+void SpecItemInfo::SetMajorVersion(const string& _majorVersion)
+{
+    m_majorVersion = _majorVersion;
+    m_majorVersionHasBeenSet = true;
+}
+
+bool SpecItemInfo::MajorVersionHasBeenSet() const
+{
+    return m_majorVersionHasBeenSet;
+}
+
+string SpecItemInfo::GetKernelVersion() const
+{
+    return m_kernelVersion;
+}
+
+void SpecItemInfo::SetKernelVersion(const string& _kernelVersion)
+{
+    m_kernelVersion = _kernelVersion;
+    m_kernelVersionHasBeenSet = true;
+}
+
+bool SpecItemInfo::KernelVersionHasBeenSet() const
+{
+    return m_kernelVersionHasBeenSet;
 }
 

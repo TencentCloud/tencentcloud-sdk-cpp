@@ -186,6 +186,24 @@ namespace TencentCloud
                      */
                     bool MicroserviceIdListHasBeenSet() const;
 
+                    /**
+                     * 获取搜索的服务名列表
+                     * @return MicroserviceNameList 搜索的服务名列表
+                     */
+                    std::vector<std::string> GetMicroserviceNameList() const;
+
+                    /**
+                     * 设置搜索的服务名列表
+                     * @param MicroserviceNameList 搜索的服务名列表
+                     */
+                    void SetMicroserviceNameList(const std::vector<std::string>& _microserviceNameList);
+
+                    /**
+                     * 判断参数 MicroserviceNameList 是否已赋值
+                     * @return MicroserviceNameList 是否已赋值
+                     */
+                    bool MicroserviceNameListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,6 +253,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_microserviceIdList;
                     bool m_microserviceIdListHasBeenSet;
+
+                    /**
+                     * 搜索的服务名列表
+                     */
+                    std::vector<std::string> m_microserviceNameList;
+                    bool m_microserviceNameListHasBeenSet;
 
                 };
             }

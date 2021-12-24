@@ -111,7 +111,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/DescribeAccountsResponse.h
   include/tencentcloud/cme/v20191029/model/MoveResourceResponse.h
   include/tencentcloud/cme/v20191029/model/MoveClassRequest.h
-  include/tencentcloud/cme/v20191029/model/TimeRange.h
+  include/tencentcloud/cme/v20191029/model/TextSlotInfo.h
   include/tencentcloud/cme/v20191029/model/DeleteTeamMembersResponse.h
   include/tencentcloud/cme/v20191029/model/MoveClassResponse.h
   include/tencentcloud/cme/v20191029/model/ImportMediaToProjectResponse.h
@@ -136,6 +136,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/VideoStreamInfo.h
   include/tencentcloud/cme/v20191029/model/AddTeamMemberRequest.h
   include/tencentcloud/cme/v20191029/model/GrantResourceAuthorizationRequest.h
+  include/tencentcloud/cme/v20191029/model/TimeRange.h
   include/tencentcloud/cme/v20191029/model/ThirdPartyPublishInfo.h
   include/tencentcloud/cme/v20191029/model/ListMediaRequest.h
   include/tencentcloud/cme/v20191029/model/HandleStreamConnectProjectResponse.h
@@ -291,7 +292,7 @@ set(cme_src
   src/v20191029/model/DescribeAccountsResponse.cpp
   src/v20191029/model/MoveResourceResponse.cpp
   src/v20191029/model/MoveClassRequest.cpp
-  src/v20191029/model/TimeRange.cpp
+  src/v20191029/model/TextSlotInfo.cpp
   src/v20191029/model/DeleteTeamMembersResponse.cpp
   src/v20191029/model/MoveClassResponse.cpp
   src/v20191029/model/ImportMediaToProjectResponse.cpp
@@ -316,6 +317,7 @@ set(cme_src
   src/v20191029/model/VideoStreamInfo.cpp
   src/v20191029/model/AddTeamMemberRequest.cpp
   src/v20191029/model/GrantResourceAuthorizationRequest.cpp
+  src/v20191029/model/TimeRange.cpp
   src/v20191029/model/ThirdPartyPublishInfo.cpp
   src/v20191029/model/ListMediaRequest.cpp
   src/v20191029/model/HandleStreamConnectProjectResponse.cpp

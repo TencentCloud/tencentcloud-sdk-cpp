@@ -235,8 +235,12 @@
 #include <tencentcloud/cdb/v20170320/model/RestartDBInstancesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/StartBatchRollbackRequest.h>
 #include <tencentcloud/cdb/v20170320/model/StartBatchRollbackResponse.h>
+#include <tencentcloud/cdb/v20170320/model/StartReplicationRequest.h>
+#include <tencentcloud/cdb/v20170320/model/StartReplicationResponse.h>
 #include <tencentcloud/cdb/v20170320/model/StopDBImportJobRequest.h>
 #include <tencentcloud/cdb/v20170320/model/StopDBImportJobResponse.h>
+#include <tencentcloud/cdb/v20170320/model/StopReplicationRequest.h>
+#include <tencentcloud/cdb/v20170320/model/StopReplicationResponse.h>
 #include <tencentcloud/cdb/v20170320/model/StopRollbackRequest.h>
 #include <tencentcloud/cdb/v20170320/model/StopRollbackResponse.h>
 #include <tencentcloud/cdb/v20170320/model/SwitchDBInstanceMasterSlaveRequest.h>
@@ -583,9 +587,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StartBatchRollbackResponse> StartBatchRollbackOutcome;
                 typedef std::future<StartBatchRollbackOutcome> StartBatchRollbackOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::StartBatchRollbackRequest&, StartBatchRollbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartBatchRollbackAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartReplicationResponse> StartReplicationOutcome;
+                typedef std::future<StartReplicationOutcome> StartReplicationOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::StartReplicationRequest&, StartReplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartReplicationAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopDBImportJobResponse> StopDBImportJobOutcome;
                 typedef std::future<StopDBImportJobOutcome> StopDBImportJobOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::StopDBImportJobRequest&, StopDBImportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopDBImportJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopReplicationResponse> StopReplicationOutcome;
+                typedef std::future<StopReplicationOutcome> StopReplicationOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::StopReplicationRequest&, StopReplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopReplicationAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopRollbackResponse> StopRollbackOutcome;
                 typedef std::future<StopRollbackOutcome> StopRollbackOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::StopRollbackRequest&, StopRollbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopRollbackAsyncHandler;
@@ -1605,6 +1615,15 @@ namespace TencentCloud
                 StartBatchRollbackOutcomeCallable StartBatchRollbackCallable(const Model::StartBatchRollbackRequest& request);
 
                 /**
+                 *开启 RO 复制，从主实例同步数据。
+                 * @param req StartReplicationRequest
+                 * @return StartReplicationOutcome
+                 */
+                StartReplicationOutcome StartReplication(const Model::StartReplicationRequest &request);
+                void StartReplicationAsync(const Model::StartReplicationRequest& request, const StartReplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartReplicationOutcomeCallable StartReplicationCallable(const Model::StartReplicationRequest& request);
+
+                /**
                  *本接口(StopDBImportJob)用于终止数据导入任务。
                  * @param req StopDBImportJobRequest
                  * @return StopDBImportJobOutcome
@@ -1612,6 +1631,15 @@ namespace TencentCloud
                 StopDBImportJobOutcome StopDBImportJob(const Model::StopDBImportJobRequest &request);
                 void StopDBImportJobAsync(const Model::StopDBImportJobRequest& request, const StopDBImportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopDBImportJobOutcomeCallable StopDBImportJobCallable(const Model::StopDBImportJobRequest& request);
+
+                /**
+                 *停止 RO 复制，中断从主实例同步数据。
+                 * @param req StopReplicationRequest
+                 * @return StopReplicationOutcome
+                 */
+                StopReplicationOutcome StopReplication(const Model::StopReplicationRequest &request);
+                void StopReplicationAsync(const Model::StopReplicationRequest& request, const StopReplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopReplicationOutcomeCallable StopReplicationCallable(const Model::StopReplicationRequest& request);
 
                 /**
                  *本接口(StopRollback) 用于撤销实例正在进行的回档任务，该接口返回一个异步任务id。 撤销结果可以通过 DescribeAsyncRequestInfo 查询任务的执行情况。

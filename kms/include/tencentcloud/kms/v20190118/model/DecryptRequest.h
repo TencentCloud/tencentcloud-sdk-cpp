@@ -78,6 +78,42 @@ namespace TencentCloud
                      */
                     bool EncryptionContextHasBeenSet() const;
 
+                    /**
+                     * 获取PEM 格式公钥字符串，支持 RSA2048 和 SM2 公钥，用于对返回数据中的 Plaintext 值进行加密。若为空，则不对 Plaintext 值加密。
+                     * @return EncryptionPublicKey PEM 格式公钥字符串，支持 RSA2048 和 SM2 公钥，用于对返回数据中的 Plaintext 值进行加密。若为空，则不对 Plaintext 值加密。
+                     */
+                    std::string GetEncryptionPublicKey() const;
+
+                    /**
+                     * 设置PEM 格式公钥字符串，支持 RSA2048 和 SM2 公钥，用于对返回数据中的 Plaintext 值进行加密。若为空，则不对 Plaintext 值加密。
+                     * @param EncryptionPublicKey PEM 格式公钥字符串，支持 RSA2048 和 SM2 公钥，用于对返回数据中的 Plaintext 值进行加密。若为空，则不对 Plaintext 值加密。
+                     */
+                    void SetEncryptionPublicKey(const std::string& _encryptionPublicKey);
+
+                    /**
+                     * 判断参数 EncryptionPublicKey 是否已赋值
+                     * @return EncryptionPublicKey 是否已赋值
+                     */
+                    bool EncryptionPublicKeyHasBeenSet() const;
+
+                    /**
+                     * 获取非对称加密算法，配合 EncryptionPublicKey 对返回数据进行加密。目前支持：SM2（C1C3C2），RSAES_PKCS1_V1_5，RSAES_OAEP_SHA_1，RSAES_OAEP_SHA_256。若为空，则默认为 SM2。
+                     * @return EncryptionAlgorithm 非对称加密算法，配合 EncryptionPublicKey 对返回数据进行加密。目前支持：SM2（C1C3C2），RSAES_PKCS1_V1_5，RSAES_OAEP_SHA_1，RSAES_OAEP_SHA_256。若为空，则默认为 SM2。
+                     */
+                    std::string GetEncryptionAlgorithm() const;
+
+                    /**
+                     * 设置非对称加密算法，配合 EncryptionPublicKey 对返回数据进行加密。目前支持：SM2（C1C3C2），RSAES_PKCS1_V1_5，RSAES_OAEP_SHA_1，RSAES_OAEP_SHA_256。若为空，则默认为 SM2。
+                     * @param EncryptionAlgorithm 非对称加密算法，配合 EncryptionPublicKey 对返回数据进行加密。目前支持：SM2（C1C3C2），RSAES_PKCS1_V1_5，RSAES_OAEP_SHA_1，RSAES_OAEP_SHA_256。若为空，则默认为 SM2。
+                     */
+                    void SetEncryptionAlgorithm(const std::string& _encryptionAlgorithm);
+
+                    /**
+                     * 判断参数 EncryptionAlgorithm 是否已赋值
+                     * @return EncryptionAlgorithm 是否已赋值
+                     */
+                    bool EncryptionAlgorithmHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +127,18 @@ namespace TencentCloud
                      */
                     std::string m_encryptionContext;
                     bool m_encryptionContextHasBeenSet;
+
+                    /**
+                     * PEM 格式公钥字符串，支持 RSA2048 和 SM2 公钥，用于对返回数据中的 Plaintext 值进行加密。若为空，则不对 Plaintext 值加密。
+                     */
+                    std::string m_encryptionPublicKey;
+                    bool m_encryptionPublicKeyHasBeenSet;
+
+                    /**
+                     * 非对称加密算法，配合 EncryptionPublicKey 对返回数据进行加密。目前支持：SM2（C1C3C2），RSAES_PKCS1_V1_5，RSAES_OAEP_SHA_1，RSAES_OAEP_SHA_256。若为空，则默认为 SM2。
+                     */
+                    std::string m_encryptionAlgorithm;
+                    bool m_encryptionAlgorithmHasBeenSet;
 
                 };
             }

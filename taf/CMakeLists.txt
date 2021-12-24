@@ -31,6 +31,7 @@ set(taf_public_header_model
   include/tencentcloud/taf/v20200210/model/OutputKolValue.h
   include/tencentcloud/taf/v20200210/model/EnhanceTaDegreeResponse.h
   include/tencentcloud/taf/v20200210/model/InputTaBspData.h
+  include/tencentcloud/taf/v20200210/model/Device.h
   include/tencentcloud/taf/v20200210/model/OutputSendTrafficSecuritySmsMsg.h
   include/tencentcloud/taf/v20200210/model/RecognizeEffectiveFlowResponse.h
   include/tencentcloud/taf/v20200210/model/SendTrafficSecuritySmsMessageResponse.h
@@ -65,6 +66,7 @@ set(taf_src
   src/v20200210/model/OutputKolValue.cpp
   src/v20200210/model/EnhanceTaDegreeResponse.cpp
   src/v20200210/model/InputTaBspData.cpp
+  src/v20200210/model/Device.cpp
   src/v20200210/model/OutputSendTrafficSecuritySmsMsg.cpp
   src/v20200210/model/RecognizeEffectiveFlowResponse.cpp
   src/v20200210/model/SendTrafficSecuritySmsMessageResponse.cpp

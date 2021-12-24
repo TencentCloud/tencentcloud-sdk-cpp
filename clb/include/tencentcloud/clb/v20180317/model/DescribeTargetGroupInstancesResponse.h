@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取本次查询的结果数量
-                     * @return TotalCount 本次查询的结果数量
+                     * 获取本次查询的结果数量。
+                     * @return TotalCount 本次查询的结果数量。
                      */
                     uint64_t GetTotalCount() const;
 
@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取绑定的服务器信息
-                     * @return TargetGroupInstanceSet 绑定的服务器信息
+                     * 获取绑定的服务器信息。
+                     * @return TargetGroupInstanceSet 绑定的服务器信息。
                      */
                     std::vector<TargetGroupBackend> GetTargetGroupInstanceSet() const;
 
@@ -69,8 +69,8 @@ namespace TencentCloud
                     bool TargetGroupInstanceSetHasBeenSet() const;
 
                     /**
-                     * 获取实际统计数量，不受Limit，Offset，CAM的影响
-                     * @return RealCount 实际统计数量，不受Limit，Offset，CAM的影响
+                     * 获取实际统计数量，不受Limit、Offset、CAM的影响。
+                     * @return RealCount 实际统计数量，不受Limit、Offset、CAM的影响。
                      */
                     uint64_t GetRealCount() const;
 
@@ -83,19 +83,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 本次查询的结果数量
+                     * 本次查询的结果数量。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 绑定的服务器信息
+                     * 绑定的服务器信息。
                      */
                     std::vector<TargetGroupBackend> m_targetGroupInstanceSet;
                     bool m_targetGroupInstanceSetHasBeenSet;
 
                     /**
-                     * 实际统计数量，不受Limit，Offset，CAM的影响
+                     * 实际统计数量，不受Limit、Offset、CAM的影响。
                      */
                     uint64_t m_realCount;
                     bool m_realCountHasBeenSet;

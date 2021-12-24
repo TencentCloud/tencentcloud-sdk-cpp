@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cme/v20191029/model/TextSlotInfo.h>
 
 
 namespace TencentCloud
@@ -65,26 +66,30 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取素材类型，同素材素材，可取值有：
-<li> AUDIO :音频;</li>
-<li> VIDEO :视频;</li>
-<li> IMAGE :图片。</li>
-                     * @return Type 素材类型，同素材素材，可取值有：
-<li> AUDIO :音频;</li>
-<li> VIDEO :视频;</li>
-<li> IMAGE :图片。</li>
+                     * 获取卡槽类型，可取值有：
+<li> AUDIO：音频卡槽，可替换素材类型为 AUDIO 的音频素材;</li>
+<li> VIDEO：视频卡槽，可替换素材类型为 VIDEO 的视频素材;</li>
+<li> IMAGE：图片卡槽，可替换素材类型为 IMAGE 的图片素材;</li>
+<li> TEXT：文本卡槽，可替换文本内容。</li>
+                     * @return Type 卡槽类型，可取值有：
+<li> AUDIO：音频卡槽，可替换素材类型为 AUDIO 的音频素材;</li>
+<li> VIDEO：视频卡槽，可替换素材类型为 VIDEO 的视频素材;</li>
+<li> IMAGE：图片卡槽，可替换素材类型为 IMAGE 的图片素材;</li>
+<li> TEXT：文本卡槽，可替换文本内容。</li>
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置素材类型，同素材素材，可取值有：
-<li> AUDIO :音频;</li>
-<li> VIDEO :视频;</li>
-<li> IMAGE :图片。</li>
-                     * @param Type 素材类型，同素材素材，可取值有：
-<li> AUDIO :音频;</li>
-<li> VIDEO :视频;</li>
-<li> IMAGE :图片。</li>
+                     * 设置卡槽类型，可取值有：
+<li> AUDIO：音频卡槽，可替换素材类型为 AUDIO 的音频素材;</li>
+<li> VIDEO：视频卡槽，可替换素材类型为 VIDEO 的视频素材;</li>
+<li> IMAGE：图片卡槽，可替换素材类型为 IMAGE 的图片素材;</li>
+<li> TEXT：文本卡槽，可替换文本内容。</li>
+                     * @param Type 卡槽类型，可取值有：
+<li> AUDIO：音频卡槽，可替换素材类型为 AUDIO 的音频素材;</li>
+<li> VIDEO：视频卡槽，可替换素材类型为 VIDEO 的视频素材;</li>
+<li> IMAGE：图片卡槽，可替换素材类型为 IMAGE 的图片素材;</li>
+<li> TEXT：文本卡槽，可替换文本内容。</li>
                      */
                     void SetType(const std::string& _type);
 
@@ -95,14 +100,14 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取默认素材 Id。
-                     * @return DefaultMaterialId 默认素材 Id。
+                     * 获取默认素材ID。当卡槽类型为 AUDIO，VIDEO，或 IMAGE 中的一种时有效。
+                     * @return DefaultMaterialId 默认素材ID。当卡槽类型为 AUDIO，VIDEO，或 IMAGE 中的一种时有效。
                      */
                     std::string GetDefaultMaterialId() const;
 
                     /**
-                     * 设置默认素材 Id。
-                     * @param DefaultMaterialId 默认素材 Id。
+                     * 设置默认素材ID。当卡槽类型为 AUDIO，VIDEO，或 IMAGE 中的一种时有效。
+                     * @param DefaultMaterialId 默认素材ID。当卡槽类型为 AUDIO，VIDEO，或 IMAGE 中的一种时有效。
                      */
                     void SetDefaultMaterialId(const std::string& _defaultMaterialId);
 
@@ -111,6 +116,28 @@ namespace TencentCloud
                      * @return DefaultMaterialId 是否已赋值
                      */
                     bool DefaultMaterialIdHasBeenSet() const;
+
+                    /**
+                     * 获取默认文本卡槽信息。当卡槽类型为 TEXT 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DefaultTextSlotInfo 默认文本卡槽信息。当卡槽类型为 TEXT 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TextSlotInfo GetDefaultTextSlotInfo() const;
+
+                    /**
+                     * 设置默认文本卡槽信息。当卡槽类型为 TEXT 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DefaultTextSlotInfo 默认文本卡槽信息。当卡槽类型为 TEXT 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDefaultTextSlotInfo(const TextSlotInfo& _defaultTextSlotInfo);
+
+                    /**
+                     * 判断参数 DefaultTextSlotInfo 是否已赋值
+                     * @return DefaultTextSlotInfo 是否已赋值
+                     */
+                    bool DefaultTextSlotInfoHasBeenSet() const;
 
                     /**
                      * 获取素材时长，单位秒。
@@ -139,19 +166,27 @@ namespace TencentCloud
                     bool m_idHasBeenSet;
 
                     /**
-                     * 素材类型，同素材素材，可取值有：
-<li> AUDIO :音频;</li>
-<li> VIDEO :视频;</li>
-<li> IMAGE :图片。</li>
+                     * 卡槽类型，可取值有：
+<li> AUDIO：音频卡槽，可替换素材类型为 AUDIO 的音频素材;</li>
+<li> VIDEO：视频卡槽，可替换素材类型为 VIDEO 的视频素材;</li>
+<li> IMAGE：图片卡槽，可替换素材类型为 IMAGE 的图片素材;</li>
+<li> TEXT：文本卡槽，可替换文本内容。</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 默认素材 Id。
+                     * 默认素材ID。当卡槽类型为 AUDIO，VIDEO，或 IMAGE 中的一种时有效。
                      */
                     std::string m_defaultMaterialId;
                     bool m_defaultMaterialIdHasBeenSet;
+
+                    /**
+                     * 默认文本卡槽信息。当卡槽类型为 TEXT 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TextSlotInfo m_defaultTextSlotInfo;
+                    bool m_defaultTextSlotInfoHasBeenSet;
 
                     /**
                      * 素材时长，单位秒。

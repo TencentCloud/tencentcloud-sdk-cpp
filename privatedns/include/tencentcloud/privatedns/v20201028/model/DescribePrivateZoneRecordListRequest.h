@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取过滤参数
-                     * @return Filters 过滤参数
+                     * 获取过滤参数（支持使用Value、RecordType过滤）
+                     * @return Filters 过滤参数（支持使用Value、RecordType过滤）
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤参数
-                     * @param Filters 过滤参数
+                     * 设置过滤参数（支持使用Value、RecordType过滤）
+                     * @param Filters 过滤参数（支持使用Value、RecordType过滤）
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -124,7 +124,7 @@ namespace TencentCloud
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 过滤参数
+                     * 过滤参数（支持使用Value、RecordType过滤）
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

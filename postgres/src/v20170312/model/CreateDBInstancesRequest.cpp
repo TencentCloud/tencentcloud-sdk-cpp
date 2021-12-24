@@ -24,12 +24,12 @@ using namespace std;
 
 CreateDBInstancesRequest::CreateDBInstancesRequest() :
     m_specCodeHasBeenSet(false),
-    m_dBVersionHasBeenSet(false),
     m_storageHasBeenSet(false),
     m_instanceCountHasBeenSet(false),
     m_periodHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_projectIdHasBeenSet(false),
+    m_dBVersionHasBeenSet(false),
     m_instanceChargeTypeHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
     m_voucherIdsHasBeenSet(false),
@@ -40,7 +40,9 @@ CreateDBInstancesRequest::CreateDBInstancesRequest() :
     m_nameHasBeenSet(false),
     m_needSupportIpv6HasBeenSet(false),
     m_tagListHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
+    m_securityGroupIdsHasBeenSet(false),
+    m_dBMajorVersionHasBeenSet(false),
+    m_dBKernelVersionHasBeenSet(false)
 {
 }
 
@@ -57,14 +59,6 @@ string CreateDBInstancesRequest::ToJsonString() const
         string key = "SpecCode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_specCode.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_dBVersionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DBVersion";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_dBVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_storageHasBeenSet)
@@ -105,6 +99,14 @@ string CreateDBInstancesRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_dBVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DBVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dBVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceChargeTypeHasBeenSet)
@@ -212,6 +214,22 @@ string CreateDBInstancesRequest::ToJsonString() const
         }
     }
 
+    if (m_dBMajorVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DBMajorVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dBMajorVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dBKernelVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DBKernelVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dBKernelVersion.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -234,22 +252,6 @@ void CreateDBInstancesRequest::SetSpecCode(const string& _specCode)
 bool CreateDBInstancesRequest::SpecCodeHasBeenSet() const
 {
     return m_specCodeHasBeenSet;
-}
-
-string CreateDBInstancesRequest::GetDBVersion() const
-{
-    return m_dBVersion;
-}
-
-void CreateDBInstancesRequest::SetDBVersion(const string& _dBVersion)
-{
-    m_dBVersion = _dBVersion;
-    m_dBVersionHasBeenSet = true;
-}
-
-bool CreateDBInstancesRequest::DBVersionHasBeenSet() const
-{
-    return m_dBVersionHasBeenSet;
 }
 
 uint64_t CreateDBInstancesRequest::GetStorage() const
@@ -330,6 +332,22 @@ void CreateDBInstancesRequest::SetProjectId(const int64_t& _projectId)
 bool CreateDBInstancesRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+string CreateDBInstancesRequest::GetDBVersion() const
+{
+    return m_dBVersion;
+}
+
+void CreateDBInstancesRequest::SetDBVersion(const string& _dBVersion)
+{
+    m_dBVersion = _dBVersion;
+    m_dBVersionHasBeenSet = true;
+}
+
+bool CreateDBInstancesRequest::DBVersionHasBeenSet() const
+{
+    return m_dBVersionHasBeenSet;
 }
 
 string CreateDBInstancesRequest::GetInstanceChargeType() const
@@ -506,6 +524,38 @@ void CreateDBInstancesRequest::SetSecurityGroupIds(const vector<string>& _securi
 bool CreateDBInstancesRequest::SecurityGroupIdsHasBeenSet() const
 {
     return m_securityGroupIdsHasBeenSet;
+}
+
+string CreateDBInstancesRequest::GetDBMajorVersion() const
+{
+    return m_dBMajorVersion;
+}
+
+void CreateDBInstancesRequest::SetDBMajorVersion(const string& _dBMajorVersion)
+{
+    m_dBMajorVersion = _dBMajorVersion;
+    m_dBMajorVersionHasBeenSet = true;
+}
+
+bool CreateDBInstancesRequest::DBMajorVersionHasBeenSet() const
+{
+    return m_dBMajorVersionHasBeenSet;
+}
+
+string CreateDBInstancesRequest::GetDBKernelVersion() const
+{
+    return m_dBKernelVersion;
+}
+
+void CreateDBInstancesRequest::SetDBKernelVersion(const string& _dBKernelVersion)
+{
+    m_dBKernelVersion = _dBKernelVersion;
+    m_dBKernelVersionHasBeenSet = true;
+}
+
+bool CreateDBInstancesRequest::DBKernelVersionHasBeenSet() const
+{
+    return m_dBKernelVersionHasBeenSet;
 }
 
 

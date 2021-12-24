@@ -59,6 +59,8 @@
 #include <tencentcloud/tem/v20210701/model/ModifyEnvironmentResponse.h>
 #include <tencentcloud/tem/v20210701/model/ModifyIngressRequest.h>
 #include <tencentcloud/tem/v20210701/model/ModifyIngressResponse.h>
+#include <tencentcloud/tem/v20210701/model/RestartApplicationRequest.h>
+#include <tencentcloud/tem/v20210701/model/RestartApplicationResponse.h>
 #include <tencentcloud/tem/v20210701/model/RestartApplicationPodRequest.h>
 #include <tencentcloud/tem/v20210701/model/RestartApplicationPodResponse.h>
 #include <tencentcloud/tem/v20210701/model/ResumeDeployApplicationRequest.h>
@@ -67,6 +69,8 @@
 #include <tencentcloud/tem/v20210701/model/RevertDeployApplicationResponse.h>
 #include <tencentcloud/tem/v20210701/model/RollingUpdateApplicationByVersionRequest.h>
 #include <tencentcloud/tem/v20210701/model/RollingUpdateApplicationByVersionResponse.h>
+#include <tencentcloud/tem/v20210701/model/StopApplicationRequest.h>
+#include <tencentcloud/tem/v20210701/model/StopApplicationResponse.h>
 
 
 namespace TencentCloud
@@ -135,6 +139,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyIngressResponse> ModifyIngressOutcome;
                 typedef std::future<ModifyIngressOutcome> ModifyIngressOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::ModifyIngressRequest&, ModifyIngressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIngressAsyncHandler;
+                typedef Outcome<Core::Error, Model::RestartApplicationResponse> RestartApplicationOutcome;
+                typedef std::future<RestartApplicationOutcome> RestartApplicationOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::RestartApplicationRequest&, RestartApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartApplicationAsyncHandler;
                 typedef Outcome<Core::Error, Model::RestartApplicationPodResponse> RestartApplicationPodOutcome;
                 typedef std::future<RestartApplicationPodOutcome> RestartApplicationPodOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::RestartApplicationPodRequest&, RestartApplicationPodOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartApplicationPodAsyncHandler;
@@ -147,6 +154,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RollingUpdateApplicationByVersionResponse> RollingUpdateApplicationByVersionOutcome;
                 typedef std::future<RollingUpdateApplicationByVersionOutcome> RollingUpdateApplicationByVersionOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::RollingUpdateApplicationByVersionRequest&, RollingUpdateApplicationByVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RollingUpdateApplicationByVersionAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopApplicationResponse> StopApplicationOutcome;
+                typedef std::future<StopApplicationOutcome> StopApplicationOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::StopApplicationRequest&, StopApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopApplicationAsyncHandler;
 
 
 
@@ -316,6 +326,15 @@ namespace TencentCloud
                 ModifyIngressOutcomeCallable ModifyIngressCallable(const Model::ModifyIngressRequest& request);
 
                 /**
+                 *服务重启
+                 * @param req RestartApplicationRequest
+                 * @return RestartApplicationOutcome
+                 */
+                RestartApplicationOutcome RestartApplication(const Model::RestartApplicationRequest &request);
+                void RestartApplicationAsync(const Model::RestartApplicationRequest& request, const RestartApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RestartApplicationOutcomeCallable RestartApplicationCallable(const Model::RestartApplicationRequest& request);
+
+                /**
                  *重启应用实例
                  * @param req RestartApplicationPodRequest
                  * @return RestartApplicationPodOutcome
@@ -350,6 +369,15 @@ namespace TencentCloud
                 RollingUpdateApplicationByVersionOutcome RollingUpdateApplicationByVersion(const Model::RollingUpdateApplicationByVersionRequest &request);
                 void RollingUpdateApplicationByVersionAsync(const Model::RollingUpdateApplicationByVersionRequest& request, const RollingUpdateApplicationByVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RollingUpdateApplicationByVersionOutcomeCallable RollingUpdateApplicationByVersionCallable(const Model::RollingUpdateApplicationByVersionRequest& request);
+
+                /**
+                 *服务停止
+                 * @param req StopApplicationRequest
+                 * @return StopApplicationOutcome
+                 */
+                StopApplicationOutcome StopApplication(const Model::StopApplicationRequest &request);
+                void StopApplicationAsync(const Model::StopApplicationRequest& request, const StopApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopApplicationOutcomeCallable StopApplicationCallable(const Model::StopApplicationRequest& request);
 
             };
         }

@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool SpecCodeHasBeenSet() const;
 
                     /**
-                     * 获取PostgreSQL的内核版本编号
-                     * @return Version PostgreSQL的内核版本编号
+                     * 获取PostgreSQL的版本编号
+                     * @return Version PostgreSQL的版本编号
                      */
                     std::string GetVersion() const;
 
                     /**
-                     * 设置PostgreSQL的内核版本编号
-                     * @param Version PostgreSQL的内核版本编号
+                     * 设置PostgreSQL的版本编号
+                     * @param Version PostgreSQL的版本编号
                      */
                     void SetVersion(const std::string& _version);
 
@@ -226,6 +226,50 @@ namespace TencentCloud
                      */
                     bool TypeHasBeenSet() const;
 
+                    /**
+                     * 获取PostgreSQL的主要版本编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MajorVersion PostgreSQL的主要版本编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMajorVersion() const;
+
+                    /**
+                     * 设置PostgreSQL的主要版本编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MajorVersion PostgreSQL的主要版本编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMajorVersion(const std::string& _majorVersion);
+
+                    /**
+                     * 判断参数 MajorVersion 是否已赋值
+                     * @return MajorVersion 是否已赋值
+                     */
+                    bool MajorVersionHasBeenSet() const;
+
+                    /**
+                     * 获取PostgreSQL的内核版本编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KernelVersion PostgreSQL的内核版本编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetKernelVersion() const;
+
+                    /**
+                     * 设置PostgreSQL的内核版本编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param KernelVersion PostgreSQL的内核版本编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetKernelVersion(const std::string& _kernelVersion);
+
+                    /**
+                     * 判断参数 KernelVersion 是否已赋值
+                     * @return KernelVersion 是否已赋值
+                     */
+                    bool KernelVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,7 +279,7 @@ namespace TencentCloud
                     bool m_specCodeHasBeenSet;
 
                     /**
-                     * PostgreSQL的内核版本编号
+                     * PostgreSQL的版本编号
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
@@ -287,6 +331,20 @@ namespace TencentCloud
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * PostgreSQL的主要版本编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_majorVersion;
+                    bool m_majorVersionHasBeenSet;
+
+                    /**
+                     * PostgreSQL的内核版本编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_kernelVersion;
+                    bool m_kernelVersionHasBeenSet;
 
                 };
             }

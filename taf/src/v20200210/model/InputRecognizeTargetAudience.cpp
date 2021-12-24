@@ -59,7 +59,8 @@ InputRecognizeTargetAudience::InputRecognizeTargetAudience() :
     m_appNameHasBeenSet(false),
     m_appVerHasBeenSet(false),
     m_reqTypeHasBeenSet(false),
-    m_isAuthorizedHasBeenSet(false)
+    m_isAuthorizedHasBeenSet(false),
+    m_deviceListHasBeenSet(false)
 {
 }
 
@@ -461,6 +462,26 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
         m_isAuthorizedHasBeenSet = true;
     }
 
+    if (value.HasMember("DeviceList") && !value["DeviceList"].IsNull())
+    {
+        if (!value["DeviceList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.DeviceList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DeviceList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Device item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_deviceList.push_back(item);
+        }
+        m_deviceListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -783,6 +804,21 @@ void InputRecognizeTargetAudience::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "IsAuthorized";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isAuthorized, allocator);
+    }
+
+    if (m_deviceListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_deviceList.begin(); itr != m_deviceList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1410,5 +1446,21 @@ void InputRecognizeTargetAudience::SetIsAuthorized(const uint64_t& _isAuthorized
 bool InputRecognizeTargetAudience::IsAuthorizedHasBeenSet() const
 {
     return m_isAuthorizedHasBeenSet;
+}
+
+vector<Device> InputRecognizeTargetAudience::GetDeviceList() const
+{
+    return m_deviceList;
+}
+
+void InputRecognizeTargetAudience::SetDeviceList(const vector<Device>& _deviceList)
+{
+    m_deviceList = _deviceList;
+    m_deviceListHasBeenSet = true;
+}
+
+bool InputRecognizeTargetAudience::DeviceListHasBeenSet() const
+{
+    return m_deviceListHasBeenSet;
 }
 

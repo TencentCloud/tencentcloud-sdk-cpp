@@ -33,6 +33,8 @@
 #include <tencentcloud/es/v20180416/model/DescribeInstanceOperationsResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeInstancesRequest.h>
 #include <tencentcloud/es/v20180416/model/DescribeInstancesResponse.h>
+#include <tencentcloud/es/v20180416/model/DescribeViewsRequest.h>
+#include <tencentcloud/es/v20180416/model/DescribeViewsResponse.h>
 #include <tencentcloud/es/v20180416/model/DiagnoseInstanceRequest.h>
 #include <tencentcloud/es/v20180416/model/DiagnoseInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/GetRequestTargetNodeTypesRequest.h>
@@ -86,6 +88,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
                 typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeViewsResponse> DescribeViewsOutcome;
+                typedef std::future<DescribeViewsOutcome> DescribeViewsOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DescribeViewsRequest&, DescribeViewsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeViewsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DiagnoseInstanceResponse> DiagnoseInstanceOutcome;
                 typedef std::future<DiagnoseInstanceOutcome> DiagnoseInstanceOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DiagnoseInstanceRequest&, DiagnoseInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DiagnoseInstanceAsyncHandler;
@@ -169,6 +174,15 @@ namespace TencentCloud
                 DescribeInstancesOutcome DescribeInstances(const Model::DescribeInstancesRequest &request);
                 void DescribeInstancesAsync(const Model::DescribeInstancesRequest& request, const DescribeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request);
+
+                /**
+                 *查询集群各视图数据，包括集群维度、节点维度、Kibana维度
+                 * @param req DescribeViewsRequest
+                 * @return DescribeViewsOutcome
+                 */
+                DescribeViewsOutcome DescribeViews(const Model::DescribeViewsRequest &request);
+                void DescribeViewsAsync(const Model::DescribeViewsRequest& request, const DescribeViewsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeViewsOutcomeCallable DescribeViewsCallable(const Model::DescribeViewsRequest& request);
 
                 /**
                  *智能运维诊断集群

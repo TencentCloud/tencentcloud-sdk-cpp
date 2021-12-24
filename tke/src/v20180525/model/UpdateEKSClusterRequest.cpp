@@ -32,7 +32,8 @@ UpdateEKSClusterRequest::UpdateEKSClusterRequest() :
     m_serviceSubnetIdHasBeenSet(false),
     m_dnsServersHasBeenSet(false),
     m_clearDnsServerHasBeenSet(false),
-    m_needDeleteCbsHasBeenSet(false)
+    m_needDeleteCbsHasBeenSet(false),
+    m_proxyLBHasBeenSet(false)
 {
 }
 
@@ -135,6 +136,14 @@ string UpdateEKSClusterRequest::ToJsonString() const
         string key = "NeedDeleteCbs";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needDeleteCbs, allocator);
+    }
+
+    if (m_proxyLBHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyLB";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_proxyLB, allocator);
     }
 
 
@@ -303,6 +312,22 @@ void UpdateEKSClusterRequest::SetNeedDeleteCbs(const bool& _needDeleteCbs)
 bool UpdateEKSClusterRequest::NeedDeleteCbsHasBeenSet() const
 {
     return m_needDeleteCbsHasBeenSet;
+}
+
+bool UpdateEKSClusterRequest::GetProxyLB() const
+{
+    return m_proxyLB;
+}
+
+void UpdateEKSClusterRequest::SetProxyLB(const bool& _proxyLB)
+{
+    m_proxyLB = _proxyLB;
+    m_proxyLBHasBeenSet = true;
+}
+
+bool UpdateEKSClusterRequest::ProxyLBHasBeenSet() const
+{
+    return m_proxyLBHasBeenSet;
 }
 
 

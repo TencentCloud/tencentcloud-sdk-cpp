@@ -169,6 +169,49 @@ EssbasicClient::CreateSignUrlsOutcomeCallable EssbasicClient::CreateSignUrlsCall
     return task->get_future();
 }
 
+EssbasicClient::DescribeFlowDetailInfoOutcome EssbasicClient::DescribeFlowDetailInfo(const DescribeFlowDetailInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFlowDetailInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFlowDetailInfoResponse rsp = DescribeFlowDetailInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFlowDetailInfoOutcome(rsp);
+        else
+            return DescribeFlowDetailInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFlowDetailInfoOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::DescribeFlowDetailInfoAsync(const DescribeFlowDetailInfoRequest& request, const DescribeFlowDetailInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFlowDetailInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::DescribeFlowDetailInfoOutcomeCallable EssbasicClient::DescribeFlowDetailInfoCallable(const DescribeFlowDetailInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFlowDetailInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFlowDetailInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::DescribeResourceUrlsByFlowsOutcome EssbasicClient::DescribeResourceUrlsByFlows(const DescribeResourceUrlsByFlowsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeResourceUrlsByFlows");

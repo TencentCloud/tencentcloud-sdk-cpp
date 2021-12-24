@@ -30,7 +30,8 @@ DescribeMicroservicesRequest::DescribeMicroservicesRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_microserviceIdListHasBeenSet(false)
+    m_microserviceIdListHasBeenSet(false),
+    m_microserviceNameListHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,19 @@ string DescribeMicroservicesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_microserviceIdList.begin(); itr != m_microserviceIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_microserviceNameListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MicroserviceNameList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_microserviceNameList.begin(); itr != m_microserviceNameList.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -249,6 +263,22 @@ void DescribeMicroservicesRequest::SetMicroserviceIdList(const vector<string>& _
 bool DescribeMicroservicesRequest::MicroserviceIdListHasBeenSet() const
 {
     return m_microserviceIdListHasBeenSet;
+}
+
+vector<string> DescribeMicroservicesRequest::GetMicroserviceNameList() const
+{
+    return m_microserviceNameList;
+}
+
+void DescribeMicroservicesRequest::SetMicroserviceNameList(const vector<string>& _microserviceNameList)
+{
+    m_microserviceNameList = _microserviceNameList;
+    m_microserviceNameListHasBeenSet = true;
+}
+
+bool DescribeMicroservicesRequest::MicroserviceNameListHasBeenSet() const
+{
+    return m_microserviceNameListHasBeenSet;
 }
 
 

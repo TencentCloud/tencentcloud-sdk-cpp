@@ -29,6 +29,8 @@
 #include <tencentcloud/essbasic/v20210526/model/CreateFlowsByTemplatesResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateSignUrlsRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateSignUrlsResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/DescribeFlowDetailInfoRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/DescribeFlowDetailInfoResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeResourceUrlsByFlowsRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeResourceUrlsByFlowsResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeTemplatesRequest.h>
@@ -68,6 +70,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSignUrlsResponse> CreateSignUrlsOutcome;
                 typedef std::future<CreateSignUrlsOutcome> CreateSignUrlsOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::CreateSignUrlsRequest&, CreateSignUrlsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSignUrlsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFlowDetailInfoResponse> DescribeFlowDetailInfoOutcome;
+                typedef std::future<DescribeFlowDetailInfoOutcome> DescribeFlowDetailInfoOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::DescribeFlowDetailInfoRequest&, DescribeFlowDetailInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowDetailInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeResourceUrlsByFlowsResponse> DescribeResourceUrlsByFlowsOutcome;
                 typedef std::future<DescribeResourceUrlsByFlowsOutcome> DescribeResourceUrlsByFlowsOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::DescribeResourceUrlsByFlowsRequest&, DescribeResourceUrlsByFlowsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceUrlsByFlowsAsyncHandler;
@@ -122,6 +127,15 @@ namespace TencentCloud
                 CreateSignUrlsOutcome CreateSignUrls(const Model::CreateSignUrlsRequest &request);
                 void CreateSignUrlsAsync(const Model::CreateSignUrlsRequest& request, const CreateSignUrlsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSignUrlsOutcomeCallable CreateSignUrlsCallable(const Model::CreateSignUrlsRequest& request);
+
+                /**
+                 *此接口（DescribeFlowDetailInfo）用于查询合同(流程)的详细信息。
+                 * @param req DescribeFlowDetailInfoRequest
+                 * @return DescribeFlowDetailInfoOutcome
+                 */
+                DescribeFlowDetailInfoOutcome DescribeFlowDetailInfo(const Model::DescribeFlowDetailInfoRequest &request);
+                void DescribeFlowDetailInfoAsync(const Model::DescribeFlowDetailInfoRequest& request, const DescribeFlowDetailInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFlowDetailInfoOutcomeCallable DescribeFlowDetailInfoCallable(const Model::DescribeFlowDetailInfoRequest& request);
 
                 /**
                  *根据流程信息批量获取资源下载链接

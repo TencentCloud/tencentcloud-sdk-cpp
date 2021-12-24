@@ -27,7 +27,8 @@ DescribeEKSClusterCredentialResponse::DescribeEKSClusterCredentialResponse() :
     m_addressesHasBeenSet(false),
     m_credentialHasBeenSet(false),
     m_publicLBHasBeenSet(false),
-    m_internalLBHasBeenSet(false)
+    m_internalLBHasBeenSet(false),
+    m_proxyLBHasBeenSet(false)
 {
 }
 
@@ -136,6 +137,16 @@ CoreInternalOutcome DescribeEKSClusterCredentialResponse::Deserialize(const stri
         m_internalLBHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ProxyLB") && !rsp["ProxyLB"].IsNull())
+    {
+        if (!rsp["ProxyLB"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyLB` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_proxyLB = rsp["ProxyLB"].GetBool();
+        m_proxyLBHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -188,6 +199,14 @@ string DescribeEKSClusterCredentialResponse::ToJsonString() const
         m_internalLB.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_proxyLBHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyLB";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_proxyLB, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -238,6 +257,16 @@ ClusterInternalLB DescribeEKSClusterCredentialResponse::GetInternalLB() const
 bool DescribeEKSClusterCredentialResponse::InternalLBHasBeenSet() const
 {
     return m_internalLBHasBeenSet;
+}
+
+bool DescribeEKSClusterCredentialResponse::GetProxyLB() const
+{
+    return m_proxyLB;
+}
+
+bool DescribeEKSClusterCredentialResponse::ProxyLBHasBeenSet() const
+{
+    return m_proxyLBHasBeenSet;
 }
 
 

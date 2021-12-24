@@ -4598,6 +4598,49 @@ CdbClient::StartBatchRollbackOutcomeCallable CdbClient::StartBatchRollbackCallab
     return task->get_future();
 }
 
+CdbClient::StartReplicationOutcome CdbClient::StartReplication(const StartReplicationRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartReplication");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartReplicationResponse rsp = StartReplicationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartReplicationOutcome(rsp);
+        else
+            return StartReplicationOutcome(o.GetError());
+    }
+    else
+    {
+        return StartReplicationOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::StartReplicationAsync(const StartReplicationRequest& request, const StartReplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartReplication(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::StartReplicationOutcomeCallable CdbClient::StartReplicationCallable(const StartReplicationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartReplicationOutcome()>>(
+        [this, request]()
+        {
+            return this->StartReplication(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::StopDBImportJobOutcome CdbClient::StopDBImportJob(const StopDBImportJobRequest &request)
 {
     auto outcome = MakeRequest(request, "StopDBImportJob");
@@ -4634,6 +4677,49 @@ CdbClient::StopDBImportJobOutcomeCallable CdbClient::StopDBImportJobCallable(con
         [this, request]()
         {
             return this->StopDBImportJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdbClient::StopReplicationOutcome CdbClient::StopReplication(const StopReplicationRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopReplication");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopReplicationResponse rsp = StopReplicationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopReplicationOutcome(rsp);
+        else
+            return StopReplicationOutcome(o.GetError());
+    }
+    else
+    {
+        return StopReplicationOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::StopReplicationAsync(const StopReplicationRequest& request, const StopReplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopReplication(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::StopReplicationOutcomeCallable CdbClient::StopReplicationCallable(const StopReplicationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopReplicationOutcome()>>(
+        [this, request]()
+        {
+            return this->StopReplication(request);
         }
     );
 

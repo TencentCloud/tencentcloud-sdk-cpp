@@ -401,6 +401,28 @@ namespace TencentCloud
                      */
                     bool DBKernelVersionHasBeenSet() const;
 
+                    /**
+                     * 获取数据库主要版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DBMajorVersion 数据库主要版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDBMajorVersion() const;
+
+                    /**
+                     * 设置数据库主要版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DBMajorVersion 数据库主要版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDBMajorVersion(const std::string& _dBMajorVersion);
+
+                    /**
+                     * 判断参数 DBMajorVersion 是否已赋值
+                     * @return DBMajorVersion 是否已赋值
+                     */
+                    bool DBMajorVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -514,6 +536,13 @@ namespace TencentCloud
                      */
                     std::string m_dBKernelVersion;
                     bool m_dBKernelVersionHasBeenSet;
+
+                    /**
+                     * 数据库主要版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dBMajorVersion;
+                    bool m_dBMajorVersionHasBeenSet;
 
                 };
             }

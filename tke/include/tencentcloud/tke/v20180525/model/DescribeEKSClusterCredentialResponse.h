@@ -95,6 +95,18 @@ namespace TencentCloud
                      */
                     bool InternalLBHasBeenSet() const;
 
+                    /**
+                     * 获取标记是否新的内外网功能
+                     * @return ProxyLB 标记是否新的内外网功能
+                     */
+                    bool GetProxyLB() const;
+
+                    /**
+                     * 判断参数 ProxyLB 是否已赋值
+                     * @return ProxyLB 是否已赋值
+                     */
+                    bool ProxyLBHasBeenSet() const;
+
                 private:
 
                     /**
@@ -120,6 +132,12 @@ namespace TencentCloud
                      */
                     ClusterInternalLB m_internalLB;
                     bool m_internalLBHasBeenSet;
+
+                    /**
+                     * 标记是否新的内外网功能
+                     */
+                    bool m_proxyLB;
+                    bool m_proxyLBHasBeenSet;
 
                 };
             }

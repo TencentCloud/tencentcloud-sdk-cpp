@@ -25,6 +25,8 @@
 #include <tencentcloud/tsf/v20180326/model/Env.h>
 #include <tencentcloud/tsf/v20180326/model/ServiceSetting.h>
 #include <tencentcloud/tsf/v20180326/model/SchedulingStrategy.h>
+#include <tencentcloud/tsf/v20180326/model/VolumeInfo.h>
+#include <tencentcloud/tsf/v20180326/model/VolumeMountInfo.h>
 
 
 namespace TencentCloud
@@ -604,6 +606,42 @@ namespace TencentCloud
                      */
                     bool RepoTypeHasBeenSet() const;
 
+                    /**
+                     * 获取数据卷信息
+                     * @return VolumeInfos 数据卷信息
+                     */
+                    VolumeInfo GetVolumeInfos() const;
+
+                    /**
+                     * 设置数据卷信息
+                     * @param VolumeInfos 数据卷信息
+                     */
+                    void SetVolumeInfos(const VolumeInfo& _volumeInfos);
+
+                    /**
+                     * 判断参数 VolumeInfos 是否已赋值
+                     * @return VolumeInfos 是否已赋值
+                     */
+                    bool VolumeInfosHasBeenSet() const;
+
+                    /**
+                     * 获取数据卷挂载点信息
+                     * @return VolumeMountInfos 数据卷挂载点信息
+                     */
+                    VolumeMountInfo GetVolumeMountInfos() const;
+
+                    /**
+                     * 设置数据卷挂载点信息
+                     * @param VolumeMountInfos 数据卷挂载点信息
+                     */
+                    void SetVolumeMountInfos(const VolumeMountInfo& _volumeMountInfos);
+
+                    /**
+                     * 判断参数 VolumeMountInfos 是否已赋值
+                     * @return VolumeMountInfos 是否已赋值
+                     */
+                    bool VolumeMountInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -791,6 +829,18 @@ namespace TencentCloud
                      */
                     std::string m_repoType;
                     bool m_repoTypeHasBeenSet;
+
+                    /**
+                     * 数据卷信息
+                     */
+                    VolumeInfo m_volumeInfos;
+                    bool m_volumeInfosHasBeenSet;
+
+                    /**
+                     * 数据卷挂载点信息
+                     */
+                    VolumeMountInfo m_volumeMountInfos;
+                    bool m_volumeMountInfosHasBeenSet;
 
                 };
             }

@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过滤条件，当前仅支持TargetGroupId，BindIP，InstanceId过滤
-                     * @return Filters 过滤条件，当前仅支持TargetGroupId，BindIP，InstanceId过滤
+                     * 获取过滤条件，当前仅支持TargetGroupId，BindIP，InstanceId过滤。
+                     * @return Filters 过滤条件，当前仅支持TargetGroupId，BindIP，InstanceId过滤。
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件，当前仅支持TargetGroupId，BindIP，InstanceId过滤
-                     * @param Filters 过滤条件，当前仅支持TargetGroupId，BindIP，InstanceId过滤
+                     * 设置过滤条件，当前仅支持TargetGroupId，BindIP，InstanceId过滤。
+                     * @param Filters 过滤条件，当前仅支持TargetGroupId，BindIP，InstanceId过滤。
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取显示数量限制，默认20
-                     * @return Limit 显示数量限制，默认20
+                     * 获取显示数量限制，默认20。
+                     * @return Limit 显示数量限制，默认20。
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置显示数量限制，默认20
-                     * @param Limit 显示数量限制，默认20
+                     * 设置显示数量限制，默认20。
+                     * @param Limit 显示数量限制，默认20。
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取显示的偏移量，默认为0
-                     * @return Offset 显示的偏移量，默认为0
+                     * 获取显示的偏移量，默认为0。
+                     * @return Offset 显示的偏移量，默认为0。
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置显示的偏移量，默认为0
-                     * @param Offset 显示的偏移量，默认为0
+                     * 设置显示的偏移量，默认为0。
+                     * @param Offset 显示的偏移量，默认为0。
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -100,19 +100,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 过滤条件，当前仅支持TargetGroupId，BindIP，InstanceId过滤
+                     * 过滤条件，当前仅支持TargetGroupId，BindIP，InstanceId过滤。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 显示数量限制，默认20
+                     * 显示数量限制，默认20。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 显示的偏移量，默认为0
+                     * 显示的偏移量，默认为0。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

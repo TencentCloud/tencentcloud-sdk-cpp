@@ -200,6 +200,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/AddClusterInstancesRequest.h
   include/tencentcloud/tsf/v20180326/model/DescribeGroupUseDetailResponse.h
   include/tencentcloud/tsf/v20180326/model/TsfPageNamespace.h
+  include/tencentcloud/tsf/v20180326/model/VolumeInfo.h
   include/tencentcloud/tsf/v20180326/model/UpdateApiTimeoutsRequest.h
   include/tencentcloud/tsf/v20180326/model/DescribeSimpleNamespacesRequest.h
   include/tencentcloud/tsf/v20180326/model/ExecuteTaskFlowResponse.h
@@ -373,6 +374,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/GroupApiUseStatistics.h
   include/tencentcloud/tsf/v20180326/model/ChangeApiUsableStatusResponse.h
   include/tencentcloud/tsf/v20180326/model/EnableTaskResponse.h
+  include/tencentcloud/tsf/v20180326/model/VolumeMountInfo.h
   include/tencentcloud/tsf/v20180326/model/UpdateApiRateLimitRulesResponse.h
   include/tencentcloud/tsf/v20180326/model/GroupUnitApiUseStatistics.h
   include/tencentcloud/tsf/v20180326/model/DescribeGroupInstancesResponse.h
@@ -681,6 +683,7 @@ set(tsf_src
   src/v20180326/model/AddClusterInstancesRequest.cpp
   src/v20180326/model/DescribeGroupUseDetailResponse.cpp
   src/v20180326/model/TsfPageNamespace.cpp
+  src/v20180326/model/VolumeInfo.cpp
   src/v20180326/model/UpdateApiTimeoutsRequest.cpp
   src/v20180326/model/DescribeSimpleNamespacesRequest.cpp
   src/v20180326/model/ExecuteTaskFlowResponse.cpp
@@ -854,6 +857,7 @@ set(tsf_src
   src/v20180326/model/GroupApiUseStatistics.cpp
   src/v20180326/model/ChangeApiUsableStatusResponse.cpp
   src/v20180326/model/EnableTaskResponse.cpp
+  src/v20180326/model/VolumeMountInfo.cpp
   src/v20180326/model/UpdateApiRateLimitRulesResponse.cpp
   src/v20180326/model/GroupUnitApiUseStatistics.cpp
   src/v20180326/model/DescribeGroupInstancesResponse.cpp

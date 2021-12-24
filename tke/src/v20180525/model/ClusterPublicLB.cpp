@@ -24,7 +24,8 @@ ClusterPublicLB::ClusterPublicLB() :
     m_enabledHasBeenSet(false),
     m_allowFromCidrsHasBeenSet(false),
     m_securityPoliciesHasBeenSet(false),
-    m_extraParamHasBeenSet(false)
+    m_extraParamHasBeenSet(false),
+    m_securityGroupHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,16 @@ CoreInternalOutcome ClusterPublicLB::Deserialize(const rapidjson::Value &value)
         m_extraParamHasBeenSet = true;
     }
 
+    if (value.HasMember("SecurityGroup") && !value["SecurityGroup"].IsNull())
+    {
+        if (!value["SecurityGroup"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterPublicLB.SecurityGroup` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_securityGroup = string(value["SecurityGroup"].GetString());
+        m_securityGroupHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ void ClusterPublicLB::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ExtraParam";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_extraParam.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_securityGroupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroup";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_securityGroup.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -193,5 +212,21 @@ void ClusterPublicLB::SetExtraParam(const string& _extraParam)
 bool ClusterPublicLB::ExtraParamHasBeenSet() const
 {
     return m_extraParamHasBeenSet;
+}
+
+string ClusterPublicLB::GetSecurityGroup() const
+{
+    return m_securityGroup;
+}
+
+void ClusterPublicLB::SetSecurityGroup(const string& _securityGroup)
+{
+    m_securityGroup = _securityGroup;
+    m_securityGroupHasBeenSet = true;
+}
+
+bool ClusterPublicLB::SecurityGroupHasBeenSet() const
+{
+    return m_securityGroupHasBeenSet;
 }
 

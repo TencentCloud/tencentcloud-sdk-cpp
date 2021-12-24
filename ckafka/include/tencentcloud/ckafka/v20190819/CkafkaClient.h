@@ -101,6 +101,8 @@
 #include <tencentcloud/ckafka/v20190819/model/ModifyPasswordResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyTopicAttributesRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyTopicAttributesResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/SendMessageRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/SendMessageResponse.h>
 
 
 namespace TencentCloud
@@ -232,6 +234,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyTopicAttributesResponse> ModifyTopicAttributesOutcome;
                 typedef std::future<ModifyTopicAttributesOutcome> ModifyTopicAttributesOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::ModifyTopicAttributesRequest&, ModifyTopicAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTopicAttributesAsyncHandler;
+                typedef Outcome<Core::Error, Model::SendMessageResponse> SendMessageOutcome;
+                typedef std::future<SendMessageOutcome> SendMessageOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::SendMessageRequest&, SendMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendMessageAsyncHandler;
 
 
 
@@ -587,6 +592,15 @@ namespace TencentCloud
                 ModifyTopicAttributesOutcome ModifyTopicAttributes(const Model::ModifyTopicAttributesRequest &request);
                 void ModifyTopicAttributesAsync(const Model::ModifyTopicAttributesRequest& request, const ModifyTopicAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyTopicAttributesOutcomeCallable ModifyTopicAttributesCallable(const Model::ModifyTopicAttributesRequest& request);
+
+                /**
+                 *通过HTTP接入层发送消息
+                 * @param req SendMessageRequest
+                 * @return SendMessageOutcome
+                 */
+                SendMessageOutcome SendMessage(const Model::SendMessageRequest &request);
+                void SendMessageAsync(const Model::SendMessageRequest& request, const SendMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SendMessageOutcomeCallable SendMessageCallable(const Model::SendMessageRequest& request);
 
             };
         }

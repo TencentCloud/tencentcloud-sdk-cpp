@@ -62,24 +62,6 @@ namespace TencentCloud
                     bool SpecCodeHasBeenSet() const;
 
                     /**
-                     * 获取PostgreSQL内核版本，目前支持以下版本：9.3.5、9.5.4、10.4、11.8、12.4 。
-                     * @return DBVersion PostgreSQL内核版本，目前支持以下版本：9.3.5、9.5.4、10.4、11.8、12.4 。
-                     */
-                    std::string GetDBVersion() const;
-
-                    /**
-                     * 设置PostgreSQL内核版本，目前支持以下版本：9.3.5、9.5.4、10.4、11.8、12.4 。
-                     * @param DBVersion PostgreSQL内核版本，目前支持以下版本：9.3.5、9.5.4、10.4、11.8、12.4 。
-                     */
-                    void SetDBVersion(const std::string& _dBVersion);
-
-                    /**
-                     * 判断参数 DBVersion 是否已赋值
-                     * @return DBVersion 是否已赋值
-                     */
-                    bool DBVersionHasBeenSet() const;
-
-                    /**
                      * 获取实例容量大小，单位：GB。
                      * @return Storage 实例容量大小，单位：GB。
                      */
@@ -168,6 +150,24 @@ namespace TencentCloud
                      * @return ProjectId 是否已赋值
                      */
                     bool ProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。
+                     * @return DBVersion PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。
+                     */
+                    std::string GetDBVersion() const;
+
+                    /**
+                     * 设置PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。
+                     * @param DBVersion PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。
+                     */
+                    void SetDBVersion(const std::string& _dBVersion);
+
+                    /**
+                     * 判断参数 DBVersion 是否已赋值
+                     * @return DBVersion 是否已赋值
+                     */
+                    bool DBVersionHasBeenSet() const;
 
                     /**
                      * 获取实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。
@@ -367,6 +367,42 @@ namespace TencentCloud
                      */
                     bool SecurityGroupIdsHasBeenSet() const;
 
+                    /**
+                     * 获取PostgreSQL主要版本。目前支持10，11，12，13这几个版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。
+                     * @return DBMajorVersion PostgreSQL主要版本。目前支持10，11，12，13这几个版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。
+                     */
+                    std::string GetDBMajorVersion() const;
+
+                    /**
+                     * 设置PostgreSQL主要版本。目前支持10，11，12，13这几个版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。
+                     * @param DBMajorVersion PostgreSQL主要版本。目前支持10，11，12，13这几个版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。
+                     */
+                    void SetDBMajorVersion(const std::string& _dBMajorVersion);
+
+                    /**
+                     * 判断参数 DBMajorVersion 是否已赋值
+                     * @return DBMajorVersion 是否已赋值
+                     */
+                    bool DBMajorVersionHasBeenSet() const;
+
+                    /**
+                     * 获取PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例。
+                     * @return DBKernelVersion PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例。
+                     */
+                    std::string GetDBKernelVersion() const;
+
+                    /**
+                     * 设置PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例。
+                     * @param DBKernelVersion PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例。
+                     */
+                    void SetDBKernelVersion(const std::string& _dBKernelVersion);
+
+                    /**
+                     * 判断参数 DBKernelVersion 是否已赋值
+                     * @return DBKernelVersion 是否已赋值
+                     */
+                    bool DBKernelVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -374,12 +410,6 @@ namespace TencentCloud
                      */
                     std::string m_specCode;
                     bool m_specCodeHasBeenSet;
-
-                    /**
-                     * PostgreSQL内核版本，目前支持以下版本：9.3.5、9.5.4、10.4、11.8、12.4 。
-                     */
-                    std::string m_dBVersion;
-                    bool m_dBVersionHasBeenSet;
 
                     /**
                      * 实例容量大小，单位：GB。
@@ -410,6 +440,12 @@ namespace TencentCloud
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。
+                     */
+                    std::string m_dBVersion;
+                    bool m_dBVersionHasBeenSet;
 
                     /**
                      * 实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。
@@ -476,6 +512,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
+
+                    /**
+                     * PostgreSQL主要版本。目前支持10，11，12，13这几个版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。
+                     */
+                    std::string m_dBMajorVersion;
+                    bool m_dBMajorVersionHasBeenSet;
+
+                    /**
+                     * PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例。
+                     */
+                    std::string m_dBKernelVersion;
+                    bool m_dBKernelVersionHasBeenSet;
 
                 };
             }

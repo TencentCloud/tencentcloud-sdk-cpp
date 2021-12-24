@@ -58,6 +58,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeRoMinScaleRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeDefaultParamsRequest.h
   include/tencentcloud/cdb/v20170320/model/DBSwitchInfo.h
+  include/tencentcloud/cdb/v20170320/model/StartReplicationResponse.h
   include/tencentcloud/cdb/v20170320/model/ModifyNameOrDescByDpIdResponse.h
   include/tencentcloud/cdb/v20170320/model/StopDBImportJobResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBPriceResponse.h
@@ -152,12 +153,15 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DeleteTimeWindowResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeBinlogBackupOverviewRequest.h
   include/tencentcloud/cdb/v20170320/model/RollbackTask.h
+  include/tencentcloud/cdb/v20170320/model/StartReplicationRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeBackupsResponse.h
+  include/tencentcloud/cdb/v20170320/model/ZoneConf.h
   include/tencentcloud/cdb/v20170320/model/CreateAuditPolicyRequest.h
   include/tencentcloud/cdb/v20170320/model/CreateRoInstanceIpRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyInstanceParamResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBImportRecordsResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeBackupDatabasesResponse.h
+  include/tencentcloud/cdb/v20170320/model/StopReplicationResponse.h
   include/tencentcloud/cdb/v20170320/model/BackupItem.h
   include/tencentcloud/cdb/v20170320/model/DatabaseName.h
   include/tencentcloud/cdb/v20170320/model/AuditFilter.h
@@ -175,7 +179,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeProjectSecurityGroupsRequest.h
   include/tencentcloud/cdb/v20170320/model/StartBatchRollbackRequest.h
   include/tencentcloud/cdb/v20170320/model/SecurityGroup.h
-  include/tencentcloud/cdb/v20170320/model/ZoneConf.h
+  include/tencentcloud/cdb/v20170320/model/StopReplicationRequest.h
   include/tencentcloud/cdb/v20170320/model/BalanceRoGroupLoadResponse.h
   include/tencentcloud/cdb/v20170320/model/DeviceNetInfo.h
   include/tencentcloud/cdb/v20170320/model/SlaveInfo.h
@@ -362,6 +366,7 @@ set(cdb_src
   src/v20170320/model/DescribeRoMinScaleRequest.cpp
   src/v20170320/model/DescribeDefaultParamsRequest.cpp
   src/v20170320/model/DBSwitchInfo.cpp
+  src/v20170320/model/StartReplicationResponse.cpp
   src/v20170320/model/ModifyNameOrDescByDpIdResponse.cpp
   src/v20170320/model/StopDBImportJobResponse.cpp
   src/v20170320/model/DescribeDBPriceResponse.cpp
@@ -456,12 +461,15 @@ set(cdb_src
   src/v20170320/model/DeleteTimeWindowResponse.cpp
   src/v20170320/model/DescribeBinlogBackupOverviewRequest.cpp
   src/v20170320/model/RollbackTask.cpp
+  src/v20170320/model/StartReplicationRequest.cpp
   src/v20170320/model/DescribeBackupsResponse.cpp
+  src/v20170320/model/ZoneConf.cpp
   src/v20170320/model/CreateAuditPolicyRequest.cpp
   src/v20170320/model/CreateRoInstanceIpRequest.cpp
   src/v20170320/model/ModifyInstanceParamResponse.cpp
   src/v20170320/model/DescribeDBImportRecordsResponse.cpp
   src/v20170320/model/DescribeBackupDatabasesResponse.cpp
+  src/v20170320/model/StopReplicationResponse.cpp
   src/v20170320/model/BackupItem.cpp
   src/v20170320/model/DatabaseName.cpp
   src/v20170320/model/AuditFilter.cpp
@@ -479,7 +487,7 @@ set(cdb_src
   src/v20170320/model/DescribeProjectSecurityGroupsRequest.cpp
   src/v20170320/model/StartBatchRollbackRequest.cpp
   src/v20170320/model/SecurityGroup.cpp
-  src/v20170320/model/ZoneConf.cpp
+  src/v20170320/model/StopReplicationRequest.cpp
   src/v20170320/model/BalanceRoGroupLoadResponse.cpp
   src/v20170320/model/DeviceNetInfo.cpp
   src/v20170320/model/SlaveInfo.cpp

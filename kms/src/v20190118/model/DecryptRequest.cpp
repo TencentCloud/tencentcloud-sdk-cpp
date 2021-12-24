@@ -24,7 +24,9 @@ using namespace std;
 
 DecryptRequest::DecryptRequest() :
     m_ciphertextBlobHasBeenSet(false),
-    m_encryptionContextHasBeenSet(false)
+    m_encryptionContextHasBeenSet(false),
+    m_encryptionPublicKeyHasBeenSet(false),
+    m_encryptionAlgorithmHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,22 @@ string DecryptRequest::ToJsonString() const
         string key = "EncryptionContext";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_encryptionContext.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptionPublicKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptionPublicKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_encryptionPublicKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptionAlgorithmHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptionAlgorithm";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_encryptionAlgorithm.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +107,38 @@ void DecryptRequest::SetEncryptionContext(const string& _encryptionContext)
 bool DecryptRequest::EncryptionContextHasBeenSet() const
 {
     return m_encryptionContextHasBeenSet;
+}
+
+string DecryptRequest::GetEncryptionPublicKey() const
+{
+    return m_encryptionPublicKey;
+}
+
+void DecryptRequest::SetEncryptionPublicKey(const string& _encryptionPublicKey)
+{
+    m_encryptionPublicKey = _encryptionPublicKey;
+    m_encryptionPublicKeyHasBeenSet = true;
+}
+
+bool DecryptRequest::EncryptionPublicKeyHasBeenSet() const
+{
+    return m_encryptionPublicKeyHasBeenSet;
+}
+
+string DecryptRequest::GetEncryptionAlgorithm() const
+{
+    return m_encryptionAlgorithm;
+}
+
+void DecryptRequest::SetEncryptionAlgorithm(const string& _encryptionAlgorithm)
+{
+    m_encryptionAlgorithm = _encryptionAlgorithm;
+    m_encryptionAlgorithmHasBeenSet = true;
+}
+
+bool DecryptRequest::EncryptionAlgorithmHasBeenSet() const
+{
+    return m_encryptionAlgorithmHasBeenSet;
 }
 
 

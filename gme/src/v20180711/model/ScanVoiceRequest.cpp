@@ -27,7 +27,8 @@ ScanVoiceRequest::ScanVoiceRequest() :
     m_scenesHasBeenSet(false),
     m_liveHasBeenSet(false),
     m_tasksHasBeenSet(false),
-    m_callbackHasBeenSet(false)
+    m_callbackHasBeenSet(false),
+    m_langHasBeenSet(false)
 {
 }
 
@@ -88,6 +89,14 @@ string ScanVoiceRequest::ToJsonString() const
         string key = "Callback";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_callback.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_langHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Lang";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_lang.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -176,6 +185,22 @@ void ScanVoiceRequest::SetCallback(const string& _callback)
 bool ScanVoiceRequest::CallbackHasBeenSet() const
 {
     return m_callbackHasBeenSet;
+}
+
+string ScanVoiceRequest::GetLang() const
+{
+    return m_lang;
+}
+
+void ScanVoiceRequest::SetLang(const string& _lang)
+{
+    m_lang = _lang;
+    m_langHasBeenSet = true;
+}
+
+bool ScanVoiceRequest::LangHasBeenSet() const
+{
+    return m_langHasBeenSet;
 }
 
 

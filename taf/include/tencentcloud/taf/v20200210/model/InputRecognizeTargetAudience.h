@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/taf/v20200210/model/Device.h>
 
 
 namespace TencentCloud
@@ -748,6 +749,24 @@ namespace TencentCloud
                      */
                     bool IsAuthorizedHasBeenSet() const;
 
+                    /**
+                     * 获取设备信息
+                     * @return DeviceList 设备信息
+                     */
+                    std::vector<Device> GetDeviceList() const;
+
+                    /**
+                     * 设置设备信息
+                     * @param DeviceList 设备信息
+                     */
+                    void SetDeviceList(const std::vector<Device>& _deviceList);
+
+                    /**
+                     * 判断参数 DeviceList 是否已赋值
+                     * @return DeviceList 是否已赋值
+                     */
+                    bool DeviceListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -983,6 +1002,12 @@ namespace TencentCloud
                      */
                     uint64_t m_isAuthorized;
                     bool m_isAuthorizedHasBeenSet;
+
+                    /**
+                     * 设备信息
+                     */
+                    std::vector<Device> m_deviceList;
+                    bool m_deviceListHasBeenSet;
 
                 };
             }

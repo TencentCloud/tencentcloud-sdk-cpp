@@ -26,9 +26,11 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/NodeInfo.h
   include/tencentcloud/es/v20180416/model/UpdateJdkRequest.h
   include/tencentcloud/es/v20180416/model/GetRequestTargetNodeTypesRequest.h
+  include/tencentcloud/es/v20180416/model/UpdateInstanceResponse.h
   include/tencentcloud/es/v20180416/model/DescribeInstanceOperationsRequest.h
   include/tencentcloud/es/v20180416/model/OperationDetail.h
   include/tencentcloud/es/v20180416/model/DiagnoseInstanceResponse.h
+  include/tencentcloud/es/v20180416/model/KibanaView.h
   include/tencentcloud/es/v20180416/model/EsPublicAcl.h
   include/tencentcloud/es/v20180416/model/DictInfo.h
   include/tencentcloud/es/v20180416/model/RestartInstanceResponse.h
@@ -36,7 +38,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/CreateInstanceResponse.h
   include/tencentcloud/es/v20180416/model/DescribeInstanceLogsRequest.h
   include/tencentcloud/es/v20180416/model/UpdateRequestTargetNodeTypesRequest.h
-  include/tencentcloud/es/v20180416/model/UpgradeLicenseRequest.h
+  include/tencentcloud/es/v20180416/model/NodeView.h
   include/tencentcloud/es/v20180416/model/CosBackup.h
   include/tencentcloud/es/v20180416/model/TagInfo.h
   include/tencentcloud/es/v20180416/model/KeyValue.h
@@ -67,11 +69,14 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/UpdateJdkResponse.h
   include/tencentcloud/es/v20180416/model/RestartNodesResponse.h
   include/tencentcloud/es/v20180416/model/UpgradeInstanceResponse.h
-  include/tencentcloud/es/v20180416/model/UpdateInstanceResponse.h
+  include/tencentcloud/es/v20180416/model/ClusterView.h
   include/tencentcloud/es/v20180416/model/UpgradeInstanceRequest.h
+  include/tencentcloud/es/v20180416/model/DescribeViewsResponse.h
+  include/tencentcloud/es/v20180416/model/DescribeViewsRequest.h
   include/tencentcloud/es/v20180416/model/GetRequestTargetNodeTypesResponse.h
   include/tencentcloud/es/v20180416/model/RestartKibanaResponse.h
   include/tencentcloud/es/v20180416/model/Operation.h
+  include/tencentcloud/es/v20180416/model/UpgradeLicenseRequest.h
   )
 
 set(es_src
@@ -83,9 +88,11 @@ set(es_src
   src/v20180416/model/NodeInfo.cpp
   src/v20180416/model/UpdateJdkRequest.cpp
   src/v20180416/model/GetRequestTargetNodeTypesRequest.cpp
+  src/v20180416/model/UpdateInstanceResponse.cpp
   src/v20180416/model/DescribeInstanceOperationsRequest.cpp
   src/v20180416/model/OperationDetail.cpp
   src/v20180416/model/DiagnoseInstanceResponse.cpp
+  src/v20180416/model/KibanaView.cpp
   src/v20180416/model/EsPublicAcl.cpp
   src/v20180416/model/DictInfo.cpp
   src/v20180416/model/RestartInstanceResponse.cpp
@@ -93,7 +100,7 @@ set(es_src
   src/v20180416/model/CreateInstanceResponse.cpp
   src/v20180416/model/DescribeInstanceLogsRequest.cpp
   src/v20180416/model/UpdateRequestTargetNodeTypesRequest.cpp
-  src/v20180416/model/UpgradeLicenseRequest.cpp
+  src/v20180416/model/NodeView.cpp
   src/v20180416/model/CosBackup.cpp
   src/v20180416/model/TagInfo.cpp
   src/v20180416/model/KeyValue.cpp
@@ -124,11 +131,14 @@ set(es_src
   src/v20180416/model/UpdateJdkResponse.cpp
   src/v20180416/model/RestartNodesResponse.cpp
   src/v20180416/model/UpgradeInstanceResponse.cpp
-  src/v20180416/model/UpdateInstanceResponse.cpp
+  src/v20180416/model/ClusterView.cpp
   src/v20180416/model/UpgradeInstanceRequest.cpp
+  src/v20180416/model/DescribeViewsResponse.cpp
+  src/v20180416/model/DescribeViewsRequest.cpp
   src/v20180416/model/GetRequestTargetNodeTypesResponse.cpp
   src/v20180416/model/RestartKibanaResponse.cpp
   src/v20180416/model/Operation.cpp
+  src/v20180416/model/UpgradeLicenseRequest.cpp
   )
 
 set(es_include

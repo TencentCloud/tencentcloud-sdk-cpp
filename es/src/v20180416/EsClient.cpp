@@ -255,6 +255,49 @@ EsClient::DescribeInstancesOutcomeCallable EsClient::DescribeInstancesCallable(c
     return task->get_future();
 }
 
+EsClient::DescribeViewsOutcome EsClient::DescribeViews(const DescribeViewsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeViews");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeViewsResponse rsp = DescribeViewsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeViewsOutcome(rsp);
+        else
+            return DescribeViewsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeViewsOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::DescribeViewsAsync(const DescribeViewsRequest& request, const DescribeViewsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeViews(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::DescribeViewsOutcomeCallable EsClient::DescribeViewsCallable(const DescribeViewsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeViewsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeViews(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EsClient::DiagnoseInstanceOutcome EsClient::DiagnoseInstance(const DiagnoseInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "DiagnoseInstance");

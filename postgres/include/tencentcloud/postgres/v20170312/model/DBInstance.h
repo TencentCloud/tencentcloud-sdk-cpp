@@ -320,14 +320,14 @@ namespace TencentCloud
                     bool DBCharsetHasBeenSet() const;
 
                     /**
-                     * 获取PostgreSQL主版本
-                     * @return DBVersion PostgreSQL主版本
+                     * 获取PostgreSQL版本
+                     * @return DBVersion PostgreSQL版本
                      */
                     std::string GetDBVersion() const;
 
                     /**
-                     * 设置PostgreSQL主版本
-                     * @param DBVersion PostgreSQL主版本
+                     * 设置PostgreSQL版本
+                     * @param DBVersion PostgreSQL版本
                      */
                     void SetDBVersion(const std::string& _dBVersion);
 
@@ -689,6 +689,28 @@ namespace TencentCloud
                      */
                     bool NetworkAccessListHasBeenSet() const;
 
+                    /**
+                     * 获取PostgreSQL主要版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DBMajorVersion PostgreSQL主要版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDBMajorVersion() const;
+
+                    /**
+                     * 设置PostgreSQL主要版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DBMajorVersion PostgreSQL主要版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDBMajorVersion(const std::string& _dBMajorVersion);
+
+                    /**
+                     * 判断参数 DBMajorVersion 是否已赋值
+                     * @return DBMajorVersion 是否已赋值
+                     */
+                    bool DBMajorVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -782,7 +804,7 @@ namespace TencentCloud
                     bool m_dBCharsetHasBeenSet;
 
                     /**
-                     * PostgreSQL主版本
+                     * PostgreSQL版本
                      */
                     std::string m_dBVersion;
                     bool m_dBVersionHasBeenSet;
@@ -901,6 +923,13 @@ namespace TencentCloud
                      */
                     std::vector<NetworkAccess> m_networkAccessList;
                     bool m_networkAccessListHasBeenSet;
+
+                    /**
+                     * PostgreSQL主要版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dBMajorVersion;
+                    bool m_dBMajorVersionHasBeenSet;
 
                 };
             }

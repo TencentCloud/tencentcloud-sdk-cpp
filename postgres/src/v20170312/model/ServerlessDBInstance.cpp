@@ -36,7 +36,8 @@ ServerlessDBInstance::ServerlessDBInstance() :
     m_dBAccountSetHasBeenSet(false),
     m_dBDatabaseListHasBeenSet(false),
     m_tagListHasBeenSet(false),
-    m_dBKernelVersionHasBeenSet(false)
+    m_dBKernelVersionHasBeenSet(false),
+    m_dBMajorVersionHasBeenSet(false)
 {
 }
 
@@ -238,6 +239,16 @@ CoreInternalOutcome ServerlessDBInstance::Deserialize(const rapidjson::Value &va
         m_dBKernelVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("DBMajorVersion") && !value["DBMajorVersion"].IsNull())
+    {
+        if (!value["DBMajorVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerlessDBInstance.DBMajorVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dBMajorVersion = string(value["DBMajorVersion"].GetString());
+        m_dBMajorVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -397,6 +408,14 @@ void ServerlessDBInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "DBKernelVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dBKernelVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dBMajorVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DBMajorVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dBMajorVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -656,5 +675,21 @@ void ServerlessDBInstance::SetDBKernelVersion(const string& _dBKernelVersion)
 bool ServerlessDBInstance::DBKernelVersionHasBeenSet() const
 {
     return m_dBKernelVersionHasBeenSet;
+}
+
+string ServerlessDBInstance::GetDBMajorVersion() const
+{
+    return m_dBMajorVersion;
+}
+
+void ServerlessDBInstance::SetDBMajorVersion(const string& _dBMajorVersion)
+{
+    m_dBMajorVersion = _dBMajorVersion;
+    m_dBMajorVersionHasBeenSet = true;
+}
+
+bool ServerlessDBInstance::DBMajorVersionHasBeenSet() const
+{
+    return m_dBMajorVersionHasBeenSet;
 }
 

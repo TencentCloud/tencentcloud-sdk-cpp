@@ -118,6 +118,24 @@ namespace TencentCloud
                      */
                     bool ExtraParamHasBeenSet() const;
 
+                    /**
+                     * 获取新内外网功能，需要传递安全组
+                     * @return SecurityGroup 新内外网功能，需要传递安全组
+                     */
+                    std::string GetSecurityGroup() const;
+
+                    /**
+                     * 设置新内外网功能，需要传递安全组
+                     * @param SecurityGroup 新内外网功能，需要传递安全组
+                     */
+                    void SetSecurityGroup(const std::string& _securityGroup);
+
+                    /**
+                     * 判断参数 SecurityGroup 是否已赋值
+                     * @return SecurityGroup 是否已赋值
+                     */
+                    bool SecurityGroupHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +161,12 @@ namespace TencentCloud
                      */
                     std::string m_extraParam;
                     bool m_extraParamHasBeenSet;
+
+                    /**
+                     * 新内外网功能，需要传递安全组
+                     */
+                    std::string m_securityGroup;
+                    bool m_securityGroupHasBeenSet;
 
                 };
             }

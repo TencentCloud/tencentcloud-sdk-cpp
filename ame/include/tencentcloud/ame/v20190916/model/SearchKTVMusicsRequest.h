@@ -61,14 +61,18 @@ namespace TencentCloud
                     bool KeyWordHasBeenSet() const;
 
                     /**
-                     * 获取分页游标
-                     * @return Offset 分页游标
+                     * 获取分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
+取值范围：Offset + Limit 不超过5000。取值范围：小于5000
+                     * @return Offset 分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
+取值范围：Offset + Limit 不超过5000。取值范围：小于5000
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页游标
-                     * @param Offset 分页游标
+                     * 设置分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
+取值范围：Offset + Limit 不超过5000。取值范围：小于5000
+                     * @param Offset 分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
+取值范围：Offset + Limit 不超过5000。取值范围：小于5000
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -79,14 +83,18 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页页长
-                     * @return Limit 分页页长
+                     * 获取分页返回的起始偏移量，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。
+取值范围：Offset + Limit 不超过5000。
+                     * @return Limit 分页返回的起始偏移量，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。
+取值范围：Offset + Limit 不超过5000。
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页页长
-                     * @param Limit 分页页长
+                     * 设置分页返回的起始偏移量，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。
+取值范围：Offset + Limit 不超过5000。
+                     * @param Limit 分页返回的起始偏移量，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。
+取值范围：Offset + Limit 不超过5000。
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -105,13 +113,15 @@ namespace TencentCloud
                     bool m_keyWordHasBeenSet;
 
                     /**
-                     * 分页游标
+                     * 分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
+取值范围：Offset + Limit 不超过5000。取值范围：小于5000
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页页长
+                     * 分页返回的起始偏移量，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。
+取值范围：Offset + Limit 不超过5000。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

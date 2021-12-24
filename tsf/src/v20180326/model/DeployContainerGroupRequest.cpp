@@ -53,7 +53,9 @@ DeployContainerGroupRequest::DeployContainerGroupRequest() :
     m_deployAgentHasBeenSet(false),
     m_schedulingStrategyHasBeenSet(false),
     m_incrementalDeploymentHasBeenSet(false),
-    m_repoTypeHasBeenSet(false)
+    m_repoTypeHasBeenSet(false),
+    m_volumeInfosHasBeenSet(false),
+    m_volumeMountInfosHasBeenSet(false)
 {
 }
 
@@ -320,6 +322,24 @@ string DeployContainerGroupRequest::ToJsonString() const
         string key = "RepoType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_repoType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_volumeInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VolumeInfos";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_volumeInfos.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_volumeMountInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VolumeMountInfos";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_volumeMountInfos.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -824,6 +844,38 @@ void DeployContainerGroupRequest::SetRepoType(const string& _repoType)
 bool DeployContainerGroupRequest::RepoTypeHasBeenSet() const
 {
     return m_repoTypeHasBeenSet;
+}
+
+VolumeInfo DeployContainerGroupRequest::GetVolumeInfos() const
+{
+    return m_volumeInfos;
+}
+
+void DeployContainerGroupRequest::SetVolumeInfos(const VolumeInfo& _volumeInfos)
+{
+    m_volumeInfos = _volumeInfos;
+    m_volumeInfosHasBeenSet = true;
+}
+
+bool DeployContainerGroupRequest::VolumeInfosHasBeenSet() const
+{
+    return m_volumeInfosHasBeenSet;
+}
+
+VolumeMountInfo DeployContainerGroupRequest::GetVolumeMountInfos() const
+{
+    return m_volumeMountInfos;
+}
+
+void DeployContainerGroupRequest::SetVolumeMountInfos(const VolumeMountInfo& _volumeMountInfos)
+{
+    m_volumeMountInfos = _volumeMountInfos;
+    m_volumeMountInfosHasBeenSet = true;
+}
+
+bool DeployContainerGroupRequest::VolumeMountInfosHasBeenSet() const
+{
+    return m_volumeMountInfosHasBeenSet;
 }
 
 
