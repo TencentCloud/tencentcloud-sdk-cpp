@@ -63,14 +63,14 @@ namespace TencentCloud
                     bool WhiteboardHasBeenSet() const;
 
                     /**
-                     * 获取白板房间SdkAppId
-                     * @return SdkAppId 白板房间SdkAppId
+                     * 获取白板房间 `SdkAppId`
+                     * @return SdkAppId 白板房间 `SdkAppId`
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
-                     * 设置白板房间SdkAppId
-                     * @param SdkAppId 白板房间SdkAppId
+                     * 设置白板房间 `SdkAppId`
+                     * @param SdkAppId 白板房间 `SdkAppId`
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
@@ -117,14 +117,14 @@ namespace TencentCloud
                     bool CallbackURLHasBeenSet() const;
 
                     /**
-                     * 获取白板板书文件COS存储参数， 不填默认存储在公共存储桶，公共存储桶的数据仅保存3天
-                     * @return COS 白板板书文件COS存储参数， 不填默认存储在公共存储桶，公共存储桶的数据仅保存3天
+                     * 获取白板板书文件 `COS` 存储参数， 不填默认存储在公共存储桶，公共存储桶的数据仅保存3天
+                     * @return COS 白板板书文件 `COS` 存储参数， 不填默认存储在公共存储桶，公共存储桶的数据仅保存3天
                      */
                     SnapshotCOS GetCOS() const;
 
                     /**
-                     * 设置白板板书文件COS存储参数， 不填默认存储在公共存储桶，公共存储桶的数据仅保存3天
-                     * @param COS 白板板书文件COS存储参数， 不填默认存储在公共存储桶，公共存储桶的数据仅保存3天
+                     * 设置白板板书文件 `COS` 存储参数， 不填默认存储在公共存储桶，公共存储桶的数据仅保存3天
+                     * @param COS 白板板书文件 `COS` 存储参数， 不填默认存储在公共存储桶，公共存储桶的数据仅保存3天
                      */
                     void SetCOS(const SnapshotCOS& _cOS);
 
@@ -133,6 +133,48 @@ namespace TencentCloud
                      * @return COS 是否已赋值
                      */
                     bool COSHasBeenSet() const;
+
+                    /**
+                     * 获取白板板书生成模式，默认为 `AllMarks`。取值说明如下：
+
+`AllMarks` - 全量模式，即对于客户端每一次调用 `addSnapshotMark` 接口打上的白板板书生成标志全部都会生成对应的白板板书图片。
+
+`LatestMarksOnly` - 单页去重模式，即对于客户端在同一页白板上多次调用 `addSnapshotMark` 打上的白板板书生成标志仅保留最新一次标志来生成对应白板页的白板板书图片。
+
+（**注意：`LatestMarksOnly` 模式只有客户端使用v2.6.8及以上版本的白板SDK调用 `addSnapshotMark` 时才生效，否则即使在调用本API是指定了 `LatestMarksOnly` 模式，服务后台会使用默认的 `AllMarks` 模式生成白板板书**）
+                     * @return SnapshotMode 白板板书生成模式，默认为 `AllMarks`。取值说明如下：
+
+`AllMarks` - 全量模式，即对于客户端每一次调用 `addSnapshotMark` 接口打上的白板板书生成标志全部都会生成对应的白板板书图片。
+
+`LatestMarksOnly` - 单页去重模式，即对于客户端在同一页白板上多次调用 `addSnapshotMark` 打上的白板板书生成标志仅保留最新一次标志来生成对应白板页的白板板书图片。
+
+（**注意：`LatestMarksOnly` 模式只有客户端使用v2.6.8及以上版本的白板SDK调用 `addSnapshotMark` 时才生效，否则即使在调用本API是指定了 `LatestMarksOnly` 模式，服务后台会使用默认的 `AllMarks` 模式生成白板板书**）
+                     */
+                    std::string GetSnapshotMode() const;
+
+                    /**
+                     * 设置白板板书生成模式，默认为 `AllMarks`。取值说明如下：
+
+`AllMarks` - 全量模式，即对于客户端每一次调用 `addSnapshotMark` 接口打上的白板板书生成标志全部都会生成对应的白板板书图片。
+
+`LatestMarksOnly` - 单页去重模式，即对于客户端在同一页白板上多次调用 `addSnapshotMark` 打上的白板板书生成标志仅保留最新一次标志来生成对应白板页的白板板书图片。
+
+（**注意：`LatestMarksOnly` 模式只有客户端使用v2.6.8及以上版本的白板SDK调用 `addSnapshotMark` 时才生效，否则即使在调用本API是指定了 `LatestMarksOnly` 模式，服务后台会使用默认的 `AllMarks` 模式生成白板板书**）
+                     * @param SnapshotMode 白板板书生成模式，默认为 `AllMarks`。取值说明如下：
+
+`AllMarks` - 全量模式，即对于客户端每一次调用 `addSnapshotMark` 接口打上的白板板书生成标志全部都会生成对应的白板板书图片。
+
+`LatestMarksOnly` - 单页去重模式，即对于客户端在同一页白板上多次调用 `addSnapshotMark` 打上的白板板书生成标志仅保留最新一次标志来生成对应白板页的白板板书图片。
+
+（**注意：`LatestMarksOnly` 模式只有客户端使用v2.6.8及以上版本的白板SDK调用 `addSnapshotMark` 时才生效，否则即使在调用本API是指定了 `LatestMarksOnly` 模式，服务后台会使用默认的 `AllMarks` 模式生成白板板书**）
+                     */
+                    void SetSnapshotMode(const std::string& _snapshotMode);
+
+                    /**
+                     * 判断参数 SnapshotMode 是否已赋值
+                     * @return SnapshotMode 是否已赋值
+                     */
+                    bool SnapshotModeHasBeenSet() const;
 
                 private:
 
@@ -143,7 +185,7 @@ namespace TencentCloud
                     bool m_whiteboardHasBeenSet;
 
                     /**
-                     * 白板房间SdkAppId
+                     * 白板房间 `SdkAppId`
                      */
                     uint64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
@@ -161,10 +203,22 @@ namespace TencentCloud
                     bool m_callbackURLHasBeenSet;
 
                     /**
-                     * 白板板书文件COS存储参数， 不填默认存储在公共存储桶，公共存储桶的数据仅保存3天
+                     * 白板板书文件 `COS` 存储参数， 不填默认存储在公共存储桶，公共存储桶的数据仅保存3天
                      */
                     SnapshotCOS m_cOS;
                     bool m_cOSHasBeenSet;
+
+                    /**
+                     * 白板板书生成模式，默认为 `AllMarks`。取值说明如下：
+
+`AllMarks` - 全量模式，即对于客户端每一次调用 `addSnapshotMark` 接口打上的白板板书生成标志全部都会生成对应的白板板书图片。
+
+`LatestMarksOnly` - 单页去重模式，即对于客户端在同一页白板上多次调用 `addSnapshotMark` 打上的白板板书生成标志仅保留最新一次标志来生成对应白板页的白板板书图片。
+
+（**注意：`LatestMarksOnly` 模式只有客户端使用v2.6.8及以上版本的白板SDK调用 `addSnapshotMark` 时才生效，否则即使在调用本API是指定了 `LatestMarksOnly` 模式，服务后台会使用默认的 `AllMarks` 模式生成白板板书**）
+                     */
+                    std::string m_snapshotMode;
+                    bool m_snapshotModeHasBeenSet;
 
                 };
             }

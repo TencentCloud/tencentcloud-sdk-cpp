@@ -27,7 +27,8 @@ CreateSnapshotTaskRequest::CreateSnapshotTaskRequest() :
     m_sdkAppIdHasBeenSet(false),
     m_roomIdHasBeenSet(false),
     m_callbackURLHasBeenSet(false),
-    m_cOSHasBeenSet(false)
+    m_cOSHasBeenSet(false),
+    m_snapshotModeHasBeenSet(false)
 {
 }
 
@@ -78,6 +79,14 @@ string CreateSnapshotTaskRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cOS.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_snapshotModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SnapshotMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_snapshotMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -166,6 +175,22 @@ void CreateSnapshotTaskRequest::SetCOS(const SnapshotCOS& _cOS)
 bool CreateSnapshotTaskRequest::COSHasBeenSet() const
 {
     return m_cOSHasBeenSet;
+}
+
+string CreateSnapshotTaskRequest::GetSnapshotMode() const
+{
+    return m_snapshotMode;
+}
+
+void CreateSnapshotTaskRequest::SetSnapshotMode(const string& _snapshotMode)
+{
+    m_snapshotMode = _snapshotMode;
+    m_snapshotModeHasBeenSet = true;
+}
+
+bool CreateSnapshotTaskRequest::SnapshotModeHasBeenSet() const
+{
+    return m_snapshotModeHasBeenSet;
 }
 
 

@@ -146,6 +146,28 @@ namespace TencentCloud
                      */
                     bool EnableWordPolygonHasBeenSet() const;
 
+                    /**
+                     * 获取文本检测开关，默认值为true。
+设置为false表示直接进行单行识别，可适用于识别单行手写体签名场景。
+                     * @return EnableDetectText 文本检测开关，默认值为true。
+设置为false表示直接进行单行识别，可适用于识别单行手写体签名场景。
+                     */
+                    bool GetEnableDetectText() const;
+
+                    /**
+                     * 设置文本检测开关，默认值为true。
+设置为false表示直接进行单行识别，可适用于识别单行手写体签名场景。
+                     * @param EnableDetectText 文本检测开关，默认值为true。
+设置为false表示直接进行单行识别，可适用于识别单行手写体签名场景。
+                     */
+                    void SetEnableDetectText(const bool& _enableDetectText);
+
+                    /**
+                     * 判断参数 EnableDetectText 是否已赋值
+                     * @return EnableDetectText 是否已赋值
+                     */
+                    bool EnableDetectTextHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +201,13 @@ namespace TencentCloud
                      */
                     bool m_enableWordPolygon;
                     bool m_enableWordPolygonHasBeenSet;
+
+                    /**
+                     * 文本检测开关，默认值为true。
+设置为false表示直接进行单行识别，可适用于识别单行手写体签名场景。
+                     */
+                    bool m_enableDetectText;
+                    bool m_enableDetectTextHasBeenSet;
 
                 };
             }
