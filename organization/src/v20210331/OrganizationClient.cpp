@@ -126,3 +126,46 @@ OrganizationClient::CreateOrganizationMemberOutcomeCallable OrganizationClient::
     return task->get_future();
 }
 
+OrganizationClient::DescribeOrganizationOutcome OrganizationClient::DescribeOrganization(const DescribeOrganizationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOrganization");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOrganizationResponse rsp = DescribeOrganizationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOrganizationOutcome(rsp);
+        else
+            return DescribeOrganizationOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOrganizationOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::DescribeOrganizationAsync(const DescribeOrganizationRequest& request, const DescribeOrganizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOrganization(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::DescribeOrganizationOutcomeCallable OrganizationClient::DescribeOrganizationCallable(const DescribeOrganizationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOrganizationOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOrganization(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
