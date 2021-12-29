@@ -748,6 +748,28 @@ namespace TencentCloud
                      */
                     bool GrantHasBeenSet() const;
 
+                    /**
+                     * 获取绑定的 Grafana 实例 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GrafanaInstanceId 绑定的 Grafana 实例 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGrafanaInstanceId() const;
+
+                    /**
+                     * 设置绑定的 Grafana 实例 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GrafanaInstanceId 绑定的 Grafana 实例 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGrafanaInstanceId(const std::string& _grafanaInstanceId);
+
+                    /**
+                     * 判断参数 GrafanaInstanceId 是否已赋值
+                     * @return GrafanaInstanceId 是否已赋值
+                     */
+                    bool GrafanaInstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -963,6 +985,13 @@ namespace TencentCloud
                      */
                     PrometheusInstanceGrantInfo m_grant;
                     bool m_grantHasBeenSet;
+
+                    /**
+                     * 绑定的 Grafana 实例 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_grafanaInstanceId;
+                    bool m_grafanaInstanceIdHasBeenSet;
 
                 };
             }

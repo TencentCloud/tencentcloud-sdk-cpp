@@ -46,7 +46,8 @@ PrometheusInstancesItem::PrometheusInstancesItem() :
     m_proxyAddressHasBeenSet(false),
     m_grafanaStatusHasBeenSet(false),
     m_grafanaIpWhiteListHasBeenSet(false),
-    m_grantHasBeenSet(false)
+    m_grantHasBeenSet(false),
+    m_grafanaInstanceIdHasBeenSet(false)
 {
 }
 
@@ -332,6 +333,16 @@ CoreInternalOutcome PrometheusInstancesItem::Deserialize(const rapidjson::Value 
         m_grantHasBeenSet = true;
     }
 
+    if (value.HasMember("GrafanaInstanceId") && !value["GrafanaInstanceId"].IsNull())
+    {
+        if (!value["GrafanaInstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrometheusInstancesItem.GrafanaInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_grafanaInstanceId = string(value["GrafanaInstanceId"].GetString());
+        m_grafanaInstanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -553,6 +564,14 @@ void PrometheusInstancesItem::ToJsonObject(rapidjson::Value &value, rapidjson::D
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_grant.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_grafanaInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GrafanaInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_grafanaInstanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -972,5 +991,21 @@ void PrometheusInstancesItem::SetGrant(const PrometheusInstanceGrantInfo& _grant
 bool PrometheusInstancesItem::GrantHasBeenSet() const
 {
     return m_grantHasBeenSet;
+}
+
+string PrometheusInstancesItem::GetGrafanaInstanceId() const
+{
+    return m_grafanaInstanceId;
+}
+
+void PrometheusInstancesItem::SetGrafanaInstanceId(const string& _grafanaInstanceId)
+{
+    m_grafanaInstanceId = _grafanaInstanceId;
+    m_grafanaInstanceIdHasBeenSet = true;
+}
+
+bool PrometheusInstancesItem::GrafanaInstanceIdHasBeenSet() const
+{
+    return m_grafanaInstanceIdHasBeenSet;
 }
 

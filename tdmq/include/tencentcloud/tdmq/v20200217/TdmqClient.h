@@ -147,8 +147,6 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeNamespaceBundlesOptResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeNodeHealthOptRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeNodeHealthOptResponse.h>
-#include <tencentcloud/tdmq/v20200217/model/DescribeProducersRequest.h>
-#include <tencentcloud/tdmq/v20200217/model/DescribeProducersResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribePublisherSummaryRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribePublisherSummaryResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribePublishersRequest.h>
@@ -419,9 +417,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNodeHealthOptResponse> DescribeNodeHealthOptOutcome;
                 typedef std::future<DescribeNodeHealthOptOutcome> DescribeNodeHealthOptOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeNodeHealthOptRequest&, DescribeNodeHealthOptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNodeHealthOptAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeProducersResponse> DescribeProducersOutcome;
-                typedef std::future<DescribeProducersOutcome> DescribeProducersOutcomeCallable;
-                typedef std::function<void(const TdmqClient*, const Model::DescribeProducersRequest&, DescribeProducersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProducersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePublisherSummaryResponse> DescribePublisherSummaryOutcome;
                 typedef std::future<DescribePublisherSummaryOutcome> DescribePublisherSummaryOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribePublisherSummaryRequest&, DescribePublisherSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePublisherSummaryAsyncHandler;
@@ -1087,15 +1082,6 @@ namespace TencentCloud
                 DescribeNodeHealthOptOutcome DescribeNodeHealthOpt(const Model::DescribeNodeHealthOptRequest &request);
                 void DescribeNodeHealthOptAsync(const Model::DescribeNodeHealthOptRequest& request, const DescribeNodeHealthOptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNodeHealthOptOutcomeCallable DescribeNodeHealthOptCallable(const Model::DescribeNodeHealthOptRequest& request);
-
-                /**
-                 *获取生产者列表，仅显示在线的生产者
-                 * @param req DescribeProducersRequest
-                 * @return DescribeProducersOutcome
-                 */
-                DescribeProducersOutcome DescribeProducers(const Model::DescribeProducersRequest &request);
-                void DescribeProducersAsync(const Model::DescribeProducersRequest& request, const DescribeProducersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeProducersOutcomeCallable DescribeProducersCallable(const Model::DescribeProducersRequest& request);
 
                 /**
                  *获取消息生产概览信息

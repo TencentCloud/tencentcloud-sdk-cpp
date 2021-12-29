@@ -14,22 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tdmq/v20200217/model/DescribeProducersResponse.h>
+#include <tencentcloud/rce/v20201103/model/DescribeRiskAssessmentResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tdmq::V20200217::Model;
+using namespace TencentCloud::Rce::V20201103::Model;
 using namespace std;
 
-DescribeProducersResponse::DescribeProducersResponse() :
-    m_producerSetsHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+DescribeRiskAssessmentResponse::DescribeRiskAssessmentResponse()
 {
 }
 
-CoreInternalOutcome DescribeProducersResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeRiskAssessmentResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,68 +61,15 @@ CoreInternalOutcome DescribeProducersResponse::Deserialize(const string &payload
     }
 
 
-    if (rsp.HasMember("ProducerSets") && !rsp["ProducerSets"].IsNull())
-    {
-        if (!rsp["ProducerSets"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `ProducerSets` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["ProducerSets"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            Producer item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_producerSets.push_back(item);
-        }
-        m_producerSetsHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
-    {
-        if (!rsp["TotalCount"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_totalCount = rsp["TotalCount"].GetUint64();
-        m_totalCountHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeProducersResponse::ToJsonString() const
+string DescribeRiskAssessmentResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_producerSetsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ProducerSets";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_producerSets.begin(); itr != m_producerSets.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
-    }
-
-    if (m_totalCountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TotalCount";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_totalCount, allocator);
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -137,25 +82,5 @@ string DescribeProducersResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-vector<Producer> DescribeProducersResponse::GetProducerSets() const
-{
-    return m_producerSets;
-}
-
-bool DescribeProducersResponse::ProducerSetsHasBeenSet() const
-{
-    return m_producerSetsHasBeenSet;
-}
-
-uint64_t DescribeProducersResponse::GetTotalCount() const
-{
-    return m_totalCount;
-}
-
-bool DescribeProducersResponse::TotalCountHasBeenSet() const
-{
-    return m_totalCountHasBeenSet;
-}
 
 

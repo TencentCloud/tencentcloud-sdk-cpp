@@ -2706,49 +2706,6 @@ TdmqClient::DescribeNodeHealthOptOutcomeCallable TdmqClient::DescribeNodeHealthO
     return task->get_future();
 }
 
-TdmqClient::DescribeProducersOutcome TdmqClient::DescribeProducers(const DescribeProducersRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeProducers");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeProducersResponse rsp = DescribeProducersResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeProducersOutcome(rsp);
-        else
-            return DescribeProducersOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeProducersOutcome(outcome.GetError());
-    }
-}
-
-void TdmqClient::DescribeProducersAsync(const DescribeProducersRequest& request, const DescribeProducersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProducers(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TdmqClient::DescribeProducersOutcomeCallable TdmqClient::DescribeProducersCallable(const DescribeProducersRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeProducersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProducers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TdmqClient::DescribePublisherSummaryOutcome TdmqClient::DescribePublisherSummary(const DescribePublisherSummaryRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePublisherSummary");

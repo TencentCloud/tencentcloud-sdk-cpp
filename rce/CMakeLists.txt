@@ -19,45 +19,61 @@ set(rce_public_header
   )
 
 set(rce_public_header_model
-  include/tencentcloud/rce/v20201103/model/OutputDescribeRiskModel.h
   include/tencentcloud/rce/v20201103/model/QQAccountInfo.h
   include/tencentcloud/rce/v20201103/model/ManageMarketingRiskRequest.h
-  include/tencentcloud/rce/v20201103/model/OutputManageMarketingRisk.h
-  include/tencentcloud/rce/v20201103/model/OnlineScamInfo.h
-  include/tencentcloud/rce/v20201103/model/InputManageMarketingRisk.h
-  include/tencentcloud/rce/v20201103/model/OtherAccountInfo.h
-  include/tencentcloud/rce/v20201103/model/DescribeRiskModelResponse.h
+  include/tencentcloud/rce/v20201103/model/DescribeRiskTrendsRequest.h
+  include/tencentcloud/rce/v20201103/model/DescribeRiskAssessmentRequest.h
   include/tencentcloud/rce/v20201103/model/AccountInfo.h
-  include/tencentcloud/rce/v20201103/model/OutputDescribeRiskModelValue.h
-  include/tencentcloud/rce/v20201103/model/DescribeRiskModelRequest.h
-  include/tencentcloud/rce/v20201103/model/InputCryptoManageMarketingRisk.h
-  include/tencentcloud/rce/v20201103/model/SponsorInfo.h
+  include/tencentcloud/rce/v20201103/model/OutputFrontRiskValue.h
+  include/tencentcloud/rce/v20201103/model/DescribeRiskAssessmentResponse.h
+  include/tencentcloud/rce/v20201103/model/OutputManageMarketingRiskValue.h
+  include/tencentcloud/rce/v20201103/model/OutputFrontRiskData.h
+  include/tencentcloud/rce/v20201103/model/OutputFrontRisk.h
+  include/tencentcloud/rce/v20201103/model/InputFrontRisk.h
   include/tencentcloud/rce/v20201103/model/ManageMarketingRiskResponse.h
   include/tencentcloud/rce/v20201103/model/InputDetails.h
-  include/tencentcloud/rce/v20201103/model/OutputManageMarketingRiskValue.h
   include/tencentcloud/rce/v20201103/model/WeChatAccountInfo.h
+  include/tencentcloud/rce/v20201103/model/OutputDescribeRiskModel.h
+  include/tencentcloud/rce/v20201103/model/OutputManageMarketingRisk.h
+  include/tencentcloud/rce/v20201103/model/OtherAccountInfo.h
+  include/tencentcloud/rce/v20201103/model/DescribeRiskModelResponse.h
+  include/tencentcloud/rce/v20201103/model/InputManageMarketingRisk.h
+  include/tencentcloud/rce/v20201103/model/InputCryptoManageMarketingRisk.h
+  include/tencentcloud/rce/v20201103/model/SponsorInfo.h
+  include/tencentcloud/rce/v20201103/model/OnlineScamInfo.h
+  include/tencentcloud/rce/v20201103/model/OutputDescribeRiskModelValue.h
+  include/tencentcloud/rce/v20201103/model/DescribeRiskTrendsResponse.h
+  include/tencentcloud/rce/v20201103/model/DescribeRiskModelRequest.h
   include/tencentcloud/rce/v20201103/model/InputDescribeRiskModelData.h
   )
 
 set(rce_src
   src/v20201103/RceClient.cpp
-  src/v20201103/model/OutputDescribeRiskModel.cpp
   src/v20201103/model/QQAccountInfo.cpp
   src/v20201103/model/ManageMarketingRiskRequest.cpp
-  src/v20201103/model/OutputManageMarketingRisk.cpp
-  src/v20201103/model/OnlineScamInfo.cpp
-  src/v20201103/model/InputManageMarketingRisk.cpp
-  src/v20201103/model/OtherAccountInfo.cpp
-  src/v20201103/model/DescribeRiskModelResponse.cpp
+  src/v20201103/model/DescribeRiskTrendsRequest.cpp
+  src/v20201103/model/DescribeRiskAssessmentRequest.cpp
   src/v20201103/model/AccountInfo.cpp
-  src/v20201103/model/OutputDescribeRiskModelValue.cpp
-  src/v20201103/model/DescribeRiskModelRequest.cpp
-  src/v20201103/model/InputCryptoManageMarketingRisk.cpp
-  src/v20201103/model/SponsorInfo.cpp
+  src/v20201103/model/OutputFrontRiskValue.cpp
+  src/v20201103/model/DescribeRiskAssessmentResponse.cpp
+  src/v20201103/model/OutputManageMarketingRiskValue.cpp
+  src/v20201103/model/OutputFrontRiskData.cpp
+  src/v20201103/model/OutputFrontRisk.cpp
+  src/v20201103/model/InputFrontRisk.cpp
   src/v20201103/model/ManageMarketingRiskResponse.cpp
   src/v20201103/model/InputDetails.cpp
-  src/v20201103/model/OutputManageMarketingRiskValue.cpp
   src/v20201103/model/WeChatAccountInfo.cpp
+  src/v20201103/model/OutputDescribeRiskModel.cpp
+  src/v20201103/model/OutputManageMarketingRisk.cpp
+  src/v20201103/model/OtherAccountInfo.cpp
+  src/v20201103/model/DescribeRiskModelResponse.cpp
+  src/v20201103/model/InputManageMarketingRisk.cpp
+  src/v20201103/model/InputCryptoManageMarketingRisk.cpp
+  src/v20201103/model/SponsorInfo.cpp
+  src/v20201103/model/OnlineScamInfo.cpp
+  src/v20201103/model/OutputDescribeRiskModelValue.cpp
+  src/v20201103/model/DescribeRiskTrendsResponse.cpp
+  src/v20201103/model/DescribeRiskModelRequest.cpp
   src/v20201103/model/InputDescribeRiskModelData.cpp
   )
 

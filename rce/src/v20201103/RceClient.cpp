@@ -40,6 +40,49 @@ RceClient::RceClient(const Credential &credential, const string &region, const C
 }
 
 
+RceClient::DescribeRiskAssessmentOutcome RceClient::DescribeRiskAssessment(const DescribeRiskAssessmentRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRiskAssessment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRiskAssessmentResponse rsp = DescribeRiskAssessmentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRiskAssessmentOutcome(rsp);
+        else
+            return DescribeRiskAssessmentOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRiskAssessmentOutcome(outcome.GetError());
+    }
+}
+
+void RceClient::DescribeRiskAssessmentAsync(const DescribeRiskAssessmentRequest& request, const DescribeRiskAssessmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRiskAssessment(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RceClient::DescribeRiskAssessmentOutcomeCallable RceClient::DescribeRiskAssessmentCallable(const DescribeRiskAssessmentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRiskAssessmentOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRiskAssessment(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RceClient::DescribeRiskModelOutcome RceClient::DescribeRiskModel(const DescribeRiskModelRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRiskModel");
@@ -76,6 +119,49 @@ RceClient::DescribeRiskModelOutcomeCallable RceClient::DescribeRiskModelCallable
         [this, request]()
         {
             return this->DescribeRiskModel(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+RceClient::DescribeRiskTrendsOutcome RceClient::DescribeRiskTrends(const DescribeRiskTrendsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRiskTrends");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRiskTrendsResponse rsp = DescribeRiskTrendsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRiskTrendsOutcome(rsp);
+        else
+            return DescribeRiskTrendsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRiskTrendsOutcome(outcome.GetError());
+    }
+}
+
+void RceClient::DescribeRiskTrendsAsync(const DescribeRiskTrendsRequest& request, const DescribeRiskTrendsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRiskTrends(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RceClient::DescribeRiskTrendsOutcomeCallable RceClient::DescribeRiskTrendsCallable(const DescribeRiskTrendsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRiskTrendsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRiskTrends(request);
         }
     );
 
