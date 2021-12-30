@@ -268,14 +268,14 @@ namespace TencentCloud
                     bool IPAddressVersionHasBeenSet() const;
 
                     /**
-                     * 获取网络类型，可取值：normal、cn2，默认值normal
-                     * @return NetworkType 网络类型，可取值：normal、cn2，默认值normal
+                     * 获取网络类型，normal表示常规BGP，cn2表示精品BGP，triple表示三网
+                     * @return NetworkType 网络类型，normal表示常规BGP，cn2表示精品BGP，triple表示三网
                      */
                     std::string GetNetworkType() const;
 
                     /**
-                     * 设置网络类型，可取值：normal、cn2，默认值normal
-                     * @param NetworkType 网络类型，可取值：normal、cn2，默认值normal
+                     * 设置网络类型，normal表示常规BGP，cn2表示精品BGP，triple表示三网
+                     * @param NetworkType 网络类型，normal表示常规BGP，cn2表示精品BGP，triple表示三网
                      */
                     void SetNetworkType(const std::string& _networkType);
 
@@ -284,6 +284,24 @@ namespace TencentCloud
                      * @return NetworkType 是否已赋值
                      */
                     bool NetworkTypeHasBeenSet() const;
+
+                    /**
+                     * 获取通道套餐类型，Thunder表示标准通道组，Accelerator表示游戏加速器通道，CrossBorder表示跨境通道。
+                     * @return PackageType 通道套餐类型，Thunder表示标准通道组，Accelerator表示游戏加速器通道，CrossBorder表示跨境通道。
+                     */
+                    std::string GetPackageType() const;
+
+                    /**
+                     * 设置通道套餐类型，Thunder表示标准通道组，Accelerator表示游戏加速器通道，CrossBorder表示跨境通道。
+                     * @param PackageType 通道套餐类型，Thunder表示标准通道组，Accelerator表示游戏加速器通道，CrossBorder表示跨境通道。
+                     */
+                    void SetPackageType(const std::string& _packageType);
+
+                    /**
+                     * 判断参数 PackageType 是否已赋值
+                     * @return PackageType 是否已赋值
+                     */
+                    bool PackageTypeHasBeenSet() const;
 
                 private:
 
@@ -362,10 +380,16 @@ namespace TencentCloud
                     bool m_iPAddressVersionHasBeenSet;
 
                     /**
-                     * 网络类型，可取值：normal、cn2，默认值normal
+                     * 网络类型，normal表示常规BGP，cn2表示精品BGP，triple表示三网
                      */
                     std::string m_networkType;
                     bool m_networkTypeHasBeenSet;
+
+                    /**
+                     * 通道套餐类型，Thunder表示标准通道组，Accelerator表示游戏加速器通道，CrossBorder表示跨境通道。
+                     */
+                    std::string m_packageType;
+                    bool m_packageTypeHasBeenSet;
 
                 };
             }

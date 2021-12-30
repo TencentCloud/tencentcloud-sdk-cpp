@@ -39,7 +39,10 @@ ClusterView::ClusterView() :
     m_primaryShardNumHasBeenSet(false),
     m_relocatingShardNumHasBeenSet(false),
     m_initializingShardNumHasBeenSet(false),
-    m_unassignedShardNumHasBeenSet(false)
+    m_unassignedShardNumHasBeenSet(false),
+    m_totalCosStorageHasBeenSet(false),
+    m_searchableSnapshotCosBucketHasBeenSet(false),
+    m_searchableSnapshotCosAppIdHasBeenSet(false)
 {
 }
 
@@ -241,6 +244,36 @@ CoreInternalOutcome ClusterView::Deserialize(const rapidjson::Value &value)
         m_unassignedShardNumHasBeenSet = true;
     }
 
+    if (value.HasMember("TotalCosStorage") && !value["TotalCosStorage"].IsNull())
+    {
+        if (!value["TotalCosStorage"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterView.TotalCosStorage` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCosStorage = value["TotalCosStorage"].GetInt64();
+        m_totalCosStorageHasBeenSet = true;
+    }
+
+    if (value.HasMember("SearchableSnapshotCosBucket") && !value["SearchableSnapshotCosBucket"].IsNull())
+    {
+        if (!value["SearchableSnapshotCosBucket"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterView.SearchableSnapshotCosBucket` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_searchableSnapshotCosBucket = string(value["SearchableSnapshotCosBucket"].GetString());
+        m_searchableSnapshotCosBucketHasBeenSet = true;
+    }
+
+    if (value.HasMember("SearchableSnapshotCosAppId") && !value["SearchableSnapshotCosAppId"].IsNull())
+    {
+        if (!value["SearchableSnapshotCosAppId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterView.SearchableSnapshotCosAppId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_searchableSnapshotCosAppId = string(value["SearchableSnapshotCosAppId"].GetString());
+        m_searchableSnapshotCosAppIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -403,6 +436,30 @@ void ClusterView::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "UnassignedShardNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_unassignedShardNum, allocator);
+    }
+
+    if (m_totalCosStorageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCosStorage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCosStorage, allocator);
+    }
+
+    if (m_searchableSnapshotCosBucketHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SearchableSnapshotCosBucket";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_searchableSnapshotCosBucket.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_searchableSnapshotCosAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SearchableSnapshotCosAppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_searchableSnapshotCosAppId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -710,5 +767,53 @@ void ClusterView::SetUnassignedShardNum(const int64_t& _unassignedShardNum)
 bool ClusterView::UnassignedShardNumHasBeenSet() const
 {
     return m_unassignedShardNumHasBeenSet;
+}
+
+int64_t ClusterView::GetTotalCosStorage() const
+{
+    return m_totalCosStorage;
+}
+
+void ClusterView::SetTotalCosStorage(const int64_t& _totalCosStorage)
+{
+    m_totalCosStorage = _totalCosStorage;
+    m_totalCosStorageHasBeenSet = true;
+}
+
+bool ClusterView::TotalCosStorageHasBeenSet() const
+{
+    return m_totalCosStorageHasBeenSet;
+}
+
+string ClusterView::GetSearchableSnapshotCosBucket() const
+{
+    return m_searchableSnapshotCosBucket;
+}
+
+void ClusterView::SetSearchableSnapshotCosBucket(const string& _searchableSnapshotCosBucket)
+{
+    m_searchableSnapshotCosBucket = _searchableSnapshotCosBucket;
+    m_searchableSnapshotCosBucketHasBeenSet = true;
+}
+
+bool ClusterView::SearchableSnapshotCosBucketHasBeenSet() const
+{
+    return m_searchableSnapshotCosBucketHasBeenSet;
+}
+
+string ClusterView::GetSearchableSnapshotCosAppId() const
+{
+    return m_searchableSnapshotCosAppId;
+}
+
+void ClusterView::SetSearchableSnapshotCosAppId(const string& _searchableSnapshotCosAppId)
+{
+    m_searchableSnapshotCosAppId = _searchableSnapshotCosAppId;
+    m_searchableSnapshotCosAppIdHasBeenSet = true;
+}
+
+bool ClusterView::SearchableSnapshotCosAppIdHasBeenSet() const
+{
+    return m_searchableSnapshotCosAppIdHasBeenSet;
 }
 

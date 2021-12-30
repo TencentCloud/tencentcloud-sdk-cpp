@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Es::V20180416::Model;
 using namespace std;
 
-UpdateInstanceResponse::UpdateInstanceResponse()
+UpdateInstanceResponse::UpdateInstanceResponse() :
+    m_dealNameHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome UpdateInstanceResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("DealName") && !rsp["DealName"].IsNull())
+    {
+        if (!rsp["DealName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DealName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dealName = string(rsp["DealName"].GetString());
+        m_dealNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string UpdateInstanceResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_dealNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DealName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dealName.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string UpdateInstanceResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string UpdateInstanceResponse::GetDealName() const
+{
+    return m_dealName;
+}
+
+bool UpdateInstanceResponse::DealNameHasBeenSet() const
+{
+    return m_dealNameHasBeenSet;
+}
 
 

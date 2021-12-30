@@ -27,7 +27,8 @@ UpdatePluginsRequest::UpdatePluginsRequest() :
     m_installPluginListHasBeenSet(false),
     m_removePluginListHasBeenSet(false),
     m_forceRestartHasBeenSet(false),
-    m_forceUpdateHasBeenSet(false)
+    m_forceUpdateHasBeenSet(false),
+    m_pluginTypeHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string UpdatePluginsRequest::ToJsonString() const
         string key = "ForceUpdate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_forceUpdate, allocator);
+    }
+
+    if (m_pluginTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PluginType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pluginType, allocator);
     }
 
 
@@ -174,6 +183,22 @@ void UpdatePluginsRequest::SetForceUpdate(const bool& _forceUpdate)
 bool UpdatePluginsRequest::ForceUpdateHasBeenSet() const
 {
     return m_forceUpdateHasBeenSet;
+}
+
+uint64_t UpdatePluginsRequest::GetPluginType() const
+{
+    return m_pluginType;
+}
+
+void UpdatePluginsRequest::SetPluginType(const uint64_t& _pluginType)
+{
+    m_pluginType = _pluginType;
+    m_pluginTypeHasBeenSet = true;
+}
+
+bool UpdatePluginsRequest::PluginTypeHasBeenSet() const
+{
+    return m_pluginTypeHasBeenSet;
 }
 
 

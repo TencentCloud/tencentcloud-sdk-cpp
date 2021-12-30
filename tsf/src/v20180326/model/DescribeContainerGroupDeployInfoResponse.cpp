@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/es/v20180416/model/CreateInstanceResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeContainerGroupDeployInfoResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Es::V20180416::Model;
+using namespace TencentCloud::Tsf::V20180326::Model;
 using namespace std;
 
-CreateInstanceResponse::CreateInstanceResponse() :
-    m_instanceIdHasBeenSet(false),
-    m_dealNameHasBeenSet(false)
+DescribeContainerGroupDeployInfoResponse::DescribeContainerGroupDeployInfoResponse() :
+    m_resultHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome CreateInstanceResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeContainerGroupDeployInfoResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,50 +62,40 @@ CoreInternalOutcome CreateInstanceResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("InstanceId") && !rsp["InstanceId"].IsNull())
+    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
     {
-        if (!rsp["InstanceId"].IsString())
+        if (!rsp["Result"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Result` is not object type").SetRequestId(requestId));
         }
-        m_instanceId = string(rsp["InstanceId"].GetString());
-        m_instanceIdHasBeenSet = true;
-    }
 
-    if (rsp.HasMember("DealName") && !rsp["DealName"].IsNull())
-    {
-        if (!rsp["DealName"].IsString())
+        CoreInternalOutcome outcome = m_result.Deserialize(rsp["Result"]);
+        if (!outcome.IsSuccess())
         {
-            return CoreInternalOutcome(Core::Error("response `DealName` IsString=false incorrectly").SetRequestId(requestId));
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
         }
-        m_dealName = string(rsp["DealName"].GetString());
-        m_dealNameHasBeenSet = true;
+
+        m_resultHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string CreateInstanceResponse::ToJsonString() const
+string DescribeContainerGroupDeployInfoResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_instanceIdHasBeenSet)
+    if (m_resultHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceId";
+        string key = "Result";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_dealNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DealName";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_dealName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_result.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -121,24 +110,14 @@ string CreateInstanceResponse::ToJsonString() const
 }
 
 
-string CreateInstanceResponse::GetInstanceId() const
+ContainerGroupDeploy DescribeContainerGroupDeployInfoResponse::GetResult() const
 {
-    return m_instanceId;
+    return m_result;
 }
 
-bool CreateInstanceResponse::InstanceIdHasBeenSet() const
+bool DescribeContainerGroupDeployInfoResponse::ResultHasBeenSet() const
 {
-    return m_instanceIdHasBeenSet;
-}
-
-string CreateInstanceResponse::GetDealName() const
-{
-    return m_dealName;
-}
-
-bool CreateInstanceResponse::DealNameHasBeenSet() const
-{
-    return m_dealNameHasBeenSet;
+    return m_resultHasBeenSet;
 }
 
 

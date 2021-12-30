@@ -83,6 +83,49 @@ MonitorClient::BindingPolicyObjectOutcomeCallable MonitorClient::BindingPolicyOb
     return task->get_future();
 }
 
+MonitorClient::BindingPolicyTagOutcome MonitorClient::BindingPolicyTag(const BindingPolicyTagRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindingPolicyTag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindingPolicyTagResponse rsp = BindingPolicyTagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindingPolicyTagOutcome(rsp);
+        else
+            return BindingPolicyTagOutcome(o.GetError());
+    }
+    else
+    {
+        return BindingPolicyTagOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::BindingPolicyTagAsync(const BindingPolicyTagRequest& request, const BindingPolicyTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BindingPolicyTag(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::BindingPolicyTagOutcomeCallable MonitorClient::BindingPolicyTagCallable(const BindingPolicyTagRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BindingPolicyTagOutcome()>>(
+        [this, request]()
+        {
+            return this->BindingPolicyTag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::CreateAlarmNoticeOutcome MonitorClient::CreateAlarmNotice(const CreateAlarmNoticeRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAlarmNotice");

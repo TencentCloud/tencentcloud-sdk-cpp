@@ -38,6 +38,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/PutMonitorDataResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyGroupInfoRequest.h
   include/tencentcloud/monitor/v20180724/model/UpdateAlertRuleStateResponse.h
+  include/tencentcloud/monitor/v20180724/model/BindingPolicyTagResponse.h
   include/tencentcloud/monitor/v20180724/model/DeleteServiceDiscoveryResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyGroupInfoCallback.h
   include/tencentcloud/monitor/v20180724/model/AlarmHistoryMetric.h
@@ -47,6 +48,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/DescribePolicyGroupInfoResponse.h
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyNoticeRequest.h
   include/tencentcloud/monitor/v20180724/model/DeleteAlarmPolicyRequest.h
+  include/tencentcloud/monitor/v20180724/model/PolicyTag.h
   include/tencentcloud/monitor/v20180724/model/PrometheusInstancesItem.h
   include/tencentcloud/monitor/v20180724/model/PutMonitorDataRequest.h
   include/tencentcloud/monitor/v20180724/model/CreateAlertRuleResponse.h
@@ -93,6 +95,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/DescribeAlarmNoticeCallbacksRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribeProductEventListEventsDimensions.h
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyConditionResponse.h
+  include/tencentcloud/monitor/v20180724/model/InstanceGroups.h
   include/tencentcloud/monitor/v20180724/model/Dimension.h
   include/tencentcloud/monitor/v20180724/model/PrometheusInstanceGrantInfo.h
   include/tencentcloud/monitor/v20180724/model/DescribeBindingPolicyObjectListInstance.h
@@ -127,7 +130,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyStatusRequest.h
   include/tencentcloud/monitor/v20180724/model/MetricData.h
   include/tencentcloud/monitor/v20180724/model/AlarmEvent.h
-  include/tencentcloud/monitor/v20180724/model/DescribePolicyGroupInfoCondition.h
+  include/tencentcloud/monitor/v20180724/model/BindingPolicyTagRequest.h
   include/tencentcloud/monitor/v20180724/model/UpdateAlertRuleRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribeBindingPolicyObjectListResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyGroupInfoConditionTpl.h
@@ -177,7 +180,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/DescribeAlarmNoticeRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribeBindingPolicyObjectListDimension.h
   include/tencentcloud/monitor/v20180724/model/CreateAlarmNoticeRequest.h
-  include/tencentcloud/monitor/v20180724/model/InstanceGroups.h
+  include/tencentcloud/monitor/v20180724/model/DescribePolicyGroupInfoCondition.h
   include/tencentcloud/monitor/v20180724/model/GetMonitorDataResponse.h
   include/tencentcloud/monitor/v20180724/model/ReceiverInfo.h
   include/tencentcloud/monitor/v20180724/model/UnBindingAllPolicyObjectRequest.h
@@ -216,6 +219,7 @@ set(monitor_src
   src/v20180724/model/PutMonitorDataResponse.cpp
   src/v20180724/model/DescribePolicyGroupInfoRequest.cpp
   src/v20180724/model/UpdateAlertRuleStateResponse.cpp
+  src/v20180724/model/BindingPolicyTagResponse.cpp
   src/v20180724/model/DeleteServiceDiscoveryResponse.cpp
   src/v20180724/model/DescribePolicyGroupInfoCallback.cpp
   src/v20180724/model/AlarmHistoryMetric.cpp
@@ -225,6 +229,7 @@ set(monitor_src
   src/v20180724/model/DescribePolicyGroupInfoResponse.cpp
   src/v20180724/model/ModifyAlarmPolicyNoticeRequest.cpp
   src/v20180724/model/DeleteAlarmPolicyRequest.cpp
+  src/v20180724/model/PolicyTag.cpp
   src/v20180724/model/PrometheusInstancesItem.cpp
   src/v20180724/model/PutMonitorDataRequest.cpp
   src/v20180724/model/CreateAlertRuleResponse.cpp
@@ -271,6 +276,7 @@ set(monitor_src
   src/v20180724/model/DescribeAlarmNoticeCallbacksRequest.cpp
   src/v20180724/model/DescribeProductEventListEventsDimensions.cpp
   src/v20180724/model/ModifyAlarmPolicyConditionResponse.cpp
+  src/v20180724/model/InstanceGroups.cpp
   src/v20180724/model/Dimension.cpp
   src/v20180724/model/PrometheusInstanceGrantInfo.cpp
   src/v20180724/model/DescribeBindingPolicyObjectListInstance.cpp
@@ -305,7 +311,7 @@ set(monitor_src
   src/v20180724/model/ModifyAlarmPolicyStatusRequest.cpp
   src/v20180724/model/MetricData.cpp
   src/v20180724/model/AlarmEvent.cpp
-  src/v20180724/model/DescribePolicyGroupInfoCondition.cpp
+  src/v20180724/model/BindingPolicyTagRequest.cpp
   src/v20180724/model/UpdateAlertRuleRequest.cpp
   src/v20180724/model/DescribeBindingPolicyObjectListResponse.cpp
   src/v20180724/model/DescribePolicyGroupInfoConditionTpl.cpp
@@ -355,7 +361,7 @@ set(monitor_src
   src/v20180724/model/DescribeAlarmNoticeRequest.cpp
   src/v20180724/model/DescribeBindingPolicyObjectListDimension.cpp
   src/v20180724/model/CreateAlarmNoticeRequest.cpp
-  src/v20180724/model/InstanceGroups.cpp
+  src/v20180724/model/DescribePolicyGroupInfoCondition.cpp
   src/v20180724/model/GetMonitorDataResponse.cpp
   src/v20180724/model/ReceiverInfo.cpp
   src/v20180724/model/UnBindingAllPolicyObjectRequest.cpp

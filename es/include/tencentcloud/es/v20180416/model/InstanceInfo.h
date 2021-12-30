@@ -708,17 +708,17 @@ namespace TencentCloud
                     bool EnableHotWarmModeHasBeenSet() const;
 
                     /**
-                     * 获取冷节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * 获取温节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WarmNodeType 冷节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * @return WarmNodeType 温节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetWarmNodeType() const;
 
                     /**
-                     * 设置冷节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * 设置温节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WarmNodeType 冷节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * @param WarmNodeType 温节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetWarmNodeType(const std::string& _warmNodeType);
@@ -730,17 +730,17 @@ namespace TencentCloud
                     bool WarmNodeTypeHasBeenSet() const;
 
                     /**
-                     * 获取冷节点个数
+                     * 获取温节点个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WarmNodeNum 冷节点个数
+                     * @return WarmNodeNum 温节点个数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetWarmNodeNum() const;
 
                     /**
-                     * 设置冷节点个数
+                     * 设置温节点个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WarmNodeNum 冷节点个数
+                     * @param WarmNodeNum 温节点个数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetWarmNodeNum(const uint64_t& _warmNodeNum);
@@ -752,17 +752,17 @@ namespace TencentCloud
                     bool WarmNodeNumHasBeenSet() const;
 
                     /**
-                     * 获取冷节点CPU核数
+                     * 获取温节点CPU核数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WarmCpuNum 冷节点CPU核数
+                     * @return WarmCpuNum 温节点CPU核数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetWarmCpuNum() const;
 
                     /**
-                     * 设置冷节点CPU核数
+                     * 设置温节点CPU核数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WarmCpuNum 冷节点CPU核数
+                     * @param WarmCpuNum 温节点CPU核数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetWarmCpuNum(const uint64_t& _warmCpuNum);
@@ -774,17 +774,17 @@ namespace TencentCloud
                     bool WarmCpuNumHasBeenSet() const;
 
                     /**
-                     * 获取冷节点内存内存大小，单位GB
+                     * 获取温节点内存内存大小，单位GB
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WarmMemSize 冷节点内存内存大小，单位GB
+                     * @return WarmMemSize 温节点内存内存大小，单位GB
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetWarmMemSize() const;
 
                     /**
-                     * 设置冷节点内存内存大小，单位GB
+                     * 设置温节点内存内存大小，单位GB
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WarmMemSize 冷节点内存内存大小，单位GB
+                     * @param WarmMemSize 温节点内存内存大小，单位GB
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetWarmMemSize(const uint64_t& _warmMemSize);
@@ -796,17 +796,17 @@ namespace TencentCloud
                     bool WarmMemSizeHasBeenSet() const;
 
                     /**
-                     * 获取冷节点磁盘类型
+                     * 获取温节点磁盘类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WarmDiskType 冷节点磁盘类型
+                     * @return WarmDiskType 温节点磁盘类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetWarmDiskType() const;
 
                     /**
-                     * 设置冷节点磁盘类型
+                     * 设置温节点磁盘类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WarmDiskType 冷节点磁盘类型
+                     * @param WarmDiskType 温节点磁盘类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetWarmDiskType(const std::string& _warmDiskType);
@@ -818,17 +818,17 @@ namespace TencentCloud
                     bool WarmDiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取冷节点磁盘大小，单位GB
+                     * 获取温节点磁盘大小，单位GB
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WarmDiskSize 冷节点磁盘大小，单位GB
+                     * @return WarmDiskSize 温节点磁盘大小，单位GB
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetWarmDiskSize() const;
 
                     /**
-                     * 设置冷节点磁盘大小，单位GB
+                     * 设置温节点磁盘大小，单位GB
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WarmDiskSize 冷节点磁盘大小，单位GB
+                     * @param WarmDiskSize 温节点磁盘大小，单位GB
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetWarmDiskSize(const uint64_t& _warmDiskSize);
@@ -1209,6 +1209,270 @@ namespace TencentCloud
                      */
                     bool SecurityGroupsHasBeenSet() const;
 
+                    /**
+                     * 获取冷节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ColdNodeType 冷节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetColdNodeType() const;
+
+                    /**
+                     * 设置冷节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ColdNodeType 冷节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetColdNodeType(const std::string& _coldNodeType);
+
+                    /**
+                     * 判断参数 ColdNodeType 是否已赋值
+                     * @return ColdNodeType 是否已赋值
+                     */
+                    bool ColdNodeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取冷节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ColdNodeNum 冷节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetColdNodeNum() const;
+
+                    /**
+                     * 设置冷节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ColdNodeNum 冷节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetColdNodeNum(const uint64_t& _coldNodeNum);
+
+                    /**
+                     * 判断参数 ColdNodeNum 是否已赋值
+                     * @return ColdNodeNum 是否已赋值
+                     */
+                    bool ColdNodeNumHasBeenSet() const;
+
+                    /**
+                     * 获取冷节点CPU核数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ColdCpuNum 冷节点CPU核数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetColdCpuNum() const;
+
+                    /**
+                     * 设置冷节点CPU核数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ColdCpuNum 冷节点CPU核数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetColdCpuNum(const uint64_t& _coldCpuNum);
+
+                    /**
+                     * 判断参数 ColdCpuNum 是否已赋值
+                     * @return ColdCpuNum 是否已赋值
+                     */
+                    bool ColdCpuNumHasBeenSet() const;
+
+                    /**
+                     * 获取冷节点内存大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ColdMemSize 冷节点内存大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetColdMemSize() const;
+
+                    /**
+                     * 设置冷节点内存大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ColdMemSize 冷节点内存大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetColdMemSize(const uint64_t& _coldMemSize);
+
+                    /**
+                     * 判断参数 ColdMemSize 是否已赋值
+                     * @return ColdMemSize 是否已赋值
+                     */
+                    bool ColdMemSizeHasBeenSet() const;
+
+                    /**
+                     * 获取冷节点磁盘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ColdDiskType 冷节点磁盘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetColdDiskType() const;
+
+                    /**
+                     * 设置冷节点磁盘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ColdDiskType 冷节点磁盘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetColdDiskType(const std::string& _coldDiskType);
+
+                    /**
+                     * 判断参数 ColdDiskType 是否已赋值
+                     * @return ColdDiskType 是否已赋值
+                     */
+                    bool ColdDiskTypeHasBeenSet() const;
+
+                    /**
+                     * 获取冷节点磁盘大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ColdDiskSize 冷节点磁盘大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetColdDiskSize() const;
+
+                    /**
+                     * 设置冷节点磁盘大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ColdDiskSize 冷节点磁盘大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetColdDiskSize(const uint64_t& _coldDiskSize);
+
+                    /**
+                     * 判断参数 ColdDiskSize 是否已赋值
+                     * @return ColdDiskSize 是否已赋值
+                     */
+                    bool ColdDiskSizeHasBeenSet() const;
+
+                    /**
+                     * 获取冻节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FrozenNodeType 冻节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFrozenNodeType() const;
+
+                    /**
+                     * 设置冻节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FrozenNodeType 冻节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFrozenNodeType(const std::string& _frozenNodeType);
+
+                    /**
+                     * 判断参数 FrozenNodeType 是否已赋值
+                     * @return FrozenNodeType 是否已赋值
+                     */
+                    bool FrozenNodeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取冻节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FrozenNodeNum 冻节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetFrozenNodeNum() const;
+
+                    /**
+                     * 设置冻节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FrozenNodeNum 冻节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFrozenNodeNum(const uint64_t& _frozenNodeNum);
+
+                    /**
+                     * 判断参数 FrozenNodeNum 是否已赋值
+                     * @return FrozenNodeNum 是否已赋值
+                     */
+                    bool FrozenNodeNumHasBeenSet() const;
+
+                    /**
+                     * 获取冻节点CPU核数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FrozenCpuNum 冻节点CPU核数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetFrozenCpuNum() const;
+
+                    /**
+                     * 设置冻节点CPU核数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FrozenCpuNum 冻节点CPU核数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFrozenCpuNum(const uint64_t& _frozenCpuNum);
+
+                    /**
+                     * 判断参数 FrozenCpuNum 是否已赋值
+                     * @return FrozenCpuNum 是否已赋值
+                     */
+                    bool FrozenCpuNumHasBeenSet() const;
+
+                    /**
+                     * 获取冻节点内存大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FrozenMemSize 冻节点内存大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetFrozenMemSize() const;
+
+                    /**
+                     * 设置冻节点内存大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FrozenMemSize 冻节点内存大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFrozenMemSize(const uint64_t& _frozenMemSize);
+
+                    /**
+                     * 判断参数 FrozenMemSize 是否已赋值
+                     * @return FrozenMemSize 是否已赋值
+                     */
+                    bool FrozenMemSizeHasBeenSet() const;
+
+                    /**
+                     * 获取冻节点磁盘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FrozenDiskType 冻节点磁盘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFrozenDiskType() const;
+
+                    /**
+                     * 设置冻节点磁盘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FrozenDiskType 冻节点磁盘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFrozenDiskType(const std::string& _frozenDiskType);
+
+                    /**
+                     * 判断参数 FrozenDiskType 是否已赋值
+                     * @return FrozenDiskType 是否已赋值
+                     */
+                    bool FrozenDiskTypeHasBeenSet() const;
+
+                    /**
+                     * 获取冻节点磁盘大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FrozenDiskSize 冻节点磁盘大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetFrozenDiskSize() const;
+
+                    /**
+                     * 设置冻节点磁盘大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FrozenDiskSize 冻节点磁盘大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFrozenDiskSize(const uint64_t& _frozenDiskSize);
+
+                    /**
+                     * 判断参数 FrozenDiskSize 是否已赋值
+                     * @return FrozenDiskSize 是否已赋值
+                     */
+                    bool FrozenDiskSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1429,42 +1693,42 @@ namespace TencentCloud
                     bool m_enableHotWarmModeHasBeenSet;
 
                     /**
-                     * 冷节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * 温节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_warmNodeType;
                     bool m_warmNodeTypeHasBeenSet;
 
                     /**
-                     * 冷节点个数
+                     * 温节点个数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_warmNodeNum;
                     bool m_warmNodeNumHasBeenSet;
 
                     /**
-                     * 冷节点CPU核数
+                     * 温节点CPU核数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_warmCpuNum;
                     bool m_warmCpuNumHasBeenSet;
 
                     /**
-                     * 冷节点内存内存大小，单位GB
+                     * 温节点内存内存大小，单位GB
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_warmMemSize;
                     bool m_warmMemSizeHasBeenSet;
 
                     /**
-                     * 冷节点磁盘类型
+                     * 温节点磁盘类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_warmDiskType;
                     bool m_warmDiskTypeHasBeenSet;
 
                     /**
-                     * 冷节点磁盘大小，单位GB
+                     * 温节点磁盘大小，单位GB
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_warmDiskSize;
@@ -1587,6 +1851,90 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_securityGroups;
                     bool m_securityGroupsHasBeenSet;
+
+                    /**
+                     * 冷节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_coldNodeType;
+                    bool m_coldNodeTypeHasBeenSet;
+
+                    /**
+                     * 冷节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_coldNodeNum;
+                    bool m_coldNodeNumHasBeenSet;
+
+                    /**
+                     * 冷节点CPU核数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_coldCpuNum;
+                    bool m_coldCpuNumHasBeenSet;
+
+                    /**
+                     * 冷节点内存大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_coldMemSize;
+                    bool m_coldMemSizeHasBeenSet;
+
+                    /**
+                     * 冷节点磁盘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_coldDiskType;
+                    bool m_coldDiskTypeHasBeenSet;
+
+                    /**
+                     * 冷节点磁盘大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_coldDiskSize;
+                    bool m_coldDiskSizeHasBeenSet;
+
+                    /**
+                     * 冻节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_frozenNodeType;
+                    bool m_frozenNodeTypeHasBeenSet;
+
+                    /**
+                     * 冻节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_frozenNodeNum;
+                    bool m_frozenNodeNumHasBeenSet;
+
+                    /**
+                     * 冻节点CPU核数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_frozenCpuNum;
+                    bool m_frozenCpuNumHasBeenSet;
+
+                    /**
+                     * 冻节点内存大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_frozenMemSize;
+                    bool m_frozenMemSizeHasBeenSet;
+
+                    /**
+                     * 冻节点磁盘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_frozenDiskType;
+                    bool m_frozenDiskTypeHasBeenSet;
+
+                    /**
+                     * 冻节点磁盘大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_frozenDiskSize;
+                    bool m_frozenDiskSizeHasBeenSet;
 
                 };
             }

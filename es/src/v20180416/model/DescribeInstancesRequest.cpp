@@ -31,7 +31,8 @@ DescribeInstancesRequest::DescribeInstancesRequest() :
     m_orderByKeyHasBeenSet(false),
     m_orderByTypeHasBeenSet(false),
     m_tagListHasBeenSet(false),
-    m_ipListHasBeenSet(false)
+    m_ipListHasBeenSet(false),
+    m_zoneListHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,19 @@ string DescribeInstancesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_ipList.begin(); itr != m_ipList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_zoneListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_zoneList.begin(); itr != m_zoneList.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -286,6 +300,22 @@ void DescribeInstancesRequest::SetIpList(const vector<string>& _ipList)
 bool DescribeInstancesRequest::IpListHasBeenSet() const
 {
     return m_ipListHasBeenSet;
+}
+
+vector<string> DescribeInstancesRequest::GetZoneList() const
+{
+    return m_zoneList;
+}
+
+void DescribeInstancesRequest::SetZoneList(const vector<string>& _zoneList)
+{
+    m_zoneList = _zoneList;
+    m_zoneListHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::ZoneListHasBeenSet() const
+{
+    return m_zoneListHasBeenSet;
 }
 
 

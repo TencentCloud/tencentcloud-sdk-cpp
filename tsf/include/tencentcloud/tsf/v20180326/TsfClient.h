@@ -153,6 +153,8 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeConfigsResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeContainerEventsRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeContainerEventsResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeContainerGroupDeployInfoRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeContainerGroupDeployInfoResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeContainerGroupDetailRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeContainerGroupDetailResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeContainerGroupsRequest.h>
@@ -576,6 +578,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeContainerEventsResponse> DescribeContainerEventsOutcome;
                 typedef std::future<DescribeContainerEventsOutcome> DescribeContainerEventsOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeContainerEventsRequest&, DescribeContainerEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContainerEventsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeContainerGroupDeployInfoResponse> DescribeContainerGroupDeployInfoOutcome;
+                typedef std::future<DescribeContainerGroupDeployInfoOutcome> DescribeContainerGroupDeployInfoOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeContainerGroupDeployInfoRequest&, DescribeContainerGroupDeployInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContainerGroupDeployInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeContainerGroupDetailResponse> DescribeContainerGroupDetailOutcome;
                 typedef std::future<DescribeContainerGroupDetailOutcome> DescribeContainerGroupDetailOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeContainerGroupDetailRequest&, DescribeContainerGroupDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContainerGroupDetailAsyncHandler;
@@ -1485,6 +1490,15 @@ namespace TencentCloud
                 DescribeContainerEventsOutcome DescribeContainerEvents(const Model::DescribeContainerEventsRequest &request);
                 void DescribeContainerEventsAsync(const Model::DescribeContainerEventsRequest& request, const DescribeContainerEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeContainerEventsOutcomeCallable DescribeContainerEventsCallable(const Model::DescribeContainerEventsRequest& request);
+
+                /**
+                 * 获取部署组详情
+                 * @param req DescribeContainerGroupDeployInfoRequest
+                 * @return DescribeContainerGroupDeployInfoOutcome
+                 */
+                DescribeContainerGroupDeployInfoOutcome DescribeContainerGroupDeployInfo(const Model::DescribeContainerGroupDeployInfoRequest &request);
+                void DescribeContainerGroupDeployInfoAsync(const Model::DescribeContainerGroupDeployInfoRequest& request, const DescribeContainerGroupDeployInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeContainerGroupDeployInfoOutcomeCallable DescribeContainerGroupDeployInfoCallable(const Model::DescribeContainerGroupDeployInfoRequest& request);
 
                 /**
                  * 容器部署组详情（已废弃，请使用  DescribeContainerGroupDeployInfo）

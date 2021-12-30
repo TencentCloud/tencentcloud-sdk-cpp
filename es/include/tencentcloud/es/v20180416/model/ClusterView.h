@@ -388,6 +388,68 @@ namespace TencentCloud
                      */
                     bool UnassignedShardNumHasBeenSet() const;
 
+                    /**
+                     * 获取企业版COS存储容量大小，单位GB
+                     * @return TotalCosStorage 企业版COS存储容量大小，单位GB
+                     */
+                    int64_t GetTotalCosStorage() const;
+
+                    /**
+                     * 设置企业版COS存储容量大小，单位GB
+                     * @param TotalCosStorage 企业版COS存储容量大小，单位GB
+                     */
+                    void SetTotalCosStorage(const int64_t& _totalCosStorage);
+
+                    /**
+                     * 判断参数 TotalCosStorage 是否已赋值
+                     * @return TotalCosStorage 是否已赋值
+                     */
+                    bool TotalCosStorageHasBeenSet() const;
+
+                    /**
+                     * 获取企业版集群可搜索快照cos存放的bucket名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SearchableSnapshotCosBucket 企业版集群可搜索快照cos存放的bucket名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSearchableSnapshotCosBucket() const;
+
+                    /**
+                     * 设置企业版集群可搜索快照cos存放的bucket名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SearchableSnapshotCosBucket 企业版集群可搜索快照cos存放的bucket名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSearchableSnapshotCosBucket(const std::string& _searchableSnapshotCosBucket);
+
+                    /**
+                     * 判断参数 SearchableSnapshotCosBucket 是否已赋值
+                     * @return SearchableSnapshotCosBucket 是否已赋值
+                     */
+                    bool SearchableSnapshotCosBucketHasBeenSet() const;
+
+                    /**
+                     * 获取企业版集群可搜索快照cos所属appid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SearchableSnapshotCosAppId 企业版集群可搜索快照cos所属appid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSearchableSnapshotCosAppId() const;
+
+                    /**
+                     * 设置企业版集群可搜索快照cos所属appid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SearchableSnapshotCosAppId 企业版集群可搜索快照cos所属appid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSearchableSnapshotCosAppId(const std::string& _searchableSnapshotCosAppId);
+
+                    /**
+                     * 判断参数 SearchableSnapshotCosAppId 是否已赋值
+                     * @return SearchableSnapshotCosAppId 是否已赋值
+                     */
+                    bool SearchableSnapshotCosAppIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -503,6 +565,26 @@ namespace TencentCloud
                      */
                     int64_t m_unassignedShardNum;
                     bool m_unassignedShardNumHasBeenSet;
+
+                    /**
+                     * 企业版COS存储容量大小，单位GB
+                     */
+                    int64_t m_totalCosStorage;
+                    bool m_totalCosStorageHasBeenSet;
+
+                    /**
+                     * 企业版集群可搜索快照cos存放的bucket名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_searchableSnapshotCosBucket;
+                    bool m_searchableSnapshotCosBucketHasBeenSet;
+
+                    /**
+                     * 企业版集群可搜索快照cos所属appid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_searchableSnapshotCosAppId;
+                    bool m_searchableSnapshotCosAppIdHasBeenSet;
 
                 };
             }

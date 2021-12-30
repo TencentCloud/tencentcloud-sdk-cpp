@@ -79,7 +79,19 @@ InstanceInfo::InstanceInfo() :
     m_webNodeTypeInfoHasBeenSet(false),
     m_jdkHasBeenSet(false),
     m_protocolHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false)
+    m_securityGroupsHasBeenSet(false),
+    m_coldNodeTypeHasBeenSet(false),
+    m_coldNodeNumHasBeenSet(false),
+    m_coldCpuNumHasBeenSet(false),
+    m_coldMemSizeHasBeenSet(false),
+    m_coldDiskTypeHasBeenSet(false),
+    m_coldDiskSizeHasBeenSet(false),
+    m_frozenNodeTypeHasBeenSet(false),
+    m_frozenNodeNumHasBeenSet(false),
+    m_frozenCpuNumHasBeenSet(false),
+    m_frozenMemSizeHasBeenSet(false),
+    m_frozenDiskTypeHasBeenSet(false),
+    m_frozenDiskSizeHasBeenSet(false)
 {
 }
 
@@ -760,6 +772,126 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_securityGroupsHasBeenSet = true;
     }
 
+    if (value.HasMember("ColdNodeType") && !value["ColdNodeType"].IsNull())
+    {
+        if (!value["ColdNodeType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.ColdNodeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_coldNodeType = string(value["ColdNodeType"].GetString());
+        m_coldNodeTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ColdNodeNum") && !value["ColdNodeNum"].IsNull())
+    {
+        if (!value["ColdNodeNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.ColdNodeNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_coldNodeNum = value["ColdNodeNum"].GetUint64();
+        m_coldNodeNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("ColdCpuNum") && !value["ColdCpuNum"].IsNull())
+    {
+        if (!value["ColdCpuNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.ColdCpuNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_coldCpuNum = value["ColdCpuNum"].GetUint64();
+        m_coldCpuNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("ColdMemSize") && !value["ColdMemSize"].IsNull())
+    {
+        if (!value["ColdMemSize"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.ColdMemSize` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_coldMemSize = value["ColdMemSize"].GetUint64();
+        m_coldMemSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ColdDiskType") && !value["ColdDiskType"].IsNull())
+    {
+        if (!value["ColdDiskType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.ColdDiskType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_coldDiskType = string(value["ColdDiskType"].GetString());
+        m_coldDiskTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ColdDiskSize") && !value["ColdDiskSize"].IsNull())
+    {
+        if (!value["ColdDiskSize"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.ColdDiskSize` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_coldDiskSize = value["ColdDiskSize"].GetUint64();
+        m_coldDiskSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FrozenNodeType") && !value["FrozenNodeType"].IsNull())
+    {
+        if (!value["FrozenNodeType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.FrozenNodeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_frozenNodeType = string(value["FrozenNodeType"].GetString());
+        m_frozenNodeTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FrozenNodeNum") && !value["FrozenNodeNum"].IsNull())
+    {
+        if (!value["FrozenNodeNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.FrozenNodeNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_frozenNodeNum = value["FrozenNodeNum"].GetUint64();
+        m_frozenNodeNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("FrozenCpuNum") && !value["FrozenCpuNum"].IsNull())
+    {
+        if (!value["FrozenCpuNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.FrozenCpuNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_frozenCpuNum = value["FrozenCpuNum"].GetUint64();
+        m_frozenCpuNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("FrozenMemSize") && !value["FrozenMemSize"].IsNull())
+    {
+        if (!value["FrozenMemSize"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.FrozenMemSize` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_frozenMemSize = value["FrozenMemSize"].GetUint64();
+        m_frozenMemSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FrozenDiskType") && !value["FrozenDiskType"].IsNull())
+    {
+        if (!value["FrozenDiskType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.FrozenDiskType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_frozenDiskType = string(value["FrozenDiskType"].GetString());
+        m_frozenDiskTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FrozenDiskSize") && !value["FrozenDiskSize"].IsNull())
+    {
+        if (!value["FrozenDiskSize"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.FrozenDiskSize` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_frozenDiskSize = value["FrozenDiskSize"].GetUint64();
+        m_frozenDiskSizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1270,6 +1402,102 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_coldNodeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ColdNodeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_coldNodeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_coldNodeNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ColdNodeNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_coldNodeNum, allocator);
+    }
+
+    if (m_coldCpuNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ColdCpuNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_coldCpuNum, allocator);
+    }
+
+    if (m_coldMemSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ColdMemSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_coldMemSize, allocator);
+    }
+
+    if (m_coldDiskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ColdDiskType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_coldDiskType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_coldDiskSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ColdDiskSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_coldDiskSize, allocator);
+    }
+
+    if (m_frozenNodeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FrozenNodeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_frozenNodeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_frozenNodeNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FrozenNodeNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_frozenNodeNum, allocator);
+    }
+
+    if (m_frozenCpuNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FrozenCpuNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_frozenCpuNum, allocator);
+    }
+
+    if (m_frozenMemSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FrozenMemSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_frozenMemSize, allocator);
+    }
+
+    if (m_frozenDiskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FrozenDiskType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_frozenDiskType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_frozenDiskSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FrozenDiskSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_frozenDiskSize, allocator);
     }
 
 }
@@ -2217,5 +2445,197 @@ void InstanceInfo::SetSecurityGroups(const vector<string>& _securityGroups)
 bool InstanceInfo::SecurityGroupsHasBeenSet() const
 {
     return m_securityGroupsHasBeenSet;
+}
+
+string InstanceInfo::GetColdNodeType() const
+{
+    return m_coldNodeType;
+}
+
+void InstanceInfo::SetColdNodeType(const string& _coldNodeType)
+{
+    m_coldNodeType = _coldNodeType;
+    m_coldNodeTypeHasBeenSet = true;
+}
+
+bool InstanceInfo::ColdNodeTypeHasBeenSet() const
+{
+    return m_coldNodeTypeHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetColdNodeNum() const
+{
+    return m_coldNodeNum;
+}
+
+void InstanceInfo::SetColdNodeNum(const uint64_t& _coldNodeNum)
+{
+    m_coldNodeNum = _coldNodeNum;
+    m_coldNodeNumHasBeenSet = true;
+}
+
+bool InstanceInfo::ColdNodeNumHasBeenSet() const
+{
+    return m_coldNodeNumHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetColdCpuNum() const
+{
+    return m_coldCpuNum;
+}
+
+void InstanceInfo::SetColdCpuNum(const uint64_t& _coldCpuNum)
+{
+    m_coldCpuNum = _coldCpuNum;
+    m_coldCpuNumHasBeenSet = true;
+}
+
+bool InstanceInfo::ColdCpuNumHasBeenSet() const
+{
+    return m_coldCpuNumHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetColdMemSize() const
+{
+    return m_coldMemSize;
+}
+
+void InstanceInfo::SetColdMemSize(const uint64_t& _coldMemSize)
+{
+    m_coldMemSize = _coldMemSize;
+    m_coldMemSizeHasBeenSet = true;
+}
+
+bool InstanceInfo::ColdMemSizeHasBeenSet() const
+{
+    return m_coldMemSizeHasBeenSet;
+}
+
+string InstanceInfo::GetColdDiskType() const
+{
+    return m_coldDiskType;
+}
+
+void InstanceInfo::SetColdDiskType(const string& _coldDiskType)
+{
+    m_coldDiskType = _coldDiskType;
+    m_coldDiskTypeHasBeenSet = true;
+}
+
+bool InstanceInfo::ColdDiskTypeHasBeenSet() const
+{
+    return m_coldDiskTypeHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetColdDiskSize() const
+{
+    return m_coldDiskSize;
+}
+
+void InstanceInfo::SetColdDiskSize(const uint64_t& _coldDiskSize)
+{
+    m_coldDiskSize = _coldDiskSize;
+    m_coldDiskSizeHasBeenSet = true;
+}
+
+bool InstanceInfo::ColdDiskSizeHasBeenSet() const
+{
+    return m_coldDiskSizeHasBeenSet;
+}
+
+string InstanceInfo::GetFrozenNodeType() const
+{
+    return m_frozenNodeType;
+}
+
+void InstanceInfo::SetFrozenNodeType(const string& _frozenNodeType)
+{
+    m_frozenNodeType = _frozenNodeType;
+    m_frozenNodeTypeHasBeenSet = true;
+}
+
+bool InstanceInfo::FrozenNodeTypeHasBeenSet() const
+{
+    return m_frozenNodeTypeHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetFrozenNodeNum() const
+{
+    return m_frozenNodeNum;
+}
+
+void InstanceInfo::SetFrozenNodeNum(const uint64_t& _frozenNodeNum)
+{
+    m_frozenNodeNum = _frozenNodeNum;
+    m_frozenNodeNumHasBeenSet = true;
+}
+
+bool InstanceInfo::FrozenNodeNumHasBeenSet() const
+{
+    return m_frozenNodeNumHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetFrozenCpuNum() const
+{
+    return m_frozenCpuNum;
+}
+
+void InstanceInfo::SetFrozenCpuNum(const uint64_t& _frozenCpuNum)
+{
+    m_frozenCpuNum = _frozenCpuNum;
+    m_frozenCpuNumHasBeenSet = true;
+}
+
+bool InstanceInfo::FrozenCpuNumHasBeenSet() const
+{
+    return m_frozenCpuNumHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetFrozenMemSize() const
+{
+    return m_frozenMemSize;
+}
+
+void InstanceInfo::SetFrozenMemSize(const uint64_t& _frozenMemSize)
+{
+    m_frozenMemSize = _frozenMemSize;
+    m_frozenMemSizeHasBeenSet = true;
+}
+
+bool InstanceInfo::FrozenMemSizeHasBeenSet() const
+{
+    return m_frozenMemSizeHasBeenSet;
+}
+
+string InstanceInfo::GetFrozenDiskType() const
+{
+    return m_frozenDiskType;
+}
+
+void InstanceInfo::SetFrozenDiskType(const string& _frozenDiskType)
+{
+    m_frozenDiskType = _frozenDiskType;
+    m_frozenDiskTypeHasBeenSet = true;
+}
+
+bool InstanceInfo::FrozenDiskTypeHasBeenSet() const
+{
+    return m_frozenDiskTypeHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetFrozenDiskSize() const
+{
+    return m_frozenDiskSize;
+}
+
+void InstanceInfo::SetFrozenDiskSize(const uint64_t& _frozenDiskSize)
+{
+    m_frozenDiskSize = _frozenDiskSize;
+    m_frozenDiskSizeHasBeenSet = true;
+}
+
+bool InstanceInfo::FrozenDiskSizeHasBeenSet() const
+{
+    return m_frozenDiskSizeHasBeenSet;
 }
 

@@ -672,17 +672,21 @@ CLONING表示复制中。
                     bool NetworkTypeHasBeenSet() const;
 
                     /**
-                     * 获取通道套餐类型：Thunder表示标准通道，Accelerator表示游戏加速器通道。
+                     * 获取通道套餐类型：Thunder表示标准通道，Accelerator表示游戏加速器通道，
+CrossBorder表示跨境通道。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PackageType 通道套餐类型：Thunder表示标准通道，Accelerator表示游戏加速器通道。
+                     * @return PackageType 通道套餐类型：Thunder表示标准通道，Accelerator表示游戏加速器通道，
+CrossBorder表示跨境通道。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPackageType() const;
 
                     /**
-                     * 设置通道套餐类型：Thunder表示标准通道，Accelerator表示游戏加速器通道。
+                     * 设置通道套餐类型：Thunder表示标准通道，Accelerator表示游戏加速器通道，
+CrossBorder表示跨境通道。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PackageType 通道套餐类型：Thunder表示标准通道，Accelerator表示游戏加速器通道。
+                     * @param PackageType 通道套餐类型：Thunder表示标准通道，Accelerator表示游戏加速器通道，
+CrossBorder表示跨境通道。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPackageType(const std::string& _packageType);
@@ -939,7 +943,8 @@ CLONING表示复制中。
                     bool m_networkTypeHasBeenSet;
 
                     /**
-                     * 通道套餐类型：Thunder表示标准通道，Accelerator表示游戏加速器通道。
+                     * 通道套餐类型：Thunder表示标准通道，Accelerator表示游戏加速器通道，
+CrossBorder表示跨境通道。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageType;

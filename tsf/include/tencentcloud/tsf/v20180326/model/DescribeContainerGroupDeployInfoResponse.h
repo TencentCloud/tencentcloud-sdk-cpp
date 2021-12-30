@@ -14,57 +14,55 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_ES_V20180416_MODEL_UPGRADELICENSERESPONSE_H_
-#define TENCENTCLOUD_ES_V20180416_MODEL_UPGRADELICENSERESPONSE_H_
+#ifndef TENCENTCLOUD_TSF_V20180326_MODEL_DESCRIBECONTAINERGROUPDEPLOYINFORESPONSE_H_
+#define TENCENTCLOUD_TSF_V20180326_MODEL_DESCRIBECONTAINERGROUPDEPLOYINFORESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tsf/v20180326/model/ContainerGroupDeploy.h>
 
 
 namespace TencentCloud
 {
-    namespace Es
+    namespace Tsf
     {
-        namespace V20180416
+        namespace V20180326
         {
             namespace Model
             {
                 /**
-                * UpgradeLicense返回参数结构体
+                * DescribeContainerGroupDeployInfo返回参数结构体
                 */
-                class UpgradeLicenseResponse : public AbstractModel
+                class DescribeContainerGroupDeployInfoResponse : public AbstractModel
                 {
                 public:
-                    UpgradeLicenseResponse();
-                    ~UpgradeLicenseResponse() = default;
+                    DescribeContainerGroupDeployInfoResponse();
+                    ~DescribeContainerGroupDeployInfoResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取订单号
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DealName 订单号
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取获取部署组
+                     * @return Result 获取部署组
                      */
-                    std::string GetDealName() const;
+                    ContainerGroupDeploy GetResult() const;
 
                     /**
-                     * 判断参数 DealName 是否已赋值
-                     * @return DealName 是否已赋值
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
                      */
-                    bool DealNameHasBeenSet() const;
+                    bool ResultHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 订单号
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取部署组
                      */
-                    std::string m_dealName;
-                    bool m_dealNameHasBeenSet;
+                    ContainerGroupDeploy m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }
@@ -72,4 +70,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_ES_V20180416_MODEL_UPGRADELICENSERESPONSE_H_
+#endif // !TENCENTCLOUD_TSF_V20180326_MODEL_DESCRIBECONTAINERGROUPDEPLOYINFORESPONSE_H_

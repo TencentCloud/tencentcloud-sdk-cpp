@@ -205,6 +205,24 @@ namespace TencentCloud
                      */
                     bool IpListHasBeenSet() const;
 
+                    /**
+                     * 获取可用区列表
+                     * @return ZoneList 可用区列表
+                     */
+                    std::vector<std::string> GetZoneList() const;
+
+                    /**
+                     * 设置可用区列表
+                     * @param ZoneList 可用区列表
+                     */
+                    void SetZoneList(const std::vector<std::string>& _zoneList);
+
+                    /**
+                     * 判断参数 ZoneList 是否已赋值
+                     * @return ZoneList 是否已赋值
+                     */
+                    bool ZoneListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -260,6 +278,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_ipList;
                     bool m_ipListHasBeenSet;
+
+                    /**
+                     * 可用区列表
+                     */
+                    std::vector<std::string> m_zoneList;
+                    bool m_zoneListHasBeenSet;
 
                 };
             }

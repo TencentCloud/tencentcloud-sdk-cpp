@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool ForceUpdateHasBeenSet() const;
 
+                    /**
+                     * 获取0：系统插件
+                     * @return PluginType 0：系统插件
+                     */
+                    uint64_t GetPluginType() const;
+
+                    /**
+                     * 设置0：系统插件
+                     * @param PluginType 0：系统插件
+                     */
+                    void SetPluginType(const uint64_t& _pluginType);
+
+                    /**
+                     * 判断参数 PluginType 是否已赋值
+                     * @return PluginType 是否已赋值
+                     */
+                    bool PluginTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     bool m_forceUpdate;
                     bool m_forceUpdateHasBeenSet;
+
+                    /**
+                     * 0：系统插件
+                     */
+                    uint64_t m_pluginType;
+                    bool m_pluginTypeHasBeenSet;
 
                 };
             }

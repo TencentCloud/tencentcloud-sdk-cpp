@@ -29,6 +29,8 @@
 #include <tencentcloud/organization/v20210331/model/CreateOrganizationMemberResponse.h>
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationRequest.h>
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationResponse.h>
+#include <tencentcloud/organization/v20210331/model/DescribeOrganizationMembersRequest.h>
+#include <tencentcloud/organization/v20210331/model/DescribeOrganizationMembersResponse.h>
 
 
 namespace TencentCloud
@@ -52,6 +54,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeOrganizationResponse> DescribeOrganizationOutcome;
                 typedef std::future<DescribeOrganizationOutcome> DescribeOrganizationOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DescribeOrganizationRequest&, DescribeOrganizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOrganizationMembersResponse> DescribeOrganizationMembersOutcome;
+                typedef std::future<DescribeOrganizationMembersOutcome> DescribeOrganizationMembersOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::DescribeOrganizationMembersRequest&, DescribeOrganizationMembersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationMembersAsyncHandler;
 
 
 
@@ -81,6 +86,15 @@ namespace TencentCloud
                 DescribeOrganizationOutcome DescribeOrganization(const Model::DescribeOrganizationRequest &request);
                 void DescribeOrganizationAsync(const Model::DescribeOrganizationRequest& request, const DescribeOrganizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeOrganizationOutcomeCallable DescribeOrganizationCallable(const Model::DescribeOrganizationRequest& request);
+
+                /**
+                 *获取企业组织成员列表
+                 * @param req DescribeOrganizationMembersRequest
+                 * @return DescribeOrganizationMembersOutcome
+                 */
+                DescribeOrganizationMembersOutcome DescribeOrganizationMembers(const Model::DescribeOrganizationMembersRequest &request);
+                void DescribeOrganizationMembersAsync(const Model::DescribeOrganizationMembersRequest& request, const DescribeOrganizationMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOrganizationMembersOutcomeCallable DescribeOrganizationMembersCallable(const Model::DescribeOrganizationMembersRequest& request);
 
             };
         }

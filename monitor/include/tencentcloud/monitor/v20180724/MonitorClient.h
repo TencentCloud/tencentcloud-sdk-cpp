@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/monitor/v20180724/model/BindingPolicyObjectRequest.h>
 #include <tencentcloud/monitor/v20180724/model/BindingPolicyObjectResponse.h>
+#include <tencentcloud/monitor/v20180724/model/BindingPolicyTagRequest.h>
+#include <tencentcloud/monitor/v20180724/model/BindingPolicyTagResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreateAlarmNoticeRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CreateAlarmNoticeResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreateAlarmPolicyRequest.h>
@@ -142,6 +144,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BindingPolicyObjectResponse> BindingPolicyObjectOutcome;
                 typedef std::future<BindingPolicyObjectOutcome> BindingPolicyObjectOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::BindingPolicyObjectRequest&, BindingPolicyObjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindingPolicyObjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::BindingPolicyTagResponse> BindingPolicyTagOutcome;
+                typedef std::future<BindingPolicyTagOutcome> BindingPolicyTagOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::BindingPolicyTagRequest&, BindingPolicyTagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindingPolicyTagAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAlarmNoticeResponse> CreateAlarmNoticeOutcome;
                 typedef std::future<CreateAlarmNoticeOutcome> CreateAlarmNoticeOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CreateAlarmNoticeRequest&, CreateAlarmNoticeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAlarmNoticeAsyncHandler;
@@ -303,6 +308,15 @@ namespace TencentCloud
                 BindingPolicyObjectOutcome BindingPolicyObject(const Model::BindingPolicyObjectRequest &request);
                 void BindingPolicyObjectAsync(const Model::BindingPolicyObjectRequest& request, const BindingPolicyObjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BindingPolicyObjectOutcomeCallable BindingPolicyObjectCallable(const Model::BindingPolicyObjectRequest& request);
+
+                /**
+                 *策略绑定标签
+                 * @param req BindingPolicyTagRequest
+                 * @return BindingPolicyTagOutcome
+                 */
+                BindingPolicyTagOutcome BindingPolicyTag(const Model::BindingPolicyTagRequest &request);
+                void BindingPolicyTagAsync(const Model::BindingPolicyTagRequest& request, const BindingPolicyTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindingPolicyTagOutcomeCallable BindingPolicyTagCallable(const Model::BindingPolicyTagRequest& request);
 
                 /**
                  *创建通知模板

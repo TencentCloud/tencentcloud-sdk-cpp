@@ -106,6 +106,7 @@ AccessRegion - String - 是否必填：否 - （过滤条件）按照接入地�
 RealServerRegion - String - 是否必填：否 - （过滤条件）按照源站地域过滤。
 GroupId - String - 是否必填：否 - （过滤条件）按照通道组ID过滤。
 IPAddressVersion - String - 是否必填：否 - （过滤条件）按照IP版本过滤。
+PackageType - String - 是否必填：否 - （过滤条件）按照通道套餐类型过滤。
                      * @return Filters 过滤条件。   
 每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定InstanceIds和Filters。 
 ProjectId - String - 是否必填：否 -（过滤条件）按照项目ID过滤。   
@@ -113,6 +114,7 @@ AccessRegion - String - 是否必填：否 - （过滤条件）按照接入地�
 RealServerRegion - String - 是否必填：否 - （过滤条件）按照源站地域过滤。
 GroupId - String - 是否必填：否 - （过滤条件）按照通道组ID过滤。
 IPAddressVersion - String - 是否必填：否 - （过滤条件）按照IP版本过滤。
+PackageType - String - 是否必填：否 - （过滤条件）按照通道套餐类型过滤。
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -124,6 +126,7 @@ AccessRegion - String - 是否必填：否 - （过滤条件）按照接入地�
 RealServerRegion - String - 是否必填：否 - （过滤条件）按照源站地域过滤。
 GroupId - String - 是否必填：否 - （过滤条件）按照通道组ID过滤。
 IPAddressVersion - String - 是否必填：否 - （过滤条件）按照IP版本过滤。
+PackageType - String - 是否必填：否 - （过滤条件）按照通道套餐类型过滤。
                      * @param Filters 过滤条件。   
 每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定InstanceIds和Filters。 
 ProjectId - String - 是否必填：否 -（过滤条件）按照项目ID过滤。   
@@ -131,6 +134,7 @@ AccessRegion - String - 是否必填：否 - （过滤条件）按照接入地�
 RealServerRegion - String - 是否必填：否 - （过滤条件）按照源站地域过滤。
 GroupId - String - 是否必填：否 - （过滤条件）按照通道组ID过滤。
 IPAddressVersion - String - 是否必填：否 - （过滤条件）按照IP版本过滤。
+PackageType - String - 是否必填：否 - （过滤条件）按照通道套餐类型过滤。
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -302,6 +306,7 @@ AccessRegion - String - 是否必填：否 - （过滤条件）按照接入地�
 RealServerRegion - String - 是否必填：否 - （过滤条件）按照源站地域过滤。
 GroupId - String - 是否必填：否 - （过滤条件）按照通道组ID过滤。
 IPAddressVersion - String - 是否必填：否 - （过滤条件）按照IP版本过滤。
+PackageType - String - 是否必填：否 - （过滤条件）按照通道套餐类型过滤。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
