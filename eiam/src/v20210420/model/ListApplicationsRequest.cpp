@@ -26,7 +26,8 @@ ListApplicationsRequest::ListApplicationsRequest() :
     m_searchConditionHasBeenSet(false),
     m_sortHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_applicationIdListHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,19 @@ string ListApplicationsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_applicationIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_applicationIdList.begin(); itr != m_applicationIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -141,6 +155,22 @@ void ListApplicationsRequest::SetLimit(const uint64_t& _limit)
 bool ListApplicationsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+vector<string> ListApplicationsRequest::GetApplicationIdList() const
+{
+    return m_applicationIdList;
+}
+
+void ListApplicationsRequest::SetApplicationIdList(const vector<string>& _applicationIdList)
+{
+    m_applicationIdList = _applicationIdList;
+    m_applicationIdListHasBeenSet = true;
+}
+
+bool ListApplicationsRequest::ApplicationIdListHasBeenSet() const
+{
+    return m_applicationIdListHasBeenSet;
 }
 
 

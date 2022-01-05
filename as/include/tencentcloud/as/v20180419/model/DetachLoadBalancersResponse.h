@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CLS_V20201016_MODEL_DELETEASYNCCONTEXTTASKRESPONSE_H_
-#define TENCENTCLOUD_CLS_V20201016_MODEL_DELETEASYNCCONTEXTTASKRESPONSE_H_
+#ifndef TENCENTCLOUD_AS_V20180419_MODEL_DETACHLOADBALANCERSRESPONSE_H_
+#define TENCENTCLOUD_AS_V20180419_MODEL_DETACHLOADBALANCERSRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,25 +25,43 @@
 
 namespace TencentCloud
 {
-    namespace Cls
+    namespace As
     {
-        namespace V20201016
+        namespace V20180419
         {
             namespace Model
             {
                 /**
-                * DeleteAsyncContextTask返回参数结构体
+                * DetachLoadBalancers返回参数结构体
                 */
-                class DeleteAsyncContextTaskResponse : public AbstractModel
+                class DetachLoadBalancersResponse : public AbstractModel
                 {
                 public:
-                    DeleteAsyncContextTaskResponse();
-                    ~DeleteAsyncContextTaskResponse() = default;
+                    DetachLoadBalancersResponse();
+                    ~DetachLoadBalancersResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取伸缩活动ID
+                     * @return ActivityId 伸缩活动ID
+                     */
+                    std::string GetActivityId() const;
+
+                    /**
+                     * 判断参数 ActivityId 是否已赋值
+                     * @return ActivityId 是否已赋值
+                     */
+                    bool ActivityIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 伸缩活动ID
+                     */
+                    std::string m_activityId;
+                    bool m_activityIdHasBeenSet;
 
                 };
             }
@@ -51,4 +69,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CLS_V20201016_MODEL_DELETEASYNCCONTEXTTASKRESPONSE_H_
+#endif // !TENCENTCLOUD_AS_V20180419_MODEL_DETACHLOADBALANCERSRESPONSE_H_

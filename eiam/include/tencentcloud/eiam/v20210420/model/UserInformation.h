@@ -179,17 +179,17 @@ namespace TencentCloud
                     bool CreationTimeHasBeenSet() const;
 
                     /**
-                     * 获取用户所属组织机构路径。
+                     * 获取用户所属主组织机构的路径ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OrgPath 用户所属组织机构路径。
+                     * @return OrgPath 用户所属主组织机构的路径ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOrgPath() const;
 
                     /**
-                     * 设置用户所属组织机构路径。
+                     * 设置用户所属主组织机构的路径ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OrgPath 用户所属组织机构路径。
+                     * @param OrgPath 用户所属主组织机构的路径ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOrgPath(const std::string& _orgPath);
@@ -355,7 +355,7 @@ namespace TencentCloud
                     bool m_creationTimeHasBeenSet;
 
                     /**
-                     * 用户所属组织机构路径。
+                     * 用户所属主组织机构的路径ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_orgPath;

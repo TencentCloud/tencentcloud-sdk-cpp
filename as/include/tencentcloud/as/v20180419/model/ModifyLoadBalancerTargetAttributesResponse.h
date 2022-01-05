@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CLS_V20201016_MODEL_CREATEASYNCCONTEXTTASKRESPONSE_H_
-#define TENCENTCLOUD_CLS_V20201016_MODEL_CREATEASYNCCONTEXTTASKRESPONSE_H_
+#ifndef TENCENTCLOUD_AS_V20180419_MODEL_MODIFYLOADBALANCERTARGETATTRIBUTESRESPONSE_H_
+#define TENCENTCLOUD_AS_V20180419_MODEL_MODIFYLOADBALANCERTARGETATTRIBUTESRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,43 +25,43 @@
 
 namespace TencentCloud
 {
-    namespace Cls
+    namespace As
     {
-        namespace V20201016
+        namespace V20180419
         {
             namespace Model
             {
                 /**
-                * CreateAsyncContextTask返回参数结构体
+                * ModifyLoadBalancerTargetAttributes返回参数结构体
                 */
-                class CreateAsyncContextTaskResponse : public AbstractModel
+                class ModifyLoadBalancerTargetAttributesResponse : public AbstractModel
                 {
                 public:
-                    CreateAsyncContextTaskResponse();
-                    ~CreateAsyncContextTaskResponse() = default;
+                    ModifyLoadBalancerTargetAttributesResponse();
+                    ~ModifyLoadBalancerTargetAttributesResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取异步上下文任务ID
-                     * @return AsyncContextTaskId 异步上下文任务ID
+                     * 获取伸缩活动ID
+                     * @return ActivityId 伸缩活动ID
                      */
-                    std::string GetAsyncContextTaskId() const;
+                    std::string GetActivityId() const;
 
                     /**
-                     * 判断参数 AsyncContextTaskId 是否已赋值
-                     * @return AsyncContextTaskId 是否已赋值
+                     * 判断参数 ActivityId 是否已赋值
+                     * @return ActivityId 是否已赋值
                      */
-                    bool AsyncContextTaskIdHasBeenSet() const;
+                    bool ActivityIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 异步上下文任务ID
+                     * 伸缩活动ID
                      */
-                    std::string m_asyncContextTaskId;
-                    bool m_asyncContextTaskIdHasBeenSet;
+                    std::string m_activityId;
+                    bool m_activityIdHasBeenSet;
 
                 };
             }
@@ -69,4 +69,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CLS_V20201016_MODEL_CREATEASYNCCONTEXTTASKRESPONSE_H_
+#endif // !TENCENTCLOUD_AS_V20180419_MODEL_MODIFYLOADBALANCERTARGETATTRIBUTESRESPONSE_H_

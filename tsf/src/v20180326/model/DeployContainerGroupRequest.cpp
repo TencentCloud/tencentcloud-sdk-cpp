@@ -55,7 +55,9 @@ DeployContainerGroupRequest::DeployContainerGroupRequest() :
     m_incrementalDeploymentHasBeenSet(false),
     m_repoTypeHasBeenSet(false),
     m_volumeInfosHasBeenSet(false),
-    m_volumeMountInfosHasBeenSet(false)
+    m_volumeMountInfosHasBeenSet(false),
+    m_volumeInfoListHasBeenSet(false),
+    m_volumeMountInfoListHasBeenSet(false)
 {
 }
 
@@ -340,6 +342,36 @@ string DeployContainerGroupRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_volumeMountInfos.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_volumeInfoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VolumeInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_volumeInfoList.begin(); itr != m_volumeInfoList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_volumeMountInfoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VolumeMountInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_volumeMountInfoList.begin(); itr != m_volumeMountInfoList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -876,6 +908,38 @@ void DeployContainerGroupRequest::SetVolumeMountInfos(const VolumeMountInfo& _vo
 bool DeployContainerGroupRequest::VolumeMountInfosHasBeenSet() const
 {
     return m_volumeMountInfosHasBeenSet;
+}
+
+vector<VolumeInfo> DeployContainerGroupRequest::GetVolumeInfoList() const
+{
+    return m_volumeInfoList;
+}
+
+void DeployContainerGroupRequest::SetVolumeInfoList(const vector<VolumeInfo>& _volumeInfoList)
+{
+    m_volumeInfoList = _volumeInfoList;
+    m_volumeInfoListHasBeenSet = true;
+}
+
+bool DeployContainerGroupRequest::VolumeInfoListHasBeenSet() const
+{
+    return m_volumeInfoListHasBeenSet;
+}
+
+vector<VolumeMountInfo> DeployContainerGroupRequest::GetVolumeMountInfoList() const
+{
+    return m_volumeMountInfoList;
+}
+
+void DeployContainerGroupRequest::SetVolumeMountInfoList(const vector<VolumeMountInfo>& _volumeMountInfoList)
+{
+    m_volumeMountInfoList = _volumeMountInfoList;
+    m_volumeMountInfoListHasBeenSet = true;
+}
+
+bool DeployContainerGroupRequest::VolumeMountInfoListHasBeenSet() const
+{
+    return m_volumeMountInfoListHasBeenSet;
 }
 
 

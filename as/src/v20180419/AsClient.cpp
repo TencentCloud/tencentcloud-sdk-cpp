@@ -83,6 +83,49 @@ AsClient::AttachInstancesOutcomeCallable AsClient::AttachInstancesCallable(const
     return task->get_future();
 }
 
+AsClient::AttachLoadBalancersOutcome AsClient::AttachLoadBalancers(const AttachLoadBalancersRequest &request)
+{
+    auto outcome = MakeRequest(request, "AttachLoadBalancers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AttachLoadBalancersResponse rsp = AttachLoadBalancersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AttachLoadBalancersOutcome(rsp);
+        else
+            return AttachLoadBalancersOutcome(o.GetError());
+    }
+    else
+    {
+        return AttachLoadBalancersOutcome(outcome.GetError());
+    }
+}
+
+void AsClient::AttachLoadBalancersAsync(const AttachLoadBalancersRequest& request, const AttachLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AttachLoadBalancers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsClient::AttachLoadBalancersOutcomeCallable AsClient::AttachLoadBalancersCallable(const AttachLoadBalancersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AttachLoadBalancersOutcome()>>(
+        [this, request]()
+        {
+            return this->AttachLoadBalancers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AsClient::ClearLaunchConfigurationAttributesOutcome AsClient::ClearLaunchConfigurationAttributes(const ClearLaunchConfigurationAttributesRequest &request)
 {
     auto outcome = MakeRequest(request, "ClearLaunchConfigurationAttributes");
@@ -1287,6 +1330,49 @@ AsClient::DetachInstancesOutcomeCallable AsClient::DetachInstancesCallable(const
     return task->get_future();
 }
 
+AsClient::DetachLoadBalancersOutcome AsClient::DetachLoadBalancers(const DetachLoadBalancersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetachLoadBalancers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetachLoadBalancersResponse rsp = DetachLoadBalancersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetachLoadBalancersOutcome(rsp);
+        else
+            return DetachLoadBalancersOutcome(o.GetError());
+    }
+    else
+    {
+        return DetachLoadBalancersOutcome(outcome.GetError());
+    }
+}
+
+void AsClient::DetachLoadBalancersAsync(const DetachLoadBalancersRequest& request, const DetachLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DetachLoadBalancers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsClient::DetachLoadBalancersOutcomeCallable AsClient::DetachLoadBalancersCallable(const DetachLoadBalancersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DetachLoadBalancersOutcome()>>(
+        [this, request]()
+        {
+            return this->DetachLoadBalancers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AsClient::DisableAutoScalingGroupOutcome AsClient::DisableAutoScalingGroup(const DisableAutoScalingGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DisableAutoScalingGroup");
@@ -1538,6 +1624,49 @@ AsClient::ModifyLaunchConfigurationAttributesOutcomeCallable AsClient::ModifyLau
         [this, request]()
         {
             return this->ModifyLaunchConfigurationAttributes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AsClient::ModifyLoadBalancerTargetAttributesOutcome AsClient::ModifyLoadBalancerTargetAttributes(const ModifyLoadBalancerTargetAttributesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLoadBalancerTargetAttributes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLoadBalancerTargetAttributesResponse rsp = ModifyLoadBalancerTargetAttributesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLoadBalancerTargetAttributesOutcome(rsp);
+        else
+            return ModifyLoadBalancerTargetAttributesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLoadBalancerTargetAttributesOutcome(outcome.GetError());
+    }
+}
+
+void AsClient::ModifyLoadBalancerTargetAttributesAsync(const ModifyLoadBalancerTargetAttributesRequest& request, const ModifyLoadBalancerTargetAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyLoadBalancerTargetAttributes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsClient::ModifyLoadBalancerTargetAttributesOutcomeCallable AsClient::ModifyLoadBalancerTargetAttributesCallable(const ModifyLoadBalancerTargetAttributesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyLoadBalancerTargetAttributesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyLoadBalancerTargetAttributes(request);
         }
     );
 

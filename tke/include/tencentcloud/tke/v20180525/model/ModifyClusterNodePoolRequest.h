@@ -24,6 +24,7 @@
 #include <tencentcloud/tke/v20180525/model/Label.h>
 #include <tencentcloud/tke/v20180525/model/Taint.h>
 #include <tencentcloud/tke/v20180525/model/InstanceExtraArgs.h>
+#include <tencentcloud/tke/v20180525/model/Tag.h>
 
 
 namespace TencentCloud
@@ -243,6 +244,24 @@ namespace TencentCloud
                      */
                     bool ExtraArgsHasBeenSet() const;
 
+                    /**
+                     * 获取资源标签
+                     * @return Tags 资源标签
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置资源标签
+                     * @param Tags 资源标签
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -310,6 +329,12 @@ namespace TencentCloud
                      */
                     InstanceExtraArgs m_extraArgs;
                     bool m_extraArgsHasBeenSet;
+
+                    /**
+                     * 资源标签
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

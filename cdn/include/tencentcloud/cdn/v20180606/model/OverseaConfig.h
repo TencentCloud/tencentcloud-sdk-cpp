@@ -47,6 +47,8 @@
 #include <tencentcloud/cdn/v20180606/model/Seo.h>
 #include <tencentcloud/cdn/v20180606/model/StatusCodeCache.h>
 #include <tencentcloud/cdn/v20180606/model/VideoSeek.h>
+#include <tencentcloud/cdn/v20180606/model/AwsPrivateAccess.h>
+#include <tencentcloud/cdn/v20180606/model/OssPrivateAccess.h>
 
 
 namespace TencentCloud
@@ -603,6 +605,50 @@ namespace TencentCloud
                      */
                     bool VideoSeekHasBeenSet() const;
 
+                    /**
+                     * 获取回源S3私有鉴权。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AwsPrivateAccess 回源S3私有鉴权。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AwsPrivateAccess GetAwsPrivateAccess() const;
+
+                    /**
+                     * 设置回源S3私有鉴权。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AwsPrivateAccess 回源S3私有鉴权。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAwsPrivateAccess(const AwsPrivateAccess& _awsPrivateAccess);
+
+                    /**
+                     * 判断参数 AwsPrivateAccess 是否已赋值
+                     * @return AwsPrivateAccess 是否已赋值
+                     */
+                    bool AwsPrivateAccessHasBeenSet() const;
+
+                    /**
+                     * 获取回源OSS私有鉴权。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OssPrivateAccess 回源OSS私有鉴权。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OssPrivateAccess GetOssPrivateAccess() const;
+
+                    /**
+                     * 设置回源OSS私有鉴权。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OssPrivateAccess 回源OSS私有鉴权。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOssPrivateAccess(const OssPrivateAccess& _ossPrivateAccess);
+
+                    /**
+                     * 判断参数 OssPrivateAccess 是否已赋值
+                     * @return OssPrivateAccess 是否已赋值
+                     */
+                    bool OssPrivateAccessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -772,6 +818,20 @@ namespace TencentCloud
                      */
                     VideoSeek m_videoSeek;
                     bool m_videoSeekHasBeenSet;
+
+                    /**
+                     * 回源S3私有鉴权。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AwsPrivateAccess m_awsPrivateAccess;
+                    bool m_awsPrivateAccessHasBeenSet;
+
+                    /**
+                     * 回源OSS私有鉴权。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OssPrivateAccess m_ossPrivateAccess;
+                    bool m_ossPrivateAccessHasBeenSet;
 
                 };
             }

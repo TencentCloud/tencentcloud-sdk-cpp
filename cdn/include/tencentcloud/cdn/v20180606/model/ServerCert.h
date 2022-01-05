@@ -50,21 +50,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务器证书 ID
-在 SSL 证书管理进行证书托管时自动生成
+                     * 获取服务器证书 ID 在 SSL 证书管理进行证书托管时自动生成
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CertId 服务器证书 ID
-在 SSL 证书管理进行证书托管时自动生成
+                     * @return CertId 服务器证书 ID 在 SSL 证书管理进行证书托管时自动生成
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCertId() const;
 
                     /**
-                     * 设置服务器证书 ID
-在 SSL 证书管理进行证书托管时自动生成
+                     * 设置服务器证书 ID 在 SSL 证书管理进行证书托管时自动生成
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CertId 服务器证书 ID
-在 SSL 证书管理进行证书托管时自动生成
+                     * @param CertId 服务器证书 ID 在 SSL 证书管理进行证书托管时自动生成
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCertId(const std::string& _certId);
@@ -230,8 +226,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 服务器证书 ID
-在 SSL 证书管理进行证书托管时自动生成
+                     * 服务器证书 ID 在 SSL 证书管理进行证书托管时自动生成
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_certId;

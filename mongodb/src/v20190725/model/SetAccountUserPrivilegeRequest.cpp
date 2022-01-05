@@ -14,53 +14,53 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cls/v20201016/model/DescribeAsyncSearchTasksRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/SetAccountUserPrivilegeRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Cls::V20201016::Model;
+using namespace TencentCloud::Mongodb::V20190725::Model;
 using namespace std;
 
-DescribeAsyncSearchTasksRequest::DescribeAsyncSearchTasksRequest() :
-    m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+SetAccountUserPrivilegeRequest::SetAccountUserPrivilegeRequest() :
+    m_instanceIdHasBeenSet(false),
+    m_userNameHasBeenSet(false),
+    m_authRoleHasBeenSet(false)
 {
 }
 
-string DescribeAsyncSearchTasksRequest::ToJsonString() const
+string SetAccountUserPrivilegeRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_offsetHasBeenSet)
+    if (m_instanceIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
+        string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_limitHasBeenSet)
+    if (m_userNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Limit";
+        string key = "UserName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_filtersHasBeenSet)
+    if (m_authRoleHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Filters";
+        string key = "AuthRole";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        for (auto itr = m_authRole.begin(); itr != m_authRole.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -75,52 +75,52 @@ string DescribeAsyncSearchTasksRequest::ToJsonString() const
 }
 
 
-int64_t DescribeAsyncSearchTasksRequest::GetOffset() const
+string SetAccountUserPrivilegeRequest::GetInstanceId() const
 {
-    return m_offset;
+    return m_instanceId;
 }
 
-void DescribeAsyncSearchTasksRequest::SetOffset(const int64_t& _offset)
+void SetAccountUserPrivilegeRequest::SetInstanceId(const string& _instanceId)
 {
-    m_offset = _offset;
-    m_offsetHasBeenSet = true;
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
 }
 
-bool DescribeAsyncSearchTasksRequest::OffsetHasBeenSet() const
+bool SetAccountUserPrivilegeRequest::InstanceIdHasBeenSet() const
 {
-    return m_offsetHasBeenSet;
+    return m_instanceIdHasBeenSet;
 }
 
-int64_t DescribeAsyncSearchTasksRequest::GetLimit() const
+string SetAccountUserPrivilegeRequest::GetUserName() const
 {
-    return m_limit;
+    return m_userName;
 }
 
-void DescribeAsyncSearchTasksRequest::SetLimit(const int64_t& _limit)
+void SetAccountUserPrivilegeRequest::SetUserName(const string& _userName)
 {
-    m_limit = _limit;
-    m_limitHasBeenSet = true;
+    m_userName = _userName;
+    m_userNameHasBeenSet = true;
 }
 
-bool DescribeAsyncSearchTasksRequest::LimitHasBeenSet() const
+bool SetAccountUserPrivilegeRequest::UserNameHasBeenSet() const
 {
-    return m_limitHasBeenSet;
+    return m_userNameHasBeenSet;
 }
 
-vector<Filter> DescribeAsyncSearchTasksRequest::GetFilters() const
+vector<Auth> SetAccountUserPrivilegeRequest::GetAuthRole() const
 {
-    return m_filters;
+    return m_authRole;
 }
 
-void DescribeAsyncSearchTasksRequest::SetFilters(const vector<Filter>& _filters)
+void SetAccountUserPrivilegeRequest::SetAuthRole(const vector<Auth>& _authRole)
 {
-    m_filters = _filters;
-    m_filtersHasBeenSet = true;
+    m_authRole = _authRole;
+    m_authRoleHasBeenSet = true;
 }
 
-bool DescribeAsyncSearchTasksRequest::FiltersHasBeenSet() const
+bool SetAccountUserPrivilegeRequest::AuthRoleHasBeenSet() const
 {
-    return m_filtersHasBeenSet;
+    return m_authRoleHasBeenSet;
 }
 
 

@@ -55,6 +55,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20180408/model/SpecItem.h
   include/tencentcloud/mongodb/v20190725/model/ResetDBInstancePasswordResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeSpecInfoRequest.h
+  include/tencentcloud/mongodb/v20190725/model/SetAccountUserPrivilegeResponse.h
   include/tencentcloud/mongodb/v20190725/model/KillOpsRequest.h
   include/tencentcloud/mongodb/v20190725/model/CreateDBInstanceRequest.h
   include/tencentcloud/mongodb/v20190725/model/DescribeSecurityGroupResponse.h
@@ -64,7 +65,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/CreateBackupDBInstanceResponse.h
   include/tencentcloud/mongodb/v20190725/model/ShardInfo.h
   include/tencentcloud/mongodb/v20190725/model/DBInstancePrice.h
-  include/tencentcloud/mongodb/v20190725/model/DescribeBackupAccessResponse.h
+  include/tencentcloud/mongodb/v20190725/model/BackupFile.h
   include/tencentcloud/mongodb/v20190725/model/InquirePriceCreateDBInstancesRequest.h
   include/tencentcloud/mongodb/v20190725/model/IsolateDBInstanceRequest.h
   include/tencentcloud/mongodb/v20190725/model/DescribeSlowLogPatternsResponse.h
@@ -87,6 +88,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/FlushInstanceRouterConfigResponse.h
   include/tencentcloud/mongodb/v20190725/model/InquirePriceModifyDBInstanceSpecResponse.h
   include/tencentcloud/mongodb/v20190725/model/SpecItem.h
+  include/tencentcloud/mongodb/v20190725/model/Auth.h
   include/tencentcloud/mongodb/v20190725/model/DescribeSpecInfoResponse.h
   include/tencentcloud/mongodb/v20190725/model/InquirePriceRenewDBInstancesResponse.h
   include/tencentcloud/mongodb/v20190725/model/ResetDBInstancePasswordRequest.h
@@ -122,7 +124,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/FlushInstanceRouterConfigRequest.h
   include/tencentcloud/mongodb/v20190725/model/DBInstanceInfo.h
   include/tencentcloud/mongodb/v20190725/model/CurrentOp.h
-  include/tencentcloud/mongodb/v20190725/model/BackupFile.h
+  include/tencentcloud/mongodb/v20190725/model/DescribeBackupAccessResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeDBBackupsResponse.h
   include/tencentcloud/mongodb/v20190725/model/InstanceDetail.h
   include/tencentcloud/mongodb/v20190725/model/ModifyDBInstanceSpecRequest.h
@@ -133,6 +135,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/InstanceChargePrepaid.h
   include/tencentcloud/mongodb/v20190725/model/InquirePriceCreateDBInstancesResponse.h
   include/tencentcloud/mongodb/v20190725/model/RenewDBInstancesRequest.h
+  include/tencentcloud/mongodb/v20190725/model/SetAccountUserPrivilegeRequest.h
   include/tencentcloud/mongodb/v20190725/model/Operation.h
   )
 
@@ -174,6 +177,7 @@ set(mongodb_src
   src/v20180408/model/SpecItem.cpp
   src/v20190725/model/ResetDBInstancePasswordResponse.cpp
   src/v20190725/model/DescribeSpecInfoRequest.cpp
+  src/v20190725/model/SetAccountUserPrivilegeResponse.cpp
   src/v20190725/model/KillOpsRequest.cpp
   src/v20190725/model/CreateDBInstanceRequest.cpp
   src/v20190725/model/DescribeSecurityGroupResponse.cpp
@@ -183,7 +187,7 @@ set(mongodb_src
   src/v20190725/model/CreateBackupDBInstanceResponse.cpp
   src/v20190725/model/ShardInfo.cpp
   src/v20190725/model/DBInstancePrice.cpp
-  src/v20190725/model/DescribeBackupAccessResponse.cpp
+  src/v20190725/model/BackupFile.cpp
   src/v20190725/model/InquirePriceCreateDBInstancesRequest.cpp
   src/v20190725/model/IsolateDBInstanceRequest.cpp
   src/v20190725/model/DescribeSlowLogPatternsResponse.cpp
@@ -206,6 +210,7 @@ set(mongodb_src
   src/v20190725/model/FlushInstanceRouterConfigResponse.cpp
   src/v20190725/model/InquirePriceModifyDBInstanceSpecResponse.cpp
   src/v20190725/model/SpecItem.cpp
+  src/v20190725/model/Auth.cpp
   src/v20190725/model/DescribeSpecInfoResponse.cpp
   src/v20190725/model/InquirePriceRenewDBInstancesResponse.cpp
   src/v20190725/model/ResetDBInstancePasswordRequest.cpp
@@ -241,7 +246,7 @@ set(mongodb_src
   src/v20190725/model/FlushInstanceRouterConfigRequest.cpp
   src/v20190725/model/DBInstanceInfo.cpp
   src/v20190725/model/CurrentOp.cpp
-  src/v20190725/model/BackupFile.cpp
+  src/v20190725/model/DescribeBackupAccessResponse.cpp
   src/v20190725/model/DescribeDBBackupsResponse.cpp
   src/v20190725/model/InstanceDetail.cpp
   src/v20190725/model/ModifyDBInstanceSpecRequest.cpp
@@ -252,6 +257,7 @@ set(mongodb_src
   src/v20190725/model/InstanceChargePrepaid.cpp
   src/v20190725/model/InquirePriceCreateDBInstancesResponse.cpp
   src/v20190725/model/RenewDBInstancesRequest.cpp
+  src/v20190725/model/SetAccountUserPrivilegeRequest.cpp
   src/v20190725/model/Operation.cpp
   )
 

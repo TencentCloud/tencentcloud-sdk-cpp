@@ -156,9 +156,9 @@ namespace TencentCloud
                     bool PhoneHasBeenSet() const;
 
                     /**
-                     * 获取用户所属组织机构 Id。
+                     * 获取用户所属的主组织机构唯一ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OrgNodeId 用户所属组织机构 Id。
+                     * @return OrgNodeId 用户所属的主组织机构唯一ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOrgNodeId() const;
@@ -225,6 +225,20 @@ namespace TencentCloud
                      */
                     bool PwdNeedResetHasBeenSet() const;
 
+                    /**
+                     * 获取用户所属的次要组织机构ID列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SecondaryOrgNodeIdList 用户所属的次要组织机构ID列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetSecondaryOrgNodeIdList() const;
+
+                    /**
+                     * 判断参数 SecondaryOrgNodeIdList 是否已赋值
+                     * @return SecondaryOrgNodeIdList 是否已赋值
+                     */
+                    bool SecondaryOrgNodeIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -284,7 +298,7 @@ namespace TencentCloud
                     bool m_phoneHasBeenSet;
 
                     /**
-                     * 用户所属组织机构 Id。
+                     * 用户所属的主组织机构唯一ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_orgNodeId;
@@ -317,6 +331,13 @@ namespace TencentCloud
                      */
                     bool m_pwdNeedReset;
                     bool m_pwdNeedResetHasBeenSet;
+
+                    /**
+                     * 用户所属的次要组织机构ID列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_secondaryOrgNodeIdList;
+                    bool m_secondaryOrgNodeIdListHasBeenSet;
 
                 };
             }

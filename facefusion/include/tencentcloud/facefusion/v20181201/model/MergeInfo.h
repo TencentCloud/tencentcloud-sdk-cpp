@@ -102,14 +102,14 @@ namespace TencentCloud
                     bool InputImageFaceRectHasBeenSet() const;
 
                     /**
-                     * 获取控制台上传的素材人脸ID
-                     * @return TemplateFaceID 控制台上传的素材人脸ID
+                     * 获取控制台上传的素材人脸ID，不填默认取最大人脸
+                     * @return TemplateFaceID 控制台上传的素材人脸ID，不填默认取最大人脸
                      */
                     std::string GetTemplateFaceID() const;
 
                     /**
-                     * 设置控制台上传的素材人脸ID
-                     * @param TemplateFaceID 控制台上传的素材人脸ID
+                     * 设置控制台上传的素材人脸ID，不填默认取最大人脸
+                     * @param TemplateFaceID 控制台上传的素材人脸ID，不填默认取最大人脸
                      */
                     void SetTemplateFaceID(const std::string& _templateFaceID);
 
@@ -140,7 +140,7 @@ namespace TencentCloud
                     bool m_inputImageFaceRectHasBeenSet;
 
                     /**
-                     * 控制台上传的素材人脸ID
+                     * 控制台上传的素材人脸ID，不填默认取最大人脸
                      */
                     std::string m_templateFaceID;
                     bool m_templateFaceIDHasBeenSet;

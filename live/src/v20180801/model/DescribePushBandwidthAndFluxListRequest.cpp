@@ -27,7 +27,8 @@ DescribePushBandwidthAndFluxListRequest::DescribePushBandwidthAndFluxListRequest
     m_endTimeHasBeenSet(false),
     m_pushDomainsHasBeenSet(false),
     m_mainlandOrOverseaHasBeenSet(false),
-    m_granularityHasBeenSet(false)
+    m_granularityHasBeenSet(false),
+    m_regionNamesHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,19 @@ string DescribePushBandwidthAndFluxListRequest::ToJsonString() const
         string key = "Granularity";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_granularity, allocator);
+    }
+
+    if (m_regionNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionNames";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_regionNames.begin(); itr != m_regionNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -169,6 +183,22 @@ void DescribePushBandwidthAndFluxListRequest::SetGranularity(const uint64_t& _gr
 bool DescribePushBandwidthAndFluxListRequest::GranularityHasBeenSet() const
 {
     return m_granularityHasBeenSet;
+}
+
+vector<string> DescribePushBandwidthAndFluxListRequest::GetRegionNames() const
+{
+    return m_regionNames;
+}
+
+void DescribePushBandwidthAndFluxListRequest::SetRegionNames(const vector<string>& _regionNames)
+{
+    m_regionNames = _regionNames;
+    m_regionNamesHasBeenSet = true;
+}
+
+bool DescribePushBandwidthAndFluxListRequest::RegionNamesHasBeenSet() const
+{
+    return m_regionNamesHasBeenSet;
 }
 
 

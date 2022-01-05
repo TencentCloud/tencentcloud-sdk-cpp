@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/as/v20180419/model/AttachInstancesRequest.h>
 #include <tencentcloud/as/v20180419/model/AttachInstancesResponse.h>
+#include <tencentcloud/as/v20180419/model/AttachLoadBalancersRequest.h>
+#include <tencentcloud/as/v20180419/model/AttachLoadBalancersResponse.h>
 #include <tencentcloud/as/v20180419/model/ClearLaunchConfigurationAttributesRequest.h>
 #include <tencentcloud/as/v20180419/model/ClearLaunchConfigurationAttributesResponse.h>
 #include <tencentcloud/as/v20180419/model/CompleteLifecycleActionRequest.h>
@@ -81,6 +83,8 @@
 #include <tencentcloud/as/v20180419/model/DescribeScheduledActionsResponse.h>
 #include <tencentcloud/as/v20180419/model/DetachInstancesRequest.h>
 #include <tencentcloud/as/v20180419/model/DetachInstancesResponse.h>
+#include <tencentcloud/as/v20180419/model/DetachLoadBalancersRequest.h>
+#include <tencentcloud/as/v20180419/model/DetachLoadBalancersResponse.h>
 #include <tencentcloud/as/v20180419/model/DisableAutoScalingGroupRequest.h>
 #include <tencentcloud/as/v20180419/model/DisableAutoScalingGroupResponse.h>
 #include <tencentcloud/as/v20180419/model/EnableAutoScalingGroupRequest.h>
@@ -93,6 +97,8 @@
 #include <tencentcloud/as/v20180419/model/ModifyDesiredCapacityResponse.h>
 #include <tencentcloud/as/v20180419/model/ModifyLaunchConfigurationAttributesRequest.h>
 #include <tencentcloud/as/v20180419/model/ModifyLaunchConfigurationAttributesResponse.h>
+#include <tencentcloud/as/v20180419/model/ModifyLoadBalancerTargetAttributesRequest.h>
+#include <tencentcloud/as/v20180419/model/ModifyLoadBalancerTargetAttributesResponse.h>
 #include <tencentcloud/as/v20180419/model/ModifyLoadBalancersRequest.h>
 #include <tencentcloud/as/v20180419/model/ModifyLoadBalancersResponse.h>
 #include <tencentcloud/as/v20180419/model/ModifyNotificationConfigurationRequest.h>
@@ -136,6 +142,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AttachInstancesResponse> AttachInstancesOutcome;
                 typedef std::future<AttachInstancesOutcome> AttachInstancesOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::AttachInstancesRequest&, AttachInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::AttachLoadBalancersResponse> AttachLoadBalancersOutcome;
+                typedef std::future<AttachLoadBalancersOutcome> AttachLoadBalancersOutcomeCallable;
+                typedef std::function<void(const AsClient*, const Model::AttachLoadBalancersRequest&, AttachLoadBalancersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachLoadBalancersAsyncHandler;
                 typedef Outcome<Core::Error, Model::ClearLaunchConfigurationAttributesResponse> ClearLaunchConfigurationAttributesOutcome;
                 typedef std::future<ClearLaunchConfigurationAttributesOutcome> ClearLaunchConfigurationAttributesOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::ClearLaunchConfigurationAttributesRequest&, ClearLaunchConfigurationAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ClearLaunchConfigurationAttributesAsyncHandler;
@@ -220,6 +229,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DetachInstancesResponse> DetachInstancesOutcome;
                 typedef std::future<DetachInstancesOutcome> DetachInstancesOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::DetachInstancesRequest&, DetachInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DetachLoadBalancersResponse> DetachLoadBalancersOutcome;
+                typedef std::future<DetachLoadBalancersOutcome> DetachLoadBalancersOutcomeCallable;
+                typedef std::function<void(const AsClient*, const Model::DetachLoadBalancersRequest&, DetachLoadBalancersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachLoadBalancersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisableAutoScalingGroupResponse> DisableAutoScalingGroupOutcome;
                 typedef std::future<DisableAutoScalingGroupOutcome> DisableAutoScalingGroupOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::DisableAutoScalingGroupRequest&, DisableAutoScalingGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableAutoScalingGroupAsyncHandler;
@@ -238,6 +250,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyLaunchConfigurationAttributesResponse> ModifyLaunchConfigurationAttributesOutcome;
                 typedef std::future<ModifyLaunchConfigurationAttributesOutcome> ModifyLaunchConfigurationAttributesOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::ModifyLaunchConfigurationAttributesRequest&, ModifyLaunchConfigurationAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLaunchConfigurationAttributesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLoadBalancerTargetAttributesResponse> ModifyLoadBalancerTargetAttributesOutcome;
+                typedef std::future<ModifyLoadBalancerTargetAttributesOutcome> ModifyLoadBalancerTargetAttributesOutcomeCallable;
+                typedef std::function<void(const AsClient*, const Model::ModifyLoadBalancerTargetAttributesRequest&, ModifyLoadBalancerTargetAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoadBalancerTargetAttributesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyLoadBalancersResponse> ModifyLoadBalancersOutcome;
                 typedef std::future<ModifyLoadBalancersOutcome> ModifyLoadBalancersOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::ModifyLoadBalancersRequest&, ModifyLoadBalancersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoadBalancersAsyncHandler;
@@ -289,6 +304,15 @@ namespace TencentCloud
                 AttachInstancesOutcome AttachInstances(const Model::AttachInstancesRequest &request);
                 void AttachInstancesAsync(const Model::AttachInstancesRequest& request, const AttachInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AttachInstancesOutcomeCallable AttachInstancesCallable(const Model::AttachInstancesRequest& request);
+
+                /**
+                 *此接口（AttachLoadBalancers）用于将负载均衡器添加到伸缩组。
+                 * @param req AttachLoadBalancersRequest
+                 * @return AttachLoadBalancersOutcome
+                 */
+                AttachLoadBalancersOutcome AttachLoadBalancers(const Model::AttachLoadBalancersRequest &request);
+                void AttachLoadBalancersAsync(const Model::AttachLoadBalancersRequest& request, const AttachLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AttachLoadBalancersOutcomeCallable AttachLoadBalancersCallable(const Model::AttachLoadBalancersRequest& request);
 
                 /**
                  *本接口（ClearLaunchConfigurationAttributes）用于将启动配置内的特定属性完全清空。
@@ -625,6 +649,15 @@ namespace TencentCloud
                 DetachInstancesOutcomeCallable DetachInstancesCallable(const Model::DetachInstancesRequest& request);
 
                 /**
+                 *本接口（DetachLoadBalancers）用于从伸缩组移出负载均衡器，本接口不会销毁负载均衡器。
+                 * @param req DetachLoadBalancersRequest
+                 * @return DetachLoadBalancersOutcome
+                 */
+                DetachLoadBalancersOutcome DetachLoadBalancers(const Model::DetachLoadBalancersRequest &request);
+                void DetachLoadBalancersAsync(const Model::DetachLoadBalancersRequest& request, const DetachLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DetachLoadBalancersOutcomeCallable DetachLoadBalancersCallable(const Model::DetachLoadBalancersRequest& request);
+
+                /**
                  *本接口（DisableAutoScalingGroup）用于停用指定伸缩组。
                  * @param req DisableAutoScalingGroupRequest
                  * @return DisableAutoScalingGroupOutcome
@@ -683,6 +716,15 @@ namespace TencentCloud
                 ModifyLaunchConfigurationAttributesOutcome ModifyLaunchConfigurationAttributes(const Model::ModifyLaunchConfigurationAttributesRequest &request);
                 void ModifyLaunchConfigurationAttributesAsync(const Model::ModifyLaunchConfigurationAttributesRequest& request, const ModifyLaunchConfigurationAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyLaunchConfigurationAttributesOutcomeCallable ModifyLaunchConfigurationAttributesCallable(const Model::ModifyLaunchConfigurationAttributesRequest& request);
+
+                /**
+                 *本接口（ModifyLoadBalancerTargetAttributes）用于修改伸缩组内负载均衡器的目标规则属性。
+                 * @param req ModifyLoadBalancerTargetAttributesRequest
+                 * @return ModifyLoadBalancerTargetAttributesOutcome
+                 */
+                ModifyLoadBalancerTargetAttributesOutcome ModifyLoadBalancerTargetAttributes(const Model::ModifyLoadBalancerTargetAttributesRequest &request);
+                void ModifyLoadBalancerTargetAttributesAsync(const Model::ModifyLoadBalancerTargetAttributesRequest& request, const ModifyLoadBalancerTargetAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLoadBalancerTargetAttributesOutcomeCallable ModifyLoadBalancerTargetAttributesCallable(const Model::ModifyLoadBalancerTargetAttributesRequest& request);
 
                 /**
                  *本接口（ModifyLoadBalancers）用于修改伸缩组的负载均衡器。

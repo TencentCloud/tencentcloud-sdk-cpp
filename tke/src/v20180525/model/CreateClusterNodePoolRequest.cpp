@@ -32,7 +32,8 @@ CreateClusterNodePoolRequest::CreateClusterNodePoolRequest() :
     m_labelsHasBeenSet(false),
     m_taintsHasBeenSet(false),
     m_nodePoolOsHasBeenSet(false),
-    m_osCustomizeTypeHasBeenSet(false)
+    m_osCustomizeTypeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -136,6 +137,21 @@ string CreateClusterNodePoolRequest::ToJsonString() const
         string key = "OsCustomizeType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_osCustomizeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -304,6 +320,22 @@ void CreateClusterNodePoolRequest::SetOsCustomizeType(const string& _osCustomize
 bool CreateClusterNodePoolRequest::OsCustomizeTypeHasBeenSet() const
 {
     return m_osCustomizeTypeHasBeenSet;
+}
+
+vector<Tag> CreateClusterNodePoolRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateClusterNodePoolRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateClusterNodePoolRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

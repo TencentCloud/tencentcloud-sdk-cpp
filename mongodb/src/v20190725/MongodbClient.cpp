@@ -1287,3 +1287,46 @@ MongodbClient::ResetDBInstancePasswordOutcomeCallable MongodbClient::ResetDBInst
     return task->get_future();
 }
 
+MongodbClient::SetAccountUserPrivilegeOutcome MongodbClient::SetAccountUserPrivilege(const SetAccountUserPrivilegeRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetAccountUserPrivilege");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetAccountUserPrivilegeResponse rsp = SetAccountUserPrivilegeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetAccountUserPrivilegeOutcome(rsp);
+        else
+            return SetAccountUserPrivilegeOutcome(o.GetError());
+    }
+    else
+    {
+        return SetAccountUserPrivilegeOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::SetAccountUserPrivilegeAsync(const SetAccountUserPrivilegeRequest& request, const SetAccountUserPrivilegeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetAccountUserPrivilege(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::SetAccountUserPrivilegeOutcomeCallable MongodbClient::SetAccountUserPrivilegeCallable(const SetAccountUserPrivilegeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetAccountUserPrivilegeOutcome()>>(
+        [this, request]()
+        {
+            return this->SetAccountUserPrivilege(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

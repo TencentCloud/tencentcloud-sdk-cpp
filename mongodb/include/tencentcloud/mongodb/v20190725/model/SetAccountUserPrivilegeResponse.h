@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_SES_V20201002_MODEL_DELETEEMAILTEMPLATEREQUEST_H_
-#define TENCENTCLOUD_SES_V20201002_MODEL_DELETEEMAILTEMPLATEREQUEST_H_
+#ifndef TENCENTCLOUD_MONGODB_V20190725_MODEL_SETACCOUNTUSERPRIVILEGERESPONSE_H_
+#define TENCENTCLOUD_MONGODB_V20190725_MODEL_SETACCOUNTUSERPRIVILEGERESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,48 +25,43 @@
 
 namespace TencentCloud
 {
-    namespace Ses
+    namespace Mongodb
     {
-        namespace V20201002
+        namespace V20190725
         {
             namespace Model
             {
                 /**
-                * DeleteEmailTemplate请求参数结构体
+                * SetAccountUserPrivilege返回参数结构体
                 */
-                class DeleteEmailTemplateRequest : public AbstractModel
+                class SetAccountUserPrivilegeResponse : public AbstractModel
                 {
                 public:
-                    DeleteEmailTemplateRequest();
-                    ~DeleteEmailTemplateRequest() = default;
+                    SetAccountUserPrivilegeResponse();
+                    ~SetAccountUserPrivilegeResponse() = default;
+                    CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取模板ID
-                     * @return TemplateID 模板ID
+                     * 获取设置任务ID,用于查询是否设置完成
+                     * @return FlowId 设置任务ID,用于查询是否设置完成
                      */
-                    uint64_t GetTemplateID() const;
+                    uint64_t GetFlowId() const;
 
                     /**
-                     * 设置模板ID
-                     * @param TemplateID 模板ID
+                     * 判断参数 FlowId 是否已赋值
+                     * @return FlowId 是否已赋值
                      */
-                    void SetTemplateID(const uint64_t& _templateID);
-
-                    /**
-                     * 判断参数 TemplateID 是否已赋值
-                     * @return TemplateID 是否已赋值
-                     */
-                    bool TemplateIDHasBeenSet() const;
+                    bool FlowIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 模板ID
+                     * 设置任务ID,用于查询是否设置完成
                      */
-                    uint64_t m_templateID;
-                    bool m_templateIDHasBeenSet;
+                    uint64_t m_flowId;
+                    bool m_flowIdHasBeenSet;
 
                 };
             }
@@ -74,4 +69,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_SES_V20201002_MODEL_DELETEEMAILTEMPLATEREQUEST_H_
+#endif // !TENCENTCLOUD_MONGODB_V20190725_MODEL_SETACCOUNTUSERPRIVILEGERESPONSE_H_

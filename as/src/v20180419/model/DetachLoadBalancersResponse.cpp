@@ -14,20 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cls/v20201016/model/CreateAsyncSearchTaskResponse.h>
+#include <tencentcloud/as/v20180419/model/DetachLoadBalancersResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cls::V20201016::Model;
+using namespace TencentCloud::As::V20180419::Model;
 using namespace std;
 
-CreateAsyncSearchTaskResponse::CreateAsyncSearchTaskResponse()
+DetachLoadBalancersResponse::DetachLoadBalancersResponse() :
+    m_activityIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome CreateAsyncSearchTaskResponse::Deserialize(const string &payload)
+CoreInternalOutcome DetachLoadBalancersResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -61,15 +62,33 @@ CoreInternalOutcome CreateAsyncSearchTaskResponse::Deserialize(const string &pay
     }
 
 
+    if (rsp.HasMember("ActivityId") && !rsp["ActivityId"].IsNull())
+    {
+        if (!rsp["ActivityId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ActivityId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_activityId = string(rsp["ActivityId"].GetString());
+        m_activityIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
-string CreateAsyncSearchTaskResponse::ToJsonString() const
+string DetachLoadBalancersResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_activityIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ActivityId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_activityId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateAsyncSearchTaskResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DetachLoadBalancersResponse::GetActivityId() const
+{
+    return m_activityId;
+}
+
+bool DetachLoadBalancersResponse::ActivityIdHasBeenSet() const
+{
+    return m_activityIdHasBeenSet;
+}
 
 

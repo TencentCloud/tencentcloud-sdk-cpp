@@ -435,6 +435,94 @@ namespace TencentCloud
                      */
                     bool SlowRequestSavedThresholdHasBeenSet() const;
 
+                    /**
+                     * 获取cls日志所在地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogRegion cls日志所在地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLogRegion() const;
+
+                    /**
+                     * 设置cls日志所在地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LogRegion cls日志所在地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLogRegion(const std::string& _logRegion);
+
+                    /**
+                     * 判断参数 LogRegion 是否已赋值
+                     * @return LogRegion 是否已赋值
+                     */
+                    bool LogRegionHasBeenSet() const;
+
+                    /**
+                     * 获取日志来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogSource 日志来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLogSource() const;
+
+                    /**
+                     * 设置日志来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LogSource 日志来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLogSource(const std::string& _logSource);
+
+                    /**
+                     * 判断参数 LogSource 是否已赋值
+                     * @return LogSource 是否已赋值
+                     */
+                    bool LogSourceHasBeenSet() const;
+
+                    /**
+                     * 获取日志功能开关 0 关 | 1 开
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsRelatedLog 日志功能开关 0 关 | 1 开
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetIsRelatedLog() const;
+
+                    /**
+                     * 设置日志功能开关 0 关 | 1 开
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsRelatedLog 日志功能开关 0 关 | 1 开
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsRelatedLog(const int64_t& _isRelatedLog);
+
+                    /**
+                     * 判断参数 IsRelatedLog 是否已赋值
+                     * @return IsRelatedLog 是否已赋值
+                     */
+                    bool IsRelatedLogHasBeenSet() const;
+
+                    /**
+                     * 获取日志主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogTopicID 日志主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLogTopicID() const;
+
+                    /**
+                     * 设置日志主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LogTopicID 日志主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLogTopicID(const std::string& _logTopicID);
+
+                    /**
+                     * 判断参数 LogTopicID 是否已赋值
+                     * @return LogTopicID 是否已赋值
+                     */
+                    bool LogTopicIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -560,6 +648,34 @@ namespace TencentCloud
                      */
                     int64_t m_slowRequestSavedThreshold;
                     bool m_slowRequestSavedThresholdHasBeenSet;
+
+                    /**
+                     * cls日志所在地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_logRegion;
+                    bool m_logRegionHasBeenSet;
+
+                    /**
+                     * 日志来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_logSource;
+                    bool m_logSourceHasBeenSet;
+
+                    /**
+                     * 日志功能开关 0 关 | 1 开
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isRelatedLog;
+                    bool m_isRelatedLogHasBeenSet;
+
+                    /**
+                     * 日志主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_logTopicID;
+                    bool m_logTopicIDHasBeenSet;
 
                 };
             }

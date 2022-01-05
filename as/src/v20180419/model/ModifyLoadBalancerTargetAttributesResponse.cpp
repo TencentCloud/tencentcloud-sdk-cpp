@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cls/v20201016/model/DescribeAsyncContextTasksResponse.h>
+#include <tencentcloud/as/v20180419/model/ModifyLoadBalancerTargetAttributesResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cls::V20201016::Model;
+using namespace TencentCloud::As::V20180419::Model;
 using namespace std;
 
-DescribeAsyncContextTasksResponse::DescribeAsyncContextTasksResponse() :
-    m_asyncContextTasksHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+ModifyLoadBalancerTargetAttributesResponse::ModifyLoadBalancerTargetAttributesResponse() :
+    m_activityIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeAsyncContextTasksResponse::Deserialize(const string &payload)
+CoreInternalOutcome ModifyLoadBalancerTargetAttributesResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,67 +62,32 @@ CoreInternalOutcome DescribeAsyncContextTasksResponse::Deserialize(const string 
     }
 
 
-    if (rsp.HasMember("AsyncContextTasks") && !rsp["AsyncContextTasks"].IsNull())
+    if (rsp.HasMember("ActivityId") && !rsp["ActivityId"].IsNull())
     {
-        if (!rsp["AsyncContextTasks"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `AsyncContextTasks` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["AsyncContextTasks"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["ActivityId"].IsString())
         {
-            AsyncContextTask item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_asyncContextTasks.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `ActivityId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_asyncContextTasksHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
-    {
-        if (!rsp["TotalCount"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_totalCount = rsp["TotalCount"].GetInt64();
-        m_totalCountHasBeenSet = true;
+        m_activityId = string(rsp["ActivityId"].GetString());
+        m_activityIdHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeAsyncContextTasksResponse::ToJsonString() const
+string ModifyLoadBalancerTargetAttributesResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_asyncContextTasksHasBeenSet)
+    if (m_activityIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AsyncContextTasks";
+        string key = "ActivityId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_asyncContextTasks.begin(); itr != m_asyncContextTasks.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
-    }
-
-    if (m_totalCountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TotalCount";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_totalCount, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_activityId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -138,24 +102,14 @@ string DescribeAsyncContextTasksResponse::ToJsonString() const
 }
 
 
-vector<AsyncContextTask> DescribeAsyncContextTasksResponse::GetAsyncContextTasks() const
+string ModifyLoadBalancerTargetAttributesResponse::GetActivityId() const
 {
-    return m_asyncContextTasks;
+    return m_activityId;
 }
 
-bool DescribeAsyncContextTasksResponse::AsyncContextTasksHasBeenSet() const
+bool ModifyLoadBalancerTargetAttributesResponse::ActivityIdHasBeenSet() const
 {
-    return m_asyncContextTasksHasBeenSet;
-}
-
-int64_t DescribeAsyncContextTasksResponse::GetTotalCount() const
-{
-    return m_totalCount;
-}
-
-bool DescribeAsyncContextTasksResponse::TotalCountHasBeenSet() const
-{
-    return m_totalCountHasBeenSet;
+    return m_activityIdHasBeenSet;
 }
 
 

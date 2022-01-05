@@ -38,7 +38,11 @@ ApmInstanceDetail::ApmInstanceDetail() :
     m_errRateThresholdHasBeenSet(false),
     m_sampleRateHasBeenSet(false),
     m_errorSampleHasBeenSet(false),
-    m_slowRequestSavedThresholdHasBeenSet(false)
+    m_slowRequestSavedThresholdHasBeenSet(false),
+    m_logRegionHasBeenSet(false),
+    m_logSourceHasBeenSet(false),
+    m_isRelatedLogHasBeenSet(false),
+    m_logTopicIDHasBeenSet(false)
 {
 }
 
@@ -237,6 +241,46 @@ CoreInternalOutcome ApmInstanceDetail::Deserialize(const rapidjson::Value &value
         m_slowRequestSavedThresholdHasBeenSet = true;
     }
 
+    if (value.HasMember("LogRegion") && !value["LogRegion"].IsNull())
+    {
+        if (!value["LogRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.LogRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logRegion = string(value["LogRegion"].GetString());
+        m_logRegionHasBeenSet = true;
+    }
+
+    if (value.HasMember("LogSource") && !value["LogSource"].IsNull())
+    {
+        if (!value["LogSource"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.LogSource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logSource = string(value["LogSource"].GetString());
+        m_logSourceHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsRelatedLog") && !value["IsRelatedLog"].IsNull())
+    {
+        if (!value["IsRelatedLog"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsRelatedLog` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isRelatedLog = value["IsRelatedLog"].GetInt64();
+        m_isRelatedLogHasBeenSet = true;
+    }
+
+    if (value.HasMember("LogTopicID") && !value["LogTopicID"].IsNull())
+    {
+        if (!value["LogTopicID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.LogTopicID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logTopicID = string(value["LogTopicID"].GetString());
+        m_logTopicIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -393,6 +437,38 @@ void ApmInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "SlowRequestSavedThreshold";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_slowRequestSavedThreshold, allocator);
+    }
+
+    if (m_logRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isRelatedLogHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsRelatedLog";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isRelatedLog, allocator);
+    }
+
+    if (m_logTopicIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogTopicID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logTopicID.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -684,5 +760,69 @@ void ApmInstanceDetail::SetSlowRequestSavedThreshold(const int64_t& _slowRequest
 bool ApmInstanceDetail::SlowRequestSavedThresholdHasBeenSet() const
 {
     return m_slowRequestSavedThresholdHasBeenSet;
+}
+
+string ApmInstanceDetail::GetLogRegion() const
+{
+    return m_logRegion;
+}
+
+void ApmInstanceDetail::SetLogRegion(const string& _logRegion)
+{
+    m_logRegion = _logRegion;
+    m_logRegionHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::LogRegionHasBeenSet() const
+{
+    return m_logRegionHasBeenSet;
+}
+
+string ApmInstanceDetail::GetLogSource() const
+{
+    return m_logSource;
+}
+
+void ApmInstanceDetail::SetLogSource(const string& _logSource)
+{
+    m_logSource = _logSource;
+    m_logSourceHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::LogSourceHasBeenSet() const
+{
+    return m_logSourceHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsRelatedLog() const
+{
+    return m_isRelatedLog;
+}
+
+void ApmInstanceDetail::SetIsRelatedLog(const int64_t& _isRelatedLog)
+{
+    m_isRelatedLog = _isRelatedLog;
+    m_isRelatedLogHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsRelatedLogHasBeenSet() const
+{
+    return m_isRelatedLogHasBeenSet;
+}
+
+string ApmInstanceDetail::GetLogTopicID() const
+{
+    return m_logTopicID;
+}
+
+void ApmInstanceDetail::SetLogTopicID(const string& _logTopicID)
+{
+    m_logTopicID = _logTopicID;
+    m_logTopicIDHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::LogTopicIDHasBeenSet() const
+{
+    return m_logTopicIDHasBeenSet;
 }
 

@@ -200,7 +200,7 @@ namespace TencentCloud
                 DeleteEmailIdentityOutcomeCallable DeleteEmailIdentityCallable(const Model::DeleteEmailIdentityRequest& request);
 
                 /**
-                 *删除发信模版
+                 *删除发信模板
                  * @param req DeleteEmailTemplateRequest
                  * @return DeleteEmailTemplateOutcome
                  */

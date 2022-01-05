@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool PhoneHasBeenSet() const;
 
                     /**
-                     * 获取用户所属组织机构唯一ID。如果为空，默认为在根节点下创建用户。
-                     * @return OrgNodeId 用户所属组织机构唯一ID。如果为空，默认为在根节点下创建用户。
+                     * 获取用户所属的主组织机构唯一ID。如果为空，默认为在根节点下创建用户。
+                     * @return OrgNodeId 用户所属的主组织机构唯一ID。如果为空，默认为在根节点下创建用户。
                      */
                     std::string GetOrgNodeId() const;
 
                     /**
-                     * 设置用户所属组织机构唯一ID。如果为空，默认为在根节点下创建用户。
-                     * @param OrgNodeId 用户所属组织机构唯一ID。如果为空，默认为在根节点下创建用户。
+                     * 设置用户所属的主组织机构唯一ID。如果为空，默认为在根节点下创建用户。
+                     * @param OrgNodeId 用户所属的主组织机构唯一ID。如果为空，默认为在根节点下创建用户。
                      */
                     void SetOrgNodeId(const std::string& _orgNodeId);
 
@@ -222,6 +222,24 @@ namespace TencentCloud
                      */
                     bool PwdNeedResetHasBeenSet() const;
 
+                    /**
+                     * 获取用户所属的次要组织机构ID列表。
+                     * @return SecondaryOrgNodeIdList 用户所属的次要组织机构ID列表。
+                     */
+                    std::vector<std::string> GetSecondaryOrgNodeIdList() const;
+
+                    /**
+                     * 设置用户所属的次要组织机构ID列表。
+                     * @param SecondaryOrgNodeIdList 用户所属的次要组织机构ID列表。
+                     */
+                    void SetSecondaryOrgNodeIdList(const std::vector<std::string>& _secondaryOrgNodeIdList);
+
+                    /**
+                     * 判断参数 SecondaryOrgNodeIdList 是否已赋值
+                     * @return SecondaryOrgNodeIdList 是否已赋值
+                     */
+                    bool SecondaryOrgNodeIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -261,7 +279,7 @@ namespace TencentCloud
                     bool m_phoneHasBeenSet;
 
                     /**
-                     * 用户所属组织机构唯一ID。如果为空，默认为在根节点下创建用户。
+                     * 用户所属的主组织机构唯一ID。如果为空，默认为在根节点下创建用户。
                      */
                     std::string m_orgNodeId;
                     bool m_orgNodeIdHasBeenSet;
@@ -283,6 +301,12 @@ namespace TencentCloud
                      */
                     bool m_pwdNeedReset;
                     bool m_pwdNeedResetHasBeenSet;
+
+                    /**
+                     * 用户所属的次要组织机构ID列表。
+                     */
+                    std::vector<std::string> m_secondaryOrgNodeIdList;
+                    bool m_secondaryOrgNodeIdListHasBeenSet;
 
                 };
             }

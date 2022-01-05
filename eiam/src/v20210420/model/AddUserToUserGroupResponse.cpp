@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Eiam::V20210420::Model;
 using namespace std;
 
-AddUserToUserGroupResponse::AddUserToUserGroupResponse()
+AddUserToUserGroupResponse::AddUserToUserGroupResponse() :
+    m_failedItemsHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,19 @@ CoreInternalOutcome AddUserToUserGroupResponse::Deserialize(const string &payloa
     }
 
 
+    if (rsp.HasMember("FailedItems") && !rsp["FailedItems"].IsNull())
+    {
+        if (!rsp["FailedItems"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FailedItems` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["FailedItems"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_failedItems.push_back((*itr).GetString());
+        }
+        m_failedItemsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +84,19 @@ string AddUserToUserGroupResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_failedItemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailedItems";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_failedItems.begin(); itr != m_failedItems.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +109,15 @@ string AddUserToUserGroupResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<string> AddUserToUserGroupResponse::GetFailedItems() const
+{
+    return m_failedItems;
+}
+
+bool AddUserToUserGroupResponse::FailedItemsHasBeenSet() const
+{
+    return m_failedItemsHasBeenSet;
+}
 
 

@@ -32,7 +32,8 @@ CreateUserRequest::CreateUserRequest() :
     m_orgNodeIdHasBeenSet(false),
     m_expirationTimeHasBeenSet(false),
     m_emailHasBeenSet(false),
-    m_pwdNeedResetHasBeenSet(false)
+    m_pwdNeedResetHasBeenSet(false),
+    m_secondaryOrgNodeIdListHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,19 @@ string CreateUserRequest::ToJsonString() const
         string key = "PwdNeedReset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pwdNeedReset, allocator);
+    }
+
+    if (m_secondaryOrgNodeIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecondaryOrgNodeIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_secondaryOrgNodeIdList.begin(); itr != m_secondaryOrgNodeIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -294,6 +308,22 @@ void CreateUserRequest::SetPwdNeedReset(const bool& _pwdNeedReset)
 bool CreateUserRequest::PwdNeedResetHasBeenSet() const
 {
     return m_pwdNeedResetHasBeenSet;
+}
+
+vector<string> CreateUserRequest::GetSecondaryOrgNodeIdList() const
+{
+    return m_secondaryOrgNodeIdList;
+}
+
+void CreateUserRequest::SetSecondaryOrgNodeIdList(const vector<string>& _secondaryOrgNodeIdList)
+{
+    m_secondaryOrgNodeIdList = _secondaryOrgNodeIdList;
+    m_secondaryOrgNodeIdListHasBeenSet = true;
+}
+
+bool CreateUserRequest::SecondaryOrgNodeIdListHasBeenSet() const
+{
+    return m_secondaryOrgNodeIdListHasBeenSet;
 }
 
 

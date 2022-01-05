@@ -28,7 +28,8 @@ DescribeBillBandwidthAndFluxListRequest::DescribeBillBandwidthAndFluxListRequest
     m_playDomainsHasBeenSet(false),
     m_mainlandOrOverseaHasBeenSet(false),
     m_granularityHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
+    m_serviceNameHasBeenSet(false),
+    m_regionNamesHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,19 @@ string DescribeBillBandwidthAndFluxListRequest::ToJsonString() const
         string key = "ServiceName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_serviceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionNames";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_regionNames.begin(); itr != m_regionNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -194,6 +208,22 @@ void DescribeBillBandwidthAndFluxListRequest::SetServiceName(const string& _serv
 bool DescribeBillBandwidthAndFluxListRequest::ServiceNameHasBeenSet() const
 {
     return m_serviceNameHasBeenSet;
+}
+
+vector<string> DescribeBillBandwidthAndFluxListRequest::GetRegionNames() const
+{
+    return m_regionNames;
+}
+
+void DescribeBillBandwidthAndFluxListRequest::SetRegionNames(const vector<string>& _regionNames)
+{
+    m_regionNames = _regionNames;
+    m_regionNamesHasBeenSet = true;
+}
+
+bool DescribeBillBandwidthAndFluxListRequest::RegionNamesHasBeenSet() const
+{
+    return m_regionNamesHasBeenSet;
 }
 
 

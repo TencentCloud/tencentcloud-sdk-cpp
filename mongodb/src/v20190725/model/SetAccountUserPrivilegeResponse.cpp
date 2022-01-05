@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cls/v20201016/model/DescribeAsyncSearchTasksResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/SetAccountUserPrivilegeResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cls::V20201016::Model;
+using namespace TencentCloud::Mongodb::V20190725::Model;
 using namespace std;
 
-DescribeAsyncSearchTasksResponse::DescribeAsyncSearchTasksResponse() :
-    m_asyncSearchTasksHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+SetAccountUserPrivilegeResponse::SetAccountUserPrivilegeResponse() :
+    m_flowIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeAsyncSearchTasksResponse::Deserialize(const string &payload)
+CoreInternalOutcome SetAccountUserPrivilegeResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,67 +62,32 @@ CoreInternalOutcome DescribeAsyncSearchTasksResponse::Deserialize(const string &
     }
 
 
-    if (rsp.HasMember("AsyncSearchTasks") && !rsp["AsyncSearchTasks"].IsNull())
+    if (rsp.HasMember("FlowId") && !rsp["FlowId"].IsNull())
     {
-        if (!rsp["AsyncSearchTasks"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `AsyncSearchTasks` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["AsyncSearchTasks"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["FlowId"].IsUint64())
         {
-            AsyncSearchTask item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_asyncSearchTasks.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `FlowId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_asyncSearchTasksHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
-    {
-        if (!rsp["TotalCount"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_totalCount = rsp["TotalCount"].GetInt64();
-        m_totalCountHasBeenSet = true;
+        m_flowId = rsp["FlowId"].GetUint64();
+        m_flowIdHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeAsyncSearchTasksResponse::ToJsonString() const
+string SetAccountUserPrivilegeResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_asyncSearchTasksHasBeenSet)
+    if (m_flowIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AsyncSearchTasks";
+        string key = "FlowId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_asyncSearchTasks.begin(); itr != m_asyncSearchTasks.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
-    }
-
-    if (m_totalCountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TotalCount";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_totalCount, allocator);
+        value.AddMember(iKey, m_flowId, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -138,24 +102,14 @@ string DescribeAsyncSearchTasksResponse::ToJsonString() const
 }
 
 
-vector<AsyncSearchTask> DescribeAsyncSearchTasksResponse::GetAsyncSearchTasks() const
+uint64_t SetAccountUserPrivilegeResponse::GetFlowId() const
 {
-    return m_asyncSearchTasks;
+    return m_flowId;
 }
 
-bool DescribeAsyncSearchTasksResponse::AsyncSearchTasksHasBeenSet() const
+bool SetAccountUserPrivilegeResponse::FlowIdHasBeenSet() const
 {
-    return m_asyncSearchTasksHasBeenSet;
-}
-
-int64_t DescribeAsyncSearchTasksResponse::GetTotalCount() const
-{
-    return m_totalCount;
-}
-
-bool DescribeAsyncSearchTasksResponse::TotalCountHasBeenSet() const
-{
-    return m_totalCountHasBeenSet;
+    return m_flowIdHasBeenSet;
 }
 
 

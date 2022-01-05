@@ -36,7 +36,8 @@ DescribeUserInfoResponse::DescribeUserInfoResponse() :
     m_dataSourceHasBeenSet(false),
     m_expirationTimeHasBeenSet(false),
     m_activationTimeHasBeenSet(false),
-    m_pwdNeedResetHasBeenSet(false)
+    m_pwdNeedResetHasBeenSet(false),
+    m_secondaryOrgNodeIdListHasBeenSet(false)
 {
 }
 
@@ -207,6 +208,19 @@ CoreInternalOutcome DescribeUserInfoResponse::Deserialize(const string &payload)
         m_pwdNeedResetHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SecondaryOrgNodeIdList") && !rsp["SecondaryOrgNodeIdList"].IsNull())
+    {
+        if (!rsp["SecondaryOrgNodeIdList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SecondaryOrgNodeIdList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["SecondaryOrgNodeIdList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_secondaryOrgNodeIdList.push_back((*itr).GetString());
+        }
+        m_secondaryOrgNodeIdListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -324,6 +338,19 @@ string DescribeUserInfoResponse::ToJsonString() const
         string key = "PwdNeedReset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pwdNeedReset, allocator);
+    }
+
+    if (m_secondaryOrgNodeIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecondaryOrgNodeIdList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_secondaryOrgNodeIdList.begin(); itr != m_secondaryOrgNodeIdList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -466,6 +493,16 @@ bool DescribeUserInfoResponse::GetPwdNeedReset() const
 bool DescribeUserInfoResponse::PwdNeedResetHasBeenSet() const
 {
     return m_pwdNeedResetHasBeenSet;
+}
+
+vector<string> DescribeUserInfoResponse::GetSecondaryOrgNodeIdList() const
+{
+    return m_secondaryOrgNodeIdList;
+}
+
+bool DescribeUserInfoResponse::SecondaryOrgNodeIdListHasBeenSet() const
+{
+    return m_secondaryOrgNodeIdListHasBeenSet;
 }
 
 

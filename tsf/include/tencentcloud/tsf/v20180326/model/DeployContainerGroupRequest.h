@@ -607,14 +607,14 @@ namespace TencentCloud
                     bool RepoTypeHasBeenSet() const;
 
                     /**
-                     * 获取数据卷信息
-                     * @return VolumeInfos 数据卷信息
+                     * 获取数据卷信息-废弃，请用VolumeInfoList参数
+                     * @return VolumeInfos 数据卷信息-废弃，请用VolumeInfoList参数
                      */
                     VolumeInfo GetVolumeInfos() const;
 
                     /**
-                     * 设置数据卷信息
-                     * @param VolumeInfos 数据卷信息
+                     * 设置数据卷信息-废弃，请用VolumeInfoList参数
+                     * @param VolumeInfos 数据卷信息-废弃，请用VolumeInfoList参数
                      */
                     void SetVolumeInfos(const VolumeInfo& _volumeInfos);
 
@@ -625,14 +625,14 @@ namespace TencentCloud
                     bool VolumeInfosHasBeenSet() const;
 
                     /**
-                     * 获取数据卷挂载点信息
-                     * @return VolumeMountInfos 数据卷挂载点信息
+                     * 获取数据卷挂载点信息-废弃，请用VolumeMountInfoList参数
+                     * @return VolumeMountInfos 数据卷挂载点信息-废弃，请用VolumeMountInfoList参数
                      */
                     VolumeMountInfo GetVolumeMountInfos() const;
 
                     /**
-                     * 设置数据卷挂载点信息
-                     * @param VolumeMountInfos 数据卷挂载点信息
+                     * 设置数据卷挂载点信息-废弃，请用VolumeMountInfoList参数
+                     * @param VolumeMountInfos 数据卷挂载点信息-废弃，请用VolumeMountInfoList参数
                      */
                     void SetVolumeMountInfos(const VolumeMountInfo& _volumeMountInfos);
 
@@ -641,6 +641,42 @@ namespace TencentCloud
                      * @return VolumeMountInfos 是否已赋值
                      */
                     bool VolumeMountInfosHasBeenSet() const;
+
+                    /**
+                     * 获取数据卷信息，list
+                     * @return VolumeInfoList 数据卷信息，list
+                     */
+                    std::vector<VolumeInfo> GetVolumeInfoList() const;
+
+                    /**
+                     * 设置数据卷信息，list
+                     * @param VolumeInfoList 数据卷信息，list
+                     */
+                    void SetVolumeInfoList(const std::vector<VolumeInfo>& _volumeInfoList);
+
+                    /**
+                     * 判断参数 VolumeInfoList 是否已赋值
+                     * @return VolumeInfoList 是否已赋值
+                     */
+                    bool VolumeInfoListHasBeenSet() const;
+
+                    /**
+                     * 获取数据卷挂载点信息，list
+                     * @return VolumeMountInfoList 数据卷挂载点信息，list
+                     */
+                    std::vector<VolumeMountInfo> GetVolumeMountInfoList() const;
+
+                    /**
+                     * 设置数据卷挂载点信息，list
+                     * @param VolumeMountInfoList 数据卷挂载点信息，list
+                     */
+                    void SetVolumeMountInfoList(const std::vector<VolumeMountInfo>& _volumeMountInfoList);
+
+                    /**
+                     * 判断参数 VolumeMountInfoList 是否已赋值
+                     * @return VolumeMountInfoList 是否已赋值
+                     */
+                    bool VolumeMountInfoListHasBeenSet() const;
 
                 private:
 
@@ -831,16 +867,28 @@ namespace TencentCloud
                     bool m_repoTypeHasBeenSet;
 
                     /**
-                     * 数据卷信息
+                     * 数据卷信息-废弃，请用VolumeInfoList参数
                      */
                     VolumeInfo m_volumeInfos;
                     bool m_volumeInfosHasBeenSet;
 
                     /**
-                     * 数据卷挂载点信息
+                     * 数据卷挂载点信息-废弃，请用VolumeMountInfoList参数
                      */
                     VolumeMountInfo m_volumeMountInfos;
                     bool m_volumeMountInfosHasBeenSet;
+
+                    /**
+                     * 数据卷信息，list
+                     */
+                    std::vector<VolumeInfo> m_volumeInfoList;
+                    bool m_volumeInfoListHasBeenSet;
+
+                    /**
+                     * 数据卷挂载点信息，list
+                     */
+                    std::vector<VolumeMountInfo> m_volumeMountInfoList;
+                    bool m_volumeMountInfoListHasBeenSet;
 
                 };
             }

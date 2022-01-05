@@ -160,6 +160,60 @@ Oversea：则查询国际/港澳台（境外）数据，
                      */
                     bool GranularityHasBeenSet() const;
 
+                    /**
+                     * 获取大区，映射表如下：
+China Mainland 中国大陆
+Asia Pacific I 亚太一区
+Asia Pacific II 亚太二区
+Asia Pacific III 亚太三区
+Europe 欧洲
+North America 北美
+South America 南美
+Middle East 中东
+Africa 非洲。
+                     * @return RegionNames 大区，映射表如下：
+China Mainland 中国大陆
+Asia Pacific I 亚太一区
+Asia Pacific II 亚太二区
+Asia Pacific III 亚太三区
+Europe 欧洲
+North America 北美
+South America 南美
+Middle East 中东
+Africa 非洲。
+                     */
+                    std::vector<std::string> GetRegionNames() const;
+
+                    /**
+                     * 设置大区，映射表如下：
+China Mainland 中国大陆
+Asia Pacific I 亚太一区
+Asia Pacific II 亚太二区
+Asia Pacific III 亚太三区
+Europe 欧洲
+North America 北美
+South America 南美
+Middle East 中东
+Africa 非洲。
+                     * @param RegionNames 大区，映射表如下：
+China Mainland 中国大陆
+Asia Pacific I 亚太一区
+Asia Pacific II 亚太二区
+Asia Pacific III 亚太三区
+Europe 欧洲
+North America 北美
+South America 南美
+Middle East 中东
+Africa 非洲。
+                     */
+                    void SetRegionNames(const std::vector<std::string>& _regionNames);
+
+                    /**
+                     * 判断参数 RegionNames 是否已赋值
+                     * @return RegionNames 是否已赋值
+                     */
+                    bool RegionNamesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -198,6 +252,21 @@ Oversea：则查询国际/港澳台（境外）数据，
                      */
                     uint64_t m_granularity;
                     bool m_granularityHasBeenSet;
+
+                    /**
+                     * 大区，映射表如下：
+China Mainland 中国大陆
+Asia Pacific I 亚太一区
+Asia Pacific II 亚太二区
+Asia Pacific III 亚太三区
+Europe 欧洲
+North America 北美
+South America 南美
+Middle East 中东
+Africa 非洲。
+                     */
+                    std::vector<std::string> m_regionNames;
+                    bool m_regionNamesHasBeenSet;
 
                 };
             }

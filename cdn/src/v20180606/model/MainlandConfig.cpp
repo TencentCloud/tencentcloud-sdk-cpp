@@ -44,7 +44,9 @@ MainlandConfig::MainlandConfig() :
     m_seoHasBeenSet(false),
     m_serviceTypeHasBeenSet(false),
     m_statusCodeCacheHasBeenSet(false),
-    m_videoSeekHasBeenSet(false)
+    m_videoSeekHasBeenSet(false),
+    m_awsPrivateAccessHasBeenSet(false),
+    m_ossPrivateAccessHasBeenSet(false)
 {
 }
 
@@ -454,6 +456,40 @@ CoreInternalOutcome MainlandConfig::Deserialize(const rapidjson::Value &value)
         m_videoSeekHasBeenSet = true;
     }
 
+    if (value.HasMember("AwsPrivateAccess") && !value["AwsPrivateAccess"].IsNull())
+    {
+        if (!value["AwsPrivateAccess"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MainlandConfig.AwsPrivateAccess` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_awsPrivateAccess.Deserialize(value["AwsPrivateAccess"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_awsPrivateAccessHasBeenSet = true;
+    }
+
+    if (value.HasMember("OssPrivateAccess") && !value["OssPrivateAccess"].IsNull())
+    {
+        if (!value["OssPrivateAccess"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MainlandConfig.OssPrivateAccess` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ossPrivateAccess.Deserialize(value["OssPrivateAccess"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ossPrivateAccessHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -674,6 +710,24 @@ void MainlandConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_videoSeek.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_awsPrivateAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AwsPrivateAccess";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_awsPrivateAccess.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_ossPrivateAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OssPrivateAccess";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ossPrivateAccess.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1061,5 +1115,37 @@ void MainlandConfig::SetVideoSeek(const VideoSeek& _videoSeek)
 bool MainlandConfig::VideoSeekHasBeenSet() const
 {
     return m_videoSeekHasBeenSet;
+}
+
+AwsPrivateAccess MainlandConfig::GetAwsPrivateAccess() const
+{
+    return m_awsPrivateAccess;
+}
+
+void MainlandConfig::SetAwsPrivateAccess(const AwsPrivateAccess& _awsPrivateAccess)
+{
+    m_awsPrivateAccess = _awsPrivateAccess;
+    m_awsPrivateAccessHasBeenSet = true;
+}
+
+bool MainlandConfig::AwsPrivateAccessHasBeenSet() const
+{
+    return m_awsPrivateAccessHasBeenSet;
+}
+
+OssPrivateAccess MainlandConfig::GetOssPrivateAccess() const
+{
+    return m_ossPrivateAccess;
+}
+
+void MainlandConfig::SetOssPrivateAccess(const OssPrivateAccess& _ossPrivateAccess)
+{
+    m_ossPrivateAccess = _ossPrivateAccess;
+    m_ossPrivateAccessHasBeenSet = true;
+}
+
+bool MainlandConfig::OssPrivateAccessHasBeenSet() const
+{
+    return m_ossPrivateAccessHasBeenSet;
 }
 

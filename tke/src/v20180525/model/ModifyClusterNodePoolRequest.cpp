@@ -33,7 +33,8 @@ ModifyClusterNodePoolRequest::ModifyClusterNodePoolRequest() :
     m_enableAutoscaleHasBeenSet(false),
     m_osNameHasBeenSet(false),
     m_osCustomizeTypeHasBeenSet(false),
-    m_extraArgsHasBeenSet(false)
+    m_extraArgsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -145,6 +146,21 @@ string ModifyClusterNodePoolRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_extraArgs.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -329,6 +345,22 @@ void ModifyClusterNodePoolRequest::SetExtraArgs(const InstanceExtraArgs& _extraA
 bool ModifyClusterNodePoolRequest::ExtraArgsHasBeenSet() const
 {
     return m_extraArgsHasBeenSet;
+}
+
+vector<Tag> ModifyClusterNodePoolRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void ModifyClusterNodePoolRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool ModifyClusterNodePoolRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

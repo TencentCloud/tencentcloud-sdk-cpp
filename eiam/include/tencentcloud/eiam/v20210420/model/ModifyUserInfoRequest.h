@@ -240,6 +240,24 @@ namespace TencentCloud
                      */
                     bool OrgNodeIdHasBeenSet() const;
 
+                    /**
+                     * 获取用户所属的次要组织机构ID列表。
+                     * @return SecondaryOrgNodeIdList 用户所属的次要组织机构ID列表。
+                     */
+                    std::vector<std::string> GetSecondaryOrgNodeIdList() const;
+
+                    /**
+                     * 设置用户所属的次要组织机构ID列表。
+                     * @param SecondaryOrgNodeIdList 用户所属的次要组织机构ID列表。
+                     */
+                    void SetSecondaryOrgNodeIdList(const std::vector<std::string>& _secondaryOrgNodeIdList);
+
+                    /**
+                     * 判断参数 SecondaryOrgNodeIdList 是否已赋值
+                     * @return SecondaryOrgNodeIdList 是否已赋值
+                     */
+                    bool SecondaryOrgNodeIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -307,6 +325,12 @@ namespace TencentCloud
                      */
                     std::string m_orgNodeId;
                     bool m_orgNodeIdHasBeenSet;
+
+                    /**
+                     * 用户所属的次要组织机构ID列表。
+                     */
+                    std::vector<std::string> m_secondaryOrgNodeIdList;
+                    bool m_secondaryOrgNodeIdListHasBeenSet;
 
                 };
             }
