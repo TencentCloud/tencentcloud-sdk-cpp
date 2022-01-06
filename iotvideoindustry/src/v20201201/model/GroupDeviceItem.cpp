@@ -30,7 +30,10 @@ GroupDeviceItem::GroupDeviceItem() :
     m_deviceCodeHasBeenSet(false),
     m_isRecordHasBeenSet(false),
     m_recordableHasBeenSet(false),
-    m_protocolHasBeenSet(false)
+    m_protocolHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_channelNumHasBeenSet(false),
+    m_videoChannelNumHasBeenSet(false)
 {
 }
 
@@ -139,6 +142,36 @@ CoreInternalOutcome GroupDeviceItem::Deserialize(const rapidjson::Value &value)
         m_protocolHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `GroupDeviceItem.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = value["CreateTime"].GetInt64();
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ChannelNum") && !value["ChannelNum"].IsNull())
+    {
+        if (!value["ChannelNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `GroupDeviceItem.ChannelNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_channelNum = value["ChannelNum"].GetInt64();
+        m_channelNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("VideoChannelNum") && !value["VideoChannelNum"].IsNull())
+    {
+        if (!value["VideoChannelNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `GroupDeviceItem.VideoChannelNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_videoChannelNum = value["VideoChannelNum"].GetInt64();
+        m_videoChannelNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +257,30 @@ void GroupDeviceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createTime, allocator);
+    }
+
+    if (m_channelNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_channelNum, allocator);
+    }
+
+    if (m_videoChannelNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoChannelNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_videoChannelNum, allocator);
     }
 
 }
@@ -387,5 +444,53 @@ void GroupDeviceItem::SetProtocol(const string& _protocol)
 bool GroupDeviceItem::ProtocolHasBeenSet() const
 {
     return m_protocolHasBeenSet;
+}
+
+int64_t GroupDeviceItem::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void GroupDeviceItem::SetCreateTime(const int64_t& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool GroupDeviceItem::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+int64_t GroupDeviceItem::GetChannelNum() const
+{
+    return m_channelNum;
+}
+
+void GroupDeviceItem::SetChannelNum(const int64_t& _channelNum)
+{
+    m_channelNum = _channelNum;
+    m_channelNumHasBeenSet = true;
+}
+
+bool GroupDeviceItem::ChannelNumHasBeenSet() const
+{
+    return m_channelNumHasBeenSet;
+}
+
+int64_t GroupDeviceItem::GetVideoChannelNum() const
+{
+    return m_videoChannelNum;
+}
+
+void GroupDeviceItem::SetVideoChannelNum(const int64_t& _videoChannelNum)
+{
+    m_videoChannelNum = _videoChannelNum;
+    m_videoChannelNumHasBeenSet = true;
+}
+
+bool GroupDeviceItem::VideoChannelNumHasBeenSet() const
+{
+    return m_videoChannelNumHasBeenSet;
 }
 

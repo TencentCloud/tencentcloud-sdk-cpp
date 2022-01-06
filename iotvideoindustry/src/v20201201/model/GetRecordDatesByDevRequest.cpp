@@ -24,8 +24,8 @@ using namespace std;
 
 GetRecordDatesByDevRequest::GetRecordDatesByDevRequest() :
     m_deviceIdHasBeenSet(false),
-    m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false),
     m_channelIdHasBeenSet(false),
     m_typeHasBeenSet(false)
 {
@@ -46,20 +46,20 @@ string GetRecordDatesByDevRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_deviceId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_offsetHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
-    }
-
     if (m_limitHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
     if (m_channelIdHasBeenSet)
@@ -102,22 +102,6 @@ bool GetRecordDatesByDevRequest::DeviceIdHasBeenSet() const
     return m_deviceIdHasBeenSet;
 }
 
-int64_t GetRecordDatesByDevRequest::GetOffset() const
-{
-    return m_offset;
-}
-
-void GetRecordDatesByDevRequest::SetOffset(const int64_t& _offset)
-{
-    m_offset = _offset;
-    m_offsetHasBeenSet = true;
-}
-
-bool GetRecordDatesByDevRequest::OffsetHasBeenSet() const
-{
-    return m_offsetHasBeenSet;
-}
-
 int64_t GetRecordDatesByDevRequest::GetLimit() const
 {
     return m_limit;
@@ -132,6 +116,22 @@ void GetRecordDatesByDevRequest::SetLimit(const int64_t& _limit)
 bool GetRecordDatesByDevRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+int64_t GetRecordDatesByDevRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void GetRecordDatesByDevRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool GetRecordDatesByDevRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 string GetRecordDatesByDevRequest::GetChannelId() const

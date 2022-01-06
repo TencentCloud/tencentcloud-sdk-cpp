@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool DeviceIdHasBeenSet() const;
 
                     /**
-                     * 获取流失效时间
-                     * @return ExpireTime 流失效时间
+                     * 获取流失效时间，UNIX时间戳，30天内
+                     * @return ExpireTime 流失效时间，UNIX时间戳，30天内
                      */
                     int64_t GetExpireTime() const;
 
                     /**
-                     * 设置流失效时间
-                     * @param ExpireTime 流失效时间
+                     * 设置流失效时间，UNIX时间戳，30天内
+                     * @param ExpireTime 流失效时间，UNIX时间戳，30天内
                      */
                     void SetExpireTime(const int64_t& _expireTime);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取录像文件Id
-                     * @return RecordId 录像文件Id
+                     * 获取录像文件ID
+                     * @return RecordId 录像文件ID
                      */
                     std::string GetRecordId() const;
 
                     /**
-                     * 设置录像文件Id
-                     * @param RecordId 录像文件Id
+                     * 设置录像文件ID
+                     * @param RecordId 录像文件ID
                      */
                     void SetRecordId(const std::string& _recordId);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool RecordIdHasBeenSet() const;
 
                     /**
-                     * 获取录像流开始时间，当录像文件Id为空时有效
-                     * @return StartTime 录像流开始时间，当录像文件Id为空时有效
+                     * 获取录像流开始时间，当录像文件ID为空时有效，UNIX时间戳
+                     * @return StartTime 录像流开始时间，当录像文件ID为空时有效，UNIX时间戳
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置录像流开始时间，当录像文件Id为空时有效
-                     * @param StartTime 录像流开始时间，当录像文件Id为空时有效
+                     * 设置录像流开始时间，当录像文件ID为空时有效，UNIX时间戳
+                     * @param StartTime 录像流开始时间，当录像文件ID为空时有效，UNIX时间戳
                      */
                     void SetStartTime(const int64_t& _startTime);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取录像流结束时间，当录像文件Id为空时有效
-                     * @return EndTime 录像流结束时间，当录像文件Id为空时有效
+                     * 获取录像流结束时间，当录像文件iD为空时有效，UNIX时间戳
+                     * @return EndTime 录像流结束时间，当录像文件iD为空时有效，UNIX时间戳
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置录像流结束时间，当录像文件Id为空时有效
-                     * @param EndTime 录像流结束时间，当录像文件Id为空时有效
+                     * 设置录像流结束时间，当录像文件iD为空时有效，UNIX时间戳
+                     * @param EndTime 录像流结束时间，当录像文件iD为空时有效，UNIX时间戳
                      */
                     void SetEndTime(const int64_t& _endTime);
 
@@ -159,25 +159,25 @@ namespace TencentCloud
                     bool m_deviceIdHasBeenSet;
 
                     /**
-                     * 流失效时间
+                     * 流失效时间，UNIX时间戳，30天内
                      */
                     int64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 录像文件Id
+                     * 录像文件ID
                      */
                     std::string m_recordId;
                     bool m_recordIdHasBeenSet;
 
                     /**
-                     * 录像流开始时间，当录像文件Id为空时有效
+                     * 录像流开始时间，当录像文件ID为空时有效，UNIX时间戳
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 录像流结束时间，当录像文件Id为空时有效
+                     * 录像流结束时间，当录像文件iD为空时有效，UNIX时间戳
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;

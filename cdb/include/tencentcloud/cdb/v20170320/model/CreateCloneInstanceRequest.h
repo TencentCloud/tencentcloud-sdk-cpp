@@ -385,6 +385,24 @@ namespace TencentCloud
                      */
                     bool DryRunHasBeenSet() const;
 
+                    /**
+                     * 获取金融围拢 ID 。
+                     * @return CageId 金融围拢 ID 。
+                     */
+                    std::string GetCageId() const;
+
+                    /**
+                     * 设置金融围拢 ID 。
+                     * @param CageId 金融围拢 ID 。
+                     */
+                    void SetCageId(const std::string& _cageId);
+
+                    /**
+                     * 判断参数 CageId 是否已赋值
+                     * @return CageId 是否已赋值
+                     */
+                    bool CageIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -500,6 +518,12 @@ namespace TencentCloud
                      */
                     bool m_dryRun;
                     bool m_dryRunHasBeenSet;
+
+                    /**
+                     * 金融围拢 ID 。
+                     */
+                    std::string m_cageId;
+                    bool m_cageIdHasBeenSet;
 
                 };
             }

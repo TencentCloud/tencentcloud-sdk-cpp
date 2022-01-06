@@ -26,9 +26,9 @@ GetVideoListByConRequest::GetVideoListByConRequest() :
     m_deviceIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
+    m_channelIdHasBeenSet(false),
     m_latestDayHasBeenSet(false),
     m_dateHasBeenSet(false),
-    m_channelIdHasBeenSet(false),
     m_typeHasBeenSet(false)
 {
 }
@@ -64,6 +64,14 @@ string GetVideoListByConRequest::ToJsonString() const
         d.AddMember(iKey, m_limit, allocator);
     }
 
+    if (m_channelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_channelId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_latestDayHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -78,14 +86,6 @@ string GetVideoListByConRequest::ToJsonString() const
         string key = "Date";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_date.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_channelIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ChannelId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_channelId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_typeHasBeenSet)
@@ -152,6 +152,22 @@ bool GetVideoListByConRequest::LimitHasBeenSet() const
     return m_limitHasBeenSet;
 }
 
+string GetVideoListByConRequest::GetChannelId() const
+{
+    return m_channelId;
+}
+
+void GetVideoListByConRequest::SetChannelId(const string& _channelId)
+{
+    m_channelId = _channelId;
+    m_channelIdHasBeenSet = true;
+}
+
+bool GetVideoListByConRequest::ChannelIdHasBeenSet() const
+{
+    return m_channelIdHasBeenSet;
+}
+
 int64_t GetVideoListByConRequest::GetLatestDay() const
 {
     return m_latestDay;
@@ -182,22 +198,6 @@ void GetVideoListByConRequest::SetDate(const string& _date)
 bool GetVideoListByConRequest::DateHasBeenSet() const
 {
     return m_dateHasBeenSet;
-}
-
-string GetVideoListByConRequest::GetChannelId() const
-{
-    return m_channelId;
-}
-
-void GetVideoListByConRequest::SetChannelId(const string& _channelId)
-{
-    m_channelId = _channelId;
-    m_channelIdHasBeenSet = true;
-}
-
-bool GetVideoListByConRequest::ChannelIdHasBeenSet() const
-{
-    return m_channelIdHasBeenSet;
 }
 
 int64_t GetVideoListByConRequest::GetType() const

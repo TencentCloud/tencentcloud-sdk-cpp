@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取直播ID
-                     * @return LiveChannelId 直播ID
+                     * 获取直播频道ID
+                     * @return LiveChannelId 直播频道ID
                      */
                     std::string GetLiveChannelId() const;
 
                     /**
-                     * 设置直播ID
-                     * @param LiveChannelId 直播ID
+                     * 设置直播频道ID
+                     * @param LiveChannelId 直播频道ID
                      */
                     void SetLiveChannelId(const std::string& _liveChannelId);
 
@@ -237,7 +237,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 直播ID
+                     * 直播频道ID
                      */
                     std::string m_liveChannelId;
                     bool m_liveChannelIdHasBeenSet;

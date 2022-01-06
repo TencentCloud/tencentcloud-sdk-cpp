@@ -55,6 +55,20 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取由负载均衡实例唯一 ID 组成的数组。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LoadBalancerIds 由负载均衡实例唯一 ID 组成的数组。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetLoadBalancerIds() const;
+
+                    /**
+                     * 判断参数 LoadBalancerIds 是否已赋值
+                     * @return LoadBalancerIds 是否已赋值
+                     */
+                    bool LoadBalancerIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -62,6 +76,13 @@ namespace TencentCloud
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 由负载均衡实例唯一 ID 组成的数组。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_loadBalancerIds;
+                    bool m_loadBalancerIdsHasBeenSet;
 
                 };
             }

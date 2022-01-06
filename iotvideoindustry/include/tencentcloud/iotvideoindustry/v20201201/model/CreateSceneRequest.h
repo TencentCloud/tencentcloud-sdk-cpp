@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DeviceItem.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ChannelItem.h>
 
 
 namespace TencentCloud
@@ -116,14 +117,14 @@ namespace TencentCloud
                     bool StoreDurationHasBeenSet() const;
 
                     /**
-                     * 获取设备列表
-                     * @return Devices 设备列表
+                     * 获取设备列表(不推荐使用)
+                     * @return Devices 设备列表(不推荐使用)
                      */
                     std::vector<DeviceItem> GetDevices() const;
 
                     /**
-                     * 设置设备列表
-                     * @param Devices 设备列表
+                     * 设置设备列表(不推荐使用)
+                     * @param Devices 设备列表(不推荐使用)
                      */
                     void SetDevices(const std::vector<DeviceItem>& _devices);
 
@@ -132,6 +133,24 @@ namespace TencentCloud
                      * @return Devices 是否已赋值
                      */
                     bool DevicesHasBeenSet() const;
+
+                    /**
+                     * 获取通道列表
+                     * @return Channels 通道列表
+                     */
+                    std::vector<ChannelItem> GetChannels() const;
+
+                    /**
+                     * 设置通道列表
+                     * @param Channels 通道列表
+                     */
+                    void SetChannels(const std::vector<ChannelItem>& _channels);
+
+                    /**
+                     * 判断参数 Channels 是否已赋值
+                     * @return Channels 是否已赋值
+                     */
+                    bool ChannelsHasBeenSet() const;
 
                 private:
 
@@ -160,10 +179,16 @@ namespace TencentCloud
                     bool m_storeDurationHasBeenSet;
 
                     /**
-                     * 设备列表
+                     * 设备列表(不推荐使用)
                      */
                     std::vector<DeviceItem> m_devices;
                     bool m_devicesHasBeenSet;
+
+                    /**
+                     * 通道列表
+                     */
+                    std::vector<ChannelItem> m_channels;
+                    bool m_channelsHasBeenSet;
 
                 };
             }

@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool TaskIdHasBeenSet() const;
 
+                    /**
+                     * 获取订单ID。
+                     * @return DealName 订单ID。
+                     */
+                    std::string GetDealName() const;
+
+                    /**
+                     * 设置订单ID。
+                     * @param DealName 订单ID。
+                     */
+                    void SetDealName(const std::string& _dealName);
+
+                    /**
+                     * 判断参数 DealName 是否已赋值
+                     * @return DealName 是否已赋值
+                     */
+                    bool DealNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
+
+                    /**
+                     * 订单ID。
+                     */
+                    std::string m_dealName;
+                    bool m_dealNameHasBeenSet;
 
                 };
             }

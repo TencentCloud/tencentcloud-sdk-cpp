@@ -24,7 +24,8 @@ using namespace TencentCloud::Clb::V20180317::Model;
 using namespace std;
 
 DescribeTaskStatusResponse::DescribeTaskStatusResponse() :
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_loadBalancerIdsHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,19 @@ CoreInternalOutcome DescribeTaskStatusResponse::Deserialize(const string &payloa
         m_statusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("LoadBalancerIds") && !rsp["LoadBalancerIds"].IsNull())
+    {
+        if (!rsp["LoadBalancerIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["LoadBalancerIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_loadBalancerIds.push_back((*itr).GetString());
+        }
+        m_loadBalancerIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +102,19 @@ string DescribeTaskStatusResponse::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_loadBalancerIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadBalancerIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_loadBalancerIds.begin(); itr != m_loadBalancerIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +137,16 @@ int64_t DescribeTaskStatusResponse::GetStatus() const
 bool DescribeTaskStatusResponse::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+vector<string> DescribeTaskStatusResponse::GetLoadBalancerIds() const
+{
+    return m_loadBalancerIds;
+}
+
+bool DescribeTaskStatusResponse::LoadBalancerIdsHasBeenSet() const
+{
+    return m_loadBalancerIdsHasBeenSet;
 }
 
 

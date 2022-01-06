@@ -266,6 +266,72 @@ namespace TencentCloud
                      */
                     bool ProtocolHasBeenSet() const;
 
+                    /**
+                     * 获取设备创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateTime 设备创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetCreateTime() const;
+
+                    /**
+                     * 设置设备创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CreateTime 设备创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCreateTime(const int64_t& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取设备通道总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChannelNum 设备通道总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetChannelNum() const;
+
+                    /**
+                     * 设置设备通道总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ChannelNum 设备通道总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetChannelNum(const int64_t& _channelNum);
+
+                    /**
+                     * 判断参数 ChannelNum 是否已赋值
+                     * @return ChannelNum 是否已赋值
+                     */
+                    bool ChannelNumHasBeenSet() const;
+
+                    /**
+                     * 获取设备视频通道总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VideoChannelNum 设备视频通道总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetVideoChannelNum() const;
+
+                    /**
+                     * 设置设备视频通道总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VideoChannelNum 设备视频通道总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVideoChannelNum(const int64_t& _videoChannelNum);
+
+                    /**
+                     * 判断参数 VideoChannelNum 是否已赋值
+                     * @return VideoChannelNum 是否已赋值
+                     */
+                    bool VideoChannelNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -337,6 +403,27 @@ namespace TencentCloud
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
+
+                    /**
+                     * 设备创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 设备通道总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_channelNum;
+                    bool m_channelNumHasBeenSet;
+
+                    /**
+                     * 设备视频通道总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_videoChannelNum;
+                    bool m_videoChannelNumHasBeenSet;
 
                 };
             }

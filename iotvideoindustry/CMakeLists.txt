@@ -19,327 +19,485 @@ set(iotvideoindustry_public_header
   )
 
 set(iotvideoindustry_public_header_model
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribePresetListRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ControlRecordStreamRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/CreateRecordingPlanResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ModifySubscriptionStatusRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/CreateSceneResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteTimeTemplateResponse.h
-  include/tencentcloud/iotvideoindustry/v20201201/model/GetTimeTemplatesRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeMonitorDataByDateRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/ModifyLiveChannelResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ServerConfiguration.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveVideoListRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/GetRecordPlanByDevRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/GetRecordDatesByDevResponse.h
-  include/tencentcloud/iotvideoindustry/v20201201/model/CreateLiveRecordPlanRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/ControlChannelPTZResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeChannelsRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveChannelRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordDatesByChannelResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordDatesByChannelRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeVideoListByChannelRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/ModifyPresetResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeGroupByPathResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeAbnormalEventsRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/ModifyPresetRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeSubscriptionStatusResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeScenesResponse.h
-  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeDeviceStreamsResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DeleteRecordingPlanRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeBindSceneChannelsResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeSIPServerRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeVideoListByChannelResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/CreateLiveRecordPlanResponse.h
-  include/tencentcloud/iotvideoindustry/v20201201/model/GroupItem.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/GetRecordPlansRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeviceItem.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteDeviceGroupResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeWarningsResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteRecordPlanResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteMessageForwardResponse.h
-  include/tencentcloud/iotvideoindustry/v20201201/model/ModifyBindPlanLiveChannelResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/GetTimeTemplatesRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/UpdateDeviceGroupResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/ModifyRecordingPlanRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeDeviceEventRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/GetVideoListByConRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/ResetWarningRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeDeviceMonitorDataResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DevGroupInfo.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeDeviceListRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordingPlansResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/ControlHomePositionResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveRecordPlanByIdRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/LiveRecordPlanItem.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeVideoListResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/RecordPlanDetail.h
   include/tencentcloud/iotvideoindustry/v20201201/model/RecordTaskItem.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/ChannelItem.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeIPCChannelsRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeSubGroupsRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/UpdateTimeTemplateRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteRecordPlanRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/CreateDeviceGroupResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/GetVideoListByConResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeCurrentDeviceDataRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/LiveRecordItem.h
-  include/tencentcloud/iotvideoindustry/v20201201/model/UpdateTimeTemplateResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeIPCChannelsResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/UpdateRecordPlanRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordingPlanByIdRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ModifyDeviceDataResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeStatisticDetailsResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeWarnModResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/GroupDeviceItem.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeSubGroupsResponse.h
-  include/tencentcloud/iotvideoindustry/v20201201/model/GetRecordPlanByIdResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeChannelStreamURLResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeStatisticDetailsRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteDeviceRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/UpdateDevicePassWordRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeMessageForwardRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/CreateTimeTemplateRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/ModifyBindSceneChannelsResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/CreateMessageForwardRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/GroupItem.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DeleteWarningRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ModifyBindPlanLiveChannelRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveStreamRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ModifyMessageForwardRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ModifyLiveRecordPlanResponse.h
-  include/tencentcloud/iotvideoindustry/v20201201/model/LiveChannelInfo.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeXP2PDataResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeDeviceEventResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/RecordStatisticValue.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/ModifySceneRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeAllDeviceListRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordDatesByLiveRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeDevicePassWordRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/GetRecordPlanByIdRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/ModifyRecordingPlanResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveChannelListRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/GetRecordPlanByDevResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteVideoListRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/GroupInfo.h
-  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeStatisticDetailsRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/ControlPresetRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/CreateRecordPlanRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordStreamData.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DeleteRecordingPlanResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/CreateDeviceGroupRequest.h
-  include/tencentcloud/iotvideoindustry/v20201201/model/UpdateTimeTemplateRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/SceneItem.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/ModifyBindSceneChannelsRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveRecordPlanIdsResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/ModifyBindSceneDeviceRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/CreateDeviceResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/CreateDeviceRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/WarningsData.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeStatisticSummaryResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/ModifyBindPlanLiveChannelResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordStreamRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/PresetItem.h
   include/tencentcloud/iotvideoindustry/v20201201/model/BindGroupDevicesRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/ControlHomePositionRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ModifyLiveRecordPlanRequest.h
-  include/tencentcloud/iotvideoindustry/v20201201/model/SceneItem.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeSceneResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeDeviceResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/GetTimeTemplateByIdResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveChannelResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeChannelsResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DeviceMonitorValue.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeMessageForwardsRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ControlDevicePTZResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordingPlansRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/TimeTemplateSpec.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ControlDevicePTZRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/UpdateDeviceGroupRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeChannelsByLiveRecordPlanResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeGroupDevicesRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeGroupByIdRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/Events.h
   include/tencentcloud/iotvideoindustry/v20201201/model/UpdateDevicePassWordResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveRecordPlanByIdResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteChannelRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeXP2PDataRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/UpdateTimeTemplateResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeSubscriptionStatusRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeDeviceStreamsRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordStreamResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/CreateRecordPlanResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeWarningsRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/CreateSceneRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/AllDeviceInfo.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeAbnormalEventsResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeDeviceStreamsResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveVideoListResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteDeviceGroupRequest.h
-  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveRecordPlanByIdResponse.h
-  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordDatesByLiveResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeSceneRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeDeviceRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/ControlPresetResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeDeviceGroupResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DeleteChannelResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ModifySubscriptionStatusResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/MessageForward.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/ResetWarningResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ModifyDeviceDataRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteSceneResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/GetRecordDatesByDevRequest.h
-  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveVideoListRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveChannelListResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/GetTimeTemplatesResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/CreateLiveChannelResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteVideoListResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ModifyLiveVideoResponse.h
-  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeIPCChannelsResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeChannelStreamURLRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeAllDeviceListResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeStatisticSummaryRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeGroupsResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/ChannelDetail.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeDeviceStreamsData.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteLiveRecordPlanRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/ModifyBindRecordingPlanRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteDeviceResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteLiveVideoListResponse.h
-  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeDeviceGroupResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeDeviceMonitorDataRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/CreateTimeTemplateResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteLiveChannelRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/StatisticItem.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeSIPServerResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeGroupByPathRequest.h
-  include/tencentcloud/iotvideoindustry/v20201201/model/DeleteChannelResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordDatesByLiveResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/UpdateRecordPlanResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/ModifyBindSceneDeviceResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/AbnormalEventsInfo.h
   include/tencentcloud/iotvideoindustry/v20201201/model/TimeTemplateItem.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/AbnormalEvents.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeDeviceGroupRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/LiveChannelInfo.h
   include/tencentcloud/iotvideoindustry/v20201201/model/LiveChannelItem.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeGroupsRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/ControlChannelPTZRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/GetRecordPlansResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeChannelsByLiveRecordPlanRequest.h
-  include/tencentcloud/iotvideoindustry/v20201201/model/ModifyLiveChannelResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/ControlChannelLocalRecordRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/ControlChannelLocalRecordResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/GetTimeTemplateByIdRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/RecordPlanItem.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeMessageForwardsResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ModifyVideoInfoRequest.h
-  include/tencentcloud/iotvideoindustry/v20201201/model/GetRecordPlansRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeCurrentDeviceDataResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/GetRecordPlanByIdResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteTimeTemplateRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DeleteWarningResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ModifyLiveChannelRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeMessageForwardResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordingPlanByIdResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeWarnModRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/ModifyBindRecordingPlanResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveRecordPlanIdsRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteLiveVideoListRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/ModifyVideoInfoResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ModifyMessageForwardResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeDeviceListResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeScenesRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteLiveRecordPlanResponse.h
-  include/tencentcloud/iotvideoindustry/v20201201/model/ModifyVideoInfoResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeBindSceneChannelsRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribePresetListResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeGroupByIdResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ControlRecordStreamResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteMessageForwardRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteLiveChannelResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/StreamAddress.h
   include/tencentcloud/iotvideoindustry/v20201201/model/BindGroupDevicesResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeChannelLocalRecordURLResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/RecordStatistic.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeVideoListRequest.h
-  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveChannelListResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/CreateLiveRecordPlanRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeDevicePassWordResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/ModifySceneResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeBindSceneDevicesRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeBindSceneDevicesResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeMonitorDataByDateResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ModifyLiveVideoRequest.h
-  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeGroupByPathResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeChannelLocalRecordURLRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/CreateMessageForwardResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/CreateLiveChannelRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeGroupDevicesResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteSceneRequest.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/CreateRecordingPlanRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeLiveStreamResponse.h
   )
 
 set(iotvideoindustry_src
   src/v20201201/IotvideoindustryClient.cpp
+  src/v20201201/model/DescribePresetListRequest.cpp
   src/v20201201/model/ControlRecordStreamRequest.cpp
+  src/v20201201/model/CreateRecordingPlanResponse.cpp
   src/v20201201/model/ModifySubscriptionStatusRequest.cpp
   src/v20201201/model/CreateSceneResponse.cpp
   src/v20201201/model/DeleteTimeTemplateResponse.cpp
-  src/v20201201/model/GetTimeTemplatesRequest.cpp
+  src/v20201201/model/DescribeMonitorDataByDateRequest.cpp
+  src/v20201201/model/ModifyLiveChannelResponse.cpp
   src/v20201201/model/ServerConfiguration.cpp
+  src/v20201201/model/DescribeLiveVideoListRequest.cpp
   src/v20201201/model/GetRecordPlanByDevRequest.cpp
   src/v20201201/model/GetRecordDatesByDevResponse.cpp
-  src/v20201201/model/CreateLiveRecordPlanRequest.cpp
+  src/v20201201/model/ControlChannelPTZResponse.cpp
+  src/v20201201/model/DescribeChannelsRequest.cpp
   src/v20201201/model/DescribeLiveChannelRequest.cpp
+  src/v20201201/model/DescribeRecordDatesByChannelResponse.cpp
+  src/v20201201/model/DescribeRecordDatesByChannelRequest.cpp
+  src/v20201201/model/DescribeVideoListByChannelRequest.cpp
+  src/v20201201/model/ModifyPresetResponse.cpp
+  src/v20201201/model/DescribeGroupByPathResponse.cpp
+  src/v20201201/model/DescribeAbnormalEventsRequest.cpp
+  src/v20201201/model/ModifyPresetRequest.cpp
   src/v20201201/model/DescribeSubscriptionStatusResponse.cpp
   src/v20201201/model/DescribeScenesResponse.cpp
-  src/v20201201/model/DescribeDeviceStreamsResponse.cpp
+  src/v20201201/model/DeleteRecordingPlanRequest.cpp
+  src/v20201201/model/DescribeBindSceneChannelsResponse.cpp
   src/v20201201/model/DescribeSIPServerRequest.cpp
+  src/v20201201/model/DescribeVideoListByChannelResponse.cpp
   src/v20201201/model/CreateLiveRecordPlanResponse.cpp
-  src/v20201201/model/GroupItem.cpp
+  src/v20201201/model/GetRecordPlansRequest.cpp
   src/v20201201/model/DeviceItem.cpp
   src/v20201201/model/DeleteDeviceGroupResponse.cpp
+  src/v20201201/model/DescribeWarningsResponse.cpp
   src/v20201201/model/DeleteRecordPlanResponse.cpp
   src/v20201201/model/DeleteMessageForwardResponse.cpp
-  src/v20201201/model/ModifyBindPlanLiveChannelResponse.cpp
+  src/v20201201/model/GetTimeTemplatesRequest.cpp
   src/v20201201/model/UpdateDeviceGroupResponse.cpp
+  src/v20201201/model/ModifyRecordingPlanRequest.cpp
+  src/v20201201/model/DescribeDeviceEventRequest.cpp
   src/v20201201/model/GetVideoListByConRequest.cpp
+  src/v20201201/model/ResetWarningRequest.cpp
+  src/v20201201/model/DescribeDeviceMonitorDataResponse.cpp
   src/v20201201/model/DevGroupInfo.cpp
+  src/v20201201/model/DescribeDeviceListRequest.cpp
+  src/v20201201/model/DescribeRecordingPlansResponse.cpp
+  src/v20201201/model/ControlHomePositionResponse.cpp
   src/v20201201/model/DescribeLiveRecordPlanByIdRequest.cpp
   src/v20201201/model/LiveRecordPlanItem.cpp
   src/v20201201/model/DescribeVideoListResponse.cpp
+  src/v20201201/model/RecordPlanDetail.cpp
   src/v20201201/model/RecordTaskItem.cpp
+  src/v20201201/model/ChannelItem.cpp
   src/v20201201/model/DescribeIPCChannelsRequest.cpp
   src/v20201201/model/DescribeSubGroupsRequest.cpp
+  src/v20201201/model/UpdateTimeTemplateRequest.cpp
   src/v20201201/model/DeleteRecordPlanRequest.cpp
   src/v20201201/model/CreateDeviceGroupResponse.cpp
   src/v20201201/model/GetVideoListByConResponse.cpp
+  src/v20201201/model/DescribeCurrentDeviceDataRequest.cpp
   src/v20201201/model/LiveRecordItem.cpp
-  src/v20201201/model/UpdateTimeTemplateResponse.cpp
+  src/v20201201/model/DescribeIPCChannelsResponse.cpp
   src/v20201201/model/UpdateRecordPlanRequest.cpp
+  src/v20201201/model/DescribeRecordingPlanByIdRequest.cpp
   src/v20201201/model/ModifyDeviceDataResponse.cpp
   src/v20201201/model/DescribeStatisticDetailsResponse.cpp
+  src/v20201201/model/DescribeWarnModResponse.cpp
   src/v20201201/model/GroupDeviceItem.cpp
   src/v20201201/model/DescribeSubGroupsResponse.cpp
-  src/v20201201/model/GetRecordPlanByIdResponse.cpp
+  src/v20201201/model/DescribeChannelStreamURLResponse.cpp
+  src/v20201201/model/DescribeStatisticDetailsRequest.cpp
   src/v20201201/model/DeleteDeviceRequest.cpp
   src/v20201201/model/UpdateDevicePassWordRequest.cpp
   src/v20201201/model/DescribeMessageForwardRequest.cpp
   src/v20201201/model/CreateTimeTemplateRequest.cpp
+  src/v20201201/model/ModifyBindSceneChannelsResponse.cpp
   src/v20201201/model/CreateMessageForwardRequest.cpp
+  src/v20201201/model/GroupItem.cpp
+  src/v20201201/model/DeleteWarningRequest.cpp
   src/v20201201/model/ModifyBindPlanLiveChannelRequest.cpp
   src/v20201201/model/DescribeLiveStreamRequest.cpp
   src/v20201201/model/ModifyMessageForwardRequest.cpp
   src/v20201201/model/ModifyLiveRecordPlanResponse.cpp
-  src/v20201201/model/LiveChannelInfo.cpp
+  src/v20201201/model/DescribeXP2PDataResponse.cpp
+  src/v20201201/model/DescribeDeviceEventResponse.cpp
+  src/v20201201/model/RecordStatisticValue.cpp
+  src/v20201201/model/ModifySceneRequest.cpp
   src/v20201201/model/DescribeAllDeviceListRequest.cpp
   src/v20201201/model/DescribeRecordDatesByLiveRequest.cpp
   src/v20201201/model/DescribeDevicePassWordRequest.cpp
   src/v20201201/model/GetRecordPlanByIdRequest.cpp
+  src/v20201201/model/ModifyRecordingPlanResponse.cpp
   src/v20201201/model/DescribeLiveChannelListRequest.cpp
   src/v20201201/model/GetRecordPlanByDevResponse.cpp
   src/v20201201/model/DeleteVideoListRequest.cpp
   src/v20201201/model/GroupInfo.cpp
-  src/v20201201/model/DescribeStatisticDetailsRequest.cpp
+  src/v20201201/model/ControlPresetRequest.cpp
   src/v20201201/model/CreateRecordPlanRequest.cpp
   src/v20201201/model/DescribeRecordStreamData.cpp
+  src/v20201201/model/DeleteRecordingPlanResponse.cpp
   src/v20201201/model/CreateDeviceGroupRequest.cpp
-  src/v20201201/model/UpdateTimeTemplateRequest.cpp
+  src/v20201201/model/SceneItem.cpp
+  src/v20201201/model/ModifyBindSceneChannelsRequest.cpp
   src/v20201201/model/DescribeLiveRecordPlanIdsResponse.cpp
+  src/v20201201/model/ModifyBindSceneDeviceRequest.cpp
   src/v20201201/model/CreateDeviceResponse.cpp
   src/v20201201/model/CreateDeviceRequest.cpp
+  src/v20201201/model/WarningsData.cpp
   src/v20201201/model/DescribeStatisticSummaryResponse.cpp
+  src/v20201201/model/ModifyBindPlanLiveChannelResponse.cpp
   src/v20201201/model/DescribeRecordStreamRequest.cpp
+  src/v20201201/model/PresetItem.cpp
   src/v20201201/model/BindGroupDevicesRequest.cpp
+  src/v20201201/model/ControlHomePositionRequest.cpp
   src/v20201201/model/ModifyLiveRecordPlanRequest.cpp
-  src/v20201201/model/SceneItem.cpp
+  src/v20201201/model/DescribeSceneResponse.cpp
+  src/v20201201/model/DescribeDeviceResponse.cpp
   src/v20201201/model/GetTimeTemplateByIdResponse.cpp
   src/v20201201/model/DescribeLiveChannelResponse.cpp
+  src/v20201201/model/DescribeChannelsResponse.cpp
+  src/v20201201/model/DeviceMonitorValue.cpp
   src/v20201201/model/DescribeMessageForwardsRequest.cpp
   src/v20201201/model/ControlDevicePTZResponse.cpp
+  src/v20201201/model/DescribeRecordingPlansRequest.cpp
   src/v20201201/model/TimeTemplateSpec.cpp
   src/v20201201/model/ControlDevicePTZRequest.cpp
   src/v20201201/model/UpdateDeviceGroupRequest.cpp
   src/v20201201/model/DescribeChannelsByLiveRecordPlanResponse.cpp
   src/v20201201/model/DescribeGroupDevicesRequest.cpp
   src/v20201201/model/DescribeGroupByIdRequest.cpp
+  src/v20201201/model/Events.cpp
   src/v20201201/model/UpdateDevicePassWordResponse.cpp
+  src/v20201201/model/DescribeLiveRecordPlanByIdResponse.cpp
   src/v20201201/model/DeleteChannelRequest.cpp
+  src/v20201201/model/DescribeXP2PDataRequest.cpp
+  src/v20201201/model/UpdateTimeTemplateResponse.cpp
   src/v20201201/model/DescribeSubscriptionStatusRequest.cpp
   src/v20201201/model/DescribeDeviceStreamsRequest.cpp
   src/v20201201/model/DescribeRecordStreamResponse.cpp
   src/v20201201/model/CreateRecordPlanResponse.cpp
+  src/v20201201/model/DescribeWarningsRequest.cpp
   src/v20201201/model/CreateSceneRequest.cpp
   src/v20201201/model/AllDeviceInfo.cpp
+  src/v20201201/model/DescribeAbnormalEventsResponse.cpp
+  src/v20201201/model/DescribeDeviceStreamsResponse.cpp
   src/v20201201/model/DescribeLiveVideoListResponse.cpp
   src/v20201201/model/DeleteDeviceGroupRequest.cpp
-  src/v20201201/model/DescribeLiveRecordPlanByIdResponse.cpp
-  src/v20201201/model/DescribeRecordDatesByLiveResponse.cpp
+  src/v20201201/model/DescribeSceneRequest.cpp
+  src/v20201201/model/DescribeDeviceRequest.cpp
+  src/v20201201/model/ControlPresetResponse.cpp
+  src/v20201201/model/DescribeDeviceGroupResponse.cpp
+  src/v20201201/model/DeleteChannelResponse.cpp
   src/v20201201/model/ModifySubscriptionStatusResponse.cpp
   src/v20201201/model/MessageForward.cpp
+  src/v20201201/model/ResetWarningResponse.cpp
   src/v20201201/model/ModifyDeviceDataRequest.cpp
   src/v20201201/model/DeleteSceneResponse.cpp
   src/v20201201/model/GetRecordDatesByDevRequest.cpp
-  src/v20201201/model/DescribeLiveVideoListRequest.cpp
+  src/v20201201/model/DescribeLiveChannelListResponse.cpp
   src/v20201201/model/GetTimeTemplatesResponse.cpp
   src/v20201201/model/CreateLiveChannelResponse.cpp
   src/v20201201/model/DeleteVideoListResponse.cpp
   src/v20201201/model/ModifyLiveVideoResponse.cpp
-  src/v20201201/model/DescribeIPCChannelsResponse.cpp
+  src/v20201201/model/DescribeChannelStreamURLRequest.cpp
   src/v20201201/model/DescribeAllDeviceListResponse.cpp
   src/v20201201/model/DescribeStatisticSummaryRequest.cpp
   src/v20201201/model/DescribeGroupsResponse.cpp
+  src/v20201201/model/ChannelDetail.cpp
   src/v20201201/model/DescribeDeviceStreamsData.cpp
   src/v20201201/model/DeleteLiveRecordPlanRequest.cpp
+  src/v20201201/model/ModifyBindRecordingPlanRequest.cpp
   src/v20201201/model/DeleteDeviceResponse.cpp
   src/v20201201/model/DeleteLiveVideoListResponse.cpp
-  src/v20201201/model/DescribeDeviceGroupResponse.cpp
+  src/v20201201/model/DescribeDeviceMonitorDataRequest.cpp
   src/v20201201/model/CreateTimeTemplateResponse.cpp
   src/v20201201/model/DeleteLiveChannelRequest.cpp
   src/v20201201/model/StatisticItem.cpp
   src/v20201201/model/DescribeSIPServerResponse.cpp
   src/v20201201/model/DescribeGroupByPathRequest.cpp
-  src/v20201201/model/DeleteChannelResponse.cpp
+  src/v20201201/model/DescribeRecordDatesByLiveResponse.cpp
   src/v20201201/model/UpdateRecordPlanResponse.cpp
+  src/v20201201/model/ModifyBindSceneDeviceResponse.cpp
+  src/v20201201/model/AbnormalEventsInfo.cpp
   src/v20201201/model/TimeTemplateItem.cpp
+  src/v20201201/model/AbnormalEvents.cpp
   src/v20201201/model/DescribeDeviceGroupRequest.cpp
+  src/v20201201/model/LiveChannelInfo.cpp
   src/v20201201/model/LiveChannelItem.cpp
   src/v20201201/model/DescribeGroupsRequest.cpp
+  src/v20201201/model/ControlChannelPTZRequest.cpp
   src/v20201201/model/GetRecordPlansResponse.cpp
   src/v20201201/model/DescribeChannelsByLiveRecordPlanRequest.cpp
-  src/v20201201/model/ModifyLiveChannelResponse.cpp
+  src/v20201201/model/ControlChannelLocalRecordRequest.cpp
+  src/v20201201/model/ControlChannelLocalRecordResponse.cpp
   src/v20201201/model/GetTimeTemplateByIdRequest.cpp
   src/v20201201/model/RecordPlanItem.cpp
   src/v20201201/model/DescribeMessageForwardsResponse.cpp
   src/v20201201/model/ModifyVideoInfoRequest.cpp
-  src/v20201201/model/GetRecordPlansRequest.cpp
+  src/v20201201/model/DescribeCurrentDeviceDataResponse.cpp
+  src/v20201201/model/GetRecordPlanByIdResponse.cpp
   src/v20201201/model/DeleteTimeTemplateRequest.cpp
+  src/v20201201/model/DeleteWarningResponse.cpp
   src/v20201201/model/ModifyLiveChannelRequest.cpp
   src/v20201201/model/DescribeMessageForwardResponse.cpp
+  src/v20201201/model/DescribeRecordingPlanByIdResponse.cpp
+  src/v20201201/model/DescribeWarnModRequest.cpp
+  src/v20201201/model/ModifyBindRecordingPlanResponse.cpp
   src/v20201201/model/DescribeLiveRecordPlanIdsRequest.cpp
   src/v20201201/model/DeleteLiveVideoListRequest.cpp
+  src/v20201201/model/ModifyVideoInfoResponse.cpp
   src/v20201201/model/ModifyMessageForwardResponse.cpp
+  src/v20201201/model/DescribeDeviceListResponse.cpp
   src/v20201201/model/DescribeScenesRequest.cpp
   src/v20201201/model/DeleteLiveRecordPlanResponse.cpp
-  src/v20201201/model/ModifyVideoInfoResponse.cpp
+  src/v20201201/model/DescribeBindSceneChannelsRequest.cpp
+  src/v20201201/model/DescribePresetListResponse.cpp
   src/v20201201/model/DescribeGroupByIdResponse.cpp
   src/v20201201/model/ControlRecordStreamResponse.cpp
   src/v20201201/model/DeleteMessageForwardRequest.cpp
   src/v20201201/model/DeleteLiveChannelResponse.cpp
   src/v20201201/model/StreamAddress.cpp
   src/v20201201/model/BindGroupDevicesResponse.cpp
+  src/v20201201/model/DescribeChannelLocalRecordURLResponse.cpp
+  src/v20201201/model/RecordStatistic.cpp
   src/v20201201/model/DescribeVideoListRequest.cpp
-  src/v20201201/model/DescribeLiveChannelListResponse.cpp
+  src/v20201201/model/CreateLiveRecordPlanRequest.cpp
   src/v20201201/model/DescribeDevicePassWordResponse.cpp
+  src/v20201201/model/ModifySceneResponse.cpp
   src/v20201201/model/DescribeBindSceneDevicesRequest.cpp
   src/v20201201/model/DescribeBindSceneDevicesResponse.cpp
+  src/v20201201/model/DescribeMonitorDataByDateResponse.cpp
   src/v20201201/model/ModifyLiveVideoRequest.cpp
-  src/v20201201/model/DescribeGroupByPathResponse.cpp
+  src/v20201201/model/DescribeChannelLocalRecordURLRequest.cpp
   src/v20201201/model/CreateMessageForwardResponse.cpp
   src/v20201201/model/CreateLiveChannelRequest.cpp
   src/v20201201/model/DescribeGroupDevicesResponse.cpp
   src/v20201201/model/DeleteSceneRequest.cpp
+  src/v20201201/model/CreateRecordingPlanRequest.cpp
   src/v20201201/model/DescribeLiveStreamResponse.cpp
   )
 

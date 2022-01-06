@@ -25,8 +25,16 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/BindGroupDevicesRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/BindGroupDevicesResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ControlChannelLocalRecordRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ControlChannelLocalRecordResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ControlChannelPTZRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ControlChannelPTZResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/ControlDevicePTZRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/ControlDevicePTZResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ControlHomePositionRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ControlHomePositionResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ControlPresetRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ControlPresetResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/ControlRecordStreamRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/ControlRecordStreamResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/CreateDeviceRequest.h>
@@ -41,6 +49,8 @@
 #include <tencentcloud/iotvideoindustry/v20201201/model/CreateMessageForwardResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/CreateRecordPlanRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/CreateRecordPlanResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/CreateRecordingPlanRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/CreateRecordingPlanResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/CreateSceneRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/CreateSceneResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/CreateTimeTemplateRequest.h>
@@ -61,20 +71,44 @@
 #include <tencentcloud/iotvideoindustry/v20201201/model/DeleteMessageForwardResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DeleteRecordPlanRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DeleteRecordPlanResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DeleteRecordingPlanRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DeleteRecordingPlanResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DeleteSceneRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DeleteSceneResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DeleteTimeTemplateRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DeleteTimeTemplateResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DeleteVideoListRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DeleteVideoListResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DeleteWarningRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DeleteWarningResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeAbnormalEventsRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeAbnormalEventsResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeAllDeviceListRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeAllDeviceListResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeBindSceneChannelsRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeBindSceneChannelsResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeBindSceneDevicesRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeBindSceneDevicesResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeChannelLocalRecordURLRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeChannelLocalRecordURLResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeChannelStreamURLRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeChannelStreamURLResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeChannelsRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeChannelsResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeChannelsByLiveRecordPlanRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeChannelsByLiveRecordPlanResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeCurrentDeviceDataRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeCurrentDeviceDataResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeDeviceRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeDeviceResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeDeviceEventRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeDeviceEventResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeDeviceGroupRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeDeviceGroupResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeDeviceListRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeDeviceListResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeDeviceMonitorDataRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeDeviceMonitorDataResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeDevicePassWordRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeDevicePassWordResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeDeviceStreamsRequest.h>
@@ -105,12 +139,24 @@
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeMessageForwardResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeMessageForwardsRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeMessageForwardsResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeMonitorDataByDateRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeMonitorDataByDateResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribePresetListRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribePresetListResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordDatesByChannelRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordDatesByChannelResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordDatesByLiveRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordDatesByLiveResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordStreamRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordStreamResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordingPlanByIdRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordingPlanByIdResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordingPlansRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordingPlansResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeSIPServerRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeSIPServerResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeSceneRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeSceneResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeScenesRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeScenesResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeStatisticDetailsRequest.h>
@@ -123,6 +169,14 @@
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeSubscriptionStatusResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeVideoListRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeVideoListResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeVideoListByChannelRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeVideoListByChannelResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeWarnModRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeWarnModResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeWarningsRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeWarningsResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeXP2PDataRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeXP2PDataResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/GetRecordDatesByDevRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/GetRecordDatesByDevResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/GetRecordPlanByDevRequest.h>
@@ -139,6 +193,12 @@
 #include <tencentcloud/iotvideoindustry/v20201201/model/GetVideoListByConResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/ModifyBindPlanLiveChannelRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/ModifyBindPlanLiveChannelResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ModifyBindRecordingPlanRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ModifyBindRecordingPlanResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ModifyBindSceneChannelsRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ModifyBindSceneChannelsResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ModifyBindSceneDeviceRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ModifyBindSceneDeviceResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/ModifyDeviceDataRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/ModifyDeviceDataResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/ModifyLiveChannelRequest.h>
@@ -149,10 +209,18 @@
 #include <tencentcloud/iotvideoindustry/v20201201/model/ModifyLiveVideoResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/ModifyMessageForwardRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/ModifyMessageForwardResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ModifyPresetRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ModifyPresetResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ModifyRecordingPlanRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ModifyRecordingPlanResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ModifySceneRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ModifySceneResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/ModifySubscriptionStatusRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/ModifySubscriptionStatusResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/ModifyVideoInfoRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/ModifyVideoInfoResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ResetWarningRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ResetWarningResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/UpdateDeviceGroupRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/UpdateDeviceGroupResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/UpdateDevicePassWordRequest.h>
@@ -178,9 +246,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BindGroupDevicesResponse> BindGroupDevicesOutcome;
                 typedef std::future<BindGroupDevicesOutcome> BindGroupDevicesOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::BindGroupDevicesRequest&, BindGroupDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindGroupDevicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ControlChannelLocalRecordResponse> ControlChannelLocalRecordOutcome;
+                typedef std::future<ControlChannelLocalRecordOutcome> ControlChannelLocalRecordOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::ControlChannelLocalRecordRequest&, ControlChannelLocalRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ControlChannelLocalRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::ControlChannelPTZResponse> ControlChannelPTZOutcome;
+                typedef std::future<ControlChannelPTZOutcome> ControlChannelPTZOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::ControlChannelPTZRequest&, ControlChannelPTZOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ControlChannelPTZAsyncHandler;
                 typedef Outcome<Core::Error, Model::ControlDevicePTZResponse> ControlDevicePTZOutcome;
                 typedef std::future<ControlDevicePTZOutcome> ControlDevicePTZOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::ControlDevicePTZRequest&, ControlDevicePTZOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ControlDevicePTZAsyncHandler;
+                typedef Outcome<Core::Error, Model::ControlHomePositionResponse> ControlHomePositionOutcome;
+                typedef std::future<ControlHomePositionOutcome> ControlHomePositionOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::ControlHomePositionRequest&, ControlHomePositionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ControlHomePositionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ControlPresetResponse> ControlPresetOutcome;
+                typedef std::future<ControlPresetOutcome> ControlPresetOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::ControlPresetRequest&, ControlPresetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ControlPresetAsyncHandler;
                 typedef Outcome<Core::Error, Model::ControlRecordStreamResponse> ControlRecordStreamOutcome;
                 typedef std::future<ControlRecordStreamOutcome> ControlRecordStreamOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::ControlRecordStreamRequest&, ControlRecordStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ControlRecordStreamAsyncHandler;
@@ -202,6 +282,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateRecordPlanResponse> CreateRecordPlanOutcome;
                 typedef std::future<CreateRecordPlanOutcome> CreateRecordPlanOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::CreateRecordPlanRequest&, CreateRecordPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRecordPlanAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRecordingPlanResponse> CreateRecordingPlanOutcome;
+                typedef std::future<CreateRecordingPlanOutcome> CreateRecordingPlanOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::CreateRecordingPlanRequest&, CreateRecordingPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRecordingPlanAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSceneResponse> CreateSceneOutcome;
                 typedef std::future<CreateSceneOutcome> CreateSceneOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::CreateSceneRequest&, CreateSceneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSceneAsyncHandler;
@@ -232,6 +315,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteRecordPlanResponse> DeleteRecordPlanOutcome;
                 typedef std::future<DeleteRecordPlanOutcome> DeleteRecordPlanOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DeleteRecordPlanRequest&, DeleteRecordPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRecordPlanAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRecordingPlanResponse> DeleteRecordingPlanOutcome;
+                typedef std::future<DeleteRecordingPlanOutcome> DeleteRecordingPlanOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DeleteRecordingPlanRequest&, DeleteRecordingPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRecordingPlanAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSceneResponse> DeleteSceneOutcome;
                 typedef std::future<DeleteSceneOutcome> DeleteSceneOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DeleteSceneRequest&, DeleteSceneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSceneAsyncHandler;
@@ -241,18 +327,51 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteVideoListResponse> DeleteVideoListOutcome;
                 typedef std::future<DeleteVideoListOutcome> DeleteVideoListOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DeleteVideoListRequest&, DeleteVideoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVideoListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteWarningResponse> DeleteWarningOutcome;
+                typedef std::future<DeleteWarningOutcome> DeleteWarningOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DeleteWarningRequest&, DeleteWarningOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWarningAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAbnormalEventsResponse> DescribeAbnormalEventsOutcome;
+                typedef std::future<DescribeAbnormalEventsOutcome> DescribeAbnormalEventsOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeAbnormalEventsRequest&, DescribeAbnormalEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAbnormalEventsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAllDeviceListResponse> DescribeAllDeviceListOutcome;
                 typedef std::future<DescribeAllDeviceListOutcome> DescribeAllDeviceListOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeAllDeviceListRequest&, DescribeAllDeviceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllDeviceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBindSceneChannelsResponse> DescribeBindSceneChannelsOutcome;
+                typedef std::future<DescribeBindSceneChannelsOutcome> DescribeBindSceneChannelsOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeBindSceneChannelsRequest&, DescribeBindSceneChannelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBindSceneChannelsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBindSceneDevicesResponse> DescribeBindSceneDevicesOutcome;
                 typedef std::future<DescribeBindSceneDevicesOutcome> DescribeBindSceneDevicesOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeBindSceneDevicesRequest&, DescribeBindSceneDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBindSceneDevicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeChannelLocalRecordURLResponse> DescribeChannelLocalRecordURLOutcome;
+                typedef std::future<DescribeChannelLocalRecordURLOutcome> DescribeChannelLocalRecordURLOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeChannelLocalRecordURLRequest&, DescribeChannelLocalRecordURLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChannelLocalRecordURLAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeChannelStreamURLResponse> DescribeChannelStreamURLOutcome;
+                typedef std::future<DescribeChannelStreamURLOutcome> DescribeChannelStreamURLOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeChannelStreamURLRequest&, DescribeChannelStreamURLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChannelStreamURLAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeChannelsResponse> DescribeChannelsOutcome;
+                typedef std::future<DescribeChannelsOutcome> DescribeChannelsOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeChannelsRequest&, DescribeChannelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChannelsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeChannelsByLiveRecordPlanResponse> DescribeChannelsByLiveRecordPlanOutcome;
                 typedef std::future<DescribeChannelsByLiveRecordPlanOutcome> DescribeChannelsByLiveRecordPlanOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeChannelsByLiveRecordPlanRequest&, DescribeChannelsByLiveRecordPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChannelsByLiveRecordPlanAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCurrentDeviceDataResponse> DescribeCurrentDeviceDataOutcome;
+                typedef std::future<DescribeCurrentDeviceDataOutcome> DescribeCurrentDeviceDataOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeCurrentDeviceDataRequest&, DescribeCurrentDeviceDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCurrentDeviceDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDeviceResponse> DescribeDeviceOutcome;
+                typedef std::future<DescribeDeviceOutcome> DescribeDeviceOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeDeviceRequest&, DescribeDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDeviceEventResponse> DescribeDeviceEventOutcome;
+                typedef std::future<DescribeDeviceEventOutcome> DescribeDeviceEventOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeDeviceEventRequest&, DescribeDeviceEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceEventAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDeviceGroupResponse> DescribeDeviceGroupOutcome;
                 typedef std::future<DescribeDeviceGroupOutcome> DescribeDeviceGroupOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeDeviceGroupRequest&, DescribeDeviceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDeviceListResponse> DescribeDeviceListOutcome;
+                typedef std::future<DescribeDeviceListOutcome> DescribeDeviceListOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeDeviceListRequest&, DescribeDeviceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDeviceMonitorDataResponse> DescribeDeviceMonitorDataOutcome;
+                typedef std::future<DescribeDeviceMonitorDataOutcome> DescribeDeviceMonitorDataOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeDeviceMonitorDataRequest&, DescribeDeviceMonitorDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceMonitorDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDevicePassWordResponse> DescribeDevicePassWordOutcome;
                 typedef std::future<DescribeDevicePassWordOutcome> DescribeDevicePassWordOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeDevicePassWordRequest&, DescribeDevicePassWordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDevicePassWordAsyncHandler;
@@ -298,15 +417,33 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMessageForwardsResponse> DescribeMessageForwardsOutcome;
                 typedef std::future<DescribeMessageForwardsOutcome> DescribeMessageForwardsOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeMessageForwardsRequest&, DescribeMessageForwardsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMessageForwardsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMonitorDataByDateResponse> DescribeMonitorDataByDateOutcome;
+                typedef std::future<DescribeMonitorDataByDateOutcome> DescribeMonitorDataByDateOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeMonitorDataByDateRequest&, DescribeMonitorDataByDateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMonitorDataByDateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePresetListResponse> DescribePresetListOutcome;
+                typedef std::future<DescribePresetListOutcome> DescribePresetListOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribePresetListRequest&, DescribePresetListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePresetListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRecordDatesByChannelResponse> DescribeRecordDatesByChannelOutcome;
+                typedef std::future<DescribeRecordDatesByChannelOutcome> DescribeRecordDatesByChannelOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeRecordDatesByChannelRequest&, DescribeRecordDatesByChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordDatesByChannelAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRecordDatesByLiveResponse> DescribeRecordDatesByLiveOutcome;
                 typedef std::future<DescribeRecordDatesByLiveOutcome> DescribeRecordDatesByLiveOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeRecordDatesByLiveRequest&, DescribeRecordDatesByLiveOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordDatesByLiveAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRecordStreamResponse> DescribeRecordStreamOutcome;
                 typedef std::future<DescribeRecordStreamOutcome> DescribeRecordStreamOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeRecordStreamRequest&, DescribeRecordStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordStreamAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRecordingPlanByIdResponse> DescribeRecordingPlanByIdOutcome;
+                typedef std::future<DescribeRecordingPlanByIdOutcome> DescribeRecordingPlanByIdOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeRecordingPlanByIdRequest&, DescribeRecordingPlanByIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordingPlanByIdAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRecordingPlansResponse> DescribeRecordingPlansOutcome;
+                typedef std::future<DescribeRecordingPlansOutcome> DescribeRecordingPlansOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeRecordingPlansRequest&, DescribeRecordingPlansOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordingPlansAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSIPServerResponse> DescribeSIPServerOutcome;
                 typedef std::future<DescribeSIPServerOutcome> DescribeSIPServerOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeSIPServerRequest&, DescribeSIPServerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSIPServerAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSceneResponse> DescribeSceneOutcome;
+                typedef std::future<DescribeSceneOutcome> DescribeSceneOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeSceneRequest&, DescribeSceneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSceneAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeScenesResponse> DescribeScenesOutcome;
                 typedef std::future<DescribeScenesOutcome> DescribeScenesOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeScenesRequest&, DescribeScenesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScenesAsyncHandler;
@@ -325,6 +462,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVideoListResponse> DescribeVideoListOutcome;
                 typedef std::future<DescribeVideoListOutcome> DescribeVideoListOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeVideoListRequest&, DescribeVideoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVideoListByChannelResponse> DescribeVideoListByChannelOutcome;
+                typedef std::future<DescribeVideoListByChannelOutcome> DescribeVideoListByChannelOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeVideoListByChannelRequest&, DescribeVideoListByChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoListByChannelAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWarnModResponse> DescribeWarnModOutcome;
+                typedef std::future<DescribeWarnModOutcome> DescribeWarnModOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeWarnModRequest&, DescribeWarnModOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWarnModAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWarningsResponse> DescribeWarningsOutcome;
+                typedef std::future<DescribeWarningsOutcome> DescribeWarningsOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeWarningsRequest&, DescribeWarningsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWarningsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeXP2PDataResponse> DescribeXP2PDataOutcome;
+                typedef std::future<DescribeXP2PDataOutcome> DescribeXP2PDataOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeXP2PDataRequest&, DescribeXP2PDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeXP2PDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetRecordDatesByDevResponse> GetRecordDatesByDevOutcome;
                 typedef std::future<GetRecordDatesByDevOutcome> GetRecordDatesByDevOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::GetRecordDatesByDevRequest&, GetRecordDatesByDevOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRecordDatesByDevAsyncHandler;
@@ -349,6 +498,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyBindPlanLiveChannelResponse> ModifyBindPlanLiveChannelOutcome;
                 typedef std::future<ModifyBindPlanLiveChannelOutcome> ModifyBindPlanLiveChannelOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::ModifyBindPlanLiveChannelRequest&, ModifyBindPlanLiveChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBindPlanLiveChannelAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyBindRecordingPlanResponse> ModifyBindRecordingPlanOutcome;
+                typedef std::future<ModifyBindRecordingPlanOutcome> ModifyBindRecordingPlanOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::ModifyBindRecordingPlanRequest&, ModifyBindRecordingPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBindRecordingPlanAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyBindSceneChannelsResponse> ModifyBindSceneChannelsOutcome;
+                typedef std::future<ModifyBindSceneChannelsOutcome> ModifyBindSceneChannelsOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::ModifyBindSceneChannelsRequest&, ModifyBindSceneChannelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBindSceneChannelsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyBindSceneDeviceResponse> ModifyBindSceneDeviceOutcome;
+                typedef std::future<ModifyBindSceneDeviceOutcome> ModifyBindSceneDeviceOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::ModifyBindSceneDeviceRequest&, ModifyBindSceneDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBindSceneDeviceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDeviceDataResponse> ModifyDeviceDataOutcome;
                 typedef std::future<ModifyDeviceDataOutcome> ModifyDeviceDataOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::ModifyDeviceDataRequest&, ModifyDeviceDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeviceDataAsyncHandler;
@@ -364,12 +522,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyMessageForwardResponse> ModifyMessageForwardOutcome;
                 typedef std::future<ModifyMessageForwardOutcome> ModifyMessageForwardOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::ModifyMessageForwardRequest&, ModifyMessageForwardOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMessageForwardAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyPresetResponse> ModifyPresetOutcome;
+                typedef std::future<ModifyPresetOutcome> ModifyPresetOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::ModifyPresetRequest&, ModifyPresetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPresetAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRecordingPlanResponse> ModifyRecordingPlanOutcome;
+                typedef std::future<ModifyRecordingPlanOutcome> ModifyRecordingPlanOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::ModifyRecordingPlanRequest&, ModifyRecordingPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRecordingPlanAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySceneResponse> ModifySceneOutcome;
+                typedef std::future<ModifySceneOutcome> ModifySceneOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::ModifySceneRequest&, ModifySceneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySceneAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySubscriptionStatusResponse> ModifySubscriptionStatusOutcome;
                 typedef std::future<ModifySubscriptionStatusOutcome> ModifySubscriptionStatusOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::ModifySubscriptionStatusRequest&, ModifySubscriptionStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySubscriptionStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyVideoInfoResponse> ModifyVideoInfoOutcome;
                 typedef std::future<ModifyVideoInfoOutcome> ModifyVideoInfoOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::ModifyVideoInfoRequest&, ModifyVideoInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVideoInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetWarningResponse> ResetWarningOutcome;
+                typedef std::future<ResetWarningOutcome> ResetWarningOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::ResetWarningRequest&, ResetWarningOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetWarningAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateDeviceGroupResponse> UpdateDeviceGroupOutcome;
                 typedef std::future<UpdateDeviceGroupOutcome> UpdateDeviceGroupOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::UpdateDeviceGroupRequest&, UpdateDeviceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDeviceGroupAsyncHandler;
@@ -395,7 +565,27 @@ namespace TencentCloud
                 BindGroupDevicesOutcomeCallable BindGroupDevicesCallable(const Model::BindGroupDevicesRequest& request);
 
                 /**
+                 *本接口（ControlChannelLocalRecord）用于对通道本地回放流进行控制，包括暂停、播放、拉动、结束等
+
+                 * @param req ControlChannelLocalRecordRequest
+                 * @return ControlChannelLocalRecordOutcome
+                 */
+                ControlChannelLocalRecordOutcome ControlChannelLocalRecord(const Model::ControlChannelLocalRecordRequest &request);
+                void ControlChannelLocalRecordAsync(const Model::ControlChannelLocalRecordRequest& request, const ControlChannelLocalRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ControlChannelLocalRecordOutcomeCallable ControlChannelLocalRecordCallable(const Model::ControlChannelLocalRecordRequest& request);
+
+                /**
+                 *本接口(ControlChannelPTZ) 用于对支持GB28181 PTZ信令的设备进行指定通道的远程控制。
+                 * @param req ControlChannelPTZRequest
+                 * @return ControlChannelPTZOutcome
+                 */
+                ControlChannelPTZOutcome ControlChannelPTZ(const Model::ControlChannelPTZRequest &request);
+                void ControlChannelPTZAsync(const Model::ControlChannelPTZRequest& request, const ControlChannelPTZAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ControlChannelPTZOutcomeCallable ControlChannelPTZCallable(const Model::ControlChannelPTZRequest& request);
+
+                /**
                  *本接口(ControlDevicePTZ) 用于对支持GB28181 PTZ信令的设备进行远程控制。
+请使用ControlChannelPTZ接口
                  * @param req ControlDevicePTZRequest
                  * @return ControlDevicePTZOutcome
                  */
@@ -404,7 +594,26 @@ namespace TencentCloud
                 ControlDevicePTZOutcomeCallable ControlDevicePTZCallable(const Model::ControlDevicePTZRequest& request);
 
                 /**
+                 *看守位控制
+                 * @param req ControlHomePositionRequest
+                 * @return ControlHomePositionOutcome
+                 */
+                ControlHomePositionOutcome ControlHomePosition(const Model::ControlHomePositionRequest &request);
+                void ControlHomePositionAsync(const Model::ControlHomePositionRequest& request, const ControlHomePositionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ControlHomePositionOutcomeCallable ControlHomePositionCallable(const Model::ControlHomePositionRequest& request);
+
+                /**
+                 *预置位控制
+                 * @param req ControlPresetRequest
+                 * @return ControlPresetOutcome
+                 */
+                ControlPresetOutcome ControlPreset(const Model::ControlPresetRequest &request);
+                void ControlPresetAsync(const Model::ControlPresetRequest& request, const ControlPresetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ControlPresetOutcomeCallable ControlPresetCallable(const Model::ControlPresetRequest& request);
+
+                /**
                  *对回放流进行控制，包括暂停、播放、拉动、结束等
+请使用ControlChannelLocalRecord接口
                  * @param req ControlRecordStreamRequest
                  * @return ControlRecordStreamOutcome
                  */
@@ -459,12 +668,22 @@ namespace TencentCloud
 
                 /**
                  *本接口(CreateRecordPlan) 用于创建录制计划，使设备与时间模板绑定，以便及时启动录制
+请使用CreateRecordingPlan代替
                  * @param req CreateRecordPlanRequest
                  * @return CreateRecordPlanOutcome
                  */
                 CreateRecordPlanOutcome CreateRecordPlan(const Model::CreateRecordPlanRequest &request);
                 void CreateRecordPlanAsync(const Model::CreateRecordPlanRequest& request, const CreateRecordPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateRecordPlanOutcomeCallable CreateRecordPlanCallable(const Model::CreateRecordPlanRequest& request);
+
+                /**
+                 *本接口(CreateRecordingPlan) 用于创建录制计划，使通道与时间模板绑定，以便及时启动录制
+                 * @param req CreateRecordingPlanRequest
+                 * @return CreateRecordingPlanOutcome
+                 */
+                CreateRecordingPlanOutcome CreateRecordingPlan(const Model::CreateRecordingPlanRequest &request);
+                void CreateRecordingPlanAsync(const Model::CreateRecordingPlanRequest& request, const CreateRecordingPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRecordingPlanOutcomeCallable CreateRecordingPlanCallable(const Model::CreateRecordingPlanRequest& request);
 
                 /**
                  *创建场景
@@ -485,7 +704,8 @@ namespace TencentCloud
                 CreateTimeTemplateOutcomeCallable CreateTimeTemplateCallable(const Model::CreateTimeTemplateRequest& request);
 
                 /**
-                 *删除通道接口
+                 *本接口用于删除设备下的通道
+注意： 在线状态的设备不允许删除
                  * @param req DeleteChannelRequest
                  * @return DeleteChannelOutcome
                  */
@@ -550,12 +770,23 @@ namespace TencentCloud
                 /**
                  *本接口(DeleteRecordPlan)用于删除录制计划
 录制计划删除的同时，会停止该录制计划下的全部录制任务。
+请使用DeleteRecordingPlan接口
                  * @param req DeleteRecordPlanRequest
                  * @return DeleteRecordPlanOutcome
                  */
                 DeleteRecordPlanOutcome DeleteRecordPlan(const Model::DeleteRecordPlanRequest &request);
                 void DeleteRecordPlanAsync(const Model::DeleteRecordPlanRequest& request, const DeleteRecordPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteRecordPlanOutcomeCallable DeleteRecordPlanCallable(const Model::DeleteRecordPlanRequest& request);
+
+                /**
+                 *本接口(DeleteRecordingPlan)用于删除录制计划
+录制计划删除的同时，会停止该录制计划下的全部录制任务。
+                 * @param req DeleteRecordingPlanRequest
+                 * @return DeleteRecordingPlanOutcome
+                 */
+                DeleteRecordingPlanOutcome DeleteRecordingPlan(const Model::DeleteRecordingPlanRequest &request);
+                void DeleteRecordingPlanAsync(const Model::DeleteRecordingPlanRequest& request, const DeleteRecordingPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRecordingPlanOutcomeCallable DeleteRecordingPlanCallable(const Model::DeleteRecordingPlanRequest& request);
 
                 /**
                  *删除场景
@@ -585,13 +816,41 @@ namespace TencentCloud
                 DeleteVideoListOutcomeCallable DeleteVideoListCallable(const Model::DeleteVideoListRequest& request);
 
                 /**
+                 *设备告警-删除告警
+                 * @param req DeleteWarningRequest
+                 * @return DeleteWarningOutcome
+                 */
+                DeleteWarningOutcome DeleteWarning(const Model::DeleteWarningRequest &request);
+                void DeleteWarningAsync(const Model::DeleteWarningRequest& request, const DeleteWarningAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteWarningOutcomeCallable DeleteWarningCallable(const Model::DeleteWarningRequest& request);
+
+                /**
+                 *获取异常事件统计
+                 * @param req DescribeAbnormalEventsRequest
+                 * @return DescribeAbnormalEventsOutcome
+                 */
+                DescribeAbnormalEventsOutcome DescribeAbnormalEvents(const Model::DescribeAbnormalEventsRequest &request);
+                void DescribeAbnormalEventsAsync(const Model::DescribeAbnormalEventsRequest& request, const DescribeAbnormalEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAbnormalEventsOutcomeCallable DescribeAbnormalEventsCallable(const Model::DescribeAbnormalEventsRequest& request);
+
+                /**
                  *本接口(DescribeAllDeviceList) 用于获取设备列表。
+请使用DescribeDevicesList接口
                  * @param req DescribeAllDeviceListRequest
                  * @return DescribeAllDeviceListOutcome
                  */
                 DescribeAllDeviceListOutcome DescribeAllDeviceList(const Model::DescribeAllDeviceListRequest &request);
                 void DescribeAllDeviceListAsync(const Model::DescribeAllDeviceListRequest& request, const DescribeAllDeviceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAllDeviceListOutcomeCallable DescribeAllDeviceListCallable(const Model::DescribeAllDeviceListRequest& request);
+
+                /**
+                 *获取场景绑定通道列表
+                 * @param req DescribeBindSceneChannelsRequest
+                 * @return DescribeBindSceneChannelsOutcome
+                 */
+                DescribeBindSceneChannelsOutcome DescribeBindSceneChannels(const Model::DescribeBindSceneChannelsRequest &request);
+                void DescribeBindSceneChannelsAsync(const Model::DescribeBindSceneChannelsRequest& request, const DescribeBindSceneChannelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBindSceneChannelsOutcomeCallable DescribeBindSceneChannelsCallable(const Model::DescribeBindSceneChannelsRequest& request);
 
                 /**
                  *获取场景绑定设备列表
@@ -603,6 +862,35 @@ namespace TencentCloud
                 DescribeBindSceneDevicesOutcomeCallable DescribeBindSceneDevicesCallable(const Model::DescribeBindSceneDevicesRequest& request);
 
                 /**
+                 *本接口（DescribeChannelLocalRecordURL）用于将NVR等设备对应通道本地回放文件，通过GB28181信令推送至云端，并生成对应的实时视频流URL，流地址URL是动态生成，如需重新播放请重新调用此接口获取最新地址。
+正常推流，如未设置对应录制计划，且180s无人观看此流，将会被自动掐断。
+                 * @param req DescribeChannelLocalRecordURLRequest
+                 * @return DescribeChannelLocalRecordURLOutcome
+                 */
+                DescribeChannelLocalRecordURLOutcome DescribeChannelLocalRecordURL(const Model::DescribeChannelLocalRecordURLRequest &request);
+                void DescribeChannelLocalRecordURLAsync(const Model::DescribeChannelLocalRecordURLRequest& request, const DescribeChannelLocalRecordURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeChannelLocalRecordURLOutcomeCallable DescribeChannelLocalRecordURLCallable(const Model::DescribeChannelLocalRecordURLRequest& request);
+
+                /**
+                 *本接口(DescribeChannelStreamURL)用于获取设备指定通道实时流地址，地址是动态生成，如重新播放需要调用此接口重新获取最新播放地址。
+正常推流，如未设置对应录制计划，且180s无人观看此流，将会被自动掐断。
+                 * @param req DescribeChannelStreamURLRequest
+                 * @return DescribeChannelStreamURLOutcome
+                 */
+                DescribeChannelStreamURLOutcome DescribeChannelStreamURL(const Model::DescribeChannelStreamURLRequest &request);
+                void DescribeChannelStreamURLAsync(const Model::DescribeChannelStreamURLRequest& request, const DescribeChannelStreamURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeChannelStreamURLOutcomeCallable DescribeChannelStreamURLCallable(const Model::DescribeChannelStreamURLRequest& request);
+
+                /**
+                 *本接口（DescribeChannels）用于获取设备下属通道列表
+                 * @param req DescribeChannelsRequest
+                 * @return DescribeChannelsOutcome
+                 */
+                DescribeChannelsOutcome DescribeChannels(const Model::DescribeChannelsRequest &request);
+                void DescribeChannelsAsync(const Model::DescribeChannelsRequest& request, const DescribeChannelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeChannelsOutcomeCallable DescribeChannelsCallable(const Model::DescribeChannelsRequest& request);
+
+                /**
                  *根据直播录制计划获取频道列表
                  * @param req DescribeChannelsByLiveRecordPlanRequest
                  * @return DescribeChannelsByLiveRecordPlanOutcome
@@ -612,6 +900,33 @@ namespace TencentCloud
                 DescribeChannelsByLiveRecordPlanOutcomeCallable DescribeChannelsByLiveRecordPlanCallable(const Model::DescribeChannelsByLiveRecordPlanRequest& request);
 
                 /**
+                 *查询设备统计当前信息
+                 * @param req DescribeCurrentDeviceDataRequest
+                 * @return DescribeCurrentDeviceDataOutcome
+                 */
+                DescribeCurrentDeviceDataOutcome DescribeCurrentDeviceData(const Model::DescribeCurrentDeviceDataRequest &request);
+                void DescribeCurrentDeviceDataAsync(const Model::DescribeCurrentDeviceDataRequest& request, const DescribeCurrentDeviceDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCurrentDeviceDataOutcomeCallable DescribeCurrentDeviceDataCallable(const Model::DescribeCurrentDeviceDataRequest& request);
+
+                /**
+                 *获取指定设备详细信息
+                 * @param req DescribeDeviceRequest
+                 * @return DescribeDeviceOutcome
+                 */
+                DescribeDeviceOutcome DescribeDevice(const Model::DescribeDeviceRequest &request);
+                void DescribeDeviceAsync(const Model::DescribeDeviceRequest& request, const DescribeDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeviceOutcomeCallable DescribeDeviceCallable(const Model::DescribeDeviceRequest& request);
+
+                /**
+                 *获取设备事件
+                 * @param req DescribeDeviceEventRequest
+                 * @return DescribeDeviceEventOutcome
+                 */
+                DescribeDeviceEventOutcome DescribeDeviceEvent(const Model::DescribeDeviceEventRequest &request);
+                void DescribeDeviceEventAsync(const Model::DescribeDeviceEventRequest& request, const DescribeDeviceEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeviceEventOutcomeCallable DescribeDeviceEventCallable(const Model::DescribeDeviceEventRequest& request);
+
+                /**
                  *本接口(DescribeDeviceGroup)用于根据设备ID查询设备所在分组信息，可批量查询。
                  * @param req DescribeDeviceGroupRequest
                  * @return DescribeDeviceGroupOutcome
@@ -619,6 +934,24 @@ namespace TencentCloud
                 DescribeDeviceGroupOutcome DescribeDeviceGroup(const Model::DescribeDeviceGroupRequest &request);
                 void DescribeDeviceGroupAsync(const Model::DescribeDeviceGroupRequest& request, const DescribeDeviceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDeviceGroupOutcomeCallable DescribeDeviceGroupCallable(const Model::DescribeDeviceGroupRequest& request);
+
+                /**
+                 *本接口(DescribeDevicesList) 用于获取设备列表，支持模糊搜索
+                 * @param req DescribeDeviceListRequest
+                 * @return DescribeDeviceListOutcome
+                 */
+                DescribeDeviceListOutcome DescribeDeviceList(const Model::DescribeDeviceListRequest &request);
+                void DescribeDeviceListAsync(const Model::DescribeDeviceListRequest& request, const DescribeDeviceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeviceListOutcomeCallable DescribeDeviceListCallable(const Model::DescribeDeviceListRequest& request);
+
+                /**
+                 *查询设备统计monitor信息
+                 * @param req DescribeDeviceMonitorDataRequest
+                 * @return DescribeDeviceMonitorDataOutcome
+                 */
+                DescribeDeviceMonitorDataOutcome DescribeDeviceMonitorData(const Model::DescribeDeviceMonitorDataRequest &request);
+                void DescribeDeviceMonitorDataAsync(const Model::DescribeDeviceMonitorDataRequest& request, const DescribeDeviceMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeviceMonitorDataOutcomeCallable DescribeDeviceMonitorDataCallable(const Model::DescribeDeviceMonitorDataRequest& request);
 
                 /**
                  *本接口(DescribeDevicePassWord)用于查询设备密码。
@@ -631,6 +964,7 @@ namespace TencentCloud
 
                 /**
                  *本接口(DescribeDeviceStreams)用于获取设备实时流地址。
+请使用DescribeChannelStreamURL接口
                  * @param req DescribeDeviceStreamsRequest
                  * @return DescribeDeviceStreamsOutcome
                  */
@@ -676,6 +1010,7 @@ namespace TencentCloud
 
                 /**
                  *获取IPC设备下属通道
+请使用DescribeChannels接口
                  * @param req DescribeIPCChannelsRequest
                  * @return DescribeIPCChannelsOutcome
                  */
@@ -756,6 +1091,33 @@ namespace TencentCloud
                 DescribeMessageForwardsOutcomeCallable DescribeMessageForwardsCallable(const Model::DescribeMessageForwardsRequest& request);
 
                 /**
+                 *运营中心-设备录像存储统计
+                 * @param req DescribeMonitorDataByDateRequest
+                 * @return DescribeMonitorDataByDateOutcome
+                 */
+                DescribeMonitorDataByDateOutcome DescribeMonitorDataByDate(const Model::DescribeMonitorDataByDateRequest &request);
+                void DescribeMonitorDataByDateAsync(const Model::DescribeMonitorDataByDateRequest& request, const DescribeMonitorDataByDateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMonitorDataByDateOutcomeCallable DescribeMonitorDataByDateCallable(const Model::DescribeMonitorDataByDateRequest& request);
+
+                /**
+                 *获取预置位列表
+                 * @param req DescribePresetListRequest
+                 * @return DescribePresetListOutcome
+                 */
+                DescribePresetListOutcome DescribePresetList(const Model::DescribePresetListRequest &request);
+                void DescribePresetListAsync(const Model::DescribePresetListRequest& request, const DescribePresetListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePresetListOutcomeCallable DescribePresetListCallable(const Model::DescribePresetListRequest& request);
+
+                /**
+                 *本接口(DescribeRecordDatesByChannel)用于查询设备含有录像文件的日期列表。
+                 * @param req DescribeRecordDatesByChannelRequest
+                 * @return DescribeRecordDatesByChannelOutcome
+                 */
+                DescribeRecordDatesByChannelOutcome DescribeRecordDatesByChannel(const Model::DescribeRecordDatesByChannelRequest &request);
+                void DescribeRecordDatesByChannelAsync(const Model::DescribeRecordDatesByChannelRequest& request, const DescribeRecordDatesByChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRecordDatesByChannelOutcomeCallable DescribeRecordDatesByChannelCallable(const Model::DescribeRecordDatesByChannelRequest& request);
+
+                /**
                  *直播录像存储日期列表
                  * @param req DescribeRecordDatesByLiveRequest
                  * @return DescribeRecordDatesByLiveOutcome
@@ -765,7 +1127,9 @@ namespace TencentCloud
                 DescribeRecordDatesByLiveOutcomeCallable DescribeRecordDatesByLiveCallable(const Model::DescribeRecordDatesByLiveRequest& request);
 
                 /**
-                 *获取回放视频流(NVR录制用)
+                 *获取回放视频流地址
+请使用DescribeChannelLocalRecordURL接口
+
 RecordId和StartTime/EndTime互斥
 当存在RecordId时，StartTime和EndTime无效
 当RecordId为空，StartTime和EndTime生效
@@ -777,6 +1141,24 @@ RecordId和StartTime/EndTime互斥
                 DescribeRecordStreamOutcomeCallable DescribeRecordStreamCallable(const Model::DescribeRecordStreamRequest& request);
 
                 /**
+                 *本接口(DescribeRecordingPlanById)用于根据录制计划ID获取录制计划。
+                 * @param req DescribeRecordingPlanByIdRequest
+                 * @return DescribeRecordingPlanByIdOutcome
+                 */
+                DescribeRecordingPlanByIdOutcome DescribeRecordingPlanById(const Model::DescribeRecordingPlanByIdRequest &request);
+                void DescribeRecordingPlanByIdAsync(const Model::DescribeRecordingPlanByIdRequest& request, const DescribeRecordingPlanByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRecordingPlanByIdOutcomeCallable DescribeRecordingPlanByIdCallable(const Model::DescribeRecordingPlanByIdRequest& request);
+
+                /**
+                 *本接口(DescribeRecordingPlans)用于获取用户的全部录制计划。
+                 * @param req DescribeRecordingPlansRequest
+                 * @return DescribeRecordingPlansOutcome
+                 */
+                DescribeRecordingPlansOutcome DescribeRecordingPlans(const Model::DescribeRecordingPlansRequest &request);
+                void DescribeRecordingPlansAsync(const Model::DescribeRecordingPlansRequest& request, const DescribeRecordingPlansAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRecordingPlansOutcomeCallable DescribeRecordingPlansCallable(const Model::DescribeRecordingPlansRequest& request);
+
+                /**
                  *本接口用于获取SIP服务器相关配置，用户可以通过这些配置项，将设备通过GB28181协议注册到本服务。
                  * @param req DescribeSIPServerRequest
                  * @return DescribeSIPServerOutcome
@@ -784,6 +1166,15 @@ RecordId和StartTime/EndTime互斥
                 DescribeSIPServerOutcome DescribeSIPServer(const Model::DescribeSIPServerRequest &request);
                 void DescribeSIPServerAsync(const Model::DescribeSIPServerRequest& request, const DescribeSIPServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSIPServerOutcomeCallable DescribeSIPServerCallable(const Model::DescribeSIPServerRequest& request);
+
+                /**
+                 *场景详情
+                 * @param req DescribeSceneRequest
+                 * @return DescribeSceneOutcome
+                 */
+                DescribeSceneOutcome DescribeScene(const Model::DescribeSceneRequest &request);
+                void DescribeSceneAsync(const Model::DescribeSceneRequest& request, const DescribeSceneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSceneOutcomeCallable DescribeSceneCallable(const Model::DescribeSceneRequest& request);
 
                 /**
                  *获取场景列表
@@ -831,7 +1222,7 @@ RecordId和StartTime/EndTime互斥
                 DescribeSubscriptionStatusOutcomeCallable DescribeSubscriptionStatusCallable(const Model::DescribeSubscriptionStatusRequest& request);
 
                 /**
-                 *根据时间获取回放文件列表(云端录制用)
+                 *根据时间获取云端录制文件列表
                  * @param req DescribeVideoListRequest
                  * @return DescribeVideoListOutcome
                  */
@@ -840,7 +1231,44 @@ RecordId和StartTime/EndTime互斥
                 DescribeVideoListOutcomeCallable DescribeVideoListCallable(const Model::DescribeVideoListRequest& request);
 
                 /**
+                 *本接口(DescribeVideoListByChannel)用于查询指定通道的录制文件列表
+                 * @param req DescribeVideoListByChannelRequest
+                 * @return DescribeVideoListByChannelOutcome
+                 */
+                DescribeVideoListByChannelOutcome DescribeVideoListByChannel(const Model::DescribeVideoListByChannelRequest &request);
+                void DescribeVideoListByChannelAsync(const Model::DescribeVideoListByChannelRequest& request, const DescribeVideoListByChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVideoListByChannelOutcomeCallable DescribeVideoListByChannelCallable(const Model::DescribeVideoListByChannelRequest& request);
+
+                /**
+                 *告警等级列表
+                 * @param req DescribeWarnModRequest
+                 * @return DescribeWarnModOutcome
+                 */
+                DescribeWarnModOutcome DescribeWarnMod(const Model::DescribeWarnModRequest &request);
+                void DescribeWarnModAsync(const Model::DescribeWarnModRequest& request, const DescribeWarnModAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWarnModOutcomeCallable DescribeWarnModCallable(const Model::DescribeWarnModRequest& request);
+
+                /**
+                 *获取告警列表
+                 * @param req DescribeWarningsRequest
+                 * @return DescribeWarningsOutcome
+                 */
+                DescribeWarningsOutcome DescribeWarnings(const Model::DescribeWarningsRequest &request);
+                void DescribeWarningsAsync(const Model::DescribeWarningsRequest& request, const DescribeWarningsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWarningsOutcomeCallable DescribeWarningsCallable(const Model::DescribeWarningsRequest& request);
+
+                /**
+                 *获取X-P2P的统计数据
+                 * @param req DescribeXP2PDataRequest
+                 * @return DescribeXP2PDataOutcome
+                 */
+                DescribeXP2PDataOutcome DescribeXP2PData(const Model::DescribeXP2PDataRequest &request);
+                void DescribeXP2PDataAsync(const Model::DescribeXP2PDataRequest& request, const DescribeXP2PDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeXP2PDataOutcomeCallable DescribeXP2PDataCallable(const Model::DescribeXP2PDataRequest& request);
+
+                /**
                  *本接口(GetRecordDatesByDev)用于查询设备含有录像文件的日期列表。
+请使用DescribeRecordDatesByChannel接口
                  * @param req GetRecordDatesByDevRequest
                  * @return GetRecordDatesByDevOutcome
                  */
@@ -850,6 +1278,7 @@ RecordId和StartTime/EndTime互斥
 
                 /**
                  *本接口(GetRecordPlanByDev)用于根据设备ID查询其绑定的录制计划.
+
                  * @param req GetRecordPlanByDevRequest
                  * @return GetRecordPlanByDevOutcome
                  */
@@ -859,6 +1288,7 @@ RecordId和StartTime/EndTime互斥
 
                 /**
                  *本接口(GetRecordPlanById)用于根据录制计划ID获取录制计划。
+请使用DescribeRecordingPlanById接口
                  * @param req GetRecordPlanByIdRequest
                  * @return GetRecordPlanByIdOutcome
                  */
@@ -868,6 +1298,7 @@ RecordId和StartTime/EndTime互斥
 
                 /**
                  *本接口(GetRecordPlans)用于获取用户的全部录制计划。
+请使用DescribeRecordingPlans接口
                  * @param req GetRecordPlansRequest
                  * @return GetRecordPlansOutcome
                  */
@@ -895,6 +1326,7 @@ RecordId和StartTime/EndTime互斥
 
                 /**
                  *本接口(GetVideoListByCon)用于查询设备的录制文件列表
+请使用DescribeVideoListByChannel接口
                  * @param req GetVideoListByConRequest
                  * @return GetVideoListByConOutcome
                  */
@@ -910,6 +1342,33 @@ RecordId和StartTime/EndTime互斥
                 ModifyBindPlanLiveChannelOutcome ModifyBindPlanLiveChannel(const Model::ModifyBindPlanLiveChannelRequest &request);
                 void ModifyBindPlanLiveChannelAsync(const Model::ModifyBindPlanLiveChannelRequest& request, const ModifyBindPlanLiveChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyBindPlanLiveChannelOutcomeCallable ModifyBindPlanLiveChannelCallable(const Model::ModifyBindPlanLiveChannelRequest& request);
+
+                /**
+                 *本接口(ModifyBindRecordingPlan)用于更新录制计划绑定的通道
+                 * @param req ModifyBindRecordingPlanRequest
+                 * @return ModifyBindRecordingPlanOutcome
+                 */
+                ModifyBindRecordingPlanOutcome ModifyBindRecordingPlan(const Model::ModifyBindRecordingPlanRequest &request);
+                void ModifyBindRecordingPlanAsync(const Model::ModifyBindRecordingPlanRequest& request, const ModifyBindRecordingPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBindRecordingPlanOutcomeCallable ModifyBindRecordingPlanCallable(const Model::ModifyBindRecordingPlanRequest& request);
+
+                /**
+                 *场景绑定解绑通道接口
+                 * @param req ModifyBindSceneChannelsRequest
+                 * @return ModifyBindSceneChannelsOutcome
+                 */
+                ModifyBindSceneChannelsOutcome ModifyBindSceneChannels(const Model::ModifyBindSceneChannelsRequest &request);
+                void ModifyBindSceneChannelsAsync(const Model::ModifyBindSceneChannelsRequest& request, const ModifyBindSceneChannelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBindSceneChannelsOutcomeCallable ModifyBindSceneChannelsCallable(const Model::ModifyBindSceneChannelsRequest& request);
+
+                /**
+                 *场景绑定/解绑通道接口
+                 * @param req ModifyBindSceneDeviceRequest
+                 * @return ModifyBindSceneDeviceOutcome
+                 */
+                ModifyBindSceneDeviceOutcome ModifyBindSceneDevice(const Model::ModifyBindSceneDeviceRequest &request);
+                void ModifyBindSceneDeviceAsync(const Model::ModifyBindSceneDeviceRequest& request, const ModifyBindSceneDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBindSceneDeviceOutcomeCallable ModifyBindSceneDeviceCallable(const Model::ModifyBindSceneDeviceRequest& request);
 
                 /**
                  *本接口(ModifyDeviceData)用于编辑设备信息。
@@ -957,6 +1416,34 @@ RecordId和StartTime/EndTime互斥
                 ModifyMessageForwardOutcomeCallable ModifyMessageForwardCallable(const Model::ModifyMessageForwardRequest& request);
 
                 /**
+                 *编辑预置位信息
+                 * @param req ModifyPresetRequest
+                 * @return ModifyPresetOutcome
+                 */
+                ModifyPresetOutcome ModifyPreset(const Model::ModifyPresetRequest &request);
+                void ModifyPresetAsync(const Model::ModifyPresetRequest& request, const ModifyPresetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPresetOutcomeCallable ModifyPresetCallable(const Model::ModifyPresetRequest& request);
+
+                /**
+                 *本接口(ModifyRecordingPlan)用于更新录制计划。
+
+                 * @param req ModifyRecordingPlanRequest
+                 * @return ModifyRecordingPlanOutcome
+                 */
+                ModifyRecordingPlanOutcome ModifyRecordingPlan(const Model::ModifyRecordingPlanRequest &request);
+                void ModifyRecordingPlanAsync(const Model::ModifyRecordingPlanRequest& request, const ModifyRecordingPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRecordingPlanOutcomeCallable ModifyRecordingPlanCallable(const Model::ModifyRecordingPlanRequest& request);
+
+                /**
+                 *修改场景
+                 * @param req ModifySceneRequest
+                 * @return ModifySceneOutcome
+                 */
+                ModifySceneOutcome ModifyScene(const Model::ModifySceneRequest &request);
+                void ModifySceneAsync(const Model::ModifySceneRequest& request, const ModifySceneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySceneOutcomeCallable ModifySceneCallable(const Model::ModifySceneRequest& request);
+
+                /**
                  *编辑设备订阅状态
                  * @param req ModifySubscriptionStatusRequest
                  * @return ModifySubscriptionStatusOutcome
@@ -973,6 +1460,15 @@ RecordId和StartTime/EndTime互斥
                 ModifyVideoInfoOutcome ModifyVideoInfo(const Model::ModifyVideoInfoRequest &request);
                 void ModifyVideoInfoAsync(const Model::ModifyVideoInfoRequest& request, const ModifyVideoInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyVideoInfoOutcomeCallable ModifyVideoInfoCallable(const Model::ModifyVideoInfoRequest& request);
+
+                /**
+                 *重置设备告警
+                 * @param req ResetWarningRequest
+                 * @return ResetWarningOutcome
+                 */
+                ResetWarningOutcome ResetWarning(const Model::ResetWarningRequest &request);
+                void ResetWarningAsync(const Model::ResetWarningRequest& request, const ResetWarningAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetWarningOutcomeCallable ResetWarningCallable(const Model::ResetWarningRequest& request);
 
                 /**
                  *本接口(UpdateDeviceGroup)用于修改分组信息。
@@ -994,6 +1490,7 @@ RecordId和StartTime/EndTime互斥
 
                 /**
                  *本接口(UpdateRecordPlan)用于更新录制计划。
+请使用 ModifyRecordingPlan接口和ModifyBindRecordingPlan接口
                  * @param req UpdateRecordPlanRequest
                  * @return UpdateRecordPlanOutcome
                  */

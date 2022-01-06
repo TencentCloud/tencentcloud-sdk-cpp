@@ -156,6 +156,40 @@ namespace TencentCloud
                      */
                     bool AvatarHasBeenSet() const;
 
+                    /**
+                     * 获取开启身份证防翻拍告警功能后才会返回，返回数组中可能出现的告警码如下：
+-9102 身份证复印件告警。
+-9103 身份证翻拍告警。
+-9106 身份证 PS 告警。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WarnInfos 开启身份证防翻拍告警功能后才会返回，返回数组中可能出现的告警码如下：
+-9102 身份证复印件告警。
+-9103 身份证翻拍告警。
+-9106 身份证 PS 告警。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> GetWarnInfos() const;
+
+                    /**
+                     * 设置开启身份证防翻拍告警功能后才会返回，返回数组中可能出现的告警码如下：
+-9102 身份证复印件告警。
+-9103 身份证翻拍告警。
+-9106 身份证 PS 告警。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WarnInfos 开启身份证防翻拍告警功能后才会返回，返回数组中可能出现的告警码如下：
+-9102 身份证复印件告警。
+-9103 身份证翻拍告警。
+-9106 身份证 PS 告警。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWarnInfos(const std::vector<int64_t>& _warnInfos);
+
+                    /**
+                     * 判断参数 WarnInfos 是否已赋值
+                     * @return WarnInfos 是否已赋值
+                     */
+                    bool WarnInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -192,6 +226,16 @@ namespace TencentCloud
                      */
                     std::string m_avatar;
                     bool m_avatarHasBeenSet;
+
+                    /**
+                     * 开启身份证防翻拍告警功能后才会返回，返回数组中可能出现的告警码如下：
+-9102 身份证复印件告警。
+-9103 身份证翻拍告警。
+-9106 身份证 PS 告警。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_warnInfos;
+                    bool m_warnInfosHasBeenSet;
 
                 };
             }

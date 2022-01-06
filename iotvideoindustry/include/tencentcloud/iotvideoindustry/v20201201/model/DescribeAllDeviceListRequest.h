@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool DeviceIdsHasBeenSet() const;
 
                     /**
-                     * 获取设备类型过滤
-                     * @return DeviceTypes 设备类型过滤
+                     * 获取设备类型过滤，设备类型，1：国标VMS设备(公有云不支持此类型)，2：国标IPC设备，3：国标NVR设备，9：智能告警设备(公有云不支持此类型)
+                     * @return DeviceTypes 设备类型过滤，设备类型，1：国标VMS设备(公有云不支持此类型)，2：国标IPC设备，3：国标NVR设备，9：智能告警设备(公有云不支持此类型)
                      */
                     std::vector<int64_t> GetDeviceTypes() const;
 
                     /**
-                     * 设置设备类型过滤
-                     * @param DeviceTypes 设备类型过滤
+                     * 设置设备类型过滤，设备类型，1：国标VMS设备(公有云不支持此类型)，2：国标IPC设备，3：国标NVR设备，9：智能告警设备(公有云不支持此类型)
+                     * @param DeviceTypes 设备类型过滤，设备类型，1：国标VMS设备(公有云不支持此类型)，2：国标IPC设备，3：国标NVR设备，9：智能告警设备(公有云不支持此类型)
                      */
                     void SetDeviceTypes(const std::vector<int64_t>& _deviceTypes);
 
@@ -159,7 +159,7 @@ namespace TencentCloud
                     bool m_deviceIdsHasBeenSet;
 
                     /**
-                     * 设备类型过滤
+                     * 设备类型过滤，设备类型，1：国标VMS设备(公有云不支持此类型)，2：国标IPC设备，3：国标NVR设备，9：智能告警设备(公有云不支持此类型)
                      */
                     std::vector<int64_t> m_deviceTypes;
                     bool m_deviceTypesHasBeenSet;

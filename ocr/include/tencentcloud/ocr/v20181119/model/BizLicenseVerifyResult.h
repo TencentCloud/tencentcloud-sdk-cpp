@@ -48,17 +48,17 @@ namespace TencentCloud
 
                     /**
                      * 获取“0“：一致
-“-1”：此号未查询到结果
+“-1”：不一致
                      * @return RegNum “0“：一致
-“-1”：此号未查询到结果
+“-1”：不一致
                      */
                     std::string GetRegNum() const;
 
                     /**
                      * 设置“0“：一致
-“-1”：此号未查询到结果
+“-1”：不一致
                      * @param RegNum “0“：一致
-“-1”：此号未查询到结果
+“-1”：不一致
                      */
                     void SetRegNum(const std::string& _regNum);
 
@@ -124,7 +124,7 @@ namespace TencentCloud
 
                     /**
                      * “0“：一致
-“-1”：此号未查询到结果
+“-1”：不一致
                      */
                     std::string m_regNum;
                     bool m_regNumHasBeenSet;

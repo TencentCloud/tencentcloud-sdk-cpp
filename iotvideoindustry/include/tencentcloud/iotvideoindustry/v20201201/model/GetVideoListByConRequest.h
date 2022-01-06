@@ -97,6 +97,24 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
+                     * 获取通道唯一标识
+                     * @return ChannelId 通道唯一标识
+                     */
+                    std::string GetChannelId() const;
+
+                    /**
+                     * 设置通道唯一标识
+                     * @param ChannelId 通道唯一标识
+                     */
+                    void SetChannelId(const std::string& _channelId);
+
+                    /**
+                     * 判断参数 ChannelId 是否已赋值
+                     * @return ChannelId 是否已赋值
+                     */
+                    bool ChannelIdHasBeenSet() const;
+
+                    /**
                      * 获取0：查询指定日期的录像；1：查询最近一天的录像；默认0
                      * @return LatestDay 0：查询指定日期的录像；1：查询最近一天的录像；默认0
                      */
@@ -116,17 +134,17 @@ namespace TencentCloud
 
                     /**
                      * 获取指定某天。取值【YYYY-MM-DD】
-当LatestDay为空或为0时，本参数不允许为空。
+为空时默认查询最近一天的记录
                      * @return Date 指定某天。取值【YYYY-MM-DD】
-当LatestDay为空或为0时，本参数不允许为空。
+为空时默认查询最近一天的记录
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置指定某天。取值【YYYY-MM-DD】
-当LatestDay为空或为0时，本参数不允许为空。
+为空时默认查询最近一天的记录
                      * @param Date 指定某天。取值【YYYY-MM-DD】
-当LatestDay为空或为0时，本参数不允许为空。
+为空时默认查询最近一天的记录
                      */
                     void SetDate(const std::string& _date);
 
@@ -135,24 +153,6 @@ namespace TencentCloud
                      * @return Date 是否已赋值
                      */
                     bool DateHasBeenSet() const;
-
-                    /**
-                     * 获取通道唯一标识
-                     * @return ChannelId 通道唯一标识
-                     */
-                    std::string GetChannelId() const;
-
-                    /**
-                     * 设置通道唯一标识
-                     * @param ChannelId 通道唯一标识
-                     */
-                    void SetChannelId(const std::string& _channelId);
-
-                    /**
-                     * 判断参数 ChannelId 是否已赋值
-                     * @return ChannelId 是否已赋值
-                     */
-                    bool ChannelIdHasBeenSet() const;
 
                     /**
                      * 获取1: 云端录制 2: 本地录制
@@ -193,6 +193,12 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
+                     * 通道唯一标识
+                     */
+                    std::string m_channelId;
+                    bool m_channelIdHasBeenSet;
+
+                    /**
                      * 0：查询指定日期的录像；1：查询最近一天的录像；默认0
                      */
                     int64_t m_latestDay;
@@ -200,16 +206,10 @@ namespace TencentCloud
 
                     /**
                      * 指定某天。取值【YYYY-MM-DD】
-当LatestDay为空或为0时，本参数不允许为空。
+为空时默认查询最近一天的记录
                      */
                     std::string m_date;
                     bool m_dateHasBeenSet;
-
-                    /**
-                     * 通道唯一标识
-                     */
-                    std::string m_channelId;
-                    bool m_channelIdHasBeenSet;
 
                     /**
                      * 1: 云端录制 2: 本地录制

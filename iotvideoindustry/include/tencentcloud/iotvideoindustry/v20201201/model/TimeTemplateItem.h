@@ -92,17 +92,17 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取是否全时录制，即7*24小时录制
+                     * 获取是否全时录制，即7*24小时录制 0-否 1-是
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsAllWeek 是否全时录制，即7*24小时录制
+                     * @return IsAllWeek 是否全时录制，即7*24小时录制 0-否 1-是
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetIsAllWeek() const;
 
                     /**
-                     * 设置是否全时录制，即7*24小时录制
+                     * 设置是否全时录制，即7*24小时录制 0-否 1-是
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsAllWeek 是否全时录制，即7*24小时录制
+                     * @param IsAllWeek 是否全时录制，即7*24小时录制 0-否 1-是
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetIsAllWeek(const int64_t& _isAllWeek);
@@ -114,17 +114,17 @@ namespace TencentCloud
                     bool IsAllWeekHasBeenSet() const;
 
                     /**
-                     * 获取是否为自定义模板
+                     * 获取是否为自定义模板 0-否 1-是
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 是否为自定义模板
+                     * @return Type 是否为自定义模板 0-否 1-是
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置是否为自定义模板
+                     * 设置是否为自定义模板 0-否 1-是
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 是否为自定义模板
+                     * @param Type 是否为自定义模板 0-否 1-是
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetType(const int64_t& _type);
@@ -174,14 +174,14 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 是否全时录制，即7*24小时录制
+                     * 是否全时录制，即7*24小时录制 0-否 1-是
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isAllWeek;
                     bool m_isAllWeekHasBeenSet;
 
                     /**
-                     * 是否为自定义模板
+                     * 是否为自定义模板 0-否 1-是
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_type;

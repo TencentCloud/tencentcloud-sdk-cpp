@@ -41,7 +41,8 @@ CreateCloneInstanceRequest::CreateCloneInstanceRequest() :
     m_deviceTypeHasBeenSet(false),
     m_instanceNodesHasBeenSet(false),
     m_deployGroupIdHasBeenSet(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_cageIdHasBeenSet(false)
 {
 }
 
@@ -214,6 +215,14 @@ string CreateCloneInstanceRequest::ToJsonString() const
         string key = "DryRun";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dryRun, allocator);
+    }
+
+    if (m_cageIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CageId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cageId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -526,6 +535,22 @@ void CreateCloneInstanceRequest::SetDryRun(const bool& _dryRun)
 bool CreateCloneInstanceRequest::DryRunHasBeenSet() const
 {
     return m_dryRunHasBeenSet;
+}
+
+string CreateCloneInstanceRequest::GetCageId() const
+{
+    return m_cageId;
+}
+
+void CreateCloneInstanceRequest::SetCageId(const string& _cageId)
+{
+    m_cageId = _cageId;
+    m_cageIdHasBeenSet = true;
+}
+
+bool CreateCloneInstanceRequest::CageIdHasBeenSet() const
+{
+    return m_cageIdHasBeenSet;
 }
 
 

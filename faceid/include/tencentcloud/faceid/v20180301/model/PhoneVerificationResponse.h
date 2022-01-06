@@ -89,6 +89,20 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取运营商名称。
+取值范围为["","移动","电信","联通"]
+                     * @return Isp 运营商名称。
+取值范围为["","移动","电信","联通"]
+                     */
+                    std::string GetIsp() const;
+
+                    /**
+                     * 判断参数 Isp 是否已赋值
+                     * @return Isp 是否已赋值
+                     */
+                    bool IspHasBeenSet() const;
+
                 private:
 
                     /**
@@ -113,6 +127,13 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 运营商名称。
+取值范围为["","移动","电信","联通"]
+                     */
+                    std::string m_isp;
+                    bool m_ispHasBeenSet;
 
                 };
             }

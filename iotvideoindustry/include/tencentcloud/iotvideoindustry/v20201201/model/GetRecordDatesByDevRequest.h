@@ -61,24 +61,6 @@ namespace TencentCloud
                     bool DeviceIdHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认0
-                     * @return Offset 偏移量，默认0
-                     */
-                    int64_t GetOffset() const;
-
-                    /**
-                     * 设置偏移量，默认0
-                     * @param Offset 偏移量，默认0
-                     */
-                    void SetOffset(const int64_t& _offset);
-
-                    /**
-                     * 判断参数 Offset 是否已赋值
-                     * @return Offset 是否已赋值
-                     */
-                    bool OffsetHasBeenSet() const;
-
-                    /**
                      * 获取限制量，默认200
                      * @return Limit 限制量，默认200
                      */
@@ -95,6 +77,24 @@ namespace TencentCloud
                      * @return Limit 是否已赋值
                      */
                     bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取偏移量，默认0
+                     * @return Offset 偏移量，默认0
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 设置偏移量，默认0
+                     * @param Offset 偏移量，默认0
+                     */
+                    void SetOffset(const int64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取通道唯一标识
@@ -141,16 +141,16 @@ namespace TencentCloud
                     bool m_deviceIdHasBeenSet;
 
                     /**
-                     * 偏移量，默认0
-                     */
-                    int64_t m_offset;
-                    bool m_offsetHasBeenSet;
-
-                    /**
                      * 限制量，默认200
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 偏移量，默认0
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
 
                     /**
                      * 通道唯一标识

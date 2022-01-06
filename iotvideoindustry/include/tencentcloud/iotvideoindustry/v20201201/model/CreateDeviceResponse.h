@@ -72,9 +72,9 @@ namespace TencentCloud
                     bool DeviceIdHasBeenSet() const;
 
                     /**
-                     * 获取设备虚拟组信息，仅在创建NVR/VMS时返回该值
+                     * 获取设备虚拟组信息，仅在创建NVR时返回该值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VirtualGroupId 设备虚拟组信息，仅在创建NVR/VMS时返回该值
+                     * @return VirtualGroupId 设备虚拟组信息，仅在创建NVR时返回该值
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetVirtualGroupId() const;
@@ -102,7 +102,7 @@ namespace TencentCloud
                     bool m_deviceIdHasBeenSet;
 
                     /**
-                     * 设备虚拟组信息，仅在创建NVR/VMS时返回该值
+                     * 设备虚拟组信息，仅在创建NVR时返回该值
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_virtualGroupId;

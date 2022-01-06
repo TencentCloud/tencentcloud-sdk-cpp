@@ -27,7 +27,8 @@ CreateSceneRequest::CreateSceneRequest() :
     m_sceneTriggerHasBeenSet(false),
     m_recordDurationHasBeenSet(false),
     m_storeDurationHasBeenSet(false),
-    m_devicesHasBeenSet(false)
+    m_devicesHasBeenSet(false),
+    m_channelsHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,21 @@ string CreateSceneRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_devices.begin(); itr != m_devices.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_channelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Channels";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_channels.begin(); itr != m_channels.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -171,6 +187,22 @@ void CreateSceneRequest::SetDevices(const vector<DeviceItem>& _devices)
 bool CreateSceneRequest::DevicesHasBeenSet() const
 {
     return m_devicesHasBeenSet;
+}
+
+vector<ChannelItem> CreateSceneRequest::GetChannels() const
+{
+    return m_channels;
+}
+
+void CreateSceneRequest::SetChannels(const vector<ChannelItem>& _channels)
+{
+    m_channels = _channels;
+    m_channelsHasBeenSet = true;
+}
+
+bool CreateSceneRequest::ChannelsHasBeenSet() const
+{
+    return m_channelsHasBeenSet;
 }
 
 

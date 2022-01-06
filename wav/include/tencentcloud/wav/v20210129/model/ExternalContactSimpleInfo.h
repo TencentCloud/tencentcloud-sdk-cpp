@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 列部联系人简短信息
+                * 外部联系人简短信息
                 */
                 class ExternalContactSimpleInfo : public AbstractModel
                 {

@@ -25,7 +25,8 @@ DetectInfoIdCardData::DetectInfoIdCardData() :
     m_ocrBackHasBeenSet(false),
     m_processedFrontImageHasBeenSet(false),
     m_processedBackImageHasBeenSet(false),
-    m_avatarHasBeenSet(false)
+    m_avatarHasBeenSet(false),
+    m_warnInfosHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,19 @@ CoreInternalOutcome DetectInfoIdCardData::Deserialize(const rapidjson::Value &va
         m_avatarHasBeenSet = true;
     }
 
+    if (value.HasMember("WarnInfos") && !value["WarnInfos"].IsNull())
+    {
+        if (!value["WarnInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DetectInfoIdCardData.WarnInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["WarnInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_warnInfos.push_back((*itr).GetInt64());
+        }
+        m_warnInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +143,19 @@ void DetectInfoIdCardData::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "Avatar";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_avatar.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_warnInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WarnInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_warnInfos.begin(); itr != m_warnInfos.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 }
@@ -212,5 +239,21 @@ void DetectInfoIdCardData::SetAvatar(const string& _avatar)
 bool DetectInfoIdCardData::AvatarHasBeenSet() const
 {
     return m_avatarHasBeenSet;
+}
+
+vector<int64_t> DetectInfoIdCardData::GetWarnInfos() const
+{
+    return m_warnInfos;
+}
+
+void DetectInfoIdCardData::SetWarnInfos(const vector<int64_t>& _warnInfos)
+{
+    m_warnInfos = _warnInfos;
+    m_warnInfosHasBeenSet = true;
+}
+
+bool DetectInfoIdCardData::WarnInfosHasBeenSet() const
+{
+    return m_warnInfosHasBeenSet;
 }
 

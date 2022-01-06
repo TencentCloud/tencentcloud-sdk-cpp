@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool PassWordHasBeenSet() const;
 
                     /**
-                     * 获取设备类型 2:国标IPC设备; 3:NVR设备
-                     * @return DeviceType 设备类型 2:国标IPC设备; 3:NVR设备
+                     * 获取设备类型，1：国标VMS设备(公有云不支持此类型)，2：国标IPC设备，3：国标NVR设备，9：智能告警设备(公有云不支持此类型)
+                     * @return DeviceType 设备类型，1：国标VMS设备(公有云不支持此类型)，2：国标IPC设备，3：国标NVR设备，9：智能告警设备(公有云不支持此类型)
                      */
                     int64_t GetDeviceType() const;
 
                     /**
-                     * 设置设备类型 2:国标IPC设备; 3:NVR设备
-                     * @param DeviceType 设备类型 2:国标IPC设备; 3:NVR设备
+                     * 设置设备类型，1：国标VMS设备(公有云不支持此类型)，2：国标IPC设备，3：国标NVR设备，9：智能告警设备(公有云不支持此类型)
+                     * @param DeviceType 设备类型，1：国标VMS设备(公有云不支持此类型)，2：国标IPC设备，3：国标NVR设备，9：智能告警设备(公有云不支持此类型)
                      */
                     void SetDeviceType(const int64_t& _deviceType);
 
@@ -129,7 +129,7 @@ namespace TencentCloud
                     bool m_passWordHasBeenSet;
 
                     /**
-                     * 设备类型 2:国标IPC设备; 3:NVR设备
+                     * 设备类型，1：国标VMS设备(公有云不支持此类型)，2：国标IPC设备，3：国标NVR设备，9：智能告警设备(公有云不支持此类型)
                      */
                     int64_t m_deviceType;
                     bool m_deviceTypeHasBeenSet;

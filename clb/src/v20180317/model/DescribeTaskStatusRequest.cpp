@@ -23,7 +23,8 @@ using namespace TencentCloud::Clb::V20180317::Model;
 using namespace std;
 
 DescribeTaskStatusRequest::DescribeTaskStatusRequest() :
-    m_taskIdHasBeenSet(false)
+    m_taskIdHasBeenSet(false),
+    m_dealNameHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeTaskStatusRequest::ToJsonString() const
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dealNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DealName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dealName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeTaskStatusRequest::SetTaskId(const string& _taskId)
 bool DescribeTaskStatusRequest::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+string DescribeTaskStatusRequest::GetDealName() const
+{
+    return m_dealName;
+}
+
+void DescribeTaskStatusRequest::SetDealName(const string& _dealName)
+{
+    m_dealName = _dealName;
+    m_dealNameHasBeenSet = true;
+}
+
+bool DescribeTaskStatusRequest::DealNameHasBeenSet() const
+{
+    return m_dealNameHasBeenSet;
 }
 
 

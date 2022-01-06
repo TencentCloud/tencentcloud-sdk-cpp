@@ -24,7 +24,8 @@ using namespace TencentCloud::Clb::V20180317::Model;
 using namespace std;
 
 CreateLoadBalancerResponse::CreateLoadBalancerResponse() :
-    m_loadBalancerIdsHasBeenSet(false)
+    m_loadBalancerIdsHasBeenSet(false),
+    m_dealNameHasBeenSet(false)
 {
 }
 
@@ -75,6 +76,16 @@ CoreInternalOutcome CreateLoadBalancerResponse::Deserialize(const string &payloa
         m_loadBalancerIdsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DealName") && !rsp["DealName"].IsNull())
+    {
+        if (!rsp["DealName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DealName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dealName = string(rsp["DealName"].GetString());
+        m_dealNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -98,6 +109,14 @@ string CreateLoadBalancerResponse::ToJsonString() const
         }
     }
 
+    if (m_dealNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DealName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dealName.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -118,6 +137,16 @@ vector<string> CreateLoadBalancerResponse::GetLoadBalancerIds() const
 bool CreateLoadBalancerResponse::LoadBalancerIdsHasBeenSet() const
 {
     return m_loadBalancerIdsHasBeenSet;
+}
+
+string CreateLoadBalancerResponse::GetDealName() const
+{
+    return m_dealName;
+}
+
+bool CreateLoadBalancerResponse::DealNameHasBeenSet() const
+{
+    return m_dealNameHasBeenSet;
 }
 
 
