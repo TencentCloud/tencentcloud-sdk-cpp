@@ -27,7 +27,8 @@ PrometheusAlertRule::PrometheusAlertRule() :
     m_templateHasBeenSet(false),
     m_forHasBeenSet(false),
     m_describeHasBeenSet(false),
-    m_annotationsHasBeenSet(false)
+    m_annotationsHasBeenSet(false),
+    m_ruleStateHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,16 @@ CoreInternalOutcome PrometheusAlertRule::Deserialize(const rapidjson::Value &val
         m_annotationsHasBeenSet = true;
     }
 
+    if (value.HasMember("RuleState") && !value["RuleState"].IsNull())
+    {
+        if (!value["RuleState"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrometheusAlertRule.RuleState` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleState = value["RuleState"].GetInt64();
+        m_ruleStateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -201,6 +212,14 @@ void PrometheusAlertRule::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_ruleStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ruleState, allocator);
     }
 
 }
@@ -316,5 +335,21 @@ void PrometheusAlertRule::SetAnnotations(const vector<Label>& _annotations)
 bool PrometheusAlertRule::AnnotationsHasBeenSet() const
 {
     return m_annotationsHasBeenSet;
+}
+
+int64_t PrometheusAlertRule::GetRuleState() const
+{
+    return m_ruleState;
+}
+
+void PrometheusAlertRule::SetRuleState(const int64_t& _ruleState)
+{
+    m_ruleState = _ruleState;
+    m_ruleStateHasBeenSet = true;
+}
+
+bool PrometheusAlertRule::RuleStateHasBeenSet() const
+{
+    return m_ruleStateHasBeenSet;
 }
 

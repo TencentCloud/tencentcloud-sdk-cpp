@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tke/v20180525/model/Label.h>
 
 
 namespace TencentCloud
@@ -126,6 +127,32 @@ abnormal = 异常
                      */
                     bool ClusterNameHasBeenSet() const;
 
+                    /**
+                     * 获取额外labels
+本集群的所有指标都会带上这几个label
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExternalLabels 额外labels
+本集群的所有指标都会带上这几个label
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Label> GetExternalLabels() const;
+
+                    /**
+                     * 设置额外labels
+本集群的所有指标都会带上这几个label
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ExternalLabels 额外labels
+本集群的所有指标都会带上这几个label
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExternalLabels(const std::vector<Label>& _externalLabels);
+
+                    /**
+                     * 判断参数 ExternalLabels 是否已赋值
+                     * @return ExternalLabels 是否已赋值
+                     */
+                    bool ExternalLabelsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -153,6 +180,14 @@ abnormal = 异常
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
+
+                    /**
+                     * 额外labels
+本集群的所有指标都会带上这几个label
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Label> m_externalLabels;
+                    bool m_externalLabelsHasBeenSet;
 
                 };
             }

@@ -39,7 +39,8 @@ ModifyLaunchConfigurationAttributesRequest::ModifyLaunchConfigurationAttributesR
     m_dataDisksHasBeenSet(false),
     m_hostNameSettingsHasBeenSet(false),
     m_instanceNameSettingsHasBeenSet(false),
-    m_enhancedServiceHasBeenSet(false)
+    m_enhancedServiceHasBeenSet(false),
+    m_camRoleNameHasBeenSet(false)
 {
 }
 
@@ -208,6 +209,14 @@ string ModifyLaunchConfigurationAttributesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_enhancedService.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_camRoleNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CamRoleName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_camRoleName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -488,6 +497,22 @@ void ModifyLaunchConfigurationAttributesRequest::SetEnhancedService(const Enhanc
 bool ModifyLaunchConfigurationAttributesRequest::EnhancedServiceHasBeenSet() const
 {
     return m_enhancedServiceHasBeenSet;
+}
+
+string ModifyLaunchConfigurationAttributesRequest::GetCamRoleName() const
+{
+    return m_camRoleName;
+}
+
+void ModifyLaunchConfigurationAttributesRequest::SetCamRoleName(const string& _camRoleName)
+{
+    m_camRoleName = _camRoleName;
+    m_camRoleNameHasBeenSet = true;
+}
+
+bool ModifyLaunchConfigurationAttributesRequest::CamRoleNameHasBeenSet() const
+{
+    return m_camRoleNameHasBeenSet;
 }
 
 

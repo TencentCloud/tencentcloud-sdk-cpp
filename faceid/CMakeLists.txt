@@ -32,6 +32,7 @@ set(faceid_public_header_model
   include/tencentcloud/faceid/v20180301/model/BankCardVerificationRequest.h
   include/tencentcloud/faceid/v20180301/model/CheckBankCardInformationResponse.h
   include/tencentcloud/faceid/v20180301/model/DetectInfoBestFrame.h
+  include/tencentcloud/faceid/v20180301/model/WeChatBillDetail.h
   include/tencentcloud/faceid/v20180301/model/GetEidTokenConfig.h
   include/tencentcloud/faceid/v20180301/model/CheckIdCardInformationResponse.h
   include/tencentcloud/faceid/v20180301/model/GetDetectInfoEnhancedResponse.h
@@ -41,6 +42,7 @@ set(faceid_public_header_model
   include/tencentcloud/faceid/v20180301/model/PhoneVerificationResponse.h
   include/tencentcloud/faceid/v20180301/model/GetEidTokenRequest.h
   include/tencentcloud/faceid/v20180301/model/IdCardOCRVerificationRequest.h
+  include/tencentcloud/faceid/v20180301/model/GetWeChatBillDetailsResponse.h
   include/tencentcloud/faceid/v20180301/model/CheckPhoneAndNameResponse.h
   include/tencentcloud/faceid/v20180301/model/BankCard4EVerificationResponse.h
   include/tencentcloud/faceid/v20180301/model/MobileStatusRequest.h
@@ -55,12 +57,13 @@ set(faceid_public_header_model
   include/tencentcloud/faceid/v20180301/model/CheckEidTokenStatusResponse.h
   include/tencentcloud/faceid/v20180301/model/MobileStatusResponse.h
   include/tencentcloud/faceid/v20180301/model/IdCardOCRVerificationResponse.h
-  include/tencentcloud/faceid/v20180301/model/GetRealNameAuthTokenResponse.h
+  include/tencentcloud/faceid/v20180301/model/ChargeDetail.h
   include/tencentcloud/faceid/v20180301/model/LivenessResponse.h
   include/tencentcloud/faceid/v20180301/model/CheckIdCardInformationRequest.h
   include/tencentcloud/faceid/v20180301/model/DetectInfoText.h
   include/tencentcloud/faceid/v20180301/model/DetectAuthRequest.h
   include/tencentcloud/faceid/v20180301/model/MinorsVerificationResponse.h
+  include/tencentcloud/faceid/v20180301/model/GetWeChatBillDetailsRequest.h
   include/tencentcloud/faceid/v20180301/model/CheckEidTokenStatusRequest.h
   include/tencentcloud/faceid/v20180301/model/GetEidResultResponse.h
   include/tencentcloud/faceid/v20180301/model/GetRealNameAuthResultRequest.h
@@ -88,6 +91,7 @@ set(faceid_public_header_model
   include/tencentcloud/faceid/v20180301/model/DetectDetail.h
   include/tencentcloud/faceid/v20180301/model/GetFaceIdResultResponse.h
   include/tencentcloud/faceid/v20180301/model/EncryptedPhoneVerificationRequest.h
+  include/tencentcloud/faceid/v20180301/model/GetRealNameAuthTokenResponse.h
   include/tencentcloud/faceid/v20180301/model/GetRealNameAuthResultResponse.h
   include/tencentcloud/faceid/v20180301/model/EncryptedPhoneVerificationResponse.h
   )
@@ -107,6 +111,7 @@ set(faceid_src
   src/v20180301/model/BankCardVerificationRequest.cpp
   src/v20180301/model/CheckBankCardInformationResponse.cpp
   src/v20180301/model/DetectInfoBestFrame.cpp
+  src/v20180301/model/WeChatBillDetail.cpp
   src/v20180301/model/GetEidTokenConfig.cpp
   src/v20180301/model/CheckIdCardInformationResponse.cpp
   src/v20180301/model/GetDetectInfoEnhancedResponse.cpp
@@ -116,6 +121,7 @@ set(faceid_src
   src/v20180301/model/PhoneVerificationResponse.cpp
   src/v20180301/model/GetEidTokenRequest.cpp
   src/v20180301/model/IdCardOCRVerificationRequest.cpp
+  src/v20180301/model/GetWeChatBillDetailsResponse.cpp
   src/v20180301/model/CheckPhoneAndNameResponse.cpp
   src/v20180301/model/BankCard4EVerificationResponse.cpp
   src/v20180301/model/MobileStatusRequest.cpp
@@ -130,12 +136,13 @@ set(faceid_src
   src/v20180301/model/CheckEidTokenStatusResponse.cpp
   src/v20180301/model/MobileStatusResponse.cpp
   src/v20180301/model/IdCardOCRVerificationResponse.cpp
-  src/v20180301/model/GetRealNameAuthTokenResponse.cpp
+  src/v20180301/model/ChargeDetail.cpp
   src/v20180301/model/LivenessResponse.cpp
   src/v20180301/model/CheckIdCardInformationRequest.cpp
   src/v20180301/model/DetectInfoText.cpp
   src/v20180301/model/DetectAuthRequest.cpp
   src/v20180301/model/MinorsVerificationResponse.cpp
+  src/v20180301/model/GetWeChatBillDetailsRequest.cpp
   src/v20180301/model/CheckEidTokenStatusRequest.cpp
   src/v20180301/model/GetEidResultResponse.cpp
   src/v20180301/model/GetRealNameAuthResultRequest.cpp
@@ -163,6 +170,7 @@ set(faceid_src
   src/v20180301/model/DetectDetail.cpp
   src/v20180301/model/GetFaceIdResultResponse.cpp
   src/v20180301/model/EncryptedPhoneVerificationRequest.cpp
+  src/v20180301/model/GetRealNameAuthTokenResponse.cpp
   src/v20180301/model/GetRealNameAuthResultResponse.cpp
   src/v20180301/model/EncryptedPhoneVerificationResponse.cpp
   )

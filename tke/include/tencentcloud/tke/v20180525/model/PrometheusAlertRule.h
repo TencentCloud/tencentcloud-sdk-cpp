@@ -181,6 +181,28 @@ namespace TencentCloud
                      */
                     bool AnnotationsHasBeenSet() const;
 
+                    /**
+                     * 获取告警规则状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleState 告警规则状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRuleState() const;
+
+                    /**
+                     * 设置告警规则状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RuleState 告警规则状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRuleState(const int64_t& _ruleState);
+
+                    /**
+                     * 判断参数 RuleState 是否已赋值
+                     * @return RuleState 是否已赋值
+                     */
+                    bool RuleStateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -226,6 +248,13 @@ namespace TencentCloud
                      */
                     std::vector<Label> m_annotations;
                     bool m_annotationsHasBeenSet;
+
+                    /**
+                     * 告警规则状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_ruleState;
+                    bool m_ruleStateHasBeenSet;
 
                 };
             }

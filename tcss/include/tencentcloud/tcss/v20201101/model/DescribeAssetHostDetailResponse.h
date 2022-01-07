@@ -307,6 +307,30 @@ namespace TencentCloud
                      */
                     bool PublicIpHasBeenSet() const;
 
+                    /**
+                     * 获取主机实例ID
+                     * @return InstanceID 主机实例ID
+                     */
+                    std::string GetInstanceID() const;
+
+                    /**
+                     * 判断参数 InstanceID 是否已赋值
+                     * @return InstanceID 是否已赋值
+                     */
+                    bool InstanceIDHasBeenSet() const;
+
+                    /**
+                     * 获取地域ID
+                     * @return RegionID 地域ID
+                     */
+                    int64_t GetRegionID() const;
+
+                    /**
+                     * 判断参数 RegionID 是否已赋值
+                     * @return RegionID 是否已赋值
+                     */
+                    bool RegionIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -440,6 +464,18 @@ namespace TencentCloud
                      */
                     std::string m_publicIp;
                     bool m_publicIpHasBeenSet;
+
+                    /**
+                     * 主机实例ID
+                     */
+                    std::string m_instanceID;
+                    bool m_instanceIDHasBeenSet;
+
+                    /**
+                     * 地域ID
+                     */
+                    int64_t m_regionID;
+                    bool m_regionIDHasBeenSet;
 
                 };
             }

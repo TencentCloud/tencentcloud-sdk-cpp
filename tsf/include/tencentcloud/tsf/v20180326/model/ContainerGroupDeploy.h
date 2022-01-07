@@ -28,6 +28,8 @@
 #include <tencentcloud/tsf/v20180326/model/Env.h>
 #include <tencentcloud/tsf/v20180326/model/HealthCheckSettings.h>
 #include <tencentcloud/tsf/v20180326/model/TcrRepoInfo.h>
+#include <tencentcloud/tsf/v20180326/model/VolumeInfo.h>
+#include <tencentcloud/tsf/v20180326/model/VolumeMountInfo.h>
 
 
 namespace TencentCloud
@@ -754,6 +756,50 @@ namespace TencentCloud
                      */
                     bool TcrRepoInfoHasBeenSet() const;
 
+                    /**
+                     * 获取数据卷信息，list
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VolumeInfos 数据卷信息，list
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<VolumeInfo> GetVolumeInfos() const;
+
+                    /**
+                     * 设置数据卷信息，list
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VolumeInfos 数据卷信息，list
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVolumeInfos(const std::vector<VolumeInfo>& _volumeInfos);
+
+                    /**
+                     * 判断参数 VolumeInfos 是否已赋值
+                     * @return VolumeInfos 是否已赋值
+                     */
+                    bool VolumeInfosHasBeenSet() const;
+
+                    /**
+                     * 获取数据卷挂载信息，list
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VolumeMountInfos 数据卷挂载信息，list
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<VolumeMountInfo> GetVolumeMountInfos() const;
+
+                    /**
+                     * 设置数据卷挂载信息，list
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VolumeMountInfos 数据卷挂载信息，list
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVolumeMountInfos(const std::vector<VolumeMountInfo>& _volumeMountInfos);
+
+                    /**
+                     * 判断参数 VolumeMountInfos 是否已赋值
+                     * @return VolumeMountInfos 是否已赋值
+                     */
+                    bool VolumeMountInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -979,6 +1025,20 @@ namespace TencentCloud
                      */
                     TcrRepoInfo m_tcrRepoInfo;
                     bool m_tcrRepoInfoHasBeenSet;
+
+                    /**
+                     * 数据卷信息，list
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<VolumeInfo> m_volumeInfos;
+                    bool m_volumeInfosHasBeenSet;
+
+                    /**
+                     * 数据卷挂载信息，list
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<VolumeMountInfo> m_volumeMountInfos;
+                    bool m_volumeMountInfosHasBeenSet;
 
                 };
             }

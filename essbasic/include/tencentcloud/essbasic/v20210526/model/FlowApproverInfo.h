@@ -65,24 +65,6 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取签署人手机号，脱敏显示
-                     * @return Mobile 签署人手机号，脱敏显示
-                     */
-                    std::string GetMobile() const;
-
-                    /**
-                     * 设置签署人手机号，脱敏显示
-                     * @param Mobile 签署人手机号，脱敏显示
-                     */
-                    void SetMobile(const std::string& _mobile);
-
-                    /**
-                     * 判断参数 Mobile 是否已赋值
-                     * @return Mobile 是否已赋值
-                     */
-                    bool MobileHasBeenSet() const;
-
-                    /**
                      * 获取经办人身份证号
                      * @return IdCardNumber 经办人身份证号
                      */
@@ -99,6 +81,24 @@ namespace TencentCloud
                      * @return IdCardNumber 是否已赋值
                      */
                     bool IdCardNumberHasBeenSet() const;
+
+                    /**
+                     * 获取签署人手机号，脱敏显示
+                     * @return Mobile 签署人手机号，脱敏显示
+                     */
+                    std::string GetMobile() const;
+
+                    /**
+                     * 设置签署人手机号，脱敏显示
+                     * @param Mobile 签署人手机号，脱敏显示
+                     */
+                    void SetMobile(const std::string& _mobile);
+
+                    /**
+                     * 判断参数 Mobile 是否已赋值
+                     * @return Mobile 是否已赋值
+                     */
+                    bool MobileHasBeenSet() const;
 
                     /**
                      * 获取签署完前端跳转的url，暂未使用
@@ -208,6 +208,78 @@ namespace TencentCloud
                      */
                     bool PreReadTimeHasBeenSet() const;
 
+                    /**
+                     * 获取个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN
+                     * @return ComponentLimitType 个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN
+                     */
+                    std::vector<std::string> GetComponentLimitType() const;
+
+                    /**
+                     * 设置个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN
+                     * @param ComponentLimitType 个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN
+                     */
+                    void SetComponentLimitType(const std::vector<std::string>& _componentLimitType);
+
+                    /**
+                     * 判断参数 ComponentLimitType 是否已赋值
+                     * @return ComponentLimitType 是否已赋值
+                     */
+                    bool ComponentLimitTypeHasBeenSet() const;
+
+                    /**
+                     * 获取流程签署人在模板中对应的签署人Id；在非单方签署、以及非B2C签署的场景下必传，用于指定当前签署方在流程中的位置；
+                     * @return RecipientId 流程签署人在模板中对应的签署人Id；在非单方签署、以及非B2C签署的场景下必传，用于指定当前签署方在流程中的位置；
+                     */
+                    std::string GetRecipientId() const;
+
+                    /**
+                     * 设置流程签署人在模板中对应的签署人Id；在非单方签署、以及非B2C签署的场景下必传，用于指定当前签署方在流程中的位置；
+                     * @param RecipientId 流程签署人在模板中对应的签署人Id；在非单方签署、以及非B2C签署的场景下必传，用于指定当前签署方在流程中的位置；
+                     */
+                    void SetRecipientId(const std::string& _recipientId);
+
+                    /**
+                     * 判断参数 RecipientId 是否已赋值
+                     * @return RecipientId 是否已赋值
+                     */
+                    bool RecipientIdHasBeenSet() const;
+
+                    /**
+                     * 获取同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
+                     * @return OrganizationOpenId 同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
+                     */
+                    std::string GetOrganizationOpenId() const;
+
+                    /**
+                     * 设置同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
+                     * @param OrganizationOpenId 同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
+                     */
+                    void SetOrganizationOpenId(const std::string& _organizationOpenId);
+
+                    /**
+                     * 判断参数 OrganizationOpenId 是否已赋值
+                     * @return OrganizationOpenId 是否已赋值
+                     */
+                    bool OrganizationOpenIdHasBeenSet() const;
+
+                    /**
+                     * 获取同一渠道下其他合作企业OpenId，B2B场景下必传；
+                     * @return OrganizationName 同一渠道下其他合作企业OpenId，B2B场景下必传；
+                     */
+                    std::string GetOrganizationName() const;
+
+                    /**
+                     * 设置同一渠道下其他合作企业OpenId，B2B场景下必传；
+                     * @param OrganizationName 同一渠道下其他合作企业OpenId，B2B场景下必传；
+                     */
+                    void SetOrganizationName(const std::string& _organizationName);
+
+                    /**
+                     * 判断参数 OrganizationName 是否已赋值
+                     * @return OrganizationName 是否已赋值
+                     */
+                    bool OrganizationNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -217,16 +289,16 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 签署人手机号，脱敏显示
-                     */
-                    std::string m_mobile;
-                    bool m_mobileHasBeenSet;
-
-                    /**
                      * 经办人身份证号
                      */
                     std::string m_idCardNumber;
                     bool m_idCardNumberHasBeenSet;
+
+                    /**
+                     * 签署人手机号，脱敏显示
+                     */
+                    std::string m_mobile;
+                    bool m_mobileHasBeenSet;
 
                     /**
                      * 签署完前端跳转的url，暂未使用
@@ -263,6 +335,30 @@ namespace TencentCloud
                      */
                     int64_t m_preReadTime;
                     bool m_preReadTimeHasBeenSet;
+
+                    /**
+                     * 个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN
+                     */
+                    std::vector<std::string> m_componentLimitType;
+                    bool m_componentLimitTypeHasBeenSet;
+
+                    /**
+                     * 流程签署人在模板中对应的签署人Id；在非单方签署、以及非B2C签署的场景下必传，用于指定当前签署方在流程中的位置；
+                     */
+                    std::string m_recipientId;
+                    bool m_recipientIdHasBeenSet;
+
+                    /**
+                     * 同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
+                     */
+                    std::string m_organizationOpenId;
+                    bool m_organizationOpenIdHasBeenSet;
+
+                    /**
+                     * 同一渠道下其他合作企业OpenId，B2B场景下必传；
+                     */
+                    std::string m_organizationName;
+                    bool m_organizationNameHasBeenSet;
 
                 };
             }

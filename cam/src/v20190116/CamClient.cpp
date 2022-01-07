@@ -2018,6 +2018,49 @@ CamClient::ListAttachedRolePoliciesOutcomeCallable CamClient::ListAttachedRolePo
     return task->get_future();
 }
 
+CamClient::ListAttachedUserAllPoliciesOutcome CamClient::ListAttachedUserAllPolicies(const ListAttachedUserAllPoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListAttachedUserAllPolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListAttachedUserAllPoliciesResponse rsp = ListAttachedUserAllPoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListAttachedUserAllPoliciesOutcome(rsp);
+        else
+            return ListAttachedUserAllPoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return ListAttachedUserAllPoliciesOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::ListAttachedUserAllPoliciesAsync(const ListAttachedUserAllPoliciesRequest& request, const ListAttachedUserAllPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListAttachedUserAllPolicies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::ListAttachedUserAllPoliciesOutcomeCallable CamClient::ListAttachedUserAllPoliciesCallable(const ListAttachedUserAllPoliciesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListAttachedUserAllPoliciesOutcome()>>(
+        [this, request]()
+        {
+            return this->ListAttachedUserAllPolicies(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::ListAttachedUserPoliciesOutcome CamClient::ListAttachedUserPolicies(const ListAttachedUserPoliciesRequest &request)
 {
     auto outcome = MakeRequest(request, "ListAttachedUserPolicies");

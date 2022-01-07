@@ -65,6 +65,8 @@
 #include <tencentcloud/faceid/v20180301/model/GetRealNameAuthResultResponse.h>
 #include <tencentcloud/faceid/v20180301/model/GetRealNameAuthTokenRequest.h>
 #include <tencentcloud/faceid/v20180301/model/GetRealNameAuthTokenResponse.h>
+#include <tencentcloud/faceid/v20180301/model/GetWeChatBillDetailsRequest.h>
+#include <tencentcloud/faceid/v20180301/model/GetWeChatBillDetailsResponse.h>
 #include <tencentcloud/faceid/v20180301/model/IdCardOCRVerificationRequest.h>
 #include <tencentcloud/faceid/v20180301/model/IdCardOCRVerificationResponse.h>
 #include <tencentcloud/faceid/v20180301/model/IdCardVerificationRequest.h>
@@ -162,6 +164,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetRealNameAuthTokenResponse> GetRealNameAuthTokenOutcome;
                 typedef std::future<GetRealNameAuthTokenOutcome> GetRealNameAuthTokenOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::GetRealNameAuthTokenRequest&, GetRealNameAuthTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRealNameAuthTokenAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetWeChatBillDetailsResponse> GetWeChatBillDetailsOutcome;
+                typedef std::future<GetWeChatBillDetailsOutcome> GetWeChatBillDetailsOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::GetWeChatBillDetailsRequest&, GetWeChatBillDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetWeChatBillDetailsAsyncHandler;
                 typedef Outcome<Core::Error, Model::IdCardOCRVerificationResponse> IdCardOCRVerificationOutcome;
                 typedef std::future<IdCardOCRVerificationOutcome> IdCardOCRVerificationOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::IdCardOCRVerificationRequest&, IdCardOCRVerificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IdCardOCRVerificationAsyncHandler;
@@ -386,6 +391,15 @@ namespace TencentCloud
                 GetRealNameAuthTokenOutcome GetRealNameAuthToken(const Model::GetRealNameAuthTokenRequest &request);
                 void GetRealNameAuthTokenAsync(const Model::GetRealNameAuthTokenRequest& request, const GetRealNameAuthTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetRealNameAuthTokenOutcomeCallable GetRealNameAuthTokenCallable(const Model::GetRealNameAuthTokenRequest& request);
+
+                /**
+                 *查询微信渠道服务（微信小程序、微信原生H5、微信普通H5）的账单明细及计费状态。
+                 * @param req GetWeChatBillDetailsRequest
+                 * @return GetWeChatBillDetailsOutcome
+                 */
+                GetWeChatBillDetailsOutcome GetWeChatBillDetails(const Model::GetWeChatBillDetailsRequest &request);
+                void GetWeChatBillDetailsAsync(const Model::GetWeChatBillDetailsRequest& request, const GetWeChatBillDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetWeChatBillDetailsOutcomeCallable GetWeChatBillDetailsCallable(const Model::GetWeChatBillDetailsRequest& request);
 
                 /**
                  *本接口用于校验姓名和身份证号的真实性和一致性，您可以通过输入姓名和身份证号或传入身份证人像面照片提供所需验证信息。

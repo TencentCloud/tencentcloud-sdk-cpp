@@ -227,14 +227,14 @@ namespace TencentCloud
                     bool IsContainerdHasBeenSet() const;
 
                     /**
-                     * 获取主机来源
-                     * @return MachineType 主机来源
+                     * 获取主机来源：["CVM", "ECM", "LH", "BM"]  中的之一为腾讯云服务器；["Other"]之一非腾讯云服务器；
+                     * @return MachineType 主机来源：["CVM", "ECM", "LH", "BM"]  中的之一为腾讯云服务器；["Other"]之一非腾讯云服务器；
                      */
                     std::string GetMachineType() const;
 
                     /**
-                     * 设置主机来源
-                     * @param MachineType 主机来源
+                     * 设置主机来源：["CVM", "ECM", "LH", "BM"]  中的之一为腾讯云服务器；["Other"]之一非腾讯云服务器；
+                     * @param MachineType 主机来源：["CVM", "ECM", "LH", "BM"]  中的之一为腾讯云服务器；["Other"]之一非腾讯云服务器；
                      */
                     void SetMachineType(const std::string& _machineType);
 
@@ -279,6 +279,42 @@ namespace TencentCloud
                      * @return Uuid 是否已赋值
                      */
                     bool UuidHasBeenSet() const;
+
+                    /**
+                     * 获取主机实例ID
+                     * @return InstanceID 主机实例ID
+                     */
+                    std::string GetInstanceID() const;
+
+                    /**
+                     * 设置主机实例ID
+                     * @param InstanceID 主机实例ID
+                     */
+                    void SetInstanceID(const std::string& _instanceID);
+
+                    /**
+                     * 判断参数 InstanceID 是否已赋值
+                     * @return InstanceID 是否已赋值
+                     */
+                    bool InstanceIDHasBeenSet() const;
+
+                    /**
+                     * 获取地域ID
+                     * @return RegionID 地域ID
+                     */
+                    int64_t GetRegionID() const;
+
+                    /**
+                     * 设置地域ID
+                     * @param RegionID 地域ID
+                     */
+                    void SetRegionID(const int64_t& _regionID);
+
+                    /**
+                     * 判断参数 RegionID 是否已赋值
+                     * @return RegionID 是否已赋值
+                     */
+                    bool RegionIDHasBeenSet() const;
 
                 private:
 
@@ -343,7 +379,7 @@ namespace TencentCloud
                     bool m_isContainerdHasBeenSet;
 
                     /**
-                     * 主机来源
+                     * 主机来源：["CVM", "ECM", "LH", "BM"]  中的之一为腾讯云服务器；["Other"]之一非腾讯云服务器；
                      */
                     std::string m_machineType;
                     bool m_machineTypeHasBeenSet;
@@ -359,6 +395,18 @@ namespace TencentCloud
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;
+
+                    /**
+                     * 主机实例ID
+                     */
+                    std::string m_instanceID;
+                    bool m_instanceIDHasBeenSet;
+
+                    /**
+                     * 地域ID
+                     */
+                    int64_t m_regionID;
+                    bool m_regionIDHasBeenSet;
 
                 };
             }

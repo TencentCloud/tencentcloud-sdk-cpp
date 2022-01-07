@@ -456,6 +456,24 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
                      */
                     bool EnhancedServiceHasBeenSet() const;
 
+                    /**
+                     * 获取CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。
+                     * @return CamRoleName CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。
+                     */
+                    std::string GetCamRoleName() const;
+
+                    /**
+                     * 设置CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。
+                     * @param CamRoleName CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。
+                     */
+                    void SetCamRoleName(const std::string& _camRoleName);
+
+                    /**
+                     * 判断参数 CamRoleName 是否已赋值
+                     * @return CamRoleName 是否已赋值
+                     */
+                    bool CamRoleNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -584,6 +602,12 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
                      */
                     EnhancedService m_enhancedService;
                     bool m_enhancedServiceHasBeenSet;
+
+                    /**
+                     * CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。
+                     */
+                    std::string m_camRoleName;
+                    bool m_camRoleNameHasBeenSet;
 
                 };
             }

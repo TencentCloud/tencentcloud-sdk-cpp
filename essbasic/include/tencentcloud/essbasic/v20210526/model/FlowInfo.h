@@ -228,14 +228,14 @@ namespace TencentCloud
                     bool CustomerDataHasBeenSet() const;
 
                     /**
-                     * 获取被抄送人的信息列表
-                     * @return CcInfos 被抄送人的信息列表
+                     * 获取被抄送人的信息列表，抄送功能暂不开放
+                     * @return CcInfos 被抄送人的信息列表，抄送功能暂不开放
                      */
                     std::vector<CcInfo> GetCcInfos() const;
 
                     /**
-                     * 设置被抄送人的信息列表
-                     * @param CcInfos 被抄送人的信息列表
+                     * 设置被抄送人的信息列表，抄送功能暂不开放
+                     * @param CcInfos 被抄送人的信息列表，抄送功能暂不开放
                      */
                     void SetCcInfos(const std::vector<CcInfo>& _ccInfos);
 
@@ -306,7 +306,7 @@ namespace TencentCloud
                     bool m_customerDataHasBeenSet;
 
                     /**
-                     * 被抄送人的信息列表
+                     * 被抄送人的信息列表，抄送功能暂不开放
                      */
                     std::vector<CcInfo> m_ccInfos;
                     bool m_ccInfosHasBeenSet;

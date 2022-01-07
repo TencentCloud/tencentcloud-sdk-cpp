@@ -24,6 +24,7 @@ using namespace std;
 
 DescribeChannelStreamURLRequest::DescribeChannelStreamURLRequest() :
     m_deviceIdHasBeenSet(false),
+    m_expireTimeHasBeenSet(false),
     m_channelIdHasBeenSet(false)
 {
 }
@@ -41,6 +42,14 @@ string DescribeChannelStreamURLRequest::ToJsonString() const
         string key = "DeviceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_deviceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_expireTime, allocator);
     }
 
     if (m_channelIdHasBeenSet)
@@ -73,6 +82,22 @@ void DescribeChannelStreamURLRequest::SetDeviceId(const string& _deviceId)
 bool DescribeChannelStreamURLRequest::DeviceIdHasBeenSet() const
 {
     return m_deviceIdHasBeenSet;
+}
+
+uint64_t DescribeChannelStreamURLRequest::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+void DescribeChannelStreamURLRequest::SetExpireTime(const uint64_t& _expireTime)
+{
+    m_expireTime = _expireTime;
+    m_expireTimeHasBeenSet = true;
+}
+
+bool DescribeChannelStreamURLRequest::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
 }
 
 string DescribeChannelStreamURLRequest::GetChannelId() const

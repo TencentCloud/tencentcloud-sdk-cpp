@@ -33,7 +33,9 @@ HostInfo::HostInfo() :
     m_isContainerdHasBeenSet(false),
     m_machineTypeHasBeenSet(false),
     m_publicIpHasBeenSet(false),
-    m_uuidHasBeenSet(false)
+    m_uuidHasBeenSet(false),
+    m_instanceIDHasBeenSet(false),
+    m_regionIDHasBeenSet(false)
 {
 }
 
@@ -172,6 +174,26 @@ CoreInternalOutcome HostInfo::Deserialize(const rapidjson::Value &value)
         m_uuidHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceID") && !value["InstanceID"].IsNull())
+    {
+        if (!value["InstanceID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostInfo.InstanceID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceID = string(value["InstanceID"].GetString());
+        m_instanceIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("RegionID") && !value["RegionID"].IsNull())
+    {
+        if (!value["RegionID"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostInfo.RegionID` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionID = value["RegionID"].GetInt64();
+        m_regionIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +303,22 @@ void HostInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Uuid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_uuid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_regionID, allocator);
     }
 
 }
@@ -492,5 +530,37 @@ void HostInfo::SetUuid(const string& _uuid)
 bool HostInfo::UuidHasBeenSet() const
 {
     return m_uuidHasBeenSet;
+}
+
+string HostInfo::GetInstanceID() const
+{
+    return m_instanceID;
+}
+
+void HostInfo::SetInstanceID(const string& _instanceID)
+{
+    m_instanceID = _instanceID;
+    m_instanceIDHasBeenSet = true;
+}
+
+bool HostInfo::InstanceIDHasBeenSet() const
+{
+    return m_instanceIDHasBeenSet;
+}
+
+int64_t HostInfo::GetRegionID() const
+{
+    return m_regionID;
+}
+
+void HostInfo::SetRegionID(const int64_t& _regionID)
+{
+    m_regionID = _regionID;
+    m_regionIDHasBeenSet = true;
+}
+
+bool HostInfo::RegionIDHasBeenSet() const
+{
+    return m_regionIDHasBeenSet;
 }
 

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取设备唯一标识
-                     * @return DeviceId 设备唯一标识
+                     * 获取设备唯一标识，必填参数
+                     * @return DeviceId 设备唯一标识，必填参数
                      */
                     std::string GetDeviceId() const;
 
                     /**
-                     * 设置设备唯一标识
-                     * @param DeviceId 设备唯一标识
+                     * 设置设备唯一标识，必填参数
+                     * @param DeviceId 设备唯一标识，必填参数
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
@@ -61,14 +61,32 @@ namespace TencentCloud
                     bool DeviceIdHasBeenSet() const;
 
                     /**
-                     * 获取通道唯一标识（接口升级字段为必填）
-                     * @return ChannelId 通道唯一标识（接口升级字段为必填）
+                     * 获取流地址失效时间，固定值填写0，其他参数无效，必填参数
+                     * @return ExpireTime 流地址失效时间，固定值填写0，其他参数无效，必填参数
+                     */
+                    uint64_t GetExpireTime() const;
+
+                    /**
+                     * 设置流地址失效时间，固定值填写0，其他参数无效，必填参数
+                     * @param ExpireTime 流地址失效时间，固定值填写0，其他参数无效，必填参数
+                     */
+                    void SetExpireTime(const uint64_t& _expireTime);
+
+                    /**
+                     * 判断参数 ExpireTime 是否已赋值
+                     * @return ExpireTime 是否已赋值
+                     */
+                    bool ExpireTimeHasBeenSet() const;
+
+                    /**
+                     * 获取通道唯一标识（接口升级字段为必填），必填参数
+                     * @return ChannelId 通道唯一标识（接口升级字段为必填），必填参数
                      */
                     std::string GetChannelId() const;
 
                     /**
-                     * 设置通道唯一标识（接口升级字段为必填）
-                     * @param ChannelId 通道唯一标识（接口升级字段为必填）
+                     * 设置通道唯一标识（接口升级字段为必填），必填参数
+                     * @param ChannelId 通道唯一标识（接口升级字段为必填），必填参数
                      */
                     void SetChannelId(const std::string& _channelId);
 
@@ -81,13 +99,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 设备唯一标识
+                     * 设备唯一标识，必填参数
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;
 
                     /**
-                     * 通道唯一标识（接口升级字段为必填）
+                     * 流地址失效时间，固定值填写0，其他参数无效，必填参数
+                     */
+                    uint64_t m_expireTime;
+                    bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * 通道唯一标识（接口升级字段为必填），必填参数
                      */
                     std::string m_channelId;
                     bool m_channelIdHasBeenSet;

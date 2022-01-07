@@ -115,6 +115,8 @@
 #include <tencentcloud/cam/v20190116/model/ListAttachedGroupPoliciesResponse.h>
 #include <tencentcloud/cam/v20190116/model/ListAttachedRolePoliciesRequest.h>
 #include <tencentcloud/cam/v20190116/model/ListAttachedRolePoliciesResponse.h>
+#include <tencentcloud/cam/v20190116/model/ListAttachedUserAllPoliciesRequest.h>
+#include <tencentcloud/cam/v20190116/model/ListAttachedUserAllPoliciesResponse.h>
 #include <tencentcloud/cam/v20190116/model/ListAttachedUserPoliciesRequest.h>
 #include <tencentcloud/cam/v20190116/model/ListAttachedUserPoliciesResponse.h>
 #include <tencentcloud/cam/v20190116/model/ListCollaboratorsRequest.h>
@@ -317,6 +319,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListAttachedRolePoliciesResponse> ListAttachedRolePoliciesOutcome;
                 typedef std::future<ListAttachedRolePoliciesOutcome> ListAttachedRolePoliciesOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::ListAttachedRolePoliciesRequest&, ListAttachedRolePoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAttachedRolePoliciesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListAttachedUserAllPoliciesResponse> ListAttachedUserAllPoliciesOutcome;
+                typedef std::future<ListAttachedUserAllPoliciesOutcome> ListAttachedUserAllPoliciesOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::ListAttachedUserAllPoliciesRequest&, ListAttachedUserAllPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAttachedUserAllPoliciesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListAttachedUserPoliciesResponse> ListAttachedUserPoliciesOutcome;
                 typedef std::future<ListAttachedUserPoliciesOutcome> ListAttachedUserPoliciesOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::ListAttachedUserPoliciesRequest&, ListAttachedUserPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAttachedUserPoliciesAsyncHandler;
@@ -808,6 +813,15 @@ namespace TencentCloud
                 ListAttachedRolePoliciesOutcome ListAttachedRolePolicies(const Model::ListAttachedRolePoliciesRequest &request);
                 void ListAttachedRolePoliciesAsync(const Model::ListAttachedRolePoliciesRequest& request, const ListAttachedRolePoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListAttachedRolePoliciesOutcomeCallable ListAttachedRolePoliciesCallable(const Model::ListAttachedRolePoliciesRequest& request);
+
+                /**
+                 *列出用户关联的策略（包括随组关联）
+                 * @param req ListAttachedUserAllPoliciesRequest
+                 * @return ListAttachedUserAllPoliciesOutcome
+                 */
+                ListAttachedUserAllPoliciesOutcome ListAttachedUserAllPolicies(const Model::ListAttachedUserAllPoliciesRequest &request);
+                void ListAttachedUserAllPoliciesAsync(const Model::ListAttachedUserAllPoliciesRequest& request, const ListAttachedUserAllPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListAttachedUserAllPoliciesOutcomeCallable ListAttachedUserAllPoliciesCallable(const Model::ListAttachedUserAllPoliciesRequest& request);
 
                 /**
                  *本接口（ListAttachedUserPolicies）可用于查询子账号关联的策略列表。

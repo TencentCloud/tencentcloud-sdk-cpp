@@ -45,7 +45,9 @@ DescribeAssetHostDetailResponse::DescribeAssetHostDetailResponse() :
     m_statusHasBeenSet(false),
     m_isContainerdHasBeenSet(false),
     m_machineTypeHasBeenSet(false),
-    m_publicIpHasBeenSet(false)
+    m_publicIpHasBeenSet(false),
+    m_instanceIDHasBeenSet(false),
+    m_regionIDHasBeenSet(false)
 {
 }
 
@@ -303,6 +305,26 @@ CoreInternalOutcome DescribeAssetHostDetailResponse::Deserialize(const string &p
         m_publicIpHasBeenSet = true;
     }
 
+    if (rsp.HasMember("InstanceID") && !rsp["InstanceID"].IsNull())
+    {
+        if (!rsp["InstanceID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceID = string(rsp["InstanceID"].GetString());
+        m_instanceIDHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RegionID") && !rsp["RegionID"].IsNull())
+    {
+        if (!rsp["RegionID"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegionID` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionID = rsp["RegionID"].GetInt64();
+        m_regionIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -487,6 +509,22 @@ string DescribeAssetHostDetailResponse::ToJsonString() const
         string key = "PublicIp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_publicIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_regionID, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -719,6 +757,26 @@ string DescribeAssetHostDetailResponse::GetPublicIp() const
 bool DescribeAssetHostDetailResponse::PublicIpHasBeenSet() const
 {
     return m_publicIpHasBeenSet;
+}
+
+string DescribeAssetHostDetailResponse::GetInstanceID() const
+{
+    return m_instanceID;
+}
+
+bool DescribeAssetHostDetailResponse::InstanceIDHasBeenSet() const
+{
+    return m_instanceIDHasBeenSet;
+}
+
+int64_t DescribeAssetHostDetailResponse::GetRegionID() const
+{
+    return m_regionID;
+}
+
+bool DescribeAssetHostDetailResponse::RegionIDHasBeenSet() const
+{
+    return m_regionIDHasBeenSet;
 }
 
 

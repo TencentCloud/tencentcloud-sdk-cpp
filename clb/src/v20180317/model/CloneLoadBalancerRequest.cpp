@@ -38,6 +38,7 @@ CloneLoadBalancerRequest::CloneLoadBalancerRequest() :
     m_snatProHasBeenSet(false),
     m_snatIpsHasBeenSet(false),
     m_clusterIdsHasBeenSet(false),
+    m_slaTypeHasBeenSet(false),
     m_clusterTagHasBeenSet(false),
     m_zonesHasBeenSet(false),
     m_eipAddressIdHasBeenSet(false)
@@ -190,6 +191,14 @@ string CloneLoadBalancerRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_slaTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SlaType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_slaType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clusterTagHasBeenSet)
@@ -467,6 +476,22 @@ void CloneLoadBalancerRequest::SetClusterIds(const vector<string>& _clusterIds)
 bool CloneLoadBalancerRequest::ClusterIdsHasBeenSet() const
 {
     return m_clusterIdsHasBeenSet;
+}
+
+string CloneLoadBalancerRequest::GetSlaType() const
+{
+    return m_slaType;
+}
+
+void CloneLoadBalancerRequest::SetSlaType(const string& _slaType)
+{
+    m_slaType = _slaType;
+    m_slaTypeHasBeenSet = true;
+}
+
+bool CloneLoadBalancerRequest::SlaTypeHasBeenSet() const
+{
+    return m_slaTypeHasBeenSet;
 }
 
 string CloneLoadBalancerRequest::GetClusterTag() const

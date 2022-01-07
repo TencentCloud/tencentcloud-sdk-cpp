@@ -24,7 +24,8 @@ PrometheusAgentOverview::PrometheusAgentOverview() :
     m_clusterTypeHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_clusterNameHasBeenSet(false)
+    m_clusterNameHasBeenSet(false),
+    m_externalLabelsHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,26 @@ CoreInternalOutcome PrometheusAgentOverview::Deserialize(const rapidjson::Value 
         m_clusterNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ExternalLabels") && !value["ExternalLabels"].IsNull())
+    {
+        if (!value["ExternalLabels"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PrometheusAgentOverview.ExternalLabels` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ExternalLabels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Label item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_externalLabels.push_back(item);
+        }
+        m_externalLabelsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +131,21 @@ void PrometheusAgentOverview::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "ClusterName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_externalLabelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalLabels";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_externalLabels.begin(); itr != m_externalLabels.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -177,5 +213,21 @@ void PrometheusAgentOverview::SetClusterName(const string& _clusterName)
 bool PrometheusAgentOverview::ClusterNameHasBeenSet() const
 {
     return m_clusterNameHasBeenSet;
+}
+
+vector<Label> PrometheusAgentOverview::GetExternalLabels() const
+{
+    return m_externalLabels;
+}
+
+void PrometheusAgentOverview::SetExternalLabels(const vector<Label>& _externalLabels)
+{
+    m_externalLabels = _externalLabels;
+    m_externalLabelsHasBeenSet = true;
+}
+
+bool PrometheusAgentOverview::ExternalLabelsHasBeenSet() const
+{
+    return m_externalLabelsHasBeenSet;
 }
 

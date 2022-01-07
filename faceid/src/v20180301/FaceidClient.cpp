@@ -943,6 +943,49 @@ FaceidClient::GetRealNameAuthTokenOutcomeCallable FaceidClient::GetRealNameAuthT
     return task->get_future();
 }
 
+FaceidClient::GetWeChatBillDetailsOutcome FaceidClient::GetWeChatBillDetails(const GetWeChatBillDetailsRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetWeChatBillDetails");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetWeChatBillDetailsResponse rsp = GetWeChatBillDetailsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetWeChatBillDetailsOutcome(rsp);
+        else
+            return GetWeChatBillDetailsOutcome(o.GetError());
+    }
+    else
+    {
+        return GetWeChatBillDetailsOutcome(outcome.GetError());
+    }
+}
+
+void FaceidClient::GetWeChatBillDetailsAsync(const GetWeChatBillDetailsRequest& request, const GetWeChatBillDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetWeChatBillDetails(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FaceidClient::GetWeChatBillDetailsOutcomeCallable FaceidClient::GetWeChatBillDetailsCallable(const GetWeChatBillDetailsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetWeChatBillDetailsOutcome()>>(
+        [this, request]()
+        {
+            return this->GetWeChatBillDetails(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 FaceidClient::IdCardOCRVerificationOutcome FaceidClient::IdCardOCRVerification(const IdCardOCRVerificationRequest &request)
 {
     auto outcome = MakeRequest(request, "IdCardOCRVerification");

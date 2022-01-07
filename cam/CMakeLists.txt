@@ -58,7 +58,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/ListGroupsRequest.h
   include/tencentcloud/cam/v20190116/model/DeletePolicyVersionResponse.h
   include/tencentcloud/cam/v20190116/model/DetachGroupPolicyRequest.h
-  include/tencentcloud/cam/v20190116/model/UpdateAssumeRolePolicyRequest.h
+  include/tencentcloud/cam/v20190116/model/AttachedUserPolicyGroupInfo.h
   include/tencentcloud/cam/v20190116/model/ListGroupsForUserResponse.h
   include/tencentcloud/cam/v20190116/model/ListUsersForGroupRequest.h
   include/tencentcloud/cam/v20190116/model/RemoveUserFromGroupRequest.h
@@ -74,6 +74,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/DescribeSafeAuthFlagResponse.h
   include/tencentcloud/cam/v20190116/model/CreatePolicyVersionRequest.h
   include/tencentcloud/cam/v20190116/model/SecretIdLastUsed.h
+  include/tencentcloud/cam/v20190116/model/ListAttachedUserAllPoliciesResponse.h
   include/tencentcloud/cam/v20190116/model/DeleteGroupRequest.h
   include/tencentcloud/cam/v20190116/model/GetUserResponse.h
   include/tencentcloud/cam/v20190116/model/GetUserPermissionBoundaryResponse.h
@@ -85,6 +86,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/DeletePolicyRequest.h
   include/tencentcloud/cam/v20190116/model/GroupInfo.h
   include/tencentcloud/cam/v20190116/model/AddUserRequest.h
+  include/tencentcloud/cam/v20190116/model/UpdateAssumeRolePolicyRequest.h
   include/tencentcloud/cam/v20190116/model/LoginActionFlag.h
   include/tencentcloud/cam/v20190116/model/DeleteRoleRequest.h
   include/tencentcloud/cam/v20190116/model/ListWeChatWorkSubAccountsRequest.h
@@ -134,6 +136,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/ListGrantServiceAccessActionNode.h
   include/tencentcloud/cam/v20190116/model/DetachGroupPolicyResponse.h
   include/tencentcloud/cam/v20190116/model/CreatePolicyRequest.h
+  include/tencentcloud/cam/v20190116/model/ListAttachedUserAllPoliciesRequest.h
   include/tencentcloud/cam/v20190116/model/DeletePolicyVersionRequest.h
   include/tencentcloud/cam/v20190116/model/CreateUserSAMLConfigRequest.h
   include/tencentcloud/cam/v20190116/model/UpdateGroupRequest.h
@@ -158,6 +161,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/DetachUserPolicyResponse.h
   include/tencentcloud/cam/v20190116/model/GetRoleResponse.h
   include/tencentcloud/cam/v20190116/model/CreateRoleRequest.h
+  include/tencentcloud/cam/v20190116/model/AttachedUserPolicy.h
   include/tencentcloud/cam/v20190116/model/DeleteServiceLinkedRoleResponse.h
   include/tencentcloud/cam/v20190116/model/GetPolicyResponse.h
   include/tencentcloud/cam/v20190116/model/DescribeSafeAuthFlagRequest.h
@@ -228,7 +232,7 @@ set(cam_src
   src/v20190116/model/ListGroupsRequest.cpp
   src/v20190116/model/DeletePolicyVersionResponse.cpp
   src/v20190116/model/DetachGroupPolicyRequest.cpp
-  src/v20190116/model/UpdateAssumeRolePolicyRequest.cpp
+  src/v20190116/model/AttachedUserPolicyGroupInfo.cpp
   src/v20190116/model/ListGroupsForUserResponse.cpp
   src/v20190116/model/ListUsersForGroupRequest.cpp
   src/v20190116/model/RemoveUserFromGroupRequest.cpp
@@ -244,6 +248,7 @@ set(cam_src
   src/v20190116/model/DescribeSafeAuthFlagResponse.cpp
   src/v20190116/model/CreatePolicyVersionRequest.cpp
   src/v20190116/model/SecretIdLastUsed.cpp
+  src/v20190116/model/ListAttachedUserAllPoliciesResponse.cpp
   src/v20190116/model/DeleteGroupRequest.cpp
   src/v20190116/model/GetUserResponse.cpp
   src/v20190116/model/GetUserPermissionBoundaryResponse.cpp
@@ -255,6 +260,7 @@ set(cam_src
   src/v20190116/model/DeletePolicyRequest.cpp
   src/v20190116/model/GroupInfo.cpp
   src/v20190116/model/AddUserRequest.cpp
+  src/v20190116/model/UpdateAssumeRolePolicyRequest.cpp
   src/v20190116/model/LoginActionFlag.cpp
   src/v20190116/model/DeleteRoleRequest.cpp
   src/v20190116/model/ListWeChatWorkSubAccountsRequest.cpp
@@ -304,6 +310,7 @@ set(cam_src
   src/v20190116/model/ListGrantServiceAccessActionNode.cpp
   src/v20190116/model/DetachGroupPolicyResponse.cpp
   src/v20190116/model/CreatePolicyRequest.cpp
+  src/v20190116/model/ListAttachedUserAllPoliciesRequest.cpp
   src/v20190116/model/DeletePolicyVersionRequest.cpp
   src/v20190116/model/CreateUserSAMLConfigRequest.cpp
   src/v20190116/model/UpdateGroupRequest.cpp
@@ -328,6 +335,7 @@ set(cam_src
   src/v20190116/model/DetachUserPolicyResponse.cpp
   src/v20190116/model/GetRoleResponse.cpp
   src/v20190116/model/CreateRoleRequest.cpp
+  src/v20190116/model/AttachedUserPolicy.cpp
   src/v20190116/model/DeleteServiceLinkedRoleResponse.cpp
   src/v20190116/model/GetPolicyResponse.cpp
   src/v20190116/model/DescribeSafeAuthFlagRequest.cpp
