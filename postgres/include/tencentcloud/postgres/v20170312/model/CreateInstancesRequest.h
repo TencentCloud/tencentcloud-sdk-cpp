@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/postgres/v20170312/model/Tag.h>
+#include <tencentcloud/postgres/v20170312/model/DBNode.h>
 
 
 namespace TencentCloud
@@ -457,6 +458,24 @@ namespace TencentCloud
                      */
                     bool DBKernelVersionHasBeenSet() const;
 
+                    /**
+                     * 获取实例节点信息，购买跨可用区实例时填写。
+                     * @return DBNodeSet 实例节点信息，购买跨可用区实例时填写。
+                     */
+                    std::vector<DBNode> GetDBNodeSet() const;
+
+                    /**
+                     * 设置实例节点信息，购买跨可用区实例时填写。
+                     * @param DBNodeSet 实例节点信息，购买跨可用区实例时填写。
+                     */
+                    void SetDBNodeSet(const std::vector<DBNode>& _dBNodeSet);
+
+                    /**
+                     * 判断参数 DBNodeSet 是否已赋值
+                     * @return DBNodeSet 是否已赋值
+                     */
+                    bool DBNodeSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -596,6 +615,12 @@ namespace TencentCloud
                      */
                     std::string m_dBKernelVersion;
                     bool m_dBKernelVersionHasBeenSet;
+
+                    /**
+                     * 实例节点信息，购买跨可用区实例时填写。
+                     */
+                    std::vector<DBNode> m_dBNodeSet;
+                    bool m_dBNodeSetHasBeenSet;
 
                 };
             }

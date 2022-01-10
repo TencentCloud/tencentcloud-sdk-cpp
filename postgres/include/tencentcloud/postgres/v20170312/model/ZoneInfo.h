@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取可用状态，UNAVAILABLE表示不可用，AVAILABLE表示可用
-                     * @return ZoneState 可用状态，UNAVAILABLE表示不可用，AVAILABLE表示可用
+                     * 获取可用状态，UNAVAILABLE表示不可用，AVAILABLE表示可用，SELLOUT表示售罄
+                     * @return ZoneState 可用状态，UNAVAILABLE表示不可用，AVAILABLE表示可用，SELLOUT表示售罄
                      */
                     std::string GetZoneState() const;
 
                     /**
-                     * 设置可用状态，UNAVAILABLE表示不可用，AVAILABLE表示可用
-                     * @param ZoneState 可用状态，UNAVAILABLE表示不可用，AVAILABLE表示可用
+                     * 设置可用状态，UNAVAILABLE表示不可用，AVAILABLE表示可用，SELLOUT表示售罄
+                     * @param ZoneState 可用状态，UNAVAILABLE表示不可用，AVAILABLE表示可用，SELLOUT表示售罄
                      */
                     void SetZoneState(const std::string& _zoneState);
 
@@ -136,6 +136,28 @@ namespace TencentCloud
                      */
                     bool ZoneSupportIpv6HasBeenSet() const;
 
+                    /**
+                     * 获取该可用区对应的备可用区集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StandbyZoneSet 该可用区对应的备可用区集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetStandbyZoneSet() const;
+
+                    /**
+                     * 设置该可用区对应的备可用区集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StandbyZoneSet 该可用区对应的备可用区集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStandbyZoneSet(const std::vector<std::string>& _standbyZoneSet);
+
+                    /**
+                     * 判断参数 StandbyZoneSet 是否已赋值
+                     * @return StandbyZoneSet 是否已赋值
+                     */
+                    bool StandbyZoneSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -157,7 +179,7 @@ namespace TencentCloud
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 可用状态，UNAVAILABLE表示不可用，AVAILABLE表示可用
+                     * 可用状态，UNAVAILABLE表示不可用，AVAILABLE表示可用，SELLOUT表示售罄
                      */
                     std::string m_zoneState;
                     bool m_zoneStateHasBeenSet;
@@ -167,6 +189,13 @@ namespace TencentCloud
                      */
                     uint64_t m_zoneSupportIpv6;
                     bool m_zoneSupportIpv6HasBeenSet;
+
+                    /**
+                     * 该可用区对应的备可用区集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_standbyZoneSet;
+                    bool m_standbyZoneSetHasBeenSet;
 
                 };
             }

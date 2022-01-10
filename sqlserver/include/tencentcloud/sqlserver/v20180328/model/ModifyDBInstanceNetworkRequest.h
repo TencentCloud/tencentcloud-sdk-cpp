@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool OldIpRetainTimeHasBeenSet() const;
 
+                    /**
+                     * 获取指定VIP地址
+                     * @return Vip 指定VIP地址
+                     */
+                    std::string GetVip() const;
+
+                    /**
+                     * 设置指定VIP地址
+                     * @param Vip 指定VIP地址
+                     */
+                    void SetVip(const std::string& _vip);
+
+                    /**
+                     * 判断参数 Vip 是否已赋值
+                     * @return Vip 是否已赋值
+                     */
+                    bool VipHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     int64_t m_oldIpRetainTime;
                     bool m_oldIpRetainTimeHasBeenSet;
+
+                    /**
+                     * 指定VIP地址
+                     */
+                    std::string m_vip;
+                    bool m_vipHasBeenSet;
 
                 };
             }

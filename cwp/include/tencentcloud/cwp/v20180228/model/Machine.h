@@ -89,10 +89,12 @@ namespace TencentCloud
 <li>OFFLINE: 离线  </li>
 <li>ONLINE: 在线</li>
 <li>SHUTDOWN: 已关机</li>
+<li>UNINSTALLED: 未防护</li>
                      * @return MachineStatus 主机状态。
 <li>OFFLINE: 离线  </li>
 <li>ONLINE: 在线</li>
 <li>SHUTDOWN: 已关机</li>
+<li>UNINSTALLED: 未防护</li>
                      */
                     std::string GetMachineStatus() const;
 
@@ -101,10 +103,12 @@ namespace TencentCloud
 <li>OFFLINE: 离线  </li>
 <li>ONLINE: 在线</li>
 <li>SHUTDOWN: 已关机</li>
+<li>UNINSTALLED: 未防护</li>
                      * @param MachineStatus 主机状态。
 <li>OFFLINE: 离线  </li>
 <li>ONLINE: 在线</li>
 <li>SHUTDOWN: 已关机</li>
+<li>UNINSTALLED: 未防护</li>
                      */
                     void SetMachineStatus(const std::string& _machineStatus);
 
@@ -502,6 +506,24 @@ namespace TencentCloud
                      */
                     bool KernelVersionHasBeenSet() const;
 
+                    /**
+                     * 获取防护版本 BASIC_VERSION 基础版, PRO_VERSION 专业版 Flagship 旗舰版.
+                     * @return ProtectType 防护版本 BASIC_VERSION 基础版, PRO_VERSION 专业版 Flagship 旗舰版.
+                     */
+                    std::string GetProtectType() const;
+
+                    /**
+                     * 设置防护版本 BASIC_VERSION 基础版, PRO_VERSION 专业版 Flagship 旗舰版.
+                     * @param ProtectType 防护版本 BASIC_VERSION 基础版, PRO_VERSION 专业版 Flagship 旗舰版.
+                     */
+                    void SetProtectType(const std::string& _protectType);
+
+                    /**
+                     * 判断参数 ProtectType 是否已赋值
+                     * @return ProtectType 是否已赋值
+                     */
+                    bool ProtectTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -521,6 +543,7 @@ namespace TencentCloud
 <li>OFFLINE: 离线  </li>
 <li>ONLINE: 在线</li>
 <li>SHUTDOWN: 已关机</li>
+<li>UNINSTALLED: 未防护</li>
                      */
                     std::string m_machineStatus;
                     bool m_machineStatusHasBeenSet;
@@ -651,6 +674,12 @@ namespace TencentCloud
                      */
                     std::string m_kernelVersion;
                     bool m_kernelVersionHasBeenSet;
+
+                    /**
+                     * 防护版本 BASIC_VERSION 基础版, PRO_VERSION 专业版 Flagship 旗舰版.
+                     */
+                    std::string m_protectType;
+                    bool m_protectTypeHasBeenSet;
 
                 };
             }

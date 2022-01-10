@@ -293,6 +293,18 @@ namespace TencentCloud
                      */
                     bool HasAssetScanHasBeenSet() const;
 
+                    /**
+                     * 获取防护版本 BASIC_VERSION 基础版, PRO_VERSION 专业版 Flagship 旗舰版.
+                     * @return ProtectType 防护版本 BASIC_VERSION 基础版, PRO_VERSION 专业版 Flagship 旗舰版.
+                     */
+                    std::string GetProtectType() const;
+
+                    /**
+                     * 判断参数 ProtectType 是否已赋值
+                     * @return ProtectType 是否已赋值
+                     */
+                    bool ProtectTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -419,6 +431,12 @@ namespace TencentCloud
                      */
                     uint64_t m_hasAssetScan;
                     bool m_hasAssetScanHasBeenSet;
+
+                    /**
+                     * 防护版本 BASIC_VERSION 基础版, PRO_VERSION 专业版 Flagship 旗舰版.
+                     */
+                    std::string m_protectType;
+                    bool m_protectTypeHasBeenSet;
 
                 };
             }

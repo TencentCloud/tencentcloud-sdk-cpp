@@ -25,7 +25,8 @@ using namespace std;
 DescribeImportMachineInfoRequest::DescribeImportMachineInfoRequest() :
     m_machineListHasBeenSet(false),
     m_importTypeHasBeenSet(false),
-    m_isQueryProMachineHasBeenSet(false)
+    m_isQueryProMachineHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,21 @@ string DescribeImportMachineInfoRequest::ToJsonString() const
         string key = "IsQueryProMachine";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isQueryProMachine, allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -119,6 +135,22 @@ void DescribeImportMachineInfoRequest::SetIsQueryProMachine(const bool& _isQuery
 bool DescribeImportMachineInfoRequest::IsQueryProMachineHasBeenSet() const
 {
     return m_isQueryProMachineHasBeenSet;
+}
+
+vector<Filters> DescribeImportMachineInfoRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeImportMachineInfoRequest::SetFilters(const vector<Filters>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeImportMachineInfoRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

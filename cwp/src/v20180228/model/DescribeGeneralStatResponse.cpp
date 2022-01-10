@@ -34,7 +34,9 @@ DescribeGeneralStatResponse::DescribeGeneralStatResponse() :
     m_agentsProExpireWithInSevenDaysHasBeenSet(false),
     m_riskMachineHasBeenSet(false),
     m_shutdownHasBeenSet(false),
-    m_offlineHasBeenSet(false)
+    m_offlineHasBeenSet(false),
+    m_flagshipMachineCntHasBeenSet(false),
+    m_protectDaysHasBeenSet(false)
 {
 }
 
@@ -182,6 +184,26 @@ CoreInternalOutcome DescribeGeneralStatResponse::Deserialize(const string &paylo
         m_offlineHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FlagshipMachineCnt") && !rsp["FlagshipMachineCnt"].IsNull())
+    {
+        if (!rsp["FlagshipMachineCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlagshipMachineCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_flagshipMachineCnt = rsp["FlagshipMachineCnt"].GetUint64();
+        m_flagshipMachineCntHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ProtectDays") && !rsp["ProtectDays"].IsNull())
+    {
+        if (!rsp["ProtectDays"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProtectDays` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_protectDays = rsp["ProtectDays"].GetUint64();
+        m_protectDaysHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -278,6 +300,22 @@ string DescribeGeneralStatResponse::ToJsonString() const
         string key = "Offline";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_offline, allocator);
+    }
+
+    if (m_flagshipMachineCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlagshipMachineCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_flagshipMachineCnt, allocator);
+    }
+
+    if (m_protectDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtectDays";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_protectDays, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -400,6 +438,26 @@ uint64_t DescribeGeneralStatResponse::GetOffline() const
 bool DescribeGeneralStatResponse::OfflineHasBeenSet() const
 {
     return m_offlineHasBeenSet;
+}
+
+uint64_t DescribeGeneralStatResponse::GetFlagshipMachineCnt() const
+{
+    return m_flagshipMachineCnt;
+}
+
+bool DescribeGeneralStatResponse::FlagshipMachineCntHasBeenSet() const
+{
+    return m_flagshipMachineCntHasBeenSet;
+}
+
+uint64_t DescribeGeneralStatResponse::GetProtectDays() const
+{
+    return m_protectDays;
+}
+
+bool DescribeGeneralStatResponse::ProtectDaysHasBeenSet() const
+{
+    return m_protectDaysHasBeenSet;
 }
 
 

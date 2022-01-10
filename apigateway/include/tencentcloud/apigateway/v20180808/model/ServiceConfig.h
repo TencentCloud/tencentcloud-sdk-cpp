@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/apigateway/v20180808/model/CosConfig.h>
 
 
 namespace TencentCloud
@@ -136,6 +137,28 @@ namespace TencentCloud
                      */
                     bool MethodHasBeenSet() const;
 
+                    /**
+                     * 获取API后端COS配置。如果 ServiceType 是 COS，则此参数必传。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CosConfig API后端COS配置。如果 ServiceType 是 COS，则此参数必传。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CosConfig GetCosConfig() const;
+
+                    /**
+                     * 设置API后端COS配置。如果 ServiceType 是 COS，则此参数必传。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CosConfig API后端COS配置。如果 ServiceType 是 COS，则此参数必传。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCosConfig(const CosConfig& _cosConfig);
+
+                    /**
+                     * 判断参数 CosConfig 是否已赋值
+                     * @return CosConfig 是否已赋值
+                     */
+                    bool CosConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +190,13 @@ namespace TencentCloud
                      */
                     std::string m_method;
                     bool m_methodHasBeenSet;
+
+                    /**
+                     * API后端COS配置。如果 ServiceType 是 COS，则此参数必传。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CosConfig m_cosConfig;
+                    bool m_cosConfigHasBeenSet;
 
                 };
             }

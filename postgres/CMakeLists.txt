@@ -110,6 +110,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/OpenDBExtranetAccessRequest.h
   include/tencentcloud/postgres/v20170312/model/SlowlogDetail.h
   include/tencentcloud/postgres/v20170312/model/RemoveDBInstanceFromReadOnlyGroupRequest.h
+  include/tencentcloud/postgres/v20170312/model/DBNode.h
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceNameResponse.h
   include/tencentcloud/postgres/v20170312/model/CloseDBExtranetAccessResponse.h
   include/tencentcloud/postgres/v20170312/model/CreateReadOnlyDBInstanceRequest.h
@@ -246,6 +247,7 @@ set(postgres_src
   src/v20170312/model/OpenDBExtranetAccessRequest.cpp
   src/v20170312/model/SlowlogDetail.cpp
   src/v20170312/model/RemoveDBInstanceFromReadOnlyGroupRequest.cpp
+  src/v20170312/model/DBNode.cpp
   src/v20170312/model/ModifyDBInstanceNameResponse.cpp
   src/v20170312/model/CloseDBExtranetAccessResponse.cpp
   src/v20170312/model/CreateReadOnlyDBInstanceRequest.cpp

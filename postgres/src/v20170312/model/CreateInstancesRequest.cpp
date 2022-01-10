@@ -45,7 +45,8 @@ CreateInstancesRequest::CreateInstancesRequest() :
     m_tagListHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
     m_dBMajorVersionHasBeenSet(false),
-    m_dBKernelVersionHasBeenSet(false)
+    m_dBKernelVersionHasBeenSet(false),
+    m_dBNodeSetHasBeenSet(false)
 {
 }
 
@@ -255,6 +256,21 @@ string CreateInstancesRequest::ToJsonString() const
         string key = "DBKernelVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dBKernelVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dBNodeSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DBNodeSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dBNodeSet.begin(); itr != m_dBNodeSet.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -631,6 +647,22 @@ void CreateInstancesRequest::SetDBKernelVersion(const string& _dBKernelVersion)
 bool CreateInstancesRequest::DBKernelVersionHasBeenSet() const
 {
     return m_dBKernelVersionHasBeenSet;
+}
+
+vector<DBNode> CreateInstancesRequest::GetDBNodeSet() const
+{
+    return m_dBNodeSet;
+}
+
+void CreateInstancesRequest::SetDBNodeSet(const vector<DBNode>& _dBNodeSet)
+{
+    m_dBNodeSet = _dBNodeSet;
+    m_dBNodeSetHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::DBNodeSetHasBeenSet() const
+{
+    return m_dBNodeSetHasBeenSet;
 }
 
 

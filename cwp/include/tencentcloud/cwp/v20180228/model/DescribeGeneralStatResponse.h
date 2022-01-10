@@ -175,6 +175,34 @@ namespace TencentCloud
                      */
                     bool OfflineHasBeenSet() const;
 
+                    /**
+                     * 获取旗舰版主机数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FlagshipMachineCnt 旗舰版主机数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetFlagshipMachineCnt() const;
+
+                    /**
+                     * 判断参数 FlagshipMachineCnt 是否已赋值
+                     * @return FlagshipMachineCnt 是否已赋值
+                     */
+                    bool FlagshipMachineCntHasBeenSet() const;
+
+                    /**
+                     * 获取保护天数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProtectDays 保护天数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetProtectDays() const;
+
+                    /**
+                     * 判断参数 ProtectDays 是否已赋值
+                     * @return ProtectDays 是否已赋值
+                     */
+                    bool ProtectDaysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -242,6 +270,20 @@ namespace TencentCloud
                      */
                     uint64_t m_offline;
                     bool m_offlineHasBeenSet;
+
+                    /**
+                     * 旗舰版主机数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_flagshipMachineCnt;
+                    bool m_flagshipMachineCntHasBeenSet;
+
+                    /**
+                     * 保护天数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_protectDays;
+                    bool m_protectDaysHasBeenSet;
 
                 };
             }

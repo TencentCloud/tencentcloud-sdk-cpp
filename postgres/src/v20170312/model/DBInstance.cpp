@@ -55,7 +55,8 @@ DBInstance::DBInstance() :
     m_offlineTimeHasBeenSet(false),
     m_dBKernelVersionHasBeenSet(false),
     m_networkAccessListHasBeenSet(false),
-    m_dBMajorVersionHasBeenSet(false)
+    m_dBMajorVersionHasBeenSet(false),
+    m_dBNodeSetHasBeenSet(false)
 {
 }
 
@@ -444,6 +445,26 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
         m_dBMajorVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("DBNodeSet") && !value["DBNodeSet"].IsNull())
+    {
+        if (!value["DBNodeSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DBInstance.DBNodeSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DBNodeSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DBNode item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_dBNodeSet.push_back(item);
+        }
+        m_dBNodeSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -750,6 +771,21 @@ void DBInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "DBMajorVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dBMajorVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dBNodeSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DBNodeSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dBNodeSet.begin(); itr != m_dBNodeSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1313,5 +1349,21 @@ void DBInstance::SetDBMajorVersion(const string& _dBMajorVersion)
 bool DBInstance::DBMajorVersionHasBeenSet() const
 {
     return m_dBMajorVersionHasBeenSet;
+}
+
+vector<DBNode> DBInstance::GetDBNodeSet() const
+{
+    return m_dBNodeSet;
+}
+
+void DBInstance::SetDBNodeSet(const vector<DBNode>& _dBNodeSet)
+{
+    m_dBNodeSet = _dBNodeSet;
+    m_dBNodeSetHasBeenSet = true;
+}
+
+bool DBInstance::DBNodeSetHasBeenSet() const
+{
+    return m_dBNodeSetHasBeenSet;
 }
 

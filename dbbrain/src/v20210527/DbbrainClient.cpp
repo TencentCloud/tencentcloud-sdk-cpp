@@ -169,6 +169,49 @@ DbbrainClient::CreateDBDiagReportUrlOutcomeCallable DbbrainClient::CreateDBDiagR
     return task->get_future();
 }
 
+DbbrainClient::CreateKillTaskOutcome DbbrainClient::CreateKillTask(const CreateKillTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateKillTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateKillTaskResponse rsp = CreateKillTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateKillTaskOutcome(rsp);
+        else
+            return CreateKillTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateKillTaskOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::CreateKillTaskAsync(const CreateKillTaskRequest& request, const CreateKillTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateKillTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::CreateKillTaskOutcomeCallable DbbrainClient::CreateKillTaskCallable(const CreateKillTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateKillTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateKillTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::CreateMailProfileOutcome DbbrainClient::CreateMailProfile(const CreateMailProfileRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateMailProfile");
@@ -205,6 +248,49 @@ DbbrainClient::CreateMailProfileOutcomeCallable DbbrainClient::CreateMailProfile
         [this, request]()
         {
             return this->CreateMailProfile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::CreateProxySessionKillTaskOutcome DbbrainClient::CreateProxySessionKillTask(const CreateProxySessionKillTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateProxySessionKillTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateProxySessionKillTaskResponse rsp = CreateProxySessionKillTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateProxySessionKillTaskOutcome(rsp);
+        else
+            return CreateProxySessionKillTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateProxySessionKillTaskOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::CreateProxySessionKillTaskAsync(const CreateProxySessionKillTaskRequest& request, const CreateProxySessionKillTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateProxySessionKillTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::CreateProxySessionKillTaskOutcomeCallable DbbrainClient::CreateProxySessionKillTaskCallable(const CreateProxySessionKillTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateProxySessionKillTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateProxySessionKillTask(request);
         }
     );
 

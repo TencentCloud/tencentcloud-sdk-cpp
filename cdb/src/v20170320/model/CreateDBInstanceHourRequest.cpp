@@ -55,6 +55,7 @@ CreateDBInstanceHourRequest::CreateDBInstanceHourRequest() :
     m_cpuHasBeenSet(false),
     m_autoSyncFlagHasBeenSet(false),
     m_cageIdHasBeenSet(false),
+    m_paramTemplateTypeHasBeenSet(false),
     m_alarmPolicyIdListHasBeenSet(false),
     m_dryRunHasBeenSet(false)
 {
@@ -346,6 +347,14 @@ string CreateDBInstanceHourRequest::ToJsonString() const
         string key = "CageId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_paramTemplateTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParamTemplateType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_paramTemplateType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_alarmPolicyIdListHasBeenSet)
@@ -887,6 +896,22 @@ void CreateDBInstanceHourRequest::SetCageId(const string& _cageId)
 bool CreateDBInstanceHourRequest::CageIdHasBeenSet() const
 {
     return m_cageIdHasBeenSet;
+}
+
+string CreateDBInstanceHourRequest::GetParamTemplateType() const
+{
+    return m_paramTemplateType;
+}
+
+void CreateDBInstanceHourRequest::SetParamTemplateType(const string& _paramTemplateType)
+{
+    m_paramTemplateType = _paramTemplateType;
+    m_paramTemplateTypeHasBeenSet = true;
+}
+
+bool CreateDBInstanceHourRequest::ParamTemplateTypeHasBeenSet() const
+{
+    return m_paramTemplateTypeHasBeenSet;
 }
 
 vector<string> CreateDBInstanceHourRequest::GetAlarmPolicyIdList() const

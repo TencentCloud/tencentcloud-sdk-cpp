@@ -31,7 +31,8 @@ DBBackup::DBBackup() :
     m_statusHasBeenSet(false),
     m_dbListHasBeenSet(false),
     m_internalAddrHasBeenSet(false),
-    m_externalAddrHasBeenSet(false)
+    m_externalAddrHasBeenSet(false),
+    m_setIdHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,16 @@ CoreInternalOutcome DBBackup::Deserialize(const rapidjson::Value &value)
         m_externalAddrHasBeenSet = true;
     }
 
+    if (value.HasMember("SetId") && !value["SetId"].IsNull())
+    {
+        if (!value["SetId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBBackup.SetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_setId = string(value["SetId"].GetString());
+        m_setIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +262,14 @@ void DBBackup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "ExternalAddr";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_externalAddr.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_setIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_setId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -430,5 +449,21 @@ void DBBackup::SetExternalAddr(const string& _externalAddr)
 bool DBBackup::ExternalAddrHasBeenSet() const
 {
     return m_externalAddrHasBeenSet;
+}
+
+string DBBackup::GetSetId() const
+{
+    return m_setId;
+}
+
+void DBBackup::SetSetId(const string& _setId)
+{
+    m_setId = _setId;
+    m_setIdHasBeenSet = true;
+}
+
+bool DBBackup::SetIdHasBeenSet() const
+{
+    return m_setIdHasBeenSet;
 }
 

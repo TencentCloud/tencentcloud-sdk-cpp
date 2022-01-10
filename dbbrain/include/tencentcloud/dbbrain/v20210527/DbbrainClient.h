@@ -29,8 +29,12 @@
 #include <tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportTaskResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportUrlRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportUrlResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/CreateKillTaskRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/CreateKillTaskResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateMailProfileRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateMailProfileResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/CreateProxySessionKillTaskRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/CreateProxySessionKillTaskResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateSchedulerMailProfileRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateSchedulerMailProfileResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateSecurityAuditLogExportTaskRequest.h>
@@ -106,9 +110,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDBDiagReportUrlResponse> CreateDBDiagReportUrlOutcome;
                 typedef std::future<CreateDBDiagReportUrlOutcome> CreateDBDiagReportUrlOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::CreateDBDiagReportUrlRequest&, CreateDBDiagReportUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBDiagReportUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateKillTaskResponse> CreateKillTaskOutcome;
+                typedef std::future<CreateKillTaskOutcome> CreateKillTaskOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::CreateKillTaskRequest&, CreateKillTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateKillTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateMailProfileResponse> CreateMailProfileOutcome;
                 typedef std::future<CreateMailProfileOutcome> CreateMailProfileOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::CreateMailProfileRequest&, CreateMailProfileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMailProfileAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateProxySessionKillTaskResponse> CreateProxySessionKillTaskOutcome;
+                typedef std::future<CreateProxySessionKillTaskOutcome> CreateProxySessionKillTaskOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::CreateProxySessionKillTaskRequest&, CreateProxySessionKillTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProxySessionKillTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSchedulerMailProfileResponse> CreateSchedulerMailProfileOutcome;
                 typedef std::future<CreateSchedulerMailProfileOutcome> CreateSchedulerMailProfileOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::CreateSchedulerMailProfileRequest&, CreateSchedulerMailProfileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSchedulerMailProfileAsyncHandler;
@@ -218,6 +228,15 @@ namespace TencentCloud
                 CreateDBDiagReportUrlOutcomeCallable CreateDBDiagReportUrlCallable(const Model::CreateDBDiagReportUrlRequest& request);
 
                 /**
+                 *创建中断会话的任务。
+                 * @param req CreateKillTaskRequest
+                 * @return CreateKillTaskOutcome
+                 */
+                CreateKillTaskOutcome CreateKillTask(const Model::CreateKillTaskRequest &request);
+                void CreateKillTaskAsync(const Model::CreateKillTaskRequest& request, const CreateKillTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateKillTaskOutcomeCallable CreateKillTaskCallable(const Model::CreateKillTaskRequest& request);
+
+                /**
                  *创建邮件配置。其中入参ProfileType表示所创建配置的类型，ProfileType 取值包括：dbScan_mail_configuration（数据库巡检邮件配置）、scheduler_mail_configuration（定期生成健康报告的邮件发送配置）。Region统一选择广州，和实例所属地域无关。
                  * @param req CreateMailProfileRequest
                  * @return CreateMailProfileOutcome
@@ -225,6 +244,15 @@ namespace TencentCloud
                 CreateMailProfileOutcome CreateMailProfile(const Model::CreateMailProfileRequest &request);
                 void CreateMailProfileAsync(const Model::CreateMailProfileRequest& request, const CreateMailProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateMailProfileOutcomeCallable CreateMailProfileCallable(const Model::CreateMailProfileRequest& request);
+
+                /**
+                 *创建中止所有代理节点连接会话的异步任务。当前仅支持 Redis。得到的返回值为异步任务 id，可以作为参数传入接口 DescribeProxySessionKillTasks 查询kill会话任务执行状态。
+                 * @param req CreateProxySessionKillTaskRequest
+                 * @return CreateProxySessionKillTaskOutcome
+                 */
+                CreateProxySessionKillTaskOutcome CreateProxySessionKillTask(const Model::CreateProxySessionKillTaskRequest &request);
+                void CreateProxySessionKillTaskAsync(const Model::CreateProxySessionKillTaskRequest& request, const CreateProxySessionKillTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateProxySessionKillTaskOutcomeCallable CreateProxySessionKillTaskCallable(const Model::CreateProxySessionKillTaskRequest& request);
 
                 /**
                  *该接口用于创建定期生成健康报告并邮件发送的配置，将健康报告的定期生成时间作为参数传入（周一至周日），用于设置健康报告的定期生成时间，同时保存相应的定期邮件发送的配置。

@@ -42,7 +42,8 @@ DescribeMachineInfoResponse::DescribeMachineInfoResponse() :
     m_freeVulsLeftHasBeenSet(false),
     m_agentVersionHasBeenSet(false),
     m_proVersionDeadlineHasBeenSet(false),
-    m_hasAssetScanHasBeenSet(false)
+    m_hasAssetScanHasBeenSet(false),
+    m_protectTypeHasBeenSet(false)
 {
 }
 
@@ -270,6 +271,16 @@ CoreInternalOutcome DescribeMachineInfoResponse::Deserialize(const string &paylo
         m_hasAssetScanHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ProtectType") && !rsp["ProtectType"].IsNull())
+    {
+        if (!rsp["ProtectType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProtectType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_protectType = string(rsp["ProtectType"].GetString());
+        m_protectTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -430,6 +441,14 @@ string DescribeMachineInfoResponse::ToJsonString() const
         string key = "HasAssetScan";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hasAssetScan, allocator);
+    }
+
+    if (m_protectTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtectType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protectType.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -632,6 +651,16 @@ uint64_t DescribeMachineInfoResponse::GetHasAssetScan() const
 bool DescribeMachineInfoResponse::HasAssetScanHasBeenSet() const
 {
     return m_hasAssetScanHasBeenSet;
+}
+
+string DescribeMachineInfoResponse::GetProtectType() const
+{
+    return m_protectType;
+}
+
+bool DescribeMachineInfoResponse::ProtectTypeHasBeenSet() const
+{
+    return m_protectTypeHasBeenSet;
 }
 
 

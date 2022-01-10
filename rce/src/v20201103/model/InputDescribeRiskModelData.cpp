@@ -23,7 +23,8 @@ using namespace std;
 InputDescribeRiskModelData::InputDescribeRiskModelData() :
     m_userDataHasBeenSet(false),
     m_applyDateHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_isTestHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome InputDescribeRiskModelData::Deserialize(const rapidjson::Val
         m_userIdHasBeenSet = true;
     }
 
+    if (value.HasMember("IsTest") && !value["IsTest"].IsNull())
+    {
+        if (!value["IsTest"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InputDescribeRiskModelData.IsTest` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isTest = value["IsTest"].GetUint64();
+        m_isTestHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void InputDescribeRiskModelData::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isTestHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsTest";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isTest, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void InputDescribeRiskModelData::SetUserId(const string& _userId)
 bool InputDescribeRiskModelData::UserIdHasBeenSet() const
 {
     return m_userIdHasBeenSet;
+}
+
+uint64_t InputDescribeRiskModelData::GetIsTest() const
+{
+    return m_isTest;
+}
+
+void InputDescribeRiskModelData::SetIsTest(const uint64_t& _isTest)
+{
+    m_isTest = _isTest;
+    m_isTestHasBeenSet = true;
+}
+
+bool InputDescribeRiskModelData::IsTestHasBeenSet() const
+{
+    return m_isTestHasBeenSet;
 }
 

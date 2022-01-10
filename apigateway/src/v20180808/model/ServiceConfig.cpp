@@ -25,7 +25,8 @@ ServiceConfig::ServiceConfig() :
     m_uniqVpcIdHasBeenSet(false),
     m_urlHasBeenSet(false),
     m_pathHasBeenSet(false),
-    m_methodHasBeenSet(false)
+    m_methodHasBeenSet(false),
+    m_cosConfigHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,23 @@ CoreInternalOutcome ServiceConfig::Deserialize(const rapidjson::Value &value)
         m_methodHasBeenSet = true;
     }
 
+    if (value.HasMember("CosConfig") && !value["CosConfig"].IsNull())
+    {
+        if (!value["CosConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceConfig.CosConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_cosConfig.Deserialize(value["CosConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_cosConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +147,15 @@ void ServiceConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Method";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_method.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cosConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cosConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -212,5 +239,21 @@ void ServiceConfig::SetMethod(const string& _method)
 bool ServiceConfig::MethodHasBeenSet() const
 {
     return m_methodHasBeenSet;
+}
+
+CosConfig ServiceConfig::GetCosConfig() const
+{
+    return m_cosConfig;
+}
+
+void ServiceConfig::SetCosConfig(const CosConfig& _cosConfig)
+{
+    m_cosConfig = _cosConfig;
+    m_cosConfigHasBeenSet = true;
+}
+
+bool ServiceConfig::CosConfigHasBeenSet() const
+{
+    return m_cosConfigHasBeenSet;
 }
 

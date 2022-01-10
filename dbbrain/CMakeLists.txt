@@ -105,6 +105,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20191016/model/DescribeTopSpaceTablesResponse.h
   include/tencentcloud/dbbrain/v20210527/model/SchemaSpaceTimeSeries.h
   include/tencentcloud/dbbrain/v20210527/model/HealthReportTask.h
+  include/tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportTaskResponse.h
   include/tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportTaskRequest.h
   include/tencentcloud/dbbrain/v20210527/model/TableSpaceTimeSeries.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceTablesRequest.h
@@ -131,10 +132,12 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/MySqlProcess.h
   include/tencentcloud/dbbrain/v20210527/model/CreateMailProfileResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeSlowLogTimeSeriesStatsRequest.h
-  include/tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportUrlResponse.h
-  include/tencentcloud/dbbrain/v20210527/model/DescribeDBDiagHistoryRequest.h
-  include/tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportTaskResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DiagHistoryEventItem.h
+  include/tencentcloud/dbbrain/v20210527/model/DescribeDBDiagHistoryRequest.h
+  include/tencentcloud/dbbrain/v20210527/model/CreateKillTaskResponse.h
+  include/tencentcloud/dbbrain/v20210527/model/DescribeDBDiagEventsRequest.h
+  include/tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportUrlResponse.h
+  include/tencentcloud/dbbrain/v20210527/model/CreateKillTaskRequest.h
   include/tencentcloud/dbbrain/v20210527/model/SlowLogHost.h
   include/tencentcloud/dbbrain/v20210527/model/CreateMailProfileRequest.h
   include/tencentcloud/dbbrain/v20210527/model/MonitorFloatMetricSeriesData.h
@@ -171,16 +174,17 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/IssueTypeInfo.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDiagDBInstancesResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeAllUserGroupRequest.h
+  include/tencentcloud/dbbrain/v20210527/model/CreateProxySessionKillTaskRequest.h
   include/tencentcloud/dbbrain/v20210527/model/CreateSecurityAuditLogExportTaskResponse.h
   include/tencentcloud/dbbrain/v20210527/model/SchemaItem.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeSlowLogUserHostStatsRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceSchemasResponse.h
+  include/tencentcloud/dbbrain/v20210527/model/CreateProxySessionKillTaskResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeSlowLogTimeSeriesStatsResponse.h
   include/tencentcloud/dbbrain/v20210527/model/MonitorFloatMetric.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeAllUserGroupResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeUserSqlAdviceResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBSpaceStatusResponse.h
-  include/tencentcloud/dbbrain/v20210527/model/DescribeDBDiagEventsRequest.h
   include/tencentcloud/dbbrain/v20210527/model/GroupItem.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceTableTimeSeriesRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBDiagReportTasksRequest.h
@@ -283,6 +287,7 @@ set(dbbrain_src
   src/v20191016/model/DescribeTopSpaceTablesResponse.cpp
   src/v20210527/model/SchemaSpaceTimeSeries.cpp
   src/v20210527/model/HealthReportTask.cpp
+  src/v20210527/model/CreateDBDiagReportTaskResponse.cpp
   src/v20210527/model/CreateDBDiagReportTaskRequest.cpp
   src/v20210527/model/TableSpaceTimeSeries.cpp
   src/v20210527/model/DescribeTopSpaceTablesRequest.cpp
@@ -309,10 +314,12 @@ set(dbbrain_src
   src/v20210527/model/MySqlProcess.cpp
   src/v20210527/model/CreateMailProfileResponse.cpp
   src/v20210527/model/DescribeSlowLogTimeSeriesStatsRequest.cpp
-  src/v20210527/model/CreateDBDiagReportUrlResponse.cpp
-  src/v20210527/model/DescribeDBDiagHistoryRequest.cpp
-  src/v20210527/model/CreateDBDiagReportTaskResponse.cpp
   src/v20210527/model/DiagHistoryEventItem.cpp
+  src/v20210527/model/DescribeDBDiagHistoryRequest.cpp
+  src/v20210527/model/CreateKillTaskResponse.cpp
+  src/v20210527/model/DescribeDBDiagEventsRequest.cpp
+  src/v20210527/model/CreateDBDiagReportUrlResponse.cpp
+  src/v20210527/model/CreateKillTaskRequest.cpp
   src/v20210527/model/SlowLogHost.cpp
   src/v20210527/model/CreateMailProfileRequest.cpp
   src/v20210527/model/MonitorFloatMetricSeriesData.cpp
@@ -349,16 +356,17 @@ set(dbbrain_src
   src/v20210527/model/IssueTypeInfo.cpp
   src/v20210527/model/DescribeDiagDBInstancesResponse.cpp
   src/v20210527/model/DescribeAllUserGroupRequest.cpp
+  src/v20210527/model/CreateProxySessionKillTaskRequest.cpp
   src/v20210527/model/CreateSecurityAuditLogExportTaskResponse.cpp
   src/v20210527/model/SchemaItem.cpp
   src/v20210527/model/DescribeSlowLogUserHostStatsRequest.cpp
   src/v20210527/model/DescribeTopSpaceSchemasResponse.cpp
+  src/v20210527/model/CreateProxySessionKillTaskResponse.cpp
   src/v20210527/model/DescribeSlowLogTimeSeriesStatsResponse.cpp
   src/v20210527/model/MonitorFloatMetric.cpp
   src/v20210527/model/DescribeAllUserGroupResponse.cpp
   src/v20210527/model/DescribeUserSqlAdviceResponse.cpp
   src/v20210527/model/DescribeDBSpaceStatusResponse.cpp
-  src/v20210527/model/DescribeDBDiagEventsRequest.cpp
   src/v20210527/model/GroupItem.cpp
   src/v20210527/model/DescribeTopSpaceTableTimeSeriesRequest.cpp
   src/v20210527/model/DescribeDBDiagReportTasksRequest.cpp

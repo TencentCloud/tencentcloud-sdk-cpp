@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cwp/v20180228/model/Filters.h>
 
 
 namespace TencentCloud
@@ -79,14 +80,14 @@ namespace TencentCloud
                     bool ImportTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否仅支持专业版机器的查询（true：仅专业版   false：专业版+基础版）
-                     * @return IsQueryProMachine 是否仅支持专业版机器的查询（true：仅专业版   false：专业版+基础版）
+                     * 获取该参数已作废.
+                     * @return IsQueryProMachine 该参数已作废.
                      */
                     bool GetIsQueryProMachine() const;
 
                     /**
-                     * 设置是否仅支持专业版机器的查询（true：仅专业版   false：专业版+基础版）
-                     * @param IsQueryProMachine 是否仅支持专业版机器的查询（true：仅专业版   false：专业版+基础版）
+                     * 设置该参数已作废.
+                     * @param IsQueryProMachine 该参数已作废.
                      */
                     void SetIsQueryProMachine(const bool& _isQueryProMachine);
 
@@ -95,6 +96,28 @@ namespace TencentCloud
                      * @return IsQueryProMachine 是否已赋值
                      */
                     bool IsQueryProMachineHasBeenSet() const;
+
+                    /**
+                     * 获取过滤条件。
+<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版）</li>
+                     * @return Filters 过滤条件。
+<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版）</li>
+                     */
+                    std::vector<Filters> GetFilters() const;
+
+                    /**
+                     * 设置过滤条件。
+<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版）</li>
+                     * @param Filters 过滤条件。
+<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版）</li>
+                     */
+                    void SetFilters(const std::vector<Filters>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     */
+                    bool FiltersHasBeenSet() const;
 
                 private:
 
@@ -111,10 +134,17 @@ namespace TencentCloud
                     bool m_importTypeHasBeenSet;
 
                     /**
-                     * 是否仅支持专业版机器的查询（true：仅专业版   false：专业版+基础版）
+                     * 该参数已作废.
                      */
                     bool m_isQueryProMachine;
                     bool m_isQueryProMachineHasBeenSet;
+
+                    /**
+                     * 过滤条件。
+<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版）</li>
+                     */
+                    std::vector<Filters> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

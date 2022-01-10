@@ -25,7 +25,8 @@ ZoneInfo::ZoneInfo() :
     m_zoneNameHasBeenSet(false),
     m_zoneIdHasBeenSet(false),
     m_zoneStateHasBeenSet(false),
-    m_zoneSupportIpv6HasBeenSet(false)
+    m_zoneSupportIpv6HasBeenSet(false),
+    m_standbyZoneSetHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,19 @@ CoreInternalOutcome ZoneInfo::Deserialize(const rapidjson::Value &value)
         m_zoneSupportIpv6HasBeenSet = true;
     }
 
+    if (value.HasMember("StandbyZoneSet") && !value["StandbyZoneSet"].IsNull())
+    {
+        if (!value["StandbyZoneSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.StandbyZoneSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["StandbyZoneSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_standbyZoneSet.push_back((*itr).GetString());
+        }
+        m_standbyZoneSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +143,19 @@ void ZoneInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "ZoneSupportIpv6";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_zoneSupportIpv6, allocator);
+    }
+
+    if (m_standbyZoneSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StandbyZoneSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_standbyZoneSet.begin(); itr != m_standbyZoneSet.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -212,5 +239,21 @@ void ZoneInfo::SetZoneSupportIpv6(const uint64_t& _zoneSupportIpv6)
 bool ZoneInfo::ZoneSupportIpv6HasBeenSet() const
 {
     return m_zoneSupportIpv6HasBeenSet;
+}
+
+vector<string> ZoneInfo::GetStandbyZoneSet() const
+{
+    return m_standbyZoneSet;
+}
+
+void ZoneInfo::SetStandbyZoneSet(const vector<string>& _standbyZoneSet)
+{
+    m_standbyZoneSet = _standbyZoneSet;
+    m_standbyZoneSetHasBeenSet = true;
+}
+
+bool ZoneInfo::StandbyZoneSetHasBeenSet() const
+{
+    return m_standbyZoneSetHasBeenSet;
 }
 

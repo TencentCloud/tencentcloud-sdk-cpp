@@ -26,7 +26,8 @@ ModifyDBInstanceNetworkRequest::ModifyDBInstanceNetworkRequest() :
     m_instanceIdHasBeenSet(false),
     m_newVpcIdHasBeenSet(false),
     m_newSubnetIdHasBeenSet(false),
-    m_oldIpRetainTimeHasBeenSet(false)
+    m_oldIpRetainTimeHasBeenSet(false),
+    m_vipHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string ModifyDBInstanceNetworkRequest::ToJsonString() const
         string key = "OldIpRetainTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_oldIpRetainTime, allocator);
+    }
+
+    if (m_vipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Vip";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_vip.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void ModifyDBInstanceNetworkRequest::SetOldIpRetainTime(const int64_t& _oldIpRet
 bool ModifyDBInstanceNetworkRequest::OldIpRetainTimeHasBeenSet() const
 {
     return m_oldIpRetainTimeHasBeenSet;
+}
+
+string ModifyDBInstanceNetworkRequest::GetVip() const
+{
+    return m_vip;
+}
+
+void ModifyDBInstanceNetworkRequest::SetVip(const string& _vip)
+{
+    m_vip = _vip;
+    m_vipHasBeenSet = true;
+}
+
+bool ModifyDBInstanceNetworkRequest::VipHasBeenSet() const
+{
+    return m_vipHasBeenSet;
 }
 
 

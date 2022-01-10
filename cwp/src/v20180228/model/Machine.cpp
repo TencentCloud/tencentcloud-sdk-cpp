@@ -43,7 +43,8 @@ Machine::Machine() :
     m_projectIdHasBeenSet(false),
     m_hasAssetScanHasBeenSet(false),
     m_machineTypeHasBeenSet(false),
-    m_kernelVersionHasBeenSet(false)
+    m_kernelVersionHasBeenSet(false),
+    m_protectTypeHasBeenSet(false)
 {
 }
 
@@ -299,6 +300,16 @@ CoreInternalOutcome Machine::Deserialize(const rapidjson::Value &value)
         m_kernelVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("ProtectType") && !value["ProtectType"].IsNull())
+    {
+        if (!value["ProtectType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Machine.ProtectType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_protectType = string(value["ProtectType"].GetString());
+        m_protectTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -496,6 +507,14 @@ void Machine::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "KernelVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_kernelVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protectTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtectType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protectType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -867,5 +886,21 @@ void Machine::SetKernelVersion(const string& _kernelVersion)
 bool Machine::KernelVersionHasBeenSet() const
 {
     return m_kernelVersionHasBeenSet;
+}
+
+string Machine::GetProtectType() const
+{
+    return m_protectType;
+}
+
+void Machine::SetProtectType(const string& _protectType)
+{
+    m_protectType = _protectType;
+    m_protectTypeHasBeenSet = true;
+}
+
+bool Machine::ProtectTypeHasBeenSet() const
+{
+    return m_protectTypeHasBeenSet;
 }
 

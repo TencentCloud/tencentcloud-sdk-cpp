@@ -27,6 +27,7 @@
 #include <tencentcloud/postgres/v20170312/model/DBInstanceNetInfo.h>
 #include <tencentcloud/postgres/v20170312/model/Tag.h>
 #include <tencentcloud/postgres/v20170312/model/NetworkAccess.h>
+#include <tencentcloud/postgres/v20170312/model/DBNode.h>
 
 
 namespace TencentCloud
@@ -711,6 +712,28 @@ namespace TencentCloud
                      */
                     bool DBMajorVersionHasBeenSet() const;
 
+                    /**
+                     * 获取实例的节点信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DBNodeSet 实例的节点信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DBNode> GetDBNodeSet() const;
+
+                    /**
+                     * 设置实例的节点信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DBNodeSet 实例的节点信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDBNodeSet(const std::vector<DBNode>& _dBNodeSet);
+
+                    /**
+                     * 判断参数 DBNodeSet 是否已赋值
+                     * @return DBNodeSet 是否已赋值
+                     */
+                    bool DBNodeSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -930,6 +953,13 @@ namespace TencentCloud
                      */
                     std::string m_dBMajorVersion;
                     bool m_dBMajorVersionHasBeenSet;
+
+                    /**
+                     * 实例的节点信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DBNode> m_dBNodeSet;
+                    bool m_dBNodeSetHasBeenSet;
 
                 };
             }

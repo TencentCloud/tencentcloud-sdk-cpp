@@ -96,6 +96,7 @@ set(apigateway_public_header_model
   include/tencentcloud/apigateway/v20180808/model/OauthConfig.h
   include/tencentcloud/apigateway/v20180808/model/ModifyApiEnvironmentStrategyRequest.h
   include/tencentcloud/apigateway/v20180808/model/NetworkConfig.h
+  include/tencentcloud/apigateway/v20180808/model/ServiceReleaseHistory.h
   include/tencentcloud/apigateway/v20180808/model/ModifyUsagePlanResponse.h
   include/tencentcloud/apigateway/v20180808/model/CreateUsagePlanResponse.h
   include/tencentcloud/apigateway/v20180808/model/DomainSets.h
@@ -115,8 +116,8 @@ set(apigateway_public_header_model
   include/tencentcloud/apigateway/v20180808/model/CreateServiceRequest.h
   include/tencentcloud/apigateway/v20180808/model/DescribeIPStrategysStatusRequest.h
   include/tencentcloud/apigateway/v20180808/model/DemoteServiceUsagePlanResponse.h
+  include/tencentcloud/apigateway/v20180808/model/DescribePluginApisResponse.h
   include/tencentcloud/apigateway/v20180808/model/EnableApiKeyResponse.h
-  include/tencentcloud/apigateway/v20180808/model/ServiceReleaseHistory.h
   include/tencentcloud/apigateway/v20180808/model/DeleteApiAppRequest.h
   include/tencentcloud/apigateway/v20180808/model/UnReleaseServiceResponse.h
   include/tencentcloud/apigateway/v20180808/model/CreateAPIDocResponse.h
@@ -160,7 +161,7 @@ set(apigateway_public_header_model
   include/tencentcloud/apigateway/v20180808/model/DescribePluginsResponse.h
   include/tencentcloud/apigateway/v20180808/model/ReleaseServiceResponse.h
   include/tencentcloud/apigateway/v20180808/model/APIDocInfo.h
-  include/tencentcloud/apigateway/v20180808/model/DescribePluginApisResponse.h
+  include/tencentcloud/apigateway/v20180808/model/CosConfig.h
   include/tencentcloud/apigateway/v20180808/model/ModifyApiIncrementRequest.h
   include/tencentcloud/apigateway/v20180808/model/GenerateApiDocumentRequest.h
   include/tencentcloud/apigateway/v20180808/model/ServiceUsagePlanSet.h
@@ -358,6 +359,7 @@ set(apigateway_src
   src/v20180808/model/OauthConfig.cpp
   src/v20180808/model/ModifyApiEnvironmentStrategyRequest.cpp
   src/v20180808/model/NetworkConfig.cpp
+  src/v20180808/model/ServiceReleaseHistory.cpp
   src/v20180808/model/ModifyUsagePlanResponse.cpp
   src/v20180808/model/CreateUsagePlanResponse.cpp
   src/v20180808/model/DomainSets.cpp
@@ -377,8 +379,8 @@ set(apigateway_src
   src/v20180808/model/CreateServiceRequest.cpp
   src/v20180808/model/DescribeIPStrategysStatusRequest.cpp
   src/v20180808/model/DemoteServiceUsagePlanResponse.cpp
+  src/v20180808/model/DescribePluginApisResponse.cpp
   src/v20180808/model/EnableApiKeyResponse.cpp
-  src/v20180808/model/ServiceReleaseHistory.cpp
   src/v20180808/model/DeleteApiAppRequest.cpp
   src/v20180808/model/UnReleaseServiceResponse.cpp
   src/v20180808/model/CreateAPIDocResponse.cpp
@@ -422,7 +424,7 @@ set(apigateway_src
   src/v20180808/model/DescribePluginsResponse.cpp
   src/v20180808/model/ReleaseServiceResponse.cpp
   src/v20180808/model/APIDocInfo.cpp
-  src/v20180808/model/DescribePluginApisResponse.cpp
+  src/v20180808/model/CosConfig.cpp
   src/v20180808/model/ModifyApiIncrementRequest.cpp
   src/v20180808/model/GenerateApiDocumentRequest.cpp
   src/v20180808/model/ServiceUsagePlanSet.cpp

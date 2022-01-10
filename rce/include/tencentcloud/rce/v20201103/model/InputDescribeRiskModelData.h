@@ -100,6 +100,24 @@ namespace TencentCloud
                      */
                     bool UserIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否为测试流量
+                     * @return IsTest 是否为测试流量
+                     */
+                    uint64_t GetIsTest() const;
+
+                    /**
+                     * 设置是否为测试流量
+                     * @param IsTest 是否为测试流量
+                     */
+                    void SetIsTest(const uint64_t& _isTest);
+
+                    /**
+                     * 判断参数 IsTest 是否已赋值
+                     * @return IsTest 是否已赋值
+                     */
+                    bool IsTestHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +137,12 @@ namespace TencentCloud
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
+
+                    /**
+                     * 是否为测试流量
+                     */
+                    uint64_t m_isTest;
+                    bool m_isTestHasBeenSet;
 
                 };
             }
