@@ -31,7 +31,8 @@ CreateHTTPSListenerRequest::CreateHTTPSListenerRequest() :
     m_authTypeHasBeenSet(false),
     m_clientCertificateIdHasBeenSet(false),
     m_polyClientCertificateIdsHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
+    m_groupIdHasBeenSet(false),
+    m_http3SupportedHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,14 @@ string CreateHTTPSListenerRequest::ToJsonString() const
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_http3SupportedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Http3Supported";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_http3Supported, allocator);
     }
 
 
@@ -269,6 +278,22 @@ void CreateHTTPSListenerRequest::SetGroupId(const string& _groupId)
 bool CreateHTTPSListenerRequest::GroupIdHasBeenSet() const
 {
     return m_groupIdHasBeenSet;
+}
+
+int64_t CreateHTTPSListenerRequest::GetHttp3Supported() const
+{
+    return m_http3Supported;
+}
+
+void CreateHTTPSListenerRequest::SetHttp3Supported(const int64_t& _http3Supported)
+{
+    m_http3Supported = _http3Supported;
+    m_http3SupportedHasBeenSet = true;
+}
+
+bool CreateHTTPSListenerRequest::Http3SupportedHasBeenSet() const
+{
+    return m_http3SupportedHasBeenSet;
 }
 
 

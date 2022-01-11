@@ -23,6 +23,10 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/iotexplorer/v20190423/model/BindDevicesRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/BindDevicesResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/BindProductsRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/BindProductsResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CallDeviceActionAsyncRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CallDeviceActionAsyncResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CallDeviceActionSyncRequest.h>
@@ -75,8 +79,12 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteTopicRuleResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeBatchProductionRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeBatchProductionResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeBindedProductsRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeBindedProductsResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceBindGatewayRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceBindGatewayResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataHistoryRequest.h>
@@ -89,6 +97,10 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeFenceEventListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareTaskRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareTaskResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeGatewayBindDevicesRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeGatewayBindDevicesResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeGatewaySubProductsRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeGatewaySubProductsResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeLoRaFrequencyRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeLoRaFrequencyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeModelDefinitionRequest.h>
@@ -123,6 +135,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/GetDeviceLocationHistoryResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetFamilyDeviceUserListRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetFamilyDeviceUserListResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetGatewaySubDeviceListRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetGatewaySubDeviceListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetLoRaGatewayListRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetLoRaGatewayListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetPositionSpaceListRequest.h>
@@ -173,6 +187,10 @@
 #include <tencentcloud/iotexplorer/v20190423/model/SearchStudioProductResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchTopicRuleRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchTopicRuleResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/UnbindDevicesRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/UnbindDevicesResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/UnbindProductsRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/UnbindProductsResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UpdateDevicesEnableStateRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UpdateDevicesEnableStateResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UpdateFirmwareRequest.h>
@@ -193,6 +211,12 @@ namespace TencentCloud
                 IotexplorerClient(const Credential &credential, const std::string &region);
                 IotexplorerClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::BindDevicesResponse> BindDevicesOutcome;
+                typedef std::future<BindDevicesOutcome> BindDevicesOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::BindDevicesRequest&, BindDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindDevicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::BindProductsResponse> BindProductsOutcome;
+                typedef std::future<BindProductsOutcome> BindProductsOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::BindProductsRequest&, BindProductsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindProductsAsyncHandler;
                 typedef Outcome<Core::Error, Model::CallDeviceActionAsyncResponse> CallDeviceActionAsyncOutcome;
                 typedef std::future<CallDeviceActionAsyncOutcome> CallDeviceActionAsyncOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CallDeviceActionAsyncRequest&, CallDeviceActionAsyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CallDeviceActionAsyncAsyncHandler;
@@ -271,9 +295,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBatchProductionResponse> DescribeBatchProductionOutcome;
                 typedef std::future<DescribeBatchProductionOutcome> DescribeBatchProductionOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeBatchProductionRequest&, DescribeBatchProductionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchProductionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBindedProductsResponse> DescribeBindedProductsOutcome;
+                typedef std::future<DescribeBindedProductsOutcome> DescribeBindedProductsOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeBindedProductsRequest&, DescribeBindedProductsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBindedProductsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDeviceResponse> DescribeDeviceOutcome;
                 typedef std::future<DescribeDeviceOutcome> DescribeDeviceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeDeviceRequest&, DescribeDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDeviceBindGatewayResponse> DescribeDeviceBindGatewayOutcome;
+                typedef std::future<DescribeDeviceBindGatewayOutcome> DescribeDeviceBindGatewayOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeDeviceBindGatewayRequest&, DescribeDeviceBindGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceBindGatewayAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDeviceDataResponse> DescribeDeviceDataOutcome;
                 typedef std::future<DescribeDeviceDataOutcome> DescribeDeviceDataOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeDeviceDataRequest&, DescribeDeviceDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceDataAsyncHandler;
@@ -292,6 +322,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFirmwareTaskResponse> DescribeFirmwareTaskOutcome;
                 typedef std::future<DescribeFirmwareTaskOutcome> DescribeFirmwareTaskOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeFirmwareTaskRequest&, DescribeFirmwareTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirmwareTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGatewayBindDevicesResponse> DescribeGatewayBindDevicesOutcome;
+                typedef std::future<DescribeGatewayBindDevicesOutcome> DescribeGatewayBindDevicesOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeGatewayBindDevicesRequest&, DescribeGatewayBindDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewayBindDevicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGatewaySubProductsResponse> DescribeGatewaySubProductsOutcome;
+                typedef std::future<DescribeGatewaySubProductsOutcome> DescribeGatewaySubProductsOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeGatewaySubProductsRequest&, DescribeGatewaySubProductsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewaySubProductsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLoRaFrequencyResponse> DescribeLoRaFrequencyOutcome;
                 typedef std::future<DescribeLoRaFrequencyOutcome> DescribeLoRaFrequencyOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeLoRaFrequencyRequest&, DescribeLoRaFrequencyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoRaFrequencyAsyncHandler;
@@ -343,6 +379,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetFamilyDeviceUserListResponse> GetFamilyDeviceUserListOutcome;
                 typedef std::future<GetFamilyDeviceUserListOutcome> GetFamilyDeviceUserListOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetFamilyDeviceUserListRequest&, GetFamilyDeviceUserListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFamilyDeviceUserListAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetGatewaySubDeviceListResponse> GetGatewaySubDeviceListOutcome;
+                typedef std::future<GetGatewaySubDeviceListOutcome> GetGatewaySubDeviceListOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::GetGatewaySubDeviceListRequest&, GetGatewaySubDeviceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetGatewaySubDeviceListAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetLoRaGatewayListResponse> GetLoRaGatewayListOutcome;
                 typedef std::future<GetLoRaGatewayListOutcome> GetLoRaGatewayListOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetLoRaGatewayListRequest&, GetLoRaGatewayListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetLoRaGatewayListAsyncHandler;
@@ -418,6 +457,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SearchTopicRuleResponse> SearchTopicRuleOutcome;
                 typedef std::future<SearchTopicRuleOutcome> SearchTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::SearchTopicRuleRequest&, SearchTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchTopicRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::UnbindDevicesResponse> UnbindDevicesOutcome;
+                typedef std::future<UnbindDevicesOutcome> UnbindDevicesOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::UnbindDevicesRequest&, UnbindDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindDevicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::UnbindProductsResponse> UnbindProductsOutcome;
+                typedef std::future<UnbindProductsOutcome> UnbindProductsOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::UnbindProductsRequest&, UnbindProductsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindProductsAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateDevicesEnableStateResponse> UpdateDevicesEnableStateOutcome;
                 typedef std::future<UpdateDevicesEnableStateOutcome> UpdateDevicesEnableStateOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::UpdateDevicesEnableStateRequest&, UpdateDevicesEnableStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDevicesEnableStateAsyncHandler;
@@ -429,6 +474,24 @@ namespace TencentCloud
                 typedef std::function<void(const IotexplorerClient*, const Model::UploadFirmwareRequest&, UploadFirmwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadFirmwareAsyncHandler;
 
 
+
+                /**
+                 *批量绑定子设备
+                 * @param req BindDevicesRequest
+                 * @return BindDevicesOutcome
+                 */
+                BindDevicesOutcome BindDevices(const Model::BindDevicesRequest &request);
+                void BindDevicesAsync(const Model::BindDevicesRequest& request, const BindDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindDevicesOutcomeCallable BindDevicesCallable(const Model::BindDevicesRequest& request);
+
+                /**
+                 *批量绑定子产品
+                 * @param req BindProductsRequest
+                 * @return BindProductsOutcome
+                 */
+                BindProductsOutcome BindProducts(const Model::BindProductsRequest &request);
+                void BindProductsAsync(const Model::BindProductsRequest& request, const BindProductsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindProductsOutcomeCallable BindProductsCallable(const Model::BindProductsRequest& request);
 
                 /**
                  *提供给用户异步调用设备行为的能力
@@ -665,6 +728,15 @@ namespace TencentCloud
                 DescribeBatchProductionOutcomeCallable DescribeBatchProductionCallable(const Model::DescribeBatchProductionRequest& request);
 
                 /**
+                 *获取网关产品已经绑定的子产品
+                 * @param req DescribeBindedProductsRequest
+                 * @return DescribeBindedProductsOutcome
+                 */
+                DescribeBindedProductsOutcome DescribeBindedProducts(const Model::DescribeBindedProductsRequest &request);
+                void DescribeBindedProductsAsync(const Model::DescribeBindedProductsRequest& request, const DescribeBindedProductsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBindedProductsOutcomeCallable DescribeBindedProductsCallable(const Model::DescribeBindedProductsRequest& request);
+
+                /**
                  *用于查看某个设备的详细信息
                  * @param req DescribeDeviceRequest
                  * @return DescribeDeviceOutcome
@@ -672,6 +744,15 @@ namespace TencentCloud
                 DescribeDeviceOutcome DescribeDevice(const Model::DescribeDeviceRequest &request);
                 void DescribeDeviceAsync(const Model::DescribeDeviceRequest& request, const DescribeDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDeviceOutcomeCallable DescribeDeviceCallable(const Model::DescribeDeviceRequest& request);
+
+                /**
+                 *查询设备绑定的网关设备
+                 * @param req DescribeDeviceBindGatewayRequest
+                 * @return DescribeDeviceBindGatewayOutcome
+                 */
+                DescribeDeviceBindGatewayOutcome DescribeDeviceBindGateway(const Model::DescribeDeviceBindGatewayRequest &request);
+                void DescribeDeviceBindGatewayAsync(const Model::DescribeDeviceBindGatewayRequest& request, const DescribeDeviceBindGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeviceBindGatewayOutcomeCallable DescribeDeviceBindGatewayCallable(const Model::DescribeDeviceBindGatewayRequest& request);
 
                 /**
                  *根据设备产品ID、设备名称，获取设备上报的属性数据。
@@ -726,6 +807,24 @@ namespace TencentCloud
                 DescribeFirmwareTaskOutcome DescribeFirmwareTask(const Model::DescribeFirmwareTaskRequest &request);
                 void DescribeFirmwareTaskAsync(const Model::DescribeFirmwareTaskRequest& request, const DescribeFirmwareTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeFirmwareTaskOutcomeCallable DescribeFirmwareTaskCallable(const Model::DescribeFirmwareTaskRequest& request);
+
+                /**
+                 *获取网关绑定的子设备列表
+                 * @param req DescribeGatewayBindDevicesRequest
+                 * @return DescribeGatewayBindDevicesOutcome
+                 */
+                DescribeGatewayBindDevicesOutcome DescribeGatewayBindDevices(const Model::DescribeGatewayBindDevicesRequest &request);
+                void DescribeGatewayBindDevicesAsync(const Model::DescribeGatewayBindDevicesRequest& request, const DescribeGatewayBindDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGatewayBindDevicesOutcomeCallable DescribeGatewayBindDevicesCallable(const Model::DescribeGatewayBindDevicesRequest& request);
+
+                /**
+                 *用于获取网关可绑定或解绑的子产品
+                 * @param req DescribeGatewaySubProductsRequest
+                 * @return DescribeGatewaySubProductsOutcome
+                 */
+                DescribeGatewaySubProductsOutcome DescribeGatewaySubProducts(const Model::DescribeGatewaySubProductsRequest &request);
+                void DescribeGatewaySubProductsAsync(const Model::DescribeGatewaySubProductsRequest& request, const DescribeGatewaySubProductsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGatewaySubProductsOutcomeCallable DescribeGatewaySubProductsCallable(const Model::DescribeGatewaySubProductsRequest& request);
 
                 /**
                  *提供查询LoRa自定义频点详情的能力
@@ -879,6 +978,15 @@ namespace TencentCloud
                 GetFamilyDeviceUserListOutcome GetFamilyDeviceUserList(const Model::GetFamilyDeviceUserListRequest &request);
                 void GetFamilyDeviceUserListAsync(const Model::GetFamilyDeviceUserListRequest& request, const GetFamilyDeviceUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetFamilyDeviceUserListOutcomeCallable GetFamilyDeviceUserListCallable(const Model::GetFamilyDeviceUserListRequest& request);
+
+                /**
+                 *获取指定网关设备的子设备列表
+                 * @param req GetGatewaySubDeviceListRequest
+                 * @return GetGatewaySubDeviceListOutcome
+                 */
+                GetGatewaySubDeviceListOutcome GetGatewaySubDeviceList(const Model::GetGatewaySubDeviceListRequest &request);
+                void GetGatewaySubDeviceListAsync(const Model::GetGatewaySubDeviceListRequest& request, const GetGatewaySubDeviceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetGatewaySubDeviceListOutcomeCallable GetGatewaySubDeviceListCallable(const Model::GetGatewaySubDeviceListRequest& request);
 
                 /**
                  *获取 LoRa 网关列表接口
@@ -1104,6 +1212,24 @@ namespace TencentCloud
                 SearchTopicRuleOutcome SearchTopicRule(const Model::SearchTopicRuleRequest &request);
                 void SearchTopicRuleAsync(const Model::SearchTopicRuleRequest& request, const SearchTopicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SearchTopicRuleOutcomeCallable SearchTopicRuleCallable(const Model::SearchTopicRuleRequest& request);
+
+                /**
+                 *批量解绑子设备
+                 * @param req UnbindDevicesRequest
+                 * @return UnbindDevicesOutcome
+                 */
+                UnbindDevicesOutcome UnbindDevices(const Model::UnbindDevicesRequest &request);
+                void UnbindDevicesAsync(const Model::UnbindDevicesRequest& request, const UnbindDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnbindDevicesOutcomeCallable UnbindDevicesCallable(const Model::UnbindDevicesRequest& request);
+
+                /**
+                 *批量解绑子产品
+                 * @param req UnbindProductsRequest
+                 * @return UnbindProductsOutcome
+                 */
+                UnbindProductsOutcome UnbindProducts(const Model::UnbindProductsRequest &request);
+                void UnbindProductsAsync(const Model::UnbindProductsRequest& request, const UnbindProductsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnbindProductsOutcomeCallable UnbindProductsCallable(const Model::UnbindProductsRequest& request);
 
                 /**
                  *批量禁用启用设备

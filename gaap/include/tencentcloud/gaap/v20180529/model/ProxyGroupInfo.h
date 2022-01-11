@@ -268,6 +268,36 @@ MOVING表示通道迁移中。
                      */
                     bool ProxyTypeHasBeenSet() const;
 
+                    /**
+                     * 获取支持Http3特性的标识，其中：
+0，表示不支持Http3；
+1，表示支持Http3。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Http3Supported 支持Http3特性的标识，其中：
+0，表示不支持Http3；
+1，表示支持Http3。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetHttp3Supported() const;
+
+                    /**
+                     * 设置支持Http3特性的标识，其中：
+0，表示不支持Http3；
+1，表示支持Http3。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Http3Supported 支持Http3特性的标识，其中：
+0，表示不支持Http3；
+1，表示支持Http3。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHttp3Supported(const int64_t& _http3Supported);
+
+                    /**
+                     * 判断参数 Http3Supported 是否已赋值
+                     * @return Http3Supported 是否已赋值
+                     */
+                    bool Http3SupportedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -339,6 +369,15 @@ MOVING表示通道迁移中。
                      */
                     uint64_t m_proxyType;
                     bool m_proxyTypeHasBeenSet;
+
+                    /**
+                     * 支持Http3特性的标识，其中：
+0，表示不支持Http3；
+1，表示支持Http3。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_http3Supported;
+                    bool m_http3SupportedHasBeenSet;
 
                 };
             }

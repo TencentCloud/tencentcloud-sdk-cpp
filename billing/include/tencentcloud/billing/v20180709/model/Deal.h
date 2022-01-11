@@ -455,6 +455,76 @@ namespace TencentCloud
                      */
                     bool PayModeHasBeenSet() const;
 
+                    /**
+                     * 获取交易类型
+modifyNetworkMode 调整带宽模式
+modifyNetworkSize 调整带宽大小
+refund 退款
+downgrade 降配
+upgrade 升配
+renew 续费
+purchase 购买
+preMoveOut 包年包月迁出资源
+preMoveIn 包年包月迁入资源
+preToPost 预付费转后付费
+postMoveOut 按量计费迁出资源
+postMoveIn 按量计费迁入资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Action 交易类型
+modifyNetworkMode 调整带宽模式
+modifyNetworkSize 调整带宽大小
+refund 退款
+downgrade 降配
+upgrade 升配
+renew 续费
+purchase 购买
+preMoveOut 包年包月迁出资源
+preMoveIn 包年包月迁入资源
+preToPost 预付费转后付费
+postMoveOut 按量计费迁出资源
+postMoveIn 按量计费迁入资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAction() const;
+
+                    /**
+                     * 设置交易类型
+modifyNetworkMode 调整带宽模式
+modifyNetworkSize 调整带宽大小
+refund 退款
+downgrade 降配
+upgrade 升配
+renew 续费
+purchase 购买
+preMoveOut 包年包月迁出资源
+preMoveIn 包年包月迁入资源
+preToPost 预付费转后付费
+postMoveOut 按量计费迁出资源
+postMoveIn 按量计费迁入资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Action 交易类型
+modifyNetworkMode 调整带宽模式
+modifyNetworkSize 调整带宽大小
+refund 退款
+downgrade 降配
+upgrade 升配
+renew 续费
+purchase 购买
+preMoveOut 包年包月迁出资源
+preMoveIn 包年包月迁入资源
+preToPost 预付费转后付费
+postMoveOut 按量计费迁出资源
+postMoveIn 按量计费迁入资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAction(const std::string& _action);
+
+                    /**
+                     * 判断参数 Action 是否已赋值
+                     * @return Action 是否已赋值
+                     */
+                    bool ActionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -591,6 +661,25 @@ namespace TencentCloud
                      */
                     std::string m_payMode;
                     bool m_payModeHasBeenSet;
+
+                    /**
+                     * 交易类型
+modifyNetworkMode 调整带宽模式
+modifyNetworkSize 调整带宽大小
+refund 退款
+downgrade 降配
+upgrade 升配
+renew 续费
+purchase 购买
+preMoveOut 包年包月迁出资源
+preMoveIn 包年包月迁入资源
+preToPost 预付费转后付费
+postMoveOut 按量计费迁出资源
+postMoveIn 按量计费迁入资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_action;
+                    bool m_actionHasBeenSet;
 
                 };
             }

@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dcdb/v20180411/model/ShardInfo.h>
+#include <tencentcloud/dcdb/v20180411/model/ResourceTag.h>
 
 
 namespace TencentCloud
@@ -951,6 +952,28 @@ namespace TencentCloud
                      */
                     bool InstanceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取实例标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceTags 实例标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ResourceTag> GetResourceTags() const;
+
+                    /**
+                     * 设置实例标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ResourceTags 实例标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetResourceTags(const std::vector<ResourceTag>& _resourceTags);
+
+                    /**
+                     * 判断参数 ResourceTags 是否已赋值
+                     * @return ResourceTags 是否已赋值
+                     */
+                    bool ResourceTagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1250,6 +1273,13 @@ namespace TencentCloud
                      */
                     int64_t m_instanceType;
                     bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * 实例标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ResourceTag> m_resourceTags;
+                    bool m_resourceTagsHasBeenSet;
 
                 };
             }

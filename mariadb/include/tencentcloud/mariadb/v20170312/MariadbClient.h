@@ -39,6 +39,8 @@
 #include <tencentcloud/mariadb/v20170312/model/CreateDBInstanceResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/CreateDedicatedClusterDBInstanceRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/CreateDedicatedClusterDBInstanceResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/CreateHourDBInstanceRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/CreateHourDBInstanceResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/CreateTmpInstancesRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/CreateTmpInstancesResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DeleteAccountRequest.h>
@@ -177,6 +179,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDedicatedClusterDBInstanceResponse> CreateDedicatedClusterDBInstanceOutcome;
                 typedef std::future<CreateDedicatedClusterDBInstanceOutcome> CreateDedicatedClusterDBInstanceOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::CreateDedicatedClusterDBInstanceRequest&, CreateDedicatedClusterDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDedicatedClusterDBInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateHourDBInstanceResponse> CreateHourDBInstanceOutcome;
+                typedef std::future<CreateHourDBInstanceOutcome> CreateHourDBInstanceOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::CreateHourDBInstanceRequest&, CreateHourDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateHourDBInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTmpInstancesResponse> CreateTmpInstancesOutcome;
                 typedef std::future<CreateTmpInstancesOutcome> CreateTmpInstancesOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::CreateTmpInstancesRequest&, CreateTmpInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTmpInstancesAsyncHandler;
@@ -402,6 +407,15 @@ namespace TencentCloud
                 CreateDedicatedClusterDBInstanceOutcome CreateDedicatedClusterDBInstance(const Model::CreateDedicatedClusterDBInstanceRequest &request);
                 void CreateDedicatedClusterDBInstanceAsync(const Model::CreateDedicatedClusterDBInstanceRequest& request, const CreateDedicatedClusterDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDedicatedClusterDBInstanceOutcomeCallable CreateDedicatedClusterDBInstanceCallable(const Model::CreateDedicatedClusterDBInstanceRequest& request);
+
+                /**
+                 *创建后付费实例
+                 * @param req CreateHourDBInstanceRequest
+                 * @return CreateHourDBInstanceOutcome
+                 */
+                CreateHourDBInstanceOutcome CreateHourDBInstance(const Model::CreateHourDBInstanceRequest &request);
+                void CreateHourDBInstanceAsync(const Model::CreateHourDBInstanceRequest& request, const CreateHourDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateHourDBInstanceOutcomeCallable CreateHourDBInstanceCallable(const Model::CreateHourDBInstanceRequest& request);
 
                 /**
                  *本接口（CreateTmpInstances）用于创建临时实例。

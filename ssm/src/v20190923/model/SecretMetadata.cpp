@@ -35,7 +35,8 @@ SecretMetadata::SecretMetadata() :
     m_productNameHasBeenSet(false),
     m_resourceNameHasBeenSet(false),
     m_projectIDHasBeenSet(false),
-    m_associatedInstanceIDsHasBeenSet(false)
+    m_associatedInstanceIDsHasBeenSet(false),
+    m_targetUinHasBeenSet(false)
 {
 }
 
@@ -197,6 +198,16 @@ CoreInternalOutcome SecretMetadata::Deserialize(const rapidjson::Value &value)
         m_associatedInstanceIDsHasBeenSet = true;
     }
 
+    if (value.HasMember("TargetUin") && !value["TargetUin"].IsNull())
+    {
+        if (!value["TargetUin"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecretMetadata.TargetUin` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetUin = value["TargetUin"].GetUint64();
+        m_targetUinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -327,6 +338,14 @@ void SecretMetadata::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_targetUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_targetUin, allocator);
     }
 
 }
@@ -570,5 +589,21 @@ void SecretMetadata::SetAssociatedInstanceIDs(const vector<string>& _associatedI
 bool SecretMetadata::AssociatedInstanceIDsHasBeenSet() const
 {
     return m_associatedInstanceIDsHasBeenSet;
+}
+
+uint64_t SecretMetadata::GetTargetUin() const
+{
+    return m_targetUin;
+}
+
+void SecretMetadata::SetTargetUin(const uint64_t& _targetUin)
+{
+    m_targetUin = _targetUin;
+    m_targetUinHasBeenSet = true;
+}
+
+bool SecretMetadata::TargetUinHasBeenSet() const
+{
+    return m_targetUinHasBeenSet;
 }
 

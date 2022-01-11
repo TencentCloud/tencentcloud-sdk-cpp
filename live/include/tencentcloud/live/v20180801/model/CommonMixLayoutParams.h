@@ -50,9 +50,11 @@ namespace TencentCloud
                      * 获取输入图层。取值范围[1，16]。
 1)背景流（即大主播画面或画布）的 image_layer 填1。
 2)纯音频混流，该参数也需填。
+注意：不同输入，该值不可重复
                      * @return ImageLayer 输入图层。取值范围[1，16]。
 1)背景流（即大主播画面或画布）的 image_layer 填1。
 2)纯音频混流，该参数也需填。
+注意：不同输入，该值不可重复
                      */
                     int64_t GetImageLayer() const;
 
@@ -60,9 +62,11 @@ namespace TencentCloud
                      * 设置输入图层。取值范围[1，16]。
 1)背景流（即大主播画面或画布）的 image_layer 填1。
 2)纯音频混流，该参数也需填。
+注意：不同输入，该值不可重复
                      * @param ImageLayer 输入图层。取值范围[1，16]。
 1)背景流（即大主播画面或画布）的 image_layer 填1。
 2)纯音频混流，该参数也需填。
+注意：不同输入，该值不可重复
                      */
                     void SetImageLayer(const int64_t& _imageLayer);
 
@@ -332,6 +336,7 @@ namespace TencentCloud
                      * 输入图层。取值范围[1，16]。
 1)背景流（即大主播画面或画布）的 image_layer 填1。
 2)纯音频混流，该参数也需填。
+注意：不同输入，该值不可重复
                      */
                     int64_t m_imageLayer;
                     bool m_imageLayerHasBeenSet;

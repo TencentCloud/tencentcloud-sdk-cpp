@@ -66,7 +66,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/ResetAccountPasswordRequest.h
   include/tencentcloud/mariadb/v20170312/model/CopyAccountPrivilegesResponse.h
   include/tencentcloud/mariadb/v20170312/model/ModifyRealServerAccessStrategyResponse.h
-  include/tencentcloud/mariadb/v20170312/model/CloneAccountRequest.h
+  include/tencentcloud/mariadb/v20170312/model/CreateHourDBInstanceResponse.h
   include/tencentcloud/mariadb/v20170312/model/ParamModifyResult.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBInstancesRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBSecurityGroupsRequest.h
@@ -141,6 +141,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/DescribeDBPerformanceResponse.h
   include/tencentcloud/mariadb/v20170312/model/ModifyDBSyncModeRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeInstanceNodeInfoRequest.h
+  include/tencentcloud/mariadb/v20170312/model/CloneAccountRequest.h
   include/tencentcloud/mariadb/v20170312/model/CreateAccountResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeLogFileRetentionPeriodResponse.h
   include/tencentcloud/mariadb/v20170312/model/RegionInfo.h
@@ -152,6 +153,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/DescribeDBResourceUsageDetailsRequest.h
   include/tencentcloud/mariadb/v20170312/model/DisassociateSecurityGroupsRequest.h
   include/tencentcloud/mariadb/v20170312/model/DBAccount.h
+  include/tencentcloud/mariadb/v20170312/model/CreateHourDBInstanceRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeAccountPrivilegesRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBPerformanceDetailsResponse.h
   include/tencentcloud/mariadb/v20170312/model/SqlLogItem.h
@@ -219,7 +221,7 @@ set(mariadb_src
   src/v20170312/model/ResetAccountPasswordRequest.cpp
   src/v20170312/model/CopyAccountPrivilegesResponse.cpp
   src/v20170312/model/ModifyRealServerAccessStrategyResponse.cpp
-  src/v20170312/model/CloneAccountRequest.cpp
+  src/v20170312/model/CreateHourDBInstanceResponse.cpp
   src/v20170312/model/ParamModifyResult.cpp
   src/v20170312/model/DescribeDBInstancesRequest.cpp
   src/v20170312/model/DescribeDBSecurityGroupsRequest.cpp
@@ -294,6 +296,7 @@ set(mariadb_src
   src/v20170312/model/DescribeDBPerformanceResponse.cpp
   src/v20170312/model/ModifyDBSyncModeRequest.cpp
   src/v20170312/model/DescribeInstanceNodeInfoRequest.cpp
+  src/v20170312/model/CloneAccountRequest.cpp
   src/v20170312/model/CreateAccountResponse.cpp
   src/v20170312/model/DescribeLogFileRetentionPeriodResponse.cpp
   src/v20170312/model/RegionInfo.cpp
@@ -305,6 +308,7 @@ set(mariadb_src
   src/v20170312/model/DescribeDBResourceUsageDetailsRequest.cpp
   src/v20170312/model/DisassociateSecurityGroupsRequest.cpp
   src/v20170312/model/DBAccount.cpp
+  src/v20170312/model/CreateHourDBInstanceRequest.cpp
   src/v20170312/model/DescribeAccountPrivilegesRequest.cpp
   src/v20170312/model/DescribeDBPerformanceDetailsResponse.cpp
   src/v20170312/model/SqlLogItem.cpp

@@ -190,6 +190,24 @@ namespace TencentCloud
                      */
                     bool RoutingOrderHasBeenSet() const;
 
+                    /**
+                     * 获取是否是发起方
+                     * @return IsPromoter 是否是发起方
+                     */
+                    bool GetIsPromoter() const;
+
+                    /**
+                     * 设置是否是发起方
+                     * @param IsPromoter 是否是发起方
+                     */
+                    void SetIsPromoter(const bool& _isPromoter);
+
+                    /**
+                     * 判断参数 IsPromoter 是否已赋值
+                     * @return IsPromoter 是否已赋值
+                     */
+                    bool IsPromoterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -239,6 +257,12 @@ namespace TencentCloud
                      */
                     int64_t m_routingOrder;
                     bool m_routingOrderHasBeenSet;
+
+                    /**
+                     * 是否是发起方
+                     */
+                    bool m_isPromoter;
+                    bool m_isPromoterHasBeenSet;
 
                 };
             }

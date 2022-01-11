@@ -32,8 +32,8 @@ FlowApproverInfo::FlowApproverInfo() :
     m_preReadTimeHasBeenSet(false),
     m_componentLimitTypeHasBeenSet(false),
     m_recipientIdHasBeenSet(false),
-    m_organizationOpenIdHasBeenSet(false),
-    m_organizationNameHasBeenSet(false)
+    m_organizationNameHasBeenSet(false),
+    m_organizationOpenIdHasBeenSet(false)
 {
 }
 
@@ -155,16 +155,6 @@ CoreInternalOutcome FlowApproverInfo::Deserialize(const rapidjson::Value &value)
         m_recipientIdHasBeenSet = true;
     }
 
-    if (value.HasMember("OrganizationOpenId") && !value["OrganizationOpenId"].IsNull())
-    {
-        if (!value["OrganizationOpenId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.OrganizationOpenId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_organizationOpenId = string(value["OrganizationOpenId"].GetString());
-        m_organizationOpenIdHasBeenSet = true;
-    }
-
     if (value.HasMember("OrganizationName") && !value["OrganizationName"].IsNull())
     {
         if (!value["OrganizationName"].IsString())
@@ -173,6 +163,16 @@ CoreInternalOutcome FlowApproverInfo::Deserialize(const rapidjson::Value &value)
         }
         m_organizationName = string(value["OrganizationName"].GetString());
         m_organizationNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("OrganizationOpenId") && !value["OrganizationOpenId"].IsNull())
+    {
+        if (!value["OrganizationOpenId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.OrganizationOpenId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_organizationOpenId = string(value["OrganizationOpenId"].GetString());
+        m_organizationOpenIdHasBeenSet = true;
     }
 
 
@@ -275,20 +275,20 @@ void FlowApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, rapidjson::Value(m_recipientId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_organizationOpenIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OrganizationOpenId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_organizationOpenId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_organizationNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OrganizationName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_organizationName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_organizationOpenIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrganizationOpenId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_organizationOpenId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -470,22 +470,6 @@ bool FlowApproverInfo::RecipientIdHasBeenSet() const
     return m_recipientIdHasBeenSet;
 }
 
-string FlowApproverInfo::GetOrganizationOpenId() const
-{
-    return m_organizationOpenId;
-}
-
-void FlowApproverInfo::SetOrganizationOpenId(const string& _organizationOpenId)
-{
-    m_organizationOpenId = _organizationOpenId;
-    m_organizationOpenIdHasBeenSet = true;
-}
-
-bool FlowApproverInfo::OrganizationOpenIdHasBeenSet() const
-{
-    return m_organizationOpenIdHasBeenSet;
-}
-
 string FlowApproverInfo::GetOrganizationName() const
 {
     return m_organizationName;
@@ -500,5 +484,21 @@ void FlowApproverInfo::SetOrganizationName(const string& _organizationName)
 bool FlowApproverInfo::OrganizationNameHasBeenSet() const
 {
     return m_organizationNameHasBeenSet;
+}
+
+string FlowApproverInfo::GetOrganizationOpenId() const
+{
+    return m_organizationOpenId;
+}
+
+void FlowApproverInfo::SetOrganizationOpenId(const string& _organizationOpenId)
+{
+    m_organizationOpenId = _organizationOpenId;
+    m_organizationOpenIdHasBeenSet = true;
+}
+
+bool FlowApproverInfo::OrganizationOpenIdHasBeenSet() const
+{
+    return m_organizationOpenIdHasBeenSet;
 }
 

@@ -42,7 +42,8 @@ Deal::Deal() :
     m_bigDealIdHasBeenSet(false),
     m_formulaHasBeenSet(false),
     m_refReturnDealsHasBeenSet(false),
-    m_payModeHasBeenSet(false)
+    m_payModeHasBeenSet(false),
+    m_actionHasBeenSet(false)
 {
 }
 
@@ -281,6 +282,16 @@ CoreInternalOutcome Deal::Deserialize(const rapidjson::Value &value)
         m_payModeHasBeenSet = true;
     }
 
+    if (value.HasMember("Action") && !value["Action"].IsNull())
+    {
+        if (!value["Action"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Deal.Action` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_action = string(value["Action"].GetString());
+        m_actionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -469,6 +480,14 @@ void Deal::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "PayMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_payMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_actionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Action";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_action.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -824,5 +843,21 @@ void Deal::SetPayMode(const string& _payMode)
 bool Deal::PayModeHasBeenSet() const
 {
     return m_payModeHasBeenSet;
+}
+
+string Deal::GetAction() const
+{
+    return m_action;
+}
+
+void Deal::SetAction(const string& _action)
+{
+    m_action = _action;
+    m_actionHasBeenSet = true;
+}
+
+bool Deal::ActionHasBeenSet() const
+{
+    return m_actionHasBeenSet;
 }
 

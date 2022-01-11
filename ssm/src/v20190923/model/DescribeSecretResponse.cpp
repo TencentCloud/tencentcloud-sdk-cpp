@@ -38,7 +38,8 @@ DescribeSecretResponse::DescribeSecretResponse() :
     m_rotationFrequencyHasBeenSet(false),
     m_resourceNameHasBeenSet(false),
     m_projectIDHasBeenSet(false),
-    m_associatedInstanceIDsHasBeenSet(false)
+    m_associatedInstanceIDsHasBeenSet(false),
+    m_targetUinHasBeenSet(false)
 {
 }
 
@@ -229,6 +230,16 @@ CoreInternalOutcome DescribeSecretResponse::Deserialize(const string &payload)
         m_associatedInstanceIDsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TargetUin") && !rsp["TargetUin"].IsNull())
+    {
+        if (!rsp["TargetUin"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetUin` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetUin = rsp["TargetUin"].GetUint64();
+        m_targetUinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -362,6 +373,14 @@ string DescribeSecretResponse::ToJsonString() const
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_targetUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_targetUin, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -524,6 +543,16 @@ vector<string> DescribeSecretResponse::GetAssociatedInstanceIDs() const
 bool DescribeSecretResponse::AssociatedInstanceIDsHasBeenSet() const
 {
     return m_associatedInstanceIDsHasBeenSet;
+}
+
+uint64_t DescribeSecretResponse::GetTargetUin() const
+{
+    return m_targetUin;
+}
+
+bool DescribeSecretResponse::TargetUinHasBeenSet() const
+{
+    return m_targetUinHasBeenSet;
 }
 
 

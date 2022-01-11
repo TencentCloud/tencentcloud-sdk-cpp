@@ -23,7 +23,8 @@ using namespace TencentCloud::Cbs::V20170312::Model;
 using namespace std;
 
 TerminateDisksRequest::TerminateDisksRequest() :
-    m_diskIdsHasBeenSet(false)
+    m_diskIdsHasBeenSet(false),
+    m_deleteSnapshotHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,14 @@ string TerminateDisksRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_deleteSnapshotHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteSnapshot";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deleteSnapshot, allocator);
     }
 
 
@@ -69,6 +78,22 @@ void TerminateDisksRequest::SetDiskIds(const vector<string>& _diskIds)
 bool TerminateDisksRequest::DiskIdsHasBeenSet() const
 {
     return m_diskIdsHasBeenSet;
+}
+
+int64_t TerminateDisksRequest::GetDeleteSnapshot() const
+{
+    return m_deleteSnapshot;
+}
+
+void TerminateDisksRequest::SetDeleteSnapshot(const int64_t& _deleteSnapshot)
+{
+    m_deleteSnapshot = _deleteSnapshot;
+    m_deleteSnapshotHasBeenSet = true;
+}
+
+bool TerminateDisksRequest::DeleteSnapshotHasBeenSet() const
+{
+    return m_deleteSnapshotHasBeenSet;
 }
 
 

@@ -25,7 +25,8 @@ RegionDetail::RegionDetail() :
     m_regionNameHasBeenSet(false),
     m_regionAreaHasBeenSet(false),
     m_regionAreaNameHasBeenSet(false),
-    m_iDCTypeHasBeenSet(false)
+    m_iDCTypeHasBeenSet(false),
+    m_featureBitmapHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome RegionDetail::Deserialize(const rapidjson::Value &value)
         m_iDCTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("FeatureBitmap") && !value["FeatureBitmap"].IsNull())
+    {
+        if (!value["FeatureBitmap"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegionDetail.FeatureBitmap` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_featureBitmap = value["FeatureBitmap"].GetUint64();
+        m_featureBitmapHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void RegionDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "IDCType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_iDCType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_featureBitmapHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FeatureBitmap";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_featureBitmap, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void RegionDetail::SetIDCType(const string& _iDCType)
 bool RegionDetail::IDCTypeHasBeenSet() const
 {
     return m_iDCTypeHasBeenSet;
+}
+
+uint64_t RegionDetail::GetFeatureBitmap() const
+{
+    return m_featureBitmap;
+}
+
+void RegionDetail::SetFeatureBitmap(const uint64_t& _featureBitmap)
+{
+    m_featureBitmap = _featureBitmap;
+    m_featureBitmapHasBeenSet = true;
+}
+
+bool RegionDetail::FeatureBitmapHasBeenSet() const
+{
+    return m_featureBitmapHasBeenSet;
 }
 

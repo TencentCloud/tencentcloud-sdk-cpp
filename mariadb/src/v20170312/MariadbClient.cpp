@@ -384,6 +384,49 @@ MariadbClient::CreateDedicatedClusterDBInstanceOutcomeCallable MariadbClient::Cr
     return task->get_future();
 }
 
+MariadbClient::CreateHourDBInstanceOutcome MariadbClient::CreateHourDBInstance(const CreateHourDBInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateHourDBInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateHourDBInstanceResponse rsp = CreateHourDBInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateHourDBInstanceOutcome(rsp);
+        else
+            return CreateHourDBInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateHourDBInstanceOutcome(outcome.GetError());
+    }
+}
+
+void MariadbClient::CreateHourDBInstanceAsync(const CreateHourDBInstanceRequest& request, const CreateHourDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateHourDBInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MariadbClient::CreateHourDBInstanceOutcomeCallable MariadbClient::CreateHourDBInstanceCallable(const CreateHourDBInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateHourDBInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateHourDBInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MariadbClient::CreateTmpInstancesOutcome MariadbClient::CreateTmpInstances(const CreateTmpInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTmpInstances");

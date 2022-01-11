@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取增加白名单信息，白名单id为空，编辑白名单id不能为空
-                     * @return WhiteListInfo 增加白名单信息，白名单id为空，编辑白名单id不能为空
+                     * 获取增加或编辑白名单信息。新增白名单时WhiteListInfo.id为空，编辑白名单WhiteListInfo.id不能为空。
+                     * @return WhiteListInfo 增加或编辑白名单信息。新增白名单时WhiteListInfo.id为空，编辑白名单WhiteListInfo.id不能为空。
                      */
                     ReverseShellWhiteListInfo GetWhiteListInfo() const;
 
                     /**
-                     * 设置增加白名单信息，白名单id为空，编辑白名单id不能为空
-                     * @param WhiteListInfo 增加白名单信息，白名单id为空，编辑白名单id不能为空
+                     * 设置增加或编辑白名单信息。新增白名单时WhiteListInfo.id为空，编辑白名单WhiteListInfo.id不能为空。
+                     * @param WhiteListInfo 增加或编辑白名单信息。新增白名单时WhiteListInfo.id为空，编辑白名单WhiteListInfo.id不能为空。
                      */
                     void SetWhiteListInfo(const ReverseShellWhiteListInfo& _whiteListInfo);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool WhiteListInfoHasBeenSet() const;
 
                     /**
-                     * 获取仅在添加白名单时候使用
-                     * @return EventId 仅在添加白名单时候使用
+                     * 获取仅在添加事件白名单时候使用
+                     * @return EventId 仅在添加事件白名单时候使用
                      */
                     std::string GetEventId() const;
 
                     /**
-                     * 设置仅在添加白名单时候使用
-                     * @param EventId 仅在添加白名单时候使用
+                     * 设置仅在添加事件白名单时候使用
+                     * @param EventId 仅在添加事件白名单时候使用
                      */
                     void SetEventId(const std::string& _eventId);
 
@@ -82,13 +82,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 增加白名单信息，白名单id为空，编辑白名单id不能为空
+                     * 增加或编辑白名单信息。新增白名单时WhiteListInfo.id为空，编辑白名单WhiteListInfo.id不能为空。
                      */
                     ReverseShellWhiteListInfo m_whiteListInfo;
                     bool m_whiteListInfoHasBeenSet;
 
                     /**
-                     * 仅在添加白名单时候使用
+                     * 仅在添加事件白名单时候使用
                      */
                     std::string m_eventId;
                     bool m_eventIdHasBeenSet;

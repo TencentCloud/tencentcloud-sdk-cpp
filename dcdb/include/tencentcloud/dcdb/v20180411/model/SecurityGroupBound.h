@@ -47,24 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略，ACCEPT 或者 DROP
-                     * @return Action 策略，ACCEPT 或者 DROP
-                     */
-                    std::string GetAction() const;
-
-                    /**
-                     * 设置策略，ACCEPT 或者 DROP
-                     * @param Action 策略，ACCEPT 或者 DROP
-                     */
-                    void SetAction(const std::string& _action);
-
-                    /**
-                     * 判断参数 Action 是否已赋值
-                     * @return Action 是否已赋值
-                     */
-                    bool ActionHasBeenSet() const;
-
-                    /**
                      * 获取来源 IP 或 IP 段，例如192.168.0.0/16
                      * @return CidrIp 来源 IP 或 IP 段，例如192.168.0.0/16
                      */
@@ -81,6 +63,24 @@ namespace TencentCloud
                      * @return CidrIp 是否已赋值
                      */
                     bool CidrIpHasBeenSet() const;
+
+                    /**
+                     * 获取策略，ACCEPT 或者 DROP
+                     * @return Action 策略，ACCEPT 或者 DROP
+                     */
+                    std::string GetAction() const;
+
+                    /**
+                     * 设置策略，ACCEPT 或者 DROP
+                     * @param Action 策略，ACCEPT 或者 DROP
+                     */
+                    void SetAction(const std::string& _action);
+
+                    /**
+                     * 判断参数 Action 是否已赋值
+                     * @return Action 是否已赋值
+                     */
+                    bool ActionHasBeenSet() const;
 
                     /**
                      * 获取端口
@@ -121,16 +121,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 策略，ACCEPT 或者 DROP
-                     */
-                    std::string m_action;
-                    bool m_actionHasBeenSet;
-
-                    /**
                      * 来源 IP 或 IP 段，例如192.168.0.0/16
                      */
                     std::string m_cidrIp;
                     bool m_cidrIpHasBeenSet;
+
+                    /**
+                     * 策略，ACCEPT 或者 DROP
+                     */
+                    std::string m_action;
+                    bool m_actionHasBeenSet;
 
                     /**
                      * 端口

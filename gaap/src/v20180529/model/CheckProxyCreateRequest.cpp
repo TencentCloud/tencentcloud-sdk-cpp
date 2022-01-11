@@ -30,7 +30,8 @@ CheckProxyCreateRequest::CheckProxyCreateRequest() :
     m_groupIdHasBeenSet(false),
     m_iPAddressVersionHasBeenSet(false),
     m_networkTypeHasBeenSet(false),
-    m_packageTypeHasBeenSet(false)
+    m_packageTypeHasBeenSet(false),
+    m_http3SupportedHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string CheckProxyCreateRequest::ToJsonString() const
         string key = "PackageType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_packageType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_http3SupportedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Http3Supported";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_http3Supported, allocator);
     }
 
 
@@ -239,6 +248,22 @@ void CheckProxyCreateRequest::SetPackageType(const string& _packageType)
 bool CheckProxyCreateRequest::PackageTypeHasBeenSet() const
 {
     return m_packageTypeHasBeenSet;
+}
+
+int64_t CheckProxyCreateRequest::GetHttp3Supported() const
+{
+    return m_http3Supported;
+}
+
+void CheckProxyCreateRequest::SetHttp3Supported(const int64_t& _http3Supported)
+{
+    m_http3Supported = _http3Supported;
+    m_http3SupportedHasBeenSet = true;
+}
+
+bool CheckProxyCreateRequest::Http3SupportedHasBeenSet() const
+{
+    return m_http3SupportedHasBeenSet;
 }
 
 

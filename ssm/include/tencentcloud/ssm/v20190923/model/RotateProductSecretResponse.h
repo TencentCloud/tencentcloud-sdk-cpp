@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取轮转异步任务ID号。
-                     * @return FlowID 轮转异步任务ID号。
+                     * 获取当凭据类型为云产品凭据时（即SecretType为1，如Mysq、Tdsql等托管凭据）此字段有效，返回轮转异步任务ID号。
+                     * @return FlowID 当凭据类型为云产品凭据时（即SecretType为1，如Mysq、Tdsql等托管凭据）此字段有效，返回轮转异步任务ID号。
                      */
                     int64_t GetFlowID() const;
 
@@ -58,7 +58,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 轮转异步任务ID号。
+                     * 当凭据类型为云产品凭据时（即SecretType为1，如Mysq、Tdsql等托管凭据）此字段有效，返回轮转异步任务ID号。
                      */
                     int64_t m_flowID;
                     bool m_flowIDHasBeenSet;

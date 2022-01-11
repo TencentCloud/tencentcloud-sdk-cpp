@@ -454,6 +454,24 @@ namespace TencentCloud
                      */
                     bool AutoRenewFlagHasBeenSet() const;
 
+                    /**
+                     * 获取安全组ids，安全组可以传数组形式，兼容之前SecurityGroupId参数
+                     * @return SecurityGroupIds 安全组ids，安全组可以传数组形式，兼容之前SecurityGroupId参数
+                     */
+                    std::vector<std::string> GetSecurityGroupIds() const;
+
+                    /**
+                     * 设置安全组ids，安全组可以传数组形式，兼容之前SecurityGroupId参数
+                     * @param SecurityGroupIds 安全组ids，安全组可以传数组形式，兼容之前SecurityGroupId参数
+                     */
+                    void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
+
+                    /**
+                     * 判断参数 SecurityGroupIds 是否已赋值
+                     * @return SecurityGroupIds 是否已赋值
+                     */
+                    bool SecurityGroupIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -589,6 +607,12 @@ namespace TencentCloud
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
+
+                    /**
+                     * 安全组ids，安全组可以传数组形式，兼容之前SecurityGroupId参数
+                     */
+                    std::vector<std::string> m_securityGroupIds;
+                    bool m_securityGroupIdsHasBeenSet;
 
                 };
             }

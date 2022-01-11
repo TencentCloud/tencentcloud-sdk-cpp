@@ -171,6 +171,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/DescribeDisksReturnableRequest.h
   include/tencentcloud/lighthouse/v20200324/model/SoftwareDetail.h
   include/tencentcloud/lighthouse/v20200324/model/InstancePrice.h
+  include/tencentcloud/lighthouse/v20200324/model/Tag.h
   include/tencentcloud/lighthouse/v20200324/model/ModifySnapshotAttributeResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeGeneralResourceQuotasResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyInstancesRenewFlagRequest.h
@@ -346,6 +347,7 @@ set(lighthouse_src
   src/v20200324/model/DescribeDisksReturnableRequest.cpp
   src/v20200324/model/SoftwareDetail.cpp
   src/v20200324/model/InstancePrice.cpp
+  src/v20200324/model/Tag.cpp
   src/v20200324/model/ModifySnapshotAttributeResponse.cpp
   src/v20200324/model/DescribeGeneralResourceQuotasResponse.cpp
   src/v20200324/model/ModifyInstancesRenewFlagRequest.cpp

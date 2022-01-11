@@ -741,6 +741,36 @@ CrossBorder表示跨境通道。
                      */
                     bool IPListHasBeenSet() const;
 
+                    /**
+                     * 获取支持Http3协议的标识，其中：
+0表示关闭；
+1表示启用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Http3Supported 支持Http3协议的标识，其中：
+0表示关闭；
+1表示启用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetHttp3Supported() const;
+
+                    /**
+                     * 设置支持Http3协议的标识，其中：
+0表示关闭；
+1表示启用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Http3Supported 支持Http3协议的标识，其中：
+0表示关闭；
+1表示启用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHttp3Supported(const int64_t& _http3Supported);
+
+                    /**
+                     * 判断参数 Http3Supported 是否已赋值
+                     * @return Http3Supported 是否已赋值
+                     */
+                    bool Http3SupportedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -963,6 +993,15 @@ CrossBorder表示跨境通道。
                      */
                     std::vector<IPDetail> m_iPList;
                     bool m_iPListHasBeenSet;
+
+                    /**
+                     * 支持Http3协议的标识，其中：
+0表示关闭；
+1表示启用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_http3Supported;
+                    bool m_http3SupportedHasBeenSet;
 
                 };
             }

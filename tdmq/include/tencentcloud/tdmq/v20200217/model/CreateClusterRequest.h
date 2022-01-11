@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取集群的标签列表
-                     * @return Tags 集群的标签列表
+                     * 获取集群的标签列表(已废弃)
+                     * @return Tags 集群的标签列表(已废弃)
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置集群的标签列表
-                     * @param Tags 集群的标签列表
+                     * 设置集群的标签列表(已废弃)
+                     * @param Tags 集群的标签列表(已废弃)
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
@@ -154,7 +154,7 @@ namespace TencentCloud
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 集群的标签列表
+                     * 集群的标签列表(已废弃)
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;

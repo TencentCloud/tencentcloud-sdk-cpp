@@ -25,7 +25,8 @@ using namespace std;
 
 GetServiceStatusResponse::GetServiceStatusResponse() :
     m_serviceEnabledHasBeenSet(false),
-    m_invalidTypeHasBeenSet(false)
+    m_invalidTypeHasBeenSet(false),
+    m_accessKeyEscrowEnabledHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome GetServiceStatusResponse::Deserialize(const string &payload)
         m_invalidTypeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AccessKeyEscrowEnabled") && !rsp["AccessKeyEscrowEnabled"].IsNull())
+    {
+        if (!rsp["AccessKeyEscrowEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessKeyEscrowEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessKeyEscrowEnabled = rsp["AccessKeyEscrowEnabled"].GetBool();
+        m_accessKeyEscrowEnabledHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string GetServiceStatusResponse::ToJsonString() const
         string key = "InvalidType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_invalidType, allocator);
+    }
+
+    if (m_accessKeyEscrowEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessKeyEscrowEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_accessKeyEscrowEnabled, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +158,16 @@ int64_t GetServiceStatusResponse::GetInvalidType() const
 bool GetServiceStatusResponse::InvalidTypeHasBeenSet() const
 {
     return m_invalidTypeHasBeenSet;
+}
+
+bool GetServiceStatusResponse::GetAccessKeyEscrowEnabled() const
+{
+    return m_accessKeyEscrowEnabled;
+}
+
+bool GetServiceStatusResponse::AccessKeyEscrowEnabledHasBeenSet() const
+{
+    return m_accessKeyEscrowEnabledHasBeenSet;
 }
 
 

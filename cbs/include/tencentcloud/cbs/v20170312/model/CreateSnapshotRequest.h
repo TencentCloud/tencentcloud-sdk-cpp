@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool SnapshotNameHasBeenSet() const;
 
                     /**
-                     * 获取快照的到期时间，到期后该快照将会自动删除
-                     * @return Deadline 快照的到期时间，到期后该快照将会自动删除
+                     * 获取快照的到期时间，到期后该快照将会自动删除,需要传入UTC时间下的ISO-8601标准时间格式,例如:2022-01-08T09:47:55+00:00
+                     * @return Deadline 快照的到期时间，到期后该快照将会自动删除,需要传入UTC时间下的ISO-8601标准时间格式,例如:2022-01-08T09:47:55+00:00
                      */
                     std::string GetDeadline() const;
 
                     /**
-                     * 设置快照的到期时间，到期后该快照将会自动删除
-                     * @param Deadline 快照的到期时间，到期后该快照将会自动删除
+                     * 设置快照的到期时间，到期后该快照将会自动删除,需要传入UTC时间下的ISO-8601标准时间格式,例如:2022-01-08T09:47:55+00:00
+                     * @param Deadline 快照的到期时间，到期后该快照将会自动删除,需要传入UTC时间下的ISO-8601标准时间格式,例如:2022-01-08T09:47:55+00:00
                      */
                     void SetDeadline(const std::string& _deadline);
 
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_snapshotNameHasBeenSet;
 
                     /**
-                     * 快照的到期时间，到期后该快照将会自动删除
+                     * 快照的到期时间，到期后该快照将会自动删除,需要传入UTC时间下的ISO-8601标准时间格式,例如:2022-01-08T09:47:55+00:00
                      */
                     std::string m_deadline;
                     bool m_deadlineHasBeenSet;

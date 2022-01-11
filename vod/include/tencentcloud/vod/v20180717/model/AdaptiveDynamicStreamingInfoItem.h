@@ -118,6 +118,36 @@ namespace TencentCloud
                      */
                     bool UrlHasBeenSet() const;
 
+                    /**
+                     * 获取媒体文件大小，单位：字节。
+<li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和；</li>
+<li>当媒体文件为 DASH 时，大小是 mpd 和分片文件大小的总和；</li>
+<li><font color=red>注意</font>：在 2022-01-10T16:00:00Z 前处理生成的自适应码流文件此字段为0。</li>
+                     * @return Size 媒体文件大小，单位：字节。
+<li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和；</li>
+<li>当媒体文件为 DASH 时，大小是 mpd 和分片文件大小的总和；</li>
+<li><font color=red>注意</font>：在 2022-01-10T16:00:00Z 前处理生成的自适应码流文件此字段为0。</li>
+                     */
+                    int64_t GetSize() const;
+
+                    /**
+                     * 设置媒体文件大小，单位：字节。
+<li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和；</li>
+<li>当媒体文件为 DASH 时，大小是 mpd 和分片文件大小的总和；</li>
+<li><font color=red>注意</font>：在 2022-01-10T16:00:00Z 前处理生成的自适应码流文件此字段为0。</li>
+                     * @param Size 媒体文件大小，单位：字节。
+<li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和；</li>
+<li>当媒体文件为 DASH 时，大小是 mpd 和分片文件大小的总和；</li>
+<li><font color=red>注意</font>：在 2022-01-10T16:00:00Z 前处理生成的自适应码流文件此字段为0。</li>
+                     */
+                    void SetSize(const int64_t& _size);
+
+                    /**
+                     * 判断参数 Size 是否已赋值
+                     * @return Size 是否已赋值
+                     */
+                    bool SizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +173,15 @@ namespace TencentCloud
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
+
+                    /**
+                     * 媒体文件大小，单位：字节。
+<li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和；</li>
+<li>当媒体文件为 DASH 时，大小是 mpd 和分片文件大小的总和；</li>
+<li><font color=red>注意</font>：在 2022-01-10T16:00:00Z 前处理生成的自适应码流文件此字段为0。</li>
+                     */
+                    int64_t m_size;
+                    bool m_sizeHasBeenSet;
 
                 };
             }

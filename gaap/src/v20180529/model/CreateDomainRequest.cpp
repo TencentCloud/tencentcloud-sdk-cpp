@@ -27,7 +27,8 @@ CreateDomainRequest::CreateDomainRequest() :
     m_domainHasBeenSet(false),
     m_certificateIdHasBeenSet(false),
     m_clientCertificateIdHasBeenSet(false),
-    m_polyClientCertificateIdsHasBeenSet(false)
+    m_polyClientCertificateIdsHasBeenSet(false),
+    m_http3SupportedHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,14 @@ string CreateDomainRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_http3SupportedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Http3Supported";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_http3Supported, allocator);
     }
 
 
@@ -169,6 +178,22 @@ void CreateDomainRequest::SetPolyClientCertificateIds(const vector<string>& _pol
 bool CreateDomainRequest::PolyClientCertificateIdsHasBeenSet() const
 {
     return m_polyClientCertificateIdsHasBeenSet;
+}
+
+int64_t CreateDomainRequest::GetHttp3Supported() const
+{
+    return m_http3Supported;
+}
+
+void CreateDomainRequest::SetHttp3Supported(const int64_t& _http3Supported)
+{
+    m_http3Supported = _http3Supported;
+    m_http3SupportedHasBeenSet = true;
+}
+
+bool CreateDomainRequest::Http3SupportedHasBeenSet() const
+{
+    return m_http3SupportedHasBeenSet;
 }
 
 

@@ -395,17 +395,17 @@ namespace TencentCloud
                     bool IPAddressVersionHasBeenSet() const;
 
                     /**
-                     * 获取通道组套餐类型：Thunder表示标准通道组，Accelerator表示游戏加速器通道组。
+                     * 获取通道组套餐类型：Thunder表示标准通道组，Accelerator表示游戏加速器通道组，CrossBorder表示跨境通道组。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PackageType 通道组套餐类型：Thunder表示标准通道组，Accelerator表示游戏加速器通道组。
+                     * @return PackageType 通道组套餐类型：Thunder表示标准通道组，Accelerator表示游戏加速器通道组，CrossBorder表示跨境通道组。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPackageType() const;
 
                     /**
-                     * 设置通道组套餐类型：Thunder表示标准通道组，Accelerator表示游戏加速器通道组。
+                     * 设置通道组套餐类型：Thunder表示标准通道组，Accelerator表示游戏加速器通道组，CrossBorder表示跨境通道组。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PackageType 通道组套餐类型：Thunder表示标准通道组，Accelerator表示游戏加速器通道组。
+                     * @param PackageType 通道组套餐类型：Thunder表示标准通道组，Accelerator表示游戏加速器通道组，CrossBorder表示跨境通道组。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPackageType(const std::string& _packageType);
@@ -415,6 +415,36 @@ namespace TencentCloud
                      * @return PackageType 是否已赋值
                      */
                     bool PackageTypeHasBeenSet() const;
+
+                    /**
+                     * 获取支持Http3特性的标识，其中：
+0表示关闭；
+1表示启用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Http3Supported 支持Http3特性的标识，其中：
+0表示关闭；
+1表示启用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetHttp3Supported() const;
+
+                    /**
+                     * 设置支持Http3特性的标识，其中：
+0表示关闭；
+1表示启用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Http3Supported 支持Http3特性的标识，其中：
+0表示关闭；
+1表示启用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHttp3Supported(const int64_t& _http3Supported);
+
+                    /**
+                     * 判断参数 Http3Supported 是否已赋值
+                     * @return Http3Supported 是否已赋值
+                     */
+                    bool Http3SupportedHasBeenSet() const;
 
                 private:
 
@@ -531,11 +561,20 @@ namespace TencentCloud
                     bool m_iPAddressVersionHasBeenSet;
 
                     /**
-                     * 通道组套餐类型：Thunder表示标准通道组，Accelerator表示游戏加速器通道组。
+                     * 通道组套餐类型：Thunder表示标准通道组，Accelerator表示游戏加速器通道组，CrossBorder表示跨境通道组。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageType;
                     bool m_packageTypeHasBeenSet;
+
+                    /**
+                     * 支持Http3特性的标识，其中：
+0表示关闭；
+1表示启用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_http3Supported;
+                    bool m_http3SupportedHasBeenSet;
 
                 };
             }

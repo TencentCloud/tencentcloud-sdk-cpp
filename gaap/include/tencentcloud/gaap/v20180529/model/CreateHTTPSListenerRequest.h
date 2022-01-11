@@ -216,6 +216,40 @@ namespace TencentCloud
                      */
                     bool GroupIdHasBeenSet() const;
 
+                    /**
+                     * 获取支持Http3的开关，其中：
+0，表示不需要支持Http3接入；
+1，表示需要支持Http3接入。
+注意：如果支持了Http3的功能，那么该监听器会占用对应的UDP接入端口，不可再创建相同端口的UDP监听器。
+该功能的启停无法在监听器创建完毕后再修改。
+                     * @return Http3Supported 支持Http3的开关，其中：
+0，表示不需要支持Http3接入；
+1，表示需要支持Http3接入。
+注意：如果支持了Http3的功能，那么该监听器会占用对应的UDP接入端口，不可再创建相同端口的UDP监听器。
+该功能的启停无法在监听器创建完毕后再修改。
+                     */
+                    int64_t GetHttp3Supported() const;
+
+                    /**
+                     * 设置支持Http3的开关，其中：
+0，表示不需要支持Http3接入；
+1，表示需要支持Http3接入。
+注意：如果支持了Http3的功能，那么该监听器会占用对应的UDP接入端口，不可再创建相同端口的UDP监听器。
+该功能的启停无法在监听器创建完毕后再修改。
+                     * @param Http3Supported 支持Http3的开关，其中：
+0，表示不需要支持Http3接入；
+1，表示需要支持Http3接入。
+注意：如果支持了Http3的功能，那么该监听器会占用对应的UDP接入端口，不可再创建相同端口的UDP监听器。
+该功能的启停无法在监听器创建完毕后再修改。
+                     */
+                    void SetHttp3Supported(const int64_t& _http3Supported);
+
+                    /**
+                     * 判断参数 Http3Supported 是否已赋值
+                     * @return Http3Supported 是否已赋值
+                     */
+                    bool Http3SupportedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -274,6 +308,16 @@ namespace TencentCloud
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
+
+                    /**
+                     * 支持Http3的开关，其中：
+0，表示不需要支持Http3接入；
+1，表示需要支持Http3接入。
+注意：如果支持了Http3的功能，那么该监听器会占用对应的UDP接入端口，不可再创建相同端口的UDP监听器。
+该功能的启停无法在监听器创建完毕后再修改。
+                     */
+                    int64_t m_http3Supported;
+                    bool m_http3SupportedHasBeenSet;
 
                 };
             }

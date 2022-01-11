@@ -183,9 +183,11 @@ namespace TencentCloud
                      * 获取0  -- 表示用户自定义凭据，默认为0。
 1  -- 表示用户云产品凭据。
 2 -- 表示SSH密钥对凭据。
+3 -- 表示云API密钥对凭据。
                      * @return SecretType 0  -- 表示用户自定义凭据，默认为0。
 1  -- 表示用户云产品凭据。
 2 -- 表示SSH密钥对凭据。
+3 -- 表示云API密钥对凭据。
                      */
                     uint64_t GetSecretType() const;
 
@@ -193,9 +195,11 @@ namespace TencentCloud
                      * 设置0  -- 表示用户自定义凭据，默认为0。
 1  -- 表示用户云产品凭据。
 2 -- 表示SSH密钥对凭据。
+3 -- 表示云API密钥对凭据。
                      * @param SecretType 0  -- 表示用户自定义凭据，默认为0。
 1  -- 表示用户云产品凭据。
 2 -- 表示SSH密钥对凭据。
+3 -- 表示云API密钥对凭据。
                      */
                     void SetSecretType(const uint64_t& _secretType);
 
@@ -288,6 +292,7 @@ namespace TencentCloud
                      * 0  -- 表示用户自定义凭据，默认为0。
 1  -- 表示用户云产品凭据。
 2 -- 表示SSH密钥对凭据。
+3 -- 表示云API密钥对凭据。
                      */
                     uint64_t m_secretType;
                     bool m_secretTypeHasBeenSet;

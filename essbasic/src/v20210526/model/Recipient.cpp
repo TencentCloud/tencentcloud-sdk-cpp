@@ -28,7 +28,8 @@ Recipient::Recipient() :
     m_requireValidationHasBeenSet(false),
     m_requireSignHasBeenSet(false),
     m_signTypeHasBeenSet(false),
-    m_routingOrderHasBeenSet(false)
+    m_routingOrderHasBeenSet(false),
+    m_isPromoterHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome Recipient::Deserialize(const rapidjson::Value &value)
         m_routingOrderHasBeenSet = true;
     }
 
+    if (value.HasMember("IsPromoter") && !value["IsPromoter"].IsNull())
+    {
+        if (!value["IsPromoter"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Recipient.IsPromoter` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isPromoter = value["IsPromoter"].GetBool();
+        m_isPromoterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void Recipient::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "RoutingOrder";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_routingOrder, allocator);
+    }
+
+    if (m_isPromoterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPromoter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isPromoter, allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void Recipient::SetRoutingOrder(const int64_t& _routingOrder)
 bool Recipient::RoutingOrderHasBeenSet() const
 {
     return m_routingOrderHasBeenSet;
+}
+
+bool Recipient::GetIsPromoter() const
+{
+    return m_isPromoter;
+}
+
+void Recipient::SetIsPromoter(const bool& _isPromoter)
+{
+    m_isPromoter = _isPromoter;
+    m_isPromoterHasBeenSet = true;
+}
+
+bool Recipient::IsPromoterHasBeenSet() const
+{
+    return m_isPromoterHasBeenSet;
 }
 

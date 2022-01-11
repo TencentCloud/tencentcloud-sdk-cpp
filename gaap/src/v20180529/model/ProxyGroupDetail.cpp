@@ -38,7 +38,8 @@ ProxyGroupDetail::ProxyGroupDetail() :
     m_versionHasBeenSet(false),
     m_clientIPMethodHasBeenSet(false),
     m_iPAddressVersionHasBeenSet(false),
-    m_packageTypeHasBeenSet(false)
+    m_packageTypeHasBeenSet(false),
+    m_http3SupportedHasBeenSet(false)
 {
 }
 
@@ -247,6 +248,16 @@ CoreInternalOutcome ProxyGroupDetail::Deserialize(const rapidjson::Value &value)
         m_packageTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Http3Supported") && !value["Http3Supported"].IsNull())
+    {
+        if (!value["Http3Supported"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyGroupDetail.Http3Supported` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_http3Supported = value["Http3Supported"].GetInt64();
+        m_http3SupportedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -409,6 +420,14 @@ void ProxyGroupDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "PackageType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_packageType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_http3SupportedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Http3Supported";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_http3Supported, allocator);
     }
 
 }
@@ -700,5 +719,21 @@ void ProxyGroupDetail::SetPackageType(const string& _packageType)
 bool ProxyGroupDetail::PackageTypeHasBeenSet() const
 {
     return m_packageTypeHasBeenSet;
+}
+
+int64_t ProxyGroupDetail::GetHttp3Supported() const
+{
+    return m_http3Supported;
+}
+
+void ProxyGroupDetail::SetHttp3Supported(const int64_t& _http3Supported)
+{
+    m_http3Supported = _http3Supported;
+    m_http3SupportedHasBeenSet = true;
+}
+
+bool ProxyGroupDetail::Http3SupportedHasBeenSet() const
+{
+    return m_http3SupportedHasBeenSet;
 }
 

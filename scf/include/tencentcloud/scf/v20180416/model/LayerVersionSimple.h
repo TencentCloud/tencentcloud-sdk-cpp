@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取layer名称
-                     * @return LayerName layer名称
+                     * 获取绑定的层名称。解绑层需传递空字符串。
+                     * @return LayerName 绑定的层名称。解绑层需传递空字符串。
                      */
                     std::string GetLayerName() const;
 
                     /**
-                     * 设置layer名称
-                     * @param LayerName layer名称
+                     * 设置绑定的层名称。解绑层需传递空字符串。
+                     * @param LayerName 绑定的层名称。解绑层需传递空字符串。
                      */
                     void SetLayerName(const std::string& _layerName);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool LayerNameHasBeenSet() const;
 
                     /**
-                     * 获取版本号
-                     * @return LayerVersion 版本号
+                     * 获取绑定或解绑层的版本号。解绑函数版本关联的最后一个层版本时，LayerVersion 填 0。
+                     * @return LayerVersion 绑定或解绑层的版本号。解绑函数版本关联的最后一个层版本时，LayerVersion 填 0。
                      */
                     int64_t GetLayerVersion() const;
 
                     /**
-                     * 设置版本号
-                     * @param LayerVersion 版本号
+                     * 设置绑定或解绑层的版本号。解绑函数版本关联的最后一个层版本时，LayerVersion 填 0。
+                     * @param LayerVersion 绑定或解绑层的版本号。解绑函数版本关联的最后一个层版本时，LayerVersion 填 0。
                      */
                     void SetLayerVersion(const int64_t& _layerVersion);
 
@@ -85,13 +85,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * layer名称
+                     * 绑定的层名称。解绑层需传递空字符串。
                      */
                     std::string m_layerName;
                     bool m_layerNameHasBeenSet;
 
                     /**
-                     * 版本号
+                     * 绑定或解绑层的版本号。解绑函数版本关联的最后一个层版本时，LayerVersion 填 0。
                      */
                     int64_t m_layerVersion;
                     bool m_layerVersionHasBeenSet;

@@ -40,7 +40,8 @@ DomainRuleSet::DomainRuleSet() :
     m_polyClientCertificateAliasInfoHasBeenSet(false),
     m_polyRealServerCertificateAliasInfoHasBeenSet(false),
     m_domainStatusHasBeenSet(false),
-    m_banStatusHasBeenSet(false)
+    m_banStatusHasBeenSet(false),
+    m_http3SupportedHasBeenSet(false)
 {
 }
 
@@ -279,6 +280,16 @@ CoreInternalOutcome DomainRuleSet::Deserialize(const rapidjson::Value &value)
         m_banStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("Http3Supported") && !value["Http3Supported"].IsNull())
+    {
+        if (!value["Http3Supported"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainRuleSet.Http3Supported` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_http3Supported = value["Http3Supported"].GetInt64();
+        m_http3SupportedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -465,6 +476,14 @@ void DomainRuleSet::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "BanStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_banStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_http3SupportedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Http3Supported";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_http3Supported, allocator);
     }
 
 }
@@ -788,5 +807,21 @@ void DomainRuleSet::SetBanStatus(const string& _banStatus)
 bool DomainRuleSet::BanStatusHasBeenSet() const
 {
     return m_banStatusHasBeenSet;
+}
+
+int64_t DomainRuleSet::GetHttp3Supported() const
+{
+    return m_http3Supported;
+}
+
+void DomainRuleSet::SetHttp3Supported(const int64_t& _http3Supported)
+{
+    m_http3Supported = _http3Supported;
+    m_http3SupportedHasBeenSet = true;
+}
+
+bool DomainRuleSet::Http3SupportedHasBeenSet() const
+{
+    return m_http3SupportedHasBeenSet;
 }
 

@@ -170,9 +170,9 @@ namespace TencentCloud
                     bool ResourceIDHasBeenSet() const;
 
                     /**
-                     * 获取是否开启轮转：True -- 开启轮转；False -- 禁止轮转。
+                     * 获取是否开启轮转：True -- 开启轮转；False -- 关闭轮转。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RotationStatus 是否开启轮转：True -- 开启轮转；False -- 禁止轮转。
+                     * @return RotationStatus 是否开启轮转：True -- 开启轮转；False -- 关闭轮转。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool GetRotationStatus() const;
@@ -238,6 +238,20 @@ namespace TencentCloud
                      * @return AssociatedInstanceIDs 是否已赋值
                      */
                     bool AssociatedInstanceIDsHasBeenSet() const;
+
+                    /**
+                     * 获取当凭据类型为云API密钥对凭据时，此字段有效，用于表示此云API密钥对所属的用户UIN。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TargetUin 当凭据类型为云API密钥对凭据时，此字段有效，用于表示此云API密钥对所属的用户UIN。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetTargetUin() const;
+
+                    /**
+                     * 判断参数 TargetUin 是否已赋值
+                     * @return TargetUin 是否已赋值
+                     */
+                    bool TargetUinHasBeenSet() const;
 
                 private:
 
@@ -305,7 +319,7 @@ namespace TencentCloud
                     bool m_resourceIDHasBeenSet;
 
                     /**
-                     * 是否开启轮转：True -- 开启轮转；False -- 禁止轮转。
+                     * 是否开启轮转：True -- 开启轮转；False -- 关闭轮转。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_rotationStatus;
@@ -338,6 +352,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_associatedInstanceIDs;
                     bool m_associatedInstanceIDsHasBeenSet;
+
+                    /**
+                     * 当凭据类型为云API密钥对凭据时，此字段有效，用于表示此云API密钥对所属的用户UIN。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_targetUin;
+                    bool m_targetUinHasBeenSet;
 
                 };
             }

@@ -29,8 +29,12 @@
 #include <tencentcloud/gs/v20191118/model/DescribeInstancesCountResponse.h>
 #include <tencentcloud/gs/v20191118/model/SaveGameArchiveRequest.h>
 #include <tencentcloud/gs/v20191118/model/SaveGameArchiveResponse.h>
+#include <tencentcloud/gs/v20191118/model/StartPublishStreamRequest.h>
+#include <tencentcloud/gs/v20191118/model/StartPublishStreamResponse.h>
 #include <tencentcloud/gs/v20191118/model/StopGameRequest.h>
 #include <tencentcloud/gs/v20191118/model/StopGameResponse.h>
+#include <tencentcloud/gs/v20191118/model/StopPublishStreamRequest.h>
+#include <tencentcloud/gs/v20191118/model/StopPublishStreamResponse.h>
 #include <tencentcloud/gs/v20191118/model/SwitchGameArchiveRequest.h>
 #include <tencentcloud/gs/v20191118/model/SwitchGameArchiveResponse.h>
 #include <tencentcloud/gs/v20191118/model/TrylockWorkerRequest.h>
@@ -58,9 +62,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SaveGameArchiveResponse> SaveGameArchiveOutcome;
                 typedef std::future<SaveGameArchiveOutcome> SaveGameArchiveOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::SaveGameArchiveRequest&, SaveGameArchiveOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SaveGameArchiveAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartPublishStreamResponse> StartPublishStreamOutcome;
+                typedef std::future<StartPublishStreamOutcome> StartPublishStreamOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::StartPublishStreamRequest&, StartPublishStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartPublishStreamAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopGameResponse> StopGameOutcome;
                 typedef std::future<StopGameOutcome> StopGameOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::StopGameRequest&, StopGameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopGameAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopPublishStreamResponse> StopPublishStreamOutcome;
+                typedef std::future<StopPublishStreamOutcome> StopPublishStreamOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::StopPublishStreamRequest&, StopPublishStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopPublishStreamAsyncHandler;
                 typedef Outcome<Core::Error, Model::SwitchGameArchiveResponse> SwitchGameArchiveOutcome;
                 typedef std::future<SwitchGameArchiveOutcome> SwitchGameArchiveOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::SwitchGameArchiveRequest&, SwitchGameArchiveOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchGameArchiveAsyncHandler;
@@ -98,6 +108,15 @@ namespace TencentCloud
                 SaveGameArchiveOutcomeCallable SaveGameArchiveCallable(const Model::SaveGameArchiveRequest& request);
 
                 /**
+                 *开始云端推流
+                 * @param req StartPublishStreamRequest
+                 * @return StartPublishStreamOutcome
+                 */
+                StartPublishStreamOutcome StartPublishStream(const Model::StartPublishStreamRequest &request);
+                void StartPublishStreamAsync(const Model::StartPublishStreamRequest& request, const StartPublishStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartPublishStreamOutcomeCallable StartPublishStreamCallable(const Model::StartPublishStreamRequest& request);
+
+                /**
                  *强制退出游戏
                  * @param req StopGameRequest
                  * @return StopGameOutcome
@@ -105,6 +124,15 @@ namespace TencentCloud
                 StopGameOutcome StopGame(const Model::StopGameRequest &request);
                 void StopGameAsync(const Model::StopGameRequest& request, const StopGameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopGameOutcomeCallable StopGameCallable(const Model::StopGameRequest& request);
+
+                /**
+                 *停止云端推流
+                 * @param req StopPublishStreamRequest
+                 * @return StopPublishStreamOutcome
+                 */
+                StopPublishStreamOutcome StopPublishStream(const Model::StopPublishStreamRequest &request);
+                void StopPublishStreamAsync(const Model::StopPublishStreamRequest& request, const StopPublishStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopPublishStreamOutcomeCallable StopPublishStreamCallable(const Model::StopPublishStreamRequest& request);
 
                 /**
                  *切换游戏存档

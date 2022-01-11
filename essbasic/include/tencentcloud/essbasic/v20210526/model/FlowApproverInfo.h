@@ -209,14 +209,14 @@ namespace TencentCloud
                     bool PreReadTimeHasBeenSet() const;
 
                     /**
-                     * 获取个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN
-                     * @return ComponentLimitType 个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN
+                     * 获取个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN(AI智慧手写签名)
+                     * @return ComponentLimitType 个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN(AI智慧手写签名)
                      */
                     std::vector<std::string> GetComponentLimitType() const;
 
                     /**
-                     * 设置个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN
-                     * @param ComponentLimitType 个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN
+                     * 设置个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN(AI智慧手写签名)
+                     * @param ComponentLimitType 个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN(AI智慧手写签名)
                      */
                     void SetComponentLimitType(const std::vector<std::string>& _componentLimitType);
 
@@ -246,6 +246,24 @@ namespace TencentCloud
 
                     /**
                      * 获取同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
+                     * @return OrganizationName 同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
+                     */
+                    std::string GetOrganizationName() const;
+
+                    /**
+                     * 设置同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
+                     * @param OrganizationName 同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
+                     */
+                    void SetOrganizationName(const std::string& _organizationName);
+
+                    /**
+                     * 判断参数 OrganizationName 是否已赋值
+                     * @return OrganizationName 是否已赋值
+                     */
+                    bool OrganizationNameHasBeenSet() const;
+
+                    /**
+                     * 获取同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
                      * @return OrganizationOpenId 同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
                      */
                     std::string GetOrganizationOpenId() const;
@@ -261,24 +279,6 @@ namespace TencentCloud
                      * @return OrganizationOpenId 是否已赋值
                      */
                     bool OrganizationOpenIdHasBeenSet() const;
-
-                    /**
-                     * 获取同一渠道下其他合作企业OpenId，B2B场景下必传；
-                     * @return OrganizationName 同一渠道下其他合作企业OpenId，B2B场景下必传；
-                     */
-                    std::string GetOrganizationName() const;
-
-                    /**
-                     * 设置同一渠道下其他合作企业OpenId，B2B场景下必传；
-                     * @param OrganizationName 同一渠道下其他合作企业OpenId，B2B场景下必传；
-                     */
-                    void SetOrganizationName(const std::string& _organizationName);
-
-                    /**
-                     * 判断参数 OrganizationName 是否已赋值
-                     * @return OrganizationName 是否已赋值
-                     */
-                    bool OrganizationNameHasBeenSet() const;
 
                 private:
 
@@ -337,7 +337,7 @@ namespace TencentCloud
                     bool m_preReadTimeHasBeenSet;
 
                     /**
-                     * 个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN
+                     * 个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN(AI智慧手写签名)
                      */
                     std::vector<std::string> m_componentLimitType;
                     bool m_componentLimitTypeHasBeenSet;
@@ -351,14 +351,14 @@ namespace TencentCloud
                     /**
                      * 同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
                      */
-                    std::string m_organizationOpenId;
-                    bool m_organizationOpenIdHasBeenSet;
-
-                    /**
-                     * 同一渠道下其他合作企业OpenId，B2B场景下必传；
-                     */
                     std::string m_organizationName;
                     bool m_organizationNameHasBeenSet;
+
+                    /**
+                     * 同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
+                     */
+                    std::string m_organizationOpenId;
+                    bool m_organizationOpenIdHasBeenSet;
 
                 };
             }

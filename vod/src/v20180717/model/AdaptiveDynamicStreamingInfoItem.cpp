@@ -24,7 +24,8 @@ AdaptiveDynamicStreamingInfoItem::AdaptiveDynamicStreamingInfoItem() :
     m_definitionHasBeenSet(false),
     m_packageHasBeenSet(false),
     m_drmTypeHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_sizeHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome AdaptiveDynamicStreamingInfoItem::Deserialize(const rapidjso
         m_urlHasBeenSet = true;
     }
 
+    if (value.HasMember("Size") && !value["Size"].IsNull())
+    {
+        if (!value["Size"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingInfoItem.Size` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_size = value["Size"].GetInt64();
+        m_sizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void AdaptiveDynamicStreamingInfoItem::ToJsonObject(rapidjson::Value &value, rap
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Size";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_size, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void AdaptiveDynamicStreamingInfoItem::SetUrl(const string& _url)
 bool AdaptiveDynamicStreamingInfoItem::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+int64_t AdaptiveDynamicStreamingInfoItem::GetSize() const
+{
+    return m_size;
+}
+
+void AdaptiveDynamicStreamingInfoItem::SetSize(const int64_t& _size)
+{
+    m_size = _size;
+    m_sizeHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingInfoItem::SizeHasBeenSet() const
+{
+    return m_sizeHasBeenSet;
 }
 

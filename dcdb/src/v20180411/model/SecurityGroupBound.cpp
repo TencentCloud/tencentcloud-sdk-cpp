@@ -21,8 +21,8 @@ using namespace TencentCloud::Dcdb::V20180411::Model;
 using namespace std;
 
 SecurityGroupBound::SecurityGroupBound() :
-    m_actionHasBeenSet(false),
     m_cidrIpHasBeenSet(false),
+    m_actionHasBeenSet(false),
     m_portRangeHasBeenSet(false),
     m_ipProtocolHasBeenSet(false)
 {
@@ -33,16 +33,6 @@ CoreInternalOutcome SecurityGroupBound::Deserialize(const rapidjson::Value &valu
     string requestId = "";
 
 
-    if (value.HasMember("Action") && !value["Action"].IsNull())
-    {
-        if (!value["Action"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `SecurityGroupBound.Action` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_action = string(value["Action"].GetString());
-        m_actionHasBeenSet = true;
-    }
-
     if (value.HasMember("CidrIp") && !value["CidrIp"].IsNull())
     {
         if (!value["CidrIp"].IsString())
@@ -51,6 +41,16 @@ CoreInternalOutcome SecurityGroupBound::Deserialize(const rapidjson::Value &valu
         }
         m_cidrIp = string(value["CidrIp"].GetString());
         m_cidrIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("Action") && !value["Action"].IsNull())
+    {
+        if (!value["Action"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupBound.Action` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_action = string(value["Action"].GetString());
+        m_actionHasBeenSet = true;
     }
 
     if (value.HasMember("PortRange") && !value["PortRange"].IsNull())
@@ -80,20 +80,20 @@ CoreInternalOutcome SecurityGroupBound::Deserialize(const rapidjson::Value &valu
 void SecurityGroupBound::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_actionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Action";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_action.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_cidrIpHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CidrIp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cidrIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_actionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Action";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_action.c_str(), allocator).Move(), allocator);
     }
 
     if (m_portRangeHasBeenSet)
@@ -115,22 +115,6 @@ void SecurityGroupBound::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
 }
 
 
-string SecurityGroupBound::GetAction() const
-{
-    return m_action;
-}
-
-void SecurityGroupBound::SetAction(const string& _action)
-{
-    m_action = _action;
-    m_actionHasBeenSet = true;
-}
-
-bool SecurityGroupBound::ActionHasBeenSet() const
-{
-    return m_actionHasBeenSet;
-}
-
 string SecurityGroupBound::GetCidrIp() const
 {
     return m_cidrIp;
@@ -145,6 +129,22 @@ void SecurityGroupBound::SetCidrIp(const string& _cidrIp)
 bool SecurityGroupBound::CidrIpHasBeenSet() const
 {
     return m_cidrIpHasBeenSet;
+}
+
+string SecurityGroupBound::GetAction() const
+{
+    return m_action;
+}
+
+void SecurityGroupBound::SetAction(const string& _action)
+{
+    m_action = _action;
+    m_actionHasBeenSet = true;
+}
+
+bool SecurityGroupBound::ActionHasBeenSet() const
+{
+    return m_actionHasBeenSet;
 }
 
 string SecurityGroupBound::GetPortRange() const

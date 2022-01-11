@@ -67,6 +67,20 @@ namespace TencentCloud
                      */
                     bool InvalidTypeHasBeenSet() const;
 
+                    /**
+                     * 获取true表示用户已经可以使用云API密钥安全托管功能，
+false表示用户暂时不能使用云API密钥安全托管功能。
+                     * @return AccessKeyEscrowEnabled true表示用户已经可以使用云API密钥安全托管功能，
+false表示用户暂时不能使用云API密钥安全托管功能。
+                     */
+                    bool GetAccessKeyEscrowEnabled() const;
+
+                    /**
+                     * 判断参数 AccessKeyEscrowEnabled 是否已赋值
+                     * @return AccessKeyEscrowEnabled 是否已赋值
+                     */
+                    bool AccessKeyEscrowEnabledHasBeenSet() const;
+
                 private:
 
                     /**
@@ -80,6 +94,13 @@ namespace TencentCloud
                      */
                     int64_t m_invalidType;
                     bool m_invalidTypeHasBeenSet;
+
+                    /**
+                     * true表示用户已经可以使用云API密钥安全托管功能，
+false表示用户暂时不能使用云API密钥安全托管功能。
+                     */
+                    bool m_accessKeyEscrowEnabled;
+                    bool m_accessKeyEscrowEnabledHasBeenSet;
 
                 };
             }

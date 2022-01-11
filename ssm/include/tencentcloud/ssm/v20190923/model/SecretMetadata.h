@@ -235,17 +235,29 @@ namespace TencentCloud
                     bool NextRotationTimeHasBeenSet() const;
 
                     /**
-                     * 获取0 -- 用户自定义凭据；1 -- 云产品凭据
+                     * 获取0 -- 用户自定义凭据；
+1 -- 云产品凭据；
+2 -- SSH密钥对凭据；
+3 -- 云API密钥对凭据；
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SecretType 0 -- 用户自定义凭据；1 -- 云产品凭据
+                     * @return SecretType 0 -- 用户自定义凭据；
+1 -- 云产品凭据；
+2 -- SSH密钥对凭据；
+3 -- 云API密钥对凭据；
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetSecretType() const;
 
                     /**
-                     * 设置0 -- 用户自定义凭据；1 -- 云产品凭据
+                     * 设置0 -- 用户自定义凭据；
+1 -- 云产品凭据；
+2 -- SSH密钥对凭据；
+3 -- 云API密钥对凭据；
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SecretType 0 -- 用户自定义凭据；1 -- 云产品凭据
+                     * @param SecretType 0 -- 用户自定义凭据；
+1 -- 云产品凭据；
+2 -- SSH密钥对凭据；
+3 -- 云API密钥对凭据；
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSecretType(const int64_t& _secretType);
@@ -344,6 +356,28 @@ namespace TencentCloud
                      */
                     bool AssociatedInstanceIDsHasBeenSet() const;
 
+                    /**
+                     * 获取当凭据类型为云API密钥对凭据时，此字段有效，用于表示云API密钥对所属的用户UIN。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TargetUin 当凭据类型为云API密钥对凭据时，此字段有效，用于表示云API密钥对所属的用户UIN。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetTargetUin() const;
+
+                    /**
+                     * 设置当凭据类型为云API密钥对凭据时，此字段有效，用于表示云API密钥对所属的用户UIN。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TargetUin 当凭据类型为云API密钥对凭据时，此字段有效，用于表示云API密钥对所属的用户UIN。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTargetUin(const uint64_t& _targetUin);
+
+                    /**
+                     * 判断参数 TargetUin 是否已赋值
+                     * @return TargetUin 是否已赋值
+                     */
+                    bool TargetUinHasBeenSet() const;
+
                 private:
 
                     /**
@@ -409,7 +443,10 @@ namespace TencentCloud
                     bool m_nextRotationTimeHasBeenSet;
 
                     /**
-                     * 0 -- 用户自定义凭据；1 -- 云产品凭据
+                     * 0 -- 用户自定义凭据；
+1 -- 云产品凭据；
+2 -- SSH密钥对凭据；
+3 -- 云API密钥对凭据；
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_secretType;
@@ -442,6 +479,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_associatedInstanceIDs;
                     bool m_associatedInstanceIDsHasBeenSet;
+
+                    /**
+                     * 当凭据类型为云API密钥对凭据时，此字段有效，用于表示云API密钥对所属的用户UIN。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_targetUin;
+                    bool m_targetUinHasBeenSet;
 
                 };
             }

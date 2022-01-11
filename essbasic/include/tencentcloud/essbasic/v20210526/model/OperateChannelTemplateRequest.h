@@ -135,14 +135,14 @@ namespace TencentCloud
                     bool AuthTagHasBeenSet() const;
 
                     /**
-                     * 获取合作企业方第三方机构唯一标识数据
-                     * @return ProxyOrganizationOpenIds 合作企业方第三方机构唯一标识数据
+                     * 获取合作企业方第三方机构唯一标识数据，支持多个， 用","进行分隔
+                     * @return ProxyOrganizationOpenIds 合作企业方第三方机构唯一标识数据，支持多个， 用","进行分隔
                      */
                     std::string GetProxyOrganizationOpenIds() const;
 
                     /**
-                     * 设置合作企业方第三方机构唯一标识数据
-                     * @param ProxyOrganizationOpenIds 合作企业方第三方机构唯一标识数据
+                     * 设置合作企业方第三方机构唯一标识数据，支持多个， 用","进行分隔
+                     * @param ProxyOrganizationOpenIds 合作企业方第三方机构唯一标识数据，支持多个， 用","进行分隔
                      */
                     void SetProxyOrganizationOpenIds(const std::string& _proxyOrganizationOpenIds);
 
@@ -185,7 +185,7 @@ namespace TencentCloud
                     bool m_authTagHasBeenSet;
 
                     /**
-                     * 合作企业方第三方机构唯一标识数据
+                     * 合作企业方第三方机构唯一标识数据，支持多个， 用","进行分隔
                      */
                     std::string m_proxyOrganizationOpenIds;
                     bool m_proxyOrganizationOpenIdsHasBeenSet;
