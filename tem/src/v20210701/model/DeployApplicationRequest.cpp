@@ -57,7 +57,10 @@ DeployApplicationRequest::DeployApplicationRequest() :
     m_deployStrategyConfHasBeenSet(false),
     m_horizontalAutoscalerHasBeenSet(false),
     m_cronHorizontalAutoscalerHasBeenSet(false),
-    m_logEnableHasBeenSet(false)
+    m_logEnableHasBeenSet(false),
+    m_confEditedHasBeenSet(false),
+    m_speedUpHasBeenSet(false),
+    m_startupProbeHasBeenSet(false)
 {
 }
 
@@ -409,6 +412,31 @@ string DeployApplicationRequest::ToJsonString() const
         string key = "LogEnable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_logEnable, allocator);
+    }
+
+    if (m_confEditedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfEdited";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_confEdited, allocator);
+    }
+
+    if (m_speedUpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpeedUp";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_speedUp, allocator);
+    }
+
+    if (m_startupProbeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartupProbe";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_startupProbe.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -977,6 +1005,54 @@ void DeployApplicationRequest::SetLogEnable(const int64_t& _logEnable)
 bool DeployApplicationRequest::LogEnableHasBeenSet() const
 {
     return m_logEnableHasBeenSet;
+}
+
+bool DeployApplicationRequest::GetConfEdited() const
+{
+    return m_confEdited;
+}
+
+void DeployApplicationRequest::SetConfEdited(const bool& _confEdited)
+{
+    m_confEdited = _confEdited;
+    m_confEditedHasBeenSet = true;
+}
+
+bool DeployApplicationRequest::ConfEditedHasBeenSet() const
+{
+    return m_confEditedHasBeenSet;
+}
+
+bool DeployApplicationRequest::GetSpeedUp() const
+{
+    return m_speedUp;
+}
+
+void DeployApplicationRequest::SetSpeedUp(const bool& _speedUp)
+{
+    m_speedUp = _speedUp;
+    m_speedUpHasBeenSet = true;
+}
+
+bool DeployApplicationRequest::SpeedUpHasBeenSet() const
+{
+    return m_speedUpHasBeenSet;
+}
+
+HealthCheckConfig DeployApplicationRequest::GetStartupProbe() const
+{
+    return m_startupProbe;
+}
+
+void DeployApplicationRequest::SetStartupProbe(const HealthCheckConfig& _startupProbe)
+{
+    m_startupProbe = _startupProbe;
+    m_startupProbeHasBeenSet = true;
+}
+
+bool DeployApplicationRequest::StartupProbeHasBeenSet() const
+{
+    return m_startupProbeHasBeenSet;
 }
 
 

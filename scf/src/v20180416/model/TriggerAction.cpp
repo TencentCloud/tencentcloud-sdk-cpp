@@ -23,7 +23,8 @@ using namespace std;
 TriggerAction::TriggerAction() :
     m_triggerNameHasBeenSet(false),
     m_triggerProvisionedConcurrencyNumHasBeenSet(false),
-    m_triggerCronConfigHasBeenSet(false)
+    m_triggerCronConfigHasBeenSet(false),
+    m_provisionedTypeHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome TriggerAction::Deserialize(const rapidjson::Value &value)
         m_triggerCronConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("ProvisionedType") && !value["ProvisionedType"].IsNull())
+    {
+        if (!value["ProvisionedType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TriggerAction.ProvisionedType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_provisionedType = string(value["ProvisionedType"].GetString());
+        m_provisionedTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void TriggerAction::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "TriggerCronConfig";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_triggerCronConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_provisionedTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProvisionedType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_provisionedType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void TriggerAction::SetTriggerCronConfig(const string& _triggerCronConfig)
 bool TriggerAction::TriggerCronConfigHasBeenSet() const
 {
     return m_triggerCronConfigHasBeenSet;
+}
+
+string TriggerAction::GetProvisionedType() const
+{
+    return m_provisionedType;
+}
+
+void TriggerAction::SetProvisionedType(const string& _provisionedType)
+{
+    m_provisionedType = _provisionedType;
+    m_provisionedTypeHasBeenSet = true;
+}
+
+bool TriggerAction::ProvisionedTypeHasBeenSet() const
+{
+    return m_provisionedTypeHasBeenSet;
 }
 

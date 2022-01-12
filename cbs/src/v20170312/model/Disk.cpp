@@ -55,7 +55,8 @@ Disk::Disk() :
     m_differDaysOfDeadlineHasBeenSet(false),
     m_returnFailCodeHasBeenSet(false),
     m_shareableHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_deleteSnapshotHasBeenSet(false)
 {
 }
 
@@ -437,6 +438,16 @@ CoreInternalOutcome Disk::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("DeleteSnapshot") && !value["DeleteSnapshot"].IsNull())
+    {
+        if (!value["DeleteSnapshot"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Disk.DeleteSnapshot` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deleteSnapshot = value["DeleteSnapshot"].GetInt64();
+        m_deleteSnapshotHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -740,6 +751,14 @@ void Disk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deleteSnapshotHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteSnapshot";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deleteSnapshot, allocator);
     }
 
 }
@@ -1303,5 +1322,21 @@ void Disk::SetCreateTime(const string& _createTime)
 bool Disk::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+int64_t Disk::GetDeleteSnapshot() const
+{
+    return m_deleteSnapshot;
+}
+
+void Disk::SetDeleteSnapshot(const int64_t& _deleteSnapshot)
+{
+    m_deleteSnapshot = _deleteSnapshot;
+    m_deleteSnapshotHasBeenSet = true;
+}
+
+bool Disk::DeleteSnapshotHasBeenSet() const
+{
+    return m_deleteSnapshotHasBeenSet;
 }
 

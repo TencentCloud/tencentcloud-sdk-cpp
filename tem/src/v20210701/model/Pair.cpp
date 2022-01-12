@@ -22,7 +22,9 @@ using namespace std;
 
 Pair::Pair() :
     m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_typeHasBeenSet(false),
+    m_configHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,26 @@ CoreInternalOutcome Pair::Deserialize(const rapidjson::Value &value)
         m_valueHasBeenSet = true;
     }
 
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Pair.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Config") && !value["Config"].IsNull())
+    {
+        if (!value["Config"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Pair.Config` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_config = string(value["Config"].GetString());
+        m_configHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +94,22 @@ void Pair::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_value.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_configHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Config";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_config.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +145,37 @@ void Pair::SetValue(const string& _value)
 bool Pair::ValueHasBeenSet() const
 {
     return m_valueHasBeenSet;
+}
+
+string Pair::GetType() const
+{
+    return m_type;
+}
+
+void Pair::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool Pair::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
+
+string Pair::GetConfig() const
+{
+    return m_config;
+}
+
+void Pair::SetConfig(const string& _config)
+{
+    m_config = _config;
+    m_configHasBeenSet = true;
+}
+
+bool Pair::ConfigHasBeenSet() const
+{
+    return m_configHasBeenSet;
 }
 

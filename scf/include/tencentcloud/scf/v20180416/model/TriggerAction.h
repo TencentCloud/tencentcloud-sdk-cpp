@@ -112,6 +112,28 @@ namespace TencentCloud
                      */
                     bool TriggerCronConfigHasBeenSet() const;
 
+                    /**
+                     * 获取预置类型 Default
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProvisionedType 预置类型 Default
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProvisionedType() const;
+
+                    /**
+                     * 设置预置类型 Default
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProvisionedType 预置类型 Default
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProvisionedType(const std::string& _provisionedType);
+
+                    /**
+                     * 判断参数 ProvisionedType 是否已赋值
+                     * @return ProvisionedType 是否已赋值
+                     */
+                    bool ProvisionedTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -134,6 +156,13 @@ namespace TencentCloud
                      */
                     std::string m_triggerCronConfig;
                     bool m_triggerCronConfigHasBeenSet;
+
+                    /**
+                     * 预置类型 Default
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_provisionedType;
+                    bool m_provisionedTypeHasBeenSet;
 
                 };
             }

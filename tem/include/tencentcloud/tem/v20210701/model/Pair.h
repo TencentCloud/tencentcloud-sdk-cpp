@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取建
-                     * @return Key 建
+                     * 获取键
+                     * @return Key 键
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置建
-                     * @param Key 建
+                     * 设置键
+                     * @param Key 键
                      */
                     void SetKey(const std::string& _key);
 
@@ -82,10 +82,54 @@ namespace TencentCloud
                      */
                     bool ValueHasBeenSet() const;
 
+                    /**
+                     * 获取类型，default 为自定义，reserved 为系统变量，referenced 为引用配置项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Type 类型，default 为自定义，reserved 为系统变量，referenced 为引用配置项
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置类型，default 为自定义，reserved 为系统变量，referenced 为引用配置项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Type 类型，default 为自定义，reserved 为系统变量，referenced 为引用配置项
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取配置名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Config 配置名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetConfig() const;
+
+                    /**
+                     * 设置配置名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Config 配置名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetConfig(const std::string& _config);
+
+                    /**
+                     * 判断参数 Config 是否已赋值
+                     * @return Config 是否已赋值
+                     */
+                    bool ConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 建
+                     * 键
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
@@ -95,6 +139,20 @@ namespace TencentCloud
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
+
+                    /**
+                     * 类型，default 为自定义，reserved 为系统变量，referenced 为引用配置项
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * 配置名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_config;
+                    bool m_configHasBeenSet;
 
                 };
             }

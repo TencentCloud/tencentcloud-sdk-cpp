@@ -112,6 +112,50 @@ namespace TencentCloud
                      */
                     bool ValidationCodeHasBeenSet() const;
 
+                    /**
+                     * 获取通知开始时间 一天开始的秒数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StartTime 通知开始时间 一天开始的秒数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetStartTime() const;
+
+                    /**
+                     * 设置通知开始时间 一天开始的秒数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StartTime 通知开始时间 一天开始的秒数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStartTime(const int64_t& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取通知结束时间 一天开始的秒数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EndTime 通知结束时间 一天开始的秒数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetEndTime() const;
+
+                    /**
+                     * 设置通知结束时间 一天开始的秒数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EndTime 通知结束时间 一天开始的秒数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEndTime(const int64_t& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     */
+                    bool EndTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -134,6 +178,20 @@ namespace TencentCloud
                      */
                     std::string m_validationCode;
                     bool m_validationCodeHasBeenSet;
+
+                    /**
+                     * 通知开始时间 一天开始的秒数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 通知结束时间 一天开始的秒数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_endTime;
+                    bool m_endTimeHasBeenSet;
 
                 };
             }

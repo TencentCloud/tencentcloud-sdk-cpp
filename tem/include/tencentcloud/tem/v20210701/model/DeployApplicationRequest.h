@@ -359,21 +359,29 @@ namespace TencentCloud
 
                     /**
                      * 获取JDK 版本。
-- KONA：使用 kona jdk。
-- OPEN：使用 open jdk。
+- KONA:8：使用 kona jdk 8。
+- OPEN:8：使用 open jdk 8。
+- KONA:11：使用 kona jdk 11。
+- OPEN:11：使用 open jdk 11。
                      * @return JdkVersion JDK 版本。
-- KONA：使用 kona jdk。
-- OPEN：使用 open jdk。
+- KONA:8：使用 kona jdk 8。
+- OPEN:8：使用 open jdk 8。
+- KONA:11：使用 kona jdk 11。
+- OPEN:11：使用 open jdk 11。
                      */
                     std::string GetJdkVersion() const;
 
                     /**
                      * 设置JDK 版本。
-- KONA：使用 kona jdk。
-- OPEN：使用 open jdk。
+- KONA:8：使用 kona jdk 8。
+- OPEN:8：使用 open jdk 8。
+- KONA:11：使用 kona jdk 11。
+- OPEN:11：使用 open jdk 11。
                      * @param JdkVersion JDK 版本。
-- KONA：使用 kona jdk。
-- OPEN：使用 open jdk。
+- KONA:8：使用 kona jdk 8。
+- OPEN:8：使用 open jdk 8。
+- KONA:11：使用 kona jdk 11。
+- OPEN:11：使用 open jdk 11。
                      */
                     void SetJdkVersion(const std::string& _jdkVersion);
 
@@ -707,6 +715,60 @@ namespace TencentCloud
                      */
                     bool LogEnableHasBeenSet() const;
 
+                    /**
+                     * 获取（除开镜像配置）配置是否修改
+                     * @return ConfEdited （除开镜像配置）配置是否修改
+                     */
+                    bool GetConfEdited() const;
+
+                    /**
+                     * 设置（除开镜像配置）配置是否修改
+                     * @param ConfEdited （除开镜像配置）配置是否修改
+                     */
+                    void SetConfEdited(const bool& _confEdited);
+
+                    /**
+                     * 判断参数 ConfEdited 是否已赋值
+                     * @return ConfEdited 是否已赋值
+                     */
+                    bool ConfEditedHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启应用加速
+                     * @return SpeedUp 是否开启应用加速
+                     */
+                    bool GetSpeedUp() const;
+
+                    /**
+                     * 设置是否开启应用加速
+                     * @param SpeedUp 是否开启应用加速
+                     */
+                    void SetSpeedUp(const bool& _speedUp);
+
+                    /**
+                     * 判断参数 SpeedUp 是否已赋值
+                     * @return SpeedUp 是否已赋值
+                     */
+                    bool SpeedUpHasBeenSet() const;
+
+                    /**
+                     * 获取启动探针配置
+                     * @return StartupProbe 启动探针配置
+                     */
+                    HealthCheckConfig GetStartupProbe() const;
+
+                    /**
+                     * 设置启动探针配置
+                     * @param StartupProbe 启动探针配置
+                     */
+                    void SetStartupProbe(const HealthCheckConfig& _startupProbe);
+
+                    /**
+                     * 判断参数 StartupProbe 是否已赋值
+                     * @return StartupProbe 是否已赋值
+                     */
+                    bool StartupProbeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -811,8 +873,10 @@ namespace TencentCloud
 
                     /**
                      * JDK 版本。
-- KONA：使用 kona jdk。
-- OPEN：使用 open jdk。
+- KONA:8：使用 kona jdk 8。
+- OPEN:8：使用 open jdk 8。
+- KONA:11：使用 kona jdk 11。
+- OPEN:11：使用 open jdk 11。
                      */
                     std::string m_jdkVersion;
                     bool m_jdkVersionHasBeenSet;
@@ -924,6 +988,24 @@ namespace TencentCloud
                      */
                     int64_t m_logEnable;
                     bool m_logEnableHasBeenSet;
+
+                    /**
+                     * （除开镜像配置）配置是否修改
+                     */
+                    bool m_confEdited;
+                    bool m_confEditedHasBeenSet;
+
+                    /**
+                     * 是否开启应用加速
+                     */
+                    bool m_speedUp;
+                    bool m_speedUpHasBeenSet;
+
+                    /**
+                     * 启动探针配置
+                     */
+                    HealthCheckConfig m_startupProbe;
+                    bool m_startupProbeHasBeenSet;
 
                 };
             }

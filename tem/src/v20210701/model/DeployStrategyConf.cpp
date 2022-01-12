@@ -24,7 +24,8 @@ DeployStrategyConf::DeployStrategyConf() :
     m_totalBatchCountHasBeenSet(false),
     m_betaBatchNumHasBeenSet(false),
     m_deployStrategyTypeHasBeenSet(false),
-    m_batchIntervalHasBeenSet(false)
+    m_batchIntervalHasBeenSet(false),
+    m_minAvailableHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome DeployStrategyConf::Deserialize(const rapidjson::Value &valu
         m_batchIntervalHasBeenSet = true;
     }
 
+    if (value.HasMember("MinAvailable") && !value["MinAvailable"].IsNull())
+    {
+        if (!value["MinAvailable"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeployStrategyConf.MinAvailable` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_minAvailable = value["MinAvailable"].GetInt64();
+        m_minAvailableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void DeployStrategyConf::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "BatchInterval";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_batchInterval, allocator);
+    }
+
+    if (m_minAvailableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MinAvailable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_minAvailable, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void DeployStrategyConf::SetBatchInterval(const int64_t& _batchInterval)
 bool DeployStrategyConf::BatchIntervalHasBeenSet() const
 {
     return m_batchIntervalHasBeenSet;
+}
+
+int64_t DeployStrategyConf::GetMinAvailable() const
+{
+    return m_minAvailable;
+}
+
+void DeployStrategyConf::SetMinAvailable(const int64_t& _minAvailable)
+{
+    m_minAvailable = _minAvailable;
+    m_minAvailableHasBeenSet = true;
+}
+
+bool DeployStrategyConf::MinAvailableHasBeenSet() const
+{
+    return m_minAvailableHasBeenSet;
 }
 

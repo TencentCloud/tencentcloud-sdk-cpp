@@ -118,6 +118,24 @@ namespace TencentCloud
                      */
                     bool BatchIntervalHasBeenSet() const;
 
+                    /**
+                     * 获取最小可用实例数
+                     * @return MinAvailable 最小可用实例数
+                     */
+                    int64_t GetMinAvailable() const;
+
+                    /**
+                     * 设置最小可用实例数
+                     * @param MinAvailable 最小可用实例数
+                     */
+                    void SetMinAvailable(const int64_t& _minAvailable);
+
+                    /**
+                     * 判断参数 MinAvailable 是否已赋值
+                     * @return MinAvailable 是否已赋值
+                     */
+                    bool MinAvailableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +161,12 @@ namespace TencentCloud
                      */
                     int64_t m_batchInterval;
                     bool m_batchIntervalHasBeenSet;
+
+                    /**
+                     * 最小可用实例数
+                     */
+                    int64_t m_minAvailable;
+                    bool m_minAvailableHasBeenSet;
 
                 };
             }

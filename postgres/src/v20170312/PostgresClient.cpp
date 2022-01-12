@@ -83,6 +83,49 @@ PostgresClient::AddDBInstanceToReadOnlyGroupOutcomeCallable PostgresClient::AddD
     return task->get_future();
 }
 
+PostgresClient::CloneDBInstanceOutcome PostgresClient::CloneDBInstance(const CloneDBInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloneDBInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloneDBInstanceResponse rsp = CloneDBInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloneDBInstanceOutcome(rsp);
+        else
+            return CloneDBInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CloneDBInstanceOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::CloneDBInstanceAsync(const CloneDBInstanceRequest& request, const CloneDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CloneDBInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::CloneDBInstanceOutcomeCallable PostgresClient::CloneDBInstanceCallable(const CloneDBInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CloneDBInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->CloneDBInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::CloseDBExtranetAccessOutcome PostgresClient::CloseDBExtranetAccess(const CloseDBExtranetAccessRequest &request)
 {
     auto outcome = MakeRequest(request, "CloseDBExtranetAccess");
@@ -506,6 +549,135 @@ PostgresClient::DescribeAccountsOutcomeCallable PostgresClient::DescribeAccounts
         [this, request]()
         {
             return this->DescribeAccounts(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::DescribeAvailableRecoveryTimeOutcome PostgresClient::DescribeAvailableRecoveryTime(const DescribeAvailableRecoveryTimeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAvailableRecoveryTime");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAvailableRecoveryTimeResponse rsp = DescribeAvailableRecoveryTimeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAvailableRecoveryTimeOutcome(rsp);
+        else
+            return DescribeAvailableRecoveryTimeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAvailableRecoveryTimeOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeAvailableRecoveryTimeAsync(const DescribeAvailableRecoveryTimeRequest& request, const DescribeAvailableRecoveryTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAvailableRecoveryTime(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DescribeAvailableRecoveryTimeOutcomeCallable PostgresClient::DescribeAvailableRecoveryTimeCallable(const DescribeAvailableRecoveryTimeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAvailableRecoveryTimeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAvailableRecoveryTime(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::DescribeBackupPlansOutcome PostgresClient::DescribeBackupPlans(const DescribeBackupPlansRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackupPlans");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackupPlansResponse rsp = DescribeBackupPlansResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackupPlansOutcome(rsp);
+        else
+            return DescribeBackupPlansOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackupPlansOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeBackupPlansAsync(const DescribeBackupPlansRequest& request, const DescribeBackupPlansAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBackupPlans(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DescribeBackupPlansOutcomeCallable PostgresClient::DescribeBackupPlansCallable(const DescribeBackupPlansRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBackupPlansOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBackupPlans(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::DescribeCloneDBInstanceSpecOutcome PostgresClient::DescribeCloneDBInstanceSpec(const DescribeCloneDBInstanceSpecRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloneDBInstanceSpec");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloneDBInstanceSpecResponse rsp = DescribeCloneDBInstanceSpecResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloneDBInstanceSpecOutcome(rsp);
+        else
+            return DescribeCloneDBInstanceSpecOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloneDBInstanceSpecOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeCloneDBInstanceSpecAsync(const DescribeCloneDBInstanceSpecRequest& request, const DescribeCloneDBInstanceSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloneDBInstanceSpec(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DescribeCloneDBInstanceSpecOutcomeCallable PostgresClient::DescribeCloneDBInstanceSpecCallable(const DescribeCloneDBInstanceSpecRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloneDBInstanceSpecOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloneDBInstanceSpec(request);
         }
     );
 
@@ -1581,6 +1753,92 @@ PostgresClient::ModifyAccountRemarkOutcomeCallable PostgresClient::ModifyAccount
         [this, request]()
         {
             return this->ModifyAccountRemark(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::ModifyBackupPlanOutcome PostgresClient::ModifyBackupPlan(const ModifyBackupPlanRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBackupPlan");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBackupPlanResponse rsp = ModifyBackupPlanResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBackupPlanOutcome(rsp);
+        else
+            return ModifyBackupPlanOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBackupPlanOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::ModifyBackupPlanAsync(const ModifyBackupPlanRequest& request, const ModifyBackupPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBackupPlan(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::ModifyBackupPlanOutcomeCallable PostgresClient::ModifyBackupPlanCallable(const ModifyBackupPlanRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBackupPlanOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBackupPlan(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::ModifyDBInstanceDeploymentOutcome PostgresClient::ModifyDBInstanceDeployment(const ModifyDBInstanceDeploymentRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBInstanceDeployment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBInstanceDeploymentResponse rsp = ModifyDBInstanceDeploymentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBInstanceDeploymentOutcome(rsp);
+        else
+            return ModifyDBInstanceDeploymentOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBInstanceDeploymentOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::ModifyDBInstanceDeploymentAsync(const ModifyDBInstanceDeploymentRequest& request, const ModifyDBInstanceDeploymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDBInstanceDeployment(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::ModifyDBInstanceDeploymentOutcomeCallable PostgresClient::ModifyDBInstanceDeploymentCallable(const ModifyDBInstanceDeploymentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceDeploymentOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDBInstanceDeployment(request);
         }
     );
 

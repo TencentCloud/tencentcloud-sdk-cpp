@@ -23,7 +23,9 @@ using namespace std;
 URLNotice::URLNotice() :
     m_uRLHasBeenSet(false),
     m_isValidHasBeenSet(false),
-    m_validationCodeHasBeenSet(false)
+    m_validationCodeHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,26 @@ CoreInternalOutcome URLNotice::Deserialize(const rapidjson::Value &value)
         m_validationCodeHasBeenSet = true;
     }
 
+    if (value.HasMember("StartTime") && !value["StartTime"].IsNull())
+    {
+        if (!value["StartTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `URLNotice.StartTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_startTime = value["StartTime"].GetInt64();
+        m_startTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("EndTime") && !value["EndTime"].IsNull())
+    {
+        if (!value["EndTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `URLNotice.EndTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_endTime = value["EndTime"].GetInt64();
+        m_endTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +113,22 @@ void URLNotice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ValidationCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_validationCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_startTime, allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_endTime, allocator);
     }
 
 }
@@ -142,5 +180,37 @@ void URLNotice::SetValidationCode(const string& _validationCode)
 bool URLNotice::ValidationCodeHasBeenSet() const
 {
     return m_validationCodeHasBeenSet;
+}
+
+int64_t URLNotice::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void URLNotice::SetStartTime(const int64_t& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool URLNotice::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+int64_t URLNotice::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void URLNotice::SetEndTime(const int64_t& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool URLNotice::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
 }
 
