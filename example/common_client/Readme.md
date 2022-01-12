@@ -6,7 +6,18 @@
 # 环境依赖
 请参考[README](https://github.com/milezhang/tencentcloud-sdk-cpp/blob/master/README.md)中的环境依赖项进行配置
 
-**注意，由于Common Client只依赖基础库tencentcloud-sdk-cpp-core，所以在"从源代码构建 SDK"说明项下，指定产品编译步骤中，不需要编译产品，直接执行cmake ..即可，不需要指定对应产品名**
+**注意，由于Common Client只依赖基础库tencentcloud-sdk-cpp-core，所以在"从源代码构建 SDK"说明项下，指定产品编译步骤中，不需要编译产品，直接执行cmake ..即可，更改后执行步骤如下所示：**
+
+```
+cd <path/to/tencentcloud-sdk-cpp>
+mkdir sdk_build
+cd sdk_build
+# centos 下使用 cmake3 ..
+# 指定产品编译，分号;分隔
+cmake ..
+make
+sudo make install
+```
 
 # 编译common client示例代码步骤
 
