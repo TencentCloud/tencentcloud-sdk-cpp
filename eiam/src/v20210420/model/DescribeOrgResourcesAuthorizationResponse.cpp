@@ -115,7 +115,7 @@ CoreInternalOutcome DescribeOrgResourcesAuthorizationResponse::Deserialize(const
         const rapidjson::Value &tmpValue = rsp["AuthorizationOrgResourceList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            AuthorizationResouceEntityInfo item;
+            AuthorizationResourceEntityInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
@@ -254,7 +254,7 @@ bool DescribeOrgResourcesAuthorizationResponse::OrgNodePathHasBeenSet() const
     return m_orgNodePathHasBeenSet;
 }
 
-vector<AuthorizationResouceEntityInfo> DescribeOrgResourcesAuthorizationResponse::GetAuthorizationOrgResourceList() const
+vector<AuthorizationResourceEntityInfo> DescribeOrgResourcesAuthorizationResponse::GetAuthorizationOrgResourceList() const
 {
     return m_authorizationOrgResourceList;
 }

@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/eiam/v20210420/model/AuthorizationResouceEntityInfo.h>
+#include <tencentcloud/eiam/v20210420/model/AuthorizationResourceEntityInfo.h>
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Eiam::V20210420::Model;
 using namespace std;
 
-AuthorizationResouceEntityInfo::AuthorizationResouceEntityInfo() :
+AuthorizationResourceEntityInfo::AuthorizationResourceEntityInfo() :
     m_resourceIdHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_resourceHasBeenSet(false),
@@ -28,7 +28,7 @@ AuthorizationResouceEntityInfo::AuthorizationResouceEntityInfo() :
 {
 }
 
-CoreInternalOutcome AuthorizationResouceEntityInfo::Deserialize(const rapidjson::Value &value)
+CoreInternalOutcome AuthorizationResourceEntityInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -37,7 +37,7 @@ CoreInternalOutcome AuthorizationResouceEntityInfo::Deserialize(const rapidjson:
     {
         if (!value["ResourceId"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `AuthorizationResouceEntityInfo.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthorizationResourceEntityInfo.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceId = string(value["ResourceId"].GetString());
         m_resourceIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome AuthorizationResouceEntityInfo::Deserialize(const rapidjson:
     {
         if (!value["ResourceType"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `AuthorizationResouceEntityInfo.ResourceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthorizationResourceEntityInfo.ResourceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceType = string(value["ResourceType"].GetString());
         m_resourceTypeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome AuthorizationResouceEntityInfo::Deserialize(const rapidjson:
     {
         if (!value["Resource"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `AuthorizationResouceEntityInfo.Resource` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthorizationResourceEntityInfo.Resource` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resource = string(value["Resource"].GetString());
         m_resourceHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome AuthorizationResouceEntityInfo::Deserialize(const rapidjson:
     {
         if (!value["ResourceName"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `AuthorizationResouceEntityInfo.ResourceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthorizationResourceEntityInfo.ResourceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceName = string(value["ResourceName"].GetString());
         m_resourceNameHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome AuthorizationResouceEntityInfo::Deserialize(const rapidjson:
     return CoreInternalOutcome(true);
 }
 
-void AuthorizationResouceEntityInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
+void AuthorizationResourceEntityInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_resourceIdHasBeenSet)
@@ -115,66 +115,66 @@ void AuthorizationResouceEntityInfo::ToJsonObject(rapidjson::Value &value, rapid
 }
 
 
-string AuthorizationResouceEntityInfo::GetResourceId() const
+string AuthorizationResourceEntityInfo::GetResourceId() const
 {
     return m_resourceId;
 }
 
-void AuthorizationResouceEntityInfo::SetResourceId(const string& _resourceId)
+void AuthorizationResourceEntityInfo::SetResourceId(const string& _resourceId)
 {
     m_resourceId = _resourceId;
     m_resourceIdHasBeenSet = true;
 }
 
-bool AuthorizationResouceEntityInfo::ResourceIdHasBeenSet() const
+bool AuthorizationResourceEntityInfo::ResourceIdHasBeenSet() const
 {
     return m_resourceIdHasBeenSet;
 }
 
-string AuthorizationResouceEntityInfo::GetResourceType() const
+string AuthorizationResourceEntityInfo::GetResourceType() const
 {
     return m_resourceType;
 }
 
-void AuthorizationResouceEntityInfo::SetResourceType(const string& _resourceType)
+void AuthorizationResourceEntityInfo::SetResourceType(const string& _resourceType)
 {
     m_resourceType = _resourceType;
     m_resourceTypeHasBeenSet = true;
 }
 
-bool AuthorizationResouceEntityInfo::ResourceTypeHasBeenSet() const
+bool AuthorizationResourceEntityInfo::ResourceTypeHasBeenSet() const
 {
     return m_resourceTypeHasBeenSet;
 }
 
-string AuthorizationResouceEntityInfo::GetResource() const
+string AuthorizationResourceEntityInfo::GetResource() const
 {
     return m_resource;
 }
 
-void AuthorizationResouceEntityInfo::SetResource(const string& _resource)
+void AuthorizationResourceEntityInfo::SetResource(const string& _resource)
 {
     m_resource = _resource;
     m_resourceHasBeenSet = true;
 }
 
-bool AuthorizationResouceEntityInfo::ResourceHasBeenSet() const
+bool AuthorizationResourceEntityInfo::ResourceHasBeenSet() const
 {
     return m_resourceHasBeenSet;
 }
 
-string AuthorizationResouceEntityInfo::GetResourceName() const
+string AuthorizationResourceEntityInfo::GetResourceName() const
 {
     return m_resourceName;
 }
 
-void AuthorizationResouceEntityInfo::SetResourceName(const string& _resourceName)
+void AuthorizationResourceEntityInfo::SetResourceName(const string& _resourceName)
 {
     m_resourceName = _resourceName;
     m_resourceNameHasBeenSet = true;
 }
 
-bool AuthorizationResouceEntityInfo::ResourceNameHasBeenSet() const
+bool AuthorizationResourceEntityInfo::ResourceNameHasBeenSet() const
 {
     return m_resourceNameHasBeenSet;
 }

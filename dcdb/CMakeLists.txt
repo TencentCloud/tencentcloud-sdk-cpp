@@ -62,6 +62,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DescribeDBSecurityGroupsRequest.h
   include/tencentcloud/dcdb/v20180411/model/DatabaseProcedure.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBPriceRequest.h
+  include/tencentcloud/dcdb/v20180411/model/SwitchDBInstanceHAResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeProjectSecurityGroupsResponse.h
   include/tencentcloud/dcdb/v20180411/model/DatabaseFunction.h
   include/tencentcloud/dcdb/v20180411/model/DescribeSqlLogsRequest.h
@@ -78,6 +79,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/GrantAccountPrivilegesRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeShardSpecRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBShardsRequest.h
+  include/tencentcloud/dcdb/v20180411/model/SwitchDBInstanceHARequest.h
   include/tencentcloud/dcdb/v20180411/model/DBParamValue.h
   include/tencentcloud/dcdb/v20180411/model/SpecConfigInfo.h
   include/tencentcloud/dcdb/v20180411/model/ModifyDBParametersRequest.h
@@ -201,6 +203,7 @@ set(dcdb_src
   src/v20180411/model/DescribeDBSecurityGroupsRequest.cpp
   src/v20180411/model/DatabaseProcedure.cpp
   src/v20180411/model/DescribeDCDBPriceRequest.cpp
+  src/v20180411/model/SwitchDBInstanceHAResponse.cpp
   src/v20180411/model/DescribeProjectSecurityGroupsResponse.cpp
   src/v20180411/model/DatabaseFunction.cpp
   src/v20180411/model/DescribeSqlLogsRequest.cpp
@@ -217,6 +220,7 @@ set(dcdb_src
   src/v20180411/model/GrantAccountPrivilegesRequest.cpp
   src/v20180411/model/DescribeShardSpecRequest.cpp
   src/v20180411/model/DescribeDCDBShardsRequest.cpp
+  src/v20180411/model/SwitchDBInstanceHARequest.cpp
   src/v20180411/model/DBParamValue.cpp
   src/v20180411/model/SpecConfigInfo.cpp
   src/v20180411/model/ModifyDBParametersRequest.cpp

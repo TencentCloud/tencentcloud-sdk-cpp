@@ -22,7 +22,8 @@
 using namespace TencentCloud::Cdb::V20170320::Model;
 using namespace std;
 
-DescribeParamTemplatesRequest::DescribeParamTemplatesRequest()
+DescribeParamTemplatesRequest::DescribeParamTemplatesRequest() :
+    m_engineVersionsHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,19 @@ string DescribeParamTemplatesRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_engineVersionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineVersions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_engineVersions.begin(); itr != m_engineVersions.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +54,21 @@ string DescribeParamTemplatesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<string> DescribeParamTemplatesRequest::GetEngineVersions() const
+{
+    return m_engineVersions;
+}
+
+void DescribeParamTemplatesRequest::SetEngineVersions(const vector<string>& _engineVersions)
+{
+    m_engineVersions = _engineVersions;
+    m_engineVersionsHasBeenSet = true;
+}
+
+bool DescribeParamTemplatesRequest::EngineVersionsHasBeenSet() const
+{
+    return m_engineVersionsHasBeenSet;
+}
 
 

@@ -46,22 +46,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com。如需填写发件人说明，请按照 
-发信人 <邮件地址> 的方式填写，例如：
-腾讯云团队 <noreply@mail.qcloud.com>
-                     * @return FromEmailAddress 发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com。如需填写发件人说明，请按照 
-发信人 <邮件地址> 的方式填写，例如：
-腾讯云团队 <noreply@mail.qcloud.com>
+                     * 获取发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com
+如需填写发件人说明，请按照如下方式： 
+别名 <邮箱地址>
+                     * @return FromEmailAddress 发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com
+如需填写发件人说明，请按照如下方式： 
+别名 <邮箱地址>
                      */
                     std::string GetFromEmailAddress() const;
 
                     /**
-                     * 设置发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com。如需填写发件人说明，请按照 
-发信人 <邮件地址> 的方式填写，例如：
-腾讯云团队 <noreply@mail.qcloud.com>
-                     * @param FromEmailAddress 发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com。如需填写发件人说明，请按照 
-发信人 <邮件地址> 的方式填写，例如：
-腾讯云团队 <noreply@mail.qcloud.com>
+                     * 设置发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com
+如需填写发件人说明，请按照如下方式： 
+别名 <邮箱地址>
+                     * @param FromEmailAddress 发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com
+如需填写发件人说明，请按照如下方式： 
+别名 <邮箱地址>
                      */
                     void SetFromEmailAddress(const std::string& _fromEmailAddress);
 
@@ -179,12 +179,30 @@ namespace TencentCloud
                      */
                     bool AttachmentsHasBeenSet() const;
 
+                    /**
+                     * 获取是否加入退订链接
+                     * @return Unsubscribe 是否加入退订链接
+                     */
+                    std::string GetUnsubscribe() const;
+
+                    /**
+                     * 设置是否加入退订链接
+                     * @param Unsubscribe 是否加入退订链接
+                     */
+                    void SetUnsubscribe(const std::string& _unsubscribe);
+
+                    /**
+                     * 判断参数 Unsubscribe 是否已赋值
+                     * @return Unsubscribe 是否已赋值
+                     */
+                    bool UnsubscribeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com。如需填写发件人说明，请按照 
-发信人 <邮件地址> 的方式填写，例如：
-腾讯云团队 <noreply@mail.qcloud.com>
+                     * 发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com
+如需填写发件人说明，请按照如下方式： 
+别名 <邮箱地址>
                      */
                     std::string m_fromEmailAddress;
                     bool m_fromEmailAddressHasBeenSet;
@@ -224,6 +242,12 @@ namespace TencentCloud
                      */
                     std::vector<Attachment> m_attachments;
                     bool m_attachmentsHasBeenSet;
+
+                    /**
+                     * 是否加入退订链接
+                     */
+                    std::string m_unsubscribe;
+                    bool m_unsubscribeHasBeenSet;
 
                 };
             }

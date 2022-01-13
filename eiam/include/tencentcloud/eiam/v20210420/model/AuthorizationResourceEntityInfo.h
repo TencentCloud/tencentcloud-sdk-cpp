@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_EIAM_V20210420_MODEL_AUTHORIZATIONRESOUCEENTITYINFO_H_
-#define TENCENTCLOUD_EIAM_V20210420_MODEL_AUTHORIZATIONRESOUCEENTITYINFO_H_
+#ifndef TENCENTCLOUD_EIAM_V20210420_MODEL_AUTHORIZATIONRESOURCEENTITYINFO_H_
+#define TENCENTCLOUD_EIAM_V20210420_MODEL_AUTHORIZATIONRESOURCEENTITYINFO_H_
 
 #include <string>
 #include <vector>
@@ -37,11 +37,11 @@ namespace TencentCloud
                 /**
                 * 授权资源详情
                 */
-                class AuthorizationResouceEntityInfo : public AbstractModel
+                class AuthorizationResourceEntityInfo : public AbstractModel
                 {
                 public:
-                    AuthorizationResouceEntityInfo();
-                    ~AuthorizationResouceEntityInfo() = default;
+                    AuthorizationResourceEntityInfo();
+                    ~AuthorizationResourceEntityInfo() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
@@ -170,4 +170,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_EIAM_V20210420_MODEL_AUTHORIZATIONRESOUCEENTITYINFO_H_
+#endif // !TENCENTCLOUD_EIAM_V20210420_MODEL_AUTHORIZATIONRESOURCEENTITYINFO_H_

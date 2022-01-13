@@ -2061,6 +2061,135 @@ IotcloudClient::GetUserResourceInfoOutcomeCallable IotcloudClient::GetUserResour
     return task->get_future();
 }
 
+IotcloudClient::ListLogOutcome IotcloudClient::ListLog(const ListLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListLogResponse rsp = ListLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListLogOutcome(rsp);
+        else
+            return ListLogOutcome(o.GetError());
+    }
+    else
+    {
+        return ListLogOutcome(outcome.GetError());
+    }
+}
+
+void IotcloudClient::ListLogAsync(const ListLogRequest& request, const ListLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotcloudClient::ListLogOutcomeCallable IotcloudClient::ListLogCallable(const ListLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListLogOutcome()>>(
+        [this, request]()
+        {
+            return this->ListLog(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotcloudClient::ListLogPayloadOutcome IotcloudClient::ListLogPayload(const ListLogPayloadRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListLogPayload");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListLogPayloadResponse rsp = ListLogPayloadResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListLogPayloadOutcome(rsp);
+        else
+            return ListLogPayloadOutcome(o.GetError());
+    }
+    else
+    {
+        return ListLogPayloadOutcome(outcome.GetError());
+    }
+}
+
+void IotcloudClient::ListLogPayloadAsync(const ListLogPayloadRequest& request, const ListLogPayloadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListLogPayload(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotcloudClient::ListLogPayloadOutcomeCallable IotcloudClient::ListLogPayloadCallable(const ListLogPayloadRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListLogPayloadOutcome()>>(
+        [this, request]()
+        {
+            return this->ListLogPayload(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotcloudClient::ListSDKLogOutcome IotcloudClient::ListSDKLog(const ListSDKLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListSDKLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListSDKLogResponse rsp = ListSDKLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListSDKLogOutcome(rsp);
+        else
+            return ListSDKLogOutcome(o.GetError());
+    }
+    else
+    {
+        return ListSDKLogOutcome(outcome.GetError());
+    }
+}
+
+void IotcloudClient::ListSDKLogAsync(const ListSDKLogRequest& request, const ListSDKLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListSDKLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotcloudClient::ListSDKLogOutcomeCallable IotcloudClient::ListSDKLogCallable(const ListSDKLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListSDKLogOutcome()>>(
+        [this, request]()
+        {
+            return this->ListSDKLog(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotcloudClient::PublishAsDeviceOutcome IotcloudClient::PublishAsDevice(const PublishAsDeviceRequest &request)
 {
     auto outcome = MakeRequest(request, "PublishAsDevice");

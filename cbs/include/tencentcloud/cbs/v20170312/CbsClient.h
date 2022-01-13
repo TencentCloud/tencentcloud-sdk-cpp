@@ -63,6 +63,8 @@
 #include <tencentcloud/cbs/v20170312/model/DetachDisksResponse.h>
 #include <tencentcloud/cbs/v20170312/model/GetSnapOverviewRequest.h>
 #include <tencentcloud/cbs/v20170312/model/GetSnapOverviewResponse.h>
+#include <tencentcloud/cbs/v20170312/model/InitializeDisksRequest.h>
+#include <tencentcloud/cbs/v20170312/model/InitializeDisksResponse.h>
 #include <tencentcloud/cbs/v20170312/model/InquirePriceModifyDiskExtraPerformanceRequest.h>
 #include <tencentcloud/cbs/v20170312/model/InquirePriceModifyDiskExtraPerformanceResponse.h>
 #include <tencentcloud/cbs/v20170312/model/InquiryPriceCreateDisksRequest.h>
@@ -167,6 +169,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetSnapOverviewResponse> GetSnapOverviewOutcome;
                 typedef std::future<GetSnapOverviewOutcome> GetSnapOverviewOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::GetSnapOverviewRequest&, GetSnapOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetSnapOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::InitializeDisksResponse> InitializeDisksOutcome;
+                typedef std::future<InitializeDisksOutcome> InitializeDisksOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::InitializeDisksRequest&, InitializeDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InitializeDisksAsyncHandler;
                 typedef Outcome<Core::Error, Model::InquirePriceModifyDiskExtraPerformanceResponse> InquirePriceModifyDiskExtraPerformanceOutcome;
                 typedef std::future<InquirePriceModifyDiskExtraPerformanceOutcome> InquirePriceModifyDiskExtraPerformanceOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::InquirePriceModifyDiskExtraPerformanceRequest&, InquirePriceModifyDiskExtraPerformanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceModifyDiskExtraPerformanceAsyncHandler;
@@ -440,6 +445,19 @@ namespace TencentCloud
                 GetSnapOverviewOutcome GetSnapOverview(const Model::GetSnapOverviewRequest &request);
                 void GetSnapOverviewAsync(const Model::GetSnapOverviewRequest& request, const GetSnapOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetSnapOverviewOutcomeCallable GetSnapOverviewCallable(const Model::GetSnapOverviewRequest& request);
+
+                /**
+                 *重新初始化云硬盘至云硬盘初始创建时的状态。使用云硬盘的重新初始化功能时需要注意以下4点：
+1. 如果云硬盘是由快照创建的，则重新初始化会通过此快照重新回滚此云硬盘，即将云硬盘恢复为与快照一致的状态；
+2. 如果云硬盘不是通过快照创建的，则重新初始化会清空此云硬盘的数据；请在重新初始化云硬盘前检查并备份必要的数据；
+3. 当前仅未挂载的、非共享属性的数据盘云硬盘支持重新初始化；
+4. 当创建此云硬盘的原始快照被删除时，不再支持重新初始化此云硬盘。
+                 * @param req InitializeDisksRequest
+                 * @return InitializeDisksOutcome
+                 */
+                InitializeDisksOutcome InitializeDisks(const Model::InitializeDisksRequest &request);
+                void InitializeDisksAsync(const Model::InitializeDisksRequest& request, const InitializeDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InitializeDisksOutcomeCallable InitializeDisksCallable(const Model::InitializeDisksRequest& request);
 
                 /**
                  *本接口（InquirePriceModifyDiskExtraPerformance）用于调整云硬盘额外性能询价。

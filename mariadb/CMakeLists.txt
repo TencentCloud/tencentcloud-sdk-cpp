@@ -70,6 +70,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/ParamModifyResult.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBInstancesRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBSecurityGroupsRequest.h
+  include/tencentcloud/mariadb/v20170312/model/SwitchDBInstanceHAResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeSaleInfoRequest.h
   include/tencentcloud/mariadb/v20170312/model/RenewDBInstanceRequest.h
   include/tencentcloud/mariadb/v20170312/model/CreateDedicatedClusterDBInstanceResponse.h
@@ -87,6 +88,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/Deal.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBPerformanceDetailsRequest.h
   include/tencentcloud/mariadb/v20170312/model/CreateDedicatedClusterDBInstanceRequest.h
+  include/tencentcloud/mariadb/v20170312/model/SwitchDBInstanceHARequest.h
   include/tencentcloud/mariadb/v20170312/model/DBParamValue.h
   include/tencentcloud/mariadb/v20170312/model/SpecConfigInfo.h
   include/tencentcloud/mariadb/v20170312/model/ModifyDBParametersRequest.h
@@ -225,6 +227,7 @@ set(mariadb_src
   src/v20170312/model/ParamModifyResult.cpp
   src/v20170312/model/DescribeDBInstancesRequest.cpp
   src/v20170312/model/DescribeDBSecurityGroupsRequest.cpp
+  src/v20170312/model/SwitchDBInstanceHAResponse.cpp
   src/v20170312/model/DescribeSaleInfoRequest.cpp
   src/v20170312/model/RenewDBInstanceRequest.cpp
   src/v20170312/model/CreateDedicatedClusterDBInstanceResponse.cpp
@@ -242,6 +245,7 @@ set(mariadb_src
   src/v20170312/model/Deal.cpp
   src/v20170312/model/DescribeDBPerformanceDetailsRequest.cpp
   src/v20170312/model/CreateDedicatedClusterDBInstanceRequest.cpp
+  src/v20170312/model/SwitchDBInstanceHARequest.cpp
   src/v20170312/model/DBParamValue.cpp
   src/v20170312/model/SpecConfigInfo.cpp
   src/v20170312/model/ModifyDBParametersRequest.cpp

@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取参数类型
-                     * @return ParamType 参数类型
+                     * 获取参数类型：integer，enum，float，string，func
+                     * @return ParamType 参数类型：integer，enum，float，string，func
                      */
                     std::string GetParamType() const;
 
                     /**
-                     * 设置参数类型
-                     * @param ParamType 参数类型
+                     * 设置参数类型：integer，enum，float，string，func
+                     * @param ParamType 参数类型：integer，enum，float，string，func
                      */
                     void SetParamType(const std::string& _paramType);
 
@@ -208,6 +208,42 @@ namespace TencentCloud
                      */
                     bool EnumValueHasBeenSet() const;
 
+                    /**
+                     * 获取参数是公式类型时，该字段有效，表示公式类型最大值
+                     * @return MaxFunc 参数是公式类型时，该字段有效，表示公式类型最大值
+                     */
+                    std::string GetMaxFunc() const;
+
+                    /**
+                     * 设置参数是公式类型时，该字段有效，表示公式类型最大值
+                     * @param MaxFunc 参数是公式类型时，该字段有效，表示公式类型最大值
+                     */
+                    void SetMaxFunc(const std::string& _maxFunc);
+
+                    /**
+                     * 判断参数 MaxFunc 是否已赋值
+                     * @return MaxFunc 是否已赋值
+                     */
+                    bool MaxFuncHasBeenSet() const;
+
+                    /**
+                     * 获取参数是公式类型时，该字段有效，表示公式类型最小值
+                     * @return MinFunc 参数是公式类型时，该字段有效，表示公式类型最小值
+                     */
+                    std::string GetMinFunc() const;
+
+                    /**
+                     * 设置参数是公式类型时，该字段有效，表示公式类型最小值
+                     * @param MinFunc 参数是公式类型时，该字段有效，表示公式类型最小值
+                     */
+                    void SetMinFunc(const std::string& _minFunc);
+
+                    /**
+                     * 判断参数 MinFunc 是否已赋值
+                     * @return MinFunc 是否已赋值
+                     */
+                    bool MinFuncHasBeenSet() const;
+
                 private:
 
                     /**
@@ -217,7 +253,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 参数类型
+                     * 参数类型：integer，enum，float，string，func
                      */
                     std::string m_paramType;
                     bool m_paramTypeHasBeenSet;
@@ -263,6 +299,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_enumValue;
                     bool m_enumValueHasBeenSet;
+
+                    /**
+                     * 参数是公式类型时，该字段有效，表示公式类型最大值
+                     */
+                    std::string m_maxFunc;
+                    bool m_maxFuncHasBeenSet;
+
+                    /**
+                     * 参数是公式类型时，该字段有效，表示公式类型最小值
+                     */
+                    std::string m_minFunc;
+                    bool m_minFuncHasBeenSet;
 
                 };
             }

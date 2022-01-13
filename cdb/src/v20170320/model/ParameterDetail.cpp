@@ -29,7 +29,9 @@ ParameterDetail::ParameterDetail() :
     m_needRebootHasBeenSet(false),
     m_maxHasBeenSet(false),
     m_minHasBeenSet(false),
-    m_enumValueHasBeenSet(false)
+    m_enumValueHasBeenSet(false),
+    m_maxFuncHasBeenSet(false),
+    m_minFuncHasBeenSet(false)
 {
 }
 
@@ -131,6 +133,26 @@ CoreInternalOutcome ParameterDetail::Deserialize(const rapidjson::Value &value)
         m_enumValueHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxFunc") && !value["MaxFunc"].IsNull())
+    {
+        if (!value["MaxFunc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ParameterDetail.MaxFunc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxFunc = string(value["MaxFunc"].GetString());
+        m_maxFuncHasBeenSet = true;
+    }
+
+    if (value.HasMember("MinFunc") && !value["MinFunc"].IsNull())
+    {
+        if (!value["MinFunc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ParameterDetail.MinFunc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_minFunc = string(value["MinFunc"].GetString());
+        m_minFuncHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -213,6 +235,22 @@ void ParameterDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_maxFuncHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxFunc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_maxFunc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_minFuncHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MinFunc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_minFunc.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -360,5 +398,37 @@ void ParameterDetail::SetEnumValue(const vector<string>& _enumValue)
 bool ParameterDetail::EnumValueHasBeenSet() const
 {
     return m_enumValueHasBeenSet;
+}
+
+string ParameterDetail::GetMaxFunc() const
+{
+    return m_maxFunc;
+}
+
+void ParameterDetail::SetMaxFunc(const string& _maxFunc)
+{
+    m_maxFunc = _maxFunc;
+    m_maxFuncHasBeenSet = true;
+}
+
+bool ParameterDetail::MaxFuncHasBeenSet() const
+{
+    return m_maxFuncHasBeenSet;
+}
+
+string ParameterDetail::GetMinFunc() const
+{
+    return m_minFunc;
+}
+
+void ParameterDetail::SetMinFunc(const string& _minFunc)
+{
+    m_minFunc = _minFunc;
+    m_minFuncHasBeenSet = true;
+}
+
+bool ParameterDetail::MinFuncHasBeenSet() const
+{
+    return m_minFuncHasBeenSet;
 }
 

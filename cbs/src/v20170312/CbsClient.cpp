@@ -900,6 +900,49 @@ CbsClient::GetSnapOverviewOutcomeCallable CbsClient::GetSnapOverviewCallable(con
     return task->get_future();
 }
 
+CbsClient::InitializeDisksOutcome CbsClient::InitializeDisks(const InitializeDisksRequest &request)
+{
+    auto outcome = MakeRequest(request, "InitializeDisks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InitializeDisksResponse rsp = InitializeDisksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InitializeDisksOutcome(rsp);
+        else
+            return InitializeDisksOutcome(o.GetError());
+    }
+    else
+    {
+        return InitializeDisksOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::InitializeDisksAsync(const InitializeDisksRequest& request, const InitializeDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InitializeDisks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CbsClient::InitializeDisksOutcomeCallable CbsClient::InitializeDisksCallable(const InitializeDisksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InitializeDisksOutcome()>>(
+        [this, request]()
+        {
+            return this->InitializeDisks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CbsClient::InquirePriceModifyDiskExtraPerformanceOutcome CbsClient::InquirePriceModifyDiskExtraPerformance(const InquirePriceModifyDiskExtraPerformanceRequest &request)
 {
     auto outcome = MakeRequest(request, "InquirePriceModifyDiskExtraPerformance");

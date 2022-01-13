@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
-CreateNatFwInstanceResponse::CreateNatFwInstanceResponse()
+CreateNatFwInstanceResponse::CreateNatFwInstanceResponse() :
+    m_cfwInsIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreateNatFwInstanceResponse::Deserialize(const string &paylo
     }
 
 
+    if (rsp.HasMember("CfwInsId") && !rsp["CfwInsId"].IsNull())
+    {
+        if (!rsp["CfwInsId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CfwInsId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cfwInsId = string(rsp["CfwInsId"].GetString());
+        m_cfwInsIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreateNatFwInstanceResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_cfwInsIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CfwInsId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cfwInsId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateNatFwInstanceResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateNatFwInstanceResponse::GetCfwInsId() const
+{
+    return m_cfwInsId;
+}
+
+bool CreateNatFwInstanceResponse::CfwInsIdHasBeenSet() const
+{
+    return m_cfwInsIdHasBeenSet;
+}
 
 

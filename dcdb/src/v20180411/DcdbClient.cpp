@@ -2190,6 +2190,49 @@ DcdbClient::ResetAccountPasswordOutcomeCallable DcdbClient::ResetAccountPassword
     return task->get_future();
 }
 
+DcdbClient::SwitchDBInstanceHAOutcome DcdbClient::SwitchDBInstanceHA(const SwitchDBInstanceHARequest &request)
+{
+    auto outcome = MakeRequest(request, "SwitchDBInstanceHA");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SwitchDBInstanceHAResponse rsp = SwitchDBInstanceHAResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SwitchDBInstanceHAOutcome(rsp);
+        else
+            return SwitchDBInstanceHAOutcome(o.GetError());
+    }
+    else
+    {
+        return SwitchDBInstanceHAOutcome(outcome.GetError());
+    }
+}
+
+void DcdbClient::SwitchDBInstanceHAAsync(const SwitchDBInstanceHARequest& request, const SwitchDBInstanceHAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SwitchDBInstanceHA(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcdbClient::SwitchDBInstanceHAOutcomeCallable DcdbClient::SwitchDBInstanceHACallable(const SwitchDBInstanceHARequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SwitchDBInstanceHAOutcome()>>(
+        [this, request]()
+        {
+            return this->SwitchDBInstanceHA(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DcdbClient::UpgradeDCDBInstanceOutcome DcdbClient::UpgradeDCDBInstance(const UpgradeDCDBInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "UpgradeDCDBInstance");

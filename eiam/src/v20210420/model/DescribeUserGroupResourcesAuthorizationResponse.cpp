@@ -103,7 +103,7 @@ CoreInternalOutcome DescribeUserGroupResourcesAuthorizationResponse::Deserialize
         const rapidjson::Value &tmpValue = rsp["AuthorizationUserGroupResourceList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            AuthorizationResouceEntityInfo item;
+            AuthorizationResourceEntityInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
@@ -206,7 +206,7 @@ bool DescribeUserGroupResourcesAuthorizationResponse::UserGroupNameHasBeenSet() 
     return m_userGroupNameHasBeenSet;
 }
 
-vector<AuthorizationResouceEntityInfo> DescribeUserGroupResourcesAuthorizationResponse::GetAuthorizationUserGroupResourceList() const
+vector<AuthorizationResourceEntityInfo> DescribeUserGroupResourcesAuthorizationResponse::GetAuthorizationUserGroupResourceList() const
 {
     return m_authorizationUserGroupResourceList;
 }

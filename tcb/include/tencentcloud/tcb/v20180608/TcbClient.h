@@ -169,6 +169,8 @@
 #include <tencentcloud/tcb/v20180608/model/ReplaceActivityRecordResponse.h>
 #include <tencentcloud/tcb/v20180608/model/RollUpdateCloudBaseRunServerVersionRequest.h>
 #include <tencentcloud/tcb/v20180608/model/RollUpdateCloudBaseRunServerVersionResponse.h>
+#include <tencentcloud/tcb/v20180608/model/SearchClsLogRequest.h>
+#include <tencentcloud/tcb/v20180608/model/SearchClsLogResponse.h>
 #include <tencentcloud/tcb/v20180608/model/TurnOffStandaloneGatewayRequest.h>
 #include <tencentcloud/tcb/v20180608/model/TurnOffStandaloneGatewayResponse.h>
 #include <tencentcloud/tcb/v20180608/model/TurnOnStandaloneGatewayRequest.h>
@@ -406,6 +408,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RollUpdateCloudBaseRunServerVersionResponse> RollUpdateCloudBaseRunServerVersionOutcome;
                 typedef std::future<RollUpdateCloudBaseRunServerVersionOutcome> RollUpdateCloudBaseRunServerVersionOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::RollUpdateCloudBaseRunServerVersionRequest&, RollUpdateCloudBaseRunServerVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RollUpdateCloudBaseRunServerVersionAsyncHandler;
+                typedef Outcome<Core::Error, Model::SearchClsLogResponse> SearchClsLogOutcome;
+                typedef std::future<SearchClsLogOutcome> SearchClsLogOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::SearchClsLogRequest&, SearchClsLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchClsLogAsyncHandler;
                 typedef Outcome<Core::Error, Model::TurnOffStandaloneGatewayResponse> TurnOffStandaloneGatewayOutcome;
                 typedef std::future<TurnOffStandaloneGatewayOutcome> TurnOffStandaloneGatewayOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::TurnOffStandaloneGatewayRequest&, TurnOffStandaloneGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TurnOffStandaloneGatewayAsyncHandler;
@@ -1074,6 +1079,15 @@ namespace TencentCloud
                 RollUpdateCloudBaseRunServerVersionOutcome RollUpdateCloudBaseRunServerVersion(const Model::RollUpdateCloudBaseRunServerVersionRequest &request);
                 void RollUpdateCloudBaseRunServerVersionAsync(const Model::RollUpdateCloudBaseRunServerVersionRequest& request, const RollUpdateCloudBaseRunServerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RollUpdateCloudBaseRunServerVersionOutcomeCallable RollUpdateCloudBaseRunServerVersionCallable(const Model::RollUpdateCloudBaseRunServerVersionRequest& request);
+
+                /**
+                 *搜索CLS日志，TCB角色秘钥访问
+                 * @param req SearchClsLogRequest
+                 * @return SearchClsLogOutcome
+                 */
+                SearchClsLogOutcome SearchClsLog(const Model::SearchClsLogRequest &request);
+                void SearchClsLogAsync(const Model::SearchClsLogRequest& request, const SearchClsLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchClsLogOutcomeCallable SearchClsLogCallable(const Model::SearchClsLogRequest& request);
 
                 /**
                  *本接口（TurnOffStandaloneGateway）用于关闭小租户网关。

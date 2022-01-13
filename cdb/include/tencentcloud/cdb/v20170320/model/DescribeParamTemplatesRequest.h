@@ -42,7 +42,31 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取引擎版本，缺省则查询所有
+                     * @return EngineVersions 引擎版本，缺省则查询所有
+                     */
+                    std::vector<std::string> GetEngineVersions() const;
+
+                    /**
+                     * 设置引擎版本，缺省则查询所有
+                     * @param EngineVersions 引擎版本，缺省则查询所有
+                     */
+                    void SetEngineVersions(const std::vector<std::string>& _engineVersions);
+
+                    /**
+                     * 判断参数 EngineVersions 是否已赋值
+                     * @return EngineVersions 是否已赋值
+                     */
+                    bool EngineVersionsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 引擎版本，缺省则查询所有
+                     */
+                    std::vector<std::string> m_engineVersions;
+                    bool m_engineVersionsHasBeenSet;
 
                 };
             }

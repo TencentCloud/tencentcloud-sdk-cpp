@@ -117,6 +117,12 @@
 #include <tencentcloud/iotcloud/v20180614/model/GetCOSURLResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/GetUserResourceInfoRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/GetUserResourceInfoResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/ListLogRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/ListLogResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/ListLogPayloadRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/ListLogPayloadResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/ListSDKLogRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/ListSDKLogResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/PublishAsDeviceRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/PublishAsDeviceResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/PublishBroadcastMessageRequest.h>
@@ -302,6 +308,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetUserResourceInfoResponse> GetUserResourceInfoOutcome;
                 typedef std::future<GetUserResourceInfoOutcome> GetUserResourceInfoOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::GetUserResourceInfoRequest&, GetUserResourceInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetUserResourceInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListLogResponse> ListLogOutcome;
+                typedef std::future<ListLogOutcome> ListLogOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::ListLogRequest&, ListLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListLogPayloadResponse> ListLogPayloadOutcome;
+                typedef std::future<ListLogPayloadOutcome> ListLogPayloadOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::ListLogPayloadRequest&, ListLogPayloadOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListLogPayloadAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListSDKLogResponse> ListSDKLogOutcome;
+                typedef std::future<ListSDKLogOutcome> ListSDKLogOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::ListSDKLogRequest&, ListSDKLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListSDKLogAsyncHandler;
                 typedef Outcome<Core::Error, Model::PublishAsDeviceResponse> PublishAsDeviceOutcome;
                 typedef std::future<PublishAsDeviceOutcome> PublishAsDeviceOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::PublishAsDeviceRequest&, PublishAsDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishAsDeviceAsyncHandler;
@@ -772,6 +787,33 @@ namespace TencentCloud
                 GetUserResourceInfoOutcome GetUserResourceInfo(const Model::GetUserResourceInfoRequest &request);
                 void GetUserResourceInfoAsync(const Model::GetUserResourceInfoRequest& request, const GetUserResourceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetUserResourceInfoOutcomeCallable GetUserResourceInfoCallable(const Model::GetUserResourceInfoRequest& request);
+
+                /**
+                 *本接口（ListLog）用于查看日志信息 
+                 * @param req ListLogRequest
+                 * @return ListLogOutcome
+                 */
+                ListLogOutcome ListLog(const Model::ListLogRequest &request);
+                void ListLogAsync(const Model::ListLogRequest& request, const ListLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListLogOutcomeCallable ListLogCallable(const Model::ListLogRequest& request);
+
+                /**
+                 *获取日志内容列表
+                 * @param req ListLogPayloadRequest
+                 * @return ListLogPayloadOutcome
+                 */
+                ListLogPayloadOutcome ListLogPayload(const Model::ListLogPayloadRequest &request);
+                void ListLogPayloadAsync(const Model::ListLogPayloadRequest& request, const ListLogPayloadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListLogPayloadOutcomeCallable ListLogPayloadCallable(const Model::ListLogPayloadRequest& request);
+
+                /**
+                 *获取设备上报的日志
+                 * @param req ListSDKLogRequest
+                 * @return ListSDKLogOutcome
+                 */
+                ListSDKLogOutcome ListSDKLog(const Model::ListSDKLogRequest &request);
+                void ListSDKLogAsync(const Model::ListSDKLogRequest& request, const ListSDKLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListSDKLogOutcomeCallable ListSDKLogCallable(const Model::ListSDKLogRequest& request);
 
                 /**
                  *模拟lora类型的设备端向服务器端发送消息
