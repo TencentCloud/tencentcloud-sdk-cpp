@@ -100,9 +100,9 @@ namespace TencentCloud
                     bool ClientIdHasBeenSet() const;
 
                     /**
-                     * 获取应用类型，即创建应用时所选择的应用模版类型。
+                     * 获取应用类型，即创建应用时所选择的应用模板类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApplicationType 应用类型，即创建应用时所选择的应用模版类型。
+                     * @return ApplicationType 应用类型，即创建应用时所选择的应用模板类型。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetApplicationType() const;
@@ -284,7 +284,7 @@ namespace TencentCloud
                     bool m_clientIdHasBeenSet;
 
                     /**
-                     * 应用类型，即创建应用时所选择的应用模版类型。
+                     * 应用类型，即创建应用时所选择的应用模板类型。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationType;

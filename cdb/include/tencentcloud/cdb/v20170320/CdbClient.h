@@ -25,10 +25,14 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/cdb/v20170320/model/AddTimeWindowRequest.h>
 #include <tencentcloud/cdb/v20170320/model/AddTimeWindowResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ApplyCDBProxyRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ApplyCDBProxyResponse.h>
 #include <tencentcloud/cdb/v20170320/model/AssociateSecurityGroupsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/AssociateSecurityGroupsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/BalanceRoGroupLoadRequest.h>
 #include <tencentcloud/cdb/v20170320/model/BalanceRoGroupLoadResponse.h>
+#include <tencentcloud/cdb/v20170320/model/CloseCDBProxyRequest.h>
+#include <tencentcloud/cdb/v20170320/model/CloseCDBProxyResponse.h>
 #include <tencentcloud/cdb/v20170320/model/CloseWanServiceRequest.h>
 #include <tencentcloud/cdb/v20170320/model/CloseWanServiceResponse.h>
 #include <tencentcloud/cdb/v20170320/model/CreateAccountsRequest.h>
@@ -103,6 +107,8 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeBinlogBackupOverviewResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBinlogsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBinlogsResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeCDBProxyRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeCDBProxyResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeCloneListRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeCloneListResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDBImportRecordsRequest.h>
@@ -143,12 +149,18 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeInstanceParamRecordsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeInstanceParamsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeInstanceParamsResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeLocalBinlogConfigRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeLocalBinlogConfigResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeParamTemplateInfoRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeParamTemplateInfoResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeParamTemplatesRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeParamTemplatesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeProjectSecurityGroupsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeProjectSecurityGroupsResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeProxyConnectionPoolConfRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeProxyConnectionPoolConfResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeProxyCustomConfRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeProxyCustomConfResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeRoGroupsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeRoGroupsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeRoMinScaleRequest.h>
@@ -201,6 +213,14 @@
 #include <tencentcloud/cdb/v20170320/model/ModifyBackupConfigResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyBackupDownloadRestrictionRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyBackupDownloadRestrictionResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyCDBProxyRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyCDBProxyResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyCDBProxyConnectionPoolRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyCDBProxyConnectionPoolResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyCDBProxyDescRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyCDBProxyDescResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyCDBProxyVipVPortRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyCDBProxyVipVPortResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceNameRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceNameResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceProjectRequest.h>
@@ -213,6 +233,8 @@
 #include <tencentcloud/cdb/v20170320/model/ModifyInstanceParamResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyInstanceTagRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyInstanceTagResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyLocalBinlogConfigRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyLocalBinlogConfigResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyNameOrDescByDpIdRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyNameOrDescByDpIdResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyParamTemplateRequest.h>
@@ -229,6 +251,8 @@
 #include <tencentcloud/cdb/v20170320/model/OpenWanServiceResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ReleaseIsolatedDBInstancesRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ReleaseIsolatedDBInstancesResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ReloadBalanceProxyNodeRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ReloadBalanceProxyNodeResponse.h>
 #include <tencentcloud/cdb/v20170320/model/RenewDBInstanceRequest.h>
 #include <tencentcloud/cdb/v20170320/model/RenewDBInstanceResponse.h>
 #include <tencentcloud/cdb/v20170320/model/RestartDBInstancesRequest.h>
@@ -243,12 +267,18 @@
 #include <tencentcloud/cdb/v20170320/model/StopReplicationResponse.h>
 #include <tencentcloud/cdb/v20170320/model/StopRollbackRequest.h>
 #include <tencentcloud/cdb/v20170320/model/StopRollbackResponse.h>
+#include <tencentcloud/cdb/v20170320/model/SwitchCDBProxyRequest.h>
+#include <tencentcloud/cdb/v20170320/model/SwitchCDBProxyResponse.h>
 #include <tencentcloud/cdb/v20170320/model/SwitchDBInstanceMasterSlaveRequest.h>
 #include <tencentcloud/cdb/v20170320/model/SwitchDBInstanceMasterSlaveResponse.h>
 #include <tencentcloud/cdb/v20170320/model/SwitchDrInstanceToMasterRequest.h>
 #include <tencentcloud/cdb/v20170320/model/SwitchDrInstanceToMasterResponse.h>
 #include <tencentcloud/cdb/v20170320/model/SwitchForUpgradeRequest.h>
 #include <tencentcloud/cdb/v20170320/model/SwitchForUpgradeResponse.h>
+#include <tencentcloud/cdb/v20170320/model/UpgradeCDBProxyRequest.h>
+#include <tencentcloud/cdb/v20170320/model/UpgradeCDBProxyResponse.h>
+#include <tencentcloud/cdb/v20170320/model/UpgradeCDBProxyVersionRequest.h>
+#include <tencentcloud/cdb/v20170320/model/UpgradeCDBProxyVersionResponse.h>
 #include <tencentcloud/cdb/v20170320/model/UpgradeDBInstanceRequest.h>
 #include <tencentcloud/cdb/v20170320/model/UpgradeDBInstanceResponse.h>
 #include <tencentcloud/cdb/v20170320/model/UpgradeDBInstanceEngineVersionRequest.h>
@@ -272,12 +302,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddTimeWindowResponse> AddTimeWindowOutcome;
                 typedef std::future<AddTimeWindowOutcome> AddTimeWindowOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::AddTimeWindowRequest&, AddTimeWindowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddTimeWindowAsyncHandler;
+                typedef Outcome<Core::Error, Model::ApplyCDBProxyResponse> ApplyCDBProxyOutcome;
+                typedef std::future<ApplyCDBProxyOutcome> ApplyCDBProxyOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::ApplyCDBProxyRequest&, ApplyCDBProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyCDBProxyAsyncHandler;
                 typedef Outcome<Core::Error, Model::AssociateSecurityGroupsResponse> AssociateSecurityGroupsOutcome;
                 typedef std::future<AssociateSecurityGroupsOutcome> AssociateSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::AssociateSecurityGroupsRequest&, AssociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateSecurityGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::BalanceRoGroupLoadResponse> BalanceRoGroupLoadOutcome;
                 typedef std::future<BalanceRoGroupLoadOutcome> BalanceRoGroupLoadOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::BalanceRoGroupLoadRequest&, BalanceRoGroupLoadOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BalanceRoGroupLoadAsyncHandler;
+                typedef Outcome<Core::Error, Model::CloseCDBProxyResponse> CloseCDBProxyOutcome;
+                typedef std::future<CloseCDBProxyOutcome> CloseCDBProxyOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::CloseCDBProxyRequest&, CloseCDBProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseCDBProxyAsyncHandler;
                 typedef Outcome<Core::Error, Model::CloseWanServiceResponse> CloseWanServiceOutcome;
                 typedef std::future<CloseWanServiceOutcome> CloseWanServiceOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::CloseWanServiceRequest&, CloseWanServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseWanServiceAsyncHandler;
@@ -389,6 +425,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBinlogsResponse> DescribeBinlogsOutcome;
                 typedef std::future<DescribeBinlogsOutcome> DescribeBinlogsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeBinlogsRequest&, DescribeBinlogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBinlogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCDBProxyResponse> DescribeCDBProxyOutcome;
+                typedef std::future<DescribeCDBProxyOutcome> DescribeCDBProxyOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeCDBProxyRequest&, DescribeCDBProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCDBProxyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloneListResponse> DescribeCloneListOutcome;
                 typedef std::future<DescribeCloneListOutcome> DescribeCloneListOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeCloneListRequest&, DescribeCloneListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloneListAsyncHandler;
@@ -449,6 +488,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstanceParamsResponse> DescribeInstanceParamsOutcome;
                 typedef std::future<DescribeInstanceParamsOutcome> DescribeInstanceParamsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeInstanceParamsRequest&, DescribeInstanceParamsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceParamsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLocalBinlogConfigResponse> DescribeLocalBinlogConfigOutcome;
+                typedef std::future<DescribeLocalBinlogConfigOutcome> DescribeLocalBinlogConfigOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeLocalBinlogConfigRequest&, DescribeLocalBinlogConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLocalBinlogConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeParamTemplateInfoResponse> DescribeParamTemplateInfoOutcome;
                 typedef std::future<DescribeParamTemplateInfoOutcome> DescribeParamTemplateInfoOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeParamTemplateInfoRequest&, DescribeParamTemplateInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeParamTemplateInfoAsyncHandler;
@@ -458,6 +500,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProjectSecurityGroupsResponse> DescribeProjectSecurityGroupsOutcome;
                 typedef std::future<DescribeProjectSecurityGroupsOutcome> DescribeProjectSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeProjectSecurityGroupsRequest&, DescribeProjectSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectSecurityGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProxyConnectionPoolConfResponse> DescribeProxyConnectionPoolConfOutcome;
+                typedef std::future<DescribeProxyConnectionPoolConfOutcome> DescribeProxyConnectionPoolConfOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeProxyConnectionPoolConfRequest&, DescribeProxyConnectionPoolConfOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProxyConnectionPoolConfAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProxyCustomConfResponse> DescribeProxyCustomConfOutcome;
+                typedef std::future<DescribeProxyCustomConfOutcome> DescribeProxyCustomConfOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeProxyCustomConfRequest&, DescribeProxyCustomConfOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProxyCustomConfAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRoGroupsResponse> DescribeRoGroupsOutcome;
                 typedef std::future<DescribeRoGroupsOutcome> DescribeRoGroupsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeRoGroupsRequest&, DescribeRoGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoGroupsAsyncHandler;
@@ -536,6 +584,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyBackupDownloadRestrictionResponse> ModifyBackupDownloadRestrictionOutcome;
                 typedef std::future<ModifyBackupDownloadRestrictionOutcome> ModifyBackupDownloadRestrictionOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyBackupDownloadRestrictionRequest&, ModifyBackupDownloadRestrictionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupDownloadRestrictionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCDBProxyResponse> ModifyCDBProxyOutcome;
+                typedef std::future<ModifyCDBProxyOutcome> ModifyCDBProxyOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::ModifyCDBProxyRequest&, ModifyCDBProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCDBProxyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCDBProxyConnectionPoolResponse> ModifyCDBProxyConnectionPoolOutcome;
+                typedef std::future<ModifyCDBProxyConnectionPoolOutcome> ModifyCDBProxyConnectionPoolOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::ModifyCDBProxyConnectionPoolRequest&, ModifyCDBProxyConnectionPoolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCDBProxyConnectionPoolAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCDBProxyDescResponse> ModifyCDBProxyDescOutcome;
+                typedef std::future<ModifyCDBProxyDescOutcome> ModifyCDBProxyDescOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::ModifyCDBProxyDescRequest&, ModifyCDBProxyDescOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCDBProxyDescAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCDBProxyVipVPortResponse> ModifyCDBProxyVipVPortOutcome;
+                typedef std::future<ModifyCDBProxyVipVPortOutcome> ModifyCDBProxyVipVPortOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::ModifyCDBProxyVipVPortRequest&, ModifyCDBProxyVipVPortOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCDBProxyVipVPortAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceNameResponse> ModifyDBInstanceNameOutcome;
                 typedef std::future<ModifyDBInstanceNameOutcome> ModifyDBInstanceNameOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyDBInstanceNameRequest&, ModifyDBInstanceNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceNameAsyncHandler;
@@ -554,6 +614,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyInstanceTagResponse> ModifyInstanceTagOutcome;
                 typedef std::future<ModifyInstanceTagOutcome> ModifyInstanceTagOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyInstanceTagRequest&, ModifyInstanceTagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceTagAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLocalBinlogConfigResponse> ModifyLocalBinlogConfigOutcome;
+                typedef std::future<ModifyLocalBinlogConfigOutcome> ModifyLocalBinlogConfigOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::ModifyLocalBinlogConfigRequest&, ModifyLocalBinlogConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLocalBinlogConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyNameOrDescByDpIdResponse> ModifyNameOrDescByDpIdOutcome;
                 typedef std::future<ModifyNameOrDescByDpIdOutcome> ModifyNameOrDescByDpIdOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyNameOrDescByDpIdRequest&, ModifyNameOrDescByDpIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNameOrDescByDpIdAsyncHandler;
@@ -578,6 +641,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ReleaseIsolatedDBInstancesResponse> ReleaseIsolatedDBInstancesOutcome;
                 typedef std::future<ReleaseIsolatedDBInstancesOutcome> ReleaseIsolatedDBInstancesOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ReleaseIsolatedDBInstancesRequest&, ReleaseIsolatedDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseIsolatedDBInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReloadBalanceProxyNodeResponse> ReloadBalanceProxyNodeOutcome;
+                typedef std::future<ReloadBalanceProxyNodeOutcome> ReloadBalanceProxyNodeOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::ReloadBalanceProxyNodeRequest&, ReloadBalanceProxyNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReloadBalanceProxyNodeAsyncHandler;
                 typedef Outcome<Core::Error, Model::RenewDBInstanceResponse> RenewDBInstanceOutcome;
                 typedef std::future<RenewDBInstanceOutcome> RenewDBInstanceOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::RenewDBInstanceRequest&, RenewDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewDBInstanceAsyncHandler;
@@ -599,6 +665,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopRollbackResponse> StopRollbackOutcome;
                 typedef std::future<StopRollbackOutcome> StopRollbackOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::StopRollbackRequest&, StopRollbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopRollbackAsyncHandler;
+                typedef Outcome<Core::Error, Model::SwitchCDBProxyResponse> SwitchCDBProxyOutcome;
+                typedef std::future<SwitchCDBProxyOutcome> SwitchCDBProxyOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::SwitchCDBProxyRequest&, SwitchCDBProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchCDBProxyAsyncHandler;
                 typedef Outcome<Core::Error, Model::SwitchDBInstanceMasterSlaveResponse> SwitchDBInstanceMasterSlaveOutcome;
                 typedef std::future<SwitchDBInstanceMasterSlaveOutcome> SwitchDBInstanceMasterSlaveOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::SwitchDBInstanceMasterSlaveRequest&, SwitchDBInstanceMasterSlaveOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchDBInstanceMasterSlaveAsyncHandler;
@@ -608,6 +677,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SwitchForUpgradeResponse> SwitchForUpgradeOutcome;
                 typedef std::future<SwitchForUpgradeOutcome> SwitchForUpgradeOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::SwitchForUpgradeRequest&, SwitchForUpgradeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchForUpgradeAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpgradeCDBProxyResponse> UpgradeCDBProxyOutcome;
+                typedef std::future<UpgradeCDBProxyOutcome> UpgradeCDBProxyOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::UpgradeCDBProxyRequest&, UpgradeCDBProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeCDBProxyAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpgradeCDBProxyVersionResponse> UpgradeCDBProxyVersionOutcome;
+                typedef std::future<UpgradeCDBProxyVersionOutcome> UpgradeCDBProxyVersionOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::UpgradeCDBProxyVersionRequest&, UpgradeCDBProxyVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeCDBProxyVersionAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpgradeDBInstanceResponse> UpgradeDBInstanceOutcome;
                 typedef std::future<UpgradeDBInstanceOutcome> UpgradeDBInstanceOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::UpgradeDBInstanceRequest&, UpgradeDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDBInstanceAsyncHandler;
@@ -630,6 +705,15 @@ namespace TencentCloud
                 AddTimeWindowOutcomeCallable AddTimeWindowCallable(const Model::AddTimeWindowRequest& request);
 
                 /**
+                 *针对主实例申请创建数据库代理。
+                 * @param req ApplyCDBProxyRequest
+                 * @return ApplyCDBProxyOutcome
+                 */
+                ApplyCDBProxyOutcome ApplyCDBProxy(const Model::ApplyCDBProxyRequest &request);
+                void ApplyCDBProxyAsync(const Model::ApplyCDBProxyRequest& request, const ApplyCDBProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ApplyCDBProxyOutcomeCallable ApplyCDBProxyCallable(const Model::ApplyCDBProxyRequest& request);
+
+                /**
                  *本接口(AssociateSecurityGroups)用于安全组批量绑定实例。
                  * @param req AssociateSecurityGroupsRequest
                  * @return AssociateSecurityGroupsOutcome
@@ -646,6 +730,15 @@ namespace TencentCloud
                 BalanceRoGroupLoadOutcome BalanceRoGroupLoad(const Model::BalanceRoGroupLoadRequest &request);
                 void BalanceRoGroupLoadAsync(const Model::BalanceRoGroupLoadRequest& request, const BalanceRoGroupLoadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BalanceRoGroupLoadOutcomeCallable BalanceRoGroupLoadCallable(const Model::BalanceRoGroupLoadRequest& request);
+
+                /**
+                 *关闭数据库代理
+                 * @param req CloseCDBProxyRequest
+                 * @return CloseCDBProxyOutcome
+                 */
+                CloseCDBProxyOutcome CloseCDBProxy(const Model::CloseCDBProxyRequest &request);
+                void CloseCDBProxyAsync(const Model::CloseCDBProxyRequest& request, const CloseCDBProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloseCDBProxyOutcomeCallable CloseCDBProxyCallable(const Model::CloseCDBProxyRequest& request);
 
                 /**
                  *本接口(CloseWanService)用于关闭云数据库实例的外网访问。关闭外网访问后，外网地址将不可访问。
@@ -1004,6 +1097,15 @@ namespace TencentCloud
                 DescribeBinlogsOutcomeCallable DescribeBinlogsCallable(const Model::DescribeBinlogsRequest& request);
 
                 /**
+                 *查询数据库代理
+                 * @param req DescribeCDBProxyRequest
+                 * @return DescribeCDBProxyOutcome
+                 */
+                DescribeCDBProxyOutcome DescribeCDBProxy(const Model::DescribeCDBProxyRequest &request);
+                void DescribeCDBProxyAsync(const Model::DescribeCDBProxyRequest& request, const DescribeCDBProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCDBProxyOutcomeCallable DescribeCDBProxyCallable(const Model::DescribeCDBProxyRequest& request);
+
+                /**
                  *本接口(DescribeCloneList) 用于查询用户实例的克隆任务列表。
                  * @param req DescribeCloneListRequest
                  * @return DescribeCloneListOutcome
@@ -1187,6 +1289,15 @@ namespace TencentCloud
                 DescribeInstanceParamsOutcomeCallable DescribeInstanceParamsCallable(const Model::DescribeInstanceParamsRequest& request);
 
                 /**
+                 *该接口用于查询实例本地binlog保留策略。
+                 * @param req DescribeLocalBinlogConfigRequest
+                 * @return DescribeLocalBinlogConfigOutcome
+                 */
+                DescribeLocalBinlogConfigOutcome DescribeLocalBinlogConfig(const Model::DescribeLocalBinlogConfigRequest &request);
+                void DescribeLocalBinlogConfigAsync(const Model::DescribeLocalBinlogConfigRequest& request, const DescribeLocalBinlogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLocalBinlogConfigOutcomeCallable DescribeLocalBinlogConfigCallable(const Model::DescribeLocalBinlogConfigRequest& request);
+
+                /**
                  *该接口（DescribeParamTemplateInfo）用于查询参数模板详情，全地域公共参数Region均为ap-guangzhou。
                  * @param req DescribeParamTemplateInfoRequest
                  * @return DescribeParamTemplateInfoOutcome
@@ -1212,6 +1323,24 @@ namespace TencentCloud
                 DescribeProjectSecurityGroupsOutcome DescribeProjectSecurityGroups(const Model::DescribeProjectSecurityGroupsRequest &request);
                 void DescribeProjectSecurityGroupsAsync(const Model::DescribeProjectSecurityGroupsRequest& request, const DescribeProjectSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeProjectSecurityGroupsOutcomeCallable DescribeProjectSecurityGroupsCallable(const Model::DescribeProjectSecurityGroupsRequest& request);
+
+                /**
+                 *获取数据库代理连接池相关规格配置
+                 * @param req DescribeProxyConnectionPoolConfRequest
+                 * @return DescribeProxyConnectionPoolConfOutcome
+                 */
+                DescribeProxyConnectionPoolConfOutcome DescribeProxyConnectionPoolConf(const Model::DescribeProxyConnectionPoolConfRequest &request);
+                void DescribeProxyConnectionPoolConfAsync(const Model::DescribeProxyConnectionPoolConfRequest& request, const DescribeProxyConnectionPoolConfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProxyConnectionPoolConfOutcomeCallable DescribeProxyConnectionPoolConfCallable(const Model::DescribeProxyConnectionPoolConfRequest& request);
+
+                /**
+                 *查询代理规格配置
+                 * @param req DescribeProxyCustomConfRequest
+                 * @return DescribeProxyCustomConfOutcome
+                 */
+                DescribeProxyCustomConfOutcome DescribeProxyCustomConf(const Model::DescribeProxyCustomConfRequest &request);
+                void DescribeProxyCustomConfAsync(const Model::DescribeProxyCustomConfRequest& request, const DescribeProxyCustomConfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProxyCustomConfOutcomeCallable DescribeProxyCustomConfCallable(const Model::DescribeProxyCustomConfRequest& request);
 
                 /**
                  *本接口(DescribeRoGroups)用于查询云数据库实例的所有的RO组的信息。
@@ -1452,6 +1581,42 @@ namespace TencentCloud
                 ModifyBackupDownloadRestrictionOutcomeCallable ModifyBackupDownloadRestrictionCallable(const Model::ModifyBackupDownloadRestrictionRequest& request);
 
                 /**
+                 *配置数据库代理读写分离
+                 * @param req ModifyCDBProxyRequest
+                 * @return ModifyCDBProxyOutcome
+                 */
+                ModifyCDBProxyOutcome ModifyCDBProxy(const Model::ModifyCDBProxyRequest &request);
+                void ModifyCDBProxyAsync(const Model::ModifyCDBProxyRequest& request, const ModifyCDBProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCDBProxyOutcomeCallable ModifyCDBProxyCallable(const Model::ModifyCDBProxyRequest& request);
+
+                /**
+                 *请求该接口配置数据库连接池；支持的连接池配置请求DescribeProxyConnectionPoolConf接口获取。
+                 * @param req ModifyCDBProxyConnectionPoolRequest
+                 * @return ModifyCDBProxyConnectionPoolOutcome
+                 */
+                ModifyCDBProxyConnectionPoolOutcome ModifyCDBProxyConnectionPool(const Model::ModifyCDBProxyConnectionPoolRequest &request);
+                void ModifyCDBProxyConnectionPoolAsync(const Model::ModifyCDBProxyConnectionPoolRequest& request, const ModifyCDBProxyConnectionPoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCDBProxyConnectionPoolOutcomeCallable ModifyCDBProxyConnectionPoolCallable(const Model::ModifyCDBProxyConnectionPoolRequest& request);
+
+                /**
+                 *修改数据库代理描述
+                 * @param req ModifyCDBProxyDescRequest
+                 * @return ModifyCDBProxyDescOutcome
+                 */
+                ModifyCDBProxyDescOutcome ModifyCDBProxyDesc(const Model::ModifyCDBProxyDescRequest &request);
+                void ModifyCDBProxyDescAsync(const Model::ModifyCDBProxyDescRequest& request, const ModifyCDBProxyDescAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCDBProxyDescOutcomeCallable ModifyCDBProxyDescCallable(const Model::ModifyCDBProxyDescRequest& request);
+
+                /**
+                 *修改数据库代理VIP或端口
+                 * @param req ModifyCDBProxyVipVPortRequest
+                 * @return ModifyCDBProxyVipVPortOutcome
+                 */
+                ModifyCDBProxyVipVPortOutcome ModifyCDBProxyVipVPort(const Model::ModifyCDBProxyVipVPortRequest &request);
+                void ModifyCDBProxyVipVPortAsync(const Model::ModifyCDBProxyVipVPortRequest& request, const ModifyCDBProxyVipVPortAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCDBProxyVipVPortOutcomeCallable ModifyCDBProxyVipVPortCallable(const Model::ModifyCDBProxyVipVPortRequest& request);
+
+                /**
                  *本接口(ModifyDBInstanceName)用于修改云数据库实例的名称。
                  * @param req ModifyDBInstanceNameRequest
                  * @return ModifyDBInstanceNameOutcome
@@ -1504,6 +1669,15 @@ namespace TencentCloud
                 ModifyInstanceTagOutcome ModifyInstanceTag(const Model::ModifyInstanceTagRequest &request);
                 void ModifyInstanceTagAsync(const Model::ModifyInstanceTagRequest& request, const ModifyInstanceTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyInstanceTagOutcomeCallable ModifyInstanceTagCallable(const Model::ModifyInstanceTagRequest& request);
+
+                /**
+                 *该接口用于修改实例本地binlog保留策略。
+                 * @param req ModifyLocalBinlogConfigRequest
+                 * @return ModifyLocalBinlogConfigOutcome
+                 */
+                ModifyLocalBinlogConfigOutcome ModifyLocalBinlogConfig(const Model::ModifyLocalBinlogConfigRequest &request);
+                void ModifyLocalBinlogConfigAsync(const Model::ModifyLocalBinlogConfigRequest& request, const ModifyLocalBinlogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLocalBinlogConfigOutcomeCallable ModifyLocalBinlogConfigCallable(const Model::ModifyLocalBinlogConfigRequest& request);
 
                 /**
                  *修改置放群组的名称或者描述
@@ -1584,6 +1758,15 @@ namespace TencentCloud
                 ReleaseIsolatedDBInstancesOutcomeCallable ReleaseIsolatedDBInstancesCallable(const Model::ReleaseIsolatedDBInstancesRequest& request);
 
                 /**
+                 *重新负载均衡数据库代理
+                 * @param req ReloadBalanceProxyNodeRequest
+                 * @return ReloadBalanceProxyNodeOutcome
+                 */
+                ReloadBalanceProxyNodeOutcome ReloadBalanceProxyNode(const Model::ReloadBalanceProxyNodeRequest &request);
+                void ReloadBalanceProxyNodeAsync(const Model::ReloadBalanceProxyNodeRequest& request, const ReloadBalanceProxyNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReloadBalanceProxyNodeOutcomeCallable ReloadBalanceProxyNodeCallable(const Model::ReloadBalanceProxyNodeRequest& request);
+
+                /**
                  *本接口(RenewDBInstance)用于续费云数据库实例，支持付费模式为包年包月的实例。按量计费实例可通过该接口续费为包年包月的实例。
                  * @param req RenewDBInstanceRequest
                  * @return RenewDBInstanceOutcome
@@ -1651,6 +1834,15 @@ namespace TencentCloud
                 StopRollbackOutcomeCallable StopRollbackCallable(const Model::StopRollbackRequest& request);
 
                 /**
+                 *昨晚数据库代理配置变更或则升级版本后手动发起立即切换
+                 * @param req SwitchCDBProxyRequest
+                 * @return SwitchCDBProxyOutcome
+                 */
+                SwitchCDBProxyOutcome SwitchCDBProxy(const Model::SwitchCDBProxyRequest &request);
+                void SwitchCDBProxyAsync(const Model::SwitchCDBProxyRequest& request, const SwitchCDBProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SwitchCDBProxyOutcomeCallable SwitchCDBProxyCallable(const Model::SwitchCDBProxyRequest& request);
+
+                /**
                  *该接口 (SwitchDBInstanceMasterSlave) 支持用户主动切换实例主从角色。
                  * @param req SwitchDBInstanceMasterSlaveRequest
                  * @return SwitchDBInstanceMasterSlaveOutcome
@@ -1676,6 +1868,24 @@ namespace TencentCloud
                 SwitchForUpgradeOutcome SwitchForUpgrade(const Model::SwitchForUpgradeRequest &request);
                 void SwitchForUpgradeAsync(const Model::SwitchForUpgradeRequest& request, const SwitchForUpgradeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SwitchForUpgradeOutcomeCallable SwitchForUpgradeCallable(const Model::SwitchForUpgradeRequest& request);
+
+                /**
+                 *调整数据库代理配置
+                 * @param req UpgradeCDBProxyRequest
+                 * @return UpgradeCDBProxyOutcome
+                 */
+                UpgradeCDBProxyOutcome UpgradeCDBProxy(const Model::UpgradeCDBProxyRequest &request);
+                void UpgradeCDBProxyAsync(const Model::UpgradeCDBProxyRequest& request, const UpgradeCDBProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpgradeCDBProxyOutcomeCallable UpgradeCDBProxyCallable(const Model::UpgradeCDBProxyRequest& request);
+
+                /**
+                 *升级数据库代理版本
+                 * @param req UpgradeCDBProxyVersionRequest
+                 * @return UpgradeCDBProxyVersionOutcome
+                 */
+                UpgradeCDBProxyVersionOutcome UpgradeCDBProxyVersion(const Model::UpgradeCDBProxyVersionRequest &request);
+                void UpgradeCDBProxyVersionAsync(const Model::UpgradeCDBProxyVersionRequest& request, const UpgradeCDBProxyVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpgradeCDBProxyVersionOutcomeCallable UpgradeCDBProxyVersionCallable(const Model::UpgradeCDBProxyVersionRequest& request);
 
                 /**
                  *本接口(UpgradeDBInstance)用于升级或降级云数据库实例的配置，实例类型支持主实例、灾备实例和只读实例。

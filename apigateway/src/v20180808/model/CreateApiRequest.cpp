@@ -69,6 +69,7 @@ CreateApiRequest::CreateApiRequest() :
     m_targetNamespaceIdHasBeenSet(false),
     m_userTypeHasBeenSet(false),
     m_isBase64EncodedHasBeenSet(false),
+    m_eventBusIdHasBeenSet(false),
     m_serviceScfFunctionTypeHasBeenSet(false),
     m_eIAMAppTypeHasBeenSet(false),
     m_eIAMAuthTypeHasBeenSet(false),
@@ -498,6 +499,14 @@ string CreateApiRequest::ToJsonString() const
         string key = "IsBase64Encoded";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isBase64Encoded, allocator);
+    }
+
+    if (m_eventBusIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventBusId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_eventBusId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_serviceScfFunctionTypeHasBeenSet)
@@ -1282,6 +1291,22 @@ void CreateApiRequest::SetIsBase64Encoded(const bool& _isBase64Encoded)
 bool CreateApiRequest::IsBase64EncodedHasBeenSet() const
 {
     return m_isBase64EncodedHasBeenSet;
+}
+
+string CreateApiRequest::GetEventBusId() const
+{
+    return m_eventBusId;
+}
+
+void CreateApiRequest::SetEventBusId(const string& _eventBusId)
+{
+    m_eventBusId = _eventBusId;
+    m_eventBusIdHasBeenSet = true;
+}
+
+bool CreateApiRequest::EventBusIdHasBeenSet() const
+{
+    return m_eventBusIdHasBeenSet;
 }
 
 string CreateApiRequest::GetServiceScfFunctionType() const

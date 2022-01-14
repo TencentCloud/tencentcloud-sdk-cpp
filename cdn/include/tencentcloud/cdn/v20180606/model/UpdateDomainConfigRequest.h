@@ -816,14 +816,14 @@ global：全球加速
                     bool OriginCombineHasBeenSet() const;
 
                     /**
-                     * 获取QUIC正在内测中，请先提交内测申请，详情请前往QUIC产品文档。
-                     * @return Quic QUIC正在内测中，请先提交内测申请，详情请前往QUIC产品文档。
+                     * 获取Quic访问（收费服务，详见计费说明和产品文档）
+                     * @return Quic Quic访问（收费服务，详见计费说明和产品文档）
                      */
                     Quic GetQuic() const;
 
                     /**
-                     * 设置QUIC正在内测中，请先提交内测申请，详情请前往QUIC产品文档。
-                     * @param Quic QUIC正在内测中，请先提交内测申请，详情请前往QUIC产品文档。
+                     * 设置Quic访问（收费服务，详见计费说明和产品文档）
+                     * @param Quic Quic访问（收费服务，详见计费说明和产品文档）
                      */
                     void SetQuic(const Quic& _quic);
 
@@ -1150,7 +1150,7 @@ global：全球加速
                     bool m_originCombineHasBeenSet;
 
                     /**
-                     * QUIC正在内测中，请先提交内测申请，详情请前往QUIC产品文档。
+                     * Quic访问（收费服务，详见计费说明和产品文档）
                      */
                     Quic m_quic;
                     bool m_quicHasBeenSet;

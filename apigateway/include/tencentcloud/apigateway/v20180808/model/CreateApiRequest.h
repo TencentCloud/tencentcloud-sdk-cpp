@@ -882,6 +882,24 @@ namespace TencentCloud
                     bool IsBase64EncodedHasBeenSet() const;
 
                     /**
+                     * 获取事件总线ID。
+                     * @return EventBusId 事件总线ID。
+                     */
+                    std::string GetEventBusId() const;
+
+                    /**
+                     * 设置事件总线ID。
+                     * @param EventBusId 事件总线ID。
+                     */
+                    void SetEventBusId(const std::string& _eventBusId);
+
+                    /**
+                     * 判断参数 EventBusId 是否已赋值
+                     * @return EventBusId 是否已赋值
+                     */
+                    bool EventBusIdHasBeenSet() const;
+
+                    /**
                      * 获取scf函数类型。当后端类型是SCF时生效。支持事件触发(EVENT)，http直通云函数(HTTP)。
                      * @return ServiceScfFunctionType scf函数类型。当后端类型是SCF时生效。支持事件触发(EVENT)，http直通云函数(HTTP)。
                      */
@@ -1248,6 +1266,12 @@ namespace TencentCloud
                      */
                     bool m_isBase64Encoded;
                     bool m_isBase64EncodedHasBeenSet;
+
+                    /**
+                     * 事件总线ID。
+                     */
+                    std::string m_eventBusId;
+                    bool m_eventBusIdHasBeenSet;
 
                     /**
                      * scf函数类型。当后端类型是SCF时生效。支持事件触发(EVENT)，http直通云函数(HTTP)。

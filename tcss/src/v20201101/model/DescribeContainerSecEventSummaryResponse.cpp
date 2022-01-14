@@ -28,7 +28,8 @@ DescribeContainerSecEventSummaryResponse::DescribeContainerSecEventSummaryRespon
     m_unhandledReverseShellCntHasBeenSet(false),
     m_unhandledRiskSyscallCntHasBeenSet(false),
     m_unhandledAbnormalProcessCntHasBeenSet(false),
-    m_unhandledFileCntHasBeenSet(false)
+    m_unhandledFileCntHasBeenSet(false),
+    m_unhandledVirusEventCntHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,16 @@ CoreInternalOutcome DescribeContainerSecEventSummaryResponse::Deserialize(const 
         m_unhandledFileCntHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UnhandledVirusEventCnt") && !rsp["UnhandledVirusEventCnt"].IsNull())
+    {
+        if (!rsp["UnhandledVirusEventCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UnhandledVirusEventCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_unhandledVirusEventCnt = rsp["UnhandledVirusEventCnt"].GetUint64();
+        m_unhandledVirusEventCntHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -164,6 +175,14 @@ string DescribeContainerSecEventSummaryResponse::ToJsonString() const
         string key = "UnhandledFileCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_unhandledFileCnt, allocator);
+    }
+
+    if (m_unhandledVirusEventCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnhandledVirusEventCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_unhandledVirusEventCnt, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -226,6 +245,16 @@ uint64_t DescribeContainerSecEventSummaryResponse::GetUnhandledFileCnt() const
 bool DescribeContainerSecEventSummaryResponse::UnhandledFileCntHasBeenSet() const
 {
     return m_unhandledFileCntHasBeenSet;
+}
+
+uint64_t DescribeContainerSecEventSummaryResponse::GetUnhandledVirusEventCnt() const
+{
+    return m_unhandledVirusEventCnt;
+}
+
+bool DescribeContainerSecEventSummaryResponse::UnhandledVirusEventCntHasBeenSet() const
+{
+    return m_unhandledVirusEventCntHasBeenSet;
 }
 
 

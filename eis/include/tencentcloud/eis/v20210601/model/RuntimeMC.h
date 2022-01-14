@@ -244,6 +244,78 @@ namespace TencentCloud
                      */
                     bool RunningInstanceCountHasBeenSet() const;
 
+                    /**
+                     * 获取已使用cpu核数
+                     * @return CpuUsed 已使用cpu核数
+                     */
+                    double GetCpuUsed() const;
+
+                    /**
+                     * 设置已使用cpu核数
+                     * @param CpuUsed 已使用cpu核数
+                     */
+                    void SetCpuUsed(const double& _cpuUsed);
+
+                    /**
+                     * 判断参数 CpuUsed 是否已赋值
+                     * @return CpuUsed 是否已赋值
+                     */
+                    bool CpuUsedHasBeenSet() const;
+
+                    /**
+                     * 获取cpu核数上限
+                     * @return CpuLimit cpu核数上限
+                     */
+                    double GetCpuLimit() const;
+
+                    /**
+                     * 设置cpu核数上限
+                     * @param CpuLimit cpu核数上限
+                     */
+                    void SetCpuLimit(const double& _cpuLimit);
+
+                    /**
+                     * 判断参数 CpuLimit 是否已赋值
+                     * @return CpuLimit 是否已赋值
+                     */
+                    bool CpuLimitHasBeenSet() const;
+
+                    /**
+                     * 获取已使用内存 MB
+                     * @return MemoryUsed 已使用内存 MB
+                     */
+                    double GetMemoryUsed() const;
+
+                    /**
+                     * 设置已使用内存 MB
+                     * @param MemoryUsed 已使用内存 MB
+                     */
+                    void SetMemoryUsed(const double& _memoryUsed);
+
+                    /**
+                     * 判断参数 MemoryUsed 是否已赋值
+                     * @return MemoryUsed 是否已赋值
+                     */
+                    bool MemoryUsedHasBeenSet() const;
+
+                    /**
+                     * 获取内存上限 MB
+                     * @return MemoryLimit 内存上限 MB
+                     */
+                    double GetMemoryLimit() const;
+
+                    /**
+                     * 设置内存上限 MB
+                     * @param MemoryLimit 内存上限 MB
+                     */
+                    void SetMemoryLimit(const double& _memoryLimit);
+
+                    /**
+                     * 判断参数 MemoryLimit 是否已赋值
+                     * @return MemoryLimit 是否已赋值
+                     */
+                    bool MemoryLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -311,6 +383,30 @@ namespace TencentCloud
                      */
                     int64_t m_runningInstanceCount;
                     bool m_runningInstanceCountHasBeenSet;
+
+                    /**
+                     * 已使用cpu核数
+                     */
+                    double m_cpuUsed;
+                    bool m_cpuUsedHasBeenSet;
+
+                    /**
+                     * cpu核数上限
+                     */
+                    double m_cpuLimit;
+                    bool m_cpuLimitHasBeenSet;
+
+                    /**
+                     * 已使用内存 MB
+                     */
+                    double m_memoryUsed;
+                    bool m_memoryUsedHasBeenSet;
+
+                    /**
+                     * 内存上限 MB
+                     */
+                    double m_memoryLimit;
+                    bool m_memoryLimitHasBeenSet;
 
                 };
             }

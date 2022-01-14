@@ -94,25 +94,33 @@ namespace TencentCloud
 
                     /**
                      * 获取加速域名业务类型
-web：静态加速
-download：下载加速
-media：流媒体点播加速
+web：网页小文件
+download：下载大文件
+media：音视频点播
+hybrid:  动静加速
+dynamic:  动态加速
                      * @return ServiceType 加速域名业务类型
-web：静态加速
-download：下载加速
-media：流媒体点播加速
+web：网页小文件
+download：下载大文件
+media：音视频点播
+hybrid:  动静加速
+dynamic:  动态加速
                      */
                     std::string GetServiceType() const;
 
                     /**
                      * 设置加速域名业务类型
-web：静态加速
-download：下载加速
-media：流媒体点播加速
+web：网页小文件
+download：下载大文件
+media：音视频点播
+hybrid:  动静加速
+dynamic:  动态加速
                      * @param ServiceType 加速域名业务类型
-web：静态加速
-download：下载加速
-media：流媒体点播加速
+web：网页小文件
+download：下载大文件
+media：音视频点播
+hybrid:  动静加速
+dynamic:  动态加速
                      */
                     void SetServiceType(const std::string& _serviceType);
 
@@ -701,14 +709,14 @@ global：全球加速
                     bool OfflineCacheHasBeenSet() const;
 
                     /**
-                     * 获取QUIC正在内测中，请先提交内测申请，详情请前往QUIC产品文档。
-                     * @return Quic QUIC正在内测中，请先提交内测申请，详情请前往QUIC产品文档。
+                     * 获取Quic访问（收费服务，详见计费说明和产品文档）
+                     * @return Quic Quic访问（收费服务，详见计费说明和产品文档）
                      */
                     Quic GetQuic() const;
 
                     /**
-                     * 设置QUIC正在内测中，请先提交内测申请，详情请前往QUIC产品文档。
-                     * @param Quic QUIC正在内测中，请先提交内测申请，详情请前往QUIC产品文档。
+                     * 设置Quic访问（收费服务，详见计费说明和产品文档）
+                     * @param Quic Quic访问（收费服务，详见计费说明和产品文档）
                      */
                     void SetQuic(const Quic& _quic);
 
@@ -764,9 +772,11 @@ global：全球加速
 
                     /**
                      * 加速域名业务类型
-web：静态加速
-download：下载加速
-media：流媒体点播加速
+web：网页小文件
+download：下载大文件
+media：音视频点播
+hybrid:  动静加速
+dynamic:  动态加速
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
@@ -963,7 +973,7 @@ global：全球加速
                     bool m_offlineCacheHasBeenSet;
 
                     /**
-                     * QUIC正在内测中，请先提交内测申请，详情请前往QUIC产品文档。
+                     * Quic访问（收费服务，详见计费说明和产品文档）
                      */
                     Quic m_quic;
                     bool m_quicHasBeenSet;

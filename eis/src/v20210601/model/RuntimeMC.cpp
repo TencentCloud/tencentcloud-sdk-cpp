@@ -31,7 +31,11 @@ RuntimeMC::RuntimeMC() :
     m_updatedAtHasBeenSet(false),
     m_workerSizeHasBeenSet(false),
     m_workerReplicaHasBeenSet(false),
-    m_runningInstanceCountHasBeenSet(false)
+    m_runningInstanceCountHasBeenSet(false),
+    m_cpuUsedHasBeenSet(false),
+    m_cpuLimitHasBeenSet(false),
+    m_memoryUsedHasBeenSet(false),
+    m_memoryLimitHasBeenSet(false)
 {
 }
 
@@ -150,6 +154,46 @@ CoreInternalOutcome RuntimeMC::Deserialize(const rapidjson::Value &value)
         m_runningInstanceCountHasBeenSet = true;
     }
 
+    if (value.HasMember("CpuUsed") && !value["CpuUsed"].IsNull())
+    {
+        if (!value["CpuUsed"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuntimeMC.CpuUsed` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_cpuUsed = value["CpuUsed"].GetDouble();
+        m_cpuUsedHasBeenSet = true;
+    }
+
+    if (value.HasMember("CpuLimit") && !value["CpuLimit"].IsNull())
+    {
+        if (!value["CpuLimit"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuntimeMC.CpuLimit` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_cpuLimit = value["CpuLimit"].GetDouble();
+        m_cpuLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("MemoryUsed") && !value["MemoryUsed"].IsNull())
+    {
+        if (!value["MemoryUsed"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuntimeMC.MemoryUsed` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_memoryUsed = value["MemoryUsed"].GetDouble();
+        m_memoryUsedHasBeenSet = true;
+    }
+
+    if (value.HasMember("MemoryLimit") && !value["MemoryLimit"].IsNull())
+    {
+        if (!value["MemoryLimit"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuntimeMC.MemoryLimit` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_memoryLimit = value["MemoryLimit"].GetDouble();
+        m_memoryLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +287,38 @@ void RuntimeMC::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "RunningInstanceCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_runningInstanceCount, allocator);
+    }
+
+    if (m_cpuUsedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CpuUsed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cpuUsed, allocator);
+    }
+
+    if (m_cpuLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CpuLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cpuLimit, allocator);
+    }
+
+    if (m_memoryUsedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemoryUsed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_memoryUsed, allocator);
+    }
+
+    if (m_memoryLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemoryLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_memoryLimit, allocator);
     }
 
 }
@@ -422,5 +498,69 @@ void RuntimeMC::SetRunningInstanceCount(const int64_t& _runningInstanceCount)
 bool RuntimeMC::RunningInstanceCountHasBeenSet() const
 {
     return m_runningInstanceCountHasBeenSet;
+}
+
+double RuntimeMC::GetCpuUsed() const
+{
+    return m_cpuUsed;
+}
+
+void RuntimeMC::SetCpuUsed(const double& _cpuUsed)
+{
+    m_cpuUsed = _cpuUsed;
+    m_cpuUsedHasBeenSet = true;
+}
+
+bool RuntimeMC::CpuUsedHasBeenSet() const
+{
+    return m_cpuUsedHasBeenSet;
+}
+
+double RuntimeMC::GetCpuLimit() const
+{
+    return m_cpuLimit;
+}
+
+void RuntimeMC::SetCpuLimit(const double& _cpuLimit)
+{
+    m_cpuLimit = _cpuLimit;
+    m_cpuLimitHasBeenSet = true;
+}
+
+bool RuntimeMC::CpuLimitHasBeenSet() const
+{
+    return m_cpuLimitHasBeenSet;
+}
+
+double RuntimeMC::GetMemoryUsed() const
+{
+    return m_memoryUsed;
+}
+
+void RuntimeMC::SetMemoryUsed(const double& _memoryUsed)
+{
+    m_memoryUsed = _memoryUsed;
+    m_memoryUsedHasBeenSet = true;
+}
+
+bool RuntimeMC::MemoryUsedHasBeenSet() const
+{
+    return m_memoryUsedHasBeenSet;
+}
+
+double RuntimeMC::GetMemoryLimit() const
+{
+    return m_memoryLimit;
+}
+
+void RuntimeMC::SetMemoryLimit(const double& _memoryLimit)
+{
+    m_memoryLimit = _memoryLimit;
+    m_memoryLimitHasBeenSet = true;
+}
+
+bool RuntimeMC::MemoryLimitHasBeenSet() const
+{
+    return m_memoryLimitHasBeenSet;
 }
 

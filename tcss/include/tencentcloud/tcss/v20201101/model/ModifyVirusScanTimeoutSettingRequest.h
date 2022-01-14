@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取超时时长单位小时
-                     * @return Timeout 超时时长单位小时
+                     * 获取超时时长单位小时(5~24h)
+                     * @return Timeout 超时时长单位小时(5~24h)
                      */
                     uint64_t GetTimeout() const;
 
                     /**
-                     * 设置超时时长单位小时
-                     * @param Timeout 超时时长单位小时
+                     * 设置超时时长单位小时(5~24h)
+                     * @param Timeout 超时时长单位小时(5~24h)
                      */
                     void SetTimeout(const uint64_t& _timeout);
 
@@ -81,7 +81,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 超时时长单位小时
+                     * 超时时长单位小时(5~24h)
                      */
                     uint64_t m_timeout;
                     bool m_timeoutHasBeenSet;

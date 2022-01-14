@@ -103,6 +103,18 @@ namespace TencentCloud
                      */
                     bool UnhandledFileCntHasBeenSet() const;
 
+                    /**
+                     * 获取未处理木马事件
+                     * @return UnhandledVirusEventCnt 未处理木马事件
+                     */
+                    uint64_t GetUnhandledVirusEventCnt() const;
+
+                    /**
+                     * 判断参数 UnhandledVirusEventCnt 是否已赋值
+                     * @return UnhandledVirusEventCnt 是否已赋值
+                     */
+                    bool UnhandledVirusEventCntHasBeenSet() const;
+
                 private:
 
                     /**
@@ -134,6 +146,12 @@ namespace TencentCloud
                      */
                     uint64_t m_unhandledFileCnt;
                     bool m_unhandledFileCntHasBeenSet;
+
+                    /**
+                     * 未处理木马事件
+                     */
+                    uint64_t m_unhandledVirusEventCnt;
+                    bool m_unhandledVirusEventCntHasBeenSet;
 
                 };
             }

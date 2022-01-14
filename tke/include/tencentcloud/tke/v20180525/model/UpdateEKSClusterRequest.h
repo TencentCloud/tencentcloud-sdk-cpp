@@ -243,6 +243,24 @@ namespace TencentCloud
                      */
                     bool ProxyLBHasBeenSet() const;
 
+                    /**
+                     * 获取扩展参数。须是map[string]string 的json 格式。
+                     * @return ExtraParam 扩展参数。须是map[string]string 的json 格式。
+                     */
+                    std::string GetExtraParam() const;
+
+                    /**
+                     * 设置扩展参数。须是map[string]string 的json 格式。
+                     * @param ExtraParam 扩展参数。须是map[string]string 的json 格式。
+                     */
+                    void SetExtraParam(const std::string& _extraParam);
+
+                    /**
+                     * 判断参数 ExtraParam 是否已赋值
+                     * @return ExtraParam 是否已赋值
+                     */
+                    bool ExtraParamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -310,6 +328,12 @@ namespace TencentCloud
                      */
                     bool m_proxyLB;
                     bool m_proxyLBHasBeenSet;
+
+                    /**
+                     * 扩展参数。须是map[string]string 的json 格式。
+                     */
+                    std::string m_extraParam;
+                    bool m_extraParamHasBeenSet;
 
                 };
             }

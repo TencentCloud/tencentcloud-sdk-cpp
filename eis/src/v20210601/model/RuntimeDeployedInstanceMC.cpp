@@ -30,7 +30,8 @@ RuntimeDeployedInstanceMC::RuntimeDeployedInstanceMC() :
     m_instanceCreatedAtHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_updatedAtHasBeenSet(false),
+    m_projectTypeHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome RuntimeDeployedInstanceMC::Deserialize(const rapidjson::Valu
         m_updatedAtHasBeenSet = true;
     }
 
+    if (value.HasMember("ProjectType") && !value["ProjectType"].IsNull())
+    {
+        if (!value["ProjectType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuntimeDeployedInstanceMC.ProjectType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_projectType = value["ProjectType"].GetInt64();
+        m_projectTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void RuntimeDeployedInstanceMC::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "UpdatedAt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_updatedAt, allocator);
+    }
+
+    if (m_projectTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_projectType, allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void RuntimeDeployedInstanceMC::SetUpdatedAt(const int64_t& _updatedAt)
 bool RuntimeDeployedInstanceMC::UpdatedAtHasBeenSet() const
 {
     return m_updatedAtHasBeenSet;
+}
+
+int64_t RuntimeDeployedInstanceMC::GetProjectType() const
+{
+    return m_projectType;
+}
+
+void RuntimeDeployedInstanceMC::SetProjectType(const int64_t& _projectType)
+{
+    m_projectType = _projectType;
+    m_projectTypeHasBeenSet = true;
+}
+
+bool RuntimeDeployedInstanceMC::ProjectTypeHasBeenSet() const
+{
+    return m_projectTypeHasBeenSet;
 }
 
