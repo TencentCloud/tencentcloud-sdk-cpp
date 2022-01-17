@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取索引规则，Rule和Effective两个必须有一个参数存在
-                     * @return Rule 索引规则，Rule和Effective两个必须有一个参数存在
+                     * 获取索引规则
+                     * @return Rule 索引规则
                      */
                     RuleInfo GetRule() const;
 
                     /**
-                     * 设置索引规则，Rule和Effective两个必须有一个参数存在
-                     * @param Rule 索引规则，Rule和Effective两个必须有一个参数存在
+                     * 设置索引规则
+                     * @param Rule 索引规则
                      */
                     void SetRule(const RuleInfo& _rule);
 
@@ -112,7 +112,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 索引规则，Rule和Effective两个必须有一个参数存在
+                     * 索引规则
                      */
                     RuleInfo m_rule;
                     bool m_ruleHasBeenSet;

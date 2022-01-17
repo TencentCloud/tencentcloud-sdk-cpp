@@ -556,6 +556,92 @@ AntiddosClient::CreatePacketFilterConfigOutcomeCallable AntiddosClient::CreatePa
     return task->get_future();
 }
 
+AntiddosClient::CreatePortAclConfigOutcome AntiddosClient::CreatePortAclConfig(const CreatePortAclConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePortAclConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePortAclConfigResponse rsp = CreatePortAclConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePortAclConfigOutcome(rsp);
+        else
+            return CreatePortAclConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePortAclConfigOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::CreatePortAclConfigAsync(const CreatePortAclConfigRequest& request, const CreatePortAclConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePortAclConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::CreatePortAclConfigOutcomeCallable AntiddosClient::CreatePortAclConfigCallable(const CreatePortAclConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePortAclConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePortAclConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::CreatePortAclConfigListOutcome AntiddosClient::CreatePortAclConfigList(const CreatePortAclConfigListRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePortAclConfigList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePortAclConfigListResponse rsp = CreatePortAclConfigListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePortAclConfigListOutcome(rsp);
+        else
+            return CreatePortAclConfigListOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePortAclConfigListOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::CreatePortAclConfigListAsync(const CreatePortAclConfigListRequest& request, const CreatePortAclConfigListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePortAclConfigList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::CreatePortAclConfigListOutcomeCallable AntiddosClient::CreatePortAclConfigListCallable(const CreatePortAclConfigListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePortAclConfigListOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePortAclConfigList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AntiddosClient::CreateProtocolBlockConfigOutcome AntiddosClient::CreateProtocolBlockConfig(const CreateProtocolBlockConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateProtocolBlockConfig");

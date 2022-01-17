@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待查询产品的名称，例如cvm、vpc
-                     * @return Product 待查询产品的名称，例如cvm、vpc
+                     * 获取待查询产品的名称，例如cvm
+                     * @return Product 待查询产品的名称，例如cvm
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置待查询产品的名称，例如cvm、vpc
-                     * @param Product 待查询产品的名称，例如cvm、vpc
+                     * 设置待查询产品的名称，例如cvm
+                     * @param Product 待查询产品的名称，例如cvm
                      */
                     void SetProduct(const std::string& _product);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待查询产品的名称，例如cvm、vpc
+                     * 待查询产品的名称，例如cvm
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;

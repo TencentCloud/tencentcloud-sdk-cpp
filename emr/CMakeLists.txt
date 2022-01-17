@@ -31,6 +31,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/DescribeInstanceRenewNodesRequest.h
   include/tencentcloud/emr/v20190103/model/ScaleOutInstanceResponse.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceCreateInstanceRequest.h
+  include/tencentcloud/emr/v20190103/model/CustomServiceDefine.h
   include/tencentcloud/emr/v20190103/model/Resource.h
   include/tencentcloud/emr/v20190103/model/PriceResource.h
   include/tencentcloud/emr/v20190103/model/TerminateInstanceRequest.h
@@ -42,6 +43,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/PersistentVolumeContext.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceRenewInstanceResponse.h
   include/tencentcloud/emr/v20190103/model/DescribeJobFlowRequest.h
+  include/tencentcloud/emr/v20190103/model/ExternalService.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceCreateInstanceResponse.h
   include/tencentcloud/emr/v20190103/model/BootstrapAction.h
   include/tencentcloud/emr/v20190103/model/HostVolumeContext.h
@@ -108,6 +110,7 @@ set(emr_src
   src/v20190103/model/DescribeInstanceRenewNodesRequest.cpp
   src/v20190103/model/ScaleOutInstanceResponse.cpp
   src/v20190103/model/InquiryPriceCreateInstanceRequest.cpp
+  src/v20190103/model/CustomServiceDefine.cpp
   src/v20190103/model/Resource.cpp
   src/v20190103/model/PriceResource.cpp
   src/v20190103/model/TerminateInstanceRequest.cpp
@@ -119,6 +122,7 @@ set(emr_src
   src/v20190103/model/PersistentVolumeContext.cpp
   src/v20190103/model/InquiryPriceRenewInstanceResponse.cpp
   src/v20190103/model/DescribeJobFlowRequest.cpp
+  src/v20190103/model/ExternalService.cpp
   src/v20190103/model/InquiryPriceCreateInstanceResponse.cpp
   src/v20190103/model/BootstrapAction.cpp
   src/v20190103/model/HostVolumeContext.cpp

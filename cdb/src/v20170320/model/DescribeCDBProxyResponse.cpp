@@ -28,7 +28,9 @@ DescribeCDBProxyResponse::DescribeCDBProxyResponse() :
     m_addressHasBeenSet(false),
     m_proxyNodeHasBeenSet(false),
     m_rWInstInfoHasBeenSet(false),
-    m_connectionPoolInfoHasBeenSet(false)
+    m_connectionPoolInfoHasBeenSet(false),
+    m_countHasBeenSet(false),
+    m_proxyGroupHasBeenSet(false)
 {
 }
 
@@ -151,6 +153,36 @@ CoreInternalOutcome DescribeCDBProxyResponse::Deserialize(const string &payload)
         m_connectionPoolInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Count") && !rsp["Count"].IsNull())
+    {
+        if (!rsp["Count"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Count` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_count = rsp["Count"].GetUint64();
+        m_countHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ProxyGroup") && !rsp["ProxyGroup"].IsNull())
+    {
+        if (!rsp["ProxyGroup"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ProxyGroup` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ProxyGroup"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ProxyGroup item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_proxyGroup.push_back(item);
+        }
+        m_proxyGroupHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -204,6 +236,29 @@ string DescribeCDBProxyResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_connectionPoolInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_countHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Count";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_count, allocator);
+    }
+
+    if (m_proxyGroupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyGroup";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_proxyGroup.begin(); itr != m_proxyGroup.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -266,6 +321,26 @@ ConnectionPoolInfo DescribeCDBProxyResponse::GetConnectionPoolInfo() const
 bool DescribeCDBProxyResponse::ConnectionPoolInfoHasBeenSet() const
 {
     return m_connectionPoolInfoHasBeenSet;
+}
+
+uint64_t DescribeCDBProxyResponse::GetCount() const
+{
+    return m_count;
+}
+
+bool DescribeCDBProxyResponse::CountHasBeenSet() const
+{
+    return m_countHasBeenSet;
+}
+
+vector<ProxyGroup> DescribeCDBProxyResponse::GetProxyGroup() const
+{
+    return m_proxyGroup;
+}
+
+bool DescribeCDBProxyResponse::ProxyGroupHasBeenSet() const
+{
+    return m_proxyGroupHasBeenSet;
 }
 
 

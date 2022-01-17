@@ -2491,6 +2491,49 @@ CfwClient::ModifyResourceGroupOutcomeCallable CfwClient::ModifyResourceGroupCall
     return task->get_future();
 }
 
+CfwClient::ModifyRunSyncAssetOutcome CfwClient::ModifyRunSyncAsset(const ModifyRunSyncAssetRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRunSyncAsset");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRunSyncAssetResponse rsp = ModifyRunSyncAssetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRunSyncAssetOutcome(rsp);
+        else
+            return ModifyRunSyncAssetOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRunSyncAssetOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::ModifyRunSyncAssetAsync(const ModifyRunSyncAssetRequest& request, const ModifyRunSyncAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRunSyncAsset(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::ModifyRunSyncAssetOutcomeCallable CfwClient::ModifyRunSyncAssetCallable(const ModifyRunSyncAssetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRunSyncAssetOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRunSyncAsset(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::ModifySecurityGroupAllRuleStatusOutcome CfwClient::ModifySecurityGroupAllRuleStatus(const ModifySecurityGroupAllRuleStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifySecurityGroupAllRuleStatus");

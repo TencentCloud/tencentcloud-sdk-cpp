@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取房间号列表，最大不能超过10个
-                     * @return RoomIds 房间号列表，最大不能超过10个
+                     * 获取房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）
+                     * @return RoomIds 房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）
                      */
                     std::vector<uint64_t> GetRoomIds() const;
 
                     /**
-                     * 设置房间号列表，最大不能超过10个
-                     * @param RoomIds 房间号列表，最大不能超过10个
+                     * 设置房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）
+                     * @param RoomIds 房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）
                      */
                     void SetRoomIds(const std::vector<uint64_t>& _roomIds);
 
@@ -77,6 +77,24 @@ namespace TencentCloud
                      * @return RoomIds 是否已赋值
                      */
                     bool RoomIdsHasBeenSet() const;
+
+                    /**
+                     * 获取字符串类型房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）
+                     * @return StrRoomIds 字符串类型房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）
+                     */
+                    std::vector<std::string> GetStrRoomIds() const;
+
+                    /**
+                     * 设置字符串类型房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）
+                     * @param StrRoomIds 字符串类型房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）
+                     */
+                    void SetStrRoomIds(const std::vector<std::string>& _strRoomIds);
+
+                    /**
+                     * 判断参数 StrRoomIds 是否已赋值
+                     * @return StrRoomIds 是否已赋值
+                     */
+                    bool StrRoomIdsHasBeenSet() const;
 
                 private:
 
@@ -87,10 +105,16 @@ namespace TencentCloud
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 房间号列表，最大不能超过10个
+                     * 房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）
                      */
                     std::vector<uint64_t> m_roomIds;
                     bool m_roomIdsHasBeenSet;
+
+                    /**
+                     * 字符串类型房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）
+                     */
+                    std::vector<std::string> m_strRoomIds;
+                    bool m_strRoomIdsHasBeenSet;
 
                 };
             }

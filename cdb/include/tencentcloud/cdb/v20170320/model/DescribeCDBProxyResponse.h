@@ -26,6 +26,7 @@
 #include <tencentcloud/cdb/v20170320/model/ProxyNodeInfo.h>
 #include <tencentcloud/cdb/v20170320/model/RWInfo.h>
 #include <tencentcloud/cdb/v20170320/model/ConnectionPoolInfo.h>
+#include <tencentcloud/cdb/v20170320/model/ProxyGroup.h>
 
 
 namespace TencentCloud
@@ -118,6 +119,34 @@ namespace TencentCloud
                      */
                     bool ConnectionPoolInfoHasBeenSet() const;
 
+                    /**
+                     * 获取代理数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Count 代理数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetCount() const;
+
+                    /**
+                     * 判断参数 Count 是否已赋值
+                     * @return Count 是否已赋值
+                     */
+                    bool CountHasBeenSet() const;
+
+                    /**
+                     * 获取代理信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProxyGroup 代理信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ProxyGroup> GetProxyGroup() const;
+
+                    /**
+                     * 判断参数 ProxyGroup 是否已赋值
+                     * @return ProxyGroup 是否已赋值
+                     */
+                    bool ProxyGroupHasBeenSet() const;
+
                 private:
 
                     /**
@@ -154,6 +183,20 @@ namespace TencentCloud
                      */
                     ConnectionPoolInfo m_connectionPoolInfo;
                     bool m_connectionPoolInfoHasBeenSet;
+
+                    /**
+                     * 代理数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_count;
+                    bool m_countHasBeenSet;
+
+                    /**
+                     * 代理信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ProxyGroup> m_proxyGroup;
+                    bool m_proxyGroupHasBeenSet;
 
                 };
             }

@@ -308,6 +308,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/ModifyAccountDescriptionResponse.h
   include/tencentcloud/cdb/v20170320/model/CommonTimeWindow.h
   include/tencentcloud/cdb/v20170320/model/ModifyAccountMaxUserConnectionsRequest.h
+  include/tencentcloud/cdb/v20170320/model/ProxyGroup.h
   include/tencentcloud/cdb/v20170320/model/DeleteDeployGroupsResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeTasksRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeRollbackTaskDetailResponse.h
@@ -658,6 +659,7 @@ set(cdb_src
   src/v20170320/model/ModifyAccountDescriptionResponse.cpp
   src/v20170320/model/CommonTimeWindow.cpp
   src/v20170320/model/ModifyAccountMaxUserConnectionsRequest.cpp
+  src/v20170320/model/ProxyGroup.cpp
   src/v20170320/model/DeleteDeployGroupsResponse.cpp
   src/v20170320/model/DescribeTasksRequest.cpp
   src/v20170320/model/DescribeRollbackTaskDetailResponse.cpp

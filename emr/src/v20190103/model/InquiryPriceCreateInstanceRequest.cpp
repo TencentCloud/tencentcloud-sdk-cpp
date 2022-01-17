@@ -36,7 +36,8 @@ InquiryPriceCreateInstanceRequest::InquiryPriceCreateInstanceRequest() :
     m_unifyMetaInstanceIdHasBeenSet(false),
     m_metaDBInfoHasBeenSet(false),
     m_productIdHasBeenSet(false),
-    m_sceneNameHasBeenSet(false)
+    m_sceneNameHasBeenSet(false),
+    m_externalServiceHasBeenSet(false)
 {
 }
 
@@ -166,6 +167,21 @@ string InquiryPriceCreateInstanceRequest::ToJsonString() const
         string key = "SceneName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sceneName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_externalServiceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalService";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_externalService.begin(); itr != m_externalService.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -398,6 +414,22 @@ void InquiryPriceCreateInstanceRequest::SetSceneName(const string& _sceneName)
 bool InquiryPriceCreateInstanceRequest::SceneNameHasBeenSet() const
 {
     return m_sceneNameHasBeenSet;
+}
+
+vector<ExternalService> InquiryPriceCreateInstanceRequest::GetExternalService() const
+{
+    return m_externalService;
+}
+
+void InquiryPriceCreateInstanceRequest::SetExternalService(const vector<ExternalService>& _externalService)
+{
+    m_externalService = _externalService;
+    m_externalServiceHasBeenSet = true;
+}
+
+bool InquiryPriceCreateInstanceRequest::ExternalServiceHasBeenSet() const
+{
+    return m_externalServiceHasBeenSet;
 }
 
 

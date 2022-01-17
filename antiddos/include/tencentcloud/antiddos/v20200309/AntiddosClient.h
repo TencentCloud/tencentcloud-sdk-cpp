@@ -47,6 +47,10 @@
 #include <tencentcloud/antiddos/v20200309/model/CreateL7RuleCertsResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/CreatePacketFilterConfigRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/CreatePacketFilterConfigResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/CreatePortAclConfigRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/CreatePortAclConfigResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/CreatePortAclConfigListRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/CreatePortAclConfigListResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateProtocolBlockConfigRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateProtocolBlockConfigResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateSchedulingDomainRequest.h>
@@ -177,6 +181,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePacketFilterConfigResponse> CreatePacketFilterConfigOutcome;
                 typedef std::future<CreatePacketFilterConfigOutcome> CreatePacketFilterConfigOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::CreatePacketFilterConfigRequest&, CreatePacketFilterConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePacketFilterConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePortAclConfigResponse> CreatePortAclConfigOutcome;
+                typedef std::future<CreatePortAclConfigOutcome> CreatePortAclConfigOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::CreatePortAclConfigRequest&, CreatePortAclConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePortAclConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePortAclConfigListResponse> CreatePortAclConfigListOutcome;
+                typedef std::future<CreatePortAclConfigListOutcome> CreatePortAclConfigListOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::CreatePortAclConfigListRequest&, CreatePortAclConfigListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePortAclConfigListAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateProtocolBlockConfigResponse> CreateProtocolBlockConfigOutcome;
                 typedef std::future<CreateProtocolBlockConfigOutcome> CreateProtocolBlockConfigOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::CreateProtocolBlockConfigRequest&, CreateProtocolBlockConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProtocolBlockConfigAsyncHandler;
@@ -407,6 +417,24 @@ namespace TencentCloud
                 CreatePacketFilterConfigOutcome CreatePacketFilterConfig(const Model::CreatePacketFilterConfigRequest &request);
                 void CreatePacketFilterConfigAsync(const Model::CreatePacketFilterConfigRequest& request, const CreatePacketFilterConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreatePacketFilterConfigOutcomeCallable CreatePacketFilterConfigCallable(const Model::CreatePacketFilterConfigRequest& request);
+
+                /**
+                 *添加DDoS防护的端口acl策略
+                 * @param req CreatePortAclConfigRequest
+                 * @return CreatePortAclConfigOutcome
+                 */
+                CreatePortAclConfigOutcome CreatePortAclConfig(const Model::CreatePortAclConfigRequest &request);
+                void CreatePortAclConfigAsync(const Model::CreatePortAclConfigRequest& request, const CreatePortAclConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePortAclConfigOutcomeCallable CreatePortAclConfigCallable(const Model::CreatePortAclConfigRequest& request);
+
+                /**
+                 *批量添加DDoS防护的端口acl策略
+                 * @param req CreatePortAclConfigListRequest
+                 * @return CreatePortAclConfigListOutcome
+                 */
+                CreatePortAclConfigListOutcome CreatePortAclConfigList(const Model::CreatePortAclConfigListRequest &request);
+                void CreatePortAclConfigListAsync(const Model::CreatePortAclConfigListRequest& request, const CreatePortAclConfigListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePortAclConfigListOutcomeCallable CreatePortAclConfigListCallable(const Model::CreatePortAclConfigListRequest& request);
 
                 /**
                  *设置DDoS防护的协议封禁配置

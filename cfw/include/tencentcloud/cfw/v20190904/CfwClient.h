@@ -137,6 +137,8 @@
 #include <tencentcloud/cfw/v20190904/model/ModifyPublicIPSwitchStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyResourceGroupRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyResourceGroupResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyRunSyncAssetRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyRunSyncAssetResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifySecurityGroupAllRuleStatusRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifySecurityGroupAllRuleStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifySecurityGroupItemRuleStatusRequest.h>
@@ -348,6 +350,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyResourceGroupResponse> ModifyResourceGroupOutcome;
                 typedef std::future<ModifyResourceGroupOutcome> ModifyResourceGroupOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyResourceGroupRequest&, ModifyResourceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourceGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRunSyncAssetResponse> ModifyRunSyncAssetOutcome;
+                typedef std::future<ModifyRunSyncAssetOutcome> ModifyRunSyncAssetOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ModifyRunSyncAssetRequest&, ModifyRunSyncAssetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRunSyncAssetAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySecurityGroupAllRuleStatusResponse> ModifySecurityGroupAllRuleStatusOutcome;
                 typedef std::future<ModifySecurityGroupAllRuleStatusOutcome> ModifySecurityGroupAllRuleStatusOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifySecurityGroupAllRuleStatusRequest&, ModifySecurityGroupAllRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityGroupAllRuleStatusAsyncHandler;
@@ -544,7 +549,7 @@ namespace TencentCloud
                 DescribeAcListsOutcomeCallable DescribeAcListsCallable(const Model::DescribeAcListsRequest& request);
 
                 /**
-                 *获取地址模版列表
+                 *获取地址模板列表
                  * @param req DescribeAddrTemplateListRequest
                  * @return DescribeAddrTemplateListOutcome
                  */
@@ -913,6 +918,15 @@ namespace TencentCloud
                 ModifyResourceGroupOutcome ModifyResourceGroup(const Model::ModifyResourceGroupRequest &request);
                 void ModifyResourceGroupAsync(const Model::ModifyResourceGroupRequest& request, const ModifyResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyResourceGroupOutcomeCallable ModifyResourceGroupCallable(const Model::ModifyResourceGroupRequest& request);
+
+                /**
+                 *同步资产-互联网&VPC（新）
+                 * @param req ModifyRunSyncAssetRequest
+                 * @return ModifyRunSyncAssetOutcome
+                 */
+                ModifyRunSyncAssetOutcome ModifyRunSyncAsset(const Model::ModifyRunSyncAssetRequest &request);
+                void ModifyRunSyncAssetAsync(const Model::ModifyRunSyncAssetRequest& request, const ModifyRunSyncAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRunSyncAssetOutcomeCallable ModifyRunSyncAssetCallable(const Model::ModifyRunSyncAssetRequest& request);
 
                 /**
                  *启用停用全部规则

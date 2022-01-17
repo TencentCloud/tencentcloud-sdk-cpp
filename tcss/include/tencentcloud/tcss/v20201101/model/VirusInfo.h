@@ -345,6 +345,8 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
 TIMEOUT: 超时
 TOO_MANY: 任务过多
 OFFLINE: 离线
+INTERNAL: 服务内部错误
+VALIDATION: 参数非法
                      * @return SubStatus 失败子状态:
 FILE_NOT_FOUND:文件不存在
 FILE_ABNORMAL:文件异常
@@ -355,6 +357,8 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
 TIMEOUT: 超时
 TOO_MANY: 任务过多
 OFFLINE: 离线
+INTERNAL: 服务内部错误
+VALIDATION: 参数非法
                      */
                     std::string GetSubStatus() const;
 
@@ -369,6 +373,8 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
 TIMEOUT: 超时
 TOO_MANY: 任务过多
 OFFLINE: 离线
+INTERNAL: 服务内部错误
+VALIDATION: 参数非法
                      * @param SubStatus 失败子状态:
 FILE_NOT_FOUND:文件不存在
 FILE_ABNORMAL:文件异常
@@ -379,6 +385,8 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
 TIMEOUT: 超时
 TOO_MANY: 任务过多
 OFFLINE: 离线
+INTERNAL: 服务内部错误
+VALIDATION: 参数非法
                      */
                     void SetSubStatus(const std::string& _subStatus);
 
@@ -494,6 +502,8 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
 TIMEOUT: 超时
 TOO_MANY: 任务过多
 OFFLINE: 离线
+INTERNAL: 服务内部错误
+VALIDATION: 参数非法
                      */
                     std::string m_subStatus;
                     bool m_subStatusHasBeenSet;
