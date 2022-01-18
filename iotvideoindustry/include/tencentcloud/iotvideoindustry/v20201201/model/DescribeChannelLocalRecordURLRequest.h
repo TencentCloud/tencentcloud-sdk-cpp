@@ -97,6 +97,24 @@ namespace TencentCloud
                     bool RecordIdHasBeenSet() const;
 
                     /**
+                     * 获取UNIX 时间戳，30天内，URL失效时间，如180s无人观看此流则URL提前失效
+                     * @return ExpireTime UNIX 时间戳，30天内，URL失效时间，如180s无人观看此流则URL提前失效
+                     */
+                    int64_t GetExpireTime() const;
+
+                    /**
+                     * 设置UNIX 时间戳，30天内，URL失效时间，如180s无人观看此流则URL提前失效
+                     * @param ExpireTime UNIX 时间戳，30天内，URL失效时间，如180s无人观看此流则URL提前失效
+                     */
+                    void SetExpireTime(const int64_t& _expireTime);
+
+                    /**
+                     * 判断参数 ExpireTime 是否已赋值
+                     * @return ExpireTime 是否已赋值
+                     */
+                    bool ExpireTimeHasBeenSet() const;
+
+                    /**
                      * 获取录像文件推送的开始时间，需要在RecordId参数起始时间内，可以通过此参数控制回放流起始点
                      * @return StartTime 录像文件推送的开始时间，需要在RecordId参数起始时间内，可以通过此参数控制回放流起始点
                      */
@@ -151,6 +169,12 @@ namespace TencentCloud
                      */
                     std::string m_recordId;
                     bool m_recordIdHasBeenSet;
+
+                    /**
+                     * UNIX 时间戳，30天内，URL失效时间，如180s无人观看此流则URL提前失效
+                     */
+                    int64_t m_expireTime;
+                    bool m_expireTimeHasBeenSet;
 
                     /**
                      * 录像文件推送的开始时间，需要在RecordId参数起始时间内，可以通过此参数控制回放流起始点

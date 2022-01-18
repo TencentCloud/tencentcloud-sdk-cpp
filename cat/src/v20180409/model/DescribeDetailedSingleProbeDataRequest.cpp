@@ -34,7 +34,8 @@ DescribeDetailedSingleProbeDataRequest::DescribeDetailedSingleProbeDataRequest()
     m_taskIDHasBeenSet(false),
     m_operatorsHasBeenSet(false),
     m_districtsHasBeenSet(false),
-    m_errorTypesHasBeenSet(false)
+    m_errorTypesHasBeenSet(false),
+    m_cityHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,19 @@ string DescribeDetailedSingleProbeDataRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_errorTypes.begin(); itr != m_errorTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_cityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "City";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_city.begin(); itr != m_city.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -364,6 +378,22 @@ void DescribeDetailedSingleProbeDataRequest::SetErrorTypes(const vector<string>&
 bool DescribeDetailedSingleProbeDataRequest::ErrorTypesHasBeenSet() const
 {
     return m_errorTypesHasBeenSet;
+}
+
+vector<string> DescribeDetailedSingleProbeDataRequest::GetCity() const
+{
+    return m_city;
+}
+
+void DescribeDetailedSingleProbeDataRequest::SetCity(const vector<string>& _city)
+{
+    m_city = _city;
+    m_cityHasBeenSet = true;
+}
+
+bool DescribeDetailedSingleProbeDataRequest::CityHasBeenSet() const
+{
+    return m_cityHasBeenSet;
 }
 
 

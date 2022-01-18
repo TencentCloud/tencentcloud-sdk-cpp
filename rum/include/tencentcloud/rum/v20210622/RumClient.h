@@ -27,6 +27,10 @@
 #include <tencentcloud/rum/v20210622/model/CreateProjectResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataEventUrlRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataEventUrlResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataFetchUrlRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataFetchUrlResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataFetchUrlInfoRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataFetchUrlInfoResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataLogUrlStatisticsRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataLogUrlStatisticsResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataPerformancePageRequest.h>
@@ -61,6 +65,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDataEventUrlResponse> DescribeDataEventUrlOutcome;
                 typedef std::future<DescribeDataEventUrlOutcome> DescribeDataEventUrlOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeDataEventUrlRequest&, DescribeDataEventUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataEventUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataFetchUrlResponse> DescribeDataFetchUrlOutcome;
+                typedef std::future<DescribeDataFetchUrlOutcome> DescribeDataFetchUrlOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeDataFetchUrlRequest&, DescribeDataFetchUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataFetchUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataFetchUrlInfoResponse> DescribeDataFetchUrlInfoOutcome;
+                typedef std::future<DescribeDataFetchUrlInfoOutcome> DescribeDataFetchUrlInfoOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeDataFetchUrlInfoRequest&, DescribeDataFetchUrlInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataFetchUrlInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataLogUrlStatisticsResponse> DescribeDataLogUrlStatisticsOutcome;
                 typedef std::future<DescribeDataLogUrlStatisticsOutcome> DescribeDataLogUrlStatisticsOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeDataLogUrlStatisticsRequest&, DescribeDataLogUrlStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataLogUrlStatisticsAsyncHandler;
@@ -102,6 +112,24 @@ namespace TencentCloud
                 DescribeDataEventUrlOutcome DescribeDataEventUrl(const Model::DescribeDataEventUrlRequest &request);
                 void DescribeDataEventUrlAsync(const Model::DescribeDataEventUrlRequest& request, const DescribeDataEventUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDataEventUrlOutcomeCallable DescribeDataEventUrlCallable(const Model::DescribeDataEventUrlRequest& request);
+
+                /**
+                 *获取DescribeDataFetchUrl信息
+                 * @param req DescribeDataFetchUrlRequest
+                 * @return DescribeDataFetchUrlOutcome
+                 */
+                DescribeDataFetchUrlOutcome DescribeDataFetchUrl(const Model::DescribeDataFetchUrlRequest &request);
+                void DescribeDataFetchUrlAsync(const Model::DescribeDataFetchUrlRequest& request, const DescribeDataFetchUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataFetchUrlOutcomeCallable DescribeDataFetchUrlCallable(const Model::DescribeDataFetchUrlRequest& request);
+
+                /**
+                 *获取DescribeDataFetchUrlInfo信息
+                 * @param req DescribeDataFetchUrlInfoRequest
+                 * @return DescribeDataFetchUrlInfoOutcome
+                 */
+                DescribeDataFetchUrlInfoOutcome DescribeDataFetchUrlInfo(const Model::DescribeDataFetchUrlInfoRequest &request);
+                void DescribeDataFetchUrlInfoAsync(const Model::DescribeDataFetchUrlInfoRequest& request, const DescribeDataFetchUrlInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataFetchUrlInfoOutcomeCallable DescribeDataFetchUrlInfoCallable(const Model::DescribeDataFetchUrlInfoRequest& request);
 
                 /**
                  *获取LogUrlStatistics信息

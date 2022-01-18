@@ -298,6 +298,49 @@ AntiddosClient::CreateDDoSBlackWhiteIpListOutcomeCallable AntiddosClient::Create
     return task->get_future();
 }
 
+AntiddosClient::CreateDDoSConnectLimitOutcome AntiddosClient::CreateDDoSConnectLimit(const CreateDDoSConnectLimitRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDDoSConnectLimit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDDoSConnectLimitResponse rsp = CreateDDoSConnectLimitResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDDoSConnectLimitOutcome(rsp);
+        else
+            return CreateDDoSConnectLimitOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDDoSConnectLimitOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::CreateDDoSConnectLimitAsync(const CreateDDoSConnectLimitRequest& request, const CreateDDoSConnectLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDDoSConnectLimit(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::CreateDDoSConnectLimitOutcomeCallable AntiddosClient::CreateDDoSConnectLimitCallable(const CreateDDoSConnectLimitRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDDoSConnectLimitOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDDoSConnectLimit(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AntiddosClient::CreateDDoSGeoIPBlockConfigOutcome AntiddosClient::CreateDDoSGeoIPBlockConfig(const CreateDDoSGeoIPBlockConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDDoSGeoIPBlockConfig");

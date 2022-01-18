@@ -29,7 +29,9 @@ CreateOrganizationMemberRequest::CreateOrganizationMemberRequest() :
     m_nodeIdHasBeenSet(false),
     m_accountNameHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_recordIdHasBeenSet(false)
+    m_recordIdHasBeenSet(false),
+    m_payUinHasBeenSet(false),
+    m_identityRoleIDHasBeenSet(false)
 {
 }
 
@@ -99,6 +101,27 @@ string CreateOrganizationMemberRequest::ToJsonString() const
         string key = "RecordId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_recordId, allocator);
+    }
+
+    if (m_payUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayUin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_payUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_identityRoleIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdentityRoleID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_identityRoleID.begin(); itr != m_identityRoleID.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
     }
 
 
@@ -219,6 +242,38 @@ void CreateOrganizationMemberRequest::SetRecordId(const int64_t& _recordId)
 bool CreateOrganizationMemberRequest::RecordIdHasBeenSet() const
 {
     return m_recordIdHasBeenSet;
+}
+
+string CreateOrganizationMemberRequest::GetPayUin() const
+{
+    return m_payUin;
+}
+
+void CreateOrganizationMemberRequest::SetPayUin(const string& _payUin)
+{
+    m_payUin = _payUin;
+    m_payUinHasBeenSet = true;
+}
+
+bool CreateOrganizationMemberRequest::PayUinHasBeenSet() const
+{
+    return m_payUinHasBeenSet;
+}
+
+vector<uint64_t> CreateOrganizationMemberRequest::GetIdentityRoleID() const
+{
+    return m_identityRoleID;
+}
+
+void CreateOrganizationMemberRequest::SetIdentityRoleID(const vector<uint64_t>& _identityRoleID)
+{
+    m_identityRoleID = _identityRoleID;
+    m_identityRoleIDHasBeenSet = true;
+}
+
+bool CreateOrganizationMemberRequest::IdentityRoleIDHasBeenSet() const
+{
+    return m_identityRoleIDHasBeenSet;
 }
 
 

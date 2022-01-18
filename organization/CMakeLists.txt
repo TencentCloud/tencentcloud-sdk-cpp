@@ -64,6 +64,7 @@ set(organization_public_header_model
   include/tencentcloud/organization/v20181225/model/MoveOrganizationMembersToNodeResponse.h
   include/tencentcloud/organization/v20181225/model/OrgNode.h
   include/tencentcloud/organization/v20210331/model/OrgPermission.h
+  include/tencentcloud/organization/v20210331/model/MemberIdentity.h
   include/tencentcloud/organization/v20210331/model/DescribeOrganizationResponse.h
   include/tencentcloud/organization/v20210331/model/BindOrganizationMemberAuthAccountRequest.h
   include/tencentcloud/organization/v20210331/model/CreateOrganizationMemberRequest.h
@@ -122,6 +123,7 @@ set(organization_src
   src/v20181225/model/MoveOrganizationMembersToNodeResponse.cpp
   src/v20181225/model/OrgNode.cpp
   src/v20210331/model/OrgPermission.cpp
+  src/v20210331/model/MemberIdentity.cpp
   src/v20210331/model/DescribeOrganizationResponse.cpp
   src/v20210331/model/BindOrganizationMemberAuthAccountRequest.cpp
   src/v20210331/model/CreateOrganizationMemberRequest.cpp

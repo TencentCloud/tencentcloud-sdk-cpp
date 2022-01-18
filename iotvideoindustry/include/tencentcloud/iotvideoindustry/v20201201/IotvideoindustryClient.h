@@ -89,6 +89,8 @@
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeBindSceneChannelsResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeBindSceneDevicesRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeBindSceneDevicesResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeChannelLiveStreamURLRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeChannelLiveStreamURLResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeChannelLocalRecordURLRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeChannelLocalRecordURLResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeChannelStreamURLRequest.h>
@@ -342,6 +344,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBindSceneDevicesResponse> DescribeBindSceneDevicesOutcome;
                 typedef std::future<DescribeBindSceneDevicesOutcome> DescribeBindSceneDevicesOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeBindSceneDevicesRequest&, DescribeBindSceneDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBindSceneDevicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeChannelLiveStreamURLResponse> DescribeChannelLiveStreamURLOutcome;
+                typedef std::future<DescribeChannelLiveStreamURLOutcome> DescribeChannelLiveStreamURLOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeChannelLiveStreamURLRequest&, DescribeChannelLiveStreamURLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChannelLiveStreamURLAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeChannelLocalRecordURLResponse> DescribeChannelLocalRecordURLOutcome;
                 typedef std::future<DescribeChannelLocalRecordURLOutcome> DescribeChannelLocalRecordURLOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeChannelLocalRecordURLRequest&, DescribeChannelLocalRecordURLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChannelLocalRecordURLAsyncHandler;
@@ -860,6 +865,16 @@ namespace TencentCloud
                 DescribeBindSceneDevicesOutcome DescribeBindSceneDevices(const Model::DescribeBindSceneDevicesRequest &request);
                 void DescribeBindSceneDevicesAsync(const Model::DescribeBindSceneDevicesRequest& request, const DescribeBindSceneDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBindSceneDevicesOutcomeCallable DescribeBindSceneDevicesCallable(const Model::DescribeBindSceneDevicesRequest& request);
+
+                /**
+                 *本接口(DescribeChannelLiveStreamURL)用于获取设备指定通道实时流地址，地址是动态生成，如重新播放需要调用此接口重新获取最新播放地址。
+正常推流，如未设置对应录制计划，且180s无人观看此流，将会被自动掐断。
+                 * @param req DescribeChannelLiveStreamURLRequest
+                 * @return DescribeChannelLiveStreamURLOutcome
+                 */
+                DescribeChannelLiveStreamURLOutcome DescribeChannelLiveStreamURL(const Model::DescribeChannelLiveStreamURLRequest &request);
+                void DescribeChannelLiveStreamURLAsync(const Model::DescribeChannelLiveStreamURLRequest& request, const DescribeChannelLiveStreamURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeChannelLiveStreamURLOutcomeCallable DescribeChannelLiveStreamURLCallable(const Model::DescribeChannelLiveStreamURLRequest& request);
 
                 /**
                  *本接口（DescribeChannelLocalRecordURL）用于将NVR等设备对应通道本地回放文件，通过GB28181信令推送至云端，并生成对应的实时视频流URL，流地址URL是动态生成，如需重新播放请重新调用此接口获取最新地址。

@@ -1459,6 +1459,49 @@ IotvideoindustryClient::DescribeBindSceneDevicesOutcomeCallable Iotvideoindustry
     return task->get_future();
 }
 
+IotvideoindustryClient::DescribeChannelLiveStreamURLOutcome IotvideoindustryClient::DescribeChannelLiveStreamURL(const DescribeChannelLiveStreamURLRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeChannelLiveStreamURL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeChannelLiveStreamURLResponse rsp = DescribeChannelLiveStreamURLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeChannelLiveStreamURLOutcome(rsp);
+        else
+            return DescribeChannelLiveStreamURLOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeChannelLiveStreamURLOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoindustryClient::DescribeChannelLiveStreamURLAsync(const DescribeChannelLiveStreamURLRequest& request, const DescribeChannelLiveStreamURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeChannelLiveStreamURL(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoindustryClient::DescribeChannelLiveStreamURLOutcomeCallable IotvideoindustryClient::DescribeChannelLiveStreamURLCallable(const DescribeChannelLiveStreamURLRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeChannelLiveStreamURLOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeChannelLiveStreamURL(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoindustryClient::DescribeChannelLocalRecordURLOutcome IotvideoindustryClient::DescribeChannelLocalRecordURL(const DescribeChannelLocalRecordURLRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeChannelLocalRecordURL");

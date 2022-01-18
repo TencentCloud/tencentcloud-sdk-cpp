@@ -29,7 +29,8 @@ DescribeInstancesDetailRequest::DescribeInstancesDetailRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_tagKeyHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_instanceIdsHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,14 @@ string DescribeInstancesDetailRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_instanceIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceIds.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -226,6 +235,22 @@ void DescribeInstancesDetailRequest::SetFilters(const vector<Filter>& _filters)
 bool DescribeInstancesDetailRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+string DescribeInstancesDetailRequest::GetInstanceIds() const
+{
+    return m_instanceIds;
+}
+
+void DescribeInstancesDetailRequest::SetInstanceIds(const string& _instanceIds)
+{
+    m_instanceIds = _instanceIds;
+    m_instanceIdsHasBeenSet = true;
+}
+
+bool DescribeInstancesDetailRequest::InstanceIdsHasBeenSet() const
+{
+    return m_instanceIdsHasBeenSet;
 }
 
 

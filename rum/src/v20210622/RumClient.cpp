@@ -126,6 +126,92 @@ RumClient::DescribeDataEventUrlOutcomeCallable RumClient::DescribeDataEventUrlCa
     return task->get_future();
 }
 
+RumClient::DescribeDataFetchUrlOutcome RumClient::DescribeDataFetchUrl(const DescribeDataFetchUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDataFetchUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDataFetchUrlResponse rsp = DescribeDataFetchUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDataFetchUrlOutcome(rsp);
+        else
+            return DescribeDataFetchUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDataFetchUrlOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeDataFetchUrlAsync(const DescribeDataFetchUrlRequest& request, const DescribeDataFetchUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDataFetchUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RumClient::DescribeDataFetchUrlOutcomeCallable RumClient::DescribeDataFetchUrlCallable(const DescribeDataFetchUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDataFetchUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDataFetchUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+RumClient::DescribeDataFetchUrlInfoOutcome RumClient::DescribeDataFetchUrlInfo(const DescribeDataFetchUrlInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDataFetchUrlInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDataFetchUrlInfoResponse rsp = DescribeDataFetchUrlInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDataFetchUrlInfoOutcome(rsp);
+        else
+            return DescribeDataFetchUrlInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDataFetchUrlInfoOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeDataFetchUrlInfoAsync(const DescribeDataFetchUrlInfoRequest& request, const DescribeDataFetchUrlInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDataFetchUrlInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RumClient::DescribeDataFetchUrlInfoOutcomeCallable RumClient::DescribeDataFetchUrlInfoCallable(const DescribeDataFetchUrlInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDataFetchUrlInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDataFetchUrlInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RumClient::DescribeDataLogUrlStatisticsOutcome RumClient::DescribeDataLogUrlStatistics(const DescribeDataLogUrlStatisticsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDataLogUrlStatistics");

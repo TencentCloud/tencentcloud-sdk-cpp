@@ -258,6 +258,24 @@ namespace TencentCloud
                      */
                     bool ErrorTypesHasBeenSet() const;
 
+                    /**
+                     * 获取城市
+                     * @return City 城市
+                     */
+                    std::vector<std::string> GetCity() const;
+
+                    /**
+                     * 设置城市
+                     * @param City 城市
+                     */
+                    void SetCity(const std::vector<std::string>& _city);
+
+                    /**
+                     * 判断参数 City 是否已赋值
+                     * @return City 是否已赋值
+                     */
+                    bool CityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -331,6 +349,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_errorTypes;
                     bool m_errorTypesHasBeenSet;
+
+                    /**
+                     * 城市
+                     */
+                    std::vector<std::string> m_city;
+                    bool m_cityHasBeenSet;
 
                 };
             }

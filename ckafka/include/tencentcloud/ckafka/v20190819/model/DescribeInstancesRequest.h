@@ -150,6 +150,24 @@ namespace TencentCloud
                      */
                     bool TagKeyHasBeenSet() const;
 
+                    /**
+                     * 获取私有网络Id
+                     * @return VpcId 私有网络Id
+                     */
+                    std::string GetVpcId() const;
+
+                    /**
+                     * 设置私有网络Id
+                     * @param VpcId 私有网络Id
+                     */
+                    void SetVpcId(const std::string& _vpcId);
+
+                    /**
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
+                     */
+                    bool VpcIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +205,12 @@ namespace TencentCloud
                      */
                     std::string m_tagKey;
                     bool m_tagKeyHasBeenSet;
+
+                    /**
+                     * 私有网络Id
+                     */
+                    std::string m_vpcId;
+                    bool m_vpcIdHasBeenSet;
 
                 };
             }

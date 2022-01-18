@@ -180,14 +180,14 @@ namespace TencentCloud
                     bool AttachmentsHasBeenSet() const;
 
                     /**
-                     * 获取是否加入退订链接
-                     * @return Unsubscribe 是否加入退订链接
+                     * 获取退订选项 1: 加入退订链接 0: 不加入退订链接
+                     * @return Unsubscribe 退订选项 1: 加入退订链接 0: 不加入退订链接
                      */
                     std::string GetUnsubscribe() const;
 
                     /**
-                     * 设置是否加入退订链接
-                     * @param Unsubscribe 是否加入退订链接
+                     * 设置退订选项 1: 加入退订链接 0: 不加入退订链接
+                     * @param Unsubscribe 退订选项 1: 加入退订链接 0: 不加入退订链接
                      */
                     void SetUnsubscribe(const std::string& _unsubscribe);
 
@@ -244,7 +244,7 @@ namespace TencentCloud
                     bool m_attachmentsHasBeenSet;
 
                     /**
-                     * 是否加入退订链接
+                     * 退订选项 1: 加入退订链接 0: 不加入退订链接
                      */
                     std::string m_unsubscribe;
                     bool m_unsubscribeHasBeenSet;

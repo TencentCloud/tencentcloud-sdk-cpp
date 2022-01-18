@@ -70,14 +70,14 @@ namespace TencentCloud
                     bool CageIdHasBeenSet() const;
 
                     /**
-                     * 获取独享集群状态。取值范围：<br><li>NORMAL:正常<br><li>CLOSED：关闭售卖<br><li>FAULT：状态异常<br><li>ISOLATED：已隔离。
-                     * @return CdcState 独享集群状态。取值范围：<br><li>NORMAL:正常<br><li>CLOSED：关闭售卖<br><li>FAULT：状态异常<br><li>ISOLATED：已隔离。
+                     * 获取独享集群状态。取值范围：<br><li>NORMAL：正常；<br><li>CLOSED：关闭，此时将不可使用该独享集群创建新的云硬盘；<br><li>FAULT：独享集群状态异常，此时独享集群将不可操作，腾讯云运维团队将会及时修复该集群；<br><li>ISOLATED：因未及时续费导致独享集群被隔离，此时将不可使用该独享集群创建新的云硬盘，对应的云硬盘也将不可操作。
+                     * @return CdcState 独享集群状态。取值范围：<br><li>NORMAL：正常；<br><li>CLOSED：关闭，此时将不可使用该独享集群创建新的云硬盘；<br><li>FAULT：独享集群状态异常，此时独享集群将不可操作，腾讯云运维团队将会及时修复该集群；<br><li>ISOLATED：因未及时续费导致独享集群被隔离，此时将不可使用该独享集群创建新的云硬盘，对应的云硬盘也将不可操作。
                      */
                     std::string GetCdcState() const;
 
                     /**
-                     * 设置独享集群状态。取值范围：<br><li>NORMAL:正常<br><li>CLOSED：关闭售卖<br><li>FAULT：状态异常<br><li>ISOLATED：已隔离。
-                     * @param CdcState 独享集群状态。取值范围：<br><li>NORMAL:正常<br><li>CLOSED：关闭售卖<br><li>FAULT：状态异常<br><li>ISOLATED：已隔离。
+                     * 设置独享集群状态。取值范围：<br><li>NORMAL：正常；<br><li>CLOSED：关闭，此时将不可使用该独享集群创建新的云硬盘；<br><li>FAULT：独享集群状态异常，此时独享集群将不可操作，腾讯云运维团队将会及时修复该集群；<br><li>ISOLATED：因未及时续费导致独享集群被隔离，此时将不可使用该独享集群创建新的云硬盘，对应的云硬盘也将不可操作。
+                     * @param CdcState 独享集群状态。取值范围：<br><li>NORMAL：正常；<br><li>CLOSED：关闭，此时将不可使用该独享集群创建新的云硬盘；<br><li>FAULT：独享集群状态异常，此时独享集群将不可操作，腾讯云运维团队将会及时修复该集群；<br><li>ISOLATED：因未及时续费导致独享集群被隔离，此时将不可使用该独享集群创建新的云硬盘，对应的云硬盘也将不可操作。
                      */
                     void SetCdcState(const std::string& _cdcState);
 
@@ -88,17 +88,17 @@ namespace TencentCloud
                     bool CdcStateHasBeenSet() const;
 
                     /**
-                     * 获取独享集群所属的[可用区](/document/api/213/9452#zone)ID。
+                     * 获取独享集群所属的[可用区](/document/product/213/15753#ZoneInfo)ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Zone 独享集群所属的[可用区](/document/api/213/9452#zone)ID。
+                     * @return Zone 独享集群所属的[可用区](/document/product/213/15753#ZoneInfo)ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置独享集群所属的[可用区](/document/api/213/9452#zone)ID。
+                     * 设置独享集群所属的[可用区](/document/product/213/15753#ZoneInfo)ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Zone 独享集群所属的[可用区](/document/api/213/9452#zone)ID。
+                     * @param Zone 独享集群所属的[可用区](/document/product/213/15753#ZoneInfo)ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetZone(const std::string& _zone);
@@ -128,17 +128,17 @@ namespace TencentCloud
                     bool CdcNameHasBeenSet() const;
 
                     /**
-                     * 获取独享集群的资源大小。
+                     * 获取独享集群的资源容量大小。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CdcResource 独享集群的资源大小。
+                     * @return CdcResource 独享集群的资源容量大小。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CdcSize GetCdcResource() const;
 
                     /**
-                     * 设置独享集群的资源大小。
+                     * 设置独享集群的资源容量大小。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CdcResource 独享集群的资源大小。
+                     * @param CdcResource 独享集群的资源容量大小。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCdcResource(const CdcSize& _cdcResource);
@@ -186,14 +186,14 @@ namespace TencentCloud
                     bool DiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取独享集群过期时间。
-                     * @return ExpiredTime 独享集群过期时间。
+                     * 获取独享集群到期时间。
+                     * @return ExpiredTime 独享集群到期时间。
                      */
                     std::string GetExpiredTime() const;
 
                     /**
-                     * 设置独享集群过期时间。
-                     * @param ExpiredTime 独享集群过期时间。
+                     * 设置独享集群到期时间。
+                     * @param ExpiredTime 独享集群到期时间。
                      */
                     void SetExpiredTime(const std::string& _expiredTime);
 
@@ -213,13 +213,13 @@ namespace TencentCloud
                     bool m_cageIdHasBeenSet;
 
                     /**
-                     * 独享集群状态。取值范围：<br><li>NORMAL:正常<br><li>CLOSED：关闭售卖<br><li>FAULT：状态异常<br><li>ISOLATED：已隔离。
+                     * 独享集群状态。取值范围：<br><li>NORMAL：正常；<br><li>CLOSED：关闭，此时将不可使用该独享集群创建新的云硬盘；<br><li>FAULT：独享集群状态异常，此时独享集群将不可操作，腾讯云运维团队将会及时修复该集群；<br><li>ISOLATED：因未及时续费导致独享集群被隔离，此时将不可使用该独享集群创建新的云硬盘，对应的云硬盘也将不可操作。
                      */
                     std::string m_cdcState;
                     bool m_cdcStateHasBeenSet;
 
                     /**
-                     * 独享集群所属的[可用区](/document/api/213/9452#zone)ID。
+                     * 独享集群所属的[可用区](/document/product/213/15753#ZoneInfo)ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
@@ -232,7 +232,7 @@ namespace TencentCloud
                     bool m_cdcNameHasBeenSet;
 
                     /**
-                     * 独享集群的资源大小。
+                     * 独享集群的资源容量大小。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CdcSize m_cdcResource;
@@ -251,7 +251,7 @@ namespace TencentCloud
                     bool m_diskTypeHasBeenSet;
 
                     /**
-                     * 独享集群过期时间。
+                     * 独享集群到期时间。
                      */
                     std::string m_expiredTime;
                     bool m_expiredTimeHasBeenSet;

@@ -32,7 +32,10 @@ OrgMember::OrgMember() :
     m_remarkHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_isAllowQuitHasBeenSet(false)
+    m_isAllowQuitHasBeenSet(false),
+    m_payUinHasBeenSet(false),
+    m_payNameHasBeenSet(false),
+    m_orgIdentityHasBeenSet(false)
 {
 }
 
@@ -171,6 +174,46 @@ CoreInternalOutcome OrgMember::Deserialize(const rapidjson::Value &value)
         m_isAllowQuitHasBeenSet = true;
     }
 
+    if (value.HasMember("PayUin") && !value["PayUin"].IsNull())
+    {
+        if (!value["PayUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrgMember.PayUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_payUin = string(value["PayUin"].GetString());
+        m_payUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("PayName") && !value["PayName"].IsNull())
+    {
+        if (!value["PayName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrgMember.PayName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_payName = string(value["PayName"].GetString());
+        m_payNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("OrgIdentity") && !value["OrgIdentity"].IsNull())
+    {
+        if (!value["OrgIdentity"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `OrgMember.OrgIdentity` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["OrgIdentity"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MemberIdentity item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_orgIdentity.push_back(item);
+        }
+        m_orgIdentityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -279,6 +322,37 @@ void OrgMember::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "IsAllowQuit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_isAllowQuit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_payUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_payName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orgIdentityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrgIdentity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_orgIdentity.begin(); itr != m_orgIdentity.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -474,5 +548,53 @@ void OrgMember::SetIsAllowQuit(const string& _isAllowQuit)
 bool OrgMember::IsAllowQuitHasBeenSet() const
 {
     return m_isAllowQuitHasBeenSet;
+}
+
+string OrgMember::GetPayUin() const
+{
+    return m_payUin;
+}
+
+void OrgMember::SetPayUin(const string& _payUin)
+{
+    m_payUin = _payUin;
+    m_payUinHasBeenSet = true;
+}
+
+bool OrgMember::PayUinHasBeenSet() const
+{
+    return m_payUinHasBeenSet;
+}
+
+string OrgMember::GetPayName() const
+{
+    return m_payName;
+}
+
+void OrgMember::SetPayName(const string& _payName)
+{
+    m_payName = _payName;
+    m_payNameHasBeenSet = true;
+}
+
+bool OrgMember::PayNameHasBeenSet() const
+{
+    return m_payNameHasBeenSet;
+}
+
+vector<MemberIdentity> OrgMember::GetOrgIdentity() const
+{
+    return m_orgIdentity;
+}
+
+void OrgMember::SetOrgIdentity(const vector<MemberIdentity>& _orgIdentity)
+{
+    m_orgIdentity = _orgIdentity;
+    m_orgIdentityHasBeenSet = true;
+}
+
+bool OrgMember::OrgIdentityHasBeenSet() const
+{
+    return m_orgIdentityHasBeenSet;
 }
 

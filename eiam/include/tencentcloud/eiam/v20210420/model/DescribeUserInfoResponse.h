@@ -239,6 +239,20 @@ namespace TencentCloud
                      */
                     bool SecondaryOrgNodeIdListHasBeenSet() const;
 
+                    /**
+                     * 获取是否管理员标志，0为否、1为是。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AdminFlag 是否管理员标志，0为否、1为是。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetAdminFlag() const;
+
+                    /**
+                     * 判断参数 AdminFlag 是否已赋值
+                     * @return AdminFlag 是否已赋值
+                     */
+                    bool AdminFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -338,6 +352,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_secondaryOrgNodeIdList;
                     bool m_secondaryOrgNodeIdListHasBeenSet;
+
+                    /**
+                     * 是否管理员标志，0为否、1为是。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_adminFlag;
+                    bool m_adminFlagHasBeenSet;
 
                 };
             }

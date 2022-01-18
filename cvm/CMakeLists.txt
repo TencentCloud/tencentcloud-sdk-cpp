@@ -90,6 +90,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/DescribeZonesRequest.h
   include/tencentcloud/cvm/v20170312/model/StartInstancesRequest.h
   include/tencentcloud/cvm/v20170312/model/Tag.h
+  include/tencentcloud/cvm/v20170312/model/ProgramFpgaImageResponse.h
   include/tencentcloud/cvm/v20170312/model/DescribeInstanceInternetBandwidthConfigsResponse.h
   include/tencentcloud/cvm/v20170312/model/Placement.h
   include/tencentcloud/cvm/v20170312/model/DescribeDisasterRecoverGroupsRequest.h
@@ -220,6 +221,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/DescribeAccountQuotaResponse.h
   include/tencentcloud/cvm/v20170312/model/RunMonitorServiceEnabled.h
   include/tencentcloud/cvm/v20170312/model/ResetInstanceResponse.h
+  include/tencentcloud/cvm/v20170312/model/ProgramFpgaImageRequest.h
   include/tencentcloud/cvm/v20170312/model/DisasterRecoverGroup.h
   include/tencentcloud/cvm/v20170312/model/VirtualPrivateCloud.h
   include/tencentcloud/cvm/v20170312/model/InstanceChargePrepaid.h
@@ -312,6 +314,7 @@ set(cvm_src
   src/v20170312/model/DescribeZonesRequest.cpp
   src/v20170312/model/StartInstancesRequest.cpp
   src/v20170312/model/Tag.cpp
+  src/v20170312/model/ProgramFpgaImageResponse.cpp
   src/v20170312/model/DescribeInstanceInternetBandwidthConfigsResponse.cpp
   src/v20170312/model/Placement.cpp
   src/v20170312/model/DescribeDisasterRecoverGroupsRequest.cpp
@@ -442,6 +445,7 @@ set(cvm_src
   src/v20170312/model/DescribeAccountQuotaResponse.cpp
   src/v20170312/model/RunMonitorServiceEnabled.cpp
   src/v20170312/model/ResetInstanceResponse.cpp
+  src/v20170312/model/ProgramFpgaImageRequest.cpp
   src/v20170312/model/DisasterRecoverGroup.cpp
   src/v20170312/model/VirtualPrivateCloud.cpp
   src/v20170312/model/InstanceChargePrepaid.cpp

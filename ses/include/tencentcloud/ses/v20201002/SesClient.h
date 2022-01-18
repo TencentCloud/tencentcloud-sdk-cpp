@@ -31,6 +31,10 @@
 #include <tencentcloud/ses/v20201002/model/CreateEmailIdentityResponse.h>
 #include <tencentcloud/ses/v20201002/model/CreateEmailTemplateRequest.h>
 #include <tencentcloud/ses/v20201002/model/CreateEmailTemplateResponse.h>
+#include <tencentcloud/ses/v20201002/model/CreateReceiverRequest.h>
+#include <tencentcloud/ses/v20201002/model/CreateReceiverResponse.h>
+#include <tencentcloud/ses/v20201002/model/CreateReceiverDetailRequest.h>
+#include <tencentcloud/ses/v20201002/model/CreateReceiverDetailResponse.h>
 #include <tencentcloud/ses/v20201002/model/DeleteBlackListRequest.h>
 #include <tencentcloud/ses/v20201002/model/DeleteBlackListResponse.h>
 #include <tencentcloud/ses/v20201002/model/DeleteEmailAddressRequest.h>
@@ -55,6 +59,10 @@
 #include <tencentcloud/ses/v20201002/model/ListEmailIdentitiesResponse.h>
 #include <tencentcloud/ses/v20201002/model/ListEmailTemplatesRequest.h>
 #include <tencentcloud/ses/v20201002/model/ListEmailTemplatesResponse.h>
+#include <tencentcloud/ses/v20201002/model/ListReceiversRequest.h>
+#include <tencentcloud/ses/v20201002/model/ListReceiversResponse.h>
+#include <tencentcloud/ses/v20201002/model/ListSendTasksRequest.h>
+#include <tencentcloud/ses/v20201002/model/ListSendTasksResponse.h>
 #include <tencentcloud/ses/v20201002/model/SendEmailRequest.h>
 #include <tencentcloud/ses/v20201002/model/SendEmailResponse.h>
 #include <tencentcloud/ses/v20201002/model/UpdateEmailIdentityRequest.h>
@@ -87,6 +95,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateEmailTemplateResponse> CreateEmailTemplateOutcome;
                 typedef std::future<CreateEmailTemplateOutcome> CreateEmailTemplateOutcomeCallable;
                 typedef std::function<void(const SesClient*, const Model::CreateEmailTemplateRequest&, CreateEmailTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEmailTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateReceiverResponse> CreateReceiverOutcome;
+                typedef std::future<CreateReceiverOutcome> CreateReceiverOutcomeCallable;
+                typedef std::function<void(const SesClient*, const Model::CreateReceiverRequest&, CreateReceiverOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateReceiverAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateReceiverDetailResponse> CreateReceiverDetailOutcome;
+                typedef std::future<CreateReceiverDetailOutcome> CreateReceiverDetailOutcomeCallable;
+                typedef std::function<void(const SesClient*, const Model::CreateReceiverDetailRequest&, CreateReceiverDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateReceiverDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteBlackListResponse> DeleteBlackListOutcome;
                 typedef std::future<DeleteBlackListOutcome> DeleteBlackListOutcomeCallable;
                 typedef std::function<void(const SesClient*, const Model::DeleteBlackListRequest&, DeleteBlackListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBlackListAsyncHandler;
@@ -123,6 +137,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListEmailTemplatesResponse> ListEmailTemplatesOutcome;
                 typedef std::future<ListEmailTemplatesOutcome> ListEmailTemplatesOutcomeCallable;
                 typedef std::function<void(const SesClient*, const Model::ListEmailTemplatesRequest&, ListEmailTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListEmailTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListReceiversResponse> ListReceiversOutcome;
+                typedef std::future<ListReceiversOutcome> ListReceiversOutcomeCallable;
+                typedef std::function<void(const SesClient*, const Model::ListReceiversRequest&, ListReceiversOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListReceiversAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListSendTasksResponse> ListSendTasksOutcome;
+                typedef std::future<ListSendTasksOutcome> ListSendTasksOutcomeCallable;
+                typedef std::function<void(const SesClient*, const Model::ListSendTasksRequest&, ListSendTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListSendTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::SendEmailResponse> SendEmailOutcome;
                 typedef std::future<SendEmailOutcome> SendEmailOutcomeCallable;
                 typedef std::function<void(const SesClient*, const Model::SendEmailRequest&, SendEmailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendEmailAsyncHandler;
@@ -171,6 +191,24 @@ namespace TencentCloud
                 CreateEmailTemplateOutcome CreateEmailTemplate(const Model::CreateEmailTemplateRequest &request);
                 void CreateEmailTemplateAsync(const Model::CreateEmailTemplateRequest& request, const CreateEmailTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateEmailTemplateOutcomeCallable CreateEmailTemplateCallable(const Model::CreateEmailTemplateRequest& request);
+
+                /**
+                 *创建收件人列表，收件人列表是发送批量邮件的目标邮件地址列表。创建列表后，需要上传收件人邮箱地址。之后创建发送任务，关联列表，便可以实现批量发送邮件的功能
+                 * @param req CreateReceiverRequest
+                 * @return CreateReceiverOutcome
+                 */
+                CreateReceiverOutcome CreateReceiver(const Model::CreateReceiverRequest &request);
+                void CreateReceiverAsync(const Model::CreateReceiverRequest& request, const CreateReceiverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateReceiverOutcomeCallable CreateReceiverCallable(const Model::CreateReceiverRequest& request);
+
+                /**
+                 *在创建完收件人列表后，向这个收件人列表中批量增加收件人邮箱地址，一次最大支持10W，异步完成处理。收件人列表只可以上传一次，不可追加上传。数据量比较大的时候，上传可能需要一点时间，可以通过查询收件人列表了解上传状态和上传数量
+                 * @param req CreateReceiverDetailRequest
+                 * @return CreateReceiverDetailOutcome
+                 */
+                CreateReceiverDetailOutcome CreateReceiverDetail(const Model::CreateReceiverDetailRequest &request);
+                void CreateReceiverDetailAsync(const Model::CreateReceiverDetailRequest& request, const CreateReceiverDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateReceiverDetailOutcomeCallable CreateReceiverDetailCallable(const Model::CreateReceiverDetailRequest& request);
 
                 /**
                  *邮箱被拉黑之后，用户如果确认收件邮箱有效或者已经处于激活状态，可以从腾讯云地址库中删除该黑名单之后继续投递。
@@ -279,6 +317,24 @@ namespace TencentCloud
                 ListEmailTemplatesOutcome ListEmailTemplates(const Model::ListEmailTemplatesRequest &request);
                 void ListEmailTemplatesAsync(const Model::ListEmailTemplatesRequest& request, const ListEmailTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListEmailTemplatesOutcomeCallable ListEmailTemplatesCallable(const Model::ListEmailTemplatesRequest& request);
+
+                /**
+                 *根据条件查询收件人列表，支持分页，模糊查询，状态查询
+                 * @param req ListReceiversRequest
+                 * @return ListReceiversOutcome
+                 */
+                ListReceiversOutcome ListReceivers(const Model::ListReceiversRequest &request);
+                void ListReceiversAsync(const Model::ListReceiversRequest& request, const ListReceiversAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListReceiversOutcomeCallable ListReceiversCallable(const Model::ListReceiversRequest& request);
+
+                /**
+                 *分页查询批量发送邮件任务，包含即时发送任务，定时发送任务，周期重复发送任务，查询发送情况，包括请求数量，已发数量，缓存数量，任务状态等信息
+                 * @param req ListSendTasksRequest
+                 * @return ListSendTasksOutcome
+                 */
+                ListSendTasksOutcome ListSendTasks(const Model::ListSendTasksRequest &request);
+                void ListSendTasksAsync(const Model::ListSendTasksRequest& request, const ListSendTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListSendTasksOutcomeCallable ListSendTasksCallable(const Model::ListSendTasksRequest& request);
 
                 /**
                  *您可以通过此API发送TEXT或者HTML邮件，适用于触发类邮件（验证码、交易类）。默认仅支持使用模板发送邮件，如需发送自定义内容，请单独联系商务开通此功能。

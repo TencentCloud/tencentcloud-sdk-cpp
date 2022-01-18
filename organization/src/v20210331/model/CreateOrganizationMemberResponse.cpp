@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Organization::V20210331::Model;
 using namespace std;
 
-CreateOrganizationMemberResponse::CreateOrganizationMemberResponse()
+CreateOrganizationMemberResponse::CreateOrganizationMemberResponse() :
+    m_uinHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreateOrganizationMemberResponse::Deserialize(const string &
     }
 
 
+    if (rsp.HasMember("Uin") && !rsp["Uin"].IsNull())
+    {
+        if (!rsp["Uin"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Uin` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_uin = rsp["Uin"].GetInt64();
+        m_uinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreateOrganizationMemberResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_uinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Uin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_uin, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateOrganizationMemberResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t CreateOrganizationMemberResponse::GetUin() const
+{
+    return m_uin;
+}
+
+bool CreateOrganizationMemberResponse::UinHasBeenSet() const
+{
+    return m_uinHasBeenSet;
+}
 
 

@@ -151,6 +151,8 @@
 #include <tencentcloud/cvm/v20170312/model/ModifyKeyPairAttributeResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyLaunchTemplateDefaultVersionRequest.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyLaunchTemplateDefaultVersionResponse.h>
+#include <tencentcloud/cvm/v20170312/model/ProgramFpgaImageRequest.h>
+#include <tencentcloud/cvm/v20170312/model/ProgramFpgaImageResponse.h>
 #include <tencentcloud/cvm/v20170312/model/PurchaseReservedInstancesOfferingRequest.h>
 #include <tencentcloud/cvm/v20170312/model/PurchaseReservedInstancesOfferingResponse.h>
 #include <tencentcloud/cvm/v20170312/model/RebootInstancesRequest.h>
@@ -385,6 +387,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyLaunchTemplateDefaultVersionResponse> ModifyLaunchTemplateDefaultVersionOutcome;
                 typedef std::future<ModifyLaunchTemplateDefaultVersionOutcome> ModifyLaunchTemplateDefaultVersionOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::ModifyLaunchTemplateDefaultVersionRequest&, ModifyLaunchTemplateDefaultVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLaunchTemplateDefaultVersionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ProgramFpgaImageResponse> ProgramFpgaImageOutcome;
+                typedef std::future<ProgramFpgaImageOutcome> ProgramFpgaImageOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::ProgramFpgaImageRequest&, ProgramFpgaImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ProgramFpgaImageAsyncHandler;
                 typedef Outcome<Core::Error, Model::PurchaseReservedInstancesOfferingResponse> PurchaseReservedInstancesOfferingOutcome;
                 typedef std::future<PurchaseReservedInstancesOfferingOutcome> PurchaseReservedInstancesOfferingOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::PurchaseReservedInstancesOfferingRequest&, PurchaseReservedInstancesOfferingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PurchaseReservedInstancesOfferingAsyncHandler;
@@ -1139,6 +1144,17 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 ModifyLaunchTemplateDefaultVersionOutcome ModifyLaunchTemplateDefaultVersion(const Model::ModifyLaunchTemplateDefaultVersionRequest &request);
                 void ModifyLaunchTemplateDefaultVersionAsync(const Model::ModifyLaunchTemplateDefaultVersionRequest& request, const ModifyLaunchTemplateDefaultVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyLaunchTemplateDefaultVersionOutcomeCallable ModifyLaunchTemplateDefaultVersionCallable(const Model::ModifyLaunchTemplateDefaultVersionRequest& request);
+
+                /**
+                 *本接口(ProgramFpgaImage)用于在线烧录由客户提供的FPGA镜像文件到指定实例的指定FPGA卡上。
+* 只支持对单个实例发起在线烧录FPGA镜像的操作。
+* 支持对单个实例的多块FPGA卡同时烧录FPGA镜像，DBDFs参数为空时，默认对指定实例的所有FPGA卡进行烧录。
+                 * @param req ProgramFpgaImageRequest
+                 * @return ProgramFpgaImageOutcome
+                 */
+                ProgramFpgaImageOutcome ProgramFpgaImage(const Model::ProgramFpgaImageRequest &request);
+                void ProgramFpgaImageAsync(const Model::ProgramFpgaImageRequest& request, const ProgramFpgaImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ProgramFpgaImageOutcomeCallable ProgramFpgaImageCallable(const Model::ProgramFpgaImageRequest& request);
 
                 /**
                  *本接口(PurchaseReservedInstancesOffering)用于用户购买一个或者多个指定配置的预留实例

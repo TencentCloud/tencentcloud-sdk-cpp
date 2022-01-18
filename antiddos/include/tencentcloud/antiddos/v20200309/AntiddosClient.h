@@ -35,6 +35,8 @@
 #include <tencentcloud/antiddos/v20200309/model/CreateDDoSAIResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateDDoSBlackWhiteIpListRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateDDoSBlackWhiteIpListResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/CreateDDoSConnectLimitRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/CreateDDoSConnectLimitResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateDDoSGeoIPBlockConfigRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateDDoSGeoIPBlockConfigResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateDDoSSpeedLimitConfigRequest.h>
@@ -163,6 +165,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDDoSBlackWhiteIpListResponse> CreateDDoSBlackWhiteIpListOutcome;
                 typedef std::future<CreateDDoSBlackWhiteIpListOutcome> CreateDDoSBlackWhiteIpListOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::CreateDDoSBlackWhiteIpListRequest&, CreateDDoSBlackWhiteIpListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDDoSBlackWhiteIpListAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDDoSConnectLimitResponse> CreateDDoSConnectLimitOutcome;
+                typedef std::future<CreateDDoSConnectLimitOutcome> CreateDDoSConnectLimitOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::CreateDDoSConnectLimitRequest&, CreateDDoSConnectLimitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDDoSConnectLimitAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDDoSGeoIPBlockConfigResponse> CreateDDoSGeoIPBlockConfigOutcome;
                 typedef std::future<CreateDDoSGeoIPBlockConfigOutcome> CreateDDoSGeoIPBlockConfigOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::CreateDDoSGeoIPBlockConfigRequest&, CreateDDoSGeoIPBlockConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDDoSGeoIPBlockConfigAsyncHandler;
@@ -363,6 +368,15 @@ namespace TencentCloud
                 CreateDDoSBlackWhiteIpListOutcome CreateDDoSBlackWhiteIpList(const Model::CreateDDoSBlackWhiteIpListRequest &request);
                 void CreateDDoSBlackWhiteIpListAsync(const Model::CreateDDoSBlackWhiteIpListRequest& request, const CreateDDoSBlackWhiteIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDDoSBlackWhiteIpListOutcomeCallable CreateDDoSBlackWhiteIpListCallable(const Model::CreateDDoSBlackWhiteIpListRequest& request);
+
+                /**
+                 *配置DDoS连接抑制选项
+                 * @param req CreateDDoSConnectLimitRequest
+                 * @return CreateDDoSConnectLimitOutcome
+                 */
+                CreateDDoSConnectLimitOutcome CreateDDoSConnectLimit(const Model::CreateDDoSConnectLimitRequest &request);
+                void CreateDDoSConnectLimitAsync(const Model::CreateDDoSConnectLimitRequest& request, const CreateDDoSConnectLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDDoSConnectLimitOutcomeCallable CreateDDoSConnectLimitCallable(const Model::CreateDDoSConnectLimitRequest& request);
 
                 /**
                  *添加DDoS防护的区域封禁配置

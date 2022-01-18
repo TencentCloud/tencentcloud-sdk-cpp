@@ -235,6 +235,24 @@ namespace TencentCloud
                      */
                     bool TimedParamHasBeenSet() const;
 
+                    /**
+                     * 获取退订选项 1: 加入退订链接 0: 不加入退订链接
+                     * @return Unsubscribe 退订选项 1: 加入退订链接 0: 不加入退订链接
+                     */
+                    std::string GetUnsubscribe() const;
+
+                    /**
+                     * 设置退订选项 1: 加入退订链接 0: 不加入退订链接
+                     * @param Unsubscribe 退订选项 1: 加入退订链接 0: 不加入退订链接
+                     */
+                    void SetUnsubscribe(const std::string& _unsubscribe);
+
+                    /**
+                     * 判断参数 Unsubscribe 是否已赋值
+                     * @return Unsubscribe 是否已赋值
+                     */
+                    bool UnsubscribeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -298,6 +316,12 @@ namespace TencentCloud
                      */
                     TimedEmailParam m_timedParam;
                     bool m_timedParamHasBeenSet;
+
+                    /**
+                     * 退订选项 1: 加入退订链接 0: 不加入退订链接
+                     */
+                    std::string m_unsubscribe;
+                    bool m_unsubscribeHasBeenSet;
 
                 };
             }

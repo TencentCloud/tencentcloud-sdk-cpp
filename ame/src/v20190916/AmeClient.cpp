@@ -40,6 +40,49 @@ AmeClient::AmeClient(const Credential &credential, const string &region, const C
 }
 
 
+AmeClient::CreateKTVRobotOutcome AmeClient::CreateKTVRobot(const CreateKTVRobotRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateKTVRobot");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateKTVRobotResponse rsp = CreateKTVRobotResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateKTVRobotOutcome(rsp);
+        else
+            return CreateKTVRobotOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateKTVRobotOutcome(outcome.GetError());
+    }
+}
+
+void AmeClient::CreateKTVRobotAsync(const CreateKTVRobotRequest& request, const CreateKTVRobotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateKTVRobot(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AmeClient::CreateKTVRobotOutcomeCallable AmeClient::CreateKTVRobotCallable(const CreateKTVRobotRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateKTVRobotOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateKTVRobot(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AmeClient::DescribeAuthInfoOutcome AmeClient::DescribeAuthInfo(const DescribeAuthInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAuthInfo");
@@ -384,6 +427,49 @@ AmeClient::DescribeKTVPlaylistsOutcomeCallable AmeClient::DescribeKTVPlaylistsCa
     return task->get_future();
 }
 
+AmeClient::DescribeKTVRobotsOutcome AmeClient::DescribeKTVRobots(const DescribeKTVRobotsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeKTVRobots");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeKTVRobotsResponse rsp = DescribeKTVRobotsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeKTVRobotsOutcome(rsp);
+        else
+            return DescribeKTVRobotsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeKTVRobotsOutcome(outcome.GetError());
+    }
+}
+
+void AmeClient::DescribeKTVRobotsAsync(const DescribeKTVRobotsRequest& request, const DescribeKTVRobotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeKTVRobots(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AmeClient::DescribeKTVRobotsOutcomeCallable AmeClient::DescribeKTVRobotsCallable(const DescribeKTVRobotsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeKTVRobotsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeKTVRobots(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AmeClient::DescribeLyricOutcome AmeClient::DescribeLyric(const DescribeLyricRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLyric");
@@ -685,6 +771,49 @@ AmeClient::DescribeStationsOutcomeCallable AmeClient::DescribeStationsCallable(c
     return task->get_future();
 }
 
+AmeClient::DestroyKTVRobotOutcome AmeClient::DestroyKTVRobot(const DestroyKTVRobotRequest &request)
+{
+    auto outcome = MakeRequest(request, "DestroyKTVRobot");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DestroyKTVRobotResponse rsp = DestroyKTVRobotResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DestroyKTVRobotOutcome(rsp);
+        else
+            return DestroyKTVRobotOutcome(o.GetError());
+    }
+    else
+    {
+        return DestroyKTVRobotOutcome(outcome.GetError());
+    }
+}
+
+void AmeClient::DestroyKTVRobotAsync(const DestroyKTVRobotRequest& request, const DestroyKTVRobotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DestroyKTVRobot(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AmeClient::DestroyKTVRobotOutcomeCallable AmeClient::DestroyKTVRobotCallable(const DestroyKTVRobotRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DestroyKTVRobotOutcome()>>(
+        [this, request]()
+        {
+            return this->DestroyKTVRobot(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AmeClient::ModifyMusicOnShelvesOutcome AmeClient::ModifyMusicOnShelves(const ModifyMusicOnShelvesRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyMusicOnShelves");
@@ -850,6 +979,49 @@ AmeClient::SearchKTVMusicsOutcomeCallable AmeClient::SearchKTVMusicsCallable(con
         [this, request]()
         {
             return this->SearchKTVMusics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AmeClient::SyncKTVRobotCommandOutcome AmeClient::SyncKTVRobotCommand(const SyncKTVRobotCommandRequest &request)
+{
+    auto outcome = MakeRequest(request, "SyncKTVRobotCommand");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SyncKTVRobotCommandResponse rsp = SyncKTVRobotCommandResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SyncKTVRobotCommandOutcome(rsp);
+        else
+            return SyncKTVRobotCommandOutcome(o.GetError());
+    }
+    else
+    {
+        return SyncKTVRobotCommandOutcome(outcome.GetError());
+    }
+}
+
+void AmeClient::SyncKTVRobotCommandAsync(const SyncKTVRobotCommandRequest& request, const SyncKTVRobotCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SyncKTVRobotCommand(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AmeClient::SyncKTVRobotCommandOutcomeCallable AmeClient::SyncKTVRobotCommandCallable(const SyncKTVRobotCommandRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SyncKTVRobotCommandOutcome()>>(
+        [this, request]()
+        {
+            return this->SyncKTVRobotCommand(request);
         }
     );
 

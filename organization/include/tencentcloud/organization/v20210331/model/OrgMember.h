@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/organization/v20210331/model/OrgPermission.h>
+#include <tencentcloud/organization/v20210331/model/MemberIdentity.h>
 
 
 namespace TencentCloud
@@ -311,6 +312,72 @@ namespace TencentCloud
                      */
                     bool IsAllowQuitHasBeenSet() const;
 
+                    /**
+                     * 获取代付者Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PayUin 代付者Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPayUin() const;
+
+                    /**
+                     * 设置代付者Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PayUin 代付者Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPayUin(const std::string& _payUin);
+
+                    /**
+                     * 判断参数 PayUin 是否已赋值
+                     * @return PayUin 是否已赋值
+                     */
+                    bool PayUinHasBeenSet() const;
+
+                    /**
+                     * 获取代付者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PayName 代付者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPayName() const;
+
+                    /**
+                     * 设置代付者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PayName 代付者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPayName(const std::string& _payName);
+
+                    /**
+                     * 判断参数 PayName 是否已赋值
+                     * @return PayName 是否已赋值
+                     */
+                    bool PayNameHasBeenSet() const;
+
+                    /**
+                     * 获取管理身份
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OrgIdentity 管理身份
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<MemberIdentity> GetOrgIdentity() const;
+
+                    /**
+                     * 设置管理身份
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OrgIdentity 管理身份
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOrgIdentity(const std::vector<MemberIdentity>& _orgIdentity);
+
+                    /**
+                     * 判断参数 OrgIdentity 是否已赋值
+                     * @return OrgIdentity 是否已赋值
+                     */
+                    bool OrgIdentityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -396,6 +463,27 @@ namespace TencentCloud
                      */
                     std::string m_isAllowQuit;
                     bool m_isAllowQuitHasBeenSet;
+
+                    /**
+                     * 代付者Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_payUin;
+                    bool m_payUinHasBeenSet;
+
+                    /**
+                     * 代付者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_payName;
+                    bool m_payNameHasBeenSet;
+
+                    /**
+                     * 管理身份
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<MemberIdentity> m_orgIdentity;
+                    bool m_orgIdentityHasBeenSet;
 
                 };
             }

@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取关系策略
-                     * @return PolicyType 关系策略
+                     * 获取关系策略  取值：Financial
+                     * @return PolicyType 关系策略  取值：Financial
                      */
                     std::string GetPolicyType() const;
 
                     /**
-                     * 设置关系策略
-                     * @param PolicyType 关系策略
+                     * 设置关系策略  取值：Financial
+                     * @param PolicyType 关系策略  取值：Financial
                      */
                     void SetPolicyType(const std::string& _policyType);
 
@@ -168,6 +168,42 @@ namespace TencentCloud
                      */
                     bool RecordIdHasBeenSet() const;
 
+                    /**
+                     * 获取代付者Uin
+                     * @return PayUin 代付者Uin
+                     */
+                    std::string GetPayUin() const;
+
+                    /**
+                     * 设置代付者Uin
+                     * @param PayUin 代付者Uin
+                     */
+                    void SetPayUin(const std::string& _payUin);
+
+                    /**
+                     * 判断参数 PayUin 是否已赋值
+                     * @return PayUin 是否已赋值
+                     */
+                    bool PayUinHasBeenSet() const;
+
+                    /**
+                     * 获取管理身份
+                     * @return IdentityRoleID 管理身份
+                     */
+                    std::vector<uint64_t> GetIdentityRoleID() const;
+
+                    /**
+                     * 设置管理身份
+                     * @param IdentityRoleID 管理身份
+                     */
+                    void SetIdentityRoleID(const std::vector<uint64_t>& _identityRoleID);
+
+                    /**
+                     * 判断参数 IdentityRoleID 是否已赋值
+                     * @return IdentityRoleID 是否已赋值
+                     */
+                    bool IdentityRoleIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -177,7 +213,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 关系策略
+                     * 关系策略  取值：Financial
                      */
                     std::string m_policyType;
                     bool m_policyTypeHasBeenSet;
@@ -211,6 +247,18 @@ namespace TencentCloud
                      */
                     int64_t m_recordId;
                     bool m_recordIdHasBeenSet;
+
+                    /**
+                     * 代付者Uin
+                     */
+                    std::string m_payUin;
+                    bool m_payUinHasBeenSet;
+
+                    /**
+                     * 管理身份
+                     */
+                    std::vector<uint64_t> m_identityRoleID;
+                    bool m_identityRoleIDHasBeenSet;
 
                 };
             }
