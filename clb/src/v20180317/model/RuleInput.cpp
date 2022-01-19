@@ -21,8 +21,8 @@ using namespace TencentCloud::Clb::V20180317::Model;
 using namespace std;
 
 RuleInput::RuleInput() :
-    m_domainHasBeenSet(false),
     m_urlHasBeenSet(false),
+    m_domainHasBeenSet(false),
     m_sessionExpireTimeHasBeenSet(false),
     m_healthCheckHasBeenSet(false),
     m_certificateHasBeenSet(false),
@@ -33,7 +33,8 @@ RuleInput::RuleInput() :
     m_targetTypeHasBeenSet(false),
     m_trpcCalleeHasBeenSet(false),
     m_trpcFuncHasBeenSet(false),
-    m_quicHasBeenSet(false)
+    m_quicHasBeenSet(false),
+    m_domainsHasBeenSet(false)
 {
 }
 
@@ -41,16 +42,6 @@ CoreInternalOutcome RuleInput::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("Domain") && !value["Domain"].IsNull())
-    {
-        if (!value["Domain"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `RuleInput.Domain` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_domain = string(value["Domain"].GetString());
-        m_domainHasBeenSet = true;
-    }
 
     if (value.HasMember("Url") && !value["Url"].IsNull())
     {
@@ -60,6 +51,16 @@ CoreInternalOutcome RuleInput::Deserialize(const rapidjson::Value &value)
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
+    }
+
+    if (value.HasMember("Domain") && !value["Domain"].IsNull())
+    {
+        if (!value["Domain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleInput.Domain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domain = string(value["Domain"].GetString());
+        m_domainHasBeenSet = true;
     }
 
     if (value.HasMember("SessionExpireTime") && !value["SessionExpireTime"].IsNull())
@@ -186,6 +187,19 @@ CoreInternalOutcome RuleInput::Deserialize(const rapidjson::Value &value)
         m_quicHasBeenSet = true;
     }
 
+    if (value.HasMember("Domains") && !value["Domains"].IsNull())
+    {
+        if (!value["Domains"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RuleInput.Domains` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Domains"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_domains.push_back((*itr).GetString());
+        }
+        m_domainsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -193,20 +207,20 @@ CoreInternalOutcome RuleInput::Deserialize(const rapidjson::Value &value)
 void RuleInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_domainHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Domain";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_urlHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sessionExpireTimeHasBeenSet)
@@ -299,24 +313,21 @@ void RuleInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, m_quic, allocator);
     }
 
+    if (m_domainsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domains";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_domains.begin(); itr != m_domains.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 }
 
-
-string RuleInput::GetDomain() const
-{
-    return m_domain;
-}
-
-void RuleInput::SetDomain(const string& _domain)
-{
-    m_domain = _domain;
-    m_domainHasBeenSet = true;
-}
-
-bool RuleInput::DomainHasBeenSet() const
-{
-    return m_domainHasBeenSet;
-}
 
 string RuleInput::GetUrl() const
 {
@@ -332,6 +343,22 @@ void RuleInput::SetUrl(const string& _url)
 bool RuleInput::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+string RuleInput::GetDomain() const
+{
+    return m_domain;
+}
+
+void RuleInput::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool RuleInput::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
 }
 
 int64_t RuleInput::GetSessionExpireTime() const
@@ -508,5 +535,21 @@ void RuleInput::SetQuic(const bool& _quic)
 bool RuleInput::QuicHasBeenSet() const
 {
     return m_quicHasBeenSet;
+}
+
+vector<string> RuleInput::GetDomains() const
+{
+    return m_domains;
+}
+
+void RuleInput::SetDomains(const vector<string>& _domains)
+{
+    m_domains = _domains;
+    m_domainsHasBeenSet = true;
+}
+
+bool RuleInput::DomainsHasBeenSet() const
+{
+    return m_domainsHasBeenSet;
 }
 

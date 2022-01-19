@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool RefundAmountHasBeenSet() const;
 
                     /**
-                     * 获取主管密码，对密码进行sha1加密，默认为123456
-                     * @return ShopPassword 主管密码，对密码进行sha1加密，默认为123456
+                     * 获取主管密码，对密码进行SHA-1加密，默认为123456
+                     * @return ShopPassword 主管密码，对密码进行SHA-1加密，默认为123456
                      */
                     std::string GetShopPassword() const;
 
                     /**
-                     * 设置主管密码，对密码进行sha1加密，默认为123456
-                     * @param ShopPassword 主管密码，对密码进行sha1加密，默认为123456
+                     * 设置主管密码，对密码进行SHA-1加密，默认为123456
+                     * @param ShopPassword 主管密码，对密码进行SHA-1加密，默认为123456
                      */
                     void SetShopPassword(const std::string& _shopPassword);
 
@@ -243,7 +243,7 @@ namespace TencentCloud
                     bool m_refundAmountHasBeenSet;
 
                     /**
-                     * 主管密码，对密码进行sha1加密，默认为123456
+                     * 主管密码，对密码进行SHA-1加密，默认为123456
                      */
                     std::string m_shopPassword;
                     bool m_shopPasswordHasBeenSet;

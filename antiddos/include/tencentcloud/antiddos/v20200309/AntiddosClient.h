@@ -85,6 +85,8 @@
 #include <tencentcloud/antiddos/v20200309/model/DescribeCCTrendResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeDDoSBlackWhiteIpListRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeDDoSBlackWhiteIpListResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeDDoSConnectLimitListRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeDDoSConnectLimitListResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeDDoSTrendRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeDDoSTrendResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeDefaultAlarmThresholdRequest.h>
@@ -109,6 +111,8 @@
 #include <tencentcloud/antiddos/v20200309/model/DescribeListListenerResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeListPacketFilterConfigRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeListPacketFilterConfigResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeListPortAclListRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeListPortAclListResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeListProtectThresholdConfigRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeListProtectThresholdConfigResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeListProtocolBlockConfigRequest.h>
@@ -240,6 +244,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDDoSBlackWhiteIpListResponse> DescribeDDoSBlackWhiteIpListOutcome;
                 typedef std::future<DescribeDDoSBlackWhiteIpListOutcome> DescribeDDoSBlackWhiteIpListOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeDDoSBlackWhiteIpListRequest&, DescribeDDoSBlackWhiteIpListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDDoSBlackWhiteIpListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDDoSConnectLimitListResponse> DescribeDDoSConnectLimitListOutcome;
+                typedef std::future<DescribeDDoSConnectLimitListOutcome> DescribeDDoSConnectLimitListOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::DescribeDDoSConnectLimitListRequest&, DescribeDDoSConnectLimitListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDDoSConnectLimitListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDDoSTrendResponse> DescribeDDoSTrendOutcome;
                 typedef std::future<DescribeDDoSTrendOutcome> DescribeDDoSTrendOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeDDoSTrendRequest&, DescribeDDoSTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDDoSTrendAsyncHandler;
@@ -276,6 +283,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeListPacketFilterConfigResponse> DescribeListPacketFilterConfigOutcome;
                 typedef std::future<DescribeListPacketFilterConfigOutcome> DescribeListPacketFilterConfigOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeListPacketFilterConfigRequest&, DescribeListPacketFilterConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeListPacketFilterConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeListPortAclListResponse> DescribeListPortAclListOutcome;
+                typedef std::future<DescribeListPortAclListOutcome> DescribeListPortAclListOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::DescribeListPortAclListRequest&, DescribeListPortAclListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeListPortAclListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeListProtectThresholdConfigResponse> DescribeListProtectThresholdConfigOutcome;
                 typedef std::future<DescribeListProtectThresholdConfigOutcome> DescribeListProtectThresholdConfigOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeListProtectThresholdConfigRequest&, DescribeListProtectThresholdConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeListProtectThresholdConfigAsyncHandler;
@@ -595,6 +605,15 @@ namespace TencentCloud
                 DescribeDDoSBlackWhiteIpListOutcomeCallable DescribeDDoSBlackWhiteIpListCallable(const Model::DescribeDDoSBlackWhiteIpListRequest& request);
 
                 /**
+                 *获取DDoS连接抑制配置列表
+                 * @param req DescribeDDoSConnectLimitListRequest
+                 * @return DescribeDDoSConnectLimitListOutcome
+                 */
+                DescribeDDoSConnectLimitListOutcome DescribeDDoSConnectLimitList(const Model::DescribeDDoSConnectLimitListRequest &request);
+                void DescribeDDoSConnectLimitListAsync(const Model::DescribeDDoSConnectLimitListRequest& request, const DescribeDDoSConnectLimitListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDDoSConnectLimitListOutcomeCallable DescribeDDoSConnectLimitListCallable(const Model::DescribeDDoSConnectLimitListRequest& request);
+
+                /**
                  *获取DDoS攻击流量带宽和攻击包速率数据
                  * @param req DescribeDDoSTrendRequest
                  * @return DescribeDDoSTrendOutcome
@@ -703,6 +722,15 @@ namespace TencentCloud
                 DescribeListPacketFilterConfigOutcome DescribeListPacketFilterConfig(const Model::DescribeListPacketFilterConfigRequest &request);
                 void DescribeListPacketFilterConfigAsync(const Model::DescribeListPacketFilterConfigRequest& request, const DescribeListPacketFilterConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeListPacketFilterConfigOutcomeCallable DescribeListPacketFilterConfigCallable(const Model::DescribeListPacketFilterConfigRequest& request);
+
+                /**
+                 *获取DDoS防护的端口acl策略列表
+                 * @param req DescribeListPortAclListRequest
+                 * @return DescribeListPortAclListOutcome
+                 */
+                DescribeListPortAclListOutcome DescribeListPortAclList(const Model::DescribeListPortAclListRequest &request);
+                void DescribeListPortAclListAsync(const Model::DescribeListPortAclListRequest& request, const DescribeListPortAclListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeListPortAclListOutcomeCallable DescribeListPortAclListCallable(const Model::DescribeListPortAclListRequest& request);
 
                 /**
                  *获取防护阈值配置列表，包括DDoS的AI、等级、CC阈值开关等

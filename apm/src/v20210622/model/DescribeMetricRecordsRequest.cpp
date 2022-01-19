@@ -31,7 +31,8 @@ DescribeMetricRecordsRequest::DescribeMetricRecordsRequest() :
     m_limitHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_businessNameHasBeenSet(false)
 {
 }
 
@@ -132,6 +133,14 @@ string DescribeMetricRecordsRequest::ToJsonString() const
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_endTime, allocator);
+    }
+
+    if (m_businessNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_businessName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -284,6 +293,22 @@ void DescribeMetricRecordsRequest::SetEndTime(const uint64_t& _endTime)
 bool DescribeMetricRecordsRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+string DescribeMetricRecordsRequest::GetBusinessName() const
+{
+    return m_businessName;
+}
+
+void DescribeMetricRecordsRequest::SetBusinessName(const string& _businessName)
+{
+    m_businessName = _businessName;
+    m_businessNameHasBeenSet = true;
+}
+
+bool DescribeMetricRecordsRequest::BusinessNameHasBeenSet() const
+{
+    return m_businessNameHasBeenSet;
 }
 
 

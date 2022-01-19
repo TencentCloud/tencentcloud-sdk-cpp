@@ -40,6 +40,49 @@ RedisClient::RedisClient(const Credential &credential, const string &region, con
 }
 
 
+RedisClient::AddReplicationInstanceOutcome RedisClient::AddReplicationInstance(const AddReplicationInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddReplicationInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddReplicationInstanceResponse rsp = AddReplicationInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddReplicationInstanceOutcome(rsp);
+        else
+            return AddReplicationInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return AddReplicationInstanceOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::AddReplicationInstanceAsync(const AddReplicationInstanceRequest& request, const AddReplicationInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddReplicationInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::AddReplicationInstanceOutcomeCallable RedisClient::AddReplicationInstanceCallable(const AddReplicationInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddReplicationInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->AddReplicationInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RedisClient::ApplyParamsTemplateOutcome RedisClient::ApplyParamsTemplate(const ApplyParamsTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "ApplyParamsTemplate");
@@ -384,6 +427,49 @@ RedisClient::CreateParamTemplateOutcomeCallable RedisClient::CreateParamTemplate
     return task->get_future();
 }
 
+RedisClient::CreateReplicationGroupOutcome RedisClient::CreateReplicationGroup(const CreateReplicationGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateReplicationGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateReplicationGroupResponse rsp = CreateReplicationGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateReplicationGroupOutcome(rsp);
+        else
+            return CreateReplicationGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateReplicationGroupOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::CreateReplicationGroupAsync(const CreateReplicationGroupRequest& request, const CreateReplicationGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateReplicationGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::CreateReplicationGroupOutcomeCallable RedisClient::CreateReplicationGroupCallable(const CreateReplicationGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateReplicationGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateReplicationGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RedisClient::DeleteInstanceAccountOutcome RedisClient::DeleteInstanceAccount(const DeleteInstanceAccountRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteInstanceAccount");
@@ -463,6 +549,49 @@ RedisClient::DeleteParamTemplateOutcomeCallable RedisClient::DeleteParamTemplate
         [this, request]()
         {
             return this->DeleteParamTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+RedisClient::DeleteReplicationInstanceOutcome RedisClient::DeleteReplicationInstance(const DeleteReplicationInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteReplicationInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteReplicationInstanceResponse rsp = DeleteReplicationInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteReplicationInstanceOutcome(rsp);
+        else
+            return DeleteReplicationInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteReplicationInstanceOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::DeleteReplicationInstanceAsync(const DeleteReplicationInstanceRequest& request, const DeleteReplicationInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteReplicationInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::DeleteReplicationInstanceOutcomeCallable RedisClient::DeleteReplicationInstanceCallable(const DeleteReplicationInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteReplicationInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteReplicationInstance(request);
         }
     );
 

@@ -207,6 +207,24 @@ namespace TencentCloud
                      */
                     bool EndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取业务名称（默认值：taw）
+                     * @return BusinessName 业务名称（默认值：taw）
+                     */
+                    std::string GetBusinessName() const;
+
+                    /**
+                     * 设置业务名称（默认值：taw）
+                     * @param BusinessName 业务名称（默认值：taw）
+                     */
+                    void SetBusinessName(const std::string& _businessName);
+
+                    /**
+                     * 判断参数 BusinessName 是否已赋值
+                     * @return BusinessName 是否已赋值
+                     */
+                    bool BusinessNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -262,6 +280,12 @@ namespace TencentCloud
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 业务名称（默认值：taw）
+                     */
+                    std::string m_businessName;
+                    bool m_businessNameHasBeenSet;
 
                 };
             }

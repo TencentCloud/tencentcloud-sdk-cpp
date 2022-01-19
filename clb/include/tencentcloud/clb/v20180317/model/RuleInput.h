@@ -49,24 +49,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取转发规则的域名。长度限制为：1~80。
-                     * @return Domain 转发规则的域名。长度限制为：1~80。
-                     */
-                    std::string GetDomain() const;
-
-                    /**
-                     * 设置转发规则的域名。长度限制为：1~80。
-                     * @param Domain 转发规则的域名。长度限制为：1~80。
-                     */
-                    void SetDomain(const std::string& _domain);
-
-                    /**
-                     * 判断参数 Domain 是否已赋值
-                     * @return Domain 是否已赋值
-                     */
-                    bool DomainHasBeenSet() const;
-
-                    /**
                      * 获取转发规则的路径。长度限制为：1~200。
                      * @return Url 转发规则的路径。长度限制为：1~200。
                      */
@@ -83,6 +65,24 @@ namespace TencentCloud
                      * @return Url 是否已赋值
                      */
                     bool UrlHasBeenSet() const;
+
+                    /**
+                     * 获取转发规则的域名。长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。
+                     * @return Domain 转发规则的域名。长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。
+                     */
+                    std::string GetDomain() const;
+
+                    /**
+                     * 设置转发规则的域名。长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。
+                     * @param Domain 转发规则的域名。长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。
+                     */
+                    void SetDomain(const std::string& _domain);
+
+                    /**
+                     * 判断参数 Domain 是否已赋值
+                     * @return Domain 是否已赋值
+                     */
+                    bool DomainHasBeenSet() const;
 
                     /**
                      * 获取会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~3600，单位：秒。
@@ -286,19 +286,37 @@ namespace TencentCloud
                      */
                     bool QuicHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取转发规则的域名列表。每个域名的长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。
+                     * @return Domains 转发规则的域名列表。每个域名的长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。
+                     */
+                    std::vector<std::string> GetDomains() const;
 
                     /**
-                     * 转发规则的域名。长度限制为：1~80。
+                     * 设置转发规则的域名列表。每个域名的长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。
+                     * @param Domains 转发规则的域名列表。每个域名的长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。
                      */
-                    std::string m_domain;
-                    bool m_domainHasBeenSet;
+                    void SetDomains(const std::vector<std::string>& _domains);
+
+                    /**
+                     * 判断参数 Domains 是否已赋值
+                     * @return Domains 是否已赋值
+                     */
+                    bool DomainsHasBeenSet() const;
+
+                private:
 
                     /**
                      * 转发规则的路径。长度限制为：1~200。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
+
+                    /**
+                     * 转发规则的域名。长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。
+                     */
+                    std::string m_domain;
+                    bool m_domainHasBeenSet;
 
                     /**
                      * 会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~3600，单位：秒。
@@ -366,6 +384,12 @@ namespace TencentCloud
                      */
                     bool m_quic;
                     bool m_quicHasBeenSet;
+
+                    /**
+                     * 转发规则的域名列表。每个域名的长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。
+                     */
+                    std::vector<std::string> m_domains;
+                    bool m_domainsHasBeenSet;
 
                 };
             }

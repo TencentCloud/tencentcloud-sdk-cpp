@@ -1373,6 +1373,49 @@ AntiddosClient::DescribeDDoSBlackWhiteIpListOutcomeCallable AntiddosClient::Desc
     return task->get_future();
 }
 
+AntiddosClient::DescribeDDoSConnectLimitListOutcome AntiddosClient::DescribeDDoSConnectLimitList(const DescribeDDoSConnectLimitListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDDoSConnectLimitList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDDoSConnectLimitListResponse rsp = DescribeDDoSConnectLimitListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDDoSConnectLimitListOutcome(rsp);
+        else
+            return DescribeDDoSConnectLimitListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDDoSConnectLimitListOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribeDDoSConnectLimitListAsync(const DescribeDDoSConnectLimitListRequest& request, const DescribeDDoSConnectLimitListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDDoSConnectLimitList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DescribeDDoSConnectLimitListOutcomeCallable AntiddosClient::DescribeDDoSConnectLimitListCallable(const DescribeDDoSConnectLimitListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDDoSConnectLimitListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDDoSConnectLimitList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AntiddosClient::DescribeDDoSTrendOutcome AntiddosClient::DescribeDDoSTrend(const DescribeDDoSTrendRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDDoSTrend");
@@ -1882,6 +1925,49 @@ AntiddosClient::DescribeListPacketFilterConfigOutcomeCallable AntiddosClient::De
         [this, request]()
         {
             return this->DescribeListPacketFilterConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::DescribeListPortAclListOutcome AntiddosClient::DescribeListPortAclList(const DescribeListPortAclListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeListPortAclList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeListPortAclListResponse rsp = DescribeListPortAclListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeListPortAclListOutcome(rsp);
+        else
+            return DescribeListPortAclListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeListPortAclListOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribeListPortAclListAsync(const DescribeListPortAclListRequest& request, const DescribeListPortAclListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeListPortAclList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DescribeListPortAclListOutcomeCallable AntiddosClient::DescribeListPortAclListCallable(const DescribeListPortAclListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeListPortAclListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeListPortAclList(request);
         }
     );
 

@@ -1312,7 +1312,7 @@ namespace TencentCloud
                 DeleteUnitRuleOutcomeCallable DeleteUnitRuleCallable(const Model::DeleteUnitRuleRequest& request);
 
                 /**
-                 *部署容器应用
+                 *部署容器应用-更新
                  * @param req DeployContainerGroupRequest
                  * @return DeployContainerGroupOutcome
                  */

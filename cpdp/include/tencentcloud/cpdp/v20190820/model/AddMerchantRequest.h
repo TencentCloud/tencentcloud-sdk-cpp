@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool OpenKeyHasBeenSet() const;
 
                     /**
-                     * 获取营业执照过期时间（yyyy-mm-dd）
-                     * @return BusinessLicenseEndDate 营业执照过期时间（yyyy-mm-dd）
+                     * 获取营业执照过期时间（yyyy-mm-dd），（小微商户不效验，随意传要有值，公司/个体户必传）
+                     * @return BusinessLicenseEndDate 营业执照过期时间（yyyy-mm-dd），（小微商户不效验，随意传要有值，公司/个体户必传）
                      */
                     std::string GetBusinessLicenseEndDate() const;
 
                     /**
-                     * 设置营业执照过期时间（yyyy-mm-dd）
-                     * @param BusinessLicenseEndDate 营业执照过期时间（yyyy-mm-dd）
+                     * 设置营业执照过期时间（yyyy-mm-dd），（小微商户不效验，随意传要有值，公司/个体户必传）
+                     * @param BusinessLicenseEndDate 营业执照过期时间（yyyy-mm-dd），（小微商户不效验，随意传要有值，公司/个体户必传）
                      */
                     void SetBusinessLicenseEndDate(const std::string& _businessLicenseEndDate);
 
@@ -1069,14 +1069,14 @@ namespace TencentCloud
                     bool TaxRegistrationNoHasBeenSet() const;
 
                     /**
-                     * 获取商户类型：1-个人，2-小微，3-企事业。不传默认为2-小微商户。
-                     * @return Type 商户类型：1-个人，2-小微，3-企事业。不传默认为2-小微商户。
+                     * 获取商户类型：1-个体，2-小微，3-企业。不传默认为2-小微商户。
+                     * @return Type 商户类型：1-个体，2-小微，3-企业。不传默认为2-小微商户。
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置商户类型：1-个人，2-小微，3-企事业。不传默认为2-小微商户。
-                     * @param Type 商户类型：1-个人，2-小微，3-企事业。不传默认为2-小微商户。
+                     * 设置商户类型：1-个体，2-小微，3-企业。不传默认为2-小微商户。
+                     * @param Type 商户类型：1-个体，2-小微，3-企业。不传默认为2-小微商户。
                      */
                     void SetType(const std::string& _type);
 
@@ -1113,7 +1113,7 @@ namespace TencentCloud
                     bool m_openKeyHasBeenSet;
 
                     /**
-                     * 营业执照过期时间（yyyy-mm-dd）
+                     * 营业执照过期时间（yyyy-mm-dd），（小微商户不效验，随意传要有值，公司/个体户必传）
                      */
                     std::string m_businessLicenseEndDate;
                     bool m_businessLicenseEndDateHasBeenSet;
@@ -1431,7 +1431,7 @@ namespace TencentCloud
                     bool m_taxRegistrationNoHasBeenSet;
 
                     /**
-                     * 商户类型：1-个人，2-小微，3-企事业。不传默认为2-小微商户。
+                     * 商户类型：1-个体，2-小微，3-企业。不传默认为2-小微商户。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

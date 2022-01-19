@@ -678,6 +678,24 @@ namespace TencentCloud
                      */
                     bool VolumeMountInfoListHasBeenSet() const;
 
+                    /**
+                     * 获取是否清除数据卷信息，默认false
+                     * @return VolumeClean 是否清除数据卷信息，默认false
+                     */
+                    bool GetVolumeClean() const;
+
+                    /**
+                     * 设置是否清除数据卷信息，默认false
+                     * @param VolumeClean 是否清除数据卷信息，默认false
+                     */
+                    void SetVolumeClean(const bool& _volumeClean);
+
+                    /**
+                     * 判断参数 VolumeClean 是否已赋值
+                     * @return VolumeClean 是否已赋值
+                     */
+                    bool VolumeCleanHasBeenSet() const;
+
                 private:
 
                     /**
@@ -889,6 +907,12 @@ namespace TencentCloud
                      */
                     std::vector<VolumeMountInfo> m_volumeMountInfoList;
                     bool m_volumeMountInfoListHasBeenSet;
+
+                    /**
+                     * 是否清除数据卷信息，默认false
+                     */
+                    bool m_volumeClean;
+                    bool m_volumeCleanHasBeenSet;
 
                 };
             }

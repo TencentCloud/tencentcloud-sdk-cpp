@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/redis/v20180412/model/AddReplicationInstanceRequest.h>
+#include <tencentcloud/redis/v20180412/model/AddReplicationInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/ApplyParamsTemplateRequest.h>
 #include <tencentcloud/redis/v20180412/model/ApplyParamsTemplateResponse.h>
 #include <tencentcloud/redis/v20180412/model/AssociateSecurityGroupsRequest.h>
@@ -39,10 +41,14 @@
 #include <tencentcloud/redis/v20180412/model/CreateInstancesResponse.h>
 #include <tencentcloud/redis/v20180412/model/CreateParamTemplateRequest.h>
 #include <tencentcloud/redis/v20180412/model/CreateParamTemplateResponse.h>
+#include <tencentcloud/redis/v20180412/model/CreateReplicationGroupRequest.h>
+#include <tencentcloud/redis/v20180412/model/CreateReplicationGroupResponse.h>
 #include <tencentcloud/redis/v20180412/model/DeleteInstanceAccountRequest.h>
 #include <tencentcloud/redis/v20180412/model/DeleteInstanceAccountResponse.h>
 #include <tencentcloud/redis/v20180412/model/DeleteParamTemplateRequest.h>
 #include <tencentcloud/redis/v20180412/model/DeleteParamTemplateResponse.h>
+#include <tencentcloud/redis/v20180412/model/DeleteReplicationInstanceRequest.h>
+#include <tencentcloud/redis/v20180412/model/DeleteReplicationInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeAutoBackupConfigRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeAutoBackupConfigResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeBackupUrlRequest.h>
@@ -181,6 +187,9 @@ namespace TencentCloud
                 RedisClient(const Credential &credential, const std::string &region);
                 RedisClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::AddReplicationInstanceResponse> AddReplicationInstanceOutcome;
+                typedef std::future<AddReplicationInstanceOutcome> AddReplicationInstanceOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::AddReplicationInstanceRequest&, AddReplicationInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddReplicationInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ApplyParamsTemplateResponse> ApplyParamsTemplateOutcome;
                 typedef std::future<ApplyParamsTemplateOutcome> ApplyParamsTemplateOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ApplyParamsTemplateRequest&, ApplyParamsTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyParamsTemplateAsyncHandler;
@@ -205,12 +214,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateParamTemplateResponse> CreateParamTemplateOutcome;
                 typedef std::future<CreateParamTemplateOutcome> CreateParamTemplateOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::CreateParamTemplateRequest&, CreateParamTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateParamTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateReplicationGroupResponse> CreateReplicationGroupOutcome;
+                typedef std::future<CreateReplicationGroupOutcome> CreateReplicationGroupOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::CreateReplicationGroupRequest&, CreateReplicationGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateReplicationGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteInstanceAccountResponse> DeleteInstanceAccountOutcome;
                 typedef std::future<DeleteInstanceAccountOutcome> DeleteInstanceAccountOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DeleteInstanceAccountRequest&, DeleteInstanceAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceAccountAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteParamTemplateResponse> DeleteParamTemplateOutcome;
                 typedef std::future<DeleteParamTemplateOutcome> DeleteParamTemplateOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DeleteParamTemplateRequest&, DeleteParamTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteParamTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteReplicationInstanceResponse> DeleteReplicationInstanceOutcome;
+                typedef std::future<DeleteReplicationInstanceOutcome> DeleteReplicationInstanceOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DeleteReplicationInstanceRequest&, DeleteReplicationInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteReplicationInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAutoBackupConfigResponse> DescribeAutoBackupConfigOutcome;
                 typedef std::future<DescribeAutoBackupConfigOutcome> DescribeAutoBackupConfigOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeAutoBackupConfigRequest&, DescribeAutoBackupConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoBackupConfigAsyncHandler;
@@ -401,6 +416,15 @@ namespace TencentCloud
 
 
                 /**
+                 *添加复制组成员
+                 * @param req AddReplicationInstanceRequest
+                 * @return AddReplicationInstanceOutcome
+                 */
+                AddReplicationInstanceOutcome AddReplicationInstance(const Model::AddReplicationInstanceRequest &request);
+                void AddReplicationInstanceAsync(const Model::AddReplicationInstanceRequest& request, const AddReplicationInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddReplicationInstanceOutcomeCallable AddReplicationInstanceCallable(const Model::AddReplicationInstanceRequest& request);
+
+                /**
                  *应用参数模板到实例
                  * @param req ApplyParamsTemplateRequest
                  * @return ApplyParamsTemplateOutcome
@@ -473,6 +497,15 @@ namespace TencentCloud
                 CreateParamTemplateOutcomeCallable CreateParamTemplateCallable(const Model::CreateParamTemplateRequest& request);
 
                 /**
+                 *创建复制组
+                 * @param req CreateReplicationGroupRequest
+                 * @return CreateReplicationGroupOutcome
+                 */
+                CreateReplicationGroupOutcome CreateReplicationGroup(const Model::CreateReplicationGroupRequest &request);
+                void CreateReplicationGroupAsync(const Model::CreateReplicationGroupRequest& request, const CreateReplicationGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateReplicationGroupOutcomeCallable CreateReplicationGroupCallable(const Model::CreateReplicationGroupRequest& request);
+
+                /**
                  *删除实例子账号
                  * @param req DeleteInstanceAccountRequest
                  * @return DeleteInstanceAccountOutcome
@@ -489,6 +522,15 @@ namespace TencentCloud
                 DeleteParamTemplateOutcome DeleteParamTemplate(const Model::DeleteParamTemplateRequest &request);
                 void DeleteParamTemplateAsync(const Model::DeleteParamTemplateRequest& request, const DeleteParamTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteParamTemplateOutcomeCallable DeleteParamTemplateCallable(const Model::DeleteParamTemplateRequest& request);
+
+                /**
+                 *移除复制组成员
+                 * @param req DeleteReplicationInstanceRequest
+                 * @return DeleteReplicationInstanceOutcome
+                 */
+                DeleteReplicationInstanceOutcome DeleteReplicationInstance(const Model::DeleteReplicationInstanceRequest &request);
+                void DeleteReplicationInstanceAsync(const Model::DeleteReplicationInstanceRequest& request, const DeleteReplicationInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteReplicationInstanceOutcomeCallable DeleteReplicationInstanceCallable(const Model::DeleteReplicationInstanceRequest& request);
 
                 /**
                  *获取备份配置
