@@ -44,13 +44,21 @@ namespace TencentCloud
 
                     /**
                      * 获取开票平台ID
+0 : 高灯
+1 : 票易通
                      * @return InvoicePlatformId 开票平台ID
+0 : 高灯
+1 : 票易通
                      */
                     int64_t GetInvoicePlatformId() const;
 
                     /**
                      * 设置开票平台ID
+0 : 高灯
+1 : 票易通
                      * @param InvoicePlatformId 开票平台ID
+0 : 高灯
+1 : 票易通
                      */
                     void SetInvoicePlatformId(const int64_t& _invoicePlatformId);
 
@@ -162,6 +170,8 @@ namespace TencentCloud
 
                     /**
                      * 开票平台ID
+0 : 高灯
+1 : 票易通
                      */
                     int64_t m_invoicePlatformId;
                     bool m_invoicePlatformIdHasBeenSet;

@@ -249,6 +249,8 @@
 #include <tencentcloud/cdb/v20170320/model/OpenDBInstanceGTIDResponse.h>
 #include <tencentcloud/cdb/v20170320/model/OpenWanServiceRequest.h>
 #include <tencentcloud/cdb/v20170320/model/OpenWanServiceResponse.h>
+#include <tencentcloud/cdb/v20170320/model/QueryCDBProxyRequest.h>
+#include <tencentcloud/cdb/v20170320/model/QueryCDBProxyResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ReleaseIsolatedDBInstancesRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ReleaseIsolatedDBInstancesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ReloadBalanceProxyNodeRequest.h>
@@ -638,6 +640,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::OpenWanServiceResponse> OpenWanServiceOutcome;
                 typedef std::future<OpenWanServiceOutcome> OpenWanServiceOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::OpenWanServiceRequest&, OpenWanServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenWanServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryCDBProxyResponse> QueryCDBProxyOutcome;
+                typedef std::future<QueryCDBProxyOutcome> QueryCDBProxyOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::QueryCDBProxyRequest&, QueryCDBProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryCDBProxyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReleaseIsolatedDBInstancesResponse> ReleaseIsolatedDBInstancesOutcome;
                 typedef std::future<ReleaseIsolatedDBInstancesOutcome> ReleaseIsolatedDBInstancesOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ReleaseIsolatedDBInstancesRequest&, ReleaseIsolatedDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseIsolatedDBInstancesAsyncHandler;
@@ -1747,6 +1752,15 @@ namespace TencentCloud
                 OpenWanServiceOutcome OpenWanService(const Model::OpenWanServiceRequest &request);
                 void OpenWanServiceAsync(const Model::OpenWanServiceRequest& request, const OpenWanServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 OpenWanServiceOutcomeCallable OpenWanServiceCallable(const Model::OpenWanServiceRequest& request);
+
+                /**
+                 *查询代理详情
+                 * @param req QueryCDBProxyRequest
+                 * @return QueryCDBProxyOutcome
+                 */
+                QueryCDBProxyOutcome QueryCDBProxy(const Model::QueryCDBProxyRequest &request);
+                void QueryCDBProxyAsync(const Model::QueryCDBProxyRequest& request, const QueryCDBProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryCDBProxyOutcomeCallable QueryCDBProxyCallable(const Model::QueryCDBProxyRequest& request);
 
                 /**
                  *本接口（ReleaseIsolatedDBInstances）用于恢复已隔离云数据库实例。

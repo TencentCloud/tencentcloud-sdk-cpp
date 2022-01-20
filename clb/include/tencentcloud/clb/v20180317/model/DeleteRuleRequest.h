@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool LocationIdsHasBeenSet() const;
 
                     /**
-                     * 获取要删除的转发规则的域名，已提供LocationIds参数时本参数不生效。
-                     * @return Domain 要删除的转发规则的域名，已提供LocationIds参数时本参数不生效。
+                     * 获取要删除的转发规则的域名，如果是多域名，可以指定多域名列表中的任意一个。已提供LocationIds参数时本参数不生效。
+                     * @return Domain 要删除的转发规则的域名，如果是多域名，可以指定多域名列表中的任意一个。已提供LocationIds参数时本参数不生效。
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置要删除的转发规则的域名，已提供LocationIds参数时本参数不生效。
-                     * @param Domain 要删除的转发规则的域名，已提供LocationIds参数时本参数不生效。
+                     * 设置要删除的转发规则的域名，如果是多域名，可以指定多域名列表中的任意一个。已提供LocationIds参数时本参数不生效。
+                     * @param Domain 要删除的转发规则的域名，如果是多域名，可以指定多域名列表中的任意一个。已提供LocationIds参数时本参数不生效。
                      */
                     void SetDomain(const std::string& _domain);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取监听器下必须配置一个默认域名，当需要删除默认域名时，可以指定另一个域名作为新的默认域名。
-                     * @return NewDefaultServerDomain 监听器下必须配置一个默认域名，当需要删除默认域名时，可以指定另一个域名作为新的默认域名。
+                     * 获取监听器下必须配置一个默认域名，当需要删除默认域名时，可以指定另一个域名作为新的默认域名，如果新的默认域名是多域名，可以指定多域名列表中的任意一个。
+                     * @return NewDefaultServerDomain 监听器下必须配置一个默认域名，当需要删除默认域名时，可以指定另一个域名作为新的默认域名，如果新的默认域名是多域名，可以指定多域名列表中的任意一个。
                      */
                     std::string GetNewDefaultServerDomain() const;
 
                     /**
-                     * 设置监听器下必须配置一个默认域名，当需要删除默认域名时，可以指定另一个域名作为新的默认域名。
-                     * @param NewDefaultServerDomain 监听器下必须配置一个默认域名，当需要删除默认域名时，可以指定另一个域名作为新的默认域名。
+                     * 设置监听器下必须配置一个默认域名，当需要删除默认域名时，可以指定另一个域名作为新的默认域名，如果新的默认域名是多域名，可以指定多域名列表中的任意一个。
+                     * @param NewDefaultServerDomain 监听器下必须配置一个默认域名，当需要删除默认域名时，可以指定另一个域名作为新的默认域名，如果新的默认域名是多域名，可以指定多域名列表中的任意一个。
                      */
                     void SetNewDefaultServerDomain(const std::string& _newDefaultServerDomain);
 
@@ -171,7 +171,7 @@ namespace TencentCloud
                     bool m_locationIdsHasBeenSet;
 
                     /**
-                     * 要删除的转发规则的域名，已提供LocationIds参数时本参数不生效。
+                     * 要删除的转发规则的域名，如果是多域名，可以指定多域名列表中的任意一个。已提供LocationIds参数时本参数不生效。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
@@ -183,7 +183,7 @@ namespace TencentCloud
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 监听器下必须配置一个默认域名，当需要删除默认域名时，可以指定另一个域名作为新的默认域名。
+                     * 监听器下必须配置一个默认域名，当需要删除默认域名时，可以指定另一个域名作为新的默认域名，如果新的默认域名是多域名，可以指定多域名列表中的任意一个。
                      */
                     std::string m_newDefaultServerDomain;
                     bool m_newDefaultServerDomainHasBeenSet;

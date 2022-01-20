@@ -43,24 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志集的保存周期，单位：天，最大 90。
-                     * @return Period 日志集的保存周期，单位：天，最大 90。
-                     */
-                    uint64_t GetPeriod() const;
-
-                    /**
-                     * 设置日志集的保存周期，单位：天，最大 90。
-                     * @param Period 日志集的保存周期，单位：天，最大 90。
-                     */
-                    void SetPeriod(const uint64_t& _period);
-
-                    /**
-                     * 判断参数 Period 是否已赋值
-                     * @return Period 是否已赋值
-                     */
-                    bool PeriodHasBeenSet() const;
-
-                    /**
                      * 获取日志集的名字，不能和cls其他日志集重名。不填默认为clb_logset。
                      * @return LogsetName 日志集的名字，不能和cls其他日志集重名。不填默认为clb_logset。
                      */
@@ -77,6 +59,24 @@ namespace TencentCloud
                      * @return LogsetName 是否已赋值
                      */
                     bool LogsetNameHasBeenSet() const;
+
+                    /**
+                     * 获取日志集的保存周期，单位：天。
+                     * @return Period 日志集的保存周期，单位：天。
+                     */
+                    uint64_t GetPeriod() const;
+
+                    /**
+                     * 设置日志集的保存周期，单位：天。
+                     * @param Period 日志集的保存周期，单位：天。
+                     */
+                    void SetPeriod(const uint64_t& _period);
+
+                    /**
+                     * 判断参数 Period 是否已赋值
+                     * @return Period 是否已赋值
+                     */
+                    bool PeriodHasBeenSet() const;
 
                     /**
                      * 获取日志集类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
@@ -99,16 +99,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志集的保存周期，单位：天，最大 90。
-                     */
-                    uint64_t m_period;
-                    bool m_periodHasBeenSet;
-
-                    /**
                      * 日志集的名字，不能和cls其他日志集重名。不填默认为clb_logset。
                      */
                     std::string m_logsetName;
                     bool m_logsetNameHasBeenSet;
+
+                    /**
+                     * 日志集的保存周期，单位：天。
+                     */
+                    uint64_t m_period;
+                    bool m_periodHasBeenSet;
 
                     /**
                      * 日志集类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。

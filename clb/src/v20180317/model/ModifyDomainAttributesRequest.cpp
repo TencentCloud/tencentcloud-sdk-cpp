@@ -30,7 +30,8 @@ ModifyDomainAttributesRequest::ModifyDomainAttributesRequest() :
     m_certificateHasBeenSet(false),
     m_http2HasBeenSet(false),
     m_defaultServerHasBeenSet(false),
-    m_newDefaultServerDomainHasBeenSet(false)
+    m_newDefaultServerDomainHasBeenSet(false),
+    m_newDomainsHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,19 @@ string ModifyDomainAttributesRequest::ToJsonString() const
         string key = "NewDefaultServerDomain";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_newDefaultServerDomain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_newDomainsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewDomains";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_newDomains.begin(); itr != m_newDomains.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -240,6 +254,22 @@ void ModifyDomainAttributesRequest::SetNewDefaultServerDomain(const string& _new
 bool ModifyDomainAttributesRequest::NewDefaultServerDomainHasBeenSet() const
 {
     return m_newDefaultServerDomainHasBeenSet;
+}
+
+vector<string> ModifyDomainAttributesRequest::GetNewDomains() const
+{
+    return m_newDomains;
+}
+
+void ModifyDomainAttributesRequest::SetNewDomains(const vector<string>& _newDomains)
+{
+    m_newDomains = _newDomains;
+    m_newDomainsHasBeenSet = true;
+}
+
+bool ModifyDomainAttributesRequest::NewDomainsHasBeenSet() const
+{
+    return m_newDomainsHasBeenSet;
 }
 
 

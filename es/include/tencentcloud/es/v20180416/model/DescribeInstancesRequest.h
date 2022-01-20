@@ -223,6 +223,24 @@ namespace TencentCloud
                      */
                     bool ZoneListHasBeenSet() const;
 
+                    /**
+                     * 获取健康状态筛列表
+                     * @return HealthStatus 健康状态筛列表
+                     */
+                    std::vector<int64_t> GetHealthStatus() const;
+
+                    /**
+                     * 设置健康状态筛列表
+                     * @param HealthStatus 健康状态筛列表
+                     */
+                    void SetHealthStatus(const std::vector<int64_t>& _healthStatus);
+
+                    /**
+                     * 判断参数 HealthStatus 是否已赋值
+                     * @return HealthStatus 是否已赋值
+                     */
+                    bool HealthStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -284,6 +302,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_zoneList;
                     bool m_zoneListHasBeenSet;
+
+                    /**
+                     * 健康状态筛列表
+                     */
+                    std::vector<int64_t> m_healthStatus;
+                    bool m_healthStatusHasBeenSet;
 
                 };
             }

@@ -29,7 +29,8 @@ DescribeTaskRecordsRequest::DescribeTaskRecordsRequest() :
     m_taskStateHasBeenSet(false),
     m_groupIdHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
-    m_executeTypeHasBeenSet(false)
+    m_executeTypeHasBeenSet(false),
+    m_idsHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,19 @@ string DescribeTaskRecordsRequest::ToJsonString() const
         string key = "ExecuteType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_executeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ids";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_ids.begin(); itr != m_ids.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -214,6 +228,22 @@ void DescribeTaskRecordsRequest::SetExecuteType(const string& _executeType)
 bool DescribeTaskRecordsRequest::ExecuteTypeHasBeenSet() const
 {
     return m_executeTypeHasBeenSet;
+}
+
+vector<string> DescribeTaskRecordsRequest::GetIds() const
+{
+    return m_ids;
+}
+
+void DescribeTaskRecordsRequest::SetIds(const vector<string>& _ids)
+{
+    m_ids = _ids;
+    m_idsHasBeenSet = true;
+}
+
+bool DescribeTaskRecordsRequest::IdsHasBeenSet() const
+{
+    return m_idsHasBeenSet;
 }
 
 

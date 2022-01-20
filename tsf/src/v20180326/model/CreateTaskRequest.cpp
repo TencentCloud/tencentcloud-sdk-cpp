@@ -37,7 +37,8 @@ CreateTaskRequest::CreateTaskRequest() :
     m_successOperatorHasBeenSet(false),
     m_successRatioHasBeenSet(false),
     m_advanceSettingsHasBeenSet(false),
-    m_taskArgumentHasBeenSet(false)
+    m_taskArgumentHasBeenSet(false),
+    m_programIdListHasBeenSet(false)
 {
 }
 
@@ -175,6 +176,19 @@ string CreateTaskRequest::ToJsonString() const
         string key = "TaskArgument";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_taskArgument.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_programIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProgramIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_programIdList.begin(); itr != m_programIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -423,6 +437,22 @@ void CreateTaskRequest::SetTaskArgument(const string& _taskArgument)
 bool CreateTaskRequest::TaskArgumentHasBeenSet() const
 {
     return m_taskArgumentHasBeenSet;
+}
+
+vector<string> CreateTaskRequest::GetProgramIdList() const
+{
+    return m_programIdList;
+}
+
+void CreateTaskRequest::SetProgramIdList(const vector<string>& _programIdList)
+{
+    m_programIdList = _programIdList;
+    m_programIdListHasBeenSet = true;
+}
+
+bool CreateTaskRequest::ProgramIdListHasBeenSet() const
+{
+    return m_programIdListHasBeenSet;
 }
 
 

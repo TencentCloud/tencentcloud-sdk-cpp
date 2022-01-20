@@ -53,7 +53,8 @@ LoadBalancerDetail::LoadBalancerDetail() :
     m_isolationHasBeenSet(false),
     m_securityGroupHasBeenSet(false),
     m_loadBalancerPassToTargetHasBeenSet(false),
-    m_targetHealthHasBeenSet(false)
+    m_targetHealthHasBeenSet(false),
+    m_domainsHasBeenSet(false)
 {
 }
 
@@ -426,6 +427,16 @@ CoreInternalOutcome LoadBalancerDetail::Deserialize(const rapidjson::Value &valu
         m_targetHealthHasBeenSet = true;
     }
 
+    if (value.HasMember("Domains") && !value["Domains"].IsNull())
+    {
+        if (!value["Domains"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerDetail.Domains` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domains = string(value["Domains"].GetString());
+        m_domainsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -710,6 +721,14 @@ void LoadBalancerDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "TargetHealth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_targetHealth.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domains";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domains.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1241,5 +1260,21 @@ void LoadBalancerDetail::SetTargetHealth(const string& _targetHealth)
 bool LoadBalancerDetail::TargetHealthHasBeenSet() const
 {
     return m_targetHealthHasBeenSet;
+}
+
+string LoadBalancerDetail::GetDomains() const
+{
+    return m_domains;
+}
+
+void LoadBalancerDetail::SetDomains(const string& _domains)
+{
+    m_domains = _domains;
+    m_domainsHasBeenSet = true;
+}
+
+bool LoadBalancerDetail::DomainsHasBeenSet() const
+{
+    return m_domainsHasBeenSet;
 }
 

@@ -4899,6 +4899,49 @@ CdbClient::OpenWanServiceOutcomeCallable CdbClient::OpenWanServiceCallable(const
     return task->get_future();
 }
 
+CdbClient::QueryCDBProxyOutcome CdbClient::QueryCDBProxy(const QueryCDBProxyRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryCDBProxy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryCDBProxyResponse rsp = QueryCDBProxyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryCDBProxyOutcome(rsp);
+        else
+            return QueryCDBProxyOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryCDBProxyOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::QueryCDBProxyAsync(const QueryCDBProxyRequest& request, const QueryCDBProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryCDBProxy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::QueryCDBProxyOutcomeCallable CdbClient::QueryCDBProxyCallable(const QueryCDBProxyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryCDBProxyOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryCDBProxy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::ReleaseIsolatedDBInstancesOutcome CdbClient::ReleaseIsolatedDBInstances(const ReleaseIsolatedDBInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "ReleaseIsolatedDBInstances");

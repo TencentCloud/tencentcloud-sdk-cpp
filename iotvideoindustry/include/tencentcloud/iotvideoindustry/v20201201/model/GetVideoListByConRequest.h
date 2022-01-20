@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取通道唯一标识
-                     * @return ChannelId 通道唯一标识
+                     * 获取通道唯一标识，对于NVR设备，多通道IPC设备，设备编码与通道编码不一致的IPC设备，此字段为必填
+                     * @return ChannelId 通道唯一标识，对于NVR设备，多通道IPC设备，设备编码与通道编码不一致的IPC设备，此字段为必填
                      */
                     std::string GetChannelId() const;
 
                     /**
-                     * 设置通道唯一标识
-                     * @param ChannelId 通道唯一标识
+                     * 设置通道唯一标识，对于NVR设备，多通道IPC设备，设备编码与通道编码不一致的IPC设备，此字段为必填
+                     * @param ChannelId 通道唯一标识，对于NVR设备，多通道IPC设备，设备编码与通道编码不一致的IPC设备，此字段为必填
                      */
                     void SetChannelId(const std::string& _channelId);
 
@@ -193,7 +193,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 通道唯一标识
+                     * 通道唯一标识，对于NVR设备，多通道IPC设备，设备编码与通道编码不一致的IPC设备，此字段为必填
                      */
                     std::string m_channelId;
                     bool m_channelIdHasBeenSet;

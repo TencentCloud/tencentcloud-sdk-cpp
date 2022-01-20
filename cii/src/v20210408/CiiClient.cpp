@@ -40,6 +40,49 @@ CiiClient::CiiClient(const Credential &credential, const string &region, const C
 }
 
 
+CiiClient::AddSubStructureTasksOutcome CiiClient::AddSubStructureTasks(const AddSubStructureTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddSubStructureTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddSubStructureTasksResponse rsp = AddSubStructureTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddSubStructureTasksOutcome(rsp);
+        else
+            return AddSubStructureTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return AddSubStructureTasksOutcome(outcome.GetError());
+    }
+}
+
+void CiiClient::AddSubStructureTasksAsync(const AddSubStructureTasksRequest& request, const AddSubStructureTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddSubStructureTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CiiClient::AddSubStructureTasksOutcomeCallable CiiClient::AddSubStructureTasksCallable(const AddSubStructureTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddSubStructureTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->AddSubStructureTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CiiClient::CreateAutoClassifyStructureTaskOutcome CiiClient::CreateAutoClassifyStructureTask(const CreateAutoClassifyStructureTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAutoClassifyStructureTask");
@@ -212,6 +255,49 @@ CiiClient::DescribeMachineUnderwriteOutcomeCallable CiiClient::DescribeMachineUn
     return task->get_future();
 }
 
+CiiClient::DescribeReportClassifyOutcome CiiClient::DescribeReportClassify(const DescribeReportClassifyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReportClassify");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReportClassifyResponse rsp = DescribeReportClassifyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReportClassifyOutcome(rsp);
+        else
+            return DescribeReportClassifyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReportClassifyOutcome(outcome.GetError());
+    }
+}
+
+void CiiClient::DescribeReportClassifyAsync(const DescribeReportClassifyRequest& request, const DescribeReportClassifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeReportClassify(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CiiClient::DescribeReportClassifyOutcomeCallable CiiClient::DescribeReportClassifyCallable(const DescribeReportClassifyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeReportClassifyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeReportClassify(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CiiClient::DescribeStructCompareDataOutcome CiiClient::DescribeStructCompareData(const DescribeStructCompareDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeStructCompareData");
@@ -377,6 +463,49 @@ CiiClient::DescribeStructureTaskResultOutcomeCallable CiiClient::DescribeStructu
         [this, request]()
         {
             return this->DescribeStructureTaskResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CiiClient::DescribeUnderwriteTaskOutcome CiiClient::DescribeUnderwriteTask(const DescribeUnderwriteTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUnderwriteTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUnderwriteTaskResponse rsp = DescribeUnderwriteTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUnderwriteTaskOutcome(rsp);
+        else
+            return DescribeUnderwriteTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUnderwriteTaskOutcome(outcome.GetError());
+    }
+}
+
+void CiiClient::DescribeUnderwriteTaskAsync(const DescribeUnderwriteTaskRequest& request, const DescribeUnderwriteTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUnderwriteTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CiiClient::DescribeUnderwriteTaskOutcomeCallable CiiClient::DescribeUnderwriteTaskCallable(const DescribeUnderwriteTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUnderwriteTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUnderwriteTask(request);
         }
     );
 

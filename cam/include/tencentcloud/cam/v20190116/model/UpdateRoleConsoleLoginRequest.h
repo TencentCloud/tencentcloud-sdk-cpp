@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ConsoleLoginHasBeenSet() const;
 
                     /**
-                     * 获取角色ID
-                     * @return RoleId 角色ID
+                     * 获取角色ID，入参 RoleId 与 RoleName 二选一
+                     * @return RoleId 角色ID，入参 RoleId 与 RoleName 二选一
                      */
                     int64_t GetRoleId() const;
 
                     /**
-                     * 设置角色ID
-                     * @param RoleId 角色ID
+                     * 设置角色ID，入参 RoleId 与 RoleName 二选一
+                     * @param RoleId 角色ID，入参 RoleId 与 RoleName 二选一
                      */
                     void SetRoleId(const int64_t& _roleId);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool RoleIdHasBeenSet() const;
 
                     /**
-                     * 获取角色名
-                     * @return RoleName 角色名
+                     * 获取角色名，入参 RoleId 与 RoleName 二选一
+                     * @return RoleName 角色名，入参 RoleId 与 RoleName 二选一
                      */
                     std::string GetRoleName() const;
 
                     /**
-                     * 设置角色名
-                     * @param RoleName 角色名
+                     * 设置角色名，入参 RoleId 与 RoleName 二选一
+                     * @param RoleName 角色名，入参 RoleId 与 RoleName 二选一
                      */
                     void SetRoleName(const std::string& _roleName);
 
@@ -105,13 +105,13 @@ namespace TencentCloud
                     bool m_consoleLoginHasBeenSet;
 
                     /**
-                     * 角色ID
+                     * 角色ID，入参 RoleId 与 RoleName 二选一
                      */
                     int64_t m_roleId;
                     bool m_roleIdHasBeenSet;
 
                     /**
-                     * 角色名
+                     * 角色名，入参 RoleId 与 RoleName 二选一
                      */
                     std::string m_roleName;
                     bool m_roleNameHasBeenSet;

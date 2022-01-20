@@ -91,7 +91,8 @@ InstanceInfo::InstanceInfo() :
     m_frozenCpuNumHasBeenSet(false),
     m_frozenMemSizeHasBeenSet(false),
     m_frozenDiskTypeHasBeenSet(false),
-    m_frozenDiskSizeHasBeenSet(false)
+    m_frozenDiskSizeHasBeenSet(false),
+    m_healthStatusHasBeenSet(false)
 {
 }
 
@@ -892,6 +893,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_frozenDiskSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("HealthStatus") && !value["HealthStatus"].IsNull())
+    {
+        if (!value["HealthStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.HealthStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_healthStatus = value["HealthStatus"].GetInt64();
+        m_healthStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1498,6 +1509,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "FrozenDiskSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_frozenDiskSize, allocator);
+    }
+
+    if (m_healthStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_healthStatus, allocator);
     }
 
 }
@@ -2637,5 +2656,21 @@ void InstanceInfo::SetFrozenDiskSize(const uint64_t& _frozenDiskSize)
 bool InstanceInfo::FrozenDiskSizeHasBeenSet() const
 {
     return m_frozenDiskSizeHasBeenSet;
+}
+
+int64_t InstanceInfo::GetHealthStatus() const
+{
+    return m_healthStatus;
+}
+
+void InstanceInfo::SetHealthStatus(const int64_t& _healthStatus)
+{
+    m_healthStatus = _healthStatus;
+    m_healthStatusHasBeenSet = true;
+}
+
+bool InstanceInfo::HealthStatusHasBeenSet() const
+{
+    return m_healthStatusHasBeenSet;
 }
 

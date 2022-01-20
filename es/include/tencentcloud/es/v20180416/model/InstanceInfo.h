@@ -1473,6 +1473,28 @@ namespace TencentCloud
                      */
                     bool FrozenDiskSizeHasBeenSet() const;
 
+                    /**
+                     * 获取集群健康状态 -1 未知；0 Green; 1 Yellow; 2 Red
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HealthStatus 集群健康状态 -1 未知；0 Green; 1 Yellow; 2 Red
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetHealthStatus() const;
+
+                    /**
+                     * 设置集群健康状态 -1 未知；0 Green; 1 Yellow; 2 Red
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HealthStatus 集群健康状态 -1 未知；0 Green; 1 Yellow; 2 Red
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHealthStatus(const int64_t& _healthStatus);
+
+                    /**
+                     * 判断参数 HealthStatus 是否已赋值
+                     * @return HealthStatus 是否已赋值
+                     */
+                    bool HealthStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1935,6 +1957,13 @@ namespace TencentCloud
                      */
                     uint64_t m_frozenDiskSize;
                     bool m_frozenDiskSizeHasBeenSet;
+
+                    /**
+                     * 集群健康状态 -1 未知；0 Green; 1 Yellow; 2 Red
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_healthStatus;
+                    bool m_healthStatusHasBeenSet;
 
                 };
             }

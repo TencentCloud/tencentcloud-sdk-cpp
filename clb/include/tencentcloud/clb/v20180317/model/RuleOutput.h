@@ -468,6 +468,28 @@ namespace TencentCloud
                      */
                     bool QuicStatusHasBeenSet() const;
 
+                    /**
+                     * 获取转发规则的域名列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Domains 转发规则的域名列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetDomains() const;
+
+                    /**
+                     * 设置转发规则的域名列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Domains 转发规则的域名列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDomains(const std::vector<std::string>& _domains);
+
+                    /**
+                     * 判断参数 Domains 是否已赋值
+                     * @return Domains 是否已赋值
+                     */
+                    bool DomainsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -605,6 +627,13 @@ namespace TencentCloud
                      */
                     std::string m_quicStatus;
                     bool m_quicStatusHasBeenSet;
+
+                    /**
+                     * 转发规则的域名列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_domains;
+                    bool m_domainsHasBeenSet;
 
                 };
             }

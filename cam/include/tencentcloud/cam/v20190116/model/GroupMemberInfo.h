@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool CountryCodeHasBeenSet() const;
 
                     /**
-                     * 获取是否已验证手机。
-                     * @return PhoneFlag 是否已验证手机。
+                     * 获取是否已验证手机。0-未验证  1-验证
+                     * @return PhoneFlag 是否已验证手机。0-未验证  1-验证
                      */
                     uint64_t GetPhoneFlag() const;
 
                     /**
-                     * 设置是否已验证手机。
-                     * @param PhoneFlag 是否已验证手机。
+                     * 设置是否已验证手机。0-未验证  1-验证
+                     * @param PhoneFlag 是否已验证手机。0-未验证  1-验证
                      */
                     void SetPhoneFlag(const uint64_t& _phoneFlag);
 
@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool EmailHasBeenSet() const;
 
                     /**
-                     * 获取是否已验证邮箱。
-                     * @return EmailFlag 是否已验证邮箱。
+                     * 获取是否已验证邮箱。0-未验证  1-验证
+                     * @return EmailFlag 是否已验证邮箱。0-未验证  1-验证
                      */
                     uint64_t GetEmailFlag() const;
 
                     /**
-                     * 设置是否已验证邮箱。
-                     * @param EmailFlag 是否已验证邮箱。
+                     * 设置是否已验证邮箱。0-未验证  1-验证
+                     * @param EmailFlag 是否已验证邮箱。0-未验证  1-验证
                      */
                     void SetEmailFlag(const uint64_t& _emailFlag);
 
@@ -191,14 +191,14 @@ namespace TencentCloud
                     bool EmailFlagHasBeenSet() const;
 
                     /**
-                     * 获取用户类型。
-                     * @return UserType 用户类型。
+                     * 获取用户类型。1-全局协作者 2-项目协作者 3-消息接收者
+                     * @return UserType 用户类型。1-全局协作者 2-项目协作者 3-消息接收者
                      */
                     uint64_t GetUserType() const;
 
                     /**
-                     * 设置用户类型。
-                     * @param UserType 用户类型。
+                     * 设置用户类型。1-全局协作者 2-项目协作者 3-消息接收者
+                     * @param UserType 用户类型。1-全局协作者 2-项目协作者 3-消息接收者
                      */
                     void SetUserType(const uint64_t& _userType);
 
@@ -227,14 +227,14 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否为主消息接收人。
-                     * @return IsReceiverOwner 是否为主消息接收人。
+                     * 获取是否为主消息接收人。0-否 1-是
+                     * @return IsReceiverOwner 是否为主消息接收人。0-否 1-是
                      */
                     uint64_t GetIsReceiverOwner() const;
 
                     /**
-                     * 设置是否为主消息接收人。
-                     * @param IsReceiverOwner 是否为主消息接收人。
+                     * 设置是否为主消息接收人。0-否 1-是
+                     * @param IsReceiverOwner 是否为主消息接收人。0-否 1-是
                      */
                     void SetIsReceiverOwner(const uint64_t& _isReceiverOwner);
 
@@ -277,7 +277,7 @@ namespace TencentCloud
                     bool m_countryCodeHasBeenSet;
 
                     /**
-                     * 是否已验证手机。
+                     * 是否已验证手机。0-未验证  1-验证
                      */
                     uint64_t m_phoneFlag;
                     bool m_phoneFlagHasBeenSet;
@@ -289,13 +289,13 @@ namespace TencentCloud
                     bool m_emailHasBeenSet;
 
                     /**
-                     * 是否已验证邮箱。
+                     * 是否已验证邮箱。0-未验证  1-验证
                      */
                     uint64_t m_emailFlag;
                     bool m_emailFlagHasBeenSet;
 
                     /**
-                     * 用户类型。
+                     * 用户类型。1-全局协作者 2-项目协作者 3-消息接收者
                      */
                     uint64_t m_userType;
                     bool m_userTypeHasBeenSet;
@@ -307,7 +307,7 @@ namespace TencentCloud
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 是否为主消息接收人。
+                     * 是否为主消息接收人。0-否 1-是
                      */
                     uint64_t m_isReceiverOwner;
                     bool m_isReceiverOwnerHasBeenSet;

@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/cii/v20210408/model/AddSubStructureTasksRequest.h>
+#include <tencentcloud/cii/v20210408/model/AddSubStructureTasksResponse.h>
 #include <tencentcloud/cii/v20210408/model/CreateAutoClassifyStructureTaskRequest.h>
 #include <tencentcloud/cii/v20210408/model/CreateAutoClassifyStructureTaskResponse.h>
 #include <tencentcloud/cii/v20210408/model/CreateStructureTaskRequest.h>
@@ -31,6 +33,8 @@
 #include <tencentcloud/cii/v20210408/model/CreateUnderwriteTaskByIdResponse.h>
 #include <tencentcloud/cii/v20210408/model/DescribeMachineUnderwriteRequest.h>
 #include <tencentcloud/cii/v20210408/model/DescribeMachineUnderwriteResponse.h>
+#include <tencentcloud/cii/v20210408/model/DescribeReportClassifyRequest.h>
+#include <tencentcloud/cii/v20210408/model/DescribeReportClassifyResponse.h>
 #include <tencentcloud/cii/v20210408/model/DescribeStructCompareDataRequest.h>
 #include <tencentcloud/cii/v20210408/model/DescribeStructCompareDataResponse.h>
 #include <tencentcloud/cii/v20210408/model/DescribeStructureDifferenceRequest.h>
@@ -39,6 +43,8 @@
 #include <tencentcloud/cii/v20210408/model/DescribeStructureResultResponse.h>
 #include <tencentcloud/cii/v20210408/model/DescribeStructureTaskResultRequest.h>
 #include <tencentcloud/cii/v20210408/model/DescribeStructureTaskResultResponse.h>
+#include <tencentcloud/cii/v20210408/model/DescribeUnderwriteTaskRequest.h>
+#include <tencentcloud/cii/v20210408/model/DescribeUnderwriteTaskResponse.h>
 #include <tencentcloud/cii/v20210408/model/UploadMedicalFileRequest.h>
 #include <tencentcloud/cii/v20210408/model/UploadMedicalFileResponse.h>
 
@@ -55,6 +61,9 @@ namespace TencentCloud
                 CiiClient(const Credential &credential, const std::string &region);
                 CiiClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::AddSubStructureTasksResponse> AddSubStructureTasksOutcome;
+                typedef std::future<AddSubStructureTasksOutcome> AddSubStructureTasksOutcomeCallable;
+                typedef std::function<void(const CiiClient*, const Model::AddSubStructureTasksRequest&, AddSubStructureTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddSubStructureTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAutoClassifyStructureTaskResponse> CreateAutoClassifyStructureTaskOutcome;
                 typedef std::future<CreateAutoClassifyStructureTaskOutcome> CreateAutoClassifyStructureTaskOutcomeCallable;
                 typedef std::function<void(const CiiClient*, const Model::CreateAutoClassifyStructureTaskRequest&, CreateAutoClassifyStructureTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAutoClassifyStructureTaskAsyncHandler;
@@ -67,6 +76,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMachineUnderwriteResponse> DescribeMachineUnderwriteOutcome;
                 typedef std::future<DescribeMachineUnderwriteOutcome> DescribeMachineUnderwriteOutcomeCallable;
                 typedef std::function<void(const CiiClient*, const Model::DescribeMachineUnderwriteRequest&, DescribeMachineUnderwriteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMachineUnderwriteAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeReportClassifyResponse> DescribeReportClassifyOutcome;
+                typedef std::future<DescribeReportClassifyOutcome> DescribeReportClassifyOutcomeCallable;
+                typedef std::function<void(const CiiClient*, const Model::DescribeReportClassifyRequest&, DescribeReportClassifyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReportClassifyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeStructCompareDataResponse> DescribeStructCompareDataOutcome;
                 typedef std::future<DescribeStructCompareDataOutcome> DescribeStructCompareDataOutcomeCallable;
                 typedef std::function<void(const CiiClient*, const Model::DescribeStructCompareDataRequest&, DescribeStructCompareDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStructCompareDataAsyncHandler;
@@ -79,11 +91,23 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeStructureTaskResultResponse> DescribeStructureTaskResultOutcome;
                 typedef std::future<DescribeStructureTaskResultOutcome> DescribeStructureTaskResultOutcomeCallable;
                 typedef std::function<void(const CiiClient*, const Model::DescribeStructureTaskResultRequest&, DescribeStructureTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStructureTaskResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUnderwriteTaskResponse> DescribeUnderwriteTaskOutcome;
+                typedef std::future<DescribeUnderwriteTaskOutcome> DescribeUnderwriteTaskOutcomeCallable;
+                typedef std::function<void(const CiiClient*, const Model::DescribeUnderwriteTaskRequest&, DescribeUnderwriteTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUnderwriteTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::UploadMedicalFileResponse> UploadMedicalFileOutcome;
                 typedef std::future<UploadMedicalFileOutcome> UploadMedicalFileOutcomeCallable;
                 typedef std::function<void(const CiiClient*, const Model::UploadMedicalFileRequest&, UploadMedicalFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadMedicalFileAsyncHandler;
 
 
+
+                /**
+                 *中银三星需求，基于主任务批量添加结构化子任务
+                 * @param req AddSubStructureTasksRequest
+                 * @return AddSubStructureTasksOutcome
+                 */
+                AddSubStructureTasksOutcome AddSubStructureTasks(const Model::AddSubStructureTasksRequest &request);
+                void AddSubStructureTasksAsync(const Model::AddSubStructureTasksRequest& request, const AddSubStructureTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddSubStructureTasksOutcomeCallable AddSubStructureTasksCallable(const Model::AddSubStructureTasksRequest& request);
 
                 /**
                  *本接口(CreateAutoClassifyStructureTask)基于提供的客户及保单信息，创建并启动结构化识别任务。
@@ -122,6 +146,15 @@ namespace TencentCloud
                 DescribeMachineUnderwriteOutcomeCallable DescribeMachineUnderwriteCallable(const Model::DescribeMachineUnderwriteRequest& request);
 
                 /**
+                 *saas页面集成了自动分类功能，该接口提供自动分类结果
+                 * @param req DescribeReportClassifyRequest
+                 * @return DescribeReportClassifyOutcome
+                 */
+                DescribeReportClassifyOutcome DescribeReportClassify(const Model::DescribeReportClassifyRequest &request);
+                void DescribeReportClassifyAsync(const Model::DescribeReportClassifyRequest& request, const DescribeReportClassifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeReportClassifyOutcomeCallable DescribeReportClassifyCallable(const Model::DescribeReportClassifyRequest& request);
+
+                /**
                  *结构化对比查询接口，对比结构化复核前后数据差异，查询识别正确率，召回率。
                  * @param req DescribeStructCompareDataRequest
                  * @return DescribeStructCompareDataOutcome
@@ -156,6 +189,15 @@ namespace TencentCloud
                 DescribeStructureTaskResultOutcome DescribeStructureTaskResult(const Model::DescribeStructureTaskResultRequest &request);
                 void DescribeStructureTaskResultAsync(const Model::DescribeStructureTaskResultRequest& request, const DescribeStructureTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeStructureTaskResultOutcomeCallable DescribeStructureTaskResultCallable(const Model::DescribeStructureTaskResultRequest& request);
+
+                /**
+                 *本接口(DescribeUnderwriteTask)用于查询核保任务结果
+                 * @param req DescribeUnderwriteTaskRequest
+                 * @return DescribeUnderwriteTaskOutcome
+                 */
+                DescribeUnderwriteTaskOutcome DescribeUnderwriteTask(const Model::DescribeUnderwriteTaskRequest &request);
+                void DescribeUnderwriteTaskAsync(const Model::DescribeUnderwriteTaskRequest& request, const DescribeUnderwriteTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUnderwriteTaskOutcomeCallable DescribeUnderwriteTaskCallable(const Model::DescribeUnderwriteTaskRequest& request);
 
                 /**
                  *上传医疗影像文件，可以用来做结构化。

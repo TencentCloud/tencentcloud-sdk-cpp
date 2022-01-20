@@ -170,14 +170,14 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取按照实例ID过滤
-                     * @return InstanceIds 按照实例ID过滤
+                     * 获取已经废弃， 使用InstanceIdList
+                     * @return InstanceIds 已经废弃， 使用InstanceIdList
                      */
                     std::string GetInstanceIds() const;
 
                     /**
-                     * 设置按照实例ID过滤
-                     * @param InstanceIds 按照实例ID过滤
+                     * 设置已经废弃， 使用InstanceIdList
+                     * @param InstanceIds 已经废弃， 使用InstanceIdList
                      */
                     void SetInstanceIds(const std::string& _instanceIds);
 
@@ -232,7 +232,7 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 按照实例ID过滤
+                     * 已经废弃， 使用InstanceIdList
                      */
                     std::string m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
