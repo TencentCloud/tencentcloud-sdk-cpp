@@ -14,22 +14,23 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tcss/v20201101/model/DescribeAssetImageRegistryListResponse.h>
+#include <tencentcloud/faceid/v20180301/model/PhoneVerificationCMCCResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tcss::V20201101::Model;
+using namespace TencentCloud::Faceid::V20180301::Model;
 using namespace std;
 
-DescribeAssetImageRegistryListResponse::DescribeAssetImageRegistryListResponse() :
-    m_listHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+PhoneVerificationCMCCResponse::PhoneVerificationCMCCResponse() :
+    m_resultHasBeenSet(false),
+    m_ispHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeAssetImageRegistryListResponse::Deserialize(const string &payload)
+CoreInternalOutcome PhoneVerificationCMCCResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,67 +64,68 @@ CoreInternalOutcome DescribeAssetImageRegistryListResponse::Deserialize(const st
     }
 
 
-    if (rsp.HasMember("List") && !rsp["List"].IsNull())
+    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
     {
-        if (!rsp["List"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `List` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["List"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["Result"].IsString())
         {
-            ImageRepoInfo item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_list.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `Result` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_listHasBeenSet = true;
+        m_result = string(rsp["Result"].GetString());
+        m_resultHasBeenSet = true;
     }
 
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    if (rsp.HasMember("Isp") && !rsp["Isp"].IsNull())
     {
-        if (!rsp["TotalCount"].IsUint64())
+        if (!rsp["Isp"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Isp` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_totalCount = rsp["TotalCount"].GetUint64();
-        m_totalCountHasBeenSet = true;
+        m_isp = string(rsp["Isp"].GetString());
+        m_ispHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Description") && !rsp["Description"].IsNull())
+    {
+        if (!rsp["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(rsp["Description"].GetString());
+        m_descriptionHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeAssetImageRegistryListResponse::ToJsonString() const
+string PhoneVerificationCMCCResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_listHasBeenSet)
+    if (m_resultHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "List";
+        string key = "Result";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_list.begin(); itr != m_list.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, rapidjson::Value(m_result.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_totalCountHasBeenSet)
+    if (m_ispHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TotalCount";
+        string key = "Isp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_totalCount, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -138,24 +140,34 @@ string DescribeAssetImageRegistryListResponse::ToJsonString() const
 }
 
 
-vector<ImageRepoInfo> DescribeAssetImageRegistryListResponse::GetList() const
+string PhoneVerificationCMCCResponse::GetResult() const
 {
-    return m_list;
+    return m_result;
 }
 
-bool DescribeAssetImageRegistryListResponse::ListHasBeenSet() const
+bool PhoneVerificationCMCCResponse::ResultHasBeenSet() const
 {
-    return m_listHasBeenSet;
+    return m_resultHasBeenSet;
 }
 
-uint64_t DescribeAssetImageRegistryListResponse::GetTotalCount() const
+string PhoneVerificationCMCCResponse::GetIsp() const
 {
-    return m_totalCount;
+    return m_isp;
 }
 
-bool DescribeAssetImageRegistryListResponse::TotalCountHasBeenSet() const
+bool PhoneVerificationCMCCResponse::IspHasBeenSet() const
 {
-    return m_totalCountHasBeenSet;
+    return m_ispHasBeenSet;
+}
+
+string PhoneVerificationCMCCResponse::GetDescription() const
+{
+    return m_description;
+}
+
+bool PhoneVerificationCMCCResponse::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 
 

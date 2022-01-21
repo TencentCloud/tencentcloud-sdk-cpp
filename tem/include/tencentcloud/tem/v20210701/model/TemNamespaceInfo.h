@@ -338,6 +338,24 @@ namespace TencentCloud
                      */
                     bool EnableTswTraceServiceHasBeenSet() const;
 
+                    /**
+                     * 获取环境锁，1为上锁，0则为上锁
+                     * @return Locked 环境锁，1为上锁，0则为上锁
+                     */
+                    int64_t GetLocked() const;
+
+                    /**
+                     * 设置环境锁，1为上锁，0则为上锁
+                     * @param Locked 环境锁，1为上锁，0则为上锁
+                     */
+                    void SetLocked(const int64_t& _locked);
+
+                    /**
+                     * 判断参数 Locked 是否已赋值
+                     * @return Locked 是否已赋值
+                     */
+                    bool LockedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -436,6 +454,12 @@ namespace TencentCloud
                      */
                     bool m_enableTswTraceService;
                     bool m_enableTswTraceServiceHasBeenSet;
+
+                    /**
+                     * 环境锁，1为上锁，0则为上锁
+                     */
+                    int64_t m_locked;
+                    bool m_lockedHasBeenSet;
 
                 };
             }

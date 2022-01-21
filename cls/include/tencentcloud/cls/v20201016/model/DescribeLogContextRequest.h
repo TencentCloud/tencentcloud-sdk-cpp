@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取日志时间,  格式: YYYY-mm-dd HH:MM:SS
-                     * @return BTime 日志时间,  格式: YYYY-mm-dd HH:MM:SS
+                     * 获取日志时间,  格式: YYYY-mm-dd HH:MM:SS.FFF
+                     * @return BTime 日志时间,  格式: YYYY-mm-dd HH:MM:SS.FFF
                      */
                     std::string GetBTime() const;
 
                     /**
-                     * 设置日志时间,  格式: YYYY-mm-dd HH:MM:SS
-                     * @param BTime 日志时间,  格式: YYYY-mm-dd HH:MM:SS
+                     * 设置日志时间,  格式: YYYY-mm-dd HH:MM:SS.FFF
+                     * @param BTime 日志时间,  格式: YYYY-mm-dd HH:MM:SS.FFF
                      */
                     void SetBTime(const std::string& _bTime);
 
@@ -159,7 +159,7 @@ namespace TencentCloud
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 日志时间,  格式: YYYY-mm-dd HH:MM:SS
+                     * 日志时间,  格式: YYYY-mm-dd HH:MM:SS.FFF
                      */
                     std::string m_bTime;
                     bool m_bTimeHasBeenSet;

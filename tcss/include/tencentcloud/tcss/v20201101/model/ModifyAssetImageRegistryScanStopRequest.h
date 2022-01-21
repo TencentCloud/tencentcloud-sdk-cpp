@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcss/v20201101/model/ImageInfo.h>
+#include <tencentcloud/tcss/v20201101/model/AssetFilters.h>
 
 
 namespace TencentCloud
@@ -80,14 +81,14 @@ namespace TencentCloud
                     bool ImagesHasBeenSet() const;
 
                     /**
-                     * 获取扫描的镜像列表Id
-                     * @return Id 扫描的镜像列表Id
+                     * 获取扫描的镜像列表
+                     * @return Id 扫描的镜像列表
                      */
                     std::vector<uint64_t> GetId() const;
 
                     /**
-                     * 设置扫描的镜像列表Id
-                     * @param Id 扫描的镜像列表Id
+                     * 设置扫描的镜像列表
+                     * @param Id 扫描的镜像列表
                      */
                     void SetId(const std::vector<uint64_t>& _id);
 
@@ -96,6 +97,60 @@ namespace TencentCloud
                      * @return Id 是否已赋值
                      */
                     bool IdHasBeenSet() const;
+
+                    /**
+                     * 获取过滤条件
+                     * @return Filters 过滤条件
+                     */
+                    std::vector<AssetFilters> GetFilters() const;
+
+                    /**
+                     * 设置过滤条件
+                     * @param Filters 过滤条件
+                     */
+                    void SetFilters(const std::vector<AssetFilters>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     */
+                    bool FiltersHasBeenSet() const;
+
+                    /**
+                     * 获取不要扫描的镜像列表，与Filters配合使用
+                     * @return ExcludeImageList 不要扫描的镜像列表，与Filters配合使用
+                     */
+                    std::vector<uint64_t> GetExcludeImageList() const;
+
+                    /**
+                     * 设置不要扫描的镜像列表，与Filters配合使用
+                     * @param ExcludeImageList 不要扫描的镜像列表，与Filters配合使用
+                     */
+                    void SetExcludeImageList(const std::vector<uint64_t>& _excludeImageList);
+
+                    /**
+                     * 判断参数 ExcludeImageList 是否已赋值
+                     * @return ExcludeImageList 是否已赋值
+                     */
+                    bool ExcludeImageListHasBeenSet() const;
+
+                    /**
+                     * 获取是否仅扫描各repository最新版本的镜像
+                     * @return OnlyScanLatest 是否仅扫描各repository最新版本的镜像
+                     */
+                    bool GetOnlyScanLatest() const;
+
+                    /**
+                     * 设置是否仅扫描各repository最新版本的镜像
+                     * @param OnlyScanLatest 是否仅扫描各repository最新版本的镜像
+                     */
+                    void SetOnlyScanLatest(const bool& _onlyScanLatest);
+
+                    /**
+                     * 判断参数 OnlyScanLatest 是否已赋值
+                     * @return OnlyScanLatest 是否已赋值
+                     */
+                    bool OnlyScanLatestHasBeenSet() const;
 
                 private:
 
@@ -112,10 +167,28 @@ namespace TencentCloud
                     bool m_imagesHasBeenSet;
 
                     /**
-                     * 扫描的镜像列表Id
+                     * 扫描的镜像列表
                      */
                     std::vector<uint64_t> m_id;
                     bool m_idHasBeenSet;
+
+                    /**
+                     * 过滤条件
+                     */
+                    std::vector<AssetFilters> m_filters;
+                    bool m_filtersHasBeenSet;
+
+                    /**
+                     * 不要扫描的镜像列表，与Filters配合使用
+                     */
+                    std::vector<uint64_t> m_excludeImageList;
+                    bool m_excludeImageListHasBeenSet;
+
+                    /**
+                     * 是否仅扫描各repository最新版本的镜像
+                     */
+                    bool m_onlyScanLatest;
+                    bool m_onlyScanLatestHasBeenSet;
 
                 };
             }

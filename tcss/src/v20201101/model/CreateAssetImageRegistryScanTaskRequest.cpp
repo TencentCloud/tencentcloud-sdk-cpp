@@ -26,7 +26,10 @@ CreateAssetImageRegistryScanTaskRequest::CreateAssetImageRegistryScanTaskRequest
     m_allHasBeenSet(false),
     m_imagesHasBeenSet(false),
     m_scanTypeHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_filtersHasBeenSet(false),
+    m_excludeImageListHasBeenSet(false),
+    m_onlyScanLatestHasBeenSet(false)
 {
 }
 
@@ -84,6 +87,42 @@ string CreateAssetImageRegistryScanTaskRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_excludeImageListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExcludeImageList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_excludeImageList.begin(); itr != m_excludeImageList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_onlyScanLatestHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OnlyScanLatest";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_onlyScanLatest, allocator);
     }
 
 
@@ -156,6 +195,54 @@ void CreateAssetImageRegistryScanTaskRequest::SetId(const vector<uint64_t>& _id)
 bool CreateAssetImageRegistryScanTaskRequest::IdHasBeenSet() const
 {
     return m_idHasBeenSet;
+}
+
+vector<AssetFilters> CreateAssetImageRegistryScanTaskRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void CreateAssetImageRegistryScanTaskRequest::SetFilters(const vector<AssetFilters>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool CreateAssetImageRegistryScanTaskRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
+
+vector<uint64_t> CreateAssetImageRegistryScanTaskRequest::GetExcludeImageList() const
+{
+    return m_excludeImageList;
+}
+
+void CreateAssetImageRegistryScanTaskRequest::SetExcludeImageList(const vector<uint64_t>& _excludeImageList)
+{
+    m_excludeImageList = _excludeImageList;
+    m_excludeImageListHasBeenSet = true;
+}
+
+bool CreateAssetImageRegistryScanTaskRequest::ExcludeImageListHasBeenSet() const
+{
+    return m_excludeImageListHasBeenSet;
+}
+
+bool CreateAssetImageRegistryScanTaskRequest::GetOnlyScanLatest() const
+{
+    return m_onlyScanLatest;
+}
+
+void CreateAssetImageRegistryScanTaskRequest::SetOnlyScanLatest(const bool& _onlyScanLatest)
+{
+    m_onlyScanLatest = _onlyScanLatest;
+    m_onlyScanLatestHasBeenSet = true;
+}
+
+bool CreateAssetImageRegistryScanTaskRequest::OnlyScanLatestHasBeenSet() const
+{
+    return m_onlyScanLatestHasBeenSet;
 }
 
 

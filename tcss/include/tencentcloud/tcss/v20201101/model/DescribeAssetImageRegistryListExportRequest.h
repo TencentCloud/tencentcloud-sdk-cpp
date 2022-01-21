@@ -151,6 +151,24 @@ namespace TencentCloud
                      */
                     bool OrderHasBeenSet() const;
 
+                    /**
+                     * 获取是否仅展示repository版本最新的镜像，默认为false
+                     * @return OnlyShowLatest 是否仅展示repository版本最新的镜像，默认为false
+                     */
+                    bool GetOnlyShowLatest() const;
+
+                    /**
+                     * 设置是否仅展示repository版本最新的镜像，默认为false
+                     * @param OnlyShowLatest 是否仅展示repository版本最新的镜像，默认为false
+                     */
+                    void SetOnlyShowLatest(const bool& _onlyShowLatest);
+
+                    /**
+                     * 判断参数 OnlyShowLatest 是否已赋值
+                     * @return OnlyShowLatest 是否已赋值
+                     */
+                    bool OnlyShowLatestHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +206,12 @@ namespace TencentCloud
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
+
+                    /**
+                     * 是否仅展示repository版本最新的镜像，默认为false
+                     */
+                    bool m_onlyShowLatest;
+                    bool m_onlyShowLatestHasBeenSet;
 
                 };
             }

@@ -26,7 +26,8 @@ using namespace std;
 LicensePlateOCRResponse::LicensePlateOCRResponse() :
     m_numberHasBeenSet(false),
     m_confidenceHasBeenSet(false),
-    m_rectHasBeenSet(false)
+    m_rectHasBeenSet(false),
+    m_colorHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,16 @@ CoreInternalOutcome LicensePlateOCRResponse::Deserialize(const string &payload)
         m_rectHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Color") && !rsp["Color"].IsNull())
+    {
+        if (!rsp["Color"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Color` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_color = string(rsp["Color"].GetString());
+        m_colorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -134,6 +145,14 @@ string LicensePlateOCRResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_rect.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_colorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Color";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_color.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -176,6 +195,16 @@ Rect LicensePlateOCRResponse::GetRect() const
 bool LicensePlateOCRResponse::RectHasBeenSet() const
 {
     return m_rectHasBeenSet;
+}
+
+string LicensePlateOCRResponse::GetColor() const
+{
+    return m_color;
+}
+
+bool LicensePlateOCRResponse::ColorHasBeenSet() const
+{
+    return m_colorHasBeenSet;
 }
 
 

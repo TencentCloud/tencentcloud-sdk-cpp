@@ -87,6 +87,12 @@
 #include <tencentcloud/faceid/v20180301/model/MobileStatusResponse.h>
 #include <tencentcloud/faceid/v20180301/model/PhoneVerificationRequest.h>
 #include <tencentcloud/faceid/v20180301/model/PhoneVerificationResponse.h>
+#include <tencentcloud/faceid/v20180301/model/PhoneVerificationCMCCRequest.h>
+#include <tencentcloud/faceid/v20180301/model/PhoneVerificationCMCCResponse.h>
+#include <tencentcloud/faceid/v20180301/model/PhoneVerificationCTCCRequest.h>
+#include <tencentcloud/faceid/v20180301/model/PhoneVerificationCTCCResponse.h>
+#include <tencentcloud/faceid/v20180301/model/PhoneVerificationCUCCRequest.h>
+#include <tencentcloud/faceid/v20180301/model/PhoneVerificationCUCCResponse.h>
 
 
 namespace TencentCloud
@@ -197,6 +203,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::PhoneVerificationResponse> PhoneVerificationOutcome;
                 typedef std::future<PhoneVerificationOutcome> PhoneVerificationOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::PhoneVerificationRequest&, PhoneVerificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PhoneVerificationAsyncHandler;
+                typedef Outcome<Core::Error, Model::PhoneVerificationCMCCResponse> PhoneVerificationCMCCOutcome;
+                typedef std::future<PhoneVerificationCMCCOutcome> PhoneVerificationCMCCOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::PhoneVerificationCMCCRequest&, PhoneVerificationCMCCOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PhoneVerificationCMCCAsyncHandler;
+                typedef Outcome<Core::Error, Model::PhoneVerificationCTCCResponse> PhoneVerificationCTCCOutcome;
+                typedef std::future<PhoneVerificationCTCCOutcome> PhoneVerificationCTCCOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::PhoneVerificationCTCCRequest&, PhoneVerificationCTCCOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PhoneVerificationCTCCAsyncHandler;
+                typedef Outcome<Core::Error, Model::PhoneVerificationCUCCResponse> PhoneVerificationCUCCOutcome;
+                typedef std::future<PhoneVerificationCUCCOutcome> PhoneVerificationCUCCOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::PhoneVerificationCUCCRequest&, PhoneVerificationCUCCOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PhoneVerificationCUCCAsyncHandler;
 
 
 
@@ -490,6 +505,33 @@ namespace TencentCloud
                 PhoneVerificationOutcome PhoneVerification(const Model::PhoneVerificationRequest &request);
                 void PhoneVerificationAsync(const Model::PhoneVerificationRequest& request, const PhoneVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 PhoneVerificationOutcomeCallable PhoneVerificationCallable(const Model::PhoneVerificationRequest& request);
+
+                /**
+                 *本接口用于校验中国移动手机号、姓名和身份证号的真实性和一致性。中国移动支持的手机号段详情请查阅<a href="https://cloud.tencent.com/document/product/1007/46063">运营商类</a>文档。
+                 * @param req PhoneVerificationCMCCRequest
+                 * @return PhoneVerificationCMCCOutcome
+                 */
+                PhoneVerificationCMCCOutcome PhoneVerificationCMCC(const Model::PhoneVerificationCMCCRequest &request);
+                void PhoneVerificationCMCCAsync(const Model::PhoneVerificationCMCCRequest& request, const PhoneVerificationCMCCAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PhoneVerificationCMCCOutcomeCallable PhoneVerificationCMCCCallable(const Model::PhoneVerificationCMCCRequest& request);
+
+                /**
+                 *本接口用于校验中国电信手机号、姓名和身份证号的真实性和一致性。中国电信支持的手机号段详情请查阅<a href="https://cloud.tencent.com/document/product/1007/46063">运营商类</a>文档。
+                 * @param req PhoneVerificationCTCCRequest
+                 * @return PhoneVerificationCTCCOutcome
+                 */
+                PhoneVerificationCTCCOutcome PhoneVerificationCTCC(const Model::PhoneVerificationCTCCRequest &request);
+                void PhoneVerificationCTCCAsync(const Model::PhoneVerificationCTCCRequest& request, const PhoneVerificationCTCCAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PhoneVerificationCTCCOutcomeCallable PhoneVerificationCTCCCallable(const Model::PhoneVerificationCTCCRequest& request);
+
+                /**
+                 *本接口用于校验中国联通手机号、姓名和身份证号的真实性和一致性。中国联通支持的手机号段详情请查阅<a href="https://cloud.tencent.com/document/product/1007/46063">运营商类</a>文档。
+                 * @param req PhoneVerificationCUCCRequest
+                 * @return PhoneVerificationCUCCOutcome
+                 */
+                PhoneVerificationCUCCOutcome PhoneVerificationCUCC(const Model::PhoneVerificationCUCCRequest &request);
+                void PhoneVerificationCUCCAsync(const Model::PhoneVerificationCUCCRequest& request, const PhoneVerificationCUCCAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PhoneVerificationCUCCOutcomeCallable PhoneVerificationCUCCCallable(const Model::PhoneVerificationCUCCRequest& request);
 
             };
         }

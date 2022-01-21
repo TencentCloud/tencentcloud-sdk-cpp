@@ -22,7 +22,8 @@
 using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
-DescribeAssetImageRegistryDetailRequest::DescribeAssetImageRegistryDetailRequest()
+DescribeAssetImageRegistryDetailRequest::DescribeAssetImageRegistryDetailRequest() :
+    m_idHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string DescribeAssetImageRegistryDetailRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_id, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string DescribeAssetImageRegistryDetailRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t DescribeAssetImageRegistryDetailRequest::GetId() const
+{
+    return m_id;
+}
+
+void DescribeAssetImageRegistryDetailRequest::SetId(const uint64_t& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool DescribeAssetImageRegistryDetailRequest::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
+}
 
 

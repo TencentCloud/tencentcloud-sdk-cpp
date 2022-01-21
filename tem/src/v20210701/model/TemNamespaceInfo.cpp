@@ -36,7 +36,8 @@ TemNamespaceInfo::TemNamespaceInfo() :
     m_runInstancesNumHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_clusterStatusHasBeenSet(false),
-    m_enableTswTraceServiceHasBeenSet(false)
+    m_enableTswTraceServiceHasBeenSet(false),
+    m_lockedHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,16 @@ CoreInternalOutcome TemNamespaceInfo::Deserialize(const rapidjson::Value &value)
         m_enableTswTraceServiceHasBeenSet = true;
     }
 
+    if (value.HasMember("Locked") && !value["Locked"].IsNull())
+    {
+        if (!value["Locked"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemNamespaceInfo.Locked` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_locked = value["Locked"].GetInt64();
+        m_lockedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +349,14 @@ void TemNamespaceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "EnableTswTraceService";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableTswTraceService, allocator);
+    }
+
+    if (m_lockedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Locked";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_locked, allocator);
     }
 
 }
@@ -597,5 +616,21 @@ void TemNamespaceInfo::SetEnableTswTraceService(const bool& _enableTswTraceServi
 bool TemNamespaceInfo::EnableTswTraceServiceHasBeenSet() const
 {
     return m_enableTswTraceServiceHasBeenSet;
+}
+
+int64_t TemNamespaceInfo::GetLocked() const
+{
+    return m_locked;
+}
+
+void TemNamespaceInfo::SetLocked(const int64_t& _locked)
+{
+    m_locked = _locked;
+    m_lockedHasBeenSet = true;
+}
+
+bool TemNamespaceInfo::LockedHasBeenSet() const
+{
+    return m_lockedHasBeenSet;
 }
 

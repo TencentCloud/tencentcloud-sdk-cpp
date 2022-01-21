@@ -193,6 +193,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/ReverseShellWhiteListBaseInfo.h
   include/tencentcloud/tcss/v20201101/model/AccessControlRuleInfo.h
   include/tencentcloud/tcss/v20201101/model/DescribeAssetHostListResponse.h
+  include/tencentcloud/tcss/v20201101/model/ImageRepoInfo.h
   include/tencentcloud/tcss/v20201101/model/CreateAssetImageRegistryScanTaskResponse.h
   include/tencentcloud/tcss/v20201101/model/PortInfo.h
   include/tencentcloud/tcss/v20201101/model/DescribeAssetImageRegistrySummaryRequest.h
@@ -612,6 +613,7 @@ set(tcss_src
   src/v20201101/model/ReverseShellWhiteListBaseInfo.cpp
   src/v20201101/model/AccessControlRuleInfo.cpp
   src/v20201101/model/DescribeAssetHostListResponse.cpp
+  src/v20201101/model/ImageRepoInfo.cpp
   src/v20201101/model/CreateAssetImageRegistryScanTaskResponse.cpp
   src/v20201101/model/PortInfo.cpp
   src/v20201101/model/DescribeAssetImageRegistrySummaryRequest.cpp

@@ -42,7 +42,31 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取仓库列表id
+                     * @return Id 仓库列表id
+                     */
+                    uint64_t GetId() const;
+
+                    /**
+                     * 设置仓库列表id
+                     * @param Id 仓库列表id
+                     */
+                    void SetId(const uint64_t& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     */
+                    bool IdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 仓库列表id
+                     */
+                    uint64_t m_id;
+                    bool m_idHasBeenSet;
 
                 };
             }

@@ -27,7 +27,12 @@ RollingUpdateApplicationByVersionRequest::RollingUpdateApplicationByVersionReque
     m_environmentIdHasBeenSet(false),
     m_deployVersionHasBeenSet(false),
     m_packageNameHasBeenSet(false),
-    m_fromHasBeenSet(false)
+    m_fromHasBeenSet(false),
+    m_deployStrategyTypeHasBeenSet(false),
+    m_totalBatchCountHasBeenSet(false),
+    m_batchIntervalHasBeenSet(false),
+    m_betaBatchNumHasBeenSet(false),
+    m_minAvailableHasBeenSet(false)
 {
 }
 
@@ -76,6 +81,46 @@ string RollingUpdateApplicationByVersionRequest::ToJsonString() const
         string key = "From";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_from.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deployStrategyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeployStrategyType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deployStrategyType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_totalBatchCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalBatchCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_totalBatchCount, allocator);
+    }
+
+    if (m_batchIntervalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BatchInterval";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_batchInterval, allocator);
+    }
+
+    if (m_betaBatchNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BetaBatchNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_betaBatchNum, allocator);
+    }
+
+    if (m_minAvailableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MinAvailable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_minAvailable, allocator);
     }
 
 
@@ -164,6 +209,86 @@ void RollingUpdateApplicationByVersionRequest::SetFrom(const string& _from)
 bool RollingUpdateApplicationByVersionRequest::FromHasBeenSet() const
 {
     return m_fromHasBeenSet;
+}
+
+string RollingUpdateApplicationByVersionRequest::GetDeployStrategyType() const
+{
+    return m_deployStrategyType;
+}
+
+void RollingUpdateApplicationByVersionRequest::SetDeployStrategyType(const string& _deployStrategyType)
+{
+    m_deployStrategyType = _deployStrategyType;
+    m_deployStrategyTypeHasBeenSet = true;
+}
+
+bool RollingUpdateApplicationByVersionRequest::DeployStrategyTypeHasBeenSet() const
+{
+    return m_deployStrategyTypeHasBeenSet;
+}
+
+int64_t RollingUpdateApplicationByVersionRequest::GetTotalBatchCount() const
+{
+    return m_totalBatchCount;
+}
+
+void RollingUpdateApplicationByVersionRequest::SetTotalBatchCount(const int64_t& _totalBatchCount)
+{
+    m_totalBatchCount = _totalBatchCount;
+    m_totalBatchCountHasBeenSet = true;
+}
+
+bool RollingUpdateApplicationByVersionRequest::TotalBatchCountHasBeenSet() const
+{
+    return m_totalBatchCountHasBeenSet;
+}
+
+int64_t RollingUpdateApplicationByVersionRequest::GetBatchInterval() const
+{
+    return m_batchInterval;
+}
+
+void RollingUpdateApplicationByVersionRequest::SetBatchInterval(const int64_t& _batchInterval)
+{
+    m_batchInterval = _batchInterval;
+    m_batchIntervalHasBeenSet = true;
+}
+
+bool RollingUpdateApplicationByVersionRequest::BatchIntervalHasBeenSet() const
+{
+    return m_batchIntervalHasBeenSet;
+}
+
+int64_t RollingUpdateApplicationByVersionRequest::GetBetaBatchNum() const
+{
+    return m_betaBatchNum;
+}
+
+void RollingUpdateApplicationByVersionRequest::SetBetaBatchNum(const int64_t& _betaBatchNum)
+{
+    m_betaBatchNum = _betaBatchNum;
+    m_betaBatchNumHasBeenSet = true;
+}
+
+bool RollingUpdateApplicationByVersionRequest::BetaBatchNumHasBeenSet() const
+{
+    return m_betaBatchNumHasBeenSet;
+}
+
+int64_t RollingUpdateApplicationByVersionRequest::GetMinAvailable() const
+{
+    return m_minAvailable;
+}
+
+void RollingUpdateApplicationByVersionRequest::SetMinAvailable(const int64_t& _minAvailable)
+{
+    m_minAvailable = _minAvailable;
+    m_minAvailableHasBeenSet = true;
+}
+
+bool RollingUpdateApplicationByVersionRequest::MinAvailableHasBeenSet() const
+{
+    return m_minAvailableHasBeenSet;
 }
 
 

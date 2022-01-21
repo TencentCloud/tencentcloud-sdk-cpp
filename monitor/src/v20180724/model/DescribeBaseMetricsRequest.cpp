@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeBaseMetricsRequest::DescribeBaseMetricsRequest() :
     m_namespaceHasBeenSet(false),
-    m_metricNameHasBeenSet(false)
+    m_metricNameHasBeenSet(false),
+    m_dimensionsHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,19 @@ string DescribeBaseMetricsRequest::ToJsonString() const
         string key = "MetricName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_metricName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dimensionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Dimensions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_dimensions.begin(); itr != m_dimensions.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -89,6 +103,22 @@ void DescribeBaseMetricsRequest::SetMetricName(const string& _metricName)
 bool DescribeBaseMetricsRequest::MetricNameHasBeenSet() const
 {
     return m_metricNameHasBeenSet;
+}
+
+vector<string> DescribeBaseMetricsRequest::GetDimensions() const
+{
+    return m_dimensions;
+}
+
+void DescribeBaseMetricsRequest::SetDimensions(const vector<string>& _dimensions)
+{
+    m_dimensions = _dimensions;
+    m_dimensionsHasBeenSet = true;
+}
+
+bool DescribeBaseMetricsRequest::DimensionsHasBeenSet() const
+{
+    return m_dimensionsHasBeenSet;
 }
 
 

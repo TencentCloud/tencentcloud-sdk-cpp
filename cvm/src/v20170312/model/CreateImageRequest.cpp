@@ -30,7 +30,8 @@ CreateImageRequest::CreateImageRequest() :
     m_sysprepHasBeenSet(false),
     m_dataDiskIdsHasBeenSet(false),
     m_snapshotIdsHasBeenSet(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_tagSpecificationHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,21 @@ string CreateImageRequest::ToJsonString() const
         string key = "DryRun";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dryRun, allocator);
+    }
+
+    if (m_tagSpecificationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagSpecification";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagSpecification.begin(); itr != m_tagSpecification.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -249,6 +265,22 @@ void CreateImageRequest::SetDryRun(const bool& _dryRun)
 bool CreateImageRequest::DryRunHasBeenSet() const
 {
     return m_dryRunHasBeenSet;
+}
+
+vector<TagSpecification> CreateImageRequest::GetTagSpecification() const
+{
+    return m_tagSpecification;
+}
+
+void CreateImageRequest::SetTagSpecification(const vector<TagSpecification>& _tagSpecification)
+{
+    m_tagSpecification = _tagSpecification;
+    m_tagSpecificationHasBeenSet = true;
+}
+
+bool CreateImageRequest::TagSpecificationHasBeenSet() const
+{
+    return m_tagSpecificationHasBeenSet;
 }
 
 
