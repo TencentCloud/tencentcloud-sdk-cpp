@@ -200,6 +200,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/OsVersion.h
   include/tencentcloud/cvm/v20170312/model/ModifyImageAttributeResponse.h
   include/tencentcloud/cvm/v20170312/model/InquiryPriceRenewInstancesRequest.h
+  include/tencentcloud/cvm/v20170312/model/GPUInfo.h
   include/tencentcloud/cvm/v20170312/model/InstanceRefund.h
   include/tencentcloud/cvm/v20170312/model/DescribeInstanceTypeConfigsRequest.h
   include/tencentcloud/cvm/v20170312/model/RegionInfo.h
@@ -424,6 +425,7 @@ set(cvm_src
   src/v20170312/model/OsVersion.cpp
   src/v20170312/model/ModifyImageAttributeResponse.cpp
   src/v20170312/model/InquiryPriceRenewInstancesRequest.cpp
+  src/v20170312/model/GPUInfo.cpp
   src/v20170312/model/InstanceRefund.cpp
   src/v20170312/model/DescribeInstanceTypeConfigsRequest.cpp
   src/v20170312/model/RegionInfo.cpp

@@ -25,7 +25,8 @@ MeshStatus::MeshStatus() :
     m_canaryVersionHasBeenSet(false),
     m_prometheusHasBeenSet(false),
     m_stateMessageHasBeenSet(false),
-    m_activeOperationListHasBeenSet(false)
+    m_activeOperationListHasBeenSet(false),
+    m_tPSHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,23 @@ CoreInternalOutcome MeshStatus::Deserialize(const rapidjson::Value &value)
         m_activeOperationListHasBeenSet = true;
     }
 
+    if (value.HasMember("TPS") && !value["TPS"].IsNull())
+    {
+        if (!value["TPS"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MeshStatus.TPS` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_tPS.Deserialize(value["TPS"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_tPSHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -163,6 +181,15 @@ void MeshStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_tPSHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TPS";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tPS.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -246,5 +273,21 @@ void MeshStatus::SetActiveOperationList(const vector<ActiveOperation>& _activeOp
 bool MeshStatus::ActiveOperationListHasBeenSet() const
 {
     return m_activeOperationListHasBeenSet;
+}
+
+PrometheusStatus MeshStatus::GetTPS() const
+{
+    return m_tPS;
+}
+
+void MeshStatus::SetTPS(const PrometheusStatus& _tPS)
+{
+    m_tPS = _tPS;
+    m_tPSHasBeenSet = true;
+}
+
+bool MeshStatus::TPSHasBeenSet() const
+{
+    return m_tPSHasBeenSet;
 }
 

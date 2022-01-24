@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcss/v20201101/model/AssetFilters.h>
 
 
 namespace TencentCloud
@@ -43,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否扫描全部镜像
-                     * @return All 是否扫描全部镜像
+                     * 获取是否扫描全部镜像；全部镜像，镜像列表和根据过滤条件筛选三选一。
+                     * @return All 是否扫描全部镜像；全部镜像，镜像列表和根据过滤条件筛选三选一。
                      */
                     bool GetAll() const;
 
                     /**
-                     * 设置是否扫描全部镜像
-                     * @param All 是否扫描全部镜像
+                     * 设置是否扫描全部镜像；全部镜像，镜像列表和根据过滤条件筛选三选一。
+                     * @param All 是否扫描全部镜像；全部镜像，镜像列表和根据过滤条件筛选三选一。
                      */
                     void SetAll(const bool& _all);
 
@@ -61,14 +62,14 @@ namespace TencentCloud
                     bool AllHasBeenSet() const;
 
                     /**
-                     * 获取需要扫描的镜像列表
-                     * @return Images 需要扫描的镜像列表
+                     * 获取需要扫描的镜像列表；全部镜像，镜像列表和根据过滤条件筛选三选一。
+                     * @return Images 需要扫描的镜像列表；全部镜像，镜像列表和根据过滤条件筛选三选一。
                      */
                     std::vector<std::string> GetImages() const;
 
                     /**
-                     * 设置需要扫描的镜像列表
-                     * @param Images 需要扫描的镜像列表
+                     * 设置需要扫描的镜像列表；全部镜像，镜像列表和根据过滤条件筛选三选一。
+                     * @param Images 需要扫描的镜像列表；全部镜像，镜像列表和根据过滤条件筛选三选一。
                      */
                     void SetImages(const std::vector<std::string>& _images);
 
@@ -79,14 +80,14 @@ namespace TencentCloud
                     bool ImagesHasBeenSet() const;
 
                     /**
-                     * 获取扫描漏洞
-                     * @return ScanVul 扫描漏洞
+                     * 获取扫描漏洞；漏洞，木马和风险需选其一
+                     * @return ScanVul 扫描漏洞；漏洞，木马和风险需选其一
                      */
                     bool GetScanVul() const;
 
                     /**
-                     * 设置扫描漏洞
-                     * @param ScanVul 扫描漏洞
+                     * 设置扫描漏洞；漏洞，木马和风险需选其一
+                     * @param ScanVul 扫描漏洞；漏洞，木马和风险需选其一
                      */
                     void SetScanVul(const bool& _scanVul);
 
@@ -97,14 +98,14 @@ namespace TencentCloud
                     bool ScanVulHasBeenSet() const;
 
                     /**
-                     * 获取扫描木马
-                     * @return ScanVirus 扫描木马
+                     * 获取扫描木马；漏洞，木马和风险需选其一
+                     * @return ScanVirus 扫描木马；漏洞，木马和风险需选其一
                      */
                     bool GetScanVirus() const;
 
                     /**
-                     * 设置扫描木马
-                     * @param ScanVirus 扫描木马
+                     * 设置扫描木马；漏洞，木马和风险需选其一
+                     * @param ScanVirus 扫描木马；漏洞，木马和风险需选其一
                      */
                     void SetScanVirus(const bool& _scanVirus);
 
@@ -115,14 +116,14 @@ namespace TencentCloud
                     bool ScanVirusHasBeenSet() const;
 
                     /**
-                     * 获取扫描风险
-                     * @return ScanRisk 扫描风险
+                     * 获取扫描风险；漏洞，木马和风险需选其一
+                     * @return ScanRisk 扫描风险；漏洞，木马和风险需选其一
                      */
                     bool GetScanRisk() const;
 
                     /**
-                     * 设置扫描风险
-                     * @param ScanRisk 扫描风险
+                     * 设置扫描风险；漏洞，木马和风险需选其一
+                     * @param ScanRisk 扫描风险；漏洞，木马和风险需选其一
                      */
                     void SetScanRisk(const bool& _scanRisk);
 
@@ -132,37 +133,85 @@ namespace TencentCloud
                      */
                     bool ScanRiskHasBeenSet() const;
 
+                    /**
+                     * 获取根据过滤条件筛选出镜像；全部镜像，镜像列表和根据过滤条件筛选三选一。
+                     * @return Filters 根据过滤条件筛选出镜像；全部镜像，镜像列表和根据过滤条件筛选三选一。
+                     */
+                    std::vector<AssetFilters> GetFilters() const;
+
+                    /**
+                     * 设置根据过滤条件筛选出镜像；全部镜像，镜像列表和根据过滤条件筛选三选一。
+                     * @param Filters 根据过滤条件筛选出镜像；全部镜像，镜像列表和根据过滤条件筛选三选一。
+                     */
+                    void SetFilters(const std::vector<AssetFilters>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     */
+                    bool FiltersHasBeenSet() const;
+
+                    /**
+                     * 获取根据过滤条件筛选出镜像，再排除个别镜像
+                     * @return ExcludeImageIds 根据过滤条件筛选出镜像，再排除个别镜像
+                     */
+                    std::vector<std::string> GetExcludeImageIds() const;
+
+                    /**
+                     * 设置根据过滤条件筛选出镜像，再排除个别镜像
+                     * @param ExcludeImageIds 根据过滤条件筛选出镜像，再排除个别镜像
+                     */
+                    void SetExcludeImageIds(const std::vector<std::string>& _excludeImageIds);
+
+                    /**
+                     * 判断参数 ExcludeImageIds 是否已赋值
+                     * @return ExcludeImageIds 是否已赋值
+                     */
+                    bool ExcludeImageIdsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 是否扫描全部镜像
+                     * 是否扫描全部镜像；全部镜像，镜像列表和根据过滤条件筛选三选一。
                      */
                     bool m_all;
                     bool m_allHasBeenSet;
 
                     /**
-                     * 需要扫描的镜像列表
+                     * 需要扫描的镜像列表；全部镜像，镜像列表和根据过滤条件筛选三选一。
                      */
                     std::vector<std::string> m_images;
                     bool m_imagesHasBeenSet;
 
                     /**
-                     * 扫描漏洞
+                     * 扫描漏洞；漏洞，木马和风险需选其一
                      */
                     bool m_scanVul;
                     bool m_scanVulHasBeenSet;
 
                     /**
-                     * 扫描木马
+                     * 扫描木马；漏洞，木马和风险需选其一
                      */
                     bool m_scanVirus;
                     bool m_scanVirusHasBeenSet;
 
                     /**
-                     * 扫描风险
+                     * 扫描风险；漏洞，木马和风险需选其一
                      */
                     bool m_scanRisk;
                     bool m_scanRiskHasBeenSet;
+
+                    /**
+                     * 根据过滤条件筛选出镜像；全部镜像，镜像列表和根据过滤条件筛选三选一。
+                     */
+                    std::vector<AssetFilters> m_filters;
+                    bool m_filtersHasBeenSet;
+
+                    /**
+                     * 根据过滤条件筛选出镜像，再排除个别镜像
+                     */
+                    std::vector<std::string> m_excludeImageIds;
+                    bool m_excludeImageIdsHasBeenSet;
 
                 };
             }

@@ -31,6 +31,7 @@
 #include <tencentcloud/cvm/v20170312/model/VirtualPrivateCloud.h>
 #include <tencentcloud/cvm/v20170312/model/LoginSettings.h>
 #include <tencentcloud/cvm/v20170312/model/Tag.h>
+#include <tencentcloud/cvm/v20170312/model/GPUInfo.h>
 
 
 namespace TencentCloud
@@ -713,6 +714,28 @@ namespace TencentCloud
                      */
                     bool IsolatedSourceHasBeenSet() const;
 
+                    /**
+                     * 获取GPU信息。如果是gpu类型子机，该值会返回GPU信息，如果是其他类型子机则不返回。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GPUInfo GPU信息。如果是gpu类型子机，该值会返回GPU信息，如果是其他类型子机则不返回。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    GPUInfo GetGPUInfo() const;
+
+                    /**
+                     * 设置GPU信息。如果是gpu类型子机，该值会返回GPU信息，如果是其他类型子机则不返回。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GPUInfo GPU信息。如果是gpu类型子机，该值会返回GPU信息，如果是其他类型子机则不返回。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGPUInfo(const GPUInfo& _gPUInfo);
+
+                    /**
+                     * 判断参数 GPUInfo 是否已赋值
+                     * @return GPUInfo 是否已赋值
+                     */
+                    bool GPUInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -930,6 +953,13 @@ namespace TencentCloud
                      */
                     std::string m_isolatedSource;
                     bool m_isolatedSourceHasBeenSet;
+
+                    /**
+                     * GPU信息。如果是gpu类型子机，该值会返回GPU信息，如果是其他类型子机则不返回。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    GPUInfo m_gPUInfo;
+                    bool m_gPUInfoHasBeenSet;
 
                 };
             }

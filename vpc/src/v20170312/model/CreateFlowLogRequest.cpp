@@ -27,10 +27,12 @@ CreateFlowLogRequest::CreateFlowLogRequest() :
     m_resourceTypeHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_trafficTypeHasBeenSet(false),
-    m_cloudLogIdHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_flowLogDescriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_cloudLogIdHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_storageTypeHasBeenSet(false),
+    m_flowLogStorageHasBeenSet(false)
 {
 }
 
@@ -73,14 +75,6 @@ string CreateFlowLogRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_trafficType.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_cloudLogIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CloudLogId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_cloudLogId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_vpcIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -97,6 +91,14 @@ string CreateFlowLogRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_flowLogDescription.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_cloudLogIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudLogId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cloudLogId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_tagsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +112,23 @@ string CreateFlowLogRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_storageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_storageType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowLogStorageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowLogStorage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_flowLogStorage.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -184,22 +203,6 @@ bool CreateFlowLogRequest::TrafficTypeHasBeenSet() const
     return m_trafficTypeHasBeenSet;
 }
 
-string CreateFlowLogRequest::GetCloudLogId() const
-{
-    return m_cloudLogId;
-}
-
-void CreateFlowLogRequest::SetCloudLogId(const string& _cloudLogId)
-{
-    m_cloudLogId = _cloudLogId;
-    m_cloudLogIdHasBeenSet = true;
-}
-
-bool CreateFlowLogRequest::CloudLogIdHasBeenSet() const
-{
-    return m_cloudLogIdHasBeenSet;
-}
-
 string CreateFlowLogRequest::GetVpcId() const
 {
     return m_vpcId;
@@ -232,6 +235,22 @@ bool CreateFlowLogRequest::FlowLogDescriptionHasBeenSet() const
     return m_flowLogDescriptionHasBeenSet;
 }
 
+string CreateFlowLogRequest::GetCloudLogId() const
+{
+    return m_cloudLogId;
+}
+
+void CreateFlowLogRequest::SetCloudLogId(const string& _cloudLogId)
+{
+    m_cloudLogId = _cloudLogId;
+    m_cloudLogIdHasBeenSet = true;
+}
+
+bool CreateFlowLogRequest::CloudLogIdHasBeenSet() const
+{
+    return m_cloudLogIdHasBeenSet;
+}
+
 vector<Tag> CreateFlowLogRequest::GetTags() const
 {
     return m_tags;
@@ -246,6 +265,38 @@ void CreateFlowLogRequest::SetTags(const vector<Tag>& _tags)
 bool CreateFlowLogRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string CreateFlowLogRequest::GetStorageType() const
+{
+    return m_storageType;
+}
+
+void CreateFlowLogRequest::SetStorageType(const string& _storageType)
+{
+    m_storageType = _storageType;
+    m_storageTypeHasBeenSet = true;
+}
+
+bool CreateFlowLogRequest::StorageTypeHasBeenSet() const
+{
+    return m_storageTypeHasBeenSet;
+}
+
+FlowLogStorage CreateFlowLogRequest::GetFlowLogStorage() const
+{
+    return m_flowLogStorage;
+}
+
+void CreateFlowLogRequest::SetFlowLogStorage(const FlowLogStorage& _flowLogStorage)
+{
+    m_flowLogStorage = _flowLogStorage;
+    m_flowLogStorageHasBeenSet = true;
+}
+
+bool CreateFlowLogRequest::FlowLogStorageHasBeenSet() const
+{
+    return m_flowLogStorageHasBeenSet;
 }
 
 

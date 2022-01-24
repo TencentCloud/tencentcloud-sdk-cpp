@@ -128,14 +128,14 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云。
-                     * @return ReplyToAddresses 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云。
+                     * 获取邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云（暂未支持）
+                     * @return ReplyToAddresses 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云（暂未支持）
                      */
                     std::string GetReplyToAddresses() const;
 
                     /**
-                     * 设置邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云。
-                     * @param ReplyToAddresses 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云。
+                     * 设置邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云（暂未支持）
+                     * @param ReplyToAddresses 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云（暂未支持）
                      */
                     void SetReplyToAddresses(const std::string& _replyToAddresses);
 
@@ -164,14 +164,14 @@ namespace TencentCloud
                     bool TemplateHasBeenSet() const;
 
                     /**
-                     * 获取使用API直接发送内容时，填写的邮件内容
-                     * @return Simple 使用API直接发送内容时，填写的邮件内容
+                     * 获取使用API直接发送内容时，填写的邮件内容（暂未支持）
+                     * @return Simple 使用API直接发送内容时，填写的邮件内容（暂未支持）
                      */
                     Simple GetSimple() const;
 
                     /**
-                     * 设置使用API直接发送内容时，填写的邮件内容
-                     * @param Simple 使用API直接发送内容时，填写的邮件内容
+                     * 设置使用API直接发送内容时，填写的邮件内容（暂未支持）
+                     * @param Simple 使用API直接发送内容时，填写的邮件内容（暂未支持）
                      */
                     void SetSimple(const Simple& _simple);
 
@@ -182,14 +182,14 @@ namespace TencentCloud
                     bool SimpleHasBeenSet() const;
 
                     /**
-                     * 获取需要发送附件时，填写附件相关参数。
-                     * @return Attachments 需要发送附件时，填写附件相关参数。
+                     * 获取需要发送附件时，填写附件相关参数（暂未支持）
+                     * @return Attachments 需要发送附件时，填写附件相关参数（暂未支持）
                      */
                     std::vector<Attachment> GetAttachments() const;
 
                     /**
-                     * 设置需要发送附件时，填写附件相关参数。
-                     * @param Attachments 需要发送附件时，填写附件相关参数。
+                     * 设置需要发送附件时，填写附件相关参数（暂未支持）
+                     * @param Attachments 需要发送附件时，填写附件相关参数（暂未支持）
                      */
                     void SetAttachments(const std::vector<Attachment>& _attachments);
 
@@ -282,7 +282,7 @@ namespace TencentCloud
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云。
+                     * 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云（暂未支持）
                      */
                     std::string m_replyToAddresses;
                     bool m_replyToAddressesHasBeenSet;
@@ -294,13 +294,13 @@ namespace TencentCloud
                     bool m_templateHasBeenSet;
 
                     /**
-                     * 使用API直接发送内容时，填写的邮件内容
+                     * 使用API直接发送内容时，填写的邮件内容（暂未支持）
                      */
                     Simple m_simple;
                     bool m_simpleHasBeenSet;
 
                     /**
-                     * 需要发送附件时，填写附件相关参数。
+                     * 需要发送附件时，填写附件相关参数（暂未支持）
                      */
                     std::vector<Attachment> m_attachments;
                     bool m_attachmentsHasBeenSet;

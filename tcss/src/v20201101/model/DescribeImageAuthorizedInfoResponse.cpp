@@ -27,7 +27,8 @@ DescribeImageAuthorizedInfoResponse::DescribeImageAuthorizedInfoResponse() :
     m_totalAuthorizedCntHasBeenSet(false),
     m_usedAuthorizedCntHasBeenSet(false),
     m_scannedImageCntHasBeenSet(false),
-    m_notScannedImageCntHasBeenSet(false)
+    m_notScannedImageCntHasBeenSet(false),
+    m_notScannedLocalImageCntHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome DescribeImageAuthorizedInfoResponse::Deserialize(const strin
         m_notScannedImageCntHasBeenSet = true;
     }
 
+    if (rsp.HasMember("NotScannedLocalImageCnt") && !rsp["NotScannedLocalImageCnt"].IsNull())
+    {
+        if (!rsp["NotScannedLocalImageCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NotScannedLocalImageCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_notScannedLocalImageCnt = rsp["NotScannedLocalImageCnt"].GetUint64();
+        m_notScannedLocalImageCntHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +156,14 @@ string DescribeImageAuthorizedInfoResponse::ToJsonString() const
         string key = "NotScannedImageCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_notScannedImageCnt, allocator);
+    }
+
+    if (m_notScannedLocalImageCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotScannedLocalImageCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_notScannedLocalImageCnt, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -197,6 +216,16 @@ uint64_t DescribeImageAuthorizedInfoResponse::GetNotScannedImageCnt() const
 bool DescribeImageAuthorizedInfoResponse::NotScannedImageCntHasBeenSet() const
 {
     return m_notScannedImageCntHasBeenSet;
+}
+
+uint64_t DescribeImageAuthorizedInfoResponse::GetNotScannedLocalImageCnt() const
+{
+    return m_notScannedLocalImageCnt;
+}
+
+bool DescribeImageAuthorizedInfoResponse::NotScannedLocalImageCntHasBeenSet() const
+{
+    return m_notScannedLocalImageCntHasBeenSet;
 }
 
 

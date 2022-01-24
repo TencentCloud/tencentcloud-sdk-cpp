@@ -83,6 +83,49 @@ CccClient::BindStaffSkillGroupListOutcomeCallable CccClient::BindStaffSkillGroup
     return task->get_future();
 }
 
+CccClient::CreateCallOutSessionOutcome CccClient::CreateCallOutSession(const CreateCallOutSessionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCallOutSession");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCallOutSessionResponse rsp = CreateCallOutSessionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCallOutSessionOutcome(rsp);
+        else
+            return CreateCallOutSessionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCallOutSessionOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::CreateCallOutSessionAsync(const CreateCallOutSessionRequest& request, const CreateCallOutSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCallOutSession(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::CreateCallOutSessionOutcomeCallable CccClient::CreateCallOutSessionCallable(const CreateCallOutSessionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCallOutSessionOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCallOutSession(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::CreateSDKLoginTokenOutcome CccClient::CreateSDKLoginToken(const CreateSDKLoginTokenRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSDKLoginToken");
@@ -248,6 +291,49 @@ CccClient::DeleteStaffOutcomeCallable CccClient::DeleteStaffCallable(const Delet
         [this, request]()
         {
             return this->DeleteStaff(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CccClient::DescribeAutoCalloutTasksOutcome CccClient::DescribeAutoCalloutTasks(const DescribeAutoCalloutTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAutoCalloutTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAutoCalloutTasksResponse rsp = DescribeAutoCalloutTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAutoCalloutTasksOutcome(rsp);
+        else
+            return DescribeAutoCalloutTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAutoCalloutTasksOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::DescribeAutoCalloutTasksAsync(const DescribeAutoCalloutTasksRequest& request, const DescribeAutoCalloutTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAutoCalloutTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::DescribeAutoCalloutTasksOutcomeCallable CccClient::DescribeAutoCalloutTasksCallable(const DescribeAutoCalloutTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAutoCalloutTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAutoCalloutTasks(request);
         }
     );
 

@@ -28,7 +28,10 @@ ParameterInfo::ParameterInfo() :
     m_typeHasBeenSet(false),
     m_minimumHasBeenSet(false),
     m_maximumHasBeenSet(false),
-    m_modifedTimeHasBeenSet(false)
+    m_modifedTimeHasBeenSet(false),
+    m_valueStringHasBeenSet(false),
+    m_defaultValueStringHasBeenSet(false),
+    m_rangeHasBeenSet(false)
 {
 }
 
@@ -117,6 +120,36 @@ CoreInternalOutcome ParameterInfo::Deserialize(const rapidjson::Value &value)
         m_modifedTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ValueString") && !value["ValueString"].IsNull())
+    {
+        if (!value["ValueString"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ParameterInfo.ValueString` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_valueString = string(value["ValueString"].GetString());
+        m_valueStringHasBeenSet = true;
+    }
+
+    if (value.HasMember("DefaultValueString") && !value["DefaultValueString"].IsNull())
+    {
+        if (!value["DefaultValueString"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ParameterInfo.DefaultValueString` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultValueString = string(value["DefaultValueString"].GetString());
+        m_defaultValueStringHasBeenSet = true;
+    }
+
+    if (value.HasMember("Range") && !value["Range"].IsNull())
+    {
+        if (!value["Range"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ParameterInfo.Range` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_range = string(value["Range"].GetString());
+        m_rangeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +219,30 @@ void ParameterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "ModifedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modifedTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_valueStringHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValueString";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_valueString.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_defaultValueStringHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultValueString";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_defaultValueString.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rangeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Range";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_range.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +374,53 @@ void ParameterInfo::SetModifedTime(const string& _modifedTime)
 bool ParameterInfo::ModifedTimeHasBeenSet() const
 {
     return m_modifedTimeHasBeenSet;
+}
+
+string ParameterInfo::GetValueString() const
+{
+    return m_valueString;
+}
+
+void ParameterInfo::SetValueString(const string& _valueString)
+{
+    m_valueString = _valueString;
+    m_valueStringHasBeenSet = true;
+}
+
+bool ParameterInfo::ValueStringHasBeenSet() const
+{
+    return m_valueStringHasBeenSet;
+}
+
+string ParameterInfo::GetDefaultValueString() const
+{
+    return m_defaultValueString;
+}
+
+void ParameterInfo::SetDefaultValueString(const string& _defaultValueString)
+{
+    m_defaultValueString = _defaultValueString;
+    m_defaultValueStringHasBeenSet = true;
+}
+
+bool ParameterInfo::DefaultValueStringHasBeenSet() const
+{
+    return m_defaultValueStringHasBeenSet;
+}
+
+string ParameterInfo::GetRange() const
+{
+    return m_range;
+}
+
+void ParameterInfo::SetRange(const string& _range)
+{
+    m_range = _range;
+    m_rangeHasBeenSet = true;
+}
+
+bool ParameterInfo::RangeHasBeenSet() const
+{
+    return m_rangeHasBeenSet;
 }
 

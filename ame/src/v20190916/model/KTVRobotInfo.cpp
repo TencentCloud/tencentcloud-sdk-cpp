@@ -28,7 +28,8 @@ KTVRobotInfo::KTVRobotInfo() :
     m_positionHasBeenSet(false),
     m_setAudioParamInputHasBeenSet(false),
     m_joinRoomInputHasBeenSet(false),
-    m_rTCSystemHasBeenSet(false)
+    m_rTCSystemHasBeenSet(false),
+    m_setPlayModeInputHasBeenSet(false)
 {
 }
 
@@ -134,6 +135,23 @@ CoreInternalOutcome KTVRobotInfo::Deserialize(const rapidjson::Value &value)
         m_rTCSystemHasBeenSet = true;
     }
 
+    if (value.HasMember("SetPlayModeInput") && !value["SetPlayModeInput"].IsNull())
+    {
+        if (!value["SetPlayModeInput"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `KTVRobotInfo.SetPlayModeInput` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_setPlayModeInput.Deserialize(value["SetPlayModeInput"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_setPlayModeInputHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -210,6 +228,15 @@ void KTVRobotInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "RTCSystem";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_rTCSystem.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_setPlayModeInputHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SetPlayModeInput";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_setPlayModeInput.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -341,5 +368,21 @@ void KTVRobotInfo::SetRTCSystem(const string& _rTCSystem)
 bool KTVRobotInfo::RTCSystemHasBeenSet() const
 {
     return m_rTCSystemHasBeenSet;
+}
+
+SetPlayModeCommandInput KTVRobotInfo::GetSetPlayModeInput() const
+{
+    return m_setPlayModeInput;
+}
+
+void KTVRobotInfo::SetSetPlayModeInput(const SetPlayModeCommandInput& _setPlayModeInput)
+{
+    m_setPlayModeInput = _setPlayModeInput;
+    m_setPlayModeInputHasBeenSet = true;
+}
+
+bool KTVRobotInfo::SetPlayModeInputHasBeenSet() const
+{
+    return m_setPlayModeInputHasBeenSet;
 }
 

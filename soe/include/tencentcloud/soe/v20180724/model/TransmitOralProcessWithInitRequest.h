@@ -341,34 +341,18 @@ namespace TencentCloud
                     bool SoeAppIdHasBeenSet() const;
 
                     /**
-                     * 获取音频存储模式
-0：不存储
-1：存储到公共对象存储，不会产生费用，存储时间为一个月。输出结果为该会话最后一个分片TransmitOralProcess 返回结果 AudioUrl 字段；
-2：永久存储音频，需要提工单申请，会产生一定的存储费用；
-3：自定义存储，将音频存储到自定义的腾讯云[对象存储](https://cloud.tencent.com/product/cos)中。
-注：对可用性要求较高的用户建议自行存储至腾讯云COS。
-                     * @return StorageMode 音频存储模式
-0：不存储
-1：存储到公共对象存储，不会产生费用，存储时间为一个月。输出结果为该会话最后一个分片TransmitOralProcess 返回结果 AudioUrl 字段；
-2：永久存储音频，需要提工单申请，会产生一定的存储费用；
-3：自定义存储，将音频存储到自定义的腾讯云[对象存储](https://cloud.tencent.com/product/cos)中。
-注：对可用性要求较高的用户建议自行存储至腾讯云COS。
+                     * 获取音频存储模式，此参数已废弃，无需设置，设置与否都默认为0不存储；
+注：有存储需求的用户建议自行存储至腾讯云COS[对象存储](https://cloud.tencent.com/product/cos)使用。
+                     * @return StorageMode 音频存储模式，此参数已废弃，无需设置，设置与否都默认为0不存储；
+注：有存储需求的用户建议自行存储至腾讯云COS[对象存储](https://cloud.tencent.com/product/cos)使用。
                      */
                     int64_t GetStorageMode() const;
 
                     /**
-                     * 设置音频存储模式
-0：不存储
-1：存储到公共对象存储，不会产生费用，存储时间为一个月。输出结果为该会话最后一个分片TransmitOralProcess 返回结果 AudioUrl 字段；
-2：永久存储音频，需要提工单申请，会产生一定的存储费用；
-3：自定义存储，将音频存储到自定义的腾讯云[对象存储](https://cloud.tencent.com/product/cos)中。
-注：对可用性要求较高的用户建议自行存储至腾讯云COS。
-                     * @param StorageMode 音频存储模式
-0：不存储
-1：存储到公共对象存储，不会产生费用，存储时间为一个月。输出结果为该会话最后一个分片TransmitOralProcess 返回结果 AudioUrl 字段；
-2：永久存储音频，需要提工单申请，会产生一定的存储费用；
-3：自定义存储，将音频存储到自定义的腾讯云[对象存储](https://cloud.tencent.com/product/cos)中。
-注：对可用性要求较高的用户建议自行存储至腾讯云COS。
+                     * 设置音频存储模式，此参数已废弃，无需设置，设置与否都默认为0不存储；
+注：有存储需求的用户建议自行存储至腾讯云COS[对象存储](https://cloud.tencent.com/product/cos)使用。
+                     * @param StorageMode 音频存储模式，此参数已废弃，无需设置，设置与否都默认为0不存储；
+注：有存储需求的用户建议自行存储至腾讯云COS[对象存储](https://cloud.tencent.com/product/cos)使用。
                      */
                     void SetStorageMode(const int64_t& _storageMode);
 
@@ -610,12 +594,8 @@ ServerType不填默认为0
                     bool m_soeAppIdHasBeenSet;
 
                     /**
-                     * 音频存储模式
-0：不存储
-1：存储到公共对象存储，不会产生费用，存储时间为一个月。输出结果为该会话最后一个分片TransmitOralProcess 返回结果 AudioUrl 字段；
-2：永久存储音频，需要提工单申请，会产生一定的存储费用；
-3：自定义存储，将音频存储到自定义的腾讯云[对象存储](https://cloud.tencent.com/product/cos)中。
-注：对可用性要求较高的用户建议自行存储至腾讯云COS。
+                     * 音频存储模式，此参数已废弃，无需设置，设置与否都默认为0不存储；
+注：有存储需求的用户建议自行存储至腾讯云COS[对象存储](https://cloud.tencent.com/product/cos)使用。
                      */
                     int64_t m_storageMode;
                     bool m_storageModeHasBeenSet;

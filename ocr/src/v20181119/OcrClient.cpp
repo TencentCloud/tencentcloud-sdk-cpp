@@ -1932,6 +1932,49 @@ OcrClient::RecognizeContainerOCROutcomeCallable OcrClient::RecognizeContainerOCR
     return task->get_future();
 }
 
+OcrClient::RecognizeHealthCodeOCROutcome OcrClient::RecognizeHealthCodeOCR(const RecognizeHealthCodeOCRRequest &request)
+{
+    auto outcome = MakeRequest(request, "RecognizeHealthCodeOCR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RecognizeHealthCodeOCRResponse rsp = RecognizeHealthCodeOCRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RecognizeHealthCodeOCROutcome(rsp);
+        else
+            return RecognizeHealthCodeOCROutcome(o.GetError());
+    }
+    else
+    {
+        return RecognizeHealthCodeOCROutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::RecognizeHealthCodeOCRAsync(const RecognizeHealthCodeOCRRequest& request, const RecognizeHealthCodeOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RecognizeHealthCodeOCR(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::RecognizeHealthCodeOCROutcomeCallable OcrClient::RecognizeHealthCodeOCRCallable(const RecognizeHealthCodeOCRRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RecognizeHealthCodeOCROutcome()>>(
+        [this, request]()
+        {
+            return this->RecognizeHealthCodeOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::RecognizeOnlineTaxiItineraryOCROutcome OcrClient::RecognizeOnlineTaxiItineraryOCR(const RecognizeOnlineTaxiItineraryOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "RecognizeOnlineTaxiItineraryOCR");

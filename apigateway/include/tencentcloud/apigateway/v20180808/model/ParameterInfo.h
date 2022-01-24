@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool UnitHasBeenSet() const;
 
                     /**
-                     * 获取类型
-                     * @return Type 类型
+                     * 获取类型, integer|string
+                     * @return Type 类型, integer|string
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置类型
-                     * @param Type 类型
+                     * 设置类型, integer|string
+                     * @param Type 类型, integer|string
                      */
                     void SetType(const std::string& _type);
 
@@ -190,6 +190,72 @@ namespace TencentCloud
                      */
                     bool ModifedTimeHasBeenSet() const;
 
+                    /**
+                     * 获取字符类型的值，当Type为string时才有意义
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ValueString 字符类型的值，当Type为string时才有意义
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetValueString() const;
+
+                    /**
+                     * 设置字符类型的值，当Type为string时才有意义
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ValueString 字符类型的值，当Type为string时才有意义
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetValueString(const std::string& _valueString);
+
+                    /**
+                     * 判断参数 ValueString 是否已赋值
+                     * @return ValueString 是否已赋值
+                     */
+                    bool ValueStringHasBeenSet() const;
+
+                    /**
+                     * 获取字符类型的默认值，当Type为string时才有意义
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DefaultValueString 字符类型的默认值，当Type为string时才有意义
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDefaultValueString() const;
+
+                    /**
+                     * 设置字符类型的默认值，当Type为string时才有意义
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DefaultValueString 字符类型的默认值，当Type为string时才有意义
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDefaultValueString(const std::string& _defaultValueString);
+
+                    /**
+                     * 判断参数 DefaultValueString 是否已赋值
+                     * @return DefaultValueString 是否已赋值
+                     */
+                    bool DefaultValueStringHasBeenSet() const;
+
+                    /**
+                     * 获取可调整范围
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Range 可调整范围
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRange() const;
+
+                    /**
+                     * 设置可调整范围
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Range 可调整范围
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRange(const std::string& _range);
+
+                    /**
+                     * 判断参数 Range 是否已赋值
+                     * @return Range 是否已赋值
+                     */
+                    bool RangeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -217,7 +283,7 @@ namespace TencentCloud
                     bool m_unitHasBeenSet;
 
                     /**
-                     * 类型
+                     * 类型, integer|string
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -239,6 +305,27 @@ namespace TencentCloud
                      */
                     std::string m_modifedTime;
                     bool m_modifedTimeHasBeenSet;
+
+                    /**
+                     * 字符类型的值，当Type为string时才有意义
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_valueString;
+                    bool m_valueStringHasBeenSet;
+
+                    /**
+                     * 字符类型的默认值，当Type为string时才有意义
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_defaultValueString;
+                    bool m_defaultValueStringHasBeenSet;
+
+                    /**
+                     * 可调整范围
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_range;
+                    bool m_rangeHasBeenSet;
 
                 };
             }

@@ -27,7 +27,10 @@ IMCdrInfo::IMCdrInfo() :
     m_nicknameHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_staffIdHasBeenSet(false),
-    m_timestampHasBeenSet(false)
+    m_timestampHasBeenSet(false),
+    m_sessionIdHasBeenSet(false),
+    m_skillGroupIdHasBeenSet(false),
+    m_skillGroupNameHasBeenSet(false)
 {
 }
 
@@ -106,6 +109,36 @@ CoreInternalOutcome IMCdrInfo::Deserialize(const rapidjson::Value &value)
         m_timestampHasBeenSet = true;
     }
 
+    if (value.HasMember("SessionId") && !value["SessionId"].IsNull())
+    {
+        if (!value["SessionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IMCdrInfo.SessionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionId = string(value["SessionId"].GetString());
+        m_sessionIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SkillGroupId") && !value["SkillGroupId"].IsNull())
+    {
+        if (!value["SkillGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IMCdrInfo.SkillGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_skillGroupId = string(value["SkillGroupId"].GetString());
+        m_skillGroupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SkillGroupName") && !value["SkillGroupName"].IsNull())
+    {
+        if (!value["SkillGroupName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IMCdrInfo.SkillGroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_skillGroupName = string(value["SkillGroupName"].GetString());
+        m_skillGroupNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +200,30 @@ void IMCdrInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Timestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_timestamp, allocator);
+    }
+
+    if (m_sessionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_skillGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SkillGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_skillGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_skillGroupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SkillGroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_skillGroupName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +339,53 @@ void IMCdrInfo::SetTimestamp(const int64_t& _timestamp)
 bool IMCdrInfo::TimestampHasBeenSet() const
 {
     return m_timestampHasBeenSet;
+}
+
+string IMCdrInfo::GetSessionId() const
+{
+    return m_sessionId;
+}
+
+void IMCdrInfo::SetSessionId(const string& _sessionId)
+{
+    m_sessionId = _sessionId;
+    m_sessionIdHasBeenSet = true;
+}
+
+bool IMCdrInfo::SessionIdHasBeenSet() const
+{
+    return m_sessionIdHasBeenSet;
+}
+
+string IMCdrInfo::GetSkillGroupId() const
+{
+    return m_skillGroupId;
+}
+
+void IMCdrInfo::SetSkillGroupId(const string& _skillGroupId)
+{
+    m_skillGroupId = _skillGroupId;
+    m_skillGroupIdHasBeenSet = true;
+}
+
+bool IMCdrInfo::SkillGroupIdHasBeenSet() const
+{
+    return m_skillGroupIdHasBeenSet;
+}
+
+string IMCdrInfo::GetSkillGroupName() const
+{
+    return m_skillGroupName;
+}
+
+void IMCdrInfo::SetSkillGroupName(const string& _skillGroupName)
+{
+    m_skillGroupName = _skillGroupName;
+    m_skillGroupNameHasBeenSet = true;
+}
+
+bool IMCdrInfo::SkillGroupNameHasBeenSet() const
+{
+    return m_skillGroupNameHasBeenSet;
 }
 

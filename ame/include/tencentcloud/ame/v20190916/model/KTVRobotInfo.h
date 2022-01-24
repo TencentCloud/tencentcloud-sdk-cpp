@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ame/v20190916/model/SetAudioParamCommandInput.h>
 #include <tencentcloud/ame/v20190916/model/JoinRoomInput.h>
+#include <tencentcloud/ame/v20190916/model/SetPlayModeCommandInput.h>
 
 
 namespace TencentCloud
@@ -208,6 +209,40 @@ namespace TencentCloud
                      */
                     bool RTCSystemHasBeenSet() const;
 
+                    /**
+                     * 获取播放模式，PlayMode取值有：
+<li>RepeatPlaylist：列表循环</li>
+<li>Order：顺序播放</li>
+<li>RepeatSingle：单曲循环</li>
+<li>Shuffle：随机播放</li>
+                     * @return SetPlayModeInput 播放模式，PlayMode取值有：
+<li>RepeatPlaylist：列表循环</li>
+<li>Order：顺序播放</li>
+<li>RepeatSingle：单曲循环</li>
+<li>Shuffle：随机播放</li>
+                     */
+                    SetPlayModeCommandInput GetSetPlayModeInput() const;
+
+                    /**
+                     * 设置播放模式，PlayMode取值有：
+<li>RepeatPlaylist：列表循环</li>
+<li>Order：顺序播放</li>
+<li>RepeatSingle：单曲循环</li>
+<li>Shuffle：随机播放</li>
+                     * @param SetPlayModeInput 播放模式，PlayMode取值有：
+<li>RepeatPlaylist：列表循环</li>
+<li>Order：顺序播放</li>
+<li>RepeatSingle：单曲循环</li>
+<li>Shuffle：随机播放</li>
+                     */
+                    void SetSetPlayModeInput(const SetPlayModeCommandInput& _setPlayModeInput);
+
+                    /**
+                     * 判断参数 SetPlayModeInput 是否已赋值
+                     * @return SetPlayModeInput 是否已赋值
+                     */
+                    bool SetPlayModeInputHasBeenSet() const;
+
                 private:
 
                     /**
@@ -261,6 +296,16 @@ namespace TencentCloud
                      */
                     std::string m_rTCSystem;
                     bool m_rTCSystemHasBeenSet;
+
+                    /**
+                     * 播放模式，PlayMode取值有：
+<li>RepeatPlaylist：列表循环</li>
+<li>Order：顺序播放</li>
+<li>RepeatSingle：单曲循环</li>
+<li>Shuffle：随机播放</li>
+                     */
+                    SetPlayModeCommandInput m_setPlayModeInput;
+                    bool m_setPlayModeInputHasBeenSet;
 
                 };
             }

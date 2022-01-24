@@ -31,7 +31,10 @@ FlowLog::FlowLog() :
     m_cloudLogStateHasBeenSet(false),
     m_flowLogDescriptionHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_tagSetHasBeenSet(false)
+    m_tagSetHasBeenSet(false),
+    m_enableHasBeenSet(false),
+    m_storageTypeHasBeenSet(false),
+    m_flowLogStorageHasBeenSet(false)
 {
 }
 
@@ -160,6 +163,43 @@ CoreInternalOutcome FlowLog::Deserialize(const rapidjson::Value &value)
         m_tagSetHasBeenSet = true;
     }
 
+    if (value.HasMember("Enable") && !value["Enable"].IsNull())
+    {
+        if (!value["Enable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowLog.Enable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enable = value["Enable"].GetBool();
+        m_enableHasBeenSet = true;
+    }
+
+    if (value.HasMember("StorageType") && !value["StorageType"].IsNull())
+    {
+        if (!value["StorageType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowLog.StorageType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_storageType = string(value["StorageType"].GetString());
+        m_storageTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FlowLogStorage") && !value["FlowLogStorage"].IsNull())
+    {
+        if (!value["FlowLogStorage"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowLog.FlowLogStorage` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_flowLogStorage.Deserialize(value["FlowLogStorage"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_flowLogStorageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -260,6 +300,31 @@ void FlowLog::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_enableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Enable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enable, allocator);
+    }
+
+    if (m_storageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_storageType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowLogStorageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowLogStorage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_flowLogStorage.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -439,5 +504,53 @@ void FlowLog::SetTagSet(const vector<Tag>& _tagSet)
 bool FlowLog::TagSetHasBeenSet() const
 {
     return m_tagSetHasBeenSet;
+}
+
+bool FlowLog::GetEnable() const
+{
+    return m_enable;
+}
+
+void FlowLog::SetEnable(const bool& _enable)
+{
+    m_enable = _enable;
+    m_enableHasBeenSet = true;
+}
+
+bool FlowLog::EnableHasBeenSet() const
+{
+    return m_enableHasBeenSet;
+}
+
+string FlowLog::GetStorageType() const
+{
+    return m_storageType;
+}
+
+void FlowLog::SetStorageType(const string& _storageType)
+{
+    m_storageType = _storageType;
+    m_storageTypeHasBeenSet = true;
+}
+
+bool FlowLog::StorageTypeHasBeenSet() const
+{
+    return m_storageTypeHasBeenSet;
+}
+
+FlowLogStorage FlowLog::GetFlowLogStorage() const
+{
+    return m_flowLogStorage;
+}
+
+void FlowLog::SetFlowLogStorage(const FlowLogStorage& _flowLogStorage)
+{
+    m_flowLogStorage = _flowLogStorage;
+    m_flowLogStorageHasBeenSet = true;
+}
+
+bool FlowLog::FlowLogStorageHasBeenSet() const
+{
+    return m_flowLogStorageHasBeenSet;
 }
 

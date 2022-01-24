@@ -26,6 +26,7 @@
 #include <tencentcloud/ame/v20190916/model/SeekCommandInput.h>
 #include <tencentcloud/ame/v20190916/model/SetAudioParamCommandInput.h>
 #include <tencentcloud/ame/v20190916/model/SendMessageCommandInput.h>
+#include <tencentcloud/ame/v20190916/model/SetPlayModeCommandInput.h>
 
 
 namespace TencentCloud
@@ -71,6 +72,7 @@ namespace TencentCloud
 <li>Pause：暂停</li>
 <li>SwitchPrevious：上一首</li>
 <li>SwitchNext：下一首</li>
+<li>SetPlayMode：设置播放模式</li>
 <li>Seek：调整播放进度</li>
 <li>SetPlaylist：歌单变更</li>
 <li>SetAudioParam：音频参数变更</li>
@@ -80,6 +82,7 @@ namespace TencentCloud
 <li>Pause：暂停</li>
 <li>SwitchPrevious：上一首</li>
 <li>SwitchNext：下一首</li>
+<li>SetPlayMode：设置播放模式</li>
 <li>Seek：调整播放进度</li>
 <li>SetPlaylist：歌单变更</li>
 <li>SetAudioParam：音频参数变更</li>
@@ -93,6 +96,7 @@ namespace TencentCloud
 <li>Pause：暂停</li>
 <li>SwitchPrevious：上一首</li>
 <li>SwitchNext：下一首</li>
+<li>SetPlayMode：设置播放模式</li>
 <li>Seek：调整播放进度</li>
 <li>SetPlaylist：歌单变更</li>
 <li>SetAudioParam：音频参数变更</li>
@@ -102,6 +106,7 @@ namespace TencentCloud
 <li>Pause：暂停</li>
 <li>SwitchPrevious：上一首</li>
 <li>SwitchNext：下一首</li>
+<li>SetPlayMode：设置播放模式</li>
 <li>Seek：调整播放进度</li>
 <li>SetPlaylist：歌单变更</li>
 <li>SetAudioParam：音频参数变更</li>
@@ -205,6 +210,24 @@ namespace TencentCloud
                      */
                     bool SendMessageCommandInputHasBeenSet() const;
 
+                    /**
+                     * 获取播放模式，当Command取SetPlayMode时，必填。
+                     * @return SetPlayModeCommandInput 播放模式，当Command取SetPlayMode时，必填。
+                     */
+                    SetPlayModeCommandInput GetSetPlayModeCommandInput() const;
+
+                    /**
+                     * 设置播放模式，当Command取SetPlayMode时，必填。
+                     * @param SetPlayModeCommandInput 播放模式，当Command取SetPlayMode时，必填。
+                     */
+                    void SetSetPlayModeCommandInput(const SetPlayModeCommandInput& _setPlayModeCommandInput);
+
+                    /**
+                     * 判断参数 SetPlayModeCommandInput 是否已赋值
+                     * @return SetPlayModeCommandInput 是否已赋值
+                     */
+                    bool SetPlayModeCommandInputHasBeenSet() const;
+
                 private:
 
                     /**
@@ -219,6 +242,7 @@ namespace TencentCloud
 <li>Pause：暂停</li>
 <li>SwitchPrevious：上一首</li>
 <li>SwitchNext：下一首</li>
+<li>SetPlayMode：设置播放模式</li>
 <li>Seek：调整播放进度</li>
 <li>SetPlaylist：歌单变更</li>
 <li>SetAudioParam：音频参数变更</li>
@@ -256,6 +280,12 @@ namespace TencentCloud
                      */
                     SendMessageCommandInput m_sendMessageCommandInput;
                     bool m_sendMessageCommandInputHasBeenSet;
+
+                    /**
+                     * 播放模式，当Command取SetPlayMode时，必填。
+                     */
+                    SetPlayModeCommandInput m_setPlayModeCommandInput;
+                    bool m_setPlayModeCommandInputHasBeenSet;
 
                 };
             }

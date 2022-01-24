@@ -67,6 +67,7 @@ set(ame_public_header_model
   include/tencentcloud/ame/v20190916/model/KTVRobotInfo.h
   include/tencentcloud/ame/v20190916/model/DescribeItemsRequest.h
   include/tencentcloud/ame/v20190916/model/Item.h
+  include/tencentcloud/ame/v20190916/model/SetPlayModeCommandInput.h
   include/tencentcloud/ame/v20190916/model/SetPlaylistCommandInput.h
   include/tencentcloud/ame/v20190916/model/SyncKTVRobotCommandResponse.h
   include/tencentcloud/ame/v20190916/model/DescribeCloudMusicResponse.h
@@ -147,6 +148,7 @@ set(ame_src
   src/v20190916/model/KTVRobotInfo.cpp
   src/v20190916/model/DescribeItemsRequest.cpp
   src/v20190916/model/Item.cpp
+  src/v20190916/model/SetPlayModeCommandInput.cpp
   src/v20190916/model/SetPlaylistCommandInput.cpp
   src/v20190916/model/SyncKTVRobotCommandResponse.cpp
   src/v20190916/model/DescribeCloudMusicResponse.cpp

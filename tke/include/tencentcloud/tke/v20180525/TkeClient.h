@@ -119,6 +119,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeClusterRoutesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterSecurityRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterSecurityResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterStatusRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterStatusResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClustersRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClustersResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeEKSClusterCredentialRequest.h>
@@ -379,6 +381,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClusterSecurityResponse> DescribeClusterSecurityOutcome;
                 typedef std::future<DescribeClusterSecurityOutcome> DescribeClusterSecurityOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClusterSecurityRequest&, DescribeClusterSecurityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterSecurityAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterStatusResponse> DescribeClusterStatusOutcome;
+                typedef std::future<DescribeClusterStatusOutcome> DescribeClusterStatusOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeClusterStatusRequest&, DescribeClusterStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClustersResponse> DescribeClustersOutcome;
                 typedef std::future<DescribeClustersOutcome> DescribeClustersOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClustersRequest&, DescribeClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClustersAsyncHandler;
@@ -966,6 +971,15 @@ namespace TencentCloud
                 DescribeClusterSecurityOutcome DescribeClusterSecurity(const Model::DescribeClusterSecurityRequest &request);
                 void DescribeClusterSecurityAsync(const Model::DescribeClusterSecurityRequest& request, const DescribeClusterSecurityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClusterSecurityOutcomeCallable DescribeClusterSecurityCallable(const Model::DescribeClusterSecurityRequest& request);
+
+                /**
+                 *查看集群状态列表
+                 * @param req DescribeClusterStatusRequest
+                 * @return DescribeClusterStatusOutcome
+                 */
+                DescribeClusterStatusOutcome DescribeClusterStatus(const Model::DescribeClusterStatusRequest &request);
+                void DescribeClusterStatusAsync(const Model::DescribeClusterStatusRequest& request, const DescribeClusterStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterStatusOutcomeCallable DescribeClusterStatusCallable(const Model::DescribeClusterStatusRequest& request);
 
                 /**
                  *查询集群列表

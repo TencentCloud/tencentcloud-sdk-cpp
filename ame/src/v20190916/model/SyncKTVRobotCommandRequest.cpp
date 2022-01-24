@@ -29,7 +29,8 @@ SyncKTVRobotCommandRequest::SyncKTVRobotCommandRequest() :
     m_setPlaylistCommandInputHasBeenSet(false),
     m_seekCommandInputHasBeenSet(false),
     m_setAudioParamCommandInputHasBeenSet(false),
-    m_sendMessageCommandInputHasBeenSet(false)
+    m_sendMessageCommandInputHasBeenSet(false),
+    m_setPlayModeCommandInputHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,15 @@ string SyncKTVRobotCommandRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_sendMessageCommandInput.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_setPlayModeCommandInputHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SetPlayModeCommandInput";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_setPlayModeCommandInput.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -219,6 +229,22 @@ void SyncKTVRobotCommandRequest::SetSendMessageCommandInput(const SendMessageCom
 bool SyncKTVRobotCommandRequest::SendMessageCommandInputHasBeenSet() const
 {
     return m_sendMessageCommandInputHasBeenSet;
+}
+
+SetPlayModeCommandInput SyncKTVRobotCommandRequest::GetSetPlayModeCommandInput() const
+{
+    return m_setPlayModeCommandInput;
+}
+
+void SyncKTVRobotCommandRequest::SetSetPlayModeCommandInput(const SetPlayModeCommandInput& _setPlayModeCommandInput)
+{
+    m_setPlayModeCommandInput = _setPlayModeCommandInput;
+    m_setPlayModeCommandInputHasBeenSet = true;
+}
+
+bool SyncKTVRobotCommandRequest::SetPlayModeCommandInputHasBeenSet() const
+{
+    return m_setPlayModeCommandInputHasBeenSet;
 }
 
 
