@@ -36,7 +36,8 @@ CreateJobConfigRequest::CreateJobConfigRequest() :
     m_jobManagerSpecHasBeenSet(false),
     m_taskManagerSpecHasBeenSet(false),
     m_clsLogsetIdHasBeenSet(false),
-    m_clsTopicIdHasBeenSet(false)
+    m_clsTopicIdHasBeenSet(false),
+    m_logCollectTypeHasBeenSet(false)
 {
 }
 
@@ -171,6 +172,14 @@ string CreateJobConfigRequest::ToJsonString() const
         string key = "ClsTopicId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clsTopicId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logCollectTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogCollectType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_logCollectType, allocator);
     }
 
 
@@ -403,6 +412,22 @@ void CreateJobConfigRequest::SetClsTopicId(const string& _clsTopicId)
 bool CreateJobConfigRequest::ClsTopicIdHasBeenSet() const
 {
     return m_clsTopicIdHasBeenSet;
+}
+
+int64_t CreateJobConfigRequest::GetLogCollectType() const
+{
+    return m_logCollectType;
+}
+
+void CreateJobConfigRequest::SetLogCollectType(const int64_t& _logCollectType)
+{
+    m_logCollectType = _logCollectType;
+    m_logCollectTypeHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::LogCollectTypeHasBeenSet() const
+{
+    return m_logCollectTypeHasBeenSet;
 }
 
 

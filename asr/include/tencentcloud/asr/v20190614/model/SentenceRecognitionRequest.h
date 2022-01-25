@@ -88,7 +88,6 @@ namespace TencentCloud
 • 16k_en：16k 英语；
 • 16k_ca：16k 粤语；
 • 16k_ja：16k 日语；
-• 16k_wuu-SH：16k 上海话方言；
 • 16k_zh_medical：16k 医疗；
 • 16k_zh_dialect：多方言。
                      * @return EngSerViceType 引擎模型类型。
@@ -100,7 +99,6 @@ namespace TencentCloud
 • 16k_en：16k 英语；
 • 16k_ca：16k 粤语；
 • 16k_ja：16k 日语；
-• 16k_wuu-SH：16k 上海话方言；
 • 16k_zh_medical：16k 医疗；
 • 16k_zh_dialect：多方言。
                      */
@@ -116,7 +114,6 @@ namespace TencentCloud
 • 16k_en：16k 英语；
 • 16k_ca：16k 粤语；
 • 16k_ja：16k 日语；
-• 16k_wuu-SH：16k 上海话方言；
 • 16k_zh_medical：16k 医疗；
 • 16k_zh_dialect：多方言。
                      * @param EngSerViceType 引擎模型类型。
@@ -128,7 +125,6 @@ namespace TencentCloud
 • 16k_en：16k 英语；
 • 16k_ca：16k 粤语；
 • 16k_ja：16k 日语；
-• 16k_wuu-SH：16k 上海话方言；
 • 16k_zh_medical：16k 医疗；
 • 16k_zh_dialect：多方言。
                      */
@@ -339,14 +335,14 @@ namespace TencentCloud
                     bool ConvertNumModeHasBeenSet() const;
 
                     /**
-                     * 获取是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。支持引擎8k_zh，16k_zh，16k_en，16k_ca，16k_ja，16k_wuu-SH。默认值为 0。
-                     * @return WordInfo 是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。支持引擎8k_zh，16k_zh，16k_en，16k_ca，16k_ja，16k_wuu-SH。默认值为 0。
+                     * 获取是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。默认值为 0。
+                     * @return WordInfo 是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。默认值为 0。
                      */
                     int64_t GetWordInfo() const;
 
                     /**
-                     * 设置是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。支持引擎8k_zh，16k_zh，16k_en，16k_ca，16k_ja，16k_wuu-SH。默认值为 0。
-                     * @param WordInfo 是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。支持引擎8k_zh，16k_zh，16k_en，16k_ca，16k_ja，16k_wuu-SH。默认值为 0。
+                     * 设置是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。默认值为 0。
+                     * @param WordInfo 是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。默认值为 0。
                      */
                     void SetWordInfo(const int64_t& _wordInfo);
 
@@ -380,7 +376,6 @@ namespace TencentCloud
 • 16k_en：16k 英语；
 • 16k_ca：16k 粤语；
 • 16k_ja：16k 日语；
-• 16k_wuu-SH：16k 上海话方言；
 • 16k_zh_medical：16k 医疗；
 • 16k_zh_dialect：多方言。
                      */
@@ -454,7 +449,7 @@ namespace TencentCloud
                     bool m_convertNumModeHasBeenSet;
 
                     /**
-                     * 是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。支持引擎8k_zh，16k_zh，16k_en，16k_ca，16k_ja，16k_wuu-SH。默认值为 0。
+                     * 是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。默认值为 0。
                      */
                     int64_t m_wordInfo;
                     bool m_wordInfoHasBeenSet;

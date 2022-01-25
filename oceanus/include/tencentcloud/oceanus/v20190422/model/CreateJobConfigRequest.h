@@ -296,6 +296,24 @@ namespace TencentCloud
                      */
                     bool ClsTopicIdHasBeenSet() const;
 
+                    /**
+                     * 获取日志采集类型 2：CLS；3：COS
+                     * @return LogCollectType 日志采集类型 2：CLS；3：COS
+                     */
+                    int64_t GetLogCollectType() const;
+
+                    /**
+                     * 设置日志采集类型 2：CLS；3：COS
+                     * @param LogCollectType 日志采集类型 2：CLS；3：COS
+                     */
+                    void SetLogCollectType(const int64_t& _logCollectType);
+
+                    /**
+                     * 判断参数 LogCollectType 是否已赋值
+                     * @return LogCollectType 是否已赋值
+                     */
+                    bool LogCollectTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -381,6 +399,12 @@ namespace TencentCloud
                      */
                     std::string m_clsTopicId;
                     bool m_clsTopicIdHasBeenSet;
+
+                    /**
+                     * 日志采集类型 2：CLS；3：COS
+                     */
+                    int64_t m_logCollectType;
+                    bool m_logCollectTypeHasBeenSet;
 
                 };
             }

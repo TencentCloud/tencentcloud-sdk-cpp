@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件内容的base64的值。FileBase64与FileURL有一个不为空即可，若FileURL同时存在，那么取FileBase64。
-                     * @return File 文件内容的base64的值。FileBase64与FileURL有一个不为空即可，若FileURL同时存在，那么取FileBase64。
+                     * 获取文件的字节内容。File与FileURL有一个不为空即可，若FileURL参数也存在，会只取File的内容。
+                     * @return File 文件的字节内容。File与FileURL有一个不为空即可，若FileURL参数也存在，会只取File的内容。
                      */
                     std::string GetFile() const;
 
                     /**
-                     * 设置文件内容的base64的值。FileBase64与FileURL有一个不为空即可，若FileURL同时存在，那么取FileBase64。
-                     * @param File 文件内容的base64的值。FileBase64与FileURL有一个不为空即可，若FileURL同时存在，那么取FileBase64。
+                     * 设置文件的字节内容。File与FileURL有一个不为空即可，若FileURL参数也存在，会只取File的内容。
+                     * @param File 文件的字节内容。File与FileURL有一个不为空即可，若FileURL参数也存在，会只取File的内容。
                      */
                     void SetFile(const std::string& _file);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool FileHasBeenSet() const;
 
                     /**
-                     * 获取文件的URL地址。FileBase64与FileURL有一个不为空即可，若FileBase64同时存在，那么取FileBase64。
-                     * @return FileURL 文件的URL地址。FileBase64与FileURL有一个不为空即可，若FileBase64同时存在，那么取FileBase64。
+                     * 获取文件的URL地址。File与FileURL不能同时为空，若File参数也存在，会只取File的内容。
+                     * @return FileURL 文件的URL地址。File与FileURL不能同时为空，若File参数也存在，会只取File的内容。
                      */
                     std::string GetFileURL() const;
 
                     /**
-                     * 设置文件的URL地址。FileBase64与FileURL有一个不为空即可，若FileBase64同时存在，那么取FileBase64。
-                     * @param FileURL 文件的URL地址。FileBase64与FileURL有一个不为空即可，若FileBase64同时存在，那么取FileBase64。
+                     * 设置文件的URL地址。File与FileURL不能同时为空，若File参数也存在，会只取File的内容。
+                     * @param FileURL 文件的URL地址。File与FileURL不能同时为空，若File参数也存在，会只取File的内容。
                      */
                     void SetFileURL(const std::string& _fileURL);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件内容的base64的值。FileBase64与FileURL有一个不为空即可，若FileURL同时存在，那么取FileBase64。
+                     * 文件的字节内容。File与FileURL有一个不为空即可，若FileURL参数也存在，会只取File的内容。
                      */
                     std::string m_file;
                     bool m_fileHasBeenSet;
 
                     /**
-                     * 文件的URL地址。FileBase64与FileURL有一个不为空即可，若FileBase64同时存在，那么取FileBase64。
+                     * 文件的URL地址。File与FileURL不能同时为空，若File参数也存在，会只取File的内容。
                      */
                     std::string m_fileURL;
                     bool m_fileURLHasBeenSet;
