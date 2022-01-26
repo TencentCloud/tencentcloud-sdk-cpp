@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool DeviceIdHasBeenSet() const;
 
                     /**
-                     * 获取事件类型 1:注册 2:心跳 4:录制异常 5:播放异常 6:流中断
-                     * @return EventTypes 事件类型 1:注册 2:心跳 4:录制异常 5:播放异常 6:流中断
+                     * 获取默认为全部 事件类型 1:注册 2:心跳 4:录制异常 5:播放异常 6:流中断
+                     * @return EventTypes 默认为全部 事件类型 1:注册 2:心跳 4:录制异常 5:播放异常 6:流中断
                      */
                     std::vector<int64_t> GetEventTypes() const;
 
                     /**
-                     * 设置事件类型 1:注册 2:心跳 4:录制异常 5:播放异常 6:流中断
-                     * @param EventTypes 事件类型 1:注册 2:心跳 4:录制异常 5:播放异常 6:流中断
+                     * 设置默认为全部 事件类型 1:注册 2:心跳 4:录制异常 5:播放异常 6:流中断
+                     * @param EventTypes 默认为全部 事件类型 1:注册 2:心跳 4:录制异常 5:播放异常 6:流中断
                      */
                     void SetEventTypes(const std::vector<int64_t>& _eventTypes);
 
@@ -171,7 +171,7 @@ namespace TencentCloud
                     bool m_deviceIdHasBeenSet;
 
                     /**
-                     * 事件类型 1:注册 2:心跳 4:录制异常 5:播放异常 6:流中断
+                     * 默认为全部 事件类型 1:注册 2:心跳 4:录制异常 5:播放异常 6:流中断
                      */
                     std::vector<int64_t> m_eventTypes;
                     bool m_eventTypesHasBeenSet;

@@ -24,9 +24,11 @@ using namespace std;
 
 ModifySuperPlayerConfigRequest::ModifySuperPlayerConfigRequest() :
     m_nameHasBeenSet(false),
+    m_audioVideoTypeHasBeenSet(false),
     m_drmSwitchHasBeenSet(false),
     m_adaptiveDynamicStreamingDefinitionHasBeenSet(false),
     m_drmStreamingsInfoHasBeenSet(false),
+    m_transcodeDefinitionHasBeenSet(false),
     m_imageSpriteDefinitionHasBeenSet(false),
     m_resolutionNamesHasBeenSet(false),
     m_domainHasBeenSet(false),
@@ -49,6 +51,14 @@ string ModifySuperPlayerConfigRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_audioVideoTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioVideoType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_audioVideoType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_drmSwitchHasBeenSet)
@@ -74,6 +84,14 @@ string ModifySuperPlayerConfigRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_drmStreamingsInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_transcodeDefinitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TranscodeDefinition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_transcodeDefinition, allocator);
     }
 
     if (m_imageSpriteDefinitionHasBeenSet)
@@ -155,6 +173,22 @@ bool ModifySuperPlayerConfigRequest::NameHasBeenSet() const
     return m_nameHasBeenSet;
 }
 
+string ModifySuperPlayerConfigRequest::GetAudioVideoType() const
+{
+    return m_audioVideoType;
+}
+
+void ModifySuperPlayerConfigRequest::SetAudioVideoType(const string& _audioVideoType)
+{
+    m_audioVideoType = _audioVideoType;
+    m_audioVideoTypeHasBeenSet = true;
+}
+
+bool ModifySuperPlayerConfigRequest::AudioVideoTypeHasBeenSet() const
+{
+    return m_audioVideoTypeHasBeenSet;
+}
+
 string ModifySuperPlayerConfigRequest::GetDrmSwitch() const
 {
     return m_drmSwitch;
@@ -201,6 +235,22 @@ void ModifySuperPlayerConfigRequest::SetDrmStreamingsInfo(const DrmStreamingsInf
 bool ModifySuperPlayerConfigRequest::DrmStreamingsInfoHasBeenSet() const
 {
     return m_drmStreamingsInfoHasBeenSet;
+}
+
+uint64_t ModifySuperPlayerConfigRequest::GetTranscodeDefinition() const
+{
+    return m_transcodeDefinition;
+}
+
+void ModifySuperPlayerConfigRequest::SetTranscodeDefinition(const uint64_t& _transcodeDefinition)
+{
+    m_transcodeDefinition = _transcodeDefinition;
+    m_transcodeDefinitionHasBeenSet = true;
+}
+
+bool ModifySuperPlayerConfigRequest::TranscodeDefinitionHasBeenSet() const
+{
+    return m_transcodeDefinitionHasBeenSet;
 }
 
 uint64_t ModifySuperPlayerConfigRequest::GetImageSpriteDefinition() const

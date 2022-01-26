@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool P2PAppIdHasBeenSet() const;
 
                     /**
-                     * 获取查询开始时间
-                     * @return From 查询开始时间
+                     * 获取查询开始时间，时间戳秒
+                     * @return From 查询开始时间，时间戳秒
                      */
                     int64_t GetFrom() const;
 
                     /**
-                     * 设置查询开始时间
-                     * @param From 查询开始时间
+                     * 设置查询开始时间，时间戳秒
+                     * @param From 查询开始时间，时间戳秒
                      */
                     void SetFrom(const int64_t& _from);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool FromHasBeenSet() const;
 
                     /**
-                     * 获取查询结束时间
-                     * @return To 查询结束时间
+                     * 获取查询结束时间，时间戳秒
+                     * @return To 查询结束时间，时间戳秒
                      */
                     int64_t GetTo() const;
 
                     /**
-                     * 设置查询结束时间
-                     * @param To 查询结束时间
+                     * 设置查询结束时间，时间戳秒
+                     * @param To 查询结束时间，时间戳秒
                      */
                     void SetTo(const int64_t& _to);
 
@@ -123,13 +123,13 @@ namespace TencentCloud
                     bool m_p2PAppIdHasBeenSet;
 
                     /**
-                     * 查询开始时间
+                     * 查询开始时间，时间戳秒
                      */
                     int64_t m_from;
                     bool m_fromHasBeenSet;
 
                     /**
-                     * 查询结束时间
+                     * 查询结束时间，时间戳秒
                      */
                     int64_t m_to;
                     bool m_toHasBeenSet;

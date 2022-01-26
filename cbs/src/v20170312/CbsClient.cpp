@@ -169,6 +169,49 @@ CbsClient::BindAutoSnapshotPolicyOutcomeCallable CbsClient::BindAutoSnapshotPoli
     return task->get_future();
 }
 
+CbsClient::CopySnapshotCrossRegionsOutcome CbsClient::CopySnapshotCrossRegions(const CopySnapshotCrossRegionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CopySnapshotCrossRegions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CopySnapshotCrossRegionsResponse rsp = CopySnapshotCrossRegionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CopySnapshotCrossRegionsOutcome(rsp);
+        else
+            return CopySnapshotCrossRegionsOutcome(o.GetError());
+    }
+    else
+    {
+        return CopySnapshotCrossRegionsOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::CopySnapshotCrossRegionsAsync(const CopySnapshotCrossRegionsRequest& request, const CopySnapshotCrossRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CopySnapshotCrossRegions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CbsClient::CopySnapshotCrossRegionsOutcomeCallable CbsClient::CopySnapshotCrossRegionsCallable(const CopySnapshotCrossRegionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CopySnapshotCrossRegionsOutcome()>>(
+        [this, request]()
+        {
+            return this->CopySnapshotCrossRegions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CbsClient::CreateAutoSnapshotPolicyOutcome CbsClient::CreateAutoSnapshotPolicy(const CreateAutoSnapshotPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAutoSnapshotPolicy");

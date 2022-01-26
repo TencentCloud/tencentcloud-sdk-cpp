@@ -58,6 +58,7 @@ set(ame_public_header_model
   include/tencentcloud/ame/v20190916/model/DescribeItemByIdRequest.h
   include/tencentcloud/ame/v20190916/model/DescribeAuthInfoRequest.h
   include/tencentcloud/ame/v20190916/model/DescribeKTVPlaylistsResponse.h
+  include/tencentcloud/ame/v20190916/model/TimeRange.h
   include/tencentcloud/ame/v20190916/model/Music.h
   include/tencentcloud/ame/v20190916/model/Artist.h
   include/tencentcloud/ame/v20190916/model/DescribeStationsRequest.h
@@ -139,6 +140,7 @@ set(ame_src
   src/v20190916/model/DescribeItemByIdRequest.cpp
   src/v20190916/model/DescribeAuthInfoRequest.cpp
   src/v20190916/model/DescribeKTVPlaylistsResponse.cpp
+  src/v20190916/model/TimeRange.cpp
   src/v20190916/model/Music.cpp
   src/v20190916/model/Artist.cpp
   src/v20190916/model/DescribeStationsRequest.cpp

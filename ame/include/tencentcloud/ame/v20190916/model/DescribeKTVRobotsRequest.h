@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ame/v20190916/model/TimeRange.h>
 
 
 namespace TencentCloud
@@ -91,6 +92,28 @@ namespace TencentCloud
                     bool StatusesHasBeenSet() const;
 
                     /**
+                     * 获取匹配创建时间在此时间段内的机器人。
+<li>包含所指定的头尾时间点。</li>
+                     * @return CreateTime 匹配创建时间在此时间段内的机器人。
+<li>包含所指定的头尾时间点。</li>
+                     */
+                    TimeRange GetCreateTime() const;
+
+                    /**
+                     * 设置匹配创建时间在此时间段内的机器人。
+<li>包含所指定的头尾时间点。</li>
+                     * @param CreateTime 匹配创建时间在此时间段内的机器人。
+<li>包含所指定的头尾时间点。</li>
+                     */
+                    void SetCreateTime(const TimeRange& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
                      * 获取分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
                      * @return Offset 分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
                      */
@@ -142,6 +165,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_statuses;
                     bool m_statusesHasBeenSet;
+
+                    /**
+                     * 匹配创建时间在此时间段内的机器人。
+<li>包含所指定的头尾时间点。</li>
+                     */
+                    TimeRange m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                     /**
                      * 分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。

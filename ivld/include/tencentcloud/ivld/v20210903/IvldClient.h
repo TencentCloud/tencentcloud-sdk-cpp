@@ -23,10 +23,34 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ivld/v20210903/model/AddCustomPersonImageRequest.h>
+#include <tencentcloud/ivld/v20210903/model/AddCustomPersonImageResponse.h>
+#include <tencentcloud/ivld/v20210903/model/CreateCustomCategoryRequest.h>
+#include <tencentcloud/ivld/v20210903/model/CreateCustomCategoryResponse.h>
+#include <tencentcloud/ivld/v20210903/model/CreateCustomGroupRequest.h>
+#include <tencentcloud/ivld/v20210903/model/CreateCustomGroupResponse.h>
+#include <tencentcloud/ivld/v20210903/model/CreateCustomPersonRequest.h>
+#include <tencentcloud/ivld/v20210903/model/CreateCustomPersonResponse.h>
+#include <tencentcloud/ivld/v20210903/model/CreateDefaultCategoriesRequest.h>
+#include <tencentcloud/ivld/v20210903/model/CreateDefaultCategoriesResponse.h>
 #include <tencentcloud/ivld/v20210903/model/CreateTaskRequest.h>
 #include <tencentcloud/ivld/v20210903/model/CreateTaskResponse.h>
+#include <tencentcloud/ivld/v20210903/model/DeleteCustomCategoryRequest.h>
+#include <tencentcloud/ivld/v20210903/model/DeleteCustomCategoryResponse.h>
+#include <tencentcloud/ivld/v20210903/model/DeleteCustomPersonRequest.h>
+#include <tencentcloud/ivld/v20210903/model/DeleteCustomPersonResponse.h>
+#include <tencentcloud/ivld/v20210903/model/DeleteCustomPersonImageRequest.h>
+#include <tencentcloud/ivld/v20210903/model/DeleteCustomPersonImageResponse.h>
 #include <tencentcloud/ivld/v20210903/model/DeleteMediaRequest.h>
 #include <tencentcloud/ivld/v20210903/model/DeleteMediaResponse.h>
+#include <tencentcloud/ivld/v20210903/model/DescribeCustomCategoriesRequest.h>
+#include <tencentcloud/ivld/v20210903/model/DescribeCustomCategoriesResponse.h>
+#include <tencentcloud/ivld/v20210903/model/DescribeCustomGroupRequest.h>
+#include <tencentcloud/ivld/v20210903/model/DescribeCustomGroupResponse.h>
+#include <tencentcloud/ivld/v20210903/model/DescribeCustomPersonDetailRequest.h>
+#include <tencentcloud/ivld/v20210903/model/DescribeCustomPersonDetailResponse.h>
+#include <tencentcloud/ivld/v20210903/model/DescribeCustomPersonsRequest.h>
+#include <tencentcloud/ivld/v20210903/model/DescribeCustomPersonsResponse.h>
 #include <tencentcloud/ivld/v20210903/model/DescribeMediaRequest.h>
 #include <tencentcloud/ivld/v20210903/model/DescribeMediaResponse.h>
 #include <tencentcloud/ivld/v20210903/model/DescribeMediasRequest.h>
@@ -39,6 +63,10 @@
 #include <tencentcloud/ivld/v20210903/model/DescribeTasksResponse.h>
 #include <tencentcloud/ivld/v20210903/model/ImportMediaRequest.h>
 #include <tencentcloud/ivld/v20210903/model/ImportMediaResponse.h>
+#include <tencentcloud/ivld/v20210903/model/UpdateCustomCategoryRequest.h>
+#include <tencentcloud/ivld/v20210903/model/UpdateCustomCategoryResponse.h>
+#include <tencentcloud/ivld/v20210903/model/UpdateCustomPersonRequest.h>
+#include <tencentcloud/ivld/v20210903/model/UpdateCustomPersonResponse.h>
 
 
 namespace TencentCloud
@@ -53,12 +81,48 @@ namespace TencentCloud
                 IvldClient(const Credential &credential, const std::string &region);
                 IvldClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::AddCustomPersonImageResponse> AddCustomPersonImageOutcome;
+                typedef std::future<AddCustomPersonImageOutcome> AddCustomPersonImageOutcomeCallable;
+                typedef std::function<void(const IvldClient*, const Model::AddCustomPersonImageRequest&, AddCustomPersonImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddCustomPersonImageAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCustomCategoryResponse> CreateCustomCategoryOutcome;
+                typedef std::future<CreateCustomCategoryOutcome> CreateCustomCategoryOutcomeCallable;
+                typedef std::function<void(const IvldClient*, const Model::CreateCustomCategoryRequest&, CreateCustomCategoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomCategoryAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCustomGroupResponse> CreateCustomGroupOutcome;
+                typedef std::future<CreateCustomGroupOutcome> CreateCustomGroupOutcomeCallable;
+                typedef std::function<void(const IvldClient*, const Model::CreateCustomGroupRequest&, CreateCustomGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCustomPersonResponse> CreateCustomPersonOutcome;
+                typedef std::future<CreateCustomPersonOutcome> CreateCustomPersonOutcomeCallable;
+                typedef std::function<void(const IvldClient*, const Model::CreateCustomPersonRequest&, CreateCustomPersonOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomPersonAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDefaultCategoriesResponse> CreateDefaultCategoriesOutcome;
+                typedef std::future<CreateDefaultCategoriesOutcome> CreateDefaultCategoriesOutcomeCallable;
+                typedef std::function<void(const IvldClient*, const Model::CreateDefaultCategoriesRequest&, CreateDefaultCategoriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDefaultCategoriesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTaskResponse> CreateTaskOutcome;
                 typedef std::future<CreateTaskOutcome> CreateTaskOutcomeCallable;
                 typedef std::function<void(const IvldClient*, const Model::CreateTaskRequest&, CreateTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCustomCategoryResponse> DeleteCustomCategoryOutcome;
+                typedef std::future<DeleteCustomCategoryOutcome> DeleteCustomCategoryOutcomeCallable;
+                typedef std::function<void(const IvldClient*, const Model::DeleteCustomCategoryRequest&, DeleteCustomCategoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomCategoryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCustomPersonResponse> DeleteCustomPersonOutcome;
+                typedef std::future<DeleteCustomPersonOutcome> DeleteCustomPersonOutcomeCallable;
+                typedef std::function<void(const IvldClient*, const Model::DeleteCustomPersonRequest&, DeleteCustomPersonOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomPersonAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCustomPersonImageResponse> DeleteCustomPersonImageOutcome;
+                typedef std::future<DeleteCustomPersonImageOutcome> DeleteCustomPersonImageOutcomeCallable;
+                typedef std::function<void(const IvldClient*, const Model::DeleteCustomPersonImageRequest&, DeleteCustomPersonImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomPersonImageAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteMediaResponse> DeleteMediaOutcome;
                 typedef std::future<DeleteMediaOutcome> DeleteMediaOutcomeCallable;
                 typedef std::function<void(const IvldClient*, const Model::DeleteMediaRequest&, DeleteMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMediaAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCustomCategoriesResponse> DescribeCustomCategoriesOutcome;
+                typedef std::future<DescribeCustomCategoriesOutcome> DescribeCustomCategoriesOutcomeCallable;
+                typedef std::function<void(const IvldClient*, const Model::DescribeCustomCategoriesRequest&, DescribeCustomCategoriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomCategoriesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCustomGroupResponse> DescribeCustomGroupOutcome;
+                typedef std::future<DescribeCustomGroupOutcome> DescribeCustomGroupOutcomeCallable;
+                typedef std::function<void(const IvldClient*, const Model::DescribeCustomGroupRequest&, DescribeCustomGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCustomPersonDetailResponse> DescribeCustomPersonDetailOutcome;
+                typedef std::future<DescribeCustomPersonDetailOutcome> DescribeCustomPersonDetailOutcomeCallable;
+                typedef std::function<void(const IvldClient*, const Model::DescribeCustomPersonDetailRequest&, DescribeCustomPersonDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomPersonDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCustomPersonsResponse> DescribeCustomPersonsOutcome;
+                typedef std::future<DescribeCustomPersonsOutcome> DescribeCustomPersonsOutcomeCallable;
+                typedef std::function<void(const IvldClient*, const Model::DescribeCustomPersonsRequest&, DescribeCustomPersonsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomPersonsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMediaResponse> DescribeMediaOutcome;
                 typedef std::future<DescribeMediaOutcome> DescribeMediaOutcomeCallable;
                 typedef std::function<void(const IvldClient*, const Model::DescribeMediaRequest&, DescribeMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMediaAsyncHandler;
@@ -77,8 +141,80 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ImportMediaResponse> ImportMediaOutcome;
                 typedef std::future<ImportMediaOutcome> ImportMediaOutcomeCallable;
                 typedef std::function<void(const IvldClient*, const Model::ImportMediaRequest&, ImportMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportMediaAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateCustomCategoryResponse> UpdateCustomCategoryOutcome;
+                typedef std::future<UpdateCustomCategoryOutcome> UpdateCustomCategoryOutcomeCallable;
+                typedef std::function<void(const IvldClient*, const Model::UpdateCustomCategoryRequest&, UpdateCustomCategoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCustomCategoryAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateCustomPersonResponse> UpdateCustomPersonOutcome;
+                typedef std::future<UpdateCustomPersonOutcome> UpdateCustomPersonOutcomeCallable;
+                typedef std::function<void(const IvldClient*, const Model::UpdateCustomPersonRequest&, UpdateCustomPersonOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCustomPersonAsyncHandler;
 
 
+
+                /**
+                 *增加自定义人脸图片，每个自定义人物最多可包含5张人脸图片
+
+请注意，与创建自定义人物一样，图片数据优先级优于图片URL优先级
+                 * @param req AddCustomPersonImageRequest
+                 * @return AddCustomPersonImageOutcome
+                 */
+                AddCustomPersonImageOutcome AddCustomPersonImage(const Model::AddCustomPersonImageRequest &request);
+                void AddCustomPersonImageAsync(const Model::AddCustomPersonImageRequest& request, const AddCustomPersonImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddCustomPersonImageOutcomeCallable AddCustomPersonImageCallable(const Model::AddCustomPersonImageRequest& request);
+
+                /**
+                 *创建自定义人物分类信息
+
+当L2Category为空时，将创建一级自定义分类。
+当L1Category与L2Category均不为空时，将创建二级自定义分类。请注意，**只有当一级自定义分类存在时，才可创建二级自定义分类**。
+                 * @param req CreateCustomCategoryRequest
+                 * @return CreateCustomCategoryOutcome
+                 */
+                CreateCustomCategoryOutcome CreateCustomCategory(const Model::CreateCustomCategoryRequest &request);
+                void CreateCustomCategoryAsync(const Model::CreateCustomCategoryRequest& request, const CreateCustomCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCustomCategoryOutcomeCallable CreateCustomCategoryCallable(const Model::CreateCustomCategoryRequest& request);
+
+                /**
+                 *创建自定义人物库
+
+Bucket的格式参考为 `bucketName-123456.cos.ap-shanghai.myqcloud.com`
+
+在调用CreateCustomPerson和AddCustomPersonImage接口之前，请先确保本接口成功调用。当前每个用户只支持一个自定义人物库，一旦自定义人物库创建成功，后续接口调用均会返回人物库已存在错误。
+
+由于人脸图片对于自定义人物识别至关重要，因此自定义人物识别功能需要用户显式指定COS存储桶方可使用。具体来说，自定义人物识别功能接口(主要是CreateCustomPerson和AddCustomPersonImage)会在此COS桶下面新建IVLDCustomPersonImage目录，并在此目录下存储自定义人物图片数据以支持后续潜在的特征更新。
+
+请注意：本接口指定的COS桶仅用于**备份存储自定义人物图片**，CreateCustomPerson和AddCustomPersonImage接口入参URL可使用任意COS存储桶下的任意图片。
+
+**重要**：请务必确保本接口指定的COS存储桶存在(不要手动删除COS桶)。COS存储桶一旦指定，将不能修改。
+
+                 * @param req CreateCustomGroupRequest
+                 * @return CreateCustomGroupOutcome
+                 */
+                CreateCustomGroupOutcome CreateCustomGroup(const Model::CreateCustomGroupRequest &request);
+                void CreateCustomGroupAsync(const Model::CreateCustomGroupRequest& request, const CreateCustomGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCustomGroupOutcomeCallable CreateCustomGroupCallable(const Model::CreateCustomGroupRequest& request);
+
+                /**
+                 *创建自定义人物。
+
+输入人物名称，基本信息，分类信息与人脸图片，创建自定义人物
+
+人脸图片可使用图片数据(base64编码的图片数据)或者图片URL(推荐使用COS以减少下载时间，其他地址也支持)，原始图片优先，也即如果同时指定了图片数据和图片URL，接口将仅使用图片数据
+
+                 * @param req CreateCustomPersonRequest
+                 * @return CreateCustomPersonOutcome
+                 */
+                CreateCustomPersonOutcome CreateCustomPerson(const Model::CreateCustomPersonRequest &request);
+                void CreateCustomPersonAsync(const Model::CreateCustomPersonRequest& request, const CreateCustomPersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCustomPersonOutcomeCallable CreateCustomPersonCallable(const Model::CreateCustomPersonRequest& request);
+
+                /**
+                 *创建默认自定义人物类型
+                 * @param req CreateDefaultCategoriesRequest
+                 * @return CreateDefaultCategoriesOutcome
+                 */
+                CreateDefaultCategoriesOutcome CreateDefaultCategories(const Model::CreateDefaultCategoriesRequest &request);
+                void CreateDefaultCategoriesAsync(const Model::CreateDefaultCategoriesRequest& request, const CreateDefaultCategoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDefaultCategoriesOutcomeCallable CreateDefaultCategoriesCallable(const Model::CreateDefaultCategoriesRequest& request);
 
                 /**
                  *创建智能标签任务。
@@ -93,6 +229,33 @@ namespace TencentCloud
                 CreateTaskOutcomeCallable CreateTaskCallable(const Model::CreateTaskRequest& request);
 
                 /**
+                 *删除自定义分类信息
+                 * @param req DeleteCustomCategoryRequest
+                 * @return DeleteCustomCategoryOutcome
+                 */
+                DeleteCustomCategoryOutcome DeleteCustomCategory(const Model::DeleteCustomCategoryRequest &request);
+                void DeleteCustomCategoryAsync(const Model::DeleteCustomCategoryRequest& request, const DeleteCustomCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCustomCategoryOutcomeCallable DeleteCustomCategoryCallable(const Model::DeleteCustomCategoryRequest& request);
+
+                /**
+                 *删除自定义人物
+                 * @param req DeleteCustomPersonRequest
+                 * @return DeleteCustomPersonOutcome
+                 */
+                DeleteCustomPersonOutcome DeleteCustomPerson(const Model::DeleteCustomPersonRequest &request);
+                void DeleteCustomPersonAsync(const Model::DeleteCustomPersonRequest& request, const DeleteCustomPersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCustomPersonOutcomeCallable DeleteCustomPersonCallable(const Model::DeleteCustomPersonRequest& request);
+
+                /**
+                 *删除自定义人脸数据
+                 * @param req DeleteCustomPersonImageRequest
+                 * @return DeleteCustomPersonImageOutcome
+                 */
+                DeleteCustomPersonImageOutcome DeleteCustomPersonImage(const Model::DeleteCustomPersonImageRequest &request);
+                void DeleteCustomPersonImageAsync(const Model::DeleteCustomPersonImageRequest& request, const DeleteCustomPersonImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCustomPersonImageOutcomeCallable DeleteCustomPersonImageCallable(const Model::DeleteCustomPersonImageRequest& request);
+
+                /**
                  *将MediaId对应的媒资文件从系统中删除。
 
 **请注意，本接口仅删除媒资文件，媒资文件对应的视频分析结果不会被删除**。如您需要删除结构化分析结果，请调用DeleteTask接口。
@@ -102,6 +265,44 @@ namespace TencentCloud
                 DeleteMediaOutcome DeleteMedia(const Model::DeleteMediaRequest &request);
                 void DeleteMediaAsync(const Model::DeleteMediaRequest& request, const DeleteMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteMediaOutcomeCallable DeleteMediaCallable(const Model::DeleteMediaRequest& request);
+
+                /**
+                 *批量描述自定义人物分类信息
+                 * @param req DescribeCustomCategoriesRequest
+                 * @return DescribeCustomCategoriesOutcome
+                 */
+                DescribeCustomCategoriesOutcome DescribeCustomCategories(const Model::DescribeCustomCategoriesRequest &request);
+                void DescribeCustomCategoriesAsync(const Model::DescribeCustomCategoriesRequest& request, const DescribeCustomCategoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCustomCategoriesOutcomeCallable DescribeCustomCategoriesCallable(const Model::DescribeCustomCategoriesRequest& request);
+
+                /**
+                 *描述自定义人物库信息，当前库大小(库中有多少人脸)，以及库中的存储桶
+                 * @param req DescribeCustomGroupRequest
+                 * @return DescribeCustomGroupOutcome
+                 */
+                DescribeCustomGroupOutcome DescribeCustomGroup(const Model::DescribeCustomGroupRequest &request);
+                void DescribeCustomGroupAsync(const Model::DescribeCustomGroupRequest& request, const DescribeCustomGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCustomGroupOutcomeCallable DescribeCustomGroupCallable(const Model::DescribeCustomGroupRequest& request);
+
+                /**
+                 *描述自定义人物详细信息，包括人物信息与人物信息
+                 * @param req DescribeCustomPersonDetailRequest
+                 * @return DescribeCustomPersonDetailOutcome
+                 */
+                DescribeCustomPersonDetailOutcome DescribeCustomPersonDetail(const Model::DescribeCustomPersonDetailRequest &request);
+                void DescribeCustomPersonDetailAsync(const Model::DescribeCustomPersonDetailRequest& request, const DescribeCustomPersonDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCustomPersonDetailOutcomeCallable DescribeCustomPersonDetailCallable(const Model::DescribeCustomPersonDetailRequest& request);
+
+                /**
+                 *批量描述自定义人物
+
+
+                 * @param req DescribeCustomPersonsRequest
+                 * @return DescribeCustomPersonsOutcome
+                 */
+                DescribeCustomPersonsOutcome DescribeCustomPersons(const Model::DescribeCustomPersonsRequest &request);
+                void DescribeCustomPersonsAsync(const Model::DescribeCustomPersonsRequest& request, const DescribeCustomPersonsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCustomPersonsOutcomeCallable DescribeCustomPersonsCallable(const Model::DescribeCustomPersonsRequest& request);
 
                 /**
                  *描述媒资文件信息，包括媒资状态，分辨率，帧率等。
@@ -175,6 +376,27 @@ namespace TencentCloud
                 ImportMediaOutcome ImportMedia(const Model::ImportMediaRequest &request);
                 void ImportMediaAsync(const Model::ImportMediaRequest& request, const ImportMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ImportMediaOutcomeCallable ImportMediaCallable(const Model::ImportMediaRequest& request);
+
+                /**
+                 *更新自定义人物分类
+
+当L2Category为空时，代表更新CategoryId对应的一级自定义人物类型以及所有二级自定义人物类型所从属的一级自定义人物类型；
+当L2Category非空时，仅更新CategoryId对应的二级自定义人物类型
+                 * @param req UpdateCustomCategoryRequest
+                 * @return UpdateCustomCategoryOutcome
+                 */
+                UpdateCustomCategoryOutcome UpdateCustomCategory(const Model::UpdateCustomCategoryRequest &request);
+                void UpdateCustomCategoryAsync(const Model::UpdateCustomCategoryRequest& request, const UpdateCustomCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateCustomCategoryOutcomeCallable UpdateCustomCategoryCallable(const Model::UpdateCustomCategoryRequest& request);
+
+                /**
+                 *更新自定义人物信息，包括姓名，简要信息，分类信息等
+                 * @param req UpdateCustomPersonRequest
+                 * @return UpdateCustomPersonOutcome
+                 */
+                UpdateCustomPersonOutcome UpdateCustomPerson(const Model::UpdateCustomPersonRequest &request);
+                void UpdateCustomPersonAsync(const Model::UpdateCustomPersonRequest& request, const UpdateCustomPersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateCustomPersonOutcomeCallable UpdateCustomPersonCallable(const Model::UpdateCustomPersonRequest& request);
 
             };
         }

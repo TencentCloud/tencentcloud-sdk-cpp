@@ -25,6 +25,7 @@ using namespace std;
 DescribeKTVRobotsRequest::DescribeKTVRobotsRequest() :
     m_robotIdsHasBeenSet(false),
     m_statusesHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false)
 {
@@ -61,6 +62,15 @@ string DescribeKTVRobotsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_createTime.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_offsetHasBeenSet)
@@ -117,6 +127,22 @@ void DescribeKTVRobotsRequest::SetStatuses(const vector<string>& _statuses)
 bool DescribeKTVRobotsRequest::StatusesHasBeenSet() const
 {
     return m_statusesHasBeenSet;
+}
+
+TimeRange DescribeKTVRobotsRequest::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void DescribeKTVRobotsRequest::SetCreateTime(const TimeRange& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool DescribeKTVRobotsRequest::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 
 int64_t DescribeKTVRobotsRequest::GetOffset() const
