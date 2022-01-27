@@ -23,6 +23,7 @@ using namespace std;
 KTVMusicBaseInfo::KTVMusicBaseInfo() :
     m_musicIdHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_singerInfoSetHasBeenSet(false),
     m_singerSetHasBeenSet(false),
     m_lyricistSetHasBeenSet(false),
     m_composerSetHasBeenSet(false),
@@ -54,6 +55,26 @@ CoreInternalOutcome KTVMusicBaseInfo::Deserialize(const rapidjson::Value &value)
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
+    }
+
+    if (value.HasMember("SingerInfoSet") && !value["SingerInfoSet"].IsNull())
+    {
+        if (!value["SingerInfoSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `KTVMusicBaseInfo.SingerInfoSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SingerInfoSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            KTVSingerBaseInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_singerInfoSet.push_back(item);
+        }
+        m_singerInfoSetHasBeenSet = true;
     }
 
     if (value.HasMember("SingerSet") && !value["SingerSet"].IsNull())
@@ -139,6 +160,21 @@ void KTVMusicBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_singerInfoSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SingerInfoSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_singerInfoSet.begin(); itr != m_singerInfoSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_singerSetHasBeenSet)
@@ -234,6 +270,22 @@ void KTVMusicBaseInfo::SetName(const string& _name)
 bool KTVMusicBaseInfo::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+vector<KTVSingerBaseInfo> KTVMusicBaseInfo::GetSingerInfoSet() const
+{
+    return m_singerInfoSet;
+}
+
+void KTVMusicBaseInfo::SetSingerInfoSet(const vector<KTVSingerBaseInfo>& _singerInfoSet)
+{
+    m_singerInfoSet = _singerInfoSet;
+    m_singerInfoSetHasBeenSet = true;
+}
+
+bool KTVMusicBaseInfo::SingerInfoSetHasBeenSet() const
+{
+    return m_singerInfoSetHasBeenSet;
 }
 
 vector<string> KTVMusicBaseInfo::GetSingerSet() const

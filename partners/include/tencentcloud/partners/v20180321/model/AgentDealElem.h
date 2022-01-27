@@ -49,14 +49,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取订单自增 ID
-                     * @return DealId 订单自增 ID
+                     * 获取订单自增 ID【请勿依赖该字段作为唯一标识】
+                     * @return DealId 订单自增 ID【请勿依赖该字段作为唯一标识】
                      */
                     std::string GetDealId() const;
 
                     /**
-                     * 设置订单自增 ID
-                     * @param DealId 订单自增 ID
+                     * 设置订单自增 ID【请勿依赖该字段作为唯一标识】
+                     * @param DealId 订单自增 ID【请勿依赖该字段作为唯一标识】
                      */
                     void SetDealId(const std::string& _dealId);
 
@@ -67,14 +67,14 @@ namespace TencentCloud
                     bool DealIdHasBeenSet() const;
 
                     /**
-                     * 获取订单号
-                     * @return DealName 订单号
+                     * 获取订单号【订单唯一键】
+                     * @return DealName 订单号【订单唯一键】
                      */
                     std::string GetDealName() const;
 
                     /**
-                     * 设置订单号
-                     * @param DealName 订单号
+                     * 设置订单号【订单唯一键】
+                     * @param DealName 订单号【订单唯一键】
                      */
                     void SetDealName(const std::string& _dealName);
 
@@ -651,13 +651,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 订单自增 ID
+                     * 订单自增 ID【请勿依赖该字段作为唯一标识】
                      */
                     std::string m_dealId;
                     bool m_dealIdHasBeenSet;
 
                     /**
-                     * 订单号
+                     * 订单号【订单唯一键】
                      */
                     std::string m_dealName;
                     bool m_dealNameHasBeenSet;

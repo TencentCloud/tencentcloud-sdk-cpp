@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ame/v20190916/model/KTVMusicBaseInfo.h>
 #include <tencentcloud/ame/v20190916/model/KTVMusicDefinitionInfo.h>
+#include <tencentcloud/ame/v20190916/model/ChorusClip.h>
 
 
 namespace TencentCloud
@@ -93,6 +94,30 @@ namespace TencentCloud
                      */
                     bool DefinitionInfoSetHasBeenSet() const;
 
+                    /**
+                     * 获取音高数据文件下载地址
+                     * @return MidiJsonUrl 音高数据文件下载地址
+                     */
+                    std::string GetMidiJsonUrl() const;
+
+                    /**
+                     * 判断参数 MidiJsonUrl 是否已赋值
+                     * @return MidiJsonUrl 是否已赋值
+                     */
+                    bool MidiJsonUrlHasBeenSet() const;
+
+                    /**
+                     * 获取副歌片段数据列表
+                     * @return ChorusClipSet 副歌片段数据列表
+                     */
+                    std::vector<ChorusClip> GetChorusClipSet() const;
+
+                    /**
+                     * 判断参数 ChorusClipSet 是否已赋值
+                     * @return ChorusClipSet 是否已赋值
+                     */
+                    bool ChorusClipSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -118,6 +143,18 @@ namespace TencentCloud
                      */
                     std::vector<KTVMusicDefinitionInfo> m_definitionInfoSet;
                     bool m_definitionInfoSetHasBeenSet;
+
+                    /**
+                     * 音高数据文件下载地址
+                     */
+                    std::string m_midiJsonUrl;
+                    bool m_midiJsonUrlHasBeenSet;
+
+                    /**
+                     * 副歌片段数据列表
+                     */
+                    std::vector<ChorusClip> m_chorusClipSet;
+                    bool m_chorusClipSetHasBeenSet;
 
                 };
             }

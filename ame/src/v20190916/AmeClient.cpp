@@ -470,6 +470,135 @@ AmeClient::DescribeKTVRobotsOutcomeCallable AmeClient::DescribeKTVRobotsCallable
     return task->get_future();
 }
 
+AmeClient::DescribeKTVSingerCategoriesOutcome AmeClient::DescribeKTVSingerCategories(const DescribeKTVSingerCategoriesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeKTVSingerCategories");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeKTVSingerCategoriesResponse rsp = DescribeKTVSingerCategoriesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeKTVSingerCategoriesOutcome(rsp);
+        else
+            return DescribeKTVSingerCategoriesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeKTVSingerCategoriesOutcome(outcome.GetError());
+    }
+}
+
+void AmeClient::DescribeKTVSingerCategoriesAsync(const DescribeKTVSingerCategoriesRequest& request, const DescribeKTVSingerCategoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeKTVSingerCategories(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AmeClient::DescribeKTVSingerCategoriesOutcomeCallable AmeClient::DescribeKTVSingerCategoriesCallable(const DescribeKTVSingerCategoriesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeKTVSingerCategoriesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeKTVSingerCategories(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AmeClient::DescribeKTVSingerMusicsOutcome AmeClient::DescribeKTVSingerMusics(const DescribeKTVSingerMusicsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeKTVSingerMusics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeKTVSingerMusicsResponse rsp = DescribeKTVSingerMusicsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeKTVSingerMusicsOutcome(rsp);
+        else
+            return DescribeKTVSingerMusicsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeKTVSingerMusicsOutcome(outcome.GetError());
+    }
+}
+
+void AmeClient::DescribeKTVSingerMusicsAsync(const DescribeKTVSingerMusicsRequest& request, const DescribeKTVSingerMusicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeKTVSingerMusics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AmeClient::DescribeKTVSingerMusicsOutcomeCallable AmeClient::DescribeKTVSingerMusicsCallable(const DescribeKTVSingerMusicsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeKTVSingerMusicsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeKTVSingerMusics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AmeClient::DescribeKTVSingersOutcome AmeClient::DescribeKTVSingers(const DescribeKTVSingersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeKTVSingers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeKTVSingersResponse rsp = DescribeKTVSingersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeKTVSingersOutcome(rsp);
+        else
+            return DescribeKTVSingersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeKTVSingersOutcome(outcome.GetError());
+    }
+}
+
+void AmeClient::DescribeKTVSingersAsync(const DescribeKTVSingersRequest& request, const DescribeKTVSingersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeKTVSingers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AmeClient::DescribeKTVSingersOutcomeCallable AmeClient::DescribeKTVSingersCallable(const DescribeKTVSingersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeKTVSingersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeKTVSingers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AmeClient::DescribeLyricOutcome AmeClient::DescribeLyric(const DescribeLyricRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLyric");
