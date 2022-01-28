@@ -49,6 +49,8 @@
 #include <tencentcloud/ame/v20190916/model/DescribeKTVSingerMusicsResponse.h>
 #include <tencentcloud/ame/v20190916/model/DescribeKTVSingersRequest.h>
 #include <tencentcloud/ame/v20190916/model/DescribeKTVSingersResponse.h>
+#include <tencentcloud/ame/v20190916/model/DescribeKTVTopListRequest.h>
+#include <tencentcloud/ame/v20190916/model/DescribeKTVTopListResponse.h>
 #include <tencentcloud/ame/v20190916/model/DescribeLyricRequest.h>
 #include <tencentcloud/ame/v20190916/model/DescribeLyricResponse.h>
 #include <tencentcloud/ame/v20190916/model/DescribeMusicRequest.h>
@@ -130,6 +132,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeKTVSingersResponse> DescribeKTVSingersOutcome;
                 typedef std::future<DescribeKTVSingersOutcome> DescribeKTVSingersOutcomeCallable;
                 typedef std::function<void(const AmeClient*, const Model::DescribeKTVSingersRequest&, DescribeKTVSingersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKTVSingersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeKTVTopListResponse> DescribeKTVTopListOutcome;
+                typedef std::future<DescribeKTVTopListOutcome> DescribeKTVTopListOutcomeCallable;
+                typedef std::function<void(const AmeClient*, const Model::DescribeKTVTopListRequest&, DescribeKTVTopListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKTVTopListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLyricResponse> DescribeLyricOutcome;
                 typedef std::future<DescribeLyricOutcome> DescribeLyricOutcomeCallable;
                 typedef std::function<void(const AmeClient*, const Model::DescribeLyricRequest&, DescribeLyricOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLyricAsyncHandler;
@@ -294,6 +299,15 @@ namespace TencentCloud
                 DescribeKTVSingersOutcome DescribeKTVSingers(const Model::DescribeKTVSingersRequest &request);
                 void DescribeKTVSingersAsync(const Model::DescribeKTVSingersRequest& request, const DescribeKTVSingersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeKTVSingersOutcomeCallable DescribeKTVSingersCallable(const Model::DescribeKTVSingersRequest& request);
+
+                /**
+                 *获取直播互动曲库歌曲的周榜和月榜
+                 * @param req DescribeKTVTopListRequest
+                 * @return DescribeKTVTopListOutcome
+                 */
+                DescribeKTVTopListOutcome DescribeKTVTopList(const Model::DescribeKTVTopListRequest &request);
+                void DescribeKTVTopListAsync(const Model::DescribeKTVTopListRequest& request, const DescribeKTVTopListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKTVTopListOutcomeCallable DescribeKTVTopListCallable(const Model::DescribeKTVTopListRequest& request);
 
                 /**
                  *根据接口的模式及歌曲ID来取得歌词信息或者波形图信息。
