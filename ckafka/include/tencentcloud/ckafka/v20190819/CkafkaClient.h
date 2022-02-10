@@ -45,6 +45,8 @@
 #include <tencentcloud/ckafka/v20190819/model/DeleteAclResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteAclRuleRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteAclRuleResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/DeleteGroupRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/DeleteGroupResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteInstancePreRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteInstancePreResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteRouteTriggerTimeRequest.h>
@@ -150,6 +152,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAclRuleResponse> DeleteAclRuleOutcome;
                 typedef std::future<DeleteAclRuleOutcome> DeleteAclRuleOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DeleteAclRuleRequest&, DeleteAclRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAclRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteGroupResponse> DeleteGroupOutcome;
+                typedef std::future<DeleteGroupOutcome> DeleteGroupOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::DeleteGroupRequest&, DeleteGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteInstancePreResponse> DeleteInstancePreOutcome;
                 typedef std::future<DeleteInstancePreOutcome> DeleteInstancePreOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DeleteInstancePreRequest&, DeleteInstancePreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstancePreAsyncHandler;
@@ -338,6 +343,15 @@ namespace TencentCloud
                 DeleteAclRuleOutcome DeleteAclRule(const Model::DeleteAclRuleRequest &request);
                 void DeleteAclRuleAsync(const Model::DeleteAclRuleRequest& request, const DeleteAclRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAclRuleOutcomeCallable DeleteAclRuleCallable(const Model::DeleteAclRuleRequest& request);
+
+                /**
+                 *删除消费组
+                 * @param req DeleteGroupRequest
+                 * @return DeleteGroupOutcome
+                 */
+                DeleteGroupOutcome DeleteGroup(const Model::DeleteGroupRequest &request);
+                void DeleteGroupAsync(const Model::DeleteGroupRequest& request, const DeleteGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteGroupOutcomeCallable DeleteGroupCallable(const Model::DeleteGroupRequest& request);
 
                 /**
                  *删除预付费实例
