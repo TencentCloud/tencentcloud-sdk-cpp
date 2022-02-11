@@ -98,10 +98,12 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/ModifyDBParametersResponse.h
   include/tencentcloud/mariadb/v20170312/model/CopyAccountPrivilegesRequest.h
   include/tencentcloud/mariadb/v20170312/model/SecurityGroup.h
+  include/tencentcloud/mariadb/v20170312/model/DescribeDatabaseTableRequest.h
   include/tencentcloud/mariadb/v20170312/model/OpenDBExtranetAccessResponse.h
   include/tencentcloud/mariadb/v20170312/model/KillSessionRequest.h
   include/tencentcloud/mariadb/v20170312/model/ModifyDBInstanceNameRequest.h
   include/tencentcloud/mariadb/v20170312/model/DeleteAccountRequest.h
+  include/tencentcloud/mariadb/v20170312/model/TableColumn.h
   include/tencentcloud/mariadb/v20170312/model/CreateTmpInstancesResponse.h
   include/tencentcloud/mariadb/v20170312/model/UpgradeDBInstanceRequest.h
   include/tencentcloud/mariadb/v20170312/model/SecurityGroupBound.h
@@ -156,6 +158,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/DisassociateSecurityGroupsRequest.h
   include/tencentcloud/mariadb/v20170312/model/DBAccount.h
   include/tencentcloud/mariadb/v20170312/model/CreateHourDBInstanceRequest.h
+  include/tencentcloud/mariadb/v20170312/model/DescribeDatabaseTableResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeAccountPrivilegesRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBPerformanceDetailsResponse.h
   include/tencentcloud/mariadb/v20170312/model/SqlLogItem.h
@@ -255,10 +258,12 @@ set(mariadb_src
   src/v20170312/model/ModifyDBParametersResponse.cpp
   src/v20170312/model/CopyAccountPrivilegesRequest.cpp
   src/v20170312/model/SecurityGroup.cpp
+  src/v20170312/model/DescribeDatabaseTableRequest.cpp
   src/v20170312/model/OpenDBExtranetAccessResponse.cpp
   src/v20170312/model/KillSessionRequest.cpp
   src/v20170312/model/ModifyDBInstanceNameRequest.cpp
   src/v20170312/model/DeleteAccountRequest.cpp
+  src/v20170312/model/TableColumn.cpp
   src/v20170312/model/CreateTmpInstancesResponse.cpp
   src/v20170312/model/UpgradeDBInstanceRequest.cpp
   src/v20170312/model/SecurityGroupBound.cpp
@@ -313,6 +318,7 @@ set(mariadb_src
   src/v20170312/model/DisassociateSecurityGroupsRequest.cpp
   src/v20170312/model/DBAccount.cpp
   src/v20170312/model/CreateHourDBInstanceRequest.cpp
+  src/v20170312/model/DescribeDatabaseTableResponse.cpp
   src/v20170312/model/DescribeAccountPrivilegesRequest.cpp
   src/v20170312/model/DescribeDBPerformanceDetailsResponse.cpp
   src/v20170312/model/SqlLogItem.cpp

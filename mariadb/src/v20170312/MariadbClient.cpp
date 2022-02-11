@@ -1072,6 +1072,49 @@ MariadbClient::DescribeDBSlowLogsOutcomeCallable MariadbClient::DescribeDBSlowLo
     return task->get_future();
 }
 
+MariadbClient::DescribeDatabaseTableOutcome MariadbClient::DescribeDatabaseTable(const DescribeDatabaseTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDatabaseTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDatabaseTableResponse rsp = DescribeDatabaseTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDatabaseTableOutcome(rsp);
+        else
+            return DescribeDatabaseTableOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDatabaseTableOutcome(outcome.GetError());
+    }
+}
+
+void MariadbClient::DescribeDatabaseTableAsync(const DescribeDatabaseTableRequest& request, const DescribeDatabaseTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDatabaseTable(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MariadbClient::DescribeDatabaseTableOutcomeCallable MariadbClient::DescribeDatabaseTableCallable(const DescribeDatabaseTableRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDatabaseTableOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDatabaseTable(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MariadbClient::DescribeDatabasesOutcome MariadbClient::DescribeDatabases(const DescribeDatabasesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDatabases");

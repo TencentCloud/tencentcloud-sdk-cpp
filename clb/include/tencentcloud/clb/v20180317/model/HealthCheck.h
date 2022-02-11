@@ -378,17 +378,17 @@ namespace TencentCloud
                     bool HttpVersionHasBeenSet() const;
 
                     /**
-                     * 获取自定义探测相关参数。健康检查原IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP），默认值：0
+                     * 获取自定义探测相关参数。健康检查源IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP），默认值：0
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SourceIpType 自定义探测相关参数。健康检查原IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP），默认值：0
+                     * @return SourceIpType 自定义探测相关参数。健康检查源IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP），默认值：0
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetSourceIpType() const;
 
                     /**
-                     * 设置自定义探测相关参数。健康检查原IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP），默认值：0
+                     * 设置自定义探测相关参数。健康检查源IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP），默认值：0
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SourceIpType 自定义探测相关参数。健康检查原IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP），默认值：0
+                     * @param SourceIpType 自定义探测相关参数。健康检查源IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP），默认值：0
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSourceIpType(const int64_t& _sourceIpType);
@@ -507,7 +507,7 @@ namespace TencentCloud
                     bool m_httpVersionHasBeenSet;
 
                     /**
-                     * 自定义探测相关参数。健康检查原IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP），默认值：0
+                     * 自定义探测相关参数。健康检查源IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP），默认值：0
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sourceIpType;

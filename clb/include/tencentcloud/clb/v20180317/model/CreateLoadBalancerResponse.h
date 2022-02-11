@@ -45,7 +45,9 @@ namespace TencentCloud
 
                     /**
                      * 获取由负载均衡实例唯一 ID 组成的数组。
+存在某些场景，如创建出现延迟时，此字段可能返回为空；此时可以根据接口返回的RequestId或DealName参数，通过DescribeTaskStatus接口查询创建的资源ID。
                      * @return LoadBalancerIds 由负载均衡实例唯一 ID 组成的数组。
+存在某些场景，如创建出现延迟时，此字段可能返回为空；此时可以根据接口返回的RequestId或DealName参数，通过DescribeTaskStatus接口查询创建的资源ID。
                      */
                     std::vector<std::string> GetLoadBalancerIds() const;
 
@@ -73,6 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 由负载均衡实例唯一 ID 组成的数组。
+存在某些场景，如创建出现延迟时，此字段可能返回为空；此时可以根据接口返回的RequestId或DealName参数，通过DescribeTaskStatus接口查询创建的资源ID。
                      */
                     std::vector<std::string> m_loadBalancerIds;
                     bool m_loadBalancerIdsHasBeenSet;

@@ -23,7 +23,8 @@ using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
 DescribeClusterNodePoolsRequest::DescribeClusterNodePoolsRequest() :
-    m_clusterIdHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,21 @@ string DescribeClusterNodePoolsRequest::ToJsonString() const
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -64,6 +80,22 @@ void DescribeClusterNodePoolsRequest::SetClusterId(const string& _clusterId)
 bool DescribeClusterNodePoolsRequest::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+vector<Filter> DescribeClusterNodePoolsRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeClusterNodePoolsRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeClusterNodePoolsRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

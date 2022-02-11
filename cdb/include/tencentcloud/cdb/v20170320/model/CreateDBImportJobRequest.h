@@ -61,24 +61,6 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取文件名称。该文件是指用户已上传到腾讯云的文件，仅支持.sql文件。
-                     * @return FileName 文件名称。该文件是指用户已上传到腾讯云的文件，仅支持.sql文件。
-                     */
-                    std::string GetFileName() const;
-
-                    /**
-                     * 设置文件名称。该文件是指用户已上传到腾讯云的文件，仅支持.sql文件。
-                     * @param FileName 文件名称。该文件是指用户已上传到腾讯云的文件，仅支持.sql文件。
-                     */
-                    void SetFileName(const std::string& _fileName);
-
-                    /**
-                     * 判断参数 FileName 是否已赋值
-                     * @return FileName 是否已赋值
-                     */
-                    bool FileNameHasBeenSet() const;
-
-                    /**
                      * 获取云数据库的用户名。
                      * @return User 云数据库的用户名。
                      */
@@ -95,6 +77,24 @@ namespace TencentCloud
                      * @return User 是否已赋值
                      */
                     bool UserHasBeenSet() const;
+
+                    /**
+                     * 获取文件名称。该文件是指用户已上传到腾讯云的文件，仅支持.sql文件。
+                     * @return FileName 文件名称。该文件是指用户已上传到腾讯云的文件，仅支持.sql文件。
+                     */
+                    std::string GetFileName() const;
+
+                    /**
+                     * 设置文件名称。该文件是指用户已上传到腾讯云的文件，仅支持.sql文件。
+                     * @param FileName 文件名称。该文件是指用户已上传到腾讯云的文件，仅支持.sql文件。
+                     */
+                    void SetFileName(const std::string& _fileName);
+
+                    /**
+                     * 判断参数 FileName 是否已赋值
+                     * @return FileName 是否已赋值
+                     */
+                    bool FileNameHasBeenSet() const;
 
                     /**
                      * 获取云数据库实例 User 账号的密码。
@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool DbNameHasBeenSet() const;
 
+                    /**
+                     * 获取腾讯云COS文件链接。 用户需要指定 FileName 或者 CosUrl 其中一个。 COS文件需要是 .sql 文件。
+                     * @return CosUrl 腾讯云COS文件链接。 用户需要指定 FileName 或者 CosUrl 其中一个。 COS文件需要是 .sql 文件。
+                     */
+                    std::string GetCosUrl() const;
+
+                    /**
+                     * 设置腾讯云COS文件链接。 用户需要指定 FileName 或者 CosUrl 其中一个。 COS文件需要是 .sql 文件。
+                     * @param CosUrl 腾讯云COS文件链接。 用户需要指定 FileName 或者 CosUrl 其中一个。 COS文件需要是 .sql 文件。
+                     */
+                    void SetCosUrl(const std::string& _cosUrl);
+
+                    /**
+                     * 判断参数 CosUrl 是否已赋值
+                     * @return CosUrl 是否已赋值
+                     */
+                    bool CosUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -141,16 +159,16 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 文件名称。该文件是指用户已上传到腾讯云的文件，仅支持.sql文件。
-                     */
-                    std::string m_fileName;
-                    bool m_fileNameHasBeenSet;
-
-                    /**
                      * 云数据库的用户名。
                      */
                     std::string m_user;
                     bool m_userHasBeenSet;
+
+                    /**
+                     * 文件名称。该文件是指用户已上传到腾讯云的文件，仅支持.sql文件。
+                     */
+                    std::string m_fileName;
+                    bool m_fileNameHasBeenSet;
 
                     /**
                      * 云数据库实例 User 账号的密码。
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     std::string m_dbName;
                     bool m_dbNameHasBeenSet;
+
+                    /**
+                     * 腾讯云COS文件链接。 用户需要指定 FileName 或者 CosUrl 其中一个。 COS文件需要是 .sql 文件。
+                     */
+                    std::string m_cosUrl;
+                    bool m_cosUrlHasBeenSet;
 
                 };
             }

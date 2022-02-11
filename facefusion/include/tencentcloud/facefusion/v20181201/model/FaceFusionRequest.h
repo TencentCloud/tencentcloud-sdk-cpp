@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool CelebrityIdentifyHasBeenSet() const;
 
                     /**
-                     * 获取图片Url地址
-                     * @return Url 图片Url地址
+                     * 获取图片Url地址，目前Url方式还不支持，后续会支持，可以使用FuseFace接口
+                     * @return Url 图片Url地址，目前Url方式还不支持，后续会支持，可以使用FuseFace接口
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置图片Url地址
-                     * @param Url 图片Url地址
+                     * 设置图片Url地址，目前Url方式还不支持，后续会支持，可以使用FuseFace接口
+                     * @param Url 图片Url地址，目前Url方式还不支持，后续会支持，可以使用FuseFace接口
                      */
                     void SetUrl(const std::string& _url);
 
@@ -212,7 +212,7 @@ namespace TencentCloud
                     bool m_celebrityIdentifyHasBeenSet;
 
                     /**
-                     * 图片Url地址
+                     * 图片Url地址，目前Url方式还不支持，后续会支持，可以使用FuseFace接口
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
