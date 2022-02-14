@@ -797,6 +797,28 @@ notInService       不在服务区
                      */
                     bool IVRKeyPressedExHasBeenSet() const;
 
+                    /**
+                     * 获取获取录音ASR文本信息地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AsrUrl 获取录音ASR文本信息地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAsrUrl() const;
+
+                    /**
+                     * 设置获取录音ASR文本信息地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AsrUrl 获取录音ASR文本信息地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAsrUrl(const std::string& _asrUrl);
+
+                    /**
+                     * 判断参数 AsrUrl 是否已赋值
+                     * @return AsrUrl 是否已赋值
+                     */
+                    bool AsrUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1027,6 +1049,13 @@ notInService       不在服务区
                      */
                     std::vector<IVRKeyPressedElement> m_iVRKeyPressedEx;
                     bool m_iVRKeyPressedExHasBeenSet;
+
+                    /**
+                     * 获取录音ASR文本信息地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_asrUrl;
+                    bool m_asrUrlHasBeenSet;
 
                 };
             }

@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool EngineVersionHasBeenSet() const;
 
+                    /**
+                     * 获取默认参数模板类型。支持值包括："HIGH_STABILITY" - 高稳定模版，"HIGH_PERFORMANCE" - 高性能模版。
+                     * @return TemplateType 默认参数模板类型。支持值包括："HIGH_STABILITY" - 高稳定模版，"HIGH_PERFORMANCE" - 高性能模版。
+                     */
+                    std::string GetTemplateType() const;
+
+                    /**
+                     * 设置默认参数模板类型。支持值包括："HIGH_STABILITY" - 高稳定模版，"HIGH_PERFORMANCE" - 高性能模版。
+                     * @param TemplateType 默认参数模板类型。支持值包括："HIGH_STABILITY" - 高稳定模版，"HIGH_PERFORMANCE" - 高性能模版。
+                     */
+                    void SetTemplateType(const std::string& _templateType);
+
+                    /**
+                     * 判断参数 TemplateType 是否已赋值
+                     * @return TemplateType 是否已赋值
+                     */
+                    bool TemplateTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::string m_engineVersion;
                     bool m_engineVersionHasBeenSet;
+
+                    /**
+                     * 默认参数模板类型。支持值包括："HIGH_STABILITY" - 高稳定模版，"HIGH_PERFORMANCE" - 高性能模版。
+                     */
+                    std::string m_templateType;
+                    bool m_templateTypeHasBeenSet;
 
                 };
             }

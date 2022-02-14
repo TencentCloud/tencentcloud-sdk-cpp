@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool FilterLineHasBeenSet() const;
 
                     /**
-                     * 获取状态搜索，idle：允许中；attacking：攻击中；blocking：封堵中
-                     * @return FilterStatus 状态搜索，idle：允许中；attacking：攻击中；blocking：封堵中
+                     * 获取状态搜索，idle：运行中；attacking：攻击中；blocking：封堵中
+                     * @return FilterStatus 状态搜索，idle：运行中；attacking：攻击中；blocking：封堵中
                      */
                     std::string GetFilterStatus() const;
 
                     /**
-                     * 设置状态搜索，idle：允许中；attacking：攻击中；blocking：封堵中
-                     * @param FilterStatus 状态搜索，idle：允许中；attacking：攻击中；blocking：封堵中
+                     * 设置状态搜索，idle：运行中；attacking：攻击中；blocking：封堵中
+                     * @param FilterStatus 状态搜索，idle：运行中；attacking：攻击中；blocking：封堵中
                      */
                     void SetFilterStatus(const std::string& _filterStatus);
 
@@ -249,7 +249,7 @@ namespace TencentCloud
                     bool m_filterLineHasBeenSet;
 
                     /**
-                     * 状态搜索，idle：允许中；attacking：攻击中；blocking：封堵中
+                     * 状态搜索，idle：运行中；attacking：攻击中；blocking：封堵中
                      */
                     std::string m_filterStatus;
                     bool m_filterStatusHasBeenSet;

@@ -43,14 +43,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务类型（Structured/Underwrite）
-                     * @return ServiceType 服务类型（Structured/Underwrite）
+                     * 获取服务类型
+Structured 仅结构化
+Underwrite 结构化+核保
+                     * @return ServiceType 服务类型
+Structured 仅结构化
+Underwrite 结构化+核保
                      */
                     std::string GetServiceType() const;
 
                     /**
-                     * 设置服务类型（Structured/Underwrite）
-                     * @param ServiceType 服务类型（Structured/Underwrite）
+                     * 设置服务类型
+Structured 仅结构化
+Underwrite 结构化+核保
+                     * @param ServiceType 服务类型
+Structured 仅结构化
+Underwrite 结构化+核保
                      */
                     void SetServiceType(const std::string& _serviceType);
 
@@ -81,7 +89,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 服务类型（Structured/Underwrite）
+                     * 服务类型
+Structured 仅结构化
+Underwrite 结构化+核保
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;

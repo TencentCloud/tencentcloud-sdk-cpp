@@ -119,9 +119,11 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/ModifyDiagDBInstanceConfResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceSchemaTimeSeriesResponse.h
   include/tencentcloud/dbbrain/v20210527/model/SlowLogTopSqlItem.h
+  include/tencentcloud/dbbrain/v20210527/model/DescribeProxySessionKillTasksRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeMySqlProcessListResponse.h
   include/tencentcloud/dbbrain/v20210527/model/HealthStatus.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceTablesResponse.h
+  include/tencentcloud/dbbrain/v20210527/model/TaskInfo.h
   include/tencentcloud/dbbrain/v20210527/model/KillMySqlThreadsResponse.h
   include/tencentcloud/dbbrain/v20210527/model/CreateSchedulerMailProfileRequest.h
   include/tencentcloud/dbbrain/v20210527/model/ContactItem.h
@@ -149,7 +151,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/DeleteSecurityAuditLogExportTasksResponse.h
   include/tencentcloud/dbbrain/v20210527/model/KillMySqlThreadsRequest.h
   include/tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportUrlRequest.h
-  include/tencentcloud/dbbrain/v20210527/model/ScoreDetail.h
+  include/tencentcloud/dbbrain/v20210527/model/DescribeSecurityAuditLogExportTasksResponse.h
   include/tencentcloud/dbbrain/v20210527/model/HealthScoreInfo.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceTableTimeSeriesResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBDiagHistoryResponse.h
@@ -191,12 +193,13 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/MonitorMetricSeriesData.h
   include/tencentcloud/dbbrain/v20210527/model/SecLogExportTaskInfo.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeHealthScoreResponse.h
-  include/tencentcloud/dbbrain/v20210527/model/DescribeSecurityAuditLogExportTasksResponse.h
+  include/tencentcloud/dbbrain/v20210527/model/ScoreDetail.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceSchemasRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeSlowLogTopSqlsResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeUserSqlAdviceRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeMySqlProcessListRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeSecurityAuditLogDownloadUrlsResponse.h
+  include/tencentcloud/dbbrain/v20210527/model/DescribeProxySessionKillTasksResponse.h
   )
 
 set(dbbrain_src
@@ -301,9 +304,11 @@ set(dbbrain_src
   src/v20210527/model/ModifyDiagDBInstanceConfResponse.cpp
   src/v20210527/model/DescribeTopSpaceSchemaTimeSeriesResponse.cpp
   src/v20210527/model/SlowLogTopSqlItem.cpp
+  src/v20210527/model/DescribeProxySessionKillTasksRequest.cpp
   src/v20210527/model/DescribeMySqlProcessListResponse.cpp
   src/v20210527/model/HealthStatus.cpp
   src/v20210527/model/DescribeTopSpaceTablesResponse.cpp
+  src/v20210527/model/TaskInfo.cpp
   src/v20210527/model/KillMySqlThreadsResponse.cpp
   src/v20210527/model/CreateSchedulerMailProfileRequest.cpp
   src/v20210527/model/ContactItem.cpp
@@ -331,7 +336,7 @@ set(dbbrain_src
   src/v20210527/model/DeleteSecurityAuditLogExportTasksResponse.cpp
   src/v20210527/model/KillMySqlThreadsRequest.cpp
   src/v20210527/model/CreateDBDiagReportUrlRequest.cpp
-  src/v20210527/model/ScoreDetail.cpp
+  src/v20210527/model/DescribeSecurityAuditLogExportTasksResponse.cpp
   src/v20210527/model/HealthScoreInfo.cpp
   src/v20210527/model/DescribeTopSpaceTableTimeSeriesResponse.cpp
   src/v20210527/model/DescribeDBDiagHistoryResponse.cpp
@@ -373,12 +378,13 @@ set(dbbrain_src
   src/v20210527/model/MonitorMetricSeriesData.cpp
   src/v20210527/model/SecLogExportTaskInfo.cpp
   src/v20210527/model/DescribeHealthScoreResponse.cpp
-  src/v20210527/model/DescribeSecurityAuditLogExportTasksResponse.cpp
+  src/v20210527/model/ScoreDetail.cpp
   src/v20210527/model/DescribeTopSpaceSchemasRequest.cpp
   src/v20210527/model/DescribeSlowLogTopSqlsResponse.cpp
   src/v20210527/model/DescribeUserSqlAdviceRequest.cpp
   src/v20210527/model/DescribeMySqlProcessListRequest.cpp
   src/v20210527/model/DescribeSecurityAuditLogDownloadUrlsResponse.cpp
+  src/v20210527/model/DescribeProxySessionKillTasksResponse.cpp
   )
 
 set(dbbrain_include

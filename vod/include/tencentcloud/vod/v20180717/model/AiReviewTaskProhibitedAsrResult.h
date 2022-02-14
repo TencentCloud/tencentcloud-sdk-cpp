@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 智能识别 Asr 文字鉴任违禁务结果类型
+                * 智能识别 Asr 文字鉴违禁任务结果类型
                 */
                 class AiReviewTaskProhibitedAsrResult : public AbstractModel
                 {

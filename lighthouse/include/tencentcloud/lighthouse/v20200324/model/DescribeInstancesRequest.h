@@ -78,7 +78,7 @@ namespace TencentCloud
 <li>instance-state</li>按照【实例状态】进行过滤。
 类型：String
 必选：否
-每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 InstanceIds 和 Filters。
+每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 InstanceIds 和 Filters。
                      * @return Filters 过滤器列表。
 <li>instance-name</li>按照【实例名称】进行过滤。
 类型：String
@@ -95,7 +95,7 @@ namespace TencentCloud
 <li>instance-state</li>按照【实例状态】进行过滤。
 类型：String
 必选：否
-每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 InstanceIds 和 Filters。
+每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 InstanceIds 和 Filters。
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -116,7 +116,7 @@ namespace TencentCloud
 <li>instance-state</li>按照【实例状态】进行过滤。
 类型：String
 必选：否
-每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 InstanceIds 和 Filters。
+每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 InstanceIds 和 Filters。
                      * @param Filters 过滤器列表。
 <li>instance-name</li>按照【实例名称】进行过滤。
 类型：String
@@ -133,7 +133,7 @@ namespace TencentCloud
 <li>instance-state</li>按照【实例状态】进行过滤。
 类型：String
 必选：否
-每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 InstanceIds 和 Filters。
+每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 InstanceIds 和 Filters。
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -204,7 +204,7 @@ namespace TencentCloud
 <li>instance-state</li>按照【实例状态】进行过滤。
 类型：String
 必选：否
-每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 InstanceIds 和 Filters。
+每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 InstanceIds 和 Filters。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

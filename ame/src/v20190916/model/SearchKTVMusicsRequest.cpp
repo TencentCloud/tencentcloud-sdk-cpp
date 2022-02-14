@@ -25,7 +25,8 @@ using namespace std;
 SearchKTVMusicsRequest::SearchKTVMusicsRequest() :
     m_keyWordHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_sortHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,15 @@ string SearchKTVMusicsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_sortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Sort";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sort.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -114,6 +124,22 @@ void SearchKTVMusicsRequest::SetLimit(const int64_t& _limit)
 bool SearchKTVMusicsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+SortBy SearchKTVMusicsRequest::GetSort() const
+{
+    return m_sort;
+}
+
+void SearchKTVMusicsRequest::SetSort(const SortBy& _sort)
+{
+    m_sort = _sort;
+    m_sortHasBeenSet = true;
+}
+
+bool SearchKTVMusicsRequest::SortHasBeenSet() const
+{
+    return m_sortHasBeenSet;
 }
 
 

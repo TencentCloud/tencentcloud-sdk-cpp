@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool PolicyTypeHasBeenSet() const;
 
                     /**
-                     * 获取关系权限
-                     * @return PermissionIds 关系权限
+                     * 获取关系权限 取值：1-查看账单、2-查看余额、3-资金划拨、4-合并出账、5-开票 ，1、2 默认必须
+                     * @return PermissionIds 关系权限 取值：1-查看账单、2-查看余额、3-资金划拨、4-合并出账、5-开票 ，1、2 默认必须
                      */
                     std::vector<uint64_t> GetPermissionIds() const;
 
                     /**
-                     * 设置关系权限
-                     * @param PermissionIds 关系权限
+                     * 设置关系权限 取值：1-查看账单、2-查看余额、3-资金划拨、4-合并出账、5-开票 ，1、2 默认必须
+                     * @param PermissionIds 关系权限 取值：1-查看账单、2-查看余额、3-资金划拨、4-合并出账、5-开票 ，1、2 默认必须
                      */
                     void SetPermissionIds(const std::vector<uint64_t>& _permissionIds);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool PermissionIdsHasBeenSet() const;
 
                     /**
-                     * 获取需要调节的节点
-                     * @return NodeId 需要调节的节点
+                     * 获取成员所属部门的节点ID
+                     * @return NodeId 成员所属部门的节点ID
                      */
                     int64_t GetNodeId() const;
 
                     /**
-                     * 设置需要调节的节点
-                     * @param NodeId 需要调节的节点
+                     * 设置成员所属部门的节点ID
+                     * @param NodeId 成员所属部门的节点ID
                      */
                     void SetNodeId(const int64_t& _nodeId);
 
@@ -219,13 +219,13 @@ namespace TencentCloud
                     bool m_policyTypeHasBeenSet;
 
                     /**
-                     * 关系权限
+                     * 关系权限 取值：1-查看账单、2-查看余额、3-资金划拨、4-合并出账、5-开票 ，1、2 默认必须
                      */
                     std::vector<uint64_t> m_permissionIds;
                     bool m_permissionIdsHasBeenSet;
 
                     /**
-                     * 需要调节的节点
+                     * 成员所属部门的节点ID
                      */
                     int64_t m_nodeId;
                     bool m_nodeIdHasBeenSet;

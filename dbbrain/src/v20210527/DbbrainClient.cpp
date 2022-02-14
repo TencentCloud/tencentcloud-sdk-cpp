@@ -900,6 +900,49 @@ DbbrainClient::DescribeMySqlProcessListOutcomeCallable DbbrainClient::DescribeMy
     return task->get_future();
 }
 
+DbbrainClient::DescribeProxySessionKillTasksOutcome DbbrainClient::DescribeProxySessionKillTasks(const DescribeProxySessionKillTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeProxySessionKillTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeProxySessionKillTasksResponse rsp = DescribeProxySessionKillTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeProxySessionKillTasksOutcome(rsp);
+        else
+            return DescribeProxySessionKillTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeProxySessionKillTasksOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeProxySessionKillTasksAsync(const DescribeProxySessionKillTasksRequest& request, const DescribeProxySessionKillTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeProxySessionKillTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeProxySessionKillTasksOutcomeCallable DbbrainClient::DescribeProxySessionKillTasksCallable(const DescribeProxySessionKillTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeProxySessionKillTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeProxySessionKillTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::DescribeSecurityAuditLogDownloadUrlsOutcome DbbrainClient::DescribeSecurityAuditLogDownloadUrls(const DescribeSecurityAuditLogDownloadUrlsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSecurityAuditLogDownloadUrls");

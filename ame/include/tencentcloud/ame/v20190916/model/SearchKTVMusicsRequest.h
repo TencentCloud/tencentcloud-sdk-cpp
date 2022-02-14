@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ame/v20190916/model/SortBy.h>
 
 
 namespace TencentCloud
@@ -62,17 +63,17 @@ namespace TencentCloud
 
                     /**
                      * 获取分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
-取值范围：Offset + Limit 不超过5000。取值范围：小于5000
+取值范围：Offset + Limit 不超过5000。
                      * @return Offset 分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
-取值范围：Offset + Limit 不超过5000。取值范围：小于5000
+取值范围：Offset + Limit 不超过5000。
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
-取值范围：Offset + Limit 不超过5000。取值范围：小于5000
+取值范围：Offset + Limit 不超过5000。
                      * @param Offset 分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
-取值范围：Offset + Limit 不超过5000。取值范围：小于5000
+取值范围：Offset + Limit 不超过5000。
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -84,17 +85,13 @@ namespace TencentCloud
 
                     /**
                      * 获取分页返回的起始偏移量，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。
-取值范围：Offset + Limit 不超过5000。
                      * @return Limit 分页返回的起始偏移量，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。
-取值范围：Offset + Limit 不超过5000。
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页返回的起始偏移量，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。
-取值范围：Offset + Limit 不超过5000。
                      * @param Limit 分页返回的起始偏移量，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。
-取值范围：Offset + Limit 不超过5000。
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -103,6 +100,36 @@ namespace TencentCloud
                      * @return Limit 是否已赋值
                      */
                     bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取排序方式。默认按照匹配度排序
+<li> Sort.Field 可选 CreateTime</li>
+<li> Sort.Order 可选 Desc </li>
+<li> 当 KeyWord 不为空时，Sort.Field 字段无效， 搜索结果将以匹配度排序。</li>
+                     * @return Sort 排序方式。默认按照匹配度排序
+<li> Sort.Field 可选 CreateTime</li>
+<li> Sort.Order 可选 Desc </li>
+<li> 当 KeyWord 不为空时，Sort.Field 字段无效， 搜索结果将以匹配度排序。</li>
+                     */
+                    SortBy GetSort() const;
+
+                    /**
+                     * 设置排序方式。默认按照匹配度排序
+<li> Sort.Field 可选 CreateTime</li>
+<li> Sort.Order 可选 Desc </li>
+<li> 当 KeyWord 不为空时，Sort.Field 字段无效， 搜索结果将以匹配度排序。</li>
+                     * @param Sort 排序方式。默认按照匹配度排序
+<li> Sort.Field 可选 CreateTime</li>
+<li> Sort.Order 可选 Desc </li>
+<li> 当 KeyWord 不为空时，Sort.Field 字段无效， 搜索结果将以匹配度排序。</li>
+                     */
+                    void SetSort(const SortBy& _sort);
+
+                    /**
+                     * 判断参数 Sort 是否已赋值
+                     * @return Sort 是否已赋值
+                     */
+                    bool SortHasBeenSet() const;
 
                 private:
 
@@ -114,17 +141,25 @@ namespace TencentCloud
 
                     /**
                      * 分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
-取值范围：Offset + Limit 不超过5000。取值范围：小于5000
+取值范围：Offset + Limit 不超过5000。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
                      * 分页返回的起始偏移量，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。
-取值范围：Offset + Limit 不超过5000。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 排序方式。默认按照匹配度排序
+<li> Sort.Field 可选 CreateTime</li>
+<li> Sort.Order 可选 Desc </li>
+<li> 当 KeyWord 不为空时，Sort.Field 字段无效， 搜索结果将以匹配度排序。</li>
+                     */
+                    SortBy m_sort;
+                    bool m_sortHasBeenSet;
 
                 };
             }

@@ -105,8 +105,14 @@ namespace TencentCloud
                     bool UnderwriteTaskIdHasBeenSet() const;
 
                     /**
-                     * 获取状态码
-                     * @return Status 状态码
+                     * 获取结果状态：
+0：返回成功
+1：结果未生成
+2：结果生成失败
+                     * @return Status 结果状态：
+0：返回成功
+1：结果未生成
+2：结果生成失败
                      */
                     uint64_t GetStatus() const;
 
@@ -161,7 +167,10 @@ namespace TencentCloud
                     bool m_underwriteTaskIdHasBeenSet;
 
                     /**
-                     * 状态码
+                     * 结果状态：
+0：返回成功
+1：结果未生成
+2：结果生成失败
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
