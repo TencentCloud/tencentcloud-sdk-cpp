@@ -27,6 +27,7 @@
 #include <tencentcloud/ame/v20190916/model/SetAudioParamCommandInput.h>
 #include <tencentcloud/ame/v20190916/model/SendMessageCommandInput.h>
 #include <tencentcloud/ame/v20190916/model/SetPlayModeCommandInput.h>
+#include <tencentcloud/ame/v20190916/model/SetDestroyModeCommandInput.h>
 
 
 namespace TencentCloud
@@ -77,6 +78,7 @@ namespace TencentCloud
 <li>SetPlaylist：歌单变更</li>
 <li>SetAudioParam：音频参数变更</li>
 <li>SendMessage：发送自定义消息</li>
+<li>SetDestroyMode：设置销毁模式</li>
                      * @return Command 指令，取值有：
 <li>Play：播放</li>
 <li>Pause：暂停</li>
@@ -87,6 +89,7 @@ namespace TencentCloud
 <li>SetPlaylist：歌单变更</li>
 <li>SetAudioParam：音频参数变更</li>
 <li>SendMessage：发送自定义消息</li>
+<li>SetDestroyMode：设置销毁模式</li>
                      */
                     std::string GetCommand() const;
 
@@ -101,6 +104,7 @@ namespace TencentCloud
 <li>SetPlaylist：歌单变更</li>
 <li>SetAudioParam：音频参数变更</li>
 <li>SendMessage：发送自定义消息</li>
+<li>SetDestroyMode：设置销毁模式</li>
                      * @param Command 指令，取值有：
 <li>Play：播放</li>
 <li>Pause：暂停</li>
@@ -111,6 +115,7 @@ namespace TencentCloud
 <li>SetPlaylist：歌单变更</li>
 <li>SetAudioParam：音频参数变更</li>
 <li>SendMessage：发送自定义消息</li>
+<li>SetDestroyMode：设置销毁模式</li>
                      */
                     void SetCommand(const std::string& _command);
 
@@ -228,6 +233,24 @@ namespace TencentCloud
                      */
                     bool SetPlayModeCommandInputHasBeenSet() const;
 
+                    /**
+                     * 获取销毁模式，当Command取SetDestroyMode时，必填。
+                     * @return SetDestroyModeCommandInput 销毁模式，当Command取SetDestroyMode时，必填。
+                     */
+                    SetDestroyModeCommandInput GetSetDestroyModeCommandInput() const;
+
+                    /**
+                     * 设置销毁模式，当Command取SetDestroyMode时，必填。
+                     * @param SetDestroyModeCommandInput 销毁模式，当Command取SetDestroyMode时，必填。
+                     */
+                    void SetSetDestroyModeCommandInput(const SetDestroyModeCommandInput& _setDestroyModeCommandInput);
+
+                    /**
+                     * 判断参数 SetDestroyModeCommandInput 是否已赋值
+                     * @return SetDestroyModeCommandInput 是否已赋值
+                     */
+                    bool SetDestroyModeCommandInputHasBeenSet() const;
+
                 private:
 
                     /**
@@ -247,6 +270,7 @@ namespace TencentCloud
 <li>SetPlaylist：歌单变更</li>
 <li>SetAudioParam：音频参数变更</li>
 <li>SendMessage：发送自定义消息</li>
+<li>SetDestroyMode：设置销毁模式</li>
                      */
                     std::string m_command;
                     bool m_commandHasBeenSet;
@@ -286,6 +310,12 @@ namespace TencentCloud
                      */
                     SetPlayModeCommandInput m_setPlayModeCommandInput;
                     bool m_setPlayModeCommandInputHasBeenSet;
+
+                    /**
+                     * 销毁模式，当Command取SetDestroyMode时，必填。
+                     */
+                    SetDestroyModeCommandInput m_setDestroyModeCommandInput;
+                    bool m_setDestroyModeCommandInputHasBeenSet;
 
                 };
             }

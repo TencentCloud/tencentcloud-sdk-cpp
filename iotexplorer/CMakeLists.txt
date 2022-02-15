@@ -163,6 +163,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/DescribeBindedProductsRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeLoRaFrequencyResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/ProductEntry.h
+  include/tencentcloud/iotexplorer/v20190423/model/DescribeGatewaySubDeviceListResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeSpaceFenceEventListRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/GetLoRaGatewayListRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/FenceEventItem.h
@@ -178,6 +179,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/CreateLoRaFrequencyRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/LoRaGatewayItem.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeDeviceBindGatewayResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/DescribeGatewaySubDeviceListRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/ControlDeviceDataResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataHistoryRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/UpdateFirmwareRequest.h
@@ -376,6 +378,7 @@ set(iotexplorer_src
   src/v20190423/model/DescribeBindedProductsRequest.cpp
   src/v20190423/model/DescribeLoRaFrequencyResponse.cpp
   src/v20190423/model/ProductEntry.cpp
+  src/v20190423/model/DescribeGatewaySubDeviceListResponse.cpp
   src/v20190423/model/DescribeSpaceFenceEventListRequest.cpp
   src/v20190423/model/GetLoRaGatewayListRequest.cpp
   src/v20190423/model/FenceEventItem.cpp
@@ -391,6 +394,7 @@ set(iotexplorer_src
   src/v20190423/model/CreateLoRaFrequencyRequest.cpp
   src/v20190423/model/LoRaGatewayItem.cpp
   src/v20190423/model/DescribeDeviceBindGatewayResponse.cpp
+  src/v20190423/model/DescribeGatewaySubDeviceListRequest.cpp
   src/v20190423/model/ControlDeviceDataResponse.cpp
   src/v20190423/model/DescribeDeviceDataHistoryRequest.cpp
   src/v20190423/model/UpdateFirmwareRequest.cpp

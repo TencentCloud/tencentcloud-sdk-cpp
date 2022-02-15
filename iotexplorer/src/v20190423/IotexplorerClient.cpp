@@ -1674,6 +1674,49 @@ IotexplorerClient::DescribeGatewayBindDevicesOutcomeCallable IotexplorerClient::
     return task->get_future();
 }
 
+IotexplorerClient::DescribeGatewaySubDeviceListOutcome IotexplorerClient::DescribeGatewaySubDeviceList(const DescribeGatewaySubDeviceListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGatewaySubDeviceList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGatewaySubDeviceListResponse rsp = DescribeGatewaySubDeviceListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGatewaySubDeviceListOutcome(rsp);
+        else
+            return DescribeGatewaySubDeviceListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGatewaySubDeviceListOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeGatewaySubDeviceListAsync(const DescribeGatewaySubDeviceListRequest& request, const DescribeGatewaySubDeviceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGatewaySubDeviceList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeGatewaySubDeviceListOutcomeCallable IotexplorerClient::DescribeGatewaySubDeviceListCallable(const DescribeGatewaySubDeviceListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGatewaySubDeviceListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGatewaySubDeviceList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::DescribeGatewaySubProductsOutcome IotexplorerClient::DescribeGatewaySubProducts(const DescribeGatewaySubProductsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeGatewaySubProducts");

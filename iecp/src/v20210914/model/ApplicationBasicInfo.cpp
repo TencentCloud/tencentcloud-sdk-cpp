@@ -24,7 +24,8 @@ ApplicationBasicInfo::ApplicationBasicInfo() :
     m_nameHasBeenSet(false),
     m_manageUrlHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_allowVisualModifyHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome ApplicationBasicInfo::Deserialize(const rapidjson::Value &va
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("AllowVisualModify") && !value["AllowVisualModify"].IsNull())
+    {
+        if (!value["AllowVisualModify"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplicationBasicInfo.AllowVisualModify` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_allowVisualModify = value["AllowVisualModify"].GetBool();
+        m_allowVisualModifyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void ApplicationBasicInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_allowVisualModifyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllowVisualModify";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_allowVisualModify, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void ApplicationBasicInfo::SetCreateTime(const string& _createTime)
 bool ApplicationBasicInfo::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+bool ApplicationBasicInfo::GetAllowVisualModify() const
+{
+    return m_allowVisualModify;
+}
+
+void ApplicationBasicInfo::SetAllowVisualModify(const bool& _allowVisualModify)
+{
+    m_allowVisualModify = _allowVisualModify;
+    m_allowVisualModifyHasBeenSet = true;
+}
+
+bool ApplicationBasicInfo::AllowVisualModifyHasBeenSet() const
+{
+    return m_allowVisualModifyHasBeenSet;
 }
 

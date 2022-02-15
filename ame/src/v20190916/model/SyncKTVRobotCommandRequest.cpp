@@ -30,7 +30,8 @@ SyncKTVRobotCommandRequest::SyncKTVRobotCommandRequest() :
     m_seekCommandInputHasBeenSet(false),
     m_setAudioParamCommandInputHasBeenSet(false),
     m_sendMessageCommandInputHasBeenSet(false),
-    m_setPlayModeCommandInputHasBeenSet(false)
+    m_setPlayModeCommandInputHasBeenSet(false),
+    m_setDestroyModeCommandInputHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,15 @@ string SyncKTVRobotCommandRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_setPlayModeCommandInput.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_setDestroyModeCommandInputHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SetDestroyModeCommandInput";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_setDestroyModeCommandInput.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -245,6 +255,22 @@ void SyncKTVRobotCommandRequest::SetSetPlayModeCommandInput(const SetPlayModeCom
 bool SyncKTVRobotCommandRequest::SetPlayModeCommandInputHasBeenSet() const
 {
     return m_setPlayModeCommandInputHasBeenSet;
+}
+
+SetDestroyModeCommandInput SyncKTVRobotCommandRequest::GetSetDestroyModeCommandInput() const
+{
+    return m_setDestroyModeCommandInput;
+}
+
+void SyncKTVRobotCommandRequest::SetSetDestroyModeCommandInput(const SetDestroyModeCommandInput& _setDestroyModeCommandInput)
+{
+    m_setDestroyModeCommandInput = _setDestroyModeCommandInput;
+    m_setDestroyModeCommandInputHasBeenSet = true;
+}
+
+bool SyncKTVRobotCommandRequest::SetDestroyModeCommandInputHasBeenSet() const
+{
+    return m_setDestroyModeCommandInputHasBeenSet;
 }
 
 

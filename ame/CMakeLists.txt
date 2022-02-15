@@ -48,6 +48,7 @@ set(ame_public_header_model
   include/tencentcloud/ame/v20190916/model/DescribeCloudMusicPurchasedResponse.h
   include/tencentcloud/ame/v20190916/model/DataInfo.h
   include/tencentcloud/ame/v20190916/model/Artist.h
+  include/tencentcloud/ame/v20190916/model/SetDestroyModeCommandInput.h
   include/tencentcloud/ame/v20190916/model/ReportDataResponse.h
   include/tencentcloud/ame/v20190916/model/SearchKTVMusicsResponse.h
   include/tencentcloud/ame/v20190916/model/DescribeItemByIdRequest.h
@@ -144,6 +145,7 @@ set(ame_src
   src/v20190916/model/DescribeCloudMusicPurchasedResponse.cpp
   src/v20190916/model/DataInfo.cpp
   src/v20190916/model/Artist.cpp
+  src/v20190916/model/SetDestroyModeCommandInput.cpp
   src/v20190916/model/ReportDataResponse.cpp
   src/v20190916/model/SearchKTVMusicsResponse.cpp
   src/v20190916/model/DescribeItemByIdRequest.cpp

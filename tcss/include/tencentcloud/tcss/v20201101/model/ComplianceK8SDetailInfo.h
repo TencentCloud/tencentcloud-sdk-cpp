@@ -68,6 +68,28 @@ namespace TencentCloud
                      */
                     bool ClusterNameHasBeenSet() const;
 
+                    /**
+                     * 获取K8S集群的版本。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterVersion K8S集群的版本。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetClusterVersion() const;
+
+                    /**
+                     * 设置K8S集群的版本。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ClusterVersion K8S集群的版本。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClusterVersion(const std::string& _clusterVersion);
+
+                    /**
+                     * 判断参数 ClusterVersion 是否已赋值
+                     * @return ClusterVersion 是否已赋值
+                     */
+                    bool ClusterVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -76,6 +98,13 @@ namespace TencentCloud
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
+
+                    /**
+                     * K8S集群的版本。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterVersion;
+                    bool m_clusterVersionHasBeenSet;
 
                 };
             }

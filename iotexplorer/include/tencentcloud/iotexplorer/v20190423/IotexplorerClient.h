@@ -99,6 +99,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareTaskResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeGatewayBindDevicesRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeGatewayBindDevicesResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeGatewaySubDeviceListRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeGatewaySubDeviceListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeGatewaySubProductsRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeGatewaySubProductsResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeLoRaFrequencyRequest.h>
@@ -325,6 +327,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeGatewayBindDevicesResponse> DescribeGatewayBindDevicesOutcome;
                 typedef std::future<DescribeGatewayBindDevicesOutcome> DescribeGatewayBindDevicesOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeGatewayBindDevicesRequest&, DescribeGatewayBindDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewayBindDevicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGatewaySubDeviceListResponse> DescribeGatewaySubDeviceListOutcome;
+                typedef std::future<DescribeGatewaySubDeviceListOutcome> DescribeGatewaySubDeviceListOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeGatewaySubDeviceListRequest&, DescribeGatewaySubDeviceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewaySubDeviceListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGatewaySubProductsResponse> DescribeGatewaySubProductsOutcome;
                 typedef std::future<DescribeGatewaySubProductsOutcome> DescribeGatewaySubProductsOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeGatewaySubProductsRequest&, DescribeGatewaySubProductsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewaySubProductsAsyncHandler;
@@ -816,6 +821,15 @@ namespace TencentCloud
                 DescribeGatewayBindDevicesOutcome DescribeGatewayBindDevices(const Model::DescribeGatewayBindDevicesRequest &request);
                 void DescribeGatewayBindDevicesAsync(const Model::DescribeGatewayBindDevicesRequest& request, const DescribeGatewayBindDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeGatewayBindDevicesOutcomeCallable DescribeGatewayBindDevicesCallable(const Model::DescribeGatewayBindDevicesRequest& request);
+
+                /**
+                 *查询绑定到家庭的网关设备的子设备列表
+                 * @param req DescribeGatewaySubDeviceListRequest
+                 * @return DescribeGatewaySubDeviceListOutcome
+                 */
+                DescribeGatewaySubDeviceListOutcome DescribeGatewaySubDeviceList(const Model::DescribeGatewaySubDeviceListRequest &request);
+                void DescribeGatewaySubDeviceListAsync(const Model::DescribeGatewaySubDeviceListRequest& request, const DescribeGatewaySubDeviceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGatewaySubDeviceListOutcomeCallable DescribeGatewaySubDeviceListCallable(const Model::DescribeGatewaySubDeviceListRequest& request);
 
                 /**
                  *用于获取网关可绑定或解绑的子产品

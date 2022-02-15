@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool ScanPathAllHasBeenSet() const;
 
                     /**
-                     * 获取当ScanPathAll为true 生效 0扫描以下路径 1、扫描除以下路径
-                     * @return ScanPathType 当ScanPathAll为true 生效 0扫描以下路径 1、扫描除以下路径
+                     * 获取当ScanPathAll为true 生效 0扫描以下路径 1、扫描除以下路径(扫描范围只能小于等于1)
+                     * @return ScanPathType 当ScanPathAll为true 生效 0扫描以下路径 1、扫描除以下路径(扫描范围只能小于等于1)
                      */
                     uint64_t GetScanPathType() const;
 
                     /**
-                     * 设置当ScanPathAll为true 生效 0扫描以下路径 1、扫描除以下路径
-                     * @param ScanPathType 当ScanPathAll为true 生效 0扫描以下路径 1、扫描除以下路径
+                     * 设置当ScanPathAll为true 生效 0扫描以下路径 1、扫描除以下路径(扫描范围只能小于等于1)
+                     * @param ScanPathType 当ScanPathAll为true 生效 0扫描以下路径 1、扫描除以下路径(扫描范围只能小于等于1)
                      */
                     void SetScanPathType(const uint64_t& _scanPathType);
 
@@ -129,7 +129,7 @@ namespace TencentCloud
                     bool m_scanPathAllHasBeenSet;
 
                     /**
-                     * 当ScanPathAll为true 生效 0扫描以下路径 1、扫描除以下路径
+                     * 当ScanPathAll为true 生效 0扫描以下路径 1、扫描除以下路径(扫描范围只能小于等于1)
                      */
                     uint64_t m_scanPathType;
                     bool m_scanPathTypeHasBeenSet;
