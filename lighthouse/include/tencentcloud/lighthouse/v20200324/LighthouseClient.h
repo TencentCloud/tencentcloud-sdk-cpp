@@ -37,6 +37,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/CreateFirewallRulesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateInstanceSnapshotRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateInstanceSnapshotResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/CreateInstancesRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/CreateInstancesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateKeyPairRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateKeyPairResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DeleteBlueprintsRequest.h>
@@ -188,6 +190,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateInstanceSnapshotResponse> CreateInstanceSnapshotOutcome;
                 typedef std::future<CreateInstanceSnapshotOutcome> CreateInstanceSnapshotOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::CreateInstanceSnapshotRequest&, CreateInstanceSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceSnapshotAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateInstancesResponse> CreateInstancesOutcome;
+                typedef std::future<CreateInstancesOutcome> CreateInstancesOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::CreateInstancesRequest&, CreateInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateKeyPairResponse> CreateKeyPairOutcome;
                 typedef std::future<CreateKeyPairOutcome> CreateKeyPairOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::CreateKeyPairRequest&, CreateKeyPairOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateKeyPairAsyncHandler;
@@ -446,6 +451,15 @@ namespace TencentCloud
                 CreateInstanceSnapshotOutcome CreateInstanceSnapshot(const Model::CreateInstanceSnapshotRequest &request);
                 void CreateInstanceSnapshotAsync(const Model::CreateInstanceSnapshotRequest& request, const CreateInstanceSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateInstanceSnapshotOutcomeCallable CreateInstanceSnapshotCallable(const Model::CreateInstanceSnapshotRequest& request);
+
+                /**
+                 *本接口(CreateInstances)用于创建一个或多个指定套餐的轻量应用服务器实例。
+                 * @param req CreateInstancesRequest
+                 * @return CreateInstancesOutcome
+                 */
+                CreateInstancesOutcome CreateInstances(const Model::CreateInstancesRequest &request);
+                void CreateInstancesAsync(const Model::CreateInstancesRequest& request, const CreateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateInstancesOutcomeCallable CreateInstancesCallable(const Model::CreateInstancesRequest& request);
 
                 /**
                  *本接口（CreateKeyPair）用于创建一个密钥对。

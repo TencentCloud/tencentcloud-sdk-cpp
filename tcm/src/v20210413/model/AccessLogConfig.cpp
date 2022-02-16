@@ -24,7 +24,9 @@ AccessLogConfig::AccessLogConfig() :
     m_enableHasBeenSet(false),
     m_templateHasBeenSet(false),
     m_selectedRangeHasBeenSet(false),
-    m_cLSHasBeenSet(false)
+    m_cLSHasBeenSet(false),
+    m_encodingHasBeenSet(false),
+    m_formatHasBeenSet(false)
 {
 }
 
@@ -87,6 +89,26 @@ CoreInternalOutcome AccessLogConfig::Deserialize(const rapidjson::Value &value)
         m_cLSHasBeenSet = true;
     }
 
+    if (value.HasMember("Encoding") && !value["Encoding"].IsNull())
+    {
+        if (!value["Encoding"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessLogConfig.Encoding` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_encoding = string(value["Encoding"].GetString());
+        m_encodingHasBeenSet = true;
+    }
+
+    if (value.HasMember("Format") && !value["Format"].IsNull())
+    {
+        if (!value["Format"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessLogConfig.Format` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_format = string(value["Format"].GetString());
+        m_formatHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +148,22 @@ void AccessLogConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cLS.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_encodingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Encoding";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_encoding.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_formatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Format";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_format.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -193,5 +231,37 @@ void AccessLogConfig::SetCLS(const CLS& _cLS)
 bool AccessLogConfig::CLSHasBeenSet() const
 {
     return m_cLSHasBeenSet;
+}
+
+string AccessLogConfig::GetEncoding() const
+{
+    return m_encoding;
+}
+
+void AccessLogConfig::SetEncoding(const string& _encoding)
+{
+    m_encoding = _encoding;
+    m_encodingHasBeenSet = true;
+}
+
+bool AccessLogConfig::EncodingHasBeenSet() const
+{
+    return m_encodingHasBeenSet;
+}
+
+string AccessLogConfig::GetFormat() const
+{
+    return m_format;
+}
+
+void AccessLogConfig::SetFormat(const string& _format)
+{
+    m_format = _format;
+    m_formatHasBeenSet = true;
+}
+
+bool AccessLogConfig::FormatHasBeenSet() const
+{
+    return m_formatHasBeenSet;
 }
 

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ivld/v20210903/model/PersonImageInfo.h>
 
 
 namespace TencentCloud
@@ -136,6 +137,42 @@ namespace TencentCloud
                      */
                     bool L2CategoryHasBeenSet() const;
 
+                    /**
+                     * 获取自定义人物图片信息
+                     * @return ImageInfoSet 自定义人物图片信息
+                     */
+                    std::vector<PersonImageInfo> GetImageInfoSet() const;
+
+                    /**
+                     * 设置自定义人物图片信息
+                     * @param ImageInfoSet 自定义人物图片信息
+                     */
+                    void SetImageInfoSet(const std::vector<PersonImageInfo>& _imageInfoSet);
+
+                    /**
+                     * 判断参数 ImageInfoSet 是否已赋值
+                     * @return ImageInfoSet 是否已赋值
+                     */
+                    bool ImageInfoSetHasBeenSet() const;
+
+                    /**
+                     * 获取自定义人物创建时间
+                     * @return CreateTime 自定义人物创建时间
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置自定义人物创建时间
+                     * @param CreateTime 自定义人物创建时间
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +204,18 @@ namespace TencentCloud
                      */
                     std::string m_l2Category;
                     bool m_l2CategoryHasBeenSet;
+
+                    /**
+                     * 自定义人物图片信息
+                     */
+                    std::vector<PersonImageInfo> m_imageInfoSet;
+                    bool m_imageInfoSetHasBeenSet;
+
+                    /**
+                     * 自定义人物创建时间
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                 };
             }

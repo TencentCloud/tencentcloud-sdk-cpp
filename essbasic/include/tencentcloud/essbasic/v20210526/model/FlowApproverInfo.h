@@ -245,14 +245,14 @@ namespace TencentCloud
                     bool RecipientIdHasBeenSet() const;
 
                     /**
-                     * 获取同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
-                     * @return OrganizationName 同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
+                     * 获取企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传；
+                     * @return OrganizationName 企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传；
                      */
                     std::string GetOrganizationName() const;
 
                     /**
-                     * 设置同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
-                     * @param OrganizationName 同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
+                     * 设置企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传；
+                     * @param OrganizationName 企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传；
                      */
                     void SetOrganizationName(const std::string& _organizationName);
 
@@ -263,14 +263,14 @@ namespace TencentCloud
                     bool OrganizationNameHasBeenSet() const;
 
                     /**
-                     * 获取同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
-                     * @return OrganizationOpenId 同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
+                     * 获取企业签署方在同一渠道下的其他合作企业OpenId，签署方为非发起方企业场景下必传；
+                     * @return OrganizationOpenId 企业签署方在同一渠道下的其他合作企业OpenId，签署方为非发起方企业场景下必传；
                      */
                     std::string GetOrganizationOpenId() const;
 
                     /**
-                     * 设置同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
-                     * @param OrganizationOpenId 同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
+                     * 设置企业签署方在同一渠道下的其他合作企业OpenId，签署方为非发起方企业场景下必传；
+                     * @param OrganizationOpenId 企业签署方在同一渠道下的其他合作企业OpenId，签署方为非发起方企业场景下必传；
                      */
                     void SetOrganizationOpenId(const std::string& _organizationOpenId);
 
@@ -349,13 +349,13 @@ namespace TencentCloud
                     bool m_recipientIdHasBeenSet;
 
                     /**
-                     * 同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
+                     * 企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传；
                      */
                     std::string m_organizationName;
                     bool m_organizationNameHasBeenSet;
 
                     /**
-                     * 同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
+                     * 企业签署方在同一渠道下的其他合作企业OpenId，签署方为非发起方企业场景下必传；
                      */
                     std::string m_organizationOpenId;
                     bool m_organizationOpenIdHasBeenSet;

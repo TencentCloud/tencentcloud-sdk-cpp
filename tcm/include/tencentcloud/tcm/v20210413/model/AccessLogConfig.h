@@ -120,6 +120,42 @@ namespace TencentCloud
                      */
                     bool CLSHasBeenSet() const;
 
+                    /**
+                     * 获取编码格式，可选值：TEXT、JSON
+                     * @return Encoding 编码格式，可选值：TEXT、JSON
+                     */
+                    std::string GetEncoding() const;
+
+                    /**
+                     * 设置编码格式，可选值：TEXT、JSON
+                     * @param Encoding 编码格式，可选值：TEXT、JSON
+                     */
+                    void SetEncoding(const std::string& _encoding);
+
+                    /**
+                     * 判断参数 Encoding 是否已赋值
+                     * @return Encoding 是否已赋值
+                     */
+                    bool EncodingHasBeenSet() const;
+
+                    /**
+                     * 获取日志格式
+                     * @return Format 日志格式
+                     */
+                    std::string GetFormat() const;
+
+                    /**
+                     * 设置日志格式
+                     * @param Format 日志格式
+                     */
+                    void SetFormat(const std::string& _format);
+
+                    /**
+                     * 判断参数 Format 是否已赋值
+                     * @return Format 是否已赋值
+                     */
+                    bool FormatHasBeenSet() const;
+
                 private:
 
                     /**
@@ -145,6 +181,18 @@ namespace TencentCloud
                      */
                     CLS m_cLS;
                     bool m_cLSHasBeenSet;
+
+                    /**
+                     * 编码格式，可选值：TEXT、JSON
+                     */
+                    std::string m_encoding;
+                    bool m_encodingHasBeenSet;
+
+                    /**
+                     * 日志格式
+                     */
+                    std::string m_format;
+                    bool m_formatHasBeenSet;
 
                 };
             }

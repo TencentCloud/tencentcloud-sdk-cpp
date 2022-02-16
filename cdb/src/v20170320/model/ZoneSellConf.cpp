@@ -36,7 +36,10 @@ ZoneSellConf::ZoneSellConf() :
     m_zoneConfHasBeenSet(false),
     m_drZoneHasBeenSet(false),
     m_isSupportRemoteRoHasBeenSet(false),
-    m_remoteRoZoneHasBeenSet(false)
+    m_remoteRoZoneHasBeenSet(false),
+    m_exClusterStatusHasBeenSet(false),
+    m_exClusterRemoteRoZoneHasBeenSet(false),
+    m_exClusterZoneConfHasBeenSet(false)
 {
 }
 
@@ -234,6 +237,46 @@ CoreInternalOutcome ZoneSellConf::Deserialize(const rapidjson::Value &value)
         m_remoteRoZoneHasBeenSet = true;
     }
 
+    if (value.HasMember("ExClusterStatus") && !value["ExClusterStatus"].IsNull())
+    {
+        if (!value["ExClusterStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZoneSellConf.ExClusterStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_exClusterStatus = value["ExClusterStatus"].GetInt64();
+        m_exClusterStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExClusterRemoteRoZone") && !value["ExClusterRemoteRoZone"].IsNull())
+    {
+        if (!value["ExClusterRemoteRoZone"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ZoneSellConf.ExClusterRemoteRoZone` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ExClusterRemoteRoZone"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_exClusterRemoteRoZone.push_back((*itr).GetString());
+        }
+        m_exClusterRemoteRoZoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExClusterZoneConf") && !value["ExClusterZoneConf"].IsNull())
+    {
+        if (!value["ExClusterZoneConf"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZoneSellConf.ExClusterZoneConf` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_exClusterZoneConf.Deserialize(value["ExClusterZoneConf"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_exClusterZoneConfHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -395,6 +438,36 @@ void ZoneSellConf::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_exClusterStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExClusterStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_exClusterStatus, allocator);
+    }
+
+    if (m_exClusterRemoteRoZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExClusterRemoteRoZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_exClusterRemoteRoZone.begin(); itr != m_exClusterRemoteRoZone.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_exClusterZoneConfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExClusterZoneConf";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_exClusterZoneConf.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -654,5 +727,53 @@ void ZoneSellConf::SetRemoteRoZone(const vector<string>& _remoteRoZone)
 bool ZoneSellConf::RemoteRoZoneHasBeenSet() const
 {
     return m_remoteRoZoneHasBeenSet;
+}
+
+int64_t ZoneSellConf::GetExClusterStatus() const
+{
+    return m_exClusterStatus;
+}
+
+void ZoneSellConf::SetExClusterStatus(const int64_t& _exClusterStatus)
+{
+    m_exClusterStatus = _exClusterStatus;
+    m_exClusterStatusHasBeenSet = true;
+}
+
+bool ZoneSellConf::ExClusterStatusHasBeenSet() const
+{
+    return m_exClusterStatusHasBeenSet;
+}
+
+vector<string> ZoneSellConf::GetExClusterRemoteRoZone() const
+{
+    return m_exClusterRemoteRoZone;
+}
+
+void ZoneSellConf::SetExClusterRemoteRoZone(const vector<string>& _exClusterRemoteRoZone)
+{
+    m_exClusterRemoteRoZone = _exClusterRemoteRoZone;
+    m_exClusterRemoteRoZoneHasBeenSet = true;
+}
+
+bool ZoneSellConf::ExClusterRemoteRoZoneHasBeenSet() const
+{
+    return m_exClusterRemoteRoZoneHasBeenSet;
+}
+
+ZoneConf ZoneSellConf::GetExClusterZoneConf() const
+{
+    return m_exClusterZoneConf;
+}
+
+void ZoneSellConf::SetExClusterZoneConf(const ZoneConf& _exClusterZoneConf)
+{
+    m_exClusterZoneConf = _exClusterZoneConf;
+    m_exClusterZoneConfHasBeenSet = true;
+}
+
+bool ZoneSellConf::ExClusterZoneConfHasBeenSet() const
+{
+    return m_exClusterZoneConfHasBeenSet;
 }
 

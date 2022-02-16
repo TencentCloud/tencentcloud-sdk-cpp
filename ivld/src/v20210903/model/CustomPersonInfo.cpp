@@ -25,7 +25,9 @@ CustomPersonInfo::CustomPersonInfo() :
     m_nameHasBeenSet(false),
     m_basicInfoHasBeenSet(false),
     m_l1CategoryHasBeenSet(false),
-    m_l2CategoryHasBeenSet(false)
+    m_l2CategoryHasBeenSet(false),
+    m_imageInfoSetHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,36 @@ CoreInternalOutcome CustomPersonInfo::Deserialize(const rapidjson::Value &value)
         m_l2CategoryHasBeenSet = true;
     }
 
+    if (value.HasMember("ImageInfoSet") && !value["ImageInfoSet"].IsNull())
+    {
+        if (!value["ImageInfoSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CustomPersonInfo.ImageInfoSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ImageInfoSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PersonImageInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_imageInfoSet.push_back(item);
+        }
+        m_imageInfoSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomPersonInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +161,29 @@ void CustomPersonInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "L2Category";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_l2Category.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageInfoSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageInfoSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_imageInfoSet.begin(); itr != m_imageInfoSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +267,37 @@ void CustomPersonInfo::SetL2Category(const string& _l2Category)
 bool CustomPersonInfo::L2CategoryHasBeenSet() const
 {
     return m_l2CategoryHasBeenSet;
+}
+
+vector<PersonImageInfo> CustomPersonInfo::GetImageInfoSet() const
+{
+    return m_imageInfoSet;
+}
+
+void CustomPersonInfo::SetImageInfoSet(const vector<PersonImageInfo>& _imageInfoSet)
+{
+    m_imageInfoSet = _imageInfoSet;
+    m_imageInfoSetHasBeenSet = true;
+}
+
+bool CustomPersonInfo::ImageInfoSetHasBeenSet() const
+{
+    return m_imageInfoSetHasBeenSet;
+}
+
+string CustomPersonInfo::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void CustomPersonInfo::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool CustomPersonInfo::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

@@ -26,7 +26,8 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesDeniedActionsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DeleteKeyPairsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/AttachCcnRequest.h
-  include/tencentcloud/lighthouse/v20200324/model/DescribeSnapshotsDeniedActionsResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/CreateInstancesRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/DescribeZonesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/RegionInfo.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeBlueprintInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/InstanceDeniedActions.h
@@ -36,6 +37,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/CreateInstanceSnapshotResponse.h
   include/tencentcloud/lighthouse/v20200324/model/InquirePriceRenewInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DeleteFirewallRulesResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/ModifyInstancesAttributeRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeGeneralResourceQuotasRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DeleteKeyPairsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/SystemDisk.h
@@ -77,8 +79,8 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/InstanceReturnable.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesDeniedActionsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyDisksAttributeRequest.h
-  include/tencentcloud/lighthouse/v20200324/model/ModifyInstancesAttributeRequest.h
-  include/tencentcloud/lighthouse/v20200324/model/DescribeZonesRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/DockerContainerPublishPort.h
+  include/tencentcloud/lighthouse/v20200324/model/DescribeSnapshotsDeniedActionsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/StartInstancesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/SnapshotDeniedActions.h
   include/tencentcloud/lighthouse/v20200324/model/DeleteSnapshotsRequest.h
@@ -94,7 +96,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/DeleteBlueprintsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyInstancesLoginKeyPairAttributeRequest.h
   include/tencentcloud/lighthouse/v20200324/model/StopInstancesResponse.h
-  include/tencentcloud/lighthouse/v20200324/model/FirewallRule.h
+  include/tencentcloud/lighthouse/v20200324/model/CreateInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyBlueprintAttributeResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesTemplateResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeRegionsRequest.h
@@ -108,6 +110,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/ResetInstancesPasswordResponse.h
   include/tencentcloud/lighthouse/v20200324/model/LoginSettings.h
   include/tencentcloud/lighthouse/v20200324/model/Instance.h
+  include/tencentcloud/lighthouse/v20200324/model/DockerContainerVolume.h
   include/tencentcloud/lighthouse/v20200324/model/CreateKeyPairResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstanceVncUrlResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyFirewallRulesResponse.h
@@ -139,6 +142,8 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/Software.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesReturnableResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/ContainerEnv.h
+  include/tencentcloud/lighthouse/v20200324/model/FirewallRule.h
   include/tencentcloud/lighthouse/v20200324/model/DeleteBlueprintsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/FirewallRuleInfo.h
   include/tencentcloud/lighthouse/v20200324/model/CreateFirewallRulesResponse.h
@@ -148,7 +153,9 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/CreateBlueprintResponse.h
   include/tencentcloud/lighthouse/v20200324/model/PolicyDetail.h
   include/tencentcloud/lighthouse/v20200324/model/DetachDisksResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/LoginConfiguration.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeResetInstanceBlueprintsRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/DockerContainerConfiguration.h
   include/tencentcloud/lighthouse/v20200324/model/ResetAttachCcnResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyInstancesRenewFlagResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ApplyInstanceSnapshotRequest.h
@@ -202,7 +209,8 @@ set(lighthouse_src
   src/v20200324/model/DescribeInstancesDeniedActionsRequest.cpp
   src/v20200324/model/DeleteKeyPairsResponse.cpp
   src/v20200324/model/AttachCcnRequest.cpp
-  src/v20200324/model/DescribeSnapshotsDeniedActionsResponse.cpp
+  src/v20200324/model/CreateInstancesRequest.cpp
+  src/v20200324/model/DescribeZonesRequest.cpp
   src/v20200324/model/RegionInfo.cpp
   src/v20200324/model/DescribeBlueprintInstancesResponse.cpp
   src/v20200324/model/InstanceDeniedActions.cpp
@@ -212,6 +220,7 @@ set(lighthouse_src
   src/v20200324/model/CreateInstanceSnapshotResponse.cpp
   src/v20200324/model/InquirePriceRenewInstancesResponse.cpp
   src/v20200324/model/DeleteFirewallRulesResponse.cpp
+  src/v20200324/model/ModifyInstancesAttributeRequest.cpp
   src/v20200324/model/DescribeGeneralResourceQuotasRequest.cpp
   src/v20200324/model/DeleteKeyPairsRequest.cpp
   src/v20200324/model/SystemDisk.cpp
@@ -253,8 +262,8 @@ set(lighthouse_src
   src/v20200324/model/InstanceReturnable.cpp
   src/v20200324/model/DescribeInstancesDeniedActionsResponse.cpp
   src/v20200324/model/ModifyDisksAttributeRequest.cpp
-  src/v20200324/model/ModifyInstancesAttributeRequest.cpp
-  src/v20200324/model/DescribeZonesRequest.cpp
+  src/v20200324/model/DockerContainerPublishPort.cpp
+  src/v20200324/model/DescribeSnapshotsDeniedActionsResponse.cpp
   src/v20200324/model/StartInstancesRequest.cpp
   src/v20200324/model/SnapshotDeniedActions.cpp
   src/v20200324/model/DeleteSnapshotsRequest.cpp
@@ -270,7 +279,7 @@ set(lighthouse_src
   src/v20200324/model/DeleteBlueprintsResponse.cpp
   src/v20200324/model/ModifyInstancesLoginKeyPairAttributeRequest.cpp
   src/v20200324/model/StopInstancesResponse.cpp
-  src/v20200324/model/FirewallRule.cpp
+  src/v20200324/model/CreateInstancesResponse.cpp
   src/v20200324/model/ModifyBlueprintAttributeResponse.cpp
   src/v20200324/model/DescribeFirewallRulesTemplateResponse.cpp
   src/v20200324/model/DescribeRegionsRequest.cpp
@@ -284,6 +293,7 @@ set(lighthouse_src
   src/v20200324/model/ResetInstancesPasswordResponse.cpp
   src/v20200324/model/LoginSettings.cpp
   src/v20200324/model/Instance.cpp
+  src/v20200324/model/DockerContainerVolume.cpp
   src/v20200324/model/CreateKeyPairResponse.cpp
   src/v20200324/model/DescribeInstanceVncUrlResponse.cpp
   src/v20200324/model/ModifyFirewallRulesResponse.cpp
@@ -315,6 +325,8 @@ set(lighthouse_src
   src/v20200324/model/Software.cpp
   src/v20200324/model/DescribeFirewallRulesResponse.cpp
   src/v20200324/model/DescribeInstancesReturnableResponse.cpp
+  src/v20200324/model/ContainerEnv.cpp
+  src/v20200324/model/FirewallRule.cpp
   src/v20200324/model/DeleteBlueprintsRequest.cpp
   src/v20200324/model/FirewallRuleInfo.cpp
   src/v20200324/model/CreateFirewallRulesResponse.cpp
@@ -324,7 +336,9 @@ set(lighthouse_src
   src/v20200324/model/CreateBlueprintResponse.cpp
   src/v20200324/model/PolicyDetail.cpp
   src/v20200324/model/DetachDisksResponse.cpp
+  src/v20200324/model/LoginConfiguration.cpp
   src/v20200324/model/DescribeResetInstanceBlueprintsRequest.cpp
+  src/v20200324/model/DockerContainerConfiguration.cpp
   src/v20200324/model/ResetAttachCcnResponse.cpp
   src/v20200324/model/ModifyInstancesRenewFlagResponse.cpp
   src/v20200324/model/ApplyInstanceSnapshotRequest.cpp

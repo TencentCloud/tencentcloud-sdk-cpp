@@ -341,6 +341,49 @@ LighthouseClient::CreateInstanceSnapshotOutcomeCallable LighthouseClient::Create
     return task->get_future();
 }
 
+LighthouseClient::CreateInstancesOutcome LighthouseClient::CreateInstances(const CreateInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateInstancesResponse rsp = CreateInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateInstancesOutcome(rsp);
+        else
+            return CreateInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateInstancesOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::CreateInstancesAsync(const CreateInstancesRequest& request, const CreateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::CreateInstancesOutcomeCallable LighthouseClient::CreateInstancesCallable(const CreateInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::CreateKeyPairOutcome LighthouseClient::CreateKeyPair(const CreateKeyPairRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateKeyPair");
