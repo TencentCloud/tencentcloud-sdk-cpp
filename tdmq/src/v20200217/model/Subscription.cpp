@@ -37,7 +37,10 @@ Subscription::Subscription() :
     m_consumersScheduleSetsHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_subTypeHasBeenSet(false),
+    m_blockedSubscriptionOnUnackedMsgsHasBeenSet(false),
+    m_maxUnackedMsgNumHasBeenSet(false)
 {
 }
 
@@ -236,6 +239,36 @@ CoreInternalOutcome Subscription::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("SubType") && !value["SubType"].IsNull())
+    {
+        if (!value["SubType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Subscription.SubType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subType = string(value["SubType"].GetString());
+        m_subTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("BlockedSubscriptionOnUnackedMsgs") && !value["BlockedSubscriptionOnUnackedMsgs"].IsNull())
+    {
+        if (!value["BlockedSubscriptionOnUnackedMsgs"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Subscription.BlockedSubscriptionOnUnackedMsgs` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_blockedSubscriptionOnUnackedMsgs = value["BlockedSubscriptionOnUnackedMsgs"].GetBool();
+        m_blockedSubscriptionOnUnackedMsgsHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxUnackedMsgNum") && !value["MaxUnackedMsgNum"].IsNull())
+    {
+        if (!value["MaxUnackedMsgNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Subscription.MaxUnackedMsgNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxUnackedMsgNum = value["MaxUnackedMsgNum"].GetInt64();
+        m_maxUnackedMsgNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -391,6 +424,30 @@ void Subscription::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_blockedSubscriptionOnUnackedMsgsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BlockedSubscriptionOnUnackedMsgs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_blockedSubscriptionOnUnackedMsgs, allocator);
+    }
+
+    if (m_maxUnackedMsgNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxUnackedMsgNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxUnackedMsgNum, allocator);
     }
 
 }
@@ -666,5 +723,53 @@ void Subscription::SetUpdateTime(const string& _updateTime)
 bool Subscription::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string Subscription::GetSubType() const
+{
+    return m_subType;
+}
+
+void Subscription::SetSubType(const string& _subType)
+{
+    m_subType = _subType;
+    m_subTypeHasBeenSet = true;
+}
+
+bool Subscription::SubTypeHasBeenSet() const
+{
+    return m_subTypeHasBeenSet;
+}
+
+bool Subscription::GetBlockedSubscriptionOnUnackedMsgs() const
+{
+    return m_blockedSubscriptionOnUnackedMsgs;
+}
+
+void Subscription::SetBlockedSubscriptionOnUnackedMsgs(const bool& _blockedSubscriptionOnUnackedMsgs)
+{
+    m_blockedSubscriptionOnUnackedMsgs = _blockedSubscriptionOnUnackedMsgs;
+    m_blockedSubscriptionOnUnackedMsgsHasBeenSet = true;
+}
+
+bool Subscription::BlockedSubscriptionOnUnackedMsgsHasBeenSet() const
+{
+    return m_blockedSubscriptionOnUnackedMsgsHasBeenSet;
+}
+
+int64_t Subscription::GetMaxUnackedMsgNum() const
+{
+    return m_maxUnackedMsgNum;
+}
+
+void Subscription::SetMaxUnackedMsgNum(const int64_t& _maxUnackedMsgNum)
+{
+    m_maxUnackedMsgNum = _maxUnackedMsgNum;
+    m_maxUnackedMsgNumHasBeenSet = true;
+}
+
+bool Subscription::MaxUnackedMsgNumHasBeenSet() const
+{
+    return m_maxUnackedMsgNumHasBeenSet;
 }
 

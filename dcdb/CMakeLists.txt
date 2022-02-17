@@ -38,6 +38,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DescribeDBSyncModeResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeProjectSecurityGroupsRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBUpgradePriceResponse.h
+  include/tencentcloud/dcdb/v20180411/model/DescribeDBSlowLogsRequest.h
   include/tencentcloud/dcdb/v20180411/model/CreateAccountRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDBParametersResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeFlowResponse.h
@@ -117,6 +118,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DestroyDCDBInstanceRequest.h
   include/tencentcloud/dcdb/v20180411/model/ModifyAccountDescriptionRequest.h
   include/tencentcloud/dcdb/v20180411/model/KillSessionResponse.h
+  include/tencentcloud/dcdb/v20180411/model/SlowLogData.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDatabasesResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeOrdersRequest.h
   include/tencentcloud/dcdb/v20180411/model/DestroyDCDBInstanceResponse.h
@@ -148,6 +150,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DescribeAccountPrivilegesRequest.h
   include/tencentcloud/dcdb/v20180411/model/SqlLogItem.h
   include/tencentcloud/dcdb/v20180411/model/DescribeAccountsResponse.h
+  include/tencentcloud/dcdb/v20180411/model/DescribeDBSlowLogsResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBInstancesRequest.h
   include/tencentcloud/dcdb/v20180411/model/Project.h
   include/tencentcloud/dcdb/v20180411/model/DestroyHourDCDBInstanceRequest.h
@@ -179,6 +182,7 @@ set(dcdb_src
   src/v20180411/model/DescribeDBSyncModeResponse.cpp
   src/v20180411/model/DescribeProjectSecurityGroupsRequest.cpp
   src/v20180411/model/DescribeDCDBUpgradePriceResponse.cpp
+  src/v20180411/model/DescribeDBSlowLogsRequest.cpp
   src/v20180411/model/CreateAccountRequest.cpp
   src/v20180411/model/DescribeDBParametersResponse.cpp
   src/v20180411/model/DescribeFlowResponse.cpp
@@ -258,6 +262,7 @@ set(dcdb_src
   src/v20180411/model/DestroyDCDBInstanceRequest.cpp
   src/v20180411/model/ModifyAccountDescriptionRequest.cpp
   src/v20180411/model/KillSessionResponse.cpp
+  src/v20180411/model/SlowLogData.cpp
   src/v20180411/model/DescribeDatabasesResponse.cpp
   src/v20180411/model/DescribeOrdersRequest.cpp
   src/v20180411/model/DestroyDCDBInstanceResponse.cpp
@@ -289,6 +294,7 @@ set(dcdb_src
   src/v20180411/model/DescribeAccountPrivilegesRequest.cpp
   src/v20180411/model/SqlLogItem.cpp
   src/v20180411/model/DescribeAccountsResponse.cpp
+  src/v20180411/model/DescribeDBSlowLogsResponse.cpp
   src/v20180411/model/DescribeDCDBInstancesRequest.cpp
   src/v20180411/model/Project.cpp
   src/v20180411/model/DestroyHourDCDBInstanceRequest.cpp

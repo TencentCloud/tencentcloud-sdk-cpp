@@ -41,7 +41,8 @@ Topic::Topic() :
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_producerLimitHasBeenSet(false),
-    m_consumerLimitHasBeenSet(false)
+    m_consumerLimitHasBeenSet(false),
+    m_pulsarTopicTypeHasBeenSet(false)
 {
 }
 
@@ -270,6 +271,16 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
         m_consumerLimitHasBeenSet = true;
     }
 
+    if (value.HasMember("PulsarTopicType") && !value["PulsarTopicType"].IsNull())
+    {
+        if (!value["PulsarTopicType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Topic.PulsarTopicType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pulsarTopicType = value["PulsarTopicType"].GetInt64();
+        m_pulsarTopicTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -450,6 +461,14 @@ void Topic::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "ConsumerLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_consumerLimit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pulsarTopicTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PulsarTopicType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pulsarTopicType, allocator);
     }
 
 }
@@ -789,5 +808,21 @@ void Topic::SetConsumerLimit(const string& _consumerLimit)
 bool Topic::ConsumerLimitHasBeenSet() const
 {
     return m_consumerLimitHasBeenSet;
+}
+
+int64_t Topic::GetPulsarTopicType() const
+{
+    return m_pulsarTopicType;
+}
+
+void Topic::SetPulsarTopicType(const int64_t& _pulsarTopicType)
+{
+    m_pulsarTopicType = _pulsarTopicType;
+    m_pulsarTopicTypeHasBeenSet = true;
+}
+
+bool Topic::PulsarTopicTypeHasBeenSet() const
+{
+    return m_pulsarTopicTypeHasBeenSet;
 }
 

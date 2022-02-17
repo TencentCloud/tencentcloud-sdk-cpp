@@ -97,6 +97,24 @@ namespace TencentCloud
                     bool PartitionsHasBeenSet() const;
 
                     /**
+                     * 获取备注，128字符以内。
+                     * @return Remark 备注，128字符以内。
+                     */
+                    std::string GetRemark() const;
+
+                    /**
+                     * 设置备注，128字符以内。
+                     * @param Remark 备注，128字符以内。
+                     */
+                    void SetRemark(const std::string& _remark);
+
+                    /**
+                     * 判断参数 Remark 是否已赋值
+                     * @return Remark 是否已赋值
+                     */
+                    bool RemarkHasBeenSet() const;
+
+                    /**
                      * 获取0： 普通消息；
 1 ：全局顺序消息；
 2 ：局部顺序消息；
@@ -131,24 +149,6 @@ namespace TencentCloud
                     bool TopicTypeHasBeenSet() const;
 
                     /**
-                     * 获取备注，128字符以内。
-                     * @return Remark 备注，128字符以内。
-                     */
-                    std::string GetRemark() const;
-
-                    /**
-                     * 设置备注，128字符以内。
-                     * @param Remark 备注，128字符以内。
-                     */
-                    void SetRemark(const std::string& _remark);
-
-                    /**
-                     * 判断参数 Remark 是否已赋值
-                     * @return Remark 是否已赋值
-                     */
-                    bool RemarkHasBeenSet() const;
-
-                    /**
                      * 获取Pulsar 集群的ID
                      * @return ClusterId Pulsar 集群的ID
                      */
@@ -165,6 +165,40 @@ namespace TencentCloud
                      * @return ClusterId 是否已赋值
                      */
                     bool ClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取Pulsar 主题类型
+0: 非持久非分区
+1: 非持久分区
+2: 持久非分区
+3: 持久分区
+                     * @return PulsarTopicType Pulsar 主题类型
+0: 非持久非分区
+1: 非持久分区
+2: 持久非分区
+3: 持久分区
+                     */
+                    int64_t GetPulsarTopicType() const;
+
+                    /**
+                     * 设置Pulsar 主题类型
+0: 非持久非分区
+1: 非持久分区
+2: 持久非分区
+3: 持久分区
+                     * @param PulsarTopicType Pulsar 主题类型
+0: 非持久非分区
+1: 非持久分区
+2: 持久非分区
+3: 持久分区
+                     */
+                    void SetPulsarTopicType(const int64_t& _pulsarTopicType);
+
+                    /**
+                     * 判断参数 PulsarTopicType 是否已赋值
+                     * @return PulsarTopicType 是否已赋值
+                     */
+                    bool PulsarTopicTypeHasBeenSet() const;
 
                 private:
 
@@ -187,6 +221,12 @@ namespace TencentCloud
                     bool m_partitionsHasBeenSet;
 
                     /**
+                     * 备注，128字符以内。
+                     */
+                    std::string m_remark;
+                    bool m_remarkHasBeenSet;
+
+                    /**
                      * 0： 普通消息；
 1 ：全局顺序消息；
 2 ：局部顺序消息；
@@ -197,16 +237,20 @@ namespace TencentCloud
                     bool m_topicTypeHasBeenSet;
 
                     /**
-                     * 备注，128字符以内。
-                     */
-                    std::string m_remark;
-                    bool m_remarkHasBeenSet;
-
-                    /**
                      * Pulsar 集群的ID
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * Pulsar 主题类型
+0: 非持久非分区
+1: 非持久分区
+2: 持久非分区
+3: 持久分区
+                     */
+                    int64_t m_pulsarTopicType;
+                    bool m_pulsarTopicTypeHasBeenSet;
 
                 };
             }

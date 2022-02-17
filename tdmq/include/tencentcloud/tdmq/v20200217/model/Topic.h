@@ -533,6 +533,40 @@ namespace TencentCloud
                      */
                     bool ConsumerLimitHasBeenSet() const;
 
+                    /**
+                     * 获取0: 非持久非分区
+1: 非持久分区
+2: 持久非分区
+3: 持久分区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PulsarTopicType 0: 非持久非分区
+1: 非持久分区
+2: 持久非分区
+3: 持久分区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetPulsarTopicType() const;
+
+                    /**
+                     * 设置0: 非持久非分区
+1: 非持久分区
+2: 持久非分区
+3: 持久分区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PulsarTopicType 0: 非持久非分区
+1: 非持久分区
+2: 持久非分区
+3: 持久分区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPulsarTopicType(const int64_t& _pulsarTopicType);
+
+                    /**
+                     * 判断参数 PulsarTopicType 是否已赋值
+                     * @return PulsarTopicType 是否已赋值
+                     */
+                    bool PulsarTopicTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -687,6 +721,16 @@ namespace TencentCloud
                      */
                     std::string m_consumerLimit;
                     bool m_consumerLimitHasBeenSet;
+
+                    /**
+                     * 0: 非持久非分区
+1: 非持久分区
+2: 持久非分区
+3: 持久分区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_pulsarTopicType;
+                    bool m_pulsarTopicTypeHasBeenSet;
 
                 };
             }

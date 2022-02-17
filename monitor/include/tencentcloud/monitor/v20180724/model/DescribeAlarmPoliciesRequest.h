@@ -394,6 +394,24 @@ namespace TencentCloud
                      */
                     bool InstanceGroupIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否需要策略与入参过滤维度参数的对应关系，1：是  0：否，默认为0
+                     * @return NeedCorrespondence 是否需要策略与入参过滤维度参数的对应关系，1：是  0：否，默认为0
+                     */
+                    int64_t GetNeedCorrespondence() const;
+
+                    /**
+                     * 设置是否需要策略与入参过滤维度参数的对应关系，1：是  0：否，默认为0
+                     * @param NeedCorrespondence 是否需要策略与入参过滤维度参数的对应关系，1：是  0：否，默认为0
+                     */
+                    void SetNeedCorrespondence(const int64_t& _needCorrespondence);
+
+                    /**
+                     * 判断参数 NeedCorrespondence 是否已赋值
+                     * @return NeedCorrespondence 是否已赋值
+                     */
+                    bool NeedCorrespondenceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -510,6 +528,12 @@ namespace TencentCloud
                      */
                     int64_t m_instanceGroupId;
                     bool m_instanceGroupIdHasBeenSet;
+
+                    /**
+                     * 是否需要策略与入参过滤维度参数的对应关系，1：是  0：否，默认为0
+                     */
+                    int64_t m_needCorrespondence;
+                    bool m_needCorrespondenceHasBeenSet;
 
                 };
             }

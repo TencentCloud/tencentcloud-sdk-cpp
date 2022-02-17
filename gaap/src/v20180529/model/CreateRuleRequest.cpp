@@ -31,7 +31,9 @@ CreateRuleRequest::CreateRuleRequest() :
     m_healthCheckHasBeenSet(false),
     m_checkParamsHasBeenSet(false),
     m_forwardProtocolHasBeenSet(false),
-    m_forwardHostHasBeenSet(false)
+    m_forwardHostHasBeenSet(false),
+    m_serverNameIndicationSwitchHasBeenSet(false),
+    m_serverNameIndicationHasBeenSet(false)
 {
 }
 
@@ -113,6 +115,22 @@ string CreateRuleRequest::ToJsonString() const
         string key = "ForwardHost";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_forwardHost.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serverNameIndicationSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServerNameIndicationSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serverNameIndicationSwitch.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serverNameIndicationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServerNameIndication";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serverNameIndication.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -265,6 +283,38 @@ void CreateRuleRequest::SetForwardHost(const string& _forwardHost)
 bool CreateRuleRequest::ForwardHostHasBeenSet() const
 {
     return m_forwardHostHasBeenSet;
+}
+
+string CreateRuleRequest::GetServerNameIndicationSwitch() const
+{
+    return m_serverNameIndicationSwitch;
+}
+
+void CreateRuleRequest::SetServerNameIndicationSwitch(const string& _serverNameIndicationSwitch)
+{
+    m_serverNameIndicationSwitch = _serverNameIndicationSwitch;
+    m_serverNameIndicationSwitchHasBeenSet = true;
+}
+
+bool CreateRuleRequest::ServerNameIndicationSwitchHasBeenSet() const
+{
+    return m_serverNameIndicationSwitchHasBeenSet;
+}
+
+string CreateRuleRequest::GetServerNameIndication() const
+{
+    return m_serverNameIndication;
+}
+
+void CreateRuleRequest::SetServerNameIndication(const string& _serverNameIndication)
+{
+    m_serverNameIndication = _serverNameIndication;
+    m_serverNameIndicationHasBeenSet = true;
+}
+
+bool CreateRuleRequest::ServerNameIndicationHasBeenSet() const
+{
+    return m_serverNameIndicationHasBeenSet;
 }
 
 

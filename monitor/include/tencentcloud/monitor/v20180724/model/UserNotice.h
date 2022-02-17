@@ -113,17 +113,17 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取通知渠道列表 EMAIL=邮件 SMS=短信 CALL=电话 WECHAT=微信
+                     * 获取通知渠道列表 EMAIL=邮件 SMS=短信 CALL=电话 WECHAT=微信 RTX=企业微信
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NoticeWay 通知渠道列表 EMAIL=邮件 SMS=短信 CALL=电话 WECHAT=微信
+                     * @return NoticeWay 通知渠道列表 EMAIL=邮件 SMS=短信 CALL=电话 WECHAT=微信 RTX=企业微信
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetNoticeWay() const;
 
                     /**
-                     * 设置通知渠道列表 EMAIL=邮件 SMS=短信 CALL=电话 WECHAT=微信
+                     * 设置通知渠道列表 EMAIL=邮件 SMS=短信 CALL=电话 WECHAT=微信 RTX=企业微信
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NoticeWay 通知渠道列表 EMAIL=邮件 SMS=短信 CALL=电话 WECHAT=微信
+                     * @param NoticeWay 通知渠道列表 EMAIL=邮件 SMS=短信 CALL=电话 WECHAT=微信 RTX=企业微信
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetNoticeWay(const std::vector<std::string>& _noticeWay);
@@ -288,6 +288,28 @@ namespace TencentCloud
                      */
                     bool NeedPhoneArriveNoticeHasBeenSet() const;
 
+                    /**
+                     * 获取电话拨打类型 SYNC=同时拨打 CIRCLE=轮询拨打 不指定时默认是轮询
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PhoneCallType 电话拨打类型 SYNC=同时拨打 CIRCLE=轮询拨打 不指定时默认是轮询
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPhoneCallType() const;
+
+                    /**
+                     * 设置电话拨打类型 SYNC=同时拨打 CIRCLE=轮询拨打 不指定时默认是轮询
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PhoneCallType 电话拨打类型 SYNC=同时拨打 CIRCLE=轮询拨打 不指定时默认是轮询
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPhoneCallType(const std::string& _phoneCallType);
+
+                    /**
+                     * 判断参数 PhoneCallType 是否已赋值
+                     * @return PhoneCallType 是否已赋值
+                     */
+                    bool PhoneCallTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -312,7 +334,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 通知渠道列表 EMAIL=邮件 SMS=短信 CALL=电话 WECHAT=微信
+                     * 通知渠道列表 EMAIL=邮件 SMS=短信 CALL=电话 WECHAT=微信 RTX=企业微信
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_noticeWay;
@@ -366,6 +388,13 @@ namespace TencentCloud
                      */
                     int64_t m_needPhoneArriveNotice;
                     bool m_needPhoneArriveNoticeHasBeenSet;
+
+                    /**
+                     * 电话拨打类型 SYNC=同时拨打 CIRCLE=轮询拨打 不指定时默认是轮询
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_phoneCallType;
+                    bool m_phoneCallTypeHasBeenSet;
 
                 };
             }

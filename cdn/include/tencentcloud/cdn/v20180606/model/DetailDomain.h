@@ -70,6 +70,7 @@
 #include <tencentcloud/cdn/v20180606/model/WebSocket.h>
 #include <tencentcloud/cdn/v20180606/model/RemoteAuthentication.h>
 #include <tencentcloud/cdn/v20180606/model/ShareCname.h>
+#include <tencentcloud/cdn/v20180606/model/RuleEngine.h>
 
 
 namespace TencentCloud
@@ -221,26 +222,34 @@ offline：已关闭
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取域名业务类型
-web：静态加速
-download：下载加速
-media：流媒体点播加速
-                     * @return ServiceType 域名业务类型
-web：静态加速
-download：下载加速
-media：流媒体点播加速
+                     * 获取加速域名业务类型
+web：网页小文件
+download：下载大文件
+media：音视频点播
+hybrid:  动静加速
+dynamic:  动态加速
+                     * @return ServiceType 加速域名业务类型
+web：网页小文件
+download：下载大文件
+media：音视频点播
+hybrid:  动静加速
+dynamic:  动态加速
                      */
                     std::string GetServiceType() const;
 
                     /**
-                     * 设置域名业务类型
-web：静态加速
-download：下载加速
-media：流媒体点播加速
-                     * @param ServiceType 域名业务类型
-web：静态加速
-download：下载加速
-media：流媒体点播加速
+                     * 设置加速域名业务类型
+web：网页小文件
+download：下载大文件
+media：音视频点播
+hybrid:  动静加速
+dynamic:  动态加速
+                     * @param ServiceType 加速域名业务类型
+web：网页小文件
+download：下载大文件
+media：音视频点播
+hybrid:  动静加速
+dynamic:  动态加速
                      */
                     void SetServiceType(const std::string& _serviceType);
 
@@ -1472,6 +1481,28 @@ off：不支持
                      */
                     bool ShareCnameHasBeenSet() const;
 
+                    /**
+                     * 获取规则引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleEngine 规则引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RuleEngine GetRuleEngine() const;
+
+                    /**
+                     * 设置规则引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RuleEngine 规则引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRuleEngine(const RuleEngine& _ruleEngine);
+
+                    /**
+                     * 判断参数 RuleEngine 是否已赋值
+                     * @return RuleEngine 是否已赋值
+                     */
+                    bool RuleEngineHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1516,10 +1547,12 @@ offline：已关闭
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 域名业务类型
-web：静态加速
-download：下载加速
-media：流媒体点播加速
+                     * 加速域名业务类型
+web：网页小文件
+download：下载大文件
+media：音视频点播
+hybrid:  动静加速
+dynamic:  动态加速
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
@@ -1908,6 +1941,13 @@ off：不支持
                      */
                     ShareCname m_shareCname;
                     bool m_shareCnameHasBeenSet;
+
+                    /**
+                     * 规则引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RuleEngine m_ruleEngine;
+                    bool m_ruleEngineHasBeenSet;
 
                 };
             }

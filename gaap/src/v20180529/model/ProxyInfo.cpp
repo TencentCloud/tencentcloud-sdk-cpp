@@ -53,7 +53,8 @@ ProxyInfo::ProxyInfo() :
     m_packageTypeHasBeenSet(false),
     m_banStatusHasBeenSet(false),
     m_iPListHasBeenSet(false),
-    m_http3SupportedHasBeenSet(false)
+    m_http3SupportedHasBeenSet(false),
+    m_inBanBlacklistHasBeenSet(false)
 {
 }
 
@@ -435,6 +436,16 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
         m_http3SupportedHasBeenSet = true;
     }
 
+    if (value.HasMember("InBanBlacklist") && !value["InBanBlacklist"].IsNull())
+    {
+        if (!value["InBanBlacklist"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.InBanBlacklist` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_inBanBlacklist = value["InBanBlacklist"].GetInt64();
+        m_inBanBlacklistHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -735,6 +746,14 @@ void ProxyInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Http3Supported";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_http3Supported, allocator);
+    }
+
+    if (m_inBanBlacklistHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InBanBlacklist";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_inBanBlacklist, allocator);
     }
 
 }
@@ -1266,5 +1285,21 @@ void ProxyInfo::SetHttp3Supported(const int64_t& _http3Supported)
 bool ProxyInfo::Http3SupportedHasBeenSet() const
 {
     return m_http3SupportedHasBeenSet;
+}
+
+int64_t ProxyInfo::GetInBanBlacklist() const
+{
+    return m_inBanBlacklist;
+}
+
+void ProxyInfo::SetInBanBlacklist(const int64_t& _inBanBlacklist)
+{
+    m_inBanBlacklist = _inBanBlacklist;
+    m_inBanBlacklistHasBeenSet = true;
+}
+
+bool ProxyInfo::InBanBlacklistHasBeenSet() const
+{
+    return m_inBanBlacklistHasBeenSet;
 }
 

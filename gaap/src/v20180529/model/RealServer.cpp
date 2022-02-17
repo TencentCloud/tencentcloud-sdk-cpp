@@ -24,7 +24,8 @@ RealServer::RealServer() :
     m_realServerIPHasBeenSet(false),
     m_realServerIdHasBeenSet(false),
     m_realServerNameHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_inBanBlacklistHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome RealServer::Deserialize(const rapidjson::Value &value)
         m_projectIdHasBeenSet = true;
     }
 
+    if (value.HasMember("InBanBlacklist") && !value["InBanBlacklist"].IsNull())
+    {
+        if (!value["InBanBlacklist"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RealServer.InBanBlacklist` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_inBanBlacklist = value["InBanBlacklist"].GetInt64();
+        m_inBanBlacklistHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void RealServer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_inBanBlacklistHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InBanBlacklist";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_inBanBlacklist, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void RealServer::SetProjectId(const uint64_t& _projectId)
 bool RealServer::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+int64_t RealServer::GetInBanBlacklist() const
+{
+    return m_inBanBlacklist;
+}
+
+void RealServer::SetInBanBlacklist(const int64_t& _inBanBlacklist)
+{
+    m_inBanBlacklist = _inBanBlacklist;
+    m_inBanBlacklistHasBeenSet = true;
+}
+
+bool RealServer::InBanBlacklistHasBeenSet() const
+{
+    return m_inBanBlacklistHasBeenSet;
 }
 

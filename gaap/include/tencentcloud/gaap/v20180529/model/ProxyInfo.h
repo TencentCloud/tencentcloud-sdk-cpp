@@ -672,20 +672,20 @@ CLONING表示复制中。
                     bool NetworkTypeHasBeenSet() const;
 
                     /**
-                     * 获取通道套餐类型：Thunder表示标准通道，Accelerator表示游戏加速器通道，
+                     * 获取通道套餐类型：Thunder表示标准通道，Accelerator表示银牌加速通道，
 CrossBorder表示跨境通道。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PackageType 通道套餐类型：Thunder表示标准通道，Accelerator表示游戏加速器通道，
+                     * @return PackageType 通道套餐类型：Thunder表示标准通道，Accelerator表示银牌加速通道，
 CrossBorder表示跨境通道。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPackageType() const;
 
                     /**
-                     * 设置通道套餐类型：Thunder表示标准通道，Accelerator表示游戏加速器通道，
+                     * 设置通道套餐类型：Thunder表示标准通道，Accelerator表示银牌加速通道，
 CrossBorder表示跨境通道。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PackageType 通道套餐类型：Thunder表示标准通道，Accelerator表示游戏加速器通道，
+                     * @param PackageType 通道套餐类型：Thunder表示标准通道，Accelerator表示银牌加速通道，
 CrossBorder表示跨境通道。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -770,6 +770,28 @@ CrossBorder表示跨境通道。
                      * @return Http3Supported 是否已赋值
                      */
                     bool Http3SupportedHasBeenSet() const;
+
+                    /**
+                     * 获取是否在封禁黑名单中，其中：0表示不在黑名单中，1表示在黑名单中。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InBanBlacklist 是否在封禁黑名单中，其中：0表示不在黑名单中，1表示在黑名单中。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetInBanBlacklist() const;
+
+                    /**
+                     * 设置是否在封禁黑名单中，其中：0表示不在黑名单中，1表示在黑名单中。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InBanBlacklist 是否在封禁黑名单中，其中：0表示不在黑名单中，1表示在黑名单中。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInBanBlacklist(const int64_t& _inBanBlacklist);
+
+                    /**
+                     * 判断参数 InBanBlacklist 是否已赋值
+                     * @return InBanBlacklist 是否已赋值
+                     */
+                    bool InBanBlacklistHasBeenSet() const;
 
                 private:
 
@@ -973,7 +995,7 @@ CLONING表示复制中。
                     bool m_networkTypeHasBeenSet;
 
                     /**
-                     * 通道套餐类型：Thunder表示标准通道，Accelerator表示游戏加速器通道，
+                     * 通道套餐类型：Thunder表示标准通道，Accelerator表示银牌加速通道，
 CrossBorder表示跨境通道。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -1002,6 +1024,13 @@ CrossBorder表示跨境通道。
                      */
                     int64_t m_http3Supported;
                     bool m_http3SupportedHasBeenSet;
+
+                    /**
+                     * 是否在封禁黑名单中，其中：0表示不在黑名单中，1表示在黑名单中。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_inBanBlacklist;
+                    bool m_inBanBlacklistHasBeenSet;
 
                 };
             }

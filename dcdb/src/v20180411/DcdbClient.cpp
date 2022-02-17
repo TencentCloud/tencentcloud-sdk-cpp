@@ -642,6 +642,49 @@ DcdbClient::DescribeDBSecurityGroupsOutcomeCallable DcdbClient::DescribeDBSecuri
     return task->get_future();
 }
 
+DcdbClient::DescribeDBSlowLogsOutcome DcdbClient::DescribeDBSlowLogs(const DescribeDBSlowLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBSlowLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBSlowLogsResponse rsp = DescribeDBSlowLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBSlowLogsOutcome(rsp);
+        else
+            return DescribeDBSlowLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBSlowLogsOutcome(outcome.GetError());
+    }
+}
+
+void DcdbClient::DescribeDBSlowLogsAsync(const DescribeDBSlowLogsRequest& request, const DescribeDBSlowLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBSlowLogs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcdbClient::DescribeDBSlowLogsOutcomeCallable DcdbClient::DescribeDBSlowLogsCallable(const DescribeDBSlowLogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBSlowLogsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBSlowLogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DcdbClient::DescribeDBSyncModeOutcome DcdbClient::DescribeDBSyncMode(const DescribeDBSyncModeRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBSyncMode");

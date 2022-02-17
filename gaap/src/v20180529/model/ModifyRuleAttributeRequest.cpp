@@ -30,7 +30,9 @@ ModifyRuleAttributeRequest::ModifyRuleAttributeRequest() :
     m_checkParamsHasBeenSet(false),
     m_pathHasBeenSet(false),
     m_forwardProtocolHasBeenSet(false),
-    m_forwardHostHasBeenSet(false)
+    m_forwardHostHasBeenSet(false),
+    m_serverNameIndicationSwitchHasBeenSet(false),
+    m_serverNameIndicationHasBeenSet(false)
 {
 }
 
@@ -104,6 +106,22 @@ string ModifyRuleAttributeRequest::ToJsonString() const
         string key = "ForwardHost";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_forwardHost.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serverNameIndicationSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServerNameIndicationSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serverNameIndicationSwitch.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serverNameIndicationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServerNameIndication";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serverNameIndication.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -240,6 +258,38 @@ void ModifyRuleAttributeRequest::SetForwardHost(const string& _forwardHost)
 bool ModifyRuleAttributeRequest::ForwardHostHasBeenSet() const
 {
     return m_forwardHostHasBeenSet;
+}
+
+string ModifyRuleAttributeRequest::GetServerNameIndicationSwitch() const
+{
+    return m_serverNameIndicationSwitch;
+}
+
+void ModifyRuleAttributeRequest::SetServerNameIndicationSwitch(const string& _serverNameIndicationSwitch)
+{
+    m_serverNameIndicationSwitch = _serverNameIndicationSwitch;
+    m_serverNameIndicationSwitchHasBeenSet = true;
+}
+
+bool ModifyRuleAttributeRequest::ServerNameIndicationSwitchHasBeenSet() const
+{
+    return m_serverNameIndicationSwitchHasBeenSet;
+}
+
+string ModifyRuleAttributeRequest::GetServerNameIndication() const
+{
+    return m_serverNameIndication;
+}
+
+void ModifyRuleAttributeRequest::SetServerNameIndication(const string& _serverNameIndication)
+{
+    m_serverNameIndication = _serverNameIndication;
+    m_serverNameIndicationHasBeenSet = true;
+}
+
+bool ModifyRuleAttributeRequest::ServerNameIndicationHasBeenSet() const
+{
+    return m_serverNameIndicationHasBeenSet;
 }
 
 

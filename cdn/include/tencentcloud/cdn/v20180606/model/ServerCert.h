@@ -223,6 +223,28 @@ namespace TencentCloud
                      */
                     bool MessageHasBeenSet() const;
 
+                    /**
+                     * 获取证书来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return From 证书来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFrom() const;
+
+                    /**
+                     * 设置证书来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param From 证书来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFrom(const std::string& _from);
+
+                    /**
+                     * 判断参数 From 是否已赋值
+                     * @return From 是否已赋值
+                     */
+                    bool FromHasBeenSet() const;
+
                 private:
 
                     /**
@@ -278,6 +300,13 @@ namespace TencentCloud
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
+
+                    /**
+                     * 证书来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_from;
+                    bool m_fromHasBeenSet;
 
                 };
             }

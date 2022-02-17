@@ -27,7 +27,8 @@ ServerCert::ServerCert() :
     m_privateKeyHasBeenSet(false),
     m_expireTimeHasBeenSet(false),
     m_deployTimeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+    m_messageHasBeenSet(false),
+    m_fromHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome ServerCert::Deserialize(const rapidjson::Value &value)
         m_messageHasBeenSet = true;
     }
 
+    if (value.HasMember("From") && !value["From"].IsNull())
+    {
+        if (!value["From"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerCert.From` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_from = string(value["From"].GetString());
+        m_fromHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void ServerCert::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Message";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fromHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "From";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_from.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void ServerCert::SetMessage(const string& _message)
 bool ServerCert::MessageHasBeenSet() const
 {
     return m_messageHasBeenSet;
+}
+
+string ServerCert::GetFrom() const
+{
+    return m_from;
+}
+
+void ServerCert::SetFrom(const string& _from)
+{
+    m_from = _from;
+    m_fromHasBeenSet = true;
+}
+
+bool ServerCert::FromHasBeenSet() const
+{
+    return m_fromHasBeenSet;
 }
 

@@ -118,6 +118,24 @@ namespace TencentCloud
                      */
                     bool ProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否在封禁黑名单中，其中：0表示不在黑名单中，1表示在黑名单中。
+                     * @return InBanBlacklist 是否在封禁黑名单中，其中：0表示不在黑名单中，1表示在黑名单中。
+                     */
+                    int64_t GetInBanBlacklist() const;
+
+                    /**
+                     * 设置是否在封禁黑名单中，其中：0表示不在黑名单中，1表示在黑名单中。
+                     * @param InBanBlacklist 是否在封禁黑名单中，其中：0表示不在黑名单中，1表示在黑名单中。
+                     */
+                    void SetInBanBlacklist(const int64_t& _inBanBlacklist);
+
+                    /**
+                     * 判断参数 InBanBlacklist 是否已赋值
+                     * @return InBanBlacklist 是否已赋值
+                     */
+                    bool InBanBlacklistHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +161,12 @@ namespace TencentCloud
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 是否在封禁黑名单中，其中：0表示不在黑名单中，1表示在黑名单中。
+                     */
+                    int64_t m_inBanBlacklist;
+                    bool m_inBanBlacklistHasBeenSet;
 
                 };
             }

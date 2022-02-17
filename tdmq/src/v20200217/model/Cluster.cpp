@@ -46,7 +46,8 @@ Cluster::Cluster() :
     m_topicNumHasBeenSet(false),
     m_maxMessageDelayInSecondsHasBeenSet(false),
     m_publicAccessEnabledHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_payModeHasBeenSet(false)
 {
 }
 
@@ -325,6 +326,16 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("PayMode") && !value["PayMode"].IsNull())
+    {
+        if (!value["PayMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.PayMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_payMode = value["PayMode"].GetInt64();
+        m_payModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -545,6 +556,14 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_payModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_payMode, allocator);
     }
 
 }
@@ -964,5 +983,21 @@ void Cluster::SetTags(const vector<Tag>& _tags)
 bool Cluster::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+int64_t Cluster::GetPayMode() const
+{
+    return m_payMode;
+}
+
+void Cluster::SetPayMode(const int64_t& _payMode)
+{
+    m_payMode = _payMode;
+    m_payModeHasBeenSet = true;
+}
+
+bool Cluster::PayModeHasBeenSet() const
+{
+    return m_payModeHasBeenSet;
 }
 

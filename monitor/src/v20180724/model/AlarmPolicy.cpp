@@ -49,7 +49,8 @@ AlarmPolicy::AlarmPolicy() :
     m_instanceGroupNameHasBeenSet(false),
     m_ruleTypeHasBeenSet(false),
     m_originIdHasBeenSet(false),
-    m_tagInstancesHasBeenSet(false)
+    m_tagInstancesHasBeenSet(false),
+    m_filterDimensionsParamHasBeenSet(false)
 {
 }
 
@@ -405,6 +406,16 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
         m_tagInstancesHasBeenSet = true;
     }
 
+    if (value.HasMember("FilterDimensionsParam") && !value["FilterDimensionsParam"].IsNull())
+    {
+        if (!value["FilterDimensionsParam"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.FilterDimensionsParam` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_filterDimensionsParam = string(value["FilterDimensionsParam"].GetString());
+        m_filterDimensionsParamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -676,6 +687,14 @@ void AlarmPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_filterDimensionsParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterDimensionsParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_filterDimensionsParam.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1143,5 +1162,21 @@ void AlarmPolicy::SetTagInstances(const vector<TagInstance>& _tagInstances)
 bool AlarmPolicy::TagInstancesHasBeenSet() const
 {
     return m_tagInstancesHasBeenSet;
+}
+
+string AlarmPolicy::GetFilterDimensionsParam() const
+{
+    return m_filterDimensionsParam;
+}
+
+void AlarmPolicy::SetFilterDimensionsParam(const string& _filterDimensionsParam)
+{
+    m_filterDimensionsParam = _filterDimensionsParam;
+    m_filterDimensionsParamHasBeenSet = true;
+}
+
+bool AlarmPolicy::FilterDimensionsParamHasBeenSet() const
+{
+    return m_filterDimensionsParamHasBeenSet;
 }
 

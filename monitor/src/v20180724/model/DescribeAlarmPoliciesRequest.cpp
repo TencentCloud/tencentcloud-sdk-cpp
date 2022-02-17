@@ -40,7 +40,8 @@ DescribeAlarmPoliciesRequest::DescribeAlarmPoliciesRequest() :
     m_ruleTypesHasBeenSet(false),
     m_enableHasBeenSet(false),
     m_notBindingNoticeRuleHasBeenSet(false),
-    m_instanceGroupIdHasBeenSet(false)
+    m_instanceGroupIdHasBeenSet(false),
+    m_needCorrespondenceHasBeenSet(false)
 {
 }
 
@@ -238,6 +239,14 @@ string DescribeAlarmPoliciesRequest::ToJsonString() const
         string key = "InstanceGroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_instanceGroupId, allocator);
+    }
+
+    if (m_needCorrespondenceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedCorrespondence";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needCorrespondence, allocator);
     }
 
 
@@ -534,6 +543,22 @@ void DescribeAlarmPoliciesRequest::SetInstanceGroupId(const int64_t& _instanceGr
 bool DescribeAlarmPoliciesRequest::InstanceGroupIdHasBeenSet() const
 {
     return m_instanceGroupIdHasBeenSet;
+}
+
+int64_t DescribeAlarmPoliciesRequest::GetNeedCorrespondence() const
+{
+    return m_needCorrespondence;
+}
+
+void DescribeAlarmPoliciesRequest::SetNeedCorrespondence(const int64_t& _needCorrespondence)
+{
+    m_needCorrespondence = _needCorrespondence;
+    m_needCorrespondenceHasBeenSet = true;
+}
+
+bool DescribeAlarmPoliciesRequest::NeedCorrespondenceHasBeenSet() const
+{
+    return m_needCorrespondenceHasBeenSet;
 }
 
 

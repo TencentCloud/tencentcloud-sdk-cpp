@@ -702,6 +702,28 @@ namespace TencentCloud
                      */
                     bool TagInstancesHasBeenSet() const;
 
+                    /**
+                     * 获取策略关联的过滤维度信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FilterDimensionsParam 策略关联的过滤维度信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFilterDimensionsParam() const;
+
+                    /**
+                     * 设置策略关联的过滤维度信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FilterDimensionsParam 策略关联的过滤维度信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFilterDimensionsParam(const std::string& _filterDimensionsParam);
+
+                    /**
+                     * 判断参数 FilterDimensionsParam 是否已赋值
+                     * @return FilterDimensionsParam 是否已赋值
+                     */
+                    bool FilterDimensionsParamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -909,6 +931,13 @@ namespace TencentCloud
                      */
                     std::vector<TagInstance> m_tagInstances;
                     bool m_tagInstancesHasBeenSet;
+
+                    /**
+                     * 策略关联的过滤维度信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_filterDimensionsParam;
+                    bool m_filterDimensionsParamHasBeenSet;
 
                 };
             }

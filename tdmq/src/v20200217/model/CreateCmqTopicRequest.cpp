@@ -27,7 +27,8 @@ CreateCmqTopicRequest::CreateCmqTopicRequest() :
     m_maxMsgSizeHasBeenSet(false),
     m_filterTypeHasBeenSet(false),
     m_msgRetentionSecondsHasBeenSet(false),
-    m_traceHasBeenSet(false)
+    m_traceHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,21 @@ string CreateCmqTopicRequest::ToJsonString() const
         string key = "Trace";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_trace, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -164,6 +180,22 @@ void CreateCmqTopicRequest::SetTrace(const bool& _trace)
 bool CreateCmqTopicRequest::TraceHasBeenSet() const
 {
     return m_traceHasBeenSet;
+}
+
+vector<Tag> CreateCmqTopicRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateCmqTopicRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateCmqTopicRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

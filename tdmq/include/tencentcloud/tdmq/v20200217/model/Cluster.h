@@ -571,6 +571,36 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取计费模式：
+0: 按量计费
+1: 包年包月
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PayMode 计费模式：
+0: 按量计费
+1: 包年包月
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetPayMode() const;
+
+                    /**
+                     * 设置计费模式：
+0: 按量计费
+1: 包年包月
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PayMode 计费模式：
+0: 按量计费
+1: 包年包月
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPayMode(const int64_t& _payMode);
+
+                    /**
+                     * 判断参数 PayMode 是否已赋值
+                     * @return PayMode 是否已赋值
+                     */
+                    bool PayModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -742,6 +772,15 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 计费模式：
+0: 按量计费
+1: 包年包月
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_payMode;
+                    bool m_payModeHasBeenSet;
 
                 };
             }

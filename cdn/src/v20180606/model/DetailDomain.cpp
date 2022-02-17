@@ -80,7 +80,8 @@ DetailDomain::DetailDomain() :
     m_ossPrivateAccessHasBeenSet(false),
     m_webSocketHasBeenSet(false),
     m_remoteAuthenticationHasBeenSet(false),
-    m_shareCnameHasBeenSet(false)
+    m_shareCnameHasBeenSet(false),
+    m_ruleEngineHasBeenSet(false)
 {
 }
 
@@ -1020,6 +1021,23 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
         m_shareCnameHasBeenSet = true;
     }
 
+    if (value.HasMember("RuleEngine") && !value["RuleEngine"].IsNull())
+    {
+        if (!value["RuleEngine"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.RuleEngine` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ruleEngine.Deserialize(value["RuleEngine"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ruleEngineHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1568,6 +1586,15 @@ void DetailDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_shareCname.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_ruleEngineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleEngine";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ruleEngine.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -2531,5 +2558,21 @@ void DetailDomain::SetShareCname(const ShareCname& _shareCname)
 bool DetailDomain::ShareCnameHasBeenSet() const
 {
     return m_shareCnameHasBeenSet;
+}
+
+RuleEngine DetailDomain::GetRuleEngine() const
+{
+    return m_ruleEngine;
+}
+
+void DetailDomain::SetRuleEngine(const RuleEngine& _ruleEngine)
+{
+    m_ruleEngine = _ruleEngine;
+    m_ruleEngineHasBeenSet = true;
+}
+
+bool DetailDomain::RuleEngineHasBeenSet() const
+{
+    return m_ruleEngineHasBeenSet;
 }
 

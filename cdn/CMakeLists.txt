@@ -180,6 +180,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/Hsts.h
   include/tencentcloud/cdn/v20180606/model/DescribeIpStatusRequest.h
   include/tencentcloud/cdn/v20180606/model/DetailDomain.h
+  include/tencentcloud/cdn/v20180606/model/RuleEngine.h
   include/tencentcloud/cdn/v20180606/model/GetDisableRecordsResponse.h
   include/tencentcloud/cdn/v20180606/model/Ipv6Access.h
   include/tencentcloud/cdn/v20180606/model/ResponseHeader.h
@@ -517,6 +518,7 @@ set(cdn_src
   src/v20180606/model/Hsts.cpp
   src/v20180606/model/DescribeIpStatusRequest.cpp
   src/v20180606/model/DetailDomain.cpp
+  src/v20180606/model/RuleEngine.cpp
   src/v20180606/model/GetDisableRecordsResponse.cpp
   src/v20180606/model/Ipv6Access.cpp
   src/v20180606/model/ResponseHeader.cpp

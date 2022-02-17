@@ -24,7 +24,8 @@ StructureResultObject::StructureResultObject() :
     m_codeHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
     m_structureResultHasBeenSet(false),
-    m_subTaskIdHasBeenSet(false)
+    m_subTaskIdHasBeenSet(false),
+    m_taskFilesHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,19 @@ CoreInternalOutcome StructureResultObject::Deserialize(const rapidjson::Value &v
         m_subTaskIdHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskFiles") && !value["TaskFiles"].IsNull())
+    {
+        if (!value["TaskFiles"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `StructureResultObject.TaskFiles` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TaskFiles"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_taskFiles.push_back((*itr).GetString());
+        }
+        m_taskFilesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +124,19 @@ void StructureResultObject::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "SubTaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subTaskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskFilesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskFiles";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_taskFiles.begin(); itr != m_taskFiles.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -177,5 +204,21 @@ void StructureResultObject::SetSubTaskId(const string& _subTaskId)
 bool StructureResultObject::SubTaskIdHasBeenSet() const
 {
     return m_subTaskIdHasBeenSet;
+}
+
+vector<string> StructureResultObject::GetTaskFiles() const
+{
+    return m_taskFiles;
+}
+
+void StructureResultObject::SetTaskFiles(const vector<string>& _taskFiles)
+{
+    m_taskFiles = _taskFiles;
+    m_taskFilesHasBeenSet = true;
+}
+
+bool StructureResultObject::TaskFilesHasBeenSet() const
+{
+    return m_taskFilesHasBeenSet;
 }
 

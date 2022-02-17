@@ -32,7 +32,9 @@ RuleInfo::RuleInfo() :
     m_checkParamsHasBeenSet(false),
     m_realServerSetHasBeenSet(false),
     m_bindStatusHasBeenSet(false),
-    m_forwardHostHasBeenSet(false)
+    m_forwardHostHasBeenSet(false),
+    m_serverNameIndicationSwitchHasBeenSet(false),
+    m_serverNameIndicationHasBeenSet(false)
 {
 }
 
@@ -178,6 +180,26 @@ CoreInternalOutcome RuleInfo::Deserialize(const rapidjson::Value &value)
         m_forwardHostHasBeenSet = true;
     }
 
+    if (value.HasMember("ServerNameIndicationSwitch") && !value["ServerNameIndicationSwitch"].IsNull())
+    {
+        if (!value["ServerNameIndicationSwitch"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleInfo.ServerNameIndicationSwitch` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serverNameIndicationSwitch = string(value["ServerNameIndicationSwitch"].GetString());
+        m_serverNameIndicationSwitchHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServerNameIndication") && !value["ServerNameIndication"].IsNull())
+    {
+        if (!value["ServerNameIndication"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleInfo.ServerNameIndication` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serverNameIndication = string(value["ServerNameIndication"].GetString());
+        m_serverNameIndicationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -287,6 +309,22 @@ void RuleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "ForwardHost";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_forwardHost.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serverNameIndicationSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServerNameIndicationSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serverNameIndicationSwitch.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serverNameIndicationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServerNameIndication";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serverNameIndication.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -482,5 +520,37 @@ void RuleInfo::SetForwardHost(const string& _forwardHost)
 bool RuleInfo::ForwardHostHasBeenSet() const
 {
     return m_forwardHostHasBeenSet;
+}
+
+string RuleInfo::GetServerNameIndicationSwitch() const
+{
+    return m_serverNameIndicationSwitch;
+}
+
+void RuleInfo::SetServerNameIndicationSwitch(const string& _serverNameIndicationSwitch)
+{
+    m_serverNameIndicationSwitch = _serverNameIndicationSwitch;
+    m_serverNameIndicationSwitchHasBeenSet = true;
+}
+
+bool RuleInfo::ServerNameIndicationSwitchHasBeenSet() const
+{
+    return m_serverNameIndicationSwitchHasBeenSet;
+}
+
+string RuleInfo::GetServerNameIndication() const
+{
+    return m_serverNameIndication;
+}
+
+void RuleInfo::SetServerNameIndication(const string& _serverNameIndication)
+{
+    m_serverNameIndication = _serverNameIndication;
+    m_serverNameIndicationHasBeenSet = true;
+}
+
+bool RuleInfo::ServerNameIndicationHasBeenSet() const
+{
+    return m_serverNameIndicationHasBeenSet;
 }
 

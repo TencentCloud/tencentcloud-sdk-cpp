@@ -31,7 +31,8 @@ UserNotice::UserNotice() :
     m_phoneCircleTimesHasBeenSet(false),
     m_phoneInnerIntervalHasBeenSet(false),
     m_phoneCircleIntervalHasBeenSet(false),
-    m_needPhoneArriveNoticeHasBeenSet(false)
+    m_needPhoneArriveNoticeHasBeenSet(false),
+    m_phoneCallTypeHasBeenSet(false)
 {
 }
 
@@ -162,6 +163,16 @@ CoreInternalOutcome UserNotice::Deserialize(const rapidjson::Value &value)
         m_needPhoneArriveNoticeHasBeenSet = true;
     }
 
+    if (value.HasMember("PhoneCallType") && !value["PhoneCallType"].IsNull())
+    {
+        if (!value["PhoneCallType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserNotice.PhoneCallType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_phoneCallType = string(value["PhoneCallType"].GetString());
+        m_phoneCallTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -275,6 +286,14 @@ void UserNotice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "NeedPhoneArriveNotice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_needPhoneArriveNotice, allocator);
+    }
+
+    if (m_phoneCallTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PhoneCallType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_phoneCallType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -454,5 +473,21 @@ void UserNotice::SetNeedPhoneArriveNotice(const int64_t& _needPhoneArriveNotice)
 bool UserNotice::NeedPhoneArriveNoticeHasBeenSet() const
 {
     return m_needPhoneArriveNoticeHasBeenSet;
+}
+
+string UserNotice::GetPhoneCallType() const
+{
+    return m_phoneCallType;
+}
+
+void UserNotice::SetPhoneCallType(const string& _phoneCallType)
+{
+    m_phoneCallType = _phoneCallType;
+    m_phoneCallTypeHasBeenSet = true;
+}
+
+bool UserNotice::PhoneCallTypeHasBeenSet() const
+{
+    return m_phoneCallTypeHasBeenSet;
 }
 

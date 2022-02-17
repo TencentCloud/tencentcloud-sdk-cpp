@@ -51,6 +51,8 @@
 #include <tencentcloud/dcdb/v20180411/model/DescribeDBParametersResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeDBSecurityGroupsRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeDBSecurityGroupsResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/DescribeDBSlowLogsRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/DescribeDBSlowLogsResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeDBSyncModeRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeDBSyncModeResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeDCDBInstanceNodeInfoRequest.h>
@@ -183,6 +185,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBSecurityGroupsResponse> DescribeDBSecurityGroupsOutcome;
                 typedef std::future<DescribeDBSecurityGroupsOutcome> DescribeDBSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeDBSecurityGroupsRequest&, DescribeDBSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSecurityGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBSlowLogsResponse> DescribeDBSlowLogsOutcome;
+                typedef std::future<DescribeDBSlowLogsOutcome> DescribeDBSlowLogsOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::DescribeDBSlowLogsRequest&, DescribeDBSlowLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSlowLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBSyncModeResponse> DescribeDBSyncModeOutcome;
                 typedef std::future<DescribeDBSyncModeOutcome> DescribeDBSyncModeOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeDBSyncModeRequest&, DescribeDBSyncModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSyncModeAsyncHandler;
@@ -427,6 +432,15 @@ namespace TencentCloud
                 DescribeDBSecurityGroupsOutcome DescribeDBSecurityGroups(const Model::DescribeDBSecurityGroupsRequest &request);
                 void DescribeDBSecurityGroupsAsync(const Model::DescribeDBSecurityGroupsRequest& request, const DescribeDBSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDBSecurityGroupsOutcomeCallable DescribeDBSecurityGroupsCallable(const Model::DescribeDBSecurityGroupsRequest& request);
+
+                /**
+                 *本接口(DescribeDBSlowLogs)用于查询慢查询日志列表。
+                 * @param req DescribeDBSlowLogsRequest
+                 * @return DescribeDBSlowLogsOutcome
+                 */
+                DescribeDBSlowLogsOutcome DescribeDBSlowLogs(const Model::DescribeDBSlowLogsRequest &request);
+                void DescribeDBSlowLogsAsync(const Model::DescribeDBSlowLogsRequest& request, const DescribeDBSlowLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBSlowLogsOutcomeCallable DescribeDBSlowLogsCallable(const Model::DescribeDBSlowLogsRequest& request);
 
                 /**
                  *本接口（DescribeDBSyncMode）用于查询云数据库实例的同步模式。
