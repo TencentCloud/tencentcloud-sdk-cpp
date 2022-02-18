@@ -100,6 +100,160 @@ namespace TencentCloud
                      */
                     bool ValueHasBeenSet() const;
 
+                    /**
+                     * 获取参考范围
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Range 参考范围
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRange() const;
+
+                    /**
+                     * 设置参考范围
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Range 参考范围
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRange(const std::string& _range);
+
+                    /**
+                     * 判断参数 Range 是否已赋值
+                     * @return Range 是否已赋值
+                     */
+                    bool RangeHasBeenSet() const;
+
+                    /**
+                     * 获取报告时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReportDate 报告时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetReportDate() const;
+
+                    /**
+                     * 设置报告时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ReportDate 报告时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetReportDate(const std::vector<std::string>& _reportDate);
+
+                    /**
+                     * 判断参数 ReportDate 是否已赋值
+                     * @return ReportDate 是否已赋值
+                     */
+                    bool ReportDateHasBeenSet() const;
+
+                    /**
+                     * 获取文件类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FileType 文件类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFileType() const;
+
+                    /**
+                     * 设置文件类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FileType 文件类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFileType(const std::string& _fileType);
+
+                    /**
+                     * 判断参数 FileType 是否已赋值
+                     * @return FileType 是否已赋值
+                     */
+                    bool FileTypeHasBeenSet() const;
+
+                    /**
+                     * 获取检查项目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InspectProject 检查项目
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInspectProject() const;
+
+                    /**
+                     * 设置检查项目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InspectProject 检查项目
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInspectProject(const std::string& _inspectProject);
+
+                    /**
+                     * 判断参数 InspectProject 是否已赋值
+                     * @return InspectProject 是否已赋值
+                     */
+                    bool InspectProjectHasBeenSet() const;
+
+                    /**
+                     * 获取单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Unit 单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUnit() const;
+
+                    /**
+                     * 设置单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Unit 单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUnit(const std::string& _unit);
+
+                    /**
+                     * 判断参数 Unit 是否已赋值
+                     * @return Unit 是否已赋值
+                     */
+                    bool UnitHasBeenSet() const;
+
+                    /**
+                     * 获取原名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OriginName 原名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOriginName() const;
+
+                    /**
+                     * 设置原名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OriginName 原名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOriginName(const std::string& _originName);
+
+                    /**
+                     * 判断参数 OriginName 是否已赋值
+                     * @return OriginName 是否已赋值
+                     */
+                    bool OriginNameHasBeenSet() const;
+
+                    /**
+                     * 获取阴阳性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return YinYang 阴阳性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetYinYang() const;
+
+                    /**
+                     * 设置阴阳性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param YinYang 阴阳性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetYinYang(const std::string& _yinYang);
+
+                    /**
+                     * 判断参数 YinYang 是否已赋值
+                     * @return YinYang 是否已赋值
+                     */
+                    bool YinYangHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +273,55 @@ namespace TencentCloud
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
+
+                    /**
+                     * 参考范围
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_range;
+                    bool m_rangeHasBeenSet;
+
+                    /**
+                     * 报告时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_reportDate;
+                    bool m_reportDateHasBeenSet;
+
+                    /**
+                     * 文件类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_fileType;
+                    bool m_fileTypeHasBeenSet;
+
+                    /**
+                     * 检查项目
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_inspectProject;
+                    bool m_inspectProjectHasBeenSet;
+
+                    /**
+                     * 单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_unit;
+                    bool m_unitHasBeenSet;
+
+                    /**
+                     * 原名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_originName;
+                    bool m_originNameHasBeenSet;
+
+                    /**
+                     * 阴阳性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_yinYang;
+                    bool m_yinYangHasBeenSet;
 
                 };
             }

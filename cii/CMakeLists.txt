@@ -38,6 +38,7 @@ set(cii_public_header_model
   include/tencentcloud/cii/v20210408/model/StructureOneItem.h
   include/tencentcloud/cii/v20210408/model/CreateAutoClassifyStructureTaskRequest.h
   include/tencentcloud/cii/v20210408/model/DescribeMachineUnderwriteRequest.h
+  include/tencentcloud/cii/v20210408/model/DescribeQualityScoreRequest.h
   include/tencentcloud/cii/v20210408/model/ReviewDataTaskInfo.h
   include/tencentcloud/cii/v20210408/model/DescribeUnderwriteTaskResponse.h
   include/tencentcloud/cii/v20210408/model/DescribeStructureResultRequest.h
@@ -45,6 +46,7 @@ set(cii_public_header_model
   include/tencentcloud/cii/v20210408/model/UnderwriteItem.h
   include/tencentcloud/cii/v20210408/model/DescribeStructCompareDataResponse.h
   include/tencentcloud/cii/v20210408/model/MachinePredict.h
+  include/tencentcloud/cii/v20210408/model/DescribeQualityScoreResponse.h
   include/tencentcloud/cii/v20210408/model/DescribeUnderwriteTaskRequest.h
   include/tencentcloud/cii/v20210408/model/ResultObject.h
   include/tencentcloud/cii/v20210408/model/DescribeStructureResultResponse.h
@@ -92,6 +94,7 @@ set(cii_src
   src/v20210408/model/StructureOneItem.cpp
   src/v20210408/model/CreateAutoClassifyStructureTaskRequest.cpp
   src/v20210408/model/DescribeMachineUnderwriteRequest.cpp
+  src/v20210408/model/DescribeQualityScoreRequest.cpp
   src/v20210408/model/ReviewDataTaskInfo.cpp
   src/v20210408/model/DescribeUnderwriteTaskResponse.cpp
   src/v20210408/model/DescribeStructureResultRequest.cpp
@@ -99,6 +102,7 @@ set(cii_src
   src/v20210408/model/UnderwriteItem.cpp
   src/v20210408/model/DescribeStructCompareDataResponse.cpp
   src/v20210408/model/MachinePredict.cpp
+  src/v20210408/model/DescribeQualityScoreResponse.cpp
   src/v20210408/model/DescribeUnderwriteTaskRequest.cpp
   src/v20210408/model/ResultObject.cpp
   src/v20210408/model/DescribeStructureResultResponse.cpp

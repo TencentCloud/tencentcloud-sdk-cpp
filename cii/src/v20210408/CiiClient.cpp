@@ -255,6 +255,49 @@ CiiClient::DescribeMachineUnderwriteOutcomeCallable CiiClient::DescribeMachineUn
     return task->get_future();
 }
 
+CiiClient::DescribeQualityScoreOutcome CiiClient::DescribeQualityScore(const DescribeQualityScoreRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeQualityScore");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeQualityScoreResponse rsp = DescribeQualityScoreResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeQualityScoreOutcome(rsp);
+        else
+            return DescribeQualityScoreOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeQualityScoreOutcome(outcome.GetError());
+    }
+}
+
+void CiiClient::DescribeQualityScoreAsync(const DescribeQualityScoreRequest& request, const DescribeQualityScoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeQualityScore(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CiiClient::DescribeQualityScoreOutcomeCallable CiiClient::DescribeQualityScoreCallable(const DescribeQualityScoreRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeQualityScoreOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeQualityScore(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CiiClient::DescribeReportClassifyOutcome CiiClient::DescribeReportClassify(const DescribeReportClassifyRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeReportClassify");

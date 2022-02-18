@@ -33,6 +33,8 @@
 #include <tencentcloud/cii/v20210408/model/CreateUnderwriteTaskByIdResponse.h>
 #include <tencentcloud/cii/v20210408/model/DescribeMachineUnderwriteRequest.h>
 #include <tencentcloud/cii/v20210408/model/DescribeMachineUnderwriteResponse.h>
+#include <tencentcloud/cii/v20210408/model/DescribeQualityScoreRequest.h>
+#include <tencentcloud/cii/v20210408/model/DescribeQualityScoreResponse.h>
 #include <tencentcloud/cii/v20210408/model/DescribeReportClassifyRequest.h>
 #include <tencentcloud/cii/v20210408/model/DescribeReportClassifyResponse.h>
 #include <tencentcloud/cii/v20210408/model/DescribeStructCompareDataRequest.h>
@@ -76,6 +78,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMachineUnderwriteResponse> DescribeMachineUnderwriteOutcome;
                 typedef std::future<DescribeMachineUnderwriteOutcome> DescribeMachineUnderwriteOutcomeCallable;
                 typedef std::function<void(const CiiClient*, const Model::DescribeMachineUnderwriteRequest&, DescribeMachineUnderwriteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMachineUnderwriteAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeQualityScoreResponse> DescribeQualityScoreOutcome;
+                typedef std::future<DescribeQualityScoreOutcome> DescribeQualityScoreOutcomeCallable;
+                typedef std::function<void(const CiiClient*, const Model::DescribeQualityScoreRequest&, DescribeQualityScoreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQualityScoreAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeReportClassifyResponse> DescribeReportClassifyOutcome;
                 typedef std::future<DescribeReportClassifyOutcome> DescribeReportClassifyOutcomeCallable;
                 typedef std::function<void(const CiiClient*, const Model::DescribeReportClassifyRequest&, DescribeReportClassifyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReportClassifyAsyncHandler;
@@ -144,6 +149,15 @@ namespace TencentCloud
                 DescribeMachineUnderwriteOutcome DescribeMachineUnderwrite(const Model::DescribeMachineUnderwriteRequest &request);
                 void DescribeMachineUnderwriteAsync(const Model::DescribeMachineUnderwriteRequest& request, const DescribeMachineUnderwriteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMachineUnderwriteOutcomeCallable DescribeMachineUnderwriteCallable(const Model::DescribeMachineUnderwriteRequest& request);
+
+                /**
+                 *获取图片质量分
+                 * @param req DescribeQualityScoreRequest
+                 * @return DescribeQualityScoreOutcome
+                 */
+                DescribeQualityScoreOutcome DescribeQualityScore(const Model::DescribeQualityScoreRequest &request);
+                void DescribeQualityScoreAsync(const Model::DescribeQualityScoreRequest& request, const DescribeQualityScoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeQualityScoreOutcomeCallable DescribeQualityScoreCallable(const Model::DescribeQualityScoreRequest& request);
 
                 /**
                  *辅助用户对批量报告自动分类
