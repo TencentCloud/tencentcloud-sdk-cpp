@@ -92,7 +92,9 @@ InstanceInfo::InstanceInfo() :
     m_frozenMemSizeHasBeenSet(false),
     m_frozenDiskTypeHasBeenSet(false),
     m_frozenDiskSizeHasBeenSet(false),
-    m_healthStatusHasBeenSet(false)
+    m_healthStatusHasBeenSet(false),
+    m_esPrivateUrlHasBeenSet(false),
+    m_esPrivateDomainHasBeenSet(false)
 {
 }
 
@@ -903,6 +905,26 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_healthStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("EsPrivateUrl") && !value["EsPrivateUrl"].IsNull())
+    {
+        if (!value["EsPrivateUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.EsPrivateUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_esPrivateUrl = string(value["EsPrivateUrl"].GetString());
+        m_esPrivateUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("EsPrivateDomain") && !value["EsPrivateDomain"].IsNull())
+    {
+        if (!value["EsPrivateDomain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.EsPrivateDomain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_esPrivateDomain = string(value["EsPrivateDomain"].GetString());
+        m_esPrivateDomainHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1517,6 +1539,22 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "HealthStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_healthStatus, allocator);
+    }
+
+    if (m_esPrivateUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EsPrivateUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_esPrivateUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_esPrivateDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EsPrivateDomain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_esPrivateDomain.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2672,5 +2710,37 @@ void InstanceInfo::SetHealthStatus(const int64_t& _healthStatus)
 bool InstanceInfo::HealthStatusHasBeenSet() const
 {
     return m_healthStatusHasBeenSet;
+}
+
+string InstanceInfo::GetEsPrivateUrl() const
+{
+    return m_esPrivateUrl;
+}
+
+void InstanceInfo::SetEsPrivateUrl(const string& _esPrivateUrl)
+{
+    m_esPrivateUrl = _esPrivateUrl;
+    m_esPrivateUrlHasBeenSet = true;
+}
+
+bool InstanceInfo::EsPrivateUrlHasBeenSet() const
+{
+    return m_esPrivateUrlHasBeenSet;
+}
+
+string InstanceInfo::GetEsPrivateDomain() const
+{
+    return m_esPrivateDomain;
+}
+
+void InstanceInfo::SetEsPrivateDomain(const string& _esPrivateDomain)
+{
+    m_esPrivateDomain = _esPrivateDomain;
+    m_esPrivateDomainHasBeenSet = true;
+}
+
+bool InstanceInfo::EsPrivateDomainHasBeenSet() const
+{
+    return m_esPrivateDomainHasBeenSet;
 }
 

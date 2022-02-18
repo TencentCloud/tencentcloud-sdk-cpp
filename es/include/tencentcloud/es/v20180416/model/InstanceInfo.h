@@ -1495,6 +1495,50 @@ namespace TencentCloud
                      */
                     bool HealthStatusHasBeenSet() const;
 
+                    /**
+                     * 获取https集群内网url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EsPrivateUrl https集群内网url
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEsPrivateUrl() const;
+
+                    /**
+                     * 设置https集群内网url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EsPrivateUrl https集群内网url
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEsPrivateUrl(const std::string& _esPrivateUrl);
+
+                    /**
+                     * 判断参数 EsPrivateUrl 是否已赋值
+                     * @return EsPrivateUrl 是否已赋值
+                     */
+                    bool EsPrivateUrlHasBeenSet() const;
+
+                    /**
+                     * 获取https集群内网域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EsPrivateDomain https集群内网域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEsPrivateDomain() const;
+
+                    /**
+                     * 设置https集群内网域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EsPrivateDomain https集群内网域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEsPrivateDomain(const std::string& _esPrivateDomain);
+
+                    /**
+                     * 判断参数 EsPrivateDomain 是否已赋值
+                     * @return EsPrivateDomain 是否已赋值
+                     */
+                    bool EsPrivateDomainHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1964,6 +2008,20 @@ namespace TencentCloud
                      */
                     int64_t m_healthStatus;
                     bool m_healthStatusHasBeenSet;
+
+                    /**
+                     * https集群内网url
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_esPrivateUrl;
+                    bool m_esPrivateUrlHasBeenSet;
+
+                    /**
+                     * https集群内网域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_esPrivateDomain;
+                    bool m_esPrivateDomainHasBeenSet;
 
                 };
             }

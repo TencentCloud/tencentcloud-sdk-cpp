@@ -79,6 +79,24 @@ namespace TencentCloud
                      */
                     bool ParamListHasBeenSet() const;
 
+                    /**
+                     * 获取维护期间执行-yes,立即执行-no
+                     * @return IsInMaintainPeriod 维护期间执行-yes,立即执行-no
+                     */
+                    std::string GetIsInMaintainPeriod() const;
+
+                    /**
+                     * 设置维护期间执行-yes,立即执行-no
+                     * @param IsInMaintainPeriod 维护期间执行-yes,立即执行-no
+                     */
+                    void SetIsInMaintainPeriod(const std::string& _isInMaintainPeriod);
+
+                    /**
+                     * 判断参数 IsInMaintainPeriod 是否已赋值
+                     * @return IsInMaintainPeriod 是否已赋值
+                     */
+                    bool IsInMaintainPeriodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -92,6 +110,12 @@ namespace TencentCloud
                      */
                     std::vector<ParamItem> m_paramList;
                     bool m_paramListHasBeenSet;
+
+                    /**
+                     * 维护期间执行-yes,立即执行-no
+                     */
+                    std::string m_isInMaintainPeriod;
+                    bool m_isInMaintainPeriodHasBeenSet;
 
                 };
             }

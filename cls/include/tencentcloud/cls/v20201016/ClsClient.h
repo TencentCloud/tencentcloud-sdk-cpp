@@ -459,7 +459,7 @@ namespace TencentCloud
                 DeleteExportOutcomeCallable DeleteExportCallable(const Model::DeleteExportRequest& request);
 
                 /**
-                 *本接口用于日志主题的索引配置
+                 *本接口用于删除日志主题的索引配置，删除索引配置后将无法检索和查询采集到的日志。
                  * @param req DeleteIndexRequest
                  * @return DeleteIndexOutcome
                  */

@@ -23,10 +23,16 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/cynosdb/v20190107/model/ActivateInstanceRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ActivateInstanceResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/AddInstancesRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/AddInstancesResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/AssociateSecurityGroupsRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/AssociateSecurityGroupsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateClustersRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateClustersResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeAccountAllGrantPrivilegesRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeAccountAllGrantPrivilegesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeAccountsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeAccountsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeBackupConfigRequest.h>
@@ -37,6 +43,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClusterDetailResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClusterInstanceGrpsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClusterInstanceGrpsResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeClusterParamLogsRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeClusterParamLogsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClustersRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClustersResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeDBSecurityGroupsRequest.h>
@@ -57,10 +65,16 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeRollbackTimeRangeResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeRollbackTimeValidityRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeRollbackTimeValidityResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DisassociateSecurityGroupsRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DisassociateSecurityGroupsResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/GrantAccountPrivilegesRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/GrantAccountPrivilegesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/IsolateClusterRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/IsolateClusterResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/IsolateInstanceRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/IsolateInstanceResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyAccountParamsRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyAccountParamsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyBackupConfigRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyBackupConfigResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyClusterParamRequest.h>
@@ -73,6 +87,14 @@
 #include <tencentcloud/cynosdb/v20190107/model/OfflineClusterResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/OfflineInstanceRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/OfflineInstanceResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/PauseServerlessRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/PauseServerlessResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ResumeServerlessRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ResumeServerlessResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/RevokeAccountPrivilegesRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/RevokeAccountPrivilegesResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/RollBackClusterRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/RollBackClusterResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/SetRenewFlagRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/SetRenewFlagResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/UpgradeInstanceRequest.h>
@@ -91,12 +113,21 @@ namespace TencentCloud
                 CynosdbClient(const Credential &credential, const std::string &region);
                 CynosdbClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::ActivateInstanceResponse> ActivateInstanceOutcome;
+                typedef std::future<ActivateInstanceOutcome> ActivateInstanceOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ActivateInstanceRequest&, ActivateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ActivateInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddInstancesResponse> AddInstancesOutcome;
                 typedef std::future<AddInstancesOutcome> AddInstancesOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::AddInstancesRequest&, AddInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::AssociateSecurityGroupsResponse> AssociateSecurityGroupsOutcome;
+                typedef std::future<AssociateSecurityGroupsOutcome> AssociateSecurityGroupsOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::AssociateSecurityGroupsRequest&, AssociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateSecurityGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateClustersResponse> CreateClustersOutcome;
                 typedef std::future<CreateClustersOutcome> CreateClustersOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CreateClustersRequest&, CreateClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClustersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAccountAllGrantPrivilegesResponse> DescribeAccountAllGrantPrivilegesOutcome;
+                typedef std::future<DescribeAccountAllGrantPrivilegesOutcome> DescribeAccountAllGrantPrivilegesOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeAccountAllGrantPrivilegesRequest&, DescribeAccountAllGrantPrivilegesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountAllGrantPrivilegesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAccountsResponse> DescribeAccountsOutcome;
                 typedef std::future<DescribeAccountsOutcome> DescribeAccountsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeAccountsRequest&, DescribeAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountsAsyncHandler;
@@ -112,6 +143,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClusterInstanceGrpsResponse> DescribeClusterInstanceGrpsOutcome;
                 typedef std::future<DescribeClusterInstanceGrpsOutcome> DescribeClusterInstanceGrpsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeClusterInstanceGrpsRequest&, DescribeClusterInstanceGrpsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterInstanceGrpsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterParamLogsResponse> DescribeClusterParamLogsOutcome;
+                typedef std::future<DescribeClusterParamLogsOutcome> DescribeClusterParamLogsOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeClusterParamLogsRequest&, DescribeClusterParamLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterParamLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClustersResponse> DescribeClustersOutcome;
                 typedef std::future<DescribeClustersOutcome> DescribeClustersOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeClustersRequest&, DescribeClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClustersAsyncHandler;
@@ -142,12 +176,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRollbackTimeValidityResponse> DescribeRollbackTimeValidityOutcome;
                 typedef std::future<DescribeRollbackTimeValidityOutcome> DescribeRollbackTimeValidityOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeRollbackTimeValidityRequest&, DescribeRollbackTimeValidityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRollbackTimeValidityAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisassociateSecurityGroupsResponse> DisassociateSecurityGroupsOutcome;
+                typedef std::future<DisassociateSecurityGroupsOutcome> DisassociateSecurityGroupsOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DisassociateSecurityGroupsRequest&, DisassociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateSecurityGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::GrantAccountPrivilegesResponse> GrantAccountPrivilegesOutcome;
+                typedef std::future<GrantAccountPrivilegesOutcome> GrantAccountPrivilegesOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::GrantAccountPrivilegesRequest&, GrantAccountPrivilegesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GrantAccountPrivilegesAsyncHandler;
                 typedef Outcome<Core::Error, Model::IsolateClusterResponse> IsolateClusterOutcome;
                 typedef std::future<IsolateClusterOutcome> IsolateClusterOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::IsolateClusterRequest&, IsolateClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IsolateClusterAsyncHandler;
                 typedef Outcome<Core::Error, Model::IsolateInstanceResponse> IsolateInstanceOutcome;
                 typedef std::future<IsolateInstanceOutcome> IsolateInstanceOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::IsolateInstanceRequest&, IsolateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IsolateInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAccountParamsResponse> ModifyAccountParamsOutcome;
+                typedef std::future<ModifyAccountParamsOutcome> ModifyAccountParamsOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ModifyAccountParamsRequest&, ModifyAccountParamsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountParamsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyBackupConfigResponse> ModifyBackupConfigOutcome;
                 typedef std::future<ModifyBackupConfigOutcome> ModifyBackupConfigOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyBackupConfigRequest&, ModifyBackupConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupConfigAsyncHandler;
@@ -166,6 +209,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::OfflineInstanceResponse> OfflineInstanceOutcome;
                 typedef std::future<OfflineInstanceOutcome> OfflineInstanceOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::OfflineInstanceRequest&, OfflineInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OfflineInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::PauseServerlessResponse> PauseServerlessOutcome;
+                typedef std::future<PauseServerlessOutcome> PauseServerlessOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::PauseServerlessRequest&, PauseServerlessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PauseServerlessAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResumeServerlessResponse> ResumeServerlessOutcome;
+                typedef std::future<ResumeServerlessOutcome> ResumeServerlessOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ResumeServerlessRequest&, ResumeServerlessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumeServerlessAsyncHandler;
+                typedef Outcome<Core::Error, Model::RevokeAccountPrivilegesResponse> RevokeAccountPrivilegesOutcome;
+                typedef std::future<RevokeAccountPrivilegesOutcome> RevokeAccountPrivilegesOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::RevokeAccountPrivilegesRequest&, RevokeAccountPrivilegesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RevokeAccountPrivilegesAsyncHandler;
+                typedef Outcome<Core::Error, Model::RollBackClusterResponse> RollBackClusterOutcome;
+                typedef std::future<RollBackClusterOutcome> RollBackClusterOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::RollBackClusterRequest&, RollBackClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RollBackClusterAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetRenewFlagResponse> SetRenewFlagOutcome;
                 typedef std::future<SetRenewFlagOutcome> SetRenewFlagOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::SetRenewFlagRequest&, SetRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetRenewFlagAsyncHandler;
@@ -174,6 +229,15 @@ namespace TencentCloud
                 typedef std::function<void(const CynosdbClient*, const Model::UpgradeInstanceRequest&, UpgradeInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeInstanceAsyncHandler;
 
 
+
+                /**
+                 *本接口(ActivateInstance)用于恢复已隔离的实例访问。
+                 * @param req ActivateInstanceRequest
+                 * @return ActivateInstanceOutcome
+                 */
+                ActivateInstanceOutcome ActivateInstance(const Model::ActivateInstanceRequest &request);
+                void ActivateInstanceAsync(const Model::ActivateInstanceRequest& request, const ActivateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ActivateInstanceOutcomeCallable ActivateInstanceCallable(const Model::ActivateInstanceRequest& request);
 
                 /**
                  *本接口（AddInstances）用于集群添加实例
@@ -185,6 +249,15 @@ namespace TencentCloud
                 AddInstancesOutcomeCallable AddInstancesCallable(const Model::AddInstancesRequest& request);
 
                 /**
+                 *安全组批量绑定云资源
+                 * @param req AssociateSecurityGroupsRequest
+                 * @return AssociateSecurityGroupsOutcome
+                 */
+                AssociateSecurityGroupsOutcome AssociateSecurityGroups(const Model::AssociateSecurityGroupsRequest &request);
+                void AssociateSecurityGroupsAsync(const Model::AssociateSecurityGroupsRequest& request, const AssociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AssociateSecurityGroupsOutcomeCallable AssociateSecurityGroupsCallable(const Model::AssociateSecurityGroupsRequest& request);
+
+                /**
                  *创建集群
                  * @param req CreateClustersRequest
                  * @return CreateClustersOutcome
@@ -192,6 +265,15 @@ namespace TencentCloud
                 CreateClustersOutcome CreateClusters(const Model::CreateClustersRequest &request);
                 void CreateClustersAsync(const Model::CreateClustersRequest& request, const CreateClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateClustersOutcomeCallable CreateClustersCallable(const Model::CreateClustersRequest& request);
+
+                /**
+                 *账号所有权限
+                 * @param req DescribeAccountAllGrantPrivilegesRequest
+                 * @return DescribeAccountAllGrantPrivilegesOutcome
+                 */
+                DescribeAccountAllGrantPrivilegesOutcome DescribeAccountAllGrantPrivileges(const Model::DescribeAccountAllGrantPrivilegesRequest &request);
+                void DescribeAccountAllGrantPrivilegesAsync(const Model::DescribeAccountAllGrantPrivilegesRequest& request, const DescribeAccountAllGrantPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAccountAllGrantPrivilegesOutcomeCallable DescribeAccountAllGrantPrivilegesCallable(const Model::DescribeAccountAllGrantPrivilegesRequest& request);
 
                 /**
                  *本接口(DescribeAccounts)用于查询数据库管理账号。
@@ -237,6 +319,15 @@ namespace TencentCloud
                 DescribeClusterInstanceGrpsOutcome DescribeClusterInstanceGrps(const Model::DescribeClusterInstanceGrpsRequest &request);
                 void DescribeClusterInstanceGrpsAsync(const Model::DescribeClusterInstanceGrpsRequest& request, const DescribeClusterInstanceGrpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClusterInstanceGrpsOutcomeCallable DescribeClusterInstanceGrpsCallable(const Model::DescribeClusterInstanceGrpsRequest& request);
+
+                /**
+                 *本接口（DescribeClusterParamLogs）查询参数修改日志
+                 * @param req DescribeClusterParamLogsRequest
+                 * @return DescribeClusterParamLogsOutcome
+                 */
+                DescribeClusterParamLogsOutcome DescribeClusterParamLogs(const Model::DescribeClusterParamLogsRequest &request);
+                void DescribeClusterParamLogsAsync(const Model::DescribeClusterParamLogsRequest& request, const DescribeClusterParamLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterParamLogsOutcomeCallable DescribeClusterParamLogsCallable(const Model::DescribeClusterParamLogsRequest& request);
 
                 /**
                  *查询集群列表
@@ -329,6 +420,24 @@ namespace TencentCloud
                 DescribeRollbackTimeValidityOutcomeCallable DescribeRollbackTimeValidityCallable(const Model::DescribeRollbackTimeValidityRequest& request);
 
                 /**
+                 *安全组批量解绑云资源
+                 * @param req DisassociateSecurityGroupsRequest
+                 * @return DisassociateSecurityGroupsOutcome
+                 */
+                DisassociateSecurityGroupsOutcome DisassociateSecurityGroups(const Model::DisassociateSecurityGroupsRequest &request);
+                void DisassociateSecurityGroupsAsync(const Model::DisassociateSecurityGroupsRequest& request, const DisassociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisassociateSecurityGroupsOutcomeCallable DisassociateSecurityGroupsCallable(const Model::DisassociateSecurityGroupsRequest& request);
+
+                /**
+                 *批量授权账号权限
+                 * @param req GrantAccountPrivilegesRequest
+                 * @return GrantAccountPrivilegesOutcome
+                 */
+                GrantAccountPrivilegesOutcome GrantAccountPrivileges(const Model::GrantAccountPrivilegesRequest &request);
+                void GrantAccountPrivilegesAsync(const Model::GrantAccountPrivilegesRequest& request, const GrantAccountPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GrantAccountPrivilegesOutcomeCallable GrantAccountPrivilegesCallable(const Model::GrantAccountPrivilegesRequest& request);
+
+                /**
                  *隔离集群
                  * @param req IsolateClusterRequest
                  * @return IsolateClusterOutcome
@@ -345,6 +454,15 @@ namespace TencentCloud
                 IsolateInstanceOutcome IsolateInstance(const Model::IsolateInstanceRequest &request);
                 void IsolateInstanceAsync(const Model::IsolateInstanceRequest& request, const IsolateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 IsolateInstanceOutcomeCallable IsolateInstanceCallable(const Model::IsolateInstanceRequest& request);
+
+                /**
+                 *修改账号参数
+                 * @param req ModifyAccountParamsRequest
+                 * @return ModifyAccountParamsOutcome
+                 */
+                ModifyAccountParamsOutcome ModifyAccountParams(const Model::ModifyAccountParamsRequest &request);
+                void ModifyAccountParamsAsync(const Model::ModifyAccountParamsRequest& request, const ModifyAccountParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAccountParamsOutcomeCallable ModifyAccountParamsCallable(const Model::ModifyAccountParamsRequest& request);
 
                 /**
                  *修改指定集群的备份配置
@@ -399,6 +517,42 @@ namespace TencentCloud
                 OfflineInstanceOutcome OfflineInstance(const Model::OfflineInstanceRequest &request);
                 void OfflineInstanceAsync(const Model::OfflineInstanceRequest& request, const OfflineInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 OfflineInstanceOutcomeCallable OfflineInstanceCallable(const Model::OfflineInstanceRequest& request);
+
+                /**
+                 *暂停serverless集群
+                 * @param req PauseServerlessRequest
+                 * @return PauseServerlessOutcome
+                 */
+                PauseServerlessOutcome PauseServerless(const Model::PauseServerlessRequest &request);
+                void PauseServerlessAsync(const Model::PauseServerlessRequest& request, const PauseServerlessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PauseServerlessOutcomeCallable PauseServerlessCallable(const Model::PauseServerlessRequest& request);
+
+                /**
+                 *恢复serverless集群
+                 * @param req ResumeServerlessRequest
+                 * @return ResumeServerlessOutcome
+                 */
+                ResumeServerlessOutcome ResumeServerless(const Model::ResumeServerlessRequest &request);
+                void ResumeServerlessAsync(const Model::ResumeServerlessRequest& request, const ResumeServerlessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResumeServerlessOutcomeCallable ResumeServerlessCallable(const Model::ResumeServerlessRequest& request);
+
+                /**
+                 *批量回收账号权限
+                 * @param req RevokeAccountPrivilegesRequest
+                 * @return RevokeAccountPrivilegesOutcome
+                 */
+                RevokeAccountPrivilegesOutcome RevokeAccountPrivileges(const Model::RevokeAccountPrivilegesRequest &request);
+                void RevokeAccountPrivilegesAsync(const Model::RevokeAccountPrivilegesRequest& request, const RevokeAccountPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RevokeAccountPrivilegesOutcomeCallable RevokeAccountPrivilegesCallable(const Model::RevokeAccountPrivilegesRequest& request);
+
+                /**
+                 *本接口（RollBackCluster）用于回档集群
+                 * @param req RollBackClusterRequest
+                 * @return RollBackClusterOutcome
+                 */
+                RollBackClusterOutcome RollBackCluster(const Model::RollBackClusterRequest &request);
+                void RollBackClusterAsync(const Model::RollBackClusterRequest& request, const RollBackClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RollBackClusterOutcomeCallable RollBackClusterCallable(const Model::RollBackClusterRequest& request);
 
                 /**
                  *SetRenewFlag设置实例的自动续费功能

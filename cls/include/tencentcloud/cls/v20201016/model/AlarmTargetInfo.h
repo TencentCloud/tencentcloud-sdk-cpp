@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 日志告警监控对线
+                * 告警对象
                 */
                 class AlarmTargetInfo : public AbstractModel
                 {

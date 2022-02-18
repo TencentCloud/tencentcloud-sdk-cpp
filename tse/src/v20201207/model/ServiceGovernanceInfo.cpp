@@ -23,7 +23,9 @@ using namespace std;
 ServiceGovernanceInfo::ServiceGovernanceInfo() :
     m_engineRegionHasBeenSet(false),
     m_boundK8SInfosHasBeenSet(false),
-    m_vpcInfosHasBeenSet(false)
+    m_vpcInfosHasBeenSet(false),
+    m_authOpenHasBeenSet(false),
+    m_featuresHasBeenSet(false)
 {
 }
 
@@ -82,6 +84,29 @@ CoreInternalOutcome ServiceGovernanceInfo::Deserialize(const rapidjson::Value &v
         m_vpcInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("AuthOpen") && !value["AuthOpen"].IsNull())
+    {
+        if (!value["AuthOpen"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceGovernanceInfo.AuthOpen` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_authOpen = value["AuthOpen"].GetBool();
+        m_authOpenHasBeenSet = true;
+    }
+
+    if (value.HasMember("Features") && !value["Features"].IsNull())
+    {
+        if (!value["Features"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServiceGovernanceInfo.Features` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Features"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_features.push_back((*itr).GetString());
+        }
+        m_featuresHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -124,6 +149,27 @@ void ServiceGovernanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_authOpenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthOpen";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_authOpen, allocator);
+    }
+
+    if (m_featuresHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Features";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_features.begin(); itr != m_features.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -176,5 +222,37 @@ void ServiceGovernanceInfo::SetVpcInfos(const vector<VpcInfo>& _vpcInfos)
 bool ServiceGovernanceInfo::VpcInfosHasBeenSet() const
 {
     return m_vpcInfosHasBeenSet;
+}
+
+bool ServiceGovernanceInfo::GetAuthOpen() const
+{
+    return m_authOpen;
+}
+
+void ServiceGovernanceInfo::SetAuthOpen(const bool& _authOpen)
+{
+    m_authOpen = _authOpen;
+    m_authOpenHasBeenSet = true;
+}
+
+bool ServiceGovernanceInfo::AuthOpenHasBeenSet() const
+{
+    return m_authOpenHasBeenSet;
+}
+
+vector<string> ServiceGovernanceInfo::GetFeatures() const
+{
+    return m_features;
+}
+
+void ServiceGovernanceInfo::SetFeatures(const vector<string>& _features)
+{
+    m_features = _features;
+    m_featuresHasBeenSet = true;
+}
+
+bool ServiceGovernanceInfo::FeaturesHasBeenSet() const
+{
+    return m_featuresHasBeenSet;
 }
 

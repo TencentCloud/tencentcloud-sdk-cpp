@@ -102,6 +102,42 @@ namespace TencentCloud
                      */
                     bool VpcInfosHasBeenSet() const;
 
+                    /**
+                     * 获取当前实例鉴权是否开启
+                     * @return AuthOpen 当前实例鉴权是否开启
+                     */
+                    bool GetAuthOpen() const;
+
+                    /**
+                     * 设置当前实例鉴权是否开启
+                     * @param AuthOpen 当前实例鉴权是否开启
+                     */
+                    void SetAuthOpen(const bool& _authOpen);
+
+                    /**
+                     * 判断参数 AuthOpen 是否已赋值
+                     * @return AuthOpen 是否已赋值
+                     */
+                    bool AuthOpenHasBeenSet() const;
+
+                    /**
+                     * 获取该实例支持的功能，鉴权就是 Auth
+                     * @return Features 该实例支持的功能，鉴权就是 Auth
+                     */
+                    std::vector<std::string> GetFeatures() const;
+
+                    /**
+                     * 设置该实例支持的功能，鉴权就是 Auth
+                     * @param Features 该实例支持的功能，鉴权就是 Auth
+                     */
+                    void SetFeatures(const std::vector<std::string>& _features);
+
+                    /**
+                     * 判断参数 Features 是否已赋值
+                     * @return Features 是否已赋值
+                     */
+                    bool FeaturesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -121,6 +157,18 @@ namespace TencentCloud
                      */
                     std::vector<VpcInfo> m_vpcInfos;
                     bool m_vpcInfosHasBeenSet;
+
+                    /**
+                     * 当前实例鉴权是否开启
+                     */
+                    bool m_authOpen;
+                    bool m_authOpenHasBeenSet;
+
+                    /**
+                     * 该实例支持的功能，鉴权就是 Auth
+                     */
+                    std::vector<std::string> m_features;
+                    bool m_featuresHasBeenSet;
 
                 };
             }
