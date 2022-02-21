@@ -171,7 +171,7 @@ namespace TencentCloud
 
 
                 /**
-                 *规则检验
+                 *检验规则
                  * @param req CheckRuleRequest
                  * @return CheckRuleOutcome
                  */

@@ -31,10 +31,14 @@
 #include <tencentcloud/ckafka/v20190819/model/BatchModifyTopicAttributesResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateAclRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateAclResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateConsumerRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateConsumerResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateInstancePreRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateInstancePreResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreatePartitionRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreatePartitionResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateRouteRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateRouteResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateTopicRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateTopicResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateTopicIpWhiteListRequest.h>
@@ -131,12 +135,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAclResponse> CreateAclOutcome;
                 typedef std::future<CreateAclOutcome> CreateAclOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreateAclRequest&, CreateAclOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAclAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateConsumerResponse> CreateConsumerOutcome;
+                typedef std::future<CreateConsumerOutcome> CreateConsumerOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::CreateConsumerRequest&, CreateConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConsumerAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateInstancePreResponse> CreateInstancePreOutcome;
                 typedef std::future<CreateInstancePreOutcome> CreateInstancePreOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreateInstancePreRequest&, CreateInstancePreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstancePreAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePartitionResponse> CreatePartitionOutcome;
                 typedef std::future<CreatePartitionOutcome> CreatePartitionOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreatePartitionRequest&, CreatePartitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePartitionAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRouteResponse> CreateRouteOutcome;
+                typedef std::future<CreateRouteOutcome> CreateRouteOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::CreateRouteRequest&, CreateRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRouteAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTopicResponse> CreateTopicOutcome;
                 typedef std::future<CreateTopicOutcome> CreateTopicOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreateTopicRequest&, CreateTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTopicAsyncHandler;
@@ -282,6 +292,15 @@ namespace TencentCloud
                 CreateAclOutcomeCallable CreateAclCallable(const Model::CreateAclRequest& request);
 
                 /**
+                 *创建消费者
+                 * @param req CreateConsumerRequest
+                 * @return CreateConsumerOutcome
+                 */
+                CreateConsumerOutcome CreateConsumer(const Model::CreateConsumerRequest &request);
+                void CreateConsumerAsync(const Model::CreateConsumerRequest& request, const CreateConsumerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateConsumerOutcomeCallable CreateConsumerCallable(const Model::CreateConsumerRequest& request);
+
+                /**
                  *创建实例(预付费包年包月)
                  * @param req CreateInstancePreRequest
                  * @return CreateInstancePreOutcome
@@ -298,6 +317,15 @@ namespace TencentCloud
                 CreatePartitionOutcome CreatePartition(const Model::CreatePartitionRequest &request);
                 void CreatePartitionAsync(const Model::CreatePartitionRequest& request, const CreatePartitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreatePartitionOutcomeCallable CreatePartitionCallable(const Model::CreatePartitionRequest& request);
+
+                /**
+                 *添加实例路由
+                 * @param req CreateRouteRequest
+                 * @return CreateRouteOutcome
+                 */
+                CreateRouteOutcome CreateRoute(const Model::CreateRouteRequest &request);
+                void CreateRouteAsync(const Model::CreateRouteRequest& request, const CreateRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRouteOutcomeCallable CreateRouteCallable(const Model::CreateRouteRequest& request);
 
                 /**
                  *创建ckafka主题

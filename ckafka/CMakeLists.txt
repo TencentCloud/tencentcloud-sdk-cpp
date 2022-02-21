@@ -32,6 +32,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/ConsumerGroup.h
   include/tencentcloud/ckafka/v20190819/model/Assignment.h
   include/tencentcloud/ckafka/v20190819/model/DescribeConsumerGroupResponse.h
+  include/tencentcloud/ckafka/v20190819/model/CreateRouteRequest.h
   include/tencentcloud/ckafka/v20190819/model/DeleteTopicRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeInstancesResponse.h
   include/tencentcloud/ckafka/v20190819/model/FetchMessageByOffsetResponse.h
@@ -55,7 +56,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/BatchModifyGroupOffsetsResponse.h
   include/tencentcloud/ckafka/v20190819/model/GroupResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicAttributesResponse.h
-  include/tencentcloud/ckafka/v20190819/model/DeleteRouteTriggerTimeRequest.h
+  include/tencentcloud/ckafka/v20190819/model/CreateConsumerResponse.h
   include/tencentcloud/ckafka/v20190819/model/RouteResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeGroupResponse.h
   include/tencentcloud/ckafka/v20190819/model/DeleteAclRuleRequest.h
@@ -66,7 +67,6 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/CreatePartitionResponse.h
   include/tencentcloud/ckafka/v20190819/model/ClusterInfo.h
   include/tencentcloud/ckafka/v20190819/model/DeleteGroupRequest.h
-  include/tencentcloud/ckafka/v20190819/model/DescribeConsumerGroupRequest.h
   include/tencentcloud/ckafka/v20190819/model/DeleteUserResponse.h
   include/tencentcloud/ckafka/v20190819/model/CreateAclRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicSyncReplicaResponse.h
@@ -106,6 +106,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/ZoneResponse.h
   include/tencentcloud/ckafka/v20190819/model/Instance.h
   include/tencentcloud/ckafka/v20190819/model/DescribeInstanceAttributesResponse.h
+  include/tencentcloud/ckafka/v20190819/model/ModifyPasswordResponse.h
   include/tencentcloud/ckafka/v20190819/model/TopicDetailResponse.h
   include/tencentcloud/ckafka/v20190819/model/DeleteInstancePreRequest.h
   include/tencentcloud/ckafka/v20190819/model/TopicSubscribeGroup.h
@@ -113,12 +114,13 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/ModifyPasswordRequest.h
   include/tencentcloud/ckafka/v20190819/model/ModifyInstanceAttributesRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeRegionResponse.h
-  include/tencentcloud/ckafka/v20190819/model/CreateTopicResponse.h
+  include/tencentcloud/ckafka/v20190819/model/DescribeConsumerGroupRequest.h
   include/tencentcloud/ckafka/v20190819/model/VipEntity.h
   include/tencentcloud/ckafka/v20190819/model/ConsumerGroupTopic.h
   include/tencentcloud/ckafka/v20190819/model/User.h
   include/tencentcloud/ckafka/v20190819/model/GroupOffsetPartition.h
   include/tencentcloud/ckafka/v20190819/model/DeleteTopicResponse.h
+  include/tencentcloud/ckafka/v20190819/model/DeleteRouteTriggerTimeRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeInstancesRequest.h
   include/tencentcloud/ckafka/v20190819/model/InstanceAttributesResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeGroupRequest.h
@@ -130,13 +132,14 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DeleteTopicIpWhiteListResponse.h
   include/tencentcloud/ckafka/v20190819/model/CreateInstancePreResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeInstancesDetailRequest.h
-  include/tencentcloud/ckafka/v20190819/model/ModifyPasswordResponse.h
+  include/tencentcloud/ckafka/v20190819/model/CreateConsumerRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeRouteRequest.h
   include/tencentcloud/ckafka/v20190819/model/TopicInSyncReplicaResult.h
   include/tencentcloud/ckafka/v20190819/model/SendMessageResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeCkafkaZoneResponse.h
   include/tencentcloud/ckafka/v20190819/model/BatchModifyGroupOffsetsRequest.h
   include/tencentcloud/ckafka/v20190819/model/TopicAttributesResponse.h
+  include/tencentcloud/ckafka/v20190819/model/CreateRouteResponse.h
   include/tencentcloud/ckafka/v20190819/model/InstanceResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeGroup.h
   include/tencentcloud/ckafka/v20190819/model/TopicPartitionDO.h
@@ -156,6 +159,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/Acl.h
   include/tencentcloud/ckafka/v20190819/model/TopicRetentionTimeConfigRsp.h
   include/tencentcloud/ckafka/v20190819/model/ModifyTopicAttributesRequest.h
+  include/tencentcloud/ckafka/v20190819/model/CreateTopicResponse.h
   include/tencentcloud/ckafka/v20190819/model/CreateInstancePreRequest.h
   include/tencentcloud/ckafka/v20190819/model/DeleteTopicIpWhiteListRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeGroupOffsetsRequest.h
@@ -182,6 +186,7 @@ set(ckafka_src
   src/v20190819/model/ConsumerGroup.cpp
   src/v20190819/model/Assignment.cpp
   src/v20190819/model/DescribeConsumerGroupResponse.cpp
+  src/v20190819/model/CreateRouteRequest.cpp
   src/v20190819/model/DeleteTopicRequest.cpp
   src/v20190819/model/DescribeInstancesResponse.cpp
   src/v20190819/model/FetchMessageByOffsetResponse.cpp
@@ -205,7 +210,7 @@ set(ckafka_src
   src/v20190819/model/BatchModifyGroupOffsetsResponse.cpp
   src/v20190819/model/GroupResponse.cpp
   src/v20190819/model/DescribeTopicAttributesResponse.cpp
-  src/v20190819/model/DeleteRouteTriggerTimeRequest.cpp
+  src/v20190819/model/CreateConsumerResponse.cpp
   src/v20190819/model/RouteResponse.cpp
   src/v20190819/model/DescribeGroupResponse.cpp
   src/v20190819/model/DeleteAclRuleRequest.cpp
@@ -216,7 +221,6 @@ set(ckafka_src
   src/v20190819/model/CreatePartitionResponse.cpp
   src/v20190819/model/ClusterInfo.cpp
   src/v20190819/model/DeleteGroupRequest.cpp
-  src/v20190819/model/DescribeConsumerGroupRequest.cpp
   src/v20190819/model/DeleteUserResponse.cpp
   src/v20190819/model/CreateAclRequest.cpp
   src/v20190819/model/DescribeTopicSyncReplicaResponse.cpp
@@ -256,6 +260,7 @@ set(ckafka_src
   src/v20190819/model/ZoneResponse.cpp
   src/v20190819/model/Instance.cpp
   src/v20190819/model/DescribeInstanceAttributesResponse.cpp
+  src/v20190819/model/ModifyPasswordResponse.cpp
   src/v20190819/model/TopicDetailResponse.cpp
   src/v20190819/model/DeleteInstancePreRequest.cpp
   src/v20190819/model/TopicSubscribeGroup.cpp
@@ -263,12 +268,13 @@ set(ckafka_src
   src/v20190819/model/ModifyPasswordRequest.cpp
   src/v20190819/model/ModifyInstanceAttributesRequest.cpp
   src/v20190819/model/DescribeRegionResponse.cpp
-  src/v20190819/model/CreateTopicResponse.cpp
+  src/v20190819/model/DescribeConsumerGroupRequest.cpp
   src/v20190819/model/VipEntity.cpp
   src/v20190819/model/ConsumerGroupTopic.cpp
   src/v20190819/model/User.cpp
   src/v20190819/model/GroupOffsetPartition.cpp
   src/v20190819/model/DeleteTopicResponse.cpp
+  src/v20190819/model/DeleteRouteTriggerTimeRequest.cpp
   src/v20190819/model/DescribeInstancesRequest.cpp
   src/v20190819/model/InstanceAttributesResponse.cpp
   src/v20190819/model/DescribeGroupRequest.cpp
@@ -280,13 +286,14 @@ set(ckafka_src
   src/v20190819/model/DeleteTopicIpWhiteListResponse.cpp
   src/v20190819/model/CreateInstancePreResponse.cpp
   src/v20190819/model/DescribeInstancesDetailRequest.cpp
-  src/v20190819/model/ModifyPasswordResponse.cpp
+  src/v20190819/model/CreateConsumerRequest.cpp
   src/v20190819/model/DescribeRouteRequest.cpp
   src/v20190819/model/TopicInSyncReplicaResult.cpp
   src/v20190819/model/SendMessageResponse.cpp
   src/v20190819/model/DescribeCkafkaZoneResponse.cpp
   src/v20190819/model/BatchModifyGroupOffsetsRequest.cpp
   src/v20190819/model/TopicAttributesResponse.cpp
+  src/v20190819/model/CreateRouteResponse.cpp
   src/v20190819/model/InstanceResponse.cpp
   src/v20190819/model/DescribeGroup.cpp
   src/v20190819/model/TopicPartitionDO.cpp
@@ -306,6 +313,7 @@ set(ckafka_src
   src/v20190819/model/Acl.cpp
   src/v20190819/model/TopicRetentionTimeConfigRsp.cpp
   src/v20190819/model/ModifyTopicAttributesRequest.cpp
+  src/v20190819/model/CreateTopicResponse.cpp
   src/v20190819/model/CreateInstancePreRequest.cpp
   src/v20190819/model/DeleteTopicIpWhiteListRequest.cpp
   src/v20190819/model/DescribeGroupOffsetsRequest.cpp
