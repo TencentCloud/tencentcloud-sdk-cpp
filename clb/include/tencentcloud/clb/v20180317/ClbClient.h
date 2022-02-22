@@ -109,6 +109,8 @@
 #include <tencentcloud/clb/v20180317/model/DescribeLoadBalancersDetailResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeQuotaRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeQuotaResponse.h>
+#include <tencentcloud/clb/v20180317/model/DescribeResourcesRequest.h>
+#include <tencentcloud/clb/v20180317/model/DescribeResourcesResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeRewriteRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeRewriteResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeTargetGroupInstancesRequest.h>
@@ -312,6 +314,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeQuotaResponse> DescribeQuotaOutcome;
                 typedef std::future<DescribeQuotaOutcome> DescribeQuotaOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeQuotaRequest&, DescribeQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQuotaAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourcesResponse> DescribeResourcesOutcome;
+                typedef std::future<DescribeResourcesOutcome> DescribeResourcesOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DescribeResourcesRequest&, DescribeResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourcesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRewriteResponse> DescribeRewriteOutcome;
                 typedef std::future<DescribeRewriteOutcome> DescribeRewriteOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeRewriteRequest&, DescribeRewriteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRewriteAsyncHandler;
@@ -823,6 +828,15 @@ BGP带宽包必须传带宽包id
                 DescribeQuotaOutcome DescribeQuota(const Model::DescribeQuotaRequest &request);
                 void DescribeQuotaAsync(const Model::DescribeQuotaRequest& request, const DescribeQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeQuotaOutcomeCallable DescribeQuotaCallable(const Model::DescribeQuotaRequest& request);
+
+                /**
+                 *查询用户在当前地域支持可用区列表和资源列表。
+                 * @param req DescribeResourcesRequest
+                 * @return DescribeResourcesOutcome
+                 */
+                DescribeResourcesOutcome DescribeResources(const Model::DescribeResourcesRequest &request);
+                void DescribeResourcesAsync(const Model::DescribeResourcesRequest& request, const DescribeResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourcesOutcomeCallable DescribeResourcesCallable(const Model::DescribeResourcesRequest& request);
 
                 /**
                  *DescribeRewrite 接口可根据负载均衡实例ID，查询一个负载均衡实例下转发规则的重定向关系。如果不指定监听器ID或转发规则ID，则返回该负载均衡实例下的所有重定向关系。

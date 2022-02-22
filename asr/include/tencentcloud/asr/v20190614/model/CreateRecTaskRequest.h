@@ -255,14 +255,14 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取语音数据，当SourceType 值为1时必须填写，为0可不写。要base64编码(采用python语言时注意读取文件应该为string而不是byte，以byte格式读取后要decode()。编码后的数据不可带有回车换行符)。音频数据要小于5MB。
-                     * @return Data 语音数据，当SourceType 值为1时必须填写，为0可不写。要base64编码(采用python语言时注意读取文件应该为string而不是byte，以byte格式读取后要decode()。编码后的数据不可带有回车换行符)。音频数据要小于5MB。
+                     * 获取语音数据base64编码，当SourceType 值为1时必须填写，为0可不写。音频数据要小于5MB。
+                     * @return Data 语音数据base64编码，当SourceType 值为1时必须填写，为0可不写。音频数据要小于5MB。
                      */
                     std::string GetData() const;
 
                     /**
-                     * 设置语音数据，当SourceType 值为1时必须填写，为0可不写。要base64编码(采用python语言时注意读取文件应该为string而不是byte，以byte格式读取后要decode()。编码后的数据不可带有回车换行符)。音频数据要小于5MB。
-                     * @param Data 语音数据，当SourceType 值为1时必须填写，为0可不写。要base64编码(采用python语言时注意读取文件应该为string而不是byte，以byte格式读取后要decode()。编码后的数据不可带有回车换行符)。音频数据要小于5MB。
+                     * 设置语音数据base64编码，当SourceType 值为1时必须填写，为0可不写。音频数据要小于5MB。
+                     * @param Data 语音数据base64编码，当SourceType 值为1时必须填写，为0可不写。音频数据要小于5MB。
                      */
                     void SetData(const std::string& _data);
 
@@ -466,7 +466,7 @@ namespace TencentCloud
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 语音数据，当SourceType 值为1时必须填写，为0可不写。要base64编码(采用python语言时注意读取文件应该为string而不是byte，以byte格式读取后要decode()。编码后的数据不可带有回车换行符)。音频数据要小于5MB。
+                     * 语音数据base64编码，当SourceType 值为1时必须填写，为0可不写。音频数据要小于5MB。
                      */
                     std::string m_data;
                     bool m_dataHasBeenSet;

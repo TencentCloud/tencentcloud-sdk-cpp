@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ProductHasBeenSet() const;
 
                     /**
-                     * 获取分页查询数据的偏移量。
-                     * @return Offset 分页查询数据的偏移量。
+                     * 获取分页查询数据的偏移量，默认为0。
+                     * @return Offset 分页查询数据的偏移量，默认为0。
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页查询数据的偏移量。
-                     * @param Offset 分页查询数据的偏移量。
+                     * 设置分页查询数据的偏移量，默认为0。
+                     * @param Offset 分页查询数据的偏移量，默认为0。
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页查询数据的条目限制，默认值为20。
-                     * @return Limit 分页查询数据的条目限制，默认值为20。
+                     * 获取分页查询数据的条目限制，默认值为20。最小值为1，最大值为100。
+                     * @return Limit 分页查询数据的条目限制，默认值为20。最小值为1，最大值为100。
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页查询数据的条目限制，默认值为20。
-                     * @param Limit 分页查询数据的条目限制，默认值为20。
+                     * 设置分页查询数据的条目限制，默认值为20。最小值为1，最大值为100。
+                     * @param Limit 分页查询数据的条目限制，默认值为20。最小值为1，最大值为100。
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取指定按某一项排序，可选值包括： BackupVolume: 备份容量， DataBackupVolume: 数据备份容量， BinlogBackupVolume: 日志备份容量， AutoBackupVolume: 自动备份容量， ManualBackupVolume: 手动备份容量。
-                     * @return OrderBy 指定按某一项排序，可选值包括： BackupVolume: 备份容量， DataBackupVolume: 数据备份容量， BinlogBackupVolume: 日志备份容量， AutoBackupVolume: 自动备份容量， ManualBackupVolume: 手动备份容量。
+                     * 获取指定按某一项排序，可选值包括： BackupVolume: 备份容量， DataBackupVolume: 数据备份容量， BinlogBackupVolume: 日志备份容量， AutoBackupVolume: 自动备份容量， ManualBackupVolume: 手动备份容量。默认按照BackupVolume排序。
+                     * @return OrderBy 指定按某一项排序，可选值包括： BackupVolume: 备份容量， DataBackupVolume: 数据备份容量， BinlogBackupVolume: 日志备份容量， AutoBackupVolume: 自动备份容量， ManualBackupVolume: 手动备份容量。默认按照BackupVolume排序。
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置指定按某一项排序，可选值包括： BackupVolume: 备份容量， DataBackupVolume: 数据备份容量， BinlogBackupVolume: 日志备份容量， AutoBackupVolume: 自动备份容量， ManualBackupVolume: 手动备份容量。
-                     * @param OrderBy 指定按某一项排序，可选值包括： BackupVolume: 备份容量， DataBackupVolume: 数据备份容量， BinlogBackupVolume: 日志备份容量， AutoBackupVolume: 自动备份容量， ManualBackupVolume: 手动备份容量。
+                     * 设置指定按某一项排序，可选值包括： BackupVolume: 备份容量， DataBackupVolume: 数据备份容量， BinlogBackupVolume: 日志备份容量， AutoBackupVolume: 自动备份容量， ManualBackupVolume: 手动备份容量。默认按照BackupVolume排序。
+                     * @param OrderBy 指定按某一项排序，可选值包括： BackupVolume: 备份容量， DataBackupVolume: 数据备份容量， BinlogBackupVolume: 日志备份容量， AutoBackupVolume: 自动备份容量， ManualBackupVolume: 手动备份容量。默认按照BackupVolume排序。
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取指定排序方向，可选值包括： ASC: 正序， DESC: 逆序。
-                     * @return OrderDirection 指定排序方向，可选值包括： ASC: 正序， DESC: 逆序。
+                     * 获取指定排序方向，可选值包括： ASC: 正序， DESC: 逆序。默认值为 ASC。
+                     * @return OrderDirection 指定排序方向，可选值包括： ASC: 正序， DESC: 逆序。默认值为 ASC。
                      */
                     std::string GetOrderDirection() const;
 
                     /**
-                     * 设置指定排序方向，可选值包括： ASC: 正序， DESC: 逆序。
-                     * @param OrderDirection 指定排序方向，可选值包括： ASC: 正序， DESC: 逆序。
+                     * 设置指定排序方向，可选值包括： ASC: 正序， DESC: 逆序。默认值为 ASC。
+                     * @param OrderDirection 指定排序方向，可选值包括： ASC: 正序， DESC: 逆序。默认值为 ASC。
                      */
                     void SetOrderDirection(const std::string& _orderDirection);
 
@@ -141,25 +141,25 @@ namespace TencentCloud
                     bool m_productHasBeenSet;
 
                     /**
-                     * 分页查询数据的偏移量。
+                     * 分页查询数据的偏移量，默认为0。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页查询数据的条目限制，默认值为20。
+                     * 分页查询数据的条目限制，默认值为20。最小值为1，最大值为100。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 指定按某一项排序，可选值包括： BackupVolume: 备份容量， DataBackupVolume: 数据备份容量， BinlogBackupVolume: 日志备份容量， AutoBackupVolume: 自动备份容量， ManualBackupVolume: 手动备份容量。
+                     * 指定按某一项排序，可选值包括： BackupVolume: 备份容量， DataBackupVolume: 数据备份容量， BinlogBackupVolume: 日志备份容量， AutoBackupVolume: 自动备份容量， ManualBackupVolume: 手动备份容量。默认按照BackupVolume排序。
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 指定排序方向，可选值包括： ASC: 正序， DESC: 逆序。
+                     * 指定排序方向，可选值包括： ASC: 正序， DESC: 逆序。默认值为 ASC。
                      */
                     std::string m_orderDirection;
                     bool m_orderDirectionHasBeenSet;

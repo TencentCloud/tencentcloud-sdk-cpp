@@ -51,6 +51,8 @@
 #include <tencentcloud/iotcloud/v20180614/model/CreateTopicRuleResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/DeleteDeviceRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/DeleteDeviceResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/DeleteDeviceResourceRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/DeleteDeviceResourceResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/DeleteLoraDeviceRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/DeleteLoraDeviceResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/DeleteProductRequest.h>
@@ -109,6 +111,8 @@
 #include <tencentcloud/iotcloud/v20180614/model/DescribeTasksResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/DisableTopicRuleRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/DisableTopicRuleResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/DownloadDeviceResourceRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/DownloadDeviceResourceResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/EditFirmwareRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/EditFirmwareResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/EnableTopicRuleRequest.h>
@@ -209,6 +213,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDeviceResponse> DeleteDeviceOutcome;
                 typedef std::future<DeleteDeviceOutcome> DeleteDeviceOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::DeleteDeviceRequest&, DeleteDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDeviceResourceResponse> DeleteDeviceResourceOutcome;
+                typedef std::future<DeleteDeviceResourceOutcome> DeleteDeviceResourceOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::DeleteDeviceResourceRequest&, DeleteDeviceResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceResourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteLoraDeviceResponse> DeleteLoraDeviceOutcome;
                 typedef std::future<DeleteLoraDeviceOutcome> DeleteLoraDeviceOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::DeleteLoraDeviceRequest&, DeleteLoraDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLoraDeviceAsyncHandler;
@@ -296,6 +303,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DisableTopicRuleResponse> DisableTopicRuleOutcome;
                 typedef std::future<DisableTopicRuleOutcome> DisableTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::DisableTopicRuleRequest&, DisableTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableTopicRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DownloadDeviceResourceResponse> DownloadDeviceResourceOutcome;
+                typedef std::future<DownloadDeviceResourceOutcome> DownloadDeviceResourceOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::DownloadDeviceResourceRequest&, DownloadDeviceResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadDeviceResourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::EditFirmwareResponse> EditFirmwareOutcome;
                 typedef std::future<EditFirmwareOutcome> EditFirmwareOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::EditFirmwareRequest&, EditFirmwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EditFirmwareAsyncHandler;
@@ -490,6 +500,15 @@ namespace TencentCloud
                 DeleteDeviceOutcome DeleteDevice(const Model::DeleteDeviceRequest &request);
                 void DeleteDeviceAsync(const Model::DeleteDeviceRequest& request, const DeleteDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDeviceOutcomeCallable DeleteDeviceCallable(const Model::DeleteDeviceRequest& request);
+
+                /**
+                 *本接口（DeleteDeviceResource）用于删除设备资源
+                 * @param req DeleteDeviceResourceRequest
+                 * @return DeleteDeviceResourceOutcome
+                 */
+                DeleteDeviceResourceOutcome DeleteDeviceResource(const Model::DeleteDeviceResourceRequest &request);
+                void DeleteDeviceResourceAsync(const Model::DeleteDeviceResourceRequest& request, const DeleteDeviceResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDeviceResourceOutcomeCallable DeleteDeviceResourceCallable(const Model::DeleteDeviceResourceRequest& request);
 
                 /**
                  *删除lora类型的设备
@@ -751,6 +770,15 @@ namespace TencentCloud
                 DisableTopicRuleOutcome DisableTopicRule(const Model::DisableTopicRuleRequest &request);
                 void DisableTopicRuleAsync(const Model::DisableTopicRuleRequest& request, const DisableTopicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DisableTopicRuleOutcomeCallable DisableTopicRuleCallable(const Model::DisableTopicRuleRequest& request);
+
+                /**
+                 *本接口（DownloadDeviceResource）用于下载设备资源
+                 * @param req DownloadDeviceResourceRequest
+                 * @return DownloadDeviceResourceOutcome
+                 */
+                DownloadDeviceResourceOutcome DownloadDeviceResource(const Model::DownloadDeviceResourceRequest &request);
+                void DownloadDeviceResourceAsync(const Model::DownloadDeviceResourceRequest& request, const DownloadDeviceResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DownloadDeviceResourceOutcomeCallable DownloadDeviceResourceCallable(const Model::DownloadDeviceResourceRequest& request);
 
                 /**
                  *编辑固件信息

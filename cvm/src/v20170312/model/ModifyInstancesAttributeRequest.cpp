@@ -25,7 +25,8 @@ using namespace std;
 ModifyInstancesAttributeRequest::ModifyInstancesAttributeRequest() :
     m_instanceIdsHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false)
+    m_securityGroupsHasBeenSet(false),
+    m_disableApiTerminationHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string ModifyInstancesAttributeRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_disableApiTerminationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableApiTermination";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_disableApiTermination, allocator);
     }
 
 
@@ -124,6 +133,22 @@ void ModifyInstancesAttributeRequest::SetSecurityGroups(const vector<string>& _s
 bool ModifyInstancesAttributeRequest::SecurityGroupsHasBeenSet() const
 {
     return m_securityGroupsHasBeenSet;
+}
+
+bool ModifyInstancesAttributeRequest::GetDisableApiTermination() const
+{
+    return m_disableApiTermination;
+}
+
+void ModifyInstancesAttributeRequest::SetDisableApiTermination(const bool& _disableApiTermination)
+{
+    m_disableApiTermination = _disableApiTermination;
+    m_disableApiTerminationHasBeenSet = true;
+}
+
+bool ModifyInstancesAttributeRequest::DisableApiTerminationHasBeenSet() const
+{
+    return m_disableApiTerminationHasBeenSet;
 }
 
 

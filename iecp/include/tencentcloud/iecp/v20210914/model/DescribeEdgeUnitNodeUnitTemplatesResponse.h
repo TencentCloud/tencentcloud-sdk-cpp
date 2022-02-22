@@ -57,9 +57,9 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取NodeUnit模版列表
+                     * 获取NodeUnit模板列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NodeUnitTemplates NodeUnit模版列表
+                     * @return NodeUnitTemplates NodeUnit模板列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NodeUnitTemplate> GetNodeUnitTemplates() const;
@@ -79,7 +79,7 @@ namespace TencentCloud
                     bool m_totalHasBeenSet;
 
                     /**
-                     * NodeUnit模版列表
+                     * NodeUnit模板列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NodeUnitTemplate> m_nodeUnitTemplates;

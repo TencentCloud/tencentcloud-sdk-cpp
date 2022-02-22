@@ -1889,6 +1889,49 @@ ClbClient::DescribeQuotaOutcomeCallable ClbClient::DescribeQuotaCallable(const D
     return task->get_future();
 }
 
+ClbClient::DescribeResourcesOutcome ClbClient::DescribeResources(const DescribeResourcesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResources");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourcesResponse rsp = DescribeResourcesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourcesOutcome(rsp);
+        else
+            return DescribeResourcesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourcesOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeResourcesAsync(const DescribeResourcesRequest& request, const DescribeResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeResources(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::DescribeResourcesOutcomeCallable ClbClient::DescribeResourcesCallable(const DescribeResourcesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeResourcesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeResources(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::DescribeRewriteOutcome ClbClient::DescribeRewrite(const DescribeRewriteRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRewrite");

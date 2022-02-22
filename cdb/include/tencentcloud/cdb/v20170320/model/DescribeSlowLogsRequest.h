@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，最小值为0。
-                     * @return Offset 偏移量，最小值为0。
+                     * 获取偏移量，默认值为0，最小值为0。
+                     * @return Offset 偏移量，默认值为0，最小值为0。
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，最小值为0。
-                     * @param Offset 偏移量，最小值为0。
+                     * 设置偏移量，默认值为0，最小值为0。
+                     * @param Offset 偏移量，默认值为0，最小值为0。
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -105,7 +105,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 偏移量，最小值为0。
+                     * 偏移量，默认值为0，最小值为0。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

@@ -90,6 +90,7 @@ set(iotcloud_public_header_model
   include/tencentcloud/iotcloud/v20180614/model/DeleteProductRequest.h
   include/tencentcloud/iotcloud/v20180614/model/StatusStatistic.h
   include/tencentcloud/iotcloud/v20180614/model/DescribeTasksRequest.h
+  include/tencentcloud/iotcloud/v20180614/model/DownloadDeviceResourceRequest.h
   include/tencentcloud/iotcloud/v20180614/model/DescribeDeviceResourceRequest.h
   include/tencentcloud/iotcloud/v20180614/model/EditFirmwareRequest.h
   include/tencentcloud/iotcloud/v20180614/model/MultiDevicesInfo.h
@@ -102,6 +103,7 @@ set(iotcloud_public_header_model
   include/tencentcloud/iotcloud/v20180614/model/DescribeFirmwareResponse.h
   include/tencentcloud/iotcloud/v20180614/model/DescribeResourceTasksRequest.h
   include/tencentcloud/iotcloud/v20180614/model/CreateMultiDevicesTaskRequest.h
+  include/tencentcloud/iotcloud/v20180614/model/DeleteDeviceResourceResponse.h
   include/tencentcloud/iotcloud/v20180614/model/DescribeFirmwareTaskStatisticsResponse.h
   include/tencentcloud/iotcloud/v20180614/model/DescribePushResourceTaskStatisticsRequest.h
   include/tencentcloud/iotcloud/v20180614/model/CreateLoraDeviceRequest.h
@@ -114,6 +116,7 @@ set(iotcloud_public_header_model
   include/tencentcloud/iotcloud/v20180614/model/CreateTaskRequest.h
   include/tencentcloud/iotcloud/v20180614/model/DescribeAllDevicesRequest.h
   include/tencentcloud/iotcloud/v20180614/model/DescribeProductResourceResponse.h
+  include/tencentcloud/iotcloud/v20180614/model/CancelDeviceFirmwareTaskResponse.h
   include/tencentcloud/iotcloud/v20180614/model/CreateTopicPolicyResponse.h
   include/tencentcloud/iotcloud/v20180614/model/PublishToDeviceResponse.h
   include/tencentcloud/iotcloud/v20180614/model/RetryDeviceFirmwareTaskResponse.h
@@ -149,6 +152,7 @@ set(iotcloud_public_header_model
   include/tencentcloud/iotcloud/v20180614/model/DeviceProperty.h
   include/tencentcloud/iotcloud/v20180614/model/PublishToDeviceRequest.h
   include/tencentcloud/iotcloud/v20180614/model/SetProductsForbiddenStatusRequest.h
+  include/tencentcloud/iotcloud/v20180614/model/DownloadDeviceResourceResponse.h
   include/tencentcloud/iotcloud/v20180614/model/UploadFirmwareResponse.h
   include/tencentcloud/iotcloud/v20180614/model/ProductInfo.h
   include/tencentcloud/iotcloud/v20180614/model/DescribeFirmwareTaskDistributionResponse.h
@@ -171,7 +175,7 @@ set(iotcloud_public_header_model
   include/tencentcloud/iotcloud/v20180614/model/ReplaceTopicRuleResponse.h
   include/tencentcloud/iotcloud/v20180614/model/PublishAsDeviceRequest.h
   include/tencentcloud/iotcloud/v20180614/model/CancelDeviceFirmwareTaskRequest.h
-  include/tencentcloud/iotcloud/v20180614/model/CancelDeviceFirmwareTaskResponse.h
+  include/tencentcloud/iotcloud/v20180614/model/DeleteDeviceResourceRequest.h
   include/tencentcloud/iotcloud/v20180614/model/DescribeMultiDevicesResponse.h
   include/tencentcloud/iotcloud/v20180614/model/DescribeDeviceShadowRequest.h
   include/tencentcloud/iotcloud/v20180614/model/UnbindDevicesResponse.h
@@ -289,6 +293,7 @@ set(iotcloud_src
   src/v20180614/model/DeleteProductRequest.cpp
   src/v20180614/model/StatusStatistic.cpp
   src/v20180614/model/DescribeTasksRequest.cpp
+  src/v20180614/model/DownloadDeviceResourceRequest.cpp
   src/v20180614/model/DescribeDeviceResourceRequest.cpp
   src/v20180614/model/EditFirmwareRequest.cpp
   src/v20180614/model/MultiDevicesInfo.cpp
@@ -301,6 +306,7 @@ set(iotcloud_src
   src/v20180614/model/DescribeFirmwareResponse.cpp
   src/v20180614/model/DescribeResourceTasksRequest.cpp
   src/v20180614/model/CreateMultiDevicesTaskRequest.cpp
+  src/v20180614/model/DeleteDeviceResourceResponse.cpp
   src/v20180614/model/DescribeFirmwareTaskStatisticsResponse.cpp
   src/v20180614/model/DescribePushResourceTaskStatisticsRequest.cpp
   src/v20180614/model/CreateLoraDeviceRequest.cpp
@@ -313,6 +319,7 @@ set(iotcloud_src
   src/v20180614/model/CreateTaskRequest.cpp
   src/v20180614/model/DescribeAllDevicesRequest.cpp
   src/v20180614/model/DescribeProductResourceResponse.cpp
+  src/v20180614/model/CancelDeviceFirmwareTaskResponse.cpp
   src/v20180614/model/CreateTopicPolicyResponse.cpp
   src/v20180614/model/PublishToDeviceResponse.cpp
   src/v20180614/model/RetryDeviceFirmwareTaskResponse.cpp
@@ -348,6 +355,7 @@ set(iotcloud_src
   src/v20180614/model/DeviceProperty.cpp
   src/v20180614/model/PublishToDeviceRequest.cpp
   src/v20180614/model/SetProductsForbiddenStatusRequest.cpp
+  src/v20180614/model/DownloadDeviceResourceResponse.cpp
   src/v20180614/model/UploadFirmwareResponse.cpp
   src/v20180614/model/ProductInfo.cpp
   src/v20180614/model/DescribeFirmwareTaskDistributionResponse.cpp
@@ -370,7 +378,7 @@ set(iotcloud_src
   src/v20180614/model/ReplaceTopicRuleResponse.cpp
   src/v20180614/model/PublishAsDeviceRequest.cpp
   src/v20180614/model/CancelDeviceFirmwareTaskRequest.cpp
-  src/v20180614/model/CancelDeviceFirmwareTaskResponse.cpp
+  src/v20180614/model/DeleteDeviceResourceRequest.cpp
   src/v20180614/model/DescribeMultiDevicesResponse.cpp
   src/v20180614/model/DescribeDeviceShadowRequest.cpp
   src/v20180614/model/UnbindDevicesResponse.cpp

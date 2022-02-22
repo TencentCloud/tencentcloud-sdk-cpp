@@ -491,7 +491,7 @@ namespace TencentCloud
                 CreateEdgeNodeGroupOutcomeCallable CreateEdgeNodeGroupCallable(const Model::CreateEdgeNodeGroupRequest& request);
 
                 /**
-                 *创建边缘单元NodeUnit模版
+                 *创建边缘单元NodeUnit模板
                  * @param req CreateEdgeNodeUnitTemplateRequest
                  * @return CreateEdgeNodeUnitTemplateOutcome
                  */
@@ -581,7 +581,7 @@ namespace TencentCloud
                 DeleteEdgeNodeGroupOutcomeCallable DeleteEdgeNodeGroupCallable(const Model::DeleteEdgeNodeGroupRequest& request);
 
                 /**
-                 *删除边缘单元NodeUnit模版
+                 *删除边缘单元NodeUnit模板
                  * @param req DeleteEdgeNodeUnitTemplatesRequest
                  * @return DeleteEdgeNodeUnitTemplatesOutcome
                  */
@@ -950,7 +950,7 @@ namespace TencentCloud
                 DescribeEdgeUnitNodeGroupOutcomeCallable DescribeEdgeUnitNodeGroupCallable(const Model::DescribeEdgeUnitNodeGroupRequest& request);
 
                 /**
-                 *查询边缘单元EdgeUnit模版列表
+                 *查询边缘单元EdgeUnit模板列表
                  * @param req DescribeEdgeUnitNodeUnitTemplatesRequest
                  * @return DescribeEdgeUnitNodeUnitTemplatesOutcome
                  */
@@ -1013,7 +1013,7 @@ namespace TencentCloud
                 DescribeNodeUnitOutcomeCallable DescribeNodeUnitCallable(const Model::DescribeNodeUnitRequest& request);
 
                 /**
-                 *查询指定NodeGroup下NodeUnit模版列表
+                 *查询指定NodeGroup下NodeUnit模板列表
                  * @param req DescribeNodeUnitTemplateOnNodeGroupRequest
                  * @return DescribeNodeUnitTemplateOnNodeGroupOutcome
                  */
@@ -1148,7 +1148,7 @@ namespace TencentCloud
                 ModifyEdgeUnitDeployGridItemOutcomeCallable ModifyEdgeUnitDeployGridItemCallable(const Model::ModifyEdgeUnitDeployGridItemRequest& request);
 
                 /**
-                 *修改边缘单元NodeUnit模版
+                 *修改边缘单元NodeUnit模板
                  * @param req ModifyNodeUnitTemplateRequest
                  * @return ModifyNodeUnitTemplateOutcome
                  */

@@ -536,6 +536,24 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      */
                     bool LaunchTemplateHasBeenSet() const;
 
+                    /**
+                     * 获取指定CHC物理服务器来创建CHC云主机。
+                     * @return ChcIds 指定CHC物理服务器来创建CHC云主机。
+                     */
+                    std::vector<std::string> GetChcIds() const;
+
+                    /**
+                     * 设置指定CHC物理服务器来创建CHC云主机。
+                     * @param ChcIds 指定CHC物理服务器来创建CHC云主机。
+                     */
+                    void SetChcIds(const std::vector<std::string>& _chcIds);
+
+                    /**
+                     * 判断参数 ChcIds 是否已赋值
+                     * @return ChcIds 是否已赋值
+                     */
+                    bool ChcIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -695,6 +713,12 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      */
                     LaunchTemplate m_launchTemplate;
                     bool m_launchTemplateHasBeenSet;
+
+                    /**
+                     * 指定CHC物理服务器来创建CHC云主机。
+                     */
+                    std::vector<std::string> m_chcIds;
+                    bool m_chcIdsHasBeenSet;
 
                 };
             }

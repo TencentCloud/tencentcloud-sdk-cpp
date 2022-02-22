@@ -642,6 +642,49 @@ IotcloudClient::DeleteDeviceOutcomeCallable IotcloudClient::DeleteDeviceCallable
     return task->get_future();
 }
 
+IotcloudClient::DeleteDeviceResourceOutcome IotcloudClient::DeleteDeviceResource(const DeleteDeviceResourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDeviceResource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDeviceResourceResponse rsp = DeleteDeviceResourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDeviceResourceOutcome(rsp);
+        else
+            return DeleteDeviceResourceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDeviceResourceOutcome(outcome.GetError());
+    }
+}
+
+void IotcloudClient::DeleteDeviceResourceAsync(const DeleteDeviceResourceRequest& request, const DeleteDeviceResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteDeviceResource(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotcloudClient::DeleteDeviceResourceOutcomeCallable IotcloudClient::DeleteDeviceResourceCallable(const DeleteDeviceResourceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteDeviceResourceOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteDeviceResource(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotcloudClient::DeleteLoraDeviceOutcome IotcloudClient::DeleteLoraDevice(const DeleteLoraDeviceRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteLoraDevice");
@@ -1882,6 +1925,49 @@ IotcloudClient::DisableTopicRuleOutcomeCallable IotcloudClient::DisableTopicRule
         [this, request]()
         {
             return this->DisableTopicRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotcloudClient::DownloadDeviceResourceOutcome IotcloudClient::DownloadDeviceResource(const DownloadDeviceResourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DownloadDeviceResource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DownloadDeviceResourceResponse rsp = DownloadDeviceResourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DownloadDeviceResourceOutcome(rsp);
+        else
+            return DownloadDeviceResourceOutcome(o.GetError());
+    }
+    else
+    {
+        return DownloadDeviceResourceOutcome(outcome.GetError());
+    }
+}
+
+void IotcloudClient::DownloadDeviceResourceAsync(const DownloadDeviceResourceRequest& request, const DownloadDeviceResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DownloadDeviceResource(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotcloudClient::DownloadDeviceResourceOutcomeCallable IotcloudClient::DownloadDeviceResourceCallable(const DownloadDeviceResourceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DownloadDeviceResourceOutcome()>>(
+        [this, request]()
+        {
+            return this->DownloadDeviceResource(request);
         }
     );
 

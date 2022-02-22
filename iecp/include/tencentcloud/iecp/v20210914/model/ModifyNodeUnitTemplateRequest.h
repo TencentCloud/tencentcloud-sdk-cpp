@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool EdgeUnitIdHasBeenSet() const;
 
                     /**
-                     * 获取NodeUnit模版ID
-                     * @return NodeUnitTemplateID NodeUnit模版ID
+                     * 获取NodeUnit模板ID
+                     * @return NodeUnitTemplateID NodeUnit模板ID
                      */
                     uint64_t GetNodeUnitTemplateID() const;
 
                     /**
-                     * 设置NodeUnit模版ID
-                     * @param NodeUnitTemplateID NodeUnit模版ID
+                     * 设置NodeUnit模板ID
+                     * @param NodeUnitTemplateID NodeUnit模板ID
                      */
                     void SetNodeUnitTemplateID(const uint64_t& _nodeUnitTemplateID);
 
@@ -105,7 +105,7 @@ namespace TencentCloud
                     bool m_edgeUnitIdHasBeenSet;
 
                     /**
-                     * NodeUnit模版ID
+                     * NodeUnit模板ID
                      */
                     uint64_t m_nodeUnitTemplateID;
                     bool m_nodeUnitTemplateIDHasBeenSet;

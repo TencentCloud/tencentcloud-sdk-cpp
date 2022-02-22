@@ -71,6 +71,8 @@
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBSecurityGroupsResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBSlowLogsRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBSlowLogsResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/DescribeDatabaseObjectsRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/DescribeDatabaseObjectsResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDatabaseTableRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDatabaseTableResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDatabasesRequest.h>
@@ -231,6 +233,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBSlowLogsResponse> DescribeDBSlowLogsOutcome;
                 typedef std::future<DescribeDBSlowLogsOutcome> DescribeDBSlowLogsOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeDBSlowLogsRequest&, DescribeDBSlowLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSlowLogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDatabaseObjectsResponse> DescribeDatabaseObjectsOutcome;
+                typedef std::future<DescribeDatabaseObjectsOutcome> DescribeDatabaseObjectsOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::DescribeDatabaseObjectsRequest&, DescribeDatabaseObjectsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabaseObjectsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDatabaseTableResponse> DescribeDatabaseTableOutcome;
                 typedef std::future<DescribeDatabaseTableOutcome> DescribeDatabaseTableOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeDatabaseTableRequest&, DescribeDatabaseTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabaseTableAsyncHandler;
@@ -563,6 +568,15 @@ namespace TencentCloud
                 DescribeDBSlowLogsOutcome DescribeDBSlowLogs(const Model::DescribeDBSlowLogsRequest &request);
                 void DescribeDBSlowLogsAsync(const Model::DescribeDBSlowLogsRequest& request, const DescribeDBSlowLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDBSlowLogsOutcomeCallable DescribeDBSlowLogsCallable(const Model::DescribeDBSlowLogsRequest& request);
+
+                /**
+                 *本接口（DescribeDatabaseObjects）用于查询云数据库实例的数据库中的对象列表，包含表、存储过程、视图和函数。
+                 * @param req DescribeDatabaseObjectsRequest
+                 * @return DescribeDatabaseObjectsOutcome
+                 */
+                DescribeDatabaseObjectsOutcome DescribeDatabaseObjects(const Model::DescribeDatabaseObjectsRequest &request);
+                void DescribeDatabaseObjectsAsync(const Model::DescribeDatabaseObjectsRequest& request, const DescribeDatabaseObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDatabaseObjectsOutcomeCallable DescribeDatabaseObjectsCallable(const Model::DescribeDatabaseObjectsRequest& request);
 
                 /**
                  *本接口（DescribeDatabaseTable）用于查询云数据库实例的表信息。

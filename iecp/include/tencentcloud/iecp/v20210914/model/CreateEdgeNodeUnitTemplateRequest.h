@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool EdgeUnitIdHasBeenSet() const;
 
                     /**
-                     * 获取NodeUnit模版名称
-                     * @return Name NodeUnit模版名称
+                     * 获取NodeUnit模板名称
+                     * @return Name NodeUnit模板名称
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置NodeUnit模版名称
-                     * @param Name NodeUnit模版名称
+                     * 设置NodeUnit模板名称
+                     * @param Name NodeUnit模板名称
                      */
                     void SetName(const std::string& _name);
 
@@ -141,7 +141,7 @@ namespace TencentCloud
                     bool m_edgeUnitIdHasBeenSet;
 
                     /**
-                     * NodeUnit模版名称
+                     * NodeUnit模板名称
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
