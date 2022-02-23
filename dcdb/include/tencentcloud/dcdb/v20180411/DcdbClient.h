@@ -39,6 +39,8 @@
 #include <tencentcloud/dcdb/v20180411/model/CreateDCDBInstanceResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/CreateDedicatedClusterDCDBInstanceRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/CreateDedicatedClusterDCDBInstanceResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/CreateHourDCDBInstanceRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/CreateHourDCDBInstanceResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DeleteAccountRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DeleteAccountResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeAccountPrivilegesRequest.h>
@@ -167,6 +169,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDedicatedClusterDCDBInstanceResponse> CreateDedicatedClusterDCDBInstanceOutcome;
                 typedef std::future<CreateDedicatedClusterDCDBInstanceOutcome> CreateDedicatedClusterDCDBInstanceOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::CreateDedicatedClusterDCDBInstanceRequest&, CreateDedicatedClusterDCDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDedicatedClusterDCDBInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateHourDCDBInstanceResponse> CreateHourDCDBInstanceOutcome;
+                typedef std::future<CreateHourDCDBInstanceOutcome> CreateHourDCDBInstanceOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::CreateHourDCDBInstanceRequest&, CreateHourDCDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateHourDCDBInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAccountResponse> DeleteAccountOutcome;
                 typedef std::future<DeleteAccountOutcome> DeleteAccountOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DeleteAccountRequest&, DeleteAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccountAsyncHandler;
@@ -377,6 +382,15 @@ namespace TencentCloud
                 CreateDedicatedClusterDCDBInstanceOutcome CreateDedicatedClusterDCDBInstance(const Model::CreateDedicatedClusterDCDBInstanceRequest &request);
                 void CreateDedicatedClusterDCDBInstanceAsync(const Model::CreateDedicatedClusterDCDBInstanceRequest& request, const CreateDedicatedClusterDCDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDedicatedClusterDCDBInstanceOutcomeCallable CreateDedicatedClusterDCDBInstanceCallable(const Model::CreateDedicatedClusterDCDBInstanceRequest& request);
+
+                /**
+                 *创建DCDB后付费实例
+                 * @param req CreateHourDCDBInstanceRequest
+                 * @return CreateHourDCDBInstanceOutcome
+                 */
+                CreateHourDCDBInstanceOutcome CreateHourDCDBInstance(const Model::CreateHourDCDBInstanceRequest &request);
+                void CreateHourDCDBInstanceAsync(const Model::CreateHourDCDBInstanceRequest& request, const CreateHourDCDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateHourDCDBInstanceOutcomeCallable CreateHourDCDBInstanceCallable(const Model::CreateHourDCDBInstanceRequest& request);
 
                 /**
                  *本接口（DeleteAccount）用于删除云数据库账号。用户名+host唯一确定一个账号。

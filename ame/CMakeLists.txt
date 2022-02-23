@@ -30,6 +30,7 @@ set(ame_public_header_model
   include/tencentcloud/ame/v20190916/model/ModifyMusicOnShelvesRequest.h
   include/tencentcloud/ame/v20190916/model/PlayCommandInput.h
   include/tencentcloud/ame/v20190916/model/DescribeMusicRequest.h
+  include/tencentcloud/ame/v20190916/model/KTVMusicDetailInfo.h
   include/tencentcloud/ame/v20190916/model/DescribeMusicSaleStatusRequest.h
   include/tencentcloud/ame/v20190916/model/TakeMusicOffShelvesRequest.h
   include/tencentcloud/ame/v20190916/model/DescribeCloudMusicResponse.h
@@ -83,12 +84,14 @@ set(ame_public_header_model
   include/tencentcloud/ame/v20190916/model/DescribeKTVSingersRequest.h
   include/tencentcloud/ame/v20190916/model/SetPlaylistCommandInput.h
   include/tencentcloud/ame/v20190916/model/SyncKTVRobotCommandResponse.h
+  include/tencentcloud/ame/v20190916/model/BatchDescribeKTVMusicDetailsResponse.h
   include/tencentcloud/ame/v20190916/model/SearchKTVMusicsRequest.h
   include/tencentcloud/ame/v20190916/model/KTVPlaylistBaseInfo.h
   include/tencentcloud/ame/v20190916/model/DescribeKTVSingersResponse.h
   include/tencentcloud/ame/v20190916/model/DescribeItemByIdResponse.h
   include/tencentcloud/ame/v20190916/model/MusicStatus.h
   include/tencentcloud/ame/v20190916/model/KTVSingerCategoryInfo.h
+  include/tencentcloud/ame/v20190916/model/BatchDescribeKTVMusicDetailsRequest.h
   include/tencentcloud/ame/v20190916/model/SendMessageCommandInput.h
   include/tencentcloud/ame/v20190916/model/KTVMusicDefinitionInfo.h
   include/tencentcloud/ame/v20190916/model/Album.h
@@ -127,6 +130,7 @@ set(ame_src
   src/v20190916/model/ModifyMusicOnShelvesRequest.cpp
   src/v20190916/model/PlayCommandInput.cpp
   src/v20190916/model/DescribeMusicRequest.cpp
+  src/v20190916/model/KTVMusicDetailInfo.cpp
   src/v20190916/model/DescribeMusicSaleStatusRequest.cpp
   src/v20190916/model/TakeMusicOffShelvesRequest.cpp
   src/v20190916/model/DescribeCloudMusicResponse.cpp
@@ -180,12 +184,14 @@ set(ame_src
   src/v20190916/model/DescribeKTVSingersRequest.cpp
   src/v20190916/model/SetPlaylistCommandInput.cpp
   src/v20190916/model/SyncKTVRobotCommandResponse.cpp
+  src/v20190916/model/BatchDescribeKTVMusicDetailsResponse.cpp
   src/v20190916/model/SearchKTVMusicsRequest.cpp
   src/v20190916/model/KTVPlaylistBaseInfo.cpp
   src/v20190916/model/DescribeKTVSingersResponse.cpp
   src/v20190916/model/DescribeItemByIdResponse.cpp
   src/v20190916/model/MusicStatus.cpp
   src/v20190916/model/KTVSingerCategoryInfo.cpp
+  src/v20190916/model/BatchDescribeKTVMusicDetailsRequest.cpp
   src/v20190916/model/SendMessageCommandInput.cpp
   src/v20190916/model/KTVMusicDefinitionInfo.cpp
   src/v20190916/model/Album.cpp

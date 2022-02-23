@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ame/v20190916/model/BatchDescribeKTVMusicDetailsRequest.h>
+#include <tencentcloud/ame/v20190916/model/BatchDescribeKTVMusicDetailsResponse.h>
 #include <tencentcloud/ame/v20190916/model/CreateKTVRobotRequest.h>
 #include <tencentcloud/ame/v20190916/model/CreateKTVRobotResponse.h>
 #include <tencentcloud/ame/v20190916/model/DescribeAuthInfoRequest.h>
@@ -93,6 +95,9 @@ namespace TencentCloud
                 AmeClient(const Credential &credential, const std::string &region);
                 AmeClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::BatchDescribeKTVMusicDetailsResponse> BatchDescribeKTVMusicDetailsOutcome;
+                typedef std::future<BatchDescribeKTVMusicDetailsOutcome> BatchDescribeKTVMusicDetailsOutcomeCallable;
+                typedef std::function<void(const AmeClient*, const Model::BatchDescribeKTVMusicDetailsRequest&, BatchDescribeKTVMusicDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchDescribeKTVMusicDetailsAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateKTVRobotResponse> CreateKTVRobotOutcome;
                 typedef std::future<CreateKTVRobotOutcome> CreateKTVRobotOutcomeCallable;
                 typedef std::function<void(const AmeClient*, const Model::CreateKTVRobotRequest&, CreateKTVRobotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateKTVRobotAsyncHandler;
@@ -179,6 +184,15 @@ namespace TencentCloud
                 typedef std::function<void(const AmeClient*, const Model::TakeMusicOffShelvesRequest&, TakeMusicOffShelvesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TakeMusicOffShelvesAsyncHandler;
 
 
+
+                /**
+                 *根据 Id 列表查询歌曲的详细信息，包含基础信息及播放信息。
+                 * @param req BatchDescribeKTVMusicDetailsRequest
+                 * @return BatchDescribeKTVMusicDetailsOutcome
+                 */
+                BatchDescribeKTVMusicDetailsOutcome BatchDescribeKTVMusicDetails(const Model::BatchDescribeKTVMusicDetailsRequest &request);
+                void BatchDescribeKTVMusicDetailsAsync(const Model::BatchDescribeKTVMusicDetailsRequest& request, const BatchDescribeKTVMusicDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchDescribeKTVMusicDetailsOutcomeCallable BatchDescribeKTVMusicDetailsCallable(const Model::BatchDescribeKTVMusicDetailsRequest& request);
 
                 /**
                  *创建机器人，支持进入 RTC 房间，播放直播互动曲库歌曲。

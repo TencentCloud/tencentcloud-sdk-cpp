@@ -1158,6 +1158,49 @@ MonitorClient::DescribeBindingPolicyObjectListOutcomeCallable MonitorClient::Des
     return task->get_future();
 }
 
+MonitorClient::DescribeConditionsTemplateListOutcome MonitorClient::DescribeConditionsTemplateList(const DescribeConditionsTemplateListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConditionsTemplateList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConditionsTemplateListResponse rsp = DescribeConditionsTemplateListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConditionsTemplateListOutcome(rsp);
+        else
+            return DescribeConditionsTemplateListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConditionsTemplateListOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeConditionsTemplateListAsync(const DescribeConditionsTemplateListRequest& request, const DescribeConditionsTemplateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConditionsTemplateList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeConditionsTemplateListOutcomeCallable MonitorClient::DescribeConditionsTemplateListCallable(const DescribeConditionsTemplateListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConditionsTemplateListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConditionsTemplateList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::DescribeMonitorTypesOutcome MonitorClient::DescribeMonitorTypes(const DescribeMonitorTypesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMonitorTypes");

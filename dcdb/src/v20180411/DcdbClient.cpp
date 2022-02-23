@@ -384,6 +384,49 @@ DcdbClient::CreateDedicatedClusterDCDBInstanceOutcomeCallable DcdbClient::Create
     return task->get_future();
 }
 
+DcdbClient::CreateHourDCDBInstanceOutcome DcdbClient::CreateHourDCDBInstance(const CreateHourDCDBInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateHourDCDBInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateHourDCDBInstanceResponse rsp = CreateHourDCDBInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateHourDCDBInstanceOutcome(rsp);
+        else
+            return CreateHourDCDBInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateHourDCDBInstanceOutcome(outcome.GetError());
+    }
+}
+
+void DcdbClient::CreateHourDCDBInstanceAsync(const CreateHourDCDBInstanceRequest& request, const CreateHourDCDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateHourDCDBInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcdbClient::CreateHourDCDBInstanceOutcomeCallable DcdbClient::CreateHourDCDBInstanceCallable(const CreateHourDCDBInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateHourDCDBInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateHourDCDBInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DcdbClient::DeleteAccountOutcome DcdbClient::DeleteAccount(const DeleteAccountRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAccount");

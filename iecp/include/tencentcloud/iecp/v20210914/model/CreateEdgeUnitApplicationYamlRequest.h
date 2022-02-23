@@ -62,6 +62,24 @@ namespace TencentCloud
                     bool EdgeUnitIdHasBeenSet() const;
 
                     /**
+                     * 获取base64后的Yaml配置
+                     * @return Yaml base64后的Yaml配置
+                     */
+                    std::string GetYaml() const;
+
+                    /**
+                     * 设置base64后的Yaml配置
+                     * @param Yaml base64后的Yaml配置
+                     */
+                    void SetYaml(const std::string& _yaml);
+
+                    /**
+                     * 判断参数 Yaml 是否已赋值
+                     * @return Yaml 是否已赋值
+                     */
+                    bool YamlHasBeenSet() const;
+
+                    /**
                      * 获取基本信息
                      * @return BasicInfo 基本信息
                      */
@@ -79,24 +97,6 @@ namespace TencentCloud
                      */
                     bool BasicInfoHasBeenSet() const;
 
-                    /**
-                     * 获取Yaml配置
-                     * @return Yaml Yaml配置
-                     */
-                    std::string GetYaml() const;
-
-                    /**
-                     * 设置Yaml配置
-                     * @param Yaml Yaml配置
-                     */
-                    void SetYaml(const std::string& _yaml);
-
-                    /**
-                     * 判断参数 Yaml 是否已赋值
-                     * @return Yaml 是否已赋值
-                     */
-                    bool YamlHasBeenSet() const;
-
                 private:
 
                     /**
@@ -106,16 +106,16 @@ namespace TencentCloud
                     bool m_edgeUnitIdHasBeenSet;
 
                     /**
+                     * base64后的Yaml配置
+                     */
+                    std::string m_yaml;
+                    bool m_yamlHasBeenSet;
+
+                    /**
                      * 基本信息
                      */
                     ApplicationBasicInfo m_basicInfo;
                     bool m_basicInfoHasBeenSet;
-
-                    /**
-                     * Yaml配置
-                     */
-                    std::string m_yaml;
-                    bool m_yamlHasBeenSet;
 
                 };
             }

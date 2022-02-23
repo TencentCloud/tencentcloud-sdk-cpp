@@ -40,6 +40,49 @@ AmeClient::AmeClient(const Credential &credential, const string &region, const C
 }
 
 
+AmeClient::BatchDescribeKTVMusicDetailsOutcome AmeClient::BatchDescribeKTVMusicDetails(const BatchDescribeKTVMusicDetailsRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchDescribeKTVMusicDetails");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchDescribeKTVMusicDetailsResponse rsp = BatchDescribeKTVMusicDetailsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchDescribeKTVMusicDetailsOutcome(rsp);
+        else
+            return BatchDescribeKTVMusicDetailsOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchDescribeKTVMusicDetailsOutcome(outcome.GetError());
+    }
+}
+
+void AmeClient::BatchDescribeKTVMusicDetailsAsync(const BatchDescribeKTVMusicDetailsRequest& request, const BatchDescribeKTVMusicDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchDescribeKTVMusicDetails(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AmeClient::BatchDescribeKTVMusicDetailsOutcomeCallable AmeClient::BatchDescribeKTVMusicDetailsCallable(const BatchDescribeKTVMusicDetailsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchDescribeKTVMusicDetailsOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchDescribeKTVMusicDetails(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AmeClient::CreateKTVRobotOutcome AmeClient::CreateKTVRobot(const CreateKTVRobotRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateKTVRobot");

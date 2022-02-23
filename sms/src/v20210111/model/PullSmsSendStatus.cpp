@@ -27,7 +27,8 @@ PullSmsSendStatus::PullSmsSendStatus() :
     m_phoneNumberHasBeenSet(false),
     m_serialNoHasBeenSet(false),
     m_reportStatusHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_sessionContextHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome PullSmsSendStatus::Deserialize(const rapidjson::Value &value
         m_descriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("SessionContext") && !value["SessionContext"].IsNull())
+    {
+        if (!value["SessionContext"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PullSmsSendStatus.SessionContext` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionContext = string(value["SessionContext"].GetString());
+        m_sessionContextHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void PullSmsSendStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionContextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionContext";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sessionContext.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void PullSmsSendStatus::SetDescription(const string& _description)
 bool PullSmsSendStatus::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string PullSmsSendStatus::GetSessionContext() const
+{
+    return m_sessionContext;
+}
+
+void PullSmsSendStatus::SetSessionContext(const string& _sessionContext)
+{
+    m_sessionContext = _sessionContext;
+    m_sessionContextHasBeenSet = true;
+}
+
+bool PullSmsSendStatus::SessionContextHasBeenSet() const
+{
+    return m_sessionContextHasBeenSet;
 }
 

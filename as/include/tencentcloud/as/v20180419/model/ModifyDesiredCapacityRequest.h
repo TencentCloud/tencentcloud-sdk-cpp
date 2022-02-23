@@ -78,6 +78,42 @@ namespace TencentCloud
                      */
                     bool DesiredCapacityHasBeenSet() const;
 
+                    /**
+                     * 获取最小实例数，取值范围为0-2000。
+                     * @return MinSize 最小实例数，取值范围为0-2000。
+                     */
+                    uint64_t GetMinSize() const;
+
+                    /**
+                     * 设置最小实例数，取值范围为0-2000。
+                     * @param MinSize 最小实例数，取值范围为0-2000。
+                     */
+                    void SetMinSize(const uint64_t& _minSize);
+
+                    /**
+                     * 判断参数 MinSize 是否已赋值
+                     * @return MinSize 是否已赋值
+                     */
+                    bool MinSizeHasBeenSet() const;
+
+                    /**
+                     * 获取最大实例数，取值范围为0-2000。
+                     * @return MaxSize 最大实例数，取值范围为0-2000。
+                     */
+                    uint64_t GetMaxSize() const;
+
+                    /**
+                     * 设置最大实例数，取值范围为0-2000。
+                     * @param MaxSize 最大实例数，取值范围为0-2000。
+                     */
+                    void SetMaxSize(const uint64_t& _maxSize);
+
+                    /**
+                     * 判断参数 MaxSize 是否已赋值
+                     * @return MaxSize 是否已赋值
+                     */
+                    bool MaxSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +127,18 @@ namespace TencentCloud
                      */
                     uint64_t m_desiredCapacity;
                     bool m_desiredCapacityHasBeenSet;
+
+                    /**
+                     * 最小实例数，取值范围为0-2000。
+                     */
+                    uint64_t m_minSize;
+                    bool m_minSizeHasBeenSet;
+
+                    /**
+                     * 最大实例数，取值范围为0-2000。
+                     */
+                    uint64_t m_maxSize;
+                    bool m_maxSizeHasBeenSet;
 
                 };
             }

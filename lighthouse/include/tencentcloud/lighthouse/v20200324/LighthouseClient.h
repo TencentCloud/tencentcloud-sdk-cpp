@@ -616,7 +616,7 @@ namespace TencentCloud
                 DescribeFirewallRulesOutcomeCallable DescribeFirewallRulesCallable(const Model::DescribeFirewallRulesRequest& request);
 
                 /**
-                 *本接口（DescribeFirewallRulesTemplate）用于查询防火墙规则模版。
+                 *本接口（DescribeFirewallRulesTemplate）用于查询防火墙规则模板。
                  * @param req DescribeFirewallRulesTemplateRequest
                  * @return DescribeFirewallRulesTemplateOutcome
                  */

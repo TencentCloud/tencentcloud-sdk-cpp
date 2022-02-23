@@ -92,8 +92,8 @@ namespace TencentCloud
                     bool AccountBankHasBeenSet() const;
 
                     /**
-                     * 获取卡性质：1. 借记卡；2. 贷记卡
-                     * @return AccountType 卡性质：1. 借记卡；2. 贷记卡
+                     * 获取卡性质：1. 借记卡；2. 贷记卡；3. 预付费卡；4. 准贷记卡
+                     * @return AccountType 卡性质：1. 借记卡；2. 贷记卡；3. 预付费卡；4. 准贷记卡
                      */
                     int64_t GetAccountType() const;
 
@@ -130,7 +130,7 @@ namespace TencentCloud
                     bool m_accountBankHasBeenSet;
 
                     /**
-                     * 卡性质：1. 借记卡；2. 贷记卡
+                     * 卡性质：1. 借记卡；2. 贷记卡；3. 预付费卡；4. 准贷记卡
                      */
                     int64_t m_accountType;
                     bool m_accountTypeHasBeenSet;
