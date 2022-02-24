@@ -179,6 +179,50 @@ namespace TencentCloud
                      */
                     bool AllowDeleteServiceHasBeenSet() const;
 
+                    /**
+                     * 获取开启SessionAffinity，true为开启，false为不开启，默认为false
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OpenSessionAffinity 开启SessionAffinity，true为开启，false为不开启，默认为false
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetOpenSessionAffinity() const;
+
+                    /**
+                     * 设置开启SessionAffinity，true为开启，false为不开启，默认为false
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OpenSessionAffinity 开启SessionAffinity，true为开启，false为不开启，默认为false
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOpenSessionAffinity(const bool& _openSessionAffinity);
+
+                    /**
+                     * 判断参数 OpenSessionAffinity 是否已赋值
+                     * @return OpenSessionAffinity 是否已赋值
+                     */
+                    bool OpenSessionAffinityHasBeenSet() const;
+
+                    /**
+                     * 获取SessionAffinity会话时间，默认10800
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SessionAffinityTimeoutSeconds SessionAffinity会话时间，默认10800
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetSessionAffinityTimeoutSeconds() const;
+
+                    /**
+                     * 设置SessionAffinity会话时间，默认10800
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SessionAffinityTimeoutSeconds SessionAffinity会话时间，默认10800
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSessionAffinityTimeoutSeconds(const int64_t& _sessionAffinityTimeoutSeconds);
+
+                    /**
+                     * 判断参数 SessionAffinityTimeoutSeconds 是否已赋值
+                     * @return SessionAffinityTimeoutSeconds 是否已赋值
+                     */
+                    bool SessionAffinityTimeoutSecondsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -222,6 +266,20 @@ namespace TencentCloud
                      */
                     bool m_allowDeleteService;
                     bool m_allowDeleteServiceHasBeenSet;
+
+                    /**
+                     * 开启SessionAffinity，true为开启，false为不开启，默认为false
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_openSessionAffinity;
+                    bool m_openSessionAffinityHasBeenSet;
+
+                    /**
+                     * SessionAffinity会话时间，默认10800
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_sessionAffinityTimeoutSeconds;
+                    bool m_sessionAffinityTimeoutSecondsHasBeenSet;
 
                 };
             }

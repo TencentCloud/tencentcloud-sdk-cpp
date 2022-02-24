@@ -63,6 +63,8 @@
 #include <tencentcloud/live/v20180801/model/CreatePullStreamConfigResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateRecordTaskRequest.h>
 #include <tencentcloud/live/v20180801/model/CreateRecordTaskResponse.h>
+#include <tencentcloud/live/v20180801/model/CreateScreenshotTaskRequest.h>
+#include <tencentcloud/live/v20180801/model/CreateScreenshotTaskResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteLiveCallbackRuleRequest.h>
 #include <tencentcloud/live/v20180801/model/DeleteLiveCallbackRuleResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteLiveCallbackTemplateRequest.h>
@@ -95,6 +97,8 @@
 #include <tencentcloud/live/v20180801/model/DeletePullStreamConfigResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteRecordTaskRequest.h>
 #include <tencentcloud/live/v20180801/model/DeleteRecordTaskResponse.h>
+#include <tencentcloud/live/v20180801/model/DeleteScreenshotTaskRequest.h>
+#include <tencentcloud/live/v20180801/model/DeleteScreenshotTaskResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeAllStreamPlayInfoListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeAllStreamPlayInfoListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeAreaBillBandwidthAndFluxListRequest.h>
@@ -199,6 +203,8 @@
 #include <tencentcloud/live/v20180801/model/DescribeRecordTaskResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeScreenShotSheetNumListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeScreenShotSheetNumListResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeScreenshotTaskRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeScreenshotTaskResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeStreamDayPlayInfoListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeStreamDayPlayInfoListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeStreamPlayInfoListRequest.h>
@@ -253,6 +259,8 @@
 #include <tencentcloud/live/v20180801/model/StopLiveRecordResponse.h>
 #include <tencentcloud/live/v20180801/model/StopRecordTaskRequest.h>
 #include <tencentcloud/live/v20180801/model/StopRecordTaskResponse.h>
+#include <tencentcloud/live/v20180801/model/StopScreenshotTaskRequest.h>
+#include <tencentcloud/live/v20180801/model/StopScreenshotTaskResponse.h>
 #include <tencentcloud/live/v20180801/model/UnBindLiveDomainCertRequest.h>
 #include <tencentcloud/live/v20180801/model/UnBindLiveDomainCertResponse.h>
 #include <tencentcloud/live/v20180801/model/UpdateLiveWatermarkRequest.h>
@@ -331,6 +339,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateRecordTaskResponse> CreateRecordTaskOutcome;
                 typedef std::future<CreateRecordTaskOutcome> CreateRecordTaskOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CreateRecordTaskRequest&, CreateRecordTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRecordTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateScreenshotTaskResponse> CreateScreenshotTaskOutcome;
+                typedef std::future<CreateScreenshotTaskOutcome> CreateScreenshotTaskOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::CreateScreenshotTaskRequest&, CreateScreenshotTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScreenshotTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteLiveCallbackRuleResponse> DeleteLiveCallbackRuleOutcome;
                 typedef std::future<DeleteLiveCallbackRuleOutcome> DeleteLiveCallbackRuleOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DeleteLiveCallbackRuleRequest&, DeleteLiveCallbackRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveCallbackRuleAsyncHandler;
@@ -379,6 +390,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteRecordTaskResponse> DeleteRecordTaskOutcome;
                 typedef std::future<DeleteRecordTaskOutcome> DeleteRecordTaskOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DeleteRecordTaskRequest&, DeleteRecordTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRecordTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteScreenshotTaskResponse> DeleteScreenshotTaskOutcome;
+                typedef std::future<DeleteScreenshotTaskOutcome> DeleteScreenshotTaskOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DeleteScreenshotTaskRequest&, DeleteScreenshotTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScreenshotTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAllStreamPlayInfoListResponse> DescribeAllStreamPlayInfoListOutcome;
                 typedef std::future<DescribeAllStreamPlayInfoListOutcome> DescribeAllStreamPlayInfoListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeAllStreamPlayInfoListRequest&, DescribeAllStreamPlayInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllStreamPlayInfoListAsyncHandler;
@@ -535,6 +549,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeScreenShotSheetNumListResponse> DescribeScreenShotSheetNumListOutcome;
                 typedef std::future<DescribeScreenShotSheetNumListOutcome> DescribeScreenShotSheetNumListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeScreenShotSheetNumListRequest&, DescribeScreenShotSheetNumListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScreenShotSheetNumListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeScreenshotTaskResponse> DescribeScreenshotTaskOutcome;
+                typedef std::future<DescribeScreenshotTaskOutcome> DescribeScreenshotTaskOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeScreenshotTaskRequest&, DescribeScreenshotTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScreenshotTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeStreamDayPlayInfoListResponse> DescribeStreamDayPlayInfoListOutcome;
                 typedef std::future<DescribeStreamDayPlayInfoListOutcome> DescribeStreamDayPlayInfoListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeStreamDayPlayInfoListRequest&, DescribeStreamDayPlayInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamDayPlayInfoListAsyncHandler;
@@ -616,6 +633,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopRecordTaskResponse> StopRecordTaskOutcome;
                 typedef std::future<StopRecordTaskOutcome> StopRecordTaskOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::StopRecordTaskRequest&, StopRecordTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopRecordTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopScreenshotTaskResponse> StopScreenshotTaskOutcome;
+                typedef std::future<StopScreenshotTaskOutcome> StopScreenshotTaskOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::StopScreenshotTaskRequest&, StopScreenshotTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopScreenshotTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnBindLiveDomainCertResponse> UnBindLiveDomainCertOutcome;
                 typedef std::future<UnBindLiveDomainCertOutcome> UnBindLiveDomainCertOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::UnBindLiveDomainCertRequest&, UnBindLiveDomainCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnBindLiveDomainCertAsyncHandler;
@@ -858,6 +878,21 @@ namespace TencentCloud
                 CreateRecordTaskOutcomeCallable CreateRecordTaskCallable(const Model::CreateRecordTaskRequest& request);
 
                 /**
+                 *创建一个在指定时间启动、结束的截图任务，并使用指定截图模板ID对应的配置进行截图。
+- 注意事项
+1. 断流会结束当前截图。在结束时间到达之前任务仍然有效，期间只要正常推流都会正常截图，与是否多次推、断流无关。
+2. 使用上避免创建时间段相互重叠的截图任务。若同一条流当前存在多个时段重叠的任务，为避免重复系统将启动最多3个截图任务。
+3. 创建的截图任务记录在平台侧只保留3个月。
+4. 当前截图任务管理API（CreateScreenshotTask/StopScreenshotTask/DeleteScreenshotTask）与旧API（CreateLiveInstantSnapshot/StopLiveInstantSnapshot）不兼容，两套接口不能混用。
+5. 避免 创建截图任务 与 推流 操作同时进行，可能导致因截图任务未生效而引起任务延迟启动问题，两者操作间隔建议大于3秒。
+                 * @param req CreateScreenshotTaskRequest
+                 * @return CreateScreenshotTaskOutcome
+                 */
+                CreateScreenshotTaskOutcome CreateScreenshotTask(const Model::CreateScreenshotTaskRequest &request);
+                void CreateScreenshotTaskAsync(const Model::CreateScreenshotTaskRequest& request, const CreateScreenshotTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateScreenshotTaskOutcomeCallable CreateScreenshotTaskCallable(const Model::CreateScreenshotTaskRequest& request);
+
+                /**
                  *删除回调规则。
                  * @param req DeleteLiveCallbackRuleRequest
                  * @return DeleteLiveCallbackRuleOutcome
@@ -1004,6 +1039,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DeleteRecordTaskOutcome DeleteRecordTask(const Model::DeleteRecordTaskRequest &request);
                 void DeleteRecordTaskAsync(const Model::DeleteRecordTaskRequest& request, const DeleteRecordTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteRecordTaskOutcomeCallable DeleteRecordTaskCallable(const Model::DeleteRecordTaskRequest& request);
+
+                /**
+                 *删除截图任务配置。删除操作不影响正在运行当中的任务，仅对删除之后新的推流有效。
+                 * @param req DeleteScreenshotTaskRequest
+                 * @return DeleteScreenshotTaskOutcome
+                 */
+                DeleteScreenshotTaskOutcome DeleteScreenshotTask(const Model::DeleteScreenshotTaskRequest &request);
+                void DeleteScreenshotTaskAsync(const Model::DeleteScreenshotTaskRequest& request, const DeleteScreenshotTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteScreenshotTaskOutcomeCallable DeleteScreenshotTaskCallable(const Model::DeleteScreenshotTaskRequest& request);
 
                 /**
                  *输入某个时间点（1分钟维度），查询该时间点所有流的下行信息。
@@ -1508,6 +1552,18 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeScreenShotSheetNumListOutcomeCallable DescribeScreenShotSheetNumListCallable(const Model::DescribeScreenShotSheetNumListRequest& request);
 
                 /**
+                 *查询指定时间段范围内启动和结束的截图任务列表。
+- 使用前提
+1. 仅用于查询由 CreateScreenshotTask接口创建的截图任务。
+2. 不能查询被 DeleteScreenshotTask接口删除以及已过期（平台侧保留3个月）的截图任务。
+                 * @param req DescribeScreenshotTaskRequest
+                 * @return DescribeScreenshotTaskOutcome
+                 */
+                DescribeScreenshotTaskOutcome DescribeScreenshotTask(const Model::DescribeScreenshotTaskRequest &request);
+                void DescribeScreenshotTaskAsync(const Model::DescribeScreenshotTaskRequest& request, const DescribeScreenshotTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeScreenshotTaskOutcomeCallable DescribeScreenshotTaskCallable(const Model::DescribeScreenshotTaskRequest& request);
+
+                /**
                  *查询天维度每条流的播放数据，包括总流量等。
                  * @param req DescribeStreamDayPlayInfoListRequest
                  * @return DescribeStreamDayPlayInfoListOutcome
@@ -1753,6 +1809,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 StopRecordTaskOutcome StopRecordTask(const Model::StopRecordTaskRequest &request);
                 void StopRecordTaskAsync(const Model::StopRecordTaskRequest& request, const StopRecordTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopRecordTaskOutcomeCallable StopRecordTaskCallable(const Model::StopRecordTaskRequest& request);
+
+                /**
+                 *提前结束截图，中止运行中的截图任务。任务被成功终止后，本次任务将不再启动。
+                 * @param req StopScreenshotTaskRequest
+                 * @return StopScreenshotTaskOutcome
+                 */
+                StopScreenshotTaskOutcome StopScreenshotTask(const Model::StopScreenshotTaskRequest &request);
+                void StopScreenshotTaskAsync(const Model::StopScreenshotTaskRequest& request, const StopScreenshotTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopScreenshotTaskOutcomeCallable StopScreenshotTaskCallable(const Model::StopScreenshotTaskRequest& request);
 
                 /**
                  *解绑域名证书

@@ -2706,6 +2706,92 @@ VpcClient::CreateVpnGatewayRoutesOutcomeCallable VpcClient::CreateVpnGatewayRout
     return task->get_future();
 }
 
+VpcClient::CreateVpnGatewaySslClientOutcome VpcClient::CreateVpnGatewaySslClient(const CreateVpnGatewaySslClientRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateVpnGatewaySslClient");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateVpnGatewaySslClientResponse rsp = CreateVpnGatewaySslClientResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateVpnGatewaySslClientOutcome(rsp);
+        else
+            return CreateVpnGatewaySslClientOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateVpnGatewaySslClientOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreateVpnGatewaySslClientAsync(const CreateVpnGatewaySslClientRequest& request, const CreateVpnGatewaySslClientAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateVpnGatewaySslClient(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CreateVpnGatewaySslClientOutcomeCallable VpcClient::CreateVpnGatewaySslClientCallable(const CreateVpnGatewaySslClientRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateVpnGatewaySslClientOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateVpnGatewaySslClient(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::CreateVpnGatewaySslServerOutcome VpcClient::CreateVpnGatewaySslServer(const CreateVpnGatewaySslServerRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateVpnGatewaySslServer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateVpnGatewaySslServerResponse rsp = CreateVpnGatewaySslServerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateVpnGatewaySslServerOutcome(rsp);
+        else
+            return CreateVpnGatewaySslServerOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateVpnGatewaySslServerOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreateVpnGatewaySslServerAsync(const CreateVpnGatewaySslServerRequest& request, const CreateVpnGatewaySslServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateVpnGatewaySslServer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CreateVpnGatewaySslServerOutcomeCallable VpcClient::CreateVpnGatewaySslServerCallable(const CreateVpnGatewaySslServerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateVpnGatewaySslServerOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateVpnGatewaySslServer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DeleteAddressTemplateOutcome VpcClient::DeleteAddressTemplate(const DeleteAddressTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAddressTemplate");
@@ -4161,6 +4247,92 @@ VpcClient::DeleteVpnGatewayRoutesOutcomeCallable VpcClient::DeleteVpnGatewayRout
         [this, request]()
         {
             return this->DeleteVpnGatewayRoutes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DeleteVpnGatewaySslClientOutcome VpcClient::DeleteVpnGatewaySslClient(const DeleteVpnGatewaySslClientRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteVpnGatewaySslClient");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteVpnGatewaySslClientResponse rsp = DeleteVpnGatewaySslClientResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteVpnGatewaySslClientOutcome(rsp);
+        else
+            return DeleteVpnGatewaySslClientOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteVpnGatewaySslClientOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeleteVpnGatewaySslClientAsync(const DeleteVpnGatewaySslClientRequest& request, const DeleteVpnGatewaySslClientAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteVpnGatewaySslClient(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DeleteVpnGatewaySslClientOutcomeCallable VpcClient::DeleteVpnGatewaySslClientCallable(const DeleteVpnGatewaySslClientRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteVpnGatewaySslClientOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteVpnGatewaySslClient(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DeleteVpnGatewaySslServerOutcome VpcClient::DeleteVpnGatewaySslServer(const DeleteVpnGatewaySslServerRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteVpnGatewaySslServer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteVpnGatewaySslServerResponse rsp = DeleteVpnGatewaySslServerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteVpnGatewaySslServerOutcome(rsp);
+        else
+            return DeleteVpnGatewaySslServerOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteVpnGatewaySslServerOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeleteVpnGatewaySslServerAsync(const DeleteVpnGatewaySslServerRequest& request, const DeleteVpnGatewaySslServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteVpnGatewaySslServer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DeleteVpnGatewaySslServerOutcomeCallable VpcClient::DeleteVpnGatewaySslServerCallable(const DeleteVpnGatewaySslServerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteVpnGatewaySslServerOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteVpnGatewaySslServer(request);
         }
     );
 
@@ -7049,6 +7221,92 @@ VpcClient::DescribeVpnGatewayRoutesOutcomeCallable VpcClient::DescribeVpnGateway
     return task->get_future();
 }
 
+VpcClient::DescribeVpnGatewaySslClientsOutcome VpcClient::DescribeVpnGatewaySslClients(const DescribeVpnGatewaySslClientsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVpnGatewaySslClients");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVpnGatewaySslClientsResponse rsp = DescribeVpnGatewaySslClientsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVpnGatewaySslClientsOutcome(rsp);
+        else
+            return DescribeVpnGatewaySslClientsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVpnGatewaySslClientsOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeVpnGatewaySslClientsAsync(const DescribeVpnGatewaySslClientsRequest& request, const DescribeVpnGatewaySslClientsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVpnGatewaySslClients(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeVpnGatewaySslClientsOutcomeCallable VpcClient::DescribeVpnGatewaySslClientsCallable(const DescribeVpnGatewaySslClientsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVpnGatewaySslClientsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVpnGatewaySslClients(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeVpnGatewaySslServersOutcome VpcClient::DescribeVpnGatewaySslServers(const DescribeVpnGatewaySslServersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVpnGatewaySslServers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVpnGatewaySslServersResponse rsp = DescribeVpnGatewaySslServersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVpnGatewaySslServersOutcome(rsp);
+        else
+            return DescribeVpnGatewaySslServersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVpnGatewaySslServersOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeVpnGatewaySslServersAsync(const DescribeVpnGatewaySslServersRequest& request, const DescribeVpnGatewaySslServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVpnGatewaySslServers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeVpnGatewaySslServersOutcomeCallable VpcClient::DescribeVpnGatewaySslServersCallable(const DescribeVpnGatewaySslServersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVpnGatewaySslServersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVpnGatewaySslServers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeVpnGatewaysOutcome VpcClient::DescribeVpnGateways(const DescribeVpnGatewaysRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVpnGateways");
@@ -7343,6 +7601,49 @@ VpcClient::DisableRoutesOutcomeCallable VpcClient::DisableRoutesCallable(const D
         [this, request]()
         {
             return this->DisableRoutes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DisableVpnGatewaySslClientCertOutcome VpcClient::DisableVpnGatewaySslClientCert(const DisableVpnGatewaySslClientCertRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableVpnGatewaySslClientCert");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableVpnGatewaySslClientCertResponse rsp = DisableVpnGatewaySslClientCertResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableVpnGatewaySslClientCertOutcome(rsp);
+        else
+            return DisableVpnGatewaySslClientCertOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableVpnGatewaySslClientCertOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DisableVpnGatewaySslClientCertAsync(const DisableVpnGatewaySslClientCertRequest& request, const DisableVpnGatewaySslClientCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableVpnGatewaySslClientCert(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DisableVpnGatewaySslClientCertOutcomeCallable VpcClient::DisableVpnGatewaySslClientCertCallable(const DisableVpnGatewaySslClientCertRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableVpnGatewaySslClientCertOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableVpnGatewaySslClientCert(request);
         }
     );
 
@@ -7694,6 +7995,49 @@ VpcClient::DownloadCustomerGatewayConfigurationOutcomeCallable VpcClient::Downlo
     return task->get_future();
 }
 
+VpcClient::DownloadVpnGatewaySslClientCertOutcome VpcClient::DownloadVpnGatewaySslClientCert(const DownloadVpnGatewaySslClientCertRequest &request)
+{
+    auto outcome = MakeRequest(request, "DownloadVpnGatewaySslClientCert");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DownloadVpnGatewaySslClientCertResponse rsp = DownloadVpnGatewaySslClientCertResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DownloadVpnGatewaySslClientCertOutcome(rsp);
+        else
+            return DownloadVpnGatewaySslClientCertOutcome(o.GetError());
+    }
+    else
+    {
+        return DownloadVpnGatewaySslClientCertOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DownloadVpnGatewaySslClientCertAsync(const DownloadVpnGatewaySslClientCertRequest& request, const DownloadVpnGatewaySslClientCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DownloadVpnGatewaySslClientCert(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DownloadVpnGatewaySslClientCertOutcomeCallable VpcClient::DownloadVpnGatewaySslClientCertCallable(const DownloadVpnGatewaySslClientCertRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DownloadVpnGatewaySslClientCertOutcome()>>(
+        [this, request]()
+        {
+            return this->DownloadVpnGatewaySslClientCert(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::EnableCcnRoutesOutcome VpcClient::EnableCcnRoutes(const EnableCcnRoutesRequest &request)
 {
     auto outcome = MakeRequest(request, "EnableCcnRoutes");
@@ -7859,6 +8203,49 @@ VpcClient::EnableVpcEndPointConnectOutcomeCallable VpcClient::EnableVpcEndPointC
         [this, request]()
         {
             return this->EnableVpcEndPointConnect(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::EnableVpnGatewaySslClientCertOutcome VpcClient::EnableVpnGatewaySslClientCert(const EnableVpnGatewaySslClientCertRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableVpnGatewaySslClientCert");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableVpnGatewaySslClientCertResponse rsp = EnableVpnGatewaySslClientCertResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableVpnGatewaySslClientCertOutcome(rsp);
+        else
+            return EnableVpnGatewaySslClientCertOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableVpnGatewaySslClientCertOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::EnableVpnGatewaySslClientCertAsync(const EnableVpnGatewaySslClientCertRequest& request, const EnableVpnGatewaySslClientCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableVpnGatewaySslClientCert(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::EnableVpnGatewaySslClientCertOutcomeCallable VpcClient::EnableVpnGatewaySslClientCertCallable(const EnableVpnGatewaySslClientCertRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableVpnGatewaySslClientCertOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableVpnGatewaySslClientCert(request);
         }
     );
 

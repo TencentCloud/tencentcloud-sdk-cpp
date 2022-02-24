@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取用户自定义可选填的机构节点对外ID，如果非空则校验此ID的唯一性。
-                     * @return CustomizedOrgNodeId 用户自定义可选填的机构节点对外ID，如果非空则校验此ID的唯一性。
+                     * 获取机构代码。如果非空则校验此ID的唯一性。
+                     * @return CustomizedOrgNodeId 机构代码。如果非空则校验此ID的唯一性。
                      */
                     std::string GetCustomizedOrgNodeId() const;
 
                     /**
-                     * 设置用户自定义可选填的机构节点对外ID，如果非空则校验此ID的唯一性。
-                     * @param CustomizedOrgNodeId 用户自定义可选填的机构节点对外ID，如果非空则校验此ID的唯一性。
+                     * 设置机构代码。如果非空则校验此ID的唯一性。
+                     * @param CustomizedOrgNodeId 机构代码。如果非空则校验此ID的唯一性。
                      */
                     void SetCustomizedOrgNodeId(const std::string& _customizedOrgNodeId);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 用户自定义可选填的机构节点对外ID，如果非空则校验此ID的唯一性。
+                     * 机构代码。如果非空则校验此ID的唯一性。
                      */
                     std::string m_customizedOrgNodeId;
                     bool m_customizedOrgNodeIdHasBeenSet;

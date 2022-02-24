@@ -314,6 +314,24 @@ namespace TencentCloud
                      */
                     bool LogCollectTypeHasBeenSet() const;
 
+                    /**
+                     * 获取pyflink作业运行时使用的python版本
+                     * @return PythonVersion pyflink作业运行时使用的python版本
+                     */
+                    std::string GetPythonVersion() const;
+
+                    /**
+                     * 设置pyflink作业运行时使用的python版本
+                     * @param PythonVersion pyflink作业运行时使用的python版本
+                     */
+                    void SetPythonVersion(const std::string& _pythonVersion);
+
+                    /**
+                     * 判断参数 PythonVersion 是否已赋值
+                     * @return PythonVersion 是否已赋值
+                     */
+                    bool PythonVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -405,6 +423,12 @@ namespace TencentCloud
                      */
                     int64_t m_logCollectType;
                     bool m_logCollectTypeHasBeenSet;
+
+                    /**
+                     * pyflink作业运行时使用的python版本
+                     */
+                    std::string m_pythonVersion;
+                    bool m_pythonVersionHasBeenSet;
 
                 };
             }

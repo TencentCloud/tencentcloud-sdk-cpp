@@ -37,7 +37,8 @@ CreateJobConfigRequest::CreateJobConfigRequest() :
     m_taskManagerSpecHasBeenSet(false),
     m_clsLogsetIdHasBeenSet(false),
     m_clsTopicIdHasBeenSet(false),
-    m_logCollectTypeHasBeenSet(false)
+    m_logCollectTypeHasBeenSet(false),
+    m_pythonVersionHasBeenSet(false)
 {
 }
 
@@ -180,6 +181,14 @@ string CreateJobConfigRequest::ToJsonString() const
         string key = "LogCollectType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_logCollectType, allocator);
+    }
+
+    if (m_pythonVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PythonVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_pythonVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -428,6 +437,22 @@ void CreateJobConfigRequest::SetLogCollectType(const int64_t& _logCollectType)
 bool CreateJobConfigRequest::LogCollectTypeHasBeenSet() const
 {
     return m_logCollectTypeHasBeenSet;
+}
+
+string CreateJobConfigRequest::GetPythonVersion() const
+{
+    return m_pythonVersion;
+}
+
+void CreateJobConfigRequest::SetPythonVersion(const string& _pythonVersion)
+{
+    m_pythonVersion = _pythonVersion;
+    m_pythonVersionHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::PythonVersionHasBeenSet() const
+{
+    return m_pythonVersionHasBeenSet;
 }
 
 

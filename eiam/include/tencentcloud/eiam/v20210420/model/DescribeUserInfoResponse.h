@@ -72,9 +72,9 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取昵称
+                     * 获取昵称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DisplayName 昵称
+                     * @return DisplayName 昵称。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDisplayName() const;
@@ -170,9 +170,9 @@ namespace TencentCloud
                     bool OrgNodeIdHasBeenSet() const;
 
                     /**
-                     * 获取数据来源
+                     * 获取数据来源。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DataSource 数据来源
+                     * @return DataSource 数据来源。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDataSource() const;
@@ -270,7 +270,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 昵称
+                     * 昵称。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_displayName;
@@ -319,7 +319,7 @@ namespace TencentCloud
                     bool m_orgNodeIdHasBeenSet;
 
                     /**
-                     * 数据来源
+                     * 数据来源。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataSource;

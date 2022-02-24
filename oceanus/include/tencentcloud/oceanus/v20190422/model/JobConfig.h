@@ -432,6 +432,28 @@ namespace TencentCloud
                      */
                     bool ClsTopicIdHasBeenSet() const;
 
+                    /**
+                     * 获取pyflink作业运行的python版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PythonVersion pyflink作业运行的python版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPythonVersion() const;
+
+                    /**
+                     * 设置pyflink作业运行的python版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PythonVersion pyflink作业运行的python版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPythonVersion(const std::string& _pythonVersion);
+
+                    /**
+                     * 判断参数 PythonVersion 是否已赋值
+                     * @return PythonVersion 是否已赋值
+                     */
+                    bool PythonVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -556,6 +578,13 @@ namespace TencentCloud
                      */
                     std::string m_clsTopicId;
                     bool m_clsTopicIdHasBeenSet;
+
+                    /**
+                     * pyflink作业运行的python版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_pythonVersion;
+                    bool m_pythonVersionHasBeenSet;
 
                 };
             }
