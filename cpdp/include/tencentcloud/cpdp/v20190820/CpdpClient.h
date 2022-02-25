@@ -193,6 +193,8 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryCustAcctIdBalanceResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryDownloadBillURLRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryDownloadBillURLResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryExceedingInfoRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryExceedingInfoResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryExchangeRateRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryExchangeRateResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryInvoiceRequest.h>
@@ -588,6 +590,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryDownloadBillURLResponse> QueryDownloadBillURLOutcome;
                 typedef std::future<QueryDownloadBillURLOutcome> QueryDownloadBillURLOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryDownloadBillURLRequest&, QueryDownloadBillURLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryDownloadBillURLAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryExceedingInfoResponse> QueryExceedingInfoOutcome;
+                typedef std::future<QueryExceedingInfoOutcome> QueryExceedingInfoOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryExceedingInfoRequest&, QueryExceedingInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryExceedingInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryExchangeRateResponse> QueryExchangeRateOutcome;
                 typedef std::future<QueryExchangeRateOutcome> QueryExchangeRateOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryExchangeRateRequest&, QueryExchangeRateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryExchangeRateAsyncHandler;
@@ -1552,6 +1557,15 @@ namespace TencentCloud
                 QueryDownloadBillURLOutcome QueryDownloadBillURL(const Model::QueryDownloadBillURLRequest &request);
                 void QueryDownloadBillURLAsync(const Model::QueryDownloadBillURLRequest& request, const QueryDownloadBillURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryDownloadBillURLOutcomeCallable QueryDownloadBillURLCallable(const Model::QueryDownloadBillURLRequest& request);
+
+                /**
+                 *灵云-查询超额信息
+                 * @param req QueryExceedingInfoRequest
+                 * @return QueryExceedingInfoOutcome
+                 */
+                QueryExceedingInfoOutcome QueryExceedingInfo(const Model::QueryExceedingInfoRequest &request);
+                void QueryExceedingInfoAsync(const Model::QueryExceedingInfoRequest& request, const QueryExceedingInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryExceedingInfoOutcomeCallable QueryExceedingInfoCallable(const Model::QueryExceedingInfoRequest& request);
 
                 /**
                  *跨境-查询汇率

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询密钥ID列表
-                     * @return SecretIdList 查询密钥ID列表
+                     * 获取查询密钥ID列表。最多支持10个。
+                     * @return SecretIdList 查询密钥ID列表。最多支持10个。
                      */
                     std::vector<std::string> GetSecretIdList() const;
 
                     /**
-                     * 设置查询密钥ID列表
-                     * @param SecretIdList 查询密钥ID列表
+                     * 设置查询密钥ID列表。最多支持10个。
+                     * @param SecretIdList 查询密钥ID列表。最多支持10个。
                      */
                     void SetSecretIdList(const std::vector<std::string>& _secretIdList);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询密钥ID列表
+                     * 查询密钥ID列表。最多支持10个。
                      */
                     std::vector<std::string> m_secretIdList;
                     bool m_secretIdListHasBeenSet;

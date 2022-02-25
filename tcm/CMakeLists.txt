@@ -52,6 +52,7 @@ set(tcm_public_header_model
   include/tencentcloud/tcm/v20210413/model/SelectedItems.h
   include/tencentcloud/tcm/v20210413/model/Cluster.h
   include/tencentcloud/tcm/v20210413/model/DescribeMeshListResponse.h
+  include/tencentcloud/tcm/v20210413/model/APM.h
   include/tencentcloud/tcm/v20210413/model/ResourceRequirements.h
   include/tencentcloud/tcm/v20210413/model/ClusterStatus.h
   include/tencentcloud/tcm/v20210413/model/SelectedRange.h
@@ -94,6 +95,7 @@ set(tcm_src
   src/v20210413/model/SelectedItems.cpp
   src/v20210413/model/Cluster.cpp
   src/v20210413/model/DescribeMeshListResponse.cpp
+  src/v20210413/model/APM.cpp
   src/v20210413/model/ResourceRequirements.cpp
   src/v20210413/model/ClusterStatus.cpp
   src/v20210413/model/SelectedRange.cpp

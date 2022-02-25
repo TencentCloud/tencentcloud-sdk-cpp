@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取每个副本集内节点个数，当前副本集节点数固定为3，分片从节点数可选，具体参照查询云数据库的售卖规格返回参数
-                     * @return NodeNum 每个副本集内节点个数，当前副本集节点数固定为3，分片从节点数可选，具体参照查询云数据库的售卖规格返回参数
+                     * 获取每个副本集内节点个数，具体参照查询云数据库的售卖规格返回参数
+                     * @return NodeNum 每个副本集内节点个数，具体参照查询云数据库的售卖规格返回参数
                      */
                     int64_t GetNodeNum() const;
 
                     /**
-                     * 设置每个副本集内节点个数，当前副本集节点数固定为3，分片从节点数可选，具体参照查询云数据库的售卖规格返回参数
-                     * @param NodeNum 每个副本集内节点个数，当前副本集节点数固定为3，分片从节点数可选，具体参照查询云数据库的售卖规格返回参数
+                     * 设置每个副本集内节点个数，具体参照查询云数据库的售卖规格返回参数
+                     * @param NodeNum 每个副本集内节点个数，具体参照查询云数据库的售卖规格返回参数
                      */
                     void SetNodeNum(const int64_t& _nodeNum);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool MongoVersionHasBeenSet() const;
 
                     /**
-                     * 获取机器类型，HIO：高IO型；HIO10G：高IO万兆型；STDS5：标准型
-                     * @return MachineCode 机器类型，HIO：高IO型；HIO10G：高IO万兆型；STDS5：标准型
+                     * 获取机器类型，HIO：高IO型；HIO10G：高IO万兆型；
+                     * @return MachineCode 机器类型，HIO：高IO型；HIO10G：高IO万兆型；
                      */
                     std::string GetMachineCode() const;
 
                     /**
-                     * 设置机器类型，HIO：高IO型；HIO10G：高IO万兆型；STDS5：标准型
-                     * @param MachineCode 机器类型，HIO：高IO型；HIO10G：高IO万兆型；STDS5：标准型
+                     * 设置机器类型，HIO：高IO型；HIO10G：高IO万兆型；
+                     * @param MachineCode 机器类型，HIO：高IO型；HIO10G：高IO万兆型；
                      */
                     void SetMachineCode(const std::string& _machineCode);
 
@@ -231,7 +231,7 @@ namespace TencentCloud
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 每个副本集内节点个数，当前副本集节点数固定为3，分片从节点数可选，具体参照查询云数据库的售卖规格返回参数
+                     * 每个副本集内节点个数，具体参照查询云数据库的售卖规格返回参数
                      */
                     int64_t m_nodeNum;
                     bool m_nodeNumHasBeenSet;
@@ -255,7 +255,7 @@ namespace TencentCloud
                     bool m_mongoVersionHasBeenSet;
 
                     /**
-                     * 机器类型，HIO：高IO型；HIO10G：高IO万兆型；STDS5：标准型
+                     * 机器类型，HIO：高IO型；HIO10G：高IO万兆型；
                      */
                     std::string m_machineCode;
                     bool m_machineCodeHasBeenSet;

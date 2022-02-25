@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcm/v20210413/model/APM.h>
 
 
 namespace TencentCloud
@@ -64,6 +65,42 @@ namespace TencentCloud
                      */
                     bool SamplingHasBeenSet() const;
 
+                    /**
+                     * 获取是否启用调用跟踪
+                     * @return Enable 是否启用调用跟踪
+                     */
+                    bool GetEnable() const;
+
+                    /**
+                     * 设置是否启用调用跟踪
+                     * @param Enable 是否启用调用跟踪
+                     */
+                    void SetEnable(const bool& _enable);
+
+                    /**
+                     * 判断参数 Enable 是否已赋值
+                     * @return Enable 是否已赋值
+                     */
+                    bool EnableHasBeenSet() const;
+
+                    /**
+                     * 获取腾讯云 APM 服务相关参数
+                     * @return APM 腾讯云 APM 服务相关参数
+                     */
+                    APM GetAPM() const;
+
+                    /**
+                     * 设置腾讯云 APM 服务相关参数
+                     * @param APM 腾讯云 APM 服务相关参数
+                     */
+                    void SetAPM(const APM& _aPM);
+
+                    /**
+                     * 判断参数 APM 是否已赋值
+                     * @return APM 是否已赋值
+                     */
+                    bool APMHasBeenSet() const;
+
                 private:
 
                     /**
@@ -71,6 +108,18 @@ namespace TencentCloud
                      */
                     double m_sampling;
                     bool m_samplingHasBeenSet;
+
+                    /**
+                     * 是否启用调用跟踪
+                     */
+                    bool m_enable;
+                    bool m_enableHasBeenSet;
+
+                    /**
+                     * 腾讯云 APM 服务相关参数
+                     */
+                    APM m_aPM;
+                    bool m_aPMHasBeenSet;
 
                 };
             }

@@ -29,7 +29,8 @@ DescribeKTVMusicDetailResponse::DescribeKTVMusicDetailResponse() :
     m_lyricsUrlHasBeenSet(false),
     m_definitionInfoSetHasBeenSet(false),
     m_midiJsonUrlHasBeenSet(false),
-    m_chorusClipSetHasBeenSet(false)
+    m_chorusClipSetHasBeenSet(false),
+    m_preludeIntervalHasBeenSet(false)
 {
 }
 
@@ -154,6 +155,16 @@ CoreInternalOutcome DescribeKTVMusicDetailResponse::Deserialize(const string &pa
         m_chorusClipSetHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PreludeInterval") && !rsp["PreludeInterval"].IsNull())
+    {
+        if (!rsp["PreludeInterval"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PreludeInterval` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_preludeInterval = rsp["PreludeInterval"].GetInt64();
+        m_preludeIntervalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -227,6 +238,14 @@ string DescribeKTVMusicDetailResponse::ToJsonString() const
         }
     }
 
+    if (m_preludeIntervalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreludeInterval";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_preludeInterval, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -297,6 +316,16 @@ vector<ChorusClip> DescribeKTVMusicDetailResponse::GetChorusClipSet() const
 bool DescribeKTVMusicDetailResponse::ChorusClipSetHasBeenSet() const
 {
     return m_chorusClipSetHasBeenSet;
+}
+
+int64_t DescribeKTVMusicDetailResponse::GetPreludeInterval() const
+{
+    return m_preludeInterval;
+}
+
+bool DescribeKTVMusicDetailResponse::PreludeIntervalHasBeenSet() const
+{
+    return m_preludeIntervalHasBeenSet;
 }
 
 

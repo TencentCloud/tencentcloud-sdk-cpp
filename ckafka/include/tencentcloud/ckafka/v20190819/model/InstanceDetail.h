@@ -265,14 +265,14 @@ namespace TencentCloud
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取实例状态 int：0表示健康，1表示告警，2 表示实例状态异常
-                     * @return Healthy 实例状态 int：0表示健康，1表示告警，2 表示实例状态异常
+                     * 获取实例状态 int：1表示健康，2表示告警，3 表示实例状态异常
+                     * @return Healthy 实例状态 int：1表示健康，2表示告警，3 表示实例状态异常
                      */
                     int64_t GetHealthy() const;
 
                     /**
-                     * 设置实例状态 int：0表示健康，1表示告警，2 表示实例状态异常
-                     * @param Healthy 实例状态 int：0表示健康，1表示告警，2 表示实例状态异常
+                     * 设置实例状态 int：1表示健康，2表示告警，3 表示实例状态异常
+                     * @param Healthy 实例状态 int：1表示健康，2表示告警，3 表示实例状态异常
                      */
                     void SetHealthy(const int64_t& _healthy);
 
@@ -707,7 +707,7 @@ namespace TencentCloud
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 实例状态 int：0表示健康，1表示告警，2 表示实例状态异常
+                     * 实例状态 int：1表示健康，2表示告警，3 表示实例状态异常
                      */
                     int64_t m_healthy;
                     bool m_healthyHasBeenSet;

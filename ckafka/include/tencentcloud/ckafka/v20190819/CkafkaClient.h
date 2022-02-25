@@ -292,7 +292,7 @@ namespace TencentCloud
                 CreateAclOutcomeCallable CreateAclCallable(const Model::CreateAclRequest& request);
 
                 /**
-                 *创建消费者
+                 *创建消费者组
                  * @param req CreateConsumerRequest
                  * @return CreateConsumerOutcome
                  */

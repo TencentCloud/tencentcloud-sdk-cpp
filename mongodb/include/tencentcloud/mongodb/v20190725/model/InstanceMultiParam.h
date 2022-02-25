@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool EnumValueHasBeenSet() const;
 
                     /**
-                     * 获取是否需要重启
-                     * @return NeedRestart 是否需要重启
+                     * 获取是否需要重启生效 1:需要重启后生效；0：无需重启，设置成功即可生效；
+                     * @return NeedRestart 是否需要重启生效 1:需要重启后生效；0：无需重启，设置成功即可生效；
                      */
                     std::string GetNeedRestart() const;
 
                     /**
-                     * 设置是否需要重启
-                     * @param NeedRestart 是否需要重启
+                     * 设置是否需要重启生效 1:需要重启后生效；0：无需重启，设置成功即可生效；
+                     * @param NeedRestart 是否需要重启生效 1:需要重启后生效；0：无需重启，设置成功即可生效；
                      */
                     void SetNeedRestart(const std::string& _needRestart);
 
@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool ParamNameHasBeenSet() const;
 
                     /**
-                     * 获取状态值
-                     * @return Status 状态值
+                     * 获取是否为运行中参数值 1:运行中参数值；0：非运行中参数值；
+                     * @return Status 是否为运行中参数值 1:运行中参数值；0：非运行中参数值；
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置状态值
-                     * @param Status 状态值
+                     * 设置是否为运行中参数值 1:运行中参数值；0：非运行中参数值；
+                     * @param Status 是否为运行中参数值 1:运行中参数值；0：非运行中参数值；
                      */
                     void SetStatus(const uint64_t& _status);
 
@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool TipsHasBeenSet() const;
 
                     /**
-                     * 获取值类型，multi混合类型
-                     * @return ValueType 值类型，multi混合类型
+                     * 获取当前值的类型描述，默认为multi
+                     * @return ValueType 当前值的类型描述，默认为multi
                      */
                     std::string GetValueType() const;
 
                     /**
-                     * 设置值类型，multi混合类型
-                     * @param ValueType 值类型，multi混合类型
+                     * 设置当前值的类型描述，默认为multi
+                     * @param ValueType 当前值的类型描述，默认为multi
                      */
                     void SetValueType(const std::string& _valueType);
 
@@ -211,7 +211,7 @@ namespace TencentCloud
                     bool m_enumValueHasBeenSet;
 
                     /**
-                     * 是否需要重启
+                     * 是否需要重启生效 1:需要重启后生效；0：无需重启，设置成功即可生效；
                      */
                     std::string m_needRestart;
                     bool m_needRestartHasBeenSet;
@@ -223,7 +223,7 @@ namespace TencentCloud
                     bool m_paramNameHasBeenSet;
 
                     /**
-                     * 状态值
+                     * 是否为运行中参数值 1:运行中参数值；0：非运行中参数值；
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
@@ -235,7 +235,7 @@ namespace TencentCloud
                     bool m_tipsHasBeenSet;
 
                     /**
-                     * 值类型，multi混合类型
+                     * 当前值的类型描述，默认为multi
                      */
                     std::string m_valueType;
                     bool m_valueTypeHasBeenSet;

@@ -3695,6 +3695,49 @@ CpdpClient::QueryDownloadBillURLOutcomeCallable CpdpClient::QueryDownloadBillURL
     return task->get_future();
 }
 
+CpdpClient::QueryExceedingInfoOutcome CpdpClient::QueryExceedingInfo(const QueryExceedingInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryExceedingInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryExceedingInfoResponse rsp = QueryExceedingInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryExceedingInfoOutcome(rsp);
+        else
+            return QueryExceedingInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryExceedingInfoOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryExceedingInfoAsync(const QueryExceedingInfoRequest& request, const QueryExceedingInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryExceedingInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryExceedingInfoOutcomeCallable CpdpClient::QueryExceedingInfoCallable(const QueryExceedingInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryExceedingInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryExceedingInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::QueryExchangeRateOutcome CpdpClient::QueryExchangeRate(const QueryExchangeRateRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryExchangeRate");

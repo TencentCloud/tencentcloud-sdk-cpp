@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取topic名称
-                     * @return TopicName topic名称
+                     * 获取topic名称，TopicName、TopicNameList 需要显示指定一个存在的topic名称
+                     * @return TopicName topic名称，TopicName、TopicNameList 需要显示指定一个存在的topic名称
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置topic名称
-                     * @param TopicName topic名称
+                     * 设置topic名称，TopicName、TopicNameList 需要显示指定一个存在的topic名称
+                     * @param TopicName topic名称，TopicName、TopicNameList 需要显示指定一个存在的topic名称
                      */
                     void SetTopicName(const std::string& _topicName);
 
@@ -129,7 +129,7 @@ namespace TencentCloud
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * topic名称
+                     * topic名称，TopicName、TopicNameList 需要显示指定一个存在的topic名称
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;

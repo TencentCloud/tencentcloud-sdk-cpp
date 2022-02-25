@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * IP地址模版
+                * IP地址模板
                 */
                 class AddressTemplateSpecification : public AbstractModel
                 {

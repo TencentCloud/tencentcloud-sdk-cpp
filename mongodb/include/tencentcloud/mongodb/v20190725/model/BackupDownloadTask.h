@@ -190,6 +190,46 @@ namespace TencentCloud
                      */
                     bool UrlHasBeenSet() const;
 
+                    /**
+                     * 获取备份文件备份类型，0-逻辑备份，1-物理备份
+                     * @return BackupMethod 备份文件备份类型，0-逻辑备份，1-物理备份
+                     */
+                    int64_t GetBackupMethod() const;
+
+                    /**
+                     * 设置备份文件备份类型，0-逻辑备份，1-物理备份
+                     * @param BackupMethod 备份文件备份类型，0-逻辑备份，1-物理备份
+                     */
+                    void SetBackupMethod(const int64_t& _backupMethod);
+
+                    /**
+                     * 判断参数 BackupMethod 是否已赋值
+                     * @return BackupMethod 是否已赋值
+                     */
+                    bool BackupMethodHasBeenSet() const;
+
+                    /**
+                     * 获取发起备份时指定的备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BackupDesc 发起备份时指定的备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBackupDesc() const;
+
+                    /**
+                     * 设置发起备份时指定的备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BackupDesc 发起备份时指定的备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBackupDesc(const std::string& _backupDesc);
+
+                    /**
+                     * 判断参数 BackupDesc 是否已赋值
+                     * @return BackupDesc 是否已赋值
+                     */
+                    bool BackupDescHasBeenSet() const;
+
                 private:
 
                     /**
@@ -239,6 +279,19 @@ namespace TencentCloud
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
+
+                    /**
+                     * 备份文件备份类型，0-逻辑备份，1-物理备份
+                     */
+                    int64_t m_backupMethod;
+                    bool m_backupMethodHasBeenSet;
+
+                    /**
+                     * 发起备份时指定的备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_backupDesc;
+                    bool m_backupDescHasBeenSet;
 
                 };
             }

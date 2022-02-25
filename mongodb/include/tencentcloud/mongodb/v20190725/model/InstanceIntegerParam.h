@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool MinHasBeenSet() const;
 
                     /**
-                     * 获取是否徐亚哦重启后生效 1:需要重启；0:无需重启
-                     * @return NeedRestart 是否徐亚哦重启后生效 1:需要重启；0:无需重启
+                     * 获取是否需要重启生效 1:需要重启后生效；0：无需重启，设置成功即可生效；
+                     * @return NeedRestart 是否需要重启生效 1:需要重启后生效；0：无需重启，设置成功即可生效；
                      */
                     std::string GetNeedRestart() const;
 
                     /**
-                     * 设置是否徐亚哦重启后生效 1:需要重启；0:无需重启
-                     * @param NeedRestart 是否徐亚哦重启后生效 1:需要重启；0:无需重启
+                     * 设置是否需要重启生效 1:需要重启后生效；0：无需重启，设置成功即可生效；
+                     * @param NeedRestart 是否需要重启生效 1:需要重启后生效；0：无需重启，设置成功即可生效；
                      */
                     void SetNeedRestart(const std::string& _needRestart);
 
@@ -191,14 +191,14 @@ namespace TencentCloud
                     bool ValueTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否正常获取到，1：未正常获取；0：正常获取，仅对前端有实际意义；
-                     * @return Status 是否正常获取到，1：未正常获取；0：正常获取，仅对前端有实际意义；
+                     * 获取是否为运行中参数值 1:运行中参数值；0：非运行中参数值；
+                     * @return Status 是否为运行中参数值 1:运行中参数值；0：非运行中参数值；
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置是否正常获取到，1：未正常获取；0：正常获取，仅对前端有实际意义；
-                     * @param Status 是否正常获取到，1：未正常获取；0：正常获取，仅对前端有实际意义；
+                     * 设置是否为运行中参数值 1:运行中参数值；0：非运行中参数值；
+                     * @param Status 是否为运行中参数值 1:运行中参数值；0：非运行中参数值；
                      */
                     void SetStatus(const uint64_t& _status);
 
@@ -209,14 +209,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取暂时未用到，前端使用redis侧代码，为了兼容，保留该参数
-                     * @return Unit 暂时未用到，前端使用redis侧代码，为了兼容，保留该参数
+                     * 获取冗余字段，可忽略
+                     * @return Unit 冗余字段，可忽略
                      */
                     std::string GetUnit() const;
 
                     /**
-                     * 设置暂时未用到，前端使用redis侧代码，为了兼容，保留该参数
-                     * @param Unit 暂时未用到，前端使用redis侧代码，为了兼容，保留该参数
+                     * 设置冗余字段，可忽略
+                     * @param Unit 冗余字段，可忽略
                      */
                     void SetUnit(const std::string& _unit);
 
@@ -253,7 +253,7 @@ namespace TencentCloud
                     bool m_minHasBeenSet;
 
                     /**
-                     * 是否徐亚哦重启后生效 1:需要重启；0:无需重启
+                     * 是否需要重启生效 1:需要重启后生效；0：无需重启，设置成功即可生效；
                      */
                     std::string m_needRestart;
                     bool m_needRestartHasBeenSet;
@@ -277,13 +277,13 @@ namespace TencentCloud
                     bool m_valueTypeHasBeenSet;
 
                     /**
-                     * 是否正常获取到，1：未正常获取；0：正常获取，仅对前端有实际意义；
+                     * 是否为运行中参数值 1:运行中参数值；0：非运行中参数值；
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 暂时未用到，前端使用redis侧代码，为了兼容，保留该参数
+                     * 冗余字段，可忽略
                      */
                     std::string m_unit;
                     bool m_unitHasBeenSet;

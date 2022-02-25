@@ -28,7 +28,9 @@ BackupDownloadTask::BackupDownloadTask() :
     m_statusHasBeenSet(false),
     m_percentHasBeenSet(false),
     m_timeSpendHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_backupMethodHasBeenSet(false),
+    m_backupDescHasBeenSet(false)
 {
 }
 
@@ -117,6 +119,26 @@ CoreInternalOutcome BackupDownloadTask::Deserialize(const rapidjson::Value &valu
         m_urlHasBeenSet = true;
     }
 
+    if (value.HasMember("BackupMethod") && !value["BackupMethod"].IsNull())
+    {
+        if (!value["BackupMethod"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupDownloadTask.BackupMethod` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupMethod = value["BackupMethod"].GetInt64();
+        m_backupMethodHasBeenSet = true;
+    }
+
+    if (value.HasMember("BackupDesc") && !value["BackupDesc"].IsNull())
+    {
+        if (!value["BackupDesc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupDownloadTask.BackupDesc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupDesc = string(value["BackupDesc"].GetString());
+        m_backupDescHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +208,22 @@ void BackupDownloadTask::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupMethod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backupMethod, allocator);
+    }
+
+    if (m_backupDescHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupDesc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_backupDesc.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +355,37 @@ void BackupDownloadTask::SetUrl(const string& _url)
 bool BackupDownloadTask::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+int64_t BackupDownloadTask::GetBackupMethod() const
+{
+    return m_backupMethod;
+}
+
+void BackupDownloadTask::SetBackupMethod(const int64_t& _backupMethod)
+{
+    m_backupMethod = _backupMethod;
+    m_backupMethodHasBeenSet = true;
+}
+
+bool BackupDownloadTask::BackupMethodHasBeenSet() const
+{
+    return m_backupMethodHasBeenSet;
+}
+
+string BackupDownloadTask::GetBackupDesc() const
+{
+    return m_backupDesc;
+}
+
+void BackupDownloadTask::SetBackupDesc(const string& _backupDesc)
+{
+    m_backupDesc = _backupDesc;
+    m_backupDescHasBeenSet = true;
+}
+
+bool BackupDownloadTask::BackupDescHasBeenSet() const
+{
+    return m_backupDescHasBeenSet;
 }
 

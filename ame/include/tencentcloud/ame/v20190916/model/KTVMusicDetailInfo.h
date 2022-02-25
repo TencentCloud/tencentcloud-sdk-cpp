@@ -157,6 +157,24 @@ namespace TencentCloud
                      */
                     bool ChorusClipSetHasBeenSet() const;
 
+                    /**
+                     * 获取前奏间隔，单位：毫秒；注：若参数返回为0则无人声部分
+                     * @return PreludeInterval 前奏间隔，单位：毫秒；注：若参数返回为0则无人声部分
+                     */
+                    int64_t GetPreludeInterval() const;
+
+                    /**
+                     * 设置前奏间隔，单位：毫秒；注：若参数返回为0则无人声部分
+                     * @param PreludeInterval 前奏间隔，单位：毫秒；注：若参数返回为0则无人声部分
+                     */
+                    void SetPreludeInterval(const int64_t& _preludeInterval);
+
+                    /**
+                     * 判断参数 PreludeInterval 是否已赋值
+                     * @return PreludeInterval 是否已赋值
+                     */
+                    bool PreludeIntervalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -194,6 +212,12 @@ namespace TencentCloud
                      */
                     std::vector<ChorusClip> m_chorusClipSet;
                     bool m_chorusClipSetHasBeenSet;
+
+                    /**
+                     * 前奏间隔，单位：毫秒；注：若参数返回为0则无人声部分
+                     */
+                    int64_t m_preludeInterval;
+                    bool m_preludeIntervalHasBeenSet;
 
                 };
             }
