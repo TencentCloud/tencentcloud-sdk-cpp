@@ -23,6 +23,7 @@ using namespace std;
 SetPlaylistCommandInput::SetPlaylistCommandInput() :
     m_typeHasBeenSet(false),
     m_indexHasBeenSet(false),
+    m_changedIndexHasBeenSet(false),
     m_musicIdsHasBeenSet(false)
 {
 }
@@ -50,6 +51,16 @@ CoreInternalOutcome SetPlaylistCommandInput::Deserialize(const rapidjson::Value 
         }
         m_index = value["Index"].GetInt64();
         m_indexHasBeenSet = true;
+    }
+
+    if (value.HasMember("ChangedIndex") && !value["ChangedIndex"].IsNull())
+    {
+        if (!value["ChangedIndex"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SetPlaylistCommandInput.ChangedIndex` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_changedIndex = value["ChangedIndex"].GetInt64();
+        m_changedIndexHasBeenSet = true;
     }
 
     if (value.HasMember("MusicIds") && !value["MusicIds"].IsNull())
@@ -86,6 +97,14 @@ void SetPlaylistCommandInput::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "Index";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_index, allocator);
+    }
+
+    if (m_changedIndexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChangedIndex";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_changedIndex, allocator);
     }
 
     if (m_musicIdsHasBeenSet)
@@ -134,6 +153,22 @@ void SetPlaylistCommandInput::SetIndex(const int64_t& _index)
 bool SetPlaylistCommandInput::IndexHasBeenSet() const
 {
     return m_indexHasBeenSet;
+}
+
+int64_t SetPlaylistCommandInput::GetChangedIndex() const
+{
+    return m_changedIndex;
+}
+
+void SetPlaylistCommandInput::SetChangedIndex(const int64_t& _changedIndex)
+{
+    m_changedIndex = _changedIndex;
+    m_changedIndexHasBeenSet = true;
+}
+
+bool SetPlaylistCommandInput::ChangedIndexHasBeenSet() const
+{
+    return m_changedIndexHasBeenSet;
 }
 
 vector<string> SetPlaylistCommandInput::GetMusicIds() const

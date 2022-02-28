@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool LoadBalancerIDHasBeenSet() const;
 
                     /**
-                     * 获取Clb所在地域，例如：ap-hongkong。
-                     * @return LoadBalancerRegion Clb所在地域，例如：ap-hongkong。
+                     * 获取CLB所在地域，例如：ap-hongkong。
+                     * @return LoadBalancerRegion CLB所在地域，例如：ap-hongkong。
                      */
                     std::string GetLoadBalancerRegion() const;
 
                     /**
-                     * 设置Clb所在地域，例如：ap-hongkong。
-                     * @param LoadBalancerRegion Clb所在地域，例如：ap-hongkong。
+                     * 设置CLB所在地域，例如：ap-hongkong。
+                     * @param LoadBalancerRegion CLB所在地域，例如：ap-hongkong。
                      */
                     void SetLoadBalancerRegion(const std::string& _loadBalancerRegion);
 
@@ -113,6 +113,24 @@ namespace TencentCloud
                      * @return LoadBalancerRegion 是否已赋值
                      */
                     bool LoadBalancerRegionHasBeenSet() const;
+
+                    /**
+                     * 获取CLB内网IP
+                     * @return Vip CLB内网IP
+                     */
+                    std::string GetVip() const;
+
+                    /**
+                     * 设置CLB内网IP
+                     * @param Vip CLB内网IP
+                     */
+                    void SetVip(const std::string& _vip);
+
+                    /**
+                     * 判断参数 Vip 是否已赋值
+                     * @return Vip 是否已赋值
+                     */
+                    bool VipHasBeenSet() const;
 
                 private:
 
@@ -135,10 +153,16 @@ namespace TencentCloud
                     bool m_loadBalancerIDHasBeenSet;
 
                     /**
-                     * Clb所在地域，例如：ap-hongkong。
+                     * CLB所在地域，例如：ap-hongkong。
                      */
                     std::string m_loadBalancerRegion;
                     bool m_loadBalancerRegionHasBeenSet;
+
+                    /**
+                     * CLB内网IP
+                     */
+                    std::string m_vip;
+                    bool m_vipHasBeenSet;
 
                 };
             }

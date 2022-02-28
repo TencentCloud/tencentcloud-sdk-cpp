@@ -25,8 +25,12 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/cloudaudit/v20190319/model/CreateAuditRequest.h>
 #include <tencentcloud/cloudaudit/v20190319/model/CreateAuditResponse.h>
+#include <tencentcloud/cloudaudit/v20190319/model/CreateAuditTrackRequest.h>
+#include <tencentcloud/cloudaudit/v20190319/model/CreateAuditTrackResponse.h>
 #include <tencentcloud/cloudaudit/v20190319/model/DeleteAuditRequest.h>
 #include <tencentcloud/cloudaudit/v20190319/model/DeleteAuditResponse.h>
+#include <tencentcloud/cloudaudit/v20190319/model/DeleteAuditTrackRequest.h>
+#include <tencentcloud/cloudaudit/v20190319/model/DeleteAuditTrackResponse.h>
 #include <tencentcloud/cloudaudit/v20190319/model/DescribeAuditRequest.h>
 #include <tencentcloud/cloudaudit/v20190319/model/DescribeAuditResponse.h>
 #include <tencentcloud/cloudaudit/v20190319/model/DescribeAuditTracksRequest.h>
@@ -47,6 +51,8 @@
 #include <tencentcloud/cloudaudit/v20190319/model/ListKeyAliasByRegionResponse.h>
 #include <tencentcloud/cloudaudit/v20190319/model/LookUpEventsRequest.h>
 #include <tencentcloud/cloudaudit/v20190319/model/LookUpEventsResponse.h>
+#include <tencentcloud/cloudaudit/v20190319/model/ModifyAuditTrackRequest.h>
+#include <tencentcloud/cloudaudit/v20190319/model/ModifyAuditTrackResponse.h>
 #include <tencentcloud/cloudaudit/v20190319/model/StartLoggingRequest.h>
 #include <tencentcloud/cloudaudit/v20190319/model/StartLoggingResponse.h>
 #include <tencentcloud/cloudaudit/v20190319/model/StopLoggingRequest.h>
@@ -70,9 +76,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAuditResponse> CreateAuditOutcome;
                 typedef std::future<CreateAuditOutcome> CreateAuditOutcomeCallable;
                 typedef std::function<void(const CloudauditClient*, const Model::CreateAuditRequest&, CreateAuditOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuditAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAuditTrackResponse> CreateAuditTrackOutcome;
+                typedef std::future<CreateAuditTrackOutcome> CreateAuditTrackOutcomeCallable;
+                typedef std::function<void(const CloudauditClient*, const Model::CreateAuditTrackRequest&, CreateAuditTrackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuditTrackAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAuditResponse> DeleteAuditOutcome;
                 typedef std::future<DeleteAuditOutcome> DeleteAuditOutcomeCallable;
                 typedef std::function<void(const CloudauditClient*, const Model::DeleteAuditRequest&, DeleteAuditOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAuditAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAuditTrackResponse> DeleteAuditTrackOutcome;
+                typedef std::future<DeleteAuditTrackOutcome> DeleteAuditTrackOutcomeCallable;
+                typedef std::function<void(const CloudauditClient*, const Model::DeleteAuditTrackRequest&, DeleteAuditTrackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAuditTrackAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAuditResponse> DescribeAuditOutcome;
                 typedef std::future<DescribeAuditOutcome> DescribeAuditOutcomeCallable;
                 typedef std::function<void(const CloudauditClient*, const Model::DescribeAuditRequest&, DescribeAuditOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditAsyncHandler;
@@ -103,6 +115,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::LookUpEventsResponse> LookUpEventsOutcome;
                 typedef std::future<LookUpEventsOutcome> LookUpEventsOutcomeCallable;
                 typedef std::function<void(const CloudauditClient*, const Model::LookUpEventsRequest&, LookUpEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LookUpEventsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAuditTrackResponse> ModifyAuditTrackOutcome;
+                typedef std::future<ModifyAuditTrackOutcome> ModifyAuditTrackOutcomeCallable;
+                typedef std::function<void(const CloudauditClient*, const Model::ModifyAuditTrackRequest&, ModifyAuditTrackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAuditTrackAsyncHandler;
                 typedef Outcome<Core::Error, Model::StartLoggingResponse> StartLoggingOutcome;
                 typedef std::future<StartLoggingOutcome> StartLoggingOutcomeCallable;
                 typedef std::function<void(const CloudauditClient*, const Model::StartLoggingRequest&, StartLoggingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartLoggingAsyncHandler;
@@ -129,6 +144,15 @@ namespace TencentCloud
                 CreateAuditOutcomeCallable CreateAuditCallable(const Model::CreateAuditRequest& request);
 
                 /**
+                 *创建跟踪集
+                 * @param req CreateAuditTrackRequest
+                 * @return CreateAuditTrackOutcome
+                 */
+                CreateAuditTrackOutcome CreateAuditTrack(const Model::CreateAuditTrackRequest &request);
+                void CreateAuditTrackAsync(const Model::CreateAuditTrackRequest& request, const CreateAuditTrackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAuditTrackOutcomeCallable CreateAuditTrackCallable(const Model::CreateAuditTrackRequest& request);
+
+                /**
                  *删除跟踪集
                  * @param req DeleteAuditRequest
                  * @return DeleteAuditOutcome
@@ -136,6 +160,15 @@ namespace TencentCloud
                 DeleteAuditOutcome DeleteAudit(const Model::DeleteAuditRequest &request);
                 void DeleteAuditAsync(const Model::DeleteAuditRequest& request, const DeleteAuditAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAuditOutcomeCallable DeleteAuditCallable(const Model::DeleteAuditRequest& request);
+
+                /**
+                 *删除云审计跟踪集
+                 * @param req DeleteAuditTrackRequest
+                 * @return DeleteAuditTrackOutcome
+                 */
+                DeleteAuditTrackOutcome DeleteAuditTrack(const Model::DeleteAuditTrackRequest &request);
+                void DeleteAuditTrackAsync(const Model::DeleteAuditTrackRequest& request, const DeleteAuditTrackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAuditTrackOutcomeCallable DeleteAuditTrackCallable(const Model::DeleteAuditTrackRequest& request);
 
                 /**
                  *查询跟踪集详情
@@ -226,6 +259,15 @@ namespace TencentCloud
                 LookUpEventsOutcome LookUpEvents(const Model::LookUpEventsRequest &request);
                 void LookUpEventsAsync(const Model::LookUpEventsRequest& request, const LookUpEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 LookUpEventsOutcomeCallable LookUpEventsCallable(const Model::LookUpEventsRequest& request);
+
+                /**
+                 *修改云审计跟踪
+                 * @param req ModifyAuditTrackRequest
+                 * @return ModifyAuditTrackOutcome
+                 */
+                ModifyAuditTrackOutcome ModifyAuditTrack(const Model::ModifyAuditTrackRequest &request);
+                void ModifyAuditTrackAsync(const Model::ModifyAuditTrackRequest& request, const ModifyAuditTrackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAuditTrackOutcomeCallable ModifyAuditTrackCallable(const Model::ModifyAuditTrackRequest& request);
 
                 /**
                  *开启跟踪集
