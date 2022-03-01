@@ -27,8 +27,8 @@ SearchLogResponse::SearchLogResponse() :
     m_contextHasBeenSet(false),
     m_listOverHasBeenSet(false),
     m_analysisHasBeenSet(false),
-    m_colNamesHasBeenSet(false),
     m_resultsHasBeenSet(false),
+    m_colNamesHasBeenSet(false),
     m_analysisResultsHasBeenSet(false),
     m_analysisRecordsHasBeenSet(false),
     m_columnsHasBeenSet(false)
@@ -99,19 +99,6 @@ CoreInternalOutcome SearchLogResponse::Deserialize(const string &payload)
         m_analysisHasBeenSet = true;
     }
 
-    if (rsp.HasMember("ColNames") && !rsp["ColNames"].IsNull())
-    {
-        if (!rsp["ColNames"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `ColNames` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["ColNames"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            m_colNames.push_back((*itr).GetString());
-        }
-        m_colNamesHasBeenSet = true;
-    }
-
     if (rsp.HasMember("Results") && !rsp["Results"].IsNull())
     {
         if (!rsp["Results"].IsArray())
@@ -130,6 +117,19 @@ CoreInternalOutcome SearchLogResponse::Deserialize(const string &payload)
             m_results.push_back(item);
         }
         m_resultsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ColNames") && !rsp["ColNames"].IsNull())
+    {
+        if (!rsp["ColNames"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ColNames` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ColNames"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_colNames.push_back((*itr).GetString());
+        }
+        m_colNamesHasBeenSet = true;
     }
 
     if (rsp.HasMember("AnalysisResults") && !rsp["AnalysisResults"].IsNull())
@@ -219,19 +219,6 @@ string SearchLogResponse::ToJsonString() const
         value.AddMember(iKey, m_analysis, allocator);
     }
 
-    if (m_colNamesHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ColNames";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_colNames.begin(); itr != m_colNames.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
-
     if (m_resultsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -244,6 +231,19 @@ string SearchLogResponse::ToJsonString() const
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_colNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ColNames";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_colNames.begin(); itr != m_colNames.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -332,16 +332,6 @@ bool SearchLogResponse::AnalysisHasBeenSet() const
     return m_analysisHasBeenSet;
 }
 
-vector<string> SearchLogResponse::GetColNames() const
-{
-    return m_colNames;
-}
-
-bool SearchLogResponse::ColNamesHasBeenSet() const
-{
-    return m_colNamesHasBeenSet;
-}
-
 vector<LogInfo> SearchLogResponse::GetResults() const
 {
     return m_results;
@@ -350,6 +340,16 @@ vector<LogInfo> SearchLogResponse::GetResults() const
 bool SearchLogResponse::ResultsHasBeenSet() const
 {
     return m_resultsHasBeenSet;
+}
+
+vector<string> SearchLogResponse::GetColNames() const
+{
+    return m_colNames;
+}
+
+bool SearchLogResponse::ColNamesHasBeenSet() const
+{
+    return m_colNamesHasBeenSet;
 }
 
 vector<LogItems> SearchLogResponse::GetAnalysisResults() const

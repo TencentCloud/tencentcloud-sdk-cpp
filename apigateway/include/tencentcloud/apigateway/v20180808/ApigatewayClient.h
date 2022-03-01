@@ -51,6 +51,8 @@
 #include <tencentcloud/apigateway/v20180808/model/CreatePluginResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/CreateServiceRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/CreateServiceResponse.h>
+#include <tencentcloud/apigateway/v20180808/model/CreateUpstreamRequest.h>
+#include <tencentcloud/apigateway/v20180808/model/CreateUpstreamResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/CreateUsagePlanRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/CreateUsagePlanResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DeleteAPIDocRequest.h>
@@ -69,6 +71,8 @@
 #include <tencentcloud/apigateway/v20180808/model/DeleteServiceResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DeleteServiceSubDomainMappingRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/DeleteServiceSubDomainMappingResponse.h>
+#include <tencentcloud/apigateway/v20180808/model/DeleteUpstreamRequest.h>
+#include <tencentcloud/apigateway/v20180808/model/DeleteUpstreamResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DeleteUsagePlanRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/DeleteUsagePlanResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DemoteServiceUsagePlanRequest.h>
@@ -139,6 +143,10 @@
 #include <tencentcloud/apigateway/v20180808/model/DescribeServiceUsagePlanResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeServicesStatusRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeServicesStatusResponse.h>
+#include <tencentcloud/apigateway/v20180808/model/DescribeUpstreamBindApisRequest.h>
+#include <tencentcloud/apigateway/v20180808/model/DescribeUpstreamBindApisResponse.h>
+#include <tencentcloud/apigateway/v20180808/model/DescribeUpstreamsRequest.h>
+#include <tencentcloud/apigateway/v20180808/model/DescribeUpstreamsResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeUsagePlanRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeUsagePlanResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeUsagePlanEnvironmentsRequest.h>
@@ -177,6 +185,8 @@
 #include <tencentcloud/apigateway/v20180808/model/ModifyServiceEnvironmentStrategyResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/ModifySubDomainRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/ModifySubDomainResponse.h>
+#include <tencentcloud/apigateway/v20180808/model/ModifyUpstreamRequest.h>
+#include <tencentcloud/apigateway/v20180808/model/ModifyUpstreamResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/ModifyUsagePlanRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/ModifyUsagePlanResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/ReleaseServiceRequest.h>
@@ -257,6 +267,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateServiceResponse> CreateServiceOutcome;
                 typedef std::future<CreateServiceOutcome> CreateServiceOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::CreateServiceRequest&, CreateServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateUpstreamResponse> CreateUpstreamOutcome;
+                typedef std::future<CreateUpstreamOutcome> CreateUpstreamOutcomeCallable;
+                typedef std::function<void(const ApigatewayClient*, const Model::CreateUpstreamRequest&, CreateUpstreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUpstreamAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateUsagePlanResponse> CreateUsagePlanOutcome;
                 typedef std::future<CreateUsagePlanOutcome> CreateUsagePlanOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::CreateUsagePlanRequest&, CreateUsagePlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUsagePlanAsyncHandler;
@@ -284,6 +297,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteServiceSubDomainMappingResponse> DeleteServiceSubDomainMappingOutcome;
                 typedef std::future<DeleteServiceSubDomainMappingOutcome> DeleteServiceSubDomainMappingOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::DeleteServiceSubDomainMappingRequest&, DeleteServiceSubDomainMappingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteServiceSubDomainMappingAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteUpstreamResponse> DeleteUpstreamOutcome;
+                typedef std::future<DeleteUpstreamOutcome> DeleteUpstreamOutcomeCallable;
+                typedef std::function<void(const ApigatewayClient*, const Model::DeleteUpstreamRequest&, DeleteUpstreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUpstreamAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteUsagePlanResponse> DeleteUsagePlanOutcome;
                 typedef std::future<DeleteUsagePlanOutcome> DeleteUsagePlanOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::DeleteUsagePlanRequest&, DeleteUsagePlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUsagePlanAsyncHandler;
@@ -389,6 +405,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeServicesStatusResponse> DescribeServicesStatusOutcome;
                 typedef std::future<DescribeServicesStatusOutcome> DescribeServicesStatusOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::DescribeServicesStatusRequest&, DescribeServicesStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServicesStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUpstreamBindApisResponse> DescribeUpstreamBindApisOutcome;
+                typedef std::future<DescribeUpstreamBindApisOutcome> DescribeUpstreamBindApisOutcomeCallable;
+                typedef std::function<void(const ApigatewayClient*, const Model::DescribeUpstreamBindApisRequest&, DescribeUpstreamBindApisOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUpstreamBindApisAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUpstreamsResponse> DescribeUpstreamsOutcome;
+                typedef std::future<DescribeUpstreamsOutcome> DescribeUpstreamsOutcomeCallable;
+                typedef std::function<void(const ApigatewayClient*, const Model::DescribeUpstreamsRequest&, DescribeUpstreamsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUpstreamsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUsagePlanResponse> DescribeUsagePlanOutcome;
                 typedef std::future<DescribeUsagePlanOutcome> DescribeUsagePlanOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::DescribeUsagePlanRequest&, DescribeUsagePlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUsagePlanAsyncHandler;
@@ -446,6 +468,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifySubDomainResponse> ModifySubDomainOutcome;
                 typedef std::future<ModifySubDomainOutcome> ModifySubDomainOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::ModifySubDomainRequest&, ModifySubDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySubDomainAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyUpstreamResponse> ModifyUpstreamOutcome;
+                typedef std::future<ModifyUpstreamOutcome> ModifyUpstreamOutcomeCallable;
+                typedef std::function<void(const ApigatewayClient*, const Model::ModifyUpstreamRequest&, ModifyUpstreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUpstreamAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyUsagePlanResponse> ModifyUsagePlanOutcome;
                 typedef std::future<ModifyUsagePlanOutcome> ModifyUsagePlanOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::ModifyUsagePlanRequest&, ModifyUsagePlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUsagePlanAsyncHandler;
@@ -617,6 +642,15 @@ API 网关使用的最大单元为服务，每个服务中可创建多个 API �
                 CreateServiceOutcomeCallable CreateServiceCallable(const Model::CreateServiceRequest& request);
 
                 /**
+                 *用于创建创建VPC通道
+                 * @param req CreateUpstreamRequest
+                 * @return CreateUpstreamOutcome
+                 */
+                CreateUpstreamOutcome CreateUpstream(const Model::CreateUpstreamRequest &request);
+                void CreateUpstreamAsync(const Model::CreateUpstreamRequest& request, const CreateUpstreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateUpstreamOutcomeCallable CreateUpstreamCallable(const Model::CreateUpstreamRequest& request);
+
+                /**
                  *本接口（CreateUsagePlan）用于创建使用计划。
 用户在使用 API 网关时，需要创建使用计划并将其绑定到服务的环境中使用。
                  * @param req CreateUsagePlanRequest
@@ -698,6 +732,15 @@ API 网关使用的最大单元为服务，每个服务中可创建多个 API �
                 DeleteServiceSubDomainMappingOutcome DeleteServiceSubDomainMapping(const Model::DeleteServiceSubDomainMappingRequest &request);
                 void DeleteServiceSubDomainMappingAsync(const Model::DeleteServiceSubDomainMappingRequest& request, const DeleteServiceSubDomainMappingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteServiceSubDomainMappingOutcomeCallable DeleteServiceSubDomainMappingCallable(const Model::DeleteServiceSubDomainMappingRequest& request);
+
+                /**
+                 *删除VPC通道，需要注意有api绑定时，不允许删除
+                 * @param req DeleteUpstreamRequest
+                 * @return DeleteUpstreamOutcome
+                 */
+                DeleteUpstreamOutcome DeleteUpstream(const Model::DeleteUpstreamRequest &request);
+                void DeleteUpstreamAsync(const Model::DeleteUpstreamRequest& request, const DeleteUpstreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteUpstreamOutcomeCallable DeleteUpstreamCallable(const Model::DeleteUpstreamRequest& request);
 
                 /**
                  *本接口（DeleteUsagePlan）用于删除使用计划。
@@ -1025,6 +1068,24 @@ API 网关可绑定自定义域名到服务，用于服务调用。此接口用�
                 DescribeServicesStatusOutcomeCallable DescribeServicesStatusCallable(const Model::DescribeServicesStatusRequest& request);
 
                 /**
+                 *查询VPC通道绑定的api列表
+                 * @param req DescribeUpstreamBindApisRequest
+                 * @return DescribeUpstreamBindApisOutcome
+                 */
+                DescribeUpstreamBindApisOutcome DescribeUpstreamBindApis(const Model::DescribeUpstreamBindApisRequest &request);
+                void DescribeUpstreamBindApisAsync(const Model::DescribeUpstreamBindApisRequest& request, const DescribeUpstreamBindApisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUpstreamBindApisOutcomeCallable DescribeUpstreamBindApisCallable(const Model::DescribeUpstreamBindApisRequest& request);
+
+                /**
+                 *查询VPC通道列表详情
+                 * @param req DescribeUpstreamsRequest
+                 * @return DescribeUpstreamsOutcome
+                 */
+                DescribeUpstreamsOutcome DescribeUpstreams(const Model::DescribeUpstreamsRequest &request);
+                void DescribeUpstreamsAsync(const Model::DescribeUpstreamsRequest& request, const DescribeUpstreamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUpstreamsOutcomeCallable DescribeUpstreamsCallable(const Model::DescribeUpstreamsRequest& request);
+
+                /**
                  *本接口（DescribeUsagePlan）用于查询一个使用计划的详细信息，包括名称、QPS、创建时间绑定的环境等。
                  * @param req DescribeUsagePlanRequest
                  * @return DescribeUsagePlanOutcome
@@ -1196,6 +1257,15 @@ API 网关可绑定自定义域名到服务，用于服务调用。此接口用�
                 ModifySubDomainOutcome ModifySubDomain(const Model::ModifySubDomainRequest &request);
                 void ModifySubDomainAsync(const Model::ModifySubDomainRequest& request, const ModifySubDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifySubDomainOutcomeCallable ModifySubDomainCallable(const Model::ModifySubDomainRequest& request);
+
+                /**
+                 *修改VPC通道
+                 * @param req ModifyUpstreamRequest
+                 * @return ModifyUpstreamOutcome
+                 */
+                ModifyUpstreamOutcome ModifyUpstream(const Model::ModifyUpstreamRequest &request);
+                void ModifyUpstreamAsync(const Model::ModifyUpstreamRequest& request, const ModifyUpstreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyUpstreamOutcomeCallable ModifyUpstreamCallable(const Model::ModifyUpstreamRequest& request);
 
                 /**
                  *本接口（ModifyUsagePlan）用于修改使用计划的名称，描述及 QPS。

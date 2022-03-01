@@ -40,6 +40,49 @@ MariadbClient::MariadbClient(const Credential &credential, const string &region,
 }
 
 
+MariadbClient::ActivateHourDBInstanceOutcome MariadbClient::ActivateHourDBInstance(const ActivateHourDBInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ActivateHourDBInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ActivateHourDBInstanceResponse rsp = ActivateHourDBInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ActivateHourDBInstanceOutcome(rsp);
+        else
+            return ActivateHourDBInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return ActivateHourDBInstanceOutcome(outcome.GetError());
+    }
+}
+
+void MariadbClient::ActivateHourDBInstanceAsync(const ActivateHourDBInstanceRequest& request, const ActivateHourDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ActivateHourDBInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MariadbClient::ActivateHourDBInstanceOutcomeCallable MariadbClient::ActivateHourDBInstanceCallable(const ActivateHourDBInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ActivateHourDBInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->ActivateHourDBInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MariadbClient::AssociateSecurityGroupsOutcome MariadbClient::AssociateSecurityGroups(const AssociateSecurityGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "AssociateSecurityGroups");
@@ -1925,6 +1968,49 @@ MariadbClient::InitDBInstancesOutcomeCallable MariadbClient::InitDBInstancesCall
         [this, request]()
         {
             return this->InitDBInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MariadbClient::IsolateHourDBInstanceOutcome MariadbClient::IsolateHourDBInstance(const IsolateHourDBInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "IsolateHourDBInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        IsolateHourDBInstanceResponse rsp = IsolateHourDBInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return IsolateHourDBInstanceOutcome(rsp);
+        else
+            return IsolateHourDBInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return IsolateHourDBInstanceOutcome(outcome.GetError());
+    }
+}
+
+void MariadbClient::IsolateHourDBInstanceAsync(const IsolateHourDBInstanceRequest& request, const IsolateHourDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->IsolateHourDBInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MariadbClient::IsolateHourDBInstanceOutcomeCallable MariadbClient::IsolateHourDBInstanceCallable(const IsolateHourDBInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<IsolateHourDBInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->IsolateHourDBInstance(request);
         }
     );
 

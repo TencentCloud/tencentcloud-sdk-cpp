@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/mariadb/v20170312/model/ActivateHourDBInstanceRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/ActivateHourDBInstanceResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/AssociateSecurityGroupsRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/AssociateSecurityGroupsResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/CancelDcnJobRequest.h>
@@ -111,6 +113,8 @@
 #include <tencentcloud/mariadb/v20170312/model/GrantAccountPrivilegesResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/InitDBInstancesRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/InitDBInstancesResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/IsolateHourDBInstanceRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/IsolateHourDBInstanceResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/KillSessionRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/KillSessionResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyAccountDescriptionRequest.h>
@@ -161,6 +165,9 @@ namespace TencentCloud
                 MariadbClient(const Credential &credential, const std::string &region);
                 MariadbClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::ActivateHourDBInstanceResponse> ActivateHourDBInstanceOutcome;
+                typedef std::future<ActivateHourDBInstanceOutcome> ActivateHourDBInstanceOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::ActivateHourDBInstanceRequest&, ActivateHourDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ActivateHourDBInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::AssociateSecurityGroupsResponse> AssociateSecurityGroupsOutcome;
                 typedef std::future<AssociateSecurityGroupsOutcome> AssociateSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::AssociateSecurityGroupsRequest&, AssociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateSecurityGroupsAsyncHandler;
@@ -293,6 +300,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InitDBInstancesResponse> InitDBInstancesOutcome;
                 typedef std::future<InitDBInstancesOutcome> InitDBInstancesOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::InitDBInstancesRequest&, InitDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InitDBInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::IsolateHourDBInstanceResponse> IsolateHourDBInstanceOutcome;
+                typedef std::future<IsolateHourDBInstanceOutcome> IsolateHourDBInstanceOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::IsolateHourDBInstanceRequest&, IsolateHourDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IsolateHourDBInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::KillSessionResponse> KillSessionOutcome;
                 typedef std::future<KillSessionOutcome> KillSessionOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::KillSessionRequest&, KillSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> KillSessionAsyncHandler;
@@ -349,6 +359,15 @@ namespace TencentCloud
                 typedef std::function<void(const MariadbClient*, const Model::UpgradeDBInstanceRequest&, UpgradeDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDBInstanceAsyncHandler;
 
 
+
+                /**
+                 *解隔离后付费实例
+                 * @param req ActivateHourDBInstanceRequest
+                 * @return ActivateHourDBInstanceOutcome
+                 */
+                ActivateHourDBInstanceOutcome ActivateHourDBInstance(const Model::ActivateHourDBInstanceRequest &request);
+                void ActivateHourDBInstanceAsync(const Model::ActivateHourDBInstanceRequest& request, const ActivateHourDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ActivateHourDBInstanceOutcomeCallable ActivateHourDBInstanceCallable(const Model::ActivateHourDBInstanceRequest& request);
 
                 /**
                  *本接口 (AssociateSecurityGroups) 用于安全组批量绑定云资源。
@@ -749,6 +768,15 @@ namespace TencentCloud
                 InitDBInstancesOutcome InitDBInstances(const Model::InitDBInstancesRequest &request);
                 void InitDBInstancesAsync(const Model::InitDBInstancesRequest& request, const InitDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InitDBInstancesOutcomeCallable InitDBInstancesCallable(const Model::InitDBInstancesRequest& request);
+
+                /**
+                 *隔离后付费实例
+                 * @param req IsolateHourDBInstanceRequest
+                 * @return IsolateHourDBInstanceOutcome
+                 */
+                IsolateHourDBInstanceOutcome IsolateHourDBInstance(const Model::IsolateHourDBInstanceRequest &request);
+                void IsolateHourDBInstanceAsync(const Model::IsolateHourDBInstanceRequest& request, const IsolateHourDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                IsolateHourDBInstanceOutcomeCallable IsolateHourDBInstanceCallable(const Model::IsolateHourDBInstanceRequest& request);
 
                 /**
                  *本接口（KillSession）用于杀死指定会话。

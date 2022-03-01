@@ -3781,6 +3781,264 @@ TsfClient::DescribeImageTagsOutcomeCallable TsfClient::DescribeImageTagsCallable
     return task->get_future();
 }
 
+TsfClient::DescribeInovcationIndicatorsOutcome TsfClient::DescribeInovcationIndicators(const DescribeInovcationIndicatorsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInovcationIndicators");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInovcationIndicatorsResponse rsp = DescribeInovcationIndicatorsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInovcationIndicatorsOutcome(rsp);
+        else
+            return DescribeInovcationIndicatorsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInovcationIndicatorsOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeInovcationIndicatorsAsync(const DescribeInovcationIndicatorsRequest& request, const DescribeInovcationIndicatorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInovcationIndicators(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeInovcationIndicatorsOutcomeCallable TsfClient::DescribeInovcationIndicatorsCallable(const DescribeInovcationIndicatorsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInovcationIndicatorsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInovcationIndicators(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeInvocationMetricDataCurveOutcome TsfClient::DescribeInvocationMetricDataCurve(const DescribeInvocationMetricDataCurveRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInvocationMetricDataCurve");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInvocationMetricDataCurveResponse rsp = DescribeInvocationMetricDataCurveResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInvocationMetricDataCurveOutcome(rsp);
+        else
+            return DescribeInvocationMetricDataCurveOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInvocationMetricDataCurveOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeInvocationMetricDataCurveAsync(const DescribeInvocationMetricDataCurveRequest& request, const DescribeInvocationMetricDataCurveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInvocationMetricDataCurve(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeInvocationMetricDataCurveOutcomeCallable TsfClient::DescribeInvocationMetricDataCurveCallable(const DescribeInvocationMetricDataCurveRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInvocationMetricDataCurveOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInvocationMetricDataCurve(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeInvocationMetricDataDimensionOutcome TsfClient::DescribeInvocationMetricDataDimension(const DescribeInvocationMetricDataDimensionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInvocationMetricDataDimension");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInvocationMetricDataDimensionResponse rsp = DescribeInvocationMetricDataDimensionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInvocationMetricDataDimensionOutcome(rsp);
+        else
+            return DescribeInvocationMetricDataDimensionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInvocationMetricDataDimensionOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeInvocationMetricDataDimensionAsync(const DescribeInvocationMetricDataDimensionRequest& request, const DescribeInvocationMetricDataDimensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInvocationMetricDataDimension(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeInvocationMetricDataDimensionOutcomeCallable TsfClient::DescribeInvocationMetricDataDimensionCallable(const DescribeInvocationMetricDataDimensionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInvocationMetricDataDimensionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInvocationMetricDataDimension(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeInvocationMetricDataPointOutcome TsfClient::DescribeInvocationMetricDataPoint(const DescribeInvocationMetricDataPointRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInvocationMetricDataPoint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInvocationMetricDataPointResponse rsp = DescribeInvocationMetricDataPointResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInvocationMetricDataPointOutcome(rsp);
+        else
+            return DescribeInvocationMetricDataPointOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInvocationMetricDataPointOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeInvocationMetricDataPointAsync(const DescribeInvocationMetricDataPointRequest& request, const DescribeInvocationMetricDataPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInvocationMetricDataPoint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeInvocationMetricDataPointOutcomeCallable TsfClient::DescribeInvocationMetricDataPointCallable(const DescribeInvocationMetricDataPointRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInvocationMetricDataPointOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInvocationMetricDataPoint(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeInvocationMetricScatterPlotOutcome TsfClient::DescribeInvocationMetricScatterPlot(const DescribeInvocationMetricScatterPlotRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInvocationMetricScatterPlot");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInvocationMetricScatterPlotResponse rsp = DescribeInvocationMetricScatterPlotResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInvocationMetricScatterPlotOutcome(rsp);
+        else
+            return DescribeInvocationMetricScatterPlotOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInvocationMetricScatterPlotOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeInvocationMetricScatterPlotAsync(const DescribeInvocationMetricScatterPlotRequest& request, const DescribeInvocationMetricScatterPlotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInvocationMetricScatterPlot(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeInvocationMetricScatterPlotOutcomeCallable TsfClient::DescribeInvocationMetricScatterPlotCallable(const DescribeInvocationMetricScatterPlotRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInvocationMetricScatterPlotOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInvocationMetricScatterPlot(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeJvmMonitorOutcome TsfClient::DescribeJvmMonitor(const DescribeJvmMonitorRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeJvmMonitor");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeJvmMonitorResponse rsp = DescribeJvmMonitorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeJvmMonitorOutcome(rsp);
+        else
+            return DescribeJvmMonitorOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeJvmMonitorOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeJvmMonitorAsync(const DescribeJvmMonitorRequest& request, const DescribeJvmMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeJvmMonitor(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeJvmMonitorOutcomeCallable TsfClient::DescribeJvmMonitorCallable(const DescribeJvmMonitorRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeJvmMonitorOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeJvmMonitor(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DescribeLaneRulesOutcome TsfClient::DescribeLaneRules(const DescribeLaneRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLaneRules");
@@ -3989,6 +4247,49 @@ TsfClient::DescribeMsApiListOutcomeCallable TsfClient::DescribeMsApiListCallable
         [this, request]()
         {
             return this->DescribeMsApiList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeOverviewInvocationOutcome TsfClient::DescribeOverviewInvocation(const DescribeOverviewInvocationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOverviewInvocation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOverviewInvocationResponse rsp = DescribeOverviewInvocationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOverviewInvocationOutcome(rsp);
+        else
+            return DescribeOverviewInvocationOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOverviewInvocationOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeOverviewInvocationAsync(const DescribeOverviewInvocationRequest& request, const DescribeOverviewInvocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOverviewInvocation(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeOverviewInvocationOutcomeCallable TsfClient::DescribeOverviewInvocationCallable(const DescribeOverviewInvocationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOverviewInvocationOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOverviewInvocation(request);
         }
     );
 
@@ -4806,6 +5107,49 @@ TsfClient::DescribeSimpleNamespacesOutcomeCallable TsfClient::DescribeSimpleName
         [this, request]()
         {
             return this->DescribeSimpleNamespaces(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeStatisticsOutcome TsfClient::DescribeStatistics(const DescribeStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeStatisticsResponse rsp = DescribeStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeStatisticsOutcome(rsp);
+        else
+            return DescribeStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeStatisticsAsync(const DescribeStatisticsRequest& request, const DescribeStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeStatistics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeStatisticsOutcomeCallable TsfClient::DescribeStatisticsCallable(const DescribeStatisticsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeStatisticsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeStatistics(request);
         }
     );
 

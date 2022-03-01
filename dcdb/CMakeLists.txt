@@ -30,6 +30,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DescribeAccountsRequest.h
   include/tencentcloud/dcdb/v20180411/model/SpecConfig.h
   include/tencentcloud/dcdb/v20180411/model/ModifyRealServerAccessStrategyResponse.h
+  include/tencentcloud/dcdb/v20180411/model/ActiveHourDCDBInstanceResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBPriceResponse.h
   include/tencentcloud/dcdb/v20180411/model/AssociateSecurityGroupsRequest.h
   include/tencentcloud/dcdb/v20180411/model/FlushBinlogResponse.h
@@ -42,6 +43,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DescribeDBSlowLogsRequest.h
   include/tencentcloud/dcdb/v20180411/model/CreateAccountRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDBParametersResponse.h
+  include/tencentcloud/dcdb/v20180411/model/IsolateHourDCDBInstanceRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeFlowResponse.h
   include/tencentcloud/dcdb/v20180411/model/CloneAccountResponse.h
   include/tencentcloud/dcdb/v20180411/model/ModifyAccountDescriptionResponse.h
@@ -110,6 +112,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/Database.h
   include/tencentcloud/dcdb/v20180411/model/GrantAccountPrivilegesResponse.h
   include/tencentcloud/dcdb/v20180411/model/CancelDcnJobRequest.h
+  include/tencentcloud/dcdb/v20180411/model/IsolateHourDCDBInstanceResponse.h
   include/tencentcloud/dcdb/v20180411/model/ShardInfo.h
   include/tencentcloud/dcdb/v20180411/model/OpenDBExtranetAccessRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBSaleInfoResponse.h
@@ -145,6 +148,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DestroyHourDCDBInstanceResponse.h
   include/tencentcloud/dcdb/v20180411/model/ConstraintRange.h
   include/tencentcloud/dcdb/v20180411/model/LogFileInfo.h
+  include/tencentcloud/dcdb/v20180411/model/ActiveHourDCDBInstanceRequest.h
   include/tencentcloud/dcdb/v20180411/model/DisassociateSecurityGroupsRequest.h
   include/tencentcloud/dcdb/v20180411/model/DBAccount.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDatabaseTableResponse.h
@@ -176,6 +180,7 @@ set(dcdb_src
   src/v20180411/model/DescribeAccountsRequest.cpp
   src/v20180411/model/SpecConfig.cpp
   src/v20180411/model/ModifyRealServerAccessStrategyResponse.cpp
+  src/v20180411/model/ActiveHourDCDBInstanceResponse.cpp
   src/v20180411/model/DescribeDCDBPriceResponse.cpp
   src/v20180411/model/AssociateSecurityGroupsRequest.cpp
   src/v20180411/model/FlushBinlogResponse.cpp
@@ -188,6 +193,7 @@ set(dcdb_src
   src/v20180411/model/DescribeDBSlowLogsRequest.cpp
   src/v20180411/model/CreateAccountRequest.cpp
   src/v20180411/model/DescribeDBParametersResponse.cpp
+  src/v20180411/model/IsolateHourDCDBInstanceRequest.cpp
   src/v20180411/model/DescribeFlowResponse.cpp
   src/v20180411/model/CloneAccountResponse.cpp
   src/v20180411/model/ModifyAccountDescriptionResponse.cpp
@@ -256,6 +262,7 @@ set(dcdb_src
   src/v20180411/model/Database.cpp
   src/v20180411/model/GrantAccountPrivilegesResponse.cpp
   src/v20180411/model/CancelDcnJobRequest.cpp
+  src/v20180411/model/IsolateHourDCDBInstanceResponse.cpp
   src/v20180411/model/ShardInfo.cpp
   src/v20180411/model/OpenDBExtranetAccessRequest.cpp
   src/v20180411/model/DescribeDCDBSaleInfoResponse.cpp
@@ -291,6 +298,7 @@ set(dcdb_src
   src/v20180411/model/DestroyHourDCDBInstanceResponse.cpp
   src/v20180411/model/ConstraintRange.cpp
   src/v20180411/model/LogFileInfo.cpp
+  src/v20180411/model/ActiveHourDCDBInstanceRequest.cpp
   src/v20180411/model/DisassociateSecurityGroupsRequest.cpp
   src/v20180411/model/DBAccount.cpp
   src/v20180411/model/DescribeDatabaseTableResponse.cpp

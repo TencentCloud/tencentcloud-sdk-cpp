@@ -642,6 +642,49 @@ ApigatewayClient::CreateServiceOutcomeCallable ApigatewayClient::CreateServiceCa
     return task->get_future();
 }
 
+ApigatewayClient::CreateUpstreamOutcome ApigatewayClient::CreateUpstream(const CreateUpstreamRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateUpstream");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateUpstreamResponse rsp = CreateUpstreamResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateUpstreamOutcome(rsp);
+        else
+            return CreateUpstreamOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateUpstreamOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::CreateUpstreamAsync(const CreateUpstreamRequest& request, const CreateUpstreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateUpstream(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::CreateUpstreamOutcomeCallable ApigatewayClient::CreateUpstreamCallable(const CreateUpstreamRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateUpstreamOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateUpstream(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ApigatewayClient::CreateUsagePlanOutcome ApigatewayClient::CreateUsagePlan(const CreateUsagePlanRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateUsagePlan");
@@ -1022,6 +1065,49 @@ ApigatewayClient::DeleteServiceSubDomainMappingOutcomeCallable ApigatewayClient:
         [this, request]()
         {
             return this->DeleteServiceSubDomainMapping(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ApigatewayClient::DeleteUpstreamOutcome ApigatewayClient::DeleteUpstream(const DeleteUpstreamRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteUpstream");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteUpstreamResponse rsp = DeleteUpstreamResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteUpstreamOutcome(rsp);
+        else
+            return DeleteUpstreamOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteUpstreamOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::DeleteUpstreamAsync(const DeleteUpstreamRequest& request, const DeleteUpstreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteUpstream(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::DeleteUpstreamOutcomeCallable ApigatewayClient::DeleteUpstreamCallable(const DeleteUpstreamRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteUpstreamOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteUpstream(request);
         }
     );
 
@@ -2534,6 +2620,92 @@ ApigatewayClient::DescribeServicesStatusOutcomeCallable ApigatewayClient::Descri
     return task->get_future();
 }
 
+ApigatewayClient::DescribeUpstreamBindApisOutcome ApigatewayClient::DescribeUpstreamBindApis(const DescribeUpstreamBindApisRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUpstreamBindApis");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUpstreamBindApisResponse rsp = DescribeUpstreamBindApisResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUpstreamBindApisOutcome(rsp);
+        else
+            return DescribeUpstreamBindApisOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUpstreamBindApisOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::DescribeUpstreamBindApisAsync(const DescribeUpstreamBindApisRequest& request, const DescribeUpstreamBindApisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUpstreamBindApis(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::DescribeUpstreamBindApisOutcomeCallable ApigatewayClient::DescribeUpstreamBindApisCallable(const DescribeUpstreamBindApisRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUpstreamBindApisOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUpstreamBindApis(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ApigatewayClient::DescribeUpstreamsOutcome ApigatewayClient::DescribeUpstreams(const DescribeUpstreamsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUpstreams");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUpstreamsResponse rsp = DescribeUpstreamsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUpstreamsOutcome(rsp);
+        else
+            return DescribeUpstreamsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUpstreamsOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::DescribeUpstreamsAsync(const DescribeUpstreamsRequest& request, const DescribeUpstreamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUpstreams(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::DescribeUpstreamsOutcomeCallable ApigatewayClient::DescribeUpstreamsCallable(const DescribeUpstreamsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUpstreamsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUpstreams(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ApigatewayClient::DescribeUsagePlanOutcome ApigatewayClient::DescribeUsagePlan(const DescribeUsagePlanRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUsagePlan");
@@ -3344,6 +3516,49 @@ ApigatewayClient::ModifySubDomainOutcomeCallable ApigatewayClient::ModifySubDoma
         [this, request]()
         {
             return this->ModifySubDomain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ApigatewayClient::ModifyUpstreamOutcome ApigatewayClient::ModifyUpstream(const ModifyUpstreamRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUpstream");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUpstreamResponse rsp = ModifyUpstreamResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUpstreamOutcome(rsp);
+        else
+            return ModifyUpstreamOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUpstreamOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::ModifyUpstreamAsync(const ModifyUpstreamRequest& request, const ModifyUpstreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyUpstream(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::ModifyUpstreamOutcomeCallable ApigatewayClient::ModifyUpstreamCallable(const ModifyUpstreamRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyUpstreamOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyUpstream(request);
         }
     );
 

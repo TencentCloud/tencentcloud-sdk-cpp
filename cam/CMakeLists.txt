@@ -44,6 +44,8 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/UpdateRoleDescriptionResponse.h
   include/tencentcloud/cam/v20190116/model/GetAccountSummaryRequest.h
   include/tencentcloud/cam/v20190116/model/DetachUserPolicyRequest.h
+  include/tencentcloud/cam/v20190116/model/GetUserAppIdResponse.h
+  include/tencentcloud/cam/v20190116/model/GetUserAppIdRequest.h
   include/tencentcloud/cam/v20190116/model/ListGroupsResponse.h
   include/tencentcloud/cam/v20190116/model/ListPolicyVersionsRequest.h
   include/tencentcloud/cam/v20190116/model/GetCustomMFATokenInfoRequest.h
@@ -218,6 +220,8 @@ set(cam_src
   src/v20190116/model/UpdateRoleDescriptionResponse.cpp
   src/v20190116/model/GetAccountSummaryRequest.cpp
   src/v20190116/model/DetachUserPolicyRequest.cpp
+  src/v20190116/model/GetUserAppIdResponse.cpp
+  src/v20190116/model/GetUserAppIdRequest.cpp
   src/v20190116/model/ListGroupsResponse.cpp
   src/v20190116/model/ListPolicyVersionsRequest.cpp
   src/v20190116/model/GetCustomMFATokenInfoRequest.cpp

@@ -197,6 +197,18 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeImageRepositoryResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeImageTagsRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeImageTagsResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeInovcationIndicatorsRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeInovcationIndicatorsResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeInvocationMetricDataCurveRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeInvocationMetricDataCurveResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeInvocationMetricDataDimensionRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeInvocationMetricDataDimensionResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeInvocationMetricDataPointRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeInvocationMetricDataPointResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeInvocationMetricScatterPlotRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeInvocationMetricScatterPlotResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeJvmMonitorRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeJvmMonitorResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeLaneRulesRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeLaneRulesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeLanesRequest.h>
@@ -207,6 +219,8 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeMicroservicesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeMsApiListRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeMsApiListResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeOverviewInvocationRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeOverviewInvocationResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribePathRewriteRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribePathRewriteResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribePathRewritesRequest.h>
@@ -245,6 +259,8 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeSimpleGroupsResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeSimpleNamespacesRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeSimpleNamespacesResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeStatisticsRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeStatisticsResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeTaskDetailRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeTaskDetailResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeTaskLastStatusRequest.h>
@@ -644,6 +660,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeImageTagsResponse> DescribeImageTagsOutcome;
                 typedef std::future<DescribeImageTagsOutcome> DescribeImageTagsOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeImageTagsRequest&, DescribeImageTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageTagsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInovcationIndicatorsResponse> DescribeInovcationIndicatorsOutcome;
+                typedef std::future<DescribeInovcationIndicatorsOutcome> DescribeInovcationIndicatorsOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeInovcationIndicatorsRequest&, DescribeInovcationIndicatorsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInovcationIndicatorsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInvocationMetricDataCurveResponse> DescribeInvocationMetricDataCurveOutcome;
+                typedef std::future<DescribeInvocationMetricDataCurveOutcome> DescribeInvocationMetricDataCurveOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeInvocationMetricDataCurveRequest&, DescribeInvocationMetricDataCurveOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInvocationMetricDataCurveAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInvocationMetricDataDimensionResponse> DescribeInvocationMetricDataDimensionOutcome;
+                typedef std::future<DescribeInvocationMetricDataDimensionOutcome> DescribeInvocationMetricDataDimensionOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeInvocationMetricDataDimensionRequest&, DescribeInvocationMetricDataDimensionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInvocationMetricDataDimensionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInvocationMetricDataPointResponse> DescribeInvocationMetricDataPointOutcome;
+                typedef std::future<DescribeInvocationMetricDataPointOutcome> DescribeInvocationMetricDataPointOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeInvocationMetricDataPointRequest&, DescribeInvocationMetricDataPointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInvocationMetricDataPointAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInvocationMetricScatterPlotResponse> DescribeInvocationMetricScatterPlotOutcome;
+                typedef std::future<DescribeInvocationMetricScatterPlotOutcome> DescribeInvocationMetricScatterPlotOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeInvocationMetricScatterPlotRequest&, DescribeInvocationMetricScatterPlotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInvocationMetricScatterPlotAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeJvmMonitorResponse> DescribeJvmMonitorOutcome;
+                typedef std::future<DescribeJvmMonitorOutcome> DescribeJvmMonitorOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeJvmMonitorRequest&, DescribeJvmMonitorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJvmMonitorAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLaneRulesResponse> DescribeLaneRulesOutcome;
                 typedef std::future<DescribeLaneRulesOutcome> DescribeLaneRulesOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeLaneRulesRequest&, DescribeLaneRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLaneRulesAsyncHandler;
@@ -659,6 +693,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMsApiListResponse> DescribeMsApiListOutcome;
                 typedef std::future<DescribeMsApiListOutcome> DescribeMsApiListOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeMsApiListRequest&, DescribeMsApiListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMsApiListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOverviewInvocationResponse> DescribeOverviewInvocationOutcome;
+                typedef std::future<DescribeOverviewInvocationOutcome> DescribeOverviewInvocationOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeOverviewInvocationRequest&, DescribeOverviewInvocationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOverviewInvocationAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePathRewriteResponse> DescribePathRewriteOutcome;
                 typedef std::future<DescribePathRewriteOutcome> DescribePathRewriteOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribePathRewriteRequest&, DescribePathRewriteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePathRewriteAsyncHandler;
@@ -716,6 +753,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSimpleNamespacesResponse> DescribeSimpleNamespacesOutcome;
                 typedef std::future<DescribeSimpleNamespacesOutcome> DescribeSimpleNamespacesOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeSimpleNamespacesRequest&, DescribeSimpleNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSimpleNamespacesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStatisticsResponse> DescribeStatisticsOutcome;
+                typedef std::future<DescribeStatisticsOutcome> DescribeStatisticsOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeStatisticsRequest&, DescribeStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStatisticsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTaskDetailResponse> DescribeTaskDetailOutcome;
                 typedef std::future<DescribeTaskDetailOutcome> DescribeTaskDetailOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeTaskDetailRequest&, DescribeTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskDetailAsyncHandler;
@@ -1691,6 +1731,60 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeImageTagsOutcomeCallable DescribeImageTagsCallable(const Model::DescribeImageTagsRequest& request);
 
                 /**
+                 *查询调用监控指标
+                 * @param req DescribeInovcationIndicatorsRequest
+                 * @return DescribeInovcationIndicatorsOutcome
+                 */
+                DescribeInovcationIndicatorsOutcome DescribeInovcationIndicators(const Model::DescribeInovcationIndicatorsRequest &request);
+                void DescribeInovcationIndicatorsAsync(const Model::DescribeInovcationIndicatorsRequest& request, const DescribeInovcationIndicatorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInovcationIndicatorsOutcomeCallable DescribeInovcationIndicatorsCallable(const Model::DescribeInovcationIndicatorsRequest& request);
+
+                /**
+                 *查询调用指标数据变化曲线
+                 * @param req DescribeInvocationMetricDataCurveRequest
+                 * @return DescribeInvocationMetricDataCurveOutcome
+                 */
+                DescribeInvocationMetricDataCurveOutcome DescribeInvocationMetricDataCurve(const Model::DescribeInvocationMetricDataCurveRequest &request);
+                void DescribeInvocationMetricDataCurveAsync(const Model::DescribeInvocationMetricDataCurveRequest& request, const DescribeInvocationMetricDataCurveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInvocationMetricDataCurveOutcomeCallable DescribeInvocationMetricDataCurveCallable(const Model::DescribeInvocationMetricDataCurveRequest& request);
+
+                /**
+                 *查询维度
+                 * @param req DescribeInvocationMetricDataDimensionRequest
+                 * @return DescribeInvocationMetricDataDimensionOutcome
+                 */
+                DescribeInvocationMetricDataDimensionOutcome DescribeInvocationMetricDataDimension(const Model::DescribeInvocationMetricDataDimensionRequest &request);
+                void DescribeInvocationMetricDataDimensionAsync(const Model::DescribeInvocationMetricDataDimensionRequest& request, const DescribeInvocationMetricDataDimensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInvocationMetricDataDimensionOutcomeCallable DescribeInvocationMetricDataDimensionCallable(const Model::DescribeInvocationMetricDataDimensionRequest& request);
+
+                /**
+                 *查询单值指标维度
+                 * @param req DescribeInvocationMetricDataPointRequest
+                 * @return DescribeInvocationMetricDataPointOutcome
+                 */
+                DescribeInvocationMetricDataPointOutcome DescribeInvocationMetricDataPoint(const Model::DescribeInvocationMetricDataPointRequest &request);
+                void DescribeInvocationMetricDataPointAsync(const Model::DescribeInvocationMetricDataPointRequest& request, const DescribeInvocationMetricDataPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInvocationMetricDataPointOutcomeCallable DescribeInvocationMetricDataPointCallable(const Model::DescribeInvocationMetricDataPointRequest& request);
+
+                /**
+                 *查询调用指标数据散点图
+                 * @param req DescribeInvocationMetricScatterPlotRequest
+                 * @return DescribeInvocationMetricScatterPlotOutcome
+                 */
+                DescribeInvocationMetricScatterPlotOutcome DescribeInvocationMetricScatterPlot(const Model::DescribeInvocationMetricScatterPlotRequest &request);
+                void DescribeInvocationMetricScatterPlotAsync(const Model::DescribeInvocationMetricScatterPlotRequest& request, const DescribeInvocationMetricScatterPlotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInvocationMetricScatterPlotOutcomeCallable DescribeInvocationMetricScatterPlotCallable(const Model::DescribeInvocationMetricScatterPlotRequest& request);
+
+                /**
+                 *查询java实例jvm监控数据,返回数据可选
+                 * @param req DescribeJvmMonitorRequest
+                 * @return DescribeJvmMonitorOutcome
+                 */
+                DescribeJvmMonitorOutcome DescribeJvmMonitor(const Model::DescribeJvmMonitorRequest &request);
+                void DescribeJvmMonitorAsync(const Model::DescribeJvmMonitorRequest& request, const DescribeJvmMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeJvmMonitorOutcomeCallable DescribeJvmMonitorCallable(const Model::DescribeJvmMonitorRequest& request);
+
+                /**
                  *查询泳道规则列表
                  * @param req DescribeLaneRulesRequest
                  * @return DescribeLaneRulesOutcome
@@ -1734,6 +1828,15 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeMsApiListOutcome DescribeMsApiList(const Model::DescribeMsApiListRequest &request);
                 void DescribeMsApiListAsync(const Model::DescribeMsApiListRequest& request, const DescribeMsApiListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMsApiListOutcomeCallable DescribeMsApiListCallable(const Model::DescribeMsApiListRequest& request);
+
+                /**
+                 *服务调用监控统计概览
+                 * @param req DescribeOverviewInvocationRequest
+                 * @return DescribeOverviewInvocationOutcome
+                 */
+                DescribeOverviewInvocationOutcome DescribeOverviewInvocation(const Model::DescribeOverviewInvocationRequest &request);
+                void DescribeOverviewInvocationAsync(const Model::DescribeOverviewInvocationRequest& request, const DescribeOverviewInvocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOverviewInvocationOutcomeCallable DescribeOverviewInvocationCallable(const Model::DescribeOverviewInvocationRequest& request);
 
                 /**
                  *查询路径重写
@@ -1905,6 +2008,15 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeSimpleNamespacesOutcome DescribeSimpleNamespaces(const Model::DescribeSimpleNamespacesRequest &request);
                 void DescribeSimpleNamespacesAsync(const Model::DescribeSimpleNamespacesRequest& request, const DescribeSimpleNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSimpleNamespacesOutcomeCallable DescribeSimpleNamespacesCallable(const Model::DescribeSimpleNamespacesRequest& request);
+
+                /**
+                 *服务统计页面：接口和服务维度
+                 * @param req DescribeStatisticsRequest
+                 * @return DescribeStatisticsOutcome
+                 */
+                DescribeStatisticsOutcome DescribeStatistics(const Model::DescribeStatisticsRequest &request);
+                void DescribeStatisticsAsync(const Model::DescribeStatisticsRequest& request, const DescribeStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStatisticsOutcomeCallable DescribeStatisticsCallable(const Model::DescribeStatisticsRequest& request);
 
                 /**
                  *查询任务详情

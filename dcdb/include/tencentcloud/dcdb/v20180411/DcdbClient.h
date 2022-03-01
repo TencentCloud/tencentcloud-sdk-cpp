@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/dcdb/v20180411/model/ActiveHourDCDBInstanceRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/ActiveHourDCDBInstanceResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/AssociateSecurityGroupsRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/AssociateSecurityGroupsResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/CancelDcnJobRequest.h>
@@ -107,6 +109,8 @@
 #include <tencentcloud/dcdb/v20180411/model/GrantAccountPrivilegesResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/InitDCDBInstancesRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/InitDCDBInstancesResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/IsolateHourDCDBInstanceRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/IsolateHourDCDBInstanceResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/KillSessionRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/KillSessionResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/ModifyAccountDescriptionRequest.h>
@@ -145,6 +149,9 @@ namespace TencentCloud
                 DcdbClient(const Credential &credential, const std::string &region);
                 DcdbClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::ActiveHourDCDBInstanceResponse> ActiveHourDCDBInstanceOutcome;
+                typedef std::future<ActiveHourDCDBInstanceOutcome> ActiveHourDCDBInstanceOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::ActiveHourDCDBInstanceRequest&, ActiveHourDCDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ActiveHourDCDBInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::AssociateSecurityGroupsResponse> AssociateSecurityGroupsOutcome;
                 typedef std::future<AssociateSecurityGroupsOutcome> AssociateSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::AssociateSecurityGroupsRequest&, AssociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateSecurityGroupsAsyncHandler;
@@ -271,6 +278,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InitDCDBInstancesResponse> InitDCDBInstancesOutcome;
                 typedef std::future<InitDCDBInstancesOutcome> InitDCDBInstancesOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::InitDCDBInstancesRequest&, InitDCDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InitDCDBInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::IsolateHourDCDBInstanceResponse> IsolateHourDCDBInstanceOutcome;
+                typedef std::future<IsolateHourDCDBInstanceOutcome> IsolateHourDCDBInstanceOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::IsolateHourDCDBInstanceRequest&, IsolateHourDCDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IsolateHourDCDBInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::KillSessionResponse> KillSessionOutcome;
                 typedef std::future<KillSessionOutcome> KillSessionOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::KillSessionRequest&, KillSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> KillSessionAsyncHandler;
@@ -309,6 +319,15 @@ namespace TencentCloud
                 typedef std::function<void(const DcdbClient*, const Model::UpgradeDCDBInstanceRequest&, UpgradeDCDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDCDBInstanceAsyncHandler;
 
 
+
+                /**
+                 *解隔离DCDB后付费实例
+                 * @param req ActiveHourDCDBInstanceRequest
+                 * @return ActiveHourDCDBInstanceOutcome
+                 */
+                ActiveHourDCDBInstanceOutcome ActiveHourDCDBInstance(const Model::ActiveHourDCDBInstanceRequest &request);
+                void ActiveHourDCDBInstanceAsync(const Model::ActiveHourDCDBInstanceRequest& request, const ActiveHourDCDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ActiveHourDCDBInstanceOutcomeCallable ActiveHourDCDBInstanceCallable(const Model::ActiveHourDCDBInstanceRequest& request);
 
                 /**
                  *本接口 (AssociateSecurityGroups) 用于安全组批量绑定云资源。
@@ -691,6 +710,15 @@ namespace TencentCloud
                 InitDCDBInstancesOutcome InitDCDBInstances(const Model::InitDCDBInstancesRequest &request);
                 void InitDCDBInstancesAsync(const Model::InitDCDBInstancesRequest& request, const InitDCDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InitDCDBInstancesOutcomeCallable InitDCDBInstancesCallable(const Model::InitDCDBInstancesRequest& request);
+
+                /**
+                 *隔离DCDB后付费实例
+                 * @param req IsolateHourDCDBInstanceRequest
+                 * @return IsolateHourDCDBInstanceOutcome
+                 */
+                IsolateHourDCDBInstanceOutcome IsolateHourDCDBInstance(const Model::IsolateHourDCDBInstanceRequest &request);
+                void IsolateHourDCDBInstanceAsync(const Model::IsolateHourDCDBInstanceRequest& request, const IsolateHourDCDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                IsolateHourDCDBInstanceOutcomeCallable IsolateHourDCDBInstanceCallable(const Model::IsolateHourDCDBInstanceRequest& request);
 
                 /**
                  *本接口（KillSession）用于杀死指定会话。

@@ -37,6 +37,8 @@
 #include <tencentcloud/gme/v20180711/model/DescribeFilterResultResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeFilterResultListRequest.h>
 #include <tencentcloud/gme/v20180711/model/DescribeFilterResultListResponse.h>
+#include <tencentcloud/gme/v20180711/model/DescribeRealtimeScanConfigRequest.h>
+#include <tencentcloud/gme/v20180711/model/DescribeRealtimeScanConfigResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeRoomInfoRequest.h>
 #include <tencentcloud/gme/v20180711/model/DescribeRoomInfoResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeScanResultListRequest.h>
@@ -49,6 +51,10 @@
 #include <tencentcloud/gme/v20180711/model/ModifyRoomInfoResponse.h>
 #include <tencentcloud/gme/v20180711/model/ScanVoiceRequest.h>
 #include <tencentcloud/gme/v20180711/model/ScanVoiceResponse.h>
+#include <tencentcloud/gme/v20180711/model/UpdateScanRoomsRequest.h>
+#include <tencentcloud/gme/v20180711/model/UpdateScanRoomsResponse.h>
+#include <tencentcloud/gme/v20180711/model/UpdateScanUsersRequest.h>
+#include <tencentcloud/gme/v20180711/model/UpdateScanUsersResponse.h>
 #include <tencentcloud/gme/v20180711/model/VoiceFilterRequest.h>
 #include <tencentcloud/gme/v20180711/model/VoiceFilterResponse.h>
 
@@ -86,6 +92,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFilterResultListResponse> DescribeFilterResultListOutcome;
                 typedef std::future<DescribeFilterResultListOutcome> DescribeFilterResultListOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::DescribeFilterResultListRequest&, DescribeFilterResultListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFilterResultListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRealtimeScanConfigResponse> DescribeRealtimeScanConfigOutcome;
+                typedef std::future<DescribeRealtimeScanConfigOutcome> DescribeRealtimeScanConfigOutcomeCallable;
+                typedef std::function<void(const GmeClient*, const Model::DescribeRealtimeScanConfigRequest&, DescribeRealtimeScanConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRealtimeScanConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRoomInfoResponse> DescribeRoomInfoOutcome;
                 typedef std::future<DescribeRoomInfoOutcome> DescribeRoomInfoOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::DescribeRoomInfoRequest&, DescribeRoomInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoomInfoAsyncHandler;
@@ -104,6 +113,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ScanVoiceResponse> ScanVoiceOutcome;
                 typedef std::future<ScanVoiceOutcome> ScanVoiceOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::ScanVoiceRequest&, ScanVoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScanVoiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateScanRoomsResponse> UpdateScanRoomsOutcome;
+                typedef std::future<UpdateScanRoomsOutcome> UpdateScanRoomsOutcomeCallable;
+                typedef std::function<void(const GmeClient*, const Model::UpdateScanRoomsRequest&, UpdateScanRoomsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateScanRoomsAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateScanUsersResponse> UpdateScanUsersOutcome;
+                typedef std::future<UpdateScanUsersOutcome> UpdateScanUsersOutcomeCallable;
+                typedef std::function<void(const GmeClient*, const Model::UpdateScanUsersRequest&, UpdateScanUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateScanUsersAsyncHandler;
                 typedef Outcome<Core::Error, Model::VoiceFilterResponse> VoiceFilterOutcome;
                 typedef std::future<VoiceFilterOutcome> VoiceFilterOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::VoiceFilterRequest&, VoiceFilterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VoiceFilterAsyncHandler;
@@ -182,6 +197,15 @@ namespace TencentCloud
                 DescribeFilterResultListOutcome DescribeFilterResultList(const Model::DescribeFilterResultListRequest &request);
                 void DescribeFilterResultListAsync(const Model::DescribeFilterResultListRequest& request, const DescribeFilterResultListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeFilterResultListOutcomeCallable DescribeFilterResultListCallable(const Model::DescribeFilterResultListRequest& request);
+
+                /**
+                 *获取用户自定义送检信息
+                 * @param req DescribeRealtimeScanConfigRequest
+                 * @return DescribeRealtimeScanConfigOutcome
+                 */
+                DescribeRealtimeScanConfigOutcome DescribeRealtimeScanConfig(const Model::DescribeRealtimeScanConfigRequest &request);
+                void DescribeRealtimeScanConfigAsync(const Model::DescribeRealtimeScanConfigRequest& request, const DescribeRealtimeScanConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRealtimeScanConfigOutcomeCallable DescribeRealtimeScanConfigCallable(const Model::DescribeRealtimeScanConfigRequest& request);
 
                 /**
                  *获取房间内用户信息
@@ -371,6 +395,24 @@ namespace TencentCloud
                 ScanVoiceOutcome ScanVoice(const Model::ScanVoiceRequest &request);
                 void ScanVoiceAsync(const Model::ScanVoiceRequest& request, const ScanVoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ScanVoiceOutcomeCallable ScanVoiceCallable(const Model::ScanVoiceRequest& request);
+
+                /**
+                 *更新自定义送检房间号
+                 * @param req UpdateScanRoomsRequest
+                 * @return UpdateScanRoomsOutcome
+                 */
+                UpdateScanRoomsOutcome UpdateScanRooms(const Model::UpdateScanRoomsRequest &request);
+                void UpdateScanRoomsAsync(const Model::UpdateScanRoomsRequest& request, const UpdateScanRoomsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateScanRoomsOutcomeCallable UpdateScanRoomsCallable(const Model::UpdateScanRoomsRequest& request);
+
+                /**
+                 *更新自定义送检用户号
+                 * @param req UpdateScanUsersRequest
+                 * @return UpdateScanUsersOutcome
+                 */
+                UpdateScanUsersOutcome UpdateScanUsers(const Model::UpdateScanUsersRequest &request);
+                void UpdateScanUsersAsync(const Model::UpdateScanUsersRequest& request, const UpdateScanUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateScanUsersOutcomeCallable UpdateScanUsersCallable(const Model::UpdateScanUsersRequest& request);
 
                 /**
                  *本接口用于识别涉黄等违规音频，成功会回调配置在应用的回调地址。回调示例如下：

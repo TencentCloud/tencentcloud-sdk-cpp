@@ -1846,6 +1846,49 @@ CamClient::GetUserOutcomeCallable CamClient::GetUserCallable(const GetUserReques
     return task->get_future();
 }
 
+CamClient::GetUserAppIdOutcome CamClient::GetUserAppId(const GetUserAppIdRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetUserAppId");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetUserAppIdResponse rsp = GetUserAppIdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetUserAppIdOutcome(rsp);
+        else
+            return GetUserAppIdOutcome(o.GetError());
+    }
+    else
+    {
+        return GetUserAppIdOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::GetUserAppIdAsync(const GetUserAppIdRequest& request, const GetUserAppIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetUserAppId(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::GetUserAppIdOutcomeCallable CamClient::GetUserAppIdCallable(const GetUserAppIdRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetUserAppIdOutcome()>>(
+        [this, request]()
+        {
+            return this->GetUserAppId(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::GetUserPermissionBoundaryOutcome CamClient::GetUserPermissionBoundary(const GetUserPermissionBoundaryRequest &request)
 {
     auto outcome = MakeRequest(request, "GetUserPermissionBoundary");

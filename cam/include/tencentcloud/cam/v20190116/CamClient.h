@@ -107,6 +107,8 @@
 #include <tencentcloud/cam/v20190116/model/GetServiceLinkedRoleDeletionStatusResponse.h>
 #include <tencentcloud/cam/v20190116/model/GetUserRequest.h>
 #include <tencentcloud/cam/v20190116/model/GetUserResponse.h>
+#include <tencentcloud/cam/v20190116/model/GetUserAppIdRequest.h>
+#include <tencentcloud/cam/v20190116/model/GetUserAppIdResponse.h>
 #include <tencentcloud/cam/v20190116/model/GetUserPermissionBoundaryRequest.h>
 #include <tencentcloud/cam/v20190116/model/GetUserPermissionBoundaryResponse.h>
 #include <tencentcloud/cam/v20190116/model/ListAccessKeysRequest.h>
@@ -307,6 +309,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetUserResponse> GetUserOutcome;
                 typedef std::future<GetUserOutcome> GetUserOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::GetUserRequest&, GetUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetUserAppIdResponse> GetUserAppIdOutcome;
+                typedef std::future<GetUserAppIdOutcome> GetUserAppIdOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::GetUserAppIdRequest&, GetUserAppIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetUserAppIdAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetUserPermissionBoundaryResponse> GetUserPermissionBoundaryOutcome;
                 typedef std::future<GetUserPermissionBoundaryOutcome> GetUserPermissionBoundaryOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::GetUserPermissionBoundaryRequest&, GetUserPermissionBoundaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetUserPermissionBoundaryAsyncHandler;
@@ -777,6 +782,15 @@ namespace TencentCloud
                 GetUserOutcome GetUser(const Model::GetUserRequest &request);
                 void GetUserAsync(const Model::GetUserRequest& request, const GetUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetUserOutcomeCallable GetUserCallable(const Model::GetUserRequest& request);
+
+                /**
+                 *获取用户AppId
+                 * @param req GetUserAppIdRequest
+                 * @return GetUserAppIdOutcome
+                 */
+                GetUserAppIdOutcome GetUserAppId(const Model::GetUserAppIdRequest &request);
+                void GetUserAppIdAsync(const Model::GetUserAppIdRequest& request, const GetUserAppIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetUserAppIdOutcomeCallable GetUserAppIdCallable(const Model::GetUserAppIdRequest& request);
 
                 /**
                  *获取用户权限边界
