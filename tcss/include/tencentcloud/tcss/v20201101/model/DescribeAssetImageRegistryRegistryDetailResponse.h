@@ -157,6 +157,20 @@ namespace TencentCloud
                      */
                     bool SpeedLimitHasBeenSet() const;
 
+                    /**
+                     * 获取安全模式（证书校验）：0（默认） 非安全模式（跳过证书校验）：1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Insecure 安全模式（证书校验）：0（默认） 非安全模式（跳过证书校验）：1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetInsecure() const;
+
+                    /**
+                     * 判断参数 Insecure 是否已赋值
+                     * @return Insecure 是否已赋值
+                     */
+                    bool InsecureHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +229,13 @@ namespace TencentCloud
                      */
                     uint64_t m_speedLimit;
                     bool m_speedLimitHasBeenSet;
+
+                    /**
+                     * 安全模式（证书校验）：0（默认） 非安全模式（跳过证书校验）：1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_insecure;
+                    bool m_insecureHasBeenSet;
 
                 };
             }

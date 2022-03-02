@@ -25,7 +25,8 @@ using namespace std;
 CreateCredentialRequest::CreateCredentialRequest() :
     m_functionArgHasBeenSet(false),
     m_transactionArgHasBeenSet(false),
-    m_versionCredentialHasBeenSet(false)
+    m_versionCredentialHasBeenSet(false),
+    m_unSignedHasBeenSet(false)
 {
 }
 
@@ -60,6 +61,14 @@ string CreateCredentialRequest::ToJsonString() const
         string key = "VersionCredential";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_versionCredential.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_unSignedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnSigned";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_unSigned, allocator);
     }
 
 
@@ -116,6 +125,22 @@ void CreateCredentialRequest::SetVersionCredential(const string& _versionCredent
 bool CreateCredentialRequest::VersionCredentialHasBeenSet() const
 {
     return m_versionCredentialHasBeenSet;
+}
+
+bool CreateCredentialRequest::GetUnSigned() const
+{
+    return m_unSigned;
+}
+
+void CreateCredentialRequest::SetUnSigned(const bool& _unSigned)
+{
+    m_unSigned = _unSigned;
+    m_unSignedHasBeenSet = true;
+}
+
+bool CreateCredentialRequest::UnSignedHasBeenSet() const
+{
+    return m_unSignedHasBeenSet;
 }
 
 

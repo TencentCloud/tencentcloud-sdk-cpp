@@ -35,6 +35,8 @@
 #include <tencentcloud/antiddos/v20200309/model/CreateCCPrecisionPolicyResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateCCReqLimitPolicyRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateCCReqLimitPolicyResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/CreateCcBlackWhiteIpListRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/CreateCcBlackWhiteIpListResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateCcGeoIPBlockConfigRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateCcGeoIPBlockConfigResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateDDoSAIRequest.h>
@@ -69,10 +71,14 @@
 #include <tencentcloud/antiddos/v20200309/model/CreateWaterPrintKeyResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DeleteBlackWhiteIpListRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DeleteBlackWhiteIpListResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/DeleteCCLevelPolicyRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/DeleteCCLevelPolicyResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DeleteCCPrecisionPolicyRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DeleteCCPrecisionPolicyResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DeleteCCRequestLimitPolicyRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DeleteCCRequestLimitPolicyResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/DeleteCCThresholdPolicyRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/DeleteCCThresholdPolicyResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DeleteCcBlackWhiteIpListRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DeleteCcBlackWhiteIpListResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DeleteCcGeoIPBlockConfigRequest.h>
@@ -97,10 +103,16 @@
 #include <tencentcloud/antiddos/v20200309/model/DescribeBizTrendResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeBlackWhiteIpListRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeBlackWhiteIpListResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeCCLevelListRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeCCLevelListResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeCCLevelPolicyRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeCCLevelPolicyResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeCCPrecisionPlyListRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeCCPrecisionPlyListResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeCCReqLimitPolicyListRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeCCReqLimitPolicyListResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeCCThresholdListRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeCCThresholdListResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeCCTrendRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeCCTrendResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeCcBlackWhiteIpListRequest.h>
@@ -211,6 +223,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCCReqLimitPolicyResponse> CreateCCReqLimitPolicyOutcome;
                 typedef std::future<CreateCCReqLimitPolicyOutcome> CreateCCReqLimitPolicyOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::CreateCCReqLimitPolicyRequest&, CreateCCReqLimitPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCCReqLimitPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCcBlackWhiteIpListResponse> CreateCcBlackWhiteIpListOutcome;
+                typedef std::future<CreateCcBlackWhiteIpListOutcome> CreateCcBlackWhiteIpListOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::CreateCcBlackWhiteIpListRequest&, CreateCcBlackWhiteIpListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCcBlackWhiteIpListAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCcGeoIPBlockConfigResponse> CreateCcGeoIPBlockConfigOutcome;
                 typedef std::future<CreateCcGeoIPBlockConfigOutcome> CreateCcGeoIPBlockConfigOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::CreateCcGeoIPBlockConfigRequest&, CreateCcGeoIPBlockConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCcGeoIPBlockConfigAsyncHandler;
@@ -262,12 +277,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteBlackWhiteIpListResponse> DeleteBlackWhiteIpListOutcome;
                 typedef std::future<DeleteBlackWhiteIpListOutcome> DeleteBlackWhiteIpListOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DeleteBlackWhiteIpListRequest&, DeleteBlackWhiteIpListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBlackWhiteIpListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCCLevelPolicyResponse> DeleteCCLevelPolicyOutcome;
+                typedef std::future<DeleteCCLevelPolicyOutcome> DeleteCCLevelPolicyOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::DeleteCCLevelPolicyRequest&, DeleteCCLevelPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCCLevelPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCCPrecisionPolicyResponse> DeleteCCPrecisionPolicyOutcome;
                 typedef std::future<DeleteCCPrecisionPolicyOutcome> DeleteCCPrecisionPolicyOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DeleteCCPrecisionPolicyRequest&, DeleteCCPrecisionPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCCPrecisionPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCCRequestLimitPolicyResponse> DeleteCCRequestLimitPolicyOutcome;
                 typedef std::future<DeleteCCRequestLimitPolicyOutcome> DeleteCCRequestLimitPolicyOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DeleteCCRequestLimitPolicyRequest&, DeleteCCRequestLimitPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCCRequestLimitPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCCThresholdPolicyResponse> DeleteCCThresholdPolicyOutcome;
+                typedef std::future<DeleteCCThresholdPolicyOutcome> DeleteCCThresholdPolicyOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::DeleteCCThresholdPolicyRequest&, DeleteCCThresholdPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCCThresholdPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCcBlackWhiteIpListResponse> DeleteCcBlackWhiteIpListOutcome;
                 typedef std::future<DeleteCcBlackWhiteIpListOutcome> DeleteCcBlackWhiteIpListOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DeleteCcBlackWhiteIpListRequest&, DeleteCcBlackWhiteIpListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCcBlackWhiteIpListAsyncHandler;
@@ -304,12 +325,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBlackWhiteIpListResponse> DescribeBlackWhiteIpListOutcome;
                 typedef std::future<DescribeBlackWhiteIpListOutcome> DescribeBlackWhiteIpListOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeBlackWhiteIpListRequest&, DescribeBlackWhiteIpListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlackWhiteIpListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCCLevelListResponse> DescribeCCLevelListOutcome;
+                typedef std::future<DescribeCCLevelListOutcome> DescribeCCLevelListOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::DescribeCCLevelListRequest&, DescribeCCLevelListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCCLevelListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCCLevelPolicyResponse> DescribeCCLevelPolicyOutcome;
+                typedef std::future<DescribeCCLevelPolicyOutcome> DescribeCCLevelPolicyOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::DescribeCCLevelPolicyRequest&, DescribeCCLevelPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCCLevelPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCCPrecisionPlyListResponse> DescribeCCPrecisionPlyListOutcome;
                 typedef std::future<DescribeCCPrecisionPlyListOutcome> DescribeCCPrecisionPlyListOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeCCPrecisionPlyListRequest&, DescribeCCPrecisionPlyListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCCPrecisionPlyListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCCReqLimitPolicyListResponse> DescribeCCReqLimitPolicyListOutcome;
                 typedef std::future<DescribeCCReqLimitPolicyListOutcome> DescribeCCReqLimitPolicyListOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeCCReqLimitPolicyListRequest&, DescribeCCReqLimitPolicyListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCCReqLimitPolicyListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCCThresholdListResponse> DescribeCCThresholdListOutcome;
+                typedef std::future<DescribeCCThresholdListOutcome> DescribeCCThresholdListOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::DescribeCCThresholdListRequest&, DescribeCCThresholdListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCCThresholdListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCCTrendResponse> DescribeCCTrendOutcome;
                 typedef std::future<DescribeCCTrendOutcome> DescribeCCTrendOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeCCTrendRequest&, DescribeCCTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCCTrendAsyncHandler;
@@ -485,6 +515,15 @@ namespace TencentCloud
                 CreateCCReqLimitPolicyOutcomeCallable CreateCCReqLimitPolicyCallable(const Model::CreateCCReqLimitPolicyRequest& request);
 
                 /**
+                 *新建CC四层黑白名单
+                 * @param req CreateCcBlackWhiteIpListRequest
+                 * @return CreateCcBlackWhiteIpListOutcome
+                 */
+                CreateCcBlackWhiteIpListOutcome CreateCcBlackWhiteIpList(const Model::CreateCcBlackWhiteIpListRequest &request);
+                void CreateCcBlackWhiteIpListAsync(const Model::CreateCcBlackWhiteIpListRequest& request, const CreateCcBlackWhiteIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCcBlackWhiteIpListOutcomeCallable CreateCcBlackWhiteIpListCallable(const Model::CreateCcBlackWhiteIpListRequest& request);
+
+                /**
                  *新建cc防护的地域封禁配置
                  * @param req CreateCcGeoIPBlockConfigRequest
                  * @return CreateCcGeoIPBlockConfigOutcome
@@ -638,6 +677,15 @@ namespace TencentCloud
                 DeleteBlackWhiteIpListOutcomeCallable DeleteBlackWhiteIpListCallable(const Model::DeleteBlackWhiteIpListRequest& request);
 
                 /**
+                 *删除CC分级策略
+                 * @param req DeleteCCLevelPolicyRequest
+                 * @return DeleteCCLevelPolicyOutcome
+                 */
+                DeleteCCLevelPolicyOutcome DeleteCCLevelPolicy(const Model::DeleteCCLevelPolicyRequest &request);
+                void DeleteCCLevelPolicyAsync(const Model::DeleteCCLevelPolicyRequest& request, const DeleteCCLevelPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCCLevelPolicyOutcomeCallable DeleteCCLevelPolicyCallable(const Model::DeleteCCLevelPolicyRequest& request);
+
+                /**
                  *删除CC精准防护策略
                  * @param req DeleteCCPrecisionPolicyRequest
                  * @return DeleteCCPrecisionPolicyOutcome
@@ -654,6 +702,15 @@ namespace TencentCloud
                 DeleteCCRequestLimitPolicyOutcome DeleteCCRequestLimitPolicy(const Model::DeleteCCRequestLimitPolicyRequest &request);
                 void DeleteCCRequestLimitPolicyAsync(const Model::DeleteCCRequestLimitPolicyRequest& request, const DeleteCCRequestLimitPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteCCRequestLimitPolicyOutcomeCallable DeleteCCRequestLimitPolicyCallable(const Model::DeleteCCRequestLimitPolicyRequest& request);
+
+                /**
+                 *删除CC清洗阈值策略
+                 * @param req DeleteCCThresholdPolicyRequest
+                 * @return DeleteCCThresholdPolicyOutcome
+                 */
+                DeleteCCThresholdPolicyOutcome DeleteCCThresholdPolicy(const Model::DeleteCCThresholdPolicyRequest &request);
+                void DeleteCCThresholdPolicyAsync(const Model::DeleteCCThresholdPolicyRequest& request, const DeleteCCThresholdPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCCThresholdPolicyOutcomeCallable DeleteCCThresholdPolicyCallable(const Model::DeleteCCThresholdPolicyRequest& request);
 
                 /**
                  *删除CC四层黑白名单
@@ -764,6 +821,24 @@ namespace TencentCloud
                 DescribeBlackWhiteIpListOutcomeCallable DescribeBlackWhiteIpListCallable(const Model::DescribeBlackWhiteIpListRequest& request);
 
                 /**
+                 *获取CC防护等级列表
+                 * @param req DescribeCCLevelListRequest
+                 * @return DescribeCCLevelListOutcome
+                 */
+                DescribeCCLevelListOutcome DescribeCCLevelList(const Model::DescribeCCLevelListRequest &request);
+                void DescribeCCLevelListAsync(const Model::DescribeCCLevelListRequest& request, const DescribeCCLevelListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCCLevelListOutcomeCallable DescribeCCLevelListCallable(const Model::DescribeCCLevelListRequest& request);
+
+                /**
+                 *获取CC分级策略
+                 * @param req DescribeCCLevelPolicyRequest
+                 * @return DescribeCCLevelPolicyOutcome
+                 */
+                DescribeCCLevelPolicyOutcome DescribeCCLevelPolicy(const Model::DescribeCCLevelPolicyRequest &request);
+                void DescribeCCLevelPolicyAsync(const Model::DescribeCCLevelPolicyRequest& request, const DescribeCCLevelPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCCLevelPolicyOutcomeCallable DescribeCCLevelPolicyCallable(const Model::DescribeCCLevelPolicyRequest& request);
+
+                /**
                  *获取CC精准防护列表
                  * @param req DescribeCCPrecisionPlyListRequest
                  * @return DescribeCCPrecisionPlyListOutcome
@@ -780,6 +855,15 @@ namespace TencentCloud
                 DescribeCCReqLimitPolicyListOutcome DescribeCCReqLimitPolicyList(const Model::DescribeCCReqLimitPolicyListRequest &request);
                 void DescribeCCReqLimitPolicyListAsync(const Model::DescribeCCReqLimitPolicyListRequest& request, const DescribeCCReqLimitPolicyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCCReqLimitPolicyListOutcomeCallable DescribeCCReqLimitPolicyListCallable(const Model::DescribeCCReqLimitPolicyListRequest& request);
+
+                /**
+                 *获取CC清洗阈值列表
+                 * @param req DescribeCCThresholdListRequest
+                 * @return DescribeCCThresholdListOutcome
+                 */
+                DescribeCCThresholdListOutcome DescribeCCThresholdList(const Model::DescribeCCThresholdListRequest &request);
+                void DescribeCCThresholdListAsync(const Model::DescribeCCThresholdListRequest& request, const DescribeCCThresholdListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCCThresholdListOutcomeCallable DescribeCCThresholdListCallable(const Model::DescribeCCThresholdListRequest& request);
 
                 /**
                  *获取CC攻击指标数据，包括总请求峰值(QPS)和攻击请求(QPS)以及总请求次数和攻击请求次数

@@ -43,7 +43,9 @@ Deal::Deal() :
     m_formulaHasBeenSet(false),
     m_refReturnDealsHasBeenSet(false),
     m_payModeHasBeenSet(false),
-    m_actionHasBeenSet(false)
+    m_actionHasBeenSet(false),
+    m_productNameHasBeenSet(false),
+    m_subProductNameHasBeenSet(false)
 {
 }
 
@@ -292,6 +294,26 @@ CoreInternalOutcome Deal::Deserialize(const rapidjson::Value &value)
         m_actionHasBeenSet = true;
     }
 
+    if (value.HasMember("ProductName") && !value["ProductName"].IsNull())
+    {
+        if (!value["ProductName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Deal.ProductName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_productName = string(value["ProductName"].GetString());
+        m_productNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubProductName") && !value["SubProductName"].IsNull())
+    {
+        if (!value["SubProductName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Deal.SubProductName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subProductName = string(value["SubProductName"].GetString());
+        m_subProductNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -488,6 +510,22 @@ void Deal::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "Action";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_action.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subProductNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubProductName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subProductName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -859,5 +897,37 @@ void Deal::SetAction(const string& _action)
 bool Deal::ActionHasBeenSet() const
 {
     return m_actionHasBeenSet;
+}
+
+string Deal::GetProductName() const
+{
+    return m_productName;
+}
+
+void Deal::SetProductName(const string& _productName)
+{
+    m_productName = _productName;
+    m_productNameHasBeenSet = true;
+}
+
+bool Deal::ProductNameHasBeenSet() const
+{
+    return m_productNameHasBeenSet;
+}
+
+string Deal::GetSubProductName() const
+{
+    return m_subProductName;
+}
+
+void Deal::SetSubProductName(const string& _subProductName)
+{
+    m_subProductName = _subProductName;
+    m_subProductNameHasBeenSet = true;
+}
+
+bool Deal::SubProductNameHasBeenSet() const
+{
+    return m_subProductNameHasBeenSet;
 }
 

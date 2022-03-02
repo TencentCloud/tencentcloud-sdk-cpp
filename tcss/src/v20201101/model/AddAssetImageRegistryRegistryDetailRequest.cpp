@@ -31,7 +31,8 @@ AddAssetImageRegistryRegistryDetailRequest::AddAssetImageRegistryRegistryDetailR
     m_netTypeHasBeenSet(false),
     m_registryVersionHasBeenSet(false),
     m_registryRegionHasBeenSet(false),
-    m_speedLimitHasBeenSet(false)
+    m_speedLimitHasBeenSet(false),
+    m_insecureHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,14 @@ string AddAssetImageRegistryRegistryDetailRequest::ToJsonString() const
         string key = "SpeedLimit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_speedLimit, allocator);
+    }
+
+    if (m_insecureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Insecure";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_insecure, allocator);
     }
 
 
@@ -264,6 +273,22 @@ void AddAssetImageRegistryRegistryDetailRequest::SetSpeedLimit(const int64_t& _s
 bool AddAssetImageRegistryRegistryDetailRequest::SpeedLimitHasBeenSet() const
 {
     return m_speedLimitHasBeenSet;
+}
+
+uint64_t AddAssetImageRegistryRegistryDetailRequest::GetInsecure() const
+{
+    return m_insecure;
+}
+
+void AddAssetImageRegistryRegistryDetailRequest::SetInsecure(const uint64_t& _insecure)
+{
+    m_insecure = _insecure;
+    m_insecureHasBeenSet = true;
+}
+
+bool AddAssetImageRegistryRegistryDetailRequest::InsecureHasBeenSet() const
+{
+    return m_insecureHasBeenSet;
 }
 
 

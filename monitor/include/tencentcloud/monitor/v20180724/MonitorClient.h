@@ -333,7 +333,7 @@ namespace TencentCloud
                 CreateAlarmNoticeOutcomeCallable CreateAlarmNoticeCallable(const Model::CreateAlarmNoticeRequest& request);
 
                 /**
-                 *创建告警策略
+                 *创建云监控告警策略
                  * @param req CreateAlarmPolicyRequest
                  * @return CreateAlarmPolicyOutcome
                  */
