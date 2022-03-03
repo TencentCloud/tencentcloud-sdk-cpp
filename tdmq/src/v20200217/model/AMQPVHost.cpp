@@ -27,7 +27,8 @@ AMQPVHost::AMQPVHost() :
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false)
+    m_passwordHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome AMQPVHost::Deserialize(const rapidjson::Value &value)
         m_passwordHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AMQPVHost.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void AMQPVHost::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Password";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void AMQPVHost::SetPassword(const string& _password)
 bool AMQPVHost::PasswordHasBeenSet() const
 {
     return m_passwordHasBeenSet;
+}
+
+int64_t AMQPVHost::GetStatus() const
+{
+    return m_status;
+}
+
+void AMQPVHost::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool AMQPVHost::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

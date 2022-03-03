@@ -1072,6 +1072,49 @@ MongodbClient::KillOpsOutcomeCallable MongodbClient::KillOpsCallable(const KillO
     return task->get_future();
 }
 
+MongodbClient::ModifyDBInstanceSecurityGroupOutcome MongodbClient::ModifyDBInstanceSecurityGroup(const ModifyDBInstanceSecurityGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBInstanceSecurityGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBInstanceSecurityGroupResponse rsp = ModifyDBInstanceSecurityGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBInstanceSecurityGroupOutcome(rsp);
+        else
+            return ModifyDBInstanceSecurityGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBInstanceSecurityGroupOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::ModifyDBInstanceSecurityGroupAsync(const ModifyDBInstanceSecurityGroupRequest& request, const ModifyDBInstanceSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDBInstanceSecurityGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::ModifyDBInstanceSecurityGroupOutcomeCallable MongodbClient::ModifyDBInstanceSecurityGroupCallable(const ModifyDBInstanceSecurityGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceSecurityGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDBInstanceSecurityGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MongodbClient::ModifyDBInstanceSpecOutcome MongodbClient::ModifyDBInstanceSpec(const ModifyDBInstanceSpecRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDBInstanceSpec");

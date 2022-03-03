@@ -212,6 +212,49 @@ PostgresClient::CloseServerlessDBExtranetAccessOutcomeCallable PostgresClient::C
     return task->get_future();
 }
 
+PostgresClient::CreateDBInstanceNetworkAccessOutcome PostgresClient::CreateDBInstanceNetworkAccess(const CreateDBInstanceNetworkAccessRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDBInstanceNetworkAccess");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDBInstanceNetworkAccessResponse rsp = CreateDBInstanceNetworkAccessResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDBInstanceNetworkAccessOutcome(rsp);
+        else
+            return CreateDBInstanceNetworkAccessOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDBInstanceNetworkAccessOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::CreateDBInstanceNetworkAccessAsync(const CreateDBInstanceNetworkAccessRequest& request, const CreateDBInstanceNetworkAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDBInstanceNetworkAccess(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::CreateDBInstanceNetworkAccessOutcomeCallable PostgresClient::CreateDBInstanceNetworkAccessCallable(const CreateDBInstanceNetworkAccessRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDBInstanceNetworkAccessOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDBInstanceNetworkAccess(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::CreateDBInstancesOutcome PostgresClient::CreateDBInstances(const CreateDBInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDBInstances");
@@ -384,6 +427,49 @@ PostgresClient::CreateReadOnlyGroupOutcomeCallable PostgresClient::CreateReadOnl
     return task->get_future();
 }
 
+PostgresClient::CreateReadOnlyGroupNetworkAccessOutcome PostgresClient::CreateReadOnlyGroupNetworkAccess(const CreateReadOnlyGroupNetworkAccessRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateReadOnlyGroupNetworkAccess");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateReadOnlyGroupNetworkAccessResponse rsp = CreateReadOnlyGroupNetworkAccessResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateReadOnlyGroupNetworkAccessOutcome(rsp);
+        else
+            return CreateReadOnlyGroupNetworkAccessOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateReadOnlyGroupNetworkAccessOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::CreateReadOnlyGroupNetworkAccessAsync(const CreateReadOnlyGroupNetworkAccessRequest& request, const CreateReadOnlyGroupNetworkAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateReadOnlyGroupNetworkAccess(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::CreateReadOnlyGroupNetworkAccessOutcomeCallable PostgresClient::CreateReadOnlyGroupNetworkAccessCallable(const CreateReadOnlyGroupNetworkAccessRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateReadOnlyGroupNetworkAccessOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateReadOnlyGroupNetworkAccess(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::CreateServerlessDBInstanceOutcome PostgresClient::CreateServerlessDBInstance(const CreateServerlessDBInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateServerlessDBInstance");
@@ -427,6 +513,49 @@ PostgresClient::CreateServerlessDBInstanceOutcomeCallable PostgresClient::Create
     return task->get_future();
 }
 
+PostgresClient::DeleteDBInstanceNetworkAccessOutcome PostgresClient::DeleteDBInstanceNetworkAccess(const DeleteDBInstanceNetworkAccessRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDBInstanceNetworkAccess");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDBInstanceNetworkAccessResponse rsp = DeleteDBInstanceNetworkAccessResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDBInstanceNetworkAccessOutcome(rsp);
+        else
+            return DeleteDBInstanceNetworkAccessOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDBInstanceNetworkAccessOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DeleteDBInstanceNetworkAccessAsync(const DeleteDBInstanceNetworkAccessRequest& request, const DeleteDBInstanceNetworkAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteDBInstanceNetworkAccess(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DeleteDBInstanceNetworkAccessOutcomeCallable PostgresClient::DeleteDBInstanceNetworkAccessCallable(const DeleteDBInstanceNetworkAccessRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteDBInstanceNetworkAccessOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteDBInstanceNetworkAccess(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::DeleteReadOnlyGroupOutcome PostgresClient::DeleteReadOnlyGroup(const DeleteReadOnlyGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteReadOnlyGroup");
@@ -463,6 +592,49 @@ PostgresClient::DeleteReadOnlyGroupOutcomeCallable PostgresClient::DeleteReadOnl
         [this, request]()
         {
             return this->DeleteReadOnlyGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::DeleteReadOnlyGroupNetworkAccessOutcome PostgresClient::DeleteReadOnlyGroupNetworkAccess(const DeleteReadOnlyGroupNetworkAccessRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteReadOnlyGroupNetworkAccess");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteReadOnlyGroupNetworkAccessResponse rsp = DeleteReadOnlyGroupNetworkAccessResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteReadOnlyGroupNetworkAccessOutcome(rsp);
+        else
+            return DeleteReadOnlyGroupNetworkAccessOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteReadOnlyGroupNetworkAccessOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DeleteReadOnlyGroupNetworkAccessAsync(const DeleteReadOnlyGroupNetworkAccessRequest& request, const DeleteReadOnlyGroupNetworkAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteReadOnlyGroupNetworkAccess(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DeleteReadOnlyGroupNetworkAccessOutcomeCallable PostgresClient::DeleteReadOnlyGroupNetworkAccessCallable(const DeleteReadOnlyGroupNetworkAccessRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteReadOnlyGroupNetworkAccessOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteReadOnlyGroupNetworkAccess(request);
         }
     );
 

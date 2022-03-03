@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * TransactionPolicy
+                * 事务消息策略
                 */
                 class TransactionPolicy : public AbstractModel
                 {
@@ -45,28 +45,6 @@ namespace TencentCloud
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
-
-                    /**
-                     * 获取第一次回查时间。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FirstQueryInterval 第一次回查时间。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    uint64_t GetFirstQueryInterval() const;
-
-                    /**
-                     * 设置第一次回查时间。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FirstQueryInterval 第一次回查时间。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetFirstQueryInterval(const uint64_t& _firstQueryInterval);
-
-                    /**
-                     * 判断参数 FirstQueryInterval 是否已赋值
-                     * @return FirstQueryInterval 是否已赋值
-                     */
-                    bool FirstQueryIntervalHasBeenSet() const;
 
                     /**
                      * 获取最大查询次数。
@@ -90,14 +68,29 @@ namespace TencentCloud
                      */
                     bool MaxQueryCountHasBeenSet() const;
 
-                private:
-
                     /**
-                     * 第一次回查时间。
+                     * 获取第一次回查时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FirstQueryInterval 第一次回查时间。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    uint64_t m_firstQueryInterval;
-                    bool m_firstQueryIntervalHasBeenSet;
+                    uint64_t GetFirstQueryInterval() const;
+
+                    /**
+                     * 设置第一次回查时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FirstQueryInterval 第一次回查时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFirstQueryInterval(const uint64_t& _firstQueryInterval);
+
+                    /**
+                     * 判断参数 FirstQueryInterval 是否已赋值
+                     * @return FirstQueryInterval 是否已赋值
+                     */
+                    bool FirstQueryIntervalHasBeenSet() const;
+
+                private:
 
                     /**
                      * 最大查询次数。
@@ -105,6 +98,13 @@ namespace TencentCloud
                      */
                     uint64_t m_maxQueryCount;
                     bool m_maxQueryCountHasBeenSet;
+
+                    /**
+                     * 第一次回查时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_firstQueryInterval;
+                    bool m_firstQueryIntervalHasBeenSet;
 
                 };
             }

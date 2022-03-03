@@ -141,6 +141,8 @@
 #include <tencentcloud/clb/v20180317/model/ModifyListenerResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyLoadBalancerAttributesRequest.h>
 #include <tencentcloud/clb/v20180317/model/ModifyLoadBalancerAttributesResponse.h>
+#include <tencentcloud/clb/v20180317/model/ModifyLoadBalancerMixIpTargetRequest.h>
+#include <tencentcloud/clb/v20180317/model/ModifyLoadBalancerMixIpTargetResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyLoadBalancerSlaRequest.h>
 #include <tencentcloud/clb/v20180317/model/ModifyLoadBalancerSlaResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyRuleRequest.h>
@@ -362,6 +364,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyLoadBalancerAttributesResponse> ModifyLoadBalancerAttributesOutcome;
                 typedef std::future<ModifyLoadBalancerAttributesOutcome> ModifyLoadBalancerAttributesOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::ModifyLoadBalancerAttributesRequest&, ModifyLoadBalancerAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoadBalancerAttributesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLoadBalancerMixIpTargetResponse> ModifyLoadBalancerMixIpTargetOutcome;
+                typedef std::future<ModifyLoadBalancerMixIpTargetOutcome> ModifyLoadBalancerMixIpTargetOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::ModifyLoadBalancerMixIpTargetRequest&, ModifyLoadBalancerMixIpTargetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoadBalancerMixIpTargetAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyLoadBalancerSlaResponse> ModifyLoadBalancerSlaOutcome;
                 typedef std::future<ModifyLoadBalancerSlaOutcome> ModifyLoadBalancerSlaOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::ModifyLoadBalancerSlaRequest&, ModifyLoadBalancerSlaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoadBalancerSlaAsyncHandler;
@@ -977,6 +982,15 @@ BGP带宽包必须传带宽包id
                 ModifyLoadBalancerAttributesOutcome ModifyLoadBalancerAttributes(const Model::ModifyLoadBalancerAttributesRequest &request);
                 void ModifyLoadBalancerAttributesAsync(const Model::ModifyLoadBalancerAttributesRequest& request, const ModifyLoadBalancerAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyLoadBalancerAttributesOutcomeCallable ModifyLoadBalancerAttributesCallable(const Model::ModifyLoadBalancerAttributesRequest& request);
+
+                /**
+                 *修改IPv6FullChain负载均衡7层监听器支持混绑IPv4/IPv6目标特性。
+                 * @param req ModifyLoadBalancerMixIpTargetRequest
+                 * @return ModifyLoadBalancerMixIpTargetOutcome
+                 */
+                ModifyLoadBalancerMixIpTargetOutcome ModifyLoadBalancerMixIpTarget(const Model::ModifyLoadBalancerMixIpTargetRequest &request);
+                void ModifyLoadBalancerMixIpTargetAsync(const Model::ModifyLoadBalancerMixIpTargetRequest& request, const ModifyLoadBalancerMixIpTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLoadBalancerMixIpTargetOutcomeCallable ModifyLoadBalancerMixIpTargetCallable(const Model::ModifyLoadBalancerMixIpTargetRequest& request);
 
                 /**
                  *支持共享型clb升级到性能容量型clb（不支持性能保障降级到共享型）。

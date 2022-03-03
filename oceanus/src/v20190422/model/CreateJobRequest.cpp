@@ -30,7 +30,8 @@ CreateJobRequest::CreateJobRequest() :
     m_cuMemHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_folderIdHasBeenSet(false),
-    m_flinkVersionHasBeenSet(false)
+    m_flinkVersionHasBeenSet(false),
+    m_workSpaceIdHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string CreateJobRequest::ToJsonString() const
         string key = "FlinkVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_flinkVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workSpaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkSpaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workSpaceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -239,6 +248,22 @@ void CreateJobRequest::SetFlinkVersion(const string& _flinkVersion)
 bool CreateJobRequest::FlinkVersionHasBeenSet() const
 {
     return m_flinkVersionHasBeenSet;
+}
+
+string CreateJobRequest::GetWorkSpaceId() const
+{
+    return m_workSpaceId;
+}
+
+void CreateJobRequest::SetWorkSpaceId(const string& _workSpaceId)
+{
+    m_workSpaceId = _workSpaceId;
+    m_workSpaceIdHasBeenSet = true;
+}
+
+bool CreateJobRequest::WorkSpaceIdHasBeenSet() const
+{
+    return m_workSpaceIdHasBeenSet;
 }
 
 

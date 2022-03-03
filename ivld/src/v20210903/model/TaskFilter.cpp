@@ -27,7 +27,8 @@ TaskFilter::TaskFilter() :
     m_taskIdSetHasBeenSet(false),
     m_mediaNameSetHasBeenSet(false),
     m_mediaLangSetHasBeenSet(false),
-    m_mediaLabelSetHasBeenSet(false)
+    m_mediaLabelSetHasBeenSet(false),
+    m_labelSetHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,19 @@ CoreInternalOutcome TaskFilter::Deserialize(const rapidjson::Value &value)
         m_mediaLabelSetHasBeenSet = true;
     }
 
+    if (value.HasMember("LabelSet") && !value["LabelSet"].IsNull())
+    {
+        if (!value["LabelSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TaskFilter.LabelSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["LabelSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_labelSet.push_back((*itr).GetString());
+        }
+        m_labelSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -222,6 +236,19 @@ void TaskFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         for (auto itr = m_mediaLabelSet.begin(); itr != m_mediaLabelSet.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_labelSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LabelSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_labelSet.begin(); itr != m_labelSet.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -338,5 +365,21 @@ void TaskFilter::SetMediaLabelSet(const vector<int64_t>& _mediaLabelSet)
 bool TaskFilter::MediaLabelSetHasBeenSet() const
 {
     return m_mediaLabelSetHasBeenSet;
+}
+
+vector<string> TaskFilter::GetLabelSet() const
+{
+    return m_labelSet;
+}
+
+void TaskFilter::SetLabelSet(const vector<string>& _labelSet)
+{
+    m_labelSet = _labelSet;
+    m_labelSetHasBeenSet = true;
+}
+
+bool TaskFilter::LabelSetHasBeenSet() const
+{
+    return m_labelSetHasBeenSet;
 }
 

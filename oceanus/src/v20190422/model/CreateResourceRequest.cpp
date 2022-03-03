@@ -28,7 +28,8 @@ CreateResourceRequest::CreateResourceRequest() :
     m_remarkHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_resourceConfigRemarkHasBeenSet(false),
-    m_folderIdHasBeenSet(false)
+    m_folderIdHasBeenSet(false),
+    m_workSpaceIdHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string CreateResourceRequest::ToJsonString() const
         string key = "FolderId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_folderId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workSpaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkSpaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workSpaceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -190,6 +199,22 @@ void CreateResourceRequest::SetFolderId(const string& _folderId)
 bool CreateResourceRequest::FolderIdHasBeenSet() const
 {
     return m_folderIdHasBeenSet;
+}
+
+string CreateResourceRequest::GetWorkSpaceId() const
+{
+    return m_workSpaceId;
+}
+
+void CreateResourceRequest::SetWorkSpaceId(const string& _workSpaceId)
+{
+    m_workSpaceId = _workSpaceId;
+    m_workSpaceIdHasBeenSet = true;
+}
+
+bool CreateResourceRequest::WorkSpaceIdHasBeenSet() const
+{
+    return m_workSpaceIdHasBeenSet;
 }
 
 

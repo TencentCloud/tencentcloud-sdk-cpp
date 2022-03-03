@@ -180,6 +180,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/ModifyTargetGroupAttributeRequest.h
   include/tencentcloud/clb/v20180317/model/ExclusiveCluster.h
   include/tencentcloud/clb/v20180317/model/DeregisterTargetsRequest.h
+  include/tencentcloud/clb/v20180317/model/ModifyLoadBalancerMixIpTargetResponse.h
   include/tencentcloud/clb/v20180317/model/InternetAccessible.h
   include/tencentcloud/clb/v20180317/model/CreateLoadBalancerSnatIpsRequest.h
   include/tencentcloud/clb/v20180317/model/ModifyTargetGroupInstancesWeightRequest.h
@@ -191,6 +192,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/RuleInput.h
   include/tencentcloud/clb/v20180317/model/TagInfo.h
   include/tencentcloud/clb/v20180317/model/SnatIp.h
+  include/tencentcloud/clb/v20180317/model/ModifyLoadBalancerMixIpTargetRequest.h
   include/tencentcloud/clb/v20180317/model/DescribeBlockIPTaskResponse.h
   include/tencentcloud/clb/v20180317/model/DescribeResourcesRequest.h
   include/tencentcloud/clb/v20180317/model/DescribeClassicalLBListenersResponse.h
@@ -391,6 +393,7 @@ set(clb_src
   src/v20180317/model/ModifyTargetGroupAttributeRequest.cpp
   src/v20180317/model/ExclusiveCluster.cpp
   src/v20180317/model/DeregisterTargetsRequest.cpp
+  src/v20180317/model/ModifyLoadBalancerMixIpTargetResponse.cpp
   src/v20180317/model/InternetAccessible.cpp
   src/v20180317/model/CreateLoadBalancerSnatIpsRequest.cpp
   src/v20180317/model/ModifyTargetGroupInstancesWeightRequest.cpp
@@ -402,6 +405,7 @@ set(clb_src
   src/v20180317/model/RuleInput.cpp
   src/v20180317/model/TagInfo.cpp
   src/v20180317/model/SnatIp.cpp
+  src/v20180317/model/ModifyLoadBalancerMixIpTargetRequest.cpp
   src/v20180317/model/DescribeBlockIPTaskResponse.cpp
   src/v20180317/model/DescribeResourcesRequest.cpp
   src/v20180317/model/DescribeClassicalLBListenersResponse.cpp

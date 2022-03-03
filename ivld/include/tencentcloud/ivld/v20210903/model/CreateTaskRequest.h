@@ -115,6 +115,42 @@ namespace TencentCloud
                      */
                     bool UploadVideoHasBeenSet() const;
 
+                    /**
+                     * 获取自定义标签，可用于查询
+                     * @return Label 自定义标签，可用于查询
+                     */
+                    std::string GetLabel() const;
+
+                    /**
+                     * 设置自定义标签，可用于查询
+                     * @param Label 自定义标签，可用于查询
+                     */
+                    void SetLabel(const std::string& _label);
+
+                    /**
+                     * 判断参数 Label 是否已赋值
+                     * @return Label 是否已赋值
+                     */
+                    bool LabelHasBeenSet() const;
+
+                    /**
+                     * 获取任务分析完成的回调地址，该设置优先级高于控制台全局的设置；
+                     * @return CallbackURL 任务分析完成的回调地址，该设置优先级高于控制台全局的设置；
+                     */
+                    std::string GetCallbackURL() const;
+
+                    /**
+                     * 设置任务分析完成的回调地址，该设置优先级高于控制台全局的设置；
+                     * @param CallbackURL 任务分析完成的回调地址，该设置优先级高于控制台全局的设置；
+                     */
+                    void SetCallbackURL(const std::string& _callbackURL);
+
+                    /**
+                     * 判断参数 CallbackURL 是否已赋值
+                     * @return CallbackURL 是否已赋值
+                     */
+                    bool CallbackURLHasBeenSet() const;
+
                 private:
 
                     /**
@@ -140,6 +176,18 @@ namespace TencentCloud
                      */
                     bool m_uploadVideo;
                     bool m_uploadVideoHasBeenSet;
+
+                    /**
+                     * 自定义标签，可用于查询
+                     */
+                    std::string m_label;
+                    bool m_labelHasBeenSet;
+
+                    /**
+                     * 任务分析完成的回调地址，该设置优先级高于控制台全局的设置；
+                     */
+                    std::string m_callbackURL;
+                    bool m_callbackURLHasBeenSet;
 
                 };
             }

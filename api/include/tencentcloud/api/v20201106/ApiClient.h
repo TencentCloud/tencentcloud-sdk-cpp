@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/api/v20201106/model/DescribeProductsRequest.h>
+#include <tencentcloud/api/v20201106/model/DescribeProductsResponse.h>
 #include <tencentcloud/api/v20201106/model/DescribeRegionsRequest.h>
 #include <tencentcloud/api/v20201106/model/DescribeRegionsResponse.h>
 #include <tencentcloud/api/v20201106/model/DescribeZonesRequest.h>
@@ -41,6 +43,9 @@ namespace TencentCloud
                 ApiClient(const Credential &credential, const std::string &region);
                 ApiClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::DescribeProductsResponse> DescribeProductsOutcome;
+                typedef std::future<DescribeProductsOutcome> DescribeProductsOutcomeCallable;
+                typedef std::function<void(const ApiClient*, const Model::DescribeProductsRequest&, DescribeProductsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRegionsResponse> DescribeRegionsOutcome;
                 typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
                 typedef std::function<void(const ApiClient*, const Model::DescribeRegionsRequest&, DescribeRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
@@ -49,6 +54,15 @@ namespace TencentCloud
                 typedef std::function<void(const ApiClient*, const Model::DescribeZonesRequest&, DescribeZonesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZonesAsyncHandler;
 
 
+
+                /**
+                 *本接口(DescribeProducts)用于查询各个支持地域列表查询的产品信息。
+                 * @param req DescribeProductsRequest
+                 * @return DescribeProductsOutcome
+                 */
+                DescribeProductsOutcome DescribeProducts(const Model::DescribeProductsRequest &request);
+                void DescribeProductsAsync(const Model::DescribeProductsRequest& request, const DescribeProductsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProductsOutcomeCallable DescribeProductsCallable(const Model::DescribeProductsRequest& request);
 
                 /**
                  *本接口(DescribeRegions)用于查询各个产品支持地域信息。

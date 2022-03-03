@@ -2577,6 +2577,49 @@ ClbClient::ModifyLoadBalancerAttributesOutcomeCallable ClbClient::ModifyLoadBala
     return task->get_future();
 }
 
+ClbClient::ModifyLoadBalancerMixIpTargetOutcome ClbClient::ModifyLoadBalancerMixIpTarget(const ModifyLoadBalancerMixIpTargetRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLoadBalancerMixIpTarget");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLoadBalancerMixIpTargetResponse rsp = ModifyLoadBalancerMixIpTargetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLoadBalancerMixIpTargetOutcome(rsp);
+        else
+            return ModifyLoadBalancerMixIpTargetOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLoadBalancerMixIpTargetOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::ModifyLoadBalancerMixIpTargetAsync(const ModifyLoadBalancerMixIpTargetRequest& request, const ModifyLoadBalancerMixIpTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyLoadBalancerMixIpTarget(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::ModifyLoadBalancerMixIpTargetOutcomeCallable ClbClient::ModifyLoadBalancerMixIpTargetCallable(const ModifyLoadBalancerMixIpTargetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyLoadBalancerMixIpTargetOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyLoadBalancerMixIpTarget(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::ModifyLoadBalancerSlaOutcome ClbClient::ModifyLoadBalancerSla(const ModifyLoadBalancerSlaRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyLoadBalancerSla");

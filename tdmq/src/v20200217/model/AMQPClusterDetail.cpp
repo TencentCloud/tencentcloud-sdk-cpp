@@ -23,7 +23,8 @@ using namespace std;
 AMQPClusterDetail::AMQPClusterDetail() :
     m_infoHasBeenSet(false),
     m_configHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,16 @@ CoreInternalOutcome AMQPClusterDetail::Deserialize(const rapidjson::Value &value
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AMQPClusterDetail.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -124,6 +135,14 @@ void AMQPClusterDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
     }
 
 }
@@ -175,5 +194,21 @@ void AMQPClusterDetail::SetTags(const vector<Tag>& _tags)
 bool AMQPClusterDetail::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+int64_t AMQPClusterDetail::GetStatus() const
+{
+    return m_status;
+}
+
+void AMQPClusterDetail::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool AMQPClusterDetail::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

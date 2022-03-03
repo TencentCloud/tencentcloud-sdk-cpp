@@ -26,7 +26,8 @@ DescribeJobsRequest::DescribeJobsRequest() :
     m_jobIdsHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_workSpaceIdHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,14 @@ string DescribeJobsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_workSpaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkSpaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workSpaceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -151,6 +160,22 @@ void DescribeJobsRequest::SetLimit(const int64_t& _limit)
 bool DescribeJobsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeJobsRequest::GetWorkSpaceId() const
+{
+    return m_workSpaceId;
+}
+
+void DescribeJobsRequest::SetWorkSpaceId(const string& _workSpaceId)
+{
+    m_workSpaceId = _workSpaceId;
+    m_workSpaceIdHasBeenSet = true;
+}
+
+bool DescribeJobsRequest::WorkSpaceIdHasBeenSet() const
+{
+    return m_workSpaceIdHasBeenSet;
 }
 
 

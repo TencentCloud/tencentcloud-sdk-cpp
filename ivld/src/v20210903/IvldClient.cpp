@@ -470,6 +470,49 @@ IvldClient::DeleteMediaOutcomeCallable IvldClient::DeleteMediaCallable(const Del
     return task->get_future();
 }
 
+IvldClient::DeleteTaskOutcome IvldClient::DeleteTask(const DeleteTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTaskResponse rsp = DeleteTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTaskOutcome(rsp);
+        else
+            return DeleteTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTaskOutcome(outcome.GetError());
+    }
+}
+
+void IvldClient::DeleteTaskAsync(const DeleteTaskRequest& request, const DeleteTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IvldClient::DeleteTaskOutcomeCallable IvldClient::DeleteTaskCallable(const DeleteTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IvldClient::DescribeCustomCategoriesOutcome IvldClient::DescribeCustomCategories(const DescribeCustomCategoriesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCustomCategories");
@@ -893,6 +936,92 @@ IvldClient::ImportMediaOutcomeCallable IvldClient::ImportMediaCallable(const Imp
         [this, request]()
         {
             return this->ImportMedia(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IvldClient::ModifyCallbackOutcome IvldClient::ModifyCallback(const ModifyCallbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCallback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCallbackResponse rsp = ModifyCallbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCallbackOutcome(rsp);
+        else
+            return ModifyCallbackOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCallbackOutcome(outcome.GetError());
+    }
+}
+
+void IvldClient::ModifyCallbackAsync(const ModifyCallbackRequest& request, const ModifyCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCallback(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IvldClient::ModifyCallbackOutcomeCallable IvldClient::ModifyCallbackCallable(const ModifyCallbackRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCallbackOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCallback(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IvldClient::QueryCallbackOutcome IvldClient::QueryCallback(const QueryCallbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryCallback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryCallbackResponse rsp = QueryCallbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryCallbackOutcome(rsp);
+        else
+            return QueryCallbackOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryCallbackOutcome(outcome.GetError());
+    }
+}
+
+void IvldClient::QueryCallbackAsync(const QueryCallbackRequest& request, const QueryCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryCallback(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IvldClient::QueryCallbackOutcomeCallable IvldClient::QueryCallbackCallable(const QueryCallbackRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryCallbackOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryCallback(request);
         }
     );
 

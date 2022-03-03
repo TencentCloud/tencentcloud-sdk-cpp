@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool VHostsHasBeenSet() const;
 
                     /**
-                     * 获取交换机类型，可选值为Direct, Fanout, Topic
-                     * @return Type 交换机类型，可选值为Direct, Fanout, Topic
+                     * 获取交换机类型，可选值为Direct, Fanout, Topic, x-delayed-message
+                     * @return Type 交换机类型，可选值为Direct, Fanout, Topic, x-delayed-message
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置交换机类型，可选值为Direct, Fanout, Topic
-                     * @param Type 交换机类型，可选值为Direct, Fanout, Topic
+                     * 设置交换机类型，可选值为Direct, Fanout, Topic, x-delayed-message
+                     * @param Type 交换机类型，可选值为Direct, Fanout, Topic, x-delayed-message
                      */
                     void SetType(const std::string& _type);
 
@@ -150,6 +150,24 @@ namespace TencentCloud
                      */
                     bool AlternateExchangeHasBeenSet() const;
 
+                    /**
+                     * 获取延迟交换机类型，可选值为Direct, Fanout, Topic, 不允许为x-delayed-message
+                     * @return DelayedType 延迟交换机类型，可选值为Direct, Fanout, Topic, 不允许为x-delayed-message
+                     */
+                    std::string GetDelayedType() const;
+
+                    /**
+                     * 设置延迟交换机类型，可选值为Direct, Fanout, Topic, 不允许为x-delayed-message
+                     * @param DelayedType 延迟交换机类型，可选值为Direct, Fanout, Topic, 不允许为x-delayed-message
+                     */
+                    void SetDelayedType(const std::string& _delayedType);
+
+                    /**
+                     * 判断参数 DelayedType 是否已赋值
+                     * @return DelayedType 是否已赋值
+                     */
+                    bool DelayedTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -165,7 +183,7 @@ namespace TencentCloud
                     bool m_vHostsHasBeenSet;
 
                     /**
-                     * 交换机类型，可选值为Direct, Fanout, Topic
+                     * 交换机类型，可选值为Direct, Fanout, Topic, x-delayed-message
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -187,6 +205,12 @@ namespace TencentCloud
                      */
                     std::string m_alternateExchange;
                     bool m_alternateExchangeHasBeenSet;
+
+                    /**
+                     * 延迟交换机类型，可选值为Direct, Fanout, Topic, 不允许为x-delayed-message
+                     */
+                    std::string m_delayedType;
+                    bool m_delayedTypeHasBeenSet;
 
                 };
             }

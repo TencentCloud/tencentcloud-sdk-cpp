@@ -27,7 +27,8 @@ MediaInfo::MediaInfo() :
     m_statusHasBeenSet(false),
     m_failedReasonHasBeenSet(false),
     m_metadataHasBeenSet(false),
-    m_progressHasBeenSet(false)
+    m_progressHasBeenSet(false),
+    m_labelHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,16 @@ CoreInternalOutcome MediaInfo::Deserialize(const rapidjson::Value &value)
         m_progressHasBeenSet = true;
     }
 
+    if (value.HasMember("Label") && !value["Label"].IsNull())
+    {
+        if (!value["Label"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaInfo.Label` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_label = string(value["Label"].GetString());
+        m_labelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -175,6 +186,14 @@ void MediaInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Progress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_progress, allocator);
+    }
+
+    if (m_labelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Label";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -290,5 +309,21 @@ void MediaInfo::SetProgress(const double& _progress)
 bool MediaInfo::ProgressHasBeenSet() const
 {
     return m_progressHasBeenSet;
+}
+
+string MediaInfo::GetLabel() const
+{
+    return m_label;
+}
+
+void MediaInfo::SetLabel(const string& _label)
+{
+    m_label = _label;
+    m_labelHasBeenSet = true;
+}
+
+bool MediaInfo::LabelHasBeenSet() const
+{
+    return m_labelHasBeenSet;
 }
 

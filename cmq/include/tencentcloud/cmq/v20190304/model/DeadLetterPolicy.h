@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * DeadLetterPolicy
+                * 死信队列策略
                 */
                 class DeadLetterPolicy : public AbstractModel
                 {
@@ -45,28 +45,6 @@ namespace TencentCloud
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
-
-                    /**
-                     * 获取死信队列名字。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeadLetterQueueName 死信队列名字。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetDeadLetterQueueName() const;
-
-                    /**
-                     * 设置死信队列名字。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeadLetterQueueName 死信队列名字。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetDeadLetterQueueName(const std::string& _deadLetterQueueName);
-
-                    /**
-                     * 判断参数 DeadLetterQueueName 是否已赋值
-                     * @return DeadLetterQueueName 是否已赋值
-                     */
-                    bool DeadLetterQueueNameHasBeenSet() const;
 
                     /**
                      * 获取死信队列。
@@ -91,26 +69,26 @@ namespace TencentCloud
                     bool DeadLetterQueueHasBeenSet() const;
 
                     /**
-                     * 获取死信队列策略。
+                     * 获取死信队列名字。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Policy 死信队列策略。
+                     * @return DeadLetterQueueName 死信队列名字。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    uint64_t GetPolicy() const;
+                    std::string GetDeadLetterQueueName() const;
 
                     /**
-                     * 设置死信队列策略。
+                     * 设置死信队列名字。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Policy 死信队列策略。
+                     * @param DeadLetterQueueName 死信队列名字。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetPolicy(const uint64_t& _policy);
+                    void SetDeadLetterQueueName(const std::string& _deadLetterQueueName);
 
                     /**
-                     * 判断参数 Policy 是否已赋值
-                     * @return Policy 是否已赋值
+                     * 判断参数 DeadLetterQueueName 是否已赋值
+                     * @return DeadLetterQueueName 是否已赋值
                      */
-                    bool PolicyHasBeenSet() const;
+                    bool DeadLetterQueueNameHasBeenSet() const;
 
                     /**
                      * 获取最大未消费过期时间。Policy为1时必选。范围300-43200，单位秒，需要小于消息最大保留时间MsgRetentionSeconds。
@@ -133,6 +111,28 @@ namespace TencentCloud
                      * @return MaxTimeToLive 是否已赋值
                      */
                     bool MaxTimeToLiveHasBeenSet() const;
+
+                    /**
+                     * 获取死信队列策略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Policy 死信队列策略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetPolicy() const;
+
+                    /**
+                     * 设置死信队列策略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Policy 死信队列策略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPolicy(const uint64_t& _policy);
+
+                    /**
+                     * 判断参数 Policy 是否已赋值
+                     * @return Policy 是否已赋值
+                     */
+                    bool PolicyHasBeenSet() const;
 
                     /**
                      * 获取最大接收次数。
@@ -159,13 +159,6 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 死信队列名字。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_deadLetterQueueName;
-                    bool m_deadLetterQueueNameHasBeenSet;
-
-                    /**
                      * 死信队列。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -173,11 +166,11 @@ namespace TencentCloud
                     bool m_deadLetterQueueHasBeenSet;
 
                     /**
-                     * 死信队列策略。
+                     * 死信队列名字。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    uint64_t m_policy;
-                    bool m_policyHasBeenSet;
+                    std::string m_deadLetterQueueName;
+                    bool m_deadLetterQueueNameHasBeenSet;
 
                     /**
                      * 最大未消费过期时间。Policy为1时必选。范围300-43200，单位秒，需要小于消息最大保留时间MsgRetentionSeconds。
@@ -185,6 +178,13 @@ namespace TencentCloud
                      */
                     uint64_t m_maxTimeToLive;
                     bool m_maxTimeToLiveHasBeenSet;
+
+                    /**
+                     * 死信队列策略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_policy;
+                    bool m_policyHasBeenSet;
 
                     /**
                      * 最大接收次数。

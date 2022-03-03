@@ -210,6 +210,28 @@ namespace TencentCloud
                      */
                     bool RuleNameHasBeenSet() const;
 
+                    /**
+                     * 获取数据库实例名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceName 数据库实例名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInstanceName() const;
+
+                    /**
+                     * 设置数据库实例名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceName 数据库实例名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceName(const std::string& _instanceName);
+
+                    /**
+                     * 判断参数 InstanceName 是否已赋值
+                     * @return InstanceName 是否已赋值
+                     */
+                    bool InstanceNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -264,6 +286,13 @@ namespace TencentCloud
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
+
+                    /**
+                     * 数据库实例名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceName;
+                    bool m_instanceNameHasBeenSet;
 
                 };
             }

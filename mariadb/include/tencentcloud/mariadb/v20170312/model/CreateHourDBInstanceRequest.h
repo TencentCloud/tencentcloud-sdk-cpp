@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取节点可用区分布，最多可填两个可用区。当分片规格为一主两从时，其中两个节点在第一个可用区。
-                     * @return Zones 节点可用区分布，最多可填两个可用区。当分片规格为一主两从时，其中两个节点在第一个可用区。
+                     * 获取节点可用区分布，最多可填两个可用区。
+                     * @return Zones 节点可用区分布，最多可填两个可用区。
                      */
                     std::vector<std::string> GetZones() const;
 
                     /**
-                     * 设置节点可用区分布，最多可填两个可用区。当分片规格为一主两从时，其中两个节点在第一个可用区。
-                     * @param Zones 节点可用区分布，最多可填两个可用区。当分片规格为一主两从时，其中两个节点在第一个可用区。
+                     * 设置节点可用区分布，最多可填两个可用区。
+                     * @param Zones 节点可用区分布，最多可填两个可用区。
                      */
                     void SetZones(const std::vector<std::string>& _zones);
 
@@ -190,28 +190,16 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库引擎版本，当前可选：10.0.10，10.1.9，5.7.17。
-10.0.10 - Mariadb 10.0.10；
-10.1.9 - Mariadb 10.1.9；
-5.7.17 - Percona 5.7.17。
 如果不填的话，默认为10.1.9，表示Mariadb 10.1.9。
                      * @return DbVersionId 数据库引擎版本，当前可选：10.0.10，10.1.9，5.7.17。
-10.0.10 - Mariadb 10.0.10；
-10.1.9 - Mariadb 10.1.9；
-5.7.17 - Percona 5.7.17。
 如果不填的话，默认为10.1.9，表示Mariadb 10.1.9。
                      */
                     std::string GetDbVersionId() const;
 
                     /**
                      * 设置数据库引擎版本，当前可选：10.0.10，10.1.9，5.7.17。
-10.0.10 - Mariadb 10.0.10；
-10.1.9 - Mariadb 10.1.9；
-5.7.17 - Percona 5.7.17。
 如果不填的话，默认为10.1.9，表示Mariadb 10.1.9。
                      * @param DbVersionId 数据库引擎版本，当前可选：10.0.10，10.1.9，5.7.17。
-10.0.10 - Mariadb 10.0.10；
-10.1.9 - Mariadb 10.1.9；
-5.7.17 - Percona 5.7.17。
 如果不填的话，默认为10.1.9，表示Mariadb 10.1.9。
                      */
                     void SetDbVersionId(const std::string& _dbVersionId);
@@ -331,14 +319,22 @@ namespace TencentCloud
                     bool DcnInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取参数列表。本接口的可选值为：character_set_server（字符集，必传），lower_case_table_names（表名大小写敏感，必传，0 - 敏感；1-不敏感），innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0 - 异步； 1 - 强同步；2 - 强同步可退化。默认为强同步可退化）。
-                     * @return InitParams 参数列表。本接口的可选值为：character_set_server（字符集，必传），lower_case_table_names（表名大小写敏感，必传，0 - 敏感；1-不敏感），innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0 - 异步； 1 - 强同步；2 - 强同步可退化。默认为强同步可退化）。
+                     * 获取参数列表。本接口的可选值为：
+character_set_server（字符集，必传），lower_case_table_names（表名大小写敏感，必传，0 - 敏感；1-不敏感），
+innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0 - 异步； 1 - 强同步；2 - 强同步可退化，默认为强同步可退化）。
+                     * @return InitParams 参数列表。本接口的可选值为：
+character_set_server（字符集，必传），lower_case_table_names（表名大小写敏感，必传，0 - 敏感；1-不敏感），
+innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0 - 异步； 1 - 强同步；2 - 强同步可退化，默认为强同步可退化）。
                      */
                     std::vector<DBParamValue> GetInitParams() const;
 
                     /**
-                     * 设置参数列表。本接口的可选值为：character_set_server（字符集，必传），lower_case_table_names（表名大小写敏感，必传，0 - 敏感；1-不敏感），innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0 - 异步； 1 - 强同步；2 - 强同步可退化。默认为强同步可退化）。
-                     * @param InitParams 参数列表。本接口的可选值为：character_set_server（字符集，必传），lower_case_table_names（表名大小写敏感，必传，0 - 敏感；1-不敏感），innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0 - 异步； 1 - 强同步；2 - 强同步可退化。默认为强同步可退化）。
+                     * 设置参数列表。本接口的可选值为：
+character_set_server（字符集，必传），lower_case_table_names（表名大小写敏感，必传，0 - 敏感；1-不敏感），
+innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0 - 异步； 1 - 强同步；2 - 强同步可退化，默认为强同步可退化）。
+                     * @param InitParams 参数列表。本接口的可选值为：
+character_set_server（字符集，必传），lower_case_table_names（表名大小写敏感，必传，0 - 敏感；1-不敏感），
+innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0 - 异步； 1 - 强同步；2 - 强同步可退化，默认为强同步可退化）。
                      */
                     void SetInitParams(const std::vector<DBParamValue>& _initParams);
 
@@ -387,7 +383,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 节点可用区分布，最多可填两个可用区。当分片规格为一主两从时，其中两个节点在第一个可用区。
+                     * 节点可用区分布，最多可填两个可用区。
                      */
                     std::vector<std::string> m_zones;
                     bool m_zonesHasBeenSet;
@@ -436,9 +432,6 @@ namespace TencentCloud
 
                     /**
                      * 数据库引擎版本，当前可选：10.0.10，10.1.9，5.7.17。
-10.0.10 - Mariadb 10.0.10；
-10.1.9 - Mariadb 10.1.9；
-5.7.17 - Percona 5.7.17。
 如果不填的话，默认为10.1.9，表示Mariadb 10.1.9。
                      */
                     std::string m_dbVersionId;
@@ -481,7 +474,9 @@ namespace TencentCloud
                     bool m_dcnInstanceIdHasBeenSet;
 
                     /**
-                     * 参数列表。本接口的可选值为：character_set_server（字符集，必传），lower_case_table_names（表名大小写敏感，必传，0 - 敏感；1-不敏感），innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0 - 异步； 1 - 强同步；2 - 强同步可退化。默认为强同步可退化）。
+                     * 参数列表。本接口的可选值为：
+character_set_server（字符集，必传），lower_case_table_names（表名大小写敏感，必传，0 - 敏感；1-不敏感），
+innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0 - 异步； 1 - 强同步；2 - 强同步可退化，默认为强同步可退化）。
                      */
                     std::vector<DBParamValue> m_initParams;
                     bool m_initParamsHasBeenSet;

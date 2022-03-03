@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool NameKeywordHasBeenSet() const;
 
+                    /**
+                     * 获取VHostId 列表过滤
+                     * @return VHostIdList VHostId 列表过滤
+                     */
+                    std::vector<std::string> GetVHostIdList() const;
+
+                    /**
+                     * 设置VHostId 列表过滤
+                     * @param VHostIdList VHostId 列表过滤
+                     */
+                    void SetVHostIdList(const std::vector<std::string>& _vHostIdList);
+
+                    /**
+                     * 判断参数 VHostIdList 是否已赋值
+                     * @return VHostIdList 是否已赋值
+                     */
+                    bool VHostIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     std::string m_nameKeyword;
                     bool m_nameKeywordHasBeenSet;
+
+                    /**
+                     * VHostId 列表过滤
+                     */
+                    std::vector<std::string> m_vHostIdList;
+                    bool m_vHostIdListHasBeenSet;
 
                 };
             }

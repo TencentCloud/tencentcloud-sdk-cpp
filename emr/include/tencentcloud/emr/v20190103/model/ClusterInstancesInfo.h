@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/emr/v20190103/model/EmrProductConfigOutter.h>
 #include <tencentcloud/emr/v20190103/model/Tag.h>
+#include <tencentcloud/emr/v20190103/model/ClusterExternalServiceInfo.h>
 
 
 namespace TencentCloud
@@ -948,6 +949,28 @@ namespace TencentCloud
                      */
                     bool SubnetNameHasBeenSet() const;
 
+                    /**
+                     * 获取集群依赖关系
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterExternalServiceInfo 集群依赖关系
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ClusterExternalServiceInfo> GetClusterExternalServiceInfo() const;
+
+                    /**
+                     * 设置集群依赖关系
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ClusterExternalServiceInfo 集群依赖关系
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClusterExternalServiceInfo(const std::vector<ClusterExternalServiceInfo>& _clusterExternalServiceInfo);
+
+                    /**
+                     * 判断参数 ClusterExternalServiceInfo 是否已赋值
+                     * @return ClusterExternalServiceInfo 是否已赋值
+                     */
+                    bool ClusterExternalServiceInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1228,6 +1251,13 @@ namespace TencentCloud
                      */
                     std::string m_subnetName;
                     bool m_subnetNameHasBeenSet;
+
+                    /**
+                     * 集群依赖关系
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ClusterExternalServiceInfo> m_clusterExternalServiceInfo;
+                    bool m_clusterExternalServiceInfoHasBeenSet;
 
                 };
             }

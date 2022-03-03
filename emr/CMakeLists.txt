@@ -54,6 +54,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/PreExecuteFileSettings.h
   include/tencentcloud/emr/v20190103/model/SyncPodStateRequest.h
   include/tencentcloud/emr/v20190103/model/CreateInstanceRequest.h
+  include/tencentcloud/emr/v20190103/model/ClusterExternalServiceInfo.h
   include/tencentcloud/emr/v20190103/model/InquirePriceRenewEmrRequest.h
   include/tencentcloud/emr/v20190103/model/PodParameter.h
   include/tencentcloud/emr/v20190103/model/MetaDbInfo.h
@@ -133,6 +134,7 @@ set(emr_src
   src/v20190103/model/PreExecuteFileSettings.cpp
   src/v20190103/model/SyncPodStateRequest.cpp
   src/v20190103/model/CreateInstanceRequest.cpp
+  src/v20190103/model/ClusterExternalServiceInfo.cpp
   src/v20190103/model/InquirePriceRenewEmrRequest.cpp
   src/v20190103/model/PodParameter.cpp
   src/v20190103/model/MetaDbInfo.cpp

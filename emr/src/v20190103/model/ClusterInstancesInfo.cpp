@@ -56,7 +56,8 @@ ClusterInstancesInfo::ClusterInstancesInfo() :
     m_sceneEmrVersionHasBeenSet(false),
     m_displayNameHasBeenSet(false),
     m_vpcNameHasBeenSet(false),
-    m_subnetNameHasBeenSet(false)
+    m_subnetNameHasBeenSet(false),
+    m_clusterExternalServiceInfoHasBeenSet(false)
 {
 }
 
@@ -442,6 +443,26 @@ CoreInternalOutcome ClusterInstancesInfo::Deserialize(const rapidjson::Value &va
         m_subnetNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterExternalServiceInfo") && !value["ClusterExternalServiceInfo"].IsNull())
+    {
+        if (!value["ClusterExternalServiceInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ClusterInstancesInfo.ClusterExternalServiceInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ClusterExternalServiceInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ClusterExternalServiceInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_clusterExternalServiceInfo.push_back(item);
+        }
+        m_clusterExternalServiceInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -743,6 +764,21 @@ void ClusterInstancesInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "SubnetName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subnetName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterExternalServiceInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterExternalServiceInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_clusterExternalServiceInfo.begin(); itr != m_clusterExternalServiceInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1322,5 +1358,21 @@ void ClusterInstancesInfo::SetSubnetName(const string& _subnetName)
 bool ClusterInstancesInfo::SubnetNameHasBeenSet() const
 {
     return m_subnetNameHasBeenSet;
+}
+
+vector<ClusterExternalServiceInfo> ClusterInstancesInfo::GetClusterExternalServiceInfo() const
+{
+    return m_clusterExternalServiceInfo;
+}
+
+void ClusterInstancesInfo::SetClusterExternalServiceInfo(const vector<ClusterExternalServiceInfo>& _clusterExternalServiceInfo)
+{
+    m_clusterExternalServiceInfo = _clusterExternalServiceInfo;
+    m_clusterExternalServiceInfoHasBeenSet = true;
+}
+
+bool ClusterInstancesInfo::ClusterExternalServiceInfoHasBeenSet() const
+{
+    return m_clusterExternalServiceInfoHasBeenSet;
 }
 

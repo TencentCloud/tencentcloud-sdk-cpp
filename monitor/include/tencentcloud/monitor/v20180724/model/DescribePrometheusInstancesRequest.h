@@ -227,6 +227,32 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取按照【计费类型】进行过滤。
+<li>2：包年包月</li>
+<li>3：按量</li>
+                     * @return InstanceChargeType 按照【计费类型】进行过滤。
+<li>2：包年包月</li>
+<li>3：按量</li>
+                     */
+                    int64_t GetInstanceChargeType() const;
+
+                    /**
+                     * 设置按照【计费类型】进行过滤。
+<li>2：包年包月</li>
+<li>3：按量</li>
+                     * @param InstanceChargeType 按照【计费类型】进行过滤。
+<li>2：包年包月</li>
+<li>3：按量</li>
+                     */
+                    void SetInstanceChargeType(const int64_t& _instanceChargeType);
+
+                    /**
+                     * 判断参数 InstanceChargeType 是否已赋值
+                     * @return InstanceChargeType 是否已赋值
+                     */
+                    bool InstanceChargeTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -286,6 +312,14 @@ namespace TencentCloud
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 按照【计费类型】进行过滤。
+<li>2：包年包月</li>
+<li>3：按量</li>
+                     */
+                    int64_t m_instanceChargeType;
+                    bool m_instanceChargeTypeHasBeenSet;
 
                 };
             }

@@ -213,6 +213,28 @@ namespace TencentCloud
                      */
                     bool ProgressHasBeenSet() const;
 
+                    /**
+                     * 获取媒资自定义标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Label 媒资自定义标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLabel() const;
+
+                    /**
+                     * 设置媒资自定义标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Label 媒资自定义标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLabel(const std::string& _label);
+
+                    /**
+                     * 判断参数 Label 是否已赋值
+                     * @return Label 是否已赋值
+                     */
+                    bool LabelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -262,6 +284,13 @@ namespace TencentCloud
                      */
                     double m_progress;
                     bool m_progressHasBeenSet;
+
+                    /**
+                     * 媒资自定义标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_label;
+                    bool m_labelHasBeenSet;
 
                 };
             }

@@ -194,6 +194,72 @@ namespace TencentCloud
                      */
                     bool InternalHasBeenSet() const;
 
+                    /**
+                     * 获取备用Exchange名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlternateExchange 备用Exchange名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAlternateExchange() const;
+
+                    /**
+                     * 设置备用Exchange名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AlternateExchange 备用Exchange名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAlternateExchange(const std::string& _alternateExchange);
+
+                    /**
+                     * 判断参数 AlternateExchange 是否已赋值
+                     * @return AlternateExchange 是否已赋值
+                     */
+                    bool AlternateExchangeHasBeenSet() const;
+
+                    /**
+                     * 获取备用Exchange是否删除标识: true(已删除)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlternateExchangeDeleteMark 备用Exchange是否删除标识: true(已删除)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetAlternateExchangeDeleteMark() const;
+
+                    /**
+                     * 设置备用Exchange是否删除标识: true(已删除)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AlternateExchangeDeleteMark 备用Exchange是否删除标识: true(已删除)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAlternateExchangeDeleteMark(const bool& _alternateExchangeDeleteMark);
+
+                    /**
+                     * 判断参数 AlternateExchangeDeleteMark 是否已赋值
+                     * @return AlternateExchangeDeleteMark 是否已赋值
+                     */
+                    bool AlternateExchangeDeleteMarkHasBeenSet() const;
+
+                    /**
+                     * 获取延迟Exchange的类别，为枚举类型:Direct, Fanout, Topic
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DelayType 延迟Exchange的类别，为枚举类型:Direct, Fanout, Topic
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDelayType() const;
+
+                    /**
+                     * 设置延迟Exchange的类别，为枚举类型:Direct, Fanout, Topic
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DelayType 延迟Exchange的类别，为枚举类型:Direct, Fanout, Topic
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDelayType(const std::string& _delayType);
+
+                    /**
+                     * 判断参数 DelayType 是否已赋值
+                     * @return DelayType 是否已赋值
+                     */
+                    bool DelayTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -244,6 +310,27 @@ namespace TencentCloud
                      */
                     bool m_internal;
                     bool m_internalHasBeenSet;
+
+                    /**
+                     * 备用Exchange名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_alternateExchange;
+                    bool m_alternateExchangeHasBeenSet;
+
+                    /**
+                     * 备用Exchange是否删除标识: true(已删除)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_alternateExchangeDeleteMark;
+                    bool m_alternateExchangeDeleteMarkHasBeenSet;
+
+                    /**
+                     * 延迟Exchange的类别，为枚举类型:Direct, Fanout, Topic
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_delayType;
+                    bool m_delayTypeHasBeenSet;
 
                 };
             }

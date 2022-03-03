@@ -23,7 +23,8 @@ using namespace std;
 ModifyBundle::ModifyBundle() :
     m_modifyPriceHasBeenSet(false),
     m_modifyBundleStateHasBeenSet(false),
-    m_bundleHasBeenSet(false)
+    m_bundleHasBeenSet(false),
+    m_notSupportModifyMessageHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,16 @@ CoreInternalOutcome ModifyBundle::Deserialize(const rapidjson::Value &value)
         m_bundleHasBeenSet = true;
     }
 
+    if (value.HasMember("NotSupportModifyMessage") && !value["NotSupportModifyMessage"].IsNull())
+    {
+        if (!value["NotSupportModifyMessage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModifyBundle.NotSupportModifyMessage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_notSupportModifyMessage = string(value["NotSupportModifyMessage"].GetString());
+        m_notSupportModifyMessageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ void ModifyBundle::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_bundle.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_notSupportModifyMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotSupportModifyMessage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_notSupportModifyMessage.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -158,5 +177,21 @@ void ModifyBundle::SetBundle(const Bundle& _bundle)
 bool ModifyBundle::BundleHasBeenSet() const
 {
     return m_bundleHasBeenSet;
+}
+
+string ModifyBundle::GetNotSupportModifyMessage() const
+{
+    return m_notSupportModifyMessage;
+}
+
+void ModifyBundle::SetNotSupportModifyMessage(const string& _notSupportModifyMessage)
+{
+    m_notSupportModifyMessage = _notSupportModifyMessage;
+    m_notSupportModifyMessageHasBeenSet = true;
+}
+
+bool ModifyBundle::NotSupportModifyMessageHasBeenSet() const
+{
+    return m_notSupportModifyMessageHasBeenSet;
 }
 

@@ -79,38 +79,42 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取搜索的类型有：none，tags，grade，brand，code，hash，limit。
+                     * 获取搜索的类型有：none，tags，grade，brand，code，hash，limit，domain。
 选tags，入参请填Tag，
 选grade，入参请填Grade，
 选brand，入参请填Brand，
 选code，入参请填Code，
 选hash，入参请填Hash
 选limit，标识只返回数量信息
-                     * @return SearchType 搜索的类型有：none，tags，grade，brand，code，hash，limit。
+选domain，入参请填Domain
+                     * @return SearchType 搜索的类型有：none，tags，grade，brand，code，hash，limit，domain。
 选tags，入参请填Tag，
 选grade，入参请填Grade，
 选brand，入参请填Brand，
 选code，入参请填Code，
 选hash，入参请填Hash
 选limit，标识只返回数量信息
+选domain，入参请填Domain
                      */
                     std::string GetSearchType() const;
 
                     /**
-                     * 设置搜索的类型有：none，tags，grade，brand，code，hash，limit。
+                     * 设置搜索的类型有：none，tags，grade，brand，code，hash，limit，domain。
 选tags，入参请填Tag，
 选grade，入参请填Grade，
 选brand，入参请填Brand，
 选code，入参请填Code，
 选hash，入参请填Hash
 选limit，标识只返回数量信息
-                     * @param SearchType 搜索的类型有：none，tags，grade，brand，code，hash，limit。
+选domain，入参请填Domain
+                     * @param SearchType 搜索的类型有：none，tags，grade，brand，code，hash，limit，domain。
 选tags，入参请填Tag，
 选grade，入参请填Grade，
 选brand，入参请填Brand，
 选code，入参请填Code，
 选hash，入参请填Hash
 选limit，标识只返回数量信息
+选domain，入参请填Domain
                      */
                     void SetSearchType(const std::string& _searchType);
 
@@ -246,6 +250,24 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取搜索域名
+                     * @return Domain 搜索域名
+                     */
+                    std::string GetDomain() const;
+
+                    /**
+                     * 设置搜索域名
+                     * @param Domain 搜索域名
+                     */
+                    void SetDomain(const std::string& _domain);
+
+                    /**
+                     * 判断参数 Domain 是否已赋值
+                     * @return Domain 是否已赋值
+                     */
+                    bool DomainHasBeenSet() const;
+
                 private:
 
                     /**
@@ -261,13 +283,14 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 搜索的类型有：none，tags，grade，brand，code，hash，limit。
+                     * 搜索的类型有：none，tags，grade，brand，code，hash，limit，domain。
 选tags，入参请填Tag，
 选grade，入参请填Grade，
 选brand，入参请填Brand，
 选code，入参请填Code，
 选hash，入参请填Hash
 选limit，标识只返回数量信息
+选domain，入参请填Domain
                      */
                     std::string m_searchType;
                     bool m_searchTypeHasBeenSet;
@@ -313,6 +336,12 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 搜索域名
+                     */
+                    std::string m_domain;
+                    bool m_domainHasBeenSet;
 
                 };
             }

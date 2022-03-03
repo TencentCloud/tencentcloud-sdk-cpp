@@ -223,6 +223,24 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取vpc属性
+                     * @return UniqVpcId vpc属性
+                     */
+                    std::string GetUniqVpcId() const;
+
+                    /**
+                     * 设置vpc属性
+                     * @param UniqVpcId vpc属性
+                     */
+                    void SetUniqVpcId(const std::string& _uniqVpcId);
+
+                    /**
+                     * 判断参数 UniqVpcId 是否已赋值
+                     * @return UniqVpcId 是否已赋值
+                     */
+                    bool UniqVpcIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -284,6 +302,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * vpc属性
+                     */
+                    std::string m_uniqVpcId;
+                    bool m_uniqVpcIdHasBeenSet;
 
                 };
             }

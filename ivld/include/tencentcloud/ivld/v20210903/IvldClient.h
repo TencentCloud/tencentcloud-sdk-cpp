@@ -43,6 +43,8 @@
 #include <tencentcloud/ivld/v20210903/model/DeleteCustomPersonImageResponse.h>
 #include <tencentcloud/ivld/v20210903/model/DeleteMediaRequest.h>
 #include <tencentcloud/ivld/v20210903/model/DeleteMediaResponse.h>
+#include <tencentcloud/ivld/v20210903/model/DeleteTaskRequest.h>
+#include <tencentcloud/ivld/v20210903/model/DeleteTaskResponse.h>
 #include <tencentcloud/ivld/v20210903/model/DescribeCustomCategoriesRequest.h>
 #include <tencentcloud/ivld/v20210903/model/DescribeCustomCategoriesResponse.h>
 #include <tencentcloud/ivld/v20210903/model/DescribeCustomGroupRequest.h>
@@ -63,6 +65,10 @@
 #include <tencentcloud/ivld/v20210903/model/DescribeTasksResponse.h>
 #include <tencentcloud/ivld/v20210903/model/ImportMediaRequest.h>
 #include <tencentcloud/ivld/v20210903/model/ImportMediaResponse.h>
+#include <tencentcloud/ivld/v20210903/model/ModifyCallbackRequest.h>
+#include <tencentcloud/ivld/v20210903/model/ModifyCallbackResponse.h>
+#include <tencentcloud/ivld/v20210903/model/QueryCallbackRequest.h>
+#include <tencentcloud/ivld/v20210903/model/QueryCallbackResponse.h>
 #include <tencentcloud/ivld/v20210903/model/UpdateCustomCategoryRequest.h>
 #include <tencentcloud/ivld/v20210903/model/UpdateCustomCategoryResponse.h>
 #include <tencentcloud/ivld/v20210903/model/UpdateCustomPersonRequest.h>
@@ -111,6 +117,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteMediaResponse> DeleteMediaOutcome;
                 typedef std::future<DeleteMediaOutcome> DeleteMediaOutcomeCallable;
                 typedef std::function<void(const IvldClient*, const Model::DeleteMediaRequest&, DeleteMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMediaAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteTaskResponse> DeleteTaskOutcome;
+                typedef std::future<DeleteTaskOutcome> DeleteTaskOutcomeCallable;
+                typedef std::function<void(const IvldClient*, const Model::DeleteTaskRequest&, DeleteTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCustomCategoriesResponse> DescribeCustomCategoriesOutcome;
                 typedef std::future<DescribeCustomCategoriesOutcome> DescribeCustomCategoriesOutcomeCallable;
                 typedef std::function<void(const IvldClient*, const Model::DescribeCustomCategoriesRequest&, DescribeCustomCategoriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomCategoriesAsyncHandler;
@@ -141,6 +150,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ImportMediaResponse> ImportMediaOutcome;
                 typedef std::future<ImportMediaOutcome> ImportMediaOutcomeCallable;
                 typedef std::function<void(const IvldClient*, const Model::ImportMediaRequest&, ImportMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportMediaAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCallbackResponse> ModifyCallbackOutcome;
+                typedef std::future<ModifyCallbackOutcome> ModifyCallbackOutcomeCallable;
+                typedef std::function<void(const IvldClient*, const Model::ModifyCallbackRequest&, ModifyCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCallbackAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryCallbackResponse> QueryCallbackOutcome;
+                typedef std::future<QueryCallbackOutcome> QueryCallbackOutcomeCallable;
+                typedef std::function<void(const IvldClient*, const Model::QueryCallbackRequest&, QueryCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryCallbackAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateCustomCategoryResponse> UpdateCustomCategoryOutcome;
                 typedef std::future<UpdateCustomCategoryOutcome> UpdateCustomCategoryOutcomeCallable;
                 typedef std::function<void(const IvldClient*, const Model::UpdateCustomCategoryRequest&, UpdateCustomCategoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCustomCategoryAsyncHandler;
@@ -151,7 +166,7 @@ namespace TencentCloud
 
 
                 /**
-                 *增加自定义人脸图片，每个自定义人物最多可包含5张人脸图片
+                 *增加自定义人脸图片，每个自定义人物最多可包含10张人脸图片
 
 请注意，与创建自定义人物一样，图片数据优先级优于图片URL优先级
                  * @param req AddCustomPersonImageRequest
@@ -267,6 +282,19 @@ Bucket的格式参考为 `bucketName-123456.cos.ap-shanghai.myqcloud.com`
                 DeleteMediaOutcomeCallable DeleteMediaCallable(const Model::DeleteMediaRequest& request);
 
                 /**
+                 *删除任务信息
+
+请注意，本接口**不会**删除媒资文件
+
+只有已完成(成功或者失败)的任务可以删除，**正在执行中的任务不支持删除**
+                 * @param req DeleteTaskRequest
+                 * @return DeleteTaskOutcome
+                 */
+                DeleteTaskOutcome DeleteTask(const Model::DeleteTaskRequest &request);
+                void DeleteTaskAsync(const Model::DeleteTaskRequest& request, const DeleteTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteTaskOutcomeCallable DeleteTaskCallable(const Model::DeleteTaskRequest& request);
+
+                /**
                  *批量描述自定义人物分类信息
                  * @param req DescribeCustomCategoriesRequest
                  * @return DescribeCustomCategoriesOutcome
@@ -376,6 +404,58 @@ Bucket的格式参考为 `bucketName-123456.cos.ap-shanghai.myqcloud.com`
                 ImportMediaOutcome ImportMedia(const Model::ImportMediaRequest &request);
                 void ImportMediaAsync(const Model::ImportMediaRequest& request, const ImportMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ImportMediaOutcomeCallable ImportMediaCallable(const Model::ImportMediaRequest& request);
+
+                /**
+                 *用户设置对应事件的回调地址
+
+### 回调事件消息通知协议
+
+#### 网络协议
+- 回调接口协议目前仅支持http/https协议；
+- 请求：HTTP POST 请求，包体内容为 JSON，每一种消息的具体包体内容参见后文。
+- 应答：HTTP STATUS CODE = 200，服务端忽略应答包具体内容，为了协议友好，建议客户应答内容携带 JSON： `{"code":0}`
+
+#### 通知可靠性
+
+事件通知服务具备重试能力，事件通知失败后会总计重试3次；
+为了避免重试对您的服务器以及网络带宽造成冲击，请保持正常回包。触发重试条件如下：
+- 长时间（20 秒）未回包应答。
+- 应答 HTTP STATUS 不为200。
+
+
+#### 回调接口协议
+
+##### 分析任务完成消息回调
+| 参数名称 | 必选 | 类型 | 描述 |
+|---------|---------|---------|---------|
+| EventType | 是 | int | 回调时间类型，1-任务分析完成，2-媒资导入完成 |
+| TaskId | 是 | String | 任务ID |
+| TaskStatus | 是 | [TaskStatus](/document/product/1611/63373?!preview&preview_docmenu=1&lang=cn&!document=1#TaskStatus) | 任务执行状态 |
+| FailedReason | 是 | String | 若任务失败，该字段为失败原因 |
+
+
+##### 导入媒资完成消息回调
+| 参数名称 | 必选 | 类型 | 描述 |
+|---------|---------|---------|---------|
+| EventType | 是 | int | 回调时间类型，1-任务分析完成，2-媒资导入完成 |
+| MediaId | 是 | String | 媒资ID |
+| MediaStatus | 是 | [MediaStatus](/document/product/1611/63373?!preview&preview_docmenu=1&lang=cn&!document=1#MediaStatus) | 媒资导入状态|
+| FailedReason | 是 | String | 若任务失败，该字段为失败原因 |
+                 * @param req ModifyCallbackRequest
+                 * @return ModifyCallbackOutcome
+                 */
+                ModifyCallbackOutcome ModifyCallback(const Model::ModifyCallbackRequest &request);
+                void ModifyCallbackAsync(const Model::ModifyCallbackRequest& request, const ModifyCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCallbackOutcomeCallable ModifyCallbackCallable(const Model::ModifyCallbackRequest& request);
+
+                /**
+                 *查询用户回调设置
+                 * @param req QueryCallbackRequest
+                 * @return QueryCallbackOutcome
+                 */
+                QueryCallbackOutcome QueryCallback(const Model::QueryCallbackRequest &request);
+                void QueryCallbackAsync(const Model::QueryCallbackRequest& request, const QueryCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryCallbackOutcomeCallable QueryCallbackCallable(const Model::QueryCallbackRequest& request);
 
                 /**
                  *更新自定义人物分类

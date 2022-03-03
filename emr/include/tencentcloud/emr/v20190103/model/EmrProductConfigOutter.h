@@ -443,6 +443,28 @@ namespace TencentCloud
                      */
                     bool SecurityGroupsHasBeenSet() const;
 
+                    /**
+                     * 获取SSH密钥Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PublicKeyId SSH密钥Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPublicKeyId() const;
+
+                    /**
+                     * 设置SSH密钥Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PublicKeyId SSH密钥Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPublicKeyId(const std::string& _publicKeyId);
+
+                    /**
+                     * 判断参数 PublicKeyId 是否已赋值
+                     * @return PublicKeyId 是否已赋值
+                     */
+                    bool PublicKeyIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -570,6 +592,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_securityGroups;
                     bool m_securityGroupsHasBeenSet;
+
+                    /**
+                     * SSH密钥Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_publicKeyId;
+                    bool m_publicKeyIdHasBeenSet;
 
                 };
             }

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * DeadLetterSource
+                * 死信源队列信息
                 */
                 class DeadLetterSource : public AbstractModel
                 {

@@ -21,8 +21,8 @@ using namespace TencentCloud::Cmq::V20190304::Model;
 using namespace std;
 
 TransactionPolicy::TransactionPolicy() :
-    m_firstQueryIntervalHasBeenSet(false),
-    m_maxQueryCountHasBeenSet(false)
+    m_maxQueryCountHasBeenSet(false),
+    m_firstQueryIntervalHasBeenSet(false)
 {
 }
 
@@ -30,16 +30,6 @@ CoreInternalOutcome TransactionPolicy::Deserialize(const rapidjson::Value &value
 {
     string requestId = "";
 
-
-    if (value.HasMember("FirstQueryInterval") && !value["FirstQueryInterval"].IsNull())
-    {
-        if (!value["FirstQueryInterval"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `TransactionPolicy.FirstQueryInterval` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_firstQueryInterval = value["FirstQueryInterval"].GetUint64();
-        m_firstQueryIntervalHasBeenSet = true;
-    }
 
     if (value.HasMember("MaxQueryCount") && !value["MaxQueryCount"].IsNull())
     {
@@ -51,20 +41,22 @@ CoreInternalOutcome TransactionPolicy::Deserialize(const rapidjson::Value &value
         m_maxQueryCountHasBeenSet = true;
     }
 
+    if (value.HasMember("FirstQueryInterval") && !value["FirstQueryInterval"].IsNull())
+    {
+        if (!value["FirstQueryInterval"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TransactionPolicy.FirstQueryInterval` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_firstQueryInterval = value["FirstQueryInterval"].GetUint64();
+        m_firstQueryIntervalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void TransactionPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_firstQueryIntervalHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FirstQueryInterval";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_firstQueryInterval, allocator);
-    }
 
     if (m_maxQueryCountHasBeenSet)
     {
@@ -74,24 +66,16 @@ void TransactionPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         value.AddMember(iKey, m_maxQueryCount, allocator);
     }
 
+    if (m_firstQueryIntervalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FirstQueryInterval";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_firstQueryInterval, allocator);
+    }
+
 }
 
-
-uint64_t TransactionPolicy::GetFirstQueryInterval() const
-{
-    return m_firstQueryInterval;
-}
-
-void TransactionPolicy::SetFirstQueryInterval(const uint64_t& _firstQueryInterval)
-{
-    m_firstQueryInterval = _firstQueryInterval;
-    m_firstQueryIntervalHasBeenSet = true;
-}
-
-bool TransactionPolicy::FirstQueryIntervalHasBeenSet() const
-{
-    return m_firstQueryIntervalHasBeenSet;
-}
 
 uint64_t TransactionPolicy::GetMaxQueryCount() const
 {
@@ -107,5 +91,21 @@ void TransactionPolicy::SetMaxQueryCount(const uint64_t& _maxQueryCount)
 bool TransactionPolicy::MaxQueryCountHasBeenSet() const
 {
     return m_maxQueryCountHasBeenSet;
+}
+
+uint64_t TransactionPolicy::GetFirstQueryInterval() const
+{
+    return m_firstQueryInterval;
+}
+
+void TransactionPolicy::SetFirstQueryInterval(const uint64_t& _firstQueryInterval)
+{
+    m_firstQueryInterval = _firstQueryInterval;
+    m_firstQueryIntervalHasBeenSet = true;
+}
+
+bool TransactionPolicy::FirstQueryIntervalHasBeenSet() const
+{
+    return m_firstQueryIntervalHasBeenSet;
 }
 

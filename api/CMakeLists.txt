@@ -19,6 +19,9 @@ set(api_public_header
   )
 
 set(api_public_header_model
+  include/tencentcloud/api/v20201106/model/RegionProduct.h
+  include/tencentcloud/api/v20201106/model/DescribeProductsRequest.h
+  include/tencentcloud/api/v20201106/model/DescribeProductsResponse.h
   include/tencentcloud/api/v20201106/model/ZoneInfo.h
   include/tencentcloud/api/v20201106/model/DescribeZonesRequest.h
   include/tencentcloud/api/v20201106/model/DescribeZonesResponse.h
@@ -29,6 +32,9 @@ set(api_public_header_model
 
 set(api_src
   src/v20201106/ApiClient.cpp
+  src/v20201106/model/RegionProduct.cpp
+  src/v20201106/model/DescribeProductsRequest.cpp
+  src/v20201106/model/DescribeProductsResponse.cpp
   src/v20201106/model/ZoneInfo.cpp
   src/v20201106/model/DescribeZonesRequest.cpp
   src/v20201106/model/DescribeZonesResponse.cpp

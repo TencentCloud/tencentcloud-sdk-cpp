@@ -25,7 +25,8 @@ using namespace std;
 DeleteTableConfigRequest::DeleteTableConfigRequest() :
     m_jobIdHasBeenSet(false),
     m_debugIdHasBeenSet(false),
-    m_tableNameHasBeenSet(false)
+    m_tableNameHasBeenSet(false),
+    m_workSpaceIdHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DeleteTableConfigRequest::ToJsonString() const
         string key = "TableName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_tableName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workSpaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkSpaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workSpaceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DeleteTableConfigRequest::SetTableName(const string& _tableName)
 bool DeleteTableConfigRequest::TableNameHasBeenSet() const
 {
     return m_tableNameHasBeenSet;
+}
+
+string DeleteTableConfigRequest::GetWorkSpaceId() const
+{
+    return m_workSpaceId;
+}
+
+void DeleteTableConfigRequest::SetWorkSpaceId(const string& _workSpaceId)
+{
+    m_workSpaceId = _workSpaceId;
+    m_workSpaceIdHasBeenSet = true;
+}
+
+bool DeleteTableConfigRequest::WorkSpaceIdHasBeenSet() const
+{
+    return m_workSpaceIdHasBeenSet;
 }
 
 
