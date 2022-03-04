@@ -26,10 +26,10 @@ DistributeQueryRequest::DistributeQueryRequest() :
     m_openIdHasBeenSet(false),
     m_openKeyHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_profileHasBeenSet(false),
-    m_distributeNoHasBeenSet(false),
     m_outDistributeNoHasBeenSet(false),
-    m_orderNoHasBeenSet(false)
+    m_distributeNoHasBeenSet(false),
+    m_orderNoHasBeenSet(false),
+    m_profileHasBeenSet(false)
 {
 }
 
@@ -64,12 +64,12 @@ string DistributeQueryRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_profileHasBeenSet)
+    if (m_outDistributeNoHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Profile";
+        string key = "OutDistributeNo";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_profile.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_outDistributeNo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_distributeNoHasBeenSet)
@@ -80,20 +80,20 @@ string DistributeQueryRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_distributeNo.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_outDistributeNoHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OutDistributeNo";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_outDistributeNo.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_orderNoHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OrderNo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_orderNo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_profileHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Profile";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_profile.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -152,20 +152,20 @@ bool DistributeQueryRequest::TypeHasBeenSet() const
     return m_typeHasBeenSet;
 }
 
-string DistributeQueryRequest::GetProfile() const
+string DistributeQueryRequest::GetOutDistributeNo() const
 {
-    return m_profile;
+    return m_outDistributeNo;
 }
 
-void DistributeQueryRequest::SetProfile(const string& _profile)
+void DistributeQueryRequest::SetOutDistributeNo(const string& _outDistributeNo)
 {
-    m_profile = _profile;
-    m_profileHasBeenSet = true;
+    m_outDistributeNo = _outDistributeNo;
+    m_outDistributeNoHasBeenSet = true;
 }
 
-bool DistributeQueryRequest::ProfileHasBeenSet() const
+bool DistributeQueryRequest::OutDistributeNoHasBeenSet() const
 {
-    return m_profileHasBeenSet;
+    return m_outDistributeNoHasBeenSet;
 }
 
 string DistributeQueryRequest::GetDistributeNo() const
@@ -184,22 +184,6 @@ bool DistributeQueryRequest::DistributeNoHasBeenSet() const
     return m_distributeNoHasBeenSet;
 }
 
-string DistributeQueryRequest::GetOutDistributeNo() const
-{
-    return m_outDistributeNo;
-}
-
-void DistributeQueryRequest::SetOutDistributeNo(const string& _outDistributeNo)
-{
-    m_outDistributeNo = _outDistributeNo;
-    m_outDistributeNoHasBeenSet = true;
-}
-
-bool DistributeQueryRequest::OutDistributeNoHasBeenSet() const
-{
-    return m_outDistributeNoHasBeenSet;
-}
-
 string DistributeQueryRequest::GetOrderNo() const
 {
     return m_orderNo;
@@ -214,6 +198,22 @@ void DistributeQueryRequest::SetOrderNo(const string& _orderNo)
 bool DistributeQueryRequest::OrderNoHasBeenSet() const
 {
     return m_orderNoHasBeenSet;
+}
+
+string DistributeQueryRequest::GetProfile() const
+{
+    return m_profile;
+}
+
+void DistributeQueryRequest::SetProfile(const string& _profile)
+{
+    m_profile = _profile;
+    m_profileHasBeenSet = true;
+}
+
+bool DistributeQueryRequest::ProfileHasBeenSet() const
+{
+    return m_profileHasBeenSet;
 }
 
 

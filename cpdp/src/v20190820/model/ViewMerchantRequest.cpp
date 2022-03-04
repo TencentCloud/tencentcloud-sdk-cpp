@@ -25,9 +25,9 @@ using namespace std;
 ViewMerchantRequest::ViewMerchantRequest() :
     m_openIdHasBeenSet(false),
     m_openKeyHasBeenSet(false),
-    m_profileHasBeenSet(false),
     m_outMerchantIdHasBeenSet(false),
-    m_merchantNoHasBeenSet(false)
+    m_merchantNoHasBeenSet(false),
+    m_profileHasBeenSet(false)
 {
 }
 
@@ -54,14 +54,6 @@ string ViewMerchantRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_openKey.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_profileHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Profile";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_profile.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_outMerchantIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -76,6 +68,14 @@ string ViewMerchantRequest::ToJsonString() const
         string key = "MerchantNo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_merchantNo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_profileHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Profile";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_profile.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -118,22 +118,6 @@ bool ViewMerchantRequest::OpenKeyHasBeenSet() const
     return m_openKeyHasBeenSet;
 }
 
-string ViewMerchantRequest::GetProfile() const
-{
-    return m_profile;
-}
-
-void ViewMerchantRequest::SetProfile(const string& _profile)
-{
-    m_profile = _profile;
-    m_profileHasBeenSet = true;
-}
-
-bool ViewMerchantRequest::ProfileHasBeenSet() const
-{
-    return m_profileHasBeenSet;
-}
-
 string ViewMerchantRequest::GetOutMerchantId() const
 {
     return m_outMerchantId;
@@ -164,6 +148,22 @@ void ViewMerchantRequest::SetMerchantNo(const string& _merchantNo)
 bool ViewMerchantRequest::MerchantNoHasBeenSet() const
 {
     return m_merchantNoHasBeenSet;
+}
+
+string ViewMerchantRequest::GetProfile() const
+{
+    return m_profile;
+}
+
+void ViewMerchantRequest::SetProfile(const string& _profile)
+{
+    m_profile = _profile;
+    m_profileHasBeenSet = true;
+}
+
+bool ViewMerchantRequest::ProfileHasBeenSet() const
+{
+    return m_profileHasBeenSet;
 }
 
 

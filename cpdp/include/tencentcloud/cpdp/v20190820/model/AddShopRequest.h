@@ -61,6 +61,42 @@ namespace TencentCloud
                     bool OpenIdHasBeenSet() const;
 
                     /**
+                     * 获取收单系统分配的密钥
+                     * @return OpenKey 收单系统分配的密钥
+                     */
+                    std::string GetOpenKey() const;
+
+                    /**
+                     * 设置收单系统分配的密钥
+                     * @param OpenKey 收单系统分配的密钥
+                     */
+                    void SetOpenKey(const std::string& _openKey);
+
+                    /**
+                     * 判断参数 OpenKey 是否已赋值
+                     * @return OpenKey 是否已赋值
+                     */
+                    bool OpenKeyHasBeenSet() const;
+
+                    /**
+                     * 获取机构门店主键（系统有唯一性校验），建议使用门店表的主键ID，防止重复添加门店
+                     * @return OutShopId 机构门店主键（系统有唯一性校验），建议使用门店表的主键ID，防止重复添加门店
+                     */
+                    std::string GetOutShopId() const;
+
+                    /**
+                     * 设置机构门店主键（系统有唯一性校验），建议使用门店表的主键ID，防止重复添加门店
+                     * @param OutShopId 机构门店主键（系统有唯一性校验），建议使用门店表的主键ID，防止重复添加门店
+                     */
+                    void SetOutShopId(const std::string& _outShopId);
+
+                    /**
+                     * 判断参数 OutShopId 是否已赋值
+                     * @return OutShopId 是否已赋值
+                     */
+                    bool OutShopIdHasBeenSet() const;
+
+                    /**
                      * 获取门店简称（例如：南山店）
                      * @return ShopName 门店简称（例如：南山店）
                      */
@@ -79,6 +115,24 @@ namespace TencentCloud
                     bool ShopNameHasBeenSet() const;
 
                     /**
+                     * 获取门店全称（例如：江山小厨（南山店））
+                     * @return ShopFullName 门店全称（例如：江山小厨（南山店））
+                     */
+                    std::string GetShopFullName() const;
+
+                    /**
+                     * 设置门店全称（例如：江山小厨（南山店））
+                     * @param ShopFullName 门店全称（例如：江山小厨（南山店））
+                     */
+                    void SetShopFullName(const std::string& _shopFullName);
+
+                    /**
+                     * 判断参数 ShopFullName 是否已赋值
+                     * @return ShopFullName 是否已赋值
+                     */
+                    bool ShopFullNameHasBeenSet() const;
+
+                    /**
                      * 获取商户编号
                      * @return MerchantNo 商户编号
                      */
@@ -95,6 +149,96 @@ namespace TencentCloud
                      * @return MerchantNo 是否已赋值
                      */
                     bool MerchantNoHasBeenSet() const;
+
+                    /**
+                     * 获取门店电话
+                     * @return Telephone 门店电话
+                     */
+                    std::string GetTelephone() const;
+
+                    /**
+                     * 设置门店电话
+                     * @param Telephone 门店电话
+                     */
+                    void SetTelephone(const std::string& _telephone);
+
+                    /**
+                     * 判断参数 Telephone 是否已赋值
+                     * @return Telephone 是否已赋值
+                     */
+                    bool TelephoneHasBeenSet() const;
+
+                    /**
+                     * 获取营业时间，多个以小写逗号分开(9:00-12:00,13:00-18:00)
+                     * @return OpenHours 营业时间，多个以小写逗号分开(9:00-12:00,13:00-18:00)
+                     */
+                    std::string GetOpenHours() const;
+
+                    /**
+                     * 设置营业时间，多个以小写逗号分开(9:00-12:00,13:00-18:00)
+                     * @param OpenHours 营业时间，多个以小写逗号分开(9:00-12:00,13:00-18:00)
+                     */
+                    void SetOpenHours(const std::string& _openHours);
+
+                    /**
+                     * 判断参数 OpenHours 是否已赋值
+                     * @return OpenHours 是否已赋值
+                     */
+                    bool OpenHoursHasBeenSet() const;
+
+                    /**
+                     * 获取门店所在的城市编码
+                     * @return CityId 门店所在的城市编码
+                     */
+                    std::string GetCityId() const;
+
+                    /**
+                     * 设置门店所在的城市编码
+                     * @param CityId 门店所在的城市编码
+                     */
+                    void SetCityId(const std::string& _cityId);
+
+                    /**
+                     * 判断参数 CityId 是否已赋值
+                     * @return CityId 是否已赋值
+                     */
+                    bool CityIdHasBeenSet() const;
+
+                    /**
+                     * 获取门店详细地址，不含省市区县名称
+                     * @return Address 门店详细地址，不含省市区县名称
+                     */
+                    std::string GetAddress() const;
+
+                    /**
+                     * 设置门店详细地址，不含省市区县名称
+                     * @param Address 门店详细地址，不含省市区县名称
+                     */
+                    void SetAddress(const std::string& _address);
+
+                    /**
+                     * 判断参数 Address 是否已赋值
+                     * @return Address 是否已赋值
+                     */
+                    bool AddressHasBeenSet() const;
+
+                    /**
+                     * 获取整体门面（含招牌）图片【公共区】
+                     * @return PictureOne 整体门面（含招牌）图片【公共区】
+                     */
+                    std::string GetPictureOne() const;
+
+                    /**
+                     * 设置整体门面（含招牌）图片【公共区】
+                     * @param PictureOne 整体门面（含招牌）图片【公共区】
+                     */
+                    void SetPictureOne(const std::string& _pictureOne);
+
+                    /**
+                     * 判断参数 PictureOne 是否已赋值
+                     * @return PictureOne 是否已赋值
+                     */
+                    bool PictureOneHasBeenSet() const;
 
                     /**
                      * 获取整体门面（含招牌）图片【公共区】
@@ -133,220 +277,22 @@ namespace TencentCloud
                     bool PictureThreeHasBeenSet() const;
 
                     /**
-                     * 获取整体门面（含招牌）图片【公共区】
-                     * @return PictureOne 整体门面（含招牌）图片【公共区】
+                     * 获取负责人手机号码
+                     * @return FinancialTelephone 负责人手机号码
                      */
-                    std::string GetPictureOne() const;
+                    std::string GetFinancialTelephone() const;
 
                     /**
-                     * 设置整体门面（含招牌）图片【公共区】
-                     * @param PictureOne 整体门面（含招牌）图片【公共区】
+                     * 设置负责人手机号码
+                     * @param FinancialTelephone 负责人手机号码
                      */
-                    void SetPictureOne(const std::string& _pictureOne);
+                    void SetFinancialTelephone(const std::string& _financialTelephone);
 
                     /**
-                     * 判断参数 PictureOne 是否已赋值
-                     * @return PictureOne 是否已赋值
+                     * 判断参数 FinancialTelephone 是否已赋值
+                     * @return FinancialTelephone 是否已赋值
                      */
-                    bool PictureOneHasBeenSet() const;
-
-                    /**
-                     * 获取门店电话
-                     * @return Telephone 门店电话
-                     */
-                    std::string GetTelephone() const;
-
-                    /**
-                     * 设置门店电话
-                     * @param Telephone 门店电话
-                     */
-                    void SetTelephone(const std::string& _telephone);
-
-                    /**
-                     * 判断参数 Telephone 是否已赋值
-                     * @return Telephone 是否已赋值
-                     */
-                    bool TelephoneHasBeenSet() const;
-
-                    /**
-                     * 获取机构门店主键（系统有唯一性校验），建议使用门店表的主键ID，防止重复添加门店
-                     * @return OutShopId 机构门店主键（系统有唯一性校验），建议使用门店表的主键ID，防止重复添加门店
-                     */
-                    std::string GetOutShopId() const;
-
-                    /**
-                     * 设置机构门店主键（系统有唯一性校验），建议使用门店表的主键ID，防止重复添加门店
-                     * @param OutShopId 机构门店主键（系统有唯一性校验），建议使用门店表的主键ID，防止重复添加门店
-                     */
-                    void SetOutShopId(const std::string& _outShopId);
-
-                    /**
-                     * 判断参数 OutShopId 是否已赋值
-                     * @return OutShopId 是否已赋值
-                     */
-                    bool OutShopIdHasBeenSet() const;
-
-                    /**
-                     * 获取门店所在的城市编码
-                     * @return CityId 门店所在的城市编码
-                     */
-                    std::string GetCityId() const;
-
-                    /**
-                     * 设置门店所在的城市编码
-                     * @param CityId 门店所在的城市编码
-                     */
-                    void SetCityId(const std::string& _cityId);
-
-                    /**
-                     * 判断参数 CityId 是否已赋值
-                     * @return CityId 是否已赋值
-                     */
-                    bool CityIdHasBeenSet() const;
-
-                    /**
-                     * 获取门店全称（例如：江山小厨（南山店））
-                     * @return ShopFullName 门店全称（例如：江山小厨（南山店））
-                     */
-                    std::string GetShopFullName() const;
-
-                    /**
-                     * 设置门店全称（例如：江山小厨（南山店））
-                     * @param ShopFullName 门店全称（例如：江山小厨（南山店））
-                     */
-                    void SetShopFullName(const std::string& _shopFullName);
-
-                    /**
-                     * 判断参数 ShopFullName 是否已赋值
-                     * @return ShopFullName 是否已赋值
-                     */
-                    bool ShopFullNameHasBeenSet() const;
-
-                    /**
-                     * 获取营业时间，多个以小写逗号分开(9:00-12:00,13:00-18:00)
-                     * @return OpenHours 营业时间，多个以小写逗号分开(9:00-12:00,13:00-18:00)
-                     */
-                    std::string GetOpenHours() const;
-
-                    /**
-                     * 设置营业时间，多个以小写逗号分开(9:00-12:00,13:00-18:00)
-                     * @param OpenHours 营业时间，多个以小写逗号分开(9:00-12:00,13:00-18:00)
-                     */
-                    void SetOpenHours(const std::string& _openHours);
-
-                    /**
-                     * 判断参数 OpenHours 是否已赋值
-                     * @return OpenHours 是否已赋值
-                     */
-                    bool OpenHoursHasBeenSet() const;
-
-                    /**
-                     * 获取门店详细地址，不含省市区县名称
-                     * @return Address 门店详细地址，不含省市区县名称
-                     */
-                    std::string GetAddress() const;
-
-                    /**
-                     * 设置门店详细地址，不含省市区县名称
-                     * @param Address 门店详细地址，不含省市区县名称
-                     */
-                    void SetAddress(const std::string& _address);
-
-                    /**
-                     * 判断参数 Address 是否已赋值
-                     * @return Address 是否已赋值
-                     */
-                    bool AddressHasBeenSet() const;
-
-                    /**
-                     * 获取收单系统分配的密钥
-                     * @return OpenKey 收单系统分配的密钥
-                     */
-                    std::string GetOpenKey() const;
-
-                    /**
-                     * 设置收单系统分配的密钥
-                     * @param OpenKey 收单系统分配的密钥
-                     */
-                    void SetOpenKey(const std::string& _openKey);
-
-                    /**
-                     * 判断参数 OpenKey 是否已赋值
-                     * @return OpenKey 是否已赋值
-                     */
-                    bool OpenKeyHasBeenSet() const;
-
-                    /**
-                     * 获取沙箱环境填sandbox，正式环境不填
-                     * @return Profile 沙箱环境填sandbox，正式环境不填
-                     */
-                    std::string GetProfile() const;
-
-                    /**
-                     * 设置沙箱环境填sandbox，正式环境不填
-                     * @param Profile 沙箱环境填sandbox，正式环境不填
-                     */
-                    void SetProfile(const std::string& _profile);
-
-                    /**
-                     * 判断参数 Profile 是否已赋值
-                     * @return Profile 是否已赋值
-                     */
-                    bool ProfileHasBeenSet() const;
-
-                    /**
-                     * 获取高德地图纬度
-                     * @return LatitudeTwo 高德地图纬度
-                     */
-                    std::string GetLatitudeTwo() const;
-
-                    /**
-                     * 设置高德地图纬度
-                     * @param LatitudeTwo 高德地图纬度
-                     */
-                    void SetLatitudeTwo(const std::string& _latitudeTwo);
-
-                    /**
-                     * 判断参数 LatitudeTwo 是否已赋值
-                     * @return LatitudeTwo 是否已赋值
-                     */
-                    bool LatitudeTwoHasBeenSet() const;
-
-                    /**
-                     * 获取其他照片【公共区】
-                     * @return OtherPicture 其他照片【公共区】
-                     */
-                    std::string GetOtherPicture() const;
-
-                    /**
-                     * 设置其他照片【公共区】
-                     * @param OtherPicture 其他照片【公共区】
-                     */
-                    void SetOtherPicture(const std::string& _otherPicture);
-
-                    /**
-                     * 判断参数 OtherPicture 是否已赋值
-                     * @return OtherPicture 是否已赋值
-                     */
-                    bool OtherPictureHasBeenSet() const;
-
-                    /**
-                     * 获取高德地图经度
-                     * @return LongitudeTwo 高德地图经度
-                     */
-                    std::string GetLongitudeTwo() const;
-
-                    /**
-                     * 设置高德地图经度
-                     * @param LongitudeTwo 高德地图经度
-                     */
-                    void SetLongitudeTwo(const std::string& _longitudeTwo);
-
-                    /**
-                     * 判断参数 LongitudeTwo 是否已赋值
-                     * @return LongitudeTwo 是否已赋值
-                     */
-                    bool LongitudeTwoHasBeenSet() const;
+                    bool FinancialTelephoneHasBeenSet() const;
 
                     /**
                      * 获取门店负责人
@@ -367,24 +313,6 @@ namespace TencentCloud
                     bool ContactHasBeenSet() const;
 
                     /**
-                     * 获取百度地图经度
-                     * @return Longitude 百度地图经度
-                     */
-                    std::string GetLongitude() const;
-
-                    /**
-                     * 设置百度地图经度
-                     * @param Longitude 百度地图经度
-                     */
-                    void SetLongitude(const std::string& _longitude);
-
-                    /**
-                     * 判断参数 Longitude 是否已赋值
-                     * @return Longitude 是否已赋值
-                     */
-                    bool LongitudeHasBeenSet() const;
-
-                    /**
                      * 获取百度地图纬度
                      * @return Latitude 百度地图纬度
                      */
@@ -403,22 +331,94 @@ namespace TencentCloud
                     bool LatitudeHasBeenSet() const;
 
                     /**
-                     * 获取负责人手机号码
-                     * @return FinancialTelephone 负责人手机号码
+                     * 获取高德地图纬度
+                     * @return LatitudeTwo 高德地图纬度
                      */
-                    std::string GetFinancialTelephone() const;
+                    std::string GetLatitudeTwo() const;
 
                     /**
-                     * 设置负责人手机号码
-                     * @param FinancialTelephone 负责人手机号码
+                     * 设置高德地图纬度
+                     * @param LatitudeTwo 高德地图纬度
                      */
-                    void SetFinancialTelephone(const std::string& _financialTelephone);
+                    void SetLatitudeTwo(const std::string& _latitudeTwo);
 
                     /**
-                     * 判断参数 FinancialTelephone 是否已赋值
-                     * @return FinancialTelephone 是否已赋值
+                     * 判断参数 LatitudeTwo 是否已赋值
+                     * @return LatitudeTwo 是否已赋值
                      */
-                    bool FinancialTelephoneHasBeenSet() const;
+                    bool LatitudeTwoHasBeenSet() const;
+
+                    /**
+                     * 获取百度地图经度
+                     * @return Longitude 百度地图经度
+                     */
+                    std::string GetLongitude() const;
+
+                    /**
+                     * 设置百度地图经度
+                     * @param Longitude 百度地图经度
+                     */
+                    void SetLongitude(const std::string& _longitude);
+
+                    /**
+                     * 判断参数 Longitude 是否已赋值
+                     * @return Longitude 是否已赋值
+                     */
+                    bool LongitudeHasBeenSet() const;
+
+                    /**
+                     * 获取高德地图经度
+                     * @return LongitudeTwo 高德地图经度
+                     */
+                    std::string GetLongitudeTwo() const;
+
+                    /**
+                     * 设置高德地图经度
+                     * @param LongitudeTwo 高德地图经度
+                     */
+                    void SetLongitudeTwo(const std::string& _longitudeTwo);
+
+                    /**
+                     * 判断参数 LongitudeTwo 是否已赋值
+                     * @return LongitudeTwo 是否已赋值
+                     */
+                    bool LongitudeTwoHasBeenSet() const;
+
+                    /**
+                     * 获取其他照片【公共区】
+                     * @return OtherPicture 其他照片【公共区】
+                     */
+                    std::string GetOtherPicture() const;
+
+                    /**
+                     * 设置其他照片【公共区】
+                     * @param OtherPicture 其他照片【公共区】
+                     */
+                    void SetOtherPicture(const std::string& _otherPicture);
+
+                    /**
+                     * 判断参数 OtherPicture 是否已赋值
+                     * @return OtherPicture 是否已赋值
+                     */
+                    bool OtherPictureHasBeenSet() const;
+
+                    /**
+                     * 获取沙箱环境填sandbox，正式环境不填
+                     * @return Profile 沙箱环境填sandbox，正式环境不填
+                     */
+                    std::string GetProfile() const;
+
+                    /**
+                     * 设置沙箱环境填sandbox，正式环境不填
+                     * @param Profile 沙箱环境填sandbox，正式环境不填
+                     */
+                    void SetProfile(const std::string& _profile);
+
+                    /**
+                     * 判断参数 Profile 是否已赋值
+                     * @return Profile 是否已赋值
+                     */
+                    bool ProfileHasBeenSet() const;
 
                 private:
 
@@ -429,16 +429,64 @@ namespace TencentCloud
                     bool m_openIdHasBeenSet;
 
                     /**
+                     * 收单系统分配的密钥
+                     */
+                    std::string m_openKey;
+                    bool m_openKeyHasBeenSet;
+
+                    /**
+                     * 机构门店主键（系统有唯一性校验），建议使用门店表的主键ID，防止重复添加门店
+                     */
+                    std::string m_outShopId;
+                    bool m_outShopIdHasBeenSet;
+
+                    /**
                      * 门店简称（例如：南山店）
                      */
                     std::string m_shopName;
                     bool m_shopNameHasBeenSet;
 
                     /**
+                     * 门店全称（例如：江山小厨（南山店））
+                     */
+                    std::string m_shopFullName;
+                    bool m_shopFullNameHasBeenSet;
+
+                    /**
                      * 商户编号
                      */
                     std::string m_merchantNo;
                     bool m_merchantNoHasBeenSet;
+
+                    /**
+                     * 门店电话
+                     */
+                    std::string m_telephone;
+                    bool m_telephoneHasBeenSet;
+
+                    /**
+                     * 营业时间，多个以小写逗号分开(9:00-12:00,13:00-18:00)
+                     */
+                    std::string m_openHours;
+                    bool m_openHoursHasBeenSet;
+
+                    /**
+                     * 门店所在的城市编码
+                     */
+                    std::string m_cityId;
+                    bool m_cityIdHasBeenSet;
+
+                    /**
+                     * 门店详细地址，不含省市区县名称
+                     */
+                    std::string m_address;
+                    bool m_addressHasBeenSet;
+
+                    /**
+                     * 整体门面（含招牌）图片【公共区】
+                     */
+                    std::string m_pictureOne;
+                    bool m_pictureOneHasBeenSet;
 
                     /**
                      * 整体门面（含招牌）图片【公共区】
@@ -453,76 +501,10 @@ namespace TencentCloud
                     bool m_pictureThreeHasBeenSet;
 
                     /**
-                     * 整体门面（含招牌）图片【公共区】
+                     * 负责人手机号码
                      */
-                    std::string m_pictureOne;
-                    bool m_pictureOneHasBeenSet;
-
-                    /**
-                     * 门店电话
-                     */
-                    std::string m_telephone;
-                    bool m_telephoneHasBeenSet;
-
-                    /**
-                     * 机构门店主键（系统有唯一性校验），建议使用门店表的主键ID，防止重复添加门店
-                     */
-                    std::string m_outShopId;
-                    bool m_outShopIdHasBeenSet;
-
-                    /**
-                     * 门店所在的城市编码
-                     */
-                    std::string m_cityId;
-                    bool m_cityIdHasBeenSet;
-
-                    /**
-                     * 门店全称（例如：江山小厨（南山店））
-                     */
-                    std::string m_shopFullName;
-                    bool m_shopFullNameHasBeenSet;
-
-                    /**
-                     * 营业时间，多个以小写逗号分开(9:00-12:00,13:00-18:00)
-                     */
-                    std::string m_openHours;
-                    bool m_openHoursHasBeenSet;
-
-                    /**
-                     * 门店详细地址，不含省市区县名称
-                     */
-                    std::string m_address;
-                    bool m_addressHasBeenSet;
-
-                    /**
-                     * 收单系统分配的密钥
-                     */
-                    std::string m_openKey;
-                    bool m_openKeyHasBeenSet;
-
-                    /**
-                     * 沙箱环境填sandbox，正式环境不填
-                     */
-                    std::string m_profile;
-                    bool m_profileHasBeenSet;
-
-                    /**
-                     * 高德地图纬度
-                     */
-                    std::string m_latitudeTwo;
-                    bool m_latitudeTwoHasBeenSet;
-
-                    /**
-                     * 其他照片【公共区】
-                     */
-                    std::string m_otherPicture;
-                    bool m_otherPictureHasBeenSet;
-
-                    /**
-                     * 高德地图经度
-                     */
-                    std::string m_longitudeTwo;
-                    bool m_longitudeTwoHasBeenSet;
+                    std::string m_financialTelephone;
+                    bool m_financialTelephoneHasBeenSet;
 
                     /**
                      * 门店负责人
@@ -531,22 +513,40 @@ namespace TencentCloud
                     bool m_contactHasBeenSet;
 
                     /**
-                     * 百度地图经度
-                     */
-                    std::string m_longitude;
-                    bool m_longitudeHasBeenSet;
-
-                    /**
                      * 百度地图纬度
                      */
                     std::string m_latitude;
                     bool m_latitudeHasBeenSet;
 
                     /**
-                     * 负责人手机号码
+                     * 高德地图纬度
                      */
-                    std::string m_financialTelephone;
-                    bool m_financialTelephoneHasBeenSet;
+                    std::string m_latitudeTwo;
+                    bool m_latitudeTwoHasBeenSet;
+
+                    /**
+                     * 百度地图经度
+                     */
+                    std::string m_longitude;
+                    bool m_longitudeHasBeenSet;
+
+                    /**
+                     * 高德地图经度
+                     */
+                    std::string m_longitudeTwo;
+                    bool m_longitudeTwoHasBeenSet;
+
+                    /**
+                     * 其他照片【公共区】
+                     */
+                    std::string m_otherPicture;
+                    bool m_otherPictureHasBeenSet;
+
+                    /**
+                     * 沙箱环境填sandbox，正式环境不填
+                     */
+                    std::string m_profile;
+                    bool m_profileHasBeenSet;
 
                 };
             }

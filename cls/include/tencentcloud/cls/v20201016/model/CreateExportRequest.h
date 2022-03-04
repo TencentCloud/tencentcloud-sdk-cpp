@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志主题
-                     * @return TopicId 日志主题
+                     * 获取日志主题ID
+                     * @return TopicId 日志主题ID
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置日志主题
-                     * @param TopicId 日志主题
+                     * 设置日志主题ID
+                     * @param TopicId 日志主题ID
                      */
                     void SetTopicId(const std::string& _topicId);
 
@@ -61,32 +61,14 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取日志导出检索语句
-                     * @return Query 日志导出检索语句
-                     */
-                    std::string GetQuery() const;
-
-                    /**
-                     * 设置日志导出检索语句
-                     * @param Query 日志导出检索语句
-                     */
-                    void SetQuery(const std::string& _query);
-
-                    /**
-                     * 判断参数 Query 是否已赋值
-                     * @return Query 是否已赋值
-                     */
-                    bool QueryHasBeenSet() const;
-
-                    /**
-                     * 获取日志导出数量,  最大值1000万
-                     * @return Count 日志导出数量,  最大值1000万
+                     * 获取日志导出数量,  最大值5000万
+                     * @return Count 日志导出数量,  最大值5000万
                      */
                     uint64_t GetCount() const;
 
                     /**
-                     * 设置日志导出数量,  最大值1000万
-                     * @param Count 日志导出数量,  最大值1000万
+                     * 设置日志导出数量,  最大值5000万
+                     * @param Count 日志导出数量,  最大值5000万
                      */
                     void SetCount(const uint64_t& _count);
 
@@ -95,6 +77,24 @@ namespace TencentCloud
                      * @return Count 是否已赋值
                      */
                     bool CountHasBeenSet() const;
+
+                    /**
+                     * 获取日志导出检索语句，不支持<a href="https://cloud.tencent.com/document/product/614/44061" target="_blank">[SQL语句]</a>
+                     * @return Query 日志导出检索语句，不支持<a href="https://cloud.tencent.com/document/product/614/44061" target="_blank">[SQL语句]</a>
+                     */
+                    std::string GetQuery() const;
+
+                    /**
+                     * 设置日志导出检索语句，不支持<a href="https://cloud.tencent.com/document/product/614/44061" target="_blank">[SQL语句]</a>
+                     * @param Query 日志导出检索语句，不支持<a href="https://cloud.tencent.com/document/product/614/44061" target="_blank">[SQL语句]</a>
+                     */
+                    void SetQuery(const std::string& _query);
+
+                    /**
+                     * 判断参数 Query 是否已赋值
+                     * @return Query 是否已赋值
+                     */
+                    bool QueryHasBeenSet() const;
 
                     /**
                      * 获取日志导出起始时间，毫秒时间戳
@@ -171,22 +171,22 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志主题
+                     * 日志主题ID
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 日志导出检索语句
-                     */
-                    std::string m_query;
-                    bool m_queryHasBeenSet;
-
-                    /**
-                     * 日志导出数量,  最大值1000万
+                     * 日志导出数量,  最大值5000万
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;
+
+                    /**
+                     * 日志导出检索语句，不支持<a href="https://cloud.tencent.com/document/product/614/44061" target="_blank">[SQL语句]</a>
+                     */
+                    std::string m_query;
+                    bool m_queryHasBeenSet;
 
                     /**
                      * 日志导出起始时间，毫秒时间戳

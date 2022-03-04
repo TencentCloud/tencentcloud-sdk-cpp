@@ -24,8 +24,8 @@ using namespace std;
 
 CreateExportRequest::CreateExportRequest() :
     m_topicIdHasBeenSet(false),
-    m_queryHasBeenSet(false),
     m_countHasBeenSet(false),
+    m_queryHasBeenSet(false),
     m_fromHasBeenSet(false),
     m_toHasBeenSet(false),
     m_orderHasBeenSet(false),
@@ -48,20 +48,20 @@ string CreateExportRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_topicId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_queryHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Query";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_query.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_countHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Count";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_count, allocator);
+    }
+
+    if (m_queryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Query";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_query.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fromHasBeenSet)
@@ -120,22 +120,6 @@ bool CreateExportRequest::TopicIdHasBeenSet() const
     return m_topicIdHasBeenSet;
 }
 
-string CreateExportRequest::GetQuery() const
-{
-    return m_query;
-}
-
-void CreateExportRequest::SetQuery(const string& _query)
-{
-    m_query = _query;
-    m_queryHasBeenSet = true;
-}
-
-bool CreateExportRequest::QueryHasBeenSet() const
-{
-    return m_queryHasBeenSet;
-}
-
 uint64_t CreateExportRequest::GetCount() const
 {
     return m_count;
@@ -150,6 +134,22 @@ void CreateExportRequest::SetCount(const uint64_t& _count)
 bool CreateExportRequest::CountHasBeenSet() const
 {
     return m_countHasBeenSet;
+}
+
+string CreateExportRequest::GetQuery() const
+{
+    return m_query;
+}
+
+void CreateExportRequest::SetQuery(const string& _query)
+{
+    m_query = _query;
+    m_queryHasBeenSet = true;
+}
+
+bool CreateExportRequest::QueryHasBeenSet() const
+{
+    return m_queryHasBeenSet;
 }
 
 int64_t CreateExportRequest::GetFrom() const

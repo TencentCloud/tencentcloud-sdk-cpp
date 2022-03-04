@@ -25,9 +25,9 @@ using namespace std;
 DownloadOrgFileRequest::DownloadOrgFileRequest() :
     m_openIdHasBeenSet(false),
     m_openKeyHasBeenSet(false),
-    m_profileHasBeenSet(false),
     m_storageHasBeenSet(false),
-    m_filePathHasBeenSet(false)
+    m_filePathHasBeenSet(false),
+    m_profileHasBeenSet(false)
 {
 }
 
@@ -54,14 +54,6 @@ string DownloadOrgFileRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_openKey.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_profileHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Profile";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_profile.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_storageHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -76,6 +68,14 @@ string DownloadOrgFileRequest::ToJsonString() const
         string key = "FilePath";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_filePath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_profileHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Profile";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_profile.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -118,22 +118,6 @@ bool DownloadOrgFileRequest::OpenKeyHasBeenSet() const
     return m_openKeyHasBeenSet;
 }
 
-string DownloadOrgFileRequest::GetProfile() const
-{
-    return m_profile;
-}
-
-void DownloadOrgFileRequest::SetProfile(const string& _profile)
-{
-    m_profile = _profile;
-    m_profileHasBeenSet = true;
-}
-
-bool DownloadOrgFileRequest::ProfileHasBeenSet() const
-{
-    return m_profileHasBeenSet;
-}
-
 string DownloadOrgFileRequest::GetStorage() const
 {
     return m_storage;
@@ -164,6 +148,22 @@ void DownloadOrgFileRequest::SetFilePath(const string& _filePath)
 bool DownloadOrgFileRequest::FilePathHasBeenSet() const
 {
     return m_filePathHasBeenSet;
+}
+
+string DownloadOrgFileRequest::GetProfile() const
+{
+    return m_profile;
+}
+
+void DownloadOrgFileRequest::SetProfile(const string& _profile)
+{
+    m_profile = _profile;
+    m_profileHasBeenSet = true;
+}
+
+bool DownloadOrgFileRequest::ProfileHasBeenSet() const
+{
+    return m_profileHasBeenSet;
 }
 
 

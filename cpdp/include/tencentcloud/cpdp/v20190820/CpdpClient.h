@@ -37,6 +37,8 @@
 #include <tencentcloud/cpdp/v20190820/model/ApplyPayerInfoResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ApplyReWithdrawalRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/ApplyReWithdrawalResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/ApplyReconciliationFileRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/ApplyReconciliationFileResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ApplyTradeRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/ApplyTradeResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ApplyWithdrawalRequest.h>
@@ -197,6 +199,8 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryExceedingInfoResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryExchangeRateRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryExchangeRateResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFundsTransactionDetailsRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFundsTransactionDetailsResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryInvoiceRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryInvoiceResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryInvoiceV2Request.h>
@@ -207,6 +211,8 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryMemberBindResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMemberTransactionRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMemberTransactionResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryMemberTransactionDetailsRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryMemberTransactionDetailsResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMerchantRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMerchantResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMerchantBalanceRequest.h>
@@ -241,6 +247,8 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryPayerInfoResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryReconciliationDocumentRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryReconciliationDocumentResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryReconciliationFileApplyInfoRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryReconciliationFileApplyInfoResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryRefundRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryRefundResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryShopOpenIdRequest.h>
@@ -356,6 +364,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ApplyReWithdrawalResponse> ApplyReWithdrawalOutcome;
                 typedef std::future<ApplyReWithdrawalOutcome> ApplyReWithdrawalOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::ApplyReWithdrawalRequest&, ApplyReWithdrawalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyReWithdrawalAsyncHandler;
+                typedef Outcome<Core::Error, Model::ApplyReconciliationFileResponse> ApplyReconciliationFileOutcome;
+                typedef std::future<ApplyReconciliationFileOutcome> ApplyReconciliationFileOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::ApplyReconciliationFileRequest&, ApplyReconciliationFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyReconciliationFileAsyncHandler;
                 typedef Outcome<Core::Error, Model::ApplyTradeResponse> ApplyTradeOutcome;
                 typedef std::future<ApplyTradeOutcome> ApplyTradeOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::ApplyTradeRequest&, ApplyTradeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyTradeAsyncHandler;
@@ -596,6 +607,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryExchangeRateResponse> QueryExchangeRateOutcome;
                 typedef std::future<QueryExchangeRateOutcome> QueryExchangeRateOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryExchangeRateRequest&, QueryExchangeRateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryExchangeRateAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryFundsTransactionDetailsResponse> QueryFundsTransactionDetailsOutcome;
+                typedef std::future<QueryFundsTransactionDetailsOutcome> QueryFundsTransactionDetailsOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryFundsTransactionDetailsRequest&, QueryFundsTransactionDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryFundsTransactionDetailsAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryInvoiceResponse> QueryInvoiceOutcome;
                 typedef std::future<QueryInvoiceOutcome> QueryInvoiceOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryInvoiceRequest&, QueryInvoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryInvoiceAsyncHandler;
@@ -611,6 +625,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryMemberTransactionResponse> QueryMemberTransactionOutcome;
                 typedef std::future<QueryMemberTransactionOutcome> QueryMemberTransactionOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryMemberTransactionRequest&, QueryMemberTransactionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMemberTransactionAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryMemberTransactionDetailsResponse> QueryMemberTransactionDetailsOutcome;
+                typedef std::future<QueryMemberTransactionDetailsOutcome> QueryMemberTransactionDetailsOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryMemberTransactionDetailsRequest&, QueryMemberTransactionDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMemberTransactionDetailsAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryMerchantResponse> QueryMerchantOutcome;
                 typedef std::future<QueryMerchantOutcome> QueryMerchantOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryMerchantRequest&, QueryMerchantOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMerchantAsyncHandler;
@@ -662,6 +679,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryReconciliationDocumentResponse> QueryReconciliationDocumentOutcome;
                 typedef std::future<QueryReconciliationDocumentOutcome> QueryReconciliationDocumentOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryReconciliationDocumentRequest&, QueryReconciliationDocumentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryReconciliationDocumentAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryReconciliationFileApplyInfoResponse> QueryReconciliationFileApplyInfoOutcome;
+                typedef std::future<QueryReconciliationFileApplyInfoOutcome> QueryReconciliationFileApplyInfoOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryReconciliationFileApplyInfoRequest&, QueryReconciliationFileApplyInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryReconciliationFileApplyInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryRefundResponse> QueryRefundOutcome;
                 typedef std::future<QueryRefundOutcome> QueryRefundOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryRefundRequest&, QueryRefundOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryRefundAsyncHandler;
@@ -847,6 +867,15 @@ namespace TencentCloud
                 ApplyReWithdrawalOutcome ApplyReWithdrawal(const Model::ApplyReWithdrawalRequest &request);
                 void ApplyReWithdrawalAsync(const Model::ApplyReWithdrawalRequest& request, const ApplyReWithdrawalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ApplyReWithdrawalOutcomeCallable ApplyReWithdrawalCallable(const Model::ApplyReWithdrawalRequest& request);
+
+                /**
+                 *聚鑫-申请对账文件
+                 * @param req ApplyReconciliationFileRequest
+                 * @return ApplyReconciliationFileOutcome
+                 */
+                ApplyReconciliationFileOutcome ApplyReconciliationFile(const Model::ApplyReconciliationFileRequest &request);
+                void ApplyReconciliationFileAsync(const Model::ApplyReconciliationFileRequest& request, const ApplyReconciliationFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ApplyReconciliationFileOutcomeCallable ApplyReconciliationFileCallable(const Model::ApplyReconciliationFileRequest& request);
 
                 /**
                  *跨境-提交贸易材料。通过提交贸易材料接口可为对接方累计贸易额度，在额度范围内可发起汇兑汇出交易。
@@ -1253,7 +1282,7 @@ namespace TencentCloud
                 DistributeQueryOutcomeCallable DistributeQueryCallable(const Model::DistributeQueryRequest& request);
 
                 /**
-                 *云支付-T查询已添加分账接收方接口
+                 *云支付-查询已添加分账接收方接口
                  * @param req DistributeQueryReceiverRequest
                  * @return DistributeQueryReceiverOutcome
                  */
@@ -1577,6 +1606,15 @@ namespace TencentCloud
                 QueryExchangeRateOutcomeCallable QueryExchangeRateCallable(const Model::QueryExchangeRateRequest& request);
 
                 /**
+                 *聚鑫-查询会员资金交易信息列表
+                 * @param req QueryFundsTransactionDetailsRequest
+                 * @return QueryFundsTransactionDetailsOutcome
+                 */
+                QueryFundsTransactionDetailsOutcome QueryFundsTransactionDetails(const Model::QueryFundsTransactionDetailsRequest &request);
+                void QueryFundsTransactionDetailsAsync(const Model::QueryFundsTransactionDetailsRequest& request, const QueryFundsTransactionDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryFundsTransactionDetailsOutcomeCallable QueryFundsTransactionDetailsCallable(const Model::QueryFundsTransactionDetailsRequest& request);
+
+                /**
                  *智慧零售-发票查询
                  * @param req QueryInvoiceRequest
                  * @return QueryInvoiceOutcome
@@ -1621,6 +1659,15 @@ namespace TencentCloud
                 QueryMemberTransactionOutcome QueryMemberTransaction(const Model::QueryMemberTransactionRequest &request);
                 void QueryMemberTransactionAsync(const Model::QueryMemberTransactionRequest& request, const QueryMemberTransactionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryMemberTransactionOutcomeCallable QueryMemberTransactionCallable(const Model::QueryMemberTransactionRequest& request);
+
+                /**
+                 *聚鑫-查询会员间交易信息列表
+                 * @param req QueryMemberTransactionDetailsRequest
+                 * @return QueryMemberTransactionDetailsOutcome
+                 */
+                QueryMemberTransactionDetailsOutcome QueryMemberTransactionDetails(const Model::QueryMemberTransactionDetailsRequest &request);
+                void QueryMemberTransactionDetailsAsync(const Model::QueryMemberTransactionDetailsRequest& request, const QueryMemberTransactionDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryMemberTransactionDetailsOutcomeCallable QueryMemberTransactionDetailsCallable(const Model::QueryMemberTransactionDetailsRequest& request);
 
                 /**
                  *云鉴-商户信息查询接口
@@ -1774,6 +1821,15 @@ namespace TencentCloud
                 QueryReconciliationDocumentOutcome QueryReconciliationDocument(const Model::QueryReconciliationDocumentRequest &request);
                 void QueryReconciliationDocumentAsync(const Model::QueryReconciliationDocumentRequest& request, const QueryReconciliationDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryReconciliationDocumentOutcomeCallable QueryReconciliationDocumentCallable(const Model::QueryReconciliationDocumentRequest& request);
+
+                /**
+                 *聚鑫-查询对账文件申请结果
+                 * @param req QueryReconciliationFileApplyInfoRequest
+                 * @return QueryReconciliationFileApplyInfoOutcome
+                 */
+                QueryReconciliationFileApplyInfoOutcome QueryReconciliationFileApplyInfo(const Model::QueryReconciliationFileApplyInfoRequest &request);
+                void QueryReconciliationFileApplyInfoAsync(const Model::QueryReconciliationFileApplyInfoRequest& request, const QueryReconciliationFileApplyInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryReconciliationFileApplyInfoOutcomeCallable QueryReconciliationFileApplyInfoCallable(const Model::QueryReconciliationFileApplyInfoRequest& request);
 
                 /**
                  *提交退款申请后，通过调用该接口查询退款状态。退款可能有一定延时，用微信零钱支付的退款约20分钟内到账，银行卡支付的退款约3个工作日后到账。

@@ -24,11 +24,11 @@ using namespace std;
 
 DistributeAccreditTlinxRequest::DistributeAccreditTlinxRequest() :
     m_openIdHasBeenSet(false),
-    m_authTypeHasBeenSet(false),
     m_openKeyHasBeenSet(false),
-    m_profileHasBeenSet(false),
+    m_authTypeHasBeenSet(false),
     m_percentHasBeenSet(false),
-    m_fullNameHasBeenSet(false)
+    m_fullNameHasBeenSet(false),
+    m_profileHasBeenSet(false)
 {
 }
 
@@ -47,14 +47,6 @@ string DistributeAccreditTlinxRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_openId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_authTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AuthType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_authType.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_openKeyHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -63,12 +55,12 @@ string DistributeAccreditTlinxRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_openKey.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_profileHasBeenSet)
+    if (m_authTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Profile";
+        string key = "AuthType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_profile.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_authType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_percentHasBeenSet)
@@ -85,6 +77,14 @@ string DistributeAccreditTlinxRequest::ToJsonString() const
         string key = "FullName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_fullName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_profileHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Profile";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_profile.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -111,22 +111,6 @@ bool DistributeAccreditTlinxRequest::OpenIdHasBeenSet() const
     return m_openIdHasBeenSet;
 }
 
-string DistributeAccreditTlinxRequest::GetAuthType() const
-{
-    return m_authType;
-}
-
-void DistributeAccreditTlinxRequest::SetAuthType(const string& _authType)
-{
-    m_authType = _authType;
-    m_authTypeHasBeenSet = true;
-}
-
-bool DistributeAccreditTlinxRequest::AuthTypeHasBeenSet() const
-{
-    return m_authTypeHasBeenSet;
-}
-
 string DistributeAccreditTlinxRequest::GetOpenKey() const
 {
     return m_openKey;
@@ -143,20 +127,20 @@ bool DistributeAccreditTlinxRequest::OpenKeyHasBeenSet() const
     return m_openKeyHasBeenSet;
 }
 
-string DistributeAccreditTlinxRequest::GetProfile() const
+string DistributeAccreditTlinxRequest::GetAuthType() const
 {
-    return m_profile;
+    return m_authType;
 }
 
-void DistributeAccreditTlinxRequest::SetProfile(const string& _profile)
+void DistributeAccreditTlinxRequest::SetAuthType(const string& _authType)
 {
-    m_profile = _profile;
-    m_profileHasBeenSet = true;
+    m_authType = _authType;
+    m_authTypeHasBeenSet = true;
 }
 
-bool DistributeAccreditTlinxRequest::ProfileHasBeenSet() const
+bool DistributeAccreditTlinxRequest::AuthTypeHasBeenSet() const
 {
-    return m_profileHasBeenSet;
+    return m_authTypeHasBeenSet;
 }
 
 string DistributeAccreditTlinxRequest::GetPercent() const
@@ -189,6 +173,22 @@ void DistributeAccreditTlinxRequest::SetFullName(const string& _fullName)
 bool DistributeAccreditTlinxRequest::FullNameHasBeenSet() const
 {
     return m_fullNameHasBeenSet;
+}
+
+string DistributeAccreditTlinxRequest::GetProfile() const
+{
+    return m_profile;
+}
+
+void DistributeAccreditTlinxRequest::SetProfile(const string& _profile)
+{
+    m_profile = _profile;
+    m_profileHasBeenSet = true;
+}
+
+bool DistributeAccreditTlinxRequest::ProfileHasBeenSet() const
+{
+    return m_profileHasBeenSet;
 }
 
 

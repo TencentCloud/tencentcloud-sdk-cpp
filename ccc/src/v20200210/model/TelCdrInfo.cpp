@@ -49,7 +49,8 @@ TelCdrInfo::TelCdrInfo() :
     m_protectedCalleeHasBeenSet(false),
     m_uuiHasBeenSet(false),
     m_iVRKeyPressedExHasBeenSet(false),
-    m_asrUrlHasBeenSet(false)
+    m_asrUrlHasBeenSet(false),
+    m_customRecordURLHasBeenSet(false)
 {
 }
 
@@ -388,6 +389,16 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
         m_asrUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomRecordURL") && !value["CustomRecordURL"].IsNull())
+    {
+        if (!value["CustomRecordURL"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.CustomRecordURL` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customRecordURL = string(value["CustomRecordURL"].GetString());
+        m_customRecordURLHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -652,6 +663,14 @@ void TelCdrInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "AsrUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_asrUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customRecordURLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomRecordURL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customRecordURL.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1119,5 +1138,21 @@ void TelCdrInfo::SetAsrUrl(const string& _asrUrl)
 bool TelCdrInfo::AsrUrlHasBeenSet() const
 {
     return m_asrUrlHasBeenSet;
+}
+
+string TelCdrInfo::GetCustomRecordURL() const
+{
+    return m_customRecordURL;
+}
+
+void TelCdrInfo::SetCustomRecordURL(const string& _customRecordURL)
+{
+    m_customRecordURL = _customRecordURL;
+    m_customRecordURLHasBeenSet = true;
+}
+
+bool TelCdrInfo::CustomRecordURLHasBeenSet() const
+{
+    return m_customRecordURLHasBeenSet;
 }
 

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取收单系统分配的开放ID
-                     * @return OpenId 收单系统分配的开放ID
+                     * 获取使用门店OpenId
+                     * @return OpenId 使用门店OpenId
                      */
                     std::string GetOpenId() const;
 
                     /**
-                     * 设置收单系统分配的开放ID
-                     * @param OpenId 收单系统分配的开放ID
+                     * 设置使用门店OpenId
+                     * @param OpenId 使用门店OpenId
                      */
                     void SetOpenId(const std::string& _openId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool OpenIdHasBeenSet() const;
 
                     /**
-                     * 获取收单系统分配的密钥
-                     * @return OpenKey 收单系统分配的密钥
+                     * 获取使用门店OpenKey
+                     * @return OpenKey 使用门店OpenKey
                      */
                     std::string GetOpenKey() const;
 
                     /**
-                     * 设置收单系统分配的密钥
-                     * @param OpenKey 收单系统分配的密钥
+                     * 设置使用门店OpenKey
+                     * @param OpenKey 使用门店OpenKey
                      */
                     void SetOpenKey(const std::string& _openKey);
 
@@ -97,22 +97,22 @@ namespace TencentCloud
                     bool OrderNoHasBeenSet() const;
 
                     /**
-                     * 获取沙箱环境填sandbox，正式环境不填
-                     * @return Profile 沙箱环境填sandbox，正式环境不填
+                     * 获取商户分账单号，type为2时，和DistributeNo二者传其一
+                     * @return OutDistributeNo 商户分账单号，type为2时，和DistributeNo二者传其一
                      */
-                    std::string GetProfile() const;
+                    std::string GetOutDistributeNo() const;
 
                     /**
-                     * 设置沙箱环境填sandbox，正式环境不填
-                     * @param Profile 沙箱环境填sandbox，正式环境不填
+                     * 设置商户分账单号，type为2时，和DistributeNo二者传其一
+                     * @param OutDistributeNo 商户分账单号，type为2时，和DistributeNo二者传其一
                      */
-                    void SetProfile(const std::string& _profile);
+                    void SetOutDistributeNo(const std::string& _outDistributeNo);
 
                     /**
-                     * 判断参数 Profile 是否已赋值
-                     * @return Profile 是否已赋值
+                     * 判断参数 OutDistributeNo 是否已赋值
+                     * @return OutDistributeNo 是否已赋值
                      */
-                    bool ProfileHasBeenSet() const;
+                    bool OutDistributeNoHasBeenSet() const;
 
                     /**
                      * 获取平台分账单号，type为2时，和OutDistributeNo二者传其一
@@ -133,33 +133,33 @@ namespace TencentCloud
                     bool DistributeNoHasBeenSet() const;
 
                     /**
-                     * 获取商户分账单号，type为2时，和DistributeNo二者传其一
-                     * @return OutDistributeNo 商户分账单号，type为2时，和DistributeNo二者传其一
+                     * 获取沙箱环境填sandbox，正式环境不填
+                     * @return Profile 沙箱环境填sandbox，正式环境不填
                      */
-                    std::string GetOutDistributeNo() const;
+                    std::string GetProfile() const;
 
                     /**
-                     * 设置商户分账单号，type为2时，和DistributeNo二者传其一
-                     * @param OutDistributeNo 商户分账单号，type为2时，和DistributeNo二者传其一
+                     * 设置沙箱环境填sandbox，正式环境不填
+                     * @param Profile 沙箱环境填sandbox，正式环境不填
                      */
-                    void SetOutDistributeNo(const std::string& _outDistributeNo);
+                    void SetProfile(const std::string& _profile);
 
                     /**
-                     * 判断参数 OutDistributeNo 是否已赋值
-                     * @return OutDistributeNo 是否已赋值
+                     * 判断参数 Profile 是否已赋值
+                     * @return Profile 是否已赋值
                      */
-                    bool OutDistributeNoHasBeenSet() const;
+                    bool ProfileHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 收单系统分配的开放ID
+                     * 使用门店OpenId
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;
 
                     /**
-                     * 收单系统分配的密钥
+                     * 使用门店OpenKey
                      */
                     std::string m_openKey;
                     bool m_openKeyHasBeenSet;
@@ -171,10 +171,10 @@ namespace TencentCloud
                     bool m_orderNoHasBeenSet;
 
                     /**
-                     * 沙箱环境填sandbox，正式环境不填
+                     * 商户分账单号，type为2时，和DistributeNo二者传其一
                      */
-                    std::string m_profile;
-                    bool m_profileHasBeenSet;
+                    std::string m_outDistributeNo;
+                    bool m_outDistributeNoHasBeenSet;
 
                     /**
                      * 平台分账单号，type为2时，和OutDistributeNo二者传其一
@@ -183,10 +183,10 @@ namespace TencentCloud
                     bool m_distributeNoHasBeenSet;
 
                     /**
-                     * 商户分账单号，type为2时，和DistributeNo二者传其一
+                     * 沙箱环境填sandbox，正式环境不填
                      */
-                    std::string m_outDistributeNo;
-                    bool m_outDistributeNoHasBeenSet;
+                    std::string m_profile;
+                    bool m_profileHasBeenSet;
 
                 };
             }

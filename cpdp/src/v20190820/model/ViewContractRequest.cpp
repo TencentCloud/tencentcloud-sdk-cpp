@@ -25,9 +25,9 @@ using namespace std;
 ViewContractRequest::ViewContractRequest() :
     m_openIdHasBeenSet(false),
     m_openKeyHasBeenSet(false),
-    m_profileHasBeenSet(false),
     m_outContractIdHasBeenSet(false),
-    m_contractIdHasBeenSet(false)
+    m_contractIdHasBeenSet(false),
+    m_profileHasBeenSet(false)
 {
 }
 
@@ -54,14 +54,6 @@ string ViewContractRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_openKey.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_profileHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Profile";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_profile.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_outContractIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -76,6 +68,14 @@ string ViewContractRequest::ToJsonString() const
         string key = "ContractId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_contractId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_profileHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Profile";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_profile.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -118,22 +118,6 @@ bool ViewContractRequest::OpenKeyHasBeenSet() const
     return m_openKeyHasBeenSet;
 }
 
-string ViewContractRequest::GetProfile() const
-{
-    return m_profile;
-}
-
-void ViewContractRequest::SetProfile(const string& _profile)
-{
-    m_profile = _profile;
-    m_profileHasBeenSet = true;
-}
-
-bool ViewContractRequest::ProfileHasBeenSet() const
-{
-    return m_profileHasBeenSet;
-}
-
 string ViewContractRequest::GetOutContractId() const
 {
     return m_outContractId;
@@ -164,6 +148,22 @@ void ViewContractRequest::SetContractId(const string& _contractId)
 bool ViewContractRequest::ContractIdHasBeenSet() const
 {
     return m_contractIdHasBeenSet;
+}
+
+string ViewContractRequest::GetProfile() const
+{
+    return m_profile;
+}
+
+void ViewContractRequest::SetProfile(const string& _profile)
+{
+    m_profile = _profile;
+    m_profileHasBeenSet = true;
+}
+
+bool ViewContractRequest::ProfileHasBeenSet() const
+{
+    return m_profileHasBeenSet;
 }
 
 

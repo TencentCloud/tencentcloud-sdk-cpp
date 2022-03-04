@@ -79,24 +79,6 @@ namespace TencentCloud
                     bool OpenKeyHasBeenSet() const;
 
                     /**
-                     * 获取沙箱环境填sandbox，正式环境不填
-                     * @return Profile 沙箱环境填sandbox，正式环境不填
-                     */
-                    std::string GetProfile() const;
-
-                    /**
-                     * 设置沙箱环境填sandbox，正式环境不填
-                     * @param Profile 沙箱环境填sandbox，正式环境不填
-                     */
-                    void SetProfile(const std::string& _profile);
-
-                    /**
-                     * 判断参数 Profile 是否已赋值
-                     * @return Profile 是否已赋值
-                     */
-                    bool ProfileHasBeenSet() const;
-
-                    /**
                      * 获取外部商户主键编号（MerchantNo或OutMerchantId必须传一个）
                      * @return OutMerchantId 外部商户主键编号（MerchantNo或OutMerchantId必须传一个）
                      */
@@ -132,6 +114,24 @@ namespace TencentCloud
                      */
                     bool MerchantNoHasBeenSet() const;
 
+                    /**
+                     * 获取沙箱环境填sandbox，正式环境不填
+                     * @return Profile 沙箱环境填sandbox，正式环境不填
+                     */
+                    std::string GetProfile() const;
+
+                    /**
+                     * 设置沙箱环境填sandbox，正式环境不填
+                     * @param Profile 沙箱环境填sandbox，正式环境不填
+                     */
+                    void SetProfile(const std::string& _profile);
+
+                    /**
+                     * 判断参数 Profile 是否已赋值
+                     * @return Profile 是否已赋值
+                     */
+                    bool ProfileHasBeenSet() const;
+
                 private:
 
                     /**
@@ -147,12 +147,6 @@ namespace TencentCloud
                     bool m_openKeyHasBeenSet;
 
                     /**
-                     * 沙箱环境填sandbox，正式环境不填
-                     */
-                    std::string m_profile;
-                    bool m_profileHasBeenSet;
-
-                    /**
                      * 外部商户主键编号（MerchantNo或OutMerchantId必须传一个）
                      */
                     std::string m_outMerchantId;
@@ -163,6 +157,12 @@ namespace TencentCloud
                      */
                     std::string m_merchantNo;
                     bool m_merchantNoHasBeenSet;
+
+                    /**
+                     * 沙箱环境填sandbox，正式环境不填
+                     */
+                    std::string m_profile;
+                    bool m_profileHasBeenSet;
 
                 };
             }

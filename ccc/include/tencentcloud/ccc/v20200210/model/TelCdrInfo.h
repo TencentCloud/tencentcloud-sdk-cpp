@@ -819,6 +819,28 @@ notInService       不在服务区
                      */
                     bool AsrUrlHasBeenSet() const;
 
+                    /**
+                     * 获取录音转存第三方COS地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CustomRecordURL 录音转存第三方COS地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCustomRecordURL() const;
+
+                    /**
+                     * 设置录音转存第三方COS地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CustomRecordURL 录音转存第三方COS地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCustomRecordURL(const std::string& _customRecordURL);
+
+                    /**
+                     * 判断参数 CustomRecordURL 是否已赋值
+                     * @return CustomRecordURL 是否已赋值
+                     */
+                    bool CustomRecordURLHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1056,6 +1078,13 @@ notInService       不在服务区
                      */
                     std::string m_asrUrl;
                     bool m_asrUrlHasBeenSet;
+
+                    /**
+                     * 录音转存第三方COS地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_customRecordURL;
+                    bool m_customRecordURLHasBeenSet;
 
                 };
             }

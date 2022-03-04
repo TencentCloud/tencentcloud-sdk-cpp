@@ -36,7 +36,8 @@ ServeParticipant::ServeParticipant() :
     m_recordURLHasBeenSet(false),
     m_sequenceHasBeenSet(false),
     m_startTimestampHasBeenSet(false),
-    m_skillGroupNameHasBeenSet(false)
+    m_skillGroupNameHasBeenSet(false),
+    m_customRecordURLHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,16 @@ CoreInternalOutcome ServeParticipant::Deserialize(const rapidjson::Value &value)
         m_skillGroupNameHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomRecordURL") && !value["CustomRecordURL"].IsNull())
+    {
+        if (!value["CustomRecordURL"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServeParticipant.CustomRecordURL` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customRecordURL = string(value["CustomRecordURL"].GetString());
+        m_customRecordURLHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +349,14 @@ void ServeParticipant::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "SkillGroupName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_skillGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customRecordURLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomRecordURL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customRecordURL.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -597,5 +616,21 @@ void ServeParticipant::SetSkillGroupName(const string& _skillGroupName)
 bool ServeParticipant::SkillGroupNameHasBeenSet() const
 {
     return m_skillGroupNameHasBeenSet;
+}
+
+string ServeParticipant::GetCustomRecordURL() const
+{
+    return m_customRecordURL;
+}
+
+void ServeParticipant::SetCustomRecordURL(const string& _customRecordURL)
+{
+    m_customRecordURL = _customRecordURL;
+    m_customRecordURLHasBeenSet = true;
+}
+
+bool ServeParticipant::CustomRecordURLHasBeenSet() const
+{
+    return m_customRecordURLHasBeenSet;
 }
 

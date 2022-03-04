@@ -40,6 +40,49 @@ CkafkaClient::CkafkaClient(const Credential &credential, const string &region, c
 }
 
 
+CkafkaClient::AuthorizeTokenOutcome CkafkaClient::AuthorizeToken(const AuthorizeTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "AuthorizeToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AuthorizeTokenResponse rsp = AuthorizeTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AuthorizeTokenOutcome(rsp);
+        else
+            return AuthorizeTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return AuthorizeTokenOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::AuthorizeTokenAsync(const AuthorizeTokenRequest& request, const AuthorizeTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AuthorizeToken(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::AuthorizeTokenOutcomeCallable CkafkaClient::AuthorizeTokenCallable(const AuthorizeTokenRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AuthorizeTokenOutcome()>>(
+        [this, request]()
+        {
+            return this->AuthorizeToken(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::BatchCreateAclOutcome CkafkaClient::BatchCreateAcl(const BatchCreateAclRequest &request)
 {
     auto outcome = MakeRequest(request, "BatchCreateAcl");
@@ -162,6 +205,49 @@ CkafkaClient::BatchModifyTopicAttributesOutcomeCallable CkafkaClient::BatchModif
         [this, request]()
         {
             return this->BatchModifyTopicAttributes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CkafkaClient::CancelAuthorizationTokenOutcome CkafkaClient::CancelAuthorizationToken(const CancelAuthorizationTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelAuthorizationToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelAuthorizationTokenResponse rsp = CancelAuthorizationTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelAuthorizationTokenOutcome(rsp);
+        else
+            return CancelAuthorizationTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelAuthorizationTokenOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::CancelAuthorizationTokenAsync(const CancelAuthorizationTokenRequest& request, const CancelAuthorizationTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelAuthorizationToken(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::CancelAuthorizationTokenOutcomeCallable CkafkaClient::CancelAuthorizationTokenCallable(const CancelAuthorizationTokenRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelAuthorizationTokenOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelAuthorizationToken(request);
         }
     );
 
@@ -377,6 +463,49 @@ CkafkaClient::CreateRouteOutcomeCallable CkafkaClient::CreateRouteCallable(const
         [this, request]()
         {
             return this->CreateRoute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CkafkaClient::CreateTokenOutcome CkafkaClient::CreateToken(const CreateTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTokenResponse rsp = CreateTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTokenOutcome(rsp);
+        else
+            return CreateTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTokenOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::CreateTokenAsync(const CreateTokenRequest& request, const CreateTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateToken(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::CreateTokenOutcomeCallable CkafkaClient::CreateTokenCallable(const CreateTokenRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTokenOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateToken(request);
         }
     );
 

@@ -341,6 +341,49 @@ CpdpClient::ApplyReWithdrawalOutcomeCallable CpdpClient::ApplyReWithdrawalCallab
     return task->get_future();
 }
 
+CpdpClient::ApplyReconciliationFileOutcome CpdpClient::ApplyReconciliationFile(const ApplyReconciliationFileRequest &request)
+{
+    auto outcome = MakeRequest(request, "ApplyReconciliationFile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ApplyReconciliationFileResponse rsp = ApplyReconciliationFileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ApplyReconciliationFileOutcome(rsp);
+        else
+            return ApplyReconciliationFileOutcome(o.GetError());
+    }
+    else
+    {
+        return ApplyReconciliationFileOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::ApplyReconciliationFileAsync(const ApplyReconciliationFileRequest& request, const ApplyReconciliationFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ApplyReconciliationFile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::ApplyReconciliationFileOutcomeCallable CpdpClient::ApplyReconciliationFileCallable(const ApplyReconciliationFileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ApplyReconciliationFileOutcome()>>(
+        [this, request]()
+        {
+            return this->ApplyReconciliationFile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::ApplyTradeOutcome CpdpClient::ApplyTrade(const ApplyTradeRequest &request)
 {
     auto outcome = MakeRequest(request, "ApplyTrade");
@@ -3781,6 +3824,49 @@ CpdpClient::QueryExchangeRateOutcomeCallable CpdpClient::QueryExchangeRateCallab
     return task->get_future();
 }
 
+CpdpClient::QueryFundsTransactionDetailsOutcome CpdpClient::QueryFundsTransactionDetails(const QueryFundsTransactionDetailsRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryFundsTransactionDetails");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryFundsTransactionDetailsResponse rsp = QueryFundsTransactionDetailsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryFundsTransactionDetailsOutcome(rsp);
+        else
+            return QueryFundsTransactionDetailsOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryFundsTransactionDetailsOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryFundsTransactionDetailsAsync(const QueryFundsTransactionDetailsRequest& request, const QueryFundsTransactionDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryFundsTransactionDetails(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryFundsTransactionDetailsOutcomeCallable CpdpClient::QueryFundsTransactionDetailsCallable(const QueryFundsTransactionDetailsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryFundsTransactionDetailsOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryFundsTransactionDetails(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::QueryInvoiceOutcome CpdpClient::QueryInvoice(const QueryInvoiceRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryInvoice");
@@ -3989,6 +4075,49 @@ CpdpClient::QueryMemberTransactionOutcomeCallable CpdpClient::QueryMemberTransac
         [this, request]()
         {
             return this->QueryMemberTransaction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::QueryMemberTransactionDetailsOutcome CpdpClient::QueryMemberTransactionDetails(const QueryMemberTransactionDetailsRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryMemberTransactionDetails");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryMemberTransactionDetailsResponse rsp = QueryMemberTransactionDetailsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryMemberTransactionDetailsOutcome(rsp);
+        else
+            return QueryMemberTransactionDetailsOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryMemberTransactionDetailsOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryMemberTransactionDetailsAsync(const QueryMemberTransactionDetailsRequest& request, const QueryMemberTransactionDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryMemberTransactionDetails(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryMemberTransactionDetailsOutcomeCallable CpdpClient::QueryMemberTransactionDetailsCallable(const QueryMemberTransactionDetailsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryMemberTransactionDetailsOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryMemberTransactionDetails(request);
         }
     );
 
@@ -4720,6 +4849,49 @@ CpdpClient::QueryReconciliationDocumentOutcomeCallable CpdpClient::QueryReconcil
         [this, request]()
         {
             return this->QueryReconciliationDocument(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::QueryReconciliationFileApplyInfoOutcome CpdpClient::QueryReconciliationFileApplyInfo(const QueryReconciliationFileApplyInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryReconciliationFileApplyInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryReconciliationFileApplyInfoResponse rsp = QueryReconciliationFileApplyInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryReconciliationFileApplyInfoOutcome(rsp);
+        else
+            return QueryReconciliationFileApplyInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryReconciliationFileApplyInfoOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryReconciliationFileApplyInfoAsync(const QueryReconciliationFileApplyInfoRequest& request, const QueryReconciliationFileApplyInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryReconciliationFileApplyInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryReconciliationFileApplyInfoOutcomeCallable CpdpClient::QueryReconciliationFileApplyInfoCallable(const QueryReconciliationFileApplyInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryReconciliationFileApplyInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryReconciliationFileApplyInfo(request);
         }
     );
 

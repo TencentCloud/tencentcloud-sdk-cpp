@@ -43,6 +43,42 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取使用门店OpenId
+                     * @return OpenId 使用门店OpenId
+                     */
+                    std::string GetOpenId() const;
+
+                    /**
+                     * 设置使用门店OpenId
+                     * @param OpenId 使用门店OpenId
+                     */
+                    void SetOpenId(const std::string& _openId);
+
+                    /**
+                     * 判断参数 OpenId 是否已赋值
+                     * @return OpenId 是否已赋值
+                     */
+                    bool OpenIdHasBeenSet() const;
+
+                    /**
+                     * 获取使用门店OpenKey
+                     * @return OpenKey 使用门店OpenKey
+                     */
+                    std::string GetOpenKey() const;
+
+                    /**
+                     * 设置使用门店OpenKey
+                     * @param OpenKey 使用门店OpenKey
+                     */
+                    void SetOpenKey(const std::string& _openKey);
+
+                    /**
+                     * 判断参数 OpenKey 是否已赋值
+                     * @return OpenKey 是否已赋值
+                     */
+                    bool OpenKeyHasBeenSet() const;
+
+                    /**
                      * 获取开发者流水号
                      * @return DeveloperNo 开发者流水号
                      */
@@ -59,60 +95,6 @@ namespace TencentCloud
                      * @return DeveloperNo 是否已赋值
                      */
                     bool DeveloperNoHasBeenSet() const;
-
-                    /**
-                     * 获取收单系统分配的开放ID
-                     * @return OpenId 收单系统分配的开放ID
-                     */
-                    std::string GetOpenId() const;
-
-                    /**
-                     * 设置收单系统分配的开放ID
-                     * @param OpenId 收单系统分配的开放ID
-                     */
-                    void SetOpenId(const std::string& _openId);
-
-                    /**
-                     * 判断参数 OpenId 是否已赋值
-                     * @return OpenId 是否已赋值
-                     */
-                    bool OpenIdHasBeenSet() const;
-
-                    /**
-                     * 获取交易结果异步通知url地址
-                     * @return NotifyUrl 交易结果异步通知url地址
-                     */
-                    std::string GetNotifyUrl() const;
-
-                    /**
-                     * 设置交易结果异步通知url地址
-                     * @param NotifyUrl 交易结果异步通知url地址
-                     */
-                    void SetNotifyUrl(const std::string& _notifyUrl);
-
-                    /**
-                     * 判断参数 NotifyUrl 是否已赋值
-                     * @return NotifyUrl 是否已赋值
-                     */
-                    bool NotifyUrlHasBeenSet() const;
-
-                    /**
-                     * 获取收单系统分配的密钥
-                     * @return OpenKey 收单系统分配的密钥
-                     */
-                    std::string GetOpenKey() const;
-
-                    /**
-                     * 设置收单系统分配的密钥
-                     * @param OpenKey 收单系统分配的密钥
-                     */
-                    void SetOpenKey(const std::string& _openKey);
-
-                    /**
-                     * 判断参数 OpenKey 是否已赋值
-                     * @return OpenKey 是否已赋值
-                     */
-                    bool OpenKeyHasBeenSet() const;
 
                     /**
                      * 获取支付标签
@@ -151,112 +133,40 @@ namespace TencentCloud
                     bool TradeAmountHasBeenSet() const;
 
                     /**
-                     * 获取订单备注
-                     * @return Remark 订单备注
+                     * 获取交易结果异步通知url地址
+                     * @return NotifyUrl 交易结果异步通知url地址
                      */
-                    std::string GetRemark() const;
+                    std::string GetNotifyUrl() const;
 
                     /**
-                     * 设置订单备注
-                     * @param Remark 订单备注
+                     * 设置交易结果异步通知url地址
+                     * @param NotifyUrl 交易结果异步通知url地址
                      */
-                    void SetRemark(const std::string& _remark);
+                    void SetNotifyUrl(const std::string& _notifyUrl);
 
                     /**
-                     * 判断参数 Remark 是否已赋值
-                     * @return Remark 是否已赋值
+                     * 判断参数 NotifyUrl 是否已赋值
+                     * @return NotifyUrl 是否已赋值
                      */
-                    bool RemarkHasBeenSet() const;
+                    bool NotifyUrlHasBeenSet() const;
 
                     /**
-                     * 获取订单标记，订单附加数据。
-                     * @return Tag 订单标记，订单附加数据。
+                     * 获取付款方式名称(当PayTag为Diy时，PayName不能为空)
+                     * @return PayName 付款方式名称(当PayTag为Diy时，PayName不能为空)
                      */
-                    std::string GetTag() const;
+                    std::string GetPayName() const;
 
                     /**
-                     * 设置订单标记，订单附加数据。
-                     * @param Tag 订单标记，订单附加数据。
+                     * 设置付款方式名称(当PayTag为Diy时，PayName不能为空)
+                     * @param PayName 付款方式名称(当PayTag为Diy时，PayName不能为空)
                      */
-                    void SetTag(const std::string& _tag);
+                    void SetPayName(const std::string& _payName);
 
                     /**
-                     * 判断参数 Tag 是否已赋值
-                     * @return Tag 是否已赋值
+                     * 判断参数 PayName 是否已赋值
+                     * @return PayName 是否已赋值
                      */
-                    bool TagHasBeenSet() const;
-
-                    /**
-                     * 获取抹零金额（以分为单位，没有小数点）
-                     * @return IgnoreAmount 抹零金额（以分为单位，没有小数点）
-                     */
-                    std::string GetIgnoreAmount() const;
-
-                    /**
-                     * 设置抹零金额（以分为单位，没有小数点）
-                     * @param IgnoreAmount 抹零金额（以分为单位，没有小数点）
-                     */
-                    void SetIgnoreAmount(const std::string& _ignoreAmount);
-
-                    /**
-                     * 判断参数 IgnoreAmount 是否已赋值
-                     * @return IgnoreAmount 是否已赋值
-                     */
-                    bool IgnoreAmountHasBeenSet() const;
-
-                    /**
-                     * 获取条码支付的授权码（条码抢扫手机扫到的一串数字）
-                     * @return AuthCode 条码支付的授权码（条码抢扫手机扫到的一串数字）
-                     */
-                    std::string GetAuthCode() const;
-
-                    /**
-                     * 设置条码支付的授权码（条码抢扫手机扫到的一串数字）
-                     * @param AuthCode 条码支付的授权码（条码抢扫手机扫到的一串数字）
-                     */
-                    void SetAuthCode(const std::string& _authCode);
-
-                    /**
-                     * 判断参数 AuthCode 是否已赋值
-                     * @return AuthCode 是否已赋值
-                     */
-                    bool AuthCodeHasBeenSet() const;
-
-                    /**
-                     * 获取原始交易金额（以分为单位，没有小数点）
-                     * @return OriginalAmount 原始交易金额（以分为单位，没有小数点）
-                     */
-                    std::string GetOriginalAmount() const;
-
-                    /**
-                     * 设置原始交易金额（以分为单位，没有小数点）
-                     * @param OriginalAmount 原始交易金额（以分为单位，没有小数点）
-                     */
-                    void SetOriginalAmount(const std::string& _originalAmount);
-
-                    /**
-                     * 判断参数 OriginalAmount 是否已赋值
-                     * @return OriginalAmount 是否已赋值
-                     */
-                    bool OriginalAmountHasBeenSet() const;
-
-                    /**
-                     * 获取订单名称（描述）
-                     * @return OrderName 订单名称（描述）
-                     */
-                    std::string GetOrderName() const;
-
-                    /**
-                     * 设置订单名称（描述）
-                     * @param OrderName 订单名称（描述）
-                     */
-                    void SetOrderName(const std::string& _orderName);
-
-                    /**
-                     * 判断参数 OrderName 是否已赋值
-                     * @return OrderName 是否已赋值
-                     */
-                    bool OrderNameHasBeenSet() const;
+                    bool PayNameHasBeenSet() const;
 
                     /**
                      * 获取公众号支付时，支付成功后跳转url地址
@@ -277,40 +187,76 @@ namespace TencentCloud
                     bool JumpUrlHasBeenSet() const;
 
                     /**
-                     * 获取沙箱环境填sandbox，正式环境不填
-                     * @return Profile 沙箱环境填sandbox，正式环境不填
+                     * 获取订单名称（描述）
+                     * @return OrderName 订单名称（描述）
                      */
-                    std::string GetProfile() const;
+                    std::string GetOrderName() const;
 
                     /**
-                     * 设置沙箱环境填sandbox，正式环境不填
-                     * @param Profile 沙箱环境填sandbox，正式环境不填
+                     * 设置订单名称（描述）
+                     * @param OrderName 订单名称（描述）
                      */
-                    void SetProfile(const std::string& _profile);
+                    void SetOrderName(const std::string& _orderName);
 
                     /**
-                     * 判断参数 Profile 是否已赋值
-                     * @return Profile 是否已赋值
+                     * 判断参数 OrderName 是否已赋值
+                     * @return OrderName 是否已赋值
                      */
-                    bool ProfileHasBeenSet() const;
+                    bool OrderNameHasBeenSet() const;
 
                     /**
-                     * 获取收单机构原始交易报文，请转换为json
-                     * @return TradeResult 收单机构原始交易报文，请转换为json
+                     * 获取原始交易金额（以分为单位，没有小数点）
+                     * @return OriginalAmount 原始交易金额（以分为单位，没有小数点）
                      */
-                    std::string GetTradeResult() const;
+                    std::string GetOriginalAmount() const;
 
                     /**
-                     * 设置收单机构原始交易报文，请转换为json
-                     * @param TradeResult 收单机构原始交易报文，请转换为json
+                     * 设置原始交易金额（以分为单位，没有小数点）
+                     * @param OriginalAmount 原始交易金额（以分为单位，没有小数点）
                      */
-                    void SetTradeResult(const std::string& _tradeResult);
+                    void SetOriginalAmount(const std::string& _originalAmount);
 
                     /**
-                     * 判断参数 TradeResult 是否已赋值
-                     * @return TradeResult 是否已赋值
+                     * 判断参数 OriginalAmount 是否已赋值
+                     * @return OriginalAmount 是否已赋值
                      */
-                    bool TradeResultHasBeenSet() const;
+                    bool OriginalAmountHasBeenSet() const;
+
+                    /**
+                     * 获取抹零金额（以分为单位，没有小数点）
+                     * @return IgnoreAmount 抹零金额（以分为单位，没有小数点）
+                     */
+                    std::string GetIgnoreAmount() const;
+
+                    /**
+                     * 设置抹零金额（以分为单位，没有小数点）
+                     * @param IgnoreAmount 抹零金额（以分为单位，没有小数点）
+                     */
+                    void SetIgnoreAmount(const std::string& _ignoreAmount);
+
+                    /**
+                     * 判断参数 IgnoreAmount 是否已赋值
+                     * @return IgnoreAmount 是否已赋值
+                     */
+                    bool IgnoreAmountHasBeenSet() const;
+
+                    /**
+                     * 获取折扣金额（以分为单位，没有小数点）
+                     * @return DiscountAmount 折扣金额（以分为单位，没有小数点）
+                     */
+                    std::string GetDiscountAmount() const;
+
+                    /**
+                     * 设置折扣金额（以分为单位，没有小数点）
+                     * @param DiscountAmount 折扣金额（以分为单位，没有小数点）
+                     */
+                    void SetDiscountAmount(const std::string& _discountAmount);
+
+                    /**
+                     * 判断参数 DiscountAmount 是否已赋值
+                     * @return DiscountAmount 是否已赋值
+                     */
+                    bool DiscountAmountHasBeenSet() const;
 
                     /**
                      * 获取交易帐号（银行卡号）
@@ -349,40 +295,76 @@ namespace TencentCloud
                     bool TradeNoHasBeenSet() const;
 
                     /**
-                     * 获取折扣金额（以分为单位，没有小数点）
-                     * @return DiscountAmount 折扣金额（以分为单位，没有小数点）
+                     * 获取条码支付的授权码（条码抢扫手机扫到的一串数字）
+                     * @return AuthCode 条码支付的授权码（条码抢扫手机扫到的一串数字）
                      */
-                    std::string GetDiscountAmount() const;
+                    std::string GetAuthCode() const;
 
                     /**
-                     * 设置折扣金额（以分为单位，没有小数点）
-                     * @param DiscountAmount 折扣金额（以分为单位，没有小数点）
+                     * 设置条码支付的授权码（条码抢扫手机扫到的一串数字）
+                     * @param AuthCode 条码支付的授权码（条码抢扫手机扫到的一串数字）
                      */
-                    void SetDiscountAmount(const std::string& _discountAmount);
+                    void SetAuthCode(const std::string& _authCode);
 
                     /**
-                     * 判断参数 DiscountAmount 是否已赋值
-                     * @return DiscountAmount 是否已赋值
+                     * 判断参数 AuthCode 是否已赋值
+                     * @return AuthCode 是否已赋值
                      */
-                    bool DiscountAmountHasBeenSet() const;
+                    bool AuthCodeHasBeenSet() const;
 
                     /**
-                     * 获取付款方式名称(当PayTag为Diy时，PayName不能为空)
-                     * @return PayName 付款方式名称(当PayTag为Diy时，PayName不能为空)
+                     * 获取订单标记，订单附加数据。
+                     * @return Tag 订单标记，订单附加数据。
                      */
-                    std::string GetPayName() const;
+                    std::string GetTag() const;
 
                     /**
-                     * 设置付款方式名称(当PayTag为Diy时，PayName不能为空)
-                     * @param PayName 付款方式名称(当PayTag为Diy时，PayName不能为空)
+                     * 设置订单标记，订单附加数据。
+                     * @param Tag 订单标记，订单附加数据。
                      */
-                    void SetPayName(const std::string& _payName);
+                    void SetTag(const std::string& _tag);
 
                     /**
-                     * 判断参数 PayName 是否已赋值
-                     * @return PayName 是否已赋值
+                     * 判断参数 Tag 是否已赋值
+                     * @return Tag 是否已赋值
                      */
-                    bool PayNameHasBeenSet() const;
+                    bool TagHasBeenSet() const;
+
+                    /**
+                     * 获取订单备注
+                     * @return Remark 订单备注
+                     */
+                    std::string GetRemark() const;
+
+                    /**
+                     * 设置订单备注
+                     * @param Remark 订单备注
+                     */
+                    void SetRemark(const std::string& _remark);
+
+                    /**
+                     * 判断参数 Remark 是否已赋值
+                     * @return Remark 是否已赋值
+                     */
+                    bool RemarkHasBeenSet() const;
+
+                    /**
+                     * 获取收单机构原始交易报文，请转换为json
+                     * @return TradeResult 收单机构原始交易报文，请转换为json
+                     */
+                    std::string GetTradeResult() const;
+
+                    /**
+                     * 设置收单机构原始交易报文，请转换为json
+                     * @param TradeResult 收单机构原始交易报文，请转换为json
+                     */
+                    void SetTradeResult(const std::string& _tradeResult);
+
+                    /**
+                     * 判断参数 TradeResult 是否已赋值
+                     * @return TradeResult 是否已赋值
+                     */
+                    bool TradeResultHasBeenSet() const;
 
                     /**
                      * 获取0-不分账，1-需分账。为1时标记为待分账订单，待分账订单不会进行清算。不传默认为不分账。
@@ -464,31 +446,43 @@ namespace TencentCloud
                      */
                     bool SubOpenIdHasBeenSet() const;
 
+                    /**
+                     * 获取沙箱环境填sandbox，正式环境不填
+                     * @return Profile 沙箱环境填sandbox，正式环境不填
+                     */
+                    std::string GetProfile() const;
+
+                    /**
+                     * 设置沙箱环境填sandbox，正式环境不填
+                     * @param Profile 沙箱环境填sandbox，正式环境不填
+                     */
+                    void SetProfile(const std::string& _profile);
+
+                    /**
+                     * 判断参数 Profile 是否已赋值
+                     * @return Profile 是否已赋值
+                     */
+                    bool ProfileHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 使用门店OpenId
+                     */
+                    std::string m_openId;
+                    bool m_openIdHasBeenSet;
+
+                    /**
+                     * 使用门店OpenKey
+                     */
+                    std::string m_openKey;
+                    bool m_openKeyHasBeenSet;
 
                     /**
                      * 开发者流水号
                      */
                     std::string m_developerNo;
                     bool m_developerNoHasBeenSet;
-
-                    /**
-                     * 收单系统分配的开放ID
-                     */
-                    std::string m_openId;
-                    bool m_openIdHasBeenSet;
-
-                    /**
-                     * 交易结果异步通知url地址
-                     */
-                    std::string m_notifyUrl;
-                    bool m_notifyUrlHasBeenSet;
-
-                    /**
-                     * 收单系统分配的密钥
-                     */
-                    std::string m_openKey;
-                    bool m_openKeyHasBeenSet;
 
                     /**
                      * 支付标签
@@ -503,40 +497,16 @@ namespace TencentCloud
                     bool m_tradeAmountHasBeenSet;
 
                     /**
-                     * 订单备注
+                     * 交易结果异步通知url地址
                      */
-                    std::string m_remark;
-                    bool m_remarkHasBeenSet;
+                    std::string m_notifyUrl;
+                    bool m_notifyUrlHasBeenSet;
 
                     /**
-                     * 订单标记，订单附加数据。
+                     * 付款方式名称(当PayTag为Diy时，PayName不能为空)
                      */
-                    std::string m_tag;
-                    bool m_tagHasBeenSet;
-
-                    /**
-                     * 抹零金额（以分为单位，没有小数点）
-                     */
-                    std::string m_ignoreAmount;
-                    bool m_ignoreAmountHasBeenSet;
-
-                    /**
-                     * 条码支付的授权码（条码抢扫手机扫到的一串数字）
-                     */
-                    std::string m_authCode;
-                    bool m_authCodeHasBeenSet;
-
-                    /**
-                     * 原始交易金额（以分为单位，没有小数点）
-                     */
-                    std::string m_originalAmount;
-                    bool m_originalAmountHasBeenSet;
-
-                    /**
-                     * 订单名称（描述）
-                     */
-                    std::string m_orderName;
-                    bool m_orderNameHasBeenSet;
+                    std::string m_payName;
+                    bool m_payNameHasBeenSet;
 
                     /**
                      * 公众号支付时，支付成功后跳转url地址
@@ -545,16 +515,28 @@ namespace TencentCloud
                     bool m_jumpUrlHasBeenSet;
 
                     /**
-                     * 沙箱环境填sandbox，正式环境不填
+                     * 订单名称（描述）
                      */
-                    std::string m_profile;
-                    bool m_profileHasBeenSet;
+                    std::string m_orderName;
+                    bool m_orderNameHasBeenSet;
 
                     /**
-                     * 收单机构原始交易报文，请转换为json
+                     * 原始交易金额（以分为单位，没有小数点）
                      */
-                    std::string m_tradeResult;
-                    bool m_tradeResultHasBeenSet;
+                    std::string m_originalAmount;
+                    bool m_originalAmountHasBeenSet;
+
+                    /**
+                     * 抹零金额（以分为单位，没有小数点）
+                     */
+                    std::string m_ignoreAmount;
+                    bool m_ignoreAmountHasBeenSet;
+
+                    /**
+                     * 折扣金额（以分为单位，没有小数点）
+                     */
+                    std::string m_discountAmount;
+                    bool m_discountAmountHasBeenSet;
 
                     /**
                      * 交易帐号（银行卡号）
@@ -569,16 +551,28 @@ namespace TencentCloud
                     bool m_tradeNoHasBeenSet;
 
                     /**
-                     * 折扣金额（以分为单位，没有小数点）
+                     * 条码支付的授权码（条码抢扫手机扫到的一串数字）
                      */
-                    std::string m_discountAmount;
-                    bool m_discountAmountHasBeenSet;
+                    std::string m_authCode;
+                    bool m_authCodeHasBeenSet;
 
                     /**
-                     * 付款方式名称(当PayTag为Diy时，PayName不能为空)
+                     * 订单标记，订单附加数据。
                      */
-                    std::string m_payName;
-                    bool m_payNameHasBeenSet;
+                    std::string m_tag;
+                    bool m_tagHasBeenSet;
+
+                    /**
+                     * 订单备注
+                     */
+                    std::string m_remark;
+                    bool m_remarkHasBeenSet;
+
+                    /**
+                     * 收单机构原始交易报文，请转换为json
+                     */
+                    std::string m_tradeResult;
+                    bool m_tradeResultHasBeenSet;
 
                     /**
                      * 0-不分账，1-需分账。为1时标记为待分账订单，待分账订单不会进行清算。不传默认为不分账。
@@ -605,6 +599,12 @@ namespace TencentCloud
                      */
                     std::string m_subOpenId;
                     bool m_subOpenIdHasBeenSet;
+
+                    /**
+                     * 沙箱环境填sandbox，正式环境不填
+                     */
+                    std::string m_profile;
+                    bool m_profileHasBeenSet;
 
                 };
             }

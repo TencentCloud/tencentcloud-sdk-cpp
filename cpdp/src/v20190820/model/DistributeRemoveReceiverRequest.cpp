@@ -26,8 +26,8 @@ DistributeRemoveReceiverRequest::DistributeRemoveReceiverRequest() :
     m_openIdHasBeenSet(false),
     m_openKeyHasBeenSet(false),
     m_merchantNoHasBeenSet(false),
-    m_profileHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_profileHasBeenSet(false)
 {
 }
 
@@ -62,20 +62,20 @@ string DistributeRemoveReceiverRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_merchantNo.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_profileHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Profile";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_profile.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_remarkHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_profileHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Profile";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_profile.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -134,22 +134,6 @@ bool DistributeRemoveReceiverRequest::MerchantNoHasBeenSet() const
     return m_merchantNoHasBeenSet;
 }
 
-string DistributeRemoveReceiverRequest::GetProfile() const
-{
-    return m_profile;
-}
-
-void DistributeRemoveReceiverRequest::SetProfile(const string& _profile)
-{
-    m_profile = _profile;
-    m_profileHasBeenSet = true;
-}
-
-bool DistributeRemoveReceiverRequest::ProfileHasBeenSet() const
-{
-    return m_profileHasBeenSet;
-}
-
 string DistributeRemoveReceiverRequest::GetRemark() const
 {
     return m_remark;
@@ -164,6 +148,22 @@ void DistributeRemoveReceiverRequest::SetRemark(const string& _remark)
 bool DistributeRemoveReceiverRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string DistributeRemoveReceiverRequest::GetProfile() const
+{
+    return m_profile;
+}
+
+void DistributeRemoveReceiverRequest::SetProfile(const string& _profile)
+{
+    m_profile = _profile;
+    m_profileHasBeenSet = true;
+}
+
+bool DistributeRemoveReceiverRequest::ProfileHasBeenSet() const
+{
+    return m_profileHasBeenSet;
 }
 
 
