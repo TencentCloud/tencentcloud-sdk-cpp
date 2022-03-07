@@ -44,6 +44,7 @@ set(ivld_public_header_model
   include/tencentcloud/ivld/v20210903/model/DescribeTasksRequest.h
   include/tencentcloud/ivld/v20210903/model/DescribeTaskDetailResponse.h
   include/tencentcloud/ivld/v20210903/model/PersonImageInfo.h
+  include/tencentcloud/ivld/v20210903/model/ClassifiedPersonInfo.h
   include/tencentcloud/ivld/v20210903/model/CreateCustomGroupRequest.h
   include/tencentcloud/ivld/v20210903/model/DescribeCustomPersonsResponse.h
   include/tencentcloud/ivld/v20210903/model/AddCustomPersonImageResponse.h
@@ -62,6 +63,7 @@ set(ivld_public_header_model
   include/tencentcloud/ivld/v20210903/model/ModifyCallbackResponse.h
   include/tencentcloud/ivld/v20210903/model/DescribeCustomPersonsRequest.h
   include/tencentcloud/ivld/v20210903/model/DescribeTasksResponse.h
+  include/tencentcloud/ivld/v20210903/model/PersonInfo.h
   include/tencentcloud/ivld/v20210903/model/TextInfo.h
   include/tencentcloud/ivld/v20210903/model/AudioInfo.h
   include/tencentcloud/ivld/v20210903/model/CustomPersonFilter.h
@@ -121,6 +123,7 @@ set(ivld_src
   src/v20210903/model/DescribeTasksRequest.cpp
   src/v20210903/model/DescribeTaskDetailResponse.cpp
   src/v20210903/model/PersonImageInfo.cpp
+  src/v20210903/model/ClassifiedPersonInfo.cpp
   src/v20210903/model/CreateCustomGroupRequest.cpp
   src/v20210903/model/DescribeCustomPersonsResponse.cpp
   src/v20210903/model/AddCustomPersonImageResponse.cpp
@@ -139,6 +142,7 @@ set(ivld_src
   src/v20210903/model/ModifyCallbackResponse.cpp
   src/v20210903/model/DescribeCustomPersonsRequest.cpp
   src/v20210903/model/DescribeTasksResponse.cpp
+  src/v20210903/model/PersonInfo.cpp
   src/v20210903/model/TextInfo.cpp
   src/v20210903/model/AudioInfo.cpp
   src/v20210903/model/CustomPersonFilter.cpp

@@ -30,6 +30,7 @@ ShowInfo::ShowInfo() :
     m_titleSetHasBeenSet(false),
     m_audioInfoSetHasBeenSet(false),
     m_textInfoSetHasBeenSet(false),
+    m_classifiedPersonInfoSetHasBeenSet(false),
     m_textTagSetHasBeenSet(false),
     m_frameTagSetHasBeenSet(false),
     m_webMediaURLHasBeenSet(false),
@@ -157,6 +158,26 @@ CoreInternalOutcome ShowInfo::Deserialize(const rapidjson::Value &value)
             m_textInfoSet.push_back(item);
         }
         m_textInfoSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClassifiedPersonInfoSet") && !value["ClassifiedPersonInfoSet"].IsNull())
+    {
+        if (!value["ClassifiedPersonInfoSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ShowInfo.ClassifiedPersonInfoSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ClassifiedPersonInfoSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ClassifiedPersonInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_classifiedPersonInfoSet.push_back(item);
+        }
+        m_classifiedPersonInfoSetHasBeenSet = true;
     }
 
     if (value.HasMember("TextTagSet") && !value["TextTagSet"].IsNull())
@@ -326,6 +347,21 @@ void ShowInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
 
         int i=0;
         for (auto itr = m_textInfoSet.begin(); itr != m_textInfoSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_classifiedPersonInfoSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClassifiedPersonInfoSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_classifiedPersonInfoSet.begin(); itr != m_classifiedPersonInfoSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -529,6 +565,22 @@ void ShowInfo::SetTextInfoSet(const vector<TextInfo>& _textInfoSet)
 bool ShowInfo::TextInfoSetHasBeenSet() const
 {
     return m_textInfoSetHasBeenSet;
+}
+
+vector<ClassifiedPersonInfo> ShowInfo::GetClassifiedPersonInfoSet() const
+{
+    return m_classifiedPersonInfoSet;
+}
+
+void ShowInfo::SetClassifiedPersonInfoSet(const vector<ClassifiedPersonInfo>& _classifiedPersonInfoSet)
+{
+    m_classifiedPersonInfoSet = _classifiedPersonInfoSet;
+    m_classifiedPersonInfoSetHasBeenSet = true;
+}
+
+bool ShowInfo::ClassifiedPersonInfoSetHasBeenSet() const
+{
+    return m_classifiedPersonInfoSetHasBeenSet;
 }
 
 MultiLevelTag ShowInfo::GetTextTagSet() const

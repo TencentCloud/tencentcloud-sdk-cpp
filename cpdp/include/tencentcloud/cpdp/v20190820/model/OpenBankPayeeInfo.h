@@ -140,6 +140,28 @@ namespace TencentCloud
                      */
                     bool BankBranchIdHasBeenSet() const;
 
+                    /**
+                     * 获取收款方绑卡序列号。
+当渠道为TENPAY，付款方式为EBANK_PAYMENT时，上送收款方入驻云企付平台时，下发的绑卡序列号。
+                     * @return BindSerialNo 收款方绑卡序列号。
+当渠道为TENPAY，付款方式为EBANK_PAYMENT时，上送收款方入驻云企付平台时，下发的绑卡序列号。
+                     */
+                    std::string GetBindSerialNo() const;
+
+                    /**
+                     * 设置收款方绑卡序列号。
+当渠道为TENPAY，付款方式为EBANK_PAYMENT时，上送收款方入驻云企付平台时，下发的绑卡序列号。
+                     * @param BindSerialNo 收款方绑卡序列号。
+当渠道为TENPAY，付款方式为EBANK_PAYMENT时，上送收款方入驻云企付平台时，下发的绑卡序列号。
+                     */
+                    void SetBindSerialNo(const std::string& _bindSerialNo);
+
+                    /**
+                     * 判断参数 BindSerialNo 是否已赋值
+                     * @return BindSerialNo 是否已赋值
+                     */
+                    bool BindSerialNoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -172,6 +194,13 @@ namespace TencentCloud
                      */
                     std::string m_bankBranchId;
                     bool m_bankBranchIdHasBeenSet;
+
+                    /**
+                     * 收款方绑卡序列号。
+当渠道为TENPAY，付款方式为EBANK_PAYMENT时，上送收款方入驻云企付平台时，下发的绑卡序列号。
+                     */
+                    std::string m_bindSerialNo;
+                    bool m_bindSerialNoHasBeenSet;
 
                 };
             }

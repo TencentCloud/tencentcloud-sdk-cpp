@@ -42,7 +42,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/UpdateEKSClusterRequest.h
   include/tencentcloud/tke/v20180525/model/CreateClusterRouteTableResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterCommonNamesRequest.h
-  include/tencentcloud/tke/v20180525/model/RunAutomationServiceEnabled.h
+  include/tencentcloud/tke/v20180525/model/DescribeTKEEdgeScriptResponse.h
   include/tencentcloud/tke/v20180525/model/NfsVolume.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterEndpointResponse.h
   include/tencentcloud/tke/v20180525/model/PrometheusTemplateModify.h
@@ -258,6 +258,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribePrometheusInstanceResponse.h
   include/tencentcloud/tke/v20180525/model/Capabilities.h
   include/tencentcloud/tke/v20180525/model/AddExistedInstancesRequest.h
+  include/tencentcloud/tke/v20180525/model/DescribeTKEEdgeScriptRequest.h
   include/tencentcloud/tke/v20180525/model/ClusterAsGroupOption.h
   include/tencentcloud/tke/v20180525/model/AddVpcCniSubnetsResponse.h
   include/tencentcloud/tke/v20180525/model/ModifyNodePoolDesiredCapacityAboutAsgRequest.h
@@ -295,6 +296,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribeClusterAsGroupOptionResponse.h
   include/tencentcloud/tke/v20180525/model/ClusterAsGroupAttribute.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterNodePoolResponse.h
+  include/tencentcloud/tke/v20180525/model/RunAutomationServiceEnabled.h
   include/tencentcloud/tke/v20180525/model/PrometheusTemplate.h
   include/tencentcloud/tke/v20180525/model/RunMonitorServiceEnabled.h
   include/tencentcloud/tke/v20180525/model/UpdateClusterVersionResponse.h
@@ -344,7 +346,7 @@ set(tke_src
   src/v20180525/model/UpdateEKSClusterRequest.cpp
   src/v20180525/model/CreateClusterRouteTableResponse.cpp
   src/v20180525/model/DescribeClusterCommonNamesRequest.cpp
-  src/v20180525/model/RunAutomationServiceEnabled.cpp
+  src/v20180525/model/DescribeTKEEdgeScriptResponse.cpp
   src/v20180525/model/NfsVolume.cpp
   src/v20180525/model/DeleteClusterEndpointResponse.cpp
   src/v20180525/model/PrometheusTemplateModify.cpp
@@ -560,6 +562,7 @@ set(tke_src
   src/v20180525/model/DescribePrometheusInstanceResponse.cpp
   src/v20180525/model/Capabilities.cpp
   src/v20180525/model/AddExistedInstancesRequest.cpp
+  src/v20180525/model/DescribeTKEEdgeScriptRequest.cpp
   src/v20180525/model/ClusterAsGroupOption.cpp
   src/v20180525/model/AddVpcCniSubnetsResponse.cpp
   src/v20180525/model/ModifyNodePoolDesiredCapacityAboutAsgRequest.cpp
@@ -597,6 +600,7 @@ set(tke_src
   src/v20180525/model/DescribeClusterAsGroupOptionResponse.cpp
   src/v20180525/model/ClusterAsGroupAttribute.cpp
   src/v20180525/model/DeleteClusterNodePoolResponse.cpp
+  src/v20180525/model/RunAutomationServiceEnabled.cpp
   src/v20180525/model/PrometheusTemplate.cpp
   src/v20180525/model/RunMonitorServiceEnabled.cpp
   src/v20180525/model/UpdateClusterVersionResponse.cpp

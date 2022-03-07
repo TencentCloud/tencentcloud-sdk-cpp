@@ -25,7 +25,8 @@ OpenBankPayeeInfo::OpenBankPayeeInfo() :
     m_payeeNameHasBeenSet(false),
     m_bankAccountNumberHasBeenSet(false),
     m_bankBranchNameHasBeenSet(false),
-    m_bankBranchIdHasBeenSet(false)
+    m_bankBranchIdHasBeenSet(false),
+    m_bindSerialNoHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome OpenBankPayeeInfo::Deserialize(const rapidjson::Value &value
         m_bankBranchIdHasBeenSet = true;
     }
 
+    if (value.HasMember("BindSerialNo") && !value["BindSerialNo"].IsNull())
+    {
+        if (!value["BindSerialNo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OpenBankPayeeInfo.BindSerialNo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bindSerialNo = string(value["BindSerialNo"].GetString());
+        m_bindSerialNoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void OpenBankPayeeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "BankBranchId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_bankBranchId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bindSerialNoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BindSerialNo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bindSerialNo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void OpenBankPayeeInfo::SetBankBranchId(const string& _bankBranchId)
 bool OpenBankPayeeInfo::BankBranchIdHasBeenSet() const
 {
     return m_bankBranchIdHasBeenSet;
+}
+
+string OpenBankPayeeInfo::GetBindSerialNo() const
+{
+    return m_bindSerialNo;
+}
+
+void OpenBankPayeeInfo::SetBindSerialNo(const string& _bindSerialNo)
+{
+    m_bindSerialNo = _bindSerialNo;
+    m_bindSerialNoHasBeenSet = true;
+}
+
+bool OpenBankPayeeInfo::BindSerialNoHasBeenSet() const
+{
+    return m_bindSerialNoHasBeenSet;
 }
 

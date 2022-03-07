@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ivld/v20210903/model/AudioInfo.h>
 #include <tencentcloud/ivld/v20210903/model/TextInfo.h>
+#include <tencentcloud/ivld/v20210903/model/ClassifiedPersonInfo.h>
 #include <tencentcloud/ivld/v20210903/model/MultiLevelTag.h>
 
 
@@ -248,6 +249,28 @@ namespace TencentCloud
                     bool TextInfoSetHasBeenSet() const;
 
                     /**
+                     * 获取已分类人物信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClassifiedPersonInfoSet 已分类人物信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ClassifiedPersonInfo> GetClassifiedPersonInfoSet() const;
+
+                    /**
+                     * 设置已分类人物信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ClassifiedPersonInfoSet 已分类人物信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClassifiedPersonInfoSet(const std::vector<ClassifiedPersonInfo>& _classifiedPersonInfoSet);
+
+                    /**
+                     * 判断参数 ClassifiedPersonInfoSet 是否已赋值
+                     * @return ClassifiedPersonInfoSet 是否已赋值
+                     */
+                    bool ClassifiedPersonInfoSetHasBeenSet() const;
+
+                    /**
                      * 获取文本标签列表，包含标签内容和出现信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TextTagSet 文本标签列表，包含标签内容和出现信息
@@ -421,6 +444,13 @@ namespace TencentCloud
                      */
                     std::vector<TextInfo> m_textInfoSet;
                     bool m_textInfoSetHasBeenSet;
+
+                    /**
+                     * 已分类人物信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ClassifiedPersonInfo> m_classifiedPersonInfoSet;
+                    bool m_classifiedPersonInfoSetHasBeenSet;
 
                     /**
                      * 文本标签列表，包含标签内容和出现信息

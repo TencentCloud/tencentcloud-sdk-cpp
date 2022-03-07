@@ -3093,6 +3093,49 @@ TkeClient::DescribeRouteTableConflictsOutcomeCallable TkeClient::DescribeRouteTa
     return task->get_future();
 }
 
+TkeClient::DescribeTKEEdgeScriptOutcome TkeClient::DescribeTKEEdgeScript(const DescribeTKEEdgeScriptRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTKEEdgeScript");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTKEEdgeScriptResponse rsp = DescribeTKEEdgeScriptResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTKEEdgeScriptOutcome(rsp);
+        else
+            return DescribeTKEEdgeScriptOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTKEEdgeScriptOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeTKEEdgeScriptAsync(const DescribeTKEEdgeScriptRequest& request, const DescribeTKEEdgeScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTKEEdgeScript(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeTKEEdgeScriptOutcomeCallable TkeClient::DescribeTKEEdgeScriptCallable(const DescribeTKEEdgeScriptRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTKEEdgeScriptOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTKEEdgeScript(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribeVersionsOutcome TkeClient::DescribeVersions(const DescribeVersionsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVersions");
