@@ -35,6 +35,8 @@
 #include <tencentcloud/ses/v20201002/model/CreateReceiverResponse.h>
 #include <tencentcloud/ses/v20201002/model/CreateReceiverDetailRequest.h>
 #include <tencentcloud/ses/v20201002/model/CreateReceiverDetailResponse.h>
+#include <tencentcloud/ses/v20201002/model/CreateReceiverDetailWithDataRequest.h>
+#include <tencentcloud/ses/v20201002/model/CreateReceiverDetailWithDataResponse.h>
 #include <tencentcloud/ses/v20201002/model/DeleteBlackListRequest.h>
 #include <tencentcloud/ses/v20201002/model/DeleteBlackListResponse.h>
 #include <tencentcloud/ses/v20201002/model/DeleteEmailAddressRequest.h>
@@ -101,6 +103,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateReceiverDetailResponse> CreateReceiverDetailOutcome;
                 typedef std::future<CreateReceiverDetailOutcome> CreateReceiverDetailOutcomeCallable;
                 typedef std::function<void(const SesClient*, const Model::CreateReceiverDetailRequest&, CreateReceiverDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateReceiverDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateReceiverDetailWithDataResponse> CreateReceiverDetailWithDataOutcome;
+                typedef std::future<CreateReceiverDetailWithDataOutcome> CreateReceiverDetailWithDataOutcomeCallable;
+                typedef std::function<void(const SesClient*, const Model::CreateReceiverDetailWithDataRequest&, CreateReceiverDetailWithDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateReceiverDetailWithDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteBlackListResponse> DeleteBlackListOutcome;
                 typedef std::future<DeleteBlackListOutcome> DeleteBlackListOutcomeCallable;
                 typedef std::function<void(const SesClient*, const Model::DeleteBlackListRequest&, DeleteBlackListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBlackListAsyncHandler;
@@ -209,6 +214,15 @@ namespace TencentCloud
                 CreateReceiverDetailOutcome CreateReceiverDetail(const Model::CreateReceiverDetailRequest &request);
                 void CreateReceiverDetailAsync(const Model::CreateReceiverDetailRequest& request, const CreateReceiverDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateReceiverDetailOutcomeCallable CreateReceiverDetailCallable(const Model::CreateReceiverDetailRequest& request);
+
+                /**
+                 *添加收件人地址附带模板参数
+                 * @param req CreateReceiverDetailWithDataRequest
+                 * @return CreateReceiverDetailWithDataOutcome
+                 */
+                CreateReceiverDetailWithDataOutcome CreateReceiverDetailWithData(const Model::CreateReceiverDetailWithDataRequest &request);
+                void CreateReceiverDetailWithDataAsync(const Model::CreateReceiverDetailWithDataRequest& request, const CreateReceiverDetailWithDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateReceiverDetailWithDataOutcomeCallable CreateReceiverDetailWithDataCallable(const Model::CreateReceiverDetailWithDataRequest& request);
 
                 /**
                  *邮箱被拉黑之后，用户如果确认收件邮箱有效或者已经处于激活状态，可以从腾讯云地址库中删除该黑名单之后继续投递。

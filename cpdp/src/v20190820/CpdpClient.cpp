@@ -4383,6 +4383,49 @@ CpdpClient::QueryMerchantPayWayListOutcomeCallable CpdpClient::QueryMerchantPayW
     return task->get_future();
 }
 
+CpdpClient::QueryOpenBankBankAccountBalanceOutcome CpdpClient::QueryOpenBankBankAccountBalance(const QueryOpenBankBankAccountBalanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryOpenBankBankAccountBalance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryOpenBankBankAccountBalanceResponse rsp = QueryOpenBankBankAccountBalanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryOpenBankBankAccountBalanceOutcome(rsp);
+        else
+            return QueryOpenBankBankAccountBalanceOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryOpenBankBankAccountBalanceOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryOpenBankBankAccountBalanceAsync(const QueryOpenBankBankAccountBalanceRequest& request, const QueryOpenBankBankAccountBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryOpenBankBankAccountBalance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryOpenBankBankAccountBalanceOutcomeCallable CpdpClient::QueryOpenBankBankAccountBalanceCallable(const QueryOpenBankBankAccountBalanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryOpenBankBankAccountBalanceOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryOpenBankBankAccountBalance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::QueryOpenBankBankBranchListOutcome CpdpClient::QueryOpenBankBankBranchList(const QueryOpenBankBankBranchListRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryOpenBankBankBranchList");
@@ -4462,6 +4505,49 @@ CpdpClient::QueryOpenBankBindExternalSubMerchantBankAccountOutcomeCallable CpdpC
         [this, request]()
         {
             return this->QueryOpenBankBindExternalSubMerchantBankAccount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::QueryOpenBankDailyReceiptDownloadUrlOutcome CpdpClient::QueryOpenBankDailyReceiptDownloadUrl(const QueryOpenBankDailyReceiptDownloadUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryOpenBankDailyReceiptDownloadUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryOpenBankDailyReceiptDownloadUrlResponse rsp = QueryOpenBankDailyReceiptDownloadUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryOpenBankDailyReceiptDownloadUrlOutcome(rsp);
+        else
+            return QueryOpenBankDailyReceiptDownloadUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryOpenBankDailyReceiptDownloadUrlOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryOpenBankDailyReceiptDownloadUrlAsync(const QueryOpenBankDailyReceiptDownloadUrlRequest& request, const QueryOpenBankDailyReceiptDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryOpenBankDailyReceiptDownloadUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryOpenBankDailyReceiptDownloadUrlOutcomeCallable CpdpClient::QueryOpenBankDailyReceiptDownloadUrlCallable(const QueryOpenBankDailyReceiptDownloadUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryOpenBankDailyReceiptDownloadUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryOpenBankDailyReceiptDownloadUrl(request);
         }
     );
 

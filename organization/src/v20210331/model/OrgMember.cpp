@@ -35,7 +35,8 @@ OrgMember::OrgMember() :
     m_isAllowQuitHasBeenSet(false),
     m_payUinHasBeenSet(false),
     m_payNameHasBeenSet(false),
-    m_orgIdentityHasBeenSet(false)
+    m_orgIdentityHasBeenSet(false),
+    m_bindStatusHasBeenSet(false)
 {
 }
 
@@ -214,6 +215,16 @@ CoreInternalOutcome OrgMember::Deserialize(const rapidjson::Value &value)
         m_orgIdentityHasBeenSet = true;
     }
 
+    if (value.HasMember("BindStatus") && !value["BindStatus"].IsNull())
+    {
+        if (!value["BindStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrgMember.BindStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bindStatus = string(value["BindStatus"].GetString());
+        m_bindStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -353,6 +364,14 @@ void OrgMember::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_bindStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BindStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bindStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -596,5 +615,21 @@ void OrgMember::SetOrgIdentity(const vector<MemberIdentity>& _orgIdentity)
 bool OrgMember::OrgIdentityHasBeenSet() const
 {
     return m_orgIdentityHasBeenSet;
+}
+
+string OrgMember::GetBindStatus() const
+{
+    return m_bindStatus;
+}
+
+void OrgMember::SetBindStatus(const string& _bindStatus)
+{
+    m_bindStatus = _bindStatus;
+    m_bindStatusHasBeenSet = true;
+}
+
+bool OrgMember::BindStatusHasBeenSet() const
+{
+    return m_bindStatusHasBeenSet;
 }
 

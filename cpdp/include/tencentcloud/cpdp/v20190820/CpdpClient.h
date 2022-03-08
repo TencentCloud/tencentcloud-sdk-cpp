@@ -225,10 +225,14 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryMerchantOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMerchantPayWayListRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMerchantPayWayListResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankBankAccountBalanceRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankBankAccountBalanceResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOpenBankBankBranchListRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOpenBankBankBranchListResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOpenBankBindExternalSubMerchantBankAccountRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOpenBankBindExternalSubMerchantBankAccountResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankDailyReceiptDownloadUrlRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankDailyReceiptDownloadUrlResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOpenBankDownLoadUrlRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOpenBankDownLoadUrlResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOpenBankExternalSubMerchantBankAccountRequest.h>
@@ -650,12 +654,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryMerchantPayWayListResponse> QueryMerchantPayWayListOutcome;
                 typedef std::future<QueryMerchantPayWayListOutcome> QueryMerchantPayWayListOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryMerchantPayWayListRequest&, QueryMerchantPayWayListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMerchantPayWayListAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryOpenBankBankAccountBalanceResponse> QueryOpenBankBankAccountBalanceOutcome;
+                typedef std::future<QueryOpenBankBankAccountBalanceOutcome> QueryOpenBankBankAccountBalanceOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankBankAccountBalanceRequest&, QueryOpenBankBankAccountBalanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankBankAccountBalanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryOpenBankBankBranchListResponse> QueryOpenBankBankBranchListOutcome;
                 typedef std::future<QueryOpenBankBankBranchListOutcome> QueryOpenBankBankBranchListOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankBankBranchListRequest&, QueryOpenBankBankBranchListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankBankBranchListAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryOpenBankBindExternalSubMerchantBankAccountResponse> QueryOpenBankBindExternalSubMerchantBankAccountOutcome;
                 typedef std::future<QueryOpenBankBindExternalSubMerchantBankAccountOutcome> QueryOpenBankBindExternalSubMerchantBankAccountOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankBindExternalSubMerchantBankAccountRequest&, QueryOpenBankBindExternalSubMerchantBankAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankBindExternalSubMerchantBankAccountAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryOpenBankDailyReceiptDownloadUrlResponse> QueryOpenBankDailyReceiptDownloadUrlOutcome;
+                typedef std::future<QueryOpenBankDailyReceiptDownloadUrlOutcome> QueryOpenBankDailyReceiptDownloadUrlOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankDailyReceiptDownloadUrlRequest&, QueryOpenBankDailyReceiptDownloadUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankDailyReceiptDownloadUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryOpenBankDownLoadUrlResponse> QueryOpenBankDownLoadUrlOutcome;
                 typedef std::future<QueryOpenBankDownLoadUrlOutcome> QueryOpenBankDownLoadUrlOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankDownLoadUrlRequest&, QueryOpenBankDownLoadUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankDownLoadUrlAsyncHandler;
@@ -1734,6 +1744,15 @@ namespace TencentCloud
                 QueryMerchantPayWayListOutcomeCallable QueryMerchantPayWayListCallable(const Model::QueryMerchantPayWayListRequest& request);
 
                 /**
+                 *云企付-查询账户余额
+                 * @param req QueryOpenBankBankAccountBalanceRequest
+                 * @return QueryOpenBankBankAccountBalanceOutcome
+                 */
+                QueryOpenBankBankAccountBalanceOutcome QueryOpenBankBankAccountBalance(const Model::QueryOpenBankBankAccountBalanceRequest &request);
+                void QueryOpenBankBankAccountBalanceAsync(const Model::QueryOpenBankBankAccountBalanceRequest& request, const QueryOpenBankBankAccountBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryOpenBankBankAccountBalanceOutcomeCallable QueryOpenBankBankAccountBalanceCallable(const Model::QueryOpenBankBankAccountBalanceRequest& request);
+
+                /**
                  *云企付-查询联行号
                  * @param req QueryOpenBankBankBranchListRequest
                  * @return QueryOpenBankBankBranchListOutcome
@@ -1750,6 +1769,15 @@ namespace TencentCloud
                 QueryOpenBankBindExternalSubMerchantBankAccountOutcome QueryOpenBankBindExternalSubMerchantBankAccount(const Model::QueryOpenBankBindExternalSubMerchantBankAccountRequest &request);
                 void QueryOpenBankBindExternalSubMerchantBankAccountAsync(const Model::QueryOpenBankBindExternalSubMerchantBankAccountRequest& request, const QueryOpenBankBindExternalSubMerchantBankAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryOpenBankBindExternalSubMerchantBankAccountOutcomeCallable QueryOpenBankBindExternalSubMerchantBankAccountCallable(const Model::QueryOpenBankBindExternalSubMerchantBankAccountRequest& request);
+
+                /**
+                 *云企付-按日期批量查询回单下载地址
+                 * @param req QueryOpenBankDailyReceiptDownloadUrlRequest
+                 * @return QueryOpenBankDailyReceiptDownloadUrlOutcome
+                 */
+                QueryOpenBankDailyReceiptDownloadUrlOutcome QueryOpenBankDailyReceiptDownloadUrl(const Model::QueryOpenBankDailyReceiptDownloadUrlRequest &request);
+                void QueryOpenBankDailyReceiptDownloadUrlAsync(const Model::QueryOpenBankDailyReceiptDownloadUrlRequest& request, const QueryOpenBankDailyReceiptDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryOpenBankDailyReceiptDownloadUrlOutcomeCallable QueryOpenBankDailyReceiptDownloadUrlCallable(const Model::QueryOpenBankDailyReceiptDownloadUrlRequest& request);
 
                 /**
                  *云企付-查询对账单下载地址

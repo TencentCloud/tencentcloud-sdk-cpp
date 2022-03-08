@@ -378,6 +378,28 @@ namespace TencentCloud
                      */
                     bool OrgIdentityHasBeenSet() const;
 
+                    /**
+                     * 获取安全信息绑定状态  未绑定：Unbound，待激活：Valid，绑定成功：Success，绑定失败：Failed
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BindStatus 安全信息绑定状态  未绑定：Unbound，待激活：Valid，绑定成功：Success，绑定失败：Failed
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBindStatus() const;
+
+                    /**
+                     * 设置安全信息绑定状态  未绑定：Unbound，待激活：Valid，绑定成功：Success，绑定失败：Failed
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BindStatus 安全信息绑定状态  未绑定：Unbound，待激活：Valid，绑定成功：Success，绑定失败：Failed
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBindStatus(const std::string& _bindStatus);
+
+                    /**
+                     * 判断参数 BindStatus 是否已赋值
+                     * @return BindStatus 是否已赋值
+                     */
+                    bool BindStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -484,6 +506,13 @@ namespace TencentCloud
                      */
                     std::vector<MemberIdentity> m_orgIdentity;
                     bool m_orgIdentityHasBeenSet;
+
+                    /**
+                     * 安全信息绑定状态  未绑定：Unbound，待激活：Valid，绑定成功：Success，绑定失败：Failed
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_bindStatus;
+                    bool m_bindStatusHasBeenSet;
 
                 };
             }

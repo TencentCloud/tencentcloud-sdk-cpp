@@ -406,6 +406,24 @@ namespace TencentCloud
                      */
                     bool IsAuthorizedHasBeenSet() const;
 
+                    /**
+                     * 获取组件个数
+                     * @return ComponentCnt 组件个数
+                     */
+                    uint64_t GetComponentCnt() const;
+
+                    /**
+                     * 设置组件个数
+                     * @param ComponentCnt 组件个数
+                     */
+                    void SetComponentCnt(const uint64_t& _componentCnt);
+
+                    /**
+                     * 判断参数 ComponentCnt 是否已赋值
+                     * @return ComponentCnt 是否已赋值
+                     */
+                    bool ComponentCntHasBeenSet() const;
+
                 private:
 
                     /**
@@ -527,6 +545,12 @@ namespace TencentCloud
                      */
                     uint64_t m_isAuthorized;
                     bool m_isAuthorizedHasBeenSet;
+
+                    /**
+                     * 组件个数
+                     */
+                    uint64_t m_componentCnt;
+                    bool m_componentCntHasBeenSet;
 
                 };
             }

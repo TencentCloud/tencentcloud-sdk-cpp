@@ -298,6 +298,49 @@ SesClient::CreateReceiverDetailOutcomeCallable SesClient::CreateReceiverDetailCa
     return task->get_future();
 }
 
+SesClient::CreateReceiverDetailWithDataOutcome SesClient::CreateReceiverDetailWithData(const CreateReceiverDetailWithDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateReceiverDetailWithData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateReceiverDetailWithDataResponse rsp = CreateReceiverDetailWithDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateReceiverDetailWithDataOutcome(rsp);
+        else
+            return CreateReceiverDetailWithDataOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateReceiverDetailWithDataOutcome(outcome.GetError());
+    }
+}
+
+void SesClient::CreateReceiverDetailWithDataAsync(const CreateReceiverDetailWithDataRequest& request, const CreateReceiverDetailWithDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateReceiverDetailWithData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SesClient::CreateReceiverDetailWithDataOutcomeCallable SesClient::CreateReceiverDetailWithDataCallable(const CreateReceiverDetailWithDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateReceiverDetailWithDataOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateReceiverDetailWithData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SesClient::DeleteBlackListOutcome SesClient::DeleteBlackList(const DeleteBlackListRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteBlackList");

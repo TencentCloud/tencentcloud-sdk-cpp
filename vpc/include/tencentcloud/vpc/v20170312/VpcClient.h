@@ -2025,7 +2025,7 @@ namespace TencentCloud
                 CreateVpcEndPointOutcomeCallable CreateVpcEndPointCallable(const Model::CreateVpcEndPointRequest& request);
 
                 /**
-                 *创建终端节点服务。
+                 *本接口(CreateVpcEndPointService)用于创建终端节点服务。
                  * @param req CreateVpcEndPointServiceRequest
                  * @return CreateVpcEndPointServiceOutcome
                  */

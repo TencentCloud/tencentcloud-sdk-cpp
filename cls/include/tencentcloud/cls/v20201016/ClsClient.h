@@ -324,7 +324,7 @@ namespace TencentCloud
                 CreateAlarmOutcomeCallable CreateAlarmCallable(const Model::CreateAlarmRequest& request);
 
                 /**
-                 *该接口用户创建通知渠道组。
+                 *该接口用于创建通知渠道组。
                  * @param req CreateAlarmNoticeRequest
                  * @return CreateAlarmNoticeOutcome
                  */

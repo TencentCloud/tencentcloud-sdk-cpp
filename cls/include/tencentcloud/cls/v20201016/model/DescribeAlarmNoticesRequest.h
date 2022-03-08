@@ -44,65 +44,39 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<br><li> name
-
-按照【告警通知模板名称】进行过滤。
+                     * 获取<li> name
+按照【通知渠道组名称】进行过滤。
 类型：String
-
 必选：否
-
-<br><li> alarmNoticeId
-
-按照【告警通知模板ID】进行过滤。
+<li> alarmNoticeId
+按照【通知渠道组ID】进行过滤。
 类型：String
-
 必选：否
-
-<br><li> uid
-
+<li> uid
 按照【接收用户ID】进行过滤。
-
 类型：String
-
 必选：否
-
-<br><li> groupId
-
-按照【用户组ID】进行过滤。
-
+<li> groupId
+按照【接收用户组ID】进行过滤。
 类型：String
-
 必选：否
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
-                     * @return Filters <br><li> name
-
-按照【告警通知模板名称】进行过滤。
+                     * @return Filters <li> name
+按照【通知渠道组名称】进行过滤。
 类型：String
-
 必选：否
-
-<br><li> alarmNoticeId
-
-按照【告警通知模板ID】进行过滤。
+<li> alarmNoticeId
+按照【通知渠道组ID】进行过滤。
 类型：String
-
 必选：否
-
-<br><li> uid
-
+<li> uid
 按照【接收用户ID】进行过滤。
-
 类型：String
-
 必选：否
-
-<br><li> groupId
-
-按照【用户组ID】进行过滤。
-
+<li> groupId
+按照【接收用户组ID】进行过滤。
 类型：String
-
 必选：否
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
@@ -110,65 +84,39 @@ namespace TencentCloud
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置<br><li> name
-
-按照【告警通知模板名称】进行过滤。
+                     * 设置<li> name
+按照【通知渠道组名称】进行过滤。
 类型：String
-
 必选：否
-
-<br><li> alarmNoticeId
-
-按照【告警通知模板ID】进行过滤。
+<li> alarmNoticeId
+按照【通知渠道组ID】进行过滤。
 类型：String
-
 必选：否
-
-<br><li> uid
-
+<li> uid
 按照【接收用户ID】进行过滤。
-
 类型：String
-
 必选：否
-
-<br><li> groupId
-
-按照【用户组ID】进行过滤。
-
+<li> groupId
+按照【接收用户组ID】进行过滤。
 类型：String
-
 必选：否
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
-                     * @param Filters <br><li> name
-
-按照【告警通知模板名称】进行过滤。
+                     * @param Filters <li> name
+按照【通知渠道组名称】进行过滤。
 类型：String
-
 必选：否
-
-<br><li> alarmNoticeId
-
-按照【告警通知模板ID】进行过滤。
+<li> alarmNoticeId
+按照【通知渠道组ID】进行过滤。
 类型：String
-
 必选：否
-
-<br><li> uid
-
+<li> uid
 按照【接收用户ID】进行过滤。
-
 类型：String
-
 必选：否
-
-<br><li> groupId
-
-按照【用户组ID】进行过滤。
-
+<li> groupId
+按照【接收用户组ID】进行过滤。
 类型：String
-
 必选：否
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
@@ -220,34 +168,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <br><li> name
-
-按照【告警通知模板名称】进行过滤。
+                     * <li> name
+按照【通知渠道组名称】进行过滤。
 类型：String
-
 必选：否
-
-<br><li> alarmNoticeId
-
-按照【告警通知模板ID】进行过滤。
+<li> alarmNoticeId
+按照【通知渠道组ID】进行过滤。
 类型：String
-
 必选：否
-
-<br><li> uid
-
+<li> uid
 按照【接收用户ID】进行过滤。
-
 类型：String
-
 必选：否
-
-<br><li> groupId
-
-按照【用户组ID】进行过滤。
-
+<li> groupId
+按照【接收用户组ID】进行过滤。
 类型：String
-
 必选：否
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。

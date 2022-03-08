@@ -191,6 +191,60 @@ namespace TencentCloud
                      */
                     bool ConfigInternetServiceIpHasBeenSet() const;
 
+                    /**
+                     * 获取规格ID
+                     * @return SpecId 规格ID
+                     */
+                    std::string GetSpecId() const;
+
+                    /**
+                     * 设置规格ID
+                     * @param SpecId 规格ID
+                     */
+                    void SetSpecId(const std::string& _specId);
+
+                    /**
+                     * 判断参数 SpecId 是否已赋值
+                     * @return SpecId 是否已赋值
+                     */
+                    bool SpecIdHasBeenSet() const;
+
+                    /**
+                     * 获取环境的节点数
+                     * @return EnvReplica 环境的节点数
+                     */
+                    int64_t GetEnvReplica() const;
+
+                    /**
+                     * 设置环境的节点数
+                     * @param EnvReplica 环境的节点数
+                     */
+                    void SetEnvReplica(const int64_t& _envReplica);
+
+                    /**
+                     * 判断参数 EnvReplica 是否已赋值
+                     * @return EnvReplica 是否已赋值
+                     */
+                    bool EnvReplicaHasBeenSet() const;
+
+                    /**
+                     * 获取环境运行的节点数
+                     * @return RunningCount 环境运行的节点数
+                     */
+                    int64_t GetRunningCount() const;
+
+                    /**
+                     * 设置环境运行的节点数
+                     * @param RunningCount 环境运行的节点数
+                     */
+                    void SetRunningCount(const int64_t& _runningCount);
+
+                    /**
+                     * 判断参数 RunningCount 是否已赋值
+                     * @return RunningCount 是否已赋值
+                     */
+                    bool RunningCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -240,6 +294,24 @@ namespace TencentCloud
                      */
                     std::string m_configInternetServiceIp;
                     bool m_configInternetServiceIpHasBeenSet;
+
+                    /**
+                     * 规格ID
+                     */
+                    std::string m_specId;
+                    bool m_specIdHasBeenSet;
+
+                    /**
+                     * 环境的节点数
+                     */
+                    int64_t m_envReplica;
+                    bool m_envReplicaHasBeenSet;
+
+                    /**
+                     * 环境运行的节点数
+                     */
+                    int64_t m_runningCount;
+                    bool m_runningCountHasBeenSet;
 
                 };
             }

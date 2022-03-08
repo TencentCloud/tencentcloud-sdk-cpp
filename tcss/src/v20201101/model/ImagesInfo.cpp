@@ -40,7 +40,8 @@ ImagesInfo::ImagesInfo() :
     m_scanVulErrorHasBeenSet(false),
     m_scanRiskErrorHasBeenSet(false),
     m_isSuggestHasBeenSet(false),
-    m_isAuthorizedHasBeenSet(false)
+    m_isAuthorizedHasBeenSet(false),
+    m_componentCntHasBeenSet(false)
 {
 }
 
@@ -249,6 +250,16 @@ CoreInternalOutcome ImagesInfo::Deserialize(const rapidjson::Value &value)
         m_isAuthorizedHasBeenSet = true;
     }
 
+    if (value.HasMember("ComponentCnt") && !value["ComponentCnt"].IsNull())
+    {
+        if (!value["ComponentCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImagesInfo.ComponentCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_componentCnt = value["ComponentCnt"].GetUint64();
+        m_componentCntHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -414,6 +425,14 @@ void ImagesInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "IsAuthorized";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isAuthorized, allocator);
+    }
+
+    if (m_componentCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComponentCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_componentCnt, allocator);
     }
 
 }
@@ -737,5 +756,21 @@ void ImagesInfo::SetIsAuthorized(const uint64_t& _isAuthorized)
 bool ImagesInfo::IsAuthorizedHasBeenSet() const
 {
     return m_isAuthorizedHasBeenSet;
+}
+
+uint64_t ImagesInfo::GetComponentCnt() const
+{
+    return m_componentCnt;
+}
+
+void ImagesInfo::SetComponentCnt(const uint64_t& _componentCnt)
+{
+    m_componentCnt = _componentCnt;
+    m_componentCntHasBeenSet = true;
+}
+
+bool ImagesInfo::ComponentCntHasBeenSet() const
+{
+    return m_componentCntHasBeenSet;
 }
 

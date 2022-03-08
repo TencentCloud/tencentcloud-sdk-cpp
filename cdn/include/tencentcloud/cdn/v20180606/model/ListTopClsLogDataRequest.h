@@ -163,14 +163,14 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取接入渠道，默认值为cdn
-                     * @return Channel 接入渠道，默认值为cdn
+                     * 获取接入渠道，cdn或者ecdn，默认值为cdn
+                     * @return Channel 接入渠道，cdn或者ecdn，默认值为cdn
                      */
                     std::string GetChannel() const;
 
                     /**
-                     * 设置接入渠道，默认值为cdn
-                     * @param Channel 接入渠道，默认值为cdn
+                     * 设置接入渠道，cdn或者ecdn，默认值为cdn
+                     * @param Channel 接入渠道，cdn或者ecdn，默认值为cdn
                      */
                     void SetChannel(const std::string& _channel);
 
@@ -258,7 +258,7 @@ namespace TencentCloud
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 接入渠道，默认值为cdn
+                     * 接入渠道，cdn或者ecdn，默认值为cdn
                      */
                     std::string m_channel;
                     bool m_channelHasBeenSet;

@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取告警模板名称。
-                     * @return Name 告警模板名称。
+                     * 获取通知渠道组名称。
+                     * @return Name 通知渠道组名称。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置告警模板名称。
-                     * @param Name 告警模板名称。
+                     * 设置通知渠道组名称。
+                     * @param Name 通知渠道组名称。
                      */
                     void SetName(const std::string& _name);
 
@@ -63,26 +63,26 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取告警模板的类型。可选值：
-<br><li> Trigger - 告警触发
-<br><li> Recovery - 告警恢复
-<br><li> All - 告警触发和告警恢复
-                     * @return Type 告警模板的类型。可选值：
-<br><li> Trigger - 告警触发
-<br><li> Recovery - 告警恢复
-<br><li> All - 告警触发和告警恢复
+                     * 获取通知类型。可选值：
+<li> Trigger - 告警触发
+<li> Recovery - 告警恢复
+<li> All - 告警触发和告警恢复
+                     * @return Type 通知类型。可选值：
+<li> Trigger - 告警触发
+<li> Recovery - 告警恢复
+<li> All - 告警触发和告警恢复
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置告警模板的类型。可选值：
-<br><li> Trigger - 告警触发
-<br><li> Recovery - 告警恢复
-<br><li> All - 告警触发和告警恢复
-                     * @param Type 告警模板的类型。可选值：
-<br><li> Trigger - 告警触发
-<br><li> Recovery - 告警恢复
-<br><li> All - 告警触发和告警恢复
+                     * 设置通知类型。可选值：
+<li> Trigger - 告警触发
+<li> Recovery - 告警恢复
+<li> All - 告警触发和告警恢复
+                     * @param Type 通知类型。可选值：
+<li> Trigger - 告警触发
+<li> Recovery - 告警恢复
+<li> All - 告警触发和告警恢复
                      */
                     void SetType(const std::string& _type);
 
@@ -93,14 +93,14 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取告警模板接收者信息。
-                     * @return NoticeReceivers 告警模板接收者信息。
+                     * 获取通知接收对象。
+                     * @return NoticeReceivers 通知接收对象。
                      */
                     std::vector<NoticeReceiver> GetNoticeReceivers() const;
 
                     /**
-                     * 设置告警模板接收者信息。
-                     * @param NoticeReceivers 告警模板接收者信息。
+                     * 设置通知接收对象。
+                     * @param NoticeReceivers 通知接收对象。
                      */
                     void SetNoticeReceivers(const std::vector<NoticeReceiver>& _noticeReceivers);
 
@@ -111,14 +111,14 @@ namespace TencentCloud
                     bool NoticeReceiversHasBeenSet() const;
 
                     /**
-                     * 获取告警模板回调信息。
-                     * @return WebCallbacks 告警模板回调信息。
+                     * 获取接口回调信息（包括企业微信）。
+                     * @return WebCallbacks 接口回调信息（包括企业微信）。
                      */
                     std::vector<WebCallback> GetWebCallbacks() const;
 
                     /**
-                     * 设置告警模板回调信息。
-                     * @param WebCallbacks 告警模板回调信息。
+                     * 设置接口回调信息（包括企业微信）。
+                     * @param WebCallbacks 接口回调信息（包括企业微信）。
                      */
                     void SetWebCallbacks(const std::vector<WebCallback>& _webCallbacks);
 
@@ -131,28 +131,28 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 告警模板名称。
+                     * 通知渠道组名称。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 告警模板的类型。可选值：
-<br><li> Trigger - 告警触发
-<br><li> Recovery - 告警恢复
-<br><li> All - 告警触发和告警恢复
+                     * 通知类型。可选值：
+<li> Trigger - 告警触发
+<li> Recovery - 告警恢复
+<li> All - 告警触发和告警恢复
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 告警模板接收者信息。
+                     * 通知接收对象。
                      */
                     std::vector<NoticeReceiver> m_noticeReceivers;
                     bool m_noticeReceiversHasBeenSet;
 
                     /**
-                     * 告警模板回调信息。
+                     * 接口回调信息（包括企业微信）。
                      */
                     std::vector<WebCallback> m_webCallbacks;
                     bool m_webCallbacksHasBeenSet;

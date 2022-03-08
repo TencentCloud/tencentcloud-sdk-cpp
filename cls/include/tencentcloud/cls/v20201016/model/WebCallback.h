@@ -66,21 +66,21 @@ namespace TencentCloud
 
                     /**
                      * 获取回调的类型。可选值：
-<br><li> WeCom
-<br><li> Http
+<li> WeCom
+<li> Http
                      * @return CallbackType 回调的类型。可选值：
-<br><li> WeCom
-<br><li> Http
+<li> WeCom
+<li> Http
                      */
                     std::string GetCallbackType() const;
 
                     /**
                      * 设置回调的类型。可选值：
-<br><li> WeCom
-<br><li> Http
+<li> WeCom
+<li> Http
                      * @param CallbackType 回调的类型。可选值：
-<br><li> WeCom
-<br><li> Http
+<li> WeCom
+<li> Http
                      */
                     void SetCallbackType(const std::string& _callbackType);
 
@@ -92,13 +92,13 @@ namespace TencentCloud
 
                     /**
                      * 获取回调方法。可选值：
-<br><li> POST
-<br><li> PUT
+<li> POST
+<li> PUT
 默认值为POST。CallbackType为Http时为必选。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Method 回调方法。可选值：
-<br><li> POST
-<br><li> PUT
+<li> POST
+<li> PUT
 默认值为POST。CallbackType为Http时为必选。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -106,13 +106,13 @@ namespace TencentCloud
 
                     /**
                      * 设置回调方法。可选值：
-<br><li> POST
-<br><li> PUT
+<li> POST
+<li> PUT
 默认值为POST。CallbackType为Http时为必选。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param Method 回调方法。可选值：
-<br><li> POST
-<br><li> PUT
+<li> POST
+<li> PUT
 默认值为POST。CallbackType为Http时为必选。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -126,16 +126,20 @@ namespace TencentCloud
 
                     /**
                      * 获取请求头。
+注意：该参数已废弃，请在<a href="https://cloud.tencent.com/document/product/614/56466">创建告警策略</a>接口CallBack参数中指定请求头。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Headers 请求头。
+注意：该参数已废弃，请在<a href="https://cloud.tencent.com/document/product/614/56466">创建告警策略</a>接口CallBack参数中指定请求头。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetHeaders() const;
 
                     /**
                      * 设置请求头。
+注意：该参数已废弃，请在<a href="https://cloud.tencent.com/document/product/614/56466">创建告警策略</a>接口CallBack参数中指定请求头。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param Headers 请求头。
+注意：该参数已废弃，请在<a href="https://cloud.tencent.com/document/product/614/56466">创建告警策略</a>接口CallBack参数中指定请求头。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetHeaders(const std::vector<std::string>& _headers);
@@ -147,17 +151,21 @@ namespace TencentCloud
                     bool HeadersHasBeenSet() const;
 
                     /**
-                     * 获取请求内容。CallbackType为Http时为必选。
+                     * 获取请求内容。
+注意：该参数已废弃，请在<a href="https://cloud.tencent.com/document/product/614/56466">创建告警策略</a>接口CallBack参数中指定请求内容。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Body 请求内容。CallbackType为Http时为必选。
+                     * @return Body 请求内容。
+注意：该参数已废弃，请在<a href="https://cloud.tencent.com/document/product/614/56466">创建告警策略</a>接口CallBack参数中指定请求内容。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetBody() const;
 
                     /**
-                     * 设置请求内容。CallbackType为Http时为必选。
+                     * 设置请求内容。
+注意：该参数已废弃，请在<a href="https://cloud.tencent.com/document/product/614/56466">创建告警策略</a>接口CallBack参数中指定请求内容。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Body 请求内容。CallbackType为Http时为必选。
+                     * @param Body 请求内容。
+注意：该参数已废弃，请在<a href="https://cloud.tencent.com/document/product/614/56466">创建告警策略</a>接口CallBack参数中指定请求内容。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBody(const std::string& _body);
@@ -196,16 +204,16 @@ namespace TencentCloud
 
                     /**
                      * 回调的类型。可选值：
-<br><li> WeCom
-<br><li> Http
+<li> WeCom
+<li> Http
                      */
                     std::string m_callbackType;
                     bool m_callbackTypeHasBeenSet;
 
                     /**
                      * 回调方法。可选值：
-<br><li> POST
-<br><li> PUT
+<li> POST
+<li> PUT
 默认值为POST。CallbackType为Http时为必选。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -214,13 +222,15 @@ namespace TencentCloud
 
                     /**
                      * 请求头。
+注意：该参数已废弃，请在<a href="https://cloud.tencent.com/document/product/614/56466">创建告警策略</a>接口CallBack参数中指定请求头。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_headers;
                     bool m_headersHasBeenSet;
 
                     /**
-                     * 请求内容。CallbackType为Http时为必选。
+                     * 请求内容。
+注意：该参数已废弃，请在<a href="https://cloud.tencent.com/document/product/614/56466">创建告警策略</a>接口CallBack参数中指定请求内容。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_body;
