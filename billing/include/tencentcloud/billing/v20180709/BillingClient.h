@@ -57,6 +57,10 @@
 #include <tencentcloud/billing/v20180709/model/DescribeDosageCosDetailByDateResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeDosageDetailByDateRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeDosageDetailByDateResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeVoucherInfoRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeVoucherInfoResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeVoucherUsageDetailsRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeVoucherUsageDetailsResponse.h>
 #include <tencentcloud/billing/v20180709/model/PayDealsRequest.h>
 #include <tencentcloud/billing/v20180709/model/PayDealsResponse.h>
 
@@ -124,6 +128,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDosageDetailByDateResponse> DescribeDosageDetailByDateOutcome;
                 typedef std::future<DescribeDosageDetailByDateOutcome> DescribeDosageDetailByDateOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeDosageDetailByDateRequest&, DescribeDosageDetailByDateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDosageDetailByDateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVoucherInfoResponse> DescribeVoucherInfoOutcome;
+                typedef std::future<DescribeVoucherInfoOutcome> DescribeVoucherInfoOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeVoucherInfoRequest&, DescribeVoucherInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVoucherInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVoucherUsageDetailsResponse> DescribeVoucherUsageDetailsOutcome;
+                typedef std::future<DescribeVoucherUsageDetailsOutcome> DescribeVoucherUsageDetailsOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeVoucherUsageDetailsRequest&, DescribeVoucherUsageDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVoucherUsageDetailsAsyncHandler;
                 typedef Outcome<Core::Error, Model::PayDealsResponse> PayDealsOutcome;
                 typedef std::future<PayDealsOutcome> PayDealsOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::PayDealsRequest&, PayDealsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PayDealsAsyncHandler;
@@ -282,6 +292,24 @@ namespace TencentCloud
                 DescribeDosageDetailByDateOutcome DescribeDosageDetailByDate(const Model::DescribeDosageDetailByDateRequest &request);
                 void DescribeDosageDetailByDateAsync(const Model::DescribeDosageDetailByDateRequest& request, const DescribeDosageDetailByDateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDosageDetailByDateOutcomeCallable DescribeDosageDetailByDateCallable(const Model::DescribeDosageDetailByDateRequest& request);
+
+                /**
+                 *获取代金券相关信息
+                 * @param req DescribeVoucherInfoRequest
+                 * @return DescribeVoucherInfoOutcome
+                 */
+                DescribeVoucherInfoOutcome DescribeVoucherInfo(const Model::DescribeVoucherInfoRequest &request);
+                void DescribeVoucherInfoAsync(const Model::DescribeVoucherInfoRequest& request, const DescribeVoucherInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVoucherInfoOutcomeCallable DescribeVoucherInfoCallable(const Model::DescribeVoucherInfoRequest& request);
+
+                /**
+                 *获取代金券使用记录
+                 * @param req DescribeVoucherUsageDetailsRequest
+                 * @return DescribeVoucherUsageDetailsOutcome
+                 */
+                DescribeVoucherUsageDetailsOutcome DescribeVoucherUsageDetails(const Model::DescribeVoucherUsageDetailsRequest &request);
+                void DescribeVoucherUsageDetailsAsync(const Model::DescribeVoucherUsageDetailsRequest& request, const DescribeVoucherUsageDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVoucherUsageDetailsOutcomeCallable DescribeVoucherUsageDetailsCallable(const Model::DescribeVoucherUsageDetailsRequest& request);
 
                 /**
                  *支付订单

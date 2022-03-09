@@ -769,6 +769,48 @@ namespace TencentCloud
                      */
                     bool StartupProbeHasBeenSet() const;
 
+                    /**
+                     * 获取操作系统版本；
+当选择openjdk时，可选参数：
+- ALPINE
+- CENTOS
+当选择konajdk时，可选参数：
+- ALPINE
+- TENCENTOS
+                     * @return OsFlavour 操作系统版本；
+当选择openjdk时，可选参数：
+- ALPINE
+- CENTOS
+当选择konajdk时，可选参数：
+- ALPINE
+- TENCENTOS
+                     */
+                    std::string GetOsFlavour() const;
+
+                    /**
+                     * 设置操作系统版本；
+当选择openjdk时，可选参数：
+- ALPINE
+- CENTOS
+当选择konajdk时，可选参数：
+- ALPINE
+- TENCENTOS
+                     * @param OsFlavour 操作系统版本；
+当选择openjdk时，可选参数：
+- ALPINE
+- CENTOS
+当选择konajdk时，可选参数：
+- ALPINE
+- TENCENTOS
+                     */
+                    void SetOsFlavour(const std::string& _osFlavour);
+
+                    /**
+                     * 判断参数 OsFlavour 是否已赋值
+                     * @return OsFlavour 是否已赋值
+                     */
+                    bool OsFlavourHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1006,6 +1048,18 @@ namespace TencentCloud
                      */
                     HealthCheckConfig m_startupProbe;
                     bool m_startupProbeHasBeenSet;
+
+                    /**
+                     * 操作系统版本；
+当选择openjdk时，可选参数：
+- ALPINE
+- CENTOS
+当选择konajdk时，可选参数：
+- ALPINE
+- TENCENTOS
+                     */
+                    std::string m_osFlavour;
+                    bool m_osFlavourHasBeenSet;
 
                 };
             }

@@ -771,6 +771,92 @@ BillingClient::DescribeDosageDetailByDateOutcomeCallable BillingClient::Describe
     return task->get_future();
 }
 
+BillingClient::DescribeVoucherInfoOutcome BillingClient::DescribeVoucherInfo(const DescribeVoucherInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVoucherInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVoucherInfoResponse rsp = DescribeVoucherInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVoucherInfoOutcome(rsp);
+        else
+            return DescribeVoucherInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVoucherInfoOutcome(outcome.GetError());
+    }
+}
+
+void BillingClient::DescribeVoucherInfoAsync(const DescribeVoucherInfoRequest& request, const DescribeVoucherInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVoucherInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BillingClient::DescribeVoucherInfoOutcomeCallable BillingClient::DescribeVoucherInfoCallable(const DescribeVoucherInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVoucherInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVoucherInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BillingClient::DescribeVoucherUsageDetailsOutcome BillingClient::DescribeVoucherUsageDetails(const DescribeVoucherUsageDetailsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVoucherUsageDetails");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVoucherUsageDetailsResponse rsp = DescribeVoucherUsageDetailsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVoucherUsageDetailsOutcome(rsp);
+        else
+            return DescribeVoucherUsageDetailsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVoucherUsageDetailsOutcome(outcome.GetError());
+    }
+}
+
+void BillingClient::DescribeVoucherUsageDetailsAsync(const DescribeVoucherUsageDetailsRequest& request, const DescribeVoucherUsageDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVoucherUsageDetails(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BillingClient::DescribeVoucherUsageDetailsOutcomeCallable BillingClient::DescribeVoucherUsageDetailsCallable(const DescribeVoucherUsageDetailsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVoucherUsageDetailsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVoucherUsageDetails(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BillingClient::PayDealsOutcome BillingClient::PayDeals(const PayDealsRequest &request)
 {
     auto outcome = MakeRequest(request, "PayDeals");

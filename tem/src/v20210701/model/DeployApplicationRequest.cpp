@@ -60,7 +60,8 @@ DeployApplicationRequest::DeployApplicationRequest() :
     m_logEnableHasBeenSet(false),
     m_confEditedHasBeenSet(false),
     m_speedUpHasBeenSet(false),
-    m_startupProbeHasBeenSet(false)
+    m_startupProbeHasBeenSet(false),
+    m_osFlavourHasBeenSet(false)
 {
 }
 
@@ -437,6 +438,14 @@ string DeployApplicationRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_startupProbe.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_osFlavourHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OsFlavour";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_osFlavour.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -1053,6 +1062,22 @@ void DeployApplicationRequest::SetStartupProbe(const HealthCheckConfig& _startup
 bool DeployApplicationRequest::StartupProbeHasBeenSet() const
 {
     return m_startupProbeHasBeenSet;
+}
+
+string DeployApplicationRequest::GetOsFlavour() const
+{
+    return m_osFlavour;
+}
+
+void DeployApplicationRequest::SetOsFlavour(const string& _osFlavour)
+{
+    m_osFlavour = _osFlavour;
+    m_osFlavourHasBeenSet = true;
+}
+
+bool DeployApplicationRequest::OsFlavourHasBeenSet() const
+{
+    return m_osFlavourHasBeenSet;
 }
 
 

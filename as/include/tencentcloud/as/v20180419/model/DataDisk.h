@@ -112,6 +112,28 @@ namespace TencentCloud
                      */
                     bool SnapshotIdHasBeenSet() const;
 
+                    /**
+                     * 获取数据盘是否随子机销毁。取值范围：<br><li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘<br><li>FALSE：子机销毁时，保留数据盘
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeleteWithInstance 数据盘是否随子机销毁。取值范围：<br><li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘<br><li>FALSE：子机销毁时，保留数据盘
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetDeleteWithInstance() const;
+
+                    /**
+                     * 设置数据盘是否随子机销毁。取值范围：<br><li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘<br><li>FALSE：子机销毁时，保留数据盘
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeleteWithInstance 数据盘是否随子机销毁。取值范围：<br><li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘<br><li>FALSE：子机销毁时，保留数据盘
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeleteWithInstance(const bool& _deleteWithInstance);
+
+                    /**
+                     * 判断参数 DeleteWithInstance 是否已赋值
+                     * @return DeleteWithInstance 是否已赋值
+                     */
+                    bool DeleteWithInstanceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -134,6 +156,13 @@ namespace TencentCloud
                      */
                     std::string m_snapshotId;
                     bool m_snapshotIdHasBeenSet;
+
+                    /**
+                     * 数据盘是否随子机销毁。取值范围：<br><li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘<br><li>FALSE：子机销毁时，保留数据盘
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_deleteWithInstance;
+                    bool m_deleteWithInstanceHasBeenSet;
 
                 };
             }

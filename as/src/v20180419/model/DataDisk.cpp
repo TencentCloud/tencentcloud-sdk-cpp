@@ -23,7 +23,8 @@ using namespace std;
 DataDisk::DataDisk() :
     m_diskTypeHasBeenSet(false),
     m_diskSizeHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false)
+    m_snapshotIdHasBeenSet(false),
+    m_deleteWithInstanceHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome DataDisk::Deserialize(const rapidjson::Value &value)
         m_snapshotIdHasBeenSet = true;
     }
 
+    if (value.HasMember("DeleteWithInstance") && !value["DeleteWithInstance"].IsNull())
+    {
+        if (!value["DeleteWithInstance"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataDisk.DeleteWithInstance` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_deleteWithInstance = value["DeleteWithInstance"].GetBool();
+        m_deleteWithInstanceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void DataDisk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "SnapshotId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_snapshotId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deleteWithInstanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteWithInstance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deleteWithInstance, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void DataDisk::SetSnapshotId(const string& _snapshotId)
 bool DataDisk::SnapshotIdHasBeenSet() const
 {
     return m_snapshotIdHasBeenSet;
+}
+
+bool DataDisk::GetDeleteWithInstance() const
+{
+    return m_deleteWithInstance;
+}
+
+void DataDisk::SetDeleteWithInstance(const bool& _deleteWithInstance)
+{
+    m_deleteWithInstance = _deleteWithInstance;
+    m_deleteWithInstanceHasBeenSet = true;
+}
+
+bool DataDisk::DeleteWithInstanceHasBeenSet() const
+{
+    return m_deleteWithInstanceHasBeenSet;
 }
 

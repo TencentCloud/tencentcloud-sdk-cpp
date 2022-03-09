@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模块名，这里填“monitor”
-                     * @return Module 模块名，这里填“monitor”
+                     * 获取模块名，这里填“monitor”。
+                     * @return Module 模块名，这里填“monitor”。
                      */
                     std::string GetModule() const;
 
                     /**
-                     * 设置模块名，这里填“monitor”
-                     * @param Module 模块名，这里填“monitor”
+                     * 设置模块名，这里填“monitor”。
+                     * @param Module 模块名，这里填“monitor”。
                      */
                     void SetModule(const std::string& _module);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取告警策略 ID
-                     * @return PolicyId 告警策略 ID
+                     * 获取告警策略 ID，如果该参数与PolicyIds参数同时存在，则以PolicyIds为准。
+                     * @return PolicyId 告警策略 ID，如果该参数与PolicyIds参数同时存在，则以PolicyIds为准。
                      */
                     std::string GetPolicyId() const;
 
                     /**
-                     * 设置告警策略 ID
-                     * @param PolicyId 告警策略 ID
+                     * 设置告警策略 ID，如果该参数与PolicyIds参数同时存在，则以PolicyIds为准。
+                     * @param PolicyId 告警策略 ID，如果该参数与PolicyIds参数同时存在，则以PolicyIds为准。
                      */
                     void SetPolicyId(const std::string& _policyId);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool PolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取告警通知模板 ID 列表
-                     * @return NoticeIds 告警通知模板 ID 列表
+                     * 获取告警通知模板 ID 列表。
+                     * @return NoticeIds 告警通知模板 ID 列表。
                      */
                     std::vector<std::string> GetNoticeIds() const;
 
                     /**
-                     * 设置告警通知模板 ID 列表
-                     * @param NoticeIds 告警通知模板 ID 列表
+                     * 设置告警通知模板 ID 列表。
+                     * @param NoticeIds 告警通知模板 ID 列表。
                      */
                     void SetNoticeIds(const std::vector<std::string>& _noticeIds);
 
@@ -96,25 +96,49 @@ namespace TencentCloud
                      */
                     bool NoticeIdsHasBeenSet() const;
 
+                    /**
+                     * 获取告警策略ID数组，支持给多个告警策略批量绑定通知模板。最多30个。
+                     * @return PolicyIds 告警策略ID数组，支持给多个告警策略批量绑定通知模板。最多30个。
+                     */
+                    std::vector<std::string> GetPolicyIds() const;
+
+                    /**
+                     * 设置告警策略ID数组，支持给多个告警策略批量绑定通知模板。最多30个。
+                     * @param PolicyIds 告警策略ID数组，支持给多个告警策略批量绑定通知模板。最多30个。
+                     */
+                    void SetPolicyIds(const std::vector<std::string>& _policyIds);
+
+                    /**
+                     * 判断参数 PolicyIds 是否已赋值
+                     * @return PolicyIds 是否已赋值
+                     */
+                    bool PolicyIdsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 模块名，这里填“monitor”
+                     * 模块名，这里填“monitor”。
                      */
                     std::string m_module;
                     bool m_moduleHasBeenSet;
 
                     /**
-                     * 告警策略 ID
+                     * 告警策略 ID，如果该参数与PolicyIds参数同时存在，则以PolicyIds为准。
                      */
                     std::string m_policyId;
                     bool m_policyIdHasBeenSet;
 
                     /**
-                     * 告警通知模板 ID 列表
+                     * 告警通知模板 ID 列表。
                      */
                     std::vector<std::string> m_noticeIds;
                     bool m_noticeIdsHasBeenSet;
+
+                    /**
+                     * 告警策略ID数组，支持给多个告警策略批量绑定通知模板。最多30个。
+                     */
+                    std::vector<std::string> m_policyIds;
+                    bool m_policyIdsHasBeenSet;
 
                 };
             }

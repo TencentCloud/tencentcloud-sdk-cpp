@@ -25,7 +25,8 @@ using namespace std;
 ModifyAlarmPolicyNoticeRequest::ModifyAlarmPolicyNoticeRequest() :
     m_moduleHasBeenSet(false),
     m_policyIdHasBeenSet(false),
-    m_noticeIdsHasBeenSet(false)
+    m_noticeIdsHasBeenSet(false),
+    m_policyIdsHasBeenSet(false)
 {
 }
 
@@ -60,6 +61,19 @@ string ModifyAlarmPolicyNoticeRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_noticeIds.begin(); itr != m_noticeIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_policyIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolicyIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_policyIds.begin(); itr != m_policyIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -119,6 +133,22 @@ void ModifyAlarmPolicyNoticeRequest::SetNoticeIds(const vector<string>& _noticeI
 bool ModifyAlarmPolicyNoticeRequest::NoticeIdsHasBeenSet() const
 {
     return m_noticeIdsHasBeenSet;
+}
+
+vector<string> ModifyAlarmPolicyNoticeRequest::GetPolicyIds() const
+{
+    return m_policyIds;
+}
+
+void ModifyAlarmPolicyNoticeRequest::SetPolicyIds(const vector<string>& _policyIds)
+{
+    m_policyIds = _policyIds;
+    m_policyIdsHasBeenSet = true;
+}
+
+bool ModifyAlarmPolicyNoticeRequest::PolicyIdsHasBeenSet() const
+{
+    return m_policyIdsHasBeenSet;
 }
 
 
