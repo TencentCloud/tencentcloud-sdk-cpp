@@ -24,7 +24,8 @@ using namespace std;
 
 CreateKTVRobotRequest::CreateKTVRobotRequest() :
     m_rTCSystemHasBeenSet(false),
-    m_joinRoomInputHasBeenSet(false)
+    m_joinRoomInputHasBeenSet(false),
+    m_applicationLicenseInputHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,15 @@ string CreateKTVRobotRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_joinRoomInput.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_applicationLicenseInputHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationLicenseInput";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_applicationLicenseInput.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -90,6 +100,22 @@ void CreateKTVRobotRequest::SetJoinRoomInput(const JoinRoomInput& _joinRoomInput
 bool CreateKTVRobotRequest::JoinRoomInputHasBeenSet() const
 {
     return m_joinRoomInputHasBeenSet;
+}
+
+ApplicationLicenseInput CreateKTVRobotRequest::GetApplicationLicenseInput() const
+{
+    return m_applicationLicenseInput;
+}
+
+void CreateKTVRobotRequest::SetApplicationLicenseInput(const ApplicationLicenseInput& _applicationLicenseInput)
+{
+    m_applicationLicenseInput = _applicationLicenseInput;
+    m_applicationLicenseInputHasBeenSet = true;
+}
+
+bool CreateKTVRobotRequest::ApplicationLicenseInputHasBeenSet() const
+{
+    return m_applicationLicenseInputHasBeenSet;
 }
 
 

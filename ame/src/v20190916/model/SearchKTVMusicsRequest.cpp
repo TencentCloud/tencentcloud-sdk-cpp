@@ -26,7 +26,8 @@ SearchKTVMusicsRequest::SearchKTVMusicsRequest() :
     m_keyWordHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_sortHasBeenSet(false)
+    m_sortHasBeenSet(false),
+    m_tagIdsHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,19 @@ string SearchKTVMusicsRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_sort.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_tagIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_tagIds.begin(); itr != m_tagIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -140,6 +154,22 @@ void SearchKTVMusicsRequest::SetSort(const SortBy& _sort)
 bool SearchKTVMusicsRequest::SortHasBeenSet() const
 {
     return m_sortHasBeenSet;
+}
+
+vector<string> SearchKTVMusicsRequest::GetTagIds() const
+{
+    return m_tagIds;
+}
+
+void SearchKTVMusicsRequest::SetTagIds(const vector<string>& _tagIds)
+{
+    m_tagIds = _tagIds;
+    m_tagIdsHasBeenSet = true;
+}
+
+bool SearchKTVMusicsRequest::TagIdsHasBeenSet() const
+{
+    return m_tagIdsHasBeenSet;
 }
 
 

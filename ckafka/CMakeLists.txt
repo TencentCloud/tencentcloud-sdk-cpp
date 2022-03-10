@@ -172,6 +172,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DescribeUserRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicSyncReplicaRequest.h
   include/tencentcloud/ckafka/v20190819/model/InstanceDetail.h
+  include/tencentcloud/ckafka/v20190819/model/InstanceQuotaConfigResp.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicDetailResponse.h
   include/tencentcloud/ckafka/v20190819/model/SubscribedInfo.h
   include/tencentcloud/ckafka/v20190819/model/Price.h
@@ -332,6 +333,7 @@ set(ckafka_src
   src/v20190819/model/DescribeUserRequest.cpp
   src/v20190819/model/DescribeTopicSyncReplicaRequest.cpp
   src/v20190819/model/InstanceDetail.cpp
+  src/v20190819/model/InstanceQuotaConfigResp.cpp
   src/v20190819/model/DescribeTopicDetailResponse.cpp
   src/v20190819/model/SubscribedInfo.cpp
   src/v20190819/model/Price.cpp

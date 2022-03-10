@@ -211,6 +211,8 @@
 #include <tencentcloud/vod/v20180717/model/ModifyImageSpriteTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyMediaInfoRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyMediaInfoResponse.h>
+#include <tencentcloud/vod/v20180717/model/ModifyMediaStorageClassRequest.h>
+#include <tencentcloud/vod/v20180717/model/ModifyMediaStorageClassResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyPersonSampleRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyPersonSampleResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifySampleSnapshotTemplateRequest.h>
@@ -553,6 +555,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyMediaInfoResponse> ModifyMediaInfoOutcome;
                 typedef std::future<ModifyMediaInfoOutcome> ModifyMediaInfoOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyMediaInfoRequest&, ModifyMediaInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMediaInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyMediaStorageClassResponse> ModifyMediaStorageClassOutcome;
+                typedef std::future<ModifyMediaStorageClassOutcome> ModifyMediaStorageClassOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ModifyMediaStorageClassRequest&, ModifyMediaStorageClassOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMediaStorageClassAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyPersonSampleResponse> ModifyPersonSampleOutcome;
                 typedef std::future<ModifyPersonSampleOutcome> ModifyPersonSampleOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyPersonSampleRequest&, ModifyPersonSampleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPersonSampleAsyncHandler;
@@ -1591,6 +1596,27 @@ namespace TencentCloud
                 ModifyMediaInfoOutcome ModifyMediaInfo(const Model::ModifyMediaInfoRequest &request);
                 void ModifyMediaInfoAsync(const Model::ModifyMediaInfoRequest& request, const ModifyMediaInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyMediaInfoOutcomeCallable ModifyMediaInfoCallable(const Model::ModifyMediaInfoRequest& request);
+
+                /**
+                 *修改媒体文件的存储类型。
+当媒体文件的存储类型为标准存储时，可以修改为以下类型：
+<li>低频存储</li>
+<li>归档存储</li>
+<li>深度归档存储</li>
+当媒体文件的当前存储类型为低频存储时，可以修改为以下类型：
+<li>标准存储</li>
+<li>归档存储</li>
+<li>深度归档存储</li>
+当媒体文件的当前存储类型为归档存储时，可以修改为以下类型：
+<li>标准存储</li>
+当媒体文件的当前存储类型为深度归档存储时，可以修改为以下类型：
+<li>标准存储</li>
+                 * @param req ModifyMediaStorageClassRequest
+                 * @return ModifyMediaStorageClassOutcome
+                 */
+                ModifyMediaStorageClassOutcome ModifyMediaStorageClass(const Model::ModifyMediaStorageClassRequest &request);
+                void ModifyMediaStorageClassAsync(const Model::ModifyMediaStorageClassRequest& request, const ModifyMediaStorageClassAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyMediaStorageClassOutcomeCallable ModifyMediaStorageClassCallable(const Model::ModifyMediaStorageClassRequest& request);
 
                 /**
                  *该接口用于根据素材 ID，修改素材样本信息，包括名称、描述的修改，以及五官、标签的添加、删除、重置操作。五官删除操作需保证至少剩余 1 张图片，否则，请使用重置操作。

@@ -39,6 +39,8 @@
 #include <tencentcloud/ame/v20190916/model/DescribeItemsResponse.h>
 #include <tencentcloud/ame/v20190916/model/DescribeKTVMusicDetailRequest.h>
 #include <tencentcloud/ame/v20190916/model/DescribeKTVMusicDetailResponse.h>
+#include <tencentcloud/ame/v20190916/model/DescribeKTVMusicTagsRequest.h>
+#include <tencentcloud/ame/v20190916/model/DescribeKTVMusicTagsResponse.h>
 #include <tencentcloud/ame/v20190916/model/DescribeKTVPlaylistDetailRequest.h>
 #include <tencentcloud/ame/v20190916/model/DescribeKTVPlaylistDetailResponse.h>
 #include <tencentcloud/ame/v20190916/model/DescribeKTVPlaylistsRequest.h>
@@ -51,6 +53,8 @@
 #include <tencentcloud/ame/v20190916/model/DescribeKTVSingerMusicsResponse.h>
 #include <tencentcloud/ame/v20190916/model/DescribeKTVSingersRequest.h>
 #include <tencentcloud/ame/v20190916/model/DescribeKTVSingersResponse.h>
+#include <tencentcloud/ame/v20190916/model/DescribeKTVSuggestionsRequest.h>
+#include <tencentcloud/ame/v20190916/model/DescribeKTVSuggestionsResponse.h>
 #include <tencentcloud/ame/v20190916/model/DescribeKTVTopListRequest.h>
 #include <tencentcloud/ame/v20190916/model/DescribeKTVTopListResponse.h>
 #include <tencentcloud/ame/v20190916/model/DescribeLyricRequest.h>
@@ -119,6 +123,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeKTVMusicDetailResponse> DescribeKTVMusicDetailOutcome;
                 typedef std::future<DescribeKTVMusicDetailOutcome> DescribeKTVMusicDetailOutcomeCallable;
                 typedef std::function<void(const AmeClient*, const Model::DescribeKTVMusicDetailRequest&, DescribeKTVMusicDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKTVMusicDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeKTVMusicTagsResponse> DescribeKTVMusicTagsOutcome;
+                typedef std::future<DescribeKTVMusicTagsOutcome> DescribeKTVMusicTagsOutcomeCallable;
+                typedef std::function<void(const AmeClient*, const Model::DescribeKTVMusicTagsRequest&, DescribeKTVMusicTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKTVMusicTagsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeKTVPlaylistDetailResponse> DescribeKTVPlaylistDetailOutcome;
                 typedef std::future<DescribeKTVPlaylistDetailOutcome> DescribeKTVPlaylistDetailOutcomeCallable;
                 typedef std::function<void(const AmeClient*, const Model::DescribeKTVPlaylistDetailRequest&, DescribeKTVPlaylistDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKTVPlaylistDetailAsyncHandler;
@@ -137,6 +144,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeKTVSingersResponse> DescribeKTVSingersOutcome;
                 typedef std::future<DescribeKTVSingersOutcome> DescribeKTVSingersOutcomeCallable;
                 typedef std::function<void(const AmeClient*, const Model::DescribeKTVSingersRequest&, DescribeKTVSingersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKTVSingersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeKTVSuggestionsResponse> DescribeKTVSuggestionsOutcome;
+                typedef std::future<DescribeKTVSuggestionsOutcome> DescribeKTVSuggestionsOutcomeCallable;
+                typedef std::function<void(const AmeClient*, const Model::DescribeKTVSuggestionsRequest&, DescribeKTVSuggestionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKTVSuggestionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeKTVTopListResponse> DescribeKTVTopListOutcome;
                 typedef std::future<DescribeKTVTopListOutcome> DescribeKTVTopListOutcomeCallable;
                 typedef std::function<void(const AmeClient*, const Model::DescribeKTVTopListRequest&, DescribeKTVTopListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKTVTopListAsyncHandler;
@@ -258,6 +268,15 @@ namespace TencentCloud
                 DescribeKTVMusicDetailOutcomeCallable DescribeKTVMusicDetailCallable(const Model::DescribeKTVMusicDetailRequest& request);
 
                 /**
+                 *获取直播互动曲库标签分组信息和标签信息
+                 * @param req DescribeKTVMusicTagsRequest
+                 * @return DescribeKTVMusicTagsOutcome
+                 */
+                DescribeKTVMusicTagsOutcome DescribeKTVMusicTags(const Model::DescribeKTVMusicTagsRequest &request);
+                void DescribeKTVMusicTagsAsync(const Model::DescribeKTVMusicTagsRequest& request, const DescribeKTVMusicTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKTVMusicTagsOutcomeCallable DescribeKTVMusicTagsCallable(const Model::DescribeKTVMusicTagsRequest& request);
+
+                /**
                  *根据歌单 Id 获取歌单详情，包括歌单的基础信息以及歌曲列表。
                  * @param req DescribeKTVPlaylistDetailRequest
                  * @return DescribeKTVPlaylistDetailOutcome
@@ -313,6 +332,15 @@ namespace TencentCloud
                 DescribeKTVSingersOutcome DescribeKTVSingers(const Model::DescribeKTVSingersRequest &request);
                 void DescribeKTVSingersAsync(const Model::DescribeKTVSingersRequest& request, const DescribeKTVSingersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeKTVSingersOutcomeCallable DescribeKTVSingersCallable(const Model::DescribeKTVSingersRequest& request);
+
+                /**
+                 *获取直播互动曲库联想词
+                 * @param req DescribeKTVSuggestionsRequest
+                 * @return DescribeKTVSuggestionsOutcome
+                 */
+                DescribeKTVSuggestionsOutcome DescribeKTVSuggestions(const Model::DescribeKTVSuggestionsRequest &request);
+                void DescribeKTVSuggestionsAsync(const Model::DescribeKTVSuggestionsRequest& request, const DescribeKTVSuggestionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKTVSuggestionsOutcomeCallable DescribeKTVSuggestionsCallable(const Model::DescribeKTVSuggestionsRequest& request);
 
                 /**
                  *获取直播互动曲库歌曲的周榜和月榜

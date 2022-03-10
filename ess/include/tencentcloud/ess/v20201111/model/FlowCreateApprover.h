@@ -145,24 +145,6 @@ namespace TencentCloud
                     bool ApproverMobileHasBeenSet() const;
 
                     /**
-                     * 获取签署方经办人证件类型，ID_CARD表示身份证
-                     * @return ApproverIdCardType 签署方经办人证件类型，ID_CARD表示身份证
-                     */
-                    std::string GetApproverIdCardType() const;
-
-                    /**
-                     * 设置签署方经办人证件类型，ID_CARD表示身份证
-                     * @param ApproverIdCardType 签署方经办人证件类型，ID_CARD表示身份证
-                     */
-                    void SetApproverIdCardType(const std::string& _approverIdCardType);
-
-                    /**
-                     * 判断参数 ApproverIdCardType 是否已赋值
-                     * @return ApproverIdCardType 是否已赋值
-                     */
-                    bool ApproverIdCardTypeHasBeenSet() const;
-
-                    /**
                      * 获取签署方经办人证件号码
                      * @return ApproverIdCardNumber 签署方经办人证件号码
                      */
@@ -179,6 +161,32 @@ namespace TencentCloud
                      * @return ApproverIdCardNumber 是否已赋值
                      */
                     bool ApproverIdCardNumberHasBeenSet() const;
+
+                    /**
+                     * 获取签署方经办人证件类型ID_CARD 身份证
+HONGKONG_AND_MACAO 港澳居民来往内地通行证
+HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
+                     * @return ApproverIdCardType 签署方经办人证件类型ID_CARD 身份证
+HONGKONG_AND_MACAO 港澳居民来往内地通行证
+HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
+                     */
+                    std::string GetApproverIdCardType() const;
+
+                    /**
+                     * 设置签署方经办人证件类型ID_CARD 身份证
+HONGKONG_AND_MACAO 港澳居民来往内地通行证
+HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
+                     * @param ApproverIdCardType 签署方经办人证件类型ID_CARD 身份证
+HONGKONG_AND_MACAO 港澳居民来往内地通行证
+HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
+                     */
+                    void SetApproverIdCardType(const std::string& _approverIdCardType);
+
+                    /**
+                     * 判断参数 ApproverIdCardType 是否已赋值
+                     * @return ApproverIdCardType 是否已赋值
+                     */
+                    bool ApproverIdCardTypeHasBeenSet() const;
 
                     /**
                      * 获取签署方经办人在模板中的角色ID
@@ -305,16 +313,18 @@ namespace TencentCloud
                     bool m_approverMobileHasBeenSet;
 
                     /**
-                     * 签署方经办人证件类型，ID_CARD表示身份证
-                     */
-                    std::string m_approverIdCardType;
-                    bool m_approverIdCardTypeHasBeenSet;
-
-                    /**
                      * 签署方经办人证件号码
                      */
                     std::string m_approverIdCardNumber;
                     bool m_approverIdCardNumberHasBeenSet;
+
+                    /**
+                     * 签署方经办人证件类型ID_CARD 身份证
+HONGKONG_AND_MACAO 港澳居民来往内地通行证
+HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
+                     */
+                    std::string m_approverIdCardType;
+                    bool m_approverIdCardTypeHasBeenSet;
 
                     /**
                      * 签署方经办人在模板中的角色ID

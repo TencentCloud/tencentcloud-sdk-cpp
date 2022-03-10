@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ame/v20190916/model/JoinRoomInput.h>
+#include <tencentcloud/ame/v20190916/model/ApplicationLicenseInput.h>
 
 
 namespace TencentCloud
@@ -83,6 +84,24 @@ namespace TencentCloud
                      */
                     bool JoinRoomInputHasBeenSet() const;
 
+                    /**
+                     * 获取license基础信息
+                     * @return ApplicationLicenseInput license基础信息
+                     */
+                    ApplicationLicenseInput GetApplicationLicenseInput() const;
+
+                    /**
+                     * 设置license基础信息
+                     * @param ApplicationLicenseInput license基础信息
+                     */
+                    void SetApplicationLicenseInput(const ApplicationLicenseInput& _applicationLicenseInput);
+
+                    /**
+                     * 判断参数 ApplicationLicenseInput 是否已赋值
+                     * @return ApplicationLicenseInput 是否已赋值
+                     */
+                    bool ApplicationLicenseInputHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +116,12 @@ namespace TencentCloud
                      */
                     JoinRoomInput m_joinRoomInput;
                     bool m_joinRoomInputHasBeenSet;
+
+                    /**
+                     * license基础信息
+                     */
+                    ApplicationLicenseInput m_applicationLicenseInput;
+                    bool m_applicationLicenseInputHasBeenSet;
 
                 };
             }

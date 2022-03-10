@@ -4082,6 +4082,49 @@ VodClient::ModifyMediaInfoOutcomeCallable VodClient::ModifyMediaInfoCallable(con
     return task->get_future();
 }
 
+VodClient::ModifyMediaStorageClassOutcome VodClient::ModifyMediaStorageClass(const ModifyMediaStorageClassRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyMediaStorageClass");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyMediaStorageClassResponse rsp = ModifyMediaStorageClassResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyMediaStorageClassOutcome(rsp);
+        else
+            return ModifyMediaStorageClassOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyMediaStorageClassOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ModifyMediaStorageClassAsync(const ModifyMediaStorageClassRequest& request, const ModifyMediaStorageClassAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyMediaStorageClass(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::ModifyMediaStorageClassOutcomeCallable VodClient::ModifyMediaStorageClassCallable(const ModifyMediaStorageClassRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyMediaStorageClassOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyMediaStorageClass(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::ModifyPersonSampleOutcome VodClient::ModifyPersonSample(const ModifyPersonSampleRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyPersonSample");

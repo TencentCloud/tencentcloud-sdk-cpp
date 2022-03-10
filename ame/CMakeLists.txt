@@ -20,6 +20,7 @@ set(ame_public_header
 
 set(ame_public_header_model
   include/tencentcloud/ame/v20190916/model/DescribeMusicResponse.h
+  include/tencentcloud/ame/v20190916/model/DescribeKTVSuggestionsResponse.h
   include/tencentcloud/ame/v20190916/model/ChorusClip.h
   include/tencentcloud/ame/v20190916/model/ModifyMusicOnShelvesResponse.h
   include/tencentcloud/ame/v20190916/model/Station.h
@@ -36,7 +37,7 @@ set(ame_public_header_model
   include/tencentcloud/ame/v20190916/model/DescribeCloudMusicResponse.h
   include/tencentcloud/ame/v20190916/model/MusicDetailInfo.h
   include/tencentcloud/ame/v20190916/model/ImagePath.h
-  include/tencentcloud/ame/v20190916/model/DescribeMusicSaleStatusResponse.h
+  include/tencentcloud/ame/v20190916/model/KTVMusicTagInfo.h
   include/tencentcloud/ame/v20190916/model/DestroyKTVRobotRequest.h
   include/tencentcloud/ame/v20190916/model/DescribeAuthInfoResponse.h
   include/tencentcloud/ame/v20190916/model/DescribeLyricRequest.h
@@ -44,10 +45,13 @@ set(ame_public_header_model
   include/tencentcloud/ame/v20190916/model/SeekCommandInput.h
   include/tencentcloud/ame/v20190916/model/DescribePkgOfflineMusicRequest.h
   include/tencentcloud/ame/v20190916/model/TimeRange.h
+  include/tencentcloud/ame/v20190916/model/DescribeMusicSaleStatusResponse.h
   include/tencentcloud/ame/v20190916/model/CreateKTVRobotResponse.h
   include/tencentcloud/ame/v20190916/model/DescribePackageItemsResponse.h
   include/tencentcloud/ame/v20190916/model/DescribeCloudMusicPurchasedResponse.h
+  include/tencentcloud/ame/v20190916/model/KTVMusicTagGroup.h
   include/tencentcloud/ame/v20190916/model/DataInfo.h
+  include/tencentcloud/ame/v20190916/model/ApplicationLicenseInput.h
   include/tencentcloud/ame/v20190916/model/Artist.h
   include/tencentcloud/ame/v20190916/model/SetDestroyModeCommandInput.h
   include/tencentcloud/ame/v20190916/model/ReportDataResponse.h
@@ -63,9 +67,12 @@ set(ame_public_header_model
   include/tencentcloud/ame/v20190916/model/SortBy.h
   include/tencentcloud/ame/v20190916/model/DescribeKTVMusicDetailResponse.h
   include/tencentcloud/ame/v20190916/model/DescribeKTVRobotsRequest.h
+  include/tencentcloud/ame/v20190916/model/DescribeKTVMusicTagsResponse.h
+  include/tencentcloud/ame/v20190916/model/DescribeKTVMusicTagsRequest.h
   include/tencentcloud/ame/v20190916/model/JoinRoomInput.h
   include/tencentcloud/ame/v20190916/model/DestroyKTVRobotResponse.h
   include/tencentcloud/ame/v20190916/model/CreateKTVRobotRequest.h
+  include/tencentcloud/ame/v20190916/model/KTVSuggestionInfo.h
   include/tencentcloud/ame/v20190916/model/DescribeKTVTopListRequest.h
   include/tencentcloud/ame/v20190916/model/DescribeKTVPlaylistDetailRequest.h
   include/tencentcloud/ame/v20190916/model/Music.h
@@ -98,6 +105,7 @@ set(ame_public_header_model
   include/tencentcloud/ame/v20190916/model/DescribeLyricResponse.h
   include/tencentcloud/ame/v20190916/model/KTVMusicBaseInfo.h
   include/tencentcloud/ame/v20190916/model/SyncKTVRobotCommandRequest.h
+  include/tencentcloud/ame/v20190916/model/DescribeKTVSuggestionsRequest.h
   include/tencentcloud/ame/v20190916/model/DescribeKTVPlaylistsResponse.h
   include/tencentcloud/ame/v20190916/model/DescribeKTVPlaylistDetailResponse.h
   include/tencentcloud/ame/v20190916/model/SetAudioParamCommandInput.h
@@ -120,6 +128,7 @@ set(ame_public_header_model
 set(ame_src
   src/v20190916/AmeClient.cpp
   src/v20190916/model/DescribeMusicResponse.cpp
+  src/v20190916/model/DescribeKTVSuggestionsResponse.cpp
   src/v20190916/model/ChorusClip.cpp
   src/v20190916/model/ModifyMusicOnShelvesResponse.cpp
   src/v20190916/model/Station.cpp
@@ -136,7 +145,7 @@ set(ame_src
   src/v20190916/model/DescribeCloudMusicResponse.cpp
   src/v20190916/model/MusicDetailInfo.cpp
   src/v20190916/model/ImagePath.cpp
-  src/v20190916/model/DescribeMusicSaleStatusResponse.cpp
+  src/v20190916/model/KTVMusicTagInfo.cpp
   src/v20190916/model/DestroyKTVRobotRequest.cpp
   src/v20190916/model/DescribeAuthInfoResponse.cpp
   src/v20190916/model/DescribeLyricRequest.cpp
@@ -144,10 +153,13 @@ set(ame_src
   src/v20190916/model/SeekCommandInput.cpp
   src/v20190916/model/DescribePkgOfflineMusicRequest.cpp
   src/v20190916/model/TimeRange.cpp
+  src/v20190916/model/DescribeMusicSaleStatusResponse.cpp
   src/v20190916/model/CreateKTVRobotResponse.cpp
   src/v20190916/model/DescribePackageItemsResponse.cpp
   src/v20190916/model/DescribeCloudMusicPurchasedResponse.cpp
+  src/v20190916/model/KTVMusicTagGroup.cpp
   src/v20190916/model/DataInfo.cpp
+  src/v20190916/model/ApplicationLicenseInput.cpp
   src/v20190916/model/Artist.cpp
   src/v20190916/model/SetDestroyModeCommandInput.cpp
   src/v20190916/model/ReportDataResponse.cpp
@@ -163,9 +175,12 @@ set(ame_src
   src/v20190916/model/SortBy.cpp
   src/v20190916/model/DescribeKTVMusicDetailResponse.cpp
   src/v20190916/model/DescribeKTVRobotsRequest.cpp
+  src/v20190916/model/DescribeKTVMusicTagsResponse.cpp
+  src/v20190916/model/DescribeKTVMusicTagsRequest.cpp
   src/v20190916/model/JoinRoomInput.cpp
   src/v20190916/model/DestroyKTVRobotResponse.cpp
   src/v20190916/model/CreateKTVRobotRequest.cpp
+  src/v20190916/model/KTVSuggestionInfo.cpp
   src/v20190916/model/DescribeKTVTopListRequest.cpp
   src/v20190916/model/DescribeKTVPlaylistDetailRequest.cpp
   src/v20190916/model/Music.cpp
@@ -198,6 +213,7 @@ set(ame_src
   src/v20190916/model/DescribeLyricResponse.cpp
   src/v20190916/model/KTVMusicBaseInfo.cpp
   src/v20190916/model/SyncKTVRobotCommandRequest.cpp
+  src/v20190916/model/DescribeKTVSuggestionsRequest.cpp
   src/v20190916/model/DescribeKTVPlaylistsResponse.cpp
   src/v20190916/model/DescribeKTVPlaylistDetailResponse.cpp
   src/v20190916/model/SetAudioParamCommandInput.cpp

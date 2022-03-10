@@ -37,7 +37,9 @@ ModifyTopicAttributesRequest::ModifyTopicAttributesRequest() :
     m_enableAclRuleHasBeenSet(false),
     m_aclRuleNameHasBeenSet(false),
     m_retentionBytesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_quotaProducerByteRateHasBeenSet(false),
+    m_quotaConsumerByteRateHasBeenSet(false)
 {
 }
 
@@ -178,6 +180,22 @@ string ModifyTopicAttributesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_quotaProducerByteRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuotaProducerByteRate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_quotaProducerByteRate, allocator);
+    }
+
+    if (m_quotaConsumerByteRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuotaConsumerByteRate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_quotaConsumerByteRate, allocator);
     }
 
 
@@ -426,6 +444,38 @@ void ModifyTopicAttributesRequest::SetTags(const vector<Tag>& _tags)
 bool ModifyTopicAttributesRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+int64_t ModifyTopicAttributesRequest::GetQuotaProducerByteRate() const
+{
+    return m_quotaProducerByteRate;
+}
+
+void ModifyTopicAttributesRequest::SetQuotaProducerByteRate(const int64_t& _quotaProducerByteRate)
+{
+    m_quotaProducerByteRate = _quotaProducerByteRate;
+    m_quotaProducerByteRateHasBeenSet = true;
+}
+
+bool ModifyTopicAttributesRequest::QuotaProducerByteRateHasBeenSet() const
+{
+    return m_quotaProducerByteRateHasBeenSet;
+}
+
+int64_t ModifyTopicAttributesRequest::GetQuotaConsumerByteRate() const
+{
+    return m_quotaConsumerByteRate;
+}
+
+void ModifyTopicAttributesRequest::SetQuotaConsumerByteRate(const int64_t& _quotaConsumerByteRate)
+{
+    m_quotaConsumerByteRate = _quotaConsumerByteRate;
+    m_quotaConsumerByteRateHasBeenSet = true;
+}
+
+bool ModifyTopicAttributesRequest::QuotaConsumerByteRateHasBeenSet() const
+{
+    return m_quotaConsumerByteRateHasBeenSet;
 }
 
 

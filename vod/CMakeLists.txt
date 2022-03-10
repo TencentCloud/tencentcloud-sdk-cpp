@@ -97,6 +97,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/DeleteSuperPlayerConfigRequest.h
   include/tencentcloud/vod/v20180717/model/AiReviewTerrorismOcrTaskInput.h
   include/tencentcloud/vod/v20180717/model/AiRecognitionTaskOcrWordsResultInput.h
+  include/tencentcloud/vod/v20180717/model/ModifyMediaStorageClassResponse.h
   include/tencentcloud/vod/v20180717/model/AiReviewPornTaskInput.h
   include/tencentcloud/vod/v20180717/model/CreateProcedureTemplateRequest.h
   include/tencentcloud/vod/v20180717/model/DescribeMediaProcessUsageDataRequest.h
@@ -232,6 +233,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/DeleteHeadTailTemplateRequest.h
   include/tencentcloud/vod/v20180717/model/AiAnalysisTaskTagResult.h
   include/tencentcloud/vod/v20180717/model/SearchMediaResponse.h
+  include/tencentcloud/vod/v20180717/model/ModifyMediaStorageClassRequest.h
   include/tencentcloud/vod/v20180717/model/AiAnalysisTaskTagOutput.h
   include/tencentcloud/vod/v20180717/model/AiAnalysisTaskHighlightOutput.h
   include/tencentcloud/vod/v20180717/model/MediaSubtitleInput.h
@@ -659,6 +661,7 @@ set(vod_src
   src/v20180717/model/DeleteSuperPlayerConfigRequest.cpp
   src/v20180717/model/AiReviewTerrorismOcrTaskInput.cpp
   src/v20180717/model/AiRecognitionTaskOcrWordsResultInput.cpp
+  src/v20180717/model/ModifyMediaStorageClassResponse.cpp
   src/v20180717/model/AiReviewPornTaskInput.cpp
   src/v20180717/model/CreateProcedureTemplateRequest.cpp
   src/v20180717/model/DescribeMediaProcessUsageDataRequest.cpp
@@ -794,6 +797,7 @@ set(vod_src
   src/v20180717/model/DeleteHeadTailTemplateRequest.cpp
   src/v20180717/model/AiAnalysisTaskTagResult.cpp
   src/v20180717/model/SearchMediaResponse.cpp
+  src/v20180717/model/ModifyMediaStorageClassRequest.cpp
   src/v20180717/model/AiAnalysisTaskTagOutput.cpp
   src/v20180717/model/AiAnalysisTaskHighlightOutput.cpp
   src/v20180717/model/MediaSubtitleInput.cpp

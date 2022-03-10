@@ -57,6 +57,8 @@
 #include <tencentcloud/tke/v20180525/model/CreateEKSClusterResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateEKSContainerInstancesRequest.h>
 #include <tencentcloud/tke/v20180525/model/CreateEKSContainerInstancesResponse.h>
+#include <tencentcloud/tke/v20180525/model/CreateImageCacheRequest.h>
+#include <tencentcloud/tke/v20180525/model/CreateImageCacheResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreatePrometheusAlertRuleRequest.h>
 #include <tencentcloud/tke/v20180525/model/CreatePrometheusAlertRuleResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreatePrometheusDashboardRequest.h>
@@ -83,6 +85,8 @@
 #include <tencentcloud/tke/v20180525/model/DeleteEKSClusterResponse.h>
 #include <tencentcloud/tke/v20180525/model/DeleteEKSContainerInstancesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DeleteEKSContainerInstancesResponse.h>
+#include <tencentcloud/tke/v20180525/model/DeleteImageCachesRequest.h>
+#include <tencentcloud/tke/v20180525/model/DeleteImageCachesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DeletePrometheusAlertRuleRequest.h>
 #include <tencentcloud/tke/v20180525/model/DeletePrometheusAlertRuleResponse.h>
 #include <tencentcloud/tke/v20180525/model/DeletePrometheusTemplateRequest.h>
@@ -141,6 +145,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeExistedInstancesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeExternalClusterSpecRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeExternalClusterSpecResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeImageCachesRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeImageCachesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeImagesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeImagesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribePrometheusAgentInstancesRequest.h>
@@ -181,6 +187,8 @@
 #include <tencentcloud/tke/v20180525/model/EnableVpcCniNetworkTypeResponse.h>
 #include <tencentcloud/tke/v20180525/model/ForwardApplicationRequestV3Request.h>
 #include <tencentcloud/tke/v20180525/model/ForwardApplicationRequestV3Response.h>
+#include <tencentcloud/tke/v20180525/model/GetMostSuitableImageCacheRequest.h>
+#include <tencentcloud/tke/v20180525/model/GetMostSuitableImageCacheResponse.h>
 #include <tencentcloud/tke/v20180525/model/GetTkeAppChartListRequest.h>
 #include <tencentcloud/tke/v20180525/model/GetTkeAppChartListResponse.h>
 #include <tencentcloud/tke/v20180525/model/GetUpgradeInstanceProgressRequest.h>
@@ -223,6 +231,8 @@
 #include <tencentcloud/tke/v20180525/model/UpdateEKSClusterResponse.h>
 #include <tencentcloud/tke/v20180525/model/UpdateEKSContainerInstanceRequest.h>
 #include <tencentcloud/tke/v20180525/model/UpdateEKSContainerInstanceResponse.h>
+#include <tencentcloud/tke/v20180525/model/UpdateImageCacheRequest.h>
+#include <tencentcloud/tke/v20180525/model/UpdateImageCacheResponse.h>
 #include <tencentcloud/tke/v20180525/model/UpgradeClusterInstancesRequest.h>
 #include <tencentcloud/tke/v20180525/model/UpgradeClusterInstancesResponse.h>
 
@@ -290,6 +300,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateEKSContainerInstancesResponse> CreateEKSContainerInstancesOutcome;
                 typedef std::future<CreateEKSContainerInstancesOutcome> CreateEKSContainerInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CreateEKSContainerInstancesRequest&, CreateEKSContainerInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEKSContainerInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateImageCacheResponse> CreateImageCacheOutcome;
+                typedef std::future<CreateImageCacheOutcome> CreateImageCacheOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::CreateImageCacheRequest&, CreateImageCacheOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageCacheAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePrometheusAlertRuleResponse> CreatePrometheusAlertRuleOutcome;
                 typedef std::future<CreatePrometheusAlertRuleOutcome> CreatePrometheusAlertRuleOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CreatePrometheusAlertRuleRequest&, CreatePrometheusAlertRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrometheusAlertRuleAsyncHandler;
@@ -329,6 +342,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteEKSContainerInstancesResponse> DeleteEKSContainerInstancesOutcome;
                 typedef std::future<DeleteEKSContainerInstancesOutcome> DeleteEKSContainerInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DeleteEKSContainerInstancesRequest&, DeleteEKSContainerInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEKSContainerInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteImageCachesResponse> DeleteImageCachesOutcome;
+                typedef std::future<DeleteImageCachesOutcome> DeleteImageCachesOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DeleteImageCachesRequest&, DeleteImageCachesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImageCachesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeletePrometheusAlertRuleResponse> DeletePrometheusAlertRuleOutcome;
                 typedef std::future<DeletePrometheusAlertRuleOutcome> DeletePrometheusAlertRuleOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DeletePrometheusAlertRuleRequest&, DeletePrometheusAlertRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePrometheusAlertRuleAsyncHandler;
@@ -416,6 +432,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeExternalClusterSpecResponse> DescribeExternalClusterSpecOutcome;
                 typedef std::future<DescribeExternalClusterSpecOutcome> DescribeExternalClusterSpecOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeExternalClusterSpecRequest&, DescribeExternalClusterSpecOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExternalClusterSpecAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageCachesResponse> DescribeImageCachesOutcome;
+                typedef std::future<DescribeImageCachesOutcome> DescribeImageCachesOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeImageCachesRequest&, DescribeImageCachesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageCachesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeImagesResponse> DescribeImagesOutcome;
                 typedef std::future<DescribeImagesOutcome> DescribeImagesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeImagesRequest&, DescribeImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImagesAsyncHandler;
@@ -476,6 +495,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ForwardApplicationRequestV3Response> ForwardApplicationRequestV3Outcome;
                 typedef std::future<ForwardApplicationRequestV3Outcome> ForwardApplicationRequestV3OutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ForwardApplicationRequestV3Request&, ForwardApplicationRequestV3Outcome, const std::shared_ptr<const AsyncCallerContext>&)> ForwardApplicationRequestV3AsyncHandler;
+                typedef Outcome<Core::Error, Model::GetMostSuitableImageCacheResponse> GetMostSuitableImageCacheOutcome;
+                typedef std::future<GetMostSuitableImageCacheOutcome> GetMostSuitableImageCacheOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::GetMostSuitableImageCacheRequest&, GetMostSuitableImageCacheOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetMostSuitableImageCacheAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetTkeAppChartListResponse> GetTkeAppChartListOutcome;
                 typedef std::future<GetTkeAppChartListOutcome> GetTkeAppChartListOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::GetTkeAppChartListRequest&, GetTkeAppChartListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTkeAppChartListAsyncHandler;
@@ -539,6 +561,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateEKSContainerInstanceResponse> UpdateEKSContainerInstanceOutcome;
                 typedef std::future<UpdateEKSContainerInstanceOutcome> UpdateEKSContainerInstanceOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::UpdateEKSContainerInstanceRequest&, UpdateEKSContainerInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateEKSContainerInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateImageCacheResponse> UpdateImageCacheOutcome;
+                typedef std::future<UpdateImageCacheOutcome> UpdateImageCacheOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::UpdateImageCacheRequest&, UpdateImageCacheOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateImageCacheAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpgradeClusterInstancesResponse> UpgradeClusterInstancesOutcome;
                 typedef std::future<UpgradeClusterInstancesOutcome> UpgradeClusterInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::UpgradeClusterInstancesRequest&, UpgradeClusterInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeClusterInstancesAsyncHandler;
@@ -699,6 +724,15 @@ namespace TencentCloud
                 CreateEKSContainerInstancesOutcomeCallable CreateEKSContainerInstancesCallable(const Model::CreateEKSContainerInstancesRequest& request);
 
                 /**
+                 *创建镜像缓存的接口。创建过程中，请勿删除EKSCI实例和云盘，否则镜像缓存将创建失败。
+                 * @param req CreateImageCacheRequest
+                 * @return CreateImageCacheOutcome
+                 */
+                CreateImageCacheOutcome CreateImageCache(const Model::CreateImageCacheRequest &request);
+                void CreateImageCacheAsync(const Model::CreateImageCacheRequest& request, const CreateImageCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateImageCacheOutcomeCallable CreateImageCacheCallable(const Model::CreateImageCacheRequest& request);
+
+                /**
                  *创建告警规则
                  * @param req CreatePrometheusAlertRuleRequest
                  * @return CreatePrometheusAlertRuleOutcome
@@ -814,6 +848,15 @@ namespace TencentCloud
                 DeleteEKSContainerInstancesOutcome DeleteEKSContainerInstances(const Model::DeleteEKSContainerInstancesRequest &request);
                 void DeleteEKSContainerInstancesAsync(const Model::DeleteEKSContainerInstancesRequest& request, const DeleteEKSContainerInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteEKSContainerInstancesOutcomeCallable DeleteEKSContainerInstancesCallable(const Model::DeleteEKSContainerInstancesRequest& request);
+
+                /**
+                 *批量删除镜像缓存
+                 * @param req DeleteImageCachesRequest
+                 * @return DeleteImageCachesOutcome
+                 */
+                DeleteImageCachesOutcome DeleteImageCaches(const Model::DeleteImageCachesRequest &request);
+                void DeleteImageCachesAsync(const Model::DeleteImageCachesRequest& request, const DeleteImageCachesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteImageCachesOutcomeCallable DeleteImageCachesCallable(const Model::DeleteImageCachesRequest& request);
 
                 /**
                  *删除告警规则
@@ -1077,6 +1120,15 @@ namespace TencentCloud
                 DescribeExternalClusterSpecOutcomeCallable DescribeExternalClusterSpecCallable(const Model::DescribeExternalClusterSpecRequest& request);
 
                 /**
+                 *查询镜像缓存信息接口
+                 * @param req DescribeImageCachesRequest
+                 * @return DescribeImageCachesOutcome
+                 */
+                DescribeImageCachesOutcome DescribeImageCaches(const Model::DescribeImageCachesRequest &request);
+                void DescribeImageCachesAsync(const Model::DescribeImageCachesRequest& request, const DescribeImageCachesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageCachesOutcomeCallable DescribeImageCachesCallable(const Model::DescribeImageCachesRequest& request);
+
+                /**
                  *获取镜像信息
                  * @param req DescribeImagesRequest
                  * @return DescribeImagesOutcome
@@ -1255,6 +1307,15 @@ namespace TencentCloud
                 ForwardApplicationRequestV3Outcome ForwardApplicationRequestV3(const Model::ForwardApplicationRequestV3Request &request);
                 void ForwardApplicationRequestV3Async(const Model::ForwardApplicationRequestV3Request& request, const ForwardApplicationRequestV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ForwardApplicationRequestV3OutcomeCallable ForwardApplicationRequestV3Callable(const Model::ForwardApplicationRequestV3Request& request);
+
+                /**
+                 *根据镜像列表，查询匹配的镜像缓存
+                 * @param req GetMostSuitableImageCacheRequest
+                 * @return GetMostSuitableImageCacheOutcome
+                 */
+                GetMostSuitableImageCacheOutcome GetMostSuitableImageCache(const Model::GetMostSuitableImageCacheRequest &request);
+                void GetMostSuitableImageCacheAsync(const Model::GetMostSuitableImageCacheRequest& request, const GetMostSuitableImageCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetMostSuitableImageCacheOutcomeCallable GetMostSuitableImageCacheCallable(const Model::GetMostSuitableImageCacheRequest& request);
 
                 /**
                  *获取TKE支持的App列表
@@ -1444,6 +1505,15 @@ namespace TencentCloud
                 UpdateEKSContainerInstanceOutcome UpdateEKSContainerInstance(const Model::UpdateEKSContainerInstanceRequest &request);
                 void UpdateEKSContainerInstanceAsync(const Model::UpdateEKSContainerInstanceRequest& request, const UpdateEKSContainerInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateEKSContainerInstanceOutcomeCallable UpdateEKSContainerInstanceCallable(const Model::UpdateEKSContainerInstanceRequest& request);
+
+                /**
+                 *更新镜像缓存接口
+                 * @param req UpdateImageCacheRequest
+                 * @return UpdateImageCacheOutcome
+                 */
+                UpdateImageCacheOutcome UpdateImageCache(const Model::UpdateImageCacheRequest &request);
+                void UpdateImageCacheAsync(const Model::UpdateImageCacheRequest& request, const UpdateImageCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateImageCacheOutcomeCallable UpdateImageCacheCallable(const Model::UpdateImageCacheRequest& request);
 
                 /**
                  *给集群的一批work节点进行升级 

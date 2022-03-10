@@ -771,6 +771,49 @@ TkeClient::CreateEKSContainerInstancesOutcomeCallable TkeClient::CreateEKSContai
     return task->get_future();
 }
 
+TkeClient::CreateImageCacheOutcome TkeClient::CreateImageCache(const CreateImageCacheRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateImageCache");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateImageCacheResponse rsp = CreateImageCacheResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateImageCacheOutcome(rsp);
+        else
+            return CreateImageCacheOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateImageCacheOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CreateImageCacheAsync(const CreateImageCacheRequest& request, const CreateImageCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateImageCache(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::CreateImageCacheOutcomeCallable TkeClient::CreateImageCacheCallable(const CreateImageCacheRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateImageCacheOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateImageCache(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::CreatePrometheusAlertRuleOutcome TkeClient::CreatePrometheusAlertRule(const CreatePrometheusAlertRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePrometheusAlertRule");
@@ -1323,6 +1366,49 @@ TkeClient::DeleteEKSContainerInstancesOutcomeCallable TkeClient::DeleteEKSContai
         [this, request]()
         {
             return this->DeleteEKSContainerInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DeleteImageCachesOutcome TkeClient::DeleteImageCaches(const DeleteImageCachesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteImageCaches");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteImageCachesResponse rsp = DeleteImageCachesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteImageCachesOutcome(rsp);
+        else
+            return DeleteImageCachesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteImageCachesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DeleteImageCachesAsync(const DeleteImageCachesRequest& request, const DeleteImageCachesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteImageCaches(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DeleteImageCachesOutcomeCallable TkeClient::DeleteImageCachesCallable(const DeleteImageCachesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteImageCachesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteImageCaches(request);
         }
     );
 
@@ -2577,6 +2663,49 @@ TkeClient::DescribeExternalClusterSpecOutcomeCallable TkeClient::DescribeExterna
     return task->get_future();
 }
 
+TkeClient::DescribeImageCachesOutcome TkeClient::DescribeImageCaches(const DescribeImageCachesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageCaches");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageCachesResponse rsp = DescribeImageCachesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageCachesOutcome(rsp);
+        else
+            return DescribeImageCachesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageCachesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeImageCachesAsync(const DescribeImageCachesRequest& request, const DescribeImageCachesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeImageCaches(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeImageCachesOutcomeCallable TkeClient::DescribeImageCachesCallable(const DescribeImageCachesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeImageCachesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeImageCaches(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribeImagesOutcome TkeClient::DescribeImages(const DescribeImagesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeImages");
@@ -3430,6 +3559,49 @@ TkeClient::ForwardApplicationRequestV3OutcomeCallable TkeClient::ForwardApplicat
         [this, request]()
         {
             return this->ForwardApplicationRequestV3(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::GetMostSuitableImageCacheOutcome TkeClient::GetMostSuitableImageCache(const GetMostSuitableImageCacheRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetMostSuitableImageCache");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetMostSuitableImageCacheResponse rsp = GetMostSuitableImageCacheResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetMostSuitableImageCacheOutcome(rsp);
+        else
+            return GetMostSuitableImageCacheOutcome(o.GetError());
+    }
+    else
+    {
+        return GetMostSuitableImageCacheOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::GetMostSuitableImageCacheAsync(const GetMostSuitableImageCacheRequest& request, const GetMostSuitableImageCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetMostSuitableImageCache(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::GetMostSuitableImageCacheOutcomeCallable TkeClient::GetMostSuitableImageCacheCallable(const GetMostSuitableImageCacheRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetMostSuitableImageCacheOutcome()>>(
+        [this, request]()
+        {
+            return this->GetMostSuitableImageCache(request);
         }
     );
 
@@ -4333,6 +4505,49 @@ TkeClient::UpdateEKSContainerInstanceOutcomeCallable TkeClient::UpdateEKSContain
         [this, request]()
         {
             return this->UpdateEKSContainerInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::UpdateImageCacheOutcome TkeClient::UpdateImageCache(const UpdateImageCacheRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateImageCache");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateImageCacheResponse rsp = UpdateImageCacheResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateImageCacheOutcome(rsp);
+        else
+            return UpdateImageCacheOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateImageCacheOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::UpdateImageCacheAsync(const UpdateImageCacheRequest& request, const UpdateImageCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateImageCache(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::UpdateImageCacheOutcomeCallable TkeClient::UpdateImageCacheCallable(const UpdateImageCacheRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateImageCacheOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateImageCache(request);
         }
     );
 

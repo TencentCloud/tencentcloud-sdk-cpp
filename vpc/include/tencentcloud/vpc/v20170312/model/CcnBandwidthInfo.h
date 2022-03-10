@@ -179,6 +179,28 @@ namespace TencentCloud
                      */
                     bool CcnRegionBandwidthLimitHasBeenSet() const;
 
+                    /**
+                     * 获取云市场实例ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MarketId 云市场实例ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMarketId() const;
+
+                    /**
+                     * 设置云市场实例ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MarketId 云市场实例ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMarketId(const std::string& _marketId);
+
+                    /**
+                     * 判断参数 MarketId 是否已赋值
+                     * @return MarketId 是否已赋值
+                     */
+                    bool MarketIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -222,6 +244,13 @@ namespace TencentCloud
                      */
                     CcnRegionBandwidthLimit m_ccnRegionBandwidthLimit;
                     bool m_ccnRegionBandwidthLimitHasBeenSet;
+
+                    /**
+                     * 云市场实例ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_marketId;
+                    bool m_marketIdHasBeenSet;
 
                 };
             }

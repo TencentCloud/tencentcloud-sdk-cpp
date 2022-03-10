@@ -313,6 +313,42 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取生产限流，单位 MB/s
+                     * @return QuotaProducerByteRate 生产限流，单位 MB/s
+                     */
+                    int64_t GetQuotaProducerByteRate() const;
+
+                    /**
+                     * 设置生产限流，单位 MB/s
+                     * @param QuotaProducerByteRate 生产限流，单位 MB/s
+                     */
+                    void SetQuotaProducerByteRate(const int64_t& _quotaProducerByteRate);
+
+                    /**
+                     * 判断参数 QuotaProducerByteRate 是否已赋值
+                     * @return QuotaProducerByteRate 是否已赋值
+                     */
+                    bool QuotaProducerByteRateHasBeenSet() const;
+
+                    /**
+                     * 获取消费限流，单位 MB/s
+                     * @return QuotaConsumerByteRate 消费限流，单位 MB/s
+                     */
+                    int64_t GetQuotaConsumerByteRate() const;
+
+                    /**
+                     * 设置消费限流，单位 MB/s
+                     * @param QuotaConsumerByteRate 消费限流，单位 MB/s
+                     */
+                    void SetQuotaConsumerByteRate(const int64_t& _quotaConsumerByteRate);
+
+                    /**
+                     * 判断参数 QuotaConsumerByteRate 是否已赋值
+                     * @return QuotaConsumerByteRate 是否已赋值
+                     */
+                    bool QuotaConsumerByteRateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -404,6 +440,18 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 生产限流，单位 MB/s
+                     */
+                    int64_t m_quotaProducerByteRate;
+                    bool m_quotaProducerByteRateHasBeenSet;
+
+                    /**
+                     * 消费限流，单位 MB/s
+                     */
+                    int64_t m_quotaConsumerByteRate;
+                    bool m_quotaConsumerByteRateHasBeenSet;
 
                 };
             }

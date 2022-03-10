@@ -26,8 +26,8 @@ FlowCreateApprover::FlowCreateApprover() :
     m_requiredHasBeenSet(false),
     m_approverNameHasBeenSet(false),
     m_approverMobileHasBeenSet(false),
-    m_approverIdCardTypeHasBeenSet(false),
     m_approverIdCardNumberHasBeenSet(false),
+    m_approverIdCardTypeHasBeenSet(false),
     m_recipientIdHasBeenSet(false),
     m_userIdHasBeenSet(false),
     m_isFullTextHasBeenSet(false),
@@ -91,16 +91,6 @@ CoreInternalOutcome FlowCreateApprover::Deserialize(const rapidjson::Value &valu
         m_approverMobileHasBeenSet = true;
     }
 
-    if (value.HasMember("ApproverIdCardType") && !value["ApproverIdCardType"].IsNull())
-    {
-        if (!value["ApproverIdCardType"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `FlowCreateApprover.ApproverIdCardType` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_approverIdCardType = string(value["ApproverIdCardType"].GetString());
-        m_approverIdCardTypeHasBeenSet = true;
-    }
-
     if (value.HasMember("ApproverIdCardNumber") && !value["ApproverIdCardNumber"].IsNull())
     {
         if (!value["ApproverIdCardNumber"].IsString())
@@ -109,6 +99,16 @@ CoreInternalOutcome FlowCreateApprover::Deserialize(const rapidjson::Value &valu
         }
         m_approverIdCardNumber = string(value["ApproverIdCardNumber"].GetString());
         m_approverIdCardNumberHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApproverIdCardType") && !value["ApproverIdCardType"].IsNull())
+    {
+        if (!value["ApproverIdCardType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowCreateApprover.ApproverIdCardType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_approverIdCardType = string(value["ApproverIdCardType"].GetString());
+        m_approverIdCardTypeHasBeenSet = true;
     }
 
     if (value.HasMember("RecipientId") && !value["RecipientId"].IsNull())
@@ -208,20 +208,20 @@ void FlowCreateApprover::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         value.AddMember(iKey, rapidjson::Value(m_approverMobile.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_approverIdCardTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ApproverIdCardType";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_approverIdCardType.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_approverIdCardNumberHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApproverIdCardNumber";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_approverIdCardNumber.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_approverIdCardTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverIdCardType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_approverIdCardType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_recipientIdHasBeenSet)
@@ -347,22 +347,6 @@ bool FlowCreateApprover::ApproverMobileHasBeenSet() const
     return m_approverMobileHasBeenSet;
 }
 
-string FlowCreateApprover::GetApproverIdCardType() const
-{
-    return m_approverIdCardType;
-}
-
-void FlowCreateApprover::SetApproverIdCardType(const string& _approverIdCardType)
-{
-    m_approverIdCardType = _approverIdCardType;
-    m_approverIdCardTypeHasBeenSet = true;
-}
-
-bool FlowCreateApprover::ApproverIdCardTypeHasBeenSet() const
-{
-    return m_approverIdCardTypeHasBeenSet;
-}
-
 string FlowCreateApprover::GetApproverIdCardNumber() const
 {
     return m_approverIdCardNumber;
@@ -377,6 +361,22 @@ void FlowCreateApprover::SetApproverIdCardNumber(const string& _approverIdCardNu
 bool FlowCreateApprover::ApproverIdCardNumberHasBeenSet() const
 {
     return m_approverIdCardNumberHasBeenSet;
+}
+
+string FlowCreateApprover::GetApproverIdCardType() const
+{
+    return m_approverIdCardType;
+}
+
+void FlowCreateApprover::SetApproverIdCardType(const string& _approverIdCardType)
+{
+    m_approverIdCardType = _approverIdCardType;
+    m_approverIdCardTypeHasBeenSet = true;
+}
+
+bool FlowCreateApprover::ApproverIdCardTypeHasBeenSet() const
+{
+    return m_approverIdCardTypeHasBeenSet;
 }
 
 string FlowCreateApprover::GetRecipientId() const

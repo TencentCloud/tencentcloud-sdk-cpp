@@ -30,7 +30,8 @@ TopicAttributesResponse::TopicAttributesResponse() :
     m_configHasBeenSet(false),
     m_partitionsHasBeenSet(false),
     m_enableAclRuleHasBeenSet(false),
-    m_aclRuleListHasBeenSet(false)
+    m_aclRuleListHasBeenSet(false),
+    m_quotaConfigHasBeenSet(false)
 {
 }
 
@@ -169,6 +170,23 @@ CoreInternalOutcome TopicAttributesResponse::Deserialize(const rapidjson::Value 
         m_aclRuleListHasBeenSet = true;
     }
 
+    if (value.HasMember("QuotaConfig") && !value["QuotaConfig"].IsNull())
+    {
+        if (!value["QuotaConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicAttributesResponse.QuotaConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_quotaConfig.Deserialize(value["QuotaConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_quotaConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -274,6 +292,15 @@ void TopicAttributesResponse::ToJsonObject(rapidjson::Value &value, rapidjson::D
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_quotaConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuotaConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_quotaConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -437,5 +464,21 @@ void TopicAttributesResponse::SetAclRuleList(const vector<AclRule>& _aclRuleList
 bool TopicAttributesResponse::AclRuleListHasBeenSet() const
 {
     return m_aclRuleListHasBeenSet;
+}
+
+InstanceQuotaConfigResp TopicAttributesResponse::GetQuotaConfig() const
+{
+    return m_quotaConfig;
+}
+
+void TopicAttributesResponse::SetQuotaConfig(const InstanceQuotaConfigResp& _quotaConfig)
+{
+    m_quotaConfig = _quotaConfig;
+    m_quotaConfigHasBeenSet = true;
+}
+
+bool TopicAttributesResponse::QuotaConfigHasBeenSet() const
+{
+    return m_quotaConfigHasBeenSet;
 }
 

@@ -131,6 +131,28 @@ namespace TencentCloud
                      */
                     bool SortHasBeenSet() const;
 
+                    /**
+                     * 获取标签 ID 集合，匹配集合指定所有 ID 。
+<li>数组长度限制：10。</li>
+                     * @return TagIds 标签 ID 集合，匹配集合指定所有 ID 。
+<li>数组长度限制：10。</li>
+                     */
+                    std::vector<std::string> GetTagIds() const;
+
+                    /**
+                     * 设置标签 ID 集合，匹配集合指定所有 ID 。
+<li>数组长度限制：10。</li>
+                     * @param TagIds 标签 ID 集合，匹配集合指定所有 ID 。
+<li>数组长度限制：10。</li>
+                     */
+                    void SetTagIds(const std::vector<std::string>& _tagIds);
+
+                    /**
+                     * 判断参数 TagIds 是否已赋值
+                     * @return TagIds 是否已赋值
+                     */
+                    bool TagIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -160,6 +182,13 @@ namespace TencentCloud
                      */
                     SortBy m_sort;
                     bool m_sortHasBeenSet;
+
+                    /**
+                     * 标签 ID 集合，匹配集合指定所有 ID 。
+<li>数组长度限制：10。</li>
+                     */
+                    std::vector<std::string> m_tagIds;
+                    bool m_tagIdsHasBeenSet;
 
                 };
             }
