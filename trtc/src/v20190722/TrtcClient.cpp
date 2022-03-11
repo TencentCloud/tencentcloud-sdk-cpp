@@ -470,49 +470,6 @@ TrtcClient::DescribeRoomInformationOutcomeCallable TrtcClient::DescribeRoomInfor
     return task->get_future();
 }
 
-TrtcClient::DescribeTrtcInteractiveTimeOutcome TrtcClient::DescribeTrtcInteractiveTime(const DescribeTrtcInteractiveTimeRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeTrtcInteractiveTime");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeTrtcInteractiveTimeResponse rsp = DescribeTrtcInteractiveTimeResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeTrtcInteractiveTimeOutcome(rsp);
-        else
-            return DescribeTrtcInteractiveTimeOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeTrtcInteractiveTimeOutcome(outcome.GetError());
-    }
-}
-
-void TrtcClient::DescribeTrtcInteractiveTimeAsync(const DescribeTrtcInteractiveTimeRequest& request, const DescribeTrtcInteractiveTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTrtcInteractiveTime(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TrtcClient::DescribeTrtcInteractiveTimeOutcomeCallable TrtcClient::DescribeTrtcInteractiveTimeCallable(const DescribeTrtcInteractiveTimeRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeTrtcInteractiveTimeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTrtcInteractiveTime(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TrtcClient::DescribeTrtcMcuTranscodeTimeOutcome TrtcClient::DescribeTrtcMcuTranscodeTime(const DescribeTrtcMcuTranscodeTimeRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTrtcMcuTranscodeTime");

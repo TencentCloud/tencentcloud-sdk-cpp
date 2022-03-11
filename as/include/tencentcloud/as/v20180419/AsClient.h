@@ -107,8 +107,6 @@
 #include <tencentcloud/as/v20180419/model/ModifyScalingPolicyResponse.h>
 #include <tencentcloud/as/v20180419/model/ModifyScheduledActionRequest.h>
 #include <tencentcloud/as/v20180419/model/ModifyScheduledActionResponse.h>
-#include <tencentcloud/as/v20180419/model/PreviewPaiDomainNameRequest.h>
-#include <tencentcloud/as/v20180419/model/PreviewPaiDomainNameResponse.h>
 #include <tencentcloud/as/v20180419/model/RemoveInstancesRequest.h>
 #include <tencentcloud/as/v20180419/model/RemoveInstancesResponse.h>
 #include <tencentcloud/as/v20180419/model/ScaleInInstancesRequest.h>
@@ -265,9 +263,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyScheduledActionResponse> ModifyScheduledActionOutcome;
                 typedef std::future<ModifyScheduledActionOutcome> ModifyScheduledActionOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::ModifyScheduledActionRequest&, ModifyScheduledActionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyScheduledActionAsyncHandler;
-                typedef Outcome<Core::Error, Model::PreviewPaiDomainNameResponse> PreviewPaiDomainNameOutcome;
-                typedef std::future<PreviewPaiDomainNameOutcome> PreviewPaiDomainNameOutcomeCallable;
-                typedef std::function<void(const AsClient*, const Model::PreviewPaiDomainNameRequest&, PreviewPaiDomainNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PreviewPaiDomainNameAsyncHandler;
                 typedef Outcome<Core::Error, Model::RemoveInstancesResponse> RemoveInstancesOutcome;
                 typedef std::future<RemoveInstancesOutcome> RemoveInstancesOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::RemoveInstancesRequest&, RemoveInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveInstancesAsyncHandler;
@@ -766,16 +761,6 @@ namespace TencentCloud
                 ModifyScheduledActionOutcome ModifyScheduledAction(const Model::ModifyScheduledActionRequest &request);
                 void ModifyScheduledActionAsync(const Model::ModifyScheduledActionRequest& request, const ModifyScheduledActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyScheduledActionOutcomeCallable ModifyScheduledActionCallable(const Model::ModifyScheduledActionRequest& request);
-
-                /**
-                 *本接口（PreviewPaiDomainName）用于预览PAI实例域名。
-
-                 * @param req PreviewPaiDomainNameRequest
-                 * @return PreviewPaiDomainNameOutcome
-                 */
-                PreviewPaiDomainNameOutcome PreviewPaiDomainName(const Model::PreviewPaiDomainNameRequest &request);
-                void PreviewPaiDomainNameAsync(const Model::PreviewPaiDomainNameRequest& request, const PreviewPaiDomainNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                PreviewPaiDomainNameOutcomeCallable PreviewPaiDomainNameCallable(const Model::PreviewPaiDomainNameRequest& request);
 
                 /**
                  *本接口（RemoveInstances）用于从伸缩组删除 CVM 实例。根据当前的产品逻辑，如果实例由弹性伸缩自动创建，则实例会被销毁；如果实例系创建后加入伸缩组的，则会从伸缩组中移除，保留实例。

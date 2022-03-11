@@ -1846,49 +1846,6 @@ AsClient::ModifyScheduledActionOutcomeCallable AsClient::ModifyScheduledActionCa
     return task->get_future();
 }
 
-AsClient::PreviewPaiDomainNameOutcome AsClient::PreviewPaiDomainName(const PreviewPaiDomainNameRequest &request)
-{
-    auto outcome = MakeRequest(request, "PreviewPaiDomainName");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        PreviewPaiDomainNameResponse rsp = PreviewPaiDomainNameResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return PreviewPaiDomainNameOutcome(rsp);
-        else
-            return PreviewPaiDomainNameOutcome(o.GetError());
-    }
-    else
-    {
-        return PreviewPaiDomainNameOutcome(outcome.GetError());
-    }
-}
-
-void AsClient::PreviewPaiDomainNameAsync(const PreviewPaiDomainNameRequest& request, const PreviewPaiDomainNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->PreviewPaiDomainName(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-AsClient::PreviewPaiDomainNameOutcomeCallable AsClient::PreviewPaiDomainNameCallable(const PreviewPaiDomainNameRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<PreviewPaiDomainNameOutcome()>>(
-        [this, request]()
-        {
-            return this->PreviewPaiDomainName(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 AsClient::RemoveInstancesOutcome AsClient::RemoveInstances(const RemoveInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "RemoveInstances");

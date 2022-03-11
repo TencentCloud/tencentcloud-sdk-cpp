@@ -43,8 +43,6 @@
 #include <tencentcloud/trtc/v20190722/model/DescribeRecordStatisticResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeRoomInformationRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeRoomInformationResponse.h>
-#include <tencentcloud/trtc/v20190722/model/DescribeTrtcInteractiveTimeRequest.h>
-#include <tencentcloud/trtc/v20190722/model/DescribeTrtcInteractiveTimeResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTrtcMcuTranscodeTimeRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTrtcMcuTranscodeTimeResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeUserInformationRequest.h>
@@ -111,9 +109,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRoomInformationResponse> DescribeRoomInformationOutcome;
                 typedef std::future<DescribeRoomInformationOutcome> DescribeRoomInformationOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeRoomInformationRequest&, DescribeRoomInformationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoomInformationAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeTrtcInteractiveTimeResponse> DescribeTrtcInteractiveTimeOutcome;
-                typedef std::future<DescribeTrtcInteractiveTimeOutcome> DescribeTrtcInteractiveTimeOutcomeCallable;
-                typedef std::function<void(const TrtcClient*, const Model::DescribeTrtcInteractiveTimeRequest&, DescribeTrtcInteractiveTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrtcInteractiveTimeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTrtcMcuTranscodeTimeResponse> DescribeTrtcMcuTranscodeTimeOutcome;
                 typedef std::future<DescribeTrtcMcuTranscodeTimeOutcome> DescribeTrtcMcuTranscodeTimeOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeTrtcMcuTranscodeTimeRequest&, DescribeTrtcMcuTranscodeTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrtcMcuTranscodeTimeAsyncHandler;
@@ -246,19 +241,6 @@ namespace TencentCloud
                 DescribeRoomInformationOutcome DescribeRoomInformation(const Model::DescribeRoomInformationRequest &request);
                 void DescribeRoomInformationAsync(const Model::DescribeRoomInformationRequest& request, const DescribeRoomInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRoomInformationOutcomeCallable DescribeRoomInformationCallable(const Model::DescribeRoomInformationRequest& request);
-
-                /**
-                 *查询音视频互动计费时长。
-- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。
-- 单次查询统计区间最多不能超过31天。
-- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。
-- 日结后付费将于次日上午推送账单，建议次日上午9点以后再来查询前一天的用量。
-                 * @param req DescribeTrtcInteractiveTimeRequest
-                 * @return DescribeTrtcInteractiveTimeOutcome
-                 */
-                DescribeTrtcInteractiveTimeOutcome DescribeTrtcInteractiveTime(const Model::DescribeTrtcInteractiveTimeRequest &request);
-                void DescribeTrtcInteractiveTimeAsync(const Model::DescribeTrtcInteractiveTimeRequest& request, const DescribeTrtcInteractiveTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeTrtcInteractiveTimeOutcomeCallable DescribeTrtcInteractiveTimeCallable(const Model::DescribeTrtcInteractiveTimeRequest& request);
 
                 /**
                  *查询旁路转码计费时长。
