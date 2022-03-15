@@ -31,6 +31,8 @@
 #include <tencentcloud/cls/v20201016/model/CreateAlarmNoticeResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateConfigRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateConfigResponse.h>
+#include <tencentcloud/cls/v20201016/model/CreateConfigExtraRequest.h>
+#include <tencentcloud/cls/v20201016/model/CreateConfigExtraResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateConsumerRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateConsumerResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateExportRequest.h>
@@ -51,6 +53,8 @@
 #include <tencentcloud/cls/v20201016/model/DeleteAlarmNoticeResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteConfigRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteConfigResponse.h>
+#include <tencentcloud/cls/v20201016/model/DeleteConfigExtraRequest.h>
+#include <tencentcloud/cls/v20201016/model/DeleteConfigExtraResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteConfigFromMachineGroupRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteConfigFromMachineGroupResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteConsumerRequest.h>
@@ -71,6 +75,8 @@
 #include <tencentcloud/cls/v20201016/model/DescribeAlarmNoticesResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeAlarmsRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeAlarmsResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeConfigExtrasRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeConfigExtrasResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeConfigMachineGroupsRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeConfigMachineGroupsResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeConfigsRequest.h>
@@ -109,6 +115,8 @@
 #include <tencentcloud/cls/v20201016/model/ModifyAlarmNoticeResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyConfigRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyConfigResponse.h>
+#include <tencentcloud/cls/v20201016/model/ModifyConfigExtraRequest.h>
+#include <tencentcloud/cls/v20201016/model/ModifyConfigExtraResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyConsumerRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyConsumerResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyIndexRequest.h>
@@ -155,6 +163,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateConfigResponse> CreateConfigOutcome;
                 typedef std::future<CreateConfigOutcome> CreateConfigOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateConfigRequest&, CreateConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateConfigExtraResponse> CreateConfigExtraOutcome;
+                typedef std::future<CreateConfigExtraOutcome> CreateConfigExtraOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::CreateConfigExtraRequest&, CreateConfigExtraOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConfigExtraAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateConsumerResponse> CreateConsumerOutcome;
                 typedef std::future<CreateConsumerOutcome> CreateConsumerOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateConsumerRequest&, CreateConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConsumerAsyncHandler;
@@ -185,6 +196,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteConfigResponse> DeleteConfigOutcome;
                 typedef std::future<DeleteConfigOutcome> DeleteConfigOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteConfigRequest&, DeleteConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteConfigExtraResponse> DeleteConfigExtraOutcome;
+                typedef std::future<DeleteConfigExtraOutcome> DeleteConfigExtraOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DeleteConfigExtraRequest&, DeleteConfigExtraOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConfigExtraAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteConfigFromMachineGroupResponse> DeleteConfigFromMachineGroupOutcome;
                 typedef std::future<DeleteConfigFromMachineGroupOutcome> DeleteConfigFromMachineGroupOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteConfigFromMachineGroupRequest&, DeleteConfigFromMachineGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConfigFromMachineGroupAsyncHandler;
@@ -215,6 +229,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAlarmsResponse> DescribeAlarmsOutcome;
                 typedef std::future<DescribeAlarmsOutcome> DescribeAlarmsOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeAlarmsRequest&, DescribeAlarmsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConfigExtrasResponse> DescribeConfigExtrasOutcome;
+                typedef std::future<DescribeConfigExtrasOutcome> DescribeConfigExtrasOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeConfigExtrasRequest&, DescribeConfigExtrasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigExtrasAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeConfigMachineGroupsResponse> DescribeConfigMachineGroupsOutcome;
                 typedef std::future<DescribeConfigMachineGroupsOutcome> DescribeConfigMachineGroupsOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeConfigMachineGroupsRequest&, DescribeConfigMachineGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigMachineGroupsAsyncHandler;
@@ -272,6 +289,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyConfigResponse> ModifyConfigOutcome;
                 typedef std::future<ModifyConfigOutcome> ModifyConfigOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyConfigRequest&, ModifyConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyConfigExtraResponse> ModifyConfigExtraOutcome;
+                typedef std::future<ModifyConfigExtraOutcome> ModifyConfigExtraOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::ModifyConfigExtraRequest&, ModifyConfigExtraOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConfigExtraAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyConsumerResponse> ModifyConsumerOutcome;
                 typedef std::future<ModifyConsumerOutcome> ModifyConsumerOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyConsumerRequest&, ModifyConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConsumerAsyncHandler;
@@ -340,6 +360,15 @@ namespace TencentCloud
                 CreateConfigOutcome CreateConfig(const Model::CreateConfigRequest &request);
                 void CreateConfigAsync(const Model::CreateConfigRequest& request, const CreateConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateConfigOutcomeCallable CreateConfigCallable(const Model::CreateConfigRequest& request);
+
+                /**
+                 *本接口用于创建特殊采集配置任务
+                 * @param req CreateConfigExtraRequest
+                 * @return CreateConfigExtraOutcome
+                 */
+                CreateConfigExtraOutcome CreateConfigExtra(const Model::CreateConfigExtraRequest &request);
+                void CreateConfigExtraAsync(const Model::CreateConfigExtraRequest& request, const CreateConfigExtraAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateConfigExtraOutcomeCallable CreateConfigExtraCallable(const Model::CreateConfigExtraRequest& request);
 
                 /**
                  *本接口用于创建投递任务
@@ -432,6 +461,15 @@ namespace TencentCloud
                 DeleteConfigOutcomeCallable DeleteConfigCallable(const Model::DeleteConfigRequest& request);
 
                 /**
+                 *本接口用于删除特殊采集规则配置
+                 * @param req DeleteConfigExtraRequest
+                 * @return DeleteConfigExtraOutcome
+                 */
+                DeleteConfigExtraOutcome DeleteConfigExtra(const Model::DeleteConfigExtraRequest &request);
+                void DeleteConfigExtraAsync(const Model::DeleteConfigExtraRequest& request, const DeleteConfigExtraAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteConfigExtraOutcomeCallable DeleteConfigExtraCallable(const Model::DeleteConfigExtraRequest& request);
+
+                /**
                  *删除应用到机器组的采集配置
                  * @param req DeleteConfigFromMachineGroupRequest
                  * @return DeleteConfigFromMachineGroupOutcome
@@ -520,6 +558,15 @@ namespace TencentCloud
                 DescribeAlarmsOutcome DescribeAlarms(const Model::DescribeAlarmsRequest &request);
                 void DescribeAlarmsAsync(const Model::DescribeAlarmsRequest& request, const DescribeAlarmsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAlarmsOutcomeCallable DescribeAlarmsCallable(const Model::DescribeAlarmsRequest& request);
+
+                /**
+                 *本接口用于获取特殊采集配置
+                 * @param req DescribeConfigExtrasRequest
+                 * @return DescribeConfigExtrasOutcome
+                 */
+                DescribeConfigExtrasOutcome DescribeConfigExtras(const Model::DescribeConfigExtrasRequest &request);
+                void DescribeConfigExtrasAsync(const Model::DescribeConfigExtrasRequest& request, const DescribeConfigExtrasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConfigExtrasOutcomeCallable DescribeConfigExtrasCallable(const Model::DescribeConfigExtrasRequest& request);
 
                 /**
                  *获取采集规则配置所绑定的机器组
@@ -691,6 +738,15 @@ namespace TencentCloud
                 ModifyConfigOutcome ModifyConfig(const Model::ModifyConfigRequest &request);
                 void ModifyConfigAsync(const Model::ModifyConfigRequest& request, const ModifyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyConfigOutcomeCallable ModifyConfigCallable(const Model::ModifyConfigRequest& request);
+
+                /**
+                 *本接口用于修改特殊采集配置任务
+                 * @param req ModifyConfigExtraRequest
+                 * @return ModifyConfigExtraOutcome
+                 */
+                ModifyConfigExtraOutcome ModifyConfigExtra(const Model::ModifyConfigExtraRequest &request);
+                void ModifyConfigExtraAsync(const Model::ModifyConfigExtraRequest& request, const ModifyConfigExtraAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyConfigExtraOutcomeCallable ModifyConfigExtraCallable(const Model::ModifyConfigExtraRequest& request);
 
                 /**
                  *本接口用于修改投递任务

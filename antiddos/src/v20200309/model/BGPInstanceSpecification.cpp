@@ -24,7 +24,8 @@ BGPInstanceSpecification::BGPInstanceSpecification() :
     m_protectBandwidthHasBeenSet(false),
     m_protectCountLimitHasBeenSet(false),
     m_protectIPNumberLimitHasBeenSet(false),
-    m_autoRenewFlagHasBeenSet(false)
+    m_autoRenewFlagHasBeenSet(false),
+    m_unionPackFlagHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome BGPInstanceSpecification::Deserialize(const rapidjson::Value
         m_autoRenewFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("UnionPackFlag") && !value["UnionPackFlag"].IsNull())
+    {
+        if (!value["UnionPackFlag"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BGPInstanceSpecification.UnionPackFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_unionPackFlag = value["UnionPackFlag"].GetUint64();
+        m_unionPackFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void BGPInstanceSpecification::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "AutoRenewFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoRenewFlag, allocator);
+    }
+
+    if (m_unionPackFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnionPackFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_unionPackFlag, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void BGPInstanceSpecification::SetAutoRenewFlag(const uint64_t& _autoRenewFlag)
 bool BGPInstanceSpecification::AutoRenewFlagHasBeenSet() const
 {
     return m_autoRenewFlagHasBeenSet;
+}
+
+uint64_t BGPInstanceSpecification::GetUnionPackFlag() const
+{
+    return m_unionPackFlag;
+}
+
+void BGPInstanceSpecification::SetUnionPackFlag(const uint64_t& _unionPackFlag)
+{
+    m_unionPackFlag = _unionPackFlag;
+    m_unionPackFlagHasBeenSet = true;
+}
+
+bool BGPInstanceSpecification::UnionPackFlagHasBeenSet() const
+{
+    return m_unionPackFlagHasBeenSet;
 }
 

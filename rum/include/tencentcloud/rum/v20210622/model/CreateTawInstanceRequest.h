@@ -187,6 +187,24 @@ namespace TencentCloud
                      */
                     bool PeriodRetainHasBeenSet() const;
 
+                    /**
+                     * 获取实例购买渠道("cdn" 等)
+                     * @return BuyingChannel 实例购买渠道("cdn" 等)
+                     */
+                    std::string GetBuyingChannel() const;
+
+                    /**
+                     * 设置实例购买渠道("cdn" 等)
+                     * @param BuyingChannel 实例购买渠道("cdn" 等)
+                     */
+                    void SetBuyingChannel(const std::string& _buyingChannel);
+
+                    /**
+                     * 判断参数 BuyingChannel 是否已赋值
+                     * @return BuyingChannel 是否已赋值
+                     */
+                    bool BuyingChannelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +254,12 @@ namespace TencentCloud
                      */
                     std::string m_periodRetain;
                     bool m_periodRetainHasBeenSet;
+
+                    /**
+                     * 实例购买渠道("cdn" 等)
+                     */
+                    std::string m_buyingChannel;
+                    bool m_buyingChannelHasBeenSet;
 
                 };
             }

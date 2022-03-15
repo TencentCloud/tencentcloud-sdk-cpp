@@ -513,6 +513,49 @@ SesClient::DeleteEmailTemplateOutcomeCallable SesClient::DeleteEmailTemplateCall
     return task->get_future();
 }
 
+SesClient::DeleteReceiverOutcome SesClient::DeleteReceiver(const DeleteReceiverRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteReceiver");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteReceiverResponse rsp = DeleteReceiverResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteReceiverOutcome(rsp);
+        else
+            return DeleteReceiverOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteReceiverOutcome(outcome.GetError());
+    }
+}
+
+void SesClient::DeleteReceiverAsync(const DeleteReceiverRequest& request, const DeleteReceiverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteReceiver(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SesClient::DeleteReceiverOutcomeCallable SesClient::DeleteReceiverCallable(const DeleteReceiverRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteReceiverOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteReceiver(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SesClient::GetEmailIdentityOutcome SesClient::GetEmailIdentity(const GetEmailIdentityRequest &request)
 {
     auto outcome = MakeRequest(request, "GetEmailIdentity");

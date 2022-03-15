@@ -150,6 +150,24 @@ namespace TencentCloud
                      */
                     bool ServiceCIDRHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启监控。目前内存中权限开启联系产品开通白名单
+                     * @return OpenCloudMonitor 是否开启监控。目前内存中权限开启联系产品开通白名单
+                     */
+                    bool GetOpenCloudMonitor() const;
+
+                    /**
+                     * 设置是否开启监控。目前内存中权限开启联系产品开通白名单
+                     * @param OpenCloudMonitor 是否开启监控。目前内存中权限开启联系产品开通白名单
+                     */
+                    void SetOpenCloudMonitor(const bool& _openCloudMonitor);
+
+                    /**
+                     * 判断参数 OpenCloudMonitor 是否已赋值
+                     * @return OpenCloudMonitor 是否已赋值
+                     */
+                    bool OpenCloudMonitorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +205,12 @@ namespace TencentCloud
                      */
                     std::string m_serviceCIDR;
                     bool m_serviceCIDRHasBeenSet;
+
+                    /**
+                     * 是否开启监控。目前内存中权限开启联系产品开通白名单
+                     */
+                    bool m_openCloudMonitor;
+                    bool m_openCloudMonitorHasBeenSet;
 
                 };
             }

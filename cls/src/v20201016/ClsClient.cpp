@@ -212,6 +212,49 @@ ClsClient::CreateConfigOutcomeCallable ClsClient::CreateConfigCallable(const Cre
     return task->get_future();
 }
 
+ClsClient::CreateConfigExtraOutcome ClsClient::CreateConfigExtra(const CreateConfigExtraRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateConfigExtra");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateConfigExtraResponse rsp = CreateConfigExtraResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateConfigExtraOutcome(rsp);
+        else
+            return CreateConfigExtraOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateConfigExtraOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CreateConfigExtraAsync(const CreateConfigExtraRequest& request, const CreateConfigExtraAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateConfigExtra(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::CreateConfigExtraOutcomeCallable ClsClient::CreateConfigExtraCallable(const CreateConfigExtraRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateConfigExtraOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateConfigExtra(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::CreateConsumerOutcome ClsClient::CreateConsumer(const CreateConsumerRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateConsumer");
@@ -642,6 +685,49 @@ ClsClient::DeleteConfigOutcomeCallable ClsClient::DeleteConfigCallable(const Del
     return task->get_future();
 }
 
+ClsClient::DeleteConfigExtraOutcome ClsClient::DeleteConfigExtra(const DeleteConfigExtraRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteConfigExtra");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteConfigExtraResponse rsp = DeleteConfigExtraResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteConfigExtraOutcome(rsp);
+        else
+            return DeleteConfigExtraOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteConfigExtraOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteConfigExtraAsync(const DeleteConfigExtraRequest& request, const DeleteConfigExtraAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteConfigExtra(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DeleteConfigExtraOutcomeCallable ClsClient::DeleteConfigExtraCallable(const DeleteConfigExtraRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteConfigExtraOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteConfigExtra(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::DeleteConfigFromMachineGroupOutcome ClsClient::DeleteConfigFromMachineGroup(const DeleteConfigFromMachineGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteConfigFromMachineGroup");
@@ -1065,6 +1151,49 @@ ClsClient::DescribeAlarmsOutcomeCallable ClsClient::DescribeAlarmsCallable(const
         [this, request]()
         {
             return this->DescribeAlarms(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::DescribeConfigExtrasOutcome ClsClient::DescribeConfigExtras(const DescribeConfigExtrasRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConfigExtras");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConfigExtrasResponse rsp = DescribeConfigExtrasResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConfigExtrasOutcome(rsp);
+        else
+            return DescribeConfigExtrasOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConfigExtrasOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeConfigExtrasAsync(const DescribeConfigExtrasRequest& request, const DescribeConfigExtrasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConfigExtras(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DescribeConfigExtrasOutcomeCallable ClsClient::DescribeConfigExtrasCallable(const DescribeConfigExtrasRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConfigExtrasOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConfigExtras(request);
         }
     );
 
@@ -1882,6 +2011,49 @@ ClsClient::ModifyConfigOutcomeCallable ClsClient::ModifyConfigCallable(const Mod
         [this, request]()
         {
             return this->ModifyConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::ModifyConfigExtraOutcome ClsClient::ModifyConfigExtra(const ModifyConfigExtraRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyConfigExtra");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyConfigExtraResponse rsp = ModifyConfigExtraResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyConfigExtraOutcome(rsp);
+        else
+            return ModifyConfigExtraOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyConfigExtraOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifyConfigExtraAsync(const ModifyConfigExtraRequest& request, const ModifyConfigExtraAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyConfigExtra(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::ModifyConfigExtraOutcomeCallable ClsClient::ModifyConfigExtraCallable(const ModifyConfigExtraRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyConfigExtraOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyConfigExtra(request);
         }
     );
 

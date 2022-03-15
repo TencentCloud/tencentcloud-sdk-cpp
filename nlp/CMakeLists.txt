@@ -39,6 +39,7 @@ set(nlp_public_header_model
   include/tencentcloud/nlp/v20190408/model/ClassificationResult.h
   include/tencentcloud/nlp/v20190408/model/DescribeEntityRequest.h
   include/tencentcloud/nlp/v20190408/model/Keyword.h
+  include/tencentcloud/nlp/v20190408/model/TextSimilarityProRequest.h
   include/tencentcloud/nlp/v20190408/model/UpdateDictResponse.h
   include/tencentcloud/nlp/v20190408/model/DescribeDictsRequest.h
   include/tencentcloud/nlp/v20190408/model/DescribeRelationResponse.h
@@ -66,6 +67,7 @@ set(nlp_public_header_model
   include/tencentcloud/nlp/v20190408/model/DeleteWordItemsRequest.h
   include/tencentcloud/nlp/v20190408/model/DescribeDictResponse.h
   include/tencentcloud/nlp/v20190408/model/TextCorrectionResponse.h
+  include/tencentcloud/nlp/v20190408/model/TextSimilarityProResponse.h
   include/tencentcloud/nlp/v20190408/model/DescribeDictsResponse.h
   include/tencentcloud/nlp/v20190408/model/DependencyParsingRequest.h
   include/tencentcloud/nlp/v20190408/model/DeleteDictRequest.h
@@ -107,6 +109,7 @@ set(nlp_src
   src/v20190408/model/ClassificationResult.cpp
   src/v20190408/model/DescribeEntityRequest.cpp
   src/v20190408/model/Keyword.cpp
+  src/v20190408/model/TextSimilarityProRequest.cpp
   src/v20190408/model/UpdateDictResponse.cpp
   src/v20190408/model/DescribeDictsRequest.cpp
   src/v20190408/model/DescribeRelationResponse.cpp
@@ -134,6 +137,7 @@ set(nlp_src
   src/v20190408/model/DeleteWordItemsRequest.cpp
   src/v20190408/model/DescribeDictResponse.cpp
   src/v20190408/model/TextCorrectionResponse.cpp
+  src/v20190408/model/TextSimilarityProResponse.cpp
   src/v20190408/model/DescribeDictsResponse.cpp
   src/v20190408/model/DependencyParsingRequest.cpp
   src/v20190408/model/DeleteDictRequest.cpp

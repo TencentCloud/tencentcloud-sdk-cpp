@@ -31,18 +31,24 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DescribeShipperTasksResponse.h
   include/tencentcloud/cls/v20201016/model/CreateMachineGroupResponse.h
   include/tencentcloud/cls/v20201016/model/DescribeConfigMachineGroupsRequest.h
+  include/tencentcloud/cls/v20201016/model/ModifyConfigExtraResponse.h
   include/tencentcloud/cls/v20201016/model/CreateLogsetRequest.h
+  include/tencentcloud/cls/v20201016/model/DescribeShippersRequest.h
   include/tencentcloud/cls/v20201016/model/LogItem.h
   include/tencentcloud/cls/v20201016/model/SearchLogResponse.h
   include/tencentcloud/cls/v20201016/model/DeleteTopicRequest.h
   include/tencentcloud/cls/v20201016/model/DescribePartitionsRequest.h
+  include/tencentcloud/cls/v20201016/model/ContainerStdoutInfo.h
   include/tencentcloud/cls/v20201016/model/ModifyAlarmResponse.h
   include/tencentcloud/cls/v20201016/model/DescribeShipperTasksRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeAlarmsRequest.h
   include/tencentcloud/cls/v20201016/model/MergePartitionRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeShippersResponse.h
+  include/tencentcloud/cls/v20201016/model/CreateConfigExtraResponse.h
   include/tencentcloud/cls/v20201016/model/ModifyShipperResponse.h
   include/tencentcloud/cls/v20201016/model/RetryShipperTaskRequest.h
+  include/tencentcloud/cls/v20201016/model/ContainerWorkLoadInfo.h
+  include/tencentcloud/cls/v20201016/model/DescribeConfigExtrasResponse.h
   include/tencentcloud/cls/v20201016/model/CallBackInfo.h
   include/tencentcloud/cls/v20201016/model/AlarmTargetInfo.h
   include/tencentcloud/cls/v20201016/model/DescribeIndexRequest.h
@@ -50,11 +56,11 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/CreateLogsetResponse.h
   include/tencentcloud/cls/v20201016/model/DeleteMachineGroupResponse.h
   include/tencentcloud/cls/v20201016/model/Tag.h
-  include/tencentcloud/cls/v20201016/model/DescribeMachineGroupsRequest.h
+  include/tencentcloud/cls/v20201016/model/DescribeExportsRequest.h
   include/tencentcloud/cls/v20201016/model/ExtractRuleInfo.h
   include/tencentcloud/cls/v20201016/model/TopicInfo.h
   include/tencentcloud/cls/v20201016/model/DescribeConsumerRequest.h
-  include/tencentcloud/cls/v20201016/model/ShipperTaskInfo.h
+  include/tencentcloud/cls/v20201016/model/DeleteConfigExtraResponse.h
   include/tencentcloud/cls/v20201016/model/ModifyConsumerRequest.h
   include/tencentcloud/cls/v20201016/model/CreateIndexResponse.h
   include/tencentcloud/cls/v20201016/model/DeleteConfigFromMachineGroupResponse.h
@@ -73,11 +79,13 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/CreateAlarmRequest.h
   include/tencentcloud/cls/v20201016/model/DeleteExportResponse.h
   include/tencentcloud/cls/v20201016/model/PartitionInfo.h
-  include/tencentcloud/cls/v20201016/model/DescribeShippersRequest.h
+  include/tencentcloud/cls/v20201016/model/CreateConfigExtraRequest.h
   include/tencentcloud/cls/v20201016/model/ExcludePathInfo.h
   include/tencentcloud/cls/v20201016/model/FilterRuleInfo.h
+  include/tencentcloud/cls/v20201016/model/ConfigExtraInfo.h
   include/tencentcloud/cls/v20201016/model/RetryShipperTaskResponse.h
   include/tencentcloud/cls/v20201016/model/SplitPartitionRequest.h
+  include/tencentcloud/cls/v20201016/model/DescribeMachineGroupConfigsResponse.h
   include/tencentcloud/cls/v20201016/model/MachineGroupInfo.h
   include/tencentcloud/cls/v20201016/model/RuleTagInfo.h
   include/tencentcloud/cls/v20201016/model/CreateIndexRequest.h
@@ -85,7 +93,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DescribeTopicsRequest.h
   include/tencentcloud/cls/v20201016/model/GetAlarmLogResponse.h
   include/tencentcloud/cls/v20201016/model/CreateTopicRequest.h
-  include/tencentcloud/cls/v20201016/model/DescribeExportsRequest.h
+  include/tencentcloud/cls/v20201016/model/DescribeMachineGroupsRequest.h
   include/tencentcloud/cls/v20201016/model/AlarmTarget.h
   include/tencentcloud/cls/v20201016/model/DeleteConfigResponse.h
   include/tencentcloud/cls/v20201016/model/ModifyIndexResponse.h
@@ -97,9 +105,11 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DescribeConfigsRequest.h
   include/tencentcloud/cls/v20201016/model/DeleteConfigRequest.h
   include/tencentcloud/cls/v20201016/model/AnalysisDimensional.h
+  include/tencentcloud/cls/v20201016/model/ShipperTaskInfo.h
   include/tencentcloud/cls/v20201016/model/LogsetInfo.h
   include/tencentcloud/cls/v20201016/model/CreateExportRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeAlarmNoticesResponse.h
+  include/tencentcloud/cls/v20201016/model/DeleteConfigExtraRequest.h
   include/tencentcloud/cls/v20201016/model/ModifyConfigRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeLogsetsResponse.h
   include/tencentcloud/cls/v20201016/model/JsonInfo.h
@@ -143,7 +153,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DescribeAlarmNoticesRequest.h
   include/tencentcloud/cls/v20201016/model/NoticeReceiver.h
   include/tencentcloud/cls/v20201016/model/Ckafka.h
-  include/tencentcloud/cls/v20201016/model/CreateExportResponse.h
+  include/tencentcloud/cls/v20201016/model/DescribeMachinesRequest.h
   include/tencentcloud/cls/v20201016/model/DeleteAlarmNoticeRequest.h
   include/tencentcloud/cls/v20201016/model/DeleteLogsetRequest.h
   include/tencentcloud/cls/v20201016/model/MachineInfo.h
@@ -153,18 +163,21 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/CreateMachineGroupRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeExportsResponse.h
   include/tencentcloud/cls/v20201016/model/ApplyConfigToMachineGroupRequest.h
-  include/tencentcloud/cls/v20201016/model/DescribeMachineGroupConfigsResponse.h
+  include/tencentcloud/cls/v20201016/model/ContainerFileInfo.h
   include/tencentcloud/cls/v20201016/model/CsvInfo.h
+  include/tencentcloud/cls/v20201016/model/DescribeConfigExtrasRequest.h
   include/tencentcloud/cls/v20201016/model/CreateAlarmNoticeRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeIndexResponse.h
   include/tencentcloud/cls/v20201016/model/DescribeMachineGroupConfigsRequest.h
+  include/tencentcloud/cls/v20201016/model/ModifyConfigExtraRequest.h
   include/tencentcloud/cls/v20201016/model/ModifyLogsetRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeMachineGroupsResponse.h
   include/tencentcloud/cls/v20201016/model/DescribeLogsetsRequest.h
   include/tencentcloud/cls/v20201016/model/DeleteTopicResponse.h
   include/tencentcloud/cls/v20201016/model/Filter.h
   include/tencentcloud/cls/v20201016/model/ConsumerContent.h
-  include/tencentcloud/cls/v20201016/model/DescribeMachinesRequest.h
+  include/tencentcloud/cls/v20201016/model/CreateExportResponse.h
+  include/tencentcloud/cls/v20201016/model/HostFileInfo.h
   include/tencentcloud/cls/v20201016/model/KeyRegexInfo.h
   include/tencentcloud/cls/v20201016/model/MergePartitionResponse.h
   )
@@ -183,18 +196,24 @@ set(cls_src
   src/v20201016/model/DescribeShipperTasksResponse.cpp
   src/v20201016/model/CreateMachineGroupResponse.cpp
   src/v20201016/model/DescribeConfigMachineGroupsRequest.cpp
+  src/v20201016/model/ModifyConfigExtraResponse.cpp
   src/v20201016/model/CreateLogsetRequest.cpp
+  src/v20201016/model/DescribeShippersRequest.cpp
   src/v20201016/model/LogItem.cpp
   src/v20201016/model/SearchLogResponse.cpp
   src/v20201016/model/DeleteTopicRequest.cpp
   src/v20201016/model/DescribePartitionsRequest.cpp
+  src/v20201016/model/ContainerStdoutInfo.cpp
   src/v20201016/model/ModifyAlarmResponse.cpp
   src/v20201016/model/DescribeShipperTasksRequest.cpp
   src/v20201016/model/DescribeAlarmsRequest.cpp
   src/v20201016/model/MergePartitionRequest.cpp
   src/v20201016/model/DescribeShippersResponse.cpp
+  src/v20201016/model/CreateConfigExtraResponse.cpp
   src/v20201016/model/ModifyShipperResponse.cpp
   src/v20201016/model/RetryShipperTaskRequest.cpp
+  src/v20201016/model/ContainerWorkLoadInfo.cpp
+  src/v20201016/model/DescribeConfigExtrasResponse.cpp
   src/v20201016/model/CallBackInfo.cpp
   src/v20201016/model/AlarmTargetInfo.cpp
   src/v20201016/model/DescribeIndexRequest.cpp
@@ -202,11 +221,11 @@ set(cls_src
   src/v20201016/model/CreateLogsetResponse.cpp
   src/v20201016/model/DeleteMachineGroupResponse.cpp
   src/v20201016/model/Tag.cpp
-  src/v20201016/model/DescribeMachineGroupsRequest.cpp
+  src/v20201016/model/DescribeExportsRequest.cpp
   src/v20201016/model/ExtractRuleInfo.cpp
   src/v20201016/model/TopicInfo.cpp
   src/v20201016/model/DescribeConsumerRequest.cpp
-  src/v20201016/model/ShipperTaskInfo.cpp
+  src/v20201016/model/DeleteConfigExtraResponse.cpp
   src/v20201016/model/ModifyConsumerRequest.cpp
   src/v20201016/model/CreateIndexResponse.cpp
   src/v20201016/model/DeleteConfigFromMachineGroupResponse.cpp
@@ -225,11 +244,13 @@ set(cls_src
   src/v20201016/model/CreateAlarmRequest.cpp
   src/v20201016/model/DeleteExportResponse.cpp
   src/v20201016/model/PartitionInfo.cpp
-  src/v20201016/model/DescribeShippersRequest.cpp
+  src/v20201016/model/CreateConfigExtraRequest.cpp
   src/v20201016/model/ExcludePathInfo.cpp
   src/v20201016/model/FilterRuleInfo.cpp
+  src/v20201016/model/ConfigExtraInfo.cpp
   src/v20201016/model/RetryShipperTaskResponse.cpp
   src/v20201016/model/SplitPartitionRequest.cpp
+  src/v20201016/model/DescribeMachineGroupConfigsResponse.cpp
   src/v20201016/model/MachineGroupInfo.cpp
   src/v20201016/model/RuleTagInfo.cpp
   src/v20201016/model/CreateIndexRequest.cpp
@@ -237,7 +258,7 @@ set(cls_src
   src/v20201016/model/DescribeTopicsRequest.cpp
   src/v20201016/model/GetAlarmLogResponse.cpp
   src/v20201016/model/CreateTopicRequest.cpp
-  src/v20201016/model/DescribeExportsRequest.cpp
+  src/v20201016/model/DescribeMachineGroupsRequest.cpp
   src/v20201016/model/AlarmTarget.cpp
   src/v20201016/model/DeleteConfigResponse.cpp
   src/v20201016/model/ModifyIndexResponse.cpp
@@ -249,9 +270,11 @@ set(cls_src
   src/v20201016/model/DescribeConfigsRequest.cpp
   src/v20201016/model/DeleteConfigRequest.cpp
   src/v20201016/model/AnalysisDimensional.cpp
+  src/v20201016/model/ShipperTaskInfo.cpp
   src/v20201016/model/LogsetInfo.cpp
   src/v20201016/model/CreateExportRequest.cpp
   src/v20201016/model/DescribeAlarmNoticesResponse.cpp
+  src/v20201016/model/DeleteConfigExtraRequest.cpp
   src/v20201016/model/ModifyConfigRequest.cpp
   src/v20201016/model/DescribeLogsetsResponse.cpp
   src/v20201016/model/JsonInfo.cpp
@@ -295,7 +318,7 @@ set(cls_src
   src/v20201016/model/DescribeAlarmNoticesRequest.cpp
   src/v20201016/model/NoticeReceiver.cpp
   src/v20201016/model/Ckafka.cpp
-  src/v20201016/model/CreateExportResponse.cpp
+  src/v20201016/model/DescribeMachinesRequest.cpp
   src/v20201016/model/DeleteAlarmNoticeRequest.cpp
   src/v20201016/model/DeleteLogsetRequest.cpp
   src/v20201016/model/MachineInfo.cpp
@@ -305,18 +328,21 @@ set(cls_src
   src/v20201016/model/CreateMachineGroupRequest.cpp
   src/v20201016/model/DescribeExportsResponse.cpp
   src/v20201016/model/ApplyConfigToMachineGroupRequest.cpp
-  src/v20201016/model/DescribeMachineGroupConfigsResponse.cpp
+  src/v20201016/model/ContainerFileInfo.cpp
   src/v20201016/model/CsvInfo.cpp
+  src/v20201016/model/DescribeConfigExtrasRequest.cpp
   src/v20201016/model/CreateAlarmNoticeRequest.cpp
   src/v20201016/model/DescribeIndexResponse.cpp
   src/v20201016/model/DescribeMachineGroupConfigsRequest.cpp
+  src/v20201016/model/ModifyConfigExtraRequest.cpp
   src/v20201016/model/ModifyLogsetRequest.cpp
   src/v20201016/model/DescribeMachineGroupsResponse.cpp
   src/v20201016/model/DescribeLogsetsRequest.cpp
   src/v20201016/model/DeleteTopicResponse.cpp
   src/v20201016/model/Filter.cpp
   src/v20201016/model/ConsumerContent.cpp
-  src/v20201016/model/DescribeMachinesRequest.cpp
+  src/v20201016/model/CreateExportResponse.cpp
+  src/v20201016/model/HostFileInfo.cpp
   src/v20201016/model/KeyRegexInfo.cpp
   src/v20201016/model/MergePartitionResponse.cpp
   )

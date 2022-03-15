@@ -30,7 +30,8 @@ CreateTawInstanceRequest::CreateTawInstanceRequest() :
     m_tagsHasBeenSet(false),
     m_instanceDescHasBeenSet(false),
     m_countNumHasBeenSet(false),
-    m_periodRetainHasBeenSet(false)
+    m_periodRetainHasBeenSet(false),
+    m_buyingChannelHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,14 @@ string CreateTawInstanceRequest::ToJsonString() const
         string key = "PeriodRetain";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_periodRetain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_buyingChannelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BuyingChannel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_buyingChannel.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -246,6 +255,22 @@ void CreateTawInstanceRequest::SetPeriodRetain(const string& _periodRetain)
 bool CreateTawInstanceRequest::PeriodRetainHasBeenSet() const
 {
     return m_periodRetainHasBeenSet;
+}
+
+string CreateTawInstanceRequest::GetBuyingChannel() const
+{
+    return m_buyingChannel;
+}
+
+void CreateTawInstanceRequest::SetBuyingChannel(const string& _buyingChannel)
+{
+    m_buyingChannel = _buyingChannel;
+    m_buyingChannelHasBeenSet = true;
+}
+
+bool CreateTawInstanceRequest::BuyingChannelHasBeenSet() const
+{
+    return m_buyingChannelHasBeenSet;
 }
 
 

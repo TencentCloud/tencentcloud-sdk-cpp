@@ -70,7 +70,9 @@ namespace TencentCloud
 
                     /**
                      * 获取查询对账文件下载响应对象。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 查询对账文件下载响应对象。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     QueryOpenBankDownLoadUrlResult GetResult() const;
 
@@ -96,6 +98,7 @@ namespace TencentCloud
 
                     /**
                      * 查询对账文件下载响应对象。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     QueryOpenBankDownLoadUrlResult m_result;
                     bool m_resultHasBeenSet;

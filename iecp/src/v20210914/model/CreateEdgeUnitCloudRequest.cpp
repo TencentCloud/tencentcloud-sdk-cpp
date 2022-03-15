@@ -28,7 +28,8 @@ CreateEdgeUnitCloudRequest::CreateEdgeUnitCloudRequest() :
     m_vpcIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_podCIDRHasBeenSet(false),
-    m_serviceCIDRHasBeenSet(false)
+    m_serviceCIDRHasBeenSet(false),
+    m_openCloudMonitorHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string CreateEdgeUnitCloudRequest::ToJsonString() const
         string key = "ServiceCIDR";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_serviceCIDR.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_openCloudMonitorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpenCloudMonitor";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_openCloudMonitor, allocator);
     }
 
 
@@ -189,6 +198,22 @@ void CreateEdgeUnitCloudRequest::SetServiceCIDR(const string& _serviceCIDR)
 bool CreateEdgeUnitCloudRequest::ServiceCIDRHasBeenSet() const
 {
     return m_serviceCIDRHasBeenSet;
+}
+
+bool CreateEdgeUnitCloudRequest::GetOpenCloudMonitor() const
+{
+    return m_openCloudMonitor;
+}
+
+void CreateEdgeUnitCloudRequest::SetOpenCloudMonitor(const bool& _openCloudMonitor)
+{
+    m_openCloudMonitor = _openCloudMonitor;
+    m_openCloudMonitorHasBeenSet = true;
+}
+
+bool CreateEdgeUnitCloudRequest::OpenCloudMonitorHasBeenSet() const
+{
+    return m_openCloudMonitorHasBeenSet;
 }
 
 

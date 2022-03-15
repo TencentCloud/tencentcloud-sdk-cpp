@@ -90,6 +90,28 @@ namespace TencentCloud
                      */
                     bool MetaFieldsHasBeenSet() const;
 
+                    /**
+                     * 获取当EnableTag为true时，必须填写TagJsonNotTiled字段，TagJsonNotTiled用于标识tag信息是否json平铺，TagJsonNotTiled为true时不平铺，false时平铺
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagJsonNotTiled 当EnableTag为true时，必须填写TagJsonNotTiled字段，TagJsonNotTiled用于标识tag信息是否json平铺，TagJsonNotTiled为true时不平铺，false时平铺
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetTagJsonNotTiled() const;
+
+                    /**
+                     * 设置当EnableTag为true时，必须填写TagJsonNotTiled字段，TagJsonNotTiled用于标识tag信息是否json平铺，TagJsonNotTiled为true时不平铺，false时平铺
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TagJsonNotTiled 当EnableTag为true时，必须填写TagJsonNotTiled字段，TagJsonNotTiled用于标识tag信息是否json平铺，TagJsonNotTiled为true时不平铺，false时平铺
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTagJsonNotTiled(const bool& _tagJsonNotTiled);
+
+                    /**
+                     * 判断参数 TagJsonNotTiled 是否已赋值
+                     * @return TagJsonNotTiled 是否已赋值
+                     */
+                    bool TagJsonNotTiledHasBeenSet() const;
+
                 private:
 
                     /**
@@ -105,6 +127,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_metaFields;
                     bool m_metaFieldsHasBeenSet;
+
+                    /**
+                     * 当EnableTag为true时，必须填写TagJsonNotTiled字段，TagJsonNotTiled用于标识tag信息是否json平铺，TagJsonNotTiled为true时不平铺，false时平铺
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_tagJsonNotTiled;
+                    bool m_tagJsonNotTiledHasBeenSet;
 
                 };
             }

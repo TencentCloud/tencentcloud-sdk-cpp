@@ -45,6 +45,8 @@
 #include <tencentcloud/ses/v20201002/model/DeleteEmailIdentityResponse.h>
 #include <tencentcloud/ses/v20201002/model/DeleteEmailTemplateRequest.h>
 #include <tencentcloud/ses/v20201002/model/DeleteEmailTemplateResponse.h>
+#include <tencentcloud/ses/v20201002/model/DeleteReceiverRequest.h>
+#include <tencentcloud/ses/v20201002/model/DeleteReceiverResponse.h>
 #include <tencentcloud/ses/v20201002/model/GetEmailIdentityRequest.h>
 #include <tencentcloud/ses/v20201002/model/GetEmailIdentityResponse.h>
 #include <tencentcloud/ses/v20201002/model/GetEmailTemplateRequest.h>
@@ -118,6 +120,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteEmailTemplateResponse> DeleteEmailTemplateOutcome;
                 typedef std::future<DeleteEmailTemplateOutcome> DeleteEmailTemplateOutcomeCallable;
                 typedef std::function<void(const SesClient*, const Model::DeleteEmailTemplateRequest&, DeleteEmailTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEmailTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteReceiverResponse> DeleteReceiverOutcome;
+                typedef std::future<DeleteReceiverOutcome> DeleteReceiverOutcomeCallable;
+                typedef std::function<void(const SesClient*, const Model::DeleteReceiverRequest&, DeleteReceiverOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteReceiverAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetEmailIdentityResponse> GetEmailIdentityOutcome;
                 typedef std::future<GetEmailIdentityOutcome> GetEmailIdentityOutcomeCallable;
                 typedef std::function<void(const SesClient*, const Model::GetEmailIdentityRequest&, GetEmailIdentityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetEmailIdentityAsyncHandler;
@@ -259,6 +264,15 @@ namespace TencentCloud
                 DeleteEmailTemplateOutcome DeleteEmailTemplate(const Model::DeleteEmailTemplateRequest &request);
                 void DeleteEmailTemplateAsync(const Model::DeleteEmailTemplateRequest& request, const DeleteEmailTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteEmailTemplateOutcomeCallable DeleteEmailTemplateCallable(const Model::DeleteEmailTemplateRequest& request);
+
+                /**
+                 *根据收件id删除收件人列表,同时删除列表中的所有收件邮箱
+                 * @param req DeleteReceiverRequest
+                 * @return DeleteReceiverOutcome
+                 */
+                DeleteReceiverOutcome DeleteReceiver(const Model::DeleteReceiverRequest &request);
+                void DeleteReceiverAsync(const Model::DeleteReceiverRequest& request, const DeleteReceiverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteReceiverOutcomeCallable DeleteReceiverCallable(const Model::DeleteReceiverRequest& request);
 
                 /**
                  *获取某个发信域名的配置详情

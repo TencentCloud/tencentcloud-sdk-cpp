@@ -24,7 +24,7 @@ set(ses_public_header_model
   include/tencentcloud/ses/v20201002/model/ListSendTasksResponse.h
   include/tencentcloud/ses/v20201002/model/CreateReceiverResponse.h
   include/tencentcloud/ses/v20201002/model/CreateEmailTemplateRequest.h
-  include/tencentcloud/ses/v20201002/model/TemplatesMetadata.h
+  include/tencentcloud/ses/v20201002/model/ListEmailAddressResponse.h
   include/tencentcloud/ses/v20201002/model/ListEmailAddressRequest.h
   include/tencentcloud/ses/v20201002/model/ListReceiversRequest.h
   include/tencentcloud/ses/v20201002/model/GetEmailIdentityResponse.h
@@ -44,6 +44,7 @@ set(ses_public_header_model
   include/tencentcloud/ses/v20201002/model/GetStatisticsReportRequest.h
   include/tencentcloud/ses/v20201002/model/CreateReceiverRequest.h
   include/tencentcloud/ses/v20201002/model/SendTaskData.h
+  include/tencentcloud/ses/v20201002/model/TemplatesMetadata.h
   include/tencentcloud/ses/v20201002/model/DeleteEmailTemplateResponse.h
   include/tencentcloud/ses/v20201002/model/Volume.h
   include/tencentcloud/ses/v20201002/model/CreateEmailIdentityRequest.h
@@ -62,8 +63,9 @@ set(ses_public_header_model
   include/tencentcloud/ses/v20201002/model/ListBlackEmailAddressResponse.h
   include/tencentcloud/ses/v20201002/model/GetSendEmailStatusRequest.h
   include/tencentcloud/ses/v20201002/model/Simple.h
+  include/tencentcloud/ses/v20201002/model/DeleteReceiverRequest.h
   include/tencentcloud/ses/v20201002/model/ListEmailIdentitiesResponse.h
-  include/tencentcloud/ses/v20201002/model/ListEmailAddressResponse.h
+  include/tencentcloud/ses/v20201002/model/DeleteReceiverResponse.h
   include/tencentcloud/ses/v20201002/model/TemplateContent.h
   include/tencentcloud/ses/v20201002/model/GetStatisticsReportResponse.h
   include/tencentcloud/ses/v20201002/model/DeleteEmailAddressRequest.h
@@ -92,7 +94,7 @@ set(ses_src
   src/v20201002/model/ListSendTasksResponse.cpp
   src/v20201002/model/CreateReceiverResponse.cpp
   src/v20201002/model/CreateEmailTemplateRequest.cpp
-  src/v20201002/model/TemplatesMetadata.cpp
+  src/v20201002/model/ListEmailAddressResponse.cpp
   src/v20201002/model/ListEmailAddressRequest.cpp
   src/v20201002/model/ListReceiversRequest.cpp
   src/v20201002/model/GetEmailIdentityResponse.cpp
@@ -112,6 +114,7 @@ set(ses_src
   src/v20201002/model/GetStatisticsReportRequest.cpp
   src/v20201002/model/CreateReceiverRequest.cpp
   src/v20201002/model/SendTaskData.cpp
+  src/v20201002/model/TemplatesMetadata.cpp
   src/v20201002/model/DeleteEmailTemplateResponse.cpp
   src/v20201002/model/Volume.cpp
   src/v20201002/model/CreateEmailIdentityRequest.cpp
@@ -130,8 +133,9 @@ set(ses_src
   src/v20201002/model/ListBlackEmailAddressResponse.cpp
   src/v20201002/model/GetSendEmailStatusRequest.cpp
   src/v20201002/model/Simple.cpp
+  src/v20201002/model/DeleteReceiverRequest.cpp
   src/v20201002/model/ListEmailIdentitiesResponse.cpp
-  src/v20201002/model/ListEmailAddressResponse.cpp
+  src/v20201002/model/DeleteReceiverResponse.cpp
   src/v20201002/model/TemplateContent.cpp
   src/v20201002/model/GetStatisticsReportResponse.cpp
   src/v20201002/model/DeleteEmailAddressRequest.cpp

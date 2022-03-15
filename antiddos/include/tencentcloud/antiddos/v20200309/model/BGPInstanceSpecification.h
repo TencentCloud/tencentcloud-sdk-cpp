@@ -130,6 +130,28 @@ namespace TencentCloud
                      */
                     bool AutoRenewFlagHasBeenSet() const;
 
+                    /**
+                     * 获取联合产品标记，0代表普通高防包，1代表联合高防包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UnionPackFlag 联合产品标记，0代表普通高防包，1代表联合高防包
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetUnionPackFlag() const;
+
+                    /**
+                     * 设置联合产品标记，0代表普通高防包，1代表联合高防包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UnionPackFlag 联合产品标记，0代表普通高防包，1代表联合高防包
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUnionPackFlag(const uint64_t& _unionPackFlag);
+
+                    /**
+                     * 判断参数 UnionPackFlag 是否已赋值
+                     * @return UnionPackFlag 是否已赋值
+                     */
+                    bool UnionPackFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -158,6 +180,13 @@ namespace TencentCloud
                      */
                     uint64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
+
+                    /**
+                     * 联合产品标记，0代表普通高防包，1代表联合高防包
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_unionPackFlag;
+                    bool m_unionPackFlagHasBeenSet;
 
                 };
             }

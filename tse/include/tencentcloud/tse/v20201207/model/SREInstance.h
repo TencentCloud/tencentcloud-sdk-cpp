@@ -524,6 +524,28 @@ namespace TencentCloud
                      */
                     bool EnableConsoleIntranetHasBeenSet() const;
 
+                    /**
+                     * 获取引擎实例是否展示参数配置页面
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConfigInfoVisible 引擎实例是否展示参数配置页面
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetConfigInfoVisible() const;
+
+                    /**
+                     * 设置引擎实例是否展示参数配置页面
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ConfigInfoVisible 引擎实例是否展示参数配置页面
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetConfigInfoVisible(const bool& _configInfoVisible);
+
+                    /**
+                     * 判断参数 ConfigInfoVisible 是否已赋值
+                     * @return ConfigInfoVisible 是否已赋值
+                     */
+                    bool ConfigInfoVisibleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -678,6 +700,13 @@ namespace TencentCloud
                      */
                     bool m_enableConsoleIntranet;
                     bool m_enableConsoleIntranetHasBeenSet;
+
+                    /**
+                     * 引擎实例是否展示参数配置页面
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_configInfoVisible;
+                    bool m_configInfoVisibleHasBeenSet;
 
                 };
             }

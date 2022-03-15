@@ -67,6 +67,8 @@
 #include <tencentcloud/nlp/v20190408/model/TextCorrectionResponse.h>
 #include <tencentcloud/nlp/v20190408/model/TextSimilarityRequest.h>
 #include <tencentcloud/nlp/v20190408/model/TextSimilarityResponse.h>
+#include <tencentcloud/nlp/v20190408/model/TextSimilarityProRequest.h>
+#include <tencentcloud/nlp/v20190408/model/TextSimilarityProResponse.h>
 #include <tencentcloud/nlp/v20190408/model/UpdateDictRequest.h>
 #include <tencentcloud/nlp/v20190408/model/UpdateDictResponse.h>
 #include <tencentcloud/nlp/v20190408/model/WordEmbeddingRequest.h>
@@ -153,6 +155,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::TextSimilarityResponse> TextSimilarityOutcome;
                 typedef std::future<TextSimilarityOutcome> TextSimilarityOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::TextSimilarityRequest&, TextSimilarityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextSimilarityAsyncHandler;
+                typedef Outcome<Core::Error, Model::TextSimilarityProResponse> TextSimilarityProOutcome;
+                typedef std::future<TextSimilarityProOutcome> TextSimilarityProOutcomeCallable;
+                typedef std::function<void(const NlpClient*, const Model::TextSimilarityProRequest&, TextSimilarityProOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextSimilarityProAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateDictResponse> UpdateDictOutcome;
                 typedef std::future<UpdateDictOutcome> UpdateDictOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::UpdateDictRequest&, UpdateDictOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDictAsyncHandler;
@@ -391,6 +396,19 @@ namespace TencentCloud
                 TextSimilarityOutcome TextSimilarity(const Model::TextSimilarityRequest &request);
                 void TextSimilarityAsync(const Model::TextSimilarityRequest& request, const TextSimilarityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 TextSimilarityOutcomeCallable TextSimilarityCallable(const Model::TextSimilarityRequest& request);
+
+                /**
+                 *句子相似度接口能够基于深度学习技术来计算一个源句子和多个目标句子的相似度，相似度分值越大的两个句子在语义上越相似。目前仅支持短文本（不超过128字符）的相似度计算，长文本的相似度计算也即将推出。
+
+鉴于句子相似度是一个应用非常广泛的功能，腾讯云自然语言处理团队在Bert等领先的深度神经网络模型的基础上，专门针对文本相似任务进行了优化，并持续迭代更新。基于句子相似度，可以轻松实现诸如文本去重、相似推荐等功能。
+
+接口将以句子数量为单位消耗资源包，而不是调用接口次数为单位。
+                 * @param req TextSimilarityProRequest
+                 * @return TextSimilarityProOutcome
+                 */
+                TextSimilarityProOutcome TextSimilarityPro(const Model::TextSimilarityProRequest &request);
+                void TextSimilarityProAsync(const Model::TextSimilarityProRequest& request, const TextSimilarityProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TextSimilarityProOutcomeCallable TextSimilarityProCallable(const Model::TextSimilarityProRequest& request);
 
                 /**
                  *修改自定义词库元数据信息，包括名称、描述。

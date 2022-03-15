@@ -43,7 +43,8 @@ SREInstance::SREInstance() :
     m_serviceGovernanceInfosHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_enableConsoleInternetHasBeenSet(false),
-    m_enableConsoleIntranetHasBeenSet(false)
+    m_enableConsoleIntranetHasBeenSet(false),
+    m_configInfoVisibleHasBeenSet(false)
 {
 }
 
@@ -325,6 +326,16 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
         m_enableConsoleIntranetHasBeenSet = true;
     }
 
+    if (value.HasMember("ConfigInfoVisible") && !value["ConfigInfoVisible"].IsNull())
+    {
+        if (!value["ConfigInfoVisible"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SREInstance.ConfigInfoVisible` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_configInfoVisible = value["ConfigInfoVisible"].GetBool();
+        m_configInfoVisibleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -547,6 +558,14 @@ void SREInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "EnableConsoleIntranet";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableConsoleIntranet, allocator);
+    }
+
+    if (m_configInfoVisibleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigInfoVisible";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_configInfoVisible, allocator);
     }
 
 }
@@ -918,5 +937,21 @@ void SREInstance::SetEnableConsoleIntranet(const bool& _enableConsoleIntranet)
 bool SREInstance::EnableConsoleIntranetHasBeenSet() const
 {
     return m_enableConsoleIntranetHasBeenSet;
+}
+
+bool SREInstance::GetConfigInfoVisible() const
+{
+    return m_configInfoVisible;
+}
+
+void SREInstance::SetConfigInfoVisible(const bool& _configInfoVisible)
+{
+    m_configInfoVisible = _configInfoVisible;
+    m_configInfoVisibleHasBeenSet = true;
+}
+
+bool SREInstance::ConfigInfoVisibleHasBeenSet() const
+{
+    return m_configInfoVisibleHasBeenSet;
 }
 

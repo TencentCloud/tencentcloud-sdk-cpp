@@ -986,6 +986,49 @@ NlpClient::TextSimilarityOutcomeCallable NlpClient::TextSimilarityCallable(const
     return task->get_future();
 }
 
+NlpClient::TextSimilarityProOutcome NlpClient::TextSimilarityPro(const TextSimilarityProRequest &request)
+{
+    auto outcome = MakeRequest(request, "TextSimilarityPro");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TextSimilarityProResponse rsp = TextSimilarityProResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TextSimilarityProOutcome(rsp);
+        else
+            return TextSimilarityProOutcome(o.GetError());
+    }
+    else
+    {
+        return TextSimilarityProOutcome(outcome.GetError());
+    }
+}
+
+void NlpClient::TextSimilarityProAsync(const TextSimilarityProRequest& request, const TextSimilarityProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TextSimilarityPro(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+NlpClient::TextSimilarityProOutcomeCallable NlpClient::TextSimilarityProCallable(const TextSimilarityProRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TextSimilarityProOutcome()>>(
+        [this, request]()
+        {
+            return this->TextSimilarityPro(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 NlpClient::UpdateDictOutcome NlpClient::UpdateDict(const UpdateDictRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateDict");
