@@ -138,11 +138,15 @@ namespace TencentCloud
 1: 通用图库，以用户输入图提取特征。
 2: 灰度图库，输入图和搜索图均转为灰度图提取特征。
 3: 针对电商（通用品类）和logo优化。
+4: 通用图库v2。
+5: 电商模型。
                      * @return GroupType 图库类型， 默认为通用。
 类型： 
 1: 通用图库，以用户输入图提取特征。
 2: 灰度图库，输入图和搜索图均转为灰度图提取特征。
 3: 针对电商（通用品类）和logo优化。
+4: 通用图库v2。
+5: 电商模型。
                      */
                     uint64_t GetGroupType() const;
 
@@ -152,11 +156,15 @@ namespace TencentCloud
 1: 通用图库，以用户输入图提取特征。
 2: 灰度图库，输入图和搜索图均转为灰度图提取特征。
 3: 针对电商（通用品类）和logo优化。
+4: 通用图库v2。
+5: 电商模型。
                      * @param GroupType 图库类型， 默认为通用。
 类型： 
 1: 通用图库，以用户输入图提取特征。
 2: 灰度图库，输入图和搜索图均转为灰度图提取特征。
 3: 针对电商（通用品类）和logo优化。
+4: 通用图库v2。
+5: 电商模型。
                      */
                     void SetGroupType(const uint64_t& _groupType);
 
@@ -204,6 +212,8 @@ namespace TencentCloud
 1: 通用图库，以用户输入图提取特征。
 2: 灰度图库，输入图和搜索图均转为灰度图提取特征。
 3: 针对电商（通用品类）和logo优化。
+4: 通用图库v2。
+5: 电商模型。
                      */
                     uint64_t m_groupType;
                     bool m_groupTypeHasBeenSet;

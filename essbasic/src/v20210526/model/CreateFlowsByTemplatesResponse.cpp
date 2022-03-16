@@ -26,7 +26,8 @@ using namespace std;
 CreateFlowsByTemplatesResponse::CreateFlowsByTemplatesResponse() :
     m_flowIdsHasBeenSet(false),
     m_customerDataHasBeenSet(false),
-    m_errorMessagesHasBeenSet(false)
+    m_errorMessagesHasBeenSet(false),
+    m_previewUrlsHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,19 @@ CoreInternalOutcome CreateFlowsByTemplatesResponse::Deserialize(const string &pa
         m_errorMessagesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PreviewUrls") && !rsp["PreviewUrls"].IsNull())
+    {
+        if (!rsp["PreviewUrls"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PreviewUrls` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["PreviewUrls"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_previewUrls.push_back((*itr).GetString());
+        }
+        m_previewUrlsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -152,6 +166,19 @@ string CreateFlowsByTemplatesResponse::ToJsonString() const
         }
     }
 
+    if (m_previewUrlsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreviewUrls";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_previewUrls.begin(); itr != m_previewUrls.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -192,6 +219,16 @@ vector<string> CreateFlowsByTemplatesResponse::GetErrorMessages() const
 bool CreateFlowsByTemplatesResponse::ErrorMessagesHasBeenSet() const
 {
     return m_errorMessagesHasBeenSet;
+}
+
+vector<string> CreateFlowsByTemplatesResponse::GetPreviewUrls() const
+{
+    return m_previewUrls;
+}
+
+bool CreateFlowsByTemplatesResponse::PreviewUrlsHasBeenSet() const
+{
+    return m_previewUrlsHasBeenSet;
 }
 
 

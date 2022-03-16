@@ -24,7 +24,8 @@ using namespace TencentCloud::Ess::V20201111::Model;
 using namespace std;
 
 CreateDocumentResponse::CreateDocumentResponse() :
-    m_documentIdHasBeenSet(false)
+    m_documentIdHasBeenSet(false),
+    m_previewFileUrlHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome CreateDocumentResponse::Deserialize(const string &payload)
         m_documentIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PreviewFileUrl") && !rsp["PreviewFileUrl"].IsNull())
+    {
+        if (!rsp["PreviewFileUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PreviewFileUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_previewFileUrl = string(rsp["PreviewFileUrl"].GetString());
+        m_previewFileUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +99,14 @@ string CreateDocumentResponse::ToJsonString() const
         string key = "DocumentId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_documentId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_previewFileUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreviewFileUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_previewFileUrl.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,16 @@ string CreateDocumentResponse::GetDocumentId() const
 bool CreateDocumentResponse::DocumentIdHasBeenSet() const
 {
     return m_documentIdHasBeenSet;
+}
+
+string CreateDocumentResponse::GetPreviewFileUrl() const
+{
+    return m_previewFileUrl;
+}
+
+bool CreateDocumentResponse::PreviewFileUrlHasBeenSet() const
+{
+    return m_previewFileUrlHasBeenSet;
 }
 
 

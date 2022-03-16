@@ -33,7 +33,8 @@ CreateFlowByFilesRequest::CreateFlowByFilesRequest() :
     m_deadlineHasBeenSet(false),
     m_agentHasBeenSet(false),
     m_componentsHasBeenSet(false),
-    m_ccInfosHasBeenSet(false)
+    m_ccInfosHasBeenSet(false),
+    m_needPreviewHasBeenSet(false)
 {
 }
 
@@ -158,6 +159,14 @@ string CreateFlowByFilesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_needPreviewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedPreview";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needPreview, allocator);
     }
 
 
@@ -342,6 +351,22 @@ void CreateFlowByFilesRequest::SetCcInfos(const vector<CcInfo>& _ccInfos)
 bool CreateFlowByFilesRequest::CcInfosHasBeenSet() const
 {
     return m_ccInfosHasBeenSet;
+}
+
+bool CreateFlowByFilesRequest::GetNeedPreview() const
+{
+    return m_needPreview;
+}
+
+void CreateFlowByFilesRequest::SetNeedPreview(const bool& _needPreview)
+{
+    m_needPreview = _needPreview;
+    m_needPreviewHasBeenSet = true;
+}
+
+bool CreateFlowByFilesRequest::NeedPreviewHasBeenSet() const
+{
+    return m_needPreviewHasBeenSet;
 }
 
 

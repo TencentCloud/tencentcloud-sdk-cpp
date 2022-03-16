@@ -97,6 +97,24 @@ namespace TencentCloud
                      */
                     bool InstanceChargePrepaidHasBeenSet() const;
 
+                    /**
+                     * 获取是否同时切换弹性数据云盘计费模式。取值范围：<br><li>TRUE：表示切换弹性数据云盘计费模式<br><li>FALSE：表示不切换弹性数据云盘计费模式<br><br>默认取值：FALSE。
+                     * @return ModifyPortableDataDisk 是否同时切换弹性数据云盘计费模式。取值范围：<br><li>TRUE：表示切换弹性数据云盘计费模式<br><li>FALSE：表示不切换弹性数据云盘计费模式<br><br>默认取值：FALSE。
+                     */
+                    bool GetModifyPortableDataDisk() const;
+
+                    /**
+                     * 设置是否同时切换弹性数据云盘计费模式。取值范围：<br><li>TRUE：表示切换弹性数据云盘计费模式<br><li>FALSE：表示不切换弹性数据云盘计费模式<br><br>默认取值：FALSE。
+                     * @param ModifyPortableDataDisk 是否同时切换弹性数据云盘计费模式。取值范围：<br><li>TRUE：表示切换弹性数据云盘计费模式<br><li>FALSE：表示不切换弹性数据云盘计费模式<br><br>默认取值：FALSE。
+                     */
+                    void SetModifyPortableDataDisk(const bool& _modifyPortableDataDisk);
+
+                    /**
+                     * 判断参数 ModifyPortableDataDisk 是否已赋值
+                     * @return ModifyPortableDataDisk 是否已赋值
+                     */
+                    bool ModifyPortableDataDiskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,6 +134,12 @@ namespace TencentCloud
                      */
                     InstanceChargePrepaid m_instanceChargePrepaid;
                     bool m_instanceChargePrepaidHasBeenSet;
+
+                    /**
+                     * 是否同时切换弹性数据云盘计费模式。取值范围：<br><li>TRUE：表示切换弹性数据云盘计费模式<br><li>FALSE：表示不切换弹性数据云盘计费模式<br><br>默认取值：FALSE。
+                     */
+                    bool m_modifyPortableDataDisk;
+                    bool m_modifyPortableDataDiskHasBeenSet;
 
                 };
             }

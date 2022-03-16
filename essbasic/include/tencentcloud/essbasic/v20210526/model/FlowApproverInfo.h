@@ -280,6 +280,28 @@ namespace TencentCloud
                      */
                     bool OrganizationOpenIdHasBeenSet() const;
 
+                    /**
+                     * 获取指定签署人非渠道企业下员工，在ApproverType为ORGANIZATION时指定。
+默认为false，即签署人位于同一个渠道应用号下；
+                     * @return NotChannelOrganization 指定签署人非渠道企业下员工，在ApproverType为ORGANIZATION时指定。
+默认为false，即签署人位于同一个渠道应用号下；
+                     */
+                    bool GetNotChannelOrganization() const;
+
+                    /**
+                     * 设置指定签署人非渠道企业下员工，在ApproverType为ORGANIZATION时指定。
+默认为false，即签署人位于同一个渠道应用号下；
+                     * @param NotChannelOrganization 指定签署人非渠道企业下员工，在ApproverType为ORGANIZATION时指定。
+默认为false，即签署人位于同一个渠道应用号下；
+                     */
+                    void SetNotChannelOrganization(const bool& _notChannelOrganization);
+
+                    /**
+                     * 判断参数 NotChannelOrganization 是否已赋值
+                     * @return NotChannelOrganization 是否已赋值
+                     */
+                    bool NotChannelOrganizationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -359,6 +381,13 @@ namespace TencentCloud
                      */
                     std::string m_organizationOpenId;
                     bool m_organizationOpenIdHasBeenSet;
+
+                    /**
+                     * 指定签署人非渠道企业下员工，在ApproverType为ORGANIZATION时指定。
+默认为false，即签署人位于同一个渠道应用号下；
+                     */
+                    bool m_notChannelOrganization;
+                    bool m_notChannelOrganizationHasBeenSet;
 
                 };
             }

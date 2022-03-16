@@ -30,6 +30,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/ModifyAcRuleResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeTableStatusResponse.h
   include/tencentcloud/cfw/v20190904/model/AddAcRuleRequest.h
+  include/tencentcloud/cfw/v20190904/model/IPDefendStatus.h
   include/tencentcloud/cfw/v20190904/model/SecurityGroupRule.h
   include/tencentcloud/cfw/v20190904/model/ModifyNatFwVpcDnsSwitchRequest.h
   include/tencentcloud/cfw/v20190904/model/SecurityGroupApiRuleData.h
@@ -128,6 +129,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/DeleteAcRuleResponse.h
   include/tencentcloud/cfw/v20190904/model/IocListData.h
   include/tencentcloud/cfw/v20190904/model/InstanceInfo.h
+  include/tencentcloud/cfw/v20190904/model/DescribeIPStatusListRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyNatFwSwitchResponse.h
   include/tencentcloud/cfw/v20190904/model/RunSyncAssetResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeBlockByIpTimesListResponse.h
@@ -140,6 +142,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/DeleteAcRuleRequest.h
   include/tencentcloud/cfw/v20190904/model/DeleteAllAccessControlRuleResponse.h
   include/tencentcloud/cfw/v20190904/model/ModifyNatFwSwitchRequest.h
+  include/tencentcloud/cfw/v20190904/model/DescribeIPStatusListResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeNatRuleOverviewRequest.h
   include/tencentcloud/cfw/v20190904/model/CreateDatabaseWhiteListRulesRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeResourceGroupRequest.h
@@ -207,6 +210,7 @@ set(cfw_src
   src/v20190904/model/ModifyAcRuleResponse.cpp
   src/v20190904/model/DescribeTableStatusResponse.cpp
   src/v20190904/model/AddAcRuleRequest.cpp
+  src/v20190904/model/IPDefendStatus.cpp
   src/v20190904/model/SecurityGroupRule.cpp
   src/v20190904/model/ModifyNatFwVpcDnsSwitchRequest.cpp
   src/v20190904/model/SecurityGroupApiRuleData.cpp
@@ -305,6 +309,7 @@ set(cfw_src
   src/v20190904/model/DeleteAcRuleResponse.cpp
   src/v20190904/model/IocListData.cpp
   src/v20190904/model/InstanceInfo.cpp
+  src/v20190904/model/DescribeIPStatusListRequest.cpp
   src/v20190904/model/ModifyNatFwSwitchResponse.cpp
   src/v20190904/model/RunSyncAssetResponse.cpp
   src/v20190904/model/DescribeBlockByIpTimesListResponse.cpp
@@ -317,6 +322,7 @@ set(cfw_src
   src/v20190904/model/DeleteAcRuleRequest.cpp
   src/v20190904/model/DeleteAllAccessControlRuleResponse.cpp
   src/v20190904/model/ModifyNatFwSwitchRequest.cpp
+  src/v20190904/model/DescribeIPStatusListResponse.cpp
   src/v20190904/model/DescribeNatRuleOverviewRequest.cpp
   src/v20190904/model/CreateDatabaseWhiteListRulesRequest.cpp
   src/v20190904/model/DescribeResourceGroupRequest.cpp

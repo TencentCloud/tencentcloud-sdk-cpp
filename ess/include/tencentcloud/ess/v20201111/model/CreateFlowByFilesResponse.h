@@ -55,6 +55,20 @@ namespace TencentCloud
                      */
                     bool FlowIdHasBeenSet() const;
 
+                    /**
+                     * 获取合同预览链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PreviewUrl 合同预览链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPreviewUrl() const;
+
+                    /**
+                     * 判断参数 PreviewUrl 是否已赋值
+                     * @return PreviewUrl 是否已赋值
+                     */
+                    bool PreviewUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -62,6 +76,13 @@ namespace TencentCloud
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
+
+                    /**
+                     * 合同预览链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_previewUrl;
+                    bool m_previewUrlHasBeenSet;
 
                 };
             }

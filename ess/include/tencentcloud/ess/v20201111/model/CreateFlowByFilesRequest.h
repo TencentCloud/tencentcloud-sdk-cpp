@@ -269,6 +269,24 @@ MULTI_LINE_TEXT - 多行文本控件
                      */
                     bool CcInfosHasBeenSet() const;
 
+                    /**
+                     * 获取是否需要预览，true：预览模式，false：非预览（默认）
+                     * @return NeedPreview 是否需要预览，true：预览模式，false：非预览（默认）
+                     */
+                    bool GetNeedPreview() const;
+
+                    /**
+                     * 设置是否需要预览，true：预览模式，false：非预览（默认）
+                     * @param NeedPreview 是否需要预览，true：预览模式，false：非预览（默认）
+                     */
+                    void SetNeedPreview(const bool& _needPreview);
+
+                    /**
+                     * 判断参数 NeedPreview 是否已赋值
+                     * @return NeedPreview 是否已赋值
+                     */
+                    bool NeedPreviewHasBeenSet() const;
+
                 private:
 
                     /**
@@ -342,6 +360,12 @@ MULTI_LINE_TEXT - 多行文本控件
                      */
                     std::vector<CcInfo> m_ccInfos;
                     bool m_ccInfosHasBeenSet;
+
+                    /**
+                     * 是否需要预览，true：预览模式，false：非预览（默认）
+                     */
+                    bool m_needPreview;
+                    bool m_needPreviewHasBeenSet;
 
                 };
             }

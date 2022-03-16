@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool TypeHasBeenSet() const;
 
+                    /**
+                     * 获取查询结束时间
+                     * @return End 查询结束时间
+                     */
+                    uint64_t GetEnd() const;
+
+                    /**
+                     * 设置查询结束时间
+                     * @param End 查询结束时间
+                     */
+                    void SetEnd(const uint64_t& _end);
+
+                    /**
+                     * 判断参数 End 是否已赋值
+                     * @return End 是否已赋值
+                     */
+                    bool EndHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 查询结束时间
+                     */
+                    uint64_t m_end;
+                    bool m_endHasBeenSet;
 
                 };
             }

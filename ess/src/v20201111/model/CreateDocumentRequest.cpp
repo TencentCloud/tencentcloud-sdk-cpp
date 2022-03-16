@@ -29,7 +29,8 @@ CreateDocumentRequest::CreateDocumentRequest() :
     m_fileNamesHasBeenSet(false),
     m_formFieldsHasBeenSet(false),
     m_agentHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_clientTokenHasBeenSet(false),
+    m_needPreviewHasBeenSet(false)
 {
 }
 
@@ -108,6 +109,14 @@ string CreateDocumentRequest::ToJsonString() const
         string key = "ClientToken";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_needPreviewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedPreview";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needPreview, allocator);
     }
 
 
@@ -228,6 +237,22 @@ void CreateDocumentRequest::SetClientToken(const string& _clientToken)
 bool CreateDocumentRequest::ClientTokenHasBeenSet() const
 {
     return m_clientTokenHasBeenSet;
+}
+
+bool CreateDocumentRequest::GetNeedPreview() const
+{
+    return m_needPreview;
+}
+
+void CreateDocumentRequest::SetNeedPreview(const bool& _needPreview)
+{
+    m_needPreview = _needPreview;
+    m_needPreviewHasBeenSet = true;
+}
+
+bool CreateDocumentRequest::NeedPreviewHasBeenSet() const
+{
+    return m_needPreviewHasBeenSet;
 }
 
 

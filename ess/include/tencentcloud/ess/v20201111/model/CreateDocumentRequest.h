@@ -171,6 +171,24 @@ namespace TencentCloud
                      */
                     bool ClientTokenHasBeenSet() const;
 
+                    /**
+                     * 获取是否需要生成预览文件 默认不生成
+                     * @return NeedPreview 是否需要生成预览文件 默认不生成
+                     */
+                    bool GetNeedPreview() const;
+
+                    /**
+                     * 设置是否需要生成预览文件 默认不生成
+                     * @param NeedPreview 是否需要生成预览文件 默认不生成
+                     */
+                    void SetNeedPreview(const bool& _needPreview);
+
+                    /**
+                     * 判断参数 NeedPreview 是否已赋值
+                     * @return NeedPreview 是否已赋值
+                     */
+                    bool NeedPreviewHasBeenSet() const;
+
                 private:
 
                     /**
@@ -214,6 +232,12 @@ namespace TencentCloud
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;
+
+                    /**
+                     * 是否需要生成预览文件 默认不生成
+                     */
+                    bool m_needPreview;
+                    bool m_needPreviewHasBeenSet;
 
                 };
             }

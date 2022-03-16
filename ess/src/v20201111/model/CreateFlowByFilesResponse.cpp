@@ -24,7 +24,8 @@ using namespace TencentCloud::Ess::V20201111::Model;
 using namespace std;
 
 CreateFlowByFilesResponse::CreateFlowByFilesResponse() :
-    m_flowIdHasBeenSet(false)
+    m_flowIdHasBeenSet(false),
+    m_previewUrlHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome CreateFlowByFilesResponse::Deserialize(const string &payload
         m_flowIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PreviewUrl") && !rsp["PreviewUrl"].IsNull())
+    {
+        if (!rsp["PreviewUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PreviewUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_previewUrl = string(rsp["PreviewUrl"].GetString());
+        m_previewUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +99,14 @@ string CreateFlowByFilesResponse::ToJsonString() const
         string key = "FlowId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_flowId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_previewUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreviewUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_previewUrl.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,16 @@ string CreateFlowByFilesResponse::GetFlowId() const
 bool CreateFlowByFilesResponse::FlowIdHasBeenSet() const
 {
     return m_flowIdHasBeenSet;
+}
+
+string CreateFlowByFilesResponse::GetPreviewUrl() const
+{
+    return m_previewUrl;
+}
+
+bool CreateFlowByFilesResponse::PreviewUrlHasBeenSet() const
+{
+    return m_previewUrlHasBeenSet;
 }
 
 

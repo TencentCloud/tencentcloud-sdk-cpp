@@ -25,7 +25,8 @@ using namespace std;
 InquiryPriceModifyInstancesChargeTypeRequest::InquiryPriceModifyInstancesChargeTypeRequest() :
     m_instanceIdsHasBeenSet(false),
     m_instanceChargeTypeHasBeenSet(false),
-    m_instanceChargePrepaidHasBeenSet(false)
+    m_instanceChargePrepaidHasBeenSet(false),
+    m_modifyPortableDataDiskHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,14 @@ string InquiryPriceModifyInstancesChargeTypeRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_instanceChargePrepaid.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_modifyPortableDataDiskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyPortableDataDisk";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_modifyPortableDataDisk, allocator);
     }
 
 
@@ -120,6 +129,22 @@ void InquiryPriceModifyInstancesChargeTypeRequest::SetInstanceChargePrepaid(cons
 bool InquiryPriceModifyInstancesChargeTypeRequest::InstanceChargePrepaidHasBeenSet() const
 {
     return m_instanceChargePrepaidHasBeenSet;
+}
+
+bool InquiryPriceModifyInstancesChargeTypeRequest::GetModifyPortableDataDisk() const
+{
+    return m_modifyPortableDataDisk;
+}
+
+void InquiryPriceModifyInstancesChargeTypeRequest::SetModifyPortableDataDisk(const bool& _modifyPortableDataDisk)
+{
+    m_modifyPortableDataDisk = _modifyPortableDataDisk;
+    m_modifyPortableDataDiskHasBeenSet = true;
+}
+
+bool InquiryPriceModifyInstancesChargeTypeRequest::ModifyPortableDataDiskHasBeenSet() const
+{
+    return m_modifyPortableDataDiskHasBeenSet;
 }
 
 

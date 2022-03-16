@@ -30,7 +30,8 @@ SendEmailRequest::SendEmailRequest() :
     m_templateHasBeenSet(false),
     m_simpleHasBeenSet(false),
     m_attachmentsHasBeenSet(false),
-    m_unsubscribeHasBeenSet(false)
+    m_unsubscribeHasBeenSet(false),
+    m_triggerTypeHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,14 @@ string SendEmailRequest::ToJsonString() const
         string key = "Unsubscribe";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_unsubscribe.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_triggerTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_triggerType, allocator);
     }
 
 
@@ -253,6 +262,22 @@ void SendEmailRequest::SetUnsubscribe(const string& _unsubscribe)
 bool SendEmailRequest::UnsubscribeHasBeenSet() const
 {
     return m_unsubscribeHasBeenSet;
+}
+
+uint64_t SendEmailRequest::GetTriggerType() const
+{
+    return m_triggerType;
+}
+
+void SendEmailRequest::SetTriggerType(const uint64_t& _triggerType)
+{
+    m_triggerType = _triggerType;
+    m_triggerTypeHasBeenSet = true;
+}
+
+bool SendEmailRequest::TriggerTypeHasBeenSet() const
+{
+    return m_triggerTypeHasBeenSet;
 }
 
 

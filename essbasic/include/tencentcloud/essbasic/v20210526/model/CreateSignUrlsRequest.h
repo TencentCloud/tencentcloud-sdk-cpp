@@ -117,14 +117,14 @@ namespace TencentCloud
                     bool EndpointHasBeenSet() const;
 
                     /**
-                     * 获取签署完成后H5引导页跳转URL
-                     * @return JumpUrl 签署完成后H5引导页跳转URL
+                     * 获取签署完之后的H5页面的跳转链接，针对Endpoint为CHANNEL时有效
+                     * @return JumpUrl 签署完之后的H5页面的跳转链接，针对Endpoint为CHANNEL时有效
                      */
                     std::string GetJumpUrl() const;
 
                     /**
-                     * 设置签署完成后H5引导页跳转URL
-                     * @param JumpUrl 签署完成后H5引导页跳转URL
+                     * 设置签署完之后的H5页面的跳转链接，针对Endpoint为CHANNEL时有效
+                     * @param JumpUrl 签署完之后的H5页面的跳转链接，针对Endpoint为CHANNEL时有效
                      */
                     void SetJumpUrl(const std::string& _jumpUrl);
 
@@ -161,7 +161,7 @@ namespace TencentCloud
                     bool m_endpointHasBeenSet;
 
                     /**
-                     * 签署完成后H5引导页跳转URL
+                     * 签署完之后的H5页面的跳转链接，针对Endpoint为CHANNEL时有效
                      */
                     std::string m_jumpUrl;
                     bool m_jumpUrlHasBeenSet;

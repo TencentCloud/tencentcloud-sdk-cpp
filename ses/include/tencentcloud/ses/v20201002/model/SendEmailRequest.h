@@ -197,6 +197,24 @@ namespace TencentCloud
                      */
                     bool UnsubscribeHasBeenSet() const;
 
+                    /**
+                     * 获取邮件触发类型 0:非触发类，默认类型，营销类邮件、非即时类邮件等选择此类型  1:触发类，验证码等即时发送类邮件，若邮件超过一定大小，系统会自动选择非触发类型通道
+                     * @return TriggerType 邮件触发类型 0:非触发类，默认类型，营销类邮件、非即时类邮件等选择此类型  1:触发类，验证码等即时发送类邮件，若邮件超过一定大小，系统会自动选择非触发类型通道
+                     */
+                    uint64_t GetTriggerType() const;
+
+                    /**
+                     * 设置邮件触发类型 0:非触发类，默认类型，营销类邮件、非即时类邮件等选择此类型  1:触发类，验证码等即时发送类邮件，若邮件超过一定大小，系统会自动选择非触发类型通道
+                     * @param TriggerType 邮件触发类型 0:非触发类，默认类型，营销类邮件、非即时类邮件等选择此类型  1:触发类，验证码等即时发送类邮件，若邮件超过一定大小，系统会自动选择非触发类型通道
+                     */
+                    void SetTriggerType(const uint64_t& _triggerType);
+
+                    /**
+                     * 判断参数 TriggerType 是否已赋值
+                     * @return TriggerType 是否已赋值
+                     */
+                    bool TriggerTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -248,6 +266,12 @@ namespace TencentCloud
                      */
                     std::string m_unsubscribe;
                     bool m_unsubscribeHasBeenSet;
+
+                    /**
+                     * 邮件触发类型 0:非触发类，默认类型，营销类邮件、非即时类邮件等选择此类型  1:触发类，验证码等即时发送类邮件，若邮件超过一定大小，系统会自动选择非触发类型通道
+                     */
+                    uint64_t m_triggerType;
+                    bool m_triggerTypeHasBeenSet;
 
                 };
             }

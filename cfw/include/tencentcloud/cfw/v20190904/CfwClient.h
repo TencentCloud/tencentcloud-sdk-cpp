@@ -71,6 +71,8 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeEnterpriseSecurityGroupRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeGuideScanInfoRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeGuideScanInfoResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeIPStatusListRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeIPStatusListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatFwInfoCountRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatFwInfoCountResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatFwInstanceRequest.h>
@@ -251,6 +253,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeGuideScanInfoResponse> DescribeGuideScanInfoOutcome;
                 typedef std::future<DescribeGuideScanInfoOutcome> DescribeGuideScanInfoOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeGuideScanInfoRequest&, DescribeGuideScanInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGuideScanInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIPStatusListResponse> DescribeIPStatusListOutcome;
+                typedef std::future<DescribeIPStatusListOutcome> DescribeIPStatusListOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeIPStatusListRequest&, DescribeIPStatusListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIPStatusListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNatFwInfoCountResponse> DescribeNatFwInfoCountOutcome;
                 typedef std::future<DescribeNatFwInfoCountOutcome> DescribeNatFwInfoCountOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeNatFwInfoCountRequest&, DescribeNatFwInfoCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatFwInfoCountAsyncHandler;
@@ -612,6 +617,15 @@ namespace TencentCloud
                 DescribeGuideScanInfoOutcome DescribeGuideScanInfo(const Model::DescribeGuideScanInfoRequest &request);
                 void DescribeGuideScanInfoAsync(const Model::DescribeGuideScanInfoRequest& request, const DescribeGuideScanInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeGuideScanInfoOutcomeCallable DescribeGuideScanInfoCallable(const Model::DescribeGuideScanInfoRequest& request);
+
+                /**
+                 *ip防护状态查询
+                 * @param req DescribeIPStatusListRequest
+                 * @return DescribeIPStatusListOutcome
+                 */
+                DescribeIPStatusListOutcome DescribeIPStatusList(const Model::DescribeIPStatusListRequest &request);
+                void DescribeIPStatusListAsync(const Model::DescribeIPStatusListRequest& request, const DescribeIPStatusListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIPStatusListOutcomeCallable DescribeIPStatusListCallable(const Model::DescribeIPStatusListRequest& request);
 
                 /**
                  *获取当前用户接入nat防火墙的所有子网数及natfw实例个数

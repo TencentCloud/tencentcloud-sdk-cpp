@@ -23,7 +23,9 @@ using namespace std;
 NamespaceUsage::NamespaceUsage() :
     m_functionsHasBeenSet(false),
     m_namespaceHasBeenSet(false),
-    m_functionsCountHasBeenSet(false)
+    m_functionsCountHasBeenSet(false),
+    m_totalConcurrencyMemHasBeenSet(false),
+    m_totalAllocatedConcurrencyMemHasBeenSet(false)
 {
 }
 
@@ -65,6 +67,26 @@ CoreInternalOutcome NamespaceUsage::Deserialize(const rapidjson::Value &value)
         m_functionsCountHasBeenSet = true;
     }
 
+    if (value.HasMember("TotalConcurrencyMem") && !value["TotalConcurrencyMem"].IsNull())
+    {
+        if (!value["TotalConcurrencyMem"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NamespaceUsage.TotalConcurrencyMem` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalConcurrencyMem = value["TotalConcurrencyMem"].GetInt64();
+        m_totalConcurrencyMemHasBeenSet = true;
+    }
+
+    if (value.HasMember("TotalAllocatedConcurrencyMem") && !value["TotalAllocatedConcurrencyMem"].IsNull())
+    {
+        if (!value["TotalAllocatedConcurrencyMem"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NamespaceUsage.TotalAllocatedConcurrencyMem` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalAllocatedConcurrencyMem = value["TotalAllocatedConcurrencyMem"].GetInt64();
+        m_totalAllocatedConcurrencyMemHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +121,22 @@ void NamespaceUsage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "FunctionsCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_functionsCount, allocator);
+    }
+
+    if (m_totalConcurrencyMemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalConcurrencyMem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalConcurrencyMem, allocator);
+    }
+
+    if (m_totalAllocatedConcurrencyMemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalAllocatedConcurrencyMem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalAllocatedConcurrencyMem, allocator);
     }
 
 }
@@ -150,5 +188,37 @@ void NamespaceUsage::SetFunctionsCount(const int64_t& _functionsCount)
 bool NamespaceUsage::FunctionsCountHasBeenSet() const
 {
     return m_functionsCountHasBeenSet;
+}
+
+int64_t NamespaceUsage::GetTotalConcurrencyMem() const
+{
+    return m_totalConcurrencyMem;
+}
+
+void NamespaceUsage::SetTotalConcurrencyMem(const int64_t& _totalConcurrencyMem)
+{
+    m_totalConcurrencyMem = _totalConcurrencyMem;
+    m_totalConcurrencyMemHasBeenSet = true;
+}
+
+bool NamespaceUsage::TotalConcurrencyMemHasBeenSet() const
+{
+    return m_totalConcurrencyMemHasBeenSet;
+}
+
+int64_t NamespaceUsage::GetTotalAllocatedConcurrencyMem() const
+{
+    return m_totalAllocatedConcurrencyMem;
+}
+
+void NamespaceUsage::SetTotalAllocatedConcurrencyMem(const int64_t& _totalAllocatedConcurrencyMem)
+{
+    m_totalAllocatedConcurrencyMem = _totalAllocatedConcurrencyMem;
+    m_totalAllocatedConcurrencyMemHasBeenSet = true;
+}
+
+bool NamespaceUsage::TotalAllocatedConcurrencyMemHasBeenSet() const
+{
+    return m_totalAllocatedConcurrencyMemHasBeenSet;
 }
 

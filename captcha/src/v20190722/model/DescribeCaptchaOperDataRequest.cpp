@@ -25,7 +25,8 @@ using namespace std;
 DescribeCaptchaOperDataRequest::DescribeCaptchaOperDataRequest() :
     m_captchaAppIdHasBeenSet(false),
     m_startHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_endHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeCaptchaOperDataRequest::ToJsonString() const
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_type, allocator);
+    }
+
+    if (m_endHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "End";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_end, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeCaptchaOperDataRequest::SetType(const uint64_t& _type)
 bool DescribeCaptchaOperDataRequest::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+uint64_t DescribeCaptchaOperDataRequest::GetEnd() const
+{
+    return m_end;
+}
+
+void DescribeCaptchaOperDataRequest::SetEnd(const uint64_t& _end)
+{
+    m_end = _end;
+    m_endHasBeenSet = true;
+}
+
+bool DescribeCaptchaOperDataRequest::EndHasBeenSet() const
+{
+    return m_endHasBeenSet;
 }
 
 

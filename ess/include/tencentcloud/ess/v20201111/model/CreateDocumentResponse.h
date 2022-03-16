@@ -55,6 +55,20 @@ namespace TencentCloud
                      */
                     bool DocumentIdHasBeenSet() const;
 
+                    /**
+                     * 获取返回合同文件的预览地址 5分钟内有效。仅当NeedPreview为true 时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PreviewFileUrl 返回合同文件的预览地址 5分钟内有效。仅当NeedPreview为true 时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPreviewFileUrl() const;
+
+                    /**
+                     * 判断参数 PreviewFileUrl 是否已赋值
+                     * @return PreviewFileUrl 是否已赋值
+                     */
+                    bool PreviewFileUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -62,6 +76,13 @@ namespace TencentCloud
                      */
                     std::string m_documentId;
                     bool m_documentIdHasBeenSet;
+
+                    /**
+                     * 返回合同文件的预览地址 5分钟内有效。仅当NeedPreview为true 时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_previewFileUrl;
+                    bool m_previewFileUrlHasBeenSet;
 
                 };
             }
