@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/Filter.h>
 
 
 namespace TencentCloud
@@ -132,6 +133,24 @@ namespace TencentCloud
                      */
                     bool SortingHasBeenSet() const;
 
+                    /**
+                     * 获取过滤条件，支持如下字段类型，user-type：根据用户类型过滤。
+                     * @return Filters 过滤条件，支持如下字段类型，user-type：根据用户类型过滤。
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置过滤条件，支持如下字段类型，user-type：根据用户类型过滤。
+                     * @param Filters 过滤条件，支持如下字段类型，user-type：根据用户类型过滤。
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +182,12 @@ namespace TencentCloud
                      */
                     std::string m_sorting;
                     bool m_sortingHasBeenSet;
+
+                    /**
+                     * 过滤条件，支持如下字段类型，user-type：根据用户类型过滤。
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

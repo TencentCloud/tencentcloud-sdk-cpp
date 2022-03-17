@@ -96,6 +96,60 @@ namespace TencentCloud
                      */
                     bool PageSizeHasBeenSet() const;
 
+                    /**
+                     * 获取对指定列进行排序
+                     * @return OrderBy 对指定列进行排序
+                     */
+                    std::string GetOrderBy() const;
+
+                    /**
+                     * 设置对指定列进行排序
+                     * @param OrderBy 对指定列进行排序
+                     */
+                    void SetOrderBy(const std::string& _orderBy);
+
+                    /**
+                     * 判断参数 OrderBy 是否已赋值
+                     * @return OrderBy 是否已赋值
+                     */
+                    bool OrderByHasBeenSet() const;
+
+                    /**
+                     * 获取排序方式
+                     * @return OrderByType 排序方式
+                     */
+                    std::string GetOrderByType() const;
+
+                    /**
+                     * 设置排序方式
+                     * @param OrderByType 排序方式
+                     */
+                    void SetOrderByType(const std::string& _orderByType);
+
+                    /**
+                     * 判断参数 OrderByType 是否已赋值
+                     * @return OrderByType 是否已赋值
+                     */
+                    bool OrderByTypeHasBeenSet() const;
+
+                    /**
+                     * 获取来源类型筛选
+                     * @return Type 来源类型筛选
+                     */
+                    uint64_t GetType() const;
+
+                    /**
+                     * 设置来源类型筛选
+                     * @param Type 来源类型筛选
+                     */
+                    void SetType(const uint64_t& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +169,24 @@ namespace TencentCloud
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
+
+                    /**
+                     * 对指定列进行排序
+                     */
+                    std::string m_orderBy;
+                    bool m_orderByHasBeenSet;
+
+                    /**
+                     * 排序方式
+                     */
+                    std::string m_orderByType;
+                    bool m_orderByTypeHasBeenSet;
+
+                    /**
+                     * 来源类型筛选
+                     */
+                    uint64_t m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

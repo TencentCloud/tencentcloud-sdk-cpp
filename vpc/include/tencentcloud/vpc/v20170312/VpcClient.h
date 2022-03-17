@@ -253,6 +253,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeCcnsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeClassicLinkInstancesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeClassicLinkInstancesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeCrossBorderCcnRegionBandwidthLimitsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeCrossBorderCcnRegionBandwidthLimitsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeCrossBorderComplianceRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeCrossBorderComplianceResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeCustomerGatewayVendorsRequest.h>
@@ -331,6 +333,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeTaskResultResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeTemplateLimitsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeTemplateLimitsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeTenantCcnsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeTenantCcnsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeVpcEndPointRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeVpcEndPointResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeVpcEndPointServiceRequest.h>
@@ -419,6 +423,10 @@
 #include <tencentcloud/vpc/v20170312/model/InquiryPriceRenewVpnGatewayResponse.h>
 #include <tencentcloud/vpc/v20170312/model/InquiryPriceResetVpnGatewayInternetMaxBandwidthRequest.h>
 #include <tencentcloud/vpc/v20170312/model/InquiryPriceResetVpnGatewayInternetMaxBandwidthResponse.h>
+#include <tencentcloud/vpc/v20170312/model/LockCcnBandwidthsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/LockCcnBandwidthsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/LockCcnsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/LockCcnsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/MigrateNetworkInterfaceRequest.h>
 #include <tencentcloud/vpc/v20170312/model/MigrateNetworkInterfaceResponse.h>
 #include <tencentcloud/vpc/v20170312/model/MigratePrivateIpAddressRequest.h>
@@ -561,6 +569,10 @@
 #include <tencentcloud/vpc/v20170312/model/UnassignIpv6SubnetCidrBlockResponse.h>
 #include <tencentcloud/vpc/v20170312/model/UnassignPrivateIpAddressesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/UnassignPrivateIpAddressesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/UnlockCcnBandwidthsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/UnlockCcnBandwidthsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/UnlockCcnsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/UnlockCcnsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/WithdrawNotifyRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/WithdrawNotifyRoutesResponse.h>
 
@@ -922,6 +934,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClassicLinkInstancesResponse> DescribeClassicLinkInstancesOutcome;
                 typedef std::future<DescribeClassicLinkInstancesOutcome> DescribeClassicLinkInstancesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeClassicLinkInstancesRequest&, DescribeClassicLinkInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClassicLinkInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCrossBorderCcnRegionBandwidthLimitsResponse> DescribeCrossBorderCcnRegionBandwidthLimitsOutcome;
+                typedef std::future<DescribeCrossBorderCcnRegionBandwidthLimitsOutcome> DescribeCrossBorderCcnRegionBandwidthLimitsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeCrossBorderCcnRegionBandwidthLimitsRequest&, DescribeCrossBorderCcnRegionBandwidthLimitsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCrossBorderCcnRegionBandwidthLimitsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCrossBorderComplianceResponse> DescribeCrossBorderComplianceOutcome;
                 typedef std::future<DescribeCrossBorderComplianceOutcome> DescribeCrossBorderComplianceOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeCrossBorderComplianceRequest&, DescribeCrossBorderComplianceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCrossBorderComplianceAsyncHandler;
@@ -1039,6 +1054,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTemplateLimitsResponse> DescribeTemplateLimitsOutcome;
                 typedef std::future<DescribeTemplateLimitsOutcome> DescribeTemplateLimitsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeTemplateLimitsRequest&, DescribeTemplateLimitsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTemplateLimitsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTenantCcnsResponse> DescribeTenantCcnsOutcome;
+                typedef std::future<DescribeTenantCcnsOutcome> DescribeTenantCcnsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeTenantCcnsRequest&, DescribeTenantCcnsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTenantCcnsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVpcEndPointResponse> DescribeVpcEndPointOutcome;
                 typedef std::future<DescribeVpcEndPointOutcome> DescribeVpcEndPointOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeVpcEndPointRequest&, DescribeVpcEndPointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcEndPointAsyncHandler;
@@ -1171,6 +1189,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InquiryPriceResetVpnGatewayInternetMaxBandwidthResponse> InquiryPriceResetVpnGatewayInternetMaxBandwidthOutcome;
                 typedef std::future<InquiryPriceResetVpnGatewayInternetMaxBandwidthOutcome> InquiryPriceResetVpnGatewayInternetMaxBandwidthOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::InquiryPriceResetVpnGatewayInternetMaxBandwidthRequest&, InquiryPriceResetVpnGatewayInternetMaxBandwidthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceResetVpnGatewayInternetMaxBandwidthAsyncHandler;
+                typedef Outcome<Core::Error, Model::LockCcnBandwidthsResponse> LockCcnBandwidthsOutcome;
+                typedef std::future<LockCcnBandwidthsOutcome> LockCcnBandwidthsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::LockCcnBandwidthsRequest&, LockCcnBandwidthsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LockCcnBandwidthsAsyncHandler;
+                typedef Outcome<Core::Error, Model::LockCcnsResponse> LockCcnsOutcome;
+                typedef std::future<LockCcnsOutcome> LockCcnsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::LockCcnsRequest&, LockCcnsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LockCcnsAsyncHandler;
                 typedef Outcome<Core::Error, Model::MigrateNetworkInterfaceResponse> MigrateNetworkInterfaceOutcome;
                 typedef std::future<MigrateNetworkInterfaceOutcome> MigrateNetworkInterfaceOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::MigrateNetworkInterfaceRequest&, MigrateNetworkInterfaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MigrateNetworkInterfaceAsyncHandler;
@@ -1384,6 +1408,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UnassignPrivateIpAddressesResponse> UnassignPrivateIpAddressesOutcome;
                 typedef std::future<UnassignPrivateIpAddressesOutcome> UnassignPrivateIpAddressesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::UnassignPrivateIpAddressesRequest&, UnassignPrivateIpAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnassignPrivateIpAddressesAsyncHandler;
+                typedef Outcome<Core::Error, Model::UnlockCcnBandwidthsResponse> UnlockCcnBandwidthsOutcome;
+                typedef std::future<UnlockCcnBandwidthsOutcome> UnlockCcnBandwidthsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::UnlockCcnBandwidthsRequest&, UnlockCcnBandwidthsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnlockCcnBandwidthsAsyncHandler;
+                typedef Outcome<Core::Error, Model::UnlockCcnsResponse> UnlockCcnsOutcome;
+                typedef std::future<UnlockCcnsOutcome> UnlockCcnsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::UnlockCcnsRequest&, UnlockCcnsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnlockCcnsAsyncHandler;
                 typedef Outcome<Core::Error, Model::WithdrawNotifyRoutesResponse> WithdrawNotifyRoutesOutcome;
                 typedef std::future<WithdrawNotifyRoutesOutcome> WithdrawNotifyRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::WithdrawNotifyRoutesRequest&, WithdrawNotifyRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> WithdrawNotifyRoutesAsyncHandler;
@@ -2575,6 +2605,18 @@ namespace TencentCloud
                 DescribeClassicLinkInstancesOutcomeCallable DescribeClassicLinkInstancesCallable(const Model::DescribeClassicLinkInstancesRequest& request);
 
                 /**
+                 *本接口（DescribeCrossBorderCcnRegionBandwidthLimits）用于获取要锁定的限速实例列表。
+该接口一般用来封禁地域间限速的云联网实例下的限速实例, 目前联通内部运营系统通过云API调用, 如果是出口限速, 一般使用更粗的云联网实例粒度封禁（DescribeTenantCcns）
+如有需要, 可以封禁任意限速实例, 可接入到内部运营系统
+
+                 * @param req DescribeCrossBorderCcnRegionBandwidthLimitsRequest
+                 * @return DescribeCrossBorderCcnRegionBandwidthLimitsOutcome
+                 */
+                DescribeCrossBorderCcnRegionBandwidthLimitsOutcome DescribeCrossBorderCcnRegionBandwidthLimits(const Model::DescribeCrossBorderCcnRegionBandwidthLimitsRequest &request);
+                void DescribeCrossBorderCcnRegionBandwidthLimitsAsync(const Model::DescribeCrossBorderCcnRegionBandwidthLimitsRequest& request, const DescribeCrossBorderCcnRegionBandwidthLimitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCrossBorderCcnRegionBandwidthLimitsOutcomeCallable DescribeCrossBorderCcnRegionBandwidthLimitsCallable(const Model::DescribeCrossBorderCcnRegionBandwidthLimitsRequest& request);
+
+                /**
                  *本接口（DescribeCrossBorderCompliance）用于查询用户创建的合规化资质审批单。
 服务商可以查询服务名下的任意 `APPID` 创建的审批单；非服务商，只能查询自己审批单。
                  * @param req DescribeCrossBorderComplianceRequest
@@ -2929,6 +2971,17 @@ namespace TencentCloud
                 DescribeTemplateLimitsOutcome DescribeTemplateLimits(const Model::DescribeTemplateLimitsRequest &request);
                 void DescribeTemplateLimitsAsync(const Model::DescribeTemplateLimitsRequest& request, const DescribeTemplateLimitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTemplateLimitsOutcomeCallable DescribeTemplateLimitsCallable(const Model::DescribeTemplateLimitsRequest& request);
+
+                /**
+                 *本接口（DescribeTenantCcns）用于获取要锁定的云联网实例列表。
+该接口一般用来封禁出口限速的云联网实例, 目前联通内部运营系统通过云API调用, 因为出口限速无法按地域间封禁, 只能按更粗的云联网实例粒度封禁, 如果是地域间限速, 一般可以通过更细的限速实例粒度封禁（DescribeCrossBorderCcnRegionBandwidthLimits）
+如有需要, 可以封禁任意云联网实例, 可接入到内部运营系统
+                 * @param req DescribeTenantCcnsRequest
+                 * @return DescribeTenantCcnsOutcome
+                 */
+                DescribeTenantCcnsOutcome DescribeTenantCcns(const Model::DescribeTenantCcnsRequest &request);
+                void DescribeTenantCcnsAsync(const Model::DescribeTenantCcnsRequest& request, const DescribeTenantCcnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTenantCcnsOutcomeCallable DescribeTenantCcnsCallable(const Model::DescribeTenantCcnsRequest& request);
 
                 /**
                  *查询终端节点列表。
@@ -3370,6 +3423,32 @@ LimitTypes取值范围：
                 InquiryPriceResetVpnGatewayInternetMaxBandwidthOutcome InquiryPriceResetVpnGatewayInternetMaxBandwidth(const Model::InquiryPriceResetVpnGatewayInternetMaxBandwidthRequest &request);
                 void InquiryPriceResetVpnGatewayInternetMaxBandwidthAsync(const Model::InquiryPriceResetVpnGatewayInternetMaxBandwidthRequest& request, const InquiryPriceResetVpnGatewayInternetMaxBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InquiryPriceResetVpnGatewayInternetMaxBandwidthOutcomeCallable InquiryPriceResetVpnGatewayInternetMaxBandwidthCallable(const Model::InquiryPriceResetVpnGatewayInternetMaxBandwidthRequest& request);
+
+                /**
+                 *本接口（LockCcnBandwidths）用户锁定云联网限速实例。
+该接口一般用来封禁地域间限速的云联网实例下的限速实例, 目前联通内部运营系统通过云API调用, 如果是出口限速, 一般使用更粗的云联网实例粒度封禁（LockCcns）。
+如有需要, 可以封禁任意限速实例, 可接入到内部运营系统。
+                 * @param req LockCcnBandwidthsRequest
+                 * @return LockCcnBandwidthsOutcome
+                 */
+                LockCcnBandwidthsOutcome LockCcnBandwidths(const Model::LockCcnBandwidthsRequest &request);
+                void LockCcnBandwidthsAsync(const Model::LockCcnBandwidthsRequest& request, const LockCcnBandwidthsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                LockCcnBandwidthsOutcomeCallable LockCcnBandwidthsCallable(const Model::LockCcnBandwidthsRequest& request);
+
+                /**
+                 *本接口（LockCcns）用于锁定云联网实例
+
+该接口一般用来封禁出口限速的云联网实例, 目前联通内部运营系统通过云API调用, 因为出口限速无法按地域间封禁, 只能按更粗的云联网实例粒度封禁, 如果是地域间限速, 一般可以通过更细的限速实例粒度封禁（LockCcnBandwidths）
+
+如有需要, 可以封禁任意限速实例, 可接入到内部运营系统
+
+
+                 * @param req LockCcnsRequest
+                 * @return LockCcnsOutcome
+                 */
+                LockCcnsOutcome LockCcns(const Model::LockCcnsRequest &request);
+                void LockCcnsAsync(const Model::LockCcnsRequest& request, const LockCcnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                LockCcnsOutcomeCallable LockCcnsCallable(const Model::LockCcnsRequest& request);
 
                 /**
                  *本接口（MigrateNetworkInterface）用于弹性网卡迁移。
@@ -4050,6 +4129,32 @@ LimitTypes取值范围：
                 UnassignPrivateIpAddressesOutcome UnassignPrivateIpAddresses(const Model::UnassignPrivateIpAddressesRequest &request);
                 void UnassignPrivateIpAddressesAsync(const Model::UnassignPrivateIpAddressesRequest& request, const UnassignPrivateIpAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UnassignPrivateIpAddressesOutcomeCallable UnassignPrivateIpAddressesCallable(const Model::UnassignPrivateIpAddressesRequest& request);
+
+                /**
+                 *本接口（UnlockCcnBandwidths）用户解锁云联网限速实例。
+该接口一般用来封禁地域间限速的云联网实例下的限速实例, 目前联通内部运营系统通过云API调用, 如果是出口限速, 一般使用更粗的云联网实例粒度封禁（SecurityUnlockCcns）。
+如有需要, 可以封禁任意限速实例, 可接入到内部运营系统。
+                 * @param req UnlockCcnBandwidthsRequest
+                 * @return UnlockCcnBandwidthsOutcome
+                 */
+                UnlockCcnBandwidthsOutcome UnlockCcnBandwidths(const Model::UnlockCcnBandwidthsRequest &request);
+                void UnlockCcnBandwidthsAsync(const Model::UnlockCcnBandwidthsRequest& request, const UnlockCcnBandwidthsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnlockCcnBandwidthsOutcomeCallable UnlockCcnBandwidthsCallable(const Model::UnlockCcnBandwidthsRequest& request);
+
+                /**
+                 *本接口（UnlockCcns）用于解锁云联网实例
+
+该接口一般用来解封禁出口限速的云联网实例, 目前联通内部运营系统通过云API调用, 因为出口限速无法按地域间解封禁, 只能按更粗的云联网实例粒度解封禁, 如果是地域间限速, 一般可以通过更细的限速实例粒度解封禁（UnlockCcnBandwidths）
+
+如有需要, 可以封禁任意限速实例, 可接入到内部运营系统
+
+
+                 * @param req UnlockCcnsRequest
+                 * @return UnlockCcnsOutcome
+                 */
+                UnlockCcnsOutcome UnlockCcns(const Model::UnlockCcnsRequest &request);
+                void UnlockCcnsAsync(const Model::UnlockCcnsRequest& request, const UnlockCcnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnlockCcnsOutcomeCallable UnlockCcnsCallable(const Model::UnlockCcnsRequest& request);
 
                 /**
                  *路由表列表页操作增加“从云联网撤销”，用于撤销已发布到云联网的路由。

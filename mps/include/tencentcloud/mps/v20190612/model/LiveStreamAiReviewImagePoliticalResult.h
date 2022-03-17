@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 直播 AI 内容审核图片鉴政结果
+                * 直播 AI 内容审核图片敏感结果
                 */
                 class LiveStreamAiReviewImagePoliticalResult : public AbstractModel
                 {
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool EndPtsTimeHasBeenSet() const;
 
                     /**
-                     * 获取嫌疑片段涉政分数。
-                     * @return Confidence 嫌疑片段涉政分数。
+                     * 获取嫌疑片段敏感分数。
+                     * @return Confidence 嫌疑片段敏感分数。
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置嫌疑片段涉政分数。
-                     * @param Confidence 嫌疑片段涉政分数。
+                     * 设置嫌疑片段敏感分数。
+                     * @param Confidence 嫌疑片段敏感分数。
                      */
                     void SetConfidence(const double& _confidence);
 
@@ -131,21 +131,21 @@ namespace TencentCloud
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取视频鉴政结果标签，取值范围：
-<li>politician：政治人物。</li>
+                     * 获取视频敏感结果标签，取值范围：
+<li>politician：敏感人物。</li>
 <li>violation_photo：违规图标。</li>
-                     * @return Label 视频鉴政结果标签，取值范围：
-<li>politician：政治人物。</li>
+                     * @return Label 视频敏感结果标签，取值范围：
+<li>politician：敏感人物。</li>
 <li>violation_photo：违规图标。</li>
                      */
                     std::string GetLabel() const;
 
                     /**
-                     * 设置视频鉴政结果标签，取值范围：
-<li>politician：政治人物。</li>
+                     * 设置视频敏感结果标签，取值范围：
+<li>politician：敏感人物。</li>
 <li>violation_photo：违规图标。</li>
-                     * @param Label 视频鉴政结果标签，取值范围：
-<li>politician：政治人物。</li>
+                     * @param Label 视频敏感结果标签，取值范围：
+<li>politician：敏感人物。</li>
 <li>violation_photo：违规图标。</li>
                      */
                     void SetLabel(const std::string& _label);
@@ -157,14 +157,14 @@ namespace TencentCloud
                     bool LabelHasBeenSet() const;
 
                     /**
-                     * 获取涉政人物、违规图标名字。
-                     * @return Name 涉政人物、违规图标名字。
+                     * 获取敏感人物、违规图标名字。
+                     * @return Name 敏感人物、违规图标名字。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置涉政人物、违规图标名字。
-                     * @param Name 涉政人物、违规图标名字。
+                     * 设置敏感人物、违规图标名字。
+                     * @param Name 敏感人物、违规图标名字。
                      */
                     void SetName(const std::string& _name);
 
@@ -175,14 +175,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取涉政人物、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
-                     * @return AreaCoordSet 涉政人物、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
+                     * 获取敏感人物、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
+                     * @return AreaCoordSet 敏感人物、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
                      */
                     std::vector<int64_t> GetAreaCoordSet() const;
 
                     /**
-                     * 设置涉政人物、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
-                     * @param AreaCoordSet 涉政人物、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
+                     * 设置敏感人物、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
+                     * @param AreaCoordSet 敏感人物、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
                      */
                     void SetAreaCoordSet(const std::vector<int64_t>& _areaCoordSet);
 
@@ -247,7 +247,7 @@ PicUrlExpireTime 时间点后图片将被删除）。
                     bool m_endPtsTimeHasBeenSet;
 
                     /**
-                     * 嫌疑片段涉政分数。
+                     * 嫌疑片段敏感分数。
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
@@ -262,21 +262,21 @@ PicUrlExpireTime 时间点后图片将被删除）。
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * 视频鉴政结果标签，取值范围：
-<li>politician：政治人物。</li>
+                     * 视频敏感结果标签，取值范围：
+<li>politician：敏感人物。</li>
 <li>violation_photo：违规图标。</li>
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
-                     * 涉政人物、违规图标名字。
+                     * 敏感人物、违规图标名字。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 涉政人物、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
+                     * 敏感人物、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
                      */
                     std::vector<int64_t> m_areaCoordSet;
                     bool m_areaCoordSetHasBeenSet;

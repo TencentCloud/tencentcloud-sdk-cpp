@@ -28,7 +28,9 @@ TableResponseInfo::TableResponseInfo() :
     m_propertiesHasBeenSet(false),
     m_modifiedTimeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_inputFormatHasBeenSet(false)
+    m_inputFormatHasBeenSet(false),
+    m_storageSizeHasBeenSet(false),
+    m_recordCountHasBeenSet(false)
 {
 }
 
@@ -154,6 +156,26 @@ CoreInternalOutcome TableResponseInfo::Deserialize(const rapidjson::Value &value
         m_inputFormatHasBeenSet = true;
     }
 
+    if (value.HasMember("StorageSize") && !value["StorageSize"].IsNull())
+    {
+        if (!value["StorageSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableResponseInfo.StorageSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_storageSize = value["StorageSize"].GetInt64();
+        m_storageSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RecordCount") && !value["RecordCount"].IsNull())
+    {
+        if (!value["RecordCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableResponseInfo.RecordCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordCount = value["RecordCount"].GetInt64();
+        m_recordCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -245,6 +267,22 @@ void TableResponseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "InputFormat";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_inputFormat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_storageSize, allocator);
+    }
+
+    if (m_recordCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_recordCount, allocator);
     }
 
 }
@@ -376,5 +414,37 @@ void TableResponseInfo::SetInputFormat(const string& _inputFormat)
 bool TableResponseInfo::InputFormatHasBeenSet() const
 {
     return m_inputFormatHasBeenSet;
+}
+
+int64_t TableResponseInfo::GetStorageSize() const
+{
+    return m_storageSize;
+}
+
+void TableResponseInfo::SetStorageSize(const int64_t& _storageSize)
+{
+    m_storageSize = _storageSize;
+    m_storageSizeHasBeenSet = true;
+}
+
+bool TableResponseInfo::StorageSizeHasBeenSet() const
+{
+    return m_storageSizeHasBeenSet;
+}
+
+int64_t TableResponseInfo::GetRecordCount() const
+{
+    return m_recordCount;
+}
+
+void TableResponseInfo::SetRecordCount(const int64_t& _recordCount)
+{
+    m_recordCount = _recordCount;
+    m_recordCountHasBeenSet = true;
+}
+
+bool TableResponseInfo::RecordCountHasBeenSet() const
+{
+    return m_recordCountHasBeenSet;
 }
 

@@ -25,7 +25,10 @@ using namespace std;
 DescribeTrafficPackagesRequest::DescribeTrafficPackagesRequest() :
     m_resourceIdsHasBeenSet(false),
     m_pageNumberHasBeenSet(false),
-    m_pageSizeHasBeenSet(false)
+    m_pageSizeHasBeenSet(false),
+    m_orderByHasBeenSet(false),
+    m_orderByTypeHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -63,6 +66,30 @@ string DescribeTrafficPackagesRequest::ToJsonString() const
         string key = "PageSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_orderByHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderBy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderBy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderByTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderByType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderByType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_type, allocator);
     }
 
 
@@ -119,6 +146,54 @@ void DescribeTrafficPackagesRequest::SetPageSize(const uint64_t& _pageSize)
 bool DescribeTrafficPackagesRequest::PageSizeHasBeenSet() const
 {
     return m_pageSizeHasBeenSet;
+}
+
+string DescribeTrafficPackagesRequest::GetOrderBy() const
+{
+    return m_orderBy;
+}
+
+void DescribeTrafficPackagesRequest::SetOrderBy(const string& _orderBy)
+{
+    m_orderBy = _orderBy;
+    m_orderByHasBeenSet = true;
+}
+
+bool DescribeTrafficPackagesRequest::OrderByHasBeenSet() const
+{
+    return m_orderByHasBeenSet;
+}
+
+string DescribeTrafficPackagesRequest::GetOrderByType() const
+{
+    return m_orderByType;
+}
+
+void DescribeTrafficPackagesRequest::SetOrderByType(const string& _orderByType)
+{
+    m_orderByType = _orderByType;
+    m_orderByTypeHasBeenSet = true;
+}
+
+bool DescribeTrafficPackagesRequest::OrderByTypeHasBeenSet() const
+{
+    return m_orderByTypeHasBeenSet;
+}
+
+uint64_t DescribeTrafficPackagesRequest::GetType() const
+{
+    return m_type;
+}
+
+void DescribeTrafficPackagesRequest::SetType(const uint64_t& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool DescribeTrafficPackagesRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 

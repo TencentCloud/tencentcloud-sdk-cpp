@@ -114,6 +114,78 @@ namespace TencentCloud
                      */
                     bool PageSizeHasBeenSet() const;
 
+                    /**
+                     * 获取对指定列进行排序
+                     * @return OrderBy 对指定列进行排序
+                     */
+                    std::string GetOrderBy() const;
+
+                    /**
+                     * 设置对指定列进行排序
+                     * @param OrderBy 对指定列进行排序
+                     */
+                    void SetOrderBy(const std::string& _orderBy);
+
+                    /**
+                     * 判断参数 OrderBy 是否已赋值
+                     * @return OrderBy 是否已赋值
+                     */
+                    bool OrderByHasBeenSet() const;
+
+                    /**
+                     * 获取排序方式
+                     * @return OrderByType 排序方式
+                     */
+                    std::string GetOrderByType() const;
+
+                    /**
+                     * 设置排序方式
+                     * @param OrderByType 排序方式
+                     */
+                    void SetOrderByType(const std::string& _orderByType);
+
+                    /**
+                     * 判断参数 OrderByType 是否已赋值
+                     * @return OrderByType 是否已赋值
+                     */
+                    bool OrderByTypeHasBeenSet() const;
+
+                    /**
+                     * 获取续费管理筛选类型
+                     * @return AutoRenew 续费管理筛选类型
+                     */
+                    uint64_t GetAutoRenew() const;
+
+                    /**
+                     * 设置续费管理筛选类型
+                     * @param AutoRenew 续费管理筛选类型
+                     */
+                    void SetAutoRenew(const uint64_t& _autoRenew);
+
+                    /**
+                     * 判断参数 AutoRenew 是否已赋值
+                     * @return AutoRenew 是否已赋值
+                     */
+                    bool AutoRenewHasBeenSet() const;
+
+                    /**
+                     * 获取超级管理管理员账号是否绑定了手机号
+                     * @return BindPhone 超级管理管理员账号是否绑定了手机号
+                     */
+                    bool GetBindPhone() const;
+
+                    /**
+                     * 设置超级管理管理员账号是否绑定了手机号
+                     * @param BindPhone 超级管理管理员账号是否绑定了手机号
+                     */
+                    void SetBindPhone(const bool& _bindPhone);
+
+                    /**
+                     * 判断参数 BindPhone 是否已赋值
+                     * @return BindPhone 是否已赋值
+                     */
+                    bool BindPhoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +211,30 @@ namespace TencentCloud
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
+
+                    /**
+                     * 对指定列进行排序
+                     */
+                    std::string m_orderBy;
+                    bool m_orderByHasBeenSet;
+
+                    /**
+                     * 排序方式
+                     */
+                    std::string m_orderByType;
+                    bool m_orderByTypeHasBeenSet;
+
+                    /**
+                     * 续费管理筛选类型
+                     */
+                    uint64_t m_autoRenew;
+                    bool m_autoRenewHasBeenSet;
+
+                    /**
+                     * 超级管理管理员账号是否绑定了手机号
+                     */
+                    bool m_bindPhone;
+                    bool m_bindPhoneHasBeenSet;
 
                 };
             }

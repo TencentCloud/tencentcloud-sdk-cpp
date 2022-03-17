@@ -25,7 +25,16 @@ Policy::Policy() :
     m_catalogHasBeenSet(false),
     m_tableHasBeenSet(false),
     m_operationHasBeenSet(false),
-    m_policyTypeHasBeenSet(false)
+    m_policyTypeHasBeenSet(false),
+    m_functionHasBeenSet(false),
+    m_viewHasBeenSet(false),
+    m_columnHasBeenSet(false),
+    m_dataEngineHasBeenSet(false),
+    m_reAuthHasBeenSet(false),
+    m_sourceHasBeenSet(false),
+    m_modeHasBeenSet(false),
+    m_operatorHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -84,6 +93,96 @@ CoreInternalOutcome Policy::Deserialize(const rapidjson::Value &value)
         m_policyTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Function") && !value["Function"].IsNull())
+    {
+        if (!value["Function"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Policy.Function` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_function = string(value["Function"].GetString());
+        m_functionHasBeenSet = true;
+    }
+
+    if (value.HasMember("View") && !value["View"].IsNull())
+    {
+        if (!value["View"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Policy.View` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_view = string(value["View"].GetString());
+        m_viewHasBeenSet = true;
+    }
+
+    if (value.HasMember("Column") && !value["Column"].IsNull())
+    {
+        if (!value["Column"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Policy.Column` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_column = string(value["Column"].GetString());
+        m_columnHasBeenSet = true;
+    }
+
+    if (value.HasMember("DataEngine") && !value["DataEngine"].IsNull())
+    {
+        if (!value["DataEngine"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Policy.DataEngine` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataEngine = string(value["DataEngine"].GetString());
+        m_dataEngineHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReAuth") && !value["ReAuth"].IsNull())
+    {
+        if (!value["ReAuth"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Policy.ReAuth` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_reAuth = value["ReAuth"].GetBool();
+        m_reAuthHasBeenSet = true;
+    }
+
+    if (value.HasMember("Source") && !value["Source"].IsNull())
+    {
+        if (!value["Source"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Policy.Source` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_source = string(value["Source"].GetString());
+        m_sourceHasBeenSet = true;
+    }
+
+    if (value.HasMember("Mode") && !value["Mode"].IsNull())
+    {
+        if (!value["Mode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Policy.Mode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mode = string(value["Mode"].GetString());
+        m_modeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Operator") && !value["Operator"].IsNull())
+    {
+        if (!value["Operator"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Policy.Operator` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_operator = string(value["Operator"].GetString());
+        m_operatorHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Policy.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +228,78 @@ void Policy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "PolicyType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_policyType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_functionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Function";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_function.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_viewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "View";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_view.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_columnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Column";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_column.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataEngineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataEngine";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dataEngine.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reAuthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReAuth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_reAuth, allocator);
+    }
+
+    if (m_sourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Source";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_source.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Mode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operator.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +383,149 @@ void Policy::SetPolicyType(const string& _policyType)
 bool Policy::PolicyTypeHasBeenSet() const
 {
     return m_policyTypeHasBeenSet;
+}
+
+string Policy::GetFunction() const
+{
+    return m_function;
+}
+
+void Policy::SetFunction(const string& _function)
+{
+    m_function = _function;
+    m_functionHasBeenSet = true;
+}
+
+bool Policy::FunctionHasBeenSet() const
+{
+    return m_functionHasBeenSet;
+}
+
+string Policy::GetView() const
+{
+    return m_view;
+}
+
+void Policy::SetView(const string& _view)
+{
+    m_view = _view;
+    m_viewHasBeenSet = true;
+}
+
+bool Policy::ViewHasBeenSet() const
+{
+    return m_viewHasBeenSet;
+}
+
+string Policy::GetColumn() const
+{
+    return m_column;
+}
+
+void Policy::SetColumn(const string& _column)
+{
+    m_column = _column;
+    m_columnHasBeenSet = true;
+}
+
+bool Policy::ColumnHasBeenSet() const
+{
+    return m_columnHasBeenSet;
+}
+
+string Policy::GetDataEngine() const
+{
+    return m_dataEngine;
+}
+
+void Policy::SetDataEngine(const string& _dataEngine)
+{
+    m_dataEngine = _dataEngine;
+    m_dataEngineHasBeenSet = true;
+}
+
+bool Policy::DataEngineHasBeenSet() const
+{
+    return m_dataEngineHasBeenSet;
+}
+
+bool Policy::GetReAuth() const
+{
+    return m_reAuth;
+}
+
+void Policy::SetReAuth(const bool& _reAuth)
+{
+    m_reAuth = _reAuth;
+    m_reAuthHasBeenSet = true;
+}
+
+bool Policy::ReAuthHasBeenSet() const
+{
+    return m_reAuthHasBeenSet;
+}
+
+string Policy::GetSource() const
+{
+    return m_source;
+}
+
+void Policy::SetSource(const string& _source)
+{
+    m_source = _source;
+    m_sourceHasBeenSet = true;
+}
+
+bool Policy::SourceHasBeenSet() const
+{
+    return m_sourceHasBeenSet;
+}
+
+string Policy::GetMode() const
+{
+    return m_mode;
+}
+
+void Policy::SetMode(const string& _mode)
+{
+    m_mode = _mode;
+    m_modeHasBeenSet = true;
+}
+
+bool Policy::ModeHasBeenSet() const
+{
+    return m_modeHasBeenSet;
+}
+
+string Policy::GetOperator() const
+{
+    return m_operator;
+}
+
+void Policy::SetOperator(const string& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool Policy::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
+}
+
+string Policy::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void Policy::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool Policy::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

@@ -24,7 +24,10 @@ CreateApiRsp::CreateApiRsp() :
     m_apiIdHasBeenSet(false),
     m_pathHasBeenSet(false),
     m_methodHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_errMsgHasBeenSet(false),
+    m_apiNameHasBeenSet(false)
 {
 }
 
@@ -73,6 +76,36 @@ CoreInternalOutcome CreateApiRsp::Deserialize(const rapidjson::Value &value)
         m_createdTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateApiRsp.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ErrMsg") && !value["ErrMsg"].IsNull())
+    {
+        if (!value["ErrMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateApiRsp.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errMsg = string(value["ErrMsg"].GetString());
+        m_errMsgHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApiName") && !value["ApiName"].IsNull())
+    {
+        if (!value["ApiName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateApiRsp.ApiName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_apiName = string(value["ApiName"].GetString());
+        m_apiNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +143,30 @@ void CreateApiRsp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "CreatedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createdTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_errMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apiNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_apiName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +234,53 @@ void CreateApiRsp::SetCreatedTime(const string& _createdTime)
 bool CreateApiRsp::CreatedTimeHasBeenSet() const
 {
     return m_createdTimeHasBeenSet;
+}
+
+string CreateApiRsp::GetStatus() const
+{
+    return m_status;
+}
+
+void CreateApiRsp::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool CreateApiRsp::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string CreateApiRsp::GetErrMsg() const
+{
+    return m_errMsg;
+}
+
+void CreateApiRsp::SetErrMsg(const string& _errMsg)
+{
+    m_errMsg = _errMsg;
+    m_errMsgHasBeenSet = true;
+}
+
+bool CreateApiRsp::ErrMsgHasBeenSet() const
+{
+    return m_errMsgHasBeenSet;
+}
+
+string CreateApiRsp::GetApiName() const
+{
+    return m_apiName;
+}
+
+void CreateApiRsp::SetApiName(const string& _apiName)
+{
+    m_apiName = _apiName;
+    m_apiNameHasBeenSet = true;
+}
+
+bool CreateApiRsp::ApiNameHasBeenSet() const
+{
+    return m_apiNameHasBeenSet;
 }
 

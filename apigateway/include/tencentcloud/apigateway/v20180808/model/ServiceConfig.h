@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取后端类型。启用vpc时生效，目前支持的类型为clb和vpc通道
-                     * @return Product 后端类型。启用vpc时生效，目前支持的类型为clb和vpc通道
+                     * 获取后端类型。启用vpc时生效，目前支持的类型为clb, cvm和upstream
+                     * @return Product 后端类型。启用vpc时生效，目前支持的类型为clb, cvm和upstream
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置后端类型。启用vpc时生效，目前支持的类型为clb和vpc通道
-                     * @param Product 后端类型。启用vpc时生效，目前支持的类型为clb和vpc通道
+                     * 设置后端类型。启用vpc时生效，目前支持的类型为clb, cvm和upstream
+                     * @param Product 后端类型。启用vpc时生效，目前支持的类型为clb, cvm和upstream
                      */
                     void SetProduct(const std::string& _product);
 
@@ -162,7 +162,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 后端类型。启用vpc时生效，目前支持的类型为clb和vpc通道
+                     * 后端类型。启用vpc时生效，目前支持的类型为clb, cvm和upstream
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;

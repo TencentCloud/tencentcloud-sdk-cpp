@@ -212,6 +212,49 @@ IecpClient::CreateEdgeNodeOutcomeCallable IecpClient::CreateEdgeNodeCallable(con
     return task->get_future();
 }
 
+IecpClient::CreateEdgeNodeBatchOutcome IecpClient::CreateEdgeNodeBatch(const CreateEdgeNodeBatchRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateEdgeNodeBatch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateEdgeNodeBatchResponse rsp = CreateEdgeNodeBatchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateEdgeNodeBatchOutcome(rsp);
+        else
+            return CreateEdgeNodeBatchOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateEdgeNodeBatchOutcome(outcome.GetError());
+    }
+}
+
+void IecpClient::CreateEdgeNodeBatchAsync(const CreateEdgeNodeBatchRequest& request, const CreateEdgeNodeBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateEdgeNodeBatch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IecpClient::CreateEdgeNodeBatchOutcomeCallable IecpClient::CreateEdgeNodeBatchCallable(const CreateEdgeNodeBatchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateEdgeNodeBatchOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateEdgeNodeBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IecpClient::CreateEdgeNodeGroupOutcome IecpClient::CreateEdgeNodeGroup(const CreateEdgeNodeGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateEdgeNodeGroup");
@@ -549,6 +592,49 @@ IecpClient::CreateUpdateNodeUnitOutcomeCallable IecpClient::CreateUpdateNodeUnit
         [this, request]()
         {
             return this->CreateUpdateNodeUnit(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IecpClient::CreateUserTokenOutcome IecpClient::CreateUserToken(const CreateUserTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateUserToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateUserTokenResponse rsp = CreateUserTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateUserTokenOutcome(rsp);
+        else
+            return CreateUserTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateUserTokenOutcome(outcome.GetError());
+    }
+}
+
+void IecpClient::CreateUserTokenAsync(const CreateUserTokenRequest& request, const CreateUserTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateUserToken(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IecpClient::CreateUserTokenOutcomeCallable IecpClient::CreateUserTokenCallable(const CreateUserTokenRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateUserTokenOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateUserToken(request);
         }
     );
 
@@ -1588,6 +1674,49 @@ IecpClient::DescribeEdgeNodePodsOutcomeCallable IecpClient::DescribeEdgeNodePods
     return task->get_future();
 }
 
+IecpClient::DescribeEdgeNodeRemarkListOutcome IecpClient::DescribeEdgeNodeRemarkList(const DescribeEdgeNodeRemarkListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEdgeNodeRemarkList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEdgeNodeRemarkListResponse rsp = DescribeEdgeNodeRemarkListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEdgeNodeRemarkListOutcome(rsp);
+        else
+            return DescribeEdgeNodeRemarkListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEdgeNodeRemarkListOutcome(outcome.GetError());
+    }
+}
+
+void IecpClient::DescribeEdgeNodeRemarkListAsync(const DescribeEdgeNodeRemarkListRequest& request, const DescribeEdgeNodeRemarkListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEdgeNodeRemarkList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IecpClient::DescribeEdgeNodeRemarkListOutcomeCallable IecpClient::DescribeEdgeNodeRemarkListCallable(const DescribeEdgeNodeRemarkListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEdgeNodeRemarkListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEdgeNodeRemarkList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IecpClient::DescribeEdgeNodesOutcome IecpClient::DescribeEdgeNodes(const DescribeEdgeNodesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEdgeNodes");
@@ -1710,6 +1839,49 @@ IecpClient::DescribeEdgePodOutcomeCallable IecpClient::DescribeEdgePodCallable(c
         [this, request]()
         {
             return this->DescribeEdgePod(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IecpClient::DescribeEdgeSnNodesOutcome IecpClient::DescribeEdgeSnNodes(const DescribeEdgeSnNodesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEdgeSnNodes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEdgeSnNodesResponse rsp = DescribeEdgeSnNodesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEdgeSnNodesOutcome(rsp);
+        else
+            return DescribeEdgeSnNodesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEdgeSnNodesOutcome(outcome.GetError());
+    }
+}
+
+void IecpClient::DescribeEdgeSnNodesAsync(const DescribeEdgeSnNodesRequest& request, const DescribeEdgeSnNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEdgeSnNodes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IecpClient::DescribeEdgeSnNodesOutcomeCallable IecpClient::DescribeEdgeSnNodesCallable(const DescribeEdgeSnNodesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEdgeSnNodesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEdgeSnNodes(request);
         }
     );
 
@@ -2921,6 +3093,49 @@ IecpClient::DescribeSecretsOutcomeCallable IecpClient::DescribeSecretsCallable(c
     return task->get_future();
 }
 
+IecpClient::DescribeYeheResourceLimitOutcome IecpClient::DescribeYeheResourceLimit(const DescribeYeheResourceLimitRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeYeheResourceLimit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeYeheResourceLimitResponse rsp = DescribeYeheResourceLimitResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeYeheResourceLimitOutcome(rsp);
+        else
+            return DescribeYeheResourceLimitOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeYeheResourceLimitOutcome(outcome.GetError());
+    }
+}
+
+void IecpClient::DescribeYeheResourceLimitAsync(const DescribeYeheResourceLimitRequest& request, const DescribeYeheResourceLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeYeheResourceLimit(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IecpClient::DescribeYeheResourceLimitOutcomeCallable IecpClient::DescribeYeheResourceLimitCallable(const DescribeYeheResourceLimitRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeYeheResourceLimitOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeYeheResourceLimit(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IecpClient::GetMarketComponentOutcome IecpClient::GetMarketComponent(const GetMarketComponentRequest &request)
 {
     auto outcome = MakeRequest(request, "GetMarketComponent");
@@ -3136,6 +3351,49 @@ IecpClient::ModifyConfigMapOutcomeCallable IecpClient::ModifyConfigMapCallable(c
     return task->get_future();
 }
 
+IecpClient::ModifyEdgeDracoNodeOutcome IecpClient::ModifyEdgeDracoNode(const ModifyEdgeDracoNodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyEdgeDracoNode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyEdgeDracoNodeResponse rsp = ModifyEdgeDracoNodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyEdgeDracoNodeOutcome(rsp);
+        else
+            return ModifyEdgeDracoNodeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyEdgeDracoNodeOutcome(outcome.GetError());
+    }
+}
+
+void IecpClient::ModifyEdgeDracoNodeAsync(const ModifyEdgeDracoNodeRequest& request, const ModifyEdgeDracoNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyEdgeDracoNode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IecpClient::ModifyEdgeDracoNodeOutcomeCallable IecpClient::ModifyEdgeDracoNodeCallable(const ModifyEdgeDracoNodeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyEdgeDracoNodeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyEdgeDracoNode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IecpClient::ModifyEdgeNodeLabelsOutcome IecpClient::ModifyEdgeNodeLabels(const ModifyEdgeNodeLabelsRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyEdgeNodeLabels");
@@ -3344,6 +3602,49 @@ IecpClient::ModifyEdgeUnitApplicationYamlOutcomeCallable IecpClient::ModifyEdgeU
         [this, request]()
         {
             return this->ModifyEdgeUnitApplicationYaml(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IecpClient::ModifyEdgeUnitCloudApiOutcome IecpClient::ModifyEdgeUnitCloudApi(const ModifyEdgeUnitCloudApiRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyEdgeUnitCloudApi");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyEdgeUnitCloudApiResponse rsp = ModifyEdgeUnitCloudApiResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyEdgeUnitCloudApiOutcome(rsp);
+        else
+            return ModifyEdgeUnitCloudApiOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyEdgeUnitCloudApiOutcome(outcome.GetError());
+    }
+}
+
+void IecpClient::ModifyEdgeUnitCloudApiAsync(const ModifyEdgeUnitCloudApiRequest& request, const ModifyEdgeUnitCloudApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyEdgeUnitCloudApi(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IecpClient::ModifyEdgeUnitCloudApiOutcomeCallable IecpClient::ModifyEdgeUnitCloudApiCallable(const ModifyEdgeUnitCloudApiRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyEdgeUnitCloudApiOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyEdgeUnitCloudApi(request);
         }
     );
 

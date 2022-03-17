@@ -59,24 +59,24 @@ namespace TencentCloud
                     /**
                      * 获取任务的类型，可以取的值有：
 <li>Porn：图片鉴黄</li>
-<li>Terrorism：图片鉴恐</li>
-<li>Political：图片鉴政</li>
+<li>Terrorism：图片敏感</li>
+<li>Political：图片敏感</li>
 <li>Porn.Asr：Asr 文字鉴黄</li>
 <li>Porn.Ocr：Ocr 文字鉴黄</li>
-<li>Political.Asr：Asr 文字鉴政</li>
-<li>Political.Ocr：Ocr 文字鉴政</li>
-<li>Terrorism.Ocr：Ocr 文字鉴恐</li>
+<li>Political.Asr：Asr 文字敏感</li>
+<li>Political.Ocr：Ocr 文字敏感</li>
+<li>Terrorism.Ocr：Ocr 文字敏感</li>
 <li>Prohibited.Asr：Asr 文字鉴违禁</li>
 <li>Prohibited.Ocr：Ocr 文字鉴违禁</li>
                      * @return Type 任务的类型，可以取的值有：
 <li>Porn：图片鉴黄</li>
-<li>Terrorism：图片鉴恐</li>
-<li>Political：图片鉴政</li>
+<li>Terrorism：图片敏感</li>
+<li>Political：图片敏感</li>
 <li>Porn.Asr：Asr 文字鉴黄</li>
 <li>Porn.Ocr：Ocr 文字鉴黄</li>
-<li>Political.Asr：Asr 文字鉴政</li>
-<li>Political.Ocr：Ocr 文字鉴政</li>
-<li>Terrorism.Ocr：Ocr 文字鉴恐</li>
+<li>Political.Asr：Asr 文字敏感</li>
+<li>Political.Ocr：Ocr 文字敏感</li>
+<li>Terrorism.Ocr：Ocr 文字敏感</li>
 <li>Prohibited.Asr：Asr 文字鉴违禁</li>
 <li>Prohibited.Ocr：Ocr 文字鉴违禁</li>
                      */
@@ -85,24 +85,24 @@ namespace TencentCloud
                     /**
                      * 设置任务的类型，可以取的值有：
 <li>Porn：图片鉴黄</li>
-<li>Terrorism：图片鉴恐</li>
-<li>Political：图片鉴政</li>
+<li>Terrorism：图片敏感</li>
+<li>Political：图片敏感</li>
 <li>Porn.Asr：Asr 文字鉴黄</li>
 <li>Porn.Ocr：Ocr 文字鉴黄</li>
-<li>Political.Asr：Asr 文字鉴政</li>
-<li>Political.Ocr：Ocr 文字鉴政</li>
-<li>Terrorism.Ocr：Ocr 文字鉴恐</li>
+<li>Political.Asr：Asr 文字敏感</li>
+<li>Political.Ocr：Ocr 文字敏感</li>
+<li>Terrorism.Ocr：Ocr 文字敏感</li>
 <li>Prohibited.Asr：Asr 文字鉴违禁</li>
 <li>Prohibited.Ocr：Ocr 文字鉴违禁</li>
                      * @param Type 任务的类型，可以取的值有：
 <li>Porn：图片鉴黄</li>
-<li>Terrorism：图片鉴恐</li>
-<li>Political：图片鉴政</li>
+<li>Terrorism：图片敏感</li>
+<li>Political：图片敏感</li>
 <li>Porn.Asr：Asr 文字鉴黄</li>
 <li>Porn.Ocr：Ocr 文字鉴黄</li>
-<li>Political.Asr：Asr 文字鉴政</li>
-<li>Political.Ocr：Ocr 文字鉴政</li>
-<li>Terrorism.Ocr：Ocr 文字鉴恐</li>
+<li>Political.Asr：Asr 文字敏感</li>
+<li>Political.Ocr：Ocr 文字敏感</li>
+<li>Terrorism.Ocr：Ocr 文字敏感</li>
 <li>Prohibited.Asr：Asr 文字鉴违禁</li>
 <li>Prohibited.Ocr：Ocr 文字鉴违禁</li>
                      */
@@ -173,17 +173,17 @@ namespace TencentCloud
                     bool PornTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频内容审核智能画面鉴恐任务的查询结果，当任务类型为 Terrorism 时有效。
+                     * 获取视频内容审核智能画面敏感任务的查询结果，当任务类型为 Terrorism 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TerrorismTask 视频内容审核智能画面鉴恐任务的查询结果，当任务类型为 Terrorism 时有效。
+                     * @return TerrorismTask 视频内容审核智能画面敏感任务的查询结果，当任务类型为 Terrorism 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiReviewTaskTerrorismResult GetTerrorismTask() const;
 
                     /**
-                     * 设置视频内容审核智能画面鉴恐任务的查询结果，当任务类型为 Terrorism 时有效。
+                     * 设置视频内容审核智能画面敏感任务的查询结果，当任务类型为 Terrorism 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TerrorismTask 视频内容审核智能画面鉴恐任务的查询结果，当任务类型为 Terrorism 时有效。
+                     * @param TerrorismTask 视频内容审核智能画面敏感任务的查询结果，当任务类型为 Terrorism 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTerrorismTask(const AiReviewTaskTerrorismResult& _terrorismTask);
@@ -195,17 +195,17 @@ namespace TencentCloud
                     bool TerrorismTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频内容审核智能画面鉴政任务的查询结果，当任务类型为 Political 时有效。
+                     * 获取视频内容审核智能画面敏感任务的查询结果，当任务类型为 Political 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PoliticalTask 视频内容审核智能画面鉴政任务的查询结果，当任务类型为 Political 时有效。
+                     * @return PoliticalTask 视频内容审核智能画面敏感任务的查询结果，当任务类型为 Political 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiReviewTaskPoliticalResult GetPoliticalTask() const;
 
                     /**
-                     * 设置视频内容审核智能画面鉴政任务的查询结果，当任务类型为 Political 时有效。
+                     * 设置视频内容审核智能画面敏感任务的查询结果，当任务类型为 Political 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PoliticalTask 视频内容审核智能画面鉴政任务的查询结果，当任务类型为 Political 时有效。
+                     * @param PoliticalTask 视频内容审核智能画面敏感任务的查询结果，当任务类型为 Political 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPoliticalTask(const AiReviewTaskPoliticalResult& _politicalTask);
@@ -261,17 +261,17 @@ namespace TencentCloud
                     bool PornOcrTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频内容审核 Asr 文字鉴政任务的查询结果，当任务类型为 Political.Asr 时有效。
+                     * 获取视频内容审核 Asr 文字敏感任务的查询结果，当任务类型为 Political.Asr 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PoliticalAsrTask 视频内容审核 Asr 文字鉴政任务的查询结果，当任务类型为 Political.Asr 时有效。
+                     * @return PoliticalAsrTask 视频内容审核 Asr 文字敏感任务的查询结果，当任务类型为 Political.Asr 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiReviewTaskPoliticalAsrResult GetPoliticalAsrTask() const;
 
                     /**
-                     * 设置视频内容审核 Asr 文字鉴政任务的查询结果，当任务类型为 Political.Asr 时有效。
+                     * 设置视频内容审核 Asr 文字敏感任务的查询结果，当任务类型为 Political.Asr 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PoliticalAsrTask 视频内容审核 Asr 文字鉴政任务的查询结果，当任务类型为 Political.Asr 时有效。
+                     * @param PoliticalAsrTask 视频内容审核 Asr 文字敏感任务的查询结果，当任务类型为 Political.Asr 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPoliticalAsrTask(const AiReviewTaskPoliticalAsrResult& _politicalAsrTask);
@@ -283,17 +283,17 @@ namespace TencentCloud
                     bool PoliticalAsrTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频内容审核 Ocr 文字鉴政任务的查询结果，当任务类型为 Political.Ocr 时有效。
+                     * 获取视频内容审核 Ocr 文字敏感任务的查询结果，当任务类型为 Political.Ocr 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PoliticalOcrTask 视频内容审核 Ocr 文字鉴政任务的查询结果，当任务类型为 Political.Ocr 时有效。
+                     * @return PoliticalOcrTask 视频内容审核 Ocr 文字敏感任务的查询结果，当任务类型为 Political.Ocr 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiReviewTaskPoliticalOcrResult GetPoliticalOcrTask() const;
 
                     /**
-                     * 设置视频内容审核 Ocr 文字鉴政任务的查询结果，当任务类型为 Political.Ocr 时有效。
+                     * 设置视频内容审核 Ocr 文字敏感任务的查询结果，当任务类型为 Political.Ocr 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PoliticalOcrTask 视频内容审核 Ocr 文字鉴政任务的查询结果，当任务类型为 Political.Ocr 时有效。
+                     * @param PoliticalOcrTask 视频内容审核 Ocr 文字敏感任务的查询结果，当任务类型为 Political.Ocr 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPoliticalOcrTask(const AiReviewTaskPoliticalOcrResult& _politicalOcrTask);
@@ -305,17 +305,17 @@ namespace TencentCloud
                     bool PoliticalOcrTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频内容审核 Ocr 文字鉴恐任务的查询结果，当任务类型为 Terrorism.Ocr 时有效。
+                     * 获取视频内容审核 Ocr 文字敏感任务的查询结果，当任务类型为 Terrorism.Ocr 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TerrorismOcrTask 视频内容审核 Ocr 文字鉴恐任务的查询结果，当任务类型为 Terrorism.Ocr 时有效。
+                     * @return TerrorismOcrTask 视频内容审核 Ocr 文字敏感任务的查询结果，当任务类型为 Terrorism.Ocr 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiReviewTaskTerrorismOcrResult GetTerrorismOcrTask() const;
 
                     /**
-                     * 设置视频内容审核 Ocr 文字鉴恐任务的查询结果，当任务类型为 Terrorism.Ocr 时有效。
+                     * 设置视频内容审核 Ocr 文字敏感任务的查询结果，当任务类型为 Terrorism.Ocr 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TerrorismOcrTask 视频内容审核 Ocr 文字鉴恐任务的查询结果，当任务类型为 Terrorism.Ocr 时有效。
+                     * @param TerrorismOcrTask 视频内容审核 Ocr 文字敏感任务的查询结果，当任务类型为 Terrorism.Ocr 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTerrorismOcrTask(const AiReviewTaskTerrorismOcrResult& _terrorismOcrTask);
@@ -375,13 +375,13 @@ namespace TencentCloud
                     /**
                      * 任务的类型，可以取的值有：
 <li>Porn：图片鉴黄</li>
-<li>Terrorism：图片鉴恐</li>
-<li>Political：图片鉴政</li>
+<li>Terrorism：图片敏感</li>
+<li>Political：图片敏感</li>
 <li>Porn.Asr：Asr 文字鉴黄</li>
 <li>Porn.Ocr：Ocr 文字鉴黄</li>
-<li>Political.Asr：Asr 文字鉴政</li>
-<li>Political.Ocr：Ocr 文字鉴政</li>
-<li>Terrorism.Ocr：Ocr 文字鉴恐</li>
+<li>Political.Asr：Asr 文字敏感</li>
+<li>Political.Ocr：Ocr 文字敏感</li>
+<li>Terrorism.Ocr：Ocr 文字敏感</li>
 <li>Prohibited.Asr：Asr 文字鉴违禁</li>
 <li>Prohibited.Ocr：Ocr 文字鉴违禁</li>
                      */
@@ -408,14 +408,14 @@ namespace TencentCloud
                     bool m_pornTaskHasBeenSet;
 
                     /**
-                     * 视频内容审核智能画面鉴恐任务的查询结果，当任务类型为 Terrorism 时有效。
+                     * 视频内容审核智能画面敏感任务的查询结果，当任务类型为 Terrorism 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiReviewTaskTerrorismResult m_terrorismTask;
                     bool m_terrorismTaskHasBeenSet;
 
                     /**
-                     * 视频内容审核智能画面鉴政任务的查询结果，当任务类型为 Political 时有效。
+                     * 视频内容审核智能画面敏感任务的查询结果，当任务类型为 Political 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiReviewTaskPoliticalResult m_politicalTask;
@@ -436,21 +436,21 @@ namespace TencentCloud
                     bool m_pornOcrTaskHasBeenSet;
 
                     /**
-                     * 视频内容审核 Asr 文字鉴政任务的查询结果，当任务类型为 Political.Asr 时有效。
+                     * 视频内容审核 Asr 文字敏感任务的查询结果，当任务类型为 Political.Asr 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiReviewTaskPoliticalAsrResult m_politicalAsrTask;
                     bool m_politicalAsrTaskHasBeenSet;
 
                     /**
-                     * 视频内容审核 Ocr 文字鉴政任务的查询结果，当任务类型为 Political.Ocr 时有效。
+                     * 视频内容审核 Ocr 文字敏感任务的查询结果，当任务类型为 Political.Ocr 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiReviewTaskPoliticalOcrResult m_politicalOcrTask;
                     bool m_politicalOcrTaskHasBeenSet;
 
                     /**
-                     * 视频内容审核 Ocr 文字鉴恐任务的查询结果，当任务类型为 Terrorism.Ocr 时有效。
+                     * 视频内容审核 Ocr 文字敏感任务的查询结果，当任务类型为 Terrorism.Ocr 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiReviewTaskTerrorismOcrResult m_terrorismOcrTask;

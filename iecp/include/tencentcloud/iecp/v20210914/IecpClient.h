@@ -31,6 +31,8 @@
 #include <tencentcloud/iecp/v20210914/model/CreateConfigMapResponse.h>
 #include <tencentcloud/iecp/v20210914/model/CreateEdgeNodeRequest.h>
 #include <tencentcloud/iecp/v20210914/model/CreateEdgeNodeResponse.h>
+#include <tencentcloud/iecp/v20210914/model/CreateEdgeNodeBatchRequest.h>
+#include <tencentcloud/iecp/v20210914/model/CreateEdgeNodeBatchResponse.h>
 #include <tencentcloud/iecp/v20210914/model/CreateEdgeNodeGroupRequest.h>
 #include <tencentcloud/iecp/v20210914/model/CreateEdgeNodeGroupResponse.h>
 #include <tencentcloud/iecp/v20210914/model/CreateEdgeNodeUnitTemplateRequest.h>
@@ -47,6 +49,8 @@
 #include <tencentcloud/iecp/v20210914/model/CreateSecretResponse.h>
 #include <tencentcloud/iecp/v20210914/model/CreateUpdateNodeUnitRequest.h>
 #include <tencentcloud/iecp/v20210914/model/CreateUpdateNodeUnitResponse.h>
+#include <tencentcloud/iecp/v20210914/model/CreateUserTokenRequest.h>
+#include <tencentcloud/iecp/v20210914/model/CreateUserTokenResponse.h>
 #include <tencentcloud/iecp/v20210914/model/DeleteApplicationsRequest.h>
 #include <tencentcloud/iecp/v20210914/model/DeleteApplicationsResponse.h>
 #include <tencentcloud/iecp/v20210914/model/DeleteConfigMapRequest.h>
@@ -95,12 +99,16 @@
 #include <tencentcloud/iecp/v20210914/model/DescribeEdgeNodePodContainersResponse.h>
 #include <tencentcloud/iecp/v20210914/model/DescribeEdgeNodePodsRequest.h>
 #include <tencentcloud/iecp/v20210914/model/DescribeEdgeNodePodsResponse.h>
+#include <tencentcloud/iecp/v20210914/model/DescribeEdgeNodeRemarkListRequest.h>
+#include <tencentcloud/iecp/v20210914/model/DescribeEdgeNodeRemarkListResponse.h>
 #include <tencentcloud/iecp/v20210914/model/DescribeEdgeNodesRequest.h>
 #include <tencentcloud/iecp/v20210914/model/DescribeEdgeNodesResponse.h>
 #include <tencentcloud/iecp/v20210914/model/DescribeEdgeOperationLogsRequest.h>
 #include <tencentcloud/iecp/v20210914/model/DescribeEdgeOperationLogsResponse.h>
 #include <tencentcloud/iecp/v20210914/model/DescribeEdgePodRequest.h>
 #include <tencentcloud/iecp/v20210914/model/DescribeEdgePodResponse.h>
+#include <tencentcloud/iecp/v20210914/model/DescribeEdgeSnNodesRequest.h>
+#include <tencentcloud/iecp/v20210914/model/DescribeEdgeSnNodesResponse.h>
 #include <tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationEventsRequest.h>
 #include <tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationEventsResponse.h>
 #include <tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationLogsRequest.h>
@@ -157,6 +165,8 @@
 #include <tencentcloud/iecp/v20210914/model/DescribeSecretYamlErrorResponse.h>
 #include <tencentcloud/iecp/v20210914/model/DescribeSecretsRequest.h>
 #include <tencentcloud/iecp/v20210914/model/DescribeSecretsResponse.h>
+#include <tencentcloud/iecp/v20210914/model/DescribeYeheResourceLimitRequest.h>
+#include <tencentcloud/iecp/v20210914/model/DescribeYeheResourceLimitResponse.h>
 #include <tencentcloud/iecp/v20210914/model/GetMarketComponentRequest.h>
 #include <tencentcloud/iecp/v20210914/model/GetMarketComponentResponse.h>
 #include <tencentcloud/iecp/v20210914/model/GetMarketComponentListRequest.h>
@@ -167,6 +177,8 @@
 #include <tencentcloud/iecp/v20210914/model/ModifyApplicationVisualizationResponse.h>
 #include <tencentcloud/iecp/v20210914/model/ModifyConfigMapRequest.h>
 #include <tencentcloud/iecp/v20210914/model/ModifyConfigMapResponse.h>
+#include <tencentcloud/iecp/v20210914/model/ModifyEdgeDracoNodeRequest.h>
+#include <tencentcloud/iecp/v20210914/model/ModifyEdgeDracoNodeResponse.h>
 #include <tencentcloud/iecp/v20210914/model/ModifyEdgeNodeLabelsRequest.h>
 #include <tencentcloud/iecp/v20210914/model/ModifyEdgeNodeLabelsResponse.h>
 #include <tencentcloud/iecp/v20210914/model/ModifyEdgeUnitRequest.h>
@@ -177,6 +189,8 @@
 #include <tencentcloud/iecp/v20210914/model/ModifyEdgeUnitApplicationVisualizationResponse.h>
 #include <tencentcloud/iecp/v20210914/model/ModifyEdgeUnitApplicationYamlRequest.h>
 #include <tencentcloud/iecp/v20210914/model/ModifyEdgeUnitApplicationYamlResponse.h>
+#include <tencentcloud/iecp/v20210914/model/ModifyEdgeUnitCloudApiRequest.h>
+#include <tencentcloud/iecp/v20210914/model/ModifyEdgeUnitCloudApiResponse.h>
 #include <tencentcloud/iecp/v20210914/model/ModifyEdgeUnitDeployGridItemRequest.h>
 #include <tencentcloud/iecp/v20210914/model/ModifyEdgeUnitDeployGridItemResponse.h>
 #include <tencentcloud/iecp/v20210914/model/ModifyNodeUnitTemplateRequest.h>
@@ -211,6 +225,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateEdgeNodeResponse> CreateEdgeNodeOutcome;
                 typedef std::future<CreateEdgeNodeOutcome> CreateEdgeNodeOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::CreateEdgeNodeRequest&, CreateEdgeNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEdgeNodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateEdgeNodeBatchResponse> CreateEdgeNodeBatchOutcome;
+                typedef std::future<CreateEdgeNodeBatchOutcome> CreateEdgeNodeBatchOutcomeCallable;
+                typedef std::function<void(const IecpClient*, const Model::CreateEdgeNodeBatchRequest&, CreateEdgeNodeBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEdgeNodeBatchAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateEdgeNodeGroupResponse> CreateEdgeNodeGroupOutcome;
                 typedef std::future<CreateEdgeNodeGroupOutcome> CreateEdgeNodeGroupOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::CreateEdgeNodeGroupRequest&, CreateEdgeNodeGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEdgeNodeGroupAsyncHandler;
@@ -235,6 +252,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateUpdateNodeUnitResponse> CreateUpdateNodeUnitOutcome;
                 typedef std::future<CreateUpdateNodeUnitOutcome> CreateUpdateNodeUnitOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::CreateUpdateNodeUnitRequest&, CreateUpdateNodeUnitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUpdateNodeUnitAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateUserTokenResponse> CreateUserTokenOutcome;
+                typedef std::future<CreateUserTokenOutcome> CreateUserTokenOutcomeCallable;
+                typedef std::function<void(const IecpClient*, const Model::CreateUserTokenRequest&, CreateUserTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteApplicationsResponse> DeleteApplicationsOutcome;
                 typedef std::future<DeleteApplicationsOutcome> DeleteApplicationsOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::DeleteApplicationsRequest&, DeleteApplicationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteApplicationsAsyncHandler;
@@ -307,6 +327,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEdgeNodePodsResponse> DescribeEdgeNodePodsOutcome;
                 typedef std::future<DescribeEdgeNodePodsOutcome> DescribeEdgeNodePodsOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::DescribeEdgeNodePodsRequest&, DescribeEdgeNodePodsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdgeNodePodsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEdgeNodeRemarkListResponse> DescribeEdgeNodeRemarkListOutcome;
+                typedef std::future<DescribeEdgeNodeRemarkListOutcome> DescribeEdgeNodeRemarkListOutcomeCallable;
+                typedef std::function<void(const IecpClient*, const Model::DescribeEdgeNodeRemarkListRequest&, DescribeEdgeNodeRemarkListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdgeNodeRemarkListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEdgeNodesResponse> DescribeEdgeNodesOutcome;
                 typedef std::future<DescribeEdgeNodesOutcome> DescribeEdgeNodesOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::DescribeEdgeNodesRequest&, DescribeEdgeNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdgeNodesAsyncHandler;
@@ -316,6 +339,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEdgePodResponse> DescribeEdgePodOutcome;
                 typedef std::future<DescribeEdgePodOutcome> DescribeEdgePodOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::DescribeEdgePodRequest&, DescribeEdgePodOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdgePodAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEdgeSnNodesResponse> DescribeEdgeSnNodesOutcome;
+                typedef std::future<DescribeEdgeSnNodesOutcome> DescribeEdgeSnNodesOutcomeCallable;
+                typedef std::function<void(const IecpClient*, const Model::DescribeEdgeSnNodesRequest&, DescribeEdgeSnNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdgeSnNodesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEdgeUnitApplicationEventsResponse> DescribeEdgeUnitApplicationEventsOutcome;
                 typedef std::future<DescribeEdgeUnitApplicationEventsOutcome> DescribeEdgeUnitApplicationEventsOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::DescribeEdgeUnitApplicationEventsRequest&, DescribeEdgeUnitApplicationEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdgeUnitApplicationEventsAsyncHandler;
@@ -400,6 +426,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSecretsResponse> DescribeSecretsOutcome;
                 typedef std::future<DescribeSecretsOutcome> DescribeSecretsOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::DescribeSecretsRequest&, DescribeSecretsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecretsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeYeheResourceLimitResponse> DescribeYeheResourceLimitOutcome;
+                typedef std::future<DescribeYeheResourceLimitOutcome> DescribeYeheResourceLimitOutcomeCallable;
+                typedef std::function<void(const IecpClient*, const Model::DescribeYeheResourceLimitRequest&, DescribeYeheResourceLimitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeYeheResourceLimitAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetMarketComponentResponse> GetMarketComponentOutcome;
                 typedef std::future<GetMarketComponentOutcome> GetMarketComponentOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::GetMarketComponentRequest&, GetMarketComponentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetMarketComponentAsyncHandler;
@@ -415,6 +444,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyConfigMapResponse> ModifyConfigMapOutcome;
                 typedef std::future<ModifyConfigMapOutcome> ModifyConfigMapOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::ModifyConfigMapRequest&, ModifyConfigMapOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConfigMapAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyEdgeDracoNodeResponse> ModifyEdgeDracoNodeOutcome;
+                typedef std::future<ModifyEdgeDracoNodeOutcome> ModifyEdgeDracoNodeOutcomeCallable;
+                typedef std::function<void(const IecpClient*, const Model::ModifyEdgeDracoNodeRequest&, ModifyEdgeDracoNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEdgeDracoNodeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyEdgeNodeLabelsResponse> ModifyEdgeNodeLabelsOutcome;
                 typedef std::future<ModifyEdgeNodeLabelsOutcome> ModifyEdgeNodeLabelsOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::ModifyEdgeNodeLabelsRequest&, ModifyEdgeNodeLabelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEdgeNodeLabelsAsyncHandler;
@@ -430,6 +462,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyEdgeUnitApplicationYamlResponse> ModifyEdgeUnitApplicationYamlOutcome;
                 typedef std::future<ModifyEdgeUnitApplicationYamlOutcome> ModifyEdgeUnitApplicationYamlOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::ModifyEdgeUnitApplicationYamlRequest&, ModifyEdgeUnitApplicationYamlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEdgeUnitApplicationYamlAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyEdgeUnitCloudApiResponse> ModifyEdgeUnitCloudApiOutcome;
+                typedef std::future<ModifyEdgeUnitCloudApiOutcome> ModifyEdgeUnitCloudApiOutcomeCallable;
+                typedef std::function<void(const IecpClient*, const Model::ModifyEdgeUnitCloudApiRequest&, ModifyEdgeUnitCloudApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEdgeUnitCloudApiAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyEdgeUnitDeployGridItemResponse> ModifyEdgeUnitDeployGridItemOutcome;
                 typedef std::future<ModifyEdgeUnitDeployGridItemOutcome> ModifyEdgeUnitDeployGridItemOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::ModifyEdgeUnitDeployGridItemRequest&, ModifyEdgeUnitDeployGridItemOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEdgeUnitDeployGridItemAsyncHandler;
@@ -480,6 +515,15 @@ namespace TencentCloud
                 CreateEdgeNodeOutcome CreateEdgeNode(const Model::CreateEdgeNodeRequest &request);
                 void CreateEdgeNodeAsync(const Model::CreateEdgeNodeRequest& request, const CreateEdgeNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateEdgeNodeOutcomeCallable CreateEdgeNodeCallable(const Model::CreateEdgeNodeRequest& request);
+
+                /**
+                 *批量预注册节点
+                 * @param req CreateEdgeNodeBatchRequest
+                 * @return CreateEdgeNodeBatchOutcome
+                 */
+                CreateEdgeNodeBatchOutcome CreateEdgeNodeBatch(const Model::CreateEdgeNodeBatchRequest &request);
+                void CreateEdgeNodeBatchAsync(const Model::CreateEdgeNodeBatchRequest& request, const CreateEdgeNodeBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateEdgeNodeBatchOutcomeCallable CreateEdgeNodeBatchCallable(const Model::CreateEdgeNodeBatchRequest& request);
 
                 /**
                  *创建边缘单元NodeGroup
@@ -552,6 +596,15 @@ namespace TencentCloud
                 CreateUpdateNodeUnitOutcome CreateUpdateNodeUnit(const Model::CreateUpdateNodeUnitRequest &request);
                 void CreateUpdateNodeUnitAsync(const Model::CreateUpdateNodeUnitRequest& request, const CreateUpdateNodeUnitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateUpdateNodeUnitOutcomeCallable CreateUpdateNodeUnitCallable(const Model::CreateUpdateNodeUnitRequest& request);
+
+                /**
+                 *创建token
+                 * @param req CreateUserTokenRequest
+                 * @return CreateUserTokenOutcome
+                 */
+                CreateUserTokenOutcome CreateUserToken(const Model::CreateUserTokenRequest &request);
+                void CreateUserTokenAsync(const Model::CreateUserTokenRequest& request, const CreateUserTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateUserTokenOutcomeCallable CreateUserTokenCallable(const Model::CreateUserTokenRequest& request);
 
                 /**
                  *删除应用模板
@@ -770,6 +823,15 @@ namespace TencentCloud
                 DescribeEdgeNodePodsOutcomeCallable DescribeEdgeNodePodsCallable(const Model::DescribeEdgeNodePodsRequest& request);
 
                 /**
+                 *获取节点备注信息列表
+                 * @param req DescribeEdgeNodeRemarkListRequest
+                 * @return DescribeEdgeNodeRemarkListOutcome
+                 */
+                DescribeEdgeNodeRemarkListOutcome DescribeEdgeNodeRemarkList(const Model::DescribeEdgeNodeRemarkListRequest &request);
+                void DescribeEdgeNodeRemarkListAsync(const Model::DescribeEdgeNodeRemarkListRequest& request, const DescribeEdgeNodeRemarkListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEdgeNodeRemarkListOutcomeCallable DescribeEdgeNodeRemarkListCallable(const Model::DescribeEdgeNodeRemarkListRequest& request);
+
+                /**
                  *查询边缘节点列表
                  * @param req DescribeEdgeNodesRequest
                  * @return DescribeEdgeNodesOutcome
@@ -795,6 +857,15 @@ namespace TencentCloud
                 DescribeEdgePodOutcome DescribeEdgePod(const Model::DescribeEdgePodRequest &request);
                 void DescribeEdgePodAsync(const Model::DescribeEdgePodRequest& request, const DescribeEdgePodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEdgePodOutcomeCallable DescribeEdgePodCallable(const Model::DescribeEdgePodRequest& request);
+
+                /**
+                 *查询预注册节点列表
+                 * @param req DescribeEdgeSnNodesRequest
+                 * @return DescribeEdgeSnNodesOutcome
+                 */
+                DescribeEdgeSnNodesOutcome DescribeEdgeSnNodes(const Model::DescribeEdgeSnNodesRequest &request);
+                void DescribeEdgeSnNodesAsync(const Model::DescribeEdgeSnNodesRequest& request, const DescribeEdgeSnNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEdgeSnNodesOutcomeCallable DescribeEdgeSnNodesCallable(const Model::DescribeEdgeSnNodesRequest& request);
 
                 /**
                  *获取应用事件列表
@@ -1049,6 +1120,15 @@ namespace TencentCloud
                 DescribeSecretsOutcomeCallable DescribeSecretsCallable(const Model::DescribeSecretsRequest& request);
 
                 /**
+                 *查询用户的资源限制
+                 * @param req DescribeYeheResourceLimitRequest
+                 * @return DescribeYeheResourceLimitOutcome
+                 */
+                DescribeYeheResourceLimitOutcome DescribeYeheResourceLimit(const Model::DescribeYeheResourceLimitRequest &request);
+                void DescribeYeheResourceLimitAsync(const Model::DescribeYeheResourceLimitRequest& request, const DescribeYeheResourceLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeYeheResourceLimitOutcomeCallable DescribeYeheResourceLimitCallable(const Model::DescribeYeheResourceLimitRequest& request);
+
+                /**
                  *获取组件市场的组件信息
                  * @param req GetMarketComponentRequest
                  * @return GetMarketComponentOutcome
@@ -1094,6 +1174,15 @@ namespace TencentCloud
                 ModifyConfigMapOutcomeCallable ModifyConfigMapCallable(const Model::ModifyConfigMapRequest& request);
 
                 /**
+                 *编辑draco设备信息
+                 * @param req ModifyEdgeDracoNodeRequest
+                 * @return ModifyEdgeDracoNodeOutcome
+                 */
+                ModifyEdgeDracoNodeOutcome ModifyEdgeDracoNode(const Model::ModifyEdgeDracoNodeRequest &request);
+                void ModifyEdgeDracoNodeAsync(const Model::ModifyEdgeDracoNodeRequest& request, const ModifyEdgeDracoNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyEdgeDracoNodeOutcomeCallable ModifyEdgeDracoNodeCallable(const Model::ModifyEdgeDracoNodeRequest& request);
+
+                /**
                  *编辑边缘节点标签
                  * @param req ModifyEdgeNodeLabelsRequest
                  * @return ModifyEdgeNodeLabelsOutcome
@@ -1137,6 +1226,15 @@ namespace TencentCloud
                 ModifyEdgeUnitApplicationYamlOutcome ModifyEdgeUnitApplicationYaml(const Model::ModifyEdgeUnitApplicationYamlRequest &request);
                 void ModifyEdgeUnitApplicationYamlAsync(const Model::ModifyEdgeUnitApplicationYamlRequest& request, const ModifyEdgeUnitApplicationYamlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyEdgeUnitApplicationYamlOutcomeCallable ModifyEdgeUnitApplicationYamlCallable(const Model::ModifyEdgeUnitApplicationYamlRequest& request);
+
+                /**
+                 *更新边缘单元信息
+                 * @param req ModifyEdgeUnitCloudApiRequest
+                 * @return ModifyEdgeUnitCloudApiOutcome
+                 */
+                ModifyEdgeUnitCloudApiOutcome ModifyEdgeUnitCloudApi(const Model::ModifyEdgeUnitCloudApiRequest &request);
+                void ModifyEdgeUnitCloudApiAsync(const Model::ModifyEdgeUnitCloudApiRequest& request, const ModifyEdgeUnitCloudApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyEdgeUnitCloudApiOutcomeCallable ModifyEdgeUnitCloudApiCallable(const Model::ModifyEdgeUnitCloudApiRequest& request);
 
                 /**
                  *修改边缘单元Grid部署应用副本数

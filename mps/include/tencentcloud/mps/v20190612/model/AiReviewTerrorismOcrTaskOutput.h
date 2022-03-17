@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Ocr 文字涉恐信息
+                * Ocr 文字涉敏信息
                 */
                 class AiReviewTerrorismOcrTaskOutput : public AbstractModel
                 {
@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Ocr 文字涉恐评分，分值为0到100。
-                     * @return Confidence Ocr 文字涉恐评分，分值为0到100。
+                     * 获取Ocr 文字涉敏评分，分值为0到100。
+                     * @return Confidence Ocr 文字涉敏评分，分值为0到100。
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置Ocr 文字涉恐评分，分值为0到100。
-                     * @param Confidence Ocr 文字涉恐评分，分值为0到100。
+                     * 设置Ocr 文字涉敏评分，分值为0到100。
+                     * @param Confidence Ocr 文字涉敏评分，分值为0到100。
                      */
                     void SetConfidence(const double& _confidence);
 
@@ -66,11 +66,11 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取Ocr 文字涉恐结果建议，取值范围：
+                     * 获取Ocr 文字涉敏结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-                     * @return Suggestion Ocr 文字涉恐结果建议，取值范围：
+                     * @return Suggestion Ocr 文字涉敏结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
@@ -78,11 +78,11 @@ namespace TencentCloud
                     std::string GetSuggestion() const;
 
                     /**
-                     * 设置Ocr 文字涉恐结果建议，取值范围：
+                     * 设置Ocr 文字涉敏结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-                     * @param Suggestion Ocr 文字涉恐结果建议，取值范围：
+                     * @param Suggestion Ocr 文字涉敏结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
@@ -96,14 +96,14 @@ namespace TencentCloud
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取Ocr 文字有涉恐嫌疑的视频片段列表。
-                     * @return SegmentSet Ocr 文字有涉恐嫌疑的视频片段列表。
+                     * 获取Ocr 文字有涉敏嫌疑的视频片段列表。
+                     * @return SegmentSet Ocr 文字有涉敏嫌疑的视频片段列表。
                      */
                     std::vector<MediaContentReviewOcrTextSegmentItem> GetSegmentSet() const;
 
                     /**
-                     * 设置Ocr 文字有涉恐嫌疑的视频片段列表。
-                     * @param SegmentSet Ocr 文字有涉恐嫌疑的视频片段列表。
+                     * 设置Ocr 文字有涉敏嫌疑的视频片段列表。
+                     * @param SegmentSet Ocr 文字有涉敏嫌疑的视频片段列表。
                      */
                     void SetSegmentSet(const std::vector<MediaContentReviewOcrTextSegmentItem>& _segmentSet);
 
@@ -116,13 +116,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Ocr 文字涉恐评分，分值为0到100。
+                     * Ocr 文字涉敏评分，分值为0到100。
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * Ocr 文字涉恐结果建议，取值范围：
+                     * Ocr 文字涉敏结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
@@ -131,7 +131,7 @@ namespace TencentCloud
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * Ocr 文字有涉恐嫌疑的视频片段列表。
+                     * Ocr 文字有涉敏嫌疑的视频片段列表。
                      */
                     std::vector<MediaContentReviewOcrTextSegmentItem> m_segmentSet;
                     bool m_segmentSetHasBeenSet;

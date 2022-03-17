@@ -132,6 +132,44 @@ DELETE： DeleteObject。
                      */
                     bool AuthorizationHasBeenSet() const;
 
+                    /**
+                     * 获取API后端COS的路径匹配模式，可选值：
+BackEndPath ： 后端路径匹配
+FullPath ： 全路径匹配
+
+默认值为：BackEndPath
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PathMatchMode API后端COS的路径匹配模式，可选值：
+BackEndPath ： 后端路径匹配
+FullPath ： 全路径匹配
+
+默认值为：BackEndPath
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPathMatchMode() const;
+
+                    /**
+                     * 设置API后端COS的路径匹配模式，可选值：
+BackEndPath ： 后端路径匹配
+FullPath ： 全路径匹配
+
+默认值为：BackEndPath
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PathMatchMode API后端COS的路径匹配模式，可选值：
+BackEndPath ： 后端路径匹配
+FullPath ： 全路径匹配
+
+默认值为：BackEndPath
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPathMatchMode(const std::string& _pathMatchMode);
+
+                    /**
+                     * 判断参数 PathMatchMode 是否已赋值
+                     * @return PathMatchMode 是否已赋值
+                     */
+                    bool PathMatchModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -159,6 +197,17 @@ DELETE： DeleteObject。
                      */
                     bool m_authorization;
                     bool m_authorizationHasBeenSet;
+
+                    /**
+                     * API后端COS的路径匹配模式，可选值：
+BackEndPath ： 后端路径匹配
+FullPath ： 全路径匹配
+
+默认值为：BackEndPath
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_pathMatchMode;
+                    bool m_pathMatchModeHasBeenSet;
 
                 };
             }

@@ -331,6 +331,42 @@ namespace TencentCloud
                      */
                     bool DiskTypeHasBeenSet() const;
 
+                    /**
+                     * 获取跨可用区，zoneIds必填
+                     * @return MultiZoneFlag 跨可用区，zoneIds必填
+                     */
+                    bool GetMultiZoneFlag() const;
+
+                    /**
+                     * 设置跨可用区，zoneIds必填
+                     * @param MultiZoneFlag 跨可用区，zoneIds必填
+                     */
+                    void SetMultiZoneFlag(const bool& _multiZoneFlag);
+
+                    /**
+                     * 判断参数 MultiZoneFlag 是否已赋值
+                     * @return MultiZoneFlag 是否已赋值
+                     */
+                    bool MultiZoneFlagHasBeenSet() const;
+
+                    /**
+                     * 获取可用区列表
+                     * @return ZoneIds 可用区列表
+                     */
+                    std::vector<int64_t> GetZoneIds() const;
+
+                    /**
+                     * 设置可用区列表
+                     * @param ZoneIds 可用区列表
+                     */
+                    void SetZoneIds(const std::vector<int64_t>& _zoneIds);
+
+                    /**
+                     * 判断参数 ZoneIds 是否已赋值
+                     * @return ZoneIds 是否已赋值
+                     */
+                    bool ZoneIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -428,6 +464,18 @@ namespace TencentCloud
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
+
+                    /**
+                     * 跨可用区，zoneIds必填
+                     */
+                    bool m_multiZoneFlag;
+                    bool m_multiZoneFlagHasBeenSet;
+
+                    /**
+                     * 可用区列表
+                     */
+                    std::vector<int64_t> m_zoneIds;
+                    bool m_zoneIdsHasBeenSet;
 
                 };
             }

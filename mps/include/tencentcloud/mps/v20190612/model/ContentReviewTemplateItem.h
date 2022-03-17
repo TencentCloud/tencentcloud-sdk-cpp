@@ -128,17 +128,17 @@ namespace TencentCloud
                     bool PornConfigureHasBeenSet() const;
 
                     /**
-                     * 获取鉴恐控制参数。
+                     * 获取涉敏控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TerrorismConfigure 鉴恐控制参数。
+                     * @return TerrorismConfigure 涉敏控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TerrorismConfigureInfo GetTerrorismConfigure() const;
 
                     /**
-                     * 设置鉴恐控制参数。
+                     * 设置涉敏控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TerrorismConfigure 鉴恐控制参数。
+                     * @param TerrorismConfigure 涉敏控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTerrorismConfigure(const TerrorismConfigureInfo& _terrorismConfigure);
@@ -150,17 +150,17 @@ namespace TencentCloud
                     bool TerrorismConfigureHasBeenSet() const;
 
                     /**
-                     * 获取鉴政控制参数。
+                     * 获取涉敏控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PoliticalConfigure 鉴政控制参数。
+                     * @return PoliticalConfigure 涉敏控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PoliticalConfigureInfo GetPoliticalConfigure() const;
 
                     /**
-                     * 设置鉴政控制参数。
+                     * 设置涉敏控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PoliticalConfigure 鉴政控制参数。
+                     * @param PoliticalConfigure 涉敏控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPoliticalConfigure(const PoliticalConfigureInfo& _politicalConfigure);
@@ -287,14 +287,14 @@ namespace TencentCloud
                     bool m_pornConfigureHasBeenSet;
 
                     /**
-                     * 鉴恐控制参数。
+                     * 涉敏控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TerrorismConfigureInfo m_terrorismConfigure;
                     bool m_terrorismConfigureHasBeenSet;
 
                     /**
-                     * 鉴政控制参数。
+                     * 涉敏控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PoliticalConfigureInfo m_politicalConfigure;

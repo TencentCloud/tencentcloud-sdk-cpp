@@ -26,7 +26,11 @@ DescribeOfficialInstancesRequest::DescribeOfficialInstancesRequest() :
     m_superAdminAccountHasBeenSet(false),
     m_instanceIdsHasBeenSet(false),
     m_pageNumberHasBeenSet(false),
-    m_pageSizeHasBeenSet(false)
+    m_pageSizeHasBeenSet(false),
+    m_orderByHasBeenSet(false),
+    m_orderByTypeHasBeenSet(false),
+    m_autoRenewHasBeenSet(false),
+    m_bindPhoneHasBeenSet(false)
 {
 }
 
@@ -72,6 +76,38 @@ string DescribeOfficialInstancesRequest::ToJsonString() const
         string key = "PageSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_orderByHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderBy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderBy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderByTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderByType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderByType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoRenewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRenew";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoRenew, allocator);
+    }
+
+    if (m_bindPhoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BindPhone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_bindPhone, allocator);
     }
 
 
@@ -144,6 +180,70 @@ void DescribeOfficialInstancesRequest::SetPageSize(const uint64_t& _pageSize)
 bool DescribeOfficialInstancesRequest::PageSizeHasBeenSet() const
 {
     return m_pageSizeHasBeenSet;
+}
+
+string DescribeOfficialInstancesRequest::GetOrderBy() const
+{
+    return m_orderBy;
+}
+
+void DescribeOfficialInstancesRequest::SetOrderBy(const string& _orderBy)
+{
+    m_orderBy = _orderBy;
+    m_orderByHasBeenSet = true;
+}
+
+bool DescribeOfficialInstancesRequest::OrderByHasBeenSet() const
+{
+    return m_orderByHasBeenSet;
+}
+
+string DescribeOfficialInstancesRequest::GetOrderByType() const
+{
+    return m_orderByType;
+}
+
+void DescribeOfficialInstancesRequest::SetOrderByType(const string& _orderByType)
+{
+    m_orderByType = _orderByType;
+    m_orderByTypeHasBeenSet = true;
+}
+
+bool DescribeOfficialInstancesRequest::OrderByTypeHasBeenSet() const
+{
+    return m_orderByTypeHasBeenSet;
+}
+
+uint64_t DescribeOfficialInstancesRequest::GetAutoRenew() const
+{
+    return m_autoRenew;
+}
+
+void DescribeOfficialInstancesRequest::SetAutoRenew(const uint64_t& _autoRenew)
+{
+    m_autoRenew = _autoRenew;
+    m_autoRenewHasBeenSet = true;
+}
+
+bool DescribeOfficialInstancesRequest::AutoRenewHasBeenSet() const
+{
+    return m_autoRenewHasBeenSet;
+}
+
+bool DescribeOfficialInstancesRequest::GetBindPhone() const
+{
+    return m_bindPhone;
+}
+
+void DescribeOfficialInstancesRequest::SetBindPhone(const bool& _bindPhone)
+{
+    m_bindPhone = _bindPhone;
+    m_bindPhoneHasBeenSet = true;
+}
+
+bool DescribeOfficialInstancesRequest::BindPhoneHasBeenSet() const
+{
+    return m_bindPhoneHasBeenSet;
 }
 
 

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 语音鉴政任务控制参数。
+                * 语音涉敏任务控制参数。
                 */
                 class PoliticalAsrReviewTemplateInfoForUpdate : public AbstractModel
                 {
@@ -47,22 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取语音鉴政任务开关，可选值：
-<li>ON：开启语音鉴政任务；</li>
-<li>OFF：关闭语音鉴政任务。</li>
-                     * @return Switch 语音鉴政任务开关，可选值：
-<li>ON：开启语音鉴政任务；</li>
-<li>OFF：关闭语音鉴政任务。</li>
+                     * 获取语音涉敏任务开关，可选值：
+<li>ON：开启语音涉敏任务；</li>
+<li>OFF：关闭语音涉敏任务。</li>
+                     * @return Switch 语音涉敏任务开关，可选值：
+<li>ON：开启语音涉敏任务；</li>
+<li>OFF：关闭语音涉敏任务。</li>
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置语音鉴政任务开关，可选值：
-<li>ON：开启语音鉴政任务；</li>
-<li>OFF：关闭语音鉴政任务。</li>
-                     * @param Switch 语音鉴政任务开关，可选值：
-<li>ON：开启语音鉴政任务；</li>
-<li>OFF：关闭语音鉴政任务。</li>
+                     * 设置语音涉敏任务开关，可选值：
+<li>ON：开启语音涉敏任务；</li>
+<li>OFF：关闭语音涉敏任务。</li>
+                     * @param Switch 语音涉敏任务开关，可选值：
+<li>ON：开启语音涉敏任务；</li>
+<li>OFF：关闭语音涉敏任务。</li>
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -111,9 +111,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 语音鉴政任务开关，可选值：
-<li>ON：开启语音鉴政任务；</li>
-<li>OFF：关闭语音鉴政任务。</li>
+                     * 语音涉敏任务开关，可选值：
+<li>ON：开启语音涉敏任务；</li>
+<li>OFF：关闭语音涉敏任务。</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;

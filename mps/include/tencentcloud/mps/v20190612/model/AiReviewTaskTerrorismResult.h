@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 内容审核鉴恐任务结果类型
+                * 内容审核涉敏任务结果类型
                 */
                 class AiReviewTaskTerrorismResult : public AbstractModel
                 {
@@ -121,14 +121,14 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取内容审核鉴恐任务输入。
-                     * @return Input 内容审核鉴恐任务输入。
+                     * 获取内容审核涉敏任务输入。
+                     * @return Input 内容审核涉敏任务输入。
                      */
                     AiReviewTerrorismTaskInput GetInput() const;
 
                     /**
-                     * 设置内容审核鉴恐任务输入。
-                     * @param Input 内容审核鉴恐任务输入。
+                     * 设置内容审核涉敏任务输入。
+                     * @param Input 内容审核涉敏任务输入。
                      */
                     void SetInput(const AiReviewTerrorismTaskInput& _input);
 
@@ -139,17 +139,17 @@ namespace TencentCloud
                     bool InputHasBeenSet() const;
 
                     /**
-                     * 获取内容审核鉴恐任务输出。
+                     * 获取内容审核涉敏任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Output 内容审核鉴恐任务输出。
+                     * @return Output 内容审核涉敏任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiReviewTerrorismTaskOutput GetOutput() const;
 
                     /**
-                     * 设置内容审核鉴恐任务输出。
+                     * 设置内容审核涉敏任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Output 内容审核鉴恐任务输出。
+                     * @param Output 内容审核涉敏任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOutput(const AiReviewTerrorismTaskOutput& _output);
@@ -187,13 +187,13 @@ namespace TencentCloud
                     bool m_messageHasBeenSet;
 
                     /**
-                     * 内容审核鉴恐任务输入。
+                     * 内容审核涉敏任务输入。
                      */
                     AiReviewTerrorismTaskInput m_input;
                     bool m_inputHasBeenSet;
 
                     /**
-                     * 内容审核鉴恐任务输出。
+                     * 内容审核涉敏任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiReviewTerrorismTaskOutput m_output;

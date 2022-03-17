@@ -222,6 +222,50 @@ namespace TencentCloud
                      */
                     bool InputFormatHasBeenSet() const;
 
+                    /**
+                     * 获取数据表存储大小（单位：Byte）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StorageSize 数据表存储大小（单位：Byte）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetStorageSize() const;
+
+                    /**
+                     * 设置数据表存储大小（单位：Byte）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StorageSize 数据表存储大小（单位：Byte）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStorageSize(const int64_t& _storageSize);
+
+                    /**
+                     * 判断参数 StorageSize 是否已赋值
+                     * @return StorageSize 是否已赋值
+                     */
+                    bool StorageSizeHasBeenSet() const;
+
+                    /**
+                     * 获取数据表行数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RecordCount 数据表行数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRecordCount() const;
+
+                    /**
+                     * 设置数据表行数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RecordCount 数据表行数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRecordCount(const int64_t& _recordCount);
+
+                    /**
+                     * 判断参数 RecordCount 是否已赋值
+                     * @return RecordCount 是否已赋值
+                     */
+                    bool RecordCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -278,6 +322,20 @@ namespace TencentCloud
                      */
                     std::string m_inputFormat;
                     bool m_inputFormatHasBeenSet;
+
+                    /**
+                     * 数据表存储大小（单位：Byte）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_storageSize;
+                    bool m_storageSizeHasBeenSet;
+
+                    /**
+                     * 数据表行数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_recordCount;
+                    bool m_recordCountHasBeenSet;
 
                 };
             }

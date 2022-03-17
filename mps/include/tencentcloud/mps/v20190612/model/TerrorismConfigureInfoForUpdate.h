@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 鉴恐任务控制参数。
+                * 涉敏任务控制参数。
                 */
                 class TerrorismConfigureInfoForUpdate : public AbstractModel
                 {
@@ -49,14 +49,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取画面鉴恐任务控制参数。
-                     * @return ImgReviewInfo 画面鉴恐任务控制参数。
+                     * 获取画面涉敏任务控制参数。
+                     * @return ImgReviewInfo 画面涉敏任务控制参数。
                      */
                     TerrorismImgReviewTemplateInfoForUpdate GetImgReviewInfo() const;
 
                     /**
-                     * 设置画面鉴恐任务控制参数。
-                     * @param ImgReviewInfo 画面鉴恐任务控制参数。
+                     * 设置画面涉敏任务控制参数。
+                     * @param ImgReviewInfo 画面涉敏任务控制参数。
                      */
                     void SetImgReviewInfo(const TerrorismImgReviewTemplateInfoForUpdate& _imgReviewInfo);
 
@@ -67,14 +67,14 @@ namespace TencentCloud
                     bool ImgReviewInfoHasBeenSet() const;
 
                     /**
-                     * 获取文本鉴恐任务控制参数。
-                     * @return OcrReviewInfo 文本鉴恐任务控制参数。
+                     * 获取文本涉敏任务控制参数。
+                     * @return OcrReviewInfo 文本涉敏任务控制参数。
                      */
                     TerrorismOcrReviewTemplateInfoForUpdate GetOcrReviewInfo() const;
 
                     /**
-                     * 设置文本鉴恐任务控制参数。
-                     * @param OcrReviewInfo 文本鉴恐任务控制参数。
+                     * 设置文本涉敏任务控制参数。
+                     * @param OcrReviewInfo 文本涉敏任务控制参数。
                      */
                     void SetOcrReviewInfo(const TerrorismOcrReviewTemplateInfoForUpdate& _ocrReviewInfo);
 
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 画面鉴恐任务控制参数。
+                     * 画面涉敏任务控制参数。
                      */
                     TerrorismImgReviewTemplateInfoForUpdate m_imgReviewInfo;
                     bool m_imgReviewInfoHasBeenSet;
 
                     /**
-                     * 文本鉴恐任务控制参数。
+                     * 文本涉敏任务控制参数。
                      */
                     TerrorismOcrReviewTemplateInfoForUpdate m_ocrReviewInfo;
                     bool m_ocrReviewInfoHasBeenSet;

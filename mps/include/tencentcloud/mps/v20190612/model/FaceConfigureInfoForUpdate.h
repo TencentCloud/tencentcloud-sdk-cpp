@@ -94,11 +94,11 @@ namespace TencentCloud
                      * 获取默认人物过滤标签，指定需要返回的默认人物的标签。如果未填或者为空，则全部默认人物结果都返回。标签可选值：
 <li>entertainment：娱乐明星；</li>
 <li>sport：体育明星；</li>
-<li>politician：政治人物。</li>
+<li>politician：敏感人物。</li>
                      * @return DefaultLibraryLabelSet 默认人物过滤标签，指定需要返回的默认人物的标签。如果未填或者为空，则全部默认人物结果都返回。标签可选值：
 <li>entertainment：娱乐明星；</li>
 <li>sport：体育明星；</li>
-<li>politician：政治人物。</li>
+<li>politician：敏感人物。</li>
                      */
                     std::vector<std::string> GetDefaultLibraryLabelSet() const;
 
@@ -106,11 +106,11 @@ namespace TencentCloud
                      * 设置默认人物过滤标签，指定需要返回的默认人物的标签。如果未填或者为空，则全部默认人物结果都返回。标签可选值：
 <li>entertainment：娱乐明星；</li>
 <li>sport：体育明星；</li>
-<li>politician：政治人物。</li>
+<li>politician：敏感人物。</li>
                      * @param DefaultLibraryLabelSet 默认人物过滤标签，指定需要返回的默认人物的标签。如果未填或者为空，则全部默认人物结果都返回。标签可选值：
 <li>entertainment：娱乐明星；</li>
 <li>sport：体育明星；</li>
-<li>politician：政治人物。</li>
+<li>politician：敏感人物。</li>
                      */
                     void SetDefaultLibraryLabelSet(const std::vector<std::string>& _defaultLibraryLabelSet);
 
@@ -192,7 +192,7 @@ namespace TencentCloud
                      * 默认人物过滤标签，指定需要返回的默认人物的标签。如果未填或者为空，则全部默认人物结果都返回。标签可选值：
 <li>entertainment：娱乐明星；</li>
 <li>sport：体育明星；</li>
-<li>politician：政治人物。</li>
+<li>politician：敏感人物。</li>
                      */
                     std::vector<std::string> m_defaultLibraryLabelSet;
                     bool m_defaultLibraryLabelSetHasBeenSet;

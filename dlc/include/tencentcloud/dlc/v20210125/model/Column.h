@@ -175,17 +175,17 @@ string|tinyint|smallint|int|bigint|boolean|float|double|decimal|timestamp|date|b
                     bool NullableHasBeenSet() const;
 
                     /**
-                     * 获取字段位置
+                     * 获取字段位置，小的在前
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Position 字段位置
+                     * @return Position 字段位置，小的在前
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetPosition() const;
 
                     /**
-                     * 设置字段位置
+                     * 设置字段位置，小的在前
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Position 字段位置
+                     * @param Position 字段位置，小的在前
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPosition(const int64_t& _position);
@@ -284,7 +284,7 @@ string|tinyint|smallint|int|bigint|boolean|float|double|decimal|timestamp|date|b
                     bool m_nullableHasBeenSet;
 
                     /**
-                     * 字段位置
+                     * 字段位置，小的在前
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_position;

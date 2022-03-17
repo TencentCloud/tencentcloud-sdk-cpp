@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool ApiIdHasBeenSet() const;
 
                     /**
-                     * 获取path
+                     * 获取路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Path path
+                     * @return Path 路径
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPath() const;
 
                     /**
-                     * 设置path
+                     * 设置路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Path path
+                     * @param Path 路径
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPath(const std::string& _path);
@@ -91,17 +91,17 @@ namespace TencentCloud
                     bool PathHasBeenSet() const;
 
                     /**
-                     * 获取method
+                     * 获取请求方法
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Method method
+                     * @return Method 请求方法
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMethod() const;
 
                     /**
-                     * 设置method
+                     * 设置请求方法
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Method method
+                     * @param Method 请求方法
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMethod(const std::string& _method);
@@ -134,6 +134,72 @@ namespace TencentCloud
                      */
                     bool CreatedTimeHasBeenSet() const;
 
+                    /**
+                     * 获取导入状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 导入状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置导入状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Status 导入状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取异常信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ErrMsg 异常信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetErrMsg() const;
+
+                    /**
+                     * 设置异常信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ErrMsg 异常信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetErrMsg(const std::string& _errMsg);
+
+                    /**
+                     * 判断参数 ErrMsg 是否已赋值
+                     * @return ErrMsg 是否已赋值
+                     */
+                    bool ErrMsgHasBeenSet() const;
+
+                    /**
+                     * 获取api name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApiName api name
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetApiName() const;
+
+                    /**
+                     * 设置api name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ApiName api name
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetApiName(const std::string& _apiName);
+
+                    /**
+                     * 判断参数 ApiName 是否已赋值
+                     * @return ApiName 是否已赋值
+                     */
+                    bool ApiNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,14 +210,14 @@ namespace TencentCloud
                     bool m_apiIdHasBeenSet;
 
                     /**
-                     * path
+                     * 路径
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
-                     * method
+                     * 请求方法
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_method;
@@ -163,6 +229,27 @@ namespace TencentCloud
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
+
+                    /**
+                     * 导入状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 异常信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_errMsg;
+                    bool m_errMsgHasBeenSet;
+
+                    /**
+                     * api name
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_apiName;
+                    bool m_apiNameHasBeenSet;
 
                 };
             }

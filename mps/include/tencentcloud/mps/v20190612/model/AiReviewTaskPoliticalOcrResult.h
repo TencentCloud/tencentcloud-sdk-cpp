@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 内容审核 Ocr 文字鉴政、敏感任务结果类型
+                * 内容审核 Ocr 文字敏感任务结果类型
                 */
                 class AiReviewTaskPoliticalOcrResult : public AbstractModel
                 {
@@ -121,14 +121,14 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取内容审核 Ocr 文字鉴政任务输入。
-                     * @return Input 内容审核 Ocr 文字鉴政任务输入。
+                     * 获取内容审核 Ocr 文字敏感任务输入。
+                     * @return Input 内容审核 Ocr 文字敏感任务输入。
                      */
                     AiReviewPoliticalOcrTaskInput GetInput() const;
 
                     /**
-                     * 设置内容审核 Ocr 文字鉴政任务输入。
-                     * @param Input 内容审核 Ocr 文字鉴政任务输入。
+                     * 设置内容审核 Ocr 文字敏感任务输入。
+                     * @param Input 内容审核 Ocr 文字敏感任务输入。
                      */
                     void SetInput(const AiReviewPoliticalOcrTaskInput& _input);
 
@@ -139,17 +139,17 @@ namespace TencentCloud
                     bool InputHasBeenSet() const;
 
                     /**
-                     * 获取内容审核 Ocr 文字鉴政任务输出。
+                     * 获取内容审核 Ocr 文字敏感任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Output 内容审核 Ocr 文字鉴政任务输出。
+                     * @return Output 内容审核 Ocr 文字敏感任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiReviewPoliticalOcrTaskOutput GetOutput() const;
 
                     /**
-                     * 设置内容审核 Ocr 文字鉴政任务输出。
+                     * 设置内容审核 Ocr 文字敏感任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Output 内容审核 Ocr 文字鉴政任务输出。
+                     * @param Output 内容审核 Ocr 文字敏感任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOutput(const AiReviewPoliticalOcrTaskOutput& _output);
@@ -187,13 +187,13 @@ namespace TencentCloud
                     bool m_messageHasBeenSet;
 
                     /**
-                     * 内容审核 Ocr 文字鉴政任务输入。
+                     * 内容审核 Ocr 文字敏感任务输入。
                      */
                     AiReviewPoliticalOcrTaskInput m_input;
                     bool m_inputHasBeenSet;
 
                     /**
-                     * 内容审核 Ocr 文字鉴政任务输出。
+                     * 内容审核 Ocr 文字敏感任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiReviewPoliticalOcrTaskOutput m_output;

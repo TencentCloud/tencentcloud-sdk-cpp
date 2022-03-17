@@ -4985,6 +4985,49 @@ VpcClient::DescribeClassicLinkInstancesOutcomeCallable VpcClient::DescribeClassi
     return task->get_future();
 }
 
+VpcClient::DescribeCrossBorderCcnRegionBandwidthLimitsOutcome VpcClient::DescribeCrossBorderCcnRegionBandwidthLimits(const DescribeCrossBorderCcnRegionBandwidthLimitsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCrossBorderCcnRegionBandwidthLimits");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCrossBorderCcnRegionBandwidthLimitsResponse rsp = DescribeCrossBorderCcnRegionBandwidthLimitsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCrossBorderCcnRegionBandwidthLimitsOutcome(rsp);
+        else
+            return DescribeCrossBorderCcnRegionBandwidthLimitsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCrossBorderCcnRegionBandwidthLimitsOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeCrossBorderCcnRegionBandwidthLimitsAsync(const DescribeCrossBorderCcnRegionBandwidthLimitsRequest& request, const DescribeCrossBorderCcnRegionBandwidthLimitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCrossBorderCcnRegionBandwidthLimits(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeCrossBorderCcnRegionBandwidthLimitsOutcomeCallable VpcClient::DescribeCrossBorderCcnRegionBandwidthLimitsCallable(const DescribeCrossBorderCcnRegionBandwidthLimitsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCrossBorderCcnRegionBandwidthLimitsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCrossBorderCcnRegionBandwidthLimits(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeCrossBorderComplianceOutcome VpcClient::DescribeCrossBorderCompliance(const DescribeCrossBorderComplianceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCrossBorderCompliance");
@@ -6655,6 +6698,49 @@ VpcClient::DescribeTemplateLimitsOutcomeCallable VpcClient::DescribeTemplateLimi
         [this, request]()
         {
             return this->DescribeTemplateLimits(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeTenantCcnsOutcome VpcClient::DescribeTenantCcns(const DescribeTenantCcnsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTenantCcns");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTenantCcnsResponse rsp = DescribeTenantCcnsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTenantCcnsOutcome(rsp);
+        else
+            return DescribeTenantCcnsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTenantCcnsOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeTenantCcnsAsync(const DescribeTenantCcnsRequest& request, const DescribeTenantCcnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTenantCcns(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeTenantCcnsOutcomeCallable VpcClient::DescribeTenantCcnsCallable(const DescribeTenantCcnsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTenantCcnsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTenantCcns(request);
         }
     );
 
@@ -8547,6 +8633,92 @@ VpcClient::InquiryPriceResetVpnGatewayInternetMaxBandwidthOutcomeCallable VpcCli
         [this, request]()
         {
             return this->InquiryPriceResetVpnGatewayInternetMaxBandwidth(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::LockCcnBandwidthsOutcome VpcClient::LockCcnBandwidths(const LockCcnBandwidthsRequest &request)
+{
+    auto outcome = MakeRequest(request, "LockCcnBandwidths");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        LockCcnBandwidthsResponse rsp = LockCcnBandwidthsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return LockCcnBandwidthsOutcome(rsp);
+        else
+            return LockCcnBandwidthsOutcome(o.GetError());
+    }
+    else
+    {
+        return LockCcnBandwidthsOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::LockCcnBandwidthsAsync(const LockCcnBandwidthsRequest& request, const LockCcnBandwidthsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->LockCcnBandwidths(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::LockCcnBandwidthsOutcomeCallable VpcClient::LockCcnBandwidthsCallable(const LockCcnBandwidthsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<LockCcnBandwidthsOutcome()>>(
+        [this, request]()
+        {
+            return this->LockCcnBandwidths(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::LockCcnsOutcome VpcClient::LockCcns(const LockCcnsRequest &request)
+{
+    auto outcome = MakeRequest(request, "LockCcns");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        LockCcnsResponse rsp = LockCcnsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return LockCcnsOutcome(rsp);
+        else
+            return LockCcnsOutcome(o.GetError());
+    }
+    else
+    {
+        return LockCcnsOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::LockCcnsAsync(const LockCcnsRequest& request, const LockCcnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->LockCcns(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::LockCcnsOutcomeCallable VpcClient::LockCcnsCallable(const LockCcnsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<LockCcnsOutcome()>>(
+        [this, request]()
+        {
+            return this->LockCcns(request);
         }
     );
 
@@ -11600,6 +11772,92 @@ VpcClient::UnassignPrivateIpAddressesOutcomeCallable VpcClient::UnassignPrivateI
         [this, request]()
         {
             return this->UnassignPrivateIpAddresses(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::UnlockCcnBandwidthsOutcome VpcClient::UnlockCcnBandwidths(const UnlockCcnBandwidthsRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnlockCcnBandwidths");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnlockCcnBandwidthsResponse rsp = UnlockCcnBandwidthsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnlockCcnBandwidthsOutcome(rsp);
+        else
+            return UnlockCcnBandwidthsOutcome(o.GetError());
+    }
+    else
+    {
+        return UnlockCcnBandwidthsOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::UnlockCcnBandwidthsAsync(const UnlockCcnBandwidthsRequest& request, const UnlockCcnBandwidthsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UnlockCcnBandwidths(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::UnlockCcnBandwidthsOutcomeCallable VpcClient::UnlockCcnBandwidthsCallable(const UnlockCcnBandwidthsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UnlockCcnBandwidthsOutcome()>>(
+        [this, request]()
+        {
+            return this->UnlockCcnBandwidths(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::UnlockCcnsOutcome VpcClient::UnlockCcns(const UnlockCcnsRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnlockCcns");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnlockCcnsResponse rsp = UnlockCcnsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnlockCcnsOutcome(rsp);
+        else
+            return UnlockCcnsOutcome(o.GetError());
+    }
+    else
+    {
+        return UnlockCcnsOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::UnlockCcnsAsync(const UnlockCcnsRequest& request, const UnlockCcnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UnlockCcns(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::UnlockCcnsOutcomeCallable VpcClient::UnlockCcnsCallable(const UnlockCcnsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UnlockCcnsOutcome()>>(
+        [this, request]()
+        {
+            return this->UnlockCcns(request);
         }
     );
 

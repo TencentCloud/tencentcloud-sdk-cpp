@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 内容审核 Ocr 文字鉴恐任务输入参数类型
+                * 内容审核 Ocr 文字敏感任务输入参数类型
                 */
                 class AiReviewTerrorismOcrTaskInput : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取鉴恐模板 ID。
-                     * @return Definition 鉴恐模板 ID。
+                     * 获取模板 ID。
+                     * @return Definition 模板 ID。
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置鉴恐模板 ID。
-                     * @param Definition 鉴恐模板 ID。
+                     * 设置模板 ID。
+                     * @param Definition 模板 ID。
                      */
                     void SetDefinition(const uint64_t& _definition);
 
@@ -67,7 +67,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 鉴恐模板 ID。
+                     * 模板 ID。
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;

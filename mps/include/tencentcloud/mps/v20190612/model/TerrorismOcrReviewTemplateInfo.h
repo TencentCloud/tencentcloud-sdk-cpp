@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 文本鉴恐任务控制参数
+                * 文本涉敏任务控制参数
                 */
                 class TerrorismOcrReviewTemplateInfo : public AbstractModel
                 {
@@ -47,22 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文本鉴恐任务开关，可选值：
-<li>ON：开启文本鉴恐任务；</li>
-<li>OFF：关闭文本鉴恐任务。</li>
-                     * @return Switch 文本鉴恐任务开关，可选值：
-<li>ON：开启文本鉴恐任务；</li>
-<li>OFF：关闭文本鉴恐任务。</li>
+                     * 获取文本涉敏任务开关，可选值：
+<li>ON：开启文本涉敏任务；</li>
+<li>OFF：关闭文本涉敏任务。</li>
+                     * @return Switch 文本涉敏任务开关，可选值：
+<li>ON：开启文本涉敏任务；</li>
+<li>OFF：关闭文本涉敏任务。</li>
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置文本鉴恐任务开关，可选值：
-<li>ON：开启文本鉴恐任务；</li>
-<li>OFF：关闭文本鉴恐任务。</li>
-                     * @param Switch 文本鉴恐任务开关，可选值：
-<li>ON：开启文本鉴恐任务；</li>
-<li>OFF：关闭文本鉴恐任务。</li>
+                     * 设置文本涉敏任务开关，可选值：
+<li>ON：开启文本涉敏任务；</li>
+<li>OFF：关闭文本涉敏任务。</li>
+                     * @param Switch 文本涉敏任务开关，可选值：
+<li>ON：开启文本涉敏任务；</li>
+<li>OFF：关闭文本涉敏任务。</li>
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -111,9 +111,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文本鉴恐任务开关，可选值：
-<li>ON：开启文本鉴恐任务；</li>
-<li>OFF：关闭文本鉴恐任务。</li>
+                     * 文本涉敏任务开关，可选值：
+<li>ON：开启文本涉敏任务；</li>
+<li>OFF：关闭文本涉敏任务。</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
