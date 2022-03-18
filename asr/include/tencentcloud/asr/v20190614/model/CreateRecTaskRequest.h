@@ -291,22 +291,22 @@ namespace TencentCloud
                     bool DataLenHasBeenSet() const;
 
                     /**
-                     * 获取热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。
-                     * @return HotwordId 热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。
+                     * 获取是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字，3: 打开数学相关数字转换。默认值为 1。
+                     * @return ConvertNumMode 是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字，3: 打开数学相关数字转换。默认值为 1。
                      */
-                    std::string GetHotwordId() const;
+                    int64_t GetConvertNumMode() const;
 
                     /**
-                     * 设置热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。
-                     * @param HotwordId 热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。
+                     * 设置是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字，3: 打开数学相关数字转换。默认值为 1。
+                     * @param ConvertNumMode 是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字，3: 打开数学相关数字转换。默认值为 1。
                      */
-                    void SetHotwordId(const std::string& _hotwordId);
+                    void SetConvertNumMode(const int64_t& _convertNumMode);
 
                     /**
-                     * 判断参数 HotwordId 是否已赋值
-                     * @return HotwordId 是否已赋值
+                     * 判断参数 ConvertNumMode 是否已赋值
+                     * @return ConvertNumMode 是否已赋值
                      */
-                    bool HotwordIdHasBeenSet() const;
+                    bool ConvertNumModeHasBeenSet() const;
 
                     /**
                      * 获取是否过滤脏词（目前支持中文普通话引擎）。0：不过滤脏词；1：过滤脏词；2：将脏词替换为 * 。默认值为 0。
@@ -327,40 +327,40 @@ namespace TencentCloud
                     bool FilterDirtyHasBeenSet() const;
 
                     /**
-                     * 获取是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。
-                     * @return FilterModal 是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。
+                     * 获取热词表id。如不设置该参数，自动生效默认热词表；如果设置了该参数，那么将生效对应的热词表。
+                     * @return HotwordId 热词表id。如不设置该参数，自动生效默认热词表；如果设置了该参数，那么将生效对应的热词表。
                      */
-                    int64_t GetFilterModal() const;
+                    std::string GetHotwordId() const;
 
                     /**
-                     * 设置是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。
-                     * @param FilterModal 是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。
+                     * 设置热词表id。如不设置该参数，自动生效默认热词表；如果设置了该参数，那么将生效对应的热词表。
+                     * @param HotwordId 热词表id。如不设置该参数，自动生效默认热词表；如果设置了该参数，那么将生效对应的热词表。
                      */
-                    void SetFilterModal(const int64_t& _filterModal);
+                    void SetHotwordId(const std::string& _hotwordId);
 
                     /**
-                     * 判断参数 FilterModal 是否已赋值
-                     * @return FilterModal 是否已赋值
+                     * 判断参数 HotwordId 是否已赋值
+                     * @return HotwordId 是否已赋值
                      */
-                    bool FilterModalHasBeenSet() const;
+                    bool HotwordIdHasBeenSet() const;
 
                     /**
-                     * 获取是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字，3: 打开数学相关数字转换。默认值为 1。
-                     * @return ConvertNumMode 是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字，3: 打开数学相关数字转换。默认值为 1。
+                     * 获取自学习模型 id。如不设置该参数，自动生效最后一次上线的自学习模型；如果设置了该参数，那么将生效对应的自学习模型。
+                     * @return CustomizationId 自学习模型 id。如不设置该参数，自动生效最后一次上线的自学习模型；如果设置了该参数，那么将生效对应的自学习模型。
                      */
-                    int64_t GetConvertNumMode() const;
+                    std::string GetCustomizationId() const;
 
                     /**
-                     * 设置是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字，3: 打开数学相关数字转换。默认值为 1。
-                     * @param ConvertNumMode 是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字，3: 打开数学相关数字转换。默认值为 1。
+                     * 设置自学习模型 id。如不设置该参数，自动生效最后一次上线的自学习模型；如果设置了该参数，那么将生效对应的自学习模型。
+                     * @param CustomizationId 自学习模型 id。如不设置该参数，自动生效最后一次上线的自学习模型；如果设置了该参数，那么将生效对应的自学习模型。
                      */
-                    void SetConvertNumMode(const int64_t& _convertNumMode);
+                    void SetCustomizationId(const std::string& _customizationId);
 
                     /**
-                     * 判断参数 ConvertNumMode 是否已赋值
-                     * @return ConvertNumMode 是否已赋值
+                     * 判断参数 CustomizationId 是否已赋值
+                     * @return CustomizationId 是否已赋值
                      */
-                    bool ConvertNumModeHasBeenSet() const;
+                    bool CustomizationIdHasBeenSet() const;
 
                     /**
                      * 获取附加参数(该参数无意义，忽略即可)
@@ -397,6 +397,24 @@ namespace TencentCloud
                      * @return FilterPunc 是否已赋值
                      */
                     bool FilterPuncHasBeenSet() const;
+
+                    /**
+                     * 获取是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。
+                     * @return FilterModal 是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。
+                     */
+                    int64_t GetFilterModal() const;
+
+                    /**
+                     * 设置是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。
+                     * @param FilterModal 是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。
+                     */
+                    void SetFilterModal(const int64_t& _filterModal);
+
+                    /**
+                     * 判断参数 FilterModal 是否已赋值
+                     * @return FilterModal 是否已赋值
+                     */
+                    bool FilterModalHasBeenSet() const;
 
                 private:
 
@@ -478,10 +496,10 @@ namespace TencentCloud
                     bool m_dataLenHasBeenSet;
 
                     /**
-                     * 热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。
+                     * 是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字，3: 打开数学相关数字转换。默认值为 1。
                      */
-                    std::string m_hotwordId;
-                    bool m_hotwordIdHasBeenSet;
+                    int64_t m_convertNumMode;
+                    bool m_convertNumModeHasBeenSet;
 
                     /**
                      * 是否过滤脏词（目前支持中文普通话引擎）。0：不过滤脏词；1：过滤脏词；2：将脏词替换为 * 。默认值为 0。
@@ -490,16 +508,16 @@ namespace TencentCloud
                     bool m_filterDirtyHasBeenSet;
 
                     /**
-                     * 是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。
+                     * 热词表id。如不设置该参数，自动生效默认热词表；如果设置了该参数，那么将生效对应的热词表。
                      */
-                    int64_t m_filterModal;
-                    bool m_filterModalHasBeenSet;
+                    std::string m_hotwordId;
+                    bool m_hotwordIdHasBeenSet;
 
                     /**
-                     * 是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字，3: 打开数学相关数字转换。默认值为 1。
+                     * 自学习模型 id。如不设置该参数，自动生效最后一次上线的自学习模型；如果设置了该参数，那么将生效对应的自学习模型。
                      */
-                    int64_t m_convertNumMode;
-                    bool m_convertNumModeHasBeenSet;
+                    std::string m_customizationId;
+                    bool m_customizationIdHasBeenSet;
 
                     /**
                      * 附加参数(该参数无意义，忽略即可)
@@ -512,6 +530,12 @@ namespace TencentCloud
                      */
                     int64_t m_filterPunc;
                     bool m_filterPuncHasBeenSet;
+
+                    /**
+                     * 是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。
+                     */
+                    int64_t m_filterModal;
+                    bool m_filterModalHasBeenSet;
 
                 };
             }

@@ -233,14 +233,14 @@ namespace TencentCloud
                     bool TagSpecificationHasBeenSet() const;
 
                     /**
-                     * 获取集群状态 (Running 运行中  Creating 创建中 Abnormal 异常  )
-                     * @return ClusterStatus 集群状态 (Running 运行中  Creating 创建中 Abnormal 异常  )
+                     * 获取集群状态 (Running 运行中  Creating 创建中 Idling 闲置中  Abnormal 异常  )
+                     * @return ClusterStatus 集群状态 (Running 运行中  Creating 创建中 Idling 闲置中  Abnormal 异常  )
                      */
                     std::string GetClusterStatus() const;
 
                     /**
-                     * 设置集群状态 (Running 运行中  Creating 创建中 Abnormal 异常  )
-                     * @param ClusterStatus 集群状态 (Running 运行中  Creating 创建中 Abnormal 异常  )
+                     * 设置集群状态 (Running 运行中  Creating 创建中 Idling 闲置中  Abnormal 异常  )
+                     * @param ClusterStatus 集群状态 (Running 运行中  Creating 创建中 Idling 闲置中  Abnormal 异常  )
                      */
                     void SetClusterStatus(const std::string& _clusterStatus);
 
@@ -486,7 +486,7 @@ namespace TencentCloud
                     bool m_tagSpecificationHasBeenSet;
 
                     /**
-                     * 集群状态 (Running 运行中  Creating 创建中 Abnormal 异常  )
+                     * 集群状态 (Running 运行中  Creating 创建中 Idling 闲置中  Abnormal 异常  )
                      */
                     std::string m_clusterStatus;
                     bool m_clusterStatusHasBeenSet;

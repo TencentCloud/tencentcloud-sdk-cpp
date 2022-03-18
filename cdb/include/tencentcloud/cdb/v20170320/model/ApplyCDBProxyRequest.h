@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool SecurityGroupHasBeenSet() const;
 
                     /**
-                     * 获取描述说明
-                     * @return Desc 描述说明
+                     * 获取描述说明，最大支持256位。
+                     * @return Desc 描述说明，最大支持256位。
                      */
                     std::string GetDesc() const;
 
                     /**
-                     * 设置描述说明
-                     * @param Desc 描述说明
+                     * 设置描述说明，最大支持256位。
+                     * @param Desc 描述说明，最大支持256位。
                      */
                     void SetDesc(const std::string& _desc);
 
@@ -231,7 +231,7 @@ namespace TencentCloud
                     bool m_securityGroupHasBeenSet;
 
                     /**
-                     * 描述说明
+                     * 描述说明，最大支持256位。
                      */
                     std::string m_desc;
                     bool m_descHasBeenSet;

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/monitor/v20180724/model/AlarmPolicyTriggerTask.h>
 
 
 namespace TencentCloud
@@ -420,6 +421,24 @@ namespace TencentCloud
                      */
                     bool NeedCorrespondenceHasBeenSet() const;
 
+                    /**
+                     * 获取按照触发任务（例如弹性伸缩）过滤策略。最多10个
+                     * @return TriggerTasks 按照触发任务（例如弹性伸缩）过滤策略。最多10个
+                     */
+                    std::vector<AlarmPolicyTriggerTask> GetTriggerTasks() const;
+
+                    /**
+                     * 设置按照触发任务（例如弹性伸缩）过滤策略。最多10个
+                     * @param TriggerTasks 按照触发任务（例如弹性伸缩）过滤策略。最多10个
+                     */
+                    void SetTriggerTasks(const std::vector<AlarmPolicyTriggerTask>& _triggerTasks);
+
+                    /**
+                     * 判断参数 TriggerTasks 是否已赋值
+                     * @return TriggerTasks 是否已赋值
+                     */
+                    bool TriggerTasksHasBeenSet() const;
+
                 private:
 
                     /**
@@ -544,6 +563,12 @@ namespace TencentCloud
                      */
                     int64_t m_needCorrespondence;
                     bool m_needCorrespondenceHasBeenSet;
+
+                    /**
+                     * 按照触发任务（例如弹性伸缩）过滤策略。最多10个
+                     */
+                    std::vector<AlarmPolicyTriggerTask> m_triggerTasks;
+                    bool m_triggerTasksHasBeenSet;
 
                 };
             }

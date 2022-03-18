@@ -33,12 +33,13 @@ CreateRecTaskRequest::CreateRecTaskRequest() :
     m_urlHasBeenSet(false),
     m_dataHasBeenSet(false),
     m_dataLenHasBeenSet(false),
-    m_hotwordIdHasBeenSet(false),
-    m_filterDirtyHasBeenSet(false),
-    m_filterModalHasBeenSet(false),
     m_convertNumModeHasBeenSet(false),
+    m_filterDirtyHasBeenSet(false),
+    m_hotwordIdHasBeenSet(false),
+    m_customizationIdHasBeenSet(false),
     m_extraHasBeenSet(false),
-    m_filterPuncHasBeenSet(false)
+    m_filterPuncHasBeenSet(false),
+    m_filterModalHasBeenSet(false)
 {
 }
 
@@ -129,12 +130,12 @@ string CreateRecTaskRequest::ToJsonString() const
         d.AddMember(iKey, m_dataLen, allocator);
     }
 
-    if (m_hotwordIdHasBeenSet)
+    if (m_convertNumModeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "HotwordId";
+        string key = "ConvertNumMode";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_hotwordId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_convertNumMode, allocator);
     }
 
     if (m_filterDirtyHasBeenSet)
@@ -145,20 +146,20 @@ string CreateRecTaskRequest::ToJsonString() const
         d.AddMember(iKey, m_filterDirty, allocator);
     }
 
-    if (m_filterModalHasBeenSet)
+    if (m_hotwordIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FilterModal";
+        string key = "HotwordId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_filterModal, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hotwordId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_convertNumModeHasBeenSet)
+    if (m_customizationIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ConvertNumMode";
+        string key = "CustomizationId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_convertNumMode, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_customizationId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_extraHasBeenSet)
@@ -175,6 +176,14 @@ string CreateRecTaskRequest::ToJsonString() const
         string key = "FilterPunc";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_filterPunc, allocator);
+    }
+
+    if (m_filterModalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterModal";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_filterModal, allocator);
     }
 
 
@@ -345,20 +354,20 @@ bool CreateRecTaskRequest::DataLenHasBeenSet() const
     return m_dataLenHasBeenSet;
 }
 
-string CreateRecTaskRequest::GetHotwordId() const
+int64_t CreateRecTaskRequest::GetConvertNumMode() const
 {
-    return m_hotwordId;
+    return m_convertNumMode;
 }
 
-void CreateRecTaskRequest::SetHotwordId(const string& _hotwordId)
+void CreateRecTaskRequest::SetConvertNumMode(const int64_t& _convertNumMode)
 {
-    m_hotwordId = _hotwordId;
-    m_hotwordIdHasBeenSet = true;
+    m_convertNumMode = _convertNumMode;
+    m_convertNumModeHasBeenSet = true;
 }
 
-bool CreateRecTaskRequest::HotwordIdHasBeenSet() const
+bool CreateRecTaskRequest::ConvertNumModeHasBeenSet() const
 {
-    return m_hotwordIdHasBeenSet;
+    return m_convertNumModeHasBeenSet;
 }
 
 int64_t CreateRecTaskRequest::GetFilterDirty() const
@@ -377,36 +386,36 @@ bool CreateRecTaskRequest::FilterDirtyHasBeenSet() const
     return m_filterDirtyHasBeenSet;
 }
 
-int64_t CreateRecTaskRequest::GetFilterModal() const
+string CreateRecTaskRequest::GetHotwordId() const
 {
-    return m_filterModal;
+    return m_hotwordId;
 }
 
-void CreateRecTaskRequest::SetFilterModal(const int64_t& _filterModal)
+void CreateRecTaskRequest::SetHotwordId(const string& _hotwordId)
 {
-    m_filterModal = _filterModal;
-    m_filterModalHasBeenSet = true;
+    m_hotwordId = _hotwordId;
+    m_hotwordIdHasBeenSet = true;
 }
 
-bool CreateRecTaskRequest::FilterModalHasBeenSet() const
+bool CreateRecTaskRequest::HotwordIdHasBeenSet() const
 {
-    return m_filterModalHasBeenSet;
+    return m_hotwordIdHasBeenSet;
 }
 
-int64_t CreateRecTaskRequest::GetConvertNumMode() const
+string CreateRecTaskRequest::GetCustomizationId() const
 {
-    return m_convertNumMode;
+    return m_customizationId;
 }
 
-void CreateRecTaskRequest::SetConvertNumMode(const int64_t& _convertNumMode)
+void CreateRecTaskRequest::SetCustomizationId(const string& _customizationId)
 {
-    m_convertNumMode = _convertNumMode;
-    m_convertNumModeHasBeenSet = true;
+    m_customizationId = _customizationId;
+    m_customizationIdHasBeenSet = true;
 }
 
-bool CreateRecTaskRequest::ConvertNumModeHasBeenSet() const
+bool CreateRecTaskRequest::CustomizationIdHasBeenSet() const
 {
-    return m_convertNumModeHasBeenSet;
+    return m_customizationIdHasBeenSet;
 }
 
 string CreateRecTaskRequest::GetExtra() const
@@ -439,6 +448,22 @@ void CreateRecTaskRequest::SetFilterPunc(const int64_t& _filterPunc)
 bool CreateRecTaskRequest::FilterPuncHasBeenSet() const
 {
     return m_filterPuncHasBeenSet;
+}
+
+int64_t CreateRecTaskRequest::GetFilterModal() const
+{
+    return m_filterModal;
+}
+
+void CreateRecTaskRequest::SetFilterModal(const int64_t& _filterModal)
+{
+    m_filterModal = _filterModal;
+    m_filterModalHasBeenSet = true;
+}
+
+bool CreateRecTaskRequest::FilterModalHasBeenSet() const
+{
+    return m_filterModalHasBeenSet;
 }
 
 

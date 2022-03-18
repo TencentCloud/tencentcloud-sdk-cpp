@@ -30,7 +30,8 @@ AlarmNotice::AlarmNotice() :
     m_uRLNoticesHasBeenSet(false),
     m_isPresetHasBeenSet(false),
     m_noticeLanguageHasBeenSet(false),
-    m_policyIdsHasBeenSet(false)
+    m_policyIdsHasBeenSet(false),
+    m_cLSNoticesHasBeenSet(false)
 {
 }
 
@@ -162,6 +163,26 @@ CoreInternalOutcome AlarmNotice::Deserialize(const rapidjson::Value &value)
         m_policyIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("CLSNotices") && !value["CLSNotices"].IsNull())
+    {
+        if (!value["CLSNotices"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AlarmNotice.CLSNotices` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CLSNotices"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CLSNotice item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_cLSNotices.push_back(item);
+        }
+        m_cLSNoticesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -265,6 +286,21 @@ void AlarmNotice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         for (auto itr = m_policyIds.begin(); itr != m_policyIds.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_cLSNoticesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CLSNotices";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_cLSNotices.begin(); itr != m_cLSNotices.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -429,5 +465,21 @@ void AlarmNotice::SetPolicyIds(const vector<string>& _policyIds)
 bool AlarmNotice::PolicyIdsHasBeenSet() const
 {
     return m_policyIdsHasBeenSet;
+}
+
+vector<CLSNotice> AlarmNotice::GetCLSNotices() const
+{
+    return m_cLSNotices;
+}
+
+void AlarmNotice::SetCLSNotices(const vector<CLSNotice>& _cLSNotices)
+{
+    m_cLSNotices = _cLSNotices;
+    m_cLSNoticesHasBeenSet = true;
+}
+
+bool AlarmNotice::CLSNoticesHasBeenSet() const
+{
+    return m_cLSNoticesHasBeenSet;
 }
 

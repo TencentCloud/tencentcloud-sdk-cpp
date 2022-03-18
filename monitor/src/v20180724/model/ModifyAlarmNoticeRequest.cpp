@@ -29,7 +29,8 @@ ModifyAlarmNoticeRequest::ModifyAlarmNoticeRequest() :
     m_noticeLanguageHasBeenSet(false),
     m_noticeIdHasBeenSet(false),
     m_userNoticesHasBeenSet(false),
-    m_uRLNoticesHasBeenSet(false)
+    m_uRLNoticesHasBeenSet(false),
+    m_cLSNoticesHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,21 @@ string ModifyAlarmNoticeRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_uRLNotices.begin(); itr != m_uRLNotices.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_cLSNoticesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CLSNotices";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_cLSNotices.begin(); itr != m_cLSNotices.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -228,6 +244,22 @@ void ModifyAlarmNoticeRequest::SetURLNotices(const vector<URLNotice>& _uRLNotice
 bool ModifyAlarmNoticeRequest::URLNoticesHasBeenSet() const
 {
     return m_uRLNoticesHasBeenSet;
+}
+
+vector<CLSNotice> ModifyAlarmNoticeRequest::GetCLSNotices() const
+{
+    return m_cLSNotices;
+}
+
+void ModifyAlarmNoticeRequest::SetCLSNotices(const vector<CLSNotice>& _cLSNotices)
+{
+    m_cLSNotices = _cLSNotices;
+    m_cLSNoticesHasBeenSet = true;
+}
+
+bool ModifyAlarmNoticeRequest::CLSNoticesHasBeenSet() const
+{
+    return m_cLSNoticesHasBeenSet;
 }
 
 

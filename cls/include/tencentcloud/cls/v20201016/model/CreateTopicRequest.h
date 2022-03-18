@@ -152,14 +152,14 @@ namespace TencentCloud
                     bool MaxSplitPartitionsHasBeenSet() const;
 
                     /**
-                     * 获取日志主题的存储类型，可选值 hot（实时存储），cold（离线存储）；默认为hot。若传入cold，请先联系客服进行开白。
-                     * @return StorageType 日志主题的存储类型，可选值 hot（实时存储），cold（离线存储）；默认为hot。若传入cold，请先联系客服进行开白。
+                     * 获取日志主题的存储类型，可选值 hot（实时存储），cold（低频存储）；默认为hot。
+                     * @return StorageType 日志主题的存储类型，可选值 hot（实时存储），cold（低频存储）；默认为hot。
                      */
                     std::string GetStorageType() const;
 
                     /**
-                     * 设置日志主题的存储类型，可选值 hot（实时存储），cold（离线存储）；默认为hot。若传入cold，请先联系客服进行开白。
-                     * @param StorageType 日志主题的存储类型，可选值 hot（实时存储），cold（离线存储）；默认为hot。若传入cold，请先联系客服进行开白。
+                     * 设置日志主题的存储类型，可选值 hot（实时存储），cold（低频存储）；默认为hot。
+                     * @param StorageType 日志主题的存储类型，可选值 hot（实时存储），cold（低频存储）；默认为hot。
                      */
                     void SetStorageType(const std::string& _storageType);
 
@@ -170,14 +170,14 @@ namespace TencentCloud
                     bool StorageTypeHasBeenSet() const;
 
                     /**
-                     * 获取生命周期，单位天；可取值范围1~366。默认30天
-                     * @return Period 生命周期，单位天；可取值范围1~366。默认30天
+                     * 获取生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存
+                     * @return Period 生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存
                      */
                     int64_t GetPeriod() const;
 
                     /**
-                     * 设置生命周期，单位天；可取值范围1~366。默认30天
-                     * @param Period 生命周期，单位天；可取值范围1~366。默认30天
+                     * 设置生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存
+                     * @param Period 生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存
                      */
                     void SetPeriod(const int64_t& _period);
 
@@ -226,13 +226,13 @@ namespace TencentCloud
                     bool m_maxSplitPartitionsHasBeenSet;
 
                     /**
-                     * 日志主题的存储类型，可选值 hot（实时存储），cold（离线存储）；默认为hot。若传入cold，请先联系客服进行开白。
+                     * 日志主题的存储类型，可选值 hot（实时存储），cold（低频存储）；默认为hot。
                      */
                     std::string m_storageType;
                     bool m_storageTypeHasBeenSet;
 
                     /**
-                     * 生命周期，单位天；可取值范围1~366。默认30天
+                     * 生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;

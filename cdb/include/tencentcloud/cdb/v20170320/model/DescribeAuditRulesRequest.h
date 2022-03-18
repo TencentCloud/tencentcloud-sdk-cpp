@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移量。
-                     * @return Offset 分页偏移量。
+                     * 获取分页偏移量。默认值为0。
+                     * @return Offset 分页偏移量。默认值为0。
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移量。
-                     * @param Offset 分页偏移量。
+                     * 设置分页偏移量。默认值为0。
+                     * @param Offset 分页偏移量。默认值为0。
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页偏移量。
+                     * 分页偏移量。默认值为0。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

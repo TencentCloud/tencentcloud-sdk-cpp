@@ -65,6 +65,8 @@
 #include <tencentcloud/nlp/v20190408/model/TextClassificationResponse.h>
 #include <tencentcloud/nlp/v20190408/model/TextCorrectionRequest.h>
 #include <tencentcloud/nlp/v20190408/model/TextCorrectionResponse.h>
+#include <tencentcloud/nlp/v20190408/model/TextCorrectionProRequest.h>
+#include <tencentcloud/nlp/v20190408/model/TextCorrectionProResponse.h>
 #include <tencentcloud/nlp/v20190408/model/TextSimilarityRequest.h>
 #include <tencentcloud/nlp/v20190408/model/TextSimilarityResponse.h>
 #include <tencentcloud/nlp/v20190408/model/TextSimilarityProRequest.h>
@@ -152,6 +154,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::TextCorrectionResponse> TextCorrectionOutcome;
                 typedef std::future<TextCorrectionOutcome> TextCorrectionOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::TextCorrectionRequest&, TextCorrectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextCorrectionAsyncHandler;
+                typedef Outcome<Core::Error, Model::TextCorrectionProResponse> TextCorrectionProOutcome;
+                typedef std::future<TextCorrectionProOutcome> TextCorrectionProOutcomeCallable;
+                typedef std::function<void(const NlpClient*, const Model::TextCorrectionProRequest&, TextCorrectionProOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextCorrectionProAsyncHandler;
                 typedef Outcome<Core::Error, Model::TextSimilarityResponse> TextSimilarityOutcome;
                 typedef std::future<TextSimilarityOutcome> TextSimilarityOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::TextSimilarityRequest&, TextSimilarityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextSimilarityAsyncHandler;
@@ -383,6 +388,17 @@ namespace TencentCloud
                 TextCorrectionOutcome TextCorrection(const Model::TextCorrectionRequest &request);
                 void TextCorrectionAsync(const Model::TextCorrectionRequest& request, const TextCorrectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 TextCorrectionOutcomeCallable TextCorrectionCallable(const Model::TextCorrectionRequest& request);
+
+                /**
+                 *提供对中文文本的自动纠错功能，能够识别输入文本中的错误片段，定位错误并给出正确的文本结果；支持长度不超过128字符（含标点符号）的长文本纠错。
+
+此功能是基于千亿级大规模互联网语料和LSTM、BERT等深度神经网络模型进行训练，并持续迭代更新，以保证效果不断提升，是搜索引擎、语音识别、内容审核等功能更好运行的基础之一。
+                 * @param req TextCorrectionProRequest
+                 * @return TextCorrectionProOutcome
+                 */
+                TextCorrectionProOutcome TextCorrectionPro(const Model::TextCorrectionProRequest &request);
+                void TextCorrectionProAsync(const Model::TextCorrectionProRequest& request, const TextCorrectionProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TextCorrectionProOutcomeCallable TextCorrectionProCallable(const Model::TextCorrectionProRequest& request);
 
                 /**
                  *句子相似度接口能够基于深度学习技术来计算一个源句子和多个目标句子的相似度，相似度分值越大的两个句子在语义上越相似。目前仅支持短文本（不超过500字符）的相似度计算，长文本的相似度计算也即将推出。

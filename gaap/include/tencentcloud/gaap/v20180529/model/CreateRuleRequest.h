@@ -192,14 +192,14 @@ namespace TencentCloud
                     bool ForwardProtocolHasBeenSet() const;
 
                     /**
-                     * 获取回源Host。加速通道转发到远照的host，不设置该参数时，使用默认的host设置，即客户端发起的http请求的host。
-                     * @return ForwardHost 回源Host。加速通道转发到远照的host，不设置该参数时，使用默认的host设置，即客户端发起的http请求的host。
+                     * 获取回源Host。加速通道转发到源站的host，不设置该参数时，使用默认的host设置，即客户端发起的http请求的host。
+                     * @return ForwardHost 回源Host。加速通道转发到源站的host，不设置该参数时，使用默认的host设置，即客户端发起的http请求的host。
                      */
                     std::string GetForwardHost() const;
 
                     /**
-                     * 设置回源Host。加速通道转发到远照的host，不设置该参数时，使用默认的host设置，即客户端发起的http请求的host。
-                     * @param ForwardHost 回源Host。加速通道转发到远照的host，不设置该参数时，使用默认的host设置，即客户端发起的http请求的host。
+                     * 设置回源Host。加速通道转发到源站的host，不设置该参数时，使用默认的host设置，即客户端发起的http请求的host。
+                     * @param ForwardHost 回源Host。加速通道转发到源站的host，不设置该参数时，使用默认的host设置，即客户端发起的http请求的host。
                      */
                     void SetForwardHost(const std::string& _forwardHost);
 
@@ -297,7 +297,7 @@ namespace TencentCloud
                     bool m_forwardProtocolHasBeenSet;
 
                     /**
-                     * 回源Host。加速通道转发到远照的host，不设置该参数时，使用默认的host设置，即客户端发起的http请求的host。
+                     * 回源Host。加速通道转发到源站的host，不设置该参数时，使用默认的host设置，即客户端发起的http请求的host。
                      */
                     std::string m_forwardHost;
                     bool m_forwardHostHasBeenSet;

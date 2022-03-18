@@ -25,7 +25,9 @@ using namespace std;
 CreateUserRequest::CreateUserRequest() :
     m_userIdHasBeenSet(false),
     m_userDescriptionHasBeenSet(false),
-    m_policySetHasBeenSet(false)
+    m_policySetHasBeenSet(false),
+    m_userTypeHasBeenSet(false),
+    m_workGroupIdsHasBeenSet(false)
 {
 }
 
@@ -64,6 +66,27 @@ string CreateUserRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_userTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_workGroupIds.begin(); itr != m_workGroupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
@@ -121,6 +144,38 @@ void CreateUserRequest::SetPolicySet(const vector<Policy>& _policySet)
 bool CreateUserRequest::PolicySetHasBeenSet() const
 {
     return m_policySetHasBeenSet;
+}
+
+string CreateUserRequest::GetUserType() const
+{
+    return m_userType;
+}
+
+void CreateUserRequest::SetUserType(const string& _userType)
+{
+    m_userType = _userType;
+    m_userTypeHasBeenSet = true;
+}
+
+bool CreateUserRequest::UserTypeHasBeenSet() const
+{
+    return m_userTypeHasBeenSet;
+}
+
+vector<int64_t> CreateUserRequest::GetWorkGroupIds() const
+{
+    return m_workGroupIds;
+}
+
+void CreateUserRequest::SetWorkGroupIds(const vector<int64_t>& _workGroupIds)
+{
+    m_workGroupIds = _workGroupIds;
+    m_workGroupIdsHasBeenSet = true;
+}
+
+bool CreateUserRequest::WorkGroupIdsHasBeenSet() const
+{
+    return m_workGroupIdsHasBeenSet;
 }
 
 

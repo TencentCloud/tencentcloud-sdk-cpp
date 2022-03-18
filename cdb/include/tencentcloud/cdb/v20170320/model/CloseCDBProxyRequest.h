@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool ProxyGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取是否只关闭读写分离，取值："true" | "false"
-                     * @return OnlyCloseRW 是否只关闭读写分离，取值："true" | "false"
+                     * 获取是否只关闭读写分离，取值："true" | "false"，默认为"false"
+                     * @return OnlyCloseRW 是否只关闭读写分离，取值："true" | "false"，默认为"false"
                      */
                     bool GetOnlyCloseRW() const;
 
                     /**
-                     * 设置是否只关闭读写分离，取值："true" | "false"
-                     * @param OnlyCloseRW 是否只关闭读写分离，取值："true" | "false"
+                     * 设置是否只关闭读写分离，取值："true" | "false"，默认为"false"
+                     * @param OnlyCloseRW 是否只关闭读写分离，取值："true" | "false"，默认为"false"
                      */
                     void SetOnlyCloseRW(const bool& _onlyCloseRW);
 
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_proxyGroupIdHasBeenSet;
 
                     /**
-                     * 是否只关闭读写分离，取值："true" | "false"
+                     * 是否只关闭读写分离，取值："true" | "false"，默认为"false"
                      */
                     bool m_onlyCloseRW;
                     bool m_onlyCloseRWHasBeenSet;

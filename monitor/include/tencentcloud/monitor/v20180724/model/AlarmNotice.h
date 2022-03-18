@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/monitor/v20180724/model/UserNotice.h>
 #include <tencentcloud/monitor/v20180724/model/URLNotice.h>
+#include <tencentcloud/monitor/v20180724/model/CLSNotice.h>
 
 
 namespace TencentCloud
@@ -268,6 +269,28 @@ namespace TencentCloud
                      */
                     bool PolicyIdsHasBeenSet() const;
 
+                    /**
+                     * 获取推送cls渠道
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CLSNotices 推送cls渠道
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CLSNotice> GetCLSNotices() const;
+
+                    /**
+                     * 设置推送cls渠道
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CLSNotices 推送cls渠道
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCLSNotices(const std::vector<CLSNotice>& _cLSNotices);
+
+                    /**
+                     * 判断参数 CLSNotices 是否已赋值
+                     * @return CLSNotices 是否已赋值
+                     */
+                    bool CLSNoticesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -339,6 +362,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_policyIds;
                     bool m_policyIdsHasBeenSet;
+
+                    /**
+                     * 推送cls渠道
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CLSNotice> m_cLSNotices;
+                    bool m_cLSNoticesHasBeenSet;
 
                 };
             }

@@ -41,7 +41,8 @@ DescribeAlarmPoliciesRequest::DescribeAlarmPoliciesRequest() :
     m_enableHasBeenSet(false),
     m_notBindingNoticeRuleHasBeenSet(false),
     m_instanceGroupIdHasBeenSet(false),
-    m_needCorrespondenceHasBeenSet(false)
+    m_needCorrespondenceHasBeenSet(false),
+    m_triggerTasksHasBeenSet(false)
 {
 }
 
@@ -247,6 +248,21 @@ string DescribeAlarmPoliciesRequest::ToJsonString() const
         string key = "NeedCorrespondence";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needCorrespondence, allocator);
+    }
+
+    if (m_triggerTasksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerTasks";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_triggerTasks.begin(); itr != m_triggerTasks.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -559,6 +575,22 @@ void DescribeAlarmPoliciesRequest::SetNeedCorrespondence(const int64_t& _needCor
 bool DescribeAlarmPoliciesRequest::NeedCorrespondenceHasBeenSet() const
 {
     return m_needCorrespondenceHasBeenSet;
+}
+
+vector<AlarmPolicyTriggerTask> DescribeAlarmPoliciesRequest::GetTriggerTasks() const
+{
+    return m_triggerTasks;
+}
+
+void DescribeAlarmPoliciesRequest::SetTriggerTasks(const vector<AlarmPolicyTriggerTask>& _triggerTasks)
+{
+    m_triggerTasks = _triggerTasks;
+    m_triggerTasksHasBeenSet = true;
+}
+
+bool DescribeAlarmPoliciesRequest::TriggerTasksHasBeenSet() const
+{
+    return m_triggerTasksHasBeenSet;
 }
 
 
