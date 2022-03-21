@@ -278,6 +278,24 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                      */
                     bool NotifyTypeHasBeenSet() const;
 
+                    /**
+                     * 获取签署意愿确认渠道,WEIXINAPP:人脸识别
+                     * @return VerifyChannel 签署意愿确认渠道,WEIXINAPP:人脸识别
+                     */
+                    std::vector<std::string> GetVerifyChannel() const;
+
+                    /**
+                     * 设置签署意愿确认渠道,WEIXINAPP:人脸识别
+                     * @param VerifyChannel 签署意愿确认渠道,WEIXINAPP:人脸识别
+                     */
+                    void SetVerifyChannel(const std::vector<std::string>& _verifyChannel);
+
+                    /**
+                     * 判断参数 VerifyChannel 是否已赋值
+                     * @return VerifyChannel 是否已赋值
+                     */
+                    bool VerifyChannelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -355,6 +373,12 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                      */
                     std::string m_notifyType;
                     bool m_notifyTypeHasBeenSet;
+
+                    /**
+                     * 签署意愿确认渠道,WEIXINAPP:人脸识别
+                     */
+                    std::vector<std::string> m_verifyChannel;
+                    bool m_verifyChannelHasBeenSet;
 
                 };
             }

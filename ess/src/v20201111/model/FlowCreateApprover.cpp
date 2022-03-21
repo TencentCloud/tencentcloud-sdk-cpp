@@ -32,7 +32,8 @@ FlowCreateApprover::FlowCreateApprover() :
     m_userIdHasBeenSet(false),
     m_isFullTextHasBeenSet(false),
     m_preReadTimeHasBeenSet(false),
-    m_notifyTypeHasBeenSet(false)
+    m_notifyTypeHasBeenSet(false),
+    m_verifyChannelHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,19 @@ CoreInternalOutcome FlowCreateApprover::Deserialize(const rapidjson::Value &valu
         m_notifyTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("VerifyChannel") && !value["VerifyChannel"].IsNull())
+    {
+        if (!value["VerifyChannel"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FlowCreateApprover.VerifyChannel` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["VerifyChannel"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_verifyChannel.push_back((*itr).GetString());
+        }
+        m_verifyChannelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +276,19 @@ void FlowCreateApprover::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "NotifyType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_notifyType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_verifyChannelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VerifyChannel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_verifyChannel.begin(); itr != m_verifyChannel.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -457,5 +484,21 @@ void FlowCreateApprover::SetNotifyType(const string& _notifyType)
 bool FlowCreateApprover::NotifyTypeHasBeenSet() const
 {
     return m_notifyTypeHasBeenSet;
+}
+
+vector<string> FlowCreateApprover::GetVerifyChannel() const
+{
+    return m_verifyChannel;
+}
+
+void FlowCreateApprover::SetVerifyChannel(const vector<string>& _verifyChannel)
+{
+    m_verifyChannel = _verifyChannel;
+    m_verifyChannelHasBeenSet = true;
+}
+
+bool FlowCreateApprover::VerifyChannelHasBeenSet() const
+{
+    return m_verifyChannelHasBeenSet;
 }
 

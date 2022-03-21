@@ -47,42 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主键ID
-                     * @return ID 主键ID
-                     */
-                    int64_t GetID() const;
-
-                    /**
-                     * 设置主键ID
-                     * @param ID 主键ID
-                     */
-                    void SetID(const int64_t& _iD);
-
-                    /**
-                     * 判断参数 ID 是否已赋值
-                     * @return ID 是否已赋值
-                     */
-                    bool IDHasBeenSet() const;
-
-                    /**
-                     * 获取项目ID
-                     * @return ProjectID 项目ID
-                     */
-                    int64_t GetProjectID() const;
-
-                    /**
-                     * 设置项目ID
-                     * @param ProjectID 项目ID
-                     */
-                    void SetProjectID(const int64_t& _projectID);
-
-                    /**
-                     * 判断参数 ProjectID 是否已赋值
-                     * @return ProjectID 是否已赋值
-                     */
-                    bool ProjectIDHasBeenSet() const;
-
-                    /**
                      * 获取接口
                      * @return ProjectInterface 接口
                      */
@@ -136,19 +100,43 @@ namespace TencentCloud
                      */
                     bool ReportTypeHasBeenSet() const;
 
+                    /**
+                     * 获取主键ID
+                     * @return ID 主键ID
+                     */
+                    int64_t GetID() const;
+
+                    /**
+                     * 设置主键ID
+                     * @param ID 主键ID
+                     */
+                    void SetID(const int64_t& _iD);
+
+                    /**
+                     * 判断参数 ID 是否已赋值
+                     * @return ID 是否已赋值
+                     */
+                    bool IDHasBeenSet() const;
+
+                    /**
+                     * 获取项目ID
+                     * @return ProjectID 项目ID
+                     */
+                    int64_t GetProjectID() const;
+
+                    /**
+                     * 设置项目ID
+                     * @param ProjectID 项目ID
+                     */
+                    void SetProjectID(const int64_t& _projectID);
+
+                    /**
+                     * 判断参数 ProjectID 是否已赋值
+                     * @return ProjectID 是否已赋值
+                     */
+                    bool ProjectIDHasBeenSet() const;
+
                 private:
-
-                    /**
-                     * 主键ID
-                     */
-                    int64_t m_iD;
-                    bool m_iDHasBeenSet;
-
-                    /**
-                     * 项目ID
-                     */
-                    int64_t m_projectID;
-                    bool m_projectIDHasBeenSet;
 
                     /**
                      * 接口
@@ -167,6 +155,18 @@ namespace TencentCloud
                      */
                     int64_t m_reportType;
                     bool m_reportTypeHasBeenSet;
+
+                    /**
+                     * 主键ID
+                     */
+                    int64_t m_iD;
+                    bool m_iDHasBeenSet;
+
+                    /**
+                     * 项目ID
+                     */
+                    int64_t m_projectID;
+                    bool m_projectIDHasBeenSet;
 
                 };
             }

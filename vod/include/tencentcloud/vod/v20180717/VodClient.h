@@ -237,6 +237,8 @@
 #include <tencentcloud/vod/v20180717/model/ModifyWordSampleResponse.h>
 #include <tencentcloud/vod/v20180717/model/ParseStreamingManifestRequest.h>
 #include <tencentcloud/vod/v20180717/model/ParseStreamingManifestResponse.h>
+#include <tencentcloud/vod/v20180717/model/ProcessImageRequest.h>
+#include <tencentcloud/vod/v20180717/model/ProcessImageResponse.h>
 #include <tencentcloud/vod/v20180717/model/ProcessMediaRequest.h>
 #include <tencentcloud/vod/v20180717/model/ProcessMediaResponse.h>
 #include <tencentcloud/vod/v20180717/model/ProcessMediaByProcedureRequest.h>
@@ -594,6 +596,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ParseStreamingManifestResponse> ParseStreamingManifestOutcome;
                 typedef std::future<ParseStreamingManifestOutcome> ParseStreamingManifestOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ParseStreamingManifestRequest&, ParseStreamingManifestOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ParseStreamingManifestAsyncHandler;
+                typedef Outcome<Core::Error, Model::ProcessImageResponse> ProcessImageOutcome;
+                typedef std::future<ProcessImageOutcome> ProcessImageOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ProcessImageRequest&, ProcessImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ProcessImageAsyncHandler;
                 typedef Outcome<Core::Error, Model::ProcessMediaResponse> ProcessMediaOutcome;
                 typedef std::future<ProcessMediaOutcome> ProcessMediaOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ProcessMediaRequest&, ProcessMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ProcessMediaAsyncHandler;
@@ -1727,6 +1732,22 @@ namespace TencentCloud
                 ParseStreamingManifestOutcome ParseStreamingManifest(const Model::ParseStreamingManifestRequest &request);
                 void ParseStreamingManifestAsync(const Model::ParseStreamingManifestRequest& request, const ParseStreamingManifestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ParseStreamingManifestOutcomeCallable ParseStreamingManifestCallable(const Model::ParseStreamingManifestRequest& request);
+
+                /**
+                 *对点播中的图片文件发起处理任务，功能包括：
+
+1. 智能识别（令人反感的信息、不安全的信息、不适宜的信息）;
+
+><li>图片文件大小支持：文件 < 5M；</li>
+><li>图片文件分辨率支持：建议分辨率大于256x256，否则可能会影响识别效果；</li>
+><li>图片文件支持格式：PNG、JPG、JPEG、BMP、GIF、WEBP格式。</li>
+
+                 * @param req ProcessImageRequest
+                 * @return ProcessImageOutcome
+                 */
+                ProcessImageOutcome ProcessImage(const Model::ProcessImageRequest &request);
+                void ProcessImageAsync(const Model::ProcessImageRequest& request, const ProcessImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ProcessImageOutcomeCallable ProcessImageCallable(const Model::ProcessImageRequest& request);
 
                 /**
                  *对点播中的音视频媒体发起处理任务，功能包括：

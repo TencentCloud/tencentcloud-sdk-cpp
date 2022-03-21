@@ -21,11 +21,11 @@ using namespace TencentCloud::Rum::V20210622::Model;
 using namespace std;
 
 ProjectLimit::ProjectLimit() :
-    m_iDHasBeenSet(false),
-    m_projectIDHasBeenSet(false),
     m_projectInterfaceHasBeenSet(false),
     m_reportRateHasBeenSet(false),
-    m_reportTypeHasBeenSet(false)
+    m_reportTypeHasBeenSet(false),
+    m_iDHasBeenSet(false),
+    m_projectIDHasBeenSet(false)
 {
 }
 
@@ -33,26 +33,6 @@ CoreInternalOutcome ProjectLimit::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("ID") && !value["ID"].IsNull())
-    {
-        if (!value["ID"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `ProjectLimit.ID` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_iD = value["ID"].GetInt64();
-        m_iDHasBeenSet = true;
-    }
-
-    if (value.HasMember("ProjectID") && !value["ProjectID"].IsNull())
-    {
-        if (!value["ProjectID"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `ProjectLimit.ProjectID` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_projectID = value["ProjectID"].GetInt64();
-        m_projectIDHasBeenSet = true;
-    }
 
     if (value.HasMember("ProjectInterface") && !value["ProjectInterface"].IsNull())
     {
@@ -84,28 +64,32 @@ CoreInternalOutcome ProjectLimit::Deserialize(const rapidjson::Value &value)
         m_reportTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ID") && !value["ID"].IsNull())
+    {
+        if (!value["ID"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProjectLimit.ID` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_iD = value["ID"].GetInt64();
+        m_iDHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProjectID") && !value["ProjectID"].IsNull())
+    {
+        if (!value["ProjectID"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProjectLimit.ProjectID` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_projectID = value["ProjectID"].GetInt64();
+        m_projectIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void ProjectLimit::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_iDHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ID";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_iD, allocator);
-    }
-
-    if (m_projectIDHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ProjectID";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_projectID, allocator);
-    }
 
     if (m_projectInterfaceHasBeenSet)
     {
@@ -131,40 +115,24 @@ void ProjectLimit::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, m_reportType, allocator);
     }
 
+    if (m_iDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_iD, allocator);
+    }
+
+    if (m_projectIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_projectID, allocator);
+    }
+
 }
 
-
-int64_t ProjectLimit::GetID() const
-{
-    return m_iD;
-}
-
-void ProjectLimit::SetID(const int64_t& _iD)
-{
-    m_iD = _iD;
-    m_iDHasBeenSet = true;
-}
-
-bool ProjectLimit::IDHasBeenSet() const
-{
-    return m_iDHasBeenSet;
-}
-
-int64_t ProjectLimit::GetProjectID() const
-{
-    return m_projectID;
-}
-
-void ProjectLimit::SetProjectID(const int64_t& _projectID)
-{
-    m_projectID = _projectID;
-    m_projectIDHasBeenSet = true;
-}
-
-bool ProjectLimit::ProjectIDHasBeenSet() const
-{
-    return m_projectIDHasBeenSet;
-}
 
 string ProjectLimit::GetProjectInterface() const
 {
@@ -212,5 +180,37 @@ void ProjectLimit::SetReportType(const int64_t& _reportType)
 bool ProjectLimit::ReportTypeHasBeenSet() const
 {
     return m_reportTypeHasBeenSet;
+}
+
+int64_t ProjectLimit::GetID() const
+{
+    return m_iD;
+}
+
+void ProjectLimit::SetID(const int64_t& _iD)
+{
+    m_iD = _iD;
+    m_iDHasBeenSet = true;
+}
+
+bool ProjectLimit::IDHasBeenSet() const
+{
+    return m_iDHasBeenSet;
+}
+
+int64_t ProjectLimit::GetProjectID() const
+{
+    return m_projectID;
+}
+
+void ProjectLimit::SetProjectID(const int64_t& _projectID)
+{
+    m_projectID = _projectID;
+    m_projectIDHasBeenSet = true;
+}
+
+bool ProjectLimit::ProjectIDHasBeenSet() const
+{
+    return m_projectIDHasBeenSet;
 }
 

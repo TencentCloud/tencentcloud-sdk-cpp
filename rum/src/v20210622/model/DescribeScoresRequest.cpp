@@ -25,7 +25,8 @@ using namespace std;
 DescribeScoresRequest::DescribeScoresRequest() :
     m_endTimeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_iDHasBeenSet(false)
+    m_iDHasBeenSet(false),
+    m_isDemoHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeScoresRequest::ToJsonString() const
         string key = "ID";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_iD, allocator);
+    }
+
+    if (m_isDemoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDemo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isDemo, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeScoresRequest::SetID(const int64_t& _iD)
 bool DescribeScoresRequest::IDHasBeenSet() const
 {
     return m_iDHasBeenSet;
+}
+
+int64_t DescribeScoresRequest::GetIsDemo() const
+{
+    return m_isDemo;
+}
+
+void DescribeScoresRequest::SetIsDemo(const int64_t& _isDemo)
+{
+    m_isDemo = _isDemo;
+    m_isDemoHasBeenSet = true;
+}
+
+bool DescribeScoresRequest::IsDemoHasBeenSet() const
+{
+    return m_isDemoHasBeenSet;
 }
 
 

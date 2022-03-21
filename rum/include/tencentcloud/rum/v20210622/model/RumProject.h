@@ -332,6 +332,28 @@ namespace TencentCloud
                      */
                     bool IsStarHasBeenSet() const;
 
+                    /**
+                     * 获取项目状态(1 创建中，2 运行中，3 异常，4 重启中，5 停止中，6 已停止， 7 销毁中，8 已销毁)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProjectStatus 项目状态(1 创建中，2 运行中，3 异常，4 重启中，5 停止中，6 已停止， 7 销毁中，8 已销毁)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetProjectStatus() const;
+
+                    /**
+                     * 设置项目状态(1 创建中，2 运行中，3 异常，4 重启中，5 停止中，6 已停止， 7 销毁中，8 已销毁)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProjectStatus 项目状态(1 创建中，2 运行中，3 异常，4 重启中，5 停止中，6 已停止， 7 销毁中，8 已销毁)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProjectStatus(const int64_t& _projectStatus);
+
+                    /**
+                     * 判断参数 ProjectStatus 是否已赋值
+                     * @return ProjectStatus 是否已赋值
+                     */
+                    bool ProjectStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -427,6 +449,13 @@ namespace TencentCloud
                      */
                     int64_t m_isStar;
                     bool m_isStarHasBeenSet;
+
+                    /**
+                     * 项目状态(1 创建中，2 运行中，3 异常，4 重启中，5 停止中，6 已停止， 7 销毁中，8 已销毁)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_projectStatus;
+                    bool m_projectStatusHasBeenSet;
 
                 };
             }

@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool ProxyGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取代理节点个数
-                     * @return ProxyCount 代理节点个数
+                     * 获取代理节点个数，实际规格支持数
+                     * @return ProxyCount 代理节点个数，实际规格支持数
                      */
                     int64_t GetProxyCount() const;
 
                     /**
-                     * 设置代理节点个数
-                     * @param ProxyCount 代理节点个数
+                     * 设置代理节点个数，实际规格支持数
+                     * @param ProxyCount 代理节点个数，实际规格支持数
                      */
                     void SetProxyCount(const int64_t& _proxyCount);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool ProxyCountHasBeenSet() const;
 
                     /**
-                     * 获取代理节点核数
-                     * @return Cpu 代理节点核数
+                     * 获取代理节点核数，实际规格支持数
+                     * @return Cpu 代理节点核数，实际规格支持数
                      */
                     int64_t GetCpu() const;
 
                     /**
-                     * 设置代理节点核数
-                     * @param Cpu 代理节点核数
+                     * 设置代理节点核数，实际规格支持数
+                     * @param Cpu 代理节点核数，实际规格支持数
                      */
                     void SetCpu(const int64_t& _cpu);
 
@@ -183,13 +183,13 @@ namespace TencentCloud
                     bool m_proxyGroupIdHasBeenSet;
 
                     /**
-                     * 代理节点个数
+                     * 代理节点个数，实际规格支持数
                      */
                     int64_t m_proxyCount;
                     bool m_proxyCountHasBeenSet;
 
                     /**
-                     * 代理节点核数
+                     * 代理节点核数，实际规格支持数
                      */
                     int64_t m_cpu;
                     bool m_cpuHasBeenSet;

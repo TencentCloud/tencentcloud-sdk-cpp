@@ -27,6 +27,7 @@
 #include <tencentcloud/ame/v20190916/model/SetAudioParamCommandInput.h>
 #include <tencentcloud/ame/v20190916/model/JoinRoomInput.h>
 #include <tencentcloud/ame/v20190916/model/SetPlayModeCommandInput.h>
+#include <tencentcloud/ame/v20190916/model/SetVolumeCommandInput.h>
 
 
 namespace TencentCloud
@@ -152,14 +153,14 @@ namespace TencentCloud
                     bool PositionHasBeenSet() const;
 
                     /**
-                     * 获取音频参数
-                     * @return SetAudioParamInput 音频参数
+                     * 获取音频参数。
+                     * @return SetAudioParamInput 音频参数。
                      */
                     SetAudioParamCommandInput GetSetAudioParamInput() const;
 
                     /**
-                     * 设置音频参数
-                     * @param SetAudioParamInput 音频参数
+                     * 设置音频参数。
+                     * @param SetAudioParamInput 音频参数。
                      */
                     void SetSetAudioParamInput(const SetAudioParamCommandInput& _setAudioParamInput);
 
@@ -170,14 +171,14 @@ namespace TencentCloud
                     bool SetAudioParamInputHasBeenSet() const;
 
                     /**
-                     * 获取进房信息
-                     * @return JoinRoomInput 进房信息
+                     * 获取进房信息。
+                     * @return JoinRoomInput 进房信息。
                      */
                     JoinRoomInput GetJoinRoomInput() const;
 
                     /**
-                     * 设置进房信息
-                     * @param JoinRoomInput 进房信息
+                     * 设置进房信息。
+                     * @param JoinRoomInput 进房信息。
                      */
                     void SetJoinRoomInput(const JoinRoomInput& _joinRoomInput);
 
@@ -243,6 +244,24 @@ namespace TencentCloud
                      */
                     bool SetPlayModeInputHasBeenSet() const;
 
+                    /**
+                     * 获取音量，范围 0~100，默认为 50。
+                     * @return SetVolumeInput 音量，范围 0~100，默认为 50。
+                     */
+                    SetVolumeCommandInput GetSetVolumeInput() const;
+
+                    /**
+                     * 设置音量，范围 0~100，默认为 50。
+                     * @param SetVolumeInput 音量，范围 0~100，默认为 50。
+                     */
+                    void SetSetVolumeInput(const SetVolumeCommandInput& _setVolumeInput);
+
+                    /**
+                     * 判断参数 SetVolumeInput 是否已赋值
+                     * @return SetVolumeInput 是否已赋值
+                     */
+                    bool SetVolumeInputHasBeenSet() const;
+
                 private:
 
                     /**
@@ -279,13 +298,13 @@ namespace TencentCloud
                     bool m_positionHasBeenSet;
 
                     /**
-                     * 音频参数
+                     * 音频参数。
                      */
                     SetAudioParamCommandInput m_setAudioParamInput;
                     bool m_setAudioParamInputHasBeenSet;
 
                     /**
-                     * 进房信息
+                     * 进房信息。
                      */
                     JoinRoomInput m_joinRoomInput;
                     bool m_joinRoomInputHasBeenSet;
@@ -306,6 +325,12 @@ namespace TencentCloud
                      */
                     SetPlayModeCommandInput m_setPlayModeInput;
                     bool m_setPlayModeInputHasBeenSet;
+
+                    /**
+                     * 音量，范围 0~100，默认为 50。
+                     */
+                    SetVolumeCommandInput m_setVolumeInput;
+                    bool m_setVolumeInputHasBeenSet;
 
                 };
             }

@@ -63,24 +63,6 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取应用相关信息
-                     * @return Agent 应用相关信息
-                     */
-                    Agent GetAgent() const;
-
-                    /**
-                     * 设置应用相关信息
-                     * @param Agent 应用相关信息
-                     */
-                    void SetAgent(const Agent& _agent);
-
-                    /**
-                     * 判断参数 Agent 是否已赋值
-                     * @return Agent 是否已赋值
-                     */
-                    bool AgentHasBeenSet() const;
-
-                    /**
                      * 获取流程id
                      * @return FlowId 流程id
                      */
@@ -116,6 +98,24 @@ namespace TencentCloud
                      */
                     bool CancelMessageHasBeenSet() const;
 
+                    /**
+                     * 获取应用相关信息
+                     * @return Agent 应用相关信息
+                     */
+                    Agent GetAgent() const;
+
+                    /**
+                     * 设置应用相关信息
+                     * @param Agent 应用相关信息
+                     */
+                    void SetAgent(const Agent& _agent);
+
+                    /**
+                     * 判断参数 Agent 是否已赋值
+                     * @return Agent 是否已赋值
+                     */
+                    bool AgentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -123,12 +123,6 @@ namespace TencentCloud
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
-
-                    /**
-                     * 应用相关信息
-                     */
-                    Agent m_agent;
-                    bool m_agentHasBeenSet;
 
                     /**
                      * 流程id
@@ -141,6 +135,12 @@ namespace TencentCloud
                      */
                     std::string m_cancelMessage;
                     bool m_cancelMessageHasBeenSet;
+
+                    /**
+                     * 应用相关信息
+                     */
+                    Agent m_agent;
+                    bool m_agentHasBeenSet;
 
                 };
             }

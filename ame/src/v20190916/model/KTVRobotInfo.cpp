@@ -29,7 +29,8 @@ KTVRobotInfo::KTVRobotInfo() :
     m_setAudioParamInputHasBeenSet(false),
     m_joinRoomInputHasBeenSet(false),
     m_rTCSystemHasBeenSet(false),
-    m_setPlayModeInputHasBeenSet(false)
+    m_setPlayModeInputHasBeenSet(false),
+    m_setVolumeInputHasBeenSet(false)
 {
 }
 
@@ -152,6 +153,23 @@ CoreInternalOutcome KTVRobotInfo::Deserialize(const rapidjson::Value &value)
         m_setPlayModeInputHasBeenSet = true;
     }
 
+    if (value.HasMember("SetVolumeInput") && !value["SetVolumeInput"].IsNull())
+    {
+        if (!value["SetVolumeInput"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `KTVRobotInfo.SetVolumeInput` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_setVolumeInput.Deserialize(value["SetVolumeInput"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_setVolumeInputHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -237,6 +255,15 @@ void KTVRobotInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_setPlayModeInput.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_setVolumeInputHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SetVolumeInput";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_setVolumeInput.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -384,5 +411,21 @@ void KTVRobotInfo::SetSetPlayModeInput(const SetPlayModeCommandInput& _setPlayMo
 bool KTVRobotInfo::SetPlayModeInputHasBeenSet() const
 {
     return m_setPlayModeInputHasBeenSet;
+}
+
+SetVolumeCommandInput KTVRobotInfo::GetSetVolumeInput() const
+{
+    return m_setVolumeInput;
+}
+
+void KTVRobotInfo::SetSetVolumeInput(const SetVolumeCommandInput& _setVolumeInput)
+{
+    m_setVolumeInput = _setVolumeInput;
+    m_setVolumeInputHasBeenSet = true;
+}
+
+bool KTVRobotInfo::SetVolumeInputHasBeenSet() const
+{
+    return m_setVolumeInputHasBeenSet;
 }
 

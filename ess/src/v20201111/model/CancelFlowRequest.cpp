@@ -24,9 +24,9 @@ using namespace std;
 
 CancelFlowRequest::CancelFlowRequest() :
     m_operatorHasBeenSet(false),
-    m_agentHasBeenSet(false),
     m_flowIdHasBeenSet(false),
-    m_cancelMessageHasBeenSet(false)
+    m_cancelMessageHasBeenSet(false),
+    m_agentHasBeenSet(false)
 {
 }
 
@@ -46,15 +46,6 @@ string CancelFlowRequest::ToJsonString() const
         m_operator.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_agentHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Agent";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_agent.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_flowIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -69,6 +60,15 @@ string CancelFlowRequest::ToJsonString() const
         string key = "CancelMessage";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cancelMessage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -93,22 +93,6 @@ void CancelFlowRequest::SetOperator(const UserInfo& _operator)
 bool CancelFlowRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
-}
-
-Agent CancelFlowRequest::GetAgent() const
-{
-    return m_agent;
-}
-
-void CancelFlowRequest::SetAgent(const Agent& _agent)
-{
-    m_agent = _agent;
-    m_agentHasBeenSet = true;
-}
-
-bool CancelFlowRequest::AgentHasBeenSet() const
-{
-    return m_agentHasBeenSet;
 }
 
 string CancelFlowRequest::GetFlowId() const
@@ -141,6 +125,22 @@ void CancelFlowRequest::SetCancelMessage(const string& _cancelMessage)
 bool CancelFlowRequest::CancelMessageHasBeenSet() const
 {
     return m_cancelMessageHasBeenSet;
+}
+
+Agent CancelFlowRequest::GetAgent() const
+{
+    return m_agent;
+}
+
+void CancelFlowRequest::SetAgent(const Agent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool CancelFlowRequest::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
 }
 
 

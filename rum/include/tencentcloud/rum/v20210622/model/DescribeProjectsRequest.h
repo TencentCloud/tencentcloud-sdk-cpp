@@ -97,6 +97,24 @@ namespace TencentCloud
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取是否为demo模式（1=是，2=否）
+                     * @return IsDemo 是否为demo模式（1=是，2=否）
+                     */
+                    int64_t GetIsDemo() const;
+
+                    /**
+                     * 设置是否为demo模式（1=是，2=否）
+                     * @param IsDemo 是否为demo模式（1=是，2=否）
+                     */
+                    void SetIsDemo(const int64_t& _isDemo);
+
+                    /**
+                     * 判断参数 IsDemo 是否已赋值
+                     * @return IsDemo 是否已赋值
+                     */
+                    bool IsDemoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,6 +134,12 @@ namespace TencentCloud
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 是否为demo模式（1=是，2=否）
+                     */
+                    int64_t m_isDemo;
+                    bool m_isDemoHasBeenSet;
 
                 };
             }

@@ -31,7 +31,8 @@ SyncKTVRobotCommandRequest::SyncKTVRobotCommandRequest() :
     m_setAudioParamCommandInputHasBeenSet(false),
     m_sendMessageCommandInputHasBeenSet(false),
     m_setPlayModeCommandInputHasBeenSet(false),
-    m_setDestroyModeCommandInputHasBeenSet(false)
+    m_setDestroyModeCommandInputHasBeenSet(false),
+    m_setVolumeCommandInputHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,15 @@ string SyncKTVRobotCommandRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_setDestroyModeCommandInput.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_setVolumeCommandInputHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SetVolumeCommandInput";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_setVolumeCommandInput.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -271,6 +281,22 @@ void SyncKTVRobotCommandRequest::SetSetDestroyModeCommandInput(const SetDestroyM
 bool SyncKTVRobotCommandRequest::SetDestroyModeCommandInputHasBeenSet() const
 {
     return m_setDestroyModeCommandInputHasBeenSet;
+}
+
+SetVolumeCommandInput SyncKTVRobotCommandRequest::GetSetVolumeCommandInput() const
+{
+    return m_setVolumeCommandInput;
+}
+
+void SyncKTVRobotCommandRequest::SetSetVolumeCommandInput(const SetVolumeCommandInput& _setVolumeCommandInput)
+{
+    m_setVolumeCommandInput = _setVolumeCommandInput;
+    m_setVolumeCommandInputHasBeenSet = true;
+}
+
+bool SyncKTVRobotCommandRequest::SetVolumeCommandInputHasBeenSet() const
+{
+    return m_setVolumeCommandInputHasBeenSet;
 }
 
 

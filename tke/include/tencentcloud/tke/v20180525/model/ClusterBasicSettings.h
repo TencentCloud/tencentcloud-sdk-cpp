@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tke/v20180525/model/TagSpecification.h>
+#include <tencentcloud/tke/v20180525/model/AutoUpgradeClusterLevel.h>
 
 
 namespace TencentCloud
@@ -227,6 +228,42 @@ namespace TencentCloud
                      */
                     bool SubnetIdHasBeenSet() const;
 
+                    /**
+                     * 获取集群等级，针对托管集群生效
+                     * @return ClusterLevel 集群等级，针对托管集群生效
+                     */
+                    std::string GetClusterLevel() const;
+
+                    /**
+                     * 设置集群等级，针对托管集群生效
+                     * @param ClusterLevel 集群等级，针对托管集群生效
+                     */
+                    void SetClusterLevel(const std::string& _clusterLevel);
+
+                    /**
+                     * 判断参数 ClusterLevel 是否已赋值
+                     * @return ClusterLevel 是否已赋值
+                     */
+                    bool ClusterLevelHasBeenSet() const;
+
+                    /**
+                     * 获取自动变配集群等级，针对托管集群生效
+                     * @return AutoUpgradeClusterLevel 自动变配集群等级，针对托管集群生效
+                     */
+                    AutoUpgradeClusterLevel GetAutoUpgradeClusterLevel() const;
+
+                    /**
+                     * 设置自动变配集群等级，针对托管集群生效
+                     * @param AutoUpgradeClusterLevel 自动变配集群等级，针对托管集群生效
+                     */
+                    void SetAutoUpgradeClusterLevel(const AutoUpgradeClusterLevel& _autoUpgradeClusterLevel);
+
+                    /**
+                     * 判断参数 AutoUpgradeClusterLevel 是否已赋值
+                     * @return AutoUpgradeClusterLevel 是否已赋值
+                     */
+                    bool AutoUpgradeClusterLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -288,6 +325,18 @@ namespace TencentCloud
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * 集群等级，针对托管集群生效
+                     */
+                    std::string m_clusterLevel;
+                    bool m_clusterLevelHasBeenSet;
+
+                    /**
+                     * 自动变配集群等级，针对托管集群生效
+                     */
+                    AutoUpgradeClusterLevel m_autoUpgradeClusterLevel;
+                    bool m_autoUpgradeClusterLevelHasBeenSet;
 
                 };
             }

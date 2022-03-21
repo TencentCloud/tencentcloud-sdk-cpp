@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool ProxyGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取是否开始延迟剔除，取值："true" | "false"
-                     * @return IsKickout 是否开始延迟剔除，取值："true" | "false"
+                     * 获取是否开始延迟剔除，默认false，取值："true" | "false"
+                     * @return IsKickout 是否开始延迟剔除，默认false，取值："true" | "false"
                      */
                     bool GetIsKickout() const;
 
                     /**
-                     * 设置是否开始延迟剔除，取值："true" | "false"
-                     * @param IsKickout 是否开始延迟剔除，取值："true" | "false"
+                     * 设置是否开始延迟剔除，默认false，取值："true" | "false"
+                     * @param IsKickout 是否开始延迟剔除，默认false，取值："true" | "false"
                      */
                     void SetIsKickout(const bool& _isKickout);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool IsKickoutHasBeenSet() const;
 
                     /**
-                     * 获取最少保留数
-                     * @return MinCount 最少保留数
+                     * 获取最少保留数，最小为0，最大为实例数量
+                     * @return MinCount 最少保留数，最小为0，最大为实例数量
                      */
                     uint64_t GetMinCount() const;
 
                     /**
-                     * 设置最少保留数
-                     * @param MinCount 最少保留数
+                     * 设置最少保留数，最小为0，最大为实例数量
+                     * @param MinCount 最少保留数，最小为0，最大为实例数量
                      */
                     void SetMinCount(const uint64_t& _minCount);
 
@@ -152,14 +152,14 @@ namespace TencentCloud
                     bool RoWeightValuesHasBeenSet() const;
 
                     /**
-                     * 获取是否开启故障转移，代理出现故障后，连接地址将路由到主实例，取值："true" | "false"
-                     * @return FailOver 是否开启故障转移，代理出现故障后，连接地址将路由到主实例，取值："true" | "false"
+                     * 获取是否开启故障转移，代理出现故障后，连接地址将路由到主实例，默认false，取值："true" | "false"
+                     * @return FailOver 是否开启故障转移，代理出现故障后，连接地址将路由到主实例，默认false，取值："true" | "false"
                      */
                     bool GetFailOver() const;
 
                     /**
-                     * 设置是否开启故障转移，代理出现故障后，连接地址将路由到主实例，取值："true" | "false"
-                     * @param FailOver 是否开启故障转移，代理出现故障后，连接地址将路由到主实例，取值："true" | "false"
+                     * 设置是否开启故障转移，代理出现故障后，连接地址将路由到主实例，默认false，取值："true" | "false"
+                     * @param FailOver 是否开启故障转移，代理出现故障后，连接地址将路由到主实例，默认false，取值："true" | "false"
                      */
                     void SetFailOver(const bool& _failOver);
 
@@ -170,14 +170,14 @@ namespace TencentCloud
                     bool FailOverHasBeenSet() const;
 
                     /**
-                     * 获取是否自动添加只读实例，取值："true" | "false"
-                     * @return AutoAddRo 是否自动添加只读实例，取值："true" | "false"
+                     * 获取是否自动添加只读实例，默认false，取值："true" | "false"
+                     * @return AutoAddRo 是否自动添加只读实例，默认false，取值："true" | "false"
                      */
                     bool GetAutoAddRo() const;
 
                     /**
-                     * 设置是否自动添加只读实例，取值："true" | "false"
-                     * @param AutoAddRo 是否自动添加只读实例，取值："true" | "false"
+                     * 设置是否自动添加只读实例，默认false，取值："true" | "false"
+                     * @param AutoAddRo 是否自动添加只读实例，默认false，取值："true" | "false"
                      */
                     void SetAutoAddRo(const bool& _autoAddRo);
 
@@ -196,13 +196,13 @@ namespace TencentCloud
                     bool m_proxyGroupIdHasBeenSet;
 
                     /**
-                     * 是否开始延迟剔除，取值："true" | "false"
+                     * 是否开始延迟剔除，默认false，取值："true" | "false"
                      */
                     bool m_isKickout;
                     bool m_isKickoutHasBeenSet;
 
                     /**
-                     * 最少保留数
+                     * 最少保留数，最小为0，最大为实例数量
                      */
                     uint64_t m_minCount;
                     bool m_minCountHasBeenSet;
@@ -226,13 +226,13 @@ namespace TencentCloud
                     bool m_roWeightValuesHasBeenSet;
 
                     /**
-                     * 是否开启故障转移，代理出现故障后，连接地址将路由到主实例，取值："true" | "false"
+                     * 是否开启故障转移，代理出现故障后，连接地址将路由到主实例，默认false，取值："true" | "false"
                      */
                     bool m_failOver;
                     bool m_failOverHasBeenSet;
 
                     /**
-                     * 是否自动添加只读实例，取值："true" | "false"
+                     * 是否自动添加只读实例，默认false，取值："true" | "false"
                      */
                     bool m_autoAddRo;
                     bool m_autoAddRoHasBeenSet;

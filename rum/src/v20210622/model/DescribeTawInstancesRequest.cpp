@@ -30,7 +30,8 @@ DescribeTawInstancesRequest::DescribeTawInstancesRequest() :
     m_areaIdsHasBeenSet(false),
     m_instanceStatusesHasBeenSet(false),
     m_instanceIdsHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_isDemoHasBeenSet(false)
 {
 }
 
@@ -135,6 +136,14 @@ string DescribeTawInstancesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isDemoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDemo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isDemo, allocator);
     }
 
 
@@ -271,6 +280,22 @@ void DescribeTawInstancesRequest::SetFilters(const vector<Filter>& _filters)
 bool DescribeTawInstancesRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+int64_t DescribeTawInstancesRequest::GetIsDemo() const
+{
+    return m_isDemo;
+}
+
+void DescribeTawInstancesRequest::SetIsDemo(const int64_t& _isDemo)
+{
+    m_isDemo = _isDemo;
+    m_isDemoHasBeenSet = true;
+}
+
+bool DescribeTawInstancesRequest::IsDemoHasBeenSet() const
+{
+    return m_isDemoHasBeenSet;
 }
 
 
