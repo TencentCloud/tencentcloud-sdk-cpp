@@ -107,6 +107,18 @@ namespace TencentCloud
                      */
                     bool ProxyLBHasBeenSet() const;
 
+                    /**
+                     * 获取连接用户集群k8s 的Config
+                     * @return Kubeconfig 连接用户集群k8s 的Config
+                     */
+                    std::string GetKubeconfig() const;
+
+                    /**
+                     * 判断参数 Kubeconfig 是否已赋值
+                     * @return Kubeconfig 是否已赋值
+                     */
+                    bool KubeconfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -138,6 +150,12 @@ namespace TencentCloud
                      */
                     bool m_proxyLB;
                     bool m_proxyLBHasBeenSet;
+
+                    /**
+                     * 连接用户集群k8s 的Config
+                     */
+                    std::string m_kubeconfig;
+                    bool m_kubeconfigHasBeenSet;
 
                 };
             }

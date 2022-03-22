@@ -22,7 +22,8 @@ using namespace std;
 
 InjectConfig::InjectConfig() :
     m_excludeIPRangesHasBeenSet(false),
-    m_holdApplicationUntilProxyStartsHasBeenSet(false)
+    m_holdApplicationUntilProxyStartsHasBeenSet(false),
+    m_holdProxyUntilApplicationEndsHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,16 @@ CoreInternalOutcome InjectConfig::Deserialize(const rapidjson::Value &value)
         m_holdApplicationUntilProxyStartsHasBeenSet = true;
     }
 
+    if (value.HasMember("HoldProxyUntilApplicationEnds") && !value["HoldProxyUntilApplicationEnds"].IsNull())
+    {
+        if (!value["HoldProxyUntilApplicationEnds"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InjectConfig.HoldProxyUntilApplicationEnds` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_holdProxyUntilApplicationEnds = value["HoldProxyUntilApplicationEnds"].GetBool();
+        m_holdProxyUntilApplicationEndsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +91,14 @@ void InjectConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "HoldApplicationUntilProxyStarts";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_holdApplicationUntilProxyStarts, allocator);
+    }
+
+    if (m_holdProxyUntilApplicationEndsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HoldProxyUntilApplicationEnds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_holdProxyUntilApplicationEnds, allocator);
     }
 
 }
@@ -115,5 +134,21 @@ void InjectConfig::SetHoldApplicationUntilProxyStarts(const bool& _holdApplicati
 bool InjectConfig::HoldApplicationUntilProxyStartsHasBeenSet() const
 {
     return m_holdApplicationUntilProxyStartsHasBeenSet;
+}
+
+bool InjectConfig::GetHoldProxyUntilApplicationEnds() const
+{
+    return m_holdProxyUntilApplicationEnds;
+}
+
+void InjectConfig::SetHoldProxyUntilApplicationEnds(const bool& _holdProxyUntilApplicationEnds)
+{
+    m_holdProxyUntilApplicationEnds = _holdProxyUntilApplicationEnds;
+    m_holdProxyUntilApplicationEndsHasBeenSet = true;
+}
+
+bool InjectConfig::HoldProxyUntilApplicationEndsHasBeenSet() const
+{
+    return m_holdProxyUntilApplicationEndsHasBeenSet;
 }
 

@@ -24,7 +24,9 @@ MeshConfig::MeshConfig() :
     m_istioHasBeenSet(false),
     m_accessLogHasBeenSet(false),
     m_prometheusHasBeenSet(false),
-    m_injectHasBeenSet(false)
+    m_injectHasBeenSet(false),
+    m_tracingHasBeenSet(false),
+    m_sidecarResourcesHasBeenSet(false)
 {
 }
 
@@ -101,6 +103,40 @@ CoreInternalOutcome MeshConfig::Deserialize(const rapidjson::Value &value)
         m_injectHasBeenSet = true;
     }
 
+    if (value.HasMember("Tracing") && !value["Tracing"].IsNull())
+    {
+        if (!value["Tracing"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MeshConfig.Tracing` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_tracing.Deserialize(value["Tracing"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_tracingHasBeenSet = true;
+    }
+
+    if (value.HasMember("SidecarResources") && !value["SidecarResources"].IsNull())
+    {
+        if (!value["SidecarResources"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MeshConfig.SidecarResources` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_sidecarResources.Deserialize(value["SidecarResources"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_sidecarResourcesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -142,6 +178,24 @@ void MeshConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_inject.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_tracingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tracing";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tracing.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_sidecarResourcesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SidecarResources";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sidecarResources.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -209,5 +263,37 @@ void MeshConfig::SetInject(const InjectConfig& _inject)
 bool MeshConfig::InjectHasBeenSet() const
 {
     return m_injectHasBeenSet;
+}
+
+TracingConfig MeshConfig::GetTracing() const
+{
+    return m_tracing;
+}
+
+void MeshConfig::SetTracing(const TracingConfig& _tracing)
+{
+    m_tracing = _tracing;
+    m_tracingHasBeenSet = true;
+}
+
+bool MeshConfig::TracingHasBeenSet() const
+{
+    return m_tracingHasBeenSet;
+}
+
+ResourceRequirements MeshConfig::GetSidecarResources() const
+{
+    return m_sidecarResources;
+}
+
+void MeshConfig::SetSidecarResources(const ResourceRequirements& _sidecarResources)
+{
+    m_sidecarResources = _sidecarResources;
+    m_sidecarResourcesHasBeenSet = true;
+}
+
+bool MeshConfig::SidecarResourcesHasBeenSet() const
+{
+    return m_sidecarResourcesHasBeenSet;
 }
 

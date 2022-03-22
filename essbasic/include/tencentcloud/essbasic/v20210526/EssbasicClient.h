@@ -47,6 +47,8 @@
 #include <tencentcloud/essbasic/v20210526/model/SyncProxyOrganizationResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/SyncProxyOrganizationOperatorsRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/SyncProxyOrganizationOperatorsResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/UploadFilesRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/UploadFilesResponse.h>
 
 
 namespace TencentCloud
@@ -97,6 +99,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SyncProxyOrganizationOperatorsResponse> SyncProxyOrganizationOperatorsOutcome;
                 typedef std::future<SyncProxyOrganizationOperatorsOutcome> SyncProxyOrganizationOperatorsOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::SyncProxyOrganizationOperatorsRequest&, SyncProxyOrganizationOperatorsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncProxyOrganizationOperatorsAsyncHandler;
+                typedef Outcome<Core::Error, Model::UploadFilesResponse> UploadFilesOutcome;
+                typedef std::future<UploadFilesOutcome> UploadFilesOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::UploadFilesRequest&, UploadFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadFilesAsyncHandler;
 
 
 
@@ -217,6 +222,16 @@ namespace TencentCloud
                 SyncProxyOrganizationOperatorsOutcome SyncProxyOrganizationOperators(const Model::SyncProxyOrganizationOperatorsRequest &request);
                 void SyncProxyOrganizationOperatorsAsync(const Model::SyncProxyOrganizationOperatorsRequest& request, const SyncProxyOrganizationOperatorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SyncProxyOrganizationOperatorsOutcomeCallable SyncProxyOrganizationOperatorsCallable(const Model::SyncProxyOrganizationOperatorsRequest& request);
+
+                /**
+                 *此接口（UploadFiles）用于文件上传。
+调用时需要设置Domain 为 file.ess.tencent.cn
+                 * @param req UploadFilesRequest
+                 * @return UploadFilesOutcome
+                 */
+                UploadFilesOutcome UploadFiles(const Model::UploadFilesRequest &request);
+                void UploadFilesAsync(const Model::UploadFilesRequest& request, const UploadFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UploadFilesOutcomeCallable UploadFilesCallable(const Model::UploadFilesRequest& request);
 
             };
         }

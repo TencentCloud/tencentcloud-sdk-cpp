@@ -392,6 +392,70 @@ ResetTaskConfig：任务更新回调。
                      */
                     bool CommentHasBeenSet() const;
 
+                    /**
+                     * 获取备源的类型：
+PullLivePushLive -直播，
+PullVodPushLive -点播。
+注意：
+1. 仅当主源类型为直播源时，备源才会生效。
+2. 主直播源拉流中断时，自动使用备源进行拉流。
+3. 如果备源为点播文件时，则每次轮播完点播文件就检查主源是否恢复，如果主源恢复则自动切回到主源，否则继续拉备源。
+                     * @return BackupSourceType 备源的类型：
+PullLivePushLive -直播，
+PullVodPushLive -点播。
+注意：
+1. 仅当主源类型为直播源时，备源才会生效。
+2. 主直播源拉流中断时，自动使用备源进行拉流。
+3. 如果备源为点播文件时，则每次轮播完点播文件就检查主源是否恢复，如果主源恢复则自动切回到主源，否则继续拉备源。
+                     */
+                    std::string GetBackupSourceType() const;
+
+                    /**
+                     * 设置备源的类型：
+PullLivePushLive -直播，
+PullVodPushLive -点播。
+注意：
+1. 仅当主源类型为直播源时，备源才会生效。
+2. 主直播源拉流中断时，自动使用备源进行拉流。
+3. 如果备源为点播文件时，则每次轮播完点播文件就检查主源是否恢复，如果主源恢复则自动切回到主源，否则继续拉备源。
+                     * @param BackupSourceType 备源的类型：
+PullLivePushLive -直播，
+PullVodPushLive -点播。
+注意：
+1. 仅当主源类型为直播源时，备源才会生效。
+2. 主直播源拉流中断时，自动使用备源进行拉流。
+3. 如果备源为点播文件时，则每次轮播完点播文件就检查主源是否恢复，如果主源恢复则自动切回到主源，否则继续拉备源。
+                     */
+                    void SetBackupSourceType(const std::string& _backupSourceType);
+
+                    /**
+                     * 判断参数 BackupSourceType 是否已赋值
+                     * @return BackupSourceType 是否已赋值
+                     */
+                    bool BackupSourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取备源 URL。
+只允许填一个备源 URL
+                     * @return BackupSourceUrl 备源 URL。
+只允许填一个备源 URL
+                     */
+                    std::string GetBackupSourceUrl() const;
+
+                    /**
+                     * 设置备源 URL。
+只允许填一个备源 URL
+                     * @param BackupSourceUrl 备源 URL。
+只允许填一个备源 URL
+                     */
+                    void SetBackupSourceUrl(const std::string& _backupSourceUrl);
+
+                    /**
+                     * 判断参数 BackupSourceUrl 是否已赋值
+                     * @return BackupSourceUrl 是否已赋值
+                     */
+                    bool BackupSourceUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -500,6 +564,25 @@ ResetTaskConfig：任务更新回调。
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
+
+                    /**
+                     * 备源的类型：
+PullLivePushLive -直播，
+PullVodPushLive -点播。
+注意：
+1. 仅当主源类型为直播源时，备源才会生效。
+2. 主直播源拉流中断时，自动使用备源进行拉流。
+3. 如果备源为点播文件时，则每次轮播完点播文件就检查主源是否恢复，如果主源恢复则自动切回到主源，否则继续拉备源。
+                     */
+                    std::string m_backupSourceType;
+                    bool m_backupSourceTypeHasBeenSet;
+
+                    /**
+                     * 备源 URL。
+只允许填一个备源 URL
+                     */
+                    std::string m_backupSourceUrl;
+                    bool m_backupSourceUrlHasBeenSet;
 
                 };
             }

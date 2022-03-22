@@ -126,6 +126,92 @@ GmeClient::CreateAppOutcomeCallable GmeClient::CreateAppCallable(const CreateApp
     return task->get_future();
 }
 
+GmeClient::CreateScanUserOutcome GmeClient::CreateScanUser(const CreateScanUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateScanUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateScanUserResponse rsp = CreateScanUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateScanUserOutcome(rsp);
+        else
+            return CreateScanUserOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateScanUserOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::CreateScanUserAsync(const CreateScanUserRequest& request, const CreateScanUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateScanUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::CreateScanUserOutcomeCallable GmeClient::CreateScanUserCallable(const CreateScanUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateScanUserOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateScanUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GmeClient::DeleteScanUserOutcome GmeClient::DeleteScanUser(const DeleteScanUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteScanUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteScanUserResponse rsp = DeleteScanUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteScanUserOutcome(rsp);
+        else
+            return DeleteScanUserOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteScanUserOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::DeleteScanUserAsync(const DeleteScanUserRequest& request, const DeleteScanUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteScanUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::DeleteScanUserOutcomeCallable GmeClient::DeleteScanUserCallable(const DeleteScanUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteScanUserOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteScanUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GmeClient::DescribeAgeDetectTaskOutcome GmeClient::DescribeAgeDetectTask(const DescribeAgeDetectTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAgeDetectTask");

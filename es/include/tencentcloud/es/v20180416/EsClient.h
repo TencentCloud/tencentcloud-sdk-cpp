@@ -47,6 +47,8 @@
 #include <tencentcloud/es/v20180416/model/RestartNodesResponse.h>
 #include <tencentcloud/es/v20180416/model/UpdateDiagnoseSettingsRequest.h>
 #include <tencentcloud/es/v20180416/model/UpdateDiagnoseSettingsResponse.h>
+#include <tencentcloud/es/v20180416/model/UpdateDictionariesRequest.h>
+#include <tencentcloud/es/v20180416/model/UpdateDictionariesResponse.h>
 #include <tencentcloud/es/v20180416/model/UpdateInstanceRequest.h>
 #include <tencentcloud/es/v20180416/model/UpdateInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/UpdateJdkRequest.h>
@@ -109,6 +111,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateDiagnoseSettingsResponse> UpdateDiagnoseSettingsOutcome;
                 typedef std::future<UpdateDiagnoseSettingsOutcome> UpdateDiagnoseSettingsOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::UpdateDiagnoseSettingsRequest&, UpdateDiagnoseSettingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDiagnoseSettingsAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateDictionariesResponse> UpdateDictionariesOutcome;
+                typedef std::future<UpdateDictionariesOutcome> UpdateDictionariesOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::UpdateDictionariesRequest&, UpdateDictionariesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDictionariesAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateInstanceResponse> UpdateInstanceOutcome;
                 typedef std::future<UpdateInstanceOutcome> UpdateInstanceOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::UpdateInstanceRequest&, UpdateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInstanceAsyncHandler;
@@ -237,6 +242,15 @@ namespace TencentCloud
                 UpdateDiagnoseSettingsOutcome UpdateDiagnoseSettings(const Model::UpdateDiagnoseSettingsRequest &request);
                 void UpdateDiagnoseSettingsAsync(const Model::UpdateDiagnoseSettingsRequest& request, const UpdateDiagnoseSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateDiagnoseSettingsOutcomeCallable UpdateDiagnoseSettingsCallable(const Model::UpdateDiagnoseSettingsRequest& request);
+
+                /**
+                 *更新ES集群词典
+                 * @param req UpdateDictionariesRequest
+                 * @return UpdateDictionariesOutcome
+                 */
+                UpdateDictionariesOutcome UpdateDictionaries(const Model::UpdateDictionariesRequest &request);
+                void UpdateDictionariesAsync(const Model::UpdateDictionariesRequest& request, const UpdateDictionariesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateDictionariesOutcomeCallable UpdateDictionariesCallable(const Model::UpdateDictionariesRequest& request);
 
                 /**
                  *对集群进行节点规格变更，修改实例名称，修改配置，重置密码， 添加Kibana黑白名单等操作。参数中InstanceId为必传参数，ForceRestart为选填参数，剩余参数传递组合及含义如下：

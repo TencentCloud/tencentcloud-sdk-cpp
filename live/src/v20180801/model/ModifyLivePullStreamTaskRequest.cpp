@@ -35,7 +35,9 @@ ModifyLivePullStreamTaskRequest::ModifyLivePullStreamTaskRequest() :
     m_callbackUrlHasBeenSet(false),
     m_fileIndexHasBeenSet(false),
     m_offsetTimeHasBeenSet(false),
-    m_commentHasBeenSet(false)
+    m_commentHasBeenSet(false),
+    m_backupSourceTypeHasBeenSet(false),
+    m_backupSourceUrlHasBeenSet(false)
 {
 }
 
@@ -158,6 +160,22 @@ string ModifyLivePullStreamTaskRequest::ToJsonString() const
         string key = "Comment";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupSourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupSourceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_backupSourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupSourceUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupSourceUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_backupSourceUrl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -374,6 +392,38 @@ void ModifyLivePullStreamTaskRequest::SetComment(const string& _comment)
 bool ModifyLivePullStreamTaskRequest::CommentHasBeenSet() const
 {
     return m_commentHasBeenSet;
+}
+
+string ModifyLivePullStreamTaskRequest::GetBackupSourceType() const
+{
+    return m_backupSourceType;
+}
+
+void ModifyLivePullStreamTaskRequest::SetBackupSourceType(const string& _backupSourceType)
+{
+    m_backupSourceType = _backupSourceType;
+    m_backupSourceTypeHasBeenSet = true;
+}
+
+bool ModifyLivePullStreamTaskRequest::BackupSourceTypeHasBeenSet() const
+{
+    return m_backupSourceTypeHasBeenSet;
+}
+
+string ModifyLivePullStreamTaskRequest::GetBackupSourceUrl() const
+{
+    return m_backupSourceUrl;
+}
+
+void ModifyLivePullStreamTaskRequest::SetBackupSourceUrl(const string& _backupSourceUrl)
+{
+    m_backupSourceUrl = _backupSourceUrl;
+    m_backupSourceUrlHasBeenSet = true;
+}
+
+bool ModifyLivePullStreamTaskRequest::BackupSourceUrlHasBeenSet() const
+{
+    return m_backupSourceUrlHasBeenSet;
 }
 
 

@@ -34,7 +34,9 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/CreateSignUrlsRequest.h
   include/tencentcloud/essbasic/v20210526/model/AuthFailMessage.h
   include/tencentcloud/essbasic/v20210526/model/DescribeFlowDetailInfoRequest.h
+  include/tencentcloud/essbasic/v20210526/model/UploadFilesRequest.h
   include/tencentcloud/essbasic/v20210526/model/DescribeResourceUrlsByFlowsRequest.h
+  include/tencentcloud/essbasic/v20210526/model/UploadFile.h
   include/tencentcloud/essbasic/v20210526/model/Component.h
   include/tencentcloud/essbasic/v20210526/model/GetDownloadFlowUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/FlowDetailInfo.h
@@ -53,6 +55,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/CreateSignUrlsResponse.h
   include/tencentcloud/essbasic/v20210526/model/OperateChannelTemplateRequest.h
   include/tencentcloud/essbasic/v20210526/model/DownloadFlowInfo.h
+  include/tencentcloud/essbasic/v20210526/model/UploadFilesResponse.h
   include/tencentcloud/essbasic/v20210526/model/SyncFailReason.h
   include/tencentcloud/essbasic/v20210526/model/DescribeUsageRequest.h
   include/tencentcloud/essbasic/v20210526/model/CcInfo.h
@@ -208,7 +211,9 @@ set(essbasic_src
   src/v20210526/model/CreateSignUrlsRequest.cpp
   src/v20210526/model/AuthFailMessage.cpp
   src/v20210526/model/DescribeFlowDetailInfoRequest.cpp
+  src/v20210526/model/UploadFilesRequest.cpp
   src/v20210526/model/DescribeResourceUrlsByFlowsRequest.cpp
+  src/v20210526/model/UploadFile.cpp
   src/v20210526/model/Component.cpp
   src/v20210526/model/GetDownloadFlowUrlRequest.cpp
   src/v20210526/model/FlowDetailInfo.cpp
@@ -227,6 +232,7 @@ set(essbasic_src
   src/v20210526/model/CreateSignUrlsResponse.cpp
   src/v20210526/model/OperateChannelTemplateRequest.cpp
   src/v20210526/model/DownloadFlowInfo.cpp
+  src/v20210526/model/UploadFilesResponse.cpp
   src/v20210526/model/SyncFailReason.cpp
   src/v20210526/model/DescribeUsageRequest.cpp
   src/v20210526/model/CcInfo.cpp

@@ -37,12 +37,14 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/RestartKibanaRequest.h
   include/tencentcloud/es/v20180416/model/CreateInstanceResponse.h
   include/tencentcloud/es/v20180416/model/DescribeInstanceLogsRequest.h
+  include/tencentcloud/es/v20180416/model/UpdateDictionariesRequest.h
   include/tencentcloud/es/v20180416/model/UpdateRequestTargetNodeTypesRequest.h
   include/tencentcloud/es/v20180416/model/NodeView.h
   include/tencentcloud/es/v20180416/model/CosBackup.h
   include/tencentcloud/es/v20180416/model/TagInfo.h
   include/tencentcloud/es/v20180416/model/KeyValue.h
   include/tencentcloud/es/v20180416/model/CreateInstanceRequest.h
+  include/tencentcloud/es/v20180416/model/UpdateDictionariesResponse.h
   include/tencentcloud/es/v20180416/model/InstanceInfo.h
   include/tencentcloud/es/v20180416/model/DeleteInstanceResponse.h
   include/tencentcloud/es/v20180416/model/DescribeInstancesResponse.h
@@ -99,12 +101,14 @@ set(es_src
   src/v20180416/model/RestartKibanaRequest.cpp
   src/v20180416/model/CreateInstanceResponse.cpp
   src/v20180416/model/DescribeInstanceLogsRequest.cpp
+  src/v20180416/model/UpdateDictionariesRequest.cpp
   src/v20180416/model/UpdateRequestTargetNodeTypesRequest.cpp
   src/v20180416/model/NodeView.cpp
   src/v20180416/model/CosBackup.cpp
   src/v20180416/model/TagInfo.cpp
   src/v20180416/model/KeyValue.cpp
   src/v20180416/model/CreateInstanceRequest.cpp
+  src/v20180416/model/UpdateDictionariesResponse.cpp
   src/v20180416/model/InstanceInfo.cpp
   src/v20180416/model/DeleteInstanceResponse.cpp
   src/v20180416/model/DescribeInstancesResponse.cpp

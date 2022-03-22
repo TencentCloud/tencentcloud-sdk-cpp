@@ -298,6 +298,92 @@ DlcClient::CreateDatabaseOutcomeCallable DlcClient::CreateDatabaseCallable(const
     return task->get_future();
 }
 
+DlcClient::CreateExportTaskOutcome DlcClient::CreateExportTask(const CreateExportTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateExportTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateExportTaskResponse rsp = CreateExportTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateExportTaskOutcome(rsp);
+        else
+            return CreateExportTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateExportTaskOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreateExportTaskAsync(const CreateExportTaskRequest& request, const CreateExportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateExportTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::CreateExportTaskOutcomeCallable DlcClient::CreateExportTaskCallable(const CreateExportTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateExportTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateExportTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::CreateImportTaskOutcome DlcClient::CreateImportTask(const CreateImportTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateImportTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateImportTaskResponse rsp = CreateImportTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateImportTaskOutcome(rsp);
+        else
+            return CreateImportTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateImportTaskOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreateImportTaskAsync(const CreateImportTaskRequest& request, const CreateImportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateImportTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::CreateImportTaskOutcomeCallable DlcClient::CreateImportTaskCallable(const CreateImportTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateImportTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateImportTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::CreateScriptOutcome DlcClient::CreateScript(const CreateScriptRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateScript");

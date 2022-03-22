@@ -556,6 +556,49 @@ EsClient::UpdateDiagnoseSettingsOutcomeCallable EsClient::UpdateDiagnoseSettings
     return task->get_future();
 }
 
+EsClient::UpdateDictionariesOutcome EsClient::UpdateDictionaries(const UpdateDictionariesRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateDictionaries");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateDictionariesResponse rsp = UpdateDictionariesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateDictionariesOutcome(rsp);
+        else
+            return UpdateDictionariesOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateDictionariesOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::UpdateDictionariesAsync(const UpdateDictionariesRequest& request, const UpdateDictionariesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateDictionaries(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::UpdateDictionariesOutcomeCallable EsClient::UpdateDictionariesCallable(const UpdateDictionariesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateDictionariesOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateDictionaries(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EsClient::UpdateInstanceOutcome EsClient::UpdateInstance(const UpdateInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateInstance");

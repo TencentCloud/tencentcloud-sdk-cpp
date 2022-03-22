@@ -35,6 +35,10 @@
 #include <tencentcloud/dlc/v20210125/model/CancelTaskResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateDatabaseRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateDatabaseResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateExportTaskRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateExportTaskResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateImportTaskRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateImportTaskResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateScriptRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateScriptResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateStoreLocationRequest.h>
@@ -121,6 +125,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDatabaseResponse> CreateDatabaseOutcome;
                 typedef std::future<CreateDatabaseOutcome> CreateDatabaseOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateDatabaseRequest&, CreateDatabaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatabaseAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateExportTaskResponse> CreateExportTaskOutcome;
+                typedef std::future<CreateExportTaskOutcome> CreateExportTaskOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateExportTaskRequest&, CreateExportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateExportTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateImportTaskResponse> CreateImportTaskOutcome;
+                typedef std::future<CreateImportTaskOutcome> CreateImportTaskOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateImportTaskRequest&, CreateImportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImportTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateScriptResponse> CreateScriptOutcome;
                 typedef std::future<CreateScriptOutcome> CreateScriptOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateScriptRequest&, CreateScriptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScriptAsyncHandler;
@@ -258,6 +268,24 @@ namespace TencentCloud
                 CreateDatabaseOutcome CreateDatabase(const Model::CreateDatabaseRequest &request);
                 void CreateDatabaseAsync(const Model::CreateDatabaseRequest& request, const CreateDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDatabaseOutcomeCallable CreateDatabaseCallable(const Model::CreateDatabaseRequest& request);
+
+                /**
+                 *该接口（CreateExportTask）用于创建导出任务
+                 * @param req CreateExportTaskRequest
+                 * @return CreateExportTaskOutcome
+                 */
+                CreateExportTaskOutcome CreateExportTask(const Model::CreateExportTaskRequest &request);
+                void CreateExportTaskAsync(const Model::CreateExportTaskRequest& request, const CreateExportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateExportTaskOutcomeCallable CreateExportTaskCallable(const Model::CreateExportTaskRequest& request);
+
+                /**
+                 *该接口（CreateImportTask）用于创建导入任务
+                 * @param req CreateImportTaskRequest
+                 * @return CreateImportTaskOutcome
+                 */
+                CreateImportTaskOutcome CreateImportTask(const Model::CreateImportTaskRequest &request);
+                void CreateImportTaskAsync(const Model::CreateImportTaskRequest& request, const CreateImportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateImportTaskOutcomeCallable CreateImportTaskCallable(const Model::CreateImportTaskRequest& request);
 
                 /**
                  *该接口（CreateScript）用于创建sql脚本。

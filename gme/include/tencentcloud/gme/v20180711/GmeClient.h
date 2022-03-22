@@ -27,6 +27,10 @@
 #include <tencentcloud/gme/v20180711/model/CreateAgeDetectTaskResponse.h>
 #include <tencentcloud/gme/v20180711/model/CreateAppRequest.h>
 #include <tencentcloud/gme/v20180711/model/CreateAppResponse.h>
+#include <tencentcloud/gme/v20180711/model/CreateScanUserRequest.h>
+#include <tencentcloud/gme/v20180711/model/CreateScanUserResponse.h>
+#include <tencentcloud/gme/v20180711/model/DeleteScanUserRequest.h>
+#include <tencentcloud/gme/v20180711/model/DeleteScanUserResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeAgeDetectTaskRequest.h>
 #include <tencentcloud/gme/v20180711/model/DescribeAgeDetectTaskResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeAppStatisticsRequest.h>
@@ -77,6 +81,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAppResponse> CreateAppOutcome;
                 typedef std::future<CreateAppOutcome> CreateAppOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::CreateAppRequest&, CreateAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAppAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateScanUserResponse> CreateScanUserOutcome;
+                typedef std::future<CreateScanUserOutcome> CreateScanUserOutcomeCallable;
+                typedef std::function<void(const GmeClient*, const Model::CreateScanUserRequest&, CreateScanUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScanUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteScanUserResponse> DeleteScanUserOutcome;
+                typedef std::future<DeleteScanUserOutcome> DeleteScanUserOutcomeCallable;
+                typedef std::function<void(const GmeClient*, const Model::DeleteScanUserRequest&, DeleteScanUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScanUserAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAgeDetectTaskResponse> DescribeAgeDetectTaskOutcome;
                 typedef std::future<DescribeAgeDetectTaskOutcome> DescribeAgeDetectTaskOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::DescribeAgeDetectTaskRequest&, DescribeAgeDetectTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgeDetectTaskAsyncHandler;
@@ -152,6 +162,24 @@ namespace TencentCloud
                 CreateAppOutcome CreateApp(const Model::CreateAppRequest &request);
                 void CreateAppAsync(const Model::CreateAppRequest& request, const CreateAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAppOutcomeCallable CreateAppCallable(const Model::CreateAppRequest& request);
+
+                /**
+                 *新增自定义送检用户
+                 * @param req CreateScanUserRequest
+                 * @return CreateScanUserOutcome
+                 */
+                CreateScanUserOutcome CreateScanUser(const Model::CreateScanUserRequest &request);
+                void CreateScanUserAsync(const Model::CreateScanUserRequest& request, const CreateScanUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateScanUserOutcomeCallable CreateScanUserCallable(const Model::CreateScanUserRequest& request);
+
+                /**
+                 *删除自定义送检用户
+                 * @param req DeleteScanUserRequest
+                 * @return DeleteScanUserOutcome
+                 */
+                DeleteScanUserOutcome DeleteScanUser(const Model::DeleteScanUserRequest &request);
+                void DeleteScanUserAsync(const Model::DeleteScanUserRequest& request, const DeleteScanUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteScanUserOutcomeCallable DeleteScanUserCallable(const Model::DeleteScanUserRequest& request);
 
                 /**
                  *查询年龄语音识别任务结果，请求频率10次/秒。该接口目前通过白名单开放试用，如有需求，请提交工单申请。
