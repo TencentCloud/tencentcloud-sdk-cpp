@@ -31,7 +31,8 @@ CreateLiveRecordTemplateRequest::CreateLiveRecordTemplateRequest() :
     m_aacParamHasBeenSet(false),
     m_isDelayLiveHasBeenSet(false),
     m_hlsSpecialParamHasBeenSet(false),
-    m_mp3ParamHasBeenSet(false)
+    m_mp3ParamHasBeenSet(false),
+    m_removeWatermarkHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,14 @@ string CreateLiveRecordTemplateRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_mp3Param.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_removeWatermarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemoveWatermark";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_removeWatermark, allocator);
     }
 
 
@@ -270,6 +279,22 @@ void CreateLiveRecordTemplateRequest::SetMp3Param(const RecordParam& _mp3Param)
 bool CreateLiveRecordTemplateRequest::Mp3ParamHasBeenSet() const
 {
     return m_mp3ParamHasBeenSet;
+}
+
+bool CreateLiveRecordTemplateRequest::GetRemoveWatermark() const
+{
+    return m_removeWatermark;
+}
+
+void CreateLiveRecordTemplateRequest::SetRemoveWatermark(const bool& _removeWatermark)
+{
+    m_removeWatermark = _removeWatermark;
+    m_removeWatermarkHasBeenSet = true;
+}
+
+bool CreateLiveRecordTemplateRequest::RemoveWatermarkHasBeenSet() const
+{
+    return m_removeWatermarkHasBeenSet;
 }
 
 

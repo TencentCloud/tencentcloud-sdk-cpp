@@ -26,7 +26,8 @@ AbnormalProcessRuleInfo::AbnormalProcessRuleInfo() :
     m_childRulesHasBeenSet(false),
     m_ruleNameHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
-    m_systemChildRulesHasBeenSet(false)
+    m_systemChildRulesHasBeenSet(false),
+    m_isDefaultHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,16 @@ CoreInternalOutcome AbnormalProcessRuleInfo::Deserialize(const rapidjson::Value 
         m_systemChildRulesHasBeenSet = true;
     }
 
+    if (value.HasMember("IsDefault") && !value["IsDefault"].IsNull())
+    {
+        if (!value["IsDefault"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AbnormalProcessRuleInfo.IsDefault` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDefault = value["IsDefault"].GetBool();
+        m_isDefaultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -190,6 +201,14 @@ void AbnormalProcessRuleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::D
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isDefaultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDefault";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDefault, allocator);
     }
 
 }
@@ -289,5 +308,21 @@ void AbnormalProcessRuleInfo::SetSystemChildRules(const vector<AbnormalProcessSy
 bool AbnormalProcessRuleInfo::SystemChildRulesHasBeenSet() const
 {
     return m_systemChildRulesHasBeenSet;
+}
+
+bool AbnormalProcessRuleInfo::GetIsDefault() const
+{
+    return m_isDefault;
+}
+
+void AbnormalProcessRuleInfo::SetIsDefault(const bool& _isDefault)
+{
+    m_isDefault = _isDefault;
+    m_isDefaultHasBeenSet = true;
+}
+
+bool AbnormalProcessRuleInfo::IsDefaultHasBeenSet() const
+{
+    return m_isDefaultHasBeenSet;
 }
 

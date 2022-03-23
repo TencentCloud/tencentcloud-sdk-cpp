@@ -33,7 +33,8 @@ BatchSendEmailRequest::BatchSendEmailRequest() :
     m_attachmentsHasBeenSet(false),
     m_cycleParamHasBeenSet(false),
     m_timedParamHasBeenSet(false),
-    m_unsubscribeHasBeenSet(false)
+    m_unsubscribeHasBeenSet(false),
+    m_aDLocationHasBeenSet(false)
 {
 }
 
@@ -141,6 +142,14 @@ string BatchSendEmailRequest::ToJsonString() const
         string key = "Unsubscribe";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_unsubscribe.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aDLocationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ADLocation";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_aDLocation, allocator);
     }
 
 
@@ -325,6 +334,22 @@ void BatchSendEmailRequest::SetUnsubscribe(const string& _unsubscribe)
 bool BatchSendEmailRequest::UnsubscribeHasBeenSet() const
 {
     return m_unsubscribeHasBeenSet;
+}
+
+uint64_t BatchSendEmailRequest::GetADLocation() const
+{
+    return m_aDLocation;
+}
+
+void BatchSendEmailRequest::SetADLocation(const uint64_t& _aDLocation)
+{
+    m_aDLocation = _aDLocation;
+    m_aDLocationHasBeenSet = true;
+}
+
+bool BatchSendEmailRequest::ADLocationHasBeenSet() const
+{
+    return m_aDLocationHasBeenSet;
 }
 
 

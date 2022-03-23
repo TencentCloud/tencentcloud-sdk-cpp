@@ -211,6 +211,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/EmptyTrackItem.h
   include/tencentcloud/vod/v20180717/model/StickerTrackItem.h
   include/tencentcloud/vod/v20180717/model/DescribeDrmDataKeyResponse.h
+  include/tencentcloud/vod/v20180717/model/DescribeMediaPlayStatDetailsResponse.h
   include/tencentcloud/vod/v20180717/model/VideoTemplateInfo.h
   include/tencentcloud/vod/v20180717/model/PoliticalOcrReviewTemplateInfo.h
   include/tencentcloud/vod/v20180717/model/PornOcrReviewTemplateInfoForUpdate.h
@@ -379,6 +380,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/TerrorismOcrReviewTemplateInfo.h
   include/tencentcloud/vod/v20180717/model/AiReviewTaskPornResult.h
   include/tencentcloud/vod/v20180717/model/AiRecognitionTaskObjectResultOutput.h
+  include/tencentcloud/vod/v20180717/model/DescribeMediaPlayStatDetailsRequest.h
   include/tencentcloud/vod/v20180717/model/AiReviewProhibitedAsrTaskOutput.h
   include/tencentcloud/vod/v20180717/model/CreateClassResponse.h
   include/tencentcloud/vod/v20180717/model/DeleteSuperPlayerConfigResponse.h
@@ -426,6 +428,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/AiReviewPornTaskOutput.h
   include/tencentcloud/vod/v20180717/model/AiRecognitionTaskAsrFullTextResult.h
   include/tencentcloud/vod/v20180717/model/ImageContentReviewInput.h
+  include/tencentcloud/vod/v20180717/model/PlayStatInfo.h
   include/tencentcloud/vod/v20180717/model/PoliticalImgReviewTemplateInfo.h
   include/tencentcloud/vod/v20180717/model/PoliticalConfigureInfo.h
   include/tencentcloud/vod/v20180717/model/HighlightsConfigureInfo.h
@@ -783,6 +786,7 @@ set(vod_src
   src/v20180717/model/EmptyTrackItem.cpp
   src/v20180717/model/StickerTrackItem.cpp
   src/v20180717/model/DescribeDrmDataKeyResponse.cpp
+  src/v20180717/model/DescribeMediaPlayStatDetailsResponse.cpp
   src/v20180717/model/VideoTemplateInfo.cpp
   src/v20180717/model/PoliticalOcrReviewTemplateInfo.cpp
   src/v20180717/model/PornOcrReviewTemplateInfoForUpdate.cpp
@@ -951,6 +955,7 @@ set(vod_src
   src/v20180717/model/TerrorismOcrReviewTemplateInfo.cpp
   src/v20180717/model/AiReviewTaskPornResult.cpp
   src/v20180717/model/AiRecognitionTaskObjectResultOutput.cpp
+  src/v20180717/model/DescribeMediaPlayStatDetailsRequest.cpp
   src/v20180717/model/AiReviewProhibitedAsrTaskOutput.cpp
   src/v20180717/model/CreateClassResponse.cpp
   src/v20180717/model/DeleteSuperPlayerConfigResponse.cpp
@@ -998,6 +1003,7 @@ set(vod_src
   src/v20180717/model/AiReviewPornTaskOutput.cpp
   src/v20180717/model/AiRecognitionTaskAsrFullTextResult.cpp
   src/v20180717/model/ImageContentReviewInput.cpp
+  src/v20180717/model/PlayStatInfo.cpp
   src/v20180717/model/PoliticalImgReviewTemplateInfo.cpp
   src/v20180717/model/PoliticalConfigureInfo.cpp
   src/v20180717/model/HighlightsConfigureInfo.cpp

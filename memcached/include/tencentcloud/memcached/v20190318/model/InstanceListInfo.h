@@ -48,184 +48,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例关联的标签信息
-                     * @return Tags 实例关联的标签信息
+                     * 获取实例修改时间
+                     * @return ModTimeStamp 实例修改时间
                      */
-                    std::vector<TagInfo> GetTags() const;
+                    std::string GetModTimeStamp() const;
 
                     /**
-                     * 设置实例关联的标签信息
-                     * @param Tags 实例关联的标签信息
+                     * 设置实例修改时间
+                     * @param ModTimeStamp 实例修改时间
                      */
-                    void SetTags(const std::vector<TagInfo>& _tags);
+                    void SetModTimeStamp(const std::string& _modTimeStamp);
 
                     /**
-                     * 判断参数 Tags 是否已赋值
-                     * @return Tags 是否已赋值
+                     * 判断参数 ModTimeStamp 是否已赋值
+                     * @return ModTimeStamp 是否已赋值
                      */
-                    bool TagsHasBeenSet() const;
-
-                    /**
-                     * 获取实例创建时间
-                     * @return AddTimeStamp 实例创建时间
-                     */
-                    std::string GetAddTimeStamp() const;
-
-                    /**
-                     * 设置实例创建时间
-                     * @param AddTimeStamp 实例创建时间
-                     */
-                    void SetAddTimeStamp(const std::string& _addTimeStamp);
-
-                    /**
-                     * 判断参数 AddTimeStamp 是否已赋值
-                     * @return AddTimeStamp 是否已赋值
-                     */
-                    bool AddTimeStampHasBeenSet() const;
-
-                    /**
-                     * 获取用户AppID
-                     * @return AppId 用户AppID
-                     */
-                    int64_t GetAppId() const;
-
-                    /**
-                     * 设置用户AppID
-                     * @param AppId 用户AppID
-                     */
-                    void SetAppId(const int64_t& _appId);
-
-                    /**
-                     * 判断参数 AppId 是否已赋值
-                     * @return AppId 是否已赋值
-                     */
-                    bool AppIdHasBeenSet() const;
-
-                    /**
-                     * 获取实例是否设置自动续费标识，1：设置自动续费；0：未设置自动续费
-                     * @return AutoRenewFlag 实例是否设置自动续费标识，1：设置自动续费；0：未设置自动续费
-                     */
-                    int64_t GetAutoRenewFlag() const;
-
-                    /**
-                     * 设置实例是否设置自动续费标识，1：设置自动续费；0：未设置自动续费
-                     * @param AutoRenewFlag 实例是否设置自动续费标识，1：设置自动续费；0：未设置自动续费
-                     */
-                    void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
-
-                    /**
-                     * 判断参数 AutoRenewFlag 是否已赋值
-                     * @return AutoRenewFlag 是否已赋值
-                     */
-                    bool AutoRenewFlagHasBeenSet() const;
-
-                    /**
-                     * 获取实例内置ID
-                     * @return CmemId 实例内置ID
-                     */
-                    int64_t GetCmemId() const;
-
-                    /**
-                     * 设置实例内置ID
-                     * @param CmemId 实例内置ID
-                     */
-                    void SetCmemId(const int64_t& _cmemId);
-
-                    /**
-                     * 判断参数 CmemId 是否已赋值
-                     * @return CmemId 是否已赋值
-                     */
-                    bool CmemIdHasBeenSet() const;
-
-                    /**
-                     * 获取实例截止时间
-                     * @return DeadlineTimeStamp 实例截止时间
-                     */
-                    std::string GetDeadlineTimeStamp() const;
-
-                    /**
-                     * 设置实例截止时间
-                     * @param DeadlineTimeStamp 实例截止时间
-                     */
-                    void SetDeadlineTimeStamp(const std::string& _deadlineTimeStamp);
-
-                    /**
-                     * 判断参数 DeadlineTimeStamp 是否已赋值
-                     * @return DeadlineTimeStamp 是否已赋值
-                     */
-                    bool DeadlineTimeStampHasBeenSet() const;
-
-                    /**
-                     * 获取过期策略
-                     * @return Expire 过期策略
-                     */
-                    int64_t GetExpire() const;
-
-                    /**
-                     * 设置过期策略
-                     * @param Expire 过期策略
-                     */
-                    void SetExpire(const int64_t& _expire);
-
-                    /**
-                     * 判断参数 Expire 是否已赋值
-                     * @return Expire 是否已赋值
-                     */
-                    bool ExpireHasBeenSet() const;
-
-                    /**
-                     * 获取实例描述信息
-                     * @return InstanceDesc 实例描述信息
-                     */
-                    std::string GetInstanceDesc() const;
-
-                    /**
-                     * 设置实例描述信息
-                     * @param InstanceDesc 实例描述信息
-                     */
-                    void SetInstanceDesc(const std::string& _instanceDesc);
-
-                    /**
-                     * 判断参数 InstanceDesc 是否已赋值
-                     * @return InstanceDesc 是否已赋值
-                     */
-                    bool InstanceDescHasBeenSet() const;
-
-                    /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
-                     */
-                    std::string GetInstanceId() const;
-
-                    /**
-                     * 设置实例ID
-                     * @param InstanceId 实例ID
-                     */
-                    void SetInstanceId(const std::string& _instanceId);
-
-                    /**
-                     * 判断参数 InstanceId 是否已赋值
-                     * @return InstanceId 是否已赋值
-                     */
-                    bool InstanceIdHasBeenSet() const;
-
-                    /**
-                     * 获取实例名称
-                     * @return InstanceName 实例名称
-                     */
-                    std::string GetInstanceName() const;
-
-                    /**
-                     * 设置实例名称
-                     * @param InstanceName 实例名称
-                     */
-                    void SetInstanceName(const std::string& _instanceName);
-
-                    /**
-                     * 判断参数 InstanceName 是否已赋值
-                     * @return InstanceName 是否已赋值
-                     */
-                    bool InstanceNameHasBeenSet() const;
+                    bool ModTimeStampHasBeenSet() const;
 
                     /**
                      * 获取实例隔离时间
@@ -246,76 +84,22 @@ namespace TencentCloud
                     bool IsolateTimeStampHasBeenSet() const;
 
                     /**
-                     * 获取实例修改时间
-                     * @return ModTimeStamp 实例修改时间
+                     * 获取实例是否设置自动续费标识，1：设置自动续费；0：未设置自动续费
+                     * @return AutoRenewFlag 实例是否设置自动续费标识，1：设置自动续费；0：未设置自动续费
                      */
-                    std::string GetModTimeStamp() const;
+                    int64_t GetAutoRenewFlag() const;
 
                     /**
-                     * 设置实例修改时间
-                     * @param ModTimeStamp 实例修改时间
+                     * 设置实例是否设置自动续费标识，1：设置自动续费；0：未设置自动续费
+                     * @param AutoRenewFlag 实例是否设置自动续费标识，1：设置自动续费；0：未设置自动续费
                      */
-                    void SetModTimeStamp(const std::string& _modTimeStamp);
+                    void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
 
                     /**
-                     * 判断参数 ModTimeStamp 是否已赋值
-                     * @return ModTimeStamp 是否已赋值
+                     * 判断参数 AutoRenewFlag 是否已赋值
+                     * @return AutoRenewFlag 是否已赋值
                      */
-                    bool ModTimeStampHasBeenSet() const;
-
-                    /**
-                     * 获取计费模式：0-按量计费，1-包年包月
-                     * @return PayMode 计费模式：0-按量计费，1-包年包月
-                     */
-                    int64_t GetPayMode() const;
-
-                    /**
-                     * 设置计费模式：0-按量计费，1-包年包月
-                     * @param PayMode 计费模式：0-按量计费，1-包年包月
-                     */
-                    void SetPayMode(const int64_t& _payMode);
-
-                    /**
-                     * 判断参数 PayMode 是否已赋值
-                     * @return PayMode 是否已赋值
-                     */
-                    bool PayModeHasBeenSet() const;
-
-                    /**
-                     * 获取项目ID
-                     * @return ProjectId 项目ID
-                     */
-                    int64_t GetProjectId() const;
-
-                    /**
-                     * 设置项目ID
-                     * @param ProjectId 项目ID
-                     */
-                    void SetProjectId(const int64_t& _projectId);
-
-                    /**
-                     * 判断参数 ProjectId 是否已赋值
-                     * @return ProjectId 是否已赋值
-                     */
-                    bool ProjectIdHasBeenSet() const;
-
-                    /**
-                     * 获取地域id 1--广州 4--上海 5-- 香港 6--多伦多 7--上海金融 8--北京 9-- 新加坡 11--深圳金融 15--美西（硅谷）16--成都 17--德国 18--韩国 19--重庆 21--印度 22--美东（弗吉尼亚）23--泰国 24--俄罗斯 25--日本
-                     * @return RegionId 地域id 1--广州 4--上海 5-- 香港 6--多伦多 7--上海金融 8--北京 9-- 新加坡 11--深圳金融 15--美西（硅谷）16--成都 17--德国 18--韩国 19--重庆 21--印度 22--美东（弗吉尼亚）23--泰国 24--俄罗斯 25--日本
-                     */
-                    int64_t GetRegionId() const;
-
-                    /**
-                     * 设置地域id 1--广州 4--上海 5-- 香港 6--多伦多 7--上海金融 8--北京 9-- 新加坡 11--深圳金融 15--美西（硅谷）16--成都 17--德国 18--韩国 19--重庆 21--印度 22--美东（弗吉尼亚）23--泰国 24--俄罗斯 25--日本
-                     * @param RegionId 地域id 1--广州 4--上海 5-- 香港 6--多伦多 7--上海金融 8--北京 9-- 新加坡 11--深圳金融 15--美西（硅谷）16--成都 17--德国 18--韩国 19--重庆 21--印度 22--美东（弗吉尼亚）23--泰国 24--俄罗斯 25--日本
-                     */
-                    void SetRegionId(const int64_t& _regionId);
-
-                    /**
-                     * 判断参数 RegionId 是否已赋值
-                     * @return RegionId 是否已赋值
-                     */
-                    bool RegionIdHasBeenSet() const;
+                    bool AutoRenewFlagHasBeenSet() const;
 
                     /**
                      * 获取仓库ID
@@ -336,14 +120,14 @@ namespace TencentCloud
                     bool SetIdHasBeenSet() const;
 
                     /**
-                     * 获取实例当前状态，0：待初始化；1：实例在流程中；2：实例运行中；-2：实例已隔离；-3：实例待删除
-                     * @return Status 实例当前状态，0：待初始化；1：实例在流程中；2：实例运行中；-2：实例已隔离；-3：实例待删除
+                     * 获取实例当前状态，0：发货中；1：运行中；2：创建失败；4：销毁中；5：隔离中；6：下线中
+                     * @return Status 实例当前状态，0：发货中；1：运行中；2：创建失败；4：销毁中；5：隔离中；6：下线中
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置实例当前状态，0：待初始化；1：实例在流程中；2：实例运行中；-2：实例已隔离；-3：实例待删除
-                     * @param Status 实例当前状态，0：待初始化；1：实例在流程中；2：实例运行中；-2：实例已隔离；-3：实例待删除
+                     * 设置实例当前状态，0：发货中；1：运行中；2：创建失败；4：销毁中；5：隔离中；6：下线中
+                     * @param Status 实例当前状态，0：发货中；1：运行中；2：创建失败；4：销毁中；5：隔离中；6：下线中
                      */
                     void SetStatus(const int64_t& _status);
 
@@ -352,6 +136,118 @@ namespace TencentCloud
                      * @return Status 是否已赋值
                      */
                     bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取实例内置ID
+                     * @return CmemId 实例内置ID
+                     */
+                    int64_t GetCmemId() const;
+
+                    /**
+                     * 设置实例内置ID
+                     * @param CmemId 实例内置ID
+                     */
+                    void SetCmemId(const int64_t& _cmemId);
+
+                    /**
+                     * 判断参数 CmemId 是否已赋值
+                     * @return CmemId 是否已赋值
+                     */
+                    bool CmemIdHasBeenSet() const;
+
+                    /**
+                     * 获取实例关联的标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 实例关联的标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TagInfo> GetTags() const;
+
+                    /**
+                     * 设置实例关联的标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Tags 实例关联的标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTags(const std::vector<TagInfo>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取实例ID
+                     * @return InstanceId 实例ID
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置实例ID
+                     * @param InstanceId 实例ID
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取地域id 1--广州 4--上海 5-- 香港 6--多伦多 7--上海金融 8--北京 9-- 新加坡 11--深圳金融 15--美西（硅谷）16--成都 17--德国 18--韩国 19--重庆 21--印度 22--美东（弗吉尼亚）23--泰国 24--俄罗斯 25--日本
+                     * @return RegionId 地域id 1--广州 4--上海 5-- 香港 6--多伦多 7--上海金融 8--北京 9-- 新加坡 11--深圳金融 15--美西（硅谷）16--成都 17--德国 18--韩国 19--重庆 21--印度 22--美东（弗吉尼亚）23--泰国 24--俄罗斯 25--日本
+                     */
+                    int64_t GetRegionId() const;
+
+                    /**
+                     * 设置地域id 1--广州 4--上海 5-- 香港 6--多伦多 7--上海金融 8--北京 9-- 新加坡 11--深圳金融 15--美西（硅谷）16--成都 17--德国 18--韩国 19--重庆 21--印度 22--美东（弗吉尼亚）23--泰国 24--俄罗斯 25--日本
+                     * @param RegionId 地域id 1--广州 4--上海 5-- 香港 6--多伦多 7--上海金融 8--北京 9-- 新加坡 11--深圳金融 15--美西（硅谷）16--成都 17--德国 18--韩国 19--重庆 21--印度 22--美东（弗吉尼亚）23--泰国 24--俄罗斯 25--日本
+                     */
+                    void SetRegionId(const int64_t& _regionId);
+
+                    /**
+                     * 判断参数 RegionId 是否已赋值
+                     * @return RegionId 是否已赋值
+                     */
+                    bool RegionIdHasBeenSet() const;
+
+                    /**
+                     * 获取实例描述信息
+                     * @return InstanceDesc 实例描述信息
+                     */
+                    std::string GetInstanceDesc() const;
+
+                    /**
+                     * 设置实例描述信息
+                     * @param InstanceDesc 实例描述信息
+                     */
+                    void SetInstanceDesc(const std::string& _instanceDesc);
+
+                    /**
+                     * 判断参数 InstanceDesc 是否已赋值
+                     * @return InstanceDesc 是否已赋值
+                     */
+                    bool InstanceDescHasBeenSet() const;
+
+                    /**
+                     * 获取过期策略
+                     * @return Expire 过期策略
+                     */
+                    int64_t GetExpire() const;
+
+                    /**
+                     * 设置过期策略
+                     * @param Expire 过期策略
+                     */
+                    void SetExpire(const int64_t& _expire);
+
+                    /**
+                     * 判断参数 Expire 是否已赋值
+                     * @return Expire 是否已赋值
+                     */
+                    bool ExpireHasBeenSet() const;
 
                     /**
                      * 获取vpc网络下子网id 如：46315
@@ -372,22 +268,130 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取vpc网络下子网id 如：subnet-fd3j6l35mm0
-                     * @return UniqSubnetId vpc网络下子网id 如：subnet-fd3j6l35mm0
+                     * 获取项目ID
+                     * @return ProjectId 项目ID
                      */
-                    std::string GetUniqSubnetId() const;
+                    int64_t GetProjectId() const;
 
                     /**
-                     * 设置vpc网络下子网id 如：subnet-fd3j6l35mm0
-                     * @param UniqSubnetId vpc网络下子网id 如：subnet-fd3j6l35mm0
+                     * 设置项目ID
+                     * @param ProjectId 项目ID
                      */
-                    void SetUniqSubnetId(const std::string& _uniqSubnetId);
+                    void SetProjectId(const int64_t& _projectId);
 
                     /**
-                     * 判断参数 UniqSubnetId 是否已赋值
-                     * @return UniqSubnetId 是否已赋值
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
                      */
-                    bool UniqSubnetIdHasBeenSet() const;
+                    bool ProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取实例创建时间
+                     * @return AddTimeStamp 实例创建时间
+                     */
+                    std::string GetAddTimeStamp() const;
+
+                    /**
+                     * 设置实例创建时间
+                     * @param AddTimeStamp 实例创建时间
+                     */
+                    void SetAddTimeStamp(const std::string& _addTimeStamp);
+
+                    /**
+                     * 判断参数 AddTimeStamp 是否已赋值
+                     * @return AddTimeStamp 是否已赋值
+                     */
+                    bool AddTimeStampHasBeenSet() const;
+
+                    /**
+                     * 获取区域ID
+                     * @return ZoneId 区域ID
+                     */
+                    int64_t GetZoneId() const;
+
+                    /**
+                     * 设置区域ID
+                     * @param ZoneId 区域ID
+                     */
+                    void SetZoneId(const int64_t& _zoneId);
+
+                    /**
+                     * 判断参数 ZoneId 是否已赋值
+                     * @return ZoneId 是否已赋值
+                     */
+                    bool ZoneIdHasBeenSet() const;
+
+                    /**
+                     * 获取计费模式：0-按量计费，1-包年包月
+                     * @return PayMode 计费模式：0-按量计费，1-包年包月
+                     */
+                    int64_t GetPayMode() const;
+
+                    /**
+                     * 设置计费模式：0-按量计费，1-包年包月
+                     * @param PayMode 计费模式：0-按量计费，1-包年包月
+                     */
+                    void SetPayMode(const int64_t& _payMode);
+
+                    /**
+                     * 判断参数 PayMode 是否已赋值
+                     * @return PayMode 是否已赋值
+                     */
+                    bool PayModeHasBeenSet() const;
+
+                    /**
+                     * 获取vpc网络id 如：75101
+                     * @return VpcId vpc网络id 如：75101
+                     */
+                    int64_t GetVpcId() const;
+
+                    /**
+                     * 设置vpc网络id 如：75101
+                     * @param VpcId vpc网络id 如：75101
+                     */
+                    void SetVpcId(const int64_t& _vpcId);
+
+                    /**
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
+                     */
+                    bool VpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取实例名称
+                     * @return InstanceName 实例名称
+                     */
+                    std::string GetInstanceName() const;
+
+                    /**
+                     * 设置实例名称
+                     * @param InstanceName 实例名称
+                     */
+                    void SetInstanceName(const std::string& _instanceName);
+
+                    /**
+                     * 判断参数 InstanceName 是否已赋值
+                     * @return InstanceName 是否已赋值
+                     */
+                    bool InstanceNameHasBeenSet() const;
+
+                    /**
+                     * 获取实例截止时间
+                     * @return DeadlineTimeStamp 实例截止时间
+                     */
+                    std::string GetDeadlineTimeStamp() const;
+
+                    /**
+                     * 设置实例截止时间
+                     * @param DeadlineTimeStamp 实例截止时间
+                     */
+                    void SetDeadlineTimeStamp(const std::string& _deadlineTimeStamp);
+
+                    /**
+                     * 判断参数 DeadlineTimeStamp 是否已赋值
+                     * @return DeadlineTimeStamp 是否已赋值
+                     */
+                    bool DeadlineTimeStampHasBeenSet() const;
 
                     /**
                      * 获取vpc网络id 如：vpc-fk33jsf43kgv
@@ -426,22 +430,40 @@ namespace TencentCloud
                     bool VipHasBeenSet() const;
 
                     /**
-                     * 获取vpc网络id 如：75101
-                     * @return VpcId vpc网络id 如：75101
+                     * 获取vpc网络下子网id 如：subnet-fd3j6l35mm0
+                     * @return UniqSubnetId vpc网络下子网id 如：subnet-fd3j6l35mm0
                      */
-                    int64_t GetVpcId() const;
+                    std::string GetUniqSubnetId() const;
 
                     /**
-                     * 设置vpc网络id 如：75101
-                     * @param VpcId vpc网络id 如：75101
+                     * 设置vpc网络下子网id 如：subnet-fd3j6l35mm0
+                     * @param UniqSubnetId vpc网络下子网id 如：subnet-fd3j6l35mm0
                      */
-                    void SetVpcId(const int64_t& _vpcId);
+                    void SetUniqSubnetId(const std::string& _uniqSubnetId);
 
                     /**
-                     * 判断参数 VpcId 是否已赋值
-                     * @return VpcId 是否已赋值
+                     * 判断参数 UniqSubnetId 是否已赋值
+                     * @return UniqSubnetId 是否已赋值
                      */
-                    bool VpcIdHasBeenSet() const;
+                    bool UniqSubnetIdHasBeenSet() const;
+
+                    /**
+                     * 获取用户AppID
+                     * @return AppId 用户AppID
+                     */
+                    int64_t GetAppId() const;
+
+                    /**
+                     * 设置用户AppID
+                     * @param AppId 用户AppID
+                     */
+                    void SetAppId(const int64_t& _appId);
+
+                    /**
+                     * 判断参数 AppId 是否已赋值
+                     * @return AppId 是否已赋值
+                     */
+                    bool AppIdHasBeenSet() const;
 
                     /**
                      * 获取实例端口号
@@ -461,91 +483,7 @@ namespace TencentCloud
                      */
                     bool VportHasBeenSet() const;
 
-                    /**
-                     * 获取区域ID
-                     * @return ZoneId 区域ID
-                     */
-                    int64_t GetZoneId() const;
-
-                    /**
-                     * 设置区域ID
-                     * @param ZoneId 区域ID
-                     */
-                    void SetZoneId(const int64_t& _zoneId);
-
-                    /**
-                     * 判断参数 ZoneId 是否已赋值
-                     * @return ZoneId 是否已赋值
-                     */
-                    bool ZoneIdHasBeenSet() const;
-
                 private:
-
-                    /**
-                     * 实例关联的标签信息
-                     */
-                    std::vector<TagInfo> m_tags;
-                    bool m_tagsHasBeenSet;
-
-                    /**
-                     * 实例创建时间
-                     */
-                    std::string m_addTimeStamp;
-                    bool m_addTimeStampHasBeenSet;
-
-                    /**
-                     * 用户AppID
-                     */
-                    int64_t m_appId;
-                    bool m_appIdHasBeenSet;
-
-                    /**
-                     * 实例是否设置自动续费标识，1：设置自动续费；0：未设置自动续费
-                     */
-                    int64_t m_autoRenewFlag;
-                    bool m_autoRenewFlagHasBeenSet;
-
-                    /**
-                     * 实例内置ID
-                     */
-                    int64_t m_cmemId;
-                    bool m_cmemIdHasBeenSet;
-
-                    /**
-                     * 实例截止时间
-                     */
-                    std::string m_deadlineTimeStamp;
-                    bool m_deadlineTimeStampHasBeenSet;
-
-                    /**
-                     * 过期策略
-                     */
-                    int64_t m_expire;
-                    bool m_expireHasBeenSet;
-
-                    /**
-                     * 实例描述信息
-                     */
-                    std::string m_instanceDesc;
-                    bool m_instanceDescHasBeenSet;
-
-                    /**
-                     * 实例ID
-                     */
-                    std::string m_instanceId;
-                    bool m_instanceIdHasBeenSet;
-
-                    /**
-                     * 实例名称
-                     */
-                    std::string m_instanceName;
-                    bool m_instanceNameHasBeenSet;
-
-                    /**
-                     * 实例隔离时间
-                     */
-                    std::string m_isolateTimeStamp;
-                    bool m_isolateTimeStampHasBeenSet;
 
                     /**
                      * 实例修改时间
@@ -554,22 +492,16 @@ namespace TencentCloud
                     bool m_modTimeStampHasBeenSet;
 
                     /**
-                     * 计费模式：0-按量计费，1-包年包月
+                     * 实例隔离时间
                      */
-                    int64_t m_payMode;
-                    bool m_payModeHasBeenSet;
+                    std::string m_isolateTimeStamp;
+                    bool m_isolateTimeStampHasBeenSet;
 
                     /**
-                     * 项目ID
+                     * 实例是否设置自动续费标识，1：设置自动续费；0：未设置自动续费
                      */
-                    int64_t m_projectId;
-                    bool m_projectIdHasBeenSet;
-
-                    /**
-                     * 地域id 1--广州 4--上海 5-- 香港 6--多伦多 7--上海金融 8--北京 9-- 新加坡 11--深圳金融 15--美西（硅谷）16--成都 17--德国 18--韩国 19--重庆 21--印度 22--美东（弗吉尼亚）23--泰国 24--俄罗斯 25--日本
-                     */
-                    int64_t m_regionId;
-                    bool m_regionIdHasBeenSet;
+                    int64_t m_autoRenewFlag;
+                    bool m_autoRenewFlagHasBeenSet;
 
                     /**
                      * 仓库ID
@@ -578,10 +510,47 @@ namespace TencentCloud
                     bool m_setIdHasBeenSet;
 
                     /**
-                     * 实例当前状态，0：待初始化；1：实例在流程中；2：实例运行中；-2：实例已隔离；-3：实例待删除
+                     * 实例当前状态，0：发货中；1：运行中；2：创建失败；4：销毁中；5：隔离中；6：下线中
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 实例内置ID
+                     */
+                    int64_t m_cmemId;
+                    bool m_cmemIdHasBeenSet;
+
+                    /**
+                     * 实例关联的标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TagInfo> m_tags;
+                    bool m_tagsHasBeenSet;
+
+                    /**
+                     * 实例ID
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 地域id 1--广州 4--上海 5-- 香港 6--多伦多 7--上海金融 8--北京 9-- 新加坡 11--深圳金融 15--美西（硅谷）16--成都 17--德国 18--韩国 19--重庆 21--印度 22--美东（弗吉尼亚）23--泰国 24--俄罗斯 25--日本
+                     */
+                    int64_t m_regionId;
+                    bool m_regionIdHasBeenSet;
+
+                    /**
+                     * 实例描述信息
+                     */
+                    std::string m_instanceDesc;
+                    bool m_instanceDescHasBeenSet;
+
+                    /**
+                     * 过期策略
+                     */
+                    int64_t m_expire;
+                    bool m_expireHasBeenSet;
 
                     /**
                      * vpc网络下子网id 如：46315
@@ -590,10 +559,46 @@ namespace TencentCloud
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * vpc网络下子网id 如：subnet-fd3j6l35mm0
+                     * 项目ID
                      */
-                    std::string m_uniqSubnetId;
-                    bool m_uniqSubnetIdHasBeenSet;
+                    int64_t m_projectId;
+                    bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 实例创建时间
+                     */
+                    std::string m_addTimeStamp;
+                    bool m_addTimeStampHasBeenSet;
+
+                    /**
+                     * 区域ID
+                     */
+                    int64_t m_zoneId;
+                    bool m_zoneIdHasBeenSet;
+
+                    /**
+                     * 计费模式：0-按量计费，1-包年包月
+                     */
+                    int64_t m_payMode;
+                    bool m_payModeHasBeenSet;
+
+                    /**
+                     * vpc网络id 如：75101
+                     */
+                    int64_t m_vpcId;
+                    bool m_vpcIdHasBeenSet;
+
+                    /**
+                     * 实例名称
+                     */
+                    std::string m_instanceName;
+                    bool m_instanceNameHasBeenSet;
+
+                    /**
+                     * 实例截止时间
+                     */
+                    std::string m_deadlineTimeStamp;
+                    bool m_deadlineTimeStampHasBeenSet;
 
                     /**
                      * vpc网络id 如：vpc-fk33jsf43kgv
@@ -608,22 +613,22 @@ namespace TencentCloud
                     bool m_vipHasBeenSet;
 
                     /**
-                     * vpc网络id 如：75101
+                     * vpc网络下子网id 如：subnet-fd3j6l35mm0
                      */
-                    int64_t m_vpcId;
-                    bool m_vpcIdHasBeenSet;
+                    std::string m_uniqSubnetId;
+                    bool m_uniqSubnetIdHasBeenSet;
+
+                    /**
+                     * 用户AppID
+                     */
+                    int64_t m_appId;
+                    bool m_appIdHasBeenSet;
 
                     /**
                      * 实例端口号
                      */
                     int64_t m_vport;
                     bool m_vportHasBeenSet;
-
-                    /**
-                     * 区域ID
-                     */
-                    int64_t m_zoneId;
-                    bool m_zoneIdHasBeenSet;
 
                 };
             }

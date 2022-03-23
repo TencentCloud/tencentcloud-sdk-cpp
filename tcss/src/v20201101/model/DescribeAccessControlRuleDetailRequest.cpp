@@ -24,7 +24,9 @@ using namespace std;
 
 DescribeAccessControlRuleDetailRequest::DescribeAccessControlRuleDetailRequest() :
     m_ruleIdHasBeenSet(false),
-    m_imageIdHasBeenSet(false)
+    m_imageIdHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,22 @@ string DescribeAccessControlRuleDetailRequest::ToJsonString() const
         string key = "ImageId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_imageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
 
@@ -89,6 +107,38 @@ void DescribeAccessControlRuleDetailRequest::SetImageId(const string& _imageId)
 bool DescribeAccessControlRuleDetailRequest::ImageIdHasBeenSet() const
 {
     return m_imageIdHasBeenSet;
+}
+
+uint64_t DescribeAccessControlRuleDetailRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeAccessControlRuleDetailRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeAccessControlRuleDetailRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+uint64_t DescribeAccessControlRuleDetailRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeAccessControlRuleDetailRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeAccessControlRuleDetailRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 

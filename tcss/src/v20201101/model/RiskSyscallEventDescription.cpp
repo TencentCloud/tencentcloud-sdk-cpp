@@ -24,7 +24,8 @@ RiskSyscallEventDescription::RiskSyscallEventDescription() :
     m_descriptionHasBeenSet(false),
     m_solutionHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_syscallNameHasBeenSet(false)
+    m_syscallNameHasBeenSet(false),
+    m_operationTimeHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome RiskSyscallEventDescription::Deserialize(const rapidjson::Va
         m_syscallNameHasBeenSet = true;
     }
 
+    if (value.HasMember("OperationTime") && !value["OperationTime"].IsNull())
+    {
+        if (!value["OperationTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RiskSyscallEventDescription.OperationTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_operationTime = string(value["OperationTime"].GetString());
+        m_operationTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void RiskSyscallEventDescription::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "SyscallName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_syscallName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operationTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operationTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void RiskSyscallEventDescription::SetSyscallName(const string& _syscallName)
 bool RiskSyscallEventDescription::SyscallNameHasBeenSet() const
 {
     return m_syscallNameHasBeenSet;
+}
+
+string RiskSyscallEventDescription::GetOperationTime() const
+{
+    return m_operationTime;
+}
+
+void RiskSyscallEventDescription::SetOperationTime(const string& _operationTime)
+{
+    m_operationTime = _operationTime;
+    m_operationTimeHasBeenSet = true;
+}
+
+bool RiskSyscallEventDescription::OperationTimeHasBeenSet() const
+{
+    return m_operationTimeHasBeenSet;
 }
 

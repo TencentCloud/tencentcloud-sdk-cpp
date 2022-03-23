@@ -69,6 +69,8 @@
 #include <tencentcloud/iecp/v20210914/model/DeleteEdgeUnitDeployGridItemResponse.h>
 #include <tencentcloud/iecp/v20210914/model/DeleteEdgeUnitPodRequest.h>
 #include <tencentcloud/iecp/v20210914/model/DeleteEdgeUnitPodResponse.h>
+#include <tencentcloud/iecp/v20210914/model/DeleteIotDeviceBatchRequest.h>
+#include <tencentcloud/iecp/v20210914/model/DeleteIotDeviceBatchResponse.h>
 #include <tencentcloud/iecp/v20210914/model/DeleteNamespaceRequest.h>
 #include <tencentcloud/iecp/v20210914/model/DeleteNamespaceResponse.h>
 #include <tencentcloud/iecp/v20210914/model/DeleteNodeUnitRequest.h>
@@ -89,6 +91,8 @@
 #include <tencentcloud/iecp/v20210914/model/DescribeConfigMapYamlErrorResponse.h>
 #include <tencentcloud/iecp/v20210914/model/DescribeConfigMapsRequest.h>
 #include <tencentcloud/iecp/v20210914/model/DescribeConfigMapsResponse.h>
+#include <tencentcloud/iecp/v20210914/model/DescribeDracoEdgeNodeInstallerRequest.h>
+#include <tencentcloud/iecp/v20210914/model/DescribeDracoEdgeNodeInstallerResponse.h>
 #include <tencentcloud/iecp/v20210914/model/DescribeEdgeAgentNodeInstallerRequest.h>
 #include <tencentcloud/iecp/v20210914/model/DescribeEdgeAgentNodeInstallerResponse.h>
 #include <tencentcloud/iecp/v20210914/model/DescribeEdgeDefaultVpcRequest.h>
@@ -282,6 +286,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteEdgeUnitPodResponse> DeleteEdgeUnitPodOutcome;
                 typedef std::future<DeleteEdgeUnitPodOutcome> DeleteEdgeUnitPodOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::DeleteEdgeUnitPodRequest&, DeleteEdgeUnitPodOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEdgeUnitPodAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteIotDeviceBatchResponse> DeleteIotDeviceBatchOutcome;
+                typedef std::future<DeleteIotDeviceBatchOutcome> DeleteIotDeviceBatchOutcomeCallable;
+                typedef std::function<void(const IecpClient*, const Model::DeleteIotDeviceBatchRequest&, DeleteIotDeviceBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIotDeviceBatchAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteNamespaceResponse> DeleteNamespaceOutcome;
                 typedef std::future<DeleteNamespaceOutcome> DeleteNamespaceOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::DeleteNamespaceRequest&, DeleteNamespaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNamespaceAsyncHandler;
@@ -312,6 +319,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeConfigMapsResponse> DescribeConfigMapsOutcome;
                 typedef std::future<DescribeConfigMapsOutcome> DescribeConfigMapsOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::DescribeConfigMapsRequest&, DescribeConfigMapsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigMapsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDracoEdgeNodeInstallerResponse> DescribeDracoEdgeNodeInstallerOutcome;
+                typedef std::future<DescribeDracoEdgeNodeInstallerOutcome> DescribeDracoEdgeNodeInstallerOutcomeCallable;
+                typedef std::function<void(const IecpClient*, const Model::DescribeDracoEdgeNodeInstallerRequest&, DescribeDracoEdgeNodeInstallerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDracoEdgeNodeInstallerAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEdgeAgentNodeInstallerResponse> DescribeEdgeAgentNodeInstallerOutcome;
                 typedef std::future<DescribeEdgeAgentNodeInstallerOutcome> DescribeEdgeAgentNodeInstallerOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::DescribeEdgeAgentNodeInstallerRequest&, DescribeEdgeAgentNodeInstallerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdgeAgentNodeInstallerAsyncHandler;
@@ -688,6 +698,15 @@ namespace TencentCloud
                 DeleteEdgeUnitPodOutcomeCallable DeleteEdgeUnitPodCallable(const Model::DeleteEdgeUnitPodRequest& request);
 
                 /**
+                 *批量删除设备
+                 * @param req DeleteIotDeviceBatchRequest
+                 * @return DeleteIotDeviceBatchOutcome
+                 */
+                DeleteIotDeviceBatchOutcome DeleteIotDeviceBatch(const Model::DeleteIotDeviceBatchRequest &request);
+                void DeleteIotDeviceBatchAsync(const Model::DeleteIotDeviceBatchRequest& request, const DeleteIotDeviceBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteIotDeviceBatchOutcomeCallable DeleteIotDeviceBatchCallable(const Model::DeleteIotDeviceBatchRequest& request);
+
+                /**
                  *删除命名空间
                  * @param req DeleteNamespaceRequest
                  * @return DeleteNamespaceOutcome
@@ -776,6 +795,15 @@ namespace TencentCloud
                 DescribeConfigMapsOutcome DescribeConfigMaps(const Model::DescribeConfigMapsRequest &request);
                 void DescribeConfigMapsAsync(const Model::DescribeConfigMapsRequest& request, const DescribeConfigMapsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeConfigMapsOutcomeCallable DescribeConfigMapsCallable(const Model::DescribeConfigMapsRequest& request);
+
+                /**
+                 *自动获取Draco设备的安装包
+                 * @param req DescribeDracoEdgeNodeInstallerRequest
+                 * @return DescribeDracoEdgeNodeInstallerOutcome
+                 */
+                DescribeDracoEdgeNodeInstallerOutcome DescribeDracoEdgeNodeInstaller(const Model::DescribeDracoEdgeNodeInstallerRequest &request);
+                void DescribeDracoEdgeNodeInstallerAsync(const Model::DescribeDracoEdgeNodeInstallerRequest& request, const DescribeDracoEdgeNodeInstallerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDracoEdgeNodeInstallerOutcomeCallable DescribeDracoEdgeNodeInstallerCallable(const Model::DescribeDracoEdgeNodeInstallerRequest& request);
 
                 /**
                  *获取节点安装信息

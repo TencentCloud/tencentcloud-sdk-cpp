@@ -27,7 +27,8 @@ DescribeReverseShellDetailResponse::DescribeReverseShellDetailResponse() :
     m_eventBaseInfoHasBeenSet(false),
     m_processInfoHasBeenSet(false),
     m_parentProcessInfoHasBeenSet(false),
-    m_eventDetailHasBeenSet(false)
+    m_eventDetailHasBeenSet(false),
+    m_ancestorProcessInfoHasBeenSet(false)
 {
 }
 
@@ -133,6 +134,23 @@ CoreInternalOutcome DescribeReverseShellDetailResponse::Deserialize(const string
         m_eventDetailHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AncestorProcessInfo") && !rsp["AncestorProcessInfo"].IsNull())
+    {
+        if (!rsp["AncestorProcessInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AncestorProcessInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ancestorProcessInfo.Deserialize(rsp["AncestorProcessInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ancestorProcessInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -177,6 +195,15 @@ string DescribeReverseShellDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_eventDetail.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_ancestorProcessInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AncestorProcessInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ancestorProcessInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -229,6 +256,16 @@ ReverseShellEventDescription DescribeReverseShellDetailResponse::GetEventDetail(
 bool DescribeReverseShellDetailResponse::EventDetailHasBeenSet() const
 {
     return m_eventDetailHasBeenSet;
+}
+
+ProcessBaseInfo DescribeReverseShellDetailResponse::GetAncestorProcessInfo() const
+{
+    return m_ancestorProcessInfo;
+}
+
+bool DescribeReverseShellDetailResponse::AncestorProcessInfoHasBeenSet() const
+{
+    return m_ancestorProcessInfoHasBeenSet;
 }
 
 

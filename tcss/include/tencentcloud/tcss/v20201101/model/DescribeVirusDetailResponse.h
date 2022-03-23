@@ -547,6 +547,132 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
                      */
                     bool ClientIPHasBeenSet() const;
 
+                    /**
+                     * 获取父进程启动用户
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PProcessStartUser 父进程启动用户
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPProcessStartUser() const;
+
+                    /**
+                     * 判断参数 PProcessStartUser 是否已赋值
+                     * @return PProcessStartUser 是否已赋值
+                     */
+                    bool PProcessStartUserHasBeenSet() const;
+
+                    /**
+                     * 获取父进程用户组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PProcessUserGroup 父进程用户组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPProcessUserGroup() const;
+
+                    /**
+                     * 判断参数 PProcessUserGroup 是否已赋值
+                     * @return PProcessUserGroup 是否已赋值
+                     */
+                    bool PProcessUserGroupHasBeenSet() const;
+
+                    /**
+                     * 获取父进程路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PProcessPath 父进程路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPProcessPath() const;
+
+                    /**
+                     * 判断参数 PProcessPath 是否已赋值
+                     * @return PProcessPath 是否已赋值
+                     */
+                    bool PProcessPathHasBeenSet() const;
+
+                    /**
+                     * 获取父进程命令行参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PProcessParam 父进程命令行参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPProcessParam() const;
+
+                    /**
+                     * 判断参数 PProcessParam 是否已赋值
+                     * @return PProcessParam 是否已赋值
+                     */
+                    bool PProcessParamHasBeenSet() const;
+
+                    /**
+                     * 获取祖先进程启动用户
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AncestorProcessStartUser 祖先进程启动用户
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAncestorProcessStartUser() const;
+
+                    /**
+                     * 判断参数 AncestorProcessStartUser 是否已赋值
+                     * @return AncestorProcessStartUser 是否已赋值
+                     */
+                    bool AncestorProcessStartUserHasBeenSet() const;
+
+                    /**
+                     * 获取祖先进程用户组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AncestorProcessUserGroup 祖先进程用户组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAncestorProcessUserGroup() const;
+
+                    /**
+                     * 判断参数 AncestorProcessUserGroup 是否已赋值
+                     * @return AncestorProcessUserGroup 是否已赋值
+                     */
+                    bool AncestorProcessUserGroupHasBeenSet() const;
+
+                    /**
+                     * 获取祖先进程路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AncestorProcessPath 祖先进程路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAncestorProcessPath() const;
+
+                    /**
+                     * 判断参数 AncestorProcessPath 是否已赋值
+                     * @return AncestorProcessPath 是否已赋值
+                     */
+                    bool AncestorProcessPathHasBeenSet() const;
+
+                    /**
+                     * 获取祖先进程命令行参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AncestorProcessParam 祖先进程命令行参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAncestorProcessParam() const;
+
+                    /**
+                     * 判断参数 AncestorProcessParam 是否已赋值
+                     * @return AncestorProcessParam 是否已赋值
+                     */
+                    bool AncestorProcessParamHasBeenSet() const;
+
+                    /**
+                     * 获取事件最后一次处理的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OperationTime 事件最后一次处理的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOperationTime() const;
+
+                    /**
+                     * 判断参数 OperationTime 是否已赋值
+                     * @return OperationTime 是否已赋值
+                     */
+                    bool OperationTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -800,6 +926,69 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
                      */
                     std::string m_clientIP;
                     bool m_clientIPHasBeenSet;
+
+                    /**
+                     * 父进程启动用户
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_pProcessStartUser;
+                    bool m_pProcessStartUserHasBeenSet;
+
+                    /**
+                     * 父进程用户组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_pProcessUserGroup;
+                    bool m_pProcessUserGroupHasBeenSet;
+
+                    /**
+                     * 父进程路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_pProcessPath;
+                    bool m_pProcessPathHasBeenSet;
+
+                    /**
+                     * 父进程命令行参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_pProcessParam;
+                    bool m_pProcessParamHasBeenSet;
+
+                    /**
+                     * 祖先进程启动用户
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ancestorProcessStartUser;
+                    bool m_ancestorProcessStartUserHasBeenSet;
+
+                    /**
+                     * 祖先进程用户组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ancestorProcessUserGroup;
+                    bool m_ancestorProcessUserGroupHasBeenSet;
+
+                    /**
+                     * 祖先进程路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ancestorProcessPath;
+                    bool m_ancestorProcessPathHasBeenSet;
+
+                    /**
+                     * 祖先进程命令行参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ancestorProcessParam;
+                    bool m_ancestorProcessParamHasBeenSet;
+
+                    /**
+                     * 事件最后一次处理的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_operationTime;
+                    bool m_operationTimeHasBeenSet;
 
                 };
             }

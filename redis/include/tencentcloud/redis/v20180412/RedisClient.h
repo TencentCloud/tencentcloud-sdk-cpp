@@ -109,6 +109,8 @@
 #include <tencentcloud/redis/v20180412/model/DescribeProjectSecurityGroupsResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeProxySlowLogRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeProxySlowLogResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeReplicationGroupRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeReplicationGroupResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeSlowLogRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeSlowLogResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeTaskInfoRequest.h>
@@ -316,6 +318,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProxySlowLogResponse> DescribeProxySlowLogOutcome;
                 typedef std::future<DescribeProxySlowLogOutcome> DescribeProxySlowLogOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeProxySlowLogRequest&, DescribeProxySlowLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProxySlowLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeReplicationGroupResponse> DescribeReplicationGroupOutcome;
+                typedef std::future<DescribeReplicationGroupOutcome> DescribeReplicationGroupOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeReplicationGroupRequest&, DescribeReplicationGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReplicationGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSlowLogResponse> DescribeSlowLogOutcome;
                 typedef std::future<DescribeSlowLogOutcome> DescribeSlowLogOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeSlowLogRequest&, DescribeSlowLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogAsyncHandler;
@@ -488,7 +493,7 @@ namespace TencentCloud
                 CreateInstancesOutcomeCallable CreateInstancesCallable(const Model::CreateInstancesRequest& request);
 
                 /**
-                 *创建参数模板
+                 *创建参数模板。
                  * @param req CreateParamTemplateRequest
                  * @return CreateParamTemplateOutcome
                  */
@@ -803,6 +808,15 @@ namespace TencentCloud
                 DescribeProxySlowLogOutcomeCallable DescribeProxySlowLogCallable(const Model::DescribeProxySlowLogRequest& request);
 
                 /**
+                 *查询复制组
+                 * @param req DescribeReplicationGroupRequest
+                 * @return DescribeReplicationGroupOutcome
+                 */
+                DescribeReplicationGroupOutcome DescribeReplicationGroup(const Model::DescribeReplicationGroupRequest &request);
+                void DescribeReplicationGroupAsync(const Model::DescribeReplicationGroupRequest& request, const DescribeReplicationGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeReplicationGroupOutcomeCallable DescribeReplicationGroupCallable(const Model::DescribeReplicationGroupRequest& request);
+
+                /**
                  *查询实例慢查询记录
                  * @param req DescribeSlowLogRequest
                  * @return DescribeSlowLogOutcome
@@ -938,7 +952,7 @@ namespace TencentCloud
                 ModfiyInstancePasswordOutcomeCallable ModfiyInstancePasswordCallable(const Model::ModfiyInstancePasswordRequest& request);
 
                 /**
-                 *设置自动备份时间
+                 *设置自动备份配置
                  * @param req ModifyAutoBackupConfigRequest
                  * @return ModifyAutoBackupConfigOutcome
                  */

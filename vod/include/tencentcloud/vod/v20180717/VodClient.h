@@ -147,6 +147,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribeImageSpriteTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeMediaInfosRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeMediaInfosResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeMediaPlayStatDetailsRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeMediaPlayStatDetailsResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeMediaProcessUsageDataRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeMediaProcessUsageDataResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribePersonSamplesRequest.h>
@@ -461,6 +463,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMediaInfosResponse> DescribeMediaInfosOutcome;
                 typedef std::future<DescribeMediaInfosOutcome> DescribeMediaInfosOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeMediaInfosRequest&, DescribeMediaInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMediaInfosAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMediaPlayStatDetailsResponse> DescribeMediaPlayStatDetailsOutcome;
+                typedef std::future<DescribeMediaPlayStatDetailsOutcome> DescribeMediaPlayStatDetailsOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeMediaPlayStatDetailsRequest&, DescribeMediaPlayStatDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMediaPlayStatDetailsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMediaProcessUsageDataResponse> DescribeMediaProcessUsageDataOutcome;
                 typedef std::future<DescribeMediaProcessUsageDataOutcome> DescribeMediaProcessUsageDataOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeMediaProcessUsageDataRequest&, DescribeMediaProcessUsageDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMediaProcessUsageDataAsyncHandler;
@@ -1253,6 +1258,18 @@ namespace TencentCloud
                 DescribeMediaInfosOutcome DescribeMediaInfos(const Model::DescribeMediaInfosRequest &request);
                 void DescribeMediaInfosAsync(const Model::DescribeMediaInfosRequest& request, const DescribeMediaInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMediaInfosOutcomeCallable DescribeMediaInfosCallable(const Model::DescribeMediaInfosRequest& request);
+
+                /**
+                 *该接口用于查询媒体文件按指定时间粒度统计的播放数据
+* 可以查询最近一年的播放统计数据。
+* 时间粒度为小时，结束时间和起始时间的跨度最大为7天。
+* 时间粒度为天，结束时间和起始时间的跨度最大为90天。
+                 * @param req DescribeMediaPlayStatDetailsRequest
+                 * @return DescribeMediaPlayStatDetailsOutcome
+                 */
+                DescribeMediaPlayStatDetailsOutcome DescribeMediaPlayStatDetails(const Model::DescribeMediaPlayStatDetailsRequest &request);
+                void DescribeMediaPlayStatDetailsAsync(const Model::DescribeMediaPlayStatDetailsRequest& request, const DescribeMediaPlayStatDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMediaPlayStatDetailsOutcomeCallable DescribeMediaPlayStatDetailsCallable(const Model::DescribeMediaPlayStatDetailsRequest& request);
 
                 /**
                  *该接口返回查询时间范围内每天使用的视频处理用量信息。

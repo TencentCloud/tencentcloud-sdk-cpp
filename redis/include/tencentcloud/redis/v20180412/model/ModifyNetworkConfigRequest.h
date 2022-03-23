@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool SubnetIdHasBeenSet() const;
 
+                    /**
+                     * 获取vip保留时间，单位：天
+                     * @return Recycle vip保留时间，单位：天
+                     */
+                    int64_t GetRecycle() const;
+
+                    /**
+                     * 设置vip保留时间，单位：天
+                     * @param Recycle vip保留时间，单位：天
+                     */
+                    void SetRecycle(const int64_t& _recycle);
+
+                    /**
+                     * 判断参数 Recycle 是否已赋值
+                     * @return Recycle 是否已赋值
+                     */
+                    bool RecycleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * vip保留时间，单位：天
+                     */
+                    int64_t m_recycle;
+                    bool m_recycleHasBeenSet;
 
                 };
             }

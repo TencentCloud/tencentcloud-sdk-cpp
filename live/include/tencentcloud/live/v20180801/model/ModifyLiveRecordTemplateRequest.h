@@ -206,6 +206,24 @@ namespace TencentCloud
                      */
                     bool Mp3ParamHasBeenSet() const;
 
+                    /**
+                     * 获取是否去除水印，类型为慢直播时此参数无效。
+                     * @return RemoveWatermark 是否去除水印，类型为慢直播时此参数无效。
+                     */
+                    bool GetRemoveWatermark() const;
+
+                    /**
+                     * 设置是否去除水印，类型为慢直播时此参数无效。
+                     * @param RemoveWatermark 是否去除水印，类型为慢直播时此参数无效。
+                     */
+                    void SetRemoveWatermark(const bool& _removeWatermark);
+
+                    /**
+                     * 判断参数 RemoveWatermark 是否已赋值
+                     * @return RemoveWatermark 是否已赋值
+                     */
+                    bool RemoveWatermarkHasBeenSet() const;
+
                 private:
 
                     /**
@@ -261,6 +279,12 @@ namespace TencentCloud
                      */
                     RecordParam m_mp3Param;
                     bool m_mp3ParamHasBeenSet;
+
+                    /**
+                     * 是否去除水印，类型为慢直播时此参数无效。
+                     */
+                    bool m_removeWatermark;
+                    bool m_removeWatermarkHasBeenSet;
 
                 };
             }

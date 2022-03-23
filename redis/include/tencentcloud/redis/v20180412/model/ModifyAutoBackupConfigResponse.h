@@ -79,6 +79,18 @@ namespace TencentCloud
                      */
                     bool TimePeriodHasBeenSet() const;
 
+                    /**
+                     * 获取全量备份文件保存天数,单位：天
+                     * @return BackupStorageDays 全量备份文件保存天数,单位：天
+                     */
+                    int64_t GetBackupStorageDays() const;
+
+                    /**
+                     * 判断参数 BackupStorageDays 是否已赋值
+                     * @return BackupStorageDays 是否已赋值
+                     */
+                    bool BackupStorageDaysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -98,6 +110,12 @@ namespace TencentCloud
                      */
                     std::string m_timePeriod;
                     bool m_timePeriodHasBeenSet;
+
+                    /**
+                     * 全量备份文件保存天数,单位：天
+                     */
+                    int64_t m_backupStorageDays;
+                    bool m_backupStorageDaysHasBeenSet;
 
                 };
             }

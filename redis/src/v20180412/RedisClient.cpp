@@ -1889,6 +1889,49 @@ RedisClient::DescribeProxySlowLogOutcomeCallable RedisClient::DescribeProxySlowL
     return task->get_future();
 }
 
+RedisClient::DescribeReplicationGroupOutcome RedisClient::DescribeReplicationGroup(const DescribeReplicationGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReplicationGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReplicationGroupResponse rsp = DescribeReplicationGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReplicationGroupOutcome(rsp);
+        else
+            return DescribeReplicationGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReplicationGroupOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::DescribeReplicationGroupAsync(const DescribeReplicationGroupRequest& request, const DescribeReplicationGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeReplicationGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::DescribeReplicationGroupOutcomeCallable RedisClient::DescribeReplicationGroupCallable(const DescribeReplicationGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeReplicationGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeReplicationGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RedisClient::DescribeSlowLogOutcome RedisClient::DescribeSlowLog(const DescribeSlowLogRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSlowLog");

@@ -2706,6 +2706,49 @@ VodClient::DescribeMediaInfosOutcomeCallable VodClient::DescribeMediaInfosCallab
     return task->get_future();
 }
 
+VodClient::DescribeMediaPlayStatDetailsOutcome VodClient::DescribeMediaPlayStatDetails(const DescribeMediaPlayStatDetailsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMediaPlayStatDetails");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMediaPlayStatDetailsResponse rsp = DescribeMediaPlayStatDetailsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMediaPlayStatDetailsOutcome(rsp);
+        else
+            return DescribeMediaPlayStatDetailsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMediaPlayStatDetailsOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeMediaPlayStatDetailsAsync(const DescribeMediaPlayStatDetailsRequest& request, const DescribeMediaPlayStatDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMediaPlayStatDetails(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DescribeMediaPlayStatDetailsOutcomeCallable VodClient::DescribeMediaPlayStatDetailsCallable(const DescribeMediaPlayStatDetailsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMediaPlayStatDetailsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMediaPlayStatDetails(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::DescribeMediaProcessUsageDataOutcome VodClient::DescribeMediaProcessUsageData(const DescribeMediaProcessUsageDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMediaProcessUsageData");

@@ -57,7 +57,16 @@ DescribeVirusDetailResponse::DescribeVirusDetailResponse() :
     m_statusHasBeenSet(false),
     m_subStatusHasBeenSet(false),
     m_hostIPHasBeenSet(false),
-    m_clientIPHasBeenSet(false)
+    m_clientIPHasBeenSet(false),
+    m_pProcessStartUserHasBeenSet(false),
+    m_pProcessUserGroupHasBeenSet(false),
+    m_pProcessPathHasBeenSet(false),
+    m_pProcessParamHasBeenSet(false),
+    m_ancestorProcessStartUserHasBeenSet(false),
+    m_ancestorProcessUserGroupHasBeenSet(false),
+    m_ancestorProcessPathHasBeenSet(false),
+    m_ancestorProcessParamHasBeenSet(false),
+    m_operationTimeHasBeenSet(false)
 {
 }
 
@@ -438,6 +447,96 @@ CoreInternalOutcome DescribeVirusDetailResponse::Deserialize(const string &paylo
         m_clientIPHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PProcessStartUser") && !rsp["PProcessStartUser"].IsNull())
+    {
+        if (!rsp["PProcessStartUser"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PProcessStartUser` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pProcessStartUser = string(rsp["PProcessStartUser"].GetString());
+        m_pProcessStartUserHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PProcessUserGroup") && !rsp["PProcessUserGroup"].IsNull())
+    {
+        if (!rsp["PProcessUserGroup"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PProcessUserGroup` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pProcessUserGroup = string(rsp["PProcessUserGroup"].GetString());
+        m_pProcessUserGroupHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PProcessPath") && !rsp["PProcessPath"].IsNull())
+    {
+        if (!rsp["PProcessPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PProcessPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pProcessPath = string(rsp["PProcessPath"].GetString());
+        m_pProcessPathHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PProcessParam") && !rsp["PProcessParam"].IsNull())
+    {
+        if (!rsp["PProcessParam"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PProcessParam` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pProcessParam = string(rsp["PProcessParam"].GetString());
+        m_pProcessParamHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AncestorProcessStartUser") && !rsp["AncestorProcessStartUser"].IsNull())
+    {
+        if (!rsp["AncestorProcessStartUser"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AncestorProcessStartUser` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ancestorProcessStartUser = string(rsp["AncestorProcessStartUser"].GetString());
+        m_ancestorProcessStartUserHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AncestorProcessUserGroup") && !rsp["AncestorProcessUserGroup"].IsNull())
+    {
+        if (!rsp["AncestorProcessUserGroup"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AncestorProcessUserGroup` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ancestorProcessUserGroup = string(rsp["AncestorProcessUserGroup"].GetString());
+        m_ancestorProcessUserGroupHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AncestorProcessPath") && !rsp["AncestorProcessPath"].IsNull())
+    {
+        if (!rsp["AncestorProcessPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AncestorProcessPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ancestorProcessPath = string(rsp["AncestorProcessPath"].GetString());
+        m_ancestorProcessPathHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AncestorProcessParam") && !rsp["AncestorProcessParam"].IsNull())
+    {
+        if (!rsp["AncestorProcessParam"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AncestorProcessParam` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ancestorProcessParam = string(rsp["AncestorProcessParam"].GetString());
+        m_ancestorProcessParamHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("OperationTime") && !rsp["OperationTime"].IsNull())
+    {
+        if (!rsp["OperationTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OperationTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_operationTime = string(rsp["OperationTime"].GetString());
+        m_operationTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -723,6 +822,78 @@ string DescribeVirusDetailResponse::ToJsonString() const
         string key = "ClientIP";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clientIP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pProcessStartUserHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PProcessStartUser";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pProcessStartUser.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pProcessUserGroupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PProcessUserGroup";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pProcessUserGroup.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pProcessPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PProcessPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pProcessPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pProcessParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PProcessParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pProcessParam.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ancestorProcessStartUserHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AncestorProcessStartUser";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ancestorProcessStartUser.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ancestorProcessUserGroupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AncestorProcessUserGroup";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ancestorProcessUserGroup.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ancestorProcessPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AncestorProcessPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ancestorProcessPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ancestorProcessParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AncestorProcessParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ancestorProcessParam.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operationTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operationTime.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1075,6 +1246,96 @@ string DescribeVirusDetailResponse::GetClientIP() const
 bool DescribeVirusDetailResponse::ClientIPHasBeenSet() const
 {
     return m_clientIPHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetPProcessStartUser() const
+{
+    return m_pProcessStartUser;
+}
+
+bool DescribeVirusDetailResponse::PProcessStartUserHasBeenSet() const
+{
+    return m_pProcessStartUserHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetPProcessUserGroup() const
+{
+    return m_pProcessUserGroup;
+}
+
+bool DescribeVirusDetailResponse::PProcessUserGroupHasBeenSet() const
+{
+    return m_pProcessUserGroupHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetPProcessPath() const
+{
+    return m_pProcessPath;
+}
+
+bool DescribeVirusDetailResponse::PProcessPathHasBeenSet() const
+{
+    return m_pProcessPathHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetPProcessParam() const
+{
+    return m_pProcessParam;
+}
+
+bool DescribeVirusDetailResponse::PProcessParamHasBeenSet() const
+{
+    return m_pProcessParamHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetAncestorProcessStartUser() const
+{
+    return m_ancestorProcessStartUser;
+}
+
+bool DescribeVirusDetailResponse::AncestorProcessStartUserHasBeenSet() const
+{
+    return m_ancestorProcessStartUserHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetAncestorProcessUserGroup() const
+{
+    return m_ancestorProcessUserGroup;
+}
+
+bool DescribeVirusDetailResponse::AncestorProcessUserGroupHasBeenSet() const
+{
+    return m_ancestorProcessUserGroupHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetAncestorProcessPath() const
+{
+    return m_ancestorProcessPath;
+}
+
+bool DescribeVirusDetailResponse::AncestorProcessPathHasBeenSet() const
+{
+    return m_ancestorProcessPathHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetAncestorProcessParam() const
+{
+    return m_ancestorProcessParam;
+}
+
+bool DescribeVirusDetailResponse::AncestorProcessParamHasBeenSet() const
+{
+    return m_ancestorProcessParamHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetOperationTime() const
+{
+    return m_operationTime;
+}
+
+bool DescribeVirusDetailResponse::OperationTimeHasBeenSet() const
+{
+    return m_operationTimeHasBeenSet;
 }
 
 

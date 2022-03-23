@@ -357,17 +357,17 @@ namespace TencentCloud
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
-                     * 获取ApplicationName值
+                     * 获取ApplicationName值（类型是string）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApplicationName ApplicationName值
+                     * @return ApplicationName ApplicationName值（类型是string）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ScalableRule GetApplicationName() const;
 
                     /**
-                     * 设置ApplicationName值
+                     * 设置ApplicationName值（类型是string）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApplicationName ApplicationName值
+                     * @param ApplicationName ApplicationName值（类型是string）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetApplicationName(const ScalableRule& _applicationName);
@@ -479,7 +479,7 @@ namespace TencentCloud
                     bool m_applicationIdHasBeenSet;
 
                     /**
-                     * ApplicationName值
+                     * ApplicationName值（类型是string）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ScalableRule m_applicationName;

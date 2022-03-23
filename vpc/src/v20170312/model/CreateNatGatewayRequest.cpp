@@ -31,7 +31,9 @@ CreateNatGatewayRequest::CreateNatGatewayRequest() :
     m_publicIpAddressesHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_stockPublicIpAddressesBandwidthOutHasBeenSet(false),
+    m_publicIpAddressesBandwidthOutHasBeenSet(false)
 {
 }
 
@@ -124,6 +126,22 @@ string CreateNatGatewayRequest::ToJsonString() const
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_stockPublicIpAddressesBandwidthOutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StockPublicIpAddressesBandwidthOut";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_stockPublicIpAddressesBandwidthOut, allocator);
+    }
+
+    if (m_publicIpAddressesBandwidthOutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicIpAddressesBandwidthOut";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_publicIpAddressesBandwidthOut, allocator);
     }
 
 
@@ -276,6 +294,38 @@ void CreateNatGatewayRequest::SetSubnetId(const string& _subnetId)
 bool CreateNatGatewayRequest::SubnetIdHasBeenSet() const
 {
     return m_subnetIdHasBeenSet;
+}
+
+uint64_t CreateNatGatewayRequest::GetStockPublicIpAddressesBandwidthOut() const
+{
+    return m_stockPublicIpAddressesBandwidthOut;
+}
+
+void CreateNatGatewayRequest::SetStockPublicIpAddressesBandwidthOut(const uint64_t& _stockPublicIpAddressesBandwidthOut)
+{
+    m_stockPublicIpAddressesBandwidthOut = _stockPublicIpAddressesBandwidthOut;
+    m_stockPublicIpAddressesBandwidthOutHasBeenSet = true;
+}
+
+bool CreateNatGatewayRequest::StockPublicIpAddressesBandwidthOutHasBeenSet() const
+{
+    return m_stockPublicIpAddressesBandwidthOutHasBeenSet;
+}
+
+uint64_t CreateNatGatewayRequest::GetPublicIpAddressesBandwidthOut() const
+{
+    return m_publicIpAddressesBandwidthOut;
+}
+
+void CreateNatGatewayRequest::SetPublicIpAddressesBandwidthOut(const uint64_t& _publicIpAddressesBandwidthOut)
+{
+    m_publicIpAddressesBandwidthOut = _publicIpAddressesBandwidthOut;
+    m_publicIpAddressesBandwidthOutHasBeenSet = true;
+}
+
+bool CreateNatGatewayRequest::PublicIpAddressesBandwidthOutHasBeenSet() const
+{
+    return m_publicIpAddressesBandwidthOutHasBeenSet;
 }
 
 

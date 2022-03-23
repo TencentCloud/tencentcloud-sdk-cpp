@@ -160,6 +160,24 @@ namespace TencentCloud
                      */
                     bool SystemChildRulesHasBeenSet() const;
 
+                    /**
+                     * 获取是否是系统默认策略
+                     * @return IsDefault 是否是系统默认策略
+                     */
+                    bool GetIsDefault() const;
+
+                    /**
+                     * 设置是否是系统默认策略
+                     * @param IsDefault 是否是系统默认策略
+                     */
+                    void SetIsDefault(const bool& _isDefault);
+
+                    /**
+                     * 判断参数 IsDefault 是否已赋值
+                     * @return IsDefault 是否已赋值
+                     */
+                    bool IsDefaultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -198,6 +216,12 @@ namespace TencentCloud
                      */
                     std::vector<AccessControlSystemChildRuleInfo> m_systemChildRules;
                     bool m_systemChildRulesHasBeenSet;
+
+                    /**
+                     * 是否是系统默认策略
+                     */
+                    bool m_isDefault;
+                    bool m_isDefaultHasBeenSet;
 
                 };
             }

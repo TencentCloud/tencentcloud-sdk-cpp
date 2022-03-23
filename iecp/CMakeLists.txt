@@ -44,6 +44,7 @@ set(iecp_public_header_model
   include/tencentcloud/iecp/v20210914/model/DeleteNodeUnitResponse.h
   include/tencentcloud/iecp/v20210914/model/VolumeNFS.h
   include/tencentcloud/iecp/v20210914/model/Service.h
+  include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationsResponse.h
   include/tencentcloud/iecp/v20210914/model/DescribeNodeUnitTemplateOnNodeGroupResponse.h
   include/tencentcloud/iecp/v20210914/model/CreateUserTokenRequest.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitGridEventsResponse.h
@@ -69,7 +70,7 @@ set(iecp_public_header_model
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationPodContainersRequest.h
   include/tencentcloud/iecp/v20210914/model/TcpProbe.h
   include/tencentcloud/iecp/v20210914/model/VolumeConfigMapKeyToPath.h
-  include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationsResponse.h
+  include/tencentcloud/iecp/v20210914/model/DescribeDracoEdgeNodeInstallerResponse.h
   include/tencentcloud/iecp/v20210914/model/ModifyEdgeUnitCloudApiRequest.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitDeployGridItemRequest.h
   include/tencentcloud/iecp/v20210914/model/ModifyEdgeUnitRequest.h
@@ -169,8 +170,10 @@ set(iecp_public_header_model
   include/tencentcloud/iecp/v20210914/model/ModifyEdgeUnitApplicationVisualizationRequest.h
   include/tencentcloud/iecp/v20210914/model/ModifyConfigMapResponse.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeNodePodsRequest.h
+  include/tencentcloud/iecp/v20210914/model/DeleteIotDeviceBatchRequest.h
   include/tencentcloud/iecp/v20210914/model/GetMarketComponentListRequest.h
   include/tencentcloud/iecp/v20210914/model/DescribeApplicationVisualizationResponse.h
+  include/tencentcloud/iecp/v20210914/model/DescribeDracoEdgeNodeInstallerRequest.h
   include/tencentcloud/iecp/v20210914/model/CreateNamespaceRequest.h
   include/tencentcloud/iecp/v20210914/model/VolumeHostPath.h
   include/tencentcloud/iecp/v20210914/model/ApplyMarketComponentRequest.h
@@ -235,6 +238,7 @@ set(iecp_public_header_model
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitDeployGridRequest.h
   include/tencentcloud/iecp/v20210914/model/ApplyMarketComponentResponse.h
   include/tencentcloud/iecp/v20210914/model/DescribeApplicationYamlErrorResponse.h
+  include/tencentcloud/iecp/v20210914/model/DeleteIotDeviceBatchResponse.h
   include/tencentcloud/iecp/v20210914/model/CreateEdgeNodeResponse.h
   include/tencentcloud/iecp/v20210914/model/DeleteEdgeNodesRequest.h
   include/tencentcloud/iecp/v20210914/model/DescribeApplicationYamlErrorRequest.h
@@ -287,6 +291,7 @@ set(iecp_src
   src/v20210914/model/DeleteNodeUnitResponse.cpp
   src/v20210914/model/VolumeNFS.cpp
   src/v20210914/model/Service.cpp
+  src/v20210914/model/DescribeEdgeUnitApplicationsResponse.cpp
   src/v20210914/model/DescribeNodeUnitTemplateOnNodeGroupResponse.cpp
   src/v20210914/model/CreateUserTokenRequest.cpp
   src/v20210914/model/DescribeEdgeUnitGridEventsResponse.cpp
@@ -312,7 +317,7 @@ set(iecp_src
   src/v20210914/model/DescribeEdgeUnitApplicationPodContainersRequest.cpp
   src/v20210914/model/TcpProbe.cpp
   src/v20210914/model/VolumeConfigMapKeyToPath.cpp
-  src/v20210914/model/DescribeEdgeUnitApplicationsResponse.cpp
+  src/v20210914/model/DescribeDracoEdgeNodeInstallerResponse.cpp
   src/v20210914/model/ModifyEdgeUnitCloudApiRequest.cpp
   src/v20210914/model/DescribeEdgeUnitDeployGridItemRequest.cpp
   src/v20210914/model/ModifyEdgeUnitRequest.cpp
@@ -412,8 +417,10 @@ set(iecp_src
   src/v20210914/model/ModifyEdgeUnitApplicationVisualizationRequest.cpp
   src/v20210914/model/ModifyConfigMapResponse.cpp
   src/v20210914/model/DescribeEdgeNodePodsRequest.cpp
+  src/v20210914/model/DeleteIotDeviceBatchRequest.cpp
   src/v20210914/model/GetMarketComponentListRequest.cpp
   src/v20210914/model/DescribeApplicationVisualizationResponse.cpp
+  src/v20210914/model/DescribeDracoEdgeNodeInstallerRequest.cpp
   src/v20210914/model/CreateNamespaceRequest.cpp
   src/v20210914/model/VolumeHostPath.cpp
   src/v20210914/model/ApplyMarketComponentRequest.cpp
@@ -478,6 +485,7 @@ set(iecp_src
   src/v20210914/model/DescribeEdgeUnitDeployGridRequest.cpp
   src/v20210914/model/ApplyMarketComponentResponse.cpp
   src/v20210914/model/DescribeApplicationYamlErrorResponse.cpp
+  src/v20210914/model/DeleteIotDeviceBatchResponse.cpp
   src/v20210914/model/CreateEdgeNodeResponse.cpp
   src/v20210914/model/DeleteEdgeNodesRequest.cpp
   src/v20210914/model/DescribeApplicationYamlErrorRequest.cpp

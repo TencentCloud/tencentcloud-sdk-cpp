@@ -253,6 +253,24 @@ namespace TencentCloud
                      */
                     bool UnsubscribeHasBeenSet() const;
 
+                    /**
+                     * 获取是否添加广告标识 0:不添加 1:添加到subject前面，2:添加到subject后面
+                     * @return ADLocation 是否添加广告标识 0:不添加 1:添加到subject前面，2:添加到subject后面
+                     */
+                    uint64_t GetADLocation() const;
+
+                    /**
+                     * 设置是否添加广告标识 0:不添加 1:添加到subject前面，2:添加到subject后面
+                     * @param ADLocation 是否添加广告标识 0:不添加 1:添加到subject前面，2:添加到subject后面
+                     */
+                    void SetADLocation(const uint64_t& _aDLocation);
+
+                    /**
+                     * 判断参数 ADLocation 是否已赋值
+                     * @return ADLocation 是否已赋值
+                     */
+                    bool ADLocationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -322,6 +340,12 @@ namespace TencentCloud
                      */
                     std::string m_unsubscribe;
                     bool m_unsubscribeHasBeenSet;
+
+                    /**
+                     * 是否添加广告标识 0:不添加 1:添加到subject前面，2:添加到subject后面
+                     */
+                    uint64_t m_aDLocation;
+                    bool m_aDLocationHasBeenSet;
 
                 };
             }

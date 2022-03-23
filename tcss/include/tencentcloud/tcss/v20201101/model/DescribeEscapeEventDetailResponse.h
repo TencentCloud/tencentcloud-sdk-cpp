@@ -24,6 +24,7 @@
 #include <tencentcloud/tcss/v20201101/model/RunTimeEventBaseInfo.h>
 #include <tencentcloud/tcss/v20201101/model/ProcessDetailInfo.h>
 #include <tencentcloud/tcss/v20201101/model/EscapeEventDescription.h>
+#include <tencentcloud/tcss/v20201101/model/ProcessBaseInfo.h>
 
 
 namespace TencentCloud
@@ -82,6 +83,32 @@ namespace TencentCloud
                      */
                     bool EventDetailHasBeenSet() const;
 
+                    /**
+                     * 获取父进程信息
+                     * @return ParentProcessInfo 父进程信息
+                     */
+                    ProcessBaseInfo GetParentProcessInfo() const;
+
+                    /**
+                     * 判断参数 ParentProcessInfo 是否已赋值
+                     * @return ParentProcessInfo 是否已赋值
+                     */
+                    bool ParentProcessInfoHasBeenSet() const;
+
+                    /**
+                     * 获取祖先进程信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AncestorProcessInfo 祖先进程信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ProcessBaseInfo GetAncestorProcessInfo() const;
+
+                    /**
+                     * 判断参数 AncestorProcessInfo 是否已赋值
+                     * @return AncestorProcessInfo 是否已赋值
+                     */
+                    bool AncestorProcessInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +128,19 @@ namespace TencentCloud
                      */
                     EscapeEventDescription m_eventDetail;
                     bool m_eventDetailHasBeenSet;
+
+                    /**
+                     * 父进程信息
+                     */
+                    ProcessBaseInfo m_parentProcessInfo;
+                    bool m_parentProcessInfoHasBeenSet;
+
+                    /**
+                     * 祖先进程信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ProcessBaseInfo m_ancestorProcessInfo;
+                    bool m_ancestorProcessInfoHasBeenSet;
 
                 };
             }

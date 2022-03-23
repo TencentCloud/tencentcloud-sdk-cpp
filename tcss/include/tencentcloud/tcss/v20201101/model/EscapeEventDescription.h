@@ -104,6 +104,28 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取事件最后一次处理的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OperationTime 事件最后一次处理的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOperationTime() const;
+
+                    /**
+                     * 设置事件最后一次处理的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OperationTime 事件最后一次处理的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOperationTime(const std::string& _operationTime);
+
+                    /**
+                     * 判断参数 OperationTime 是否已赋值
+                     * @return OperationTime 是否已赋值
+                     */
+                    bool OperationTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +146,13 @@ namespace TencentCloud
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 事件最后一次处理的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_operationTime;
+                    bool m_operationTimeHasBeenSet;
 
                 };
             }

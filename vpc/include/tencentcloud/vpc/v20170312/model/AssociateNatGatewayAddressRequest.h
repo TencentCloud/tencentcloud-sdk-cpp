@@ -114,6 +114,42 @@ namespace TencentCloud
                      */
                     bool ZoneHasBeenSet() const;
 
+                    /**
+                     * 获取绑定NAT网关的弹性IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。
+                     * @return StockPublicIpAddressesBandwidthOut 绑定NAT网关的弹性IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。
+                     */
+                    uint64_t GetStockPublicIpAddressesBandwidthOut() const;
+
+                    /**
+                     * 设置绑定NAT网关的弹性IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。
+                     * @param StockPublicIpAddressesBandwidthOut 绑定NAT网关的弹性IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。
+                     */
+                    void SetStockPublicIpAddressesBandwidthOut(const uint64_t& _stockPublicIpAddressesBandwidthOut);
+
+                    /**
+                     * 判断参数 StockPublicIpAddressesBandwidthOut 是否已赋值
+                     * @return StockPublicIpAddressesBandwidthOut 是否已赋值
+                     */
+                    bool StockPublicIpAddressesBandwidthOutHasBeenSet() const;
+
+                    /**
+                     * 获取需要申请公网IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。
+                     * @return PublicIpAddressesBandwidthOut 需要申请公网IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。
+                     */
+                    uint64_t GetPublicIpAddressesBandwidthOut() const;
+
+                    /**
+                     * 设置需要申请公网IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。
+                     * @param PublicIpAddressesBandwidthOut 需要申请公网IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。
+                     */
+                    void SetPublicIpAddressesBandwidthOut(const uint64_t& _publicIpAddressesBandwidthOut);
+
+                    /**
+                     * 判断参数 PublicIpAddressesBandwidthOut 是否已赋值
+                     * @return PublicIpAddressesBandwidthOut 是否已赋值
+                     */
+                    bool PublicIpAddressesBandwidthOutHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +175,18 @@ namespace TencentCloud
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
+
+                    /**
+                     * 绑定NAT网关的弹性IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。
+                     */
+                    uint64_t m_stockPublicIpAddressesBandwidthOut;
+                    bool m_stockPublicIpAddressesBandwidthOutHasBeenSet;
+
+                    /**
+                     * 需要申请公网IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。
+                     */
+                    uint64_t m_publicIpAddressesBandwidthOut;
+                    bool m_publicIpAddressesBandwidthOutHasBeenSet;
 
                 };
             }
