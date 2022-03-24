@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool NetworkInterfaceIdsHasBeenSet() const;
 
                     /**
-                     * 获取服务质量，可选值：AU、AG、PT，分别代表金、银、白金三个等级。
-                     * @return QosLevel 服务质量，可选值：AU、AG、PT，分别代表金、银、白金三个等级。
+                     * 获取服务质量，可选值：PT、AU、AG、DEFAULT，分别代表白金、金、银、默认四个等级。
+                     * @return QosLevel 服务质量，可选值：PT、AU、AG、DEFAULT，分别代表白金、金、银、默认四个等级。
                      */
                     std::string GetQosLevel() const;
 
                     /**
-                     * 设置服务质量，可选值：AU、AG、PT，分别代表金、银、白金三个等级。
-                     * @param QosLevel 服务质量，可选值：AU、AG、PT，分别代表金、银、白金三个等级。
+                     * 设置服务质量，可选值：PT、AU、AG、DEFAULT，分别代表白金、金、银、默认四个等级。
+                     * @param QosLevel 服务质量，可选值：PT、AU、AG、DEFAULT，分别代表白金、金、银、默认四个等级。
                      */
                     void SetQosLevel(const std::string& _qosLevel);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_networkInterfaceIdsHasBeenSet;
 
                     /**
-                     * 服务质量，可选值：AU、AG、PT，分别代表金、银、白金三个等级。
+                     * 服务质量，可选值：PT、AU、AG、DEFAULT，分别代表白金、金、银、默认四个等级。
                      */
                     std::string m_qosLevel;
                     bool m_qosLevelHasBeenSet;

@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取变量的名称
-                     * @return Key 变量的名称
+                     * 获取变量的名称，不可为空字符
+                     * @return Key 变量的名称，不可为空字符
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置变量的名称
-                     * @param Key 变量的名称
+                     * 设置变量的名称，不可为空字符
+                     * @param Key 变量的名称，不可为空字符
                      */
                     void SetKey(const std::string& _key);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取变量的值
-                     * @return Value 变量的值
+                     * 获取变量的值，不可为空字符
+                     * @return Value 变量的值，不可为空字符
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置变量的值
-                     * @param Value 变量的值
+                     * 设置变量的值，不可为空字符
+                     * @param Value 变量的值，不可为空字符
                      */
                     void SetValue(const std::string& _value);
 
@@ -85,13 +85,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 变量的名称
+                     * 变量的名称，不可为空字符
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
-                     * 变量的值
+                     * 变量的值，不可为空字符
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

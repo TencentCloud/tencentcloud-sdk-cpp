@@ -50,14 +50,50 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群状态
-                     * @return Status 集群状态
+                     * 获取集群状态， 可选值如下:
+creating: 创建中
+running:运行中
+isolating:隔离中
+isolated:已隔离
+activating:解隔离中
+offlining:下线中
+offlined:已下线
+deleting:删除中
+deleted:已删除
+                     * @return Status 集群状态， 可选值如下:
+creating: 创建中
+running:运行中
+isolating:隔离中
+isolated:已隔离
+activating:解隔离中
+offlining:下线中
+offlined:已下线
+deleting:删除中
+deleted:已删除
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置集群状态
-                     * @param Status 集群状态
+                     * 设置集群状态， 可选值如下:
+creating: 创建中
+running:运行中
+isolating:隔离中
+isolated:已隔离
+activating:解隔离中
+offlining:下线中
+offlined:已下线
+deleting:删除中
+deleted:已删除
+                     * @param Status 集群状态， 可选值如下:
+creating: 创建中
+running:运行中
+isolating:隔离中
+isolated:已隔离
+activating:解隔离中
+offlining:下线中
+offlined:已下线
+deleting:删除中
+deleted:已删除
                      */
                     void SetStatus(const std::string& _status);
 
@@ -672,7 +708,16 @@ pause
                 private:
 
                     /**
-                     * 集群状态
+                     * 集群状态， 可选值如下:
+creating: 创建中
+running:运行中
+isolating:隔离中
+isolated:已隔离
+activating:解隔离中
+offlining:下线中
+offlined:已下线
+deleting:删除中
+deleted:已删除
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
