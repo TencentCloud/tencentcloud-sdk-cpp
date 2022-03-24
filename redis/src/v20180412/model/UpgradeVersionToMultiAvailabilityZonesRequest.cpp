@@ -23,7 +23,8 @@ using namespace TencentCloud::Redis::V20180412::Model;
 using namespace std;
 
 UpgradeVersionToMultiAvailabilityZonesRequest::UpgradeVersionToMultiAvailabilityZonesRequest() :
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_upgradeProxyAndRedisServerHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string UpgradeVersionToMultiAvailabilityZonesRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_upgradeProxyAndRedisServerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpgradeProxyAndRedisServer";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_upgradeProxyAndRedisServer, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void UpgradeVersionToMultiAvailabilityZonesRequest::SetInstanceId(const string& 
 bool UpgradeVersionToMultiAvailabilityZonesRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+bool UpgradeVersionToMultiAvailabilityZonesRequest::GetUpgradeProxyAndRedisServer() const
+{
+    return m_upgradeProxyAndRedisServer;
+}
+
+void UpgradeVersionToMultiAvailabilityZonesRequest::SetUpgradeProxyAndRedisServer(const bool& _upgradeProxyAndRedisServer)
+{
+    m_upgradeProxyAndRedisServer = _upgradeProxyAndRedisServer;
+    m_upgradeProxyAndRedisServerHasBeenSet = true;
+}
+
+bool UpgradeVersionToMultiAvailabilityZonesRequest::UpgradeProxyAndRedisServerHasBeenSet() const
+{
+    return m_upgradeProxyAndRedisServerHasBeenSet;
 }
 
 

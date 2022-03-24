@@ -24,7 +24,9 @@ using namespace TencentCloud::Redis::V20180412::Model;
 using namespace std;
 
 DescribeDBSecurityGroupsResponse::DescribeDBSecurityGroupsResponse() :
-    m_groupsHasBeenSet(false)
+    m_groupsHasBeenSet(false),
+    m_vIPHasBeenSet(false),
+    m_vPortHasBeenSet(false)
 {
 }
 
@@ -82,6 +84,26 @@ CoreInternalOutcome DescribeDBSecurityGroupsResponse::Deserialize(const string &
         m_groupsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("VIP") && !rsp["VIP"].IsNull())
+    {
+        if (!rsp["VIP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vIP = string(rsp["VIP"].GetString());
+        m_vIPHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("VPort") && !rsp["VPort"].IsNull())
+    {
+        if (!rsp["VPort"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VPort` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vPort = string(rsp["VPort"].GetString());
+        m_vPortHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +129,22 @@ string DescribeDBSecurityGroupsResponse::ToJsonString() const
         }
     }
 
+    if (m_vIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vIP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vPortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VPort";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vPort.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +165,26 @@ vector<SecurityGroup> DescribeDBSecurityGroupsResponse::GetGroups() const
 bool DescribeDBSecurityGroupsResponse::GroupsHasBeenSet() const
 {
     return m_groupsHasBeenSet;
+}
+
+string DescribeDBSecurityGroupsResponse::GetVIP() const
+{
+    return m_vIP;
+}
+
+bool DescribeDBSecurityGroupsResponse::VIPHasBeenSet() const
+{
+    return m_vIPHasBeenSet;
+}
+
+string DescribeDBSecurityGroupsResponse::GetVPort() const
+{
+    return m_vPort;
+}
+
+bool DescribeDBSecurityGroupsResponse::VPortHasBeenSet() const
+{
+    return m_vPortHasBeenSet;
 }
 
 

@@ -44,7 +44,9 @@ DescribeInstancesRequest::DescribeInstancesRequest() :
     m_typeHasBeenSet(false),
     m_searchKeysHasBeenSet(false),
     m_typeListHasBeenSet(false),
-    m_monitorVersionHasBeenSet(false)
+    m_monitorVersionHasBeenSet(false),
+    m_instanceTagsHasBeenSet(false),
+    m_tagKeysHasBeenSet(false)
 {
 }
 
@@ -279,6 +281,34 @@ string DescribeInstancesRequest::ToJsonString() const
         string key = "MonitorVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_monitorVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_instanceTags.begin(); itr != m_instanceTags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_tagKeysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagKeys";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_tagKeys.begin(); itr != m_tagKeys.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -639,6 +669,38 @@ void DescribeInstancesRequest::SetMonitorVersion(const string& _monitorVersion)
 bool DescribeInstancesRequest::MonitorVersionHasBeenSet() const
 {
     return m_monitorVersionHasBeenSet;
+}
+
+vector<InstanceTagInfo> DescribeInstancesRequest::GetInstanceTags() const
+{
+    return m_instanceTags;
+}
+
+void DescribeInstancesRequest::SetInstanceTags(const vector<InstanceTagInfo>& _instanceTags)
+{
+    m_instanceTags = _instanceTags;
+    m_instanceTagsHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::InstanceTagsHasBeenSet() const
+{
+    return m_instanceTagsHasBeenSet;
+}
+
+vector<string> DescribeInstancesRequest::GetTagKeys() const
+{
+    return m_tagKeys;
+}
+
+void DescribeInstancesRequest::SetTagKeys(const vector<string>& _tagKeys)
+{
+    m_tagKeys = _tagKeys;
+    m_tagKeysHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::TagKeysHasBeenSet() const
+{
+    return m_tagKeysHasBeenSet;
 }
 
 

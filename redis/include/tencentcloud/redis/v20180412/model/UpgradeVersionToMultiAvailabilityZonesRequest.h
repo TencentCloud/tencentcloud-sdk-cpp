@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否升级proxy和redis内核版本，升级后可支持就近接入
+                     * @return UpgradeProxyAndRedisServer 是否升级proxy和redis内核版本，升级后可支持就近接入
+                     */
+                    bool GetUpgradeProxyAndRedisServer() const;
+
+                    /**
+                     * 设置是否升级proxy和redis内核版本，升级后可支持就近接入
+                     * @param UpgradeProxyAndRedisServer 是否升级proxy和redis内核版本，升级后可支持就近接入
+                     */
+                    void SetUpgradeProxyAndRedisServer(const bool& _upgradeProxyAndRedisServer);
+
+                    /**
+                     * 判断参数 UpgradeProxyAndRedisServer 是否已赋值
+                     * @return UpgradeProxyAndRedisServer 是否已赋值
+                     */
+                    bool UpgradeProxyAndRedisServerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 是否升级proxy和redis内核版本，升级后可支持就近接入
+                     */
+                    bool m_upgradeProxyAndRedisServer;
+                    bool m_upgradeProxyAndRedisServerHasBeenSet;
 
                 };
             }

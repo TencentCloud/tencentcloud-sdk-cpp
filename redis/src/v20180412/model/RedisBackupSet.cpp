@@ -26,7 +26,10 @@ RedisBackupSet::RedisBackupSet() :
     m_backupTypeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_lockedHasBeenSet(false)
+    m_lockedHasBeenSet(false),
+    m_backupSizeHasBeenSet(false),
+    m_fullBackupHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false)
 {
 }
 
@@ -95,6 +98,36 @@ CoreInternalOutcome RedisBackupSet::Deserialize(const rapidjson::Value &value)
         m_lockedHasBeenSet = true;
     }
 
+    if (value.HasMember("BackupSize") && !value["BackupSize"].IsNull())
+    {
+        if (!value["BackupSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RedisBackupSet.BackupSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupSize = value["BackupSize"].GetInt64();
+        m_backupSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FullBackup") && !value["FullBackup"].IsNull())
+    {
+        if (!value["FullBackup"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RedisBackupSet.FullBackup` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fullBackup = value["FullBackup"].GetInt64();
+        m_fullBackupHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceType") && !value["InstanceType"].IsNull())
+    {
+        if (!value["InstanceType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RedisBackupSet.InstanceType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceType = value["InstanceType"].GetInt64();
+        m_instanceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +181,30 @@ void RedisBackupSet::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Locked";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_locked, allocator);
+    }
+
+    if (m_backupSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backupSize, allocator);
+    }
+
+    if (m_fullBackupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FullBackup";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fullBackup, allocator);
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_instanceType, allocator);
     }
 
 }
@@ -247,5 +304,53 @@ void RedisBackupSet::SetLocked(const int64_t& _locked)
 bool RedisBackupSet::LockedHasBeenSet() const
 {
     return m_lockedHasBeenSet;
+}
+
+int64_t RedisBackupSet::GetBackupSize() const
+{
+    return m_backupSize;
+}
+
+void RedisBackupSet::SetBackupSize(const int64_t& _backupSize)
+{
+    m_backupSize = _backupSize;
+    m_backupSizeHasBeenSet = true;
+}
+
+bool RedisBackupSet::BackupSizeHasBeenSet() const
+{
+    return m_backupSizeHasBeenSet;
+}
+
+int64_t RedisBackupSet::GetFullBackup() const
+{
+    return m_fullBackup;
+}
+
+void RedisBackupSet::SetFullBackup(const int64_t& _fullBackup)
+{
+    m_fullBackup = _fullBackup;
+    m_fullBackupHasBeenSet = true;
+}
+
+bool RedisBackupSet::FullBackupHasBeenSet() const
+{
+    return m_fullBackupHasBeenSet;
+}
+
+int64_t RedisBackupSet::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void RedisBackupSet::SetInstanceType(const int64_t& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool RedisBackupSet::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
 }
 

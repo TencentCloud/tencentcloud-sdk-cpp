@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取分页大小
-                     * @return Limit 分页大小
+                     * 获取分页大小,默认20，上限不大于100
+                     * @return Limit 分页大小,默认20，上限不大于100
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页大小
-                     * @param Limit 分页大小
+                     * 设置分页大小,默认20，上限不大于100
+                     * @param Limit 分页大小,默认20，上限不大于100
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -219,7 +219,7 @@ namespace TencentCloud
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 分页大小
+                     * 分页大小,默认20，上限不大于100
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

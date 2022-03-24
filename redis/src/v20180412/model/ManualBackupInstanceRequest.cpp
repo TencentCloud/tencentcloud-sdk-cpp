@@ -24,7 +24,8 @@ using namespace std;
 
 ManualBackupInstanceRequest::ManualBackupInstanceRequest() :
     m_instanceIdHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_storageDaysHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string ManualBackupInstanceRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageDays";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_storageDays, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void ManualBackupInstanceRequest::SetRemark(const string& _remark)
 bool ManualBackupInstanceRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+int64_t ManualBackupInstanceRequest::GetStorageDays() const
+{
+    return m_storageDays;
+}
+
+void ManualBackupInstanceRequest::SetStorageDays(const int64_t& _storageDays)
+{
+    m_storageDays = _storageDays;
+    m_storageDaysHasBeenSet = true;
+}
+
+bool ManualBackupInstanceRequest::StorageDaysHasBeenSet() const
+{
+    return m_storageDaysHasBeenSet;
 }
 
 

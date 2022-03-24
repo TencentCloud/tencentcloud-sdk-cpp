@@ -33,7 +33,8 @@ QueryOpenBankPaymentOrderResult::QueryOpenBankPaymentOrderResult() :
     m_failReasonHasBeenSet(false),
     m_attachmentHasBeenSet(false),
     m_redirectInfoHasBeenSet(false),
-    m_externalReturnDataHasBeenSet(false)
+    m_externalReturnDataHasBeenSet(false),
+    m_bankApprovalGuideInfoHasBeenSet(false)
 {
 }
 
@@ -179,6 +180,23 @@ CoreInternalOutcome QueryOpenBankPaymentOrderResult::Deserialize(const rapidjson
         m_externalReturnDataHasBeenSet = true;
     }
 
+    if (value.HasMember("BankApprovalGuideInfo") && !value["BankApprovalGuideInfo"].IsNull())
+    {
+        if (!value["BankApprovalGuideInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `QueryOpenBankPaymentOrderResult.BankApprovalGuideInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_bankApprovalGuideInfo.Deserialize(value["BankApprovalGuideInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_bankApprovalGuideInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -289,6 +307,15 @@ void QueryOpenBankPaymentOrderResult::ToJsonObject(rapidjson::Value &value, rapi
         string key = "ExternalReturnData";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_externalReturnData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bankApprovalGuideInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BankApprovalGuideInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_bankApprovalGuideInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -500,5 +527,21 @@ void QueryOpenBankPaymentOrderResult::SetExternalReturnData(const string& _exter
 bool QueryOpenBankPaymentOrderResult::ExternalReturnDataHasBeenSet() const
 {
     return m_externalReturnDataHasBeenSet;
+}
+
+OpenBankApprovalGuideInfo QueryOpenBankPaymentOrderResult::GetBankApprovalGuideInfo() const
+{
+    return m_bankApprovalGuideInfo;
+}
+
+void QueryOpenBankPaymentOrderResult::SetBankApprovalGuideInfo(const OpenBankApprovalGuideInfo& _bankApprovalGuideInfo)
+{
+    m_bankApprovalGuideInfo = _bankApprovalGuideInfo;
+    m_bankApprovalGuideInfoHasBeenSet = true;
+}
+
+bool QueryOpenBankPaymentOrderResult::BankApprovalGuideInfoHasBeenSet() const
+{
+    return m_bankApprovalGuideInfoHasBeenSet;
 }
 

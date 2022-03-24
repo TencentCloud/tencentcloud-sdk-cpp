@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/redis/v20180412/model/InstanceTagInfo.h>
 
 
 namespace TencentCloud
@@ -43,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例列表的大小，参数默认值20
-                     * @return Limit 实例列表的大小，参数默认值20
+                     * 获取实例列表的大小，参数默认值20，传值则以传参为准，如果传参大于具体配置etc/conf/component.properties中的DescribeInstancesPageLimit配置项 （读不到配置默认配置项为1000），则以配置项为准
+                     * @return Limit 实例列表的大小，参数默认值20，传值则以传参为准，如果传参大于具体配置etc/conf/component.properties中的DescribeInstancesPageLimit配置项 （读不到配置默认配置项为1000），则以配置项为准
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置实例列表的大小，参数默认值20
-                     * @param Limit 实例列表的大小，参数默认值20
+                     * 设置实例列表的大小，参数默认值20，传值则以传参为准，如果传参大于具体配置etc/conf/component.properties中的DescribeInstancesPageLimit配置项 （读不到配置默认配置项为1000），则以配置项为准
+                     * @param Limit 实例列表的大小，参数默认值20，传值则以传参为准，如果传参大于具体配置etc/conf/component.properties中的DescribeInstancesPageLimit配置项 （读不到配置默认配置项为1000），则以配置项为准
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -438,10 +439,46 @@ namespace TencentCloud
                      */
                     bool MonitorVersionHasBeenSet() const;
 
+                    /**
+                     * 获取根据标签的Key和Value筛选资源，不传或者传空数组则不进行过滤
+                     * @return InstanceTags 根据标签的Key和Value筛选资源，不传或者传空数组则不进行过滤
+                     */
+                    std::vector<InstanceTagInfo> GetInstanceTags() const;
+
+                    /**
+                     * 设置根据标签的Key和Value筛选资源，不传或者传空数组则不进行过滤
+                     * @param InstanceTags 根据标签的Key和Value筛选资源，不传或者传空数组则不进行过滤
+                     */
+                    void SetInstanceTags(const std::vector<InstanceTagInfo>& _instanceTags);
+
+                    /**
+                     * 判断参数 InstanceTags 是否已赋值
+                     * @return InstanceTags 是否已赋值
+                     */
+                    bool InstanceTagsHasBeenSet() const;
+
+                    /**
+                     * 获取根据标签的Key筛选资源，不传或者传空数组则不进行过滤
+                     * @return TagKeys 根据标签的Key筛选资源，不传或者传空数组则不进行过滤
+                     */
+                    std::vector<std::string> GetTagKeys() const;
+
+                    /**
+                     * 设置根据标签的Key筛选资源，不传或者传空数组则不进行过滤
+                     * @param TagKeys 根据标签的Key筛选资源，不传或者传空数组则不进行过滤
+                     */
+                    void SetTagKeys(const std::vector<std::string>& _tagKeys);
+
+                    /**
+                     * 判断参数 TagKeys 是否已赋值
+                     * @return TagKeys 是否已赋值
+                     */
+                    bool TagKeysHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例列表的大小，参数默认值20
+                     * 实例列表的大小，参数默认值20，传值则以传参为准，如果传参大于具体配置etc/conf/component.properties中的DescribeInstancesPageLimit配置项 （读不到配置默认配置项为1000），则以配置项为准
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -571,6 +608,18 @@ namespace TencentCloud
                      */
                     std::string m_monitorVersion;
                     bool m_monitorVersionHasBeenSet;
+
+                    /**
+                     * 根据标签的Key和Value筛选资源，不传或者传空数组则不进行过滤
+                     */
+                    std::vector<InstanceTagInfo> m_instanceTags;
+                    bool m_instanceTagsHasBeenSet;
+
+                    /**
+                     * 根据标签的Key筛选资源，不传或者传空数组则不进行过滤
+                     */
+                    std::vector<std::string> m_tagKeys;
+                    bool m_tagKeysHasBeenSet;
 
                 };
             }

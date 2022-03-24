@@ -322,6 +322,7 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/ApplyReconciliationFileResult.h
   include/tencentcloud/cpdp/v20190820/model/QueryOpenBankExternalSubMerchantBankAccountResponse.h
   include/tencentcloud/cpdp/v20190820/model/CreateRedInvoiceV2Request.h
+  include/tencentcloud/cpdp/v20190820/model/OpenBankApprovalGuideInfo.h
   include/tencentcloud/cpdp/v20190820/model/CreateOrderResponse.h
   include/tencentcloud/cpdp/v20190820/model/MultiApplyOrder.h
   include/tencentcloud/cpdp/v20190820/model/ModifyMerchantRequest.h
@@ -790,6 +791,7 @@ set(cpdp_src
   src/v20190820/model/ApplyReconciliationFileResult.cpp
   src/v20190820/model/QueryOpenBankExternalSubMerchantBankAccountResponse.cpp
   src/v20190820/model/CreateRedInvoiceV2Request.cpp
+  src/v20190820/model/OpenBankApprovalGuideInfo.cpp
   src/v20190820/model/CreateOrderResponse.cpp
   src/v20190820/model/MultiApplyOrder.cpp
   src/v20190820/model/ModifyMerchantRequest.cpp

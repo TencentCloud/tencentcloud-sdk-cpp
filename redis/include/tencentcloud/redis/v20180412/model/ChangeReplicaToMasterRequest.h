@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取副本Id
-                     * @return GroupId 副本Id
+                     * 获取副本组Id，多AZ实例必填
+                     * @return GroupId 副本组Id，多AZ实例必填
                      */
                     int64_t GetGroupId() const;
 
                     /**
-                     * 设置副本Id
-                     * @param GroupId 副本Id
+                     * 设置副本组Id，多AZ实例必填
+                     * @param GroupId 副本组Id，多AZ实例必填
                      */
                     void SetGroupId(const int64_t& _groupId);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 副本Id
+                     * 副本组Id，多AZ实例必填
                      */
                     int64_t m_groupId;
                     bool m_groupIdHasBeenSet;

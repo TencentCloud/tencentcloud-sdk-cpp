@@ -727,7 +727,7 @@ namespace TencentCloud
                 DescribeInstanceShardsOutcomeCallable DescribeInstanceShardsCallable(const Model::DescribeInstanceShardsRequest& request);
 
                 /**
-                 *查询Redis节点信息
+                 *查询Redis节点详细信息
                  * @param req DescribeInstanceZoneInfoRequest
                  * @return DescribeInstanceZoneInfoOutcome
                  */
@@ -754,7 +754,7 @@ namespace TencentCloud
                 DescribeMaintenanceWindowOutcomeCallable DescribeMaintenanceWindowCallable(const Model::DescribeMaintenanceWindowRequest& request);
 
                 /**
-                 *查询参数模板详情
+                 *查询参数模板详情。
                  * @param req DescribeParamTemplateInfoRequest
                  * @return DescribeParamTemplateInfoOutcome
                  */
@@ -961,7 +961,7 @@ namespace TencentCloud
                 ModifyAutoBackupConfigOutcomeCallable ModifyAutoBackupConfigCallable(const Model::ModifyAutoBackupConfigRequest& request);
 
                 /**
-                 *修改实例的连接配置，包括带宽和最大连接数
+                 *修改实例的连接配置，包括带宽和最大连接数。
                  * @param req ModifyConnectionConfigRequest
                  * @return ModifyConnectionConfigOutcome
                  */
