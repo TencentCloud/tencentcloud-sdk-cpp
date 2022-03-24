@@ -31,7 +31,8 @@ DescribeListBGPInstancesRequest::DescribeListBGPInstancesRequest() :
     m_filterNameHasBeenSet(false),
     m_filterLineHasBeenSet(false),
     m_filterStatusHasBeenSet(false),
-    m_filterBoundStatusHasBeenSet(false)
+    m_filterBoundStatusHasBeenSet(false),
+    m_filterInstanceIdListHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,19 @@ string DescribeListBGPInstancesRequest::ToJsonString() const
         string key = "FilterBoundStatus";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_filterBoundStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filterInstanceIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterInstanceIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_filterInstanceIdList.begin(); itr != m_filterInstanceIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -264,6 +278,22 @@ void DescribeListBGPInstancesRequest::SetFilterBoundStatus(const string& _filter
 bool DescribeListBGPInstancesRequest::FilterBoundStatusHasBeenSet() const
 {
     return m_filterBoundStatusHasBeenSet;
+}
+
+vector<string> DescribeListBGPInstancesRequest::GetFilterInstanceIdList() const
+{
+    return m_filterInstanceIdList;
+}
+
+void DescribeListBGPInstancesRequest::SetFilterInstanceIdList(const vector<string>& _filterInstanceIdList)
+{
+    m_filterInstanceIdList = _filterInstanceIdList;
+    m_filterInstanceIdListHasBeenSet = true;
+}
+
+bool DescribeListBGPInstancesRequest::FilterInstanceIdListHasBeenSet() const
+{
+    return m_filterInstanceIdListHasBeenSet;
 }
 
 

@@ -119,6 +119,8 @@
 #include <tencentcloud/ocr/v20181119/model/RecognizeTableOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeThaiIDCardOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeThaiIDCardOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeTravelCardOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeTravelCardOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/ResidenceBookletOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/ResidenceBookletOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RideHailingDriverLicenseOCRRequest.h>
@@ -321,6 +323,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RecognizeThaiIDCardOCRResponse> RecognizeThaiIDCardOCROutcome;
                 typedef std::future<RecognizeThaiIDCardOCROutcome> RecognizeThaiIDCardOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeThaiIDCardOCRRequest&, RecognizeThaiIDCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeThaiIDCardOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::RecognizeTravelCardOCRResponse> RecognizeTravelCardOCROutcome;
+                typedef std::future<RecognizeTravelCardOCROutcome> RecognizeTravelCardOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::RecognizeTravelCardOCRRequest&, RecognizeTravelCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeTravelCardOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResidenceBookletOCRResponse> ResidenceBookletOCROutcome;
                 typedef std::future<ResidenceBookletOCROutcome> ResidenceBookletOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::ResidenceBookletOCRRequest&, ResidenceBookletOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResidenceBookletOCRAsyncHandler;
@@ -1086,6 +1091,15 @@ namespace TencentCloud
                 RecognizeThaiIDCardOCROutcome RecognizeThaiIDCardOCR(const Model::RecognizeThaiIDCardOCRRequest &request);
                 void RecognizeThaiIDCardOCRAsync(const Model::RecognizeThaiIDCardOCRRequest& request, const RecognizeThaiIDCardOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RecognizeThaiIDCardOCROutcomeCallable RecognizeThaiIDCardOCRCallable(const Model::RecognizeThaiIDCardOCRRequest& request);
+
+                /**
+                 *本接口支持通信大数据行程卡识别，包括行程卡颜色、更新时间、途经地、存在中高风险地区的城市、电话号码，五个字段的识别结果输出。
+                 * @param req RecognizeTravelCardOCRRequest
+                 * @return RecognizeTravelCardOCROutcome
+                 */
+                RecognizeTravelCardOCROutcome RecognizeTravelCardOCR(const Model::RecognizeTravelCardOCRRequest &request);
+                void RecognizeTravelCardOCRAsync(const Model::RecognizeTravelCardOCRRequest& request, const RecognizeTravelCardOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RecognizeTravelCardOCROutcomeCallable RecognizeTravelCardOCRCallable(const Model::RecognizeTravelCardOCRRequest& request);
 
                 /**
                  *本接口支持居民户口簿户主页及成员页关键字段的识别，包括姓名、户别、地址、籍贯、身份证号码等。

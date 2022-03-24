@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件
-                     * @return Filters 过滤条件
+                     * 获取过滤参数；demo模式传{"Name": "IsDemo", "Values":["1"]}
+                     * @return Filters 过滤参数；demo模式传{"Name": "IsDemo", "Values":["1"]}
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件
-                     * @param Filters 过滤条件
+                     * 设置过滤参数；demo模式传{"Name": "IsDemo", "Values":["1"]}
+                     * @param Filters 过滤参数；demo模式传{"Name": "IsDemo", "Values":["1"]}
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取是否为demo模式（1=是，2=否）
-                     * @return IsDemo 是否为demo模式（1=是，2=否）
+                     * 获取该参数已废弃，demo模式请在Filters内注明
+                     * @return IsDemo 该参数已废弃，demo模式请在Filters内注明
                      */
                     int64_t GetIsDemo() const;
 
                     /**
-                     * 设置是否为demo模式（1=是，2=否）
-                     * @param IsDemo 是否为demo模式（1=是，2=否）
+                     * 设置该参数已废弃，demo模式请在Filters内注明
+                     * @param IsDemo 该参数已废弃，demo模式请在Filters内注明
                      */
                     void SetIsDemo(const int64_t& _isDemo);
 
@@ -130,13 +130,13 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 过滤条件
+                     * 过滤参数；demo模式传{"Name": "IsDemo", "Values":["1"]}
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 是否为demo模式（1=是，2=否）
+                     * 该参数已废弃，demo模式请在Filters内注明
                      */
                     int64_t m_isDemo;
                     bool m_isDemoHasBeenSet;

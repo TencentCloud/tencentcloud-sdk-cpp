@@ -169,6 +169,49 @@ CynosdbClient::AssociateSecurityGroupsOutcomeCallable CynosdbClient::AssociateSe
     return task->get_future();
 }
 
+CynosdbClient::CreateAccountsOutcome CynosdbClient::CreateAccounts(const CreateAccountsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAccounts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAccountsResponse rsp = CreateAccountsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAccountsOutcome(rsp);
+        else
+            return CreateAccountsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAccountsOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::CreateAccountsAsync(const CreateAccountsRequest& request, const CreateAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAccounts(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::CreateAccountsOutcomeCallable CynosdbClient::CreateAccountsCallable(const CreateAccountsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAccountsOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAccounts(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::CreateClustersOutcome CynosdbClient::CreateClusters(const CreateClustersRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateClusters");

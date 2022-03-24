@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取是否为demo模式（1=是，2=否）
-                     * @return IsDemo 是否为demo模式（1=是，2=否）
+                     * 获取该参数已废弃
+                     * @return IsDemo 该参数已废弃
                      */
                     int64_t GetIsDemo() const;
 
                     /**
-                     * 设置是否为demo模式（1=是，2=否）
-                     * @param IsDemo 是否为demo模式（1=是，2=否）
+                     * 设置该参数已废弃
+                     * @param IsDemo 该参数已废弃
                      */
                     void SetIsDemo(const int64_t& _isDemo);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_iDHasBeenSet;
 
                     /**
-                     * 是否为demo模式（1=是，2=否）
+                     * 该参数已废弃
                      */
                     int64_t m_isDemo;
                     bool m_isDemoHasBeenSet;

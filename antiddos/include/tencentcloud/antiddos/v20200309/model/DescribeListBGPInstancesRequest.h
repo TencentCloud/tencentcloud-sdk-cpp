@@ -204,6 +204,24 @@ namespace TencentCloud
                      */
                     bool FilterBoundStatusHasBeenSet() const;
 
+                    /**
+                     * 获取实例id数组
+                     * @return FilterInstanceIdList 实例id数组
+                     */
+                    std::vector<std::string> GetFilterInstanceIdList() const;
+
+                    /**
+                     * 设置实例id数组
+                     * @param FilterInstanceIdList 实例id数组
+                     */
+                    void SetFilterInstanceIdList(const std::vector<std::string>& _filterInstanceIdList);
+
+                    /**
+                     * 判断参数 FilterInstanceIdList 是否已赋值
+                     * @return FilterInstanceIdList 是否已赋值
+                     */
+                    bool FilterInstanceIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +277,12 @@ namespace TencentCloud
                      */
                     std::string m_filterBoundStatus;
                     bool m_filterBoundStatusHasBeenSet;
+
+                    /**
+                     * 实例id数组
+                     */
+                    std::vector<std::string> m_filterInstanceIdList;
+                    bool m_filterInstanceIdListHasBeenSet;
 
                 };
             }

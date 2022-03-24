@@ -295,6 +295,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeSearchTemplatesResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeSecurityDynamicsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeSecurityDynamicsResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeSecurityEventStatRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeSecurityEventStatResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeSecurityEventsCntRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeSecurityEventsCntResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeSecurityTrendsRequest.h>
@@ -871,6 +873,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSecurityDynamicsResponse> DescribeSecurityDynamicsOutcome;
                 typedef std::future<DescribeSecurityDynamicsOutcome> DescribeSecurityDynamicsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeSecurityDynamicsRequest&, DescribeSecurityDynamicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityDynamicsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSecurityEventStatResponse> DescribeSecurityEventStatOutcome;
+                typedef std::future<DescribeSecurityEventStatOutcome> DescribeSecurityEventStatOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeSecurityEventStatRequest&, DescribeSecurityEventStatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityEventStatAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSecurityEventsCntResponse> DescribeSecurityEventsCntOutcome;
                 typedef std::future<DescribeSecurityEventsCntOutcome> DescribeSecurityEventsCntOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeSecurityEventsCntRequest&, DescribeSecurityEventsCntOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityEventsCntAsyncHandler;
@@ -2328,6 +2333,15 @@ namespace TencentCloud
                 DescribeSecurityDynamicsOutcome DescribeSecurityDynamics(const Model::DescribeSecurityDynamicsRequest &request);
                 void DescribeSecurityDynamicsAsync(const Model::DescribeSecurityDynamicsRequest& request, const DescribeSecurityDynamicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSecurityDynamicsOutcomeCallable DescribeSecurityDynamicsCallable(const Model::DescribeSecurityDynamicsRequest& request);
+
+                /**
+                 *获取安全事件统计
+                 * @param req DescribeSecurityEventStatRequest
+                 * @return DescribeSecurityEventStatOutcome
+                 */
+                DescribeSecurityEventStatOutcome DescribeSecurityEventStat(const Model::DescribeSecurityEventStatRequest &request);
+                void DescribeSecurityEventStatAsync(const Model::DescribeSecurityEventStatRequest& request, const DescribeSecurityEventStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSecurityEventStatOutcomeCallable DescribeSecurityEventStatCallable(const Model::DescribeSecurityEventStatRequest& request);
 
                 /**
                  *获取安全概览相关事件统计数据接口

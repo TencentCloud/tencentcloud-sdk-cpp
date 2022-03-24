@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_SCF_V20180416_MODEL_VARIABLE_H_
-#define TENCENTCLOUD_SCF_V20180416_MODEL_VARIABLE_H_
+#ifndef TENCENTCLOUD_CWP_V20180228_MODEL_EVENTSTAT_H_
+#define TENCENTCLOUD_CWP_V20180228_MODEL_EVENTSTAT_H_
 
 #include <string>
 #include <vector>
@@ -28,73 +28,73 @@
 
 namespace TencentCloud
 {
-    namespace Scf
+    namespace Cwp
     {
-        namespace V20180416
+        namespace V20180228
         {
             namespace Model
             {
                 /**
-                * 变量参数
+                * 未处理的安全事件统计信息
                 */
-                class Variable : public AbstractModel
+                class EventStat : public AbstractModel
                 {
                 public:
-                    Variable();
-                    ~Variable() = default;
+                    EventStat();
+                    ~EventStat() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取变量的名称，不可为空字符
-                     * @return Key 变量的名称，不可为空字符
+                     * 获取事件数
+                     * @return EventsNum 事件数
                      */
-                    std::string GetKey() const;
+                    uint64_t GetEventsNum() const;
 
                     /**
-                     * 设置变量的名称，不可为空字符
-                     * @param Key 变量的名称，不可为空字符
+                     * 设置事件数
+                     * @param EventsNum 事件数
                      */
-                    void SetKey(const std::string& _key);
+                    void SetEventsNum(const uint64_t& _eventsNum);
 
                     /**
-                     * 判断参数 Key 是否已赋值
-                     * @return Key 是否已赋值
+                     * 判断参数 EventsNum 是否已赋值
+                     * @return EventsNum 是否已赋值
                      */
-                    bool KeyHasBeenSet() const;
+                    bool EventsNumHasBeenSet() const;
 
                     /**
-                     * 获取变量的值，不可为空字符
-                     * @return Value 变量的值，不可为空字符
+                     * 获取受影响的主机数
+                     * @return MachineAffectNum 受影响的主机数
                      */
-                    std::string GetValue() const;
+                    uint64_t GetMachineAffectNum() const;
 
                     /**
-                     * 设置变量的值，不可为空字符
-                     * @param Value 变量的值，不可为空字符
+                     * 设置受影响的主机数
+                     * @param MachineAffectNum 受影响的主机数
                      */
-                    void SetValue(const std::string& _value);
+                    void SetMachineAffectNum(const uint64_t& _machineAffectNum);
 
                     /**
-                     * 判断参数 Value 是否已赋值
-                     * @return Value 是否已赋值
+                     * 判断参数 MachineAffectNum 是否已赋值
+                     * @return MachineAffectNum 是否已赋值
                      */
-                    bool ValueHasBeenSet() const;
+                    bool MachineAffectNumHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 变量的名称，不可为空字符
+                     * 事件数
                      */
-                    std::string m_key;
-                    bool m_keyHasBeenSet;
+                    uint64_t m_eventsNum;
+                    bool m_eventsNumHasBeenSet;
 
                     /**
-                     * 变量的值，不可为空字符
+                     * 受影响的主机数
                      */
-                    std::string m_value;
-                    bool m_valueHasBeenSet;
+                    uint64_t m_machineAffectNum;
+                    bool m_machineAffectNumHasBeenSet;
 
                 };
             }
@@ -102,4 +102,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_SCF_V20180416_MODEL_VARIABLE_H_
+#endif // !TENCENTCLOUD_CWP_V20180228_MODEL_EVENTSTAT_H_

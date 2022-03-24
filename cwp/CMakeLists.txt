@@ -93,6 +93,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/ExportAttackLogsRequest.h
   include/tencentcloud/cwp/v20180228/model/IgnoreRuleEffectHostInfo.h
   include/tencentcloud/cwp/v20180228/model/DescribeBanModeRequest.h
+  include/tencentcloud/cwp/v20180228/model/DescribeSecurityEventStatRequest.h
   include/tencentcloud/cwp/v20180228/model/DeleteSearchTemplateRequest.h
   include/tencentcloud/cwp/v20180228/model/EmergencyVul.h
   include/tencentcloud/cwp/v20180228/model/ExportReverseShellEventsRequest.h
@@ -375,6 +376,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeVulHostCountScanTimeRequest.h
   include/tencentcloud/cwp/v20180228/model/ExportScanTaskDetailsResponse.h
   include/tencentcloud/cwp/v20180228/model/ExportBashEventsResponse.h
+  include/tencentcloud/cwp/v20180228/model/EventStat.h
   include/tencentcloud/cwp/v20180228/model/DeleteLoginWhiteListRequest.h
   include/tencentcloud/cwp/v20180228/model/DeleteWebPageEventLogResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeVulLevelCountResponse.h
@@ -423,6 +425,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/BaselineBasicInfo.h
   include/tencentcloud/cwp/v20180228/model/DescribeBanModeResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeImportMachineInfoResponse.h
+  include/tencentcloud/cwp/v20180228/model/DescribeSecurityEventStatResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeAssetDatabaseListRequest.h
   include/tencentcloud/cwp/v20180228/model/ModifyWebPageProtectSwitchResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeAssetMachineListRequest.h
@@ -632,6 +635,7 @@ set(cwp_src
   src/v20180228/model/ExportAttackLogsRequest.cpp
   src/v20180228/model/IgnoreRuleEffectHostInfo.cpp
   src/v20180228/model/DescribeBanModeRequest.cpp
+  src/v20180228/model/DescribeSecurityEventStatRequest.cpp
   src/v20180228/model/DeleteSearchTemplateRequest.cpp
   src/v20180228/model/EmergencyVul.cpp
   src/v20180228/model/ExportReverseShellEventsRequest.cpp
@@ -914,6 +918,7 @@ set(cwp_src
   src/v20180228/model/DescribeVulHostCountScanTimeRequest.cpp
   src/v20180228/model/ExportScanTaskDetailsResponse.cpp
   src/v20180228/model/ExportBashEventsResponse.cpp
+  src/v20180228/model/EventStat.cpp
   src/v20180228/model/DeleteLoginWhiteListRequest.cpp
   src/v20180228/model/DeleteWebPageEventLogResponse.cpp
   src/v20180228/model/DescribeVulLevelCountResponse.cpp
@@ -962,6 +967,7 @@ set(cwp_src
   src/v20180228/model/BaselineBasicInfo.cpp
   src/v20180228/model/DescribeBanModeResponse.cpp
   src/v20180228/model/DescribeImportMachineInfoResponse.cpp
+  src/v20180228/model/DescribeSecurityEventStatResponse.cpp
   src/v20180228/model/DescribeAssetDatabaseListRequest.cpp
   src/v20180228/model/ModifyWebPageProtectSwitchResponse.cpp
   src/v20180228/model/DescribeAssetMachineListRequest.cpp

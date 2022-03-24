@@ -25,7 +25,8 @@ BGPInstanceSpecification::BGPInstanceSpecification() :
     m_protectCountLimitHasBeenSet(false),
     m_protectIPNumberLimitHasBeenSet(false),
     m_autoRenewFlagHasBeenSet(false),
-    m_unionPackFlagHasBeenSet(false)
+    m_unionPackFlagHasBeenSet(false),
+    m_serviceBandWidthHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome BGPInstanceSpecification::Deserialize(const rapidjson::Value
         m_unionPackFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("ServiceBandWidth") && !value["ServiceBandWidth"].IsNull())
+    {
+        if (!value["ServiceBandWidth"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BGPInstanceSpecification.ServiceBandWidth` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceBandWidth = value["ServiceBandWidth"].GetUint64();
+        m_serviceBandWidthHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void BGPInstanceSpecification::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "UnionPackFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_unionPackFlag, allocator);
+    }
+
+    if (m_serviceBandWidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceBandWidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_serviceBandWidth, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void BGPInstanceSpecification::SetUnionPackFlag(const uint64_t& _unionPackFlag)
 bool BGPInstanceSpecification::UnionPackFlagHasBeenSet() const
 {
     return m_unionPackFlagHasBeenSet;
+}
+
+uint64_t BGPInstanceSpecification::GetServiceBandWidth() const
+{
+    return m_serviceBandWidth;
+}
+
+void BGPInstanceSpecification::SetServiceBandWidth(const uint64_t& _serviceBandWidth)
+{
+    m_serviceBandWidth = _serviceBandWidth;
+    m_serviceBandWidthHasBeenSet = true;
+}
+
+bool BGPInstanceSpecification::ServiceBandWidthHasBeenSet() const
+{
+    return m_serviceBandWidthHasBeenSet;
 }
 

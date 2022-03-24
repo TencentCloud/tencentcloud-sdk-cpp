@@ -152,6 +152,28 @@ namespace TencentCloud
                      */
                     bool UnionPackFlagHasBeenSet() const;
 
+                    /**
+                     * 获取业务带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServiceBandWidth 业务带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetServiceBandWidth() const;
+
+                    /**
+                     * 设置业务带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ServiceBandWidth 业务带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetServiceBandWidth(const uint64_t& _serviceBandWidth);
+
+                    /**
+                     * 判断参数 ServiceBandWidth 是否已赋值
+                     * @return ServiceBandWidth 是否已赋值
+                     */
+                    bool ServiceBandWidthHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +209,13 @@ namespace TencentCloud
                      */
                     uint64_t m_unionPackFlag;
                     bool m_unionPackFlagHasBeenSet;
+
+                    /**
+                     * 业务带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_serviceBandWidth;
+                    bool m_serviceBandWidthHasBeenSet;
 
                 };
             }

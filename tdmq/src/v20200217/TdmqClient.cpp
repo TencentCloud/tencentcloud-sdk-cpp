@@ -3953,6 +3953,49 @@ TdmqClient::ResetMsgSubOffsetByTimestampOutcomeCallable TdmqClient::ResetMsgSubO
     return task->get_future();
 }
 
+TdmqClient::ResetRocketMQConsumerOffSetOutcome TdmqClient::ResetRocketMQConsumerOffSet(const ResetRocketMQConsumerOffSetRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetRocketMQConsumerOffSet");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetRocketMQConsumerOffSetResponse rsp = ResetRocketMQConsumerOffSetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetRocketMQConsumerOffSetOutcome(rsp);
+        else
+            return ResetRocketMQConsumerOffSetOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetRocketMQConsumerOffSetOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::ResetRocketMQConsumerOffSetAsync(const ResetRocketMQConsumerOffSetRequest& request, const ResetRocketMQConsumerOffSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetRocketMQConsumerOffSet(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::ResetRocketMQConsumerOffSetOutcomeCallable TdmqClient::ResetRocketMQConsumerOffSetCallable(const ResetRocketMQConsumerOffSetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetRocketMQConsumerOffSetOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetRocketMQConsumerOffSet(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::RewindCmqQueueOutcome TdmqClient::RewindCmqQueue(const RewindCmqQueueRequest &request)
 {
     auto outcome = MakeRequest(request, "RewindCmqQueue");

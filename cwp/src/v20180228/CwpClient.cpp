@@ -5888,6 +5888,49 @@ CwpClient::DescribeSecurityDynamicsOutcomeCallable CwpClient::DescribeSecurityDy
     return task->get_future();
 }
 
+CwpClient::DescribeSecurityEventStatOutcome CwpClient::DescribeSecurityEventStat(const DescribeSecurityEventStatRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSecurityEventStat");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSecurityEventStatResponse rsp = DescribeSecurityEventStatResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSecurityEventStatOutcome(rsp);
+        else
+            return DescribeSecurityEventStatOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSecurityEventStatOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeSecurityEventStatAsync(const DescribeSecurityEventStatRequest& request, const DescribeSecurityEventStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSecurityEventStat(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeSecurityEventStatOutcomeCallable CwpClient::DescribeSecurityEventStatCallable(const DescribeSecurityEventStatRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSecurityEventStatOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSecurityEventStat(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DescribeSecurityEventsCntOutcome CwpClient::DescribeSecurityEventsCnt(const DescribeSecurityEventsCntRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSecurityEventsCnt");
