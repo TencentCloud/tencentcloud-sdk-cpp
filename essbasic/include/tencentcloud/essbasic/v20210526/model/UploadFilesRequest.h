@@ -47,20 +47,20 @@ namespace TencentCloud
 
                     /**
                      * 获取文件对应业务类型，用于区分文件存储路径：
-1. TEMPLATE - 模版； 文件类型：.pdf
+1. TEMPLATE - 模板； 文件类型：.pdf
 2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.jpg/.png
                      * @return BusinessType 文件对应业务类型，用于区分文件存储路径：
-1. TEMPLATE - 模版； 文件类型：.pdf
+1. TEMPLATE - 模板； 文件类型：.pdf
 2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.jpg/.png
                      */
                     std::string GetBusinessType() const;
 
                     /**
                      * 设置文件对应业务类型，用于区分文件存储路径：
-1. TEMPLATE - 模版； 文件类型：.pdf
+1. TEMPLATE - 模板； 文件类型：.pdf
 2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.jpg/.png
                      * @param BusinessType 文件对应业务类型，用于区分文件存储路径：
-1. TEMPLATE - 模版； 文件类型：.pdf
+1. TEMPLATE - 模板； 文件类型：.pdf
 2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.jpg/.png
                      */
                     void SetBusinessType(const std::string& _businessType);
@@ -129,7 +129,7 @@ namespace TencentCloud
 
                     /**
                      * 文件对应业务类型，用于区分文件存储路径：
-1. TEMPLATE - 模版； 文件类型：.pdf
+1. TEMPLATE - 模板； 文件类型：.pdf
 2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.jpg/.png
                      */
                     std::string m_businessType;

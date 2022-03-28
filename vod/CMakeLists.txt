@@ -256,6 +256,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/ModifyAdaptiveDynamicStreamingTemplateResponse.h
   include/tencentcloud/vod/v20180717/model/MediaProcessTaskTranscodeResult.h
   include/tencentcloud/vod/v20180717/model/DomainDetailInfo.h
+  include/tencentcloud/vod/v20180717/model/EditMediaVideoStream.h
   include/tencentcloud/vod/v20180717/model/ImageProcessingTemplate.h
   include/tencentcloud/vod/v20180717/model/ImageSpriteTaskInput.h
   include/tencentcloud/vod/v20180717/model/ObjectConfigureInfoForUpdate.h
@@ -583,12 +584,13 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/HighlightSegmentItem.h
   include/tencentcloud/vod/v20180717/model/DeleteWatermarkTemplateResponse.h
   include/tencentcloud/vod/v20180717/model/ComposeMediaOutput.h
+  include/tencentcloud/vod/v20180717/model/ModifyWatermarkTemplateResponse.h
   include/tencentcloud/vod/v20180717/model/PullUploadTask.h
   include/tencentcloud/vod/v20180717/model/ProhibitedConfigureInfoForUpdate.h
   include/tencentcloud/vod/v20180717/model/FrameTagConfigureInfoForUpdate.h
   include/tencentcloud/vod/v20180717/model/CreateImageSpriteTemplateResponse.h
   include/tencentcloud/vod/v20180717/model/DescribeAIRecognitionTemplatesRequest.h
-  include/tencentcloud/vod/v20180717/model/ModifyWatermarkTemplateResponse.h
+  include/tencentcloud/vod/v20180717/model/EditMediaTEHDConfig.h
   include/tencentcloud/vod/v20180717/model/AiRecognitionResult.h
   )
 
@@ -831,6 +833,7 @@ set(vod_src
   src/v20180717/model/ModifyAdaptiveDynamicStreamingTemplateResponse.cpp
   src/v20180717/model/MediaProcessTaskTranscodeResult.cpp
   src/v20180717/model/DomainDetailInfo.cpp
+  src/v20180717/model/EditMediaVideoStream.cpp
   src/v20180717/model/ImageProcessingTemplate.cpp
   src/v20180717/model/ImageSpriteTaskInput.cpp
   src/v20180717/model/ObjectConfigureInfoForUpdate.cpp
@@ -1158,12 +1161,13 @@ set(vod_src
   src/v20180717/model/HighlightSegmentItem.cpp
   src/v20180717/model/DeleteWatermarkTemplateResponse.cpp
   src/v20180717/model/ComposeMediaOutput.cpp
+  src/v20180717/model/ModifyWatermarkTemplateResponse.cpp
   src/v20180717/model/PullUploadTask.cpp
   src/v20180717/model/ProhibitedConfigureInfoForUpdate.cpp
   src/v20180717/model/FrameTagConfigureInfoForUpdate.cpp
   src/v20180717/model/CreateImageSpriteTemplateResponse.cpp
   src/v20180717/model/DescribeAIRecognitionTemplatesRequest.cpp
-  src/v20180717/model/ModifyWatermarkTemplateResponse.cpp
+  src/v20180717/model/EditMediaTEHDConfig.cpp
   src/v20180717/model/AiRecognitionResult.cpp
   )
 

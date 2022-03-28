@@ -48,7 +48,8 @@ CreateLaunchTemplateRequest::CreateLaunchTemplateRequest() :
     m_camRoleNameHasBeenSet(false),
     m_hpcClusterIdHasBeenSet(false),
     m_instanceChargeTypeHasBeenSet(false),
-    m_instanceChargePrepaidHasBeenSet(false)
+    m_instanceChargePrepaidHasBeenSet(false),
+    m_disableApiTerminationHasBeenSet(false)
 {
 }
 
@@ -298,6 +299,14 @@ string CreateLaunchTemplateRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_instanceChargePrepaid.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_disableApiTerminationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableApiTermination";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_disableApiTermination, allocator);
     }
 
 
@@ -722,6 +731,22 @@ void CreateLaunchTemplateRequest::SetInstanceChargePrepaid(const InstanceChargeP
 bool CreateLaunchTemplateRequest::InstanceChargePrepaidHasBeenSet() const
 {
     return m_instanceChargePrepaidHasBeenSet;
+}
+
+bool CreateLaunchTemplateRequest::GetDisableApiTermination() const
+{
+    return m_disableApiTermination;
+}
+
+void CreateLaunchTemplateRequest::SetDisableApiTermination(const bool& _disableApiTermination)
+{
+    m_disableApiTermination = _disableApiTermination;
+    m_disableApiTerminationHasBeenSet = true;
+}
+
+bool CreateLaunchTemplateRequest::DisableApiTerminationHasBeenSet() const
+{
+    return m_disableApiTerminationHasBeenSet;
 }
 
 

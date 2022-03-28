@@ -1503,6 +1503,28 @@ off：不支持
                      */
                     bool RuleEngineHasBeenSet() const;
 
+                    /**
+                     * 获取主域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ParentHost 主域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetParentHost() const;
+
+                    /**
+                     * 设置主域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ParentHost 主域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetParentHost(const std::string& _parentHost);
+
+                    /**
+                     * 判断参数 ParentHost 是否已赋值
+                     * @return ParentHost 是否已赋值
+                     */
+                    bool ParentHostHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1948,6 +1970,13 @@ off：不支持
                      */
                     RuleEngine m_ruleEngine;
                     bool m_ruleEngineHasBeenSet;
+
+                    /**
+                     * 主域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_parentHost;
+                    bool m_parentHostHasBeenSet;
 
                 };
             }

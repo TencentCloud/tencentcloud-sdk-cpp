@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ChannelMerchantIdHasBeenSet() const;
 
                     /**
-                     * 获取外部商户订单号。与ChannelOrderId二者选一。
-                     * @return OutOrderId 外部商户订单号。与ChannelOrderId二者选一。
+                     * 获取外部商户订单号。与ChannelOrderId不能同时为空。
+                     * @return OutOrderId 外部商户订单号。与ChannelOrderId不能同时为空。
                      */
                     std::string GetOutOrderId() const;
 
                     /**
-                     * 设置外部商户订单号。与ChannelOrderId二者选一。
-                     * @param OutOrderId 外部商户订单号。与ChannelOrderId二者选一。
+                     * 设置外部商户订单号。与ChannelOrderId不能同时为空。
+                     * @param OutOrderId 外部商户订单号。与ChannelOrderId不能同时为空。
                      */
                     void SetOutOrderId(const std::string& _outOrderId);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool OutOrderIdHasBeenSet() const;
 
                     /**
-                     * 获取云平台订单号。与OutOrderId二者选一。
-                     * @return ChannelOrderId 云平台订单号。与OutOrderId二者选一。
+                     * 获取云平台订单号。与OutOrderId不能同时为空。
+                     * @return ChannelOrderId 云平台订单号。与OutOrderId不能同时为空。
                      */
                     std::string GetChannelOrderId() const;
 
                     /**
-                     * 设置云平台订单号。与OutOrderId二者选一。
-                     * @param ChannelOrderId 云平台订单号。与OutOrderId二者选一。
+                     * 设置云平台订单号。与OutOrderId不能同时为空。
+                     * @param ChannelOrderId 云平台订单号。与OutOrderId不能同时为空。
                      */
                     void SetChannelOrderId(const std::string& _channelOrderId);
 
@@ -123,13 +123,13 @@ namespace TencentCloud
                     bool m_channelMerchantIdHasBeenSet;
 
                     /**
-                     * 外部商户订单号。与ChannelOrderId二者选一。
+                     * 外部商户订单号。与ChannelOrderId不能同时为空。
                      */
                     std::string m_outOrderId;
                     bool m_outOrderIdHasBeenSet;
 
                     /**
-                     * 云平台订单号。与OutOrderId二者选一。
+                     * 云平台订单号。与OutOrderId不能同时为空。
                      */
                     std::string m_channelOrderId;
                     bool m_channelOrderIdHasBeenSet;

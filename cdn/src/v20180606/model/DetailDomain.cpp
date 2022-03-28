@@ -81,7 +81,8 @@ DetailDomain::DetailDomain() :
     m_webSocketHasBeenSet(false),
     m_remoteAuthenticationHasBeenSet(false),
     m_shareCnameHasBeenSet(false),
-    m_ruleEngineHasBeenSet(false)
+    m_ruleEngineHasBeenSet(false),
+    m_parentHostHasBeenSet(false)
 {
 }
 
@@ -1038,6 +1039,16 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
         m_ruleEngineHasBeenSet = true;
     }
 
+    if (value.HasMember("ParentHost") && !value["ParentHost"].IsNull())
+    {
+        if (!value["ParentHost"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.ParentHost` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_parentHost = string(value["ParentHost"].GetString());
+        m_parentHostHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1595,6 +1606,14 @@ void DetailDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_ruleEngine.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_parentHostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParentHost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parentHost.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2574,5 +2593,21 @@ void DetailDomain::SetRuleEngine(const RuleEngine& _ruleEngine)
 bool DetailDomain::RuleEngineHasBeenSet() const
 {
     return m_ruleEngineHasBeenSet;
+}
+
+string DetailDomain::GetParentHost() const
+{
+    return m_parentHost;
+}
+
+void DetailDomain::SetParentHost(const string& _parentHost)
+{
+    m_parentHost = _parentHost;
+    m_parentHostHasBeenSet = true;
+}
+
+bool DetailDomain::ParentHostHasBeenSet() const
+{
+    return m_parentHostHasBeenSet;
 }
 

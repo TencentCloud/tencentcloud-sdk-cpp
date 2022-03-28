@@ -34,7 +34,8 @@ BriefDomain::BriefDomain() :
     m_disableHasBeenSet(false),
     m_areaHasBeenSet(false),
     m_readonlyHasBeenSet(false),
-    m_productHasBeenSet(false)
+    m_productHasBeenSet(false),
+    m_parentHostHasBeenSet(false)
 {
 }
 
@@ -190,6 +191,16 @@ CoreInternalOutcome BriefDomain::Deserialize(const rapidjson::Value &value)
         m_productHasBeenSet = true;
     }
 
+    if (value.HasMember("ParentHost") && !value["ParentHost"].IsNull())
+    {
+        if (!value["ParentHost"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BriefDomain.ParentHost` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_parentHost = string(value["ParentHost"].GetString());
+        m_parentHostHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -308,6 +319,14 @@ void BriefDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Product";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_product.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_parentHostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParentHost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parentHost.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -535,5 +554,21 @@ void BriefDomain::SetProduct(const string& _product)
 bool BriefDomain::ProductHasBeenSet() const
 {
     return m_productHasBeenSet;
+}
+
+string BriefDomain::GetParentHost() const
+{
+    return m_parentHost;
+}
+
+void BriefDomain::SetParentHost(const string& _parentHost)
+{
+    m_parentHost = _parentHost;
+    m_parentHostHasBeenSet = true;
+}
+
+bool BriefDomain::ParentHostHasBeenSet() const
+{
+    return m_parentHostHasBeenSet;
 }
 
