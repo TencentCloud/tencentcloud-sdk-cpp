@@ -139,6 +139,8 @@
 #include <tencentcloud/cpdp/v20190820/model/DownloadReconciliationUrlResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ExecuteMemberTransactionRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/ExecuteMemberTransactionResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/GetBillDownloadUrlRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/GetBillDownloadUrlResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/MigrateOrderRefundRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/MigrateOrderRefundResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/MigrateOrderRefundQueryRequest.h>
@@ -525,6 +527,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ExecuteMemberTransactionResponse> ExecuteMemberTransactionOutcome;
                 typedef std::future<ExecuteMemberTransactionOutcome> ExecuteMemberTransactionOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::ExecuteMemberTransactionRequest&, ExecuteMemberTransactionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteMemberTransactionAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetBillDownloadUrlResponse> GetBillDownloadUrlOutcome;
+                typedef std::future<GetBillDownloadUrlOutcome> GetBillDownloadUrlOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::GetBillDownloadUrlRequest&, GetBillDownloadUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetBillDownloadUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::MigrateOrderRefundResponse> MigrateOrderRefundOutcome;
                 typedef std::future<MigrateOrderRefundOutcome> MigrateOrderRefundOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::MigrateOrderRefundRequest&, MigrateOrderRefundOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MigrateOrderRefundAsyncHandler;
@@ -1354,6 +1359,16 @@ namespace TencentCloud
                 ExecuteMemberTransactionOutcome ExecuteMemberTransaction(const Model::ExecuteMemberTransactionRequest &request);
                 void ExecuteMemberTransactionAsync(const Model::ExecuteMemberTransactionRequest& request, const ExecuteMemberTransactionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ExecuteMemberTransactionOutcomeCallable ExecuteMemberTransactionCallable(const Model::ExecuteMemberTransactionRequest& request);
+
+                /**
+                 *调用该接口返回对账单下载地址，对账单下载URL通过GET方式访问，返回zip包，解压后为csv格式文件。文件首行如下：
+订单号,订单归属日期,机构编号,订单描述,交易类型,订单状态,支付场景,原始金额,折扣金额,实际交易金额,支付渠道优惠金额,抹零金额,币种,下单时间,付款成功时间,商户编号,门店编号,付款方式编号,付款方式名称,商户手续费T1,商户扣率,是否信用卡交易,原始订单号,用户账号,外部订单号,订单备注
+                 * @param req GetBillDownloadUrlRequest
+                 * @return GetBillDownloadUrlOutcome
+                 */
+                GetBillDownloadUrlOutcome GetBillDownloadUrl(const Model::GetBillDownloadUrlRequest &request);
+                void GetBillDownloadUrlAsync(const Model::GetBillDownloadUrlRequest& request, const GetBillDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetBillDownloadUrlOutcomeCallable GetBillDownloadUrlCallable(const Model::GetBillDownloadUrlRequest& request);
 
                 /**
                  *山姆聚合支付项目-存量订单退款接口。可以通过本接口将支付款全部或部分退还给付款方，在收到用户退款请求并且验证成功之后，按照退款规则将支付款按原路退回到支付帐号。

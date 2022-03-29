@@ -24,6 +24,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/AlarmInfo.h
   include/tencentcloud/cls/v20201016/model/LogInfo.h
   include/tencentcloud/cls/v20201016/model/DeleteAlarmNoticeResponse.h
+  include/tencentcloud/cls/v20201016/model/DescribeLogHistogramRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeLogContextRequest.h
   include/tencentcloud/cls/v20201016/model/DeleteShipperRequest.h
   include/tencentcloud/cls/v20201016/model/ModifyTopicRequest.h
@@ -87,6 +88,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/SplitPartitionRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeMachineGroupConfigsResponse.h
   include/tencentcloud/cls/v20201016/model/MachineGroupInfo.h
+  include/tencentcloud/cls/v20201016/model/DescribeLogHistogramResponse.h
   include/tencentcloud/cls/v20201016/model/RuleTagInfo.h
   include/tencentcloud/cls/v20201016/model/CreateIndexRequest.h
   include/tencentcloud/cls/v20201016/model/DeleteConsumerResponse.h
@@ -168,6 +170,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DescribeConfigExtrasRequest.h
   include/tencentcloud/cls/v20201016/model/CreateAlarmNoticeRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeIndexResponse.h
+  include/tencentcloud/cls/v20201016/model/HistogramInfo.h
   include/tencentcloud/cls/v20201016/model/DescribeMachineGroupConfigsRequest.h
   include/tencentcloud/cls/v20201016/model/ModifyConfigExtraRequest.h
   include/tencentcloud/cls/v20201016/model/ModifyLogsetRequest.h
@@ -189,6 +192,7 @@ set(cls_src
   src/v20201016/model/AlarmInfo.cpp
   src/v20201016/model/LogInfo.cpp
   src/v20201016/model/DeleteAlarmNoticeResponse.cpp
+  src/v20201016/model/DescribeLogHistogramRequest.cpp
   src/v20201016/model/DescribeLogContextRequest.cpp
   src/v20201016/model/DeleteShipperRequest.cpp
   src/v20201016/model/ModifyTopicRequest.cpp
@@ -252,6 +256,7 @@ set(cls_src
   src/v20201016/model/SplitPartitionRequest.cpp
   src/v20201016/model/DescribeMachineGroupConfigsResponse.cpp
   src/v20201016/model/MachineGroupInfo.cpp
+  src/v20201016/model/DescribeLogHistogramResponse.cpp
   src/v20201016/model/RuleTagInfo.cpp
   src/v20201016/model/CreateIndexRequest.cpp
   src/v20201016/model/DeleteConsumerResponse.cpp
@@ -333,6 +338,7 @@ set(cls_src
   src/v20201016/model/DescribeConfigExtrasRequest.cpp
   src/v20201016/model/CreateAlarmNoticeRequest.cpp
   src/v20201016/model/DescribeIndexResponse.cpp
+  src/v20201016/model/HistogramInfo.cpp
   src/v20201016/model/DescribeMachineGroupConfigsRequest.cpp
   src/v20201016/model/ModifyConfigExtraRequest.cpp
   src/v20201016/model/ModifyLogsetRequest.cpp

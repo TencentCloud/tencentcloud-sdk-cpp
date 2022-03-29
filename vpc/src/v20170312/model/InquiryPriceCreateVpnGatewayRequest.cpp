@@ -25,7 +25,9 @@ using namespace std;
 InquiryPriceCreateVpnGatewayRequest::InquiryPriceCreateVpnGatewayRequest() :
     m_internetMaxBandwidthOutHasBeenSet(false),
     m_instanceChargeTypeHasBeenSet(false),
-    m_instanceChargePrepaidHasBeenSet(false)
+    m_instanceChargePrepaidHasBeenSet(false),
+    m_maxConnectionHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -59,6 +61,22 @@ string InquiryPriceCreateVpnGatewayRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_instanceChargePrepaid.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_maxConnectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxConnection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxConnection, allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +133,38 @@ void InquiryPriceCreateVpnGatewayRequest::SetInstanceChargePrepaid(const Instanc
 bool InquiryPriceCreateVpnGatewayRequest::InstanceChargePrepaidHasBeenSet() const
 {
     return m_instanceChargePrepaidHasBeenSet;
+}
+
+uint64_t InquiryPriceCreateVpnGatewayRequest::GetMaxConnection() const
+{
+    return m_maxConnection;
+}
+
+void InquiryPriceCreateVpnGatewayRequest::SetMaxConnection(const uint64_t& _maxConnection)
+{
+    m_maxConnection = _maxConnection;
+    m_maxConnectionHasBeenSet = true;
+}
+
+bool InquiryPriceCreateVpnGatewayRequest::MaxConnectionHasBeenSet() const
+{
+    return m_maxConnectionHasBeenSet;
+}
+
+string InquiryPriceCreateVpnGatewayRequest::GetType() const
+{
+    return m_type;
+}
+
+void InquiryPriceCreateVpnGatewayRequest::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool InquiryPriceCreateVpnGatewayRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 

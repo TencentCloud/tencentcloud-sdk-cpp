@@ -299,14 +299,14 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取购买个数，目前只支持传1（不传默认为1）
-                     * @return Count 购买个数，目前只支持传1（不传默认为1）
+                     * 获取购买集群数，可选值范围[1,50]，默认为1
+                     * @return Count 购买集群数，可选值范围[1,50]，默认为1
                      */
                     int64_t GetCount() const;
 
                     /**
-                     * 设置购买个数，目前只支持传1（不传默认为1）
-                     * @param Count 购买个数，目前只支持传1（不传默认为1）
+                     * 设置购买集群数，可选值范围[1,50]，默认为1
+                     * @param Count 购买集群数，可选值范围[1,50]，默认为1
                      */
                     void SetCount(const int64_t& _count);
 
@@ -916,7 +916,7 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 购买个数，目前只支持传1（不传默认为1）
+                     * 购买集群数，可选值范围[1,50]，默认为1
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;

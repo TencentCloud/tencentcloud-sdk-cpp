@@ -22,7 +22,8 @@ using namespace std;
 
 BoundK8SInfo::BoundK8SInfo() :
     m_boundClusterIdHasBeenSet(false),
-    m_boundClusterTypeHasBeenSet(false)
+    m_boundClusterTypeHasBeenSet(false),
+    m_syncModeHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome BoundK8SInfo::Deserialize(const rapidjson::Value &value)
         m_boundClusterTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("SyncMode") && !value["SyncMode"].IsNull())
+    {
+        if (!value["SyncMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BoundK8SInfo.SyncMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncMode = string(value["SyncMode"].GetString());
+        m_syncModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void BoundK8SInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "BoundClusterType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_boundClusterType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_syncModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_syncMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void BoundK8SInfo::SetBoundClusterType(const string& _boundClusterType)
 bool BoundK8SInfo::BoundClusterTypeHasBeenSet() const
 {
     return m_boundClusterTypeHasBeenSet;
+}
+
+string BoundK8SInfo::GetSyncMode() const
+{
+    return m_syncMode;
+}
+
+void BoundK8SInfo::SetSyncMode(const string& _syncMode)
+{
+    m_syncMode = _syncMode;
+    m_syncModeHasBeenSet = true;
+}
+
+bool BoundK8SInfo::SyncModeHasBeenSet() const
+{
+    return m_syncModeHasBeenSet;
 }
 

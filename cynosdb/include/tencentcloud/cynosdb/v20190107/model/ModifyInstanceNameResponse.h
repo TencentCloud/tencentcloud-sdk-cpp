@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_SES_V20201002_MODEL_CREATEEMAILTEMPLATERESPONSE_H_
-#define TENCENTCLOUD_SES_V20201002_MODEL_CREATEEMAILTEMPLATERESPONSE_H_
+#ifndef TENCENTCLOUD_CYNOSDB_V20190107_MODEL_MODIFYINSTANCENAMERESPONSE_H_
+#define TENCENTCLOUD_CYNOSDB_V20190107_MODEL_MODIFYINSTANCENAMERESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,43 +25,25 @@
 
 namespace TencentCloud
 {
-    namespace Ses
+    namespace Cynosdb
     {
-        namespace V20201002
+        namespace V20190107
         {
             namespace Model
             {
                 /**
-                * CreateEmailTemplate返回参数结构体
+                * ModifyInstanceName返回参数结构体
                 */
-                class CreateEmailTemplateResponse : public AbstractModel
+                class ModifyInstanceNameResponse : public AbstractModel
                 {
                 public:
-                    CreateEmailTemplateResponse();
-                    ~CreateEmailTemplateResponse() = default;
+                    ModifyInstanceNameResponse();
+                    ~ModifyInstanceNameResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
-                    /**
-                     * 获取模板id
-                     * @return TemplateID 模板id
-                     */
-                    uint64_t GetTemplateID() const;
-
-                    /**
-                     * 判断参数 TemplateID 是否已赋值
-                     * @return TemplateID 是否已赋值
-                     */
-                    bool TemplateIDHasBeenSet() const;
-
                 private:
-
-                    /**
-                     * 模板id
-                     */
-                    uint64_t m_templateID;
-                    bool m_templateIDHasBeenSet;
 
                 };
             }
@@ -69,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_SES_V20201002_MODEL_CREATEEMAILTEMPLATERESPONSE_H_
+#endif // !TENCENTCLOUD_CYNOSDB_V20190107_MODEL_MODIFYINSTANCENAMERESPONSE_H_

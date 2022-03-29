@@ -546,6 +546,28 @@ namespace TencentCloud
                      */
                     bool ConfigInfoVisibleHasBeenSet() const;
 
+                    /**
+                     * 获取引擎实例控制台默认密码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConsoleDefaultPwd 引擎实例控制台默认密码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetConsoleDefaultPwd() const;
+
+                    /**
+                     * 设置引擎实例控制台默认密码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ConsoleDefaultPwd 引擎实例控制台默认密码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetConsoleDefaultPwd(const std::string& _consoleDefaultPwd);
+
+                    /**
+                     * 判断参数 ConsoleDefaultPwd 是否已赋值
+                     * @return ConsoleDefaultPwd 是否已赋值
+                     */
+                    bool ConsoleDefaultPwdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -707,6 +729,13 @@ namespace TencentCloud
                      */
                     bool m_configInfoVisible;
                     bool m_configInfoVisibleHasBeenSet;
+
+                    /**
+                     * 引擎实例控制台默认密码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_consoleDefaultPwd;
+                    bool m_consoleDefaultPwdHasBeenSet;
 
                 };
             }

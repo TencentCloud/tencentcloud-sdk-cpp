@@ -158,6 +158,24 @@ Activity：活动来源
                      */
                     bool SubNetIdsHasBeenSet() const;
 
+                    /**
+                     * 获取是否打开云调用
+                     * @return IsOpenCloudInvoke 是否打开云调用
+                     */
+                    bool GetIsOpenCloudInvoke() const;
+
+                    /**
+                     * 设置是否打开云调用
+                     * @param IsOpenCloudInvoke 是否打开云调用
+                     */
+                    void SetIsOpenCloudInvoke(const bool& _isOpenCloudInvoke);
+
+                    /**
+                     * 判断参数 IsOpenCloudInvoke 是否已赋值
+                     * @return IsOpenCloudInvoke 是否已赋值
+                     */
+                    bool IsOpenCloudInvokeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -197,6 +215,12 @@ Activity：活动来源
                      */
                     std::vector<std::string> m_subNetIds;
                     bool m_subNetIdsHasBeenSet;
+
+                    /**
+                     * 是否打开云调用
+                     */
+                    bool m_isOpenCloudInvoke;
+                    bool m_isOpenCloudInvokeHasBeenSet;
 
                 };
             }

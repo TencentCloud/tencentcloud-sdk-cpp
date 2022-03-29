@@ -178,18 +178,21 @@ CoreInternalOutcome NamedComputeEnv::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("Notifications") && !value["Notifications"].IsNull())
     {
-        if (!value["Notifications"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `NamedComputeEnv.Notifications` is not object type").SetRequestId(requestId));
-        }
+        if (!value["Notifications"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `NamedComputeEnv.Notifications` is not array type"));
 
-        CoreInternalOutcome outcome = m_notifications.Deserialize(value["Notifications"]);
-        if (!outcome.IsSuccess())
+        const rapidjson::Value &tmpValue = value["Notifications"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
+            Notification item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_notifications.push_back(item);
         }
-
         m_notificationsHasBeenSet = true;
     }
 
@@ -340,8 +343,14 @@ void NamedComputeEnv::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Notifications";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_notifications.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_notifications.begin(); itr != m_notifications.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_actionIfComputeNodeInactiveHasBeenSet)
@@ -522,12 +531,12 @@ bool NamedComputeEnv::AgentRunningModeHasBeenSet() const
     return m_agentRunningModeHasBeenSet;
 }
 
-Notification NamedComputeEnv::GetNotifications() const
+vector<Notification> NamedComputeEnv::GetNotifications() const
 {
     return m_notifications;
 }
 
-void NamedComputeEnv::SetNotifications(const Notification& _notifications)
+void NamedComputeEnv::SetNotifications(const vector<Notification>& _notifications)
 {
     m_notifications = _notifications;
     m_notificationsHasBeenSet = true;

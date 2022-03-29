@@ -82,6 +82,28 @@ namespace TencentCloud
                      */
                     bool ExecutionTimeHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Enable 是否开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetEnable() const;
+
+                    /**
+                     * 设置是否开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Enable 是否开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnable(const bool& _enable);
+
+                    /**
+                     * 判断参数 Enable 是否已赋值
+                     * @return Enable 是否已赋值
+                     */
+                    bool EnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +117,13 @@ namespace TencentCloud
                      */
                     std::string m_executionTime;
                     bool m_executionTimeHasBeenSet;
+
+                    /**
+                     * 是否开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enable;
+                    bool m_enableHasBeenSet;
 
                 };
             }

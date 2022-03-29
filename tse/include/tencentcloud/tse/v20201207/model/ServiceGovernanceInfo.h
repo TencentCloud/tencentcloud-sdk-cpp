@@ -138,6 +138,24 @@ namespace TencentCloud
                      */
                     bool FeaturesHasBeenSet() const;
 
+                    /**
+                     * 获取主账户名默认为 polaris，该值为主账户的默认密码
+                     * @return MainPassword 主账户名默认为 polaris，该值为主账户的默认密码
+                     */
+                    std::string GetMainPassword() const;
+
+                    /**
+                     * 设置主账户名默认为 polaris，该值为主账户的默认密码
+                     * @param MainPassword 主账户名默认为 polaris，该值为主账户的默认密码
+                     */
+                    void SetMainPassword(const std::string& _mainPassword);
+
+                    /**
+                     * 判断参数 MainPassword 是否已赋值
+                     * @return MainPassword 是否已赋值
+                     */
+                    bool MainPasswordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -169,6 +187,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_features;
                     bool m_featuresHasBeenSet;
+
+                    /**
+                     * 主账户名默认为 polaris，该值为主账户的默认密码
+                     */
+                    std::string m_mainPassword;
+                    bool m_mainPasswordHasBeenSet;
 
                 };
             }

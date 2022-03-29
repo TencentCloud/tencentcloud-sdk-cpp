@@ -28,7 +28,8 @@ CreateWxCloudBaseRunEnvRequest::CreateWxCloudBaseRunEnvRequest() :
     m_freeQuotaHasBeenSet(false),
     m_flagHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_subNetIdsHasBeenSet(false)
+    m_subNetIdsHasBeenSet(false),
+    m_isOpenCloudInvokeHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,14 @@ string CreateWxCloudBaseRunEnvRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_isOpenCloudInvokeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsOpenCloudInvoke";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isOpenCloudInvoke, allocator);
     }
 
 
@@ -194,6 +203,22 @@ void CreateWxCloudBaseRunEnvRequest::SetSubNetIds(const vector<string>& _subNetI
 bool CreateWxCloudBaseRunEnvRequest::SubNetIdsHasBeenSet() const
 {
     return m_subNetIdsHasBeenSet;
+}
+
+bool CreateWxCloudBaseRunEnvRequest::GetIsOpenCloudInvoke() const
+{
+    return m_isOpenCloudInvoke;
+}
+
+void CreateWxCloudBaseRunEnvRequest::SetIsOpenCloudInvoke(const bool& _isOpenCloudInvoke)
+{
+    m_isOpenCloudInvoke = _isOpenCloudInvoke;
+    m_isOpenCloudInvokeHasBeenSet = true;
+}
+
+bool CreateWxCloudBaseRunEnvRequest::IsOpenCloudInvokeHasBeenSet() const
+{
+    return m_isOpenCloudInvokeHasBeenSet;
 }
 
 

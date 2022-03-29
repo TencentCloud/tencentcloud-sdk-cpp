@@ -1459,6 +1459,49 @@ ClsClient::DescribeLogContextOutcomeCallable ClsClient::DescribeLogContextCallab
     return task->get_future();
 }
 
+ClsClient::DescribeLogHistogramOutcome ClsClient::DescribeLogHistogram(const DescribeLogHistogramRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLogHistogram");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLogHistogramResponse rsp = DescribeLogHistogramResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLogHistogramOutcome(rsp);
+        else
+            return DescribeLogHistogramOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLogHistogramOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeLogHistogramAsync(const DescribeLogHistogramRequest& request, const DescribeLogHistogramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLogHistogram(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DescribeLogHistogramOutcomeCallable ClsClient::DescribeLogHistogramCallable(const DescribeLogHistogramRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLogHistogramOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLogHistogram(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::DescribeLogsetsOutcome ClsClient::DescribeLogsets(const DescribeLogsetsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLogsets");

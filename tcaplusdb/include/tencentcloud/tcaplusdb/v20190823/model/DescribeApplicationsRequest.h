@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取分页
-                     * @return Limit 分页
+                     * 获取分页，限制当前返回多少条记录，大于等于10
+                     * @return Limit 分页，限制当前返回多少条记录，大于等于10
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置分页
-                     * @param Limit 分页
+                     * 设置分页，限制当前返回多少条记录，大于等于10
+                     * @param Limit 分页，限制当前返回多少条记录，大于等于10
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页
-                     * @return Offset 分页
+                     * 获取分页，从多少条数据开始返回
+                     * @return Offset 分页，从多少条数据开始返回
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页
-                     * @param Offset 分页
+                     * 设置分页，从多少条数据开始返回
+                     * @param Offset 分页，从多少条数据开始返回
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取申请单状态，用于过滤
-                     * @return CensorStatus 申请单状态，用于过滤
+                     * 获取申请单状态，用于过滤，0-待审核 1-已经审核并提交任务 2-已驳回
+                     * @return CensorStatus 申请单状态，用于过滤，0-待审核 1-已经审核并提交任务 2-已驳回
                      */
                     int64_t GetCensorStatus() const;
 
                     /**
-                     * 设置申请单状态，用于过滤
-                     * @param CensorStatus 申请单状态，用于过滤
+                     * 设置申请单状态，用于过滤，0-待审核 1-已经审核并提交任务 2-已驳回
+                     * @param CensorStatus 申请单状态，用于过滤，0-待审核 1-已经审核并提交任务 2-已驳回
                      */
                     void SetCensorStatus(const int64_t& _censorStatus);
 
@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool ApplicantHasBeenSet() const;
 
                     /**
-                     * 获取申请类型，用于过滤
-                     * @return ApplyType 申请类型，用于过滤
+                     * 获取申请类型，用于过滤，0加表 1删除表 2清理表 3修改表 4表重建 5存储层扩缩容 6接入层扩缩容 7复制表数据 8key回档
+                     * @return ApplyType 申请类型，用于过滤，0加表 1删除表 2清理表 3修改表 4表重建 5存储层扩缩容 6接入层扩缩容 7复制表数据 8key回档
                      */
                     int64_t GetApplyType() const;
 
                     /**
-                     * 设置申请类型，用于过滤
-                     * @param ApplyType 申请类型，用于过滤
+                     * 设置申请类型，用于过滤，0加表 1删除表 2清理表 3修改表 4表重建 5存储层扩缩容 6接入层扩缩容 7复制表数据 8key回档
+                     * @param ApplyType 申请类型，用于过滤，0加表 1删除表 2清理表 3修改表 4表重建 5存储层扩缩容 6接入层扩缩容 7复制表数据 8key回档
                      */
                     void SetApplyType(const int64_t& _applyType);
 
@@ -195,19 +195,19 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 分页
+                     * 分页，限制当前返回多少条记录，大于等于10
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页
+                     * 分页，从多少条数据开始返回
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 申请单状态，用于过滤
+                     * 申请单状态，用于过滤，0-待审核 1-已经审核并提交任务 2-已驳回
                      */
                     int64_t m_censorStatus;
                     bool m_censorStatusHasBeenSet;
@@ -231,7 +231,7 @@ namespace TencentCloud
                     bool m_applicantHasBeenSet;
 
                     /**
-                     * 申请类型，用于过滤
+                     * 申请类型，用于过滤，0加表 1删除表 2清理表 3修改表 4表重建 5存储层扩缩容 6接入层扩缩容 7复制表数据 8key回档
                      */
                     int64_t m_applyType;
                     bool m_applyTypeHasBeenSet;

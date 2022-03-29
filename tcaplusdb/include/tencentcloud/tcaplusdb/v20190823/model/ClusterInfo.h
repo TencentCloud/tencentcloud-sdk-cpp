@@ -565,6 +565,72 @@ namespace TencentCloud
                      */
                     bool KafkaInfoHasBeenSet() const;
 
+                    /**
+                     * 获取集群Txh备份文件多少天后过期删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TxhBackupExpireDay 集群Txh备份文件多少天后过期删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetTxhBackupExpireDay() const;
+
+                    /**
+                     * 设置集群Txh备份文件多少天后过期删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TxhBackupExpireDay 集群Txh备份文件多少天后过期删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTxhBackupExpireDay(const uint64_t& _txhBackupExpireDay);
+
+                    /**
+                     * 判断参数 TxhBackupExpireDay 是否已赋值
+                     * @return TxhBackupExpireDay 是否已赋值
+                     */
+                    bool TxhBackupExpireDayHasBeenSet() const;
+
+                    /**
+                     * 获取集群Ulog备份文件多少天后过期删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UlogBackupExpireDay 集群Ulog备份文件多少天后过期删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetUlogBackupExpireDay() const;
+
+                    /**
+                     * 设置集群Ulog备份文件多少天后过期删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UlogBackupExpireDay 集群Ulog备份文件多少天后过期删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUlogBackupExpireDay(const uint64_t& _ulogBackupExpireDay);
+
+                    /**
+                     * 判断参数 UlogBackupExpireDay 是否已赋值
+                     * @return UlogBackupExpireDay 是否已赋值
+                     */
+                    bool UlogBackupExpireDayHasBeenSet() const;
+
+                    /**
+                     * 获取集群Ulog备份文件过期策略是否为只读， 0： UlogBackupExpire是只读，不可修改， 1： UlogBackupExpire可以修改（当前业务存在Svrid第二段等于clusterid的机器）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsReadOnlyUlogBackupExpireDay 集群Ulog备份文件过期策略是否为只读， 0： UlogBackupExpire是只读，不可修改， 1： UlogBackupExpire可以修改（当前业务存在Svrid第二段等于clusterid的机器）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetIsReadOnlyUlogBackupExpireDay() const;
+
+                    /**
+                     * 设置集群Ulog备份文件过期策略是否为只读， 0： UlogBackupExpire是只读，不可修改， 1： UlogBackupExpire可以修改（当前业务存在Svrid第二段等于clusterid的机器）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsReadOnlyUlogBackupExpireDay 集群Ulog备份文件过期策略是否为只读， 0： UlogBackupExpire是只读，不可修改， 1： UlogBackupExpire可以修改（当前业务存在Svrid第二段等于clusterid的机器）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsReadOnlyUlogBackupExpireDay(const uint64_t& _isReadOnlyUlogBackupExpireDay);
+
+                    /**
+                     * 判断参数 IsReadOnlyUlogBackupExpireDay 是否已赋值
+                     * @return IsReadOnlyUlogBackupExpireDay 是否已赋值
+                     */
+                    bool IsReadOnlyUlogBackupExpireDayHasBeenSet() const;
+
                 private:
 
                     /**
@@ -734,6 +800,27 @@ namespace TencentCloud
                      */
                     KafkaInfo m_kafkaInfo;
                     bool m_kafkaInfoHasBeenSet;
+
+                    /**
+                     * 集群Txh备份文件多少天后过期删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_txhBackupExpireDay;
+                    bool m_txhBackupExpireDayHasBeenSet;
+
+                    /**
+                     * 集群Ulog备份文件多少天后过期删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_ulogBackupExpireDay;
+                    bool m_ulogBackupExpireDayHasBeenSet;
+
+                    /**
+                     * 集群Ulog备份文件过期策略是否为只读， 0： UlogBackupExpire是只读，不可修改， 1： UlogBackupExpire可以修改（当前业务存在Svrid第二段等于clusterid的机器）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_isReadOnlyUlogBackupExpireDay;
+                    bool m_isReadOnlyUlogBackupExpireDayHasBeenSet;
 
                 };
             }

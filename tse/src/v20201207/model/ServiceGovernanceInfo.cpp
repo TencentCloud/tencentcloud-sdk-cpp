@@ -25,7 +25,8 @@ ServiceGovernanceInfo::ServiceGovernanceInfo() :
     m_boundK8SInfosHasBeenSet(false),
     m_vpcInfosHasBeenSet(false),
     m_authOpenHasBeenSet(false),
-    m_featuresHasBeenSet(false)
+    m_featuresHasBeenSet(false),
+    m_mainPasswordHasBeenSet(false)
 {
 }
 
@@ -107,6 +108,16 @@ CoreInternalOutcome ServiceGovernanceInfo::Deserialize(const rapidjson::Value &v
         m_featuresHasBeenSet = true;
     }
 
+    if (value.HasMember("MainPassword") && !value["MainPassword"].IsNull())
+    {
+        if (!value["MainPassword"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceGovernanceInfo.MainPassword` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mainPassword = string(value["MainPassword"].GetString());
+        m_mainPasswordHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -171,6 +182,14 @@ void ServiceGovernanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_mainPasswordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MainPassword";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mainPassword.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -254,5 +273,21 @@ void ServiceGovernanceInfo::SetFeatures(const vector<string>& _features)
 bool ServiceGovernanceInfo::FeaturesHasBeenSet() const
 {
     return m_featuresHasBeenSet;
+}
+
+string ServiceGovernanceInfo::GetMainPassword() const
+{
+    return m_mainPassword;
+}
+
+void ServiceGovernanceInfo::SetMainPassword(const string& _mainPassword)
+{
+    m_mainPassword = _mainPassword;
+    m_mainPasswordHasBeenSet = true;
+}
+
+bool ServiceGovernanceInfo::MainPasswordHasBeenSet() const
+{
+    return m_mainPasswordHasBeenSet;
 }
 

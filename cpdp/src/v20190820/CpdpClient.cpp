@@ -2534,6 +2534,49 @@ CpdpClient::ExecuteMemberTransactionOutcomeCallable CpdpClient::ExecuteMemberTra
     return task->get_future();
 }
 
+CpdpClient::GetBillDownloadUrlOutcome CpdpClient::GetBillDownloadUrl(const GetBillDownloadUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetBillDownloadUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetBillDownloadUrlResponse rsp = GetBillDownloadUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetBillDownloadUrlOutcome(rsp);
+        else
+            return GetBillDownloadUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return GetBillDownloadUrlOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::GetBillDownloadUrlAsync(const GetBillDownloadUrlRequest& request, const GetBillDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetBillDownloadUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::GetBillDownloadUrlOutcomeCallable CpdpClient::GetBillDownloadUrlCallable(const GetBillDownloadUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetBillDownloadUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->GetBillDownloadUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::MigrateOrderRefundOutcome CpdpClient::MigrateOrderRefund(const MigrateOrderRefundRequest &request)
 {
     auto outcome = MakeRequest(request, "MigrateOrderRefund");

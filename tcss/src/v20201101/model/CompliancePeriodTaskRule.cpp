@@ -22,7 +22,8 @@ using namespace std;
 
 CompliancePeriodTaskRule::CompliancePeriodTaskRule() :
     m_frequencyHasBeenSet(false),
-    m_executionTimeHasBeenSet(false)
+    m_executionTimeHasBeenSet(false),
+    m_enableHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome CompliancePeriodTaskRule::Deserialize(const rapidjson::Value
         m_executionTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Enable") && !value["Enable"].IsNull())
+    {
+        if (!value["Enable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompliancePeriodTaskRule.Enable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enable = value["Enable"].GetBool();
+        m_enableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void CompliancePeriodTaskRule::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "ExecutionTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_executionTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Enable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enable, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void CompliancePeriodTaskRule::SetExecutionTime(const string& _executionTime)
 bool CompliancePeriodTaskRule::ExecutionTimeHasBeenSet() const
 {
     return m_executionTimeHasBeenSet;
+}
+
+bool CompliancePeriodTaskRule::GetEnable() const
+{
+    return m_enable;
+}
+
+void CompliancePeriodTaskRule::SetEnable(const bool& _enable)
+{
+    m_enable = _enable;
+    m_enableHasBeenSet = true;
+}
+
+bool CompliancePeriodTaskRule::EnableHasBeenSet() const
+{
+    return m_enableHasBeenSet;
 }
 

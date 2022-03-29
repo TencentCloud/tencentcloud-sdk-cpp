@@ -134,6 +134,24 @@ namespace TencentCloud
                      */
                     bool JumpUrlHasBeenSet() const;
 
+                    /**
+                     * 获取"APP" 类型的签署链接，可以设置此值；表示签署完成后自动回跳至源APP；
+                     * @return AutoJumpBack "APP" 类型的签署链接，可以设置此值；表示签署完成后自动回跳至源APP；
+                     */
+                    bool GetAutoJumpBack() const;
+
+                    /**
+                     * 设置"APP" 类型的签署链接，可以设置此值；表示签署完成后自动回跳至源APP；
+                     * @param AutoJumpBack "APP" 类型的签署链接，可以设置此值；表示签署完成后自动回跳至源APP；
+                     */
+                    void SetAutoJumpBack(const bool& _autoJumpBack);
+
+                    /**
+                     * 判断参数 AutoJumpBack 是否已赋值
+                     * @return AutoJumpBack 是否已赋值
+                     */
+                    bool AutoJumpBackHasBeenSet() const;
+
                 private:
 
                     /**
@@ -165,6 +183,12 @@ namespace TencentCloud
                      */
                     std::string m_jumpUrl;
                     bool m_jumpUrlHasBeenSet;
+
+                    /**
+                     * "APP" 类型的签署链接，可以设置此值；表示签署完成后自动回跳至源APP；
+                     */
+                    bool m_autoJumpBack;
+                    bool m_autoJumpBackHasBeenSet;
 
                 };
             }

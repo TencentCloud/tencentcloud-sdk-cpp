@@ -27,7 +27,8 @@ CreateSignUrlsRequest::CreateSignUrlsRequest() :
     m_flowIdsHasBeenSet(false),
     m_operatorHasBeenSet(false),
     m_endpointHasBeenSet(false),
-    m_jumpUrlHasBeenSet(false)
+    m_jumpUrlHasBeenSet(false),
+    m_autoJumpBackHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,14 @@ string CreateSignUrlsRequest::ToJsonString() const
         string key = "JumpUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_jumpUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoJumpBackHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoJumpBack";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoJumpBack, allocator);
     }
 
 
@@ -171,6 +180,22 @@ void CreateSignUrlsRequest::SetJumpUrl(const string& _jumpUrl)
 bool CreateSignUrlsRequest::JumpUrlHasBeenSet() const
 {
     return m_jumpUrlHasBeenSet;
+}
+
+bool CreateSignUrlsRequest::GetAutoJumpBack() const
+{
+    return m_autoJumpBack;
+}
+
+void CreateSignUrlsRequest::SetAutoJumpBack(const bool& _autoJumpBack)
+{
+    m_autoJumpBack = _autoJumpBack;
+    m_autoJumpBackHasBeenSet = true;
+}
+
+bool CreateSignUrlsRequest::AutoJumpBackHasBeenSet() const
+{
+    return m_autoJumpBackHasBeenSet;
 }
 
 

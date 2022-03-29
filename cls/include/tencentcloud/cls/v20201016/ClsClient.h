@@ -89,6 +89,8 @@
 #include <tencentcloud/cls/v20201016/model/DescribeIndexResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeLogContextRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeLogContextResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeLogHistogramRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeLogHistogramResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeLogsetsRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeLogsetsResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeMachineGroupConfigsRequest.h>
@@ -250,6 +252,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLogContextResponse> DescribeLogContextOutcome;
                 typedef std::future<DescribeLogContextOutcome> DescribeLogContextOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeLogContextRequest&, DescribeLogContextOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogContextAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLogHistogramResponse> DescribeLogHistogramOutcome;
+                typedef std::future<DescribeLogHistogramOutcome> DescribeLogHistogramOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeLogHistogramRequest&, DescribeLogHistogramOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogHistogramAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLogsetsResponse> DescribeLogsetsOutcome;
                 typedef std::future<DescribeLogsetsOutcome> DescribeLogsetsOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeLogsetsRequest&, DescribeLogsetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogsetsAsyncHandler;
@@ -621,6 +626,15 @@ namespace TencentCloud
                 DescribeLogContextOutcome DescribeLogContext(const Model::DescribeLogContextRequest &request);
                 void DescribeLogContextAsync(const Model::DescribeLogContextRequest& request, const DescribeLogContextAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLogContextOutcomeCallable DescribeLogContextCallable(const Model::DescribeLogContextRequest& request);
+
+                /**
+                 *本接口用于构建直方图
+                 * @param req DescribeLogHistogramRequest
+                 * @return DescribeLogHistogramOutcome
+                 */
+                DescribeLogHistogramOutcome DescribeLogHistogram(const Model::DescribeLogHistogramRequest &request);
+                void DescribeLogHistogramAsync(const Model::DescribeLogHistogramRequest& request, const DescribeLogHistogramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLogHistogramOutcomeCallable DescribeLogHistogramCallable(const Model::DescribeLogHistogramRequest& request);
 
                 /**
                  *本接口用于获取日志集信息列表。

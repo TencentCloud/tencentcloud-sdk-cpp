@@ -44,7 +44,8 @@ SREInstance::SREInstance() :
     m_tagsHasBeenSet(false),
     m_enableConsoleInternetHasBeenSet(false),
     m_enableConsoleIntranetHasBeenSet(false),
-    m_configInfoVisibleHasBeenSet(false)
+    m_configInfoVisibleHasBeenSet(false),
+    m_consoleDefaultPwdHasBeenSet(false)
 {
 }
 
@@ -336,6 +337,16 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
         m_configInfoVisibleHasBeenSet = true;
     }
 
+    if (value.HasMember("ConsoleDefaultPwd") && !value["ConsoleDefaultPwd"].IsNull())
+    {
+        if (!value["ConsoleDefaultPwd"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SREInstance.ConsoleDefaultPwd` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_consoleDefaultPwd = string(value["ConsoleDefaultPwd"].GetString());
+        m_consoleDefaultPwdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -566,6 +577,14 @@ void SREInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ConfigInfoVisible";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_configInfoVisible, allocator);
+    }
+
+    if (m_consoleDefaultPwdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsoleDefaultPwd";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_consoleDefaultPwd.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -953,5 +972,21 @@ void SREInstance::SetConfigInfoVisible(const bool& _configInfoVisible)
 bool SREInstance::ConfigInfoVisibleHasBeenSet() const
 {
     return m_configInfoVisibleHasBeenSet;
+}
+
+string SREInstance::GetConsoleDefaultPwd() const
+{
+    return m_consoleDefaultPwd;
+}
+
+void SREInstance::SetConsoleDefaultPwd(const string& _consoleDefaultPwd)
+{
+    m_consoleDefaultPwd = _consoleDefaultPwd;
+    m_consoleDefaultPwdHasBeenSet = true;
+}
+
+bool SREInstance::ConsoleDefaultPwdHasBeenSet() const
+{
+    return m_consoleDefaultPwdHasBeenSet;
 }
 

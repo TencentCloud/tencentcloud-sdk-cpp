@@ -1244,6 +1244,49 @@ CynosdbClient::ModifyBackupConfigOutcomeCallable CynosdbClient::ModifyBackupConf
     return task->get_future();
 }
 
+CynosdbClient::ModifyClusterNameOutcome CynosdbClient::ModifyClusterName(const ModifyClusterNameRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClusterName");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterNameResponse rsp = ModifyClusterNameResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterNameOutcome(rsp);
+        else
+            return ModifyClusterNameOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterNameOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ModifyClusterNameAsync(const ModifyClusterNameRequest& request, const ModifyClusterNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyClusterName(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::ModifyClusterNameOutcomeCallable CynosdbClient::ModifyClusterNameCallable(const ModifyClusterNameRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyClusterNameOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyClusterName(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::ModifyClusterParamOutcome CynosdbClient::ModifyClusterParam(const ModifyClusterParamRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyClusterParam");
@@ -1323,6 +1366,49 @@ CynosdbClient::ModifyDBInstanceSecurityGroupsOutcomeCallable CynosdbClient::Modi
         [this, request]()
         {
             return this->ModifyDBInstanceSecurityGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::ModifyInstanceNameOutcome CynosdbClient::ModifyInstanceName(const ModifyInstanceNameRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceName");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceNameResponse rsp = ModifyInstanceNameResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceNameOutcome(rsp);
+        else
+            return ModifyInstanceNameOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceNameOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ModifyInstanceNameAsync(const ModifyInstanceNameRequest& request, const ModifyInstanceNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstanceName(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::ModifyInstanceNameOutcomeCallable CynosdbClient::ModifyInstanceNameCallable(const ModifyInstanceNameRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceNameOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstanceName(request);
         }
     );
 

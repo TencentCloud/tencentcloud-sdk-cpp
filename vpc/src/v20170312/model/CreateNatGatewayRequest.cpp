@@ -33,7 +33,8 @@ CreateNatGatewayRequest::CreateNatGatewayRequest() :
     m_tagsHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_stockPublicIpAddressesBandwidthOutHasBeenSet(false),
-    m_publicIpAddressesBandwidthOutHasBeenSet(false)
+    m_publicIpAddressesBandwidthOutHasBeenSet(false),
+    m_publicIpFromSameZoneHasBeenSet(false)
 {
 }
 
@@ -142,6 +143,14 @@ string CreateNatGatewayRequest::ToJsonString() const
         string key = "PublicIpAddressesBandwidthOut";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_publicIpAddressesBandwidthOut, allocator);
+    }
+
+    if (m_publicIpFromSameZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicIpFromSameZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_publicIpFromSameZone, allocator);
     }
 
 
@@ -326,6 +335,22 @@ void CreateNatGatewayRequest::SetPublicIpAddressesBandwidthOut(const uint64_t& _
 bool CreateNatGatewayRequest::PublicIpAddressesBandwidthOutHasBeenSet() const
 {
     return m_publicIpAddressesBandwidthOutHasBeenSet;
+}
+
+bool CreateNatGatewayRequest::GetPublicIpFromSameZone() const
+{
+    return m_publicIpFromSameZone;
+}
+
+void CreateNatGatewayRequest::SetPublicIpFromSameZone(const bool& _publicIpFromSameZone)
+{
+    m_publicIpFromSameZone = _publicIpFromSameZone;
+    m_publicIpFromSameZoneHasBeenSet = true;
+}
+
+bool CreateNatGatewayRequest::PublicIpFromSameZoneHasBeenSet() const
+{
+    return m_publicIpFromSameZoneHasBeenSet;
 }
 
 

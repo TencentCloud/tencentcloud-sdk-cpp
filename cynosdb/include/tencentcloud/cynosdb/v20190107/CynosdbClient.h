@@ -79,10 +79,14 @@
 #include <tencentcloud/cynosdb/v20190107/model/ModifyAccountParamsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyBackupConfigRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyBackupConfigResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyClusterNameRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyClusterNameResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyClusterParamRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyClusterParamResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyDBInstanceSecurityGroupsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyDBInstanceSecurityGroupsResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyInstanceNameRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyInstanceNameResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyMaintainPeriodConfigRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyMaintainPeriodConfigResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/OfflineClusterRequest.h>
@@ -199,12 +203,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyBackupConfigResponse> ModifyBackupConfigOutcome;
                 typedef std::future<ModifyBackupConfigOutcome> ModifyBackupConfigOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyBackupConfigRequest&, ModifyBackupConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyClusterNameResponse> ModifyClusterNameOutcome;
+                typedef std::future<ModifyClusterNameOutcome> ModifyClusterNameOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ModifyClusterNameRequest&, ModifyClusterNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterNameAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyClusterParamResponse> ModifyClusterParamOutcome;
                 typedef std::future<ModifyClusterParamOutcome> ModifyClusterParamOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyClusterParamRequest&, ModifyClusterParamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterParamAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceSecurityGroupsResponse> ModifyDBInstanceSecurityGroupsOutcome;
                 typedef std::future<ModifyDBInstanceSecurityGroupsOutcome> ModifyDBInstanceSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyDBInstanceSecurityGroupsRequest&, ModifyDBInstanceSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceSecurityGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceNameResponse> ModifyInstanceNameOutcome;
+                typedef std::future<ModifyInstanceNameOutcome> ModifyInstanceNameOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ModifyInstanceNameRequest&, ModifyInstanceNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceNameAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyMaintainPeriodConfigResponse> ModifyMaintainPeriodConfigOutcome;
                 typedef std::future<ModifyMaintainPeriodConfigOutcome> ModifyMaintainPeriodConfigOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyMaintainPeriodConfigRequest&, ModifyMaintainPeriodConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMaintainPeriodConfigAsyncHandler;
@@ -488,6 +498,15 @@ namespace TencentCloud
                 ModifyBackupConfigOutcomeCallable ModifyBackupConfigCallable(const Model::ModifyBackupConfigRequest& request);
 
                 /**
+                 *修改集群名称
+                 * @param req ModifyClusterNameRequest
+                 * @return ModifyClusterNameOutcome
+                 */
+                ModifyClusterNameOutcome ModifyClusterName(const Model::ModifyClusterNameRequest &request);
+                void ModifyClusterNameAsync(const Model::ModifyClusterNameRequest& request, const ModifyClusterNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyClusterNameOutcomeCallable ModifyClusterNameCallable(const Model::ModifyClusterNameRequest& request);
+
+                /**
                  *修改集群参数
                  * @param req ModifyClusterParamRequest
                  * @return ModifyClusterParamOutcome
@@ -504,6 +523,15 @@ namespace TencentCloud
                 ModifyDBInstanceSecurityGroupsOutcome ModifyDBInstanceSecurityGroups(const Model::ModifyDBInstanceSecurityGroupsRequest &request);
                 void ModifyDBInstanceSecurityGroupsAsync(const Model::ModifyDBInstanceSecurityGroupsRequest& request, const ModifyDBInstanceSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDBInstanceSecurityGroupsOutcomeCallable ModifyDBInstanceSecurityGroupsCallable(const Model::ModifyDBInstanceSecurityGroupsRequest& request);
+
+                /**
+                 *本接口(ModifyInstanceName)用于修改实例名称。
+                 * @param req ModifyInstanceNameRequest
+                 * @return ModifyInstanceNameOutcome
+                 */
+                ModifyInstanceNameOutcome ModifyInstanceName(const Model::ModifyInstanceNameRequest &request);
+                void ModifyInstanceNameAsync(const Model::ModifyInstanceNameRequest& request, const ModifyInstanceNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceNameOutcomeCallable ModifyInstanceNameCallable(const Model::ModifyInstanceNameRequest& request);
 
                 /**
                  *修改维护时间配置

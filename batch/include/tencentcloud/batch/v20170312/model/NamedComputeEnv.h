@@ -219,13 +219,13 @@ namespace TencentCloud
                      * 获取通知信息
                      * @return Notifications 通知信息
                      */
-                    Notification GetNotifications() const;
+                    std::vector<Notification> GetNotifications() const;
 
                     /**
                      * 设置通知信息
                      * @param Notifications 通知信息
                      */
-                    void SetNotifications(const Notification& _notifications);
+                    void SetNotifications(const std::vector<Notification>& _notifications);
 
                     /**
                      * 判断参数 Notifications 是否已赋值
@@ -346,7 +346,7 @@ namespace TencentCloud
                     /**
                      * 通知信息
                      */
-                    Notification m_notifications;
+                    std::vector<Notification> m_notifications;
                     bool m_notificationsHasBeenSet;
 
                     /**

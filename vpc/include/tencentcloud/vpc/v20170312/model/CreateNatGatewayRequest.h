@@ -241,6 +241,24 @@ namespace TencentCloud
                      */
                     bool PublicIpAddressesBandwidthOutHasBeenSet() const;
 
+                    /**
+                     * 获取公网IP是否强制与NAT网关来自同可用区，true表示需要与NAT网关同可用区；false表示可与NAT网关不是同一个可用区。此参数只有当参数Zone存在时才能生效。
+                     * @return PublicIpFromSameZone 公网IP是否强制与NAT网关来自同可用区，true表示需要与NAT网关同可用区；false表示可与NAT网关不是同一个可用区。此参数只有当参数Zone存在时才能生效。
+                     */
+                    bool GetPublicIpFromSameZone() const;
+
+                    /**
+                     * 设置公网IP是否强制与NAT网关来自同可用区，true表示需要与NAT网关同可用区；false表示可与NAT网关不是同一个可用区。此参数只有当参数Zone存在时才能生效。
+                     * @param PublicIpFromSameZone 公网IP是否强制与NAT网关来自同可用区，true表示需要与NAT网关同可用区；false表示可与NAT网关不是同一个可用区。此参数只有当参数Zone存在时才能生效。
+                     */
+                    void SetPublicIpFromSameZone(const bool& _publicIpFromSameZone);
+
+                    /**
+                     * 判断参数 PublicIpFromSameZone 是否已赋值
+                     * @return PublicIpFromSameZone 是否已赋值
+                     */
+                    bool PublicIpFromSameZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -308,6 +326,12 @@ namespace TencentCloud
                      */
                     uint64_t m_publicIpAddressesBandwidthOut;
                     bool m_publicIpAddressesBandwidthOutHasBeenSet;
+
+                    /**
+                     * 公网IP是否强制与NAT网关来自同可用区，true表示需要与NAT网关同可用区；false表示可与NAT网关不是同一个可用区。此参数只有当参数Zone存在时才能生效。
+                     */
+                    bool m_publicIpFromSameZone;
+                    bool m_publicIpFromSameZoneHasBeenSet;
 
                 };
             }

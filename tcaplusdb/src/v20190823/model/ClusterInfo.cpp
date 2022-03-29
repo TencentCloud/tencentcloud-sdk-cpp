@@ -46,7 +46,10 @@ ClusterInfo::ClusterInfo() :
     m_censorshipHasBeenSet(false),
     m_dbaUinsHasBeenSet(false),
     m_dataFlowStatusHasBeenSet(false),
-    m_kafkaInfoHasBeenSet(false)
+    m_kafkaInfoHasBeenSet(false),
+    m_txhBackupExpireDayHasBeenSet(false),
+    m_ulogBackupExpireDayHasBeenSet(false),
+    m_isReadOnlyUlogBackupExpireDayHasBeenSet(false)
 {
 }
 
@@ -345,6 +348,36 @@ CoreInternalOutcome ClusterInfo::Deserialize(const rapidjson::Value &value)
         m_kafkaInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("TxhBackupExpireDay") && !value["TxhBackupExpireDay"].IsNull())
+    {
+        if (!value["TxhBackupExpireDay"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInfo.TxhBackupExpireDay` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_txhBackupExpireDay = value["TxhBackupExpireDay"].GetUint64();
+        m_txhBackupExpireDayHasBeenSet = true;
+    }
+
+    if (value.HasMember("UlogBackupExpireDay") && !value["UlogBackupExpireDay"].IsNull())
+    {
+        if (!value["UlogBackupExpireDay"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInfo.UlogBackupExpireDay` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ulogBackupExpireDay = value["UlogBackupExpireDay"].GetUint64();
+        m_ulogBackupExpireDayHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsReadOnlyUlogBackupExpireDay") && !value["IsReadOnlyUlogBackupExpireDay"].IsNull())
+    {
+        if (!value["IsReadOnlyUlogBackupExpireDay"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInfo.IsReadOnlyUlogBackupExpireDay` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isReadOnlyUlogBackupExpireDay = value["IsReadOnlyUlogBackupExpireDay"].GetUint64();
+        m_isReadOnlyUlogBackupExpireDayHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -578,6 +611,30 @@ void ClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_kafkaInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_txhBackupExpireDayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TxhBackupExpireDay";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_txhBackupExpireDay, allocator);
+    }
+
+    if (m_ulogBackupExpireDayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UlogBackupExpireDay";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ulogBackupExpireDay, allocator);
+    }
+
+    if (m_isReadOnlyUlogBackupExpireDayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsReadOnlyUlogBackupExpireDay";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isReadOnlyUlogBackupExpireDay, allocator);
     }
 
 }
@@ -997,5 +1054,53 @@ void ClusterInfo::SetKafkaInfo(const KafkaInfo& _kafkaInfo)
 bool ClusterInfo::KafkaInfoHasBeenSet() const
 {
     return m_kafkaInfoHasBeenSet;
+}
+
+uint64_t ClusterInfo::GetTxhBackupExpireDay() const
+{
+    return m_txhBackupExpireDay;
+}
+
+void ClusterInfo::SetTxhBackupExpireDay(const uint64_t& _txhBackupExpireDay)
+{
+    m_txhBackupExpireDay = _txhBackupExpireDay;
+    m_txhBackupExpireDayHasBeenSet = true;
+}
+
+bool ClusterInfo::TxhBackupExpireDayHasBeenSet() const
+{
+    return m_txhBackupExpireDayHasBeenSet;
+}
+
+uint64_t ClusterInfo::GetUlogBackupExpireDay() const
+{
+    return m_ulogBackupExpireDay;
+}
+
+void ClusterInfo::SetUlogBackupExpireDay(const uint64_t& _ulogBackupExpireDay)
+{
+    m_ulogBackupExpireDay = _ulogBackupExpireDay;
+    m_ulogBackupExpireDayHasBeenSet = true;
+}
+
+bool ClusterInfo::UlogBackupExpireDayHasBeenSet() const
+{
+    return m_ulogBackupExpireDayHasBeenSet;
+}
+
+uint64_t ClusterInfo::GetIsReadOnlyUlogBackupExpireDay() const
+{
+    return m_isReadOnlyUlogBackupExpireDay;
+}
+
+void ClusterInfo::SetIsReadOnlyUlogBackupExpireDay(const uint64_t& _isReadOnlyUlogBackupExpireDay)
+{
+    m_isReadOnlyUlogBackupExpireDay = _isReadOnlyUlogBackupExpireDay;
+    m_isReadOnlyUlogBackupExpireDayHasBeenSet = true;
+}
+
+bool ClusterInfo::IsReadOnlyUlogBackupExpireDayHasBeenSet() const
+{
+    return m_isReadOnlyUlogBackupExpireDayHasBeenSet;
 }
 

@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool TemplateIDHasBeenSet() const;
 
                     /**
-                     * 获取模版名字
-                     * @return TemplateName 模版名字
+                     * 获取模板名字
+                     * @return TemplateName 模板名字
                      */
                     std::string GetTemplateName() const;
 
                     /**
-                     * 设置模版名字
-                     * @param TemplateName 模版名字
+                     * 设置模板名字
+                     * @param TemplateName 模板名字
                      */
                     void SetTemplateName(const std::string& _templateName);
 
@@ -112,7 +112,7 @@ namespace TencentCloud
                     bool m_templateIDHasBeenSet;
 
                     /**
-                     * 模版名字
+                     * 模板名字
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;

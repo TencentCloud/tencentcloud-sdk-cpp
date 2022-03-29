@@ -47,7 +47,8 @@ TableInfoNew::TableInfoNew() :
     m_apiAccessIdHasBeenSet(false),
     m_sortFieldNumHasBeenSet(false),
     m_sortRuleHasBeenSet(false),
-    m_dbClusterInfoStructHasBeenSet(false)
+    m_dbClusterInfoStructHasBeenSet(false),
+    m_txhBackupExpireDayHasBeenSet(false)
 {
 }
 
@@ -343,6 +344,16 @@ CoreInternalOutcome TableInfoNew::Deserialize(const rapidjson::Value &value)
         m_dbClusterInfoStructHasBeenSet = true;
     }
 
+    if (value.HasMember("TxhBackupExpireDay") && !value["TxhBackupExpireDay"].IsNull())
+    {
+        if (!value["TxhBackupExpireDay"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableInfoNew.TxhBackupExpireDay` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_txhBackupExpireDay = value["TxhBackupExpireDay"].GetUint64();
+        m_txhBackupExpireDayHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -572,6 +583,14 @@ void TableInfoNew::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "DbClusterInfoStruct";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dbClusterInfoStruct.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_txhBackupExpireDayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TxhBackupExpireDay";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_txhBackupExpireDay, allocator);
     }
 
 }
@@ -1007,5 +1026,21 @@ void TableInfoNew::SetDbClusterInfoStruct(const string& _dbClusterInfoStruct)
 bool TableInfoNew::DbClusterInfoStructHasBeenSet() const
 {
     return m_dbClusterInfoStructHasBeenSet;
+}
+
+uint64_t TableInfoNew::GetTxhBackupExpireDay() const
+{
+    return m_txhBackupExpireDay;
+}
+
+void TableInfoNew::SetTxhBackupExpireDay(const uint64_t& _txhBackupExpireDay)
+{
+    m_txhBackupExpireDay = _txhBackupExpireDay;
+    m_txhBackupExpireDayHasBeenSet = true;
+}
+
+bool TableInfoNew::TxhBackupExpireDayHasBeenSet() const
+{
+    return m_txhBackupExpireDayHasBeenSet;
 }
 

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/essbasic/v20210526/model/Component.h>
 
 
 namespace TencentCloud
@@ -155,14 +156,22 @@ namespace TencentCloud
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
-                     * 获取签署人类型，PERSON和ORGANIZATION
-                     * @return ApproverType 签署人类型，PERSON和ORGANIZATION
+                     * 获取签署人类型，PERSON-个人；ORGANIZATION-企业；
+ENTERPRISESERVER-企业静默签;
+注：ENTERPRISESERVER 类型仅用于使用文件创建流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；
+                     * @return ApproverType 签署人类型，PERSON-个人；ORGANIZATION-企业；
+ENTERPRISESERVER-企业静默签;
+注：ENTERPRISESERVER 类型仅用于使用文件创建流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；
                      */
                     std::string GetApproverType() const;
 
                     /**
-                     * 设置签署人类型，PERSON和ORGANIZATION
-                     * @param ApproverType 签署人类型，PERSON和ORGANIZATION
+                     * 设置签署人类型，PERSON-个人；ORGANIZATION-企业；
+ENTERPRISESERVER-企业静默签;
+注：ENTERPRISESERVER 类型仅用于使用文件创建流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；
+                     * @param ApproverType 签署人类型，PERSON-个人；ORGANIZATION-企业；
+ENTERPRISESERVER-企业静默签;
+注：ENTERPRISESERVER 类型仅用于使用文件创建流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；
                      */
                     void SetApproverType(const std::string& _approverType);
 
@@ -302,6 +311,24 @@ namespace TencentCloud
                      */
                     bool NotChannelOrganizationHasBeenSet() const;
 
+                    /**
+                     * 获取使用PDF文件直接发起合同时，签署人指定的签署控件
+                     * @return SignComponents 使用PDF文件直接发起合同时，签署人指定的签署控件
+                     */
+                    std::vector<Component> GetSignComponents() const;
+
+                    /**
+                     * 设置使用PDF文件直接发起合同时，签署人指定的签署控件
+                     * @param SignComponents 使用PDF文件直接发起合同时，签署人指定的签署控件
+                     */
+                    void SetSignComponents(const std::vector<Component>& _signComponents);
+
+                    /**
+                     * 判断参数 SignComponents 是否已赋值
+                     * @return SignComponents 是否已赋值
+                     */
+                    bool SignComponentsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -341,7 +368,9 @@ namespace TencentCloud
                     bool m_callbackUrlHasBeenSet;
 
                     /**
-                     * 签署人类型，PERSON和ORGANIZATION
+                     * 签署人类型，PERSON-个人；ORGANIZATION-企业；
+ENTERPRISESERVER-企业静默签;
+注：ENTERPRISESERVER 类型仅用于使用文件创建流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；
                      */
                     std::string m_approverType;
                     bool m_approverTypeHasBeenSet;
@@ -388,6 +417,12 @@ namespace TencentCloud
                      */
                     bool m_notChannelOrganization;
                     bool m_notChannelOrganizationHasBeenSet;
+
+                    /**
+                     * 使用PDF文件直接发起合同时，签署人指定的签署控件
+                     */
+                    std::vector<Component> m_signComponents;
+                    bool m_signComponentsHasBeenSet;
 
                 };
             }

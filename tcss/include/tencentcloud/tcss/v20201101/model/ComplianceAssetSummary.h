@@ -423,6 +423,50 @@ CHECK_FAILED, 检测失败
                      */
                     bool PeriodRuleHasBeenSet() const;
 
+                    /**
+                     * 获取已开启的检查项总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OpenPolicyItemCount 已开启的检查项总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetOpenPolicyItemCount() const;
+
+                    /**
+                     * 设置已开启的检查项总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OpenPolicyItemCount 已开启的检查项总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOpenPolicyItemCount(const uint64_t& _openPolicyItemCount);
+
+                    /**
+                     * 判断参数 OpenPolicyItemCount 是否已赋值
+                     * @return OpenPolicyItemCount 是否已赋值
+                     */
+                    bool OpenPolicyItemCountHasBeenSet() const;
+
+                    /**
+                     * 获取已忽略的检查项总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IgnoredPolicyItemCount 已忽略的检查项总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetIgnoredPolicyItemCount() const;
+
+                    /**
+                     * 设置已忽略的检查项总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IgnoredPolicyItemCount 已忽略的检查项总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIgnoredPolicyItemCount(const uint64_t& _ignoredPolicyItemCount);
+
+                    /**
+                     * 判断参数 IgnoredPolicyItemCount 是否已赋值
+                     * @return IgnoredPolicyItemCount 是否已赋值
+                     */
+                    bool IgnoredPolicyItemCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -545,6 +589,20 @@ CHECK_FAILED, 检测失败
                      */
                     CompliancePeriodTaskRule m_periodRule;
                     bool m_periodRuleHasBeenSet;
+
+                    /**
+                     * 已开启的检查项总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_openPolicyItemCount;
+                    bool m_openPolicyItemCountHasBeenSet;
+
+                    /**
+                     * 已忽略的检查项总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_ignoredPolicyItemCount;
+                    bool m_ignoredPolicyItemCountHasBeenSet;
 
                 };
             }
