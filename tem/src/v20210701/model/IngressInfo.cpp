@@ -31,7 +31,8 @@ IngressInfo::IngressInfo() :
     m_clusterIdHasBeenSet(false),
     m_vipHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_mixedHasBeenSet(false)
+    m_mixedHasBeenSet(false),
+    m_rewriteTypeHasBeenSet(false)
 {
 }
 
@@ -170,6 +171,16 @@ CoreInternalOutcome IngressInfo::Deserialize(const rapidjson::Value &value)
         m_mixedHasBeenSet = true;
     }
 
+    if (value.HasMember("RewriteType") && !value["RewriteType"].IsNull())
+    {
+        if (!value["RewriteType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IngressInfo.RewriteType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rewriteType = string(value["RewriteType"].GetString());
+        m_rewriteTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -277,6 +288,14 @@ void IngressInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Mixed";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mixed, allocator);
+    }
+
+    if (m_rewriteTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RewriteType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rewriteType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -456,5 +475,21 @@ void IngressInfo::SetMixed(const bool& _mixed)
 bool IngressInfo::MixedHasBeenSet() const
 {
     return m_mixedHasBeenSet;
+}
+
+string IngressInfo::GetRewriteType() const
+{
+    return m_rewriteType;
+}
+
+void IngressInfo::SetRewriteType(const string& _rewriteType)
+{
+    m_rewriteType = _rewriteType;
+    m_rewriteTypeHasBeenSet = true;
+}
+
+bool IngressInfo::RewriteTypeHasBeenSet() const
+{
+    return m_rewriteTypeHasBeenSet;
 }
 

@@ -23,6 +23,7 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20211109/model/DescribeClustersRequest.h
   include/tencentcloud/thpc/v20211109/model/LoginSettings.h
   include/tencentcloud/thpc/v20211109/model/DeleteClusterResponse.h
+  include/tencentcloud/thpc/v20211109/model/InternetAccessible.h
   include/tencentcloud/thpc/v20211109/model/CFSOption.h
   include/tencentcloud/thpc/v20211109/model/CreateClusterResponse.h
   include/tencentcloud/thpc/v20211109/model/CreateClusterRequest.h
@@ -36,7 +37,7 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20211109/model/BindAutoScalingGroupRequest.h
   include/tencentcloud/thpc/v20211109/model/VirtualPrivateCloud.h
   include/tencentcloud/thpc/v20211109/model/StorageOption.h
-  include/tencentcloud/thpc/v20211109/model/InternetAccessible.h
+  include/tencentcloud/thpc/v20211109/model/LoginNodeOverview.h
   include/tencentcloud/thpc/v20211109/model/ComputeNode.h
   include/tencentcloud/thpc/v20211109/model/DescribeClustersResponse.h
   include/tencentcloud/thpc/v20211109/model/GooseFSOption.h
@@ -50,6 +51,7 @@ set(thpc_src
   src/v20211109/model/DescribeClustersRequest.cpp
   src/v20211109/model/LoginSettings.cpp
   src/v20211109/model/DeleteClusterResponse.cpp
+  src/v20211109/model/InternetAccessible.cpp
   src/v20211109/model/CFSOption.cpp
   src/v20211109/model/CreateClusterResponse.cpp
   src/v20211109/model/CreateClusterRequest.cpp
@@ -63,7 +65,7 @@ set(thpc_src
   src/v20211109/model/BindAutoScalingGroupRequest.cpp
   src/v20211109/model/VirtualPrivateCloud.cpp
   src/v20211109/model/StorageOption.cpp
-  src/v20211109/model/InternetAccessible.cpp
+  src/v20211109/model/LoginNodeOverview.cpp
   src/v20211109/model/ComputeNode.cpp
   src/v20211109/model/DescribeClustersResponse.cpp
   src/v20211109/model/GooseFSOption.cpp

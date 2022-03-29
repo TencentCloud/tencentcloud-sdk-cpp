@@ -45,7 +45,8 @@ Deal::Deal() :
     m_payModeHasBeenSet(false),
     m_actionHasBeenSet(false),
     m_productNameHasBeenSet(false),
-    m_subProductNameHasBeenSet(false)
+    m_subProductNameHasBeenSet(false),
+    m_resourceIdHasBeenSet(false)
 {
 }
 
@@ -314,6 +315,19 @@ CoreInternalOutcome Deal::Deserialize(const rapidjson::Value &value)
         m_subProductNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceId") && !value["ResourceId"].IsNull())
+    {
+        if (!value["ResourceId"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Deal.ResourceId` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ResourceId"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_resourceId.push_back((*itr).GetString());
+        }
+        m_resourceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -526,6 +540,19 @@ void Deal::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "SubProductName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subProductName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_resourceId.begin(); itr != m_resourceId.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -929,5 +956,21 @@ void Deal::SetSubProductName(const string& _subProductName)
 bool Deal::SubProductNameHasBeenSet() const
 {
     return m_subProductNameHasBeenSet;
+}
+
+vector<string> Deal::GetResourceId() const
+{
+    return m_resourceId;
+}
+
+void Deal::SetResourceId(const vector<string>& _resourceId)
+{
+    m_resourceId = _resourceId;
+    m_resourceIdHasBeenSet = true;
+}
+
+bool Deal::ResourceIdHasBeenSet() const
+{
+    return m_resourceIdHasBeenSet;
 }
 

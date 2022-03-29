@@ -270,6 +270,36 @@ namespace TencentCloud
                      */
                     bool MixedHasBeenSet() const;
 
+                    /**
+                     * 获取重定向模式，可选值：
+- AUTO（自动重定向http到https）
+- NONE（不使用重定向）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RewriteType 重定向模式，可选值：
+- AUTO（自动重定向http到https）
+- NONE（不使用重定向）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRewriteType() const;
+
+                    /**
+                     * 设置重定向模式，可选值：
+- AUTO（自动重定向http到https）
+- NONE（不使用重定向）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RewriteType 重定向模式，可选值：
+- AUTO（自动重定向http到https）
+- NONE（不使用重定向）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRewriteType(const std::string& _rewriteType);
+
+                    /**
+                     * 判断参数 RewriteType 是否已赋值
+                     * @return RewriteType 是否已赋值
+                     */
+                    bool RewriteTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -343,6 +373,15 @@ namespace TencentCloud
                      */
                     bool m_mixed;
                     bool m_mixedHasBeenSet;
+
+                    /**
+                     * 重定向模式，可选值：
+- AUTO（自动重定向http到https）
+- NONE（不使用重定向）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_rewriteType;
+                    bool m_rewriteTypeHasBeenSet;
 
                 };
             }

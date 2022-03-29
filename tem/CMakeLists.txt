@@ -46,6 +46,7 @@ set(tem_public_header_model
   include/tencentcloud/tem/v20210701/model/ModifyIngressRequest.h
   include/tencentcloud/tem/v20210701/model/DescribeApplicationPodsRequest.h
   include/tencentcloud/tem/v20210701/model/CreateApplicationRequest.h
+  include/tencentcloud/tem/v20210701/model/EnablePrometheusConf.h
   include/tencentcloud/tem/v20210701/model/DescribeRelatedIngressesResponse.h
   include/tencentcloud/tem/v20210701/model/DescribeIngressesRequest.h
   include/tencentcloud/tem/v20210701/model/DescribeRunPodPage.h
@@ -181,6 +182,7 @@ set(tem_src
   src/v20210701/model/ModifyIngressRequest.cpp
   src/v20210701/model/DescribeApplicationPodsRequest.cpp
   src/v20210701/model/CreateApplicationRequest.cpp
+  src/v20210701/model/EnablePrometheusConf.cpp
   src/v20210701/model/DescribeRelatedIngressesResponse.cpp
   src/v20210701/model/DescribeIngressesRequest.cpp
   src/v20210701/model/DescribeRunPodPage.cpp

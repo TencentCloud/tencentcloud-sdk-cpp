@@ -134,6 +134,28 @@ namespace TencentCloud
                      */
                     bool DeleteWithInstanceHasBeenSet() const;
 
+                    /**
+                     * 获取数据盘是否加密。取值范围：<br><li>TRUE：加密<br><li>FALSE：不加密
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Encrypt 数据盘是否加密。取值范围：<br><li>TRUE：加密<br><li>FALSE：不加密
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetEncrypt() const;
+
+                    /**
+                     * 设置数据盘是否加密。取值范围：<br><li>TRUE：加密<br><li>FALSE：不加密
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Encrypt 数据盘是否加密。取值范围：<br><li>TRUE：加密<br><li>FALSE：不加密
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEncrypt(const bool& _encrypt);
+
+                    /**
+                     * 判断参数 Encrypt 是否已赋值
+                     * @return Encrypt 是否已赋值
+                     */
+                    bool EncryptHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +185,13 @@ namespace TencentCloud
                      */
                     bool m_deleteWithInstance;
                     bool m_deleteWithInstanceHasBeenSet;
+
+                    /**
+                     * 数据盘是否加密。取值范围：<br><li>TRUE：加密<br><li>FALSE：不加密
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_encrypt;
+                    bool m_encryptHasBeenSet;
 
                 };
             }

@@ -26,7 +26,9 @@ CreateResourceRequest::CreateResourceRequest() :
     m_environmentIdHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
-    m_sourceChannelHasBeenSet(false)
+    m_sourceChannelHasBeenSet(false),
+    m_resourceFromHasBeenSet(false),
+    m_resourceConfigHasBeenSet(false)
 {
 }
 
@@ -67,6 +69,22 @@ string CreateResourceRequest::ToJsonString() const
         string key = "SourceChannel";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sourceChannel, allocator);
+    }
+
+    if (m_resourceFromHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceFrom";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceFrom.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceConfig.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +157,38 @@ void CreateResourceRequest::SetSourceChannel(const int64_t& _sourceChannel)
 bool CreateResourceRequest::SourceChannelHasBeenSet() const
 {
     return m_sourceChannelHasBeenSet;
+}
+
+string CreateResourceRequest::GetResourceFrom() const
+{
+    return m_resourceFrom;
+}
+
+void CreateResourceRequest::SetResourceFrom(const string& _resourceFrom)
+{
+    m_resourceFrom = _resourceFrom;
+    m_resourceFromHasBeenSet = true;
+}
+
+bool CreateResourceRequest::ResourceFromHasBeenSet() const
+{
+    return m_resourceFromHasBeenSet;
+}
+
+string CreateResourceRequest::GetResourceConfig() const
+{
+    return m_resourceConfig;
+}
+
+void CreateResourceRequest::SetResourceConfig(const string& _resourceConfig)
+{
+    m_resourceConfig = _resourceConfig;
+    m_resourceConfigHasBeenSet = true;
+}
+
+bool CreateResourceRequest::ResourceConfigHasBeenSet() const
+{
+    return m_resourceConfigHasBeenSet;
 }
 
 

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取无
-                     * @return Second 无
+                     * 获取token过期时间，有效值是1~300秒
+                     * @return Second token过期时间，有效值是1~300秒
                      */
                     int64_t GetSecond() const;
 
                     /**
-                     * 设置无
-                     * @param Second 无
+                     * 设置token过期时间，有效值是1~300秒
+                     * @param Second token过期时间，有效值是1~300秒
                      */
                     void SetSecond(const int64_t& _second);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 无
+                     * token过期时间，有效值是1~300秒
                      */
                     int64_t m_second;
                     bool m_secondHasBeenSet;

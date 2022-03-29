@@ -61,7 +61,8 @@ DeployApplicationRequest::DeployApplicationRequest() :
     m_confEditedHasBeenSet(false),
     m_speedUpHasBeenSet(false),
     m_startupProbeHasBeenSet(false),
-    m_osFlavourHasBeenSet(false)
+    m_osFlavourHasBeenSet(false),
+    m_enablePrometheusConfHasBeenSet(false)
 {
 }
 
@@ -446,6 +447,15 @@ string DeployApplicationRequest::ToJsonString() const
         string key = "OsFlavour";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_osFlavour.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enablePrometheusConfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnablePrometheusConf";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_enablePrometheusConf.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -1078,6 +1088,22 @@ void DeployApplicationRequest::SetOsFlavour(const string& _osFlavour)
 bool DeployApplicationRequest::OsFlavourHasBeenSet() const
 {
     return m_osFlavourHasBeenSet;
+}
+
+EnablePrometheusConf DeployApplicationRequest::GetEnablePrometheusConf() const
+{
+    return m_enablePrometheusConf;
+}
+
+void DeployApplicationRequest::SetEnablePrometheusConf(const EnablePrometheusConf& _enablePrometheusConf)
+{
+    m_enablePrometheusConf = _enablePrometheusConf;
+    m_enablePrometheusConfHasBeenSet = true;
+}
+
+bool DeployApplicationRequest::EnablePrometheusConfHasBeenSet() const
+{
+    return m_enablePrometheusConfHasBeenSet;
 }
 
 

@@ -32,6 +32,7 @@
 #include <tencentcloud/tem/v20210701/model/DeployStrategyConf.h>
 #include <tencentcloud/tem/v20210701/model/HorizontalAutoscaler.h>
 #include <tencentcloud/tem/v20210701/model/CronHorizontalAutoscaler.h>
+#include <tencentcloud/tem/v20210701/model/EnablePrometheusConf.h>
 
 
 namespace TencentCloud
@@ -811,6 +812,24 @@ namespace TencentCloud
                      */
                     bool OsFlavourHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启prometheus 业务指标监控
+                     * @return EnablePrometheusConf 是否开启prometheus 业务指标监控
+                     */
+                    EnablePrometheusConf GetEnablePrometheusConf() const;
+
+                    /**
+                     * 设置是否开启prometheus 业务指标监控
+                     * @param EnablePrometheusConf 是否开启prometheus 业务指标监控
+                     */
+                    void SetEnablePrometheusConf(const EnablePrometheusConf& _enablePrometheusConf);
+
+                    /**
+                     * 判断参数 EnablePrometheusConf 是否已赋值
+                     * @return EnablePrometheusConf 是否已赋值
+                     */
+                    bool EnablePrometheusConfHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1060,6 +1079,12 @@ namespace TencentCloud
                      */
                     std::string m_osFlavour;
                     bool m_osFlavourHasBeenSet;
+
+                    /**
+                     * 是否开启prometheus 业务指标监控
+                     */
+                    EnablePrometheusConf m_enablePrometheusConf;
+                    bool m_enablePrometheusConfHasBeenSet;
 
                 };
             }

@@ -261,14 +261,14 @@ namespace TencentCloud
                     bool DeployModeHasBeenSet() const;
 
                     /**
-                     * 获取是否启用调用链功能
-                     * @return EnableTracing 是否启用调用链功能
+                     * 获取是否开启 Java 应用的 APM 自动上报功能，1 表示启用；0 表示关闭
+                     * @return EnableTracing 是否开启 Java 应用的 APM 自动上报功能，1 表示启用；0 表示关闭
                      */
                     int64_t GetEnableTracing() const;
 
                     /**
-                     * 设置是否启用调用链功能
-                     * @param EnableTracing 是否启用调用链功能
+                     * 设置是否开启 Java 应用的 APM 自动上报功能，1 表示启用；0 表示关闭
+                     * @param EnableTracing 是否开启 Java 应用的 APM 自动上报功能，1 表示启用；0 表示关闭
                      */
                     void SetEnableTracing(const int64_t& _enableTracing);
 
@@ -352,7 +352,7 @@ namespace TencentCloud
                     bool m_deployModeHasBeenSet;
 
                     /**
-                     * 是否启用调用链功能
+                     * 是否开启 Java 应用的 APM 自动上报功能，1 表示启用；0 表示关闭
                      */
                     int64_t m_enableTracing;
                     bool m_enableTracingHasBeenSet;
