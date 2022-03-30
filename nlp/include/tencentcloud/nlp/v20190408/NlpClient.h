@@ -41,12 +41,6 @@
 #include <tencentcloud/nlp/v20190408/model/DescribeDictResponse.h>
 #include <tencentcloud/nlp/v20190408/model/DescribeDictsRequest.h>
 #include <tencentcloud/nlp/v20190408/model/DescribeDictsResponse.h>
-#include <tencentcloud/nlp/v20190408/model/DescribeEntityRequest.h>
-#include <tencentcloud/nlp/v20190408/model/DescribeEntityResponse.h>
-#include <tencentcloud/nlp/v20190408/model/DescribeRelationRequest.h>
-#include <tencentcloud/nlp/v20190408/model/DescribeRelationResponse.h>
-#include <tencentcloud/nlp/v20190408/model/DescribeTripleRequest.h>
-#include <tencentcloud/nlp/v20190408/model/DescribeTripleResponse.h>
 #include <tencentcloud/nlp/v20190408/model/DescribeWordItemsRequest.h>
 #include <tencentcloud/nlp/v20190408/model/DescribeWordItemsResponse.h>
 #include <tencentcloud/nlp/v20190408/model/KeywordsExtractionRequest.h>
@@ -118,15 +112,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDictsResponse> DescribeDictsOutcome;
                 typedef std::future<DescribeDictsOutcome> DescribeDictsOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::DescribeDictsRequest&, DescribeDictsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDictsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeEntityResponse> DescribeEntityOutcome;
-                typedef std::future<DescribeEntityOutcome> DescribeEntityOutcomeCallable;
-                typedef std::function<void(const NlpClient*, const Model::DescribeEntityRequest&, DescribeEntityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEntityAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeRelationResponse> DescribeRelationOutcome;
-                typedef std::future<DescribeRelationOutcome> DescribeRelationOutcomeCallable;
-                typedef std::function<void(const NlpClient*, const Model::DescribeRelationRequest&, DescribeRelationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRelationAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeTripleResponse> DescribeTripleOutcome;
-                typedef std::future<DescribeTripleOutcome> DescribeTripleOutcomeCallable;
-                typedef std::function<void(const NlpClient*, const Model::DescribeTripleRequest&, DescribeTripleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTripleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeWordItemsResponse> DescribeWordItemsOutcome;
                 typedef std::future<DescribeWordItemsOutcome> DescribeWordItemsOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::DescribeWordItemsRequest&, DescribeWordItemsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWordItemsAsyncHandler;
@@ -257,33 +242,6 @@ namespace TencentCloud
                 DescribeDictsOutcome DescribeDicts(const Model::DescribeDictsRequest &request);
                 void DescribeDictsAsync(const Model::DescribeDictsRequest& request, const DescribeDictsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDictsOutcomeCallable DescribeDictsCallable(const Model::DescribeDictsRequest& request);
-
-                /**
-                 *此接口正在维护升级，后续上线另行通知。
-                 * @param req DescribeEntityRequest
-                 * @return DescribeEntityOutcome
-                 */
-                DescribeEntityOutcome DescribeEntity(const Model::DescribeEntityRequest &request);
-                void DescribeEntityAsync(const Model::DescribeEntityRequest& request, const DescribeEntityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeEntityOutcomeCallable DescribeEntityCallable(const Model::DescribeEntityRequest& request);
-
-                /**
-                 *此接口正在维护升级，后续上线另行通知。
-                 * @param req DescribeRelationRequest
-                 * @return DescribeRelationOutcome
-                 */
-                DescribeRelationOutcome DescribeRelation(const Model::DescribeRelationRequest &request);
-                void DescribeRelationAsync(const Model::DescribeRelationRequest& request, const DescribeRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeRelationOutcomeCallable DescribeRelationCallable(const Model::DescribeRelationRequest& request);
-
-                /**
-                 *此接口正在维护升级，后续上线另行通知。
-                 * @param req DescribeTripleRequest
-                 * @return DescribeTripleOutcome
-                 */
-                DescribeTripleOutcome DescribeTriple(const Model::DescribeTripleRequest &request);
-                void DescribeTripleAsync(const Model::DescribeTripleRequest& request, const DescribeTripleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeTripleOutcomeCallable DescribeTripleCallable(const Model::DescribeTripleRequest& request);
 
                 /**
                  *依据自定义词库的ID，查询对应的词条信息。

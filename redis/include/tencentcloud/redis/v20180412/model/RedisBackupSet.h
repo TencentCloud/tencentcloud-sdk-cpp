@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool BackupIdHasBeenSet() const;
 
                     /**
-                     * 获取备份类型。 manualBackupInstance：用户发起的手动备份； systemBackupInstance：凌晨系统发起的备份
-                     * @return BackupType 备份类型。 manualBackupInstance：用户发起的手动备份； systemBackupInstance：凌晨系统发起的备份
+                     * 获取备份类型。1：用户发起的手动备份； 0：凌晨系统发起的备份
+                     * @return BackupType 备份类型。1：用户发起的手动备份； 0：凌晨系统发起的备份
                      */
                     std::string GetBackupType() const;
 
                     /**
-                     * 设置备份类型。 manualBackupInstance：用户发起的手动备份； systemBackupInstance：凌晨系统发起的备份
-                     * @param BackupType 备份类型。 manualBackupInstance：用户发起的手动备份； systemBackupInstance：凌晨系统发起的备份
+                     * 设置备份类型。1：用户发起的手动备份； 0：凌晨系统发起的备份
+                     * @param BackupType 备份类型。1：用户发起的手动备份； 0：凌晨系统发起的备份
                      */
                     void SetBackupType(const std::string& _backupType);
 
@@ -235,7 +235,7 @@ namespace TencentCloud
                     bool m_backupIdHasBeenSet;
 
                     /**
-                     * 备份类型。 manualBackupInstance：用户发起的手动备份； systemBackupInstance：凌晨系统发起的备份
+                     * 备份类型。1：用户发起的手动备份； 0：凌晨系统发起的备份
                      */
                     std::string m_backupType;
                     bool m_backupTypeHasBeenSet;

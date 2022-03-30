@@ -33,7 +33,8 @@ NamedComputeEnv::NamedComputeEnv() :
     m_notificationsHasBeenSet(false),
     m_actionIfComputeNodeInactiveHasBeenSet(false),
     m_resourceMaxRetryCountHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_notificationTargetHasBeenSet(false)
 {
 }
 
@@ -236,6 +237,16 @@ CoreInternalOutcome NamedComputeEnv::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("NotificationTarget") && !value["NotificationTarget"].IsNull())
+    {
+        if (!value["NotificationTarget"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NamedComputeEnv.NotificationTarget` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_notificationTarget = string(value["NotificationTarget"].GetString());
+        m_notificationTargetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -382,6 +393,14 @@ void NamedComputeEnv::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_notificationTargetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotificationTarget";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_notificationTarget.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -593,5 +612,21 @@ void NamedComputeEnv::SetTags(const vector<Tag>& _tags)
 bool NamedComputeEnv::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string NamedComputeEnv::GetNotificationTarget() const
+{
+    return m_notificationTarget;
+}
+
+void NamedComputeEnv::SetNotificationTarget(const string& _notificationTarget)
+{
+    m_notificationTarget = _notificationTarget;
+    m_notificationTargetHasBeenSet = true;
+}
+
+bool NamedComputeEnv::NotificationTargetHasBeenSet() const
+{
+    return m_notificationTargetHasBeenSet;
 }
 

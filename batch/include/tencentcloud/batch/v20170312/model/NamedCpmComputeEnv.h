@@ -249,6 +249,36 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取表示通知信息的通知目标类型。
+取值范围：CMQ，TDMQ_CMQ。
+CMQ:表示向腾讯云CMQ发送消息。
+TDMQ_CMQ：表示向腾讯云TDMQ_CMQ发送消息。<br/>默认值为CMQ。<br/>注：腾讯云计划于2022年6月前正式下线消息队列 CMQ，建议使用TDMQ_CMQ。参考文档：[CMQ迁移到TDMQ_CMQ](https://cloud.tencent.com/document/product/406/60860)
+                     * @return NotificationTarget 表示通知信息的通知目标类型。
+取值范围：CMQ，TDMQ_CMQ。
+CMQ:表示向腾讯云CMQ发送消息。
+TDMQ_CMQ：表示向腾讯云TDMQ_CMQ发送消息。<br/>默认值为CMQ。<br/>注：腾讯云计划于2022年6月前正式下线消息队列 CMQ，建议使用TDMQ_CMQ。参考文档：[CMQ迁移到TDMQ_CMQ](https://cloud.tencent.com/document/product/406/60860)
+                     */
+                    std::string GetNotificationTarget() const;
+
+                    /**
+                     * 设置表示通知信息的通知目标类型。
+取值范围：CMQ，TDMQ_CMQ。
+CMQ:表示向腾讯云CMQ发送消息。
+TDMQ_CMQ：表示向腾讯云TDMQ_CMQ发送消息。<br/>默认值为CMQ。<br/>注：腾讯云计划于2022年6月前正式下线消息队列 CMQ，建议使用TDMQ_CMQ。参考文档：[CMQ迁移到TDMQ_CMQ](https://cloud.tencent.com/document/product/406/60860)
+                     * @param NotificationTarget 表示通知信息的通知目标类型。
+取值范围：CMQ，TDMQ_CMQ。
+CMQ:表示向腾讯云CMQ发送消息。
+TDMQ_CMQ：表示向腾讯云TDMQ_CMQ发送消息。<br/>默认值为CMQ。<br/>注：腾讯云计划于2022年6月前正式下线消息队列 CMQ，建议使用TDMQ_CMQ。参考文档：[CMQ迁移到TDMQ_CMQ](https://cloud.tencent.com/document/product/406/60860)
+                     */
+                    void SetNotificationTarget(const std::string& _notificationTarget);
+
+                    /**
+                     * 判断参数 NotificationTarget 是否已赋值
+                     * @return NotificationTarget 是否已赋值
+                     */
+                    bool NotificationTargetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -316,6 +346,15 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 表示通知信息的通知目标类型。
+取值范围：CMQ，TDMQ_CMQ。
+CMQ:表示向腾讯云CMQ发送消息。
+TDMQ_CMQ：表示向腾讯云TDMQ_CMQ发送消息。<br/>默认值为CMQ。<br/>注：腾讯云计划于2022年6月前正式下线消息队列 CMQ，建议使用TDMQ_CMQ。参考文档：[CMQ迁移到TDMQ_CMQ](https://cloud.tencent.com/document/product/406/60860)
+                     */
+                    std::string m_notificationTarget;
+                    bool m_notificationTargetHasBeenSet;
 
                 };
             }

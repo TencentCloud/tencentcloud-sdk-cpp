@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool OwnerUinsHasBeenSet() const;
 
                     /**
-                     * 获取订单号列表
-                     * @return DealNames 订单号列表
+                     * 获取子订单号列表
+                     * @return DealNames 子订单号列表
                      */
                     std::vector<std::string> GetDealNames() const;
 
                     /**
-                     * 设置订单号列表
-                     * @param DealNames 订单号列表
+                     * 设置子订单号列表
+                     * @param DealNames 子订单号列表
                      */
                     void SetDealNames(const std::vector<std::string>& _dealNames);
 
@@ -185,6 +185,24 @@ namespace TencentCloud
                      * @return DealNames 是否已赋值
                      */
                     bool DealNamesHasBeenSet() const;
+
+                    /**
+                     * 获取大订单号列表
+                     * @return BigDealIds 大订单号列表
+                     */
+                    std::vector<std::string> GetBigDealIds() const;
+
+                    /**
+                     * 设置大订单号列表
+                     * @param BigDealIds 大订单号列表
+                     */
+                    void SetBigDealIds(const std::vector<std::string>& _bigDealIds);
+
+                    /**
+                     * 判断参数 BigDealIds 是否已赋值
+                     * @return BigDealIds 是否已赋值
+                     */
+                    bool BigDealIdsHasBeenSet() const;
 
                     /**
                      * 获取支付方式，0：自付；1：代付
@@ -249,10 +267,16 @@ namespace TencentCloud
                     bool m_ownerUinsHasBeenSet;
 
                     /**
-                     * 订单号列表
+                     * 子订单号列表
                      */
                     std::vector<std::string> m_dealNames;
                     bool m_dealNamesHasBeenSet;
+
+                    /**
+                     * 大订单号列表
+                     */
+                    std::vector<std::string> m_bigDealIds;
+                    bool m_bigDealIdsHasBeenSet;
 
                     /**
                      * 支付方式，0：自付；1：代付

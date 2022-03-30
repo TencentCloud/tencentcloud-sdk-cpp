@@ -84,13 +84,17 @@ namespace TencentCloud
 
                     /**
                      * 获取数据盘ID。LOCAL_BASIC 和 LOCAL_SSD 类型没有ID，暂时不支持该参数。
+该参数目前仅用于`DescribeInstances`接口。
                      * @return DiskId 数据盘ID。LOCAL_BASIC 和 LOCAL_SSD 类型没有ID，暂时不支持该参数。
+该参数目前仅用于`DescribeInstances`接口。
                      */
                     std::string GetDiskId() const;
 
                     /**
                      * 设置数据盘ID。LOCAL_BASIC 和 LOCAL_SSD 类型没有ID，暂时不支持该参数。
+该参数目前仅用于`DescribeInstances`接口。
                      * @param DiskId 数据盘ID。LOCAL_BASIC 和 LOCAL_SSD 类型没有ID，暂时不支持该参数。
+该参数目前仅用于`DescribeInstances`接口。
                      */
                     void SetDiskId(const std::string& _diskId);
 
@@ -288,6 +292,7 @@ namespace TencentCloud
 
                     /**
                      * 数据盘ID。LOCAL_BASIC 和 LOCAL_SSD 类型没有ID，暂时不支持该参数。
+该参数目前仅用于`DescribeInstances`接口。
                      */
                     std::string m_diskId;
                     bool m_diskIdHasBeenSet;

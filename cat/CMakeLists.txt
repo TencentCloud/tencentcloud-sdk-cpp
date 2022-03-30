@@ -25,6 +25,7 @@ set(cat_public_header_model
   include/tencentcloud/cat/v20180409/model/DescribeProbeNodesResponse.h
   include/tencentcloud/cat/v20180409/model/RunTaskRequest.h
   include/tencentcloud/cat/v20180409/model/DescribeTaskDetailResponse.h
+  include/tencentcloud/cat/v20180409/model/DescribeProbeMetricDataResponse.h
   include/tencentcloud/cat/v20180409/model/DeleteTasksResponse.h
   include/tencentcloud/cat/v20180409/model/CatTaskDetail.h
   include/tencentcloud/cat/v20180409/model/BindAlarmPolicyRequest.h
@@ -83,6 +84,7 @@ set(cat_public_header_model
   include/tencentcloud/cat/v20180409/model/DescribeAlarmTopicRequest.h
   include/tencentcloud/cat/v20180409/model/DescribeAgentGroupsResponse.h
   include/tencentcloud/cat/v20180409/model/SuspendProbeTaskRequest.h
+  include/tencentcloud/cat/v20180409/model/DescribeProbeMetricDataRequest.h
   include/tencentcloud/cat/v20180409/model/GetRespTimeTrendExRequest.h
   include/tencentcloud/cat/v20180409/model/UpdateProbeTaskConfigurationListRequest.h
   include/tencentcloud/cat/v20180409/model/CreateProbeTasksRequest.h
@@ -123,6 +125,7 @@ set(cat_src
   src/v20180409/model/DescribeProbeNodesResponse.cpp
   src/v20180409/model/RunTaskRequest.cpp
   src/v20180409/model/DescribeTaskDetailResponse.cpp
+  src/v20180409/model/DescribeProbeMetricDataResponse.cpp
   src/v20180409/model/DeleteTasksResponse.cpp
   src/v20180409/model/CatTaskDetail.cpp
   src/v20180409/model/BindAlarmPolicyRequest.cpp
@@ -181,6 +184,7 @@ set(cat_src
   src/v20180409/model/DescribeAlarmTopicRequest.cpp
   src/v20180409/model/DescribeAgentGroupsResponse.cpp
   src/v20180409/model/SuspendProbeTaskRequest.cpp
+  src/v20180409/model/DescribeProbeMetricDataRequest.cpp
   src/v20180409/model/GetRespTimeTrendExRequest.cpp
   src/v20180409/model/UpdateProbeTaskConfigurationListRequest.cpp
   src/v20180409/model/CreateProbeTasksRequest.cpp
