@@ -46,7 +46,8 @@ Instance::Instance() :
     m_platformHasBeenSet(false),
     m_osNameHasBeenSet(false),
     m_zoneHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_instanceRestrictStateHasBeenSet(false)
 {
 }
 
@@ -352,6 +353,16 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceRestrictState") && !value["InstanceRestrictState"].IsNull())
+    {
+        if (!value["InstanceRestrictState"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.InstanceRestrictState` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceRestrictState = string(value["InstanceRestrictState"].GetString());
+        m_instanceRestrictStateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -585,6 +596,14 @@ void Instance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_instanceRestrictStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceRestrictState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceRestrictState.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1004,5 +1023,21 @@ void Instance::SetTags(const vector<Tag>& _tags)
 bool Instance::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string Instance::GetInstanceRestrictState() const
+{
+    return m_instanceRestrictState;
+}
+
+void Instance::SetInstanceRestrictState(const string& _instanceRestrictState)
+{
+    m_instanceRestrictState = _instanceRestrictState;
+    m_instanceRestrictStateHasBeenSet = true;
+}
+
+bool Instance::InstanceRestrictStateHasBeenSet() const
+{
+    return m_instanceRestrictStateHasBeenSet;
 }
 

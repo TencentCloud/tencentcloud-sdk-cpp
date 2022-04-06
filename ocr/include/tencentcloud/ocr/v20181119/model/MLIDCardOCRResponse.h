@@ -124,23 +124,19 @@ namespace TencentCloud
                     bool ImageHasBeenSet() const;
 
                     /**
-                     * 获取扩展字段：
+                     * 获取此字段为扩展字段。
+返回字段识别结果的置信度，格式如下
 {
-    ID:{
-        Confidence:0.9999
-    },
-    Name:{
-        Confidence:0.9996
-    }
+  字段名:{
+    Confidence:0.9999
+  }
 }
-                     * @return AdvancedInfo 扩展字段：
+                     * @return AdvancedInfo 此字段为扩展字段。
+返回字段识别结果的置信度，格式如下
 {
-    ID:{
-        Confidence:0.9999
-    },
-    Name:{
-        Confidence:0.9996
-    }
+  字段名:{
+    Confidence:0.9999
+  }
 }
                      */
                     std::string GetAdvancedInfo() const;
@@ -232,14 +228,12 @@ MyKid 儿童卡
                     bool m_imageHasBeenSet;
 
                     /**
-                     * 扩展字段：
+                     * 此字段为扩展字段。
+返回字段识别结果的置信度，格式如下
 {
-    ID:{
-        Confidence:0.9999
-    },
-    Name:{
-        Confidence:0.9996
-    }
+  字段名:{
+    Confidence:0.9999
+  }
 }
                      */
                     std::string m_advancedInfo;

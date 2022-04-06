@@ -532,6 +532,28 @@ namespace TencentCloud
                     bool MaxAgeHasBeenSet() const;
 
                     /**
+                     * 获取地域属性特殊配置
+适用于域名境内加速、境外加速配置不一致场景
+                     * @return SpecificConfig 地域属性特殊配置
+适用于域名境内加速、境外加速配置不一致场景
+                     */
+                    SpecificConfig GetSpecificConfig() const;
+
+                    /**
+                     * 设置地域属性特殊配置
+适用于域名境内加速、境外加速配置不一致场景
+                     * @param SpecificConfig 地域属性特殊配置
+适用于域名境内加速、境外加速配置不一致场景
+                     */
+                    void SetSpecificConfig(const SpecificConfig& _specificConfig);
+
+                    /**
+                     * 判断参数 SpecificConfig 是否已赋值
+                     * @return SpecificConfig 是否已赋值
+                     */
+                    bool SpecificConfigHasBeenSet() const;
+
+                    /**
                      * 获取域名业务类型
 web：静态加速
 download：下载加速
@@ -560,28 +582,6 @@ media：流媒体点播加速
                      * @return ServiceType 是否已赋值
                      */
                     bool ServiceTypeHasBeenSet() const;
-
-                    /**
-                     * 获取地域属性特殊配置
-适用于域名境内加速、境外加速配置不一致场景
-                     * @return SpecificConfig 地域属性特殊配置
-适用于域名境内加速、境外加速配置不一致场景
-                     */
-                    SpecificConfig GetSpecificConfig() const;
-
-                    /**
-                     * 设置地域属性特殊配置
-适用于域名境内加速、境外加速配置不一致场景
-                     * @param SpecificConfig 地域属性特殊配置
-适用于域名境内加速、境外加速配置不一致场景
-                     */
-                    void SetSpecificConfig(const SpecificConfig& _specificConfig);
-
-                    /**
-                     * 判断参数 SpecificConfig 是否已赋值
-                     * @return SpecificConfig 是否已赋值
-                     */
-                    bool SpecificConfigHasBeenSet() const;
 
                     /**
                      * 获取域名加速区域
@@ -1058,6 +1058,13 @@ global：全球加速
                     bool m_maxAgeHasBeenSet;
 
                     /**
+                     * 地域属性特殊配置
+适用于域名境内加速、境外加速配置不一致场景
+                     */
+                    SpecificConfig m_specificConfig;
+                    bool m_specificConfigHasBeenSet;
+
+                    /**
                      * 域名业务类型
 web：静态加速
 download：下载加速
@@ -1065,13 +1072,6 @@ media：流媒体点播加速
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
-
-                    /**
-                     * 地域属性特殊配置
-适用于域名境内加速、境外加速配置不一致场景
-                     */
-                    SpecificConfig m_specificConfig;
-                    bool m_specificConfigHasBeenSet;
 
                     /**
                      * 域名加速区域

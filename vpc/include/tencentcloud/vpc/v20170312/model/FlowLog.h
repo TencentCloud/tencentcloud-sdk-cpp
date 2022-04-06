@@ -103,14 +103,14 @@ namespace TencentCloud
                     bool FlowLogNameHasBeenSet() const;
 
                     /**
-                     * 获取流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN。
-                     * @return ResourceType 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN。
+                     * 获取流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG。
+                     * @return ResourceType 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG。
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN。
-                     * @param ResourceType 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN。
+                     * 设置流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG。
+                     * @param ResourceType 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG。
                      */
                     void SetResourceType(const std::string& _resourceType);
 
@@ -329,7 +329,7 @@ namespace TencentCloud
                     bool m_flowLogNameHasBeenSet;
 
                     /**
-                     * 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN。
+                     * 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG。
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;

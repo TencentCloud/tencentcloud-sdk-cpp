@@ -1072,6 +1072,49 @@ MongodbClient::KillOpsOutcomeCallable MongodbClient::KillOpsCallable(const KillO
     return task->get_future();
 }
 
+MongodbClient::ModifyDBInstanceNetworkAddressOutcome MongodbClient::ModifyDBInstanceNetworkAddress(const ModifyDBInstanceNetworkAddressRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBInstanceNetworkAddress");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBInstanceNetworkAddressResponse rsp = ModifyDBInstanceNetworkAddressResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBInstanceNetworkAddressOutcome(rsp);
+        else
+            return ModifyDBInstanceNetworkAddressOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBInstanceNetworkAddressOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::ModifyDBInstanceNetworkAddressAsync(const ModifyDBInstanceNetworkAddressRequest& request, const ModifyDBInstanceNetworkAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDBInstanceNetworkAddress(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::ModifyDBInstanceNetworkAddressOutcomeCallable MongodbClient::ModifyDBInstanceNetworkAddressCallable(const ModifyDBInstanceNetworkAddressRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceNetworkAddressOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDBInstanceNetworkAddress(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MongodbClient::ModifyDBInstanceSecurityGroupOutcome MongodbClient::ModifyDBInstanceSecurityGroup(const ModifyDBInstanceSecurityGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDBInstanceSecurityGroup");

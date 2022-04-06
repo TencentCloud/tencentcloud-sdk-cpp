@@ -337,6 +337,20 @@ namespace TencentCloud
                      */
                     bool SsaAssetCategoryHasBeenSet() const;
 
+                    /**
+                     * 获取资产文件路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VulPath 资产文件路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVulPath() const;
+
+                    /**
+                     * 判断参数 VulPath 是否已赋值
+                     * @return VulPath 是否已赋值
+                     */
+                    bool VulPathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -485,6 +499,13 @@ namespace TencentCloud
                      */
                     int64_t m_ssaAssetCategory;
                     bool m_ssaAssetCategoryHasBeenSet;
+
+                    /**
+                     * 资产文件路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vulPath;
+                    bool m_vulPathHasBeenSet;
 
                 };
             }

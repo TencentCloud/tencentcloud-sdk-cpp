@@ -412,9 +412,9 @@ namespace TencentCloud
                     bool SubjectAltNameHasBeenSet() const;
 
                     /**
-                     * 获取是否为 VIP 客户。
+                     * 获取是否为付费证书。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsVip 是否为 VIP 客户。
+                     * @return IsVip 是否为付费证书。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool GetIsVip() const;
@@ -482,9 +482,9 @@ namespace TencentCloud
                     bool SubmittedDataHasBeenSet() const;
 
                     /**
-                     * 获取是否可重颁发证书。
+                     * 获取是否可续费。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RenewAble 是否可重颁发证书。
+                     * @return RenewAble 是否可续费。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool GetRenewAble() const;
@@ -708,7 +708,7 @@ namespace TencentCloud
                     bool m_subjectAltNameHasBeenSet;
 
                     /**
-                     * 是否为 VIP 客户。
+                     * 是否为付费证书。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isVip;
@@ -743,7 +743,7 @@ namespace TencentCloud
                     bool m_submittedDataHasBeenSet;
 
                     /**
-                     * 是否可重颁发证书。
+                     * 是否可续费。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_renewAble;

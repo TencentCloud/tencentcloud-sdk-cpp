@@ -47,6 +47,8 @@
 #include <tencentcloud/cam/v20190116/model/CreateSAMLProviderResponse.h>
 #include <tencentcloud/cam/v20190116/model/CreateServiceLinkedRoleRequest.h>
 #include <tencentcloud/cam/v20190116/model/CreateServiceLinkedRoleResponse.h>
+#include <tencentcloud/cam/v20190116/model/CreateUserOIDCConfigRequest.h>
+#include <tencentcloud/cam/v20190116/model/CreateUserOIDCConfigResponse.h>
 #include <tencentcloud/cam/v20190116/model/CreateUserSAMLConfigRequest.h>
 #include <tencentcloud/cam/v20190116/model/CreateUserSAMLConfigResponse.h>
 #include <tencentcloud/cam/v20190116/model/DeleteGroupRequest.h>
@@ -77,6 +79,8 @@
 #include <tencentcloud/cam/v20190116/model/DescribeSafeAuthFlagIntlResponse.h>
 #include <tencentcloud/cam/v20190116/model/DescribeSubAccountsRequest.h>
 #include <tencentcloud/cam/v20190116/model/DescribeSubAccountsResponse.h>
+#include <tencentcloud/cam/v20190116/model/DescribeUserOIDCConfigRequest.h>
+#include <tencentcloud/cam/v20190116/model/DescribeUserOIDCConfigResponse.h>
 #include <tencentcloud/cam/v20190116/model/DescribeUserSAMLConfigRequest.h>
 #include <tencentcloud/cam/v20190116/model/DescribeUserSAMLConfigResponse.h>
 #include <tencentcloud/cam/v20190116/model/DetachGroupPolicyRequest.h>
@@ -85,6 +89,8 @@
 #include <tencentcloud/cam/v20190116/model/DetachRolePolicyResponse.h>
 #include <tencentcloud/cam/v20190116/model/DetachUserPolicyRequest.h>
 #include <tencentcloud/cam/v20190116/model/DetachUserPolicyResponse.h>
+#include <tencentcloud/cam/v20190116/model/DisableUserSSORequest.h>
+#include <tencentcloud/cam/v20190116/model/DisableUserSSOResponse.h>
 #include <tencentcloud/cam/v20190116/model/GetAccountSummaryRequest.h>
 #include <tencentcloud/cam/v20190116/model/GetAccountSummaryResponse.h>
 #include <tencentcloud/cam/v20190116/model/GetCustomMFATokenInfoRequest.h>
@@ -167,6 +173,8 @@
 #include <tencentcloud/cam/v20190116/model/UpdateSAMLProviderResponse.h>
 #include <tencentcloud/cam/v20190116/model/UpdateUserRequest.h>
 #include <tencentcloud/cam/v20190116/model/UpdateUserResponse.h>
+#include <tencentcloud/cam/v20190116/model/UpdateUserOIDCConfigRequest.h>
+#include <tencentcloud/cam/v20190116/model/UpdateUserOIDCConfigResponse.h>
 #include <tencentcloud/cam/v20190116/model/UpdateUserSAMLConfigRequest.h>
 #include <tencentcloud/cam/v20190116/model/UpdateUserSAMLConfigResponse.h>
 
@@ -219,6 +227,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateServiceLinkedRoleResponse> CreateServiceLinkedRoleOutcome;
                 typedef std::future<CreateServiceLinkedRoleOutcome> CreateServiceLinkedRoleOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::CreateServiceLinkedRoleRequest&, CreateServiceLinkedRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateServiceLinkedRoleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateUserOIDCConfigResponse> CreateUserOIDCConfigOutcome;
+                typedef std::future<CreateUserOIDCConfigOutcome> CreateUserOIDCConfigOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::CreateUserOIDCConfigRequest&, CreateUserOIDCConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserOIDCConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateUserSAMLConfigResponse> CreateUserSAMLConfigOutcome;
                 typedef std::future<CreateUserSAMLConfigOutcome> CreateUserSAMLConfigOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::CreateUserSAMLConfigRequest&, CreateUserSAMLConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserSAMLConfigAsyncHandler;
@@ -264,6 +275,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSubAccountsResponse> DescribeSubAccountsOutcome;
                 typedef std::future<DescribeSubAccountsOutcome> DescribeSubAccountsOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DescribeSubAccountsRequest&, DescribeSubAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubAccountsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserOIDCConfigResponse> DescribeUserOIDCConfigOutcome;
+                typedef std::future<DescribeUserOIDCConfigOutcome> DescribeUserOIDCConfigOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::DescribeUserOIDCConfigRequest&, DescribeUserOIDCConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserOIDCConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserSAMLConfigResponse> DescribeUserSAMLConfigOutcome;
                 typedef std::future<DescribeUserSAMLConfigOutcome> DescribeUserSAMLConfigOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DescribeUserSAMLConfigRequest&, DescribeUserSAMLConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserSAMLConfigAsyncHandler;
@@ -276,6 +290,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DetachUserPolicyResponse> DetachUserPolicyOutcome;
                 typedef std::future<DetachUserPolicyOutcome> DetachUserPolicyOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DetachUserPolicyRequest&, DetachUserPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachUserPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisableUserSSOResponse> DisableUserSSOOutcome;
+                typedef std::future<DisableUserSSOOutcome> DisableUserSSOOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::DisableUserSSORequest&, DisableUserSSOOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableUserSSOAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetAccountSummaryResponse> GetAccountSummaryOutcome;
                 typedef std::future<GetAccountSummaryOutcome> GetAccountSummaryOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::GetAccountSummaryRequest&, GetAccountSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAccountSummaryAsyncHandler;
@@ -399,6 +416,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateUserResponse> UpdateUserOutcome;
                 typedef std::future<UpdateUserOutcome> UpdateUserOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::UpdateUserRequest&, UpdateUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateUserOIDCConfigResponse> UpdateUserOIDCConfigOutcome;
+                typedef std::future<UpdateUserOIDCConfigOutcome> UpdateUserOIDCConfigOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::UpdateUserOIDCConfigRequest&, UpdateUserOIDCConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateUserOIDCConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateUserSAMLConfigResponse> UpdateUserSAMLConfigOutcome;
                 typedef std::future<UpdateUserSAMLConfigOutcome> UpdateUserSAMLConfigOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::UpdateUserSAMLConfigRequest&, UpdateUserSAMLConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateUserSAMLConfigAsyncHandler;
@@ -512,6 +532,15 @@ namespace TencentCloud
                 CreateServiceLinkedRoleOutcome CreateServiceLinkedRole(const Model::CreateServiceLinkedRoleRequest &request);
                 void CreateServiceLinkedRoleAsync(const Model::CreateServiceLinkedRoleRequest& request, const CreateServiceLinkedRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateServiceLinkedRoleOutcomeCallable CreateServiceLinkedRoleCallable(const Model::CreateServiceLinkedRoleRequest& request);
+
+                /**
+                 *创建用户OIDC配置。只能创建一个用户OIDC身份提供商，并且创建用户OIDC配置之后会自动关闭用户SAML SSO身份提供商。
+                 * @param req CreateUserOIDCConfigRequest
+                 * @return CreateUserOIDCConfigOutcome
+                 */
+                CreateUserOIDCConfigOutcome CreateUserOIDCConfig(const Model::CreateUserOIDCConfigRequest &request);
+                void CreateUserOIDCConfigAsync(const Model::CreateUserOIDCConfigRequest& request, const CreateUserOIDCConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateUserOIDCConfigOutcomeCallable CreateUserOIDCConfigCallable(const Model::CreateUserOIDCConfigRequest& request);
 
                 /**
                  *创建用户SAML配置
@@ -649,6 +678,15 @@ namespace TencentCloud
                 DescribeSubAccountsOutcomeCallable DescribeSubAccountsCallable(const Model::DescribeSubAccountsRequest& request);
 
                 /**
+                 *查询用户OIDC配置
+                 * @param req DescribeUserOIDCConfigRequest
+                 * @return DescribeUserOIDCConfigOutcome
+                 */
+                DescribeUserOIDCConfigOutcome DescribeUserOIDCConfig(const Model::DescribeUserOIDCConfigRequest &request);
+                void DescribeUserOIDCConfigAsync(const Model::DescribeUserOIDCConfigRequest& request, const DescribeUserOIDCConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserOIDCConfigOutcomeCallable DescribeUserOIDCConfigCallable(const Model::DescribeUserOIDCConfigRequest& request);
+
+                /**
                  *查询用户SAML配置
                  * @param req DescribeUserSAMLConfigRequest
                  * @return DescribeUserSAMLConfigOutcome
@@ -683,6 +721,15 @@ namespace TencentCloud
                 DetachUserPolicyOutcome DetachUserPolicy(const Model::DetachUserPolicyRequest &request);
                 void DetachUserPolicyAsync(const Model::DetachUserPolicyRequest& request, const DetachUserPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DetachUserPolicyOutcomeCallable DetachUserPolicyCallable(const Model::DetachUserPolicyRequest& request);
+
+                /**
+                 *禁用用户SSO
+                 * @param req DisableUserSSORequest
+                 * @return DisableUserSSOOutcome
+                 */
+                DisableUserSSOOutcome DisableUserSSO(const Model::DisableUserSSORequest &request);
+                void DisableUserSSOAsync(const Model::DisableUserSSORequest& request, const DisableUserSSOAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisableUserSSOOutcomeCallable DisableUserSSOCallable(const Model::DisableUserSSORequest& request);
 
                 /**
                  *查询账户摘要 
@@ -1053,6 +1100,15 @@ namespace TencentCloud
                 UpdateUserOutcome UpdateUser(const Model::UpdateUserRequest &request);
                 void UpdateUserAsync(const Model::UpdateUserRequest& request, const UpdateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateUserOutcomeCallable UpdateUserCallable(const Model::UpdateUserRequest& request);
+
+                /**
+                 *修改用户OIDC配置
+                 * @param req UpdateUserOIDCConfigRequest
+                 * @return UpdateUserOIDCConfigOutcome
+                 */
+                UpdateUserOIDCConfigOutcome UpdateUserOIDCConfig(const Model::UpdateUserOIDCConfigRequest &request);
+                void UpdateUserOIDCConfigAsync(const Model::UpdateUserOIDCConfigRequest& request, const UpdateUserOIDCConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateUserOIDCConfigOutcomeCallable UpdateUserOIDCConfigCallable(const Model::UpdateUserOIDCConfigRequest& request);
 
                 /**
                  *修改用户SAML配置

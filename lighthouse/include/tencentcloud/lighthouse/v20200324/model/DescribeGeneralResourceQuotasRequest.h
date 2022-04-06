@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源名列表，取值为：USER_KEY_PAIR、INSTANCE、SNAPSHOT。
-                     * @return ResourceNames 资源名列表，取值为：USER_KEY_PAIR、INSTANCE、SNAPSHOT。
+                     * 获取资源名列表，取值为：USER_KEY_PAIR、GENERAL_BUNDLE_INSTANCE、STORAGE_BUNDLE_INSTANCE、ENTERPRISE_BUNDLE_INSTANCE、EXCLUSIVE_BUNDLE_INSTANCE、BEFAST_BUNDLE_INSTANCE、SNAPSHOT、BLUEPRINT、FREE_BLUEPRINT、DATA_DISK、ATTACHED_DATA_DISK、FIREWALL_RULE。
+                     * @return ResourceNames 资源名列表，取值为：USER_KEY_PAIR、GENERAL_BUNDLE_INSTANCE、STORAGE_BUNDLE_INSTANCE、ENTERPRISE_BUNDLE_INSTANCE、EXCLUSIVE_BUNDLE_INSTANCE、BEFAST_BUNDLE_INSTANCE、SNAPSHOT、BLUEPRINT、FREE_BLUEPRINT、DATA_DISK、ATTACHED_DATA_DISK、FIREWALL_RULE。
                      */
                     std::vector<std::string> GetResourceNames() const;
 
                     /**
-                     * 设置资源名列表，取值为：USER_KEY_PAIR、INSTANCE、SNAPSHOT。
-                     * @param ResourceNames 资源名列表，取值为：USER_KEY_PAIR、INSTANCE、SNAPSHOT。
+                     * 设置资源名列表，取值为：USER_KEY_PAIR、GENERAL_BUNDLE_INSTANCE、STORAGE_BUNDLE_INSTANCE、ENTERPRISE_BUNDLE_INSTANCE、EXCLUSIVE_BUNDLE_INSTANCE、BEFAST_BUNDLE_INSTANCE、SNAPSHOT、BLUEPRINT、FREE_BLUEPRINT、DATA_DISK、ATTACHED_DATA_DISK、FIREWALL_RULE。
+                     * @param ResourceNames 资源名列表，取值为：USER_KEY_PAIR、GENERAL_BUNDLE_INSTANCE、STORAGE_BUNDLE_INSTANCE、ENTERPRISE_BUNDLE_INSTANCE、EXCLUSIVE_BUNDLE_INSTANCE、BEFAST_BUNDLE_INSTANCE、SNAPSHOT、BLUEPRINT、FREE_BLUEPRINT、DATA_DISK、ATTACHED_DATA_DISK、FIREWALL_RULE。
                      */
                     void SetResourceNames(const std::vector<std::string>& _resourceNames);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源名列表，取值为：USER_KEY_PAIR、INSTANCE、SNAPSHOT。
+                     * 资源名列表，取值为：USER_KEY_PAIR、GENERAL_BUNDLE_INSTANCE、STORAGE_BUNDLE_INSTANCE、ENTERPRISE_BUNDLE_INSTANCE、EXCLUSIVE_BUNDLE_INSTANCE、BEFAST_BUNDLE_INSTANCE、SNAPSHOT、BLUEPRINT、FREE_BLUEPRINT、DATA_DISK、ATTACHED_DATA_DISK、FIREWALL_RULE。
                      */
                     std::vector<std::string> m_resourceNames;
                     bool m_resourceNamesHasBeenSet;

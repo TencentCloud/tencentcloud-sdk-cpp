@@ -25,7 +25,8 @@ MoanResult::MoanResult() :
     m_scoreHasBeenSet(false),
     m_suggestionHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_subLabelHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome MoanResult::Deserialize(const rapidjson::Value &value)
         m_endTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("SubLabel") && !value["SubLabel"].IsNull())
+    {
+        if (!value["SubLabel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MoanResult.SubLabel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subLabel = string(value["SubLabel"].GetString());
+        m_subLabelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void MoanResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTime, allocator);
+    }
+
+    if (m_subLabelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubLabel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subLabel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void MoanResult::SetEndTime(const double& _endTime)
 bool MoanResult::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+string MoanResult::GetSubLabel() const
+{
+    return m_subLabel;
+}
+
+void MoanResult::SetSubLabel(const string& _subLabel)
+{
+    m_subLabel = _subLabel;
+    m_subLabelHasBeenSet = true;
+}
+
+bool MoanResult::SubLabelHasBeenSet() const
+{
+    return m_subLabelHasBeenSet;
 }
 

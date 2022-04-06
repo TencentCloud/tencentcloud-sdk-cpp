@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云主机类型。(当前参数已作废,可以留空值 )
-                     * @return MachineType 云主机类型。(当前参数已作废,可以留空值 )
+                     * 获取云服务器类型。(当前参数已作废,可以留空值 )
+                     * @return MachineType 云服务器类型。(当前参数已作废,可以留空值 )
                      */
                     std::string GetMachineType() const;
 
                     /**
-                     * 设置云主机类型。(当前参数已作废,可以留空值 )
-                     * @param MachineType 云主机类型。(当前参数已作废,可以留空值 )
+                     * 设置云服务器类型。(当前参数已作废,可以留空值 )
+                     * @param MachineType 云服务器类型。(当前参数已作废,可以留空值 )
                      */
                     void SetMachineType(const std::string& _machineType);
 
@@ -121,7 +121,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 云主机类型。(当前参数已作废,可以留空值 )
+                     * 云服务器类型。(当前参数已作废,可以留空值 )
                      */
                     std::string m_machineType;
                     bool m_machineTypeHasBeenSet;

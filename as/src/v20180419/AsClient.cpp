@@ -1158,49 +1158,6 @@ AsClient::DescribeNotificationConfigurationsOutcomeCallable AsClient::DescribeNo
     return task->get_future();
 }
 
-AsClient::DescribePaiInstancesOutcome AsClient::DescribePaiInstances(const DescribePaiInstancesRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribePaiInstances");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribePaiInstancesResponse rsp = DescribePaiInstancesResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribePaiInstancesOutcome(rsp);
-        else
-            return DescribePaiInstancesOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribePaiInstancesOutcome(outcome.GetError());
-    }
-}
-
-void AsClient::DescribePaiInstancesAsync(const DescribePaiInstancesRequest& request, const DescribePaiInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePaiInstances(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-AsClient::DescribePaiInstancesOutcomeCallable AsClient::DescribePaiInstancesCallable(const DescribePaiInstancesRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribePaiInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePaiInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 AsClient::DescribeScalingPoliciesOutcome AsClient::DescribeScalingPolicies(const DescribeScalingPoliciesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeScalingPolicies");

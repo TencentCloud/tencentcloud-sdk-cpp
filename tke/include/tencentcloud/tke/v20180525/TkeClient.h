@@ -113,6 +113,10 @@
 #include <tencentcloud/tke/v20180525/model/DescribeClusterInstancesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterKubeconfigRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterKubeconfigResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterLevelAttributeRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterLevelAttributeResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterLevelChangeRecordsRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterLevelChangeRecordsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterNodePoolDetailRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterNodePoolDetailResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterNodePoolsRequest.h>
@@ -169,6 +173,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribePrometheusTemplatesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeRegionsRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeRegionsResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeResourceUsageRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeResourceUsageResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeRouteTableConflictsRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeRouteTableConflictsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeTKEEdgeScriptRequest.h>
@@ -187,6 +193,8 @@
 #include <tencentcloud/tke/v20180525/model/EnableVpcCniNetworkTypeResponse.h>
 #include <tencentcloud/tke/v20180525/model/ForwardApplicationRequestV3Request.h>
 #include <tencentcloud/tke/v20180525/model/ForwardApplicationRequestV3Response.h>
+#include <tencentcloud/tke/v20180525/model/GetClusterLevelPriceRequest.h>
+#include <tencentcloud/tke/v20180525/model/GetClusterLevelPriceResponse.h>
 #include <tencentcloud/tke/v20180525/model/GetMostSuitableImageCacheRequest.h>
 #include <tencentcloud/tke/v20180525/model/GetMostSuitableImageCacheResponse.h>
 #include <tencentcloud/tke/v20180525/model/GetTkeAppChartListRequest.h>
@@ -384,6 +392,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClusterKubeconfigResponse> DescribeClusterKubeconfigOutcome;
                 typedef std::future<DescribeClusterKubeconfigOutcome> DescribeClusterKubeconfigOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClusterKubeconfigRequest&, DescribeClusterKubeconfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterKubeconfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterLevelAttributeResponse> DescribeClusterLevelAttributeOutcome;
+                typedef std::future<DescribeClusterLevelAttributeOutcome> DescribeClusterLevelAttributeOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeClusterLevelAttributeRequest&, DescribeClusterLevelAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterLevelAttributeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterLevelChangeRecordsResponse> DescribeClusterLevelChangeRecordsOutcome;
+                typedef std::future<DescribeClusterLevelChangeRecordsOutcome> DescribeClusterLevelChangeRecordsOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeClusterLevelChangeRecordsRequest&, DescribeClusterLevelChangeRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterLevelChangeRecordsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClusterNodePoolDetailResponse> DescribeClusterNodePoolDetailOutcome;
                 typedef std::future<DescribeClusterNodePoolDetailOutcome> DescribeClusterNodePoolDetailOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClusterNodePoolDetailRequest&, DescribeClusterNodePoolDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterNodePoolDetailAsyncHandler;
@@ -468,6 +482,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRegionsResponse> DescribeRegionsOutcome;
                 typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeRegionsRequest&, DescribeRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourceUsageResponse> DescribeResourceUsageOutcome;
+                typedef std::future<DescribeResourceUsageOutcome> DescribeResourceUsageOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeResourceUsageRequest&, DescribeResourceUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceUsageAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRouteTableConflictsResponse> DescribeRouteTableConflictsOutcome;
                 typedef std::future<DescribeRouteTableConflictsOutcome> DescribeRouteTableConflictsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeRouteTableConflictsRequest&, DescribeRouteTableConflictsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRouteTableConflictsAsyncHandler;
@@ -495,6 +512,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ForwardApplicationRequestV3Response> ForwardApplicationRequestV3Outcome;
                 typedef std::future<ForwardApplicationRequestV3Outcome> ForwardApplicationRequestV3OutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ForwardApplicationRequestV3Request&, ForwardApplicationRequestV3Outcome, const std::shared_ptr<const AsyncCallerContext>&)> ForwardApplicationRequestV3AsyncHandler;
+                typedef Outcome<Core::Error, Model::GetClusterLevelPriceResponse> GetClusterLevelPriceOutcome;
+                typedef std::future<GetClusterLevelPriceOutcome> GetClusterLevelPriceOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::GetClusterLevelPriceRequest&, GetClusterLevelPriceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetClusterLevelPriceAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetMostSuitableImageCacheResponse> GetMostSuitableImageCacheOutcome;
                 typedef std::future<GetMostSuitableImageCacheOutcome> GetMostSuitableImageCacheOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::GetMostSuitableImageCacheRequest&, GetMostSuitableImageCacheOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetMostSuitableImageCacheAsyncHandler;
@@ -976,6 +996,24 @@ namespace TencentCloud
                 DescribeClusterKubeconfigOutcomeCallable DescribeClusterKubeconfigCallable(const Model::DescribeClusterKubeconfigRequest& request);
 
                 /**
+                 *获取集群规模
+                 * @param req DescribeClusterLevelAttributeRequest
+                 * @return DescribeClusterLevelAttributeOutcome
+                 */
+                DescribeClusterLevelAttributeOutcome DescribeClusterLevelAttribute(const Model::DescribeClusterLevelAttributeRequest &request);
+                void DescribeClusterLevelAttributeAsync(const Model::DescribeClusterLevelAttributeRequest& request, const DescribeClusterLevelAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterLevelAttributeOutcomeCallable DescribeClusterLevelAttributeCallable(const Model::DescribeClusterLevelAttributeRequest& request);
+
+                /**
+                 *查询集群变配记录
+                 * @param req DescribeClusterLevelChangeRecordsRequest
+                 * @return DescribeClusterLevelChangeRecordsOutcome
+                 */
+                DescribeClusterLevelChangeRecordsOutcome DescribeClusterLevelChangeRecords(const Model::DescribeClusterLevelChangeRecordsRequest &request);
+                void DescribeClusterLevelChangeRecordsAsync(const Model::DescribeClusterLevelChangeRecordsRequest& request, const DescribeClusterLevelChangeRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterLevelChangeRecordsOutcomeCallable DescribeClusterLevelChangeRecordsCallable(const Model::DescribeClusterLevelChangeRecordsRequest& request);
+
+                /**
                  *查询节点池详情
                  * @param req DescribeClusterNodePoolDetailRequest
                  * @return DescribeClusterNodePoolDetailOutcome
@@ -1228,6 +1266,15 @@ namespace TencentCloud
                 DescribeRegionsOutcomeCallable DescribeRegionsCallable(const Model::DescribeRegionsRequest& request);
 
                 /**
+                 *获取集群资源使用量
+                 * @param req DescribeResourceUsageRequest
+                 * @return DescribeResourceUsageOutcome
+                 */
+                DescribeResourceUsageOutcome DescribeResourceUsage(const Model::DescribeResourceUsageRequest &request);
+                void DescribeResourceUsageAsync(const Model::DescribeResourceUsageRequest& request, const DescribeResourceUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourceUsageOutcomeCallable DescribeResourceUsageCallable(const Model::DescribeResourceUsageRequest& request);
+
+                /**
                  *查询路由表冲突列表
                  * @param req DescribeRouteTableConflictsRequest
                  * @return DescribeRouteTableConflictsOutcome
@@ -1307,6 +1354,15 @@ namespace TencentCloud
                 ForwardApplicationRequestV3Outcome ForwardApplicationRequestV3(const Model::ForwardApplicationRequestV3Request &request);
                 void ForwardApplicationRequestV3Async(const Model::ForwardApplicationRequestV3Request& request, const ForwardApplicationRequestV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ForwardApplicationRequestV3OutcomeCallable ForwardApplicationRequestV3Callable(const Model::ForwardApplicationRequestV3Request& request);
+
+                /**
+                 *获取集群规模价格
+                 * @param req GetClusterLevelPriceRequest
+                 * @return GetClusterLevelPriceOutcome
+                 */
+                GetClusterLevelPriceOutcome GetClusterLevelPrice(const Model::GetClusterLevelPriceRequest &request);
+                void GetClusterLevelPriceAsync(const Model::GetClusterLevelPriceRequest& request, const GetClusterLevelPriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetClusterLevelPriceOutcomeCallable GetClusterLevelPriceCallable(const Model::GetClusterLevelPriceRequest& request);
 
                 /**
                  *根据镜像列表，查询匹配的镜像缓存

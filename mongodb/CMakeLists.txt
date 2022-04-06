@@ -73,9 +73,11 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/FlushInstanceRouterConfigRequest.h
   include/tencentcloud/mongodb/v20190725/model/DBInstanceInfo.h
   include/tencentcloud/mongodb/v20190725/model/SetAccountUserPrivilegeResponse.h
+  include/tencentcloud/mongodb/v20190725/model/ModifyDBInstanceNetworkAddressRequest.h
   include/tencentcloud/mongodb/v20190725/model/CreateDBInstanceHourResponse.h
   include/tencentcloud/mongodb/v20190725/model/Operation.h
   include/tencentcloud/mongodb/v20190725/model/SpecItem.h
+  include/tencentcloud/mongodb/v20190725/model/ModifyDBInstanceNetworkAddressResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeSlowLogPatternsResponse.h
   include/tencentcloud/mongodb/v20190725/model/BackupDownloadTaskStatus.h
   include/tencentcloud/mongodb/v20190725/model/DescribeSlowLogsResponse.h
@@ -87,6 +89,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/Auth.h
   include/tencentcloud/mongodb/v20190725/model/ResetDBInstancePasswordRequest.h
   include/tencentcloud/mongodb/v20190725/model/InstanceIntegerParam.h
+  include/tencentcloud/mongodb/v20190725/model/ModifyNetworkAddress.h
   include/tencentcloud/mongodb/v20190725/model/DescribeAsyncRequestInfoResponse.h
   include/tencentcloud/mongodb/v20190725/model/CreateDBInstanceResponse.h
   include/tencentcloud/mongodb/v20190725/model/InstanceTextParam.h
@@ -197,9 +200,11 @@ set(mongodb_src
   src/v20190725/model/FlushInstanceRouterConfigRequest.cpp
   src/v20190725/model/DBInstanceInfo.cpp
   src/v20190725/model/SetAccountUserPrivilegeResponse.cpp
+  src/v20190725/model/ModifyDBInstanceNetworkAddressRequest.cpp
   src/v20190725/model/CreateDBInstanceHourResponse.cpp
   src/v20190725/model/Operation.cpp
   src/v20190725/model/SpecItem.cpp
+  src/v20190725/model/ModifyDBInstanceNetworkAddressResponse.cpp
   src/v20190725/model/DescribeSlowLogPatternsResponse.cpp
   src/v20190725/model/BackupDownloadTaskStatus.cpp
   src/v20190725/model/DescribeSlowLogsResponse.cpp
@@ -211,6 +216,7 @@ set(mongodb_src
   src/v20190725/model/Auth.cpp
   src/v20190725/model/ResetDBInstancePasswordRequest.cpp
   src/v20190725/model/InstanceIntegerParam.cpp
+  src/v20190725/model/ModifyNetworkAddress.cpp
   src/v20190725/model/DescribeAsyncRequestInfoResponse.cpp
   src/v20190725/model/CreateDBInstanceResponse.cpp
   src/v20190725/model/InstanceTextParam.cpp

@@ -40,7 +40,8 @@ BruteAttackInfo::BruteAttackInfo() :
     m_protocolHasBeenSet(false),
     m_portHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_dataStatusHasBeenSet(false)
 {
 }
 
@@ -249,6 +250,16 @@ CoreInternalOutcome BruteAttackInfo::Deserialize(const rapidjson::Value &value)
         m_instanceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("DataStatus") && !value["DataStatus"].IsNull())
+    {
+        if (!value["DataStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BruteAttackInfo.DataStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataStatus = value["DataStatus"].GetUint64();
+        m_dataStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -414,6 +425,14 @@ void BruteAttackInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dataStatus, allocator);
     }
 
 }
@@ -737,5 +756,21 @@ void BruteAttackInfo::SetInstanceId(const string& _instanceId)
 bool BruteAttackInfo::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+uint64_t BruteAttackInfo::GetDataStatus() const
+{
+    return m_dataStatus;
+}
+
+void BruteAttackInfo::SetDataStatus(const uint64_t& _dataStatus)
+{
+    m_dataStatus = _dataStatus;
+    m_dataStatusHasBeenSet = true;
+}
+
+bool BruteAttackInfo::DataStatusHasBeenSet() const
+{
+    return m_dataStatusHasBeenSet;
 }
 

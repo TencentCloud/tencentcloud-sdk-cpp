@@ -175,14 +175,14 @@ namespace TencentCloud
                     bool SrcIpHasBeenSet() const;
 
                     /**
-                     * 获取1:正常登录；2异地登录； 5已加白
-                     * @return Status 1:正常登录；2异地登录； 5已加白
+                     * 获取1:正常登录；2异地登录； 5已加白； 14：已处理；15：已忽略。
+                     * @return Status 1:正常登录；2异地登录； 5已加白； 14：已处理；15：已忽略。
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置1:正常登录；2异地登录； 5已加白
-                     * @param Status 1:正常登录；2异地登录； 5已加白
+                     * 设置1:正常登录；2异地登录； 5已加白； 14：已处理；15：已忽略。
+                     * @param Status 1:正常登录；2异地登录； 5已加白； 14：已处理；15：已忽略。
                      */
                     void SetStatus(const uint64_t& _status);
 
@@ -486,7 +486,7 @@ namespace TencentCloud
                     bool m_srcIpHasBeenSet;
 
                     /**
-                     * 1:正常登录；2异地登录； 5已加白
+                     * 1:正常登录；2异地登录； 5已加白； 14：已处理；15：已忽略。
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

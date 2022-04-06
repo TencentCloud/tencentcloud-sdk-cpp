@@ -46,14 +46,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Lighthouse套餐ID。
-                     * @return BundleId Lighthouse套餐ID。
+                     * 获取套餐ID。
+                     * @return BundleId 套餐ID。
                      */
                     std::string GetBundleId() const;
 
                     /**
-                     * 设置Lighthouse套餐ID。
-                     * @param BundleId Lighthouse套餐ID。
+                     * 设置套餐ID。
+                     * @param BundleId 套餐ID。
                      */
                     void SetBundleId(const std::string& _bundleId);
 
@@ -64,14 +64,14 @@ namespace TencentCloud
                     bool BundleIdHasBeenSet() const;
 
                     /**
-                     * 获取Lighthouse镜像ID。
-                     * @return BlueprintId Lighthouse镜像ID。
+                     * 获取镜像ID。
+                     * @return BlueprintId 镜像ID。
                      */
                     std::string GetBlueprintId() const;
 
                     /**
-                     * 设置Lighthouse镜像ID。
-                     * @param BlueprintId Lighthouse镜像ID。
+                     * 设置镜像ID。
+                     * @param BlueprintId 镜像ID。
                      */
                     void SetBlueprintId(const std::string& _blueprintId);
 
@@ -82,14 +82,14 @@ namespace TencentCloud
                     bool BlueprintIdHasBeenSet() const;
 
                     /**
-                     * 获取当前Lighthouse实例仅支持预付费模式，即包年包月相关参数设置，单位（月）。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。该参数必传。
-                     * @return InstanceChargePrepaid 当前Lighthouse实例仅支持预付费模式，即包年包月相关参数设置，单位（月）。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。该参数必传。
+                     * 获取当前实例仅支持预付费模式，即包年包月相关参数设置，单位（月）。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。该参数必传。
+                     * @return InstanceChargePrepaid 当前实例仅支持预付费模式，即包年包月相关参数设置，单位（月）。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。该参数必传。
                      */
                     InstanceChargePrepaid GetInstanceChargePrepaid() const;
 
                     /**
-                     * 设置当前Lighthouse实例仅支持预付费模式，即包年包月相关参数设置，单位（月）。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。该参数必传。
-                     * @param InstanceChargePrepaid 当前Lighthouse实例仅支持预付费模式，即包年包月相关参数设置，单位（月）。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。该参数必传。
+                     * 设置当前实例仅支持预付费模式，即包年包月相关参数设置，单位（月）。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。该参数必传。
+                     * @param InstanceChargePrepaid 当前实例仅支持预付费模式，即包年包月相关参数设置，单位（月）。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。该参数必传。
                      */
                     void SetInstanceChargePrepaid(const InstanceChargePrepaid& _instanceChargePrepaid);
 
@@ -100,14 +100,14 @@ namespace TencentCloud
                     bool InstanceChargePrepaidHasBeenSet() const;
 
                     /**
-                     * 获取Lighthouse实例显示名称。
-                     * @return InstanceName Lighthouse实例显示名称。
+                     * 获取实例显示名称。
+                     * @return InstanceName 实例显示名称。
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置Lighthouse实例显示名称。
-                     * @param InstanceName Lighthouse实例显示名称。
+                     * 设置实例显示名称。
+                     * @param InstanceName 实例显示名称。
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
@@ -118,14 +118,14 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取购买Lighthouse实例数量。包年包月实例取值范围：[1，30]。默认取值：1。指定购买实例的数量不能超过用户所能购买的剩余配额数量
-                     * @return InstanceCount 购买Lighthouse实例数量。包年包月实例取值范围：[1，30]。默认取值：1。指定购买实例的数量不能超过用户所能购买的剩余配额数量
+                     * 获取购买实例数量。包年包月实例取值范围：[1，30]。默认取值：1。指定购买实例的数量不能超过用户所能购买的剩余配额数量
+                     * @return InstanceCount 购买实例数量。包年包月实例取值范围：[1，30]。默认取值：1。指定购买实例的数量不能超过用户所能购买的剩余配额数量
                      */
                     uint64_t GetInstanceCount() const;
 
                     /**
-                     * 设置购买Lighthouse实例数量。包年包月实例取值范围：[1，30]。默认取值：1。指定购买实例的数量不能超过用户所能购买的剩余配额数量
-                     * @param InstanceCount 购买Lighthouse实例数量。包年包月实例取值范围：[1，30]。默认取值：1。指定购买实例的数量不能超过用户所能购买的剩余配额数量
+                     * 设置购买实例数量。包年包月实例取值范围：[1，30]。默认取值：1。指定购买实例的数量不能超过用户所能购买的剩余配额数量
+                     * @param InstanceCount 购买实例数量。包年包月实例取值范围：[1，30]。默认取值：1。指定购买实例的数量不能超过用户所能购买的剩余配额数量
                      */
                     void SetInstanceCount(const uint64_t& _instanceCount);
 
@@ -244,31 +244,31 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                 private:
 
                     /**
-                     * Lighthouse套餐ID。
+                     * 套餐ID。
                      */
                     std::string m_bundleId;
                     bool m_bundleIdHasBeenSet;
 
                     /**
-                     * Lighthouse镜像ID。
+                     * 镜像ID。
                      */
                     std::string m_blueprintId;
                     bool m_blueprintIdHasBeenSet;
 
                     /**
-                     * 当前Lighthouse实例仅支持预付费模式，即包年包月相关参数设置，单位（月）。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。该参数必传。
+                     * 当前实例仅支持预付费模式，即包年包月相关参数设置，单位（月）。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。该参数必传。
                      */
                     InstanceChargePrepaid m_instanceChargePrepaid;
                     bool m_instanceChargePrepaidHasBeenSet;
 
                     /**
-                     * Lighthouse实例显示名称。
+                     * 实例显示名称。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 购买Lighthouse实例数量。包年包月实例取值范围：[1，30]。默认取值：1。指定购买实例的数量不能超过用户所能购买的剩余配额数量
+                     * 购买实例数量。包年包月实例取值范围：[1，30]。默认取值：1。指定购买实例的数量不能超过用户所能购买的剩余配额数量
                      */
                     uint64_t m_instanceCount;
                     bool m_instanceCountHasBeenSet;

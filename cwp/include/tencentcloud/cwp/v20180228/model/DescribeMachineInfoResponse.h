@@ -184,13 +184,13 @@ namespace TencentCloud
                     bool ProVersionOpenDateHasBeenSet() const;
 
                     /**
-                     * 获取云主机类型。
+                     * 获取云服务器类型。
 <li>CVM: 腾讯云服务器</li>
 <li>BM: 黑石物理机</li>
 <li>ECM: 边缘计算服务器</li>
 <li>LH: 轻量应用服务器</li>
 <li>Other: 混合云机器</li>
-                     * @return MachineType 云主机类型。
+                     * @return MachineType 云服务器类型。
 <li>CVM: 腾讯云服务器</li>
 <li>BM: 黑石物理机</li>
 <li>ECM: 边缘计算服务器</li>
@@ -378,7 +378,7 @@ namespace TencentCloud
                     bool m_proVersionOpenDateHasBeenSet;
 
                     /**
-                     * 云主机类型。
+                     * 云服务器类型。
 <li>CVM: 腾讯云服务器</li>
 <li>BM: 黑石物理机</li>
 <li>ECM: 边缘计算服务器</li>

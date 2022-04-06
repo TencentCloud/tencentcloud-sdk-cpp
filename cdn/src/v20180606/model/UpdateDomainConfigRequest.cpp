@@ -48,8 +48,8 @@ UpdateDomainConfigRequest::UpdateDomainConfigRequest() :
     m_forceRedirectHasBeenSet(false),
     m_refererHasBeenSet(false),
     m_maxAgeHasBeenSet(false),
-    m_serviceTypeHasBeenSet(false),
     m_specificConfigHasBeenSet(false),
+    m_serviceTypeHasBeenSet(false),
     m_areaHasBeenSet(false),
     m_originPullTimeoutHasBeenSet(false),
     m_awsPrivateAccessHasBeenSet(false),
@@ -300,14 +300,6 @@ string UpdateDomainConfigRequest::ToJsonString() const
         m_maxAge.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_serviceTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ServiceType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_serviceType.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_specificConfigHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -315,6 +307,14 @@ string UpdateDomainConfigRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_specificConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_serviceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_areaHasBeenSet)
@@ -881,22 +881,6 @@ bool UpdateDomainConfigRequest::MaxAgeHasBeenSet() const
     return m_maxAgeHasBeenSet;
 }
 
-string UpdateDomainConfigRequest::GetServiceType() const
-{
-    return m_serviceType;
-}
-
-void UpdateDomainConfigRequest::SetServiceType(const string& _serviceType)
-{
-    m_serviceType = _serviceType;
-    m_serviceTypeHasBeenSet = true;
-}
-
-bool UpdateDomainConfigRequest::ServiceTypeHasBeenSet() const
-{
-    return m_serviceTypeHasBeenSet;
-}
-
 SpecificConfig UpdateDomainConfigRequest::GetSpecificConfig() const
 {
     return m_specificConfig;
@@ -911,6 +895,22 @@ void UpdateDomainConfigRequest::SetSpecificConfig(const SpecificConfig& _specifi
 bool UpdateDomainConfigRequest::SpecificConfigHasBeenSet() const
 {
     return m_specificConfigHasBeenSet;
+}
+
+string UpdateDomainConfigRequest::GetServiceType() const
+{
+    return m_serviceType;
+}
+
+void UpdateDomainConfigRequest::SetServiceType(const string& _serviceType)
+{
+    m_serviceType = _serviceType;
+    m_serviceTypeHasBeenSet = true;
+}
+
+bool UpdateDomainConfigRequest::ServiceTypeHasBeenSet() const
+{
+    return m_serviceTypeHasBeenSet;
 }
 
 string UpdateDomainConfigRequest::GetArea() const

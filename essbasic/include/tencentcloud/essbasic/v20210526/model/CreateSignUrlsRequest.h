@@ -135,14 +135,14 @@ namespace TencentCloud
                     bool JumpUrlHasBeenSet() const;
 
                     /**
-                     * 获取"APP" 类型的签署链接，可以设置此值；表示签署完成后自动回跳至源APP；
-                     * @return AutoJumpBack "APP" 类型的签署链接，可以设置此值；表示签署完成后自动回跳至源APP；
+                     * 获取Endpoint为"APP" 类型的签署链接，可以设置此值；支持调用方小程序打开签署链接，在电子签小程序完成签署后后自动回跳至调用方小程序
+                     * @return AutoJumpBack Endpoint为"APP" 类型的签署链接，可以设置此值；支持调用方小程序打开签署链接，在电子签小程序完成签署后后自动回跳至调用方小程序
                      */
                     bool GetAutoJumpBack() const;
 
                     /**
-                     * 设置"APP" 类型的签署链接，可以设置此值；表示签署完成后自动回跳至源APP；
-                     * @param AutoJumpBack "APP" 类型的签署链接，可以设置此值；表示签署完成后自动回跳至源APP；
+                     * 设置Endpoint为"APP" 类型的签署链接，可以设置此值；支持调用方小程序打开签署链接，在电子签小程序完成签署后后自动回跳至调用方小程序
+                     * @param AutoJumpBack Endpoint为"APP" 类型的签署链接，可以设置此值；支持调用方小程序打开签署链接，在电子签小程序完成签署后后自动回跳至调用方小程序
                      */
                     void SetAutoJumpBack(const bool& _autoJumpBack);
 
@@ -185,7 +185,7 @@ namespace TencentCloud
                     bool m_jumpUrlHasBeenSet;
 
                     /**
-                     * "APP" 类型的签署链接，可以设置此值；表示签署完成后自动回跳至源APP；
+                     * Endpoint为"APP" 类型的签署链接，可以设置此值；支持调用方小程序打开签署链接，在电子签小程序完成签署后后自动回跳至调用方小程序
                      */
                     bool m_autoJumpBack;
                     bool m_autoJumpBackHasBeenSet;

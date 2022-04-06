@@ -427,6 +427,92 @@ WavClient::QueryClueInfoListOutcomeCallable WavClient::QueryClueInfoListCallable
     return task->get_future();
 }
 
+WavClient::QueryCrmStatisticsOutcome WavClient::QueryCrmStatistics(const QueryCrmStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryCrmStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryCrmStatisticsResponse rsp = QueryCrmStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryCrmStatisticsOutcome(rsp);
+        else
+            return QueryCrmStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryCrmStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void WavClient::QueryCrmStatisticsAsync(const QueryCrmStatisticsRequest& request, const QueryCrmStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryCrmStatistics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WavClient::QueryCrmStatisticsOutcomeCallable WavClient::QueryCrmStatisticsCallable(const QueryCrmStatisticsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryCrmStatisticsOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryCrmStatistics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WavClient::QueryCustomerEventDetailStatisticsOutcome WavClient::QueryCustomerEventDetailStatistics(const QueryCustomerEventDetailStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryCustomerEventDetailStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryCustomerEventDetailStatisticsResponse rsp = QueryCustomerEventDetailStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryCustomerEventDetailStatisticsOutcome(rsp);
+        else
+            return QueryCustomerEventDetailStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryCustomerEventDetailStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void WavClient::QueryCustomerEventDetailStatisticsAsync(const QueryCustomerEventDetailStatisticsRequest& request, const QueryCustomerEventDetailStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryCustomerEventDetailStatistics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WavClient::QueryCustomerEventDetailStatisticsOutcomeCallable WavClient::QueryCustomerEventDetailStatisticsCallable(const QueryCustomerEventDetailStatisticsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryCustomerEventDetailStatisticsOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryCustomerEventDetailStatistics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WavClient::QueryDealerInfoListOutcome WavClient::QueryDealerInfoList(const QueryDealerInfoListRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryDealerInfoList");
@@ -556,6 +642,49 @@ WavClient::QueryExternalContactListOutcomeCallable WavClient::QueryExternalConta
     return task->get_future();
 }
 
+WavClient::QueryExternalUserEventListOutcome WavClient::QueryExternalUserEventList(const QueryExternalUserEventListRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryExternalUserEventList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryExternalUserEventListResponse rsp = QueryExternalUserEventListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryExternalUserEventListOutcome(rsp);
+        else
+            return QueryExternalUserEventListOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryExternalUserEventListOutcome(outcome.GetError());
+    }
+}
+
+void WavClient::QueryExternalUserEventListAsync(const QueryExternalUserEventListRequest& request, const QueryExternalUserEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryExternalUserEventList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WavClient::QueryExternalUserEventListOutcomeCallable WavClient::QueryExternalUserEventListCallable(const QueryExternalUserEventListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryExternalUserEventListOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryExternalUserEventList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WavClient::QueryExternalUserMappingInfoOutcome WavClient::QueryExternalUserMappingInfo(const QueryExternalUserMappingInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryExternalUserMappingInfo");
@@ -642,6 +771,49 @@ WavClient::QueryLicenseInfoOutcomeCallable WavClient::QueryLicenseInfoCallable(c
     return task->get_future();
 }
 
+WavClient::QueryMaterialListOutcome WavClient::QueryMaterialList(const QueryMaterialListRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryMaterialList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryMaterialListResponse rsp = QueryMaterialListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryMaterialListOutcome(rsp);
+        else
+            return QueryMaterialListOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryMaterialListOutcome(outcome.GetError());
+    }
+}
+
+void WavClient::QueryMaterialListAsync(const QueryMaterialListRequest& request, const QueryMaterialListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryMaterialList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WavClient::QueryMaterialListOutcomeCallable WavClient::QueryMaterialListCallable(const QueryMaterialListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryMaterialListOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryMaterialList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WavClient::QueryMiniAppCodeListOutcome WavClient::QueryMiniAppCodeList(const QueryMiniAppCodeListRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryMiniAppCodeList");
@@ -678,6 +850,92 @@ WavClient::QueryMiniAppCodeListOutcomeCallable WavClient::QueryMiniAppCodeListCa
         [this, request]()
         {
             return this->QueryMiniAppCodeList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WavClient::QueryStaffEventDetailStatisticsOutcome WavClient::QueryStaffEventDetailStatistics(const QueryStaffEventDetailStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryStaffEventDetailStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryStaffEventDetailStatisticsResponse rsp = QueryStaffEventDetailStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryStaffEventDetailStatisticsOutcome(rsp);
+        else
+            return QueryStaffEventDetailStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryStaffEventDetailStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void WavClient::QueryStaffEventDetailStatisticsAsync(const QueryStaffEventDetailStatisticsRequest& request, const QueryStaffEventDetailStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryStaffEventDetailStatistics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WavClient::QueryStaffEventDetailStatisticsOutcomeCallable WavClient::QueryStaffEventDetailStatisticsCallable(const QueryStaffEventDetailStatisticsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryStaffEventDetailStatisticsOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryStaffEventDetailStatistics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WavClient::QueryUserInfoListOutcome WavClient::QueryUserInfoList(const QueryUserInfoListRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryUserInfoList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryUserInfoListResponse rsp = QueryUserInfoListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryUserInfoListOutcome(rsp);
+        else
+            return QueryUserInfoListOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryUserInfoListOutcome(outcome.GetError());
+    }
+}
+
+void WavClient::QueryUserInfoListAsync(const QueryUserInfoListRequest& request, const QueryUserInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryUserInfoList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WavClient::QueryUserInfoListOutcomeCallable WavClient::QueryUserInfoListCallable(const QueryUserInfoListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryUserInfoListOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryUserInfoList(request);
         }
     );
 

@@ -75,8 +75,6 @@
 #include <tencentcloud/as/v20180419/model/DescribeLifecycleHooksResponse.h>
 #include <tencentcloud/as/v20180419/model/DescribeNotificationConfigurationsRequest.h>
 #include <tencentcloud/as/v20180419/model/DescribeNotificationConfigurationsResponse.h>
-#include <tencentcloud/as/v20180419/model/DescribePaiInstancesRequest.h>
-#include <tencentcloud/as/v20180419/model/DescribePaiInstancesResponse.h>
 #include <tencentcloud/as/v20180419/model/DescribeScalingPoliciesRequest.h>
 #include <tencentcloud/as/v20180419/model/DescribeScalingPoliciesResponse.h>
 #include <tencentcloud/as/v20180419/model/DescribeScheduledActionsRequest.h>
@@ -215,9 +213,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNotificationConfigurationsResponse> DescribeNotificationConfigurationsOutcome;
                 typedef std::future<DescribeNotificationConfigurationsOutcome> DescribeNotificationConfigurationsOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::DescribeNotificationConfigurationsRequest&, DescribeNotificationConfigurationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNotificationConfigurationsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribePaiInstancesResponse> DescribePaiInstancesOutcome;
-                typedef std::future<DescribePaiInstancesOutcome> DescribePaiInstancesOutcomeCallable;
-                typedef std::function<void(const AsClient*, const Model::DescribePaiInstancesRequest&, DescribePaiInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePaiInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeScalingPoliciesResponse> DescribeScalingPoliciesOutcome;
                 typedef std::future<DescribeScalingPoliciesOutcome> DescribeScalingPoliciesOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::DescribeScalingPoliciesRequest&, DescribeScalingPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScalingPoliciesAsyncHandler;
@@ -597,18 +592,6 @@ namespace TencentCloud
                 DescribeNotificationConfigurationsOutcome DescribeNotificationConfigurations(const Model::DescribeNotificationConfigurationsRequest &request);
                 void DescribeNotificationConfigurationsAsync(const Model::DescribeNotificationConfigurationsRequest& request, const DescribeNotificationConfigurationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNotificationConfigurationsOutcomeCallable DescribeNotificationConfigurationsCallable(const Model::DescribeNotificationConfigurationsRequest& request);
-
-                /**
-                 *本接口（DescribePaiInstances）用于查询PAI实例信息。
-
-* 可以根据实例ID、实例域名等信息来查询PAI实例的详细信息。过滤信息详细请见过滤器`Filter`。
-* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的PAI实例。
-                 * @param req DescribePaiInstancesRequest
-                 * @return DescribePaiInstancesOutcome
-                 */
-                DescribePaiInstancesOutcome DescribePaiInstances(const Model::DescribePaiInstancesRequest &request);
-                void DescribePaiInstancesAsync(const Model::DescribePaiInstancesRequest& request, const DescribePaiInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribePaiInstancesOutcomeCallable DescribePaiInstancesCallable(const Model::DescribePaiInstancesRequest& request);
 
                 /**
                  *本接口（DescribeScalingPolicies）用于查询告警触发策略。

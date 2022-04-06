@@ -42,7 +42,8 @@ CreateCloneInstanceRequest::CreateCloneInstanceRequest() :
     m_instanceNodesHasBeenSet(false),
     m_deployGroupIdHasBeenSet(false),
     m_dryRunHasBeenSet(false),
-    m_cageIdHasBeenSet(false)
+    m_cageIdHasBeenSet(false),
+    m_projectIdHasBeenSet(false)
 {
 }
 
@@ -223,6 +224,14 @@ string CreateCloneInstanceRequest::ToJsonString() const
         string key = "CageId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_projectId, allocator);
     }
 
 
@@ -551,6 +560,22 @@ void CreateCloneInstanceRequest::SetCageId(const string& _cageId)
 bool CreateCloneInstanceRequest::CageIdHasBeenSet() const
 {
     return m_cageIdHasBeenSet;
+}
+
+uint64_t CreateCloneInstanceRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void CreateCloneInstanceRequest::SetProjectId(const uint64_t& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool CreateCloneInstanceRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
 }
 
 

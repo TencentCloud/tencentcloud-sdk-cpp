@@ -556,6 +556,49 @@ CamClient::CreateServiceLinkedRoleOutcomeCallable CamClient::CreateServiceLinked
     return task->get_future();
 }
 
+CamClient::CreateUserOIDCConfigOutcome CamClient::CreateUserOIDCConfig(const CreateUserOIDCConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateUserOIDCConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateUserOIDCConfigResponse rsp = CreateUserOIDCConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateUserOIDCConfigOutcome(rsp);
+        else
+            return CreateUserOIDCConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateUserOIDCConfigOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::CreateUserOIDCConfigAsync(const CreateUserOIDCConfigRequest& request, const CreateUserOIDCConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateUserOIDCConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::CreateUserOIDCConfigOutcomeCallable CamClient::CreateUserOIDCConfigCallable(const CreateUserOIDCConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateUserOIDCConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateUserOIDCConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::CreateUserSAMLConfigOutcome CamClient::CreateUserSAMLConfig(const CreateUserSAMLConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateUserSAMLConfig");
@@ -1201,6 +1244,49 @@ CamClient::DescribeSubAccountsOutcomeCallable CamClient::DescribeSubAccountsCall
     return task->get_future();
 }
 
+CamClient::DescribeUserOIDCConfigOutcome CamClient::DescribeUserOIDCConfig(const DescribeUserOIDCConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserOIDCConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserOIDCConfigResponse rsp = DescribeUserOIDCConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserOIDCConfigOutcome(rsp);
+        else
+            return DescribeUserOIDCConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserOIDCConfigOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::DescribeUserOIDCConfigAsync(const DescribeUserOIDCConfigRequest& request, const DescribeUserOIDCConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserOIDCConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::DescribeUserOIDCConfigOutcomeCallable CamClient::DescribeUserOIDCConfigCallable(const DescribeUserOIDCConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserOIDCConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserOIDCConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::DescribeUserSAMLConfigOutcome CamClient::DescribeUserSAMLConfig(const DescribeUserSAMLConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUserSAMLConfig");
@@ -1366,6 +1452,49 @@ CamClient::DetachUserPolicyOutcomeCallable CamClient::DetachUserPolicyCallable(c
         [this, request]()
         {
             return this->DetachUserPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CamClient::DisableUserSSOOutcome CamClient::DisableUserSSO(const DisableUserSSORequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableUserSSO");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableUserSSOResponse rsp = DisableUserSSOResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableUserSSOOutcome(rsp);
+        else
+            return DisableUserSSOOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableUserSSOOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::DisableUserSSOAsync(const DisableUserSSORequest& request, const DisableUserSSOAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableUserSSO(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::DisableUserSSOOutcomeCallable CamClient::DisableUserSSOCallable(const DisableUserSSORequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableUserSSOOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableUserSSO(request);
         }
     );
 
@@ -3129,6 +3258,49 @@ CamClient::UpdateUserOutcomeCallable CamClient::UpdateUserCallable(const UpdateU
         [this, request]()
         {
             return this->UpdateUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CamClient::UpdateUserOIDCConfigOutcome CamClient::UpdateUserOIDCConfig(const UpdateUserOIDCConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateUserOIDCConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateUserOIDCConfigResponse rsp = UpdateUserOIDCConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateUserOIDCConfigOutcome(rsp);
+        else
+            return UpdateUserOIDCConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateUserOIDCConfigOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::UpdateUserOIDCConfigAsync(const UpdateUserOIDCConfigRequest& request, const UpdateUserOIDCConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateUserOIDCConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::UpdateUserOIDCConfigOutcomeCallable CamClient::UpdateUserOIDCConfigCallable(const UpdateUserOIDCConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateUserOIDCConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateUserOIDCConfig(request);
         }
     );
 

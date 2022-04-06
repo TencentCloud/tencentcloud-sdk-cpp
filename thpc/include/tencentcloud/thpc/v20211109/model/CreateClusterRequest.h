@@ -27,6 +27,8 @@
 #include <tencentcloud/thpc/v20211109/model/VirtualPrivateCloud.h>
 #include <tencentcloud/thpc/v20211109/model/LoginSettings.h>
 #include <tencentcloud/thpc/v20211109/model/StorageOption.h>
+#include <tencentcloud/thpc/v20211109/model/LoginNode.h>
+#include <tencentcloud/thpc/v20211109/model/Tag.h>
 
 
 namespace TencentCloud
@@ -85,14 +87,14 @@ namespace TencentCloud
                     bool ManagerNodeHasBeenSet() const;
 
                     /**
-                     * 获取指定管理节点的数量。目前仅支持一个管理节点。
-                     * @return ManagerNodeCount 指定管理节点的数量。目前仅支持一个管理节点。
+                     * 获取指定管理节点的数量。默认取值：1。取值范围：1～2。
+                     * @return ManagerNodeCount 指定管理节点的数量。默认取值：1。取值范围：1～2。
                      */
                     int64_t GetManagerNodeCount() const;
 
                     /**
-                     * 设置指定管理节点的数量。目前仅支持一个管理节点。
-                     * @param ManagerNodeCount 指定管理节点的数量。目前仅支持一个管理节点。
+                     * 设置指定管理节点的数量。默认取值：1。取值范围：1～2。
+                     * @param ManagerNodeCount 指定管理节点的数量。默认取值：1。取值范围：1～2。
                      */
                     void SetManagerNodeCount(const int64_t& _managerNodeCount);
 
@@ -139,14 +141,14 @@ namespace TencentCloud
                     bool ComputeNodeCountHasBeenSet() const;
 
                     /**
-                     * 获取调度器类型。<br><li>SGE：SGE调度器。
-                     * @return SchedulerType 调度器类型。<br><li>SGE：SGE调度器。
+                     * 获取调度器类型。<br><li>SGE：SGE调度器。<br><li>SLURM：SLURM调度器。
+                     * @return SchedulerType 调度器类型。<br><li>SGE：SGE调度器。<br><li>SLURM：SLURM调度器。
                      */
                     std::string GetSchedulerType() const;
 
                     /**
-                     * 设置调度器类型。<br><li>SGE：SGE调度器。
-                     * @param SchedulerType 调度器类型。<br><li>SGE：SGE调度器。
+                     * 设置调度器类型。<br><li>SGE：SGE调度器。<br><li>SLURM：SLURM调度器。
+                     * @param SchedulerType 调度器类型。<br><li>SGE：SGE调度器。<br><li>SLURM：SLURM调度器。
                      */
                     void SetSchedulerType(const std::string& _schedulerType);
 
@@ -157,14 +159,14 @@ namespace TencentCloud
                     bool SchedulerTypeHasBeenSet() const;
 
                     /**
-                     * 获取指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前仅支持公有镜像和自定义镜像。
-                     * @return ImageId 指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前仅支持公有镜像和自定义镜像。
+                     * 获取指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前仅支持公有镜像。
+                     * @return ImageId 指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前仅支持公有镜像。
                      */
                     std::string GetImageId() const;
 
                     /**
-                     * 设置指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前仅支持公有镜像和自定义镜像。
-                     * @param ImageId 指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前仅支持公有镜像和自定义镜像。
+                     * 设置指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前仅支持公有镜像。
+                     * @param ImageId 指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前仅支持公有镜像。
                      */
                     void SetImageId(const std::string& _imageId);
 
@@ -281,14 +283,18 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool DryRunHasBeenSet() const;
 
                     /**
-                     * 获取域名字服务类型。<br><li>NIS：NIS域名字服务。
-                     * @return AccountType 域名字服务类型。<br><li>NIS：NIS域名字服务。
+                     * 获取域名字服务类型。默认值：NIS
+<li>NIS：NIS域名字服务。
+                     * @return AccountType 域名字服务类型。默认值：NIS
+<li>NIS：NIS域名字服务。
                      */
                     std::string GetAccountType() const;
 
                     /**
-                     * 设置域名字服务类型。<br><li>NIS：NIS域名字服务。
-                     * @param AccountType 域名字服务类型。<br><li>NIS：NIS域名字服务。
+                     * 设置域名字服务类型。默认值：NIS
+<li>NIS：NIS域名字服务。
+                     * @param AccountType 域名字服务类型。默认值：NIS
+<li>NIS：NIS域名字服务。
                      */
                     void SetAccountType(const std::string& _accountType);
 
@@ -334,6 +340,68 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      */
                     bool StorageOptionHasBeenSet() const;
 
+                    /**
+                     * 获取已废弃。
+指定登录节点。
+                     * @return LoginNode 已废弃。
+指定登录节点。
+                     */
+                    std::vector<LoginNode> GetLoginNode() const;
+
+                    /**
+                     * 设置已废弃。
+指定登录节点。
+                     * @param LoginNode 已废弃。
+指定登录节点。
+                     */
+                    void SetLoginNode(const std::vector<LoginNode>& _loginNode);
+
+                    /**
+                     * 判断参数 LoginNode 是否已赋值
+                     * @return LoginNode 是否已赋值
+                     */
+                    bool LoginNodeHasBeenSet() const;
+
+                    /**
+                     * 获取已废弃。
+指定登录节点的数量。默认取值：0。取值范围：0～10。
+                     * @return LoginNodeCount 已废弃。
+指定登录节点的数量。默认取值：0。取值范围：0～10。
+                     */
+                    int64_t GetLoginNodeCount() const;
+
+                    /**
+                     * 设置已废弃。
+指定登录节点的数量。默认取值：0。取值范围：0～10。
+                     * @param LoginNodeCount 已废弃。
+指定登录节点的数量。默认取值：0。取值范围：0～10。
+                     */
+                    void SetLoginNodeCount(const int64_t& _loginNodeCount);
+
+                    /**
+                     * 判断参数 LoginNodeCount 是否已赋值
+                     * @return LoginNodeCount 是否已赋值
+                     */
+                    bool LoginNodeCountHasBeenSet() const;
+
+                    /**
+                     * 获取创建集群时同时绑定的标签对说明。
+                     * @return Tags 创建集群时同时绑定的标签对说明。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置创建集群时同时绑定的标签对说明。
+                     * @param Tags 创建集群时同时绑定的标签对说明。
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -349,7 +417,7 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool m_managerNodeHasBeenSet;
 
                     /**
-                     * 指定管理节点的数量。目前仅支持一个管理节点。
+                     * 指定管理节点的数量。默认取值：1。取值范围：1～2。
                      */
                     int64_t m_managerNodeCount;
                     bool m_managerNodeCountHasBeenSet;
@@ -367,13 +435,13 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool m_computeNodeCountHasBeenSet;
 
                     /**
-                     * 调度器类型。<br><li>SGE：SGE调度器。
+                     * 调度器类型。<br><li>SGE：SGE调度器。<br><li>SLURM：SLURM调度器。
                      */
                     std::string m_schedulerType;
                     bool m_schedulerTypeHasBeenSet;
 
                     /**
-                     * 指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前仅支持公有镜像和自定义镜像。
+                     * 指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前仅支持公有镜像。
                      */
                     std::string m_imageId;
                     bool m_imageIdHasBeenSet;
@@ -413,7 +481,8 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool m_dryRunHasBeenSet;
 
                     /**
-                     * 域名字服务类型。<br><li>NIS：NIS域名字服务。
+                     * 域名字服务类型。默认值：NIS
+<li>NIS：NIS域名字服务。
                      */
                     std::string m_accountType;
                     bool m_accountTypeHasBeenSet;
@@ -429,6 +498,26 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      */
                     StorageOption m_storageOption;
                     bool m_storageOptionHasBeenSet;
+
+                    /**
+                     * 已废弃。
+指定登录节点。
+                     */
+                    std::vector<LoginNode> m_loginNode;
+                    bool m_loginNodeHasBeenSet;
+
+                    /**
+                     * 已废弃。
+指定登录节点的数量。默认取值：0。取值范围：0～10。
+                     */
+                    int64_t m_loginNodeCount;
+                    bool m_loginNodeCountHasBeenSet;
+
+                    /**
+                     * 创建集群时同时绑定的标签对说明。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

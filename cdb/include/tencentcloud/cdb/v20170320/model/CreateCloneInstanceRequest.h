@@ -403,6 +403,24 @@ namespace TencentCloud
                      */
                     bool CageIdHasBeenSet() const;
 
+                    /**
+                     * 获取项目ID，默认项目ID0
+                     * @return ProjectId 项目ID，默认项目ID0
+                     */
+                    uint64_t GetProjectId() const;
+
+                    /**
+                     * 设置项目ID，默认项目ID0
+                     * @param ProjectId 项目ID，默认项目ID0
+                     */
+                    void SetProjectId(const uint64_t& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     */
+                    bool ProjectIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -524,6 +542,12 @@ namespace TencentCloud
                      */
                     std::string m_cageId;
                     bool m_cageIdHasBeenSet;
+
+                    /**
+                     * 项目ID，默认项目ID0
+                     */
+                    uint64_t m_projectId;
+                    bool m_projectIdHasBeenSet;
 
                 };
             }

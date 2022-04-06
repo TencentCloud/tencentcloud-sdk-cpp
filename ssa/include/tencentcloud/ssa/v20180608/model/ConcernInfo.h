@@ -134,6 +134,116 @@ namespace TencentCloud
                      */
                     bool StatisticsCountHasBeenSet() const;
 
+                    /**
+                     * 获取可疑关注点字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SearchData 可疑关注点字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSearchData() const;
+
+                    /**
+                     * 设置可疑关注点字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SearchData 可疑关注点字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSearchData(const std::string& _searchData);
+
+                    /**
+                     * 判断参数 SearchData 是否已赋值
+                     * @return SearchData 是否已赋值
+                     */
+                    bool SearchDataHasBeenSet() const;
+
+                    /**
+                     * 获取可疑关注点字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IpCountryIso 可疑关注点字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIpCountryIso() const;
+
+                    /**
+                     * 设置可疑关注点字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IpCountryIso 可疑关注点字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIpCountryIso(const std::string& _ipCountryIso);
+
+                    /**
+                     * 判断参数 IpCountryIso 是否已赋值
+                     * @return IpCountryIso 是否已赋值
+                     */
+                    bool IpCountryIsoHasBeenSet() const;
+
+                    /**
+                     * 获取可疑关注点字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IpProvinceIso 可疑关注点字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIpProvinceIso() const;
+
+                    /**
+                     * 设置可疑关注点字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IpProvinceIso 可疑关注点字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIpProvinceIso(const std::string& _ipProvinceIso);
+
+                    /**
+                     * 判断参数 IpProvinceIso 是否已赋值
+                     * @return IpProvinceIso 是否已赋值
+                     */
+                    bool IpProvinceIsoHasBeenSet() const;
+
+                    /**
+                     * 获取可疑关注点字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IpCity 可疑关注点字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIpCity() const;
+
+                    /**
+                     * 设置可疑关注点字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IpCity 可疑关注点字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIpCity(const std::string& _ipCity);
+
+                    /**
+                     * 判断参数 IpCity 是否已赋值
+                     * @return IpCity 是否已赋值
+                     */
+                    bool IpCityHasBeenSet() const;
+
+                    /**
+                     * 获取可疑关注点字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EventSubType 可疑关注点字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEventSubType() const;
+
+                    /**
+                     * 设置可疑关注点字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EventSubType 可疑关注点字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEventSubType(const std::string& _eventSubType);
+
+                    /**
+                     * 判断参数 EventSubType 是否已赋值
+                     * @return EventSubType 是否已赋值
+                     */
+                    bool EventSubTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +273,41 @@ namespace TencentCloud
                      */
                     int64_t m_statisticsCount;
                     bool m_statisticsCountHasBeenSet;
+
+                    /**
+                     * 可疑关注点字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_searchData;
+                    bool m_searchDataHasBeenSet;
+
+                    /**
+                     * 可疑关注点字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ipCountryIso;
+                    bool m_ipCountryIsoHasBeenSet;
+
+                    /**
+                     * 可疑关注点字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ipProvinceIso;
+                    bool m_ipProvinceIsoHasBeenSet;
+
+                    /**
+                     * 可疑关注点字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ipCity;
+                    bool m_ipCityHasBeenSet;
+
+                    /**
+                     * 可疑关注点字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_eventSubType;
+                    bool m_eventSubTypeHasBeenSet;
 
                 };
             }

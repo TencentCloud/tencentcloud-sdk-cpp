@@ -74,10 +74,8 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/DescribeAutoScalingGroupLastActivitiesRequest.h
   include/tencentcloud/as/v20180419/model/HostNameSettings.h
   include/tencentcloud/as/v20180419/model/ModifyLoadBalancersResponse.h
-  include/tencentcloud/as/v20180419/model/DescribePaiInstancesRequest.h
   include/tencentcloud/as/v20180419/model/CreateNotificationConfigurationRequest.h
   include/tencentcloud/as/v20180419/model/DescribeScheduledActionsResponse.h
-  include/tencentcloud/as/v20180419/model/ModifyNotificationConfigurationRequest.h
   include/tencentcloud/as/v20180419/model/DeleteLifecycleHookRequest.h
   include/tencentcloud/as/v20180419/model/ModifyLoadBalancerTargetAttributesResponse.h
   include/tencentcloud/as/v20180419/model/ModifyAutoScalingGroupResponse.h
@@ -86,7 +84,6 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/InstanceMarketOptionsRequest.h
   include/tencentcloud/as/v20180419/model/UpgradeLifecycleHookResponse.h
   include/tencentcloud/as/v20180419/model/InstanceTag.h
-  include/tencentcloud/as/v20180419/model/PaiInstance.h
   include/tencentcloud/as/v20180419/model/DescribeAutoScalingAdvicesResponse.h
   include/tencentcloud/as/v20180419/model/CreateAutoScalingGroupRequest.h
   include/tencentcloud/as/v20180419/model/DeleteScheduledActionResponse.h
@@ -148,14 +145,14 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/ModifyDesiredCapacityResponse.h
   include/tencentcloud/as/v20180419/model/StopAutoScalingInstancesRequest.h
   include/tencentcloud/as/v20180419/model/RunMonitorServiceEnabled.h
-  include/tencentcloud/as/v20180419/model/DeleteLifecycleHookResponse.h
+  include/tencentcloud/as/v20180419/model/ModifyNotificationConfigurationRequest.h
   include/tencentcloud/as/v20180419/model/ActivtyRelatedInstance.h
   include/tencentcloud/as/v20180419/model/CreateAutoScalingGroupFromInstanceRequest.h
   include/tencentcloud/as/v20180419/model/InternetAccessible.h
   include/tencentcloud/as/v20180419/model/EnableAutoScalingGroupResponse.h
   include/tencentcloud/as/v20180419/model/UpgradeLaunchConfigurationResponse.h
   include/tencentcloud/as/v20180419/model/InstanceChargePrepaid.h
-  include/tencentcloud/as/v20180419/model/DescribePaiInstancesResponse.h
+  include/tencentcloud/as/v20180419/model/DeleteLifecycleHookResponse.h
   include/tencentcloud/as/v20180419/model/ExecuteScalingPolicyRequest.h
   )
 
@@ -216,10 +213,8 @@ set(as_src
   src/v20180419/model/DescribeAutoScalingGroupLastActivitiesRequest.cpp
   src/v20180419/model/HostNameSettings.cpp
   src/v20180419/model/ModifyLoadBalancersResponse.cpp
-  src/v20180419/model/DescribePaiInstancesRequest.cpp
   src/v20180419/model/CreateNotificationConfigurationRequest.cpp
   src/v20180419/model/DescribeScheduledActionsResponse.cpp
-  src/v20180419/model/ModifyNotificationConfigurationRequest.cpp
   src/v20180419/model/DeleteLifecycleHookRequest.cpp
   src/v20180419/model/ModifyLoadBalancerTargetAttributesResponse.cpp
   src/v20180419/model/ModifyAutoScalingGroupResponse.cpp
@@ -228,7 +223,6 @@ set(as_src
   src/v20180419/model/InstanceMarketOptionsRequest.cpp
   src/v20180419/model/UpgradeLifecycleHookResponse.cpp
   src/v20180419/model/InstanceTag.cpp
-  src/v20180419/model/PaiInstance.cpp
   src/v20180419/model/DescribeAutoScalingAdvicesResponse.cpp
   src/v20180419/model/CreateAutoScalingGroupRequest.cpp
   src/v20180419/model/DeleteScheduledActionResponse.cpp
@@ -290,14 +284,14 @@ set(as_src
   src/v20180419/model/ModifyDesiredCapacityResponse.cpp
   src/v20180419/model/StopAutoScalingInstancesRequest.cpp
   src/v20180419/model/RunMonitorServiceEnabled.cpp
-  src/v20180419/model/DeleteLifecycleHookResponse.cpp
+  src/v20180419/model/ModifyNotificationConfigurationRequest.cpp
   src/v20180419/model/ActivtyRelatedInstance.cpp
   src/v20180419/model/CreateAutoScalingGroupFromInstanceRequest.cpp
   src/v20180419/model/InternetAccessible.cpp
   src/v20180419/model/EnableAutoScalingGroupResponse.cpp
   src/v20180419/model/UpgradeLaunchConfigurationResponse.cpp
   src/v20180419/model/InstanceChargePrepaid.cpp
-  src/v20180419/model/DescribePaiInstancesResponse.cpp
+  src/v20180419/model/DeleteLifecycleHookResponse.cpp
   src/v20180419/model/ExecuteScalingPolicyRequest.cpp
   )
 

@@ -351,6 +351,20 @@ namespace TencentCloud
                      */
                     bool FirmwareUpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取创建者账号ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateUserId 创建者账号ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetCreateUserId() const;
+
+                    /**
+                     * 判断参数 CreateUserId 是否已赋值
+                     * @return CreateUserId 是否已赋值
+                     */
+                    bool CreateUserIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -505,6 +519,13 @@ namespace TencentCloud
                      */
                     uint64_t m_firmwareUpdateTime;
                     bool m_firmwareUpdateTimeHasBeenSet;
+
+                    /**
+                     * 创建者账号ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_createUserId;
+                    bool m_createUserIdHasBeenSet;
 
                 };
             }

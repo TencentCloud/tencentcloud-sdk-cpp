@@ -1,0 +1,104 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_BSCA_V20210811_BSCACLIENT_H_
+#define TENCENTCLOUD_BSCA_V20210811_BSCACLIENT_H_
+
+#include <functional>
+#include <future>
+#include <tencentcloud/core/AbstractClient.h>
+#include <tencentcloud/core/Credential.h>
+#include <tencentcloud/core/profile/ClientProfile.h>
+#include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/bsca/v20210811/model/DescribeKBComponentRequest.h>
+#include <tencentcloud/bsca/v20210811/model/DescribeKBComponentResponse.h>
+#include <tencentcloud/bsca/v20210811/model/DescribeKBComponentVulnerabilityRequest.h>
+#include <tencentcloud/bsca/v20210811/model/DescribeKBComponentVulnerabilityResponse.h>
+#include <tencentcloud/bsca/v20210811/model/DescribeKBLicenseRequest.h>
+#include <tencentcloud/bsca/v20210811/model/DescribeKBLicenseResponse.h>
+#include <tencentcloud/bsca/v20210811/model/DescribeKBVulnerabilityRequest.h>
+#include <tencentcloud/bsca/v20210811/model/DescribeKBVulnerabilityResponse.h>
+
+
+namespace TencentCloud
+{
+    namespace Bsca
+    {
+        namespace V20210811
+        {
+            class BscaClient : public AbstractClient
+            {
+            public:
+                BscaClient(const Credential &credential, const std::string &region);
+                BscaClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
+
+                typedef Outcome<Core::Error, Model::DescribeKBComponentResponse> DescribeKBComponentOutcome;
+                typedef std::future<DescribeKBComponentOutcome> DescribeKBComponentOutcomeCallable;
+                typedef std::function<void(const BscaClient*, const Model::DescribeKBComponentRequest&, DescribeKBComponentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKBComponentAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeKBComponentVulnerabilityResponse> DescribeKBComponentVulnerabilityOutcome;
+                typedef std::future<DescribeKBComponentVulnerabilityOutcome> DescribeKBComponentVulnerabilityOutcomeCallable;
+                typedef std::function<void(const BscaClient*, const Model::DescribeKBComponentVulnerabilityRequest&, DescribeKBComponentVulnerabilityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKBComponentVulnerabilityAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeKBLicenseResponse> DescribeKBLicenseOutcome;
+                typedef std::future<DescribeKBLicenseOutcome> DescribeKBLicenseOutcomeCallable;
+                typedef std::function<void(const BscaClient*, const Model::DescribeKBLicenseRequest&, DescribeKBLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKBLicenseAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeKBVulnerabilityResponse> DescribeKBVulnerabilityOutcome;
+                typedef std::future<DescribeKBVulnerabilityOutcome> DescribeKBVulnerabilityOutcomeCallable;
+                typedef std::function<void(const BscaClient*, const Model::DescribeKBVulnerabilityRequest&, DescribeKBVulnerabilityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKBVulnerabilityAsyncHandler;
+
+
+
+                /**
+                 *本接口(DescribeKBComponent)用于在知识库中查询开源组件信息。本接口根据用户输入的PURL在知识库中寻找对应的开源组件，其中Name为必填字段。
+                 * @param req DescribeKBComponentRequest
+                 * @return DescribeKBComponentOutcome
+                 */
+                DescribeKBComponentOutcome DescribeKBComponent(const Model::DescribeKBComponentRequest &request);
+                void DescribeKBComponentAsync(const Model::DescribeKBComponentRequest& request, const DescribeKBComponentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKBComponentOutcomeCallable DescribeKBComponentCallable(const Model::DescribeKBComponentRequest& request);
+
+                /**
+                 *本接口(DescribeKBComponentVulnerability)用于在知识库中查询开源组件的漏洞信息。
+                 * @param req DescribeKBComponentVulnerabilityRequest
+                 * @return DescribeKBComponentVulnerabilityOutcome
+                 */
+                DescribeKBComponentVulnerabilityOutcome DescribeKBComponentVulnerability(const Model::DescribeKBComponentVulnerabilityRequest &request);
+                void DescribeKBComponentVulnerabilityAsync(const Model::DescribeKBComponentVulnerabilityRequest& request, const DescribeKBComponentVulnerabilityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKBComponentVulnerabilityOutcomeCallable DescribeKBComponentVulnerabilityCallable(const Model::DescribeKBComponentVulnerabilityRequest& request);
+
+                /**
+                 *本接口(DescribeKBLicense)用于在知识库中查询许可证信息。
+                 * @param req DescribeKBLicenseRequest
+                 * @return DescribeKBLicenseOutcome
+                 */
+                DescribeKBLicenseOutcome DescribeKBLicense(const Model::DescribeKBLicenseRequest &request);
+                void DescribeKBLicenseAsync(const Model::DescribeKBLicenseRequest& request, const DescribeKBLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKBLicenseOutcomeCallable DescribeKBLicenseCallable(const Model::DescribeKBLicenseRequest& request);
+
+                /**
+                 *本接口(DescribeKBVulnerability)用于在知识库中查询漏洞详细信息，支持根据CVE ID查询或者根据Vul ID查询。
+                 * @param req DescribeKBVulnerabilityRequest
+                 * @return DescribeKBVulnerabilityOutcome
+                 */
+                DescribeKBVulnerabilityOutcome DescribeKBVulnerability(const Model::DescribeKBVulnerabilityRequest &request);
+                void DescribeKBVulnerabilityAsync(const Model::DescribeKBVulnerabilityRequest& request, const DescribeKBVulnerabilityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKBVulnerabilityOutcomeCallable DescribeKBVulnerabilityCallable(const Model::DescribeKBVulnerabilityRequest& request);
+
+            };
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_BSCA_V20210811_BSCACLIENT_H_

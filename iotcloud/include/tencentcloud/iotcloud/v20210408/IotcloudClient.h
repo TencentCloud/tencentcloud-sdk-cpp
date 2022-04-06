@@ -33,6 +33,8 @@
 #include <tencentcloud/iotcloud/v20210408/model/DeletePrivateCAResponse.h>
 #include <tencentcloud/iotcloud/v20210408/model/DeleteProductRequest.h>
 #include <tencentcloud/iotcloud/v20210408/model/DeleteProductResponse.h>
+#include <tencentcloud/iotcloud/v20210408/model/DeleteProductPrivateCARequest.h>
+#include <tencentcloud/iotcloud/v20210408/model/DeleteProductPrivateCAResponse.h>
 #include <tencentcloud/iotcloud/v20210408/model/DescribeDeviceRequest.h>
 #include <tencentcloud/iotcloud/v20210408/model/DescribeDeviceResponse.h>
 #include <tencentcloud/iotcloud/v20210408/model/DescribeDevicesRequest.h>
@@ -47,12 +49,28 @@
 #include <tencentcloud/iotcloud/v20210408/model/DescribeProductResponse.h>
 #include <tencentcloud/iotcloud/v20210408/model/DescribeProductCARequest.h>
 #include <tencentcloud/iotcloud/v20210408/model/DescribeProductCAResponse.h>
+#include <tencentcloud/iotcloud/v20210408/model/ListLogRequest.h>
+#include <tencentcloud/iotcloud/v20210408/model/ListLogResponse.h>
+#include <tencentcloud/iotcloud/v20210408/model/ListLogPayloadRequest.h>
+#include <tencentcloud/iotcloud/v20210408/model/ListLogPayloadResponse.h>
+#include <tencentcloud/iotcloud/v20210408/model/ListSDKLogRequest.h>
+#include <tencentcloud/iotcloud/v20210408/model/ListSDKLogResponse.h>
+#include <tencentcloud/iotcloud/v20210408/model/PublishBroadcastMessageRequest.h>
+#include <tencentcloud/iotcloud/v20210408/model/PublishBroadcastMessageResponse.h>
+#include <tencentcloud/iotcloud/v20210408/model/SetProductsForbiddenStatusRequest.h>
+#include <tencentcloud/iotcloud/v20210408/model/SetProductsForbiddenStatusResponse.h>
 #include <tencentcloud/iotcloud/v20210408/model/UpdateDeviceLogLevelRequest.h>
 #include <tencentcloud/iotcloud/v20210408/model/UpdateDeviceLogLevelResponse.h>
+#include <tencentcloud/iotcloud/v20210408/model/UpdateDevicePSKRequest.h>
+#include <tencentcloud/iotcloud/v20210408/model/UpdateDevicePSKResponse.h>
 #include <tencentcloud/iotcloud/v20210408/model/UpdateDevicesEnableStateRequest.h>
 #include <tencentcloud/iotcloud/v20210408/model/UpdateDevicesEnableStateResponse.h>
 #include <tencentcloud/iotcloud/v20210408/model/UpdatePrivateCARequest.h>
 #include <tencentcloud/iotcloud/v20210408/model/UpdatePrivateCAResponse.h>
+#include <tencentcloud/iotcloud/v20210408/model/UpdateProductDynamicRegisterRequest.h>
+#include <tencentcloud/iotcloud/v20210408/model/UpdateProductDynamicRegisterResponse.h>
+#include <tencentcloud/iotcloud/v20210408/model/UpdateProductPrivateCARequest.h>
+#include <tencentcloud/iotcloud/v20210408/model/UpdateProductPrivateCAResponse.h>
 
 
 namespace TencentCloud
@@ -82,6 +100,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteProductResponse> DeleteProductOutcome;
                 typedef std::future<DeleteProductOutcome> DeleteProductOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::DeleteProductRequest&, DeleteProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProductAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteProductPrivateCAResponse> DeleteProductPrivateCAOutcome;
+                typedef std::future<DeleteProductPrivateCAOutcome> DeleteProductPrivateCAOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::DeleteProductPrivateCARequest&, DeleteProductPrivateCAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProductPrivateCAAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDeviceResponse> DescribeDeviceOutcome;
                 typedef std::future<DescribeDeviceOutcome> DescribeDeviceOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::DescribeDeviceRequest&, DescribeDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceAsyncHandler;
@@ -103,15 +124,39 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProductCAResponse> DescribeProductCAOutcome;
                 typedef std::future<DescribeProductCAOutcome> DescribeProductCAOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::DescribeProductCARequest&, DescribeProductCAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductCAAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListLogResponse> ListLogOutcome;
+                typedef std::future<ListLogOutcome> ListLogOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::ListLogRequest&, ListLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListLogPayloadResponse> ListLogPayloadOutcome;
+                typedef std::future<ListLogPayloadOutcome> ListLogPayloadOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::ListLogPayloadRequest&, ListLogPayloadOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListLogPayloadAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListSDKLogResponse> ListSDKLogOutcome;
+                typedef std::future<ListSDKLogOutcome> ListSDKLogOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::ListSDKLogRequest&, ListSDKLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListSDKLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::PublishBroadcastMessageResponse> PublishBroadcastMessageOutcome;
+                typedef std::future<PublishBroadcastMessageOutcome> PublishBroadcastMessageOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::PublishBroadcastMessageRequest&, PublishBroadcastMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishBroadcastMessageAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetProductsForbiddenStatusResponse> SetProductsForbiddenStatusOutcome;
+                typedef std::future<SetProductsForbiddenStatusOutcome> SetProductsForbiddenStatusOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::SetProductsForbiddenStatusRequest&, SetProductsForbiddenStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetProductsForbiddenStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateDeviceLogLevelResponse> UpdateDeviceLogLevelOutcome;
                 typedef std::future<UpdateDeviceLogLevelOutcome> UpdateDeviceLogLevelOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::UpdateDeviceLogLevelRequest&, UpdateDeviceLogLevelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDeviceLogLevelAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateDevicePSKResponse> UpdateDevicePSKOutcome;
+                typedef std::future<UpdateDevicePSKOutcome> UpdateDevicePSKOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::UpdateDevicePSKRequest&, UpdateDevicePSKOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDevicePSKAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateDevicesEnableStateResponse> UpdateDevicesEnableStateOutcome;
                 typedef std::future<UpdateDevicesEnableStateOutcome> UpdateDevicesEnableStateOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::UpdateDevicesEnableStateRequest&, UpdateDevicesEnableStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDevicesEnableStateAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdatePrivateCAResponse> UpdatePrivateCAOutcome;
                 typedef std::future<UpdatePrivateCAOutcome> UpdatePrivateCAOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::UpdatePrivateCARequest&, UpdatePrivateCAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePrivateCAAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateProductDynamicRegisterResponse> UpdateProductDynamicRegisterOutcome;
+                typedef std::future<UpdateProductDynamicRegisterOutcome> UpdateProductDynamicRegisterOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::UpdateProductDynamicRegisterRequest&, UpdateProductDynamicRegisterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateProductDynamicRegisterAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateProductPrivateCAResponse> UpdateProductPrivateCAOutcome;
+                typedef std::future<UpdateProductPrivateCAOutcome> UpdateProductPrivateCAOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::UpdateProductPrivateCARequest&, UpdateProductPrivateCAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateProductPrivateCAAsyncHandler;
 
 
 
@@ -159,6 +204,15 @@ namespace TencentCloud
                 DeleteProductOutcome DeleteProduct(const Model::DeleteProductRequest &request);
                 void DeleteProductAsync(const Model::DeleteProductRequest& request, const DeleteProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteProductOutcomeCallable DeleteProductCallable(const Model::DeleteProductRequest& request);
+
+                /**
+                 *删除产品的私有CA证书
+                 * @param req DeleteProductPrivateCARequest
+                 * @return DeleteProductPrivateCAOutcome
+                 */
+                DeleteProductPrivateCAOutcome DeleteProductPrivateCA(const Model::DeleteProductPrivateCARequest &request);
+                void DeleteProductPrivateCAAsync(const Model::DeleteProductPrivateCARequest& request, const DeleteProductPrivateCAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteProductPrivateCAOutcomeCallable DeleteProductPrivateCACallable(const Model::DeleteProductPrivateCARequest& request);
 
                 /**
                  *本接口（DescribeDevice）用于查看设备信息
@@ -224,6 +278,51 @@ namespace TencentCloud
                 DescribeProductCAOutcomeCallable DescribeProductCACallable(const Model::DescribeProductCARequest& request);
 
                 /**
+                 *本接口（ListLog）用于查看日志信息 
+                 * @param req ListLogRequest
+                 * @return ListLogOutcome
+                 */
+                ListLogOutcome ListLog(const Model::ListLogRequest &request);
+                void ListLogAsync(const Model::ListLogRequest& request, const ListLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListLogOutcomeCallable ListLogCallable(const Model::ListLogRequest& request);
+
+                /**
+                 *获取日志内容列表
+                 * @param req ListLogPayloadRequest
+                 * @return ListLogPayloadOutcome
+                 */
+                ListLogPayloadOutcome ListLogPayload(const Model::ListLogPayloadRequest &request);
+                void ListLogPayloadAsync(const Model::ListLogPayloadRequest& request, const ListLogPayloadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListLogPayloadOutcomeCallable ListLogPayloadCallable(const Model::ListLogPayloadRequest& request);
+
+                /**
+                 *获取设备上报的日志
+                 * @param req ListSDKLogRequest
+                 * @return ListSDKLogOutcome
+                 */
+                ListSDKLogOutcome ListSDKLog(const Model::ListSDKLogRequest &request);
+                void ListSDKLogAsync(const Model::ListSDKLogRequest& request, const ListSDKLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListSDKLogOutcomeCallable ListSDKLogCallable(const Model::ListSDKLogRequest& request);
+
+                /**
+                 *发布广播消息
+                 * @param req PublishBroadcastMessageRequest
+                 * @return PublishBroadcastMessageOutcome
+                 */
+                PublishBroadcastMessageOutcome PublishBroadcastMessage(const Model::PublishBroadcastMessageRequest &request);
+                void PublishBroadcastMessageAsync(const Model::PublishBroadcastMessageRequest& request, const PublishBroadcastMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PublishBroadcastMessageOutcomeCallable PublishBroadcastMessageCallable(const Model::PublishBroadcastMessageRequest& request);
+
+                /**
+                 *批量设置产品禁用状态
+                 * @param req SetProductsForbiddenStatusRequest
+                 * @return SetProductsForbiddenStatusOutcome
+                 */
+                SetProductsForbiddenStatusOutcome SetProductsForbiddenStatus(const Model::SetProductsForbiddenStatusRequest &request);
+                void SetProductsForbiddenStatusAsync(const Model::SetProductsForbiddenStatusRequest& request, const SetProductsForbiddenStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetProductsForbiddenStatusOutcomeCallable SetProductsForbiddenStatusCallable(const Model::SetProductsForbiddenStatusRequest& request);
+
+                /**
                  *设置设备上报的日志级别  
                  * @param req UpdateDeviceLogLevelRequest
                  * @return UpdateDeviceLogLevelOutcome
@@ -231,6 +330,15 @@ namespace TencentCloud
                 UpdateDeviceLogLevelOutcome UpdateDeviceLogLevel(const Model::UpdateDeviceLogLevelRequest &request);
                 void UpdateDeviceLogLevelAsync(const Model::UpdateDeviceLogLevelRequest& request, const UpdateDeviceLogLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateDeviceLogLevelOutcomeCallable UpdateDeviceLogLevelCallable(const Model::UpdateDeviceLogLevelRequest& request);
+
+                /**
+                 *本接口（UpdateDevicePSK）用于更新设备的PSK 
+                 * @param req UpdateDevicePSKRequest
+                 * @return UpdateDevicePSKOutcome
+                 */
+                UpdateDevicePSKOutcome UpdateDevicePSK(const Model::UpdateDevicePSKRequest &request);
+                void UpdateDevicePSKAsync(const Model::UpdateDevicePSKRequest& request, const UpdateDevicePSKAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateDevicePSKOutcomeCallable UpdateDevicePSKCallable(const Model::UpdateDevicePSKRequest& request);
 
                 /**
                  *批量启用或者禁用设备 
@@ -249,6 +357,24 @@ namespace TencentCloud
                 UpdatePrivateCAOutcome UpdatePrivateCA(const Model::UpdatePrivateCARequest &request);
                 void UpdatePrivateCAAsync(const Model::UpdatePrivateCARequest& request, const UpdatePrivateCAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdatePrivateCAOutcomeCallable UpdatePrivateCACallable(const Model::UpdatePrivateCARequest& request);
+
+                /**
+                 *更新产品动态注册的配置 
+                 * @param req UpdateProductDynamicRegisterRequest
+                 * @return UpdateProductDynamicRegisterOutcome
+                 */
+                UpdateProductDynamicRegisterOutcome UpdateProductDynamicRegister(const Model::UpdateProductDynamicRegisterRequest &request);
+                void UpdateProductDynamicRegisterAsync(const Model::UpdateProductDynamicRegisterRequest& request, const UpdateProductDynamicRegisterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateProductDynamicRegisterOutcomeCallable UpdateProductDynamicRegisterCallable(const Model::UpdateProductDynamicRegisterRequest& request);
+
+                /**
+                 *更新产品的私有CA
+                 * @param req UpdateProductPrivateCARequest
+                 * @return UpdateProductPrivateCAOutcome
+                 */
+                UpdateProductPrivateCAOutcome UpdateProductPrivateCA(const Model::UpdateProductPrivateCARequest &request);
+                void UpdateProductPrivateCAAsync(const Model::UpdateProductPrivateCARequest& request, const UpdateProductPrivateCAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateProductPrivateCAOutcomeCallable UpdateProductPrivateCACallable(const Model::UpdateProductPrivateCARequest& request);
 
             };
         }
