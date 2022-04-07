@@ -48,7 +48,8 @@ RunInstancesRequest::RunInstancesRequest() :
     m_camRoleNameHasBeenSet(false),
     m_hpcClusterIdHasBeenSet(false),
     m_launchTemplateHasBeenSet(false),
-    m_chcIdsHasBeenSet(false)
+    m_chcIdsHasBeenSet(false),
+    m_disableApiTerminationHasBeenSet(false)
 {
 }
 
@@ -304,6 +305,14 @@ string RunInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_disableApiTerminationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableApiTermination";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_disableApiTermination, allocator);
     }
 
 
@@ -728,6 +737,22 @@ void RunInstancesRequest::SetChcIds(const vector<string>& _chcIds)
 bool RunInstancesRequest::ChcIdsHasBeenSet() const
 {
     return m_chcIdsHasBeenSet;
+}
+
+bool RunInstancesRequest::GetDisableApiTermination() const
+{
+    return m_disableApiTermination;
+}
+
+void RunInstancesRequest::SetDisableApiTermination(const bool& _disableApiTermination)
+{
+    m_disableApiTermination = _disableApiTermination;
+    m_disableApiTerminationHasBeenSet = true;
+}
+
+bool RunInstancesRequest::DisableApiTerminationHasBeenSet() const
+{
+    return m_disableApiTerminationHasBeenSet;
 }
 
 

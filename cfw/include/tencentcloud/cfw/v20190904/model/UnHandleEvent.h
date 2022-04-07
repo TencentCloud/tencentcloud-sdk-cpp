@@ -119,6 +119,28 @@ namespace TencentCloud
                      */
                     bool BaseLineOutSwitchHasBeenSet() const;
 
+                    /**
+                     * 获取vpc间防火墙实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VpcFwCount vpc间防火墙实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetVpcFwCount() const;
+
+                    /**
+                     * 设置vpc间防火墙实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VpcFwCount vpc间防火墙实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVpcFwCount(const uint64_t& _vpcFwCount);
+
+                    /**
+                     * 判断参数 VpcFwCount 是否已赋值
+                     * @return VpcFwCount 是否已赋值
+                     */
+                    bool VpcFwCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,6 +166,13 @@ namespace TencentCloud
                      */
                     uint64_t m_baseLineOutSwitch;
                     bool m_baseLineOutSwitchHasBeenSet;
+
+                    /**
+                     * vpc间防火墙实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_vpcFwCount;
+                    bool m_vpcFwCountHasBeenSet;
 
                 };
             }

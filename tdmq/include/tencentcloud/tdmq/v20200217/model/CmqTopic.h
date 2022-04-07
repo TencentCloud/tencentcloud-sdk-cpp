@@ -363,6 +363,28 @@ FilterType = 2表示用户使用 BindingKey 过滤。
                      */
                     bool NamespaceNameHasBeenSet() const;
 
+                    /**
+                     * 获取集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Status 集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -464,6 +486,13 @@ FilterType = 2表示用户使用 BindingKey 过滤。
                      */
                     std::string m_namespaceName;
                     bool m_namespaceNameHasBeenSet;
+
+                    /**
+                     * 集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

@@ -176,6 +176,28 @@ namespace TencentCloud
                      */
                     bool VpcEndPointHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持命名空间接入点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SupportNamespaceEndpoint 是否支持命名空间接入点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetSupportNamespaceEndpoint() const;
+
+                    /**
+                     * 设置是否支持命名空间接入点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SupportNamespaceEndpoint 是否支持命名空间接入点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSupportNamespaceEndpoint(const bool& _supportNamespaceEndpoint);
+
+                    /**
+                     * 判断参数 SupportNamespaceEndpoint 是否已赋值
+                     * @return SupportNamespaceEndpoint 是否已赋值
+                     */
+                    bool SupportNamespaceEndpointHasBeenSet() const;
+
                 private:
 
                     /**
@@ -220,6 +242,13 @@ namespace TencentCloud
                      */
                     std::string m_vpcEndPoint;
                     bool m_vpcEndPointHasBeenSet;
+
+                    /**
+                     * 是否支持命名空间接入点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_supportNamespaceEndpoint;
+                    bool m_supportNamespaceEndpointHasBeenSet;
 
                 };
             }

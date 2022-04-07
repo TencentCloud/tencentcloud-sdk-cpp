@@ -698,6 +698,28 @@ namespace TencentCloud
                      */
                     bool MaxMsgBacklogSizeHasBeenSet() const;
 
+                    /**
+                     * 获取队列可回溯存储空间，取值范围1024MB - 10240MB，0表示不开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RetentionSizeInMB 队列可回溯存储空间，取值范围1024MB - 10240MB，0表示不开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetRetentionSizeInMB() const;
+
+                    /**
+                     * 设置队列可回溯存储空间，取值范围1024MB - 10240MB，0表示不开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RetentionSizeInMB 队列可回溯存储空间，取值范围1024MB - 10240MB，0表示不开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRetentionSizeInMB(const uint64_t& _retentionSizeInMB);
+
+                    /**
+                     * 判断参数 RetentionSizeInMB 是否已赋值
+                     * @return RetentionSizeInMB 是否已赋值
+                     */
+                    bool RetentionSizeInMBHasBeenSet() const;
+
                 private:
 
                     /**
@@ -906,6 +928,13 @@ namespace TencentCloud
                      */
                     int64_t m_maxMsgBacklogSize;
                     bool m_maxMsgBacklogSizeHasBeenSet;
+
+                    /**
+                     * 队列可回溯存储空间，取值范围1024MB - 10240MB，0表示不开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_retentionSizeInMB;
+                    bool m_retentionSizeInMBHasBeenSet;
 
                 };
             }

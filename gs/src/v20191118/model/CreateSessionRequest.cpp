@@ -39,7 +39,8 @@ CreateSessionRequest::CreateSessionRequest() :
     m_optimizationHasBeenSet(false),
     m_hostUserIdHasBeenSet(false),
     m_roleHasBeenSet(false),
-    m_gameContextHasBeenSet(false)
+    m_gameContextHasBeenSet(false),
+    m_runModeHasBeenSet(false)
 {
 }
 
@@ -184,6 +185,14 @@ string CreateSessionRequest::ToJsonString() const
         string key = "GameContext";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_gameContext.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_runModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_runMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -464,6 +473,22 @@ void CreateSessionRequest::SetGameContext(const string& _gameContext)
 bool CreateSessionRequest::GameContextHasBeenSet() const
 {
     return m_gameContextHasBeenSet;
+}
+
+string CreateSessionRequest::GetRunMode() const
+{
+    return m_runMode;
+}
+
+void CreateSessionRequest::SetRunMode(const string& _runMode)
+{
+    m_runMode = _runMode;
+    m_runModeHasBeenSet = true;
+}
+
+bool CreateSessionRequest::RunModeHasBeenSet() const
+{
+    return m_runModeHasBeenSet;
 }
 
 

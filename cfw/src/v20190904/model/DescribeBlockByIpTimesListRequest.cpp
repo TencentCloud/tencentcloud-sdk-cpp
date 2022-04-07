@@ -28,7 +28,9 @@ DescribeBlockByIpTimesListRequest::DescribeBlockByIpTimesListRequest() :
     m_ipHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_directionHasBeenSet(false),
-    m_sourceHasBeenSet(false)
+    m_sourceHasBeenSet(false),
+    m_edgeIdHasBeenSet(false),
+    m_logSourceHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,22 @@ string DescribeBlockByIpTimesListRequest::ToJsonString() const
         string key = "Source";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_source.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_edgeIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EdgeId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_edgeId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_logSource.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +207,38 @@ void DescribeBlockByIpTimesListRequest::SetSource(const string& _source)
 bool DescribeBlockByIpTimesListRequest::SourceHasBeenSet() const
 {
     return m_sourceHasBeenSet;
+}
+
+string DescribeBlockByIpTimesListRequest::GetEdgeId() const
+{
+    return m_edgeId;
+}
+
+void DescribeBlockByIpTimesListRequest::SetEdgeId(const string& _edgeId)
+{
+    m_edgeId = _edgeId;
+    m_edgeIdHasBeenSet = true;
+}
+
+bool DescribeBlockByIpTimesListRequest::EdgeIdHasBeenSet() const
+{
+    return m_edgeIdHasBeenSet;
+}
+
+string DescribeBlockByIpTimesListRequest::GetLogSource() const
+{
+    return m_logSource;
+}
+
+void DescribeBlockByIpTimesListRequest::SetLogSource(const string& _logSource)
+{
+    m_logSource = _logSource;
+    m_logSourceHasBeenSet = true;
+}
+
+bool DescribeBlockByIpTimesListRequest::LogSourceHasBeenSet() const
+{
+    return m_logSourceHasBeenSet;
 }
 
 

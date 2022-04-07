@@ -27,7 +27,8 @@ RocketMQClusterInfo::RocketMQClusterInfo() :
     m_createTimeHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_publicEndPointHasBeenSet(false),
-    m_vpcEndPointHasBeenSet(false)
+    m_vpcEndPointHasBeenSet(false),
+    m_supportNamespaceEndpointHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome RocketMQClusterInfo::Deserialize(const rapidjson::Value &val
         m_vpcEndPointHasBeenSet = true;
     }
 
+    if (value.HasMember("SupportNamespaceEndpoint") && !value["SupportNamespaceEndpoint"].IsNull())
+    {
+        if (!value["SupportNamespaceEndpoint"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQClusterInfo.SupportNamespaceEndpoint` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_supportNamespaceEndpoint = value["SupportNamespaceEndpoint"].GetBool();
+        m_supportNamespaceEndpointHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void RocketMQClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "VpcEndPoint";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_vpcEndPoint.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_supportNamespaceEndpointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportNamespaceEndpoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_supportNamespaceEndpoint, allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void RocketMQClusterInfo::SetVpcEndPoint(const string& _vpcEndPoint)
 bool RocketMQClusterInfo::VpcEndPointHasBeenSet() const
 {
     return m_vpcEndPointHasBeenSet;
+}
+
+bool RocketMQClusterInfo::GetSupportNamespaceEndpoint() const
+{
+    return m_supportNamespaceEndpoint;
+}
+
+void RocketMQClusterInfo::SetSupportNamespaceEndpoint(const bool& _supportNamespaceEndpoint)
+{
+    m_supportNamespaceEndpoint = _supportNamespaceEndpoint;
+    m_supportNamespaceEndpointHasBeenSet = true;
+}
+
+bool RocketMQClusterInfo::SupportNamespaceEndpointHasBeenSet() const
+{
+    return m_supportNamespaceEndpointHasBeenSet;
 }
 

@@ -241,6 +241,24 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      */
                     bool ContainersHasBeenSet() const;
 
+                    /**
+                     * 获取是否自动使用代金券。默认不使用。
+                     * @return AutoVoucher 是否自动使用代金券。默认不使用。
+                     */
+                    bool GetAutoVoucher() const;
+
+                    /**
+                     * 设置是否自动使用代金券。默认不使用。
+                     * @param AutoVoucher 是否自动使用代金券。默认不使用。
+                     */
+                    void SetAutoVoucher(const bool& _autoVoucher);
+
+                    /**
+                     * 判断参数 AutoVoucher 是否已赋值
+                     * @return AutoVoucher 是否已赋值
+                     */
+                    bool AutoVoucherHasBeenSet() const;
+
                 private:
 
                     /**
@@ -306,6 +324,12 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      */
                     std::vector<DockerContainerConfiguration> m_containers;
                     bool m_containersHasBeenSet;
+
+                    /**
+                     * 是否自动使用代金券。默认不使用。
+                     */
+                    bool m_autoVoucher;
+                    bool m_autoVoucherHasBeenSet;
 
                 };
             }

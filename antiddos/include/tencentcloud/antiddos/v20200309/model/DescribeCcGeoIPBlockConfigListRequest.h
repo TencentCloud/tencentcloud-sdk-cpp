@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取指定特定实例Id
-                     * @return InstanceId 指定特定实例Id
+                     * 获取指定特定实例ID
+                     * @return InstanceId 指定特定实例ID
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置指定特定实例Id
-                     * @param InstanceId 指定特定实例Id
+                     * 设置指定特定实例ID
+                     * @param InstanceId 指定特定实例ID
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取IP地址，普通高防ip要传该字段
-                     * @return Ip IP地址，普通高防ip要传该字段
+                     * 获取IP地址，普通高防IP要传该字段
+                     * @return Ip IP地址，普通高防IP要传该字段
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置IP地址，普通高防ip要传该字段
-                     * @param Ip IP地址，普通高防ip要传该字段
+                     * 设置IP地址，普通高防IP要传该字段
+                     * @param Ip IP地址，普通高防IP要传该字段
                      */
                     void SetIp(const std::string& _ip);
 
@@ -189,13 +189,13 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 指定特定实例Id
+                     * 指定特定实例ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * IP地址，普通高防ip要传该字段
+                     * IP地址，普通高防IP要传该字段
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;

@@ -46,9 +46,9 @@ set(iecp_public_header_model
   include/tencentcloud/iecp/v20210914/model/Service.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationsResponse.h
   include/tencentcloud/iecp/v20210914/model/DescribeNodeUnitTemplateOnNodeGroupResponse.h
-  include/tencentcloud/iecp/v20210914/model/CreateUserTokenRequest.h
+  include/tencentcloud/iecp/v20210914/model/ApplicationStatusInfo.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitGridEventsResponse.h
-  include/tencentcloud/iecp/v20210914/model/ModifyApplicationVisualizationResponse.h
+  include/tencentcloud/iecp/v20210914/model/IotDevicesInfo.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationYamlErrorResponse.h
   include/tencentcloud/iecp/v20210914/model/DeleteEdgeUnitCloudResponse.h
   include/tencentcloud/iecp/v20210914/model/ModifyConfigMapRequest.h
@@ -62,6 +62,7 @@ set(iecp_public_header_model
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationYamlResponse.h
   include/tencentcloud/iecp/v20210914/model/DescribeConfigMapYamlErrorResponse.h
   include/tencentcloud/iecp/v20210914/model/DescribeConfigMapResponse.h
+  include/tencentcloud/iecp/v20210914/model/GetMarketComponentListRequest.h
   include/tencentcloud/iecp/v20210914/model/DescribeApplicationYamlRequest.h
   include/tencentcloud/iecp/v20210914/model/ModifyApplicationVisualizationRequest.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitNodeUnitTemplatesRequest.h
@@ -84,17 +85,17 @@ set(iecp_public_header_model
   include/tencentcloud/iecp/v20210914/model/DescribeApplicationsResponse.h
   include/tencentcloud/iecp/v20210914/model/DeleteConfigMapRequest.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitDeployGridItemResponse.h
-  include/tencentcloud/iecp/v20210914/model/NodeUnitInfo.h
+  include/tencentcloud/iecp/v20210914/model/CreateMessageRouteRequest.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitExtraRequest.h
   include/tencentcloud/iecp/v20210914/model/CreateUpdateNodeUnitRequest.h
-  include/tencentcloud/iecp/v20210914/model/Event.h
+  include/tencentcloud/iecp/v20210914/model/DescribeIotDeviceRequest.h
   include/tencentcloud/iecp/v20210914/model/CreateConfigMapResponse.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitsCloudRequest.h
   include/tencentcloud/iecp/v20210914/model/ApplicationTemplate.h
   include/tencentcloud/iecp/v20210914/model/ApplicationBasicInfo.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeDefaultVpcRequest.h
   include/tencentcloud/iecp/v20210914/model/DescribeSecretsResponse.h
-  include/tencentcloud/iecp/v20210914/model/DescribeEdgeAgentNodeInstallerRequest.h
+  include/tencentcloud/iecp/v20210914/model/DeleteEdgeNodeGroupRequest.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationYamlErrorRequest.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeNodePodsResponse.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgePodResponse.h
@@ -107,8 +108,10 @@ set(iecp_public_header_model
   include/tencentcloud/iecp/v20210914/model/GetMarketComponentListResponse.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeNodePodContainersResponse.h
   include/tencentcloud/iecp/v20210914/model/CreateNamespaceResponse.h
+  include/tencentcloud/iecp/v20210914/model/DeleteEdgeUnitDevicesRequest.h
   include/tencentcloud/iecp/v20210914/model/CronJob.h
   include/tencentcloud/iecp/v20210914/model/DeleteEdgeUnitPodRequest.h
+  include/tencentcloud/iecp/v20210914/model/CreateIotDeviceRequest.h
   include/tencentcloud/iecp/v20210914/model/CreateSecretResponse.h
   include/tencentcloud/iecp/v20210914/model/DeleteEdgeNodeUnitTemplatesRequest.h
   include/tencentcloud/iecp/v20210914/model/ModifyEdgeNodeLabelsResponse.h
@@ -119,22 +122,26 @@ set(iecp_public_header_model
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationLogsResponse.h
   include/tencentcloud/iecp/v20210914/model/ModifyEdgeUnitDeployGridItemResponse.h
   include/tencentcloud/iecp/v20210914/model/CreateEdgeNodeRequest.h
+  include/tencentcloud/iecp/v20210914/model/BuildMessageRouteResponse.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitMonitorStatusResponse.h
   include/tencentcloud/iecp/v20210914/model/DeleteNamespaceResponse.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitExtraResponse.h
   include/tencentcloud/iecp/v20210914/model/DescribeConfigMapsRequest.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitNodeUnitTemplatesResponse.h
   include/tencentcloud/iecp/v20210914/model/GridDetail.h
+  include/tencentcloud/iecp/v20210914/model/ModifyIotDeviceResponse.h
   include/tencentcloud/iecp/v20210914/model/ModifyEdgeNodeLabelsRequest.h
+  include/tencentcloud/iecp/v20210914/model/DeleteEdgeUnitDevicesResponse.h
   include/tencentcloud/iecp/v20210914/model/CreateEdgeNodeGroupResponse.h
   include/tencentcloud/iecp/v20210914/model/EdgeNodePodInfo.h
-  include/tencentcloud/iecp/v20210914/model/ModifyNodeUnitTemplateRequest.h
-  include/tencentcloud/iecp/v20210914/model/DescribeEdgeDefaultVpcResponse.h
+  include/tencentcloud/iecp/v20210914/model/RouteInfo.h
+  include/tencentcloud/iecp/v20210914/model/CreateEdgeUnitApplicationYamlRequest.h
   include/tencentcloud/iecp/v20210914/model/HttpHeader.h
   include/tencentcloud/iecp/v20210914/model/DeleteEdgeUnitApplicationsResponse.h
-  include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationEventsResponse.h
+  include/tencentcloud/iecp/v20210914/model/DescribeSecretRequest.h
   include/tencentcloud/iecp/v20210914/model/DeleteApplicationsResponse.h
   include/tencentcloud/iecp/v20210914/model/DracoNodeInfo.h
+  include/tencentcloud/iecp/v20210914/model/NodeUnitInfo.h
   include/tencentcloud/iecp/v20210914/model/DockerConfig.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitDeployGridItemYamlRequest.h
   include/tencentcloud/iecp/v20210914/model/CreateEdgeNodeBatchRequest.h
@@ -147,9 +154,11 @@ set(iecp_public_header_model
   include/tencentcloud/iecp/v20210914/model/CreateEdgeNodeUnitTemplateRequest.h
   include/tencentcloud/iecp/v20210914/model/GridInfo.h
   include/tencentcloud/iecp/v20210914/model/CreateApplicationVisualizationResponse.h
+  include/tencentcloud/iecp/v20210914/model/Event.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitCloudRequest.h
   include/tencentcloud/iecp/v20210914/model/CreateEdgeUnitApplicationYamlResponse.h
   include/tencentcloud/iecp/v20210914/model/DescribeSecretYamlErrorRequest.h
+  include/tencentcloud/iecp/v20210914/model/DescribeMessageRouteListResponse.h
   include/tencentcloud/iecp/v20210914/model/FieldSort.h
   include/tencentcloud/iecp/v20210914/model/EdgeCloudCluster.h
   include/tencentcloud/iecp/v20210914/model/CreateUserTokenResponse.h
@@ -158,37 +167,46 @@ set(iecp_public_header_model
   include/tencentcloud/iecp/v20210914/model/EdgeDracoNodeInfo.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationVisualizationRequest.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeNodesResponse.h
-  include/tencentcloud/iecp/v20210914/model/NodeSimpleInfo.h
+  include/tencentcloud/iecp/v20210914/model/ModifyIotDeviceRequest.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitGridPodsRequest.h
   include/tencentcloud/iecp/v20210914/model/VolumeConfigMap.h
-  include/tencentcloud/iecp/v20210914/model/CreateEdgeUnitApplicationYamlRequest.h
-  include/tencentcloud/iecp/v20210914/model/DescribeSecretRequest.h
+  include/tencentcloud/iecp/v20210914/model/DeleteEdgeUnitDevicesDevice.h
+  include/tencentcloud/iecp/v20210914/model/DeleteIotDeviceResponse.h
+  include/tencentcloud/iecp/v20210914/model/DescribeEdgeDefaultVpcResponse.h
+  include/tencentcloud/iecp/v20210914/model/ModifyNodeUnitTemplateRequest.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeNodesRequest.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationLogsRequest.h
-  include/tencentcloud/iecp/v20210914/model/ApplicationStatusInfo.h
+  include/tencentcloud/iecp/v20210914/model/CreateUserTokenRequest.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeAgentNodeInstallerResponse.h
   include/tencentcloud/iecp/v20210914/model/ModifyEdgeUnitApplicationVisualizationRequest.h
   include/tencentcloud/iecp/v20210914/model/ModifyConfigMapResponse.h
+  include/tencentcloud/iecp/v20210914/model/ModifyApplicationVisualizationResponse.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeNodePodsRequest.h
   include/tencentcloud/iecp/v20210914/model/DeleteIotDeviceBatchRequest.h
-  include/tencentcloud/iecp/v20210914/model/GetMarketComponentListRequest.h
+  include/tencentcloud/iecp/v20210914/model/DescribeEdgeAgentNodeInstallerRequest.h
   include/tencentcloud/iecp/v20210914/model/DescribeApplicationVisualizationResponse.h
   include/tencentcloud/iecp/v20210914/model/DescribeDracoEdgeNodeInstallerRequest.h
   include/tencentcloud/iecp/v20210914/model/CreateNamespaceRequest.h
   include/tencentcloud/iecp/v20210914/model/VolumeHostPath.h
+  include/tencentcloud/iecp/v20210914/model/DeleteMessageRouteRequest.h
   include/tencentcloud/iecp/v20210914/model/ApplyMarketComponentRequest.h
+  include/tencentcloud/iecp/v20210914/model/NodeSimpleInfo.h
   include/tencentcloud/iecp/v20210914/model/EnvValueSelector.h
   include/tencentcloud/iecp/v20210914/model/DescribeNamespaceResourcesResponse.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitGridEventsRequest.h
+  include/tencentcloud/iecp/v20210914/model/CreateEdgeUnitDevicesResponse.h
   include/tencentcloud/iecp/v20210914/model/SecretItem.h
   include/tencentcloud/iecp/v20210914/model/ModifyEdgeDracoNodeRequest.h
+  include/tencentcloud/iecp/v20210914/model/CreateMessageRouteResponse.h
   include/tencentcloud/iecp/v20210914/model/DescribeNodeUnitResponse.h
   include/tencentcloud/iecp/v20210914/model/DeleteEdgeNodeGroupResponse.h
+  include/tencentcloud/iecp/v20210914/model/DescribeMessageRouteListRequest.h
   include/tencentcloud/iecp/v20210914/model/KeyValueObj.h
   include/tencentcloud/iecp/v20210914/model/Label.h
   include/tencentcloud/iecp/v20210914/model/ModifyEdgeUnitResponse.h
   include/tencentcloud/iecp/v20210914/model/DescribeYeheResourceLimitResponse.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitsCloudResponse.h
+  include/tencentcloud/iecp/v20210914/model/DescribeIotDevicesRequest.h
   include/tencentcloud/iecp/v20210914/model/CreateConfigMapRequest.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitDeployGridResponse.h
   include/tencentcloud/iecp/v20210914/model/ModifyEdgeUnitCloudApiResponse.h
@@ -196,16 +214,18 @@ set(iecp_public_header_model
   include/tencentcloud/iecp/v20210914/model/ModifyEdgeUnitApplicationVisualizationResponse.h
   include/tencentcloud/iecp/v20210914/model/DeleteEdgeNodesResponse.h
   include/tencentcloud/iecp/v20210914/model/EdgeNodePodContainerInfo.h
+  include/tencentcloud/iecp/v20210914/model/BuildMessageRouteRequest.h
   include/tencentcloud/iecp/v20210914/model/GridEventInfo.h
   include/tencentcloud/iecp/v20210914/model/ResourceMetricTarget.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeNodePodContainersRequest.h
-  include/tencentcloud/iecp/v20210914/model/DeleteEdgeNodeGroupRequest.h
+  include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationEventsResponse.h
   include/tencentcloud/iecp/v20210914/model/ModifySecretRequest.h
   include/tencentcloud/iecp/v20210914/model/DeleteEdgeUnitPodResponse.h
   include/tencentcloud/iecp/v20210914/model/Probe.h
   include/tencentcloud/iecp/v20210914/model/Container.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationEventsRequest.h
   include/tencentcloud/iecp/v20210914/model/DescribeNamespacesRequest.h
+  include/tencentcloud/iecp/v20210914/model/DeleteIotDeviceRequest.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeNodeRemarkListResponse.h
   include/tencentcloud/iecp/v20210914/model/HorizontalPodAutoscaler.h
   include/tencentcloud/iecp/v20210914/model/NamespaceResource.h
@@ -218,10 +238,13 @@ set(iecp_public_header_model
   include/tencentcloud/iecp/v20210914/model/DeleteEdgeUnitDeployGridItemRequest.h
   include/tencentcloud/iecp/v20210914/model/SecurityContext.h
   include/tencentcloud/iecp/v20210914/model/ApplicationDeployMode.h
+  include/tencentcloud/iecp/v20210914/model/CreateIotDeviceResponse.h
+  include/tencentcloud/iecp/v20210914/model/CreateEdgeUnitDevicesRequest.h
   include/tencentcloud/iecp/v20210914/model/ModifySecretResponse.h
   include/tencentcloud/iecp/v20210914/model/Sort.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitDeployGridItemYamlResponse.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationVisualizationResponse.h
+  include/tencentcloud/iecp/v20210914/model/DescribeIotDeviceResponse.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgePodRequest.h
   include/tencentcloud/iecp/v20210914/model/DescribeNamespaceResourcesRequest.h
   include/tencentcloud/iecp/v20210914/model/DescribeMonitorMetricsRequest.h
@@ -230,11 +253,13 @@ set(iecp_public_header_model
   include/tencentcloud/iecp/v20210914/model/DescribeApplicationsRequest.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeOperationLogsRequest.h
   include/tencentcloud/iecp/v20210914/model/GridItemInfo.h
+  include/tencentcloud/iecp/v20210914/model/SetRouteOnOffResponse.h
   include/tencentcloud/iecp/v20210914/model/EdgeNodeLabel.h
   include/tencentcloud/iecp/v20210914/model/DeleteNamespaceRequest.h
   include/tencentcloud/iecp/v20210914/model/EdgeNodeInfo.h
   include/tencentcloud/iecp/v20210914/model/GetMarketComponentRequest.h
   include/tencentcloud/iecp/v20210914/model/HttpProbe.h
+  include/tencentcloud/iecp/v20210914/model/DeleteMessageRouteResponse.h
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitDeployGridRequest.h
   include/tencentcloud/iecp/v20210914/model/ApplyMarketComponentResponse.h
   include/tencentcloud/iecp/v20210914/model/DescribeApplicationYamlErrorResponse.h
@@ -244,6 +269,7 @@ set(iecp_public_header_model
   include/tencentcloud/iecp/v20210914/model/DescribeApplicationYamlErrorRequest.h
   include/tencentcloud/iecp/v20210914/model/PortConfig.h
   include/tencentcloud/iecp/v20210914/model/DescribeYeheResourceLimitRequest.h
+  include/tencentcloud/iecp/v20210914/model/DescribeIotDevicesResponse.h
   include/tencentcloud/iecp/v20210914/model/DescribeSecretsRequest.h
   include/tencentcloud/iecp/v20210914/model/DescribeNodeUnitTemplateOnNodeGroupRequest.h
   include/tencentcloud/iecp/v20210914/model/MonitorMetricsColumn.h
@@ -262,6 +288,7 @@ set(iecp_public_header_model
   include/tencentcloud/iecp/v20210914/model/DescribeEdgeUnitGridPodsResponse.h
   include/tencentcloud/iecp/v20210914/model/DescribeConfigMapYamlErrorRequest.h
   include/tencentcloud/iecp/v20210914/model/ModifyEdgeUnitApplicationBasicInfoResponse.h
+  include/tencentcloud/iecp/v20210914/model/SetRouteOnOffRequest.h
   )
 
 set(iecp_src
@@ -293,9 +320,9 @@ set(iecp_src
   src/v20210914/model/Service.cpp
   src/v20210914/model/DescribeEdgeUnitApplicationsResponse.cpp
   src/v20210914/model/DescribeNodeUnitTemplateOnNodeGroupResponse.cpp
-  src/v20210914/model/CreateUserTokenRequest.cpp
+  src/v20210914/model/ApplicationStatusInfo.cpp
   src/v20210914/model/DescribeEdgeUnitGridEventsResponse.cpp
-  src/v20210914/model/ModifyApplicationVisualizationResponse.cpp
+  src/v20210914/model/IotDevicesInfo.cpp
   src/v20210914/model/DescribeEdgeUnitApplicationYamlErrorResponse.cpp
   src/v20210914/model/DeleteEdgeUnitCloudResponse.cpp
   src/v20210914/model/ModifyConfigMapRequest.cpp
@@ -309,6 +336,7 @@ set(iecp_src
   src/v20210914/model/DescribeEdgeUnitApplicationYamlResponse.cpp
   src/v20210914/model/DescribeConfigMapYamlErrorResponse.cpp
   src/v20210914/model/DescribeConfigMapResponse.cpp
+  src/v20210914/model/GetMarketComponentListRequest.cpp
   src/v20210914/model/DescribeApplicationYamlRequest.cpp
   src/v20210914/model/ModifyApplicationVisualizationRequest.cpp
   src/v20210914/model/DescribeEdgeUnitNodeUnitTemplatesRequest.cpp
@@ -331,17 +359,17 @@ set(iecp_src
   src/v20210914/model/DescribeApplicationsResponse.cpp
   src/v20210914/model/DeleteConfigMapRequest.cpp
   src/v20210914/model/DescribeEdgeUnitDeployGridItemResponse.cpp
-  src/v20210914/model/NodeUnitInfo.cpp
+  src/v20210914/model/CreateMessageRouteRequest.cpp
   src/v20210914/model/DescribeEdgeUnitExtraRequest.cpp
   src/v20210914/model/CreateUpdateNodeUnitRequest.cpp
-  src/v20210914/model/Event.cpp
+  src/v20210914/model/DescribeIotDeviceRequest.cpp
   src/v20210914/model/CreateConfigMapResponse.cpp
   src/v20210914/model/DescribeEdgeUnitsCloudRequest.cpp
   src/v20210914/model/ApplicationTemplate.cpp
   src/v20210914/model/ApplicationBasicInfo.cpp
   src/v20210914/model/DescribeEdgeDefaultVpcRequest.cpp
   src/v20210914/model/DescribeSecretsResponse.cpp
-  src/v20210914/model/DescribeEdgeAgentNodeInstallerRequest.cpp
+  src/v20210914/model/DeleteEdgeNodeGroupRequest.cpp
   src/v20210914/model/DescribeEdgeUnitApplicationYamlErrorRequest.cpp
   src/v20210914/model/DescribeEdgeNodePodsResponse.cpp
   src/v20210914/model/DescribeEdgePodResponse.cpp
@@ -354,8 +382,10 @@ set(iecp_src
   src/v20210914/model/GetMarketComponentListResponse.cpp
   src/v20210914/model/DescribeEdgeNodePodContainersResponse.cpp
   src/v20210914/model/CreateNamespaceResponse.cpp
+  src/v20210914/model/DeleteEdgeUnitDevicesRequest.cpp
   src/v20210914/model/CronJob.cpp
   src/v20210914/model/DeleteEdgeUnitPodRequest.cpp
+  src/v20210914/model/CreateIotDeviceRequest.cpp
   src/v20210914/model/CreateSecretResponse.cpp
   src/v20210914/model/DeleteEdgeNodeUnitTemplatesRequest.cpp
   src/v20210914/model/ModifyEdgeNodeLabelsResponse.cpp
@@ -366,22 +396,26 @@ set(iecp_src
   src/v20210914/model/DescribeEdgeUnitApplicationLogsResponse.cpp
   src/v20210914/model/ModifyEdgeUnitDeployGridItemResponse.cpp
   src/v20210914/model/CreateEdgeNodeRequest.cpp
+  src/v20210914/model/BuildMessageRouteResponse.cpp
   src/v20210914/model/DescribeEdgeUnitMonitorStatusResponse.cpp
   src/v20210914/model/DeleteNamespaceResponse.cpp
   src/v20210914/model/DescribeEdgeUnitExtraResponse.cpp
   src/v20210914/model/DescribeConfigMapsRequest.cpp
   src/v20210914/model/DescribeEdgeUnitNodeUnitTemplatesResponse.cpp
   src/v20210914/model/GridDetail.cpp
+  src/v20210914/model/ModifyIotDeviceResponse.cpp
   src/v20210914/model/ModifyEdgeNodeLabelsRequest.cpp
+  src/v20210914/model/DeleteEdgeUnitDevicesResponse.cpp
   src/v20210914/model/CreateEdgeNodeGroupResponse.cpp
   src/v20210914/model/EdgeNodePodInfo.cpp
-  src/v20210914/model/ModifyNodeUnitTemplateRequest.cpp
-  src/v20210914/model/DescribeEdgeDefaultVpcResponse.cpp
+  src/v20210914/model/RouteInfo.cpp
+  src/v20210914/model/CreateEdgeUnitApplicationYamlRequest.cpp
   src/v20210914/model/HttpHeader.cpp
   src/v20210914/model/DeleteEdgeUnitApplicationsResponse.cpp
-  src/v20210914/model/DescribeEdgeUnitApplicationEventsResponse.cpp
+  src/v20210914/model/DescribeSecretRequest.cpp
   src/v20210914/model/DeleteApplicationsResponse.cpp
   src/v20210914/model/DracoNodeInfo.cpp
+  src/v20210914/model/NodeUnitInfo.cpp
   src/v20210914/model/DockerConfig.cpp
   src/v20210914/model/DescribeEdgeUnitDeployGridItemYamlRequest.cpp
   src/v20210914/model/CreateEdgeNodeBatchRequest.cpp
@@ -394,9 +428,11 @@ set(iecp_src
   src/v20210914/model/CreateEdgeNodeUnitTemplateRequest.cpp
   src/v20210914/model/GridInfo.cpp
   src/v20210914/model/CreateApplicationVisualizationResponse.cpp
+  src/v20210914/model/Event.cpp
   src/v20210914/model/DescribeEdgeUnitCloudRequest.cpp
   src/v20210914/model/CreateEdgeUnitApplicationYamlResponse.cpp
   src/v20210914/model/DescribeSecretYamlErrorRequest.cpp
+  src/v20210914/model/DescribeMessageRouteListResponse.cpp
   src/v20210914/model/FieldSort.cpp
   src/v20210914/model/EdgeCloudCluster.cpp
   src/v20210914/model/CreateUserTokenResponse.cpp
@@ -405,37 +441,46 @@ set(iecp_src
   src/v20210914/model/EdgeDracoNodeInfo.cpp
   src/v20210914/model/DescribeEdgeUnitApplicationVisualizationRequest.cpp
   src/v20210914/model/DescribeEdgeNodesResponse.cpp
-  src/v20210914/model/NodeSimpleInfo.cpp
+  src/v20210914/model/ModifyIotDeviceRequest.cpp
   src/v20210914/model/DescribeEdgeUnitGridPodsRequest.cpp
   src/v20210914/model/VolumeConfigMap.cpp
-  src/v20210914/model/CreateEdgeUnitApplicationYamlRequest.cpp
-  src/v20210914/model/DescribeSecretRequest.cpp
+  src/v20210914/model/DeleteEdgeUnitDevicesDevice.cpp
+  src/v20210914/model/DeleteIotDeviceResponse.cpp
+  src/v20210914/model/DescribeEdgeDefaultVpcResponse.cpp
+  src/v20210914/model/ModifyNodeUnitTemplateRequest.cpp
   src/v20210914/model/DescribeEdgeNodesRequest.cpp
   src/v20210914/model/DescribeEdgeUnitApplicationLogsRequest.cpp
-  src/v20210914/model/ApplicationStatusInfo.cpp
+  src/v20210914/model/CreateUserTokenRequest.cpp
   src/v20210914/model/DescribeEdgeAgentNodeInstallerResponse.cpp
   src/v20210914/model/ModifyEdgeUnitApplicationVisualizationRequest.cpp
   src/v20210914/model/ModifyConfigMapResponse.cpp
+  src/v20210914/model/ModifyApplicationVisualizationResponse.cpp
   src/v20210914/model/DescribeEdgeNodePodsRequest.cpp
   src/v20210914/model/DeleteIotDeviceBatchRequest.cpp
-  src/v20210914/model/GetMarketComponentListRequest.cpp
+  src/v20210914/model/DescribeEdgeAgentNodeInstallerRequest.cpp
   src/v20210914/model/DescribeApplicationVisualizationResponse.cpp
   src/v20210914/model/DescribeDracoEdgeNodeInstallerRequest.cpp
   src/v20210914/model/CreateNamespaceRequest.cpp
   src/v20210914/model/VolumeHostPath.cpp
+  src/v20210914/model/DeleteMessageRouteRequest.cpp
   src/v20210914/model/ApplyMarketComponentRequest.cpp
+  src/v20210914/model/NodeSimpleInfo.cpp
   src/v20210914/model/EnvValueSelector.cpp
   src/v20210914/model/DescribeNamespaceResourcesResponse.cpp
   src/v20210914/model/DescribeEdgeUnitGridEventsRequest.cpp
+  src/v20210914/model/CreateEdgeUnitDevicesResponse.cpp
   src/v20210914/model/SecretItem.cpp
   src/v20210914/model/ModifyEdgeDracoNodeRequest.cpp
+  src/v20210914/model/CreateMessageRouteResponse.cpp
   src/v20210914/model/DescribeNodeUnitResponse.cpp
   src/v20210914/model/DeleteEdgeNodeGroupResponse.cpp
+  src/v20210914/model/DescribeMessageRouteListRequest.cpp
   src/v20210914/model/KeyValueObj.cpp
   src/v20210914/model/Label.cpp
   src/v20210914/model/ModifyEdgeUnitResponse.cpp
   src/v20210914/model/DescribeYeheResourceLimitResponse.cpp
   src/v20210914/model/DescribeEdgeUnitsCloudResponse.cpp
+  src/v20210914/model/DescribeIotDevicesRequest.cpp
   src/v20210914/model/CreateConfigMapRequest.cpp
   src/v20210914/model/DescribeEdgeUnitDeployGridResponse.cpp
   src/v20210914/model/ModifyEdgeUnitCloudApiResponse.cpp
@@ -443,16 +488,18 @@ set(iecp_src
   src/v20210914/model/ModifyEdgeUnitApplicationVisualizationResponse.cpp
   src/v20210914/model/DeleteEdgeNodesResponse.cpp
   src/v20210914/model/EdgeNodePodContainerInfo.cpp
+  src/v20210914/model/BuildMessageRouteRequest.cpp
   src/v20210914/model/GridEventInfo.cpp
   src/v20210914/model/ResourceMetricTarget.cpp
   src/v20210914/model/DescribeEdgeNodePodContainersRequest.cpp
-  src/v20210914/model/DeleteEdgeNodeGroupRequest.cpp
+  src/v20210914/model/DescribeEdgeUnitApplicationEventsResponse.cpp
   src/v20210914/model/ModifySecretRequest.cpp
   src/v20210914/model/DeleteEdgeUnitPodResponse.cpp
   src/v20210914/model/Probe.cpp
   src/v20210914/model/Container.cpp
   src/v20210914/model/DescribeEdgeUnitApplicationEventsRequest.cpp
   src/v20210914/model/DescribeNamespacesRequest.cpp
+  src/v20210914/model/DeleteIotDeviceRequest.cpp
   src/v20210914/model/DescribeEdgeNodeRemarkListResponse.cpp
   src/v20210914/model/HorizontalPodAutoscaler.cpp
   src/v20210914/model/NamespaceResource.cpp
@@ -465,10 +512,13 @@ set(iecp_src
   src/v20210914/model/DeleteEdgeUnitDeployGridItemRequest.cpp
   src/v20210914/model/SecurityContext.cpp
   src/v20210914/model/ApplicationDeployMode.cpp
+  src/v20210914/model/CreateIotDeviceResponse.cpp
+  src/v20210914/model/CreateEdgeUnitDevicesRequest.cpp
   src/v20210914/model/ModifySecretResponse.cpp
   src/v20210914/model/Sort.cpp
   src/v20210914/model/DescribeEdgeUnitDeployGridItemYamlResponse.cpp
   src/v20210914/model/DescribeEdgeUnitApplicationVisualizationResponse.cpp
+  src/v20210914/model/DescribeIotDeviceResponse.cpp
   src/v20210914/model/DescribeEdgePodRequest.cpp
   src/v20210914/model/DescribeNamespaceResourcesRequest.cpp
   src/v20210914/model/DescribeMonitorMetricsRequest.cpp
@@ -477,11 +527,13 @@ set(iecp_src
   src/v20210914/model/DescribeApplicationsRequest.cpp
   src/v20210914/model/DescribeEdgeOperationLogsRequest.cpp
   src/v20210914/model/GridItemInfo.cpp
+  src/v20210914/model/SetRouteOnOffResponse.cpp
   src/v20210914/model/EdgeNodeLabel.cpp
   src/v20210914/model/DeleteNamespaceRequest.cpp
   src/v20210914/model/EdgeNodeInfo.cpp
   src/v20210914/model/GetMarketComponentRequest.cpp
   src/v20210914/model/HttpProbe.cpp
+  src/v20210914/model/DeleteMessageRouteResponse.cpp
   src/v20210914/model/DescribeEdgeUnitDeployGridRequest.cpp
   src/v20210914/model/ApplyMarketComponentResponse.cpp
   src/v20210914/model/DescribeApplicationYamlErrorResponse.cpp
@@ -491,6 +543,7 @@ set(iecp_src
   src/v20210914/model/DescribeApplicationYamlErrorRequest.cpp
   src/v20210914/model/PortConfig.cpp
   src/v20210914/model/DescribeYeheResourceLimitRequest.cpp
+  src/v20210914/model/DescribeIotDevicesResponse.cpp
   src/v20210914/model/DescribeSecretsRequest.cpp
   src/v20210914/model/DescribeNodeUnitTemplateOnNodeGroupRequest.cpp
   src/v20210914/model/MonitorMetricsColumn.cpp
@@ -509,6 +562,7 @@ set(iecp_src
   src/v20210914/model/DescribeEdgeUnitGridPodsResponse.cpp
   src/v20210914/model/DescribeConfigMapYamlErrorRequest.cpp
   src/v20210914/model/ModifyEdgeUnitApplicationBasicInfoResponse.cpp
+  src/v20210914/model/SetRouteOnOffRequest.cpp
   )
 
 set(iecp_include

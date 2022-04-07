@@ -32,7 +32,8 @@ CreateInstancesRequest::CreateInstancesRequest() :
     m_dryRunHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_loginConfigurationHasBeenSet(false),
-    m_containersHasBeenSet(false)
+    m_containersHasBeenSet(false),
+    m_autoVoucherHasBeenSet(false)
 {
 }
 
@@ -135,6 +136,14 @@ string CreateInstancesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_autoVoucherHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoVoucher";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoVoucher, allocator);
     }
 
 
@@ -303,6 +312,22 @@ void CreateInstancesRequest::SetContainers(const vector<DockerContainerConfigura
 bool CreateInstancesRequest::ContainersHasBeenSet() const
 {
     return m_containersHasBeenSet;
+}
+
+bool CreateInstancesRequest::GetAutoVoucher() const
+{
+    return m_autoVoucher;
+}
+
+void CreateInstancesRequest::SetAutoVoucher(const bool& _autoVoucher)
+{
+    m_autoVoucher = _autoVoucher;
+    m_autoVoucherHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::AutoVoucherHasBeenSet() const
+{
+    return m_autoVoucherHasBeenSet;
 }
 
 

@@ -44,17 +44,25 @@ namespace TencentCloud
 
                     /**
                      * 获取查询起始日期：yyyy-MM-dd HH:mm:ss
-当前仅支持按天粒度的数据查询，参数需为某天的起点时刻
+仅支持按天粒度的数据查询，取入参中的天信息作为起始日期
+返回大于等于起始日期当天 00:00:00 点产生的数据，如 StartTime为2018-09-04 10:40:00，返回数据的起始时间为2018-09-04 00:00:00
+仅支持 90 天内数据查询
                      * @return StartTime 查询起始日期：yyyy-MM-dd HH:mm:ss
-当前仅支持按天粒度的数据查询，参数需为某天的起点时刻
+仅支持按天粒度的数据查询，取入参中的天信息作为起始日期
+返回大于等于起始日期当天 00:00:00 点产生的数据，如 StartTime为2018-09-04 10:40:00，返回数据的起始时间为2018-09-04 00:00:00
+仅支持 90 天内数据查询
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置查询起始日期：yyyy-MM-dd HH:mm:ss
-当前仅支持按天粒度的数据查询，参数需为某天的起点时刻
+仅支持按天粒度的数据查询，取入参中的天信息作为起始日期
+返回大于等于起始日期当天 00:00:00 点产生的数据，如 StartTime为2018-09-04 10:40:00，返回数据的起始时间为2018-09-04 00:00:00
+仅支持 90 天内数据查询
                      * @param StartTime 查询起始日期：yyyy-MM-dd HH:mm:ss
-当前仅支持按天粒度的数据查询，参数需为某天的起点时刻
+仅支持按天粒度的数据查询，取入参中的天信息作为起始日期
+返回大于等于起始日期当天 00:00:00 点产生的数据，如 StartTime为2018-09-04 10:40:00，返回数据的起始时间为2018-09-04 00:00:00
+仅支持 90 天内数据查询
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -65,18 +73,26 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询起始日期：yyyy-MM-dd HH:mm:ss
-当前仅支持按天粒度的数据查询，参数需为某天的结束时刻
-                     * @return EndTime 查询起始日期：yyyy-MM-dd HH:mm:ss
-当前仅支持按天粒度的数据查询，参数需为某天的结束时刻
+                     * 获取查询结束日期：yyyy-MM-dd HH:mm:ss
+仅支持按天粒度的数据查询，取入参中的天信息作为结束日期
+返回小于等于结束日期当天 23:59:59 产生的数据，如EndTime为2018-09-05 22:40:00，返回数据的结束时间为2018-09-05 23:59:59
+EndTime 需要大于等于 StartTime
+                     * @return EndTime 查询结束日期：yyyy-MM-dd HH:mm:ss
+仅支持按天粒度的数据查询，取入参中的天信息作为结束日期
+返回小于等于结束日期当天 23:59:59 产生的数据，如EndTime为2018-09-05 22:40:00，返回数据的结束时间为2018-09-05 23:59:59
+EndTime 需要大于等于 StartTime
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置查询起始日期：yyyy-MM-dd HH:mm:ss
-当前仅支持按天粒度的数据查询，参数需为某天的结束时刻
-                     * @param EndTime 查询起始日期：yyyy-MM-dd HH:mm:ss
-当前仅支持按天粒度的数据查询，参数需为某天的结束时刻
+                     * 设置查询结束日期：yyyy-MM-dd HH:mm:ss
+仅支持按天粒度的数据查询，取入参中的天信息作为结束日期
+返回小于等于结束日期当天 23:59:59 产生的数据，如EndTime为2018-09-05 22:40:00，返回数据的结束时间为2018-09-05 23:59:59
+EndTime 需要大于等于 StartTime
+                     * @param EndTime 查询结束日期：yyyy-MM-dd HH:mm:ss
+仅支持按天粒度的数据查询，取入参中的天信息作为结束日期
+返回小于等于结束日期当天 23:59:59 产生的数据，如EndTime为2018-09-05 22:40:00，返回数据的结束时间为2018-09-05 23:59:59
+EndTime 需要大于等于 StartTime
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -189,14 +205,22 @@ request：Metric 为 host 时指代访问请求数
                     bool DetailHasBeenSet() const;
 
                     /**
-                     * 获取地域，目前可不填，默认是大陆
-                     * @return Area 地域，目前可不填，默认是大陆
+                     * 获取指定服务地域查询，不填充表示查询中国境内 CDN 数据
+mainland：指定查询中国境内 CDN 数据
+overseas：指定查询中国境外 CDN 数据
+                     * @return Area 指定服务地域查询，不填充表示查询中国境内 CDN 数据
+mainland：指定查询中国境内 CDN 数据
+overseas：指定查询中国境外 CDN 数据
                      */
                     std::string GetArea() const;
 
                     /**
-                     * 设置地域，目前可不填，默认是大陆
-                     * @param Area 地域，目前可不填，默认是大陆
+                     * 设置指定服务地域查询，不填充表示查询中国境内 CDN 数据
+mainland：指定查询中国境内 CDN 数据
+overseas：指定查询中国境外 CDN 数据
+                     * @param Area 指定服务地域查询，不填充表示查询中国境内 CDN 数据
+mainland：指定查询中国境内 CDN 数据
+overseas：指定查询中国境外 CDN 数据
                      */
                     void SetArea(const std::string& _area);
 
@@ -207,14 +231,14 @@ request：Metric 为 host 时指代访问请求数
                     bool AreaHasBeenSet() const;
 
                     /**
-                     * 获取产品名，目前仅可使用cdn
-                     * @return Product 产品名，目前仅可使用cdn
+                     * 获取指定查询的产品数据，目前仅可使用cdn
+                     * @return Product 指定查询的产品数据，目前仅可使用cdn
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置产品名，目前仅可使用cdn
-                     * @param Product 产品名，目前仅可使用cdn
+                     * 设置指定查询的产品数据，目前仅可使用cdn
+                     * @param Product 指定查询的产品数据，目前仅可使用cdn
                      */
                     void SetProduct(const std::string& _product);
 
@@ -228,14 +252,18 @@ request：Metric 为 host 时指代访问请求数
 
                     /**
                      * 查询起始日期：yyyy-MM-dd HH:mm:ss
-当前仅支持按天粒度的数据查询，参数需为某天的起点时刻
+仅支持按天粒度的数据查询，取入参中的天信息作为起始日期
+返回大于等于起始日期当天 00:00:00 点产生的数据，如 StartTime为2018-09-04 10:40:00，返回数据的起始时间为2018-09-04 00:00:00
+仅支持 90 天内数据查询
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询起始日期：yyyy-MM-dd HH:mm:ss
-当前仅支持按天粒度的数据查询，参数需为某天的结束时刻
+                     * 查询结束日期：yyyy-MM-dd HH:mm:ss
+仅支持按天粒度的数据查询，取入参中的天信息作为结束日期
+返回小于等于结束日期当天 23:59:59 产生的数据，如EndTime为2018-09-05 22:40:00，返回数据的结束时间为2018-09-05 23:59:59
+EndTime 需要大于等于 StartTime
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -274,13 +302,15 @@ request：Metric 为 host 时指代访问请求数
                     bool m_detailHasBeenSet;
 
                     /**
-                     * 地域，目前可不填，默认是大陆
+                     * 指定服务地域查询，不填充表示查询中国境内 CDN 数据
+mainland：指定查询中国境内 CDN 数据
+overseas：指定查询中国境外 CDN 数据
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
 
                     /**
-                     * 产品名，目前仅可使用cdn
+                     * 指定查询的产品数据，目前仅可使用cdn
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
