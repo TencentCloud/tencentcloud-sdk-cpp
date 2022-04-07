@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取大禹子产品代号（bgpip-multip：表示高防包；bgpip：表示高防ip）
-                     * @return Business 大禹子产品代号（bgpip-multip：表示高防包；bgpip：表示高防ip）
+                     * 获取大禹子产品代号（bgpip-multip：表示高防包；bgpip：表示高防IP）
+                     * @return Business 大禹子产品代号（bgpip-multip：表示高防包；bgpip：表示高防IP）
                      */
                     std::string GetBusiness() const;
 
                     /**
-                     * 设置大禹子产品代号（bgpip-multip：表示高防包；bgpip：表示高防ip）
-                     * @param Business 大禹子产品代号（bgpip-multip：表示高防包；bgpip：表示高防ip）
+                     * 设置大禹子产品代号（bgpip-multip：表示高防包；bgpip：表示高防IP）
+                     * @param Business 大禹子产品代号（bgpip-multip：表示高防包；bgpip：表示高防IP）
                      */
                     void SetBusiness(const std::string& _business);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取ip地址，普通高防ip要传该字段
-                     * @return Ip ip地址，普通高防ip要传该字段
+                     * 获取IP地址，普通高防IP要传该字段
+                     * @return Ip IP地址，普通高防IP要传该字段
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置ip地址，普通高防ip要传该字段
-                     * @param Ip ip地址，普通高防ip要传该字段
+                     * 设置IP地址，普通高防IP要传该字段
+                     * @param Ip IP地址，普通高防IP要传该字段
                      */
                     void SetIp(const std::string& _ip);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取域名，普通高防ip要传该字段
-                     * @return Domain 域名，普通高防ip要传该字段
+                     * 获取域名，普通高防IP要传该字段
+                     * @return Domain 域名，普通高防IP要传该字段
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置域名，普通高防ip要传该字段
-                     * @param Domain 域名，普通高防ip要传该字段
+                     * 设置域名，普通高防IP要传该字段
+                     * @param Domain 域名，普通高防IP要传该字段
                      */
                     void SetDomain(const std::string& _domain);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取协议，普通高防ip要传该字段
-                     * @return Protocol 协议，普通高防ip要传该字段
+                     * 获取协议，普通高防IP要传该字段
+                     * @return Protocol 协议，普通高防IP要传该字段
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置协议，普通高防ip要传该字段
-                     * @param Protocol 协议，普通高防ip要传该字段
+                     * 设置协议，普通高防IP要传该字段
+                     * @param Protocol 协议，普通高防IP要传该字段
                      */
                     void SetProtocol(const std::string& _protocol);
 
@@ -171,7 +171,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 大禹子产品代号（bgpip-multip：表示高防包；bgpip：表示高防ip）
+                     * 大禹子产品代号（bgpip-multip：表示高防包；bgpip：表示高防IP）
                      */
                     std::string m_business;
                     bool m_businessHasBeenSet;
@@ -195,19 +195,19 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * ip地址，普通高防ip要传该字段
+                     * IP地址，普通高防IP要传该字段
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 域名，普通高防ip要传该字段
+                     * 域名，普通高防IP要传该字段
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 协议，普通高防ip要传该字段
+                     * 协议，普通高防IP要传该字段
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;

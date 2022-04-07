@@ -27,7 +27,8 @@ DescribeTrafficPackagesResponse::DescribeTrafficPackagesResponse() :
     m_totalCountHasBeenSet(false),
     m_trafficPackagesHasBeenSet(false),
     m_expiringCountHasBeenSet(false),
-    m_enabledCountHasBeenSet(false)
+    m_enabledCountHasBeenSet(false),
+    m_paidCountHasBeenSet(false)
 {
 }
 
@@ -115,6 +116,16 @@ CoreInternalOutcome DescribeTrafficPackagesResponse::Deserialize(const string &p
         m_enabledCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PaidCount") && !rsp["PaidCount"].IsNull())
+    {
+        if (!rsp["PaidCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PaidCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_paidCount = rsp["PaidCount"].GetInt64();
+        m_paidCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -162,6 +173,14 @@ string DescribeTrafficPackagesResponse::ToJsonString() const
         string key = "EnabledCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enabledCount, allocator);
+    }
+
+    if (m_paidCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PaidCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_paidCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -214,6 +233,16 @@ int64_t DescribeTrafficPackagesResponse::GetEnabledCount() const
 bool DescribeTrafficPackagesResponse::EnabledCountHasBeenSet() const
 {
     return m_enabledCountHasBeenSet;
+}
+
+int64_t DescribeTrafficPackagesResponse::GetPaidCount() const
+{
+    return m_paidCount;
+}
+
+bool DescribeTrafficPackagesResponse::PaidCountHasBeenSet() const
+{
+    return m_paidCountHasBeenSet;
 }
 
 

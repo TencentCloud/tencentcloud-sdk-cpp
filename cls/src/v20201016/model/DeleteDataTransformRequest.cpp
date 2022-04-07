@@ -14,32 +14,32 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/antiddos/v20200309/model/CreateSchedulingDomainRequest.h>
+#include <tencentcloud/cls/v20201016/model/DeleteDataTransformRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Antiddos::V20200309::Model;
+using namespace TencentCloud::Cls::V20201016::Model;
 using namespace std;
 
-CreateSchedulingDomainRequest::CreateSchedulingDomainRequest() :
-    m_productHasBeenSet(false)
+DeleteDataTransformRequest::DeleteDataTransformRequest() :
+    m_taskIdHasBeenSet(false)
 {
 }
 
-string CreateSchedulingDomainRequest::ToJsonString() const
+string DeleteDataTransformRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_productHasBeenSet)
+    if (m_taskIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Product";
+        string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_product.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -50,20 +50,20 @@ string CreateSchedulingDomainRequest::ToJsonString() const
 }
 
 
-string CreateSchedulingDomainRequest::GetProduct() const
+string DeleteDataTransformRequest::GetTaskId() const
 {
-    return m_product;
+    return m_taskId;
 }
 
-void CreateSchedulingDomainRequest::SetProduct(const string& _product)
+void DeleteDataTransformRequest::SetTaskId(const string& _taskId)
 {
-    m_product = _product;
-    m_productHasBeenSet = true;
+    m_taskId = _taskId;
+    m_taskIdHasBeenSet = true;
 }
 
-bool CreateSchedulingDomainRequest::ProductHasBeenSet() const
+bool DeleteDataTransformRequest::TaskIdHasBeenSet() const
 {
-    return m_productHasBeenSet;
+    return m_taskIdHasBeenSet;
 }
 
 

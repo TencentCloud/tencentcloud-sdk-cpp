@@ -50,7 +50,10 @@ DescribeDBInstancesRequest::DescribeDBInstancesRequest() :
     m_withMasterHasBeenSet(false),
     m_deployGroupIdsHasBeenSet(false),
     m_tagKeysForSearchHasBeenSet(false),
-    m_cageIdsHasBeenSet(false)
+    m_cageIdsHasBeenSet(false),
+    m_tagValuesHasBeenSet(false),
+    m_uniqueVpcIdsHasBeenSet(false),
+    m_uniqSubnetIdsHasBeenSet(false)
 {
 }
 
@@ -355,6 +358,45 @@ string DescribeDBInstancesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_cageIds.begin(); itr != m_cageIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tagValuesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagValues";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_tagValues.begin(); itr != m_tagValues.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_uniqueVpcIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UniqueVpcIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_uniqueVpcIds.begin(); itr != m_uniqueVpcIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_uniqSubnetIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UniqSubnetIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_uniqSubnetIds.begin(); itr != m_uniqSubnetIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -814,6 +856,54 @@ void DescribeDBInstancesRequest::SetCageIds(const vector<string>& _cageIds)
 bool DescribeDBInstancesRequest::CageIdsHasBeenSet() const
 {
     return m_cageIdsHasBeenSet;
+}
+
+vector<string> DescribeDBInstancesRequest::GetTagValues() const
+{
+    return m_tagValues;
+}
+
+void DescribeDBInstancesRequest::SetTagValues(const vector<string>& _tagValues)
+{
+    m_tagValues = _tagValues;
+    m_tagValuesHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::TagValuesHasBeenSet() const
+{
+    return m_tagValuesHasBeenSet;
+}
+
+vector<string> DescribeDBInstancesRequest::GetUniqueVpcIds() const
+{
+    return m_uniqueVpcIds;
+}
+
+void DescribeDBInstancesRequest::SetUniqueVpcIds(const vector<string>& _uniqueVpcIds)
+{
+    m_uniqueVpcIds = _uniqueVpcIds;
+    m_uniqueVpcIdsHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::UniqueVpcIdsHasBeenSet() const
+{
+    return m_uniqueVpcIdsHasBeenSet;
+}
+
+vector<string> DescribeDBInstancesRequest::GetUniqSubnetIds() const
+{
+    return m_uniqSubnetIds;
+}
+
+void DescribeDBInstancesRequest::SetUniqSubnetIds(const vector<string>& _uniqSubnetIds)
+{
+    m_uniqSubnetIds = _uniqSubnetIds;
+    m_uniqSubnetIdsHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::UniqSubnetIdsHasBeenSet() const
+{
+    return m_uniqSubnetIdsHasBeenSet;
 }
 
 
