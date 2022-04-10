@@ -45,6 +45,8 @@
 #include <tencentcloud/ssa/v20180608/model/DescribeEventDetailResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeLeakDetectionListRequest.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeLeakDetectionListResponse.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeMappingResultsRequest.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeMappingResultsResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeSafetyEventListRequest.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeSafetyEventListResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeSocAlertDetailsRequest.h>
@@ -106,6 +108,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLeakDetectionListResponse> DescribeLeakDetectionListOutcome;
                 typedef std::future<DescribeLeakDetectionListOutcome> DescribeLeakDetectionListOutcomeCallable;
                 typedef std::function<void(const SsaClient*, const Model::DescribeLeakDetectionListRequest&, DescribeLeakDetectionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLeakDetectionListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMappingResultsResponse> DescribeMappingResultsOutcome;
+                typedef std::future<DescribeMappingResultsOutcome> DescribeMappingResultsOutcomeCallable;
+                typedef std::function<void(const SsaClient*, const Model::DescribeMappingResultsRequest&, DescribeMappingResultsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMappingResultsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSafetyEventListResponse> DescribeSafetyEventListOutcome;
                 typedef std::future<DescribeSafetyEventListOutcome> DescribeSafetyEventListOutcomeCallable;
                 typedef std::function<void(const SsaClient*, const Model::DescribeSafetyEventListRequest&, DescribeSafetyEventListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSafetyEventListAsyncHandler;
@@ -228,6 +233,15 @@ namespace TencentCloud
                 DescribeLeakDetectionListOutcome DescribeLeakDetectionList(const Model::DescribeLeakDetectionListRequest &request);
                 void DescribeLeakDetectionListAsync(const Model::DescribeLeakDetectionListRequest& request, const DescribeLeakDetectionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLeakDetectionListOutcomeCallable DescribeLeakDetectionListCallable(const Model::DescribeLeakDetectionListRequest& request);
+
+                /**
+                 *获取测绘列表
+                 * @param req DescribeMappingResultsRequest
+                 * @return DescribeMappingResultsOutcome
+                 */
+                DescribeMappingResultsOutcome DescribeMappingResults(const Model::DescribeMappingResultsRequest &request);
+                void DescribeMappingResultsAsync(const Model::DescribeMappingResultsRequest& request, const DescribeMappingResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMappingResultsOutcomeCallable DescribeMappingResultsCallable(const Model::DescribeMappingResultsRequest& request);
 
                 /**
                  *获取安全事件列表

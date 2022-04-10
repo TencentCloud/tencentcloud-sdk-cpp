@@ -513,6 +513,49 @@ SsaClient::DescribeLeakDetectionListOutcomeCallable SsaClient::DescribeLeakDetec
     return task->get_future();
 }
 
+SsaClient::DescribeMappingResultsOutcome SsaClient::DescribeMappingResults(const DescribeMappingResultsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMappingResults");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMappingResultsResponse rsp = DescribeMappingResultsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMappingResultsOutcome(rsp);
+        else
+            return DescribeMappingResultsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMappingResultsOutcome(outcome.GetError());
+    }
+}
+
+void SsaClient::DescribeMappingResultsAsync(const DescribeMappingResultsRequest& request, const DescribeMappingResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMappingResults(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SsaClient::DescribeMappingResultsOutcomeCallable SsaClient::DescribeMappingResultsCallable(const DescribeMappingResultsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMappingResultsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMappingResults(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SsaClient::DescribeSafetyEventListOutcome SsaClient::DescribeSafetyEventList(const DescribeSafetyEventListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSafetyEventList");

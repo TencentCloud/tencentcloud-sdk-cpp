@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要查看设备列表的产品 ID
-                     * @return ProductId 需要查看设备列表的产品 ID
+                     * 获取需要查看设备列表的产品ID, -1代表ProjectId来筛选
+                     * @return ProductId 需要查看设备列表的产品ID, -1代表ProjectId来筛选
                      */
                     std::string GetProductId() const;
 
                     /**
-                     * 设置需要查看设备列表的产品 ID
-                     * @param ProductId 需要查看设备列表的产品 ID
+                     * 设置需要查看设备列表的产品ID, -1代表ProjectId来筛选
+                     * @param ProductId 需要查看设备列表的产品ID, -1代表ProjectId来筛选
                      */
                     void SetProductId(const std::string& _productId);
 
@@ -153,7 +153,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需要查看设备列表的产品 ID
+                     * 需要查看设备列表的产品ID, -1代表ProjectId来筛选
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;

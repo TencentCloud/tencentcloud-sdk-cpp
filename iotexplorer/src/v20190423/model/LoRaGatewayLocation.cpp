@@ -21,10 +21,10 @@ using namespace TencentCloud::Iotexplorer::V20190423::Model;
 using namespace std;
 
 LoRaGatewayLocation::LoRaGatewayLocation() :
-    m_accuracyHasBeenSet(false),
-    m_altitudeHasBeenSet(false),
     m_latitudeHasBeenSet(false),
-    m_longitudeHasBeenSet(false)
+    m_longitudeHasBeenSet(false),
+    m_accuracyHasBeenSet(false),
+    m_altitudeHasBeenSet(false)
 {
 }
 
@@ -32,26 +32,6 @@ CoreInternalOutcome LoRaGatewayLocation::Deserialize(const rapidjson::Value &val
 {
     string requestId = "";
 
-
-    if (value.HasMember("Accuracy") && !value["Accuracy"].IsNull())
-    {
-        if (!value["Accuracy"].IsLosslessDouble())
-        {
-            return CoreInternalOutcome(Core::Error("response `LoRaGatewayLocation.Accuracy` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
-        }
-        m_accuracy = value["Accuracy"].GetDouble();
-        m_accuracyHasBeenSet = true;
-    }
-
-    if (value.HasMember("Altitude") && !value["Altitude"].IsNull())
-    {
-        if (!value["Altitude"].IsLosslessDouble())
-        {
-            return CoreInternalOutcome(Core::Error("response `LoRaGatewayLocation.Altitude` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
-        }
-        m_altitude = value["Altitude"].GetDouble();
-        m_altitudeHasBeenSet = true;
-    }
 
     if (value.HasMember("Latitude") && !value["Latitude"].IsNull())
     {
@@ -73,28 +53,32 @@ CoreInternalOutcome LoRaGatewayLocation::Deserialize(const rapidjson::Value &val
         m_longitudeHasBeenSet = true;
     }
 
+    if (value.HasMember("Accuracy") && !value["Accuracy"].IsNull())
+    {
+        if (!value["Accuracy"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoRaGatewayLocation.Accuracy` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_accuracy = value["Accuracy"].GetDouble();
+        m_accuracyHasBeenSet = true;
+    }
+
+    if (value.HasMember("Altitude") && !value["Altitude"].IsNull())
+    {
+        if (!value["Altitude"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoRaGatewayLocation.Altitude` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_altitude = value["Altitude"].GetDouble();
+        m_altitudeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void LoRaGatewayLocation::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_accuracyHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Accuracy";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_accuracy, allocator);
-    }
-
-    if (m_altitudeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Altitude";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_altitude, allocator);
-    }
 
     if (m_latitudeHasBeenSet)
     {
@@ -112,40 +96,24 @@ void LoRaGatewayLocation::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         value.AddMember(iKey, m_longitude, allocator);
     }
 
+    if (m_accuracyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Accuracy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_accuracy, allocator);
+    }
+
+    if (m_altitudeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Altitude";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_altitude, allocator);
+    }
+
 }
 
-
-double LoRaGatewayLocation::GetAccuracy() const
-{
-    return m_accuracy;
-}
-
-void LoRaGatewayLocation::SetAccuracy(const double& _accuracy)
-{
-    m_accuracy = _accuracy;
-    m_accuracyHasBeenSet = true;
-}
-
-bool LoRaGatewayLocation::AccuracyHasBeenSet() const
-{
-    return m_accuracyHasBeenSet;
-}
-
-double LoRaGatewayLocation::GetAltitude() const
-{
-    return m_altitude;
-}
-
-void LoRaGatewayLocation::SetAltitude(const double& _altitude)
-{
-    m_altitude = _altitude;
-    m_altitudeHasBeenSet = true;
-}
-
-bool LoRaGatewayLocation::AltitudeHasBeenSet() const
-{
-    return m_altitudeHasBeenSet;
-}
 
 double LoRaGatewayLocation::GetLatitude() const
 {
@@ -177,5 +145,37 @@ void LoRaGatewayLocation::SetLongitude(const double& _longitude)
 bool LoRaGatewayLocation::LongitudeHasBeenSet() const
 {
     return m_longitudeHasBeenSet;
+}
+
+double LoRaGatewayLocation::GetAccuracy() const
+{
+    return m_accuracy;
+}
+
+void LoRaGatewayLocation::SetAccuracy(const double& _accuracy)
+{
+    m_accuracy = _accuracy;
+    m_accuracyHasBeenSet = true;
+}
+
+bool LoRaGatewayLocation::AccuracyHasBeenSet() const
+{
+    return m_accuracyHasBeenSet;
+}
+
+double LoRaGatewayLocation::GetAltitude() const
+{
+    return m_altitude;
+}
+
+void LoRaGatewayLocation::SetAltitude(const double& _altitude)
+{
+    m_altitude = _altitude;
+    m_altitudeHasBeenSet = true;
+}
+
+bool LoRaGatewayLocation::AltitudeHasBeenSet() const
+{
+    return m_altitudeHasBeenSet;
 }
 

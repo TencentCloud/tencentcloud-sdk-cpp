@@ -83,6 +83,49 @@ ClsClient::ApplyConfigToMachineGroupOutcomeCallable ClsClient::ApplyConfigToMach
     return task->get_future();
 }
 
+ClsClient::CloseKafkaConsumerOutcome ClsClient::CloseKafkaConsumer(const CloseKafkaConsumerRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloseKafkaConsumer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloseKafkaConsumerResponse rsp = CloseKafkaConsumerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloseKafkaConsumerOutcome(rsp);
+        else
+            return CloseKafkaConsumerOutcome(o.GetError());
+    }
+    else
+    {
+        return CloseKafkaConsumerOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CloseKafkaConsumerAsync(const CloseKafkaConsumerRequest& request, const CloseKafkaConsumerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CloseKafkaConsumer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::CloseKafkaConsumerOutcomeCallable ClsClient::CloseKafkaConsumerCallable(const CloseKafkaConsumerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CloseKafkaConsumerOutcome()>>(
+        [this, request]()
+        {
+            return this->CloseKafkaConsumer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::CreateAlarmOutcome ClsClient::CreateAlarm(const CreateAlarmRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAlarm");
@@ -2527,6 +2570,49 @@ ClsClient::ModifyTopicOutcomeCallable ClsClient::ModifyTopicCallable(const Modif
         [this, request]()
         {
             return this->ModifyTopic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::OpenKafkaConsumerOutcome ClsClient::OpenKafkaConsumer(const OpenKafkaConsumerRequest &request)
+{
+    auto outcome = MakeRequest(request, "OpenKafkaConsumer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OpenKafkaConsumerResponse rsp = OpenKafkaConsumerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OpenKafkaConsumerOutcome(rsp);
+        else
+            return OpenKafkaConsumerOutcome(o.GetError());
+    }
+    else
+    {
+        return OpenKafkaConsumerOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::OpenKafkaConsumerAsync(const OpenKafkaConsumerRequest& request, const OpenKafkaConsumerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->OpenKafkaConsumer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::OpenKafkaConsumerOutcomeCallable ClsClient::OpenKafkaConsumerCallable(const OpenKafkaConsumerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<OpenKafkaConsumerOutcome()>>(
+        [this, request]()
+        {
+            return this->OpenKafkaConsumer(request);
         }
     );
 

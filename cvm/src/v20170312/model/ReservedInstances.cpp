@@ -32,7 +32,9 @@ ReservedInstances::ReservedInstances() :
     m_stateHasBeenSet(false),
     m_currencyCodeHasBeenSet(false),
     m_offeringTypeHasBeenSet(false),
-    m_instanceFamilyHasBeenSet(false)
+    m_instanceFamilyHasBeenSet(false),
+    m_reservedInstanceIdHasBeenSet(false),
+    m_reservedInstanceNameHasBeenSet(false)
 {
 }
 
@@ -161,6 +163,26 @@ CoreInternalOutcome ReservedInstances::Deserialize(const rapidjson::Value &value
         m_instanceFamilyHasBeenSet = true;
     }
 
+    if (value.HasMember("ReservedInstanceId") && !value["ReservedInstanceId"].IsNull())
+    {
+        if (!value["ReservedInstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReservedInstances.ReservedInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reservedInstanceId = string(value["ReservedInstanceId"].GetString());
+        m_reservedInstanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReservedInstanceName") && !value["ReservedInstanceName"].IsNull())
+    {
+        if (!value["ReservedInstanceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReservedInstances.ReservedInstanceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reservedInstanceName = string(value["ReservedInstanceName"].GetString());
+        m_reservedInstanceNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +284,22 @@ void ReservedInstances::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "InstanceFamily";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceFamily.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reservedInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReservedInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reservedInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reservedInstanceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReservedInstanceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reservedInstanceName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -457,5 +495,37 @@ void ReservedInstances::SetInstanceFamily(const string& _instanceFamily)
 bool ReservedInstances::InstanceFamilyHasBeenSet() const
 {
     return m_instanceFamilyHasBeenSet;
+}
+
+string ReservedInstances::GetReservedInstanceId() const
+{
+    return m_reservedInstanceId;
+}
+
+void ReservedInstances::SetReservedInstanceId(const string& _reservedInstanceId)
+{
+    m_reservedInstanceId = _reservedInstanceId;
+    m_reservedInstanceIdHasBeenSet = true;
+}
+
+bool ReservedInstances::ReservedInstanceIdHasBeenSet() const
+{
+    return m_reservedInstanceIdHasBeenSet;
+}
+
+string ReservedInstances::GetReservedInstanceName() const
+{
+    return m_reservedInstanceName;
+}
+
+void ReservedInstances::SetReservedInstanceName(const string& _reservedInstanceName)
+{
+    m_reservedInstanceName = _reservedInstanceName;
+    m_reservedInstanceNameHasBeenSet = true;
+}
+
+bool ReservedInstances::ReservedInstanceNameHasBeenSet() const
+{
+    return m_reservedInstanceNameHasBeenSet;
 }
 

@@ -199,6 +199,8 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeImageTagsResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeInovcationIndicatorsRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeInovcationIndicatorsResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeInstancesRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeInstancesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeInvocationMetricDataCurveRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeInvocationMetricDataCurveResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeInvocationMetricDataDimensionRequest.h>
@@ -663,6 +665,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInovcationIndicatorsResponse> DescribeInovcationIndicatorsOutcome;
                 typedef std::future<DescribeInovcationIndicatorsOutcome> DescribeInovcationIndicatorsOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeInovcationIndicatorsRequest&, DescribeInovcationIndicatorsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInovcationIndicatorsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
+                typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInvocationMetricDataCurveResponse> DescribeInvocationMetricDataCurveOutcome;
                 typedef std::future<DescribeInvocationMetricDataCurveOutcome> DescribeInvocationMetricDataCurveOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeInvocationMetricDataCurveRequest&, DescribeInvocationMetricDataCurveOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInvocationMetricDataCurveAsyncHandler;
@@ -1738,6 +1743,15 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeInovcationIndicatorsOutcome DescribeInovcationIndicators(const Model::DescribeInovcationIndicatorsRequest &request);
                 void DescribeInovcationIndicatorsAsync(const Model::DescribeInovcationIndicatorsRequest& request, const DescribeInovcationIndicatorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInovcationIndicatorsOutcomeCallable DescribeInovcationIndicatorsCallable(const Model::DescribeInovcationIndicatorsRequest& request);
+
+                /**
+                 *无
+                 * @param req DescribeInstancesRequest
+                 * @return DescribeInstancesOutcome
+                 */
+                DescribeInstancesOutcome DescribeInstances(const Model::DescribeInstancesRequest &request);
+                void DescribeInstancesAsync(const Model::DescribeInstancesRequest& request, const DescribeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request);
 
                 /**
                  *查询调用指标数据变化曲线

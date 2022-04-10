@@ -19,12 +19,14 @@ set(ssa_public_header
   )
 
 set(ssa_public_header_model
+  include/tencentcloud/ssa/v20180608/model/DescribeMappingResultsResponse.h
   include/tencentcloud/ssa/v20180608/model/DescribeAssetDetailRequest.h
   include/tencentcloud/ssa/v20180608/model/DescribeVulListResponse.h
   include/tencentcloud/ssa/v20180608/model/DescribeSocAlertDetailsRequest.h
   include/tencentcloud/ssa/v20180608/model/DescribeComplianceAssetListResponse.h
   include/tencentcloud/ssa/v20180608/model/DataCheck.h
   include/tencentcloud/ssa/v20180608/model/SocProductionItem.h
+  include/tencentcloud/ssa/v20180608/model/MappingResult.h
   include/tencentcloud/ssa/v20180608/model/DescribeCheckConfigAssetListRequest.h
   include/tencentcloud/ssa/v20180608/model/Asset.h
   include/tencentcloud/ssa/v20180608/model/DescribeComplianceListResponse.h
@@ -35,6 +37,7 @@ set(ssa_public_header_model
   include/tencentcloud/ssa/v20180608/model/DescribeSocAlertDetailsResponse.h
   include/tencentcloud/ssa/v20180608/model/VulItem.h
   include/tencentcloud/ssa/v20180608/model/DescribeCheckConfigAssetListResponse.h
+  include/tencentcloud/ssa/v20180608/model/Tag.h
   include/tencentcloud/ssa/v20180608/model/AlertListData.h
   include/tencentcloud/ssa/v20180608/model/SaDivulgeDataQueryPub.h
   include/tencentcloud/ssa/v20180608/model/SocComplianceInfoResp.h
@@ -43,6 +46,7 @@ set(ssa_public_header_model
   include/tencentcloud/ssa/v20180608/model/DescribeAssetsMappingListResponse.h
   include/tencentcloud/ssa/v20180608/model/DescribeSocAlertListResponse.h
   include/tencentcloud/ssa/v20180608/model/SocComplianceItem.h
+  include/tencentcloud/ssa/v20180608/model/SecurityStatus.h
   include/tencentcloud/ssa/v20180608/model/QuerySort.h
   include/tencentcloud/ssa/v20180608/model/DescribeComplianceListRequest.h
   include/tencentcloud/ssa/v20180608/model/DescribeVulListRequest.h
@@ -51,7 +55,7 @@ set(ssa_public_header_model
   include/tencentcloud/ssa/v20180608/model/DescribeSafetyEventListResponse.h
   include/tencentcloud/ssa/v20180608/model/SaDivulgeDataQueryPubList.h
   include/tencentcloud/ssa/v20180608/model/DescribeSafetyEventListRequest.h
-  include/tencentcloud/ssa/v20180608/model/Tag.h
+  include/tencentcloud/ssa/v20180608/model/AssetQueryFilter.h
   include/tencentcloud/ssa/v20180608/model/AlertType.h
   include/tencentcloud/ssa/v20180608/model/DescribeSocAlertListRequest.h
   include/tencentcloud/ssa/v20180608/model/ComplianceCheckDetail.h
@@ -59,6 +63,7 @@ set(ssa_public_header_model
   include/tencentcloud/ssa/v20180608/model/Bucket.h
   include/tencentcloud/ssa/v20180608/model/DescribeConfigListRequest.h
   include/tencentcloud/ssa/v20180608/model/DescribeSocCspmComplianceResponse.h
+  include/tencentcloud/ssa/v20180608/model/DescribeMappingResultsRequest.h
   include/tencentcloud/ssa/v20180608/model/Filter.h
   include/tencentcloud/ssa/v20180608/model/AssetList.h
   include/tencentcloud/ssa/v20180608/model/DataAssetMapping.h
@@ -70,11 +75,13 @@ set(ssa_public_header_model
   include/tencentcloud/ssa/v20180608/model/SocCheckItem.h
   include/tencentcloud/ssa/v20180608/model/DescribeEventDetailRequest.h
   include/tencentcloud/ssa/v20180608/model/CheckAssetItem.h
+  include/tencentcloud/ssa/v20180608/model/AssetTypeStatistic.h
   include/tencentcloud/ssa/v20180608/model/SaDivulgeDataQueryPubRequest.h
   include/tencentcloud/ssa/v20180608/model/DescribeVulDetailRequest.h
   include/tencentcloud/ssa/v20180608/model/ConcernInfo.h
   include/tencentcloud/ssa/v20180608/model/DescribeAssetsMappingListRequest.h
   include/tencentcloud/ssa/v20180608/model/DataCompliance.h
+  include/tencentcloud/ssa/v20180608/model/Results.h
   include/tencentcloud/ssa/v20180608/model/AssetDetail.h
   include/tencentcloud/ssa/v20180608/model/DescribeComplianceAssetListRequest.h
   include/tencentcloud/ssa/v20180608/model/QueryFilter.h
@@ -87,12 +94,14 @@ set(ssa_public_header_model
 
 set(ssa_src
   src/v20180608/SsaClient.cpp
+  src/v20180608/model/DescribeMappingResultsResponse.cpp
   src/v20180608/model/DescribeAssetDetailRequest.cpp
   src/v20180608/model/DescribeVulListResponse.cpp
   src/v20180608/model/DescribeSocAlertDetailsRequest.cpp
   src/v20180608/model/DescribeComplianceAssetListResponse.cpp
   src/v20180608/model/DataCheck.cpp
   src/v20180608/model/SocProductionItem.cpp
+  src/v20180608/model/MappingResult.cpp
   src/v20180608/model/DescribeCheckConfigAssetListRequest.cpp
   src/v20180608/model/Asset.cpp
   src/v20180608/model/DescribeComplianceListResponse.cpp
@@ -103,6 +112,7 @@ set(ssa_src
   src/v20180608/model/DescribeSocAlertDetailsResponse.cpp
   src/v20180608/model/VulItem.cpp
   src/v20180608/model/DescribeCheckConfigAssetListResponse.cpp
+  src/v20180608/model/Tag.cpp
   src/v20180608/model/AlertListData.cpp
   src/v20180608/model/SaDivulgeDataQueryPub.cpp
   src/v20180608/model/SocComplianceInfoResp.cpp
@@ -111,6 +121,7 @@ set(ssa_src
   src/v20180608/model/DescribeAssetsMappingListResponse.cpp
   src/v20180608/model/DescribeSocAlertListResponse.cpp
   src/v20180608/model/SocComplianceItem.cpp
+  src/v20180608/model/SecurityStatus.cpp
   src/v20180608/model/QuerySort.cpp
   src/v20180608/model/DescribeComplianceListRequest.cpp
   src/v20180608/model/DescribeVulListRequest.cpp
@@ -119,7 +130,7 @@ set(ssa_src
   src/v20180608/model/DescribeSafetyEventListResponse.cpp
   src/v20180608/model/SaDivulgeDataQueryPubList.cpp
   src/v20180608/model/DescribeSafetyEventListRequest.cpp
-  src/v20180608/model/Tag.cpp
+  src/v20180608/model/AssetQueryFilter.cpp
   src/v20180608/model/AlertType.cpp
   src/v20180608/model/DescribeSocAlertListRequest.cpp
   src/v20180608/model/ComplianceCheckDetail.cpp
@@ -127,6 +138,7 @@ set(ssa_src
   src/v20180608/model/Bucket.cpp
   src/v20180608/model/DescribeConfigListRequest.cpp
   src/v20180608/model/DescribeSocCspmComplianceResponse.cpp
+  src/v20180608/model/DescribeMappingResultsRequest.cpp
   src/v20180608/model/Filter.cpp
   src/v20180608/model/AssetList.cpp
   src/v20180608/model/DataAssetMapping.cpp
@@ -138,11 +150,13 @@ set(ssa_src
   src/v20180608/model/SocCheckItem.cpp
   src/v20180608/model/DescribeEventDetailRequest.cpp
   src/v20180608/model/CheckAssetItem.cpp
+  src/v20180608/model/AssetTypeStatistic.cpp
   src/v20180608/model/SaDivulgeDataQueryPubRequest.cpp
   src/v20180608/model/DescribeVulDetailRequest.cpp
   src/v20180608/model/ConcernInfo.cpp
   src/v20180608/model/DescribeAssetsMappingListRequest.cpp
   src/v20180608/model/DataCompliance.cpp
+  src/v20180608/model/Results.cpp
   src/v20180608/model/AssetDetail.cpp
   src/v20180608/model/DescribeComplianceAssetListRequest.cpp
   src/v20180608/model/QueryFilter.cpp

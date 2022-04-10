@@ -172,6 +172,32 @@ global：预热全球节点
                      */
                     bool ParseM3U8HasBeenSet() const;
 
+                    /**
+                     * 获取是否关闭Range回源
+注意事项：
+此功能灰度发布中，敬请期待
+                     * @return DisableRange 是否关闭Range回源
+注意事项：
+此功能灰度发布中，敬请期待
+                     */
+                    bool GetDisableRange() const;
+
+                    /**
+                     * 设置是否关闭Range回源
+注意事项：
+此功能灰度发布中，敬请期待
+                     * @param DisableRange 是否关闭Range回源
+注意事项：
+此功能灰度发布中，敬请期待
+                     */
+                    void SetDisableRange(const bool& _disableRange);
+
+                    /**
+                     * 判断参数 DisableRange 是否已赋值
+                     * @return DisableRange 是否已赋值
+                     */
+                    bool DisableRangeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -213,6 +239,14 @@ global：预热全球节点
                      */
                     bool m_parseM3U8;
                     bool m_parseM3U8HasBeenSet;
+
+                    /**
+                     * 是否关闭Range回源
+注意事项：
+此功能灰度发布中，敬请期待
+                     */
+                    bool m_disableRange;
+                    bool m_disableRangeHasBeenSet;
 
                 };
             }

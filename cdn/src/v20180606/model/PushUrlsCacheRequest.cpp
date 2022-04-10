@@ -27,7 +27,8 @@ PushUrlsCacheRequest::PushUrlsCacheRequest() :
     m_userAgentHasBeenSet(false),
     m_areaHasBeenSet(false),
     m_layerHasBeenSet(false),
-    m_parseM3U8HasBeenSet(false)
+    m_parseM3U8HasBeenSet(false),
+    m_disableRangeHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,14 @@ string PushUrlsCacheRequest::ToJsonString() const
         string key = "ParseM3U8";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_parseM3U8, allocator);
+    }
+
+    if (m_disableRangeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableRange";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_disableRange, allocator);
     }
 
 
@@ -169,6 +178,22 @@ void PushUrlsCacheRequest::SetParseM3U8(const bool& _parseM3U8)
 bool PushUrlsCacheRequest::ParseM3U8HasBeenSet() const
 {
     return m_parseM3U8HasBeenSet;
+}
+
+bool PushUrlsCacheRequest::GetDisableRange() const
+{
+    return m_disableRange;
+}
+
+void PushUrlsCacheRequest::SetDisableRange(const bool& _disableRange)
+{
+    m_disableRange = _disableRange;
+    m_disableRangeHasBeenSet = true;
+}
+
+bool PushUrlsCacheRequest::DisableRangeHasBeenSet() const
+{
+    return m_disableRangeHasBeenSet;
 }
 
 
