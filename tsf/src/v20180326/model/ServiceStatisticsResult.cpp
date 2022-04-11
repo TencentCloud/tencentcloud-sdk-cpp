@@ -42,7 +42,15 @@ ServiceStatisticsResult::ServiceStatisticsResult() :
     m_heapUsedHasBeenSet(false),
     m_dbNameHasBeenSet(false),
     m_scriptHasBeenSet(false),
-    m_dbTypeHasBeenSet(false)
+    m_dbTypeHasBeenSet(false),
+    m_apdexHasBeenSet(false),
+    m_qpsHasBeenSet(false),
+    m_instanceOnlineCountHasBeenSet(false),
+    m_instanceTotalCountHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_errorRateLevelHasBeenSet(false),
+    m_avgTimeConsumingLevelHasBeenSet(false),
+    m_apdexLevelHasBeenSet(false)
 {
 }
 
@@ -281,6 +289,86 @@ CoreInternalOutcome ServiceStatisticsResult::Deserialize(const rapidjson::Value 
         m_dbTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Apdex") && !value["Apdex"].IsNull())
+    {
+        if (!value["Apdex"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceStatisticsResult.Apdex` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_apdex = value["Apdex"].GetDouble();
+        m_apdexHasBeenSet = true;
+    }
+
+    if (value.HasMember("Qps") && !value["Qps"].IsNull())
+    {
+        if (!value["Qps"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceStatisticsResult.Qps` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_qps = value["Qps"].GetDouble();
+        m_qpsHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceOnlineCount") && !value["InstanceOnlineCount"].IsNull())
+    {
+        if (!value["InstanceOnlineCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceStatisticsResult.InstanceOnlineCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceOnlineCount = value["InstanceOnlineCount"].GetInt64();
+        m_instanceOnlineCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceTotalCount") && !value["InstanceTotalCount"].IsNull())
+    {
+        if (!value["InstanceTotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceStatisticsResult.InstanceTotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceTotalCount = value["InstanceTotalCount"].GetInt64();
+        m_instanceTotalCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceStatisticsResult.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ErrorRateLevel") && !value["ErrorRateLevel"].IsNull())
+    {
+        if (!value["ErrorRateLevel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceStatisticsResult.ErrorRateLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorRateLevel = string(value["ErrorRateLevel"].GetString());
+        m_errorRateLevelHasBeenSet = true;
+    }
+
+    if (value.HasMember("AvgTimeConsumingLevel") && !value["AvgTimeConsumingLevel"].IsNull())
+    {
+        if (!value["AvgTimeConsumingLevel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceStatisticsResult.AvgTimeConsumingLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_avgTimeConsumingLevel = string(value["AvgTimeConsumingLevel"].GetString());
+        m_avgTimeConsumingLevelHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApdexLevel") && !value["ApdexLevel"].IsNull())
+    {
+        if (!value["ApdexLevel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceStatisticsResult.ApdexLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_apdexLevel = string(value["ApdexLevel"].GetString());
+        m_apdexLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -469,6 +557,70 @@ void ServiceStatisticsResult::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "DbType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dbType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apdexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Apdex";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_apdex, allocator);
+    }
+
+    if (m_qpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Qps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_qps, allocator);
+    }
+
+    if (m_instanceOnlineCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceOnlineCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_instanceOnlineCount, allocator);
+    }
+
+    if (m_instanceTotalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceTotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_instanceTotalCount, allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_errorRateLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorRateLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorRateLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_avgTimeConsumingLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvgTimeConsumingLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_avgTimeConsumingLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apdexLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApdexLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_apdexLevel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -824,5 +976,133 @@ void ServiceStatisticsResult::SetDbType(const string& _dbType)
 bool ServiceStatisticsResult::DbTypeHasBeenSet() const
 {
     return m_dbTypeHasBeenSet;
+}
+
+double ServiceStatisticsResult::GetApdex() const
+{
+    return m_apdex;
+}
+
+void ServiceStatisticsResult::SetApdex(const double& _apdex)
+{
+    m_apdex = _apdex;
+    m_apdexHasBeenSet = true;
+}
+
+bool ServiceStatisticsResult::ApdexHasBeenSet() const
+{
+    return m_apdexHasBeenSet;
+}
+
+double ServiceStatisticsResult::GetQps() const
+{
+    return m_qps;
+}
+
+void ServiceStatisticsResult::SetQps(const double& _qps)
+{
+    m_qps = _qps;
+    m_qpsHasBeenSet = true;
+}
+
+bool ServiceStatisticsResult::QpsHasBeenSet() const
+{
+    return m_qpsHasBeenSet;
+}
+
+int64_t ServiceStatisticsResult::GetInstanceOnlineCount() const
+{
+    return m_instanceOnlineCount;
+}
+
+void ServiceStatisticsResult::SetInstanceOnlineCount(const int64_t& _instanceOnlineCount)
+{
+    m_instanceOnlineCount = _instanceOnlineCount;
+    m_instanceOnlineCountHasBeenSet = true;
+}
+
+bool ServiceStatisticsResult::InstanceOnlineCountHasBeenSet() const
+{
+    return m_instanceOnlineCountHasBeenSet;
+}
+
+int64_t ServiceStatisticsResult::GetInstanceTotalCount() const
+{
+    return m_instanceTotalCount;
+}
+
+void ServiceStatisticsResult::SetInstanceTotalCount(const int64_t& _instanceTotalCount)
+{
+    m_instanceTotalCount = _instanceTotalCount;
+    m_instanceTotalCountHasBeenSet = true;
+}
+
+bool ServiceStatisticsResult::InstanceTotalCountHasBeenSet() const
+{
+    return m_instanceTotalCountHasBeenSet;
+}
+
+string ServiceStatisticsResult::GetStatus() const
+{
+    return m_status;
+}
+
+void ServiceStatisticsResult::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool ServiceStatisticsResult::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string ServiceStatisticsResult::GetErrorRateLevel() const
+{
+    return m_errorRateLevel;
+}
+
+void ServiceStatisticsResult::SetErrorRateLevel(const string& _errorRateLevel)
+{
+    m_errorRateLevel = _errorRateLevel;
+    m_errorRateLevelHasBeenSet = true;
+}
+
+bool ServiceStatisticsResult::ErrorRateLevelHasBeenSet() const
+{
+    return m_errorRateLevelHasBeenSet;
+}
+
+string ServiceStatisticsResult::GetAvgTimeConsumingLevel() const
+{
+    return m_avgTimeConsumingLevel;
+}
+
+void ServiceStatisticsResult::SetAvgTimeConsumingLevel(const string& _avgTimeConsumingLevel)
+{
+    m_avgTimeConsumingLevel = _avgTimeConsumingLevel;
+    m_avgTimeConsumingLevelHasBeenSet = true;
+}
+
+bool ServiceStatisticsResult::AvgTimeConsumingLevelHasBeenSet() const
+{
+    return m_avgTimeConsumingLevelHasBeenSet;
+}
+
+string ServiceStatisticsResult::GetApdexLevel() const
+{
+    return m_apdexLevel;
+}
+
+void ServiceStatisticsResult::SetApdexLevel(const string& _apdexLevel)
+{
+    m_apdexLevel = _apdexLevel;
+    m_apdexLevelHasBeenSet = true;
+}
+
+bool ServiceStatisticsResult::ApdexLevelHasBeenSet() const
+{
+    return m_apdexLevelHasBeenSet;
 }
 

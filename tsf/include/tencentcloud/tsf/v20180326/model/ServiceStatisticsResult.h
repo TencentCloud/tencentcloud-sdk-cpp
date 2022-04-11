@@ -507,6 +507,182 @@ namespace TencentCloud
                      */
                     bool DbTypeHasBeenSet() const;
 
+                    /**
+                     * 获取Apdex值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Apdex Apdex值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetApdex() const;
+
+                    /**
+                     * 设置Apdex值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Apdex Apdex值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetApdex(const double& _apdex);
+
+                    /**
+                     * 判断参数 Apdex 是否已赋值
+                     * @return Apdex 是否已赋值
+                     */
+                    bool ApdexHasBeenSet() const;
+
+                    /**
+                     * 获取Qps值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Qps Qps值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetQps() const;
+
+                    /**
+                     * 设置Qps值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Qps Qps值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetQps(const double& _qps);
+
+                    /**
+                     * 判断参数 Qps 是否已赋值
+                     * @return Qps 是否已赋值
+                     */
+                    bool QpsHasBeenSet() const;
+
+                    /**
+                     * 获取实例在线数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceOnlineCount 实例在线数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetInstanceOnlineCount() const;
+
+                    /**
+                     * 设置实例在线数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceOnlineCount 实例在线数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceOnlineCount(const int64_t& _instanceOnlineCount);
+
+                    /**
+                     * 判断参数 InstanceOnlineCount 是否已赋值
+                     * @return InstanceOnlineCount 是否已赋值
+                     */
+                    bool InstanceOnlineCountHasBeenSet() const;
+
+                    /**
+                     * 获取实例总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceTotalCount 实例总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetInstanceTotalCount() const;
+
+                    /**
+                     * 设置实例总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceTotalCount 实例总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceTotalCount(const int64_t& _instanceTotalCount);
+
+                    /**
+                     * 判断参数 InstanceTotalCount 是否已赋值
+                     * @return InstanceTotalCount 是否已赋值
+                     */
+                    bool InstanceTotalCountHasBeenSet() const;
+
+                    /**
+                     * 获取normal/error
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status normal/error
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置normal/error
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Status normal/error
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取normal/warn/error
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ErrorRateLevel normal/warn/error
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetErrorRateLevel() const;
+
+                    /**
+                     * 设置normal/warn/error
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ErrorRateLevel normal/warn/error
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetErrorRateLevel(const std::string& _errorRateLevel);
+
+                    /**
+                     * 判断参数 ErrorRateLevel 是否已赋值
+                     * @return ErrorRateLevel 是否已赋值
+                     */
+                    bool ErrorRateLevelHasBeenSet() const;
+
+                    /**
+                     * 获取normal/warn/error
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AvgTimeConsumingLevel normal/warn/error
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAvgTimeConsumingLevel() const;
+
+                    /**
+                     * 设置normal/warn/error
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AvgTimeConsumingLevel normal/warn/error
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAvgTimeConsumingLevel(const std::string& _avgTimeConsumingLevel);
+
+                    /**
+                     * 判断参数 AvgTimeConsumingLevel 是否已赋值
+                     * @return AvgTimeConsumingLevel 是否已赋值
+                     */
+                    bool AvgTimeConsumingLevelHasBeenSet() const;
+
+                    /**
+                     * 获取normal/warn/error
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApdexLevel normal/warn/error
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetApdexLevel() const;
+
+                    /**
+                     * 设置normal/warn/error
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ApdexLevel normal/warn/error
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetApdexLevel(const std::string& _apdexLevel);
+
+                    /**
+                     * 判断参数 ApdexLevel 是否已赋值
+                     * @return ApdexLevel 是否已赋值
+                     */
+                    bool ApdexLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -656,6 +832,62 @@ namespace TencentCloud
                      */
                     std::string m_dbType;
                     bool m_dbTypeHasBeenSet;
+
+                    /**
+                     * Apdex值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_apdex;
+                    bool m_apdexHasBeenSet;
+
+                    /**
+                     * Qps值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_qps;
+                    bool m_qpsHasBeenSet;
+
+                    /**
+                     * 实例在线数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_instanceOnlineCount;
+                    bool m_instanceOnlineCountHasBeenSet;
+
+                    /**
+                     * 实例总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_instanceTotalCount;
+                    bool m_instanceTotalCountHasBeenSet;
+
+                    /**
+                     * normal/error
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * normal/warn/error
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_errorRateLevel;
+                    bool m_errorRateLevelHasBeenSet;
+
+                    /**
+                     * normal/warn/error
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_avgTimeConsumingLevel;
+                    bool m_avgTimeConsumingLevelHasBeenSet;
+
+                    /**
+                     * normal/warn/error
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_apdexLevel;
+                    bool m_apdexLevelHasBeenSet;
 
                 };
             }

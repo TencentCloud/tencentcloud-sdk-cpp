@@ -28,7 +28,9 @@ DescribeProVersionInfoResponse::DescribeProVersionInfoResponse() :
     m_endTimeHasBeenSet(false),
     m_coresCntHasBeenSet(false),
     m_maxPostPayCoresCntHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
+    m_resourceIdHasBeenSet(false),
+    m_buyStatusHasBeenSet(false),
+    m_isPurchasedHasBeenSet(false)
 {
 }
 
@@ -116,6 +118,26 @@ CoreInternalOutcome DescribeProVersionInfoResponse::Deserialize(const string &pa
         m_resourceIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("BuyStatus") && !rsp["BuyStatus"].IsNull())
+    {
+        if (!rsp["BuyStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BuyStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_buyStatus = string(rsp["BuyStatus"].GetString());
+        m_buyStatusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IsPurchased") && !rsp["IsPurchased"].IsNull())
+    {
+        if (!rsp["IsPurchased"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsPurchased` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isPurchased = rsp["IsPurchased"].GetBool();
+        m_isPurchasedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -164,6 +186,22 @@ string DescribeProVersionInfoResponse::ToJsonString() const
         string key = "ResourceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_buyStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BuyStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_buyStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isPurchasedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPurchased";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isPurchased, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -226,6 +264,26 @@ string DescribeProVersionInfoResponse::GetResourceId() const
 bool DescribeProVersionInfoResponse::ResourceIdHasBeenSet() const
 {
     return m_resourceIdHasBeenSet;
+}
+
+string DescribeProVersionInfoResponse::GetBuyStatus() const
+{
+    return m_buyStatus;
+}
+
+bool DescribeProVersionInfoResponse::BuyStatusHasBeenSet() const
+{
+    return m_buyStatusHasBeenSet;
+}
+
+bool DescribeProVersionInfoResponse::GetIsPurchased() const
+{
+    return m_isPurchased;
+}
+
+bool DescribeProVersionInfoResponse::IsPurchasedHasBeenSet() const
+{
+    return m_isPurchasedHasBeenSet;
 }
 
 

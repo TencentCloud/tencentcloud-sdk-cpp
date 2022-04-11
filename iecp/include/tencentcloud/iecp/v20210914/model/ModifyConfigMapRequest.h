@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool ConfigMapNameHasBeenSet() const;
 
                     /**
-                     * 获取Yaml配置
-                     * @return Yaml Yaml配置
+                     * 获取Yaml配置, base64之后的串
+                     * @return Yaml Yaml配置, base64之后的串
                      */
                     std::string GetYaml() const;
 
                     /**
-                     * 设置Yaml配置
-                     * @param Yaml Yaml配置
+                     * 设置Yaml配置, base64之后的串
+                     * @param Yaml Yaml配置, base64之后的串
                      */
                     void SetYaml(const std::string& _yaml);
 
@@ -129,7 +129,7 @@ namespace TencentCloud
                     bool m_configMapNameHasBeenSet;
 
                     /**
-                     * Yaml配置
+                     * Yaml配置, base64之后的串
                      */
                     std::string m_yaml;
                     bool m_yamlHasBeenSet;

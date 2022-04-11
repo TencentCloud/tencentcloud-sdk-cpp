@@ -54,7 +54,8 @@ ContainerGroupDeploy::ContainerGroupDeploy() :
     m_headlessServiceHasBeenSet(false),
     m_tcrRepoInfoHasBeenSet(false),
     m_volumeInfosHasBeenSet(false),
-    m_volumeMountInfosHasBeenSet(false)
+    m_volumeMountInfosHasBeenSet(false),
+    m_kubeInjectEnableHasBeenSet(false)
 {
 }
 
@@ -457,6 +458,16 @@ CoreInternalOutcome ContainerGroupDeploy::Deserialize(const rapidjson::Value &va
         m_volumeMountInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("KubeInjectEnable") && !value["KubeInjectEnable"].IsNull())
+    {
+        if (!value["KubeInjectEnable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDeploy.KubeInjectEnable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_kubeInjectEnable = value["KubeInjectEnable"].GetBool();
+        m_kubeInjectEnableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -764,6 +775,14 @@ void ContainerGroupDeploy::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_kubeInjectEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KubeInjectEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_kubeInjectEnable, allocator);
     }
 
 }
@@ -1311,5 +1330,21 @@ void ContainerGroupDeploy::SetVolumeMountInfos(const vector<VolumeMountInfo>& _v
 bool ContainerGroupDeploy::VolumeMountInfosHasBeenSet() const
 {
     return m_volumeMountInfosHasBeenSet;
+}
+
+bool ContainerGroupDeploy::GetKubeInjectEnable() const
+{
+    return m_kubeInjectEnable;
+}
+
+void ContainerGroupDeploy::SetKubeInjectEnable(const bool& _kubeInjectEnable)
+{
+    m_kubeInjectEnable = _kubeInjectEnable;
+    m_kubeInjectEnableHasBeenSet = true;
+}
+
+bool ContainerGroupDeploy::KubeInjectEnableHasBeenSet() const
+{
+    return m_kubeInjectEnableHasBeenSet;
 }
 

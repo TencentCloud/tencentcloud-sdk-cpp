@@ -25,7 +25,9 @@ using namespace std;
 ModifyIndexRequest::ModifyIndexRequest() :
     m_topicIdHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_ruleHasBeenSet(false)
+    m_ruleHasBeenSet(false),
+    m_includeInternalFieldsHasBeenSet(false),
+    m_metadataFlagHasBeenSet(false)
 {
 }
 
@@ -59,6 +61,22 @@ string ModifyIndexRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_rule.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_includeInternalFieldsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IncludeInternalFields";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_includeInternalFields, allocator);
+    }
+
+    if (m_metadataFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetadataFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_metadataFlag, allocator);
     }
 
 
@@ -115,6 +133,38 @@ void ModifyIndexRequest::SetRule(const RuleInfo& _rule)
 bool ModifyIndexRequest::RuleHasBeenSet() const
 {
     return m_ruleHasBeenSet;
+}
+
+bool ModifyIndexRequest::GetIncludeInternalFields() const
+{
+    return m_includeInternalFields;
+}
+
+void ModifyIndexRequest::SetIncludeInternalFields(const bool& _includeInternalFields)
+{
+    m_includeInternalFields = _includeInternalFields;
+    m_includeInternalFieldsHasBeenSet = true;
+}
+
+bool ModifyIndexRequest::IncludeInternalFieldsHasBeenSet() const
+{
+    return m_includeInternalFieldsHasBeenSet;
+}
+
+uint64_t ModifyIndexRequest::GetMetadataFlag() const
+{
+    return m_metadataFlag;
+}
+
+void ModifyIndexRequest::SetMetadataFlag(const uint64_t& _metadataFlag)
+{
+    m_metadataFlag = _metadataFlag;
+    m_metadataFlagHasBeenSet = true;
+}
+
+bool ModifyIndexRequest::MetadataFlagHasBeenSet() const
+{
+    return m_metadataFlagHasBeenSet;
 }
 
 

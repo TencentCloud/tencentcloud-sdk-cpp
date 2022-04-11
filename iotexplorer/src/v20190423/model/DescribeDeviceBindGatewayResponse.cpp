@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeDeviceBindGatewayResponse::DescribeDeviceBindGatewayResponse() :
     m_gatewayProductIdHasBeenSet(false),
-    m_gatewayDeviceNameHasBeenSet(false)
+    m_gatewayDeviceNameHasBeenSet(false),
+    m_gatewayNameHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome DescribeDeviceBindGatewayResponse::Deserialize(const string 
         m_gatewayDeviceNameHasBeenSet = true;
     }
 
+    if (rsp.HasMember("GatewayName") && !rsp["GatewayName"].IsNull())
+    {
+        if (!rsp["GatewayName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GatewayName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gatewayName = string(rsp["GatewayName"].GetString());
+        m_gatewayNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string DescribeDeviceBindGatewayResponse::ToJsonString() const
         string key = "GatewayDeviceName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_gatewayDeviceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gatewayNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GatewayName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gatewayName.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +158,16 @@ string DescribeDeviceBindGatewayResponse::GetGatewayDeviceName() const
 bool DescribeDeviceBindGatewayResponse::GatewayDeviceNameHasBeenSet() const
 {
     return m_gatewayDeviceNameHasBeenSet;
+}
+
+string DescribeDeviceBindGatewayResponse::GetGatewayName() const
+{
+    return m_gatewayName;
+}
+
+bool DescribeDeviceBindGatewayResponse::GatewayNameHasBeenSet() const
+{
+    return m_gatewayNameHasBeenSet;
 }
 
 

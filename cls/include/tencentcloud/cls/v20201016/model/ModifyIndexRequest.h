@@ -97,6 +97,42 @@ namespace TencentCloud
                      */
                     bool RuleHasBeenSet() const;
 
+                    /**
+                     * 获取全文索引系统预置字段标记，默认false。  false:不包含系统预置字段， true:包含系统预置字段
+                     * @return IncludeInternalFields 全文索引系统预置字段标记，默认false。  false:不包含系统预置字段， true:包含系统预置字段
+                     */
+                    bool GetIncludeInternalFields() const;
+
+                    /**
+                     * 设置全文索引系统预置字段标记，默认false。  false:不包含系统预置字段， true:包含系统预置字段
+                     * @param IncludeInternalFields 全文索引系统预置字段标记，默认false。  false:不包含系统预置字段， true:包含系统预置字段
+                     */
+                    void SetIncludeInternalFields(const bool& _includeInternalFields);
+
+                    /**
+                     * 判断参数 IncludeInternalFields 是否已赋值
+                     * @return IncludeInternalFields 是否已赋值
+                     */
+                    bool IncludeInternalFieldsHasBeenSet() const;
+
+                    /**
+                     * 获取元数据相关标志位，默认为0。 0：全文索引包括开启键值索引的元数据字段， 1：全文索引包括所有元数据字段，2：全文索引不包括元数据字段。
+                     * @return MetadataFlag 元数据相关标志位，默认为0。 0：全文索引包括开启键值索引的元数据字段， 1：全文索引包括所有元数据字段，2：全文索引不包括元数据字段。
+                     */
+                    uint64_t GetMetadataFlag() const;
+
+                    /**
+                     * 设置元数据相关标志位，默认为0。 0：全文索引包括开启键值索引的元数据字段， 1：全文索引包括所有元数据字段，2：全文索引不包括元数据字段。
+                     * @param MetadataFlag 元数据相关标志位，默认为0。 0：全文索引包括开启键值索引的元数据字段， 1：全文索引包括所有元数据字段，2：全文索引不包括元数据字段。
+                     */
+                    void SetMetadataFlag(const uint64_t& _metadataFlag);
+
+                    /**
+                     * 判断参数 MetadataFlag 是否已赋值
+                     * @return MetadataFlag 是否已赋值
+                     */
+                    bool MetadataFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,6 +152,18 @@ namespace TencentCloud
                      */
                     RuleInfo m_rule;
                     bool m_ruleHasBeenSet;
+
+                    /**
+                     * 全文索引系统预置字段标记，默认false。  false:不包含系统预置字段， true:包含系统预置字段
+                     */
+                    bool m_includeInternalFields;
+                    bool m_includeInternalFieldsHasBeenSet;
+
+                    /**
+                     * 元数据相关标志位，默认为0。 0：全文索引包括开启键值索引的元数据字段， 1：全文索引包括所有元数据字段，2：全文索引不包括元数据字段。
+                     */
+                    uint64_t m_metadataFlag;
+                    bool m_metadataFlagHasBeenSet;
 
                 };
             }

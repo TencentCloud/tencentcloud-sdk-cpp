@@ -187,7 +187,7 @@ namespace TencentCloud
                 DescribeCaptchaOperDataOutcomeCallable DescribeCaptchaOperDataCallable(const Model::DescribeCaptchaOperDataRequest& request);
 
                 /**
-                 *核查验证码票据结果(Web|APP)
+                 *核查验证码票据结果(Web及APP)
                  * @param req DescribeCaptchaResultRequest
                  * @return DescribeCaptchaResultOutcome
                  */

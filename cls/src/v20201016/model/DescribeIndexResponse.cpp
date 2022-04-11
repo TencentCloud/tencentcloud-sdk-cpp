@@ -27,7 +27,9 @@ DescribeIndexResponse::DescribeIndexResponse() :
     m_topicIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_ruleHasBeenSet(false),
-    m_modifyTimeHasBeenSet(false)
+    m_modifyTimeHasBeenSet(false),
+    m_includeInternalFieldsHasBeenSet(false),
+    m_metadataFlagHasBeenSet(false)
 {
 }
 
@@ -112,6 +114,26 @@ CoreInternalOutcome DescribeIndexResponse::Deserialize(const string &payload)
         m_modifyTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IncludeInternalFields") && !rsp["IncludeInternalFields"].IsNull())
+    {
+        if (!rsp["IncludeInternalFields"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IncludeInternalFields` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_includeInternalFields = rsp["IncludeInternalFields"].GetBool();
+        m_includeInternalFieldsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("MetadataFlag") && !rsp["MetadataFlag"].IsNull())
+    {
+        if (!rsp["MetadataFlag"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MetadataFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_metadataFlag = rsp["MetadataFlag"].GetUint64();
+        m_metadataFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -153,6 +175,22 @@ string DescribeIndexResponse::ToJsonString() const
         string key = "ModifyTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_includeInternalFieldsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IncludeInternalFields";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_includeInternalFields, allocator);
+    }
+
+    if (m_metadataFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetadataFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_metadataFlag, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -205,6 +243,26 @@ string DescribeIndexResponse::GetModifyTime() const
 bool DescribeIndexResponse::ModifyTimeHasBeenSet() const
 {
     return m_modifyTimeHasBeenSet;
+}
+
+bool DescribeIndexResponse::GetIncludeInternalFields() const
+{
+    return m_includeInternalFields;
+}
+
+bool DescribeIndexResponse::IncludeInternalFieldsHasBeenSet() const
+{
+    return m_includeInternalFieldsHasBeenSet;
+}
+
+uint64_t DescribeIndexResponse::GetMetadataFlag() const
+{
+    return m_metadataFlag;
+}
+
+bool DescribeIndexResponse::MetadataFlagHasBeenSet() const
+{
+    return m_metadataFlagHasBeenSet;
 }
 
 

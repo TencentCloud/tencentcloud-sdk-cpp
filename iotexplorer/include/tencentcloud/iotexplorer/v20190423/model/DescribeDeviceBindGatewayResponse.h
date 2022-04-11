@@ -71,6 +71,20 @@ namespace TencentCloud
                      */
                     bool GatewayDeviceNameHasBeenSet() const;
 
+                    /**
+                     * 获取网关产品名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GatewayName 网关产品名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGatewayName() const;
+
+                    /**
+                     * 判断参数 GatewayName 是否已赋值
+                     * @return GatewayName 是否已赋值
+                     */
+                    bool GatewayNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -86,6 +100,13 @@ namespace TencentCloud
                      */
                     std::string m_gatewayDeviceName;
                     bool m_gatewayDeviceNameHasBeenSet;
+
+                    /**
+                     * 网关产品名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_gatewayName;
+                    bool m_gatewayNameHasBeenSet;
 
                 };
             }
