@@ -14,41 +14,41 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/dcdb/v20180411/model/DescribeDBSecurityGroupsRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateStorageRegionRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Dcdb::V20180411::Model;
+using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
-DescribeDBSecurityGroupsRequest::DescribeDBSecurityGroupsRequest() :
-    m_productHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+CreateStorageRegionRequest::CreateStorageRegionRequest() :
+    m_storageRegionHasBeenSet(false),
+    m_subAppIdHasBeenSet(false)
 {
 }
 
-string DescribeDBSecurityGroupsRequest::ToJsonString() const
+string CreateStorageRegionRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_productHasBeenSet)
+    if (m_storageRegionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Product";
+        string key = "StorageRegion";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_product.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_storageRegion.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_instanceIdHasBeenSet)
+    if (m_subAppIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceId";
+        string key = "SubAppId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
 
@@ -59,36 +59,36 @@ string DescribeDBSecurityGroupsRequest::ToJsonString() const
 }
 
 
-string DescribeDBSecurityGroupsRequest::GetProduct() const
+string CreateStorageRegionRequest::GetStorageRegion() const
 {
-    return m_product;
+    return m_storageRegion;
 }
 
-void DescribeDBSecurityGroupsRequest::SetProduct(const string& _product)
+void CreateStorageRegionRequest::SetStorageRegion(const string& _storageRegion)
 {
-    m_product = _product;
-    m_productHasBeenSet = true;
+    m_storageRegion = _storageRegion;
+    m_storageRegionHasBeenSet = true;
 }
 
-bool DescribeDBSecurityGroupsRequest::ProductHasBeenSet() const
+bool CreateStorageRegionRequest::StorageRegionHasBeenSet() const
 {
-    return m_productHasBeenSet;
+    return m_storageRegionHasBeenSet;
 }
 
-string DescribeDBSecurityGroupsRequest::GetInstanceId() const
+uint64_t CreateStorageRegionRequest::GetSubAppId() const
 {
-    return m_instanceId;
+    return m_subAppId;
 }
 
-void DescribeDBSecurityGroupsRequest::SetInstanceId(const string& _instanceId)
+void CreateStorageRegionRequest::SetSubAppId(const uint64_t& _subAppId)
 {
-    m_instanceId = _instanceId;
-    m_instanceIdHasBeenSet = true;
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
 }
 
-bool DescribeDBSecurityGroupsRequest::InstanceIdHasBeenSet() const
+bool CreateStorageRegionRequest::SubAppIdHasBeenSet() const
 {
-    return m_instanceIdHasBeenSet;
+    return m_subAppIdHasBeenSet;
 }
 
 

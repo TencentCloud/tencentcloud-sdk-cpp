@@ -56,7 +56,8 @@ DBInstance::DBInstance() :
     m_dBKernelVersionHasBeenSet(false),
     m_networkAccessListHasBeenSet(false),
     m_dBMajorVersionHasBeenSet(false),
-    m_dBNodeSetHasBeenSet(false)
+    m_dBNodeSetHasBeenSet(false),
+    m_isSupportTDEHasBeenSet(false)
 {
 }
 
@@ -465,6 +466,16 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
         m_dBNodeSetHasBeenSet = true;
     }
 
+    if (value.HasMember("IsSupportTDE") && !value["IsSupportTDE"].IsNull())
+    {
+        if (!value["IsSupportTDE"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBInstance.IsSupportTDE` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSupportTDE = value["IsSupportTDE"].GetInt64();
+        m_isSupportTDEHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -786,6 +797,14 @@ void DBInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isSupportTDEHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSupportTDE";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSupportTDE, allocator);
     }
 
 }
@@ -1365,5 +1384,21 @@ void DBInstance::SetDBNodeSet(const vector<DBNode>& _dBNodeSet)
 bool DBInstance::DBNodeSetHasBeenSet() const
 {
     return m_dBNodeSetHasBeenSet;
+}
+
+int64_t DBInstance::GetIsSupportTDE() const
+{
+    return m_isSupportTDE;
+}
+
+void DBInstance::SetIsSupportTDE(const int64_t& _isSupportTDE)
+{
+    m_isSupportTDE = _isSupportTDE;
+    m_isSupportTDEHasBeenSet = true;
+}
+
+bool DBInstance::IsSupportTDEHasBeenSet() const
+{
+    return m_isSupportTDEHasBeenSet;
 }
 

@@ -14,55 +14,55 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_SSA_V20180608_MODEL_SADIVULGEDATAQUERYPUBRESPONSE_H_
-#define TENCENTCLOUD_SSA_V20180608_MODEL_SADIVULGEDATAQUERYPUBRESPONSE_H_
+#ifndef TENCENTCLOUD_VOD_V20180717_MODEL_DESCRIBESTORAGEREGIONSRESPONSE_H_
+#define TENCENTCLOUD_VOD_V20180717_MODEL_DESCRIBESTORAGEREGIONSRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/ssa/v20180608/model/SaDivulgeDataQueryPubList.h>
+#include <tencentcloud/vod/v20180717/model/StorageRegionInfo.h>
 
 
 namespace TencentCloud
 {
-    namespace Ssa
+    namespace Vod
     {
-        namespace V20180608
+        namespace V20180717
         {
             namespace Model
             {
                 /**
-                * SaDivulgeDataQueryPub返回参数结构体
+                * DescribeStorageRegions返回参数结构体
                 */
-                class SaDivulgeDataQueryPubResponse : public AbstractModel
+                class DescribeStorageRegionsResponse : public AbstractModel
                 {
                 public:
-                    SaDivulgeDataQueryPubResponse();
-                    ~SaDivulgeDataQueryPubResponse() = default;
+                    DescribeStorageRegionsResponse();
+                    ~DescribeStorageRegionsResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取自定义泄露事件列表
-                     * @return Data 自定义泄露事件列表
+                     * 获取存储地域信息列表。
+                     * @return StorageRegionInfos 存储地域信息列表。
                      */
-                    SaDivulgeDataQueryPubList GetData() const;
+                    std::vector<StorageRegionInfo> GetStorageRegionInfos() const;
 
                     /**
-                     * 判断参数 Data 是否已赋值
-                     * @return Data 是否已赋值
+                     * 判断参数 StorageRegionInfos 是否已赋值
+                     * @return StorageRegionInfos 是否已赋值
                      */
-                    bool DataHasBeenSet() const;
+                    bool StorageRegionInfosHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 自定义泄露事件列表
+                     * 存储地域信息列表。
                      */
-                    SaDivulgeDataQueryPubList m_data;
-                    bool m_dataHasBeenSet;
+                    std::vector<StorageRegionInfo> m_storageRegionInfos;
+                    bool m_storageRegionInfosHasBeenSet;
 
                 };
             }
@@ -70,4 +70,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_SSA_V20180608_MODEL_SADIVULGEDATAQUERYPUBRESPONSE_H_
+#endif // !TENCENTCLOUD_VOD_V20180717_MODEL_DESCRIBESTORAGEREGIONSRESPONSE_H_

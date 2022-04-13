@@ -38,7 +38,8 @@ CreateCmqQueueRequest::CreateCmqQueueRequest() :
     m_maxReceiveCountHasBeenSet(false),
     m_maxTimeToLiveHasBeenSet(false),
     m_traceHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_retentionSizeInMBHasBeenSet(false)
 {
 }
 
@@ -182,6 +183,14 @@ string CreateCmqQueueRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_retentionSizeInMBHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetentionSizeInMB";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_retentionSizeInMB, allocator);
     }
 
 
@@ -446,6 +455,22 @@ void CreateCmqQueueRequest::SetTags(const vector<Tag>& _tags)
 bool CreateCmqQueueRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+uint64_t CreateCmqQueueRequest::GetRetentionSizeInMB() const
+{
+    return m_retentionSizeInMB;
+}
+
+void CreateCmqQueueRequest::SetRetentionSizeInMB(const uint64_t& _retentionSizeInMB)
+{
+    m_retentionSizeInMB = _retentionSizeInMB;
+    m_retentionSizeInMBHasBeenSet = true;
+}
+
+bool CreateCmqQueueRequest::RetentionSizeInMBHasBeenSet() const
+{
+    return m_retentionSizeInMBHasBeenSet;
 }
 
 

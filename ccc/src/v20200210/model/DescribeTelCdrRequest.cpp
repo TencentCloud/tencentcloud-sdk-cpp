@@ -25,9 +25,9 @@ using namespace std;
 DescribeTelCdrRequest::DescribeTelCdrRequest() :
     m_startTimeStampHasBeenSet(false),
     m_endTimeStampHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
     m_sdkAppIdHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
     m_pageNumberHasBeenSet(false),
@@ -59,6 +59,14 @@ string DescribeTelCdrRequest::ToJsonString() const
         d.AddMember(iKey, m_endTimeStamp, allocator);
     }
 
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_instanceId, allocator);
+    }
+
     if (m_limitHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -73,14 +81,6 @@ string DescribeTelCdrRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
-    }
-
-    if (m_instanceIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_instanceId, allocator);
     }
 
     if (m_sdkAppIdHasBeenSet)
@@ -173,6 +173,22 @@ bool DescribeTelCdrRequest::EndTimeStampHasBeenSet() const
     return m_endTimeStampHasBeenSet;
 }
 
+int64_t DescribeTelCdrRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void DescribeTelCdrRequest::SetInstanceId(const int64_t& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool DescribeTelCdrRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
 int64_t DescribeTelCdrRequest::GetLimit() const
 {
     return m_limit;
@@ -203,22 +219,6 @@ void DescribeTelCdrRequest::SetOffset(const int64_t& _offset)
 bool DescribeTelCdrRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
-}
-
-int64_t DescribeTelCdrRequest::GetInstanceId() const
-{
-    return m_instanceId;
-}
-
-void DescribeTelCdrRequest::SetInstanceId(const int64_t& _instanceId)
-{
-    m_instanceId = _instanceId;
-    m_instanceIdHasBeenSet = true;
-}
-
-bool DescribeTelCdrRequest::InstanceIdHasBeenSet() const
-{
-    return m_instanceIdHasBeenSet;
 }
 
 int64_t DescribeTelCdrRequest::GetSdkAppId() const

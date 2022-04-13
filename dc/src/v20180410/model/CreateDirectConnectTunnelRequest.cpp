@@ -38,7 +38,11 @@ CreateDirectConnectTunnelRequest::CreateDirectConnectTunnelRequest() :
     m_tencentAddressHasBeenSet(false),
     m_customerAddressHasBeenSet(false),
     m_tencentBackupAddressHasBeenSet(false),
-    m_cloudAttachIdHasBeenSet(false)
+    m_cloudAttachIdHasBeenSet(false),
+    m_bfdEnableHasBeenSet(false),
+    m_nqaEnableHasBeenSet(false),
+    m_bfdInfoHasBeenSet(false),
+    m_nqaInfoHasBeenSet(false)
 {
 }
 
@@ -183,6 +187,40 @@ string CreateDirectConnectTunnelRequest::ToJsonString() const
         string key = "CloudAttachId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cloudAttachId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bfdEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BfdEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_bfdEnable, allocator);
+    }
+
+    if (m_nqaEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NqaEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_nqaEnable, allocator);
+    }
+
+    if (m_bfdInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BfdInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_bfdInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_nqaInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NqaInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_nqaInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -447,6 +485,70 @@ void CreateDirectConnectTunnelRequest::SetCloudAttachId(const string& _cloudAtta
 bool CreateDirectConnectTunnelRequest::CloudAttachIdHasBeenSet() const
 {
     return m_cloudAttachIdHasBeenSet;
+}
+
+int64_t CreateDirectConnectTunnelRequest::GetBfdEnable() const
+{
+    return m_bfdEnable;
+}
+
+void CreateDirectConnectTunnelRequest::SetBfdEnable(const int64_t& _bfdEnable)
+{
+    m_bfdEnable = _bfdEnable;
+    m_bfdEnableHasBeenSet = true;
+}
+
+bool CreateDirectConnectTunnelRequest::BfdEnableHasBeenSet() const
+{
+    return m_bfdEnableHasBeenSet;
+}
+
+int64_t CreateDirectConnectTunnelRequest::GetNqaEnable() const
+{
+    return m_nqaEnable;
+}
+
+void CreateDirectConnectTunnelRequest::SetNqaEnable(const int64_t& _nqaEnable)
+{
+    m_nqaEnable = _nqaEnable;
+    m_nqaEnableHasBeenSet = true;
+}
+
+bool CreateDirectConnectTunnelRequest::NqaEnableHasBeenSet() const
+{
+    return m_nqaEnableHasBeenSet;
+}
+
+BFDInfo CreateDirectConnectTunnelRequest::GetBfdInfo() const
+{
+    return m_bfdInfo;
+}
+
+void CreateDirectConnectTunnelRequest::SetBfdInfo(const BFDInfo& _bfdInfo)
+{
+    m_bfdInfo = _bfdInfo;
+    m_bfdInfoHasBeenSet = true;
+}
+
+bool CreateDirectConnectTunnelRequest::BfdInfoHasBeenSet() const
+{
+    return m_bfdInfoHasBeenSet;
+}
+
+NQAInfo CreateDirectConnectTunnelRequest::GetNqaInfo() const
+{
+    return m_nqaInfo;
+}
+
+void CreateDirectConnectTunnelRequest::SetNqaInfo(const NQAInfo& _nqaInfo)
+{
+    m_nqaInfo = _nqaInfo;
+    m_nqaInfoHasBeenSet = true;
+}
+
+bool CreateDirectConnectTunnelRequest::NqaInfoHasBeenSet() const
+{
+    return m_nqaInfoHasBeenSet;
 }
 
 

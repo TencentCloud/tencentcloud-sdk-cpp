@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/mariadb/v20170312/model/DescribeOrdersResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeStorageRegionsResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Mariadb::V20170312::Model;
+using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
-DescribeOrdersResponse::DescribeOrdersResponse() :
-    m_totalCountHasBeenSet(false),
-    m_dealsHasBeenSet(false)
+DescribeStorageRegionsResponse::DescribeStorageRegionsResponse() :
+    m_storageRegionInfosHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeOrdersResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeStorageRegionsResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,71 +62,45 @@ CoreInternalOutcome DescribeOrdersResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    if (rsp.HasMember("StorageRegionInfos") && !rsp["StorageRegionInfos"].IsNull())
     {
-        if (!rsp["TotalCount"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `TotalCount` is not array type"));
+        if (!rsp["StorageRegionInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `StorageRegionInfos` is not array type"));
 
-        const rapidjson::Value &tmpValue = rsp["TotalCount"];
+        const rapidjson::Value &tmpValue = rsp["StorageRegionInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            m_totalCount.push_back((*itr).GetInt64());
-        }
-        m_totalCountHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Deals") && !rsp["Deals"].IsNull())
-    {
-        if (!rsp["Deals"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Deals` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["Deals"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            Deal item;
+            StorageRegionInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_deals.push_back(item);
+            m_storageRegionInfos.push_back(item);
         }
-        m_dealsHasBeenSet = true;
+        m_storageRegionInfosHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeOrdersResponse::ToJsonString() const
+string DescribeStorageRegionsResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_totalCountHasBeenSet)
+    if (m_storageRegionInfosHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TotalCount";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_totalCount.begin(); itr != m_totalCount.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
-        }
-    }
-
-    if (m_dealsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Deals";
+        string key = "StorageRegionInfos";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_deals.begin(); itr != m_deals.end(); ++itr, ++i)
+        for (auto itr = m_storageRegionInfos.begin(); itr != m_storageRegionInfos.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -146,24 +119,14 @@ string DescribeOrdersResponse::ToJsonString() const
 }
 
 
-vector<int64_t> DescribeOrdersResponse::GetTotalCount() const
+vector<StorageRegionInfo> DescribeStorageRegionsResponse::GetStorageRegionInfos() const
 {
-    return m_totalCount;
+    return m_storageRegionInfos;
 }
 
-bool DescribeOrdersResponse::TotalCountHasBeenSet() const
+bool DescribeStorageRegionsResponse::StorageRegionInfosHasBeenSet() const
 {
-    return m_totalCountHasBeenSet;
-}
-
-vector<Deal> DescribeOrdersResponse::GetDeals() const
-{
-    return m_deals;
-}
-
-bool DescribeOrdersResponse::DealsHasBeenSet() const
-{
-    return m_dealsHasBeenSet;
+    return m_storageRegionInfosHasBeenSet;
 }
 
 

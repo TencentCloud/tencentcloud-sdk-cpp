@@ -368,14 +368,14 @@ namespace TencentCloud
                     bool ReadOnlyGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取实例需要绑定的Tag信息，默认为空
-                     * @return TagList 实例需要绑定的Tag信息，默认为空
+                     * 获取实例需要绑定的Tag信息，默认为空（该类型为Tag数组类型）
+                     * @return TagList 实例需要绑定的Tag信息，默认为空（该类型为Tag数组类型）
                      */
                     Tag GetTagList() const;
 
                     /**
-                     * 设置实例需要绑定的Tag信息，默认为空
-                     * @param TagList 实例需要绑定的Tag信息，默认为空
+                     * 设置实例需要绑定的Tag信息，默认为空（该类型为Tag数组类型）
+                     * @param TagList 实例需要绑定的Tag信息，默认为空（该类型为Tag数组类型）
                      */
                     void SetTagList(const Tag& _tagList);
 
@@ -514,7 +514,7 @@ namespace TencentCloud
                     bool m_readOnlyGroupIdHasBeenSet;
 
                     /**
-                     * 实例需要绑定的Tag信息，默认为空
+                     * 实例需要绑定的Tag信息，默认为空（该类型为Tag数组类型）
                      */
                     Tag m_tagList;
                     bool m_tagListHasBeenSet;

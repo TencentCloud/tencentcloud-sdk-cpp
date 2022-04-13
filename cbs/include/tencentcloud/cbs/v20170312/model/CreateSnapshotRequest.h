@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool DeadlineHasBeenSet() const;
 
+                    /**
+                     * 获取云硬盘备份点ID。传入此参数时，将通过备份点创建快照。
+                     * @return DiskBackupId 云硬盘备份点ID。传入此参数时，将通过备份点创建快照。
+                     */
+                    std::string GetDiskBackupId() const;
+
+                    /**
+                     * 设置云硬盘备份点ID。传入此参数时，将通过备份点创建快照。
+                     * @param DiskBackupId 云硬盘备份点ID。传入此参数时，将通过备份点创建快照。
+                     */
+                    void SetDiskBackupId(const std::string& _diskBackupId);
+
+                    /**
+                     * 判断参数 DiskBackupId 是否已赋值
+                     * @return DiskBackupId 是否已赋值
+                     */
+                    bool DiskBackupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     std::string m_deadline;
                     bool m_deadlineHasBeenSet;
+
+                    /**
+                     * 云硬盘备份点ID。传入此参数时，将通过备份点创建快照。
+                     */
+                    std::string m_diskBackupId;
+                    bool m_diskBackupIdHasBeenSet;
 
                 };
             }

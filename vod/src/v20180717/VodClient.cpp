@@ -814,6 +814,49 @@ VodClient::CreateSnapshotByTimeOffsetTemplateOutcomeCallable VodClient::CreateSn
     return task->get_future();
 }
 
+VodClient::CreateStorageRegionOutcome VodClient::CreateStorageRegion(const CreateStorageRegionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateStorageRegion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateStorageRegionResponse rsp = CreateStorageRegionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateStorageRegionOutcome(rsp);
+        else
+            return CreateStorageRegionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateStorageRegionOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateStorageRegionAsync(const CreateStorageRegionRequest& request, const CreateStorageRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateStorageRegion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::CreateStorageRegionOutcomeCallable VodClient::CreateStorageRegionCallable(const CreateStorageRegionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateStorageRegionOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateStorageRegion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::CreateSubAppIdOutcome VodClient::CreateSubAppId(const CreateSubAppIdRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSubAppId");
@@ -3136,6 +3179,49 @@ VodClient::DescribeStorageDetailsOutcomeCallable VodClient::DescribeStorageDetai
     return task->get_future();
 }
 
+VodClient::DescribeStorageRegionsOutcome VodClient::DescribeStorageRegions(const DescribeStorageRegionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeStorageRegions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeStorageRegionsResponse rsp = DescribeStorageRegionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeStorageRegionsOutcome(rsp);
+        else
+            return DescribeStorageRegionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeStorageRegionsOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeStorageRegionsAsync(const DescribeStorageRegionsRequest& request, const DescribeStorageRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeStorageRegions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DescribeStorageRegionsOutcomeCallable VodClient::DescribeStorageRegionsCallable(const DescribeStorageRegionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeStorageRegionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeStorageRegions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::DescribeSubAppIdsOutcome VodClient::DescribeSubAppIds(const DescribeSubAppIdsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSubAppIds");
@@ -3946,6 +4032,49 @@ VodClient::ModifyContentReviewTemplateOutcomeCallable VodClient::ModifyContentRe
         [this, request]()
         {
             return this->ModifyContentReviewTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::ModifyDefaultStorageRegionOutcome VodClient::ModifyDefaultStorageRegion(const ModifyDefaultStorageRegionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDefaultStorageRegion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDefaultStorageRegionResponse rsp = ModifyDefaultStorageRegionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDefaultStorageRegionOutcome(rsp);
+        else
+            return ModifyDefaultStorageRegionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDefaultStorageRegionOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ModifyDefaultStorageRegionAsync(const ModifyDefaultStorageRegionRequest& request, const ModifyDefaultStorageRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDefaultStorageRegion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::ModifyDefaultStorageRegionOutcomeCallable VodClient::ModifyDefaultStorageRegionCallable(const ModifyDefaultStorageRegionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDefaultStorageRegionOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDefaultStorageRegion(request);
         }
     );
 

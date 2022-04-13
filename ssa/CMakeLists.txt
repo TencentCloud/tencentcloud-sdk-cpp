@@ -21,6 +21,7 @@ set(ssa_public_header
 set(ssa_public_header_model
   include/tencentcloud/ssa/v20180608/model/DescribeMappingResultsResponse.h
   include/tencentcloud/ssa/v20180608/model/DescribeAssetDetailRequest.h
+  include/tencentcloud/ssa/v20180608/model/DescribeSocCheckItemListResponse.h
   include/tencentcloud/ssa/v20180608/model/DescribeVulListResponse.h
   include/tencentcloud/ssa/v20180608/model/DescribeSocAlertDetailsRequest.h
   include/tencentcloud/ssa/v20180608/model/DescribeComplianceAssetListResponse.h
@@ -71,6 +72,7 @@ set(ssa_public_header_model
   include/tencentcloud/ssa/v20180608/model/VulList.h
   include/tencentcloud/ssa/v20180608/model/DescribeLeakDetectionListResponse.h
   include/tencentcloud/ssa/v20180608/model/DataEvent.h
+  include/tencentcloud/ssa/v20180608/model/DescribeSocCheckItemListRequest.h
   include/tencentcloud/ssa/v20180608/model/CheckConfigDetail.h
   include/tencentcloud/ssa/v20180608/model/SocCheckItem.h
   include/tencentcloud/ssa/v20180608/model/DescribeEventDetailRequest.h
@@ -96,6 +98,7 @@ set(ssa_src
   src/v20180608/SsaClient.cpp
   src/v20180608/model/DescribeMappingResultsResponse.cpp
   src/v20180608/model/DescribeAssetDetailRequest.cpp
+  src/v20180608/model/DescribeSocCheckItemListResponse.cpp
   src/v20180608/model/DescribeVulListResponse.cpp
   src/v20180608/model/DescribeSocAlertDetailsRequest.cpp
   src/v20180608/model/DescribeComplianceAssetListResponse.cpp
@@ -146,6 +149,7 @@ set(ssa_src
   src/v20180608/model/VulList.cpp
   src/v20180608/model/DescribeLeakDetectionListResponse.cpp
   src/v20180608/model/DataEvent.cpp
+  src/v20180608/model/DescribeSocCheckItemListRequest.cpp
   src/v20180608/model/CheckConfigDetail.cpp
   src/v20180608/model/SocCheckItem.cpp
   src/v20180608/model/DescribeEventDetailRequest.cpp

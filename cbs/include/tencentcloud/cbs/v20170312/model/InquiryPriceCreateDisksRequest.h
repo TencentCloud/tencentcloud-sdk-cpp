@@ -44,6 +44,24 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取云硬盘计费类型。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费
+                     * @return DiskChargeType 云硬盘计费类型。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费
+                     */
+                    std::string GetDiskChargeType() const;
+
+                    /**
+                     * 设置云硬盘计费类型。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费
+                     * @param DiskChargeType 云硬盘计费类型。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费
+                     */
+                    void SetDiskChargeType(const std::string& _diskChargeType);
+
+                    /**
+                     * 判断参数 DiskChargeType 是否已赋值
+                     * @return DiskChargeType 是否已赋值
+                     */
+                    bool DiskChargeTypeHasBeenSet() const;
+
+                    /**
                      * 获取硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘<br><li>CLOUD_TSSD：表示极速型SSD云硬盘。
                      * @return DiskType 硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘<br><li>CLOUD_TSSD：表示极速型SSD云硬盘。
                      */
@@ -80,40 +98,22 @@ namespace TencentCloud
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取云硬盘计费类型。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费
-                     * @return DiskChargeType 云硬盘计费类型。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费
+                     * 获取云盘所属项目ID。
+                     * @return ProjectId 云盘所属项目ID。
                      */
-                    std::string GetDiskChargeType() const;
+                    uint64_t GetProjectId() const;
 
                     /**
-                     * 设置云硬盘计费类型。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费
-                     * @param DiskChargeType 云硬盘计费类型。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费
+                     * 设置云盘所属项目ID。
+                     * @param ProjectId 云盘所属项目ID。
                      */
-                    void SetDiskChargeType(const std::string& _diskChargeType);
+                    void SetProjectId(const uint64_t& _projectId);
 
                     /**
-                     * 判断参数 DiskChargeType 是否已赋值
-                     * @return DiskChargeType 是否已赋值
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
                      */
-                    bool DiskChargeTypeHasBeenSet() const;
-
-                    /**
-                     * 获取预付费模式，即包年包月相关参数设置。通过该参数指定包年包月云盘的购买时长、是否设置自动续费等属性。<br>创建预付费云盘该参数必传，创建按小时后付费云盘无需传该参数。
-                     * @return DiskChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数指定包年包月云盘的购买时长、是否设置自动续费等属性。<br>创建预付费云盘该参数必传，创建按小时后付费云盘无需传该参数。
-                     */
-                    DiskChargePrepaid GetDiskChargePrepaid() const;
-
-                    /**
-                     * 设置预付费模式，即包年包月相关参数设置。通过该参数指定包年包月云盘的购买时长、是否设置自动续费等属性。<br>创建预付费云盘该参数必传，创建按小时后付费云盘无需传该参数。
-                     * @param DiskChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数指定包年包月云盘的购买时长、是否设置自动续费等属性。<br>创建预付费云盘该参数必传，创建按小时后付费云盘无需传该参数。
-                     */
-                    void SetDiskChargePrepaid(const DiskChargePrepaid& _diskChargePrepaid);
-
-                    /**
-                     * 判断参数 DiskChargePrepaid 是否已赋值
-                     * @return DiskChargePrepaid 是否已赋值
-                     */
-                    bool DiskChargePrepaidHasBeenSet() const;
+                    bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取购买云盘的数量。不填则默认为1。
@@ -134,24 +134,6 @@ namespace TencentCloud
                     bool DiskCountHasBeenSet() const;
 
                     /**
-                     * 获取云盘所属项目ID。
-                     * @return ProjectId 云盘所属项目ID。
-                     */
-                    uint64_t GetProjectId() const;
-
-                    /**
-                     * 设置云盘所属项目ID。
-                     * @param ProjectId 云盘所属项目ID。
-                     */
-                    void SetProjectId(const uint64_t& _projectId);
-
-                    /**
-                     * 判断参数 ProjectId 是否已赋值
-                     * @return ProjectId 是否已赋值
-                     */
-                    bool ProjectIdHasBeenSet() const;
-
-                    /**
                      * 获取额外购买的云硬盘性能值，单位MB/s。<br>目前仅支持增强型SSD云硬盘（CLOUD_HSSD）和极速型SSD云硬盘（CLOUD_TSSD）
                      * @return ThroughputPerformance 额外购买的云硬盘性能值，单位MB/s。<br>目前仅支持增强型SSD云硬盘（CLOUD_HSSD）和极速型SSD云硬盘（CLOUD_TSSD）
                      */
@@ -169,7 +151,49 @@ namespace TencentCloud
                      */
                     bool ThroughputPerformanceHasBeenSet() const;
 
+                    /**
+                     * 获取预付费模式，即包年包月相关参数设置。通过该参数指定包年包月云盘的购买时长、是否设置自动续费等属性。<br>创建预付费云盘该参数必传，创建按小时后付费云盘无需传该参数。
+                     * @return DiskChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数指定包年包月云盘的购买时长、是否设置自动续费等属性。<br>创建预付费云盘该参数必传，创建按小时后付费云盘无需传该参数。
+                     */
+                    DiskChargePrepaid GetDiskChargePrepaid() const;
+
+                    /**
+                     * 设置预付费模式，即包年包月相关参数设置。通过该参数指定包年包月云盘的购买时长、是否设置自动续费等属性。<br>创建预付费云盘该参数必传，创建按小时后付费云盘无需传该参数。
+                     * @param DiskChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数指定包年包月云盘的购买时长、是否设置自动续费等属性。<br>创建预付费云盘该参数必传，创建按小时后付费云盘无需传该参数。
+                     */
+                    void SetDiskChargePrepaid(const DiskChargePrepaid& _diskChargePrepaid);
+
+                    /**
+                     * 判断参数 DiskChargePrepaid 是否已赋值
+                     * @return DiskChargePrepaid 是否已赋值
+                     */
+                    bool DiskChargePrepaidHasBeenSet() const;
+
+                    /**
+                     * 获取指定云硬盘备份点配额。
+                     * @return DiskBackupQuota 指定云硬盘备份点配额。
+                     */
+                    uint64_t GetDiskBackupQuota() const;
+
+                    /**
+                     * 设置指定云硬盘备份点配额。
+                     * @param DiskBackupQuota 指定云硬盘备份点配额。
+                     */
+                    void SetDiskBackupQuota(const uint64_t& _diskBackupQuota);
+
+                    /**
+                     * 判断参数 DiskBackupQuota 是否已赋值
+                     * @return DiskBackupQuota 是否已赋值
+                     */
+                    bool DiskBackupQuotaHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 云硬盘计费类型。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费
+                     */
+                    std::string m_diskChargeType;
+                    bool m_diskChargeTypeHasBeenSet;
 
                     /**
                      * 硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘<br><li>CLOUD_TSSD：表示极速型SSD云硬盘。
@@ -184,16 +208,10 @@ namespace TencentCloud
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * 云硬盘计费类型。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费
+                     * 云盘所属项目ID。
                      */
-                    std::string m_diskChargeType;
-                    bool m_diskChargeTypeHasBeenSet;
-
-                    /**
-                     * 预付费模式，即包年包月相关参数设置。通过该参数指定包年包月云盘的购买时长、是否设置自动续费等属性。<br>创建预付费云盘该参数必传，创建按小时后付费云盘无需传该参数。
-                     */
-                    DiskChargePrepaid m_diskChargePrepaid;
-                    bool m_diskChargePrepaidHasBeenSet;
+                    uint64_t m_projectId;
+                    bool m_projectIdHasBeenSet;
 
                     /**
                      * 购买云盘的数量。不填则默认为1。
@@ -202,16 +220,22 @@ namespace TencentCloud
                     bool m_diskCountHasBeenSet;
 
                     /**
-                     * 云盘所属项目ID。
-                     */
-                    uint64_t m_projectId;
-                    bool m_projectIdHasBeenSet;
-
-                    /**
                      * 额外购买的云硬盘性能值，单位MB/s。<br>目前仅支持增强型SSD云硬盘（CLOUD_HSSD）和极速型SSD云硬盘（CLOUD_TSSD）
                      */
                     uint64_t m_throughputPerformance;
                     bool m_throughputPerformanceHasBeenSet;
+
+                    /**
+                     * 预付费模式，即包年包月相关参数设置。通过该参数指定包年包月云盘的购买时长、是否设置自动续费等属性。<br>创建预付费云盘该参数必传，创建按小时后付费云盘无需传该参数。
+                     */
+                    DiskChargePrepaid m_diskChargePrepaid;
+                    bool m_diskChargePrepaidHasBeenSet;
+
+                    /**
+                     * 指定云硬盘备份点配额。
+                     */
+                    uint64_t m_diskBackupQuota;
+                    bool m_diskBackupQuotaHasBeenSet;
 
                 };
             }

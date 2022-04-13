@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取无
-                     * @return Latitude 无
+                     * 获取纬度
+                     * @return Latitude 纬度
                      */
                     double GetLatitude() const;
 
                     /**
-                     * 设置无
-                     * @param Latitude 无
+                     * 设置纬度
+                     * @param Latitude 纬度
                      */
                     void SetLatitude(const double& _latitude);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool LatitudeHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return Longitude 无
+                     * 获取经度
+                     * @return Longitude 经度
                      */
                     double GetLongitude() const;
 
                     /**
-                     * 设置无
-                     * @param Longitude 无
+                     * 设置经度
+                     * @param Longitude 经度
                      */
                     void SetLongitude(const double& _longitude);
 
@@ -85,13 +85,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 无
+                     * 纬度
                      */
                     double m_latitude;
                     bool m_latitudeHasBeenSet;
 
                     /**
-                     * 无
+                     * 经度
                      */
                     double m_longitude;
                     bool m_longitudeHasBeenSet;

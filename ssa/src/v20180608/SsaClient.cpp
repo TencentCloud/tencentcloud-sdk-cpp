@@ -685,6 +685,49 @@ SsaClient::DescribeSocAlertListOutcomeCallable SsaClient::DescribeSocAlertListCa
     return task->get_future();
 }
 
+SsaClient::DescribeSocCheckItemListOutcome SsaClient::DescribeSocCheckItemList(const DescribeSocCheckItemListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSocCheckItemList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSocCheckItemListResponse rsp = DescribeSocCheckItemListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSocCheckItemListOutcome(rsp);
+        else
+            return DescribeSocCheckItemListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSocCheckItemListOutcome(outcome.GetError());
+    }
+}
+
+void SsaClient::DescribeSocCheckItemListAsync(const DescribeSocCheckItemListRequest& request, const DescribeSocCheckItemListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSocCheckItemList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SsaClient::DescribeSocCheckItemListOutcomeCallable SsaClient::DescribeSocCheckItemListCallable(const DescribeSocCheckItemListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSocCheckItemListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSocCheckItemList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SsaClient::DescribeSocCspmComplianceOutcome SsaClient::DescribeSocCspmCompliance(const DescribeSocCspmComplianceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSocCspmCompliance");

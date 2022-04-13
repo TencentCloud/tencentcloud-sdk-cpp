@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模糊查询字段
-                     * @return QueryKey 模糊查询字段
+                     * 获取模糊查询字段(针对appid或者uin)
+                     * @return QueryKey 模糊查询字段(针对appid或者uin)
                      */
                     std::string GetQueryKey() const;
 
                     /**
-                     * 设置模糊查询字段
-                     * @param QueryKey 模糊查询字段
+                     * 设置模糊查询字段(针对appid或者uin)
+                     * @param QueryKey 模糊查询字段(针对appid或者uin)
                      */
                     void SetQueryKey(const std::string& _queryKey);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool EventNameHasBeenSet() const;
 
                     /**
-                     * 获取监控源
-                     * @return DivulgeSoure 监控源
+                     * 获取监控源  0:全部 1:GitHub 2:暗网 默认值1
+                     * @return DivulgeSoure 监控源  0:全部 1:GitHub 2:暗网 默认值1
                      */
                     std::string GetDivulgeSoure() const;
 
                     /**
-                     * 设置监控源
-                     * @param DivulgeSoure 监控源
+                     * 设置监控源  0:全部 1:GitHub 2:暗网 默认值1
+                     * @param DivulgeSoure 监控源  0:全部 1:GitHub 2:暗网 默认值1
                      */
                     void SetDivulgeSoure(const std::string& _divulgeSoure);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool RuleIdHasBeenSet() const;
 
                     /**
-                     * 获取风险等级
-                     * @return Level 风险等级
+                     * 获取风险等级 -1:未知 1:低危 2:中危 3:高危 4:严重
+                     * @return Level 风险等级 -1:未知 1:低危 2:中危 3:高危 4:严重
                      */
                     std::string GetLevel() const;
 
                     /**
-                     * 设置风险等级
-                     * @param Level 风险等级
+                     * 设置风险等级 -1:未知 1:低危 2:中危 3:高危 4:严重
+                     * @param Level 风险等级 -1:未知 1:低危 2:中危 3:高危 4:严重
                      */
                     void SetLevel(const std::string& _level);
 
@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool LevelHasBeenSet() const;
 
                     /**
-                     * 获取安全事件状态
-                     * @return Status 安全事件状态
+                     * 获取安全事件处理状态 -1:未知 1:待处理 2:已处理 3:误报 4:已忽略 5:已知晓 6:已信任
+                     * @return Status 安全事件处理状态 -1:未知 1:待处理 2:已处理 3:误报 4:已忽略 5:已知晓 6:已信任
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置安全事件状态
-                     * @param Status 安全事件状态
+                     * 设置安全事件处理状态 -1:未知 1:待处理 2:已处理 3:误报 4:已忽略 5:已知晓 6:已信任
+                     * @param Status 安全事件处理状态 -1:未知 1:待处理 2:已处理 3:误报 4:已忽略 5:已知晓 6:已信任
                      */
                     void SetStatus(const std::string& _status);
 
@@ -261,7 +261,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模糊查询字段
+                     * 模糊查询字段(针对appid或者uin)
                      */
                     std::string m_queryKey;
                     bool m_queryKeyHasBeenSet;
@@ -273,7 +273,7 @@ namespace TencentCloud
                     bool m_eventNameHasBeenSet;
 
                     /**
-                     * 监控源
+                     * 监控源  0:全部 1:GitHub 2:暗网 默认值1
                      */
                     std::string m_divulgeSoure;
                     bool m_divulgeSoureHasBeenSet;
@@ -297,13 +297,13 @@ namespace TencentCloud
                     bool m_ruleIdHasBeenSet;
 
                     /**
-                     * 风险等级
+                     * 风险等级 -1:未知 1:低危 2:中危 3:高危 4:严重
                      */
                     std::string m_level;
                     bool m_levelHasBeenSet;
 
                     /**
-                     * 安全事件状态
+                     * 安全事件处理状态 -1:未知 1:待处理 2:已处理 3:误报 4:已忽略 5:已知晓 6:已信任
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

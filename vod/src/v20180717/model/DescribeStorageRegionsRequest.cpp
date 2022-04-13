@@ -14,37 +14,32 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/mariadb/v20170312/model/DescribeOrdersRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeStorageRegionsRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Mariadb::V20170312::Model;
+using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
-DescribeOrdersRequest::DescribeOrdersRequest() :
-    m_dealNamesHasBeenSet(false)
+DescribeStorageRegionsRequest::DescribeStorageRegionsRequest() :
+    m_subAppIdHasBeenSet(false)
 {
 }
 
-string DescribeOrdersRequest::ToJsonString() const
+string DescribeStorageRegionsRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_dealNamesHasBeenSet)
+    if (m_subAppIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DealNames";
+        string key = "SubAppId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_dealNames.begin(); itr != m_dealNames.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
 
@@ -55,20 +50,20 @@ string DescribeOrdersRequest::ToJsonString() const
 }
 
 
-vector<string> DescribeOrdersRequest::GetDealNames() const
+uint64_t DescribeStorageRegionsRequest::GetSubAppId() const
 {
-    return m_dealNames;
+    return m_subAppId;
 }
 
-void DescribeOrdersRequest::SetDealNames(const vector<string>& _dealNames)
+void DescribeStorageRegionsRequest::SetSubAppId(const uint64_t& _subAppId)
 {
-    m_dealNames = _dealNames;
-    m_dealNamesHasBeenSet = true;
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
 }
 
-bool DescribeOrdersRequest::DealNamesHasBeenSet() const
+bool DescribeStorageRegionsRequest::SubAppIdHasBeenSet() const
 {
-    return m_dealNamesHasBeenSet;
+    return m_subAppIdHasBeenSet;
 }
 
 

@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool MaxMsgSizeHasBeenSet() const;
 
                     /**
-                     * 获取消息保留周期。取值范围 60-1296000 秒（1min-15天），默认值 345600 (4 天)。
-                     * @return MsgRetentionSeconds 消息保留周期。取值范围 60-1296000 秒（1min-15天），默认值 345600 (4 天)。
+                     * 获取消息最长未确认时间。取值范围 30-43200 秒（30秒~12小时），默认值 3600 (1 小时)。
+                     * @return MsgRetentionSeconds 消息最长未确认时间。取值范围 30-43200 秒（30秒~12小时），默认值 3600 (1 小时)。
                      */
                     uint64_t GetMsgRetentionSeconds() const;
 
                     /**
-                     * 设置消息保留周期。取值范围 60-1296000 秒（1min-15天），默认值 345600 (4 天)。
-                     * @param MsgRetentionSeconds 消息保留周期。取值范围 60-1296000 秒（1min-15天），默认值 345600 (4 天)。
+                     * 设置消息最长未确认时间。取值范围 30-43200 秒（30秒~12小时），默认值 3600 (1 小时)。
+                     * @param MsgRetentionSeconds 消息最长未确认时间。取值范围 30-43200 秒（30秒~12小时），默认值 3600 (1 小时)。
                      */
                     void SetMsgRetentionSeconds(const uint64_t& _msgRetentionSeconds);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool MsgRetentionSecondsHasBeenSet() const;
 
                     /**
-                     * 获取消息最长回溯时间，取值范围0-msgRetentionSeconds，消息的最大回溯之间为消息在队列中的保存周期，0表示不开启消息回溯。
-                     * @return RewindSeconds 消息最长回溯时间，取值范围0-msgRetentionSeconds，消息的最大回溯之间为消息在队列中的保存周期，0表示不开启消息回溯。
+                     * 获取队列是否开启回溯消息能力，该参数取值范围0-1296000，0表示不开启。
+                     * @return RewindSeconds 队列是否开启回溯消息能力，该参数取值范围0-1296000，0表示不开启。
                      */
                     uint64_t GetRewindSeconds() const;
 
                     /**
-                     * 设置消息最长回溯时间，取值范围0-msgRetentionSeconds，消息的最大回溯之间为消息在队列中的保存周期，0表示不开启消息回溯。
-                     * @param RewindSeconds 消息最长回溯时间，取值范围0-msgRetentionSeconds，消息的最大回溯之间为消息在队列中的保存周期，0表示不开启消息回溯。
+                     * 设置队列是否开启回溯消息能力，该参数取值范围0-1296000，0表示不开启。
+                     * @param RewindSeconds 队列是否开启回溯消息能力，该参数取值范围0-1296000，0表示不开启。
                      */
                     void SetRewindSeconds(const uint64_t& _rewindSeconds);
 
@@ -312,6 +312,24 @@ namespace TencentCloud
                      */
                     bool TransactionHasBeenSet() const;
 
+                    /**
+                     * 获取队列可回溯存储空间，取值范围1024MB - 10240MB，0表示不开启
+                     * @return RetentionSizeInMB 队列可回溯存储空间，取值范围1024MB - 10240MB，0表示不开启
+                     */
+                    uint64_t GetRetentionSizeInMB() const;
+
+                    /**
+                     * 设置队列可回溯存储空间，取值范围1024MB - 10240MB，0表示不开启
+                     * @param RetentionSizeInMB 队列可回溯存储空间，取值范围1024MB - 10240MB，0表示不开启
+                     */
+                    void SetRetentionSizeInMB(const uint64_t& _retentionSizeInMB);
+
+                    /**
+                     * 判断参数 RetentionSizeInMB 是否已赋值
+                     * @return RetentionSizeInMB 是否已赋值
+                     */
+                    bool RetentionSizeInMBHasBeenSet() const;
+
                 private:
 
                     /**
@@ -345,13 +363,13 @@ namespace TencentCloud
                     bool m_maxMsgSizeHasBeenSet;
 
                     /**
-                     * 消息保留周期。取值范围 60-1296000 秒（1min-15天），默认值 345600 (4 天)。
+                     * 消息最长未确认时间。取值范围 30-43200 秒（30秒~12小时），默认值 3600 (1 小时)。
                      */
                     uint64_t m_msgRetentionSeconds;
                     bool m_msgRetentionSecondsHasBeenSet;
 
                     /**
-                     * 消息最长回溯时间，取值范围0-msgRetentionSeconds，消息的最大回溯之间为消息在队列中的保存周期，0表示不开启消息回溯。
+                     * 队列是否开启回溯消息能力，该参数取值范围0-1296000，0表示不开启。
                      */
                     uint64_t m_rewindSeconds;
                     bool m_rewindSecondsHasBeenSet;
@@ -403,6 +421,12 @@ namespace TencentCloud
                      */
                     uint64_t m_transaction;
                     bool m_transactionHasBeenSet;
+
+                    /**
+                     * 队列可回溯存储空间，取值范围1024MB - 10240MB，0表示不开启
+                     */
+                    uint64_t m_retentionSizeInMB;
+                    bool m_retentionSizeInMBHasBeenSet;
 
                 };
             }

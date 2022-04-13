@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取按项目D搜索
-                     * @return ProjectId 按项目D搜索
+                     * 获取按项目ID搜索
+                     * @return ProjectId 按项目ID搜索
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置按项目D搜索
-                     * @param ProjectId 按项目D搜索
+                     * 设置按项目ID搜索
+                     * @param ProjectId 按项目ID搜索
                      */
                     void SetProjectId(const std::string& _projectId);
 
@@ -189,7 +189,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 按项目D搜索
+                     * 按项目ID搜索
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;

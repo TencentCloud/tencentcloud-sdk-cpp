@@ -25,7 +25,8 @@ using namespace std;
 
 CreateHourDCDBInstanceResponse::CreateHourDCDBInstanceResponse() :
     m_instanceIdsHasBeenSet(false),
-    m_flowIdHasBeenSet(false)
+    m_flowIdHasBeenSet(false),
+    m_dealNameHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,16 @@ CoreInternalOutcome CreateHourDCDBInstanceResponse::Deserialize(const string &pa
         m_flowIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DealName") && !rsp["DealName"].IsNull())
+    {
+        if (!rsp["DealName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DealName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dealName = string(rsp["DealName"].GetString());
+        m_dealNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -115,6 +126,14 @@ string CreateHourDCDBInstanceResponse::ToJsonString() const
         string key = "FlowId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_flowId, allocator);
+    }
+
+    if (m_dealNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DealName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dealName.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -147,6 +166,16 @@ int64_t CreateHourDCDBInstanceResponse::GetFlowId() const
 bool CreateHourDCDBInstanceResponse::FlowIdHasBeenSet() const
 {
     return m_flowIdHasBeenSet;
+}
+
+string CreateHourDCDBInstanceResponse::GetDealName() const
+{
+    return m_dealName;
+}
+
+bool CreateHourDCDBInstanceResponse::DealNameHasBeenSet() const
+{
+    return m_dealNameHasBeenSet;
 }
 
 

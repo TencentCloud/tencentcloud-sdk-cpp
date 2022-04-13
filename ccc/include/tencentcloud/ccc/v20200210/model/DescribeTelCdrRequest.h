@@ -79,6 +79,24 @@ namespace TencentCloud
                     bool EndTimeStampHasBeenSet() const;
 
                     /**
+                     * 获取实例 ID（deprecated）
+                     * @return InstanceId 实例 ID（deprecated）
+                     */
+                    int64_t GetInstanceId() const;
+
+                    /**
+                     * 设置实例 ID（deprecated）
+                     * @param InstanceId 实例 ID（deprecated）
+                     */
+                    void SetInstanceId(const int64_t& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
                      * 获取返回数据条数，上限（deprecated）
                      * @return Limit 返回数据条数，上限（deprecated）
                      */
@@ -113,24 +131,6 @@ namespace TencentCloud
                      * @return Offset 是否已赋值
                      */
                     bool OffsetHasBeenSet() const;
-
-                    /**
-                     * 获取实例 ID（deprecated）
-                     * @return InstanceId 实例 ID（deprecated）
-                     */
-                    int64_t GetInstanceId() const;
-
-                    /**
-                     * 设置实例 ID（deprecated）
-                     * @param InstanceId 实例 ID（deprecated）
-                     */
-                    void SetInstanceId(const int64_t& _instanceId);
-
-                    /**
-                     * 判断参数 InstanceId 是否已赋值
-                     * @return InstanceId 是否已赋值
-                     */
-                    bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取应用 ID
@@ -237,6 +237,12 @@ namespace TencentCloud
                     bool m_endTimeStampHasBeenSet;
 
                     /**
+                     * 实例 ID（deprecated）
+                     */
+                    int64_t m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
                      * 返回数据条数，上限（deprecated）
                      */
                     int64_t m_limit;
@@ -247,12 +253,6 @@ namespace TencentCloud
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
-
-                    /**
-                     * 实例 ID（deprecated）
-                     */
-                    int64_t m_instanceId;
-                    bool m_instanceIdHasBeenSet;
 
                     /**
                      * 应用 ID

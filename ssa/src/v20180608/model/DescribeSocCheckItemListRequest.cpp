@@ -14,38 +14,24 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/dcdb/v20180411/model/DescribeOrdersRequest.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeSocCheckItemListRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Dcdb::V20180411::Model;
+using namespace TencentCloud::Ssa::V20180608::Model;
 using namespace std;
 
-DescribeOrdersRequest::DescribeOrdersRequest() :
-    m_dealNamesHasBeenSet(false)
+DescribeSocCheckItemListRequest::DescribeSocCheckItemListRequest()
 {
 }
 
-string DescribeOrdersRequest::ToJsonString() const
+string DescribeSocCheckItemListRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_dealNamesHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DealNames";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_dealNames.begin(); itr != m_dealNames.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
 
 
     rapidjson::StringBuffer buffer;
@@ -54,21 +40,5 @@ string DescribeOrdersRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-vector<string> DescribeOrdersRequest::GetDealNames() const
-{
-    return m_dealNames;
-}
-
-void DescribeOrdersRequest::SetDealNames(const vector<string>& _dealNames)
-{
-    m_dealNames = _dealNames;
-    m_dealNamesHasBeenSet = true;
-}
-
-bool DescribeOrdersRequest::DealNamesHasBeenSet() const
-{
-    return m_dealNamesHasBeenSet;
-}
 
 
