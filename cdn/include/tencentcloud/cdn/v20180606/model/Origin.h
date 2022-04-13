@@ -468,6 +468,28 @@ ip_ipv6_domain：源站列表为多个 IPv4 地址IPv6 地址以及域名
                      */
                     bool AdvanceHttpsHasBeenSet() const;
 
+                    /**
+                     * 获取对象存储回源厂商
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OriginCompany 对象存储回源厂商
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOriginCompany() const;
+
+                    /**
+                     * 设置对象存储回源厂商
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OriginCompany 对象存储回源厂商
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOriginCompany(const std::string& _originCompany);
+
+                    /**
+                     * 判断参数 OriginCompany 是否已赋值
+                     * @return OriginCompany 是否已赋值
+                     */
+                    bool OriginCompanyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -590,6 +612,13 @@ ip_ipv6_domain：源站列表为多个 IPv4 地址IPv6 地址以及域名
                      */
                     AdvanceHttps m_advanceHttps;
                     bool m_advanceHttpsHasBeenSet;
+
+                    /**
+                     * 对象存储回源厂商
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_originCompany;
+                    bool m_originCompanyHasBeenSet;
 
                 };
             }

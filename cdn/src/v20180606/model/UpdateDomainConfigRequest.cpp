@@ -66,7 +66,9 @@ UpdateDomainConfigRequest::UpdateDomainConfigRequest() :
     m_ossPrivateAccessHasBeenSet(false),
     m_webSocketHasBeenSet(false),
     m_remoteAuthenticationHasBeenSet(false),
-    m_shareCnameHasBeenSet(false)
+    m_shareCnameHasBeenSet(false),
+    m_hwPrivateAccessHasBeenSet(false),
+    m_qnPrivateAccessHasBeenSet(false)
 {
 }
 
@@ -471,6 +473,24 @@ string UpdateDomainConfigRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_shareCname.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_hwPrivateAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HwPrivateAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_hwPrivateAccess.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_qnPrivateAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QnPrivateAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_qnPrivateAccess.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -1183,6 +1203,38 @@ void UpdateDomainConfigRequest::SetShareCname(const ShareCname& _shareCname)
 bool UpdateDomainConfigRequest::ShareCnameHasBeenSet() const
 {
     return m_shareCnameHasBeenSet;
+}
+
+HwPrivateAccess UpdateDomainConfigRequest::GetHwPrivateAccess() const
+{
+    return m_hwPrivateAccess;
+}
+
+void UpdateDomainConfigRequest::SetHwPrivateAccess(const HwPrivateAccess& _hwPrivateAccess)
+{
+    m_hwPrivateAccess = _hwPrivateAccess;
+    m_hwPrivateAccessHasBeenSet = true;
+}
+
+bool UpdateDomainConfigRequest::HwPrivateAccessHasBeenSet() const
+{
+    return m_hwPrivateAccessHasBeenSet;
+}
+
+QnPrivateAccess UpdateDomainConfigRequest::GetQnPrivateAccess() const
+{
+    return m_qnPrivateAccess;
+}
+
+void UpdateDomainConfigRequest::SetQnPrivateAccess(const QnPrivateAccess& _qnPrivateAccess)
+{
+    m_qnPrivateAccess = _qnPrivateAccess;
+    m_qnPrivateAccessHasBeenSet = true;
+}
+
+bool UpdateDomainConfigRequest::QnPrivateAccessHasBeenSet() const
+{
+    return m_qnPrivateAccessHasBeenSet;
 }
 
 

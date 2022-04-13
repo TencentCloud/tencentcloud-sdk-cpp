@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CDN_V20180606_MODEL_AWSPRIVATEACCESS_H_
-#define TENCENTCLOUD_CDN_V20180606_MODEL_AWSPRIVATEACCESS_H_
+#ifndef TENCENTCLOUD_CDN_V20180606_MODEL_HWPRIVATEACCESS_H_
+#define TENCENTCLOUD_CDN_V20180606_MODEL_HWPRIVATEACCESS_H_
 
 #include <string>
 #include <vector>
@@ -35,26 +35,26 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * s3源站回源鉴权。
+                *  华为云对象存储回源鉴权
                 */
-                class AwsPrivateAccess : public AbstractModel
+                class HwPrivateAccess : public AbstractModel
                 {
                 public:
-                    AwsPrivateAccess();
-                    ~AwsPrivateAccess() = default;
+                    HwPrivateAccess();
+                    ~HwPrivateAccess() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取开关，on/off。
-                     * @return Switch 开关，on/off。
+                     * 获取开关 on/off
+                     * @return Switch 开关 on/off
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置开关，on/off。
-                     * @param Switch 开关，on/off。
+                     * 设置开关 on/off
+                     * @param Switch 开关 on/off
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -65,17 +65,17 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取访问ID。
+                     * 获取访问 ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AccessKey 访问ID。
+                     * @return AccessKey 访问 ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetAccessKey() const;
 
                     /**
-                     * 设置访问ID。
+                     * 设置访问 ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AccessKey 访问ID。
+                     * @param AccessKey 访问 ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAccessKey(const std::string& _accessKey);
@@ -87,17 +87,17 @@ namespace TencentCloud
                     bool AccessKeyHasBeenSet() const;
 
                     /**
-                     * 获取密钥。
+                     * 获取密钥
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SecretKey 密钥。
+                     * @return SecretKey 密钥
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSecretKey() const;
 
                     /**
-                     * 设置密钥。
+                     * 设置密钥
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SecretKey 密钥。
+                     * @param SecretKey 密钥
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSecretKey(const std::string& _secretKey);
@@ -109,39 +109,17 @@ namespace TencentCloud
                     bool SecretKeyHasBeenSet() const;
 
                     /**
-                     * 获取地域
+                     * 获取bucketname
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Region 地域
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetRegion() const;
-
-                    /**
-                     * 设置地域
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Region 地域
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetRegion(const std::string& _region);
-
-                    /**
-                     * 判断参数 Region 是否已赋值
-                     * @return Region 是否已赋值
-                     */
-                    bool RegionHasBeenSet() const;
-
-                    /**
-                     * 获取Bucketname
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Bucket Bucketname
+                     * @return Bucket bucketname
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetBucket() const;
 
                     /**
-                     * 设置Bucketname
+                     * 设置bucketname
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Bucket Bucketname
+                     * @param Bucket bucketname
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBucket(const std::string& _bucket);
@@ -155,34 +133,27 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 开关，on/off。
+                     * 开关 on/off
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 访问ID。
+                     * 访问 ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accessKey;
                     bool m_accessKeyHasBeenSet;
 
                     /**
-                     * 密钥。
+                     * 密钥
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_secretKey;
                     bool m_secretKeyHasBeenSet;
 
                     /**
-                     * 地域
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_region;
-                    bool m_regionHasBeenSet;
-
-                    /**
-                     * Bucketname
+                     * bucketname
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bucket;
@@ -194,4 +165,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CDN_V20180606_MODEL_AWSPRIVATEACCESS_H_
+#endif // !TENCENTCLOUD_CDN_V20180606_MODEL_HWPRIVATEACCESS_H_

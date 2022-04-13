@@ -728,6 +728,49 @@ TiiaClient::RecognizeCarOutcomeCallable TiiaClient::RecognizeCarCallable(const R
     return task->get_future();
 }
 
+TiiaClient::RecognizeCarProOutcome TiiaClient::RecognizeCarPro(const RecognizeCarProRequest &request)
+{
+    auto outcome = MakeRequest(request, "RecognizeCarPro");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RecognizeCarProResponse rsp = RecognizeCarProResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RecognizeCarProOutcome(rsp);
+        else
+            return RecognizeCarProOutcome(o.GetError());
+    }
+    else
+    {
+        return RecognizeCarProOutcome(outcome.GetError());
+    }
+}
+
+void TiiaClient::RecognizeCarProAsync(const RecognizeCarProRequest& request, const RecognizeCarProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RecognizeCarPro(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiiaClient::RecognizeCarProOutcomeCallable TiiaClient::RecognizeCarProCallable(const RecognizeCarProRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RecognizeCarProOutcome()>>(
+        [this, request]()
+        {
+            return this->RecognizeCarPro(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiiaClient::SearchImageOutcome TiiaClient::SearchImage(const SearchImageRequest &request)
 {
     auto outcome = MakeRequest(request, "SearchImage");

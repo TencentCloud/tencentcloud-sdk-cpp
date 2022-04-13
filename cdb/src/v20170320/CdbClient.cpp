@@ -5071,6 +5071,49 @@ CdbClient::RenewDBInstanceOutcomeCallable CdbClient::RenewDBInstanceCallable(con
     return task->get_future();
 }
 
+CdbClient::ResetRootAccountOutcome CdbClient::ResetRootAccount(const ResetRootAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetRootAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetRootAccountResponse rsp = ResetRootAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetRootAccountOutcome(rsp);
+        else
+            return ResetRootAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetRootAccountOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::ResetRootAccountAsync(const ResetRootAccountRequest& request, const ResetRootAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetRootAccount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::ResetRootAccountOutcomeCallable CdbClient::ResetRootAccountCallable(const ResetRootAccountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetRootAccountOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetRootAccount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::RestartDBInstancesOutcome CdbClient::RestartDBInstances(const RestartDBInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "RestartDBInstances");

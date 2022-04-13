@@ -30,7 +30,8 @@ AddTimeWindowRequest::AddTimeWindowRequest() :
     m_thursdayHasBeenSet(false),
     m_fridayHasBeenSet(false),
     m_saturdayHasBeenSet(false),
-    m_sundayHasBeenSet(false)
+    m_sundayHasBeenSet(false),
+    m_maxDelayTimeHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,14 @@ string AddTimeWindowRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_maxDelayTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxDelayTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxDelayTime, allocator);
     }
 
 
@@ -274,6 +283,22 @@ void AddTimeWindowRequest::SetSunday(const vector<string>& _sunday)
 bool AddTimeWindowRequest::SundayHasBeenSet() const
 {
     return m_sundayHasBeenSet;
+}
+
+uint64_t AddTimeWindowRequest::GetMaxDelayTime() const
+{
+    return m_maxDelayTime;
+}
+
+void AddTimeWindowRequest::SetMaxDelayTime(const uint64_t& _maxDelayTime)
+{
+    m_maxDelayTime = _maxDelayTime;
+    m_maxDelayTimeHasBeenSet = true;
+}
+
+bool AddTimeWindowRequest::MaxDelayTimeHasBeenSet() const
+{
+    return m_maxDelayTimeHasBeenSet;
 }
 
 

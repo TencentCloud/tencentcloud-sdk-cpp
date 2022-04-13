@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeSocCheckItemListRspRsp.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,28 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取检查项列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Data 检查项列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DescribeSocCheckItemListRspRsp GetData() const;
+
+                    /**
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
+                     */
+                    bool DataHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 检查项列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DescribeSocCheckItemListRspRsp m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }

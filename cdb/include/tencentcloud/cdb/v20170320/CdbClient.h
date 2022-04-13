@@ -257,6 +257,8 @@
 #include <tencentcloud/cdb/v20170320/model/ReloadBalanceProxyNodeResponse.h>
 #include <tencentcloud/cdb/v20170320/model/RenewDBInstanceRequest.h>
 #include <tencentcloud/cdb/v20170320/model/RenewDBInstanceResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ResetRootAccountRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ResetRootAccountResponse.h>
 #include <tencentcloud/cdb/v20170320/model/RestartDBInstancesRequest.h>
 #include <tencentcloud/cdb/v20170320/model/RestartDBInstancesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/StartBatchRollbackRequest.h>
@@ -652,6 +654,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RenewDBInstanceResponse> RenewDBInstanceOutcome;
                 typedef std::future<RenewDBInstanceOutcome> RenewDBInstanceOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::RenewDBInstanceRequest&, RenewDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewDBInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetRootAccountResponse> ResetRootAccountOutcome;
+                typedef std::future<ResetRootAccountOutcome> ResetRootAccountOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::ResetRootAccountRequest&, ResetRootAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetRootAccountAsyncHandler;
                 typedef Outcome<Core::Error, Model::RestartDBInstancesResponse> RestartDBInstancesOutcome;
                 typedef std::future<RestartDBInstancesOutcome> RestartDBInstancesOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::RestartDBInstancesRequest&, RestartDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartDBInstancesAsyncHandler;
@@ -1788,6 +1793,15 @@ namespace TencentCloud
                 RenewDBInstanceOutcome RenewDBInstance(const Model::RenewDBInstanceRequest &request);
                 void RenewDBInstanceAsync(const Model::RenewDBInstanceRequest& request, const RenewDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RenewDBInstanceOutcomeCallable RenewDBInstanceCallable(const Model::RenewDBInstanceRequest& request);
+
+                /**
+                 *重置实例ROOT账，初始化账号权限
+                 * @param req ResetRootAccountRequest
+                 * @return ResetRootAccountOutcome
+                 */
+                ResetRootAccountOutcome ResetRootAccount(const Model::ResetRootAccountRequest &request);
+                void ResetRootAccountAsync(const Model::ResetRootAccountRequest& request, const ResetRootAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetRootAccountOutcomeCallable ResetRootAccountCallable(const Model::ResetRootAccountRequest& request);
 
                 /**
                  *本接口(RestartDBInstances)用于重启云数据库实例。

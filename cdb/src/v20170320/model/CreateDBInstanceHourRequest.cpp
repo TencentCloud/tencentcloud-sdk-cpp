@@ -57,7 +57,8 @@ CreateDBInstanceHourRequest::CreateDBInstanceHourRequest() :
     m_cageIdHasBeenSet(false),
     m_paramTemplateTypeHasBeenSet(false),
     m_alarmPolicyIdListHasBeenSet(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_vipsHasBeenSet(false)
 {
 }
 
@@ -376,6 +377,19 @@ string CreateDBInstanceHourRequest::ToJsonString() const
         string key = "DryRun";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dryRun, allocator);
+    }
+
+    if (m_vipsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Vips";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_vips.begin(); itr != m_vips.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -944,6 +958,22 @@ void CreateDBInstanceHourRequest::SetDryRun(const bool& _dryRun)
 bool CreateDBInstanceHourRequest::DryRunHasBeenSet() const
 {
     return m_dryRunHasBeenSet;
+}
+
+vector<string> CreateDBInstanceHourRequest::GetVips() const
+{
+    return m_vips;
+}
+
+void CreateDBInstanceHourRequest::SetVips(const vector<string>& _vips)
+{
+    m_vips = _vips;
+    m_vipsHasBeenSet = true;
+}
+
+bool CreateDBInstanceHourRequest::VipsHasBeenSet() const
+{
+    return m_vipsHasBeenSet;
 }
 
 

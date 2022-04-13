@@ -23,7 +23,9 @@ using namespace std;
 OssPrivateAccess::OssPrivateAccess() :
     m_switchHasBeenSet(false),
     m_accessKeyHasBeenSet(false),
-    m_secretKeyHasBeenSet(false)
+    m_secretKeyHasBeenSet(false),
+    m_regionHasBeenSet(false),
+    m_bucketHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,26 @@ CoreInternalOutcome OssPrivateAccess::Deserialize(const rapidjson::Value &value)
         m_secretKeyHasBeenSet = true;
     }
 
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OssPrivateAccess.Region` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_region = string(value["Region"].GetString());
+        m_regionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Bucket") && !value["Bucket"].IsNull())
+    {
+        if (!value["Bucket"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OssPrivateAccess.Bucket` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bucket = string(value["Bucket"].GetString());
+        m_bucketHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +113,22 @@ void OssPrivateAccess::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "SecretKey";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_secretKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bucketHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Bucket";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bucket.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +180,37 @@ void OssPrivateAccess::SetSecretKey(const string& _secretKey)
 bool OssPrivateAccess::SecretKeyHasBeenSet() const
 {
     return m_secretKeyHasBeenSet;
+}
+
+string OssPrivateAccess::GetRegion() const
+{
+    return m_region;
+}
+
+void OssPrivateAccess::SetRegion(const string& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool OssPrivateAccess::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
+}
+
+string OssPrivateAccess::GetBucket() const
+{
+    return m_bucket;
+}
+
+void OssPrivateAccess::SetBucket(const string& _bucket)
+{
+    m_bucket = _bucket;
+    m_bucketHasBeenSet = true;
+}
+
+bool OssPrivateAccess::BucketHasBeenSet() const
+{
+    return m_bucketHasBeenSet;
 }
 

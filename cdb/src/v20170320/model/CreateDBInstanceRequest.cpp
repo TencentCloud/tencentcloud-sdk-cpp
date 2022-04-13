@@ -58,7 +58,8 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_cageIdHasBeenSet(false),
     m_paramTemplateTypeHasBeenSet(false),
     m_alarmPolicyIdListHasBeenSet(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_vipsHasBeenSet(false)
 {
 }
 
@@ -385,6 +386,19 @@ string CreateDBInstanceRequest::ToJsonString() const
         string key = "DryRun";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dryRun, allocator);
+    }
+
+    if (m_vipsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Vips";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_vips.begin(); itr != m_vips.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -969,6 +983,22 @@ void CreateDBInstanceRequest::SetDryRun(const bool& _dryRun)
 bool CreateDBInstanceRequest::DryRunHasBeenSet() const
 {
     return m_dryRunHasBeenSet;
+}
+
+vector<string> CreateDBInstanceRequest::GetVips() const
+{
+    return m_vips;
+}
+
+void CreateDBInstanceRequest::SetVips(const vector<string>& _vips)
+{
+    m_vips = _vips;
+    m_vipsHasBeenSet = true;
+}
+
+bool CreateDBInstanceRequest::VipsHasBeenSet() const
+{
+    return m_vipsHasBeenSet;
 }
 
 

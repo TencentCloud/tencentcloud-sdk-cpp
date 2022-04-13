@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool VisibilityTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取消息最大长度。取值范围 1024-65536 Byte（即1-64K），默认值 65536。
-                     * @return MaxMsgSize 消息最大长度。取值范围 1024-65536 Byte（即1-64K），默认值 65536。
+                     * 获取消息最大长度，新版CMQ新建的队列默认1024KB，不支持修改
+                     * @return MaxMsgSize 消息最大长度，新版CMQ新建的队列默认1024KB，不支持修改
                      */
                     uint64_t GetMaxMsgSize() const;
 
                     /**
-                     * 设置消息最大长度。取值范围 1024-65536 Byte（即1-64K），默认值 65536。
-                     * @param MaxMsgSize 消息最大长度。取值范围 1024-65536 Byte（即1-64K），默认值 65536。
+                     * 设置消息最大长度，新版CMQ新建的队列默认1024KB，不支持修改
+                     * @param MaxMsgSize 消息最大长度，新版CMQ新建的队列默认1024KB，不支持修改
                      */
                     void SetMaxMsgSize(const uint64_t& _maxMsgSize);
 
@@ -357,7 +357,7 @@ namespace TencentCloud
                     bool m_visibilityTimeoutHasBeenSet;
 
                     /**
-                     * 消息最大长度。取值范围 1024-65536 Byte（即1-64K），默认值 65536。
+                     * 消息最大长度，新版CMQ新建的队列默认1024KB，不支持修改
                      */
                     uint64_t m_maxMsgSize;
                     bool m_maxMsgSizeHasBeenSet;

@@ -71,6 +71,8 @@
 #include <tencentcloud/cdn/v20180606/model/RemoteAuthentication.h>
 #include <tencentcloud/cdn/v20180606/model/ShareCname.h>
 #include <tencentcloud/cdn/v20180606/model/RuleEngine.h>
+#include <tencentcloud/cdn/v20180606/model/HwPrivateAccess.h>
+#include <tencentcloud/cdn/v20180606/model/QnPrivateAccess.h>
 
 
 namespace TencentCloud
@@ -1525,6 +1527,50 @@ off：不支持
                      */
                     bool ParentHostHasBeenSet() const;
 
+                    /**
+                     * 获取华为云对象存储回源鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HwPrivateAccess 华为云对象存储回源鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    HwPrivateAccess GetHwPrivateAccess() const;
+
+                    /**
+                     * 设置华为云对象存储回源鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HwPrivateAccess 华为云对象存储回源鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHwPrivateAccess(const HwPrivateAccess& _hwPrivateAccess);
+
+                    /**
+                     * 判断参数 HwPrivateAccess 是否已赋值
+                     * @return HwPrivateAccess 是否已赋值
+                     */
+                    bool HwPrivateAccessHasBeenSet() const;
+
+                    /**
+                     * 获取七牛云对象存储回源鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QnPrivateAccess 七牛云对象存储回源鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    QnPrivateAccess GetQnPrivateAccess() const;
+
+                    /**
+                     * 设置七牛云对象存储回源鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param QnPrivateAccess 七牛云对象存储回源鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetQnPrivateAccess(const QnPrivateAccess& _qnPrivateAccess);
+
+                    /**
+                     * 判断参数 QnPrivateAccess 是否已赋值
+                     * @return QnPrivateAccess 是否已赋值
+                     */
+                    bool QnPrivateAccessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1977,6 +2023,20 @@ off：不支持
                      */
                     std::string m_parentHost;
                     bool m_parentHostHasBeenSet;
+
+                    /**
+                     * 华为云对象存储回源鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    HwPrivateAccess m_hwPrivateAccess;
+                    bool m_hwPrivateAccessHasBeenSet;
+
+                    /**
+                     * 七牛云对象存储回源鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    QnPrivateAccess m_qnPrivateAccess;
+                    bool m_qnPrivateAccessHasBeenSet;
 
                 };
             }

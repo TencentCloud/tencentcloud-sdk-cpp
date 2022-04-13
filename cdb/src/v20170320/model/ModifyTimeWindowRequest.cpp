@@ -25,7 +25,8 @@ using namespace std;
 ModifyTimeWindowRequest::ModifyTimeWindowRequest() :
     m_instanceIdHasBeenSet(false),
     m_timeRangesHasBeenSet(false),
-    m_weekdaysHasBeenSet(false)
+    m_weekdaysHasBeenSet(false),
+    m_maxDelayTimeHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string ModifyTimeWindowRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_maxDelayTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxDelayTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxDelayTime, allocator);
     }
 
 
@@ -124,6 +133,22 @@ void ModifyTimeWindowRequest::SetWeekdays(const vector<string>& _weekdays)
 bool ModifyTimeWindowRequest::WeekdaysHasBeenSet() const
 {
     return m_weekdaysHasBeenSet;
+}
+
+uint64_t ModifyTimeWindowRequest::GetMaxDelayTime() const
+{
+    return m_maxDelayTime;
+}
+
+void ModifyTimeWindowRequest::SetMaxDelayTime(const uint64_t& _maxDelayTime)
+{
+    m_maxDelayTime = _maxDelayTime;
+    m_maxDelayTimeHasBeenSet = true;
+}
+
+bool ModifyTimeWindowRequest::MaxDelayTimeHasBeenSet() const
+{
+    return m_maxDelayTimeHasBeenSet;
 }
 
 

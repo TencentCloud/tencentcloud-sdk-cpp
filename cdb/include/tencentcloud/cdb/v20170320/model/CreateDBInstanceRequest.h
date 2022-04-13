@@ -496,14 +496,14 @@ namespace TencentCloud
                     bool DeployGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间在当天内唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
-                     * @return ClientToken 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间在当天内唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
+                     * 获取用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间在48小时内唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
+                     * @return ClientToken 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间在48小时内唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
                      */
                     std::string GetClientToken() const;
 
                     /**
-                     * 设置用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间在当天内唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
-                     * @param ClientToken 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间在当天内唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
+                     * 设置用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间在48小时内唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
+                     * @param ClientToken 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间在48小时内唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
                      */
                     void SetClientToken(const std::string& _clientToken);
 
@@ -693,6 +693,24 @@ namespace TencentCloud
                      */
                     bool DryRunHasBeenSet() const;
 
+                    /**
+                     * 获取指定实例的IP列表。仅支持主实例指定，按实例顺序，不足则按未指定处理。
+                     * @return Vips 指定实例的IP列表。仅支持主实例指定，按实例顺序，不足则按未指定处理。
+                     */
+                    std::vector<std::string> GetVips() const;
+
+                    /**
+                     * 设置指定实例的IP列表。仅支持主实例指定，按实例顺序，不足则按未指定处理。
+                     * @param Vips 指定实例的IP列表。仅支持主实例指定，按实例顺序，不足则按未指定处理。
+                     */
+                    void SetVips(const std::vector<std::string>& _vips);
+
+                    /**
+                     * 判断参数 Vips 是否已赋值
+                     * @return Vips 是否已赋值
+                     */
+                    bool VipsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -846,7 +864,7 @@ namespace TencentCloud
                     bool m_deployGroupIdHasBeenSet;
 
                     /**
-                     * 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间在当天内唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
+                     * 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间在48小时内唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;
@@ -910,6 +928,12 @@ namespace TencentCloud
                      */
                     bool m_dryRun;
                     bool m_dryRunHasBeenSet;
+
+                    /**
+                     * 指定实例的IP列表。仅支持主实例指定，按实例顺序，不足则按未指定处理。
+                     */
+                    std::vector<std::string> m_vips;
+                    bool m_vipsHasBeenSet;
 
                 };
             }

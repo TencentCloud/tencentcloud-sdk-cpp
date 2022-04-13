@@ -108,6 +108,50 @@ namespace TencentCloud
                      */
                     bool SecretKeyHasBeenSet() const;
 
+                    /**
+                     * 获取地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Region 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRegion() const;
+
+                    /**
+                     * 设置地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Region 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRegion(const std::string& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     */
+                    bool RegionHasBeenSet() const;
+
+                    /**
+                     * 获取Bucketname
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Bucket Bucketname
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBucket() const;
+
+                    /**
+                     * 设置Bucketname
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Bucket Bucketname
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBucket(const std::string& _bucket);
+
+                    /**
+                     * 判断参数 Bucket 是否已赋值
+                     * @return Bucket 是否已赋值
+                     */
+                    bool BucketHasBeenSet() const;
+
                 private:
 
                     /**
@@ -129,6 +173,20 @@ namespace TencentCloud
                      */
                     std::string m_secretKey;
                     bool m_secretKeyHasBeenSet;
+
+                    /**
+                     * 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
+
+                    /**
+                     * Bucketname
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_bucket;
+                    bool m_bucketHasBeenSet;
 
                 };
             }

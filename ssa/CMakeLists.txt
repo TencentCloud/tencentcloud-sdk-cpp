@@ -52,6 +52,7 @@ set(ssa_public_header_model
   include/tencentcloud/ssa/v20180608/model/DescribeComplianceListRequest.h
   include/tencentcloud/ssa/v20180608/model/DescribeVulListRequest.h
   include/tencentcloud/ssa/v20180608/model/DescribeLeakDetectionListRequest.h
+  include/tencentcloud/ssa/v20180608/model/SocCheckItemV1.h
   include/tencentcloud/ssa/v20180608/model/DescribeEventDetailResponse.h
   include/tencentcloud/ssa/v20180608/model/DescribeSafetyEventListResponse.h
   include/tencentcloud/ssa/v20180608/model/SaDivulgeDataQueryPubList.h
@@ -74,6 +75,7 @@ set(ssa_public_header_model
   include/tencentcloud/ssa/v20180608/model/DataEvent.h
   include/tencentcloud/ssa/v20180608/model/DescribeSocCheckItemListRequest.h
   include/tencentcloud/ssa/v20180608/model/CheckConfigDetail.h
+  include/tencentcloud/ssa/v20180608/model/DescribeSocCheckItemListRspRsp.h
   include/tencentcloud/ssa/v20180608/model/SocCheckItem.h
   include/tencentcloud/ssa/v20180608/model/DescribeEventDetailRequest.h
   include/tencentcloud/ssa/v20180608/model/CheckAssetItem.h
@@ -129,6 +131,7 @@ set(ssa_src
   src/v20180608/model/DescribeComplianceListRequest.cpp
   src/v20180608/model/DescribeVulListRequest.cpp
   src/v20180608/model/DescribeLeakDetectionListRequest.cpp
+  src/v20180608/model/SocCheckItemV1.cpp
   src/v20180608/model/DescribeEventDetailResponse.cpp
   src/v20180608/model/DescribeSafetyEventListResponse.cpp
   src/v20180608/model/SaDivulgeDataQueryPubList.cpp
@@ -151,6 +154,7 @@ set(ssa_src
   src/v20180608/model/DataEvent.cpp
   src/v20180608/model/DescribeSocCheckItemListRequest.cpp
   src/v20180608/model/CheckConfigDetail.cpp
+  src/v20180608/model/DescribeSocCheckItemListRspRsp.cpp
   src/v20180608/model/SocCheckItem.cpp
   src/v20180608/model/DescribeEventDetailRequest.cpp
   src/v20180608/model/CheckAssetItem.cpp

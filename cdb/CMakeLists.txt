@@ -166,6 +166,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/StopRollbackRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeDeviceMonitorInfoResponse.h
   include/tencentcloud/cdb/v20170320/model/TagsInfoOfInstance.h
+  include/tencentcloud/cdb/v20170320/model/ResetRootAccountRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBInstanceConfigRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeProxyCustomConfResponse.h
   include/tencentcloud/cdb/v20170320/model/ModifyAuditConfigResponse.h
@@ -208,6 +209,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/CreateDeployGroupResponse.h
   include/tencentcloud/cdb/v20170320/model/SellConfig.h
   include/tencentcloud/cdb/v20170320/model/MasterInfo.h
+  include/tencentcloud/cdb/v20170320/model/ResetRootAccountResponse.h
   include/tencentcloud/cdb/v20170320/model/ProxyNodeInfo.h
   include/tencentcloud/cdb/v20170320/model/Account.h
   include/tencentcloud/cdb/v20170320/model/ModifyNameOrDescByDpIdResponse.h
@@ -521,6 +523,7 @@ set(cdb_src
   src/v20170320/model/StopRollbackRequest.cpp
   src/v20170320/model/DescribeDeviceMonitorInfoResponse.cpp
   src/v20170320/model/TagsInfoOfInstance.cpp
+  src/v20170320/model/ResetRootAccountRequest.cpp
   src/v20170320/model/DescribeDBInstanceConfigRequest.cpp
   src/v20170320/model/DescribeProxyCustomConfResponse.cpp
   src/v20170320/model/ModifyAuditConfigResponse.cpp
@@ -563,6 +566,7 @@ set(cdb_src
   src/v20170320/model/CreateDeployGroupResponse.cpp
   src/v20170320/model/SellConfig.cpp
   src/v20170320/model/MasterInfo.cpp
+  src/v20170320/model/ResetRootAccountResponse.cpp
   src/v20170320/model/ProxyNodeInfo.cpp
   src/v20170320/model/Account.cpp
   src/v20170320/model/ModifyNameOrDescByDpIdResponse.cpp
