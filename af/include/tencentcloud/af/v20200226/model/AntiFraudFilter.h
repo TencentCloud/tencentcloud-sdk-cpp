@@ -698,6 +698,24 @@ appid，用来唯一标识网站或应用
                      */
                     bool NameCryptoTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否使用旧回包
+                     * @return OldResponseType 是否使用旧回包
+                     */
+                    std::string GetOldResponseType() const;
+
+                    /**
+                     * 设置是否使用旧回包
+                     * @param OldResponseType 是否使用旧回包
+                     */
+                    void SetOldResponseType(const std::string& _oldResponseType);
+
+                    /**
+                     * 判断参数 OldResponseType 是否已赋值
+                     * @return OldResponseType 是否已赋值
+                     */
+                    bool OldResponseTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -904,6 +922,12 @@ appid，用来唯一标识网站或应用
                      */
                     std::string m_nameCryptoType;
                     bool m_nameCryptoTypeHasBeenSet;
+
+                    /**
+                     * 是否使用旧回包
+                     */
+                    std::string m_oldResponseType;
+                    bool m_oldResponseTypeHasBeenSet;
 
                 };
             }

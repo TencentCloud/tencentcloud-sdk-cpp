@@ -56,6 +56,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/CreateCallOutSessionResponse.h
   include/tencentcloud/ccc/v20200210/model/IMCdrInfo.h
   include/tencentcloud/ccc/v20200210/model/StaffBuyInfo.h
+  include/tencentcloud/ccc/v20200210/model/DescribeProtectedTelCdrResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeAutoCalloutTasksRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeChatMessagesRequest.h
   include/tencentcloud/ccc/v20200210/model/PSTNSession.h
@@ -78,6 +79,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/DescribeAutoCalloutTasksResponse.h
   include/tencentcloud/ccc/v20200210/model/PackageBuyInfo.h
   include/tencentcloud/ccc/v20200210/model/DescribeTelCdrRequest.h
+  include/tencentcloud/ccc/v20200210/model/DescribeProtectedTelCdrRequest.h
   include/tencentcloud/ccc/v20200210/model/MessageBody.h
   include/tencentcloud/ccc/v20200210/model/CreateSDKLoginTokenRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeTelCallInfoRequest.h
@@ -130,6 +132,7 @@ set(ccc_src
   src/v20200210/model/CreateCallOutSessionResponse.cpp
   src/v20200210/model/IMCdrInfo.cpp
   src/v20200210/model/StaffBuyInfo.cpp
+  src/v20200210/model/DescribeProtectedTelCdrResponse.cpp
   src/v20200210/model/DescribeAutoCalloutTasksRequest.cpp
   src/v20200210/model/DescribeChatMessagesRequest.cpp
   src/v20200210/model/PSTNSession.cpp
@@ -152,6 +155,7 @@ set(ccc_src
   src/v20200210/model/DescribeAutoCalloutTasksResponse.cpp
   src/v20200210/model/PackageBuyInfo.cpp
   src/v20200210/model/DescribeTelCdrRequest.cpp
+  src/v20200210/model/DescribeProtectedTelCdrRequest.cpp
   src/v20200210/model/MessageBody.cpp
   src/v20200210/model/CreateSDKLoginTokenRequest.cpp
   src/v20200210/model/DescribeTelCallInfoRequest.cpp

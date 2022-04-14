@@ -25,7 +25,8 @@ using namespace std;
 CreateKTVRobotRequest::CreateKTVRobotRequest() :
     m_rTCSystemHasBeenSet(false),
     m_joinRoomInputHasBeenSet(false),
-    m_applicationLicenseInputHasBeenSet(false)
+    m_applicationLicenseInputHasBeenSet(false),
+    m_syncRobotCommandsHasBeenSet(false)
 {
 }
 
@@ -60,6 +61,21 @@ string CreateKTVRobotRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_applicationLicenseInput.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_syncRobotCommandsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncRobotCommands";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_syncRobotCommands.begin(); itr != m_syncRobotCommands.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -116,6 +132,22 @@ void CreateKTVRobotRequest::SetApplicationLicenseInput(const ApplicationLicenseI
 bool CreateKTVRobotRequest::ApplicationLicenseInputHasBeenSet() const
 {
     return m_applicationLicenseInputHasBeenSet;
+}
+
+vector<SyncRobotCommand> CreateKTVRobotRequest::GetSyncRobotCommands() const
+{
+    return m_syncRobotCommands;
+}
+
+void CreateKTVRobotRequest::SetSyncRobotCommands(const vector<SyncRobotCommand>& _syncRobotCommands)
+{
+    m_syncRobotCommands = _syncRobotCommands;
+    m_syncRobotCommandsHasBeenSet = true;
+}
+
+bool CreateKTVRobotRequest::SyncRobotCommandsHasBeenSet() const
+{
+    return m_syncRobotCommandsHasBeenSet;
 }
 
 

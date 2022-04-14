@@ -59,6 +59,8 @@
 #include <tencentcloud/cpdp/v20190820/model/CheckAcctResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CheckAmountRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CheckAmountResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/CloseCloudOrderRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/CloseCloudOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CloseOpenBankPaymentOrderRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CloseOpenBankPaymentOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CloseOrderRequest.h>
@@ -75,6 +77,8 @@
 #include <tencentcloud/cpdp/v20190820/model/CreateAnchorResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateBatchPaymentRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateBatchPaymentResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateCloudSubMerchantRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateCloudSubMerchantResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateCustAcctIdRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateCustAcctIdResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateExternalAnchorRequest.h>
@@ -183,6 +187,12 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryBillDownloadURLResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryCityCodeRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryCityCodeResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryCloudChannelDataRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryCloudChannelDataResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryCloudOrderRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryCloudOrderResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryCloudRefundOrderRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryCloudRefundOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryCommonTransferRechargeRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryCommonTransferRechargeResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryContractRequest.h>
@@ -285,6 +295,8 @@
 #include <tencentcloud/cpdp/v20190820/model/RechargeMemberThirdPayResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/RefundRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/RefundResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/RefundCloudOrderRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/RefundCloudOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/RefundMemberTransactionRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/RefundMemberTransactionResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/RefundOrderRequest.h>
@@ -317,6 +329,8 @@
 #include <tencentcloud/cpdp/v20190820/model/UnbindOpenBankExternalSubMerchantBankAccountResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/UnbindRelateAcctRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/UnbindRelateAcctResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/UnifiedCloudOrderRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/UnifiedCloudOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/UnifiedOrderRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/UnifiedOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/UnifiedTlinxOrderRequest.h>
@@ -407,6 +421,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckAmountResponse> CheckAmountOutcome;
                 typedef std::future<CheckAmountOutcome> CheckAmountOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CheckAmountRequest&, CheckAmountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckAmountAsyncHandler;
+                typedef Outcome<Core::Error, Model::CloseCloudOrderResponse> CloseCloudOrderOutcome;
+                typedef std::future<CloseCloudOrderOutcome> CloseCloudOrderOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::CloseCloudOrderRequest&, CloseCloudOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseCloudOrderAsyncHandler;
                 typedef Outcome<Core::Error, Model::CloseOpenBankPaymentOrderResponse> CloseOpenBankPaymentOrderOutcome;
                 typedef std::future<CloseOpenBankPaymentOrderOutcome> CloseOpenBankPaymentOrderOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CloseOpenBankPaymentOrderRequest&, CloseOpenBankPaymentOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseOpenBankPaymentOrderAsyncHandler;
@@ -431,6 +448,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateBatchPaymentResponse> CreateBatchPaymentOutcome;
                 typedef std::future<CreateBatchPaymentOutcome> CreateBatchPaymentOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateBatchPaymentRequest&, CreateBatchPaymentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchPaymentAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCloudSubMerchantResponse> CreateCloudSubMerchantOutcome;
+                typedef std::future<CreateCloudSubMerchantOutcome> CreateCloudSubMerchantOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::CreateCloudSubMerchantRequest&, CreateCloudSubMerchantOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudSubMerchantAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCustAcctIdResponse> CreateCustAcctIdOutcome;
                 typedef std::future<CreateCustAcctIdOutcome> CreateCustAcctIdOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateCustAcctIdRequest&, CreateCustAcctIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustAcctIdAsyncHandler;
@@ -593,6 +613,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryCityCodeResponse> QueryCityCodeOutcome;
                 typedef std::future<QueryCityCodeOutcome> QueryCityCodeOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryCityCodeRequest&, QueryCityCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryCityCodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryCloudChannelDataResponse> QueryCloudChannelDataOutcome;
+                typedef std::future<QueryCloudChannelDataOutcome> QueryCloudChannelDataOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryCloudChannelDataRequest&, QueryCloudChannelDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryCloudChannelDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryCloudOrderResponse> QueryCloudOrderOutcome;
+                typedef std::future<QueryCloudOrderOutcome> QueryCloudOrderOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryCloudOrderRequest&, QueryCloudOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryCloudOrderAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryCloudRefundOrderResponse> QueryCloudRefundOrderOutcome;
+                typedef std::future<QueryCloudRefundOrderOutcome> QueryCloudRefundOrderOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryCloudRefundOrderRequest&, QueryCloudRefundOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryCloudRefundOrderAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryCommonTransferRechargeResponse> QueryCommonTransferRechargeOutcome;
                 typedef std::future<QueryCommonTransferRechargeOutcome> QueryCommonTransferRechargeOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryCommonTransferRechargeRequest&, QueryCommonTransferRechargeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryCommonTransferRechargeAsyncHandler;
@@ -746,6 +775,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RefundResponse> RefundOutcome;
                 typedef std::future<RefundOutcome> RefundOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::RefundRequest&, RefundOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RefundAsyncHandler;
+                typedef Outcome<Core::Error, Model::RefundCloudOrderResponse> RefundCloudOrderOutcome;
+                typedef std::future<RefundCloudOrderOutcome> RefundCloudOrderOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::RefundCloudOrderRequest&, RefundCloudOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RefundCloudOrderAsyncHandler;
                 typedef Outcome<Core::Error, Model::RefundMemberTransactionResponse> RefundMemberTransactionOutcome;
                 typedef std::future<RefundMemberTransactionOutcome> RefundMemberTransactionOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::RefundMemberTransactionRequest&, RefundMemberTransactionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RefundMemberTransactionAsyncHandler;
@@ -794,6 +826,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UnbindRelateAcctResponse> UnbindRelateAcctOutcome;
                 typedef std::future<UnbindRelateAcctOutcome> UnbindRelateAcctOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::UnbindRelateAcctRequest&, UnbindRelateAcctOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindRelateAcctAsyncHandler;
+                typedef Outcome<Core::Error, Model::UnifiedCloudOrderResponse> UnifiedCloudOrderOutcome;
+                typedef std::future<UnifiedCloudOrderOutcome> UnifiedCloudOrderOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::UnifiedCloudOrderRequest&, UnifiedCloudOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnifiedCloudOrderAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnifiedOrderResponse> UnifiedOrderOutcome;
                 typedef std::future<UnifiedOrderOutcome> UnifiedOrderOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::UnifiedOrderRequest&, UnifiedOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnifiedOrderAsyncHandler;
@@ -1000,6 +1035,15 @@ namespace TencentCloud
                 CheckAmountOutcomeCallable CheckAmountCallable(const Model::CheckAmountRequest& request);
 
                 /**
+                 *通过此接口关闭此前已创建的订单。关闭后，用户将无法继续付款，仅能关闭创建后未支付的订单。
+                 * @param req CloseCloudOrderRequest
+                 * @return CloseCloudOrderOutcome
+                 */
+                CloseCloudOrderOutcome CloseCloudOrder(const Model::CloseCloudOrderRequest &request);
+                void CloseCloudOrderAsync(const Model::CloseCloudOrderRequest& request, const CloseCloudOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloseCloudOrderOutcomeCallable CloseCloudOrderCallable(const Model::CloseCloudOrderRequest& request);
+
+                /**
                  *云企付-关闭订单
                  * @param req CloseOpenBankPaymentOrderRequest
                  * @return CloseOpenBankPaymentOrderOutcome
@@ -1070,6 +1114,15 @@ namespace TencentCloud
                 CreateBatchPaymentOutcome CreateBatchPayment(const Model::CreateBatchPaymentRequest &request);
                 void CreateBatchPaymentAsync(const Model::CreateBatchPaymentRequest& request, const CreateBatchPaymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateBatchPaymentOutcomeCallable CreateBatchPaymentCallable(const Model::CreateBatchPaymentRequest& request);
+
+                /**
+                 *创建子商户
+                 * @param req CreateCloudSubMerchantRequest
+                 * @return CreateCloudSubMerchantOutcome
+                 */
+                CreateCloudSubMerchantOutcome CreateCloudSubMerchant(const Model::CreateCloudSubMerchantRequest &request);
+                void CreateCloudSubMerchantAsync(const Model::CreateCloudSubMerchantRequest& request, const CreateCloudSubMerchantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCloudSubMerchantOutcomeCallable CreateCloudSubMerchantCallable(const Model::CreateCloudSubMerchantRequest& request);
 
                 /**
                  *会员子账户开立。会员在银行注册，并开立会员子账户，交易网会员代码即会员在平台端系统的会员编号。
@@ -1560,6 +1613,33 @@ namespace TencentCloud
                 QueryCityCodeOutcomeCallable QueryCityCodeCallable(const Model::QueryCityCodeRequest& request);
 
                 /**
+                 *发起支付等渠道操作后，可以调用该接口查询渠道的数据。
+                 * @param req QueryCloudChannelDataRequest
+                 * @return QueryCloudChannelDataOutcome
+                 */
+                QueryCloudChannelDataOutcome QueryCloudChannelData(const Model::QueryCloudChannelDataRequest &request);
+                void QueryCloudChannelDataAsync(const Model::QueryCloudChannelDataRequest& request, const QueryCloudChannelDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryCloudChannelDataOutcomeCallable QueryCloudChannelDataCallable(const Model::QueryCloudChannelDataRequest& request);
+
+                /**
+                 *根据订单号或用户ID，查询支付订单状态。
+                 * @param req QueryCloudOrderRequest
+                 * @return QueryCloudOrderOutcome
+                 */
+                QueryCloudOrderOutcome QueryCloudOrder(const Model::QueryCloudOrderRequest &request);
+                void QueryCloudOrderAsync(const Model::QueryCloudOrderRequest& request, const QueryCloudOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryCloudOrderOutcomeCallable QueryCloudOrderCallable(const Model::QueryCloudOrderRequest& request);
+
+                /**
+                 *提交退款申请后，通过调用该接口查询退款状态。退款可能有一定延时，用微信零钱支付的退款约20分钟内到账，银行卡支付的退款约3个工作日后到账。
+                 * @param req QueryCloudRefundOrderRequest
+                 * @return QueryCloudRefundOrderOutcome
+                 */
+                QueryCloudRefundOrderOutcome QueryCloudRefundOrder(const Model::QueryCloudRefundOrderRequest &request);
+                void QueryCloudRefundOrderAsync(const Model::QueryCloudRefundOrderRequest& request, const QueryCloudRefundOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryCloudRefundOrderOutcomeCallable QueryCloudRefundOrderCallable(const Model::QueryCloudRefundOrderRequest& request);
+
+                /**
                  *查询普通转账充值明细。接口用于查询会员主动转账进资金汇总账户的明细情况。若会员使用绑定账号转入，则直接入账到会员子账户。若未使用绑定账号转入，则系统无法自动清分到对应子账户，则转入挂账子账户由平台自行清分。若是 “见证+收单充值”T0充值记录时备注Note为“见证+收单充值,订单号” 此接口可以查到T0到账的“见证+收单充值”充值记录。
                  * @param req QueryCommonTransferRechargeRequest
                  * @return QueryCommonTransferRechargeOutcome
@@ -2020,6 +2100,15 @@ namespace TencentCloud
                 RefundOutcomeCallable RefundCallable(const Model::RefundRequest& request);
 
                 /**
+                 *如交易订单需退款，可以通过本接口将支付款全部或部分退还给付款方，聚鑫将在收到退款请求并且验证成功之后，按照退款规则将支付款按原路退回到支付帐号。最长支持1年的订单退款。在订单包含多个子订单的情况下，如果使用本接口传入OutTradeNo或TransactionId退款，则只支持全单退款；如果需要部分退款，请通过传入子订单的方式来指定部分金额退款。 
+                 * @param req RefundCloudOrderRequest
+                 * @return RefundCloudOrderOutcome
+                 */
+                RefundCloudOrderOutcome RefundCloudOrder(const Model::RefundCloudOrderRequest &request);
+                void RefundCloudOrderAsync(const Model::RefundCloudOrderRequest& request, const RefundCloudOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RefundCloudOrderOutcomeCallable RefundCloudOrderCallable(const Model::RefundCloudOrderRequest& request);
+
+                /**
                  *会员间交易退款
                  * @param req RefundMemberTransactionRequest
                  * @return RefundMemberTransactionOutcome
@@ -2162,6 +2251,15 @@ namespace TencentCloud
                 UnbindRelateAcctOutcome UnbindRelateAcct(const Model::UnbindRelateAcctRequest &request);
                 void UnbindRelateAcctAsync(const Model::UnbindRelateAcctRequest& request, const UnbindRelateAcctAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UnbindRelateAcctOutcomeCallable UnbindRelateAcctCallable(const Model::UnbindRelateAcctRequest& request);
+
+                /**
+                 *应用需要先调用本接口生成支付订单号，并将应答的PayInfo透传给聚鑫SDK，拉起客户端（包括微信公众号/微信小程序/客户端App）支付。
+                 * @param req UnifiedCloudOrderRequest
+                 * @return UnifiedCloudOrderOutcome
+                 */
+                UnifiedCloudOrderOutcome UnifiedCloudOrder(const Model::UnifiedCloudOrderRequest &request);
+                void UnifiedCloudOrderAsync(const Model::UnifiedCloudOrderRequest& request, const UnifiedCloudOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnifiedCloudOrderOutcomeCallable UnifiedCloudOrderCallable(const Model::UnifiedCloudOrderRequest& request);
 
                 /**
                  *应用需要先调用本接口生成支付订单号，并将应答的PayInfo透传给聚鑫SDK，拉起客户端（包括微信公众号/微信小程序/客户端App）支付。

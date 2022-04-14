@@ -814,6 +814,49 @@ CpdpClient::CheckAmountOutcomeCallable CpdpClient::CheckAmountCallable(const Che
     return task->get_future();
 }
 
+CpdpClient::CloseCloudOrderOutcome CpdpClient::CloseCloudOrder(const CloseCloudOrderRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloseCloudOrder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloseCloudOrderResponse rsp = CloseCloudOrderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloseCloudOrderOutcome(rsp);
+        else
+            return CloseCloudOrderOutcome(o.GetError());
+    }
+    else
+    {
+        return CloseCloudOrderOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::CloseCloudOrderAsync(const CloseCloudOrderRequest& request, const CloseCloudOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CloseCloudOrder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::CloseCloudOrderOutcomeCallable CpdpClient::CloseCloudOrderCallable(const CloseCloudOrderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CloseCloudOrderOutcome()>>(
+        [this, request]()
+        {
+            return this->CloseCloudOrder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::CloseOpenBankPaymentOrderOutcome CpdpClient::CloseOpenBankPaymentOrder(const CloseOpenBankPaymentOrderRequest &request)
 {
     auto outcome = MakeRequest(request, "CloseOpenBankPaymentOrder");
@@ -1151,6 +1194,49 @@ CpdpClient::CreateBatchPaymentOutcomeCallable CpdpClient::CreateBatchPaymentCall
         [this, request]()
         {
             return this->CreateBatchPayment(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::CreateCloudSubMerchantOutcome CpdpClient::CreateCloudSubMerchant(const CreateCloudSubMerchantRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudSubMerchant");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudSubMerchantResponse rsp = CreateCloudSubMerchantResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudSubMerchantOutcome(rsp);
+        else
+            return CreateCloudSubMerchantOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudSubMerchantOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::CreateCloudSubMerchantAsync(const CreateCloudSubMerchantRequest& request, const CreateCloudSubMerchantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCloudSubMerchant(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::CreateCloudSubMerchantOutcomeCallable CpdpClient::CreateCloudSubMerchantCallable(const CreateCloudSubMerchantRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCloudSubMerchantOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCloudSubMerchant(request);
         }
     );
 
@@ -3480,6 +3566,135 @@ CpdpClient::QueryCityCodeOutcomeCallable CpdpClient::QueryCityCodeCallable(const
     return task->get_future();
 }
 
+CpdpClient::QueryCloudChannelDataOutcome CpdpClient::QueryCloudChannelData(const QueryCloudChannelDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryCloudChannelData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryCloudChannelDataResponse rsp = QueryCloudChannelDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryCloudChannelDataOutcome(rsp);
+        else
+            return QueryCloudChannelDataOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryCloudChannelDataOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryCloudChannelDataAsync(const QueryCloudChannelDataRequest& request, const QueryCloudChannelDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryCloudChannelData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryCloudChannelDataOutcomeCallable CpdpClient::QueryCloudChannelDataCallable(const QueryCloudChannelDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryCloudChannelDataOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryCloudChannelData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::QueryCloudOrderOutcome CpdpClient::QueryCloudOrder(const QueryCloudOrderRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryCloudOrder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryCloudOrderResponse rsp = QueryCloudOrderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryCloudOrderOutcome(rsp);
+        else
+            return QueryCloudOrderOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryCloudOrderOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryCloudOrderAsync(const QueryCloudOrderRequest& request, const QueryCloudOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryCloudOrder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryCloudOrderOutcomeCallable CpdpClient::QueryCloudOrderCallable(const QueryCloudOrderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryCloudOrderOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryCloudOrder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::QueryCloudRefundOrderOutcome CpdpClient::QueryCloudRefundOrder(const QueryCloudRefundOrderRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryCloudRefundOrder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryCloudRefundOrderResponse rsp = QueryCloudRefundOrderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryCloudRefundOrderOutcome(rsp);
+        else
+            return QueryCloudRefundOrderOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryCloudRefundOrderOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryCloudRefundOrderAsync(const QueryCloudRefundOrderRequest& request, const QueryCloudRefundOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryCloudRefundOrder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryCloudRefundOrderOutcomeCallable CpdpClient::QueryCloudRefundOrderCallable(const QueryCloudRefundOrderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryCloudRefundOrderOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryCloudRefundOrder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::QueryCommonTransferRechargeOutcome CpdpClient::QueryCommonTransferRecharge(const QueryCommonTransferRechargeRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryCommonTransferRecharge");
@@ -5673,6 +5888,49 @@ CpdpClient::RefundOutcomeCallable CpdpClient::RefundCallable(const RefundRequest
     return task->get_future();
 }
 
+CpdpClient::RefundCloudOrderOutcome CpdpClient::RefundCloudOrder(const RefundCloudOrderRequest &request)
+{
+    auto outcome = MakeRequest(request, "RefundCloudOrder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RefundCloudOrderResponse rsp = RefundCloudOrderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RefundCloudOrderOutcome(rsp);
+        else
+            return RefundCloudOrderOutcome(o.GetError());
+    }
+    else
+    {
+        return RefundCloudOrderOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::RefundCloudOrderAsync(const RefundCloudOrderRequest& request, const RefundCloudOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RefundCloudOrder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::RefundCloudOrderOutcomeCallable CpdpClient::RefundCloudOrderCallable(const RefundCloudOrderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RefundCloudOrderOutcome()>>(
+        [this, request]()
+        {
+            return this->RefundCloudOrder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::RefundMemberTransactionOutcome CpdpClient::RefundMemberTransaction(const RefundMemberTransactionRequest &request)
 {
     auto outcome = MakeRequest(request, "RefundMemberTransaction");
@@ -6354,6 +6612,49 @@ CpdpClient::UnbindRelateAcctOutcomeCallable CpdpClient::UnbindRelateAcctCallable
         [this, request]()
         {
             return this->UnbindRelateAcct(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::UnifiedCloudOrderOutcome CpdpClient::UnifiedCloudOrder(const UnifiedCloudOrderRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnifiedCloudOrder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnifiedCloudOrderResponse rsp = UnifiedCloudOrderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnifiedCloudOrderOutcome(rsp);
+        else
+            return UnifiedCloudOrderOutcome(o.GetError());
+    }
+    else
+    {
+        return UnifiedCloudOrderOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::UnifiedCloudOrderAsync(const UnifiedCloudOrderRequest& request, const UnifiedCloudOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UnifiedCloudOrder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::UnifiedCloudOrderOutcomeCallable CpdpClient::UnifiedCloudOrderCallable(const UnifiedCloudOrderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UnifiedCloudOrderOutcome()>>(
+        [this, request]()
+        {
+            return this->UnifiedCloudOrder(request);
         }
     );
 

@@ -84,17 +84,17 @@ namespace TencentCloud
 
                     /**
                      * 获取图片名称，最多支持64个字符， 
-同一个EntityId，最大支持10张图。如果图片名称已存在，则会更新库中的图片。
+同一个EntityId，最大支持10张图。
                      * @return PicName 图片名称，最多支持64个字符， 
-同一个EntityId，最大支持10张图。如果图片名称已存在，则会更新库中的图片。
+同一个EntityId，最大支持10张图。
                      */
                     std::string GetPicName() const;
 
                     /**
                      * 设置图片名称，最多支持64个字符， 
-同一个EntityId，最大支持10张图。如果图片名称已存在，则会更新库中的图片。
+同一个EntityId，最大支持10张图。
                      * @param PicName 图片名称，最多支持64个字符， 
-同一个EntityId，最大支持10张图。如果图片名称已存在，则会更新库中的图片。
+同一个EntityId，最大支持10张图。
                      */
                     void SetPicName(const std::string& _picName);
 
@@ -221,7 +221,7 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
 
                     /**
                      * 图片名称，最多支持64个字符， 
-同一个EntityId，最大支持10张图。如果图片名称已存在，则会更新库中的图片。
+同一个EntityId，最大支持10张图。
                      */
                     std::string m_picName;
                     bool m_picNameHasBeenSet;

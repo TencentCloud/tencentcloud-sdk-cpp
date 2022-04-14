@@ -58,6 +58,7 @@ set(ame_public_header_model
   include/tencentcloud/ame/v20190916/model/SearchKTVMusicsResponse.h
   include/tencentcloud/ame/v20190916/model/DescribeItemByIdRequest.h
   include/tencentcloud/ame/v20190916/model/PutMusicOnTheShelvesResponse.h
+  include/tencentcloud/ame/v20190916/model/SyncRobotCommand.h
   include/tencentcloud/ame/v20190916/model/DescribeKTVSingerMusicsResponse.h
   include/tencentcloud/ame/v20190916/model/DescribeItemsResponse.h
   include/tencentcloud/ame/v20190916/model/DescribePkgOfflineMusicResponse.h
@@ -167,6 +168,7 @@ set(ame_src
   src/v20190916/model/SearchKTVMusicsResponse.cpp
   src/v20190916/model/DescribeItemByIdRequest.cpp
   src/v20190916/model/PutMusicOnTheShelvesResponse.cpp
+  src/v20190916/model/SyncRobotCommand.cpp
   src/v20190916/model/DescribeKTVSingerMusicsResponse.cpp
   src/v20190916/model/DescribeItemsResponse.cpp
   src/v20190916/model/DescribePkgOfflineMusicResponse.cpp

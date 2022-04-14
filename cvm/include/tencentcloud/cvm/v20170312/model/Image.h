@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cvm/v20170312/model/Snapshot.h>
+#include <tencentcloud/cvm/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -357,6 +358,28 @@ IMPORTFAILED-导入失败
                      */
                     bool SnapshotSetHasBeenSet() const;
 
+                    /**
+                     * 获取镜像关联的标签列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 镜像关联的标签列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置镜像关联的标签列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Tags 镜像关联的标签列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -458,6 +481,13 @@ IMPORTFAILED-导入失败
                      */
                     std::vector<Snapshot> m_snapshotSet;
                     bool m_snapshotSetHasBeenSet;
+
+                    /**
+                     * 镜像关联的标签列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

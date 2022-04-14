@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ame/v20190916/model/JoinRoomInput.h>
 #include <tencentcloud/ame/v20190916/model/ApplicationLicenseInput.h>
+#include <tencentcloud/ame/v20190916/model/SyncRobotCommand.h>
 
 
 namespace TencentCloud
@@ -102,6 +103,24 @@ namespace TencentCloud
                      */
                     bool ApplicationLicenseInputHasBeenSet() const;
 
+                    /**
+                     * 获取创建机器人时初始化参数。
+                     * @return SyncRobotCommands 创建机器人时初始化参数。
+                     */
+                    std::vector<SyncRobotCommand> GetSyncRobotCommands() const;
+
+                    /**
+                     * 设置创建机器人时初始化参数。
+                     * @param SyncRobotCommands 创建机器人时初始化参数。
+                     */
+                    void SetSyncRobotCommands(const std::vector<SyncRobotCommand>& _syncRobotCommands);
+
+                    /**
+                     * 判断参数 SyncRobotCommands 是否已赋值
+                     * @return SyncRobotCommands 是否已赋值
+                     */
+                    bool SyncRobotCommandsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -122,6 +141,12 @@ namespace TencentCloud
                      */
                     ApplicationLicenseInput m_applicationLicenseInput;
                     bool m_applicationLicenseInputHasBeenSet;
+
+                    /**
+                     * 创建机器人时初始化参数。
+                     */
+                    std::vector<SyncRobotCommand> m_syncRobotCommands;
+                    bool m_syncRobotCommandsHasBeenSet;
 
                 };
             }

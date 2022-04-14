@@ -642,6 +642,49 @@ CccClient::DescribePSTNActiveSessionListOutcomeCallable CccClient::DescribePSTNA
     return task->get_future();
 }
 
+CccClient::DescribeProtectedTelCdrOutcome CccClient::DescribeProtectedTelCdr(const DescribeProtectedTelCdrRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeProtectedTelCdr");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeProtectedTelCdrResponse rsp = DescribeProtectedTelCdrResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeProtectedTelCdrOutcome(rsp);
+        else
+            return DescribeProtectedTelCdrOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeProtectedTelCdrOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::DescribeProtectedTelCdrAsync(const DescribeProtectedTelCdrRequest& request, const DescribeProtectedTelCdrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeProtectedTelCdr(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::DescribeProtectedTelCdrOutcomeCallable CccClient::DescribeProtectedTelCdrCallable(const DescribeProtectedTelCdrRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeProtectedTelCdrOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeProtectedTelCdr(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::DescribeSeatUserListOutcome CccClient::DescribeSeatUserList(const DescribeSeatUserListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSeatUserList");

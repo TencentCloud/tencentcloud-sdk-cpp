@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取起始时间戳，Unix 时间戳
-                     * @return StartTimeStamp 起始时间戳，Unix 时间戳
+                     * 获取起始时间戳，Unix 秒级时间戳
+                     * @return StartTimeStamp 起始时间戳，Unix 秒级时间戳
                      */
                     int64_t GetStartTimeStamp() const;
 
                     /**
-                     * 设置起始时间戳，Unix 时间戳
-                     * @param StartTimeStamp 起始时间戳，Unix 时间戳
+                     * 设置起始时间戳，Unix 秒级时间戳
+                     * @param StartTimeStamp 起始时间戳，Unix 秒级时间戳
                      */
                     void SetStartTimeStamp(const int64_t& _startTimeStamp);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool StartTimeStampHasBeenSet() const;
 
                     /**
-                     * 获取结束时间戳，Unix 时间戳
-                     * @return EndTimeStamp 结束时间戳，Unix 时间戳
+                     * 获取结束时间戳，Unix 秒级时间戳
+                     * @return EndTimeStamp 结束时间戳，Unix 秒级时间戳
                      */
                     int64_t GetEndTimeStamp() const;
 
                     /**
-                     * 设置结束时间戳，Unix 时间戳
-                     * @param EndTimeStamp 结束时间戳，Unix 时间戳
+                     * 设置结束时间戳，Unix 秒级时间戳
+                     * @param EndTimeStamp 结束时间戳，Unix 秒级时间戳
                      */
                     void SetEndTimeStamp(const int64_t& _endTimeStamp);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool EndTimeStampHasBeenSet() const;
 
                     /**
-                     * 获取实例 ID（deprecated）
-                     * @return InstanceId 实例 ID（deprecated）
+                     * 获取实例 ID（废弃）
+                     * @return InstanceId 实例 ID（废弃）
                      */
                     int64_t GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID（deprecated）
-                     * @param InstanceId 实例 ID（deprecated）
+                     * 设置实例 ID（废弃）
+                     * @param InstanceId 实例 ID（废弃）
                      */
                     void SetInstanceId(const int64_t& _instanceId);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取返回数据条数，上限（deprecated）
-                     * @return Limit 返回数据条数，上限（deprecated）
+                     * 获取返回数据条数，上限（废弃）
+                     * @return Limit 返回数据条数，上限（废弃）
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数据条数，上限（deprecated）
-                     * @param Limit 返回数据条数，上限（deprecated）
+                     * 设置返回数据条数，上限（废弃）
+                     * @param Limit 返回数据条数，上限（废弃）
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移（deprecated）
-                     * @return Offset 偏移（deprecated）
+                     * 获取偏移（废弃）
+                     * @return Offset 偏移（废弃）
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移（deprecated）
-                     * @param Offset 偏移（deprecated）
+                     * 设置偏移（废弃）
+                     * @param Offset 偏移（废弃）
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取应用 ID
-                     * @return SdkAppId 应用 ID
+                     * 获取应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * @return SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
-                     * 设置应用 ID
-                     * @param SdkAppId 应用 ID
+                     * 设置应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * @param SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取分页尺寸，上限 100
-                     * @return PageSize 分页尺寸，上限 100
+                     * 获取分页尺寸（必填），上限 100
+                     * @return PageSize 分页尺寸（必填），上限 100
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置分页尺寸，上限 100
-                     * @param PageSize 分页尺寸，上限 100
+                     * 设置分页尺寸（必填），上限 100
+                     * @param PageSize 分页尺寸（必填），上限 100
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取分页页码，从 0 开始
-                     * @return PageNumber 分页页码，从 0 开始
+                     * 获取分页页码（必填），从 0 开始
+                     * @return PageNumber 分页页码（必填），从 0 开始
                      */
                     int64_t GetPageNumber() const;
 
                     /**
-                     * 设置分页页码，从 0 开始
-                     * @param PageNumber 分页页码，从 0 开始
+                     * 设置分页页码（必填），从 0 开始
+                     * @param PageNumber 分页页码（必填），从 0 开始
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
 
@@ -225,49 +225,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 起始时间戳，Unix 时间戳
+                     * 起始时间戳，Unix 秒级时间戳
                      */
                     int64_t m_startTimeStamp;
                     bool m_startTimeStampHasBeenSet;
 
                     /**
-                     * 结束时间戳，Unix 时间戳
+                     * 结束时间戳，Unix 秒级时间戳
                      */
                     int64_t m_endTimeStamp;
                     bool m_endTimeStampHasBeenSet;
 
                     /**
-                     * 实例 ID（deprecated）
+                     * 实例 ID（废弃）
                      */
                     int64_t m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 返回数据条数，上限（deprecated）
+                     * 返回数据条数，上限（废弃）
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移（deprecated）
+                     * 偏移（废弃）
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 应用 ID
+                     * 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
                      */
                     int64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 分页尺寸，上限 100
+                     * 分页尺寸（必填），上限 100
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 分页页码，从 0 开始
+                     * 分页页码（必填），从 0 开始
                      */
                     int64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
