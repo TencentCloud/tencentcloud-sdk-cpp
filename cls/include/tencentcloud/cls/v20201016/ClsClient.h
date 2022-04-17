@@ -893,7 +893,7 @@ namespace TencentCloud
                 ModifyTopicOutcomeCallable ModifyTopicCallable(const Model::ModifyTopicRequest& request);
 
                 /**
-                 *打开kafka协议消费
+                 *打开Kafka协议消费功能
                  * @param req OpenKafkaConsumerRequest
                  * @return OpenKafkaConsumerOutcome
                  */

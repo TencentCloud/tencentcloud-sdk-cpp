@@ -49,6 +49,8 @@
 #include <tencentcloud/cdn/v20180606/model/VideoSeek.h>
 #include <tencentcloud/cdn/v20180606/model/AwsPrivateAccess.h>
 #include <tencentcloud/cdn/v20180606/model/OssPrivateAccess.h>
+#include <tencentcloud/cdn/v20180606/model/HwPrivateAccess.h>
+#include <tencentcloud/cdn/v20180606/model/QnPrivateAccess.h>
 
 
 namespace TencentCloud
@@ -649,6 +651,50 @@ namespace TencentCloud
                      */
                     bool OssPrivateAccessHasBeenSet() const;
 
+                    /**
+                     * 获取华为云对象存储鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HwPrivateAccess 华为云对象存储鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    HwPrivateAccess GetHwPrivateAccess() const;
+
+                    /**
+                     * 设置华为云对象存储鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HwPrivateAccess 华为云对象存储鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHwPrivateAccess(const HwPrivateAccess& _hwPrivateAccess);
+
+                    /**
+                     * 判断参数 HwPrivateAccess 是否已赋值
+                     * @return HwPrivateAccess 是否已赋值
+                     */
+                    bool HwPrivateAccessHasBeenSet() const;
+
+                    /**
+                     * 获取七牛云对象存储鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QnPrivateAccess 七牛云对象存储鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    QnPrivateAccess GetQnPrivateAccess() const;
+
+                    /**
+                     * 设置七牛云对象存储鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param QnPrivateAccess 七牛云对象存储鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetQnPrivateAccess(const QnPrivateAccess& _qnPrivateAccess);
+
+                    /**
+                     * 判断参数 QnPrivateAccess 是否已赋值
+                     * @return QnPrivateAccess 是否已赋值
+                     */
+                    bool QnPrivateAccessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -832,6 +878,20 @@ namespace TencentCloud
                      */
                     OssPrivateAccess m_ossPrivateAccess;
                     bool m_ossPrivateAccessHasBeenSet;
+
+                    /**
+                     * 华为云对象存储鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    HwPrivateAccess m_hwPrivateAccess;
+                    bool m_hwPrivateAccessHasBeenSet;
+
+                    /**
+                     * 七牛云对象存储鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    QnPrivateAccess m_qnPrivateAccess;
+                    bool m_qnPrivateAccessHasBeenSet;
 
                 };
             }

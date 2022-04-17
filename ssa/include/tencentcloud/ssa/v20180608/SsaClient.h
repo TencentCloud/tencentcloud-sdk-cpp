@@ -55,6 +55,8 @@
 #include <tencentcloud/ssa/v20180608/model/DescribeSocAlertListResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeSocCheckItemListRequest.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeSocCheckItemListResponse.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeSocCheckResultListRequest.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeSocCheckResultListResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeSocCspmComplianceRequest.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeSocCspmComplianceResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeVulDetailRequest.h>
@@ -125,6 +127,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSocCheckItemListResponse> DescribeSocCheckItemListOutcome;
                 typedef std::future<DescribeSocCheckItemListOutcome> DescribeSocCheckItemListOutcomeCallable;
                 typedef std::function<void(const SsaClient*, const Model::DescribeSocCheckItemListRequest&, DescribeSocCheckItemListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSocCheckItemListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSocCheckResultListResponse> DescribeSocCheckResultListOutcome;
+                typedef std::future<DescribeSocCheckResultListOutcome> DescribeSocCheckResultListOutcomeCallable;
+                typedef std::function<void(const SsaClient*, const Model::DescribeSocCheckResultListRequest&, DescribeSocCheckResultListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSocCheckResultListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSocCspmComplianceResponse> DescribeSocCspmComplianceOutcome;
                 typedef std::future<DescribeSocCspmComplianceOutcome> DescribeSocCspmComplianceOutcomeCallable;
                 typedef std::function<void(const SsaClient*, const Model::DescribeSocCspmComplianceRequest&, DescribeSocCspmComplianceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSocCspmComplianceAsyncHandler;
@@ -283,6 +288,15 @@ namespace TencentCloud
                 DescribeSocCheckItemListOutcome DescribeSocCheckItemList(const Model::DescribeSocCheckItemListRequest &request);
                 void DescribeSocCheckItemListAsync(const Model::DescribeSocCheckItemListRequest& request, const DescribeSocCheckItemListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSocCheckItemListOutcomeCallable DescribeSocCheckItemListCallable(const Model::DescribeSocCheckItemListRequest& request);
+
+                /**
+                 *云安全配置检查项结果列表
+                 * @param req DescribeSocCheckResultListRequest
+                 * @return DescribeSocCheckResultListOutcome
+                 */
+                DescribeSocCheckResultListOutcome DescribeSocCheckResultList(const Model::DescribeSocCheckResultListRequest &request);
+                void DescribeSocCheckResultListAsync(const Model::DescribeSocCheckResultListRequest& request, const DescribeSocCheckResultListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSocCheckResultListOutcomeCallable DescribeSocCheckResultListCallable(const Model::DescribeSocCheckResultListRequest& request);
 
                 /**
                  *合规详情项

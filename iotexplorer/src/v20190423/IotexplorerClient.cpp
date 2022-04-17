@@ -3351,6 +3351,49 @@ IotexplorerClient::ModifyTopicRuleOutcomeCallable IotexplorerClient::ModifyTopic
     return task->get_future();
 }
 
+IotexplorerClient::PublishBroadcastMessageOutcome IotexplorerClient::PublishBroadcastMessage(const PublishBroadcastMessageRequest &request)
+{
+    auto outcome = MakeRequest(request, "PublishBroadcastMessage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PublishBroadcastMessageResponse rsp = PublishBroadcastMessageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PublishBroadcastMessageOutcome(rsp);
+        else
+            return PublishBroadcastMessageOutcome(o.GetError());
+    }
+    else
+    {
+        return PublishBroadcastMessageOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::PublishBroadcastMessageAsync(const PublishBroadcastMessageRequest& request, const PublishBroadcastMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PublishBroadcastMessage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::PublishBroadcastMessageOutcomeCallable IotexplorerClient::PublishBroadcastMessageCallable(const PublishBroadcastMessageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PublishBroadcastMessageOutcome()>>(
+        [this, request]()
+        {
+            return this->PublishBroadcastMessage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::PublishMessageOutcome IotexplorerClient::PublishMessage(const PublishMessageRequest &request)
 {
     auto outcome = MakeRequest(request, "PublishMessage");

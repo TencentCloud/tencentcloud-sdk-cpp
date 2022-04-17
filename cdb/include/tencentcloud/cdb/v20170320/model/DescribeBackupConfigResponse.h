@@ -116,6 +116,66 @@ namespace TencentCloud
                      */
                     bool BackupTimeWindowHasBeenSet() const;
 
+                    /**
+                     * 获取定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off
+                     * @return EnableBackupPeriodSave 定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off
+                     */
+                    std::string GetEnableBackupPeriodSave() const;
+
+                    /**
+                     * 判断参数 EnableBackupPeriodSave 是否已赋值
+                     * @return EnableBackupPeriodSave 是否已赋值
+                     */
+                    bool EnableBackupPeriodSaveHasBeenSet() const;
+
+                    /**
+                     * 获取定期保留最长天数，最小值：90，最大值：3650，默认值：1080
+                     * @return BackupPeriodSaveDays 定期保留最长天数，最小值：90，最大值：3650，默认值：1080
+                     */
+                    int64_t GetBackupPeriodSaveDays() const;
+
+                    /**
+                     * 判断参数 BackupPeriodSaveDays 是否已赋值
+                     * @return BackupPeriodSaveDays 是否已赋值
+                     */
+                    bool BackupPeriodSaveDaysHasBeenSet() const;
+
+                    /**
+                     * 获取定期保留策略周期，可取值：weekly - 周，monthly - 月， quarterly - 季度，yearly - 年，默认为monthly
+                     * @return BackupPeriodSaveInterval 定期保留策略周期，可取值：weekly - 周，monthly - 月， quarterly - 季度，yearly - 年，默认为monthly
+                     */
+                    std::string GetBackupPeriodSaveInterval() const;
+
+                    /**
+                     * 判断参数 BackupPeriodSaveInterval 是否已赋值
+                     * @return BackupPeriodSaveInterval 是否已赋值
+                     */
+                    bool BackupPeriodSaveIntervalHasBeenSet() const;
+
+                    /**
+                     * 获取定期保留的备份数量，最小值为1，最大值不超过定期保留策略周期内常规备份个数，默认值为1
+                     * @return BackupPeriodSaveCount 定期保留的备份数量，最小值为1，最大值不超过定期保留策略周期内常规备份个数，默认值为1
+                     */
+                    int64_t GetBackupPeriodSaveCount() const;
+
+                    /**
+                     * 判断参数 BackupPeriodSaveCount 是否已赋值
+                     * @return BackupPeriodSaveCount 是否已赋值
+                     */
+                    bool BackupPeriodSaveCountHasBeenSet() const;
+
+                    /**
+                     * 获取定期保留策略周期起始日期，格式：YYYY-MM-dd HH:mm:ss
+                     * @return StartBackupPeriodSaveDate 定期保留策略周期起始日期，格式：YYYY-MM-dd HH:mm:ss
+                     */
+                    std::string GetStartBackupPeriodSaveDate() const;
+
+                    /**
+                     * 判断参数 StartBackupPeriodSaveDate 是否已赋值
+                     * @return StartBackupPeriodSaveDate 是否已赋值
+                     */
+                    bool StartBackupPeriodSaveDateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -153,6 +213,36 @@ namespace TencentCloud
                      */
                     CommonTimeWindow m_backupTimeWindow;
                     bool m_backupTimeWindowHasBeenSet;
+
+                    /**
+                     * 定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off
+                     */
+                    std::string m_enableBackupPeriodSave;
+                    bool m_enableBackupPeriodSaveHasBeenSet;
+
+                    /**
+                     * 定期保留最长天数，最小值：90，最大值：3650，默认值：1080
+                     */
+                    int64_t m_backupPeriodSaveDays;
+                    bool m_backupPeriodSaveDaysHasBeenSet;
+
+                    /**
+                     * 定期保留策略周期，可取值：weekly - 周，monthly - 月， quarterly - 季度，yearly - 年，默认为monthly
+                     */
+                    std::string m_backupPeriodSaveInterval;
+                    bool m_backupPeriodSaveIntervalHasBeenSet;
+
+                    /**
+                     * 定期保留的备份数量，最小值为1，最大值不超过定期保留策略周期内常规备份个数，默认值为1
+                     */
+                    int64_t m_backupPeriodSaveCount;
+                    bool m_backupPeriodSaveCountHasBeenSet;
+
+                    /**
+                     * 定期保留策略周期起始日期，格式：YYYY-MM-dd HH:mm:ss
+                     */
+                    std::string m_startBackupPeriodSaveDate;
+                    bool m_startBackupPeriodSaveDateHasBeenSet;
 
                 };
             }
