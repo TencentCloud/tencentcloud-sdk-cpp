@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取备份文件的保留时间，单位为天。最小值为7天，最大值为732天。
-                     * @return ExpireDays 备份文件的保留时间，单位为天。最小值为7天，最大值为732天。
+                     * 获取备份文件的保留时间，单位为天。最小值为7天，最大值为1830天。
+                     * @return ExpireDays 备份文件的保留时间，单位为天。最小值为7天，最大值为1830天。
                      */
                     int64_t GetExpireDays() const;
 
                     /**
-                     * 设置备份文件的保留时间，单位为天。最小值为7天，最大值为732天。
-                     * @param ExpireDays 备份文件的保留时间，单位为天。最小值为7天，最大值为732天。
+                     * 设置备份文件的保留时间，单位为天。最小值为7天，最大值为1830天。
+                     * @param ExpireDays 备份文件的保留时间，单位为天。最小值为7天，最大值为1830天。
                      */
                     void SetExpireDays(const int64_t& _expireDays);
 
@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool BackupMethodHasBeenSet() const;
 
                     /**
-                     * 获取binlog的保留时间，单位为天。最小值为7天，最大值为732天。该值的设置不能大于备份文件的保留时间。
-                     * @return BinlogExpireDays binlog的保留时间，单位为天。最小值为7天，最大值为732天。该值的设置不能大于备份文件的保留时间。
+                     * 获取binlog的保留时间，单位为天。最小值为7天，最大值为1830天。该值的设置不能大于备份文件的保留时间。
+                     * @return BinlogExpireDays binlog的保留时间，单位为天。最小值为7天，最大值为1830天。该值的设置不能大于备份文件的保留时间。
                      */
                     int64_t GetBinlogExpireDays() const;
 
                     /**
-                     * 设置binlog的保留时间，单位为天。最小值为7天，最大值为732天。该值的设置不能大于备份文件的保留时间。
-                     * @param BinlogExpireDays binlog的保留时间，单位为天。最小值为7天，最大值为732天。该值的设置不能大于备份文件的保留时间。
+                     * 设置binlog的保留时间，单位为天。最小值为7天，最大值为1830天。该值的设置不能大于备份文件的保留时间。
+                     * @param BinlogExpireDays binlog的保留时间，单位为天。最小值为7天，最大值为1830天。该值的设置不能大于备份文件的保留时间。
                      */
                     void SetBinlogExpireDays(const int64_t& _binlogExpireDays);
 
@@ -268,7 +268,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 备份文件的保留时间，单位为天。最小值为7天，最大值为732天。
+                     * 备份文件的保留时间，单位为天。最小值为7天，最大值为1830天。
                      */
                     int64_t m_expireDays;
                     bool m_expireDaysHasBeenSet;
@@ -286,7 +286,7 @@ namespace TencentCloud
                     bool m_backupMethodHasBeenSet;
 
                     /**
-                     * binlog的保留时间，单位为天。最小值为7天，最大值为732天。该值的设置不能大于备份文件的保留时间。
+                     * binlog的保留时间，单位为天。最小值为7天，最大值为1830天。该值的设置不能大于备份文件的保留时间。
                      */
                     int64_t m_binlogExpireDays;
                     bool m_binlogExpireDaysHasBeenSet;

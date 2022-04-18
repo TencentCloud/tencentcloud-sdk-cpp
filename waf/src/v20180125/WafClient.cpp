@@ -126,6 +126,49 @@ WafClient::AddDomainWhiteRuleOutcomeCallable WafClient::AddDomainWhiteRuleCallab
     return task->get_future();
 }
 
+WafClient::AddSpartaProtectionOutcome WafClient::AddSpartaProtection(const AddSpartaProtectionRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddSpartaProtection");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddSpartaProtectionResponse rsp = AddSpartaProtectionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddSpartaProtectionOutcome(rsp);
+        else
+            return AddSpartaProtectionOutcome(o.GetError());
+    }
+    else
+    {
+        return AddSpartaProtectionOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::AddSpartaProtectionAsync(const AddSpartaProtectionRequest& request, const AddSpartaProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddSpartaProtection(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::AddSpartaProtectionOutcomeCallable WafClient::AddSpartaProtectionCallable(const AddSpartaProtectionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddSpartaProtectionOutcome()>>(
+        [this, request]()
+        {
+            return this->AddSpartaProtection(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::CreateAccessExportOutcome WafClient::CreateAccessExport(const CreateAccessExportRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAccessExport");

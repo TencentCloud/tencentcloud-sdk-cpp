@@ -32,7 +32,8 @@ UserNotice::UserNotice() :
     m_phoneInnerIntervalHasBeenSet(false),
     m_phoneCircleIntervalHasBeenSet(false),
     m_needPhoneArriveNoticeHasBeenSet(false),
-    m_phoneCallTypeHasBeenSet(false)
+    m_phoneCallTypeHasBeenSet(false),
+    m_weekdayHasBeenSet(false)
 {
 }
 
@@ -173,6 +174,19 @@ CoreInternalOutcome UserNotice::Deserialize(const rapidjson::Value &value)
         m_phoneCallTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Weekday") && !value["Weekday"].IsNull())
+    {
+        if (!value["Weekday"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `UserNotice.Weekday` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Weekday"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_weekday.push_back((*itr).GetInt64());
+        }
+        m_weekdayHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -294,6 +308,19 @@ void UserNotice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "PhoneCallType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_phoneCallType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_weekdayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Weekday";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_weekday.begin(); itr != m_weekday.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 }
@@ -489,5 +516,21 @@ void UserNotice::SetPhoneCallType(const string& _phoneCallType)
 bool UserNotice::PhoneCallTypeHasBeenSet() const
 {
     return m_phoneCallTypeHasBeenSet;
+}
+
+vector<int64_t> UserNotice::GetWeekday() const
+{
+    return m_weekday;
+}
+
+void UserNotice::SetWeekday(const vector<int64_t>& _weekday)
+{
+    m_weekday = _weekday;
+    m_weekdayHasBeenSet = true;
+}
+
+bool UserNotice::WeekdayHasBeenSet() const
+{
+    return m_weekdayHasBeenSet;
 }
 

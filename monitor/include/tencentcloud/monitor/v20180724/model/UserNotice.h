@@ -310,6 +310,28 @@ namespace TencentCloud
                      */
                     bool PhoneCallTypeHasBeenSet() const;
 
+                    /**
+                     * 获取通知周期 1-7表示周一到周日
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Weekday 通知周期 1-7表示周一到周日
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> GetWeekday() const;
+
+                    /**
+                     * 设置通知周期 1-7表示周一到周日
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Weekday 通知周期 1-7表示周一到周日
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWeekday(const std::vector<int64_t>& _weekday);
+
+                    /**
+                     * 判断参数 Weekday 是否已赋值
+                     * @return Weekday 是否已赋值
+                     */
+                    bool WeekdayHasBeenSet() const;
+
                 private:
 
                     /**
@@ -395,6 +417,13 @@ namespace TencentCloud
                      */
                     std::string m_phoneCallType;
                     bool m_phoneCallTypeHasBeenSet;
+
+                    /**
+                     * 通知周期 1-7表示周一到周日
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_weekday;
+                    bool m_weekdayHasBeenSet;
 
                 };
             }

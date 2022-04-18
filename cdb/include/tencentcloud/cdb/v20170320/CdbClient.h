@@ -1795,7 +1795,7 @@ namespace TencentCloud
                 RenewDBInstanceOutcomeCallable RenewDBInstanceCallable(const Model::RenewDBInstanceRequest& request);
 
                 /**
-                 *重置实例ROOT账，初始化账号权限
+                 *重置实例ROOT账号，初始化账号权限
                  * @param req ResetRootAccountRequest
                  * @return ResetRootAccountOutcome
                  */

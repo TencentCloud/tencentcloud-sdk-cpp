@@ -95,14 +95,14 @@ namespace TencentCloud
                     bool SubMchNameHasBeenSet() const;
 
                     /**
-                     * 获取子账号号
-                     * @return SubAcctNo 子账号号
+                     * 获取子账号
+                     * @return SubAcctNo 子账号
                      */
                     std::string GetSubAcctNo() const;
 
                     /**
-                     * 设置子账号号
-                     * @param SubAcctNo 子账号号
+                     * 设置子账号
+                     * @param SubAcctNo 子账号
                      */
                     void SetSubAcctNo(const std::string& _subAcctNo);
 
@@ -302,7 +302,7 @@ merchant:商户子账户
                     bool m_subMchNameHasBeenSet;
 
                     /**
-                     * 子账号号
+                     * 子账号
                      */
                     std::string m_subAcctNo;
                     bool m_subAcctNoHasBeenSet;

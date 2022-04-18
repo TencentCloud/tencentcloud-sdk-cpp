@@ -25,7 +25,8 @@ URLNotice::URLNotice() :
     m_isValidHasBeenSet(false),
     m_validationCodeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_weekdayHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,19 @@ CoreInternalOutcome URLNotice::Deserialize(const rapidjson::Value &value)
         m_endTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Weekday") && !value["Weekday"].IsNull())
+    {
+        if (!value["Weekday"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `URLNotice.Weekday` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Weekday"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_weekday.push_back((*itr).GetInt64());
+        }
+        m_weekdayHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +143,19 @@ void URLNotice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTime, allocator);
+    }
+
+    if (m_weekdayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Weekday";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_weekday.begin(); itr != m_weekday.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 }
@@ -212,5 +239,21 @@ void URLNotice::SetEndTime(const int64_t& _endTime)
 bool URLNotice::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+vector<int64_t> URLNotice::GetWeekday() const
+{
+    return m_weekday;
+}
+
+void URLNotice::SetWeekday(const vector<int64_t>& _weekday)
+{
+    m_weekday = _weekday;
+    m_weekdayHasBeenSet = true;
+}
+
+bool URLNotice::WeekdayHasBeenSet() const
+{
+    return m_weekdayHasBeenSet;
 }
 

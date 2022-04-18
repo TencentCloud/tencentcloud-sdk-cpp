@@ -209,14 +209,14 @@ namespace TencentCloud
                     bool RuleWordHasBeenSet() const;
 
                     /**
-                     * 获取扫描监测url"
-                     * @return ScanUrl 扫描监测url"
+                     * 获取扫描监测url
+                     * @return ScanUrl 扫描监测url
                      */
                     std::string GetScanUrl() const;
 
                     /**
-                     * 设置扫描监测url"
-                     * @param ScanUrl 扫描监测url"
+                     * 设置扫描监测url
+                     * @param ScanUrl 扫描监测url
                      */
                     void SetScanUrl(const std::string& _scanUrl);
 
@@ -391,7 +391,7 @@ namespace TencentCloud
                     bool m_ruleWordHasBeenSet;
 
                     /**
-                     * 扫描监测url"
+                     * 扫描监测url
                      */
                     std::string m_scanUrl;
                     bool m_scanUrlHasBeenSet;

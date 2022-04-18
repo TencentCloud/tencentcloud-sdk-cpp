@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取任务持续时间时间，单位秒，手动关闭任务传-1。
-                     * @return Duration 任务持续时间时间，单位秒，手动关闭任务传-1。
+                     * 获取任务持续时间，单位秒，手动关闭任务传-1。
+                     * @return Duration 任务持续时间，单位秒，手动关闭任务传-1。
                      */
                     int64_t GetDuration() const;
 
                     /**
-                     * 设置任务持续时间时间，单位秒，手动关闭任务传-1。
-                     * @param Duration 任务持续时间时间，单位秒，手动关闭任务传-1。
+                     * 设置任务持续时间，单位秒，手动关闭任务传-1。
+                     * @param Duration 任务持续时间，单位秒，手动关闭任务传-1。
                      */
                     void SetDuration(const int64_t& _duration);
 
@@ -213,7 +213,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 任务持续时间时间，单位秒，手动关闭任务传-1。
+                     * 任务持续时间，单位秒，手动关闭任务传-1。
                      */
                     int64_t m_duration;
                     bool m_durationHasBeenSet;
