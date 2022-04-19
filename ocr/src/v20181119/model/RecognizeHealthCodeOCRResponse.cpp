@@ -25,8 +25,12 @@ using namespace std;
 
 RecognizeHealthCodeOCRResponse::RecognizeHealthCodeOCRResponse() :
     m_nameHasBeenSet(false),
+    m_iDNumberHasBeenSet(false),
     m_timeHasBeenSet(false),
-    m_colorHasBeenSet(false)
+    m_colorHasBeenSet(false),
+    m_testingIntervalHasBeenSet(false),
+    m_testingResultHasBeenSet(false),
+    m_testingTimeHasBeenSet(false)
 {
 }
 
@@ -74,6 +78,16 @@ CoreInternalOutcome RecognizeHealthCodeOCRResponse::Deserialize(const string &pa
         m_nameHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IDNumber") && !rsp["IDNumber"].IsNull())
+    {
+        if (!rsp["IDNumber"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IDNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iDNumber = string(rsp["IDNumber"].GetString());
+        m_iDNumberHasBeenSet = true;
+    }
+
     if (rsp.HasMember("Time") && !rsp["Time"].IsNull())
     {
         if (!rsp["Time"].IsString())
@@ -94,6 +108,36 @@ CoreInternalOutcome RecognizeHealthCodeOCRResponse::Deserialize(const string &pa
         m_colorHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TestingInterval") && !rsp["TestingInterval"].IsNull())
+    {
+        if (!rsp["TestingInterval"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TestingInterval` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_testingInterval = string(rsp["TestingInterval"].GetString());
+        m_testingIntervalHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TestingResult") && !rsp["TestingResult"].IsNull())
+    {
+        if (!rsp["TestingResult"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TestingResult` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_testingResult = string(rsp["TestingResult"].GetString());
+        m_testingResultHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TestingTime") && !rsp["TestingTime"].IsNull())
+    {
+        if (!rsp["TestingTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TestingTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_testingTime = string(rsp["TestingTime"].GetString());
+        m_testingTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -112,6 +156,14 @@ string RecognizeHealthCodeOCRResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_iDNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IDNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iDNumber.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_timeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -126,6 +178,30 @@ string RecognizeHealthCodeOCRResponse::ToJsonString() const
         string key = "Color";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_color.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_testingIntervalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TestingInterval";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_testingInterval.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_testingResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TestingResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_testingResult.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_testingTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TestingTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_testingTime.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -150,6 +226,16 @@ bool RecognizeHealthCodeOCRResponse::NameHasBeenSet() const
     return m_nameHasBeenSet;
 }
 
+string RecognizeHealthCodeOCRResponse::GetIDNumber() const
+{
+    return m_iDNumber;
+}
+
+bool RecognizeHealthCodeOCRResponse::IDNumberHasBeenSet() const
+{
+    return m_iDNumberHasBeenSet;
+}
+
 string RecognizeHealthCodeOCRResponse::GetTime() const
 {
     return m_time;
@@ -168,6 +254,36 @@ string RecognizeHealthCodeOCRResponse::GetColor() const
 bool RecognizeHealthCodeOCRResponse::ColorHasBeenSet() const
 {
     return m_colorHasBeenSet;
+}
+
+string RecognizeHealthCodeOCRResponse::GetTestingInterval() const
+{
+    return m_testingInterval;
+}
+
+bool RecognizeHealthCodeOCRResponse::TestingIntervalHasBeenSet() const
+{
+    return m_testingIntervalHasBeenSet;
+}
+
+string RecognizeHealthCodeOCRResponse::GetTestingResult() const
+{
+    return m_testingResult;
+}
+
+bool RecognizeHealthCodeOCRResponse::TestingResultHasBeenSet() const
+{
+    return m_testingResultHasBeenSet;
+}
+
+string RecognizeHealthCodeOCRResponse::GetTestingTime() const
+{
+    return m_testingTime;
+}
+
+bool RecognizeHealthCodeOCRResponse::TestingTimeHasBeenSet() const
+{
+    return m_testingTimeHasBeenSet;
 }
 
 

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取持码人姓名
-                     * @return Name 持码人姓名
+                     * 获取持码人姓名，如：王*
+                     * @return Name 持码人姓名，如：王*
                      */
                     std::string GetName() const;
 
@@ -54,6 +54,18 @@ namespace TencentCloud
                      * @return Name 是否已赋值
                      */
                     bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取持码人身份证号，如：11**************01
+                     * @return IDNumber 持码人身份证号，如：11**************01
+                     */
+                    std::string GetIDNumber() const;
+
+                    /**
+                     * 判断参数 IDNumber 是否已赋值
+                     * @return IDNumber 是否已赋值
+                     */
+                    bool IDNumberHasBeenSet() const;
 
                     /**
                      * 获取健康码更新时间，格式为：XXXX-XX-XX XX:XX:XX
@@ -79,13 +91,55 @@ namespace TencentCloud
                      */
                     bool ColorHasBeenSet() const;
 
+                    /**
+                     * 获取核酸检测间隔时长：24小时、48小时、72小时、暂无核酸检测记录
+                     * @return TestingInterval 核酸检测间隔时长：24小时、48小时、72小时、暂无核酸检测记录
+                     */
+                    std::string GetTestingInterval() const;
+
+                    /**
+                     * 判断参数 TestingInterval 是否已赋值
+                     * @return TestingInterval 是否已赋值
+                     */
+                    bool TestingIntervalHasBeenSet() const;
+
+                    /**
+                     * 获取核酸检测结果：阴性、阳性、暂无核酸检测记录
+                     * @return TestingResult 核酸检测结果：阴性、阳性、暂无核酸检测记录
+                     */
+                    std::string GetTestingResult() const;
+
+                    /**
+                     * 判断参数 TestingResult 是否已赋值
+                     * @return TestingResult 是否已赋值
+                     */
+                    bool TestingResultHasBeenSet() const;
+
+                    /**
+                     * 获取核酸检测时间，格式为：XXXX-XX-XX XX:XX
+                     * @return TestingTime 核酸检测时间，格式为：XXXX-XX-XX XX:XX
+                     */
+                    std::string GetTestingTime() const;
+
+                    /**
+                     * 判断参数 TestingTime 是否已赋值
+                     * @return TestingTime 是否已赋值
+                     */
+                    bool TestingTimeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 持码人姓名
+                     * 持码人姓名，如：王*
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * 持码人身份证号，如：11**************01
+                     */
+                    std::string m_iDNumber;
+                    bool m_iDNumberHasBeenSet;
 
                     /**
                      * 健康码更新时间，格式为：XXXX-XX-XX XX:XX:XX
@@ -98,6 +152,24 @@ namespace TencentCloud
                      */
                     std::string m_color;
                     bool m_colorHasBeenSet;
+
+                    /**
+                     * 核酸检测间隔时长：24小时、48小时、72小时、暂无核酸检测记录
+                     */
+                    std::string m_testingInterval;
+                    bool m_testingIntervalHasBeenSet;
+
+                    /**
+                     * 核酸检测结果：阴性、阳性、暂无核酸检测记录
+                     */
+                    std::string m_testingResult;
+                    bool m_testingResultHasBeenSet;
+
+                    /**
+                     * 核酸检测时间，格式为：XXXX-XX-XX XX:XX
+                     */
+                    std::string m_testingTime;
+                    bool m_testingTimeHasBeenSet;
 
                 };
             }

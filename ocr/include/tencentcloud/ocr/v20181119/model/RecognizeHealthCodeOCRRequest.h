@@ -106,6 +106,48 @@ namespace TencentCloud
                      */
                     bool ImageUrlHasBeenSet() const;
 
+                    /**
+                     * 获取需要识别的健康码类型列表，为空或不填表示默认为粤康码。
+
+1:粤康码
+
+2:随申码
+
+3:健康宝
+                     * @return Type 需要识别的健康码类型列表，为空或不填表示默认为粤康码。
+
+1:粤康码
+
+2:随申码
+
+3:健康宝
+                     */
+                    int64_t GetType() const;
+
+                    /**
+                     * 设置需要识别的健康码类型列表，为空或不填表示默认为粤康码。
+
+1:粤康码
+
+2:随申码
+
+3:健康宝
+                     * @param Type 需要识别的健康码类型列表，为空或不填表示默认为粤康码。
+
+1:粤康码
+
+2:随申码
+
+3:健康宝
+                     */
+                    void SetType(const int64_t& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -126,6 +168,18 @@ namespace TencentCloud
                      */
                     std::string m_imageUrl;
                     bool m_imageUrlHasBeenSet;
+
+                    /**
+                     * 需要识别的健康码类型列表，为空或不填表示默认为粤康码。
+
+1:粤康码
+
+2:随申码
+
+3:健康宝
+                     */
+                    int64_t m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

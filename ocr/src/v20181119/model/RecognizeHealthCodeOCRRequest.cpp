@@ -24,7 +24,8 @@ using namespace std;
 
 RecognizeHealthCodeOCRRequest::RecognizeHealthCodeOCRRequest() :
     m_imageBase64HasBeenSet(false),
-    m_imageUrlHasBeenSet(false)
+    m_imageUrlHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string RecognizeHealthCodeOCRRequest::ToJsonString() const
         string key = "ImageUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_imageUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_type, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void RecognizeHealthCodeOCRRequest::SetImageUrl(const string& _imageUrl)
 bool RecognizeHealthCodeOCRRequest::ImageUrlHasBeenSet() const
 {
     return m_imageUrlHasBeenSet;
+}
+
+int64_t RecognizeHealthCodeOCRRequest::GetType() const
+{
+    return m_type;
+}
+
+void RecognizeHealthCodeOCRRequest::SetType(const int64_t& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool RecognizeHealthCodeOCRRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 
