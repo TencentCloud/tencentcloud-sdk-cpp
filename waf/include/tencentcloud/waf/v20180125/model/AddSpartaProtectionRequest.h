@@ -314,14 +314,14 @@ namespace TencentCloud
                     bool UpstreamDomainHasBeenSet() const;
 
                     /**
-                     * 获取UpstreamType=0时，填次字段表示回源ip
-                     * @return SrcList UpstreamType=0时，填次字段表示回源ip
+                     * 获取UpstreamType=0时，填次字段表示回源IP
+                     * @return SrcList UpstreamType=0时，填次字段表示回源IP
                      */
                     std::vector<std::string> GetSrcList() const;
 
                     /**
-                     * 设置UpstreamType=0时，填次字段表示回源ip
-                     * @param SrcList UpstreamType=0时，填次字段表示回源ip
+                     * 设置UpstreamType=0时，填次字段表示回源IP
+                     * @param SrcList UpstreamType=0时，填次字段表示回源IP
                      */
                     void SetSrcList(const std::vector<std::string>& _srcList);
 
@@ -440,14 +440,14 @@ namespace TencentCloud
                     bool InstanceIDHasBeenSet() const;
 
                     /**
-                     * 获取anycast ip类型开关： 0 普通ip 1 Anycast ip
-                     * @return Anycast anycast ip类型开关： 0 普通ip 1 Anycast ip
+                     * 获取anycast IP类型开关： 0 普通IP 1 Anycast IP
+                     * @return Anycast anycast IP类型开关： 0 普通IP 1 Anycast IP
                      */
                     int64_t GetAnycast() const;
 
                     /**
-                     * 设置anycast ip类型开关： 0 普通ip 1 Anycast ip
-                     * @param Anycast anycast ip类型开关： 0 普通ip 1 Anycast ip
+                     * 设置anycast IP类型开关： 0 普通IP 1 Anycast IP
+                     * @param Anycast anycast IP类型开关： 0 普通IP 1 Anycast IP
                      */
                     void SetAnycast(const int64_t& _anycast);
 
@@ -456,6 +456,24 @@ namespace TencentCloud
                      * @return Anycast 是否已赋值
                      */
                     bool AnycastHasBeenSet() const;
+
+                    /**
+                     * 获取src权重
+                     * @return Weights src权重
+                     */
+                    std::vector<int64_t> GetWeights() const;
+
+                    /**
+                     * 设置src权重
+                     * @param Weights src权重
+                     */
+                    void SetWeights(const std::vector<int64_t>& _weights);
+
+                    /**
+                     * 判断参数 Weights 是否已赋值
+                     * @return Weights 是否已赋值
+                     */
+                    bool WeightsHasBeenSet() const;
 
                 private:
 
@@ -550,7 +568,7 @@ namespace TencentCloud
                     bool m_upstreamDomainHasBeenSet;
 
                     /**
-                     * UpstreamType=0时，填次字段表示回源ip
+                     * UpstreamType=0时，填次字段表示回源IP
                      */
                     std::vector<std::string> m_srcList;
                     bool m_srcListHasBeenSet;
@@ -592,10 +610,16 @@ namespace TencentCloud
                     bool m_instanceIDHasBeenSet;
 
                     /**
-                     * anycast ip类型开关： 0 普通ip 1 Anycast ip
+                     * anycast IP类型开关： 0 普通IP 1 Anycast IP
                      */
                     int64_t m_anycast;
                     bool m_anycastHasBeenSet;
+
+                    /**
+                     * src权重
+                     */
+                    std::vector<int64_t> m_weights;
+                    bool m_weightsHasBeenSet;
 
                 };
             }

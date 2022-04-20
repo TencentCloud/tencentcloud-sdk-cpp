@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool OldIpExpiredTimeHasBeenSet() const;
 
                     /**
-                     * 获取切换后IP地址所属私有网络统一ID，若为基础网络，该字段为空
-                     * @return NewUniqVpcId 切换后IP地址所属私有网络统一ID，若为基础网络，该字段为空
+                     * 获取切换后IP地址的归属私有网络统一ID，若为基础网络，该字段为空
+                     * @return NewUniqVpcId 切换后IP地址的归属私有网络统一ID，若为基础网络，该字段为空
                      */
                     std::string GetNewUniqVpcId() const;
 
                     /**
-                     * 设置切换后IP地址所属私有网络统一ID，若为基础网络，该字段为空
-                     * @param NewUniqVpcId 切换后IP地址所属私有网络统一ID，若为基础网络，该字段为空
+                     * 设置切换后IP地址的归属私有网络统一ID，若为基础网络，该字段为空
+                     * @param NewUniqVpcId 切换后IP地址的归属私有网络统一ID，若为基础网络，该字段为空
                      */
                     void SetNewUniqVpcId(const std::string& _newUniqVpcId);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool NewUniqVpcIdHasBeenSet() const;
 
                     /**
-                     * 获取切换后IP地址所属子网统一ID，若为基础网络，该字段为空
-                     * @return NewUniqSubnetId 切换后IP地址所属子网统一ID，若为基础网络，该字段为空
+                     * 获取切换后IP地址的归属子网统一ID，若为基础网络，该字段为空
+                     * @return NewUniqSubnetId 切换后IP地址的归属子网统一ID，若为基础网络，该字段为空
                      */
                     std::string GetNewUniqSubnetId() const;
 
                     /**
-                     * 设置切换后IP地址所属子网统一ID，若为基础网络，该字段为空
-                     * @param NewUniqSubnetId 切换后IP地址所属子网统一ID，若为基础网络，该字段为空
+                     * 设置切换后IP地址的归属子网统一ID，若为基础网络，该字段为空
+                     * @param NewUniqSubnetId 切换后IP地址的归属子网统一ID，若为基础网络，该字段为空
                      */
                     void SetNewUniqSubnetId(const std::string& _newUniqSubnetId);
 
@@ -148,13 +148,13 @@ namespace TencentCloud
                     bool m_oldIpExpiredTimeHasBeenSet;
 
                     /**
-                     * 切换后IP地址所属私有网络统一ID，若为基础网络，该字段为空
+                     * 切换后IP地址的归属私有网络统一ID，若为基础网络，该字段为空
                      */
                     std::string m_newUniqVpcId;
                     bool m_newUniqVpcIdHasBeenSet;
 
                     /**
-                     * 切换后IP地址所属子网统一ID，若为基础网络，该字段为空
+                     * 切换后IP地址的归属子网统一ID，若为基础网络，该字段为空
                      */
                     std::string m_newUniqSubnetId;
                     bool m_newUniqSubnetIdHasBeenSet;

@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分页
-                     * @return Limit 分页
+                     * 获取分页大小
+                     * @return Limit 分页大小
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置分页
-                     * @param Limit 分页
+                     * 设置分页大小
+                     * @param Limit 分页大小
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页
-                     * @return Offset 分页
+                     * 获取分页起始位置
+                     * @return Offset 分页起始位置
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页
-                     * @param Offset 分页
+                     * 设置分页起始位置
+                     * @param Offset 分页起始位置
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件
-                     * @return Filters 过滤条件
+                     * 获取过滤条件，支持后端通道ID（UpstreamId）、后端通道名字（UpstreamName）过滤查询
+                     * @return Filters 过滤条件，支持后端通道ID（UpstreamId）、后端通道名字（UpstreamName）过滤查询
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件
-                     * @param Filters 过滤条件
+                     * 设置过滤条件，支持后端通道ID（UpstreamId）、后端通道名字（UpstreamName）过滤查询
+                     * @param Filters 过滤条件，支持后端通道ID（UpstreamId）、后端通道名字（UpstreamName）过滤查询
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -100,19 +100,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 分页
+                     * 分页大小
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页
+                     * 分页起始位置
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 过滤条件
+                     * 过滤条件，支持后端通道ID（UpstreamId）、后端通道名字（UpstreamName）过滤查询
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

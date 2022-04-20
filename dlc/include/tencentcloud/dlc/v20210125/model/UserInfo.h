@@ -212,6 +212,28 @@ namespace TencentCloud
                      */
                     bool UserTypeHasBeenSet() const;
 
+                    /**
+                     * 获取用户别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserAlias 用户别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUserAlias() const;
+
+                    /**
+                     * 设置用户别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UserAlias 用户别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUserAlias(const std::string& _userAlias);
+
+                    /**
+                     * 判断参数 UserAlias 是否已赋值
+                     * @return UserAlias 是否已赋值
+                     */
+                    bool UserAliasHasBeenSet() const;
+
                 private:
 
                     /**
@@ -266,6 +288,13 @@ namespace TencentCloud
                      */
                     std::string m_userType;
                     bool m_userTypeHasBeenSet;
+
+                    /**
+                     * 用户别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_userAlias;
+                    bool m_userAliasHasBeenSet;
 
                 };
             }

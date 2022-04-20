@@ -55,6 +55,7 @@
 #include <tencentcloud/cdn/v20180606/model/Ipv6Access.h>
 #include <tencentcloud/cdn/v20180606/model/OfflineCache.h>
 #include <tencentcloud/cdn/v20180606/model/OriginCombine.h>
+#include <tencentcloud/cdn/v20180606/model/PostSize.h>
 #include <tencentcloud/cdn/v20180606/model/Quic.h>
 #include <tencentcloud/cdn/v20180606/model/OssPrivateAccess.h>
 #include <tencentcloud/cdn/v20180606/model/WebSocket.h>
@@ -818,6 +819,24 @@ global：全球加速
                     bool OriginCombineHasBeenSet() const;
 
                     /**
+                     * 获取POST请求传输配置
+                     * @return PostMaxSize POST请求传输配置
+                     */
+                    PostSize GetPostMaxSize() const;
+
+                    /**
+                     * 设置POST请求传输配置
+                     * @param PostMaxSize POST请求传输配置
+                     */
+                    void SetPostMaxSize(const PostSize& _postMaxSize);
+
+                    /**
+                     * 判断参数 PostMaxSize 是否已赋值
+                     * @return PostMaxSize 是否已赋值
+                     */
+                    bool PostMaxSizeHasBeenSet() const;
+
+                    /**
                      * 获取Quic访问（收费服务，详见计费说明和产品文档）
                      * @return Quic Quic访问（收费服务，详见计费说明和产品文档）
                      */
@@ -1186,6 +1205,12 @@ global：全球加速
                      */
                     OriginCombine m_originCombine;
                     bool m_originCombineHasBeenSet;
+
+                    /**
+                     * POST请求传输配置
+                     */
+                    PostSize m_postMaxSize;
+                    bool m_postMaxSizeHasBeenSet;
 
                     /**
                      * Quic访问（收费服务，详见计费说明和产品文档）

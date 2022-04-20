@@ -21,7 +21,9 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 DrmStreamingsInfo::DrmStreamingsInfo() :
-    m_simpleAesDefinitionHasBeenSet(false)
+    m_simpleAesDefinitionHasBeenSet(false),
+    m_widevineDefinitionHasBeenSet(false),
+    m_fairPlayDefinitionHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,26 @@ CoreInternalOutcome DrmStreamingsInfo::Deserialize(const rapidjson::Value &value
         m_simpleAesDefinitionHasBeenSet = true;
     }
 
+    if (value.HasMember("WidevineDefinition") && !value["WidevineDefinition"].IsNull())
+    {
+        if (!value["WidevineDefinition"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DrmStreamingsInfo.WidevineDefinition` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_widevineDefinition = value["WidevineDefinition"].GetUint64();
+        m_widevineDefinitionHasBeenSet = true;
+    }
+
+    if (value.HasMember("FairPlayDefinition") && !value["FairPlayDefinition"].IsNull())
+    {
+        if (!value["FairPlayDefinition"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DrmStreamingsInfo.FairPlayDefinition` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fairPlayDefinition = value["FairPlayDefinition"].GetUint64();
+        m_fairPlayDefinitionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +75,22 @@ void DrmStreamingsInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "SimpleAesDefinition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_simpleAesDefinition, allocator);
+    }
+
+    if (m_widevineDefinitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WidevineDefinition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_widevineDefinition, allocator);
+    }
+
+    if (m_fairPlayDefinitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FairPlayDefinition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fairPlayDefinition, allocator);
     }
 
 }
@@ -72,5 +110,37 @@ void DrmStreamingsInfo::SetSimpleAesDefinition(const uint64_t& _simpleAesDefinit
 bool DrmStreamingsInfo::SimpleAesDefinitionHasBeenSet() const
 {
     return m_simpleAesDefinitionHasBeenSet;
+}
+
+uint64_t DrmStreamingsInfo::GetWidevineDefinition() const
+{
+    return m_widevineDefinition;
+}
+
+void DrmStreamingsInfo::SetWidevineDefinition(const uint64_t& _widevineDefinition)
+{
+    m_widevineDefinition = _widevineDefinition;
+    m_widevineDefinitionHasBeenSet = true;
+}
+
+bool DrmStreamingsInfo::WidevineDefinitionHasBeenSet() const
+{
+    return m_widevineDefinitionHasBeenSet;
+}
+
+uint64_t DrmStreamingsInfo::GetFairPlayDefinition() const
+{
+    return m_fairPlayDefinition;
+}
+
+void DrmStreamingsInfo::SetFairPlayDefinition(const uint64_t& _fairPlayDefinition)
+{
+    m_fairPlayDefinition = _fairPlayDefinition;
+    m_fairPlayDefinitionHasBeenSet = true;
+}
+
+bool DrmStreamingsInfo::FairPlayDefinitionHasBeenSet() const
+{
+    return m_fairPlayDefinitionHasBeenSet;
 }
 

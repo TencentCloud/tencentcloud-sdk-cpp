@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/redis/v20180412/model/AddReplicationInstanceRequest.h>
 #include <tencentcloud/redis/v20180412/model/AddReplicationInstanceResponse.h>
+#include <tencentcloud/redis/v20180412/model/AllocateWanAddressRequest.h>
+#include <tencentcloud/redis/v20180412/model/AllocateWanAddressResponse.h>
 #include <tencentcloud/redis/v20180412/model/ApplyParamsTemplateRequest.h>
 #include <tencentcloud/redis/v20180412/model/ApplyParamsTemplateResponse.h>
 #include <tencentcloud/redis/v20180412/model/AssociateSecurityGroupsRequest.h>
@@ -159,6 +161,8 @@
 #include <tencentcloud/redis/v20180412/model/ModifyNetworkConfigResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyParamTemplateRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyParamTemplateResponse.h>
+#include <tencentcloud/redis/v20180412/model/ReleaseWanAddressRequest.h>
+#include <tencentcloud/redis/v20180412/model/ReleaseWanAddressResponse.h>
 #include <tencentcloud/redis/v20180412/model/RenewInstanceRequest.h>
 #include <tencentcloud/redis/v20180412/model/RenewInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/ResetPasswordRequest.h>
@@ -192,6 +196,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddReplicationInstanceResponse> AddReplicationInstanceOutcome;
                 typedef std::future<AddReplicationInstanceOutcome> AddReplicationInstanceOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::AddReplicationInstanceRequest&, AddReplicationInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddReplicationInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::AllocateWanAddressResponse> AllocateWanAddressOutcome;
+                typedef std::future<AllocateWanAddressOutcome> AllocateWanAddressOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::AllocateWanAddressRequest&, AllocateWanAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AllocateWanAddressAsyncHandler;
                 typedef Outcome<Core::Error, Model::ApplyParamsTemplateResponse> ApplyParamsTemplateOutcome;
                 typedef std::future<ApplyParamsTemplateOutcome> ApplyParamsTemplateOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ApplyParamsTemplateRequest&, ApplyParamsTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyParamsTemplateAsyncHandler;
@@ -393,6 +400,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyParamTemplateResponse> ModifyParamTemplateOutcome;
                 typedef std::future<ModifyParamTemplateOutcome> ModifyParamTemplateOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyParamTemplateRequest&, ModifyParamTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyParamTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReleaseWanAddressResponse> ReleaseWanAddressOutcome;
+                typedef std::future<ReleaseWanAddressOutcome> ReleaseWanAddressOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::ReleaseWanAddressRequest&, ReleaseWanAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseWanAddressAsyncHandler;
                 typedef Outcome<Core::Error, Model::RenewInstanceResponse> RenewInstanceOutcome;
                 typedef std::future<RenewInstanceOutcome> RenewInstanceOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::RenewInstanceRequest&, RenewInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewInstanceAsyncHandler;
@@ -428,6 +438,15 @@ namespace TencentCloud
                 AddReplicationInstanceOutcome AddReplicationInstance(const Model::AddReplicationInstanceRequest &request);
                 void AddReplicationInstanceAsync(const Model::AddReplicationInstanceRequest& request, const AddReplicationInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddReplicationInstanceOutcomeCallable AddReplicationInstanceCallable(const Model::AddReplicationInstanceRequest& request);
+
+                /**
+                 *开通外网
+                 * @param req AllocateWanAddressRequest
+                 * @return AllocateWanAddressOutcome
+                 */
+                AllocateWanAddressOutcome AllocateWanAddress(const Model::AllocateWanAddressRequest &request);
+                void AllocateWanAddressAsync(const Model::AllocateWanAddressRequest& request, const AllocateWanAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AllocateWanAddressOutcomeCallable AllocateWanAddressCallable(const Model::AllocateWanAddressRequest& request);
 
                 /**
                  *应用参数模板到实例
@@ -1031,6 +1050,15 @@ namespace TencentCloud
                 ModifyParamTemplateOutcome ModifyParamTemplate(const Model::ModifyParamTemplateRequest &request);
                 void ModifyParamTemplateAsync(const Model::ModifyParamTemplateRequest& request, const ModifyParamTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyParamTemplateOutcomeCallable ModifyParamTemplateCallable(const Model::ModifyParamTemplateRequest& request);
+
+                /**
+                 *关闭外网
+                 * @param req ReleaseWanAddressRequest
+                 * @return ReleaseWanAddressOutcome
+                 */
+                ReleaseWanAddressOutcome ReleaseWanAddress(const Model::ReleaseWanAddressRequest &request);
+                void ReleaseWanAddressAsync(const Model::ReleaseWanAddressRequest& request, const ReleaseWanAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReleaseWanAddressOutcomeCallable ReleaseWanAddressCallable(const Model::ReleaseWanAddressRequest& request);
 
                 /**
                  *续费实例

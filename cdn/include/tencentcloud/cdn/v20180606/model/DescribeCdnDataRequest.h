@@ -500,6 +500,24 @@ client：指定查询客户端地区（用户请求终端所在地区）数据
                      */
                     bool ProductHasBeenSet() const;
 
+                    /**
+                     * 获取指定查询时间的时区，默认UTC+08:00
+                     * @return TimeZone 指定查询时间的时区，默认UTC+08:00
+                     */
+                    std::string GetTimeZone() const;
+
+                    /**
+                     * 设置指定查询时间的时区，默认UTC+08:00
+                     * @param TimeZone 指定查询时间的时区，默认UTC+08:00
+                     */
+                    void SetTimeZone(const std::string& _timeZone);
+
+                    /**
+                     * 判断参数 TimeZone 是否已赋值
+                     * @return TimeZone 是否已赋值
+                     */
+                    bool TimeZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -638,6 +656,12 @@ client：指定查询客户端地区（用户请求终端所在地区）数据
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
+
+                    /**
+                     * 指定查询时间的时区，默认UTC+08:00
+                     */
+                    std::string m_timeZone;
+                    bool m_timeZoneHasBeenSet;
 
                 };
             }

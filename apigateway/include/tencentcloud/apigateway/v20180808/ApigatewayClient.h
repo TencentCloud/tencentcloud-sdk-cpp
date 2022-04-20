@@ -642,7 +642,7 @@ API 网关使用的最大单元为服务，每个服务中可创建多个 API �
                 CreateServiceOutcomeCallable CreateServiceCallable(const Model::CreateServiceRequest& request);
 
                 /**
-                 *用于创建创建VPC通道
+                 *用于创建创建后端通道
                  * @param req CreateUpstreamRequest
                  * @return CreateUpstreamOutcome
                  */
@@ -734,7 +734,7 @@ API 网关使用的最大单元为服务，每个服务中可创建多个 API �
                 DeleteServiceSubDomainMappingOutcomeCallable DeleteServiceSubDomainMappingCallable(const Model::DeleteServiceSubDomainMappingRequest& request);
 
                 /**
-                 *删除VPC通道，需要注意有api绑定时，不允许删除
+                 *删除后端通道，需要注意有API绑定时，不允许删除
                  * @param req DeleteUpstreamRequest
                  * @return DeleteUpstreamOutcome
                  */
@@ -1068,7 +1068,7 @@ API 网关可绑定自定义域名到服务，用于服务调用。此接口用�
                 DescribeServicesStatusOutcomeCallable DescribeServicesStatusCallable(const Model::DescribeServicesStatusRequest& request);
 
                 /**
-                 *查询VPC通道绑定的api列表
+                 *查询后端通道所绑定的API列表
                  * @param req DescribeUpstreamBindApisRequest
                  * @return DescribeUpstreamBindApisOutcome
                  */
@@ -1077,7 +1077,7 @@ API 网关可绑定自定义域名到服务，用于服务调用。此接口用�
                 DescribeUpstreamBindApisOutcomeCallable DescribeUpstreamBindApisCallable(const Model::DescribeUpstreamBindApisRequest& request);
 
                 /**
-                 *查询VPC通道列表详情
+                 *查询后端通道列表详情
                  * @param req DescribeUpstreamsRequest
                  * @return DescribeUpstreamsOutcome
                  */
@@ -1259,7 +1259,7 @@ API 网关可绑定自定义域名到服务，用于服务调用。此接口用�
                 ModifySubDomainOutcomeCallable ModifySubDomainCallable(const Model::ModifySubDomainRequest& request);
 
                 /**
-                 *修改VPC通道
+                 *修改后端通道
                  * @param req ModifyUpstreamRequest
                  * @return ModifyUpstreamOutcome
                  */

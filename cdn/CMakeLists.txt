@@ -158,6 +158,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/AuthenticationTypeB.h
   include/tencentcloud/cdn/v20180606/model/AuthenticationTypeA.h
   include/tencentcloud/cdn/v20180606/model/DescribeScdnIpStrategyResponse.h
+  include/tencentcloud/cdn/v20180606/model/ResponseHeader.h
   include/tencentcloud/cdn/v20180606/model/OriginAuthenticationTypeA.h
   include/tencentcloud/cdn/v20180606/model/SecurityConfig.h
   include/tencentcloud/cdn/v20180606/model/DescribePushTasksResponse.h
@@ -184,7 +185,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/RuleEngine.h
   include/tencentcloud/cdn/v20180606/model/GetDisableRecordsResponse.h
   include/tencentcloud/cdn/v20180606/model/Ipv6Access.h
-  include/tencentcloud/cdn/v20180606/model/ResponseHeader.h
+  include/tencentcloud/cdn/v20180606/model/HeuristicCache.h
   include/tencentcloud/cdn/v20180606/model/DuplicateDomainConfigResponse.h
   include/tencentcloud/cdn/v20180606/model/CdnIpHistory.h
   include/tencentcloud/cdn/v20180606/model/ErrorPageRule.h
@@ -297,6 +298,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/ClientInfo.h
   include/tencentcloud/cdn/v20180606/model/DescribeEventLogDataResponse.h
   include/tencentcloud/cdn/v20180606/model/HwPrivateAccess.h
+  include/tencentcloud/cdn/v20180606/model/CacheConfig.h
   include/tencentcloud/cdn/v20180606/model/PushUrlsCacheResponse.h
   include/tencentcloud/cdn/v20180606/model/OriginCombine.h
   include/tencentcloud/cdn/v20180606/model/QueryStringKey.h
@@ -498,6 +500,7 @@ set(cdn_src
   src/v20180606/model/AuthenticationTypeB.cpp
   src/v20180606/model/AuthenticationTypeA.cpp
   src/v20180606/model/DescribeScdnIpStrategyResponse.cpp
+  src/v20180606/model/ResponseHeader.cpp
   src/v20180606/model/OriginAuthenticationTypeA.cpp
   src/v20180606/model/SecurityConfig.cpp
   src/v20180606/model/DescribePushTasksResponse.cpp
@@ -524,7 +527,7 @@ set(cdn_src
   src/v20180606/model/RuleEngine.cpp
   src/v20180606/model/GetDisableRecordsResponse.cpp
   src/v20180606/model/Ipv6Access.cpp
-  src/v20180606/model/ResponseHeader.cpp
+  src/v20180606/model/HeuristicCache.cpp
   src/v20180606/model/DuplicateDomainConfigResponse.cpp
   src/v20180606/model/CdnIpHistory.cpp
   src/v20180606/model/ErrorPageRule.cpp
@@ -637,6 +640,7 @@ set(cdn_src
   src/v20180606/model/ClientInfo.cpp
   src/v20180606/model/DescribeEventLogDataResponse.cpp
   src/v20180606/model/HwPrivateAccess.cpp
+  src/v20180606/model/CacheConfig.cpp
   src/v20180606/model/PushUrlsCacheResponse.cpp
   src/v20180606/model/OriginCombine.cpp
   src/v20180606/model/QueryStringKey.cpp

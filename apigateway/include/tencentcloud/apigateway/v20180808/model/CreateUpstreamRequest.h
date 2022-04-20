@@ -22,6 +22,8 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/apigateway/v20180808/model/UpstreamNode.h>
+#include <tencentcloud/apigateway/v20180808/model/Tag.h>
+#include <tencentcloud/apigateway/v20180808/model/UpstreamHealthChecker.h>
 #include <tencentcloud/apigateway/v20180808/model/K8sService.h>
 
 
@@ -45,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取后端协议，HTTP, HTTPS其中之一
-                     * @return Scheme 后端协议，HTTP, HTTPS其中之一
+                     * 获取后端协议，取值范围：HTTP, HTTPS
+                     * @return Scheme 后端协议，取值范围：HTTP, HTTPS
                      */
                     std::string GetScheme() const;
 
                     /**
-                     * 设置后端协议，HTTP, HTTPS其中之一
-                     * @param Scheme 后端协议，HTTP, HTTPS其中之一
+                     * 设置后端协议，取值范围：HTTP, HTTPS
+                     * @param Scheme 后端协议，取值范围：HTTP, HTTPS
                      */
                     void SetScheme(const std::string& _scheme);
 
@@ -63,14 +65,14 @@ namespace TencentCloud
                     bool SchemeHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡算法目前支持ROUND_ROBIN
-                     * @return Algorithm 负载均衡算法目前支持ROUND_ROBIN
+                     * 获取负载均衡算法，取值范围：ROUND-ROBIN
+                     * @return Algorithm 负载均衡算法，取值范围：ROUND-ROBIN
                      */
                     std::string GetAlgorithm() const;
 
                     /**
-                     * 设置负载均衡算法目前支持ROUND_ROBIN
-                     * @param Algorithm 负载均衡算法目前支持ROUND_ROBIN
+                     * 设置负载均衡算法，取值范围：ROUND-ROBIN
+                     * @param Algorithm 负载均衡算法，取值范围：ROUND-ROBIN
                      */
                     void SetAlgorithm(const std::string& _algorithm);
 
@@ -99,14 +101,14 @@ namespace TencentCloud
                     bool UniqVpcIdHasBeenSet() const;
 
                     /**
-                     * 获取VPC通道名字
-                     * @return UpstreamName VPC通道名字
+                     * 获取后端通道名字
+                     * @return UpstreamName 后端通道名字
                      */
                     std::string GetUpstreamName() const;
 
                     /**
-                     * 设置VPC通道名字
-                     * @param UpstreamName VPC通道名字
+                     * 设置后端通道名字
+                     * @param UpstreamName 后端通道名字
                      */
                     void SetUpstreamName(const std::string& _upstreamName);
 
@@ -117,14 +119,14 @@ namespace TencentCloud
                     bool UpstreamNameHasBeenSet() const;
 
                     /**
-                     * 获取VPC通道描述
-                     * @return UpstreamDescription VPC通道描述
+                     * 获取后端通道描述
+                     * @return UpstreamDescription 后端通道描述
                      */
                     std::string GetUpstreamDescription() const;
 
                     /**
-                     * 设置VPC通道描述
-                     * @param UpstreamDescription VPC通道描述
+                     * 设置后端通道描述
+                     * @param UpstreamDescription 后端通道描述
                      */
                     void SetUpstreamDescription(const std::string& _upstreamDescription);
 
@@ -133,6 +135,24 @@ namespace TencentCloud
                      * @return UpstreamDescription 是否已赋值
                      */
                     bool UpstreamDescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取后端访问类型，取值范围：IP_PORT, K8S
+                     * @return UpstreamType 后端访问类型，取值范围：IP_PORT, K8S
+                     */
+                    std::string GetUpstreamType() const;
+
+                    /**
+                     * 设置后端访问类型，取值范围：IP_PORT, K8S
+                     * @param UpstreamType 后端访问类型，取值范围：IP_PORT, K8S
+                     */
+                    void SetUpstreamType(const std::string& _upstreamType);
+
+                    /**
+                     * 判断参数 UpstreamType 是否已赋值
+                     * @return UpstreamType 是否已赋值
+                     */
+                    bool UpstreamTypeHasBeenSet() const;
 
                     /**
                      * 获取请求重试次数，默认3次
@@ -153,14 +173,14 @@ namespace TencentCloud
                     bool RetriesHasBeenSet() const;
 
                     /**
-                     * 获取请求到后端的，host头
-                     * @return UpstreamHost 请求到后端的，host头
+                     * 获取网关转发到后端的Host请求头
+                     * @return UpstreamHost 网关转发到后端的Host请求头
                      */
                     std::string GetUpstreamHost() const;
 
                     /**
-                     * 设置请求到后端的，host头
-                     * @param UpstreamHost 请求到后端的，host头
+                     * 设置网关转发到后端的Host请求头
+                     * @param UpstreamHost 网关转发到后端的Host请求头
                      */
                     void SetUpstreamHost(const std::string& _upstreamHost);
 
@@ -189,14 +209,50 @@ namespace TencentCloud
                     bool NodesHasBeenSet() const;
 
                     /**
-                     * 获取k8s服务的配置
-                     * @return K8sService k8s服务的配置
+                     * 获取标签
+                     * @return Tags 标签
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置标签
+                     * @param Tags 标签
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取健康检查配置，目前只支持VPC通道
+                     * @return HealthChecker 健康检查配置，目前只支持VPC通道
+                     */
+                    UpstreamHealthChecker GetHealthChecker() const;
+
+                    /**
+                     * 设置健康检查配置，目前只支持VPC通道
+                     * @param HealthChecker 健康检查配置，目前只支持VPC通道
+                     */
+                    void SetHealthChecker(const UpstreamHealthChecker& _healthChecker);
+
+                    /**
+                     * 判断参数 HealthChecker 是否已赋值
+                     * @return HealthChecker 是否已赋值
+                     */
+                    bool HealthCheckerHasBeenSet() const;
+
+                    /**
+                     * 获取K8S容器服务的配置
+                     * @return K8sService K8S容器服务的配置
                      */
                     std::vector<K8sService> GetK8sService() const;
 
                     /**
-                     * 设置k8s服务的配置
-                     * @param K8sService k8s服务的配置
+                     * 设置K8S容器服务的配置
+                     * @param K8sService K8S容器服务的配置
                      */
                     void SetK8sService(const std::vector<K8sService>& _k8sService);
 
@@ -209,13 +265,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 后端协议，HTTP, HTTPS其中之一
+                     * 后端协议，取值范围：HTTP, HTTPS
                      */
                     std::string m_scheme;
                     bool m_schemeHasBeenSet;
 
                     /**
-                     * 负载均衡算法目前支持ROUND_ROBIN
+                     * 负载均衡算法，取值范围：ROUND-ROBIN
                      */
                     std::string m_algorithm;
                     bool m_algorithmHasBeenSet;
@@ -227,16 +283,22 @@ namespace TencentCloud
                     bool m_uniqVpcIdHasBeenSet;
 
                     /**
-                     * VPC通道名字
+                     * 后端通道名字
                      */
                     std::string m_upstreamName;
                     bool m_upstreamNameHasBeenSet;
 
                     /**
-                     * VPC通道描述
+                     * 后端通道描述
                      */
                     std::string m_upstreamDescription;
                     bool m_upstreamDescriptionHasBeenSet;
+
+                    /**
+                     * 后端访问类型，取值范围：IP_PORT, K8S
+                     */
+                    std::string m_upstreamType;
+                    bool m_upstreamTypeHasBeenSet;
 
                     /**
                      * 请求重试次数，默认3次
@@ -245,7 +307,7 @@ namespace TencentCloud
                     bool m_retriesHasBeenSet;
 
                     /**
-                     * 请求到后端的，host头
+                     * 网关转发到后端的Host请求头
                      */
                     std::string m_upstreamHost;
                     bool m_upstreamHostHasBeenSet;
@@ -257,7 +319,19 @@ namespace TencentCloud
                     bool m_nodesHasBeenSet;
 
                     /**
-                     * k8s服务的配置
+                     * 标签
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
+
+                    /**
+                     * 健康检查配置，目前只支持VPC通道
+                     */
+                    UpstreamHealthChecker m_healthChecker;
+                    bool m_healthCheckerHasBeenSet;
+
+                    /**
+                     * K8S容器服务的配置
                      */
                     std::vector<K8sService> m_k8sService;
                     bool m_k8sServiceHasBeenSet;

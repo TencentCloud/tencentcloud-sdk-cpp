@@ -26,7 +26,8 @@ LogContextInfo::LogContextInfo() :
     m_contentHasBeenSet(false),
     m_pkgIdHasBeenSet(false),
     m_pkgLogIdHasBeenSet(false),
-    m_bTimeHasBeenSet(false)
+    m_bTimeHasBeenSet(false),
+    m_hostNameHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome LogContextInfo::Deserialize(const rapidjson::Value &value)
         m_bTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("HostName") && !value["HostName"].IsNull())
+    {
+        if (!value["HostName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogContextInfo.HostName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostName = string(value["HostName"].GetString());
+        m_hostNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void LogContextInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "BTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bTime, allocator);
+    }
+
+    if (m_hostNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hostName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void LogContextInfo::SetBTime(const int64_t& _bTime)
 bool LogContextInfo::BTimeHasBeenSet() const
 {
     return m_bTimeHasBeenSet;
+}
+
+string LogContextInfo::GetHostName() const
+{
+    return m_hostName;
+}
+
+void LogContextInfo::SetHostName(const string& _hostName)
+{
+    m_hostName = _hostName;
+    m_hostNameHasBeenSet = true;
+}
+
+bool LogContextInfo::HostNameHasBeenSet() const
+{
+    return m_hostNameHasBeenSet;
 }
 

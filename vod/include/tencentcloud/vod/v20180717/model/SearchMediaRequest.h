@@ -249,17 +249,17 @@ namespace TencentCloud
                     bool SourceTypesHasBeenSet() const;
 
                     /**
-                     * 获取推流 [直播码](https://cloud.tencent.com/document/product/267/5959) 集合。匹配集合中的任意元素。
+                     * 获取推流直播码集合。匹配集合中的任意元素。
 <li>数组长度限制：10。</li>
-                     * @return StreamIds 推流 [直播码](https://cloud.tencent.com/document/product/267/5959) 集合。匹配集合中的任意元素。
+                     * @return StreamIds 推流直播码集合。匹配集合中的任意元素。
 <li>数组长度限制：10。</li>
                      */
                     std::vector<std::string> GetStreamIds() const;
 
                     /**
-                     * 设置推流 [直播码](https://cloud.tencent.com/document/product/267/5959) 集合。匹配集合中的任意元素。
+                     * 设置推流直播码集合。匹配集合中的任意元素。
 <li>数组长度限制：10。</li>
-                     * @param StreamIds 推流 [直播码](https://cloud.tencent.com/document/product/267/5959) 集合。匹配集合中的任意元素。
+                     * @param StreamIds 推流直播码集合。匹配集合中的任意元素。
 <li>数组长度限制：10。</li>
                      */
                     void SetStreamIds(const std::vector<std::string>& _streamIds);
@@ -588,17 +588,17 @@ namespace TencentCloud
 
                     /**
                      * 获取（不推荐：应使用 StreamIds 替代）
-推流 [直播码](https://cloud.tencent.com/document/product/267/5959)。
+推流直播码。
                      * @return StreamId （不推荐：应使用 StreamIds 替代）
-推流 [直播码](https://cloud.tencent.com/document/product/267/5959)。
+推流直播码。
                      */
                     std::string GetStreamId() const;
 
                     /**
                      * 设置（不推荐：应使用 StreamIds 替代）
-推流 [直播码](https://cloud.tencent.com/document/product/267/5959)。
+推流直播码。
                      * @param StreamId （不推荐：应使用 StreamIds 替代）
-推流 [直播码](https://cloud.tencent.com/document/product/267/5959)。
+推流直播码。
                      */
                     void SetStreamId(const std::string& _streamId);
 
@@ -764,7 +764,7 @@ namespace TencentCloud
                     bool m_sourceTypesHasBeenSet;
 
                     /**
-                     * 推流 [直播码](https://cloud.tencent.com/document/product/267/5959) 集合。匹配集合中的任意元素。
+                     * 推流直播码集合。匹配集合中的任意元素。
 <li>数组长度限制：10。</li>
                      */
                     std::vector<std::string> m_streamIds;
@@ -869,7 +869,7 @@ namespace TencentCloud
 
                     /**
                      * （不推荐：应使用 StreamIds 替代）
-推流 [直播码](https://cloud.tencent.com/document/product/267/5959)。
+推流直播码。
                      */
                     std::string m_streamId;
                     bool m_streamIdHasBeenSet;

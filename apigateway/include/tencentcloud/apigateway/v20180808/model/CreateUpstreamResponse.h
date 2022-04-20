@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建返回的唯一id
+                     * 获取创建返回的唯一ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpstreamId 创建返回的唯一id
+                     * @return UpstreamId 创建返回的唯一ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUpstreamId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 创建返回的唯一id
+                     * 创建返回的唯一ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_upstreamId;

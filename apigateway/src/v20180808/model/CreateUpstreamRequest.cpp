@@ -28,9 +28,12 @@ CreateUpstreamRequest::CreateUpstreamRequest() :
     m_uniqVpcIdHasBeenSet(false),
     m_upstreamNameHasBeenSet(false),
     m_upstreamDescriptionHasBeenSet(false),
+    m_upstreamTypeHasBeenSet(false),
     m_retriesHasBeenSet(false),
     m_upstreamHostHasBeenSet(false),
     m_nodesHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_healthCheckerHasBeenSet(false),
     m_k8sServiceHasBeenSet(false)
 {
 }
@@ -82,6 +85,14 @@ string CreateUpstreamRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_upstreamDescription.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_upstreamTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpstreamType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_upstreamType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_retriesHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -111,6 +122,30 @@ string CreateUpstreamRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_healthCheckerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthChecker";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_healthChecker.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_k8sServiceHasBeenSet)
@@ -216,6 +251,22 @@ bool CreateUpstreamRequest::UpstreamDescriptionHasBeenSet() const
     return m_upstreamDescriptionHasBeenSet;
 }
 
+string CreateUpstreamRequest::GetUpstreamType() const
+{
+    return m_upstreamType;
+}
+
+void CreateUpstreamRequest::SetUpstreamType(const string& _upstreamType)
+{
+    m_upstreamType = _upstreamType;
+    m_upstreamTypeHasBeenSet = true;
+}
+
+bool CreateUpstreamRequest::UpstreamTypeHasBeenSet() const
+{
+    return m_upstreamTypeHasBeenSet;
+}
+
 uint64_t CreateUpstreamRequest::GetRetries() const
 {
     return m_retries;
@@ -262,6 +313,38 @@ void CreateUpstreamRequest::SetNodes(const vector<UpstreamNode>& _nodes)
 bool CreateUpstreamRequest::NodesHasBeenSet() const
 {
     return m_nodesHasBeenSet;
+}
+
+vector<Tag> CreateUpstreamRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateUpstreamRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateUpstreamRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+UpstreamHealthChecker CreateUpstreamRequest::GetHealthChecker() const
+{
+    return m_healthChecker;
+}
+
+void CreateUpstreamRequest::SetHealthChecker(const UpstreamHealthChecker& _healthChecker)
+{
+    m_healthChecker = _healthChecker;
+    m_healthCheckerHasBeenSet = true;
+}
+
+bool CreateUpstreamRequest::HealthCheckerHasBeenSet() const
+{
+    return m_healthCheckerHasBeenSet;
 }
 
 vector<K8sService> CreateUpstreamRequest::GetK8sService() const

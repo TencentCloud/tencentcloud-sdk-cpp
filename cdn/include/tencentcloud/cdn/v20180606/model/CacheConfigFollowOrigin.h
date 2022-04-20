@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cdn/v20180606/model/HeuristicCache.h>
 
 
 namespace TencentCloud
@@ -72,6 +73,28 @@ off：关闭
                      */
                     bool SwitchHasBeenSet() const;
 
+                    /**
+                     * 获取启发式缓存配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HeuristicCache 启发式缓存配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    HeuristicCache GetHeuristicCache() const;
+
+                    /**
+                     * 设置启发式缓存配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HeuristicCache 启发式缓存配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHeuristicCache(const HeuristicCache& _heuristicCache);
+
+                    /**
+                     * 判断参数 HeuristicCache 是否已赋值
+                     * @return HeuristicCache 是否已赋值
+                     */
+                    bool HeuristicCacheHasBeenSet() const;
+
                 private:
 
                     /**
@@ -81,6 +104,13 @@ off：关闭
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
+
+                    /**
+                     * 启发式缓存配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    HeuristicCache m_heuristicCache;
+                    bool m_heuristicCacheHasBeenSet;
 
                 };
             }

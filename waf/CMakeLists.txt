@@ -34,6 +34,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/ModifyDomainWhiteRuleRequest.h
   include/tencentcloud/waf/v20180125/model/AccessRuleTagInfo.h
   include/tencentcloud/waf/v20180125/model/DescribeAccessIndexRequest.h
+  include/tencentcloud/waf/v20180125/model/DomainInfo.h
   include/tencentcloud/waf/v20180125/model/AccessLogItem.h
   include/tencentcloud/waf/v20180125/model/DescribeCustomRulesResponse.h
   include/tencentcloud/waf/v20180125/model/DeleteSessionRequest.h
@@ -48,6 +49,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/ResponseCode.h
   include/tencentcloud/waf/v20180125/model/ModifyAccessPeriodResponse.h
   include/tencentcloud/waf/v20180125/model/DeleteAccessExportResponse.h
+  include/tencentcloud/waf/v20180125/model/FiltersItemNew.h
   include/tencentcloud/waf/v20180125/model/DescribeAutoDenyIPResponse.h
   include/tencentcloud/waf/v20180125/model/SearchAccessLogResponse.h
   include/tencentcloud/waf/v20180125/model/IpAccessControlItem.h
@@ -81,6 +83,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/ExportAccessInfo.h
   include/tencentcloud/waf/v20180125/model/ModifyWafAutoDenyRulesRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeAccessFastAnalysisResponse.h
+  include/tencentcloud/waf/v20180125/model/DescribeDomainsResponse.h
   include/tencentcloud/waf/v20180125/model/AutoDenyDetail.h
   include/tencentcloud/waf/v20180125/model/ModifyWafAutoDenyStatusRequest.h
   include/tencentcloud/waf/v20180125/model/ModifyWafThreatenIntelligenceRequest.h
@@ -105,6 +108,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/BotStatPointItem.h
   include/tencentcloud/waf/v20180125/model/AccessLogInfo.h
   include/tencentcloud/waf/v20180125/model/AccessRuleKeyValueInfo.h
+  include/tencentcloud/waf/v20180125/model/DescribeDomainsRequest.h
   include/tencentcloud/waf/v20180125/model/ModifyWafThreatenIntelligenceResponse.h
   )
 
@@ -125,6 +129,7 @@ set(waf_src
   src/v20180125/model/ModifyDomainWhiteRuleRequest.cpp
   src/v20180125/model/AccessRuleTagInfo.cpp
   src/v20180125/model/DescribeAccessIndexRequest.cpp
+  src/v20180125/model/DomainInfo.cpp
   src/v20180125/model/AccessLogItem.cpp
   src/v20180125/model/DescribeCustomRulesResponse.cpp
   src/v20180125/model/DeleteSessionRequest.cpp
@@ -139,6 +144,7 @@ set(waf_src
   src/v20180125/model/ResponseCode.cpp
   src/v20180125/model/ModifyAccessPeriodResponse.cpp
   src/v20180125/model/DeleteAccessExportResponse.cpp
+  src/v20180125/model/FiltersItemNew.cpp
   src/v20180125/model/DescribeAutoDenyIPResponse.cpp
   src/v20180125/model/SearchAccessLogResponse.cpp
   src/v20180125/model/IpAccessControlItem.cpp
@@ -172,6 +178,7 @@ set(waf_src
   src/v20180125/model/ExportAccessInfo.cpp
   src/v20180125/model/ModifyWafAutoDenyRulesRequest.cpp
   src/v20180125/model/DescribeAccessFastAnalysisResponse.cpp
+  src/v20180125/model/DescribeDomainsResponse.cpp
   src/v20180125/model/AutoDenyDetail.cpp
   src/v20180125/model/ModifyWafAutoDenyStatusRequest.cpp
   src/v20180125/model/ModifyWafThreatenIntelligenceRequest.cpp
@@ -196,6 +203,7 @@ set(waf_src
   src/v20180125/model/BotStatPointItem.cpp
   src/v20180125/model/AccessLogInfo.cpp
   src/v20180125/model/AccessRuleKeyValueInfo.cpp
+  src/v20180125/model/DescribeDomainsRequest.cpp
   src/v20180125/model/ModifyWafThreatenIntelligenceResponse.cpp
   )
 

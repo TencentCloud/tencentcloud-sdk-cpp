@@ -22,7 +22,7 @@ set(domain_public_header_model
   include/tencentcloud/domain/v20180808/model/UploadImageResponse.h
   include/tencentcloud/domain/v20180808/model/RenewDomainBatchResponse.h
   include/tencentcloud/domain/v20180808/model/BatchModifyDomainInfoRequest.h
-  include/tencentcloud/domain/v20180808/model/TemplateInfo.h
+  include/tencentcloud/domain/v20180808/model/DomainSimpleInfo.h
   include/tencentcloud/domain/v20180808/model/UpdateProhibitionBatchRequest.h
   include/tencentcloud/domain/v20180808/model/TransferInDomainBatchResponse.h
   include/tencentcloud/domain/v20180808/model/DeleteTemplateResponse.h
@@ -35,12 +35,14 @@ set(domain_public_header_model
   include/tencentcloud/domain/v20180808/model/DescribeTemplateResponse.h
   include/tencentcloud/domain/v20180808/model/UpdateProhibitionBatchResponse.h
   include/tencentcloud/domain/v20180808/model/CheckDomainResponse.h
+  include/tencentcloud/domain/v20180808/model/DescribeDomainSimpleInfoRequest.h
   include/tencentcloud/domain/v20180808/model/CreatePhoneEmailRequest.h
   include/tencentcloud/domain/v20180808/model/PriceInfo.h
   include/tencentcloud/domain/v20180808/model/DescribeTemplateRequest.h
   include/tencentcloud/domain/v20180808/model/RenewDomainBatchRequest.h
   include/tencentcloud/domain/v20180808/model/BatchModifyDomainInfoResponse.h
   include/tencentcloud/domain/v20180808/model/ModifyDomainOwnerBatchResponse.h
+  include/tencentcloud/domain/v20180808/model/TemplateInfo.h
   include/tencentcloud/domain/v20180808/model/DescribeDomainBaseInfoResponse.h
   include/tencentcloud/domain/v20180808/model/DescribeTemplateListResponse.h
   include/tencentcloud/domain/v20180808/model/TransferProhibitionBatchRequest.h
@@ -59,7 +61,7 @@ set(domain_public_header_model
   include/tencentcloud/domain/v20180808/model/DomainList.h
   include/tencentcloud/domain/v20180808/model/DescribeDomainPriceListRequest.h
   include/tencentcloud/domain/v20180808/model/CreateDomainBatchRequest.h
-  include/tencentcloud/domain/v20180808/model/SendPhoneEmailCodeRequest.h
+  include/tencentcloud/domain/v20180808/model/DescribeDomainSimpleInfoResponse.h
   include/tencentcloud/domain/v20180808/model/DescribeDomainBaseInfoRequest.h
   include/tencentcloud/domain/v20180808/model/DescribePhoneEmailListRequest.h
   include/tencentcloud/domain/v20180808/model/DomainBaseInfo.h
@@ -78,6 +80,7 @@ set(domain_public_header_model
   include/tencentcloud/domain/v20180808/model/CreatePhoneEmailResponse.h
   include/tencentcloud/domain/v20180808/model/SetDomainAutoRenewRequest.h
   include/tencentcloud/domain/v20180808/model/ModifyDomainOwnerBatchRequest.h
+  include/tencentcloud/domain/v20180808/model/SendPhoneEmailCodeRequest.h
   include/tencentcloud/domain/v20180808/model/DomainBatchLogSet.h
   )
 
@@ -86,7 +89,7 @@ set(domain_src
   src/v20180808/model/UploadImageResponse.cpp
   src/v20180808/model/RenewDomainBatchResponse.cpp
   src/v20180808/model/BatchModifyDomainInfoRequest.cpp
-  src/v20180808/model/TemplateInfo.cpp
+  src/v20180808/model/DomainSimpleInfo.cpp
   src/v20180808/model/UpdateProhibitionBatchRequest.cpp
   src/v20180808/model/TransferInDomainBatchResponse.cpp
   src/v20180808/model/DeleteTemplateResponse.cpp
@@ -99,12 +102,14 @@ set(domain_src
   src/v20180808/model/DescribeTemplateResponse.cpp
   src/v20180808/model/UpdateProhibitionBatchResponse.cpp
   src/v20180808/model/CheckDomainResponse.cpp
+  src/v20180808/model/DescribeDomainSimpleInfoRequest.cpp
   src/v20180808/model/CreatePhoneEmailRequest.cpp
   src/v20180808/model/PriceInfo.cpp
   src/v20180808/model/DescribeTemplateRequest.cpp
   src/v20180808/model/RenewDomainBatchRequest.cpp
   src/v20180808/model/BatchModifyDomainInfoResponse.cpp
   src/v20180808/model/ModifyDomainOwnerBatchResponse.cpp
+  src/v20180808/model/TemplateInfo.cpp
   src/v20180808/model/DescribeDomainBaseInfoResponse.cpp
   src/v20180808/model/DescribeTemplateListResponse.cpp
   src/v20180808/model/TransferProhibitionBatchRequest.cpp
@@ -123,7 +128,7 @@ set(domain_src
   src/v20180808/model/DomainList.cpp
   src/v20180808/model/DescribeDomainPriceListRequest.cpp
   src/v20180808/model/CreateDomainBatchRequest.cpp
-  src/v20180808/model/SendPhoneEmailCodeRequest.cpp
+  src/v20180808/model/DescribeDomainSimpleInfoResponse.cpp
   src/v20180808/model/DescribeDomainBaseInfoRequest.cpp
   src/v20180808/model/DescribePhoneEmailListRequest.cpp
   src/v20180808/model/DomainBaseInfo.cpp
@@ -142,6 +147,7 @@ set(domain_src
   src/v20180808/model/CreatePhoneEmailResponse.cpp
   src/v20180808/model/SetDomainAutoRenewRequest.cpp
   src/v20180808/model/ModifyDomainOwnerBatchRequest.cpp
+  src/v20180808/model/SendPhoneEmailCodeRequest.cpp
   src/v20180808/model/DomainBatchLogSet.cpp
   )
 

@@ -631,14 +631,14 @@ namespace TencentCloud
                     bool VportHasBeenSet() const;
 
                     /**
-                     * 获取是否锁定标记
-                     * @return CdbError 是否锁定标记
+                     * 获取磁盘写入是否被锁定（实例数据写入量已经超过磁盘配额）。0 -未被锁定 1 -已被锁定
+                     * @return CdbError 磁盘写入是否被锁定（实例数据写入量已经超过磁盘配额）。0 -未被锁定 1 -已被锁定
                      */
                     int64_t GetCdbError() const;
 
                     /**
-                     * 设置是否锁定标记
-                     * @param CdbError 是否锁定标记
+                     * 设置磁盘写入是否被锁定（实例数据写入量已经超过磁盘配额）。0 -未被锁定 1 -已被锁定
+                     * @param CdbError 磁盘写入是否被锁定（实例数据写入量已经超过磁盘配额）。0 -未被锁定 1 -已被锁定
                      */
                     void SetCdbError(const int64_t& _cdbError);
 
@@ -1056,7 +1056,7 @@ namespace TencentCloud
                     bool m_vportHasBeenSet;
 
                     /**
-                     * 是否锁定标记
+                     * 磁盘写入是否被锁定（实例数据写入量已经超过磁盘配额）。0 -未被锁定 1 -已被锁定
                      */
                     int64_t m_cdbError;
                     bool m_cdbErrorHasBeenSet;

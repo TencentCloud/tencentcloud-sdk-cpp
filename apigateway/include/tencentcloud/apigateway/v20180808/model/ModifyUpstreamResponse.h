@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回修改后的vpc通道信息
+                     * 获取返回修改后的后端通道信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Result 返回修改后的vpc通道信息
+                     * @return Result 返回修改后的后端通道信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     UpstreamInfo GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回修改后的vpc通道信息
+                     * 返回修改后的后端通道信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     UpstreamInfo m_result;

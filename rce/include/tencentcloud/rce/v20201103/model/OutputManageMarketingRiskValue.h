@@ -314,6 +314,28 @@ reject：拒绝，高风险恶意
                      */
                     bool RiskTypeHasBeenSet() const;
 
+                    /**
+                     * 获取唯一ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConstId 唯一ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetConstId() const;
+
+                    /**
+                     * 设置唯一ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ConstId 唯一ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetConstId(const std::string& _constId);
+
+                    /**
+                     * 判断参数 ConstId 是否已赋值
+                     * @return ConstId 是否已赋值
+                     */
+                    bool ConstIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -391,6 +413,13 @@ reject：拒绝，高风险恶意
                      */
                     std::vector<int64_t> m_riskType;
                     bool m_riskTypeHasBeenSet;
+
+                    /**
+                     * 唯一ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_constId;
+                    bool m_constIdHasBeenSet;
 
                 };
             }

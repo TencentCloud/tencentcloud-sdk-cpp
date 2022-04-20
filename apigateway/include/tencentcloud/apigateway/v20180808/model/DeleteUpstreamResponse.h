@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取成功删除的vpc通道id
+                     * 获取成功删除的后端通道ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpstreamId 成功删除的vpc通道id
+                     * @return UpstreamId 成功删除的后端通道ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUpstreamId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 成功删除的vpc通道id
+                     * 成功删除的后端通道ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_upstreamId;

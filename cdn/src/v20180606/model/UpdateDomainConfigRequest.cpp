@@ -62,6 +62,7 @@ UpdateDomainConfigRequest::UpdateDomainConfigRequest() :
     m_ipv6AccessHasBeenSet(false),
     m_offlineCacheHasBeenSet(false),
     m_originCombineHasBeenSet(false),
+    m_postMaxSizeHasBeenSet(false),
     m_quicHasBeenSet(false),
     m_ossPrivateAccessHasBeenSet(false),
     m_webSocketHasBeenSet(false),
@@ -428,6 +429,15 @@ string UpdateDomainConfigRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_originCombine.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_postMaxSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PostMaxSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_postMaxSize.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_quicHasBeenSet)
@@ -1123,6 +1133,22 @@ void UpdateDomainConfigRequest::SetOriginCombine(const OriginCombine& _originCom
 bool UpdateDomainConfigRequest::OriginCombineHasBeenSet() const
 {
     return m_originCombineHasBeenSet;
+}
+
+PostSize UpdateDomainConfigRequest::GetPostMaxSize() const
+{
+    return m_postMaxSize;
+}
+
+void UpdateDomainConfigRequest::SetPostMaxSize(const PostSize& _postMaxSize)
+{
+    m_postMaxSize = _postMaxSize;
+    m_postMaxSizeHasBeenSet = true;
+}
+
+bool UpdateDomainConfigRequest::PostMaxSizeHasBeenSet() const
+{
+    return m_postMaxSizeHasBeenSet;
 }
 
 Quic UpdateDomainConfigRequest::GetQuic() const

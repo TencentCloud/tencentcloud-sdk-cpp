@@ -64,14 +64,14 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取用户上传的模版ID
-                     * @return TemplateId 用户上传的模版ID
+                     * 获取用户上传的模板ID
+                     * @return TemplateId 用户上传的模板ID
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置用户上传的模版ID
-                     * @param TemplateId 用户上传的模版ID
+                     * 设置用户上传的模板ID
+                     * @param TemplateId 用户上传的模板ID
                      */
                     void SetTemplateId(const std::string& _templateId);
 
@@ -172,14 +172,18 @@ namespace TencentCloud
                     bool ClientTokenHasBeenSet() const;
 
                     /**
-                     * 获取是否需要生成预览文件 默认不生成
-                     * @return NeedPreview 是否需要生成预览文件 默认不生成
+                     * 获取是否需要生成预览文件 默认不生成；
+预览链接有效期300秒；
+                     * @return NeedPreview 是否需要生成预览文件 默认不生成；
+预览链接有效期300秒；
                      */
                     bool GetNeedPreview() const;
 
                     /**
-                     * 设置是否需要生成预览文件 默认不生成
-                     * @param NeedPreview 是否需要生成预览文件 默认不生成
+                     * 设置是否需要生成预览文件 默认不生成；
+预览链接有效期300秒；
+                     * @param NeedPreview 是否需要生成预览文件 默认不生成；
+预览链接有效期300秒；
                      */
                     void SetNeedPreview(const bool& _needPreview);
 
@@ -198,7 +202,7 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 用户上传的模版ID
+                     * 用户上传的模板ID
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
@@ -234,7 +238,8 @@ namespace TencentCloud
                     bool m_clientTokenHasBeenSet;
 
                     /**
-                     * 是否需要生成预览文件 默认不生成
+                     * 是否需要生成预览文件 默认不生成；
+预览链接有效期300秒；
                      */
                     bool m_needPreview;
                     bool m_needPreviewHasBeenSet;

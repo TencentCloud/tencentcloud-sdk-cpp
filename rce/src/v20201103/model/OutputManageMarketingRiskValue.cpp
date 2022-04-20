@@ -26,7 +26,8 @@ OutputManageMarketingRiskValue::OutputManageMarketingRiskValue() :
     m_associateAccountHasBeenSet(false),
     m_userIpHasBeenSet(false),
     m_riskLevelHasBeenSet(false),
-    m_riskTypeHasBeenSet(false)
+    m_riskTypeHasBeenSet(false),
+    m_constIdHasBeenSet(false)
 {
 }
 
@@ -98,6 +99,16 @@ CoreInternalOutcome OutputManageMarketingRiskValue::Deserialize(const rapidjson:
         m_riskTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ConstId") && !value["ConstId"].IsNull())
+    {
+        if (!value["ConstId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OutputManageMarketingRiskValue.ConstId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_constId = string(value["ConstId"].GetString());
+        m_constIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +167,14 @@ void OutputManageMarketingRiskValue::ToJsonObject(rapidjson::Value &value, rapid
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_constIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConstId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_constId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -255,5 +274,21 @@ void OutputManageMarketingRiskValue::SetRiskType(const vector<int64_t>& _riskTyp
 bool OutputManageMarketingRiskValue::RiskTypeHasBeenSet() const
 {
     return m_riskTypeHasBeenSet;
+}
+
+string OutputManageMarketingRiskValue::GetConstId() const
+{
+    return m_constId;
+}
+
+void OutputManageMarketingRiskValue::SetConstId(const string& _constId)
+{
+    m_constId = _constId;
+    m_constIdHasBeenSet = true;
+}
+
+bool OutputManageMarketingRiskValue::ConstIdHasBeenSet() const
+{
+    return m_constIdHasBeenSet;
 }
 

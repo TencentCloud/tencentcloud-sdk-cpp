@@ -45,7 +45,8 @@ AddSpartaProtectionRequest::AddSpartaProtectionRequest() :
     m_editionHasBeenSet(false),
     m_isKeepAliveHasBeenSet(false),
     m_instanceIDHasBeenSet(false),
-    m_anycastHasBeenSet(false)
+    m_anycastHasBeenSet(false),
+    m_weightsHasBeenSet(false)
 {
 }
 
@@ -255,6 +256,19 @@ string AddSpartaProtectionRequest::ToJsonString() const
         string key = "Anycast";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_anycast, allocator);
+    }
+
+    if (m_weightsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Weights";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_weights.begin(); itr != m_weights.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -631,6 +645,22 @@ void AddSpartaProtectionRequest::SetAnycast(const int64_t& _anycast)
 bool AddSpartaProtectionRequest::AnycastHasBeenSet() const
 {
     return m_anycastHasBeenSet;
+}
+
+vector<int64_t> AddSpartaProtectionRequest::GetWeights() const
+{
+    return m_weights;
+}
+
+void AddSpartaProtectionRequest::SetWeights(const vector<int64_t>& _weights)
+{
+    m_weights = _weights;
+    m_weightsHasBeenSet = true;
+}
+
+bool AddSpartaProtectionRequest::WeightsHasBeenSet() const
+{
+    return m_weightsHasBeenSet;
 }
 
 

@@ -27,11 +27,13 @@ ModifyUpstreamRequest::ModifyUpstreamRequest() :
     m_upstreamNameHasBeenSet(false),
     m_upstreamDescriptionHasBeenSet(false),
     m_schemeHasBeenSet(false),
+    m_upstreamTypeHasBeenSet(false),
     m_algorithmHasBeenSet(false),
     m_uniqVpcIdHasBeenSet(false),
     m_retriesHasBeenSet(false),
     m_upstreamHostHasBeenSet(false),
     m_nodesHasBeenSet(false),
+    m_healthCheckerHasBeenSet(false),
     m_k8sServiceHasBeenSet(false)
 {
 }
@@ -73,6 +75,14 @@ string ModifyUpstreamRequest::ToJsonString() const
         string key = "Scheme";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_scheme.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_upstreamTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpstreamType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_upstreamType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_algorithmHasBeenSet)
@@ -120,6 +130,15 @@ string ModifyUpstreamRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_healthCheckerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthChecker";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_healthChecker.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_k8sServiceHasBeenSet)
@@ -209,6 +228,22 @@ bool ModifyUpstreamRequest::SchemeHasBeenSet() const
     return m_schemeHasBeenSet;
 }
 
+string ModifyUpstreamRequest::GetUpstreamType() const
+{
+    return m_upstreamType;
+}
+
+void ModifyUpstreamRequest::SetUpstreamType(const string& _upstreamType)
+{
+    m_upstreamType = _upstreamType;
+    m_upstreamTypeHasBeenSet = true;
+}
+
+bool ModifyUpstreamRequest::UpstreamTypeHasBeenSet() const
+{
+    return m_upstreamTypeHasBeenSet;
+}
+
 string ModifyUpstreamRequest::GetAlgorithm() const
 {
     return m_algorithm;
@@ -287,6 +322,22 @@ void ModifyUpstreamRequest::SetNodes(const vector<UpstreamNode>& _nodes)
 bool ModifyUpstreamRequest::NodesHasBeenSet() const
 {
     return m_nodesHasBeenSet;
+}
+
+UpstreamHealthChecker ModifyUpstreamRequest::GetHealthChecker() const
+{
+    return m_healthChecker;
+}
+
+void ModifyUpstreamRequest::SetHealthChecker(const UpstreamHealthChecker& _healthChecker)
+{
+    m_healthChecker = _healthChecker;
+    m_healthCheckerHasBeenSet = true;
+}
+
+bool ModifyUpstreamRequest::HealthCheckerHasBeenSet() const
+{
+    return m_healthCheckerHasBeenSet;
 }
 
 vector<K8sService> ModifyUpstreamRequest::GetK8sService() const

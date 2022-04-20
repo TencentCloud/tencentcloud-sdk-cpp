@@ -57,6 +57,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeCustomRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeDomainWhiteRulesRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeDomainWhiteRulesResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeDomainsRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeDomainsResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeFlowTrendRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeFlowTrendResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeIpAccessControlRequest.h>
@@ -152,6 +154,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDomainWhiteRulesResponse> DescribeDomainWhiteRulesOutcome;
                 typedef std::future<DescribeDomainWhiteRulesOutcome> DescribeDomainWhiteRulesOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeDomainWhiteRulesRequest&, DescribeDomainWhiteRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainWhiteRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDomainsResponse> DescribeDomainsOutcome;
+                typedef std::future<DescribeDomainsOutcome> DescribeDomainsOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeDomainsRequest&, DescribeDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFlowTrendResponse> DescribeFlowTrendOutcome;
                 typedef std::future<DescribeFlowTrendOutcome> DescribeFlowTrendOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeFlowTrendRequest&, DescribeFlowTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowTrendAsyncHandler;
@@ -356,6 +361,15 @@ namespace TencentCloud
                 DescribeDomainWhiteRulesOutcome DescribeDomainWhiteRules(const Model::DescribeDomainWhiteRulesRequest &request);
                 void DescribeDomainWhiteRulesAsync(const Model::DescribeDomainWhiteRulesRequest& request, const DescribeDomainWhiteRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDomainWhiteRulesOutcomeCallable DescribeDomainWhiteRulesCallable(const Model::DescribeDomainWhiteRulesRequest& request);
+
+                /**
+                 *查询用户所有域名的详细信息
+                 * @param req DescribeDomainsRequest
+                 * @return DescribeDomainsOutcome
+                 */
+                DescribeDomainsOutcome DescribeDomains(const Model::DescribeDomainsRequest &request);
+                void DescribeDomainsAsync(const Model::DescribeDomainsRequest& request, const DescribeDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDomainsOutcomeCallable DescribeDomainsCallable(const Model::DescribeDomainsRequest& request);
 
                 /**
                  *获取waf流量访问趋势

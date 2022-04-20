@@ -45,7 +45,8 @@ TaskResponseInfo::TaskResponseInfo() :
     m_inputTypeHasBeenSet(false),
     m_inputConfHasBeenSet(false),
     m_dataNumberHasBeenSet(false),
-    m_canDownloadHasBeenSet(false)
+    m_canDownloadHasBeenSet(false),
+    m_userAliasHasBeenSet(false)
 {
 }
 
@@ -304,6 +305,16 @@ CoreInternalOutcome TaskResponseInfo::Deserialize(const rapidjson::Value &value)
         m_canDownloadHasBeenSet = true;
     }
 
+    if (value.HasMember("UserAlias") && !value["UserAlias"].IsNull())
+    {
+        if (!value["UserAlias"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskResponseInfo.UserAlias` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userAlias = string(value["UserAlias"].GetString());
+        m_userAliasHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -509,6 +520,14 @@ void TaskResponseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "CanDownload";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_canDownload, allocator);
+    }
+
+    if (m_userAliasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserAlias";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userAlias.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -912,5 +931,21 @@ void TaskResponseInfo::SetCanDownload(const bool& _canDownload)
 bool TaskResponseInfo::CanDownloadHasBeenSet() const
 {
     return m_canDownloadHasBeenSet;
+}
+
+string TaskResponseInfo::GetUserAlias() const
+{
+    return m_userAlias;
+}
+
+void TaskResponseInfo::SetUserAlias(const string& _userAlias)
+{
+    m_userAlias = _userAlias;
+    m_userAliasHasBeenSet = true;
+}
+
+bool TaskResponseInfo::UserAliasHasBeenSet() const
+{
+    return m_userAliasHasBeenSet;
 }
 

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * VPC通道后端节点元数据
+                * 后端通道后端节点元数据
                 */
                 class UpstreamNode : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取IP（domain）
-                     * @return Host IP（domain）
+                     * 获取IP或域名
+                     * @return Host IP或域名
                      */
                     std::string GetHost() const;
 
                     /**
-                     * 设置IP（domain）
-                     * @param Host IP（domain）
+                     * 设置IP或域名
+                     * @param Host IP或域名
                      */
                     void SetHost(const std::string& _host);
 
@@ -101,17 +101,17 @@ namespace TencentCloud
                     bool WeightHasBeenSet() const;
 
                     /**
-                     * 获取vm实例id
+                     * 获取CVM实例ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VmInstanceId vm实例id
+                     * @return VmInstanceId CVM实例ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetVmInstanceId() const;
 
                     /**
-                     * 设置vm实例id
+                     * 设置CVM实例ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VmInstanceId vm实例id
+                     * @param VmInstanceId CVM实例ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetVmInstanceId(const std::string& _vmInstanceId);
@@ -145,17 +145,17 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取节点健康状态，创建、编辑时不需要传该参数。OFF：关闭，HEALTHY：健康，UNHEALTHY：异常，NO_DATA：数据未上报
+                     * 获取节点健康状态，创建、编辑时不需要传该参数。OFF：关闭，HEALTHY：健康，UNHEALTHY：异常，NO_DATA：数据未上报。目前只支持VPC通道。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Healthy 节点健康状态，创建、编辑时不需要传该参数。OFF：关闭，HEALTHY：健康，UNHEALTHY：异常，NO_DATA：数据未上报
+                     * @return Healthy 节点健康状态，创建、编辑时不需要传该参数。OFF：关闭，HEALTHY：健康，UNHEALTHY：异常，NO_DATA：数据未上报。目前只支持VPC通道。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetHealthy() const;
 
                     /**
-                     * 设置节点健康状态，创建、编辑时不需要传该参数。OFF：关闭，HEALTHY：健康，UNHEALTHY：异常，NO_DATA：数据未上报
+                     * 设置节点健康状态，创建、编辑时不需要传该参数。OFF：关闭，HEALTHY：健康，UNHEALTHY：异常，NO_DATA：数据未上报。目前只支持VPC通道。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Healthy 节点健康状态，创建、编辑时不需要传该参数。OFF：关闭，HEALTHY：健康，UNHEALTHY：异常，NO_DATA：数据未上报
+                     * @param Healthy 节点健康状态，创建、编辑时不需要传该参数。OFF：关闭，HEALTHY：健康，UNHEALTHY：异常，NO_DATA：数据未上报。目前只支持VPC通道。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetHealthy(const std::string& _healthy);
@@ -167,17 +167,17 @@ namespace TencentCloud
                     bool HealthyHasBeenSet() const;
 
                     /**
-                     * 获取k8s服务名字
+                     * 获取K8S容器服务名字
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ServiceName k8s服务名字
+                     * @return ServiceName K8S容器服务名字
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetServiceName() const;
 
                     /**
-                     * 设置k8s服务名字
+                     * 设置K8S容器服务名字
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ServiceName k8s服务名字
+                     * @param ServiceName K8S容器服务名字
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetServiceName(const std::string& _serviceName);
@@ -189,17 +189,17 @@ namespace TencentCloud
                     bool ServiceNameHasBeenSet() const;
 
                     /**
-                     * 获取k8s命名空间
+                     * 获取K8S命名空间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NameSpace k8s命名空间
+                     * @return NameSpace K8S命名空间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetNameSpace() const;
 
                     /**
-                     * 设置k8s命名空间
+                     * 设置K8S命名空间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NameSpace k8s命名空间
+                     * @param NameSpace K8S命名空间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetNameSpace(const std::string& _nameSpace);
@@ -233,17 +233,17 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取Node的来源
+                     * 获取Node的来源，取值范围：K8S
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Source Node的来源
+                     * @return Source Node的来源，取值范围：K8S
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSource() const;
 
                     /**
-                     * 设置Node的来源
+                     * 设置Node的来源，取值范围：K8S
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Source Node的来源
+                     * @param Source Node的来源，取值范围：K8S
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSource(const std::string& _source);
@@ -279,7 +279,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * IP（domain）
+                     * IP或域名
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;
@@ -297,7 +297,7 @@ namespace TencentCloud
                     bool m_weightHasBeenSet;
 
                     /**
-                     * vm实例id
+                     * CVM实例ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vmInstanceId;
@@ -311,21 +311,21 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 节点健康状态，创建、编辑时不需要传该参数。OFF：关闭，HEALTHY：健康，UNHEALTHY：异常，NO_DATA：数据未上报
+                     * 节点健康状态，创建、编辑时不需要传该参数。OFF：关闭，HEALTHY：健康，UNHEALTHY：异常，NO_DATA：数据未上报。目前只支持VPC通道。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_healthy;
                     bool m_healthyHasBeenSet;
 
                     /**
-                     * k8s服务名字
+                     * K8S容器服务名字
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;
 
                     /**
-                     * k8s命名空间
+                     * K8S命名空间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nameSpace;
@@ -339,7 +339,7 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * Node的来源
+                     * Node的来源，取值范围：K8S
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_source;

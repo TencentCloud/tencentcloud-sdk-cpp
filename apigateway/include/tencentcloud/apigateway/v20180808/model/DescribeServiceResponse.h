@@ -369,9 +369,9 @@ namespace TencentCloud
                     bool DeploymentTypeHasBeenSet() const;
 
                     /**
-                     * 获取特殊用途
+                     * 获取特殊用途, NULL和DEFAULT表示无特殊用途，其他用途如HTTP_DNS等
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SpecialUse 特殊用途
+                     * @return SpecialUse 特殊用途, NULL和DEFAULT表示无特殊用途，其他用途如HTTP_DNS等
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSpecialUse() const;
@@ -546,7 +546,7 @@ namespace TencentCloud
                     bool m_deploymentTypeHasBeenSet;
 
                     /**
-                     * 特殊用途
+                     * 特殊用途, NULL和DEFAULT表示无特殊用途，其他用途如HTTP_DNS等
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_specialUse;

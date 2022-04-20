@@ -83,6 +83,49 @@ RedisClient::AddReplicationInstanceOutcomeCallable RedisClient::AddReplicationIn
     return task->get_future();
 }
 
+RedisClient::AllocateWanAddressOutcome RedisClient::AllocateWanAddress(const AllocateWanAddressRequest &request)
+{
+    auto outcome = MakeRequest(request, "AllocateWanAddress");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AllocateWanAddressResponse rsp = AllocateWanAddressResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AllocateWanAddressOutcome(rsp);
+        else
+            return AllocateWanAddressOutcome(o.GetError());
+    }
+    else
+    {
+        return AllocateWanAddressOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::AllocateWanAddressAsync(const AllocateWanAddressRequest& request, const AllocateWanAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AllocateWanAddress(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::AllocateWanAddressOutcomeCallable RedisClient::AllocateWanAddressCallable(const AllocateWanAddressRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AllocateWanAddressOutcome()>>(
+        [this, request]()
+        {
+            return this->AllocateWanAddress(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RedisClient::ApplyParamsTemplateOutcome RedisClient::ApplyParamsTemplate(const ApplyParamsTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "ApplyParamsTemplate");
@@ -2957,6 +3000,49 @@ RedisClient::ModifyParamTemplateOutcomeCallable RedisClient::ModifyParamTemplate
         [this, request]()
         {
             return this->ModifyParamTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+RedisClient::ReleaseWanAddressOutcome RedisClient::ReleaseWanAddress(const ReleaseWanAddressRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReleaseWanAddress");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReleaseWanAddressResponse rsp = ReleaseWanAddressResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReleaseWanAddressOutcome(rsp);
+        else
+            return ReleaseWanAddressOutcome(o.GetError());
+    }
+    else
+    {
+        return ReleaseWanAddressOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::ReleaseWanAddressAsync(const ReleaseWanAddressRequest& request, const ReleaseWanAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReleaseWanAddress(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::ReleaseWanAddressOutcomeCallable RedisClient::ReleaseWanAddressCallable(const ReleaseWanAddressRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReleaseWanAddressOutcome()>>(
+        [this, request]()
+        {
+            return this->ReleaseWanAddress(request);
         }
     );
 

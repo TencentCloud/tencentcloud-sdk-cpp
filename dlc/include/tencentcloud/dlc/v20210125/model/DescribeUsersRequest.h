@@ -134,14 +134,14 @@ namespace TencentCloud
                     bool SortingHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，支持如下字段类型，user-type：根据用户类型过滤。
-                     * @return Filters 过滤条件，支持如下字段类型，user-type：根据用户类型过滤。
+                     * 获取过滤条件，支持如下字段类型，user-type：根据用户类型过滤。user-keyword：根据用户名称过滤
+                     * @return Filters 过滤条件，支持如下字段类型，user-type：根据用户类型过滤。user-keyword：根据用户名称过滤
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件，支持如下字段类型，user-type：根据用户类型过滤。
-                     * @param Filters 过滤条件，支持如下字段类型，user-type：根据用户类型过滤。
+                     * 设置过滤条件，支持如下字段类型，user-type：根据用户类型过滤。user-keyword：根据用户名称过滤
+                     * @param Filters 过滤条件，支持如下字段类型，user-type：根据用户类型过滤。user-keyword：根据用户名称过滤
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -184,7 +184,7 @@ namespace TencentCloud
                     bool m_sortingHasBeenSet;
 
                     /**
-                     * 过滤条件，支持如下字段类型，user-type：根据用户类型过滤。
+                     * 过滤条件，支持如下字段类型，user-type：根据用户类型过滤。user-keyword：根据用户名称过滤
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

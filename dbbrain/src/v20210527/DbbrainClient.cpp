@@ -83,6 +83,49 @@ DbbrainClient::AddUserContactOutcomeCallable DbbrainClient::AddUserContactCallab
     return task->get_future();
 }
 
+DbbrainClient::CancelKillTaskOutcome DbbrainClient::CancelKillTask(const CancelKillTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelKillTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelKillTaskResponse rsp = CancelKillTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelKillTaskOutcome(rsp);
+        else
+            return CancelKillTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelKillTaskOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::CancelKillTaskAsync(const CancelKillTaskRequest& request, const CancelKillTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelKillTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::CancelKillTaskOutcomeCallable DbbrainClient::CancelKillTaskCallable(const CancelKillTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelKillTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelKillTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::CreateDBDiagReportTaskOutcome DbbrainClient::CreateDBDiagReportTask(const CreateDBDiagReportTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDBDiagReportTask");
@@ -384,6 +427,49 @@ DbbrainClient::CreateSecurityAuditLogExportTaskOutcomeCallable DbbrainClient::Cr
     return task->get_future();
 }
 
+DbbrainClient::CreateSqlFilterOutcome DbbrainClient::CreateSqlFilter(const CreateSqlFilterRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSqlFilter");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSqlFilterResponse rsp = CreateSqlFilterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSqlFilterOutcome(rsp);
+        else
+            return CreateSqlFilterOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSqlFilterOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::CreateSqlFilterAsync(const CreateSqlFilterRequest& request, const CreateSqlFilterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSqlFilter(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::CreateSqlFilterOutcomeCallable DbbrainClient::CreateSqlFilterCallable(const CreateSqlFilterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSqlFilterOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSqlFilter(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::DeleteSecurityAuditLogExportTasksOutcome DbbrainClient::DeleteSecurityAuditLogExportTasks(const DeleteSecurityAuditLogExportTasksRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteSecurityAuditLogExportTasks");
@@ -420,6 +506,49 @@ DbbrainClient::DeleteSecurityAuditLogExportTasksOutcomeCallable DbbrainClient::D
         [this, request]()
         {
             return this->DeleteSecurityAuditLogExportTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DeleteSqlFiltersOutcome DbbrainClient::DeleteSqlFilters(const DeleteSqlFiltersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSqlFilters");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSqlFiltersResponse rsp = DeleteSqlFiltersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSqlFiltersOutcome(rsp);
+        else
+            return DeleteSqlFiltersOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSqlFiltersOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DeleteSqlFiltersAsync(const DeleteSqlFiltersRequest& request, const DeleteSqlFiltersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSqlFilters(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DeleteSqlFiltersOutcomeCallable DbbrainClient::DeleteSqlFiltersCallable(const DeleteSqlFiltersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSqlFiltersOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSqlFilters(request);
         }
     );
 
@@ -900,6 +1029,49 @@ DbbrainClient::DescribeMySqlProcessListOutcomeCallable DbbrainClient::DescribeMy
     return task->get_future();
 }
 
+DbbrainClient::DescribeNoPrimaryKeyTablesOutcome DbbrainClient::DescribeNoPrimaryKeyTables(const DescribeNoPrimaryKeyTablesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNoPrimaryKeyTables");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNoPrimaryKeyTablesResponse rsp = DescribeNoPrimaryKeyTablesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNoPrimaryKeyTablesOutcome(rsp);
+        else
+            return DescribeNoPrimaryKeyTablesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNoPrimaryKeyTablesOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeNoPrimaryKeyTablesAsync(const DescribeNoPrimaryKeyTablesRequest& request, const DescribeNoPrimaryKeyTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNoPrimaryKeyTables(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeNoPrimaryKeyTablesOutcomeCallable DbbrainClient::DescribeNoPrimaryKeyTablesCallable(const DescribeNoPrimaryKeyTablesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNoPrimaryKeyTablesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNoPrimaryKeyTables(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::DescribeProxySessionKillTasksOutcome DbbrainClient::DescribeProxySessionKillTasks(const DescribeProxySessionKillTasksRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeProxySessionKillTasks");
@@ -936,6 +1108,49 @@ DbbrainClient::DescribeProxySessionKillTasksOutcomeCallable DbbrainClient::Descr
         [this, request]()
         {
             return this->DescribeProxySessionKillTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeRedisTopBigKeysOutcome DbbrainClient::DescribeRedisTopBigKeys(const DescribeRedisTopBigKeysRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRedisTopBigKeys");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRedisTopBigKeysResponse rsp = DescribeRedisTopBigKeysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRedisTopBigKeysOutcome(rsp);
+        else
+            return DescribeRedisTopBigKeysOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRedisTopBigKeysOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeRedisTopBigKeysAsync(const DescribeRedisTopBigKeysRequest& request, const DescribeRedisTopBigKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRedisTopBigKeys(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeRedisTopBigKeysOutcomeCallable DbbrainClient::DescribeRedisTopBigKeysCallable(const DescribeRedisTopBigKeysRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRedisTopBigKeysOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRedisTopBigKeys(request);
         }
     );
 
@@ -1151,6 +1366,92 @@ DbbrainClient::DescribeSlowLogUserHostStatsOutcomeCallable DbbrainClient::Descri
         [this, request]()
         {
             return this->DescribeSlowLogUserHostStats(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeSqlFiltersOutcome DbbrainClient::DescribeSqlFilters(const DescribeSqlFiltersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSqlFilters");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSqlFiltersResponse rsp = DescribeSqlFiltersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSqlFiltersOutcome(rsp);
+        else
+            return DescribeSqlFiltersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSqlFiltersOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeSqlFiltersAsync(const DescribeSqlFiltersRequest& request, const DescribeSqlFiltersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSqlFilters(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeSqlFiltersOutcomeCallable DbbrainClient::DescribeSqlFiltersCallable(const DescribeSqlFiltersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSqlFiltersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSqlFilters(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeSqlTemplateOutcome DbbrainClient::DescribeSqlTemplate(const DescribeSqlTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSqlTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSqlTemplateResponse rsp = DescribeSqlTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSqlTemplateOutcome(rsp);
+        else
+            return DescribeSqlTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSqlTemplateOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeSqlTemplateAsync(const DescribeSqlTemplateRequest& request, const DescribeSqlTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSqlTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeSqlTemplateOutcomeCallable DbbrainClient::DescribeSqlTemplateCallable(const DescribeSqlTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSqlTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSqlTemplate(request);
         }
     );
 
@@ -1452,6 +1753,92 @@ DbbrainClient::ModifyDiagDBInstanceConfOutcomeCallable DbbrainClient::ModifyDiag
         [this, request]()
         {
             return this->ModifyDiagDBInstanceConf(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::ModifySqlFiltersOutcome DbbrainClient::ModifySqlFilters(const ModifySqlFiltersRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySqlFilters");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySqlFiltersResponse rsp = ModifySqlFiltersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySqlFiltersOutcome(rsp);
+        else
+            return ModifySqlFiltersOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySqlFiltersOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::ModifySqlFiltersAsync(const ModifySqlFiltersRequest& request, const ModifySqlFiltersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySqlFilters(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::ModifySqlFiltersOutcomeCallable DbbrainClient::ModifySqlFiltersCallable(const ModifySqlFiltersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySqlFiltersOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySqlFilters(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::VerifyUserAccountOutcome DbbrainClient::VerifyUserAccount(const VerifyUserAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "VerifyUserAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VerifyUserAccountResponse rsp = VerifyUserAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VerifyUserAccountOutcome(rsp);
+        else
+            return VerifyUserAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return VerifyUserAccountOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::VerifyUserAccountAsync(const VerifyUserAccountRequest& request, const VerifyUserAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->VerifyUserAccount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::VerifyUserAccountOutcomeCallable DbbrainClient::VerifyUserAccountCallable(const VerifyUserAccountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<VerifyUserAccountOutcome()>>(
+        [this, request]()
+        {
+            return this->VerifyUserAccount(request);
         }
     );
 

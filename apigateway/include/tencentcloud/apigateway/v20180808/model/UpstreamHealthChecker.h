@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * VPC通道健康检查参数配置
+                * 后端通道健康检查参数配置
                 */
                 class UpstreamHealthChecker : public AbstractModel
                 {

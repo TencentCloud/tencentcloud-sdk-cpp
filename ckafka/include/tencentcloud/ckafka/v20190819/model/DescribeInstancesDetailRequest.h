@@ -152,14 +152,14 @@ namespace TencentCloud
                     bool TagKeyHasBeenSet() const;
 
                     /**
-                     * 获取过滤器。
-                     * @return Filters 过滤器。
+                     * 获取过滤器。filter.Name 支持('Ip', 'VpcId', 'SubNetId', 'InstanceType','InstanceId') ,filter.Values最多传递10个值.
+                     * @return Filters 过滤器。filter.Name 支持('Ip', 'VpcId', 'SubNetId', 'InstanceType','InstanceId') ,filter.Values最多传递10个值.
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤器。
-                     * @param Filters 过滤器。
+                     * 设置过滤器。filter.Name 支持('Ip', 'VpcId', 'SubNetId', 'InstanceType','InstanceId') ,filter.Values最多传递10个值.
+                     * @param Filters 过滤器。filter.Name 支持('Ip', 'VpcId', 'SubNetId', 'InstanceType','InstanceId') ,filter.Values最多传递10个值.
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -186,6 +186,24 @@ namespace TencentCloud
                      * @return InstanceIds 是否已赋值
                      */
                     bool InstanceIdsHasBeenSet() const;
+
+                    /**
+                     * 获取按照实例ID过滤
+                     * @return InstanceIdList 按照实例ID过滤
+                     */
+                    std::vector<std::string> GetInstanceIdList() const;
+
+                    /**
+                     * 设置按照实例ID过滤
+                     * @param InstanceIdList 按照实例ID过滤
+                     */
+                    void SetInstanceIdList(const std::vector<std::string>& _instanceIdList);
+
+                    /**
+                     * 判断参数 InstanceIdList 是否已赋值
+                     * @return InstanceIdList 是否已赋值
+                     */
+                    bool InstanceIdListHasBeenSet() const;
 
                 private:
 
@@ -226,7 +244,7 @@ namespace TencentCloud
                     bool m_tagKeyHasBeenSet;
 
                     /**
-                     * 过滤器。
+                     * 过滤器。filter.Name 支持('Ip', 'VpcId', 'SubNetId', 'InstanceType','InstanceId') ,filter.Values最多传递10个值.
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
@@ -236,6 +254,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
+
+                    /**
+                     * 按照实例ID过滤
+                     */
+                    std::vector<std::string> m_instanceIdList;
+                    bool m_instanceIdListHasBeenSet;
 
                 };
             }

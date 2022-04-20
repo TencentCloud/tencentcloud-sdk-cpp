@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待删除的VPC通道唯一ID
-                     * @return UpstreamId 待删除的VPC通道唯一ID
+                     * 获取待删除的后端通道ID
+                     * @return UpstreamId 待删除的后端通道ID
                      */
                     std::string GetUpstreamId() const;
 
                     /**
-                     * 设置待删除的VPC通道唯一ID
-                     * @param UpstreamId 待删除的VPC通道唯一ID
+                     * 设置待删除的后端通道ID
+                     * @param UpstreamId 待删除的后端通道ID
                      */
                     void SetUpstreamId(const std::string& _upstreamId);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待删除的VPC通道唯一ID
+                     * 待删除的后端通道ID
                      */
                     std::string m_upstreamId;
                     bool m_upstreamIdHasBeenSet;

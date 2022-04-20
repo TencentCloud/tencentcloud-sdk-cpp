@@ -27,7 +27,8 @@ CreateUserRequest::CreateUserRequest() :
     m_userDescriptionHasBeenSet(false),
     m_policySetHasBeenSet(false),
     m_userTypeHasBeenSet(false),
-    m_workGroupIdsHasBeenSet(false)
+    m_workGroupIdsHasBeenSet(false),
+    m_userAliasHasBeenSet(false)
 {
 }
 
@@ -88,6 +89,14 @@ string CreateUserRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_userAliasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserAlias";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userAlias.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -176,6 +185,22 @@ void CreateUserRequest::SetWorkGroupIds(const vector<int64_t>& _workGroupIds)
 bool CreateUserRequest::WorkGroupIdsHasBeenSet() const
 {
     return m_workGroupIdsHasBeenSet;
+}
+
+string CreateUserRequest::GetUserAlias() const
+{
+    return m_userAlias;
+}
+
+void CreateUserRequest::SetUserAlias(const string& _userAlias)
+{
+    m_userAlias = _userAlias;
+    m_userAliasHasBeenSet = true;
+}
+
+bool CreateUserRequest::UserAliasHasBeenSet() const
+{
+    return m_userAliasHasBeenSet;
 }
 
 

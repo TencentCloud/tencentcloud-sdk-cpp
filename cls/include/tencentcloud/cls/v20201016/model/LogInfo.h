@@ -194,6 +194,28 @@ namespace TencentCloud
                      */
                     bool LogJsonHasBeenSet() const;
 
+                    /**
+                     * 获取日志来源主机名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HostName 日志来源主机名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetHostName() const;
+
+                    /**
+                     * 设置日志来源主机名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HostName 日志来源主机名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHostName(const std::string& _hostName);
+
+                    /**
+                     * 判断参数 HostName 是否已赋值
+                     * @return HostName 是否已赋值
+                     */
+                    bool HostNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -244,6 +266,13 @@ namespace TencentCloud
                      */
                     std::string m_logJson;
                     bool m_logJsonHasBeenSet;
+
+                    /**
+                     * 日志来源主机名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_hostName;
+                    bool m_hostNameHasBeenSet;
 
                 };
             }

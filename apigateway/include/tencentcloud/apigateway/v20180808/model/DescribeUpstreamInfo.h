@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 查询vpc通道返回信息
+                * 查询后端通道返回信息
                 */
                 class DescribeUpstreamInfo : public AbstractModel
                 {

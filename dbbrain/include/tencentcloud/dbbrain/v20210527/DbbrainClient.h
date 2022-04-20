@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/dbbrain/v20210527/model/AddUserContactRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/AddUserContactResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/CancelKillTaskRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/CancelKillTaskResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportTaskRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportTaskResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportUrlRequest.h>
@@ -39,8 +41,12 @@
 #include <tencentcloud/dbbrain/v20210527/model/CreateSchedulerMailProfileResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateSecurityAuditLogExportTaskRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateSecurityAuditLogExportTaskResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/CreateSqlFilterRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/CreateSqlFilterResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DeleteSecurityAuditLogExportTasksRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DeleteSecurityAuditLogExportTasksResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DeleteSqlFiltersRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DeleteSqlFiltersResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeAllUserContactRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeAllUserContactResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeAllUserGroupRequest.h>
@@ -63,8 +69,12 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeMailProfileResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeMySqlProcessListRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeMySqlProcessListResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeNoPrimaryKeyTablesRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeNoPrimaryKeyTablesResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeProxySessionKillTasksRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeProxySessionKillTasksResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeRedisTopBigKeysRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeRedisTopBigKeysResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeSecurityAuditLogDownloadUrlsRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeSecurityAuditLogDownloadUrlsResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeSecurityAuditLogExportTasksRequest.h>
@@ -75,6 +85,10 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeSlowLogTopSqlsResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeSlowLogUserHostStatsRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeSlowLogUserHostStatsResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeSqlFiltersRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeSqlFiltersResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeSqlTemplateRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeSqlTemplateResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceSchemaTimeSeriesRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceSchemaTimeSeriesResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceSchemasRequest.h>
@@ -89,6 +103,10 @@
 #include <tencentcloud/dbbrain/v20210527/model/KillMySqlThreadsResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/ModifyDiagDBInstanceConfRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/ModifyDiagDBInstanceConfResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/ModifySqlFiltersRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/ModifySqlFiltersResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/VerifyUserAccountRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/VerifyUserAccountResponse.h>
 
 
 namespace TencentCloud
@@ -106,6 +124,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddUserContactResponse> AddUserContactOutcome;
                 typedef std::future<AddUserContactOutcome> AddUserContactOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::AddUserContactRequest&, AddUserContactOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddUserContactAsyncHandler;
+                typedef Outcome<Core::Error, Model::CancelKillTaskResponse> CancelKillTaskOutcome;
+                typedef std::future<CancelKillTaskOutcome> CancelKillTaskOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::CancelKillTaskRequest&, CancelKillTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelKillTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDBDiagReportTaskResponse> CreateDBDiagReportTaskOutcome;
                 typedef std::future<CreateDBDiagReportTaskOutcome> CreateDBDiagReportTaskOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::CreateDBDiagReportTaskRequest&, CreateDBDiagReportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBDiagReportTaskAsyncHandler;
@@ -127,9 +148,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSecurityAuditLogExportTaskResponse> CreateSecurityAuditLogExportTaskOutcome;
                 typedef std::future<CreateSecurityAuditLogExportTaskOutcome> CreateSecurityAuditLogExportTaskOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::CreateSecurityAuditLogExportTaskRequest&, CreateSecurityAuditLogExportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityAuditLogExportTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSqlFilterResponse> CreateSqlFilterOutcome;
+                typedef std::future<CreateSqlFilterOutcome> CreateSqlFilterOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::CreateSqlFilterRequest&, CreateSqlFilterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSqlFilterAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSecurityAuditLogExportTasksResponse> DeleteSecurityAuditLogExportTasksOutcome;
                 typedef std::future<DeleteSecurityAuditLogExportTasksOutcome> DeleteSecurityAuditLogExportTasksOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DeleteSecurityAuditLogExportTasksRequest&, DeleteSecurityAuditLogExportTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityAuditLogExportTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSqlFiltersResponse> DeleteSqlFiltersOutcome;
+                typedef std::future<DeleteSqlFiltersOutcome> DeleteSqlFiltersOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DeleteSqlFiltersRequest&, DeleteSqlFiltersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSqlFiltersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAllUserContactResponse> DescribeAllUserContactOutcome;
                 typedef std::future<DescribeAllUserContactOutcome> DescribeAllUserContactOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeAllUserContactRequest&, DescribeAllUserContactOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllUserContactAsyncHandler;
@@ -163,9 +190,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMySqlProcessListResponse> DescribeMySqlProcessListOutcome;
                 typedef std::future<DescribeMySqlProcessListOutcome> DescribeMySqlProcessListOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeMySqlProcessListRequest&, DescribeMySqlProcessListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMySqlProcessListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNoPrimaryKeyTablesResponse> DescribeNoPrimaryKeyTablesOutcome;
+                typedef std::future<DescribeNoPrimaryKeyTablesOutcome> DescribeNoPrimaryKeyTablesOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeNoPrimaryKeyTablesRequest&, DescribeNoPrimaryKeyTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNoPrimaryKeyTablesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProxySessionKillTasksResponse> DescribeProxySessionKillTasksOutcome;
                 typedef std::future<DescribeProxySessionKillTasksOutcome> DescribeProxySessionKillTasksOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeProxySessionKillTasksRequest&, DescribeProxySessionKillTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProxySessionKillTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRedisTopBigKeysResponse> DescribeRedisTopBigKeysOutcome;
+                typedef std::future<DescribeRedisTopBigKeysOutcome> DescribeRedisTopBigKeysOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeRedisTopBigKeysRequest&, DescribeRedisTopBigKeysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRedisTopBigKeysAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSecurityAuditLogDownloadUrlsResponse> DescribeSecurityAuditLogDownloadUrlsOutcome;
                 typedef std::future<DescribeSecurityAuditLogDownloadUrlsOutcome> DescribeSecurityAuditLogDownloadUrlsOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeSecurityAuditLogDownloadUrlsRequest&, DescribeSecurityAuditLogDownloadUrlsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityAuditLogDownloadUrlsAsyncHandler;
@@ -181,6 +214,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSlowLogUserHostStatsResponse> DescribeSlowLogUserHostStatsOutcome;
                 typedef std::future<DescribeSlowLogUserHostStatsOutcome> DescribeSlowLogUserHostStatsOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeSlowLogUserHostStatsRequest&, DescribeSlowLogUserHostStatsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogUserHostStatsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSqlFiltersResponse> DescribeSqlFiltersOutcome;
+                typedef std::future<DescribeSqlFiltersOutcome> DescribeSqlFiltersOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeSqlFiltersRequest&, DescribeSqlFiltersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSqlFiltersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSqlTemplateResponse> DescribeSqlTemplateOutcome;
+                typedef std::future<DescribeSqlTemplateOutcome> DescribeSqlTemplateOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeSqlTemplateRequest&, DescribeSqlTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSqlTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTopSpaceSchemaTimeSeriesResponse> DescribeTopSpaceSchemaTimeSeriesOutcome;
                 typedef std::future<DescribeTopSpaceSchemaTimeSeriesOutcome> DescribeTopSpaceSchemaTimeSeriesOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeTopSpaceSchemaTimeSeriesRequest&, DescribeTopSpaceSchemaTimeSeriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopSpaceSchemaTimeSeriesAsyncHandler;
@@ -202,6 +241,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDiagDBInstanceConfResponse> ModifyDiagDBInstanceConfOutcome;
                 typedef std::future<ModifyDiagDBInstanceConfOutcome> ModifyDiagDBInstanceConfOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::ModifyDiagDBInstanceConfRequest&, ModifyDiagDBInstanceConfOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDiagDBInstanceConfAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySqlFiltersResponse> ModifySqlFiltersOutcome;
+                typedef std::future<ModifySqlFiltersOutcome> ModifySqlFiltersOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::ModifySqlFiltersRequest&, ModifySqlFiltersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySqlFiltersAsyncHandler;
+                typedef Outcome<Core::Error, Model::VerifyUserAccountResponse> VerifyUserAccountOutcome;
+                typedef std::future<VerifyUserAccountOutcome> VerifyUserAccountOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::VerifyUserAccountRequest&, VerifyUserAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyUserAccountAsyncHandler;
 
 
 
@@ -213,6 +258,15 @@ namespace TencentCloud
                 AddUserContactOutcome AddUserContact(const Model::AddUserContactRequest &request);
                 void AddUserContactAsync(const Model::AddUserContactRequest& request, const AddUserContactAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddUserContactOutcomeCallable AddUserContactCallable(const Model::AddUserContactRequest& request);
+
+                /**
+                 *终止中断会话任务。
+                 * @param req CancelKillTaskRequest
+                 * @return CancelKillTaskOutcome
+                 */
+                CancelKillTaskOutcome CancelKillTask(const Model::CancelKillTaskRequest &request);
+                void CancelKillTaskAsync(const Model::CancelKillTaskRequest& request, const CancelKillTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelKillTaskOutcomeCallable CancelKillTaskCallable(const Model::CancelKillTaskRequest& request);
 
                 /**
                  *创建健康报告，并可以选择是否发送邮件。
@@ -278,6 +332,15 @@ namespace TencentCloud
                 CreateSecurityAuditLogExportTaskOutcomeCallable CreateSecurityAuditLogExportTaskCallable(const Model::CreateSecurityAuditLogExportTaskRequest& request);
 
                 /**
+                 *创建实例SQL限流任务。
+                 * @param req CreateSqlFilterRequest
+                 * @return CreateSqlFilterOutcome
+                 */
+                CreateSqlFilterOutcome CreateSqlFilter(const Model::CreateSqlFilterRequest &request);
+                void CreateSqlFilterAsync(const Model::CreateSqlFilterRequest& request, const CreateSqlFilterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSqlFilterOutcomeCallable CreateSqlFilterCallable(const Model::CreateSqlFilterRequest& request);
+
+                /**
                  *删除安全审计日志导出任务。
                  * @param req DeleteSecurityAuditLogExportTasksRequest
                  * @return DeleteSecurityAuditLogExportTasksOutcome
@@ -285,6 +348,15 @@ namespace TencentCloud
                 DeleteSecurityAuditLogExportTasksOutcome DeleteSecurityAuditLogExportTasks(const Model::DeleteSecurityAuditLogExportTasksRequest &request);
                 void DeleteSecurityAuditLogExportTasksAsync(const Model::DeleteSecurityAuditLogExportTasksRequest& request, const DeleteSecurityAuditLogExportTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteSecurityAuditLogExportTasksOutcomeCallable DeleteSecurityAuditLogExportTasksCallable(const Model::DeleteSecurityAuditLogExportTasksRequest& request);
+
+                /**
+                 *删除实例SQL限流任务。
+                 * @param req DeleteSqlFiltersRequest
+                 * @return DeleteSqlFiltersOutcome
+                 */
+                DeleteSqlFiltersOutcome DeleteSqlFilters(const Model::DeleteSqlFiltersRequest &request);
+                void DeleteSqlFiltersAsync(const Model::DeleteSqlFiltersRequest& request, const DeleteSqlFiltersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSqlFiltersOutcomeCallable DeleteSqlFiltersCallable(const Model::DeleteSqlFiltersRequest& request);
 
                 /**
                  *获取邮件发送中联系人的相关信息。
@@ -386,6 +458,15 @@ namespace TencentCloud
                 DescribeMySqlProcessListOutcomeCallable DescribeMySqlProcessListCallable(const Model::DescribeMySqlProcessListRequest& request);
 
                 /**
+                 *查询实例无主键表。
+                 * @param req DescribeNoPrimaryKeyTablesRequest
+                 * @return DescribeNoPrimaryKeyTablesOutcome
+                 */
+                DescribeNoPrimaryKeyTablesOutcome DescribeNoPrimaryKeyTables(const Model::DescribeNoPrimaryKeyTablesRequest &request);
+                void DescribeNoPrimaryKeyTablesAsync(const Model::DescribeNoPrimaryKeyTablesRequest& request, const DescribeNoPrimaryKeyTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNoPrimaryKeyTablesOutcomeCallable DescribeNoPrimaryKeyTablesCallable(const Model::DescribeNoPrimaryKeyTablesRequest& request);
+
+                /**
                  *用于查询 redis 执行 kill 会话任务后代理节点的执行结果，入参异步任务 ID 从接口 CreateProxySessionKillTask 调用成功后取得。当前 product 只支持：redis。
                  * @param req DescribeProxySessionKillTasksRequest
                  * @return DescribeProxySessionKillTasksOutcome
@@ -393,6 +474,15 @@ namespace TencentCloud
                 DescribeProxySessionKillTasksOutcome DescribeProxySessionKillTasks(const Model::DescribeProxySessionKillTasksRequest &request);
                 void DescribeProxySessionKillTasksAsync(const Model::DescribeProxySessionKillTasksRequest& request, const DescribeProxySessionKillTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeProxySessionKillTasksOutcomeCallable DescribeProxySessionKillTasksCallable(const Model::DescribeProxySessionKillTasksRequest& request);
+
+                /**
+                 *查询redis实例大key列表。
+                 * @param req DescribeRedisTopBigKeysRequest
+                 * @return DescribeRedisTopBigKeysOutcome
+                 */
+                DescribeRedisTopBigKeysOutcome DescribeRedisTopBigKeys(const Model::DescribeRedisTopBigKeysRequest &request);
+                void DescribeRedisTopBigKeysAsync(const Model::DescribeRedisTopBigKeysRequest& request, const DescribeRedisTopBigKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRedisTopBigKeysOutcomeCallable DescribeRedisTopBigKeysCallable(const Model::DescribeRedisTopBigKeysRequest& request);
 
                 /**
                  *查询安全审计日志导出文件下载链接。目前日志文件下载仅提供腾讯云内网地址，请通过广州地域的腾讯云服务器进行下载。
@@ -438,6 +528,24 @@ namespace TencentCloud
                 DescribeSlowLogUserHostStatsOutcome DescribeSlowLogUserHostStats(const Model::DescribeSlowLogUserHostStatsRequest &request);
                 void DescribeSlowLogUserHostStatsAsync(const Model::DescribeSlowLogUserHostStatsRequest& request, const DescribeSlowLogUserHostStatsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSlowLogUserHostStatsOutcomeCallable DescribeSlowLogUserHostStatsCallable(const Model::DescribeSlowLogUserHostStatsRequest& request);
+
+                /**
+                 *查询实例SQL限流任务列表。
+                 * @param req DescribeSqlFiltersRequest
+                 * @return DescribeSqlFiltersOutcome
+                 */
+                DescribeSqlFiltersOutcome DescribeSqlFilters(const Model::DescribeSqlFiltersRequest &request);
+                void DescribeSqlFiltersAsync(const Model::DescribeSqlFiltersRequest& request, const DescribeSqlFiltersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSqlFiltersOutcomeCallable DescribeSqlFiltersCallable(const Model::DescribeSqlFiltersRequest& request);
+
+                /**
+                 *查询SQL模版。
+                 * @param req DescribeSqlTemplateRequest
+                 * @return DescribeSqlTemplateOutcome
+                 */
+                DescribeSqlTemplateOutcome DescribeSqlTemplate(const Model::DescribeSqlTemplateRequest &request);
+                void DescribeSqlTemplateAsync(const Model::DescribeSqlTemplateRequest& request, const DescribeSqlTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSqlTemplateOutcomeCallable DescribeSqlTemplateCallable(const Model::DescribeSqlTemplateRequest& request);
 
                 /**
                  *获取实例占用空间最大的前几个库在指定时间段内的每日由DBbrain定时采集的空间数据，默认返回按大小排序。
@@ -501,6 +609,24 @@ namespace TencentCloud
                 ModifyDiagDBInstanceConfOutcome ModifyDiagDBInstanceConf(const Model::ModifyDiagDBInstanceConfRequest &request);
                 void ModifyDiagDBInstanceConfAsync(const Model::ModifyDiagDBInstanceConfRequest& request, const ModifyDiagDBInstanceConfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDiagDBInstanceConfOutcomeCallable ModifyDiagDBInstanceConfCallable(const Model::ModifyDiagDBInstanceConfRequest& request);
+
+                /**
+                 *更改实例限流任务状态，目前仅用于终止限流。
+                 * @param req ModifySqlFiltersRequest
+                 * @return ModifySqlFiltersOutcome
+                 */
+                ModifySqlFiltersOutcome ModifySqlFilters(const Model::ModifySqlFiltersRequest &request);
+                void ModifySqlFiltersAsync(const Model::ModifySqlFiltersRequest& request, const ModifySqlFiltersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySqlFiltersOutcomeCallable ModifySqlFiltersCallable(const Model::ModifySqlFiltersRequest& request);
+
+                /**
+                 *验证用户数据库账号权限，获取会话token。
+                 * @param req VerifyUserAccountRequest
+                 * @return VerifyUserAccountOutcome
+                 */
+                VerifyUserAccountOutcome VerifyUserAccount(const Model::VerifyUserAccountRequest &request);
+                void VerifyUserAccountAsync(const Model::VerifyUserAccountRequest& request, const VerifyUserAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VerifyUserAccountOutcomeCallable VerifyUserAccountCallable(const Model::VerifyUserAccountRequest& request);
 
             };
         }

@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分页
-                     * @return Limit 分页
+                     * 获取分页大小
+                     * @return Limit 分页大小
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置分页
-                     * @param Limit 分页
+                     * 设置分页大小
+                     * @param Limit 分页大小
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页
-                     * @return Offset 分页
+                     * 获取分页起始位置
+                     * @return Offset 分页起始位置
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页
-                     * @param Offset 分页
+                     * 设置分页起始位置
+                     * @param Offset 分页起始位置
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取vpc通道Id
-                     * @return UpstreamId vpc通道Id
+                     * 获取后端通道ID
+                     * @return UpstreamId 后端通道ID
                      */
                     std::string GetUpstreamId() const;
 
                     /**
-                     * 设置vpc通道Id
-                     * @param UpstreamId vpc通道Id
+                     * 设置后端通道ID
+                     * @param UpstreamId 后端通道ID
                      */
                     void SetUpstreamId(const std::string& _upstreamId);
 
@@ -118,19 +118,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 分页
+                     * 分页大小
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页
+                     * 分页起始位置
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * vpc通道Id
+                     * 后端通道ID
                      */
                     std::string m_upstreamId;
                     bool m_upstreamIdHasBeenSet;

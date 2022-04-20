@@ -133,6 +133,24 @@ namespace TencentCloud
                      */
                     bool WorkGroupIdsHasBeenSet() const;
 
+                    /**
+                     * 获取用户别名，字符长度小50
+                     * @return UserAlias 用户别名，字符长度小50
+                     */
+                    std::string GetUserAlias() const;
+
+                    /**
+                     * 设置用户别名，字符长度小50
+                     * @param UserAlias 用户别名，字符长度小50
+                     */
+                    void SetUserAlias(const std::string& _userAlias);
+
+                    /**
+                     * 判断参数 UserAlias 是否已赋值
+                     * @return UserAlias 是否已赋值
+                     */
+                    bool UserAliasHasBeenSet() const;
+
                 private:
 
                     /**
@@ -164,6 +182,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_workGroupIds;
                     bool m_workGroupIdsHasBeenSet;
+
+                    /**
+                     * 用户别名，字符长度小50
+                     */
+                    std::string m_userAlias;
+                    bool m_userAliasHasBeenSet;
 
                 };
             }

@@ -28,7 +28,8 @@ LogInfo::LogInfo() :
     m_fileNameHasBeenSet(false),
     m_pkgIdHasBeenSet(false),
     m_pkgLogIdHasBeenSet(false),
-    m_logJsonHasBeenSet(false)
+    m_logJsonHasBeenSet(false),
+    m_hostNameHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome LogInfo::Deserialize(const rapidjson::Value &value)
         m_logJsonHasBeenSet = true;
     }
 
+    if (value.HasMember("HostName") && !value["HostName"].IsNull())
+    {
+        if (!value["HostName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogInfo.HostName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostName = string(value["HostName"].GetString());
+        m_hostNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void LogInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "LogJson";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_logJson.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hostName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void LogInfo::SetLogJson(const string& _logJson)
 bool LogInfo::LogJsonHasBeenSet() const
 {
     return m_logJsonHasBeenSet;
+}
+
+string LogInfo::GetHostName() const
+{
+    return m_hostName;
+}
+
+void LogInfo::SetHostName(const string& _hostName)
+{
+    m_hostName = _hostName;
+    m_hostNameHasBeenSet = true;
+}
+
+bool LogInfo::HostNameHasBeenSet() const
+{
+    return m_hostNameHasBeenSet;
 }
 

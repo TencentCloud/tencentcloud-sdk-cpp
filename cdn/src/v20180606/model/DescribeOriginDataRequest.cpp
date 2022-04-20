@@ -30,7 +30,8 @@ DescribeOriginDataRequest::DescribeOriginDataRequest() :
     m_projectHasBeenSet(false),
     m_intervalHasBeenSet(false),
     m_detailHasBeenSet(false),
-    m_areaHasBeenSet(false)
+    m_areaHasBeenSet(false),
+    m_timeZoneHasBeenSet(false)
 {
 }
 
@@ -108,6 +109,14 @@ string DescribeOriginDataRequest::ToJsonString() const
         string key = "Area";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_timeZone.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -244,6 +253,22 @@ void DescribeOriginDataRequest::SetArea(const string& _area)
 bool DescribeOriginDataRequest::AreaHasBeenSet() const
 {
     return m_areaHasBeenSet;
+}
+
+string DescribeOriginDataRequest::GetTimeZone() const
+{
+    return m_timeZone;
+}
+
+void DescribeOriginDataRequest::SetTimeZone(const string& _timeZone)
+{
+    m_timeZone = _timeZone;
+    m_timeZoneHasBeenSet = true;
+}
+
+bool DescribeOriginDataRequest::TimeZoneHasBeenSet() const
+{
+    return m_timeZoneHasBeenSet;
 }
 
 

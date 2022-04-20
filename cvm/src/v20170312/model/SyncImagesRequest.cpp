@@ -24,7 +24,8 @@ using namespace std;
 
 SyncImagesRequest::SyncImagesRequest() :
     m_imageIdsHasBeenSet(false),
-    m_destinationRegionsHasBeenSet(false)
+    m_destinationRegionsHasBeenSet(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string SyncImagesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_dryRunHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DryRun";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dryRun, allocator);
     }
 
 
@@ -99,6 +108,22 @@ void SyncImagesRequest::SetDestinationRegions(const vector<string>& _destination
 bool SyncImagesRequest::DestinationRegionsHasBeenSet() const
 {
     return m_destinationRegionsHasBeenSet;
+}
+
+bool SyncImagesRequest::GetDryRun() const
+{
+    return m_dryRun;
+}
+
+void SyncImagesRequest::SetDryRun(const bool& _dryRun)
+{
+    m_dryRun = _dryRun;
+    m_dryRunHasBeenSet = true;
+}
+
+bool SyncImagesRequest::DryRunHasBeenSet() const
+{
+    return m_dryRunHasBeenSet;
 }
 
 
