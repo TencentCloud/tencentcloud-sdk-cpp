@@ -61,26 +61,14 @@ namespace TencentCloud
                     bool EventIdSetHasBeenSet() const;
 
                     /**
-                     * 获取标记事件的状态
-   EVENT_DEALED:事件已经处理
-     EVENT_INGNORE：事件忽略
-     EVENT_DEL:事件删除
-                     * @return Status 标记事件的状态
-   EVENT_DEALED:事件已经处理
-     EVENT_INGNORE：事件忽略
-     EVENT_DEL:事件删除
+                     * 获取标记事件的状态：EVENT_UNDEAL:未处理（取消忽略），EVENT_DEALED:已处理，EVENT_IGNORE:忽略，EVENT_DELETE：已删除
+                     * @return Status 标记事件的状态：EVENT_UNDEAL:未处理（取消忽略），EVENT_DEALED:已处理，EVENT_IGNORE:忽略，EVENT_DELETE：已删除
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置标记事件的状态
-   EVENT_DEALED:事件已经处理
-     EVENT_INGNORE：事件忽略
-     EVENT_DEL:事件删除
-                     * @param Status 标记事件的状态
-   EVENT_DEALED:事件已经处理
-     EVENT_INGNORE：事件忽略
-     EVENT_DEL:事件删除
+                     * 设置标记事件的状态：EVENT_UNDEAL:未处理（取消忽略），EVENT_DEALED:已处理，EVENT_IGNORE:忽略，EVENT_DELETE：已删除
+                     * @param Status 标记事件的状态：EVENT_UNDEAL:未处理（取消忽略），EVENT_DEALED:已处理，EVENT_IGNORE:忽略，EVENT_DELETE：已删除
                      */
                     void SetStatus(const std::string& _status);
 
@@ -117,10 +105,7 @@ namespace TencentCloud
                     bool m_eventIdSetHasBeenSet;
 
                     /**
-                     * 标记事件的状态
-   EVENT_DEALED:事件已经处理
-     EVENT_INGNORE：事件忽略
-     EVENT_DEL:事件删除
+                     * 标记事件的状态：EVENT_UNDEAL:未处理（取消忽略），EVENT_DEALED:已处理，EVENT_IGNORE:忽略，EVENT_DELETE：已删除
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

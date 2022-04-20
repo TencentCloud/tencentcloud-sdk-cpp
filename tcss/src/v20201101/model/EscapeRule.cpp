@@ -23,7 +23,8 @@ using namespace std;
 EscapeRule::EscapeRule() :
     m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_isEnableHasBeenSet(false)
+    m_isEnableHasBeenSet(false),
+    m_groupHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome EscapeRule::Deserialize(const rapidjson::Value &value)
         m_isEnableHasBeenSet = true;
     }
 
+    if (value.HasMember("Group") && !value["Group"].IsNull())
+    {
+        if (!value["Group"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EscapeRule.Group` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_group = string(value["Group"].GetString());
+        m_groupHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void EscapeRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "IsEnable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isEnable, allocator);
+    }
+
+    if (m_groupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Group";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_group.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void EscapeRule::SetIsEnable(const bool& _isEnable)
 bool EscapeRule::IsEnableHasBeenSet() const
 {
     return m_isEnableHasBeenSet;
+}
+
+string EscapeRule::GetGroup() const
+{
+    return m_group;
+}
+
+void EscapeRule::SetGroup(const string& _group)
+{
+    m_group = _group;
+    m_groupHasBeenSet = true;
+}
+
+bool EscapeRule::GroupHasBeenSet() const
+{
+    return m_groupHasBeenSet;
 }
 

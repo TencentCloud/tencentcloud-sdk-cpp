@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 查询vpc通道绑定api列表
+                * 查询后端通道绑定API列表
                 */
                 class DescribeUpstreamBindApis : public AbstractModel
                 {
@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取绑定的api信息
-                     * @return BindApiSet 绑定的api信息
+                     * 获取绑定的API信息
+                     * @return BindApiSet 绑定的API信息
                      */
                     std::vector<BindApiInfo> GetBindApiSet() const;
 
                     /**
-                     * 设置绑定的api信息
-                     * @param BindApiSet 绑定的api信息
+                     * 设置绑定的API信息
+                     * @param BindApiSet 绑定的API信息
                      */
                     void SetBindApiSet(const std::vector<BindApiInfo>& _bindApiSet);
 
@@ -92,7 +92,7 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 绑定的api信息
+                     * 绑定的API信息
                      */
                     std::vector<BindApiInfo> m_bindApiSet;
                     bool m_bindApiSetHasBeenSet;

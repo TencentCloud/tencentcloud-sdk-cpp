@@ -989,6 +989,24 @@ namespace TencentCloud
                      */
                     bool EIAMAppIdHasBeenSet() const;
 
+                    /**
+                     * 获取资源的Owner
+                     * @return Owner 资源的Owner
+                     */
+                    std::string GetOwner() const;
+
+                    /**
+                     * 设置资源的Owner
+                     * @param Owner 资源的Owner
+                     */
+                    void SetOwner(const std::string& _owner);
+
+                    /**
+                     * 判断参数 Owner 是否已赋值
+                     * @return Owner 是否已赋值
+                     */
+                    bool OwnerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1302,6 +1320,12 @@ namespace TencentCloud
                      */
                     std::string m_eIAMAppId;
                     bool m_eIAMAppIdHasBeenSet;
+
+                    /**
+                     * 资源的Owner
+                     */
+                    std::string m_owner;
+                    bool m_ownerHasBeenSet;
 
                 };
             }

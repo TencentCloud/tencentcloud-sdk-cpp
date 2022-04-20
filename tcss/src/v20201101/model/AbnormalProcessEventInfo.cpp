@@ -40,7 +40,9 @@ AbnormalProcessEventInfo::AbnormalProcessEventInfo() :
     m_ruleExistHasBeenSet(false),
     m_eventCountHasBeenSet(false),
     m_latestFoundTimeHasBeenSet(false),
-    m_ruleIdHasBeenSet(false)
+    m_ruleIdHasBeenSet(false),
+    m_matchGroupNameHasBeenSet(false),
+    m_matchRuleLevelHasBeenSet(false)
 {
 }
 
@@ -249,6 +251,26 @@ CoreInternalOutcome AbnormalProcessEventInfo::Deserialize(const rapidjson::Value
         m_ruleIdHasBeenSet = true;
     }
 
+    if (value.HasMember("MatchGroupName") && !value["MatchGroupName"].IsNull())
+    {
+        if (!value["MatchGroupName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AbnormalProcessEventInfo.MatchGroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_matchGroupName = string(value["MatchGroupName"].GetString());
+        m_matchGroupNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("MatchRuleLevel") && !value["MatchRuleLevel"].IsNull())
+    {
+        if (!value["MatchRuleLevel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AbnormalProcessEventInfo.MatchRuleLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_matchRuleLevel = string(value["MatchRuleLevel"].GetString());
+        m_matchRuleLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -414,6 +436,22 @@ void AbnormalProcessEventInfo::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "RuleId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ruleId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_matchGroupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MatchGroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_matchGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_matchRuleLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MatchRuleLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_matchRuleLevel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -737,5 +775,37 @@ void AbnormalProcessEventInfo::SetRuleId(const string& _ruleId)
 bool AbnormalProcessEventInfo::RuleIdHasBeenSet() const
 {
     return m_ruleIdHasBeenSet;
+}
+
+string AbnormalProcessEventInfo::GetMatchGroupName() const
+{
+    return m_matchGroupName;
+}
+
+void AbnormalProcessEventInfo::SetMatchGroupName(const string& _matchGroupName)
+{
+    m_matchGroupName = _matchGroupName;
+    m_matchGroupNameHasBeenSet = true;
+}
+
+bool AbnormalProcessEventInfo::MatchGroupNameHasBeenSet() const
+{
+    return m_matchGroupNameHasBeenSet;
+}
+
+string AbnormalProcessEventInfo::GetMatchRuleLevel() const
+{
+    return m_matchRuleLevel;
+}
+
+void AbnormalProcessEventInfo::SetMatchRuleLevel(const string& _matchRuleLevel)
+{
+    m_matchRuleLevel = _matchRuleLevel;
+    m_matchRuleLevelHasBeenSet = true;
+}
+
+bool AbnormalProcessEventInfo::MatchRuleLevelHasBeenSet() const
+{
+    return m_matchRuleLevelHasBeenSet;
 }
 

@@ -125,26 +125,14 @@ namespace TencentCloud
                     bool ImageNameHasBeenSet() const;
 
                     /**
-                     * 获取状态
-     EVENT_UNDEAL:事件未处理
-     EVENT_DEALED:事件已经处理
-     EVENT_INGNORE：事件忽略
-                     * @return Status 状态
-     EVENT_UNDEAL:事件未处理
-     EVENT_DEALED:事件已经处理
-     EVENT_INGNORE：事件忽略
+                     * 获取状态，EVENT_UNDEAL:未处理，EVENT_DEALED:已处理，EVENT_INGNORE:忽略
+                     * @return Status 状态，EVENT_UNDEAL:未处理，EVENT_DEALED:已处理，EVENT_INGNORE:忽略
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置状态
-     EVENT_UNDEAL:事件未处理
-     EVENT_DEALED:事件已经处理
-     EVENT_INGNORE：事件忽略
-                     * @param Status 状态
-     EVENT_UNDEAL:事件未处理
-     EVENT_DEALED:事件已经处理
-     EVENT_INGNORE：事件忽略
+                     * 设置状态，EVENT_UNDEAL:未处理，EVENT_DEALED:已处理，EVENT_INGNORE:忽略
+                     * @param Status 状态，EVENT_UNDEAL:未处理，EVENT_DEALED:已处理，EVENT_INGNORE:忽略
                      */
                     void SetStatus(const std::string& _status);
 
@@ -376,6 +364,50 @@ MountNamespace逃逸、
                      */
                     bool LatestFoundTimeHasBeenSet() const;
 
+                    /**
+                     * 获取节点IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NodeIP 节点IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetNodeIP() const;
+
+                    /**
+                     * 设置节点IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NodeIP 节点IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNodeIP(const std::string& _nodeIP);
+
+                    /**
+                     * 判断参数 NodeIP 是否已赋值
+                     * @return NodeIP 是否已赋值
+                     */
+                    bool NodeIPHasBeenSet() const;
+
+                    /**
+                     * 获取主机IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HostID 主机IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetHostID() const;
+
+                    /**
+                     * 设置主机IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HostID 主机IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHostID(const std::string& _hostID);
+
+                    /**
+                     * 判断参数 HostID 是否已赋值
+                     * @return HostID 是否已赋值
+                     */
+                    bool HostIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -403,10 +435,7 @@ MountNamespace逃逸、
                     bool m_imageNameHasBeenSet;
 
                     /**
-                     * 状态
-     EVENT_UNDEAL:事件未处理
-     EVENT_DEALED:事件已经处理
-     EVENT_INGNORE：事件忽略
+                     * 状态，EVENT_UNDEAL:未处理，EVENT_DEALED:已处理，EVENT_INGNORE:忽略
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -482,6 +511,20 @@ MountNamespace逃逸、
                      */
                     std::string m_latestFoundTime;
                     bool m_latestFoundTimeHasBeenSet;
+
+                    /**
+                     * 节点IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_nodeIP;
+                    bool m_nodeIPHasBeenSet;
+
+                    /**
+                     * 主机IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_hostID;
+                    bool m_hostIDHasBeenSet;
 
                 };
             }

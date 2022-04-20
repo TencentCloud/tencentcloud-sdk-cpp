@@ -26,6 +26,7 @@ ServiceConfig::ServiceConfig() :
     m_urlHasBeenSet(false),
     m_pathHasBeenSet(false),
     m_methodHasBeenSet(false),
+    m_upstreamIdHasBeenSet(false),
     m_cosConfigHasBeenSet(false)
 {
 }
@@ -83,6 +84,16 @@ CoreInternalOutcome ServiceConfig::Deserialize(const rapidjson::Value &value)
         }
         m_method = string(value["Method"].GetString());
         m_methodHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpstreamId") && !value["UpstreamId"].IsNull())
+    {
+        if (!value["UpstreamId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceConfig.UpstreamId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_upstreamId = string(value["UpstreamId"].GetString());
+        m_upstreamIdHasBeenSet = true;
     }
 
     if (value.HasMember("CosConfig") && !value["CosConfig"].IsNull())
@@ -147,6 +158,14 @@ void ServiceConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Method";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_method.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_upstreamIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpstreamId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_upstreamId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cosConfigHasBeenSet)
@@ -239,6 +258,22 @@ void ServiceConfig::SetMethod(const string& _method)
 bool ServiceConfig::MethodHasBeenSet() const
 {
     return m_methodHasBeenSet;
+}
+
+string ServiceConfig::GetUpstreamId() const
+{
+    return m_upstreamId;
+}
+
+void ServiceConfig::SetUpstreamId(const string& _upstreamId)
+{
+    m_upstreamId = _upstreamId;
+    m_upstreamIdHasBeenSet = true;
+}
+
+bool ServiceConfig::UpstreamIdHasBeenSet() const
+{
+    return m_upstreamIdHasBeenSet;
 }
 
 CosConfig ServiceConfig::GetCosConfig() const

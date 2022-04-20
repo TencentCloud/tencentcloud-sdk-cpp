@@ -148,6 +148,24 @@ MountNamespace逃逸、
                      */
                     bool IsEnableHasBeenSet() const;
 
+                    /**
+                     * 获取规则组别。RISK_CONTAINER：风险容器，PROCESS_PRIVILEGE：程序特权，CONTAINER_ESCAPE：容器逃逸
+                     * @return Group 规则组别。RISK_CONTAINER：风险容器，PROCESS_PRIVILEGE：程序特权，CONTAINER_ESCAPE：容器逃逸
+                     */
+                    std::string GetGroup() const;
+
+                    /**
+                     * 设置规则组别。RISK_CONTAINER：风险容器，PROCESS_PRIVILEGE：程序特权，CONTAINER_ESCAPE：容器逃逸
+                     * @param Group 规则组别。RISK_CONTAINER：风险容器，PROCESS_PRIVILEGE：程序特权，CONTAINER_ESCAPE：容器逃逸
+                     */
+                    void SetGroup(const std::string& _group);
+
+                    /**
+                     * 判断参数 Group 是否已赋值
+                     * @return Group 是否已赋值
+                     */
+                    bool GroupHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +197,12 @@ MountNamespace逃逸、
                      */
                     bool m_isEnable;
                     bool m_isEnableHasBeenSet;
+
+                    /**
+                     * 规则组别。RISK_CONTAINER：风险容器，PROCESS_PRIVILEGE：程序特权，CONTAINER_ESCAPE：容器逃逸
+                     */
+                    std::string m_group;
+                    bool m_groupHasBeenSet;
 
                 };
             }

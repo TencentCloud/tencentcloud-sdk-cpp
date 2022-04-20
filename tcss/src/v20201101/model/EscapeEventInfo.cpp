@@ -35,7 +35,9 @@ EscapeEventInfo::EscapeEventInfo() :
     m_solutionHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_eventCountHasBeenSet(false),
-    m_latestFoundTimeHasBeenSet(false)
+    m_latestFoundTimeHasBeenSet(false),
+    m_nodeIPHasBeenSet(false),
+    m_hostIDHasBeenSet(false)
 {
 }
 
@@ -194,6 +196,26 @@ CoreInternalOutcome EscapeEventInfo::Deserialize(const rapidjson::Value &value)
         m_latestFoundTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("NodeIP") && !value["NodeIP"].IsNull())
+    {
+        if (!value["NodeIP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EscapeEventInfo.NodeIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeIP = string(value["NodeIP"].GetString());
+        m_nodeIPHasBeenSet = true;
+    }
+
+    if (value.HasMember("HostID") && !value["HostID"].IsNull())
+    {
+        if (!value["HostID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EscapeEventInfo.HostID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostID = string(value["HostID"].GetString());
+        m_hostIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +341,22 @@ void EscapeEventInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "LatestFoundTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_latestFoundTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeIP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hostID.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -562,5 +600,37 @@ void EscapeEventInfo::SetLatestFoundTime(const string& _latestFoundTime)
 bool EscapeEventInfo::LatestFoundTimeHasBeenSet() const
 {
     return m_latestFoundTimeHasBeenSet;
+}
+
+string EscapeEventInfo::GetNodeIP() const
+{
+    return m_nodeIP;
+}
+
+void EscapeEventInfo::SetNodeIP(const string& _nodeIP)
+{
+    m_nodeIP = _nodeIP;
+    m_nodeIPHasBeenSet = true;
+}
+
+bool EscapeEventInfo::NodeIPHasBeenSet() const
+{
+    return m_nodeIPHasBeenSet;
+}
+
+string EscapeEventInfo::GetHostID() const
+{
+    return m_hostID;
+}
+
+void EscapeEventInfo::SetHostID(const string& _hostID)
+{
+    m_hostID = _hostID;
+    m_hostIDHasBeenSet = true;
+}
+
+bool EscapeEventInfo::HostIDHasBeenSet() const
+{
+    return m_hostIDHasBeenSet;
 }
 

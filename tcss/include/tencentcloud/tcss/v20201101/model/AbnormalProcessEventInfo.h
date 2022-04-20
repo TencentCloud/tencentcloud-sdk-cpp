@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool EventTypeHasBeenSet() const;
 
                     /**
-                     * 获取命中规则
-                     * @return MatchRuleName 命中规则
+                     * 获取命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则
+                     * @return MatchRuleName 命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则
                      */
                     std::string GetMatchRuleName() const;
 
                     /**
-                     * 设置命中规则
-                     * @param MatchRuleName 命中规则
+                     * 设置命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则
+                     * @param MatchRuleName 命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则
                      */
                     void SetMatchRuleName(const std::string& _matchRuleName);
 
@@ -442,6 +442,42 @@ RULE_MODE_HOLDUP 拦截
                      */
                     bool RuleIdHasBeenSet() const;
 
+                    /**
+                     * 获取命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字
+                     * @return MatchGroupName 命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字
+                     */
+                    std::string GetMatchGroupName() const;
+
+                    /**
+                     * 设置命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字
+                     * @param MatchGroupName 命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字
+                     */
+                    void SetMatchGroupName(const std::string& _matchGroupName);
+
+                    /**
+                     * 判断参数 MatchGroupName 是否已赋值
+                     * @return MatchGroupName 是否已赋值
+                     */
+                    bool MatchGroupNameHasBeenSet() const;
+
+                    /**
+                     * 获取命中规则等级，HIGH：高危，MIDDLE：中危，LOW：低危。
+                     * @return MatchRuleLevel 命中规则等级，HIGH：高危，MIDDLE：中危，LOW：低危。
+                     */
+                    std::string GetMatchRuleLevel() const;
+
+                    /**
+                     * 设置命中规则等级，HIGH：高危，MIDDLE：中危，LOW：低危。
+                     * @param MatchRuleLevel 命中规则等级，HIGH：高危，MIDDLE：中危，LOW：低危。
+                     */
+                    void SetMatchRuleLevel(const std::string& _matchRuleLevel);
+
+                    /**
+                     * 判断参数 MatchRuleLevel 是否已赋值
+                     * @return MatchRuleLevel 是否已赋值
+                     */
+                    bool MatchRuleLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -457,7 +493,7 @@ RULE_MODE_HOLDUP 拦截
                     bool m_eventTypeHasBeenSet;
 
                     /**
-                     * 命中规则
+                     * 命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则
                      */
                     std::string m_matchRuleName;
                     bool m_matchRuleNameHasBeenSet;
@@ -572,6 +608,18 @@ RULE_MODE_HOLDUP 拦截
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
+
+                    /**
+                     * 命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字
+                     */
+                    std::string m_matchGroupName;
+                    bool m_matchGroupNameHasBeenSet;
+
+                    /**
+                     * 命中规则等级，HIGH：高危，MIDDLE：中危，LOW：低危。
+                     */
+                    std::string m_matchRuleLevel;
+                    bool m_matchRuleLevelHasBeenSet;
 
                 };
             }

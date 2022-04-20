@@ -24,7 +24,8 @@ AbnormalProcessSystemChildRuleInfo::AbnormalProcessSystemChildRuleInfo() :
     m_ruleIdHasBeenSet(false),
     m_isEnableHasBeenSet(false),
     m_ruleModeHasBeenSet(false),
-    m_ruleTypeHasBeenSet(false)
+    m_ruleTypeHasBeenSet(false),
+    m_ruleLevelHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome AbnormalProcessSystemChildRuleInfo::Deserialize(const rapidj
         m_ruleTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("RuleLevel") && !value["RuleLevel"].IsNull())
+    {
+        if (!value["RuleLevel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AbnormalProcessSystemChildRuleInfo.RuleLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleLevel = string(value["RuleLevel"].GetString());
+        m_ruleLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void AbnormalProcessSystemChildRuleInfo::ToJsonObject(rapidjson::Value &value, r
         string key = "RuleType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ruleType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleLevel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void AbnormalProcessSystemChildRuleInfo::SetRuleType(const string& _ruleType)
 bool AbnormalProcessSystemChildRuleInfo::RuleTypeHasBeenSet() const
 {
     return m_ruleTypeHasBeenSet;
+}
+
+string AbnormalProcessSystemChildRuleInfo::GetRuleLevel() const
+{
+    return m_ruleLevel;
+}
+
+void AbnormalProcessSystemChildRuleInfo::SetRuleLevel(const string& _ruleLevel)
+{
+    m_ruleLevel = _ruleLevel;
+    m_ruleLevelHasBeenSet = true;
+}
+
+bool AbnormalProcessSystemChildRuleInfo::RuleLevelHasBeenSet() const
+{
+    return m_ruleLevelHasBeenSet;
 }
 
