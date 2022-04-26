@@ -23,7 +23,8 @@ using namespace TencentCloud::Cdn::V20180606::Model;
 using namespace std;
 
 VerifyDomainRecordRequest::VerifyDomainRecordRequest() :
-    m_domainHasBeenSet(false)
+    m_domainHasBeenSet(false),
+    m_verifyTypeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string VerifyDomainRecordRequest::ToJsonString() const
         string key = "Domain";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_verifyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VerifyType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_verifyType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void VerifyDomainRecordRequest::SetDomain(const string& _domain)
 bool VerifyDomainRecordRequest::DomainHasBeenSet() const
 {
     return m_domainHasBeenSet;
+}
+
+string VerifyDomainRecordRequest::GetVerifyType() const
+{
+    return m_verifyType;
+}
+
+void VerifyDomainRecordRequest::SetVerifyType(const string& _verifyType)
+{
+    m_verifyType = _verifyType;
+    m_verifyTypeHasBeenSet = true;
+}
+
+bool VerifyDomainRecordRequest::VerifyTypeHasBeenSet() const
+{
+    return m_verifyTypeHasBeenSet;
 }
 
 

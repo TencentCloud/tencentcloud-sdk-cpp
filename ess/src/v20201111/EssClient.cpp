@@ -427,3 +427,46 @@ EssClient::StartFlowOutcomeCallable EssClient::StartFlowCallable(const StartFlow
     return task->get_future();
 }
 
+EssClient::UploadFilesOutcome EssClient::UploadFiles(const UploadFilesRequest &request)
+{
+    auto outcome = MakeRequest(request, "UploadFiles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UploadFilesResponse rsp = UploadFilesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UploadFilesOutcome(rsp);
+        else
+            return UploadFilesOutcome(o.GetError());
+    }
+    else
+    {
+        return UploadFilesOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::UploadFilesAsync(const UploadFilesRequest& request, const UploadFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UploadFiles(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::UploadFilesOutcomeCallable EssClient::UploadFilesCallable(const UploadFilesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UploadFilesOutcome()>>(
+        [this, request]()
+        {
+            return this->UploadFiles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

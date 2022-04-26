@@ -84,14 +84,14 @@ namespace TencentCloud
                     bool PersonIdHasBeenSet() const;
 
                     /**
-                     * 获取包含的人体轨迹图片信息列表。
-                     * @return TraceInfos 包含的人体轨迹图片信息列表。
+                     * 获取包含的人体动作轨迹图片信息列表。
+                     * @return TraceInfos 包含的人体动作轨迹图片信息列表。
                      */
                     std::vector<TraceInfo> GetTraceInfos() const;
 
                     /**
-                     * 设置包含的人体轨迹图片信息列表。
-                     * @param TraceInfos 包含的人体轨迹图片信息列表。
+                     * 设置包含的人体动作轨迹图片信息列表。
+                     * @param TraceInfos 包含的人体动作轨迹图片信息列表。
                      */
                     void SetTraceInfos(const std::vector<TraceInfo>& _traceInfos);
 
@@ -116,7 +116,7 @@ namespace TencentCloud
                     bool m_personIdHasBeenSet;
 
                     /**
-                     * 包含的人体轨迹图片信息列表。
+                     * 包含的人体动作轨迹图片信息列表。
                      */
                     std::vector<TraceInfo> m_traceInfos;
                     bool m_traceInfosHasBeenSet;

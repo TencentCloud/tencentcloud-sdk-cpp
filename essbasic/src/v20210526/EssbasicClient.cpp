@@ -40,6 +40,49 @@ EssbasicClient::EssbasicClient(const Credential &credential, const string &regio
 }
 
 
+EssbasicClient::ChannelCreateFlowByFilesOutcome EssbasicClient::ChannelCreateFlowByFiles(const ChannelCreateFlowByFilesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCreateFlowByFiles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCreateFlowByFilesResponse rsp = ChannelCreateFlowByFilesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCreateFlowByFilesOutcome(rsp);
+        else
+            return ChannelCreateFlowByFilesOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCreateFlowByFilesOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCreateFlowByFilesAsync(const ChannelCreateFlowByFilesRequest& request, const ChannelCreateFlowByFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCreateFlowByFiles(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCreateFlowByFilesOutcomeCallable EssbasicClient::ChannelCreateFlowByFilesCallable(const ChannelCreateFlowByFilesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCreateFlowByFilesOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCreateFlowByFiles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::CreateConsoleLoginUrlOutcome EssbasicClient::CreateConsoleLoginUrl(const CreateConsoleLoginUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateConsoleLoginUrl");
@@ -119,6 +162,49 @@ EssbasicClient::CreateFlowsByTemplatesOutcomeCallable EssbasicClient::CreateFlow
         [this, request]()
         {
             return this->CreateFlowsByTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssbasicClient::CreateSealByImageOutcome EssbasicClient::CreateSealByImage(const CreateSealByImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSealByImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSealByImageResponse rsp = CreateSealByImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSealByImageOutcome(rsp);
+        else
+            return CreateSealByImageOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSealByImageOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::CreateSealByImageAsync(const CreateSealByImageRequest& request, const CreateSealByImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSealByImage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::CreateSealByImageOutcomeCallable EssbasicClient::CreateSealByImageCallable(const CreateSealByImageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSealByImageOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSealByImage(request);
         }
     );
 

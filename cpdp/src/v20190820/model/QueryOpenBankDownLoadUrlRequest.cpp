@@ -26,7 +26,9 @@ QueryOpenBankDownLoadUrlRequest::QueryOpenBankDownLoadUrlRequest() :
     m_channelMerchantIdHasBeenSet(false),
     m_billDateHasBeenSet(false),
     m_billTypeHasBeenSet(false),
-    m_environmentHasBeenSet(false)
+    m_environmentHasBeenSet(false),
+    m_channelNameHasBeenSet(false),
+    m_paymentMethodHasBeenSet(false)
 {
 }
 
@@ -67,6 +69,22 @@ string QueryOpenBankDownLoadUrlRequest::ToJsonString() const
         string key = "Environment";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_environment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_channelNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_channelName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_paymentMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PaymentMethod";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_paymentMethod.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +157,38 @@ void QueryOpenBankDownLoadUrlRequest::SetEnvironment(const string& _environment)
 bool QueryOpenBankDownLoadUrlRequest::EnvironmentHasBeenSet() const
 {
     return m_environmentHasBeenSet;
+}
+
+string QueryOpenBankDownLoadUrlRequest::GetChannelName() const
+{
+    return m_channelName;
+}
+
+void QueryOpenBankDownLoadUrlRequest::SetChannelName(const string& _channelName)
+{
+    m_channelName = _channelName;
+    m_channelNameHasBeenSet = true;
+}
+
+bool QueryOpenBankDownLoadUrlRequest::ChannelNameHasBeenSet() const
+{
+    return m_channelNameHasBeenSet;
+}
+
+string QueryOpenBankDownLoadUrlRequest::GetPaymentMethod() const
+{
+    return m_paymentMethod;
+}
+
+void QueryOpenBankDownLoadUrlRequest::SetPaymentMethod(const string& _paymentMethod)
+{
+    m_paymentMethod = _paymentMethod;
+    m_paymentMethodHasBeenSet = true;
+}
+
+bool QueryOpenBankDownLoadUrlRequest::PaymentMethodHasBeenSet() const
+{
+    return m_paymentMethodHasBeenSet;
 }
 
 

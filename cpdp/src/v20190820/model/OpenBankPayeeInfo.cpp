@@ -26,7 +26,8 @@ OpenBankPayeeInfo::OpenBankPayeeInfo() :
     m_bankAccountNumberHasBeenSet(false),
     m_bankBranchNameHasBeenSet(false),
     m_bankBranchIdHasBeenSet(false),
-    m_bindSerialNoHasBeenSet(false)
+    m_bindSerialNoHasBeenSet(false),
+    m_accountTypeHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome OpenBankPayeeInfo::Deserialize(const rapidjson::Value &value
         m_bindSerialNoHasBeenSet = true;
     }
 
+    if (value.HasMember("AccountType") && !value["AccountType"].IsNull())
+    {
+        if (!value["AccountType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OpenBankPayeeInfo.AccountType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accountType = string(value["AccountType"].GetString());
+        m_accountTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void OpenBankPayeeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "BindSerialNo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_bindSerialNo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accountTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accountType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void OpenBankPayeeInfo::SetBindSerialNo(const string& _bindSerialNo)
 bool OpenBankPayeeInfo::BindSerialNoHasBeenSet() const
 {
     return m_bindSerialNoHasBeenSet;
+}
+
+string OpenBankPayeeInfo::GetAccountType() const
+{
+    return m_accountType;
+}
+
+void OpenBankPayeeInfo::SetAccountType(const string& _accountType)
+{
+    m_accountType = _accountType;
+    m_accountTypeHasBeenSet = true;
+}
+
+bool OpenBankPayeeInfo::AccountTypeHasBeenSet() const
+{
+    return m_accountTypeHasBeenSet;
 }
 

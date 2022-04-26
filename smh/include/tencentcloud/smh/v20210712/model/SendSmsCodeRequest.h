@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取将作为超级管理员账号的手机号码，仅限中国境内手机号，无需国家代码“+86”。
-                     * @return PhoneNumber 将作为超级管理员账号的手机号码，仅限中国境内手机号，无需国家代码“+86”。
+                     * 获取将作为超级管理员账号的手机号码
+                     * @return PhoneNumber 将作为超级管理员账号的手机号码
                      */
                     std::string GetPhoneNumber() const;
 
                     /**
-                     * 设置将作为超级管理员账号的手机号码，仅限中国境内手机号，无需国家代码“+86”。
-                     * @param PhoneNumber 将作为超级管理员账号的手机号码，仅限中国境内手机号，无需国家代码“+86”。
+                     * 设置将作为超级管理员账号的手机号码
+                     * @param PhoneNumber 将作为超级管理员账号的手机号码
                      */
                     void SetPhoneNumber(const std::string& _phoneNumber);
 
@@ -95,6 +95,24 @@ namespace TencentCloud
                      * @return PhoneNumber 是否已赋值
                      */
                     bool PhoneNumberHasBeenSet() const;
+
+                    /**
+                     * 获取将作为超级管理员账号的手机号码的国家代码。默认为 +86。
+                     * @return CountryCode 将作为超级管理员账号的手机号码的国家代码。默认为 +86。
+                     */
+                    std::string GetCountryCode() const;
+
+                    /**
+                     * 设置将作为超级管理员账号的手机号码的国家代码。默认为 +86。
+                     * @param CountryCode 将作为超级管理员账号的手机号码的国家代码。默认为 +86。
+                     */
+                    void SetCountryCode(const std::string& _countryCode);
+
+                    /**
+                     * 判断参数 CountryCode 是否已赋值
+                     * @return CountryCode 是否已赋值
+                     */
+                    bool CountryCodeHasBeenSet() const;
 
                 private:
 
@@ -111,10 +129,16 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 将作为超级管理员账号的手机号码，仅限中国境内手机号，无需国家代码“+86”。
+                     * 将作为超级管理员账号的手机号码
                      */
                     std::string m_phoneNumber;
                     bool m_phoneNumberHasBeenSet;
+
+                    /**
+                     * 将作为超级管理员账号的手机号码的国家代码。默认为 +86。
+                     */
+                    std::string m_countryCode;
+                    bool m_countryCodeHasBeenSet;
 
                 };
             }

@@ -248,6 +248,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/BotStatisticsCount.h
   include/tencentcloud/cdn/v20180606/model/EventLogStatsData.h
   include/tencentcloud/cdn/v20180606/model/SchemeKey.h
+  include/tencentcloud/cdn/v20180606/model/StatisticItem.h
   include/tencentcloud/cdn/v20180606/model/DescribeImageConfigRequest.h
   include/tencentcloud/cdn/v20180606/model/DescribeCdnIpResponse.h
   include/tencentcloud/cdn/v20180606/model/AdvanceCacheRule.h
@@ -590,6 +591,7 @@ set(cdn_src
   src/v20180606/model/BotStatisticsCount.cpp
   src/v20180606/model/EventLogStatsData.cpp
   src/v20180606/model/SchemeKey.cpp
+  src/v20180606/model/StatisticItem.cpp
   src/v20180606/model/DescribeImageConfigRequest.cpp
   src/v20180606/model/DescribeCdnIpResponse.cpp
   src/v20180606/model/AdvanceCacheRule.cpp

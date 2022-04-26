@@ -539,7 +539,7 @@ namespace TencentCloud
                 DescribeSqlFiltersOutcomeCallable DescribeSqlFiltersCallable(const Model::DescribeSqlFiltersRequest& request);
 
                 /**
-                 *查询SQL模版。
+                 *查询SQL模板。
                  * @param req DescribeSqlTemplateRequest
                  * @return DescribeSqlTemplateOutcome
                  */

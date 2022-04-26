@@ -68,17 +68,17 @@ namespace TencentCloud
                     bool MidasAppIdHasBeenSet() const;
 
                     /**
-                     * 获取用户Id。
+                     * 获取用户ID
 长度不小于5位，仅支持字母和数字的组合，长度限制以具体接入渠道为准
-                     * @return UserId 用户Id。
+                     * @return UserId 用户ID
 长度不小于5位，仅支持字母和数字的组合，长度限制以具体接入渠道为准
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户Id。
+                     * 设置用户ID
 长度不小于5位，仅支持字母和数字的组合，长度限制以具体接入渠道为准
-                     * @param UserId 用户Id。
+                     * @param UserId 用户ID
 长度不小于5位，仅支持字母和数字的组合，长度限制以具体接入渠道为准
                      */
                     void SetUserId(const std::string& _userId);
@@ -90,17 +90,17 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取开发者主订单号。
+                     * 获取开发者主订单号
 支付订单号，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合，长度供参考，部分渠道存在长度更短的情况接入时请联系开发咨询
-                     * @return OutTradeNo 开发者主订单号。
+                     * @return OutTradeNo 开发者主订单号
 支付订单号，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合，长度供参考，部分渠道存在长度更短的情况接入时请联系开发咨询
                      */
                     std::string GetOutTradeNo() const;
 
                     /**
-                     * 设置开发者主订单号。
+                     * 设置开发者主订单号
 支付订单号，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合，长度供参考，部分渠道存在长度更短的情况接入时请联系开发咨询
-                     * @param OutTradeNo 开发者主订单号。
+                     * @param OutTradeNo 开发者主订单号
 支付订单号，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合，长度供参考，部分渠道存在长度更短的情况接入时请联系开发咨询
                      */
                     void SetOutTradeNo(const std::string& _outTradeNo);
@@ -112,17 +112,17 @@ namespace TencentCloud
                     bool OutTradeNoHasBeenSet() const;
 
                     /**
-                     * 获取货币类型。
+                     * 获取货币类型
 ISO货币代码，CNY
-                     * @return CurrencyType 货币类型。
+                     * @return CurrencyType 货币类型
 ISO货币代码，CNY
                      */
                     std::string GetCurrencyType() const;
 
                     /**
-                     * 设置货币类型。
+                     * 设置货币类型
 ISO货币代码，CNY
-                     * @param CurrencyType 货币类型。
+                     * @param CurrencyType 货币类型
 ISO货币代码，CNY
                      */
                     void SetCurrencyType(const std::string& _currencyType);
@@ -134,17 +134,17 @@ ISO货币代码，CNY
                     bool CurrencyTypeHasBeenSet() const;
 
                     /**
-                     * 获取商品Id。
+                     * 获取商品ID
 业务自定义的商品id，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合。
-                     * @return ProductId 商品Id。
+                     * @return ProductId 商品ID
 业务自定义的商品id，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合。
                      */
                     std::string GetProductId() const;
 
                     /**
-                     * 设置商品Id。
+                     * 设置商品ID
 业务自定义的商品id，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合。
-                     * @param ProductId 商品Id。
+                     * @param ProductId 商品ID
 业务自定义的商品id，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合。
                      */
                     void SetProductId(const std::string& _productId);
@@ -156,17 +156,17 @@ ISO货币代码，CNY
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取商品名称。
+                     * 获取商品名称
 业务自定义的商品名称，无需URL编码，长度限制以具体所接入渠道为准。
-                     * @return ProductName 商品名称。
+                     * @return ProductName 商品名称
 业务自定义的商品名称，无需URL编码，长度限制以具体所接入渠道为准。
                      */
                     std::string GetProductName() const;
 
                     /**
-                     * 设置商品名称。
+                     * 设置商品名称
 业务自定义的商品名称，无需URL编码，长度限制以具体所接入渠道为准。
-                     * @param ProductName 商品名称。
+                     * @param ProductName 商品名称
 业务自定义的商品名称，无需URL编码，长度限制以具体所接入渠道为准。
                      */
                     void SetProductName(const std::string& _productName);
@@ -178,17 +178,17 @@ ISO货币代码，CNY
                     bool ProductNameHasBeenSet() const;
 
                     /**
-                     * 获取商品详情。
+                     * 获取商品详情
 业务自定义的商品详情，无需URL编码，长度限制以具体所接入渠道为准。
-                     * @return ProductDetail 商品详情。
+                     * @return ProductDetail 商品详情
 业务自定义的商品详情，无需URL编码，长度限制以具体所接入渠道为准。
                      */
                     std::string GetProductDetail() const;
 
                     /**
-                     * 设置商品详情。
+                     * 设置商品详情
 业务自定义的商品详情，无需URL编码，长度限制以具体所接入渠道为准。
-                     * @param ProductDetail 商品详情。
+                     * @param ProductDetail 商品详情
 业务自定义的商品详情，无需URL编码，长度限制以具体所接入渠道为准。
                      */
                     void SetProductDetail(const std::string& _productDetail);
@@ -200,17 +200,17 @@ ISO货币代码，CNY
                     bool ProductDetailHasBeenSet() const;
 
                     /**
-                     * 获取原始金额。
+                     * 获取原始金额
 单位：分，需要注意的是，OriginalAmt>=TotalAmt
-                     * @return OriginalAmt 原始金额。
+                     * @return OriginalAmt 原始金额
 单位：分，需要注意的是，OriginalAmt>=TotalAmt
                      */
                     int64_t GetOriginalAmt() const;
 
                     /**
-                     * 设置原始金额。
+                     * 设置原始金额
 单位：分，需要注意的是，OriginalAmt>=TotalAmt
-                     * @param OriginalAmt 原始金额。
+                     * @param OriginalAmt 原始金额
 单位：分，需要注意的是，OriginalAmt>=TotalAmt
                      */
                     void SetOriginalAmt(const int64_t& _originalAmt);
@@ -222,17 +222,17 @@ ISO货币代码，CNY
                     bool OriginalAmtHasBeenSet() const;
 
                     /**
-                     * 获取支付金额。
+                     * 获取支付金额
 单位：分，需要注意的是，TotalAmt=TotalPlatformIncome+TotalMchIncome。
-                     * @return TotalAmt 支付金额。
+                     * @return TotalAmt 支付金额
 单位：分，需要注意的是，TotalAmt=TotalPlatformIncome+TotalMchIncome。
                      */
                     int64_t GetTotalAmt() const;
 
                     /**
-                     * 设置支付金额。
+                     * 设置支付金额
 单位：分，需要注意的是，TotalAmt=TotalPlatformIncome+TotalMchIncome。
-                     * @param TotalAmt 支付金额。
+                     * @param TotalAmt 支付金额
 单位：分，需要注意的是，TotalAmt=TotalPlatformIncome+TotalMchIncome。
                      */
                     void SetTotalAmt(const int64_t& _totalAmt);
@@ -274,17 +274,17 @@ _不填默认为生产环境_
                     bool MidasEnvironmentHasBeenSet() const;
 
                     /**
-                     * 获取支付SubAppId。
+                     * 获取支付SubAppId
 米大师计费SubAppId，代表子商户。指定使用该商户的商户号下单时必传。
-                     * @return SubAppId 支付SubAppId。
+                     * @return SubAppId 支付SubAppId
 米大师计费SubAppId，代表子商户。指定使用该商户的商户号下单时必传。
                      */
                     std::string GetSubAppId() const;
 
                     /**
-                     * 设置支付SubAppId。
+                     * 设置支付SubAppId
 米大师计费SubAppId，代表子商户。指定使用该商户的商户号下单时必传。
-                     * @param SubAppId 支付SubAppId。
+                     * @param SubAppId 支付SubAppId
 米大师计费SubAppId，代表子商户。指定使用该商户的商户号下单时必传。
                      */
                     void SetSubAppId(const std::string& _subAppId);
@@ -296,7 +296,7 @@ _不填默认为生产环境_
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取顶层支付渠道。
+                     * 获取顶层支付渠道
 银行收单:
 openbank_ccb: 建设银行
 openbank_icbc: 工商银行
@@ -304,7 +304,7 @@ openbank_cmb: 招商银行
 openbank_ping: 平安银行
 openbank_icbc_jft：工商银行聚付通
 非银行收单，可以为空
-                     * @return RealChannel 顶层支付渠道。
+                     * @return RealChannel 顶层支付渠道
 银行收单:
 openbank_ccb: 建设银行
 openbank_icbc: 工商银行
@@ -316,7 +316,7 @@ openbank_icbc_jft：工商银行聚付通
                     std::string GetRealChannel() const;
 
                     /**
-                     * 设置顶层支付渠道。
+                     * 设置顶层支付渠道
 银行收单:
 openbank_ccb: 建设银行
 openbank_icbc: 工商银行
@@ -324,7 +324,7 @@ openbank_cmb: 招商银行
 openbank_ping: 平安银行
 openbank_icbc_jft：工商银行聚付通
 非银行收单，可以为空
-                     * @param RealChannel 顶层支付渠道。
+                     * @param RealChannel 顶层支付渠道
 银行收单:
 openbank_ccb: 建设银行
 openbank_icbc: 工商银行
@@ -342,7 +342,7 @@ openbank_icbc_jft：工商银行聚付通
                     bool RealChannelHasBeenSet() const;
 
                     /**
-                     * 获取支付渠道。
+                     * 获取支付渠道
 wechat：微信支付
 wechat_ecommerce: 微信电商收付通
 open_alipay: 支付宝
@@ -353,7 +353,7 @@ icbc_jft_wechat: 工行聚付通-微信
 icbc_jft_alipay: 工行聚付通-支付宝
 icbc_jft_epay: 工行聚付通-e支付
 指定渠道下单时必传
-                     * @return Channel 支付渠道。
+                     * @return Channel 支付渠道
 wechat：微信支付
 wechat_ecommerce: 微信电商收付通
 open_alipay: 支付宝
@@ -368,7 +368,7 @@ icbc_jft_epay: 工行聚付通-e支付
                     std::string GetChannel() const;
 
                     /**
-                     * 设置支付渠道。
+                     * 设置支付渠道
 wechat：微信支付
 wechat_ecommerce: 微信电商收付通
 open_alipay: 支付宝
@@ -379,7 +379,7 @@ icbc_jft_wechat: 工行聚付通-微信
 icbc_jft_alipay: 工行聚付通-支付宝
 icbc_jft_epay: 工行聚付通-e支付
 指定渠道下单时必传
-                     * @param Channel 支付渠道。
+                     * @param Channel 支付渠道
 wechat：微信支付
 wechat_ecommerce: 微信电商收付通
 open_alipay: 支付宝
@@ -400,17 +400,17 @@ icbc_jft_epay: 工行聚付通-e支付
                     bool ChannelHasBeenSet() const;
 
                     /**
-                     * 获取透传字段。
+                     * 获取透传字段
 支付成功回调透传给应用，用于开发者透传自定义内容。
-                     * @return Metadata 透传字段。
+                     * @return Metadata 透传字段
 支付成功回调透传给应用，用于开发者透传自定义内容。
                      */
                     std::string GetMetadata() const;
 
                     /**
-                     * 设置透传字段。
+                     * 设置透传字段
 支付成功回调透传给应用，用于开发者透传自定义内容。
-                     * @param Metadata 透传字段。
+                     * @param Metadata 透传字段
 支付成功回调透传给应用，用于开发者透传自定义内容。
                      */
                     void SetMetadata(const std::string& _metadata);
@@ -422,17 +422,17 @@ icbc_jft_epay: 工行聚付通-e支付
                     bool MetadataHasBeenSet() const;
 
                     /**
-                     * 获取数量。
+                     * 获取数量
 购买数量,不传默认为1。
-                     * @return Quantity 数量。
+                     * @return Quantity 数量
 购买数量,不传默认为1。
                      */
                     int64_t GetQuantity() const;
 
                     /**
-                     * 设置数量。
+                     * 设置数量
 购买数量,不传默认为1。
-                     * @param Quantity 数量。
+                     * @param Quantity 数量
 购买数量,不传默认为1。
                      */
                     void SetQuantity(const int64_t& _quantity);
@@ -444,17 +444,17 @@ icbc_jft_epay: 工行聚付通-e支付
                     bool QuantityHasBeenSet() const;
 
                     /**
-                     * 获取Web端回调地址。
+                     * 获取Web端回调地址
 Web端网页回调地址，仅当Web端SDK使用页面跳转方式时有效。
-                     * @return CallbackUrl Web端回调地址。
+                     * @return CallbackUrl Web端回调地址
 Web端网页回调地址，仅当Web端SDK使用页面跳转方式时有效。
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
-                     * 设置Web端回调地址。
+                     * 设置Web端回调地址
 Web端网页回调地址，仅当Web端SDK使用页面跳转方式时有效。
-                     * @param CallbackUrl Web端回调地址。
+                     * @param CallbackUrl Web端回调地址
 Web端网页回调地址，仅当Web端SDK使用页面跳转方式时有效。
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
@@ -466,14 +466,14 @@ Web端网页回调地址，仅当Web端SDK使用页面跳转方式时有效。
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
-                     * 获取支付取消地址。
-                     * @return CancelUrl 支付取消地址。
+                     * 获取支付取消地址
+                     * @return CancelUrl 支付取消地址
                      */
                     std::string GetCancelUrl() const;
 
                     /**
-                     * 设置支付取消地址。
-                     * @param CancelUrl 支付取消地址。
+                     * 设置支付取消地址
+                     * @param CancelUrl 支付取消地址
                      */
                     void SetCancelUrl(const std::string& _cancelUrl);
 
@@ -484,17 +484,17 @@ Web端网页回调地址，仅当Web端SDK使用页面跳转方式时有效。
                     bool CancelUrlHasBeenSet() const;
 
                     /**
-                     * 获取微信AppId。
+                     * 获取微信AppId
 wechat渠道或wchat_ecommerce渠道可以指定下单时的wxappid。
-                     * @return WxAppId 微信AppId。
+                     * @return WxAppId 微信AppId
 wechat渠道或wchat_ecommerce渠道可以指定下单时的wxappid。
                      */
                     std::string GetWxAppId() const;
 
                     /**
-                     * 设置微信AppId。
+                     * 设置微信AppId
 wechat渠道或wchat_ecommerce渠道可以指定下单时的wxappid。
-                     * @param WxAppId 微信AppId。
+                     * @param WxAppId 微信AppId
 wechat渠道或wchat_ecommerce渠道可以指定下单时的wxappid。
                      */
                     void SetWxAppId(const std::string& _wxAppId);
@@ -506,17 +506,17 @@ wechat渠道或wchat_ecommerce渠道可以指定下单时的wxappid。
                     bool WxAppIdHasBeenSet() const;
 
                     /**
-                     * 获取微信SubAppId。
+                     * 获取微信SubAppId
 wechat渠道可以指定下单时的sub_appid。
-                     * @return WxSubAppId 微信SubAppId。
+                     * @return WxSubAppId 微信SubAppId
 wechat渠道可以指定下单时的sub_appid。
                      */
                     std::string GetWxSubAppId() const;
 
                     /**
-                     * 设置微信SubAppId。
+                     * 设置微信SubAppId
 wechat渠道可以指定下单时的sub_appid。
-                     * @param WxSubAppId 微信SubAppId。
+                     * @param WxSubAppId 微信SubAppId
 wechat渠道可以指定下单时的sub_appid。
                      */
                     void SetWxSubAppId(const std::string& _wxSubAppId);
@@ -528,17 +528,17 @@ wechat渠道可以指定下单时的sub_appid。
                     bool WxSubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取微信公众号/小程序OpenId。
+                     * 获取微信公众号/小程序OpenId
 微信公众号/小程序支付时为必选，需要传微信下的openid。
-                     * @return WxOpenId 微信公众号/小程序OpenId。
+                     * @return WxOpenId 微信公众号/小程序OpenId
 微信公众号/小程序支付时为必选，需要传微信下的openid。
                      */
                     std::string GetWxOpenId() const;
 
                     /**
-                     * 设置微信公众号/小程序OpenId。
+                     * 设置微信公众号/小程序OpenId
 微信公众号/小程序支付时为必选，需要传微信下的openid。
-                     * @param WxOpenId 微信公众号/小程序OpenId。
+                     * @param WxOpenId 微信公众号/小程序OpenId
 微信公众号/小程序支付时为必选，需要传微信下的openid。
                      */
                     void SetWxOpenId(const std::string& _wxOpenId);
@@ -550,17 +550,17 @@ wechat渠道可以指定下单时的sub_appid。
                     bool WxOpenIdHasBeenSet() const;
 
                     /**
-                     * 获取微信公众号/小程序SubOpenId。
+                     * 获取微信公众号/小程序SubOpenId
 在服务商模式下，微信公众号/小程序支付时wx_sub_openid和wx_openid二选一。
-                     * @return WxSubOpenId 微信公众号/小程序SubOpenId。
+                     * @return WxSubOpenId 微信公众号/小程序SubOpenId
 在服务商模式下，微信公众号/小程序支付时wx_sub_openid和wx_openid二选一。
                      */
                     std::string GetWxSubOpenId() const;
 
                     /**
-                     * 设置微信公众号/小程序SubOpenId。
+                     * 设置微信公众号/小程序SubOpenId
 在服务商模式下，微信公众号/小程序支付时wx_sub_openid和wx_openid二选一。
-                     * @param WxSubOpenId 微信公众号/小程序SubOpenId。
+                     * @param WxSubOpenId 微信公众号/小程序SubOpenId
 在服务商模式下，微信公众号/小程序支付时wx_sub_openid和wx_openid二选一。
                      */
                     void SetWxSubOpenId(const std::string& _wxSubOpenId);
@@ -572,17 +572,17 @@ wechat渠道可以指定下单时的sub_appid。
                     bool WxSubOpenIdHasBeenSet() const;
 
                     /**
-                     * 获取平台应收金额。
+                     * 获取平台应收金额
 单位：分，需要注意的是，TotalAmt=TotalPlatformIncome+TotalMchIncome
-                     * @return TotalPlatformIncome 平台应收金额。
+                     * @return TotalPlatformIncome 平台应收金额
 单位：分，需要注意的是，TotalAmt=TotalPlatformIncome+TotalMchIncome
                      */
                     int64_t GetTotalPlatformIncome() const;
 
                     /**
-                     * 设置平台应收金额。
+                     * 设置平台应收金额
 单位：分，需要注意的是，TotalAmt=TotalPlatformIncome+TotalMchIncome
-                     * @param TotalPlatformIncome 平台应收金额。
+                     * @param TotalPlatformIncome 平台应收金额
 单位：分，需要注意的是，TotalAmt=TotalPlatformIncome+TotalMchIncome
                      */
                     void SetTotalPlatformIncome(const int64_t& _totalPlatformIncome);
@@ -594,17 +594,17 @@ wechat渠道可以指定下单时的sub_appid。
                     bool TotalPlatformIncomeHasBeenSet() const;
 
                     /**
-                     * 获取结算应收金额。
+                     * 获取结算应收金额
 单位：分，需要注意的是，TotalAmt=TotalPlatformIncome+TotalMchIncome
-                     * @return TotalMchIncome 结算应收金额。
+                     * @return TotalMchIncome 结算应收金额
 单位：分，需要注意的是，TotalAmt=TotalPlatformIncome+TotalMchIncome
                      */
                     int64_t GetTotalMchIncome() const;
 
                     /**
-                     * 设置结算应收金额。
+                     * 设置结算应收金额
 单位：分，需要注意的是，TotalAmt=TotalPlatformIncome+TotalMchIncome
-                     * @param TotalMchIncome 结算应收金额。
+                     * @param TotalMchIncome 结算应收金额
 单位：分，需要注意的是，TotalAmt=TotalPlatformIncome+TotalMchIncome
                      */
                     void SetTotalMchIncome(const int64_t& _totalMchIncome);
@@ -616,17 +616,17 @@ wechat渠道可以指定下单时的sub_appid。
                     bool TotalMchIncomeHasBeenSet() const;
 
                     /**
-                     * 获取子订单列表。
+                     * 获取子订单列表
 格式：子订单号、子应用Id、金额。压缩后最长不可超过32K字节(去除空格，换行，制表符等无意义字符)。
-                     * @return SubOrderList 子订单列表。
+                     * @return SubOrderList 子订单列表
 格式：子订单号、子应用Id、金额。压缩后最长不可超过32K字节(去除空格，换行，制表符等无意义字符)。
                      */
                     std::vector<CloudSubOrder> GetSubOrderList() const;
 
                     /**
-                     * 设置子订单列表。
+                     * 设置子订单列表
 格式：子订单号、子应用Id、金额。压缩后最长不可超过32K字节(去除空格，换行，制表符等无意义字符)。
-                     * @param SubOrderList 子订单列表。
+                     * @param SubOrderList 子订单列表
 格式：子订单号、子应用Id、金额。压缩后最长不可超过32K字节(去除空格，换行，制表符等无意义字符)。
                      */
                     void SetSubOrderList(const std::vector<CloudSubOrder>& _subOrderList);
@@ -638,20 +638,20 @@ wechat渠道可以指定下单时的sub_appid。
                     bool SubOrderListHasBeenSet() const;
 
                     /**
-                     * 获取结算信息。
+                     * 获取结算信息
 例如是否需要分账、是否需要支付确认等，
 注意：如果子单列表中传入了SettleInfo，在主单中不可再传入SettleInfo字段。
-                     * @return SettleInfo 结算信息。
+                     * @return SettleInfo 结算信息
 例如是否需要分账、是否需要支付确认等，
 注意：如果子单列表中传入了SettleInfo，在主单中不可再传入SettleInfo字段。
                      */
                     CloudSettleInfo GetSettleInfo() const;
 
                     /**
-                     * 设置结算信息。
+                     * 设置结算信息
 例如是否需要分账、是否需要支付确认等，
 注意：如果子单列表中传入了SettleInfo，在主单中不可再传入SettleInfo字段。
-                     * @param SettleInfo 结算信息。
+                     * @param SettleInfo 结算信息
 例如是否需要分账、是否需要支付确认等，
 注意：如果子单列表中传入了SettleInfo，在主单中不可再传入SettleInfo字段。
                      */
@@ -664,11 +664,11 @@ wechat渠道可以指定下单时的sub_appid。
                     bool SettleInfoHasBeenSet() const;
 
                     /**
-                     * 获取附加项信息列表。
+                     * 获取附加项信息列表
 例如溢价信息、抵扣信息、积分信息、补贴信息
 通过该字段可以实现渠道方的优惠抵扣补贴等营销功能
 注意：当传SubOrderList时，请在子单信息中传附加项信息，不要在主单中传该字段。
-                     * @return AttachmentInfoList 附加项信息列表。
+                     * @return AttachmentInfoList 附加项信息列表
 例如溢价信息、抵扣信息、积分信息、补贴信息
 通过该字段可以实现渠道方的优惠抵扣补贴等营销功能
 注意：当传SubOrderList时，请在子单信息中传附加项信息，不要在主单中传该字段。
@@ -676,11 +676,11 @@ wechat渠道可以指定下单时的sub_appid。
                     std::vector<CloudAttachmentInfo> GetAttachmentInfoList() const;
 
                     /**
-                     * 设置附加项信息列表。
+                     * 设置附加项信息列表
 例如溢价信息、抵扣信息、积分信息、补贴信息
 通过该字段可以实现渠道方的优惠抵扣补贴等营销功能
 注意：当传SubOrderList时，请在子单信息中传附加项信息，不要在主单中传该字段。
-                     * @param AttachmentInfoList 附加项信息列表。
+                     * @param AttachmentInfoList 附加项信息列表
 例如溢价信息、抵扣信息、积分信息、补贴信息
 通过该字段可以实现渠道方的优惠抵扣补贴等营销功能
 注意：当传SubOrderList时，请在子单信息中传附加项信息，不要在主单中传该字段。
@@ -694,17 +694,17 @@ wechat渠道可以指定下单时的sub_appid。
                     bool AttachmentInfoListHasBeenSet() const;
 
                     /**
-                     * 获取支付通知地址。
+                     * 获取支付通知地址
 调用方可通过该字段传入自定义支付通知地址。
-                     * @return PaymentNotifyUrl 支付通知地址。
+                     * @return PaymentNotifyUrl 支付通知地址
 调用方可通过该字段传入自定义支付通知地址。
                      */
                     std::string GetPaymentNotifyUrl() const;
 
                     /**
-                     * 设置支付通知地址。
+                     * 设置支付通知地址
 调用方可通过该字段传入自定义支付通知地址。
-                     * @param PaymentNotifyUrl 支付通知地址。
+                     * @param PaymentNotifyUrl 支付通知地址
 调用方可通过该字段传入自定义支付通知地址。
                      */
                     void SetPaymentNotifyUrl(const std::string& _paymentNotifyUrl);
@@ -716,11 +716,11 @@ wechat渠道可以指定下单时的sub_appid。
                     bool PaymentNotifyUrlHasBeenSet() const;
 
                     /**
-                     * 获取支付场景。
+                     * 获取支付场景
 需要结合 RealChannel和Channel字段使用可选值:
 wechat-app 微信APP支付方式
 wechat-mini 微信小程序支付，示例：当 RealChannel=wechat Channel=wechat PayScene=wechat-mini时，内部会直接以小程序方式调用微信统一下单接口。
-                     * @return PayScene 支付场景。
+                     * @return PayScene 支付场景
 需要结合 RealChannel和Channel字段使用可选值:
 wechat-app 微信APP支付方式
 wechat-mini 微信小程序支付，示例：当 RealChannel=wechat Channel=wechat PayScene=wechat-mini时，内部会直接以小程序方式调用微信统一下单接口。
@@ -728,11 +728,11 @@ wechat-mini 微信小程序支付，示例：当 RealChannel=wechat Channel=wech
                     std::string GetPayScene() const;
 
                     /**
-                     * 设置支付场景。
+                     * 设置支付场景
 需要结合 RealChannel和Channel字段使用可选值:
 wechat-app 微信APP支付方式
 wechat-mini 微信小程序支付，示例：当 RealChannel=wechat Channel=wechat PayScene=wechat-mini时，内部会直接以小程序方式调用微信统一下单接口。
-                     * @param PayScene 支付场景。
+                     * @param PayScene 支付场景
 需要结合 RealChannel和Channel字段使用可选值:
 wechat-app 微信APP支付方式
 wechat-mini 微信小程序支付，示例：当 RealChannel=wechat Channel=wechat PayScene=wechat-mini时，内部会直接以小程序方式调用微信统一下单接口。
@@ -746,18 +746,18 @@ wechat-mini 微信小程序支付，示例：当 RealChannel=wechat Channel=wech
                     bool PaySceneHasBeenSet() const;
 
                     /**
-                     * 获取语言代码。
-(BCP-47格式)，取值请参考https://mpay.pages.woa.com/zh/api/objectdefinitions/objects/#mpayapisordersapplicationcontextapplicationcontext
-                     * @return LocaleCode 语言代码。
-(BCP-47格式)，取值请参考https://mpay.pages.woa.com/zh/api/objectdefinitions/objects/#mpayapisordersapplicationcontextapplicationcontext
+                     * 获取语言代码
+取值请参考[ISO 639-1代码表](https://zh.wikipedia.org/zh-cn/ISO_639-1%E4%BB%A3%E7%A0%81%E8%A1%A8)
+                     * @return LocaleCode 语言代码
+取值请参考[ISO 639-1代码表](https://zh.wikipedia.org/zh-cn/ISO_639-1%E4%BB%A3%E7%A0%81%E8%A1%A8)
                      */
                     std::string GetLocaleCode() const;
 
                     /**
-                     * 设置语言代码。
-(BCP-47格式)，取值请参考https://mpay.pages.woa.com/zh/api/objectdefinitions/objects/#mpayapisordersapplicationcontextapplicationcontext
-                     * @param LocaleCode 语言代码。
-(BCP-47格式)，取值请参考https://mpay.pages.woa.com/zh/api/objectdefinitions/objects/#mpayapisordersapplicationcontextapplicationcontext
+                     * 设置语言代码
+取值请参考[ISO 639-1代码表](https://zh.wikipedia.org/zh-cn/ISO_639-1%E4%BB%A3%E7%A0%81%E8%A1%A8)
+                     * @param LocaleCode 语言代码
+取值请参考[ISO 639-1代码表](https://zh.wikipedia.org/zh-cn/ISO_639-1%E4%BB%A3%E7%A0%81%E8%A1%A8)
                      */
                     void SetLocaleCode(const std::string& _localeCode);
 
@@ -768,18 +768,18 @@ wechat-mini 微信小程序支付，示例：当 RealChannel=wechat Channel=wech
                     bool LocaleCodeHasBeenSet() const;
 
                     /**
-                     * 获取地区代码。
-取值请参考https://mpay.pages.woa.com/zh/api/objectdefinitions/objects/#mpayapisordersapplicationcontextapplicationcontext
-                     * @return RegionCode 地区代码。
-取值请参考https://mpay.pages.woa.com/zh/api/objectdefinitions/objects/#mpayapisordersapplicationcontextapplicationcontext
+                     * 获取地区代码
+取值请参考[ISO 3166-1二位字母代码表](https://zh.wikipedia.org/zh-cn/ISO_3166-1%E4%BA%8C%E4%BD%8D%E5%AD%97%E6%AF%8D%E4%BB%A3%E7%A0%81#%E6%AD%A3%E5%BC%8F%E5%88%86%E9%85%8D%E4%BB%A3%E7%A0%81)
+                     * @return RegionCode 地区代码
+取值请参考[ISO 3166-1二位字母代码表](https://zh.wikipedia.org/zh-cn/ISO_3166-1%E4%BA%8C%E4%BD%8D%E5%AD%97%E6%AF%8D%E4%BB%A3%E7%A0%81#%E6%AD%A3%E5%BC%8F%E5%88%86%E9%85%8D%E4%BB%A3%E7%A0%81)
                      */
                     std::string GetRegionCode() const;
 
                     /**
-                     * 设置地区代码。
-取值请参考https://mpay.pages.woa.com/zh/api/objectdefinitions/objects/#mpayapisordersapplicationcontextapplicationcontext
-                     * @param RegionCode 地区代码。
-取值请参考https://mpay.pages.woa.com/zh/api/objectdefinitions/objects/#mpayapisordersapplicationcontextapplicationcontext
+                     * 设置地区代码
+取值请参考[ISO 3166-1二位字母代码表](https://zh.wikipedia.org/zh-cn/ISO_3166-1%E4%BA%8C%E4%BD%8D%E5%AD%97%E6%AF%8D%E4%BB%A3%E7%A0%81#%E6%AD%A3%E5%BC%8F%E5%88%86%E9%85%8D%E4%BB%A3%E7%A0%81)
+                     * @param RegionCode 地区代码
+取值请参考[ISO 3166-1二位字母代码表](https://zh.wikipedia.org/zh-cn/ISO_3166-1%E4%BA%8C%E4%BD%8D%E5%AD%97%E6%AF%8D%E4%BB%A3%E7%A0%81#%E6%AD%A3%E5%BC%8F%E5%88%86%E9%85%8D%E4%BB%A3%E7%A0%81)
                      */
                     void SetRegionCode(const std::string& _regionCode);
 
@@ -790,20 +790,20 @@ wechat-mini 微信小程序支付，示例：当 RealChannel=wechat Channel=wech
                     bool RegionCodeHasBeenSet() const;
 
                     /**
-                     * 获取用户IP。
+                     * 获取用户IP
 请求用户的IP地址，特定的渠道或特定的支付方式，此字段为必填
 wechat_ecommerce渠道 - h5支付方式，此字段必填。
-                     * @return UserClientIp 用户IP。
+                     * @return UserClientIp 用户IP
 请求用户的IP地址，特定的渠道或特定的支付方式，此字段为必填
 wechat_ecommerce渠道 - h5支付方式，此字段必填。
                      */
                     std::string GetUserClientIp() const;
 
                     /**
-                     * 设置用户IP。
+                     * 设置用户IP
 请求用户的IP地址，特定的渠道或特定的支付方式，此字段为必填
 wechat_ecommerce渠道 - h5支付方式，此字段必填。
-                     * @param UserClientIp 用户IP。
+                     * @param UserClientIp 用户IP
 请求用户的IP地址，特定的渠道或特定的支付方式，此字段为必填
 wechat_ecommerce渠道 - h5支付方式，此字段必填。
                      */
@@ -816,17 +816,17 @@ wechat_ecommerce渠道 - h5支付方式，此字段必填。
                     bool UserClientIpHasBeenSet() const;
 
                     /**
-                     * 获取渠道订单号生成模式。
+                     * 获取渠道订单号生成模式
 枚举值。决定请求渠道方时的订单号的生成模式，详情请联系米大师沟通。不指定时默认为由米大师自行生成。
-                     * @return ChannelOrderIdMode 渠道订单号生成模式。
+                     * @return ChannelOrderIdMode 渠道订单号生成模式
 枚举值。决定请求渠道方时的订单号的生成模式，详情请联系米大师沟通。不指定时默认为由米大师自行生成。
                      */
                     std::string GetChannelOrderIdMode() const;
 
                     /**
-                     * 设置渠道订单号生成模式。
+                     * 设置渠道订单号生成模式
 枚举值。决定请求渠道方时的订单号的生成模式，详情请联系米大师沟通。不指定时默认为由米大师自行生成。
-                     * @param ChannelOrderIdMode 渠道订单号生成模式。
+                     * @param ChannelOrderIdMode 渠道订单号生成模式
 枚举值。决定请求渠道方时的订单号的生成模式，详情请联系米大师沟通。不指定时默认为由米大师自行生成。
                      */
                     void SetChannelOrderIdMode(const std::string& _channelOrderIdMode);
@@ -838,14 +838,14 @@ wechat_ecommerce渠道 - h5支付方式，此字段必填。
                     bool ChannelOrderIdModeHasBeenSet() const;
 
                     /**
-                     * 获取全局支付时间信息。
-                     * @return GlobalPayTimeInfo 全局支付时间信息。
+                     * 获取全局支付时间信息
+                     * @return GlobalPayTimeInfo 全局支付时间信息
                      */
                     CloudGlobalPayTimeInfo GetGlobalPayTimeInfo() const;
 
                     /**
-                     * 设置全局支付时间信息。
-                     * @param GlobalPayTimeInfo 全局支付时间信息。
+                     * 设置全局支付时间信息
+                     * @param GlobalPayTimeInfo 全局支付时间信息
                      */
                     void SetGlobalPayTimeInfo(const CloudGlobalPayTimeInfo& _globalPayTimeInfo);
 
@@ -856,11 +856,11 @@ wechat_ecommerce渠道 - h5支付方式，此字段必填。
                     bool GlobalPayTimeInfoHasBeenSet() const;
 
                     /**
-                     * 获取渠道应用Id取用方式。
+                     * 获取渠道应用ID取用方式
 USE_APPID 使用渠道应用Id;
 USE_SUB_APPID 使用子渠道应用Id;
 USE_APPID_AND_SUB_APPID 既使用渠道应用Id也使用子渠道应用ID。
-                     * @return ChannelAppIdPolicy 渠道应用Id取用方式。
+                     * @return ChannelAppIdPolicy 渠道应用ID取用方式
 USE_APPID 使用渠道应用Id;
 USE_SUB_APPID 使用子渠道应用Id;
 USE_APPID_AND_SUB_APPID 既使用渠道应用Id也使用子渠道应用ID。
@@ -868,11 +868,11 @@ USE_APPID_AND_SUB_APPID 既使用渠道应用Id也使用子渠道应用ID。
                     std::string GetChannelAppIdPolicy() const;
 
                     /**
-                     * 设置渠道应用Id取用方式。
+                     * 设置渠道应用ID取用方式
 USE_APPID 使用渠道应用Id;
 USE_SUB_APPID 使用子渠道应用Id;
 USE_APPID_AND_SUB_APPID 既使用渠道应用Id也使用子渠道应用ID。
-                     * @param ChannelAppIdPolicy 渠道应用Id取用方式。
+                     * @param ChannelAppIdPolicy 渠道应用ID取用方式
 USE_APPID 使用渠道应用Id;
 USE_SUB_APPID 使用子渠道应用Id;
 USE_APPID_AND_SUB_APPID 既使用渠道应用Id也使用子渠道应用ID。
@@ -886,20 +886,20 @@ USE_APPID_AND_SUB_APPID 既使用渠道应用Id也使用子渠道应用ID。
                     bool ChannelAppIdPolicyHasBeenSet() const;
 
                     /**
-                     * 获取门店信息。
+                     * 获取门店信息
 特定的渠道或特定的支付方式，此字段为必填
 wechat_ecommerce渠道 - h5支付方式，此字段必填
-                     * @return StoreInfo 门店信息。
+                     * @return StoreInfo 门店信息
 特定的渠道或特定的支付方式，此字段为必填
 wechat_ecommerce渠道 - h5支付方式，此字段必填
                      */
                     CloudStoreInfo GetStoreInfo() const;
 
                     /**
-                     * 设置门店信息。
+                     * 设置门店信息
 特定的渠道或特定的支付方式，此字段为必填
 wechat_ecommerce渠道 - h5支付方式，此字段必填
-                     * @param StoreInfo 门店信息。
+                     * @param StoreInfo 门店信息
 特定的渠道或特定的支付方式，此字段为必填
 wechat_ecommerce渠道 - h5支付方式，此字段必填
                      */
@@ -912,20 +912,20 @@ wechat_ecommerce渠道 - h5支付方式，此字段必填
                     bool StoreInfoHasBeenSet() const;
 
                     /**
-                     * 获取客户端信息。
+                     * 获取客户端信息
 特定的渠道或特定的支付方式，此字段为必填
 wechat_ecommerce渠道 - h5支付方式，此字段必填
-                     * @return ClientInfo 客户端信息。
+                     * @return ClientInfo 客户端信息
 特定的渠道或特定的支付方式，此字段为必填
 wechat_ecommerce渠道 - h5支付方式，此字段必填
                      */
                     CloudClientInfo GetClientInfo() const;
 
                     /**
-                     * 设置客户端信息。
+                     * 设置客户端信息
 特定的渠道或特定的支付方式，此字段为必填
 wechat_ecommerce渠道 - h5支付方式，此字段必填
-                     * @param ClientInfo 客户端信息。
+                     * @param ClientInfo 客户端信息
 特定的渠道或特定的支付方式，此字段为必填
 wechat_ecommerce渠道 - h5支付方式，此字段必填
                      */
@@ -938,17 +938,17 @@ wechat_ecommerce渠道 - h5支付方式，此字段必填
                     bool ClientInfoHasBeenSet() const;
 
                     /**
-                     * 获取渠道扩展促销列表。
+                     * 获取渠道扩展促销列表
 可将各个渠道的促销信息放于该列表。
-                     * @return ExternalPromptGroupList 渠道扩展促销列表。
+                     * @return ExternalPromptGroupList 渠道扩展促销列表
 可将各个渠道的促销信息放于该列表。
                      */
                     std::vector<CloudExternalPromptGroup> GetExternalPromptGroupList() const;
 
                     /**
-                     * 设置渠道扩展促销列表。
+                     * 设置渠道扩展促销列表
 可将各个渠道的促销信息放于该列表。
-                     * @param ExternalPromptGroupList 渠道扩展促销列表。
+                     * @param ExternalPromptGroupList 渠道扩展促销列表
 可将各个渠道的促销信息放于该列表。
                      */
                     void SetExternalPromptGroupList(const std::vector<CloudExternalPromptGroup>& _externalPromptGroupList);
@@ -960,12 +960,12 @@ wechat_ecommerce渠道 - h5支付方式，此字段必填
                     bool ExternalPromptGroupListHasBeenSet() const;
 
                     /**
-                     * 获取收单模式。
+                     * 获取收单模式
 ORDER_RECEIVE_MODE_COMMON - 普通支付
 ORDER_RECEIVE_MODE_COMBINE - 合单支付
 ORDER_RECEIVE_MODE_V_COMBINE - 虚拟合单支付
 若不传入该字段，则会根据是否传入子单来判断是 普通支付 还是 合单支付
-                     * @return OrderReceiveMode 收单模式。
+                     * @return OrderReceiveMode 收单模式
 ORDER_RECEIVE_MODE_COMMON - 普通支付
 ORDER_RECEIVE_MODE_COMBINE - 合单支付
 ORDER_RECEIVE_MODE_V_COMBINE - 虚拟合单支付
@@ -974,12 +974,12 @@ ORDER_RECEIVE_MODE_V_COMBINE - 虚拟合单支付
                     std::string GetOrderReceiveMode() const;
 
                     /**
-                     * 设置收单模式。
+                     * 设置收单模式
 ORDER_RECEIVE_MODE_COMMON - 普通支付
 ORDER_RECEIVE_MODE_COMBINE - 合单支付
 ORDER_RECEIVE_MODE_V_COMBINE - 虚拟合单支付
 若不传入该字段，则会根据是否传入子单来判断是 普通支付 还是 合单支付
-                     * @param OrderReceiveMode 收单模式。
+                     * @param OrderReceiveMode 收单模式
 ORDER_RECEIVE_MODE_COMMON - 普通支付
 ORDER_RECEIVE_MODE_COMBINE - 合单支付
 ORDER_RECEIVE_MODE_V_COMBINE - 虚拟合单支付
@@ -1002,56 +1002,56 @@ ORDER_RECEIVE_MODE_V_COMBINE - 虚拟合单支付
                     bool m_midasAppIdHasBeenSet;
 
                     /**
-                     * 用户Id。
+                     * 用户ID
 长度不小于5位，仅支持字母和数字的组合，长度限制以具体接入渠道为准
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 开发者主订单号。
+                     * 开发者主订单号
 支付订单号，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合，长度供参考，部分渠道存在长度更短的情况接入时请联系开发咨询
                      */
                     std::string m_outTradeNo;
                     bool m_outTradeNoHasBeenSet;
 
                     /**
-                     * 货币类型。
+                     * 货币类型
 ISO货币代码，CNY
                      */
                     std::string m_currencyType;
                     bool m_currencyTypeHasBeenSet;
 
                     /**
-                     * 商品Id。
+                     * 商品ID
 业务自定义的商品id，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合。
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 商品名称。
+                     * 商品名称
 业务自定义的商品名称，无需URL编码，长度限制以具体所接入渠道为准。
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;
 
                     /**
-                     * 商品详情。
+                     * 商品详情
 业务自定义的商品详情，无需URL编码，长度限制以具体所接入渠道为准。
                      */
                     std::string m_productDetail;
                     bool m_productDetailHasBeenSet;
 
                     /**
-                     * 原始金额。
+                     * 原始金额
 单位：分，需要注意的是，OriginalAmt>=TotalAmt
                      */
                     int64_t m_originalAmt;
                     bool m_originalAmtHasBeenSet;
 
                     /**
-                     * 支付金额。
+                     * 支付金额
 单位：分，需要注意的是，TotalAmt=TotalPlatformIncome+TotalMchIncome。
                      */
                     int64_t m_totalAmt;
@@ -1067,14 +1067,14 @@ _不填默认为生产环境_
                     bool m_midasEnvironmentHasBeenSet;
 
                     /**
-                     * 支付SubAppId。
+                     * 支付SubAppId
 米大师计费SubAppId，代表子商户。指定使用该商户的商户号下单时必传。
                      */
                     std::string m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * 顶层支付渠道。
+                     * 顶层支付渠道
 银行收单:
 openbank_ccb: 建设银行
 openbank_icbc: 工商银行
@@ -1087,7 +1087,7 @@ openbank_icbc_jft：工商银行聚付通
                     bool m_realChannelHasBeenSet;
 
                     /**
-                     * 支付渠道。
+                     * 支付渠道
 wechat：微信支付
 wechat_ecommerce: 微信电商收付通
 open_alipay: 支付宝
@@ -1103,83 +1103,83 @@ icbc_jft_epay: 工行聚付通-e支付
                     bool m_channelHasBeenSet;
 
                     /**
-                     * 透传字段。
+                     * 透传字段
 支付成功回调透传给应用，用于开发者透传自定义内容。
                      */
                     std::string m_metadata;
                     bool m_metadataHasBeenSet;
 
                     /**
-                     * 数量。
+                     * 数量
 购买数量,不传默认为1。
                      */
                     int64_t m_quantity;
                     bool m_quantityHasBeenSet;
 
                     /**
-                     * Web端回调地址。
+                     * Web端回调地址
 Web端网页回调地址，仅当Web端SDK使用页面跳转方式时有效。
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;
 
                     /**
-                     * 支付取消地址。
+                     * 支付取消地址
                      */
                     std::string m_cancelUrl;
                     bool m_cancelUrlHasBeenSet;
 
                     /**
-                     * 微信AppId。
+                     * 微信AppId
 wechat渠道或wchat_ecommerce渠道可以指定下单时的wxappid。
                      */
                     std::string m_wxAppId;
                     bool m_wxAppIdHasBeenSet;
 
                     /**
-                     * 微信SubAppId。
+                     * 微信SubAppId
 wechat渠道可以指定下单时的sub_appid。
                      */
                     std::string m_wxSubAppId;
                     bool m_wxSubAppIdHasBeenSet;
 
                     /**
-                     * 微信公众号/小程序OpenId。
+                     * 微信公众号/小程序OpenId
 微信公众号/小程序支付时为必选，需要传微信下的openid。
                      */
                     std::string m_wxOpenId;
                     bool m_wxOpenIdHasBeenSet;
 
                     /**
-                     * 微信公众号/小程序SubOpenId。
+                     * 微信公众号/小程序SubOpenId
 在服务商模式下，微信公众号/小程序支付时wx_sub_openid和wx_openid二选一。
                      */
                     std::string m_wxSubOpenId;
                     bool m_wxSubOpenIdHasBeenSet;
 
                     /**
-                     * 平台应收金额。
+                     * 平台应收金额
 单位：分，需要注意的是，TotalAmt=TotalPlatformIncome+TotalMchIncome
                      */
                     int64_t m_totalPlatformIncome;
                     bool m_totalPlatformIncomeHasBeenSet;
 
                     /**
-                     * 结算应收金额。
+                     * 结算应收金额
 单位：分，需要注意的是，TotalAmt=TotalPlatformIncome+TotalMchIncome
                      */
                     int64_t m_totalMchIncome;
                     bool m_totalMchIncomeHasBeenSet;
 
                     /**
-                     * 子订单列表。
+                     * 子订单列表
 格式：子订单号、子应用Id、金额。压缩后最长不可超过32K字节(去除空格，换行，制表符等无意义字符)。
                      */
                     std::vector<CloudSubOrder> m_subOrderList;
                     bool m_subOrderListHasBeenSet;
 
                     /**
-                     * 结算信息。
+                     * 结算信息
 例如是否需要分账、是否需要支付确认等，
 注意：如果子单列表中传入了SettleInfo，在主单中不可再传入SettleInfo字段。
                      */
@@ -1187,7 +1187,7 @@ wechat渠道可以指定下单时的sub_appid。
                     bool m_settleInfoHasBeenSet;
 
                     /**
-                     * 附加项信息列表。
+                     * 附加项信息列表
 例如溢价信息、抵扣信息、积分信息、补贴信息
 通过该字段可以实现渠道方的优惠抵扣补贴等营销功能
 注意：当传SubOrderList时，请在子单信息中传附加项信息，不要在主单中传该字段。
@@ -1196,14 +1196,14 @@ wechat渠道可以指定下单时的sub_appid。
                     bool m_attachmentInfoListHasBeenSet;
 
                     /**
-                     * 支付通知地址。
+                     * 支付通知地址
 调用方可通过该字段传入自定义支付通知地址。
                      */
                     std::string m_paymentNotifyUrl;
                     bool m_paymentNotifyUrlHasBeenSet;
 
                     /**
-                     * 支付场景。
+                     * 支付场景
 需要结合 RealChannel和Channel字段使用可选值:
 wechat-app 微信APP支付方式
 wechat-mini 微信小程序支付，示例：当 RealChannel=wechat Channel=wechat PayScene=wechat-mini时，内部会直接以小程序方式调用微信统一下单接口。
@@ -1212,21 +1212,21 @@ wechat-mini 微信小程序支付，示例：当 RealChannel=wechat Channel=wech
                     bool m_paySceneHasBeenSet;
 
                     /**
-                     * 语言代码。
-(BCP-47格式)，取值请参考https://mpay.pages.woa.com/zh/api/objectdefinitions/objects/#mpayapisordersapplicationcontextapplicationcontext
+                     * 语言代码
+取值请参考[ISO 639-1代码表](https://zh.wikipedia.org/zh-cn/ISO_639-1%E4%BB%A3%E7%A0%81%E8%A1%A8)
                      */
                     std::string m_localeCode;
                     bool m_localeCodeHasBeenSet;
 
                     /**
-                     * 地区代码。
-取值请参考https://mpay.pages.woa.com/zh/api/objectdefinitions/objects/#mpayapisordersapplicationcontextapplicationcontext
+                     * 地区代码
+取值请参考[ISO 3166-1二位字母代码表](https://zh.wikipedia.org/zh-cn/ISO_3166-1%E4%BA%8C%E4%BD%8D%E5%AD%97%E6%AF%8D%E4%BB%A3%E7%A0%81#%E6%AD%A3%E5%BC%8F%E5%88%86%E9%85%8D%E4%BB%A3%E7%A0%81)
                      */
                     std::string m_regionCode;
                     bool m_regionCodeHasBeenSet;
 
                     /**
-                     * 用户IP。
+                     * 用户IP
 请求用户的IP地址，特定的渠道或特定的支付方式，此字段为必填
 wechat_ecommerce渠道 - h5支付方式，此字段必填。
                      */
@@ -1234,20 +1234,20 @@ wechat_ecommerce渠道 - h5支付方式，此字段必填。
                     bool m_userClientIpHasBeenSet;
 
                     /**
-                     * 渠道订单号生成模式。
+                     * 渠道订单号生成模式
 枚举值。决定请求渠道方时的订单号的生成模式，详情请联系米大师沟通。不指定时默认为由米大师自行生成。
                      */
                     std::string m_channelOrderIdMode;
                     bool m_channelOrderIdModeHasBeenSet;
 
                     /**
-                     * 全局支付时间信息。
+                     * 全局支付时间信息
                      */
                     CloudGlobalPayTimeInfo m_globalPayTimeInfo;
                     bool m_globalPayTimeInfoHasBeenSet;
 
                     /**
-                     * 渠道应用Id取用方式。
+                     * 渠道应用ID取用方式
 USE_APPID 使用渠道应用Id;
 USE_SUB_APPID 使用子渠道应用Id;
 USE_APPID_AND_SUB_APPID 既使用渠道应用Id也使用子渠道应用ID。
@@ -1256,7 +1256,7 @@ USE_APPID_AND_SUB_APPID 既使用渠道应用Id也使用子渠道应用ID。
                     bool m_channelAppIdPolicyHasBeenSet;
 
                     /**
-                     * 门店信息。
+                     * 门店信息
 特定的渠道或特定的支付方式，此字段为必填
 wechat_ecommerce渠道 - h5支付方式，此字段必填
                      */
@@ -1264,7 +1264,7 @@ wechat_ecommerce渠道 - h5支付方式，此字段必填
                     bool m_storeInfoHasBeenSet;
 
                     /**
-                     * 客户端信息。
+                     * 客户端信息
 特定的渠道或特定的支付方式，此字段为必填
 wechat_ecommerce渠道 - h5支付方式，此字段必填
                      */
@@ -1272,14 +1272,14 @@ wechat_ecommerce渠道 - h5支付方式，此字段必填
                     bool m_clientInfoHasBeenSet;
 
                     /**
-                     * 渠道扩展促销列表。
+                     * 渠道扩展促销列表
 可将各个渠道的促销信息放于该列表。
                      */
                     std::vector<CloudExternalPromptGroup> m_externalPromptGroupList;
                     bool m_externalPromptGroupListHasBeenSet;
 
                     /**
-                     * 收单模式。
+                     * 收单模式
 ORDER_RECEIVE_MODE_COMMON - 普通支付
 ORDER_RECEIVE_MODE_COMBINE - 合单支付
 ORDER_RECEIVE_MODE_V_COMBINE - 虚拟合单支付

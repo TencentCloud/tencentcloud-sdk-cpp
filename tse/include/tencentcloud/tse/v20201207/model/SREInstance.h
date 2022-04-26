@@ -568,6 +568,94 @@ namespace TencentCloud
                      */
                     bool ConsoleDefaultPwdHasBeenSet() const;
 
+                    /**
+                     * 获取交易付费类型，0后付费/1预付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TradeType 交易付费类型，0后付费/1预付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetTradeType() const;
+
+                    /**
+                     * 设置交易付费类型，0后付费/1预付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TradeType 交易付费类型，0后付费/1预付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTradeType(const int64_t& _tradeType);
+
+                    /**
+                     * 判断参数 TradeType 是否已赋值
+                     * @return TradeType 是否已赋值
+                     */
+                    bool TradeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取自动续费标记：0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoRenewFlag 自动续费标记：0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetAutoRenewFlag() const;
+
+                    /**
+                     * 设置自动续费标记：0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AutoRenewFlag 自动续费标记：0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
+
+                    /**
+                     * 判断参数 AutoRenewFlag 是否已赋值
+                     * @return AutoRenewFlag 是否已赋值
+                     */
+                    bool AutoRenewFlagHasBeenSet() const;
+
+                    /**
+                     * 获取预付费到期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CurDeadline 预付费到期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCurDeadline() const;
+
+                    /**
+                     * 设置预付费到期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CurDeadline 预付费到期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCurDeadline(const std::string& _curDeadline);
+
+                    /**
+                     * 判断参数 CurDeadline 是否已赋值
+                     * @return CurDeadline 是否已赋值
+                     */
+                    bool CurDeadlineHasBeenSet() const;
+
+                    /**
+                     * 获取隔离开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsolateTime 隔离开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIsolateTime() const;
+
+                    /**
+                     * 设置隔离开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsolateTime 隔离开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsolateTime(const std::string& _isolateTime);
+
+                    /**
+                     * 判断参数 IsolateTime 是否已赋值
+                     * @return IsolateTime 是否已赋值
+                     */
+                    bool IsolateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -736,6 +824,34 @@ namespace TencentCloud
                      */
                     std::string m_consoleDefaultPwd;
                     bool m_consoleDefaultPwdHasBeenSet;
+
+                    /**
+                     * 交易付费类型，0后付费/1预付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_tradeType;
+                    bool m_tradeTypeHasBeenSet;
+
+                    /**
+                     * 自动续费标记：0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_autoRenewFlag;
+                    bool m_autoRenewFlagHasBeenSet;
+
+                    /**
+                     * 预付费到期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_curDeadline;
+                    bool m_curDeadlineHasBeenSet;
+
+                    /**
+                     * 隔离开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_isolateTime;
+                    bool m_isolateTimeHasBeenSet;
 
                 };
             }

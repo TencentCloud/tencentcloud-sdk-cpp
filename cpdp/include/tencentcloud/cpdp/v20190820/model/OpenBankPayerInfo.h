@@ -87,14 +87,18 @@ namespace TencentCloud
                     bool PayerNameHasBeenSet() const;
 
                     /**
-                     * 获取付款方付款账户标识，当付款方式为OPENBANK_PAYMENT时，必输表示企业账户ID。
-                     * @return BindSerialNo 付款方付款账户标识，当付款方式为OPENBANK_PAYMENT时，必输表示企业账户ID。
+                     * 获取付款方付款账户标识。
+当付款方式为OPENBANK_PAYMENT时，必输表示企业账户ID；当付款方式为SAFT_ISV时，必须上送付款方的渠道电子记账本ID。
+                     * @return BindSerialNo 付款方付款账户标识。
+当付款方式为OPENBANK_PAYMENT时，必输表示企业账户ID；当付款方式为SAFT_ISV时，必须上送付款方的渠道电子记账本ID。
                      */
                     std::string GetBindSerialNo() const;
 
                     /**
-                     * 设置付款方付款账户标识，当付款方式为OPENBANK_PAYMENT时，必输表示企业账户ID。
-                     * @param BindSerialNo 付款方付款账户标识，当付款方式为OPENBANK_PAYMENT时，必输表示企业账户ID。
+                     * 设置付款方付款账户标识。
+当付款方式为OPENBANK_PAYMENT时，必输表示企业账户ID；当付款方式为SAFT_ISV时，必须上送付款方的渠道电子记账本ID。
+                     * @param BindSerialNo 付款方付款账户标识。
+当付款方式为OPENBANK_PAYMENT时，必输表示企业账户ID；当付款方式为SAFT_ISV时，必须上送付款方的渠道电子记账本ID。
                      */
                     void SetBindSerialNo(const std::string& _bindSerialNo);
 
@@ -103,6 +107,36 @@ namespace TencentCloud
                      * @return BindSerialNo 是否已赋值
                      */
                     bool BindSerialNoHasBeenSet() const;
+
+                    /**
+                     * 获取付款账户标识类型
+BANK_ACCOUNT：绑定银行账户
+ACCOUNT_BOOK_ID：电子记账本ID。
+当付款方式为SAFT_ISV时，必须上送类型为ACCOUNT_BOOK_ID。
+                     * @return AccountType 付款账户标识类型
+BANK_ACCOUNT：绑定银行账户
+ACCOUNT_BOOK_ID：电子记账本ID。
+当付款方式为SAFT_ISV时，必须上送类型为ACCOUNT_BOOK_ID。
+                     */
+                    std::string GetAccountType() const;
+
+                    /**
+                     * 设置付款账户标识类型
+BANK_ACCOUNT：绑定银行账户
+ACCOUNT_BOOK_ID：电子记账本ID。
+当付款方式为SAFT_ISV时，必须上送类型为ACCOUNT_BOOK_ID。
+                     * @param AccountType 付款账户标识类型
+BANK_ACCOUNT：绑定银行账户
+ACCOUNT_BOOK_ID：电子记账本ID。
+当付款方式为SAFT_ISV时，必须上送类型为ACCOUNT_BOOK_ID。
+                     */
+                    void SetAccountType(const std::string& _accountType);
+
+                    /**
+                     * 判断参数 AccountType 是否已赋值
+                     * @return AccountType 是否已赋值
+                     */
+                    bool AccountTypeHasBeenSet() const;
 
                 private:
 
@@ -120,10 +154,20 @@ namespace TencentCloud
                     bool m_payerNameHasBeenSet;
 
                     /**
-                     * 付款方付款账户标识，当付款方式为OPENBANK_PAYMENT时，必输表示企业账户ID。
+                     * 付款方付款账户标识。
+当付款方式为OPENBANK_PAYMENT时，必输表示企业账户ID；当付款方式为SAFT_ISV时，必须上送付款方的渠道电子记账本ID。
                      */
                     std::string m_bindSerialNo;
                     bool m_bindSerialNoHasBeenSet;
+
+                    /**
+                     * 付款账户标识类型
+BANK_ACCOUNT：绑定银行账户
+ACCOUNT_BOOK_ID：电子记账本ID。
+当付款方式为SAFT_ISV时，必须上送类型为ACCOUNT_BOOK_ID。
+                     */
+                    std::string m_accountType;
+                    bool m_accountTypeHasBeenSet;
 
                 };
             }

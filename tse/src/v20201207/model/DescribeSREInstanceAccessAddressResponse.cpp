@@ -28,7 +28,9 @@ DescribeSREInstanceAccessAddressResponse::DescribeSREInstanceAccessAddressRespon
     m_internetAddressHasBeenSet(false),
     m_envAddressInfosHasBeenSet(false),
     m_consoleInternetAddressHasBeenSet(false),
-    m_consoleIntranetAddressHasBeenSet(false)
+    m_consoleIntranetAddressHasBeenSet(false),
+    m_internetBandWidthHasBeenSet(false),
+    m_consoleInternetBandWidthHasBeenSet(false)
 {
 }
 
@@ -126,6 +128,26 @@ CoreInternalOutcome DescribeSREInstanceAccessAddressResponse::Deserialize(const 
         m_consoleIntranetAddressHasBeenSet = true;
     }
 
+    if (rsp.HasMember("InternetBandWidth") && !rsp["InternetBandWidth"].IsNull())
+    {
+        if (!rsp["InternetBandWidth"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InternetBandWidth` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_internetBandWidth = rsp["InternetBandWidth"].GetInt64();
+        m_internetBandWidthHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ConsoleInternetBandWidth") && !rsp["ConsoleInternetBandWidth"].IsNull())
+    {
+        if (!rsp["ConsoleInternetBandWidth"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsoleInternetBandWidth` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_consoleInternetBandWidth = rsp["ConsoleInternetBandWidth"].GetInt64();
+        m_consoleInternetBandWidthHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -181,6 +203,22 @@ string DescribeSREInstanceAccessAddressResponse::ToJsonString() const
         string key = "ConsoleIntranetAddress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_consoleIntranetAddress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_internetBandWidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InternetBandWidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_internetBandWidth, allocator);
+    }
+
+    if (m_consoleInternetBandWidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsoleInternetBandWidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_consoleInternetBandWidth, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -243,6 +281,26 @@ string DescribeSREInstanceAccessAddressResponse::GetConsoleIntranetAddress() con
 bool DescribeSREInstanceAccessAddressResponse::ConsoleIntranetAddressHasBeenSet() const
 {
     return m_consoleIntranetAddressHasBeenSet;
+}
+
+int64_t DescribeSREInstanceAccessAddressResponse::GetInternetBandWidth() const
+{
+    return m_internetBandWidth;
+}
+
+bool DescribeSREInstanceAccessAddressResponse::InternetBandWidthHasBeenSet() const
+{
+    return m_internetBandWidthHasBeenSet;
+}
+
+int64_t DescribeSREInstanceAccessAddressResponse::GetConsoleInternetBandWidth() const
+{
+    return m_consoleInternetBandWidth;
+}
+
+bool DescribeSREInstanceAccessAddressResponse::ConsoleInternetBandWidthHasBeenSet() const
+{
+    return m_consoleInternetBandWidthHasBeenSet;
 }
 
 

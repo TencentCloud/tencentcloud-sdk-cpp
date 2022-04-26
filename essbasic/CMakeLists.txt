@@ -44,26 +44,30 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/CreateFlowsByTemplatesResponse.h
   include/tencentcloud/essbasic/v20210526/model/PrepareFlowsRequest.h
   include/tencentcloud/essbasic/v20210526/model/SyncProxyOrganizationOperatorsResponse.h
-  include/tencentcloud/essbasic/v20210526/model/SignUrlInfo.h
+  include/tencentcloud/essbasic/v20210526/model/CreateSealByImageResponse.h
   include/tencentcloud/essbasic/v20210526/model/FlowResourceUrlInfo.h
   include/tencentcloud/essbasic/v20210526/model/DescribeTemplatesRequest.h
   include/tencentcloud/essbasic/v20210526/model/SyncProxyOrganizationOperatorsRequest.h
   include/tencentcloud/essbasic/v20210526/model/CreateConsoleLoginUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/CreateFlowsByTemplatesRequest.h
   include/tencentcloud/essbasic/v20210526/model/SyncProxyOrganizationRequest.h
+  include/tencentcloud/essbasic/v20210526/model/CreateSealByImageRequest.h
+  include/tencentcloud/essbasic/v20210526/model/UserInfo.h
   include/tencentcloud/essbasic/v20210526/model/UsageDetail.h
   include/tencentcloud/essbasic/v20210526/model/CreateSignUrlsResponse.h
   include/tencentcloud/essbasic/v20210526/model/OperateChannelTemplateRequest.h
   include/tencentcloud/essbasic/v20210526/model/DownloadFlowInfo.h
-  include/tencentcloud/essbasic/v20210526/model/UploadFilesResponse.h
+  include/tencentcloud/essbasic/v20210526/model/CcInfo.h
   include/tencentcloud/essbasic/v20210526/model/SyncFailReason.h
   include/tencentcloud/essbasic/v20210526/model/DescribeUsageRequest.h
-  include/tencentcloud/essbasic/v20210526/model/CcInfo.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowByFilesRequest.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowByFilesResponse.h
+  include/tencentcloud/essbasic/v20210526/model/UploadFilesResponse.h
   include/tencentcloud/essbasic/v20210526/model/Agent.h
   include/tencentcloud/essbasic/v20210526/model/FormField.h
   include/tencentcloud/essbasic/v20210526/model/FlowApproverDetail.h
   include/tencentcloud/essbasic/v20210526/model/FlowInfo.h
-  include/tencentcloud/essbasic/v20210526/model/UserInfo.h
+  include/tencentcloud/essbasic/v20210526/model/SignUrlInfo.h
   include/tencentcloud/essbasic/v20210526/model/DescribeUsageResponse.h
   include/tencentcloud/essbasic/v20210526/model/DescribeFlowDetailInfoResponse.h
   include/tencentcloud/essbasic/v20201222/model/DescribeFaceIdResultsRequest.h
@@ -221,26 +225,30 @@ set(essbasic_src
   src/v20210526/model/CreateFlowsByTemplatesResponse.cpp
   src/v20210526/model/PrepareFlowsRequest.cpp
   src/v20210526/model/SyncProxyOrganizationOperatorsResponse.cpp
-  src/v20210526/model/SignUrlInfo.cpp
+  src/v20210526/model/CreateSealByImageResponse.cpp
   src/v20210526/model/FlowResourceUrlInfo.cpp
   src/v20210526/model/DescribeTemplatesRequest.cpp
   src/v20210526/model/SyncProxyOrganizationOperatorsRequest.cpp
   src/v20210526/model/CreateConsoleLoginUrlResponse.cpp
   src/v20210526/model/CreateFlowsByTemplatesRequest.cpp
   src/v20210526/model/SyncProxyOrganizationRequest.cpp
+  src/v20210526/model/CreateSealByImageRequest.cpp
+  src/v20210526/model/UserInfo.cpp
   src/v20210526/model/UsageDetail.cpp
   src/v20210526/model/CreateSignUrlsResponse.cpp
   src/v20210526/model/OperateChannelTemplateRequest.cpp
   src/v20210526/model/DownloadFlowInfo.cpp
-  src/v20210526/model/UploadFilesResponse.cpp
+  src/v20210526/model/CcInfo.cpp
   src/v20210526/model/SyncFailReason.cpp
   src/v20210526/model/DescribeUsageRequest.cpp
-  src/v20210526/model/CcInfo.cpp
+  src/v20210526/model/ChannelCreateFlowByFilesRequest.cpp
+  src/v20210526/model/ChannelCreateFlowByFilesResponse.cpp
+  src/v20210526/model/UploadFilesResponse.cpp
   src/v20210526/model/Agent.cpp
   src/v20210526/model/FormField.cpp
   src/v20210526/model/FlowApproverDetail.cpp
   src/v20210526/model/FlowInfo.cpp
-  src/v20210526/model/UserInfo.cpp
+  src/v20210526/model/SignUrlInfo.cpp
   src/v20210526/model/DescribeUsageResponse.cpp
   src/v20210526/model/DescribeFlowDetailInfoResponse.cpp
   src/v20201222/model/DescribeFaceIdResultsRequest.cpp

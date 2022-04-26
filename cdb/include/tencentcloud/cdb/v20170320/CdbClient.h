@@ -1107,7 +1107,7 @@ namespace TencentCloud
                 DescribeBinlogsOutcomeCallable DescribeBinlogsCallable(const Model::DescribeBinlogsRequest& request);
 
                 /**
-                 *查询数据库代理
+                 *查询数据库代理（待下线，替换接口QueryCDBProxy）
                  * @param req DescribeCDBProxyRequest
                  * @return DescribeCDBProxyOutcome
                  */

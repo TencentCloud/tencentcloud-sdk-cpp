@@ -84,6 +84,7 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/InstanceMarketOptionsRequest.h
   include/tencentcloud/as/v20180419/model/UpgradeLifecycleHookResponse.h
   include/tencentcloud/as/v20180419/model/InstanceTag.h
+  include/tencentcloud/as/v20180419/model/ModifyLifecycleHookResponse.h
   include/tencentcloud/as/v20180419/model/DescribeAutoScalingAdvicesResponse.h
   include/tencentcloud/as/v20180419/model/CreateAutoScalingGroupRequest.h
   include/tencentcloud/as/v20180419/model/DeleteScheduledActionResponse.h
@@ -107,6 +108,7 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/CreateScheduledActionResponse.h
   include/tencentcloud/as/v20180419/model/CreateLifecycleHookRequest.h
   include/tencentcloud/as/v20180419/model/ScheduledAction.h
+  include/tencentcloud/as/v20180419/model/ModifyLifecycleHookRequest.h
   include/tencentcloud/as/v20180419/model/CompleteLifecycleActionResponse.h
   include/tencentcloud/as/v20180419/model/ScaleOutInstancesResponse.h
   include/tencentcloud/as/v20180419/model/Filter.h
@@ -223,6 +225,7 @@ set(as_src
   src/v20180419/model/InstanceMarketOptionsRequest.cpp
   src/v20180419/model/UpgradeLifecycleHookResponse.cpp
   src/v20180419/model/InstanceTag.cpp
+  src/v20180419/model/ModifyLifecycleHookResponse.cpp
   src/v20180419/model/DescribeAutoScalingAdvicesResponse.cpp
   src/v20180419/model/CreateAutoScalingGroupRequest.cpp
   src/v20180419/model/DeleteScheduledActionResponse.cpp
@@ -246,6 +249,7 @@ set(as_src
   src/v20180419/model/CreateScheduledActionResponse.cpp
   src/v20180419/model/CreateLifecycleHookRequest.cpp
   src/v20180419/model/ScheduledAction.cpp
+  src/v20180419/model/ModifyLifecycleHookRequest.cpp
   src/v20180419/model/CompleteLifecycleActionResponse.cpp
   src/v20180419/model/ScaleOutInstancesResponse.cpp
   src/v20180419/model/Filter.cpp

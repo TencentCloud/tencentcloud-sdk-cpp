@@ -47,7 +47,9 @@ namespace TencentCloud
 
                     /**
                      * 获取任务信息，不包含任务结果
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskInfo 任务信息，不包含任务结果
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TaskInfo GetTaskInfo() const;
 
@@ -73,6 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 任务信息，不包含任务结果
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TaskInfo m_taskInfo;
                     bool m_taskInfoHasBeenSet;

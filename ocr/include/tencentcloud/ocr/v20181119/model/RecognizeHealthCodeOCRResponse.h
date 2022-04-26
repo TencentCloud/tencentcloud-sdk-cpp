@@ -68,8 +68,8 @@ namespace TencentCloud
                     bool IDNumberHasBeenSet() const;
 
                     /**
-                     * 获取健康码更新时间，格式为：XXXX-XX-XX XX:XX:XX
-                     * @return Time 健康码更新时间，格式为：XXXX-XX-XX XX:XX:XX
+                     * 获取健康码更新时间
+                     * @return Time 健康码更新时间
                      */
                     std::string GetTime() const;
 
@@ -116,8 +116,8 @@ namespace TencentCloud
                     bool TestingResultHasBeenSet() const;
 
                     /**
-                     * 获取核酸检测时间，格式为：XXXX-XX-XX XX:XX
-                     * @return TestingTime 核酸检测时间，格式为：XXXX-XX-XX XX:XX
+                     * 获取核酸检测时间
+                     * @return TestingTime 核酸检测时间
                      */
                     std::string GetTestingTime() const;
 
@@ -142,7 +142,7 @@ namespace TencentCloud
                     bool m_iDNumberHasBeenSet;
 
                     /**
-                     * 健康码更新时间，格式为：XXXX-XX-XX XX:XX:XX
+                     * 健康码更新时间
                      */
                     std::string m_time;
                     bool m_timeHasBeenSet;
@@ -166,7 +166,7 @@ namespace TencentCloud
                     bool m_testingResultHasBeenSet;
 
                     /**
-                     * 核酸检测时间，格式为：XXXX-XX-XX XX:XX
+                     * 核酸检测时间
                      */
                     std::string m_testingTime;
                     bool m_testingTimeHasBeenSet;

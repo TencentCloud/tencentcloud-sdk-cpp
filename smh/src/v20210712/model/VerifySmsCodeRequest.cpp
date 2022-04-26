@@ -26,7 +26,8 @@ VerifySmsCodeRequest::VerifySmsCodeRequest() :
     m_purposeHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_phoneNumberHasBeenSet(false),
-    m_codeHasBeenSet(false)
+    m_codeHasBeenSet(false),
+    m_countryCodeHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string VerifySmsCodeRequest::ToJsonString() const
         string key = "Code";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_code.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_countryCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CountryCode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_countryCode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void VerifySmsCodeRequest::SetCode(const string& _code)
 bool VerifySmsCodeRequest::CodeHasBeenSet() const
 {
     return m_codeHasBeenSet;
+}
+
+string VerifySmsCodeRequest::GetCountryCode() const
+{
+    return m_countryCode;
+}
+
+void VerifySmsCodeRequest::SetCountryCode(const string& _countryCode)
+{
+    m_countryCode = _countryCode;
+    m_countryCodeHasBeenSet = true;
+}
+
+bool VerifySmsCodeRequest::CountryCodeHasBeenSet() const
+{
+    return m_countryCodeHasBeenSet;
 }
 
 

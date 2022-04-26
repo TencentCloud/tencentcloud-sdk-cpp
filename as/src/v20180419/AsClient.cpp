@@ -1588,6 +1588,49 @@ AsClient::ModifyLaunchConfigurationAttributesOutcomeCallable AsClient::ModifyLau
     return task->get_future();
 }
 
+AsClient::ModifyLifecycleHookOutcome AsClient::ModifyLifecycleHook(const ModifyLifecycleHookRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLifecycleHook");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLifecycleHookResponse rsp = ModifyLifecycleHookResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLifecycleHookOutcome(rsp);
+        else
+            return ModifyLifecycleHookOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLifecycleHookOutcome(outcome.GetError());
+    }
+}
+
+void AsClient::ModifyLifecycleHookAsync(const ModifyLifecycleHookRequest& request, const ModifyLifecycleHookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyLifecycleHook(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsClient::ModifyLifecycleHookOutcomeCallable AsClient::ModifyLifecycleHookCallable(const ModifyLifecycleHookRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyLifecycleHookOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyLifecycleHook(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AsClient::ModifyLoadBalancerTargetAttributesOutcome AsClient::ModifyLoadBalancerTargetAttributes(const ModifyLoadBalancerTargetAttributesRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyLoadBalancerTargetAttributes");

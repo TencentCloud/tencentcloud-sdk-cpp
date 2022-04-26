@@ -79,6 +79,20 @@ namespace TencentCloud
                      */
                     bool RecordTypeHasBeenSet() const;
 
+                    /**
+                     * 获取文件验证 URL 指引
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FileVerifyUrl 文件验证 URL 指引
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFileVerifyUrl() const;
+
+                    /**
+                     * 判断参数 FileVerifyUrl 是否已赋值
+                     * @return FileVerifyUrl 是否已赋值
+                     */
+                    bool FileVerifyUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -98,6 +112,13 @@ namespace TencentCloud
                      */
                     std::string m_recordType;
                     bool m_recordTypeHasBeenSet;
+
+                    /**
+                     * 文件验证 URL 指引
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_fileVerifyUrl;
+                    bool m_fileVerifyUrlHasBeenSet;
 
                 };
             }

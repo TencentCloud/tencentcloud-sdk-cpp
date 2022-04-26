@@ -32,7 +32,8 @@ TaskInfo::TaskInfo() :
     m_failedReasonHasBeenSet(false),
     m_mediaPreknownInfoHasBeenSet(false),
     m_mediaNameHasBeenSet(false),
-    m_labelHasBeenSet(false)
+    m_labelHasBeenSet(false),
+    m_callbackURLHasBeenSet(false)
 {
 }
 
@@ -168,6 +169,16 @@ CoreInternalOutcome TaskInfo::Deserialize(const rapidjson::Value &value)
         m_labelHasBeenSet = true;
     }
 
+    if (value.HasMember("CallbackURL") && !value["CallbackURL"].IsNull())
+    {
+        if (!value["CallbackURL"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskInfo.CallbackURL` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_callbackURL = string(value["CallbackURL"].GetString());
+        m_callbackURLHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -270,6 +281,14 @@ void TaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Label";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_callbackURLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CallbackURL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_callbackURL.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -465,5 +484,21 @@ void TaskInfo::SetLabel(const string& _label)
 bool TaskInfo::LabelHasBeenSet() const
 {
     return m_labelHasBeenSet;
+}
+
+string TaskInfo::GetCallbackURL() const
+{
+    return m_callbackURL;
+}
+
+void TaskInfo::SetCallbackURL(const string& _callbackURL)
+{
+    m_callbackURL = _callbackURL;
+    m_callbackURLHasBeenSet = true;
+}
+
+bool TaskInfo::CallbackURLHasBeenSet() const
+{
+    return m_callbackURLHasBeenSet;
 }
 

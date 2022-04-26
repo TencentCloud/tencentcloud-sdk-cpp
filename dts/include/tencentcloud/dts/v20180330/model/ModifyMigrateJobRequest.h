@@ -217,6 +217,42 @@ namespace TencentCloud
                      */
                     bool DatabaseInfoHasBeenSet() const;
 
+                    /**
+                     * 获取源实例类型: ""或者"simple":主从节点，"cluster": 集群节点
+                     * @return SrcNodeType 源实例类型: ""或者"simple":主从节点，"cluster": 集群节点
+                     */
+                    std::string GetSrcNodeType() const;
+
+                    /**
+                     * 设置源实例类型: ""或者"simple":主从节点，"cluster": 集群节点
+                     * @param SrcNodeType 源实例类型: ""或者"simple":主从节点，"cluster": 集群节点
+                     */
+                    void SetSrcNodeType(const std::string& _srcNodeType);
+
+                    /**
+                     * 判断参数 SrcNodeType 是否已赋值
+                     * @return SrcNodeType 是否已赋值
+                     */
+                    bool SrcNodeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取源实例信息，具体内容跟迁移任务类型相关
+                     * @return SrcInfoMulti 源实例信息，具体内容跟迁移任务类型相关
+                     */
+                    std::vector<SrcInfo> GetSrcInfoMulti() const;
+
+                    /**
+                     * 设置源实例信息，具体内容跟迁移任务类型相关
+                     * @param SrcInfoMulti 源实例信息，具体内容跟迁移任务类型相关
+                     */
+                    void SetSrcInfoMulti(const std::vector<SrcInfo>& _srcInfoMulti);
+
+                    /**
+                     * 判断参数 SrcInfoMulti 是否已赋值
+                     * @return SrcInfoMulti 是否已赋值
+                     */
+                    bool SrcInfoMultiHasBeenSet() const;
+
                 private:
 
                     /**
@@ -273,6 +309,18 @@ namespace TencentCloud
                      */
                     std::string m_databaseInfo;
                     bool m_databaseInfoHasBeenSet;
+
+                    /**
+                     * 源实例类型: ""或者"simple":主从节点，"cluster": 集群节点
+                     */
+                    std::string m_srcNodeType;
+                    bool m_srcNodeTypeHasBeenSet;
+
+                    /**
+                     * 源实例信息，具体内容跟迁移任务类型相关
+                     */
+                    std::vector<SrcInfo> m_srcInfoMulti;
+                    bool m_srcInfoMultiHasBeenSet;
 
                 };
             }

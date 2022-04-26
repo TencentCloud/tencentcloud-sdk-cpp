@@ -1201,6 +1201,49 @@ PostgresClient::DescribeDatabasesOutcomeCallable PostgresClient::DescribeDatabas
     return task->get_future();
 }
 
+PostgresClient::DescribeEncryptionKeysOutcome PostgresClient::DescribeEncryptionKeys(const DescribeEncryptionKeysRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEncryptionKeys");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEncryptionKeysResponse rsp = DescribeEncryptionKeysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEncryptionKeysOutcome(rsp);
+        else
+            return DescribeEncryptionKeysOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEncryptionKeysOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeEncryptionKeysAsync(const DescribeEncryptionKeysRequest& request, const DescribeEncryptionKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEncryptionKeys(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DescribeEncryptionKeysOutcomeCallable PostgresClient::DescribeEncryptionKeysCallable(const DescribeEncryptionKeysRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEncryptionKeysOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEncryptionKeys(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::DescribeOrdersOutcome PostgresClient::DescribeOrders(const DescribeOrdersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeOrders");

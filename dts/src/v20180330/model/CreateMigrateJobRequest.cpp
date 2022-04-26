@@ -32,7 +32,9 @@ CreateMigrateJobRequest::CreateMigrateJobRequest() :
     m_dstAccessTypeHasBeenSet(false),
     m_dstInfoHasBeenSet(false),
     m_databaseInfoHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_srcNodeTypeHasBeenSet(false),
+    m_srcInfoMultiHasBeenSet(false)
 {
 }
 
@@ -127,6 +129,29 @@ string CreateMigrateJobRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_srcNodeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SrcNodeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_srcNodeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_srcInfoMultiHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SrcInfoMulti";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_srcInfoMulti.begin(); itr != m_srcInfoMulti.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -299,6 +324,38 @@ void CreateMigrateJobRequest::SetTags(const vector<TagItem>& _tags)
 bool CreateMigrateJobRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string CreateMigrateJobRequest::GetSrcNodeType() const
+{
+    return m_srcNodeType;
+}
+
+void CreateMigrateJobRequest::SetSrcNodeType(const string& _srcNodeType)
+{
+    m_srcNodeType = _srcNodeType;
+    m_srcNodeTypeHasBeenSet = true;
+}
+
+bool CreateMigrateJobRequest::SrcNodeTypeHasBeenSet() const
+{
+    return m_srcNodeTypeHasBeenSet;
+}
+
+vector<SrcInfo> CreateMigrateJobRequest::GetSrcInfoMulti() const
+{
+    return m_srcInfoMulti;
+}
+
+void CreateMigrateJobRequest::SetSrcInfoMulti(const vector<SrcInfo>& _srcInfoMulti)
+{
+    m_srcInfoMulti = _srcInfoMulti;
+    m_srcInfoMultiHasBeenSet = true;
+}
+
+bool CreateMigrateJobRequest::SrcInfoMultiHasBeenSet() const
+{
+    return m_srcInfoMultiHasBeenSet;
 }
 
 

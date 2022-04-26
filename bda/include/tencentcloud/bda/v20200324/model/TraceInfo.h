@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 人体轨迹信息。
+                * 人体动作轨迹信息。
                 */
                 class TraceInfo : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取人体轨迹ID。
-                     * @return TraceId 人体轨迹ID。
+                     * 获取人体动作轨迹ID。
+                     * @return TraceId 人体动作轨迹ID。
                      */
                     std::string GetTraceId() const;
 
                     /**
-                     * 设置人体轨迹ID。
-                     * @param TraceId 人体轨迹ID。
+                     * 设置人体动作轨迹ID。
+                     * @param TraceId 人体动作轨迹ID。
                      */
                     void SetTraceId(const std::string& _traceId);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool TraceIdHasBeenSet() const;
 
                     /**
-                     * 获取包含的人体轨迹图片Id列表。
-                     * @return BodyIds 包含的人体轨迹图片Id列表。
+                     * 获取包含的人体动作轨迹图片Id列表。
+                     * @return BodyIds 包含的人体动作轨迹图片Id列表。
                      */
                     std::vector<std::string> GetBodyIds() const;
 
                     /**
-                     * 设置包含的人体轨迹图片Id列表。
-                     * @param BodyIds 包含的人体轨迹图片Id列表。
+                     * 设置包含的人体动作轨迹图片Id列表。
+                     * @param BodyIds 包含的人体动作轨迹图片Id列表。
                      */
                     void SetBodyIds(const std::vector<std::string>& _bodyIds);
 
@@ -85,13 +85,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 人体轨迹ID。
+                     * 人体动作轨迹ID。
                      */
                     std::string m_traceId;
                     bool m_traceIdHasBeenSet;
 
                     /**
-                     * 包含的人体轨迹图片Id列表。
+                     * 包含的人体动作轨迹图片Id列表。
                      */
                     std::vector<std::string> m_bodyIds;
                     bool m_bodyIdsHasBeenSet;

@@ -95,6 +95,8 @@
 #include <tencentcloud/as/v20180419/model/ModifyDesiredCapacityResponse.h>
 #include <tencentcloud/as/v20180419/model/ModifyLaunchConfigurationAttributesRequest.h>
 #include <tencentcloud/as/v20180419/model/ModifyLaunchConfigurationAttributesResponse.h>
+#include <tencentcloud/as/v20180419/model/ModifyLifecycleHookRequest.h>
+#include <tencentcloud/as/v20180419/model/ModifyLifecycleHookResponse.h>
 #include <tencentcloud/as/v20180419/model/ModifyLoadBalancerTargetAttributesRequest.h>
 #include <tencentcloud/as/v20180419/model/ModifyLoadBalancerTargetAttributesResponse.h>
 #include <tencentcloud/as/v20180419/model/ModifyLoadBalancersRequest.h>
@@ -243,6 +245,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyLaunchConfigurationAttributesResponse> ModifyLaunchConfigurationAttributesOutcome;
                 typedef std::future<ModifyLaunchConfigurationAttributesOutcome> ModifyLaunchConfigurationAttributesOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::ModifyLaunchConfigurationAttributesRequest&, ModifyLaunchConfigurationAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLaunchConfigurationAttributesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLifecycleHookResponse> ModifyLifecycleHookOutcome;
+                typedef std::future<ModifyLifecycleHookOutcome> ModifyLifecycleHookOutcomeCallable;
+                typedef std::function<void(const AsClient*, const Model::ModifyLifecycleHookRequest&, ModifyLifecycleHookOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLifecycleHookAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyLoadBalancerTargetAttributesResponse> ModifyLoadBalancerTargetAttributesOutcome;
                 typedef std::future<ModifyLoadBalancerTargetAttributesOutcome> ModifyLoadBalancerTargetAttributesOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::ModifyLoadBalancerTargetAttributesRequest&, ModifyLoadBalancerTargetAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoadBalancerTargetAttributesAsyncHandler;
@@ -707,6 +712,15 @@ namespace TencentCloud
                 ModifyLaunchConfigurationAttributesOutcome ModifyLaunchConfigurationAttributes(const Model::ModifyLaunchConfigurationAttributesRequest &request);
                 void ModifyLaunchConfigurationAttributesAsync(const Model::ModifyLaunchConfigurationAttributesRequest& request, const ModifyLaunchConfigurationAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyLaunchConfigurationAttributesOutcomeCallable ModifyLaunchConfigurationAttributesCallable(const Model::ModifyLaunchConfigurationAttributesRequest& request);
+
+                /**
+                 *此接口用于修改生命周期挂钩。
+                 * @param req ModifyLifecycleHookRequest
+                 * @return ModifyLifecycleHookOutcome
+                 */
+                ModifyLifecycleHookOutcome ModifyLifecycleHook(const Model::ModifyLifecycleHookRequest &request);
+                void ModifyLifecycleHookAsync(const Model::ModifyLifecycleHookRequest& request, const ModifyLifecycleHookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLifecycleHookOutcomeCallable ModifyLifecycleHookCallable(const Model::ModifyLifecycleHookRequest& request);
 
                 /**
                  *本接口（ModifyLoadBalancerTargetAttributes）用于修改伸缩组内负载均衡器的目标规则属性。

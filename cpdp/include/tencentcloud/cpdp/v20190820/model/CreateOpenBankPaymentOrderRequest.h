@@ -99,9 +99,11 @@ __ALIPAY__: 支付宝
                      * 获取付款方式。如
 __EBANK_PAYMENT__:B2B EBank付款
 __OPENBANK_PAYMENT__:B2C  openbank付款
+__SAFT_ISV__:支付宝安心发
                      * @return PaymentMethod 付款方式。如
 __EBANK_PAYMENT__:B2B EBank付款
 __OPENBANK_PAYMENT__:B2C  openbank付款
+__SAFT_ISV__:支付宝安心发
                      */
                     std::string GetPaymentMethod() const;
 
@@ -109,9 +111,11 @@ __OPENBANK_PAYMENT__:B2C  openbank付款
                      * 设置付款方式。如
 __EBANK_PAYMENT__:B2B EBank付款
 __OPENBANK_PAYMENT__:B2C  openbank付款
+__SAFT_ISV__:支付宝安心发
                      * @param PaymentMethod 付款方式。如
 __EBANK_PAYMENT__:B2B EBank付款
 __OPENBANK_PAYMENT__:B2C  openbank付款
+__SAFT_ISV__:支付宝安心发
                      */
                     void SetPaymentMethod(const std::string& _paymentMethod);
 
@@ -488,6 +492,7 @@ __ALIPAY__: 支付宝
                      * 付款方式。如
 __EBANK_PAYMENT__:B2B EBank付款
 __OPENBANK_PAYMENT__:B2C  openbank付款
+__SAFT_ISV__:支付宝安心发
                      */
                     std::string m_paymentMethod;
                     bool m_paymentMethodHasBeenSet;

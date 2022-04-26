@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取查询日期，最早可为前30天的日期。
-                     * @return Date 查询日期，最早可为前30天的日期。
+                     * 获取查询日期，如2021-05-27，最早可为前30天的日期。
+                     * @return Date 查询日期，如2021-05-27，最早可为前30天的日期。
                      */
                     std::string GetDate() const;
 
                     /**
-                     * 设置查询日期，最早可为前30天的日期。
-                     * @param Date 查询日期，最早可为前30天的日期。
+                     * 设置查询日期，如2021-05-27，最早可为前30天的日期。
+                     * @param Date 查询日期，如2021-05-27，最早可为前30天的日期。
                      */
                     void SetDate(const std::string& _date);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool ProductHasBeenSet() const;
 
                     /**
-                     * 获取排序字段，取值包括Capacity - 内存，ItemCount - 元素数量。
-                     * @return SortBy 排序字段，取值包括Capacity - 内存，ItemCount - 元素数量。
+                     * 获取排序字段，取值包括Capacity - 内存，ItemCount - 元素数量，默认为Capacity。
+                     * @return SortBy 排序字段，取值包括Capacity - 内存，ItemCount - 元素数量，默认为Capacity。
                      */
                     std::string GetSortBy() const;
 
                     /**
-                     * 设置排序字段，取值包括Capacity - 内存，ItemCount - 元素数量。
-                     * @param SortBy 排序字段，取值包括Capacity - 内存，ItemCount - 元素数量。
+                     * 设置排序字段，取值包括Capacity - 内存，ItemCount - 元素数量，默认为Capacity。
+                     * @param SortBy 排序字段，取值包括Capacity - 内存，ItemCount - 元素数量，默认为Capacity。
                      */
                     void SetSortBy(const std::string& _sortBy);
 
@@ -159,7 +159,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 查询日期，最早可为前30天的日期。
+                     * 查询日期，如2021-05-27，最早可为前30天的日期。
                      */
                     std::string m_date;
                     bool m_dateHasBeenSet;
@@ -171,7 +171,7 @@ namespace TencentCloud
                     bool m_productHasBeenSet;
 
                     /**
-                     * 排序字段，取值包括Capacity - 内存，ItemCount - 元素数量。
+                     * 排序字段，取值包括Capacity - 内存，ItemCount - 元素数量，默认为Capacity。
                      */
                     std::string m_sortBy;
                     bool m_sortByHasBeenSet;

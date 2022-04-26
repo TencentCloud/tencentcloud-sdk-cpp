@@ -21,7 +21,8 @@ set(sts_public_header
 set(sts_public_header_model
   include/tencentcloud/sts/v20180813/model/AssumeRoleWithSAMLResponse.h
   include/tencentcloud/sts/v20180813/model/ApiKey.h
-  include/tencentcloud/sts/v20180813/model/AssumeRoleWithSAMLRequest.h
+  include/tencentcloud/sts/v20180813/model/AssumeRoleWithWebIdentityRequest.h
+  include/tencentcloud/sts/v20180813/model/AssumeRoleWithWebIdentityResponse.h
   include/tencentcloud/sts/v20180813/model/GetFederationTokenResponse.h
   include/tencentcloud/sts/v20180813/model/QueryApiKeyResponse.h
   include/tencentcloud/sts/v20180813/model/AssumeRoleResponse.h
@@ -31,13 +32,15 @@ set(sts_public_header_model
   include/tencentcloud/sts/v20180813/model/Credentials.h
   include/tencentcloud/sts/v20180813/model/AssumeRoleRequest.h
   include/tencentcloud/sts/v20180813/model/GetCallerIdentityRequest.h
+  include/tencentcloud/sts/v20180813/model/AssumeRoleWithSAMLRequest.h
   )
 
 set(sts_src
   src/v20180813/StsClient.cpp
   src/v20180813/model/AssumeRoleWithSAMLResponse.cpp
   src/v20180813/model/ApiKey.cpp
-  src/v20180813/model/AssumeRoleWithSAMLRequest.cpp
+  src/v20180813/model/AssumeRoleWithWebIdentityRequest.cpp
+  src/v20180813/model/AssumeRoleWithWebIdentityResponse.cpp
   src/v20180813/model/GetFederationTokenResponse.cpp
   src/v20180813/model/QueryApiKeyResponse.cpp
   src/v20180813/model/AssumeRoleResponse.cpp
@@ -47,6 +50,7 @@ set(sts_src
   src/v20180813/model/Credentials.cpp
   src/v20180813/model/AssumeRoleRequest.cpp
   src/v20180813/model/GetCallerIdentityRequest.cpp
+  src/v20180813/model/AssumeRoleWithSAMLRequest.cpp
   )
 
 set(sts_include

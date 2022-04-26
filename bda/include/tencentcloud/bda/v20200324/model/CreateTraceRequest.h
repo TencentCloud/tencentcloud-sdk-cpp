@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool PersonIdHasBeenSet() const;
 
                     /**
-                     * 获取人体轨迹信息。
-                     * @return Trace 人体轨迹信息。
+                     * 获取人体动作轨迹信息。
+                     * @return Trace 人体动作轨迹信息。
                      */
                     Trace GetTrace() const;
 
                     /**
-                     * 设置人体轨迹信息。
-                     * @param Trace 人体轨迹信息。
+                     * 设置人体动作轨迹信息。
+                     * @param Trace 人体动作轨迹信息。
                      */
                     void SetTrace(const Trace& _trace);
 
@@ -88,7 +88,7 @@ namespace TencentCloud
                     bool m_personIdHasBeenSet;
 
                     /**
-                     * 人体轨迹信息。
+                     * 人体动作轨迹信息。
                      */
                     Trace m_trace;
                     bool m_traceHasBeenSet;

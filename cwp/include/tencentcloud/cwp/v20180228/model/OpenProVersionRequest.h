@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云服务器类型。(当前参数已作废,可以留空值 )
-                     * @return MachineType 云服务器类型。(当前参数已作废,可以留空值 )
+                     * 获取云服务器类型（当前字段已作废，暂时填string类型空字符串代替，例如：""，英文双引号）
+                     * @return MachineType 云服务器类型（当前字段已作废，暂时填string类型空字符串代替，例如：""，英文双引号）
                      */
                     std::string GetMachineType() const;
 
                     /**
-                     * 设置云服务器类型。(当前参数已作废,可以留空值 )
-                     * @param MachineType 云服务器类型。(当前参数已作废,可以留空值 )
+                     * 设置云服务器类型（当前字段已作废，暂时填string类型空字符串代替，例如：""，英文双引号）
+                     * @param MachineType 云服务器类型（当前字段已作废，暂时填string类型空字符串代替，例如：""，英文双引号）
                      */
                     void SetMachineType(const std::string& _machineType);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool MachineTypeHasBeenSet() const;
 
                     /**
-                     * 获取机器所属地域。(当前参数已作废,可以留空值 )
-                     * @return MachineRegion 机器所属地域。(当前参数已作废,可以留空值 )
+                     * 获取机器所属地域（当前字段已作废，暂时填string类型空字符串代替，例如：""，英文双引号）
+                     * @return MachineRegion 机器所属地域（当前字段已作废，暂时填string类型空字符串代替，例如：""，英文双引号）
                      */
                     std::string GetMachineRegion() const;
 
                     /**
-                     * 设置机器所属地域。(当前参数已作废,可以留空值 )
-                     * @param MachineRegion 机器所属地域。(当前参数已作废,可以留空值 )
+                     * 设置机器所属地域（当前字段已作废，暂时填string类型空字符串代替，例如：""，英文双引号）
+                     * @param MachineRegion 机器所属地域（当前字段已作废，暂时填string类型空字符串代替，例如：""，英文双引号）
                      */
                     void SetMachineRegion(const std::string& _machineRegion);
 
@@ -121,13 +121,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 云服务器类型。(当前参数已作废,可以留空值 )
+                     * 云服务器类型（当前字段已作废，暂时填string类型空字符串代替，例如：""，英文双引号）
                      */
                     std::string m_machineType;
                     bool m_machineTypeHasBeenSet;
 
                     /**
-                     * 机器所属地域。(当前参数已作废,可以留空值 )
+                     * 机器所属地域（当前字段已作废，暂时填string类型空字符串代替，例如：""，英文双引号）
                      */
                     std::string m_machineRegion;
                     bool m_machineRegionHasBeenSet;

@@ -235,6 +235,28 @@ namespace TencentCloud
                      */
                     bool LabelHasBeenSet() const;
 
+                    /**
+                     * 获取媒资导入完成后的回调地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CallbackURL 媒资导入完成后的回调地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCallbackURL() const;
+
+                    /**
+                     * 设置媒资导入完成后的回调地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CallbackURL 媒资导入完成后的回调地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCallbackURL(const std::string& _callbackURL);
+
+                    /**
+                     * 判断参数 CallbackURL 是否已赋值
+                     * @return CallbackURL 是否已赋值
+                     */
+                    bool CallbackURLHasBeenSet() const;
+
                 private:
 
                     /**
@@ -291,6 +313,13 @@ namespace TencentCloud
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
+
+                    /**
+                     * 媒资导入完成后的回调地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_callbackURL;
+                    bool m_callbackURLHasBeenSet;
 
                 };
             }

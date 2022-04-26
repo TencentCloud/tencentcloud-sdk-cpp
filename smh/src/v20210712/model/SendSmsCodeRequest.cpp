@@ -25,7 +25,8 @@ using namespace std;
 SendSmsCodeRequest::SendSmsCodeRequest() :
     m_purposeHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false)
+    m_phoneNumberHasBeenSet(false),
+    m_countryCodeHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string SendSmsCodeRequest::ToJsonString() const
         string key = "PhoneNumber";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_phoneNumber.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_countryCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CountryCode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_countryCode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void SendSmsCodeRequest::SetPhoneNumber(const string& _phoneNumber)
 bool SendSmsCodeRequest::PhoneNumberHasBeenSet() const
 {
     return m_phoneNumberHasBeenSet;
+}
+
+string SendSmsCodeRequest::GetCountryCode() const
+{
+    return m_countryCode;
+}
+
+void SendSmsCodeRequest::SetCountryCode(const string& _countryCode)
+{
+    m_countryCode = _countryCode;
+    m_countryCodeHasBeenSet = true;
+}
+
+bool SendSmsCodeRequest::CountryCodeHasBeenSet() const
+{
+    return m_countryCodeHasBeenSet;
 }
 
 

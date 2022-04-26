@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 人体轨迹信息
+                * 人体动作轨迹信息
                 */
                 class Trace : public AbstractModel
                 {
@@ -48,11 +48,11 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取人体轨迹图片 Base64 数组。 
+                     * 获取人体动作轨迹图片 Base64 数组。 
 数组长度最小为1最大为5。 
 单个图片 base64 编码后大小不可超过2M。 
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
-                     * @return Images 人体轨迹图片 Base64 数组。 
+                     * @return Images 人体动作轨迹图片 Base64 数组。 
 数组长度最小为1最大为5。 
 单个图片 base64 编码后大小不可超过2M。 
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
@@ -60,11 +60,11 @@ namespace TencentCloud
                     std::vector<std::string> GetImages() const;
 
                     /**
-                     * 设置人体轨迹图片 Base64 数组。 
+                     * 设置人体动作轨迹图片 Base64 数组。 
 数组长度最小为1最大为5。 
 单个图片 base64 编码后大小不可超过2M。 
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
-                     * @param Images 人体轨迹图片 Base64 数组。 
+                     * @param Images 人体动作轨迹图片 Base64 数组。 
 数组长度最小为1最大为5。 
 单个图片 base64 编码后大小不可超过2M。 
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
@@ -78,14 +78,14 @@ namespace TencentCloud
                     bool ImagesHasBeenSet() const;
 
                     /**
-                     * 获取人体轨迹图片 Url 数组。 
+                     * 获取人体动作轨迹图片 Url 数组。 
 数组长度最小为1最大为5。 
 单个图片 base64 编码后大小不可超过2M。 
 Urls、Images必须提供一个，如果都提供，只使用 Urls。 
 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
 非腾讯云存储的Url速度和稳定性可能受一定影响。 
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
-                     * @return Urls 人体轨迹图片 Url 数组。 
+                     * @return Urls 人体动作轨迹图片 Url 数组。 
 数组长度最小为1最大为5。 
 单个图片 base64 编码后大小不可超过2M。 
 Urls、Images必须提供一个，如果都提供，只使用 Urls。 
@@ -96,14 +96,14 @@ Urls、Images必须提供一个，如果都提供，只使用 Urls。
                     std::vector<std::string> GetUrls() const;
 
                     /**
-                     * 设置人体轨迹图片 Url 数组。 
+                     * 设置人体动作轨迹图片 Url 数组。 
 数组长度最小为1最大为5。 
 单个图片 base64 编码后大小不可超过2M。 
 Urls、Images必须提供一个，如果都提供，只使用 Urls。 
 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
 非腾讯云存储的Url速度和稳定性可能受一定影响。 
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
-                     * @param Urls 人体轨迹图片 Url 数组。 
+                     * @param Urls 人体动作轨迹图片 Url 数组。 
 数组长度最小为1最大为5。 
 单个图片 base64 编码后大小不可超过2M。 
 Urls、Images必须提供一个，如果都提供，只使用 Urls。 
@@ -152,7 +152,7 @@ Urls、Images必须提供一个，如果都提供，只使用 Urls。
                 private:
 
                     /**
-                     * 人体轨迹图片 Base64 数组。 
+                     * 人体动作轨迹图片 Base64 数组。 
 数组长度最小为1最大为5。 
 单个图片 base64 编码后大小不可超过2M。 
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
@@ -161,7 +161,7 @@ Urls、Images必须提供一个，如果都提供，只使用 Urls。
                     bool m_imagesHasBeenSet;
 
                     /**
-                     * 人体轨迹图片 Url 数组。 
+                     * 人体动作轨迹图片 Url 数组。 
 数组长度最小为1最大为5。 
 单个图片 base64 编码后大小不可超过2M。 
 Urls、Images必须提供一个，如果都提供，只使用 Urls。 

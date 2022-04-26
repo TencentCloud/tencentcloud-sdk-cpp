@@ -152,14 +152,14 @@ namespace TencentCloud
                     bool MaxSplitPartitionsHasBeenSet() const;
 
                     /**
-                     * 获取日志主题的存储类型，可选值 hot（实时存储），cold（低频存储）；默认为hot。
-                     * @return StorageType 日志主题的存储类型，可选值 hot（实时存储），cold（低频存储）；默认为hot。
+                     * 获取日志主题的存储类型，可选值 hot（标准存储），cold（低频存储）；默认为hot。
+                     * @return StorageType 日志主题的存储类型，可选值 hot（标准存储），cold（低频存储）；默认为hot。
                      */
                     std::string GetStorageType() const;
 
                     /**
-                     * 设置日志主题的存储类型，可选值 hot（实时存储），cold（低频存储）；默认为hot。
-                     * @param StorageType 日志主题的存储类型，可选值 hot（实时存储），cold（低频存储）；默认为hot。
+                     * 设置日志主题的存储类型，可选值 hot（标准存储），cold（低频存储）；默认为hot。
+                     * @param StorageType 日志主题的存储类型，可选值 hot（标准存储），cold（低频存储）；默认为hot。
                      */
                     void SetStorageType(const std::string& _storageType);
 
@@ -226,7 +226,7 @@ namespace TencentCloud
                     bool m_maxSplitPartitionsHasBeenSet;
 
                     /**
-                     * 日志主题的存储类型，可选值 hot（实时存储），cold（低频存储）；默认为hot。
+                     * 日志主题的存储类型，可选值 hot（标准存储），cold（低频存储）；默认为hot。
                      */
                     std::string m_storageType;
                     bool m_storageTypeHasBeenSet;

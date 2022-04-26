@@ -548,7 +548,7 @@ namespace TencentCloud
                 DeleteParamTemplateOutcomeCallable DeleteParamTemplateCallable(const Model::DeleteParamTemplateRequest& request);
 
                 /**
-                 *移除复制组成员
+                 *移除复制组成员 注：接口下线中，请使用 RemoveReplicationInstance
                  * @param req DeleteReplicationInstanceRequest
                  * @return DeleteReplicationInstanceOutcome
                  */

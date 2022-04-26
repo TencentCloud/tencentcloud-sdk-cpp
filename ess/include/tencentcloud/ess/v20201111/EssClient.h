@@ -41,6 +41,8 @@
 #include <tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeResponse.h>
 #include <tencentcloud/ess/v20201111/model/StartFlowRequest.h>
 #include <tencentcloud/ess/v20201111/model/StartFlowResponse.h>
+#include <tencentcloud/ess/v20201111/model/UploadFilesRequest.h>
+#include <tencentcloud/ess/v20201111/model/UploadFilesResponse.h>
 
 
 namespace TencentCloud
@@ -82,6 +84,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StartFlowResponse> StartFlowOutcome;
                 typedef std::future<StartFlowOutcome> StartFlowOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::StartFlowRequest&, StartFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::UploadFilesResponse> UploadFilesOutcome;
+                typedef std::future<UploadFilesOutcome> UploadFilesOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::UploadFilesRequest&, UploadFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadFilesAsyncHandler;
 
 
 
@@ -165,6 +170,16 @@ namespace TencentCloud
                 StartFlowOutcome StartFlow(const Model::StartFlowRequest &request);
                 void StartFlowAsync(const Model::StartFlowRequest& request, const StartFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StartFlowOutcomeCallable StartFlowCallable(const Model::StartFlowRequest& request);
+
+                /**
+                 *此接口（UploadFiles）用于文件上传。
+调用时需要设置Domain 为 file.ess.tencent.cn，设置Version为2020-12-22
+                 * @param req UploadFilesRequest
+                 * @return UploadFilesOutcome
+                 */
+                UploadFilesOutcome UploadFiles(const Model::UploadFilesRequest &request);
+                void UploadFilesAsync(const Model::UploadFilesRequest& request, const UploadFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UploadFilesOutcomeCallable UploadFilesCallable(const Model::UploadFilesRequest& request);
 
             };
         }

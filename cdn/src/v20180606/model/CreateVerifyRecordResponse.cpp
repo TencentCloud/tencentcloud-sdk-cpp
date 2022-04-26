@@ -26,7 +26,8 @@ using namespace std;
 CreateVerifyRecordResponse::CreateVerifyRecordResponse() :
     m_subDomainHasBeenSet(false),
     m_recordHasBeenSet(false),
-    m_recordTypeHasBeenSet(false)
+    m_recordTypeHasBeenSet(false),
+    m_fileVerifyUrlHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome CreateVerifyRecordResponse::Deserialize(const string &payloa
         m_recordTypeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FileVerifyUrl") && !rsp["FileVerifyUrl"].IsNull())
+    {
+        if (!rsp["FileVerifyUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileVerifyUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileVerifyUrl = string(rsp["FileVerifyUrl"].GetString());
+        m_fileVerifyUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string CreateVerifyRecordResponse::ToJsonString() const
         string key = "RecordType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_recordType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileVerifyUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileVerifyUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileVerifyUrl.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -168,6 +187,16 @@ string CreateVerifyRecordResponse::GetRecordType() const
 bool CreateVerifyRecordResponse::RecordTypeHasBeenSet() const
 {
     return m_recordTypeHasBeenSet;
+}
+
+string CreateVerifyRecordResponse::GetFileVerifyUrl() const
+{
+    return m_fileVerifyUrl;
+}
+
+bool CreateVerifyRecordResponse::FileVerifyUrlHasBeenSet() const
+{
+    return m_fileVerifyUrlHasBeenSet;
 }
 
 

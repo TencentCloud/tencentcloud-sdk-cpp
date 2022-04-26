@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取查询日期，最早为30天前的日期。
-                     * @return Date 查询日期，最早为30天前的日期。
+                     * 获取查询日期，如2021-05-27，最早为30天前的日期。
+                     * @return Date 查询日期，如2021-05-27，最早为30天前的日期。
                      */
                     std::string GetDate() const;
 
                     /**
-                     * 设置查询日期，最早为30天前的日期。
-                     * @param Date 查询日期，最早为30天前的日期。
+                     * 设置查询日期，如2021-05-27，最早为30天前的日期。
+                     * @param Date 查询日期，如2021-05-27，最早为30天前的日期。
                      */
                     void SetDate(const std::string& _date);
 
@@ -141,7 +141,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 查询日期，最早为30天前的日期。
+                     * 查询日期，如2021-05-27，最早为30天前的日期。
                      */
                     std::string m_date;
                     bool m_dateHasBeenSet;

@@ -35,6 +35,7 @@
 #include <tencentcloud/cme/v20191029/model/ClassCreatedEvent.h>
 #include <tencentcloud/cme/v20191029/model/ClassMovedEvent.h>
 #include <tencentcloud/cme/v20191029/model/ClassDeletedEvent.h>
+#include <tencentcloud/cme/v20191029/model/VideoExportCompletedEvent.h>
 
 
 namespace TencentCloud
@@ -69,7 +70,8 @@ namespace TencentCloud
 <li>Material.Deleted：媒体删除事件；</li>
 <li>Class.Created：分类新增事件；</li>
 <li>Class.Moved：分类移动事件；</li>
-<li>Class.Deleted：分类删除事件。</li>
+<li>Class.Deleted：分类删除事件；</li>
+<li>Task.VideoExportCompleted：视频导出完成事件。 </li>
                      * @return EventType 事件类型，可取值有：
 <li>Storage.NewFileCreated：新文件产生事件；</li>
 <li>Project.StreamConnect.StatusChanged：云转推项目状态变更事件；</li>
@@ -81,7 +83,8 @@ namespace TencentCloud
 <li>Material.Deleted：媒体删除事件；</li>
 <li>Class.Created：分类新增事件；</li>
 <li>Class.Moved：分类移动事件；</li>
-<li>Class.Deleted：分类删除事件。</li>
+<li>Class.Deleted：分类删除事件；</li>
+<li>Task.VideoExportCompleted：视频导出完成事件。 </li>
                      */
                     std::string GetEventType() const;
 
@@ -97,7 +100,8 @@ namespace TencentCloud
 <li>Material.Deleted：媒体删除事件；</li>
 <li>Class.Created：分类新增事件；</li>
 <li>Class.Moved：分类移动事件；</li>
-<li>Class.Deleted：分类删除事件。</li>
+<li>Class.Deleted：分类删除事件；</li>
+<li>Task.VideoExportCompleted：视频导出完成事件。 </li>
                      * @param EventType 事件类型，可取值有：
 <li>Storage.NewFileCreated：新文件产生事件；</li>
 <li>Project.StreamConnect.StatusChanged：云转推项目状态变更事件；</li>
@@ -109,7 +113,8 @@ namespace TencentCloud
 <li>Material.Deleted：媒体删除事件；</li>
 <li>Class.Created：分类新增事件；</li>
 <li>Class.Moved：分类移动事件；</li>
-<li>Class.Deleted：分类删除事件。</li>
+<li>Class.Deleted：分类删除事件；</li>
+<li>Task.VideoExportCompleted：视频导出完成事件。 </li>
                      */
                     void SetEventType(const std::string& _eventType);
 
@@ -371,6 +376,28 @@ namespace TencentCloud
                      */
                     bool ClassDeletedEventHasBeenSet() const;
 
+                    /**
+                     * 获取视频导出完成事件。仅当 EventType 为 Task.VideoExportCompleted 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VideoExportCompletedEvent 视频导出完成事件。仅当 EventType 为 Task.VideoExportCompleted 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    VideoExportCompletedEvent GetVideoExportCompletedEvent() const;
+
+                    /**
+                     * 设置视频导出完成事件。仅当 EventType 为 Task.VideoExportCompleted 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VideoExportCompletedEvent 视频导出完成事件。仅当 EventType 为 Task.VideoExportCompleted 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVideoExportCompletedEvent(const VideoExportCompletedEvent& _videoExportCompletedEvent);
+
+                    /**
+                     * 判断参数 VideoExportCompletedEvent 是否已赋值
+                     * @return VideoExportCompletedEvent 是否已赋值
+                     */
+                    bool VideoExportCompletedEventHasBeenSet() const;
+
                 private:
 
                     /**
@@ -385,7 +412,8 @@ namespace TencentCloud
 <li>Material.Deleted：媒体删除事件；</li>
 <li>Class.Created：分类新增事件；</li>
 <li>Class.Moved：分类移动事件；</li>
-<li>Class.Deleted：分类删除事件。</li>
+<li>Class.Deleted：分类删除事件；</li>
+<li>Task.VideoExportCompleted：视频导出完成事件。 </li>
                      */
                     std::string m_eventType;
                     bool m_eventTypeHasBeenSet;
@@ -470,6 +498,13 @@ namespace TencentCloud
                      */
                     ClassDeletedEvent m_classDeletedEvent;
                     bool m_classDeletedEventHasBeenSet;
+
+                    /**
+                     * 视频导出完成事件。仅当 EventType 为 Task.VideoExportCompleted 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    VideoExportCompletedEvent m_videoExportCompletedEvent;
+                    bool m_videoExportCompletedEventHasBeenSet;
 
                 };
             }

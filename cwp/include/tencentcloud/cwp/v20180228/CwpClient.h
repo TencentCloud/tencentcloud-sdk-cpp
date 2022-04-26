@@ -1138,7 +1138,7 @@ namespace TencentCloud
                 CheckBashRuleParamsOutcomeCallable CheckBashRuleParamsCallable(const Model::CheckBashRuleParamsRequest& request);
 
                 /**
-                 *本接口 (CloseProVersion) 用于关闭专业版。
+                 *本接口 (CloseProVersion) 已全面改为授权模式,该接口只能解绑授权.
                  * @param req CloseProVersionRequest
                  * @return CloseProVersionOutcome
                  */

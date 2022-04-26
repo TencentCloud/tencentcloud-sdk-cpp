@@ -306,6 +306,28 @@ TaskStatus定义如下:
                      */
                     bool LabelHasBeenSet() const;
 
+                    /**
+                     * 获取任务分析完成后的后调地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CallbackURL 任务分析完成后的后调地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCallbackURL() const;
+
+                    /**
+                     * 设置任务分析完成后的后调地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CallbackURL 任务分析完成后的后调地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCallbackURL(const std::string& _callbackURL);
+
+                    /**
+                     * 判断参数 CallbackURL 是否已赋值
+                     * @return CallbackURL 是否已赋值
+                     */
+                    bool CallbackURLHasBeenSet() const;
+
                 private:
 
                     /**
@@ -386,6 +408,13 @@ TaskStatus定义如下:
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
+
+                    /**
+                     * 任务分析完成后的后调地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_callbackURL;
+                    bool m_callbackURLHasBeenSet;
 
                 };
             }
