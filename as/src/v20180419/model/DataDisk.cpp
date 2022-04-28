@@ -25,7 +25,8 @@ DataDisk::DataDisk() :
     m_diskSizeHasBeenSet(false),
     m_snapshotIdHasBeenSet(false),
     m_deleteWithInstanceHasBeenSet(false),
-    m_encryptHasBeenSet(false)
+    m_encryptHasBeenSet(false),
+    m_throughputPerformanceHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome DataDisk::Deserialize(const rapidjson::Value &value)
         m_encryptHasBeenSet = true;
     }
 
+    if (value.HasMember("ThroughputPerformance") && !value["ThroughputPerformance"].IsNull())
+    {
+        if (!value["ThroughputPerformance"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataDisk.ThroughputPerformance` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_throughputPerformance = value["ThroughputPerformance"].GetUint64();
+        m_throughputPerformanceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void DataDisk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Encrypt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_encrypt, allocator);
+    }
+
+    if (m_throughputPerformanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ThroughputPerformance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_throughputPerformance, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void DataDisk::SetEncrypt(const bool& _encrypt)
 bool DataDisk::EncryptHasBeenSet() const
 {
     return m_encryptHasBeenSet;
+}
+
+uint64_t DataDisk::GetThroughputPerformance() const
+{
+    return m_throughputPerformance;
+}
+
+void DataDisk::SetThroughputPerformance(const uint64_t& _throughputPerformance)
+{
+    m_throughputPerformance = _throughputPerformance;
+    m_throughputPerformanceHasBeenSet = true;
+}
+
+bool DataDisk::ThroughputPerformanceHasBeenSet() const
+{
+    return m_throughputPerformanceHasBeenSet;
 }
 

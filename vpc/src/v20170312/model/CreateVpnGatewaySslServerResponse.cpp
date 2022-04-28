@@ -24,7 +24,8 @@ using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
 CreateVpnGatewaySslServerResponse::CreateVpnGatewaySslServerResponse() :
-    m_taskIdHasBeenSet(false)
+    m_taskIdHasBeenSet(false),
+    m_sslVpnServerIdHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome CreateVpnGatewaySslServerResponse::Deserialize(const string 
         m_taskIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SslVpnServerId") && !rsp["SslVpnServerId"].IsNull())
+    {
+        if (!rsp["SslVpnServerId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SslVpnServerId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sslVpnServerId = string(rsp["SslVpnServerId"].GetString());
+        m_sslVpnServerIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +99,14 @@ string CreateVpnGatewaySslServerResponse::ToJsonString() const
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskId, allocator);
+    }
+
+    if (m_sslVpnServerIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SslVpnServerId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sslVpnServerId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,16 @@ int64_t CreateVpnGatewaySslServerResponse::GetTaskId() const
 bool CreateVpnGatewaySslServerResponse::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+string CreateVpnGatewaySslServerResponse::GetSslVpnServerId() const
+{
+    return m_sslVpnServerId;
+}
+
+bool CreateVpnGatewaySslServerResponse::SslVpnServerIdHasBeenSet() const
+{
+    return m_sslVpnServerIdHasBeenSet;
 }
 
 

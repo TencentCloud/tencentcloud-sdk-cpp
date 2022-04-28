@@ -26,6 +26,7 @@ BindAutoScalingGroupRequest::BindAutoScalingGroupRequest() :
     m_clusterIdHasBeenSet(false),
     m_launchConfigurationIdHasBeenSet(false),
     m_autoScalingGroupIdHasBeenSet(false),
+    m_queueNameHasBeenSet(false),
     m_expansionBusyTimeHasBeenSet(false),
     m_shrinkIdleTimeHasBeenSet(false),
     m_enableAutoExpansionHasBeenSet(false),
@@ -63,6 +64,14 @@ string BindAutoScalingGroupRequest::ToJsonString() const
         string key = "AutoScalingGroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_autoScalingGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queueNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueueName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_queueName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_expansionBusyTimeHasBeenSet)
@@ -159,6 +168,22 @@ void BindAutoScalingGroupRequest::SetAutoScalingGroupId(const string& _autoScali
 bool BindAutoScalingGroupRequest::AutoScalingGroupIdHasBeenSet() const
 {
     return m_autoScalingGroupIdHasBeenSet;
+}
+
+string BindAutoScalingGroupRequest::GetQueueName() const
+{
+    return m_queueName;
+}
+
+void BindAutoScalingGroupRequest::SetQueueName(const string& _queueName)
+{
+    m_queueName = _queueName;
+    m_queueNameHasBeenSet = true;
+}
+
+bool BindAutoScalingGroupRequest::QueueNameHasBeenSet() const
+{
+    return m_queueNameHasBeenSet;
 }
 
 int64_t BindAutoScalingGroupRequest::GetExpansionBusyTime() const

@@ -21,11 +21,13 @@ set(apm_public_header
 set(apm_public_header_model
   include/tencentcloud/apm/v20210622/model/ApmMetricRecord.h
   include/tencentcloud/apm/v20210622/model/CreateApmInstanceResponse.h
+  include/tencentcloud/apm/v20210622/model/DescribeServiceOverviewRequest.h
   include/tencentcloud/apm/v20210622/model/ApmInstanceDetail.h
   include/tencentcloud/apm/v20210622/model/CreateApmInstanceRequest.h
   include/tencentcloud/apm/v20210622/model/DescribeMetricRecordsResponse.h
   include/tencentcloud/apm/v20210622/model/DescribeApmAgentResponse.h
   include/tencentcloud/apm/v20210622/model/ApmTag.h
+  include/tencentcloud/apm/v20210622/model/DescribeServiceOverviewResponse.h
   include/tencentcloud/apm/v20210622/model/DescribeApmInstancesResponse.h
   include/tencentcloud/apm/v20210622/model/Filter.h
   include/tencentcloud/apm/v20210622/model/DescribeApmAgentRequest.h
@@ -42,11 +44,13 @@ set(apm_src
   src/v20210622/ApmClient.cpp
   src/v20210622/model/ApmMetricRecord.cpp
   src/v20210622/model/CreateApmInstanceResponse.cpp
+  src/v20210622/model/DescribeServiceOverviewRequest.cpp
   src/v20210622/model/ApmInstanceDetail.cpp
   src/v20210622/model/CreateApmInstanceRequest.cpp
   src/v20210622/model/DescribeMetricRecordsResponse.cpp
   src/v20210622/model/DescribeApmAgentResponse.cpp
   src/v20210622/model/ApmTag.cpp
+  src/v20210622/model/DescribeServiceOverviewResponse.cpp
   src/v20210622/model/DescribeApmInstancesResponse.cpp
   src/v20210622/model/Filter.cpp
   src/v20210622/model/DescribeApmAgentRequest.cpp

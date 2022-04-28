@@ -37,7 +37,8 @@ MigrateJobInfo::MigrateJobInfo() :
     m_statusHasBeenSet(false),
     m_detailHasBeenSet(false),
     m_errorInfoHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_srcInfoMultiHasBeenSet(false)
 {
 }
 
@@ -264,6 +265,26 @@ CoreInternalOutcome MigrateJobInfo::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("SrcInfoMulti") && !value["SrcInfoMulti"].IsNull())
+    {
+        if (!value["SrcInfoMulti"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `MigrateJobInfo.SrcInfoMulti` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SrcInfoMulti"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SrcInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_srcInfoMulti.push_back(item);
+        }
+        m_srcInfoMultiHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -419,6 +440,21 @@ void MigrateJobInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
 
         int i=0;
         for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_srcInfoMultiHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SrcInfoMulti";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_srcInfoMulti.begin(); itr != m_srcInfoMulti.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -698,5 +734,21 @@ void MigrateJobInfo::SetTags(const vector<TagItem>& _tags)
 bool MigrateJobInfo::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+vector<SrcInfo> MigrateJobInfo::GetSrcInfoMulti() const
+{
+    return m_srcInfoMulti;
+}
+
+void MigrateJobInfo::SetSrcInfoMulti(const vector<SrcInfo>& _srcInfoMulti)
+{
+    m_srcInfoMulti = _srcInfoMulti;
+    m_srcInfoMultiHasBeenSet = true;
+}
+
+bool MigrateJobInfo::SrcInfoMultiHasBeenSet() const
+{
+    return m_srcInfoMultiHasBeenSet;
 }
 

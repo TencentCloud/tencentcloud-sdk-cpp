@@ -34,7 +34,8 @@ CreateApplicationRequest::CreateApplicationRequest() :
     m_subnetListHasBeenSet(false),
     m_codingLanguageHasBeenSet(false),
     m_deployModeHasBeenSet(false),
-    m_enableTracingHasBeenSet(false)
+    m_enableTracingHasBeenSet(false),
+    m_useDefaultImageServiceParametersHasBeenSet(false)
 {
 }
 
@@ -144,6 +145,15 @@ string CreateApplicationRequest::ToJsonString() const
         string key = "EnableTracing";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableTracing, allocator);
+    }
+
+    if (m_useDefaultImageServiceParametersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseDefaultImageServiceParameters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_useDefaultImageServiceParameters.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -344,6 +354,22 @@ void CreateApplicationRequest::SetEnableTracing(const int64_t& _enableTracing)
 bool CreateApplicationRequest::EnableTracingHasBeenSet() const
 {
     return m_enableTracingHasBeenSet;
+}
+
+UseDefaultRepoParameters CreateApplicationRequest::GetUseDefaultImageServiceParameters() const
+{
+    return m_useDefaultImageServiceParameters;
+}
+
+void CreateApplicationRequest::SetUseDefaultImageServiceParameters(const UseDefaultRepoParameters& _useDefaultImageServiceParameters)
+{
+    m_useDefaultImageServiceParameters = _useDefaultImageServiceParameters;
+    m_useDefaultImageServiceParametersHasBeenSet = true;
+}
+
+bool CreateApplicationRequest::UseDefaultImageServiceParametersHasBeenSet() const
+{
+    return m_useDefaultImageServiceParametersHasBeenSet;
 }
 
 

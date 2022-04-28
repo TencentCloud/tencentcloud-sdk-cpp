@@ -21,6 +21,7 @@ set(lighthouse_public_header
 set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesTrafficPackagesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/AssociateInstancesKeyPairsResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/RenewInstancesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeDisksDeniedActionsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesTrafficPackagesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesDeniedActionsRequest.h
@@ -184,6 +185,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/ModifyInstancesRenewFlagRequest.h
   include/tencentcloud/lighthouse/v20200324/model/StopInstancesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeModifyInstanceBundlesRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/RenewInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ResetInstanceResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DiskDeniedActions.h
@@ -204,6 +206,7 @@ set(lighthouse_src
   src/v20200324/LighthouseClient.cpp
   src/v20200324/model/DescribeInstancesTrafficPackagesRequest.cpp
   src/v20200324/model/AssociateInstancesKeyPairsResponse.cpp
+  src/v20200324/model/RenewInstancesRequest.cpp
   src/v20200324/model/DescribeDisksDeniedActionsRequest.cpp
   src/v20200324/model/DescribeInstancesTrafficPackagesResponse.cpp
   src/v20200324/model/DescribeInstancesDeniedActionsRequest.cpp
@@ -367,6 +370,7 @@ set(lighthouse_src
   src/v20200324/model/ModifyInstancesRenewFlagRequest.cpp
   src/v20200324/model/StopInstancesRequest.cpp
   src/v20200324/model/DescribeModifyInstanceBundlesRequest.cpp
+  src/v20200324/model/RenewInstancesResponse.cpp
   src/v20200324/model/ResetInstanceResponse.cpp
   src/v20200324/model/DescribeFirewallRulesRequest.cpp
   src/v20200324/model/DiskDeniedActions.cpp

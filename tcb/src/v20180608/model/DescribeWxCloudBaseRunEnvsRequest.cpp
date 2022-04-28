@@ -23,7 +23,8 @@ using namespace TencentCloud::Tcb::V20180608::Model;
 using namespace std;
 
 DescribeWxCloudBaseRunEnvsRequest::DescribeWxCloudBaseRunEnvsRequest() :
-    m_wxAppIdHasBeenSet(false)
+    m_wxAppIdHasBeenSet(false),
+    m_allRegionsHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeWxCloudBaseRunEnvsRequest::ToJsonString() const
         string key = "WxAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_wxAppId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_allRegionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllRegions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_allRegions, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeWxCloudBaseRunEnvsRequest::SetWxAppId(const string& _wxAppId)
 bool DescribeWxCloudBaseRunEnvsRequest::WxAppIdHasBeenSet() const
 {
     return m_wxAppIdHasBeenSet;
+}
+
+bool DescribeWxCloudBaseRunEnvsRequest::GetAllRegions() const
+{
+    return m_allRegions;
+}
+
+void DescribeWxCloudBaseRunEnvsRequest::SetAllRegions(const bool& _allRegions)
+{
+    m_allRegions = _allRegions;
+    m_allRegionsHasBeenSet = true;
+}
+
+bool DescribeWxCloudBaseRunEnvsRequest::AllRegionsHasBeenSet() const
+{
+    return m_allRegionsHasBeenSet;
 }
 
 

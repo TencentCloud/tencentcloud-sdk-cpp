@@ -193,14 +193,14 @@ namespace TencentCloud
                     bool OsCustomizeTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启节点的默认安全组(默认: 否，Aphla特性)
-                     * @return NeedWorkSecurityGroup 是否开启节点的默认安全组(默认: 否，Aphla特性)
+                     * 获取是否开启节点的默认安全组(默认: 否，Alpha特性)
+                     * @return NeedWorkSecurityGroup 是否开启节点的默认安全组(默认: 否，Alpha特性)
                      */
                     bool GetNeedWorkSecurityGroup() const;
 
                     /**
-                     * 设置是否开启节点的默认安全组(默认: 否，Aphla特性)
-                     * @param NeedWorkSecurityGroup 是否开启节点的默认安全组(默认: 否，Aphla特性)
+                     * 设置是否开启节点的默认安全组(默认: 否，Alpha特性)
+                     * @param NeedWorkSecurityGroup 是否开启节点的默认安全组(默认: 否，Alpha特性)
                      */
                     void SetNeedWorkSecurityGroup(const bool& _needWorkSecurityGroup);
 
@@ -315,7 +315,7 @@ namespace TencentCloud
                     bool m_osCustomizeTypeHasBeenSet;
 
                     /**
-                     * 是否开启节点的默认安全组(默认: 否，Aphla特性)
+                     * 是否开启节点的默认安全组(默认: 否，Alpha特性)
                      */
                     bool m_needWorkSecurityGroup;
                     bool m_needWorkSecurityGroupHasBeenSet;

@@ -1029,49 +1029,6 @@ TsfClient::CreateRepositoryOutcomeCallable TsfClient::CreateRepositoryCallable(c
     return task->get_future();
 }
 
-TsfClient::CreateServerlessGroupOutcome TsfClient::CreateServerlessGroup(const CreateServerlessGroupRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateServerlessGroup");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateServerlessGroupResponse rsp = CreateServerlessGroupResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateServerlessGroupOutcome(rsp);
-        else
-            return CreateServerlessGroupOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateServerlessGroupOutcome(outcome.GetError());
-    }
-}
-
-void TsfClient::CreateServerlessGroupAsync(const CreateServerlessGroupRequest& request, const CreateServerlessGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateServerlessGroup(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TsfClient::CreateServerlessGroupOutcomeCallable TsfClient::CreateServerlessGroupCallable(const CreateServerlessGroupRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateServerlessGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateServerlessGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TsfClient::CreateTaskOutcome TsfClient::CreateTask(const CreateTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTask");
@@ -2054,49 +2011,6 @@ TsfClient::DeployGroupOutcomeCallable TsfClient::DeployGroupCallable(const Deplo
         [this, request]()
         {
             return this->DeployGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TsfClient::DeployServerlessGroupOutcome TsfClient::DeployServerlessGroup(const DeployServerlessGroupRequest &request)
-{
-    auto outcome = MakeRequest(request, "DeployServerlessGroup");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DeployServerlessGroupResponse rsp = DeployServerlessGroupResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DeployServerlessGroupOutcome(rsp);
-        else
-            return DeployServerlessGroupOutcome(o.GetError());
-    }
-    else
-    {
-        return DeployServerlessGroupOutcome(outcome.GetError());
-    }
-}
-
-void TsfClient::DeployServerlessGroupAsync(const DeployServerlessGroupRequest& request, const DeployServerlessGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeployServerlessGroup(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TsfClient::DeployServerlessGroupOutcomeCallable TsfClient::DeployServerlessGroupCallable(const DeployServerlessGroupRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DeployServerlessGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->DeployServerlessGroup(request);
         }
     );
 
@@ -4892,92 +4806,6 @@ TsfClient::DescribeRepositoryOutcomeCallable TsfClient::DescribeRepositoryCallab
         [this, request]()
         {
             return this->DescribeRepository(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TsfClient::DescribeServerlessGroupOutcome TsfClient::DescribeServerlessGroup(const DescribeServerlessGroupRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeServerlessGroup");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeServerlessGroupResponse rsp = DescribeServerlessGroupResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeServerlessGroupOutcome(rsp);
-        else
-            return DescribeServerlessGroupOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeServerlessGroupOutcome(outcome.GetError());
-    }
-}
-
-void TsfClient::DescribeServerlessGroupAsync(const DescribeServerlessGroupRequest& request, const DescribeServerlessGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeServerlessGroup(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TsfClient::DescribeServerlessGroupOutcomeCallable TsfClient::DescribeServerlessGroupCallable(const DescribeServerlessGroupRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeServerlessGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeServerlessGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TsfClient::DescribeServerlessGroupsOutcome TsfClient::DescribeServerlessGroups(const DescribeServerlessGroupsRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeServerlessGroups");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeServerlessGroupsResponse rsp = DescribeServerlessGroupsResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeServerlessGroupsOutcome(rsp);
-        else
-            return DescribeServerlessGroupsOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeServerlessGroupsOutcome(outcome.GetError());
-    }
-}
-
-void TsfClient::DescribeServerlessGroupsAsync(const DescribeServerlessGroupsRequest& request, const DescribeServerlessGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeServerlessGroups(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TsfClient::DescribeServerlessGroupsOutcomeCallable TsfClient::DescribeServerlessGroupsCallable(const DescribeServerlessGroupsRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeServerlessGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeServerlessGroups(request);
         }
     );
 

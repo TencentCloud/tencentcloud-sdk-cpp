@@ -169,49 +169,6 @@ CwpClient::CheckBashRuleParamsOutcomeCallable CwpClient::CheckBashRuleParamsCall
     return task->get_future();
 }
 
-CwpClient::CloseProVersionOutcome CwpClient::CloseProVersion(const CloseProVersionRequest &request)
-{
-    auto outcome = MakeRequest(request, "CloseProVersion");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CloseProVersionResponse rsp = CloseProVersionResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CloseProVersionOutcome(rsp);
-        else
-            return CloseProVersionOutcome(o.GetError());
-    }
-    else
-    {
-        return CloseProVersionOutcome(outcome.GetError());
-    }
-}
-
-void CwpClient::CloseProVersionAsync(const CloseProVersionRequest& request, const CloseProVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CloseProVersion(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CwpClient::CloseProVersionOutcomeCallable CwpClient::CloseProVersionCallable(const CloseProVersionRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CloseProVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->CloseProVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CwpClient::CreateBaselineStrategyOutcome CwpClient::CreateBaselineStrategy(const CreateBaselineStrategyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateBaselineStrategy");
@@ -8038,49 +7995,6 @@ CwpClient::IgnoreImpactedHostsOutcomeCallable CwpClient::IgnoreImpactedHostsCall
     return task->get_future();
 }
 
-CwpClient::InquiryPriceOpenProVersionPrepaidOutcome CwpClient::InquiryPriceOpenProVersionPrepaid(const InquiryPriceOpenProVersionPrepaidRequest &request)
-{
-    auto outcome = MakeRequest(request, "InquiryPriceOpenProVersionPrepaid");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        InquiryPriceOpenProVersionPrepaidResponse rsp = InquiryPriceOpenProVersionPrepaidResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return InquiryPriceOpenProVersionPrepaidOutcome(rsp);
-        else
-            return InquiryPriceOpenProVersionPrepaidOutcome(o.GetError());
-    }
-    else
-    {
-        return InquiryPriceOpenProVersionPrepaidOutcome(outcome.GetError());
-    }
-}
-
-void CwpClient::InquiryPriceOpenProVersionPrepaidAsync(const InquiryPriceOpenProVersionPrepaidRequest& request, const InquiryPriceOpenProVersionPrepaidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquiryPriceOpenProVersionPrepaid(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CwpClient::InquiryPriceOpenProVersionPrepaidOutcomeCallable CwpClient::InquiryPriceOpenProVersionPrepaidCallable(const InquiryPriceOpenProVersionPrepaidRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<InquiryPriceOpenProVersionPrepaidOutcome()>>(
-        [this, request]()
-        {
-            return this->InquiryPriceOpenProVersionPrepaid(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CwpClient::ModifyAutoOpenProVersionConfigOutcome CwpClient::ModifyAutoOpenProVersionConfig(const ModifyAutoOpenProVersionConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAutoOpenProVersionConfig");
@@ -8296,49 +8210,6 @@ CwpClient::ModifyMalwareTimingScanSettingsOutcomeCallable CwpClient::ModifyMalwa
     return task->get_future();
 }
 
-CwpClient::ModifyProVersionRenewFlagOutcome CwpClient::ModifyProVersionRenewFlag(const ModifyProVersionRenewFlagRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyProVersionRenewFlag");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyProVersionRenewFlagResponse rsp = ModifyProVersionRenewFlagResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyProVersionRenewFlagOutcome(rsp);
-        else
-            return ModifyProVersionRenewFlagOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyProVersionRenewFlagOutcome(outcome.GetError());
-    }
-}
-
-void CwpClient::ModifyProVersionRenewFlagAsync(const ModifyProVersionRenewFlagRequest& request, const ModifyProVersionRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyProVersionRenewFlag(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CwpClient::ModifyProVersionRenewFlagOutcomeCallable CwpClient::ModifyProVersionRenewFlagCallable(const ModifyProVersionRenewFlagRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifyProVersionRenewFlagOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyProVersionRenewFlag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CwpClient::ModifyWarningSettingOutcome CwpClient::ModifyWarningSetting(const ModifyWarningSettingRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyWarningSetting");
@@ -8511,92 +8382,6 @@ CwpClient::ModifyWebPageProtectSwitchOutcomeCallable CwpClient::ModifyWebPagePro
     return task->get_future();
 }
 
-CwpClient::OpenProVersionOutcome CwpClient::OpenProVersion(const OpenProVersionRequest &request)
-{
-    auto outcome = MakeRequest(request, "OpenProVersion");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        OpenProVersionResponse rsp = OpenProVersionResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return OpenProVersionOutcome(rsp);
-        else
-            return OpenProVersionOutcome(o.GetError());
-    }
-    else
-    {
-        return OpenProVersionOutcome(outcome.GetError());
-    }
-}
-
-void CwpClient::OpenProVersionAsync(const OpenProVersionRequest& request, const OpenProVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->OpenProVersion(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CwpClient::OpenProVersionOutcomeCallable CwpClient::OpenProVersionCallable(const OpenProVersionRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<OpenProVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->OpenProVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-CwpClient::OpenProVersionPrepaidOutcome CwpClient::OpenProVersionPrepaid(const OpenProVersionPrepaidRequest &request)
-{
-    auto outcome = MakeRequest(request, "OpenProVersionPrepaid");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        OpenProVersionPrepaidResponse rsp = OpenProVersionPrepaidResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return OpenProVersionPrepaidOutcome(rsp);
-        else
-            return OpenProVersionPrepaidOutcome(o.GetError());
-    }
-    else
-    {
-        return OpenProVersionPrepaidOutcome(outcome.GetError());
-    }
-}
-
-void CwpClient::OpenProVersionPrepaidAsync(const OpenProVersionPrepaidRequest& request, const OpenProVersionPrepaidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->OpenProVersionPrepaid(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CwpClient::OpenProVersionPrepaidOutcomeCallable CwpClient::OpenProVersionPrepaidCallable(const OpenProVersionPrepaidRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<OpenProVersionPrepaidOutcome()>>(
-        [this, request]()
-        {
-            return this->OpenProVersionPrepaid(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CwpClient::RecoverMalwaresOutcome CwpClient::RecoverMalwares(const RecoverMalwaresRequest &request)
 {
     auto outcome = MakeRequest(request, "RecoverMalwares");
@@ -8633,49 +8418,6 @@ CwpClient::RecoverMalwaresOutcomeCallable CwpClient::RecoverMalwaresCallable(con
         [this, request]()
         {
             return this->RecoverMalwares(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-CwpClient::RenewProVersionOutcome CwpClient::RenewProVersion(const RenewProVersionRequest &request)
-{
-    auto outcome = MakeRequest(request, "RenewProVersion");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        RenewProVersionResponse rsp = RenewProVersionResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return RenewProVersionOutcome(rsp);
-        else
-            return RenewProVersionOutcome(o.GetError());
-    }
-    else
-    {
-        return RenewProVersionOutcome(outcome.GetError());
-    }
-}
-
-void CwpClient::RenewProVersionAsync(const RenewProVersionRequest& request, const RenewProVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RenewProVersion(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CwpClient::RenewProVersionOutcomeCallable CwpClient::RenewProVersionCallable(const RenewProVersionRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<RenewProVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->RenewProVersion(request);
         }
     );
 

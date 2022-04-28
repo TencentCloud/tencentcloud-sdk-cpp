@@ -2577,6 +2577,49 @@ LighthouseClient::RebootInstancesOutcomeCallable LighthouseClient::RebootInstanc
     return task->get_future();
 }
 
+LighthouseClient::RenewInstancesOutcome LighthouseClient::RenewInstances(const RenewInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "RenewInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RenewInstancesResponse rsp = RenewInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RenewInstancesOutcome(rsp);
+        else
+            return RenewInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return RenewInstancesOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::RenewInstancesAsync(const RenewInstancesRequest& request, const RenewInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RenewInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::RenewInstancesOutcomeCallable LighthouseClient::RenewInstancesCallable(const RenewInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RenewInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->RenewInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::ResetAttachCcnOutcome LighthouseClient::ResetAttachCcn(const ResetAttachCcnRequest &request)
 {
     auto outcome = MakeRequest(request, "ResetAttachCcn");

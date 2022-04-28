@@ -141,6 +141,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/ModifySnapshotAttributeResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/RebootInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/RebootInstancesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/RenewInstancesRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/RenewInstancesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ResetAttachCcnRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ResetAttachCcnResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ResetInstanceRequest.h>
@@ -346,6 +348,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RebootInstancesResponse> RebootInstancesOutcome;
                 typedef std::future<RebootInstancesOutcome> RebootInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::RebootInstancesRequest&, RebootInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RebootInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::RenewInstancesResponse> RenewInstancesOutcome;
+                typedef std::future<RenewInstancesOutcome> RenewInstancesOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::RenewInstancesRequest&, RenewInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResetAttachCcnResponse> ResetAttachCcnOutcome;
                 typedef std::future<ResetAttachCcnOutcome> ResetAttachCcnOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ResetAttachCcnRequest&, ResetAttachCcnOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetAttachCcnAsyncHandler;
@@ -980,6 +985,15 @@ namespace TencentCloud
                 RebootInstancesOutcome RebootInstances(const Model::RebootInstancesRequest &request);
                 void RebootInstancesAsync(const Model::RebootInstancesRequest& request, const RebootInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RebootInstancesOutcomeCallable RebootInstancesCallable(const Model::RebootInstancesRequest& request);
+
+                /**
+                 *本接口(RenewInstances)用于续费一个或多个轻量应用服务器实例。
+                 * @param req RenewInstancesRequest
+                 * @return RenewInstancesOutcome
+                 */
+                RenewInstancesOutcome RenewInstances(const Model::RenewInstancesRequest &request);
+                void RenewInstancesAsync(const Model::RenewInstancesRequest& request, const RenewInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RenewInstancesOutcomeCallable RenewInstancesCallable(const Model::RenewInstancesRequest& request);
 
                 /**
                  *本接口 (ResetAttachCcn) 用于关联云联网实例申请过期时，重新申请关联操作。

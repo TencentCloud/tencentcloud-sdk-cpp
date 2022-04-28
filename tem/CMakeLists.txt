@@ -83,6 +83,7 @@ set(tem_public_header_model
   include/tencentcloud/tem/v20210701/model/StorageMountConf.h
   include/tencentcloud/tem/v20210701/model/ModifyEnvironmentRequest.h
   include/tencentcloud/tem/v20210701/model/PortMapping.h
+  include/tencentcloud/tem/v20210701/model/UseDefaultRepoParameters.h
   include/tencentcloud/tem/v20210701/model/RevertDeployApplicationResponse.h
   include/tencentcloud/tem/v20210701/model/DeployStrategyConf.h
   include/tencentcloud/tem/v20210701/model/DescribeIngressRequest.h
@@ -219,6 +220,7 @@ set(tem_src
   src/v20210701/model/StorageMountConf.cpp
   src/v20210701/model/ModifyEnvironmentRequest.cpp
   src/v20210701/model/PortMapping.cpp
+  src/v20210701/model/UseDefaultRepoParameters.cpp
   src/v20210701/model/RevertDeployApplicationResponse.cpp
   src/v20210701/model/DeployStrategyConf.cpp
   src/v20210701/model/DescribeIngressRequest.cpp

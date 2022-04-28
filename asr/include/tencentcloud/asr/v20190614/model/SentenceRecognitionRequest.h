@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool SourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取识别音频的音频格式。mp3、wav。
-                     * @return VoiceFormat 识别音频的音频格式。mp3、wav。
+                     * 获取识别音频的音频格式，支持wav、pcm、ogg-opus、speex、silk、mp3、m4a、aac。
+                     * @return VoiceFormat 识别音频的音频格式，支持wav、pcm、ogg-opus、speex、silk、mp3、m4a、aac。
                      */
                     std::string GetVoiceFormat() const;
 
                     /**
-                     * 设置识别音频的音频格式。mp3、wav。
-                     * @param VoiceFormat 识别音频的音频格式。mp3、wav。
+                     * 设置识别音频的音频格式，支持wav、pcm、ogg-opus、speex、silk、mp3、m4a、aac。
+                     * @param VoiceFormat 识别音频的音频格式，支持wav、pcm、ogg-opus、speex、silk、mp3、m4a、aac。
                      */
                     void SetVoiceFormat(const std::string& _voiceFormat);
 
@@ -389,7 +389,7 @@ namespace TencentCloud
                     bool m_sourceTypeHasBeenSet;
 
                     /**
-                     * 识别音频的音频格式。mp3、wav。
+                     * 识别音频的音频格式，支持wav、pcm、ogg-opus、speex、silk、mp3、m4a、aac。
                      */
                     std::string m_voiceFormat;
                     bool m_voiceFormatHasBeenSet;

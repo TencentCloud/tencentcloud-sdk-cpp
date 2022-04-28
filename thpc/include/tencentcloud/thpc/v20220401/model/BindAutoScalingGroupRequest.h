@@ -97,6 +97,24 @@ namespace TencentCloud
                     bool AutoScalingGroupIdHasBeenSet() const;
 
                     /**
+                     * 获取队列名称。
+                     * @return QueueName 队列名称。
+                     */
+                    std::string GetQueueName() const;
+
+                    /**
+                     * 设置队列名称。
+                     * @param QueueName 队列名称。
+                     */
+                    void SetQueueName(const std::string& _queueName);
+
+                    /**
+                     * 判断参数 QueueName 是否已赋值
+                     * @return QueueName 是否已赋值
+                     */
+                    bool QueueNameHasBeenSet() const;
+
+                    /**
                      * 获取任务连续等待时间，队列的任务处于连续等待的时间。单位秒。默认值120。
                      * @return ExpansionBusyTime 任务连续等待时间，队列的任务处于连续等待的时间。单位秒。默认值120。
                      */
@@ -221,6 +239,12 @@ false（默认）：发送正常请求，通过检查后直接绑定弹性伸缩
                      */
                     std::string m_autoScalingGroupId;
                     bool m_autoScalingGroupIdHasBeenSet;
+
+                    /**
+                     * 队列名称。
+                     */
+                    std::string m_queueName;
+                    bool m_queueNameHasBeenSet;
 
                     /**
                      * 任务连续等待时间，队列的任务处于连续等待的时间。单位秒。默认值120。

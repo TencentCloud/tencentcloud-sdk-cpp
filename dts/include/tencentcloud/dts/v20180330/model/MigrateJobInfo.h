@@ -362,6 +362,28 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取源实例为集群时且接入为非cdb时源实例信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SrcInfoMulti 源实例为集群时且接入为非cdb时源实例信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SrcInfo> GetSrcInfoMulti() const;
+
+                    /**
+                     * 设置源实例为集群时且接入为非cdb时源实例信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SrcInfoMulti 源实例为集群时且接入为非cdb时源实例信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSrcInfoMulti(const std::vector<SrcInfo>& _srcInfoMulti);
+
+                    /**
+                     * 判断参数 SrcInfoMulti 是否已赋值
+                     * @return SrcInfoMulti 是否已赋值
+                     */
+                    bool SrcInfoMultiHasBeenSet() const;
+
                 private:
 
                     /**
@@ -466,6 +488,13 @@ namespace TencentCloud
                      */
                     std::vector<TagItem> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 源实例为集群时且接入为非cdb时源实例信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SrcInfo> m_srcInfoMulti;
+                    bool m_srcInfoMultiHasBeenSet;
 
                 };
             }

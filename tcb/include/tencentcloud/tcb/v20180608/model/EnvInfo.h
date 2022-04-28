@@ -503,6 +503,28 @@ namespace TencentCloud
                      */
                     bool EnvTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否是dau新套餐
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsDauPackage 是否是dau新套餐
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsDauPackage() const;
+
+                    /**
+                     * 设置是否是dau新套餐
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsDauPackage 是否是dau新套餐
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsDauPackage(const bool& _isDauPackage);
+
+                    /**
+                     * 判断参数 IsDauPackage 是否已赋值
+                     * @return IsDauPackage 是否已赋值
+                     */
+                    bool IsDauPackageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -648,6 +670,13 @@ namespace TencentCloud
                      */
                     std::string m_envType;
                     bool m_envTypeHasBeenSet;
+
+                    /**
+                     * 是否是dau新套餐
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isDauPackage;
+                    bool m_isDauPackageHasBeenSet;
 
                 };
             }

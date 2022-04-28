@@ -24,7 +24,8 @@ TasksInfo::TasksInfo() :
     m_taskTypeHasBeenSet(false),
     m_failureToleranceHasBeenSet(false),
     m_sQLHasBeenSet(false),
-    m_configHasBeenSet(false)
+    m_configHasBeenSet(false),
+    m_paramsHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,26 @@ CoreInternalOutcome TasksInfo::Deserialize(const rapidjson::Value &value)
         m_configHasBeenSet = true;
     }
 
+    if (value.HasMember("Params") && !value["Params"].IsNull())
+    {
+        if (!value["Params"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TasksInfo.Params` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Params"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            KVPair item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_params.push_back(item);
+        }
+        m_paramsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -123,6 +144,21 @@ void TasksInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
 
         int i=0;
         for (auto itr = m_config.begin(); itr != m_config.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_paramsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Params";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_params.begin(); itr != m_params.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -194,5 +230,21 @@ void TasksInfo::SetConfig(const vector<KVPair>& _config)
 bool TasksInfo::ConfigHasBeenSet() const
 {
     return m_configHasBeenSet;
+}
+
+vector<KVPair> TasksInfo::GetParams() const
+{
+    return m_params;
+}
+
+void TasksInfo::SetParams(const vector<KVPair>& _params)
+{
+    m_params = _params;
+    m_paramsHasBeenSet = true;
+}
+
+bool TasksInfo::ParamsHasBeenSet() const
+{
+    return m_paramsHasBeenSet;
 }
 

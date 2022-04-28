@@ -196,6 +196,42 @@ namespace TencentCloud
                      */
                     bool TagHasBeenSet() const;
 
+                    /**
+                     * 获取测试类型，包含定时测试与即时测试
+                     * @return ProbeType 测试类型，包含定时测试与即时测试
+                     */
+                    uint64_t GetProbeType() const;
+
+                    /**
+                     * 设置测试类型，包含定时测试与即时测试
+                     * @param ProbeType 测试类型，包含定时测试与即时测试
+                     */
+                    void SetProbeType(const uint64_t& _probeType);
+
+                    /**
+                     * 判断参数 ProbeType 是否已赋值
+                     * @return ProbeType 是否已赋值
+                     */
+                    bool ProbeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取插件类型
+                     * @return PluginSource 插件类型
+                     */
+                    std::string GetPluginSource() const;
+
+                    /**
+                     * 设置插件类型
+                     * @param PluginSource 插件类型
+                     */
+                    void SetPluginSource(const std::string& _pluginSource);
+
+                    /**
+                     * 判断参数 PluginSource 是否已赋值
+                     * @return PluginSource 是否已赋值
+                     */
+                    bool PluginSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -247,6 +283,18 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tag;
                     bool m_tagHasBeenSet;
+
+                    /**
+                     * 测试类型，包含定时测试与即时测试
+                     */
+                    uint64_t m_probeType;
+                    bool m_probeTypeHasBeenSet;
+
+                    /**
+                     * 插件类型
+                     */
+                    std::string m_pluginSource;
+                    bool m_pluginSourceHasBeenSet;
 
                 };
             }

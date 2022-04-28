@@ -212,3 +212,46 @@ ApmClient::DescribeMetricRecordsOutcomeCallable ApmClient::DescribeMetricRecords
     return task->get_future();
 }
 
+ApmClient::DescribeServiceOverviewOutcome ApmClient::DescribeServiceOverview(const DescribeServiceOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeServiceOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeServiceOverviewResponse rsp = DescribeServiceOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeServiceOverviewOutcome(rsp);
+        else
+            return DescribeServiceOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeServiceOverviewOutcome(outcome.GetError());
+    }
+}
+
+void ApmClient::DescribeServiceOverviewAsync(const DescribeServiceOverviewRequest& request, const DescribeServiceOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeServiceOverview(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApmClient::DescribeServiceOverviewOutcomeCallable ApmClient::DescribeServiceOverviewCallable(const DescribeServiceOverviewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeServiceOverviewOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeServiceOverview(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

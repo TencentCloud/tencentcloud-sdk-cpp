@@ -1932,6 +1932,49 @@ DcdbClient::ModifyAccountDescriptionOutcomeCallable DcdbClient::ModifyAccountDes
     return task->get_future();
 }
 
+DcdbClient::ModifyDBInstanceNameOutcome DcdbClient::ModifyDBInstanceName(const ModifyDBInstanceNameRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBInstanceName");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBInstanceNameResponse rsp = ModifyDBInstanceNameResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBInstanceNameOutcome(rsp);
+        else
+            return ModifyDBInstanceNameOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBInstanceNameOutcome(outcome.GetError());
+    }
+}
+
+void DcdbClient::ModifyDBInstanceNameAsync(const ModifyDBInstanceNameRequest& request, const ModifyDBInstanceNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDBInstanceName(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcdbClient::ModifyDBInstanceNameOutcomeCallable DcdbClient::ModifyDBInstanceNameCallable(const ModifyDBInstanceNameRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceNameOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDBInstanceName(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DcdbClient::ModifyDBInstanceSecurityGroupsOutcome DcdbClient::ModifyDBInstanceSecurityGroups(const ModifyDBInstanceSecurityGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDBInstanceSecurityGroups");

@@ -26,7 +26,9 @@ BGPInstanceSpecification::BGPInstanceSpecification() :
     m_protectIPNumberLimitHasBeenSet(false),
     m_autoRenewFlagHasBeenSet(false),
     m_unionPackFlagHasBeenSet(false),
-    m_serviceBandWidthHasBeenSet(false)
+    m_serviceBandWidthHasBeenSet(false),
+    m_battleEditionFlagHasBeenSet(false),
+    m_channelEditionFlagHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,26 @@ CoreInternalOutcome BGPInstanceSpecification::Deserialize(const rapidjson::Value
         m_serviceBandWidthHasBeenSet = true;
     }
 
+    if (value.HasMember("BattleEditionFlag") && !value["BattleEditionFlag"].IsNull())
+    {
+        if (!value["BattleEditionFlag"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BGPInstanceSpecification.BattleEditionFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_battleEditionFlag = value["BattleEditionFlag"].GetUint64();
+        m_battleEditionFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("ChannelEditionFlag") && !value["ChannelEditionFlag"].IsNull())
+    {
+        if (!value["ChannelEditionFlag"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BGPInstanceSpecification.ChannelEditionFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_channelEditionFlag = value["ChannelEditionFlag"].GetUint64();
+        m_channelEditionFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +170,22 @@ void BGPInstanceSpecification::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "ServiceBandWidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_serviceBandWidth, allocator);
+    }
+
+    if (m_battleEditionFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BattleEditionFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_battleEditionFlag, allocator);
+    }
+
+    if (m_channelEditionFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelEditionFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_channelEditionFlag, allocator);
     }
 
 }
@@ -247,5 +285,37 @@ void BGPInstanceSpecification::SetServiceBandWidth(const uint64_t& _serviceBandW
 bool BGPInstanceSpecification::ServiceBandWidthHasBeenSet() const
 {
     return m_serviceBandWidthHasBeenSet;
+}
+
+uint64_t BGPInstanceSpecification::GetBattleEditionFlag() const
+{
+    return m_battleEditionFlag;
+}
+
+void BGPInstanceSpecification::SetBattleEditionFlag(const uint64_t& _battleEditionFlag)
+{
+    m_battleEditionFlag = _battleEditionFlag;
+    m_battleEditionFlagHasBeenSet = true;
+}
+
+bool BGPInstanceSpecification::BattleEditionFlagHasBeenSet() const
+{
+    return m_battleEditionFlagHasBeenSet;
+}
+
+uint64_t BGPInstanceSpecification::GetChannelEditionFlag() const
+{
+    return m_channelEditionFlag;
+}
+
+void BGPInstanceSpecification::SetChannelEditionFlag(const uint64_t& _channelEditionFlag)
+{
+    m_channelEditionFlag = _channelEditionFlag;
+    m_channelEditionFlagHasBeenSet = true;
+}
+
+bool BGPInstanceSpecification::ChannelEditionFlagHasBeenSet() const
+{
+    return m_channelEditionFlagHasBeenSet;
 }
 

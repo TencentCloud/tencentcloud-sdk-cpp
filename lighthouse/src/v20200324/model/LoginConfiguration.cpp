@@ -20,7 +20,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Lighthouse::V20200324::Model;
 using namespace std;
 
-LoginConfiguration::LoginConfiguration()
+LoginConfiguration::LoginConfiguration() :
+    m_autoGeneratePasswordHasBeenSet(false),
+    m_passwordHasBeenSet(false)
 {
 }
 
@@ -29,6 +31,26 @@ CoreInternalOutcome LoginConfiguration::Deserialize(const rapidjson::Value &valu
     string requestId = "";
 
 
+    if (value.HasMember("AutoGeneratePassword") && !value["AutoGeneratePassword"].IsNull())
+    {
+        if (!value["AutoGeneratePassword"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoginConfiguration.AutoGeneratePassword` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoGeneratePassword = string(value["AutoGeneratePassword"].GetString());
+        m_autoGeneratePasswordHasBeenSet = true;
+    }
+
+    if (value.HasMember("Password") && !value["Password"].IsNull())
+    {
+        if (!value["Password"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoginConfiguration.Password` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_password = string(value["Password"].GetString());
+        m_passwordHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -36,6 +58,54 @@ CoreInternalOutcome LoginConfiguration::Deserialize(const rapidjson::Value &valu
 void LoginConfiguration::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_autoGeneratePasswordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoGeneratePassword";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_autoGeneratePassword.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_passwordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Password";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
+
+string LoginConfiguration::GetAutoGeneratePassword() const
+{
+    return m_autoGeneratePassword;
+}
+
+void LoginConfiguration::SetAutoGeneratePassword(const string& _autoGeneratePassword)
+{
+    m_autoGeneratePassword = _autoGeneratePassword;
+    m_autoGeneratePasswordHasBeenSet = true;
+}
+
+bool LoginConfiguration::AutoGeneratePasswordHasBeenSet() const
+{
+    return m_autoGeneratePasswordHasBeenSet;
+}
+
+string LoginConfiguration::GetPassword() const
+{
+    return m_password;
+}
+
+void LoginConfiguration::SetPassword(const string& _password)
+{
+    m_password = _password;
+    m_passwordHasBeenSet = true;
+}
+
+bool LoginConfiguration::PasswordHasBeenSet() const
+{
+    return m_passwordHasBeenSet;
+}
 

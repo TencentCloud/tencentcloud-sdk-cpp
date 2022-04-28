@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tem/v20210701/model/UseDefaultRepoParameters.h>
 
 
 namespace TencentCloud
@@ -278,6 +279,24 @@ namespace TencentCloud
                      */
                     bool EnableTracingHasBeenSet() const;
 
+                    /**
+                     * 获取使用默认镜像服务额外参数
+                     * @return UseDefaultImageServiceParameters 使用默认镜像服务额外参数
+                     */
+                    UseDefaultRepoParameters GetUseDefaultImageServiceParameters() const;
+
+                    /**
+                     * 设置使用默认镜像服务额外参数
+                     * @param UseDefaultImageServiceParameters 使用默认镜像服务额外参数
+                     */
+                    void SetUseDefaultImageServiceParameters(const UseDefaultRepoParameters& _useDefaultImageServiceParameters);
+
+                    /**
+                     * 判断参数 UseDefaultImageServiceParameters 是否已赋值
+                     * @return UseDefaultImageServiceParameters 是否已赋值
+                     */
+                    bool UseDefaultImageServiceParametersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -356,6 +375,12 @@ namespace TencentCloud
                      */
                     int64_t m_enableTracing;
                     bool m_enableTracingHasBeenSet;
+
+                    /**
+                     * 使用默认镜像服务额外参数
+                     */
+                    UseDefaultRepoParameters m_useDefaultImageServiceParameters;
+                    bool m_useDefaultImageServiceParametersHasBeenSet;
 
                 };
             }

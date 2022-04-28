@@ -69,8 +69,6 @@
 #include <tencentcloud/tsf/v20180326/model/CreatePublicConfigResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateRepositoryRequest.h>
 #include <tencentcloud/tsf/v20180326/model/CreateRepositoryResponse.h>
-#include <tencentcloud/tsf/v20180326/model/CreateServerlessGroupRequest.h>
-#include <tencentcloud/tsf/v20180326/model/CreateServerlessGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateTaskRequest.h>
 #include <tencentcloud/tsf/v20180326/model/CreateTaskResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateTaskFlowRequest.h>
@@ -117,8 +115,6 @@
 #include <tencentcloud/tsf/v20180326/model/DeployContainerGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeployGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DeployGroupResponse.h>
-#include <tencentcloud/tsf/v20180326/model/DeployServerlessGroupRequest.h>
-#include <tencentcloud/tsf/v20180326/model/DeployServerlessGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeApiDetailRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeApiDetailResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeApiGroupRequest.h>
@@ -249,10 +245,6 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeRepositoriesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeRepositoryRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeRepositoryResponse.h>
-#include <tencentcloud/tsf/v20180326/model/DescribeServerlessGroupRequest.h>
-#include <tencentcloud/tsf/v20180326/model/DescribeServerlessGroupResponse.h>
-#include <tencentcloud/tsf/v20180326/model/DescribeServerlessGroupsRequest.h>
-#include <tencentcloud/tsf/v20180326/model/DescribeServerlessGroupsResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeSimpleApplicationsRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeSimpleApplicationsResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeSimpleClustersRequest.h>
@@ -470,9 +462,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateRepositoryResponse> CreateRepositoryOutcome;
                 typedef std::future<CreateRepositoryOutcome> CreateRepositoryOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::CreateRepositoryRequest&, CreateRepositoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRepositoryAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateServerlessGroupResponse> CreateServerlessGroupOutcome;
-                typedef std::future<CreateServerlessGroupOutcome> CreateServerlessGroupOutcomeCallable;
-                typedef std::function<void(const TsfClient*, const Model::CreateServerlessGroupRequest&, CreateServerlessGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateServerlessGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTaskResponse> CreateTaskOutcome;
                 typedef std::future<CreateTaskOutcome> CreateTaskOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::CreateTaskRequest&, CreateTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskAsyncHandler;
@@ -542,9 +531,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeployGroupResponse> DeployGroupOutcome;
                 typedef std::future<DeployGroupOutcome> DeployGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DeployGroupRequest&, DeployGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeployGroupAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeployServerlessGroupResponse> DeployServerlessGroupOutcome;
-                typedef std::future<DeployServerlessGroupOutcome> DeployServerlessGroupOutcomeCallable;
-                typedef std::function<void(const TsfClient*, const Model::DeployServerlessGroupRequest&, DeployServerlessGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeployServerlessGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeApiDetailResponse> DescribeApiDetailOutcome;
                 typedef std::future<DescribeApiDetailOutcome> DescribeApiDetailOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeApiDetailRequest&, DescribeApiDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiDetailAsyncHandler;
@@ -740,12 +726,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRepositoryResponse> DescribeRepositoryOutcome;
                 typedef std::future<DescribeRepositoryOutcome> DescribeRepositoryOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeRepositoryRequest&, DescribeRepositoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRepositoryAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeServerlessGroupResponse> DescribeServerlessGroupOutcome;
-                typedef std::future<DescribeServerlessGroupOutcome> DescribeServerlessGroupOutcomeCallable;
-                typedef std::function<void(const TsfClient*, const Model::DescribeServerlessGroupRequest&, DescribeServerlessGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServerlessGroupAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeServerlessGroupsResponse> DescribeServerlessGroupsOutcome;
-                typedef std::future<DescribeServerlessGroupsOutcome> DescribeServerlessGroupsOutcomeCallable;
-                typedef std::function<void(const TsfClient*, const Model::DescribeServerlessGroupsRequest&, DescribeServerlessGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServerlessGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSimpleApplicationsResponse> DescribeSimpleApplicationsOutcome;
                 typedef std::future<DescribeSimpleApplicationsOutcome> DescribeSimpleApplicationsOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeSimpleApplicationsRequest&, DescribeSimpleApplicationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSimpleApplicationsAsyncHandler;
@@ -1158,15 +1138,6 @@ namespace TencentCloud
                 CreateRepositoryOutcomeCallable CreateRepositoryCallable(const Model::CreateRepositoryRequest& request);
 
                 /**
-                 *创建Serverless部署组
-                 * @param req CreateServerlessGroupRequest
-                 * @return CreateServerlessGroupOutcome
-                 */
-                CreateServerlessGroupOutcome CreateServerlessGroup(const Model::CreateServerlessGroupRequest &request);
-                void CreateServerlessGroupAsync(const Model::CreateServerlessGroupRequest& request, const CreateServerlessGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateServerlessGroupOutcomeCallable CreateServerlessGroupCallable(const Model::CreateServerlessGroupRequest& request);
-
-                /**
                  *创建任务
                  * @param req CreateTaskRequest
                  * @return CreateTaskOutcome
@@ -1373,15 +1344,6 @@ namespace TencentCloud
                 DeployGroupOutcome DeployGroup(const Model::DeployGroupRequest &request);
                 void DeployGroupAsync(const Model::DeployGroupRequest& request, const DeployGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeployGroupOutcomeCallable DeployGroupCallable(const Model::DeployGroupRequest& request);
-
-                /**
-                 *部署Serverless应用
-                 * @param req DeployServerlessGroupRequest
-                 * @return DeployServerlessGroupOutcome
-                 */
-                DeployServerlessGroupOutcome DeployServerlessGroup(const Model::DeployServerlessGroupRequest &request);
-                void DeployServerlessGroupAsync(const Model::DeployServerlessGroupRequest& request, const DeployServerlessGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeployServerlessGroupOutcomeCallable DeployServerlessGroupCallable(const Model::DeployServerlessGroupRequest& request);
 
                 /**
                  *查询API详情
@@ -1968,24 +1930,6 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeRepositoryOutcome DescribeRepository(const Model::DescribeRepositoryRequest &request);
                 void DescribeRepositoryAsync(const Model::DescribeRepositoryRequest& request, const DescribeRepositoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRepositoryOutcomeCallable DescribeRepositoryCallable(const Model::DescribeRepositoryRequest& request);
-
-                /**
-                 *查询Serverless部署组明细
-                 * @param req DescribeServerlessGroupRequest
-                 * @return DescribeServerlessGroupOutcome
-                 */
-                DescribeServerlessGroupOutcome DescribeServerlessGroup(const Model::DescribeServerlessGroupRequest &request);
-                void DescribeServerlessGroupAsync(const Model::DescribeServerlessGroupRequest& request, const DescribeServerlessGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeServerlessGroupOutcomeCallable DescribeServerlessGroupCallable(const Model::DescribeServerlessGroupRequest& request);
-
-                /**
-                 *查询Serverless部署组列表
-                 * @param req DescribeServerlessGroupsRequest
-                 * @return DescribeServerlessGroupsOutcome
-                 */
-                DescribeServerlessGroupsOutcome DescribeServerlessGroups(const Model::DescribeServerlessGroupsRequest &request);
-                void DescribeServerlessGroupsAsync(const Model::DescribeServerlessGroupsRequest& request, const DescribeServerlessGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeServerlessGroupsOutcomeCallable DescribeServerlessGroupsCallable(const Model::DescribeServerlessGroupsRequest& request);
 
                 /**
                  *查询简单应用列表

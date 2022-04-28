@@ -31,6 +31,8 @@
 #include <tencentcloud/apm/v20210622/model/DescribeApmInstancesResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeMetricRecordsRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeMetricRecordsResponse.h>
+#include <tencentcloud/apm/v20210622/model/DescribeServiceOverviewRequest.h>
+#include <tencentcloud/apm/v20210622/model/DescribeServiceOverviewResponse.h>
 
 
 namespace TencentCloud
@@ -57,6 +59,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMetricRecordsResponse> DescribeMetricRecordsOutcome;
                 typedef std::future<DescribeMetricRecordsOutcome> DescribeMetricRecordsOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeMetricRecordsRequest&, DescribeMetricRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMetricRecordsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeServiceOverviewResponse> DescribeServiceOverviewOutcome;
+                typedef std::future<DescribeServiceOverviewOutcome> DescribeServiceOverviewOutcomeCallable;
+                typedef std::function<void(const ApmClient*, const Model::DescribeServiceOverviewRequest&, DescribeServiceOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceOverviewAsyncHandler;
 
 
 
@@ -95,6 +100,15 @@ namespace TencentCloud
                 DescribeMetricRecordsOutcome DescribeMetricRecords(const Model::DescribeMetricRecordsRequest &request);
                 void DescribeMetricRecordsAsync(const Model::DescribeMetricRecordsRequest& request, const DescribeMetricRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMetricRecordsOutcomeCallable DescribeMetricRecordsCallable(const Model::DescribeMetricRecordsRequest& request);
+
+                /**
+                 *服务概览数据拉取
+                 * @param req DescribeServiceOverviewRequest
+                 * @return DescribeServiceOverviewOutcome
+                 */
+                DescribeServiceOverviewOutcome DescribeServiceOverview(const Model::DescribeServiceOverviewRequest &request);
+                void DescribeServiceOverviewAsync(const Model::DescribeServiceOverviewRequest& request, const DescribeServiceOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeServiceOverviewOutcomeCallable DescribeServiceOverviewCallable(const Model::DescribeServiceOverviewRequest& request);
 
             };
         }

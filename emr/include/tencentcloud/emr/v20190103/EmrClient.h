@@ -35,6 +35,8 @@
 #include <tencentcloud/emr/v20190103/model/DescribeInstancesResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeJobFlowRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeJobFlowResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeResourceScheduleRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeResourceScheduleResponse.h>
 #include <tencentcloud/emr/v20190103/model/InquirePriceRenewEmrRequest.h>
 #include <tencentcloud/emr/v20190103/model/InquirePriceRenewEmrResponse.h>
 #include <tencentcloud/emr/v20190103/model/InquiryPriceCreateInstanceRequest.h>
@@ -45,6 +47,12 @@
 #include <tencentcloud/emr/v20190103/model/InquiryPriceScaleOutInstanceResponse.h>
 #include <tencentcloud/emr/v20190103/model/InquiryPriceUpdateInstanceRequest.h>
 #include <tencentcloud/emr/v20190103/model/InquiryPriceUpdateInstanceResponse.h>
+#include <tencentcloud/emr/v20190103/model/ModifyResourcePoolsRequest.h>
+#include <tencentcloud/emr/v20190103/model/ModifyResourcePoolsResponse.h>
+#include <tencentcloud/emr/v20190103/model/ModifyResourceScheduleConfigRequest.h>
+#include <tencentcloud/emr/v20190103/model/ModifyResourceScheduleConfigResponse.h>
+#include <tencentcloud/emr/v20190103/model/ModifyResourceSchedulerRequest.h>
+#include <tencentcloud/emr/v20190103/model/ModifyResourceSchedulerResponse.h>
 #include <tencentcloud/emr/v20190103/model/RunJobFlowRequest.h>
 #include <tencentcloud/emr/v20190103/model/RunJobFlowResponse.h>
 #include <tencentcloud/emr/v20190103/model/ScaleOutInstanceRequest.h>
@@ -87,6 +95,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeJobFlowResponse> DescribeJobFlowOutcome;
                 typedef std::future<DescribeJobFlowOutcome> DescribeJobFlowOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeJobFlowRequest&, DescribeJobFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourceScheduleResponse> DescribeResourceScheduleOutcome;
+                typedef std::future<DescribeResourceScheduleOutcome> DescribeResourceScheduleOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeResourceScheduleRequest&, DescribeResourceScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceScheduleAsyncHandler;
                 typedef Outcome<Core::Error, Model::InquirePriceRenewEmrResponse> InquirePriceRenewEmrOutcome;
                 typedef std::future<InquirePriceRenewEmrOutcome> InquirePriceRenewEmrOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::InquirePriceRenewEmrRequest&, InquirePriceRenewEmrOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceRenewEmrAsyncHandler;
@@ -102,6 +113,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InquiryPriceUpdateInstanceResponse> InquiryPriceUpdateInstanceOutcome;
                 typedef std::future<InquiryPriceUpdateInstanceOutcome> InquiryPriceUpdateInstanceOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::InquiryPriceUpdateInstanceRequest&, InquiryPriceUpdateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceUpdateInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyResourcePoolsResponse> ModifyResourcePoolsOutcome;
+                typedef std::future<ModifyResourcePoolsOutcome> ModifyResourcePoolsOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::ModifyResourcePoolsRequest&, ModifyResourcePoolsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourcePoolsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyResourceScheduleConfigResponse> ModifyResourceScheduleConfigOutcome;
+                typedef std::future<ModifyResourceScheduleConfigOutcome> ModifyResourceScheduleConfigOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::ModifyResourceScheduleConfigRequest&, ModifyResourceScheduleConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourceScheduleConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyResourceSchedulerResponse> ModifyResourceSchedulerOutcome;
+                typedef std::future<ModifyResourceSchedulerOutcome> ModifyResourceSchedulerOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::ModifyResourceSchedulerRequest&, ModifyResourceSchedulerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourceSchedulerAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunJobFlowResponse> RunJobFlowOutcome;
                 typedef std::future<RunJobFlowOutcome> RunJobFlowOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::RunJobFlowRequest&, RunJobFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunJobFlowAsyncHandler;
@@ -175,6 +195,15 @@ namespace TencentCloud
                 DescribeJobFlowOutcomeCallable DescribeJobFlowCallable(const Model::DescribeJobFlowRequest& request);
 
                 /**
+                 *获取yarn资源调度页面的数据
+                 * @param req DescribeResourceScheduleRequest
+                 * @return DescribeResourceScheduleOutcome
+                 */
+                DescribeResourceScheduleOutcome DescribeResourceSchedule(const Model::DescribeResourceScheduleRequest &request);
+                void DescribeResourceScheduleAsync(const Model::DescribeResourceScheduleRequest& request, const DescribeResourceScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourceScheduleOutcomeCallable DescribeResourceScheduleCallable(const Model::DescribeResourceScheduleRequest& request);
+
+                /**
                  *集群续费询价。
                  * @param req InquirePriceRenewEmrRequest
                  * @return InquirePriceRenewEmrOutcome
@@ -218,6 +247,33 @@ namespace TencentCloud
                 InquiryPriceUpdateInstanceOutcome InquiryPriceUpdateInstance(const Model::InquiryPriceUpdateInstanceRequest &request);
                 void InquiryPriceUpdateInstanceAsync(const Model::InquiryPriceUpdateInstanceRequest& request, const InquiryPriceUpdateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InquiryPriceUpdateInstanceOutcomeCallable InquiryPriceUpdateInstanceCallable(const Model::InquiryPriceUpdateInstanceRequest& request);
+
+                /**
+                 *刷新动态资源池
+                 * @param req ModifyResourcePoolsRequest
+                 * @return ModifyResourcePoolsOutcome
+                 */
+                ModifyResourcePoolsOutcome ModifyResourcePools(const Model::ModifyResourcePoolsRequest &request);
+                void ModifyResourcePoolsAsync(const Model::ModifyResourcePoolsRequest& request, const ModifyResourcePoolsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyResourcePoolsOutcomeCallable ModifyResourcePoolsCallable(const Model::ModifyResourcePoolsRequest& request);
+
+                /**
+                 *修改yarn资源调度的资源配置
+                 * @param req ModifyResourceScheduleConfigRequest
+                 * @return ModifyResourceScheduleConfigOutcome
+                 */
+                ModifyResourceScheduleConfigOutcome ModifyResourceScheduleConfig(const Model::ModifyResourceScheduleConfigRequest &request);
+                void ModifyResourceScheduleConfigAsync(const Model::ModifyResourceScheduleConfigRequest& request, const ModifyResourceScheduleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyResourceScheduleConfigOutcomeCallable ModifyResourceScheduleConfigCallable(const Model::ModifyResourceScheduleConfigRequest& request);
+
+                /**
+                 *修改了yarn的资源调度器，点击部署生效
+                 * @param req ModifyResourceSchedulerRequest
+                 * @return ModifyResourceSchedulerOutcome
+                 */
+                ModifyResourceSchedulerOutcome ModifyResourceScheduler(const Model::ModifyResourceSchedulerRequest &request);
+                void ModifyResourceSchedulerAsync(const Model::ModifyResourceSchedulerRequest& request, const ModifyResourceSchedulerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyResourceSchedulerOutcomeCallable ModifyResourceSchedulerCallable(const Model::ModifyResourceSchedulerRequest& request);
 
                 /**
                  *创建流程作业

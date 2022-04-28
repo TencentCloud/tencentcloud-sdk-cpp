@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool WxAppIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否查询全地域
+                     * @return AllRegions 是否查询全地域
+                     */
+                    bool GetAllRegions() const;
+
+                    /**
+                     * 设置是否查询全地域
+                     * @param AllRegions 是否查询全地域
+                     */
+                    void SetAllRegions(const bool& _allRegions);
+
+                    /**
+                     * 判断参数 AllRegions 是否已赋值
+                     * @return AllRegions 是否已赋值
+                     */
+                    bool AllRegionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::string m_wxAppId;
                     bool m_wxAppIdHasBeenSet;
+
+                    /**
+                     * 是否查询全地域
+                     */
+                    bool m_allRegions;
+                    bool m_allRegionsHasBeenSet;
 
                 };
             }

@@ -41,7 +41,8 @@ EnvInfo::EnvInfo() :
     m_regionHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_customLogServicesHasBeenSet(false),
-    m_envTypeHasBeenSet(false)
+    m_envTypeHasBeenSet(false),
+    m_isDauPackageHasBeenSet(false)
 {
 }
 
@@ -330,6 +331,16 @@ CoreInternalOutcome EnvInfo::Deserialize(const rapidjson::Value &value)
         m_envTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("IsDauPackage") && !value["IsDauPackage"].IsNull())
+    {
+        if (!value["IsDauPackage"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnvInfo.IsDauPackage` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDauPackage = value["IsDauPackage"].GetBool();
+        m_isDauPackageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -552,6 +563,14 @@ void EnvInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "EnvType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_envType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isDauPackageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDauPackage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDauPackage, allocator);
     }
 
 }
@@ -891,5 +910,21 @@ void EnvInfo::SetEnvType(const string& _envType)
 bool EnvInfo::EnvTypeHasBeenSet() const
 {
     return m_envTypeHasBeenSet;
+}
+
+bool EnvInfo::GetIsDauPackage() const
+{
+    return m_isDauPackage;
+}
+
+void EnvInfo::SetIsDauPackage(const bool& _isDauPackage)
+{
+    m_isDauPackage = _isDauPackage;
+    m_isDauPackageHasBeenSet = true;
+}
+
+bool EnvInfo::IsDauPackageHasBeenSet() const
+{
+    return m_isDauPackageHasBeenSet;
 }
 

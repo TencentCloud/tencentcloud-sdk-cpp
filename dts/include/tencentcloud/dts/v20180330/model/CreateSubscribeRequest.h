@@ -151,6 +151,24 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取用户自定义实例名
+                     * @return Name 用户自定义实例名
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置用户自定义实例名
+                     * @param Name 用户自定义实例名
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     */
+                    bool NameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +206,12 @@ namespace TencentCloud
                      */
                     std::vector<TagItem> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 用户自定义实例名
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                 };
             }
