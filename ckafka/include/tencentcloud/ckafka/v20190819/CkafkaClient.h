@@ -59,6 +59,8 @@
 #include <tencentcloud/ckafka/v20190819/model/DeleteGroupResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteInstancePreRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteInstancePreResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/DeleteRouteRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/DeleteRouteResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteRouteTriggerTimeRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteRouteTriggerTimeResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteTopicRequest.h>
@@ -183,6 +185,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteInstancePreResponse> DeleteInstancePreOutcome;
                 typedef std::future<DeleteInstancePreOutcome> DeleteInstancePreOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DeleteInstancePreRequest&, DeleteInstancePreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstancePreAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRouteResponse> DeleteRouteOutcome;
+                typedef std::future<DeleteRouteOutcome> DeleteRouteOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::DeleteRouteRequest&, DeleteRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRouteAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteRouteTriggerTimeResponse> DeleteRouteTriggerTimeOutcome;
                 typedef std::future<DeleteRouteTriggerTimeOutcome> DeleteRouteTriggerTimeOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DeleteRouteTriggerTimeRequest&, DeleteRouteTriggerTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRouteTriggerTimeAsyncHandler;
@@ -431,6 +436,15 @@ namespace TencentCloud
                 DeleteInstancePreOutcome DeleteInstancePre(const Model::DeleteInstancePreRequest &request);
                 void DeleteInstancePreAsync(const Model::DeleteInstancePreRequest& request, const DeleteInstancePreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteInstancePreOutcomeCallable DeleteInstancePreCallable(const Model::DeleteInstancePreRequest& request);
+
+                /**
+                 *删除路由
+                 * @param req DeleteRouteRequest
+                 * @return DeleteRouteOutcome
+                 */
+                DeleteRouteOutcome DeleteRoute(const Model::DeleteRouteRequest &request);
+                void DeleteRouteAsync(const Model::DeleteRouteRequest& request, const DeleteRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRouteOutcomeCallable DeleteRouteCallable(const Model::DeleteRouteRequest& request);
 
                 /**
                  *修改删除路由延迟触发时间

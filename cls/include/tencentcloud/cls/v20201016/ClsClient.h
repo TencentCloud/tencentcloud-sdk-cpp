@@ -433,7 +433,7 @@ namespace TencentCloud
                 CreateDataTransformOutcomeCallable CreateDataTransformCallable(const Model::CreateDataTransformRequest& request);
 
                 /**
-                 *本接口用于创建日志下载任务，导出原始日志
+                 *本接口仅创建下载任务，任务返回的下载地址，请用户调用DescribeExports查看任务列表。其中有下载地址CosPath参数。参考文档https://cloud.tencent.com/document/product/614/56449
                  * @param req CreateExportRequest
                  * @return CreateExportOutcome
                  */

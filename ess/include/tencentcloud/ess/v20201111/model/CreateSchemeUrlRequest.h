@@ -152,6 +152,60 @@ namespace TencentCloud
                      */
                     bool FlowIdHasBeenSet() const;
 
+                    /**
+                     * 获取企业名称
+                     * @return OrganizationName 企业名称
+                     */
+                    std::string GetOrganizationName() const;
+
+                    /**
+                     * 设置企业名称
+                     * @param OrganizationName 企业名称
+                     */
+                    void SetOrganizationName(const std::string& _organizationName);
+
+                    /**
+                     * 判断参数 OrganizationName 是否已赋值
+                     * @return OrganizationName 是否已赋值
+                     */
+                    bool OrganizationNameHasBeenSet() const;
+
+                    /**
+                     * 获取链接类型 HTTP：跳转电子签小程序的http_url，APP：第三方APP或小程序跳转电子签小程序，默认为HTTP类型
+                     * @return EndPoint 链接类型 HTTP：跳转电子签小程序的http_url，APP：第三方APP或小程序跳转电子签小程序，默认为HTTP类型
+                     */
+                    std::string GetEndPoint() const;
+
+                    /**
+                     * 设置链接类型 HTTP：跳转电子签小程序的http_url，APP：第三方APP或小程序跳转电子签小程序，默认为HTTP类型
+                     * @param EndPoint 链接类型 HTTP：跳转电子签小程序的http_url，APP：第三方APP或小程序跳转电子签小程序，默认为HTTP类型
+                     */
+                    void SetEndPoint(const std::string& _endPoint);
+
+                    /**
+                     * 判断参数 EndPoint 是否已赋值
+                     * @return EndPoint 是否已赋值
+                     */
+                    bool EndPointHasBeenSet() const;
+
+                    /**
+                     * 获取是否自动回跳 true：是， false：否。该参数只针对"APP" 类型的签署链接有效
+                     * @return AutoJumpBack 是否自动回跳 true：是， false：否。该参数只针对"APP" 类型的签署链接有效
+                     */
+                    bool GetAutoJumpBack() const;
+
+                    /**
+                     * 设置是否自动回跳 true：是， false：否。该参数只针对"APP" 类型的签署链接有效
+                     * @param AutoJumpBack 是否自动回跳 true：是， false：否。该参数只针对"APP" 类型的签署链接有效
+                     */
+                    void SetAutoJumpBack(const bool& _autoJumpBack);
+
+                    /**
+                     * 判断参数 AutoJumpBack 是否已赋值
+                     * @return AutoJumpBack 是否已赋值
+                     */
+                    bool AutoJumpBackHasBeenSet() const;
+
                 private:
 
                     /**
@@ -189,6 +243,24 @@ namespace TencentCloud
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
+
+                    /**
+                     * 企业名称
+                     */
+                    std::string m_organizationName;
+                    bool m_organizationNameHasBeenSet;
+
+                    /**
+                     * 链接类型 HTTP：跳转电子签小程序的http_url，APP：第三方APP或小程序跳转电子签小程序，默认为HTTP类型
+                     */
+                    std::string m_endPoint;
+                    bool m_endPointHasBeenSet;
+
+                    /**
+                     * 是否自动回跳 true：是， false：否。该参数只针对"APP" 类型的签署链接有效
+                     */
+                    bool m_autoJumpBack;
+                    bool m_autoJumpBackHasBeenSet;
 
                 };
             }

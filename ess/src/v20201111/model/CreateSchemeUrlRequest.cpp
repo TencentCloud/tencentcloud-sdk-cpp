@@ -28,7 +28,10 @@ CreateSchemeUrlRequest::CreateSchemeUrlRequest() :
     m_nameHasBeenSet(false),
     m_mobileHasBeenSet(false),
     m_pathTypeHasBeenSet(false),
-    m_flowIdHasBeenSet(false)
+    m_flowIdHasBeenSet(false),
+    m_organizationNameHasBeenSet(false),
+    m_endPointHasBeenSet(false),
+    m_autoJumpBackHasBeenSet(false)
 {
 }
 
@@ -87,6 +90,30 @@ string CreateSchemeUrlRequest::ToJsonString() const
         string key = "FlowId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_flowId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_organizationNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrganizationName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_organizationName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endPointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndPoint";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_endPoint.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoJumpBackHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoJumpBack";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoJumpBack, allocator);
     }
 
 
@@ -191,6 +218,54 @@ void CreateSchemeUrlRequest::SetFlowId(const string& _flowId)
 bool CreateSchemeUrlRequest::FlowIdHasBeenSet() const
 {
     return m_flowIdHasBeenSet;
+}
+
+string CreateSchemeUrlRequest::GetOrganizationName() const
+{
+    return m_organizationName;
+}
+
+void CreateSchemeUrlRequest::SetOrganizationName(const string& _organizationName)
+{
+    m_organizationName = _organizationName;
+    m_organizationNameHasBeenSet = true;
+}
+
+bool CreateSchemeUrlRequest::OrganizationNameHasBeenSet() const
+{
+    return m_organizationNameHasBeenSet;
+}
+
+string CreateSchemeUrlRequest::GetEndPoint() const
+{
+    return m_endPoint;
+}
+
+void CreateSchemeUrlRequest::SetEndPoint(const string& _endPoint)
+{
+    m_endPoint = _endPoint;
+    m_endPointHasBeenSet = true;
+}
+
+bool CreateSchemeUrlRequest::EndPointHasBeenSet() const
+{
+    return m_endPointHasBeenSet;
+}
+
+bool CreateSchemeUrlRequest::GetAutoJumpBack() const
+{
+    return m_autoJumpBack;
+}
+
+void CreateSchemeUrlRequest::SetAutoJumpBack(const bool& _autoJumpBack)
+{
+    m_autoJumpBack = _autoJumpBack;
+    m_autoJumpBackHasBeenSet = true;
+}
+
+bool CreateSchemeUrlRequest::AutoJumpBackHasBeenSet() const
+{
+    return m_autoJumpBackHasBeenSet;
 }
 
 

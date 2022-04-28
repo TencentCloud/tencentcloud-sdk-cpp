@@ -106,21 +106,29 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取DRM方案类型，取值范围：
-<li>SimpleAES。</li>
+                     * 获取DRM 方案类型，取值范围：
+<li>SimpleAES</li>
+<li>Widevine</li>
+<li>FairPlay</li>
 如果取值为空字符串，代表不对视频做 DRM 保护。
-                     * @return DrmType DRM方案类型，取值范围：
-<li>SimpleAES。</li>
+                     * @return DrmType DRM 方案类型，取值范围：
+<li>SimpleAES</li>
+<li>Widevine</li>
+<li>FairPlay</li>
 如果取值为空字符串，代表不对视频做 DRM 保护。
                      */
                     std::string GetDrmType() const;
 
                     /**
-                     * 设置DRM方案类型，取值范围：
-<li>SimpleAES。</li>
+                     * 设置DRM 方案类型，取值范围：
+<li>SimpleAES</li>
+<li>Widevine</li>
+<li>FairPlay</li>
 如果取值为空字符串，代表不对视频做 DRM 保护。
-                     * @param DrmType DRM方案类型，取值范围：
-<li>SimpleAES。</li>
+                     * @param DrmType DRM 方案类型，取值范围：
+<li>SimpleAES</li>
+<li>Widevine</li>
+<li>FairPlay</li>
 如果取值为空字符串，代表不对视频做 DRM 保护。
                      */
                     void SetDrmType(const std::string& _drmType);
@@ -250,8 +258,10 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * DRM方案类型，取值范围：
-<li>SimpleAES。</li>
+                     * DRM 方案类型，取值范围：
+<li>SimpleAES</li>
+<li>Widevine</li>
+<li>FairPlay</li>
 如果取值为空字符串，代表不对视频做 DRM 保护。
                      */
                     std::string m_drmType;

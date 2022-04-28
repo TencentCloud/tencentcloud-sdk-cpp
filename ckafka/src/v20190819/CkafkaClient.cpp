@@ -814,6 +814,49 @@ CkafkaClient::DeleteInstancePreOutcomeCallable CkafkaClient::DeleteInstancePreCa
     return task->get_future();
 }
 
+CkafkaClient::DeleteRouteOutcome CkafkaClient::DeleteRoute(const DeleteRouteRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRoute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRouteResponse rsp = DeleteRouteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRouteOutcome(rsp);
+        else
+            return DeleteRouteOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRouteOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::DeleteRouteAsync(const DeleteRouteRequest& request, const DeleteRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRoute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::DeleteRouteOutcomeCallable CkafkaClient::DeleteRouteCallable(const DeleteRouteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRouteOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRoute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::DeleteRouteTriggerTimeOutcome CkafkaClient::DeleteRouteTriggerTime(const DeleteRouteTriggerTimeRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteRouteTriggerTime");

@@ -53,6 +53,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/DescribePrepaidProductsRequest.h
   include/tencentcloud/vod/v20180717/model/MediaInputInfo.h
   include/tencentcloud/vod/v20180717/model/CreateImageSpriteTask2017.h
+  include/tencentcloud/vod/v20180717/model/ClipFileInfo2017.h
   include/tencentcloud/vod/v20180717/model/TempCertificate.h
   include/tencentcloud/vod/v20180717/model/AiReviewTaskPoliticalOcrResult.h
   include/tencentcloud/vod/v20180717/model/AiSampleWord.h
@@ -282,6 +283,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/DeleteImageSpriteTemplateResponse.h
   include/tencentcloud/vod/v20180717/model/DescribeContentReviewTemplatesResponse.h
   include/tencentcloud/vod/v20180717/model/TEHDConfig.h
+  include/tencentcloud/vod/v20180717/model/ImageReviewUsageDataItem.h
   include/tencentcloud/vod/v20180717/model/AnimatedGraphicsTemplate.h
   include/tencentcloud/vod/v20180717/model/DailyPlayStatInfo.h
   include/tencentcloud/vod/v20180717/model/TerrorismOcrReviewTemplateInfoForUpdate.h
@@ -344,6 +346,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/ProcedureTemplate.h
   include/tencentcloud/vod/v20180717/model/AiReviewTaskTerrorismResult.h
   include/tencentcloud/vod/v20180717/model/ProcessMediaByUrlResponse.h
+  include/tencentcloud/vod/v20180717/model/DescribeImageReviewUsageDataRequest.h
   include/tencentcloud/vod/v20180717/model/MediaContentReviewAsrTextSegmentItem.h
   include/tencentcloud/vod/v20180717/model/DescribeEventConfigResponse.h
   include/tencentcloud/vod/v20180717/model/DescribeCdnLogsResponse.h
@@ -402,7 +405,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/WechatPublishTask.h
   include/tencentcloud/vod/v20180717/model/DescribeCDNStatDetailsRequest.h
   include/tencentcloud/vod/v20180717/model/AiRecognitionTaskOcrFullTextResultInput.h
-  include/tencentcloud/vod/v20180717/model/ClipFileInfo2017.h
+  include/tencentcloud/vod/v20180717/model/DescribeImageReviewUsageDataResponse.h
   include/tencentcloud/vod/v20180717/model/StatDataItem.h
   include/tencentcloud/vod/v20180717/model/CreateStorageRegionResponse.h
   include/tencentcloud/vod/v20180717/model/AccelerateAreaInfo.h
@@ -484,6 +487,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/AiRecognitionTaskFaceResultInput.h
   include/tencentcloud/vod/v20180717/model/AiReviewPoliticalTaskOutput.h
   include/tencentcloud/vod/v20180717/model/AiReviewTaskPoliticalResult.h
+  include/tencentcloud/vod/v20180717/model/ReviewImageResponse.h
   include/tencentcloud/vod/v20180717/model/DescribeStorageRegionsResponse.h
   include/tencentcloud/vod/v20180717/model/ModifySnapshotByTimeOffsetTemplateRequest.h
   include/tencentcloud/vod/v20180717/model/ProcedureTask.h
@@ -574,6 +578,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/MediaAiAnalysisFrameTagItem.h
   include/tencentcloud/vod/v20180717/model/DescribeImageProcessingTemplatesResponse.h
   include/tencentcloud/vod/v20180717/model/SampleSnapshotTaskInput.h
+  include/tencentcloud/vod/v20180717/model/ReviewImageRequest.h
   include/tencentcloud/vod/v20180717/model/DescribeHeadTailTemplatesResponse.h
   include/tencentcloud/vod/v20180717/model/TerrorismConfigureInfo.h
   include/tencentcloud/vod/v20180717/model/PoliticalAsrReviewTemplateInfo.h
@@ -637,6 +642,7 @@ set(vod_src
   src/v20180717/model/DescribePrepaidProductsRequest.cpp
   src/v20180717/model/MediaInputInfo.cpp
   src/v20180717/model/CreateImageSpriteTask2017.cpp
+  src/v20180717/model/ClipFileInfo2017.cpp
   src/v20180717/model/TempCertificate.cpp
   src/v20180717/model/AiReviewTaskPoliticalOcrResult.cpp
   src/v20180717/model/AiSampleWord.cpp
@@ -866,6 +872,7 @@ set(vod_src
   src/v20180717/model/DeleteImageSpriteTemplateResponse.cpp
   src/v20180717/model/DescribeContentReviewTemplatesResponse.cpp
   src/v20180717/model/TEHDConfig.cpp
+  src/v20180717/model/ImageReviewUsageDataItem.cpp
   src/v20180717/model/AnimatedGraphicsTemplate.cpp
   src/v20180717/model/DailyPlayStatInfo.cpp
   src/v20180717/model/TerrorismOcrReviewTemplateInfoForUpdate.cpp
@@ -928,6 +935,7 @@ set(vod_src
   src/v20180717/model/ProcedureTemplate.cpp
   src/v20180717/model/AiReviewTaskTerrorismResult.cpp
   src/v20180717/model/ProcessMediaByUrlResponse.cpp
+  src/v20180717/model/DescribeImageReviewUsageDataRequest.cpp
   src/v20180717/model/MediaContentReviewAsrTextSegmentItem.cpp
   src/v20180717/model/DescribeEventConfigResponse.cpp
   src/v20180717/model/DescribeCdnLogsResponse.cpp
@@ -986,7 +994,7 @@ set(vod_src
   src/v20180717/model/WechatPublishTask.cpp
   src/v20180717/model/DescribeCDNStatDetailsRequest.cpp
   src/v20180717/model/AiRecognitionTaskOcrFullTextResultInput.cpp
-  src/v20180717/model/ClipFileInfo2017.cpp
+  src/v20180717/model/DescribeImageReviewUsageDataResponse.cpp
   src/v20180717/model/StatDataItem.cpp
   src/v20180717/model/CreateStorageRegionResponse.cpp
   src/v20180717/model/AccelerateAreaInfo.cpp
@@ -1068,6 +1076,7 @@ set(vod_src
   src/v20180717/model/AiRecognitionTaskFaceResultInput.cpp
   src/v20180717/model/AiReviewPoliticalTaskOutput.cpp
   src/v20180717/model/AiReviewTaskPoliticalResult.cpp
+  src/v20180717/model/ReviewImageResponse.cpp
   src/v20180717/model/DescribeStorageRegionsResponse.cpp
   src/v20180717/model/ModifySnapshotByTimeOffsetTemplateRequest.cpp
   src/v20180717/model/ProcedureTask.cpp
@@ -1158,6 +1167,7 @@ set(vod_src
   src/v20180717/model/MediaAiAnalysisFrameTagItem.cpp
   src/v20180717/model/DescribeImageProcessingTemplatesResponse.cpp
   src/v20180717/model/SampleSnapshotTaskInput.cpp
+  src/v20180717/model/ReviewImageRequest.cpp
   src/v20180717/model/DescribeHeadTailTemplatesResponse.cpp
   src/v20180717/model/TerrorismConfigureInfo.cpp
   src/v20180717/model/PoliticalAsrReviewTemplateInfo.cpp

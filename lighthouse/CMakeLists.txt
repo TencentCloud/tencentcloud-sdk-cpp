@@ -96,6 +96,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/ImportKeyPairRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DeleteBlueprintsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyInstancesLoginKeyPairAttributeRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/IsolateInstancesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/StopInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/CreateInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyBlueprintAttributeResponse.h
@@ -112,6 +113,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/LoginSettings.h
   include/tencentcloud/lighthouse/v20200324/model/Instance.h
   include/tencentcloud/lighthouse/v20200324/model/DockerContainerVolume.h
+  include/tencentcloud/lighthouse/v20200324/model/IsolateInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/CreateKeyPairResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstanceVncUrlResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyFirewallRulesResponse.h
@@ -281,6 +283,7 @@ set(lighthouse_src
   src/v20200324/model/ImportKeyPairRequest.cpp
   src/v20200324/model/DeleteBlueprintsResponse.cpp
   src/v20200324/model/ModifyInstancesLoginKeyPairAttributeRequest.cpp
+  src/v20200324/model/IsolateInstancesRequest.cpp
   src/v20200324/model/StopInstancesResponse.cpp
   src/v20200324/model/CreateInstancesResponse.cpp
   src/v20200324/model/ModifyBlueprintAttributeResponse.cpp
@@ -297,6 +300,7 @@ set(lighthouse_src
   src/v20200324/model/LoginSettings.cpp
   src/v20200324/model/Instance.cpp
   src/v20200324/model/DockerContainerVolume.cpp
+  src/v20200324/model/IsolateInstancesResponse.cpp
   src/v20200324/model/CreateKeyPairResponse.cpp
   src/v20200324/model/DescribeInstanceVncUrlResponse.cpp
   src/v20200324/model/ModifyFirewallRulesResponse.cpp

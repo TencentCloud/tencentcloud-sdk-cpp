@@ -145,6 +145,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribeHeadTailTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeImageProcessingTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeImageProcessingTemplatesResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeImageReviewUsageDataRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeImageReviewUsageDataResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeImageSpriteTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeImageSpriteTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeMediaInfosRequest.h>
@@ -261,6 +263,8 @@
 #include <tencentcloud/vod/v20180717/model/PushUrlCacheResponse.h>
 #include <tencentcloud/vod/v20180717/model/ResetProcedureTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/ResetProcedureTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/ReviewImageRequest.h>
+#include <tencentcloud/vod/v20180717/model/ReviewImageResponse.h>
 #include <tencentcloud/vod/v20180717/model/SearchMediaRequest.h>
 #include <tencentcloud/vod/v20180717/model/SearchMediaResponse.h>
 #include <tencentcloud/vod/v20180717/model/SimpleHlsClipRequest.h>
@@ -466,6 +470,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeImageProcessingTemplatesResponse> DescribeImageProcessingTemplatesOutcome;
                 typedef std::future<DescribeImageProcessingTemplatesOutcome> DescribeImageProcessingTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeImageProcessingTemplatesRequest&, DescribeImageProcessingTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageProcessingTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageReviewUsageDataResponse> DescribeImageReviewUsageDataOutcome;
+                typedef std::future<DescribeImageReviewUsageDataOutcome> DescribeImageReviewUsageDataOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeImageReviewUsageDataRequest&, DescribeImageReviewUsageDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageReviewUsageDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeImageSpriteTemplatesResponse> DescribeImageSpriteTemplatesOutcome;
                 typedef std::future<DescribeImageSpriteTemplatesOutcome> DescribeImageSpriteTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeImageSpriteTemplatesRequest&, DescribeImageSpriteTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageSpriteTemplatesAsyncHandler;
@@ -640,6 +647,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ResetProcedureTemplateResponse> ResetProcedureTemplateOutcome;
                 typedef std::future<ResetProcedureTemplateOutcome> ResetProcedureTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ResetProcedureTemplateRequest&, ResetProcedureTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetProcedureTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReviewImageResponse> ReviewImageOutcome;
+                typedef std::future<ReviewImageOutcome> ReviewImageOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ReviewImageRequest&, ReviewImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReviewImageAsyncHandler;
                 typedef Outcome<Core::Error, Model::SearchMediaResponse> SearchMediaOutcome;
                 typedef std::future<SearchMediaOutcome> SearchMediaOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::SearchMediaRequest&, SearchMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchMediaAsyncHandler;
@@ -1256,6 +1266,19 @@ namespace TencentCloud
                 DescribeImageProcessingTemplatesOutcome DescribeImageProcessingTemplates(const Model::DescribeImageProcessingTemplatesRequest &request);
                 void DescribeImageProcessingTemplatesAsync(const Model::DescribeImageProcessingTemplatesRequest& request, const DescribeImageProcessingTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeImageProcessingTemplatesOutcomeCallable DescribeImageProcessingTemplatesCallable(const Model::DescribeImageProcessingTemplatesRequest& request);
+
+                /**
+                 *该接口返回查询时间范围内每天使用的图片智能识别用量信息。
+   1. 可以查询最近365天内的图片智能识别统计数据。
+   2. 查询时间跨度不超过90天。
+   3. 查询时间跨度超过1天的，返回以天为粒度的数据，否则，返回以5分钟为粒度的数据。
+
+                 * @param req DescribeImageReviewUsageDataRequest
+                 * @return DescribeImageReviewUsageDataOutcome
+                 */
+                DescribeImageReviewUsageDataOutcome DescribeImageReviewUsageData(const Model::DescribeImageReviewUsageDataRequest &request);
+                void DescribeImageReviewUsageDataAsync(const Model::DescribeImageReviewUsageDataRequest& request, const DescribeImageReviewUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageReviewUsageDataOutcomeCallable DescribeImageReviewUsageDataCallable(const Model::DescribeImageReviewUsageDataRequest& request);
 
                 /**
                  *查询雪碧图模板，支持根据条件，分页查询。
@@ -1899,6 +1922,20 @@ namespace TencentCloud
                 ResetProcedureTemplateOutcome ResetProcedureTemplate(const Model::ResetProcedureTemplateRequest &request);
                 void ResetProcedureTemplateAsync(const Model::ResetProcedureTemplateRequest& request, const ResetProcedureTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResetProcedureTemplateOutcomeCallable ResetProcedureTemplateCallable(const Model::ResetProcedureTemplateRequest& request);
+
+                /**
+                 *对点播中的图片文件发起智能识别（令人反感的信息、不安全的信息、不适宜的信息）任务。
+
+><li>图片文件大小支持：文件 < 5M；</li>
+><li>图片文件分辨率支持：建议分辨率大于256x256，否则可能会影响智能识别效果；</li>
+><li>图片文件支持格式：PNG、JPG、JPEG、BMP、GIF、WEBP格式。</li>
+
+                 * @param req ReviewImageRequest
+                 * @return ReviewImageOutcome
+                 */
+                ReviewImageOutcome ReviewImage(const Model::ReviewImageRequest &request);
+                void ReviewImageAsync(const Model::ReviewImageRequest& request, const ReviewImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReviewImageOutcomeCallable ReviewImageCallable(const Model::ReviewImageRequest& request);
 
                 /**
                  *搜索媒体信息，支持多种条件筛选，以及支持对返回结果排序、过滤等功能，具体包括：

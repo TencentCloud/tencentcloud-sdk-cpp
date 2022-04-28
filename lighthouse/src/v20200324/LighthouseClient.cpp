@@ -2147,6 +2147,49 @@ LighthouseClient::InquirePriceRenewInstancesOutcomeCallable LighthouseClient::In
     return task->get_future();
 }
 
+LighthouseClient::IsolateInstancesOutcome LighthouseClient::IsolateInstances(const IsolateInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "IsolateInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        IsolateInstancesResponse rsp = IsolateInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return IsolateInstancesOutcome(rsp);
+        else
+            return IsolateInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return IsolateInstancesOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::IsolateInstancesAsync(const IsolateInstancesRequest& request, const IsolateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->IsolateInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::IsolateInstancesOutcomeCallable LighthouseClient::IsolateInstancesCallable(const IsolateInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<IsolateInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->IsolateInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::ModifyBlueprintAttributeOutcome LighthouseClient::ModifyBlueprintAttribute(const ModifyBlueprintAttributeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyBlueprintAttribute");
