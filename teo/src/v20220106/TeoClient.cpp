@@ -126,3 +126,46 @@ TeoClient::DescribePurgeTasksOutcomeCallable TeoClient::DescribePurgeTasksCallab
     return task->get_future();
 }
 
+TeoClient::DescribeZonesOutcome TeoClient::DescribeZones(const DescribeZonesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeZones");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeZonesResponse rsp = DescribeZonesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeZonesOutcome(rsp);
+        else
+            return DescribeZonesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeZonesOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeZonesAsync(const DescribeZonesRequest& request, const DescribeZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeZones(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeZonesOutcomeCallable TeoClient::DescribeZonesCallable(const DescribeZonesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeZonesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeZones(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

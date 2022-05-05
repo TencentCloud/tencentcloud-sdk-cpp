@@ -157,6 +157,14 @@
 #include <tencentcloud/antiddos/v20200309/model/DescribeListSchedulingDomainResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeListWaterPrintConfigRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeListWaterPrintConfigResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeOverviewAttackTrendRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeOverviewAttackTrendResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeOverviewCCTrendRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeOverviewCCTrendResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeOverviewDDoSTrendRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeOverviewDDoSTrendResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeOverviewIndexRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeOverviewIndexResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DisassociateDDoSEipAddressRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DisassociateDDoSEipAddressResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/ModifyCCLevelPolicyRequest.h>
@@ -406,6 +414,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeListWaterPrintConfigResponse> DescribeListWaterPrintConfigOutcome;
                 typedef std::future<DescribeListWaterPrintConfigOutcome> DescribeListWaterPrintConfigOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeListWaterPrintConfigRequest&, DescribeListWaterPrintConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeListWaterPrintConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOverviewAttackTrendResponse> DescribeOverviewAttackTrendOutcome;
+                typedef std::future<DescribeOverviewAttackTrendOutcome> DescribeOverviewAttackTrendOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::DescribeOverviewAttackTrendRequest&, DescribeOverviewAttackTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOverviewAttackTrendAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOverviewCCTrendResponse> DescribeOverviewCCTrendOutcome;
+                typedef std::future<DescribeOverviewCCTrendOutcome> DescribeOverviewCCTrendOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::DescribeOverviewCCTrendRequest&, DescribeOverviewCCTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOverviewCCTrendAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOverviewDDoSTrendResponse> DescribeOverviewDDoSTrendOutcome;
+                typedef std::future<DescribeOverviewDDoSTrendOutcome> DescribeOverviewDDoSTrendOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::DescribeOverviewDDoSTrendRequest&, DescribeOverviewDDoSTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOverviewDDoSTrendAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOverviewIndexResponse> DescribeOverviewIndexOutcome;
+                typedef std::future<DescribeOverviewIndexOutcome> DescribeOverviewIndexOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::DescribeOverviewIndexRequest&, DescribeOverviewIndexOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOverviewIndexAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisassociateDDoSEipAddressResponse> DisassociateDDoSEipAddressOutcome;
                 typedef std::future<DisassociateDDoSEipAddressOutcome> DisassociateDDoSEipAddressOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DisassociateDDoSEipAddressRequest&, DisassociateDDoSEipAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateDDoSEipAddressAsyncHandler;
@@ -1064,6 +1084,42 @@ namespace TencentCloud
                 DescribeListWaterPrintConfigOutcome DescribeListWaterPrintConfig(const Model::DescribeListWaterPrintConfigRequest &request);
                 void DescribeListWaterPrintConfigAsync(const Model::DescribeListWaterPrintConfigRequest& request, const DescribeListWaterPrintConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeListWaterPrintConfigOutcomeCallable DescribeListWaterPrintConfigCallable(const Model::DescribeListWaterPrintConfigRequest& request);
+
+                /**
+                 *拉取防护概览攻击趋势
+                 * @param req DescribeOverviewAttackTrendRequest
+                 * @return DescribeOverviewAttackTrendOutcome
+                 */
+                DescribeOverviewAttackTrendOutcome DescribeOverviewAttackTrend(const Model::DescribeOverviewAttackTrendRequest &request);
+                void DescribeOverviewAttackTrendAsync(const Model::DescribeOverviewAttackTrendRequest& request, const DescribeOverviewAttackTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOverviewAttackTrendOutcomeCallable DescribeOverviewAttackTrendCallable(const Model::DescribeOverviewAttackTrendRequest& request);
+
+                /**
+                 *获取防护概览总请求峰值(QPS)和攻击请求(QPS)以及总请求次数和攻击请求次数
+                 * @param req DescribeOverviewCCTrendRequest
+                 * @return DescribeOverviewCCTrendOutcome
+                 */
+                DescribeOverviewCCTrendOutcome DescribeOverviewCCTrend(const Model::DescribeOverviewCCTrendRequest &request);
+                void DescribeOverviewCCTrendAsync(const Model::DescribeOverviewCCTrendRequest& request, const DescribeOverviewCCTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOverviewCCTrendOutcomeCallable DescribeOverviewCCTrendCallable(const Model::DescribeOverviewCCTrendRequest& request);
+
+                /**
+                 *获取防护概览DDoS攻击流量带宽和攻击包速率数据
+                 * @param req DescribeOverviewDDoSTrendRequest
+                 * @return DescribeOverviewDDoSTrendOutcome
+                 */
+                DescribeOverviewDDoSTrendOutcome DescribeOverviewDDoSTrend(const Model::DescribeOverviewDDoSTrendRequest &request);
+                void DescribeOverviewDDoSTrendAsync(const Model::DescribeOverviewDDoSTrendRequest& request, const DescribeOverviewDDoSTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOverviewDDoSTrendOutcomeCallable DescribeOverviewDDoSTrendCallable(const Model::DescribeOverviewDDoSTrendRequest& request);
+
+                /**
+                 *拉取防护概览指标
+                 * @param req DescribeOverviewIndexRequest
+                 * @return DescribeOverviewIndexOutcome
+                 */
+                DescribeOverviewIndexOutcome DescribeOverviewIndex(const Model::DescribeOverviewIndexRequest &request);
+                void DescribeOverviewIndexAsync(const Model::DescribeOverviewIndexRequest& request, const DescribeOverviewIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOverviewIndexOutcomeCallable DescribeOverviewIndexCallable(const Model::DescribeOverviewIndexRequest& request);
 
                 /**
                  *本接口 (DisassociateDDoSEipAddress) 用于解绑高防弹性公网IP。

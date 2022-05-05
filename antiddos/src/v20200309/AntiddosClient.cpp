@@ -2921,6 +2921,178 @@ AntiddosClient::DescribeListWaterPrintConfigOutcomeCallable AntiddosClient::Desc
     return task->get_future();
 }
 
+AntiddosClient::DescribeOverviewAttackTrendOutcome AntiddosClient::DescribeOverviewAttackTrend(const DescribeOverviewAttackTrendRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOverviewAttackTrend");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOverviewAttackTrendResponse rsp = DescribeOverviewAttackTrendResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOverviewAttackTrendOutcome(rsp);
+        else
+            return DescribeOverviewAttackTrendOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOverviewAttackTrendOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribeOverviewAttackTrendAsync(const DescribeOverviewAttackTrendRequest& request, const DescribeOverviewAttackTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOverviewAttackTrend(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DescribeOverviewAttackTrendOutcomeCallable AntiddosClient::DescribeOverviewAttackTrendCallable(const DescribeOverviewAttackTrendRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOverviewAttackTrendOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOverviewAttackTrend(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::DescribeOverviewCCTrendOutcome AntiddosClient::DescribeOverviewCCTrend(const DescribeOverviewCCTrendRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOverviewCCTrend");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOverviewCCTrendResponse rsp = DescribeOverviewCCTrendResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOverviewCCTrendOutcome(rsp);
+        else
+            return DescribeOverviewCCTrendOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOverviewCCTrendOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribeOverviewCCTrendAsync(const DescribeOverviewCCTrendRequest& request, const DescribeOverviewCCTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOverviewCCTrend(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DescribeOverviewCCTrendOutcomeCallable AntiddosClient::DescribeOverviewCCTrendCallable(const DescribeOverviewCCTrendRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOverviewCCTrendOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOverviewCCTrend(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::DescribeOverviewDDoSTrendOutcome AntiddosClient::DescribeOverviewDDoSTrend(const DescribeOverviewDDoSTrendRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOverviewDDoSTrend");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOverviewDDoSTrendResponse rsp = DescribeOverviewDDoSTrendResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOverviewDDoSTrendOutcome(rsp);
+        else
+            return DescribeOverviewDDoSTrendOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOverviewDDoSTrendOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribeOverviewDDoSTrendAsync(const DescribeOverviewDDoSTrendRequest& request, const DescribeOverviewDDoSTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOverviewDDoSTrend(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DescribeOverviewDDoSTrendOutcomeCallable AntiddosClient::DescribeOverviewDDoSTrendCallable(const DescribeOverviewDDoSTrendRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOverviewDDoSTrendOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOverviewDDoSTrend(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::DescribeOverviewIndexOutcome AntiddosClient::DescribeOverviewIndex(const DescribeOverviewIndexRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOverviewIndex");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOverviewIndexResponse rsp = DescribeOverviewIndexResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOverviewIndexOutcome(rsp);
+        else
+            return DescribeOverviewIndexOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOverviewIndexOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribeOverviewIndexAsync(const DescribeOverviewIndexRequest& request, const DescribeOverviewIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOverviewIndex(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DescribeOverviewIndexOutcomeCallable AntiddosClient::DescribeOverviewIndexCallable(const DescribeOverviewIndexRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOverviewIndexOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOverviewIndex(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AntiddosClient::DisassociateDDoSEipAddressOutcome AntiddosClient::DisassociateDDoSEipAddress(const DisassociateDDoSEipAddressRequest &request)
 {
     auto outcome = MakeRequest(request, "DisassociateDDoSEipAddress");

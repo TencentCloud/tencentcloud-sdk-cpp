@@ -20,21 +20,29 @@ set(teo_public_header
 
 set(teo_public_header_model
   include/tencentcloud/teo/v20220106/model/CreatePurgeTaskResponse.h
-  include/tencentcloud/teo/v20220106/model/Task.h
-  include/tencentcloud/teo/v20220106/model/DescribePurgeTasksRequest.h
-  include/tencentcloud/teo/v20220106/model/FailReason.h
   include/tencentcloud/teo/v20220106/model/CreatePurgeTaskRequest.h
+  include/tencentcloud/teo/v20220106/model/DescribePurgeTasksRequest.h
+  include/tencentcloud/teo/v20220106/model/Zone.h
+  include/tencentcloud/teo/v20220106/model/DescribeZonesRequest.h
+  include/tencentcloud/teo/v20220106/model/DescribeZonesResponse.h
+  include/tencentcloud/teo/v20220106/model/FailReason.h
+  include/tencentcloud/teo/v20220106/model/Task.h
   include/tencentcloud/teo/v20220106/model/DescribePurgeTasksResponse.h
+  include/tencentcloud/teo/v20220106/model/ZoneFilter.h
   )
 
 set(teo_src
   src/v20220106/TeoClient.cpp
   src/v20220106/model/CreatePurgeTaskResponse.cpp
-  src/v20220106/model/Task.cpp
-  src/v20220106/model/DescribePurgeTasksRequest.cpp
-  src/v20220106/model/FailReason.cpp
   src/v20220106/model/CreatePurgeTaskRequest.cpp
+  src/v20220106/model/DescribePurgeTasksRequest.cpp
+  src/v20220106/model/Zone.cpp
+  src/v20220106/model/DescribeZonesRequest.cpp
+  src/v20220106/model/DescribeZonesResponse.cpp
+  src/v20220106/model/FailReason.cpp
+  src/v20220106/model/Task.cpp
   src/v20220106/model/DescribePurgeTasksResponse.cpp
+  src/v20220106/model/ZoneFilter.cpp
   )
 
 set(teo_include

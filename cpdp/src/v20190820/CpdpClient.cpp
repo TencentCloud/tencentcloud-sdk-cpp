@@ -2792,6 +2792,49 @@ CpdpClient::GetBillDownloadUrlOutcomeCallable CpdpClient::GetBillDownloadUrlCall
     return task->get_future();
 }
 
+CpdpClient::GetDistributeBillDownloadUrlOutcome CpdpClient::GetDistributeBillDownloadUrl(const GetDistributeBillDownloadUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetDistributeBillDownloadUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetDistributeBillDownloadUrlResponse rsp = GetDistributeBillDownloadUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetDistributeBillDownloadUrlOutcome(rsp);
+        else
+            return GetDistributeBillDownloadUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return GetDistributeBillDownloadUrlOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::GetDistributeBillDownloadUrlAsync(const GetDistributeBillDownloadUrlRequest& request, const GetDistributeBillDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetDistributeBillDownloadUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::GetDistributeBillDownloadUrlOutcomeCallable CpdpClient::GetDistributeBillDownloadUrlCallable(const GetDistributeBillDownloadUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetDistributeBillDownloadUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->GetDistributeBillDownloadUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::MigrateOrderRefundOutcome CpdpClient::MigrateOrderRefund(const MigrateOrderRefundRequest &request)
 {
     auto outcome = MakeRequest(request, "MigrateOrderRefund");

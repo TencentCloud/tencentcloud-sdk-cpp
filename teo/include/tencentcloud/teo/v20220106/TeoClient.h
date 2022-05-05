@@ -27,6 +27,8 @@
 #include <tencentcloud/teo/v20220106/model/CreatePurgeTaskResponse.h>
 #include <tencentcloud/teo/v20220106/model/DescribePurgeTasksRequest.h>
 #include <tencentcloud/teo/v20220106/model/DescribePurgeTasksResponse.h>
+#include <tencentcloud/teo/v20220106/model/DescribeZonesRequest.h>
+#include <tencentcloud/teo/v20220106/model/DescribeZonesResponse.h>
 
 
 namespace TencentCloud
@@ -47,6 +49,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePurgeTasksResponse> DescribePurgeTasksOutcome;
                 typedef std::future<DescribePurgeTasksOutcome> DescribePurgeTasksOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribePurgeTasksRequest&, DescribePurgeTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePurgeTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeZonesResponse> DescribeZonesOutcome;
+                typedef std::future<DescribeZonesOutcome> DescribeZonesOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeZonesRequest&, DescribeZonesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZonesAsyncHandler;
 
 
 
@@ -67,6 +72,15 @@ namespace TencentCloud
                 DescribePurgeTasksOutcome DescribePurgeTasks(const Model::DescribePurgeTasksRequest &request);
                 void DescribePurgeTasksAsync(const Model::DescribePurgeTasksRequest& request, const DescribePurgeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePurgeTasksOutcomeCallable DescribePurgeTasksCallable(const Model::DescribePurgeTasksRequest& request);
+
+                /**
+                 *用户查询用户站点信息列表，支持分页
+                 * @param req DescribeZonesRequest
+                 * @return DescribeZonesOutcome
+                 */
+                DescribeZonesOutcome DescribeZones(const Model::DescribeZonesRequest &request);
+                void DescribeZonesAsync(const Model::DescribeZonesRequest& request, const DescribeZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeZonesOutcomeCallable DescribeZonesCallable(const Model::DescribeZonesRequest& request);
 
             };
         }
