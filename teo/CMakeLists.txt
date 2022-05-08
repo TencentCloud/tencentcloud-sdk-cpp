@@ -22,12 +22,17 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220106/model/CreatePurgeTaskResponse.h
   include/tencentcloud/teo/v20220106/model/CreatePurgeTaskRequest.h
   include/tencentcloud/teo/v20220106/model/DescribePurgeTasksRequest.h
+  include/tencentcloud/teo/v20220106/model/CreatePrefetchTaskResponse.h
   include/tencentcloud/teo/v20220106/model/Zone.h
+  include/tencentcloud/teo/v20220106/model/DescribePrefetchTasksResponse.h
   include/tencentcloud/teo/v20220106/model/DescribeZonesRequest.h
   include/tencentcloud/teo/v20220106/model/DescribeZonesResponse.h
+  include/tencentcloud/teo/v20220106/model/Header.h
   include/tencentcloud/teo/v20220106/model/FailReason.h
   include/tencentcloud/teo/v20220106/model/Task.h
+  include/tencentcloud/teo/v20220106/model/CreatePrefetchTaskRequest.h
   include/tencentcloud/teo/v20220106/model/DescribePurgeTasksResponse.h
+  include/tencentcloud/teo/v20220106/model/DescribePrefetchTasksRequest.h
   include/tencentcloud/teo/v20220106/model/ZoneFilter.h
   )
 
@@ -36,12 +41,17 @@ set(teo_src
   src/v20220106/model/CreatePurgeTaskResponse.cpp
   src/v20220106/model/CreatePurgeTaskRequest.cpp
   src/v20220106/model/DescribePurgeTasksRequest.cpp
+  src/v20220106/model/CreatePrefetchTaskResponse.cpp
   src/v20220106/model/Zone.cpp
+  src/v20220106/model/DescribePrefetchTasksResponse.cpp
   src/v20220106/model/DescribeZonesRequest.cpp
   src/v20220106/model/DescribeZonesResponse.cpp
+  src/v20220106/model/Header.cpp
   src/v20220106/model/FailReason.cpp
   src/v20220106/model/Task.cpp
+  src/v20220106/model/CreatePrefetchTaskRequest.cpp
   src/v20220106/model/DescribePurgeTasksResponse.cpp
+  src/v20220106/model/DescribePrefetchTasksRequest.cpp
   src/v20220106/model/ZoneFilter.cpp
   )
 

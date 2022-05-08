@@ -4469,6 +4469,49 @@ TsfClient::DescribePodInstancesOutcomeCallable TsfClient::DescribePodInstancesCa
     return task->get_future();
 }
 
+TsfClient::DescribeProgramsOutcome TsfClient::DescribePrograms(const DescribeProgramsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrograms");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeProgramsResponse rsp = DescribeProgramsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeProgramsOutcome(rsp);
+        else
+            return DescribeProgramsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeProgramsOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeProgramsAsync(const DescribeProgramsRequest& request, const DescribeProgramsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrograms(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeProgramsOutcomeCallable TsfClient::DescribeProgramsCallable(const DescribeProgramsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeProgramsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrograms(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DescribePublicConfigOutcome TsfClient::DescribePublicConfig(const DescribePublicConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePublicConfig");

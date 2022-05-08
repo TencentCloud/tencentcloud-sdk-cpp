@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取vip保留时间，单位：天，注：需要最新版SDK支持
-                     * @return Recycle vip保留时间，单位：天，注：需要最新版SDK支持
+                     * 获取原VIP保留时间，单位：天，注：需要最新版SDK，否则原VIP立即释放，查看SDK版本，详见 [SDK中心](https://cloud.tencent.com/document/sdk)
+                     * @return Recycle 原VIP保留时间，单位：天，注：需要最新版SDK，否则原VIP立即释放，查看SDK版本，详见 [SDK中心](https://cloud.tencent.com/document/sdk)
                      */
                     int64_t GetRecycle() const;
 
                     /**
-                     * 设置vip保留时间，单位：天，注：需要最新版SDK支持
-                     * @param Recycle vip保留时间，单位：天，注：需要最新版SDK支持
+                     * 设置原VIP保留时间，单位：天，注：需要最新版SDK，否则原VIP立即释放，查看SDK版本，详见 [SDK中心](https://cloud.tencent.com/document/sdk)
+                     * @param Recycle 原VIP保留时间，单位：天，注：需要最新版SDK，否则原VIP立即释放，查看SDK版本，详见 [SDK中心](https://cloud.tencent.com/document/sdk)
                      */
                     void SetRecycle(const int64_t& _recycle);
 
@@ -183,7 +183,7 @@ namespace TencentCloud
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * vip保留时间，单位：天，注：需要最新版SDK支持
+                     * 原VIP保留时间，单位：天，注：需要最新版SDK，否则原VIP立即释放，查看SDK版本，详见 [SDK中心](https://cloud.tencent.com/document/sdk)
                      */
                     int64_t m_recycle;
                     bool m_recycleHasBeenSet;

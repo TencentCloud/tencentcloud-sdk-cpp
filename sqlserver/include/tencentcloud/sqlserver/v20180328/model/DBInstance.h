@@ -755,6 +755,100 @@ namespace TencentCloud
                      */
                     bool BackupModelHasBeenSet() const;
 
+                    /**
+                     * 获取实例备份信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceNote 实例备份信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInstanceNote() const;
+
+                    /**
+                     * 设置实例备份信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceNote 实例备份信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceNote(const std::string& _instanceNote);
+
+                    /**
+                     * 判断参数 InstanceNote 是否已赋值
+                     * @return InstanceNote 是否已赋值
+                     */
+                    bool InstanceNoteHasBeenSet() const;
+
+                    /**
+                     * 获取备份周期
+                     * @return BackupCycle 备份周期
+                     */
+                    std::vector<int64_t> GetBackupCycle() const;
+
+                    /**
+                     * 设置备份周期
+                     * @param BackupCycle 备份周期
+                     */
+                    void SetBackupCycle(const std::vector<int64_t>& _backupCycle);
+
+                    /**
+                     * 判断参数 BackupCycle 是否已赋值
+                     * @return BackupCycle 是否已赋值
+                     */
+                    bool BackupCycleHasBeenSet() const;
+
+                    /**
+                     * 获取备份周期类型，[daily、weekly、monthly]
+                     * @return BackupCycleType 备份周期类型，[daily、weekly、monthly]
+                     */
+                    std::string GetBackupCycleType() const;
+
+                    /**
+                     * 设置备份周期类型，[daily、weekly、monthly]
+                     * @param BackupCycleType 备份周期类型，[daily、weekly、monthly]
+                     */
+                    void SetBackupCycleType(const std::string& _backupCycleType);
+
+                    /**
+                     * 判断参数 BackupCycleType 是否已赋值
+                     * @return BackupCycleType 是否已赋值
+                     */
+                    bool BackupCycleTypeHasBeenSet() const;
+
+                    /**
+                     * 获取数据(日志)备份保留时间
+                     * @return BackupSaveDays 数据(日志)备份保留时间
+                     */
+                    int64_t GetBackupSaveDays() const;
+
+                    /**
+                     * 设置数据(日志)备份保留时间
+                     * @param BackupSaveDays 数据(日志)备份保留时间
+                     */
+                    void SetBackupSaveDays(const int64_t& _backupSaveDays);
+
+                    /**
+                     * 判断参数 BackupSaveDays 是否已赋值
+                     * @return BackupSaveDays 是否已赋值
+                     */
+                    bool BackupSaveDaysHasBeenSet() const;
+
+                    /**
+                     * 获取实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务
+                     * @return InstanceType 实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务
+                     */
+                    std::string GetInstanceType() const;
+
+                    /**
+                     * 设置实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务
+                     * @param InstanceType 实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务
+                     */
+                    void SetInstanceType(const std::string& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -990,6 +1084,37 @@ namespace TencentCloud
                      */
                     std::string m_backupModel;
                     bool m_backupModelHasBeenSet;
+
+                    /**
+                     * 实例备份信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceNote;
+                    bool m_instanceNoteHasBeenSet;
+
+                    /**
+                     * 备份周期
+                     */
+                    std::vector<int64_t> m_backupCycle;
+                    bool m_backupCycleHasBeenSet;
+
+                    /**
+                     * 备份周期类型，[daily、weekly、monthly]
+                     */
+                    std::string m_backupCycleType;
+                    bool m_backupCycleTypeHasBeenSet;
+
+                    /**
+                     * 数据(日志)备份保留时间
+                     */
+                    int64_t m_backupSaveDays;
+                    bool m_backupSaveDaysHasBeenSet;
+
+                    /**
+                     * 实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务
+                     */
+                    std::string m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
 
                 };
             }

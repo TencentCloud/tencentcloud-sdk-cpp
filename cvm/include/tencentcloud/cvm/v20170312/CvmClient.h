@@ -105,6 +105,8 @@
 #include <tencentcloud/cvm/v20170312/model/DisassociateInstancesKeyPairsResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DisassociateSecurityGroupsRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DisassociateSecurityGroupsResponse.h>
+#include <tencentcloud/cvm/v20170312/model/ExportImagesRequest.h>
+#include <tencentcloud/cvm/v20170312/model/ExportImagesResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ImportImageRequest.h>
 #include <tencentcloud/cvm/v20170312/model/ImportImageResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ImportKeyPairRequest.h>
@@ -318,6 +320,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DisassociateSecurityGroupsResponse> DisassociateSecurityGroupsOutcome;
                 typedef std::future<DisassociateSecurityGroupsOutcome> DisassociateSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DisassociateSecurityGroupsRequest&, DisassociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateSecurityGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExportImagesResponse> ExportImagesOutcome;
+                typedef std::future<ExportImagesOutcome> ExportImagesOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::ExportImagesRequest&, ExportImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportImagesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ImportImageResponse> ImportImageOutcome;
                 typedef std::future<ImportImageOutcome> ImportImageOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::ImportImageRequest&, ImportImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportImageAsyncHandler;
@@ -867,6 +872,15 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 DisassociateSecurityGroupsOutcome DisassociateSecurityGroups(const Model::DisassociateSecurityGroupsRequest &request);
                 void DisassociateSecurityGroupsAsync(const Model::DisassociateSecurityGroupsRequest& request, const DisassociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DisassociateSecurityGroupsOutcomeCallable DisassociateSecurityGroupsCallable(const Model::DisassociateSecurityGroupsRequest& request);
+
+                /**
+                 *提供导出自定义镜像到指定COS存储桶的能力
+                 * @param req ExportImagesRequest
+                 * @return ExportImagesOutcome
+                 */
+                ExportImagesOutcome ExportImages(const Model::ExportImagesRequest &request);
+                void ExportImagesAsync(const Model::ExportImagesRequest& request, const ExportImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportImagesOutcomeCallable ExportImagesCallable(const Model::ExportImagesRequest& request);
 
                 /**
                  *本接口(ImportImage)用于导入镜像，导入后的镜像可用于创建实例。目前支持 RAW、VHD、QCOW2、VMDK 镜像格式。

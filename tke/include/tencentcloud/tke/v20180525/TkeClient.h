@@ -37,8 +37,6 @@
 #include <tencentcloud/tke/v20180525/model/CheckInstancesUpgradeAbleResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateClusterRequest.h>
 #include <tencentcloud/tke/v20180525/model/CreateClusterResponse.h>
-#include <tencentcloud/tke/v20180525/model/CreateClusterAsGroupRequest.h>
-#include <tencentcloud/tke/v20180525/model/CreateClusterAsGroupResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateClusterEndpointRequest.h>
 #include <tencentcloud/tke/v20180525/model/CreateClusterEndpointResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateClusterEndpointVipRequest.h>
@@ -278,9 +276,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateClusterResponse> CreateClusterOutcome;
                 typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CreateClusterRequest&, CreateClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateClusterAsGroupResponse> CreateClusterAsGroupOutcome;
-                typedef std::future<CreateClusterAsGroupOutcome> CreateClusterAsGroupOutcomeCallable;
-                typedef std::function<void(const TkeClient*, const Model::CreateClusterAsGroupRequest&, CreateClusterAsGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterAsGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateClusterEndpointResponse> CreateClusterEndpointOutcome;
                 typedef std::future<CreateClusterEndpointOutcome> CreateClusterEndpointOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CreateClusterEndpointRequest&, CreateClusterEndpointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterEndpointAsyncHandler;
@@ -652,15 +647,6 @@ namespace TencentCloud
                 CreateClusterOutcome CreateCluster(const Model::CreateClusterRequest &request);
                 void CreateClusterAsync(const Model::CreateClusterRequest& request, const CreateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateClusterOutcomeCallable CreateClusterCallable(const Model::CreateClusterRequest& request);
-
-                /**
-                 *为已经存在的集群创建伸缩组
-                 * @param req CreateClusterAsGroupRequest
-                 * @return CreateClusterAsGroupOutcome
-                 */
-                CreateClusterAsGroupOutcome CreateClusterAsGroup(const Model::CreateClusterAsGroupRequest &request);
-                void CreateClusterAsGroupAsync(const Model::CreateClusterAsGroupRequest& request, const CreateClusterAsGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateClusterAsGroupOutcomeCallable CreateClusterAsGroupCallable(const Model::CreateClusterAsGroupRequest& request);
 
                 /**
                  *创建集群访问端口(独立集群开启内网/外网访问，托管集群支持开启内网访问)

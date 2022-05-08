@@ -58,6 +58,7 @@ CreateDBInstanceHourRequest::CreateDBInstanceHourRequest() :
     m_paramTemplateTypeHasBeenSet(false),
     m_alarmPolicyIdListHasBeenSet(false),
     m_dryRunHasBeenSet(false),
+    m_engineTypeHasBeenSet(false),
     m_vipsHasBeenSet(false)
 {
 }
@@ -377,6 +378,14 @@ string CreateDBInstanceHourRequest::ToJsonString() const
         string key = "DryRun";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dryRun, allocator);
+    }
+
+    if (m_engineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_engineType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vipsHasBeenSet)
@@ -958,6 +967,22 @@ void CreateDBInstanceHourRequest::SetDryRun(const bool& _dryRun)
 bool CreateDBInstanceHourRequest::DryRunHasBeenSet() const
 {
     return m_dryRunHasBeenSet;
+}
+
+string CreateDBInstanceHourRequest::GetEngineType() const
+{
+    return m_engineType;
+}
+
+void CreateDBInstanceHourRequest::SetEngineType(const string& _engineType)
+{
+    m_engineType = _engineType;
+    m_engineTypeHasBeenSet = true;
+}
+
+bool CreateDBInstanceHourRequest::EngineTypeHasBeenSet() const
+{
+    return m_engineTypeHasBeenSet;
 }
 
 vector<string> CreateDBInstanceHourRequest::GetVips() const

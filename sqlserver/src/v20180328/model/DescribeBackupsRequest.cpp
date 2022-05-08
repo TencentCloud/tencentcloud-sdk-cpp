@@ -33,7 +33,9 @@ DescribeBackupsRequest::DescribeBackupsRequest() :
     m_backupWayHasBeenSet(false),
     m_backupIdHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
-    m_groupHasBeenSet(false)
+    m_groupHasBeenSet(false),
+    m_typeHasBeenSet(false),
+    m_backupFormatHasBeenSet(false)
 {
 }
 
@@ -130,6 +132,22 @@ string DescribeBackupsRequest::ToJsonString() const
         string key = "Group";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_group, allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_type, allocator);
+    }
+
+    if (m_backupFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupFormat";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_backupFormat.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -314,6 +332,38 @@ void DescribeBackupsRequest::SetGroup(const int64_t& _group)
 bool DescribeBackupsRequest::GroupHasBeenSet() const
 {
     return m_groupHasBeenSet;
+}
+
+int64_t DescribeBackupsRequest::GetType() const
+{
+    return m_type;
+}
+
+void DescribeBackupsRequest::SetType(const int64_t& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool DescribeBackupsRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
+
+string DescribeBackupsRequest::GetBackupFormat() const
+{
+    return m_backupFormat;
+}
+
+void DescribeBackupsRequest::SetBackupFormat(const string& _backupFormat)
+{
+    m_backupFormat = _backupFormat;
+    m_backupFormatHasBeenSet = true;
+}
+
+bool DescribeBackupsRequest::BackupFormatHasBeenSet() const
+{
+    return m_backupFormatHasBeenSet;
 }
 
 

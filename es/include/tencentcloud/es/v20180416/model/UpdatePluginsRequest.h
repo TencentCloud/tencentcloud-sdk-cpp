@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool RemovePluginListHasBeenSet() const;
 
                     /**
-                     * 获取是否强制重启
-                     * @return ForceRestart 是否强制重启
+                     * 获取是否强制重启，默认值false
+                     * @return ForceRestart 是否强制重启，默认值false
                      */
                     bool GetForceRestart() const;
 
                     /**
-                     * 设置是否强制重启
-                     * @param ForceRestart 是否强制重启
+                     * 设置是否强制重启，默认值false
+                     * @param ForceRestart 是否强制重启，默认值false
                      */
                     void SetForceRestart(const bool& _forceRestart);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool ForceRestartHasBeenSet() const;
 
                     /**
-                     * 获取是否重新安装
-                     * @return ForceUpdate 是否重新安装
+                     * 获取是否重新安装，默认值false
+                     * @return ForceUpdate 是否重新安装，默认值false
                      */
                     bool GetForceUpdate() const;
 
                     /**
-                     * 设置是否重新安装
-                     * @param ForceUpdate 是否重新安装
+                     * 设置是否重新安装，默认值false
+                     * @param ForceUpdate 是否重新安装，默认值false
                      */
                     void SetForceUpdate(const bool& _forceUpdate);
 
@@ -171,13 +171,13 @@ namespace TencentCloud
                     bool m_removePluginListHasBeenSet;
 
                     /**
-                     * 是否强制重启
+                     * 是否强制重启，默认值false
                      */
                     bool m_forceRestart;
                     bool m_forceRestartHasBeenSet;
 
                     /**
-                     * 是否重新安装
+                     * 是否重新安装，默认值false
                      */
                     bool m_forceUpdate;
                     bool m_forceUpdateHasBeenSet;

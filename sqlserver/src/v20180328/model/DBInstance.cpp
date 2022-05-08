@@ -58,7 +58,12 @@ DBInstance::DBInstance() :
     m_rOFlagHasBeenSet(false),
     m_hAFlagHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
-    m_backupModelHasBeenSet(false)
+    m_backupModelHasBeenSet(false),
+    m_instanceNoteHasBeenSet(false),
+    m_backupCycleHasBeenSet(false),
+    m_backupCycleTypeHasBeenSet(false),
+    m_backupSaveDaysHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false)
 {
 }
 
@@ -457,6 +462,59 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
         m_backupModelHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceNote") && !value["InstanceNote"].IsNull())
+    {
+        if (!value["InstanceNote"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBInstance.InstanceNote` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceNote = string(value["InstanceNote"].GetString());
+        m_instanceNoteHasBeenSet = true;
+    }
+
+    if (value.HasMember("BackupCycle") && !value["BackupCycle"].IsNull())
+    {
+        if (!value["BackupCycle"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DBInstance.BackupCycle` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["BackupCycle"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_backupCycle.push_back((*itr).GetInt64());
+        }
+        m_backupCycleHasBeenSet = true;
+    }
+
+    if (value.HasMember("BackupCycleType") && !value["BackupCycleType"].IsNull())
+    {
+        if (!value["BackupCycleType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBInstance.BackupCycleType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupCycleType = string(value["BackupCycleType"].GetString());
+        m_backupCycleTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("BackupSaveDays") && !value["BackupSaveDays"].IsNull())
+    {
+        if (!value["BackupSaveDays"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBInstance.BackupSaveDays` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupSaveDays = value["BackupSaveDays"].GetInt64();
+        m_backupSaveDaysHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceType") && !value["InstanceType"].IsNull())
+    {
+        if (!value["InstanceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBInstance.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceType = string(value["InstanceType"].GetString());
+        m_instanceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -773,6 +831,51 @@ void DBInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "BackupModel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_backupModel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceNoteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceNote";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceNote.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupCycleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupCycle";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_backupCycle.begin(); itr != m_backupCycle.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_backupCycleTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupCycleType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_backupCycleType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupSaveDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupSaveDays";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backupSaveDays, allocator);
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1384,5 +1487,85 @@ void DBInstance::SetBackupModel(const string& _backupModel)
 bool DBInstance::BackupModelHasBeenSet() const
 {
     return m_backupModelHasBeenSet;
+}
+
+string DBInstance::GetInstanceNote() const
+{
+    return m_instanceNote;
+}
+
+void DBInstance::SetInstanceNote(const string& _instanceNote)
+{
+    m_instanceNote = _instanceNote;
+    m_instanceNoteHasBeenSet = true;
+}
+
+bool DBInstance::InstanceNoteHasBeenSet() const
+{
+    return m_instanceNoteHasBeenSet;
+}
+
+vector<int64_t> DBInstance::GetBackupCycle() const
+{
+    return m_backupCycle;
+}
+
+void DBInstance::SetBackupCycle(const vector<int64_t>& _backupCycle)
+{
+    m_backupCycle = _backupCycle;
+    m_backupCycleHasBeenSet = true;
+}
+
+bool DBInstance::BackupCycleHasBeenSet() const
+{
+    return m_backupCycleHasBeenSet;
+}
+
+string DBInstance::GetBackupCycleType() const
+{
+    return m_backupCycleType;
+}
+
+void DBInstance::SetBackupCycleType(const string& _backupCycleType)
+{
+    m_backupCycleType = _backupCycleType;
+    m_backupCycleTypeHasBeenSet = true;
+}
+
+bool DBInstance::BackupCycleTypeHasBeenSet() const
+{
+    return m_backupCycleTypeHasBeenSet;
+}
+
+int64_t DBInstance::GetBackupSaveDays() const
+{
+    return m_backupSaveDays;
+}
+
+void DBInstance::SetBackupSaveDays(const int64_t& _backupSaveDays)
+{
+    m_backupSaveDays = _backupSaveDays;
+    m_backupSaveDaysHasBeenSet = true;
+}
+
+bool DBInstance::BackupSaveDaysHasBeenSet() const
+{
+    return m_backupSaveDaysHasBeenSet;
+}
+
+string DBInstance::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void DBInstance::SetInstanceType(const string& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool DBInstance::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
 }
 

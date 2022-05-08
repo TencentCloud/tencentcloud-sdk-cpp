@@ -37,6 +37,8 @@
 #include <tencentcloud/cam/v20190116/model/ConsumeCustomMFATokenResponse.h>
 #include <tencentcloud/cam/v20190116/model/CreateGroupRequest.h>
 #include <tencentcloud/cam/v20190116/model/CreateGroupResponse.h>
+#include <tencentcloud/cam/v20190116/model/CreateOIDCConfigRequest.h>
+#include <tencentcloud/cam/v20190116/model/CreateOIDCConfigResponse.h>
 #include <tencentcloud/cam/v20190116/model/CreatePolicyRequest.h>
 #include <tencentcloud/cam/v20190116/model/CreatePolicyResponse.h>
 #include <tencentcloud/cam/v20190116/model/CreatePolicyVersionRequest.h>
@@ -53,6 +55,8 @@
 #include <tencentcloud/cam/v20190116/model/CreateUserSAMLConfigResponse.h>
 #include <tencentcloud/cam/v20190116/model/DeleteGroupRequest.h>
 #include <tencentcloud/cam/v20190116/model/DeleteGroupResponse.h>
+#include <tencentcloud/cam/v20190116/model/DeleteOIDCConfigRequest.h>
+#include <tencentcloud/cam/v20190116/model/DeleteOIDCConfigResponse.h>
 #include <tencentcloud/cam/v20190116/model/DeletePolicyRequest.h>
 #include <tencentcloud/cam/v20190116/model/DeletePolicyResponse.h>
 #include <tencentcloud/cam/v20190116/model/DeletePolicyVersionRequest.h>
@@ -69,6 +73,8 @@
 #include <tencentcloud/cam/v20190116/model/DeleteUserResponse.h>
 #include <tencentcloud/cam/v20190116/model/DeleteUserPermissionsBoundaryRequest.h>
 #include <tencentcloud/cam/v20190116/model/DeleteUserPermissionsBoundaryResponse.h>
+#include <tencentcloud/cam/v20190116/model/DescribeOIDCConfigRequest.h>
+#include <tencentcloud/cam/v20190116/model/DescribeOIDCConfigResponse.h>
 #include <tencentcloud/cam/v20190116/model/DescribeRoleListRequest.h>
 #include <tencentcloud/cam/v20190116/model/DescribeRoleListResponse.h>
 #include <tencentcloud/cam/v20190116/model/DescribeSafeAuthFlagRequest.h>
@@ -163,6 +169,8 @@
 #include <tencentcloud/cam/v20190116/model/UpdateAssumeRolePolicyResponse.h>
 #include <tencentcloud/cam/v20190116/model/UpdateGroupRequest.h>
 #include <tencentcloud/cam/v20190116/model/UpdateGroupResponse.h>
+#include <tencentcloud/cam/v20190116/model/UpdateOIDCConfigRequest.h>
+#include <tencentcloud/cam/v20190116/model/UpdateOIDCConfigResponse.h>
 #include <tencentcloud/cam/v20190116/model/UpdatePolicyRequest.h>
 #include <tencentcloud/cam/v20190116/model/UpdatePolicyResponse.h>
 #include <tencentcloud/cam/v20190116/model/UpdateRoleConsoleLoginRequest.h>
@@ -212,6 +220,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateGroupResponse> CreateGroupOutcome;
                 typedef std::future<CreateGroupOutcome> CreateGroupOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::CreateGroupRequest&, CreateGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOIDCConfigResponse> CreateOIDCConfigOutcome;
+                typedef std::future<CreateOIDCConfigOutcome> CreateOIDCConfigOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::CreateOIDCConfigRequest&, CreateOIDCConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOIDCConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePolicyResponse> CreatePolicyOutcome;
                 typedef std::future<CreatePolicyOutcome> CreatePolicyOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::CreatePolicyRequest&, CreatePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePolicyAsyncHandler;
@@ -236,6 +247,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteGroupResponse> DeleteGroupOutcome;
                 typedef std::future<DeleteGroupOutcome> DeleteGroupOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DeleteGroupRequest&, DeleteGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteOIDCConfigResponse> DeleteOIDCConfigOutcome;
+                typedef std::future<DeleteOIDCConfigOutcome> DeleteOIDCConfigOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::DeleteOIDCConfigRequest&, DeleteOIDCConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOIDCConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeletePolicyResponse> DeletePolicyOutcome;
                 typedef std::future<DeletePolicyOutcome> DeletePolicyOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DeletePolicyRequest&, DeletePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePolicyAsyncHandler;
@@ -260,6 +274,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteUserPermissionsBoundaryResponse> DeleteUserPermissionsBoundaryOutcome;
                 typedef std::future<DeleteUserPermissionsBoundaryOutcome> DeleteUserPermissionsBoundaryOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DeleteUserPermissionsBoundaryRequest&, DeleteUserPermissionsBoundaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserPermissionsBoundaryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOIDCConfigResponse> DescribeOIDCConfigOutcome;
+                typedef std::future<DescribeOIDCConfigOutcome> DescribeOIDCConfigOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::DescribeOIDCConfigRequest&, DescribeOIDCConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOIDCConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRoleListResponse> DescribeRoleListOutcome;
                 typedef std::future<DescribeRoleListOutcome> DescribeRoleListOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DescribeRoleListRequest&, DescribeRoleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoleListAsyncHandler;
@@ -401,6 +418,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateGroupResponse> UpdateGroupOutcome;
                 typedef std::future<UpdateGroupOutcome> UpdateGroupOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::UpdateGroupRequest&, UpdateGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateOIDCConfigResponse> UpdateOIDCConfigOutcome;
+                typedef std::future<UpdateOIDCConfigOutcome> UpdateOIDCConfigOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::UpdateOIDCConfigRequest&, UpdateOIDCConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateOIDCConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdatePolicyResponse> UpdatePolicyOutcome;
                 typedef std::future<UpdatePolicyOutcome> UpdatePolicyOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::UpdatePolicyRequest&, UpdatePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePolicyAsyncHandler;
@@ -489,6 +509,15 @@ namespace TencentCloud
                 CreateGroupOutcomeCallable CreateGroupCallable(const Model::CreateGroupRequest& request);
 
                 /**
+                 *创建角色OIDC配置
+                 * @param req CreateOIDCConfigRequest
+                 * @return CreateOIDCConfigOutcome
+                 */
+                CreateOIDCConfigOutcome CreateOIDCConfig(const Model::CreateOIDCConfigRequest &request);
+                void CreateOIDCConfigAsync(const Model::CreateOIDCConfigRequest& request, const CreateOIDCConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOIDCConfigOutcomeCallable CreateOIDCConfigCallable(const Model::CreateOIDCConfigRequest& request);
+
+                /**
                  *本接口（CreatePolicy）可用于创建策略。
                  * @param req CreatePolicyRequest
                  * @return CreatePolicyOutcome
@@ -561,6 +590,15 @@ namespace TencentCloud
                 DeleteGroupOutcomeCallable DeleteGroupCallable(const Model::DeleteGroupRequest& request);
 
                 /**
+                 *删除OIDC身份提供商
+                 * @param req DeleteOIDCConfigRequest
+                 * @return DeleteOIDCConfigOutcome
+                 */
+                DeleteOIDCConfigOutcome DeleteOIDCConfig(const Model::DeleteOIDCConfigRequest &request);
+                void DeleteOIDCConfigAsync(const Model::DeleteOIDCConfigRequest& request, const DeleteOIDCConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteOIDCConfigOutcomeCallable DeleteOIDCConfigCallable(const Model::DeleteOIDCConfigRequest& request);
+
+                /**
                  *本接口（DeletePolicy）可用于删除策略。
                  * @param req DeletePolicyRequest
                  * @return DeletePolicyOutcome
@@ -631,6 +669,15 @@ namespace TencentCloud
                 DeleteUserPermissionsBoundaryOutcome DeleteUserPermissionsBoundary(const Model::DeleteUserPermissionsBoundaryRequest &request);
                 void DeleteUserPermissionsBoundaryAsync(const Model::DeleteUserPermissionsBoundaryRequest& request, const DeleteUserPermissionsBoundaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteUserPermissionsBoundaryOutcomeCallable DeleteUserPermissionsBoundaryCallable(const Model::DeleteUserPermissionsBoundaryRequest& request);
+
+                /**
+                 *查询角色OIDC配置
+                 * @param req DescribeOIDCConfigRequest
+                 * @return DescribeOIDCConfigOutcome
+                 */
+                DescribeOIDCConfigOutcome DescribeOIDCConfig(const Model::DescribeOIDCConfigRequest &request);
+                void DescribeOIDCConfigAsync(const Model::DescribeOIDCConfigRequest& request, const DescribeOIDCConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOIDCConfigOutcomeCallable DescribeOIDCConfigCallable(const Model::DescribeOIDCConfigRequest& request);
 
                 /**
                  *本接口（DescribeRoleList）用于获取账号下的角色列表。
@@ -1054,6 +1101,15 @@ namespace TencentCloud
                 UpdateGroupOutcome UpdateGroup(const Model::UpdateGroupRequest &request);
                 void UpdateGroupAsync(const Model::UpdateGroupRequest& request, const UpdateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateGroupOutcomeCallable UpdateGroupCallable(const Model::UpdateGroupRequest& request);
+
+                /**
+                 *修改角色OIDC配置
+                 * @param req UpdateOIDCConfigRequest
+                 * @return UpdateOIDCConfigOutcome
+                 */
+                UpdateOIDCConfigOutcome UpdateOIDCConfig(const Model::UpdateOIDCConfigRequest &request);
+                void UpdateOIDCConfigAsync(const Model::UpdateOIDCConfigRequest& request, const UpdateOIDCConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateOIDCConfigOutcomeCallable UpdateOIDCConfigCallable(const Model::UpdateOIDCConfigRequest& request);
 
                 /**
                  *本接口（UpdatePolicy ）可用于更新策略。

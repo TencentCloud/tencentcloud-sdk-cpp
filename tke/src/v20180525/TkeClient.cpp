@@ -341,49 +341,6 @@ TkeClient::CreateClusterOutcomeCallable TkeClient::CreateClusterCallable(const C
     return task->get_future();
 }
 
-TkeClient::CreateClusterAsGroupOutcome TkeClient::CreateClusterAsGroup(const CreateClusterAsGroupRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateClusterAsGroup");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateClusterAsGroupResponse rsp = CreateClusterAsGroupResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateClusterAsGroupOutcome(rsp);
-        else
-            return CreateClusterAsGroupOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateClusterAsGroupOutcome(outcome.GetError());
-    }
-}
-
-void TkeClient::CreateClusterAsGroupAsync(const CreateClusterAsGroupRequest& request, const CreateClusterAsGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateClusterAsGroup(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TkeClient::CreateClusterAsGroupOutcomeCallable TkeClient::CreateClusterAsGroupCallable(const CreateClusterAsGroupRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateClusterAsGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateClusterAsGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TkeClient::CreateClusterEndpointOutcome TkeClient::CreateClusterEndpoint(const CreateClusterEndpointRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateClusterEndpoint");

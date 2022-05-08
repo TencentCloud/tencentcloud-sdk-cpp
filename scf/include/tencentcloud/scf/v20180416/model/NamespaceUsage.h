@@ -123,17 +123,17 @@ namespace TencentCloud
                     bool TotalConcurrencyMemHasBeenSet() const;
 
                     /**
-                     * 获取命名空间配额使用量
+                     * 获取命名空间并发使用量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalAllocatedConcurrencyMem 命名空间配额使用量
+                     * @return TotalAllocatedConcurrencyMem 命名空间并发使用量
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetTotalAllocatedConcurrencyMem() const;
 
                     /**
-                     * 设置命名空间配额使用量
+                     * 设置命名空间并发使用量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalAllocatedConcurrencyMem 命名空间配额使用量
+                     * @param TotalAllocatedConcurrencyMem 命名空间并发使用量
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTotalAllocatedConcurrencyMem(const int64_t& _totalAllocatedConcurrencyMem);
@@ -143,6 +143,28 @@ namespace TencentCloud
                      * @return TotalAllocatedConcurrencyMem 是否已赋值
                      */
                     bool TotalAllocatedConcurrencyMemHasBeenSet() const;
+
+                    /**
+                     * 获取命名空间预置使用量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TotalAllocatedProvisionedMem 命名空间预置使用量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetTotalAllocatedProvisionedMem() const;
+
+                    /**
+                     * 设置命名空间预置使用量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TotalAllocatedProvisionedMem 命名空间预置使用量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTotalAllocatedProvisionedMem(const int64_t& _totalAllocatedProvisionedMem);
+
+                    /**
+                     * 判断参数 TotalAllocatedProvisionedMem 是否已赋值
+                     * @return TotalAllocatedProvisionedMem 是否已赋值
+                     */
+                    bool TotalAllocatedProvisionedMemHasBeenSet() const;
 
                 private:
 
@@ -172,11 +194,18 @@ namespace TencentCloud
                     bool m_totalConcurrencyMemHasBeenSet;
 
                     /**
-                     * 命名空间配额使用量
+                     * 命名空间并发使用量
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalAllocatedConcurrencyMem;
                     bool m_totalAllocatedConcurrencyMemHasBeenSet;
+
+                    /**
+                     * 命名空间预置使用量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_totalAllocatedProvisionedMem;
+                    bool m_totalAllocatedProvisionedMemHasBeenSet;
 
                 };
             }

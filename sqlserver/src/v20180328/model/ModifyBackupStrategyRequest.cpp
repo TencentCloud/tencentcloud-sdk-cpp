@@ -27,7 +27,9 @@ ModifyBackupStrategyRequest::ModifyBackupStrategyRequest() :
     m_backupTypeHasBeenSet(false),
     m_backupTimeHasBeenSet(false),
     m_backupDayHasBeenSet(false),
-    m_backupModelHasBeenSet(false)
+    m_backupModelHasBeenSet(false),
+    m_backupCycleHasBeenSet(false),
+    m_backupSaveDaysHasBeenSet(false)
 {
 }
 
@@ -76,6 +78,27 @@ string ModifyBackupStrategyRequest::ToJsonString() const
         string key = "BackupModel";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_backupModel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupCycleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupCycle";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_backupCycle.begin(); itr != m_backupCycle.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_backupSaveDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupSaveDays";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_backupSaveDays, allocator);
     }
 
 
@@ -164,6 +187,38 @@ void ModifyBackupStrategyRequest::SetBackupModel(const string& _backupModel)
 bool ModifyBackupStrategyRequest::BackupModelHasBeenSet() const
 {
     return m_backupModelHasBeenSet;
+}
+
+vector<uint64_t> ModifyBackupStrategyRequest::GetBackupCycle() const
+{
+    return m_backupCycle;
+}
+
+void ModifyBackupStrategyRequest::SetBackupCycle(const vector<uint64_t>& _backupCycle)
+{
+    m_backupCycle = _backupCycle;
+    m_backupCycleHasBeenSet = true;
+}
+
+bool ModifyBackupStrategyRequest::BackupCycleHasBeenSet() const
+{
+    return m_backupCycleHasBeenSet;
+}
+
+uint64_t ModifyBackupStrategyRequest::GetBackupSaveDays() const
+{
+    return m_backupSaveDays;
+}
+
+void ModifyBackupStrategyRequest::SetBackupSaveDays(const uint64_t& _backupSaveDays)
+{
+    m_backupSaveDays = _backupSaveDays;
+    m_backupSaveDaysHasBeenSet = true;
+}
+
+bool ModifyBackupStrategyRequest::BackupSaveDaysHasBeenSet() const
+{
+    return m_backupSaveDaysHasBeenSet;
 }
 
 

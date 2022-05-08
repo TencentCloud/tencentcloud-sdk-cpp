@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool QQDictHasBeenSet() const;
 
                     /**
-                     * 获取0：安装；1：删除
-                     * @return UpdateType 0：安装；1：删除
+                     * 获取0：安装；1：删除。默认值0
+                     * @return UpdateType 0：安装；1：删除。默认值0
                      */
                     int64_t GetUpdateType() const;
 
                     /**
-                     * 设置0：安装；1：删除
-                     * @param UpdateType 0：安装；1：删除
+                     * 设置0：安装；1：删除。默认值0
+                     * @param UpdateType 0：安装；1：删除。默认值0
                      */
                     void SetUpdateType(const int64_t& _updateType);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool UpdateTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否强制重启集群
-                     * @return ForceRestart 是否强制重启集群
+                     * 获取是否强制重启集群。默认值false
+                     * @return ForceRestart 是否强制重启集群。默认值false
                      */
                     bool GetForceRestart() const;
 
                     /**
-                     * 设置是否强制重启集群
-                     * @param ForceRestart 是否强制重启集群
+                     * 设置是否强制重启集群。默认值false
+                     * @param ForceRestart 是否强制重启集群。默认值false
                      */
                     void SetForceRestart(const bool& _forceRestart);
 
@@ -201,13 +201,13 @@ namespace TencentCloud
                     bool m_qQDictHasBeenSet;
 
                     /**
-                     * 0：安装；1：删除
+                     * 0：安装；1：删除。默认值0
                      */
                     int64_t m_updateType;
                     bool m_updateTypeHasBeenSet;
 
                     /**
-                     * 是否强制重启集群
+                     * 是否强制重启集群。默认值false
                      */
                     bool m_forceRestart;
                     bool m_forceRestartHasBeenSet;

@@ -107,20 +107,20 @@ namespace TencentCloud
                     bool ImageBase64HasBeenSet() const;
 
                     /**
-                     * 获取需返回的字段名称，例：
+                     * 获取自定义结构化功能需返回的字段名称，例：
 若客户只想返回姓名、性别两个字段的识别结果，则输入
 ItemNames=["姓名","性别"]
-                     * @return ItemNames 需返回的字段名称，例：
+                     * @return ItemNames 自定义结构化功能需返回的字段名称，例：
 若客户只想返回姓名、性别两个字段的识别结果，则输入
 ItemNames=["姓名","性别"]
                      */
                     std::vector<std::string> GetItemNames() const;
 
                     /**
-                     * 设置需返回的字段名称，例：
+                     * 设置自定义结构化功能需返回的字段名称，例：
 若客户只想返回姓名、性别两个字段的识别结果，则输入
 ItemNames=["姓名","性别"]
-                     * @param ItemNames 需返回的字段名称，例：
+                     * @param ItemNames 自定义结构化功能需返回的字段名称，例：
 若客户只想返回姓名、性别两个字段的识别结果，则输入
 ItemNames=["姓名","性别"]
                      */
@@ -154,7 +154,7 @@ ItemNames=["姓名","性别"]
                     bool m_imageBase64HasBeenSet;
 
                     /**
-                     * 需返回的字段名称，例：
+                     * 自定义结构化功能需返回的字段名称，例：
 若客户只想返回姓名、性别两个字段的识别结果，则输入
 ItemNames=["姓名","性别"]
                      */

@@ -40,6 +40,49 @@ TeoClient::TeoClient(const Credential &credential, const string &region, const C
 }
 
 
+TeoClient::CreatePrefetchTaskOutcome TeoClient::CreatePrefetchTask(const CreatePrefetchTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePrefetchTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePrefetchTaskResponse rsp = CreatePrefetchTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePrefetchTaskOutcome(rsp);
+        else
+            return CreatePrefetchTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePrefetchTaskOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::CreatePrefetchTaskAsync(const CreatePrefetchTaskRequest& request, const CreatePrefetchTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePrefetchTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::CreatePrefetchTaskOutcomeCallable TeoClient::CreatePrefetchTaskCallable(const CreatePrefetchTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePrefetchTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePrefetchTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::CreatePurgeTaskOutcome TeoClient::CreatePurgeTask(const CreatePurgeTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePurgeTask");
@@ -76,6 +119,49 @@ TeoClient::CreatePurgeTaskOutcomeCallable TeoClient::CreatePurgeTaskCallable(con
         [this, request]()
         {
             return this->CreatePurgeTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DescribePrefetchTasksOutcome TeoClient::DescribePrefetchTasks(const DescribePrefetchTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrefetchTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrefetchTasksResponse rsp = DescribePrefetchTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrefetchTasksOutcome(rsp);
+        else
+            return DescribePrefetchTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrefetchTasksOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribePrefetchTasksAsync(const DescribePrefetchTasksRequest& request, const DescribePrefetchTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrefetchTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribePrefetchTasksOutcomeCallable TeoClient::DescribePrefetchTasksCallable(const DescribePrefetchTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePrefetchTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrefetchTasks(request);
         }
     );
 

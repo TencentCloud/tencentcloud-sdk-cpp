@@ -229,6 +229,8 @@
 #include <tencentcloud/tsf/v20180326/model/DescribePluginInstancesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribePodInstancesRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribePodInstancesResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeProgramsRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeProgramsResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribePublicConfigRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribePublicConfigResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribePublicConfigReleaseLogsRequest.h>
@@ -702,6 +704,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePodInstancesResponse> DescribePodInstancesOutcome;
                 typedef std::future<DescribePodInstancesOutcome> DescribePodInstancesOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribePodInstancesRequest&, DescribePodInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePodInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProgramsResponse> DescribeProgramsOutcome;
+                typedef std::future<DescribeProgramsOutcome> DescribeProgramsOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeProgramsRequest&, DescribeProgramsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProgramsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePublicConfigResponse> DescribePublicConfigOutcome;
                 typedef std::future<DescribePublicConfigOutcome> DescribePublicConfigOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribePublicConfigRequest&, DescribePublicConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePublicConfigAsyncHandler;
@@ -1858,6 +1863,15 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribePodInstancesOutcome DescribePodInstances(const Model::DescribePodInstancesRequest &request);
                 void DescribePodInstancesAsync(const Model::DescribePodInstancesRequest& request, const DescribePodInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePodInstancesOutcomeCallable DescribePodInstancesCallable(const Model::DescribePodInstancesRequest& request);
+
+                /**
+                 *查询数据集列表
+                 * @param req DescribeProgramsRequest
+                 * @return DescribeProgramsOutcome
+                 */
+                DescribeProgramsOutcome DescribePrograms(const Model::DescribeProgramsRequest &request);
+                void DescribeProgramsAsync(const Model::DescribeProgramsRequest& request, const DescribeProgramsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProgramsOutcomeCallable DescribeProgramsCallable(const Model::DescribeProgramsRequest& request);
 
                 /**
                  *查询公共配置（单条）

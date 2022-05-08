@@ -694,6 +694,24 @@ namespace TencentCloud
                     bool DryRunHasBeenSet() const;
 
                     /**
+                     * 获取实例引擎类型，默认为"InnoDB"，支持值包括："InnoDB"，"RocksDB"。
+                     * @return EngineType 实例引擎类型，默认为"InnoDB"，支持值包括："InnoDB"，"RocksDB"。
+                     */
+                    std::string GetEngineType() const;
+
+                    /**
+                     * 设置实例引擎类型，默认为"InnoDB"，支持值包括："InnoDB"，"RocksDB"。
+                     * @param EngineType 实例引擎类型，默认为"InnoDB"，支持值包括："InnoDB"，"RocksDB"。
+                     */
+                    void SetEngineType(const std::string& _engineType);
+
+                    /**
+                     * 判断参数 EngineType 是否已赋值
+                     * @return EngineType 是否已赋值
+                     */
+                    bool EngineTypeHasBeenSet() const;
+
+                    /**
                      * 获取指定实例的IP列表。仅支持主实例指定，按实例顺序，不足则按未指定处理。
                      * @return Vips 指定实例的IP列表。仅支持主实例指定，按实例顺序，不足则按未指定处理。
                      */
@@ -928,6 +946,12 @@ namespace TencentCloud
                      */
                     bool m_dryRun;
                     bool m_dryRunHasBeenSet;
+
+                    /**
+                     * 实例引擎类型，默认为"InnoDB"，支持值包括："InnoDB"，"RocksDB"。
+                     */
+                    std::string m_engineType;
+                    bool m_engineTypeHasBeenSet;
 
                     /**
                      * 指定实例的IP列表。仅支持主实例指定，按实例顺序，不足则按未指定处理。

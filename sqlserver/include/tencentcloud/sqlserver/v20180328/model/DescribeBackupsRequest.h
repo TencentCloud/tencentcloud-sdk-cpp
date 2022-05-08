@@ -240,6 +240,42 @@ namespace TencentCloud
                      */
                     bool GroupHasBeenSet() const;
 
+                    /**
+                     * 获取备份类型，1-数据备份，2-日志备份，默认值为1
+                     * @return Type 备份类型，1-数据备份，2-日志备份，默认值为1
+                     */
+                    int64_t GetType() const;
+
+                    /**
+                     * 设置备份类型，1-数据备份，2-日志备份，默认值为1
+                     * @param Type 备份类型，1-数据备份，2-日志备份，默认值为1
+                     */
+                    void SetType(const int64_t& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取按照备份文件形式筛选，pkg-打包备份文件，single-单库备份文件
+                     * @return BackupFormat 按照备份文件形式筛选，pkg-打包备份文件，single-单库备份文件
+                     */
+                    std::string GetBackupFormat() const;
+
+                    /**
+                     * 设置按照备份文件形式筛选，pkg-打包备份文件，single-单库备份文件
+                     * @param BackupFormat 按照备份文件形式筛选，pkg-打包备份文件，single-单库备份文件
+                     */
+                    void SetBackupFormat(const std::string& _backupFormat);
+
+                    /**
+                     * 判断参数 BackupFormat 是否已赋值
+                     * @return BackupFormat 是否已赋值
+                     */
+                    bool BackupFormatHasBeenSet() const;
+
                 private:
 
                     /**
@@ -307,6 +343,18 @@ namespace TencentCloud
                      */
                     int64_t m_group;
                     bool m_groupHasBeenSet;
+
+                    /**
+                     * 备份类型，1-数据备份，2-日志备份，默认值为1
+                     */
+                    int64_t m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * 按照备份文件形式筛选，pkg-打包备份文件，single-单库备份文件
+                     */
+                    std::string m_backupFormat;
+                    bool m_backupFormatHasBeenSet;
 
                 };
             }

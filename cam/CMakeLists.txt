@@ -27,16 +27,17 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/SetMfaFlagResponse.h
   include/tencentcloud/cam/v20190116/model/UpdateSAMLProviderRequest.h
   include/tencentcloud/cam/v20190116/model/DeleteUserRequest.h
-  include/tencentcloud/cam/v20190116/model/GetRolePermissionBoundaryResponse.h
+  include/tencentcloud/cam/v20190116/model/DetachGroupPolicyRequest.h
   include/tencentcloud/cam/v20190116/model/DescribeRoleListResponse.h
   include/tencentcloud/cam/v20190116/model/UpdatePolicyResponse.h
-  include/tencentcloud/cam/v20190116/model/CreatePolicyResponse.h
+  include/tencentcloud/cam/v20190116/model/DeleteUserResponse.h
   include/tencentcloud/cam/v20190116/model/GetRoleRequest.h
   include/tencentcloud/cam/v20190116/model/CreateServiceLinkedRoleRequest.h
   include/tencentcloud/cam/v20190116/model/ListAttachedGroupPoliciesRequest.h
   include/tencentcloud/cam/v20190116/model/ListGroupsForUserRequest.h
   include/tencentcloud/cam/v20190116/model/AttachRolePolicyResponse.h
   include/tencentcloud/cam/v20190116/model/GetUserPermissionBoundaryRequest.h
+  include/tencentcloud/cam/v20190116/model/DescribeOIDCConfigRequest.h
   include/tencentcloud/cam/v20190116/model/GetRolePermissionBoundaryRequest.h
   include/tencentcloud/cam/v20190116/model/GetServiceLinkedRoleDeletionStatusResponse.h
   include/tencentcloud/cam/v20190116/model/GetSecurityLastUsedRequest.h
@@ -45,10 +46,10 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/ListUsersResponse.h
   include/tencentcloud/cam/v20190116/model/UpdateRoleDescriptionResponse.h
   include/tencentcloud/cam/v20190116/model/GetAccountSummaryRequest.h
-  include/tencentcloud/cam/v20190116/model/DetachUserPolicyRequest.h
+  include/tencentcloud/cam/v20190116/model/DeletePolicyResponse.h
   include/tencentcloud/cam/v20190116/model/GetUserAppIdResponse.h
   include/tencentcloud/cam/v20190116/model/GetUserAppIdRequest.h
-  include/tencentcloud/cam/v20190116/model/ListGroupsResponse.h
+  include/tencentcloud/cam/v20190116/model/DescribeOIDCConfigResponse.h
   include/tencentcloud/cam/v20190116/model/ListPolicyVersionsRequest.h
   include/tencentcloud/cam/v20190116/model/GetCustomMFATokenInfoRequest.h
   include/tencentcloud/cam/v20190116/model/DescribeRoleListRequest.h
@@ -57,12 +58,13 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/GetGroupRequest.h
   include/tencentcloud/cam/v20190116/model/DeleteRoleResponse.h
   include/tencentcloud/cam/v20190116/model/PolicyVersionItem.h
+  include/tencentcloud/cam/v20190116/model/DetachUserPolicyRequest.h
   include/tencentcloud/cam/v20190116/model/DescribeSubAccountsRequest.h
   include/tencentcloud/cam/v20190116/model/DeleteUserPermissionsBoundaryRequest.h
   include/tencentcloud/cam/v20190116/model/ListSAMLProvidersRequest.h
   include/tencentcloud/cam/v20190116/model/ListGroupsRequest.h
   include/tencentcloud/cam/v20190116/model/DeletePolicyVersionResponse.h
-  include/tencentcloud/cam/v20190116/model/DetachGroupPolicyRequest.h
+  include/tencentcloud/cam/v20190116/model/GetRolePermissionBoundaryResponse.h
   include/tencentcloud/cam/v20190116/model/AttachedUserPolicyGroupInfo.h
   include/tencentcloud/cam/v20190116/model/ListGroupsForUserResponse.h
   include/tencentcloud/cam/v20190116/model/ListUsersForGroupRequest.h
@@ -84,7 +86,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/DeleteGroupRequest.h
   include/tencentcloud/cam/v20190116/model/GetUserResponse.h
   include/tencentcloud/cam/v20190116/model/GetUserPermissionBoundaryResponse.h
-  include/tencentcloud/cam/v20190116/model/DeleteUserResponse.h
+  include/tencentcloud/cam/v20190116/model/CreatePolicyResponse.h
   include/tencentcloud/cam/v20190116/model/DetachRolePolicyRequest.h
   include/tencentcloud/cam/v20190116/model/ListPoliciesGrantingServiceAccessResponse.h
   include/tencentcloud/cam/v20190116/model/DeleteRolePermissionsBoundaryRequest.h
@@ -98,8 +100,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/DeleteRoleRequest.h
   include/tencentcloud/cam/v20190116/model/ListWeChatWorkSubAccountsRequest.h
   include/tencentcloud/cam/v20190116/model/UpdateRoleConsoleLoginRequest.h
-  include/tencentcloud/cam/v20190116/model/ListCollaboratorsRequest.h
-  include/tencentcloud/cam/v20190116/model/GetCustomMFATokenInfoResponse.h
+  include/tencentcloud/cam/v20190116/model/UpdateUserResponse.h
   include/tencentcloud/cam/v20190116/model/UpdateAssumeRolePolicyResponse.h
   include/tencentcloud/cam/v20190116/model/GetPolicyVersionRequest.h
   include/tencentcloud/cam/v20190116/model/CreateSAMLProviderResponse.h
@@ -124,18 +125,21 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/AttachUserPolicyRequest.h
   include/tencentcloud/cam/v20190116/model/ListAttachedGroupPoliciesResponse.h
   include/tencentcloud/cam/v20190116/model/ListAttachedUserPoliciesResponse.h
+  include/tencentcloud/cam/v20190116/model/ListGroupsResponse.h
   include/tencentcloud/cam/v20190116/model/PutUserPermissionsBoundaryResponse.h
-  include/tencentcloud/cam/v20190116/model/DeletePolicyResponse.h
+  include/tencentcloud/cam/v20190116/model/GetPolicyVersionResponse.h
+  include/tencentcloud/cam/v20190116/model/GetCustomMFATokenInfoResponse.h
   include/tencentcloud/cam/v20190116/model/ConsumeCustomMFATokenRequest.h
+  include/tencentcloud/cam/v20190116/model/CreateOIDCConfigRequest.h
   include/tencentcloud/cam/v20190116/model/AccessKey.h
   include/tencentcloud/cam/v20190116/model/GetGroupResponse.h
+  include/tencentcloud/cam/v20190116/model/UpdateOIDCConfigResponse.h
   include/tencentcloud/cam/v20190116/model/DeleteSAMLProviderRequest.h
   include/tencentcloud/cam/v20190116/model/DeleteSAMLProviderResponse.h
-  include/tencentcloud/cam/v20190116/model/UpdateUserResponse.h
   include/tencentcloud/cam/v20190116/model/GetAccountSummaryResponse.h
   include/tencentcloud/cam/v20190116/model/CreateServiceLinkedRoleResponse.h
   include/tencentcloud/cam/v20190116/model/ListUsersRequest.h
-  include/tencentcloud/cam/v20190116/model/GetSAMLProviderResponse.h
+  include/tencentcloud/cam/v20190116/model/ListCollaboratorsRequest.h
   include/tencentcloud/cam/v20190116/model/CreateUserOIDCConfigRequest.h
   include/tencentcloud/cam/v20190116/model/AttachGroupPolicyResponse.h
   include/tencentcloud/cam/v20190116/model/UpdateGroupResponse.h
@@ -144,15 +148,17 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/GetServiceLinkedRoleDeletionStatusRequest.h
   include/tencentcloud/cam/v20190116/model/ListGrantServiceAccessActionNode.h
   include/tencentcloud/cam/v20190116/model/DetachGroupPolicyResponse.h
+  include/tencentcloud/cam/v20190116/model/GroupMemberInfo.h
   include/tencentcloud/cam/v20190116/model/CreatePolicyRequest.h
   include/tencentcloud/cam/v20190116/model/ListAttachedUserAllPoliciesRequest.h
   include/tencentcloud/cam/v20190116/model/DeletePolicyVersionRequest.h
   include/tencentcloud/cam/v20190116/model/CreateUserSAMLConfigRequest.h
   include/tencentcloud/cam/v20190116/model/UpdateGroupRequest.h
   include/tencentcloud/cam/v20190116/model/ListGrantServiceAccessNode.h
-  include/tencentcloud/cam/v20190116/model/GetPolicyVersionResponse.h
-  include/tencentcloud/cam/v20190116/model/CreateRoleResponse.h
   include/tencentcloud/cam/v20190116/model/AttachGroupPolicyRequest.h
+  include/tencentcloud/cam/v20190116/model/UpdateOIDCConfigRequest.h
+  include/tencentcloud/cam/v20190116/model/CreateRoleResponse.h
+  include/tencentcloud/cam/v20190116/model/GetSAMLProviderResponse.h
   include/tencentcloud/cam/v20190116/model/DescribeSafeAuthFlagIntlResponse.h
   include/tencentcloud/cam/v20190116/model/ListPolicyVersionsResponse.h
   include/tencentcloud/cam/v20190116/model/GetPolicyRequest.h
@@ -163,6 +169,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/RemoveUserFromGroupResponse.h
   include/tencentcloud/cam/v20190116/model/DetachRolePolicyResponse.h
   include/tencentcloud/cam/v20190116/model/DescribeUserOIDCConfigRequest.h
+  include/tencentcloud/cam/v20190116/model/CreateOIDCConfigResponse.h
   include/tencentcloud/cam/v20190116/model/AttachedPolicyOfRole.h
   include/tencentcloud/cam/v20190116/model/PutUserPermissionsBoundaryRequest.h
   include/tencentcloud/cam/v20190116/model/ListSAMLProvidersResponse.h
@@ -174,11 +181,12 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/CreateRoleRequest.h
   include/tencentcloud/cam/v20190116/model/AttachedUserPolicy.h
   include/tencentcloud/cam/v20190116/model/DeleteServiceLinkedRoleResponse.h
+  include/tencentcloud/cam/v20190116/model/ListUsersForGroupResponse.h
   include/tencentcloud/cam/v20190116/model/GetPolicyResponse.h
   include/tencentcloud/cam/v20190116/model/DescribeSafeAuthFlagRequest.h
   include/tencentcloud/cam/v20190116/model/DeleteServiceLinkedRoleRequest.h
   include/tencentcloud/cam/v20190116/model/AttachEntityOfPolicy.h
-  include/tencentcloud/cam/v20190116/model/ListUsersForGroupResponse.h
+  include/tencentcloud/cam/v20190116/model/DeleteOIDCConfigResponse.h
   include/tencentcloud/cam/v20190116/model/PolicyVersionDetail.h
   include/tencentcloud/cam/v20190116/model/AddUserResponse.h
   include/tencentcloud/cam/v20190116/model/ListGrantServiceAccessService.h
@@ -197,7 +205,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/GetSecurityLastUsedResponse.h
   include/tencentcloud/cam/v20190116/model/ListAttachedUserPoliciesRequest.h
   include/tencentcloud/cam/v20190116/model/UpdatePolicyRequest.h
-  include/tencentcloud/cam/v20190116/model/GroupMemberInfo.h
+  include/tencentcloud/cam/v20190116/model/DeleteOIDCConfigRequest.h
   include/tencentcloud/cam/v20190116/model/CreateGroupResponse.h
   )
 
@@ -211,16 +219,17 @@ set(cam_src
   src/v20190116/model/SetMfaFlagResponse.cpp
   src/v20190116/model/UpdateSAMLProviderRequest.cpp
   src/v20190116/model/DeleteUserRequest.cpp
-  src/v20190116/model/GetRolePermissionBoundaryResponse.cpp
+  src/v20190116/model/DetachGroupPolicyRequest.cpp
   src/v20190116/model/DescribeRoleListResponse.cpp
   src/v20190116/model/UpdatePolicyResponse.cpp
-  src/v20190116/model/CreatePolicyResponse.cpp
+  src/v20190116/model/DeleteUserResponse.cpp
   src/v20190116/model/GetRoleRequest.cpp
   src/v20190116/model/CreateServiceLinkedRoleRequest.cpp
   src/v20190116/model/ListAttachedGroupPoliciesRequest.cpp
   src/v20190116/model/ListGroupsForUserRequest.cpp
   src/v20190116/model/AttachRolePolicyResponse.cpp
   src/v20190116/model/GetUserPermissionBoundaryRequest.cpp
+  src/v20190116/model/DescribeOIDCConfigRequest.cpp
   src/v20190116/model/GetRolePermissionBoundaryRequest.cpp
   src/v20190116/model/GetServiceLinkedRoleDeletionStatusResponse.cpp
   src/v20190116/model/GetSecurityLastUsedRequest.cpp
@@ -229,10 +238,10 @@ set(cam_src
   src/v20190116/model/ListUsersResponse.cpp
   src/v20190116/model/UpdateRoleDescriptionResponse.cpp
   src/v20190116/model/GetAccountSummaryRequest.cpp
-  src/v20190116/model/DetachUserPolicyRequest.cpp
+  src/v20190116/model/DeletePolicyResponse.cpp
   src/v20190116/model/GetUserAppIdResponse.cpp
   src/v20190116/model/GetUserAppIdRequest.cpp
-  src/v20190116/model/ListGroupsResponse.cpp
+  src/v20190116/model/DescribeOIDCConfigResponse.cpp
   src/v20190116/model/ListPolicyVersionsRequest.cpp
   src/v20190116/model/GetCustomMFATokenInfoRequest.cpp
   src/v20190116/model/DescribeRoleListRequest.cpp
@@ -241,12 +250,13 @@ set(cam_src
   src/v20190116/model/GetGroupRequest.cpp
   src/v20190116/model/DeleteRoleResponse.cpp
   src/v20190116/model/PolicyVersionItem.cpp
+  src/v20190116/model/DetachUserPolicyRequest.cpp
   src/v20190116/model/DescribeSubAccountsRequest.cpp
   src/v20190116/model/DeleteUserPermissionsBoundaryRequest.cpp
   src/v20190116/model/ListSAMLProvidersRequest.cpp
   src/v20190116/model/ListGroupsRequest.cpp
   src/v20190116/model/DeletePolicyVersionResponse.cpp
-  src/v20190116/model/DetachGroupPolicyRequest.cpp
+  src/v20190116/model/GetRolePermissionBoundaryResponse.cpp
   src/v20190116/model/AttachedUserPolicyGroupInfo.cpp
   src/v20190116/model/ListGroupsForUserResponse.cpp
   src/v20190116/model/ListUsersForGroupRequest.cpp
@@ -268,7 +278,7 @@ set(cam_src
   src/v20190116/model/DeleteGroupRequest.cpp
   src/v20190116/model/GetUserResponse.cpp
   src/v20190116/model/GetUserPermissionBoundaryResponse.cpp
-  src/v20190116/model/DeleteUserResponse.cpp
+  src/v20190116/model/CreatePolicyResponse.cpp
   src/v20190116/model/DetachRolePolicyRequest.cpp
   src/v20190116/model/ListPoliciesGrantingServiceAccessResponse.cpp
   src/v20190116/model/DeleteRolePermissionsBoundaryRequest.cpp
@@ -282,8 +292,7 @@ set(cam_src
   src/v20190116/model/DeleteRoleRequest.cpp
   src/v20190116/model/ListWeChatWorkSubAccountsRequest.cpp
   src/v20190116/model/UpdateRoleConsoleLoginRequest.cpp
-  src/v20190116/model/ListCollaboratorsRequest.cpp
-  src/v20190116/model/GetCustomMFATokenInfoResponse.cpp
+  src/v20190116/model/UpdateUserResponse.cpp
   src/v20190116/model/UpdateAssumeRolePolicyResponse.cpp
   src/v20190116/model/GetPolicyVersionRequest.cpp
   src/v20190116/model/CreateSAMLProviderResponse.cpp
@@ -308,18 +317,21 @@ set(cam_src
   src/v20190116/model/AttachUserPolicyRequest.cpp
   src/v20190116/model/ListAttachedGroupPoliciesResponse.cpp
   src/v20190116/model/ListAttachedUserPoliciesResponse.cpp
+  src/v20190116/model/ListGroupsResponse.cpp
   src/v20190116/model/PutUserPermissionsBoundaryResponse.cpp
-  src/v20190116/model/DeletePolicyResponse.cpp
+  src/v20190116/model/GetPolicyVersionResponse.cpp
+  src/v20190116/model/GetCustomMFATokenInfoResponse.cpp
   src/v20190116/model/ConsumeCustomMFATokenRequest.cpp
+  src/v20190116/model/CreateOIDCConfigRequest.cpp
   src/v20190116/model/AccessKey.cpp
   src/v20190116/model/GetGroupResponse.cpp
+  src/v20190116/model/UpdateOIDCConfigResponse.cpp
   src/v20190116/model/DeleteSAMLProviderRequest.cpp
   src/v20190116/model/DeleteSAMLProviderResponse.cpp
-  src/v20190116/model/UpdateUserResponse.cpp
   src/v20190116/model/GetAccountSummaryResponse.cpp
   src/v20190116/model/CreateServiceLinkedRoleResponse.cpp
   src/v20190116/model/ListUsersRequest.cpp
-  src/v20190116/model/GetSAMLProviderResponse.cpp
+  src/v20190116/model/ListCollaboratorsRequest.cpp
   src/v20190116/model/CreateUserOIDCConfigRequest.cpp
   src/v20190116/model/AttachGroupPolicyResponse.cpp
   src/v20190116/model/UpdateGroupResponse.cpp
@@ -328,15 +340,17 @@ set(cam_src
   src/v20190116/model/GetServiceLinkedRoleDeletionStatusRequest.cpp
   src/v20190116/model/ListGrantServiceAccessActionNode.cpp
   src/v20190116/model/DetachGroupPolicyResponse.cpp
+  src/v20190116/model/GroupMemberInfo.cpp
   src/v20190116/model/CreatePolicyRequest.cpp
   src/v20190116/model/ListAttachedUserAllPoliciesRequest.cpp
   src/v20190116/model/DeletePolicyVersionRequest.cpp
   src/v20190116/model/CreateUserSAMLConfigRequest.cpp
   src/v20190116/model/UpdateGroupRequest.cpp
   src/v20190116/model/ListGrantServiceAccessNode.cpp
-  src/v20190116/model/GetPolicyVersionResponse.cpp
-  src/v20190116/model/CreateRoleResponse.cpp
   src/v20190116/model/AttachGroupPolicyRequest.cpp
+  src/v20190116/model/UpdateOIDCConfigRequest.cpp
+  src/v20190116/model/CreateRoleResponse.cpp
+  src/v20190116/model/GetSAMLProviderResponse.cpp
   src/v20190116/model/DescribeSafeAuthFlagIntlResponse.cpp
   src/v20190116/model/ListPolicyVersionsResponse.cpp
   src/v20190116/model/GetPolicyRequest.cpp
@@ -347,6 +361,7 @@ set(cam_src
   src/v20190116/model/RemoveUserFromGroupResponse.cpp
   src/v20190116/model/DetachRolePolicyResponse.cpp
   src/v20190116/model/DescribeUserOIDCConfigRequest.cpp
+  src/v20190116/model/CreateOIDCConfigResponse.cpp
   src/v20190116/model/AttachedPolicyOfRole.cpp
   src/v20190116/model/PutUserPermissionsBoundaryRequest.cpp
   src/v20190116/model/ListSAMLProvidersResponse.cpp
@@ -358,11 +373,12 @@ set(cam_src
   src/v20190116/model/CreateRoleRequest.cpp
   src/v20190116/model/AttachedUserPolicy.cpp
   src/v20190116/model/DeleteServiceLinkedRoleResponse.cpp
+  src/v20190116/model/ListUsersForGroupResponse.cpp
   src/v20190116/model/GetPolicyResponse.cpp
   src/v20190116/model/DescribeSafeAuthFlagRequest.cpp
   src/v20190116/model/DeleteServiceLinkedRoleRequest.cpp
   src/v20190116/model/AttachEntityOfPolicy.cpp
-  src/v20190116/model/ListUsersForGroupResponse.cpp
+  src/v20190116/model/DeleteOIDCConfigResponse.cpp
   src/v20190116/model/PolicyVersionDetail.cpp
   src/v20190116/model/AddUserResponse.cpp
   src/v20190116/model/ListGrantServiceAccessService.cpp
@@ -381,7 +397,7 @@ set(cam_src
   src/v20190116/model/GetSecurityLastUsedResponse.cpp
   src/v20190116/model/ListAttachedUserPoliciesRequest.cpp
   src/v20190116/model/UpdatePolicyRequest.cpp
-  src/v20190116/model/GroupMemberInfo.cpp
+  src/v20190116/model/DeleteOIDCConfigRequest.cpp
   src/v20190116/model/CreateGroupResponse.cpp
   )
 

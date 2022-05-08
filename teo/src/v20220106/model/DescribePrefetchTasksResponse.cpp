@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tke/v20180525/model/CreateClusterAsGroupResponse.h>
+#include <tencentcloud/teo/v20220106/model/DescribePrefetchTasksResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tke::V20180525::Model;
+using namespace TencentCloud::Teo::V20220106::Model;
 using namespace std;
 
-CreateClusterAsGroupResponse::CreateClusterAsGroupResponse() :
-    m_launchConfigurationIdHasBeenSet(false),
-    m_autoScalingGroupIdHasBeenSet(false)
+DescribePrefetchTasksResponse::DescribePrefetchTasksResponse() :
+    m_totalCountHasBeenSet(false),
+    m_tasksHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome CreateClusterAsGroupResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribePrefetchTasksResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,50 +63,67 @@ CoreInternalOutcome CreateClusterAsGroupResponse::Deserialize(const string &payl
     }
 
 
-    if (rsp.HasMember("LaunchConfigurationId") && !rsp["LaunchConfigurationId"].IsNull())
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
-        if (!rsp["LaunchConfigurationId"].IsString())
+        if (!rsp["TotalCount"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `LaunchConfigurationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_launchConfigurationId = string(rsp["LaunchConfigurationId"].GetString());
-        m_launchConfigurationIdHasBeenSet = true;
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
     }
 
-    if (rsp.HasMember("AutoScalingGroupId") && !rsp["AutoScalingGroupId"].IsNull())
+    if (rsp.HasMember("Tasks") && !rsp["Tasks"].IsNull())
     {
-        if (!rsp["AutoScalingGroupId"].IsString())
+        if (!rsp["Tasks"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Tasks` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Tasks"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `AutoScalingGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            Task item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tasks.push_back(item);
         }
-        m_autoScalingGroupId = string(rsp["AutoScalingGroupId"].GetString());
-        m_autoScalingGroupIdHasBeenSet = true;
+        m_tasksHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string CreateClusterAsGroupResponse::ToJsonString() const
+string DescribePrefetchTasksResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_launchConfigurationIdHasBeenSet)
+    if (m_totalCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "LaunchConfigurationId";
+        string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_launchConfigurationId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
     }
 
-    if (m_autoScalingGroupIdHasBeenSet)
+    if (m_tasksHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AutoScalingGroupId";
+        string key = "Tasks";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_autoScalingGroupId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tasks.begin(); itr != m_tasks.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -121,24 +138,24 @@ string CreateClusterAsGroupResponse::ToJsonString() const
 }
 
 
-string CreateClusterAsGroupResponse::GetLaunchConfigurationId() const
+uint64_t DescribePrefetchTasksResponse::GetTotalCount() const
 {
-    return m_launchConfigurationId;
+    return m_totalCount;
 }
 
-bool CreateClusterAsGroupResponse::LaunchConfigurationIdHasBeenSet() const
+bool DescribePrefetchTasksResponse::TotalCountHasBeenSet() const
 {
-    return m_launchConfigurationIdHasBeenSet;
+    return m_totalCountHasBeenSet;
 }
 
-string CreateClusterAsGroupResponse::GetAutoScalingGroupId() const
+vector<Task> DescribePrefetchTasksResponse::GetTasks() const
 {
-    return m_autoScalingGroupId;
+    return m_tasks;
 }
 
-bool CreateClusterAsGroupResponse::AutoScalingGroupIdHasBeenSet() const
+bool DescribePrefetchTasksResponse::TasksHasBeenSet() const
 {
-    return m_autoScalingGroupIdHasBeenSet;
+    return m_tasksHasBeenSet;
 }
 
 

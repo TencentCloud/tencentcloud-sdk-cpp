@@ -102,7 +102,6 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/PrometheusAlertRule.h
   include/tencentcloud/tke/v20180525/model/ImageCache.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusAgentInstancesRequest.h
-  include/tencentcloud/tke/v20180525/model/ForwardApplicationRequestV3Response.h
   include/tencentcloud/tke/v20180525/model/ClusterNetworkSettings.h
   include/tencentcloud/tke/v20180525/model/DescribeImagesResponse.h
   include/tencentcloud/tke/v20180525/model/AutoScalingGroupRange.h
@@ -142,7 +141,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribeClusterStatusRequest.h
   include/tencentcloud/tke/v20180525/model/VersionInstance.h
   include/tencentcloud/tke/v20180525/model/PrometheusConfigItem.h
-  include/tencentcloud/tke/v20180525/model/DescribeClusterStatusResponse.h
+  include/tencentcloud/tke/v20180525/model/DescribePrometheusTemplatesResponse.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterNodePoolRequest.h
   include/tencentcloud/tke/v20180525/model/EksCi.h
   include/tencentcloud/tke/v20180525/model/UpdateImageCacheResponse.h
@@ -202,7 +201,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/GetClusterLevelPriceResponse.h
   include/tencentcloud/tke/v20180525/model/HttpGet.h
   include/tencentcloud/tke/v20180525/model/DescribeResourceUsageResponse.h
-  include/tencentcloud/tke/v20180525/model/CreateClusterAsGroupRequest.h
+  include/tencentcloud/tke/v20180525/model/DescribeClusterStatusResponse.h
   include/tencentcloud/tke/v20180525/model/ImageRegistryCredential.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterNodePoolsResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeRouteTableConflictsResponse.h
@@ -217,12 +216,11 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DeletePrometheusAlertRuleResponse.h
   include/tencentcloud/tke/v20180525/model/PrometheusTemplate.h
   include/tencentcloud/tke/v20180525/model/AcquireClusterAdminRoleRequest.h
-  include/tencentcloud/tke/v20180525/model/CreateClusterAsGroupResponse.h
+  include/tencentcloud/tke/v20180525/model/DeletePrometheusTemplateResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeEksContainerInstanceLogRequest.h
   include/tencentcloud/tke/v20180525/model/ModifyClusterAuthenticationOptionsResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterAuthenticationOptionsResponse.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterAsGroupsResponse.h
-  include/tencentcloud/tke/v20180525/model/DescribePrometheusTemplatesResponse.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusInstanceRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterInstancesRequest.h
   include/tencentcloud/tke/v20180525/model/InstanceAdvancedSettings.h
@@ -250,7 +248,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/Probe.h
   include/tencentcloud/tke/v20180525/model/ModifyPrometheusTemplateResponse.h
   include/tencentcloud/tke/v20180525/model/GetTkeAppChartListResponse.h
-  include/tencentcloud/tke/v20180525/model/DeletePrometheusTemplateResponse.h
+  include/tencentcloud/tke/v20180525/model/ForwardApplicationRequestV3Response.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusTemplateSyncRequest.h
   include/tencentcloud/tke/v20180525/model/UpdateClusterVersionRequest.h
   include/tencentcloud/tke/v20180525/model/ModifyClusterAuthenticationOptionsRequest.h
@@ -431,7 +429,6 @@ set(tke_src
   src/v20180525/model/PrometheusAlertRule.cpp
   src/v20180525/model/ImageCache.cpp
   src/v20180525/model/DescribePrometheusAgentInstancesRequest.cpp
-  src/v20180525/model/ForwardApplicationRequestV3Response.cpp
   src/v20180525/model/ClusterNetworkSettings.cpp
   src/v20180525/model/DescribeImagesResponse.cpp
   src/v20180525/model/AutoScalingGroupRange.cpp
@@ -471,7 +468,7 @@ set(tke_src
   src/v20180525/model/DescribeClusterStatusRequest.cpp
   src/v20180525/model/VersionInstance.cpp
   src/v20180525/model/PrometheusConfigItem.cpp
-  src/v20180525/model/DescribeClusterStatusResponse.cpp
+  src/v20180525/model/DescribePrometheusTemplatesResponse.cpp
   src/v20180525/model/DeleteClusterNodePoolRequest.cpp
   src/v20180525/model/EksCi.cpp
   src/v20180525/model/UpdateImageCacheResponse.cpp
@@ -531,7 +528,7 @@ set(tke_src
   src/v20180525/model/GetClusterLevelPriceResponse.cpp
   src/v20180525/model/HttpGet.cpp
   src/v20180525/model/DescribeResourceUsageResponse.cpp
-  src/v20180525/model/CreateClusterAsGroupRequest.cpp
+  src/v20180525/model/DescribeClusterStatusResponse.cpp
   src/v20180525/model/ImageRegistryCredential.cpp
   src/v20180525/model/DescribeClusterNodePoolsResponse.cpp
   src/v20180525/model/DescribeRouteTableConflictsResponse.cpp
@@ -546,12 +543,11 @@ set(tke_src
   src/v20180525/model/DeletePrometheusAlertRuleResponse.cpp
   src/v20180525/model/PrometheusTemplate.cpp
   src/v20180525/model/AcquireClusterAdminRoleRequest.cpp
-  src/v20180525/model/CreateClusterAsGroupResponse.cpp
+  src/v20180525/model/DeletePrometheusTemplateResponse.cpp
   src/v20180525/model/DescribeEksContainerInstanceLogRequest.cpp
   src/v20180525/model/ModifyClusterAuthenticationOptionsResponse.cpp
   src/v20180525/model/DescribeClusterAuthenticationOptionsResponse.cpp
   src/v20180525/model/DeleteClusterAsGroupsResponse.cpp
-  src/v20180525/model/DescribePrometheusTemplatesResponse.cpp
   src/v20180525/model/DescribePrometheusInstanceRequest.cpp
   src/v20180525/model/DescribeClusterInstancesRequest.cpp
   src/v20180525/model/InstanceAdvancedSettings.cpp
@@ -579,7 +575,7 @@ set(tke_src
   src/v20180525/model/Probe.cpp
   src/v20180525/model/ModifyPrometheusTemplateResponse.cpp
   src/v20180525/model/GetTkeAppChartListResponse.cpp
-  src/v20180525/model/DeletePrometheusTemplateResponse.cpp
+  src/v20180525/model/ForwardApplicationRequestV3Response.cpp
   src/v20180525/model/DescribePrometheusTemplateSyncRequest.cpp
   src/v20180525/model/UpdateClusterVersionRequest.cpp
   src/v20180525/model/ModifyClusterAuthenticationOptionsRequest.cpp

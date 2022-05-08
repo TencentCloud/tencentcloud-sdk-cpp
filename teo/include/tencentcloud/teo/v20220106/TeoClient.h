@@ -23,8 +23,12 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/teo/v20220106/model/CreatePrefetchTaskRequest.h>
+#include <tencentcloud/teo/v20220106/model/CreatePrefetchTaskResponse.h>
 #include <tencentcloud/teo/v20220106/model/CreatePurgeTaskRequest.h>
 #include <tencentcloud/teo/v20220106/model/CreatePurgeTaskResponse.h>
+#include <tencentcloud/teo/v20220106/model/DescribePrefetchTasksRequest.h>
+#include <tencentcloud/teo/v20220106/model/DescribePrefetchTasksResponse.h>
 #include <tencentcloud/teo/v20220106/model/DescribePurgeTasksRequest.h>
 #include <tencentcloud/teo/v20220106/model/DescribePurgeTasksResponse.h>
 #include <tencentcloud/teo/v20220106/model/DescribeZonesRequest.h>
@@ -43,9 +47,15 @@ namespace TencentCloud
                 TeoClient(const Credential &credential, const std::string &region);
                 TeoClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CreatePrefetchTaskResponse> CreatePrefetchTaskOutcome;
+                typedef std::future<CreatePrefetchTaskOutcome> CreatePrefetchTaskOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreatePrefetchTaskRequest&, CreatePrefetchTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrefetchTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePurgeTaskResponse> CreatePurgeTaskOutcome;
                 typedef std::future<CreatePurgeTaskOutcome> CreatePurgeTaskOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreatePurgeTaskRequest&, CreatePurgeTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePurgeTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePrefetchTasksResponse> DescribePrefetchTasksOutcome;
+                typedef std::future<DescribePrefetchTasksOutcome> DescribePrefetchTasksOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribePrefetchTasksRequest&, DescribePrefetchTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrefetchTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePurgeTasksResponse> DescribePurgeTasksOutcome;
                 typedef std::future<DescribePurgeTasksOutcome> DescribePurgeTasksOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribePurgeTasksRequest&, DescribePurgeTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePurgeTasksAsyncHandler;
@@ -56,6 +66,15 @@ namespace TencentCloud
 
 
                 /**
+                 *创建预热任务
+                 * @param req CreatePrefetchTaskRequest
+                 * @return CreatePrefetchTaskOutcome
+                 */
+                CreatePrefetchTaskOutcome CreatePrefetchTask(const Model::CreatePrefetchTaskRequest &request);
+                void CreatePrefetchTaskAsync(const Model::CreatePrefetchTaskRequest& request, const CreatePrefetchTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePrefetchTaskOutcomeCallable CreatePrefetchTaskCallable(const Model::CreatePrefetchTaskRequest& request);
+
+                /**
                  *创建清除缓存任务
                  * @param req CreatePurgeTaskRequest
                  * @return CreatePurgeTaskOutcome
@@ -63,6 +82,15 @@ namespace TencentCloud
                 CreatePurgeTaskOutcome CreatePurgeTask(const Model::CreatePurgeTaskRequest &request);
                 void CreatePurgeTaskAsync(const Model::CreatePurgeTaskRequest& request, const CreatePurgeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreatePurgeTaskOutcomeCallable CreatePurgeTaskCallable(const Model::CreatePurgeTaskRequest& request);
+
+                /**
+                 *查询预热任务状态
+                 * @param req DescribePrefetchTasksRequest
+                 * @return DescribePrefetchTasksOutcome
+                 */
+                DescribePrefetchTasksOutcome DescribePrefetchTasks(const Model::DescribePrefetchTasksRequest &request);
+                void DescribePrefetchTasksAsync(const Model::DescribePrefetchTasksRequest& request, const DescribePrefetchTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrefetchTasksOutcomeCallable DescribePrefetchTasksCallable(const Model::DescribePrefetchTasksRequest& request);
 
                 /**
                  *查询清除缓存历史记录
