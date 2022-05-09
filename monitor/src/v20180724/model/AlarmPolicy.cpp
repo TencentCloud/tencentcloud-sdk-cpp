@@ -50,7 +50,9 @@ AlarmPolicy::AlarmPolicy() :
     m_ruleTypeHasBeenSet(false),
     m_originIdHasBeenSet(false),
     m_tagInstancesHasBeenSet(false),
-    m_filterDimensionsParamHasBeenSet(false)
+    m_filterDimensionsParamHasBeenSet(false),
+    m_isOneClickHasBeenSet(false),
+    m_oneClickStatusHasBeenSet(false)
 {
 }
 
@@ -416,6 +418,26 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
         m_filterDimensionsParamHasBeenSet = true;
     }
 
+    if (value.HasMember("IsOneClick") && !value["IsOneClick"].IsNull())
+    {
+        if (!value["IsOneClick"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.IsOneClick` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isOneClick = value["IsOneClick"].GetInt64();
+        m_isOneClickHasBeenSet = true;
+    }
+
+    if (value.HasMember("OneClickStatus") && !value["OneClickStatus"].IsNull())
+    {
+        if (!value["OneClickStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.OneClickStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_oneClickStatus = value["OneClickStatus"].GetInt64();
+        m_oneClickStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -695,6 +717,22 @@ void AlarmPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "FilterDimensionsParam";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_filterDimensionsParam.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isOneClickHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsOneClick";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isOneClick, allocator);
+    }
+
+    if (m_oneClickStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OneClickStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_oneClickStatus, allocator);
     }
 
 }
@@ -1178,5 +1216,37 @@ void AlarmPolicy::SetFilterDimensionsParam(const string& _filterDimensionsParam)
 bool AlarmPolicy::FilterDimensionsParamHasBeenSet() const
 {
     return m_filterDimensionsParamHasBeenSet;
+}
+
+int64_t AlarmPolicy::GetIsOneClick() const
+{
+    return m_isOneClick;
+}
+
+void AlarmPolicy::SetIsOneClick(const int64_t& _isOneClick)
+{
+    m_isOneClick = _isOneClick;
+    m_isOneClickHasBeenSet = true;
+}
+
+bool AlarmPolicy::IsOneClickHasBeenSet() const
+{
+    return m_isOneClickHasBeenSet;
+}
+
+int64_t AlarmPolicy::GetOneClickStatus() const
+{
+    return m_oneClickStatus;
+}
+
+void AlarmPolicy::SetOneClickStatus(const int64_t& _oneClickStatus)
+{
+    m_oneClickStatus = _oneClickStatus;
+    m_oneClickStatusHasBeenSet = true;
+}
+
+bool AlarmPolicy::OneClickStatusHasBeenSet() const
+{
+    return m_oneClickStatusHasBeenSet;
 }
 

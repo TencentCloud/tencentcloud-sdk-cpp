@@ -36,7 +36,8 @@ HealthCheck::HealthCheck() :
     m_recvContextHasBeenSet(false),
     m_checkTypeHasBeenSet(false),
     m_httpVersionHasBeenSet(false),
-    m_sourceIpTypeHasBeenSet(false)
+    m_sourceIpTypeHasBeenSet(false),
+    m_extendedCodeHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,16 @@ CoreInternalOutcome HealthCheck::Deserialize(const rapidjson::Value &value)
         m_sourceIpTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ExtendedCode") && !value["ExtendedCode"].IsNull())
+    {
+        if (!value["ExtendedCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HealthCheck.ExtendedCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extendedCode = string(value["ExtendedCode"].GetString());
+        m_extendedCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +349,14 @@ void HealthCheck::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "SourceIpType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sourceIpType, allocator);
+    }
+
+    if (m_extendedCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtendedCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extendedCode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -597,5 +616,21 @@ void HealthCheck::SetSourceIpType(const int64_t& _sourceIpType)
 bool HealthCheck::SourceIpTypeHasBeenSet() const
 {
     return m_sourceIpTypeHasBeenSet;
+}
+
+string HealthCheck::GetExtendedCode() const
+{
+    return m_extendedCode;
+}
+
+void HealthCheck::SetExtendedCode(const string& _extendedCode)
+{
+    m_extendedCode = _extendedCode;
+    m_extendedCodeHasBeenSet = true;
+}
+
+bool HealthCheck::ExtendedCodeHasBeenSet() const
+{
+    return m_extendedCodeHasBeenSet;
 }
 

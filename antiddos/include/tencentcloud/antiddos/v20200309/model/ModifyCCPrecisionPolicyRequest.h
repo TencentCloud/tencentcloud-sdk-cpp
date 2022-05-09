@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool PolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取策略方式，可取值alg表示验证码，drop表示丢弃
-                     * @return PolicyAction 策略方式，可取值alg表示验证码，drop表示丢弃
+                     * 获取策略方式。可取值：alg、drop。alg指返回验证码方式验证，drop表示该访问丢弃。
+                     * @return PolicyAction 策略方式。可取值：alg、drop。alg指返回验证码方式验证，drop表示该访问丢弃。
                      */
                     std::string GetPolicyAction() const;
 
                     /**
-                     * 设置策略方式，可取值alg表示验证码，drop表示丢弃
-                     * @param PolicyAction 策略方式，可取值alg表示验证码，drop表示丢弃
+                     * 设置策略方式。可取值：alg、drop。alg指返回验证码方式验证，drop表示该访问丢弃。
+                     * @param PolicyAction 策略方式。可取值：alg、drop。alg指返回验证码方式验证，drop表示该访问丢弃。
                      */
                     void SetPolicyAction(const std::string& _policyAction);
 
@@ -130,7 +130,7 @@ namespace TencentCloud
                     bool m_policyIdHasBeenSet;
 
                     /**
-                     * 策略方式，可取值alg表示验证码，drop表示丢弃
+                     * 策略方式。可取值：alg、drop。alg指返回验证码方式验证，drop表示该访问丢弃。
                      */
                     std::string m_policyAction;
                     bool m_policyActionHasBeenSet;

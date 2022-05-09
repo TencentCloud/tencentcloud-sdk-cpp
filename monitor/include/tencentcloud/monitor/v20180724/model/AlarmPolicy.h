@@ -724,6 +724,50 @@ namespace TencentCloud
                      */
                     bool FilterDimensionsParamHasBeenSet() const;
 
+                    /**
+                     * 获取是否为一键告警策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsOneClick 是否为一键告警策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetIsOneClick() const;
+
+                    /**
+                     * 设置是否为一键告警策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsOneClick 是否为一键告警策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsOneClick(const int64_t& _isOneClick);
+
+                    /**
+                     * 判断参数 IsOneClick 是否已赋值
+                     * @return IsOneClick 是否已赋值
+                     */
+                    bool IsOneClickHasBeenSet() const;
+
+                    /**
+                     * 获取一键告警策略是否开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OneClickStatus 一键告警策略是否开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetOneClickStatus() const;
+
+                    /**
+                     * 设置一键告警策略是否开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OneClickStatus 一键告警策略是否开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOneClickStatus(const int64_t& _oneClickStatus);
+
+                    /**
+                     * 判断参数 OneClickStatus 是否已赋值
+                     * @return OneClickStatus 是否已赋值
+                     */
+                    bool OneClickStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -938,6 +982,20 @@ namespace TencentCloud
                      */
                     std::string m_filterDimensionsParam;
                     bool m_filterDimensionsParamHasBeenSet;
+
+                    /**
+                     * 是否为一键告警策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isOneClick;
+                    bool m_isOneClickHasBeenSet;
+
+                    /**
+                     * 一键告警策略是否开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_oneClickStatus;
+                    bool m_oneClickStatusHasBeenSet;
 
                 };
             }
