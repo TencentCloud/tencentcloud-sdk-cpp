@@ -27,7 +27,8 @@ PrometheusStatus::PrometheusStatus() :
     m_vpcIdHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_regionHasBeenSet(false),
-    m_grafanaHasBeenSet(false)
+    m_grafanaHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,16 @@ CoreInternalOutcome PrometheusStatus::Deserialize(const rapidjson::Value &value)
         m_grafanaHasBeenSet = true;
     }
 
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrometheusStatus.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -175,6 +186,14 @@ void PrometheusStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_grafana.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -290,5 +309,21 @@ void PrometheusStatus::SetGrafana(const GrafanaInfo& _grafana)
 bool PrometheusStatus::GrafanaHasBeenSet() const
 {
     return m_grafanaHasBeenSet;
+}
+
+string PrometheusStatus::GetType() const
+{
+    return m_type;
+}
+
+void PrometheusStatus::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool PrometheusStatus::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 

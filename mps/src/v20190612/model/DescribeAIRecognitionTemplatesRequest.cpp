@@ -25,7 +25,8 @@ using namespace std;
 DescribeAIRecognitionTemplatesRequest::DescribeAIRecognitionTemplatesRequest() :
     m_definitionsHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string DescribeAIRecognitionTemplatesRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -119,6 +128,22 @@ void DescribeAIRecognitionTemplatesRequest::SetLimit(const uint64_t& _limit)
 bool DescribeAIRecognitionTemplatesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeAIRecognitionTemplatesRequest::GetType() const
+{
+    return m_type;
+}
+
+void DescribeAIRecognitionTemplatesRequest::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool DescribeAIRecognitionTemplatesRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 

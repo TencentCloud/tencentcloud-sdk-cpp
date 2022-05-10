@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/antiddos/v20200309/model/SourceServer.h>
 #include <tencentcloud/antiddos/v20200309/model/InstanceRelation.h>
+#include <tencentcloud/antiddos/v20200309/model/RuleInstanceRelation.h>
 
 
 namespace TencentCloud
@@ -133,14 +134,14 @@ UDP(UDP协议)
                     bool RealServersHasBeenSet() const;
 
                     /**
-                     * 获取规则所属的资源实例
-                     * @return InstanceDetails 规则所属的资源实例
+                     * 获取资源实例
+                     * @return InstanceDetails 资源实例
                      */
                     std::vector<InstanceRelation> GetInstanceDetails() const;
 
                     /**
-                     * 设置规则所属的资源实例
-                     * @param InstanceDetails 规则所属的资源实例
+                     * 设置资源实例
+                     * @param InstanceDetails 资源实例
                      */
                     void SetInstanceDetails(const std::vector<InstanceRelation>& _instanceDetails);
 
@@ -149,6 +150,24 @@ UDP(UDP协议)
                      * @return InstanceDetails 是否已赋值
                      */
                     bool InstanceDetailsHasBeenSet() const;
+
+                    /**
+                     * 获取规则所属的资源实例
+                     * @return InstanceDetailRule 规则所属的资源实例
+                     */
+                    std::vector<RuleInstanceRelation> GetInstanceDetailRule() const;
+
+                    /**
+                     * 设置规则所属的资源实例
+                     * @param InstanceDetailRule 规则所属的资源实例
+                     */
+                    void SetInstanceDetailRule(const std::vector<RuleInstanceRelation>& _instanceDetailRule);
+
+                    /**
+                     * 判断参数 InstanceDetailRule 是否已赋值
+                     * @return InstanceDetailRule 是否已赋值
+                     */
+                    bool InstanceDetailRuleHasBeenSet() const;
 
                 private:
 
@@ -180,10 +199,16 @@ UDP(UDP协议)
                     bool m_realServersHasBeenSet;
 
                     /**
-                     * 规则所属的资源实例
+                     * 资源实例
                      */
                     std::vector<InstanceRelation> m_instanceDetails;
                     bool m_instanceDetailsHasBeenSet;
+
+                    /**
+                     * 规则所属的资源实例
+                     */
+                    std::vector<RuleInstanceRelation> m_instanceDetailRule;
+                    bool m_instanceDetailRuleHasBeenSet;
 
                 };
             }

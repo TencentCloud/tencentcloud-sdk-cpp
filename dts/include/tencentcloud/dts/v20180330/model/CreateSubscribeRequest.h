@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool CountHasBeenSet() const;
 
                     /**
-                     * 获取是否自动续费，默认为0，1表示自动续费。小时计费实例设置该标识无效。
-                     * @return AutoRenew 是否自动续费，默认为0，1表示自动续费。小时计费实例设置该标识无效。
+                     * 获取是否自动续费，0表示不自动续费，1表示自动续费，默认为0。小时计费实例设置该标识无效。
+                     * @return AutoRenew 是否自动续费，0表示不自动续费，1表示自动续费，默认为0。小时计费实例设置该标识无效。
                      */
                     int64_t GetAutoRenew() const;
 
                     /**
-                     * 设置是否自动续费，默认为0，1表示自动续费。小时计费实例设置该标识无效。
-                     * @param AutoRenew 是否自动续费，默认为0，1表示自动续费。小时计费实例设置该标识无效。
+                     * 设置是否自动续费，0表示不自动续费，1表示自动续费，默认为0。小时计费实例设置该标识无效。
+                     * @param AutoRenew 是否自动续费，0表示不自动续费，1表示自动续费，默认为0。小时计费实例设置该标识无效。
                      */
                     void SetAutoRenew(const int64_t& _autoRenew);
 
@@ -196,7 +196,7 @@ namespace TencentCloud
                     bool m_countHasBeenSet;
 
                     /**
-                     * 是否自动续费，默认为0，1表示自动续费。小时计费实例设置该标识无效。
+                     * 是否自动续费，0表示不自动续费，1表示自动续费，默认为0。小时计费实例设置该标识无效。
                      */
                     int64_t m_autoRenew;
                     bool m_autoRenewHasBeenSet;

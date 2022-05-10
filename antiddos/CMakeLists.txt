@@ -255,6 +255,7 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/ModifyCCLevelPolicyRequest.h
   include/tencentcloud/antiddos/v20200309/model/DescribeCcGeoIPBlockConfigListRequest.h
   include/tencentcloud/antiddos/v20200309/model/PacketFilterRelation.h
+  include/tencentcloud/antiddos/v20200309/model/RuleInstanceRelation.h
   include/tencentcloud/antiddos/v20200309/model/CreatePacketFilterConfigRequest.h
   include/tencentcloud/antiddos/v20200309/model/DescribeCCTrendRequest.h
   )
@@ -497,6 +498,7 @@ set(antiddos_src
   src/v20200309/model/ModifyCCLevelPolicyRequest.cpp
   src/v20200309/model/DescribeCcGeoIPBlockConfigListRequest.cpp
   src/v20200309/model/PacketFilterRelation.cpp
+  src/v20200309/model/RuleInstanceRelation.cpp
   src/v20200309/model/CreatePacketFilterConfigRequest.cpp
   src/v20200309/model/DescribeCCTrendRequest.cpp
   )
