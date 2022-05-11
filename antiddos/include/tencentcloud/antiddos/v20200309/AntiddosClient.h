@@ -161,6 +161,8 @@
 #include <tencentcloud/antiddos/v20200309/model/DescribeOverviewAttackTrendResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeOverviewCCTrendRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeOverviewCCTrendResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeOverviewDDoSEventListRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeOverviewDDoSEventListResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeOverviewDDoSTrendRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeOverviewDDoSTrendResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeOverviewIndexRequest.h>
@@ -420,6 +422,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeOverviewCCTrendResponse> DescribeOverviewCCTrendOutcome;
                 typedef std::future<DescribeOverviewCCTrendOutcome> DescribeOverviewCCTrendOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeOverviewCCTrendRequest&, DescribeOverviewCCTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOverviewCCTrendAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOverviewDDoSEventListResponse> DescribeOverviewDDoSEventListOutcome;
+                typedef std::future<DescribeOverviewDDoSEventListOutcome> DescribeOverviewDDoSEventListOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::DescribeOverviewDDoSEventListRequest&, DescribeOverviewDDoSEventListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOverviewDDoSEventListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOverviewDDoSTrendResponse> DescribeOverviewDDoSTrendOutcome;
                 typedef std::future<DescribeOverviewDDoSTrendOutcome> DescribeOverviewDDoSTrendOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeOverviewDDoSTrendRequest&, DescribeOverviewDDoSTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOverviewDDoSTrendAsyncHandler;
@@ -1102,6 +1107,15 @@ namespace TencentCloud
                 DescribeOverviewCCTrendOutcome DescribeOverviewCCTrend(const Model::DescribeOverviewCCTrendRequest &request);
                 void DescribeOverviewCCTrendAsync(const Model::DescribeOverviewCCTrendRequest& request, const DescribeOverviewCCTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeOverviewCCTrendOutcomeCallable DescribeOverviewCCTrendCallable(const Model::DescribeOverviewCCTrendRequest& request);
+
+                /**
+                 *获取防护概览的ddos攻击事件
+                 * @param req DescribeOverviewDDoSEventListRequest
+                 * @return DescribeOverviewDDoSEventListOutcome
+                 */
+                DescribeOverviewDDoSEventListOutcome DescribeOverviewDDoSEventList(const Model::DescribeOverviewDDoSEventListRequest &request);
+                void DescribeOverviewDDoSEventListAsync(const Model::DescribeOverviewDDoSEventListRequest& request, const DescribeOverviewDDoSEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOverviewDDoSEventListOutcomeCallable DescribeOverviewDDoSEventListCallable(const Model::DescribeOverviewDDoSEventListRequest& request);
 
                 /**
                  *获取防护概览DDoS攻击流量带宽和攻击包速率数据

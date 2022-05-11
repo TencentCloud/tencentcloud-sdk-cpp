@@ -27,7 +27,8 @@ DescribeListIPAlarmConfigRequest::DescribeListIPAlarmConfigRequest() :
     m_limitHasBeenSet(false),
     m_filterInstanceIdHasBeenSet(false),
     m_filterAlarmTypeHasBeenSet(false),
-    m_filterIpHasBeenSet(false)
+    m_filterIpHasBeenSet(false),
+    m_filterCnameHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string DescribeListIPAlarmConfigRequest::ToJsonString() const
         string key = "FilterIp";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_filterIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filterCnameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterCname";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_filterCname.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void DescribeListIPAlarmConfigRequest::SetFilterIp(const string& _filterIp)
 bool DescribeListIPAlarmConfigRequest::FilterIpHasBeenSet() const
 {
     return m_filterIpHasBeenSet;
+}
+
+string DescribeListIPAlarmConfigRequest::GetFilterCname() const
+{
+    return m_filterCname;
+}
+
+void DescribeListIPAlarmConfigRequest::SetFilterCname(const string& _filterCname)
+{
+    m_filterCname = _filterCname;
+    m_filterCnameHasBeenSet = true;
+}
+
+bool DescribeListIPAlarmConfigRequest::FilterCnameHasBeenSet() const
+{
+    return m_filterCnameHasBeenSet;
 }
 
 

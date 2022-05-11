@@ -231,6 +231,24 @@ table-id - String - （过滤条件）table id形如：12342。
                      */
                     bool TableTypeHasBeenSet() const;
 
+                    /**
+                     * 获取筛选字段-表格式：不传（默认）为查全部；LAKEFS：托管表；ICEBERG：非托管iceberg表；HIVE：非托管hive表；OTHER：非托管其它；
+                     * @return TableFormat 筛选字段-表格式：不传（默认）为查全部；LAKEFS：托管表；ICEBERG：非托管iceberg表；HIVE：非托管hive表；OTHER：非托管其它；
+                     */
+                    std::string GetTableFormat() const;
+
+                    /**
+                     * 设置筛选字段-表格式：不传（默认）为查全部；LAKEFS：托管表；ICEBERG：非托管iceberg表；HIVE：非托管hive表；OTHER：非托管其它；
+                     * @param TableFormat 筛选字段-表格式：不传（默认）为查全部；LAKEFS：托管表；ICEBERG：非托管iceberg表；HIVE：非托管hive表；OTHER：非托管其它；
+                     */
+                    void SetTableFormat(const std::string& _tableFormat);
+
+                    /**
+                     * 判断参数 TableFormat 是否已赋值
+                     * @return TableFormat 是否已赋值
+                     */
+                    bool TableFormatHasBeenSet() const;
+
                 private:
 
                     /**
@@ -294,6 +312,12 @@ table-id - String - （过滤条件）table id形如：12342。
                      */
                     std::string m_tableType;
                     bool m_tableTypeHasBeenSet;
+
+                    /**
+                     * 筛选字段-表格式：不传（默认）为查全部；LAKEFS：托管表；ICEBERG：非托管iceberg表；HIVE：非托管hive表；OTHER：非托管其它；
+                     */
+                    std::string m_tableFormat;
+                    bool m_tableFormatHasBeenSet;
 
                 };
             }

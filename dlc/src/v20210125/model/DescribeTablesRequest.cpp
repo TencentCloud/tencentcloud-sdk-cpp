@@ -32,7 +32,8 @@ DescribeTablesRequest::DescribeTablesRequest() :
     m_endTimeHasBeenSet(false),
     m_sortHasBeenSet(false),
     m_ascHasBeenSet(false),
-    m_tableTypeHasBeenSet(false)
+    m_tableTypeHasBeenSet(false),
+    m_tableFormatHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,14 @@ string DescribeTablesRequest::ToJsonString() const
         string key = "TableType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_tableType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tableFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableFormat";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tableFormat.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -296,6 +305,22 @@ void DescribeTablesRequest::SetTableType(const string& _tableType)
 bool DescribeTablesRequest::TableTypeHasBeenSet() const
 {
     return m_tableTypeHasBeenSet;
+}
+
+string DescribeTablesRequest::GetTableFormat() const
+{
+    return m_tableFormat;
+}
+
+void DescribeTablesRequest::SetTableFormat(const string& _tableFormat)
+{
+    m_tableFormat = _tableFormat;
+    m_tableFormatHasBeenSet = true;
+}
+
+bool DescribeTablesRequest::TableFormatHasBeenSet() const
+{
+    return m_tableFormatHasBeenSet;
 }
 
 

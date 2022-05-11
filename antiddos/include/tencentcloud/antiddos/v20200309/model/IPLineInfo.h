@@ -106,6 +106,42 @@ namespace TencentCloud
                      */
                     bool EipHasBeenSet() const;
 
+                    /**
+                     * 获取实例对应的cname
+                     * @return Cname 实例对应的cname
+                     */
+                    std::string GetCname() const;
+
+                    /**
+                     * 设置实例对应的cname
+                     * @param Cname 实例对应的cname
+                     */
+                    void SetCname(const std::string& _cname);
+
+                    /**
+                     * 判断参数 Cname 是否已赋值
+                     * @return Cname 是否已赋值
+                     */
+                    bool CnameHasBeenSet() const;
+
+                    /**
+                     * 获取资源flag，0：高防包资源，1：高防IP资源，2：非高防资源IP
+                     * @return ResourceFlag 资源flag，0：高防包资源，1：高防IP资源，2：非高防资源IP
+                     */
+                    int64_t GetResourceFlag() const;
+
+                    /**
+                     * 设置资源flag，0：高防包资源，1：高防IP资源，2：非高防资源IP
+                     * @param ResourceFlag 资源flag，0：高防包资源，1：高防IP资源，2：非高防资源IP
+                     */
+                    void SetResourceFlag(const int64_t& _resourceFlag);
+
+                    /**
+                     * 判断参数 ResourceFlag 是否已赋值
+                     * @return ResourceFlag 是否已赋值
+                     */
+                    bool ResourceFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +161,18 @@ namespace TencentCloud
                      */
                     std::string m_eip;
                     bool m_eipHasBeenSet;
+
+                    /**
+                     * 实例对应的cname
+                     */
+                    std::string m_cname;
+                    bool m_cnameHasBeenSet;
+
+                    /**
+                     * 资源flag，0：高防包资源，1：高防IP资源，2：非高防资源IP
+                     */
+                    int64_t m_resourceFlag;
+                    bool m_resourceFlagHasBeenSet;
 
                 };
             }

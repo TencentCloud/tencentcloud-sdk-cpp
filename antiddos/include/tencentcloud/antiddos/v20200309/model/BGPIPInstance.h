@@ -476,6 +476,28 @@ namespace TencentCloud
                      */
                     bool V6FlagHasBeenSet() const;
 
+                    /**
+                     * 获取是否渠道版高防IP，是为1，否为0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BGPIPChannelFlag 是否渠道版高防IP，是为1，否为0
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetBGPIPChannelFlag() const;
+
+                    /**
+                     * 设置是否渠道版高防IP，是为1，否为0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BGPIPChannelFlag 是否渠道版高防IP，是为1，否为0
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBGPIPChannelFlag(const uint64_t& _bGPIPChannelFlag);
+
+                    /**
+                     * 判断参数 BGPIPChannelFlag 是否已赋值
+                     * @return BGPIPChannelFlag 是否已赋值
+                     */
+                    bool BGPIPChannelFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -611,6 +633,13 @@ namespace TencentCloud
                      */
                     uint64_t m_v6Flag;
                     bool m_v6FlagHasBeenSet;
+
+                    /**
+                     * 是否渠道版高防IP，是为1，否为0
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_bGPIPChannelFlag;
+                    bool m_bGPIPChannelFlagHasBeenSet;
 
                 };
             }

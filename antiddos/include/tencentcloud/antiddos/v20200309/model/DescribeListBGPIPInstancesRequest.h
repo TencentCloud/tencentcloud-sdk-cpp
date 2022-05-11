@@ -264,6 +264,42 @@ namespace TencentCloud
                      */
                     bool FilterStatusHasBeenSet() const;
 
+                    /**
+                     * 获取获取特定的实例Cname
+                     * @return FilterCname 获取特定的实例Cname
+                     */
+                    std::string GetFilterCname() const;
+
+                    /**
+                     * 设置获取特定的实例Cname
+                     * @param FilterCname 获取特定的实例Cname
+                     */
+                    void SetFilterCname(const std::string& _filterCname);
+
+                    /**
+                     * 判断参数 FilterCname 是否已赋值
+                     * @return FilterCname 是否已赋值
+                     */
+                    bool FilterCnameHasBeenSet() const;
+
+                    /**
+                     * 获取批量查询实例ID对应的高防IP实例资源
+                     * @return FilterInstanceIdList 批量查询实例ID对应的高防IP实例资源
+                     */
+                    std::vector<std::string> GetFilterInstanceIdList() const;
+
+                    /**
+                     * 设置批量查询实例ID对应的高防IP实例资源
+                     * @param FilterInstanceIdList 批量查询实例ID对应的高防IP实例资源
+                     */
+                    void SetFilterInstanceIdList(const std::vector<std::string>& _filterInstanceIdList);
+
+                    /**
+                     * 判断参数 FilterInstanceIdList 是否已赋值
+                     * @return FilterInstanceIdList 是否已赋值
+                     */
+                    bool FilterInstanceIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -337,6 +373,18 @@ namespace TencentCloud
                      */
                     std::string m_filterStatus;
                     bool m_filterStatusHasBeenSet;
+
+                    /**
+                     * 获取特定的实例Cname
+                     */
+                    std::string m_filterCname;
+                    bool m_filterCnameHasBeenSet;
+
+                    /**
+                     * 批量查询实例ID对应的高防IP实例资源
+                     */
+                    std::vector<std::string> m_filterInstanceIdList;
+                    bool m_filterInstanceIdListHasBeenSet;
 
                 };
             }

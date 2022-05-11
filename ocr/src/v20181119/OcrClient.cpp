@@ -2706,6 +2706,49 @@ OcrClient::VatInvoiceVerifyOutcomeCallable OcrClient::VatInvoiceVerifyCallable(c
     return task->get_future();
 }
 
+OcrClient::VatInvoiceVerifyNewOutcome OcrClient::VatInvoiceVerifyNew(const VatInvoiceVerifyNewRequest &request)
+{
+    auto outcome = MakeRequest(request, "VatInvoiceVerifyNew");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VatInvoiceVerifyNewResponse rsp = VatInvoiceVerifyNewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VatInvoiceVerifyNewOutcome(rsp);
+        else
+            return VatInvoiceVerifyNewOutcome(o.GetError());
+    }
+    else
+    {
+        return VatInvoiceVerifyNewOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::VatInvoiceVerifyNewAsync(const VatInvoiceVerifyNewRequest& request, const VatInvoiceVerifyNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->VatInvoiceVerifyNew(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::VatInvoiceVerifyNewOutcomeCallable OcrClient::VatInvoiceVerifyNewCallable(const VatInvoiceVerifyNewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<VatInvoiceVerifyNewOutcome()>>(
+        [this, request]()
+        {
+            return this->VatInvoiceVerifyNew(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::VatRollInvoiceOCROutcome OcrClient::VatRollInvoiceOCR(const VatRollInvoiceOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "VatRollInvoiceOCR");

@@ -147,6 +147,8 @@
 #include <tencentcloud/ocr/v20181119/model/VatInvoiceOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/VatInvoiceVerifyRequest.h>
 #include <tencentcloud/ocr/v20181119/model/VatInvoiceVerifyResponse.h>
+#include <tencentcloud/ocr/v20181119/model/VatInvoiceVerifyNewRequest.h>
+#include <tencentcloud/ocr/v20181119/model/VatInvoiceVerifyNewResponse.h>
 #include <tencentcloud/ocr/v20181119/model/VatRollInvoiceOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/VatRollInvoiceOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/VehicleLicenseOCRRequest.h>
@@ -365,6 +367,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::VatInvoiceVerifyResponse> VatInvoiceVerifyOutcome;
                 typedef std::future<VatInvoiceVerifyOutcome> VatInvoiceVerifyOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::VatInvoiceVerifyRequest&, VatInvoiceVerifyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VatInvoiceVerifyAsyncHandler;
+                typedef Outcome<Core::Error, Model::VatInvoiceVerifyNewResponse> VatInvoiceVerifyNewOutcome;
+                typedef std::future<VatInvoiceVerifyNewOutcome> VatInvoiceVerifyNewOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::VatInvoiceVerifyNewRequest&, VatInvoiceVerifyNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VatInvoiceVerifyNewAsyncHandler;
                 typedef Outcome<Core::Error, Model::VatRollInvoiceOCRResponse> VatRollInvoiceOCROutcome;
                 typedef std::future<VatRollInvoiceOCROutcome> VatRollInvoiceOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::VatRollInvoiceOCRRequest&, VatRollInvoiceOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> VatRollInvoiceOCRAsyncHandler;
@@ -1223,6 +1228,15 @@ namespace TencentCloud
                 VatInvoiceVerifyOutcome VatInvoiceVerify(const Model::VatInvoiceVerifyRequest &request);
                 void VatInvoiceVerifyAsync(const Model::VatInvoiceVerifyRequest& request, const VatInvoiceVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 VatInvoiceVerifyOutcomeCallable VatInvoiceVerifyCallable(const Model::VatInvoiceVerifyRequest& request);
+
+                /**
+                 *本接口支持增值税发票的准确性核验，您可以通过输入增值税发票的关键字段提供所需的验证信息，接口返回真实的票面相关信息，包括发票代码、发票号码、开票日期、金额、消费类型、购方名称、购方税号、销方名称、销方税号等多个常用字段。支持多种发票类型核验，包括增值税专用发票、增值税普通发票（含电子普通发票、卷式发票、通行费发票）、全电发票、机动车销售统一发票、货物运输业增值税专用发票、二手车销售统一发票。
+                 * @param req VatInvoiceVerifyNewRequest
+                 * @return VatInvoiceVerifyNewOutcome
+                 */
+                VatInvoiceVerifyNewOutcome VatInvoiceVerifyNew(const Model::VatInvoiceVerifyNewRequest &request);
+                void VatInvoiceVerifyNewAsync(const Model::VatInvoiceVerifyNewRequest& request, const VatInvoiceVerifyNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VatInvoiceVerifyNewOutcomeCallable VatInvoiceVerifyNewCallable(const Model::VatInvoiceVerifyNewRequest& request);
 
                 /**
                  *本接口支持对增值税发票（卷票）的发票代码、发票号码、日期、校验码、合计金额（小写）等关键字段的识别。

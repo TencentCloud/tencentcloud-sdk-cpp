@@ -22,7 +22,9 @@ using namespace std;
 
 IPLineInfo::IPLineInfo() :
     m_typeHasBeenSet(false),
-    m_eipHasBeenSet(false)
+    m_eipHasBeenSet(false),
+    m_cnameHasBeenSet(false),
+    m_resourceFlagHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,26 @@ CoreInternalOutcome IPLineInfo::Deserialize(const rapidjson::Value &value)
         m_eipHasBeenSet = true;
     }
 
+    if (value.HasMember("Cname") && !value["Cname"].IsNull())
+    {
+        if (!value["Cname"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IPLineInfo.Cname` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cname = string(value["Cname"].GetString());
+        m_cnameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourceFlag") && !value["ResourceFlag"].IsNull())
+    {
+        if (!value["ResourceFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IPLineInfo.ResourceFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceFlag = value["ResourceFlag"].GetInt64();
+        m_resourceFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +94,22 @@ void IPLineInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Eip";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_eip.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cnameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Cname";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cname.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_resourceFlag, allocator);
     }
 
 }
@@ -107,5 +145,37 @@ void IPLineInfo::SetEip(const string& _eip)
 bool IPLineInfo::EipHasBeenSet() const
 {
     return m_eipHasBeenSet;
+}
+
+string IPLineInfo::GetCname() const
+{
+    return m_cname;
+}
+
+void IPLineInfo::SetCname(const string& _cname)
+{
+    m_cname = _cname;
+    m_cnameHasBeenSet = true;
+}
+
+bool IPLineInfo::CnameHasBeenSet() const
+{
+    return m_cnameHasBeenSet;
+}
+
+int64_t IPLineInfo::GetResourceFlag() const
+{
+    return m_resourceFlag;
+}
+
+void IPLineInfo::SetResourceFlag(const int64_t& _resourceFlag)
+{
+    m_resourceFlag = _resourceFlag;
+    m_resourceFlagHasBeenSet = true;
+}
+
+bool IPLineInfo::ResourceFlagHasBeenSet() const
+{
+    return m_resourceFlagHasBeenSet;
 }
 

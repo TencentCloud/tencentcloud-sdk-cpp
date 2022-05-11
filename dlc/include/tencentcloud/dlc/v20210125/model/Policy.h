@@ -334,6 +334,50 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取权限所属工作组的ID，只有当该权限的来源为工作组时才会有值。即仅当Source字段的值为WORKGROUP时该字段才有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SourceId 权限所属工作组的ID，只有当该权限的来源为工作组时才会有值。即仅当Source字段的值为WORKGROUP时该字段才有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetSourceId() const;
+
+                    /**
+                     * 设置权限所属工作组的ID，只有当该权限的来源为工作组时才会有值。即仅当Source字段的值为WORKGROUP时该字段才有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SourceId 权限所属工作组的ID，只有当该权限的来源为工作组时才会有值。即仅当Source字段的值为WORKGROUP时该字段才有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSourceId(const int64_t& _sourceId);
+
+                    /**
+                     * 判断参数 SourceId 是否已赋值
+                     * @return SourceId 是否已赋值
+                     */
+                    bool SourceIdHasBeenSet() const;
+
+                    /**
+                     * 获取权限所属工作组的名称，只有当该权限的来源为工作组时才会有值。即仅当Source字段的值为WORKGROUP时该字段才有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SourceName 权限所属工作组的名称，只有当该权限的来源为工作组时才会有值。即仅当Source字段的值为WORKGROUP时该字段才有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSourceName() const;
+
+                    /**
+                     * 设置权限所属工作组的名称，只有当该权限的来源为工作组时才会有值。即仅当Source字段的值为WORKGROUP时该字段才有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SourceName 权限所属工作组的名称，只有当该权限的来源为工作组时才会有值。即仅当Source字段的值为WORKGROUP时该字段才有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSourceName(const std::string& _sourceName);
+
+                    /**
+                     * 判断参数 SourceName 是否已赋值
+                     * @return SourceName 是否已赋值
+                     */
+                    bool SourceNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -428,6 +472,20 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 权限所属工作组的ID，只有当该权限的来源为工作组时才会有值。即仅当Source字段的值为WORKGROUP时该字段才有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_sourceId;
+                    bool m_sourceIdHasBeenSet;
+
+                    /**
+                     * 权限所属工作组的名称，只有当该权限的来源为工作组时才会有值。即仅当Source字段的值为WORKGROUP时该字段才有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sourceName;
+                    bool m_sourceNameHasBeenSet;
 
                 };
             }

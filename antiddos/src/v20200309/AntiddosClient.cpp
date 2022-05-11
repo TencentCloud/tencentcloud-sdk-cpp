@@ -3007,6 +3007,49 @@ AntiddosClient::DescribeOverviewCCTrendOutcomeCallable AntiddosClient::DescribeO
     return task->get_future();
 }
 
+AntiddosClient::DescribeOverviewDDoSEventListOutcome AntiddosClient::DescribeOverviewDDoSEventList(const DescribeOverviewDDoSEventListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOverviewDDoSEventList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOverviewDDoSEventListResponse rsp = DescribeOverviewDDoSEventListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOverviewDDoSEventListOutcome(rsp);
+        else
+            return DescribeOverviewDDoSEventListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOverviewDDoSEventListOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribeOverviewDDoSEventListAsync(const DescribeOverviewDDoSEventListRequest& request, const DescribeOverviewDDoSEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOverviewDDoSEventList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DescribeOverviewDDoSEventListOutcomeCallable AntiddosClient::DescribeOverviewDDoSEventListCallable(const DescribeOverviewDDoSEventListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOverviewDDoSEventListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOverviewDDoSEventList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AntiddosClient::DescribeOverviewDDoSTrendOutcome AntiddosClient::DescribeOverviewDDoSTrend(const DescribeOverviewDDoSTrendRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeOverviewDDoSTrend");

@@ -218,6 +218,50 @@ namespace TencentCloud
                      */
                     bool ChannelEditionFlagHasBeenSet() const;
 
+                    /**
+                     * 获取高防包企业版标记，0表示普通高防包；1表示企业版高防包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnterpriseFlag 高防包企业版标记，0表示普通高防包；1表示企业版高防包
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetEnterpriseFlag() const;
+
+                    /**
+                     * 设置高防包企业版标记，0表示普通高防包；1表示企业版高防包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnterpriseFlag 高防包企业版标记，0表示普通高防包；1表示企业版高防包
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnterpriseFlag(const uint64_t& _enterpriseFlag);
+
+                    /**
+                     * 判断参数 EnterpriseFlag 是否已赋值
+                     * @return EnterpriseFlag 是否已赋值
+                     */
+                    bool EnterpriseFlagHasBeenSet() const;
+
+                    /**
+                     * 获取高防包企业版弹性阈值，0表示未开启；大于0为弹性防护阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ElasticLimit 高防包企业版弹性阈值，0表示未开启；大于0为弹性防护阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetElasticLimit() const;
+
+                    /**
+                     * 设置高防包企业版弹性阈值，0表示未开启；大于0为弹性防护阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ElasticLimit 高防包企业版弹性阈值，0表示未开启；大于0为弹性防护阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetElasticLimit(const uint64_t& _elasticLimit);
+
+                    /**
+                     * 判断参数 ElasticLimit 是否已赋值
+                     * @return ElasticLimit 是否已赋值
+                     */
+                    bool ElasticLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -274,6 +318,20 @@ namespace TencentCloud
                      */
                     uint64_t m_channelEditionFlag;
                     bool m_channelEditionFlagHasBeenSet;
+
+                    /**
+                     * 高防包企业版标记，0表示普通高防包；1表示企业版高防包
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_enterpriseFlag;
+                    bool m_enterpriseFlagHasBeenSet;
+
+                    /**
+                     * 高防包企业版弹性阈值，0表示未开启；大于0为弹性防护阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_elasticLimit;
+                    bool m_elasticLimitHasBeenSet;
 
                 };
             }

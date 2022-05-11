@@ -39,7 +39,8 @@ BGPIPInstance::BGPIPInstance() :
     m_eipAddressInfoHasBeenSet(false),
     m_domainHasBeenSet(false),
     m_damDDoSStatusHasBeenSet(false),
-    m_v6FlagHasBeenSet(false)
+    m_v6FlagHasBeenSet(false),
+    m_bGPIPChannelFlagHasBeenSet(false)
 {
 }
 
@@ -294,6 +295,16 @@ CoreInternalOutcome BGPIPInstance::Deserialize(const rapidjson::Value &value)
         m_v6FlagHasBeenSet = true;
     }
 
+    if (value.HasMember("BGPIPChannelFlag") && !value["BGPIPChannelFlag"].IsNull())
+    {
+        if (!value["BGPIPChannelFlag"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstance.BGPIPChannelFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_bGPIPChannelFlag = value["BGPIPChannelFlag"].GetUint64();
+        m_bGPIPChannelFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -459,6 +470,14 @@ void BGPIPInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "V6Flag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_v6Flag, allocator);
+    }
+
+    if (m_bGPIPChannelFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BGPIPChannelFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bGPIPChannelFlag, allocator);
     }
 
 }
@@ -766,5 +785,21 @@ void BGPIPInstance::SetV6Flag(const uint64_t& _v6Flag)
 bool BGPIPInstance::V6FlagHasBeenSet() const
 {
     return m_v6FlagHasBeenSet;
+}
+
+uint64_t BGPIPInstance::GetBGPIPChannelFlag() const
+{
+    return m_bGPIPChannelFlag;
+}
+
+void BGPIPInstance::SetBGPIPChannelFlag(const uint64_t& _bGPIPChannelFlag)
+{
+    m_bGPIPChannelFlag = _bGPIPChannelFlag;
+    m_bGPIPChannelFlagHasBeenSet = true;
+}
+
+bool BGPIPInstance::BGPIPChannelFlagHasBeenSet() const
+{
+    return m_bGPIPChannelFlagHasBeenSet;
 }
 

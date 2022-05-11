@@ -28,7 +28,9 @@ BGPInstanceSpecification::BGPInstanceSpecification() :
     m_unionPackFlagHasBeenSet(false),
     m_serviceBandWidthHasBeenSet(false),
     m_battleEditionFlagHasBeenSet(false),
-    m_channelEditionFlagHasBeenSet(false)
+    m_channelEditionFlagHasBeenSet(false),
+    m_enterpriseFlagHasBeenSet(false),
+    m_elasticLimitHasBeenSet(false)
 {
 }
 
@@ -117,6 +119,26 @@ CoreInternalOutcome BGPInstanceSpecification::Deserialize(const rapidjson::Value
         m_channelEditionFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("EnterpriseFlag") && !value["EnterpriseFlag"].IsNull())
+    {
+        if (!value["EnterpriseFlag"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BGPInstanceSpecification.EnterpriseFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enterpriseFlag = value["EnterpriseFlag"].GetUint64();
+        m_enterpriseFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("ElasticLimit") && !value["ElasticLimit"].IsNull())
+    {
+        if (!value["ElasticLimit"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BGPInstanceSpecification.ElasticLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_elasticLimit = value["ElasticLimit"].GetUint64();
+        m_elasticLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +208,22 @@ void BGPInstanceSpecification::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "ChannelEditionFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_channelEditionFlag, allocator);
+    }
+
+    if (m_enterpriseFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnterpriseFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enterpriseFlag, allocator);
+    }
+
+    if (m_elasticLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_elasticLimit, allocator);
     }
 
 }
@@ -317,5 +355,37 @@ void BGPInstanceSpecification::SetChannelEditionFlag(const uint64_t& _channelEdi
 bool BGPInstanceSpecification::ChannelEditionFlagHasBeenSet() const
 {
     return m_channelEditionFlagHasBeenSet;
+}
+
+uint64_t BGPInstanceSpecification::GetEnterpriseFlag() const
+{
+    return m_enterpriseFlag;
+}
+
+void BGPInstanceSpecification::SetEnterpriseFlag(const uint64_t& _enterpriseFlag)
+{
+    m_enterpriseFlag = _enterpriseFlag;
+    m_enterpriseFlagHasBeenSet = true;
+}
+
+bool BGPInstanceSpecification::EnterpriseFlagHasBeenSet() const
+{
+    return m_enterpriseFlagHasBeenSet;
+}
+
+uint64_t BGPInstanceSpecification::GetElasticLimit() const
+{
+    return m_elasticLimit;
+}
+
+void BGPInstanceSpecification::SetElasticLimit(const uint64_t& _elasticLimit)
+{
+    m_elasticLimit = _elasticLimit;
+    m_elasticLimitHasBeenSet = true;
+}
+
+bool BGPInstanceSpecification::ElasticLimitHasBeenSet() const
+{
+    return m_elasticLimitHasBeenSet;
 }
 

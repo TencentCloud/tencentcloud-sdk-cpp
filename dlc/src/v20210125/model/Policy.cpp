@@ -34,7 +34,9 @@ Policy::Policy() :
     m_sourceHasBeenSet(false),
     m_modeHasBeenSet(false),
     m_operatorHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_sourceIdHasBeenSet(false),
+    m_sourceNameHasBeenSet(false)
 {
 }
 
@@ -183,6 +185,26 @@ CoreInternalOutcome Policy::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("SourceId") && !value["SourceId"].IsNull())
+    {
+        if (!value["SourceId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Policy.SourceId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceId = value["SourceId"].GetInt64();
+        m_sourceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SourceName") && !value["SourceName"].IsNull())
+    {
+        if (!value["SourceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Policy.SourceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceName = string(value["SourceName"].GetString());
+        m_sourceNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +322,22 @@ void Policy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sourceId, allocator);
+    }
+
+    if (m_sourceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +565,37 @@ void Policy::SetCreateTime(const string& _createTime)
 bool Policy::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+int64_t Policy::GetSourceId() const
+{
+    return m_sourceId;
+}
+
+void Policy::SetSourceId(const int64_t& _sourceId)
+{
+    m_sourceId = _sourceId;
+    m_sourceIdHasBeenSet = true;
+}
+
+bool Policy::SourceIdHasBeenSet() const
+{
+    return m_sourceIdHasBeenSet;
+}
+
+string Policy::GetSourceName() const
+{
+    return m_sourceName;
+}
+
+void Policy::SetSourceName(const string& _sourceName)
+{
+    m_sourceName = _sourceName;
+    m_sourceNameHasBeenSet = true;
+}
+
+bool Policy::SourceNameHasBeenSet() const
+{
+    return m_sourceNameHasBeenSet;
 }
 

@@ -25,7 +25,10 @@ using namespace std;
 CreateClusterEndpointRequest::CreateClusterEndpointRequest() :
     m_clusterIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_isExtranetHasBeenSet(false)
+    m_isExtranetHasBeenSet(false),
+    m_domainHasBeenSet(false),
+    m_securityGroupHasBeenSet(false),
+    m_extensiveParametersHasBeenSet(false)
 {
 }
 
@@ -58,6 +61,30 @@ string CreateClusterEndpointRequest::ToJsonString() const
         string key = "IsExtranet";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isExtranet, allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_securityGroupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroup";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_securityGroup.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extensiveParametersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtensiveParameters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_extensiveParameters.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +141,54 @@ void CreateClusterEndpointRequest::SetIsExtranet(const bool& _isExtranet)
 bool CreateClusterEndpointRequest::IsExtranetHasBeenSet() const
 {
     return m_isExtranetHasBeenSet;
+}
+
+string CreateClusterEndpointRequest::GetDomain() const
+{
+    return m_domain;
+}
+
+void CreateClusterEndpointRequest::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool CreateClusterEndpointRequest::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
+}
+
+string CreateClusterEndpointRequest::GetSecurityGroup() const
+{
+    return m_securityGroup;
+}
+
+void CreateClusterEndpointRequest::SetSecurityGroup(const string& _securityGroup)
+{
+    m_securityGroup = _securityGroup;
+    m_securityGroupHasBeenSet = true;
+}
+
+bool CreateClusterEndpointRequest::SecurityGroupHasBeenSet() const
+{
+    return m_securityGroupHasBeenSet;
+}
+
+string CreateClusterEndpointRequest::GetExtensiveParameters() const
+{
+    return m_extensiveParameters;
+}
+
+void CreateClusterEndpointRequest::SetExtensiveParameters(const string& _extensiveParameters)
+{
+    m_extensiveParameters = _extensiveParameters;
+    m_extensiveParametersHasBeenSet = true;
+}
+
+bool CreateClusterEndpointRequest::ExtensiveParametersHasBeenSet() const
+{
+    return m_extensiveParametersHasBeenSet;
 }
 
 

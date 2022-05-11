@@ -100,6 +100,72 @@ namespace TencentCloud
                      */
                     bool CommentHasBeenSet() const;
 
+                    /**
+                     * 获取隐式分区转换策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Transform 隐式分区转换策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTransform() const;
+
+                    /**
+                     * 设置隐式分区转换策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Transform 隐式分区转换策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTransform(const std::string& _transform);
+
+                    /**
+                     * 判断参数 Transform 是否已赋值
+                     * @return Transform 是否已赋值
+                     */
+                    bool TransformHasBeenSet() const;
+
+                    /**
+                     * 获取转换策略参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TransformArgs 转换策略参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetTransformArgs() const;
+
+                    /**
+                     * 设置转换策略参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TransformArgs 转换策略参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTransformArgs(const std::vector<std::string>& _transformArgs);
+
+                    /**
+                     * 判断参数 TransformArgs 是否已赋值
+                     * @return TransformArgs 是否已赋值
+                     */
+                    bool TransformArgsHasBeenSet() const;
+
+                    /**
+                     * 获取创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateTime 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetCreateTime() const;
+
+                    /**
+                     * 设置创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CreateTime 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCreateTime(const int64_t& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +185,27 @@ namespace TencentCloud
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
+
+                    /**
+                     * 隐式分区转换策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_transform;
+                    bool m_transformHasBeenSet;
+
+                    /**
+                     * 转换策略参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_transformArgs;
+                    bool m_transformArgsHasBeenSet;
+
+                    /**
+                     * 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                 };
             }

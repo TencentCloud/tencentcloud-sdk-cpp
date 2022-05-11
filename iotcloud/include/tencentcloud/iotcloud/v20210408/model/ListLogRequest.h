@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志开始时间
-                     * @return MinTime 日志开始时间
+                     * 获取日志开始时间，毫秒级时间戳
+                     * @return MinTime 日志开始时间，毫秒级时间戳
                      */
                     uint64_t GetMinTime() const;
 
                     /**
-                     * 设置日志开始时间
-                     * @param MinTime 日志开始时间
+                     * 设置日志开始时间，毫秒级时间戳
+                     * @param MinTime 日志开始时间，毫秒级时间戳
                      */
                     void SetMinTime(const uint64_t& _minTime);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool MinTimeHasBeenSet() const;
 
                     /**
-                     * 获取日志结束时间
-                     * @return MaxTime 日志结束时间
+                     * 获取日志结束时间，毫秒级时间戳
+                     * @return MaxTime 日志结束时间，毫秒级时间戳
                      */
                     uint64_t GetMaxTime() const;
 
                     /**
-                     * 设置日志结束时间
-                     * @param MaxTime 日志结束时间
+                     * 设置日志结束时间，毫秒级时间戳
+                     * @param MaxTime 日志结束时间，毫秒级时间戳
                      */
                     void SetMaxTime(const uint64_t& _maxTime);
 
@@ -139,13 +139,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志开始时间
+                     * 日志开始时间，毫秒级时间戳
                      */
                     uint64_t m_minTime;
                     bool m_minTimeHasBeenSet;
 
                     /**
-                     * 日志结束时间
+                     * 日志结束时间，毫秒级时间戳
                      */
                     uint64_t m_maxTime;
                     bool m_maxTimeHasBeenSet;
