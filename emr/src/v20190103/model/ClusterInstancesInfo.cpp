@@ -57,7 +57,11 @@ ClusterInstancesInfo::ClusterInstancesInfo() :
     m_displayNameHasBeenSet(false),
     m_vpcNameHasBeenSet(false),
     m_subnetNameHasBeenSet(false),
-    m_clusterExternalServiceInfoHasBeenSet(false)
+    m_clusterExternalServiceInfoHasBeenSet(false),
+    m_uniqVpcIdHasBeenSet(false),
+    m_uniqSubnetIdHasBeenSet(false),
+    m_topologyInfoListHasBeenSet(false),
+    m_isMultiZoneClusterHasBeenSet(false)
 {
 }
 
@@ -463,6 +467,56 @@ CoreInternalOutcome ClusterInstancesInfo::Deserialize(const rapidjson::Value &va
         m_clusterExternalServiceInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("UniqVpcId") && !value["UniqVpcId"].IsNull())
+    {
+        if (!value["UniqVpcId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInstancesInfo.UniqVpcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uniqVpcId = string(value["UniqVpcId"].GetString());
+        m_uniqVpcIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("UniqSubnetId") && !value["UniqSubnetId"].IsNull())
+    {
+        if (!value["UniqSubnetId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInstancesInfo.UniqSubnetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uniqSubnetId = string(value["UniqSubnetId"].GetString());
+        m_uniqSubnetIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("TopologyInfoList") && !value["TopologyInfoList"].IsNull())
+    {
+        if (!value["TopologyInfoList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ClusterInstancesInfo.TopologyInfoList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TopologyInfoList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TopologyInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_topologyInfoList.push_back(item);
+        }
+        m_topologyInfoListHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsMultiZoneCluster") && !value["IsMultiZoneCluster"].IsNull())
+    {
+        if (!value["IsMultiZoneCluster"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInstancesInfo.IsMultiZoneCluster` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isMultiZoneCluster = value["IsMultiZoneCluster"].GetBool();
+        m_isMultiZoneClusterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -779,6 +833,45 @@ void ClusterInstancesInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_uniqVpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UniqVpcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uniqVpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uniqSubnetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UniqSubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uniqSubnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_topologyInfoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopologyInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_topologyInfoList.begin(); itr != m_topologyInfoList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_isMultiZoneClusterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsMultiZoneCluster";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isMultiZoneCluster, allocator);
     }
 
 }
@@ -1374,5 +1467,69 @@ void ClusterInstancesInfo::SetClusterExternalServiceInfo(const vector<ClusterExt
 bool ClusterInstancesInfo::ClusterExternalServiceInfoHasBeenSet() const
 {
     return m_clusterExternalServiceInfoHasBeenSet;
+}
+
+string ClusterInstancesInfo::GetUniqVpcId() const
+{
+    return m_uniqVpcId;
+}
+
+void ClusterInstancesInfo::SetUniqVpcId(const string& _uniqVpcId)
+{
+    m_uniqVpcId = _uniqVpcId;
+    m_uniqVpcIdHasBeenSet = true;
+}
+
+bool ClusterInstancesInfo::UniqVpcIdHasBeenSet() const
+{
+    return m_uniqVpcIdHasBeenSet;
+}
+
+string ClusterInstancesInfo::GetUniqSubnetId() const
+{
+    return m_uniqSubnetId;
+}
+
+void ClusterInstancesInfo::SetUniqSubnetId(const string& _uniqSubnetId)
+{
+    m_uniqSubnetId = _uniqSubnetId;
+    m_uniqSubnetIdHasBeenSet = true;
+}
+
+bool ClusterInstancesInfo::UniqSubnetIdHasBeenSet() const
+{
+    return m_uniqSubnetIdHasBeenSet;
+}
+
+vector<TopologyInfo> ClusterInstancesInfo::GetTopologyInfoList() const
+{
+    return m_topologyInfoList;
+}
+
+void ClusterInstancesInfo::SetTopologyInfoList(const vector<TopologyInfo>& _topologyInfoList)
+{
+    m_topologyInfoList = _topologyInfoList;
+    m_topologyInfoListHasBeenSet = true;
+}
+
+bool ClusterInstancesInfo::TopologyInfoListHasBeenSet() const
+{
+    return m_topologyInfoListHasBeenSet;
+}
+
+bool ClusterInstancesInfo::GetIsMultiZoneCluster() const
+{
+    return m_isMultiZoneCluster;
+}
+
+void ClusterInstancesInfo::SetIsMultiZoneCluster(const bool& _isMultiZoneCluster)
+{
+    m_isMultiZoneCluster = _isMultiZoneCluster;
+    m_isMultiZoneClusterHasBeenSet = true;
+}
+
+bool ClusterInstancesInfo::IsMultiZoneClusterHasBeenSet() const
+{
+    return m_isMultiZoneClusterHasBeenSet;
 }
 

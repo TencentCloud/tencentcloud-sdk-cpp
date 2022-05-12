@@ -486,6 +486,42 @@ namespace TencentCloud
                      */
                     bool StartServiceAfterScaleOutHasBeenSet() const;
 
+                    /**
+                     * 获取可用区，默认是集群的主可用区
+                     * @return ZoneId 可用区，默认是集群的主可用区
+                     */
+                    int64_t GetZoneId() const;
+
+                    /**
+                     * 设置可用区，默认是集群的主可用区
+                     * @param ZoneId 可用区，默认是集群的主可用区
+                     */
+                    void SetZoneId(const int64_t& _zoneId);
+
+                    /**
+                     * 判断参数 ZoneId 是否已赋值
+                     * @return ZoneId 是否已赋值
+                     */
+                    bool ZoneIdHasBeenSet() const;
+
+                    /**
+                     * 获取子网，默认是集群创建时的子网
+                     * @return SubnetId 子网，默认是集群创建时的子网
+                     */
+                    std::string GetSubnetId() const;
+
+                    /**
+                     * 设置子网，默认是集群创建时的子网
+                     * @param SubnetId 子网，默认是集群创建时的子网
+                     */
+                    void SetSubnetId(const std::string& _subnetId);
+
+                    /**
+                     * 判断参数 SubnetId 是否已赋值
+                     * @return SubnetId 是否已赋值
+                     */
+                    bool SubnetIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -630,6 +666,18 @@ namespace TencentCloud
                      */
                     std::string m_startServiceAfterScaleOut;
                     bool m_startServiceAfterScaleOutHasBeenSet;
+
+                    /**
+                     * 可用区，默认是集群的主可用区
+                     */
+                    int64_t m_zoneId;
+                    bool m_zoneIdHasBeenSet;
+
+                    /**
+                     * 子网，默认是集群创建时的子网
+                     */
+                    std::string m_subnetId;
+                    bool m_subnetIdHasBeenSet;
 
                 };
             }

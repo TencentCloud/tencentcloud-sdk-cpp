@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取推流[直播码](https://cloud.tencent.com/document/product/267/5959)。
-                     * @return StreamId 推流[直播码](https://cloud.tencent.com/document/product/267/5959)。
+                     * 获取推流直播码。
+                     * @return StreamId 推流直播码。
                      */
                     std::string GetStreamId() const;
 
                     /**
-                     * 设置推流[直播码](https://cloud.tencent.com/document/product/267/5959)。
-                     * @param StreamId 推流[直播码](https://cloud.tencent.com/document/product/267/5959)。
+                     * 设置推流直播码。
+                     * @param StreamId 推流直播码。
                      */
                     void SetStreamId(const std::string& _streamId);
 
@@ -225,7 +225,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 推流[直播码](https://cloud.tencent.com/document/product/267/5959)。
+                     * 推流直播码。
                      */
                     std::string m_streamId;
                     bool m_streamIdHasBeenSet;

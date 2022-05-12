@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool WaterMarkIdHasBeenSet() const;
 
                     /**
-                     * 获取混流-水印宽。单位为像素值。
-                     * @return WaterMarkWidth 混流-水印宽。单位为像素值。
+                     * 获取混流-水印宽。单位为像素值。水印宽+X偏移不能超过整个画布宽。
+                     * @return WaterMarkWidth 混流-水印宽。单位为像素值。水印宽+X偏移不能超过整个画布宽。
                      */
                     uint64_t GetWaterMarkWidth() const;
 
                     /**
-                     * 设置混流-水印宽。单位为像素值。
-                     * @param WaterMarkWidth 混流-水印宽。单位为像素值。
+                     * 设置混流-水印宽。单位为像素值。水印宽+X偏移不能超过整个画布宽。
+                     * @param WaterMarkWidth 混流-水印宽。单位为像素值。水印宽+X偏移不能超过整个画布宽。
                      */
                     void SetWaterMarkWidth(const uint64_t& _waterMarkWidth);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool WaterMarkWidthHasBeenSet() const;
 
                     /**
-                     * 获取混流-水印高。单位为像素值。
-                     * @return WaterMarkHeight 混流-水印高。单位为像素值。
+                     * 获取混流-水印高。单位为像素值。水印高+Y偏移不能超过整个画布高。
+                     * @return WaterMarkHeight 混流-水印高。单位为像素值。水印高+Y偏移不能超过整个画布高。
                      */
                     uint64_t GetWaterMarkHeight() const;
 
                     /**
-                     * 设置混流-水印高。单位为像素值。
-                     * @param WaterMarkHeight 混流-水印高。单位为像素值。
+                     * 设置混流-水印高。单位为像素值。水印高+Y偏移不能超过整个画布高。
+                     * @param WaterMarkHeight 混流-水印高。单位为像素值。水印高+Y偏移不能超过整个画布高。
                      */
                     void SetWaterMarkHeight(const uint64_t& _waterMarkHeight);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool WaterMarkHeightHasBeenSet() const;
 
                     /**
-                     * 获取水印在输出时的X偏移。单位为像素值。
-                     * @return LocationX 水印在输出时的X偏移。单位为像素值。
+                     * 获取水印在输出时的X偏移。单位为像素值。水印宽+X偏移不能超过整个画布宽。
+                     * @return LocationX 水印在输出时的X偏移。单位为像素值。水印宽+X偏移不能超过整个画布宽。
                      */
                     uint64_t GetLocationX() const;
 
                     /**
-                     * 设置水印在输出时的X偏移。单位为像素值。
-                     * @param LocationX 水印在输出时的X偏移。单位为像素值。
+                     * 设置水印在输出时的X偏移。单位为像素值。水印宽+X偏移不能超过整个画布宽。
+                     * @param LocationX 水印在输出时的X偏移。单位为像素值。水印宽+X偏移不能超过整个画布宽。
                      */
                     void SetLocationX(const uint64_t& _locationX);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool LocationXHasBeenSet() const;
 
                     /**
-                     * 获取水印在输出时的Y偏移。单位为像素值。
-                     * @return LocationY 水印在输出时的Y偏移。单位为像素值。
+                     * 获取水印在输出时的Y偏移。单位为像素值。水印高+Y偏移不能超过整个画布高。
+                     * @return LocationY 水印在输出时的Y偏移。单位为像素值。水印高+Y偏移不能超过整个画布高。
                      */
                     uint64_t GetLocationY() const;
 
                     /**
-                     * 设置水印在输出时的Y偏移。单位为像素值。
-                     * @param LocationY 水印在输出时的Y偏移。单位为像素值。
+                     * 设置水印在输出时的Y偏移。单位为像素值。水印高+Y偏移不能超过整个画布高。
+                     * @param LocationY 水印在输出时的Y偏移。单位为像素值。水印高+Y偏移不能超过整个画布高。
                      */
                     void SetLocationY(const uint64_t& _locationY);
 
@@ -163,25 +163,25 @@ namespace TencentCloud
                     bool m_waterMarkIdHasBeenSet;
 
                     /**
-                     * 混流-水印宽。单位为像素值。
+                     * 混流-水印宽。单位为像素值。水印宽+X偏移不能超过整个画布宽。
                      */
                     uint64_t m_waterMarkWidth;
                     bool m_waterMarkWidthHasBeenSet;
 
                     /**
-                     * 混流-水印高。单位为像素值。
+                     * 混流-水印高。单位为像素值。水印高+Y偏移不能超过整个画布高。
                      */
                     uint64_t m_waterMarkHeight;
                     bool m_waterMarkHeightHasBeenSet;
 
                     /**
-                     * 水印在输出时的X偏移。单位为像素值。
+                     * 水印在输出时的X偏移。单位为像素值。水印宽+X偏移不能超过整个画布宽。
                      */
                     uint64_t m_locationX;
                     bool m_locationXHasBeenSet;
 
                     /**
-                     * 水印在输出时的Y偏移。单位为像素值。
+                     * 水印在输出时的Y偏移。单位为像素值。水印高+Y偏移不能超过整个画布高。
                      */
                     uint64_t m_locationY;
                     bool m_locationYHasBeenSet;

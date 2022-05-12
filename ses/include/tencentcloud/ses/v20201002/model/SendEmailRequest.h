@@ -144,14 +144,14 @@ namespace TencentCloud
                     bool TemplateHasBeenSet() const;
 
                     /**
-                     * 获取使用API直接发送内容时，填写的邮件内容
-                     * @return Simple 使用API直接发送内容时，填写的邮件内容
+                     * 获取已废弃
+                     * @return Simple 已废弃
                      */
                     Simple GetSimple() const;
 
                     /**
-                     * 设置使用API直接发送内容时，填写的邮件内容
-                     * @param Simple 使用API直接发送内容时，填写的邮件内容
+                     * 设置已废弃
+                     * @param Simple 已废弃
                      */
                     void SetSimple(const Simple& _simple);
 
@@ -250,7 +250,7 @@ namespace TencentCloud
                     bool m_templateHasBeenSet;
 
                     /**
-                     * 使用API直接发送内容时，填写的邮件内容
+                     * 已废弃
                      */
                     Simple m_simple;
                     bool m_simpleHasBeenSet;

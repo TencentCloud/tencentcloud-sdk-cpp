@@ -42,7 +42,8 @@ DescribeAlarmPoliciesRequest::DescribeAlarmPoliciesRequest() :
     m_notBindingNoticeRuleHasBeenSet(false),
     m_instanceGroupIdHasBeenSet(false),
     m_needCorrespondenceHasBeenSet(false),
-    m_triggerTasksHasBeenSet(false)
+    m_triggerTasksHasBeenSet(false),
+    m_oneClickPolicyTypeHasBeenSet(false)
 {
 }
 
@@ -262,6 +263,19 @@ string DescribeAlarmPoliciesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_oneClickPolicyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OneClickPolicyType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_oneClickPolicyType.begin(); itr != m_oneClickPolicyType.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -591,6 +605,22 @@ void DescribeAlarmPoliciesRequest::SetTriggerTasks(const vector<AlarmPolicyTrigg
 bool DescribeAlarmPoliciesRequest::TriggerTasksHasBeenSet() const
 {
     return m_triggerTasksHasBeenSet;
+}
+
+vector<string> DescribeAlarmPoliciesRequest::GetOneClickPolicyType() const
+{
+    return m_oneClickPolicyType;
+}
+
+void DescribeAlarmPoliciesRequest::SetOneClickPolicyType(const vector<string>& _oneClickPolicyType)
+{
+    m_oneClickPolicyType = _oneClickPolicyType;
+    m_oneClickPolicyTypeHasBeenSet = true;
+}
+
+bool DescribeAlarmPoliciesRequest::OneClickPolicyTypeHasBeenSet() const
+{
+    return m_oneClickPolicyTypeHasBeenSet;
 }
 
 

@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取该库的容量限制。
-                     * @return MaxCapacity 该库的容量限制。
+                     * 获取图库可容纳的最大图片数量。
+                     * @return MaxCapacity 图库可容纳的最大图片数量。
                      */
                     uint64_t GetMaxCapacity() const;
 
                     /**
-                     * 设置该库的容量限制。
-                     * @param MaxCapacity 该库的容量限制。
+                     * 设置图库可容纳的最大图片数量。
+                     * @param MaxCapacity 图库可容纳的最大图片数量。
                      */
                     void SetMaxCapacity(const uint64_t& _maxCapacity);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool BriefHasBeenSet() const;
 
                     /**
-                     * 获取该库的访问限频 ，默认10。
-                     * @return MaxQps 该库的访问限频 ，默认10。
+                     * 获取访问限制默认为10qps，如需扩容请联系[在线客服](https://cloud.tencent.com/online-service)申请。
+                     * @return MaxQps 访问限制默认为10qps，如需扩容请联系[在线客服](https://cloud.tencent.com/online-service)申请。
                      */
                     uint64_t GetMaxQps() const;
 
                     /**
-                     * 设置该库的访问限频 ，默认10。
-                     * @param MaxQps 该库的访问限频 ，默认10。
+                     * 设置访问限制默认为10qps，如需扩容请联系[在线客服](https://cloud.tencent.com/online-service)申请。
+                     * @param MaxQps 访问限制默认为10qps，如需扩容请联系[在线客服](https://cloud.tencent.com/online-service)申请。
                      */
                     void SetMaxQps(const uint64_t& _maxQps);
 
@@ -181,7 +181,7 @@ namespace TencentCloud
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 该库的容量限制。
+                     * 图库可容纳的最大图片数量。
                      */
                     uint64_t m_maxCapacity;
                     bool m_maxCapacityHasBeenSet;
@@ -193,7 +193,7 @@ namespace TencentCloud
                     bool m_briefHasBeenSet;
 
                     /**
-                     * 该库的访问限频 ，默认10。
+                     * 访问限制默认为10qps，如需扩容请联系[在线客服](https://cloud.tencent.com/online-service)申请。
                      */
                     uint64_t m_maxQps;
                     bool m_maxQpsHasBeenSet;

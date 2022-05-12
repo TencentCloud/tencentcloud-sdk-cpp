@@ -32,7 +32,8 @@ PodSpec::PodSpec() :
     m_isDynamicSpecHasBeenSet(false),
     m_dynamicPodSpecHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_podNameHasBeenSet(false)
 {
 }
 
@@ -181,6 +182,16 @@ CoreInternalOutcome PodSpec::Deserialize(const rapidjson::Value &value)
         m_subnetIdHasBeenSet = true;
     }
 
+    if (value.HasMember("PodName") && !value["PodName"].IsNull())
+    {
+        if (!value["PodName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PodSpec.PodName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_podName = string(value["PodName"].GetString());
+        m_podNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -295,6 +306,14 @@ void PodSpec::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_podNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_podName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -490,5 +509,21 @@ void PodSpec::SetSubnetId(const string& _subnetId)
 bool PodSpec::SubnetIdHasBeenSet() const
 {
     return m_subnetIdHasBeenSet;
+}
+
+string PodSpec::GetPodName() const
+{
+    return m_podName;
+}
+
+void PodSpec::SetPodName(const string& _podName)
+{
+    m_podName = _podName;
+    m_podNameHasBeenSet = true;
+}
+
+bool PodSpec::PodNameHasBeenSet() const
+{
+    return m_podNameHasBeenSet;
 }
 

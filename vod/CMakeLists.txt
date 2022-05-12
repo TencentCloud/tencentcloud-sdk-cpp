@@ -363,6 +363,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/AiRecognitionTaskOcrFullTextSegmentTextItem.h
   include/tencentcloud/vod/v20180717/model/AiRecognitionTaskSegmentResultOutput.h
   include/tencentcloud/vod/v20180717/model/SegmentConfigureInfo.h
+  include/tencentcloud/vod/v20180717/model/FileDeleteResultItem.h
   include/tencentcloud/vod/v20180717/model/SnapshotByTimeOffsetTaskInput.h
   include/tencentcloud/vod/v20180717/model/RefererAuthPolicy.h
   include/tencentcloud/vod/v20180717/model/TaskStatDataItem.h
@@ -952,6 +953,7 @@ set(vod_src
   src/v20180717/model/AiRecognitionTaskOcrFullTextSegmentTextItem.cpp
   src/v20180717/model/AiRecognitionTaskSegmentResultOutput.cpp
   src/v20180717/model/SegmentConfigureInfo.cpp
+  src/v20180717/model/FileDeleteResultItem.cpp
   src/v20180717/model/SnapshotByTimeOffsetTaskInput.cpp
   src/v20180717/model/RefererAuthPolicy.cpp
   src/v20180717/model/TaskStatDataItem.cpp

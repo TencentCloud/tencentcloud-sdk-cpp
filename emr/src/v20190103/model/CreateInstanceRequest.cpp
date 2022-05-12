@@ -24,17 +24,17 @@ using namespace std;
 
 CreateInstanceRequest::CreateInstanceRequest() :
     m_productIdHasBeenSet(false),
-    m_vPCSettingsHasBeenSet(false),
     m_softwareHasBeenSet(false),
-    m_resourceSpecHasBeenSet(false),
     m_supportHAHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
     m_payModeHasBeenSet(false),
-    m_placementHasBeenSet(false),
     m_timeSpanHasBeenSet(false),
     m_timeUnitHasBeenSet(false),
     m_loginSettingsHasBeenSet(false),
+    m_vPCSettingsHasBeenSet(false),
+    m_resourceSpecHasBeenSet(false),
     m_cOSSettingsHasBeenSet(false),
+    m_placementHasBeenSet(false),
     m_sgIdHasBeenSet(false),
     m_preExecutedFileSettingsHasBeenSet(false),
     m_autoRenewHasBeenSet(false),
@@ -51,7 +51,10 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_metaDBInfoHasBeenSet(false),
     m_applicationRoleHasBeenSet(false),
     m_sceneNameHasBeenSet(false),
-    m_externalServiceHasBeenSet(false)
+    m_externalServiceHasBeenSet(false),
+    m_versionIDHasBeenSet(false),
+    m_multiZoneHasBeenSet(false),
+    m_multiZoneSettingsHasBeenSet(false)
 {
 }
 
@@ -70,15 +73,6 @@ string CreateInstanceRequest::ToJsonString() const
         d.AddMember(iKey, m_productId, allocator);
     }
 
-    if (m_vPCSettingsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "VPCSettings";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_vPCSettings.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_softwareHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -90,15 +84,6 @@ string CreateInstanceRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
-    }
-
-    if (m_resourceSpecHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ResourceSpec";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_resourceSpec.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_supportHAHasBeenSet)
@@ -123,15 +108,6 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "PayMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_payMode, allocator);
-    }
-
-    if (m_placementHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Placement";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_placement.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_timeSpanHasBeenSet)
@@ -159,6 +135,24 @@ string CreateInstanceRequest::ToJsonString() const
         m_loginSettings.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_vPCSettingsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VPCSettings";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_vPCSettings.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_resourceSpecHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceSpec";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_resourceSpec.ToJsonObject(d[key.c_str()], allocator);
+    }
+
     if (m_cOSSettingsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -166,6 +160,15 @@ string CreateInstanceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cOSSettings.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_placementHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Placement";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_placement.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_sgIdHasBeenSet)
@@ -331,6 +334,37 @@ string CreateInstanceRequest::ToJsonString() const
         }
     }
 
+    if (m_versionIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VersionID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_versionID, allocator);
+    }
+
+    if (m_multiZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MultiZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_multiZone, allocator);
+    }
+
+    if (m_multiZoneSettingsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MultiZoneSettings";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_multiZoneSettings.begin(); itr != m_multiZoneSettings.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -355,22 +389,6 @@ bool CreateInstanceRequest::ProductIdHasBeenSet() const
     return m_productIdHasBeenSet;
 }
 
-VPCSettings CreateInstanceRequest::GetVPCSettings() const
-{
-    return m_vPCSettings;
-}
-
-void CreateInstanceRequest::SetVPCSettings(const VPCSettings& _vPCSettings)
-{
-    m_vPCSettings = _vPCSettings;
-    m_vPCSettingsHasBeenSet = true;
-}
-
-bool CreateInstanceRequest::VPCSettingsHasBeenSet() const
-{
-    return m_vPCSettingsHasBeenSet;
-}
-
 vector<string> CreateInstanceRequest::GetSoftware() const
 {
     return m_software;
@@ -385,22 +403,6 @@ void CreateInstanceRequest::SetSoftware(const vector<string>& _software)
 bool CreateInstanceRequest::SoftwareHasBeenSet() const
 {
     return m_softwareHasBeenSet;
-}
-
-NewResourceSpec CreateInstanceRequest::GetResourceSpec() const
-{
-    return m_resourceSpec;
-}
-
-void CreateInstanceRequest::SetResourceSpec(const NewResourceSpec& _resourceSpec)
-{
-    m_resourceSpec = _resourceSpec;
-    m_resourceSpecHasBeenSet = true;
-}
-
-bool CreateInstanceRequest::ResourceSpecHasBeenSet() const
-{
-    return m_resourceSpecHasBeenSet;
 }
 
 uint64_t CreateInstanceRequest::GetSupportHA() const
@@ -451,22 +453,6 @@ bool CreateInstanceRequest::PayModeHasBeenSet() const
     return m_payModeHasBeenSet;
 }
 
-Placement CreateInstanceRequest::GetPlacement() const
-{
-    return m_placement;
-}
-
-void CreateInstanceRequest::SetPlacement(const Placement& _placement)
-{
-    m_placement = _placement;
-    m_placementHasBeenSet = true;
-}
-
-bool CreateInstanceRequest::PlacementHasBeenSet() const
-{
-    return m_placementHasBeenSet;
-}
-
 uint64_t CreateInstanceRequest::GetTimeSpan() const
 {
     return m_timeSpan;
@@ -515,6 +501,38 @@ bool CreateInstanceRequest::LoginSettingsHasBeenSet() const
     return m_loginSettingsHasBeenSet;
 }
 
+VPCSettings CreateInstanceRequest::GetVPCSettings() const
+{
+    return m_vPCSettings;
+}
+
+void CreateInstanceRequest::SetVPCSettings(const VPCSettings& _vPCSettings)
+{
+    m_vPCSettings = _vPCSettings;
+    m_vPCSettingsHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::VPCSettingsHasBeenSet() const
+{
+    return m_vPCSettingsHasBeenSet;
+}
+
+NewResourceSpec CreateInstanceRequest::GetResourceSpec() const
+{
+    return m_resourceSpec;
+}
+
+void CreateInstanceRequest::SetResourceSpec(const NewResourceSpec& _resourceSpec)
+{
+    m_resourceSpec = _resourceSpec;
+    m_resourceSpecHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::ResourceSpecHasBeenSet() const
+{
+    return m_resourceSpecHasBeenSet;
+}
+
 COSSettings CreateInstanceRequest::GetCOSSettings() const
 {
     return m_cOSSettings;
@@ -529,6 +547,22 @@ void CreateInstanceRequest::SetCOSSettings(const COSSettings& _cOSSettings)
 bool CreateInstanceRequest::COSSettingsHasBeenSet() const
 {
     return m_cOSSettingsHasBeenSet;
+}
+
+Placement CreateInstanceRequest::GetPlacement() const
+{
+    return m_placement;
+}
+
+void CreateInstanceRequest::SetPlacement(const Placement& _placement)
+{
+    m_placement = _placement;
+    m_placementHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::PlacementHasBeenSet() const
+{
+    return m_placementHasBeenSet;
 }
 
 string CreateInstanceRequest::GetSgId() const
@@ -801,6 +835,54 @@ void CreateInstanceRequest::SetExternalService(const vector<ExternalService>& _e
 bool CreateInstanceRequest::ExternalServiceHasBeenSet() const
 {
     return m_externalServiceHasBeenSet;
+}
+
+int64_t CreateInstanceRequest::GetVersionID() const
+{
+    return m_versionID;
+}
+
+void CreateInstanceRequest::SetVersionID(const int64_t& _versionID)
+{
+    m_versionID = _versionID;
+    m_versionIDHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::VersionIDHasBeenSet() const
+{
+    return m_versionIDHasBeenSet;
+}
+
+bool CreateInstanceRequest::GetMultiZone() const
+{
+    return m_multiZone;
+}
+
+void CreateInstanceRequest::SetMultiZone(const bool& _multiZone)
+{
+    m_multiZone = _multiZone;
+    m_multiZoneHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::MultiZoneHasBeenSet() const
+{
+    return m_multiZoneHasBeenSet;
+}
+
+vector<MultiZoneSetting> CreateInstanceRequest::GetMultiZoneSettings() const
+{
+    return m_multiZoneSettings;
+}
+
+void CreateInstanceRequest::SetMultiZoneSettings(const vector<MultiZoneSetting>& _multiZoneSettings)
+{
+    m_multiZoneSettings = _multiZoneSettings;
+    m_multiZoneSettingsHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::MultiZoneSettingsHasBeenSet() const
+{
+    return m_multiZoneSettingsHasBeenSet;
 }
 
 

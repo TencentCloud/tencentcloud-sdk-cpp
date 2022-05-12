@@ -276,6 +276,28 @@ namespace TencentCloud
                      */
                     bool SubnetIdHasBeenSet() const;
 
+                    /**
+                     * 获取pod name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PodName pod name
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPodName() const;
+
+                    /**
+                     * 设置pod name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PodName pod name
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPodName(const std::string& _podName);
+
+                    /**
+                     * 判断参数 PodName 是否已赋值
+                     * @return PodName 是否已赋值
+                     */
+                    bool PodNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -352,6 +374,13 @@ namespace TencentCloud
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * pod name
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_podName;
+                    bool m_podNameHasBeenSet;
 
                 };
             }

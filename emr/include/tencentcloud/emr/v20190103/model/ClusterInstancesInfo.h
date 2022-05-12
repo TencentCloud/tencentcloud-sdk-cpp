@@ -27,6 +27,7 @@
 #include <tencentcloud/emr/v20190103/model/EmrProductConfigOutter.h>
 #include <tencentcloud/emr/v20190103/model/Tag.h>
 #include <tencentcloud/emr/v20190103/model/ClusterExternalServiceInfo.h>
+#include <tencentcloud/emr/v20190103/model/TopologyInfo.h>
 
 
 namespace TencentCloud
@@ -971,6 +972,94 @@ namespace TencentCloud
                      */
                     bool ClusterExternalServiceInfoHasBeenSet() const;
 
+                    /**
+                     * 获取集群vpcid 字符串类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UniqVpcId 集群vpcid 字符串类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUniqVpcId() const;
+
+                    /**
+                     * 设置集群vpcid 字符串类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UniqVpcId 集群vpcid 字符串类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUniqVpcId(const std::string& _uniqVpcId);
+
+                    /**
+                     * 判断参数 UniqVpcId 是否已赋值
+                     * @return UniqVpcId 是否已赋值
+                     */
+                    bool UniqVpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取子网id 字符串类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UniqSubnetId 子网id 字符串类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUniqSubnetId() const;
+
+                    /**
+                     * 设置子网id 字符串类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UniqSubnetId 子网id 字符串类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUniqSubnetId(const std::string& _uniqSubnetId);
+
+                    /**
+                     * 判断参数 UniqSubnetId 是否已赋值
+                     * @return UniqSubnetId 是否已赋值
+                     */
+                    bool UniqSubnetIdHasBeenSet() const;
+
+                    /**
+                     * 获取节点信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TopologyInfoList 节点信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TopologyInfo> GetTopologyInfoList() const;
+
+                    /**
+                     * 设置节点信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TopologyInfoList 节点信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTopologyInfoList(const std::vector<TopologyInfo>& _topologyInfoList);
+
+                    /**
+                     * 判断参数 TopologyInfoList 是否已赋值
+                     * @return TopologyInfoList 是否已赋值
+                     */
+                    bool TopologyInfoListHasBeenSet() const;
+
+                    /**
+                     * 获取是否是跨AZ集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsMultiZoneCluster 是否是跨AZ集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsMultiZoneCluster() const;
+
+                    /**
+                     * 设置是否是跨AZ集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsMultiZoneCluster 是否是跨AZ集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsMultiZoneCluster(const bool& _isMultiZoneCluster);
+
+                    /**
+                     * 判断参数 IsMultiZoneCluster 是否已赋值
+                     * @return IsMultiZoneCluster 是否已赋值
+                     */
+                    bool IsMultiZoneClusterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1258,6 +1347,34 @@ namespace TencentCloud
                      */
                     std::vector<ClusterExternalServiceInfo> m_clusterExternalServiceInfo;
                     bool m_clusterExternalServiceInfoHasBeenSet;
+
+                    /**
+                     * 集群vpcid 字符串类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_uniqVpcId;
+                    bool m_uniqVpcIdHasBeenSet;
+
+                    /**
+                     * 子网id 字符串类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_uniqSubnetId;
+                    bool m_uniqSubnetIdHasBeenSet;
+
+                    /**
+                     * 节点信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TopologyInfo> m_topologyInfoList;
+                    bool m_topologyInfoListHasBeenSet;
+
+                    /**
+                     * 是否是跨AZ集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isMultiZoneCluster;
+                    bool m_isMultiZoneClusterHasBeenSet;
 
                 };
             }

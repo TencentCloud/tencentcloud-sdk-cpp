@@ -44,7 +44,9 @@ ScaleOutInstanceRequest::ScaleOutInstanceRequest() :
     m_yarnNodeLabelHasBeenSet(false),
     m_podParameterHasBeenSet(false),
     m_masterCountHasBeenSet(false),
-    m_startServiceAfterScaleOutHasBeenSet(false)
+    m_startServiceAfterScaleOutHasBeenSet(false),
+    m_zoneIdHasBeenSet(false),
+    m_subnetIdHasBeenSet(false)
 {
 }
 
@@ -265,6 +267,22 @@ string ScaleOutInstanceRequest::ToJsonString() const
         string key = "StartServiceAfterScaleOut";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_startServiceAfterScaleOut.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_zoneId, allocator);
+    }
+
+    if (m_subnetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -625,6 +643,38 @@ void ScaleOutInstanceRequest::SetStartServiceAfterScaleOut(const string& _startS
 bool ScaleOutInstanceRequest::StartServiceAfterScaleOutHasBeenSet() const
 {
     return m_startServiceAfterScaleOutHasBeenSet;
+}
+
+int64_t ScaleOutInstanceRequest::GetZoneId() const
+{
+    return m_zoneId;
+}
+
+void ScaleOutInstanceRequest::SetZoneId(const int64_t& _zoneId)
+{
+    m_zoneId = _zoneId;
+    m_zoneIdHasBeenSet = true;
+}
+
+bool ScaleOutInstanceRequest::ZoneIdHasBeenSet() const
+{
+    return m_zoneIdHasBeenSet;
+}
+
+string ScaleOutInstanceRequest::GetSubnetId() const
+{
+    return m_subnetId;
+}
+
+void ScaleOutInstanceRequest::SetSubnetId(const string& _subnetId)
+{
+    m_subnetId = _subnetId;
+    m_subnetIdHasBeenSet = true;
+}
+
+bool ScaleOutInstanceRequest::SubnetIdHasBeenSet() const
+{
+    return m_subnetIdHasBeenSet;
 }
 
 

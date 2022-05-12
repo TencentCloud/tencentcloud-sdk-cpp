@@ -60,7 +60,11 @@ NodeHardwareInfo::NodeHardwareInfo() :
     m_hardwareResourceTypeHasBeenSet(false),
     m_isDynamicSpecHasBeenSet(false),
     m_dynamicPodSpecHasBeenSet(false),
-    m_supportModifyPayModeHasBeenSet(false)
+    m_supportModifyPayModeHasBeenSet(false),
+    m_rootStorageTypeHasBeenSet(false),
+    m_zoneHasBeenSet(false),
+    m_subnetInfoHasBeenSet(false),
+    m_clientsHasBeenSet(false)
 {
 }
 
@@ -496,6 +500,53 @@ CoreInternalOutcome NodeHardwareInfo::Deserialize(const rapidjson::Value &value)
         m_supportModifyPayModeHasBeenSet = true;
     }
 
+    if (value.HasMember("RootStorageType") && !value["RootStorageType"].IsNull())
+    {
+        if (!value["RootStorageType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeHardwareInfo.RootStorageType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rootStorageType = value["RootStorageType"].GetInt64();
+        m_rootStorageTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Zone") && !value["Zone"].IsNull())
+    {
+        if (!value["Zone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeHardwareInfo.Zone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zone = string(value["Zone"].GetString());
+        m_zoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubnetInfo") && !value["SubnetInfo"].IsNull())
+    {
+        if (!value["SubnetInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeHardwareInfo.SubnetInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_subnetInfo.Deserialize(value["SubnetInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_subnetInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("Clients") && !value["Clients"].IsNull())
+    {
+        if (!value["Clients"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeHardwareInfo.Clients` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clients = string(value["Clients"].GetString());
+        m_clientsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -836,6 +887,39 @@ void NodeHardwareInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "SupportModifyPayMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_supportModifyPayMode, allocator);
+    }
+
+    if (m_rootStorageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RootStorageType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rootStorageType, allocator);
+    }
+
+    if (m_zoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subnetInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubnetInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_subnetInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_clientsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Clients";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clients.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1479,5 +1563,69 @@ void NodeHardwareInfo::SetSupportModifyPayMode(const int64_t& _supportModifyPayM
 bool NodeHardwareInfo::SupportModifyPayModeHasBeenSet() const
 {
     return m_supportModifyPayModeHasBeenSet;
+}
+
+int64_t NodeHardwareInfo::GetRootStorageType() const
+{
+    return m_rootStorageType;
+}
+
+void NodeHardwareInfo::SetRootStorageType(const int64_t& _rootStorageType)
+{
+    m_rootStorageType = _rootStorageType;
+    m_rootStorageTypeHasBeenSet = true;
+}
+
+bool NodeHardwareInfo::RootStorageTypeHasBeenSet() const
+{
+    return m_rootStorageTypeHasBeenSet;
+}
+
+string NodeHardwareInfo::GetZone() const
+{
+    return m_zone;
+}
+
+void NodeHardwareInfo::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool NodeHardwareInfo::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
+}
+
+SubnetInfo NodeHardwareInfo::GetSubnetInfo() const
+{
+    return m_subnetInfo;
+}
+
+void NodeHardwareInfo::SetSubnetInfo(const SubnetInfo& _subnetInfo)
+{
+    m_subnetInfo = _subnetInfo;
+    m_subnetInfoHasBeenSet = true;
+}
+
+bool NodeHardwareInfo::SubnetInfoHasBeenSet() const
+{
+    return m_subnetInfoHasBeenSet;
+}
+
+string NodeHardwareInfo::GetClients() const
+{
+    return m_clients;
+}
+
+void NodeHardwareInfo::SetClients(const string& _clients)
+{
+    m_clients = _clients;
+    m_clientsHasBeenSet = true;
+}
+
+bool NodeHardwareInfo::ClientsHasBeenSet() const
+{
+    return m_clientsHasBeenSet;
 }
 

@@ -21,15 +21,16 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/emr/v20190103/model/LoginSettings.h>
 #include <tencentcloud/emr/v20190103/model/VPCSettings.h>
 #include <tencentcloud/emr/v20190103/model/NewResourceSpec.h>
-#include <tencentcloud/emr/v20190103/model/Placement.h>
-#include <tencentcloud/emr/v20190103/model/LoginSettings.h>
 #include <tencentcloud/emr/v20190103/model/COSSettings.h>
+#include <tencentcloud/emr/v20190103/model/Placement.h>
 #include <tencentcloud/emr/v20190103/model/PreExecuteFileSettings.h>
 #include <tencentcloud/emr/v20190103/model/Tag.h>
 #include <tencentcloud/emr/v20190103/model/CustomMetaInfo.h>
 #include <tencentcloud/emr/v20190103/model/ExternalService.h>
+#include <tencentcloud/emr/v20190103/model/MultiZoneSetting.h>
 
 
 namespace TencentCloud
@@ -150,24 +151,6 @@ namespace TencentCloud
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。
-                     * @return VPCSettings 私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。
-                     */
-                    VPCSettings GetVPCSettings() const;
-
-                    /**
-                     * 设置私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。
-                     * @param VPCSettings 私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。
-                     */
-                    void SetVPCSettings(const VPCSettings& _vPCSettings);
-
-                    /**
-                     * 判断参数 VPCSettings 是否已赋值
-                     * @return VPCSettings 是否已赋值
-                     */
-                    bool VPCSettingsHasBeenSet() const;
-
-                    /**
                      * 获取部署的组件列表。不同的EMR产品ID（ProductId：具体含义参考入参ProductId字段）对应不同可选组件列表，不同产品版本可选组件列表查询：[组件版本](https://cloud.tencent.com/document/product/589/20279) ；
 填写实例值：hive、flink。
                      * @return Software 部署的组件列表。不同的EMR产品ID（ProductId：具体含义参考入参ProductId字段）对应不同可选组件列表，不同产品版本可选组件列表查询：[组件版本](https://cloud.tencent.com/document/product/589/20279) ；
@@ -188,24 +171,6 @@ namespace TencentCloud
                      * @return Software 是否已赋值
                      */
                     bool SoftwareHasBeenSet() const;
-
-                    /**
-                     * 获取节点资源的规格。
-                     * @return ResourceSpec 节点资源的规格。
-                     */
-                    NewResourceSpec GetResourceSpec() const;
-
-                    /**
-                     * 设置节点资源的规格。
-                     * @param ResourceSpec 节点资源的规格。
-                     */
-                    void SetResourceSpec(const NewResourceSpec& _resourceSpec);
-
-                    /**
-                     * 判断参数 ResourceSpec 是否已赋值
-                     * @return ResourceSpec 是否已赋值
-                     */
-                    bool ResourceSpecHasBeenSet() const;
 
                     /**
                      * 获取是否开启节点高可用。取值范围：
@@ -286,24 +251,6 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
-                     * @return Placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
-                     */
-                    Placement GetPlacement() const;
-
-                    /**
-                     * 设置实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
-                     * @param Placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
-                     */
-                    void SetPlacement(const Placement& _placement);
-
-                    /**
-                     * 判断参数 Placement 是否已赋值
-                     * @return Placement 是否已赋值
-                     */
-                    bool PlacementHasBeenSet() const;
-
-                    /**
                      * 获取购买实例的时长。结合TimeUnit一起使用。
 <li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>
 <li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>
@@ -382,6 +329,42 @@ namespace TencentCloud
                     bool LoginSettingsHasBeenSet() const;
 
                     /**
+                     * 获取私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。
+                     * @return VPCSettings 私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。
+                     */
+                    VPCSettings GetVPCSettings() const;
+
+                    /**
+                     * 设置私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。
+                     * @param VPCSettings 私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。
+                     */
+                    void SetVPCSettings(const VPCSettings& _vPCSettings);
+
+                    /**
+                     * 判断参数 VPCSettings 是否已赋值
+                     * @return VPCSettings 是否已赋值
+                     */
+                    bool VPCSettingsHasBeenSet() const;
+
+                    /**
+                     * 获取节点资源的规格。
+                     * @return ResourceSpec 节点资源的规格。
+                     */
+                    NewResourceSpec GetResourceSpec() const;
+
+                    /**
+                     * 设置节点资源的规格。
+                     * @param ResourceSpec 节点资源的规格。
+                     */
+                    void SetResourceSpec(const NewResourceSpec& _resourceSpec);
+
+                    /**
+                     * 判断参数 ResourceSpec 是否已赋值
+                     * @return ResourceSpec 是否已赋值
+                     */
+                    bool ResourceSpecHasBeenSet() const;
+
+                    /**
                      * 获取开启COS访问需要设置的参数。
                      * @return COSSettings 开启COS访问需要设置的参数。
                      */
@@ -398,6 +381,24 @@ namespace TencentCloud
                      * @return COSSettings 是否已赋值
                      */
                     bool COSSettingsHasBeenSet() const;
+
+                    /**
+                     * 获取实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
+                     * @return Placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
+                     */
+                    Placement GetPlacement() const;
+
+                    /**
+                     * 设置实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
+                     * @param Placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
+                     */
+                    void SetPlacement(const Placement& _placement);
+
+                    /**
+                     * 判断参数 Placement 是否已赋值
+                     * @return Placement 是否已赋值
+                     */
+                    bool PlacementHasBeenSet() const;
 
                     /**
                      * 获取实例所属安全组的ID，形如sg-xxxxxxxx。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的SecurityGroupId字段来获取。
@@ -753,6 +754,60 @@ Hadoop-Hbase
                      */
                     bool ExternalServiceHasBeenSet() const;
 
+                    /**
+                     * 获取如果为0，则MultiZone、MultiDeployStrategy、MultiZoneSettings是disable的状态，如果为1，则废弃ResourceSpec，使用MultiZoneSettings。
+                     * @return VersionID 如果为0，则MultiZone、MultiDeployStrategy、MultiZoneSettings是disable的状态，如果为1，则废弃ResourceSpec，使用MultiZoneSettings。
+                     */
+                    int64_t GetVersionID() const;
+
+                    /**
+                     * 设置如果为0，则MultiZone、MultiDeployStrategy、MultiZoneSettings是disable的状态，如果为1，则废弃ResourceSpec，使用MultiZoneSettings。
+                     * @param VersionID 如果为0，则MultiZone、MultiDeployStrategy、MultiZoneSettings是disable的状态，如果为1，则废弃ResourceSpec，使用MultiZoneSettings。
+                     */
+                    void SetVersionID(const int64_t& _versionID);
+
+                    /**
+                     * 判断参数 VersionID 是否已赋值
+                     * @return VersionID 是否已赋值
+                     */
+                    bool VersionIDHasBeenSet() const;
+
+                    /**
+                     * 获取true表示开启跨AZ部署；仅为新建集群时的用户参数，后续不支持调整。
+                     * @return MultiZone true表示开启跨AZ部署；仅为新建集群时的用户参数，后续不支持调整。
+                     */
+                    bool GetMultiZone() const;
+
+                    /**
+                     * 设置true表示开启跨AZ部署；仅为新建集群时的用户参数，后续不支持调整。
+                     * @param MultiZone true表示开启跨AZ部署；仅为新建集群时的用户参数，后续不支持调整。
+                     */
+                    void SetMultiZone(const bool& _multiZone);
+
+                    /**
+                     * 判断参数 MultiZone 是否已赋值
+                     * @return MultiZone 是否已赋值
+                     */
+                    bool MultiZoneHasBeenSet() const;
+
+                    /**
+                     * 获取节点资源的规格，有几个可用区，就填几个，按顺序第一个为主可用区，第二个为备可用区，第三个为仲裁可用区。如果没有开启跨AZ，则长度为1即可。
+                     * @return MultiZoneSettings 节点资源的规格，有几个可用区，就填几个，按顺序第一个为主可用区，第二个为备可用区，第三个为仲裁可用区。如果没有开启跨AZ，则长度为1即可。
+                     */
+                    std::vector<MultiZoneSetting> GetMultiZoneSettings() const;
+
+                    /**
+                     * 设置节点资源的规格，有几个可用区，就填几个，按顺序第一个为主可用区，第二个为备可用区，第三个为仲裁可用区。如果没有开启跨AZ，则长度为1即可。
+                     * @param MultiZoneSettings 节点资源的规格，有几个可用区，就填几个，按顺序第一个为主可用区，第二个为备可用区，第三个为仲裁可用区。如果没有开启跨AZ，则长度为1即可。
+                     */
+                    void SetMultiZoneSettings(const std::vector<MultiZoneSetting>& _multiZoneSettings);
+
+                    /**
+                     * 判断参数 MultiZoneSettings 是否已赋值
+                     * @return MultiZoneSettings 是否已赋值
+                     */
+                    bool MultiZoneSettingsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -782,23 +837,11 @@ Hadoop-Hbase
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。
-                     */
-                    VPCSettings m_vPCSettings;
-                    bool m_vPCSettingsHasBeenSet;
-
-                    /**
                      * 部署的组件列表。不同的EMR产品ID（ProductId：具体含义参考入参ProductId字段）对应不同可选组件列表，不同产品版本可选组件列表查询：[组件版本](https://cloud.tencent.com/document/product/589/20279) ；
 填写实例值：hive、flink。
                      */
                     std::vector<std::string> m_software;
                     bool m_softwareHasBeenSet;
-
-                    /**
-                     * 节点资源的规格。
-                     */
-                    NewResourceSpec m_resourceSpec;
-                    bool m_resourceSpecHasBeenSet;
 
                     /**
                      * 是否开启节点高可用。取值范围：
@@ -825,12 +868,6 @@ Hadoop-Hbase
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
-                     */
-                    Placement m_placement;
-                    bool m_placementHasBeenSet;
-
-                    /**
                      * 购买实例的时长。结合TimeUnit一起使用。
 <li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>
 <li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>
@@ -855,10 +892,28 @@ Hadoop-Hbase
                     bool m_loginSettingsHasBeenSet;
 
                     /**
+                     * 私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。
+                     */
+                    VPCSettings m_vPCSettings;
+                    bool m_vPCSettingsHasBeenSet;
+
+                    /**
+                     * 节点资源的规格。
+                     */
+                    NewResourceSpec m_resourceSpec;
+                    bool m_resourceSpecHasBeenSet;
+
+                    /**
                      * 开启COS访问需要设置的参数。
                      */
                     COSSettings m_cOSSettings;
                     bool m_cOSSettingsHasBeenSet;
+
+                    /**
+                     * 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
+                     */
+                    Placement m_placement;
+                    bool m_placementHasBeenSet;
 
                     /**
                      * 实例所属安全组的ID，形如sg-xxxxxxxx。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的SecurityGroupId字段来获取。
@@ -973,6 +1028,24 @@ Hadoop-Hbase
                      */
                     std::vector<ExternalService> m_externalService;
                     bool m_externalServiceHasBeenSet;
+
+                    /**
+                     * 如果为0，则MultiZone、MultiDeployStrategy、MultiZoneSettings是disable的状态，如果为1，则废弃ResourceSpec，使用MultiZoneSettings。
+                     */
+                    int64_t m_versionID;
+                    bool m_versionIDHasBeenSet;
+
+                    /**
+                     * true表示开启跨AZ部署；仅为新建集群时的用户参数，后续不支持调整。
+                     */
+                    bool m_multiZone;
+                    bool m_multiZoneHasBeenSet;
+
+                    /**
+                     * 节点资源的规格，有几个可用区，就填几个，按顺序第一个为主可用区，第二个为备可用区，第三个为仲裁可用区。如果没有开启跨AZ，则长度为1即可。
+                     */
+                    std::vector<MultiZoneSetting> m_multiZoneSettings;
+                    bool m_multiZoneSettingsHasBeenSet;
 
                 };
             }

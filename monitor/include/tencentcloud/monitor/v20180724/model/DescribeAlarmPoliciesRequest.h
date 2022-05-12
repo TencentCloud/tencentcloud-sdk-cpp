@@ -439,6 +439,24 @@ namespace TencentCloud
                      */
                     bool TriggerTasksHasBeenSet() const;
 
+                    /**
+                     * 获取根据一键告警策略筛选 不传展示全部策略 ONECLICK=展示一键告警策略 NOT_ONECLICK=展示非一键告警策略
+                     * @return OneClickPolicyType 根据一键告警策略筛选 不传展示全部策略 ONECLICK=展示一键告警策略 NOT_ONECLICK=展示非一键告警策略
+                     */
+                    std::vector<std::string> GetOneClickPolicyType() const;
+
+                    /**
+                     * 设置根据一键告警策略筛选 不传展示全部策略 ONECLICK=展示一键告警策略 NOT_ONECLICK=展示非一键告警策略
+                     * @param OneClickPolicyType 根据一键告警策略筛选 不传展示全部策略 ONECLICK=展示一键告警策略 NOT_ONECLICK=展示非一键告警策略
+                     */
+                    void SetOneClickPolicyType(const std::vector<std::string>& _oneClickPolicyType);
+
+                    /**
+                     * 判断参数 OneClickPolicyType 是否已赋值
+                     * @return OneClickPolicyType 是否已赋值
+                     */
+                    bool OneClickPolicyTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -569,6 +587,12 @@ namespace TencentCloud
                      */
                     std::vector<AlarmPolicyTriggerTask> m_triggerTasks;
                     bool m_triggerTasksHasBeenSet;
+
+                    /**
+                     * 根据一键告警策略筛选 不传展示全部策略 ONECLICK=展示一键告警策略 NOT_ONECLICK=展示非一键告警策略
+                     */
+                    std::vector<std::string> m_oneClickPolicyType;
+                    bool m_oneClickPolicyTypeHasBeenSet;
 
                 };
             }
