@@ -93,14 +93,14 @@ SIGN_SIGNATURE - 手写签名控件
                     bool ComponentTypeHasBeenSet() const;
 
                     /**
-                     * 获取参数控件宽度，单位px
-                     * @return ComponentWidth 参数控件宽度，单位px
+                     * 获取参数控件宽度，单位pt
+                     * @return ComponentWidth 参数控件宽度，单位pt
                      */
                     double GetComponentWidth() const;
 
                     /**
-                     * 设置参数控件宽度，单位px
-                     * @param ComponentWidth 参数控件宽度，单位px
+                     * 设置参数控件宽度，单位pt
+                     * @param ComponentWidth 参数控件宽度，单位pt
                      */
                     void SetComponentWidth(const double& _componentWidth);
 
@@ -111,14 +111,14 @@ SIGN_SIGNATURE - 手写签名控件
                     bool ComponentWidthHasBeenSet() const;
 
                     /**
-                     * 获取参数控件高度，单位px
-                     * @return ComponentHeight 参数控件高度，单位px
+                     * 获取参数控件高度，单位pt
+                     * @return ComponentHeight 参数控件高度，单位pt
                      */
                     double GetComponentHeight() const;
 
                     /**
-                     * 设置参数控件高度，单位px
-                     * @param ComponentHeight 参数控件高度，单位px
+                     * 设置参数控件高度，单位pt
+                     * @param ComponentHeight 参数控件高度，单位pt
                      */
                     void SetComponentHeight(const double& _componentHeight);
 
@@ -147,14 +147,14 @@ SIGN_SIGNATURE - 手写签名控件
                     bool ComponentPageHasBeenSet() const;
 
                     /**
-                     * 获取参数控件X位置，单位px
-                     * @return ComponentPosX 参数控件X位置，单位px
+                     * 获取参数控件X位置，单位pt
+                     * @return ComponentPosX 参数控件X位置，单位pt
                      */
                     double GetComponentPosX() const;
 
                     /**
-                     * 设置参数控件X位置，单位px
-                     * @param ComponentPosX 参数控件X位置，单位px
+                     * 设置参数控件X位置，单位pt
+                     * @param ComponentPosX 参数控件X位置，单位pt
                      */
                     void SetComponentPosX(const double& _componentPosX);
 
@@ -165,14 +165,14 @@ SIGN_SIGNATURE - 手写签名控件
                     bool ComponentPosXHasBeenSet() const;
 
                     /**
-                     * 获取参数控件Y位置，单位px
-                     * @return ComponentPosY 参数控件Y位置，单位px
+                     * 获取参数控件Y位置，单位pt
+                     * @return ComponentPosY 参数控件Y位置，单位pt
                      */
                     double GetComponentPosY() const;
 
                     /**
-                     * 设置参数控件Y位置，单位px
-                     * @param ComponentPosY 参数控件Y位置，单位px
+                     * 设置参数控件Y位置，单位pt
+                     * @param ComponentPosY 参数控件Y位置，单位pt
                      */
                     void SetComponentPosY(const double& _componentPosY);
 
@@ -201,14 +201,14 @@ SIGN_SIGNATURE - 手写签名控件
                     bool FileIndexHasBeenSet() const;
 
                     /**
-                     * 获取控件编号
-                     * @return ComponentId 控件编号
+                     * 获取GenerateMode==KEYWORD 指定关键字
+                     * @return ComponentId GenerateMode==KEYWORD 指定关键字
                      */
                     std::string GetComponentId() const;
 
                     /**
-                     * 设置控件编号
-                     * @param ComponentId 控件编号
+                     * 设置GenerateMode==KEYWORD 指定关键字
+                     * @param ComponentId GenerateMode==KEYWORD 指定关键字
                      */
                     void SetComponentId(const std::string& _componentId);
 
@@ -219,14 +219,14 @@ SIGN_SIGNATURE - 手写签名控件
                     bool ComponentIdHasBeenSet() const;
 
                     /**
-                     * 获取控件名称
-                     * @return ComponentName 控件名称
+                     * 获取GenerateMode==FIELD 指定表单域名称
+                     * @return ComponentName GenerateMode==FIELD 指定表单域名称
                      */
                     std::string GetComponentName() const;
 
                     /**
-                     * 设置控件名称
-                     * @param ComponentName 控件名称
+                     * 设置GenerateMode==FIELD 指定表单域名称
+                     * @param ComponentName GenerateMode==FIELD 指定表单域名称
                      */
                     void SetComponentName(const std::string& _componentName);
 
@@ -255,14 +255,46 @@ SIGN_SIGNATURE - 手写签名控件
                     bool ComponentRequiredHasBeenSet() const;
 
                     /**
-                     * 获取参数控件样式
-                     * @return ComponentExtra 参数控件样式
+                     * 获取扩展参数：
+ComponentType为SIGN_SIGNATURE类型可以控制签署方式
+{“ComponentTypeLimit”: [“xxx”]}
+xxx可以为：
+HANDWRITE – 手写签名
+BORDERLESS_ESIGN – 自动生成无边框腾讯体
+OCR_ESIGN -- AI智能识别手写签名
+ESIGN -- 个人印章类型
+如：{“ComponentTypeLimit”: [“BORDERLESS_ESIGN”]}
+                     * @return ComponentExtra 扩展参数：
+ComponentType为SIGN_SIGNATURE类型可以控制签署方式
+{“ComponentTypeLimit”: [“xxx”]}
+xxx可以为：
+HANDWRITE – 手写签名
+BORDERLESS_ESIGN – 自动生成无边框腾讯体
+OCR_ESIGN -- AI智能识别手写签名
+ESIGN -- 个人印章类型
+如：{“ComponentTypeLimit”: [“BORDERLESS_ESIGN”]}
                      */
                     std::string GetComponentExtra() const;
 
                     /**
-                     * 设置参数控件样式
-                     * @param ComponentExtra 参数控件样式
+                     * 设置扩展参数：
+ComponentType为SIGN_SIGNATURE类型可以控制签署方式
+{“ComponentTypeLimit”: [“xxx”]}
+xxx可以为：
+HANDWRITE – 手写签名
+BORDERLESS_ESIGN – 自动生成无边框腾讯体
+OCR_ESIGN -- AI智能识别手写签名
+ESIGN -- 个人印章类型
+如：{“ComponentTypeLimit”: [“BORDERLESS_ESIGN”]}
+                     * @param ComponentExtra 扩展参数：
+ComponentType为SIGN_SIGNATURE类型可以控制签署方式
+{“ComponentTypeLimit”: [“xxx”]}
+xxx可以为：
+HANDWRITE – 手写签名
+BORDERLESS_ESIGN – 自动生成无边框腾讯体
+OCR_ESIGN -- AI智能识别手写签名
+ESIGN -- 个人印章类型
+如：{“ComponentTypeLimit”: [“BORDERLESS_ESIGN”]}
                      */
                     void SetComponentExtra(const std::string& _componentExtra);
 
@@ -370,6 +402,42 @@ KEYWORD 关键字，使用ComponentId指定关键字
                      */
                     bool ComponentDateFontSizeHasBeenSet() const;
 
+                    /**
+                     * 获取指定关键字时横坐标偏移量
+                     * @return OffsetX 指定关键字时横坐标偏移量
+                     */
+                    double GetOffsetX() const;
+
+                    /**
+                     * 设置指定关键字时横坐标偏移量
+                     * @param OffsetX 指定关键字时横坐标偏移量
+                     */
+                    void SetOffsetX(const double& _offsetX);
+
+                    /**
+                     * 判断参数 OffsetX 是否已赋值
+                     * @return OffsetX 是否已赋值
+                     */
+                    bool OffsetXHasBeenSet() const;
+
+                    /**
+                     * 获取指定关键字时纵坐标偏移量
+                     * @return OffsetY 指定关键字时纵坐标偏移量
+                     */
+                    double GetOffsetY() const;
+
+                    /**
+                     * 设置指定关键字时纵坐标偏移量
+                     * @param OffsetY 指定关键字时纵坐标偏移量
+                     */
+                    void SetOffsetY(const double& _offsetY);
+
+                    /**
+                     * 判断参数 OffsetY 是否已赋值
+                     * @return OffsetY 是否已赋值
+                     */
+                    bool OffsetYHasBeenSet() const;
+
                 private:
 
                     /**
@@ -386,13 +454,13 @@ SIGN_SIGNATURE - 手写签名控件
                     bool m_componentTypeHasBeenSet;
 
                     /**
-                     * 参数控件宽度，单位px
+                     * 参数控件宽度，单位pt
                      */
                     double m_componentWidth;
                     bool m_componentWidthHasBeenSet;
 
                     /**
-                     * 参数控件高度，单位px
+                     * 参数控件高度，单位pt
                      */
                     double m_componentHeight;
                     bool m_componentHeightHasBeenSet;
@@ -404,13 +472,13 @@ SIGN_SIGNATURE - 手写签名控件
                     bool m_componentPageHasBeenSet;
 
                     /**
-                     * 参数控件X位置，单位px
+                     * 参数控件X位置，单位pt
                      */
                     double m_componentPosX;
                     bool m_componentPosXHasBeenSet;
 
                     /**
-                     * 参数控件Y位置，单位px
+                     * 参数控件Y位置，单位pt
                      */
                     double m_componentPosY;
                     bool m_componentPosYHasBeenSet;
@@ -422,13 +490,13 @@ SIGN_SIGNATURE - 手写签名控件
                     bool m_fileIndexHasBeenSet;
 
                     /**
-                     * 控件编号
+                     * GenerateMode==KEYWORD 指定关键字
                      */
                     std::string m_componentId;
                     bool m_componentIdHasBeenSet;
 
                     /**
-                     * 控件名称
+                     * GenerateMode==FIELD 指定表单域名称
                      */
                     std::string m_componentName;
                     bool m_componentNameHasBeenSet;
@@ -440,7 +508,15 @@ SIGN_SIGNATURE - 手写签名控件
                     bool m_componentRequiredHasBeenSet;
 
                     /**
-                     * 参数控件样式
+                     * 扩展参数：
+ComponentType为SIGN_SIGNATURE类型可以控制签署方式
+{“ComponentTypeLimit”: [“xxx”]}
+xxx可以为：
+HANDWRITE – 手写签名
+BORDERLESS_ESIGN – 自动生成无边框腾讯体
+OCR_ESIGN -- AI智能识别手写签名
+ESIGN -- 个人印章类型
+如：{“ComponentTypeLimit”: [“BORDERLESS_ESIGN”]}
                      */
                     std::string m_componentExtra;
                     bool m_componentExtraHasBeenSet;
@@ -476,6 +552,18 @@ KEYWORD 关键字，使用ComponentId指定关键字
                      */
                     int64_t m_componentDateFontSize;
                     bool m_componentDateFontSizeHasBeenSet;
+
+                    /**
+                     * 指定关键字时横坐标偏移量
+                     */
+                    double m_offsetX;
+                    bool m_offsetXHasBeenSet;
+
+                    /**
+                     * 指定关键字时纵坐标偏移量
+                     */
+                    double m_offsetY;
+                    bool m_offsetYHasBeenSet;
 
                 };
             }

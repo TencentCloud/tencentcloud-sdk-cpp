@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取持码人姓名，如：王*
-                     * @return Name 持码人姓名，如：王*
+                     * 获取持码人姓名，如：王*（允许返回空值）
+                     * @return Name 持码人姓名，如：王*（允许返回空值）
                      */
                     std::string GetName() const;
 
@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取持码人身份证号，如：11**************01
-                     * @return IDNumber 持码人身份证号，如：11**************01
+                     * 获取持码人身份证号，如：11**************01（允许返回空值）
+                     * @return IDNumber 持码人身份证号，如：11**************01（允许返回空值）
                      */
                     std::string GetIDNumber() const;
 
@@ -68,8 +68,8 @@ namespace TencentCloud
                     bool IDNumberHasBeenSet() const;
 
                     /**
-                     * 获取健康码更新时间
-                     * @return Time 健康码更新时间
+                     * 获取健康码更新时间（允许返回空值）
+                     * @return Time 健康码更新时间（允许返回空值）
                      */
                     std::string GetTime() const;
 
@@ -80,8 +80,8 @@ namespace TencentCloud
                     bool TimeHasBeenSet() const;
 
                     /**
-                     * 获取健康码颜色：绿色、黄色、红色
-                     * @return Color 健康码颜色：绿色、黄色、红色
+                     * 获取健康码颜色：绿色、黄色、红色（允许返回空值）
+                     * @return Color 健康码颜色：绿色、黄色、红色（允许返回空值）
                      */
                     std::string GetColor() const;
 
@@ -92,8 +92,8 @@ namespace TencentCloud
                     bool ColorHasBeenSet() const;
 
                     /**
-                     * 获取核酸检测间隔时长：24小时、48小时、72小时、暂无核酸检测记录
-                     * @return TestingInterval 核酸检测间隔时长：24小时、48小时、72小时、暂无核酸检测记录
+                     * 获取核酸检测间隔时长（允许返回空值）
+                     * @return TestingInterval 核酸检测间隔时长（允许返回空值）
                      */
                     std::string GetTestingInterval() const;
 
@@ -104,8 +104,8 @@ namespace TencentCloud
                     bool TestingIntervalHasBeenSet() const;
 
                     /**
-                     * 获取核酸检测结果：阴性、阳性、暂无核酸检测记录
-                     * @return TestingResult 核酸检测结果：阴性、阳性、暂无核酸检测记录
+                     * 获取核酸检测结果：阴性、阳性、暂无核酸检测记录（允许返回空值）
+                     * @return TestingResult 核酸检测结果：阴性、阳性、暂无核酸检测记录（允许返回空值）
                      */
                     std::string GetTestingResult() const;
 
@@ -116,8 +116,8 @@ namespace TencentCloud
                     bool TestingResultHasBeenSet() const;
 
                     /**
-                     * 获取核酸检测时间
-                     * @return TestingTime 核酸检测时间
+                     * 获取核酸检测时间（允许返回空值）
+                     * @return TestingTime 核酸检测时间（允许返回空值）
                      */
                     std::string GetTestingTime() const;
 
@@ -130,43 +130,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 持码人姓名，如：王*
+                     * 持码人姓名，如：王*（允许返回空值）
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 持码人身份证号，如：11**************01
+                     * 持码人身份证号，如：11**************01（允许返回空值）
                      */
                     std::string m_iDNumber;
                     bool m_iDNumberHasBeenSet;
 
                     /**
-                     * 健康码更新时间
+                     * 健康码更新时间（允许返回空值）
                      */
                     std::string m_time;
                     bool m_timeHasBeenSet;
 
                     /**
-                     * 健康码颜色：绿色、黄色、红色
+                     * 健康码颜色：绿色、黄色、红色（允许返回空值）
                      */
                     std::string m_color;
                     bool m_colorHasBeenSet;
 
                     /**
-                     * 核酸检测间隔时长：24小时、48小时、72小时、暂无核酸检测记录
+                     * 核酸检测间隔时长（允许返回空值）
                      */
                     std::string m_testingInterval;
                     bool m_testingIntervalHasBeenSet;
 
                     /**
-                     * 核酸检测结果：阴性、阳性、暂无核酸检测记录
+                     * 核酸检测结果：阴性、阳性、暂无核酸检测记录（允许返回空值）
                      */
                     std::string m_testingResult;
                     bool m_testingResultHasBeenSet;
 
                     /**
-                     * 核酸检测时间
+                     * 核酸检测时间（允许返回空值）
                      */
                     std::string m_testingTime;
                     bool m_testingTimeHasBeenSet;

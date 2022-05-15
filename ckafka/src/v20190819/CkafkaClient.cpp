@@ -1932,6 +1932,49 @@ CkafkaClient::ModifyInstanceAttributesOutcomeCallable CkafkaClient::ModifyInstan
     return task->get_future();
 }
 
+CkafkaClient::ModifyInstancePreOutcome CkafkaClient::ModifyInstancePre(const ModifyInstancePreRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstancePre");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstancePreResponse rsp = ModifyInstancePreResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstancePreOutcome(rsp);
+        else
+            return ModifyInstancePreOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstancePreOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::ModifyInstancePreAsync(const ModifyInstancePreRequest& request, const ModifyInstancePreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstancePre(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::ModifyInstancePreOutcomeCallable CkafkaClient::ModifyInstancePreCallable(const ModifyInstancePreRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstancePreOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstancePre(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::ModifyPasswordOutcome CkafkaClient::ModifyPassword(const ModifyPasswordRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyPassword");

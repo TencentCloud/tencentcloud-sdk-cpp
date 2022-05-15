@@ -963,7 +963,7 @@ namespace TencentCloud
                 GetBatchProductionsListOutcomeCallable GetBatchProductionsListCallable(const Model::GetBatchProductionsListRequest& request);
 
                 /**
-                 *本接口（GetCOSURL）用于获取固件存储在COS的URL 
+                 *本接口（GetCOSURL）用于获取固件COS存储的上传请求URL地址
                  * @param req GetCOSURLRequest
                  * @return GetCOSURLOutcome
                  */
@@ -1278,7 +1278,7 @@ namespace TencentCloud
                 UpdateFirmwareOutcomeCallable UpdateFirmwareCallable(const Model::UpdateFirmwareRequest& request);
 
                 /**
-                 *本接口（UploadFirmware）用于上传设备固件至平台
+                 *本接口（UploadFirmware）用于创建设备固件版本信息，在平台用于固件版本升级、固件资源下发等。
                  * @param req UploadFirmwareRequest
                  * @return UploadFirmwareOutcome
                  */
