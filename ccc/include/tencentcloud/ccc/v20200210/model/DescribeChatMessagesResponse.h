@@ -58,7 +58,9 @@ namespace TencentCloud
 
                     /**
                      * 获取消息列表
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Messages 消息列表
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MessageBody> GetMessages() const;
 
@@ -78,6 +80,7 @@ namespace TencentCloud
 
                     /**
                      * 消息列表
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MessageBody> m_messages;
                     bool m_messagesHasBeenSet;

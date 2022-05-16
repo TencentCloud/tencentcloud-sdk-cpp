@@ -69,6 +69,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/ResetProcedureTemplateRequest.h
   include/tencentcloud/vod/v20180717/model/ContentReviewOcrResult.h
   include/tencentcloud/vod/v20180717/model/ComposeMediaResponse.h
+  include/tencentcloud/vod/v20180717/model/DescribeLicenseUsageDataResponse.h
   include/tencentcloud/vod/v20180717/model/UrlSignatureAuthPolicy.h
   include/tencentcloud/vod/v20180717/model/DeleteSampleSnapshotTemplateRequest.h
   include/tencentcloud/vod/v20180717/model/DescribeStorageDataResponse.h
@@ -189,6 +190,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/SimpleHlsClipResponse.h
   include/tencentcloud/vod/v20180717/model/DeleteAIAnalysisTemplateRequest.h
   include/tencentcloud/vod/v20180717/model/EditMediaRequest.h
+  include/tencentcloud/vod/v20180717/model/LicenseUsageDataItem.h
   include/tencentcloud/vod/v20180717/model/ConcatFileInfo2017.h
   include/tencentcloud/vod/v20180717/model/ContentReviewResult.h
   include/tencentcloud/vod/v20180717/model/MediaProcessTaskImageSpriteResult.h
@@ -537,6 +539,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/ConfirmEventsResponse.h
   include/tencentcloud/vod/v20180717/model/ModifyPersonSampleResponse.h
   include/tencentcloud/vod/v20180717/model/VideoTrackItem.h
+  include/tencentcloud/vod/v20180717/model/DescribeLicenseUsageDataRequest.h
   include/tencentcloud/vod/v20180717/model/DeleteTranscodeTemplateResponse.h
   include/tencentcloud/vod/v20180717/model/MediaTranscodeItem.h
   include/tencentcloud/vod/v20180717/model/DescribePersonSamplesResponse.h
@@ -659,6 +662,7 @@ set(vod_src
   src/v20180717/model/ResetProcedureTemplateRequest.cpp
   src/v20180717/model/ContentReviewOcrResult.cpp
   src/v20180717/model/ComposeMediaResponse.cpp
+  src/v20180717/model/DescribeLicenseUsageDataResponse.cpp
   src/v20180717/model/UrlSignatureAuthPolicy.cpp
   src/v20180717/model/DeleteSampleSnapshotTemplateRequest.cpp
   src/v20180717/model/DescribeStorageDataResponse.cpp
@@ -779,6 +783,7 @@ set(vod_src
   src/v20180717/model/SimpleHlsClipResponse.cpp
   src/v20180717/model/DeleteAIAnalysisTemplateRequest.cpp
   src/v20180717/model/EditMediaRequest.cpp
+  src/v20180717/model/LicenseUsageDataItem.cpp
   src/v20180717/model/ConcatFileInfo2017.cpp
   src/v20180717/model/ContentReviewResult.cpp
   src/v20180717/model/MediaProcessTaskImageSpriteResult.cpp
@@ -1127,6 +1132,7 @@ set(vod_src
   src/v20180717/model/ConfirmEventsResponse.cpp
   src/v20180717/model/ModifyPersonSampleResponse.cpp
   src/v20180717/model/VideoTrackItem.cpp
+  src/v20180717/model/DescribeLicenseUsageDataRequest.cpp
   src/v20180717/model/DeleteTranscodeTemplateResponse.cpp
   src/v20180717/model/MediaTranscodeItem.cpp
   src/v20180717/model/DescribePersonSamplesResponse.cpp

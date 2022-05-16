@@ -26,6 +26,7 @@ set(tiw_public_header_model
   include/tencentcloud/tiw/v20190919/model/SetVideoGenerationTaskCallbackRequest.h
   include/tencentcloud/tiw/v20190919/model/StreamControl.h
   include/tencentcloud/tiw/v20190919/model/StopOnlineRecordResponse.h
+  include/tencentcloud/tiw/v20190919/model/AuthParam.h
   include/tencentcloud/tiw/v20190919/model/SetVideoGenerationTaskCallbackKeyRequest.h
   include/tencentcloud/tiw/v20190919/model/StartWhiteboardPushRequest.h
   include/tencentcloud/tiw/v20190919/model/OmittedDuration.h
@@ -72,14 +73,14 @@ set(tiw_public_header_model
   include/tencentcloud/tiw/v20190919/model/DescribeWhiteboardPushCallbackRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeOnlineRecordResponse.h
   include/tencentcloud/tiw/v20190919/model/SetTranscodeCallbackKeyRequest.h
-  include/tencentcloud/tiw/v20190919/model/DescribeTranscodeRequest.h
+  include/tencentcloud/tiw/v20190919/model/CreateSnapshotTaskRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeTranscodeResponse.h
   include/tencentcloud/tiw/v20190919/model/StreamLayout.h
   include/tencentcloud/tiw/v20190919/model/DescribeQualityMetricsRequest.h
   include/tencentcloud/tiw/v20190919/model/SetOnlineRecordCallbackKeyRequest.h
   include/tencentcloud/tiw/v20190919/model/CreateVideoGenerationTaskRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeTranscodeCallbackRequest.h
-  include/tencentcloud/tiw/v20190919/model/CreateSnapshotTaskRequest.h
+  include/tencentcloud/tiw/v20190919/model/DescribeTranscodeRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeTranscodeCallbackResponse.h
   include/tencentcloud/tiw/v20190919/model/SetTranscodeCallbackRequest.h
   include/tencentcloud/tiw/v20190919/model/SetWhiteboardPushCallbackRequest.h
@@ -104,6 +105,7 @@ set(tiw_src
   src/v20190919/model/SetVideoGenerationTaskCallbackRequest.cpp
   src/v20190919/model/StreamControl.cpp
   src/v20190919/model/StopOnlineRecordResponse.cpp
+  src/v20190919/model/AuthParam.cpp
   src/v20190919/model/SetVideoGenerationTaskCallbackKeyRequest.cpp
   src/v20190919/model/StartWhiteboardPushRequest.cpp
   src/v20190919/model/OmittedDuration.cpp
@@ -150,14 +152,14 @@ set(tiw_src
   src/v20190919/model/DescribeWhiteboardPushCallbackRequest.cpp
   src/v20190919/model/DescribeOnlineRecordResponse.cpp
   src/v20190919/model/SetTranscodeCallbackKeyRequest.cpp
-  src/v20190919/model/DescribeTranscodeRequest.cpp
+  src/v20190919/model/CreateSnapshotTaskRequest.cpp
   src/v20190919/model/DescribeTranscodeResponse.cpp
   src/v20190919/model/StreamLayout.cpp
   src/v20190919/model/DescribeQualityMetricsRequest.cpp
   src/v20190919/model/SetOnlineRecordCallbackKeyRequest.cpp
   src/v20190919/model/CreateVideoGenerationTaskRequest.cpp
   src/v20190919/model/DescribeTranscodeCallbackRequest.cpp
-  src/v20190919/model/CreateSnapshotTaskRequest.cpp
+  src/v20190919/model/DescribeTranscodeRequest.cpp
   src/v20190919/model/DescribeTranscodeCallbackResponse.cpp
   src/v20190919/model/SetTranscodeCallbackRequest.cpp
   src/v20190919/model/SetWhiteboardPushCallbackRequest.cpp

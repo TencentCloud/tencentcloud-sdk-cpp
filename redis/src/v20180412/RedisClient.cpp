@@ -2878,6 +2878,49 @@ RedisClient::ModifyInstanceParamsOutcomeCallable RedisClient::ModifyInstancePara
     return task->get_future();
 }
 
+RedisClient::ModifyInstanceReadOnlyOutcome RedisClient::ModifyInstanceReadOnly(const ModifyInstanceReadOnlyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceReadOnly");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceReadOnlyResponse rsp = ModifyInstanceReadOnlyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceReadOnlyOutcome(rsp);
+        else
+            return ModifyInstanceReadOnlyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceReadOnlyOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::ModifyInstanceReadOnlyAsync(const ModifyInstanceReadOnlyRequest& request, const ModifyInstanceReadOnlyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstanceReadOnly(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::ModifyInstanceReadOnlyOutcomeCallable RedisClient::ModifyInstanceReadOnlyCallable(const ModifyInstanceReadOnlyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceReadOnlyOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstanceReadOnly(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RedisClient::ModifyMaintenanceWindowOutcome RedisClient::ModifyMaintenanceWindow(const ModifyMaintenanceWindowRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyMaintenanceWindow");

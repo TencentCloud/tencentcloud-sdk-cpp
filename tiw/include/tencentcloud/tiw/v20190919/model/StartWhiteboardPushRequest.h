@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tiw/v20190919/model/Whiteboard.h>
 #include <tencentcloud/tiw/v20190919/model/WhiteboardPushBackupParam.h>
+#include <tencentcloud/tiw/v20190919/model/AuthParam.h>
 
 
 namespace TencentCloud
@@ -89,14 +90,18 @@ namespace TencentCloud
                     bool RoomIdHasBeenSet() const;
 
                     /**
-                     * 获取用于白板推流服务进房进行推流的用户ID，最大长度不能大于60个字节，该ID必须是一个单独的未在SDK中使用的ID，白板推流服务使用这个用户ID进入房间进行白板音视频推流，若该ID和SDK中使用的ID重复，会导致SDK和白板推流服务互踢，影响正常推流。
-                     * @return PushUserId 用于白板推流服务进房进行推流的用户ID，最大长度不能大于60个字节，该ID必须是一个单独的未在SDK中使用的ID，白板推流服务使用这个用户ID进入房间进行白板音视频推流，若该ID和SDK中使用的ID重复，会导致SDK和白板推流服务互踢，影响正常推流。
+                     * 获取用于白板推流服务进入白板房间的用户ID。在没有进行额外指定的情况下，这个用户ID同时会用于IM登录、IM加群、TRTC进房推流等操作。
+用户ID最大长度不能大于60个字节，该ID必须是一个单独的未在SDK中使用的ID，白板推流服务使用这个用户ID进入房间进行白板音视频推流，若该ID和SDK中使用的ID重复，会导致SDK和白板推流服务互踢，影响正常推流。
+                     * @return PushUserId 用于白板推流服务进入白板房间的用户ID。在没有进行额外指定的情况下，这个用户ID同时会用于IM登录、IM加群、TRTC进房推流等操作。
+用户ID最大长度不能大于60个字节，该ID必须是一个单独的未在SDK中使用的ID，白板推流服务使用这个用户ID进入房间进行白板音视频推流，若该ID和SDK中使用的ID重复，会导致SDK和白板推流服务互踢，影响正常推流。
                      */
                     std::string GetPushUserId() const;
 
                     /**
-                     * 设置用于白板推流服务进房进行推流的用户ID，最大长度不能大于60个字节，该ID必须是一个单独的未在SDK中使用的ID，白板推流服务使用这个用户ID进入房间进行白板音视频推流，若该ID和SDK中使用的ID重复，会导致SDK和白板推流服务互踢，影响正常推流。
-                     * @param PushUserId 用于白板推流服务进房进行推流的用户ID，最大长度不能大于60个字节，该ID必须是一个单独的未在SDK中使用的ID，白板推流服务使用这个用户ID进入房间进行白板音视频推流，若该ID和SDK中使用的ID重复，会导致SDK和白板推流服务互踢，影响正常推流。
+                     * 设置用于白板推流服务进入白板房间的用户ID。在没有进行额外指定的情况下，这个用户ID同时会用于IM登录、IM加群、TRTC进房推流等操作。
+用户ID最大长度不能大于60个字节，该ID必须是一个单独的未在SDK中使用的ID，白板推流服务使用这个用户ID进入房间进行白板音视频推流，若该ID和SDK中使用的ID重复，会导致SDK和白板推流服务互踢，影响正常推流。
+                     * @param PushUserId 用于白板推流服务进入白板房间的用户ID。在没有进行额外指定的情况下，这个用户ID同时会用于IM登录、IM加群、TRTC进房推流等操作。
+用户ID最大长度不能大于60个字节，该ID必须是一个单独的未在SDK中使用的ID，白板推流服务使用这个用户ID进入房间进行白板音视频推流，若该ID和SDK中使用的ID重复，会导致SDK和白板推流服务互踢，影响正常推流。
                      */
                     void SetPushUserId(const std::string& _pushUserId);
 
@@ -544,6 +549,82 @@ SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
                      */
                     bool TRTCRoomIdStrHasBeenSet() const;
 
+                    /**
+                     * 获取内测参数，需开通白名单进行体验。
+
+IM鉴权信息参数，用于IM鉴权。
+当白板信令所使用的IM应用与白板应用的SdkAppId不一致时，可以通过此参数提供对应IM应用鉴权信息。
+
+如果提供了此参数，白板推流服务会优先使用此参数指定的SdkAppId作为白板信令的传输通道，否则使用公共参数中的SdkAppId作为白板信令的传输通道。
+                     * @return IMAuthParam 内测参数，需开通白名单进行体验。
+
+IM鉴权信息参数，用于IM鉴权。
+当白板信令所使用的IM应用与白板应用的SdkAppId不一致时，可以通过此参数提供对应IM应用鉴权信息。
+
+如果提供了此参数，白板推流服务会优先使用此参数指定的SdkAppId作为白板信令的传输通道，否则使用公共参数中的SdkAppId作为白板信令的传输通道。
+                     */
+                    AuthParam GetIMAuthParam() const;
+
+                    /**
+                     * 设置内测参数，需开通白名单进行体验。
+
+IM鉴权信息参数，用于IM鉴权。
+当白板信令所使用的IM应用与白板应用的SdkAppId不一致时，可以通过此参数提供对应IM应用鉴权信息。
+
+如果提供了此参数，白板推流服务会优先使用此参数指定的SdkAppId作为白板信令的传输通道，否则使用公共参数中的SdkAppId作为白板信令的传输通道。
+                     * @param IMAuthParam 内测参数，需开通白名单进行体验。
+
+IM鉴权信息参数，用于IM鉴权。
+当白板信令所使用的IM应用与白板应用的SdkAppId不一致时，可以通过此参数提供对应IM应用鉴权信息。
+
+如果提供了此参数，白板推流服务会优先使用此参数指定的SdkAppId作为白板信令的传输通道，否则使用公共参数中的SdkAppId作为白板信令的传输通道。
+                     */
+                    void SetIMAuthParam(const AuthParam& _iMAuthParam);
+
+                    /**
+                     * 判断参数 IMAuthParam 是否已赋值
+                     * @return IMAuthParam 是否已赋值
+                     */
+                    bool IMAuthParamHasBeenSet() const;
+
+                    /**
+                     * 获取内测参数，需开通白名单进行体验。
+
+TRTC鉴权信息参数，用于TRTC进房推流鉴权。
+当需要推流到的TRTC房间所对应的TRTC应用与白板应用的SdkAppId不一致时，可以通过此参数提供对应的TRTC应用鉴权信息。
+
+如果提供了此参数，白板推流服务会优先使用此参数指定的SdkAppId作为白板推流的目标TRTC应用，否则使用公共参数中的SdkAppId作为白板推流的目标TRTC应用。
+                     * @return TRTCAuthParam 内测参数，需开通白名单进行体验。
+
+TRTC鉴权信息参数，用于TRTC进房推流鉴权。
+当需要推流到的TRTC房间所对应的TRTC应用与白板应用的SdkAppId不一致时，可以通过此参数提供对应的TRTC应用鉴权信息。
+
+如果提供了此参数，白板推流服务会优先使用此参数指定的SdkAppId作为白板推流的目标TRTC应用，否则使用公共参数中的SdkAppId作为白板推流的目标TRTC应用。
+                     */
+                    AuthParam GetTRTCAuthParam() const;
+
+                    /**
+                     * 设置内测参数，需开通白名单进行体验。
+
+TRTC鉴权信息参数，用于TRTC进房推流鉴权。
+当需要推流到的TRTC房间所对应的TRTC应用与白板应用的SdkAppId不一致时，可以通过此参数提供对应的TRTC应用鉴权信息。
+
+如果提供了此参数，白板推流服务会优先使用此参数指定的SdkAppId作为白板推流的目标TRTC应用，否则使用公共参数中的SdkAppId作为白板推流的目标TRTC应用。
+                     * @param TRTCAuthParam 内测参数，需开通白名单进行体验。
+
+TRTC鉴权信息参数，用于TRTC进房推流鉴权。
+当需要推流到的TRTC房间所对应的TRTC应用与白板应用的SdkAppId不一致时，可以通过此参数提供对应的TRTC应用鉴权信息。
+
+如果提供了此参数，白板推流服务会优先使用此参数指定的SdkAppId作为白板推流的目标TRTC应用，否则使用公共参数中的SdkAppId作为白板推流的目标TRTC应用。
+                     */
+                    void SetTRTCAuthParam(const AuthParam& _tRTCAuthParam);
+
+                    /**
+                     * 判断参数 TRTCAuthParam 是否已赋值
+                     * @return TRTCAuthParam 是否已赋值
+                     */
+                    bool TRTCAuthParamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -561,7 +642,8 @@ SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
                     bool m_roomIdHasBeenSet;
 
                     /**
-                     * 用于白板推流服务进房进行推流的用户ID，最大长度不能大于60个字节，该ID必须是一个单独的未在SDK中使用的ID，白板推流服务使用这个用户ID进入房间进行白板音视频推流，若该ID和SDK中使用的ID重复，会导致SDK和白板推流服务互踢，影响正常推流。
+                     * 用于白板推流服务进入白板房间的用户ID。在没有进行额外指定的情况下，这个用户ID同时会用于IM登录、IM加群、TRTC进房推流等操作。
+用户ID最大长度不能大于60个字节，该ID必须是一个单独的未在SDK中使用的ID，白板推流服务使用这个用户ID进入房间进行白板音视频推流，若该ID和SDK中使用的ID重复，会导致SDK和白板推流服务互踢，影响正常推流。
                      */
                     std::string m_pushUserId;
                     bool m_pushUserIdHasBeenSet;
@@ -697,6 +779,28 @@ SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
                      */
                     std::string m_tRTCRoomIdStr;
                     bool m_tRTCRoomIdStrHasBeenSet;
+
+                    /**
+                     * 内测参数，需开通白名单进行体验。
+
+IM鉴权信息参数，用于IM鉴权。
+当白板信令所使用的IM应用与白板应用的SdkAppId不一致时，可以通过此参数提供对应IM应用鉴权信息。
+
+如果提供了此参数，白板推流服务会优先使用此参数指定的SdkAppId作为白板信令的传输通道，否则使用公共参数中的SdkAppId作为白板信令的传输通道。
+                     */
+                    AuthParam m_iMAuthParam;
+                    bool m_iMAuthParamHasBeenSet;
+
+                    /**
+                     * 内测参数，需开通白名单进行体验。
+
+TRTC鉴权信息参数，用于TRTC进房推流鉴权。
+当需要推流到的TRTC房间所对应的TRTC应用与白板应用的SdkAppId不一致时，可以通过此参数提供对应的TRTC应用鉴权信息。
+
+如果提供了此参数，白板推流服务会优先使用此参数指定的SdkAppId作为白板推流的目标TRTC应用，否则使用公共参数中的SdkAppId作为白板推流的目标TRTC应用。
+                     */
+                    AuthParam m_tRTCAuthParam;
+                    bool m_tRTCAuthParamHasBeenSet;
 
                 };
             }

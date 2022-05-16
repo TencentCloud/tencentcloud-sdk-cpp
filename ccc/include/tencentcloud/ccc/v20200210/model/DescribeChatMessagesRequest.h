@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取实例 ID（废弃）
+                     * @return InstanceId 实例 ID（废弃）
                      */
                     int64_t GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * 设置实例 ID（废弃）
+                     * @param InstanceId 实例 ID（废弃）
                      */
                     void SetInstanceId(const int64_t& _instanceId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取应用ID
-                     * @return SdkAppId 应用ID
+                     * 获取应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * @return SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
-                     * 设置应用ID
-                     * @param SdkAppId 应用ID
+                     * 设置应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * @param SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
@@ -171,13 +171,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * 实例 ID（废弃）
                      */
                     int64_t m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 应用ID
+                     * 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
                      */
                     int64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;

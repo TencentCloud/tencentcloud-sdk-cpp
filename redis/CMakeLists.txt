@@ -30,6 +30,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/UpgradeInstanceVersionResponse.h
   include/tencentcloud/redis/v20180412/model/CreateInstancesRequest.h
   include/tencentcloud/redis/v20180412/model/CreateReplicationGroupRequest.h
+  include/tencentcloud/redis/v20180412/model/ModifyInstanceReadOnlyResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceZoneInfoRequest.h
   include/tencentcloud/redis/v20180412/model/ModifyNetworkConfigResponse.h
   include/tencentcloud/redis/v20180412/model/CommandTake.h
@@ -54,6 +55,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/SecurityGroupsInboundAndOutbound.h
   include/tencentcloud/redis/v20180412/model/ResetPasswordResponse.h
   include/tencentcloud/redis/v20180412/model/ClearInstanceRequest.h
+  include/tencentcloud/redis/v20180412/model/UpgradeInstanceVersionRequest.h
   include/tencentcloud/redis/v20180412/model/RegionConf.h
   include/tencentcloud/redis/v20180412/model/BigKeyInfo.h
   include/tencentcloud/redis/v20180412/model/DescribeParamTemplatesRequest.h
@@ -193,7 +195,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/DescribeTendisSlowLogRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeProxySlowLogRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeProxySlowLogResponse.h
-  include/tencentcloud/redis/v20180412/model/UpgradeInstanceVersionRequest.h
+  include/tencentcloud/redis/v20180412/model/ModifyInstanceReadOnlyRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceAccountResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorBigKeyRequest.h
   include/tencentcloud/redis/v20180412/model/DisableReplicaReadonlyRequest.h
@@ -238,6 +240,7 @@ set(redis_src
   src/v20180412/model/UpgradeInstanceVersionResponse.cpp
   src/v20180412/model/CreateInstancesRequest.cpp
   src/v20180412/model/CreateReplicationGroupRequest.cpp
+  src/v20180412/model/ModifyInstanceReadOnlyResponse.cpp
   src/v20180412/model/DescribeInstanceZoneInfoRequest.cpp
   src/v20180412/model/ModifyNetworkConfigResponse.cpp
   src/v20180412/model/CommandTake.cpp
@@ -262,6 +265,7 @@ set(redis_src
   src/v20180412/model/SecurityGroupsInboundAndOutbound.cpp
   src/v20180412/model/ResetPasswordResponse.cpp
   src/v20180412/model/ClearInstanceRequest.cpp
+  src/v20180412/model/UpgradeInstanceVersionRequest.cpp
   src/v20180412/model/RegionConf.cpp
   src/v20180412/model/BigKeyInfo.cpp
   src/v20180412/model/DescribeParamTemplatesRequest.cpp
@@ -401,7 +405,7 @@ set(redis_src
   src/v20180412/model/DescribeTendisSlowLogRequest.cpp
   src/v20180412/model/DescribeProxySlowLogRequest.cpp
   src/v20180412/model/DescribeProxySlowLogResponse.cpp
-  src/v20180412/model/UpgradeInstanceVersionRequest.cpp
+  src/v20180412/model/ModifyInstanceReadOnlyRequest.cpp
   src/v20180412/model/DescribeInstanceAccountResponse.cpp
   src/v20180412/model/DescribeInstanceMonitorBigKeyRequest.cpp
   src/v20180412/model/DisableReplicaReadonlyRequest.cpp

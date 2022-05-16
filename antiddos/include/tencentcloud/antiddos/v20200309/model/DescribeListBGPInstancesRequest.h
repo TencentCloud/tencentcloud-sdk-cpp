@@ -222,6 +222,24 @@ namespace TencentCloud
                      */
                     bool FilterInstanceIdListHasBeenSet() const;
 
+                    /**
+                     * 获取企业版搜索
+                     * @return FilterEnterpriseFlag 企业版搜索
+                     */
+                    uint64_t GetFilterEnterpriseFlag() const;
+
+                    /**
+                     * 设置企业版搜索
+                     * @param FilterEnterpriseFlag 企业版搜索
+                     */
+                    void SetFilterEnterpriseFlag(const uint64_t& _filterEnterpriseFlag);
+
+                    /**
+                     * 判断参数 FilterEnterpriseFlag 是否已赋值
+                     * @return FilterEnterpriseFlag 是否已赋值
+                     */
+                    bool FilterEnterpriseFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -283,6 +301,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_filterInstanceIdList;
                     bool m_filterInstanceIdListHasBeenSet;
+
+                    /**
+                     * 企业版搜索
+                     */
+                    uint64_t m_filterEnterpriseFlag;
+                    bool m_filterEnterpriseFlagHasBeenSet;
 
                 };
             }

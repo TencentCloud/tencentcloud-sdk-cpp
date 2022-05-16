@@ -23,16 +23,22 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/trtc/v20190722/model/CreateCloudRecordingRequest.h>
+#include <tencentcloud/trtc/v20190722/model/CreateCloudRecordingResponse.h>
 #include <tencentcloud/trtc/v20190722/model/CreatePictureRequest.h>
 #include <tencentcloud/trtc/v20190722/model/CreatePictureResponse.h>
 #include <tencentcloud/trtc/v20190722/model/CreateTroubleInfoRequest.h>
 #include <tencentcloud/trtc/v20190722/model/CreateTroubleInfoResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DeleteCloudRecordingRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DeleteCloudRecordingResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DeletePictureRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DeletePictureResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeAbnormalEventRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeAbnormalEventResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeCallDetailRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeCallDetailResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeCloudRecordingRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeCloudRecordingResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeDetailEventRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeDetailEventResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeHistoryScaleRequest.h>
@@ -51,6 +57,8 @@
 #include <tencentcloud/trtc/v20190722/model/DismissRoomResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DismissRoomByStrRoomIdRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DismissRoomByStrRoomIdResponse.h>
+#include <tencentcloud/trtc/v20190722/model/ModifyCloudRecordingRequest.h>
+#include <tencentcloud/trtc/v20190722/model/ModifyCloudRecordingResponse.h>
 #include <tencentcloud/trtc/v20190722/model/ModifyPictureRequest.h>
 #include <tencentcloud/trtc/v20190722/model/ModifyPictureResponse.h>
 #include <tencentcloud/trtc/v20190722/model/RemoveUserRequest.h>
@@ -79,12 +87,18 @@ namespace TencentCloud
                 TrtcClient(const Credential &credential, const std::string &region);
                 TrtcClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CreateCloudRecordingResponse> CreateCloudRecordingOutcome;
+                typedef std::future<CreateCloudRecordingOutcome> CreateCloudRecordingOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::CreateCloudRecordingRequest&, CreateCloudRecordingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudRecordingAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePictureResponse> CreatePictureOutcome;
                 typedef std::future<CreatePictureOutcome> CreatePictureOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::CreatePictureRequest&, CreatePictureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePictureAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTroubleInfoResponse> CreateTroubleInfoOutcome;
                 typedef std::future<CreateTroubleInfoOutcome> CreateTroubleInfoOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::CreateTroubleInfoRequest&, CreateTroubleInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTroubleInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCloudRecordingResponse> DeleteCloudRecordingOutcome;
+                typedef std::future<DeleteCloudRecordingOutcome> DeleteCloudRecordingOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DeleteCloudRecordingRequest&, DeleteCloudRecordingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudRecordingAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeletePictureResponse> DeletePictureOutcome;
                 typedef std::future<DeletePictureOutcome> DeletePictureOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DeletePictureRequest&, DeletePictureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePictureAsyncHandler;
@@ -94,6 +108,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCallDetailResponse> DescribeCallDetailOutcome;
                 typedef std::future<DescribeCallDetailOutcome> DescribeCallDetailOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeCallDetailRequest&, DescribeCallDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCallDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudRecordingResponse> DescribeCloudRecordingOutcome;
+                typedef std::future<DescribeCloudRecordingOutcome> DescribeCloudRecordingOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DescribeCloudRecordingRequest&, DescribeCloudRecordingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudRecordingAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDetailEventResponse> DescribeDetailEventOutcome;
                 typedef std::future<DescribeDetailEventOutcome> DescribeDetailEventOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeDetailEventRequest&, DescribeDetailEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDetailEventAsyncHandler;
@@ -121,6 +138,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DismissRoomByStrRoomIdResponse> DismissRoomByStrRoomIdOutcome;
                 typedef std::future<DismissRoomByStrRoomIdOutcome> DismissRoomByStrRoomIdOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DismissRoomByStrRoomIdRequest&, DismissRoomByStrRoomIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DismissRoomByStrRoomIdAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCloudRecordingResponse> ModifyCloudRecordingOutcome;
+                typedef std::future<ModifyCloudRecordingOutcome> ModifyCloudRecordingOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::ModifyCloudRecordingRequest&, ModifyCloudRecordingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudRecordingAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyPictureResponse> ModifyPictureOutcome;
                 typedef std::future<ModifyPictureOutcome> ModifyPictureOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::ModifyPictureRequest&, ModifyPictureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPictureAsyncHandler;
@@ -146,6 +166,26 @@ namespace TencentCloud
 
 
                 /**
+                 *###接口说明：
+启动云端录制功能，完成房间内的音视频录制，并上传到指定的云存储。您可以通过此 API 接口把TRTC 房间中的每一路音视频流做单独的录制有或者多路视频画面混流一路。
+
+###您可以通过此接口实现如下目标：
+* 指定订阅流参数（RecordParams）来指定需要录制的主播的黑名单或者白名单。
+* 指定第三方存储的参数（StorageParams）来指定上传到您希望的云存储
+* 指定混流模式下的音视频转码详细参数（MixTranscodeParams），包括视频分辨率、视频码率、视频帧率、以及声音质量等
+* 指定混流模式各路画面的位置和布局或者也可以指定自动模板的方式来配置。
+
+###关键名词：
+* 单流录制：分别录制房间的订阅UserId的音频和视频。录制服务会实时将录制文件（M3U8/TS）上传至云存储。
+* 混流录制：将房间内订阅UserId的音视频混录成一个音视频文件，并将录制文件（M3U8/TS）上传至云存储。
+                 * @param req CreateCloudRecordingRequest
+                 * @return CreateCloudRecordingOutcome
+                 */
+                CreateCloudRecordingOutcome CreateCloudRecording(const Model::CreateCloudRecordingRequest &request);
+                void CreateCloudRecordingAsync(const Model::CreateCloudRecordingRequest& request, const CreateCloudRecordingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCloudRecordingOutcomeCallable CreateCloudRecordingCallable(const Model::CreateCloudRecordingRequest& request);
+
+                /**
                  *如果您需要在 [云端混流转码](https://cloud.tencent.com/document/product/647/16827) 时频繁新增自定义背景图或水印，可通过此接口上传新的图片素材。无需频繁新增图片的场景，建议直接在 [控制台 > 应用管理 > 素材管理](https://cloud.tencent.com/document/product/647/50769) 中操作。
                  * @param req CreatePictureRequest
                  * @return CreatePictureOutcome
@@ -162,6 +202,15 @@ namespace TencentCloud
                 CreateTroubleInfoOutcome CreateTroubleInfo(const Model::CreateTroubleInfoRequest &request);
                 void CreateTroubleInfoAsync(const Model::CreateTroubleInfoRequest& request, const CreateTroubleInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTroubleInfoOutcomeCallable CreateTroubleInfoCallable(const Model::CreateTroubleInfoRequest& request);
+
+                /**
+                 *成功开启录制后，可以使用此接口来停止录制任务。仅在录制任务进行时有效，录制退出后更新将会返回错误。停止录制成功后不代表文件全部传输完成，如果未完成后台将会继续上传文件，成功后通过事件回调通知客户文件全部传输完成状态。
+                 * @param req DeleteCloudRecordingRequest
+                 * @return DeleteCloudRecordingOutcome
+                 */
+                DeleteCloudRecordingOutcome DeleteCloudRecording(const Model::DeleteCloudRecordingRequest &request);
+                void DeleteCloudRecordingAsync(const Model::DeleteCloudRecordingRequest& request, const DeleteCloudRecordingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCloudRecordingOutcomeCallable DeleteCloudRecordingCallable(const Model::DeleteCloudRecordingRequest& request);
 
                 /**
                  *如果您需要在 [云端混流转码](https://cloud.tencent.com/document/product/647/16827) 时频繁删除自定义背景图或水印，可通过此接口删除已上传的图片。无需频繁删除图片的场景，建议直接在 [控制台 > 应用管理 > 素材管理](https://cloud.tencent.com/document/product/647/50769) 中操作。
@@ -190,6 +239,15 @@ namespace TencentCloud
                 DescribeCallDetailOutcome DescribeCallDetail(const Model::DescribeCallDetailRequest &request);
                 void DescribeCallDetailAsync(const Model::DescribeCallDetailRequest& request, const DescribeCallDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCallDetailOutcomeCallable DescribeCallDetailCallable(const Model::DescribeCallDetailRequest& request);
+
+                /**
+                 *成功开启录制后，可以使用此接口来查询录制状态。仅在录制任务进行时有效，录制退出后查询将会返回错误。
+                 * @param req DescribeCloudRecordingRequest
+                 * @return DescribeCloudRecordingOutcome
+                 */
+                DescribeCloudRecordingOutcome DescribeCloudRecording(const Model::DescribeCloudRecordingRequest &request);
+                void DescribeCloudRecordingAsync(const Model::DescribeCloudRecordingRequest& request, const DescribeCloudRecordingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudRecordingOutcomeCallable DescribeCloudRecordingCallable(const Model::DescribeCloudRecordingRequest& request);
 
                 /**
                  *查询用户某次通话内的进退房，视频开关等详细事件。可查询14天内数据。
@@ -282,6 +340,15 @@ namespace TencentCloud
                 DismissRoomByStrRoomIdOutcome DismissRoomByStrRoomId(const Model::DismissRoomByStrRoomIdRequest &request);
                 void DismissRoomByStrRoomIdAsync(const Model::DismissRoomByStrRoomIdRequest& request, const DismissRoomByStrRoomIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DismissRoomByStrRoomIdOutcomeCallable DismissRoomByStrRoomIdCallable(const Model::DismissRoomByStrRoomIdRequest& request);
+
+                /**
+                 *成功开启录制后，可以使用此接口来更新录制任务。仅在录制任务进行时有效，录制退出后更新将会返回错误。更新操作是全量覆盖，并不是增量更新的模式，也就是说每次更新都需要携带全量的信息。
+                 * @param req ModifyCloudRecordingRequest
+                 * @return ModifyCloudRecordingOutcome
+                 */
+                ModifyCloudRecordingOutcome ModifyCloudRecording(const Model::ModifyCloudRecordingRequest &request);
+                void ModifyCloudRecordingAsync(const Model::ModifyCloudRecordingRequest& request, const ModifyCloudRecordingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCloudRecordingOutcomeCallable ModifyCloudRecordingCallable(const Model::ModifyCloudRecordingRequest& request);
 
                 /**
                  *如果您需要在 [云端混流转码](https://cloud.tencent.com/document/product/647/16827) 时频繁修改自定义背景图或水印素材，可通过此接口修改已上传的图片。无需频繁修改图片素材的场景，建议直接在 [控制台 > 应用管理 > 素材管理](https://cloud.tencent.com/document/product/647/50769) 中操作。

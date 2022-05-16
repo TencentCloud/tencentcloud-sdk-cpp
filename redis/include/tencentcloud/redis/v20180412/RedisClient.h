@@ -155,6 +155,8 @@
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceAccountResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceParamsRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceParamsResponse.h>
+#include <tencentcloud/redis/v20180412/model/ModifyInstanceReadOnlyRequest.h>
+#include <tencentcloud/redis/v20180412/model/ModifyInstanceReadOnlyResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyMaintenanceWindowRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyMaintenanceWindowResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyNetworkConfigRequest.h>
@@ -391,6 +393,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyInstanceParamsResponse> ModifyInstanceParamsOutcome;
                 typedef std::future<ModifyInstanceParamsOutcome> ModifyInstanceParamsOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyInstanceParamsRequest&, ModifyInstanceParamsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceParamsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceReadOnlyResponse> ModifyInstanceReadOnlyOutcome;
+                typedef std::future<ModifyInstanceReadOnlyOutcome> ModifyInstanceReadOnlyOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::ModifyInstanceReadOnlyRequest&, ModifyInstanceReadOnlyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceReadOnlyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyMaintenanceWindowResponse> ModifyMaintenanceWindowOutcome;
                 typedef std::future<ModifyMaintenanceWindowOutcome> ModifyMaintenanceWindowOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyMaintenanceWindowRequest&, ModifyMaintenanceWindowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMaintenanceWindowAsyncHandler;
@@ -1023,6 +1028,15 @@ namespace TencentCloud
                 ModifyInstanceParamsOutcome ModifyInstanceParams(const Model::ModifyInstanceParamsRequest &request);
                 void ModifyInstanceParamsAsync(const Model::ModifyInstanceParamsRequest& request, const ModifyInstanceParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyInstanceParamsOutcomeCallable ModifyInstanceParamsCallable(const Model::ModifyInstanceParamsRequest& request);
+
+                /**
+                 *设置实例输入模式
+                 * @param req ModifyInstanceReadOnlyRequest
+                 * @return ModifyInstanceReadOnlyOutcome
+                 */
+                ModifyInstanceReadOnlyOutcome ModifyInstanceReadOnly(const Model::ModifyInstanceReadOnlyRequest &request);
+                void ModifyInstanceReadOnlyAsync(const Model::ModifyInstanceReadOnlyRequest& request, const ModifyInstanceReadOnlyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceReadOnlyOutcomeCallable ModifyInstanceReadOnlyCallable(const Model::ModifyInstanceReadOnlyRequest& request);
 
                 /**
                  *修改实例维护时间窗时间，需要进行版本升级或者架构升级的实例，会在维护时间窗内进行时间切换。注意：已经发起版本升级或者架构升级的实例，无法修改维护时间窗。
