@@ -27,7 +27,8 @@ AssumeRoleRequest::AssumeRoleRequest() :
     m_roleSessionNameHasBeenSet(false),
     m_durationSecondsHasBeenSet(false),
     m_policyHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
+    m_externalIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,21 @@ string AssumeRoleRequest::ToJsonString() const
         string key = "ExternalId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_externalId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -164,6 +180,22 @@ void AssumeRoleRequest::SetExternalId(const string& _externalId)
 bool AssumeRoleRequest::ExternalIdHasBeenSet() const
 {
     return m_externalIdHasBeenSet;
+}
+
+vector<Tag> AssumeRoleRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void AssumeRoleRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool AssumeRoleRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

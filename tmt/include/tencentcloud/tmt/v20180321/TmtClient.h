@@ -23,6 +23,10 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/tmt/v20180321/model/FileTranslateRequest.h>
+#include <tencentcloud/tmt/v20180321/model/FileTranslateResponse.h>
+#include <tencentcloud/tmt/v20180321/model/GetFileTranslateRequest.h>
+#include <tencentcloud/tmt/v20180321/model/GetFileTranslateResponse.h>
 #include <tencentcloud/tmt/v20180321/model/ImageTranslateRequest.h>
 #include <tencentcloud/tmt/v20180321/model/ImageTranslateResponse.h>
 #include <tencentcloud/tmt/v20180321/model/LanguageDetectRequest.h>
@@ -47,6 +51,12 @@ namespace TencentCloud
                 TmtClient(const Credential &credential, const std::string &region);
                 TmtClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::FileTranslateResponse> FileTranslateOutcome;
+                typedef std::future<FileTranslateOutcome> FileTranslateOutcomeCallable;
+                typedef std::function<void(const TmtClient*, const Model::FileTranslateRequest&, FileTranslateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FileTranslateAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetFileTranslateResponse> GetFileTranslateOutcome;
+                typedef std::future<GetFileTranslateOutcome> GetFileTranslateOutcomeCallable;
+                typedef std::function<void(const TmtClient*, const Model::GetFileTranslateRequest&, GetFileTranslateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFileTranslateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ImageTranslateResponse> ImageTranslateOutcome;
                 typedef std::future<ImageTranslateOutcome> ImageTranslateOutcomeCallable;
                 typedef std::function<void(const TmtClient*, const Model::ImageTranslateRequest&, ImageTranslateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageTranslateAsyncHandler;
@@ -64,6 +74,26 @@ namespace TencentCloud
                 typedef std::function<void(const TmtClient*, const Model::TextTranslateBatchRequest&, TextTranslateBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextTranslateBatchAsyncHandler;
 
 
+
+                /**
+                 *提交文档原文内容，输出任务ID， 支持原文为单一语种文档（如出现多语言文档，仅支持以选定的源语言相关内容翻译）,文件格式有pdf、docx、pptx、xlsx，支持的文本格式有txt、xml、html、markdown、properties。
+                 * @param req FileTranslateRequest
+                 * @return FileTranslateOutcome
+                 */
+                FileTranslateOutcome FileTranslate(const Model::FileTranslateRequest &request);
+                void FileTranslateAsync(const Model::FileTranslateRequest& request, const FileTranslateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                FileTranslateOutcomeCallable FileTranslateCallable(const Model::FileTranslateRequest& request);
+
+                /**
+                 *在调用文档翻译请求接口后，有回调和轮询两种方式获取识别结果。
+•当采用回调方式时，翻译完成后会将结果通过 POST 请求的形式通知到用户在请求时填写的回调 URL，具体请参见文档翻译结果回调 。
+• 当采用轮询方式时，需要主动提交任务ID来轮询识别结果，共有任务成功、等待、执行中和失败四种结果，具体信息请参见参数说明。
+                 * @param req GetFileTranslateRequest
+                 * @return GetFileTranslateOutcome
+                 */
+                GetFileTranslateOutcome GetFileTranslate(const Model::GetFileTranslateRequest &request);
+                void GetFileTranslateAsync(const Model::GetFileTranslateRequest& request, const GetFileTranslateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetFileTranslateOutcomeCallable GetFileTranslateCallable(const Model::GetFileTranslateRequest& request);
 
                 /**
                  *提供13种语言的图片翻译服务，可自动识别图片中的文本内容并翻译成目标语言，识别后的文本按行翻译，后续会提供可按段落翻译的版本。<br />

@@ -22,9 +22,9 @@ using namespace std;
 
 OpenBankPayeeInfo::OpenBankPayeeInfo() :
     m_payeeIdHasBeenSet(false),
-    m_payeeNameHasBeenSet(false),
-    m_bankAccountNumberHasBeenSet(false),
     m_bankBranchNameHasBeenSet(false),
+    m_bankAccountNumberHasBeenSet(false),
+    m_payeeNameHasBeenSet(false),
     m_bankBranchIdHasBeenSet(false),
     m_bindSerialNoHasBeenSet(false),
     m_accountTypeHasBeenSet(false)
@@ -46,14 +46,14 @@ CoreInternalOutcome OpenBankPayeeInfo::Deserialize(const rapidjson::Value &value
         m_payeeIdHasBeenSet = true;
     }
 
-    if (value.HasMember("PayeeName") && !value["PayeeName"].IsNull())
+    if (value.HasMember("BankBranchName") && !value["BankBranchName"].IsNull())
     {
-        if (!value["PayeeName"].IsString())
+        if (!value["BankBranchName"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `OpenBankPayeeInfo.PayeeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OpenBankPayeeInfo.BankBranchName` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_payeeName = string(value["PayeeName"].GetString());
-        m_payeeNameHasBeenSet = true;
+        m_bankBranchName = string(value["BankBranchName"].GetString());
+        m_bankBranchNameHasBeenSet = true;
     }
 
     if (value.HasMember("BankAccountNumber") && !value["BankAccountNumber"].IsNull())
@@ -66,14 +66,14 @@ CoreInternalOutcome OpenBankPayeeInfo::Deserialize(const rapidjson::Value &value
         m_bankAccountNumberHasBeenSet = true;
     }
 
-    if (value.HasMember("BankBranchName") && !value["BankBranchName"].IsNull())
+    if (value.HasMember("PayeeName") && !value["PayeeName"].IsNull())
     {
-        if (!value["BankBranchName"].IsString())
+        if (!value["PayeeName"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `OpenBankPayeeInfo.BankBranchName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OpenBankPayeeInfo.PayeeName` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_bankBranchName = string(value["BankBranchName"].GetString());
-        m_bankBranchNameHasBeenSet = true;
+        m_payeeName = string(value["PayeeName"].GetString());
+        m_payeeNameHasBeenSet = true;
     }
 
     if (value.HasMember("BankBranchId") && !value["BankBranchId"].IsNull())
@@ -121,12 +121,12 @@ void OpenBankPayeeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         value.AddMember(iKey, rapidjson::Value(m_payeeId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_payeeNameHasBeenSet)
+    if (m_bankBranchNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PayeeName";
+        string key = "BankBranchName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_payeeName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bankBranchName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bankAccountNumberHasBeenSet)
@@ -137,12 +137,12 @@ void OpenBankPayeeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         value.AddMember(iKey, rapidjson::Value(m_bankAccountNumber.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_bankBranchNameHasBeenSet)
+    if (m_payeeNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BankBranchName";
+        string key = "PayeeName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_bankBranchName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_payeeName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bankBranchIdHasBeenSet)
@@ -188,20 +188,20 @@ bool OpenBankPayeeInfo::PayeeIdHasBeenSet() const
     return m_payeeIdHasBeenSet;
 }
 
-string OpenBankPayeeInfo::GetPayeeName() const
+string OpenBankPayeeInfo::GetBankBranchName() const
 {
-    return m_payeeName;
+    return m_bankBranchName;
 }
 
-void OpenBankPayeeInfo::SetPayeeName(const string& _payeeName)
+void OpenBankPayeeInfo::SetBankBranchName(const string& _bankBranchName)
 {
-    m_payeeName = _payeeName;
-    m_payeeNameHasBeenSet = true;
+    m_bankBranchName = _bankBranchName;
+    m_bankBranchNameHasBeenSet = true;
 }
 
-bool OpenBankPayeeInfo::PayeeNameHasBeenSet() const
+bool OpenBankPayeeInfo::BankBranchNameHasBeenSet() const
 {
-    return m_payeeNameHasBeenSet;
+    return m_bankBranchNameHasBeenSet;
 }
 
 string OpenBankPayeeInfo::GetBankAccountNumber() const
@@ -220,20 +220,20 @@ bool OpenBankPayeeInfo::BankAccountNumberHasBeenSet() const
     return m_bankAccountNumberHasBeenSet;
 }
 
-string OpenBankPayeeInfo::GetBankBranchName() const
+string OpenBankPayeeInfo::GetPayeeName() const
 {
-    return m_bankBranchName;
+    return m_payeeName;
 }
 
-void OpenBankPayeeInfo::SetBankBranchName(const string& _bankBranchName)
+void OpenBankPayeeInfo::SetPayeeName(const string& _payeeName)
 {
-    m_bankBranchName = _bankBranchName;
-    m_bankBranchNameHasBeenSet = true;
+    m_payeeName = _payeeName;
+    m_payeeNameHasBeenSet = true;
 }
 
-bool OpenBankPayeeInfo::BankBranchNameHasBeenSet() const
+bool OpenBankPayeeInfo::PayeeNameHasBeenSet() const
 {
-    return m_bankBranchNameHasBeenSet;
+    return m_payeeNameHasBeenSet;
 }
 
 string OpenBankPayeeInfo::GetBankBranchId() const

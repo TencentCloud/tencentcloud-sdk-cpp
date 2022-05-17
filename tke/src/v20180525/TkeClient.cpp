@@ -771,6 +771,49 @@ TkeClient::CreateImageCacheOutcomeCallable TkeClient::CreateImageCacheCallable(c
     return task->get_future();
 }
 
+TkeClient::CreatePrometheusAlertPolicyOutcome TkeClient::CreatePrometheusAlertPolicy(const CreatePrometheusAlertPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePrometheusAlertPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePrometheusAlertPolicyResponse rsp = CreatePrometheusAlertPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePrometheusAlertPolicyOutcome(rsp);
+        else
+            return CreatePrometheusAlertPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePrometheusAlertPolicyOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CreatePrometheusAlertPolicyAsync(const CreatePrometheusAlertPolicyRequest& request, const CreatePrometheusAlertPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePrometheusAlertPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::CreatePrometheusAlertPolicyOutcomeCallable TkeClient::CreatePrometheusAlertPolicyCallable(const CreatePrometheusAlertPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePrometheusAlertPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePrometheusAlertPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::CreatePrometheusAlertRuleOutcome TkeClient::CreatePrometheusAlertRule(const CreatePrometheusAlertRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePrometheusAlertRule");
@@ -850,6 +893,49 @@ TkeClient::CreatePrometheusDashboardOutcomeCallable TkeClient::CreatePrometheusD
         [this, request]()
         {
             return this->CreatePrometheusDashboard(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::CreatePrometheusTempOutcome TkeClient::CreatePrometheusTemp(const CreatePrometheusTempRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePrometheusTemp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePrometheusTempResponse rsp = CreatePrometheusTempResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePrometheusTempOutcome(rsp);
+        else
+            return CreatePrometheusTempOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePrometheusTempOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CreatePrometheusTempAsync(const CreatePrometheusTempRequest& request, const CreatePrometheusTempAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePrometheusTemp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::CreatePrometheusTempOutcomeCallable TkeClient::CreatePrometheusTempCallable(const CreatePrometheusTempRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePrometheusTempOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePrometheusTemp(request);
         }
     );
 
@@ -1373,6 +1459,49 @@ TkeClient::DeleteImageCachesOutcomeCallable TkeClient::DeleteImageCachesCallable
     return task->get_future();
 }
 
+TkeClient::DeletePrometheusAlertPolicyOutcome TkeClient::DeletePrometheusAlertPolicy(const DeletePrometheusAlertPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePrometheusAlertPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePrometheusAlertPolicyResponse rsp = DeletePrometheusAlertPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePrometheusAlertPolicyOutcome(rsp);
+        else
+            return DeletePrometheusAlertPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePrometheusAlertPolicyOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DeletePrometheusAlertPolicyAsync(const DeletePrometheusAlertPolicyRequest& request, const DeletePrometheusAlertPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeletePrometheusAlertPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DeletePrometheusAlertPolicyOutcomeCallable TkeClient::DeletePrometheusAlertPolicyCallable(const DeletePrometheusAlertPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeletePrometheusAlertPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DeletePrometheusAlertPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DeletePrometheusAlertRuleOutcome TkeClient::DeletePrometheusAlertRule(const DeletePrometheusAlertRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "DeletePrometheusAlertRule");
@@ -1409,6 +1538,92 @@ TkeClient::DeletePrometheusAlertRuleOutcomeCallable TkeClient::DeletePrometheusA
         [this, request]()
         {
             return this->DeletePrometheusAlertRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DeletePrometheusTempOutcome TkeClient::DeletePrometheusTemp(const DeletePrometheusTempRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePrometheusTemp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePrometheusTempResponse rsp = DeletePrometheusTempResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePrometheusTempOutcome(rsp);
+        else
+            return DeletePrometheusTempOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePrometheusTempOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DeletePrometheusTempAsync(const DeletePrometheusTempRequest& request, const DeletePrometheusTempAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeletePrometheusTemp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DeletePrometheusTempOutcomeCallable TkeClient::DeletePrometheusTempCallable(const DeletePrometheusTempRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeletePrometheusTempOutcome()>>(
+        [this, request]()
+        {
+            return this->DeletePrometheusTemp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DeletePrometheusTempSyncOutcome TkeClient::DeletePrometheusTempSync(const DeletePrometheusTempSyncRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePrometheusTempSync");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePrometheusTempSyncResponse rsp = DeletePrometheusTempSyncResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePrometheusTempSyncOutcome(rsp);
+        else
+            return DeletePrometheusTempSyncOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePrometheusTempSyncOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DeletePrometheusTempSyncAsync(const DeletePrometheusTempSyncRequest& request, const DeletePrometheusTempSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeletePrometheusTempSync(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DeletePrometheusTempSyncOutcomeCallable TkeClient::DeletePrometheusTempSyncCallable(const DeletePrometheusTempSyncRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeletePrometheusTempSyncOutcome()>>(
+        [this, request]()
+        {
+            return this->DeletePrometheusTempSync(request);
         }
     );
 
@@ -2921,6 +3136,49 @@ TkeClient::DescribePrometheusAlertHistoryOutcomeCallable TkeClient::DescribeProm
     return task->get_future();
 }
 
+TkeClient::DescribePrometheusAlertPolicyOutcome TkeClient::DescribePrometheusAlertPolicy(const DescribePrometheusAlertPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrometheusAlertPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrometheusAlertPolicyResponse rsp = DescribePrometheusAlertPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrometheusAlertPolicyOutcome(rsp);
+        else
+            return DescribePrometheusAlertPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrometheusAlertPolicyOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribePrometheusAlertPolicyAsync(const DescribePrometheusAlertPolicyRequest& request, const DescribePrometheusAlertPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrometheusAlertPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribePrometheusAlertPolicyOutcomeCallable TkeClient::DescribePrometheusAlertPolicyCallable(const DescribePrometheusAlertPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePrometheusAlertPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrometheusAlertPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribePrometheusAlertRuleOutcome TkeClient::DescribePrometheusAlertRule(const DescribePrometheusAlertRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePrometheusAlertRule");
@@ -2957,6 +3215,49 @@ TkeClient::DescribePrometheusAlertRuleOutcomeCallable TkeClient::DescribePrometh
         [this, request]()
         {
             return this->DescribePrometheusAlertRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribePrometheusClusterAgentsOutcome TkeClient::DescribePrometheusClusterAgents(const DescribePrometheusClusterAgentsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrometheusClusterAgents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrometheusClusterAgentsResponse rsp = DescribePrometheusClusterAgentsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrometheusClusterAgentsOutcome(rsp);
+        else
+            return DescribePrometheusClusterAgentsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrometheusClusterAgentsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribePrometheusClusterAgentsAsync(const DescribePrometheusClusterAgentsRequest& request, const DescribePrometheusClusterAgentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrometheusClusterAgents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribePrometheusClusterAgentsOutcomeCallable TkeClient::DescribePrometheusClusterAgentsCallable(const DescribePrometheusClusterAgentsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePrometheusClusterAgentsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrometheusClusterAgents(request);
         }
     );
 
@@ -3007,6 +3308,49 @@ TkeClient::DescribePrometheusInstanceOutcomeCallable TkeClient::DescribePromethe
     return task->get_future();
 }
 
+TkeClient::DescribePrometheusInstancesOverviewOutcome TkeClient::DescribePrometheusInstancesOverview(const DescribePrometheusInstancesOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrometheusInstancesOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrometheusInstancesOverviewResponse rsp = DescribePrometheusInstancesOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrometheusInstancesOverviewOutcome(rsp);
+        else
+            return DescribePrometheusInstancesOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrometheusInstancesOverviewOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribePrometheusInstancesOverviewAsync(const DescribePrometheusInstancesOverviewRequest& request, const DescribePrometheusInstancesOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrometheusInstancesOverview(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribePrometheusInstancesOverviewOutcomeCallable TkeClient::DescribePrometheusInstancesOverviewCallable(const DescribePrometheusInstancesOverviewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePrometheusInstancesOverviewOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrometheusInstancesOverview(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribePrometheusOverviewsOutcome TkeClient::DescribePrometheusOverviews(const DescribePrometheusOverviewsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePrometheusOverviews");
@@ -3050,6 +3394,49 @@ TkeClient::DescribePrometheusOverviewsOutcomeCallable TkeClient::DescribePrometh
     return task->get_future();
 }
 
+TkeClient::DescribePrometheusRecordRulesOutcome TkeClient::DescribePrometheusRecordRules(const DescribePrometheusRecordRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrometheusRecordRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrometheusRecordRulesResponse rsp = DescribePrometheusRecordRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrometheusRecordRulesOutcome(rsp);
+        else
+            return DescribePrometheusRecordRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrometheusRecordRulesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribePrometheusRecordRulesAsync(const DescribePrometheusRecordRulesRequest& request, const DescribePrometheusRecordRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrometheusRecordRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribePrometheusRecordRulesOutcomeCallable TkeClient::DescribePrometheusRecordRulesCallable(const DescribePrometheusRecordRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePrometheusRecordRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrometheusRecordRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribePrometheusTargetsOutcome TkeClient::DescribePrometheusTargets(const DescribePrometheusTargetsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePrometheusTargets");
@@ -3086,6 +3473,92 @@ TkeClient::DescribePrometheusTargetsOutcomeCallable TkeClient::DescribePrometheu
         [this, request]()
         {
             return this->DescribePrometheusTargets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribePrometheusTempOutcome TkeClient::DescribePrometheusTemp(const DescribePrometheusTempRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrometheusTemp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrometheusTempResponse rsp = DescribePrometheusTempResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrometheusTempOutcome(rsp);
+        else
+            return DescribePrometheusTempOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrometheusTempOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribePrometheusTempAsync(const DescribePrometheusTempRequest& request, const DescribePrometheusTempAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrometheusTemp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribePrometheusTempOutcomeCallable TkeClient::DescribePrometheusTempCallable(const DescribePrometheusTempRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePrometheusTempOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrometheusTemp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribePrometheusTempSyncOutcome TkeClient::DescribePrometheusTempSync(const DescribePrometheusTempSyncRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrometheusTempSync");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrometheusTempSyncResponse rsp = DescribePrometheusTempSyncResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrometheusTempSyncOutcome(rsp);
+        else
+            return DescribePrometheusTempSyncOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrometheusTempSyncOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribePrometheusTempSyncAsync(const DescribePrometheusTempSyncRequest& request, const DescribePrometheusTempSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrometheusTempSync(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribePrometheusTempSyncOutcomeCallable TkeClient::DescribePrometheusTempSyncCallable(const DescribePrometheusTempSyncRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePrometheusTempSyncOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrometheusTempSync(request);
         }
     );
 
@@ -3437,6 +3910,49 @@ TkeClient::DescribeVpcCniPodLimitsOutcomeCallable TkeClient::DescribeVpcCniPodLi
     return task->get_future();
 }
 
+TkeClient::DisableClusterAuditOutcome TkeClient::DisableClusterAudit(const DisableClusterAuditRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableClusterAudit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableClusterAuditResponse rsp = DisableClusterAuditResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableClusterAuditOutcome(rsp);
+        else
+            return DisableClusterAuditOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableClusterAuditOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DisableClusterAuditAsync(const DisableClusterAuditRequest& request, const DisableClusterAuditAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableClusterAudit(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DisableClusterAuditOutcomeCallable TkeClient::DisableClusterAuditCallable(const DisableClusterAuditRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableClusterAuditOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableClusterAudit(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DisableClusterDeletionProtectionOutcome TkeClient::DisableClusterDeletionProtection(const DisableClusterDeletionProtectionRequest &request)
 {
     auto outcome = MakeRequest(request, "DisableClusterDeletionProtection");
@@ -3473,6 +3989,49 @@ TkeClient::DisableClusterDeletionProtectionOutcomeCallable TkeClient::DisableClu
         [this, request]()
         {
             return this->DisableClusterDeletionProtection(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DisableEventPersistenceOutcome TkeClient::DisableEventPersistence(const DisableEventPersistenceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableEventPersistence");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableEventPersistenceResponse rsp = DisableEventPersistenceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableEventPersistenceOutcome(rsp);
+        else
+            return DisableEventPersistenceOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableEventPersistenceOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DisableEventPersistenceAsync(const DisableEventPersistenceRequest& request, const DisableEventPersistenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableEventPersistence(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DisableEventPersistenceOutcomeCallable TkeClient::DisableEventPersistenceCallable(const DisableEventPersistenceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableEventPersistenceOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableEventPersistence(request);
         }
     );
 
@@ -3523,6 +4082,49 @@ TkeClient::DisableVpcCniNetworkTypeOutcomeCallable TkeClient::DisableVpcCniNetwo
     return task->get_future();
 }
 
+TkeClient::EnableClusterAuditOutcome TkeClient::EnableClusterAudit(const EnableClusterAuditRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableClusterAudit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableClusterAuditResponse rsp = EnableClusterAuditResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableClusterAuditOutcome(rsp);
+        else
+            return EnableClusterAuditOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableClusterAuditOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::EnableClusterAuditAsync(const EnableClusterAuditRequest& request, const EnableClusterAuditAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableClusterAudit(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::EnableClusterAuditOutcomeCallable TkeClient::EnableClusterAuditCallable(const EnableClusterAuditRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableClusterAuditOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableClusterAudit(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::EnableClusterDeletionProtectionOutcome TkeClient::EnableClusterDeletionProtection(const EnableClusterDeletionProtectionRequest &request)
 {
     auto outcome = MakeRequest(request, "EnableClusterDeletionProtection");
@@ -3559,6 +4161,49 @@ TkeClient::EnableClusterDeletionProtectionOutcomeCallable TkeClient::EnableClust
         [this, request]()
         {
             return this->EnableClusterDeletionProtection(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::EnableEventPersistenceOutcome TkeClient::EnableEventPersistence(const EnableEventPersistenceRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableEventPersistence");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableEventPersistenceResponse rsp = EnableEventPersistenceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableEventPersistenceOutcome(rsp);
+        else
+            return EnableEventPersistenceOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableEventPersistenceOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::EnableEventPersistenceAsync(const EnableEventPersistenceRequest& request, const EnableEventPersistenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableEventPersistence(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::EnableEventPersistenceOutcomeCallable TkeClient::EnableEventPersistenceCallable(const EnableEventPersistenceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableEventPersistenceOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableEventPersistence(request);
         }
     );
 
@@ -3817,6 +4462,49 @@ TkeClient::GetUpgradeInstanceProgressOutcomeCallable TkeClient::GetUpgradeInstan
         [this, request]()
         {
             return this->GetUpgradeInstanceProgress(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::InstallLogAgentOutcome TkeClient::InstallLogAgent(const InstallLogAgentRequest &request)
+{
+    auto outcome = MakeRequest(request, "InstallLogAgent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InstallLogAgentResponse rsp = InstallLogAgentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InstallLogAgentOutcome(rsp);
+        else
+            return InstallLogAgentOutcome(o.GetError());
+    }
+    else
+    {
+        return InstallLogAgentOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::InstallLogAgentAsync(const InstallLogAgentRequest& request, const InstallLogAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InstallLogAgent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::InstallLogAgentOutcomeCallable TkeClient::InstallLogAgentCallable(const InstallLogAgentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InstallLogAgentOutcome()>>(
+        [this, request]()
+        {
+            return this->InstallLogAgent(request);
         }
     );
 
@@ -4168,6 +4856,49 @@ TkeClient::ModifyNodePoolInstanceTypesOutcomeCallable TkeClient::ModifyNodePoolI
     return task->get_future();
 }
 
+TkeClient::ModifyPrometheusAlertPolicyOutcome TkeClient::ModifyPrometheusAlertPolicy(const ModifyPrometheusAlertPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPrometheusAlertPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPrometheusAlertPolicyResponse rsp = ModifyPrometheusAlertPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPrometheusAlertPolicyOutcome(rsp);
+        else
+            return ModifyPrometheusAlertPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPrometheusAlertPolicyOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ModifyPrometheusAlertPolicyAsync(const ModifyPrometheusAlertPolicyRequest& request, const ModifyPrometheusAlertPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyPrometheusAlertPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::ModifyPrometheusAlertPolicyOutcomeCallable TkeClient::ModifyPrometheusAlertPolicyCallable(const ModifyPrometheusAlertPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyPrometheusAlertPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyPrometheusAlertPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::ModifyPrometheusAlertRuleOutcome TkeClient::ModifyPrometheusAlertRule(const ModifyPrometheusAlertRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyPrometheusAlertRule");
@@ -4469,6 +5200,49 @@ TkeClient::SetNodePoolNodeProtectionOutcomeCallable TkeClient::SetNodePoolNodePr
     return task->get_future();
 }
 
+TkeClient::SyncPrometheusTempOutcome TkeClient::SyncPrometheusTemp(const SyncPrometheusTempRequest &request)
+{
+    auto outcome = MakeRequest(request, "SyncPrometheusTemp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SyncPrometheusTempResponse rsp = SyncPrometheusTempResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SyncPrometheusTempOutcome(rsp);
+        else
+            return SyncPrometheusTempOutcome(o.GetError());
+    }
+    else
+    {
+        return SyncPrometheusTempOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::SyncPrometheusTempAsync(const SyncPrometheusTempRequest& request, const SyncPrometheusTempAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SyncPrometheusTemp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::SyncPrometheusTempOutcomeCallable TkeClient::SyncPrometheusTempCallable(const SyncPrometheusTempRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SyncPrometheusTempOutcome()>>(
+        [this, request]()
+        {
+            return this->SyncPrometheusTemp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::SyncPrometheusTemplateOutcome TkeClient::SyncPrometheusTemplate(const SyncPrometheusTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "SyncPrometheusTemplate");
@@ -4505,6 +5279,49 @@ TkeClient::SyncPrometheusTemplateOutcomeCallable TkeClient::SyncPrometheusTempla
         [this, request]()
         {
             return this->SyncPrometheusTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::UninstallLogAgentOutcome TkeClient::UninstallLogAgent(const UninstallLogAgentRequest &request)
+{
+    auto outcome = MakeRequest(request, "UninstallLogAgent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UninstallLogAgentResponse rsp = UninstallLogAgentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UninstallLogAgentOutcome(rsp);
+        else
+            return UninstallLogAgentOutcome(o.GetError());
+    }
+    else
+    {
+        return UninstallLogAgentOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::UninstallLogAgentAsync(const UninstallLogAgentRequest& request, const UninstallLogAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UninstallLogAgent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::UninstallLogAgentOutcomeCallable TkeClient::UninstallLogAgentCallable(const UninstallLogAgentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UninstallLogAgentOutcome()>>(
+        [this, request]()
+        {
+            return this->UninstallLogAgent(request);
         }
     );
 

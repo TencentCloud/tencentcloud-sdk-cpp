@@ -62,14 +62,18 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取预热的资源列表
-                     * @return Targets 预热的资源列表
+                     * 获取要预热的资源列表，每个元素格式类似如下:
+http://www.example.com/example.txt
+                     * @return Targets 要预热的资源列表，每个元素格式类似如下:
+http://www.example.com/example.txt
                      */
                     std::vector<std::string> GetTargets() const;
 
                     /**
-                     * 设置预热的资源列表
-                     * @param Targets 预热的资源列表
+                     * 设置要预热的资源列表，每个元素格式类似如下:
+http://www.example.com/example.txt
+                     * @param Targets 要预热的资源列表，每个元素格式类似如下:
+http://www.example.com/example.txt
                      */
                     void SetTargets(const std::vector<std::string>& _targets);
 
@@ -81,13 +85,17 @@ namespace TencentCloud
 
                     /**
                      * 获取是否对url进行encode
+若内容含有非 ASCII 字符集的字符，请开启此开关，编码转换（编码规则遵循 RFC3986）
                      * @return EncodeUrl 是否对url进行encode
+若内容含有非 ASCII 字符集的字符，请开启此开关，编码转换（编码规则遵循 RFC3986）
                      */
                     bool GetEncodeUrl() const;
 
                     /**
                      * 设置是否对url进行encode
+若内容含有非 ASCII 字符集的字符，请开启此开关，编码转换（编码规则遵循 RFC3986）
                      * @param EncodeUrl 是否对url进行encode
+若内容含有非 ASCII 字符集的字符，请开启此开关，编码转换（编码规则遵循 RFC3986）
                      */
                     void SetEncodeUrl(const bool& _encodeUrl);
 
@@ -124,13 +132,15 @@ namespace TencentCloud
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 预热的资源列表
+                     * 要预热的资源列表，每个元素格式类似如下:
+http://www.example.com/example.txt
                      */
                     std::vector<std::string> m_targets;
                     bool m_targetsHasBeenSet;
 
                     /**
                      * 是否对url进行encode
+若内容含有非 ASCII 字符集的字符，请开启此开关，编码转换（编码规则遵循 RFC3986）
                      */
                     bool m_encodeUrl;
                     bool m_encodeUrlHasBeenSet;

@@ -255,3 +255,46 @@ TeoClient::DescribeZonesOutcomeCallable TeoClient::DescribeZonesCallable(const D
     return task->get_future();
 }
 
+TeoClient::DownloadL7LogsOutcome TeoClient::DownloadL7Logs(const DownloadL7LogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DownloadL7Logs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DownloadL7LogsResponse rsp = DownloadL7LogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DownloadL7LogsOutcome(rsp);
+        else
+            return DownloadL7LogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DownloadL7LogsOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DownloadL7LogsAsync(const DownloadL7LogsRequest& request, const DownloadL7LogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DownloadL7Logs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DownloadL7LogsOutcomeCallable TeoClient::DownloadL7LogsCallable(const DownloadL7LogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DownloadL7LogsOutcome()>>(
+        [this, request]()
+        {
+            return this->DownloadL7Logs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

@@ -95,14 +95,46 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取内容，一行一个
-                     * @return Targets 内容，一行一个
+                     * 获取要刷新的资源列表，每个元素格式依据Type而定
+1) Type = purge_host 时
+形如：www.example.com 或 foo.bar.example.com
+2) Type = purge_prefix 时
+形如：http://www.example.com/example
+3) Type = purge_url 时
+形如：https://www.example.com/example.jpg
+4）Type = purge_all 时
+Targets可为空，不需要填写
+                     * @return Targets 要刷新的资源列表，每个元素格式依据Type而定
+1) Type = purge_host 时
+形如：www.example.com 或 foo.bar.example.com
+2) Type = purge_prefix 时
+形如：http://www.example.com/example
+3) Type = purge_url 时
+形如：https://www.example.com/example.jpg
+4）Type = purge_all 时
+Targets可为空，不需要填写
                      */
                     std::vector<std::string> GetTargets() const;
 
                     /**
-                     * 设置内容，一行一个
-                     * @param Targets 内容，一行一个
+                     * 设置要刷新的资源列表，每个元素格式依据Type而定
+1) Type = purge_host 时
+形如：www.example.com 或 foo.bar.example.com
+2) Type = purge_prefix 时
+形如：http://www.example.com/example
+3) Type = purge_url 时
+形如：https://www.example.com/example.jpg
+4）Type = purge_all 时
+Targets可为空，不需要填写
+                     * @param Targets 要刷新的资源列表，每个元素格式依据Type而定
+1) Type = purge_host 时
+形如：www.example.com 或 foo.bar.example.com
+2) Type = purge_prefix 时
+形如：http://www.example.com/example
+3) Type = purge_url 时
+形如：https://www.example.com/example.jpg
+4）Type = purge_all 时
+Targets可为空，不需要填写
                      */
                     void SetTargets(const std::vector<std::string>& _targets);
 
@@ -114,17 +146,17 @@ namespace TencentCloud
 
                     /**
                      * 获取若有编码转换，仅清除编码转换后匹配的资源
-若内容含有非 ASCII 字符集的字符，请打开 URL Encode 开关，编码转换（编码规则遵循 RFC3986）
+若内容含有非 ASCII 字符集的字符，请开启此开关，编码转换（编码规则遵循 RFC3986）
                      * @return EncodeUrl 若有编码转换，仅清除编码转换后匹配的资源
-若内容含有非 ASCII 字符集的字符，请打开 URL Encode 开关，编码转换（编码规则遵循 RFC3986）
+若内容含有非 ASCII 字符集的字符，请开启此开关，编码转换（编码规则遵循 RFC3986）
                      */
                     bool GetEncodeUrl() const;
 
                     /**
                      * 设置若有编码转换，仅清除编码转换后匹配的资源
-若内容含有非 ASCII 字符集的字符，请打开 URL Encode 开关，编码转换（编码规则遵循 RFC3986）
+若内容含有非 ASCII 字符集的字符，请开启此开关，编码转换（编码规则遵循 RFC3986）
                      * @param EncodeUrl 若有编码转换，仅清除编码转换后匹配的资源
-若内容含有非 ASCII 字符集的字符，请打开 URL Encode 开关，编码转换（编码规则遵循 RFC3986）
+若内容含有非 ASCII 字符集的字符，请开启此开关，编码转换（编码规则遵循 RFC3986）
                      */
                     void SetEncodeUrl(const bool& _encodeUrl);
 
@@ -153,14 +185,22 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 内容，一行一个
+                     * 要刷新的资源列表，每个元素格式依据Type而定
+1) Type = purge_host 时
+形如：www.example.com 或 foo.bar.example.com
+2) Type = purge_prefix 时
+形如：http://www.example.com/example
+3) Type = purge_url 时
+形如：https://www.example.com/example.jpg
+4）Type = purge_all 时
+Targets可为空，不需要填写
                      */
                     std::vector<std::string> m_targets;
                     bool m_targetsHasBeenSet;
 
                     /**
                      * 若有编码转换，仅清除编码转换后匹配的资源
-若内容含有非 ASCII 字符集的字符，请打开 URL Encode 开关，编码转换（编码规则遵循 RFC3986）
+若内容含有非 ASCII 字符集的字符，请开启此开关，编码转换（编码规则遵循 RFC3986）
                      */
                     bool m_encodeUrl;
                     bool m_encodeUrlHasBeenSet;

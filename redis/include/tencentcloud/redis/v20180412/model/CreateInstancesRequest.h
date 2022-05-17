@@ -452,6 +452,24 @@ TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架�
                      */
                     bool TemplateIdHasBeenSet() const;
 
+                    /**
+                     * 获取false ：默认值,发送正常请求，通过检查后直接创建实例 true：发送检查请求，不会创建实例。
+                     * @return DryRun false ：默认值,发送正常请求，通过检查后直接创建实例 true：发送检查请求，不会创建实例。
+                     */
+                    bool GetDryRun() const;
+
+                    /**
+                     * 设置false ：默认值,发送正常请求，通过检查后直接创建实例 true：发送检查请求，不会创建实例。
+                     * @param DryRun false ：默认值,发送正常请求，通过检查后直接创建实例 true：发送检查请求，不会创建实例。
+                     */
+                    void SetDryRun(const bool& _dryRun);
+
+                    /**
+                     * 判断参数 DryRun 是否已赋值
+                     * @return DryRun 是否已赋值
+                     */
+                    bool DryRunHasBeenSet() const;
+
                 private:
 
                     /**
@@ -588,6 +606,12 @@ TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架�
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
+
+                    /**
+                     * false ：默认值,发送正常请求，通过检查后直接创建实例 true：发送检查请求，不会创建实例。
+                     */
+                    bool m_dryRun;
+                    bool m_dryRunHasBeenSet;
 
                 };
             }

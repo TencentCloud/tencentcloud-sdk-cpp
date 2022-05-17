@@ -29,6 +29,8 @@
 #include <tencentcloud/apm/v20210622/model/DescribeApmAgentResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeApmInstancesRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeApmInstancesResponse.h>
+#include <tencentcloud/apm/v20210622/model/DescribeGeneralMetricDataRequest.h>
+#include <tencentcloud/apm/v20210622/model/DescribeGeneralMetricDataResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeMetricRecordsRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeMetricRecordsResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeServiceOverviewRequest.h>
@@ -56,6 +58,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeApmInstancesResponse> DescribeApmInstancesOutcome;
                 typedef std::future<DescribeApmInstancesOutcome> DescribeApmInstancesOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeApmInstancesRequest&, DescribeApmInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApmInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGeneralMetricDataResponse> DescribeGeneralMetricDataOutcome;
+                typedef std::future<DescribeGeneralMetricDataOutcome> DescribeGeneralMetricDataOutcomeCallable;
+                typedef std::function<void(const ApmClient*, const Model::DescribeGeneralMetricDataRequest&, DescribeGeneralMetricDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGeneralMetricDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMetricRecordsResponse> DescribeMetricRecordsOutcome;
                 typedef std::future<DescribeMetricRecordsOutcome> DescribeMetricRecordsOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeMetricRecordsRequest&, DescribeMetricRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMetricRecordsAsyncHandler;
@@ -91,6 +96,16 @@ namespace TencentCloud
                 DescribeApmInstancesOutcome DescribeApmInstances(const Model::DescribeApmInstancesRequest &request);
                 void DescribeApmInstancesAsync(const Model::DescribeApmInstancesRequest& request, const DescribeApmInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeApmInstancesOutcomeCallable DescribeApmInstancesCallable(const Model::DescribeApmInstancesRequest& request);
+
+                /**
+                 *获取指标数据通用接口。用户根据需要上送请求参数，返回对应的指标数据。
+接口调用频率限制为：20次/秒，1200次/分钟。单请求的数据点数限制为1440个。
+                 * @param req DescribeGeneralMetricDataRequest
+                 * @return DescribeGeneralMetricDataOutcome
+                 */
+                DescribeGeneralMetricDataOutcome DescribeGeneralMetricData(const Model::DescribeGeneralMetricDataRequest &request);
+                void DescribeGeneralMetricDataAsync(const Model::DescribeGeneralMetricDataRequest& request, const DescribeGeneralMetricDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGeneralMetricDataOutcomeCallable DescribeGeneralMetricDataCallable(const Model::DescribeGeneralMetricDataRequest& request);
 
                 /**
                  *拉取通用指标列表

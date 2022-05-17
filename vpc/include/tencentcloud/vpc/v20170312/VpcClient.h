@@ -375,6 +375,8 @@
 #include <tencentcloud/vpc/v20170312/model/DetachNetworkInterfaceResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DisableCcnRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DisableCcnRoutesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DisableFlowLogsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DisableFlowLogsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DisableGatewayFlowMonitorRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DisableGatewayFlowMonitorResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DisableRoutesRequest.h>
@@ -401,6 +403,8 @@
 #include <tencentcloud/vpc/v20170312/model/DownloadVpnGatewaySslClientCertResponse.h>
 #include <tencentcloud/vpc/v20170312/model/EnableCcnRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/EnableCcnRoutesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/EnableFlowLogsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/EnableFlowLogsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/EnableGatewayFlowMonitorRequest.h>
 #include <tencentcloud/vpc/v20170312/model/EnableGatewayFlowMonitorResponse.h>
 #include <tencentcloud/vpc/v20170312/model/EnableRoutesRequest.h>
@@ -1117,6 +1121,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DisableCcnRoutesResponse> DisableCcnRoutesOutcome;
                 typedef std::future<DisableCcnRoutesOutcome> DisableCcnRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DisableCcnRoutesRequest&, DisableCcnRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableCcnRoutesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisableFlowLogsResponse> DisableFlowLogsOutcome;
+                typedef std::future<DisableFlowLogsOutcome> DisableFlowLogsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DisableFlowLogsRequest&, DisableFlowLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableFlowLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisableGatewayFlowMonitorResponse> DisableGatewayFlowMonitorOutcome;
                 typedef std::future<DisableGatewayFlowMonitorOutcome> DisableGatewayFlowMonitorOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DisableGatewayFlowMonitorRequest&, DisableGatewayFlowMonitorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableGatewayFlowMonitorAsyncHandler;
@@ -1156,6 +1163,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::EnableCcnRoutesResponse> EnableCcnRoutesOutcome;
                 typedef std::future<EnableCcnRoutesOutcome> EnableCcnRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::EnableCcnRoutesRequest&, EnableCcnRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableCcnRoutesAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableFlowLogsResponse> EnableFlowLogsOutcome;
+                typedef std::future<EnableFlowLogsOutcome> EnableFlowLogsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::EnableFlowLogsRequest&, EnableFlowLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableFlowLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::EnableGatewayFlowMonitorResponse> EnableGatewayFlowMonitorOutcome;
                 typedef std::future<EnableGatewayFlowMonitorOutcome> EnableGatewayFlowMonitorOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::EnableGatewayFlowMonitorRequest&, EnableGatewayFlowMonitorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableGatewayFlowMonitorAsyncHandler;
@@ -3200,6 +3210,15 @@ LimitTypes取值范围：
                 DisableCcnRoutesOutcomeCallable DisableCcnRoutesCallable(const Model::DisableCcnRoutesRequest& request);
 
                 /**
+                 *本接口（DisableFlowLogs）用于停止流日志。
+                 * @param req DisableFlowLogsRequest
+                 * @return DisableFlowLogsOutcome
+                 */
+                DisableFlowLogsOutcome DisableFlowLogs(const Model::DisableFlowLogsRequest &request);
+                void DisableFlowLogsAsync(const Model::DisableFlowLogsRequest& request, const DisableFlowLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisableFlowLogsOutcomeCallable DisableFlowLogsCallable(const Model::DisableFlowLogsRequest& request);
+
+                /**
                  *本接口（DisableGatewayFlowMonitor）用于关闭网关流量监控。
                  * @param req DisableGatewayFlowMonitorRequest
                  * @return DisableGatewayFlowMonitorOutcome
@@ -3322,6 +3341,15 @@ LimitTypes取值范围：
                 EnableCcnRoutesOutcome EnableCcnRoutes(const Model::EnableCcnRoutesRequest &request);
                 void EnableCcnRoutesAsync(const Model::EnableCcnRoutesRequest& request, const EnableCcnRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnableCcnRoutesOutcomeCallable EnableCcnRoutesCallable(const Model::EnableCcnRoutesRequest& request);
+
+                /**
+                 *本接口（EnableFlowLogs）用于启动流日志。
+                 * @param req EnableFlowLogsRequest
+                 * @return EnableFlowLogsOutcome
+                 */
+                EnableFlowLogsOutcome EnableFlowLogs(const Model::EnableFlowLogsRequest &request);
+                void EnableFlowLogsAsync(const Model::EnableFlowLogsRequest& request, const EnableFlowLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableFlowLogsOutcomeCallable EnableFlowLogsCallable(const Model::EnableFlowLogsRequest& request);
 
                 /**
                  *本接口（EnableGatewayFlowMonitor）用于开启网关流量监控。

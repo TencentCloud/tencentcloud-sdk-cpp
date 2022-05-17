@@ -70,10 +70,12 @@ namespace TencentCloud
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
+__WECHAT__: 微信支付
                      * @return ChannelName 渠道名称。
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
+__WECHAT__: 微信支付
                      */
                     std::string GetChannelName() const;
 
@@ -82,10 +84,12 @@ __ALIPAY__: 支付宝
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
+__WECHAT__: 微信支付
                      * @param ChannelName 渠道名称。
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
+__WECHAT__: 微信支付
                      */
                     void SetChannelName(const std::string& _channelName);
 
@@ -100,10 +104,12 @@ __ALIPAY__: 支付宝
 __EBANK_PAYMENT__:B2B EBank付款
 __OPENBANK_PAYMENT__:B2C  openbank付款
 __SAFT_ISV__:支付宝安心发
+__TRANS_TO_CHANGE__: 微信支付转账到零钱v2
                      * @return PaymentMethod 付款方式。如
 __EBANK_PAYMENT__:B2B EBank付款
 __OPENBANK_PAYMENT__:B2C  openbank付款
 __SAFT_ISV__:支付宝安心发
+__TRANS_TO_CHANGE__: 微信支付转账到零钱v2
                      */
                     std::string GetPaymentMethod() const;
 
@@ -112,10 +118,12 @@ __SAFT_ISV__:支付宝安心发
 __EBANK_PAYMENT__:B2B EBank付款
 __OPENBANK_PAYMENT__:B2C  openbank付款
 __SAFT_ISV__:支付宝安心发
+__TRANS_TO_CHANGE__: 微信支付转账到零钱v2
                      * @param PaymentMethod 付款方式。如
 __EBANK_PAYMENT__:B2B EBank付款
 __OPENBANK_PAYMENT__:B2C  openbank付款
 __SAFT_ISV__:支付宝安心发
+__TRANS_TO_CHANGE__: 微信支付转账到零钱v2
                      */
                     void SetPaymentMethod(const std::string& _paymentMethod);
 
@@ -484,6 +492,7 @@ __sandbox__:沙箱环境
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
+__WECHAT__: 微信支付
                      */
                     std::string m_channelName;
                     bool m_channelNameHasBeenSet;
@@ -493,6 +502,7 @@ __ALIPAY__: 支付宝
 __EBANK_PAYMENT__:B2B EBank付款
 __OPENBANK_PAYMENT__:B2C  openbank付款
 __SAFT_ISV__:支付宝安心发
+__TRANS_TO_CHANGE__: 微信支付转账到零钱v2
                      */
                     std::string m_paymentMethod;
                     bool m_paymentMethodHasBeenSet;

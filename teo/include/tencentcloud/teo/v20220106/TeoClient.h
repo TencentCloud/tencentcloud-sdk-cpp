@@ -33,6 +33,8 @@
 #include <tencentcloud/teo/v20220106/model/DescribePurgeTasksResponse.h>
 #include <tencentcloud/teo/v20220106/model/DescribeZonesRequest.h>
 #include <tencentcloud/teo/v20220106/model/DescribeZonesResponse.h>
+#include <tencentcloud/teo/v20220106/model/DownloadL7LogsRequest.h>
+#include <tencentcloud/teo/v20220106/model/DownloadL7LogsResponse.h>
 
 
 namespace TencentCloud
@@ -62,6 +64,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeZonesResponse> DescribeZonesOutcome;
                 typedef std::future<DescribeZonesOutcome> DescribeZonesOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeZonesRequest&, DescribeZonesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZonesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DownloadL7LogsResponse> DownloadL7LogsOutcome;
+                typedef std::future<DownloadL7LogsOutcome> DownloadL7LogsOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DownloadL7LogsRequest&, DownloadL7LogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadL7LogsAsyncHandler;
 
 
 
@@ -109,6 +114,15 @@ namespace TencentCloud
                 DescribeZonesOutcome DescribeZones(const Model::DescribeZonesRequest &request);
                 void DescribeZonesAsync(const Model::DescribeZonesRequest& request, const DescribeZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeZonesOutcomeCallable DescribeZonesCallable(const Model::DescribeZonesRequest& request);
+
+                /**
+                 *查询七层离线日志
+                 * @param req DownloadL7LogsRequest
+                 * @return DownloadL7LogsOutcome
+                 */
+                DownloadL7LogsOutcome DownloadL7Logs(const Model::DownloadL7LogsRequest &request);
+                void DownloadL7LogsAsync(const Model::DownloadL7LogsRequest& request, const DownloadL7LogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DownloadL7LogsOutcomeCallable DownloadL7LogsCallable(const Model::DownloadL7LogsRequest& request);
 
             };
         }

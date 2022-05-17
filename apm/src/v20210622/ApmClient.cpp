@@ -169,6 +169,49 @@ ApmClient::DescribeApmInstancesOutcomeCallable ApmClient::DescribeApmInstancesCa
     return task->get_future();
 }
 
+ApmClient::DescribeGeneralMetricDataOutcome ApmClient::DescribeGeneralMetricData(const DescribeGeneralMetricDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGeneralMetricData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGeneralMetricDataResponse rsp = DescribeGeneralMetricDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGeneralMetricDataOutcome(rsp);
+        else
+            return DescribeGeneralMetricDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGeneralMetricDataOutcome(outcome.GetError());
+    }
+}
+
+void ApmClient::DescribeGeneralMetricDataAsync(const DescribeGeneralMetricDataRequest& request, const DescribeGeneralMetricDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGeneralMetricData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApmClient::DescribeGeneralMetricDataOutcomeCallable ApmClient::DescribeGeneralMetricDataCallable(const DescribeGeneralMetricDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGeneralMetricDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGeneralMetricData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ApmClient::DescribeMetricRecordsOutcome ApmClient::DescribeMetricRecords(const DescribeMetricRecordsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMetricRecords");

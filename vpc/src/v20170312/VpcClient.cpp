@@ -7608,6 +7608,49 @@ VpcClient::DisableCcnRoutesOutcomeCallable VpcClient::DisableCcnRoutesCallable(c
     return task->get_future();
 }
 
+VpcClient::DisableFlowLogsOutcome VpcClient::DisableFlowLogs(const DisableFlowLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableFlowLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableFlowLogsResponse rsp = DisableFlowLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableFlowLogsOutcome(rsp);
+        else
+            return DisableFlowLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableFlowLogsOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DisableFlowLogsAsync(const DisableFlowLogsRequest& request, const DisableFlowLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableFlowLogs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DisableFlowLogsOutcomeCallable VpcClient::DisableFlowLogsCallable(const DisableFlowLogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableFlowLogsOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableFlowLogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DisableGatewayFlowMonitorOutcome VpcClient::DisableGatewayFlowMonitor(const DisableGatewayFlowMonitorRequest &request)
 {
     auto outcome = MakeRequest(request, "DisableGatewayFlowMonitor");
@@ -8160,6 +8203,49 @@ VpcClient::EnableCcnRoutesOutcomeCallable VpcClient::EnableCcnRoutesCallable(con
         [this, request]()
         {
             return this->EnableCcnRoutes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::EnableFlowLogsOutcome VpcClient::EnableFlowLogs(const EnableFlowLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableFlowLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableFlowLogsResponse rsp = EnableFlowLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableFlowLogsOutcome(rsp);
+        else
+            return EnableFlowLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableFlowLogsOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::EnableFlowLogsAsync(const EnableFlowLogsRequest& request, const EnableFlowLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableFlowLogs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::EnableFlowLogsOutcomeCallable VpcClient::EnableFlowLogsCallable(const EnableFlowLogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableFlowLogsOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableFlowLogs(request);
         }
     );
 

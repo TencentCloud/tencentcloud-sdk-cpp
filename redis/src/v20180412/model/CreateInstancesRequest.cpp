@@ -44,7 +44,8 @@ CreateInstancesRequest::CreateInstancesRequest() :
     m_nodeSetHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
     m_zoneNameHasBeenSet(false),
-    m_templateIdHasBeenSet(false)
+    m_templateIdHasBeenSet(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -248,6 +249,14 @@ string CreateInstancesRequest::ToJsonString() const
         string key = "TemplateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dryRunHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DryRun";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dryRun, allocator);
     }
 
 
@@ -608,6 +617,22 @@ void CreateInstancesRequest::SetTemplateId(const string& _templateId)
 bool CreateInstancesRequest::TemplateIdHasBeenSet() const
 {
     return m_templateIdHasBeenSet;
+}
+
+bool CreateInstancesRequest::GetDryRun() const
+{
+    return m_dryRun;
+}
+
+void CreateInstancesRequest::SetDryRun(const bool& _dryRun)
+{
+    m_dryRun = _dryRun;
+    m_dryRunHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::DryRunHasBeenSet() const
+{
+    return m_dryRunHasBeenSet;
 }
 
 

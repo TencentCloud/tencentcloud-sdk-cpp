@@ -20,10 +20,12 @@ set(teo_public_header
 
 set(teo_public_header_model
   include/tencentcloud/teo/v20220106/model/CreatePurgeTaskResponse.h
+  include/tencentcloud/teo/v20220106/model/DownloadL7LogsRequest.h
   include/tencentcloud/teo/v20220106/model/CreatePurgeTaskRequest.h
   include/tencentcloud/teo/v20220106/model/DescribePurgeTasksRequest.h
   include/tencentcloud/teo/v20220106/model/CreatePrefetchTaskResponse.h
   include/tencentcloud/teo/v20220106/model/Zone.h
+  include/tencentcloud/teo/v20220106/model/DownloadL7LogsResponse.h
   include/tencentcloud/teo/v20220106/model/DescribePrefetchTasksResponse.h
   include/tencentcloud/teo/v20220106/model/DescribeZonesRequest.h
   include/tencentcloud/teo/v20220106/model/DescribeZonesResponse.h
@@ -34,15 +36,18 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220106/model/DescribePurgeTasksResponse.h
   include/tencentcloud/teo/v20220106/model/DescribePrefetchTasksRequest.h
   include/tencentcloud/teo/v20220106/model/ZoneFilter.h
+  include/tencentcloud/teo/v20220106/model/L7OfflineLog.h
   )
 
 set(teo_src
   src/v20220106/TeoClient.cpp
   src/v20220106/model/CreatePurgeTaskResponse.cpp
+  src/v20220106/model/DownloadL7LogsRequest.cpp
   src/v20220106/model/CreatePurgeTaskRequest.cpp
   src/v20220106/model/DescribePurgeTasksRequest.cpp
   src/v20220106/model/CreatePrefetchTaskResponse.cpp
   src/v20220106/model/Zone.cpp
+  src/v20220106/model/DownloadL7LogsResponse.cpp
   src/v20220106/model/DescribePrefetchTasksResponse.cpp
   src/v20220106/model/DescribeZonesRequest.cpp
   src/v20220106/model/DescribeZonesResponse.cpp
@@ -53,6 +58,7 @@ set(teo_src
   src/v20220106/model/DescribePurgeTasksResponse.cpp
   src/v20220106/model/DescribePrefetchTasksRequest.cpp
   src/v20220106/model/ZoneFilter.cpp
+  src/v20220106/model/L7OfflineLog.cpp
   )
 
 set(teo_include
