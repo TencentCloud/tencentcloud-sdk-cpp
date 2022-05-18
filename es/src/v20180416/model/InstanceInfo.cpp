@@ -30,9 +30,9 @@ InstanceInfo::InstanceInfo() :
     m_vpcUidHasBeenSet(false),
     m_subnetUidHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_renewFlagHasBeenSet(false),
     m_chargeTypeHasBeenSet(false),
     m_chargePeriodHasBeenSet(false),
-    m_renewFlagHasBeenSet(false),
     m_nodeTypeHasBeenSet(false),
     m_nodeNumHasBeenSet(false),
     m_cpuNumHasBeenSet(false),
@@ -193,6 +193,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("RenewFlag") && !value["RenewFlag"].IsNull())
+    {
+        if (!value["RenewFlag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.RenewFlag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_renewFlag = string(value["RenewFlag"].GetString());
+        m_renewFlagHasBeenSet = true;
+    }
+
     if (value.HasMember("ChargeType") && !value["ChargeType"].IsNull())
     {
         if (!value["ChargeType"].IsString())
@@ -211,16 +221,6 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         }
         m_chargePeriod = value["ChargePeriod"].GetUint64();
         m_chargePeriodHasBeenSet = true;
-    }
-
-    if (value.HasMember("RenewFlag") && !value["RenewFlag"].IsNull())
-    {
-        if (!value["RenewFlag"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `InstanceInfo.RenewFlag` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_renewFlag = string(value["RenewFlag"].GetString());
-        m_renewFlagHasBeenSet = true;
     }
 
     if (value.HasMember("NodeType") && !value["NodeType"].IsNull())
@@ -1004,6 +1004,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, m_status, allocator);
     }
 
+    if (m_renewFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_renewFlag.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_chargeTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -1018,14 +1026,6 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ChargePeriod";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_chargePeriod, allocator);
-    }
-
-    if (m_renewFlagHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RenewFlag";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_renewFlag.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nodeTypeHasBeenSet)
@@ -1704,6 +1704,22 @@ bool InstanceInfo::StatusHasBeenSet() const
     return m_statusHasBeenSet;
 }
 
+string InstanceInfo::GetRenewFlag() const
+{
+    return m_renewFlag;
+}
+
+void InstanceInfo::SetRenewFlag(const string& _renewFlag)
+{
+    m_renewFlag = _renewFlag;
+    m_renewFlagHasBeenSet = true;
+}
+
+bool InstanceInfo::RenewFlagHasBeenSet() const
+{
+    return m_renewFlagHasBeenSet;
+}
+
 string InstanceInfo::GetChargeType() const
 {
     return m_chargeType;
@@ -1734,22 +1750,6 @@ void InstanceInfo::SetChargePeriod(const uint64_t& _chargePeriod)
 bool InstanceInfo::ChargePeriodHasBeenSet() const
 {
     return m_chargePeriodHasBeenSet;
-}
-
-string InstanceInfo::GetRenewFlag() const
-{
-    return m_renewFlag;
-}
-
-void InstanceInfo::SetRenewFlag(const string& _renewFlag)
-{
-    m_renewFlag = _renewFlag;
-    m_renewFlagHasBeenSet = true;
-}
-
-bool InstanceInfo::RenewFlagHasBeenSet() const
-{
-    return m_renewFlagHasBeenSet;
 }
 
 string InstanceInfo::GetNodeType() const

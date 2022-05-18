@@ -56,6 +56,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/DescribeUserSAMLConfigRequest.h
   include/tencentcloud/cam/v20190116/model/PutRolePermissionsBoundaryRequest.h
   include/tencentcloud/cam/v20190116/model/GetGroupRequest.h
+  include/tencentcloud/cam/v20190116/model/StrategyInfo.h
   include/tencentcloud/cam/v20190116/model/DeleteRoleResponse.h
   include/tencentcloud/cam/v20190116/model/PolicyVersionItem.h
   include/tencentcloud/cam/v20190116/model/DetachUserPolicyRequest.h
@@ -90,7 +91,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/DetachRolePolicyRequest.h
   include/tencentcloud/cam/v20190116/model/ListPoliciesGrantingServiceAccessResponse.h
   include/tencentcloud/cam/v20190116/model/DeleteRolePermissionsBoundaryRequest.h
-  include/tencentcloud/cam/v20190116/model/StrategyInfo.h
+  include/tencentcloud/cam/v20190116/model/RoleTags.h
   include/tencentcloud/cam/v20190116/model/DescribeUserOIDCConfigResponse.h
   include/tencentcloud/cam/v20190116/model/DeletePolicyRequest.h
   include/tencentcloud/cam/v20190116/model/GroupInfo.h
@@ -248,6 +249,7 @@ set(cam_src
   src/v20190116/model/DescribeUserSAMLConfigRequest.cpp
   src/v20190116/model/PutRolePermissionsBoundaryRequest.cpp
   src/v20190116/model/GetGroupRequest.cpp
+  src/v20190116/model/StrategyInfo.cpp
   src/v20190116/model/DeleteRoleResponse.cpp
   src/v20190116/model/PolicyVersionItem.cpp
   src/v20190116/model/DetachUserPolicyRequest.cpp
@@ -282,7 +284,7 @@ set(cam_src
   src/v20190116/model/DetachRolePolicyRequest.cpp
   src/v20190116/model/ListPoliciesGrantingServiceAccessResponse.cpp
   src/v20190116/model/DeleteRolePermissionsBoundaryRequest.cpp
-  src/v20190116/model/StrategyInfo.cpp
+  src/v20190116/model/RoleTags.cpp
   src/v20190116/model/DescribeUserOIDCConfigResponse.cpp
   src/v20190116/model/DeletePolicyRequest.cpp
   src/v20190116/model/GroupInfo.cpp

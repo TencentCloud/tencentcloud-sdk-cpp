@@ -22,7 +22,8 @@ using namespace std;
 
 AccountPrivilegeModifyInfo::AccountPrivilegeModifyInfo() :
     m_userNameHasBeenSet(false),
-    m_dBPrivilegesHasBeenSet(false)
+    m_dBPrivilegesHasBeenSet(false),
+    m_isAdminHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome AccountPrivilegeModifyInfo::Deserialize(const rapidjson::Val
         m_dBPrivilegesHasBeenSet = true;
     }
 
+    if (value.HasMember("IsAdmin") && !value["IsAdmin"].IsNull())
+    {
+        if (!value["IsAdmin"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccountPrivilegeModifyInfo.IsAdmin` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isAdmin = value["IsAdmin"].GetBool();
+        m_isAdminHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -89,6 +100,14 @@ void AccountPrivilegeModifyInfo::ToJsonObject(rapidjson::Value &value, rapidjson
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isAdminHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsAdmin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isAdmin, allocator);
     }
 
 }
@@ -124,5 +143,21 @@ void AccountPrivilegeModifyInfo::SetDBPrivileges(const vector<DBPrivilegeModifyI
 bool AccountPrivilegeModifyInfo::DBPrivilegesHasBeenSet() const
 {
     return m_dBPrivilegesHasBeenSet;
+}
+
+bool AccountPrivilegeModifyInfo::GetIsAdmin() const
+{
+    return m_isAdmin;
+}
+
+void AccountPrivilegeModifyInfo::SetIsAdmin(const bool& _isAdmin)
+{
+    m_isAdmin = _isAdmin;
+    m_isAdminHasBeenSet = true;
+}
+
+bool AccountPrivilegeModifyInfo::IsAdminHasBeenSet() const
+{
+    return m_isAdminHasBeenSet;
 }
 

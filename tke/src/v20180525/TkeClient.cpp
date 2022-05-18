@@ -4942,6 +4942,49 @@ TkeClient::ModifyPrometheusAlertRuleOutcomeCallable TkeClient::ModifyPrometheusA
     return task->get_future();
 }
 
+TkeClient::ModifyPrometheusTempOutcome TkeClient::ModifyPrometheusTemp(const ModifyPrometheusTempRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPrometheusTemp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPrometheusTempResponse rsp = ModifyPrometheusTempResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPrometheusTempOutcome(rsp);
+        else
+            return ModifyPrometheusTempOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPrometheusTempOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ModifyPrometheusTempAsync(const ModifyPrometheusTempRequest& request, const ModifyPrometheusTempAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyPrometheusTemp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::ModifyPrometheusTempOutcomeCallable TkeClient::ModifyPrometheusTempCallable(const ModifyPrometheusTempRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyPrometheusTempOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyPrometheusTemp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::ModifyPrometheusTemplateOutcome TkeClient::ModifyPrometheusTemplate(const ModifyPrometheusTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyPrometheusTemplate");

@@ -168,6 +168,24 @@ namespace TencentCloud
                      */
                     bool RecordLineIdHasBeenSet() const;
 
+                    /**
+                     * 获取TTL值，如果不传，默认为域名的TTL值。
+                     * @return Ttl TTL值，如果不传，默认为域名的TTL值。
+                     */
+                    uint64_t GetTtl() const;
+
+                    /**
+                     * 设置TTL值，如果不传，默认为域名的TTL值。
+                     * @param Ttl TTL值，如果不传，默认为域名的TTL值。
+                     */
+                    void SetTtl(const uint64_t& _ttl);
+
+                    /**
+                     * 判断参数 Ttl 是否已赋值
+                     * @return Ttl 是否已赋值
+                     */
+                    bool TtlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +229,12 @@ namespace TencentCloud
                      */
                     std::string m_recordLineId;
                     bool m_recordLineIdHasBeenSet;
+
+                    /**
+                     * TTL值，如果不传，默认为域名的TTL值。
+                     */
+                    uint64_t m_ttl;
+                    bool m_ttlHasBeenSet;
 
                 };
             }

@@ -251,6 +251,8 @@
 #include <tencentcloud/tke/v20180525/model/ModifyPrometheusAlertPolicyResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyPrometheusAlertRuleRequest.h>
 #include <tencentcloud/tke/v20180525/model/ModifyPrometheusAlertRuleResponse.h>
+#include <tencentcloud/tke/v20180525/model/ModifyPrometheusTempRequest.h>
+#include <tencentcloud/tke/v20180525/model/ModifyPrometheusTempResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyPrometheusTemplateRequest.h>
 #include <tencentcloud/tke/v20180525/model/ModifyPrometheusTemplateResponse.h>
 #include <tencentcloud/tke/v20180525/model/RemoveNodeFromNodePoolRequest.h>
@@ -635,6 +637,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyPrometheusAlertRuleResponse> ModifyPrometheusAlertRuleOutcome;
                 typedef std::future<ModifyPrometheusAlertRuleOutcome> ModifyPrometheusAlertRuleOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyPrometheusAlertRuleRequest&, ModifyPrometheusAlertRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPrometheusAlertRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyPrometheusTempResponse> ModifyPrometheusTempOutcome;
+                typedef std::future<ModifyPrometheusTempOutcome> ModifyPrometheusTempOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::ModifyPrometheusTempRequest&, ModifyPrometheusTempOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPrometheusTempAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyPrometheusTemplateResponse> ModifyPrometheusTemplateOutcome;
                 typedef std::future<ModifyPrometheusTemplateOutcome> ModifyPrometheusTemplateOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyPrometheusTemplateRequest&, ModifyPrometheusTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPrometheusTemplateAsyncHandler;
@@ -1705,6 +1710,15 @@ namespace TencentCloud
                 ModifyPrometheusAlertRuleOutcome ModifyPrometheusAlertRule(const Model::ModifyPrometheusAlertRuleRequest &request);
                 void ModifyPrometheusAlertRuleAsync(const Model::ModifyPrometheusAlertRuleRequest& request, const ModifyPrometheusAlertRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyPrometheusAlertRuleOutcomeCallable ModifyPrometheusAlertRuleCallable(const Model::ModifyPrometheusAlertRuleRequest& request);
+
+                /**
+                 *修改模板内容
+                 * @param req ModifyPrometheusTempRequest
+                 * @return ModifyPrometheusTempOutcome
+                 */
+                ModifyPrometheusTempOutcome ModifyPrometheusTemp(const Model::ModifyPrometheusTempRequest &request);
+                void ModifyPrometheusTempAsync(const Model::ModifyPrometheusTempRequest& request, const ModifyPrometheusTempAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPrometheusTempOutcomeCallable ModifyPrometheusTempCallable(const Model::ModifyPrometheusTempRequest& request);
 
                 /**
                  *修改模板内容

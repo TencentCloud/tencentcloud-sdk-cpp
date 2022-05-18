@@ -218,6 +218,44 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
+                     * 获取自动续费标识。取值范围：
+RENEW_FLAG_AUTO：自动续费  
+RENEW_FLAG_MANUAL：不自动续费
+默认取值：
+RENEW_FLAG_DEFAULT：不自动续费
+若该参数指定为 RENEW_FLAG_AUTO，在账户余额充足的情况下，实例到期后将按月自动续费。
+                     * @return RenewFlag 自动续费标识。取值范围：
+RENEW_FLAG_AUTO：自动续费  
+RENEW_FLAG_MANUAL：不自动续费
+默认取值：
+RENEW_FLAG_DEFAULT：不自动续费
+若该参数指定为 RENEW_FLAG_AUTO，在账户余额充足的情况下，实例到期后将按月自动续费。
+                     */
+                    std::string GetRenewFlag() const;
+
+                    /**
+                     * 设置自动续费标识。取值范围：
+RENEW_FLAG_AUTO：自动续费  
+RENEW_FLAG_MANUAL：不自动续费
+默认取值：
+RENEW_FLAG_DEFAULT：不自动续费
+若该参数指定为 RENEW_FLAG_AUTO，在账户余额充足的情况下，实例到期后将按月自动续费。
+                     * @param RenewFlag 自动续费标识。取值范围：
+RENEW_FLAG_AUTO：自动续费  
+RENEW_FLAG_MANUAL：不自动续费
+默认取值：
+RENEW_FLAG_DEFAULT：不自动续费
+若该参数指定为 RENEW_FLAG_AUTO，在账户余额充足的情况下，实例到期后将按月自动续费。
+                     */
+                    void SetRenewFlag(const std::string& _renewFlag);
+
+                    /**
+                     * 判断参数 RenewFlag 是否已赋值
+                     * @return RenewFlag 是否已赋值
+                     */
+                    bool RenewFlagHasBeenSet() const;
+
+                    /**
                      * 获取实例计费模式。取值范围：  PREPAID：表示预付费，即包年包月  POSTPAID_BY_HOUR：表示后付费，即按量计费  CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。
                      * @return ChargeType 实例计费模式。取值范围：  PREPAID：表示预付费，即包年包月  POSTPAID_BY_HOUR：表示后付费，即按量计费  CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。
                      */
@@ -252,24 +290,6 @@ namespace TencentCloud
                      * @return ChargePeriod 是否已赋值
                      */
                     bool ChargePeriodHasBeenSet() const;
-
-                    /**
-                     * 获取自动续费标识。取值范围：RENEW_FLAG_AUTO：自动续费  RENEW_FLAG_MANUAL：不自动续费  默认取值：RENEW_FLAG_DEFAULT：不自动续费。若该参数指定为RENEW_FLAG_AUTO，在账户余额充足的情况下，实例到期后将按月自动续费。
-                     * @return RenewFlag 自动续费标识。取值范围：RENEW_FLAG_AUTO：自动续费  RENEW_FLAG_MANUAL：不自动续费  默认取值：RENEW_FLAG_DEFAULT：不自动续费。若该参数指定为RENEW_FLAG_AUTO，在账户余额充足的情况下，实例到期后将按月自动续费。
-                     */
-                    std::string GetRenewFlag() const;
-
-                    /**
-                     * 设置自动续费标识。取值范围：RENEW_FLAG_AUTO：自动续费  RENEW_FLAG_MANUAL：不自动续费  默认取值：RENEW_FLAG_DEFAULT：不自动续费。若该参数指定为RENEW_FLAG_AUTO，在账户余额充足的情况下，实例到期后将按月自动续费。
-                     * @param RenewFlag 自动续费标识。取值范围：RENEW_FLAG_AUTO：自动续费  RENEW_FLAG_MANUAL：不自动续费  默认取值：RENEW_FLAG_DEFAULT：不自动续费。若该参数指定为RENEW_FLAG_AUTO，在账户余额充足的情况下，实例到期后将按月自动续费。
-                     */
-                    void SetRenewFlag(const std::string& _renewFlag);
-
-                    /**
-                     * 判断参数 RenewFlag 是否已赋值
-                     * @return RenewFlag 是否已赋值
-                     */
-                    bool RenewFlagHasBeenSet() const;
 
                     /**
                      * 获取节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
@@ -1596,6 +1616,17 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
+                     * 自动续费标识。取值范围：
+RENEW_FLAG_AUTO：自动续费  
+RENEW_FLAG_MANUAL：不自动续费
+默认取值：
+RENEW_FLAG_DEFAULT：不自动续费
+若该参数指定为 RENEW_FLAG_AUTO，在账户余额充足的情况下，实例到期后将按月自动续费。
+                     */
+                    std::string m_renewFlag;
+                    bool m_renewFlagHasBeenSet;
+
+                    /**
                      * 实例计费模式。取值范围：  PREPAID：表示预付费，即包年包月  POSTPAID_BY_HOUR：表示后付费，即按量计费  CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。
                      */
                     std::string m_chargeType;
@@ -1606,12 +1637,6 @@ namespace TencentCloud
                      */
                     uint64_t m_chargePeriod;
                     bool m_chargePeriodHasBeenSet;
-
-                    /**
-                     * 自动续费标识。取值范围：RENEW_FLAG_AUTO：自动续费  RENEW_FLAG_MANUAL：不自动续费  默认取值：RENEW_FLAG_DEFAULT：不自动续费。若该参数指定为RENEW_FLAG_AUTO，在账户余额充足的情况下，实例到期后将按月自动续费。
-                     */
-                    std::string m_renewFlag;
-                    bool m_renewFlagHasBeenSet;
 
                     /**
                      * 节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>

@@ -82,6 +82,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribeEksContainerInstanceLogRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterInstancesRequest.h
   include/tencentcloud/tke/v20180525/model/PodLimitsInstance.h
+  include/tencentcloud/tke/v20180525/model/ModifyPrometheusTempRequest.h
   include/tencentcloud/tke/v20180525/model/ControllerStatus.h
   include/tencentcloud/tke/v20180525/model/DeletePrometheusTempSyncResponse.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusRecordRulesRequest.h
@@ -284,6 +285,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribeClusterAsGroupsResponse.h
   include/tencentcloud/tke/v20180525/model/ScaleOutClusterMasterRequest.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterInstancesResponse.h
+  include/tencentcloud/tke/v20180525/model/ModifyPrometheusTempResponse.h
   include/tencentcloud/tke/v20180525/model/PrometheusAlertRuleDetail.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterInstancesResponse.h
   include/tencentcloud/tke/v20180525/model/CreatePrometheusAlertRuleRequest.h
@@ -447,6 +449,7 @@ set(tke_src
   src/v20180525/model/DescribeEksContainerInstanceLogRequest.cpp
   src/v20180525/model/DescribeClusterInstancesRequest.cpp
   src/v20180525/model/PodLimitsInstance.cpp
+  src/v20180525/model/ModifyPrometheusTempRequest.cpp
   src/v20180525/model/ControllerStatus.cpp
   src/v20180525/model/DeletePrometheusTempSyncResponse.cpp
   src/v20180525/model/DescribePrometheusRecordRulesRequest.cpp
@@ -649,6 +652,7 @@ set(tke_src
   src/v20180525/model/DescribeClusterAsGroupsResponse.cpp
   src/v20180525/model/ScaleOutClusterMasterRequest.cpp
   src/v20180525/model/DeleteClusterInstancesResponse.cpp
+  src/v20180525/model/ModifyPrometheusTempResponse.cpp
   src/v20180525/model/PrometheusAlertRuleDetail.cpp
   src/v20180525/model/DescribeClusterInstancesResponse.cpp
   src/v20180525/model/CreatePrometheusAlertRuleRequest.cpp
