@@ -900,6 +900,49 @@ TkeClient::CreatePrometheusDashboardOutcomeCallable TkeClient::CreatePrometheusD
     return task->get_future();
 }
 
+TkeClient::CreatePrometheusGlobalNotificationOutcome TkeClient::CreatePrometheusGlobalNotification(const CreatePrometheusGlobalNotificationRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePrometheusGlobalNotification");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePrometheusGlobalNotificationResponse rsp = CreatePrometheusGlobalNotificationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePrometheusGlobalNotificationOutcome(rsp);
+        else
+            return CreatePrometheusGlobalNotificationOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePrometheusGlobalNotificationOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CreatePrometheusGlobalNotificationAsync(const CreatePrometheusGlobalNotificationRequest& request, const CreatePrometheusGlobalNotificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePrometheusGlobalNotification(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::CreatePrometheusGlobalNotificationOutcomeCallable TkeClient::CreatePrometheusGlobalNotificationCallable(const CreatePrometheusGlobalNotificationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePrometheusGlobalNotificationOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePrometheusGlobalNotification(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::CreatePrometheusTempOutcome TkeClient::CreatePrometheusTemp(const CreatePrometheusTempRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePrometheusTemp");
@@ -3265,6 +3308,49 @@ TkeClient::DescribePrometheusClusterAgentsOutcomeCallable TkeClient::DescribePro
     return task->get_future();
 }
 
+TkeClient::DescribePrometheusGlobalNotificationOutcome TkeClient::DescribePrometheusGlobalNotification(const DescribePrometheusGlobalNotificationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrometheusGlobalNotification");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrometheusGlobalNotificationResponse rsp = DescribePrometheusGlobalNotificationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrometheusGlobalNotificationOutcome(rsp);
+        else
+            return DescribePrometheusGlobalNotificationOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrometheusGlobalNotificationOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribePrometheusGlobalNotificationAsync(const DescribePrometheusGlobalNotificationRequest& request, const DescribePrometheusGlobalNotificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrometheusGlobalNotification(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribePrometheusGlobalNotificationOutcomeCallable TkeClient::DescribePrometheusGlobalNotificationCallable(const DescribePrometheusGlobalNotificationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePrometheusGlobalNotificationOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrometheusGlobalNotification(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribePrometheusInstanceOutcome TkeClient::DescribePrometheusInstance(const DescribePrometheusInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePrometheusInstance");
@@ -4935,6 +5021,49 @@ TkeClient::ModifyPrometheusAlertRuleOutcomeCallable TkeClient::ModifyPrometheusA
         [this, request]()
         {
             return this->ModifyPrometheusAlertRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::ModifyPrometheusGlobalNotificationOutcome TkeClient::ModifyPrometheusGlobalNotification(const ModifyPrometheusGlobalNotificationRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPrometheusGlobalNotification");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPrometheusGlobalNotificationResponse rsp = ModifyPrometheusGlobalNotificationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPrometheusGlobalNotificationOutcome(rsp);
+        else
+            return ModifyPrometheusGlobalNotificationOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPrometheusGlobalNotificationOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ModifyPrometheusGlobalNotificationAsync(const ModifyPrometheusGlobalNotificationRequest& request, const ModifyPrometheusGlobalNotificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyPrometheusGlobalNotification(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::ModifyPrometheusGlobalNotificationOutcomeCallable TkeClient::ModifyPrometheusGlobalNotificationCallable(const ModifyPrometheusGlobalNotificationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyPrometheusGlobalNotificationOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyPrometheusGlobalNotification(request);
         }
     );
 

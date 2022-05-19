@@ -29,7 +29,9 @@ AccountDetail::AccountDetail() :
     m_passTimeHasBeenSet(false),
     m_internalStatusHasBeenSet(false),
     m_dbsHasBeenSet(false),
-    m_isAdminHasBeenSet(false)
+    m_isAdminHasBeenSet(false),
+    m_authenticationHasBeenSet(false),
+    m_hostHasBeenSet(false)
 {
 }
 
@@ -138,6 +140,26 @@ CoreInternalOutcome AccountDetail::Deserialize(const rapidjson::Value &value)
         m_isAdminHasBeenSet = true;
     }
 
+    if (value.HasMember("Authentication") && !value["Authentication"].IsNull())
+    {
+        if (!value["Authentication"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccountDetail.Authentication` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_authentication = string(value["Authentication"].GetString());
+        m_authenticationHasBeenSet = true;
+    }
+
+    if (value.HasMember("Host") && !value["Host"].IsNull())
+    {
+        if (!value["Host"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccountDetail.Host` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_host = string(value["Host"].GetString());
+        m_hostHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -222,6 +244,22 @@ void AccountDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "IsAdmin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isAdmin, allocator);
+    }
+
+    if (m_authenticationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Authentication";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_authentication.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Host";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_host.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -369,5 +407,37 @@ void AccountDetail::SetIsAdmin(const bool& _isAdmin)
 bool AccountDetail::IsAdminHasBeenSet() const
 {
     return m_isAdminHasBeenSet;
+}
+
+string AccountDetail::GetAuthentication() const
+{
+    return m_authentication;
+}
+
+void AccountDetail::SetAuthentication(const string& _authentication)
+{
+    m_authentication = _authentication;
+    m_authenticationHasBeenSet = true;
+}
+
+bool AccountDetail::AuthenticationHasBeenSet() const
+{
+    return m_authenticationHasBeenSet;
+}
+
+string AccountDetail::GetHost() const
+{
+    return m_host;
+}
+
+void AccountDetail::SetHost(const string& _host)
+{
+    m_host = _host;
+    m_hostHasBeenSet = true;
+}
+
+bool AccountDetail::HostHasBeenSet() const
+{
+    return m_hostHasBeenSet;
 }
 

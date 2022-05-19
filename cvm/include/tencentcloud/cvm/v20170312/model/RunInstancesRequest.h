@@ -533,6 +533,24 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool LaunchTemplateHasBeenSet() const;
 
                     /**
+                     * 获取指定专用集群创建。
+                     * @return DedicatedClusterId 指定专用集群创建。
+                     */
+                    std::string GetDedicatedClusterId() const;
+
+                    /**
+                     * 设置指定专用集群创建。
+                     * @param DedicatedClusterId 指定专用集群创建。
+                     */
+                    void SetDedicatedClusterId(const std::string& _dedicatedClusterId);
+
+                    /**
+                     * 判断参数 DedicatedClusterId 是否已赋值
+                     * @return DedicatedClusterId 是否已赋值
+                     */
+                    bool DedicatedClusterIdHasBeenSet() const;
+
+                    /**
                      * 获取指定CHC物理服务器来创建CHC云主机。
                      * @return ChcIds 指定CHC物理服务器来创建CHC云主机。
                      */
@@ -726,6 +744,12 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      */
                     LaunchTemplate m_launchTemplate;
                     bool m_launchTemplateHasBeenSet;
+
+                    /**
+                     * 指定专用集群创建。
+                     */
+                    std::string m_dedicatedClusterId;
+                    bool m_dedicatedClusterIdHasBeenSet;
 
                     /**
                      * 指定CHC物理服务器来创建CHC云主机。

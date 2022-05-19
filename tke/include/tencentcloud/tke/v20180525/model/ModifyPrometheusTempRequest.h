@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tke/v20180525/model/PrometheusTempModify.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,55 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取模板ID
+                     * @return TemplateId 模板ID
+                     */
+                    std::string GetTemplateId() const;
+
+                    /**
+                     * 设置模板ID
+                     * @param TemplateId 模板ID
+                     */
+                    void SetTemplateId(const std::string& _templateId);
+
+                    /**
+                     * 判断参数 TemplateId 是否已赋值
+                     * @return TemplateId 是否已赋值
+                     */
+                    bool TemplateIdHasBeenSet() const;
+
+                    /**
+                     * 获取修改内容
+                     * @return Template 修改内容
+                     */
+                    PrometheusTempModify GetTemplate() const;
+
+                    /**
+                     * 设置修改内容
+                     * @param Template 修改内容
+                     */
+                    void SetTemplate(const PrometheusTempModify& _template);
+
+                    /**
+                     * 判断参数 Template 是否已赋值
+                     * @return Template 是否已赋值
+                     */
+                    bool TemplateHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 模板ID
+                     */
+                    std::string m_templateId;
+                    bool m_templateIdHasBeenSet;
+
+                    /**
+                     * 修改内容
+                     */
+                    PrometheusTempModify m_template;
+                    bool m_templateHasBeenSet;
 
                 };
             }

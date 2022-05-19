@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tke/v20180525/model/PrometheusAlertPolicyItem.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,55 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取实例id
+                     * @return InstanceId 实例id
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置实例id
+                     * @param InstanceId 实例id
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取告警配置
+                     * @return AlertRule 告警配置
+                     */
+                    PrometheusAlertPolicyItem GetAlertRule() const;
+
+                    /**
+                     * 设置告警配置
+                     * @param AlertRule 告警配置
+                     */
+                    void SetAlertRule(const PrometheusAlertPolicyItem& _alertRule);
+
+                    /**
+                     * 判断参数 AlertRule 是否已赋值
+                     * @return AlertRule 是否已赋值
+                     */
+                    bool AlertRuleHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 实例id
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 告警配置
+                     */
+                    PrometheusAlertPolicyItem m_alertRule;
+                    bool m_alertRuleHasBeenSet;
 
                 };
             }

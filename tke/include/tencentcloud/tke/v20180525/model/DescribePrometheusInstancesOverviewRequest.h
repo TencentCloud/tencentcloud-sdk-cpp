@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tke/v20180525/model/Filter.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,89 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取用于分页
+                     * @return Offset 用于分页
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 设置用于分页
+                     * @param Offset 用于分页
+                     */
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取用于分页
+                     * @return Limit 用于分页
+                     */
+                    uint64_t GetLimit() const;
+
+                    /**
+                     * 设置用于分页
+                     * @param Limit 用于分页
+                     */
+                    void SetLimit(const uint64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取过滤实例，目前支持：
+ID: 通过实例ID来过滤 
+Name: 通过实例名称来过滤
+                     * @return Filters 过滤实例，目前支持：
+ID: 通过实例ID来过滤 
+Name: 通过实例名称来过滤
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置过滤实例，目前支持：
+ID: 通过实例ID来过滤 
+Name: 通过实例名称来过滤
+                     * @param Filters 过滤实例，目前支持：
+ID: 通过实例ID来过滤 
+Name: 通过实例名称来过滤
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 用于分页
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * 用于分页
+                     */
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 过滤实例，目前支持：
+ID: 通过实例ID来过滤 
+Name: 通过实例名称来过滤
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

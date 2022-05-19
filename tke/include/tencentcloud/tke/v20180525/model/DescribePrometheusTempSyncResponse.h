@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tke/v20180525/model/PrometheusTemplateSyncTarget.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,28 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取同步目标详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Targets 同步目标详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<PrometheusTemplateSyncTarget> GetTargets() const;
+
+                    /**
+                     * 判断参数 Targets 是否已赋值
+                     * @return Targets 是否已赋值
+                     */
+                    bool TargetsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 同步目标详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<PrometheusTemplateSyncTarget> m_targets;
+                    bool m_targetsHasBeenSet;
 
                 };
             }

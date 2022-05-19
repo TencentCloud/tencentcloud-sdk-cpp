@@ -42,7 +42,85 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取可用区列表排序的依据字段。取值范围：
+<li>ZONE：依据可用区排序。
+<li>INSTANCE_DISPLAY_LABEL：依据可用区展示标签排序, 可用区展示标签按可选择程度, 升序排列为: ['HIDDEN', 'NORMAL', 'SELECTED']。
+默认按可用区排序。
+                     * @return OrderField 可用区列表排序的依据字段。取值范围：
+<li>ZONE：依据可用区排序。
+<li>INSTANCE_DISPLAY_LABEL：依据可用区展示标签排序, 可用区展示标签按可选择程度, 升序排列为: ['HIDDEN', 'NORMAL', 'SELECTED']。
+默认按可用区排序。
+                     */
+                    std::string GetOrderField() const;
+
+                    /**
+                     * 设置可用区列表排序的依据字段。取值范围：
+<li>ZONE：依据可用区排序。
+<li>INSTANCE_DISPLAY_LABEL：依据可用区展示标签排序, 可用区展示标签按可选择程度, 升序排列为: ['HIDDEN', 'NORMAL', 'SELECTED']。
+默认按可用区排序。
+                     * @param OrderField 可用区列表排序的依据字段。取值范围：
+<li>ZONE：依据可用区排序。
+<li>INSTANCE_DISPLAY_LABEL：依据可用区展示标签排序, 可用区展示标签按可选择程度, 升序排列为: ['HIDDEN', 'NORMAL', 'SELECTED']。
+默认按可用区排序。
+                     */
+                    void SetOrderField(const std::string& _orderField);
+
+                    /**
+                     * 判断参数 OrderField 是否已赋值
+                     * @return OrderField 是否已赋值
+                     */
+                    bool OrderFieldHasBeenSet() const;
+
+                    /**
+                     * 获取输出可用区列表的排列顺序。取值范围：
+<li>ASC：升序排列。 
+<li>DESC：降序排列。
+默认按升序排列。
+                     * @return Order 输出可用区列表的排列顺序。取值范围：
+<li>ASC：升序排列。 
+<li>DESC：降序排列。
+默认按升序排列。
+                     */
+                    std::string GetOrder() const;
+
+                    /**
+                     * 设置输出可用区列表的排列顺序。取值范围：
+<li>ASC：升序排列。 
+<li>DESC：降序排列。
+默认按升序排列。
+                     * @param Order 输出可用区列表的排列顺序。取值范围：
+<li>ASC：升序排列。 
+<li>DESC：降序排列。
+默认按升序排列。
+                     */
+                    void SetOrder(const std::string& _order);
+
+                    /**
+                     * 判断参数 Order 是否已赋值
+                     * @return Order 是否已赋值
+                     */
+                    bool OrderHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 可用区列表排序的依据字段。取值范围：
+<li>ZONE：依据可用区排序。
+<li>INSTANCE_DISPLAY_LABEL：依据可用区展示标签排序, 可用区展示标签按可选择程度, 升序排列为: ['HIDDEN', 'NORMAL', 'SELECTED']。
+默认按可用区排序。
+                     */
+                    std::string m_orderField;
+                    bool m_orderFieldHasBeenSet;
+
+                    /**
+                     * 输出可用区列表的排列顺序。取值范围：
+<li>ASC：升序排列。 
+<li>DESC：降序排列。
+默认按升序排列。
+                     */
+                    std::string m_order;
+                    bool m_orderHasBeenSet;
 
                 };
             }

@@ -22,7 +22,10 @@
 using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
-DeletePrometheusAlertPolicyRequest::DeletePrometheusAlertPolicyRequest()
+DeletePrometheusAlertPolicyRequest::DeletePrometheusAlertPolicyRequest() :
+    m_instanceIdHasBeenSet(false),
+    m_alertIdsHasBeenSet(false),
+    m_namesHasBeenSet(false)
 {
 }
 
@@ -33,6 +36,40 @@ string DeletePrometheusAlertPolicyRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_alertIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlertIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_alertIds.begin(); itr != m_alertIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_namesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Names";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_names.begin(); itr != m_names.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +77,53 @@ string DeletePrometheusAlertPolicyRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DeletePrometheusAlertPolicyRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void DeletePrometheusAlertPolicyRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool DeletePrometheusAlertPolicyRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+vector<string> DeletePrometheusAlertPolicyRequest::GetAlertIds() const
+{
+    return m_alertIds;
+}
+
+void DeletePrometheusAlertPolicyRequest::SetAlertIds(const vector<string>& _alertIds)
+{
+    m_alertIds = _alertIds;
+    m_alertIdsHasBeenSet = true;
+}
+
+bool DeletePrometheusAlertPolicyRequest::AlertIdsHasBeenSet() const
+{
+    return m_alertIdsHasBeenSet;
+}
+
+vector<string> DeletePrometheusAlertPolicyRequest::GetNames() const
+{
+    return m_names;
+}
+
+void DeletePrometheusAlertPolicyRequest::SetNames(const vector<string>& _names)
+{
+    m_names = _names;
+    m_namesHasBeenSet = true;
+}
+
+bool DeletePrometheusAlertPolicyRequest::NamesHasBeenSet() const
+{
+    return m_namesHasBeenSet;
+}
 
 

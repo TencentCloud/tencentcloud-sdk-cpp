@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tke/v20180525/model/PrometheusAgentOverview.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,43 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取被关联集群信息
+                     * @return Agents 被关联集群信息
+                     */
+                    std::vector<PrometheusAgentOverview> GetAgents() const;
+
+                    /**
+                     * 判断参数 Agents 是否已赋值
+                     * @return Agents 是否已赋值
+                     */
+                    bool AgentsHasBeenSet() const;
+
+                    /**
+                     * 获取被关联集群总量
+                     * @return Total 被关联集群总量
+                     */
+                    uint64_t GetTotal() const;
+
+                    /**
+                     * 判断参数 Total 是否已赋值
+                     * @return Total 是否已赋值
+                     */
+                    bool TotalHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 被关联集群信息
+                     */
+                    std::vector<PrometheusAgentOverview> m_agents;
+                    bool m_agentsHasBeenSet;
+
+                    /**
+                     * 被关联集群总量
+                     */
+                    uint64_t m_total;
+                    bool m_totalHasBeenSet;
 
                 };
             }

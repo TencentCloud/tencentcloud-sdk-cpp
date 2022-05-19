@@ -42,7 +42,79 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取实例id
+                     * @return InstanceId 实例id
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置实例id
+                     * @param InstanceId 实例id
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取用于分页
+                     * @return Offset 用于分页
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 设置用于分页
+                     * @param Offset 用于分页
+                     */
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取用于分页
+                     * @return Limit 用于分页
+                     */
+                    uint64_t GetLimit() const;
+
+                    /**
+                     * 设置用于分页
+                     * @param Limit 用于分页
+                     */
+                    void SetLimit(const uint64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     */
+                    bool LimitHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 实例id
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 用于分页
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * 用于分页
+                     */
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
 
                 };
             }

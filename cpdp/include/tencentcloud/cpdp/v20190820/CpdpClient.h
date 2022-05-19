@@ -105,6 +105,12 @@
 #include <tencentcloud/cpdp/v20190820/model/CreateOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreatePayMerchantRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreatePayMerchantResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/CreatePayRollPreOrderRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/CreatePayRollPreOrderResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/CreatePayRollPreOrderWithAuthRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/CreatePayRollPreOrderWithAuthResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/CreatePayRollTokenRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/CreatePayRollTokenResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateRedInvoiceRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateRedInvoiceResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateRedInvoiceV2Request.h>
@@ -153,6 +159,12 @@
 #include <tencentcloud/cpdp/v20190820/model/GetBillDownloadUrlResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/GetDistributeBillDownloadUrlRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/GetDistributeBillDownloadUrlResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/GetPayRollAuthRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/GetPayRollAuthResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/GetPayRollAuthListRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/GetPayRollAuthListResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/GetPayRollAuthResultRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/GetPayRollAuthResultResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/MigrateOrderRefundRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/MigrateOrderRefundResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/MigrateOrderRefundQueryRequest.h>
@@ -502,6 +514,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePayMerchantResponse> CreatePayMerchantOutcome;
                 typedef std::future<CreatePayMerchantOutcome> CreatePayMerchantOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreatePayMerchantRequest&, CreatePayMerchantOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePayMerchantAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePayRollPreOrderResponse> CreatePayRollPreOrderOutcome;
+                typedef std::future<CreatePayRollPreOrderOutcome> CreatePayRollPreOrderOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::CreatePayRollPreOrderRequest&, CreatePayRollPreOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePayRollPreOrderAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePayRollPreOrderWithAuthResponse> CreatePayRollPreOrderWithAuthOutcome;
+                typedef std::future<CreatePayRollPreOrderWithAuthOutcome> CreatePayRollPreOrderWithAuthOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::CreatePayRollPreOrderWithAuthRequest&, CreatePayRollPreOrderWithAuthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePayRollPreOrderWithAuthAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePayRollTokenResponse> CreatePayRollTokenOutcome;
+                typedef std::future<CreatePayRollTokenOutcome> CreatePayRollTokenOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::CreatePayRollTokenRequest&, CreatePayRollTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePayRollTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRedInvoiceResponse> CreateRedInvoiceOutcome;
                 typedef std::future<CreateRedInvoiceOutcome> CreateRedInvoiceOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateRedInvoiceRequest&, CreateRedInvoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRedInvoiceAsyncHandler;
@@ -574,6 +595,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetDistributeBillDownloadUrlResponse> GetDistributeBillDownloadUrlOutcome;
                 typedef std::future<GetDistributeBillDownloadUrlOutcome> GetDistributeBillDownloadUrlOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::GetDistributeBillDownloadUrlRequest&, GetDistributeBillDownloadUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDistributeBillDownloadUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetPayRollAuthResponse> GetPayRollAuthOutcome;
+                typedef std::future<GetPayRollAuthOutcome> GetPayRollAuthOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::GetPayRollAuthRequest&, GetPayRollAuthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetPayRollAuthAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetPayRollAuthListResponse> GetPayRollAuthListOutcome;
+                typedef std::future<GetPayRollAuthListOutcome> GetPayRollAuthListOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::GetPayRollAuthListRequest&, GetPayRollAuthListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetPayRollAuthListAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetPayRollAuthResultResponse> GetPayRollAuthResultOutcome;
+                typedef std::future<GetPayRollAuthResultOutcome> GetPayRollAuthResultOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::GetPayRollAuthResultRequest&, GetPayRollAuthResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetPayRollAuthResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::MigrateOrderRefundResponse> MigrateOrderRefundOutcome;
                 typedef std::future<MigrateOrderRefundOutcome> MigrateOrderRefundOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::MigrateOrderRefundRequest&, MigrateOrderRefundOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MigrateOrderRefundAsyncHandler;
@@ -1273,6 +1303,33 @@ namespace TencentCloud
                 CreatePayMerchantOutcomeCallable CreatePayMerchantCallable(const Model::CreatePayMerchantRequest& request);
 
                 /**
+                 *务工卡-核身预下单
+                 * @param req CreatePayRollPreOrderRequest
+                 * @return CreatePayRollPreOrderOutcome
+                 */
+                CreatePayRollPreOrderOutcome CreatePayRollPreOrder(const Model::CreatePayRollPreOrderRequest &request);
+                void CreatePayRollPreOrderAsync(const Model::CreatePayRollPreOrderRequest& request, const CreatePayRollPreOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePayRollPreOrderOutcomeCallable CreatePayRollPreOrderCallable(const Model::CreatePayRollPreOrderRequest& request);
+
+                /**
+                 *务工卡-核身预下单带授权
+                 * @param req CreatePayRollPreOrderWithAuthRequest
+                 * @return CreatePayRollPreOrderWithAuthOutcome
+                 */
+                CreatePayRollPreOrderWithAuthOutcome CreatePayRollPreOrderWithAuth(const Model::CreatePayRollPreOrderWithAuthRequest &request);
+                void CreatePayRollPreOrderWithAuthAsync(const Model::CreatePayRollPreOrderWithAuthRequest& request, const CreatePayRollPreOrderWithAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePayRollPreOrderWithAuthOutcomeCallable CreatePayRollPreOrderWithAuthCallable(const Model::CreatePayRollPreOrderWithAuthRequest& request);
+
+                /**
+                 *务工卡-生成授权令牌
+                 * @param req CreatePayRollTokenRequest
+                 * @return CreatePayRollTokenOutcome
+                 */
+                CreatePayRollTokenOutcome CreatePayRollToken(const Model::CreatePayRollTokenRequest &request);
+                void CreatePayRollTokenAsync(const Model::CreatePayRollTokenRequest& request, const CreatePayRollTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePayRollTokenOutcomeCallable CreatePayRollTokenCallable(const Model::CreatePayRollTokenRequest& request);
+
+                /**
                  *智慧零售-发票红冲
                  * @param req CreateRedInvoiceRequest
                  * @return CreateRedInvoiceOutcome
@@ -1489,6 +1546,33 @@ namespace TencentCloud
                 GetDistributeBillDownloadUrlOutcome GetDistributeBillDownloadUrl(const Model::GetDistributeBillDownloadUrlRequest &request);
                 void GetDistributeBillDownloadUrlAsync(const Model::GetDistributeBillDownloadUrlRequest& request, const GetDistributeBillDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetDistributeBillDownloadUrlOutcomeCallable GetDistributeBillDownloadUrlCallable(const Model::GetDistributeBillDownloadUrlRequest& request);
+
+                /**
+                 *务工卡-查询授权关系
+                 * @param req GetPayRollAuthRequest
+                 * @return GetPayRollAuthOutcome
+                 */
+                GetPayRollAuthOutcome GetPayRollAuth(const Model::GetPayRollAuthRequest &request);
+                void GetPayRollAuthAsync(const Model::GetPayRollAuthRequest& request, const GetPayRollAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetPayRollAuthOutcomeCallable GetPayRollAuthCallable(const Model::GetPayRollAuthRequest& request);
+
+                /**
+                 *务工卡-查询核身记录
+                 * @param req GetPayRollAuthListRequest
+                 * @return GetPayRollAuthListOutcome
+                 */
+                GetPayRollAuthListOutcome GetPayRollAuthList(const Model::GetPayRollAuthListRequest &request);
+                void GetPayRollAuthListAsync(const Model::GetPayRollAuthListRequest& request, const GetPayRollAuthListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetPayRollAuthListOutcomeCallable GetPayRollAuthListCallable(const Model::GetPayRollAuthListRequest& request);
+
+                /**
+                 *务工卡-获取核身结果
+                 * @param req GetPayRollAuthResultRequest
+                 * @return GetPayRollAuthResultOutcome
+                 */
+                GetPayRollAuthResultOutcome GetPayRollAuthResult(const Model::GetPayRollAuthResultRequest &request);
+                void GetPayRollAuthResultAsync(const Model::GetPayRollAuthResultRequest& request, const GetPayRollAuthResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetPayRollAuthResultOutcomeCallable GetPayRollAuthResultCallable(const Model::GetPayRollAuthResultRequest& request);
 
                 /**
                  *山姆聚合支付项目-存量订单退款接口。可以通过本接口将支付款全部或部分退还给付款方，在收到用户退款请求并且验证成功之后，按照退款规则将支付款按原路退回到支付帐号。

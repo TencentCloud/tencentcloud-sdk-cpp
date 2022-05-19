@@ -113,10 +113,14 @@
 #include <tencentcloud/iotcloud/v20210408/model/EditFirmwareResponse.h>
 #include <tencentcloud/iotcloud/v20210408/model/EnableTopicRuleRequest.h>
 #include <tencentcloud/iotcloud/v20210408/model/EnableTopicRuleResponse.h>
+#include <tencentcloud/iotcloud/v20210408/model/GetAllVersionRequest.h>
+#include <tencentcloud/iotcloud/v20210408/model/GetAllVersionResponse.h>
 #include <tencentcloud/iotcloud/v20210408/model/GetCOSURLRequest.h>
 #include <tencentcloud/iotcloud/v20210408/model/GetCOSURLResponse.h>
 #include <tencentcloud/iotcloud/v20210408/model/GetUserResourceInfoRequest.h>
 #include <tencentcloud/iotcloud/v20210408/model/GetUserResourceInfoResponse.h>
+#include <tencentcloud/iotcloud/v20210408/model/ListFirmwaresRequest.h>
+#include <tencentcloud/iotcloud/v20210408/model/ListFirmwaresResponse.h>
 #include <tencentcloud/iotcloud/v20210408/model/ListLogRequest.h>
 #include <tencentcloud/iotcloud/v20210408/model/ListLogResponse.h>
 #include <tencentcloud/iotcloud/v20210408/model/ListLogPayloadRequest.h>
@@ -308,12 +312,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::EnableTopicRuleResponse> EnableTopicRuleOutcome;
                 typedef std::future<EnableTopicRuleOutcome> EnableTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::EnableTopicRuleRequest&, EnableTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableTopicRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetAllVersionResponse> GetAllVersionOutcome;
+                typedef std::future<GetAllVersionOutcome> GetAllVersionOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::GetAllVersionRequest&, GetAllVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAllVersionAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetCOSURLResponse> GetCOSURLOutcome;
                 typedef std::future<GetCOSURLOutcome> GetCOSURLOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::GetCOSURLRequest&, GetCOSURLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetCOSURLAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetUserResourceInfoResponse> GetUserResourceInfoOutcome;
                 typedef std::future<GetUserResourceInfoOutcome> GetUserResourceInfoOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::GetUserResourceInfoRequest&, GetUserResourceInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetUserResourceInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListFirmwaresResponse> ListFirmwaresOutcome;
+                typedef std::future<ListFirmwaresOutcome> ListFirmwaresOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::ListFirmwaresRequest&, ListFirmwaresOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListFirmwaresAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListLogResponse> ListLogOutcome;
                 typedef std::future<ListLogOutcome> ListLogOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::ListLogRequest&, ListLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListLogAsyncHandler;
@@ -786,6 +796,15 @@ namespace TencentCloud
                 EnableTopicRuleOutcomeCallable EnableTopicRuleCallable(const Model::EnableTopicRuleRequest& request);
 
                 /**
+                 *本接口（GetAllVersion）用于获取所有的版本列表 
+                 * @param req GetAllVersionRequest
+                 * @return GetAllVersionOutcome
+                 */
+                GetAllVersionOutcome GetAllVersion(const Model::GetAllVersionRequest &request);
+                void GetAllVersionAsync(const Model::GetAllVersionRequest& request, const GetAllVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetAllVersionOutcomeCallable GetAllVersionCallable(const Model::GetAllVersionRequest& request);
+
+                /**
                  *本接口（GetCOSURL）用于获取固件存储在COS的URL 
                  * @param req GetCOSURLRequest
                  * @return GetCOSURLOutcome
@@ -802,6 +821,15 @@ namespace TencentCloud
                 GetUserResourceInfoOutcome GetUserResourceInfo(const Model::GetUserResourceInfoRequest &request);
                 void GetUserResourceInfoAsync(const Model::GetUserResourceInfoRequest& request, const GetUserResourceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetUserResourceInfoOutcomeCallable GetUserResourceInfoCallable(const Model::GetUserResourceInfoRequest& request);
+
+                /**
+                 *本接口（ListFirmwares）用于获取固件列表 
+                 * @param req ListFirmwaresRequest
+                 * @return ListFirmwaresOutcome
+                 */
+                ListFirmwaresOutcome ListFirmwares(const Model::ListFirmwaresRequest &request);
+                void ListFirmwaresAsync(const Model::ListFirmwaresRequest& request, const ListFirmwaresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListFirmwaresOutcomeCallable ListFirmwaresCallable(const Model::ListFirmwaresRequest& request);
 
                 /**
                  *本接口（ListLog）用于查看日志信息 

@@ -22,7 +22,10 @@
 using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
-DescribePrometheusClusterAgentsRequest::DescribePrometheusClusterAgentsRequest()
+DescribePrometheusClusterAgentsRequest::DescribePrometheusClusterAgentsRequest() :
+    m_instanceIdHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false)
 {
 }
 
@@ -33,6 +36,30 @@ string DescribePrometheusClusterAgentsRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +67,53 @@ string DescribePrometheusClusterAgentsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribePrometheusClusterAgentsRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void DescribePrometheusClusterAgentsRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool DescribePrometheusClusterAgentsRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+uint64_t DescribePrometheusClusterAgentsRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribePrometheusClusterAgentsRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribePrometheusClusterAgentsRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+uint64_t DescribePrometheusClusterAgentsRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribePrometheusClusterAgentsRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribePrometheusClusterAgentsRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
 
 

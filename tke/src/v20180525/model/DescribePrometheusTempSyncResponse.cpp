@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
-DescribePrometheusTempSyncResponse::DescribePrometheusTempSyncResponse()
+DescribePrometheusTempSyncResponse::DescribePrometheusTempSyncResponse() :
+    m_targetsHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,26 @@ CoreInternalOutcome DescribePrometheusTempSyncResponse::Deserialize(const string
     }
 
 
+    if (rsp.HasMember("Targets") && !rsp["Targets"].IsNull())
+    {
+        if (!rsp["Targets"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Targets` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Targets"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PrometheusTemplateSyncTarget item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_targets.push_back(item);
+        }
+        m_targetsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +91,21 @@ string DescribePrometheusTempSyncResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_targetsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Targets";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_targets.begin(); itr != m_targets.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +118,15 @@ string DescribePrometheusTempSyncResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<PrometheusTemplateSyncTarget> DescribePrometheusTempSyncResponse::GetTargets() const
+{
+    return m_targets;
+}
+
+bool DescribePrometheusTempSyncResponse::TargetsHasBeenSet() const
+{
+    return m_targetsHasBeenSet;
+}
 
 

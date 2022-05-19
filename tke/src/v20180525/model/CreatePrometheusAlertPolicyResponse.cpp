@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
-CreatePrometheusAlertPolicyResponse::CreatePrometheusAlertPolicyResponse()
+CreatePrometheusAlertPolicyResponse::CreatePrometheusAlertPolicyResponse() :
+    m_idHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreatePrometheusAlertPolicyResponse::Deserialize(const strin
     }
 
 
+    if (rsp.HasMember("Id") && !rsp["Id"].IsNull())
+    {
+        if (!rsp["Id"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Id` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = string(rsp["Id"].GetString());
+        m_idHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreatePrometheusAlertPolicyResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreatePrometheusAlertPolicyResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreatePrometheusAlertPolicyResponse::GetId() const
+{
+    return m_id;
+}
+
+bool CreatePrometheusAlertPolicyResponse::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
+}
 
 

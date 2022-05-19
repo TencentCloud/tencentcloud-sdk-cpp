@@ -55,6 +55,7 @@ set(iotcloud_public_header_model
   include/tencentcloud/iotcloud/v20210408/model/PublishRRPCMessageRequest.h
   include/tencentcloud/iotcloud/v20210408/model/ProductProperties.h
   include/tencentcloud/iotcloud/v20210408/model/DeviceUpdateStatus.h
+  include/tencentcloud/iotcloud/v20210408/model/ListLogRequest.h
   include/tencentcloud/iotcloud/v20210408/model/BatchUpdateFirmwareResponse.h
   include/tencentcloud/iotcloud/v20210408/model/DeleteProductRequest.h
   include/tencentcloud/iotcloud/v20210408/model/StatusStatistic.h
@@ -68,6 +69,7 @@ set(iotcloud_public_header_model
   include/tencentcloud/iotcloud/v20210408/model/CLSLogItem.h
   include/tencentcloud/iotcloud/v20210408/model/DeleteDeviceRequest.h
   include/tencentcloud/iotcloud/v20210408/model/DescribeFirmwareTaskDistributionRequest.h
+  include/tencentcloud/iotcloud/v20210408/model/ListFirmwaresResponse.h
   include/tencentcloud/iotcloud/v20210408/model/DescribeFirmwareTaskDevicesRequest.h
   include/tencentcloud/iotcloud/v20210408/model/DescribeFirmwareResponse.h
   include/tencentcloud/iotcloud/v20210408/model/DescribeResourceTasksRequest.h
@@ -88,14 +90,16 @@ set(iotcloud_public_header_model
   include/tencentcloud/iotcloud/v20210408/model/CreateDeviceRequest.h
   include/tencentcloud/iotcloud/v20210408/model/DescribeProductTaskRequest.h
   include/tencentcloud/iotcloud/v20210408/model/DescribeFirmwareTaskResponse.h
+  include/tencentcloud/iotcloud/v20210408/model/FirmwareInfo.h
   include/tencentcloud/iotcloud/v20210408/model/CreateProductRequest.h
   include/tencentcloud/iotcloud/v20210408/model/DescribeFirmwareTasksRequest.h
   include/tencentcloud/iotcloud/v20210408/model/DisableTopicRuleResponse.h
-  include/tencentcloud/iotcloud/v20210408/model/GetCOSURLRequest.h
+  include/tencentcloud/iotcloud/v20210408/model/GetAllVersionResponse.h
   include/tencentcloud/iotcloud/v20210408/model/UpdateTopicPolicyResponse.h
   include/tencentcloud/iotcloud/v20210408/model/DescribeProductTaskResponse.h
   include/tencentcloud/iotcloud/v20210408/model/DescribeDeviceResponse.h
   include/tencentcloud/iotcloud/v20210408/model/PublishBroadcastMessageRequest.h
+  include/tencentcloud/iotcloud/v20210408/model/ListFirmwaresRequest.h
   include/tencentcloud/iotcloud/v20210408/model/ListLogResponse.h
   include/tencentcloud/iotcloud/v20210408/model/RetryDeviceFirmwareTaskRequest.h
   include/tencentcloud/iotcloud/v20210408/model/DescribeFirmwareTaskDevicesResponse.h
@@ -139,6 +143,7 @@ set(iotcloud_public_header_model
   include/tencentcloud/iotcloud/v20210408/model/DeleteDeviceResourceRequest.h
   include/tencentcloud/iotcloud/v20210408/model/DescribeDeviceShadowRequest.h
   include/tencentcloud/iotcloud/v20210408/model/UpdateProductDynamicRegisterResponse.h
+  include/tencentcloud/iotcloud/v20210408/model/GetAllVersionRequest.h
   include/tencentcloud/iotcloud/v20210408/model/UnbindDevicesResponse.h
   include/tencentcloud/iotcloud/v20210408/model/DescribePrivateCABindedProductsRequest.h
   include/tencentcloud/iotcloud/v20210408/model/DescribePrivateCAsResponse.h
@@ -149,7 +154,7 @@ set(iotcloud_public_header_model
   include/tencentcloud/iotcloud/v20210408/model/CertInfo.h
   include/tencentcloud/iotcloud/v20210408/model/GetUserResourceInfoRequest.h
   include/tencentcloud/iotcloud/v20210408/model/DeviceTag.h
-  include/tencentcloud/iotcloud/v20210408/model/ListLogRequest.h
+  include/tencentcloud/iotcloud/v20210408/model/GetCOSURLRequest.h
   include/tencentcloud/iotcloud/v20210408/model/ProductMetadata.h
   include/tencentcloud/iotcloud/v20210408/model/DescribeProductResponse.h
   include/tencentcloud/iotcloud/v20210408/model/DescribeGatewayBindDevicesRequest.h
@@ -383,6 +388,7 @@ set(iotcloud_src
   src/v20210408/model/PublishRRPCMessageRequest.cpp
   src/v20210408/model/ProductProperties.cpp
   src/v20210408/model/DeviceUpdateStatus.cpp
+  src/v20210408/model/ListLogRequest.cpp
   src/v20210408/model/BatchUpdateFirmwareResponse.cpp
   src/v20210408/model/DeleteProductRequest.cpp
   src/v20210408/model/StatusStatistic.cpp
@@ -396,6 +402,7 @@ set(iotcloud_src
   src/v20210408/model/CLSLogItem.cpp
   src/v20210408/model/DeleteDeviceRequest.cpp
   src/v20210408/model/DescribeFirmwareTaskDistributionRequest.cpp
+  src/v20210408/model/ListFirmwaresResponse.cpp
   src/v20210408/model/DescribeFirmwareTaskDevicesRequest.cpp
   src/v20210408/model/DescribeFirmwareResponse.cpp
   src/v20210408/model/DescribeResourceTasksRequest.cpp
@@ -416,14 +423,16 @@ set(iotcloud_src
   src/v20210408/model/CreateDeviceRequest.cpp
   src/v20210408/model/DescribeProductTaskRequest.cpp
   src/v20210408/model/DescribeFirmwareTaskResponse.cpp
+  src/v20210408/model/FirmwareInfo.cpp
   src/v20210408/model/CreateProductRequest.cpp
   src/v20210408/model/DescribeFirmwareTasksRequest.cpp
   src/v20210408/model/DisableTopicRuleResponse.cpp
-  src/v20210408/model/GetCOSURLRequest.cpp
+  src/v20210408/model/GetAllVersionResponse.cpp
   src/v20210408/model/UpdateTopicPolicyResponse.cpp
   src/v20210408/model/DescribeProductTaskResponse.cpp
   src/v20210408/model/DescribeDeviceResponse.cpp
   src/v20210408/model/PublishBroadcastMessageRequest.cpp
+  src/v20210408/model/ListFirmwaresRequest.cpp
   src/v20210408/model/ListLogResponse.cpp
   src/v20210408/model/RetryDeviceFirmwareTaskRequest.cpp
   src/v20210408/model/DescribeFirmwareTaskDevicesResponse.cpp
@@ -467,6 +476,7 @@ set(iotcloud_src
   src/v20210408/model/DeleteDeviceResourceRequest.cpp
   src/v20210408/model/DescribeDeviceShadowRequest.cpp
   src/v20210408/model/UpdateProductDynamicRegisterResponse.cpp
+  src/v20210408/model/GetAllVersionRequest.cpp
   src/v20210408/model/UnbindDevicesResponse.cpp
   src/v20210408/model/DescribePrivateCABindedProductsRequest.cpp
   src/v20210408/model/DescribePrivateCAsResponse.cpp
@@ -477,7 +487,7 @@ set(iotcloud_src
   src/v20210408/model/CertInfo.cpp
   src/v20210408/model/GetUserResourceInfoRequest.cpp
   src/v20210408/model/DeviceTag.cpp
-  src/v20210408/model/ListLogRequest.cpp
+  src/v20210408/model/GetCOSURLRequest.cpp
   src/v20210408/model/ProductMetadata.cpp
   src/v20210408/model/DescribeProductResponse.cpp
   src/v20210408/model/DescribeGatewayBindDevicesRequest.cpp

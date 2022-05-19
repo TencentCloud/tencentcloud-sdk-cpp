@@ -48,6 +48,7 @@ RunInstancesRequest::RunInstancesRequest() :
     m_camRoleNameHasBeenSet(false),
     m_hpcClusterIdHasBeenSet(false),
     m_launchTemplateHasBeenSet(false),
+    m_dedicatedClusterIdHasBeenSet(false),
     m_chcIdsHasBeenSet(false),
     m_disableApiTerminationHasBeenSet(false)
 {
@@ -292,6 +293,14 @@ string RunInstancesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_launchTemplate.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_dedicatedClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DedicatedClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dedicatedClusterId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_chcIdsHasBeenSet)
@@ -721,6 +730,22 @@ void RunInstancesRequest::SetLaunchTemplate(const LaunchTemplate& _launchTemplat
 bool RunInstancesRequest::LaunchTemplateHasBeenSet() const
 {
     return m_launchTemplateHasBeenSet;
+}
+
+string RunInstancesRequest::GetDedicatedClusterId() const
+{
+    return m_dedicatedClusterId;
+}
+
+void RunInstancesRequest::SetDedicatedClusterId(const string& _dedicatedClusterId)
+{
+    m_dedicatedClusterId = _dedicatedClusterId;
+    m_dedicatedClusterIdHasBeenSet = true;
+}
+
+bool RunInstancesRequest::DedicatedClusterIdHasBeenSet() const
+{
+    return m_dedicatedClusterIdHasBeenSet;
 }
 
 vector<string> RunInstancesRequest::GetChcIds() const

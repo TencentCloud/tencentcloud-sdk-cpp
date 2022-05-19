@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tke/v20180525/model/PrometheusInstancesOverview.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,46 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取实例列表
+                     * @return Instances 实例列表
+                     */
+                    std::vector<PrometheusInstancesOverview> GetInstances() const;
+
+                    /**
+                     * 判断参数 Instances 是否已赋值
+                     * @return Instances 是否已赋值
+                     */
+                    bool InstancesHasBeenSet() const;
+
+                    /**
+                     * 获取实例总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Total 实例总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetTotal() const;
+
+                    /**
+                     * 判断参数 Total 是否已赋值
+                     * @return Total 是否已赋值
+                     */
+                    bool TotalHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 实例列表
+                     */
+                    std::vector<PrometheusInstancesOverview> m_instances;
+                    bool m_instancesHasBeenSet;
+
+                    /**
+                     * 实例总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_total;
+                    bool m_totalHasBeenSet;
 
                 };
             }

@@ -22,7 +22,8 @@
 using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
-DescribePrometheusTempSyncRequest::DescribePrometheusTempSyncRequest()
+DescribePrometheusTempSyncRequest::DescribePrometheusTempSyncRequest() :
+    m_templateIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string DescribePrometheusTempSyncRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_templateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string DescribePrometheusTempSyncRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribePrometheusTempSyncRequest::GetTemplateId() const
+{
+    return m_templateId;
+}
+
+void DescribePrometheusTempSyncRequest::SetTemplateId(const string& _templateId)
+{
+    m_templateId = _templateId;
+    m_templateIdHasBeenSet = true;
+}
+
+bool DescribePrometheusTempSyncRequest::TemplateIdHasBeenSet() const
+{
+    return m_templateIdHasBeenSet;
+}
 
 

@@ -22,7 +22,11 @@
 using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
-DescribePrometheusAlertPolicyRequest::DescribePrometheusAlertPolicyRequest()
+DescribePrometheusAlertPolicyRequest::DescribePrometheusAlertPolicyRequest() :
+    m_instanceIdHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -33,6 +37,45 @@ string DescribePrometheusAlertPolicyRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +83,69 @@ string DescribePrometheusAlertPolicyRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribePrometheusAlertPolicyRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void DescribePrometheusAlertPolicyRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool DescribePrometheusAlertPolicyRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+uint64_t DescribePrometheusAlertPolicyRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribePrometheusAlertPolicyRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribePrometheusAlertPolicyRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+uint64_t DescribePrometheusAlertPolicyRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribePrometheusAlertPolicyRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribePrometheusAlertPolicyRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+vector<Filter> DescribePrometheusAlertPolicyRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribePrometheusAlertPolicyRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribePrometheusAlertPolicyRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
 
 

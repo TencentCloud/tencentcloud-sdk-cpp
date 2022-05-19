@@ -63,6 +63,8 @@
 #include <tencentcloud/tke/v20180525/model/CreatePrometheusAlertRuleResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreatePrometheusDashboardRequest.h>
 #include <tencentcloud/tke/v20180525/model/CreatePrometheusDashboardResponse.h>
+#include <tencentcloud/tke/v20180525/model/CreatePrometheusGlobalNotificationRequest.h>
+#include <tencentcloud/tke/v20180525/model/CreatePrometheusGlobalNotificationResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreatePrometheusTempRequest.h>
 #include <tencentcloud/tke/v20180525/model/CreatePrometheusTempResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreatePrometheusTemplateRequest.h>
@@ -173,6 +175,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribePrometheusAlertRuleResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribePrometheusClusterAgentsRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribePrometheusClusterAgentsResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribePrometheusGlobalNotificationRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribePrometheusGlobalNotificationResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribePrometheusInstanceRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribePrometheusInstanceResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribePrometheusInstancesOverviewRequest.h>
@@ -251,6 +255,8 @@
 #include <tencentcloud/tke/v20180525/model/ModifyPrometheusAlertPolicyResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyPrometheusAlertRuleRequest.h>
 #include <tencentcloud/tke/v20180525/model/ModifyPrometheusAlertRuleResponse.h>
+#include <tencentcloud/tke/v20180525/model/ModifyPrometheusGlobalNotificationRequest.h>
+#include <tencentcloud/tke/v20180525/model/ModifyPrometheusGlobalNotificationResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyPrometheusTempRequest.h>
 #include <tencentcloud/tke/v20180525/model/ModifyPrometheusTempResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyPrometheusTemplateRequest.h>
@@ -355,6 +361,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePrometheusDashboardResponse> CreatePrometheusDashboardOutcome;
                 typedef std::future<CreatePrometheusDashboardOutcome> CreatePrometheusDashboardOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CreatePrometheusDashboardRequest&, CreatePrometheusDashboardOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrometheusDashboardAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePrometheusGlobalNotificationResponse> CreatePrometheusGlobalNotificationOutcome;
+                typedef std::future<CreatePrometheusGlobalNotificationOutcome> CreatePrometheusGlobalNotificationOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::CreatePrometheusGlobalNotificationRequest&, CreatePrometheusGlobalNotificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrometheusGlobalNotificationAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePrometheusTempResponse> CreatePrometheusTempOutcome;
                 typedef std::future<CreatePrometheusTempOutcome> CreatePrometheusTempOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CreatePrometheusTempRequest&, CreatePrometheusTempOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrometheusTempAsyncHandler;
@@ -520,6 +529,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePrometheusClusterAgentsResponse> DescribePrometheusClusterAgentsOutcome;
                 typedef std::future<DescribePrometheusClusterAgentsOutcome> DescribePrometheusClusterAgentsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribePrometheusClusterAgentsRequest&, DescribePrometheusClusterAgentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusClusterAgentsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePrometheusGlobalNotificationResponse> DescribePrometheusGlobalNotificationOutcome;
+                typedef std::future<DescribePrometheusGlobalNotificationOutcome> DescribePrometheusGlobalNotificationOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribePrometheusGlobalNotificationRequest&, DescribePrometheusGlobalNotificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusGlobalNotificationAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePrometheusInstanceResponse> DescribePrometheusInstanceOutcome;
                 typedef std::future<DescribePrometheusInstanceOutcome> DescribePrometheusInstanceOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribePrometheusInstanceRequest&, DescribePrometheusInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusInstanceAsyncHandler;
@@ -637,6 +649,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyPrometheusAlertRuleResponse> ModifyPrometheusAlertRuleOutcome;
                 typedef std::future<ModifyPrometheusAlertRuleOutcome> ModifyPrometheusAlertRuleOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyPrometheusAlertRuleRequest&, ModifyPrometheusAlertRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPrometheusAlertRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyPrometheusGlobalNotificationResponse> ModifyPrometheusGlobalNotificationOutcome;
+                typedef std::future<ModifyPrometheusGlobalNotificationOutcome> ModifyPrometheusGlobalNotificationOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::ModifyPrometheusGlobalNotificationRequest&, ModifyPrometheusGlobalNotificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPrometheusGlobalNotificationAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyPrometheusTempResponse> ModifyPrometheusTempOutcome;
                 typedef std::future<ModifyPrometheusTempOutcome> ModifyPrometheusTempOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyPrometheusTempRequest&, ModifyPrometheusTempOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPrometheusTempAsyncHandler;
@@ -864,6 +879,15 @@ namespace TencentCloud
                 CreatePrometheusDashboardOutcome CreatePrometheusDashboard(const Model::CreatePrometheusDashboardRequest &request);
                 void CreatePrometheusDashboardAsync(const Model::CreatePrometheusDashboardRequest& request, const CreatePrometheusDashboardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreatePrometheusDashboardOutcomeCallable CreatePrometheusDashboardCallable(const Model::CreatePrometheusDashboardRequest& request);
+
+                /**
+                 *创建全局告警通知渠道
+                 * @param req CreatePrometheusGlobalNotificationRequest
+                 * @return CreatePrometheusGlobalNotificationOutcome
+                 */
+                CreatePrometheusGlobalNotificationOutcome CreatePrometheusGlobalNotification(const Model::CreatePrometheusGlobalNotificationRequest &request);
+                void CreatePrometheusGlobalNotificationAsync(const Model::CreatePrometheusGlobalNotificationRequest& request, const CreatePrometheusGlobalNotificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePrometheusGlobalNotificationOutcomeCallable CreatePrometheusGlobalNotificationCallable(const Model::CreatePrometheusGlobalNotificationRequest& request);
 
                 /**
                  *创建一个云原生Prometheus模板
@@ -1361,6 +1385,15 @@ namespace TencentCloud
                 DescribePrometheusClusterAgentsOutcomeCallable DescribePrometheusClusterAgentsCallable(const Model::DescribePrometheusClusterAgentsRequest& request);
 
                 /**
+                 *查询全局告警通知渠道
+                 * @param req DescribePrometheusGlobalNotificationRequest
+                 * @return DescribePrometheusGlobalNotificationOutcome
+                 */
+                DescribePrometheusGlobalNotificationOutcome DescribePrometheusGlobalNotification(const Model::DescribePrometheusGlobalNotificationRequest &request);
+                void DescribePrometheusGlobalNotificationAsync(const Model::DescribePrometheusGlobalNotificationRequest& request, const DescribePrometheusGlobalNotificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrometheusGlobalNotificationOutcomeCallable DescribePrometheusGlobalNotificationCallable(const Model::DescribePrometheusGlobalNotificationRequest& request);
+
+                /**
                  *获取实例详细信息
                  * @param req DescribePrometheusInstanceRequest
                  * @return DescribePrometheusInstanceOutcome
@@ -1710,6 +1743,15 @@ namespace TencentCloud
                 ModifyPrometheusAlertRuleOutcome ModifyPrometheusAlertRule(const Model::ModifyPrometheusAlertRuleRequest &request);
                 void ModifyPrometheusAlertRuleAsync(const Model::ModifyPrometheusAlertRuleRequest& request, const ModifyPrometheusAlertRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyPrometheusAlertRuleOutcomeCallable ModifyPrometheusAlertRuleCallable(const Model::ModifyPrometheusAlertRuleRequest& request);
+
+                /**
+                 *修改全局告警通知渠道
+                 * @param req ModifyPrometheusGlobalNotificationRequest
+                 * @return ModifyPrometheusGlobalNotificationOutcome
+                 */
+                ModifyPrometheusGlobalNotificationOutcome ModifyPrometheusGlobalNotification(const Model::ModifyPrometheusGlobalNotificationRequest &request);
+                void ModifyPrometheusGlobalNotificationAsync(const Model::ModifyPrometheusGlobalNotificationRequest& request, const ModifyPrometheusGlobalNotificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPrometheusGlobalNotificationOutcomeCallable ModifyPrometheusGlobalNotificationCallable(const Model::ModifyPrometheusGlobalNotificationRequest& request);
 
                 /**
                  *修改模板内容

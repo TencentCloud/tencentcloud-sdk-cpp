@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
-DescribePrometheusInstancesOverviewResponse::DescribePrometheusInstancesOverviewResponse()
+DescribePrometheusInstancesOverviewResponse::DescribePrometheusInstancesOverviewResponse() :
+    m_instancesHasBeenSet(false),
+    m_totalHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,36 @@ CoreInternalOutcome DescribePrometheusInstancesOverviewResponse::Deserialize(con
     }
 
 
+    if (rsp.HasMember("Instances") && !rsp["Instances"].IsNull())
+    {
+        if (!rsp["Instances"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Instances` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Instances"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PrometheusInstancesOverview item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_instances.push_back(item);
+        }
+        m_instancesHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
+    {
+        if (!rsp["Total"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Total` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_total = rsp["Total"].GetUint64();
+        m_totalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +102,29 @@ string DescribePrometheusInstancesOverviewResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_instancesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Instances";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_instances.begin(); itr != m_instances.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_totalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Total";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_total, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +137,25 @@ string DescribePrometheusInstancesOverviewResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<PrometheusInstancesOverview> DescribePrometheusInstancesOverviewResponse::GetInstances() const
+{
+    return m_instances;
+}
+
+bool DescribePrometheusInstancesOverviewResponse::InstancesHasBeenSet() const
+{
+    return m_instancesHasBeenSet;
+}
+
+uint64_t DescribePrometheusInstancesOverviewResponse::GetTotal() const
+{
+    return m_total;
+}
+
+bool DescribePrometheusInstancesOverviewResponse::TotalHasBeenSet() const
+{
+    return m_totalHasBeenSet;
+}
 
 

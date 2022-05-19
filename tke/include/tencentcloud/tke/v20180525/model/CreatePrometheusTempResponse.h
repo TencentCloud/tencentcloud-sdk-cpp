@@ -43,7 +43,25 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取模板Id
+                     * @return TemplateId 模板Id
+                     */
+                    std::string GetTemplateId() const;
+
+                    /**
+                     * 判断参数 TemplateId 是否已赋值
+                     * @return TemplateId 是否已赋值
+                     */
+                    bool TemplateIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 模板Id
+                     */
+                    std::string m_templateId;
+                    bool m_templateIdHasBeenSet;
 
                 };
             }

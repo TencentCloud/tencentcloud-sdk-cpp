@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/emr/v20190103/model/AddUsersForUserManagerRequest.h>
+#include <tencentcloud/emr/v20190103/model/AddUsersForUserManagerResponse.h>
 #include <tencentcloud/emr/v20190103/model/CreateInstanceRequest.h>
 #include <tencentcloud/emr/v20190103/model/CreateInstanceResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeClusterNodesRequest.h>
@@ -33,6 +35,8 @@
 #include <tencentcloud/emr/v20190103/model/DescribeInstanceRenewNodesResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeInstancesRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeInstancesResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeInstancesListRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeInstancesListResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeJobFlowRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeJobFlowResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeResourceScheduleRequest.h>
@@ -77,6 +81,9 @@ namespace TencentCloud
                 EmrClient(const Credential &credential, const std::string &region);
                 EmrClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::AddUsersForUserManagerResponse> AddUsersForUserManagerOutcome;
+                typedef std::future<AddUsersForUserManagerOutcome> AddUsersForUserManagerOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::AddUsersForUserManagerRequest&, AddUsersForUserManagerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddUsersForUserManagerAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateInstanceResponse> CreateInstanceOutcome;
                 typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::CreateInstanceRequest&, CreateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
@@ -92,6 +99,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
                 typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstancesListResponse> DescribeInstancesListOutcome;
+                typedef std::future<DescribeInstancesListOutcome> DescribeInstancesListOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeInstancesListRequest&, DescribeInstancesListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeJobFlowResponse> DescribeJobFlowOutcome;
                 typedef std::future<DescribeJobFlowOutcome> DescribeJobFlowOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeJobFlowRequest&, DescribeJobFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobFlowAsyncHandler;
@@ -141,6 +151,15 @@ namespace TencentCloud
 
 
                 /**
+                 *新增用户列表（用户管理）
+                 * @param req AddUsersForUserManagerRequest
+                 * @return AddUsersForUserManagerOutcome
+                 */
+                AddUsersForUserManagerOutcome AddUsersForUserManager(const Model::AddUsersForUserManagerRequest &request);
+                void AddUsersForUserManagerAsync(const Model::AddUsersForUserManagerRequest& request, const AddUsersForUserManagerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddUsersForUserManagerOutcomeCallable AddUsersForUserManagerCallable(const Model::AddUsersForUserManagerRequest& request);
+
+                /**
                  *创建EMR集群实例
                  * @param req CreateInstanceRequest
                  * @return CreateInstanceOutcome
@@ -184,6 +203,15 @@ namespace TencentCloud
                 DescribeInstancesOutcome DescribeInstances(const Model::DescribeInstancesRequest &request);
                 void DescribeInstancesAsync(const Model::DescribeInstancesRequest& request, const DescribeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request);
+
+                /**
+                 *EMR集群实例列表查询
+                 * @param req DescribeInstancesListRequest
+                 * @return DescribeInstancesListOutcome
+                 */
+                DescribeInstancesListOutcome DescribeInstancesList(const Model::DescribeInstancesListRequest &request);
+                void DescribeInstancesListAsync(const Model::DescribeInstancesListRequest& request, const DescribeInstancesListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstancesListOutcomeCallable DescribeInstancesListCallable(const Model::DescribeInstancesListRequest& request);
 
                 /**
                  *查询流程任务

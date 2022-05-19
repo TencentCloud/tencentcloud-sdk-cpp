@@ -22,7 +22,9 @@
 using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
-CreatePrometheusAlertPolicyRequest::CreatePrometheusAlertPolicyRequest()
+CreatePrometheusAlertPolicyRequest::CreatePrometheusAlertPolicyRequest() :
+    m_instanceIdHasBeenSet(false),
+    m_alertRuleHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,23 @@ string CreatePrometheusAlertPolicyRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_alertRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlertRule";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_alertRule.ToJsonObject(d[key.c_str()], allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +59,37 @@ string CreatePrometheusAlertPolicyRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreatePrometheusAlertPolicyRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void CreatePrometheusAlertPolicyRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool CreatePrometheusAlertPolicyRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+PrometheusAlertPolicyItem CreatePrometheusAlertPolicyRequest::GetAlertRule() const
+{
+    return m_alertRule;
+}
+
+void CreatePrometheusAlertPolicyRequest::SetAlertRule(const PrometheusAlertPolicyItem& _alertRule)
+{
+    m_alertRule = _alertRule;
+    m_alertRuleHasBeenSet = true;
+}
+
+bool CreatePrometheusAlertPolicyRequest::AlertRuleHasBeenSet() const
+{
+    return m_alertRuleHasBeenSet;
+}
 
 

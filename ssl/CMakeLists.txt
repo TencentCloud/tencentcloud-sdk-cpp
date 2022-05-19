@@ -22,8 +22,10 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/ApplyCertificateResponse.h
   include/tencentcloud/ssl/v20191205/model/ManagerInfo.h
   include/tencentcloud/ssl/v20191205/model/CompleteCertificateRequest.h
+  include/tencentcloud/ssl/v20191205/model/UploadCertificateRequest.h
   include/tencentcloud/ssl/v20191205/model/DeleteCertificateRequest.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificateOperateLogsResponse.h
+  include/tencentcloud/ssl/v20191205/model/ModifyCertificateAliasRequest.h
   include/tencentcloud/ssl/v20191205/model/CommitCertificateInformationRequest.h
   include/tencentcloud/ssl/v20191205/model/DownloadCertificateResponse.h
   include/tencentcloud/ssl/v20191205/model/ReplaceCertificateResponse.h
@@ -36,7 +38,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/CompanyInfo.h
   include/tencentcloud/ssl/v20191205/model/DescribeManagersResponse.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificateResponse.h
-  include/tencentcloud/ssl/v20191205/model/UploadCertificateRequest.h
+  include/tencentcloud/ssl/v20191205/model/HostCertificateResponse.h
   include/tencentcloud/ssl/v20191205/model/UploadConfirmLetterRequest.h
   include/tencentcloud/ssl/v20191205/model/OperationLog.h
   include/tencentcloud/ssl/v20191205/model/VerifyManagerResponse.h
@@ -56,8 +58,9 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/DescribeCertificateDetailResponse.h
   include/tencentcloud/ssl/v20191205/model/CheckCertificateChainResponse.h
   include/tencentcloud/ssl/v20191205/model/ModifyCertificateProjectRequest.h
+  include/tencentcloud/ssl/v20191205/model/CertHostingInfo.h
   include/tencentcloud/ssl/v20191205/model/DvAuths.h
-  include/tencentcloud/ssl/v20191205/model/ModifyCertificateAliasRequest.h
+  include/tencentcloud/ssl/v20191205/model/HostCertificateRequest.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificateRequest.h
   include/tencentcloud/ssl/v20191205/model/DescribeManagerDetailRequest.h
   include/tencentcloud/ssl/v20191205/model/DvAuthDetail.h
@@ -91,8 +94,10 @@ set(ssl_src
   src/v20191205/model/ApplyCertificateResponse.cpp
   src/v20191205/model/ManagerInfo.cpp
   src/v20191205/model/CompleteCertificateRequest.cpp
+  src/v20191205/model/UploadCertificateRequest.cpp
   src/v20191205/model/DeleteCertificateRequest.cpp
   src/v20191205/model/DescribeCertificateOperateLogsResponse.cpp
+  src/v20191205/model/ModifyCertificateAliasRequest.cpp
   src/v20191205/model/CommitCertificateInformationRequest.cpp
   src/v20191205/model/DownloadCertificateResponse.cpp
   src/v20191205/model/ReplaceCertificateResponse.cpp
@@ -105,7 +110,7 @@ set(ssl_src
   src/v20191205/model/CompanyInfo.cpp
   src/v20191205/model/DescribeManagersResponse.cpp
   src/v20191205/model/DescribeCertificateResponse.cpp
-  src/v20191205/model/UploadCertificateRequest.cpp
+  src/v20191205/model/HostCertificateResponse.cpp
   src/v20191205/model/UploadConfirmLetterRequest.cpp
   src/v20191205/model/OperationLog.cpp
   src/v20191205/model/VerifyManagerResponse.cpp
@@ -125,8 +130,9 @@ set(ssl_src
   src/v20191205/model/DescribeCertificateDetailResponse.cpp
   src/v20191205/model/CheckCertificateChainResponse.cpp
   src/v20191205/model/ModifyCertificateProjectRequest.cpp
+  src/v20191205/model/CertHostingInfo.cpp
   src/v20191205/model/DvAuths.cpp
-  src/v20191205/model/ModifyCertificateAliasRequest.cpp
+  src/v20191205/model/HostCertificateRequest.cpp
   src/v20191205/model/DescribeCertificateRequest.cpp
   src/v20191205/model/DescribeManagerDetailRequest.cpp
   src/v20191205/model/DvAuthDetail.cpp

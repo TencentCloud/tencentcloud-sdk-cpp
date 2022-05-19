@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
-DescribePrometheusClusterAgentsResponse::DescribePrometheusClusterAgentsResponse()
+DescribePrometheusClusterAgentsResponse::DescribePrometheusClusterAgentsResponse() :
+    m_agentsHasBeenSet(false),
+    m_totalHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,36 @@ CoreInternalOutcome DescribePrometheusClusterAgentsResponse::Deserialize(const s
     }
 
 
+    if (rsp.HasMember("Agents") && !rsp["Agents"].IsNull())
+    {
+        if (!rsp["Agents"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Agents` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Agents"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PrometheusAgentOverview item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_agents.push_back(item);
+        }
+        m_agentsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
+    {
+        if (!rsp["Total"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Total` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_total = rsp["Total"].GetUint64();
+        m_totalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +102,29 @@ string DescribePrometheusClusterAgentsResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_agentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agents";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_agents.begin(); itr != m_agents.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_totalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Total";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_total, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +137,25 @@ string DescribePrometheusClusterAgentsResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<PrometheusAgentOverview> DescribePrometheusClusterAgentsResponse::GetAgents() const
+{
+    return m_agents;
+}
+
+bool DescribePrometheusClusterAgentsResponse::AgentsHasBeenSet() const
+{
+    return m_agentsHasBeenSet;
+}
+
+uint64_t DescribePrometheusClusterAgentsResponse::GetTotal() const
+{
+    return m_total;
+}
+
+bool DescribePrometheusClusterAgentsResponse::TotalHasBeenSet() const
+{
+    return m_totalHasBeenSet;
+}
 
 

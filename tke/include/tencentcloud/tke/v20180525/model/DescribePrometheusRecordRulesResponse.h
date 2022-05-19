@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tke/v20180525/model/PrometheusRecordRuleYamlItem.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,43 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取聚合规则
+                     * @return Records 聚合规则
+                     */
+                    std::vector<PrometheusRecordRuleYamlItem> GetRecords() const;
+
+                    /**
+                     * 判断参数 Records 是否已赋值
+                     * @return Records 是否已赋值
+                     */
+                    bool RecordsHasBeenSet() const;
+
+                    /**
+                     * 获取总数
+                     * @return Total 总数
+                     */
+                    uint64_t GetTotal() const;
+
+                    /**
+                     * 判断参数 Total 是否已赋值
+                     * @return Total 是否已赋值
+                     */
+                    bool TotalHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 聚合规则
+                     */
+                    std::vector<PrometheusRecordRuleYamlItem> m_records;
+                    bool m_recordsHasBeenSet;
+
+                    /**
+                     * 总数
+                     */
+                    uint64_t m_total;
+                    bool m_totalHasBeenSet;
 
                 };
             }

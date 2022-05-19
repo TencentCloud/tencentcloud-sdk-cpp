@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tke/v20180525/model/PrometheusTemplateSyncTarget.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,55 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取实例id
+                     * @return TemplateId 实例id
+                     */
+                    std::string GetTemplateId() const;
+
+                    /**
+                     * 设置实例id
+                     * @param TemplateId 实例id
+                     */
+                    void SetTemplateId(const std::string& _templateId);
+
+                    /**
+                     * 判断参数 TemplateId 是否已赋值
+                     * @return TemplateId 是否已赋值
+                     */
+                    bool TemplateIdHasBeenSet() const;
+
+                    /**
+                     * 获取同步目标
+                     * @return Targets 同步目标
+                     */
+                    std::vector<PrometheusTemplateSyncTarget> GetTargets() const;
+
+                    /**
+                     * 设置同步目标
+                     * @param Targets 同步目标
+                     */
+                    void SetTargets(const std::vector<PrometheusTemplateSyncTarget>& _targets);
+
+                    /**
+                     * 判断参数 Targets 是否已赋值
+                     * @return Targets 是否已赋值
+                     */
+                    bool TargetsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 实例id
+                     */
+                    std::string m_templateId;
+                    bool m_templateIdHasBeenSet;
+
+                    /**
+                     * 同步目标
+                     */
+                    std::vector<PrometheusTemplateSyncTarget> m_targets;
+                    bool m_targetsHasBeenSet;
 
                 };
             }

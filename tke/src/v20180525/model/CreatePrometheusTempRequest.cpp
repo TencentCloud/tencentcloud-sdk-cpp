@@ -22,7 +22,8 @@
 using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
-CreatePrometheusTempRequest::CreatePrometheusTempRequest()
+CreatePrometheusTempRequest::CreatePrometheusTempRequest() :
+    m_templateHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,15 @@ string CreatePrometheusTempRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_templateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Template";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_template.ToJsonObject(d[key.c_str()], allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +50,21 @@ string CreatePrometheusTempRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+PrometheusTemp CreatePrometheusTempRequest::GetTemplate() const
+{
+    return m_template;
+}
+
+void CreatePrometheusTempRequest::SetTemplate(const PrometheusTemp& _template)
+{
+    m_template = _template;
+    m_templateHasBeenSet = true;
+}
+
+bool CreatePrometheusTempRequest::TemplateHasBeenSet() const
+{
+    return m_templateHasBeenSet;
+}
 
 

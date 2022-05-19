@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tke/v20180525/model/PrometheusTemp.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,43 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取模板列表
+                     * @return Templates 模板列表
+                     */
+                    std::vector<PrometheusTemp> GetTemplates() const;
+
+                    /**
+                     * 判断参数 Templates 是否已赋值
+                     * @return Templates 是否已赋值
+                     */
+                    bool TemplatesHasBeenSet() const;
+
+                    /**
+                     * 获取总数
+                     * @return Total 总数
+                     */
+                    uint64_t GetTotal() const;
+
+                    /**
+                     * 判断参数 Total 是否已赋值
+                     * @return Total 是否已赋值
+                     */
+                    bool TotalHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 模板列表
+                     */
+                    std::vector<PrometheusTemp> m_templates;
+                    bool m_templatesHasBeenSet;
+
+                    /**
+                     * 总数
+                     */
+                    uint64_t m_total;
+                    bool m_totalHasBeenSet;
 
                 };
             }

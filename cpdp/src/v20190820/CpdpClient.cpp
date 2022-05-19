@@ -1803,6 +1803,135 @@ CpdpClient::CreatePayMerchantOutcomeCallable CpdpClient::CreatePayMerchantCallab
     return task->get_future();
 }
 
+CpdpClient::CreatePayRollPreOrderOutcome CpdpClient::CreatePayRollPreOrder(const CreatePayRollPreOrderRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePayRollPreOrder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePayRollPreOrderResponse rsp = CreatePayRollPreOrderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePayRollPreOrderOutcome(rsp);
+        else
+            return CreatePayRollPreOrderOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePayRollPreOrderOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::CreatePayRollPreOrderAsync(const CreatePayRollPreOrderRequest& request, const CreatePayRollPreOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePayRollPreOrder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::CreatePayRollPreOrderOutcomeCallable CpdpClient::CreatePayRollPreOrderCallable(const CreatePayRollPreOrderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePayRollPreOrderOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePayRollPreOrder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::CreatePayRollPreOrderWithAuthOutcome CpdpClient::CreatePayRollPreOrderWithAuth(const CreatePayRollPreOrderWithAuthRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePayRollPreOrderWithAuth");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePayRollPreOrderWithAuthResponse rsp = CreatePayRollPreOrderWithAuthResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePayRollPreOrderWithAuthOutcome(rsp);
+        else
+            return CreatePayRollPreOrderWithAuthOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePayRollPreOrderWithAuthOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::CreatePayRollPreOrderWithAuthAsync(const CreatePayRollPreOrderWithAuthRequest& request, const CreatePayRollPreOrderWithAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePayRollPreOrderWithAuth(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::CreatePayRollPreOrderWithAuthOutcomeCallable CpdpClient::CreatePayRollPreOrderWithAuthCallable(const CreatePayRollPreOrderWithAuthRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePayRollPreOrderWithAuthOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePayRollPreOrderWithAuth(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::CreatePayRollTokenOutcome CpdpClient::CreatePayRollToken(const CreatePayRollTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePayRollToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePayRollTokenResponse rsp = CreatePayRollTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePayRollTokenOutcome(rsp);
+        else
+            return CreatePayRollTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePayRollTokenOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::CreatePayRollTokenAsync(const CreatePayRollTokenRequest& request, const CreatePayRollTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePayRollToken(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::CreatePayRollTokenOutcomeCallable CpdpClient::CreatePayRollTokenCallable(const CreatePayRollTokenRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePayRollTokenOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePayRollToken(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::CreateRedInvoiceOutcome CpdpClient::CreateRedInvoice(const CreateRedInvoiceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRedInvoice");
@@ -2828,6 +2957,135 @@ CpdpClient::GetDistributeBillDownloadUrlOutcomeCallable CpdpClient::GetDistribut
         [this, request]()
         {
             return this->GetDistributeBillDownloadUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::GetPayRollAuthOutcome CpdpClient::GetPayRollAuth(const GetPayRollAuthRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetPayRollAuth");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetPayRollAuthResponse rsp = GetPayRollAuthResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetPayRollAuthOutcome(rsp);
+        else
+            return GetPayRollAuthOutcome(o.GetError());
+    }
+    else
+    {
+        return GetPayRollAuthOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::GetPayRollAuthAsync(const GetPayRollAuthRequest& request, const GetPayRollAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetPayRollAuth(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::GetPayRollAuthOutcomeCallable CpdpClient::GetPayRollAuthCallable(const GetPayRollAuthRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetPayRollAuthOutcome()>>(
+        [this, request]()
+        {
+            return this->GetPayRollAuth(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::GetPayRollAuthListOutcome CpdpClient::GetPayRollAuthList(const GetPayRollAuthListRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetPayRollAuthList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetPayRollAuthListResponse rsp = GetPayRollAuthListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetPayRollAuthListOutcome(rsp);
+        else
+            return GetPayRollAuthListOutcome(o.GetError());
+    }
+    else
+    {
+        return GetPayRollAuthListOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::GetPayRollAuthListAsync(const GetPayRollAuthListRequest& request, const GetPayRollAuthListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetPayRollAuthList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::GetPayRollAuthListOutcomeCallable CpdpClient::GetPayRollAuthListCallable(const GetPayRollAuthListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetPayRollAuthListOutcome()>>(
+        [this, request]()
+        {
+            return this->GetPayRollAuthList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::GetPayRollAuthResultOutcome CpdpClient::GetPayRollAuthResult(const GetPayRollAuthResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetPayRollAuthResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetPayRollAuthResultResponse rsp = GetPayRollAuthResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetPayRollAuthResultOutcome(rsp);
+        else
+            return GetPayRollAuthResultOutcome(o.GetError());
+    }
+    else
+    {
+        return GetPayRollAuthResultOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::GetPayRollAuthResultAsync(const GetPayRollAuthResultRequest& request, const GetPayRollAuthResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetPayRollAuthResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::GetPayRollAuthResultOutcomeCallable CpdpClient::GetPayRollAuthResultCallable(const GetPayRollAuthResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetPayRollAuthResultOutcome()>>(
+        [this, request]()
+        {
+            return this->GetPayRollAuthResult(request);
         }
     );
 

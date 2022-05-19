@@ -22,7 +22,9 @@
 using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
-DeletePrometheusTempSyncRequest::DeletePrometheusTempSyncRequest()
+DeletePrometheusTempSyncRequest::DeletePrometheusTempSyncRequest() :
+    m_templateIdHasBeenSet(false),
+    m_targetsHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,29 @@ string DeletePrometheusTempSyncRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_templateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Targets";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_targets.begin(); itr != m_targets.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +65,37 @@ string DeletePrometheusTempSyncRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DeletePrometheusTempSyncRequest::GetTemplateId() const
+{
+    return m_templateId;
+}
+
+void DeletePrometheusTempSyncRequest::SetTemplateId(const string& _templateId)
+{
+    m_templateId = _templateId;
+    m_templateIdHasBeenSet = true;
+}
+
+bool DeletePrometheusTempSyncRequest::TemplateIdHasBeenSet() const
+{
+    return m_templateIdHasBeenSet;
+}
+
+vector<PrometheusTemplateSyncTarget> DeletePrometheusTempSyncRequest::GetTargets() const
+{
+    return m_targets;
+}
+
+void DeletePrometheusTempSyncRequest::SetTargets(const vector<PrometheusTemplateSyncTarget>& _targets)
+{
+    m_targets = _targets;
+    m_targetsHasBeenSet = true;
+}
+
+bool DeletePrometheusTempSyncRequest::TargetsHasBeenSet() const
+{
+    return m_targetsHasBeenSet;
+}
 
 

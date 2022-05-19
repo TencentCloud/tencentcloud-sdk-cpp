@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
-CreatePrometheusTempResponse::CreatePrometheusTempResponse()
+CreatePrometheusTempResponse::CreatePrometheusTempResponse() :
+    m_templateIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreatePrometheusTempResponse::Deserialize(const string &payl
     }
 
 
+    if (rsp.HasMember("TemplateId") && !rsp["TemplateId"].IsNull())
+    {
+        if (!rsp["TemplateId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_templateId = string(rsp["TemplateId"].GetString());
+        m_templateIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreatePrometheusTempResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_templateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreatePrometheusTempResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreatePrometheusTempResponse::GetTemplateId() const
+{
+    return m_templateId;
+}
+
+bool CreatePrometheusTempResponse::TemplateIdHasBeenSet() const
+{
+    return m_templateIdHasBeenSet;
+}
 
 

@@ -558,6 +558,94 @@ namespace TencentCloud
                      */
                     bool UserAliasHasBeenSet() const;
 
+                    /**
+                     * 获取spark应用作业名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SparkJobName spark应用作业名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSparkJobName() const;
+
+                    /**
+                     * 设置spark应用作业名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SparkJobName spark应用作业名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSparkJobName(const std::string& _sparkJobName);
+
+                    /**
+                     * 判断参数 SparkJobName 是否已赋值
+                     * @return SparkJobName 是否已赋值
+                     */
+                    bool SparkJobNameHasBeenSet() const;
+
+                    /**
+                     * 获取spark应用作业Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SparkJobId spark应用作业Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSparkJobId() const;
+
+                    /**
+                     * 设置spark应用作业Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SparkJobId spark应用作业Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSparkJobId(const std::string& _sparkJobId);
+
+                    /**
+                     * 判断参数 SparkJobId 是否已赋值
+                     * @return SparkJobId 是否已赋值
+                     */
+                    bool SparkJobIdHasBeenSet() const;
+
+                    /**
+                     * 获取spark应用入口jar文件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SparkJobFile spark应用入口jar文件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSparkJobFile() const;
+
+                    /**
+                     * 设置spark应用入口jar文件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SparkJobFile spark应用入口jar文件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSparkJobFile(const std::string& _sparkJobFile);
+
+                    /**
+                     * 判断参数 SparkJobFile 是否已赋值
+                     * @return SparkJobFile 是否已赋值
+                     */
+                    bool SparkJobFileHasBeenSet() const;
+
+                    /**
+                     * 获取spark ui url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UiUrl spark ui url
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUiUrl() const;
+
+                    /**
+                     * 设置spark ui url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UiUrl spark ui url
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUiUrl(const std::string& _uiUrl);
+
+                    /**
+                     * 判断参数 UiUrl 是否已赋值
+                     * @return UiUrl 是否已赋值
+                     */
+                    bool UiUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -726,6 +814,34 @@ namespace TencentCloud
                      */
                     std::string m_userAlias;
                     bool m_userAliasHasBeenSet;
+
+                    /**
+                     * spark应用作业名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sparkJobName;
+                    bool m_sparkJobNameHasBeenSet;
+
+                    /**
+                     * spark应用作业Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sparkJobId;
+                    bool m_sparkJobIdHasBeenSet;
+
+                    /**
+                     * spark应用入口jar文件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sparkJobFile;
+                    bool m_sparkJobFileHasBeenSet;
+
+                    /**
+                     * spark ui url
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_uiUrl;
+                    bool m_uiUrlHasBeenSet;
 
                 };
             }

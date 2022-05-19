@@ -46,7 +46,11 @@ TaskResponseInfo::TaskResponseInfo() :
     m_inputConfHasBeenSet(false),
     m_dataNumberHasBeenSet(false),
     m_canDownloadHasBeenSet(false),
-    m_userAliasHasBeenSet(false)
+    m_userAliasHasBeenSet(false),
+    m_sparkJobNameHasBeenSet(false),
+    m_sparkJobIdHasBeenSet(false),
+    m_sparkJobFileHasBeenSet(false),
+    m_uiUrlHasBeenSet(false)
 {
 }
 
@@ -315,6 +319,46 @@ CoreInternalOutcome TaskResponseInfo::Deserialize(const rapidjson::Value &value)
         m_userAliasHasBeenSet = true;
     }
 
+    if (value.HasMember("SparkJobName") && !value["SparkJobName"].IsNull())
+    {
+        if (!value["SparkJobName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskResponseInfo.SparkJobName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sparkJobName = string(value["SparkJobName"].GetString());
+        m_sparkJobNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("SparkJobId") && !value["SparkJobId"].IsNull())
+    {
+        if (!value["SparkJobId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskResponseInfo.SparkJobId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sparkJobId = string(value["SparkJobId"].GetString());
+        m_sparkJobIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SparkJobFile") && !value["SparkJobFile"].IsNull())
+    {
+        if (!value["SparkJobFile"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskResponseInfo.SparkJobFile` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sparkJobFile = string(value["SparkJobFile"].GetString());
+        m_sparkJobFileHasBeenSet = true;
+    }
+
+    if (value.HasMember("UiUrl") && !value["UiUrl"].IsNull())
+    {
+        if (!value["UiUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskResponseInfo.UiUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uiUrl = string(value["UiUrl"].GetString());
+        m_uiUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -528,6 +572,38 @@ void TaskResponseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "UserAlias";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userAlias.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sparkJobNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SparkJobName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sparkJobName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sparkJobIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SparkJobId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sparkJobId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sparkJobFileHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SparkJobFile";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sparkJobFile.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uiUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UiUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uiUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -947,5 +1023,69 @@ void TaskResponseInfo::SetUserAlias(const string& _userAlias)
 bool TaskResponseInfo::UserAliasHasBeenSet() const
 {
     return m_userAliasHasBeenSet;
+}
+
+string TaskResponseInfo::GetSparkJobName() const
+{
+    return m_sparkJobName;
+}
+
+void TaskResponseInfo::SetSparkJobName(const string& _sparkJobName)
+{
+    m_sparkJobName = _sparkJobName;
+    m_sparkJobNameHasBeenSet = true;
+}
+
+bool TaskResponseInfo::SparkJobNameHasBeenSet() const
+{
+    return m_sparkJobNameHasBeenSet;
+}
+
+string TaskResponseInfo::GetSparkJobId() const
+{
+    return m_sparkJobId;
+}
+
+void TaskResponseInfo::SetSparkJobId(const string& _sparkJobId)
+{
+    m_sparkJobId = _sparkJobId;
+    m_sparkJobIdHasBeenSet = true;
+}
+
+bool TaskResponseInfo::SparkJobIdHasBeenSet() const
+{
+    return m_sparkJobIdHasBeenSet;
+}
+
+string TaskResponseInfo::GetSparkJobFile() const
+{
+    return m_sparkJobFile;
+}
+
+void TaskResponseInfo::SetSparkJobFile(const string& _sparkJobFile)
+{
+    m_sparkJobFile = _sparkJobFile;
+    m_sparkJobFileHasBeenSet = true;
+}
+
+bool TaskResponseInfo::SparkJobFileHasBeenSet() const
+{
+    return m_sparkJobFileHasBeenSet;
+}
+
+string TaskResponseInfo::GetUiUrl() const
+{
+    return m_uiUrl;
+}
+
+void TaskResponseInfo::SetUiUrl(const string& _uiUrl)
+{
+    m_uiUrl = _uiUrl;
+    m_uiUrlHasBeenSet = true;
+}
+
+bool TaskResponseInfo::UiUrlHasBeenSet() const
+{
+    return m_uiUrlHasBeenSet;
 }
 
