@@ -14,21 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cat/v20180409/model/CreateProbeTasksResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/CheckSavepointResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cat::V20180409::Model;
+using namespace TencentCloud::Oceanus::V20190422::Model;
 using namespace std;
 
-CreateProbeTasksResponse::CreateProbeTasksResponse() :
-    m_taskIDsHasBeenSet(false)
+CheckSavepointResponse::CheckSavepointResponse() :
+    m_serialIdHasBeenSet(false),
+    m_savepointStatusHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome CreateProbeTasksResponse::Deserialize(const string &payload)
+CoreInternalOutcome CheckSavepointResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,40 +63,50 @@ CoreInternalOutcome CreateProbeTasksResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("TaskIDs") && !rsp["TaskIDs"].IsNull())
+    if (rsp.HasMember("SerialId") && !rsp["SerialId"].IsNull())
     {
-        if (!rsp["TaskIDs"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `TaskIDs` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["TaskIDs"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["SerialId"].IsString())
         {
-            m_taskIDs.push_back((*itr).GetString());
+            return CoreInternalOutcome(Core::Error("response `SerialId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_taskIDsHasBeenSet = true;
+        m_serialId = string(rsp["SerialId"].GetString());
+        m_serialIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SavepointStatus") && !rsp["SavepointStatus"].IsNull())
+    {
+        if (!rsp["SavepointStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SavepointStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_savepointStatus = rsp["SavepointStatus"].GetInt64();
+        m_savepointStatusHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string CreateProbeTasksResponse::ToJsonString() const
+string CheckSavepointResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_taskIDsHasBeenSet)
+    if (m_serialIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TaskIDs";
+        string key = "SerialId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serialId.c_str(), allocator).Move(), allocator);
+    }
 
-        for (auto itr = m_taskIDs.begin(); itr != m_taskIDs.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
+    if (m_savepointStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SavepointStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_savepointStatus, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,14 +121,24 @@ string CreateProbeTasksResponse::ToJsonString() const
 }
 
 
-vector<string> CreateProbeTasksResponse::GetTaskIDs() const
+string CheckSavepointResponse::GetSerialId() const
 {
-    return m_taskIDs;
+    return m_serialId;
 }
 
-bool CreateProbeTasksResponse::TaskIDsHasBeenSet() const
+bool CheckSavepointResponse::SerialIdHasBeenSet() const
 {
-    return m_taskIDsHasBeenSet;
+    return m_serialIdHasBeenSet;
+}
+
+int64_t CheckSavepointResponse::GetSavepointStatus() const
+{
+    return m_savepointStatus;
+}
+
+bool CheckSavepointResponse::SavepointStatusHasBeenSet() const
+{
+    return m_savepointStatusHasBeenSet;
 }
 
 

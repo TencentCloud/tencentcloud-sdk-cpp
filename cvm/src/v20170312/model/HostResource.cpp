@@ -27,7 +27,9 @@ HostResource::HostResource() :
     m_memAvailableHasBeenSet(false),
     m_diskTotalHasBeenSet(false),
     m_diskAvailableHasBeenSet(false),
-    m_diskTypeHasBeenSet(false)
+    m_diskTypeHasBeenSet(false),
+    m_gpuTotalHasBeenSet(false),
+    m_gpuAvailableHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,26 @@ CoreInternalOutcome HostResource::Deserialize(const rapidjson::Value &value)
         m_diskTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("GpuTotal") && !value["GpuTotal"].IsNull())
+    {
+        if (!value["GpuTotal"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostResource.GpuTotal` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_gpuTotal = value["GpuTotal"].GetUint64();
+        m_gpuTotalHasBeenSet = true;
+    }
+
+    if (value.HasMember("GpuAvailable") && !value["GpuAvailable"].IsNull())
+    {
+        if (!value["GpuAvailable"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostResource.GpuAvailable` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_gpuAvailable = value["GpuAvailable"].GetUint64();
+        m_gpuAvailableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +189,22 @@ void HostResource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "DiskType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_diskType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gpuTotalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GpuTotal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_gpuTotal, allocator);
+    }
+
+    if (m_gpuAvailableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GpuAvailable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_gpuAvailable, allocator);
     }
 
 }
@@ -282,5 +320,37 @@ void HostResource::SetDiskType(const string& _diskType)
 bool HostResource::DiskTypeHasBeenSet() const
 {
     return m_diskTypeHasBeenSet;
+}
+
+uint64_t HostResource::GetGpuTotal() const
+{
+    return m_gpuTotal;
+}
+
+void HostResource::SetGpuTotal(const uint64_t& _gpuTotal)
+{
+    m_gpuTotal = _gpuTotal;
+    m_gpuTotalHasBeenSet = true;
+}
+
+bool HostResource::GpuTotalHasBeenSet() const
+{
+    return m_gpuTotalHasBeenSet;
+}
+
+uint64_t HostResource::GetGpuAvailable() const
+{
+    return m_gpuAvailable;
+}
+
+void HostResource::SetGpuAvailable(const uint64_t& _gpuAvailable)
+{
+    m_gpuAvailable = _gpuAvailable;
+    m_gpuAvailableHasBeenSet = true;
+}
+
+bool HostResource::GpuAvailableHasBeenSet() const
+{
+    return m_gpuAvailableHasBeenSet;
 }
 

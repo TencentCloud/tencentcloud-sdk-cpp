@@ -54,6 +54,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/DescribeResourceScheduleRequest.h
   include/tencentcloud/emr/v20190103/model/Placement.h
   include/tencentcloud/emr/v20190103/model/PodParameter.h
+  include/tencentcloud/emr/v20190103/model/DescribeUsersForUserManagerRequest.h
   include/tencentcloud/emr/v20190103/model/RenewInstancesInfo.h
   include/tencentcloud/emr/v20190103/model/RunJobFlowResponse.h
   include/tencentcloud/emr/v20190103/model/MultiDisk.h
@@ -84,6 +85,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/ModifyResourcePoolsResponse.h
   include/tencentcloud/emr/v20190103/model/TerminateTasksResponse.h
   include/tencentcloud/emr/v20190103/model/DescribeInstancesResponse.h
+  include/tencentcloud/emr/v20190103/model/DescribeUsersForUserManagerResponse.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceRenewInstanceRequest.h
   include/tencentcloud/emr/v20190103/model/CdbInfo.h
   include/tencentcloud/emr/v20190103/model/InquirePriceRenewEmrResponse.h
@@ -153,6 +155,7 @@ set(emr_src
   src/v20190103/model/DescribeResourceScheduleRequest.cpp
   src/v20190103/model/Placement.cpp
   src/v20190103/model/PodParameter.cpp
+  src/v20190103/model/DescribeUsersForUserManagerRequest.cpp
   src/v20190103/model/RenewInstancesInfo.cpp
   src/v20190103/model/RunJobFlowResponse.cpp
   src/v20190103/model/MultiDisk.cpp
@@ -183,6 +186,7 @@ set(emr_src
   src/v20190103/model/ModifyResourcePoolsResponse.cpp
   src/v20190103/model/TerminateTasksResponse.cpp
   src/v20190103/model/DescribeInstancesResponse.cpp
+  src/v20190103/model/DescribeUsersForUserManagerResponse.cpp
   src/v20190103/model/InquiryPriceRenewInstanceRequest.cpp
   src/v20190103/model/CdbInfo.cpp
   src/v20190103/model/InquirePriceRenewEmrResponse.cpp

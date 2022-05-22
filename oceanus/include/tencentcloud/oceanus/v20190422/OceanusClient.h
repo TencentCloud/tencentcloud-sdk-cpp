@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/oceanus/v20190422/model/CheckSavepointRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/CheckSavepointResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateJobRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateJobResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateJobConfigRequest.h>
@@ -39,6 +41,8 @@
 #include <tencentcloud/oceanus/v20190422/model/DeleteTableConfigResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobConfigsRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobConfigsResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/DescribeJobSavepointRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/DescribeJobSavepointResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobsRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobsResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeResourceConfigsRequest.h>
@@ -67,6 +71,9 @@ namespace TencentCloud
                 OceanusClient(const Credential &credential, const std::string &region);
                 OceanusClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CheckSavepointResponse> CheckSavepointOutcome;
+                typedef std::future<CheckSavepointOutcome> CheckSavepointOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::CheckSavepointRequest&, CheckSavepointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckSavepointAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateJobResponse> CreateJobOutcome;
                 typedef std::future<CreateJobOutcome> CreateJobOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::CreateJobRequest&, CreateJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateJobAsyncHandler;
@@ -91,6 +98,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeJobConfigsResponse> DescribeJobConfigsOutcome;
                 typedef std::future<DescribeJobConfigsOutcome> DescribeJobConfigsOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DescribeJobConfigsRequest&, DescribeJobConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobConfigsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeJobSavepointResponse> DescribeJobSavepointOutcome;
+                typedef std::future<DescribeJobSavepointOutcome> DescribeJobSavepointOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::DescribeJobSavepointRequest&, DescribeJobSavepointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobSavepointAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeJobsResponse> DescribeJobsOutcome;
                 typedef std::future<DescribeJobsOutcome> DescribeJobsOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DescribeJobsRequest&, DescribeJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobsAsyncHandler;
@@ -114,6 +124,15 @@ namespace TencentCloud
                 typedef std::function<void(const OceanusClient*, const Model::StopJobsRequest&, StopJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopJobsAsyncHandler;
 
 
+
+                /**
+                 *检查快照是否可用
+                 * @param req CheckSavepointRequest
+                 * @return CheckSavepointOutcome
+                 */
+                CheckSavepointOutcome CheckSavepoint(const Model::CheckSavepointRequest &request);
+                void CheckSavepointAsync(const Model::CheckSavepointRequest& request, const CheckSavepointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckSavepointOutcomeCallable CheckSavepointCallable(const Model::CheckSavepointRequest& request);
 
                 /**
                  *新建作业接口，一个 AppId 最多允许创建1000个作业
@@ -186,6 +205,15 @@ namespace TencentCloud
                 DescribeJobConfigsOutcome DescribeJobConfigs(const Model::DescribeJobConfigsRequest &request);
                 void DescribeJobConfigsAsync(const Model::DescribeJobConfigsRequest& request, const DescribeJobConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeJobConfigsOutcomeCallable DescribeJobConfigsCallable(const Model::DescribeJobConfigsRequest& request);
+
+                /**
+                 *查找Savepoint列表
+                 * @param req DescribeJobSavepointRequest
+                 * @return DescribeJobSavepointOutcome
+                 */
+                DescribeJobSavepointOutcome DescribeJobSavepoint(const Model::DescribeJobSavepointRequest &request);
+                void DescribeJobSavepointAsync(const Model::DescribeJobSavepointRequest& request, const DescribeJobSavepointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeJobSavepointOutcomeCallable DescribeJobSavepointCallable(const Model::DescribeJobSavepointRequest& request);
 
                 /**
                  *查询作业

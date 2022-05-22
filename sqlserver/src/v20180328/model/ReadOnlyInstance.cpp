@@ -42,7 +42,9 @@ ReadOnlyInstance::ReadOnlyInstance() :
     m_accountDifferenceHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_isolateTimeHasBeenSet(false)
+    m_isolateTimeHasBeenSet(false),
+    m_regionIdHasBeenSet(false),
+    m_zoneIdHasBeenSet(false)
 {
 }
 
@@ -271,6 +273,26 @@ CoreInternalOutcome ReadOnlyInstance::Deserialize(const rapidjson::Value &value)
         m_isolateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("RegionId") && !value["RegionId"].IsNull())
+    {
+        if (!value["RegionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReadOnlyInstance.RegionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionId = string(value["RegionId"].GetString());
+        m_regionIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ZoneId") && !value["ZoneId"].IsNull())
+    {
+        if (!value["ZoneId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReadOnlyInstance.ZoneId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneId = string(value["ZoneId"].GetString());
+        m_zoneIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -452,6 +474,22 @@ void ReadOnlyInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "IsolateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_isolateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -807,5 +845,37 @@ void ReadOnlyInstance::SetIsolateTime(const string& _isolateTime)
 bool ReadOnlyInstance::IsolateTimeHasBeenSet() const
 {
     return m_isolateTimeHasBeenSet;
+}
+
+string ReadOnlyInstance::GetRegionId() const
+{
+    return m_regionId;
+}
+
+void ReadOnlyInstance::SetRegionId(const string& _regionId)
+{
+    m_regionId = _regionId;
+    m_regionIdHasBeenSet = true;
+}
+
+bool ReadOnlyInstance::RegionIdHasBeenSet() const
+{
+    return m_regionIdHasBeenSet;
+}
+
+string ReadOnlyInstance::GetZoneId() const
+{
+    return m_zoneId;
+}
+
+void ReadOnlyInstance::SetZoneId(const string& _zoneId)
+{
+    m_zoneId = _zoneId;
+    m_zoneIdHasBeenSet = true;
+}
+
+bool ReadOnlyInstance::ZoneIdHasBeenSet() const
+{
+    return m_zoneIdHasBeenSet;
 }
 

@@ -230,6 +230,50 @@ namespace TencentCloud
                      */
                     bool LocationHasBeenSet() const;
 
+                    /**
+                     * 获取节点类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CodeType 节点类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCodeType() const;
+
+                    /**
+                     * 设置节点类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CodeType 节点类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCodeType(const std::string& _codeType);
+
+                    /**
+                     * 判断参数 CodeType 是否已赋值
+                     * @return CodeType 是否已赋值
+                     */
+                    bool CodeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取节点状态：1-运行,2-下线
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NodeDefineStatus 节点状态：1-运行,2-下线
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetNodeDefineStatus() const;
+
+                    /**
+                     * 设置节点状态：1-运行,2-下线
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NodeDefineStatus 节点状态：1-运行,2-下线
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNodeDefineStatus(const uint64_t& _nodeDefineStatus);
+
+                    /**
+                     * 判断参数 NodeDefineStatus 是否已赋值
+                     * @return NodeDefineStatus 是否已赋值
+                     */
+                    bool NodeDefineStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -289,6 +333,20 @@ namespace TencentCloud
                      */
                     int64_t m_location;
                     bool m_locationHasBeenSet;
+
+                    /**
+                     * 节点类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_codeType;
+                    bool m_codeTypeHasBeenSet;
+
+                    /**
+                     * 节点状态：1-运行,2-下线
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_nodeDefineStatus;
+                    bool m_nodeDefineStatusHasBeenSet;
 
                 };
             }

@@ -41,6 +41,8 @@
 #include <tencentcloud/emr/v20190103/model/DescribeJobFlowResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeResourceScheduleRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeResourceScheduleResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeUsersForUserManagerRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeUsersForUserManagerResponse.h>
 #include <tencentcloud/emr/v20190103/model/InquirePriceRenewEmrRequest.h>
 #include <tencentcloud/emr/v20190103/model/InquirePriceRenewEmrResponse.h>
 #include <tencentcloud/emr/v20190103/model/InquiryPriceCreateInstanceRequest.h>
@@ -108,6 +110,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeResourceScheduleResponse> DescribeResourceScheduleOutcome;
                 typedef std::future<DescribeResourceScheduleOutcome> DescribeResourceScheduleOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeResourceScheduleRequest&, DescribeResourceScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceScheduleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUsersForUserManagerResponse> DescribeUsersForUserManagerOutcome;
+                typedef std::future<DescribeUsersForUserManagerOutcome> DescribeUsersForUserManagerOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeUsersForUserManagerRequest&, DescribeUsersForUserManagerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUsersForUserManagerAsyncHandler;
                 typedef Outcome<Core::Error, Model::InquirePriceRenewEmrResponse> InquirePriceRenewEmrOutcome;
                 typedef std::future<InquirePriceRenewEmrOutcome> InquirePriceRenewEmrOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::InquirePriceRenewEmrRequest&, InquirePriceRenewEmrOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceRenewEmrAsyncHandler;
@@ -230,6 +235,15 @@ namespace TencentCloud
                 DescribeResourceScheduleOutcome DescribeResourceSchedule(const Model::DescribeResourceScheduleRequest &request);
                 void DescribeResourceScheduleAsync(const Model::DescribeResourceScheduleRequest& request, const DescribeResourceScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeResourceScheduleOutcomeCallable DescribeResourceScheduleCallable(const Model::DescribeResourceScheduleRequest& request);
+
+                /**
+                 *批量导出用户
+                 * @param req DescribeUsersForUserManagerRequest
+                 * @return DescribeUsersForUserManagerOutcome
+                 */
+                DescribeUsersForUserManagerOutcome DescribeUsersForUserManager(const Model::DescribeUsersForUserManagerRequest &request);
+                void DescribeUsersForUserManagerAsync(const Model::DescribeUsersForUserManagerRequest& request, const DescribeUsersForUserManagerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUsersForUserManagerOutcomeCallable DescribeUsersForUserManagerCallable(const Model::DescribeUsersForUserManagerRequest& request);
 
                 /**
                  *集群续费询价。

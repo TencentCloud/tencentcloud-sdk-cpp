@@ -427,6 +427,49 @@ EmrClient::DescribeResourceScheduleOutcomeCallable EmrClient::DescribeResourceSc
     return task->get_future();
 }
 
+EmrClient::DescribeUsersForUserManagerOutcome EmrClient::DescribeUsersForUserManager(const DescribeUsersForUserManagerRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUsersForUserManager");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUsersForUserManagerResponse rsp = DescribeUsersForUserManagerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUsersForUserManagerOutcome(rsp);
+        else
+            return DescribeUsersForUserManagerOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUsersForUserManagerOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeUsersForUserManagerAsync(const DescribeUsersForUserManagerRequest& request, const DescribeUsersForUserManagerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUsersForUserManager(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeUsersForUserManagerOutcomeCallable EmrClient::DescribeUsersForUserManagerCallable(const DescribeUsersForUserManagerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUsersForUserManagerOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUsersForUserManager(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::InquirePriceRenewEmrOutcome EmrClient::InquirePriceRenewEmr(const InquirePriceRenewEmrRequest &request)
 {
     auto outcome = MakeRequest(request, "InquirePriceRenewEmr");

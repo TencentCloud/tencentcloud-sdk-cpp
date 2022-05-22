@@ -35,7 +35,8 @@ DescribeReadOnlyGroupByReadOnlyInstanceResponse::DescribeReadOnlyGroupByReadOnly
     m_vportHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_masterInstanceIdHasBeenSet(false)
+    m_masterInstanceIdHasBeenSet(false),
+    m_masterRegionIdHasBeenSet(false)
 {
 }
 
@@ -193,6 +194,16 @@ CoreInternalOutcome DescribeReadOnlyGroupByReadOnlyInstanceResponse::Deserialize
         m_masterInstanceIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("MasterRegionId") && !rsp["MasterRegionId"].IsNull())
+    {
+        if (!rsp["MasterRegionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MasterRegionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_masterRegionId = string(rsp["MasterRegionId"].GetString());
+        m_masterRegionIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -297,6 +308,14 @@ string DescribeReadOnlyGroupByReadOnlyInstanceResponse::ToJsonString() const
         string key = "MasterInstanceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_masterInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_masterRegionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MasterRegionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_masterRegionId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -429,6 +448,16 @@ string DescribeReadOnlyGroupByReadOnlyInstanceResponse::GetMasterInstanceId() co
 bool DescribeReadOnlyGroupByReadOnlyInstanceResponse::MasterInstanceIdHasBeenSet() const
 {
     return m_masterInstanceIdHasBeenSet;
+}
+
+string DescribeReadOnlyGroupByReadOnlyInstanceResponse::GetMasterRegionId() const
+{
+    return m_masterRegionId;
+}
+
+bool DescribeReadOnlyGroupByReadOnlyInstanceResponse::MasterRegionIdHasBeenSet() const
+{
+    return m_masterRegionIdHasBeenSet;
 }
 
 

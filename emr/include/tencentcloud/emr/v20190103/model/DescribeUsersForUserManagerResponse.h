@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CAT_V20180409_MODEL_CREATEPROBETASKSRESPONSE_H_
-#define TENCENTCLOUD_CAT_V20180409_MODEL_CREATEPROBETASKSRESPONSE_H_
+#ifndef TENCENTCLOUD_EMR_V20190103_MODEL_DESCRIBEUSERSFORUSERMANAGERRESPONSE_H_
+#define TENCENTCLOUD_EMR_V20190103_MODEL_DESCRIBEUSERSFORUSERMANAGERRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,43 +25,25 @@
 
 namespace TencentCloud
 {
-    namespace Cat
+    namespace Emr
     {
-        namespace V20180409
+        namespace V20190103
         {
             namespace Model
             {
                 /**
-                * CreateProbeTasks返回参数结构体
+                * DescribeUsersForUserManager返回参数结构体
                 */
-                class CreateProbeTasksResponse : public AbstractModel
+                class DescribeUsersForUserManagerResponse : public AbstractModel
                 {
                 public:
-                    CreateProbeTasksResponse();
-                    ~CreateProbeTasksResponse() = default;
+                    DescribeUsersForUserManagerResponse();
+                    ~DescribeUsersForUserManagerResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
-                    /**
-                     * 获取任务ID列表
-                     * @return TaskIDs 任务ID列表
-                     */
-                    std::vector<std::string> GetTaskIDs() const;
-
-                    /**
-                     * 判断参数 TaskIDs 是否已赋值
-                     * @return TaskIDs 是否已赋值
-                     */
-                    bool TaskIDsHasBeenSet() const;
-
                 private:
-
-                    /**
-                     * 任务ID列表
-                     */
-                    std::vector<std::string> m_taskIDs;
-                    bool m_taskIDsHasBeenSet;
 
                 };
             }
@@ -69,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CAT_V20180409_MODEL_CREATEPROBETASKSRESPONSE_H_
+#endif // !TENCENTCLOUD_EMR_V20190103_MODEL_DESCRIBEUSERSFORUSERMANAGERRESPONSE_H_

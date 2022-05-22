@@ -187,6 +187,18 @@ namespace TencentCloud
                      */
                     bool MasterInstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取主实例的地域ID
+                     * @return MasterRegionId 主实例的地域ID
+                     */
+                    std::string GetMasterRegionId() const;
+
+                    /**
+                     * 判断参数 MasterRegionId 是否已赋值
+                     * @return MasterRegionId 是否已赋值
+                     */
+                    bool MasterRegionIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -260,6 +272,12 @@ namespace TencentCloud
                      */
                     std::string m_masterInstanceId;
                     bool m_masterInstanceIdHasBeenSet;
+
+                    /**
+                     * 主实例的地域ID
+                     */
+                    std::string m_masterRegionId;
+                    bool m_masterRegionIdHasBeenSet;
 
                 };
             }

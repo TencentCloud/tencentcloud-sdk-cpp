@@ -32,7 +32,8 @@ CreateProbeTasksRequest::CreateProbeTasksRequest() :
     m_cronHasBeenSet(false),
     m_tagHasBeenSet(false),
     m_probeTypeHasBeenSet(false),
-    m_pluginSourceHasBeenSet(false)
+    m_pluginSourceHasBeenSet(false),
+    m_clientNumHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,14 @@ string CreateProbeTasksRequest::ToJsonString() const
         string key = "PluginSource";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_pluginSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clientNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clientNum.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -308,6 +317,22 @@ void CreateProbeTasksRequest::SetPluginSource(const string& _pluginSource)
 bool CreateProbeTasksRequest::PluginSourceHasBeenSet() const
 {
     return m_pluginSourceHasBeenSet;
+}
+
+string CreateProbeTasksRequest::GetClientNum() const
+{
+    return m_clientNum;
+}
+
+void CreateProbeTasksRequest::SetClientNum(const string& _clientNum)
+{
+    m_clientNum = _clientNum;
+    m_clientNumHasBeenSet = true;
+}
+
+bool CreateProbeTasksRequest::ClientNumHasBeenSet() const
+{
+    return m_clientNumHasBeenSet;
 }
 
 
