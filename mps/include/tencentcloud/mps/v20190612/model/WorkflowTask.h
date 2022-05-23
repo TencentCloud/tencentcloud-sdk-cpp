@@ -41,7 +41,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 视频处理任务信息
+                * 媒体处理任务信息
                 */
                 class WorkflowTask : public AbstractModel
                 {
@@ -53,14 +53,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取视频处理任务 ID。
-                     * @return TaskId 视频处理任务 ID。
+                     * 获取媒体处理任务 ID。
+                     * @return TaskId 媒体处理任务 ID。
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置视频处理任务 ID。
-                     * @param TaskId 视频处理任务 ID。
+                     * 设置媒体处理任务 ID。
+                     * @param TaskId 媒体处理任务 ID。
                      */
                     void SetTaskId(const std::string& _taskId);
 
@@ -133,17 +133,17 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取视频处理的目标文件信息。
+                     * 获取媒体处理的目标文件信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InputInfo 视频处理的目标文件信息。
+                     * @return InputInfo 媒体处理的目标文件信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaInputInfo GetInputInfo() const;
 
                     /**
-                     * 设置视频处理的目标文件信息。
+                     * 设置媒体处理的目标文件信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InputInfo 视频处理的目标文件信息。
+                     * @param InputInfo 媒体处理的目标文件信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetInputInfo(const MediaInputInfo& _inputInfo);
@@ -177,14 +177,14 @@ namespace TencentCloud
                     bool MetaDataHasBeenSet() const;
 
                     /**
-                     * 获取视频处理任务的执行状态与结果。
-                     * @return MediaProcessResultSet 视频处理任务的执行状态与结果。
+                     * 获取媒体处理任务的执行状态与结果。
+                     * @return MediaProcessResultSet 媒体处理任务的执行状态与结果。
                      */
                     std::vector<MediaProcessTaskResult> GetMediaProcessResultSet() const;
 
                     /**
-                     * 设置视频处理任务的执行状态与结果。
-                     * @param MediaProcessResultSet 视频处理任务的执行状态与结果。
+                     * 设置媒体处理任务的执行状态与结果。
+                     * @param MediaProcessResultSet 媒体处理任务的执行状态与结果。
                      */
                     void SetMediaProcessResultSet(const std::vector<MediaProcessTaskResult>& _mediaProcessResultSet);
 
@@ -251,7 +251,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 视频处理任务 ID。
+                     * 媒体处理任务 ID。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
@@ -277,7 +277,7 @@ namespace TencentCloud
                     bool m_messageHasBeenSet;
 
                     /**
-                     * 视频处理的目标文件信息。
+                     * 媒体处理的目标文件信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaInputInfo m_inputInfo;
@@ -291,7 +291,7 @@ namespace TencentCloud
                     bool m_metaDataHasBeenSet;
 
                     /**
-                     * 视频处理任务的执行状态与结果。
+                     * 媒体处理任务的执行状态与结果。
                      */
                     std::vector<MediaProcessTaskResult> m_mediaProcessResultSet;
                     bool m_mediaProcessResultSetHasBeenSet;

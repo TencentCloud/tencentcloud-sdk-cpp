@@ -134,17 +134,17 @@ namespace TencentCloud
                     bool TriggerHasBeenSet() const;
 
                     /**
-                     * 获取视频处理的文件输出存储位置。
+                     * 获取媒体处理的文件输出存储位置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OutputStorage 视频处理的文件输出存储位置。
+                     * @return OutputStorage 媒体处理的文件输出存储位置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TaskOutputStorage GetOutputStorage() const;
 
                     /**
-                     * 设置视频处理的文件输出存储位置。
+                     * 设置媒体处理的文件输出存储位置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OutputStorage 视频处理的文件输出存储位置。
+                     * @param OutputStorage 媒体处理的文件输出存储位置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOutputStorage(const TaskOutputStorage& _outputStorage);
@@ -156,17 +156,17 @@ namespace TencentCloud
                     bool OutputStorageHasBeenSet() const;
 
                     /**
-                     * 获取视频处理类型任务参数。
+                     * 获取媒体处理类型任务参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MediaProcessTask 视频处理类型任务参数。
+                     * @return MediaProcessTask 媒体处理类型任务参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaProcessTaskInput GetMediaProcessTask() const;
 
                     /**
-                     * 设置视频处理类型任务参数。
+                     * 设置媒体处理类型任务参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MediaProcessTask 视频处理类型任务参数。
+                     * @param MediaProcessTask 媒体处理类型任务参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMediaProcessTask(const MediaProcessTaskInput& _mediaProcessTask);
@@ -284,14 +284,14 @@ namespace TencentCloud
                     bool TaskPriorityHasBeenSet() const;
 
                     /**
-                     * 获取视频处理生成的文件输出的目标目录，如`/movie/201907/`。
-                     * @return OutputDir 视频处理生成的文件输出的目标目录，如`/movie/201907/`。
+                     * 获取媒体处理生成的文件输出的目标目录，如`/movie/201907/`。
+                     * @return OutputDir 媒体处理生成的文件输出的目标目录，如`/movie/201907/`。
                      */
                     std::string GetOutputDir() const;
 
                     /**
-                     * 设置视频处理生成的文件输出的目标目录，如`/movie/201907/`。
-                     * @param OutputDir 视频处理生成的文件输出的目标目录，如`/movie/201907/`。
+                     * 设置媒体处理生成的文件输出的目标目录，如`/movie/201907/`。
+                     * @param OutputDir 媒体处理生成的文件输出的目标目录，如`/movie/201907/`。
                      */
                     void SetOutputDir(const std::string& _outputDir);
 
@@ -366,14 +366,14 @@ namespace TencentCloud
                     bool m_triggerHasBeenSet;
 
                     /**
-                     * 视频处理的文件输出存储位置。
+                     * 媒体处理的文件输出存储位置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TaskOutputStorage m_outputStorage;
                     bool m_outputStorageHasBeenSet;
 
                     /**
-                     * 视频处理类型任务参数。
+                     * 媒体处理类型任务参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaProcessTaskInput m_mediaProcessTask;
@@ -414,7 +414,7 @@ namespace TencentCloud
                     bool m_taskPriorityHasBeenSet;
 
                     /**
-                     * 视频处理生成的文件输出的目标目录，如`/movie/201907/`。
+                     * 媒体处理生成的文件输出的目标目录，如`/movie/201907/`。
                      */
                     std::string m_outputDir;
                     bool m_outputDirHasBeenSet;

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取内容智能识别模板唯一标识过滤条件，数组长度限制：50。
-                     * @return Definitions 内容智能识别模板唯一标识过滤条件，数组长度限制：50。
+                     * 获取智能审核模板唯一标识过滤条件，数组长度限制：50。
+                     * @return Definitions 智能审核模板唯一标识过滤条件，数组长度限制：50。
                      */
                     std::vector<int64_t> GetDefinitions() const;
 
                     /**
-                     * 设置内容智能识别模板唯一标识过滤条件，数组长度限制：50。
-                     * @param Definitions 内容智能识别模板唯一标识过滤条件，数组长度限制：50。
+                     * 设置智能审核模板唯一标识过滤条件，数组长度限制：50。
+                     * @param Definitions 智能审核模板唯一标识过滤条件，数组长度限制：50。
                      */
                     void SetDefinitions(const std::vector<int64_t>& _definitions);
 
@@ -125,7 +125,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 内容智能识别模板唯一标识过滤条件，数组长度限制：50。
+                     * 智能审核模板唯一标识过滤条件，数组长度限制：50。
                      */
                     std::vector<int64_t> m_definitions;
                     bool m_definitionsHasBeenSet;

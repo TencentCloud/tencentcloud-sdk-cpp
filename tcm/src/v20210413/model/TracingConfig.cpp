@@ -23,7 +23,8 @@ using namespace std;
 TracingConfig::TracingConfig() :
     m_samplingHasBeenSet(false),
     m_enableHasBeenSet(false),
-    m_aPMHasBeenSet(false)
+    m_aPMHasBeenSet(false),
+    m_zipkinHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,23 @@ CoreInternalOutcome TracingConfig::Deserialize(const rapidjson::Value &value)
         m_aPMHasBeenSet = true;
     }
 
+    if (value.HasMember("Zipkin") && !value["Zipkin"].IsNull())
+    {
+        if (!value["Zipkin"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TracingConfig.Zipkin` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_zipkin.Deserialize(value["Zipkin"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_zipkinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +117,15 @@ void TracingConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_aPM.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_zipkinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zipkin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_zipkin.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -150,5 +177,21 @@ void TracingConfig::SetAPM(const APM& _aPM)
 bool TracingConfig::APMHasBeenSet() const
 {
     return m_aPMHasBeenSet;
+}
+
+TracingZipkin TracingConfig::GetZipkin() const
+{
+    return m_zipkin;
+}
+
+void TracingConfig::SetZipkin(const TracingZipkin& _zipkin)
+{
+    m_zipkin = _zipkin;
+    m_zipkinHasBeenSet = true;
+}
+
+bool TracingConfig::ZipkinHasBeenSet() const
+{
+    return m_zipkinHasBeenSet;
 }
 

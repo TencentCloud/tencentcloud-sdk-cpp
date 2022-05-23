@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 视频处理输出对象信息。
+                * 媒体处理输出对象信息。
                 */
                 class TaskOutputStorage : public AbstractModel
                 {
@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取视频处理输出对象存储位置的类型，现在仅支持 COS。
-                     * @return Type 视频处理输出对象存储位置的类型，现在仅支持 COS。
+                     * 获取媒体处理输出对象存储位置的类型，现在仅支持 COS。
+                     * @return Type 媒体处理输出对象存储位置的类型，现在仅支持 COS。
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置视频处理输出对象存储位置的类型，现在仅支持 COS。
-                     * @param Type 视频处理输出对象存储位置的类型，现在仅支持 COS。
+                     * 设置媒体处理输出对象存储位置的类型，现在仅支持 COS。
+                     * @param Type 媒体处理输出对象存储位置的类型，现在仅支持 COS。
                      */
                     void SetType(const std::string& _type);
 
@@ -66,17 +66,17 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取当 Type 为 COS 时有效，则该项为必填，表示视频处理 COS 输出位置。
+                     * 获取当 Type 为 COS 时有效，则该项为必填，表示媒体处理 COS 输出位置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CosOutputStorage 当 Type 为 COS 时有效，则该项为必填，表示视频处理 COS 输出位置。
+                     * @return CosOutputStorage 当 Type 为 COS 时有效，则该项为必填，表示媒体处理 COS 输出位置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CosOutputStorage GetCosOutputStorage() const;
 
                     /**
-                     * 设置当 Type 为 COS 时有效，则该项为必填，表示视频处理 COS 输出位置。
+                     * 设置当 Type 为 COS 时有效，则该项为必填，表示媒体处理 COS 输出位置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CosOutputStorage 当 Type 为 COS 时有效，则该项为必填，表示视频处理 COS 输出位置。
+                     * @param CosOutputStorage 当 Type 为 COS 时有效，则该项为必填，表示媒体处理 COS 输出位置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCosOutputStorage(const CosOutputStorage& _cosOutputStorage);
@@ -90,13 +90,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 视频处理输出对象存储位置的类型，现在仅支持 COS。
+                     * 媒体处理输出对象存储位置的类型，现在仅支持 COS。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 当 Type 为 COS 时有效，则该项为必填，表示视频处理 COS 输出位置。
+                     * 当 Type 为 COS 时有效，则该项为必填，表示媒体处理 COS 输出位置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CosOutputStorage m_cosOutputStorage;

@@ -176,6 +176,24 @@ namespace TencentCloud
                      */
                     bool StateHasBeenSet() const;
 
+                    /**
+                     * 获取任务Id
+                     * @return TaskId 任务Id
+                     */
+                    uint64_t GetTaskId() const;
+
+                    /**
+                     * 设置任务Id
+                     * @param TaskId 任务Id
+                     */
+                    void SetTaskId(const uint64_t& _taskId);
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     */
+                    bool TaskIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -220,6 +238,12 @@ namespace TencentCloud
                      */
                     uint64_t m_state;
                     bool m_stateHasBeenSet;
+
+                    /**
+                     * 任务Id
+                     */
+                    uint64_t m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                 };
             }

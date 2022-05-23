@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取CMQ 的模型，有 Queue 和 Topic 两种，目前仅支持 Queue。
-                     * @return CmqModel CMQ 的模型，有 Queue 和 Topic 两种，目前仅支持 Queue。
+                     * 获取CMQ或TDMQ-CMQ 的模型，有 Queue 和 Topic 两种。
+                     * @return CmqModel CMQ或TDMQ-CMQ 的模型，有 Queue 和 Topic 两种。
                      */
                     std::string GetCmqModel() const;
 
                     /**
-                     * 设置CMQ 的模型，有 Queue 和 Topic 两种，目前仅支持 Queue。
-                     * @param CmqModel CMQ 的模型，有 Queue 和 Topic 两种，目前仅支持 Queue。
+                     * 设置CMQ或TDMQ-CMQ 的模型，有 Queue 和 Topic 两种。
+                     * @param CmqModel CMQ或TDMQ-CMQ 的模型，有 Queue 和 Topic 两种。
                      */
                     void SetCmqModel(const std::string& _cmqModel);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool CmqModelHasBeenSet() const;
 
                     /**
-                     * 获取CMQ 的园区，如 sh，bj 等。
-                     * @return CmqRegion CMQ 的园区，如 sh，bj 等。
+                     * 获取CMQ或TDMQ-CMQ 的园区，如 sh，bj 等。
+                     * @return CmqRegion CMQ或TDMQ-CMQ 的园区，如 sh，bj 等。
                      */
                     std::string GetCmqRegion() const;
 
                     /**
-                     * 设置CMQ 的园区，如 sh，bj 等。
-                     * @param CmqRegion CMQ 的园区，如 sh，bj 等。
+                     * 设置CMQ或TDMQ-CMQ 的园区，如 sh，bj 等。
+                     * @param CmqRegion CMQ或TDMQ-CMQ 的园区，如 sh，bj 等。
                      */
                     void SetCmqRegion(const std::string& _cmqRegion);
 
@@ -83,32 +83,14 @@ namespace TencentCloud
                     bool CmqRegionHasBeenSet() const;
 
                     /**
-                     * 获取当模型为 Queue 时有效，表示接收事件通知的 CMQ 的队列名。
-                     * @return QueueName 当模型为 Queue 时有效，表示接收事件通知的 CMQ 的队列名。
-                     */
-                    std::string GetQueueName() const;
-
-                    /**
-                     * 设置当模型为 Queue 时有效，表示接收事件通知的 CMQ 的队列名。
-                     * @param QueueName 当模型为 Queue 时有效，表示接收事件通知的 CMQ 的队列名。
-                     */
-                    void SetQueueName(const std::string& _queueName);
-
-                    /**
-                     * 判断参数 QueueName 是否已赋值
-                     * @return QueueName 是否已赋值
-                     */
-                    bool QueueNameHasBeenSet() const;
-
-                    /**
-                     * 获取当模型为 Topic 时有效，表示接收事件通知的 CMQ 的主题名。
-                     * @return TopicName 当模型为 Topic 时有效，表示接收事件通知的 CMQ 的主题名。
+                     * 获取当模型为 Topic 时有效，表示接收事件通知的 CMQ 或 TDMQ-CMQ 的主题名。
+                     * @return TopicName 当模型为 Topic 时有效，表示接收事件通知的 CMQ 或 TDMQ-CMQ 的主题名。
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置当模型为 Topic 时有效，表示接收事件通知的 CMQ 的主题名。
-                     * @param TopicName 当模型为 Topic 时有效，表示接收事件通知的 CMQ 的主题名。
+                     * 设置当模型为 Topic 时有效，表示接收事件通知的 CMQ 或 TDMQ-CMQ 的主题名。
+                     * @param TopicName 当模型为 Topic 时有效，表示接收事件通知的 CMQ 或 TDMQ-CMQ 的主题名。
                      */
                     void SetTopicName(const std::string& _topicName);
 
@@ -117,6 +99,24 @@ namespace TencentCloud
                      * @return TopicName 是否已赋值
                      */
                     bool TopicNameHasBeenSet() const;
+
+                    /**
+                     * 获取当模型为 Queue 时有效，表示接收事件通知的 CMQ 或 TDMQ-CMQ 的队列名。
+                     * @return QueueName 当模型为 Queue 时有效，表示接收事件通知的 CMQ 或 TDMQ-CMQ 的队列名。
+                     */
+                    std::string GetQueueName() const;
+
+                    /**
+                     * 设置当模型为 Queue 时有效，表示接收事件通知的 CMQ 或 TDMQ-CMQ 的队列名。
+                     * @param QueueName 当模型为 Queue 时有效，表示接收事件通知的 CMQ 或 TDMQ-CMQ 的队列名。
+                     */
+                    void SetQueueName(const std::string& _queueName);
+
+                    /**
+                     * 判断参数 QueueName 是否已赋值
+                     * @return QueueName 是否已赋值
+                     */
+                    bool QueueNameHasBeenSet() const;
 
                     /**
                      * 获取工作流通知的模式，可取值有 Finish 和 Change，不填代表 Finish。
@@ -137,14 +137,30 @@ namespace TencentCloud
                     bool NotifyModeHasBeenSet() const;
 
                     /**
-                     * 获取通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。
-                     * @return NotifyType 通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。
+                     * 获取通知类型，可选值：
+<li>CMQ：已下线，建议切换到TDMQ-CMQ</li>
+<li>TDMQ-CMQ：消息队列</li>
+<li>URL：指定URL时HTTP回调推送到 NotifyUrl 指定的地址，回调协议http+json，包体内容同解析事件通知接口的输出参数 </li>
+目前 默认CMQ。
+                     * @return NotifyType 通知类型，可选值：
+<li>CMQ：已下线，建议切换到TDMQ-CMQ</li>
+<li>TDMQ-CMQ：消息队列</li>
+<li>URL：指定URL时HTTP回调推送到 NotifyUrl 指定的地址，回调协议http+json，包体内容同解析事件通知接口的输出参数 </li>
+目前 默认CMQ。
                      */
                     std::string GetNotifyType() const;
 
                     /**
-                     * 设置通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。
-                     * @param NotifyType 通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。
+                     * 设置通知类型，可选值：
+<li>CMQ：已下线，建议切换到TDMQ-CMQ</li>
+<li>TDMQ-CMQ：消息队列</li>
+<li>URL：指定URL时HTTP回调推送到 NotifyUrl 指定的地址，回调协议http+json，包体内容同解析事件通知接口的输出参数 </li>
+目前 默认CMQ。
+                     * @param NotifyType 通知类型，可选值：
+<li>CMQ：已下线，建议切换到TDMQ-CMQ</li>
+<li>TDMQ-CMQ：消息队列</li>
+<li>URL：指定URL时HTTP回调推送到 NotifyUrl 指定的地址，回调协议http+json，包体内容同解析事件通知接口的输出参数 </li>
+目前 默认CMQ。
                      */
                     void SetNotifyType(const std::string& _notifyType);
 
@@ -175,28 +191,28 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * CMQ 的模型，有 Queue 和 Topic 两种，目前仅支持 Queue。
+                     * CMQ或TDMQ-CMQ 的模型，有 Queue 和 Topic 两种。
                      */
                     std::string m_cmqModel;
                     bool m_cmqModelHasBeenSet;
 
                     /**
-                     * CMQ 的园区，如 sh，bj 等。
+                     * CMQ或TDMQ-CMQ 的园区，如 sh，bj 等。
                      */
                     std::string m_cmqRegion;
                     bool m_cmqRegionHasBeenSet;
 
                     /**
-                     * 当模型为 Queue 时有效，表示接收事件通知的 CMQ 的队列名。
-                     */
-                    std::string m_queueName;
-                    bool m_queueNameHasBeenSet;
-
-                    /**
-                     * 当模型为 Topic 时有效，表示接收事件通知的 CMQ 的主题名。
+                     * 当模型为 Topic 时有效，表示接收事件通知的 CMQ 或 TDMQ-CMQ 的主题名。
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
+
+                    /**
+                     * 当模型为 Queue 时有效，表示接收事件通知的 CMQ 或 TDMQ-CMQ 的队列名。
+                     */
+                    std::string m_queueName;
+                    bool m_queueNameHasBeenSet;
 
                     /**
                      * 工作流通知的模式，可取值有 Finish 和 Change，不填代表 Finish。
@@ -205,7 +221,11 @@ namespace TencentCloud
                     bool m_notifyModeHasBeenSet;
 
                     /**
-                     * 通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。
+                     * 通知类型，可选值：
+<li>CMQ：已下线，建议切换到TDMQ-CMQ</li>
+<li>TDMQ-CMQ：消息队列</li>
+<li>URL：指定URL时HTTP回调推送到 NotifyUrl 指定的地址，回调协议http+json，包体内容同解析事件通知接口的输出参数 </li>
+目前 默认CMQ。
                      */
                     std::string m_notifyType;
                     bool m_notifyTypeHasBeenSet;

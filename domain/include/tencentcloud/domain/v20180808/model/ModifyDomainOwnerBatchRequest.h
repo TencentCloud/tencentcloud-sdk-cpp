@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool TransferDnsHasBeenSet() const;
 
+                    /**
+                     * 获取转入账户的appid。
+                     * @return NewOwnerAppId 转入账户的appid。
+                     */
+                    std::string GetNewOwnerAppId() const;
+
+                    /**
+                     * 设置转入账户的appid。
+                     * @param NewOwnerAppId 转入账户的appid。
+                     */
+                    void SetNewOwnerAppId(const std::string& _newOwnerAppId);
+
+                    /**
+                     * 判断参数 NewOwnerAppId 是否已赋值
+                     * @return NewOwnerAppId 是否已赋值
+                     */
+                    bool NewOwnerAppIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     bool m_transferDns;
                     bool m_transferDnsHasBeenSet;
+
+                    /**
+                     * 转入账户的appid。
+                     */
+                    std::string m_newOwnerAppId;
+                    bool m_newOwnerAppIdHasBeenSet;
 
                 };
             }

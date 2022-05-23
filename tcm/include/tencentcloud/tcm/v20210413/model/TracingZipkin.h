@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_MPS_V20190612_MODEL_URLINPUTINFO_H_
-#define TENCENTCLOUD_MPS_V20190612_MODEL_URLINPUTINFO_H_
+#ifndef TENCENTCLOUD_TCM_V20210413_MODEL_TRACINGZIPKIN_H_
+#define TENCENTCLOUD_TCM_V20210413_MODEL_TRACINGZIPKIN_H_
 
 #include <string>
 #include <vector>
@@ -28,49 +28,49 @@
 
 namespace TencentCloud
 {
-    namespace Mps
+    namespace Tcm
     {
-        namespace V20190612
+        namespace V20210413
         {
             namespace Model
             {
                 /**
-                * 媒体处理 URL 对象信息。
+                * 调用追踪的Zipkin设置
                 */
-                class UrlInputInfo : public AbstractModel
+                class TracingZipkin : public AbstractModel
                 {
                 public:
-                    UrlInputInfo();
-                    ~UrlInputInfo() = default;
+                    TracingZipkin();
+                    ~TracingZipkin() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取视频的 URL。
-                     * @return Url 视频的 URL。
+                     * 获取Zipkin调用地址
+                     * @return Address Zipkin调用地址
                      */
-                    std::string GetUrl() const;
+                    std::string GetAddress() const;
 
                     /**
-                     * 设置视频的 URL。
-                     * @param Url 视频的 URL。
+                     * 设置Zipkin调用地址
+                     * @param Address Zipkin调用地址
                      */
-                    void SetUrl(const std::string& _url);
+                    void SetAddress(const std::string& _address);
 
                     /**
-                     * 判断参数 Url 是否已赋值
-                     * @return Url 是否已赋值
+                     * 判断参数 Address 是否已赋值
+                     * @return Address 是否已赋值
                      */
-                    bool UrlHasBeenSet() const;
+                    bool AddressHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 视频的 URL。
+                     * Zipkin调用地址
                      */
-                    std::string m_url;
-                    bool m_urlHasBeenSet;
+                    std::string m_address;
+                    bool m_addressHasBeenSet;
 
                 };
             }
@@ -78,4 +78,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_MPS_V20190612_MODEL_URLINPUTINFO_H_
+#endif // !TENCENTCLOUD_TCM_V20210413_MODEL_TRACINGZIPKIN_H_

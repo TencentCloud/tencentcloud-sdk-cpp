@@ -174,8 +174,8 @@ MyKid 儿童卡
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取出生日期（目前该字段仅支持IKAD劳工证）
-                     * @return Birthday 出生日期（目前该字段仅支持IKAD劳工证）
+                     * 获取出生日期（目前该字段仅支持IKAD劳工证、MyKad 身份证）
+                     * @return Birthday 出生日期（目前该字段仅支持IKAD劳工证、MyKad 身份证）
                      */
                     std::string GetBirthday() const;
 
@@ -253,7 +253,7 @@ MyKid 儿童卡
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 出生日期（目前该字段仅支持IKAD劳工证）
+                     * 出生日期（目前该字段仅支持IKAD劳工证、MyKad 身份证）
                      */
                     std::string m_birthday;
                     bool m_birthdayHasBeenSet;

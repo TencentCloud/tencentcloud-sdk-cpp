@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcm/v20210413/model/APM.h>
+#include <tencentcloud/tcm/v20210413/model/TracingZipkin.h>
 
 
 namespace TencentCloud
@@ -101,6 +102,24 @@ namespace TencentCloud
                      */
                     bool APMHasBeenSet() const;
 
+                    /**
+                     * 获取启动第三方服务器的地址
+                     * @return Zipkin 启动第三方服务器的地址
+                     */
+                    TracingZipkin GetZipkin() const;
+
+                    /**
+                     * 设置启动第三方服务器的地址
+                     * @param Zipkin 启动第三方服务器的地址
+                     */
+                    void SetZipkin(const TracingZipkin& _zipkin);
+
+                    /**
+                     * 判断参数 Zipkin 是否已赋值
+                     * @return Zipkin 是否已赋值
+                     */
+                    bool ZipkinHasBeenSet() const;
+
                 private:
 
                     /**
@@ -120,6 +139,12 @@ namespace TencentCloud
                      */
                     APM m_aPM;
                     bool m_aPMHasBeenSet;
+
+                    /**
+                     * 启动第三方服务器的地址
+                     */
+                    TracingZipkin m_zipkin;
+                    bool m_zipkinHasBeenSet;
 
                 };
             }

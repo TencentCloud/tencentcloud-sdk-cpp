@@ -50,14 +50,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取视频处理的文件输入信息。
-                     * @return InputInfo 视频处理的文件输入信息。
+                     * 获取媒体处理的文件输入信息。
+                     * @return InputInfo 媒体处理的文件输入信息。
                      */
                     MediaInputInfo GetInputInfo() const;
 
                     /**
-                     * 设置视频处理的文件输入信息。
-                     * @param InputInfo 视频处理的文件输入信息。
+                     * 设置媒体处理的文件输入信息。
+                     * @param InputInfo 媒体处理的文件输入信息。
                      */
                     void SetInputInfo(const MediaInputInfo& _inputInfo);
 
@@ -68,14 +68,14 @@ namespace TencentCloud
                     bool InputInfoHasBeenSet() const;
 
                     /**
-                     * 获取视频处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。
-                     * @return OutputStorage 视频处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。
+                     * 获取媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。
+                     * @return OutputStorage 媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。
                      */
                     TaskOutputStorage GetOutputStorage() const;
 
                     /**
-                     * 设置视频处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。
-                     * @param OutputStorage 视频处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。
+                     * 设置媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。
+                     * @param OutputStorage 媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。
                      */
                     void SetOutputStorage(const TaskOutputStorage& _outputStorage);
 
@@ -86,14 +86,14 @@ namespace TencentCloud
                     bool OutputStorageHasBeenSet() const;
 
                     /**
-                     * 获取视频处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与 InputInfo 中文件所在的目录一致。
-                     * @return OutputDir 视频处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与 InputInfo 中文件所在的目录一致。
+                     * 获取媒体处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与 InputInfo 中文件所在的目录一致。
+                     * @return OutputDir 媒体处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与 InputInfo 中文件所在的目录一致。
                      */
                     std::string GetOutputDir() const;
 
                     /**
-                     * 设置视频处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与 InputInfo 中文件所在的目录一致。
-                     * @param OutputDir 视频处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与 InputInfo 中文件所在的目录一致。
+                     * 设置媒体处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与 InputInfo 中文件所在的目录一致。
+                     * @param OutputDir 媒体处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与 InputInfo 中文件所在的目录一致。
                      */
                     void SetOutputDir(const std::string& _outputDir);
 
@@ -104,14 +104,14 @@ namespace TencentCloud
                     bool OutputDirHasBeenSet() const;
 
                     /**
-                     * 获取视频处理类型任务参数。
-                     * @return MediaProcessTask 视频处理类型任务参数。
+                     * 获取媒体处理类型任务参数。
+                     * @return MediaProcessTask 媒体处理类型任务参数。
                      */
                     MediaProcessTaskInput GetMediaProcessTask() const;
 
                     /**
-                     * 设置视频处理类型任务参数。
-                     * @param MediaProcessTask 视频处理类型任务参数。
+                     * 设置媒体处理类型任务参数。
+                     * @param MediaProcessTask 媒体处理类型任务参数。
                      */
                     void SetMediaProcessTask(const MediaProcessTaskInput& _mediaProcessTask);
 
@@ -250,25 +250,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 视频处理的文件输入信息。
+                     * 媒体处理的文件输入信息。
                      */
                     MediaInputInfo m_inputInfo;
                     bool m_inputInfoHasBeenSet;
 
                     /**
-                     * 视频处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。
+                     * 媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。
                      */
                     TaskOutputStorage m_outputStorage;
                     bool m_outputStorageHasBeenSet;
 
                     /**
-                     * 视频处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与 InputInfo 中文件所在的目录一致。
+                     * 媒体处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与 InputInfo 中文件所在的目录一致。
                      */
                     std::string m_outputDir;
                     bool m_outputDirHasBeenSet;
 
                     /**
-                     * 视频处理类型任务参数。
+                     * 媒体处理类型任务参数。
                      */
                     MediaProcessTaskInput m_mediaProcessTask;
                     bool m_mediaProcessTaskHasBeenSet;

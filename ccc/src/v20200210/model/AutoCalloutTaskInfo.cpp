@@ -27,7 +27,8 @@ AutoCalloutTaskInfo::AutoCalloutTaskInfo() :
     m_notBeforeHasBeenSet(false),
     m_notAfterHasBeenSet(false),
     m_ivrIdHasBeenSet(false),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_taskIdHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,16 @@ CoreInternalOutcome AutoCalloutTaskInfo::Deserialize(const rapidjson::Value &val
         m_stateHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskId") && !value["TaskId"].IsNull())
+    {
+        if (!value["TaskId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoCalloutTaskInfo.TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskId = value["TaskId"].GetUint64();
+        m_taskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -175,6 +186,14 @@ void AutoCalloutTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_state, allocator);
+    }
+
+    if (m_taskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskId, allocator);
     }
 
 }
@@ -290,5 +309,21 @@ void AutoCalloutTaskInfo::SetState(const uint64_t& _state)
 bool AutoCalloutTaskInfo::StateHasBeenSet() const
 {
     return m_stateHasBeenSet;
+}
+
+uint64_t AutoCalloutTaskInfo::GetTaskId() const
+{
+    return m_taskId;
+}
+
+void AutoCalloutTaskInfo::SetTaskId(const uint64_t& _taskId)
+{
+    m_taskId = _taskId;
+    m_taskIdHasBeenSet = true;
+}
+
+bool AutoCalloutTaskInfo::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
 }
 

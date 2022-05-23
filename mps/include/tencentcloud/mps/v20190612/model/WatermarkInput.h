@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 视频处理任务中的水印参数类型
+                * 媒体处理任务中的水印参数类型
                 */
                 class WatermarkInput : public AbstractModel
                 {
