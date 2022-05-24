@@ -1029,6 +1029,49 @@ MariadbClient::DescribeDBResourceUsageDetailsOutcomeCallable MariadbClient::Desc
     return task->get_future();
 }
 
+MariadbClient::DescribeDBSecurityGroupsOutcome MariadbClient::DescribeDBSecurityGroups(const DescribeDBSecurityGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBSecurityGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBSecurityGroupsResponse rsp = DescribeDBSecurityGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBSecurityGroupsOutcome(rsp);
+        else
+            return DescribeDBSecurityGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBSecurityGroupsOutcome(outcome.GetError());
+    }
+}
+
+void MariadbClient::DescribeDBSecurityGroupsAsync(const DescribeDBSecurityGroupsRequest& request, const DescribeDBSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBSecurityGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MariadbClient::DescribeDBSecurityGroupsOutcomeCallable MariadbClient::DescribeDBSecurityGroupsCallable(const DescribeDBSecurityGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBSecurityGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBSecurityGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MariadbClient::DescribeDBSlowLogsOutcome MariadbClient::DescribeDBSlowLogs(const DescribeDBSlowLogsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBSlowLogs");
@@ -1409,6 +1452,49 @@ MariadbClient::DescribeLogFileRetentionPeriodOutcomeCallable MariadbClient::Desc
         [this, request]()
         {
             return this->DescribeLogFileRetentionPeriod(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MariadbClient::DescribeOrdersOutcome MariadbClient::DescribeOrders(const DescribeOrdersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOrders");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOrdersResponse rsp = DescribeOrdersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOrdersOutcome(rsp);
+        else
+            return DescribeOrdersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOrdersOutcome(outcome.GetError());
+    }
+}
+
+void MariadbClient::DescribeOrdersAsync(const DescribeOrdersRequest& request, const DescribeOrdersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOrders(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MariadbClient::DescribeOrdersOutcomeCallable MariadbClient::DescribeOrdersCallable(const DescribeOrdersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOrdersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOrders(request);
         }
     );
 

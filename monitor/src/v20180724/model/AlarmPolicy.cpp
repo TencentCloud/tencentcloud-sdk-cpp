@@ -52,7 +52,8 @@ AlarmPolicy::AlarmPolicy() :
     m_tagInstancesHasBeenSet(false),
     m_filterDimensionsParamHasBeenSet(false),
     m_isOneClickHasBeenSet(false),
-    m_oneClickStatusHasBeenSet(false)
+    m_oneClickStatusHasBeenSet(false),
+    m_advancedMetricNumberHasBeenSet(false)
 {
 }
 
@@ -438,6 +439,16 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
         m_oneClickStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("AdvancedMetricNumber") && !value["AdvancedMetricNumber"].IsNull())
+    {
+        if (!value["AdvancedMetricNumber"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.AdvancedMetricNumber` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_advancedMetricNumber = value["AdvancedMetricNumber"].GetInt64();
+        m_advancedMetricNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -733,6 +744,14 @@ void AlarmPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "OneClickStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_oneClickStatus, allocator);
+    }
+
+    if (m_advancedMetricNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdvancedMetricNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_advancedMetricNumber, allocator);
     }
 
 }
@@ -1248,5 +1267,21 @@ void AlarmPolicy::SetOneClickStatus(const int64_t& _oneClickStatus)
 bool AlarmPolicy::OneClickStatusHasBeenSet() const
 {
     return m_oneClickStatusHasBeenSet;
+}
+
+int64_t AlarmPolicy::GetAdvancedMetricNumber() const
+{
+    return m_advancedMetricNumber;
+}
+
+void AlarmPolicy::SetAdvancedMetricNumber(const int64_t& _advancedMetricNumber)
+{
+    m_advancedMetricNumber = _advancedMetricNumber;
+    m_advancedMetricNumberHasBeenSet = true;
+}
+
+bool AlarmPolicy::AdvancedMetricNumberHasBeenSet() const
+{
+    return m_advancedMetricNumberHasBeenSet;
 }
 

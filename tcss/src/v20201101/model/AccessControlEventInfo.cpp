@@ -43,7 +43,10 @@ AccessControlEventInfo::AccessControlEventInfo() :
     m_ruleExistHasBeenSet(false),
     m_eventCountHasBeenSet(false),
     m_latestFoundTimeHasBeenSet(false),
-    m_ruleIdHasBeenSet(false)
+    m_ruleIdHasBeenSet(false),
+    m_containerNetStatusHasBeenSet(false),
+    m_containerNetSubStatusHasBeenSet(false),
+    m_containerIsolateOperationSrcHasBeenSet(false)
 {
 }
 
@@ -282,6 +285,36 @@ CoreInternalOutcome AccessControlEventInfo::Deserialize(const rapidjson::Value &
         m_ruleIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ContainerNetStatus") && !value["ContainerNetStatus"].IsNull())
+    {
+        if (!value["ContainerNetStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessControlEventInfo.ContainerNetStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerNetStatus = string(value["ContainerNetStatus"].GetString());
+        m_containerNetStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ContainerNetSubStatus") && !value["ContainerNetSubStatus"].IsNull())
+    {
+        if (!value["ContainerNetSubStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessControlEventInfo.ContainerNetSubStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerNetSubStatus = string(value["ContainerNetSubStatus"].GetString());
+        m_containerNetSubStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ContainerIsolateOperationSrc") && !value["ContainerIsolateOperationSrc"].IsNull())
+    {
+        if (!value["ContainerIsolateOperationSrc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessControlEventInfo.ContainerIsolateOperationSrc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerIsolateOperationSrc = string(value["ContainerIsolateOperationSrc"].GetString());
+        m_containerIsolateOperationSrcHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -471,6 +504,30 @@ void AccessControlEventInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "RuleId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ruleId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containerNetStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerNetStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerNetStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containerNetSubStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerNetSubStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerNetSubStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containerIsolateOperationSrcHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerIsolateOperationSrc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerIsolateOperationSrc.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -842,5 +899,53 @@ void AccessControlEventInfo::SetRuleId(const string& _ruleId)
 bool AccessControlEventInfo::RuleIdHasBeenSet() const
 {
     return m_ruleIdHasBeenSet;
+}
+
+string AccessControlEventInfo::GetContainerNetStatus() const
+{
+    return m_containerNetStatus;
+}
+
+void AccessControlEventInfo::SetContainerNetStatus(const string& _containerNetStatus)
+{
+    m_containerNetStatus = _containerNetStatus;
+    m_containerNetStatusHasBeenSet = true;
+}
+
+bool AccessControlEventInfo::ContainerNetStatusHasBeenSet() const
+{
+    return m_containerNetStatusHasBeenSet;
+}
+
+string AccessControlEventInfo::GetContainerNetSubStatus() const
+{
+    return m_containerNetSubStatus;
+}
+
+void AccessControlEventInfo::SetContainerNetSubStatus(const string& _containerNetSubStatus)
+{
+    m_containerNetSubStatus = _containerNetSubStatus;
+    m_containerNetSubStatusHasBeenSet = true;
+}
+
+bool AccessControlEventInfo::ContainerNetSubStatusHasBeenSet() const
+{
+    return m_containerNetSubStatusHasBeenSet;
+}
+
+string AccessControlEventInfo::GetContainerIsolateOperationSrc() const
+{
+    return m_containerIsolateOperationSrc;
+}
+
+void AccessControlEventInfo::SetContainerIsolateOperationSrc(const string& _containerIsolateOperationSrc)
+{
+    m_containerIsolateOperationSrc = _containerIsolateOperationSrc;
+    m_containerIsolateOperationSrcHasBeenSet = true;
+}
+
+bool AccessControlEventInfo::ContainerIsolateOperationSrcHasBeenSet() const
+{
+    return m_containerIsolateOperationSrcHasBeenSet;
 }
 

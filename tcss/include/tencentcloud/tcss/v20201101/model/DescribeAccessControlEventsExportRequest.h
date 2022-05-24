@@ -44,24 +44,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取导出字段
-                     * @return ExportField 导出字段
-                     */
-                    std::vector<std::string> GetExportField() const;
-
-                    /**
-                     * 设置导出字段
-                     * @param ExportField 导出字段
-                     */
-                    void SetExportField(const std::vector<std::string>& _exportField);
-
-                    /**
-                     * 判断参数 ExportField 是否已赋值
-                     * @return ExportField 是否已赋值
-                     */
-                    bool ExportFieldHasBeenSet() const;
-
-                    /**
                      * 获取需要返回的数量，默认为10，最大值为100
                      * @return Limit 需要返回的数量，默认为10，最大值为100
                      */
@@ -151,13 +133,25 @@ namespace TencentCloud
                      */
                     bool ByHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取导出字段
+                     * @return ExportField 导出字段
+                     */
+                    std::vector<std::string> GetExportField() const;
 
                     /**
-                     * 导出字段
+                     * 设置导出字段
+                     * @param ExportField 导出字段
                      */
-                    std::vector<std::string> m_exportField;
-                    bool m_exportFieldHasBeenSet;
+                    void SetExportField(const std::vector<std::string>& _exportField);
+
+                    /**
+                     * 判断参数 ExportField 是否已赋值
+                     * @return ExportField 是否已赋值
+                     */
+                    bool ExportFieldHasBeenSet() const;
+
+                private:
 
                     /**
                      * 需要返回的数量，默认为10，最大值为100
@@ -188,6 +182,12 @@ namespace TencentCloud
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;
+
+                    /**
+                     * 导出字段
+                     */
+                    std::vector<std::string> m_exportField;
+                    bool m_exportFieldHasBeenSet;
 
                 };
             }

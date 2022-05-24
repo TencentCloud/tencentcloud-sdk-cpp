@@ -134,14 +134,14 @@ namespace TencentCloud
                     bool IsTagFilterHasBeenSet() const;
 
                     /**
-                     * 获取过滤器。目前支持按标签过滤。
-                     * @return Filters 过滤器。目前支持按标签过滤。
+                     * 获取过滤器。目前支持按标签过滤，标签的Name需要加前缀“tag:”，例如：tag:负责人、tag:环境、tag:业务
+                     * @return Filters 过滤器。目前支持按标签过滤，标签的Name需要加前缀“tag:”，例如：tag:负责人、tag:环境、tag:业务
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤器。目前支持按标签过滤。
-                     * @param Filters 过滤器。目前支持按标签过滤。
+                     * 设置过滤器。目前支持按标签过滤，标签的Name需要加前缀“tag:”，例如：tag:负责人、tag:环境、tag:业务
+                     * @param Filters 过滤器。目前支持按标签过滤，标签的Name需要加前缀“tag:”，例如：tag:负责人、tag:环境、tag:业务
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -184,7 +184,7 @@ namespace TencentCloud
                     bool m_isTagFilterHasBeenSet;
 
                     /**
-                     * 过滤器。目前支持按标签过滤。
+                     * 过滤器。目前支持按标签过滤，标签的Name需要加前缀“tag:”，例如：tag:负责人、tag:环境、tag:业务
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

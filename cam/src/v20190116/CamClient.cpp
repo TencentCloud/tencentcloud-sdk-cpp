@@ -3093,6 +3093,92 @@ CamClient::SetMfaFlagOutcomeCallable CamClient::SetMfaFlagCallable(const SetMfaF
     return task->get_future();
 }
 
+CamClient::TagRoleOutcome CamClient::TagRole(const TagRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "TagRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TagRoleResponse rsp = TagRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TagRoleOutcome(rsp);
+        else
+            return TagRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return TagRoleOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::TagRoleAsync(const TagRoleRequest& request, const TagRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TagRole(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::TagRoleOutcomeCallable CamClient::TagRoleCallable(const TagRoleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TagRoleOutcome()>>(
+        [this, request]()
+        {
+            return this->TagRole(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CamClient::UntagRoleOutcome CamClient::UntagRole(const UntagRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "UntagRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UntagRoleResponse rsp = UntagRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UntagRoleOutcome(rsp);
+        else
+            return UntagRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return UntagRoleOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::UntagRoleAsync(const UntagRoleRequest& request, const UntagRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UntagRole(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::UntagRoleOutcomeCallable CamClient::UntagRoleCallable(const UntagRoleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UntagRoleOutcome()>>(
+        [this, request]()
+        {
+            return this->UntagRole(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::UpdateAssumeRolePolicyOutcome CamClient::UpdateAssumeRolePolicy(const UpdateAssumeRolePolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateAssumeRolePolicy");

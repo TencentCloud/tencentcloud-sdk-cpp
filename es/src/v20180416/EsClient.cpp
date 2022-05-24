@@ -40,6 +40,49 @@ EsClient::EsClient(const Credential &credential, const string &region, const Cli
 }
 
 
+EsClient::CreateIndexOutcome EsClient::CreateIndex(const CreateIndexRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateIndex");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateIndexResponse rsp = CreateIndexResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateIndexOutcome(rsp);
+        else
+            return CreateIndexOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateIndexOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::CreateIndexAsync(const CreateIndexRequest& request, const CreateIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateIndex(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::CreateIndexOutcomeCallable EsClient::CreateIndexCallable(const CreateIndexRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateIndexOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateIndex(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EsClient::CreateInstanceOutcome EsClient::CreateInstance(const CreateInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateInstance");
@@ -83,6 +126,49 @@ EsClient::CreateInstanceOutcomeCallable EsClient::CreateInstanceCallable(const C
     return task->get_future();
 }
 
+EsClient::DeleteIndexOutcome EsClient::DeleteIndex(const DeleteIndexRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteIndex");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteIndexResponse rsp = DeleteIndexResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteIndexOutcome(rsp);
+        else
+            return DeleteIndexOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteIndexOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::DeleteIndexAsync(const DeleteIndexRequest& request, const DeleteIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteIndex(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::DeleteIndexOutcomeCallable EsClient::DeleteIndexCallable(const DeleteIndexRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteIndexOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteIndex(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EsClient::DeleteInstanceOutcome EsClient::DeleteInstance(const DeleteInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteInstance");
@@ -119,6 +205,92 @@ EsClient::DeleteInstanceOutcomeCallable EsClient::DeleteInstanceCallable(const D
         [this, request]()
         {
             return this->DeleteInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EsClient::DescribeIndexListOutcome EsClient::DescribeIndexList(const DescribeIndexListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIndexList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIndexListResponse rsp = DescribeIndexListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIndexListOutcome(rsp);
+        else
+            return DescribeIndexListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIndexListOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::DescribeIndexListAsync(const DescribeIndexListRequest& request, const DescribeIndexListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeIndexList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::DescribeIndexListOutcomeCallable EsClient::DescribeIndexListCallable(const DescribeIndexListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeIndexListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeIndexList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EsClient::DescribeIndexMetaOutcome EsClient::DescribeIndexMeta(const DescribeIndexMetaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIndexMeta");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIndexMetaResponse rsp = DescribeIndexMetaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIndexMetaOutcome(rsp);
+        else
+            return DescribeIndexMetaOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIndexMetaOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::DescribeIndexMetaAsync(const DescribeIndexMetaRequest& request, const DescribeIndexMetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeIndexMeta(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::DescribeIndexMetaOutcomeCallable EsClient::DescribeIndexMetaCallable(const DescribeIndexMetaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeIndexMetaOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeIndexMeta(request);
         }
     );
 
@@ -592,6 +764,49 @@ EsClient::UpdateDictionariesOutcomeCallable EsClient::UpdateDictionariesCallable
         [this, request]()
         {
             return this->UpdateDictionaries(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EsClient::UpdateIndexOutcome EsClient::UpdateIndex(const UpdateIndexRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateIndex");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateIndexResponse rsp = UpdateIndexResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateIndexOutcome(rsp);
+        else
+            return UpdateIndexOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateIndexOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::UpdateIndexAsync(const UpdateIndexRequest& request, const UpdateIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateIndex(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::UpdateIndexOutcomeCallable EsClient::UpdateIndexCallable(const UpdateIndexRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateIndexOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateIndex(request);
         }
     );
 

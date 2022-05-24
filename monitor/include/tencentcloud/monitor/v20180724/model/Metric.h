@@ -195,6 +195,72 @@ namespace TencentCloud
                      */
                     bool MetricConfigHasBeenSet() const;
 
+                    /**
+                     * 获取是否为高级指标。1是 0否
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsAdvanced 是否为高级指标。1是 0否
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetIsAdvanced() const;
+
+                    /**
+                     * 设置是否为高级指标。1是 0否
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsAdvanced 是否为高级指标。1是 0否
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsAdvanced(const int64_t& _isAdvanced);
+
+                    /**
+                     * 判断参数 IsAdvanced 是否已赋值
+                     * @return IsAdvanced 是否已赋值
+                     */
+                    bool IsAdvancedHasBeenSet() const;
+
+                    /**
+                     * 获取高级指标是否开通。1是 0否
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsOpen 高级指标是否开通。1是 0否
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetIsOpen() const;
+
+                    /**
+                     * 设置高级指标是否开通。1是 0否
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsOpen 高级指标是否开通。1是 0否
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsOpen(const int64_t& _isOpen);
+
+                    /**
+                     * 判断参数 IsOpen 是否已赋值
+                     * @return IsOpen 是否已赋值
+                     */
+                    bool IsOpenHasBeenSet() const;
+
+                    /**
+                     * 获取集成中心产品ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductId 集成中心产品ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetProductId() const;
+
+                    /**
+                     * 设置集成中心产品ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProductId 集成中心产品ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProductId(const int64_t& _productId);
+
+                    /**
+                     * 判断参数 ProductId 是否已赋值
+                     * @return ProductId 是否已赋值
+                     */
+                    bool ProductIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -245,6 +311,27 @@ namespace TencentCloud
                      */
                     MetricConfig m_metricConfig;
                     bool m_metricConfigHasBeenSet;
+
+                    /**
+                     * 是否为高级指标。1是 0否
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isAdvanced;
+                    bool m_isAdvancedHasBeenSet;
+
+                    /**
+                     * 高级指标是否开通。1是 0否
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isOpen;
+                    bool m_isOpenHasBeenSet;
+
+                    /**
+                     * 集成中心产品ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_productId;
+                    bool m_productIdHasBeenSet;
 
                 };
             }

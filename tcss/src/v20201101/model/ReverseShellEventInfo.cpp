@@ -36,7 +36,10 @@ ReverseShellEventInfo::ReverseShellEventInfo() :
     m_pProcessNameHasBeenSet(false),
     m_eventCountHasBeenSet(false),
     m_latestFoundTimeHasBeenSet(false),
-    m_dstAddressHasBeenSet(false)
+    m_dstAddressHasBeenSet(false),
+    m_containerNetStatusHasBeenSet(false),
+    m_containerNetSubStatusHasBeenSet(false),
+    m_containerIsolateOperationSrcHasBeenSet(false)
 {
 }
 
@@ -205,6 +208,36 @@ CoreInternalOutcome ReverseShellEventInfo::Deserialize(const rapidjson::Value &v
         m_dstAddressHasBeenSet = true;
     }
 
+    if (value.HasMember("ContainerNetStatus") && !value["ContainerNetStatus"].IsNull())
+    {
+        if (!value["ContainerNetStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReverseShellEventInfo.ContainerNetStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerNetStatus = string(value["ContainerNetStatus"].GetString());
+        m_containerNetStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ContainerNetSubStatus") && !value["ContainerNetSubStatus"].IsNull())
+    {
+        if (!value["ContainerNetSubStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReverseShellEventInfo.ContainerNetSubStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerNetSubStatus = string(value["ContainerNetSubStatus"].GetString());
+        m_containerNetSubStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ContainerIsolateOperationSrc") && !value["ContainerIsolateOperationSrc"].IsNull())
+    {
+        if (!value["ContainerIsolateOperationSrc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReverseShellEventInfo.ContainerIsolateOperationSrc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerIsolateOperationSrc = string(value["ContainerIsolateOperationSrc"].GetString());
+        m_containerIsolateOperationSrcHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +371,30 @@ void ReverseShellEventInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "DstAddress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dstAddress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containerNetStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerNetStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerNetStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containerNetSubStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerNetSubStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerNetSubStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containerIsolateOperationSrcHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerIsolateOperationSrc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerIsolateOperationSrc.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -597,5 +654,53 @@ void ReverseShellEventInfo::SetDstAddress(const string& _dstAddress)
 bool ReverseShellEventInfo::DstAddressHasBeenSet() const
 {
     return m_dstAddressHasBeenSet;
+}
+
+string ReverseShellEventInfo::GetContainerNetStatus() const
+{
+    return m_containerNetStatus;
+}
+
+void ReverseShellEventInfo::SetContainerNetStatus(const string& _containerNetStatus)
+{
+    m_containerNetStatus = _containerNetStatus;
+    m_containerNetStatusHasBeenSet = true;
+}
+
+bool ReverseShellEventInfo::ContainerNetStatusHasBeenSet() const
+{
+    return m_containerNetStatusHasBeenSet;
+}
+
+string ReverseShellEventInfo::GetContainerNetSubStatus() const
+{
+    return m_containerNetSubStatus;
+}
+
+void ReverseShellEventInfo::SetContainerNetSubStatus(const string& _containerNetSubStatus)
+{
+    m_containerNetSubStatus = _containerNetSubStatus;
+    m_containerNetSubStatusHasBeenSet = true;
+}
+
+bool ReverseShellEventInfo::ContainerNetSubStatusHasBeenSet() const
+{
+    return m_containerNetSubStatusHasBeenSet;
+}
+
+string ReverseShellEventInfo::GetContainerIsolateOperationSrc() const
+{
+    return m_containerIsolateOperationSrc;
+}
+
+void ReverseShellEventInfo::SetContainerIsolateOperationSrc(const string& _containerIsolateOperationSrc)
+{
+    m_containerIsolateOperationSrc = _containerIsolateOperationSrc;
+    m_containerIsolateOperationSrcHasBeenSet = true;
+}
+
+bool ReverseShellEventInfo::ContainerIsolateOperationSrcHasBeenSet() const
+{
+    return m_containerIsolateOperationSrcHasBeenSet;
 }
 

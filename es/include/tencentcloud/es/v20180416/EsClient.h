@@ -23,10 +23,18 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/es/v20180416/model/CreateIndexRequest.h>
+#include <tencentcloud/es/v20180416/model/CreateIndexResponse.h>
 #include <tencentcloud/es/v20180416/model/CreateInstanceRequest.h>
 #include <tencentcloud/es/v20180416/model/CreateInstanceResponse.h>
+#include <tencentcloud/es/v20180416/model/DeleteIndexRequest.h>
+#include <tencentcloud/es/v20180416/model/DeleteIndexResponse.h>
 #include <tencentcloud/es/v20180416/model/DeleteInstanceRequest.h>
 #include <tencentcloud/es/v20180416/model/DeleteInstanceResponse.h>
+#include <tencentcloud/es/v20180416/model/DescribeIndexListRequest.h>
+#include <tencentcloud/es/v20180416/model/DescribeIndexListResponse.h>
+#include <tencentcloud/es/v20180416/model/DescribeIndexMetaRequest.h>
+#include <tencentcloud/es/v20180416/model/DescribeIndexMetaResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeInstanceLogsRequest.h>
 #include <tencentcloud/es/v20180416/model/DescribeInstanceLogsResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeInstanceOperationsRequest.h>
@@ -49,6 +57,8 @@
 #include <tencentcloud/es/v20180416/model/UpdateDiagnoseSettingsResponse.h>
 #include <tencentcloud/es/v20180416/model/UpdateDictionariesRequest.h>
 #include <tencentcloud/es/v20180416/model/UpdateDictionariesResponse.h>
+#include <tencentcloud/es/v20180416/model/UpdateIndexRequest.h>
+#include <tencentcloud/es/v20180416/model/UpdateIndexResponse.h>
 #include <tencentcloud/es/v20180416/model/UpdateInstanceRequest.h>
 #include <tencentcloud/es/v20180416/model/UpdateInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/UpdateJdkRequest.h>
@@ -75,12 +85,24 @@ namespace TencentCloud
                 EsClient(const Credential &credential, const std::string &region);
                 EsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CreateIndexResponse> CreateIndexOutcome;
+                typedef std::future<CreateIndexOutcome> CreateIndexOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::CreateIndexRequest&, CreateIndexOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIndexAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateInstanceResponse> CreateInstanceOutcome;
                 typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::CreateInstanceRequest&, CreateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteIndexResponse> DeleteIndexOutcome;
+                typedef std::future<DeleteIndexOutcome> DeleteIndexOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DeleteIndexRequest&, DeleteIndexOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIndexAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteInstanceResponse> DeleteInstanceOutcome;
                 typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DeleteInstanceRequest&, DeleteInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIndexListResponse> DescribeIndexListOutcome;
+                typedef std::future<DescribeIndexListOutcome> DescribeIndexListOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DescribeIndexListRequest&, DescribeIndexListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIndexListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIndexMetaResponse> DescribeIndexMetaOutcome;
+                typedef std::future<DescribeIndexMetaOutcome> DescribeIndexMetaOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DescribeIndexMetaRequest&, DescribeIndexMetaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIndexMetaAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceLogsResponse> DescribeInstanceLogsOutcome;
                 typedef std::future<DescribeInstanceLogsOutcome> DescribeInstanceLogsOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DescribeInstanceLogsRequest&, DescribeInstanceLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceLogsAsyncHandler;
@@ -114,6 +136,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateDictionariesResponse> UpdateDictionariesOutcome;
                 typedef std::future<UpdateDictionariesOutcome> UpdateDictionariesOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::UpdateDictionariesRequest&, UpdateDictionariesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDictionariesAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateIndexResponse> UpdateIndexOutcome;
+                typedef std::future<UpdateIndexOutcome> UpdateIndexOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::UpdateIndexRequest&, UpdateIndexOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateIndexAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateInstanceResponse> UpdateInstanceOutcome;
                 typedef std::future<UpdateInstanceOutcome> UpdateInstanceOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::UpdateInstanceRequest&, UpdateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInstanceAsyncHandler;
@@ -136,6 +161,15 @@ namespace TencentCloud
 
 
                 /**
+                 *创建索引
+                 * @param req CreateIndexRequest
+                 * @return CreateIndexOutcome
+                 */
+                CreateIndexOutcome CreateIndex(const Model::CreateIndexRequest &request);
+                void CreateIndexAsync(const Model::CreateIndexRequest& request, const CreateIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateIndexOutcomeCallable CreateIndexCallable(const Model::CreateIndexRequest& request);
+
+                /**
                  *创建指定规格的ES集群实例
                  * @param req CreateInstanceRequest
                  * @return CreateInstanceOutcome
@@ -145,6 +179,15 @@ namespace TencentCloud
                 CreateInstanceOutcomeCallable CreateInstanceCallable(const Model::CreateInstanceRequest& request);
 
                 /**
+                 *删除索引
+                 * @param req DeleteIndexRequest
+                 * @return DeleteIndexOutcome
+                 */
+                DeleteIndexOutcome DeleteIndex(const Model::DeleteIndexRequest &request);
+                void DeleteIndexAsync(const Model::DeleteIndexRequest& request, const DeleteIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteIndexOutcomeCallable DeleteIndexCallable(const Model::DeleteIndexRequest& request);
+
+                /**
                  *销毁集群实例 
                  * @param req DeleteInstanceRequest
                  * @return DeleteInstanceOutcome
@@ -152,6 +195,24 @@ namespace TencentCloud
                 DeleteInstanceOutcome DeleteInstance(const Model::DeleteInstanceRequest &request);
                 void DeleteInstanceAsync(const Model::DeleteInstanceRequest& request, const DeleteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteInstanceOutcomeCallable DeleteInstanceCallable(const Model::DeleteInstanceRequest& request);
+
+                /**
+                 *获取索引列表
+                 * @param req DescribeIndexListRequest
+                 * @return DescribeIndexListOutcome
+                 */
+                DescribeIndexListOutcome DescribeIndexList(const Model::DescribeIndexListRequest &request);
+                void DescribeIndexListAsync(const Model::DescribeIndexListRequest& request, const DescribeIndexListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIndexListOutcomeCallable DescribeIndexListCallable(const Model::DescribeIndexListRequest& request);
+
+                /**
+                 *获取索引元数据
+                 * @param req DescribeIndexMetaRequest
+                 * @return DescribeIndexMetaOutcome
+                 */
+                DescribeIndexMetaOutcome DescribeIndexMeta(const Model::DescribeIndexMetaRequest &request);
+                void DescribeIndexMetaAsync(const Model::DescribeIndexMetaRequest& request, const DescribeIndexMetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIndexMetaOutcomeCallable DescribeIndexMetaCallable(const Model::DescribeIndexMetaRequest& request);
 
                 /**
                  *查询用户该地域下符合条件的ES集群的日志
@@ -251,6 +312,15 @@ namespace TencentCloud
                 UpdateDictionariesOutcome UpdateDictionaries(const Model::UpdateDictionariesRequest &request);
                 void UpdateDictionariesAsync(const Model::UpdateDictionariesRequest& request, const UpdateDictionariesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateDictionariesOutcomeCallable UpdateDictionariesCallable(const Model::UpdateDictionariesRequest& request);
+
+                /**
+                 *更新索引
+                 * @param req UpdateIndexRequest
+                 * @return UpdateIndexOutcome
+                 */
+                UpdateIndexOutcome UpdateIndex(const Model::UpdateIndexRequest &request);
+                void UpdateIndexAsync(const Model::UpdateIndexRequest& request, const UpdateIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateIndexOutcomeCallable UpdateIndexCallable(const Model::UpdateIndexRequest& request);
 
                 /**
                  *对集群进行节点规格变更，修改实例名称，修改配置，重置密码， 添加Kibana黑白名单等操作。参数中InstanceId为必传参数，ForceRestart为选填参数，剩余参数传递组合及含义如下：

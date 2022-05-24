@@ -100,6 +100,50 @@ namespace TencentCloud
                      */
                     bool LatitudeHasBeenSet() const;
 
+                    /**
+                     * 获取位置点的定位类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LocationType 位置点的定位类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLocationType() const;
+
+                    /**
+                     * 设置位置点的定位类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LocationType 位置点的定位类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLocationType(const std::string& _locationType);
+
+                    /**
+                     * 判断参数 LocationType 是否已赋值
+                     * @return LocationType 是否已赋值
+                     */
+                    bool LocationTypeHasBeenSet() const;
+
+                    /**
+                     * 获取位置点的精度预估，单位为米
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Accuracy 位置点的精度预估，单位为米
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetAccuracy() const;
+
+                    /**
+                     * 设置位置点的精度预估，单位为米
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Accuracy 位置点的精度预估，单位为米
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAccuracy(const double& _accuracy);
+
+                    /**
+                     * 判断参数 Accuracy 是否已赋值
+                     * @return Accuracy 是否已赋值
+                     */
+                    bool AccuracyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +163,20 @@ namespace TencentCloud
                      */
                     double m_latitude;
                     bool m_latitudeHasBeenSet;
+
+                    /**
+                     * 位置点的定位类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_locationType;
+                    bool m_locationTypeHasBeenSet;
+
+                    /**
+                     * 位置点的精度预估，单位为米
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_accuracy;
+                    bool m_accuracyHasBeenSet;
 
                 };
             }

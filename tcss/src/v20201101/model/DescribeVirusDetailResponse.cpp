@@ -66,7 +66,10 @@ DescribeVirusDetailResponse::DescribeVirusDetailResponse() :
     m_ancestorProcessUserGroupHasBeenSet(false),
     m_ancestorProcessPathHasBeenSet(false),
     m_ancestorProcessParamHasBeenSet(false),
-    m_operationTimeHasBeenSet(false)
+    m_operationTimeHasBeenSet(false),
+    m_containerNetStatusHasBeenSet(false),
+    m_containerNetSubStatusHasBeenSet(false),
+    m_containerIsolateOperationSrcHasBeenSet(false)
 {
 }
 
@@ -537,6 +540,36 @@ CoreInternalOutcome DescribeVirusDetailResponse::Deserialize(const string &paylo
         m_operationTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ContainerNetStatus") && !rsp["ContainerNetStatus"].IsNull())
+    {
+        if (!rsp["ContainerNetStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContainerNetStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerNetStatus = string(rsp["ContainerNetStatus"].GetString());
+        m_containerNetStatusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ContainerNetSubStatus") && !rsp["ContainerNetSubStatus"].IsNull())
+    {
+        if (!rsp["ContainerNetSubStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContainerNetSubStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerNetSubStatus = string(rsp["ContainerNetSubStatus"].GetString());
+        m_containerNetSubStatusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ContainerIsolateOperationSrc") && !rsp["ContainerIsolateOperationSrc"].IsNull())
+    {
+        if (!rsp["ContainerIsolateOperationSrc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContainerIsolateOperationSrc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerIsolateOperationSrc = string(rsp["ContainerIsolateOperationSrc"].GetString());
+        m_containerIsolateOperationSrcHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -894,6 +927,30 @@ string DescribeVirusDetailResponse::ToJsonString() const
         string key = "OperationTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_operationTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containerNetStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerNetStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerNetStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containerNetSubStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerNetSubStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerNetSubStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containerIsolateOperationSrcHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerIsolateOperationSrc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerIsolateOperationSrc.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1336,6 +1393,36 @@ string DescribeVirusDetailResponse::GetOperationTime() const
 bool DescribeVirusDetailResponse::OperationTimeHasBeenSet() const
 {
     return m_operationTimeHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetContainerNetStatus() const
+{
+    return m_containerNetStatus;
+}
+
+bool DescribeVirusDetailResponse::ContainerNetStatusHasBeenSet() const
+{
+    return m_containerNetStatusHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetContainerNetSubStatus() const
+{
+    return m_containerNetSubStatus;
+}
+
+bool DescribeVirusDetailResponse::ContainerNetSubStatusHasBeenSet() const
+{
+    return m_containerNetSubStatusHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetContainerIsolateOperationSrc() const
+{
+    return m_containerIsolateOperationSrc;
+}
+
+bool DescribeVirusDetailResponse::ContainerIsolateOperationSrcHasBeenSet() const
+{
+    return m_containerIsolateOperationSrcHasBeenSet;
 }
 
 

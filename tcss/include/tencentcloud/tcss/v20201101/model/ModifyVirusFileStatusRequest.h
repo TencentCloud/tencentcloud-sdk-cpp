@@ -64,15 +64,19 @@ namespace TencentCloud
                      * 获取标记事件的状态，   
     EVENT_DEALED:事件处理
     EVENT_INGNORE"：事件忽略
-     EVENT_DEL:事件删除
-     EVENT_ADD_WHITE:事件加白
-     EVENT_PENDING: 事件待处理
+    EVENT_DEL:事件删除
+    EVENT_ADD_WHITE:事件加白
+    EVENT_PENDING: 事件待处理
+	EVENT_ISOLATE_CONTAINER: 隔离容器
+	EVENT_RESOTRE_CONTAINER: 恢复容器
                      * @return Status 标记事件的状态，   
     EVENT_DEALED:事件处理
     EVENT_INGNORE"：事件忽略
-     EVENT_DEL:事件删除
-     EVENT_ADD_WHITE:事件加白
-     EVENT_PENDING: 事件待处理
+    EVENT_DEL:事件删除
+    EVENT_ADD_WHITE:事件加白
+    EVENT_PENDING: 事件待处理
+	EVENT_ISOLATE_CONTAINER: 隔离容器
+	EVENT_RESOTRE_CONTAINER: 恢复容器
                      */
                     std::string GetStatus() const;
 
@@ -80,15 +84,19 @@ namespace TencentCloud
                      * 设置标记事件的状态，   
     EVENT_DEALED:事件处理
     EVENT_INGNORE"：事件忽略
-     EVENT_DEL:事件删除
-     EVENT_ADD_WHITE:事件加白
-     EVENT_PENDING: 事件待处理
+    EVENT_DEL:事件删除
+    EVENT_ADD_WHITE:事件加白
+    EVENT_PENDING: 事件待处理
+	EVENT_ISOLATE_CONTAINER: 隔离容器
+	EVENT_RESOTRE_CONTAINER: 恢复容器
                      * @param Status 标记事件的状态，   
     EVENT_DEALED:事件处理
     EVENT_INGNORE"：事件忽略
-     EVENT_DEL:事件删除
-     EVENT_ADD_WHITE:事件加白
-     EVENT_PENDING: 事件待处理
+    EVENT_DEL:事件删除
+    EVENT_ADD_WHITE:事件加白
+    EVENT_PENDING: 事件待处理
+	EVENT_ISOLATE_CONTAINER: 隔离容器
+	EVENT_RESOTRE_CONTAINER: 恢复容器
                      */
                     void SetStatus(const std::string& _status);
 
@@ -116,6 +124,24 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取是否后续自动隔离相同MD5文件
+                     * @return AutoIsolate 是否后续自动隔离相同MD5文件
+                     */
+                    bool GetAutoIsolate() const;
+
+                    /**
+                     * 设置是否后续自动隔离相同MD5文件
+                     * @param AutoIsolate 是否后续自动隔离相同MD5文件
+                     */
+                    void SetAutoIsolate(const bool& _autoIsolate);
+
+                    /**
+                     * 判断参数 AutoIsolate 是否已赋值
+                     * @return AutoIsolate 是否已赋值
+                     */
+                    bool AutoIsolateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,9 +154,11 @@ namespace TencentCloud
                      * 标记事件的状态，   
     EVENT_DEALED:事件处理
     EVENT_INGNORE"：事件忽略
-     EVENT_DEL:事件删除
-     EVENT_ADD_WHITE:事件加白
-     EVENT_PENDING: 事件待处理
+    EVENT_DEL:事件删除
+    EVENT_ADD_WHITE:事件加白
+    EVENT_PENDING: 事件待处理
+	EVENT_ISOLATE_CONTAINER: 隔离容器
+	EVENT_RESOTRE_CONTAINER: 恢复容器
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -140,6 +168,12 @@ namespace TencentCloud
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 是否后续自动隔离相同MD5文件
+                     */
+                    bool m_autoIsolate;
+                    bool m_autoIsolateHasBeenSet;
 
                 };
             }

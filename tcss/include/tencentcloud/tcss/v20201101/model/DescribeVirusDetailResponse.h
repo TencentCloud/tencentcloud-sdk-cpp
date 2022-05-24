@@ -673,6 +673,48 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
                      */
                     bool OperationTimeHasBeenSet() const;
 
+                    /**
+                     * 获取容器隔离状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ContainerNetStatus 容器隔离状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetContainerNetStatus() const;
+
+                    /**
+                     * 判断参数 ContainerNetStatus 是否已赋值
+                     * @return ContainerNetStatus 是否已赋值
+                     */
+                    bool ContainerNetStatusHasBeenSet() const;
+
+                    /**
+                     * 获取容器隔离子状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ContainerNetSubStatus 容器隔离子状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetContainerNetSubStatus() const;
+
+                    /**
+                     * 判断参数 ContainerNetSubStatus 是否已赋值
+                     * @return ContainerNetSubStatus 是否已赋值
+                     */
+                    bool ContainerNetSubStatusHasBeenSet() const;
+
+                    /**
+                     * 获取容器隔离操作来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ContainerIsolateOperationSrc 容器隔离操作来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetContainerIsolateOperationSrc() const;
+
+                    /**
+                     * 判断参数 ContainerIsolateOperationSrc 是否已赋值
+                     * @return ContainerIsolateOperationSrc 是否已赋值
+                     */
+                    bool ContainerIsolateOperationSrcHasBeenSet() const;
+
                 private:
 
                     /**
@@ -989,6 +1031,27 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
                      */
                     std::string m_operationTime;
                     bool m_operationTimeHasBeenSet;
+
+                    /**
+                     * 容器隔离状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_containerNetStatus;
+                    bool m_containerNetStatusHasBeenSet;
+
+                    /**
+                     * 容器隔离子状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_containerNetSubStatus;
+                    bool m_containerNetSubStatusHasBeenSet;
+
+                    /**
+                     * 容器隔离操作来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_containerIsolateOperationSrc;
+                    bool m_containerIsolateOperationSrcHasBeenSet;
 
                 };
             }

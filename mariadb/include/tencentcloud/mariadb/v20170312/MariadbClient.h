@@ -69,6 +69,8 @@
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBResourceUsageResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBResourceUsageDetailsRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBResourceUsageDetailsResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/DescribeDBSecurityGroupsRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/DescribeDBSecurityGroupsResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBSlowLogsRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBSlowLogsResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDatabaseObjectsRequest.h>
@@ -87,6 +89,8 @@
 #include <tencentcloud/mariadb/v20170312/model/DescribeInstanceNodeInfoResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeLogFileRetentionPeriodRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeLogFileRetentionPeriodResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/DescribeOrdersRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/DescribeOrdersResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribePriceRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribePriceResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeProjectSecurityGroupsRequest.h>
@@ -230,6 +234,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBResourceUsageDetailsResponse> DescribeDBResourceUsageDetailsOutcome;
                 typedef std::future<DescribeDBResourceUsageDetailsOutcome> DescribeDBResourceUsageDetailsOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeDBResourceUsageDetailsRequest&, DescribeDBResourceUsageDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBResourceUsageDetailsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBSecurityGroupsResponse> DescribeDBSecurityGroupsOutcome;
+                typedef std::future<DescribeDBSecurityGroupsOutcome> DescribeDBSecurityGroupsOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::DescribeDBSecurityGroupsRequest&, DescribeDBSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSecurityGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBSlowLogsResponse> DescribeDBSlowLogsOutcome;
                 typedef std::future<DescribeDBSlowLogsOutcome> DescribeDBSlowLogsOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeDBSlowLogsRequest&, DescribeDBSlowLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSlowLogsAsyncHandler;
@@ -257,6 +264,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLogFileRetentionPeriodResponse> DescribeLogFileRetentionPeriodOutcome;
                 typedef std::future<DescribeLogFileRetentionPeriodOutcome> DescribeLogFileRetentionPeriodOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeLogFileRetentionPeriodRequest&, DescribeLogFileRetentionPeriodOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogFileRetentionPeriodAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOrdersResponse> DescribeOrdersOutcome;
+                typedef std::future<DescribeOrdersOutcome> DescribeOrdersOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::DescribeOrdersRequest&, DescribeOrdersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrdersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePriceResponse> DescribePriceOutcome;
                 typedef std::future<DescribePriceOutcome> DescribePriceOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribePriceRequest&, DescribePriceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePriceAsyncHandler;
@@ -561,6 +571,15 @@ namespace TencentCloud
                 DescribeDBResourceUsageDetailsOutcomeCallable DescribeDBResourceUsageDetailsCallable(const Model::DescribeDBResourceUsageDetailsRequest& request);
 
                 /**
+                 *本接口（DescribeDBSecurityGroups）用于查询实例安全组信息
+                 * @param req DescribeDBSecurityGroupsRequest
+                 * @return DescribeDBSecurityGroupsOutcome
+                 */
+                DescribeDBSecurityGroupsOutcome DescribeDBSecurityGroups(const Model::DescribeDBSecurityGroupsRequest &request);
+                void DescribeDBSecurityGroupsAsync(const Model::DescribeDBSecurityGroupsRequest& request, const DescribeDBSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBSecurityGroupsOutcomeCallable DescribeDBSecurityGroupsCallable(const Model::DescribeDBSecurityGroupsRequest& request);
+
+                /**
                  *本接口(DescribeDBSlowLogs)用于查询慢查询日志列表。
                  * @param req DescribeDBSlowLogsRequest
                  * @return DescribeDBSlowLogsOutcome
@@ -640,6 +659,15 @@ namespace TencentCloud
                 DescribeLogFileRetentionPeriodOutcome DescribeLogFileRetentionPeriod(const Model::DescribeLogFileRetentionPeriodRequest &request);
                 void DescribeLogFileRetentionPeriodAsync(const Model::DescribeLogFileRetentionPeriodRequest& request, const DescribeLogFileRetentionPeriodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLogFileRetentionPeriodOutcomeCallable DescribeLogFileRetentionPeriodCallable(const Model::DescribeLogFileRetentionPeriodRequest& request);
+
+                /**
+                 *本接口（DescribeOrders）用于查询云数据库订单信息。传入订单ID来查询订单关联的云数据库实例，和对应的任务流程ID。
+                 * @param req DescribeOrdersRequest
+                 * @return DescribeOrdersOutcome
+                 */
+                DescribeOrdersOutcome DescribeOrders(const Model::DescribeOrdersRequest &request);
+                void DescribeOrdersAsync(const Model::DescribeOrdersRequest& request, const DescribeOrdersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOrdersOutcomeCallable DescribeOrdersCallable(const Model::DescribeOrdersRequest& request);
 
                 /**
                  *本接口（DescribePrice）用于在购买实例前，查询实例的价格。

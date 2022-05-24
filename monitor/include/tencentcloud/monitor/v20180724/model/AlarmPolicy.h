@@ -768,6 +768,28 @@ namespace TencentCloud
                      */
                     bool OneClickStatusHasBeenSet() const;
 
+                    /**
+                     * 获取高级指标数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AdvancedMetricNumber 高级指标数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetAdvancedMetricNumber() const;
+
+                    /**
+                     * 设置高级指标数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AdvancedMetricNumber 高级指标数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAdvancedMetricNumber(const int64_t& _advancedMetricNumber);
+
+                    /**
+                     * 判断参数 AdvancedMetricNumber 是否已赋值
+                     * @return AdvancedMetricNumber 是否已赋值
+                     */
+                    bool AdvancedMetricNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -996,6 +1018,13 @@ namespace TencentCloud
                      */
                     int64_t m_oneClickStatus;
                     bool m_oneClickStatusHasBeenSet;
+
+                    /**
+                     * 高级指标数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_advancedMetricNumber;
+                    bool m_advancedMetricNumberHasBeenSet;
 
                 };
             }

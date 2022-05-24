@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/chdfs/v20201112/model/Tag.h>
 
 
 namespace TencentCloud
@@ -204,6 +205,24 @@ namespace TencentCloud
                      */
                     bool RangerServiceAddressesHasBeenSet() const;
 
+                    /**
+                     * 获取多个资源标签，可以为空数组
+                     * @return Tags 多个资源标签，可以为空数组
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置多个资源标签，可以为空数组
+                     * @param Tags 多个资源标签，可以为空数组
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +278,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_rangerServiceAddresses;
                     bool m_rangerServiceAddressesHasBeenSet;
+
+                    /**
+                     * 多个资源标签，可以为空数组
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

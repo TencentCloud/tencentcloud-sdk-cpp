@@ -36,7 +36,11 @@ ContainerInfo::ContainerInfo() :
     m_hostIPHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_hostNameHasBeenSet(false),
-    m_publicIpHasBeenSet(false)
+    m_publicIpHasBeenSet(false),
+    m_netStatusHasBeenSet(false),
+    m_netSubStatusHasBeenSet(false),
+    m_isolateSourceHasBeenSet(false),
+    m_isolateTimeHasBeenSet(false)
 {
 }
 
@@ -205,6 +209,46 @@ CoreInternalOutcome ContainerInfo::Deserialize(const rapidjson::Value &value)
         m_publicIpHasBeenSet = true;
     }
 
+    if (value.HasMember("NetStatus") && !value["NetStatus"].IsNull())
+    {
+        if (!value["NetStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContainerInfo.NetStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_netStatus = string(value["NetStatus"].GetString());
+        m_netStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("NetSubStatus") && !value["NetSubStatus"].IsNull())
+    {
+        if (!value["NetSubStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContainerInfo.NetSubStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_netSubStatus = string(value["NetSubStatus"].GetString());
+        m_netSubStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsolateSource") && !value["IsolateSource"].IsNull())
+    {
+        if (!value["IsolateSource"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContainerInfo.IsolateSource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isolateSource = string(value["IsolateSource"].GetString());
+        m_isolateSourceHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsolateTime") && !value["IsolateTime"].IsNull())
+    {
+        if (!value["IsolateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContainerInfo.IsolateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isolateTime = string(value["IsolateTime"].GetString());
+        m_isolateTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +382,38 @@ void ContainerInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "PublicIp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_publicIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_netStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_netStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_netSubStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetSubStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_netSubStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isolateSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolateSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isolateSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isolateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isolateTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -597,5 +673,69 @@ void ContainerInfo::SetPublicIp(const string& _publicIp)
 bool ContainerInfo::PublicIpHasBeenSet() const
 {
     return m_publicIpHasBeenSet;
+}
+
+string ContainerInfo::GetNetStatus() const
+{
+    return m_netStatus;
+}
+
+void ContainerInfo::SetNetStatus(const string& _netStatus)
+{
+    m_netStatus = _netStatus;
+    m_netStatusHasBeenSet = true;
+}
+
+bool ContainerInfo::NetStatusHasBeenSet() const
+{
+    return m_netStatusHasBeenSet;
+}
+
+string ContainerInfo::GetNetSubStatus() const
+{
+    return m_netSubStatus;
+}
+
+void ContainerInfo::SetNetSubStatus(const string& _netSubStatus)
+{
+    m_netSubStatus = _netSubStatus;
+    m_netSubStatusHasBeenSet = true;
+}
+
+bool ContainerInfo::NetSubStatusHasBeenSet() const
+{
+    return m_netSubStatusHasBeenSet;
+}
+
+string ContainerInfo::GetIsolateSource() const
+{
+    return m_isolateSource;
+}
+
+void ContainerInfo::SetIsolateSource(const string& _isolateSource)
+{
+    m_isolateSource = _isolateSource;
+    m_isolateSourceHasBeenSet = true;
+}
+
+bool ContainerInfo::IsolateSourceHasBeenSet() const
+{
+    return m_isolateSourceHasBeenSet;
+}
+
+string ContainerInfo::GetIsolateTime() const
+{
+    return m_isolateTime;
+}
+
+void ContainerInfo::SetIsolateTime(const string& _isolateTime)
+{
+    m_isolateTime = _isolateTime;
+    m_isolateTimeHasBeenSet = true;
+}
+
+bool ContainerInfo::IsolateTimeHasBeenSet() const
+{
+    return m_isolateTimeHasBeenSet;
 }
 

@@ -23,7 +23,9 @@ using namespace std;
 PositionItem::PositionItem() :
     m_createTimeHasBeenSet(false),
     m_longitudeHasBeenSet(false),
-    m_latitudeHasBeenSet(false)
+    m_latitudeHasBeenSet(false),
+    m_locationTypeHasBeenSet(false),
+    m_accuracyHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,26 @@ CoreInternalOutcome PositionItem::Deserialize(const rapidjson::Value &value)
         m_latitudeHasBeenSet = true;
     }
 
+    if (value.HasMember("LocationType") && !value["LocationType"].IsNull())
+    {
+        if (!value["LocationType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PositionItem.LocationType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_locationType = string(value["LocationType"].GetString());
+        m_locationTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Accuracy") && !value["Accuracy"].IsNull())
+    {
+        if (!value["Accuracy"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `PositionItem.Accuracy` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_accuracy = value["Accuracy"].GetDouble();
+        m_accuracyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +113,22 @@ void PositionItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Latitude";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_latitude, allocator);
+    }
+
+    if (m_locationTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LocationType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_locationType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accuracyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Accuracy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_accuracy, allocator);
     }
 
 }
@@ -142,5 +180,37 @@ void PositionItem::SetLatitude(const double& _latitude)
 bool PositionItem::LatitudeHasBeenSet() const
 {
     return m_latitudeHasBeenSet;
+}
+
+string PositionItem::GetLocationType() const
+{
+    return m_locationType;
+}
+
+void PositionItem::SetLocationType(const string& _locationType)
+{
+    m_locationType = _locationType;
+    m_locationTypeHasBeenSet = true;
+}
+
+bool PositionItem::LocationTypeHasBeenSet() const
+{
+    return m_locationTypeHasBeenSet;
+}
+
+double PositionItem::GetAccuracy() const
+{
+    return m_accuracy;
+}
+
+void PositionItem::SetAccuracy(const double& _accuracy)
+{
+    m_accuracy = _accuracy;
+    m_accuracyHasBeenSet = true;
+}
+
+bool PositionItem::AccuracyHasBeenSet() const
+{
+    return m_accuracyHasBeenSet;
 }
 
