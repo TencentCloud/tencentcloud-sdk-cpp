@@ -24,14 +24,14 @@ using namespace std;
 
 CreateAnimatedGraphicsTemplateRequest::CreateAnimatedGraphicsTemplateRequest() :
     m_fpsHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_widthHasBeenSet(false),
     m_heightHasBeenSet(false),
     m_resolutionAdaptiveHasBeenSet(false),
     m_formatHasBeenSet(false),
     m_qualityHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_commentHasBeenSet(false)
 {
 }
 
@@ -48,6 +48,14 @@ string CreateAnimatedGraphicsTemplateRequest::ToJsonString() const
         string key = "Fps";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_fps, allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
     if (m_widthHasBeenSet)
@@ -106,14 +114,6 @@ string CreateAnimatedGraphicsTemplateRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -136,6 +136,22 @@ void CreateAnimatedGraphicsTemplateRequest::SetFps(const uint64_t& _fps)
 bool CreateAnimatedGraphicsTemplateRequest::FpsHasBeenSet() const
 {
     return m_fpsHasBeenSet;
+}
+
+uint64_t CreateAnimatedGraphicsTemplateRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void CreateAnimatedGraphicsTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool CreateAnimatedGraphicsTemplateRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 uint64_t CreateAnimatedGraphicsTemplateRequest::GetWidth() const
@@ -248,22 +264,6 @@ void CreateAnimatedGraphicsTemplateRequest::SetComment(const string& _comment)
 bool CreateAnimatedGraphicsTemplateRequest::CommentHasBeenSet() const
 {
     return m_commentHasBeenSet;
-}
-
-uint64_t CreateAnimatedGraphicsTemplateRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void CreateAnimatedGraphicsTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool CreateAnimatedGraphicsTemplateRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

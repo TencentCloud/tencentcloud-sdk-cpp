@@ -24,12 +24,12 @@ using namespace std;
 
 ModifyPersonSampleRequest::ModifyPersonSampleRequest() :
     m_personIdHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_usagesHasBeenSet(false),
     m_faceOperationInfoHasBeenSet(false),
-    m_tagOperationInfoHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_tagOperationInfoHasBeenSet(false)
 {
 }
 
@@ -46,6 +46,14 @@ string ModifyPersonSampleRequest::ToJsonString() const
         string key = "PersonId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_personId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
     if (m_nameHasBeenSet)
@@ -95,14 +103,6 @@ string ModifyPersonSampleRequest::ToJsonString() const
         m_tagOperationInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -125,6 +125,22 @@ void ModifyPersonSampleRequest::SetPersonId(const string& _personId)
 bool ModifyPersonSampleRequest::PersonIdHasBeenSet() const
 {
     return m_personIdHasBeenSet;
+}
+
+uint64_t ModifyPersonSampleRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void ModifyPersonSampleRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool ModifyPersonSampleRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 string ModifyPersonSampleRequest::GetName() const
@@ -205,22 +221,6 @@ void ModifyPersonSampleRequest::SetTagOperationInfo(const AiSampleTagOperation& 
 bool ModifyPersonSampleRequest::TagOperationInfoHasBeenSet() const
 {
     return m_tagOperationInfoHasBeenSet;
-}
-
-uint64_t ModifyPersonSampleRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void ModifyPersonSampleRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool ModifyPersonSampleRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

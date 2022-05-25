@@ -24,7 +24,8 @@ Event::Event() :
     m_sourceHasBeenSet(false),
     m_dataHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_subjectHasBeenSet(false)
+    m_subjectHasBeenSet(false),
+    m_timeHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome Event::Deserialize(const rapidjson::Value &value)
         m_subjectHasBeenSet = true;
     }
 
+    if (value.HasMember("Time") && !value["Time"].IsNull())
+    {
+        if (!value["Time"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Event.Time` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_time = value["Time"].GetInt64();
+        m_timeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void Event::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "Subject";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subject.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Time";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_time, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void Event::SetSubject(const string& _subject)
 bool Event::SubjectHasBeenSet() const
 {
     return m_subjectHasBeenSet;
+}
+
+int64_t Event::GetTime() const
+{
+    return m_time;
+}
+
+void Event::SetTime(const int64_t& _time)
+{
+    m_time = _time;
+    m_timeHasBeenSet = true;
+}
+
+bool Event::TimeHasBeenSet() const
+{
+    return m_timeHasBeenSet;
 }
 
