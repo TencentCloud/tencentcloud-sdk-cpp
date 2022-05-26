@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认为 20，最大值为 100
-                     * @return Limit 返回数量，默认为 20，最大值为 100
+                     * 获取返回数量，默认为 20，取值范围为(0,100]
+                     * @return Limit 返回数量，默认为 20，取值范围为(0,100]
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为 20，最大值为 100
-                     * @param Limit 返回数量，默认为 20，最大值为 100
+                     * 设置返回数量，默认为 20，取值范围为(0,100]
+                     * @param Limit 返回数量，默认为 20，取值范围为(0,100]
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取记录偏移量，默认值为0
-                     * @return Offset 记录偏移量，默认值为0
+                     * 获取记录偏移量，默认值为0，取值范围为[0,INF)
+                     * @return Offset 记录偏移量，默认值为0，取值范围为[0,INF)
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置记录偏移量，默认值为0
-                     * @param Offset 记录偏移量，默认值为0
+                     * 设置记录偏移量，默认值为0，取值范围为[0,INF)
+                     * @param Offset 记录偏移量，默认值为0，取值范围为[0,INF)
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -105,13 +105,13 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 返回数量，默认为 20，最大值为 100
+                     * 返回数量，默认为 20，取值范围为(0,100]
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 记录偏移量，默认值为0
+                     * 记录偏移量，默认值为0，取值范围为[0,INF)
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

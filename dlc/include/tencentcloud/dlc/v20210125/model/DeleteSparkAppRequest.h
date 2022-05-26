@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CYNOSDB_V20190107_MODEL_RESUMESERVERLESSRESPONSE_H_
-#define TENCENTCLOUD_CYNOSDB_V20190107_MODEL_RESUMESERVERLESSRESPONSE_H_
+#ifndef TENCENTCLOUD_DLC_V20210125_MODEL_DELETESPARKAPPREQUEST_H_
+#define TENCENTCLOUD_DLC_V20210125_MODEL_DELETESPARKAPPREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -25,43 +25,48 @@
 
 namespace TencentCloud
 {
-    namespace Cynosdb
+    namespace Dlc
     {
-        namespace V20190107
+        namespace V20210125
         {
             namespace Model
             {
                 /**
-                * ResumeServerless返回参数结构体
+                * DeleteSparkApp请求参数结构体
                 */
-                class ResumeServerlessResponse : public AbstractModel
+                class DeleteSparkAppRequest : public AbstractModel
                 {
                 public:
-                    ResumeServerlessResponse();
-                    ~ResumeServerlessResponse() = default;
-                    CoreInternalOutcome Deserialize(const std::string &payload);
+                    DeleteSparkAppRequest();
+                    ~DeleteSparkAppRequest() = default;
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取异步流程ID
-                     * @return FlowId 异步流程ID
+                     * 获取spark应用名
+                     * @return AppName spark应用名
                      */
-                    int64_t GetFlowId() const;
+                    std::string GetAppName() const;
 
                     /**
-                     * 判断参数 FlowId 是否已赋值
-                     * @return FlowId 是否已赋值
+                     * 设置spark应用名
+                     * @param AppName spark应用名
                      */
-                    bool FlowIdHasBeenSet() const;
+                    void SetAppName(const std::string& _appName);
+
+                    /**
+                     * 判断参数 AppName 是否已赋值
+                     * @return AppName 是否已赋值
+                     */
+                    bool AppNameHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 异步流程ID
+                     * spark应用名
                      */
-                    int64_t m_flowId;
-                    bool m_flowIdHasBeenSet;
+                    std::string m_appName;
+                    bool m_appNameHasBeenSet;
 
                 };
             }
@@ -69,4 +74,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CYNOSDB_V20190107_MODEL_RESUMESERVERLESSRESPONSE_H_
+#endif // !TENCENTCLOUD_DLC_V20210125_MODEL_DELETESPARKAPPREQUEST_H_

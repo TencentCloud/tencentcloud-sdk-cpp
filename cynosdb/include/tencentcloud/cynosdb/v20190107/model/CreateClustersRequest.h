@@ -122,17 +122,17 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库版本，取值范围: 
-<li> MYSQL可选值：5.7 </li>
+<li> MYSQL可选值：5.7，8.0 </li>
                      * @return DbVersion 数据库版本，取值范围: 
-<li> MYSQL可选值：5.7 </li>
+<li> MYSQL可选值：5.7，8.0 </li>
                      */
                     std::string GetDbVersion() const;
 
                     /**
                      * 设置数据库版本，取值范围: 
-<li> MYSQL可选值：5.7 </li>
+<li> MYSQL可选值：5.7，8.0 </li>
                      * @param DbVersion 数据库版本，取值范围: 
-<li> MYSQL可选值：5.7 </li>
+<li> MYSQL可选值：5.7，8.0 </li>
                      */
                     void SetDbVersion(const std::string& _dbVersion);
 
@@ -227,14 +227,14 @@ namespace TencentCloud
                     bool StorageHasBeenSet() const;
 
                     /**
-                     * 获取集群名称
-                     * @return ClusterName 集群名称
+                     * 获取集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（'-','_','.'）
+                     * @return ClusterName 集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（'-','_','.'）
                      */
                     std::string GetClusterName() const;
 
                     /**
-                     * 设置集群名称
-                     * @param ClusterName 集群名称
+                     * 设置集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（'-','_','.'）
+                     * @param ClusterName 集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（'-','_','.'）
                      */
                     void SetClusterName(const std::string& _clusterName);
 
@@ -481,14 +481,14 @@ timeRollback，时间点回档
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取包年包月购买时长单位
-                     * @return TimeUnit 包年包月购买时长单位
+                     * 获取包年包月购买时长单位，['s','d','m','y']
+                     * @return TimeUnit 包年包月购买时长单位，['s','d','m','y']
                      */
                     std::string GetTimeUnit() const;
 
                     /**
-                     * 设置包年包月购买时长单位
-                     * @param TimeUnit 包年包月购买时长单位
+                     * 设置包年包月购买时长单位，['s','d','m','y']
+                     * @param TimeUnit 包年包月购买时长单位，['s','d','m','y']
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
 
@@ -859,7 +859,7 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
 
                     /**
                      * 数据库版本，取值范围: 
-<li> MYSQL可选值：5.7 </li>
+<li> MYSQL可选值：5.7，8.0 </li>
                      */
                     std::string m_dbVersion;
                     bool m_dbVersionHasBeenSet;
@@ -892,7 +892,7 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool m_storageHasBeenSet;
 
                     /**
-                     * 集群名称
+                     * 集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（'-','_','.'）
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
@@ -975,7 +975,7 @@ timeRollback，时间点回档
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * 包年包月购买时长单位
+                     * 包年包月购买时长单位，['s','d','m','y']
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;

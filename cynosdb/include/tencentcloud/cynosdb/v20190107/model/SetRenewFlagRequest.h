@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ResourceIdsHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标志位
-                     * @return AutoRenewFlag 自动续费标志位
+                     * 获取自动续费标志位，续费标记 0:正常续费  1:自动续费 2:到期不续
+                     * @return AutoRenewFlag 自动续费标志位，续费标记 0:正常续费  1:自动续费 2:到期不续
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
-                     * 设置自动续费标志位
-                     * @param AutoRenewFlag 自动续费标志位
+                     * 设置自动续费标志位，续费标记 0:正常续费  1:自动续费 2:到期不续
+                     * @param AutoRenewFlag 自动续费标志位，续费标记 0:正常续费  1:自动续费 2:到期不续
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_resourceIdsHasBeenSet;
 
                     /**
-                     * 自动续费标志位
+                     * 自动续费标志位，续费标记 0:正常续费  1:自动续费 2:到期不续
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;

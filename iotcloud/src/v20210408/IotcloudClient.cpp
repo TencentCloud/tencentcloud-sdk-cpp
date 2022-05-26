@@ -2276,6 +2276,49 @@ IotcloudClient::ListSDKLogOutcomeCallable IotcloudClient::ListSDKLogCallable(con
     return task->get_future();
 }
 
+IotcloudClient::ListTopicRulesOutcome IotcloudClient::ListTopicRules(const ListTopicRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListTopicRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListTopicRulesResponse rsp = ListTopicRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListTopicRulesOutcome(rsp);
+        else
+            return ListTopicRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return ListTopicRulesOutcome(outcome.GetError());
+    }
+}
+
+void IotcloudClient::ListTopicRulesAsync(const ListTopicRulesRequest& request, const ListTopicRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListTopicRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotcloudClient::ListTopicRulesOutcomeCallable IotcloudClient::ListTopicRulesCallable(const ListTopicRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListTopicRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->ListTopicRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotcloudClient::PublishBroadcastMessageOutcome IotcloudClient::PublishBroadcastMessage(const PublishBroadcastMessageRequest &request)
 {
     auto outcome = MakeRequest(request, "PublishBroadcastMessage");

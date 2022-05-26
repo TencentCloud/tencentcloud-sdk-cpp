@@ -78,6 +78,7 @@ set(iotcloud_public_header_model
   include/tencentcloud/iotcloud/v20210408/model/DescribeFirmwareTaskStatisticsResponse.h
   include/tencentcloud/iotcloud/v20210408/model/DescribePushResourceTaskStatisticsRequest.h
   include/tencentcloud/iotcloud/v20210408/model/UpdateDevicesEnableStateRequest.h
+  include/tencentcloud/iotcloud/v20210408/model/ListTopicRulesRequest.h
   include/tencentcloud/iotcloud/v20210408/model/ListSDKLogRequest.h
   include/tencentcloud/iotcloud/v20210408/model/SetProductsForbiddenStatusResponse.h
   include/tencentcloud/iotcloud/v20210408/model/CreateProductResponse.h
@@ -94,6 +95,7 @@ set(iotcloud_public_header_model
   include/tencentcloud/iotcloud/v20210408/model/CreateProductRequest.h
   include/tencentcloud/iotcloud/v20210408/model/DescribeFirmwareTasksRequest.h
   include/tencentcloud/iotcloud/v20210408/model/DisableTopicRuleResponse.h
+  include/tencentcloud/iotcloud/v20210408/model/TopicRuleInfo.h
   include/tencentcloud/iotcloud/v20210408/model/GetAllVersionResponse.h
   include/tencentcloud/iotcloud/v20210408/model/UpdateTopicPolicyResponse.h
   include/tencentcloud/iotcloud/v20210408/model/DescribeProductTaskResponse.h
@@ -139,6 +141,7 @@ set(iotcloud_public_header_model
   include/tencentcloud/iotcloud/v20210408/model/UploadFirmwareResponse.h
   include/tencentcloud/iotcloud/v20210408/model/DeleteTopicRuleRequest.h
   include/tencentcloud/iotcloud/v20210408/model/ReplaceTopicRuleResponse.h
+  include/tencentcloud/iotcloud/v20210408/model/ListTopicRulesResponse.h
   include/tencentcloud/iotcloud/v20210408/model/CancelDeviceFirmwareTaskRequest.h
   include/tencentcloud/iotcloud/v20210408/model/DeleteDeviceResourceRequest.h
   include/tencentcloud/iotcloud/v20210408/model/DescribeDeviceShadowRequest.h
@@ -411,6 +414,7 @@ set(iotcloud_src
   src/v20210408/model/DescribeFirmwareTaskStatisticsResponse.cpp
   src/v20210408/model/DescribePushResourceTaskStatisticsRequest.cpp
   src/v20210408/model/UpdateDevicesEnableStateRequest.cpp
+  src/v20210408/model/ListTopicRulesRequest.cpp
   src/v20210408/model/ListSDKLogRequest.cpp
   src/v20210408/model/SetProductsForbiddenStatusResponse.cpp
   src/v20210408/model/CreateProductResponse.cpp
@@ -427,6 +431,7 @@ set(iotcloud_src
   src/v20210408/model/CreateProductRequest.cpp
   src/v20210408/model/DescribeFirmwareTasksRequest.cpp
   src/v20210408/model/DisableTopicRuleResponse.cpp
+  src/v20210408/model/TopicRuleInfo.cpp
   src/v20210408/model/GetAllVersionResponse.cpp
   src/v20210408/model/UpdateTopicPolicyResponse.cpp
   src/v20210408/model/DescribeProductTaskResponse.cpp
@@ -472,6 +477,7 @@ set(iotcloud_src
   src/v20210408/model/UploadFirmwareResponse.cpp
   src/v20210408/model/DeleteTopicRuleRequest.cpp
   src/v20210408/model/ReplaceTopicRuleResponse.cpp
+  src/v20210408/model/ListTopicRulesResponse.cpp
   src/v20210408/model/CancelDeviceFirmwareTaskRequest.cpp
   src/v20210408/model/DeleteDeviceResourceRequest.cpp
   src/v20210408/model/DescribeDeviceShadowRequest.cpp

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取异步流程Id
-                     * @return FlowId 异步流程Id
+                     * 获取异步流程ID
+                     * @return FlowId 异步流程ID
                      */
                     int64_t GetFlowId() const;
 
@@ -58,7 +58,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 异步流程Id
+                     * 异步流程ID
                      */
                     int64_t m_flowId;
                     bool m_flowIdHasBeenSet;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CYNOSDB_V20190107_MODEL_RESUMESERVERLESSRESPONSE_H_
-#define TENCENTCLOUD_CYNOSDB_V20190107_MODEL_RESUMESERVERLESSRESPONSE_H_
+#ifndef TENCENTCLOUD_DLC_V20210125_MODEL_MODIFYSPARKAPPRESPONSE_H_
+#define TENCENTCLOUD_DLC_V20210125_MODEL_MODIFYSPARKAPPRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,43 +25,25 @@
 
 namespace TencentCloud
 {
-    namespace Cynosdb
+    namespace Dlc
     {
-        namespace V20190107
+        namespace V20210125
         {
             namespace Model
             {
                 /**
-                * ResumeServerless返回参数结构体
+                * ModifySparkApp返回参数结构体
                 */
-                class ResumeServerlessResponse : public AbstractModel
+                class ModifySparkAppResponse : public AbstractModel
                 {
                 public:
-                    ResumeServerlessResponse();
-                    ~ResumeServerlessResponse() = default;
+                    ModifySparkAppResponse();
+                    ~ModifySparkAppResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
-                    /**
-                     * 获取异步流程ID
-                     * @return FlowId 异步流程ID
-                     */
-                    int64_t GetFlowId() const;
-
-                    /**
-                     * 判断参数 FlowId 是否已赋值
-                     * @return FlowId 是否已赋值
-                     */
-                    bool FlowIdHasBeenSet() const;
-
                 private:
-
-                    /**
-                     * 异步流程ID
-                     */
-                    int64_t m_flowId;
-                    bool m_flowIdHasBeenSet;
 
                 };
             }
@@ -69,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CYNOSDB_V20190107_MODEL_RESUMESERVERLESSRESPONSE_H_
+#endif // !TENCENTCLOUD_DLC_V20210125_MODEL_MODIFYSPARKAPPRESPONSE_H_

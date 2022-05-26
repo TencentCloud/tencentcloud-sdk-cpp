@@ -127,6 +127,8 @@
 #include <tencentcloud/iotcloud/v20210408/model/ListLogPayloadResponse.h>
 #include <tencentcloud/iotcloud/v20210408/model/ListSDKLogRequest.h>
 #include <tencentcloud/iotcloud/v20210408/model/ListSDKLogResponse.h>
+#include <tencentcloud/iotcloud/v20210408/model/ListTopicRulesRequest.h>
+#include <tencentcloud/iotcloud/v20210408/model/ListTopicRulesResponse.h>
 #include <tencentcloud/iotcloud/v20210408/model/PublishBroadcastMessageRequest.h>
 #include <tencentcloud/iotcloud/v20210408/model/PublishBroadcastMessageResponse.h>
 #include <tencentcloud/iotcloud/v20210408/model/PublishMessageRequest.h>
@@ -333,6 +335,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListSDKLogResponse> ListSDKLogOutcome;
                 typedef std::future<ListSDKLogOutcome> ListSDKLogOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::ListSDKLogRequest&, ListSDKLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListSDKLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListTopicRulesResponse> ListTopicRulesOutcome;
+                typedef std::future<ListTopicRulesOutcome> ListTopicRulesOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::ListTopicRulesRequest&, ListTopicRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTopicRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::PublishBroadcastMessageResponse> PublishBroadcastMessageOutcome;
                 typedef std::future<PublishBroadcastMessageOutcome> PublishBroadcastMessageOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::PublishBroadcastMessageRequest&, PublishBroadcastMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishBroadcastMessageAsyncHandler;
@@ -857,6 +862,15 @@ namespace TencentCloud
                 ListSDKLogOutcome ListSDKLog(const Model::ListSDKLogRequest &request);
                 void ListSDKLogAsync(const Model::ListSDKLogRequest& request, const ListSDKLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListSDKLogOutcomeCallable ListSDKLogCallable(const Model::ListSDKLogRequest& request);
+
+                /**
+                 *本接口（ListTopicRules）用于分页获取规则列表
+                 * @param req ListTopicRulesRequest
+                 * @return ListTopicRulesOutcome
+                 */
+                ListTopicRulesOutcome ListTopicRules(const Model::ListTopicRulesRequest &request);
+                void ListTopicRulesAsync(const Model::ListTopicRulesRequest& request, const ListTopicRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListTopicRulesOutcomeCallable ListTopicRulesCallable(const Model::ListTopicRulesRequest& request);
 
                 /**
                  *发布广播消息
