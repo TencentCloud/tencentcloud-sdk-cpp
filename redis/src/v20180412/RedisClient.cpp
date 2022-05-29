@@ -3394,6 +3394,92 @@ RedisClient::UpgradeInstanceVersionOutcomeCallable RedisClient::UpgradeInstanceV
     return task->get_future();
 }
 
+RedisClient::UpgradeProxyVersionOutcome RedisClient::UpgradeProxyVersion(const UpgradeProxyVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradeProxyVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradeProxyVersionResponse rsp = UpgradeProxyVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradeProxyVersionOutcome(rsp);
+        else
+            return UpgradeProxyVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradeProxyVersionOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::UpgradeProxyVersionAsync(const UpgradeProxyVersionRequest& request, const UpgradeProxyVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpgradeProxyVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::UpgradeProxyVersionOutcomeCallable RedisClient::UpgradeProxyVersionCallable(const UpgradeProxyVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpgradeProxyVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->UpgradeProxyVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+RedisClient::UpgradeSmallVersionOutcome RedisClient::UpgradeSmallVersion(const UpgradeSmallVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradeSmallVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradeSmallVersionResponse rsp = UpgradeSmallVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradeSmallVersionOutcome(rsp);
+        else
+            return UpgradeSmallVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradeSmallVersionOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::UpgradeSmallVersionAsync(const UpgradeSmallVersionRequest& request, const UpgradeSmallVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpgradeSmallVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::UpgradeSmallVersionOutcomeCallable RedisClient::UpgradeSmallVersionCallable(const UpgradeSmallVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpgradeSmallVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->UpgradeSmallVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RedisClient::UpgradeVersionToMultiAvailabilityZonesOutcome RedisClient::UpgradeVersionToMultiAvailabilityZones(const UpgradeVersionToMultiAvailabilityZonesRequest &request)
 {
     auto outcome = MakeRequest(request, "UpgradeVersionToMultiAvailabilityZones");

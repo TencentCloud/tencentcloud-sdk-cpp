@@ -179,6 +179,10 @@
 #include <tencentcloud/redis/v20180412/model/UpgradeInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/UpgradeInstanceVersionRequest.h>
 #include <tencentcloud/redis/v20180412/model/UpgradeInstanceVersionResponse.h>
+#include <tencentcloud/redis/v20180412/model/UpgradeProxyVersionRequest.h>
+#include <tencentcloud/redis/v20180412/model/UpgradeProxyVersionResponse.h>
+#include <tencentcloud/redis/v20180412/model/UpgradeSmallVersionRequest.h>
+#include <tencentcloud/redis/v20180412/model/UpgradeSmallVersionResponse.h>
 #include <tencentcloud/redis/v20180412/model/UpgradeVersionToMultiAvailabilityZonesRequest.h>
 #include <tencentcloud/redis/v20180412/model/UpgradeVersionToMultiAvailabilityZonesResponse.h>
 
@@ -429,6 +433,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpgradeInstanceVersionResponse> UpgradeInstanceVersionOutcome;
                 typedef std::future<UpgradeInstanceVersionOutcome> UpgradeInstanceVersionOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::UpgradeInstanceVersionRequest&, UpgradeInstanceVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeInstanceVersionAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpgradeProxyVersionResponse> UpgradeProxyVersionOutcome;
+                typedef std::future<UpgradeProxyVersionOutcome> UpgradeProxyVersionOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::UpgradeProxyVersionRequest&, UpgradeProxyVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeProxyVersionAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpgradeSmallVersionResponse> UpgradeSmallVersionOutcome;
+                typedef std::future<UpgradeSmallVersionOutcome> UpgradeSmallVersionOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::UpgradeSmallVersionRequest&, UpgradeSmallVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeSmallVersionAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpgradeVersionToMultiAvailabilityZonesResponse> UpgradeVersionToMultiAvailabilityZonesOutcome;
                 typedef std::future<UpgradeVersionToMultiAvailabilityZonesOutcome> UpgradeVersionToMultiAvailabilityZonesOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::UpgradeVersionToMultiAvailabilityZonesRequest&, UpgradeVersionToMultiAvailabilityZonesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeVersionToMultiAvailabilityZonesAsyncHandler;
@@ -1136,6 +1146,24 @@ namespace TencentCloud
                 UpgradeInstanceVersionOutcome UpgradeInstanceVersion(const Model::UpgradeInstanceVersionRequest &request);
                 void UpgradeInstanceVersionAsync(const Model::UpgradeInstanceVersionRequest& request, const UpgradeInstanceVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpgradeInstanceVersionOutcomeCallable UpgradeInstanceVersionCallable(const Model::UpgradeInstanceVersionRequest& request);
+
+                /**
+                 *实例proxy版本升级
+                 * @param req UpgradeProxyVersionRequest
+                 * @return UpgradeProxyVersionOutcome
+                 */
+                UpgradeProxyVersionOutcome UpgradeProxyVersion(const Model::UpgradeProxyVersionRequest &request);
+                void UpgradeProxyVersionAsync(const Model::UpgradeProxyVersionRequest& request, const UpgradeProxyVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpgradeProxyVersionOutcomeCallable UpgradeProxyVersionCallable(const Model::UpgradeProxyVersionRequest& request);
+
+                /**
+                 *实例小版本升级
+                 * @param req UpgradeSmallVersionRequest
+                 * @return UpgradeSmallVersionOutcome
+                 */
+                UpgradeSmallVersionOutcome UpgradeSmallVersion(const Model::UpgradeSmallVersionRequest &request);
+                void UpgradeSmallVersionAsync(const Model::UpgradeSmallVersionRequest& request, const UpgradeSmallVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpgradeSmallVersionOutcomeCallable UpgradeSmallVersionCallable(const Model::UpgradeSmallVersionRequest& request);
 
                 /**
                  *升级实例支持多AZ

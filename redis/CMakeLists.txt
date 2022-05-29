@@ -19,6 +19,7 @@ set(redis_public_header
   )
 
 set(redis_public_header_model
+  include/tencentcloud/redis/v20180412/model/UpgradeSmallVersionRequest.h
   include/tencentcloud/redis/v20180412/model/ModifyInstanceParamsResponse.h
   include/tencentcloud/redis/v20180412/model/EnableReplicaReadonlyRequest.h
   include/tencentcloud/redis/v20180412/model/RedisBackupSet.h
@@ -98,6 +99,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/DescribeDBSecurityGroupsRequest.h
   include/tencentcloud/redis/v20180412/model/InquiryPriceCreateInstanceResponse.h
   include/tencentcloud/redis/v20180412/model/InstanceSecurityGroupDetail.h
+  include/tencentcloud/redis/v20180412/model/UpgradeProxyVersionResponse.h
   include/tencentcloud/redis/v20180412/model/ResetPasswordRequest.h
   include/tencentcloud/redis/v20180412/model/ModifyInstanceAccountResponse.h
   include/tencentcloud/redis/v20180412/model/DelayDistribution.h
@@ -185,6 +187,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/DestroyPrepaidInstanceResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeCommonDBInstancesResponse.h
   include/tencentcloud/redis/v20180412/model/InquiryPriceCreateInstanceRequest.h
+  include/tencentcloud/redis/v20180412/model/UpgradeSmallVersionResponse.h
   include/tencentcloud/redis/v20180412/model/ModifyInstanceParamsRequest.h
   include/tencentcloud/redis/v20180412/model/BackupDownloadInfo.h
   include/tencentcloud/redis/v20180412/model/BigKeyTypeInfo.h
@@ -215,6 +218,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorSIPRequest.h
   include/tencentcloud/redis/v20180412/model/InstanceClusterShard.h
   include/tencentcloud/redis/v20180412/model/TendisSlowLogDetail.h
+  include/tencentcloud/redis/v20180412/model/UpgradeProxyVersionRequest.h
   include/tencentcloud/redis/v20180412/model/ZoneCapacityConf.h
   include/tencentcloud/redis/v20180412/model/UpgradeInstanceRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceNodeInfoResponse.h
@@ -229,6 +233,7 @@ set(redis_public_header_model
 
 set(redis_src
   src/v20180412/RedisClient.cpp
+  src/v20180412/model/UpgradeSmallVersionRequest.cpp
   src/v20180412/model/ModifyInstanceParamsResponse.cpp
   src/v20180412/model/EnableReplicaReadonlyRequest.cpp
   src/v20180412/model/RedisBackupSet.cpp
@@ -308,6 +313,7 @@ set(redis_src
   src/v20180412/model/DescribeDBSecurityGroupsRequest.cpp
   src/v20180412/model/InquiryPriceCreateInstanceResponse.cpp
   src/v20180412/model/InstanceSecurityGroupDetail.cpp
+  src/v20180412/model/UpgradeProxyVersionResponse.cpp
   src/v20180412/model/ResetPasswordRequest.cpp
   src/v20180412/model/ModifyInstanceAccountResponse.cpp
   src/v20180412/model/DelayDistribution.cpp
@@ -395,6 +401,7 @@ set(redis_src
   src/v20180412/model/DestroyPrepaidInstanceResponse.cpp
   src/v20180412/model/DescribeCommonDBInstancesResponse.cpp
   src/v20180412/model/InquiryPriceCreateInstanceRequest.cpp
+  src/v20180412/model/UpgradeSmallVersionResponse.cpp
   src/v20180412/model/ModifyInstanceParamsRequest.cpp
   src/v20180412/model/BackupDownloadInfo.cpp
   src/v20180412/model/BigKeyTypeInfo.cpp
@@ -425,6 +432,7 @@ set(redis_src
   src/v20180412/model/DescribeInstanceMonitorSIPRequest.cpp
   src/v20180412/model/InstanceClusterShard.cpp
   src/v20180412/model/TendisSlowLogDetail.cpp
+  src/v20180412/model/UpgradeProxyVersionRequest.cpp
   src/v20180412/model/ZoneCapacityConf.cpp
   src/v20180412/model/UpgradeInstanceRequest.cpp
   src/v20180412/model/DescribeInstanceNodeInfoResponse.cpp
