@@ -23,8 +23,8 @@ using namespace TencentCloud::Cbs::V20170312::Model;
 using namespace std;
 
 UnbindAutoSnapshotPolicyRequest::UnbindAutoSnapshotPolicyRequest() :
-    m_diskIdsHasBeenSet(false),
-    m_autoSnapshotPolicyIdHasBeenSet(false)
+    m_autoSnapshotPolicyIdHasBeenSet(false),
+    m_diskIdsHasBeenSet(false)
 {
 }
 
@@ -34,6 +34,14 @@ string UnbindAutoSnapshotPolicyRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_autoSnapshotPolicyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoSnapshotPolicyId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_autoSnapshotPolicyId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_diskIdsHasBeenSet)
     {
@@ -48,14 +56,6 @@ string UnbindAutoSnapshotPolicyRequest::ToJsonString() const
         }
     }
 
-    if (m_autoSnapshotPolicyIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AutoSnapshotPolicyId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_autoSnapshotPolicyId.c_str(), allocator).Move(), allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -63,22 +63,6 @@ string UnbindAutoSnapshotPolicyRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-vector<string> UnbindAutoSnapshotPolicyRequest::GetDiskIds() const
-{
-    return m_diskIds;
-}
-
-void UnbindAutoSnapshotPolicyRequest::SetDiskIds(const vector<string>& _diskIds)
-{
-    m_diskIds = _diskIds;
-    m_diskIdsHasBeenSet = true;
-}
-
-bool UnbindAutoSnapshotPolicyRequest::DiskIdsHasBeenSet() const
-{
-    return m_diskIdsHasBeenSet;
-}
 
 string UnbindAutoSnapshotPolicyRequest::GetAutoSnapshotPolicyId() const
 {
@@ -94,6 +78,22 @@ void UnbindAutoSnapshotPolicyRequest::SetAutoSnapshotPolicyId(const string& _aut
 bool UnbindAutoSnapshotPolicyRequest::AutoSnapshotPolicyIdHasBeenSet() const
 {
     return m_autoSnapshotPolicyIdHasBeenSet;
+}
+
+vector<string> UnbindAutoSnapshotPolicyRequest::GetDiskIds() const
+{
+    return m_diskIds;
+}
+
+void UnbindAutoSnapshotPolicyRequest::SetDiskIds(const vector<string>& _diskIds)
+{
+    m_diskIds = _diskIds;
+    m_diskIdsHasBeenSet = true;
+}
+
+bool UnbindAutoSnapshotPolicyRequest::DiskIdsHasBeenSet() const
+{
+    return m_diskIdsHasBeenSet;
 }
 
 

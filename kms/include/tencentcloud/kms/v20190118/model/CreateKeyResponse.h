@@ -145,6 +145,20 @@ namespace TencentCloud
                      */
                     bool TagMsgHasBeenSet() const;
 
+                    /**
+                     * 获取HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HsmClusterId HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetHsmClusterId() const;
+
+                    /**
+                     * 判断参数 HsmClusterId 是否已赋值
+                     * @return HsmClusterId 是否已赋值
+                     */
+                    bool HsmClusterIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -197,6 +211,13 @@ namespace TencentCloud
                      */
                     std::string m_tagMsg;
                     bool m_tagMsgHasBeenSet;
+
+                    /**
+                     * HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_hsmClusterId;
+                    bool m_hsmClusterIdHasBeenSet;
 
                 };
             }

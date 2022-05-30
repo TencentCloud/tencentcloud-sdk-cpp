@@ -25,7 +25,8 @@ using namespace std;
 ListKeysRequest::ListKeysRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_roleHasBeenSet(false)
+    m_roleHasBeenSet(false),
+    m_hsmClusterIdHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string ListKeysRequest::ToJsonString() const
         string key = "Role";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_role, allocator);
+    }
+
+    if (m_hsmClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HsmClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hsmClusterId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void ListKeysRequest::SetRole(const uint64_t& _role)
 bool ListKeysRequest::RoleHasBeenSet() const
 {
     return m_roleHasBeenSet;
+}
+
+string ListKeysRequest::GetHsmClusterId() const
+{
+    return m_hsmClusterId;
+}
+
+void ListKeysRequest::SetHsmClusterId(const string& _hsmClusterId)
+{
+    m_hsmClusterId = _hsmClusterId;
+    m_hsmClusterIdHasBeenSet = true;
+}
+
+bool ListKeysRequest::HsmClusterIdHasBeenSet() const
+{
+    return m_hsmClusterIdHasBeenSet;
 }
 
 

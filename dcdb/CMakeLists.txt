@@ -33,6 +33,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/ActiveHourDCDBInstanceResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBPriceResponse.h
   include/tencentcloud/dcdb/v20180411/model/AssociateSecurityGroupsRequest.h
+  include/tencentcloud/dcdb/v20180411/model/TerminateDedicatedDBInstanceResponse.h
   include/tencentcloud/dcdb/v20180411/model/FlushBinlogResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDBSecurityGroupsResponse.h
   include/tencentcloud/dcdb/v20180411/model/CancelDcnJobResponse.h
@@ -98,6 +99,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DescribeDatabaseTableRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBInstanceNodeInfoResponse.h
   include/tencentcloud/dcdb/v20180411/model/KillSessionRequest.h
+  include/tencentcloud/dcdb/v20180411/model/TerminateDedicatedDBInstanceRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDatabaseObjectsResponse.h
   include/tencentcloud/dcdb/v20180411/model/ModifyDBInstanceNameRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDcnDetailResponse.h
@@ -185,6 +187,7 @@ set(dcdb_src
   src/v20180411/model/ActiveHourDCDBInstanceResponse.cpp
   src/v20180411/model/DescribeDCDBPriceResponse.cpp
   src/v20180411/model/AssociateSecurityGroupsRequest.cpp
+  src/v20180411/model/TerminateDedicatedDBInstanceResponse.cpp
   src/v20180411/model/FlushBinlogResponse.cpp
   src/v20180411/model/DescribeDBSecurityGroupsResponse.cpp
   src/v20180411/model/CancelDcnJobResponse.cpp
@@ -250,6 +253,7 @@ set(dcdb_src
   src/v20180411/model/DescribeDatabaseTableRequest.cpp
   src/v20180411/model/DescribeDCDBInstanceNodeInfoResponse.cpp
   src/v20180411/model/KillSessionRequest.cpp
+  src/v20180411/model/TerminateDedicatedDBInstanceRequest.cpp
   src/v20180411/model/DescribeDatabaseObjectsResponse.cpp
   src/v20180411/model/ModifyDBInstanceNameRequest.cpp
   src/v20180411/model/DescribeDcnDetailResponse.cpp

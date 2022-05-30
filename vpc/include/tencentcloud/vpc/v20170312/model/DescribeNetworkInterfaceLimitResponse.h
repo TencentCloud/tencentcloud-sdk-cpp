@@ -95,6 +95,34 @@ namespace TencentCloud
                      */
                     bool ExtendEniPrivateIpAddressQuantityHasBeenSet() const;
 
+                    /**
+                     * 获取中继网卡配额
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubEniQuantity 中继网卡配额
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetSubEniQuantity() const;
+
+                    /**
+                     * 判断参数 SubEniQuantity 是否已赋值
+                     * @return SubEniQuantity 是否已赋值
+                     */
+                    bool SubEniQuantityHasBeenSet() const;
+
+                    /**
+                     * 获取每个中继网卡可以分配的IP配额
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubEniPrivateIpAddressQuantity 每个中继网卡可以分配的IP配额
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetSubEniPrivateIpAddressQuantity() const;
+
+                    /**
+                     * 判断参数 SubEniPrivateIpAddressQuantity 是否已赋值
+                     * @return SubEniPrivateIpAddressQuantity 是否已赋值
+                     */
+                    bool SubEniPrivateIpAddressQuantityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -122,6 +150,20 @@ namespace TencentCloud
                      */
                     int64_t m_extendEniPrivateIpAddressQuantity;
                     bool m_extendEniPrivateIpAddressQuantityHasBeenSet;
+
+                    /**
+                     * 中继网卡配额
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_subEniQuantity;
+                    bool m_subEniQuantityHasBeenSet;
+
+                    /**
+                     * 每个中继网卡可以分配的IP配额
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_subEniPrivateIpAddressQuantity;
+                    bool m_subEniPrivateIpAddressQuantityHasBeenSet;
 
                 };
             }

@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool SecurityGroupIdsHasBeenSet() const;
 
+                    /**
+                     * 获取网卡trunking模式设置，Enable-开启，Disable--关闭，默认关闭。
+                     * @return TrunkingFlag 网卡trunking模式设置，Enable-开启，Disable--关闭，默认关闭。
+                     */
+                    std::string GetTrunkingFlag() const;
+
+                    /**
+                     * 设置网卡trunking模式设置，Enable-开启，Disable--关闭，默认关闭。
+                     * @param TrunkingFlag 网卡trunking模式设置，Enable-开启，Disable--关闭，默认关闭。
+                     */
+                    void SetTrunkingFlag(const std::string& _trunkingFlag);
+
+                    /**
+                     * 判断参数 TrunkingFlag 是否已赋值
+                     * @return TrunkingFlag 是否已赋值
+                     */
+                    bool TrunkingFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
+
+                    /**
+                     * 网卡trunking模式设置，Enable-开启，Disable--关闭，默认关闭。
+                     */
+                    std::string m_trunkingFlag;
+                    bool m_trunkingFlagHasBeenSet;
 
                 };
             }
