@@ -46,7 +46,9 @@ SparkJobInfo::SparkJobInfo() :
     m_currentTaskIdHasBeenSet(false),
     m_jobStatusHasBeenSet(false),
     m_streamingStatHasBeenSet(false),
-    m_dataSourceHasBeenSet(false)
+    m_dataSourceHasBeenSet(false),
+    m_isLocalPythonFilesHasBeenSet(false),
+    m_appPythonFilesHasBeenSet(false)
 {
 }
 
@@ -322,6 +324,26 @@ CoreInternalOutcome SparkJobInfo::Deserialize(const rapidjson::Value &value)
         m_dataSourceHasBeenSet = true;
     }
 
+    if (value.HasMember("IsLocalPythonFiles") && !value["IsLocalPythonFiles"].IsNull())
+    {
+        if (!value["IsLocalPythonFiles"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SparkJobInfo.IsLocalPythonFiles` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isLocalPythonFiles = string(value["IsLocalPythonFiles"].GetString());
+        m_isLocalPythonFilesHasBeenSet = true;
+    }
+
+    if (value.HasMember("AppPythonFiles") && !value["AppPythonFiles"].IsNull())
+    {
+        if (!value["AppPythonFiles"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SparkJobInfo.AppPythonFiles` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appPythonFiles = string(value["AppPythonFiles"].GetString());
+        m_appPythonFilesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -536,6 +558,22 @@ void SparkJobInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "DataSource";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dataSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isLocalPythonFilesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsLocalPythonFiles";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isLocalPythonFiles.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appPythonFilesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppPythonFiles";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appPythonFiles.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -955,5 +993,37 @@ void SparkJobInfo::SetDataSource(const string& _dataSource)
 bool SparkJobInfo::DataSourceHasBeenSet() const
 {
     return m_dataSourceHasBeenSet;
+}
+
+string SparkJobInfo::GetIsLocalPythonFiles() const
+{
+    return m_isLocalPythonFiles;
+}
+
+void SparkJobInfo::SetIsLocalPythonFiles(const string& _isLocalPythonFiles)
+{
+    m_isLocalPythonFiles = _isLocalPythonFiles;
+    m_isLocalPythonFilesHasBeenSet = true;
+}
+
+bool SparkJobInfo::IsLocalPythonFilesHasBeenSet() const
+{
+    return m_isLocalPythonFilesHasBeenSet;
+}
+
+string SparkJobInfo::GetAppPythonFiles() const
+{
+    return m_appPythonFiles;
+}
+
+void SparkJobInfo::SetAppPythonFiles(const string& _appPythonFiles)
+{
+    m_appPythonFiles = _appPythonFiles;
+    m_appPythonFilesHasBeenSet = true;
+}
+
+bool SparkJobInfo::AppPythonFilesHasBeenSet() const
+{
+    return m_appPythonFilesHasBeenSet;
 }
 

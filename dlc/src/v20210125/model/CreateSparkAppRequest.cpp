@@ -41,7 +41,9 @@ CreateSparkAppRequest::CreateSparkAppRequest() :
     m_appFilesHasBeenSet(false),
     m_cmdArgsHasBeenSet(false),
     m_maxRetriesHasBeenSet(false),
-    m_dataSourceHasBeenSet(false)
+    m_dataSourceHasBeenSet(false),
+    m_isLocalPythonFilesHasBeenSet(false),
+    m_appPythonFilesHasBeenSet(false)
 {
 }
 
@@ -202,6 +204,22 @@ string CreateSparkAppRequest::ToJsonString() const
         string key = "DataSource";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dataSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isLocalPythonFilesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsLocalPythonFiles";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_isLocalPythonFiles.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appPythonFilesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppPythonFiles";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_appPythonFiles.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -514,6 +532,38 @@ void CreateSparkAppRequest::SetDataSource(const string& _dataSource)
 bool CreateSparkAppRequest::DataSourceHasBeenSet() const
 {
     return m_dataSourceHasBeenSet;
+}
+
+string CreateSparkAppRequest::GetIsLocalPythonFiles() const
+{
+    return m_isLocalPythonFiles;
+}
+
+void CreateSparkAppRequest::SetIsLocalPythonFiles(const string& _isLocalPythonFiles)
+{
+    m_isLocalPythonFiles = _isLocalPythonFiles;
+    m_isLocalPythonFilesHasBeenSet = true;
+}
+
+bool CreateSparkAppRequest::IsLocalPythonFilesHasBeenSet() const
+{
+    return m_isLocalPythonFilesHasBeenSet;
+}
+
+string CreateSparkAppRequest::GetAppPythonFiles() const
+{
+    return m_appPythonFiles;
+}
+
+void CreateSparkAppRequest::SetAppPythonFiles(const string& _appPythonFiles)
+{
+    m_appPythonFiles = _appPythonFiles;
+    m_appPythonFilesHasBeenSet = true;
+}
+
+bool CreateSparkAppRequest::AppPythonFilesHasBeenSet() const
+{
+    return m_appPythonFilesHasBeenSet;
 }
 
 

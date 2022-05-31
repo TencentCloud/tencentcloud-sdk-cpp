@@ -40,6 +40,8 @@ ModifySparkAppRequest::ModifySparkAppRequest() :
     m_appJarsHasBeenSet(false),
     m_isLocalFilesHasBeenSet(false),
     m_appFilesHasBeenSet(false),
+    m_isLocalPythonFilesHasBeenSet(false),
+    m_appPythonFilesHasBeenSet(false),
     m_cmdArgsHasBeenSet(false),
     m_maxRetriesHasBeenSet(false),
     m_dataSourceHasBeenSet(false)
@@ -187,6 +189,22 @@ string ModifySparkAppRequest::ToJsonString() const
         string key = "AppFiles";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_appFiles.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isLocalPythonFilesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsLocalPythonFiles";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_isLocalPythonFiles.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appPythonFilesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppPythonFiles";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_appPythonFiles.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cmdArgsHasBeenSet)
@@ -491,6 +509,38 @@ void ModifySparkAppRequest::SetAppFiles(const string& _appFiles)
 bool ModifySparkAppRequest::AppFilesHasBeenSet() const
 {
     return m_appFilesHasBeenSet;
+}
+
+string ModifySparkAppRequest::GetIsLocalPythonFiles() const
+{
+    return m_isLocalPythonFiles;
+}
+
+void ModifySparkAppRequest::SetIsLocalPythonFiles(const string& _isLocalPythonFiles)
+{
+    m_isLocalPythonFiles = _isLocalPythonFiles;
+    m_isLocalPythonFilesHasBeenSet = true;
+}
+
+bool ModifySparkAppRequest::IsLocalPythonFilesHasBeenSet() const
+{
+    return m_isLocalPythonFilesHasBeenSet;
+}
+
+string ModifySparkAppRequest::GetAppPythonFiles() const
+{
+    return m_appPythonFiles;
+}
+
+void ModifySparkAppRequest::SetAppPythonFiles(const string& _appPythonFiles)
+{
+    m_appPythonFiles = _appPythonFiles;
+    m_appPythonFilesHasBeenSet = true;
+}
+
+bool ModifySparkAppRequest::AppPythonFilesHasBeenSet() const
+{
+    return m_appPythonFilesHasBeenSet;
 }
 
 string ModifySparkAppRequest::GetCmdArgs() const

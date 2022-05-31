@@ -23,10 +23,10 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 DescribeHeadTailTemplatesRequest::DescribeHeadTailTemplatesRequest() :
+    m_subAppIdHasBeenSet(false),
     m_definitionsHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_limitHasBeenSet(false)
 {
 }
 
@@ -36,6 +36,14 @@ string DescribeHeadTailTemplatesRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
+    }
 
     if (m_definitionsHasBeenSet)
     {
@@ -66,14 +74,6 @@ string DescribeHeadTailTemplatesRequest::ToJsonString() const
         d.AddMember(iKey, m_limit, allocator);
     }
 
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -81,6 +81,22 @@ string DescribeHeadTailTemplatesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t DescribeHeadTailTemplatesRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void DescribeHeadTailTemplatesRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool DescribeHeadTailTemplatesRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
+}
 
 vector<int64_t> DescribeHeadTailTemplatesRequest::GetDefinitions() const
 {
@@ -128,22 +144,6 @@ void DescribeHeadTailTemplatesRequest::SetLimit(const uint64_t& _limit)
 bool DescribeHeadTailTemplatesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
-}
-
-uint64_t DescribeHeadTailTemplatesRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void DescribeHeadTailTemplatesRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool DescribeHeadTailTemplatesRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

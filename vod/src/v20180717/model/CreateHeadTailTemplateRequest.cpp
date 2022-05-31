@@ -24,11 +24,11 @@ using namespace std;
 
 CreateHeadTailTemplateRequest::CreateHeadTailTemplateRequest() :
     m_nameHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_headCandidateSetHasBeenSet(false),
     m_tailCandidateSetHasBeenSet(false),
-    m_fillTypeHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_fillTypeHasBeenSet(false)
 {
 }
 
@@ -45,6 +45,14 @@ string CreateHeadTailTemplateRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
     if (m_commentHasBeenSet)
@@ -89,14 +97,6 @@ string CreateHeadTailTemplateRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_fillType.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -119,6 +119,22 @@ void CreateHeadTailTemplateRequest::SetName(const string& _name)
 bool CreateHeadTailTemplateRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+uint64_t CreateHeadTailTemplateRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void CreateHeadTailTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool CreateHeadTailTemplateRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 string CreateHeadTailTemplateRequest::GetComment() const
@@ -183,22 +199,6 @@ void CreateHeadTailTemplateRequest::SetFillType(const string& _fillType)
 bool CreateHeadTailTemplateRequest::FillTypeHasBeenSet() const
 {
     return m_fillTypeHasBeenSet;
-}
-
-uint64_t CreateHeadTailTemplateRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void CreateHeadTailTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool CreateHeadTailTemplateRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

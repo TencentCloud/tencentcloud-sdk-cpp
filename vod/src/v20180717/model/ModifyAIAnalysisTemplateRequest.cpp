@@ -24,14 +24,14 @@ using namespace std;
 
 ModifyAIAnalysisTemplateRequest::ModifyAIAnalysisTemplateRequest() :
     m_definitionHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_classificationConfigureHasBeenSet(false),
     m_tagConfigureHasBeenSet(false),
     m_coverConfigureHasBeenSet(false),
     m_frameTagConfigureHasBeenSet(false),
-    m_highlightConfigureHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_highlightConfigureHasBeenSet(false)
 {
 }
 
@@ -48,6 +48,14 @@ string ModifyAIAnalysisTemplateRequest::ToJsonString() const
         string key = "Definition";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_definition, allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
     if (m_nameHasBeenSet)
@@ -111,14 +119,6 @@ string ModifyAIAnalysisTemplateRequest::ToJsonString() const
         m_highlightConfigure.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -141,6 +141,22 @@ void ModifyAIAnalysisTemplateRequest::SetDefinition(const int64_t& _definition)
 bool ModifyAIAnalysisTemplateRequest::DefinitionHasBeenSet() const
 {
     return m_definitionHasBeenSet;
+}
+
+uint64_t ModifyAIAnalysisTemplateRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void ModifyAIAnalysisTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool ModifyAIAnalysisTemplateRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 string ModifyAIAnalysisTemplateRequest::GetName() const
@@ -253,22 +269,6 @@ void ModifyAIAnalysisTemplateRequest::SetHighlightConfigure(const HighlightsConf
 bool ModifyAIAnalysisTemplateRequest::HighlightConfigureHasBeenSet() const
 {
     return m_highlightConfigureHasBeenSet;
-}
-
-uint64_t ModifyAIAnalysisTemplateRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void ModifyAIAnalysisTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool ModifyAIAnalysisTemplateRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

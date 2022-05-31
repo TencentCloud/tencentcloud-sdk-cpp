@@ -384,6 +384,42 @@ namespace TencentCloud
                      */
                     bool DataSourceHasBeenSet() const;
 
+                    /**
+                     * 获取pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     * @return IsLocalPythonFiles pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     */
+                    std::string GetIsLocalPythonFiles() const;
+
+                    /**
+                     * 设置pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     * @param IsLocalPythonFiles pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     */
+                    void SetIsLocalPythonFiles(const std::string& _isLocalPythonFiles);
+
+                    /**
+                     * 判断参数 IsLocalPythonFiles 是否已赋值
+                     * @return IsLocalPythonFiles 是否已赋值
+                     */
+                    bool IsLocalPythonFilesHasBeenSet() const;
+
+                    /**
+                     * 获取pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔
+                     * @return AppPythonFiles pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔
+                     */
+                    std::string GetAppPythonFiles() const;
+
+                    /**
+                     * 设置pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔
+                     * @param AppPythonFiles pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔
+                     */
+                    void SetAppPythonFiles(const std::string& _appPythonFiles);
+
+                    /**
+                     * 判断参数 AppPythonFiles 是否已赋值
+                     * @return AppPythonFiles 是否已赋值
+                     */
+                    bool AppPythonFilesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -499,6 +535,18 @@ namespace TencentCloud
                      */
                     std::string m_dataSource;
                     bool m_dataSourceHasBeenSet;
+
+                    /**
+                     * pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     */
+                    std::string m_isLocalPythonFiles;
+                    bool m_isLocalPythonFilesHasBeenSet;
+
+                    /**
+                     * pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔
+                     */
+                    std::string m_appPythonFiles;
+                    bool m_appPythonFilesHasBeenSet;
 
                 };
             }

@@ -24,6 +24,7 @@ using namespace std;
 
 ModifyWatermarkTemplateRequest::ModifyWatermarkTemplateRequest() :
     m_definitionHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_coordinateOriginHasBeenSet(false),
@@ -31,8 +32,7 @@ ModifyWatermarkTemplateRequest::ModifyWatermarkTemplateRequest() :
     m_yPosHasBeenSet(false),
     m_imageTemplateHasBeenSet(false),
     m_textTemplateHasBeenSet(false),
-    m_svgTemplateHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_svgTemplateHasBeenSet(false)
 {
 }
 
@@ -49,6 +49,14 @@ string ModifyWatermarkTemplateRequest::ToJsonString() const
         string key = "Definition";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_definition, allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
     if (m_nameHasBeenSet)
@@ -118,14 +126,6 @@ string ModifyWatermarkTemplateRequest::ToJsonString() const
         m_svgTemplate.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -148,6 +148,22 @@ void ModifyWatermarkTemplateRequest::SetDefinition(const int64_t& _definition)
 bool ModifyWatermarkTemplateRequest::DefinitionHasBeenSet() const
 {
     return m_definitionHasBeenSet;
+}
+
+uint64_t ModifyWatermarkTemplateRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void ModifyWatermarkTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool ModifyWatermarkTemplateRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 string ModifyWatermarkTemplateRequest::GetName() const
@@ -276,22 +292,6 @@ void ModifyWatermarkTemplateRequest::SetSvgTemplate(const SvgWatermarkInputForUp
 bool ModifyWatermarkTemplateRequest::SvgTemplateHasBeenSet() const
 {
     return m_svgTemplateHasBeenSet;
-}
-
-uint64_t ModifyWatermarkTemplateRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void ModifyWatermarkTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool ModifyWatermarkTemplateRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

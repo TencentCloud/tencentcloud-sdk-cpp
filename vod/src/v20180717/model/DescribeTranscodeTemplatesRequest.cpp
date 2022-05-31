@@ -23,13 +23,13 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 DescribeTranscodeTemplatesRequest::DescribeTranscodeTemplatesRequest() :
+    m_subAppIdHasBeenSet(false),
     m_definitionsHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_containerTypeHasBeenSet(false),
     m_tEHDTypeHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_limitHasBeenSet(false)
 {
 }
 
@@ -39,6 +39,14 @@ string DescribeTranscodeTemplatesRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
+    }
 
     if (m_definitionsHasBeenSet)
     {
@@ -93,14 +101,6 @@ string DescribeTranscodeTemplatesRequest::ToJsonString() const
         d.AddMember(iKey, m_limit, allocator);
     }
 
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -108,6 +108,22 @@ string DescribeTranscodeTemplatesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t DescribeTranscodeTemplatesRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void DescribeTranscodeTemplatesRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool DescribeTranscodeTemplatesRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
+}
 
 vector<int64_t> DescribeTranscodeTemplatesRequest::GetDefinitions() const
 {
@@ -203,22 +219,6 @@ void DescribeTranscodeTemplatesRequest::SetLimit(const uint64_t& _limit)
 bool DescribeTranscodeTemplatesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
-}
-
-uint64_t DescribeTranscodeTemplatesRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void DescribeTranscodeTemplatesRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool DescribeTranscodeTemplatesRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

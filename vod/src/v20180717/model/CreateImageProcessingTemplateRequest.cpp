@@ -24,9 +24,9 @@ using namespace std;
 
 CreateImageProcessingTemplateRequest::CreateImageProcessingTemplateRequest() :
     m_operationsHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_commentHasBeenSet(false)
 {
 }
 
@@ -52,6 +52,14 @@ string CreateImageProcessingTemplateRequest::ToJsonString() const
         }
     }
 
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
+    }
+
     if (m_nameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -66,14 +74,6 @@ string CreateImageProcessingTemplateRequest::ToJsonString() const
         string key = "Comment";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
     }
 
 
@@ -98,6 +98,22 @@ void CreateImageProcessingTemplateRequest::SetOperations(const vector<ImageOpera
 bool CreateImageProcessingTemplateRequest::OperationsHasBeenSet() const
 {
     return m_operationsHasBeenSet;
+}
+
+uint64_t CreateImageProcessingTemplateRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void CreateImageProcessingTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool CreateImageProcessingTemplateRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 string CreateImageProcessingTemplateRequest::GetName() const
@@ -130,22 +146,6 @@ void CreateImageProcessingTemplateRequest::SetComment(const string& _comment)
 bool CreateImageProcessingTemplateRequest::CommentHasBeenSet() const
 {
     return m_commentHasBeenSet;
-}
-
-uint64_t CreateImageProcessingTemplateRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void CreateImageProcessingTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool CreateImageProcessingTemplateRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

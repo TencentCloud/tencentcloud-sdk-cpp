@@ -24,6 +24,7 @@ using namespace std;
 
 ModifyImageSpriteTemplateRequest::ModifyImageSpriteTemplateRequest() :
     m_definitionHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_widthHasBeenSet(false),
     m_heightHasBeenSet(false),
@@ -33,8 +34,7 @@ ModifyImageSpriteTemplateRequest::ModifyImageSpriteTemplateRequest() :
     m_rowCountHasBeenSet(false),
     m_columnCountHasBeenSet(false),
     m_fillTypeHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_commentHasBeenSet(false)
 {
 }
 
@@ -51,6 +51,14 @@ string ModifyImageSpriteTemplateRequest::ToJsonString() const
         string key = "Definition";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_definition, allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
     if (m_nameHasBeenSet)
@@ -133,14 +141,6 @@ string ModifyImageSpriteTemplateRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -163,6 +163,22 @@ void ModifyImageSpriteTemplateRequest::SetDefinition(const uint64_t& _definition
 bool ModifyImageSpriteTemplateRequest::DefinitionHasBeenSet() const
 {
     return m_definitionHasBeenSet;
+}
+
+uint64_t ModifyImageSpriteTemplateRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void ModifyImageSpriteTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool ModifyImageSpriteTemplateRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 string ModifyImageSpriteTemplateRequest::GetName() const
@@ -323,22 +339,6 @@ void ModifyImageSpriteTemplateRequest::SetComment(const string& _comment)
 bool ModifyImageSpriteTemplateRequest::CommentHasBeenSet() const
 {
     return m_commentHasBeenSet;
-}
-
-uint64_t ModifyImageSpriteTemplateRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void ModifyImageSpriteTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool ModifyImageSpriteTemplateRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

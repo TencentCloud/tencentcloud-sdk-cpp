@@ -23,11 +23,11 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 DescribeWatermarkTemplatesRequest::DescribeWatermarkTemplatesRequest() :
-    m_definitionsHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_definitionsHasBeenSet(false),
+    m_limitHasBeenSet(false)
 {
 }
 
@@ -38,17 +38,12 @@ string DescribeWatermarkTemplatesRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_definitionsHasBeenSet)
+    if (m_subAppIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Definitions";
+        string key = "SubAppId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_definitions.begin(); itr != m_definitions.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
-        }
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
     if (m_typeHasBeenSet)
@@ -67,20 +62,25 @@ string DescribeWatermarkTemplatesRequest::ToJsonString() const
         d.AddMember(iKey, m_offset, allocator);
     }
 
+    if (m_definitionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Definitions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_definitions.begin(); itr != m_definitions.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
     if (m_limitHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
-    }
-
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
     }
 
 
@@ -91,20 +91,20 @@ string DescribeWatermarkTemplatesRequest::ToJsonString() const
 }
 
 
-vector<int64_t> DescribeWatermarkTemplatesRequest::GetDefinitions() const
+uint64_t DescribeWatermarkTemplatesRequest::GetSubAppId() const
 {
-    return m_definitions;
+    return m_subAppId;
 }
 
-void DescribeWatermarkTemplatesRequest::SetDefinitions(const vector<int64_t>& _definitions)
+void DescribeWatermarkTemplatesRequest::SetSubAppId(const uint64_t& _subAppId)
 {
-    m_definitions = _definitions;
-    m_definitionsHasBeenSet = true;
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
 }
 
-bool DescribeWatermarkTemplatesRequest::DefinitionsHasBeenSet() const
+bool DescribeWatermarkTemplatesRequest::SubAppIdHasBeenSet() const
 {
-    return m_definitionsHasBeenSet;
+    return m_subAppIdHasBeenSet;
 }
 
 string DescribeWatermarkTemplatesRequest::GetType() const
@@ -139,6 +139,22 @@ bool DescribeWatermarkTemplatesRequest::OffsetHasBeenSet() const
     return m_offsetHasBeenSet;
 }
 
+vector<int64_t> DescribeWatermarkTemplatesRequest::GetDefinitions() const
+{
+    return m_definitions;
+}
+
+void DescribeWatermarkTemplatesRequest::SetDefinitions(const vector<int64_t>& _definitions)
+{
+    m_definitions = _definitions;
+    m_definitionsHasBeenSet = true;
+}
+
+bool DescribeWatermarkTemplatesRequest::DefinitionsHasBeenSet() const
+{
+    return m_definitionsHasBeenSet;
+}
+
 uint64_t DescribeWatermarkTemplatesRequest::GetLimit() const
 {
     return m_limit;
@@ -153,22 +169,6 @@ void DescribeWatermarkTemplatesRequest::SetLimit(const uint64_t& _limit)
 bool DescribeWatermarkTemplatesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
-}
-
-uint64_t DescribeWatermarkTemplatesRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void DescribeWatermarkTemplatesRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool DescribeWatermarkTemplatesRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

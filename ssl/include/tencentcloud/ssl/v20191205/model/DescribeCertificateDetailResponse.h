@@ -25,6 +25,7 @@
 #include <tencentcloud/ssl/v20191205/model/DvAuthDetail.h>
 #include <tencentcloud/ssl/v20191205/model/SubmittedData.h>
 #include <tencentcloud/ssl/v20191205/model/Tags.h>
+#include <tencentcloud/ssl/v20191205/model/RootCertificates.h>
 
 
 namespace TencentCloud
@@ -523,6 +524,48 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取根证书。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RootCert 根证书。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RootCertificates GetRootCert() const;
+
+                    /**
+                     * 判断参数 RootCert 是否已赋值
+                     * @return RootCert 是否已赋值
+                     */
+                    bool RootCertHasBeenSet() const;
+
+                    /**
+                     * 获取国密加密证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EncryptCert 国密加密证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEncryptCert() const;
+
+                    /**
+                     * 判断参数 EncryptCert 是否已赋值
+                     * @return EncryptCert 是否已赋值
+                     */
+                    bool EncryptCertHasBeenSet() const;
+
+                    /**
+                     * 获取国密加密私钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EncryptPrivateKey 国密加密私钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEncryptPrivateKey() const;
+
+                    /**
+                     * 判断参数 EncryptPrivateKey 是否已赋值
+                     * @return EncryptPrivateKey 是否已赋值
+                     */
+                    bool EncryptPrivateKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -762,6 +805,27 @@ namespace TencentCloud
                      */
                     std::vector<Tags> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 根证书。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RootCertificates m_rootCert;
+                    bool m_rootCertHasBeenSet;
+
+                    /**
+                     * 国密加密证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_encryptCert;
+                    bool m_encryptCertHasBeenSet;
+
+                    /**
+                     * 国密加密私钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_encryptPrivateKey;
+                    bool m_encryptPrivateKeyHasBeenSet;
 
                 };
             }
