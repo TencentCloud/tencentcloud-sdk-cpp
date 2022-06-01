@@ -232,6 +232,36 @@ namespace TencentCloud
                      */
                     bool ModifiedOnHasBeenSet() const;
 
+                    /**
+                     * 获取cname 接入状态
+- finished 站点已验证
+- pending 站点验证中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CnameStatus cname 接入状态
+- finished 站点已验证
+- pending 站点验证中
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCnameStatus() const;
+
+                    /**
+                     * 设置cname 接入状态
+- finished 站点已验证
+- pending 站点验证中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CnameStatus cname 接入状态
+- finished 站点已验证
+- pending 站点验证中
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCnameStatus(const std::string& _cnameStatus);
+
+                    /**
+                     * 判断参数 CnameStatus 是否已赋值
+                     * @return CnameStatus 是否已赋值
+                     */
+                    bool CnameStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -293,6 +323,15 @@ namespace TencentCloud
                      */
                     std::string m_modifiedOn;
                     bool m_modifiedOnHasBeenSet;
+
+                    /**
+                     * cname 接入状态
+- finished 站点已验证
+- pending 站点验证中
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cnameStatus;
+                    bool m_cnameStatusHasBeenSet;
 
                 };
             }

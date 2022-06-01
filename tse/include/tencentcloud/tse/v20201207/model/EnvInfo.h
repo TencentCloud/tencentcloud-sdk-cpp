@@ -245,6 +245,24 @@ namespace TencentCloud
                      */
                     bool RunningCountHasBeenSet() const;
 
+                    /**
+                     * 获取环境别名
+                     * @return AliasEnvName 环境别名
+                     */
+                    std::string GetAliasEnvName() const;
+
+                    /**
+                     * 设置环境别名
+                     * @param AliasEnvName 环境别名
+                     */
+                    void SetAliasEnvName(const std::string& _aliasEnvName);
+
+                    /**
+                     * 判断参数 AliasEnvName 是否已赋值
+                     * @return AliasEnvName 是否已赋值
+                     */
+                    bool AliasEnvNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -312,6 +330,12 @@ namespace TencentCloud
                      */
                     int64_t m_runningCount;
                     bool m_runningCountHasBeenSet;
+
+                    /**
+                     * 环境别名
+                     */
+                    std::string m_aliasEnvName;
+                    bool m_aliasEnvNameHasBeenSet;
 
                 };
             }

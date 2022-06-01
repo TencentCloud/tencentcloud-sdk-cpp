@@ -234,6 +234,24 @@ namespace TencentCloud
                      */
                     bool InstanceAdvancedSettingsOverridesHasBeenSet() const;
 
+                    /**
+                     * 获取节点镜像（节点选项时，该参数是必传参数）
+                     * @return ImageId 节点镜像（节点选项时，该参数是必传参数）
+                     */
+                    std::string GetImageId() const;
+
+                    /**
+                     * 设置节点镜像（节点选项时，该参数是必传参数）
+                     * @param ImageId 节点镜像（节点选项时，该参数是必传参数）
+                     */
+                    void SetImageId(const std::string& _imageId);
+
+                    /**
+                     * 判断参数 ImageId 是否已赋值
+                     * @return ImageId 是否已赋值
+                     */
+                    bool ImageIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -297,6 +315,12 @@ namespace TencentCloud
                      */
                     std::vector<InstanceAdvancedSettings> m_instanceAdvancedSettingsOverrides;
                     bool m_instanceAdvancedSettingsOverridesHasBeenSet;
+
+                    /**
+                     * 节点镜像（节点选项时，该参数是必传参数）
+                     */
+                    std::string m_imageId;
+                    bool m_imageIdHasBeenSet;
 
                 };
             }

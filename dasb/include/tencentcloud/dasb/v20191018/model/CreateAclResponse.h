@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取访问权限ID
-                     * @return Id 访问权限ID
+                     * 获取新建成功的访问权限ID
+                     * @return Id 新建成功的访问权限ID
                      */
                     uint64_t GetId() const;
 
@@ -58,7 +58,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 访问权限ID
+                     * 新建成功的访问权限ID
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;

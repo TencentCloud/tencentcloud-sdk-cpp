@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 命令模板
+                * 高危命令模板
                 */
                 class CmdTemplate : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板ID
-                     * @return Id 模板ID
+                     * 获取高危命令模板ID
+                     * @return Id 高危命令模板ID
                      */
                     uint64_t GetId() const;
 
                     /**
-                     * 设置模板ID
-                     * @param Id 模板ID
+                     * 设置高危命令模板ID
+                     * @param Id 高危命令模板ID
                      */
                     void SetId(const uint64_t& _id);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取模板名称
-                     * @return Name 模板名称
+                     * 获取高危命令模板名称
+                     * @return Name 高危命令模板名称
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置模板名称
-                     * @param Name 模板名称
+                     * 设置高危命令模板名称
+                     * @param Name 高危命令模板名称
                      */
                     void SetName(const std::string& _name);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取命令列表，\n分隔
-                     * @return CmdList 命令列表，\n分隔
+                     * 获取命令列表，命令之间用换行符（"\n"）分隔
+                     * @return CmdList 命令列表，命令之间用换行符（"\n"）分隔
                      */
                     std::string GetCmdList() const;
 
                     /**
-                     * 设置命令列表，\n分隔
-                     * @param CmdList 命令列表，\n分隔
+                     * 设置命令列表，命令之间用换行符（"\n"）分隔
+                     * @param CmdList 命令列表，命令之间用换行符（"\n"）分隔
                      */
                     void SetCmdList(const std::string& _cmdList);
 
@@ -103,19 +103,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模板ID
+                     * 高危命令模板ID
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 模板名称
+                     * 高危命令模板名称
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 命令列表，\n分隔
+                     * 命令列表，命令之间用换行符（"\n"）分隔
                      */
                     std::string m_cmdList;
                     bool m_cmdListHasBeenSet;

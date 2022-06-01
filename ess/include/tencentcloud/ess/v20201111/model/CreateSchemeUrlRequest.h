@@ -171,14 +171,26 @@ namespace TencentCloud
                     bool OrganizationNameHasBeenSet() const;
 
                     /**
-                     * 获取链接类型 HTTP：跳转电子签小程序的http_url，APP：第三方APP或小程序跳转电子签小程序，默认为HTTP类型
-                     * @return EndPoint 链接类型 HTTP：跳转电子签小程序的http_url，APP：第三方APP或小程序跳转电子签小程序，默认为HTTP类型
+                     * 获取链接类型
+HTTP：跳转电子签小程序的http_url，
+APP：第三方APP或小程序跳转电子签小程序的path。
+默认为HTTP类型
+                     * @return EndPoint 链接类型
+HTTP：跳转电子签小程序的http_url，
+APP：第三方APP或小程序跳转电子签小程序的path。
+默认为HTTP类型
                      */
                     std::string GetEndPoint() const;
 
                     /**
-                     * 设置链接类型 HTTP：跳转电子签小程序的http_url，APP：第三方APP或小程序跳转电子签小程序，默认为HTTP类型
-                     * @param EndPoint 链接类型 HTTP：跳转电子签小程序的http_url，APP：第三方APP或小程序跳转电子签小程序，默认为HTTP类型
+                     * 设置链接类型
+HTTP：跳转电子签小程序的http_url，
+APP：第三方APP或小程序跳转电子签小程序的path。
+默认为HTTP类型
+                     * @param EndPoint 链接类型
+HTTP：跳转电子签小程序的http_url，
+APP：第三方APP或小程序跳转电子签小程序的path。
+默认为HTTP类型
                      */
                     void SetEndPoint(const std::string& _endPoint);
 
@@ -251,7 +263,10 @@ namespace TencentCloud
                     bool m_organizationNameHasBeenSet;
 
                     /**
-                     * 链接类型 HTTP：跳转电子签小程序的http_url，APP：第三方APP或小程序跳转电子签小程序，默认为HTTP类型
+                     * 链接类型
+HTTP：跳转电子签小程序的http_url，
+APP：第三方APP或小程序跳转电子签小程序的path。
+默认为HTTP类型
                      */
                     std::string m_endPoint;
                     bool m_endPointHasBeenSet;

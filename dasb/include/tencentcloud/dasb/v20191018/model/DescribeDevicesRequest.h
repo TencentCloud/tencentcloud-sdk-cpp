@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主机ID集合，非必需
-                     * @return IdSet 主机ID集合，非必需
+                     * 获取资产ID集合
+                     * @return IdSet 资产ID集合
                      */
                     std::vector<uint64_t> GetIdSet() const;
 
                     /**
-                     * 设置主机ID集合，非必需
-                     * @param IdSet 主机ID集合，非必需
+                     * 设置资产ID集合
+                     * @param IdSet 资产ID集合
                      */
                     void SetIdSet(const std::vector<uint64_t>& _idSet);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool IdSetHasBeenSet() const;
 
                     /**
-                     * 获取主机名或主机IP，模糊查询
-                     * @return Name 主机名或主机IP，模糊查询
+                     * 获取资产名或资产IP，模糊查询
+                     * @return Name 资产名或资产IP，模糊查询
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置主机名或主机IP，模糊查询
-                     * @param Name 主机名或主机IP，模糊查询
+                     * 设置资产名或资产IP，模糊查询
+                     * @param Name 资产名或资产IP，模糊查询
                      */
                     void SetName(const std::string& _name);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool ApCodeSetHasBeenSet() const;
 
                     /**
-                     * 获取操作系统类型
-                     * @return Kind 操作系统类型
+                     * 获取操作系统类型, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
+                     * @return Kind 操作系统类型, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
                      */
                     uint64_t GetKind() const;
 
                     /**
-                     * 设置操作系统类型
-                     * @param Kind 操作系统类型
+                     * 设置操作系统类型, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
+                     * @param Kind 操作系统类型, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
                      */
                     void SetKind(const uint64_t& _kind);
 
@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取有该主机访问权限的用户ID集合
-                     * @return AuthorizedUserIdSet 有该主机访问权限的用户ID集合
+                     * 获取有该资产访问权限的用户ID集合
+                     * @return AuthorizedUserIdSet 有该资产访问权限的用户ID集合
                      */
                     std::vector<uint64_t> GetAuthorizedUserIdSet() const;
 
                     /**
-                     * 设置有该主机访问权限的用户ID集合
-                     * @param AuthorizedUserIdSet 有该主机访问权限的用户ID集合
+                     * 设置有该资产访问权限的用户ID集合
+                     * @param AuthorizedUserIdSet 有该资产访问权限的用户ID集合
                      */
                     void SetAuthorizedUserIdSet(const std::vector<uint64_t>& _authorizedUserIdSet);
 
@@ -187,14 +187,14 @@ namespace TencentCloud
                     bool AuthorizedUserIdSetHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，主机绑定的堡垒机服务ID集合
-                     * @return ResourceIdSet 过滤条件，主机绑定的堡垒机服务ID集合
+                     * 获取过滤条件，资产绑定的堡垒机服务ID集合
+                     * @return ResourceIdSet 过滤条件，资产绑定的堡垒机服务ID集合
                      */
                     std::vector<std::string> GetResourceIdSet() const;
 
                     /**
-                     * 设置过滤条件，主机绑定的堡垒机服务ID集合
-                     * @param ResourceIdSet 过滤条件，主机绑定的堡垒机服务ID集合
+                     * 设置过滤条件，资产绑定的堡垒机服务ID集合
+                     * @param ResourceIdSet 过滤条件，资产绑定的堡垒机服务ID集合
                      */
                     void SetResourceIdSet(const std::vector<std::string>& _resourceIdSet);
 
@@ -205,14 +205,14 @@ namespace TencentCloud
                     bool ResourceIdSetHasBeenSet() const;
 
                     /**
-                     * 获取可提供按照多种类型过滤, 1-Linux, 2-Windows, 3-MySQL
-                     * @return KindSet 可提供按照多种类型过滤, 1-Linux, 2-Windows, 3-MySQL
+                     * 获取可提供按照多种类型过滤, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
+                     * @return KindSet 可提供按照多种类型过滤, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
                      */
                     std::vector<uint64_t> GetKindSet() const;
 
                     /**
-                     * 设置可提供按照多种类型过滤, 1-Linux, 2-Windows, 3-MySQL
-                     * @param KindSet 可提供按照多种类型过滤, 1-Linux, 2-Windows, 3-MySQL
+                     * 设置可提供按照多种类型过滤, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
+                     * @param KindSet 可提供按照多种类型过滤, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
                      */
                     void SetKindSet(const std::vector<uint64_t>& _kindSet);
 
@@ -225,13 +225,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 主机ID集合，非必需
+                     * 资产ID集合
                      */
                     std::vector<uint64_t> m_idSet;
                     bool m_idSetHasBeenSet;
 
                     /**
-                     * 主机名或主机IP，模糊查询
+                     * 资产名或资产IP，模糊查询
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -249,7 +249,7 @@ namespace TencentCloud
                     bool m_apCodeSetHasBeenSet;
 
                     /**
-                     * 操作系统类型
+                     * 操作系统类型, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
                      */
                     uint64_t m_kind;
                     bool m_kindHasBeenSet;
@@ -267,19 +267,19 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 有该主机访问权限的用户ID集合
+                     * 有该资产访问权限的用户ID集合
                      */
                     std::vector<uint64_t> m_authorizedUserIdSet;
                     bool m_authorizedUserIdSetHasBeenSet;
 
                     /**
-                     * 过滤条件，主机绑定的堡垒机服务ID集合
+                     * 过滤条件，资产绑定的堡垒机服务ID集合
                      */
                     std::vector<std::string> m_resourceIdSet;
                     bool m_resourceIdSetHasBeenSet;
 
                     /**
-                     * 可提供按照多种类型过滤, 1-Linux, 2-Windows, 3-MySQL
+                     * 可提供按照多种类型过滤, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
                      */
                     std::vector<uint64_t> m_kindSet;
                     bool m_kindSetHasBeenSet;

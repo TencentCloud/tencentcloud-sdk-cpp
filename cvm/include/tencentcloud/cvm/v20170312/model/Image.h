@@ -380,6 +380,24 @@ IMPORTFAILED-导入失败
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取镜像许可类型
+                     * @return LicenseType 镜像许可类型
+                     */
+                    std::string GetLicenseType() const;
+
+                    /**
+                     * 设置镜像许可类型
+                     * @param LicenseType 镜像许可类型
+                     */
+                    void SetLicenseType(const std::string& _licenseType);
+
+                    /**
+                     * 判断参数 LicenseType 是否已赋值
+                     * @return LicenseType 是否已赋值
+                     */
+                    bool LicenseTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -488,6 +506,12 @@ IMPORTFAILED-导入失败
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 镜像许可类型
+                     */
+                    std::string m_licenseType;
+                    bool m_licenseTypeHasBeenSet;
 
                 };
             }

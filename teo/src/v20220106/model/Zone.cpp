@@ -29,7 +29,8 @@ Zone::Zone() :
     m_typeHasBeenSet(false),
     m_pausedHasBeenSet(false),
     m_createdOnHasBeenSet(false),
-    m_modifiedOnHasBeenSet(false)
+    m_modifiedOnHasBeenSet(false),
+    m_cnameStatusHasBeenSet(false)
 {
 }
 
@@ -134,6 +135,16 @@ CoreInternalOutcome Zone::Deserialize(const rapidjson::Value &value)
         m_modifiedOnHasBeenSet = true;
     }
 
+    if (value.HasMember("CnameStatus") && !value["CnameStatus"].IsNull())
+    {
+        if (!value["CnameStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Zone.CnameStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cnameStatus = string(value["CnameStatus"].GetString());
+        m_cnameStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -221,6 +232,14 @@ void Zone::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "ModifiedOn";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modifiedOn.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cnameStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CnameStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cnameStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -368,5 +387,21 @@ void Zone::SetModifiedOn(const string& _modifiedOn)
 bool Zone::ModifiedOnHasBeenSet() const
 {
     return m_modifiedOnHasBeenSet;
+}
+
+string Zone::GetCnameStatus() const
+{
+    return m_cnameStatus;
+}
+
+void Zone::SetCnameStatus(const string& _cnameStatus)
+{
+    m_cnameStatus = _cnameStatus;
+    m_cnameStatusHasBeenSet = true;
+}
+
+bool Zone::CnameStatusHasBeenSet() const
+{
+    return m_cnameStatusHasBeenSet;
 }
 

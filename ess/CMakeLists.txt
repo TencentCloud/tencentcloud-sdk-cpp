@@ -21,6 +21,7 @@ set(ess_public_header
 set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/UploadFile.h
   include/tencentcloud/ess/v20201111/model/DescribeFileUrlsResponse.h
+  include/tencentcloud/ess/v20201111/model/TemplateInfo.h
   include/tencentcloud/ess/v20201111/model/CreateDocumentResponse.h
   include/tencentcloud/ess/v20201111/model/StartFlowRequest.h
   include/tencentcloud/ess/v20201111/model/CancelFlowResponse.h
@@ -37,16 +38,21 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowByFilesResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowBriefsRequest.h
+  include/tencentcloud/ess/v20201111/model/Recipient.h
   include/tencentcloud/ess/v20201111/model/DescribeFileUrlsRequest.h
   include/tencentcloud/ess/v20201111/model/ApproverInfo.h
   include/tencentcloud/ess/v20201111/model/Caller.h
-  include/tencentcloud/ess/v20201111/model/StartFlowResponse.h
+  include/tencentcloud/ess/v20201111/model/DescribeFlowTemplatesResponse.h
+  include/tencentcloud/ess/v20201111/model/Filter.h
+  include/tencentcloud/ess/v20201111/model/FileInfo.h
   include/tencentcloud/ess/v20201111/model/FlowCreateApprover.h
+  include/tencentcloud/ess/v20201111/model/StartFlowResponse.h
   include/tencentcloud/ess/v20201111/model/CreateSchemeUrlResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowByFilesRequest.h
   include/tencentcloud/ess/v20201111/model/CreateFlowResponse.h
   include/tencentcloud/ess/v20201111/model/Agent.h
   include/tencentcloud/ess/v20201111/model/FormField.h
+  include/tencentcloud/ess/v20201111/model/DescribeFlowTemplatesRequest.h
   include/tencentcloud/ess/v20201111/model/UserInfo.h
   include/tencentcloud/ess/v20201111/model/FlowBrief.h
   include/tencentcloud/ess/v20201111/model/CcInfo.h
@@ -56,6 +62,7 @@ set(ess_src
   src/v20201111/EssClient.cpp
   src/v20201111/model/UploadFile.cpp
   src/v20201111/model/DescribeFileUrlsResponse.cpp
+  src/v20201111/model/TemplateInfo.cpp
   src/v20201111/model/CreateDocumentResponse.cpp
   src/v20201111/model/StartFlowRequest.cpp
   src/v20201111/model/CancelFlowResponse.cpp
@@ -72,16 +79,21 @@ set(ess_src
   src/v20201111/model/DescribeThirdPartyAuthCodeResponse.cpp
   src/v20201111/model/CreateFlowByFilesResponse.cpp
   src/v20201111/model/DescribeFlowBriefsRequest.cpp
+  src/v20201111/model/Recipient.cpp
   src/v20201111/model/DescribeFileUrlsRequest.cpp
   src/v20201111/model/ApproverInfo.cpp
   src/v20201111/model/Caller.cpp
-  src/v20201111/model/StartFlowResponse.cpp
+  src/v20201111/model/DescribeFlowTemplatesResponse.cpp
+  src/v20201111/model/Filter.cpp
+  src/v20201111/model/FileInfo.cpp
   src/v20201111/model/FlowCreateApprover.cpp
+  src/v20201111/model/StartFlowResponse.cpp
   src/v20201111/model/CreateSchemeUrlResponse.cpp
   src/v20201111/model/CreateFlowByFilesRequest.cpp
   src/v20201111/model/CreateFlowResponse.cpp
   src/v20201111/model/Agent.cpp
   src/v20201111/model/FormField.cpp
+  src/v20201111/model/DescribeFlowTemplatesRequest.cpp
   src/v20201111/model/UserInfo.cpp
   src/v20201111/model/FlowBrief.cpp
   src/v20201111/model/CcInfo.cpp

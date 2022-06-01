@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取访问权限ID集合，非必需
-                     * @return IdSet 访问权限ID集合，非必需
+                     * 获取访问权限ID集合
+                     * @return IdSet 访问权限ID集合
                      */
                     std::vector<uint64_t> GetIdSet() const;
 
                     /**
-                     * 设置访问权限ID集合，非必需
-                     * @param IdSet 访问权限ID集合，非必需
+                     * 设置访问权限ID集合
+                     * @param IdSet 访问权限ID集合
                      */
                     void SetIdSet(const std::vector<uint64_t>& _idSet);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取分页，偏移位置
-                     * @return Offset 分页，偏移位置
+                     * 获取分页偏移位置
+                     * @return Offset 分页偏移位置
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页，偏移位置
-                     * @param Offset 分页，偏移位置
+                     * 设置分页偏移位置
+                     * @param Offset 分页偏移位置
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取每页条目数量，默认20
-                     * @return Limit 每页条目数量，默认20
+                     * 获取每页条目数量，默认20，最大500
+                     * @return Limit 每页条目数量，默认20，最大500
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页条目数量，默认20
-                     * @param Limit 每页条目数量，默认20
+                     * 设置每页条目数量，默认20，最大500
+                     * @param Limit 每页条目数量，默认20，最大500
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取是否根据Name进行精确查询,默认值false
-                     * @return Exact 是否根据Name进行精确查询,默认值false
+                     * 获取是否根据Name进行精确查询，默认值false
+                     * @return Exact 是否根据Name进行精确查询，默认值false
                      */
                     bool GetExact() const;
 
                     /**
-                     * 设置是否根据Name进行精确查询,默认值false
-                     * @param Exact 是否根据Name进行精确查询,默认值false
+                     * 设置是否根据Name进行精确查询，默认值false
+                     * @param Exact 是否根据Name进行精确查询，默认值false
                      */
                     void SetExact(const bool& _exact);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool ExactHasBeenSet() const;
 
                     /**
-                     * 获取有权限的用户ID集合
-                     * @return AuthorizedUserIdSet 有权限的用户ID集合
+                     * 获取有访问权限的用户ID集合
+                     * @return AuthorizedUserIdSet 有访问权限的用户ID集合
                      */
                     std::vector<uint64_t> GetAuthorizedUserIdSet() const;
 
                     /**
-                     * 设置有权限的用户ID集合
-                     * @param AuthorizedUserIdSet 有权限的用户ID集合
+                     * 设置有访问权限的用户ID集合
+                     * @param AuthorizedUserIdSet 有访问权限的用户ID集合
                      */
                     void SetAuthorizedUserIdSet(const std::vector<uint64_t>& _authorizedUserIdSet);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool AuthorizedUserIdSetHasBeenSet() const;
 
                     /**
-                     * 获取有权限的主机ID集合
-                     * @return AuthorizedDeviceIdSet 有权限的主机ID集合
+                     * 获取有访问权限的资产ID集合
+                     * @return AuthorizedDeviceIdSet 有访问权限的资产ID集合
                      */
                     std::vector<uint64_t> GetAuthorizedDeviceIdSet() const;
 
                     /**
-                     * 设置有权限的主机ID集合
-                     * @param AuthorizedDeviceIdSet 有权限的主机ID集合
+                     * 设置有访问权限的资产ID集合
+                     * @param AuthorizedDeviceIdSet 有访问权限的资产ID集合
                      */
                     void SetAuthorizedDeviceIdSet(const std::vector<uint64_t>& _authorizedDeviceIdSet);
 
@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool AuthorizedDeviceIdSetHasBeenSet() const;
 
                     /**
-                     * 获取策略状态，0-不限，1-已生效，2-未生效，3-已过期
-                     * @return Status 策略状态，0-不限，1-已生效，2-未生效，3-已过期
+                     * 获取访问权限状态，1 - 已生效，2 - 未生效，3 - 已过期
+                     * @return Status 访问权限状态，1 - 已生效，2 - 未生效，3 - 已过期
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置策略状态，0-不限，1-已生效，2-未生效，3-已过期
-                     * @param Status 策略状态，0-不限，1-已生效，2-未生效，3-已过期
+                     * 设置访问权限状态，1 - 已生效，2 - 未生效，3 - 已过期
+                     * @param Status 访问权限状态，1 - 已生效，2 - 未生效，3 - 已过期
                      */
                     void SetStatus(const uint64_t& _status);
 
@@ -189,7 +189,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 访问权限ID集合，非必需
+                     * 访问权限ID集合
                      */
                     std::vector<uint64_t> m_idSet;
                     bool m_idSetHasBeenSet;
@@ -201,37 +201,37 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 分页，偏移位置
+                     * 分页偏移位置
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 每页条目数量，默认20
+                     * 每页条目数量，默认20，最大500
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 是否根据Name进行精确查询,默认值false
+                     * 是否根据Name进行精确查询，默认值false
                      */
                     bool m_exact;
                     bool m_exactHasBeenSet;
 
                     /**
-                     * 有权限的用户ID集合
+                     * 有访问权限的用户ID集合
                      */
                     std::vector<uint64_t> m_authorizedUserIdSet;
                     bool m_authorizedUserIdSetHasBeenSet;
 
                     /**
-                     * 有权限的主机ID集合
+                     * 有访问权限的资产ID集合
                      */
                     std::vector<uint64_t> m_authorizedDeviceIdSet;
                     bool m_authorizedDeviceIdSetHasBeenSet;
 
                     /**
-                     * 策略状态，0-不限，1-已生效，2-未生效，3-已过期
+                     * 访问权限状态，1 - 已生效，2 - 未生效，3 - 已过期
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

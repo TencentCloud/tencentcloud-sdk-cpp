@@ -69,14 +69,14 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取规则名
-                     * @return Name 规则名
+                     * 获取访问权限名称
+                     * @return Name 访问权限名称
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置规则名
-                     * @param Name 规则名
+                     * 设置访问权限名称
+                     * @param Name 访问权限名称
                      */
                     void SetName(const std::string& _name);
 
@@ -141,14 +141,14 @@ namespace TencentCloud
                     bool AllowClipFileDownHasBeenSet() const;
 
                     /**
-                     * 获取是否开启剪贴板text（目前含图片）上行
-                     * @return AllowClipTextUp 是否开启剪贴板text（目前含图片）上行
+                     * 获取是否开启剪贴板文本（目前含图片）上行
+                     * @return AllowClipTextUp 是否开启剪贴板文本（目前含图片）上行
                      */
                     bool GetAllowClipTextUp() const;
 
                     /**
-                     * 设置是否开启剪贴板text（目前含图片）上行
-                     * @param AllowClipTextUp 是否开启剪贴板text（目前含图片）上行
+                     * 设置是否开启剪贴板文本（目前含图片）上行
+                     * @param AllowClipTextUp 是否开启剪贴板文本（目前含图片）上行
                      */
                     void SetAllowClipTextUp(const bool& _allowClipTextUp);
 
@@ -159,14 +159,14 @@ namespace TencentCloud
                     bool AllowClipTextUpHasBeenSet() const;
 
                     /**
-                     * 获取是否开启剪贴板text（目前含图片）下行
-                     * @return AllowClipTextDown 是否开启剪贴板text（目前含图片）下行
+                     * 获取是否开启剪贴板文本（目前含图片）下行
+                     * @return AllowClipTextDown 是否开启剪贴板文本（目前含图片）下行
                      */
                     bool GetAllowClipTextDown() const;
 
                     /**
-                     * 设置是否开启剪贴板text（目前含图片）下行
-                     * @param AllowClipTextDown 是否开启剪贴板text（目前含图片）下行
+                     * 设置是否开启剪贴板文本（目前含图片）下行
+                     * @param AllowClipTextDown 是否开启剪贴板文本（目前含图片）下行
                      */
                     void SetAllowClipTextDown(const bool& _allowClipTextDown);
 
@@ -195,14 +195,14 @@ namespace TencentCloud
                     bool AllowFileUpHasBeenSet() const;
 
                     /**
-                     * 获取文件传输上传大小限制
-                     * @return MaxFileUpSize 文件传输上传大小限制
+                     * 获取文件传输上传大小限制（预留参数，暂未启用）
+                     * @return MaxFileUpSize 文件传输上传大小限制（预留参数，暂未启用）
                      */
                     uint64_t GetMaxFileUpSize() const;
 
                     /**
-                     * 设置文件传输上传大小限制
-                     * @param MaxFileUpSize 文件传输上传大小限制
+                     * 设置文件传输上传大小限制（预留参数，暂未启用）
+                     * @param MaxFileUpSize 文件传输上传大小限制（预留参数，暂未启用）
                      */
                     void SetMaxFileUpSize(const uint64_t& _maxFileUpSize);
 
@@ -231,14 +231,14 @@ namespace TencentCloud
                     bool AllowFileDownHasBeenSet() const;
 
                     /**
-                     * 获取文件传输下载大小限制
-                     * @return MaxFileDownSize 文件传输下载大小限制
+                     * 获取文件传输下载大小限制（预留参数，暂未启用）
+                     * @return MaxFileDownSize 文件传输下载大小限制（预留参数，暂未启用）
                      */
                     uint64_t GetMaxFileDownSize() const;
 
                     /**
-                     * 设置文件传输下载大小限制
-                     * @param MaxFileDownSize 文件传输下载大小限制
+                     * 设置文件传输下载大小限制（预留参数，暂未启用）
+                     * @param MaxFileDownSize 文件传输下载大小限制（预留参数，暂未启用）
                      */
                     void SetMaxFileDownSize(const uint64_t& _maxFileDownSize);
 
@@ -249,14 +249,14 @@ namespace TencentCloud
                     bool MaxFileDownSizeHasBeenSet() const;
 
                     /**
-                     * 获取是否允许任意账号登陆
-                     * @return AllowAnyAccount 是否允许任意账号登陆
+                     * 获取是否允许任意账号登录
+                     * @return AllowAnyAccount 是否允许任意账号登录
                      */
                     bool GetAllowAnyAccount() const;
 
                     /**
-                     * 设置是否允许任意账号登陆
-                     * @param AllowAnyAccount 是否允许任意账号登陆
+                     * 设置是否允许任意账号登录
+                     * @param AllowAnyAccount 是否允许任意账号登录
                      */
                     void SetAllowAnyAccount(const bool& _allowAnyAccount);
 
@@ -303,14 +303,14 @@ namespace TencentCloud
                     bool UserGroupSetHasBeenSet() const;
 
                     /**
-                     * 获取关联的主机列表
-                     * @return DeviceSet 关联的主机列表
+                     * 获取关联的资产列表
+                     * @return DeviceSet 关联的资产列表
                      */
                     std::vector<Device> GetDeviceSet() const;
 
                     /**
-                     * 设置关联的主机列表
-                     * @param DeviceSet 关联的主机列表
+                     * 设置关联的资产列表
+                     * @param DeviceSet 关联的资产列表
                      */
                     void SetDeviceSet(const std::vector<Device>& _deviceSet);
 
@@ -321,14 +321,14 @@ namespace TencentCloud
                     bool DeviceSetHasBeenSet() const;
 
                     /**
-                     * 获取关联的主机组列表
-                     * @return DeviceGroupSet 关联的主机组列表
+                     * 获取关联的资产组列表
+                     * @return DeviceGroupSet 关联的资产组列表
                      */
                     std::vector<Group> GetDeviceGroupSet() const;
 
                     /**
-                     * 设置关联的主机组列表
-                     * @param DeviceGroupSet 关联的主机组列表
+                     * 设置关联的资产组列表
+                     * @param DeviceGroupSet 关联的资产组列表
                      */
                     void SetDeviceGroupSet(const std::vector<Group>& _deviceGroupSet);
 
@@ -375,14 +375,14 @@ namespace TencentCloud
                     bool CmdTemplateSetHasBeenSet() const;
 
                     /**
-                     * 获取是否开启rdp磁盘映射文件上传
-                     * @return AllowDiskFileUp 是否开启rdp磁盘映射文件上传
+                     * 获取是否开启 RDP 磁盘映射文件上传
+                     * @return AllowDiskFileUp 是否开启 RDP 磁盘映射文件上传
                      */
                     bool GetAllowDiskFileUp() const;
 
                     /**
-                     * 设置是否开启rdp磁盘映射文件上传
-                     * @param AllowDiskFileUp 是否开启rdp磁盘映射文件上传
+                     * 设置是否开启 RDP 磁盘映射文件上传
+                     * @param AllowDiskFileUp 是否开启 RDP 磁盘映射文件上传
                      */
                     void SetAllowDiskFileUp(const bool& _allowDiskFileUp);
 
@@ -393,14 +393,14 @@ namespace TencentCloud
                     bool AllowDiskFileUpHasBeenSet() const;
 
                     /**
-                     * 获取是否开启rdp磁盘映射文件下载
-                     * @return AllowDiskFileDown 是否开启rdp磁盘映射文件下载
+                     * 获取是否开启 RDP 磁盘映射文件下载
+                     * @return AllowDiskFileDown 是否开启 RDP 磁盘映射文件下载
                      */
                     bool GetAllowDiskFileDown() const;
 
                     /**
-                     * 设置是否开启rdp磁盘映射文件下载
-                     * @param AllowDiskFileDown 是否开启rdp磁盘映射文件下载
+                     * 设置是否开启 RDP 磁盘映射文件下载
+                     * @param AllowDiskFileDown 是否开启 RDP 磁盘映射文件下载
                      */
                     void SetAllowDiskFileDown(const bool& _allowDiskFileDown);
 
@@ -411,14 +411,14 @@ namespace TencentCloud
                     bool AllowDiskFileDownHasBeenSet() const;
 
                     /**
-                     * 获取是否开启rz sz文件上传
-                     * @return AllowShellFileUp 是否开启rz sz文件上传
+                     * 获取是否开启 rz sz 文件上传
+                     * @return AllowShellFileUp 是否开启 rz sz 文件上传
                      */
                     bool GetAllowShellFileUp() const;
 
                     /**
-                     * 设置是否开启rz sz文件上传
-                     * @param AllowShellFileUp 是否开启rz sz文件上传
+                     * 设置是否开启 rz sz 文件上传
+                     * @param AllowShellFileUp 是否开启 rz sz 文件上传
                      */
                     void SetAllowShellFileUp(const bool& _allowShellFileUp);
 
@@ -429,14 +429,14 @@ namespace TencentCloud
                     bool AllowShellFileUpHasBeenSet() const;
 
                     /**
-                     * 获取是否开启rz sz文件下载
-                     * @return AllowShellFileDown 是否开启rz sz文件下载
+                     * 获取是否开启 rz sz 文件下载
+                     * @return AllowShellFileDown 是否开启 rz sz 文件下载
                      */
                     bool GetAllowShellFileDown() const;
 
                     /**
-                     * 设置是否开启rz sz文件下载
-                     * @param AllowShellFileDown 是否开启rz sz文件下载
+                     * 设置是否开启 rz sz 文件下载
+                     * @param AllowShellFileDown 是否开启 rz sz 文件下载
                      */
                     void SetAllowShellFileDown(const bool& _allowShellFileDown);
 
@@ -447,14 +447,14 @@ namespace TencentCloud
                     bool AllowShellFileDownHasBeenSet() const;
 
                     /**
-                     * 获取是否开启SFTP文件删除
-                     * @return AllowFileDel 是否开启SFTP文件删除
+                     * 获取是否开启 SFTP 文件删除
+                     * @return AllowFileDel 是否开启 SFTP 文件删除
                      */
                     bool GetAllowFileDel() const;
 
                     /**
-                     * 设置是否开启SFTP文件删除
-                     * @param AllowFileDel 是否开启SFTP文件删除
+                     * 设置是否开启 SFTP 文件删除
+                     * @param AllowFileDel 是否开启 SFTP 文件删除
                      */
                     void SetAllowFileDel(const bool& _allowFileDel);
 
@@ -465,14 +465,18 @@ namespace TencentCloud
                     bool AllowFileDelHasBeenSet() const;
 
                     /**
-                     * 获取生效日期
-                     * @return ValidateFrom 生效日期
+                     * 获取访问权限生效时间，如:"2021-09-22T00:00:00+00:00"
+生效、失效时间不填则访问权限长期有效
+                     * @return ValidateFrom 访问权限生效时间，如:"2021-09-22T00:00:00+00:00"
+生效、失效时间不填则访问权限长期有效
                      */
                     std::string GetValidateFrom() const;
 
                     /**
-                     * 设置生效日期
-                     * @param ValidateFrom 生效日期
+                     * 设置访问权限生效时间，如:"2021-09-22T00:00:00+00:00"
+生效、失效时间不填则访问权限长期有效
+                     * @param ValidateFrom 访问权限生效时间，如:"2021-09-22T00:00:00+00:00"
+生效、失效时间不填则访问权限长期有效
                      */
                     void SetValidateFrom(const std::string& _validateFrom);
 
@@ -483,14 +487,18 @@ namespace TencentCloud
                     bool ValidateFromHasBeenSet() const;
 
                     /**
-                     * 获取失效日期
-                     * @return ValidateTo 失效日期
+                     * 获取访问权限失效时间，如:"2021-09-23T00:00:00+00:00"
+生效、失效时间不填则访问权限长期有效
+                     * @return ValidateTo 访问权限失效时间，如:"2021-09-23T00:00:00+00:00"
+生效、失效时间不填则访问权限长期有效
                      */
                     std::string GetValidateTo() const;
 
                     /**
-                     * 设置失效日期
-                     * @param ValidateTo 失效日期
+                     * 设置访问权限失效时间，如:"2021-09-23T00:00:00+00:00"
+生效、失效时间不填则访问权限长期有效
+                     * @param ValidateTo 访问权限失效时间，如:"2021-09-23T00:00:00+00:00"
+生效、失效时间不填则访问权限长期有效
                      */
                     void SetValidateTo(const std::string& _validateTo);
 
@@ -501,14 +509,14 @@ namespace TencentCloud
                     bool ValidateToHasBeenSet() const;
 
                     /**
-                     * 获取策略状态，1-已生效，2-未生效，3-已过期
-                     * @return Status 策略状态，1-已生效，2-未生效，3-已过期
+                     * 获取访问权限状态，1 - 已生效，2 - 未生效，3 - 已过期
+                     * @return Status 访问权限状态，1 - 已生效，2 - 未生效，3 - 已过期
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置策略状态，1-已生效，2-未生效，3-已过期
-                     * @param Status 策略状态，1-已生效，2-未生效，3-已过期
+                     * 设置访问权限状态，1 - 已生效，2 - 未生效，3 - 已过期
+                     * @param Status 访问权限状态，1 - 已生效，2 - 未生效，3 - 已过期
                      */
                     void SetStatus(const uint64_t& _status);
 
@@ -527,7 +535,7 @@ namespace TencentCloud
                     bool m_idHasBeenSet;
 
                     /**
-                     * 规则名
+                     * 访问权限名称
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -551,13 +559,13 @@ namespace TencentCloud
                     bool m_allowClipFileDownHasBeenSet;
 
                     /**
-                     * 是否开启剪贴板text（目前含图片）上行
+                     * 是否开启剪贴板文本（目前含图片）上行
                      */
                     bool m_allowClipTextUp;
                     bool m_allowClipTextUpHasBeenSet;
 
                     /**
-                     * 是否开启剪贴板text（目前含图片）下行
+                     * 是否开启剪贴板文本（目前含图片）下行
                      */
                     bool m_allowClipTextDown;
                     bool m_allowClipTextDownHasBeenSet;
@@ -569,7 +577,7 @@ namespace TencentCloud
                     bool m_allowFileUpHasBeenSet;
 
                     /**
-                     * 文件传输上传大小限制
+                     * 文件传输上传大小限制（预留参数，暂未启用）
                      */
                     uint64_t m_maxFileUpSize;
                     bool m_maxFileUpSizeHasBeenSet;
@@ -581,13 +589,13 @@ namespace TencentCloud
                     bool m_allowFileDownHasBeenSet;
 
                     /**
-                     * 文件传输下载大小限制
+                     * 文件传输下载大小限制（预留参数，暂未启用）
                      */
                     uint64_t m_maxFileDownSize;
                     bool m_maxFileDownSizeHasBeenSet;
 
                     /**
-                     * 是否允许任意账号登陆
+                     * 是否允许任意账号登录
                      */
                     bool m_allowAnyAccount;
                     bool m_allowAnyAccountHasBeenSet;
@@ -605,13 +613,13 @@ namespace TencentCloud
                     bool m_userGroupSetHasBeenSet;
 
                     /**
-                     * 关联的主机列表
+                     * 关联的资产列表
                      */
                     std::vector<Device> m_deviceSet;
                     bool m_deviceSetHasBeenSet;
 
                     /**
-                     * 关联的主机组列表
+                     * 关联的资产组列表
                      */
                     std::vector<Group> m_deviceGroupSet;
                     bool m_deviceGroupSetHasBeenSet;
@@ -629,49 +637,51 @@ namespace TencentCloud
                     bool m_cmdTemplateSetHasBeenSet;
 
                     /**
-                     * 是否开启rdp磁盘映射文件上传
+                     * 是否开启 RDP 磁盘映射文件上传
                      */
                     bool m_allowDiskFileUp;
                     bool m_allowDiskFileUpHasBeenSet;
 
                     /**
-                     * 是否开启rdp磁盘映射文件下载
+                     * 是否开启 RDP 磁盘映射文件下载
                      */
                     bool m_allowDiskFileDown;
                     bool m_allowDiskFileDownHasBeenSet;
 
                     /**
-                     * 是否开启rz sz文件上传
+                     * 是否开启 rz sz 文件上传
                      */
                     bool m_allowShellFileUp;
                     bool m_allowShellFileUpHasBeenSet;
 
                     /**
-                     * 是否开启rz sz文件下载
+                     * 是否开启 rz sz 文件下载
                      */
                     bool m_allowShellFileDown;
                     bool m_allowShellFileDownHasBeenSet;
 
                     /**
-                     * 是否开启SFTP文件删除
+                     * 是否开启 SFTP 文件删除
                      */
                     bool m_allowFileDel;
                     bool m_allowFileDelHasBeenSet;
 
                     /**
-                     * 生效日期
+                     * 访问权限生效时间，如:"2021-09-22T00:00:00+00:00"
+生效、失效时间不填则访问权限长期有效
                      */
                     std::string m_validateFrom;
                     bool m_validateFromHasBeenSet;
 
                     /**
-                     * 失效日期
+                     * 访问权限失效时间，如:"2021-09-23T00:00:00+00:00"
+生效、失效时间不填则访问权限长期有效
                      */
                     std::string m_validateTo;
                     bool m_validateToHasBeenSet;
 
                     /**
-                     * 策略状态，1-已生效，2-未生效，3-已过期
+                     * 访问权限状态，1 - 已生效，2 - 未生效，3 - 已过期
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

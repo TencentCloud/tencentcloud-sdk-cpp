@@ -75,7 +75,8 @@ CLOSING表示关闭中；
 CLOSED表示已关闭；
 ADJUSTING表示配置变更中；
 ISOLATING表示隔离中；
-ISOLATED表示已隔离。
+ISOLATED表示已隔离；
+MOVING表示迁移中。
                      * @return Status 通道状态。
 其中：
 RUNNING表示运行中；
@@ -86,7 +87,8 @@ CLOSING表示关闭中；
 CLOSED表示已关闭；
 ADJUSTING表示配置变更中；
 ISOLATING表示隔离中；
-ISOLATED表示已隔离。
+ISOLATED表示已隔离；
+MOVING表示迁移中。
                      */
                     std::string GetStatus() const;
 
@@ -101,7 +103,8 @@ CLOSING表示关闭中；
 CLOSED表示已关闭；
 ADJUSTING表示配置变更中；
 ISOLATING表示隔离中；
-ISOLATED表示已隔离。
+ISOLATED表示已隔离；
+MOVING表示迁移中。
                      * @param Status 通道状态。
 其中：
 RUNNING表示运行中；
@@ -112,7 +115,8 @@ CLOSING表示关闭中；
 CLOSED表示已关闭；
 ADJUSTING表示配置变更中；
 ISOLATING表示隔离中；
-ISOLATED表示已隔离。
+ISOLATED表示已隔离；
+MOVING表示迁移中。
                      */
                     void SetStatus(const std::string& _status);
 
@@ -141,7 +145,8 @@ CLOSING表示关闭中；
 CLOSED表示已关闭；
 ADJUSTING表示配置变更中；
 ISOLATING表示隔离中；
-ISOLATED表示已隔离。
+ISOLATED表示已隔离；
+MOVING表示迁移中。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

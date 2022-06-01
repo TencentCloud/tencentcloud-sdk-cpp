@@ -37,6 +37,8 @@
 #include <tencentcloud/ess/v20201111/model/DescribeFileUrlsResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFlowBriefsRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFlowBriefsResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeFlowTemplatesRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeFlowTemplatesResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeResponse.h>
 #include <tencentcloud/ess/v20201111/model/StartFlowRequest.h>
@@ -78,6 +80,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFlowBriefsResponse> DescribeFlowBriefsOutcome;
                 typedef std::future<DescribeFlowBriefsOutcome> DescribeFlowBriefsOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeFlowBriefsRequest&, DescribeFlowBriefsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowBriefsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFlowTemplatesResponse> DescribeFlowTemplatesOutcome;
+                typedef std::future<DescribeFlowTemplatesOutcome> DescribeFlowTemplatesOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeFlowTemplatesRequest&, DescribeFlowTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeThirdPartyAuthCodeResponse> DescribeThirdPartyAuthCodeOutcome;
                 typedef std::future<DescribeThirdPartyAuthCodeOutcome> DescribeThirdPartyAuthCodeOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeThirdPartyAuthCodeRequest&, DescribeThirdPartyAuthCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeThirdPartyAuthCodeAsyncHandler;
@@ -128,6 +133,11 @@ namespace TencentCloud
 
                 /**
                  *获取小程序跳转链接
+
+跳转到小程序的实现，参考官方文档（分为<a href="https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html">全屏</a>、<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html">半屏</a>两种方式）
+
+
+如您需要自主配置小程序跳转链接，请参考: <a href="https://tcloud-doc.isd.com/document/product/1323/74774">跳转小程序链接配置说明</a>
                  * @param req CreateSchemeUrlRequest
                  * @return CreateSchemeUrlOutcome
                  */
@@ -152,6 +162,15 @@ namespace TencentCloud
                 DescribeFlowBriefsOutcome DescribeFlowBriefs(const Model::DescribeFlowBriefsRequest &request);
                 void DescribeFlowBriefsAsync(const Model::DescribeFlowBriefsRequest& request, const DescribeFlowBriefsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeFlowBriefsOutcomeCallable DescribeFlowBriefsCallable(const Model::DescribeFlowBriefsRequest& request);
+
+                /**
+                 *二期接口-查询模板
+                 * @param req DescribeFlowTemplatesRequest
+                 * @return DescribeFlowTemplatesOutcome
+                 */
+                DescribeFlowTemplatesOutcome DescribeFlowTemplates(const Model::DescribeFlowTemplatesRequest &request);
+                void DescribeFlowTemplatesAsync(const Model::DescribeFlowTemplatesRequest& request, const DescribeFlowTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFlowTemplatesOutcomeCallable DescribeFlowTemplatesCallable(const Model::DescribeFlowTemplatesRequest& request);
 
                 /**
                  *通过AuthCode查询用户是否实名

@@ -32,7 +32,8 @@ AddExistedInstancesRequest::AddExistedInstancesRequest() :
     m_securityGroupIdsHasBeenSet(false),
     m_nodePoolHasBeenSet(false),
     m_skipValidateOptionsHasBeenSet(false),
-    m_instanceAdvancedSettingsOverridesHasBeenSet(false)
+    m_instanceAdvancedSettingsOverridesHasBeenSet(false),
+    m_imageIdHasBeenSet(false)
 {
 }
 
@@ -147,6 +148,14 @@ string AddExistedInstancesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_imageIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_imageId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -315,6 +324,22 @@ void AddExistedInstancesRequest::SetInstanceAdvancedSettingsOverrides(const vect
 bool AddExistedInstancesRequest::InstanceAdvancedSettingsOverridesHasBeenSet() const
 {
     return m_instanceAdvancedSettingsOverridesHasBeenSet;
+}
+
+string AddExistedInstancesRequest::GetImageId() const
+{
+    return m_imageId;
+}
+
+void AddExistedInstancesRequest::SetImageId(const string& _imageId)
+{
+    m_imageId = _imageId;
+    m_imageIdHasBeenSet = true;
+}
+
+bool AddExistedInstancesRequest::ImageIdHasBeenSet() const
+{
+    return m_imageIdHasBeenSet;
 }
 
 

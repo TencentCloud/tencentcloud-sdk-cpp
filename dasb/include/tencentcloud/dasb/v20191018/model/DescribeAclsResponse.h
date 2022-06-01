@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取记录总数
-                     * @return TotalCount 记录总数
+                     * 获取访问权限总数
+                     * @return TotalCount 访问权限总数
                      */
                     uint64_t GetTotalCount() const;
 
@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取访问权限记录集合，当前分页
-                     * @return AclSet 访问权限记录集合，当前分页
+                     * 获取访问权限列表
+                     * @return AclSet 访问权限列表
                      */
                     std::vector<Acl> GetAclSet() const;
 
@@ -71,13 +71,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 记录总数
+                     * 访问权限总数
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 访问权限记录集合，当前分页
+                     * 访问权限列表
                      */
                     std::vector<Acl> m_aclSet;
                     bool m_aclSetHasBeenSet;

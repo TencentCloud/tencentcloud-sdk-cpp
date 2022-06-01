@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取每页条目数量，默认20
-                     * @return Limit 每页条目数量，默认20
+                     * 获取每页条目数量，默认20, 最大500
+                     * @return Limit 每页条目数量，默认20, 最大500
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页条目数量，默认20
-                     * @param Limit 每页条目数量，默认20
+                     * 设置每页条目数量，默认20, 最大500
+                     * @param Limit 每页条目数量，默认20, 最大500
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -133,14 +133,18 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取精确查询，IdSet、UserName为空时才生效
-                     * @return Phone 精确查询，IdSet、UserName为空时才生效
+                     * 获取精确查询，IdSet、UserName为空时才生效。
+大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
+                     * @return Phone 精确查询，IdSet、UserName为空时才生效。
+大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
                      */
                     std::string GetPhone() const;
 
                     /**
-                     * 设置精确查询，IdSet、UserName为空时才生效
-                     * @param Phone 精确查询，IdSet、UserName为空时才生效
+                     * 设置精确查询，IdSet、UserName为空时才生效。
+大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
+                     * @param Phone 精确查询，IdSet、UserName为空时才生效。
+大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
                      */
                     void SetPhone(const std::string& _phone);
 
@@ -151,14 +155,14 @@ namespace TencentCloud
                     bool PhoneHasBeenSet() const;
 
                     /**
-                     * 获取有访问权限的主机ID集合
-                     * @return AuthorizedDeviceIdSet 有访问权限的主机ID集合
+                     * 获取查询具有指定资产ID访问权限的用户
+                     * @return AuthorizedDeviceIdSet 查询具有指定资产ID访问权限的用户
                      */
                     std::vector<uint64_t> GetAuthorizedDeviceIdSet() const;
 
                     /**
-                     * 设置有访问权限的主机ID集合
-                     * @param AuthorizedDeviceIdSet 有访问权限的主机ID集合
+                     * 设置查询具有指定资产ID访问权限的用户
+                     * @param AuthorizedDeviceIdSet 查询具有指定资产ID访问权限的用户
                      */
                     void SetAuthorizedDeviceIdSet(const std::vector<uint64_t>& _authorizedDeviceIdSet);
 
@@ -169,14 +173,14 @@ namespace TencentCloud
                     bool AuthorizedDeviceIdSetHasBeenSet() const;
 
                     /**
-                     * 获取认证方式，0-本地，1-ldap, 2-oauth 不传为全部
-                     * @return AuthTypeSet 认证方式，0-本地，1-ldap, 2-oauth 不传为全部
+                     * 获取认证方式，0 - 本地, 1 - LDAP, 2 - OAuth, 不传为全部
+                     * @return AuthTypeSet 认证方式，0 - 本地, 1 - LDAP, 2 - OAuth, 不传为全部
                      */
                     std::vector<uint64_t> GetAuthTypeSet() const;
 
                     /**
-                     * 设置认证方式，0-本地，1-ldap, 2-oauth 不传为全部
-                     * @param AuthTypeSet 认证方式，0-本地，1-ldap, 2-oauth 不传为全部
+                     * 设置认证方式，0 - 本地, 1 - LDAP, 2 - OAuth, 不传为全部
+                     * @param AuthTypeSet 认证方式，0 - 本地, 1 - LDAP, 2 - OAuth, 不传为全部
                      */
                     void SetAuthTypeSet(const std::vector<uint64_t>& _authTypeSet);
 
@@ -207,7 +211,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 每页条目数量，默认20
+                     * 每页条目数量，默认20, 最大500
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -219,19 +223,20 @@ namespace TencentCloud
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 精确查询，IdSet、UserName为空时才生效
+                     * 精确查询，IdSet、UserName为空时才生效。
+大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
                      */
                     std::string m_phone;
                     bool m_phoneHasBeenSet;
 
                     /**
-                     * 有访问权限的主机ID集合
+                     * 查询具有指定资产ID访问权限的用户
                      */
                     std::vector<uint64_t> m_authorizedDeviceIdSet;
                     bool m_authorizedDeviceIdSetHasBeenSet;
 
                     /**
-                     * 认证方式，0-本地，1-ldap, 2-oauth 不传为全部
+                     * 认证方式，0 - 本地, 1 - LDAP, 2 - OAuth, 不传为全部
                      */
                     std::vector<uint64_t> m_authTypeSet;
                     bool m_authTypeSetHasBeenSet;

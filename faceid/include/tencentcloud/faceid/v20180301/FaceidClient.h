@@ -85,6 +85,8 @@
 #include <tencentcloud/faceid/v20180301/model/MobileNetworkTimeVerificationResponse.h>
 #include <tencentcloud/faceid/v20180301/model/MobileStatusRequest.h>
 #include <tencentcloud/faceid/v20180301/model/MobileStatusResponse.h>
+#include <tencentcloud/faceid/v20180301/model/ParseNfcDataRequest.h>
+#include <tencentcloud/faceid/v20180301/model/ParseNfcDataResponse.h>
 #include <tencentcloud/faceid/v20180301/model/PhoneVerificationRequest.h>
 #include <tencentcloud/faceid/v20180301/model/PhoneVerificationResponse.h>
 #include <tencentcloud/faceid/v20180301/model/PhoneVerificationCMCCRequest.h>
@@ -200,6 +202,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::MobileStatusResponse> MobileStatusOutcome;
                 typedef std::future<MobileStatusOutcome> MobileStatusOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::MobileStatusRequest&, MobileStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MobileStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ParseNfcDataResponse> ParseNfcDataOutcome;
+                typedef std::future<ParseNfcDataOutcome> ParseNfcDataOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::ParseNfcDataRequest&, ParseNfcDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ParseNfcDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::PhoneVerificationResponse> PhoneVerificationOutcome;
                 typedef std::future<PhoneVerificationOutcome> PhoneVerificationOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::PhoneVerificationRequest&, PhoneVerificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PhoneVerificationAsyncHandler;
@@ -496,6 +501,15 @@ namespace TencentCloud
                 MobileStatusOutcome MobileStatus(const Model::MobileStatusRequest &request);
                 void MobileStatusAsync(const Model::MobileStatusRequest& request, const MobileStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 MobileStatusOutcomeCallable MobileStatusCallable(const Model::MobileStatusRequest& request);
+
+                /**
+                 *解析SDK获取到的证件NFC数据，接口传入SDK返回的ReqId，返回证件信息（个别字段为特定证件类型特有）。SDK生成的ReqId五分钟内有效，重复查询仅收一次费。支持身份证类证件（二代身份证、港澳居住证、台湾居住证、外国人永居证）以及旅行类证件（港澳通行证、台湾通行证、台胞证、回乡证）的NFC识别及核验。
+                 * @param req ParseNfcDataRequest
+                 * @return ParseNfcDataOutcome
+                 */
+                ParseNfcDataOutcome ParseNfcData(const Model::ParseNfcDataRequest &request);
+                void ParseNfcDataAsync(const Model::ParseNfcDataRequest& request, const ParseNfcDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ParseNfcDataOutcomeCallable ParseNfcDataCallable(const Model::ParseNfcDataRequest& request);
 
                 /**
                  *本接口用于校验手机号、姓名和身份证号的真实性和一致性。支持的手机号段详情请查阅<a href="https://cloud.tencent.com/document/product/1007/46063">运营商类</a>文档。

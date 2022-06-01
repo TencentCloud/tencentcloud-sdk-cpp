@@ -736,6 +736,24 @@ namespace TencentCloud
                      */
                     bool GPUInfoHasBeenSet() const;
 
+                    /**
+                     * 获取实例的操作系统许可类型，默认为TencentCloud
+                     * @return LicenseType 实例的操作系统许可类型，默认为TencentCloud
+                     */
+                    std::string GetLicenseType() const;
+
+                    /**
+                     * 设置实例的操作系统许可类型，默认为TencentCloud
+                     * @param LicenseType 实例的操作系统许可类型，默认为TencentCloud
+                     */
+                    void SetLicenseType(const std::string& _licenseType);
+
+                    /**
+                     * 判断参数 LicenseType 是否已赋值
+                     * @return LicenseType 是否已赋值
+                     */
+                    bool LicenseTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -960,6 +978,12 @@ namespace TencentCloud
                      */
                     GPUInfo m_gPUInfo;
                     bool m_gPUInfoHasBeenSet;
+
+                    /**
+                     * 实例的操作系统许可类型，默认为TencentCloud
+                     */
+                    std::string m_licenseType;
+                    bool m_licenseTypeHasBeenSet;
 
                 };
             }

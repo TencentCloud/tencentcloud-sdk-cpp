@@ -255,6 +255,49 @@ TkeClient::AddVpcCniSubnetsOutcomeCallable TkeClient::AddVpcCniSubnetsCallable(c
     return task->get_future();
 }
 
+TkeClient::CheckEdgeClusterCIDROutcome TkeClient::CheckEdgeClusterCIDR(const CheckEdgeClusterCIDRRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckEdgeClusterCIDR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckEdgeClusterCIDRResponse rsp = CheckEdgeClusterCIDRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckEdgeClusterCIDROutcome(rsp);
+        else
+            return CheckEdgeClusterCIDROutcome(o.GetError());
+    }
+    else
+    {
+        return CheckEdgeClusterCIDROutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CheckEdgeClusterCIDRAsync(const CheckEdgeClusterCIDRRequest& request, const CheckEdgeClusterCIDRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckEdgeClusterCIDR(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::CheckEdgeClusterCIDROutcomeCallable TkeClient::CheckEdgeClusterCIDRCallable(const CheckEdgeClusterCIDRRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckEdgeClusterCIDROutcome()>>(
+        [this, request]()
+        {
+            return this->CheckEdgeClusterCIDR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::CheckInstancesUpgradeAbleOutcome TkeClient::CheckInstancesUpgradeAble(const CheckInstancesUpgradeAbleRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckInstancesUpgradeAble");
@@ -635,6 +678,49 @@ TkeClient::CreateClusterRouteTableOutcomeCallable TkeClient::CreateClusterRouteT
         [this, request]()
         {
             return this->CreateClusterRouteTable(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::CreateECMInstancesOutcome TkeClient::CreateECMInstances(const CreateECMInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateECMInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateECMInstancesResponse rsp = CreateECMInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateECMInstancesOutcome(rsp);
+        else
+            return CreateECMInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateECMInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CreateECMInstancesAsync(const CreateECMInstancesRequest& request, const CreateECMInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateECMInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::CreateECMInstancesOutcomeCallable TkeClient::CreateECMInstancesCallable(const CreateECMInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateECMInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateECMInstances(request);
         }
     );
 
@@ -1029,6 +1115,49 @@ TkeClient::CreatePrometheusTemplateOutcomeCallable TkeClient::CreatePrometheusTe
     return task->get_future();
 }
 
+TkeClient::CreateTKEEdgeClusterOutcome TkeClient::CreateTKEEdgeCluster(const CreateTKEEdgeClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTKEEdgeCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTKEEdgeClusterResponse rsp = CreateTKEEdgeClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTKEEdgeClusterOutcome(rsp);
+        else
+            return CreateTKEEdgeClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTKEEdgeClusterOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CreateTKEEdgeClusterAsync(const CreateTKEEdgeClusterRequest& request, const CreateTKEEdgeClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateTKEEdgeCluster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::CreateTKEEdgeClusterOutcomeCallable TkeClient::CreateTKEEdgeClusterCallable(const CreateTKEEdgeClusterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTKEEdgeClusterOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateTKEEdgeCluster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DeleteClusterOutcome TkeClient::DeleteCluster(const DeleteClusterRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCluster");
@@ -1373,6 +1502,49 @@ TkeClient::DeleteClusterRouteTableOutcomeCallable TkeClient::DeleteClusterRouteT
     return task->get_future();
 }
 
+TkeClient::DeleteECMInstancesOutcome TkeClient::DeleteECMInstances(const DeleteECMInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteECMInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteECMInstancesResponse rsp = DeleteECMInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteECMInstancesOutcome(rsp);
+        else
+            return DeleteECMInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteECMInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DeleteECMInstancesAsync(const DeleteECMInstancesRequest& request, const DeleteECMInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteECMInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DeleteECMInstancesOutcomeCallable TkeClient::DeleteECMInstancesCallable(const DeleteECMInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteECMInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteECMInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DeleteEKSClusterOutcome TkeClient::DeleteEKSCluster(const DeleteEKSClusterRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteEKSCluster");
@@ -1452,6 +1624,92 @@ TkeClient::DeleteEKSContainerInstancesOutcomeCallable TkeClient::DeleteEKSContai
         [this, request]()
         {
             return this->DeleteEKSContainerInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DeleteEdgeCVMInstancesOutcome TkeClient::DeleteEdgeCVMInstances(const DeleteEdgeCVMInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteEdgeCVMInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteEdgeCVMInstancesResponse rsp = DeleteEdgeCVMInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteEdgeCVMInstancesOutcome(rsp);
+        else
+            return DeleteEdgeCVMInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteEdgeCVMInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DeleteEdgeCVMInstancesAsync(const DeleteEdgeCVMInstancesRequest& request, const DeleteEdgeCVMInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteEdgeCVMInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DeleteEdgeCVMInstancesOutcomeCallable TkeClient::DeleteEdgeCVMInstancesCallable(const DeleteEdgeCVMInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteEdgeCVMInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteEdgeCVMInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DeleteEdgeClusterInstancesOutcome TkeClient::DeleteEdgeClusterInstances(const DeleteEdgeClusterInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteEdgeClusterInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteEdgeClusterInstancesResponse rsp = DeleteEdgeClusterInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteEdgeClusterInstancesOutcome(rsp);
+        else
+            return DeleteEdgeClusterInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteEdgeClusterInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DeleteEdgeClusterInstancesAsync(const DeleteEdgeClusterInstancesRequest& request, const DeleteEdgeClusterInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteEdgeClusterInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DeleteEdgeClusterInstancesOutcomeCallable TkeClient::DeleteEdgeClusterInstancesCallable(const DeleteEdgeClusterInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteEdgeClusterInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteEdgeClusterInstances(request);
         }
     );
 
@@ -1760,6 +2018,49 @@ TkeClient::DeletePrometheusTemplateSyncOutcomeCallable TkeClient::DeletePromethe
     return task->get_future();
 }
 
+TkeClient::DeleteTKEEdgeClusterOutcome TkeClient::DeleteTKEEdgeCluster(const DeleteTKEEdgeClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTKEEdgeCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTKEEdgeClusterResponse rsp = DeleteTKEEdgeClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTKEEdgeClusterOutcome(rsp);
+        else
+            return DeleteTKEEdgeClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTKEEdgeClusterOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DeleteTKEEdgeClusterAsync(const DeleteTKEEdgeClusterRequest& request, const DeleteTKEEdgeClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteTKEEdgeCluster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DeleteTKEEdgeClusterOutcomeCallable TkeClient::DeleteTKEEdgeClusterCallable(const DeleteTKEEdgeClusterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteTKEEdgeClusterOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteTKEEdgeCluster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribeAvailableClusterVersionOutcome TkeClient::DescribeAvailableClusterVersion(const DescribeAvailableClusterVersionRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAvailableClusterVersion");
@@ -1796,6 +2097,49 @@ TkeClient::DescribeAvailableClusterVersionOutcomeCallable TkeClient::DescribeAva
         [this, request]()
         {
             return this->DescribeAvailableClusterVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeAvailableTKEEdgeVersionOutcome TkeClient::DescribeAvailableTKEEdgeVersion(const DescribeAvailableTKEEdgeVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAvailableTKEEdgeVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAvailableTKEEdgeVersionResponse rsp = DescribeAvailableTKEEdgeVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAvailableTKEEdgeVersionOutcome(rsp);
+        else
+            return DescribeAvailableTKEEdgeVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAvailableTKEEdgeVersionOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeAvailableTKEEdgeVersionAsync(const DescribeAvailableTKEEdgeVersionRequest& request, const DescribeAvailableTKEEdgeVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAvailableTKEEdgeVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeAvailableTKEEdgeVersionOutcomeCallable TkeClient::DescribeAvailableTKEEdgeVersionCallable(const DescribeAvailableTKEEdgeVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAvailableTKEEdgeVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAvailableTKEEdgeVersion(request);
         }
     );
 
@@ -2577,6 +2921,49 @@ TkeClient::DescribeClustersOutcomeCallable TkeClient::DescribeClustersCallable(c
     return task->get_future();
 }
 
+TkeClient::DescribeECMInstancesOutcome TkeClient::DescribeECMInstances(const DescribeECMInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeECMInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeECMInstancesResponse rsp = DescribeECMInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeECMInstancesOutcome(rsp);
+        else
+            return DescribeECMInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeECMInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeECMInstancesAsync(const DescribeECMInstancesRequest& request, const DescribeECMInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeECMInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeECMInstancesOutcomeCallable TkeClient::DescribeECMInstancesCallable(const DescribeECMInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeECMInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeECMInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribeEKSClusterCredentialOutcome TkeClient::DescribeEKSClusterCredential(const DescribeEKSClusterCredentialRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEKSClusterCredential");
@@ -2785,6 +3172,178 @@ TkeClient::DescribeEKSContainerInstancesOutcomeCallable TkeClient::DescribeEKSCo
         [this, request]()
         {
             return this->DescribeEKSContainerInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeEdgeAvailableExtraArgsOutcome TkeClient::DescribeEdgeAvailableExtraArgs(const DescribeEdgeAvailableExtraArgsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEdgeAvailableExtraArgs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEdgeAvailableExtraArgsResponse rsp = DescribeEdgeAvailableExtraArgsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEdgeAvailableExtraArgsOutcome(rsp);
+        else
+            return DescribeEdgeAvailableExtraArgsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEdgeAvailableExtraArgsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeEdgeAvailableExtraArgsAsync(const DescribeEdgeAvailableExtraArgsRequest& request, const DescribeEdgeAvailableExtraArgsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEdgeAvailableExtraArgs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeEdgeAvailableExtraArgsOutcomeCallable TkeClient::DescribeEdgeAvailableExtraArgsCallable(const DescribeEdgeAvailableExtraArgsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEdgeAvailableExtraArgsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEdgeAvailableExtraArgs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeEdgeCVMInstancesOutcome TkeClient::DescribeEdgeCVMInstances(const DescribeEdgeCVMInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEdgeCVMInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEdgeCVMInstancesResponse rsp = DescribeEdgeCVMInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEdgeCVMInstancesOutcome(rsp);
+        else
+            return DescribeEdgeCVMInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEdgeCVMInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeEdgeCVMInstancesAsync(const DescribeEdgeCVMInstancesRequest& request, const DescribeEdgeCVMInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEdgeCVMInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeEdgeCVMInstancesOutcomeCallable TkeClient::DescribeEdgeCVMInstancesCallable(const DescribeEdgeCVMInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEdgeCVMInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEdgeCVMInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeEdgeClusterExtraArgsOutcome TkeClient::DescribeEdgeClusterExtraArgs(const DescribeEdgeClusterExtraArgsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEdgeClusterExtraArgs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEdgeClusterExtraArgsResponse rsp = DescribeEdgeClusterExtraArgsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEdgeClusterExtraArgsOutcome(rsp);
+        else
+            return DescribeEdgeClusterExtraArgsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEdgeClusterExtraArgsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeEdgeClusterExtraArgsAsync(const DescribeEdgeClusterExtraArgsRequest& request, const DescribeEdgeClusterExtraArgsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEdgeClusterExtraArgs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeEdgeClusterExtraArgsOutcomeCallable TkeClient::DescribeEdgeClusterExtraArgsCallable(const DescribeEdgeClusterExtraArgsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEdgeClusterExtraArgsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEdgeClusterExtraArgs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeEdgeClusterInstancesOutcome TkeClient::DescribeEdgeClusterInstances(const DescribeEdgeClusterInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEdgeClusterInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEdgeClusterInstancesResponse rsp = DescribeEdgeClusterInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEdgeClusterInstancesOutcome(rsp);
+        else
+            return DescribeEdgeClusterInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEdgeClusterInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeEdgeClusterInstancesAsync(const DescribeEdgeClusterInstancesRequest& request, const DescribeEdgeClusterInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEdgeClusterInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeEdgeClusterInstancesOutcomeCallable TkeClient::DescribeEdgeClusterInstancesCallable(const DescribeEdgeClusterInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEdgeClusterInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEdgeClusterInstances(request);
         }
     );
 
@@ -3860,6 +4419,178 @@ TkeClient::DescribeRouteTableConflictsOutcomeCallable TkeClient::DescribeRouteTa
         [this, request]()
         {
             return this->DescribeRouteTableConflicts(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeTKEEdgeClusterCredentialOutcome TkeClient::DescribeTKEEdgeClusterCredential(const DescribeTKEEdgeClusterCredentialRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTKEEdgeClusterCredential");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTKEEdgeClusterCredentialResponse rsp = DescribeTKEEdgeClusterCredentialResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTKEEdgeClusterCredentialOutcome(rsp);
+        else
+            return DescribeTKEEdgeClusterCredentialOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTKEEdgeClusterCredentialOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeTKEEdgeClusterCredentialAsync(const DescribeTKEEdgeClusterCredentialRequest& request, const DescribeTKEEdgeClusterCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTKEEdgeClusterCredential(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeTKEEdgeClusterCredentialOutcomeCallable TkeClient::DescribeTKEEdgeClusterCredentialCallable(const DescribeTKEEdgeClusterCredentialRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTKEEdgeClusterCredentialOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTKEEdgeClusterCredential(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeTKEEdgeClusterStatusOutcome TkeClient::DescribeTKEEdgeClusterStatus(const DescribeTKEEdgeClusterStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTKEEdgeClusterStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTKEEdgeClusterStatusResponse rsp = DescribeTKEEdgeClusterStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTKEEdgeClusterStatusOutcome(rsp);
+        else
+            return DescribeTKEEdgeClusterStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTKEEdgeClusterStatusOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeTKEEdgeClusterStatusAsync(const DescribeTKEEdgeClusterStatusRequest& request, const DescribeTKEEdgeClusterStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTKEEdgeClusterStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeTKEEdgeClusterStatusOutcomeCallable TkeClient::DescribeTKEEdgeClusterStatusCallable(const DescribeTKEEdgeClusterStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTKEEdgeClusterStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTKEEdgeClusterStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeTKEEdgeClustersOutcome TkeClient::DescribeTKEEdgeClusters(const DescribeTKEEdgeClustersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTKEEdgeClusters");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTKEEdgeClustersResponse rsp = DescribeTKEEdgeClustersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTKEEdgeClustersOutcome(rsp);
+        else
+            return DescribeTKEEdgeClustersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTKEEdgeClustersOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeTKEEdgeClustersAsync(const DescribeTKEEdgeClustersRequest& request, const DescribeTKEEdgeClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTKEEdgeClusters(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeTKEEdgeClustersOutcomeCallable TkeClient::DescribeTKEEdgeClustersCallable(const DescribeTKEEdgeClustersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTKEEdgeClustersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTKEEdgeClusters(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeTKEEdgeExternalKubeconfigOutcome TkeClient::DescribeTKEEdgeExternalKubeconfig(const DescribeTKEEdgeExternalKubeconfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTKEEdgeExternalKubeconfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTKEEdgeExternalKubeconfigResponse rsp = DescribeTKEEdgeExternalKubeconfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTKEEdgeExternalKubeconfigOutcome(rsp);
+        else
+            return DescribeTKEEdgeExternalKubeconfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTKEEdgeExternalKubeconfigOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeTKEEdgeExternalKubeconfigAsync(const DescribeTKEEdgeExternalKubeconfigRequest& request, const DescribeTKEEdgeExternalKubeconfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTKEEdgeExternalKubeconfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeTKEEdgeExternalKubeconfigOutcomeCallable TkeClient::DescribeTKEEdgeExternalKubeconfigCallable(const DescribeTKEEdgeExternalKubeconfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTKEEdgeExternalKubeconfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTKEEdgeExternalKubeconfig(request);
         }
     );
 
@@ -5666,6 +6397,49 @@ TkeClient::UpdateImageCacheOutcomeCallable TkeClient::UpdateImageCacheCallable(c
         [this, request]()
         {
             return this->UpdateImageCache(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::UpdateTKEEdgeClusterOutcome TkeClient::UpdateTKEEdgeCluster(const UpdateTKEEdgeClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateTKEEdgeCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateTKEEdgeClusterResponse rsp = UpdateTKEEdgeClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateTKEEdgeClusterOutcome(rsp);
+        else
+            return UpdateTKEEdgeClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateTKEEdgeClusterOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::UpdateTKEEdgeClusterAsync(const UpdateTKEEdgeClusterRequest& request, const UpdateTKEEdgeClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateTKEEdgeCluster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::UpdateTKEEdgeClusterOutcomeCallable TkeClient::UpdateTKEEdgeClusterCallable(const UpdateTKEEdgeClusterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateTKEEdgeClusterOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateTKEEdgeCluster(request);
         }
     );
 

@@ -31,7 +31,8 @@ EnvInfo::EnvInfo() :
     m_configInternetServiceIpHasBeenSet(false),
     m_specIdHasBeenSet(false),
     m_envReplicaHasBeenSet(false),
-    m_runningCountHasBeenSet(false)
+    m_runningCountHasBeenSet(false),
+    m_aliasEnvNameHasBeenSet(false)
 {
 }
 
@@ -160,6 +161,16 @@ CoreInternalOutcome EnvInfo::Deserialize(const rapidjson::Value &value)
         m_runningCountHasBeenSet = true;
     }
 
+    if (value.HasMember("AliasEnvName") && !value["AliasEnvName"].IsNull())
+    {
+        if (!value["AliasEnvName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnvInfo.AliasEnvName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_aliasEnvName = string(value["AliasEnvName"].GetString());
+        m_aliasEnvNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -260,6 +271,14 @@ void EnvInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "RunningCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_runningCount, allocator);
+    }
+
+    if (m_aliasEnvNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AliasEnvName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_aliasEnvName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -439,5 +458,21 @@ void EnvInfo::SetRunningCount(const int64_t& _runningCount)
 bool EnvInfo::RunningCountHasBeenSet() const
 {
     return m_runningCountHasBeenSet;
+}
+
+string EnvInfo::GetAliasEnvName() const
+{
+    return m_aliasEnvName;
+}
+
+void EnvInfo::SetAliasEnvName(const string& _aliasEnvName)
+{
+    m_aliasEnvName = _aliasEnvName;
+    m_aliasEnvNameHasBeenSet = true;
+}
+
+bool EnvInfo::AliasEnvNameHasBeenSet() const
+{
+    return m_aliasEnvNameHasBeenSet;
 }
 

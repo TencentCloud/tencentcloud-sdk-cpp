@@ -209,7 +209,8 @@ ADJUSTING表示配置变更中；
 ISOLATING表示隔离中；
 ISOLATED表示已隔离；
 CLONING表示复制中；
-RECOVERING表示通道维护中。
+RECOVERING表示通道维护中；
+MOVING表示迁移中。
                      * @return Status 通道状态。其中：
 RUNNING表示运行中；
 CREATING表示创建中；
@@ -221,7 +222,8 @@ ADJUSTING表示配置变更中；
 ISOLATING表示隔离中；
 ISOLATED表示已隔离；
 CLONING表示复制中；
-RECOVERING表示通道维护中。
+RECOVERING表示通道维护中；
+MOVING表示迁移中。
                      */
                     std::string GetStatus() const;
 
@@ -237,7 +239,8 @@ ADJUSTING表示配置变更中；
 ISOLATING表示隔离中；
 ISOLATED表示已隔离；
 CLONING表示复制中；
-RECOVERING表示通道维护中。
+RECOVERING表示通道维护中；
+MOVING表示迁移中。
                      * @param Status 通道状态。其中：
 RUNNING表示运行中；
 CREATING表示创建中；
@@ -249,7 +252,8 @@ ADJUSTING表示配置变更中；
 ISOLATING表示隔离中；
 ISOLATED表示已隔离；
 CLONING表示复制中；
-RECOVERING表示通道维护中。
+RECOVERING表示通道维护中；
+MOVING表示迁移中。
                      */
                     void SetStatus(const std::string& _status);
 
@@ -654,17 +658,17 @@ RECOVERING表示通道维护中。
                     bool IPAddressVersionHasBeenSet() const;
 
                     /**
-                     * 获取网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网，secure_eip表示定制安全eip
+                     * 获取网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网，secure_eip表示定制安全EIP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NetworkType 网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网，secure_eip表示定制安全eip
+                     * @return NetworkType 网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网，secure_eip表示定制安全EIP
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetNetworkType() const;
 
                     /**
-                     * 设置网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网，secure_eip表示定制安全eip
+                     * 设置网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网，secure_eip表示定制安全EIP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NetworkType 网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网，secure_eip表示定制安全eip
+                     * @param NetworkType 网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网，secure_eip表示定制安全EIP
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetNetworkType(const std::string& _networkType);
@@ -860,7 +864,8 @@ ADJUSTING表示配置变更中；
 ISOLATING表示隔离中；
 ISOLATED表示已隔离；
 CLONING表示复制中；
-RECOVERING表示通道维护中。
+RECOVERING表示通道维护中；
+MOVING表示迁移中。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -993,7 +998,7 @@ RECOVERING表示通道维护中。
                     bool m_iPAddressVersionHasBeenSet;
 
                     /**
-                     * 网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网，secure_eip表示定制安全eip
+                     * 网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网，secure_eip表示定制安全EIP
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_networkType;

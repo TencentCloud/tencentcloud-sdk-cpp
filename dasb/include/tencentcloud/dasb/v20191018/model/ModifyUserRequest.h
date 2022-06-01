@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取用户姓名，最大长度32字符，不能为空
-                     * @return RealName 用户姓名，最大长度32字符，不能为空
+                     * 获取用户姓名，最大长度20个字符，不能包含空格
+                     * @return RealName 用户姓名，最大长度20个字符，不能包含空格
                      */
                     std::string GetRealName() const;
 
                     /**
-                     * 设置用户姓名，最大长度32字符，不能为空
-                     * @param RealName 用户姓名，最大长度32字符，不能为空
+                     * 设置用户姓名，最大长度20个字符，不能包含空格
+                     * @param RealName 用户姓名，最大长度20个字符，不能包含空格
                      */
                     void SetRealName(const std::string& _realName);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool RealNameHasBeenSet() const;
 
                     /**
-                     * 获取手机号
-                     * @return Phone 手机号
+                     * 获取大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
+                     * @return Phone 大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
                      */
                     std::string GetPhone() const;
 
                     /**
-                     * 设置手机号
-                     * @param Phone 手机号
+                     * 设置大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
+                     * @param Phone 大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
                      */
                     void SetPhone(const std::string& _phone);
 
@@ -115,14 +115,18 @@ namespace TencentCloud
                     bool EmailHasBeenSet() const;
 
                     /**
-                     * 获取生效起始时间,不设置则为1970-01-01 08:00:01
-                     * @return ValidateFrom 生效起始时间,不设置则为1970-01-01 08:00:01
+                     * 获取用户生效时间，如:"2021-09-22T00:00:00+00:00"
+生效、失效时间不填则用户长期有效
+                     * @return ValidateFrom 用户生效时间，如:"2021-09-22T00:00:00+00:00"
+生效、失效时间不填则用户长期有效
                      */
                     std::string GetValidateFrom() const;
 
                     /**
-                     * 设置生效起始时间,不设置则为1970-01-01 08:00:01
-                     * @param ValidateFrom 生效起始时间,不设置则为1970-01-01 08:00:01
+                     * 设置用户生效时间，如:"2021-09-22T00:00:00+00:00"
+生效、失效时间不填则用户长期有效
+                     * @param ValidateFrom 用户生效时间，如:"2021-09-22T00:00:00+00:00"
+生效、失效时间不填则用户长期有效
                      */
                     void SetValidateFrom(const std::string& _validateFrom);
 
@@ -133,14 +137,18 @@ namespace TencentCloud
                     bool ValidateFromHasBeenSet() const;
 
                     /**
-                     * 获取生效结束时间,不设置则为1970-01-01 08:00:01
-                     * @return ValidateTo 生效结束时间,不设置则为1970-01-01 08:00:01
+                     * 获取用户失效时间，如:"2021-09-23T00:00:00+00:00"
+生效、失效时间不填则用户长期有效
+                     * @return ValidateTo 用户失效时间，如:"2021-09-23T00:00:00+00:00"
+生效、失效时间不填则用户长期有效
                      */
                     std::string GetValidateTo() const;
 
                     /**
-                     * 设置生效结束时间,不设置则为1970-01-01 08:00:01
-                     * @param ValidateTo 生效结束时间,不设置则为1970-01-01 08:00:01
+                     * 设置用户失效时间，如:"2021-09-23T00:00:00+00:00"
+生效、失效时间不填则用户长期有效
+                     * @param ValidateTo 用户失效时间，如:"2021-09-23T00:00:00+00:00"
+生效、失效时间不填则用户长期有效
                      */
                     void SetValidateTo(const std::string& _validateTo);
 
@@ -169,14 +177,14 @@ namespace TencentCloud
                     bool GroupIdSetHasBeenSet() const;
 
                     /**
-                     * 获取认证方式，0-本地 1-ldap, 2-oauth不传则默认为0
-                     * @return AuthType 认证方式，0-本地 1-ldap, 2-oauth不传则默认为0
+                     * 获取认证方式，0 - 本地，1 - LDAP，2 - OAuth 不传则默认为0
+                     * @return AuthType 认证方式，0 - 本地，1 - LDAP，2 - OAuth 不传则默认为0
                      */
                     uint64_t GetAuthType() const;
 
                     /**
-                     * 设置认证方式，0-本地 1-ldap, 2-oauth不传则默认为0
-                     * @param AuthType 认证方式，0-本地 1-ldap, 2-oauth不传则默认为0
+                     * 设置认证方式，0 - 本地，1 - LDAP，2 - OAuth 不传则默认为0
+                     * @param AuthType 认证方式，0 - 本地，1 - LDAP，2 - OAuth 不传则默认为0
                      */
                     void SetAuthType(const uint64_t& _authType);
 
@@ -187,14 +195,14 @@ namespace TencentCloud
                     bool AuthTypeHasBeenSet() const;
 
                     /**
-                     * 获取生效时间段, 0、1组成的字符串，长度168(7*24), 代表该用户的生效时间. 0 - 未生效，1 - 生效
-                     * @return ValidateTime 生效时间段, 0、1组成的字符串，长度168(7*24), 代表该用户的生效时间. 0 - 未生效，1 - 生效
+                     * 获取访问时间段限制， 由0、1组成的字符串，长度168(7 × 24)，代表该用户在一周中允许访问的时间段。字符串中第N个字符代表在一周中的第N个小时， 0 - 代表不允许访问，1 - 代表允许访问
+                     * @return ValidateTime 访问时间段限制， 由0、1组成的字符串，长度168(7 × 24)，代表该用户在一周中允许访问的时间段。字符串中第N个字符代表在一周中的第N个小时， 0 - 代表不允许访问，1 - 代表允许访问
                      */
                     std::string GetValidateTime() const;
 
                     /**
-                     * 设置生效时间段, 0、1组成的字符串，长度168(7*24), 代表该用户的生效时间. 0 - 未生效，1 - 生效
-                     * @param ValidateTime 生效时间段, 0、1组成的字符串，长度168(7*24), 代表该用户的生效时间. 0 - 未生效，1 - 生效
+                     * 设置访问时间段限制， 由0、1组成的字符串，长度168(7 × 24)，代表该用户在一周中允许访问的时间段。字符串中第N个字符代表在一周中的第N个小时， 0 - 代表不允许访问，1 - 代表允许访问
+                     * @param ValidateTime 访问时间段限制， 由0、1组成的字符串，长度168(7 × 24)，代表该用户在一周中允许访问的时间段。字符串中第N个字符代表在一周中的第N个小时， 0 - 代表不允许访问，1 - 代表允许访问
                      */
                     void SetValidateTime(const std::string& _validateTime);
 
@@ -213,13 +221,13 @@ namespace TencentCloud
                     bool m_idHasBeenSet;
 
                     /**
-                     * 用户姓名，最大长度32字符，不能为空
+                     * 用户姓名，最大长度20个字符，不能包含空格
                      */
                     std::string m_realName;
                     bool m_realNameHasBeenSet;
 
                     /**
-                     * 手机号
+                     * 大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
                      */
                     std::string m_phone;
                     bool m_phoneHasBeenSet;
@@ -231,13 +239,15 @@ namespace TencentCloud
                     bool m_emailHasBeenSet;
 
                     /**
-                     * 生效起始时间,不设置则为1970-01-01 08:00:01
+                     * 用户生效时间，如:"2021-09-22T00:00:00+00:00"
+生效、失效时间不填则用户长期有效
                      */
                     std::string m_validateFrom;
                     bool m_validateFromHasBeenSet;
 
                     /**
-                     * 生效结束时间,不设置则为1970-01-01 08:00:01
+                     * 用户失效时间，如:"2021-09-23T00:00:00+00:00"
+生效、失效时间不填则用户长期有效
                      */
                     std::string m_validateTo;
                     bool m_validateToHasBeenSet;
@@ -249,13 +259,13 @@ namespace TencentCloud
                     bool m_groupIdSetHasBeenSet;
 
                     /**
-                     * 认证方式，0-本地 1-ldap, 2-oauth不传则默认为0
+                     * 认证方式，0 - 本地，1 - LDAP，2 - OAuth 不传则默认为0
                      */
                     uint64_t m_authType;
                     bool m_authTypeHasBeenSet;
 
                     /**
-                     * 生效时间段, 0、1组成的字符串，长度168(7*24), 代表该用户的生效时间. 0 - 未生效，1 - 生效
+                     * 访问时间段限制， 由0、1组成的字符串，长度168(7 × 24)，代表该用户在一周中允许访问的时间段。字符串中第N个字符代表在一周中的第N个小时， 0 - 代表不允许访问，1 - 代表允许访问
                      */
                     std::string m_validateTime;
                     bool m_validateTimeHasBeenSet;

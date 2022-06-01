@@ -56,6 +56,42 @@ namespace TencentCloud
                      */
                     bool TemplatesHasBeenSet() const;
 
+                    /**
+                     * 获取查询总数
+                     * @return TotalCount 查询总数
+                     */
+                    int64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     */
+                    bool TotalCountHasBeenSet() const;
+
+                    /**
+                     * 获取查询数量
+                     * @return Limit 查询数量
+                     */
+                    uint64_t GetLimit() const;
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取查询起始偏移
+                     * @return Offset 查询起始偏移
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -63,6 +99,24 @@ namespace TencentCloud
                      */
                     std::vector<TemplateInfo> m_templates;
                     bool m_templatesHasBeenSet;
+
+                    /**
+                     * 查询总数
+                     */
+                    int64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 查询数量
+                     */
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 查询起始偏移
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
 
                 };
             }

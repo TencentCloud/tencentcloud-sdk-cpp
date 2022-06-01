@@ -341,6 +341,49 @@ EssClient::DescribeFlowBriefsOutcomeCallable EssClient::DescribeFlowBriefsCallab
     return task->get_future();
 }
 
+EssClient::DescribeFlowTemplatesOutcome EssClient::DescribeFlowTemplates(const DescribeFlowTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFlowTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFlowTemplatesResponse rsp = DescribeFlowTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFlowTemplatesOutcome(rsp);
+        else
+            return DescribeFlowTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFlowTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DescribeFlowTemplatesAsync(const DescribeFlowTemplatesRequest& request, const DescribeFlowTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFlowTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::DescribeFlowTemplatesOutcomeCallable EssClient::DescribeFlowTemplatesCallable(const DescribeFlowTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFlowTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFlowTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::DescribeThirdPartyAuthCodeOutcome EssClient::DescribeThirdPartyAuthCode(const DescribeThirdPartyAuthCodeRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeThirdPartyAuthCode");

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取权限名称，最大32字符，不能为空，不能包含空白字符
-                     * @return Name 权限名称，最大32字符，不能为空，不能包含空白字符
+                     * 获取权限名称，最大32字符，不能包含空白字符
+                     * @return Name 权限名称，最大32字符，不能包含空白字符
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置权限名称，最大32字符，不能为空，不能包含空白字符
-                     * @param Name 权限名称，最大32字符，不能为空，不能包含空白字符
+                     * 设置权限名称，最大32字符，不能包含空白字符
+                     * @param Name 权限名称，最大32字符，不能包含空白字符
                      */
                     void SetName(const std::string& _name);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool AllowDiskRedirectHasBeenSet() const;
 
                     /**
-                     * 获取是否允许任意账号登陆
-                     * @return AllowAnyAccount 是否允许任意账号登陆
+                     * 获取是否允许任意账号登录
+                     * @return AllowAnyAccount 是否允许任意账号登录
                      */
                     bool GetAllowAnyAccount() const;
 
                     /**
-                     * 设置是否允许任意账号登陆
-                     * @param AllowAnyAccount 是否允许任意账号登陆
+                     * 设置是否允许任意账号登录
+                     * @param AllowAnyAccount 是否允许任意账号登录
                      */
                     void SetAllowAnyAccount(const bool& _allowAnyAccount);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool AllowClipFileDownHasBeenSet() const;
 
                     /**
-                     * 获取是否开启剪贴板text（含图片）上行
-                     * @return AllowClipTextUp 是否开启剪贴板text（含图片）上行
+                     * 获取是否开启剪贴板文本（含图片）上行
+                     * @return AllowClipTextUp 是否开启剪贴板文本（含图片）上行
                      */
                     bool GetAllowClipTextUp() const;
 
                     /**
-                     * 设置是否开启剪贴板text（含图片）上行
-                     * @param AllowClipTextUp 是否开启剪贴板text（含图片）上行
+                     * 设置是否开启剪贴板文本（含图片）上行
+                     * @param AllowClipTextUp 是否开启剪贴板文本（含图片）上行
                      */
                     void SetAllowClipTextUp(const bool& _allowClipTextUp);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool AllowClipTextUpHasBeenSet() const;
 
                     /**
-                     * 获取是否开启剪贴板text（含图片）下行
-                     * @return AllowClipTextDown 是否开启剪贴板text（含图片）下行
+                     * 获取是否开启剪贴板文本（含图片）下行
+                     * @return AllowClipTextDown 是否开启剪贴板文本（含图片）下行
                      */
                     bool GetAllowClipTextDown() const;
 
                     /**
-                     * 设置是否开启剪贴板text（含图片）下行
-                     * @param AllowClipTextDown 是否开启剪贴板text（含图片）下行
+                     * 设置是否开启剪贴板文本（含图片）下行
+                     * @param AllowClipTextDown 是否开启剪贴板文本（含图片）下行
                      */
                     void SetAllowClipTextDown(const bool& _allowClipTextDown);
 
@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool AllowClipTextDownHasBeenSet() const;
 
                     /**
-                     * 获取是否开启SFTP文件上传
-                     * @return AllowFileUp 是否开启SFTP文件上传
+                     * 获取是否开启 SFTP 文件上传
+                     * @return AllowFileUp 是否开启 SFTP 文件上传
                      */
                     bool GetAllowFileUp() const;
 
                     /**
-                     * 设置是否开启SFTP文件上传
-                     * @param AllowFileUp 是否开启SFTP文件上传
+                     * 设置是否开启 SFTP 文件上传
+                     * @param AllowFileUp 是否开启 SFTP 文件上传
                      */
                     void SetAllowFileUp(const bool& _allowFileUp);
 
@@ -187,14 +187,14 @@ namespace TencentCloud
                     bool AllowFileUpHasBeenSet() const;
 
                     /**
-                     * 获取文件传输上传大小限制
-                     * @return MaxFileUpSize 文件传输上传大小限制
+                     * 获取文件传输上传大小限制（预留参数，目前暂未使用）
+                     * @return MaxFileUpSize 文件传输上传大小限制（预留参数，目前暂未使用）
                      */
                     uint64_t GetMaxFileUpSize() const;
 
                     /**
-                     * 设置文件传输上传大小限制
-                     * @param MaxFileUpSize 文件传输上传大小限制
+                     * 设置文件传输上传大小限制（预留参数，目前暂未使用）
+                     * @param MaxFileUpSize 文件传输上传大小限制（预留参数，目前暂未使用）
                      */
                     void SetMaxFileUpSize(const uint64_t& _maxFileUpSize);
 
@@ -205,14 +205,14 @@ namespace TencentCloud
                     bool MaxFileUpSizeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启SFTP文件下载
-                     * @return AllowFileDown 是否开启SFTP文件下载
+                     * 获取是否开启 SFTP 文件下载
+                     * @return AllowFileDown 是否开启 SFTP 文件下载
                      */
                     bool GetAllowFileDown() const;
 
                     /**
-                     * 设置是否开启SFTP文件下载
-                     * @param AllowFileDown 是否开启SFTP文件下载
+                     * 设置是否开启 SFTP 文件下载
+                     * @param AllowFileDown 是否开启 SFTP 文件下载
                      */
                     void SetAllowFileDown(const bool& _allowFileDown);
 
@@ -223,14 +223,14 @@ namespace TencentCloud
                     bool AllowFileDownHasBeenSet() const;
 
                     /**
-                     * 获取文件传输下载大小限制
-                     * @return MaxFileDownSize 文件传输下载大小限制
+                     * 获取文件传输下载大小限制（预留参数，目前暂未使用）
+                     * @return MaxFileDownSize 文件传输下载大小限制（预留参数，目前暂未使用）
                      */
                     uint64_t GetMaxFileDownSize() const;
 
                     /**
-                     * 设置文件传输下载大小限制
-                     * @param MaxFileDownSize 文件传输下载大小限制
+                     * 设置文件传输下载大小限制（预留参数，目前暂未使用）
+                     * @param MaxFileDownSize 文件传输下载大小限制（预留参数，目前暂未使用）
                      */
                     void SetMaxFileDownSize(const uint64_t& _maxFileDownSize);
 
@@ -241,14 +241,14 @@ namespace TencentCloud
                     bool MaxFileDownSizeHasBeenSet() const;
 
                     /**
-                     * 获取关联的用户ID
-                     * @return UserIdSet 关联的用户ID
+                     * 获取关联的用户ID集合
+                     * @return UserIdSet 关联的用户ID集合
                      */
                     std::vector<uint64_t> GetUserIdSet() const;
 
                     /**
-                     * 设置关联的用户ID
-                     * @param UserIdSet 关联的用户ID
+                     * 设置关联的用户ID集合
+                     * @param UserIdSet 关联的用户ID集合
                      */
                     void SetUserIdSet(const std::vector<uint64_t>& _userIdSet);
 
@@ -277,14 +277,14 @@ namespace TencentCloud
                     bool UserGroupIdSetHasBeenSet() const;
 
                     /**
-                     * 获取关联的主机ID
-                     * @return DeviceIdSet 关联的主机ID
+                     * 获取关联的资产ID集合
+                     * @return DeviceIdSet 关联的资产ID集合
                      */
                     std::vector<uint64_t> GetDeviceIdSet() const;
 
                     /**
-                     * 设置关联的主机ID
-                     * @param DeviceIdSet 关联的主机ID
+                     * 设置关联的资产ID集合
+                     * @param DeviceIdSet 关联的资产ID集合
                      */
                     void SetDeviceIdSet(const std::vector<uint64_t>& _deviceIdSet);
 
@@ -295,14 +295,14 @@ namespace TencentCloud
                     bool DeviceIdSetHasBeenSet() const;
 
                     /**
-                     * 获取关联的主机组ID
-                     * @return DeviceGroupIdSet 关联的主机组ID
+                     * 获取关联的资产组ID
+                     * @return DeviceGroupIdSet 关联的资产组ID
                      */
                     std::vector<uint64_t> GetDeviceGroupIdSet() const;
 
                     /**
-                     * 设置关联的主机组ID
-                     * @param DeviceGroupIdSet 关联的主机组ID
+                     * 设置关联的资产组ID
+                     * @param DeviceGroupIdSet 关联的资产组ID
                      */
                     void SetDeviceGroupIdSet(const std::vector<uint64_t>& _deviceGroupIdSet);
 
@@ -313,14 +313,14 @@ namespace TencentCloud
                     bool DeviceGroupIdSetHasBeenSet() const;
 
                     /**
-                     * 获取关联的账号，账号name
-                     * @return AccountSet 关联的账号，账号name
+                     * 获取关联的账号
+                     * @return AccountSet 关联的账号
                      */
                     std::vector<std::string> GetAccountSet() const;
 
                     /**
-                     * 设置关联的账号，账号name
-                     * @param AccountSet 关联的账号，账号name
+                     * 设置关联的账号
+                     * @param AccountSet 关联的账号
                      */
                     void SetAccountSet(const std::vector<std::string>& _accountSet);
 
@@ -421,14 +421,14 @@ namespace TencentCloud
                     bool AllowShellFileDownHasBeenSet() const;
 
                     /**
-                     * 获取是否开启SFTP文件删除
-                     * @return AllowFileDel 是否开启SFTP文件删除
+                     * 获取是否开启 SFTP 文件删除
+                     * @return AllowFileDel 是否开启 SFTP 文件删除
                      */
                     bool GetAllowFileDel() const;
 
                     /**
-                     * 设置是否开启SFTP文件删除
-                     * @param AllowFileDel 是否开启SFTP文件删除
+                     * 设置是否开启 SFTP 文件删除
+                     * @param AllowFileDel 是否开启 SFTP 文件删除
                      */
                     void SetAllowFileDel(const bool& _allowFileDel);
 
@@ -439,14 +439,18 @@ namespace TencentCloud
                     bool AllowFileDelHasBeenSet() const;
 
                     /**
-                     * 获取生效日期，如果为空，默认1970-01-01T08:00:01+08:00
-                     * @return ValidateFrom 生效日期，如果为空，默认1970-01-01T08:00:01+08:00
+                     * 获取访问权限生效时间，如:"2021-09-22T00:00:00+00:00"
+生效、失效时间不填则访问权限长期有效
+                     * @return ValidateFrom 访问权限生效时间，如:"2021-09-22T00:00:00+00:00"
+生效、失效时间不填则访问权限长期有效
                      */
                     std::string GetValidateFrom() const;
 
                     /**
-                     * 设置生效日期，如果为空，默认1970-01-01T08:00:01+08:00
-                     * @param ValidateFrom 生效日期，如果为空，默认1970-01-01T08:00:01+08:00
+                     * 设置访问权限生效时间，如:"2021-09-22T00:00:00+00:00"
+生效、失效时间不填则访问权限长期有效
+                     * @param ValidateFrom 访问权限生效时间，如:"2021-09-22T00:00:00+00:00"
+生效、失效时间不填则访问权限长期有效
                      */
                     void SetValidateFrom(const std::string& _validateFrom);
 
@@ -457,14 +461,18 @@ namespace TencentCloud
                     bool ValidateFromHasBeenSet() const;
 
                     /**
-                     * 获取失效日期，如果为空，默认1970-01-01T08:00:01+08:00
-                     * @return ValidateTo 失效日期，如果为空，默认1970-01-01T08:00:01+08:00
+                     * 获取访问权限失效时间，如:"2021-09-23T00:00:00+00:00"
+生效、失效时间不填则访问权限长期有效
+                     * @return ValidateTo 访问权限失效时间，如:"2021-09-23T00:00:00+00:00"
+生效、失效时间不填则访问权限长期有效
                      */
                     std::string GetValidateTo() const;
 
                     /**
-                     * 设置失效日期，如果为空，默认1970-01-01T08:00:01+08:00
-                     * @param ValidateTo 失效日期，如果为空，默认1970-01-01T08:00:01+08:00
+                     * 设置访问权限失效时间，如:"2021-09-23T00:00:00+00:00"
+生效、失效时间不填则访问权限长期有效
+                     * @param ValidateTo 访问权限失效时间，如:"2021-09-23T00:00:00+00:00"
+生效、失效时间不填则访问权限长期有效
                      */
                     void SetValidateTo(const std::string& _validateTo);
 
@@ -477,7 +485,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 权限名称，最大32字符，不能为空，不能包含空白字符
+                     * 权限名称，最大32字符，不能包含空白字符
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -489,7 +497,7 @@ namespace TencentCloud
                     bool m_allowDiskRedirectHasBeenSet;
 
                     /**
-                     * 是否允许任意账号登陆
+                     * 是否允许任意账号登录
                      */
                     bool m_allowAnyAccount;
                     bool m_allowAnyAccountHasBeenSet;
@@ -507,43 +515,43 @@ namespace TencentCloud
                     bool m_allowClipFileDownHasBeenSet;
 
                     /**
-                     * 是否开启剪贴板text（含图片）上行
+                     * 是否开启剪贴板文本（含图片）上行
                      */
                     bool m_allowClipTextUp;
                     bool m_allowClipTextUpHasBeenSet;
 
                     /**
-                     * 是否开启剪贴板text（含图片）下行
+                     * 是否开启剪贴板文本（含图片）下行
                      */
                     bool m_allowClipTextDown;
                     bool m_allowClipTextDownHasBeenSet;
 
                     /**
-                     * 是否开启SFTP文件上传
+                     * 是否开启 SFTP 文件上传
                      */
                     bool m_allowFileUp;
                     bool m_allowFileUpHasBeenSet;
 
                     /**
-                     * 文件传输上传大小限制
+                     * 文件传输上传大小限制（预留参数，目前暂未使用）
                      */
                     uint64_t m_maxFileUpSize;
                     bool m_maxFileUpSizeHasBeenSet;
 
                     /**
-                     * 是否开启SFTP文件下载
+                     * 是否开启 SFTP 文件下载
                      */
                     bool m_allowFileDown;
                     bool m_allowFileDownHasBeenSet;
 
                     /**
-                     * 文件传输下载大小限制
+                     * 文件传输下载大小限制（预留参数，目前暂未使用）
                      */
                     uint64_t m_maxFileDownSize;
                     bool m_maxFileDownSizeHasBeenSet;
 
                     /**
-                     * 关联的用户ID
+                     * 关联的用户ID集合
                      */
                     std::vector<uint64_t> m_userIdSet;
                     bool m_userIdSetHasBeenSet;
@@ -555,19 +563,19 @@ namespace TencentCloud
                     bool m_userGroupIdSetHasBeenSet;
 
                     /**
-                     * 关联的主机ID
+                     * 关联的资产ID集合
                      */
                     std::vector<uint64_t> m_deviceIdSet;
                     bool m_deviceIdSetHasBeenSet;
 
                     /**
-                     * 关联的主机组ID
+                     * 关联的资产组ID
                      */
                     std::vector<uint64_t> m_deviceGroupIdSet;
                     bool m_deviceGroupIdSetHasBeenSet;
 
                     /**
-                     * 关联的账号，账号name
+                     * 关联的账号
                      */
                     std::vector<std::string> m_accountSet;
                     bool m_accountSetHasBeenSet;
@@ -603,19 +611,21 @@ namespace TencentCloud
                     bool m_allowShellFileDownHasBeenSet;
 
                     /**
-                     * 是否开启SFTP文件删除
+                     * 是否开启 SFTP 文件删除
                      */
                     bool m_allowFileDel;
                     bool m_allowFileDelHasBeenSet;
 
                     /**
-                     * 生效日期，如果为空，默认1970-01-01T08:00:01+08:00
+                     * 访问权限生效时间，如:"2021-09-22T00:00:00+00:00"
+生效、失效时间不填则访问权限长期有效
                      */
                     std::string m_validateFrom;
                     bool m_validateFromHasBeenSet;
 
                     /**
-                     * 失效日期，如果为空，默认1970-01-01T08:00:01+08:00
+                     * 访问权限失效时间，如:"2021-09-23T00:00:00+00:00"
+生效、失效时间不填则访问权限长期有效
                      */
                     std::string m_validateTo;
                     bool m_validateToHasBeenSet;

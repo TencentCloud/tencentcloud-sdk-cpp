@@ -25,7 +25,10 @@ using namespace std;
 DescribeTemplatesRequest::DescribeTemplatesRequest() :
     m_agentHasBeenSet(false),
     m_operatorHasBeenSet(false),
-    m_templateIdHasBeenSet(false)
+    m_templateIdHasBeenSet(false),
+    m_contentTypeHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false)
 {
 }
 
@@ -60,6 +63,30 @@ string DescribeTemplatesRequest::ToJsonString() const
         string key = "TemplateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_contentTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContentType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_contentType, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
 
@@ -116,6 +143,54 @@ void DescribeTemplatesRequest::SetTemplateId(const string& _templateId)
 bool DescribeTemplatesRequest::TemplateIdHasBeenSet() const
 {
     return m_templateIdHasBeenSet;
+}
+
+int64_t DescribeTemplatesRequest::GetContentType() const
+{
+    return m_contentType;
+}
+
+void DescribeTemplatesRequest::SetContentType(const int64_t& _contentType)
+{
+    m_contentType = _contentType;
+    m_contentTypeHasBeenSet = true;
+}
+
+bool DescribeTemplatesRequest::ContentTypeHasBeenSet() const
+{
+    return m_contentTypeHasBeenSet;
+}
+
+uint64_t DescribeTemplatesRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeTemplatesRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeTemplatesRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+uint64_t DescribeTemplatesRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeTemplatesRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeTemplatesRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 

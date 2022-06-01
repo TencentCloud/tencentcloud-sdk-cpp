@@ -132,6 +132,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeDBSecurityGroupsRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBSwitchRecordsResponse.h
   include/tencentcloud/cdb/v20170320/model/ModifyCDBProxyConnectionPoolResponse.h
+  include/tencentcloud/cdb/v20170320/model/Tag.h
   include/tencentcloud/cdb/v20170320/model/CreateAuditLogFileResponse.h
   include/tencentcloud/cdb/v20170320/model/ModifyInstanceTagResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBSwitchRecordsRequest.h
@@ -489,6 +490,7 @@ set(cdb_src
   src/v20170320/model/DescribeDBSecurityGroupsRequest.cpp
   src/v20170320/model/DescribeDBSwitchRecordsResponse.cpp
   src/v20170320/model/ModifyCDBProxyConnectionPoolResponse.cpp
+  src/v20170320/model/Tag.cpp
   src/v20170320/model/CreateAuditLogFileResponse.cpp
   src/v20170320/model/ModifyInstanceTagResponse.cpp
   src/v20170320/model/DescribeDBSwitchRecordsRequest.cpp

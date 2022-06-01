@@ -98,6 +98,60 @@ namespace TencentCloud
                      */
                     bool TemplateIdHasBeenSet() const;
 
+                    /**
+                     * 获取查询内容：0-模版列表及详情（默认），1-仅模版列表
+                     * @return ContentType 查询内容：0-模版列表及详情（默认），1-仅模版列表
+                     */
+                    int64_t GetContentType() const;
+
+                    /**
+                     * 设置查询内容：0-模版列表及详情（默认），1-仅模版列表
+                     * @param ContentType 查询内容：0-模版列表及详情（默认），1-仅模版列表
+                     */
+                    void SetContentType(const int64_t& _contentType);
+
+                    /**
+                     * 判断参数 ContentType 是否已赋值
+                     * @return ContentType 是否已赋值
+                     */
+                    bool ContentTypeHasBeenSet() const;
+
+                    /**
+                     * 获取查询个数，默认20，最大100
+                     * @return Limit 查询个数，默认20，最大100
+                     */
+                    uint64_t GetLimit() const;
+
+                    /**
+                     * 设置查询个数，默认20，最大100
+                     * @param Limit 查询个数，默认20，最大100
+                     */
+                    void SetLimit(const uint64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取查询偏移位置，默认0
+                     * @return Offset 查询偏移位置，默认0
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 设置查询偏移位置，默认0
+                     * @param Offset 查询偏移位置，默认0
+                     */
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -117,6 +171,24 @@ namespace TencentCloud
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
+
+                    /**
+                     * 查询内容：0-模版列表及详情（默认），1-仅模版列表
+                     */
+                    int64_t m_contentType;
+                    bool m_contentTypeHasBeenSet;
+
+                    /**
+                     * 查询个数，默认20，最大100
+                     */
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 查询偏移位置，默认0
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
 
                 };
             }

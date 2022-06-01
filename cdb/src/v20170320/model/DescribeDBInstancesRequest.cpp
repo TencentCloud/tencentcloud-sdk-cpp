@@ -53,7 +53,8 @@ DescribeDBInstancesRequest::DescribeDBInstancesRequest() :
     m_cageIdsHasBeenSet(false),
     m_tagValuesHasBeenSet(false),
     m_uniqueVpcIdsHasBeenSet(false),
-    m_uniqSubnetIdsHasBeenSet(false)
+    m_uniqSubnetIdsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -399,6 +400,21 @@ string DescribeDBInstancesRequest::ToJsonString() const
         for (auto itr = m_uniqSubnetIds.begin(); itr != m_uniqSubnetIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -904,6 +920,22 @@ void DescribeDBInstancesRequest::SetUniqSubnetIds(const vector<string>& _uniqSub
 bool DescribeDBInstancesRequest::UniqSubnetIdsHasBeenSet() const
 {
     return m_uniqSubnetIdsHasBeenSet;
+}
+
+vector<Tag> DescribeDBInstancesRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void DescribeDBInstancesRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

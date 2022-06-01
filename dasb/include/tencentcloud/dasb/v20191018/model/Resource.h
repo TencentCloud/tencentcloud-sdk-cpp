@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 用户购买的堡垒机资源信息
+                * 堡垒机服务信息
                 */
                 class Resource : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源实例id，如bh-saas-s3ed4r5e
-                     * @return ResourceId 资源实例id，如bh-saas-s3ed4r5e
+                     * 获取服务实例ID，如bh-saas-s3ed4r5e
+                     * @return ResourceId 服务实例ID，如bh-saas-s3ed4r5e
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源实例id，如bh-saas-s3ed4r5e
-                     * @param ResourceId 资源实例id，如bh-saas-s3ed4r5e
+                     * 设置服务实例ID，如bh-saas-s3ed4r5e
+                     * @param ResourceId 服务实例ID，如bh-saas-s3ed4r5e
                      */
                     void SetResourceId(const std::string& _resourceId);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool ApCodeHasBeenSet() const;
 
                     /**
-                     * 获取实例规格信息（询价参数）
-                     * @return SvArgs 实例规格信息（询价参数）
+                     * 获取服务实例规格信息
+                     * @return SvArgs 服务实例规格信息
                      */
                     std::string GetSvArgs() const;
 
                     /**
-                     * 设置实例规格信息（询价参数）
-                     * @param SvArgs 实例规格信息（询价参数）
+                     * 设置服务实例规格信息
+                     * @param SvArgs 服务实例规格信息
                      */
                     void SetSvArgs(const std::string& _svArgs);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool SvArgsHasBeenSet() const;
 
                     /**
-                     * 获取vpc id
-                     * @return VpcId vpc id
+                     * 获取VPC ID
+                     * @return VpcId VPC ID
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置vpc id
-                     * @param VpcId vpc id
+                     * 设置VPC ID
+                     * @param VpcId VPC ID
                      */
                     void SetVpcId(const std::string& _vpcId);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取堡垒机规格对应的资产数
-                     * @return Nodes 堡垒机规格对应的资产数
+                     * 获取服务规格对应的资产数
+                     * @return Nodes 服务规格对应的资产数
                      */
                     uint64_t GetNodes() const;
 
                     /**
-                     * 设置堡垒机规格对应的资产数
-                     * @param Nodes 堡垒机规格对应的资产数
+                     * 设置服务规格对应的资产数
+                     * @param Nodes 服务规格对应的资产数
                      */
                     void SetNodes(const uint64_t& _nodes);
 
@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool NodesHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标记，0表示默认状态，1表示自动续费，2表示明确不自动续费
-                     * @return RenewFlag 自动续费标记，0表示默认状态，1表示自动续费，2表示明确不自动续费
+                     * 获取自动续费标记，0 - 表示默认状态，1 - 表示自动续费，2 - 表示明确不自动续费
+                     * @return RenewFlag 自动续费标记，0 - 表示默认状态，1 - 表示自动续费，2 - 表示明确不自动续费
                      */
                     uint64_t GetRenewFlag() const;
 
                     /**
-                     * 设置自动续费标记，0表示默认状态，1表示自动续费，2表示明确不自动续费
-                     * @param RenewFlag 自动续费标记，0表示默认状态，1表示自动续费，2表示明确不自动续费
+                     * 设置自动续费标记，0 - 表示默认状态，1 - 表示自动续费，2 - 表示明确不自动续费
+                     * @param RenewFlag 自动续费标记，0 - 表示默认状态，1 - 表示自动续费，2 - 表示明确不自动续费
                      */
                     void SetRenewFlag(const uint64_t& _renewFlag);
 
@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取资源状态，0未初始化，1正常，2隔离，3销毁，4初始化失败，5初始化中
-                     * @return Status 资源状态，0未初始化，1正常，2隔离，3销毁，4初始化失败，5初始化中
+                     * 获取资源状态，0 - 未初始化，1 - 正常，2 - 隔离，3 - 销毁，4 - 初始化失败，5 - 初始化中
+                     * @return Status 资源状态，0 - 未初始化，1 - 正常，2 - 隔离，3 - 销毁，4 - 初始化失败，5 - 初始化中
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置资源状态，0未初始化，1正常，2隔离，3销毁，4初始化失败，5初始化中
-                     * @param Status 资源状态，0未初始化，1正常，2隔离，3销毁，4初始化失败，5初始化中
+                     * 设置资源状态，0 - 未初始化，1 - 正常，2 - 隔离，3 - 销毁，4 - 初始化失败，5 - 初始化中
+                     * @param Status 资源状态，0 - 未初始化，1 - 正常，2 - 隔离，3 - 销毁，4 - 初始化失败，5 - 初始化中
                      */
                     void SetStatus(const uint64_t& _status);
 
@@ -191,14 +191,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取实例名，如T-Sec-堡垒机（SaaS型）
-                     * @return ResourceName 实例名，如T-Sec-堡垒机（SaaS型）
+                     * 获取服务实例名，如T-Sec-堡垒机（SaaS型）
+                     * @return ResourceName 服务实例名，如T-Sec-堡垒机（SaaS型）
                      */
                     std::string GetResourceName() const;
 
                     /**
-                     * 设置实例名，如T-Sec-堡垒机（SaaS型）
-                     * @param ResourceName 实例名，如T-Sec-堡垒机（SaaS型）
+                     * 设置服务实例名，如T-Sec-堡垒机（SaaS型）
+                     * @param ResourceName 服务实例名，如T-Sec-堡垒机（SaaS型）
                      */
                     void SetResourceName(const std::string& _resourceName);
 
@@ -335,14 +335,14 @@ namespace TencentCloud
                     bool DeployedHasBeenSet() const;
 
                     /**
-                     * 获取开通服务的VPC名称
-                     * @return VpcName 开通服务的VPC名称
+                     * 获取开通服务的 VPC 名称
+                     * @return VpcName 开通服务的 VPC 名称
                      */
                     std::string GetVpcName() const;
 
                     /**
-                     * 设置开通服务的VPC名称
-                     * @param VpcName 开通服务的VPC名称
+                     * 设置开通服务的 VPC 名称
+                     * @param VpcName 开通服务的 VPC 名称
                      */
                     void SetVpcName(const std::string& _vpcName);
 
@@ -353,14 +353,14 @@ namespace TencentCloud
                     bool VpcNameHasBeenSet() const;
 
                     /**
-                     * 获取开通服务的VPC对应的网段
-                     * @return VpcCidrBlock 开通服务的VPC对应的网段
+                     * 获取开通服务的 VPC 对应的网段
+                     * @return VpcCidrBlock 开通服务的 VPC 对应的网段
                      */
                     std::string GetVpcCidrBlock() const;
 
                     /**
-                     * 设置开通服务的VPC对应的网段
-                     * @param VpcCidrBlock 开通服务的VPC对应的网段
+                     * 设置开通服务的 VPC 对应的网段
+                     * @param VpcCidrBlock 开通服务的 VPC 对应的网段
                      */
                     void SetVpcCidrBlock(const std::string& _vpcCidrBlock);
 
@@ -461,14 +461,14 @@ namespace TencentCloud
                     bool PrivateIpSetHasBeenSet() const;
 
                     /**
-                     * 获取资源开通的高级功能列表，如:[DB]
-                     * @return ModuleSet 资源开通的高级功能列表，如:[DB]
+                     * 获取服务开通的高级功能列表，如:[DB]
+                     * @return ModuleSet 服务开通的高级功能列表，如:[DB]
                      */
                     std::vector<std::string> GetModuleSet() const;
 
                     /**
-                     * 设置资源开通的高级功能列表，如:[DB]
-                     * @param ModuleSet 资源开通的高级功能列表，如:[DB]
+                     * 设置服务开通的高级功能列表，如:[DB]
+                     * @param ModuleSet 服务开通的高级功能列表，如:[DB]
                      */
                     void SetModuleSet(const std::vector<std::string>& _moduleSet);
 
@@ -553,7 +553,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源实例id，如bh-saas-s3ed4r5e
+                     * 服务实例ID，如bh-saas-s3ed4r5e
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
@@ -565,25 +565,25 @@ namespace TencentCloud
                     bool m_apCodeHasBeenSet;
 
                     /**
-                     * 实例规格信息（询价参数）
+                     * 服务实例规格信息
                      */
                     std::string m_svArgs;
                     bool m_svArgsHasBeenSet;
 
                     /**
-                     * vpc id
+                     * VPC ID
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 堡垒机规格对应的资产数
+                     * 服务规格对应的资产数
                      */
                     uint64_t m_nodes;
                     bool m_nodesHasBeenSet;
 
                     /**
-                     * 自动续费标记，0表示默认状态，1表示自动续费，2表示明确不自动续费
+                     * 自动续费标记，0 - 表示默认状态，1 - 表示自动续费，2 - 表示明确不自动续费
                      */
                     uint64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
@@ -595,13 +595,13 @@ namespace TencentCloud
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 资源状态，0未初始化，1正常，2隔离，3销毁，4初始化失败，5初始化中
+                     * 资源状态，0 - 未初始化，1 - 正常，2 - 隔离，3 - 销毁，4 - 初始化失败，5 - 初始化中
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 实例名，如T-Sec-堡垒机（SaaS型）
+                     * 服务实例名，如T-Sec-堡垒机（SaaS型）
                      */
                     std::string m_resourceName;
                     bool m_resourceNameHasBeenSet;
@@ -649,13 +649,13 @@ namespace TencentCloud
                     bool m_deployedHasBeenSet;
 
                     /**
-                     * 开通服务的VPC名称
+                     * 开通服务的 VPC 名称
                      */
                     std::string m_vpcName;
                     bool m_vpcNameHasBeenSet;
 
                     /**
-                     * 开通服务的VPC对应的网段
+                     * 开通服务的 VPC 对应的网段
                      */
                     std::string m_vpcCidrBlock;
                     bool m_vpcCidrBlockHasBeenSet;
@@ -691,7 +691,7 @@ namespace TencentCloud
                     bool m_privateIpSetHasBeenSet;
 
                     /**
-                     * 资源开通的高级功能列表，如:[DB]
+                     * 服务开通的高级功能列表，如:[DB]
                      */
                     std::vector<std::string> m_moduleSet;
                     bool m_moduleSetHasBeenSet;

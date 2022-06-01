@@ -1373,6 +1373,49 @@ FaceidClient::MobileStatusOutcomeCallable FaceidClient::MobileStatusCallable(con
     return task->get_future();
 }
 
+FaceidClient::ParseNfcDataOutcome FaceidClient::ParseNfcData(const ParseNfcDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "ParseNfcData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ParseNfcDataResponse rsp = ParseNfcDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ParseNfcDataOutcome(rsp);
+        else
+            return ParseNfcDataOutcome(o.GetError());
+    }
+    else
+    {
+        return ParseNfcDataOutcome(outcome.GetError());
+    }
+}
+
+void FaceidClient::ParseNfcDataAsync(const ParseNfcDataRequest& request, const ParseNfcDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ParseNfcData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FaceidClient::ParseNfcDataOutcomeCallable FaceidClient::ParseNfcDataCallable(const ParseNfcDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ParseNfcDataOutcome()>>(
+        [this, request]()
+        {
+            return this->ParseNfcData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 FaceidClient::PhoneVerificationOutcome FaceidClient::PhoneVerification(const PhoneVerificationRequest &request)
 {
     auto outcome = MakeRequest(request, "PhoneVerification");

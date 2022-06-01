@@ -108,11 +108,13 @@ namespace TencentCloud
 1表示创建中；
 4表示销毁中；
 11表示迁移中；
+12表示部分部署中。
                      * @return Status 通道组状态：
 0表示正常运行；
 1表示创建中；
 4表示销毁中；
 11表示迁移中；
+12表示部分部署中。
                      */
                     int64_t GetStatus() const;
 
@@ -122,11 +124,13 @@ namespace TencentCloud
 1表示创建中；
 4表示销毁中；
 11表示迁移中；
+12表示部分部署中。
                      * @param Status 通道组状态：
 0表示正常运行；
 1表示创建中；
 4表示销毁中；
 11表示迁移中；
+12表示部分部署中。
                      */
                     void SetStatus(const int64_t& _status);
 
@@ -472,6 +476,7 @@ namespace TencentCloud
 1表示创建中；
 4表示销毁中；
 11表示迁移中；
+12表示部分部署中。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

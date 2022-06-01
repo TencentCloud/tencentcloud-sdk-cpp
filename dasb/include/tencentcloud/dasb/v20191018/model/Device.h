@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 主机信息
+                * 资产信息
                 */
                 class Device : public AbstractModel
                 {
@@ -49,14 +49,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主机记录ID
-                     * @return Id 主机记录ID
+                     * 获取资产ID
+                     * @return Id 资产ID
                      */
                     uint64_t GetId() const;
 
                     /**
-                     * 设置主机记录ID
-                     * @param Id 主机记录ID
+                     * 设置资产ID
+                     * @param Id 资产ID
                      */
                     void SetId(const uint64_t& _id);
 
@@ -67,14 +67,14 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取主机ID，对应cvm实例id
-                     * @return InstanceId 主机ID，对应cvm实例id
+                     * 获取实例ID，对应CVM、CDB等实例ID
+                     * @return InstanceId 实例ID，对应CVM、CDB等实例ID
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置主机ID，对应cvm实例id
-                     * @param InstanceId 主机ID，对应cvm实例id
+                     * 设置实例ID，对应CVM、CDB等实例ID
+                     * @param InstanceId 实例ID，对应CVM、CDB等实例ID
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -85,14 +85,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取主机名
-                     * @return Name 主机名
+                     * 获取资产名
+                     * @return Name 资产名
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置主机名
-                     * @param Name 主机名
+                     * 设置资产名
+                     * @param Name 资产名
                      */
                     void SetName(const std::string& _name);
 
@@ -175,14 +175,14 @@ namespace TencentCloud
                     bool OsNameHasBeenSet() const;
 
                     /**
-                     * 获取主机类型，1-Linux, 2-Windows
-                     * @return Kind 主机类型，1-Linux, 2-Windows
+                     * 获取资产类型 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
+                     * @return Kind 资产类型 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
                      */
                     uint64_t GetKind() const;
 
                     /**
-                     * 设置主机类型，1-Linux, 2-Windows
-                     * @param Kind 主机类型，1-Linux, 2-Windows
+                     * 设置资产类型 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
+                     * @param Kind 资产类型 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
                      */
                     void SetKind(const uint64_t& _kind);
 
@@ -211,14 +211,14 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取所属主机组信息列表
-                     * @return GroupSet 所属主机组信息列表
+                     * 获取所属资产组列表
+                     * @return GroupSet 所属资产组列表
                      */
                     std::vector<Group> GetGroupSet() const;
 
                     /**
-                     * 设置所属主机组信息列表
-                     * @param GroupSet 所属主机组信息列表
+                     * 设置所属资产组列表
+                     * @param GroupSet 所属资产组列表
                      */
                     void SetGroupSet(const std::vector<Group>& _groupSet);
 
@@ -229,14 +229,14 @@ namespace TencentCloud
                     bool GroupSetHasBeenSet() const;
 
                     /**
-                     * 获取主机绑定的账号数
-                     * @return AccountCount 主机绑定的账号数
+                     * 获取资产绑定的账号数
+                     * @return AccountCount 资产绑定的账号数
                      */
                     uint64_t GetAccountCount() const;
 
                     /**
-                     * 设置主机绑定的账号数
-                     * @param AccountCount 主机绑定的账号数
+                     * 设置资产绑定的账号数
+                     * @param AccountCount 资产绑定的账号数
                      */
                     void SetAccountCount(const uint64_t& _accountCount);
 
@@ -307,19 +307,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 主机记录ID
+                     * 资产ID
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 主机ID，对应cvm实例id
+                     * 实例ID，对应CVM、CDB等实例ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 主机名
+                     * 资产名
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -349,7 +349,7 @@ namespace TencentCloud
                     bool m_osNameHasBeenSet;
 
                     /**
-                     * 主机类型，1-Linux, 2-Windows
+                     * 资产类型 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
                      */
                     uint64_t m_kind;
                     bool m_kindHasBeenSet;
@@ -361,13 +361,13 @@ namespace TencentCloud
                     bool m_portHasBeenSet;
 
                     /**
-                     * 所属主机组信息列表
+                     * 所属资产组列表
                      */
                     std::vector<Group> m_groupSet;
                     bool m_groupSetHasBeenSet;
 
                     /**
-                     * 主机绑定的账号数
+                     * 资产绑定的账号数
                      */
                     uint64_t m_accountCount;
                     bool m_accountCountHasBeenSet;
