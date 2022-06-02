@@ -238,6 +238,28 @@ namespace TencentCloud
                      */
                     bool SubnetsHasBeenSet() const;
 
+                    /**
+                     * 获取是否忽略 ServiceCIDR 冲突错误, 仅在 VPC-CNI 模式生效，默认不忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IgnoreServiceCIDRConflict 是否忽略 ServiceCIDR 冲突错误, 仅在 VPC-CNI 模式生效，默认不忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIgnoreServiceCIDRConflict() const;
+
+                    /**
+                     * 设置是否忽略 ServiceCIDR 冲突错误, 仅在 VPC-CNI 模式生效，默认不忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IgnoreServiceCIDRConflict 是否忽略 ServiceCIDR 冲突错误, 仅在 VPC-CNI 模式生效，默认不忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIgnoreServiceCIDRConflict(const bool& _ignoreServiceCIDRConflict);
+
+                    /**
+                     * 判断参数 IgnoreServiceCIDRConflict 是否已赋值
+                     * @return IgnoreServiceCIDRConflict 是否已赋值
+                     */
+                    bool IgnoreServiceCIDRConflictHasBeenSet() const;
+
                 private:
 
                     /**
@@ -302,6 +324,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_subnets;
                     bool m_subnetsHasBeenSet;
+
+                    /**
+                     * 是否忽略 ServiceCIDR 冲突错误, 仅在 VPC-CNI 模式生效，默认不忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_ignoreServiceCIDRConflict;
+                    bool m_ignoreServiceCIDRConflictHasBeenSet;
 
                 };
             }

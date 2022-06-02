@@ -30,7 +30,8 @@ ClusterNetworkSettings::ClusterNetworkSettings() :
     m_cniHasBeenSet(false),
     m_kubeProxyModeHasBeenSet(false),
     m_serviceCIDRHasBeenSet(false),
-    m_subnetsHasBeenSet(false)
+    m_subnetsHasBeenSet(false),
+    m_ignoreServiceCIDRConflictHasBeenSet(false)
 {
 }
 
@@ -142,6 +143,16 @@ CoreInternalOutcome ClusterNetworkSettings::Deserialize(const rapidjson::Value &
         m_subnetsHasBeenSet = true;
     }
 
+    if (value.HasMember("IgnoreServiceCIDRConflict") && !value["IgnoreServiceCIDRConflict"].IsNull())
+    {
+        if (!value["IgnoreServiceCIDRConflict"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterNetworkSettings.IgnoreServiceCIDRConflict` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_ignoreServiceCIDRConflict = value["IgnoreServiceCIDRConflict"].GetBool();
+        m_ignoreServiceCIDRConflictHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -232,6 +243,14 @@ void ClusterNetworkSettings::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_ignoreServiceCIDRConflictHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IgnoreServiceCIDRConflict";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ignoreServiceCIDRConflict, allocator);
     }
 
 }
@@ -395,5 +414,21 @@ void ClusterNetworkSettings::SetSubnets(const vector<string>& _subnets)
 bool ClusterNetworkSettings::SubnetsHasBeenSet() const
 {
     return m_subnetsHasBeenSet;
+}
+
+bool ClusterNetworkSettings::GetIgnoreServiceCIDRConflict() const
+{
+    return m_ignoreServiceCIDRConflict;
+}
+
+void ClusterNetworkSettings::SetIgnoreServiceCIDRConflict(const bool& _ignoreServiceCIDRConflict)
+{
+    m_ignoreServiceCIDRConflict = _ignoreServiceCIDRConflict;
+    m_ignoreServiceCIDRConflictHasBeenSet = true;
+}
+
+bool ClusterNetworkSettings::IgnoreServiceCIDRConflictHasBeenSet() const
+{
+    return m_ignoreServiceCIDRConflictHasBeenSet;
 }
 

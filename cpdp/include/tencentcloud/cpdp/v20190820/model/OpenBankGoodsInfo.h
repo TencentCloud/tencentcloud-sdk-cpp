@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取商品名称，默认值“商品支付”
-                     * @return GoodsName 商品名称，默认值“商品支付”
+                     * 获取商品标题，默认值“商品支付”
+                     * @return GoodsName 商品标题，默认值“商品支付”
                      */
                     std::string GetGoodsName() const;
 
                     /**
-                     * 设置商品名称，默认值“商品支付”
-                     * @param GoodsName 商品名称，默认值“商品支付”
+                     * 设置商品标题，默认值“商品支付”
+                     * @param GoodsName 商品标题，默认值“商品支付”
                      */
                     void SetGoodsName(const std::string& _goodsName);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool GoodsDetailHasBeenSet() const;
 
                     /**
-                     * 获取商品简单描述。需传入应用市场上的 APP 名字-实际商品名称，例如：天天爱消除-游戏充值
-                     * @return GoodsDescription 商品简单描述。需传入应用市场上的 APP 名字-实际商品名称，例如：天天爱消除-游戏充值
+                     * 获取银行附言，不可以有以下字符：<>+{}()%*&';"[]等特殊符号
+                     * @return GoodsDescription 银行附言，不可以有以下字符：<>+{}()%*&';"[]等特殊符号
                      */
                     std::string GetGoodsDescription() const;
 
                     /**
-                     * 设置商品简单描述。需传入应用市场上的 APP 名字-实际商品名称，例如：天天爱消除-游戏充值
-                     * @param GoodsDescription 商品简单描述。需传入应用市场上的 APP 名字-实际商品名称，例如：天天爱消除-游戏充值
+                     * 设置银行附言，不可以有以下字符：<>+{}()%*&';"[]等特殊符号
+                     * @param GoodsDescription 银行附言，不可以有以下字符：<>+{}()%*&';"[]等特殊符号
                      */
                     void SetGoodsDescription(const std::string& _goodsDescription);
 
@@ -103,7 +103,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 商品名称，默认值“商品支付”
+                     * 商品标题，默认值“商品支付”
                      */
                     std::string m_goodsName;
                     bool m_goodsNameHasBeenSet;
@@ -115,7 +115,7 @@ namespace TencentCloud
                     bool m_goodsDetailHasBeenSet;
 
                     /**
-                     * 商品简单描述。需传入应用市场上的 APP 名字-实际商品名称，例如：天天爱消除-游戏充值
+                     * 银行附言，不可以有以下字符：<>+{}()%*&';"[]等特殊符号
                      */
                     std::string m_goodsDescription;
                     bool m_goodsDescriptionHasBeenSet;

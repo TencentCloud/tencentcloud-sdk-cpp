@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tiia/v20190529/model/ObjectInfo.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,34 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取输入图的主体信息。
+若启用主体识别且在请求中指定了类目ID或主体区域，以指定的主体为准。若启用主体识别且没有指定，以最大面积主体为准。
+注意：此字段可能返回 null，表示取不到有效值。服务类型为商品图像搜索时生效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Object 输入图的主体信息。
+若启用主体识别且在请求中指定了类目ID或主体区域，以指定的主体为准。若启用主体识别且没有指定，以最大面积主体为准。
+注意：此字段可能返回 null，表示取不到有效值。服务类型为商品图像搜索时生效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ObjectInfo GetObject() const;
+
+                    /**
+                     * 判断参数 Object 是否已赋值
+                     * @return Object 是否已赋值
+                     */
+                    bool ObjectHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 输入图的主体信息。
+若启用主体识别且在请求中指定了类目ID或主体区域，以指定的主体为准。若启用主体识别且没有指定，以最大面积主体为准。
+注意：此字段可能返回 null，表示取不到有效值。服务类型为商品图像搜索时生效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ObjectInfo m_object;
+                    bool m_objectHasBeenSet;
 
                 };
             }

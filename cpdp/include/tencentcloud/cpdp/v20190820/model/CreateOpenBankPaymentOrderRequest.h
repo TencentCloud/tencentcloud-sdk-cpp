@@ -286,18 +286,14 @@ __FREEZE__:担保支付
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取前端成功回调URL。条件可选
-当付款方式PaymentMethod为EBANK_PAYMENT时必填
-                     * @return FrontUrl 前端成功回调URL。条件可选
-当付款方式PaymentMethod为EBANK_PAYMENT时必填
+                     * 获取前端成功回调URL。条件可选。
+                     * @return FrontUrl 前端成功回调URL。条件可选。
                      */
                     std::string GetFrontUrl() const;
 
                     /**
-                     * 设置前端成功回调URL。条件可选
-当付款方式PaymentMethod为EBANK_PAYMENT时必填
-                     * @param FrontUrl 前端成功回调URL。条件可选
-当付款方式PaymentMethod为EBANK_PAYMENT时必填
+                     * 设置前端成功回调URL。条件可选。
+                     * @param FrontUrl 前端成功回调URL。条件可选。
                      */
                     void SetFrontUrl(const std::string& _frontUrl);
 
@@ -308,18 +304,14 @@ __FREEZE__:担保支付
                     bool FrontUrlHasBeenSet() const;
 
                     /**
-                     * 获取前端刷新 URL。条件可选
-当付款方式PaymentMethod为EBANK_PAYMENT时必填
-                     * @return RefreshUrl 前端刷新 URL。条件可选
-当付款方式PaymentMethod为EBANK_PAYMENT时必填
+                     * 获取前端刷新 URL。条件可选。
+                     * @return RefreshUrl 前端刷新 URL。条件可选。
                      */
                     std::string GetRefreshUrl() const;
 
                     /**
-                     * 设置前端刷新 URL。条件可选
-当付款方式PaymentMethod为EBANK_PAYMENT时必填
-                     * @param RefreshUrl 前端刷新 URL。条件可选
-当付款方式PaymentMethod为EBANK_PAYMENT时必填
+                     * 设置前端刷新 URL。条件可选。
+                     * @param RefreshUrl 前端刷新 URL。条件可选。
                      */
                     void SetRefreshUrl(const std::string& _refreshUrl);
 
@@ -558,15 +550,13 @@ __FREEZE__:担保支付
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 前端成功回调URL。条件可选
-当付款方式PaymentMethod为EBANK_PAYMENT时必填
+                     * 前端成功回调URL。条件可选。
                      */
                     std::string m_frontUrl;
                     bool m_frontUrlHasBeenSet;
 
                     /**
-                     * 前端刷新 URL。条件可选
-当付款方式PaymentMethod为EBANK_PAYMENT时必填
+                     * 前端刷新 URL。条件可选。
                      */
                     std::string m_refreshUrl;
                     bool m_refreshUrlHasBeenSet;

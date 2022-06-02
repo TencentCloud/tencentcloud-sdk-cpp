@@ -26,7 +26,9 @@ ModifyInstancesAttributeRequest::ModifyInstancesAttributeRequest() :
     m_instanceIdsHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
-    m_disableApiTerminationHasBeenSet(false)
+    m_camRoleNameHasBeenSet(false),
+    m_disableApiTerminationHasBeenSet(false),
+    m_camRoleTypeHasBeenSet(false)
 {
 }
 
@@ -71,12 +73,28 @@ string ModifyInstancesAttributeRequest::ToJsonString() const
         }
     }
 
+    if (m_camRoleNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CamRoleName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_camRoleName.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_disableApiTerminationHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DisableApiTermination";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_disableApiTermination, allocator);
+    }
+
+    if (m_camRoleTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CamRoleType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_camRoleType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -135,6 +153,22 @@ bool ModifyInstancesAttributeRequest::SecurityGroupsHasBeenSet() const
     return m_securityGroupsHasBeenSet;
 }
 
+string ModifyInstancesAttributeRequest::GetCamRoleName() const
+{
+    return m_camRoleName;
+}
+
+void ModifyInstancesAttributeRequest::SetCamRoleName(const string& _camRoleName)
+{
+    m_camRoleName = _camRoleName;
+    m_camRoleNameHasBeenSet = true;
+}
+
+bool ModifyInstancesAttributeRequest::CamRoleNameHasBeenSet() const
+{
+    return m_camRoleNameHasBeenSet;
+}
+
 bool ModifyInstancesAttributeRequest::GetDisableApiTermination() const
 {
     return m_disableApiTermination;
@@ -149,6 +183,22 @@ void ModifyInstancesAttributeRequest::SetDisableApiTermination(const bool& _disa
 bool ModifyInstancesAttributeRequest::DisableApiTerminationHasBeenSet() const
 {
     return m_disableApiTerminationHasBeenSet;
+}
+
+string ModifyInstancesAttributeRequest::GetCamRoleType() const
+{
+    return m_camRoleType;
+}
+
+void ModifyInstancesAttributeRequest::SetCamRoleType(const string& _camRoleType)
+{
+    m_camRoleType = _camRoleType;
+    m_camRoleTypeHasBeenSet = true;
+}
+
+bool ModifyInstancesAttributeRequest::CamRoleTypeHasBeenSet() const
+{
+    return m_camRoleTypeHasBeenSet;
 }
 
 
