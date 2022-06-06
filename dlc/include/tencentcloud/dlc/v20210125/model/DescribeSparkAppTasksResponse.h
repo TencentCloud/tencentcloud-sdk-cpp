@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务列表
+                     * 获取任务结果（该字段已废弃）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tasks 任务列表
+                     * @return Tasks 任务结果（该字段已废弃）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TaskResponseInfo GetTasks() const;
@@ -70,10 +70,24 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
+                    /**
+                     * 获取任务结果列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SparkAppTasks 任务结果列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TaskResponseInfo> GetSparkAppTasks() const;
+
+                    /**
+                     * 判断参数 SparkAppTasks 是否已赋值
+                     * @return SparkAppTasks 是否已赋值
+                     */
+                    bool SparkAppTasksHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务列表
+                     * 任务结果（该字段已废弃）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TaskResponseInfo m_tasks;
@@ -84,6 +98,13 @@ namespace TencentCloud
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 任务结果列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TaskResponseInfo> m_sparkAppTasks;
+                    bool m_sparkAppTasksHasBeenSet;
 
                 };
             }

@@ -23,7 +23,8 @@ using namespace std;
 SpecificationInfo::SpecificationInfo() :
     m_regionHasBeenSet(false),
     m_zoneHasBeenSet(false),
-    m_specItemsHasBeenSet(false)
+    m_specItemsHasBeenSet(false),
+    m_supportMultiAZHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome SpecificationInfo::Deserialize(const rapidjson::Value &value
         m_specItemsHasBeenSet = true;
     }
 
+    if (value.HasMember("SupportMultiAZ") && !value["SupportMultiAZ"].IsNull())
+    {
+        if (!value["SupportMultiAZ"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SpecificationInfo.SupportMultiAZ` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_supportMultiAZ = value["SupportMultiAZ"].GetInt64();
+        m_supportMultiAZHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +119,14 @@ void SpecificationInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_supportMultiAZHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportMultiAZ";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_supportMultiAZ, allocator);
     }
 
 }
@@ -159,5 +178,21 @@ void SpecificationInfo::SetSpecItems(const vector<SpecItem>& _specItems)
 bool SpecificationInfo::SpecItemsHasBeenSet() const
 {
     return m_specItemsHasBeenSet;
+}
+
+int64_t SpecificationInfo::GetSupportMultiAZ() const
+{
+    return m_supportMultiAZ;
+}
+
+void SpecificationInfo::SetSupportMultiAZ(const int64_t& _supportMultiAZ)
+{
+    m_supportMultiAZ = _supportMultiAZ;
+    m_supportMultiAZHasBeenSet = true;
+}
+
+bool SpecificationInfo::SupportMultiAZHasBeenSet() const
+{
+    return m_supportMultiAZHasBeenSet;
 }
 

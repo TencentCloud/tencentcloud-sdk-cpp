@@ -41,6 +41,8 @@
 #include <tencentcloud/trtc/v20190722/model/DescribeCloudRecordingResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeDetailEventRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeDetailEventResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeExternalTrtcMeasureRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeExternalTrtcMeasureResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeHistoryScaleRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeHistoryScaleResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribePictureRequest.h>
@@ -57,6 +59,8 @@
 #include <tencentcloud/trtc/v20190722/model/DismissRoomResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DismissRoomByStrRoomIdRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DismissRoomByStrRoomIdResponse.h>
+#include <tencentcloud/trtc/v20190722/model/MeasureTrtcMcuExternalRequest.h>
+#include <tencentcloud/trtc/v20190722/model/MeasureTrtcMcuExternalResponse.h>
 #include <tencentcloud/trtc/v20190722/model/ModifyCloudRecordingRequest.h>
 #include <tencentcloud/trtc/v20190722/model/ModifyCloudRecordingResponse.h>
 #include <tencentcloud/trtc/v20190722/model/ModifyPictureRequest.h>
@@ -114,6 +118,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDetailEventResponse> DescribeDetailEventOutcome;
                 typedef std::future<DescribeDetailEventOutcome> DescribeDetailEventOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeDetailEventRequest&, DescribeDetailEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDetailEventAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExternalTrtcMeasureResponse> DescribeExternalTrtcMeasureOutcome;
+                typedef std::future<DescribeExternalTrtcMeasureOutcome> DescribeExternalTrtcMeasureOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DescribeExternalTrtcMeasureRequest&, DescribeExternalTrtcMeasureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExternalTrtcMeasureAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeHistoryScaleResponse> DescribeHistoryScaleOutcome;
                 typedef std::future<DescribeHistoryScaleOutcome> DescribeHistoryScaleOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeHistoryScaleRequest&, DescribeHistoryScaleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHistoryScaleAsyncHandler;
@@ -138,6 +145,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DismissRoomByStrRoomIdResponse> DismissRoomByStrRoomIdOutcome;
                 typedef std::future<DismissRoomByStrRoomIdOutcome> DismissRoomByStrRoomIdOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DismissRoomByStrRoomIdRequest&, DismissRoomByStrRoomIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DismissRoomByStrRoomIdAsyncHandler;
+                typedef Outcome<Core::Error, Model::MeasureTrtcMcuExternalResponse> MeasureTrtcMcuExternalOutcome;
+                typedef std::future<MeasureTrtcMcuExternalOutcome> MeasureTrtcMcuExternalOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::MeasureTrtcMcuExternalRequest&, MeasureTrtcMcuExternalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MeasureTrtcMcuExternalAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCloudRecordingResponse> ModifyCloudRecordingOutcome;
                 typedef std::future<ModifyCloudRecordingOutcome> ModifyCloudRecordingOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::ModifyCloudRecordingRequest&, ModifyCloudRecordingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudRecordingAsyncHandler;
@@ -259,6 +269,15 @@ namespace TencentCloud
                 DescribeDetailEventOutcomeCallable DescribeDetailEventCallable(const Model::DescribeDetailEventRequest& request);
 
                 /**
+                 *获取Trtc的用量统计数据。走计费渠道二期 只允许查两天的数据
+                 * @param req DescribeExternalTrtcMeasureRequest
+                 * @return DescribeExternalTrtcMeasureOutcome
+                 */
+                DescribeExternalTrtcMeasureOutcome DescribeExternalTrtcMeasure(const Model::DescribeExternalTrtcMeasureRequest &request);
+                void DescribeExternalTrtcMeasureAsync(const Model::DescribeExternalTrtcMeasureRequest& request, const DescribeExternalTrtcMeasureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExternalTrtcMeasureOutcomeCallable DescribeExternalTrtcMeasureCallable(const Model::DescribeExternalTrtcMeasureRequest& request);
+
+                /**
                  *可查询sdkqppid 每天的房间数和用户数，每分钟1次，可查询最近14天的数据。当天未结束，无法查到当天的房间数与用户数。 
                  * @param req DescribeHistoryScaleRequest
                  * @return DescribeHistoryScaleOutcome
@@ -340,6 +359,19 @@ namespace TencentCloud
                 DismissRoomByStrRoomIdOutcome DismissRoomByStrRoomId(const Model::DismissRoomByStrRoomIdRequest &request);
                 void DismissRoomByStrRoomIdAsync(const Model::DismissRoomByStrRoomIdRequest& request, const DismissRoomByStrRoomIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DismissRoomByStrRoomIdOutcomeCallable DismissRoomByStrRoomIdCallable(const Model::DismissRoomByStrRoomIdRequest& request);
+
+                /**
+                 *查询旁路转码计费时长。
+- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。
+- 单次查询统计区间最多不能超过2天。
+- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。
+- 日结后付费将于次日上午推送账单，建议次日上午9点以后再来查询前一天的用量。
+                 * @param req MeasureTrtcMcuExternalRequest
+                 * @return MeasureTrtcMcuExternalOutcome
+                 */
+                MeasureTrtcMcuExternalOutcome MeasureTrtcMcuExternal(const Model::MeasureTrtcMcuExternalRequest &request);
+                void MeasureTrtcMcuExternalAsync(const Model::MeasureTrtcMcuExternalRequest& request, const MeasureTrtcMcuExternalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                MeasureTrtcMcuExternalOutcomeCallable MeasureTrtcMcuExternalCallable(const Model::MeasureTrtcMcuExternalRequest& request);
 
                 /**
                  *成功开启录制后，可以使用此接口来更新录制任务。仅在录制任务进行时有效，录制退出后更新将会返回错误。更新操作是全量覆盖，并不是增量更新的模式，也就是说每次更新都需要携带全量的信息。

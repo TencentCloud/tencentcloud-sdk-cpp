@@ -427,6 +427,49 @@ TrtcClient::DescribeDetailEventOutcomeCallable TrtcClient::DescribeDetailEventCa
     return task->get_future();
 }
 
+TrtcClient::DescribeExternalTrtcMeasureOutcome TrtcClient::DescribeExternalTrtcMeasure(const DescribeExternalTrtcMeasureRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExternalTrtcMeasure");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExternalTrtcMeasureResponse rsp = DescribeExternalTrtcMeasureResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExternalTrtcMeasureOutcome(rsp);
+        else
+            return DescribeExternalTrtcMeasureOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExternalTrtcMeasureOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeExternalTrtcMeasureAsync(const DescribeExternalTrtcMeasureRequest& request, const DescribeExternalTrtcMeasureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExternalTrtcMeasure(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DescribeExternalTrtcMeasureOutcomeCallable TrtcClient::DescribeExternalTrtcMeasureCallable(const DescribeExternalTrtcMeasureRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExternalTrtcMeasureOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExternalTrtcMeasure(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::DescribeHistoryScaleOutcome TrtcClient::DescribeHistoryScale(const DescribeHistoryScaleRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeHistoryScale");
@@ -764,6 +807,49 @@ TrtcClient::DismissRoomByStrRoomIdOutcomeCallable TrtcClient::DismissRoomByStrRo
         [this, request]()
         {
             return this->DismissRoomByStrRoomId(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrtcClient::MeasureTrtcMcuExternalOutcome TrtcClient::MeasureTrtcMcuExternal(const MeasureTrtcMcuExternalRequest &request)
+{
+    auto outcome = MakeRequest(request, "MeasureTrtcMcuExternal");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        MeasureTrtcMcuExternalResponse rsp = MeasureTrtcMcuExternalResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return MeasureTrtcMcuExternalOutcome(rsp);
+        else
+            return MeasureTrtcMcuExternalOutcome(o.GetError());
+    }
+    else
+    {
+        return MeasureTrtcMcuExternalOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::MeasureTrtcMcuExternalAsync(const MeasureTrtcMcuExternalRequest& request, const MeasureTrtcMcuExternalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->MeasureTrtcMcuExternal(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::MeasureTrtcMcuExternalOutcomeCallable TrtcClient::MeasureTrtcMcuExternalCallable(const MeasureTrtcMcuExternalRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<MeasureTrtcMcuExternalOutcome()>>(
+        [this, request]()
+        {
+            return this->MeasureTrtcMcuExternal(request);
         }
     );
 

@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/cdn/v20180606/model/AddCLSTopicDomainsRequest.h>
+#include <tencentcloud/cdn/v20180606/model/AddCLSTopicDomainsResponse.h>
 #include <tencentcloud/cdn/v20180606/model/AddCdnDomainRequest.h>
 #include <tencentcloud/cdn/v20180606/model/AddCdnDomainResponse.h>
 #include <tencentcloud/cdn/v20180606/model/CreateClsLogTopicRequest.h>
@@ -191,6 +193,9 @@ namespace TencentCloud
                 CdnClient(const Credential &credential, const std::string &region);
                 CdnClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::AddCLSTopicDomainsResponse> AddCLSTopicDomainsOutcome;
+                typedef std::future<AddCLSTopicDomainsOutcome> AddCLSTopicDomainsOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::AddCLSTopicDomainsRequest&, AddCLSTopicDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddCLSTopicDomainsAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddCdnDomainResponse> AddCdnDomainOutcome;
                 typedef std::future<AddCdnDomainOutcome> AddCdnDomainOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::AddCdnDomainRequest&, AddCdnDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddCdnDomainAsyncHandler;
@@ -424,6 +429,15 @@ namespace TencentCloud
                 typedef std::function<void(const CdnClient*, const Model::VerifyDomainRecordRequest&, VerifyDomainRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyDomainRecordAsyncHandler;
 
 
+
+                /**
+                 *AddCLSTopicDomains 用于新增域名到某日志主题下
+                 * @param req AddCLSTopicDomainsRequest
+                 * @return AddCLSTopicDomainsOutcome
+                 */
+                AddCLSTopicDomainsOutcome AddCLSTopicDomains(const Model::AddCLSTopicDomainsRequest &request);
+                void AddCLSTopicDomainsAsync(const Model::AddCLSTopicDomainsRequest& request, const AddCLSTopicDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddCLSTopicDomainsOutcomeCallable AddCLSTopicDomainsCallable(const Model::AddCLSTopicDomainsRequest& request);
 
                 /**
                  *AddCdnDomain 用于新增内容分发网络加速域名。1分钟内最多可新增100个域名。

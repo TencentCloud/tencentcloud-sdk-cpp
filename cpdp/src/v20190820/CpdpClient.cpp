@@ -212,6 +212,92 @@ CpdpClient::ApplyApplicationMaterialOutcomeCallable CpdpClient::ApplyApplication
     return task->get_future();
 }
 
+CpdpClient::ApplyFlexPaymentOutcome CpdpClient::ApplyFlexPayment(const ApplyFlexPaymentRequest &request)
+{
+    auto outcome = MakeRequest(request, "ApplyFlexPayment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ApplyFlexPaymentResponse rsp = ApplyFlexPaymentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ApplyFlexPaymentOutcome(rsp);
+        else
+            return ApplyFlexPaymentOutcome(o.GetError());
+    }
+    else
+    {
+        return ApplyFlexPaymentOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::ApplyFlexPaymentAsync(const ApplyFlexPaymentRequest& request, const ApplyFlexPaymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ApplyFlexPayment(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::ApplyFlexPaymentOutcomeCallable CpdpClient::ApplyFlexPaymentCallable(const ApplyFlexPaymentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ApplyFlexPaymentOutcome()>>(
+        [this, request]()
+        {
+            return this->ApplyFlexPayment(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::ApplyFlexSettlementOutcome CpdpClient::ApplyFlexSettlement(const ApplyFlexSettlementRequest &request)
+{
+    auto outcome = MakeRequest(request, "ApplyFlexSettlement");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ApplyFlexSettlementResponse rsp = ApplyFlexSettlementResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ApplyFlexSettlementOutcome(rsp);
+        else
+            return ApplyFlexSettlementOutcome(o.GetError());
+    }
+    else
+    {
+        return ApplyFlexSettlementOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::ApplyFlexSettlementAsync(const ApplyFlexSettlementRequest& request, const ApplyFlexSettlementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ApplyFlexSettlement(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::ApplyFlexSettlementOutcomeCallable CpdpClient::ApplyFlexSettlementCallable(const ApplyFlexSettlementRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ApplyFlexSettlementOutcome()>>(
+        [this, request]()
+        {
+            return this->ApplyFlexSettlement(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::ApplyOpenBankOrderDetailReceiptOutcome CpdpClient::ApplyOpenBankOrderDetailReceipt(const ApplyOpenBankOrderDetailReceiptRequest &request)
 {
     auto outcome = MakeRequest(request, "ApplyOpenBankOrderDetailReceipt");
@@ -1366,6 +1452,49 @@ CpdpClient::CreateExternalAnchorOutcomeCallable CpdpClient::CreateExternalAnchor
         [this, request]()
         {
             return this->CreateExternalAnchor(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::CreateFlexPayeeOutcome CpdpClient::CreateFlexPayee(const CreateFlexPayeeRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFlexPayee");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFlexPayeeResponse rsp = CreateFlexPayeeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFlexPayeeOutcome(rsp);
+        else
+            return CreateFlexPayeeOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFlexPayeeOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::CreateFlexPayeeAsync(const CreateFlexPayeeRequest& request, const CreateFlexPayeeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFlexPayee(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::CreateFlexPayeeOutcomeCallable CpdpClient::CreateFlexPayeeCallable(const CreateFlexPayeeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFlexPayeeOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFlexPayee(request);
         }
     );
 
@@ -2878,6 +3007,49 @@ CpdpClient::ExecuteMemberTransactionOutcomeCallable CpdpClient::ExecuteMemberTra
     return task->get_future();
 }
 
+CpdpClient::FreezeFlexBalanceOutcome CpdpClient::FreezeFlexBalance(const FreezeFlexBalanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "FreezeFlexBalance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        FreezeFlexBalanceResponse rsp = FreezeFlexBalanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return FreezeFlexBalanceOutcome(rsp);
+        else
+            return FreezeFlexBalanceOutcome(o.GetError());
+    }
+    else
+    {
+        return FreezeFlexBalanceOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::FreezeFlexBalanceAsync(const FreezeFlexBalanceRequest& request, const FreezeFlexBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->FreezeFlexBalance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::FreezeFlexBalanceOutcomeCallable CpdpClient::FreezeFlexBalanceCallable(const FreezeFlexBalanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<FreezeFlexBalanceOutcome()>>(
+        [this, request]()
+        {
+            return this->FreezeFlexBalance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::GetBillDownloadUrlOutcome CpdpClient::GetBillDownloadUrl(const GetBillDownloadUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "GetBillDownloadUrl");
@@ -3258,6 +3430,49 @@ CpdpClient::ModifyBindedAccountOutcomeCallable CpdpClient::ModifyBindedAccountCa
         [this, request]()
         {
             return this->ModifyBindedAccount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::ModifyFlexPayeeAccountRightStatusOutcome CpdpClient::ModifyFlexPayeeAccountRightStatus(const ModifyFlexPayeeAccountRightStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyFlexPayeeAccountRightStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyFlexPayeeAccountRightStatusResponse rsp = ModifyFlexPayeeAccountRightStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyFlexPayeeAccountRightStatusOutcome(rsp);
+        else
+            return ModifyFlexPayeeAccountRightStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyFlexPayeeAccountRightStatusOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::ModifyFlexPayeeAccountRightStatusAsync(const ModifyFlexPayeeAccountRightStatusRequest& request, const ModifyFlexPayeeAccountRightStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyFlexPayeeAccountRightStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::ModifyFlexPayeeAccountRightStatusOutcomeCallable CpdpClient::ModifyFlexPayeeAccountRightStatusCallable(const ModifyFlexPayeeAccountRightStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyFlexPayeeAccountRightStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyFlexPayeeAccountRightStatus(request);
         }
     );
 
@@ -4505,6 +4720,393 @@ CpdpClient::QueryExchangeRateOutcomeCallable CpdpClient::QueryExchangeRateCallab
         [this, request]()
         {
             return this->QueryExchangeRate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::QueryFlexAmountBeforeTaxOutcome CpdpClient::QueryFlexAmountBeforeTax(const QueryFlexAmountBeforeTaxRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryFlexAmountBeforeTax");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryFlexAmountBeforeTaxResponse rsp = QueryFlexAmountBeforeTaxResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryFlexAmountBeforeTaxOutcome(rsp);
+        else
+            return QueryFlexAmountBeforeTaxOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryFlexAmountBeforeTaxOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryFlexAmountBeforeTaxAsync(const QueryFlexAmountBeforeTaxRequest& request, const QueryFlexAmountBeforeTaxAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryFlexAmountBeforeTax(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryFlexAmountBeforeTaxOutcomeCallable CpdpClient::QueryFlexAmountBeforeTaxCallable(const QueryFlexAmountBeforeTaxRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryFlexAmountBeforeTaxOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryFlexAmountBeforeTax(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::QueryFlexFreezeOrderListOutcome CpdpClient::QueryFlexFreezeOrderList(const QueryFlexFreezeOrderListRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryFlexFreezeOrderList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryFlexFreezeOrderListResponse rsp = QueryFlexFreezeOrderListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryFlexFreezeOrderListOutcome(rsp);
+        else
+            return QueryFlexFreezeOrderListOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryFlexFreezeOrderListOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryFlexFreezeOrderListAsync(const QueryFlexFreezeOrderListRequest& request, const QueryFlexFreezeOrderListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryFlexFreezeOrderList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryFlexFreezeOrderListOutcomeCallable CpdpClient::QueryFlexFreezeOrderListCallable(const QueryFlexFreezeOrderListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryFlexFreezeOrderListOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryFlexFreezeOrderList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::QueryFlexPayeeAccountBalanceOutcome CpdpClient::QueryFlexPayeeAccountBalance(const QueryFlexPayeeAccountBalanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryFlexPayeeAccountBalance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryFlexPayeeAccountBalanceResponse rsp = QueryFlexPayeeAccountBalanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryFlexPayeeAccountBalanceOutcome(rsp);
+        else
+            return QueryFlexPayeeAccountBalanceOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryFlexPayeeAccountBalanceOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryFlexPayeeAccountBalanceAsync(const QueryFlexPayeeAccountBalanceRequest& request, const QueryFlexPayeeAccountBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryFlexPayeeAccountBalance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryFlexPayeeAccountBalanceOutcomeCallable CpdpClient::QueryFlexPayeeAccountBalanceCallable(const QueryFlexPayeeAccountBalanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryFlexPayeeAccountBalanceOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryFlexPayeeAccountBalance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::QueryFlexPayeeAccountInfoOutcome CpdpClient::QueryFlexPayeeAccountInfo(const QueryFlexPayeeAccountInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryFlexPayeeAccountInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryFlexPayeeAccountInfoResponse rsp = QueryFlexPayeeAccountInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryFlexPayeeAccountInfoOutcome(rsp);
+        else
+            return QueryFlexPayeeAccountInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryFlexPayeeAccountInfoOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryFlexPayeeAccountInfoAsync(const QueryFlexPayeeAccountInfoRequest& request, const QueryFlexPayeeAccountInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryFlexPayeeAccountInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryFlexPayeeAccountInfoOutcomeCallable CpdpClient::QueryFlexPayeeAccountInfoCallable(const QueryFlexPayeeAccountInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryFlexPayeeAccountInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryFlexPayeeAccountInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::QueryFlexPayeeAccountListOutcome CpdpClient::QueryFlexPayeeAccountList(const QueryFlexPayeeAccountListRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryFlexPayeeAccountList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryFlexPayeeAccountListResponse rsp = QueryFlexPayeeAccountListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryFlexPayeeAccountListOutcome(rsp);
+        else
+            return QueryFlexPayeeAccountListOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryFlexPayeeAccountListOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryFlexPayeeAccountListAsync(const QueryFlexPayeeAccountListRequest& request, const QueryFlexPayeeAccountListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryFlexPayeeAccountList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryFlexPayeeAccountListOutcomeCallable CpdpClient::QueryFlexPayeeAccountListCallable(const QueryFlexPayeeAccountListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryFlexPayeeAccountListOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryFlexPayeeAccountList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::QueryFlexPayeeInfoOutcome CpdpClient::QueryFlexPayeeInfo(const QueryFlexPayeeInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryFlexPayeeInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryFlexPayeeInfoResponse rsp = QueryFlexPayeeInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryFlexPayeeInfoOutcome(rsp);
+        else
+            return QueryFlexPayeeInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryFlexPayeeInfoOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryFlexPayeeInfoAsync(const QueryFlexPayeeInfoRequest& request, const QueryFlexPayeeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryFlexPayeeInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryFlexPayeeInfoOutcomeCallable CpdpClient::QueryFlexPayeeInfoCallable(const QueryFlexPayeeInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryFlexPayeeInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryFlexPayeeInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::QueryFlexPaymentOrderListOutcome CpdpClient::QueryFlexPaymentOrderList(const QueryFlexPaymentOrderListRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryFlexPaymentOrderList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryFlexPaymentOrderListResponse rsp = QueryFlexPaymentOrderListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryFlexPaymentOrderListOutcome(rsp);
+        else
+            return QueryFlexPaymentOrderListOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryFlexPaymentOrderListOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryFlexPaymentOrderListAsync(const QueryFlexPaymentOrderListRequest& request, const QueryFlexPaymentOrderListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryFlexPaymentOrderList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryFlexPaymentOrderListOutcomeCallable CpdpClient::QueryFlexPaymentOrderListCallable(const QueryFlexPaymentOrderListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryFlexPaymentOrderListOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryFlexPaymentOrderList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::QueryFlexPaymentOrderStatusOutcome CpdpClient::QueryFlexPaymentOrderStatus(const QueryFlexPaymentOrderStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryFlexPaymentOrderStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryFlexPaymentOrderStatusResponse rsp = QueryFlexPaymentOrderStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryFlexPaymentOrderStatusOutcome(rsp);
+        else
+            return QueryFlexPaymentOrderStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryFlexPaymentOrderStatusOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryFlexPaymentOrderStatusAsync(const QueryFlexPaymentOrderStatusRequest& request, const QueryFlexPaymentOrderStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryFlexPaymentOrderStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryFlexPaymentOrderStatusOutcomeCallable CpdpClient::QueryFlexPaymentOrderStatusCallable(const QueryFlexPaymentOrderStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryFlexPaymentOrderStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryFlexPaymentOrderStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::QueryFlexSettlementOrderListOutcome CpdpClient::QueryFlexSettlementOrderList(const QueryFlexSettlementOrderListRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryFlexSettlementOrderList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryFlexSettlementOrderListResponse rsp = QueryFlexSettlementOrderListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryFlexSettlementOrderListOutcome(rsp);
+        else
+            return QueryFlexSettlementOrderListOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryFlexSettlementOrderListOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryFlexSettlementOrderListAsync(const QueryFlexSettlementOrderListRequest& request, const QueryFlexSettlementOrderListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryFlexSettlementOrderList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryFlexSettlementOrderListOutcomeCallable CpdpClient::QueryFlexSettlementOrderListCallable(const QueryFlexSettlementOrderListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryFlexSettlementOrderListOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryFlexSettlementOrderList(request);
         }
     );
 
