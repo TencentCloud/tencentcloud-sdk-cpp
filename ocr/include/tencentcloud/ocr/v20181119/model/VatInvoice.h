@@ -291,6 +291,7 @@ namespace TencentCloud
 11：卷式发票 
 14：通行费发票 
 15：二手车发票
+32：深圳区块链发票（仅支持新版接口）
                      * @return Type 发票类型
 01：专用发票 
 02：货运发票
@@ -300,6 +301,7 @@ namespace TencentCloud
 11：卷式发票 
 14：通行费发票 
 15：二手车发票
+32：深圳区块链发票（仅支持新版接口）
                      */
                     std::string GetType() const;
 
@@ -313,6 +315,7 @@ namespace TencentCloud
 11：卷式发票 
 14：通行费发票 
 15：二手车发票
+32：深圳区块链发票（仅支持新版接口）
                      * @param Type 发票类型
 01：专用发票 
 02：货运发票
@@ -322,6 +325,7 @@ namespace TencentCloud
 11：卷式发票 
 14：通行费发票 
 15：二手车发票
+32：深圳区块链发票（仅支持新版接口）
                      */
                     void SetType(const std::string& _type);
 
@@ -595,6 +599,7 @@ Y: 有清单 N：无清单
 11：卷式发票 
 14：通行费发票 
 15：二手车发票
+32：深圳区块链发票（仅支持新版接口）
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

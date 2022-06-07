@@ -102,12 +102,18 @@ namespace TencentCloud
 <li>ContainerName - String - 是否必填：否 - 容器名称</li>
 <li>ContainerId - String - 是否必填：否 - 容器id</li>
 <li>Hostname - String - 是否必填：否 - 主机名称</li>
-<li>HostIp- String - 是否必填：是 - 容器名称</li>
+<li>HostIp- String - 是否必填：否 - 主机IP</li>
+<li>ImageId- String - 是否必填：否 - 镜像ID</li>
+<li>ImageName- String - 是否必填：否 - 镜像名称</li>
+<li>Status- String - 是否必填：否 - 状态</li>
                      * @return Filters 过滤条件。
 <li>ContainerName - String - 是否必填：否 - 容器名称</li>
 <li>ContainerId - String - 是否必填：否 - 容器id</li>
 <li>Hostname - String - 是否必填：否 - 主机名称</li>
-<li>HostIp- String - 是否必填：是 - 容器名称</li>
+<li>HostIp- String - 是否必填：否 - 主机IP</li>
+<li>ImageId- String - 是否必填：否 - 镜像ID</li>
+<li>ImageName- String - 是否必填：否 - 镜像名称</li>
+<li>Status- String - 是否必填：否 - 状态</li>
                      */
                     std::vector<RunTimeFilters> GetFilters() const;
 
@@ -116,12 +122,18 @@ namespace TencentCloud
 <li>ContainerName - String - 是否必填：否 - 容器名称</li>
 <li>ContainerId - String - 是否必填：否 - 容器id</li>
 <li>Hostname - String - 是否必填：否 - 主机名称</li>
-<li>HostIp- String - 是否必填：是 - 容器名称</li>
+<li>HostIp- String - 是否必填：否 - 主机IP</li>
+<li>ImageId- String - 是否必填：否 - 镜像ID</li>
+<li>ImageName- String - 是否必填：否 - 镜像名称</li>
+<li>Status- String - 是否必填：否 - 状态</li>
                      * @param Filters 过滤条件。
 <li>ContainerName - String - 是否必填：否 - 容器名称</li>
 <li>ContainerId - String - 是否必填：否 - 容器id</li>
 <li>Hostname - String - 是否必填：否 - 主机名称</li>
-<li>HostIp- String - 是否必填：是 - 容器名称</li>
+<li>HostIp- String - 是否必填：否 - 主机IP</li>
+<li>ImageId- String - 是否必填：否 - 镜像ID</li>
+<li>ImageName- String - 是否必填：否 - 镜像名称</li>
+<li>Status- String - 是否必填：否 - 状态</li>
                      */
                     void SetFilters(const std::vector<RunTimeFilters>& _filters);
 
@@ -192,7 +204,10 @@ namespace TencentCloud
 <li>ContainerName - String - 是否必填：否 - 容器名称</li>
 <li>ContainerId - String - 是否必填：否 - 容器id</li>
 <li>Hostname - String - 是否必填：否 - 主机名称</li>
-<li>HostIp- String - 是否必填：是 - 容器名称</li>
+<li>HostIp- String - 是否必填：否 - 主机IP</li>
+<li>ImageId- String - 是否必填：否 - 镜像ID</li>
+<li>ImageName- String - 是否必填：否 - 镜像名称</li>
+<li>Status- String - 是否必填：否 - 状态</li>
                      */
                     std::vector<RunTimeFilters> m_filters;
                     bool m_filtersHasBeenSet;

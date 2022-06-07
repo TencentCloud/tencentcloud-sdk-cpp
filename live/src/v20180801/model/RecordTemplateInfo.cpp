@@ -31,7 +31,8 @@ RecordTemplateInfo::RecordTemplateInfo() :
     m_isDelayLiveHasBeenSet(false),
     m_hlsSpecialParamHasBeenSet(false),
     m_mp3ParamHasBeenSet(false),
-    m_removeWatermarkHasBeenSet(false)
+    m_removeWatermarkHasBeenSet(false),
+    m_flvSpecialParamHasBeenSet(false)
 {
 }
 
@@ -192,6 +193,23 @@ CoreInternalOutcome RecordTemplateInfo::Deserialize(const rapidjson::Value &valu
         m_removeWatermarkHasBeenSet = true;
     }
 
+    if (value.HasMember("FlvSpecialParam") && !value["FlvSpecialParam"].IsNull())
+    {
+        if (!value["FlvSpecialParam"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecordTemplateInfo.FlvSpecialParam` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_flvSpecialParam.Deserialize(value["FlvSpecialParam"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_flvSpecialParamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -291,6 +309,15 @@ void RecordTemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "RemoveWatermark";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_removeWatermark, allocator);
+    }
+
+    if (m_flvSpecialParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlvSpecialParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_flvSpecialParam.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -470,5 +497,21 @@ void RecordTemplateInfo::SetRemoveWatermark(const bool& _removeWatermark)
 bool RecordTemplateInfo::RemoveWatermarkHasBeenSet() const
 {
     return m_removeWatermarkHasBeenSet;
+}
+
+FlvSpecialParam RecordTemplateInfo::GetFlvSpecialParam() const
+{
+    return m_flvSpecialParam;
+}
+
+void RecordTemplateInfo::SetFlvSpecialParam(const FlvSpecialParam& _flvSpecialParam)
+{
+    m_flvSpecialParam = _flvSpecialParam;
+    m_flvSpecialParamHasBeenSet = true;
+}
+
+bool RecordTemplateInfo::FlvSpecialParamHasBeenSet() const
+{
+    return m_flvSpecialParamHasBeenSet;
 }
 

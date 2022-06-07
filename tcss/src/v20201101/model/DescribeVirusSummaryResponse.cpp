@@ -29,7 +29,9 @@ DescribeVirusSummaryResponse::DescribeVirusSummaryResponse() :
     m_riskCntHasBeenSet(false),
     m_virusDataBaseModifyTimeHasBeenSet(false),
     m_riskContainerIncreaseHasBeenSet(false),
-    m_riskIncreaseHasBeenSet(false)
+    m_riskIncreaseHasBeenSet(false),
+    m_isolateIncreaseHasBeenSet(false),
+    m_isolateCntHasBeenSet(false)
 {
 }
 
@@ -127,6 +129,26 @@ CoreInternalOutcome DescribeVirusSummaryResponse::Deserialize(const string &payl
         m_riskIncreaseHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsolateIncrease") && !rsp["IsolateIncrease"].IsNull())
+    {
+        if (!rsp["IsolateIncrease"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsolateIncrease` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isolateIncrease = rsp["IsolateIncrease"].GetInt64();
+        m_isolateIncreaseHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IsolateCnt") && !rsp["IsolateCnt"].IsNull())
+    {
+        if (!rsp["IsolateCnt"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsolateCnt` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isolateCnt = rsp["IsolateCnt"].GetInt64();
+        m_isolateCntHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -183,6 +205,22 @@ string DescribeVirusSummaryResponse::ToJsonString() const
         string key = "RiskIncrease";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_riskIncrease, allocator);
+    }
+
+    if (m_isolateIncreaseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolateIncrease";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isolateIncrease, allocator);
+    }
+
+    if (m_isolateCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolateCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isolateCnt, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -255,6 +293,26 @@ int64_t DescribeVirusSummaryResponse::GetRiskIncrease() const
 bool DescribeVirusSummaryResponse::RiskIncreaseHasBeenSet() const
 {
     return m_riskIncreaseHasBeenSet;
+}
+
+int64_t DescribeVirusSummaryResponse::GetIsolateIncrease() const
+{
+    return m_isolateIncrease;
+}
+
+bool DescribeVirusSummaryResponse::IsolateIncreaseHasBeenSet() const
+{
+    return m_isolateIncreaseHasBeenSet;
+}
+
+int64_t DescribeVirusSummaryResponse::GetIsolateCnt() const
+{
+    return m_isolateCnt;
+}
+
+bool DescribeVirusSummaryResponse::IsolateCntHasBeenSet() const
+{
+    return m_isolateCntHasBeenSet;
 }
 
 

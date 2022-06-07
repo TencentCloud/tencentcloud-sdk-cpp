@@ -43,7 +43,49 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取添加成功的用户列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SuccessUserList 添加成功的用户列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetSuccessUserList() const;
+
+                    /**
+                     * 判断参数 SuccessUserList 是否已赋值
+                     * @return SuccessUserList 是否已赋值
+                     */
+                    bool SuccessUserListHasBeenSet() const;
+
+                    /**
+                     * 获取添加失败的用户列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FailedUserList 添加失败的用户列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetFailedUserList() const;
+
+                    /**
+                     * 判断参数 FailedUserList 是否已赋值
+                     * @return FailedUserList 是否已赋值
+                     */
+                    bool FailedUserListHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 添加成功的用户列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_successUserList;
+                    bool m_successUserListHasBeenSet;
+
+                    /**
+                     * 添加失败的用户列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_failedUserList;
+                    bool m_failedUserListHasBeenSet;
 
                 };
             }

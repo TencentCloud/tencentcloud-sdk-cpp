@@ -24,7 +24,8 @@ HorizontalAutoscaler::HorizontalAutoscaler() :
     m_minReplicasHasBeenSet(false),
     m_maxReplicasHasBeenSet(false),
     m_metricsHasBeenSet(false),
-    m_thresholdHasBeenSet(false)
+    m_thresholdHasBeenSet(false),
+    m_enabledHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome HorizontalAutoscaler::Deserialize(const rapidjson::Value &va
         m_thresholdHasBeenSet = true;
     }
 
+    if (value.HasMember("Enabled") && !value["Enabled"].IsNull())
+    {
+        if (!value["Enabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `HorizontalAutoscaler.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enabled = value["Enabled"].GetBool();
+        m_enabledHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void HorizontalAutoscaler::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "Threshold";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_threshold, allocator);
+    }
+
+    if (m_enabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Enabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enabled, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void HorizontalAutoscaler::SetThreshold(const int64_t& _threshold)
 bool HorizontalAutoscaler::ThresholdHasBeenSet() const
 {
     return m_thresholdHasBeenSet;
+}
+
+bool HorizontalAutoscaler::GetEnabled() const
+{
+    return m_enabled;
+}
+
+void HorizontalAutoscaler::SetEnabled(const bool& _enabled)
+{
+    m_enabled = _enabled;
+    m_enabledHasBeenSet = true;
+}
+
+bool HorizontalAutoscaler::EnabledHasBeenSet() const
+{
+    return m_enabledHasBeenSet;
 }
 

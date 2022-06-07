@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/emr/v20190103/model/UserManagerFilter.h>
 
 
 namespace TencentCloud
@@ -43,6 +44,78 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取集群实例ID
+                     * @return InstanceId 集群实例ID
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置集群实例ID
+                     * @param InstanceId 集群实例ID
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取页码
+                     * @return PageNo 页码
+                     */
+                    int64_t GetPageNo() const;
+
+                    /**
+                     * 设置页码
+                     * @param PageNo 页码
+                     */
+                    void SetPageNo(const int64_t& _pageNo);
+
+                    /**
+                     * 判断参数 PageNo 是否已赋值
+                     * @return PageNo 是否已赋值
+                     */
+                    bool PageNoHasBeenSet() const;
+
+                    /**
+                     * 获取分页的大小
+                     * @return PageSize 分页的大小
+                     */
+                    int64_t GetPageSize() const;
+
+                    /**
+                     * 设置分页的大小
+                     * @param PageSize 分页的大小
+                     */
+                    void SetPageSize(const int64_t& _pageSize);
+
+                    /**
+                     * 判断参数 PageSize 是否已赋值
+                     * @return PageSize 是否已赋值
+                     */
+                    bool PageSizeHasBeenSet() const;
+
+                    /**
+                     * 获取查询用户列表过滤器
+                     * @return UserManagerFilter 查询用户列表过滤器
+                     */
+                    UserManagerFilter GetUserManagerFilter() const;
+
+                    /**
+                     * 设置查询用户列表过滤器
+                     * @param UserManagerFilter 查询用户列表过滤器
+                     */
+                    void SetUserManagerFilter(const UserManagerFilter& _userManagerFilter);
+
+                    /**
+                     * 判断参数 UserManagerFilter 是否已赋值
+                     * @return UserManagerFilter 是否已赋值
+                     */
+                    bool UserManagerFilterHasBeenSet() const;
+
+                    /**
                      * 获取是否需要keytab文件的信息，仅对开启kerberos的集群有效，默认为false
                      * @return NeedKeytabInfo 是否需要keytab文件的信息，仅对开启kerberos的集群有效，默认为false
                      */
@@ -61,6 +134,30 @@ namespace TencentCloud
                     bool NeedKeytabInfoHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 集群实例ID
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 页码
+                     */
+                    int64_t m_pageNo;
+                    bool m_pageNoHasBeenSet;
+
+                    /**
+                     * 分页的大小
+                     */
+                    int64_t m_pageSize;
+                    bool m_pageSizeHasBeenSet;
+
+                    /**
+                     * 查询用户列表过滤器
+                     */
+                    UserManagerFilter m_userManagerFilter;
+                    bool m_userManagerFilterHasBeenSet;
 
                     /**
                      * 是否需要keytab文件的信息，仅对开启kerberos的集群有效，默认为false

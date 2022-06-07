@@ -23,7 +23,8 @@ using namespace std;
 ConsumerContent::ConsumerContent() :
     m_enableTagHasBeenSet(false),
     m_metaFieldsHasBeenSet(false),
-    m_tagJsonNotTiledHasBeenSet(false)
+    m_tagJsonNotTiledHasBeenSet(false),
+    m_timestampAccuracyHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,16 @@ CoreInternalOutcome ConsumerContent::Deserialize(const rapidjson::Value &value)
         m_tagJsonNotTiledHasBeenSet = true;
     }
 
+    if (value.HasMember("TimestampAccuracy") && !value["TimestampAccuracy"].IsNull())
+    {
+        if (!value["TimestampAccuracy"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumerContent.TimestampAccuracy` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_timestampAccuracy = value["TimestampAccuracy"].GetInt64();
+        m_timestampAccuracyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +110,14 @@ void ConsumerContent::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "TagJsonNotTiled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tagJsonNotTiled, allocator);
+    }
+
+    if (m_timestampAccuracyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimestampAccuracy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_timestampAccuracy, allocator);
     }
 
 }
@@ -150,5 +169,21 @@ void ConsumerContent::SetTagJsonNotTiled(const bool& _tagJsonNotTiled)
 bool ConsumerContent::TagJsonNotTiledHasBeenSet() const
 {
     return m_tagJsonNotTiledHasBeenSet;
+}
+
+int64_t ConsumerContent::GetTimestampAccuracy() const
+{
+    return m_timestampAccuracy;
+}
+
+void ConsumerContent::SetTimestampAccuracy(const int64_t& _timestampAccuracy)
+{
+    m_timestampAccuracy = _timestampAccuracy;
+    m_timestampAccuracyHasBeenSet = true;
+}
+
+bool ConsumerContent::TimestampAccuracyHasBeenSet() const
+{
+    return m_timestampAccuracyHasBeenSet;
 }
 

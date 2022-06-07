@@ -30,7 +30,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/DeleteLiveRecordRuleRequest.h
   include/tencentcloud/live/v20180801/model/ResumeLiveStreamRequest.h
   include/tencentcloud/live/v20180801/model/DeleteLiveTranscodeTemplateResponse.h
-  include/tencentcloud/live/v20180801/model/StopScreenshotTaskRequest.h
+  include/tencentcloud/live/v20180801/model/FlvSpecialParam.h
   include/tencentcloud/live/v20180801/model/DescribeBillBandwidthAndFluxListResponse.h
   include/tencentcloud/live/v20180801/model/CreateScreenshotTaskResponse.h
   include/tencentcloud/live/v20180801/model/DeleteLiveCallbackRuleResponse.h
@@ -245,6 +245,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/StopRecordTaskRequest.h
   include/tencentcloud/live/v20180801/model/DescribeLiveDomainRefererRequest.h
   include/tencentcloud/live/v20180801/model/HttpStatusData.h
+  include/tencentcloud/live/v20180801/model/StopScreenshotTaskRequest.h
   include/tencentcloud/live/v20180801/model/HttpCodeInfo.h
   include/tencentcloud/live/v20180801/model/DescribeStreamPlayInfoListRequest.h
   include/tencentcloud/live/v20180801/model/CreateLiveTranscodeTemplateRequest.h
@@ -337,7 +338,7 @@ set(live_src
   src/v20180801/model/DeleteLiveRecordRuleRequest.cpp
   src/v20180801/model/ResumeLiveStreamRequest.cpp
   src/v20180801/model/DeleteLiveTranscodeTemplateResponse.cpp
-  src/v20180801/model/StopScreenshotTaskRequest.cpp
+  src/v20180801/model/FlvSpecialParam.cpp
   src/v20180801/model/DescribeBillBandwidthAndFluxListResponse.cpp
   src/v20180801/model/CreateScreenshotTaskResponse.cpp
   src/v20180801/model/DeleteLiveCallbackRuleResponse.cpp
@@ -552,6 +553,7 @@ set(live_src
   src/v20180801/model/StopRecordTaskRequest.cpp
   src/v20180801/model/DescribeLiveDomainRefererRequest.cpp
   src/v20180801/model/HttpStatusData.cpp
+  src/v20180801/model/StopScreenshotTaskRequest.cpp
   src/v20180801/model/HttpCodeInfo.cpp
   src/v20180801/model/DescribeStreamPlayInfoListRequest.cpp
   src/v20180801/model/CreateLiveTranscodeTemplateRequest.cpp

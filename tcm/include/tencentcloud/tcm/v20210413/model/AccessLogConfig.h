@@ -156,6 +156,60 @@ namespace TencentCloud
                      */
                     bool FormatHasBeenSet() const;
 
+                    /**
+                     * 获取GRPC第三方服务器地址
+                     * @return Address GRPC第三方服务器地址
+                     */
+                    std::string GetAddress() const;
+
+                    /**
+                     * 设置GRPC第三方服务器地址
+                     * @param Address GRPC第三方服务器地址
+                     */
+                    void SetAddress(const std::string& _address);
+
+                    /**
+                     * 判断参数 Address 是否已赋值
+                     * @return Address 是否已赋值
+                     */
+                    bool AddressHasBeenSet() const;
+
+                    /**
+                     * 获取是否启用GRPC第三方服务器
+                     * @return EnableServer 是否启用GRPC第三方服务器
+                     */
+                    bool GetEnableServer() const;
+
+                    /**
+                     * 设置是否启用GRPC第三方服务器
+                     * @param EnableServer 是否启用GRPC第三方服务器
+                     */
+                    void SetEnableServer(const bool& _enableServer);
+
+                    /**
+                     * 判断参数 EnableServer 是否已赋值
+                     * @return EnableServer 是否已赋值
+                     */
+                    bool EnableServerHasBeenSet() const;
+
+                    /**
+                     * 获取是否启用标准输出
+                     * @return EnableStdout 是否启用标准输出
+                     */
+                    bool GetEnableStdout() const;
+
+                    /**
+                     * 设置是否启用标准输出
+                     * @param EnableStdout 是否启用标准输出
+                     */
+                    void SetEnableStdout(const bool& _enableStdout);
+
+                    /**
+                     * 判断参数 EnableStdout 是否已赋值
+                     * @return EnableStdout 是否已赋值
+                     */
+                    bool EnableStdoutHasBeenSet() const;
+
                 private:
 
                     /**
@@ -193,6 +247,24 @@ namespace TencentCloud
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;
+
+                    /**
+                     * GRPC第三方服务器地址
+                     */
+                    std::string m_address;
+                    bool m_addressHasBeenSet;
+
+                    /**
+                     * 是否启用GRPC第三方服务器
+                     */
+                    bool m_enableServer;
+                    bool m_enableServerHasBeenSet;
+
+                    /**
+                     * 是否启用标准输出
+                     */
+                    bool m_enableStdout;
+                    bool m_enableStdoutHasBeenSet;
 
                 };
             }

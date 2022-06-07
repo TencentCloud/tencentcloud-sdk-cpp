@@ -771,3 +771,46 @@ OceanusClient::StopJobsOutcomeCallable OceanusClient::StopJobsCallable(const Sto
     return task->get_future();
 }
 
+OceanusClient::TriggerJobSavepointOutcome OceanusClient::TriggerJobSavepoint(const TriggerJobSavepointRequest &request)
+{
+    auto outcome = MakeRequest(request, "TriggerJobSavepoint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TriggerJobSavepointResponse rsp = TriggerJobSavepointResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TriggerJobSavepointOutcome(rsp);
+        else
+            return TriggerJobSavepointOutcome(o.GetError());
+    }
+    else
+    {
+        return TriggerJobSavepointOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::TriggerJobSavepointAsync(const TriggerJobSavepointRequest& request, const TriggerJobSavepointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TriggerJobSavepoint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OceanusClient::TriggerJobSavepointOutcomeCallable OceanusClient::TriggerJobSavepointCallable(const TriggerJobSavepointRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TriggerJobSavepointOutcome()>>(
+        [this, request]()
+        {
+            return this->TriggerJobSavepoint(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

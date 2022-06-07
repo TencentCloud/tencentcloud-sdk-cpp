@@ -20,6 +20,7 @@ set(tcm_public_header
 
 set(tcm_public_header_model
   include/tencentcloud/tcm/v20210413/model/HorizontalPodAutoscalerSpec.h
+  include/tencentcloud/tcm/v20210413/model/CustomPromConfig.h
   include/tencentcloud/tcm/v20210413/model/Service.h
   include/tencentcloud/tcm/v20210413/model/MeshConfig.h
   include/tencentcloud/tcm/v20210413/model/LoadBalancerStatus.h
@@ -64,6 +65,7 @@ set(tcm_public_header_model
 set(tcm_src
   src/v20210413/TcmClient.cpp
   src/v20210413/model/HorizontalPodAutoscalerSpec.cpp
+  src/v20210413/model/CustomPromConfig.cpp
   src/v20210413/model/Service.cpp
   src/v20210413/model/MeshConfig.cpp
   src/v20210413/model/LoadBalancerStatus.cpp

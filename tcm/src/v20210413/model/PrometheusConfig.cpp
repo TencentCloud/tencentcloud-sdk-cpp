@@ -24,7 +24,8 @@ PrometheusConfig::PrometheusConfig() :
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_regionHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_customPromHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,23 @@ CoreInternalOutcome PrometheusConfig::Deserialize(const rapidjson::Value &value)
         m_instanceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomProm") && !value["CustomProm"].IsNull())
+    {
+        if (!value["CustomProm"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrometheusConfig.CustomProm` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_customProm.Deserialize(value["CustomProm"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_customPromHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +128,15 @@ void PrometheusConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customPromHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomProm";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_customProm.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -177,5 +204,21 @@ void PrometheusConfig::SetInstanceId(const string& _instanceId)
 bool PrometheusConfig::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+CustomPromConfig PrometheusConfig::GetCustomProm() const
+{
+    return m_customProm;
+}
+
+void PrometheusConfig::SetCustomProm(const CustomPromConfig& _customProm)
+{
+    m_customProm = _customProm;
+    m_customPromHasBeenSet = true;
+}
+
+bool PrometheusConfig::CustomPromHasBeenSet() const
+{
+    return m_customPromHasBeenSet;
 }
 

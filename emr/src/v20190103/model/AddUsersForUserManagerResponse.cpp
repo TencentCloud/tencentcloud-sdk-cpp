@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Emr::V20190103::Model;
 using namespace std;
 
-AddUsersForUserManagerResponse::AddUsersForUserManagerResponse()
+AddUsersForUserManagerResponse::AddUsersForUserManagerResponse() :
+    m_successUserListHasBeenSet(false),
+    m_failedUserListHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,32 @@ CoreInternalOutcome AddUsersForUserManagerResponse::Deserialize(const string &pa
     }
 
 
+    if (rsp.HasMember("SuccessUserList") && !rsp["SuccessUserList"].IsNull())
+    {
+        if (!rsp["SuccessUserList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SuccessUserList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["SuccessUserList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_successUserList.push_back((*itr).GetString());
+        }
+        m_successUserListHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FailedUserList") && !rsp["FailedUserList"].IsNull())
+    {
+        if (!rsp["FailedUserList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FailedUserList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["FailedUserList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_failedUserList.push_back((*itr).GetString());
+        }
+        m_failedUserListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +98,32 @@ string AddUsersForUserManagerResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_successUserListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuccessUserList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_successUserList.begin(); itr != m_successUserList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_failedUserListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailedUserList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_failedUserList.begin(); itr != m_failedUserList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +136,25 @@ string AddUsersForUserManagerResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<string> AddUsersForUserManagerResponse::GetSuccessUserList() const
+{
+    return m_successUserList;
+}
+
+bool AddUsersForUserManagerResponse::SuccessUserListHasBeenSet() const
+{
+    return m_successUserListHasBeenSet;
+}
+
+vector<string> AddUsersForUserManagerResponse::GetFailedUserList() const
+{
+    return m_failedUserList;
+}
+
+bool AddUsersForUserManagerResponse::FailedUserListHasBeenSet() const
+{
+    return m_failedUserListHasBeenSet;
+}
 
 

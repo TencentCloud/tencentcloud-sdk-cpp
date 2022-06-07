@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Emr::V20190103::Model;
 using namespace std;
 
-DescribeUsersForUserManagerResponse::DescribeUsersForUserManagerResponse()
+DescribeUsersForUserManagerResponse::DescribeUsersForUserManagerResponse() :
+    m_totalCntHasBeenSet(false),
+    m_userManagerUserListHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,36 @@ CoreInternalOutcome DescribeUsersForUserManagerResponse::Deserialize(const strin
     }
 
 
+    if (rsp.HasMember("TotalCnt") && !rsp["TotalCnt"].IsNull())
+    {
+        if (!rsp["TotalCnt"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCnt` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCnt = rsp["TotalCnt"].GetInt64();
+        m_totalCntHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("UserManagerUserList") && !rsp["UserManagerUserList"].IsNull())
+    {
+        if (!rsp["UserManagerUserList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `UserManagerUserList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["UserManagerUserList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            UserManagerUserBriefInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_userManagerUserList.push_back(item);
+        }
+        m_userManagerUserListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +102,29 @@ string DescribeUsersForUserManagerResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_totalCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCnt, allocator);
+    }
+
+    if (m_userManagerUserListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserManagerUserList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_userManagerUserList.begin(); itr != m_userManagerUserList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +137,25 @@ string DescribeUsersForUserManagerResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t DescribeUsersForUserManagerResponse::GetTotalCnt() const
+{
+    return m_totalCnt;
+}
+
+bool DescribeUsersForUserManagerResponse::TotalCntHasBeenSet() const
+{
+    return m_totalCntHasBeenSet;
+}
+
+vector<UserManagerUserBriefInfo> DescribeUsersForUserManagerResponse::GetUserManagerUserList() const
+{
+    return m_userManagerUserList;
+}
+
+bool DescribeUsersForUserManagerResponse::UserManagerUserListHasBeenSet() const
+{
+    return m_userManagerUserListHasBeenSet;
+}
 
 

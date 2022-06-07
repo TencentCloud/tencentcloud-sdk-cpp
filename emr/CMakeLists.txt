@@ -29,6 +29,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/HostVolumeContext.h
   include/tencentcloud/emr/v20190103/model/Step.h
   include/tencentcloud/emr/v20190103/model/SubnetInfo.h
+  include/tencentcloud/emr/v20190103/model/UserManagerFilter.h
   include/tencentcloud/emr/v20190103/model/MetaDbInfo.h
   include/tencentcloud/emr/v20190103/model/DiskSpec.h
   include/tencentcloud/emr/v20190103/model/COSSettings.h
@@ -106,6 +107,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/Filters.h
   include/tencentcloud/emr/v20190103/model/InquirePriceRenewEmrRequest.h
   include/tencentcloud/emr/v20190103/model/DescribeInstanceRenewNodesResponse.h
+  include/tencentcloud/emr/v20190103/model/UserManagerUserBriefInfo.h
   include/tencentcloud/emr/v20190103/model/DiskGroup.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceScaleOutInstanceResponse.h
   include/tencentcloud/emr/v20190103/model/ModifyResourceSchedulerResponse.h
@@ -130,6 +132,7 @@ set(emr_src
   src/v20190103/model/HostVolumeContext.cpp
   src/v20190103/model/Step.cpp
   src/v20190103/model/SubnetInfo.cpp
+  src/v20190103/model/UserManagerFilter.cpp
   src/v20190103/model/MetaDbInfo.cpp
   src/v20190103/model/DiskSpec.cpp
   src/v20190103/model/COSSettings.cpp
@@ -207,6 +210,7 @@ set(emr_src
   src/v20190103/model/Filters.cpp
   src/v20190103/model/InquirePriceRenewEmrRequest.cpp
   src/v20190103/model/DescribeInstanceRenewNodesResponse.cpp
+  src/v20190103/model/UserManagerUserBriefInfo.cpp
   src/v20190103/model/DiskGroup.cpp
   src/v20190103/model/InquiryPriceScaleOutInstanceResponse.cpp
   src/v20190103/model/ModifyResourceSchedulerResponse.cpp

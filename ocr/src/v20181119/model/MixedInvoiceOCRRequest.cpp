@@ -25,7 +25,8 @@ using namespace std;
 MixedInvoiceOCRRequest::MixedInvoiceOCRRequest() :
     m_imageBase64HasBeenSet(false),
     m_imageUrlHasBeenSet(false),
-    m_typesHasBeenSet(false)
+    m_typesHasBeenSet(false),
+    m_returnOtherHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string MixedInvoiceOCRRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_returnOtherHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReturnOther";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_returnOther.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -119,6 +128,22 @@ void MixedInvoiceOCRRequest::SetTypes(const vector<int64_t>& _types)
 bool MixedInvoiceOCRRequest::TypesHasBeenSet() const
 {
     return m_typesHasBeenSet;
+}
+
+string MixedInvoiceOCRRequest::GetReturnOther() const
+{
+    return m_returnOther;
+}
+
+void MixedInvoiceOCRRequest::SetReturnOther(const string& _returnOther)
+{
+    m_returnOther = _returnOther;
+    m_returnOtherHasBeenSet = true;
+}
+
+bool MixedInvoiceOCRRequest::ReturnOtherHasBeenSet() const
+{
+    return m_returnOtherHasBeenSet;
 }
 
 

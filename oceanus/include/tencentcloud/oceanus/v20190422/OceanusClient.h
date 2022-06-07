@@ -57,6 +57,8 @@
 #include <tencentcloud/oceanus/v20190422/model/RunJobsResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/StopJobsRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/StopJobsResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/TriggerJobSavepointRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/TriggerJobSavepointResponse.h>
 
 
 namespace TencentCloud
@@ -122,6 +124,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopJobsResponse> StopJobsOutcome;
                 typedef std::future<StopJobsOutcome> StopJobsOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::StopJobsRequest&, StopJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopJobsAsyncHandler;
+                typedef Outcome<Core::Error, Model::TriggerJobSavepointResponse> TriggerJobSavepointOutcome;
+                typedef std::future<TriggerJobSavepointOutcome> TriggerJobSavepointOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::TriggerJobSavepointRequest&, TriggerJobSavepointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TriggerJobSavepointAsyncHandler;
 
 
 
@@ -277,6 +282,15 @@ namespace TencentCloud
                 StopJobsOutcome StopJobs(const Model::StopJobsRequest &request);
                 void StopJobsAsync(const Model::StopJobsRequest& request, const StopJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopJobsOutcomeCallable StopJobsCallable(const Model::StopJobsRequest& request);
+
+                /**
+                 *触发Savepoint
+                 * @param req TriggerJobSavepointRequest
+                 * @return TriggerJobSavepointOutcome
+                 */
+                TriggerJobSavepointOutcome TriggerJobSavepoint(const Model::TriggerJobSavepointRequest &request);
+                void TriggerJobSavepointAsync(const Model::TriggerJobSavepointRequest& request, const TriggerJobSavepointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TriggerJobSavepointOutcomeCallable TriggerJobSavepointCallable(const Model::TriggerJobSavepointRequest& request);
 
             };
         }
