@@ -141,6 +141,42 @@ namespace TencentCloud
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取排序方式：根据请求次数排序：asc-升序/desc-降序
+                     * @return Order 排序方式：根据请求次数排序：asc-升序/desc-降序
+                     */
+                    std::string GetOrder() const;
+
+                    /**
+                     * 设置排序方式：根据请求次数排序：asc-升序/desc-降序
+                     * @param Order 排序方式：根据请求次数排序：asc-升序/desc-降序
+                     */
+                    void SetOrder(const std::string& _order);
+
+                    /**
+                     * 判断参数 Order 是否已赋值
+                     * @return Order 是否已赋值
+                     */
+                    bool OrderHasBeenSet() const;
+
+                    /**
+                     * 获取排序字段：CreateTime-首次攻击时间
+                     * @return By 排序字段：CreateTime-首次攻击时间
+                     */
+                    std::string GetBy() const;
+
+                    /**
+                     * 设置排序字段：CreateTime-首次攻击时间
+                     * @param By 排序字段：CreateTime-首次攻击时间
+                     */
+                    void SetBy(const std::string& _by);
+
+                    /**
+                     * 判断参数 By 是否已赋值
+                     * @return By 是否已赋值
+                     */
+                    bool ByHasBeenSet() const;
+
                 private:
 
                     /**
@@ -171,6 +207,18 @@ namespace TencentCloud
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 排序方式：根据请求次数排序：asc-升序/desc-降序
+                     */
+                    std::string m_order;
+                    bool m_orderHasBeenSet;
+
+                    /**
+                     * 排序字段：CreateTime-首次攻击时间
+                     */
+                    std::string m_by;
+                    bool m_byHasBeenSet;
 
                 };
             }

@@ -240,6 +240,20 @@ namespace TencentCloud
                      */
                     bool PayNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否集团服务委派管理员 true-是、false-否
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsAssignManager 是否集团服务委派管理员 true-是、false-否
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsAssignManager() const;
+
+                    /**
+                     * 判断参数 IsAssignManager 是否已赋值
+                     * @return IsAssignManager 是否已赋值
+                     */
+                    bool IsAssignManagerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -339,6 +353,13 @@ namespace TencentCloud
                      */
                     std::string m_payName;
                     bool m_payNameHasBeenSet;
+
+                    /**
+                     * 是否集团服务委派管理员 true-是、false-否
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isAssignManager;
+                    bool m_isAssignManagerHasBeenSet;
 
                 };
             }

@@ -285,6 +285,24 @@ namespace TencentCloud
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取流日志存储ID对应的地域信息
+                     * @return CloudLogRegion 流日志存储ID对应的地域信息
+                     */
+                    std::string GetCloudLogRegion() const;
+
+                    /**
+                     * 设置流日志存储ID对应的地域信息
+                     * @param CloudLogRegion 流日志存储ID对应的地域信息
+                     */
+                    void SetCloudLogRegion(const std::string& _cloudLogRegion);
+
+                    /**
+                     * 判断参数 CloudLogRegion 是否已赋值
+                     * @return CloudLogRegion 是否已赋值
+                     */
+                    bool CloudLogRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -366,6 +384,12 @@ namespace TencentCloud
                      */
                     Filter m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 流日志存储ID对应的地域信息
+                     */
+                    std::string m_cloudLogRegion;
+                    bool m_cloudLogRegionHasBeenSet;
 
                 };
             }

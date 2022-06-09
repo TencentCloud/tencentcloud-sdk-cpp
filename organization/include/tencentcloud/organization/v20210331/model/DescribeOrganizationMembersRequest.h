@@ -114,6 +114,42 @@ namespace TencentCloud
                      */
                     bool SearchKeyHasBeenSet() const;
 
+                    /**
+                     * 获取主体名称
+                     * @return AuthName 主体名称
+                     */
+                    std::string GetAuthName() const;
+
+                    /**
+                     * 设置主体名称
+                     * @param AuthName 主体名称
+                     */
+                    void SetAuthName(const std::string& _authName);
+
+                    /**
+                     * 判断参数 AuthName 是否已赋值
+                     * @return AuthName 是否已赋值
+                     */
+                    bool AuthNameHasBeenSet() const;
+
+                    /**
+                     * 获取集团服务（服务管理员查询时，必须指定）
+                     * @return Product 集团服务（服务管理员查询时，必须指定）
+                     */
+                    std::string GetProduct() const;
+
+                    /**
+                     * 设置集团服务（服务管理员查询时，必须指定）
+                     * @param Product 集团服务（服务管理员查询时，必须指定）
+                     */
+                    void SetProduct(const std::string& _product);
+
+                    /**
+                     * 判断参数 Product 是否已赋值
+                     * @return Product 是否已赋值
+                     */
+                    bool ProductHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +175,18 @@ namespace TencentCloud
                      */
                     std::string m_searchKey;
                     bool m_searchKeyHasBeenSet;
+
+                    /**
+                     * 主体名称
+                     */
+                    std::string m_authName;
+                    bool m_authNameHasBeenSet;
+
+                    /**
+                     * 集团服务（服务管理员查询时，必须指定）
+                     */
+                    std::string m_product;
+                    bool m_productHasBeenSet;
 
                 };
             }

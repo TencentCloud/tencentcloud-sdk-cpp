@@ -26,7 +26,9 @@ DescribeOrganizationMembersRequest::DescribeOrganizationMembersRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_langHasBeenSet(false),
-    m_searchKeyHasBeenSet(false)
+    m_searchKeyHasBeenSet(false),
+    m_authNameHasBeenSet(false),
+    m_productHasBeenSet(false)
 {
 }
 
@@ -67,6 +69,22 @@ string DescribeOrganizationMembersRequest::ToJsonString() const
         string key = "SearchKey";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_searchKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_authNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_authName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Product";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_product.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +157,38 @@ void DescribeOrganizationMembersRequest::SetSearchKey(const string& _searchKey)
 bool DescribeOrganizationMembersRequest::SearchKeyHasBeenSet() const
 {
     return m_searchKeyHasBeenSet;
+}
+
+string DescribeOrganizationMembersRequest::GetAuthName() const
+{
+    return m_authName;
+}
+
+void DescribeOrganizationMembersRequest::SetAuthName(const string& _authName)
+{
+    m_authName = _authName;
+    m_authNameHasBeenSet = true;
+}
+
+bool DescribeOrganizationMembersRequest::AuthNameHasBeenSet() const
+{
+    return m_authNameHasBeenSet;
+}
+
+string DescribeOrganizationMembersRequest::GetProduct() const
+{
+    return m_product;
+}
+
+void DescribeOrganizationMembersRequest::SetProduct(const string& _product)
+{
+    m_product = _product;
+    m_productHasBeenSet = true;
+}
+
+bool DescribeOrganizationMembersRequest::ProductHasBeenSet() const
+{
+    return m_productHasBeenSet;
 }
 
 

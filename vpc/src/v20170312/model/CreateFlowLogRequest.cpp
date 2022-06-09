@@ -32,7 +32,8 @@ CreateFlowLogRequest::CreateFlowLogRequest() :
     m_cloudLogIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
-    m_flowLogStorageHasBeenSet(false)
+    m_flowLogStorageHasBeenSet(false),
+    m_cloudLogRegionHasBeenSet(false)
 {
 }
 
@@ -129,6 +130,14 @@ string CreateFlowLogRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_flowLogStorage.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_cloudLogRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudLogRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cloudLogRegion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -297,6 +306,22 @@ void CreateFlowLogRequest::SetFlowLogStorage(const FlowLogStorage& _flowLogStora
 bool CreateFlowLogRequest::FlowLogStorageHasBeenSet() const
 {
     return m_flowLogStorageHasBeenSet;
+}
+
+string CreateFlowLogRequest::GetCloudLogRegion() const
+{
+    return m_cloudLogRegion;
+}
+
+void CreateFlowLogRequest::SetCloudLogRegion(const string& _cloudLogRegion)
+{
+    m_cloudLogRegion = _cloudLogRegion;
+    m_cloudLogRegionHasBeenSet = true;
+}
+
+bool CreateFlowLogRequest::CloudLogRegionHasBeenSet() const
+{
+    return m_cloudLogRegionHasBeenSet;
 }
 
 

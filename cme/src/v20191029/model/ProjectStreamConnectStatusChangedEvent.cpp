@@ -22,7 +22,9 @@ using namespace std;
 
 ProjectStreamConnectStatusChangedEvent::ProjectStreamConnectStatusChangedEvent() :
     m_projectIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_inputInterruptInfoHasBeenSet(false),
+    m_outputInterruptInfoHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,40 @@ CoreInternalOutcome ProjectStreamConnectStatusChangedEvent::Deserialize(const ra
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("InputInterruptInfo") && !value["InputInterruptInfo"].IsNull())
+    {
+        if (!value["InputInterruptInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProjectStreamConnectStatusChangedEvent.InputInterruptInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_inputInterruptInfo.Deserialize(value["InputInterruptInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_inputInterruptInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("OutputInterruptInfo") && !value["OutputInterruptInfo"].IsNull())
+    {
+        if (!value["OutputInterruptInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProjectStreamConnectStatusChangedEvent.OutputInterruptInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_outputInterruptInfo.Deserialize(value["OutputInterruptInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_outputInterruptInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +108,24 @@ void ProjectStreamConnectStatusChangedEvent::ToJsonObject(rapidjson::Value &valu
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inputInterruptInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputInterruptInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_inputInterruptInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_outputInterruptInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputInterruptInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_outputInterruptInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -107,5 +161,37 @@ void ProjectStreamConnectStatusChangedEvent::SetStatus(const string& _status)
 bool ProjectStreamConnectStatusChangedEvent::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+StreamConnectInputInterruptInfo ProjectStreamConnectStatusChangedEvent::GetInputInterruptInfo() const
+{
+    return m_inputInterruptInfo;
+}
+
+void ProjectStreamConnectStatusChangedEvent::SetInputInterruptInfo(const StreamConnectInputInterruptInfo& _inputInterruptInfo)
+{
+    m_inputInterruptInfo = _inputInterruptInfo;
+    m_inputInterruptInfoHasBeenSet = true;
+}
+
+bool ProjectStreamConnectStatusChangedEvent::InputInterruptInfoHasBeenSet() const
+{
+    return m_inputInterruptInfoHasBeenSet;
+}
+
+StreamConnectOutputInterruptInfo ProjectStreamConnectStatusChangedEvent::GetOutputInterruptInfo() const
+{
+    return m_outputInterruptInfo;
+}
+
+void ProjectStreamConnectStatusChangedEvent::SetOutputInterruptInfo(const StreamConnectOutputInterruptInfo& _outputInterruptInfo)
+{
+    m_outputInterruptInfo = _outputInterruptInfo;
+    m_outputInterruptInfoHasBeenSet = true;
+}
+
+bool ProjectStreamConnectStatusChangedEvent::OutputInterruptInfoHasBeenSet() const
+{
+    return m_outputInterruptInfoHasBeenSet;
 }
 

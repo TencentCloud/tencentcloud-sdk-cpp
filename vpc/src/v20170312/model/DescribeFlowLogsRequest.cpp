@@ -35,7 +35,8 @@ DescribeFlowLogsRequest::DescribeFlowLogsRequest() :
     m_orderDirectionHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_cloudLogRegionHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,14 @@ string DescribeFlowLogsRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_filters.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_cloudLogRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudLogRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cloudLogRegion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -365,6 +374,22 @@ void DescribeFlowLogsRequest::SetFilters(const Filter& _filters)
 bool DescribeFlowLogsRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+string DescribeFlowLogsRequest::GetCloudLogRegion() const
+{
+    return m_cloudLogRegion;
+}
+
+void DescribeFlowLogsRequest::SetCloudLogRegion(const string& _cloudLogRegion)
+{
+    m_cloudLogRegion = _cloudLogRegion;
+    m_cloudLogRegionHasBeenSet = true;
+}
+
+bool DescribeFlowLogsRequest::CloudLogRegionHasBeenSet() const
+{
+    return m_cloudLogRegionHasBeenSet;
 }
 
 

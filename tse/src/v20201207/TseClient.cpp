@@ -40,6 +40,92 @@ TseClient::TseClient(const Credential &credential, const string &region, const C
 }
 
 
+TseClient::CreateEngineOutcome TseClient::CreateEngine(const CreateEngineRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateEngine");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateEngineResponse rsp = CreateEngineResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateEngineOutcome(rsp);
+        else
+            return CreateEngineOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateEngineOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::CreateEngineAsync(const CreateEngineRequest& request, const CreateEngineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateEngine(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::CreateEngineOutcomeCallable TseClient::CreateEngineCallable(const CreateEngineRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateEngineOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateEngine(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DeleteEngineOutcome TseClient::DeleteEngine(const DeleteEngineRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteEngine");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteEngineResponse rsp = DeleteEngineResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteEngineOutcome(rsp);
+        else
+            return DeleteEngineOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteEngineOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DeleteEngineAsync(const DeleteEngineRequest& request, const DeleteEngineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteEngine(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DeleteEngineOutcomeCallable TseClient::DeleteEngineCallable(const DeleteEngineRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteEngineOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteEngine(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::DescribeSREInstanceAccessAddressOutcome TseClient::DescribeSREInstanceAccessAddress(const DescribeSREInstanceAccessAddressRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSREInstanceAccessAddress");

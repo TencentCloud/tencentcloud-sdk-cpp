@@ -33,6 +33,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/DescribeTeamsResponse.h
   include/tencentcloud/cme/v20191029/model/DescribeTaskDetailResponse.h
   include/tencentcloud/cme/v20191029/model/ExportVideoEditProjectRequest.h
+  include/tencentcloud/cme/v20191029/model/StreamConnectInputInterruptInfo.h
   include/tencentcloud/cme/v20191029/model/ClassInfo.h
   include/tencentcloud/cme/v20191029/model/ModifyProjectResponse.h
   include/tencentcloud/cme/v20191029/model/AudioTrackItem.h
@@ -132,6 +133,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/VideoExportCompletedEvent.h
   include/tencentcloud/cme/v20191029/model/ResourceInfo.h
   include/tencentcloud/cme/v20191029/model/MediaPreprocessOperation.h
+  include/tencentcloud/cme/v20191029/model/StreamConnectOutputInterruptInfo.h
   include/tencentcloud/cme/v20191029/model/JoinTeamInfo.h
   include/tencentcloud/cme/v20191029/model/DescribeResourceAuthorizationRequest.h
   include/tencentcloud/cme/v20191029/model/CreateClassResponse.h
@@ -225,6 +227,7 @@ set(cme_src
   src/v20191029/model/DescribeTeamsResponse.cpp
   src/v20191029/model/DescribeTaskDetailResponse.cpp
   src/v20191029/model/ExportVideoEditProjectRequest.cpp
+  src/v20191029/model/StreamConnectInputInterruptInfo.cpp
   src/v20191029/model/ClassInfo.cpp
   src/v20191029/model/ModifyProjectResponse.cpp
   src/v20191029/model/AudioTrackItem.cpp
@@ -324,6 +327,7 @@ set(cme_src
   src/v20191029/model/VideoExportCompletedEvent.cpp
   src/v20191029/model/ResourceInfo.cpp
   src/v20191029/model/MediaPreprocessOperation.cpp
+  src/v20191029/model/StreamConnectOutputInterruptInfo.cpp
   src/v20191029/model/JoinTeamInfo.cpp
   src/v20191029/model/DescribeResourceAuthorizationRequest.cpp
   src/v20191029/model/CreateClassResponse.cpp

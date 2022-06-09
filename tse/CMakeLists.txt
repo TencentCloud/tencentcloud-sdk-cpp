@@ -19,34 +19,48 @@ set(tse_public_header
   )
 
 set(tse_public_header_model
+  include/tencentcloud/tse/v20201207/model/Filter.h
   include/tencentcloud/tse/v20201207/model/DescribeSREInstancesRequest.h
   include/tencentcloud/tse/v20201207/model/SREInstance.h
-  include/tencentcloud/tse/v20201207/model/DescribeSREInstanceAccessAddressResponse.h
+  include/tencentcloud/tse/v20201207/model/ApolloEnvParam.h
   include/tencentcloud/tse/v20201207/model/DescribeSREInstancesResponse.h
+  include/tencentcloud/tse/v20201207/model/DescribeSREInstanceAccessAddressResponse.h
   include/tencentcloud/tse/v20201207/model/KVPair.h
-  include/tencentcloud/tse/v20201207/model/EnvInfo.h
-  include/tencentcloud/tse/v20201207/model/Filter.h
+  include/tencentcloud/tse/v20201207/model/DeleteEngineResponse.h
+  include/tencentcloud/tse/v20201207/model/CreateEngineResponse.h
+  include/tencentcloud/tse/v20201207/model/EngineAdmin.h
   include/tencentcloud/tse/v20201207/model/EnvAddressInfo.h
-  include/tencentcloud/tse/v20201207/model/VpcInfo.h
+  include/tencentcloud/tse/v20201207/model/CreateEngineRequest.h
+  include/tencentcloud/tse/v20201207/model/InstanceTagInfo.h
+  include/tencentcloud/tse/v20201207/model/DeleteEngineRequest.h
   include/tencentcloud/tse/v20201207/model/BoundK8SInfo.h
   include/tencentcloud/tse/v20201207/model/DescribeSREInstanceAccessAddressRequest.h
   include/tencentcloud/tse/v20201207/model/ServiceGovernanceInfo.h
+  include/tencentcloud/tse/v20201207/model/VpcInfo.h
+  include/tencentcloud/tse/v20201207/model/EnvInfo.h
   )
 
 set(tse_src
   src/v20201207/TseClient.cpp
+  src/v20201207/model/Filter.cpp
   src/v20201207/model/DescribeSREInstancesRequest.cpp
   src/v20201207/model/SREInstance.cpp
-  src/v20201207/model/DescribeSREInstanceAccessAddressResponse.cpp
+  src/v20201207/model/ApolloEnvParam.cpp
   src/v20201207/model/DescribeSREInstancesResponse.cpp
+  src/v20201207/model/DescribeSREInstanceAccessAddressResponse.cpp
   src/v20201207/model/KVPair.cpp
-  src/v20201207/model/EnvInfo.cpp
-  src/v20201207/model/Filter.cpp
+  src/v20201207/model/DeleteEngineResponse.cpp
+  src/v20201207/model/CreateEngineResponse.cpp
+  src/v20201207/model/EngineAdmin.cpp
   src/v20201207/model/EnvAddressInfo.cpp
-  src/v20201207/model/VpcInfo.cpp
+  src/v20201207/model/CreateEngineRequest.cpp
+  src/v20201207/model/InstanceTagInfo.cpp
+  src/v20201207/model/DeleteEngineRequest.cpp
   src/v20201207/model/BoundK8SInfo.cpp
   src/v20201207/model/DescribeSREInstanceAccessAddressRequest.cpp
   src/v20201207/model/ServiceGovernanceInfo.cpp
+  src/v20201207/model/VpcInfo.cpp
+  src/v20201207/model/EnvInfo.cpp
   )
 
 set(tse_include

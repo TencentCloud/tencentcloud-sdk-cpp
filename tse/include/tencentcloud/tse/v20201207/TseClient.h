@@ -23,6 +23,10 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/tse/v20201207/model/CreateEngineRequest.h>
+#include <tencentcloud/tse/v20201207/model/CreateEngineResponse.h>
+#include <tencentcloud/tse/v20201207/model/DeleteEngineRequest.h>
+#include <tencentcloud/tse/v20201207/model/DeleteEngineResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeSREInstanceAccessAddressRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeSREInstanceAccessAddressResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeSREInstancesRequest.h>
@@ -41,6 +45,12 @@ namespace TencentCloud
                 TseClient(const Credential &credential, const std::string &region);
                 TseClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CreateEngineResponse> CreateEngineOutcome;
+                typedef std::future<CreateEngineOutcome> CreateEngineOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::CreateEngineRequest&, CreateEngineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEngineAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteEngineResponse> DeleteEngineOutcome;
+                typedef std::future<DeleteEngineOutcome> DeleteEngineOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DeleteEngineRequest&, DeleteEngineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEngineAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSREInstanceAccessAddressResponse> DescribeSREInstanceAccessAddressOutcome;
                 typedef std::future<DescribeSREInstanceAccessAddressOutcome> DescribeSREInstanceAccessAddressOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeSREInstanceAccessAddressRequest&, DescribeSREInstanceAccessAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSREInstanceAccessAddressAsyncHandler;
@@ -49,6 +59,24 @@ namespace TencentCloud
                 typedef std::function<void(const TseClient*, const Model::DescribeSREInstancesRequest&, DescribeSREInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSREInstancesAsyncHandler;
 
 
+
+                /**
+                 *创建引擎实例
+                 * @param req CreateEngineRequest
+                 * @return CreateEngineOutcome
+                 */
+                CreateEngineOutcome CreateEngine(const Model::CreateEngineRequest &request);
+                void CreateEngineAsync(const Model::CreateEngineRequest& request, const CreateEngineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateEngineOutcomeCallable CreateEngineCallable(const Model::CreateEngineRequest& request);
+
+                /**
+                 *删除引擎实例
+                 * @param req DeleteEngineRequest
+                 * @return DeleteEngineOutcome
+                 */
+                DeleteEngineOutcome DeleteEngine(const Model::DeleteEngineRequest &request);
+                void DeleteEngineAsync(const Model::DeleteEngineRequest& request, const DeleteEngineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteEngineOutcomeCallable DeleteEngineCallable(const Model::DeleteEngineRequest& request);
 
                 /**
                  *查询引擎实例访问地址
