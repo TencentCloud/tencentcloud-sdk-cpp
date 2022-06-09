@@ -24,6 +24,7 @@ using namespace std;
 
 ApplyUploadRequest::ApplyUploadRequest() :
     m_mediaTypeHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_mediaNameHasBeenSet(false),
     m_coverTypeHasBeenSet(false),
     m_procedureHasBeenSet(false),
@@ -32,8 +33,7 @@ ApplyUploadRequest::ApplyUploadRequest() :
     m_classIdHasBeenSet(false),
     m_sourceContextHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
-    m_extInfoHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_extInfoHasBeenSet(false)
 {
 }
 
@@ -50,6 +50,14 @@ string ApplyUploadRequest::ToJsonString() const
         string key = "MediaType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_mediaType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
     if (m_mediaNameHasBeenSet)
@@ -124,14 +132,6 @@ string ApplyUploadRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_extInfo.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -154,6 +154,22 @@ void ApplyUploadRequest::SetMediaType(const string& _mediaType)
 bool ApplyUploadRequest::MediaTypeHasBeenSet() const
 {
     return m_mediaTypeHasBeenSet;
+}
+
+uint64_t ApplyUploadRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void ApplyUploadRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool ApplyUploadRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 string ApplyUploadRequest::GetMediaName() const
@@ -298,22 +314,6 @@ void ApplyUploadRequest::SetExtInfo(const string& _extInfo)
 bool ApplyUploadRequest::ExtInfoHasBeenSet() const
 {
     return m_extInfoHasBeenSet;
-}
-
-uint64_t ApplyUploadRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void ApplyUploadRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool ApplyUploadRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

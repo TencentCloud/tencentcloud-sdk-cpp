@@ -27,6 +27,7 @@
 #include <tencentcloud/ams/v20201229/model/AudioResultDetailTextResult.h>
 #include <tencentcloud/ams/v20201229/model/AudioResultDetailMoanResult.h>
 #include <tencentcloud/ams/v20201229/model/AudioResultDetailLanguageResult.h>
+#include <tencentcloud/ams/v20201229/model/RecognitionResult.h>
 
 
 namespace TencentCloud
@@ -297,6 +298,28 @@ namespace TencentCloud
                      */
                     bool SubLabelHasBeenSet() const;
 
+                    /**
+                     * 获取识别类标签结果信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RecognitionResults 识别类标签结果信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RecognitionResult> GetRecognitionResults() const;
+
+                    /**
+                     * 设置识别类标签结果信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RecognitionResults 识别类标签结果信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRecognitionResults(const std::vector<RecognitionResult>& _recognitionResults);
+
+                    /**
+                     * 判断参数 RecognitionResults 是否已赋值
+                     * @return RecognitionResults 是否已赋值
+                     */
+                    bool RecognitionResultsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -378,6 +401,13 @@ namespace TencentCloud
                      */
                     std::string m_subLabel;
                     bool m_subLabelHasBeenSet;
+
+                    /**
+                     * 识别类标签结果信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RecognitionResult> m_recognitionResults;
+                    bool m_recognitionResultsHasBeenSet;
 
                 };
             }

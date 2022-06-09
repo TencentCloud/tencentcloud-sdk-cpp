@@ -38,12 +38,14 @@ set(vm_public_header_model
   include/tencentcloud/vm/v20201229/model/DescribeTasksResponse.h
   include/tencentcloud/vm/v20201229/model/AudioResultDetailLanguageResult.h
   include/tencentcloud/vm/v20201229/model/TaskFilter.h
+  include/tencentcloud/vm/v20201229/model/RecognitionResult.h
   include/tencentcloud/vm/v20201229/model/CancelTaskResponse.h
   include/tencentcloud/vm/v20201229/model/AudioResultDetailTextResult.h
   include/tencentcloud/vm/v20201229/model/AudioResult.h
   include/tencentcloud/vm/v20201229/model/AudioResultDetailMoanResult.h
   include/tencentcloud/vm/v20201229/model/TaskData.h
   include/tencentcloud/vm/v20201229/model/MediaInfo.h
+  include/tencentcloud/vm/v20201229/model/Tag.h
   include/tencentcloud/vm/v20201229/model/AudioSegments.h
   include/tencentcloud/vm/v20201229/model/ImageResultsResultDetailLocation.h
   include/tencentcloud/vm/v20201229/model/ImageResult.h
@@ -103,12 +105,14 @@ set(vm_src
   src/v20201229/model/DescribeTasksResponse.cpp
   src/v20201229/model/AudioResultDetailLanguageResult.cpp
   src/v20201229/model/TaskFilter.cpp
+  src/v20201229/model/RecognitionResult.cpp
   src/v20201229/model/CancelTaskResponse.cpp
   src/v20201229/model/AudioResultDetailTextResult.cpp
   src/v20201229/model/AudioResult.cpp
   src/v20201229/model/AudioResultDetailMoanResult.cpp
   src/v20201229/model/TaskData.cpp
   src/v20201229/model/MediaInfo.cpp
+  src/v20201229/model/Tag.cpp
   src/v20201229/model/AudioSegments.cpp
   src/v20201229/model/ImageResultsResultDetailLocation.cpp
   src/v20201229/model/ImageResult.cpp

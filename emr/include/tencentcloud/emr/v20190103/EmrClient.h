@@ -156,7 +156,8 @@ namespace TencentCloud
 
 
                 /**
-                 *新增用户列表（用户管理）
+                 *该接口支持安装了OpenLdap组件的集群。
+新增用户列表（用户管理）。
                  * @param req AddUsersForUserManagerRequest
                  * @return AddUsersForUserManagerOutcome
                  */
@@ -237,7 +238,8 @@ namespace TencentCloud
                 DescribeResourceScheduleOutcomeCallable DescribeResourceScheduleCallable(const Model::DescribeResourceScheduleRequest& request);
 
                 /**
-                 *批量导出用户。对于kerberos集群，如果需要kertab文件下载地址，可以将NeedKeytabInfo设置为true；注意SupportDownLoadKeyTab为true，但是DownLoadKeyTabUrl为空字符串，表示keytab文件在后台没有准备好（正在生成）
+                 *该接口支持安装了OpenLdap组件的集群。
+批量导出用户。对于kerberos集群，如果需要kertab文件下载地址，可以将NeedKeytabInfo设置为true；注意SupportDownLoadKeyTab为true，但是DownLoadKeyTabUrl为空字符串，表示keytab文件在后台没有准备好（正在生成）。
                  * @param req DescribeUsersForUserManagerRequest
                  * @return DescribeUsersForUserManagerOutcome
                  */

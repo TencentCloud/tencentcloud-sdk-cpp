@@ -513,6 +513,49 @@ TiiaClient::DetectLabelBetaOutcomeCallable TiiaClient::DetectLabelBetaCallable(c
     return task->get_future();
 }
 
+TiiaClient::DetectLabelProOutcome TiiaClient::DetectLabelPro(const DetectLabelProRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetectLabelPro");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetectLabelProResponse rsp = DetectLabelProResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetectLabelProOutcome(rsp);
+        else
+            return DetectLabelProOutcome(o.GetError());
+    }
+    else
+    {
+        return DetectLabelProOutcome(outcome.GetError());
+    }
+}
+
+void TiiaClient::DetectLabelProAsync(const DetectLabelProRequest& request, const DetectLabelProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DetectLabelPro(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiiaClient::DetectLabelProOutcomeCallable TiiaClient::DetectLabelProCallable(const DetectLabelProRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DetectLabelProOutcome()>>(
+        [this, request]()
+        {
+            return this->DetectLabelPro(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiiaClient::DetectMisbehaviorOutcome TiiaClient::DetectMisbehavior(const DetectMisbehaviorRequest &request)
 {
     auto outcome = MakeRequest(request, "DetectMisbehavior");

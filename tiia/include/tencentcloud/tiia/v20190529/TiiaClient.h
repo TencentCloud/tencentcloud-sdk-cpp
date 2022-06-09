@@ -45,6 +45,8 @@
 #include <tencentcloud/tiia/v20190529/model/DetectLabelResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DetectLabelBetaRequest.h>
 #include <tencentcloud/tiia/v20190529/model/DetectLabelBetaResponse.h>
+#include <tencentcloud/tiia/v20190529/model/DetectLabelProRequest.h>
+#include <tencentcloud/tiia/v20190529/model/DetectLabelProResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DetectMisbehaviorRequest.h>
 #include <tencentcloud/tiia/v20190529/model/DetectMisbehaviorResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DetectProductRequest.h>
@@ -106,6 +108,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DetectLabelBetaResponse> DetectLabelBetaOutcome;
                 typedef std::future<DetectLabelBetaOutcome> DetectLabelBetaOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::DetectLabelBetaRequest&, DetectLabelBetaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectLabelBetaAsyncHandler;
+                typedef Outcome<Core::Error, Model::DetectLabelProResponse> DetectLabelProOutcome;
+                typedef std::future<DetectLabelProOutcome> DetectLabelProOutcomeCallable;
+                typedef std::function<void(const TiiaClient*, const Model::DetectLabelProRequest&, DetectLabelProOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectLabelProAsyncHandler;
                 typedef Outcome<Core::Error, Model::DetectMisbehaviorResponse> DetectMisbehaviorOutcome;
                 typedef std::future<DetectMisbehaviorOutcome> DetectMisbehaviorOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::DetectMisbehaviorRequest&, DetectMisbehaviorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectMisbehaviorAsyncHandler;
@@ -272,6 +277,18 @@ namespace TencentCloud
                 DetectLabelBetaOutcome DetectLabelBeta(const Model::DetectLabelBetaRequest &request);
                 void DetectLabelBetaAsync(const Model::DetectLabelBetaRequest& request, const DetectLabelBetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DetectLabelBetaOutcomeCallable DetectLabelBetaCallable(const Model::DetectLabelBetaRequest& request);
+
+                /**
+                 *通用图像标签可识别数千种常见物体或场景，覆盖日常物品、场景、动物、植物、食物、饮品、交通工具等多个大类，返回主体的标签名称和所属细分类目等，广泛应用于拍照识物、场景分析、图像内容审核与推荐、智能相册分类等场景。
+
+>     
+- 通用图像标签在原图像标签接口的基础上进行了升级，识别精度和标签覆盖范围相比原图像标签接口更优，推荐使用。
+                 * @param req DetectLabelProRequest
+                 * @return DetectLabelProOutcome
+                 */
+                DetectLabelProOutcome DetectLabelPro(const Model::DetectLabelProRequest &request);
+                void DetectLabelProAsync(const Model::DetectLabelProRequest& request, const DetectLabelProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DetectLabelProOutcomeCallable DetectLabelProCallable(const Model::DetectLabelProRequest& request);
 
                 /**
                  *可以识别输入的图片中是否包含不良行为，例如打架斗殴、赌博、抽烟等，可以应用于广告图、直播截图、短视频截图等审核，减少不良行为对平台内容质量的影响，维护健康向上的互联网环境。

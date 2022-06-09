@@ -26,7 +26,8 @@ AssignIpv6AddressesRequest::AssignIpv6AddressesRequest() :
     m_ecmRegionHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
     m_ipv6AddressesHasBeenSet(false),
-    m_ipv6AddressCountHasBeenSet(false)
+    m_ipv6AddressCountHasBeenSet(false),
+    m_ipv6ISPHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,14 @@ string AssignIpv6AddressesRequest::ToJsonString() const
         string key = "Ipv6AddressCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_ipv6AddressCount, allocator);
+    }
+
+    if (m_ipv6ISPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ipv6ISP";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ipv6ISP.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -146,6 +155,22 @@ void AssignIpv6AddressesRequest::SetIpv6AddressCount(const int64_t& _ipv6Address
 bool AssignIpv6AddressesRequest::Ipv6AddressCountHasBeenSet() const
 {
     return m_ipv6AddressCountHasBeenSet;
+}
+
+string AssignIpv6AddressesRequest::GetIpv6ISP() const
+{
+    return m_ipv6ISP;
+}
+
+void AssignIpv6AddressesRequest::SetIpv6ISP(const string& _ipv6ISP)
+{
+    m_ipv6ISP = _ipv6ISP;
+    m_ipv6ISPHasBeenSet = true;
+}
+
+bool AssignIpv6AddressesRequest::Ipv6ISPHasBeenSet() const
+{
+    return m_ipv6ISPHasBeenSet;
 }
 
 

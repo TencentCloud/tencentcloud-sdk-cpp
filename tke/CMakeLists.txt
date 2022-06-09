@@ -28,6 +28,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DeleteClusterResponse.h
   include/tencentcloud/tke/v20180525/model/ContainerState.h
   include/tencentcloud/tke/v20180525/model/CreateClusterRouteTableResponse.h
+  include/tencentcloud/tke/v20180525/model/SubnetInfos.h
   include/tencentcloud/tke/v20180525/model/CbsVolume.h
   include/tencentcloud/tke/v20180525/model/DescribeEKSClustersRequest.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusInstancesOverviewRequest.h
@@ -456,6 +457,7 @@ set(tke_src
   src/v20180525/model/DeleteClusterResponse.cpp
   src/v20180525/model/ContainerState.cpp
   src/v20180525/model/CreateClusterRouteTableResponse.cpp
+  src/v20180525/model/SubnetInfos.cpp
   src/v20180525/model/CbsVolume.cpp
   src/v20180525/model/DescribeEKSClustersRequest.cpp
   src/v20180525/model/DescribePrometheusInstancesOverviewRequest.cpp

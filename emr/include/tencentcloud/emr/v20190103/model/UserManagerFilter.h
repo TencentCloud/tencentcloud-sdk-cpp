@@ -46,7 +46,36 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
+                    /**
+                     * 获取用户名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserName 用户名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUserName() const;
+
+                    /**
+                     * 设置用户名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UserName 用户名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUserName(const std::string& _userName);
+
+                    /**
+                     * 判断参数 UserName 是否已赋值
+                     * @return UserName 是否已赋值
+                     */
+                    bool UserNameHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 用户名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_userName;
+                    bool m_userNameHasBeenSet;
 
                 };
             }

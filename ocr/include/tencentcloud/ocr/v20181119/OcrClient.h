@@ -113,8 +113,14 @@
 #include <tencentcloud/ocr/v20181119/model/RecognizeContainerOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeHealthCodeOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeHealthCodeOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeIndonesiaIDCardOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeIndonesiaIDCardOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeOnlineTaxiItineraryOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeOnlineTaxiItineraryOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizePhilippinesDrivingLicenseOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizePhilippinesDrivingLicenseOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizePhilippinesVoteIDOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizePhilippinesVoteIDOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeTableOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeTableOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeThaiIDCardOCRRequest.h>
@@ -316,9 +322,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RecognizeHealthCodeOCRResponse> RecognizeHealthCodeOCROutcome;
                 typedef std::future<RecognizeHealthCodeOCROutcome> RecognizeHealthCodeOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeHealthCodeOCRRequest&, RecognizeHealthCodeOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeHealthCodeOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::RecognizeIndonesiaIDCardOCRResponse> RecognizeIndonesiaIDCardOCROutcome;
+                typedef std::future<RecognizeIndonesiaIDCardOCROutcome> RecognizeIndonesiaIDCardOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::RecognizeIndonesiaIDCardOCRRequest&, RecognizeIndonesiaIDCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeIndonesiaIDCardOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeOnlineTaxiItineraryOCRResponse> RecognizeOnlineTaxiItineraryOCROutcome;
                 typedef std::future<RecognizeOnlineTaxiItineraryOCROutcome> RecognizeOnlineTaxiItineraryOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeOnlineTaxiItineraryOCRRequest&, RecognizeOnlineTaxiItineraryOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeOnlineTaxiItineraryOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::RecognizePhilippinesDrivingLicenseOCRResponse> RecognizePhilippinesDrivingLicenseOCROutcome;
+                typedef std::future<RecognizePhilippinesDrivingLicenseOCROutcome> RecognizePhilippinesDrivingLicenseOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::RecognizePhilippinesDrivingLicenseOCRRequest&, RecognizePhilippinesDrivingLicenseOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizePhilippinesDrivingLicenseOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::RecognizePhilippinesVoteIDOCRResponse> RecognizePhilippinesVoteIDOCROutcome;
+                typedef std::future<RecognizePhilippinesVoteIDOCROutcome> RecognizePhilippinesVoteIDOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::RecognizePhilippinesVoteIDOCRRequest&, RecognizePhilippinesVoteIDOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizePhilippinesVoteIDOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeTableOCRResponse> RecognizeTableOCROutcome;
                 typedef std::future<RecognizeTableOCROutcome> RecognizeTableOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeTableOCRRequest&, RecognizeTableOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeTableOCRAsyncHandler;
@@ -1055,6 +1070,15 @@ namespace TencentCloud
                 RecognizeHealthCodeOCROutcomeCallable RecognizeHealthCodeOCRCallable(const Model::RecognizeHealthCodeOCRRequest& request);
 
                 /**
+                 *印尼身份证识别
+                 * @param req RecognizeIndonesiaIDCardOCRRequest
+                 * @return RecognizeIndonesiaIDCardOCROutcome
+                 */
+                RecognizeIndonesiaIDCardOCROutcome RecognizeIndonesiaIDCardOCR(const Model::RecognizeIndonesiaIDCardOCRRequest &request);
+                void RecognizeIndonesiaIDCardOCRAsync(const Model::RecognizeIndonesiaIDCardOCRRequest& request, const RecognizeIndonesiaIDCardOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RecognizeIndonesiaIDCardOCROutcomeCallable RecognizeIndonesiaIDCardOCRCallable(const Model::RecognizeIndonesiaIDCardOCRRequest& request);
+
+                /**
                  *本接口支持网约车行程单关键字段的识别，包括行程起止日期、上车时间、起点、终点、里程、金额等字段。
                  * @param req RecognizeOnlineTaxiItineraryOCRRequest
                  * @return RecognizeOnlineTaxiItineraryOCROutcome
@@ -1062,6 +1086,24 @@ namespace TencentCloud
                 RecognizeOnlineTaxiItineraryOCROutcome RecognizeOnlineTaxiItineraryOCR(const Model::RecognizeOnlineTaxiItineraryOCRRequest &request);
                 void RecognizeOnlineTaxiItineraryOCRAsync(const Model::RecognizeOnlineTaxiItineraryOCRRequest& request, const RecognizeOnlineTaxiItineraryOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RecognizeOnlineTaxiItineraryOCROutcomeCallable RecognizeOnlineTaxiItineraryOCRCallable(const Model::RecognizeOnlineTaxiItineraryOCRRequest& request);
+
+                /**
+                 *菲律宾驾驶证识别
+                 * @param req RecognizePhilippinesDrivingLicenseOCRRequest
+                 * @return RecognizePhilippinesDrivingLicenseOCROutcome
+                 */
+                RecognizePhilippinesDrivingLicenseOCROutcome RecognizePhilippinesDrivingLicenseOCR(const Model::RecognizePhilippinesDrivingLicenseOCRRequest &request);
+                void RecognizePhilippinesDrivingLicenseOCRAsync(const Model::RecognizePhilippinesDrivingLicenseOCRRequest& request, const RecognizePhilippinesDrivingLicenseOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RecognizePhilippinesDrivingLicenseOCROutcomeCallable RecognizePhilippinesDrivingLicenseOCRCallable(const Model::RecognizePhilippinesDrivingLicenseOCRRequest& request);
+
+                /**
+                 *菲律宾VoteID识别
+                 * @param req RecognizePhilippinesVoteIDOCRRequest
+                 * @return RecognizePhilippinesVoteIDOCROutcome
+                 */
+                RecognizePhilippinesVoteIDOCROutcome RecognizePhilippinesVoteIDOCR(const Model::RecognizePhilippinesVoteIDOCRRequest &request);
+                void RecognizePhilippinesVoteIDOCRAsync(const Model::RecognizePhilippinesVoteIDOCRRequest& request, const RecognizePhilippinesVoteIDOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RecognizePhilippinesVoteIDOCROutcomeCallable RecognizePhilippinesVoteIDOCRCallable(const Model::RecognizePhilippinesVoteIDOCRRequest& request);
 
                 /**
                  *本接口支持中英文图片/ PDF内常规表格、无线表格、多表格的检测和识别，支持日文有线表格识别，返回每个单元格的文字内容，支持旋转的表格图片识别，且支持将识别结果保存为 Excel 格式。

@@ -663,14 +663,14 @@ namespace TencentCloud
                     bool DeployStrategyConfHasBeenSet() const;
 
                     /**
-                     * 获取弹性策略
-                     * @return HorizontalAutoscaler 弹性策略
+                     * 获取弹性策略（已弃用，请使用弹性伸缩策略组合相关接口）
+                     * @return HorizontalAutoscaler 弹性策略（已弃用，请使用弹性伸缩策略组合相关接口）
                      */
                     std::vector<HorizontalAutoscaler> GetHorizontalAutoscaler() const;
 
                     /**
-                     * 设置弹性策略
-                     * @param HorizontalAutoscaler 弹性策略
+                     * 设置弹性策略（已弃用，请使用弹性伸缩策略组合相关接口）
+                     * @param HorizontalAutoscaler 弹性策略（已弃用，请使用弹性伸缩策略组合相关接口）
                      */
                     void SetHorizontalAutoscaler(const std::vector<HorizontalAutoscaler>& _horizontalAutoscaler);
 
@@ -681,14 +681,14 @@ namespace TencentCloud
                     bool HorizontalAutoscalerHasBeenSet() const;
 
                     /**
-                     * 获取定时弹性策略
-                     * @return CronHorizontalAutoscaler 定时弹性策略
+                     * 获取定时弹性策略（已弃用，请使用弹性伸缩策略组合相关接口）
+                     * @return CronHorizontalAutoscaler 定时弹性策略（已弃用，请使用弹性伸缩策略组合相关接口）
                      */
                     std::vector<CronHorizontalAutoscaler> GetCronHorizontalAutoscaler() const;
 
                     /**
-                     * 设置定时弹性策略
-                     * @param CronHorizontalAutoscaler 定时弹性策略
+                     * 设置定时弹性策略（已弃用，请使用弹性伸缩策略组合相关接口）
+                     * @param CronHorizontalAutoscaler 定时弹性策略（已弃用，请使用弹性伸缩策略组合相关接口）
                      */
                     void SetCronHorizontalAutoscaler(const std::vector<CronHorizontalAutoscaler>& _cronHorizontalAutoscaler);
 
@@ -829,6 +829,24 @@ namespace TencentCloud
                      * @return EnablePrometheusConf 是否已赋值
                      */
                     bool EnablePrometheusConfHasBeenSet() const;
+
+                    /**
+                     * 获取1：开始apm采集；0：关闭apm采集
+                     * @return EnableTracing 1：开始apm采集；0：关闭apm采集
+                     */
+                    int64_t GetEnableTracing() const;
+
+                    /**
+                     * 设置1：开始apm采集；0：关闭apm采集
+                     * @param EnableTracing 1：开始apm采集；0：关闭apm采集
+                     */
+                    void SetEnableTracing(const int64_t& _enableTracing);
+
+                    /**
+                     * 判断参数 EnableTracing 是否已赋值
+                     * @return EnableTracing 是否已赋值
+                     */
+                    bool EnableTracingHasBeenSet() const;
 
                 private:
 
@@ -1033,13 +1051,13 @@ namespace TencentCloud
                     bool m_deployStrategyConfHasBeenSet;
 
                     /**
-                     * 弹性策略
+                     * 弹性策略（已弃用，请使用弹性伸缩策略组合相关接口）
                      */
                     std::vector<HorizontalAutoscaler> m_horizontalAutoscaler;
                     bool m_horizontalAutoscalerHasBeenSet;
 
                     /**
-                     * 定时弹性策略
+                     * 定时弹性策略（已弃用，请使用弹性伸缩策略组合相关接口）
                      */
                     std::vector<CronHorizontalAutoscaler> m_cronHorizontalAutoscaler;
                     bool m_cronHorizontalAutoscalerHasBeenSet;
@@ -1085,6 +1103,12 @@ namespace TencentCloud
                      */
                     EnablePrometheusConf m_enablePrometheusConf;
                     bool m_enablePrometheusConfHasBeenSet;
+
+                    /**
+                     * 1：开始apm采集；0：关闭apm采集
+                     */
+                    int64_t m_enableTracing;
+                    bool m_enableTracingHasBeenSet;
 
                 };
             }

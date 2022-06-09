@@ -31,6 +31,8 @@
 #include <tencentcloud/bsca/v20210811/model/DescribeKBLicenseResponse.h>
 #include <tencentcloud/bsca/v20210811/model/DescribeKBVulnerabilityRequest.h>
 #include <tencentcloud/bsca/v20210811/model/DescribeKBVulnerabilityResponse.h>
+#include <tencentcloud/bsca/v20210811/model/MatchKBPURLListRequest.h>
+#include <tencentcloud/bsca/v20210811/model/MatchKBPURLListResponse.h>
 
 
 namespace TencentCloud
@@ -57,6 +59,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeKBVulnerabilityResponse> DescribeKBVulnerabilityOutcome;
                 typedef std::future<DescribeKBVulnerabilityOutcome> DescribeKBVulnerabilityOutcomeCallable;
                 typedef std::function<void(const BscaClient*, const Model::DescribeKBVulnerabilityRequest&, DescribeKBVulnerabilityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKBVulnerabilityAsyncHandler;
+                typedef Outcome<Core::Error, Model::MatchKBPURLListResponse> MatchKBPURLListOutcome;
+                typedef std::future<MatchKBPURLListOutcome> MatchKBPURLListOutcomeCallable;
+                typedef std::function<void(const BscaClient*, const Model::MatchKBPURLListRequest&, MatchKBPURLListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MatchKBPURLListAsyncHandler;
 
 
 
@@ -95,6 +100,15 @@ namespace TencentCloud
                 DescribeKBVulnerabilityOutcome DescribeKBVulnerability(const Model::DescribeKBVulnerabilityRequest &request);
                 void DescribeKBVulnerabilityAsync(const Model::DescribeKBVulnerabilityRequest& request, const DescribeKBVulnerabilityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeKBVulnerabilityOutcomeCallable DescribeKBVulnerabilityCallable(const Model::DescribeKBVulnerabilityRequest& request);
+
+                /**
+                 *本接口(MatchKBPURLList)用于在知识库中匹配与特征对应的开源组件列表。
+                 * @param req MatchKBPURLListRequest
+                 * @return MatchKBPURLListOutcome
+                 */
+                MatchKBPURLListOutcome MatchKBPURLList(const Model::MatchKBPURLListRequest &request);
+                void MatchKBPURLListAsync(const Model::MatchKBPURLListRequest& request, const MatchKBPURLListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                MatchKBPURLListOutcomeCallable MatchKBPURLListCallable(const Model::MatchKBPURLListRequest& request);
 
             };
         }
