@@ -78,20 +78,20 @@ namespace TencentCloud
 
                     /**
                      * 获取声道数:
-1：单身道;
+1：单声道;
 2：双声道（默认）。
                      * @return Channel 声道数:
-1：单身道;
+1：单声道;
 2：双声道（默认）。
                      */
                     uint64_t GetChannel() const;
 
                     /**
                      * 设置声道数:
-1：单身道;
+1：单声道;
 2：双声道（默认）。
                      * @param Channel 声道数:
-1：单身道;
+1：单声道;
 2：双声道（默认）。
                      */
                     void SetChannel(const uint64_t& _channel);
@@ -133,7 +133,7 @@ namespace TencentCloud
 
                     /**
                      * 声道数:
-1：单身道;
+1：单声道;
 2：双声道（默认）。
                      */
                     uint64_t m_channel;

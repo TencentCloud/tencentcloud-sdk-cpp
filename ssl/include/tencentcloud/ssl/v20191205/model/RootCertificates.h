@@ -46,7 +46,94 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
+                    /**
+                     * 获取国密签名证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Sign 国密签名证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSign() const;
+
+                    /**
+                     * 设置国密签名证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Sign 国密签名证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSign(const std::string& _sign);
+
+                    /**
+                     * 判断参数 Sign 是否已赋值
+                     * @return Sign 是否已赋值
+                     */
+                    bool SignHasBeenSet() const;
+
+                    /**
+                     * 获取国密加密证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Encrypt 国密加密证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEncrypt() const;
+
+                    /**
+                     * 设置国密加密证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Encrypt 国密加密证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEncrypt(const std::string& _encrypt);
+
+                    /**
+                     * 判断参数 Encrypt 是否已赋值
+                     * @return Encrypt 是否已赋值
+                     */
+                    bool EncryptHasBeenSet() const;
+
+                    /**
+                     * 获取标准证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Standard 标准证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetStandard() const;
+
+                    /**
+                     * 设置标准证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Standard 标准证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStandard(const std::string& _standard);
+
+                    /**
+                     * 判断参数 Standard 是否已赋值
+                     * @return Standard 是否已赋值
+                     */
+                    bool StandardHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 国密签名证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sign;
+                    bool m_signHasBeenSet;
+
+                    /**
+                     * 国密加密证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_encrypt;
+                    bool m_encryptHasBeenSet;
+
+                    /**
+                     * 标准证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_standard;
+                    bool m_standardHasBeenSet;
 
                 };
             }

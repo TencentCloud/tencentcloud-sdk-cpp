@@ -73,17 +73,17 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取设置超时时间，单位为秒，最大超时时间65秒。
+                     * 获取设置超时时间，单位为秒，最大超时时间300秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Timeout 设置超时时间，单位为秒，最大超时时间65秒。
+                     * @return Timeout 设置超时时间，单位为秒，最大超时时间300秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetTimeout() const;
 
                     /**
-                     * 设置设置超时时间，单位为秒，最大超时时间65秒。
+                     * 设置设置超时时间，单位为秒，最大超时时间300秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Timeout 设置超时时间，单位为秒，最大超时时间65秒。
+                     * @param Timeout 设置超时时间，单位为秒，最大超时时间300秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTimeout(const int64_t& _timeout);
@@ -105,7 +105,7 @@ namespace TencentCloud
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 设置超时时间，单位为秒，最大超时时间65秒。
+                     * 设置超时时间，单位为秒，最大超时时间300秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_timeout;

@@ -45,17 +45,21 @@ namespace TencentCloud
 
                     /**
                      * 获取自适应转码格式，取值范围：
-<li>HLS。</li>
+<li>HLS；</li>
+<li>MPEG-DASH。</li>
                      * @return Format 自适应转码格式，取值范围：
-<li>HLS。</li>
+<li>HLS；</li>
+<li>MPEG-DASH。</li>
                      */
                     std::string GetFormat() const;
 
                     /**
                      * 设置自适应转码格式，取值范围：
-<li>HLS。</li>
+<li>HLS；</li>
+<li>MPEG-DASH。</li>
                      * @param Format 自适应转码格式，取值范围：
-<li>HLS。</li>
+<li>HLS；</li>
+<li>MPEG-DASH。</li>
                      */
                     void SetFormat(const std::string& _format);
 
@@ -239,7 +243,8 @@ namespace TencentCloud
 
                     /**
                      * 自适应转码格式，取值范围：
-<li>HLS。</li>
+<li>HLS；</li>
+<li>MPEG-DASH。</li>
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;

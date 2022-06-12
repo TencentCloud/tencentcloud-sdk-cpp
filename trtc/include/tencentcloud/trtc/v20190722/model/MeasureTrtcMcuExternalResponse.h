@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/trtc/v20190722/model/OneSdkAppIdTranscodeTimeUsagesNewInfo.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,49 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取应用的用量信息数组。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Usages 应用的用量信息数组。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<OneSdkAppIdTranscodeTimeUsagesNewInfo> GetUsages() const;
+
+                    /**
+                     * 判断参数 Usages 是否已赋值
+                     * @return Usages 是否已赋值
+                     */
+                    bool UsagesHasBeenSet() const;
+
+                    /**
+                     * 获取用户计费类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Type 用户计费类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 应用的用量信息数组。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<OneSdkAppIdTranscodeTimeUsagesNewInfo> m_usages;
+                    bool m_usagesHasBeenSet;
+
+                    /**
+                     * 用户计费类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

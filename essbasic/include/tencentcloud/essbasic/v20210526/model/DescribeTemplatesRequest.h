@@ -99,14 +99,14 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取查询内容：0-模版列表及详情（默认），1-仅模版列表
-                     * @return ContentType 查询内容：0-模版列表及详情（默认），1-仅模版列表
+                     * 获取查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     * @return ContentType 查询内容：0-模板列表及详情（默认），1-仅模板列表
                      */
                     int64_t GetContentType() const;
 
                     /**
-                     * 设置查询内容：0-模版列表及详情（默认），1-仅模版列表
-                     * @param ContentType 查询内容：0-模版列表及详情（默认），1-仅模版列表
+                     * 设置查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     * @param ContentType 查询内容：0-模板列表及详情（默认），1-仅模板列表
                      */
                     void SetContentType(const int64_t& _contentType);
 
@@ -173,7 +173,7 @@ namespace TencentCloud
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 查询内容：0-模版列表及详情（默认），1-仅模版列表
+                     * 查询内容：0-模板列表及详情（默认），1-仅模板列表
                      */
                     int64_t m_contentType;
                     bool m_contentTypeHasBeenSet;

@@ -55,7 +55,9 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/MeasureTrtcMcuExternalRequest.h
   include/tencentcloud/trtc/v20190722/model/EventList.h
   include/tencentcloud/trtc/v20190722/model/WaterMarkImage.h
+  include/tencentcloud/trtc/v20190722/model/SdkAppIdTrtcMcuTranscodeTimeNewUsage.h
   include/tencentcloud/trtc/v20190722/model/SdkAppIdTrtcMcuTranscodeTimeUsage.h
+  include/tencentcloud/trtc/v20190722/model/OneSdkAppIdTranscodeTimeUsagesNewInfo.h
   include/tencentcloud/trtc/v20190722/model/ModifyPictureResponse.h
   include/tencentcloud/trtc/v20190722/model/StorageFile.h
   include/tencentcloud/trtc/v20190722/model/WaterMark.h
@@ -150,7 +152,9 @@ set(trtc_src
   src/v20190722/model/MeasureTrtcMcuExternalRequest.cpp
   src/v20190722/model/EventList.cpp
   src/v20190722/model/WaterMarkImage.cpp
+  src/v20190722/model/SdkAppIdTrtcMcuTranscodeTimeNewUsage.cpp
   src/v20190722/model/SdkAppIdTrtcMcuTranscodeTimeUsage.cpp
+  src/v20190722/model/OneSdkAppIdTranscodeTimeUsagesNewInfo.cpp
   src/v20190722/model/ModifyPictureResponse.cpp
   src/v20190722/model/StorageFile.cpp
   src/v20190722/model/WaterMark.cpp

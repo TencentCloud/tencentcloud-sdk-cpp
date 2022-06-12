@@ -83,6 +83,49 @@ EssClient::CancelFlowOutcomeCallable EssClient::CancelFlowCallable(const CancelF
     return task->get_future();
 }
 
+EssClient::CancelMultiFlowSignQRCodeOutcome EssClient::CancelMultiFlowSignQRCode(const CancelMultiFlowSignQRCodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelMultiFlowSignQRCode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelMultiFlowSignQRCodeResponse rsp = CancelMultiFlowSignQRCodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelMultiFlowSignQRCodeOutcome(rsp);
+        else
+            return CancelMultiFlowSignQRCodeOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelMultiFlowSignQRCodeOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CancelMultiFlowSignQRCodeAsync(const CancelMultiFlowSignQRCodeRequest& request, const CancelMultiFlowSignQRCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelMultiFlowSignQRCode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CancelMultiFlowSignQRCodeOutcomeCallable EssClient::CancelMultiFlowSignQRCodeCallable(const CancelMultiFlowSignQRCodeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelMultiFlowSignQRCodeOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelMultiFlowSignQRCode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateDocumentOutcome EssClient::CreateDocument(const CreateDocumentRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDocument");
@@ -205,6 +248,49 @@ EssClient::CreateFlowByFilesOutcomeCallable EssClient::CreateFlowByFilesCallable
         [this, request]()
         {
             return this->CreateFlowByFiles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssClient::CreateMultiFlowSignQRCodeOutcome EssClient::CreateMultiFlowSignQRCode(const CreateMultiFlowSignQRCodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMultiFlowSignQRCode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMultiFlowSignQRCodeResponse rsp = CreateMultiFlowSignQRCodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMultiFlowSignQRCodeOutcome(rsp);
+        else
+            return CreateMultiFlowSignQRCodeOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMultiFlowSignQRCodeOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateMultiFlowSignQRCodeAsync(const CreateMultiFlowSignQRCodeRequest& request, const CreateMultiFlowSignQRCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateMultiFlowSignQRCode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateMultiFlowSignQRCodeOutcomeCallable EssClient::CreateMultiFlowSignQRCodeCallable(const CreateMultiFlowSignQRCodeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateMultiFlowSignQRCodeOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateMultiFlowSignQRCode(request);
         }
     );
 

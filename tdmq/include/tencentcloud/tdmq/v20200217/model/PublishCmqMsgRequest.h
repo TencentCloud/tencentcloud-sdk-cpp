@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool TopicNameHasBeenSet() const;
 
                     /**
-                     * 获取消息内容
-                     * @return MsgContent 消息内容
+                     * 获取消息内容，消息总大小需不大于1024K
+                     * @return MsgContent 消息内容，消息总大小需不大于1024K
                      */
                     std::string GetMsgContent() const;
 
                     /**
-                     * 设置消息内容
-                     * @param MsgContent 消息内容
+                     * 设置消息内容，消息总大小需不大于1024K
+                     * @param MsgContent 消息内容，消息总大小需不大于1024K
                      */
                     void SetMsgContent(const std::string& _msgContent);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool MsgContentHasBeenSet() const;
 
                     /**
-                     * 获取消息标签
-                     * @return MsgTag 消息标签
+                     * 获取消息标签，支持传递多标签或单路由，单个标签、路由长度不能超过64个字符。
+                     * @return MsgTag 消息标签，支持传递多标签或单路由，单个标签、路由长度不能超过64个字符。
                      */
                     std::vector<std::string> GetMsgTag() const;
 
                     /**
-                     * 设置消息标签
-                     * @param MsgTag 消息标签
+                     * 设置消息标签，支持传递多标签或单路由，单个标签、路由长度不能超过64个字符。
+                     * @param MsgTag 消息标签，支持传递多标签或单路由，单个标签、路由长度不能超过64个字符。
                      */
                     void SetMsgTag(const std::vector<std::string>& _msgTag);
 
@@ -105,13 +105,13 @@ namespace TencentCloud
                     bool m_topicNameHasBeenSet;
 
                     /**
-                     * 消息内容
+                     * 消息内容，消息总大小需不大于1024K
                      */
                     std::string m_msgContent;
                     bool m_msgContentHasBeenSet;
 
                     /**
-                     * 消息标签
+                     * 消息标签，支持传递多标签或单路由，单个标签、路由长度不能超过64个字符。
                      */
                     std::vector<std::string> m_msgTag;
                     bool m_msgTagHasBeenSet;

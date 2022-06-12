@@ -332,14 +332,14 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取队列可回溯存储空间，取值范围1024MB - 10240MB，0表示不开启
-                     * @return RetentionSizeInMB 队列可回溯存储空间，取值范围1024MB - 10240MB，0表示不开启
+                     * 获取队列可回溯存储空间：若开启消息回溯，取值范围：10240MB - 512000MB，若不开启消息回溯，取值：0
+                     * @return RetentionSizeInMB 队列可回溯存储空间：若开启消息回溯，取值范围：10240MB - 512000MB，若不开启消息回溯，取值：0
                      */
                     uint64_t GetRetentionSizeInMB() const;
 
                     /**
-                     * 设置队列可回溯存储空间，取值范围1024MB - 10240MB，0表示不开启
-                     * @param RetentionSizeInMB 队列可回溯存储空间，取值范围1024MB - 10240MB，0表示不开启
+                     * 设置队列可回溯存储空间：若开启消息回溯，取值范围：10240MB - 512000MB，若不开启消息回溯，取值：0
+                     * @param RetentionSizeInMB 队列可回溯存储空间：若开启消息回溯，取值范围：10240MB - 512000MB，若不开启消息回溯，取值：0
                      */
                     void SetRetentionSizeInMB(const uint64_t& _retentionSizeInMB);
 
@@ -448,7 +448,7 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 队列可回溯存储空间，取值范围1024MB - 10240MB，0表示不开启
+                     * 队列可回溯存储空间：若开启消息回溯，取值范围：10240MB - 512000MB，若不开启消息回溯，取值：0
                      */
                     uint64_t m_retentionSizeInMB;
                     bool m_retentionSizeInMBHasBeenSet;

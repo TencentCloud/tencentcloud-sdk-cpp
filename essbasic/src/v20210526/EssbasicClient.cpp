@@ -40,6 +40,49 @@ EssbasicClient::EssbasicClient(const Credential &credential, const string &regio
 }
 
 
+EssbasicClient::ChannelCancelMultiFlowSignQRCodeOutcome EssbasicClient::ChannelCancelMultiFlowSignQRCode(const ChannelCancelMultiFlowSignQRCodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCancelMultiFlowSignQRCode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCancelMultiFlowSignQRCodeResponse rsp = ChannelCancelMultiFlowSignQRCodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCancelMultiFlowSignQRCodeOutcome(rsp);
+        else
+            return ChannelCancelMultiFlowSignQRCodeOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCancelMultiFlowSignQRCodeOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCancelMultiFlowSignQRCodeAsync(const ChannelCancelMultiFlowSignQRCodeRequest& request, const ChannelCancelMultiFlowSignQRCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCancelMultiFlowSignQRCode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCancelMultiFlowSignQRCodeOutcomeCallable EssbasicClient::ChannelCancelMultiFlowSignQRCodeCallable(const ChannelCancelMultiFlowSignQRCodeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCancelMultiFlowSignQRCodeOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCancelMultiFlowSignQRCode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelCreateFlowByFilesOutcome EssbasicClient::ChannelCreateFlowByFiles(const ChannelCreateFlowByFilesRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelCreateFlowByFiles");
@@ -76,6 +119,49 @@ EssbasicClient::ChannelCreateFlowByFilesOutcomeCallable EssbasicClient::ChannelC
         [this, request]()
         {
             return this->ChannelCreateFlowByFiles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssbasicClient::ChannelCreateMultiFlowSignQRCodeOutcome EssbasicClient::ChannelCreateMultiFlowSignQRCode(const ChannelCreateMultiFlowSignQRCodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCreateMultiFlowSignQRCode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCreateMultiFlowSignQRCodeResponse rsp = ChannelCreateMultiFlowSignQRCodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCreateMultiFlowSignQRCodeOutcome(rsp);
+        else
+            return ChannelCreateMultiFlowSignQRCodeOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCreateMultiFlowSignQRCodeOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCreateMultiFlowSignQRCodeAsync(const ChannelCreateMultiFlowSignQRCodeRequest& request, const ChannelCreateMultiFlowSignQRCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCreateMultiFlowSignQRCode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCreateMultiFlowSignQRCodeOutcomeCallable EssbasicClient::ChannelCreateMultiFlowSignQRCodeCallable(const ChannelCreateMultiFlowSignQRCodeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCreateMultiFlowSignQRCodeOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCreateMultiFlowSignQRCode(request);
         }
     );
 

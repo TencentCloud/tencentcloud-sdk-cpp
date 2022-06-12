@@ -430,6 +430,50 @@ disabled：未启用
                      */
                     bool ExtensionModeHasBeenSet() const;
 
+                    /**
+                     * 获取流量包实际生效时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TrueEnableTime 流量包实际生效时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTrueEnableTime() const;
+
+                    /**
+                     * 设置流量包实际生效时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TrueEnableTime 流量包实际生效时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTrueEnableTime(const std::string& _trueEnableTime);
+
+                    /**
+                     * 判断参数 TrueEnableTime 是否已赋值
+                     * @return TrueEnableTime 是否已赋值
+                     */
+                    bool TrueEnableTimeHasBeenSet() const;
+
+                    /**
+                     * 获取流量包实际过期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TrueExpireTime 流量包实际过期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTrueExpireTime() const;
+
+                    /**
+                     * 设置流量包实际过期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TrueExpireTime 流量包实际过期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTrueExpireTime(const std::string& _trueExpireTime);
+
+                    /**
+                     * 判断参数 TrueExpireTime 是否已赋值
+                     * @return TrueExpireTime 是否已赋值
+                     */
+                    bool TrueExpireTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -554,6 +598,20 @@ disabled：未启用
                      */
                     uint64_t m_extensionMode;
                     bool m_extensionModeHasBeenSet;
+
+                    /**
+                     * 流量包实际生效时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_trueEnableTime;
+                    bool m_trueEnableTimeHasBeenSet;
+
+                    /**
+                     * 流量包实际过期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_trueExpireTime;
+                    bool m_trueExpireTimeHasBeenSet;
 
                 };
             }

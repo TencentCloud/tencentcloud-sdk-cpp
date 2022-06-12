@@ -38,7 +38,9 @@ TrafficPackage::TrafficPackage() :
     m_refundAvailableHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_configIdHasBeenSet(false),
-    m_extensionModeHasBeenSet(false)
+    m_extensionModeHasBeenSet(false),
+    m_trueEnableTimeHasBeenSet(false),
+    m_trueExpireTimeHasBeenSet(false)
 {
 }
 
@@ -227,6 +229,26 @@ CoreInternalOutcome TrafficPackage::Deserialize(const rapidjson::Value &value)
         m_extensionModeHasBeenSet = true;
     }
 
+    if (value.HasMember("TrueEnableTime") && !value["TrueEnableTime"].IsNull())
+    {
+        if (!value["TrueEnableTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrafficPackage.TrueEnableTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_trueEnableTime = string(value["TrueEnableTime"].GetString());
+        m_trueEnableTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TrueExpireTime") && !value["TrueExpireTime"].IsNull())
+    {
+        if (!value["TrueExpireTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrafficPackage.TrueExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_trueExpireTime = string(value["TrueExpireTime"].GetString());
+        m_trueExpireTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +398,22 @@ void TrafficPackage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ExtensionMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_extensionMode, allocator);
+    }
+
+    if (m_trueEnableTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrueEnableTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_trueEnableTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_trueExpireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrueExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_trueExpireTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -667,5 +705,37 @@ void TrafficPackage::SetExtensionMode(const uint64_t& _extensionMode)
 bool TrafficPackage::ExtensionModeHasBeenSet() const
 {
     return m_extensionModeHasBeenSet;
+}
+
+string TrafficPackage::GetTrueEnableTime() const
+{
+    return m_trueEnableTime;
+}
+
+void TrafficPackage::SetTrueEnableTime(const string& _trueEnableTime)
+{
+    m_trueEnableTime = _trueEnableTime;
+    m_trueEnableTimeHasBeenSet = true;
+}
+
+bool TrafficPackage::TrueEnableTimeHasBeenSet() const
+{
+    return m_trueEnableTimeHasBeenSet;
+}
+
+string TrafficPackage::GetTrueExpireTime() const
+{
+    return m_trueExpireTime;
+}
+
+void TrafficPackage::SetTrueExpireTime(const string& _trueExpireTime)
+{
+    m_trueExpireTime = _trueExpireTime;
+    m_trueExpireTimeHasBeenSet = true;
+}
+
+bool TrafficPackage::TrueExpireTimeHasBeenSet() const
+{
+    return m_trueExpireTimeHasBeenSet;
 }
 

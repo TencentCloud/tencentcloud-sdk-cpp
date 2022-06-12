@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/trtc/v20190722/model/MeasureTrtcMcuExternalResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Trtc::V20190722::Model;
+using namespace TencentCloud::Ess::V20201111::Model;
 using namespace std;
 
-MeasureTrtcMcuExternalResponse::MeasureTrtcMcuExternalResponse() :
-    m_usagesHasBeenSet(false),
-    m_typeHasBeenSet(false)
+CreateMultiFlowSignQRCodeResponse::CreateMultiFlowSignQRCodeResponse() :
+    m_qrCodeHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome MeasureTrtcMcuExternalResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateMultiFlowSignQRCodeResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,67 +62,40 @@ CoreInternalOutcome MeasureTrtcMcuExternalResponse::Deserialize(const string &pa
     }
 
 
-    if (rsp.HasMember("Usages") && !rsp["Usages"].IsNull())
+    if (rsp.HasMember("QrCode") && !rsp["QrCode"].IsNull())
     {
-        if (!rsp["Usages"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Usages` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["Usages"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["QrCode"].IsObject())
         {
-            OneSdkAppIdTranscodeTimeUsagesNewInfo item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_usages.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `QrCode` is not object type").SetRequestId(requestId));
         }
-        m_usagesHasBeenSet = true;
-    }
 
-    if (rsp.HasMember("Type") && !rsp["Type"].IsNull())
-    {
-        if (!rsp["Type"].IsString())
+        CoreInternalOutcome outcome = m_qrCode.Deserialize(rsp["QrCode"]);
+        if (!outcome.IsSuccess())
         {
-            return CoreInternalOutcome(Core::Error("response `Type` IsString=false incorrectly").SetRequestId(requestId));
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
         }
-        m_type = string(rsp["Type"].GetString());
-        m_typeHasBeenSet = true;
+
+        m_qrCodeHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string MeasureTrtcMcuExternalResponse::ToJsonString() const
+string CreateMultiFlowSignQRCodeResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_usagesHasBeenSet)
+    if (m_qrCodeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Usages";
+        string key = "QrCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_usages.begin(); itr != m_usages.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
-    }
-
-    if (m_typeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Type";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_qrCode.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -138,24 +110,14 @@ string MeasureTrtcMcuExternalResponse::ToJsonString() const
 }
 
 
-vector<OneSdkAppIdTranscodeTimeUsagesNewInfo> MeasureTrtcMcuExternalResponse::GetUsages() const
+SignQrCode CreateMultiFlowSignQRCodeResponse::GetQrCode() const
 {
-    return m_usages;
+    return m_qrCode;
 }
 
-bool MeasureTrtcMcuExternalResponse::UsagesHasBeenSet() const
+bool CreateMultiFlowSignQRCodeResponse::QrCodeHasBeenSet() const
 {
-    return m_usagesHasBeenSet;
-}
-
-string MeasureTrtcMcuExternalResponse::GetType() const
-{
-    return m_type;
-}
-
-bool MeasureTrtcMcuExternalResponse::TypeHasBeenSet() const
-{
-    return m_typeHasBeenSet;
+    return m_qrCodeHasBeenSet;
 }
 
 
