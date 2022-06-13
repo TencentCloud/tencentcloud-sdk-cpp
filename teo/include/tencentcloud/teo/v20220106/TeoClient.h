@@ -103,6 +103,8 @@
 #include <tencentcloud/teo/v20220106/model/DescribeSecurityPolicyManagedRulesIdResponse.h>
 #include <tencentcloud/teo/v20220106/model/DescribeSecurityPolicyRegionsRequest.h>
 #include <tencentcloud/teo/v20220106/model/DescribeSecurityPolicyRegionsResponse.h>
+#include <tencentcloud/teo/v20220106/model/DescribeSecurityPortraitRulesRequest.h>
+#include <tencentcloud/teo/v20220106/model/DescribeSecurityPortraitRulesResponse.h>
 #include <tencentcloud/teo/v20220106/model/DescribeZoneDDoSPolicyRequest.h>
 #include <tencentcloud/teo/v20220106/model/DescribeZoneDDoSPolicyResponse.h>
 #include <tencentcloud/teo/v20220106/model/DescribeZoneDetailsRequest.h>
@@ -291,6 +293,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSecurityPolicyRegionsResponse> DescribeSecurityPolicyRegionsOutcome;
                 typedef std::future<DescribeSecurityPolicyRegionsOutcome> DescribeSecurityPolicyRegionsOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeSecurityPolicyRegionsRequest&, DescribeSecurityPolicyRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityPolicyRegionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSecurityPortraitRulesResponse> DescribeSecurityPortraitRulesOutcome;
+                typedef std::future<DescribeSecurityPortraitRulesOutcome> DescribeSecurityPortraitRulesOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeSecurityPortraitRulesRequest&, DescribeSecurityPortraitRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityPortraitRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeZoneDDoSPolicyResponse> DescribeZoneDDoSPolicyOutcome;
                 typedef std::future<DescribeZoneDDoSPolicyOutcome> DescribeZoneDDoSPolicyOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeZoneDDoSPolicyRequest&, DescribeZoneDDoSPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZoneDDoSPolicyAsyncHandler;
@@ -734,6 +739,15 @@ namespace TencentCloud
                 DescribeSecurityPolicyRegionsOutcome DescribeSecurityPolicyRegions(const Model::DescribeSecurityPolicyRegionsRequest &request);
                 void DescribeSecurityPolicyRegionsAsync(const Model::DescribeSecurityPolicyRegionsRequest& request, const DescribeSecurityPolicyRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSecurityPolicyRegionsOutcomeCallable DescribeSecurityPolicyRegionsCallable(const Model::DescribeSecurityPolicyRegionsRequest& request);
+
+                /**
+                 *查询Bot用户画像规则
+                 * @param req DescribeSecurityPortraitRulesRequest
+                 * @return DescribeSecurityPortraitRulesOutcome
+                 */
+                DescribeSecurityPortraitRulesOutcome DescribeSecurityPortraitRules(const Model::DescribeSecurityPortraitRulesRequest &request);
+                void DescribeSecurityPortraitRulesAsync(const Model::DescribeSecurityPortraitRulesRequest& request, const DescribeSecurityPortraitRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSecurityPortraitRulesOutcomeCallable DescribeSecurityPortraitRulesCallable(const Model::DescribeSecurityPortraitRulesRequest& request);
 
                 /**
                  *查询所有DDoS防护分区

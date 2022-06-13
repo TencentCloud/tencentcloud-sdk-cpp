@@ -1760,6 +1760,49 @@ TeoClient::DescribeSecurityPolicyRegionsOutcomeCallable TeoClient::DescribeSecur
     return task->get_future();
 }
 
+TeoClient::DescribeSecurityPortraitRulesOutcome TeoClient::DescribeSecurityPortraitRules(const DescribeSecurityPortraitRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSecurityPortraitRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSecurityPortraitRulesResponse rsp = DescribeSecurityPortraitRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSecurityPortraitRulesOutcome(rsp);
+        else
+            return DescribeSecurityPortraitRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSecurityPortraitRulesOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeSecurityPortraitRulesAsync(const DescribeSecurityPortraitRulesRequest& request, const DescribeSecurityPortraitRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSecurityPortraitRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeSecurityPortraitRulesOutcomeCallable TeoClient::DescribeSecurityPortraitRulesCallable(const DescribeSecurityPortraitRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSecurityPortraitRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSecurityPortraitRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::DescribeZoneDDoSPolicyOutcome TeoClient::DescribeZoneDDoSPolicy(const DescribeZoneDDoSPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeZoneDDoSPolicy");

@@ -14,15 +14,17 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_OCR_V20181119_MODEL_SEALOCRRESPONSE_H_
-#define TENCENTCLOUD_OCR_V20181119_MODEL_SEALOCRRESPONSE_H_
+#ifndef TENCENTCLOUD_OCR_V20181119_MODEL_SEALINFO_H_
+#define TENCENTCLOUD_OCR_V20181119_MODEL_SEALINFO_H_
 
 #include <string>
 #include <vector>
 #include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ocr/v20181119/model/Rect.h>
-#include <tencentcloud/ocr/v20181119/model/SealInfo.h>
 
 
 namespace TencentCloud
@@ -34,22 +36,28 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * SealOCR返回参数结构体
+                * 印章信息
                 */
-                class SealOCRResponse : public AbstractModel
+                class SealInfo : public AbstractModel
                 {
                 public:
-                    SealOCRResponse();
-                    ~SealOCRResponse() = default;
-                    CoreInternalOutcome Deserialize(const std::string &payload);
-                    std::string ToJsonString() const;
+                    SealInfo();
+                    ~SealInfo() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取印章内容
-                     * @return SealBody 印章内容
+                     * 获取印章主体内容
+                     * @return SealBody 印章主体内容
                      */
                     std::string GetSealBody() const;
+
+                    /**
+                     * 设置印章主体内容
+                     * @param SealBody 印章主体内容
+                     */
+                    void SetSealBody(const std::string& _sealBody);
 
                     /**
                      * 判断参数 SealBody 是否已赋值
@@ -64,16 +72,28 @@ namespace TencentCloud
                     Rect GetLocation() const;
 
                     /**
+                     * 设置印章坐标
+                     * @param Location 印章坐标
+                     */
+                    void SetLocation(const Rect& _location);
+
+                    /**
                      * 判断参数 Location 是否已赋值
                      * @return Location 是否已赋值
                      */
                     bool LocationHasBeenSet() const;
 
                     /**
-                     * 获取其它文本内容
-                     * @return OtherTexts 其它文本内容
+                     * 获取印章其它文本内容
+                     * @return OtherTexts 印章其它文本内容
                      */
                     std::vector<std::string> GetOtherTexts() const;
+
+                    /**
+                     * 设置印章其它文本内容
+                     * @param OtherTexts 印章其它文本内容
+                     */
+                    void SetOtherTexts(const std::vector<std::string>& _otherTexts);
 
                     /**
                      * 判断参数 OtherTexts 是否已赋值
@@ -81,22 +101,10 @@ namespace TencentCloud
                      */
                     bool OtherTextsHasBeenSet() const;
 
-                    /**
-                     * 获取全部印章信息
-                     * @return SealInfos 全部印章信息
-                     */
-                    std::vector<SealInfo> GetSealInfos() const;
-
-                    /**
-                     * 判断参数 SealInfos 是否已赋值
-                     * @return SealInfos 是否已赋值
-                     */
-                    bool SealInfosHasBeenSet() const;
-
                 private:
 
                     /**
-                     * 印章内容
+                     * 印章主体内容
                      */
                     std::string m_sealBody;
                     bool m_sealBodyHasBeenSet;
@@ -108,16 +116,10 @@ namespace TencentCloud
                     bool m_locationHasBeenSet;
 
                     /**
-                     * 其它文本内容
+                     * 印章其它文本内容
                      */
                     std::vector<std::string> m_otherTexts;
                     bool m_otherTextsHasBeenSet;
-
-                    /**
-                     * 全部印章信息
-                     */
-                    std::vector<SealInfo> m_sealInfos;
-                    bool m_sealInfosHasBeenSet;
 
                 };
             }
@@ -125,4 +127,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_OCR_V20181119_MODEL_SEALOCRRESPONSE_H_
+#endif // !TENCENTCLOUD_OCR_V20181119_MODEL_SEALINFO_H_

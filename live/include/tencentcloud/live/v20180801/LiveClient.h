@@ -169,6 +169,8 @@
 #include <tencentcloud/live/v20180801/model/DescribeLiveStreamPushInfoListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveStreamStateRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveStreamStateResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeLiveTimeShiftBillInfoListRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeLiveTimeShiftBillInfoListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveTranscodeDetailInfoRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveTranscodeDetailInfoResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveTranscodeRulesRequest.h>
@@ -498,6 +500,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLiveStreamStateResponse> DescribeLiveStreamStateOutcome;
                 typedef std::future<DescribeLiveStreamStateOutcome> DescribeLiveStreamStateOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamStateRequest&, DescribeLiveStreamStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamStateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLiveTimeShiftBillInfoListResponse> DescribeLiveTimeShiftBillInfoListOutcome;
+                typedef std::future<DescribeLiveTimeShiftBillInfoListOutcome> DescribeLiveTimeShiftBillInfoListOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeLiveTimeShiftBillInfoListRequest&, DescribeLiveTimeShiftBillInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveTimeShiftBillInfoListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLiveTranscodeDetailInfoResponse> DescribeLiveTranscodeDetailInfoOutcome;
                 typedef std::future<DescribeLiveTranscodeDetailInfoOutcome> DescribeLiveTranscodeDetailInfoOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLiveTranscodeDetailInfoRequest&, DescribeLiveTranscodeDetailInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveTranscodeDetailInfoAsyncHandler;
@@ -1386,6 +1391,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeLiveStreamStateOutcome DescribeLiveStreamState(const Model::DescribeLiveStreamStateRequest &request);
                 void DescribeLiveStreamStateAsync(const Model::DescribeLiveStreamStateRequest& request, const DescribeLiveStreamStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLiveStreamStateOutcomeCallable DescribeLiveStreamStateCallable(const Model::DescribeLiveStreamStateRequest& request);
+
+                /**
+                 *提供给客户对账，按天统计，维度：推流域名、时移文件时长（累加）、配置天数（不累加）、时移总时长（累加）。
+                 * @param req DescribeLiveTimeShiftBillInfoListRequest
+                 * @return DescribeLiveTimeShiftBillInfoListOutcome
+                 */
+                DescribeLiveTimeShiftBillInfoListOutcome DescribeLiveTimeShiftBillInfoList(const Model::DescribeLiveTimeShiftBillInfoListRequest &request);
+                void DescribeLiveTimeShiftBillInfoListAsync(const Model::DescribeLiveTimeShiftBillInfoListRequest& request, const DescribeLiveTimeShiftBillInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLiveTimeShiftBillInfoListOutcomeCallable DescribeLiveTimeShiftBillInfoListCallable(const Model::DescribeLiveTimeShiftBillInfoListRequest& request);
 
                 /**
                  *支持查询某天或某段时间的转码详细信息。

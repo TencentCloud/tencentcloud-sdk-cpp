@@ -25,7 +25,8 @@ BotPortraitRule::BotPortraitRule() :
     m_algManagedIdsHasBeenSet(false),
     m_capManagedIdsHasBeenSet(false),
     m_monManagedIdsHasBeenSet(false),
-    m_dropManagedIdsHasBeenSet(false)
+    m_dropManagedIdsHasBeenSet(false),
+    m_switchHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,16 @@ CoreInternalOutcome BotPortraitRule::Deserialize(const rapidjson::Value &value)
         m_dropManagedIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("Switch") && !value["Switch"].IsNull())
+    {
+        if (!value["Switch"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BotPortraitRule.Switch` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_switch = string(value["Switch"].GetString());
+        m_switchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -161,6 +172,14 @@ void BotPortraitRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_switchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Switch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -244,5 +263,21 @@ void BotPortraitRule::SetDropManagedIds(const vector<int64_t>& _dropManagedIds)
 bool BotPortraitRule::DropManagedIdsHasBeenSet() const
 {
     return m_dropManagedIdsHasBeenSet;
+}
+
+string BotPortraitRule::GetSwitch() const
+{
+    return m_switch;
+}
+
+void BotPortraitRule::SetSwitch(const string& _switch)
+{
+    m_switch = _switch;
+    m_switchHasBeenSet = true;
+}
+
+bool BotPortraitRule::SwitchHasBeenSet() const
+{
+    return m_switchHasBeenSet;
 }
 

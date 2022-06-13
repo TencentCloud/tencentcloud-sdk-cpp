@@ -26,7 +26,8 @@ using namespace std;
 SealOCRResponse::SealOCRResponse() :
     m_sealBodyHasBeenSet(false),
     m_locationHasBeenSet(false),
-    m_otherTextsHasBeenSet(false)
+    m_otherTextsHasBeenSet(false),
+    m_sealInfosHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,26 @@ CoreInternalOutcome SealOCRResponse::Deserialize(const string &payload)
         m_otherTextsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SealInfos") && !rsp["SealInfos"].IsNull())
+    {
+        if (!rsp["SealInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SealInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["SealInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SealInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_sealInfos.push_back(item);
+        }
+        m_sealInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -141,6 +162,21 @@ string SealOCRResponse::ToJsonString() const
         for (auto itr = m_otherTexts.begin(); itr != m_otherTexts.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_sealInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SealInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_sealInfos.begin(); itr != m_sealInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -184,6 +220,16 @@ vector<string> SealOCRResponse::GetOtherTexts() const
 bool SealOCRResponse::OtherTextsHasBeenSet() const
 {
     return m_otherTextsHasBeenSet;
+}
+
+vector<SealInfo> SealOCRResponse::GetSealInfos() const
+{
+    return m_sealInfos;
+}
+
+bool SealOCRResponse::SealInfosHasBeenSet() const
+{
+    return m_sealInfosHasBeenSet;
 }
 
 

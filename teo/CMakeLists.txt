@@ -54,6 +54,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220106/model/Origin.h
   include/tencentcloud/teo/v20220106/model/ModifyZoneStatusResponse.h
   include/tencentcloud/teo/v20220106/model/DescribeSecurityPolicyManagedRulesRequest.h
+  include/tencentcloud/teo/v20220106/model/DescribeSecurityPortraitRulesRequest.h
   include/tencentcloud/teo/v20220106/model/CertSort.h
   include/tencentcloud/teo/v20220106/model/ModifySecurityPolicyResponse.h
   include/tencentcloud/teo/v20220106/model/ModifyDDoSPolicyHostRequest.h
@@ -70,6 +71,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220106/model/DeleteOriginGroupRequest.h
   include/tencentcloud/teo/v20220106/model/ModifyHostsCertificateResponse.h
   include/tencentcloud/teo/v20220106/model/CreateDnsRecordRequest.h
+  include/tencentcloud/teo/v20220106/model/PortraitManagedRuleDetail.h
   include/tencentcloud/teo/v20220106/model/L7OfflineLog.h
   include/tencentcloud/teo/v20220106/model/WafRule.h
   include/tencentcloud/teo/v20220106/model/ApplicationProxyRule.h
@@ -136,6 +138,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220106/model/DownloadL7LogsRequest.h
   include/tencentcloud/teo/v20220106/model/DeleteLoadBalancingResponse.h
   include/tencentcloud/teo/v20220106/model/CheckCertificateRequest.h
+  include/tencentcloud/teo/v20220106/model/DescribeSecurityPortraitRulesResponse.h
   include/tencentcloud/teo/v20220106/model/CreateApplicationProxyRuleRequest.h
   include/tencentcloud/teo/v20220106/model/DescribePrefetchTasksRequest.h
   include/tencentcloud/teo/v20220106/model/ForceRedirect.h
@@ -270,6 +273,7 @@ set(teo_src
   src/v20220106/model/Origin.cpp
   src/v20220106/model/ModifyZoneStatusResponse.cpp
   src/v20220106/model/DescribeSecurityPolicyManagedRulesRequest.cpp
+  src/v20220106/model/DescribeSecurityPortraitRulesRequest.cpp
   src/v20220106/model/CertSort.cpp
   src/v20220106/model/ModifySecurityPolicyResponse.cpp
   src/v20220106/model/ModifyDDoSPolicyHostRequest.cpp
@@ -286,6 +290,7 @@ set(teo_src
   src/v20220106/model/DeleteOriginGroupRequest.cpp
   src/v20220106/model/ModifyHostsCertificateResponse.cpp
   src/v20220106/model/CreateDnsRecordRequest.cpp
+  src/v20220106/model/PortraitManagedRuleDetail.cpp
   src/v20220106/model/L7OfflineLog.cpp
   src/v20220106/model/WafRule.cpp
   src/v20220106/model/ApplicationProxyRule.cpp
@@ -352,6 +357,7 @@ set(teo_src
   src/v20220106/model/DownloadL7LogsRequest.cpp
   src/v20220106/model/DeleteLoadBalancingResponse.cpp
   src/v20220106/model/CheckCertificateRequest.cpp
+  src/v20220106/model/DescribeSecurityPortraitRulesResponse.cpp
   src/v20220106/model/CreateApplicationProxyRuleRequest.cpp
   src/v20220106/model/DescribePrefetchTasksRequest.cpp
   src/v20220106/model/ForceRedirect.cpp

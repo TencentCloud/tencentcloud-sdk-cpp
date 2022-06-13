@@ -1889,6 +1889,49 @@ ApigatewayClient::DescribeExclusiveInstancesOutcomeCallable ApigatewayClient::De
     return task->get_future();
 }
 
+ApigatewayClient::DescribeExclusiveInstancesStatusOutcome ApigatewayClient::DescribeExclusiveInstancesStatus(const DescribeExclusiveInstancesStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExclusiveInstancesStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExclusiveInstancesStatusResponse rsp = DescribeExclusiveInstancesStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExclusiveInstancesStatusOutcome(rsp);
+        else
+            return DescribeExclusiveInstancesStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExclusiveInstancesStatusOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::DescribeExclusiveInstancesStatusAsync(const DescribeExclusiveInstancesStatusRequest& request, const DescribeExclusiveInstancesStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExclusiveInstancesStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::DescribeExclusiveInstancesStatusOutcomeCallable ApigatewayClient::DescribeExclusiveInstancesStatusCallable(const DescribeExclusiveInstancesStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExclusiveInstancesStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExclusiveInstancesStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ApigatewayClient::DescribeIPStrategyOutcome ApigatewayClient::DescribeIPStrategy(const DescribeIPStrategyRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeIPStrategy");

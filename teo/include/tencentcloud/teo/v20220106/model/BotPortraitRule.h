@@ -156,6 +156,28 @@ namespace TencentCloud
                      */
                     bool DropManagedIdsHasBeenSet() const;
 
+                    /**
+                     * 获取本功能的开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Switch 本功能的开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSwitch() const;
+
+                    /**
+                     * 设置本功能的开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Switch 本功能的开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSwitch(const std::string& _switch);
+
+                    /**
+                     * 判断参数 Switch 是否已赋值
+                     * @return Switch 是否已赋值
+                     */
+                    bool SwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -192,6 +214,13 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_dropManagedIds;
                     bool m_dropManagedIdsHasBeenSet;
+
+                    /**
+                     * 本功能的开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_switch;
+                    bool m_switchHasBeenSet;
 
                 };
             }

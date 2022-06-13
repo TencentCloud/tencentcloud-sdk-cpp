@@ -240,6 +240,28 @@ string|tinyint|smallint|int|bigint|boolean|float|double|decimal|timestamp|date|b
                      */
                     bool ModifiedTimeHasBeenSet() const;
 
+                    /**
+                     * 获取是否为分区字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsPartition 是否为分区字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsPartition() const;
+
+                    /**
+                     * 设置是否为分区字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsPartition 是否为分区字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsPartition(const bool& _isPartition);
+
+                    /**
+                     * 判断参数 IsPartition 是否已赋值
+                     * @return IsPartition 是否已赋值
+                     */
+                    bool IsPartitionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -303,6 +325,13 @@ string|tinyint|smallint|int|bigint|boolean|float|double|decimal|timestamp|date|b
                      */
                     std::string m_modifiedTime;
                     bool m_modifiedTimeHasBeenSet;
+
+                    /**
+                     * 是否为分区字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isPartition;
+                    bool m_isPartitionHasBeenSet;
 
                 };
             }
