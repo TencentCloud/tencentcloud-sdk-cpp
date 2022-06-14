@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取分页返回，每页最大返回数目，默认20，取值范围为1-100
-                     * @return Limit 分页返回，每页最大返回数目，默认20，取值范围为1-100
+                     * 获取分页返回，每页最大返回数目，默认10，取值范围为1-100
+                     * @return Limit 分页返回，每页最大返回数目，默认10，取值范围为1-100
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页返回，每页最大返回数目，默认20，取值范围为1-100
-                     * @param Limit 分页返回，每页最大返回数目，默认20，取值范围为1-100
+                     * 设置分页返回，每页最大返回数目，默认10，取值范围为1-100
+                     * @param Limit 分页返回，每页最大返回数目，默认10，取值范围为1-100
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页返回，返回第几页的用户数据。页码从0开始计数
-                     * @return Offset 分页返回，返回第几页的用户数据。页码从0开始计数
+                     * 获取数据偏移量，从0开始。
+                     * @return Offset 数据偏移量，从0开始。
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页返回，返回第几页的用户数据。页码从0开始计数
-                     * @param Offset 分页返回，返回第几页的用户数据。页码从0开始计数
+                     * 设置数据偏移量，从0开始。
+                     * @param Offset 数据偏移量，从0开始。
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -141,13 +141,13 @@ namespace TencentCloud
                     bool m_dBInstanceIdHasBeenSet;
 
                     /**
-                     * 分页返回，每页最大返回数目，默认20，取值范围为1-100
+                     * 分页返回，每页最大返回数目，默认10，取值范围为1-100
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页返回，返回第几页的用户数据。页码从0开始计数
+                     * 数据偏移量，从0开始。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

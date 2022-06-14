@@ -424,14 +424,14 @@ namespace TencentCloud
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取实例名称。
-                     * @return InstanceName 实例名称。
+                     * 获取实例名称。一次购买多个实例命名会用后缀数字区分，例instnaceName=db，goodsNum=3，实例命名分别为db1，db2，db3。
+                     * @return InstanceName 实例名称。一次购买多个实例命名会用后缀数字区分，例instnaceName=db，goodsNum=3，实例命名分别为db1，db2，db3。
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称。
-                     * @param InstanceName 实例名称。
+                     * 设置实例名称。一次购买多个实例命名会用后缀数字区分，例instnaceName=db，goodsNum=3，实例命名分别为db1，db2，db3。
+                     * @param InstanceName 实例名称。一次购买多个实例命名会用后缀数字区分，例instnaceName=db，goodsNum=3，实例命名分别为db1，db2，db3。
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
@@ -840,7 +840,7 @@ namespace TencentCloud
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
-                     * 实例名称。
+                     * 实例名称。一次购买多个实例命名会用后缀数字区分，例instnaceName=db，goodsNum=3，实例命名分别为db1，db2，db3。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;

@@ -100,6 +100,24 @@ db-tag-key：按照标签键过滤，类型为string
                     bool LimitHasBeenSet() const;
 
                     /**
+                     * 获取数据偏移量，从0开始。
+                     * @return Offset 数据偏移量，从0开始。
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 设置数据偏移量，从0开始。
+                     * @param Offset 数据偏移量，从0开始。
+                     */
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
                      * 获取排序指标，如实例名、创建时间等，支持DBInstanceId,CreateTime,Name,EndTime
                      * @return OrderBy 排序指标，如实例名、创建时间等，支持DBInstanceId,CreateTime,Name,EndTime
                      */
@@ -116,24 +134,6 @@ db-tag-key：按照标签键过滤，类型为string
                      * @return OrderBy 是否已赋值
                      */
                     bool OrderByHasBeenSet() const;
-
-                    /**
-                     * 获取页码偏移量，从0开始。
-                     * @return Offset 页码偏移量，从0开始。
-                     */
-                    uint64_t GetOffset() const;
-
-                    /**
-                     * 设置页码偏移量，从0开始。
-                     * @param Offset 页码偏移量，从0开始。
-                     */
-                    void SetOffset(const uint64_t& _offset);
-
-                    /**
-                     * 判断参数 Offset 是否已赋值
-                     * @return Offset 是否已赋值
-                     */
-                    bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取排序方式，包括升序：asc、降序：desc。
@@ -173,16 +173,16 @@ db-tag-key：按照标签键过滤，类型为string
                     bool m_limitHasBeenSet;
 
                     /**
+                     * 数据偏移量，从0开始。
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
                      * 排序指标，如实例名、创建时间等，支持DBInstanceId,CreateTime,Name,EndTime
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
-
-                    /**
-                     * 页码偏移量，从0开始。
-                     */
-                    uint64_t m_offset;
-                    bool m_offsetHasBeenSet;
 
                     /**
                      * 排序方式，包括升序：asc、降序：desc。

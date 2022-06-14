@@ -41,6 +41,8 @@
 #include <tencentcloud/tiia/v20190529/model/DetectCelebrityResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DetectDisgustRequest.h>
 #include <tencentcloud/tiia/v20190529/model/DetectDisgustResponse.h>
+#include <tencentcloud/tiia/v20190529/model/DetectEnvelopeRequest.h>
+#include <tencentcloud/tiia/v20190529/model/DetectEnvelopeResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DetectLabelRequest.h>
 #include <tencentcloud/tiia/v20190529/model/DetectLabelResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DetectLabelBetaRequest.h>
@@ -102,6 +104,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DetectDisgustResponse> DetectDisgustOutcome;
                 typedef std::future<DetectDisgustOutcome> DetectDisgustOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::DetectDisgustRequest&, DetectDisgustOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectDisgustAsyncHandler;
+                typedef Outcome<Core::Error, Model::DetectEnvelopeResponse> DetectEnvelopeOutcome;
+                typedef std::future<DetectEnvelopeOutcome> DetectEnvelopeOutcomeCallable;
+                typedef std::function<void(const TiiaClient*, const Model::DetectEnvelopeRequest&, DetectEnvelopeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectEnvelopeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DetectLabelResponse> DetectLabelOutcome;
                 typedef std::future<DetectLabelOutcome> DetectLabelOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::DetectLabelRequest&, DetectLabelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectLabelAsyncHandler;
@@ -236,6 +241,18 @@ namespace TencentCloud
                 DetectDisgustOutcome DetectDisgust(const Model::DetectDisgustRequest &request);
                 void DetectDisgustAsync(const Model::DetectDisgustRequest& request, const DetectDisgustAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DetectDisgustOutcomeCallable DetectDisgustCallable(const Model::DetectDisgustRequest& request);
+
+                /**
+                 *文件封识别可检测图片中是否包含符合文件封（即文件、单据、资料等的袋状包装）特征的物品，覆盖顺丰快递文件封、文件袋、档案袋等多种文件封类型，可应用于物流行业对文件快递的包装审核等场景。
+
+>?   
+- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。
+                 * @param req DetectEnvelopeRequest
+                 * @return DetectEnvelopeOutcome
+                 */
+                DetectEnvelopeOutcome DetectEnvelope(const Model::DetectEnvelopeRequest &request);
+                void DetectEnvelopeAsync(const Model::DetectEnvelopeRequest& request, const DetectEnvelopeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DetectEnvelopeOutcomeCallable DetectEnvelopeCallable(const Model::DetectEnvelopeRequest& request);
 
                 /**
                  *>!

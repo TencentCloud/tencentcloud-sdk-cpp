@@ -169,6 +169,49 @@ AcpClient::DescribeFileTicketOutcomeCallable AcpClient::DescribeFileTicketCallab
     return task->get_future();
 }
 
+AcpClient::DescribeResourceUsageInfoOutcome AcpClient::DescribeResourceUsageInfo(const DescribeResourceUsageInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceUsageInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceUsageInfoResponse rsp = DescribeResourceUsageInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceUsageInfoOutcome(rsp);
+        else
+            return DescribeResourceUsageInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceUsageInfoOutcome(outcome.GetError());
+    }
+}
+
+void AcpClient::DescribeResourceUsageInfoAsync(const DescribeResourceUsageInfoRequest& request, const DescribeResourceUsageInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeResourceUsageInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AcpClient::DescribeResourceUsageInfoOutcomeCallable AcpClient::DescribeResourceUsageInfoCallable(const DescribeResourceUsageInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeResourceUsageInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeResourceUsageInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AcpClient::DescribeScanTaskListOutcome AcpClient::DescribeScanTaskList(const DescribeScanTaskListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeScanTaskList");

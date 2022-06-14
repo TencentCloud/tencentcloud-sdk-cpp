@@ -136,14 +136,14 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。
-                     * @return Offset 偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。
+                     * 获取偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API 中的相关小节。
+                     * @return Offset 偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API 中的相关小节。
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。
-                     * @param Offset 偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。
+                     * 设置偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API 中的相关小节。
+                     * @param Offset 偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API 中的相关小节。
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -154,14 +154,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。
-                     * @return Limit 返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。
+                     * 获取返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API 中的相关小节。
+                     * @return Limit 返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API 中的相关小节。
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。
-                     * @param Limit 返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。
+                     * 设置返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API 中的相关小节。
+                     * @param Limit 返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API 中的相关小节。
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -200,13 +200,13 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。
+                     * 偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API 中的相关小节。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。
+                     * 返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API 中的相关小节。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

@@ -29,6 +29,8 @@
 #include <tencentcloud/acp/v20220105/model/CreateAppScanTaskRepeatResponse.h>
 #include <tencentcloud/acp/v20220105/model/DescribeFileTicketRequest.h>
 #include <tencentcloud/acp/v20220105/model/DescribeFileTicketResponse.h>
+#include <tencentcloud/acp/v20220105/model/DescribeResourceUsageInfoRequest.h>
+#include <tencentcloud/acp/v20220105/model/DescribeResourceUsageInfoResponse.h>
 #include <tencentcloud/acp/v20220105/model/DescribeScanTaskListRequest.h>
 #include <tencentcloud/acp/v20220105/model/DescribeScanTaskListResponse.h>
 #include <tencentcloud/acp/v20220105/model/DescribeScanTaskReportUrlRequest.h>
@@ -58,6 +60,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFileTicketResponse> DescribeFileTicketOutcome;
                 typedef std::future<DescribeFileTicketOutcome> DescribeFileTicketOutcomeCallable;
                 typedef std::function<void(const AcpClient*, const Model::DescribeFileTicketRequest&, DescribeFileTicketOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFileTicketAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourceUsageInfoResponse> DescribeResourceUsageInfoOutcome;
+                typedef std::future<DescribeResourceUsageInfoOutcome> DescribeResourceUsageInfoOutcomeCallable;
+                typedef std::function<void(const AcpClient*, const Model::DescribeResourceUsageInfoRequest&, DescribeResourceUsageInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceUsageInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeScanTaskListResponse> DescribeScanTaskListOutcome;
                 typedef std::future<DescribeScanTaskListOutcome> DescribeScanTaskListOutcomeCallable;
                 typedef std::function<void(const AcpClient*, const Model::DescribeScanTaskListRequest&, DescribeScanTaskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScanTaskListAsyncHandler;
@@ -96,6 +101,15 @@ namespace TencentCloud
                 DescribeFileTicketOutcome DescribeFileTicket(const Model::DescribeFileTicketRequest &request);
                 void DescribeFileTicketAsync(const Model::DescribeFileTicketRequest& request, const DescribeFileTicketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeFileTicketOutcomeCallable DescribeFileTicketCallable(const Model::DescribeFileTicketRequest& request);
+
+                /**
+                 *查询应用合规平台用户资源的使用情况
+                 * @param req DescribeResourceUsageInfoRequest
+                 * @return DescribeResourceUsageInfoOutcome
+                 */
+                DescribeResourceUsageInfoOutcome DescribeResourceUsageInfo(const Model::DescribeResourceUsageInfoRequest &request);
+                void DescribeResourceUsageInfoAsync(const Model::DescribeResourceUsageInfoRequest& request, const DescribeResourceUsageInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourceUsageInfoOutcomeCallable DescribeResourceUsageInfoCallable(const Model::DescribeResourceUsageInfoRequest& request);
 
                 /**
                  *获取App隐私合规诊断任务列表

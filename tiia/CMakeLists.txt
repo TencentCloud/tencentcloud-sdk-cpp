@@ -56,6 +56,7 @@ set(tiia_public_header_model
   include/tencentcloud/tiia/v20190529/model/DetectCelebrityRequest.h
   include/tencentcloud/tiia/v20190529/model/Coord.h
   include/tencentcloud/tiia/v20190529/model/Face.h
+  include/tencentcloud/tiia/v20190529/model/DetectEnvelopeRequest.h
   include/tencentcloud/tiia/v20190529/model/DetectProductResponse.h
   include/tencentcloud/tiia/v20190529/model/ColorInfo.h
   include/tencentcloud/tiia/v20190529/model/ImageRect.h
@@ -65,8 +66,10 @@ set(tiia_public_header_model
   include/tencentcloud/tiia/v20190529/model/CarPlateContent.h
   include/tencentcloud/tiia/v20190529/model/DetectLabelProRequest.h
   include/tencentcloud/tiia/v20190529/model/DetectLabelBetaResponse.h
-  include/tencentcloud/tiia/v20190529/model/ImageInfo.h
+  include/tencentcloud/tiia/v20190529/model/DetectEnvelopeResponse.h
+  include/tencentcloud/tiia/v20190529/model/ImageTag.h
   include/tencentcloud/tiia/v20190529/model/Attribute.h
+  include/tencentcloud/tiia/v20190529/model/ImageInfo.h
   include/tencentcloud/tiia/v20190529/model/Labels.h
   include/tencentcloud/tiia/v20190529/model/DetectCelebrityResponse.h
   include/tencentcloud/tiia/v20190529/model/Product.h
@@ -118,6 +121,7 @@ set(tiia_src
   src/v20190529/model/DetectCelebrityRequest.cpp
   src/v20190529/model/Coord.cpp
   src/v20190529/model/Face.cpp
+  src/v20190529/model/DetectEnvelopeRequest.cpp
   src/v20190529/model/DetectProductResponse.cpp
   src/v20190529/model/ColorInfo.cpp
   src/v20190529/model/ImageRect.cpp
@@ -127,8 +131,10 @@ set(tiia_src
   src/v20190529/model/CarPlateContent.cpp
   src/v20190529/model/DetectLabelProRequest.cpp
   src/v20190529/model/DetectLabelBetaResponse.cpp
-  src/v20190529/model/ImageInfo.cpp
+  src/v20190529/model/DetectEnvelopeResponse.cpp
+  src/v20190529/model/ImageTag.cpp
   src/v20190529/model/Attribute.cpp
+  src/v20190529/model/ImageInfo.cpp
   src/v20190529/model/Labels.cpp
   src/v20190529/model/DetectCelebrityResponse.cpp
   src/v20190529/model/Product.cpp

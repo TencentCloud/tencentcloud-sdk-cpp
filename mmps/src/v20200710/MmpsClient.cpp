@@ -212,6 +212,49 @@ MmpsClient::CreateFlySecMiniAppScanTaskRepeatOutcomeCallable MmpsClient::CreateF
     return task->get_future();
 }
 
+MmpsClient::DescribeBasicDiagnosisResourceUsageInfoOutcome MmpsClient::DescribeBasicDiagnosisResourceUsageInfo(const DescribeBasicDiagnosisResourceUsageInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBasicDiagnosisResourceUsageInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBasicDiagnosisResourceUsageInfoResponse rsp = DescribeBasicDiagnosisResourceUsageInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBasicDiagnosisResourceUsageInfoOutcome(rsp);
+        else
+            return DescribeBasicDiagnosisResourceUsageInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBasicDiagnosisResourceUsageInfoOutcome(outcome.GetError());
+    }
+}
+
+void MmpsClient::DescribeBasicDiagnosisResourceUsageInfoAsync(const DescribeBasicDiagnosisResourceUsageInfoRequest& request, const DescribeBasicDiagnosisResourceUsageInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBasicDiagnosisResourceUsageInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MmpsClient::DescribeBasicDiagnosisResourceUsageInfoOutcomeCallable MmpsClient::DescribeBasicDiagnosisResourceUsageInfoCallable(const DescribeBasicDiagnosisResourceUsageInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBasicDiagnosisResourceUsageInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBasicDiagnosisResourceUsageInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MmpsClient::DescribeFlySecMiniAppReportUrlOutcome MmpsClient::DescribeFlySecMiniAppReportUrl(const DescribeFlySecMiniAppReportUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFlySecMiniAppReportUrl");
@@ -377,6 +420,49 @@ MmpsClient::DescribeFlySecMiniAppScanTaskStatusOutcomeCallable MmpsClient::Descr
         [this, request]()
         {
             return this->DescribeFlySecMiniAppScanTaskStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MmpsClient::DescribeResourceUsageInfoOutcome MmpsClient::DescribeResourceUsageInfo(const DescribeResourceUsageInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceUsageInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceUsageInfoResponse rsp = DescribeResourceUsageInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceUsageInfoOutcome(rsp);
+        else
+            return DescribeResourceUsageInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceUsageInfoOutcome(outcome.GetError());
+    }
+}
+
+void MmpsClient::DescribeResourceUsageInfoAsync(const DescribeResourceUsageInfoRequest& request, const DescribeResourceUsageInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeResourceUsageInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MmpsClient::DescribeResourceUsageInfoOutcomeCallable MmpsClient::DescribeResourceUsageInfoCallable(const DescribeResourceUsageInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeResourceUsageInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeResourceUsageInfo(request);
         }
     );
 

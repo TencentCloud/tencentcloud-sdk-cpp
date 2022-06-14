@@ -25,7 +25,8 @@ using namespace std;
 
 InquiryPriceRenewDBInstanceResponse::InquiryPriceRenewDBInstanceResponse() :
     m_originalPriceHasBeenSet(false),
-    m_priceHasBeenSet(false)
+    m_priceHasBeenSet(false),
+    m_currencyHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome InquiryPriceRenewDBInstanceResponse::Deserialize(const strin
         m_priceHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Currency") && !rsp["Currency"].IsNull())
+    {
+        if (!rsp["Currency"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Currency` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_currency = string(rsp["Currency"].GetString());
+        m_currencyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string InquiryPriceRenewDBInstanceResponse::ToJsonString() const
         string key = "Price";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_price, allocator);
+    }
+
+    if (m_currencyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Currency";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_currency.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +158,16 @@ int64_t InquiryPriceRenewDBInstanceResponse::GetPrice() const
 bool InquiryPriceRenewDBInstanceResponse::PriceHasBeenSet() const
 {
     return m_priceHasBeenSet;
+}
+
+string InquiryPriceRenewDBInstanceResponse::GetCurrency() const
+{
+    return m_currency;
+}
+
+bool InquiryPriceRenewDBInstanceResponse::CurrencyHasBeenSet() const
+{
+    return m_currencyHasBeenSet;
 }
 
 

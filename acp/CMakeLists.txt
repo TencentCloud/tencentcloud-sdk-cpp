@@ -22,7 +22,9 @@ set(acp_public_header_model
   include/tencentcloud/acp/v20220105/model/CreateAppScanTaskRepeatRequest.h
   include/tencentcloud/acp/v20220105/model/DescribeScanTaskListResponse.h
   include/tencentcloud/acp/v20220105/model/AppInfoItem.h
+  include/tencentcloud/acp/v20220105/model/DescribeResourceUsageInfoResponse.h
   include/tencentcloud/acp/v20220105/model/DescribeScanTaskListRequest.h
+  include/tencentcloud/acp/v20220105/model/ResourceUsageInfoData.h
   include/tencentcloud/acp/v20220105/model/TaskFlowStepsInfo.h
   include/tencentcloud/acp/v20220105/model/CreateAppScanTaskRequest.h
   include/tencentcloud/acp/v20220105/model/DescribeScanTaskStatusResponse.h
@@ -32,6 +34,7 @@ set(acp_public_header_model
   include/tencentcloud/acp/v20220105/model/DescribeScanTaskStatusRequest.h
   include/tencentcloud/acp/v20220105/model/DescribeFileTicketRequest.h
   include/tencentcloud/acp/v20220105/model/CreateAppScanTaskResponse.h
+  include/tencentcloud/acp/v20220105/model/DescribeResourceUsageInfoRequest.h
   include/tencentcloud/acp/v20220105/model/DescribeScanTaskReportUrlResponse.h
   include/tencentcloud/acp/v20220105/model/CreateAppScanTaskRepeatResponse.h
   )
@@ -41,7 +44,9 @@ set(acp_src
   src/v20220105/model/CreateAppScanTaskRepeatRequest.cpp
   src/v20220105/model/DescribeScanTaskListResponse.cpp
   src/v20220105/model/AppInfoItem.cpp
+  src/v20220105/model/DescribeResourceUsageInfoResponse.cpp
   src/v20220105/model/DescribeScanTaskListRequest.cpp
+  src/v20220105/model/ResourceUsageInfoData.cpp
   src/v20220105/model/TaskFlowStepsInfo.cpp
   src/v20220105/model/CreateAppScanTaskRequest.cpp
   src/v20220105/model/DescribeScanTaskStatusResponse.cpp
@@ -51,6 +56,7 @@ set(acp_src
   src/v20220105/model/DescribeScanTaskStatusRequest.cpp
   src/v20220105/model/DescribeFileTicketRequest.cpp
   src/v20220105/model/CreateAppScanTaskResponse.cpp
+  src/v20220105/model/DescribeResourceUsageInfoRequest.cpp
   src/v20220105/model/DescribeScanTaskReportUrlResponse.cpp
   src/v20220105/model/CreateAppScanTaskRepeatResponse.cpp
   )

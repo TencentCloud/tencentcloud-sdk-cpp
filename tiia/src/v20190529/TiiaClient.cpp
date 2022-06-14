@@ -427,6 +427,49 @@ TiiaClient::DetectDisgustOutcomeCallable TiiaClient::DetectDisgustCallable(const
     return task->get_future();
 }
 
+TiiaClient::DetectEnvelopeOutcome TiiaClient::DetectEnvelope(const DetectEnvelopeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetectEnvelope");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetectEnvelopeResponse rsp = DetectEnvelopeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetectEnvelopeOutcome(rsp);
+        else
+            return DetectEnvelopeOutcome(o.GetError());
+    }
+    else
+    {
+        return DetectEnvelopeOutcome(outcome.GetError());
+    }
+}
+
+void TiiaClient::DetectEnvelopeAsync(const DetectEnvelopeRequest& request, const DetectEnvelopeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DetectEnvelope(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiiaClient::DetectEnvelopeOutcomeCallable TiiaClient::DetectEnvelopeCallable(const DetectEnvelopeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DetectEnvelopeOutcome()>>(
+        [this, request]()
+        {
+            return this->DetectEnvelope(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiiaClient::DetectLabelOutcome TiiaClient::DetectLabel(const DetectLabelRequest &request)
 {
     auto outcome = MakeRequest(request, "DetectLabel");

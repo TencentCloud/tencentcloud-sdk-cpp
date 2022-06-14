@@ -22,29 +22,34 @@ set(mmps_public_header_model
   include/tencentcloud/mmps/v20200710/model/DescribeFlySecMiniAppReportUrlRequest.h
   include/tencentcloud/mmps/v20200710/model/DescribeScanTaskListRequest.h
   include/tencentcloud/mmps/v20200710/model/DescribeFlySecMiniAppScanTaskParamRequest.h
+  include/tencentcloud/mmps/v20200710/model/ResourceUsageInfoData.h
   include/tencentcloud/mmps/v20200710/model/CreateAppScanTaskRequest.h
   include/tencentcloud/mmps/v20200710/model/DescribeScanTaskStatusRequest.h
-  include/tencentcloud/mmps/v20200710/model/DescribeScanTaskListResponse.h
+  include/tencentcloud/mmps/v20200710/model/DescribeBasicDiagnosisResourceUsageInfoResponse.h
+  include/tencentcloud/mmps/v20200710/model/CreateAppScanTaskRepeatResponse.h
+  include/tencentcloud/mmps/v20200710/model/DescribeBasicDiagnosisResourceUsageInfoRequest.h
+  include/tencentcloud/mmps/v20200710/model/DescribeResourceUsageInfoResponse.h
+  include/tencentcloud/mmps/v20200710/model/DescribeScanTaskReportUrlResponse.h
   include/tencentcloud/mmps/v20200710/model/DescribeFlySecMiniAppScanTaskStatusRequest.h
   include/tencentcloud/mmps/v20200710/model/CreateFlySecMiniAppScanTaskResponse.h
-  include/tencentcloud/mmps/v20200710/model/CreateAppScanTaskRepeatResponse.h
+  include/tencentcloud/mmps/v20200710/model/CreateFlySecMiniAppScanTaskRequest.h
   include/tencentcloud/mmps/v20200710/model/DescribeFlySecMiniAppScanTaskListRequest.h
   include/tencentcloud/mmps/v20200710/model/DescribeFlySecMiniAppScanTaskParamResponse.h
-  include/tencentcloud/mmps/v20200710/model/DescribeScanTaskReportUrlResponse.h
-  include/tencentcloud/mmps/v20200710/model/CreateFlySecMiniAppScanTaskRequest.h
+  include/tencentcloud/mmps/v20200710/model/CreateFlySecMiniAppScanTaskRepeatRequest.h
   include/tencentcloud/mmps/v20200710/model/CreateAppScanTaskRepeatRequest.h
   include/tencentcloud/mmps/v20200710/model/DescribeScanTaskReportUrlRequest.h
   include/tencentcloud/mmps/v20200710/model/TaskFlowStepsInfo.h
   include/tencentcloud/mmps/v20200710/model/DescribeFlySecMiniAppScanTaskListResponse.h
   include/tencentcloud/mmps/v20200710/model/FlySecMiniAppTaskData.h
-  include/tencentcloud/mmps/v20200710/model/CreateFlySecMiniAppScanTaskRepeatRequest.h
   include/tencentcloud/mmps/v20200710/model/CreateAppScanTaskResponse.h
   include/tencentcloud/mmps/v20200710/model/DescribeFlySecMiniAppReportUrlResponse.h
+  include/tencentcloud/mmps/v20200710/model/DescribeScanTaskListResponse.h
   include/tencentcloud/mmps/v20200710/model/AppInfoItem.h
   include/tencentcloud/mmps/v20200710/model/DescribeFlySecMiniAppScanTaskStatusResponse.h
   include/tencentcloud/mmps/v20200710/model/CreateFlySecMiniAppScanTaskRepeatResponse.h
   include/tencentcloud/mmps/v20200710/model/DescribeScanTaskStatusResponse.h
   include/tencentcloud/mmps/v20200710/model/AppTaskData.h
+  include/tencentcloud/mmps/v20200710/model/DescribeResourceUsageInfoRequest.h
   )
 
 set(mmps_src
@@ -52,29 +57,34 @@ set(mmps_src
   src/v20200710/model/DescribeFlySecMiniAppReportUrlRequest.cpp
   src/v20200710/model/DescribeScanTaskListRequest.cpp
   src/v20200710/model/DescribeFlySecMiniAppScanTaskParamRequest.cpp
+  src/v20200710/model/ResourceUsageInfoData.cpp
   src/v20200710/model/CreateAppScanTaskRequest.cpp
   src/v20200710/model/DescribeScanTaskStatusRequest.cpp
-  src/v20200710/model/DescribeScanTaskListResponse.cpp
+  src/v20200710/model/DescribeBasicDiagnosisResourceUsageInfoResponse.cpp
+  src/v20200710/model/CreateAppScanTaskRepeatResponse.cpp
+  src/v20200710/model/DescribeBasicDiagnosisResourceUsageInfoRequest.cpp
+  src/v20200710/model/DescribeResourceUsageInfoResponse.cpp
+  src/v20200710/model/DescribeScanTaskReportUrlResponse.cpp
   src/v20200710/model/DescribeFlySecMiniAppScanTaskStatusRequest.cpp
   src/v20200710/model/CreateFlySecMiniAppScanTaskResponse.cpp
-  src/v20200710/model/CreateAppScanTaskRepeatResponse.cpp
+  src/v20200710/model/CreateFlySecMiniAppScanTaskRequest.cpp
   src/v20200710/model/DescribeFlySecMiniAppScanTaskListRequest.cpp
   src/v20200710/model/DescribeFlySecMiniAppScanTaskParamResponse.cpp
-  src/v20200710/model/DescribeScanTaskReportUrlResponse.cpp
-  src/v20200710/model/CreateFlySecMiniAppScanTaskRequest.cpp
+  src/v20200710/model/CreateFlySecMiniAppScanTaskRepeatRequest.cpp
   src/v20200710/model/CreateAppScanTaskRepeatRequest.cpp
   src/v20200710/model/DescribeScanTaskReportUrlRequest.cpp
   src/v20200710/model/TaskFlowStepsInfo.cpp
   src/v20200710/model/DescribeFlySecMiniAppScanTaskListResponse.cpp
   src/v20200710/model/FlySecMiniAppTaskData.cpp
-  src/v20200710/model/CreateFlySecMiniAppScanTaskRepeatRequest.cpp
   src/v20200710/model/CreateAppScanTaskResponse.cpp
   src/v20200710/model/DescribeFlySecMiniAppReportUrlResponse.cpp
+  src/v20200710/model/DescribeScanTaskListResponse.cpp
   src/v20200710/model/AppInfoItem.cpp
   src/v20200710/model/DescribeFlySecMiniAppScanTaskStatusResponse.cpp
   src/v20200710/model/CreateFlySecMiniAppScanTaskRepeatResponse.cpp
   src/v20200710/model/DescribeScanTaskStatusResponse.cpp
   src/v20200710/model/AppTaskData.cpp
+  src/v20200710/model/DescribeResourceUsageInfoRequest.cpp
   )
 
 set(mmps_include

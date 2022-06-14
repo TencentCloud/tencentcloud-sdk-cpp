@@ -53,6 +53,8 @@
 #include <tencentcloud/oceanus/v20190422/model/DescribeResourcesResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeSystemResourcesRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeSystemResourcesResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/ModifyJobRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/ModifyJobResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/RunJobsRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/RunJobsResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/StopJobsRequest.h>
@@ -118,6 +120,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSystemResourcesResponse> DescribeSystemResourcesOutcome;
                 typedef std::future<DescribeSystemResourcesOutcome> DescribeSystemResourcesOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DescribeSystemResourcesRequest&, DescribeSystemResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSystemResourcesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyJobResponse> ModifyJobOutcome;
+                typedef std::future<ModifyJobOutcome> ModifyJobOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::ModifyJobRequest&, ModifyJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunJobsResponse> RunJobsOutcome;
                 typedef std::future<RunJobsOutcome> RunJobsOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::RunJobsRequest&, RunJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunJobsAsyncHandler;
@@ -264,6 +269,25 @@ namespace TencentCloud
                 DescribeSystemResourcesOutcome DescribeSystemResources(const Model::DescribeSystemResourcesRequest &request);
                 void DescribeSystemResourcesAsync(const Model::DescribeSystemResourcesRequest& request, const DescribeSystemResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSystemResourcesOutcomeCallable DescribeSystemResourcesCallable(const Model::DescribeSystemResourcesRequest& request);
+
+                /**
+                 *更新作业属性，仅允许以下3种操作，不支持组合操作：
+(1)	更新作业名称
+(2)	更新作业备注 
+(3)	更新作业最大并行度
+变更前提：WorkerCuNum<=MaxParallelism
+如果MaxParallelism变小，不重启作业，待下一次重启生效
+如果MaxParallelism变大，则要求入参RestartAllowed必须为True
+假设作业运行状态，则先停止作业，再启动作业，中间状态丢失
+假设作业暂停状态，则将作业更改为停止状态，中间状态丢失
+
+
+                 * @param req ModifyJobRequest
+                 * @return ModifyJobOutcome
+                 */
+                ModifyJobOutcome ModifyJob(const Model::ModifyJobRequest &request);
+                void ModifyJobAsync(const Model::ModifyJobRequest& request, const ModifyJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyJobOutcomeCallable ModifyJobCallable(const Model::ModifyJobRequest& request);
 
                 /**
                  *批量启动或者恢复作业，批量操作数量上限20

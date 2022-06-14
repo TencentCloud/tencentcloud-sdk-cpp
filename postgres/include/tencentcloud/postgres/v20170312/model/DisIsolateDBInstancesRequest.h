@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源ID列表
-                     * @return DBInstanceIdSet 资源ID列表
+                     * 获取资源ID列表。注意：当前已不支持同时解隔离多个实例，这里只能传入单个实例ID。
+                     * @return DBInstanceIdSet 资源ID列表。注意：当前已不支持同时解隔离多个实例，这里只能传入单个实例ID。
                      */
                     std::vector<std::string> GetDBInstanceIdSet() const;
 
                     /**
-                     * 设置资源ID列表
-                     * @param DBInstanceIdSet 资源ID列表
+                     * 设置资源ID列表。注意：当前已不支持同时解隔离多个实例，这里只能传入单个实例ID。
+                     * @param DBInstanceIdSet 资源ID列表。注意：当前已不支持同时解隔离多个实例，这里只能传入单个实例ID。
                      */
                     void SetDBInstanceIdSet(const std::vector<std::string>& _dBInstanceIdSet);
 
@@ -117,7 +117,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源ID列表
+                     * 资源ID列表。注意：当前已不支持同时解隔离多个实例，这里只能传入单个实例ID。
                      */
                     std::vector<std::string> m_dBInstanceIdSet;
                     bool m_dBInstanceIdSetHasBeenSet;

@@ -67,6 +67,18 @@ namespace TencentCloud
                      */
                     bool PriceHasBeenSet() const;
 
+                    /**
+                     * 获取币种。例如，CNY：人民币。
+                     * @return Currency 币种。例如，CNY：人民币。
+                     */
+                    std::string GetCurrency() const;
+
+                    /**
+                     * 判断参数 Currency 是否已赋值
+                     * @return Currency 是否已赋值
+                     */
+                    bool CurrencyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -80,6 +92,12 @@ namespace TencentCloud
                      */
                     int64_t m_price;
                     bool m_priceHasBeenSet;
+
+                    /**
+                     * 币种。例如，CNY：人民币。
+                     */
+                    std::string m_currency;
+                    bool m_currencyHasBeenSet;
 
                 };
             }

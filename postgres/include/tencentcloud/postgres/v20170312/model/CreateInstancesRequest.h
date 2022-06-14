@@ -495,14 +495,14 @@ namespace TencentCloud
                     bool NeedSupportTDEHasBeenSet() const;
 
                     /**
-                     * 获取自定义密钥的keyId，若选择自定义密匙加密，则需要传入自定义密匙的keyId，keyId是CMK的唯一标识。
-                     * @return KMSKeyId 自定义密钥的keyId，若选择自定义密匙加密，则需要传入自定义密匙的keyId，keyId是CMK的唯一标识。
+                     * 获取自定义密钥的KeyId，若选择自定义密匙加密，则需要传入自定义密匙的KeyId，KeyId是CMK的唯一标识。
+                     * @return KMSKeyId 自定义密钥的KeyId，若选择自定义密匙加密，则需要传入自定义密匙的KeyId，KeyId是CMK的唯一标识。
                      */
                     std::string GetKMSKeyId() const;
 
                     /**
-                     * 设置自定义密钥的keyId，若选择自定义密匙加密，则需要传入自定义密匙的keyId，keyId是CMK的唯一标识。
-                     * @param KMSKeyId 自定义密钥的keyId，若选择自定义密匙加密，则需要传入自定义密匙的keyId，keyId是CMK的唯一标识。
+                     * 设置自定义密钥的KeyId，若选择自定义密匙加密，则需要传入自定义密匙的KeyId，KeyId是CMK的唯一标识。
+                     * @param KMSKeyId 自定义密钥的KeyId，若选择自定义密匙加密，则需要传入自定义密匙的KeyId，KeyId是CMK的唯一标识。
                      */
                     void SetKMSKeyId(const std::string& _kMSKeyId);
 
@@ -513,14 +513,14 @@ namespace TencentCloud
                     bool KMSKeyIdHasBeenSet() const;
 
                     /**
-                     * 获取使用KMS服务的地域，KMSRegion为空默认使用本地域的kms，本地域不支持的情况下需自选其他KMS支持的地域。
-                     * @return KMSRegion 使用KMS服务的地域，KMSRegion为空默认使用本地域的kms，本地域不支持的情况下需自选其他KMS支持的地域。
+                     * 获取使用KMS服务的地域，KMSRegion为空默认使用本地域的KMS，本地域不支持的情况下需自选其他KMS支持的地域。
+                     * @return KMSRegion 使用KMS服务的地域，KMSRegion为空默认使用本地域的KMS，本地域不支持的情况下需自选其他KMS支持的地域。
                      */
                     std::string GetKMSRegion() const;
 
                     /**
-                     * 设置使用KMS服务的地域，KMSRegion为空默认使用本地域的kms，本地域不支持的情况下需自选其他KMS支持的地域。
-                     * @param KMSRegion 使用KMS服务的地域，KMSRegion为空默认使用本地域的kms，本地域不支持的情况下需自选其他KMS支持的地域。
+                     * 设置使用KMS服务的地域，KMSRegion为空默认使用本地域的KMS，本地域不支持的情况下需自选其他KMS支持的地域。
+                     * @param KMSRegion 使用KMS服务的地域，KMSRegion为空默认使用本地域的KMS，本地域不支持的情况下需自选其他KMS支持的地域。
                      */
                     void SetKMSRegion(const std::string& _kMSRegion);
 
@@ -683,13 +683,13 @@ namespace TencentCloud
                     bool m_needSupportTDEHasBeenSet;
 
                     /**
-                     * 自定义密钥的keyId，若选择自定义密匙加密，则需要传入自定义密匙的keyId，keyId是CMK的唯一标识。
+                     * 自定义密钥的KeyId，若选择自定义密匙加密，则需要传入自定义密匙的KeyId，KeyId是CMK的唯一标识。
                      */
                     std::string m_kMSKeyId;
                     bool m_kMSKeyIdHasBeenSet;
 
                     /**
-                     * 使用KMS服务的地域，KMSRegion为空默认使用本地域的kms，本地域不支持的情况下需自选其他KMS支持的地域。
+                     * 使用KMS服务的地域，KMSRegion为空默认使用本地域的KMS，本地域不支持的情况下需自选其他KMS支持的地域。
                      */
                     std::string m_kMSRegion;
                     bool m_kMSRegionHasBeenSet;

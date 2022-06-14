@@ -685,6 +685,49 @@ OceanusClient::DescribeSystemResourcesOutcomeCallable OceanusClient::DescribeSys
     return task->get_future();
 }
 
+OceanusClient::ModifyJobOutcome OceanusClient::ModifyJob(const ModifyJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyJobResponse rsp = ModifyJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyJobOutcome(rsp);
+        else
+            return ModifyJobOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyJobOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::ModifyJobAsync(const ModifyJobRequest& request, const ModifyJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OceanusClient::ModifyJobOutcomeCallable OceanusClient::ModifyJobCallable(const ModifyJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyJobOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OceanusClient::RunJobsOutcome OceanusClient::RunJobs(const RunJobsRequest &request)
 {
     auto outcome = MakeRequest(request, "RunJobs");

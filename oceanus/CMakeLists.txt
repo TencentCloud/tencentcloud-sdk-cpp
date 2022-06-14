@@ -29,6 +29,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/ResourceLoc.h
   include/tencentcloud/oceanus/v20190422/model/RunJobsRequest.h
   include/tencentcloud/oceanus/v20190422/model/StopJobDescription.h
+  include/tencentcloud/oceanus/v20190422/model/ModifyJobResponse.h
   include/tencentcloud/oceanus/v20190422/model/DeleteTableConfigResponse.h
   include/tencentcloud/oceanus/v20190422/model/CreateResourceConfigResponse.h
   include/tencentcloud/oceanus/v20190422/model/CreateJobConfigRequest.h
@@ -49,6 +50,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/CheckSavepointResponse.h
   include/tencentcloud/oceanus/v20190422/model/DeleteResourceConfigsRequest.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobSavepointResponse.h
+  include/tencentcloud/oceanus/v20190422/model/ModifyJobRequest.h
   include/tencentcloud/oceanus/v20190422/model/RunJobsResponse.h
   include/tencentcloud/oceanus/v20190422/model/Filter.h
   include/tencentcloud/oceanus/v20190422/model/DeleteResourcesRequest.h
@@ -84,6 +86,7 @@ set(oceanus_src
   src/v20190422/model/ResourceLoc.cpp
   src/v20190422/model/RunJobsRequest.cpp
   src/v20190422/model/StopJobDescription.cpp
+  src/v20190422/model/ModifyJobResponse.cpp
   src/v20190422/model/DeleteTableConfigResponse.cpp
   src/v20190422/model/CreateResourceConfigResponse.cpp
   src/v20190422/model/CreateJobConfigRequest.cpp
@@ -104,6 +107,7 @@ set(oceanus_src
   src/v20190422/model/CheckSavepointResponse.cpp
   src/v20190422/model/DeleteResourceConfigsRequest.cpp
   src/v20190422/model/DescribeJobSavepointResponse.cpp
+  src/v20190422/model/ModifyJobRequest.cpp
   src/v20190422/model/RunJobsResponse.cpp
   src/v20190422/model/Filter.cpp
   src/v20190422/model/DeleteResourcesRequest.cpp
