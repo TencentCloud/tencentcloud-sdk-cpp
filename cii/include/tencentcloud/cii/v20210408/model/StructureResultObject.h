@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cii/v20210408/model/OcrRecognise.h>
 
 
 namespace TencentCloud
@@ -136,6 +137,28 @@ namespace TencentCloud
                      */
                     bool TaskFilesHasBeenSet() const;
 
+                    /**
+                     * 获取结构化字段结果数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResultFields 结构化字段结果数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<OcrRecognise> GetResultFields() const;
+
+                    /**
+                     * 设置结构化字段结果数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ResultFields 结构化字段结果数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetResultFields(const std::vector<OcrRecognise>& _resultFields);
+
+                    /**
+                     * 判断参数 ResultFields 是否已赋值
+                     * @return ResultFields 是否已赋值
+                     */
+                    bool ResultFieldsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +190,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_taskFiles;
                     bool m_taskFilesHasBeenSet;
+
+                    /**
+                     * 结构化字段结果数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<OcrRecognise> m_resultFields;
+                    bool m_resultFieldsHasBeenSet;
 
                 };
             }

@@ -204,6 +204,42 @@ namespace TencentCloud
                      */
                     bool TaskStatusHasBeenSet() const;
 
+                    /**
+                     * 获取任务状态
+                     * @return Result 任务状态
+                     */
+                    std::vector<int64_t> GetResult() const;
+
+                    /**
+                     * 设置任务状态
+                     * @param Result 任务状态
+                     */
+                    void SetResult(const std::vector<int64_t>& _result);
+
+                    /**
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
+                     */
+                    bool ResultHasBeenSet() const;
+
+                    /**
+                     * 获取操作者Uin
+                     * @return OperatorUin 操作者Uin
+                     */
+                    std::vector<int64_t> GetOperatorUin() const;
+
+                    /**
+                     * 设置操作者Uin
+                     * @param OperatorUin 操作者Uin
+                     */
+                    void SetOperatorUin(const std::vector<int64_t>& _operatorUin);
+
+                    /**
+                     * 判断参数 OperatorUin 是否已赋值
+                     * @return OperatorUin 是否已赋值
+                     */
+                    bool OperatorUinHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +295,18 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_taskStatus;
                     bool m_taskStatusHasBeenSet;
+
+                    /**
+                     * 任务状态
+                     */
+                    std::vector<int64_t> m_result;
+                    bool m_resultHasBeenSet;
+
+                    /**
+                     * 操作者Uin
+                     */
+                    std::vector<int64_t> m_operatorUin;
+                    bool m_operatorUinHasBeenSet;
 
                 };
             }

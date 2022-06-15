@@ -99,6 +99,8 @@
 #include <tencentcloud/dlc/v20210125/model/DetachUserPolicyResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DetachWorkGroupPolicyRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DetachWorkGroupPolicyResponse.h>
+#include <tencentcloud/dlc/v20210125/model/ListTaskJobLogDetailRequest.h>
+#include <tencentcloud/dlc/v20210125/model/ListTaskJobLogDetailResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ModifySparkAppRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ModifySparkAppResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ModifyUserRequest.h>
@@ -235,6 +237,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DetachWorkGroupPolicyResponse> DetachWorkGroupPolicyOutcome;
                 typedef std::future<DetachWorkGroupPolicyOutcome> DetachWorkGroupPolicyOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DetachWorkGroupPolicyRequest&, DetachWorkGroupPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachWorkGroupPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListTaskJobLogDetailResponse> ListTaskJobLogDetailOutcome;
+                typedef std::future<ListTaskJobLogDetailOutcome> ListTaskJobLogDetailOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::ListTaskJobLogDetailRequest&, ListTaskJobLogDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTaskJobLogDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySparkAppResponse> ModifySparkAppOutcome;
                 typedef std::future<ModifySparkAppOutcome> ModifySparkAppOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ModifySparkAppRequest&, ModifySparkAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySparkAppAsyncHandler;
@@ -591,6 +596,15 @@ namespace TencentCloud
                 DetachWorkGroupPolicyOutcome DetachWorkGroupPolicy(const Model::DetachWorkGroupPolicyRequest &request);
                 void DetachWorkGroupPolicyAsync(const Model::DetachWorkGroupPolicyRequest& request, const DetachWorkGroupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DetachWorkGroupPolicyOutcomeCallable DetachWorkGroupPolicyCallable(const Model::DetachWorkGroupPolicyRequest& request);
+
+                /**
+                 *本接口（ListTaskJobLogDetail）用于获取spark-jar日志列表
+                 * @param req ListTaskJobLogDetailRequest
+                 * @return ListTaskJobLogDetailOutcome
+                 */
+                ListTaskJobLogDetailOutcome ListTaskJobLogDetail(const Model::ListTaskJobLogDetailRequest &request);
+                void ListTaskJobLogDetailAsync(const Model::ListTaskJobLogDetailRequest& request, const ListTaskJobLogDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListTaskJobLogDetailOutcomeCallable ListTaskJobLogDetailCallable(const Model::ListTaskJobLogDetailRequest& request);
 
                 /**
                  *更新spark应用

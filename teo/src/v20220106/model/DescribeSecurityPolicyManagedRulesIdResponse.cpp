@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeSecurityPolicyManagedRulesIdResponse::DescribeSecurityPolicyManagedRulesIdResponse() :
     m_totalHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+    m_rulesHasBeenSet(false),
+    m_countHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,16 @@ CoreInternalOutcome DescribeSecurityPolicyManagedRulesIdResponse::Deserialize(co
         m_rulesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Count") && !rsp["Count"].IsNull())
+    {
+        if (!rsp["Count"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Count` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_count = rsp["Count"].GetInt64();
+        m_countHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string DescribeSecurityPolicyManagedRulesIdResponse::ToJsonString() const
         }
     }
 
+    if (m_countHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Count";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_count, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +175,16 @@ vector<ManagedRule> DescribeSecurityPolicyManagedRulesIdResponse::GetRules() con
 bool DescribeSecurityPolicyManagedRulesIdResponse::RulesHasBeenSet() const
 {
     return m_rulesHasBeenSet;
+}
+
+int64_t DescribeSecurityPolicyManagedRulesIdResponse::GetCount() const
+{
+    return m_count;
+}
+
+bool DescribeSecurityPolicyManagedRulesIdResponse::CountHasBeenSet() const
+{
+    return m_countHasBeenSet;
 }
 
 

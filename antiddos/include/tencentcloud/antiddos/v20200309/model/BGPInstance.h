@@ -30,6 +30,7 @@
 #include <tencentcloud/antiddos/v20200309/model/RegionInfo.h>
 #include <tencentcloud/antiddos/v20200309/model/PackInfo.h>
 #include <tencentcloud/antiddos/v20200309/model/EipProductInfo.h>
+#include <tencentcloud/antiddos/v20200309/model/TagInfo.h>
 
 
 namespace TencentCloud
@@ -334,6 +335,24 @@ namespace TencentCloud
                      */
                     bool CCEnableHasBeenSet() const;
 
+                    /**
+                     * 获取资源关联标签
+                     * @return TagInfoList 资源关联标签
+                     */
+                    std::vector<TagInfo> GetTagInfoList() const;
+
+                    /**
+                     * 设置资源关联标签
+                     * @param TagInfoList 资源关联标签
+                     */
+                    void SetTagInfoList(const std::vector<TagInfo>& _tagInfoList);
+
+                    /**
+                     * 判断参数 TagInfoList 是否已赋值
+                     * @return TagInfoList 是否已赋值
+                     */
+                    bool TagInfoListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -425,6 +444,12 @@ namespace TencentCloud
                      */
                     int64_t m_cCEnable;
                     bool m_cCEnableHasBeenSet;
+
+                    /**
+                     * 资源关联标签
+                     */
+                    std::vector<TagInfo> m_tagInfoList;
+                    bool m_tagInfoListHasBeenSet;
 
                 };
             }

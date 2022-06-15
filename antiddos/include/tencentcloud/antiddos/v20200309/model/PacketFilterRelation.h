@@ -84,6 +84,24 @@ namespace TencentCloud
                      */
                     bool InstanceDetailListHasBeenSet() const;
 
+                    /**
+                     * 获取修改时间
+                     * @return ModifyTime 修改时间
+                     */
+                    std::string GetModifyTime() const;
+
+                    /**
+                     * 设置修改时间
+                     * @param ModifyTime 修改时间
+                     */
+                    void SetModifyTime(const std::string& _modifyTime);
+
+                    /**
+                     * 判断参数 ModifyTime 是否已赋值
+                     * @return ModifyTime 是否已赋值
+                     */
+                    bool ModifyTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +115,12 @@ namespace TencentCloud
                      */
                     std::vector<InstanceRelation> m_instanceDetailList;
                     bool m_instanceDetailListHasBeenSet;
+
+                    /**
+                     * 修改时间
+                     */
+                    std::string m_modifyTime;
+                    bool m_modifyTimeHasBeenSet;
 
                 };
             }

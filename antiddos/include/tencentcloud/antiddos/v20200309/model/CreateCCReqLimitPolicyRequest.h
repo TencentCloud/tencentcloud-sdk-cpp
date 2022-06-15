@@ -133,6 +133,24 @@ namespace TencentCloud
                      */
                     bool PolicyHasBeenSet() const;
 
+                    /**
+                     * 获取是否为兜底频控
+                     * @return IsGlobal 是否为兜底频控
+                     */
+                    int64_t GetIsGlobal() const;
+
+                    /**
+                     * 设置是否为兜底频控
+                     * @param IsGlobal 是否为兜底频控
+                     */
+                    void SetIsGlobal(const int64_t& _isGlobal);
+
+                    /**
+                     * 判断参数 IsGlobal 是否已赋值
+                     * @return IsGlobal 是否已赋值
+                     */
+                    bool IsGlobalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -164,6 +182,12 @@ namespace TencentCloud
                      */
                     CCReqLimitPolicyRecord m_policy;
                     bool m_policyHasBeenSet;
+
+                    /**
+                     * 是否为兜底频控
+                     */
+                    int64_t m_isGlobal;
+                    bool m_isGlobalHasBeenSet;
 
                 };
             }

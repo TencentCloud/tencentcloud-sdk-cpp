@@ -68,6 +68,18 @@ namespace TencentCloud
                      */
                     bool RulesHasBeenSet() const;
 
+                    /**
+                     * 获取返回总数
+                     * @return Count 返回总数
+                     */
+                    int64_t GetCount() const;
+
+                    /**
+                     * 判断参数 Count 是否已赋值
+                     * @return Count 是否已赋值
+                     */
+                    bool CountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -81,6 +93,12 @@ namespace TencentCloud
                      */
                     std::vector<ManagedRule> m_rules;
                     bool m_rulesHasBeenSet;
+
+                    /**
+                     * 返回总数
+                     */
+                    int64_t m_count;
+                    bool m_countHasBeenSet;
 
                 };
             }

@@ -35,7 +35,8 @@ DescribeListBGPIPInstancesRequest::DescribeListBGPIPInstancesRequest() :
     m_filterDamDDoSStatusHasBeenSet(false),
     m_filterStatusHasBeenSet(false),
     m_filterCnameHasBeenSet(false),
-    m_filterInstanceIdListHasBeenSet(false)
+    m_filterInstanceIdListHasBeenSet(false),
+    m_filterTagHasBeenSet(false)
 {
 }
 
@@ -158,6 +159,15 @@ string DescribeListBGPIPInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_filterTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterTag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_filterTag.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -374,6 +384,22 @@ void DescribeListBGPIPInstancesRequest::SetFilterInstanceIdList(const vector<str
 bool DescribeListBGPIPInstancesRequest::FilterInstanceIdListHasBeenSet() const
 {
     return m_filterInstanceIdListHasBeenSet;
+}
+
+TagFilter DescribeListBGPIPInstancesRequest::GetFilterTag() const
+{
+    return m_filterTag;
+}
+
+void DescribeListBGPIPInstancesRequest::SetFilterTag(const TagFilter& _filterTag)
+{
+    m_filterTag = _filterTag;
+    m_filterTagHasBeenSet = true;
+}
+
+bool DescribeListBGPIPInstancesRequest::FilterTagHasBeenSet() const
+{
+    return m_filterTagHasBeenSet;
 }
 
 

@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取时移时长,单位分钟。
-                     * @return Duration 时移时长,单位分钟。
+                     * 获取时移文件时长,单位分钟。
+                     * @return Duration 时移文件时长,单位分钟。
                      */
                     double GetDuration() const;
 
                     /**
-                     * 设置时移时长,单位分钟。
-                     * @param Duration 时移时长,单位分钟。
+                     * 设置时移文件时长,单位分钟。
+                     * @param Duration 时移文件时长,单位分钟。
                      */
                     void SetDuration(const double& _duration);
 
@@ -127,7 +127,7 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 时移时长,单位分钟。
+                     * 时移文件时长,单位分钟。
                      */
                     double m_duration;
                     bool m_durationHasBeenSet;

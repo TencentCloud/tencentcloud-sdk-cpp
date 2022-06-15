@@ -27,7 +27,8 @@ CreateCCReqLimitPolicyRequest::CreateCCReqLimitPolicyRequest() :
     m_ipHasBeenSet(false),
     m_protocolHasBeenSet(false),
     m_domainHasBeenSet(false),
-    m_policyHasBeenSet(false)
+    m_policyHasBeenSet(false),
+    m_isGlobalHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string CreateCCReqLimitPolicyRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_policy.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_isGlobalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsGlobal";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isGlobal, allocator);
     }
 
 
@@ -165,6 +174,22 @@ void CreateCCReqLimitPolicyRequest::SetPolicy(const CCReqLimitPolicyRecord& _pol
 bool CreateCCReqLimitPolicyRequest::PolicyHasBeenSet() const
 {
     return m_policyHasBeenSet;
+}
+
+int64_t CreateCCReqLimitPolicyRequest::GetIsGlobal() const
+{
+    return m_isGlobal;
+}
+
+void CreateCCReqLimitPolicyRequest::SetIsGlobal(const int64_t& _isGlobal)
+{
+    m_isGlobal = _isGlobal;
+    m_isGlobalHasBeenSet = true;
+}
+
+bool CreateCCReqLimitPolicyRequest::IsGlobalHasBeenSet() const
+{
+    return m_isGlobalHasBeenSet;
 }
 
 

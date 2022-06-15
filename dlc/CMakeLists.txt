@@ -51,6 +51,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/KVPair.h
   include/tencentcloud/dlc/v20210125/model/TableBaseInfo.h
   include/tencentcloud/dlc/v20210125/model/AttachUserPolicyRequest.h
+  include/tencentcloud/dlc/v20210125/model/ListTaskJobLogDetailRequest.h
   include/tencentcloud/dlc/v20210125/model/TasksInfo.h
   include/tencentcloud/dlc/v20210125/model/AttachWorkGroupPolicyRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateUserResponse.h
@@ -110,6 +111,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CreateExportTaskResponse.h
   include/tencentcloud/dlc/v20210125/model/UnbindWorkGroupsFromUserRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeTableRequest.h
+  include/tencentcloud/dlc/v20210125/model/JobLogResult.h
   include/tencentcloud/dlc/v20210125/model/Other.h
   include/tencentcloud/dlc/v20210125/model/DeleteUsersFromWorkGroupRequest.h
   include/tencentcloud/dlc/v20210125/model/Policy.h
@@ -126,6 +128,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CreateTasksResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateSparkAppRequest.h
   include/tencentcloud/dlc/v20210125/model/UnbindWorkGroupsFromUserResponse.h
+  include/tencentcloud/dlc/v20210125/model/ListTaskJobLogDetailResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateWorkGroupRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeSparkAppTasksRequest.h
   include/tencentcloud/dlc/v20210125/model/SQLTask.h
@@ -172,6 +175,7 @@ set(dlc_src
   src/v20210125/model/KVPair.cpp
   src/v20210125/model/TableBaseInfo.cpp
   src/v20210125/model/AttachUserPolicyRequest.cpp
+  src/v20210125/model/ListTaskJobLogDetailRequest.cpp
   src/v20210125/model/TasksInfo.cpp
   src/v20210125/model/AttachWorkGroupPolicyRequest.cpp
   src/v20210125/model/CreateUserResponse.cpp
@@ -231,6 +235,7 @@ set(dlc_src
   src/v20210125/model/CreateExportTaskResponse.cpp
   src/v20210125/model/UnbindWorkGroupsFromUserRequest.cpp
   src/v20210125/model/DescribeTableRequest.cpp
+  src/v20210125/model/JobLogResult.cpp
   src/v20210125/model/Other.cpp
   src/v20210125/model/DeleteUsersFromWorkGroupRequest.cpp
   src/v20210125/model/Policy.cpp
@@ -247,6 +252,7 @@ set(dlc_src
   src/v20210125/model/CreateTasksResponse.cpp
   src/v20210125/model/CreateSparkAppRequest.cpp
   src/v20210125/model/UnbindWorkGroupsFromUserResponse.cpp
+  src/v20210125/model/ListTaskJobLogDetailResponse.cpp
   src/v20210125/model/CreateWorkGroupRequest.cpp
   src/v20210125/model/DescribeSparkAppTasksRequest.cpp
   src/v20210125/model/SQLTask.cpp

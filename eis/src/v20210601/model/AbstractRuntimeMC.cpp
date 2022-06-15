@@ -26,7 +26,9 @@ AbstractRuntimeMC::AbstractRuntimeMC() :
     m_typeHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_areaHasBeenSet(false),
-    m_addrHasBeenSet(false)
+    m_addrHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_expiredAtHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,26 @@ CoreInternalOutcome AbstractRuntimeMC::Deserialize(const rapidjson::Value &value
         m_addrHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AbstractRuntimeMC.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExpiredAt") && !value["ExpiredAt"].IsNull())
+    {
+        if (!value["ExpiredAt"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AbstractRuntimeMC.ExpiredAt` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_expiredAt = value["ExpiredAt"].GetInt64();
+        m_expiredAtHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +170,22 @@ void AbstractRuntimeMC::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Addr";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_addr.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_expiredAtHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpiredAt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_expiredAt, allocator);
     }
 
 }
@@ -247,5 +285,37 @@ void AbstractRuntimeMC::SetAddr(const string& _addr)
 bool AbstractRuntimeMC::AddrHasBeenSet() const
 {
     return m_addrHasBeenSet;
+}
+
+int64_t AbstractRuntimeMC::GetStatus() const
+{
+    return m_status;
+}
+
+void AbstractRuntimeMC::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool AbstractRuntimeMC::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+int64_t AbstractRuntimeMC::GetExpiredAt() const
+{
+    return m_expiredAt;
+}
+
+void AbstractRuntimeMC::SetExpiredAt(const int64_t& _expiredAt)
+{
+    m_expiredAt = _expiredAt;
+    m_expiredAtHasBeenSet = true;
+}
+
+bool AbstractRuntimeMC::ExpiredAtHasBeenSet() const
+{
+    return m_expiredAtHasBeenSet;
 }
 

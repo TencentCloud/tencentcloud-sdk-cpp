@@ -1674,6 +1674,49 @@ DlcClient::DetachWorkGroupPolicyOutcomeCallable DlcClient::DetachWorkGroupPolicy
     return task->get_future();
 }
 
+DlcClient::ListTaskJobLogDetailOutcome DlcClient::ListTaskJobLogDetail(const ListTaskJobLogDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListTaskJobLogDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListTaskJobLogDetailResponse rsp = ListTaskJobLogDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListTaskJobLogDetailOutcome(rsp);
+        else
+            return ListTaskJobLogDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return ListTaskJobLogDetailOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ListTaskJobLogDetailAsync(const ListTaskJobLogDetailRequest& request, const ListTaskJobLogDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListTaskJobLogDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::ListTaskJobLogDetailOutcomeCallable DlcClient::ListTaskJobLogDetailCallable(const ListTaskJobLogDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListTaskJobLogDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->ListTaskJobLogDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::ModifySparkAppOutcome DlcClient::ModifySparkApp(const ModifySparkAppRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifySparkApp");

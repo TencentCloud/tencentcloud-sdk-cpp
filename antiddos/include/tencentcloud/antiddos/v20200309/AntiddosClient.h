@@ -846,7 +846,7 @@ namespace TencentCloud
                 DescribeBlackWhiteIpListOutcomeCallable DescribeBlackWhiteIpListCallable(const Model::DescribeBlackWhiteIpListRequest& request);
 
                 /**
-                 *获取CC防护等级列表
+                 *获取边界防护CC防护等级列表
                  * @param req DescribeCCLevelListRequest
                  * @return DescribeCCLevelListOutcome
                  */

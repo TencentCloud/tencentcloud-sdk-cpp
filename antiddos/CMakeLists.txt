@@ -72,6 +72,7 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/CreatePortAclConfigRequest.h
   include/tencentcloud/antiddos/v20200309/model/DescribeCCThresholdListResponse.h
   include/tencentcloud/antiddos/v20200309/model/DescribeL7RulesBySSLCertIdRequest.h
+  include/tencentcloud/antiddos/v20200309/model/TagFilter.h
   include/tencentcloud/antiddos/v20200309/model/DescribeListPacketFilterConfigResponse.h
   include/tencentcloud/antiddos/v20200309/model/DeleteBlackWhiteIpListResponse.h
   include/tencentcloud/antiddos/v20200309/model/CreateSchedulingDomainRequest.h
@@ -227,6 +228,7 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/DDoSGeoIPBlockConfigRelation.h
   include/tencentcloud/antiddos/v20200309/model/DescribeListProtocolBlockConfigRequest.h
   include/tencentcloud/antiddos/v20200309/model/DescribeListBGPInstancesResponse.h
+  include/tencentcloud/antiddos/v20200309/model/TagInfo.h
   include/tencentcloud/antiddos/v20200309/model/DescribeDDoSTrendRequest.h
   include/tencentcloud/antiddos/v20200309/model/DeleteCCRequestLimitPolicyResponse.h
   include/tencentcloud/antiddos/v20200309/model/CreateCcBlackWhiteIpListRequest.h
@@ -318,6 +320,7 @@ set(antiddos_src
   src/v20200309/model/CreatePortAclConfigRequest.cpp
   src/v20200309/model/DescribeCCThresholdListResponse.cpp
   src/v20200309/model/DescribeL7RulesBySSLCertIdRequest.cpp
+  src/v20200309/model/TagFilter.cpp
   src/v20200309/model/DescribeListPacketFilterConfigResponse.cpp
   src/v20200309/model/DeleteBlackWhiteIpListResponse.cpp
   src/v20200309/model/CreateSchedulingDomainRequest.cpp
@@ -473,6 +476,7 @@ set(antiddos_src
   src/v20200309/model/DDoSGeoIPBlockConfigRelation.cpp
   src/v20200309/model/DescribeListProtocolBlockConfigRequest.cpp
   src/v20200309/model/DescribeListBGPInstancesResponse.cpp
+  src/v20200309/model/TagInfo.cpp
   src/v20200309/model/DescribeDDoSTrendRequest.cpp
   src/v20200309/model/DeleteCCRequestLimitPolicyResponse.cpp
   src/v20200309/model/CreateCcBlackWhiteIpListRequest.cpp

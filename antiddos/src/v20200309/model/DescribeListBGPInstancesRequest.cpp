@@ -33,7 +33,8 @@ DescribeListBGPInstancesRequest::DescribeListBGPInstancesRequest() :
     m_filterStatusHasBeenSet(false),
     m_filterBoundStatusHasBeenSet(false),
     m_filterInstanceIdListHasBeenSet(false),
-    m_filterEnterpriseFlagHasBeenSet(false)
+    m_filterEnterpriseFlagHasBeenSet(false),
+    m_filterTagHasBeenSet(false)
 {
 }
 
@@ -135,6 +136,15 @@ string DescribeListBGPInstancesRequest::ToJsonString() const
         string key = "FilterEnterpriseFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_filterEnterpriseFlag, allocator);
+    }
+
+    if (m_filterTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterTag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_filterTag.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -319,6 +329,22 @@ void DescribeListBGPInstancesRequest::SetFilterEnterpriseFlag(const uint64_t& _f
 bool DescribeListBGPInstancesRequest::FilterEnterpriseFlagHasBeenSet() const
 {
     return m_filterEnterpriseFlagHasBeenSet;
+}
+
+TagFilter DescribeListBGPInstancesRequest::GetFilterTag() const
+{
+    return m_filterTag;
+}
+
+void DescribeListBGPInstancesRequest::SetFilterTag(const TagFilter& _filterTag)
+{
+    m_filterTag = _filterTag;
+    m_filterTagHasBeenSet = true;
+}
+
+bool DescribeListBGPInstancesRequest::FilterTagHasBeenSet() const
+{
+    return m_filterTagHasBeenSet;
 }
 
 

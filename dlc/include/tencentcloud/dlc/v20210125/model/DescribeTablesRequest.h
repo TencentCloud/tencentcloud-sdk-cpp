@@ -196,14 +196,14 @@ table-id - String - （过滤条件）table id形如：12342。
                     bool SortHasBeenSet() const;
 
                     /**
-                     * 获取排序字段，false：降序（默认）；true
-                     * @return Asc 排序字段，false：降序（默认）；true
+                     * 获取排序字段，false：降序（默认）；true：升序
+                     * @return Asc 排序字段，false：降序（默认）；true：升序
                      */
                     bool GetAsc() const;
 
                     /**
-                     * 设置排序字段，false：降序（默认）；true
-                     * @param Asc 排序字段，false：降序（默认）；true
+                     * 设置排序字段，false：降序（默认）；true：升序
+                     * @param Asc 排序字段，false：降序（默认）；true：升序
                      */
                     void SetAsc(const bool& _asc);
 
@@ -302,7 +302,7 @@ table-id - String - （过滤条件）table id形如：12342。
                     bool m_sortHasBeenSet;
 
                     /**
-                     * 排序字段，false：降序（默认）；true
+                     * 排序字段，false：降序（默认）；true：升序
                      */
                     bool m_asc;
                     bool m_ascHasBeenSet;

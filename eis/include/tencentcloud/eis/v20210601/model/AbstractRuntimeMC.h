@@ -154,6 +154,42 @@ namespace TencentCloud
                      */
                     bool AddrHasBeenSet() const;
 
+                    /**
+                     * 获取运行时状态
+                     * @return Status 运行时状态
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置运行时状态
+                     * @param Status 运行时状态
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取运行时过期时间
+                     * @return ExpiredAt 运行时过期时间
+                     */
+                    int64_t GetExpiredAt() const;
+
+                    /**
+                     * 设置运行时过期时间
+                     * @param ExpiredAt 运行时过期时间
+                     */
+                    void SetExpiredAt(const int64_t& _expiredAt);
+
+                    /**
+                     * 判断参数 ExpiredAt 是否已赋值
+                     * @return ExpiredAt 是否已赋值
+                     */
+                    bool ExpiredAtHasBeenSet() const;
+
                 private:
 
                     /**
@@ -191,6 +227,18 @@ namespace TencentCloud
                      */
                     std::string m_addr;
                     bool m_addrHasBeenSet;
+
+                    /**
+                     * 运行时状态
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 运行时过期时间
+                     */
+                    int64_t m_expiredAt;
+                    bool m_expiredAtHasBeenSet;
 
                 };
             }

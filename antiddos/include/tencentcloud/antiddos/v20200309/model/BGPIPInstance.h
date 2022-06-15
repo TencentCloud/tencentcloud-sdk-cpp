@@ -32,6 +32,7 @@
 #include <tencentcloud/antiddos/v20200309/model/StaticPackRelation.h>
 #include <tencentcloud/antiddos/v20200309/model/EipAddressPackRelation.h>
 #include <tencentcloud/antiddos/v20200309/model/EipAddressRelation.h>
+#include <tencentcloud/antiddos/v20200309/model/TagInfo.h>
 
 
 namespace TencentCloud
@@ -498,6 +499,28 @@ namespace TencentCloud
                      */
                     bool BGPIPChannelFlagHasBeenSet() const;
 
+                    /**
+                     * 获取资源关联标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagInfoList 资源关联标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TagInfo> GetTagInfoList() const;
+
+                    /**
+                     * 设置资源关联标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TagInfoList 资源关联标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTagInfoList(const std::vector<TagInfo>& _tagInfoList);
+
+                    /**
+                     * 判断参数 TagInfoList 是否已赋值
+                     * @return TagInfoList 是否已赋值
+                     */
+                    bool TagInfoListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -640,6 +663,13 @@ namespace TencentCloud
                      */
                     uint64_t m_bGPIPChannelFlag;
                     bool m_bGPIPChannelFlagHasBeenSet;
+
+                    /**
+                     * 资源关联标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TagInfo> m_tagInfoList;
+                    bool m_tagInfoListHasBeenSet;
 
                 };
             }

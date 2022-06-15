@@ -316,6 +316,94 @@ namespace TencentCloud
                      */
                     bool MemoryLimitHasBeenSet() const;
 
+                    /**
+                     * 获取运行时过期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExpiredAt 运行时过期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetExpiredAt() const;
+
+                    /**
+                     * 设置运行时过期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ExpiredAt 运行时过期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExpiredAt(const int64_t& _expiredAt);
+
+                    /**
+                     * 判断参数 ExpiredAt 是否已赋值
+                     * @return ExpiredAt 是否已赋值
+                     */
+                    bool ExpiredAtHasBeenSet() const;
+
+                    /**
+                     * 获取收费类型：0:缺省，1:通过订单页自助下单(支持续费/升配等操作)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChargeType 收费类型：0:缺省，1:通过订单页自助下单(支持续费/升配等操作)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetChargeType() const;
+
+                    /**
+                     * 设置收费类型：0:缺省，1:通过订单页自助下单(支持续费/升配等操作)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ChargeType 收费类型：0:缺省，1:通过订单页自助下单(支持续费/升配等操作)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetChargeType(const int64_t& _chargeType);
+
+                    /**
+                     * 判断参数 ChargeType 是否已赋值
+                     * @return ChargeType 是否已赋值
+                     */
+                    bool ChargeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取资源限制类型：0:无限制，1:有限制
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceLimitType 资源限制类型：0:无限制，1:有限制
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetResourceLimitType() const;
+
+                    /**
+                     * 设置资源限制类型：0:无限制，1:有限制
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ResourceLimitType 资源限制类型：0:无限制，1:有限制
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetResourceLimitType(const int64_t& _resourceLimitType);
+
+                    /**
+                     * 判断参数 ResourceLimitType 是否已赋值
+                     * @return ResourceLimitType 是否已赋值
+                     */
+                    bool ResourceLimitTypeHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoRenewal 是否开启自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetAutoRenewal() const;
+
+                    /**
+                     * 设置是否开启自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AutoRenewal 是否开启自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAutoRenewal(const bool& _autoRenewal);
+
+                    /**
+                     * 判断参数 AutoRenewal 是否已赋值
+                     * @return AutoRenewal 是否已赋值
+                     */
+                    bool AutoRenewalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -407,6 +495,34 @@ namespace TencentCloud
                      */
                     double m_memoryLimit;
                     bool m_memoryLimitHasBeenSet;
+
+                    /**
+                     * 运行时过期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_expiredAt;
+                    bool m_expiredAtHasBeenSet;
+
+                    /**
+                     * 收费类型：0:缺省，1:通过订单页自助下单(支持续费/升配等操作)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_chargeType;
+                    bool m_chargeTypeHasBeenSet;
+
+                    /**
+                     * 资源限制类型：0:无限制，1:有限制
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_resourceLimitType;
+                    bool m_resourceLimitTypeHasBeenSet;
+
+                    /**
+                     * 是否开启自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_autoRenewal;
+                    bool m_autoRenewalHasBeenSet;
 
                 };
             }

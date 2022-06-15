@@ -40,7 +40,8 @@ BGPIPInstance::BGPIPInstance() :
     m_domainHasBeenSet(false),
     m_damDDoSStatusHasBeenSet(false),
     m_v6FlagHasBeenSet(false),
-    m_bGPIPChannelFlagHasBeenSet(false)
+    m_bGPIPChannelFlagHasBeenSet(false),
+    m_tagInfoListHasBeenSet(false)
 {
 }
 
@@ -305,6 +306,26 @@ CoreInternalOutcome BGPIPInstance::Deserialize(const rapidjson::Value &value)
         m_bGPIPChannelFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("TagInfoList") && !value["TagInfoList"].IsNull())
+    {
+        if (!value["TagInfoList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstance.TagInfoList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TagInfoList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TagInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagInfoList.push_back(item);
+        }
+        m_tagInfoListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -478,6 +499,21 @@ void BGPIPInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "BGPIPChannelFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bGPIPChannelFlag, allocator);
+    }
+
+    if (m_tagInfoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagInfoList.begin(); itr != m_tagInfoList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -801,5 +837,21 @@ void BGPIPInstance::SetBGPIPChannelFlag(const uint64_t& _bGPIPChannelFlag)
 bool BGPIPInstance::BGPIPChannelFlagHasBeenSet() const
 {
     return m_bGPIPChannelFlagHasBeenSet;
+}
+
+vector<TagInfo> BGPIPInstance::GetTagInfoList() const
+{
+    return m_tagInfoList;
+}
+
+void BGPIPInstance::SetTagInfoList(const vector<TagInfo>& _tagInfoList)
+{
+    m_tagInfoList = _tagInfoList;
+    m_tagInfoListHasBeenSet = true;
+}
+
+bool BGPIPInstance::TagInfoListHasBeenSet() const
+{
+    return m_tagInfoListHasBeenSet;
 }
 

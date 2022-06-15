@@ -277,14 +277,14 @@ namespace TencentCloud
                     bool AppConfHasBeenSet() const;
 
                     /**
-                     * 获取是否本地上传，可去cos,lakefs
-                     * @return IsLocalJars 是否本地上传，可去cos,lakefs
+                     * 获取jar资源依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     * @return IsLocalJars jar资源依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
                      */
                     std::string GetIsLocalJars() const;
 
                     /**
-                     * 设置是否本地上传，可去cos,lakefs
-                     * @param IsLocalJars 是否本地上传，可去cos,lakefs
+                     * 设置jar资源依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     * @param IsLocalJars jar资源依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
                      */
                     void SetIsLocalJars(const std::string& _isLocalJars);
 
@@ -313,14 +313,14 @@ namespace TencentCloud
                     bool AppJarsHasBeenSet() const;
 
                     /**
-                     * 获取是否本地上传，可去cos,lakefs
-                     * @return IsLocalFiles 是否本地上传，可去cos,lakefs
+                     * 获取file资源依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     * @return IsLocalFiles file资源依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
                      */
                     std::string GetIsLocalFiles() const;
 
                     /**
-                     * 设置是否本地上传，可去cos,lakefs
-                     * @param IsLocalFiles 是否本地上传，可去cos,lakefs
+                     * 设置file资源依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     * @param IsLocalFiles file资源依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
                      */
                     void SetIsLocalFiles(const std::string& _isLocalFiles);
 
@@ -519,7 +519,7 @@ namespace TencentCloud
                     bool m_appConfHasBeenSet;
 
                     /**
-                     * 是否本地上传，可去cos,lakefs
+                     * jar资源依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
                      */
                     std::string m_isLocalJars;
                     bool m_isLocalJarsHasBeenSet;
@@ -531,7 +531,7 @@ namespace TencentCloud
                     bool m_appJarsHasBeenSet;
 
                     /**
-                     * 是否本地上传，可去cos,lakefs
+                     * file资源依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
                      */
                     std::string m_isLocalFiles;
                     bool m_isLocalFilesHasBeenSet;

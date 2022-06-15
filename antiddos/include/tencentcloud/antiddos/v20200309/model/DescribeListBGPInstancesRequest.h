@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/antiddos/v20200309/model/TagFilter.h>
 
 
 namespace TencentCloud
@@ -240,6 +241,24 @@ namespace TencentCloud
                      */
                     bool FilterEnterpriseFlagHasBeenSet() const;
 
+                    /**
+                     * 获取标签搜索
+                     * @return FilterTag 标签搜索
+                     */
+                    TagFilter GetFilterTag() const;
+
+                    /**
+                     * 设置标签搜索
+                     * @param FilterTag 标签搜索
+                     */
+                    void SetFilterTag(const TagFilter& _filterTag);
+
+                    /**
+                     * 判断参数 FilterTag 是否已赋值
+                     * @return FilterTag 是否已赋值
+                     */
+                    bool FilterTagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -307,6 +326,12 @@ namespace TencentCloud
                      */
                     uint64_t m_filterEnterpriseFlag;
                     bool m_filterEnterpriseFlagHasBeenSet;
+
+                    /**
+                     * 标签搜索
+                     */
+                    TagFilter m_filterTag;
+                    bool m_filterTagHasBeenSet;
 
                 };
             }
