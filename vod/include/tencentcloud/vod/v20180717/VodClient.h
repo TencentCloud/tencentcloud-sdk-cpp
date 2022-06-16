@@ -263,8 +263,12 @@
 #include <tencentcloud/vod/v20180717/model/PullUploadResponse.h>
 #include <tencentcloud/vod/v20180717/model/PushUrlCacheRequest.h>
 #include <tencentcloud/vod/v20180717/model/PushUrlCacheResponse.h>
+#include <tencentcloud/vod/v20180717/model/RefreshUrlCacheRequest.h>
+#include <tencentcloud/vod/v20180717/model/RefreshUrlCacheResponse.h>
 #include <tencentcloud/vod/v20180717/model/ResetProcedureTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/ResetProcedureTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/RestoreMediaRequest.h>
+#include <tencentcloud/vod/v20180717/model/RestoreMediaResponse.h>
 #include <tencentcloud/vod/v20180717/model/ReviewImageRequest.h>
 #include <tencentcloud/vod/v20180717/model/ReviewImageResponse.h>
 #include <tencentcloud/vod/v20180717/model/SearchMediaRequest.h>
@@ -649,9 +653,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::PushUrlCacheResponse> PushUrlCacheOutcome;
                 typedef std::future<PushUrlCacheOutcome> PushUrlCacheOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::PushUrlCacheRequest&, PushUrlCacheOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PushUrlCacheAsyncHandler;
+                typedef Outcome<Core::Error, Model::RefreshUrlCacheResponse> RefreshUrlCacheOutcome;
+                typedef std::future<RefreshUrlCacheOutcome> RefreshUrlCacheOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::RefreshUrlCacheRequest&, RefreshUrlCacheOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RefreshUrlCacheAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResetProcedureTemplateResponse> ResetProcedureTemplateOutcome;
                 typedef std::future<ResetProcedureTemplateOutcome> ResetProcedureTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ResetProcedureTemplateRequest&, ResetProcedureTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetProcedureTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::RestoreMediaResponse> RestoreMediaOutcome;
+                typedef std::future<RestoreMediaOutcome> RestoreMediaOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::RestoreMediaRequest&, RestoreMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestoreMediaAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReviewImageResponse> ReviewImageOutcome;
                 typedef std::future<ReviewImageOutcome> ReviewImageOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ReviewImageRequest&, ReviewImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReviewImageAsyncHandler;
@@ -1936,6 +1946,18 @@ namespace TencentCloud
                 PushUrlCacheOutcomeCallable PushUrlCacheCallable(const Model::PushUrlCacheRequest& request);
 
                 /**
+                 *1. 刷新指定的 URL 列表。
+2. URL 的域名必须已在云点播中注册。
+3. 单次请求最多指定20个 URL。
+4. 默认刷新配额为每天100000个 URL。
+                 * @param req RefreshUrlCacheRequest
+                 * @return RefreshUrlCacheOutcome
+                 */
+                RefreshUrlCacheOutcome RefreshUrlCache(const Model::RefreshUrlCacheRequest &request);
+                void RefreshUrlCacheAsync(const Model::RefreshUrlCacheRequest& request, const RefreshUrlCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RefreshUrlCacheOutcomeCallable RefreshUrlCacheCallable(const Model::RefreshUrlCacheRequest& request);
+
+                /**
                  *重新设置用户自定义任务流模板的内容。  
                  * @param req ResetProcedureTemplateRequest
                  * @return ResetProcedureTemplateOutcome
@@ -1943,6 +1965,15 @@ namespace TencentCloud
                 ResetProcedureTemplateOutcome ResetProcedureTemplate(const Model::ResetProcedureTemplateRequest &request);
                 void ResetProcedureTemplateAsync(const Model::ResetProcedureTemplateRequest& request, const ResetProcedureTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResetProcedureTemplateOutcomeCallable ResetProcedureTemplateCallable(const Model::ResetProcedureTemplateRequest& request);
+
+                /**
+                 *当媒体文件的存储类型是归档存储或深度归档存储时，是不可访问的。如需访问，则需要调用本接口进行解冻，解冻后可访问的媒体文件是临时的，在有效期过后，则不可访问。
+                 * @param req RestoreMediaRequest
+                 * @return RestoreMediaOutcome
+                 */
+                RestoreMediaOutcome RestoreMedia(const Model::RestoreMediaRequest &request);
+                void RestoreMediaAsync(const Model::RestoreMediaRequest& request, const RestoreMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RestoreMediaOutcomeCallable RestoreMediaCallable(const Model::RestoreMediaRequest& request);
 
                 /**
                  *对点播中的图片文件发起智能识别（令人反感的信息、不安全的信息、不适宜的信息）任务。

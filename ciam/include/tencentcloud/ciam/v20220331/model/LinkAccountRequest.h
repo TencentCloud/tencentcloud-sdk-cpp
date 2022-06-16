@@ -97,14 +97,26 @@ namespace TencentCloud
                     bool SecondaryUserIdHasBeenSet() const;
 
                     /**
-                     * 获取融合属性(PHONENUMBER,EMAIL)
-                     * @return UserLinkedOnAttribute 融合属性(PHONENUMBER,EMAIL)
+                     * 获取融合属性
+
+<li> **PHONENUMBER** </li>	  手机号码
+<li> **EMAIL** </li>  邮箱
+                     * @return UserLinkedOnAttribute 融合属性
+
+<li> **PHONENUMBER** </li>	  手机号码
+<li> **EMAIL** </li>  邮箱
                      */
                     std::string GetUserLinkedOnAttribute() const;
 
                     /**
-                     * 设置融合属性(PHONENUMBER,EMAIL)
-                     * @param UserLinkedOnAttribute 融合属性(PHONENUMBER,EMAIL)
+                     * 设置融合属性
+
+<li> **PHONENUMBER** </li>	  手机号码
+<li> **EMAIL** </li>  邮箱
+                     * @param UserLinkedOnAttribute 融合属性
+
+<li> **PHONENUMBER** </li>	  手机号码
+<li> **EMAIL** </li>  邮箱
                      */
                     void SetUserLinkedOnAttribute(const std::string& _userLinkedOnAttribute);
 
@@ -135,7 +147,10 @@ namespace TencentCloud
                     bool m_secondaryUserIdHasBeenSet;
 
                     /**
-                     * 融合属性(PHONENUMBER,EMAIL)
+                     * 融合属性
+
+<li> **PHONENUMBER** </li>	  手机号码
+<li> **EMAIL** </li>  邮箱
                      */
                     std::string m_userLinkedOnAttribute;
                     bool m_userLinkedOnAttributeHasBeenSet;

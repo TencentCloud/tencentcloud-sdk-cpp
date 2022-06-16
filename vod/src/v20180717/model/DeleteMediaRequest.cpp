@@ -24,8 +24,8 @@ using namespace std;
 
 DeleteMediaRequest::DeleteMediaRequest() :
     m_fileIdHasBeenSet(false),
-    m_deletePartsHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_subAppIdHasBeenSet(false),
+    m_deletePartsHasBeenSet(false)
 {
 }
 
@@ -44,6 +44,14 @@ string DeleteMediaRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
+    }
+
     if (m_deletePartsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -57,14 +65,6 @@ string DeleteMediaRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
-    }
-
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
     }
 
 
@@ -91,22 +91,6 @@ bool DeleteMediaRequest::FileIdHasBeenSet() const
     return m_fileIdHasBeenSet;
 }
 
-vector<MediaDeleteItem> DeleteMediaRequest::GetDeleteParts() const
-{
-    return m_deleteParts;
-}
-
-void DeleteMediaRequest::SetDeleteParts(const vector<MediaDeleteItem>& _deleteParts)
-{
-    m_deleteParts = _deleteParts;
-    m_deletePartsHasBeenSet = true;
-}
-
-bool DeleteMediaRequest::DeletePartsHasBeenSet() const
-{
-    return m_deletePartsHasBeenSet;
-}
-
 uint64_t DeleteMediaRequest::GetSubAppId() const
 {
     return m_subAppId;
@@ -121,6 +105,22 @@ void DeleteMediaRequest::SetSubAppId(const uint64_t& _subAppId)
 bool DeleteMediaRequest::SubAppIdHasBeenSet() const
 {
     return m_subAppIdHasBeenSet;
+}
+
+vector<MediaDeleteItem> DeleteMediaRequest::GetDeleteParts() const
+{
+    return m_deleteParts;
+}
+
+void DeleteMediaRequest::SetDeleteParts(const vector<MediaDeleteItem>& _deleteParts)
+{
+    m_deleteParts = _deleteParts;
+    m_deletePartsHasBeenSet = true;
+}
+
+bool DeleteMediaRequest::DeletePartsHasBeenSet() const
+{
+    return m_deletePartsHasBeenSet;
 }
 
 

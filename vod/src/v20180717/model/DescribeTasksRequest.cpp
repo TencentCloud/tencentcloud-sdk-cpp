@@ -23,14 +23,14 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 DescribeTasksRequest::DescribeTasksRequest() :
+    m_subAppIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_fileIdHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_finishTimeHasBeenSet(false),
     m_sortHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_scrollTokenHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_scrollTokenHasBeenSet(false)
 {
 }
 
@@ -40,6 +40,14 @@ string DescribeTasksRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
+    }
 
     if (m_statusHasBeenSet)
     {
@@ -100,14 +108,6 @@ string DescribeTasksRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_scrollToken.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -115,6 +115,22 @@ string DescribeTasksRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t DescribeTasksRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void DescribeTasksRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool DescribeTasksRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
+}
 
 string DescribeTasksRequest::GetStatus() const
 {
@@ -226,22 +242,6 @@ void DescribeTasksRequest::SetScrollToken(const string& _scrollToken)
 bool DescribeTasksRequest::ScrollTokenHasBeenSet() const
 {
     return m_scrollTokenHasBeenSet;
-}
-
-uint64_t DescribeTasksRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void DescribeTasksRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool DescribeTasksRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

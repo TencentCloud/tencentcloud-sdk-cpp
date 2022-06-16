@@ -2233,6 +2233,49 @@ TeoClient::DescribeTimingL7AnalysisDataOutcomeCallable TeoClient::DescribeTiming
     return task->get_future();
 }
 
+TeoClient::DescribeTimingL7CacheDataOutcome TeoClient::DescribeTimingL7CacheData(const DescribeTimingL7CacheDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTimingL7CacheData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTimingL7CacheDataResponse rsp = DescribeTimingL7CacheDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTimingL7CacheDataOutcome(rsp);
+        else
+            return DescribeTimingL7CacheDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTimingL7CacheDataOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeTimingL7CacheDataAsync(const DescribeTimingL7CacheDataRequest& request, const DescribeTimingL7CacheDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTimingL7CacheData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeTimingL7CacheDataOutcomeCallable TeoClient::DescribeTimingL7CacheDataCallable(const DescribeTimingL7CacheDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTimingL7CacheDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTimingL7CacheData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::DescribeTopL7AnalysisDataOutcome TeoClient::DescribeTopL7AnalysisData(const DescribeTopL7AnalysisDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTopL7AnalysisData");
@@ -2269,6 +2312,49 @@ TeoClient::DescribeTopL7AnalysisDataOutcomeCallable TeoClient::DescribeTopL7Anal
         [this, request]()
         {
             return this->DescribeTopL7AnalysisData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DescribeTopL7CacheDataOutcome TeoClient::DescribeTopL7CacheData(const DescribeTopL7CacheDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTopL7CacheData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTopL7CacheDataResponse rsp = DescribeTopL7CacheDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTopL7CacheDataOutcome(rsp);
+        else
+            return DescribeTopL7CacheDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTopL7CacheDataOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeTopL7CacheDataAsync(const DescribeTopL7CacheDataRequest& request, const DescribeTopL7CacheDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTopL7CacheData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeTopL7CacheDataOutcomeCallable TeoClient::DescribeTopL7CacheDataCallable(const DescribeTopL7CacheDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTopL7CacheDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTopL7CacheData(request);
         }
     );
 

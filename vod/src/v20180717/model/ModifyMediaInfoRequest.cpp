@@ -24,6 +24,7 @@ using namespace std;
 
 ModifyMediaInfoRequest::ModifyMediaInfoRequest() :
     m_fileIdHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_classIdHasBeenSet(false),
@@ -37,8 +38,7 @@ ModifyMediaInfoRequest::ModifyMediaInfoRequest() :
     m_clearTagsHasBeenSet(false),
     m_addSubtitlesHasBeenSet(false),
     m_deleteSubtitleIdsHasBeenSet(false),
-    m_clearSubtitlesHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_clearSubtitlesHasBeenSet(false)
 {
 }
 
@@ -55,6 +55,14 @@ string ModifyMediaInfoRequest::ToJsonString() const
         string key = "FileId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
     if (m_nameHasBeenSet)
@@ -203,14 +211,6 @@ string ModifyMediaInfoRequest::ToJsonString() const
         d.AddMember(iKey, m_clearSubtitles, allocator);
     }
 
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -233,6 +233,22 @@ void ModifyMediaInfoRequest::SetFileId(const string& _fileId)
 bool ModifyMediaInfoRequest::FileIdHasBeenSet() const
 {
     return m_fileIdHasBeenSet;
+}
+
+uint64_t ModifyMediaInfoRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void ModifyMediaInfoRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool ModifyMediaInfoRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 string ModifyMediaInfoRequest::GetName() const
@@ -457,22 +473,6 @@ void ModifyMediaInfoRequest::SetClearSubtitles(const int64_t& _clearSubtitles)
 bool ModifyMediaInfoRequest::ClearSubtitlesHasBeenSet() const
 {
     return m_clearSubtitlesHasBeenSet;
-}
-
-uint64_t ModifyMediaInfoRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void ModifyMediaInfoRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool ModifyMediaInfoRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

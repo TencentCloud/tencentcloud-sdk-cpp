@@ -23,6 +23,10 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ciam/v20220331/model/CreateApiImportUserJobRequest.h>
+#include <tencentcloud/ciam/v20220331/model/CreateApiImportUserJobResponse.h>
+#include <tencentcloud/ciam/v20220331/model/CreateFileExportUserJobRequest.h>
+#include <tencentcloud/ciam/v20220331/model/CreateFileExportUserJobResponse.h>
 #include <tencentcloud/ciam/v20220331/model/CreateUserRequest.h>
 #include <tencentcloud/ciam/v20220331/model/CreateUserResponse.h>
 #include <tencentcloud/ciam/v20220331/model/DeleteUsersRequest.h>
@@ -31,6 +35,8 @@
 #include <tencentcloud/ciam/v20220331/model/DescribeUserByIdResponse.h>
 #include <tencentcloud/ciam/v20220331/model/LinkAccountRequest.h>
 #include <tencentcloud/ciam/v20220331/model/LinkAccountResponse.h>
+#include <tencentcloud/ciam/v20220331/model/ListJobsRequest.h>
+#include <tencentcloud/ciam/v20220331/model/ListJobsResponse.h>
 #include <tencentcloud/ciam/v20220331/model/ListUserRequest.h>
 #include <tencentcloud/ciam/v20220331/model/ListUserResponse.h>
 #include <tencentcloud/ciam/v20220331/model/ListUserByPropertyRequest.h>
@@ -57,6 +63,12 @@ namespace TencentCloud
                 CiamClient(const Credential &credential, const std::string &region);
                 CiamClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CreateApiImportUserJobResponse> CreateApiImportUserJobOutcome;
+                typedef std::future<CreateApiImportUserJobOutcome> CreateApiImportUserJobOutcomeCallable;
+                typedef std::function<void(const CiamClient*, const Model::CreateApiImportUserJobRequest&, CreateApiImportUserJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateApiImportUserJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateFileExportUserJobResponse> CreateFileExportUserJobOutcome;
+                typedef std::future<CreateFileExportUserJobOutcome> CreateFileExportUserJobOutcomeCallable;
+                typedef std::function<void(const CiamClient*, const Model::CreateFileExportUserJobRequest&, CreateFileExportUserJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFileExportUserJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateUserResponse> CreateUserOutcome;
                 typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
                 typedef std::function<void(const CiamClient*, const Model::CreateUserRequest&, CreateUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserAsyncHandler;
@@ -69,6 +81,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::LinkAccountResponse> LinkAccountOutcome;
                 typedef std::future<LinkAccountOutcome> LinkAccountOutcomeCallable;
                 typedef std::function<void(const CiamClient*, const Model::LinkAccountRequest&, LinkAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LinkAccountAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListJobsResponse> ListJobsOutcome;
+                typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
+                typedef std::function<void(const CiamClient*, const Model::ListJobsRequest&, ListJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListJobsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListUserResponse> ListUserOutcome;
                 typedef std::future<ListUserOutcome> ListUserOutcomeCallable;
                 typedef std::function<void(const CiamClient*, const Model::ListUserRequest&, ListUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListUserAsyncHandler;
@@ -89,6 +104,24 @@ namespace TencentCloud
                 typedef std::function<void(const CiamClient*, const Model::UpdateUserStatusRequest&, UpdateUserStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateUserStatusAsyncHandler;
 
 
+
+                /**
+                 *新建接口导入用户任务
+                 * @param req CreateApiImportUserJobRequest
+                 * @return CreateApiImportUserJobOutcome
+                 */
+                CreateApiImportUserJobOutcome CreateApiImportUserJob(const Model::CreateApiImportUserJobRequest &request);
+                void CreateApiImportUserJobAsync(const Model::CreateApiImportUserJobRequest& request, const CreateApiImportUserJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateApiImportUserJobOutcomeCallable CreateApiImportUserJobCallable(const Model::CreateApiImportUserJobRequest& request);
+
+                /**
+                 *新建文件导出用户任务
+                 * @param req CreateFileExportUserJobRequest
+                 * @return CreateFileExportUserJobOutcome
+                 */
+                CreateFileExportUserJobOutcome CreateFileExportUserJob(const Model::CreateFileExportUserJobRequest &request);
+                void CreateFileExportUserJobAsync(const Model::CreateFileExportUserJobRequest& request, const CreateFileExportUserJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFileExportUserJobOutcomeCallable CreateFileExportUserJobCallable(const Model::CreateFileExportUserJobRequest& request);
 
                 /**
                  *创建用户
@@ -125,6 +158,15 @@ namespace TencentCloud
                 LinkAccountOutcome LinkAccount(const Model::LinkAccountRequest &request);
                 void LinkAccountAsync(const Model::LinkAccountRequest& request, const LinkAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 LinkAccountOutcomeCallable LinkAccountCallable(const Model::LinkAccountRequest& request);
+
+                /**
+                 *查询任务详情
+                 * @param req ListJobsRequest
+                 * @return ListJobsOutcome
+                 */
+                ListJobsOutcome ListJobs(const Model::ListJobsRequest &request);
+                void ListJobsAsync(const Model::ListJobsRequest& request, const ListJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListJobsOutcomeCallable ListJobsCallable(const Model::ListJobsRequest& request);
 
                 /**
                  *查询用户列表

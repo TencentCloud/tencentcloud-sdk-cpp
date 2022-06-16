@@ -125,8 +125,12 @@
 #include <tencentcloud/teo/v20220106/model/DescribeTimingL4DataResponse.h>
 #include <tencentcloud/teo/v20220106/model/DescribeTimingL7AnalysisDataRequest.h>
 #include <tencentcloud/teo/v20220106/model/DescribeTimingL7AnalysisDataResponse.h>
+#include <tencentcloud/teo/v20220106/model/DescribeTimingL7CacheDataRequest.h>
+#include <tencentcloud/teo/v20220106/model/DescribeTimingL7CacheDataResponse.h>
 #include <tencentcloud/teo/v20220106/model/DescribeTopL7AnalysisDataRequest.h>
 #include <tencentcloud/teo/v20220106/model/DescribeTopL7AnalysisDataResponse.h>
+#include <tencentcloud/teo/v20220106/model/DescribeTopL7CacheDataRequest.h>
+#include <tencentcloud/teo/v20220106/model/DescribeTopL7CacheDataResponse.h>
 #include <tencentcloud/teo/v20220106/model/DescribeWebManagedRulesAttackEventsRequest.h>
 #include <tencentcloud/teo/v20220106/model/DescribeWebManagedRulesAttackEventsResponse.h>
 #include <tencentcloud/teo/v20220106/model/DescribeWebManagedRulesDataRequest.h>
@@ -362,9 +366,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTimingL7AnalysisDataResponse> DescribeTimingL7AnalysisDataOutcome;
                 typedef std::future<DescribeTimingL7AnalysisDataOutcome> DescribeTimingL7AnalysisDataOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeTimingL7AnalysisDataRequest&, DescribeTimingL7AnalysisDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTimingL7AnalysisDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTimingL7CacheDataResponse> DescribeTimingL7CacheDataOutcome;
+                typedef std::future<DescribeTimingL7CacheDataOutcome> DescribeTimingL7CacheDataOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeTimingL7CacheDataRequest&, DescribeTimingL7CacheDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTimingL7CacheDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTopL7AnalysisDataResponse> DescribeTopL7AnalysisDataOutcome;
                 typedef std::future<DescribeTopL7AnalysisDataOutcome> DescribeTopL7AnalysisDataOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeTopL7AnalysisDataRequest&, DescribeTopL7AnalysisDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopL7AnalysisDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTopL7CacheDataResponse> DescribeTopL7CacheDataOutcome;
+                typedef std::future<DescribeTopL7CacheDataOutcome> DescribeTopL7CacheDataOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeTopL7CacheDataRequest&, DescribeTopL7CacheDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopL7CacheDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeWebManagedRulesAttackEventsResponse> DescribeWebManagedRulesAttackEventsOutcome;
                 typedef std::future<DescribeWebManagedRulesAttackEventsOutcome> DescribeWebManagedRulesAttackEventsOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeWebManagedRulesAttackEventsRequest&, DescribeWebManagedRulesAttackEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebManagedRulesAttackEventsAsyncHandler;
@@ -930,6 +940,15 @@ namespace TencentCloud
                 DescribeTimingL7AnalysisDataOutcomeCallable DescribeTimingL7AnalysisDataCallable(const Model::DescribeTimingL7AnalysisDataRequest& request);
 
                 /**
+                 *七层查询缓存分析时序类流量数据
+                 * @param req DescribeTimingL7CacheDataRequest
+                 * @return DescribeTimingL7CacheDataOutcome
+                 */
+                DescribeTimingL7CacheDataOutcome DescribeTimingL7CacheData(const Model::DescribeTimingL7CacheDataRequest &request);
+                void DescribeTimingL7CacheDataAsync(const Model::DescribeTimingL7CacheDataRequest& request, const DescribeTimingL7CacheDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTimingL7CacheDataOutcomeCallable DescribeTimingL7CacheDataCallable(const Model::DescribeTimingL7CacheDataRequest& request);
+
+                /**
                  *查询top类流量数据
                  * @param req DescribeTopL7AnalysisDataRequest
                  * @return DescribeTopL7AnalysisDataOutcome
@@ -937,6 +956,15 @@ namespace TencentCloud
                 DescribeTopL7AnalysisDataOutcome DescribeTopL7AnalysisData(const Model::DescribeTopL7AnalysisDataRequest &request);
                 void DescribeTopL7AnalysisDataAsync(const Model::DescribeTopL7AnalysisDataRequest& request, const DescribeTopL7AnalysisDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTopL7AnalysisDataOutcomeCallable DescribeTopL7AnalysisDataCallable(const Model::DescribeTopL7AnalysisDataRequest& request);
+
+                /**
+                 *七层查询缓存分析top类流量数据
+                 * @param req DescribeTopL7CacheDataRequest
+                 * @return DescribeTopL7CacheDataOutcome
+                 */
+                DescribeTopL7CacheDataOutcome DescribeTopL7CacheData(const Model::DescribeTopL7CacheDataRequest &request);
+                void DescribeTopL7CacheDataAsync(const Model::DescribeTopL7CacheDataRequest& request, const DescribeTopL7CacheDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTopL7CacheDataOutcomeCallable DescribeTopL7CacheDataCallable(const Model::DescribeTopL7CacheDataRequest& request);
 
                 /**
                  *查询Web托管攻击事件

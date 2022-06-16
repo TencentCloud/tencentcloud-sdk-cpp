@@ -57,9 +57,7 @@ namespace TencentCloud
 
                     /**
                      * 获取媒体播放地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MediaUrl 媒体播放地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMediaUrl() const;
 
@@ -71,9 +69,7 @@ namespace TencentCloud
 
                     /**
                      * 获取媒体封面地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CoverUrl 媒体封面地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCoverUrl() const;
 
@@ -93,14 +89,12 @@ namespace TencentCloud
 
                     /**
                      * 媒体播放地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mediaUrl;
                     bool m_mediaUrlHasBeenSet;
 
                     /**
                      * 媒体封面地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_coverUrl;
                     bool m_coverUrlHasBeenSet;

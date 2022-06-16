@@ -38,7 +38,8 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_errorTypeHasBeenSet(false),
     m_errorDescriptionHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_updatedAtHasBeenSet(false),
+    m_labelHasBeenSet(false)
 {
 }
 
@@ -253,6 +254,16 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_updatedAtHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Label") && !rsp["Label"].IsNull())
+    {
+        if (!rsp["Label"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Label` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_label = string(rsp["Label"].GetString());
+        m_labelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -396,6 +407,14 @@ string DescribeTaskDetailResponse::ToJsonString() const
         string key = "UpdatedAt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updatedAt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_labelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Label";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -558,6 +577,16 @@ string DescribeTaskDetailResponse::GetUpdatedAt() const
 bool DescribeTaskDetailResponse::UpdatedAtHasBeenSet() const
 {
     return m_updatedAtHasBeenSet;
+}
+
+string DescribeTaskDetailResponse::GetLabel() const
+{
+    return m_label;
+}
+
+bool DescribeTaskDetailResponse::LabelHasBeenSet() const
+{
+    return m_labelHasBeenSet;
 }
 
 

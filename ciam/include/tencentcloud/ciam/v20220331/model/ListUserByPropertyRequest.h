@@ -61,14 +61,26 @@ namespace TencentCloud
                     bool UserStoreIdHasBeenSet() const;
 
                     /**
-                     * 获取查询的属性（支持phoneNumber，email）
-                     * @return PropertyCode 查询的属性（支持phoneNumber，email）
+                     * 获取查询的属性
+
+<li> **phoneNumber** </li>	  手机号码
+<li> **email** </li>  邮箱
+                     * @return PropertyCode 查询的属性
+
+<li> **phoneNumber** </li>	  手机号码
+<li> **email** </li>  邮箱
                      */
                     std::string GetPropertyCode() const;
 
                     /**
-                     * 设置查询的属性（支持phoneNumber，email）
-                     * @param PropertyCode 查询的属性（支持phoneNumber，email）
+                     * 设置查询的属性
+
+<li> **phoneNumber** </li>	  手机号码
+<li> **email** </li>  邮箱
+                     * @param PropertyCode 查询的属性
+
+<li> **phoneNumber** </li>	  手机号码
+<li> **email** </li>  邮箱
                      */
                     void SetPropertyCode(const std::string& _propertyCode);
 
@@ -105,7 +117,10 @@ namespace TencentCloud
                     bool m_userStoreIdHasBeenSet;
 
                     /**
-                     * 查询的属性（支持phoneNumber，email）
+                     * 查询的属性
+
+<li> **phoneNumber** </li>	  手机号码
+<li> **email** </li>  邮箱
                      */
                     std::string m_propertyCode;
                     bool m_propertyCodeHasBeenSet;

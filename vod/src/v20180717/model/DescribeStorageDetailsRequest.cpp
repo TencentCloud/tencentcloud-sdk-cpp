@@ -25,9 +25,9 @@ using namespace std;
 DescribeStorageDetailsRequest::DescribeStorageDetailsRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_intervalHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
-    m_subAppIdHasBeenSet(false),
     m_areaHasBeenSet(false)
 {
 }
@@ -55,6 +55,14 @@ string DescribeStorageDetailsRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
+    }
+
     if (m_intervalHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -69,14 +77,6 @@ string DescribeStorageDetailsRequest::ToJsonString() const
         string key = "StorageType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_storageType.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
     }
 
     if (m_areaHasBeenSet)
@@ -127,6 +127,22 @@ bool DescribeStorageDetailsRequest::EndTimeHasBeenSet() const
     return m_endTimeHasBeenSet;
 }
 
+uint64_t DescribeStorageDetailsRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void DescribeStorageDetailsRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool DescribeStorageDetailsRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
+}
+
 string DescribeStorageDetailsRequest::GetInterval() const
 {
     return m_interval;
@@ -157,22 +173,6 @@ void DescribeStorageDetailsRequest::SetStorageType(const string& _storageType)
 bool DescribeStorageDetailsRequest::StorageTypeHasBeenSet() const
 {
     return m_storageTypeHasBeenSet;
-}
-
-uint64_t DescribeStorageDetailsRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void DescribeStorageDetailsRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool DescribeStorageDetailsRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 string DescribeStorageDetailsRequest::GetArea() const

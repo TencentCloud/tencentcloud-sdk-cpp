@@ -24,9 +24,9 @@ using namespace std;
 
 ModifyVodDomainConfigRequest::ModifyVodDomainConfigRequest() :
     m_domainHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_refererAuthPolicyHasBeenSet(false),
-    m_urlSignatureAuthPolicyHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_urlSignatureAuthPolicyHasBeenSet(false)
 {
 }
 
@@ -45,6 +45,14 @@ string ModifyVodDomainConfigRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
+    }
+
     if (m_refererAuthPolicyHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -61,14 +69,6 @@ string ModifyVodDomainConfigRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_urlSignatureAuthPolicy.ToJsonObject(d[key.c_str()], allocator);
-    }
-
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
     }
 
 
@@ -93,6 +93,22 @@ void ModifyVodDomainConfigRequest::SetDomain(const string& _domain)
 bool ModifyVodDomainConfigRequest::DomainHasBeenSet() const
 {
     return m_domainHasBeenSet;
+}
+
+uint64_t ModifyVodDomainConfigRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void ModifyVodDomainConfigRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool ModifyVodDomainConfigRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 RefererAuthPolicy ModifyVodDomainConfigRequest::GetRefererAuthPolicy() const
@@ -125,22 +141,6 @@ void ModifyVodDomainConfigRequest::SetUrlSignatureAuthPolicy(const UrlSignatureA
 bool ModifyVodDomainConfigRequest::UrlSignatureAuthPolicyHasBeenSet() const
 {
     return m_urlSignatureAuthPolicyHasBeenSet;
-}
-
-uint64_t ModifyVodDomainConfigRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void ModifyVodDomainConfigRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool ModifyVodDomainConfigRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

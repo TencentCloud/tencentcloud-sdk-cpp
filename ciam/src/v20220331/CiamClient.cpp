@@ -40,6 +40,92 @@ CiamClient::CiamClient(const Credential &credential, const string &region, const
 }
 
 
+CiamClient::CreateApiImportUserJobOutcome CiamClient::CreateApiImportUserJob(const CreateApiImportUserJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateApiImportUserJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateApiImportUserJobResponse rsp = CreateApiImportUserJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateApiImportUserJobOutcome(rsp);
+        else
+            return CreateApiImportUserJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateApiImportUserJobOutcome(outcome.GetError());
+    }
+}
+
+void CiamClient::CreateApiImportUserJobAsync(const CreateApiImportUserJobRequest& request, const CreateApiImportUserJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateApiImportUserJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CiamClient::CreateApiImportUserJobOutcomeCallable CiamClient::CreateApiImportUserJobCallable(const CreateApiImportUserJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateApiImportUserJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateApiImportUserJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CiamClient::CreateFileExportUserJobOutcome CiamClient::CreateFileExportUserJob(const CreateFileExportUserJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFileExportUserJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFileExportUserJobResponse rsp = CreateFileExportUserJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFileExportUserJobOutcome(rsp);
+        else
+            return CreateFileExportUserJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFileExportUserJobOutcome(outcome.GetError());
+    }
+}
+
+void CiamClient::CreateFileExportUserJobAsync(const CreateFileExportUserJobRequest& request, const CreateFileExportUserJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFileExportUserJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CiamClient::CreateFileExportUserJobOutcomeCallable CiamClient::CreateFileExportUserJobCallable(const CreateFileExportUserJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFileExportUserJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFileExportUserJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CiamClient::CreateUserOutcome CiamClient::CreateUser(const CreateUserRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateUser");
@@ -205,6 +291,49 @@ CiamClient::LinkAccountOutcomeCallable CiamClient::LinkAccountCallable(const Lin
         [this, request]()
         {
             return this->LinkAccount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CiamClient::ListJobsOutcome CiamClient::ListJobs(const ListJobsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListJobs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListJobsResponse rsp = ListJobsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListJobsOutcome(rsp);
+        else
+            return ListJobsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListJobsOutcome(outcome.GetError());
+    }
+}
+
+void CiamClient::ListJobsAsync(const ListJobsRequest& request, const ListJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListJobs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CiamClient::ListJobsOutcomeCallable CiamClient::ListJobsCallable(const ListJobsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListJobsOutcome()>>(
+        [this, request]()
+        {
+            return this->ListJobs(request);
         }
     );
 

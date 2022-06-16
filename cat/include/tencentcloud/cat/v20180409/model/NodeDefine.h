@@ -231,17 +231,17 @@ namespace TencentCloud
                     bool LocationHasBeenSet() const;
 
                     /**
-                     * 获取节点类型
+                     * 获取节点类型  如果为base 则为可用性拨测点，为空则为高级拨测点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CodeType 节点类型
+                     * @return CodeType 节点类型  如果为base 则为可用性拨测点，为空则为高级拨测点
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCodeType() const;
 
                     /**
-                     * 设置节点类型
+                     * 设置节点类型  如果为base 则为可用性拨测点，为空则为高级拨测点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CodeType 节点类型
+                     * @param CodeType 节点类型  如果为base 则为可用性拨测点，为空则为高级拨测点
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCodeType(const std::string& _codeType);
@@ -335,7 +335,7 @@ namespace TencentCloud
                     bool m_locationHasBeenSet;
 
                     /**
-                     * 节点类型
+                     * 节点类型  如果为base 则为可用性拨测点，为空则为高级拨测点
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_codeType;

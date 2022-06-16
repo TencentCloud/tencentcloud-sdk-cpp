@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取时间id
-                     * @return EventId 时间id
+                     * 获取事件id
+                     * @return EventId 事件id
                      */
                     std::string GetEventId() const;
 
                     /**
-                     * 设置时间id
-                     * @param EventId 时间id
+                     * 设置事件id
+                     * @param EventId 事件id
                      */
                     void SetEventId(const std::string& _eventId);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 时间id
+                     * 事件id
                      */
                     std::string m_eventId;
                     bool m_eventIdHasBeenSet;

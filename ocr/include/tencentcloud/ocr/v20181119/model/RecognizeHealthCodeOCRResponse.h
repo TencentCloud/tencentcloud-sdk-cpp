@@ -127,6 +127,18 @@ namespace TencentCloud
                      */
                     bool TestingTimeHasBeenSet() const;
 
+                    /**
+                     * 获取疫苗接种信息，返回接种针数或接种情况（允许返回空值）
+                     * @return Vaccination 疫苗接种信息，返回接种针数或接种情况（允许返回空值）
+                     */
+                    std::string GetVaccination() const;
+
+                    /**
+                     * 判断参数 Vaccination 是否已赋值
+                     * @return Vaccination 是否已赋值
+                     */
+                    bool VaccinationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -170,6 +182,12 @@ namespace TencentCloud
                      */
                     std::string m_testingTime;
                     bool m_testingTimeHasBeenSet;
+
+                    /**
+                     * 疫苗接种信息，返回接种针数或接种情况（允许返回空值）
+                     */
+                    std::string m_vaccination;
+                    bool m_vaccinationHasBeenSet;
 
                 };
             }

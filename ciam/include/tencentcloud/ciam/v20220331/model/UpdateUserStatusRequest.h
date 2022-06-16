@@ -79,14 +79,30 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取NORMAL（正常）,LOCK（锁定）,FREEZE（冻结）,请传英文大写字母
-                     * @return Status NORMAL（正常）,LOCK（锁定）,FREEZE（冻结）,请传英文大写字母
+                     * 获取用户状态
+
+<li> **NORMAL** </li>	  正常
+<li> **LOCK** </li>  锁定
+<li> **FREEZE** </li>	  冻结
+                     * @return Status 用户状态
+
+<li> **NORMAL** </li>	  正常
+<li> **LOCK** </li>  锁定
+<li> **FREEZE** </li>	  冻结
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置NORMAL（正常）,LOCK（锁定）,FREEZE（冻结）,请传英文大写字母
-                     * @param Status NORMAL（正常）,LOCK（锁定）,FREEZE（冻结）,请传英文大写字母
+                     * 设置用户状态
+
+<li> **NORMAL** </li>	  正常
+<li> **LOCK** </li>  锁定
+<li> **FREEZE** </li>	  冻结
+                     * @param Status 用户状态
+
+<li> **NORMAL** </li>	  正常
+<li> **LOCK** </li>  锁定
+<li> **FREEZE** </li>	  冻结
                      */
                     void SetStatus(const std::string& _status);
 
@@ -111,7 +127,11 @@ namespace TencentCloud
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * NORMAL（正常）,LOCK（锁定）,FREEZE（冻结）,请传英文大写字母
+                     * 用户状态
+
+<li> **NORMAL** </li>	  正常
+<li> **LOCK** </li>  锁定
+<li> **FREEZE** </li>	  冻结
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

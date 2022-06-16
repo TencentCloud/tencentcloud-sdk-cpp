@@ -26,8 +26,10 @@ using namespace std;
 DescribeStorageDataResponse::DescribeStorageDataResponse() :
     m_mediaCountHasBeenSet(false),
     m_totalStorageHasBeenSet(false),
-    m_infrequentStorageHasBeenSet(false),
     m_standardStorageHasBeenSet(false),
+    m_infrequentStorageHasBeenSet(false),
+    m_archiveStorageHasBeenSet(false),
+    m_deepArchiveStorageHasBeenSet(false),
     m_storageStatHasBeenSet(false)
 {
 }
@@ -86,6 +88,16 @@ CoreInternalOutcome DescribeStorageDataResponse::Deserialize(const string &paylo
         m_totalStorageHasBeenSet = true;
     }
 
+    if (rsp.HasMember("StandardStorage") && !rsp["StandardStorage"].IsNull())
+    {
+        if (!rsp["StandardStorage"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `StandardStorage` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_standardStorage = rsp["StandardStorage"].GetUint64();
+        m_standardStorageHasBeenSet = true;
+    }
+
     if (rsp.HasMember("InfrequentStorage") && !rsp["InfrequentStorage"].IsNull())
     {
         if (!rsp["InfrequentStorage"].IsUint64())
@@ -96,14 +108,24 @@ CoreInternalOutcome DescribeStorageDataResponse::Deserialize(const string &paylo
         m_infrequentStorageHasBeenSet = true;
     }
 
-    if (rsp.HasMember("StandardStorage") && !rsp["StandardStorage"].IsNull())
+    if (rsp.HasMember("ArchiveStorage") && !rsp["ArchiveStorage"].IsNull())
     {
-        if (!rsp["StandardStorage"].IsUint64())
+        if (!rsp["ArchiveStorage"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `StandardStorage` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ArchiveStorage` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_standardStorage = rsp["StandardStorage"].GetUint64();
-        m_standardStorageHasBeenSet = true;
+        m_archiveStorage = rsp["ArchiveStorage"].GetUint64();
+        m_archiveStorageHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DeepArchiveStorage") && !rsp["DeepArchiveStorage"].IsNull())
+    {
+        if (!rsp["DeepArchiveStorage"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeepArchiveStorage` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deepArchiveStorage = rsp["DeepArchiveStorage"].GetUint64();
+        m_deepArchiveStorageHasBeenSet = true;
     }
 
     if (rsp.HasMember("StorageStat") && !rsp["StorageStat"].IsNull())
@@ -152,6 +174,14 @@ string DescribeStorageDataResponse::ToJsonString() const
         value.AddMember(iKey, m_totalStorage, allocator);
     }
 
+    if (m_standardStorageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StandardStorage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_standardStorage, allocator);
+    }
+
     if (m_infrequentStorageHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -160,12 +190,20 @@ string DescribeStorageDataResponse::ToJsonString() const
         value.AddMember(iKey, m_infrequentStorage, allocator);
     }
 
-    if (m_standardStorageHasBeenSet)
+    if (m_archiveStorageHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "StandardStorage";
+        string key = "ArchiveStorage";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_standardStorage, allocator);
+        value.AddMember(iKey, m_archiveStorage, allocator);
+    }
+
+    if (m_deepArchiveStorageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeepArchiveStorage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deepArchiveStorage, allocator);
     }
 
     if (m_storageStatHasBeenSet)
@@ -215,6 +253,16 @@ bool DescribeStorageDataResponse::TotalStorageHasBeenSet() const
     return m_totalStorageHasBeenSet;
 }
 
+uint64_t DescribeStorageDataResponse::GetStandardStorage() const
+{
+    return m_standardStorage;
+}
+
+bool DescribeStorageDataResponse::StandardStorageHasBeenSet() const
+{
+    return m_standardStorageHasBeenSet;
+}
+
 uint64_t DescribeStorageDataResponse::GetInfrequentStorage() const
 {
     return m_infrequentStorage;
@@ -225,14 +273,24 @@ bool DescribeStorageDataResponse::InfrequentStorageHasBeenSet() const
     return m_infrequentStorageHasBeenSet;
 }
 
-uint64_t DescribeStorageDataResponse::GetStandardStorage() const
+uint64_t DescribeStorageDataResponse::GetArchiveStorage() const
 {
-    return m_standardStorage;
+    return m_archiveStorage;
 }
 
-bool DescribeStorageDataResponse::StandardStorageHasBeenSet() const
+bool DescribeStorageDataResponse::ArchiveStorageHasBeenSet() const
 {
-    return m_standardStorageHasBeenSet;
+    return m_archiveStorageHasBeenSet;
+}
+
+uint64_t DescribeStorageDataResponse::GetDeepArchiveStorage() const
+{
+    return m_deepArchiveStorage;
+}
+
+bool DescribeStorageDataResponse::DeepArchiveStorageHasBeenSet() const
+{
+    return m_deepArchiveStorageHasBeenSet;
 }
 
 vector<StorageStatData> DescribeStorageDataResponse::GetStorageStat() const

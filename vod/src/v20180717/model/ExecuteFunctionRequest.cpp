@@ -25,10 +25,10 @@ using namespace std;
 ExecuteFunctionRequest::ExecuteFunctionRequest() :
     m_functionNameHasBeenSet(false),
     m_functionArgHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
-    m_extInfoHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_extInfoHasBeenSet(false)
 {
 }
 
@@ -55,6 +55,14 @@ string ExecuteFunctionRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_functionArg.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
+    }
+
     if (m_sessionContextHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -77,14 +85,6 @@ string ExecuteFunctionRequest::ToJsonString() const
         string key = "ExtInfo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_extInfo.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
     }
 
 
@@ -125,6 +125,22 @@ void ExecuteFunctionRequest::SetFunctionArg(const string& _functionArg)
 bool ExecuteFunctionRequest::FunctionArgHasBeenSet() const
 {
     return m_functionArgHasBeenSet;
+}
+
+uint64_t ExecuteFunctionRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void ExecuteFunctionRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool ExecuteFunctionRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 string ExecuteFunctionRequest::GetSessionContext() const
@@ -173,22 +189,6 @@ void ExecuteFunctionRequest::SetExtInfo(const string& _extInfo)
 bool ExecuteFunctionRequest::ExtInfoHasBeenSet() const
 {
     return m_extInfoHasBeenSet;
-}
-
-uint64_t ExecuteFunctionRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void ExecuteFunctionRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool ExecuteFunctionRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

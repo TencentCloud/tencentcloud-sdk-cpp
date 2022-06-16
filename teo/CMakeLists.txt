@@ -27,7 +27,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220106/model/DescribeWebManagedRulesTopDataResponse.h
   include/tencentcloud/teo/v20220106/model/DescribeOriginGroupResponse.h
   include/tencentcloud/teo/v20220106/model/DescribeWebManagedRulesAttackEventsResponse.h
-  include/tencentcloud/teo/v20220106/model/MaxAge.h
+  include/tencentcloud/teo/v20220106/model/DescribeTopL7CacheDataRequest.h
   include/tencentcloud/teo/v20220106/model/DeleteApplicationProxyResponse.h
   include/tencentcloud/teo/v20220106/model/Https.h
   include/tencentcloud/teo/v20220106/model/SecurityEntity.h
@@ -123,6 +123,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220106/model/TopNEntry.h
   include/tencentcloud/teo/v20220106/model/DescribeApplicationProxyResponse.h
   include/tencentcloud/teo/v20220106/model/CreateLoadBalancingResponse.h
+  include/tencentcloud/teo/v20220106/model/DescribeTopL7CacheDataResponse.h
   include/tencentcloud/teo/v20220106/model/DescribeOverviewL7DataRequest.h
   include/tencentcloud/teo/v20220106/model/SwitchConfig.h
   include/tencentcloud/teo/v20220106/model/IdentifyZoneResponse.h
@@ -154,6 +155,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220106/model/FailReason.h
   include/tencentcloud/teo/v20220106/model/CreateZoneRequest.h
   include/tencentcloud/teo/v20220106/model/RateLimitConfig.h
+  include/tencentcloud/teo/v20220106/model/DescribeTimingL7CacheDataRequest.h
   include/tencentcloud/teo/v20220106/model/DescribeSecurityPolicyListResponse.h
   include/tencentcloud/teo/v20220106/model/DescribePurgeTasksResponse.h
   include/tencentcloud/teo/v20220106/model/OriginRecordPrivateParameter.h
@@ -215,6 +217,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220106/model/ModifyOriginGroupRequest.h
   include/tencentcloud/teo/v20220106/model/ModifyApplicationProxyRuleStatusResponse.h
   include/tencentcloud/teo/v20220106/model/DescribeSecurityPolicyListRequest.h
+  include/tencentcloud/teo/v20220106/model/DescribeTimingL7CacheDataResponse.h
   include/tencentcloud/teo/v20220106/model/DescribeApplicationProxyDetailRequest.h
   include/tencentcloud/teo/v20220106/model/DeleteOriginGroupResponse.h
   include/tencentcloud/teo/v20220106/model/Header.h
@@ -240,6 +243,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220106/model/DescribeHostsCertificateResponse.h
   include/tencentcloud/teo/v20220106/model/DescribeZoneSettingResponse.h
   include/tencentcloud/teo/v20220106/model/AiRule.h
+  include/tencentcloud/teo/v20220106/model/MaxAge.h
   include/tencentcloud/teo/v20220106/model/DescribePurgeTasksRequest.h
   include/tencentcloud/teo/v20220106/model/QueryCondition.h
   include/tencentcloud/teo/v20220106/model/DescribeDnsDataRequest.h
@@ -310,7 +314,7 @@ set(teo_src
   src/v20220106/model/DescribeWebManagedRulesTopDataResponse.cpp
   src/v20220106/model/DescribeOriginGroupResponse.cpp
   src/v20220106/model/DescribeWebManagedRulesAttackEventsResponse.cpp
-  src/v20220106/model/MaxAge.cpp
+  src/v20220106/model/DescribeTopL7CacheDataRequest.cpp
   src/v20220106/model/DeleteApplicationProxyResponse.cpp
   src/v20220106/model/Https.cpp
   src/v20220106/model/SecurityEntity.cpp
@@ -406,6 +410,7 @@ set(teo_src
   src/v20220106/model/TopNEntry.cpp
   src/v20220106/model/DescribeApplicationProxyResponse.cpp
   src/v20220106/model/CreateLoadBalancingResponse.cpp
+  src/v20220106/model/DescribeTopL7CacheDataResponse.cpp
   src/v20220106/model/DescribeOverviewL7DataRequest.cpp
   src/v20220106/model/SwitchConfig.cpp
   src/v20220106/model/IdentifyZoneResponse.cpp
@@ -437,6 +442,7 @@ set(teo_src
   src/v20220106/model/FailReason.cpp
   src/v20220106/model/CreateZoneRequest.cpp
   src/v20220106/model/RateLimitConfig.cpp
+  src/v20220106/model/DescribeTimingL7CacheDataRequest.cpp
   src/v20220106/model/DescribeSecurityPolicyListResponse.cpp
   src/v20220106/model/DescribePurgeTasksResponse.cpp
   src/v20220106/model/OriginRecordPrivateParameter.cpp
@@ -498,6 +504,7 @@ set(teo_src
   src/v20220106/model/ModifyOriginGroupRequest.cpp
   src/v20220106/model/ModifyApplicationProxyRuleStatusResponse.cpp
   src/v20220106/model/DescribeSecurityPolicyListRequest.cpp
+  src/v20220106/model/DescribeTimingL7CacheDataResponse.cpp
   src/v20220106/model/DescribeApplicationProxyDetailRequest.cpp
   src/v20220106/model/DeleteOriginGroupResponse.cpp
   src/v20220106/model/Header.cpp
@@ -523,6 +530,7 @@ set(teo_src
   src/v20220106/model/DescribeHostsCertificateResponse.cpp
   src/v20220106/model/DescribeZoneSettingResponse.cpp
   src/v20220106/model/AiRule.cpp
+  src/v20220106/model/MaxAge.cpp
   src/v20220106/model/DescribePurgeTasksRequest.cpp
   src/v20220106/model/QueryCondition.cpp
   src/v20220106/model/DescribeDnsDataRequest.cpp

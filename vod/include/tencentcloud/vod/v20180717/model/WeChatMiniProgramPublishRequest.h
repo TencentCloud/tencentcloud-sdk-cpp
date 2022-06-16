@@ -61,24 +61,6 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取发布视频所对应的转码模板 ID，为0代表原始视频。
-                     * @return SourceDefinition 发布视频所对应的转码模板 ID，为0代表原始视频。
-                     */
-                    int64_t GetSourceDefinition() const;
-
-                    /**
-                     * 设置发布视频所对应的转码模板 ID，为0代表原始视频。
-                     * @param SourceDefinition 发布视频所对应的转码模板 ID，为0代表原始视频。
-                     */
-                    void SetSourceDefinition(const int64_t& _sourceDefinition);
-
-                    /**
-                     * 判断参数 SourceDefinition 是否已赋值
-                     * @return SourceDefinition 是否已赋值
-                     */
-                    bool SourceDefinitionHasBeenSet() const;
-
-                    /**
                      * 获取<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      * @return SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      */
@@ -96,6 +78,24 @@ namespace TencentCloud
                      */
                     bool SubAppIdHasBeenSet() const;
 
+                    /**
+                     * 获取发布视频所对应的转码模板 ID，为0代表原始视频。
+                     * @return SourceDefinition 发布视频所对应的转码模板 ID，为0代表原始视频。
+                     */
+                    int64_t GetSourceDefinition() const;
+
+                    /**
+                     * 设置发布视频所对应的转码模板 ID，为0代表原始视频。
+                     * @param SourceDefinition 发布视频所对应的转码模板 ID，为0代表原始视频。
+                     */
+                    void SetSourceDefinition(const int64_t& _sourceDefinition);
+
+                    /**
+                     * 判断参数 SourceDefinition 是否已赋值
+                     * @return SourceDefinition 是否已赋值
+                     */
+                    bool SourceDefinitionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -105,16 +105,16 @@ namespace TencentCloud
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * 发布视频所对应的转码模板 ID，为0代表原始视频。
-                     */
-                    int64_t m_sourceDefinition;
-                    bool m_sourceDefinitionHasBeenSet;
-
-                    /**
                      * <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
+
+                    /**
+                     * 发布视频所对应的转码模板 ID，为0代表原始视频。
+                     */
+                    int64_t m_sourceDefinition;
+                    bool m_sourceDefinitionHasBeenSet;
 
                 };
             }

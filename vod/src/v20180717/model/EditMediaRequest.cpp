@@ -24,6 +24,7 @@ using namespace std;
 
 EditMediaRequest::EditMediaRequest() :
     m_inputTypeHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_fileInfosHasBeenSet(false),
     m_streamInfosHasBeenSet(false),
     m_definitionHasBeenSet(false),
@@ -32,8 +33,7 @@ EditMediaRequest::EditMediaRequest() :
     m_sessionContextHasBeenSet(false),
     m_tasksPriorityHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
-    m_extInfoHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_extInfoHasBeenSet(false)
 {
 }
 
@@ -50,6 +50,14 @@ string EditMediaRequest::ToJsonString() const
         string key = "InputType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_inputType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
     if (m_fileInfosHasBeenSet)
@@ -139,14 +147,6 @@ string EditMediaRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_extInfo.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -169,6 +169,22 @@ void EditMediaRequest::SetInputType(const string& _inputType)
 bool EditMediaRequest::InputTypeHasBeenSet() const
 {
     return m_inputTypeHasBeenSet;
+}
+
+uint64_t EditMediaRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void EditMediaRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool EditMediaRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 vector<EditMediaFileInfo> EditMediaRequest::GetFileInfos() const
@@ -313,22 +329,6 @@ void EditMediaRequest::SetExtInfo(const string& _extInfo)
 bool EditMediaRequest::ExtInfoHasBeenSet() const
 {
     return m_extInfoHasBeenSet;
-}
-
-uint64_t EditMediaRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void EditMediaRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool EditMediaRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

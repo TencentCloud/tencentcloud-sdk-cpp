@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool PageNoHasBeenSet() const;
 
                     /**
-                     * 获取ddos策略组id 集合
-                     * @return PolicyIds ddos策略组id 集合
+                     * 获取ddos策略组id列表
+                     * @return PolicyIds ddos策略组id列表
                      */
                     std::vector<int64_t> GetPolicyIds() const;
 
                     /**
-                     * 设置ddos策略组id 集合
-                     * @param PolicyIds ddos策略组id 集合
+                     * 设置ddos策略组id列表
+                     * @param PolicyIds ddos策略组id列表
                      */
                     void SetPolicyIds(const std::vector<int64_t>& _policyIds);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool ZoneIdsHasBeenSet() const;
 
                     /**
-                     * 获取协议类型,{tcp,udp,all}
-                     * @return Domains 协议类型,{tcp,udp,all}
+                     * 获取子域名列表
+                     * @return Domains 子域名列表
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
-                     * 设置协议类型,{tcp,udp,all}
-                     * @param Domains 协议类型,{tcp,udp,all}
+                     * 设置子域名列表
+                     * @param Domains 子域名列表
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
 
@@ -213,7 +213,7 @@ namespace TencentCloud
                     bool m_pageNoHasBeenSet;
 
                     /**
-                     * ddos策略组id 集合
+                     * ddos策略组id列表
                      */
                     std::vector<int64_t> m_policyIds;
                     bool m_policyIdsHasBeenSet;
@@ -225,7 +225,7 @@ namespace TencentCloud
                     bool m_zoneIdsHasBeenSet;
 
                     /**
-                     * 协议类型,{tcp,udp,all}
+                     * 子域名列表
                      */
                     std::vector<std::string> m_domains;
                     bool m_domainsHasBeenSet;
