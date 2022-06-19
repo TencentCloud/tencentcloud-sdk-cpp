@@ -134,14 +134,22 @@ namespace TencentCloud
                     bool ZoneIdsHasBeenSet() const;
 
                     /**
-                     * 获取筛选条件
-                     * @return Filters 筛选条件
+                     * 获取筛选条件，筛选EO/源站响应如下：
+EO响应：{Key: "cacheType", Value: ["hit"], Operator: "equals"}；
+源站响应：{Key: "cacheType", Value: ["miss", "dynamic"], Operator: "equals"}
+                     * @return Filters 筛选条件，筛选EO/源站响应如下：
+EO响应：{Key: "cacheType", Value: ["hit"], Operator: "equals"}；
+源站响应：{Key: "cacheType", Value: ["miss", "dynamic"], Operator: "equals"}
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置筛选条件
-                     * @param Filters 筛选条件
+                     * 设置筛选条件，筛选EO/源站响应如下：
+EO响应：{Key: "cacheType", Value: ["hit"], Operator: "equals"}；
+源站响应：{Key: "cacheType", Value: ["miss", "dynamic"], Operator: "equals"}
+                     * @param Filters 筛选条件，筛选EO/源站响应如下：
+EO响应：{Key: "cacheType", Value: ["hit"], Operator: "equals"}；
+源站响应：{Key: "cacheType", Value: ["miss", "dynamic"], Operator: "equals"}
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -184,7 +192,9 @@ namespace TencentCloud
                     bool m_zoneIdsHasBeenSet;
 
                     /**
-                     * 筛选条件
+                     * 筛选条件，筛选EO/源站响应如下：
+EO响应：{Key: "cacheType", Value: ["hit"], Operator: "equals"}；
+源站响应：{Key: "cacheType", Value: ["miss", "dynamic"], Operator: "equals"}
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

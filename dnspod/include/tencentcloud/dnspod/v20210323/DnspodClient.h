@@ -49,6 +49,8 @@
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainAliasListRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainAliasListResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeDomainAnalyticsRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeDomainAnalyticsResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainListRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainLogListRequest.h>
@@ -65,6 +67,8 @@
 #include <tencentcloud/dnspod/v20210323/model/DescribeRecordListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeRecordTypeRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeRecordTypeResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeSubdomainAnalyticsRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeSubdomainAnalyticsResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeUserDetailRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeUserDetailResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyDomainLockRequest.h>
@@ -142,6 +146,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDomainAliasListResponse> DescribeDomainAliasListOutcome;
                 typedef std::future<DescribeDomainAliasListOutcome> DescribeDomainAliasListOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeDomainAliasListRequest&, DescribeDomainAliasListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainAliasListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDomainAnalyticsResponse> DescribeDomainAnalyticsOutcome;
+                typedef std::future<DescribeDomainAnalyticsOutcome> DescribeDomainAnalyticsOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DescribeDomainAnalyticsRequest&, DescribeDomainAnalyticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainAnalyticsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDomainListResponse> DescribeDomainListOutcome;
                 typedef std::future<DescribeDomainListOutcome> DescribeDomainListOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeDomainListRequest&, DescribeDomainListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainListAsyncHandler;
@@ -166,6 +173,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRecordTypeResponse> DescribeRecordTypeOutcome;
                 typedef std::future<DescribeRecordTypeOutcome> DescribeRecordTypeOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeRecordTypeRequest&, DescribeRecordTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordTypeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSubdomainAnalyticsResponse> DescribeSubdomainAnalyticsOutcome;
+                typedef std::future<DescribeSubdomainAnalyticsOutcome> DescribeSubdomainAnalyticsOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DescribeSubdomainAnalyticsRequest&, DescribeSubdomainAnalyticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubdomainAnalyticsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserDetailResponse> DescribeUserDetailOutcome;
                 typedef std::future<DescribeUserDetailOutcome> DescribeUserDetailOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeUserDetailRequest&, DescribeUserDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserDetailAsyncHandler;
@@ -326,6 +336,15 @@ namespace TencentCloud
                 DescribeDomainAliasListOutcomeCallable DescribeDomainAliasListCallable(const Model::DescribeDomainAliasListRequest& request);
 
                 /**
+                 *统计各个域名的解析量，帮助您了解流量情况、时间段分布。支持查看近 3 个月内的统计情况
+                 * @param req DescribeDomainAnalyticsRequest
+                 * @return DescribeDomainAnalyticsOutcome
+                 */
+                DescribeDomainAnalyticsOutcome DescribeDomainAnalytics(const Model::DescribeDomainAnalyticsRequest &request);
+                void DescribeDomainAnalyticsAsync(const Model::DescribeDomainAnalyticsRequest& request, const DescribeDomainAnalyticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDomainAnalyticsOutcomeCallable DescribeDomainAnalyticsCallable(const Model::DescribeDomainAnalyticsRequest& request);
+
+                /**
                  *获取域名列表
                  * @param req DescribeDomainListRequest
                  * @return DescribeDomainListOutcome
@@ -396,6 +415,15 @@ namespace TencentCloud
                 DescribeRecordTypeOutcome DescribeRecordType(const Model::DescribeRecordTypeRequest &request);
                 void DescribeRecordTypeAsync(const Model::DescribeRecordTypeRequest& request, const DescribeRecordTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRecordTypeOutcomeCallable DescribeRecordTypeCallable(const Model::DescribeRecordTypeRequest& request);
+
+                /**
+                 *统计子域名的解析量，帮助您了解流量情况、时间段分布。支持查看近 3 个月内的统计情况。仅付费套餐域名可用。
+                 * @param req DescribeSubdomainAnalyticsRequest
+                 * @return DescribeSubdomainAnalyticsOutcome
+                 */
+                DescribeSubdomainAnalyticsOutcome DescribeSubdomainAnalytics(const Model::DescribeSubdomainAnalyticsRequest &request);
+                void DescribeSubdomainAnalyticsAsync(const Model::DescribeSubdomainAnalyticsRequest& request, const DescribeSubdomainAnalyticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSubdomainAnalyticsOutcomeCallable DescribeSubdomainAnalyticsCallable(const Model::DescribeSubdomainAnalyticsRequest& request);
 
                 /**
                  *获取帐户信息

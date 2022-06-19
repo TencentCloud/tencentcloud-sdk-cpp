@@ -126,6 +126,49 @@ CccClient::CreateAutoCalloutTaskOutcomeCallable CccClient::CreateAutoCalloutTask
     return task->get_future();
 }
 
+CccClient::CreateCCCSkillGroupOutcome CccClient::CreateCCCSkillGroup(const CreateCCCSkillGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCCCSkillGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCCCSkillGroupResponse rsp = CreateCCCSkillGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCCCSkillGroupOutcome(rsp);
+        else
+            return CreateCCCSkillGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCCCSkillGroupOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::CreateCCCSkillGroupAsync(const CreateCCCSkillGroupRequest& request, const CreateCCCSkillGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCCCSkillGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::CreateCCCSkillGroupOutcomeCallable CccClient::CreateCCCSkillGroupCallable(const CreateCCCSkillGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCCCSkillGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCCCSkillGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::CreateCallOutSessionOutcome CccClient::CreateCallOutSession(const CreateCallOutSessionRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCallOutSession");

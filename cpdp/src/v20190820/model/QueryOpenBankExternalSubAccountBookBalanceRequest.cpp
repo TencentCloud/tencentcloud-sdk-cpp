@@ -28,7 +28,8 @@ QueryOpenBankExternalSubAccountBookBalanceRequest::QueryOpenBankExternalSubAccou
     m_channelNameHasBeenSet(false),
     m_paymentMethodHasBeenSet(false),
     m_outAccountBookIdHasBeenSet(false),
-    m_channelAccountBookIdHasBeenSet(false)
+    m_channelAccountBookIdHasBeenSet(false),
+    m_environmentHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string QueryOpenBankExternalSubAccountBookBalanceRequest::ToJsonString() const
         string key = "ChannelAccountBookId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_channelAccountBookId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_environmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Environment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_environment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void QueryOpenBankExternalSubAccountBookBalanceRequest::SetChannelAccountBookId(
 bool QueryOpenBankExternalSubAccountBookBalanceRequest::ChannelAccountBookIdHasBeenSet() const
 {
     return m_channelAccountBookIdHasBeenSet;
+}
+
+string QueryOpenBankExternalSubAccountBookBalanceRequest::GetEnvironment() const
+{
+    return m_environment;
+}
+
+void QueryOpenBankExternalSubAccountBookBalanceRequest::SetEnvironment(const string& _environment)
+{
+    m_environment = _environment;
+    m_environmentHasBeenSet = true;
+}
+
+bool QueryOpenBankExternalSubAccountBookBalanceRequest::EnvironmentHasBeenSet() const
+{
+    return m_environmentHasBeenSet;
 }
 
 

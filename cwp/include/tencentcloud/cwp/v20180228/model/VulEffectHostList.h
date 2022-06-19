@@ -267,17 +267,17 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取版本信息 0=普通版本 1=专业版 2=旗舰版
+                     * 获取版本信息：0-基础版 1-专业版 2-旗舰版 3-普惠版
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HostVersion 版本信息 0=普通版本 1=专业版 2=旗舰版
+                     * @return HostVersion 版本信息：0-基础版 1-专业版 2-旗舰版 3-普惠版
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetHostVersion() const;
 
                     /**
-                     * 设置版本信息 0=普通版本 1=专业版 2=旗舰版
+                     * 设置版本信息：0-基础版 1-专业版 2-旗舰版 3-普惠版
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HostVersion 版本信息 0=普通版本 1=专业版 2=旗舰版
+                     * @param HostVersion 版本信息：0-基础版 1-专业版 2-旗舰版 3-普惠版
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetHostVersion(const uint64_t& _hostVersion);
@@ -331,6 +331,50 @@ namespace TencentCloud
                      * @return FixStatusMsg 是否已赋值
                      */
                     bool FixStatusMsgHasBeenSet() const;
+
+                    /**
+                     * 获取首次发现时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FirstDiscoveryTime 首次发现时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFirstDiscoveryTime() const;
+
+                    /**
+                     * 设置首次发现时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FirstDiscoveryTime 首次发现时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFirstDiscoveryTime(const std::string& _firstDiscoveryTime);
+
+                    /**
+                     * 判断参数 FirstDiscoveryTime 是否已赋值
+                     * @return FirstDiscoveryTime 是否已赋值
+                     */
+                    bool FirstDiscoveryTimeHasBeenSet() const;
+
+                    /**
+                     * 获取实例状态："PENDING"-创建中 "LAUNCH_FAILED"-创建失败 "RUNNING"-运行中 "STOPPED"-关机 "STARTING"-表示开机中 "STOPPING"-表示关机中 "REBOOTING"-重启中 "SHUTDOWN"-表示停止待销毁 "TERMINATING"-表示销毁中 "
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceState 实例状态："PENDING"-创建中 "LAUNCH_FAILED"-创建失败 "RUNNING"-运行中 "STOPPED"-关机 "STARTING"-表示开机中 "STOPPING"-表示关机中 "REBOOTING"-重启中 "SHUTDOWN"-表示停止待销毁 "TERMINATING"-表示销毁中 "
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInstanceState() const;
+
+                    /**
+                     * 设置实例状态："PENDING"-创建中 "LAUNCH_FAILED"-创建失败 "RUNNING"-运行中 "STOPPED"-关机 "STARTING"-表示开机中 "STOPPING"-表示关机中 "REBOOTING"-重启中 "SHUTDOWN"-表示停止待销毁 "TERMINATING"-表示销毁中 "
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceState 实例状态："PENDING"-创建中 "LAUNCH_FAILED"-创建失败 "RUNNING"-运行中 "STOPPED"-关机 "STARTING"-表示开机中 "STOPPING"-表示关机中 "REBOOTING"-重启中 "SHUTDOWN"-表示停止待销毁 "TERMINATING"-表示销毁中 "
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceState(const std::string& _instanceState);
+
+                    /**
+                     * 判断参数 InstanceState 是否已赋值
+                     * @return InstanceState 是否已赋值
+                     */
+                    bool InstanceStateHasBeenSet() const;
 
                 private:
 
@@ -405,7 +449,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 版本信息 0=普通版本 1=专业版 2=旗舰版
+                     * 版本信息：0-基础版 1-专业版 2-旗舰版 3-普惠版
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_hostVersion;
@@ -424,6 +468,20 @@ namespace TencentCloud
                      */
                     std::string m_fixStatusMsg;
                     bool m_fixStatusMsgHasBeenSet;
+
+                    /**
+                     * 首次发现时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_firstDiscoveryTime;
+                    bool m_firstDiscoveryTimeHasBeenSet;
+
+                    /**
+                     * 实例状态："PENDING"-创建中 "LAUNCH_FAILED"-创建失败 "RUNNING"-运行中 "STOPPED"-关机 "STARTING"-表示开机中 "STOPPING"-表示关机中 "REBOOTING"-重启中 "SHUTDOWN"-表示停止待销毁 "TERMINATING"-表示销毁中 "
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceState;
+                    bool m_instanceStateHasBeenSet;
 
                 };
             }

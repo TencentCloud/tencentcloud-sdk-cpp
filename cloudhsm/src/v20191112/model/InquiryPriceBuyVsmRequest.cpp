@@ -28,7 +28,8 @@ InquiryPriceBuyVsmRequest::InquiryPriceBuyVsmRequest() :
     m_timeSpanHasBeenSet(false),
     m_timeUnitHasBeenSet(false),
     m_currencyHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_hsmTypeHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string InquiryPriceBuyVsmRequest::ToJsonString() const
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hsmTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HsmType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hsmType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void InquiryPriceBuyVsmRequest::SetType(const string& _type)
 bool InquiryPriceBuyVsmRequest::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+string InquiryPriceBuyVsmRequest::GetHsmType() const
+{
+    return m_hsmType;
+}
+
+void InquiryPriceBuyVsmRequest::SetHsmType(const string& _hsmType)
+{
+    m_hsmType = _hsmType;
+    m_hsmTypeHasBeenSet = true;
+}
+
+bool InquiryPriceBuyVsmRequest::HsmTypeHasBeenSet() const
+{
+    return m_hsmTypeHasBeenSet;
 }
 
 

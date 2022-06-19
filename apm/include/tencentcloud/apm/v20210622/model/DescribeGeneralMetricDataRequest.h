@@ -126,14 +126,14 @@ span.kind:
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取视图名称
-                     * @return ViewName 视图名称
+                     * 获取视图名称，不可自定义输入。支持：service_metric
+                     * @return ViewName 视图名称，不可自定义输入。支持：service_metric
                      */
                     std::string GetViewName() const;
 
                     /**
-                     * 设置视图名称
-                     * @param ViewName 视图名称
+                     * 设置视图名称，不可自定义输入。支持：service_metric
+                     * @param ViewName 视图名称，不可自定义输入。支持：service_metric
                      */
                     void SetViewName(const std::string& _viewName);
 
@@ -243,7 +243,7 @@ span.kind:
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 视图名称
+                     * 视图名称，不可自定义输入。支持：service_metric
                      */
                     std::string m_viewName;
                     bool m_viewNameHasBeenSet;

@@ -33,6 +33,7 @@
 #include <tencentcloud/es/v20180416/model/ZoneDetail.h>
 #include <tencentcloud/es/v20180416/model/KibanaNodeInfo.h>
 #include <tencentcloud/es/v20180416/model/WebNodeTypeInfo.h>
+#include <tencentcloud/es/v20180416/model/EsConfigSetInfo.h>
 
 
 namespace TencentCloud
@@ -1559,6 +1560,28 @@ RENEW_FLAG_DEFAULT：不自动续费
                      */
                     bool EsPrivateDomainHasBeenSet() const;
 
+                    /**
+                     * 获取集群的配置组信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EsConfigSets 集群的配置组信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<EsConfigSetInfo> GetEsConfigSets() const;
+
+                    /**
+                     * 设置集群的配置组信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EsConfigSets 集群的配置组信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEsConfigSets(const std::vector<EsConfigSetInfo>& _esConfigSets);
+
+                    /**
+                     * 判断参数 EsConfigSets 是否已赋值
+                     * @return EsConfigSets 是否已赋值
+                     */
+                    bool EsConfigSetsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2047,6 +2070,13 @@ RENEW_FLAG_DEFAULT：不自动续费
                      */
                     std::string m_esPrivateDomain;
                     bool m_esPrivateDomainHasBeenSet;
+
+                    /**
+                     * 集群的配置组信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<EsConfigSetInfo> m_esConfigSets;
+                    bool m_esConfigSetsHasBeenSet;
 
                 };
             }

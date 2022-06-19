@@ -94,7 +94,8 @@ InstanceInfo::InstanceInfo() :
     m_frozenDiskSizeHasBeenSet(false),
     m_healthStatusHasBeenSet(false),
     m_esPrivateUrlHasBeenSet(false),
-    m_esPrivateDomainHasBeenSet(false)
+    m_esPrivateDomainHasBeenSet(false),
+    m_esConfigSetsHasBeenSet(false)
 {
 }
 
@@ -925,6 +926,26 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_esPrivateDomainHasBeenSet = true;
     }
 
+    if (value.HasMember("EsConfigSets") && !value["EsConfigSets"].IsNull())
+    {
+        if (!value["EsConfigSets"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.EsConfigSets` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["EsConfigSets"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            EsConfigSetInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_esConfigSets.push_back(item);
+        }
+        m_esConfigSetsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1555,6 +1576,21 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "EsPrivateDomain";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_esPrivateDomain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_esConfigSetsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EsConfigSets";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_esConfigSets.begin(); itr != m_esConfigSets.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -2742,5 +2778,21 @@ void InstanceInfo::SetEsPrivateDomain(const string& _esPrivateDomain)
 bool InstanceInfo::EsPrivateDomainHasBeenSet() const
 {
     return m_esPrivateDomainHasBeenSet;
+}
+
+vector<EsConfigSetInfo> InstanceInfo::GetEsConfigSets() const
+{
+    return m_esConfigSets;
+}
+
+void InstanceInfo::SetEsConfigSets(const vector<EsConfigSetInfo>& _esConfigSets)
+{
+    m_esConfigSets = _esConfigSets;
+    m_esConfigSetsHasBeenSet = true;
+}
+
+bool InstanceInfo::EsConfigSetsHasBeenSet() const
+{
+    return m_esConfigSetsHasBeenSet;
 }
 

@@ -33,7 +33,8 @@ CreateOpenBankRechargeOrderRequest::CreateOpenBankRechargeOrderRequest() :
     m_payeeInfoHasBeenSet(false),
     m_channelSubMerchantIdHasBeenSet(false),
     m_notifyUrlHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_environmentHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,14 @@ string CreateOpenBankRechargeOrderRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_environmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Environment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_environment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -315,6 +324,22 @@ void CreateOpenBankRechargeOrderRequest::SetRemark(const string& _remark)
 bool CreateOpenBankRechargeOrderRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string CreateOpenBankRechargeOrderRequest::GetEnvironment() const
+{
+    return m_environment;
+}
+
+void CreateOpenBankRechargeOrderRequest::SetEnvironment(const string& _environment)
+{
+    m_environment = _environment;
+    m_environmentHasBeenSet = true;
+}
+
+bool CreateOpenBankRechargeOrderRequest::EnvironmentHasBeenSet() const
+{
+    return m_environmentHasBeenSet;
 }
 
 

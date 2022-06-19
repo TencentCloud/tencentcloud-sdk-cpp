@@ -27,7 +27,8 @@ CreateOpenBankExternalSubMerchantAccountBookRequest::CreateOpenBankExternalSubMe
     m_channelMerchantIdHasBeenSet(false),
     m_channelSubMerchantIdHasBeenSet(false),
     m_channelNameHasBeenSet(false),
-    m_paymentMethodHasBeenSet(false)
+    m_paymentMethodHasBeenSet(false),
+    m_environmentHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string CreateOpenBankExternalSubMerchantAccountBookRequest::ToJsonString() const
         string key = "PaymentMethod";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_paymentMethod.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_environmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Environment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_environment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void CreateOpenBankExternalSubMerchantAccountBookRequest::SetPaymentMethod(const
 bool CreateOpenBankExternalSubMerchantAccountBookRequest::PaymentMethodHasBeenSet() const
 {
     return m_paymentMethodHasBeenSet;
+}
+
+string CreateOpenBankExternalSubMerchantAccountBookRequest::GetEnvironment() const
+{
+    return m_environment;
+}
+
+void CreateOpenBankExternalSubMerchantAccountBookRequest::SetEnvironment(const string& _environment)
+{
+    m_environment = _environment;
+    m_environmentHasBeenSet = true;
+}
+
+bool CreateOpenBankExternalSubMerchantAccountBookRequest::EnvironmentHasBeenSet() const
+{
+    return m_environmentHasBeenSet;
 }
 
 

@@ -28,7 +28,8 @@ QueryOpenBankOrderDetailReceiptInfoRequest::QueryOpenBankOrderDetailReceiptInfoR
     m_channelNameHasBeenSet(false),
     m_paymentMethodHasBeenSet(false),
     m_outApplyIdHasBeenSet(false),
-    m_channelApplyIdHasBeenSet(false)
+    m_channelApplyIdHasBeenSet(false),
+    m_environmentHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string QueryOpenBankOrderDetailReceiptInfoRequest::ToJsonString() const
         string key = "ChannelApplyId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_channelApplyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_environmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Environment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_environment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void QueryOpenBankOrderDetailReceiptInfoRequest::SetChannelApplyId(const string&
 bool QueryOpenBankOrderDetailReceiptInfoRequest::ChannelApplyIdHasBeenSet() const
 {
     return m_channelApplyIdHasBeenSet;
+}
+
+string QueryOpenBankOrderDetailReceiptInfoRequest::GetEnvironment() const
+{
+    return m_environment;
+}
+
+void QueryOpenBankOrderDetailReceiptInfoRequest::SetEnvironment(const string& _environment)
+{
+    m_environment = _environment;
+    m_environmentHasBeenSet = true;
+}
+
+bool QueryOpenBankOrderDetailReceiptInfoRequest::EnvironmentHasBeenSet() const
+{
+    return m_environmentHasBeenSet;
 }
 
 

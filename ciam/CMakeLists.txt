@@ -53,6 +53,7 @@ set(ciam_public_header_model
   include/tencentcloud/ciam/v20220331/model/CreateFileExportUserJobResponse.h
   include/tencentcloud/ciam/v20220331/model/CreateApiImportUserJobResponse.h
   include/tencentcloud/ciam/v20220331/model/LinkAccountRequest.h
+  include/tencentcloud/ciam/v20220331/model/SaltLocationRule.h
   include/tencentcloud/ciam/v20220331/model/MemberMap.h
   include/tencentcloud/ciam/v20220331/model/ListUserResponse.h
   include/tencentcloud/ciam/v20220331/model/UpdateUserResponse.h
@@ -94,6 +95,7 @@ set(ciam_src
   src/v20220331/model/CreateFileExportUserJobResponse.cpp
   src/v20220331/model/CreateApiImportUserJobResponse.cpp
   src/v20220331/model/LinkAccountRequest.cpp
+  src/v20220331/model/SaltLocationRule.cpp
   src/v20220331/model/MemberMap.cpp
   src/v20220331/model/ListUserResponse.cpp
   src/v20220331/model/UpdateUserResponse.cpp

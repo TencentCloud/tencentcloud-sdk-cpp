@@ -27,6 +27,8 @@
 #include <tencentcloud/ccc/v20200210/model/BindStaffSkillGroupListResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateAutoCalloutTaskRequest.h>
 #include <tencentcloud/ccc/v20200210/model/CreateAutoCalloutTaskResponse.h>
+#include <tencentcloud/ccc/v20200210/model/CreateCCCSkillGroupRequest.h>
+#include <tencentcloud/ccc/v20200210/model/CreateCCCSkillGroupResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateCallOutSessionRequest.h>
 #include <tencentcloud/ccc/v20200210/model/CreateCallOutSessionResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateSDKLoginTokenRequest.h>
@@ -91,6 +93,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAutoCalloutTaskResponse> CreateAutoCalloutTaskOutcome;
                 typedef std::future<CreateAutoCalloutTaskOutcome> CreateAutoCalloutTaskOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::CreateAutoCalloutTaskRequest&, CreateAutoCalloutTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAutoCalloutTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCCCSkillGroupResponse> CreateCCCSkillGroupOutcome;
+                typedef std::future<CreateCCCSkillGroupOutcome> CreateCCCSkillGroupOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::CreateCCCSkillGroupRequest&, CreateCCCSkillGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCCCSkillGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCallOutSessionResponse> CreateCallOutSessionOutcome;
                 typedef std::future<CreateCallOutSessionOutcome> CreateCallOutSessionOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::CreateCallOutSessionRequest&, CreateCallOutSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCallOutSessionAsyncHandler;
@@ -177,6 +182,15 @@ namespace TencentCloud
                 CreateAutoCalloutTaskOutcome CreateAutoCalloutTask(const Model::CreateAutoCalloutTaskRequest &request);
                 void CreateAutoCalloutTaskAsync(const Model::CreateAutoCalloutTaskRequest& request, const CreateAutoCalloutTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAutoCalloutTaskOutcomeCallable CreateAutoCalloutTaskCallable(const Model::CreateAutoCalloutTaskRequest& request);
+
+                /**
+                 *创建技能组
+                 * @param req CreateCCCSkillGroupRequest
+                 * @return CreateCCCSkillGroupOutcome
+                 */
+                CreateCCCSkillGroupOutcome CreateCCCSkillGroup(const Model::CreateCCCSkillGroupRequest &request);
+                void CreateCCCSkillGroupAsync(const Model::CreateCCCSkillGroupRequest& request, const CreateCCCSkillGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCCCSkillGroupOutcomeCallable CreateCCCSkillGroupCallable(const Model::CreateCCCSkillGroupRequest& request);
 
                 /**
                  *创建外呼会话，当前仅支持双呼，即先使用平台号码呼出到坐席手机上，坐席接听后，然后再外呼用户，而且由于运营商频率限制，坐席手机号必须先加白名单，避免频控导致外呼失败。
