@@ -25,7 +25,8 @@ using namespace std;
 DescribeSparkAppTasksRequest::DescribeSparkAppTasksRequest() :
     m_jobIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_taskIdHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeSparkAppTasksRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_taskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeSparkAppTasksRequest::SetLimit(const int64_t& _limit)
 bool DescribeSparkAppTasksRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeSparkAppTasksRequest::GetTaskId() const
+{
+    return m_taskId;
+}
+
+void DescribeSparkAppTasksRequest::SetTaskId(const string& _taskId)
+{
+    m_taskId = _taskId;
+    m_taskIdHasBeenSet = true;
+}
+
+bool DescribeSparkAppTasksRequest::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
 }
 
 

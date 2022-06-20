@@ -814,49 +814,6 @@ TrtcClient::DismissRoomByStrRoomIdOutcomeCallable TrtcClient::DismissRoomByStrRo
     return task->get_future();
 }
 
-TrtcClient::MeasureTrtcMcuExternalOutcome TrtcClient::MeasureTrtcMcuExternal(const MeasureTrtcMcuExternalRequest &request)
-{
-    auto outcome = MakeRequest(request, "MeasureTrtcMcuExternal");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        MeasureTrtcMcuExternalResponse rsp = MeasureTrtcMcuExternalResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return MeasureTrtcMcuExternalOutcome(rsp);
-        else
-            return MeasureTrtcMcuExternalOutcome(o.GetError());
-    }
-    else
-    {
-        return MeasureTrtcMcuExternalOutcome(outcome.GetError());
-    }
-}
-
-void TrtcClient::MeasureTrtcMcuExternalAsync(const MeasureTrtcMcuExternalRequest& request, const MeasureTrtcMcuExternalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->MeasureTrtcMcuExternal(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TrtcClient::MeasureTrtcMcuExternalOutcomeCallable TrtcClient::MeasureTrtcMcuExternalCallable(const MeasureTrtcMcuExternalRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<MeasureTrtcMcuExternalOutcome()>>(
-        [this, request]()
-        {
-            return this->MeasureTrtcMcuExternal(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TrtcClient::ModifyCloudRecordingOutcome TrtcClient::ModifyCloudRecording(const ModifyCloudRecordingRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyCloudRecording");

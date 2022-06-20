@@ -23,10 +23,11 @@ using namespace std;
 TranscodeTaskInput::TranscodeTaskInput() :
     m_definitionHasBeenSet(false),
     m_watermarkSetHasBeenSet(false),
-    m_mosaicSetHasBeenSet(false),
+    m_traceWatermarkHasBeenSet(false),
     m_headTailSetHasBeenSet(false),
-    m_startTimeOffsetHasBeenSet(false),
-    m_endTimeOffsetHasBeenSet(false)
+    m_mosaicSetHasBeenSet(false),
+    m_endTimeOffsetHasBeenSet(false),
+    m_startTimeOffsetHasBeenSet(false)
 {
 }
 
@@ -65,24 +66,21 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const rapidjson::Value &valu
         m_watermarkSetHasBeenSet = true;
     }
 
-    if (value.HasMember("MosaicSet") && !value["MosaicSet"].IsNull())
+    if (value.HasMember("TraceWatermark") && !value["TraceWatermark"].IsNull())
     {
-        if (!value["MosaicSet"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `TranscodeTaskInput.MosaicSet` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["MosaicSet"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!value["TraceWatermark"].IsObject())
         {
-            MosaicInput item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_mosaicSet.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `TranscodeTaskInput.TraceWatermark` is not object type").SetRequestId(requestId));
         }
-        m_mosaicSetHasBeenSet = true;
+
+        CoreInternalOutcome outcome = m_traceWatermark.Deserialize(value["TraceWatermark"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_traceWatermarkHasBeenSet = true;
     }
 
     if (value.HasMember("HeadTailSet") && !value["HeadTailSet"].IsNull())
@@ -105,14 +103,24 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const rapidjson::Value &valu
         m_headTailSetHasBeenSet = true;
     }
 
-    if (value.HasMember("StartTimeOffset") && !value["StartTimeOffset"].IsNull())
+    if (value.HasMember("MosaicSet") && !value["MosaicSet"].IsNull())
     {
-        if (!value["StartTimeOffset"].IsLosslessDouble())
+        if (!value["MosaicSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TranscodeTaskInput.MosaicSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MosaicSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `TranscodeTaskInput.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            MosaicInput item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_mosaicSet.push_back(item);
         }
-        m_startTimeOffset = value["StartTimeOffset"].GetDouble();
-        m_startTimeOffsetHasBeenSet = true;
+        m_mosaicSetHasBeenSet = true;
     }
 
     if (value.HasMember("EndTimeOffset") && !value["EndTimeOffset"].IsNull())
@@ -123,6 +131,16 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const rapidjson::Value &valu
         }
         m_endTimeOffset = value["EndTimeOffset"].GetDouble();
         m_endTimeOffsetHasBeenSet = true;
+    }
+
+    if (value.HasMember("StartTimeOffset") && !value["StartTimeOffset"].IsNull())
+    {
+        if (!value["StartTimeOffset"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `TranscodeTaskInput.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_startTimeOffset = value["StartTimeOffset"].GetDouble();
+        m_startTimeOffsetHasBeenSet = true;
     }
 
 
@@ -155,19 +173,13 @@ void TranscodeTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         }
     }
 
-    if (m_mosaicSetHasBeenSet)
+    if (m_traceWatermarkHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MosaicSet";
+        string key = "TraceWatermark";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_mosaicSet.begin(); itr != m_mosaicSet.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_traceWatermark.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_headTailSetHasBeenSet)
@@ -185,12 +197,19 @@ void TranscodeTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         }
     }
 
-    if (m_startTimeOffsetHasBeenSet)
+    if (m_mosaicSetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "StartTimeOffset";
+        string key = "MosaicSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_startTimeOffset, allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_mosaicSet.begin(); itr != m_mosaicSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_endTimeOffsetHasBeenSet)
@@ -199,6 +218,14 @@ void TranscodeTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "EndTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTimeOffset, allocator);
+    }
+
+    if (m_startTimeOffsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTimeOffset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_startTimeOffset, allocator);
     }
 
 }
@@ -236,20 +263,20 @@ bool TranscodeTaskInput::WatermarkSetHasBeenSet() const
     return m_watermarkSetHasBeenSet;
 }
 
-vector<MosaicInput> TranscodeTaskInput::GetMosaicSet() const
+TraceWatermarkInput TranscodeTaskInput::GetTraceWatermark() const
 {
-    return m_mosaicSet;
+    return m_traceWatermark;
 }
 
-void TranscodeTaskInput::SetMosaicSet(const vector<MosaicInput>& _mosaicSet)
+void TranscodeTaskInput::SetTraceWatermark(const TraceWatermarkInput& _traceWatermark)
 {
-    m_mosaicSet = _mosaicSet;
-    m_mosaicSetHasBeenSet = true;
+    m_traceWatermark = _traceWatermark;
+    m_traceWatermarkHasBeenSet = true;
 }
 
-bool TranscodeTaskInput::MosaicSetHasBeenSet() const
+bool TranscodeTaskInput::TraceWatermarkHasBeenSet() const
 {
-    return m_mosaicSetHasBeenSet;
+    return m_traceWatermarkHasBeenSet;
 }
 
 vector<HeadTailTaskInput> TranscodeTaskInput::GetHeadTailSet() const
@@ -268,20 +295,20 @@ bool TranscodeTaskInput::HeadTailSetHasBeenSet() const
     return m_headTailSetHasBeenSet;
 }
 
-double TranscodeTaskInput::GetStartTimeOffset() const
+vector<MosaicInput> TranscodeTaskInput::GetMosaicSet() const
 {
-    return m_startTimeOffset;
+    return m_mosaicSet;
 }
 
-void TranscodeTaskInput::SetStartTimeOffset(const double& _startTimeOffset)
+void TranscodeTaskInput::SetMosaicSet(const vector<MosaicInput>& _mosaicSet)
 {
-    m_startTimeOffset = _startTimeOffset;
-    m_startTimeOffsetHasBeenSet = true;
+    m_mosaicSet = _mosaicSet;
+    m_mosaicSetHasBeenSet = true;
 }
 
-bool TranscodeTaskInput::StartTimeOffsetHasBeenSet() const
+bool TranscodeTaskInput::MosaicSetHasBeenSet() const
 {
-    return m_startTimeOffsetHasBeenSet;
+    return m_mosaicSetHasBeenSet;
 }
 
 double TranscodeTaskInput::GetEndTimeOffset() const
@@ -298,5 +325,21 @@ void TranscodeTaskInput::SetEndTimeOffset(const double& _endTimeOffset)
 bool TranscodeTaskInput::EndTimeOffsetHasBeenSet() const
 {
     return m_endTimeOffsetHasBeenSet;
+}
+
+double TranscodeTaskInput::GetStartTimeOffset() const
+{
+    return m_startTimeOffset;
+}
+
+void TranscodeTaskInput::SetStartTimeOffset(const double& _startTimeOffset)
+{
+    m_startTimeOffset = _startTimeOffset;
+    m_startTimeOffsetHasBeenSet = true;
+}
+
+bool TranscodeTaskInput::StartTimeOffsetHasBeenSet() const
+{
+    return m_startTimeOffsetHasBeenSet;
 }
 

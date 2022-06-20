@@ -42,7 +42,9 @@ ApmInstanceDetail::ApmInstanceDetail() :
     m_logRegionHasBeenSet(false),
     m_logSourceHasBeenSet(false),
     m_isRelatedLogHasBeenSet(false),
-    m_logTopicIDHasBeenSet(false)
+    m_logTopicIDHasBeenSet(false),
+    m_clientCountHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -281,6 +283,26 @@ CoreInternalOutcome ApmInstanceDetail::Deserialize(const rapidjson::Value &value
         m_logTopicIDHasBeenSet = true;
     }
 
+    if (value.HasMember("ClientCount") && !value["ClientCount"].IsNull())
+    {
+        if (!value["ClientCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.ClientCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_clientCount = value["ClientCount"].GetInt64();
+        m_clientCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("TotalCount") && !value["TotalCount"].IsNull())
+    {
+        if (!value["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = value["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -469,6 +491,22 @@ void ApmInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "LogTopicID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_logTopicID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clientCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_clientCount, allocator);
+    }
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
     }
 
 }
@@ -824,5 +862,37 @@ void ApmInstanceDetail::SetLogTopicID(const string& _logTopicID)
 bool ApmInstanceDetail::LogTopicIDHasBeenSet() const
 {
     return m_logTopicIDHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetClientCount() const
+{
+    return m_clientCount;
+}
+
+void ApmInstanceDetail::SetClientCount(const int64_t& _clientCount)
+{
+    m_clientCount = _clientCount;
+    m_clientCountHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::ClientCountHasBeenSet() const
+{
+    return m_clientCountHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+void ApmInstanceDetail::SetTotalCount(const int64_t& _totalCount)
+{
+    m_totalCount = _totalCount;
+    m_totalCountHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
 }
 

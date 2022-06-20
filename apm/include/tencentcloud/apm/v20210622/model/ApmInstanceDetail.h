@@ -154,17 +154,17 @@ namespace TencentCloud
                     bool CreateUinHasBeenSet() const;
 
                     /**
-                     * 获取该实例已上报的服务数
+                     * 获取该实例已上报的服务端应用数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ServiceCount 该实例已上报的服务数
+                     * @return ServiceCount 该实例已上报的服务端应用数量
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetServiceCount() const;
 
                     /**
-                     * 设置该实例已上报的服务数
+                     * 设置该实例已上报的服务端应用数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ServiceCount 该实例已上报的服务数
+                     * @param ServiceCount 该实例已上报的服务端应用数量
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetServiceCount(const int64_t& _serviceCount);
@@ -523,6 +523,50 @@ namespace TencentCloud
                      */
                     bool LogTopicIDHasBeenSet() const;
 
+                    /**
+                     * 获取该实例已上报的客户端应用数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClientCount 该实例已上报的客户端应用数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetClientCount() const;
+
+                    /**
+                     * 设置该实例已上报的客户端应用数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ClientCount 该实例已上报的客户端应用数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClientCount(const int64_t& _clientCount);
+
+                    /**
+                     * 判断参数 ClientCount 是否已赋值
+                     * @return ClientCount 是否已赋值
+                     */
+                    bool ClientCountHasBeenSet() const;
+
+                    /**
+                     * 获取该实例已上报的总应用数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TotalCount 该实例已上报的总应用数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetTotalCount() const;
+
+                    /**
+                     * 设置该实例已上报的总应用数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TotalCount 该实例已上报的总应用数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTotalCount(const int64_t& _totalCount);
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     */
+                    bool TotalCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -560,7 +604,7 @@ namespace TencentCloud
                     bool m_createUinHasBeenSet;
 
                     /**
-                     * 该实例已上报的服务数
+                     * 该实例已上报的服务端应用数量
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_serviceCount;
@@ -676,6 +720,20 @@ namespace TencentCloud
                      */
                     std::string m_logTopicID;
                     bool m_logTopicIDHasBeenSet;
+
+                    /**
+                     * 该实例已上报的客户端应用数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_clientCount;
+                    bool m_clientCountHasBeenSet;
+
+                    /**
+                     * 该实例已上报的总应用数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                 };
             }

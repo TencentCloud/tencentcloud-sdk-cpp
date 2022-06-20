@@ -14,22 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/trtc/v20190722/model/MeasureTrtcMcuExternalResponse.h>
+#include <tencentcloud/tsf/v20180326/model/ReassociateBusinessLogConfigResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Trtc::V20190722::Model;
+using namespace TencentCloud::Tsf::V20180326::Model;
 using namespace std;
 
-MeasureTrtcMcuExternalResponse::MeasureTrtcMcuExternalResponse() :
-    m_usagesHasBeenSet(false),
-    m_typeHasBeenSet(false)
+ReassociateBusinessLogConfigResponse::ReassociateBusinessLogConfigResponse()
 {
 }
 
-CoreInternalOutcome MeasureTrtcMcuExternalResponse::Deserialize(const string &payload)
+CoreInternalOutcome ReassociateBusinessLogConfigResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,68 +61,15 @@ CoreInternalOutcome MeasureTrtcMcuExternalResponse::Deserialize(const string &pa
     }
 
 
-    if (rsp.HasMember("Usages") && !rsp["Usages"].IsNull())
-    {
-        if (!rsp["Usages"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Usages` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["Usages"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            OneSdkAppIdTranscodeTimeUsagesNewInfo item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_usages.push_back(item);
-        }
-        m_usagesHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Type") && !rsp["Type"].IsNull())
-    {
-        if (!rsp["Type"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Type` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_type = string(rsp["Type"].GetString());
-        m_typeHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string MeasureTrtcMcuExternalResponse::ToJsonString() const
+string ReassociateBusinessLogConfigResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_usagesHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Usages";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_usages.begin(); itr != m_usages.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
-    }
-
-    if (m_typeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Type";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -137,25 +82,5 @@ string MeasureTrtcMcuExternalResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-vector<OneSdkAppIdTranscodeTimeUsagesNewInfo> MeasureTrtcMcuExternalResponse::GetUsages() const
-{
-    return m_usages;
-}
-
-bool MeasureTrtcMcuExternalResponse::UsagesHasBeenSet() const
-{
-    return m_usagesHasBeenSet;
-}
-
-string MeasureTrtcMcuExternalResponse::GetType() const
-{
-    return m_type;
-}
-
-bool MeasureTrtcMcuExternalResponse::TypeHasBeenSet() const
-{
-    return m_typeHasBeenSet;
-}
 
 

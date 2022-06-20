@@ -126,6 +126,92 @@ TsfClient::AddInstancesOutcomeCallable TsfClient::AddInstancesCallable(const Add
     return task->get_future();
 }
 
+TsfClient::AssociateBusinessLogConfigOutcome TsfClient::AssociateBusinessLogConfig(const AssociateBusinessLogConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssociateBusinessLogConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssociateBusinessLogConfigResponse rsp = AssociateBusinessLogConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssociateBusinessLogConfigOutcome(rsp);
+        else
+            return AssociateBusinessLogConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return AssociateBusinessLogConfigOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::AssociateBusinessLogConfigAsync(const AssociateBusinessLogConfigRequest& request, const AssociateBusinessLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AssociateBusinessLogConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::AssociateBusinessLogConfigOutcomeCallable TsfClient::AssociateBusinessLogConfigCallable(const AssociateBusinessLogConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AssociateBusinessLogConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->AssociateBusinessLogConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::AssociateConfigWithGroupOutcome TsfClient::AssociateConfigWithGroup(const AssociateConfigWithGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssociateConfigWithGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssociateConfigWithGroupResponse rsp = AssociateConfigWithGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssociateConfigWithGroupOutcome(rsp);
+        else
+            return AssociateConfigWithGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return AssociateConfigWithGroupOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::AssociateConfigWithGroupAsync(const AssociateConfigWithGroupRequest& request, const AssociateConfigWithGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AssociateConfigWithGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::AssociateConfigWithGroupOutcomeCallable TsfClient::AssociateConfigWithGroupCallable(const AssociateConfigWithGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AssociateConfigWithGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->AssociateConfigWithGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::BindApiGroupOutcome TsfClient::BindApiGroup(const BindApiGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "BindApiGroup");
@@ -2362,6 +2448,49 @@ TsfClient::DescribeApplicationAttributeOutcomeCallable TsfClient::DescribeApplic
     return task->get_future();
 }
 
+TsfClient::DescribeApplicationBusinessLogConfigOutcome TsfClient::DescribeApplicationBusinessLogConfig(const DescribeApplicationBusinessLogConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApplicationBusinessLogConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApplicationBusinessLogConfigResponse rsp = DescribeApplicationBusinessLogConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApplicationBusinessLogConfigOutcome(rsp);
+        else
+            return DescribeApplicationBusinessLogConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApplicationBusinessLogConfigOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeApplicationBusinessLogConfigAsync(const DescribeApplicationBusinessLogConfigRequest& request, const DescribeApplicationBusinessLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApplicationBusinessLogConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeApplicationBusinessLogConfigOutcomeCallable TsfClient::DescribeApplicationBusinessLogConfigCallable(const DescribeApplicationBusinessLogConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeApplicationBusinessLogConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApplicationBusinessLogConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DescribeApplicationsOutcome TsfClient::DescribeApplications(const DescribeApplicationsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeApplications");
@@ -2441,6 +2570,92 @@ TsfClient::DescribeBasicResourceUsageOutcomeCallable TsfClient::DescribeBasicRes
         [this, request]()
         {
             return this->DescribeBasicResourceUsage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeBusinessLogConfigOutcome TsfClient::DescribeBusinessLogConfig(const DescribeBusinessLogConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBusinessLogConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBusinessLogConfigResponse rsp = DescribeBusinessLogConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBusinessLogConfigOutcome(rsp);
+        else
+            return DescribeBusinessLogConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBusinessLogConfigOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeBusinessLogConfigAsync(const DescribeBusinessLogConfigRequest& request, const DescribeBusinessLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBusinessLogConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeBusinessLogConfigOutcomeCallable TsfClient::DescribeBusinessLogConfigCallable(const DescribeBusinessLogConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBusinessLogConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBusinessLogConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeBusinessLogConfigsOutcome TsfClient::DescribeBusinessLogConfigs(const DescribeBusinessLogConfigsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBusinessLogConfigs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBusinessLogConfigsResponse rsp = DescribeBusinessLogConfigsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBusinessLogConfigsOutcome(rsp);
+        else
+            return DescribeBusinessLogConfigsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBusinessLogConfigsOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeBusinessLogConfigsAsync(const DescribeBusinessLogConfigsRequest& request, const DescribeBusinessLogConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBusinessLogConfigs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeBusinessLogConfigsOutcomeCallable TsfClient::DescribeBusinessLogConfigsCallable(const DescribeBusinessLogConfigsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBusinessLogConfigsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBusinessLogConfigs(request);
         }
     );
 
@@ -2921,6 +3136,135 @@ TsfClient::DescribeCreateGatewayApiStatusOutcomeCallable TsfClient::DescribeCrea
     return task->get_future();
 }
 
+TsfClient::DescribeDeliveryConfigOutcome TsfClient::DescribeDeliveryConfig(const DescribeDeliveryConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeliveryConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeliveryConfigResponse rsp = DescribeDeliveryConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeliveryConfigOutcome(rsp);
+        else
+            return DescribeDeliveryConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeliveryConfigOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeDeliveryConfigAsync(const DescribeDeliveryConfigRequest& request, const DescribeDeliveryConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDeliveryConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeDeliveryConfigOutcomeCallable TsfClient::DescribeDeliveryConfigCallable(const DescribeDeliveryConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDeliveryConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDeliveryConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeDeliveryConfigByGroupIdOutcome TsfClient::DescribeDeliveryConfigByGroupId(const DescribeDeliveryConfigByGroupIdRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeliveryConfigByGroupId");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeliveryConfigByGroupIdResponse rsp = DescribeDeliveryConfigByGroupIdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeliveryConfigByGroupIdOutcome(rsp);
+        else
+            return DescribeDeliveryConfigByGroupIdOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeliveryConfigByGroupIdOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeDeliveryConfigByGroupIdAsync(const DescribeDeliveryConfigByGroupIdRequest& request, const DescribeDeliveryConfigByGroupIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDeliveryConfigByGroupId(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeDeliveryConfigByGroupIdOutcomeCallable TsfClient::DescribeDeliveryConfigByGroupIdCallable(const DescribeDeliveryConfigByGroupIdRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDeliveryConfigByGroupIdOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDeliveryConfigByGroupId(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeDeliveryConfigsOutcome TsfClient::DescribeDeliveryConfigs(const DescribeDeliveryConfigsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeliveryConfigs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeliveryConfigsResponse rsp = DescribeDeliveryConfigsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeliveryConfigsOutcome(rsp);
+        else
+            return DescribeDeliveryConfigsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeliveryConfigsOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeDeliveryConfigsAsync(const DescribeDeliveryConfigsRequest& request, const DescribeDeliveryConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDeliveryConfigs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeDeliveryConfigsOutcomeCallable TsfClient::DescribeDeliveryConfigsCallable(const DescribeDeliveryConfigsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDeliveryConfigsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDeliveryConfigs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DescribeDownloadInfoOutcome TsfClient::DescribeDownloadInfo(const DescribeDownloadInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDownloadInfo");
@@ -3344,6 +3688,49 @@ TsfClient::DescribeGroupBindedGatewaysOutcomeCallable TsfClient::DescribeGroupBi
         [this, request]()
         {
             return this->DescribeGroupBindedGateways(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeGroupBusinessLogConfigsOutcome TsfClient::DescribeGroupBusinessLogConfigs(const DescribeGroupBusinessLogConfigsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGroupBusinessLogConfigs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGroupBusinessLogConfigsResponse rsp = DescribeGroupBusinessLogConfigsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGroupBusinessLogConfigsOutcome(rsp);
+        else
+            return DescribeGroupBusinessLogConfigsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGroupBusinessLogConfigsOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeGroupBusinessLogConfigsAsync(const DescribeGroupBusinessLogConfigsRequest& request, const DescribeGroupBusinessLogConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGroupBusinessLogConfigs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeGroupBusinessLogConfigsOutcomeCallable TsfClient::DescribeGroupBusinessLogConfigsCallable(const DescribeGroupBusinessLogConfigsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGroupBusinessLogConfigsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGroupBusinessLogConfigs(request);
         }
     );
 
@@ -5630,6 +6017,92 @@ TsfClient::DisableUnitRuleOutcomeCallable TsfClient::DisableUnitRuleCallable(con
     return task->get_future();
 }
 
+TsfClient::DisassociateBusinessLogConfigOutcome TsfClient::DisassociateBusinessLogConfig(const DisassociateBusinessLogConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisassociateBusinessLogConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisassociateBusinessLogConfigResponse rsp = DisassociateBusinessLogConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisassociateBusinessLogConfigOutcome(rsp);
+        else
+            return DisassociateBusinessLogConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DisassociateBusinessLogConfigOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DisassociateBusinessLogConfigAsync(const DisassociateBusinessLogConfigRequest& request, const DisassociateBusinessLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisassociateBusinessLogConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DisassociateBusinessLogConfigOutcomeCallable TsfClient::DisassociateBusinessLogConfigCallable(const DisassociateBusinessLogConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisassociateBusinessLogConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DisassociateBusinessLogConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DisassociateKafkaConfigOutcome TsfClient::DisassociateKafkaConfig(const DisassociateKafkaConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisassociateKafkaConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisassociateKafkaConfigResponse rsp = DisassociateKafkaConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisassociateKafkaConfigOutcome(rsp);
+        else
+            return DisassociateKafkaConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DisassociateKafkaConfigOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DisassociateKafkaConfigAsync(const DisassociateKafkaConfigRequest& request, const DisassociateKafkaConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisassociateKafkaConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DisassociateKafkaConfigOutcomeCallable TsfClient::DisassociateKafkaConfigCallable(const DisassociateKafkaConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisassociateKafkaConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DisassociateKafkaConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DraftApiGroupOutcome TsfClient::DraftApiGroup(const DraftApiGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DraftApiGroup");
@@ -6354,6 +6827,49 @@ TsfClient::OperateApplicationTcrBindingOutcomeCallable TsfClient::OperateApplica
         [this, request]()
         {
             return this->OperateApplicationTcrBinding(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::ReassociateBusinessLogConfigOutcome TsfClient::ReassociateBusinessLogConfig(const ReassociateBusinessLogConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReassociateBusinessLogConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReassociateBusinessLogConfigResponse rsp = ReassociateBusinessLogConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReassociateBusinessLogConfigOutcome(rsp);
+        else
+            return ReassociateBusinessLogConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ReassociateBusinessLogConfigOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::ReassociateBusinessLogConfigAsync(const ReassociateBusinessLogConfigRequest& request, const ReassociateBusinessLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReassociateBusinessLogConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::ReassociateBusinessLogConfigOutcomeCallable TsfClient::ReassociateBusinessLogConfigCallable(const ReassociateBusinessLogConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReassociateBusinessLogConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ReassociateBusinessLogConfig(request);
         }
     );
 
