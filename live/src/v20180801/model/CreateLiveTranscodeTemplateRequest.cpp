@@ -42,7 +42,9 @@ CreateLiveTranscodeTemplateRequest::CreateLiveTranscodeTemplateRequest() :
     m_fpsToOrigHasBeenSet(false),
     m_aiTransCodeHasBeenSet(false),
     m_adaptBitratePercentHasBeenSet(false),
-    m_shortEdgeAsHeightHasBeenSet(false)
+    m_shortEdgeAsHeightHasBeenSet(false),
+    m_dRMTypeHasBeenSet(false),
+    m_dRMTracksHasBeenSet(false)
 {
 }
 
@@ -211,6 +213,22 @@ string CreateLiveTranscodeTemplateRequest::ToJsonString() const
         string key = "ShortEdgeAsHeight";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_shortEdgeAsHeight, allocator);
+    }
+
+    if (m_dRMTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DRMType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dRMType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dRMTracksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DRMTracks";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dRMTracks.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -539,6 +557,38 @@ void CreateLiveTranscodeTemplateRequest::SetShortEdgeAsHeight(const int64_t& _sh
 bool CreateLiveTranscodeTemplateRequest::ShortEdgeAsHeightHasBeenSet() const
 {
     return m_shortEdgeAsHeightHasBeenSet;
+}
+
+string CreateLiveTranscodeTemplateRequest::GetDRMType() const
+{
+    return m_dRMType;
+}
+
+void CreateLiveTranscodeTemplateRequest::SetDRMType(const string& _dRMType)
+{
+    m_dRMType = _dRMType;
+    m_dRMTypeHasBeenSet = true;
+}
+
+bool CreateLiveTranscodeTemplateRequest::DRMTypeHasBeenSet() const
+{
+    return m_dRMTypeHasBeenSet;
+}
+
+string CreateLiveTranscodeTemplateRequest::GetDRMTracks() const
+{
+    return m_dRMTracks;
+}
+
+void CreateLiveTranscodeTemplateRequest::SetDRMTracks(const string& _dRMTracks)
+{
+    m_dRMTracks = _dRMTracks;
+    m_dRMTracksHasBeenSet = true;
+}
+
+bool CreateLiveTranscodeTemplateRequest::DRMTracksHasBeenSet() const
+{
+    return m_dRMTracksHasBeenSet;
 }
 
 

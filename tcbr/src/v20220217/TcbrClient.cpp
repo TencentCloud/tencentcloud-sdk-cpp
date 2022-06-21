@@ -298,6 +298,92 @@ TcbrClient::DescribeEnvBaseInfoOutcomeCallable TcbrClient::DescribeEnvBaseInfoCa
     return task->get_future();
 }
 
+TcbrClient::OperateServerManageOutcome TcbrClient::OperateServerManage(const OperateServerManageRequest &request)
+{
+    auto outcome = MakeRequest(request, "OperateServerManage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OperateServerManageResponse rsp = OperateServerManageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OperateServerManageOutcome(rsp);
+        else
+            return OperateServerManageOutcome(o.GetError());
+    }
+    else
+    {
+        return OperateServerManageOutcome(outcome.GetError());
+    }
+}
+
+void TcbrClient::OperateServerManageAsync(const OperateServerManageRequest& request, const OperateServerManageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->OperateServerManage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbrClient::OperateServerManageOutcomeCallable TcbrClient::OperateServerManageCallable(const OperateServerManageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<OperateServerManageOutcome()>>(
+        [this, request]()
+        {
+            return this->OperateServerManage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbrClient::ReleaseGrayOutcome TcbrClient::ReleaseGray(const ReleaseGrayRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReleaseGray");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReleaseGrayResponse rsp = ReleaseGrayResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReleaseGrayOutcome(rsp);
+        else
+            return ReleaseGrayOutcome(o.GetError());
+    }
+    else
+    {
+        return ReleaseGrayOutcome(outcome.GetError());
+    }
+}
+
+void TcbrClient::ReleaseGrayAsync(const ReleaseGrayRequest& request, const ReleaseGrayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReleaseGray(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbrClient::ReleaseGrayOutcomeCallable TcbrClient::ReleaseGrayCallable(const ReleaseGrayRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReleaseGrayOutcome()>>(
+        [this, request]()
+        {
+            return this->ReleaseGray(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbrClient::UpdateCloudRunServerOutcome TcbrClient::UpdateCloudRunServer(const UpdateCloudRunServerRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateCloudRunServer");

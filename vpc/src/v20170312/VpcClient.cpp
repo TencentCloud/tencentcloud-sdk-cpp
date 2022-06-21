@@ -212,6 +212,49 @@ VpcClient::AddTemplateMemberOutcomeCallable VpcClient::AddTemplateMemberCallable
     return task->get_future();
 }
 
+VpcClient::AdjustPublicAddressOutcome VpcClient::AdjustPublicAddress(const AdjustPublicAddressRequest &request)
+{
+    auto outcome = MakeRequest(request, "AdjustPublicAddress");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AdjustPublicAddressResponse rsp = AdjustPublicAddressResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AdjustPublicAddressOutcome(rsp);
+        else
+            return AdjustPublicAddressOutcome(o.GetError());
+    }
+    else
+    {
+        return AdjustPublicAddressOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::AdjustPublicAddressAsync(const AdjustPublicAddressRequest& request, const AdjustPublicAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AdjustPublicAddress(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::AdjustPublicAddressOutcomeCallable VpcClient::AdjustPublicAddressCallable(const AdjustPublicAddressRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AdjustPublicAddressOutcome()>>(
+        [this, request]()
+        {
+            return this->AdjustPublicAddress(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::AllocateAddressesOutcome VpcClient::AllocateAddresses(const AllocateAddressesRequest &request)
 {
     auto outcome = MakeRequest(request, "AllocateAddresses");

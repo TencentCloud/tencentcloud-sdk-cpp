@@ -24,7 +24,9 @@ SupportBankInfo::SupportBankInfo() :
     m_bankCodeHasBeenSet(false),
     m_bankNameHasBeenSet(false),
     m_maintainStatusHasBeenSet(false),
-    m_bankNoticeHasBeenSet(false)
+    m_bankNoticeHasBeenSet(false),
+    m_bankIdHasBeenSet(false),
+    m_cardTypeHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome SupportBankInfo::Deserialize(const rapidjson::Value &value)
         m_bankNoticeHasBeenSet = true;
     }
 
+    if (value.HasMember("BankId") && !value["BankId"].IsNull())
+    {
+        if (!value["BankId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SupportBankInfo.BankId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bankId = string(value["BankId"].GetString());
+        m_bankIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CardType") && !value["CardType"].IsNull())
+    {
+        if (!value["CardType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SupportBankInfo.CardType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cardType = string(value["CardType"].GetString());
+        m_cardTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void SupportBankInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "BankNotice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_bankNotice.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bankIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BankId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bankId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cardTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CardType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cardType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void SupportBankInfo::SetBankNotice(const string& _bankNotice)
 bool SupportBankInfo::BankNoticeHasBeenSet() const
 {
     return m_bankNoticeHasBeenSet;
+}
+
+string SupportBankInfo::GetBankId() const
+{
+    return m_bankId;
+}
+
+void SupportBankInfo::SetBankId(const string& _bankId)
+{
+    m_bankId = _bankId;
+    m_bankIdHasBeenSet = true;
+}
+
+bool SupportBankInfo::BankIdHasBeenSet() const
+{
+    return m_bankIdHasBeenSet;
+}
+
+string SupportBankInfo::GetCardType() const
+{
+    return m_cardType;
+}
+
+void SupportBankInfo::SetCardType(const string& _cardType)
+{
+    m_cardType = _cardType;
+    m_cardTypeHasBeenSet = true;
+}
+
+bool SupportBankInfo::CardTypeHasBeenSet() const
+{
+    return m_cardTypeHasBeenSet;
 }
 

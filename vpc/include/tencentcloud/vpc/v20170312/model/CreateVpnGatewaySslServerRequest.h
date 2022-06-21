@@ -204,6 +204,60 @@ namespace TencentCloud
                      */
                     bool CompressHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启SSO认证
+                     * @return SsoEnabled 是否开启SSO认证
+                     */
+                    bool GetSsoEnabled() const;
+
+                    /**
+                     * 设置是否开启SSO认证
+                     * @param SsoEnabled 是否开启SSO认证
+                     */
+                    void SetSsoEnabled(const bool& _ssoEnabled);
+
+                    /**
+                     * 判断参数 SsoEnabled 是否已赋值
+                     * @return SsoEnabled 是否已赋值
+                     */
+                    bool SsoEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启策略访问控制
+                     * @return AccessPolicyEnabled 是否开启策略访问控制
+                     */
+                    bool GetAccessPolicyEnabled() const;
+
+                    /**
+                     * 设置是否开启策略访问控制
+                     * @param AccessPolicyEnabled 是否开启策略访问控制
+                     */
+                    void SetAccessPolicyEnabled(const bool& _accessPolicyEnabled);
+
+                    /**
+                     * 判断参数 AccessPolicyEnabled 是否已赋值
+                     * @return AccessPolicyEnabled 是否已赋值
+                     */
+                    bool AccessPolicyEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取SAML-DATA
+                     * @return SamlData SAML-DATA
+                     */
+                    std::string GetSamlData() const;
+
+                    /**
+                     * 设置SAML-DATA
+                     * @param SamlData SAML-DATA
+                     */
+                    void SetSamlData(const std::string& _samlData);
+
+                    /**
+                     * 判断参数 SamlData 是否已赋值
+                     * @return SamlData 是否已赋值
+                     */
+                    bool SamlDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +313,24 @@ namespace TencentCloud
                      */
                     bool m_compress;
                     bool m_compressHasBeenSet;
+
+                    /**
+                     * 是否开启SSO认证
+                     */
+                    bool m_ssoEnabled;
+                    bool m_ssoEnabledHasBeenSet;
+
+                    /**
+                     * 是否开启策略访问控制
+                     */
+                    bool m_accessPolicyEnabled;
+                    bool m_accessPolicyEnabledHasBeenSet;
+
+                    /**
+                     * SAML-DATA
+                     */
+                    std::string m_samlData;
+                    bool m_samlDataHasBeenSet;
 
                 };
             }

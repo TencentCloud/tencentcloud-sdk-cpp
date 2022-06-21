@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户端实际 ip，示例值：14.17.22.32
-                     * @return PayerClientIp 用户端实际 ip，示例值：14.17.22.32
+                     * 获取用户端实际 ip。汇付渠道必填。
+                     * @return PayerClientIp 用户端实际 ip。汇付渠道必填。
                      */
                     std::string GetPayerClientIp() const;
 
                     /**
-                     * 设置用户端实际 ip，示例值：14.17.22.32
-                     * @param PayerClientIp 用户端实际 ip，示例值：14.17.22.32
+                     * 设置用户端实际 ip。汇付渠道必填。
+                     * @param PayerClientIp 用户端实际 ip。汇付渠道必填。
                      */
                     void SetPayerClientIp(const std::string& _payerClientIp);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool PayerClientIpHasBeenSet() const;
 
                     /**
-                     * 获取浏览器 User-Agent
-                     * @return PayerUa 浏览器 User-Agent
+                     * 获取浏览器 User-Agent。
+                     * @return PayerUa 浏览器 User-Agent。
                      */
                     std::string GetPayerUa() const;
 
                     /**
-                     * 设置浏览器 User-Agent
-                     * @param PayerUa 浏览器 User-Agent
+                     * 设置浏览器 User-Agent。
+                     * @param PayerUa 浏览器 User-Agent。
                      */
                     void SetPayerUa(const std::string& _payerUa);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool PayerUaHasBeenSet() const;
 
                     /**
-                     * 获取用户下单时间，若不上送，服务端默认当前时间
-                     * @return OrderTime 用户下单时间，若不上送，服务端默认当前时间
+                     * 获取用户下单时间。若不上送，服务端默认当前时间。
+                     * @return OrderTime 用户下单时间。若不上送，服务端默认当前时间。
                      */
                     std::string GetOrderTime() const;
 
                     /**
-                     * 设置用户下单时间，若不上送，服务端默认当前时间
-                     * @param OrderTime 用户下单时间，若不上送，服务端默认当前时间
+                     * 设置用户下单时间。若不上送，服务端默认当前时间。
+                     * @param OrderTime 用户下单时间。若不上送，服务端默认当前时间。
                      */
                     void SetOrderTime(const std::string& _orderTime);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool OrderTimeHasBeenSet() const;
 
                     /**
-                     * 获取终端设备号（门店号或收银设备 ID），示例值：POS1:1
-                     * @return DeviceId 终端设备号（门店号或收银设备 ID），示例值：POS1:1
+                     * 获取终端设备号（门店号或收银设备 ID），示例值：POS1:1。
+                     * @return DeviceId 终端设备号（门店号或收银设备 ID），示例值：POS1:1。
                      */
                     std::string GetDeviceId() const;
 
                     /**
-                     * 设置终端设备号（门店号或收银设备 ID），示例值：POS1:1
-                     * @param DeviceId 终端设备号（门店号或收银设备 ID），示例值：POS1:1
+                     * 设置终端设备号（门店号或收银设备 ID），示例值：POS1:1。
+                     * @param DeviceId 终端设备号（门店号或收银设备 ID），示例值：POS1:1。
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
@@ -118,31 +118,60 @@ namespace TencentCloud
                      */
                     bool DeviceIdHasBeenSet() const;
 
+                    /**
+                     * 获取终端设备类型。MOBILE_BROWSER:手机浏览器，MOBILE_APP:手机应用程序，TABLET:平板；WATCH:手表，PC:电脑PC，OTHER:其他。
+汇付渠道必填。
+                     * @return DeviceType 终端设备类型。MOBILE_BROWSER:手机浏览器，MOBILE_APP:手机应用程序，TABLET:平板；WATCH:手表，PC:电脑PC，OTHER:其他。
+汇付渠道必填。
+                     */
+                    std::string GetDeviceType() const;
+
+                    /**
+                     * 设置终端设备类型。MOBILE_BROWSER:手机浏览器，MOBILE_APP:手机应用程序，TABLET:平板；WATCH:手表，PC:电脑PC，OTHER:其他。
+汇付渠道必填。
+                     * @param DeviceType 终端设备类型。MOBILE_BROWSER:手机浏览器，MOBILE_APP:手机应用程序，TABLET:平板；WATCH:手表，PC:电脑PC，OTHER:其他。
+汇付渠道必填。
+                     */
+                    void SetDeviceType(const std::string& _deviceType);
+
+                    /**
+                     * 判断参数 DeviceType 是否已赋值
+                     * @return DeviceType 是否已赋值
+                     */
+                    bool DeviceTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 用户端实际 ip，示例值：14.17.22.32
+                     * 用户端实际 ip。汇付渠道必填。
                      */
                     std::string m_payerClientIp;
                     bool m_payerClientIpHasBeenSet;
 
                     /**
-                     * 浏览器 User-Agent
+                     * 浏览器 User-Agent。
                      */
                     std::string m_payerUa;
                     bool m_payerUaHasBeenSet;
 
                     /**
-                     * 用户下单时间，若不上送，服务端默认当前时间
+                     * 用户下单时间。若不上送，服务端默认当前时间。
                      */
                     std::string m_orderTime;
                     bool m_orderTimeHasBeenSet;
 
                     /**
-                     * 终端设备号（门店号或收银设备 ID），示例值：POS1:1
+                     * 终端设备号（门店号或收银设备 ID），示例值：POS1:1。
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;
+
+                    /**
+                     * 终端设备类型。MOBILE_BROWSER:手机浏览器，MOBILE_APP:手机应用程序，TABLET:平板；WATCH:手表，PC:电脑PC，OTHER:其他。
+汇付渠道必填。
+                     */
+                    std::string m_deviceType;
+                    bool m_deviceTypeHasBeenSet;
 
                 };
             }

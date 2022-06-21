@@ -31,7 +31,10 @@ CreateVpnGatewaySslServerRequest::CreateVpnGatewaySslServerRequest() :
     m_sslVpnPortHasBeenSet(false),
     m_integrityAlgorithmHasBeenSet(false),
     m_encryptAlgorithmHasBeenSet(false),
-    m_compressHasBeenSet(false)
+    m_compressHasBeenSet(false),
+    m_ssoEnabledHasBeenSet(false),
+    m_accessPolicyEnabledHasBeenSet(false),
+    m_samlDataHasBeenSet(false)
 {
 }
 
@@ -117,6 +120,30 @@ string CreateVpnGatewaySslServerRequest::ToJsonString() const
         string key = "Compress";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_compress, allocator);
+    }
+
+    if (m_ssoEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SsoEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ssoEnabled, allocator);
+    }
+
+    if (m_accessPolicyEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessPolicyEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_accessPolicyEnabled, allocator);
+    }
+
+    if (m_samlDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SamlData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_samlData.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -269,6 +296,54 @@ void CreateVpnGatewaySslServerRequest::SetCompress(const bool& _compress)
 bool CreateVpnGatewaySslServerRequest::CompressHasBeenSet() const
 {
     return m_compressHasBeenSet;
+}
+
+bool CreateVpnGatewaySslServerRequest::GetSsoEnabled() const
+{
+    return m_ssoEnabled;
+}
+
+void CreateVpnGatewaySslServerRequest::SetSsoEnabled(const bool& _ssoEnabled)
+{
+    m_ssoEnabled = _ssoEnabled;
+    m_ssoEnabledHasBeenSet = true;
+}
+
+bool CreateVpnGatewaySslServerRequest::SsoEnabledHasBeenSet() const
+{
+    return m_ssoEnabledHasBeenSet;
+}
+
+bool CreateVpnGatewaySslServerRequest::GetAccessPolicyEnabled() const
+{
+    return m_accessPolicyEnabled;
+}
+
+void CreateVpnGatewaySslServerRequest::SetAccessPolicyEnabled(const bool& _accessPolicyEnabled)
+{
+    m_accessPolicyEnabled = _accessPolicyEnabled;
+    m_accessPolicyEnabledHasBeenSet = true;
+}
+
+bool CreateVpnGatewaySslServerRequest::AccessPolicyEnabledHasBeenSet() const
+{
+    return m_accessPolicyEnabledHasBeenSet;
+}
+
+string CreateVpnGatewaySslServerRequest::GetSamlData() const
+{
+    return m_samlData;
+}
+
+void CreateVpnGatewaySslServerRequest::SetSamlData(const string& _samlData)
+{
+    m_samlData = _samlData;
+    m_samlDataHasBeenSet = true;
+}
+
+bool CreateVpnGatewaySslServerRequest::SamlDataHasBeenSet() const
+{
+    return m_samlDataHasBeenSet;
 }
 
 

@@ -24,7 +24,8 @@ TimeShiftBillData::TimeShiftBillData() :
     m_domainHasBeenSet(false),
     m_durationHasBeenSet(false),
     m_storagePeriodHasBeenSet(false),
-    m_timeHasBeenSet(false)
+    m_timeHasBeenSet(false),
+    m_totalDurationHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome TimeShiftBillData::Deserialize(const rapidjson::Value &value
         m_timeHasBeenSet = true;
     }
 
+    if (value.HasMember("TotalDuration") && !value["TotalDuration"].IsNull())
+    {
+        if (!value["TotalDuration"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `TimeShiftBillData.TotalDuration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalDuration = value["TotalDuration"].GetDouble();
+        m_totalDurationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void TimeShiftBillData::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Time";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_time.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_totalDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalDuration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalDuration, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void TimeShiftBillData::SetTime(const string& _time)
 bool TimeShiftBillData::TimeHasBeenSet() const
 {
     return m_timeHasBeenSet;
+}
+
+double TimeShiftBillData::GetTotalDuration() const
+{
+    return m_totalDuration;
+}
+
+void TimeShiftBillData::SetTotalDuration(const double& _totalDuration)
+{
+    m_totalDuration = _totalDuration;
+    m_totalDurationHasBeenSet = true;
+}
+
+bool TimeShiftBillData::TotalDurationHasBeenSet() const
+{
+    return m_totalDurationHasBeenSet;
 }
 

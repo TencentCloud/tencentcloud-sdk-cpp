@@ -31,6 +31,8 @@
 #include <tencentcloud/vpc/v20170312/model/AddIp6RulesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/AddTemplateMemberRequest.h>
 #include <tencentcloud/vpc/v20170312/model/AddTemplateMemberResponse.h>
+#include <tencentcloud/vpc/v20170312/model/AdjustPublicAddressRequest.h>
+#include <tencentcloud/vpc/v20170312/model/AdjustPublicAddressResponse.h>
 #include <tencentcloud/vpc/v20170312/model/AllocateAddressesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/AllocateAddressesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/AllocateIp6AddressesBandwidthRequest.h>
@@ -605,6 +607,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddTemplateMemberResponse> AddTemplateMemberOutcome;
                 typedef std::future<AddTemplateMemberOutcome> AddTemplateMemberOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::AddTemplateMemberRequest&, AddTemplateMemberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddTemplateMemberAsyncHandler;
+                typedef Outcome<Core::Error, Model::AdjustPublicAddressResponse> AdjustPublicAddressOutcome;
+                typedef std::future<AdjustPublicAddressOutcome> AdjustPublicAddressOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::AdjustPublicAddressRequest&, AdjustPublicAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AdjustPublicAddressAsyncHandler;
                 typedef Outcome<Core::Error, Model::AllocateAddressesResponse> AllocateAddressesOutcome;
                 typedef std::future<AllocateAddressesOutcome> AllocateAddressesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::AllocateAddressesRequest&, AllocateAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AllocateAddressesAsyncHandler;
@@ -1467,6 +1472,16 @@ namespace TencentCloud
                 AddTemplateMemberOutcome AddTemplateMember(const Model::AddTemplateMemberRequest &request);
                 void AddTemplateMemberAsync(const Model::AddTemplateMemberRequest& request, const AddTemplateMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddTemplateMemberOutcomeCallable AddTemplateMemberCallable(const Model::AddTemplateMemberRequest& request);
+
+                /**
+                 *本接口 (AdjustPublicAddress) 用于更换IP地址，支持更换CVM实例的普通公网IP和包月带宽的EIP。
+
+                 * @param req AdjustPublicAddressRequest
+                 * @return AdjustPublicAddressOutcome
+                 */
+                AdjustPublicAddressOutcome AdjustPublicAddress(const Model::AdjustPublicAddressRequest &request);
+                void AdjustPublicAddressAsync(const Model::AdjustPublicAddressRequest& request, const AdjustPublicAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AdjustPublicAddressOutcomeCallable AdjustPublicAddressCallable(const Model::AdjustPublicAddressRequest& request);
 
                 /**
                  *本接口 (AllocateAddresses) 用于申请一个或多个[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）。

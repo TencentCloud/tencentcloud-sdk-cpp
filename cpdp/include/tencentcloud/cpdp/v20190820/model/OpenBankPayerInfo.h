@@ -88,17 +88,17 @@ namespace TencentCloud
 
                     /**
                      * 获取付款方付款账户标识。
-当付款方式为OPENBANK_PAYMENT时，必输表示企业账户ID；当付款方式为SAFT_ISV时，必须上送付款方的渠道电子记账本ID。
+当付款方式为OPENBANK_PAYMENT时，必输表示企业账户ID；当付款方式为SAFT_ISV时，必须上送付款方的渠道电子记账本ID；当付款方式为ONLINEBANK，上送付款方银行编号BankId。
                      * @return BindSerialNo 付款方付款账户标识。
-当付款方式为OPENBANK_PAYMENT时，必输表示企业账户ID；当付款方式为SAFT_ISV时，必须上送付款方的渠道电子记账本ID。
+当付款方式为OPENBANK_PAYMENT时，必输表示企业账户ID；当付款方式为SAFT_ISV时，必须上送付款方的渠道电子记账本ID；当付款方式为ONLINEBANK，上送付款方银行编号BankId。
                      */
                     std::string GetBindSerialNo() const;
 
                     /**
                      * 设置付款方付款账户标识。
-当付款方式为OPENBANK_PAYMENT时，必输表示企业账户ID；当付款方式为SAFT_ISV时，必须上送付款方的渠道电子记账本ID。
+当付款方式为OPENBANK_PAYMENT时，必输表示企业账户ID；当付款方式为SAFT_ISV时，必须上送付款方的渠道电子记账本ID；当付款方式为ONLINEBANK，上送付款方银行编号BankId。
                      * @param BindSerialNo 付款方付款账户标识。
-当付款方式为OPENBANK_PAYMENT时，必输表示企业账户ID；当付款方式为SAFT_ISV时，必须上送付款方的渠道电子记账本ID。
+当付款方式为OPENBANK_PAYMENT时，必输表示企业账户ID；当付款方式为SAFT_ISV时，必须上送付款方的渠道电子记账本ID；当付款方式为ONLINEBANK，上送付款方银行编号BankId。
                      */
                     void SetBindSerialNo(const std::string& _bindSerialNo);
 
@@ -138,6 +138,32 @@ ACCOUNT_BOOK_ID：电子记账本ID。
                      */
                     bool AccountTypeHasBeenSet() const;
 
+                    /**
+                     * 获取付款卡类型。汇付渠道必填。
+DEBIT_CARD：借记卡
+CREDIT_CARD：信用卡
+                     * @return BankCardType 付款卡类型。汇付渠道必填。
+DEBIT_CARD：借记卡
+CREDIT_CARD：信用卡
+                     */
+                    std::string GetBankCardType() const;
+
+                    /**
+                     * 设置付款卡类型。汇付渠道必填。
+DEBIT_CARD：借记卡
+CREDIT_CARD：信用卡
+                     * @param BankCardType 付款卡类型。汇付渠道必填。
+DEBIT_CARD：借记卡
+CREDIT_CARD：信用卡
+                     */
+                    void SetBankCardType(const std::string& _bankCardType);
+
+                    /**
+                     * 判断参数 BankCardType 是否已赋值
+                     * @return BankCardType 是否已赋值
+                     */
+                    bool BankCardTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,7 +181,7 @@ ACCOUNT_BOOK_ID：电子记账本ID。
 
                     /**
                      * 付款方付款账户标识。
-当付款方式为OPENBANK_PAYMENT时，必输表示企业账户ID；当付款方式为SAFT_ISV时，必须上送付款方的渠道电子记账本ID。
+当付款方式为OPENBANK_PAYMENT时，必输表示企业账户ID；当付款方式为SAFT_ISV时，必须上送付款方的渠道电子记账本ID；当付款方式为ONLINEBANK，上送付款方银行编号BankId。
                      */
                     std::string m_bindSerialNo;
                     bool m_bindSerialNoHasBeenSet;
@@ -168,6 +194,14 @@ ACCOUNT_BOOK_ID：电子记账本ID。
                      */
                     std::string m_accountType;
                     bool m_accountTypeHasBeenSet;
+
+                    /**
+                     * 付款卡类型。汇付渠道必填。
+DEBIT_CARD：借记卡
+CREDIT_CARD：信用卡
+                     */
+                    std::string m_bankCardType;
+                    bool m_bankCardTypeHasBeenSet;
 
                 };
             }

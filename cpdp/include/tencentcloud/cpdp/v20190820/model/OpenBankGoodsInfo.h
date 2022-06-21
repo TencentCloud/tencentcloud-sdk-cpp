@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取商品标题，默认值“商品支付”
-                     * @return GoodsName 商品标题，默认值“商品支付”
+                     * 获取商品标题。默认值“商品支付”。
+                     * @return GoodsName 商品标题。默认值“商品支付”。
                      */
                     std::string GetGoodsName() const;
 
                     /**
-                     * 设置商品标题，默认值“商品支付”
-                     * @param GoodsName 商品标题，默认值“商品支付”
+                     * 设置商品标题。默认值“商品支付”。
+                     * @param GoodsName 商品标题。默认值“商品支付”。
                      */
                     void SetGoodsName(const std::string& _goodsName);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool GoodsNameHasBeenSet() const;
 
                     /**
-                     * 获取商品详细描述（商品列表）
-                     * @return GoodsDetail 商品详细描述（商品列表）
+                     * 获取商品详细描述（商品列表）。
+                     * @return GoodsDetail 商品详细描述（商品列表）。
                      */
                     std::string GetGoodsDetail() const;
 
                     /**
-                     * 设置商品详细描述（商品列表）
-                     * @param GoodsDetail 商品详细描述（商品列表）
+                     * 设置商品详细描述（商品列表）。
+                     * @param GoodsDetail 商品详细描述（商品列表）。
                      */
                     void SetGoodsDetail(const std::string& _goodsDetail);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool GoodsDetailHasBeenSet() const;
 
                     /**
-                     * 获取银行附言，不可以有以下字符：<>+{}()%*&';"[]等特殊符号
-                     * @return GoodsDescription 银行附言，不可以有以下字符：<>+{}()%*&';"[]等特殊符号
+                     * 获取银行附言。不可以有以下字符：<>+{}()%*&';"[]等特殊符号
+                     * @return GoodsDescription 银行附言。不可以有以下字符：<>+{}()%*&';"[]等特殊符号
                      */
                     std::string GetGoodsDescription() const;
 
                     /**
-                     * 设置银行附言，不可以有以下字符：<>+{}()%*&';"[]等特殊符号
-                     * @param GoodsDescription 银行附言，不可以有以下字符：<>+{}()%*&';"[]等特殊符号
+                     * 设置银行附言。不可以有以下字符：<>+{}()%*&';"[]等特殊符号
+                     * @param GoodsDescription 银行附言。不可以有以下字符：<>+{}()%*&';"[]等特殊符号
                      */
                     void SetGoodsDescription(const std::string& _goodsDescription);
 
@@ -100,25 +100,49 @@ namespace TencentCloud
                      */
                     bool GoodsDescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取业务类型。汇付渠道必填，汇付渠道传入固定值100099。
+                     * @return GoodsBizType 业务类型。汇付渠道必填，汇付渠道传入固定值100099。
+                     */
+                    std::string GetGoodsBizType() const;
+
+                    /**
+                     * 设置业务类型。汇付渠道必填，汇付渠道传入固定值100099。
+                     * @param GoodsBizType 业务类型。汇付渠道必填，汇付渠道传入固定值100099。
+                     */
+                    void SetGoodsBizType(const std::string& _goodsBizType);
+
+                    /**
+                     * 判断参数 GoodsBizType 是否已赋值
+                     * @return GoodsBizType 是否已赋值
+                     */
+                    bool GoodsBizTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 商品标题，默认值“商品支付”
+                     * 商品标题。默认值“商品支付”。
                      */
                     std::string m_goodsName;
                     bool m_goodsNameHasBeenSet;
 
                     /**
-                     * 商品详细描述（商品列表）
+                     * 商品详细描述（商品列表）。
                      */
                     std::string m_goodsDetail;
                     bool m_goodsDetailHasBeenSet;
 
                     /**
-                     * 银行附言，不可以有以下字符：<>+{}()%*&';"[]等特殊符号
+                     * 银行附言。不可以有以下字符：<>+{}()%*&';"[]等特殊符号
                      */
                     std::string m_goodsDescription;
                     bool m_goodsDescriptionHasBeenSet;
+
+                    /**
+                     * 业务类型。汇付渠道必填，汇付渠道传入固定值100099。
+                     */
+                    std::string m_goodsBizType;
+                    bool m_goodsBizTypeHasBeenSet;
 
                 };
             }

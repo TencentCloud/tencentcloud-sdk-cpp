@@ -134,6 +134,54 @@ __WORKING__: 正常工作
                      */
                     bool BankNoticeHasBeenSet() const;
 
+                    /**
+                     * 获取支持银行代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BankId 支持银行代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBankId() const;
+
+                    /**
+                     * 设置支持银行代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BankId 支持银行代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBankId(const std::string& _bankId);
+
+                    /**
+                     * 判断参数 BankId 是否已赋值
+                     * @return BankId 是否已赋值
+                     */
+                    bool BankIdHasBeenSet() const;
+
+                    /**
+                     * 获取卡类型。
+D：借记卡，C：信用卡，Z：借贷合一卡。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CardType 卡类型。
+D：借记卡，C：信用卡，Z：借贷合一卡。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCardType() const;
+
+                    /**
+                     * 设置卡类型。
+D：借记卡，C：信用卡，Z：借贷合一卡。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CardType 卡类型。
+D：借记卡，C：信用卡，Z：借贷合一卡。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCardType(const std::string& _cardType);
+
+                    /**
+                     * 判断参数 CardType 是否已赋值
+                     * @return CardType 是否已赋值
+                     */
+                    bool CardTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +211,21 @@ __WORKING__: 正常工作
                      */
                     std::string m_bankNotice;
                     bool m_bankNoticeHasBeenSet;
+
+                    /**
+                     * 支持银行代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_bankId;
+                    bool m_bankIdHasBeenSet;
+
+                    /**
+                     * 卡类型。
+D：借记卡，C：信用卡，Z：借贷合一卡。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cardType;
+                    bool m_cardTypeHasBeenSet;
 
                 };
             }

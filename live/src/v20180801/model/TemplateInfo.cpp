@@ -41,7 +41,9 @@ TemplateInfo::TemplateInfo() :
     m_descriptionHasBeenSet(false),
     m_aiTransCodeHasBeenSet(false),
     m_adaptBitratePercentHasBeenSet(false),
-    m_shortEdgeAsHeightHasBeenSet(false)
+    m_shortEdgeAsHeightHasBeenSet(false),
+    m_dRMTypeHasBeenSet(false),
+    m_dRMTracksHasBeenSet(false)
 {
 }
 
@@ -260,6 +262,26 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
         m_shortEdgeAsHeightHasBeenSet = true;
     }
 
+    if (value.HasMember("DRMType") && !value["DRMType"].IsNull())
+    {
+        if (!value["DRMType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.DRMType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dRMType = string(value["DRMType"].GetString());
+        m_dRMTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DRMTracks") && !value["DRMTracks"].IsNull())
+    {
+        if (!value["DRMTracks"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.DRMTracks` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dRMTracks = string(value["DRMTracks"].GetString());
+        m_dRMTracksHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -433,6 +455,22 @@ void TemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ShortEdgeAsHeight";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_shortEdgeAsHeight, allocator);
+    }
+
+    if (m_dRMTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DRMType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dRMType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dRMTracksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DRMTracks";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dRMTracks.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -772,5 +810,37 @@ void TemplateInfo::SetShortEdgeAsHeight(const int64_t& _shortEdgeAsHeight)
 bool TemplateInfo::ShortEdgeAsHeightHasBeenSet() const
 {
     return m_shortEdgeAsHeightHasBeenSet;
+}
+
+string TemplateInfo::GetDRMType() const
+{
+    return m_dRMType;
+}
+
+void TemplateInfo::SetDRMType(const string& _dRMType)
+{
+    m_dRMType = _dRMType;
+    m_dRMTypeHasBeenSet = true;
+}
+
+bool TemplateInfo::DRMTypeHasBeenSet() const
+{
+    return m_dRMTypeHasBeenSet;
+}
+
+string TemplateInfo::GetDRMTracks() const
+{
+    return m_dRMTracks;
+}
+
+void TemplateInfo::SetDRMTracks(const string& _dRMTracks)
+{
+    m_dRMTracks = _dRMTracks;
+    m_dRMTracksHasBeenSet = true;
+}
+
+bool TemplateInfo::DRMTracksHasBeenSet() const
+{
+    return m_dRMTracksHasBeenSet;
 }
 

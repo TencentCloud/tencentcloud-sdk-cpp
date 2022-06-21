@@ -23,7 +23,8 @@ using namespace std;
 OpenBankGoodsInfo::OpenBankGoodsInfo() :
     m_goodsNameHasBeenSet(false),
     m_goodsDetailHasBeenSet(false),
-    m_goodsDescriptionHasBeenSet(false)
+    m_goodsDescriptionHasBeenSet(false),
+    m_goodsBizTypeHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome OpenBankGoodsInfo::Deserialize(const rapidjson::Value &value
         m_goodsDescriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("GoodsBizType") && !value["GoodsBizType"].IsNull())
+    {
+        if (!value["GoodsBizType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OpenBankGoodsInfo.GoodsBizType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_goodsBizType = string(value["GoodsBizType"].GetString());
+        m_goodsBizTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void OpenBankGoodsInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "GoodsDescription";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_goodsDescription.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_goodsBizTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GoodsBizType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_goodsBizType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void OpenBankGoodsInfo::SetGoodsDescription(const string& _goodsDescription)
 bool OpenBankGoodsInfo::GoodsDescriptionHasBeenSet() const
 {
     return m_goodsDescriptionHasBeenSet;
+}
+
+string OpenBankGoodsInfo::GetGoodsBizType() const
+{
+    return m_goodsBizType;
+}
+
+void OpenBankGoodsInfo::SetGoodsBizType(const string& _goodsBizType)
+{
+    m_goodsBizType = _goodsBizType;
+    m_goodsBizTypeHasBeenSet = true;
+}
+
+bool OpenBankGoodsInfo::GoodsBizTypeHasBeenSet() const
+{
+    return m_goodsBizTypeHasBeenSet;
 }
 

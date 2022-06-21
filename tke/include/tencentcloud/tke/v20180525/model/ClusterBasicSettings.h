@@ -49,14 +49,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群系统。centos7.2x86_64 或者 ubuntu16.04.1 LTSx86_64，默认取值为ubuntu16.04.1 LTSx86_64
-                     * @return ClusterOs 集群系统。centos7.2x86_64 或者 ubuntu16.04.1 LTSx86_64，默认取值为ubuntu16.04.1 LTSx86_64
+                     * 获取集群系统，支持的os：https://cloud.tencent.com/document/product/457/68289
+                     * @return ClusterOs 集群系统，支持的os：https://cloud.tencent.com/document/product/457/68289
                      */
                     std::string GetClusterOs() const;
 
                     /**
-                     * 设置集群系统。centos7.2x86_64 或者 ubuntu16.04.1 LTSx86_64，默认取值为ubuntu16.04.1 LTSx86_64
-                     * @param ClusterOs 集群系统。centos7.2x86_64 或者 ubuntu16.04.1 LTSx86_64，默认取值为ubuntu16.04.1 LTSx86_64
+                     * 设置集群系统，支持的os：https://cloud.tencent.com/document/product/457/68289
+                     * @param ClusterOs 集群系统，支持的os：https://cloud.tencent.com/document/product/457/68289
                      */
                     void SetClusterOs(const std::string& _clusterOs);
 
@@ -267,7 +267,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群系统。centos7.2x86_64 或者 ubuntu16.04.1 LTSx86_64，默认取值为ubuntu16.04.1 LTSx86_64
+                     * 集群系统，支持的os：https://cloud.tencent.com/document/product/457/68289
                      */
                     std::string m_clusterOs;
                     bool m_clusterOsHasBeenSet;

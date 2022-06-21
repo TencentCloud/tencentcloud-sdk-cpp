@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取时移文件时长,单位分钟。
-                     * @return Duration 时移文件时长,单位分钟。
+                     * 获取时移文件时长，单位分钟。
+                     * @return Duration 时移文件时长，单位分钟。
                      */
                     double GetDuration() const;
 
                     /**
-                     * 设置时移文件时长,单位分钟。
-                     * @param Duration 时移文件时长,单位分钟。
+                     * 设置时移文件时长，单位分钟。
+                     * @param Duration 时移文件时长，单位分钟。
                      */
                     void SetDuration(const double& _duration);
 
@@ -118,6 +118,24 @@ namespace TencentCloud
                      */
                     bool TimeHasBeenSet() const;
 
+                    /**
+                     * 获取时移总时长，单位分钟。
+                     * @return TotalDuration 时移总时长，单位分钟。
+                     */
+                    double GetTotalDuration() const;
+
+                    /**
+                     * 设置时移总时长，单位分钟。
+                     * @param TotalDuration 时移总时长，单位分钟。
+                     */
+                    void SetTotalDuration(const double& _totalDuration);
+
+                    /**
+                     * 判断参数 TotalDuration 是否已赋值
+                     * @return TotalDuration 是否已赋值
+                     */
+                    bool TotalDurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -127,7 +145,7 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 时移文件时长,单位分钟。
+                     * 时移文件时长，单位分钟。
                      */
                     double m_duration;
                     bool m_durationHasBeenSet;
@@ -143,6 +161,12 @@ namespace TencentCloud
                      */
                     std::string m_time;
                     bool m_timeHasBeenSet;
+
+                    /**
+                     * 时移总时长，单位分钟。
+                     */
+                    double m_totalDuration;
+                    bool m_totalDurationHasBeenSet;
 
                 };
             }
