@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/SslClientConfig.h>
 
 
 namespace TencentCloud
@@ -44,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取SSL-VPN-CLIENT 证书配置
-                     * @return SslClientConfigsSet SSL-VPN-CLIENT 证书配置
+                     * 获取无
+                     * @return SslClientConfigsSet 无
                      */
                     std::string GetSslClientConfigsSet() const;
 
@@ -55,13 +56,49 @@ namespace TencentCloud
                      */
                     bool SslClientConfigsSetHasBeenSet() const;
 
+                    /**
+                     * 获取SSL-VPN client配置
+                     * @return SslClientConfig SSL-VPN client配置
+                     */
+                    std::vector<SslClientConfig> GetSslClientConfig() const;
+
+                    /**
+                     * 判断参数 SslClientConfig 是否已赋值
+                     * @return SslClientConfig 是否已赋值
+                     */
+                    bool SslClientConfigHasBeenSet() const;
+
+                    /**
+                     * 获取是否鉴权成功 只有传入SamlToken 才生效
+                     * @return Authenticated 是否鉴权成功 只有传入SamlToken 才生效
+                     */
+                    uint64_t GetAuthenticated() const;
+
+                    /**
+                     * 判断参数 Authenticated 是否已赋值
+                     * @return Authenticated 是否已赋值
+                     */
+                    bool AuthenticatedHasBeenSet() const;
+
                 private:
 
                     /**
-                     * SSL-VPN-CLIENT 证书配置
+                     * 无
                      */
                     std::string m_sslClientConfigsSet;
                     bool m_sslClientConfigsSetHasBeenSet;
+
+                    /**
+                     * SSL-VPN client配置
+                     */
+                    std::vector<SslClientConfig> m_sslClientConfig;
+                    bool m_sslClientConfigHasBeenSet;
+
+                    /**
+                     * 是否鉴权成功 只有传入SamlToken 才生效
+                     */
+                    uint64_t m_authenticated;
+                    bool m_authenticatedHasBeenSet;
 
                 };
             }

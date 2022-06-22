@@ -52,6 +52,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/ExportAttackLogsResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeBaselineEffectHostListResponse.h
   include/tencentcloud/cwp/v20180228/model/TrustMalwaresRequest.h
+  include/tencentcloud/cwp/v20180228/model/LicenseOrder.h
   include/tencentcloud/cwp/v20180228/model/ExportVulEffectHostListRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeBaselineBasicInfoRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeProVersionInfoRequest.h
@@ -580,6 +581,7 @@ set(cwp_src
   src/v20180228/model/ExportAttackLogsResponse.cpp
   src/v20180228/model/DescribeBaselineEffectHostListResponse.cpp
   src/v20180228/model/TrustMalwaresRequest.cpp
+  src/v20180228/model/LicenseOrder.cpp
   src/v20180228/model/ExportVulEffectHostListRequest.cpp
   src/v20180228/model/DescribeBaselineBasicInfoRequest.cpp
   src/v20180228/model/DescribeProVersionInfoRequest.cpp

@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool PageNoHasBeenSet() const;
 
                     /**
-                     * 获取站点集合
-                     * @return Zones 站点集合
+                     * 获取站点名集合
+                     * @return Zones 站点名集合
                      */
                     std::vector<std::string> GetZones() const;
 
                     /**
-                     * 设置站点集合
-                     * @param Zones 站点集合
+                     * 设置站点名集合
+                     * @param Zones 站点名集合
                      */
                     void SetZones(const std::vector<std::string>& _zones);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool ZonesHasBeenSet() const;
 
                     /**
-                     * 获取域名集合
-                     * @return Domains 域名集合
+                     * 获取子域名集合
+                     * @return Domains 子域名集合
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
-                     * 设置域名集合
-                     * @param Domains 域名集合
+                     * 设置子域名集合
+                     * @param Domains 子域名集合
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
 
@@ -177,13 +177,13 @@ namespace TencentCloud
                     bool m_pageNoHasBeenSet;
 
                     /**
-                     * 站点集合
+                     * 站点名集合
                      */
                     std::vector<std::string> m_zones;
                     bool m_zonesHasBeenSet;
 
                     /**
-                     * 域名集合
+                     * 子域名集合
                      */
                     std::vector<std::string> m_domains;
                     bool m_domainsHasBeenSet;

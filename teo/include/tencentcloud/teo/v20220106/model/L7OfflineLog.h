@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool LogTimeHasBeenSet() const;
 
                     /**
-                     * 获取站点名称
+                     * 获取子域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Domain 站点名称
+                     * @return Domain 子域名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置站点名称
+                     * 设置子域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Domain 站点名称
+                     * @param Domain 子域名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDomain(const std::string& _domain);
@@ -166,7 +166,7 @@ namespace TencentCloud
                     bool m_logTimeHasBeenSet;
 
                     /**
-                     * 站点名称
+                     * 子域名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;

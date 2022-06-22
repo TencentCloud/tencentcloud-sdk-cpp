@@ -35,7 +35,11 @@ SslVpnSever::SslVpnSever() :
     m_integrityAlgorithmHasBeenSet(false),
     m_compressHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_ssoEnabledHasBeenSet(false),
+    m_eiamApplicationIdHasBeenSet(false),
+    m_accessPolicyEnabledHasBeenSet(false),
+    m_accessPolicyHasBeenSet(false)
 {
 }
 
@@ -197,6 +201,56 @@ CoreInternalOutcome SslVpnSever::Deserialize(const rapidjson::Value &value)
         m_stateHasBeenSet = true;
     }
 
+    if (value.HasMember("SsoEnabled") && !value["SsoEnabled"].IsNull())
+    {
+        if (!value["SsoEnabled"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SslVpnSever.SsoEnabled` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ssoEnabled = value["SsoEnabled"].GetUint64();
+        m_ssoEnabledHasBeenSet = true;
+    }
+
+    if (value.HasMember("EiamApplicationId") && !value["EiamApplicationId"].IsNull())
+    {
+        if (!value["EiamApplicationId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SslVpnSever.EiamApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eiamApplicationId = string(value["EiamApplicationId"].GetString());
+        m_eiamApplicationIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("AccessPolicyEnabled") && !value["AccessPolicyEnabled"].IsNull())
+    {
+        if (!value["AccessPolicyEnabled"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SslVpnSever.AccessPolicyEnabled` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessPolicyEnabled = value["AccessPolicyEnabled"].GetUint64();
+        m_accessPolicyEnabledHasBeenSet = true;
+    }
+
+    if (value.HasMember("AccessPolicy") && !value["AccessPolicy"].IsNull())
+    {
+        if (!value["AccessPolicy"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SslVpnSever.AccessPolicy` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AccessPolicy"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AccessPolicy item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_accessPolicy.push_back(item);
+        }
+        m_accessPolicyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -327,6 +381,45 @@ void SslVpnSever::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_state, allocator);
+    }
+
+    if (m_ssoEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SsoEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ssoEnabled, allocator);
+    }
+
+    if (m_eiamApplicationIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EiamApplicationId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eiamApplicationId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accessPolicyEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessPolicyEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_accessPolicyEnabled, allocator);
+    }
+
+    if (m_accessPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_accessPolicy.begin(); itr != m_accessPolicy.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -570,5 +663,69 @@ void SslVpnSever::SetState(const uint64_t& _state)
 bool SslVpnSever::StateHasBeenSet() const
 {
     return m_stateHasBeenSet;
+}
+
+uint64_t SslVpnSever::GetSsoEnabled() const
+{
+    return m_ssoEnabled;
+}
+
+void SslVpnSever::SetSsoEnabled(const uint64_t& _ssoEnabled)
+{
+    m_ssoEnabled = _ssoEnabled;
+    m_ssoEnabledHasBeenSet = true;
+}
+
+bool SslVpnSever::SsoEnabledHasBeenSet() const
+{
+    return m_ssoEnabledHasBeenSet;
+}
+
+string SslVpnSever::GetEiamApplicationId() const
+{
+    return m_eiamApplicationId;
+}
+
+void SslVpnSever::SetEiamApplicationId(const string& _eiamApplicationId)
+{
+    m_eiamApplicationId = _eiamApplicationId;
+    m_eiamApplicationIdHasBeenSet = true;
+}
+
+bool SslVpnSever::EiamApplicationIdHasBeenSet() const
+{
+    return m_eiamApplicationIdHasBeenSet;
+}
+
+uint64_t SslVpnSever::GetAccessPolicyEnabled() const
+{
+    return m_accessPolicyEnabled;
+}
+
+void SslVpnSever::SetAccessPolicyEnabled(const uint64_t& _accessPolicyEnabled)
+{
+    m_accessPolicyEnabled = _accessPolicyEnabled;
+    m_accessPolicyEnabledHasBeenSet = true;
+}
+
+bool SslVpnSever::AccessPolicyEnabledHasBeenSet() const
+{
+    return m_accessPolicyEnabledHasBeenSet;
+}
+
+vector<AccessPolicy> SslVpnSever::GetAccessPolicy() const
+{
+    return m_accessPolicy;
+}
+
+void SslVpnSever::SetAccessPolicy(const vector<AccessPolicy>& _accessPolicy)
+{
+    m_accessPolicy = _accessPolicy;
+    m_accessPolicyHasBeenSet = true;
+}
+
+bool SslVpnSever::AccessPolicyHasBeenSet() const
+{
+    return m_accessPolicyHasBeenSet;
 }
 

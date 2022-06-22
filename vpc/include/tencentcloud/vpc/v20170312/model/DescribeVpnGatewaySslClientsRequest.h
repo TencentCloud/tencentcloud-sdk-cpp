@@ -135,6 +135,24 @@ namespace TencentCloud
                      */
                     bool SslVpnClientIdsHasBeenSet() const;
 
+                    /**
+                     * 获取VPN门户网站使用。默认是False。
+                     * @return IsVpnPortal VPN门户网站使用。默认是False。
+                     */
+                    bool GetIsVpnPortal() const;
+
+                    /**
+                     * 设置VPN门户网站使用。默认是False。
+                     * @param IsVpnPortal VPN门户网站使用。默认是False。
+                     */
+                    void SetIsVpnPortal(const bool& _isVpnPortal);
+
+                    /**
+                     * 判断参数 IsVpnPortal 是否已赋值
+                     * @return IsVpnPortal 是否已赋值
+                     */
+                    bool IsVpnPortalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -165,6 +183,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_sslVpnClientIds;
                     bool m_sslVpnClientIdsHasBeenSet;
+
+                    /**
+                     * VPN门户网站使用。默认是False。
+                     */
+                    bool m_isVpnPortal;
+                    bool m_isVpnPortalHasBeenSet;
 
                 };
             }

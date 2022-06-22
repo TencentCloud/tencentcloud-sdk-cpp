@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool RepoHasBeenSet() const;
 
                     /**
-                     * 获取分之名
-                     * @return Branch 分之名
+                     * 获取分支名
+                     * @return Branch 分支名
                      */
                     std::string GetBranch() const;
 
                     /**
-                     * 设置分之名
-                     * @param Branch 分之名
+                     * 设置分支名
+                     * @param Branch 分支名
                      */
                     void SetBranch(const std::string& _branch);
 
@@ -115,7 +115,7 @@ namespace TencentCloud
                     bool m_repoHasBeenSet;
 
                     /**
-                     * 分之名
+                     * 分支名
                      */
                     std::string m_branch;
                     bool m_branchHasBeenSet;

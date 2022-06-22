@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cwp/v20180228/model/MachineTag.h>
+#include <tencentcloud/cwp/v20180228/model/LicenseOrder.h>
 
 
 namespace TencentCloud
@@ -223,6 +224,28 @@ namespace TencentCloud
                      */
                     bool MachineStatusHasBeenSet() const;
 
+                    /**
+                     * 获取授权订单对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LicenseOrder 授权订单对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    LicenseOrder GetLicenseOrder() const;
+
+                    /**
+                     * 设置授权订单对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LicenseOrder 授权订单对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLicenseOrder(const LicenseOrder& _licenseOrder);
+
+                    /**
+                     * 判断参数 LicenseOrder 是否已赋值
+                     * @return LicenseOrder 是否已赋值
+                     */
+                    bool LicenseOrderHasBeenSet() const;
+
                 private:
 
                     /**
@@ -280,6 +303,13 @@ namespace TencentCloud
                      */
                     std::string m_machineStatus;
                     bool m_machineStatusHasBeenSet;
+
+                    /**
+                     * 授权订单对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    LicenseOrder m_licenseOrder;
+                    bool m_licenseOrderHasBeenSet;
 
                 };
             }

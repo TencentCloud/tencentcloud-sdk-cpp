@@ -23,7 +23,9 @@ using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
 DownloadVpnGatewaySslClientCertRequest::DownloadVpnGatewaySslClientCertRequest() :
-    m_sslVpnClientIdHasBeenSet(false)
+    m_sslVpnClientIdHasBeenSet(false),
+    m_samlTokenHasBeenSet(false),
+    m_isVpnPortalHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,22 @@ string DownloadVpnGatewaySslClientCertRequest::ToJsonString() const
         string key = "SslVpnClientId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sslVpnClientId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_samlTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SamlToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_samlToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isVpnPortalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsVpnPortal";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isVpnPortal, allocator);
     }
 
 
@@ -64,6 +82,38 @@ void DownloadVpnGatewaySslClientCertRequest::SetSslVpnClientId(const string& _ss
 bool DownloadVpnGatewaySslClientCertRequest::SslVpnClientIdHasBeenSet() const
 {
     return m_sslVpnClientIdHasBeenSet;
+}
+
+string DownloadVpnGatewaySslClientCertRequest::GetSamlToken() const
+{
+    return m_samlToken;
+}
+
+void DownloadVpnGatewaySslClientCertRequest::SetSamlToken(const string& _samlToken)
+{
+    m_samlToken = _samlToken;
+    m_samlTokenHasBeenSet = true;
+}
+
+bool DownloadVpnGatewaySslClientCertRequest::SamlTokenHasBeenSet() const
+{
+    return m_samlTokenHasBeenSet;
+}
+
+bool DownloadVpnGatewaySslClientCertRequest::GetIsVpnPortal() const
+{
+    return m_isVpnPortal;
+}
+
+void DownloadVpnGatewaySslClientCertRequest::SetIsVpnPortal(const bool& _isVpnPortal)
+{
+    m_isVpnPortal = _isVpnPortal;
+    m_isVpnPortalHasBeenSet = true;
+}
+
+bool DownloadVpnGatewaySslClientCertRequest::IsVpnPortalHasBeenSet() const
+{
+    return m_isVpnPortalHasBeenSet;
 }
 
 

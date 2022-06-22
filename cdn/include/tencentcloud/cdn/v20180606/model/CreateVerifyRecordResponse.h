@@ -93,6 +93,34 @@ namespace TencentCloud
                      */
                     bool FileVerifyUrlHasBeenSet() const;
 
+                    /**
+                     * 获取文件校验域名列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FileVerifyDomains 文件校验域名列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetFileVerifyDomains() const;
+
+                    /**
+                     * 判断参数 FileVerifyDomains 是否已赋值
+                     * @return FileVerifyDomains 是否已赋值
+                     */
+                    bool FileVerifyDomainsHasBeenSet() const;
+
+                    /**
+                     * 获取文件校验文件名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FileVerifyName 文件校验文件名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFileVerifyName() const;
+
+                    /**
+                     * 判断参数 FileVerifyName 是否已赋值
+                     * @return FileVerifyName 是否已赋值
+                     */
+                    bool FileVerifyNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +147,20 @@ namespace TencentCloud
                      */
                     std::string m_fileVerifyUrl;
                     bool m_fileVerifyUrlHasBeenSet;
+
+                    /**
+                     * 文件校验域名列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_fileVerifyDomains;
+                    bool m_fileVerifyDomainsHasBeenSet;
+
+                    /**
+                     * 文件校验文件名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_fileVerifyName;
+                    bool m_fileVerifyNameHasBeenSet;
 
                 };
             }

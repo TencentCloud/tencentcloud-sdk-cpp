@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/AccessPolicy.h>
 
 
 namespace TencentCloud
@@ -352,6 +353,78 @@ namespace TencentCloud
                      */
                     bool StateHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启SSO认证。1：开启  0： 不开启
+                     * @return SsoEnabled 是否开启SSO认证。1：开启  0： 不开启
+                     */
+                    uint64_t GetSsoEnabled() const;
+
+                    /**
+                     * 设置是否开启SSO认证。1：开启  0： 不开启
+                     * @param SsoEnabled 是否开启SSO认证。1：开启  0： 不开启
+                     */
+                    void SetSsoEnabled(const uint64_t& _ssoEnabled);
+
+                    /**
+                     * 判断参数 SsoEnabled 是否已赋值
+                     * @return SsoEnabled 是否已赋值
+                     */
+                    bool SsoEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取EIAM应用ID
+                     * @return EiamApplicationId EIAM应用ID
+                     */
+                    std::string GetEiamApplicationId() const;
+
+                    /**
+                     * 设置EIAM应用ID
+                     * @param EiamApplicationId EIAM应用ID
+                     */
+                    void SetEiamApplicationId(const std::string& _eiamApplicationId);
+
+                    /**
+                     * 判断参数 EiamApplicationId 是否已赋值
+                     * @return EiamApplicationId 是否已赋值
+                     */
+                    bool EiamApplicationIdHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启策略控制。0：不开启 1： 开启
+                     * @return AccessPolicyEnabled 是否开启策略控制。0：不开启 1： 开启
+                     */
+                    uint64_t GetAccessPolicyEnabled() const;
+
+                    /**
+                     * 设置是否开启策略控制。0：不开启 1： 开启
+                     * @param AccessPolicyEnabled 是否开启策略控制。0：不开启 1： 开启
+                     */
+                    void SetAccessPolicyEnabled(const uint64_t& _accessPolicyEnabled);
+
+                    /**
+                     * 判断参数 AccessPolicyEnabled 是否已赋值
+                     * @return AccessPolicyEnabled 是否已赋值
+                     */
+                    bool AccessPolicyEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取策略信息
+                     * @return AccessPolicy 策略信息
+                     */
+                    std::vector<AccessPolicy> GetAccessPolicy() const;
+
+                    /**
+                     * 设置策略信息
+                     * @param AccessPolicy 策略信息
+                     */
+                    void SetAccessPolicy(const std::vector<AccessPolicy>& _accessPolicy);
+
+                    /**
+                     * 判断参数 AccessPolicy 是否已赋值
+                     * @return AccessPolicy 是否已赋值
+                     */
+                    bool AccessPolicyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -452,6 +525,30 @@ namespace TencentCloud
                      */
                     uint64_t m_state;
                     bool m_stateHasBeenSet;
+
+                    /**
+                     * 是否开启SSO认证。1：开启  0： 不开启
+                     */
+                    uint64_t m_ssoEnabled;
+                    bool m_ssoEnabledHasBeenSet;
+
+                    /**
+                     * EIAM应用ID
+                     */
+                    std::string m_eiamApplicationId;
+                    bool m_eiamApplicationIdHasBeenSet;
+
+                    /**
+                     * 是否开启策略控制。0：不开启 1： 开启
+                     */
+                    uint64_t m_accessPolicyEnabled;
+                    bool m_accessPolicyEnabledHasBeenSet;
+
+                    /**
+                     * 策略信息
+                     */
+                    std::vector<AccessPolicy> m_accessPolicy;
+                    bool m_accessPolicyHasBeenSet;
 
                 };
             }

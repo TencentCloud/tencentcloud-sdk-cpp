@@ -24,8 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/vod/v20180717/model/MediaAudioStreamItem.h>
 #include <tencentcloud/vod/v20180717/model/MediaVideoStreamItem.h>
+#include <tencentcloud/vod/v20180717/model/MediaAudioStreamItem.h>
 
 
 namespace TencentCloud
@@ -139,14 +139,18 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取媒体文件总大小（视频为 HLS 时，大小是 m3u8 和 ts 文件大小的总和），单位：字节。
-                     * @return Size 媒体文件总大小（视频为 HLS 时，大小是 m3u8 和 ts 文件大小的总和），单位：字节。
+                     * 获取媒体文件总大小，单位：字节。
+<li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和。</li>
+                     * @return Size 媒体文件总大小，单位：字节。
+<li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和。</li>
                      */
                     int64_t GetSize() const;
 
                     /**
-                     * 设置媒体文件总大小（视频为 HLS 时，大小是 m3u8 和 ts 文件大小的总和），单位：字节。
-                     * @param Size 媒体文件总大小（视频为 HLS 时，大小是 m3u8 和 ts 文件大小的总和），单位：字节。
+                     * 设置媒体文件总大小，单位：字节。
+<li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和。</li>
+                     * @param Size 媒体文件总大小，单位：字节。
+<li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和。</li>
                      */
                     void SetSize(const int64_t& _size);
 
@@ -175,24 +179,6 @@ namespace TencentCloud
                     bool DurationHasBeenSet() const;
 
                     /**
-                     * 获取容器类型，例如 m4a，mp4 等。
-                     * @return Container 容器类型，例如 m4a，mp4 等。
-                     */
-                    std::string GetContainer() const;
-
-                    /**
-                     * 设置容器类型，例如 m4a，mp4 等。
-                     * @param Container 容器类型，例如 m4a，mp4 等。
-                     */
-                    void SetContainer(const std::string& _container);
-
-                    /**
-                     * 判断参数 Container 是否已赋值
-                     * @return Container 是否已赋值
-                     */
-                    bool ContainerHasBeenSet() const;
-
-                    /**
                      * 获取视频的 md5 值。
                      * @return Md5 视频的 md5 值。
                      */
@@ -211,22 +197,22 @@ namespace TencentCloud
                     bool Md5HasBeenSet() const;
 
                     /**
-                     * 获取音频流信息。
-                     * @return AudioStreamSet 音频流信息。
+                     * 获取容器类型，例如 m4a，mp4 等。
+                     * @return Container 容器类型，例如 m4a，mp4 等。
                      */
-                    std::vector<MediaAudioStreamItem> GetAudioStreamSet() const;
+                    std::string GetContainer() const;
 
                     /**
-                     * 设置音频流信息。
-                     * @param AudioStreamSet 音频流信息。
+                     * 设置容器类型，例如 m4a，mp4 等。
+                     * @param Container 容器类型，例如 m4a，mp4 等。
                      */
-                    void SetAudioStreamSet(const std::vector<MediaAudioStreamItem>& _audioStreamSet);
+                    void SetContainer(const std::string& _container);
 
                     /**
-                     * 判断参数 AudioStreamSet 是否已赋值
-                     * @return AudioStreamSet 是否已赋值
+                     * 判断参数 Container 是否已赋值
+                     * @return Container 是否已赋值
                      */
-                    bool AudioStreamSetHasBeenSet() const;
+                    bool ContainerHasBeenSet() const;
 
                     /**
                      * 获取视频流信息。
@@ -245,6 +231,24 @@ namespace TencentCloud
                      * @return VideoStreamSet 是否已赋值
                      */
                     bool VideoStreamSetHasBeenSet() const;
+
+                    /**
+                     * 获取音频流信息。
+                     * @return AudioStreamSet 音频流信息。
+                     */
+                    std::vector<MediaAudioStreamItem> GetAudioStreamSet() const;
+
+                    /**
+                     * 设置音频流信息。
+                     * @param AudioStreamSet 音频流信息。
+                     */
+                    void SetAudioStreamSet(const std::vector<MediaAudioStreamItem>& _audioStreamSet);
+
+                    /**
+                     * 判断参数 AudioStreamSet 是否已赋值
+                     * @return AudioStreamSet 是否已赋值
+                     */
+                    bool AudioStreamSetHasBeenSet() const;
 
                 private:
 
@@ -279,7 +283,8 @@ namespace TencentCloud
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 媒体文件总大小（视频为 HLS 时，大小是 m3u8 和 ts 文件大小的总和），单位：字节。
+                     * 媒体文件总大小，单位：字节。
+<li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和。</li>
                      */
                     int64_t m_size;
                     bool m_sizeHasBeenSet;
@@ -291,28 +296,28 @@ namespace TencentCloud
                     bool m_durationHasBeenSet;
 
                     /**
-                     * 容器类型，例如 m4a，mp4 等。
-                     */
-                    std::string m_container;
-                    bool m_containerHasBeenSet;
-
-                    /**
                      * 视频的 md5 值。
                      */
                     std::string m_md5;
                     bool m_md5HasBeenSet;
 
                     /**
-                     * 音频流信息。
+                     * 容器类型，例如 m4a，mp4 等。
                      */
-                    std::vector<MediaAudioStreamItem> m_audioStreamSet;
-                    bool m_audioStreamSetHasBeenSet;
+                    std::string m_container;
+                    bool m_containerHasBeenSet;
 
                     /**
                      * 视频流信息。
                      */
                     std::vector<MediaVideoStreamItem> m_videoStreamSet;
                     bool m_videoStreamSetHasBeenSet;
+
+                    /**
+                     * 音频流信息。
+                     */
+                    std::vector<MediaAudioStreamItem> m_audioStreamSet;
+                    bool m_audioStreamSetHasBeenSet;
 
                 };
             }

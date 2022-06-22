@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/dnspod/v20210323/model/CreateDealRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/CreateDealResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateDomainRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateDomainResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateDomainAliasRequest.h>
@@ -83,6 +85,8 @@
 #include <tencentcloud/dnspod/v20210323/model/ModifyDomainUnlockResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyDynamicDNSRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyDynamicDNSResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifyPackageAutoRenewRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifyPackageAutoRenewResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordBatchRequest.h>
@@ -93,6 +97,10 @@
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordStatusResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifySubdomainStatusRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifySubdomainStatusResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifyVasAutoRenewStatusRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifyVasAutoRenewStatusResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/PayOrderWithBalanceRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/PayOrderWithBalanceResponse.h>
 
 
 namespace TencentCloud
@@ -107,6 +115,9 @@ namespace TencentCloud
                 DnspodClient(const Credential &credential, const std::string &region);
                 DnspodClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CreateDealResponse> CreateDealOutcome;
+                typedef std::future<CreateDealOutcome> CreateDealOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::CreateDealRequest&, CreateDealOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDealAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDomainResponse> CreateDomainOutcome;
                 typedef std::future<CreateDomainOutcome> CreateDomainOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::CreateDomainRequest&, CreateDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDomainAsyncHandler;
@@ -197,6 +208,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDynamicDNSResponse> ModifyDynamicDNSOutcome;
                 typedef std::future<ModifyDynamicDNSOutcome> ModifyDynamicDNSOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::ModifyDynamicDNSRequest&, ModifyDynamicDNSOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDynamicDNSAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyPackageAutoRenewResponse> ModifyPackageAutoRenewOutcome;
+                typedef std::future<ModifyPackageAutoRenewOutcome> ModifyPackageAutoRenewOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::ModifyPackageAutoRenewRequest&, ModifyPackageAutoRenewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPackageAutoRenewAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRecordResponse> ModifyRecordOutcome;
                 typedef std::future<ModifyRecordOutcome> ModifyRecordOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::ModifyRecordRequest&, ModifyRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRecordAsyncHandler;
@@ -212,8 +226,23 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifySubdomainStatusResponse> ModifySubdomainStatusOutcome;
                 typedef std::future<ModifySubdomainStatusOutcome> ModifySubdomainStatusOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::ModifySubdomainStatusRequest&, ModifySubdomainStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySubdomainStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyVasAutoRenewStatusResponse> ModifyVasAutoRenewStatusOutcome;
+                typedef std::future<ModifyVasAutoRenewStatusOutcome> ModifyVasAutoRenewStatusOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::ModifyVasAutoRenewStatusRequest&, ModifyVasAutoRenewStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVasAutoRenewStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::PayOrderWithBalanceResponse> PayOrderWithBalanceOutcome;
+                typedef std::future<PayOrderWithBalanceOutcome> PayOrderWithBalanceOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::PayOrderWithBalanceRequest&, PayOrderWithBalanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PayOrderWithBalanceAsyncHandler;
 
 
+
+                /**
+                 *DNSPod商品下单
+                 * @param req CreateDealRequest
+                 * @return CreateDealOutcome
+                 */
+                CreateDealOutcome CreateDeal(const Model::CreateDealRequest &request);
+                void CreateDealAsync(const Model::CreateDealRequest& request, const CreateDealAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDealOutcomeCallable CreateDealCallable(const Model::CreateDealRequest& request);
 
                 /**
                  *添加域名
@@ -490,6 +519,15 @@ namespace TencentCloud
                 ModifyDynamicDNSOutcomeCallable ModifyDynamicDNSCallable(const Model::ModifyDynamicDNSRequest& request);
 
                 /**
+                 * DNS 解析套餐自动续费设置
+                 * @param req ModifyPackageAutoRenewRequest
+                 * @return ModifyPackageAutoRenewOutcome
+                 */
+                ModifyPackageAutoRenewOutcome ModifyPackageAutoRenew(const Model::ModifyPackageAutoRenewRequest &request);
+                void ModifyPackageAutoRenewAsync(const Model::ModifyPackageAutoRenewRequest& request, const ModifyPackageAutoRenewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPackageAutoRenewOutcomeCallable ModifyPackageAutoRenewCallable(const Model::ModifyPackageAutoRenewRequest& request);
+
+                /**
                  *修改记录
                  * @param req ModifyRecordRequest
                  * @return ModifyRecordOutcome
@@ -533,6 +571,24 @@ namespace TencentCloud
                 ModifySubdomainStatusOutcome ModifySubdomainStatus(const Model::ModifySubdomainStatusRequest &request);
                 void ModifySubdomainStatusAsync(const Model::ModifySubdomainStatusRequest& request, const ModifySubdomainStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifySubdomainStatusOutcomeCallable ModifySubdomainStatusCallable(const Model::ModifySubdomainStatusRequest& request);
+
+                /**
+                 *增值服务自动续费设置
+                 * @param req ModifyVasAutoRenewStatusRequest
+                 * @return ModifyVasAutoRenewStatusOutcome
+                 */
+                ModifyVasAutoRenewStatusOutcome ModifyVasAutoRenewStatus(const Model::ModifyVasAutoRenewStatusRequest &request);
+                void ModifyVasAutoRenewStatusAsync(const Model::ModifyVasAutoRenewStatusRequest& request, const ModifyVasAutoRenewStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyVasAutoRenewStatusOutcomeCallable ModifyVasAutoRenewStatusCallable(const Model::ModifyVasAutoRenewStatusRequest& request);
+
+                /**
+                 *DNSPod商品余额支付
+                 * @param req PayOrderWithBalanceRequest
+                 * @return PayOrderWithBalanceOutcome
+                 */
+                PayOrderWithBalanceOutcome PayOrderWithBalance(const Model::PayOrderWithBalanceRequest &request);
+                void PayOrderWithBalanceAsync(const Model::PayOrderWithBalanceRequest& request, const PayOrderWithBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PayOrderWithBalanceOutcomeCallable PayOrderWithBalanceCallable(const Model::PayOrderWithBalanceRequest& request);
 
             };
         }

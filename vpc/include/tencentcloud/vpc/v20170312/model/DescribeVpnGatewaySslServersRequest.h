@@ -135,6 +135,24 @@ namespace TencentCloud
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取vpn门户使用。 默认Flase
+                     * @return IsVpnPortal vpn门户使用。 默认Flase
+                     */
+                    bool GetIsVpnPortal() const;
+
+                    /**
+                     * 设置vpn门户使用。 默认Flase
+                     * @param IsVpnPortal vpn门户使用。 默认Flase
+                     */
+                    void SetIsVpnPortal(const bool& _isVpnPortal);
+
+                    /**
+                     * 判断参数 IsVpnPortal 是否已赋值
+                     * @return IsVpnPortal 是否已赋值
+                     */
+                    bool IsVpnPortalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -165,6 +183,12 @@ namespace TencentCloud
                      */
                     std::vector<FilterObject> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * vpn门户使用。 默认Flase
+                     */
+                    bool m_isVpnPortal;
+                    bool m_isVpnPortalHasBeenSet;
 
                 };
             }

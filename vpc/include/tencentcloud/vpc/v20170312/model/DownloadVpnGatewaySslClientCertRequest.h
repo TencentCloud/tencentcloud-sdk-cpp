@@ -60,6 +60,42 @@ namespace TencentCloud
                      */
                     bool SslVpnClientIdHasBeenSet() const;
 
+                    /**
+                     * 获取SAML-TOKEN
+                     * @return SamlToken SAML-TOKEN
+                     */
+                    std::string GetSamlToken() const;
+
+                    /**
+                     * 设置SAML-TOKEN
+                     * @param SamlToken SAML-TOKEN
+                     */
+                    void SetSamlToken(const std::string& _samlToken);
+
+                    /**
+                     * 判断参数 SamlToken 是否已赋值
+                     * @return SamlToken 是否已赋值
+                     */
+                    bool SamlTokenHasBeenSet() const;
+
+                    /**
+                     * 获取VPN门户网站使用。默认Flase
+                     * @return IsVpnPortal VPN门户网站使用。默认Flase
+                     */
+                    bool GetIsVpnPortal() const;
+
+                    /**
+                     * 设置VPN门户网站使用。默认Flase
+                     * @param IsVpnPortal VPN门户网站使用。默认Flase
+                     */
+                    void SetIsVpnPortal(const bool& _isVpnPortal);
+
+                    /**
+                     * 判断参数 IsVpnPortal 是否已赋值
+                     * @return IsVpnPortal 是否已赋值
+                     */
+                    bool IsVpnPortalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +103,18 @@ namespace TencentCloud
                      */
                     std::string m_sslVpnClientId;
                     bool m_sslVpnClientIdHasBeenSet;
+
+                    /**
+                     * SAML-TOKEN
+                     */
+                    std::string m_samlToken;
+                    bool m_samlTokenHasBeenSet;
+
+                    /**
+                     * VPN门户网站使用。默认Flase
+                     */
+                    bool m_isVpnPortal;
+                    bool m_isVpnPortalHasBeenSet;
 
                 };
             }

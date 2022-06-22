@@ -26,7 +26,8 @@ DescribeVpnGatewaySslServersRequest::DescribeVpnGatewaySslServersRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_sslVpnServerIdsHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_isVpnPortalHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,14 @@ string DescribeVpnGatewaySslServersRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isVpnPortalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsVpnPortal";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isVpnPortal, allocator);
     }
 
 
@@ -151,6 +160,22 @@ void DescribeVpnGatewaySslServersRequest::SetFilters(const vector<FilterObject>&
 bool DescribeVpnGatewaySslServersRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+bool DescribeVpnGatewaySslServersRequest::GetIsVpnPortal() const
+{
+    return m_isVpnPortal;
+}
+
+void DescribeVpnGatewaySslServersRequest::SetIsVpnPortal(const bool& _isVpnPortal)
+{
+    m_isVpnPortal = _isVpnPortal;
+    m_isVpnPortalHasBeenSet = true;
+}
+
+bool DescribeVpnGatewaySslServersRequest::IsVpnPortalHasBeenSet() const
+{
+    return m_isVpnPortalHasBeenSet;
 }
 
 
